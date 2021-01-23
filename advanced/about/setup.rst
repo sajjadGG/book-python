@@ -46,5 +46,5 @@ Assignments
     :caption: :download:`Solution <assignments/about_setup_f.py>`
     :end-before: # Solution
 
-.. figure:: ../_img/pycharm-vsc-merge-rebase.png
+.. figure:: img/pycharm-vsc-merge-rebase.png
 

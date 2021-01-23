@@ -47,10 +47,3 @@ Further Reading
 ===============
 * http://www.labri.fr/perso/nrougier/teaching/numpy.100/
 * https://github.com/rougier/numpy-100
-
-
-References
-==========
-.. bibliography:: _references/bibliography.bib
-    :labelprefix: Numpy
-    :cited:

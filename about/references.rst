@@ -60,15 +60,15 @@ Datasets
 
 Iris flower species:
 
-.. figure:: img/iris-species.jpg
+.. figure:: img/about-references-iris-species.jpg
 
 Iris dataset:
 
-.. figure:: img/iris-dataset.png
+.. figure:: img/about-references-iris-dataset.png
 
 Iris features distribution:
 
-.. figure:: img/iris-grid.png
+.. figure:: img/about-references-iris-grid.png
 
 
 Addresses
@@ -158,7 +158,7 @@ Jan Twardowski:
     * Wizard from Polish fairytale who escaped before the devil to the Moon
     * Modern Film Adaptation by Allegro: https://www.youtube.com/watch?v=hRdYz8cnOW4
 
-    .. figure:: img/jan-twardowski.jpg
+    .. figure:: img/about-references-jan-twardowski.jpg
 
 Mark Watney:
 
@@ -166,14 +166,14 @@ Mark Watney:
     * From Andy Weir's book "The Martian"
     * From Ridley Scott movie "The Martian" (book adaptation)
 
-    .. figure:: img/mark-watney.jpg
+    .. figure:: img/about-references-mark-watney.jpg
 
 Иван Иванович:
 
     * Ivan Ivanovich
     * Dummy used in Soviet space program before Gagarin's Launch
 
-    .. figure:: img/ivan-ivanovich.jpg
+    .. figure:: img/about-references-ivan-ivanovich.jpg
 
 José Jiménez:
 
@@ -187,7 +187,7 @@ José Jiménez:
     * https://www.youtube.com/watch?v=PVxfJYw59cM
     * https://youtu.be/kPnaaHR9pLc?t=16
 
-    .. figure:: img/jose-jimenez.jpg
+    .. figure:: img/about-references-jose-jimenez.jpg
 
 Melissa Lewis:
 
@@ -195,14 +195,14 @@ Melissa Lewis:
     * From Andy Weir's book "The Martian"
     * From Ridley Scott movie "The Martian" (book adaptation)
 
-    .. figure:: img/melissa-lewis.jpg
+    .. figure:: img/about-references-melissa-lewis.jpg
 
 Ryan Stone:
 
     * Fictional NASA Astronaut
     * From the movie "Gravity"
 
-    .. figure:: img/ryan-stone.jpg
+    .. figure:: img/about-references-ryan-stone.jpg
 
 Matt Kowalski:
 
@@ -210,7 +210,7 @@ Matt Kowalski:
     * From the movie "Gravity"
     * From Alfonso Cuarón's movie `Gravity <https://www.imdb.com/title/tt1454468/>`_
 
-    .. figure:: img/matt-kowalski.jpg
+    .. figure:: img/about-references-matt-kowalski.jpg
 
 Alex Vogel:
 
@@ -218,7 +218,7 @@ Alex Vogel:
     * From Andy Weir's book "The Martian"
     * From Ridley Scott movie "The Martian" (book adaptation)
 
-    .. figure:: img/alex-vogel.jpg
+    .. figure:: img/about-references-alex-vogel.jpg
 
 National Geographic Mars Crew Members:
 
@@ -229,7 +229,7 @@ National Geographic Mars Crew Members:
     * Ben Sawyer (bottom center)
     * Marta Kamen (bottom right)
 
-    .. figure:: img/crew-mars-natgeo.jpg
+    .. figure:: img/about-references-crew-mars-natgeo.jpg
 
 Martian Movie Crew Members:
 
@@ -240,5 +240,5 @@ Martian Movie Crew Members:
     * Beth Johanssen (bottom center)
     * Rick Martinez (bottom right)
 
-    .. figure:: img/crew-martian.jpg
+    .. figure:: img/about-references-crew-martian.jpg
 

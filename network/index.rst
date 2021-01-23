@@ -1,5 +1,6 @@
 .. include:: ../README.rst
 
+
 About
 *****
 .. toctree::
@@ -9,7 +10,7 @@ About
     ../PROGRESS.rst
     ../install.rst
     ../survey.rst
-    ../about/references.rst
+
 
 Network and HTTP
 ****************
@@ -20,6 +21,7 @@ Network and HTTP
 
     _index.rst
 
+
 Appendixes
 **********
 .. toctree::
@@ -29,10 +31,10 @@ Appendixes
 
     ../about/history.rst
     ../about/further-reading.rst
-    ../appendix/workshop/intermediate.rst
-    ../appendix/workshop/network.rst
-    ../appendix/workshop/django.rst
-    ../appendix/workshop/testing.rst
-    ../appendix/workshop/scientific.rst
-    ../appendix/workshop/machine-learning.rst
-    ../_references/references.rst
+
+
+References
+**********
+.. bibliography:: references.bib
+    :labelprefix: Network
+    :cited:

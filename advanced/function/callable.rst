@@ -261,5 +261,5 @@ Case Studies
 Assignments
 -----------
 .. literalinclude:: assignments/function_callable_a.py
-    :caption: :download:`Solution <assignments/function_callable_b.py>`
+    :caption: :download:`Solution <assignments/function_callable_a.py>`
     :end-before: # Solution

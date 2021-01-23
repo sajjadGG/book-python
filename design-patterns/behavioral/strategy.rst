@@ -44,14 +44,14 @@ Design
 * Can have multiple states
 * Different behaviors are represented by strategy objects
 
-.. figure:: ../_img/designpatterns-strategy-gof.png
+.. figure:: img/designpatterns-strategy-gof.png
 
 
 Implementation
 --------------
-.. figure:: ../_img/designpatterns-strategy-usecase1.png
-.. figure:: ../_img/designpatterns-strategy-usecase2.png
-.. figure:: ../_img/designpatterns-strategy-vs-state.png
+.. figure:: img/designpatterns-strategy-usecase1.png
+.. figure:: img/designpatterns-strategy-usecase2.png
+.. figure:: img/designpatterns-strategy-vs-state.png
 
 .. literalinclude:: ../_src/designpatterns-strategy.py
     :language: python

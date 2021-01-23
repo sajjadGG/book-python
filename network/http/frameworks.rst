@@ -151,13 +151,11 @@ Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intenti
 Simple usage of Flask:
 
 .. literalinclude:: src/http-flask-simple.py
-    :name: listing-http-flask-simple
     :language: python
 
 Flask using templates and data from user:
 
 .. literalinclude:: src/http-flask-template.py
-    :name: listing-http-flask-template
     :language: python
 
 

@@ -17,12 +17,12 @@ Use Cases
 
 Design
 ------
-.. figure:: ../_img/designpatterns-memento-gof.png
+.. figure:: img/designpatterns-memento-gof.png
 
 
 Implementation
 --------------
-.. figure:: ../_img/designpatterns-memento-usecase.png
+.. figure:: img/designpatterns-memento-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-memento.py
     :language: python

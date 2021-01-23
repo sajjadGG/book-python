@@ -5,7 +5,6 @@ About
 .. toctree::
     :maxdepth: 1
     :caption: About
-    :name: Pandas About
 
     about/pandas.rst
     about/types.rst
@@ -15,7 +14,6 @@ Import & Export
 .. toctree::
     :maxdepth: 1
     :caption: Import & Export
-    :name: Pandas Import & Export
 
     import-export/read.rst
     import-export/to.rst
@@ -25,7 +23,6 @@ Series
 .. toctree::
     :maxdepth: 1
     :caption: Series
-    :name: Pandas Series
 
     series/create.rst
     series/attributes.rst
@@ -45,7 +42,6 @@ DataFrame
 .. toctree::
     :maxdepth: 1
     :caption: DataFrame
-    :name: Pandas DataFrame
 
     dataframe/create.rst
     dataframe/attributes.rst
@@ -73,7 +69,6 @@ Date
 .. toctree::
     :maxdepth: 1
     :caption: Date
-    :name: Pandas Date
 
     date/types.rst
     date/timezone.rst
@@ -86,7 +81,6 @@ Recap
 .. toctree::
     :maxdepth: 1
     :caption: Recap
-    :name: Pandas Recap
 
     about/methodchaining.rst
     about/setoption.rst
@@ -97,6 +91,6 @@ Case Studies
 .. toctree::
     :maxdepth: 1
     :caption: Case Studies
-    :name: Pandas Case Studies
 
     case-studies/covid19.rst
+    case-studies/espn.rst

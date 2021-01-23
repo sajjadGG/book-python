@@ -71,7 +71,7 @@ SyntaxError: invalid syntax
 Traceback (most recent call last):
 SyntaxError: cannot use assignment expressions with subscript
 
-.. figure:: ../_img/unpacking-assignmentexpr-bdfl.png
+.. figure:: img/unpacking-assignmentexpr-bdfl.png
 
     Guido van Rossum stepped down after accepting :pep:`572` -- Assignment Expressions
 

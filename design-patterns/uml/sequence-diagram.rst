@@ -31,7 +31,7 @@ Conversation
         Bob ->> Alice: Great!
     ```
 
-.. figure:: ../_img/uml-mermaid-sequencediagram-alicebob.png
+.. figure:: img/uml-mermaid-sequencediagram-alicebob.png
 
 
 Nested
@@ -53,10 +53,10 @@ Nested
         deactivate Client
     ```
 
-.. figure:: ../_img/uml-mermaid-sequencediagram-web.png
+.. figure:: img/uml-mermaid-sequencediagram-web.png
 
 
 Use Cases
 ---------
-.. figure:: ../_img/uml-sequencediagram-1.png
-.. figure:: ../_img/uml-sequencediagram-2.jpg
+.. figure:: img/uml-sequencediagram-1.png
+.. figure:: img/uml-sequencediagram-2.jpg

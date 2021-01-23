@@ -838,7 +838,5 @@ References
 * https://www.youtube.com/watch?v=Xbl7XjFYsN4
 
 .. [AsyncioTask] https://docs.python.org/3/library/asyncio-task.html
-
 .. [cheat] https://cheat.readthedocs.io/en/latest/python/asyncio.html
-
 .. [pydocmultithreading] https://docs.python.org/3/library/asyncio-dev.html#concurrency-and-multithreading

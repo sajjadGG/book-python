@@ -57,7 +57,7 @@ W Ubuntu może nie być ``pip`` wtedy trzeba uruchomić ``sudo apt update; sudo 
 
 Install on Windows
 ==================
-.. figure:: _img/python-install-1c.png
+.. figure:: about/img/python-install-1c.png
 
     Podczas instalacji Python zaznacz opcję (1) "Add Python to ``PATH``" a następnie kontynuuj instalację z zalecanymi opcjami (2).
 

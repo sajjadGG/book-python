@@ -6,7 +6,6 @@ RESTful Views
 =============
 .. literalinclude:: src/django-rest-views.py
     :language: python
-    :name: listing-django-rest-views
 
 .. code-block:: python
 

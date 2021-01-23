@@ -163,4 +163,3 @@ Appendixes
     appendix/workshop/testing.rst
     appendix/workshop/scientific.rst
     appendix/workshop/machine-learning.rst
-    _references/references.rst

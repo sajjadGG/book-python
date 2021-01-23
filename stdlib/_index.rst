@@ -5,11 +5,10 @@ About
 .. toctree::
     :maxdepth: 1
     :caption: About
-    :name: Stdlib About
 
     about/setup.rst
     about/agenda.rst
-    about/entry-test.rst
+    about/entrytest.rst
 
 
 Datetime and Timezones
@@ -17,7 +16,6 @@ Datetime and Timezones
 .. toctree::
     :maxdepth: 1
     :caption: Datetime and Timezones
-    :name: Stdlib Datetime and Timezones
 
     datetime/datetime.rst
     datetime/parse-and-format.rst
@@ -32,7 +30,6 @@ Serialization
 .. toctree::
     :maxdepth: 1
     :caption: Serialization
-    :name: Stdlib Serialization
 
     serialization/csv.rst
     serialization/json.rst
@@ -45,7 +42,6 @@ Database
 .. toctree::
     :maxdepth: 1
     :caption: Database
-    :name: Stdlib Database
 
     database/db-api.rst
     database/sqlite.rst
@@ -64,7 +60,6 @@ Regular Expressions
 .. toctree::
     :maxdepth: 1
     :caption: Regular Expressions
-    :name: Stdlib Regular Expressions
 
     regular-expressions/syntax.rst
     regular-expressions/match.rst
@@ -78,7 +73,7 @@ Regular Expressions
     regular-expressions/split.rst
     regular-expressions/greedy.rst
     regular-expressions/standards.rst
-    regular-expressions/references/index.rst
+    regular-expressions/references.rst
 
 
 Modules and Packages
@@ -86,7 +81,6 @@ Modules and Packages
 .. toctree::
     :maxdepth: 1
     :caption: Modules and Packages
-    :name: Stdlib Modules and Packages
 
     modules/venv.rst
     modules/install.rst
@@ -101,7 +95,6 @@ Builtins
 .. toctree::
     :maxdepth: 1
     :caption: Builtins
-    :name: Stdlib Builtins
 
     builtin/function.rst
     builtin/keyword.rst
@@ -114,7 +107,6 @@ Locale
 .. toctree::
     :maxdepth: 1
     :caption: Locale
-    :name: Stdlib Locale
 
     locale/about.rst
     locale/i18n.rst
@@ -126,7 +118,6 @@ Looping
 .. toctree::
     :maxdepth: 1
     :caption: Builtins
-    :name: Stdlib Looping
 
     looping/comprehensions.rst
     looping/else.rst
@@ -137,7 +128,6 @@ Type Annotations
 .. toctree::
     :maxdepth: 1
     :caption: Type Annotations
-    :name: Stdlib Type Annotations
 
     type-annotation/about.rst
     type-annotation/vars.rst
@@ -157,7 +147,6 @@ Object Oriented Programming
 .. toctree::
     :maxdepth: 1
     :caption: Object Oriented Programming
-    :name: Stdlib Object Oriented Programming
 
     oop/enum.rst
     oop/dataclass.rst
@@ -168,7 +157,6 @@ Mathematics
 .. toctree::
     :maxdepth: 1
     :caption: Mathematics
-    :name: Stdlib Mathematics
 
     math/math.rst
     math/statistics.rst
@@ -184,7 +172,6 @@ Operating System
 .. toctree::
     :maxdepth: 1
     :caption: Operating System
-    :name: Stdlib Operating System
 
     operating-system/tempfile.rst
     operating-system/about.rst
@@ -198,16 +185,12 @@ GUI
 .. toctree::
     :maxdepth: 1
     :caption: GUI
-    :name: Stdlib GUI
 
     gui/tkinter.rst
 
 
 References
 **********
-
-Bibliography
-============
-.. bibliography:: _references/bibliography.bib
+.. bibliography:: references.bib
     :labelprefix: Stdlib
     :cited:

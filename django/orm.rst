@@ -162,5 +162,4 @@ Aggregations
 
 .. literalinclude:: src/django-orm-cheatsheet.py
     :language: python
-    :name: listing-django-orm-cheatsheet
 

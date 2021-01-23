@@ -29,7 +29,7 @@ Problem
 
 Design
 ------
-.. figure:: ../_img/designpatterns-flyweight-gof.png
+.. figure:: img/designpatterns-flyweight-gof.png
 
 
 Implementation
@@ -39,7 +39,7 @@ Implementation
 * It will reuse icon for each type
 * So it will prevent from storing duplicated data in memory
 
-.. figure:: ../_img/designpatterns-flyweight-usecase.png
+.. figure:: img/designpatterns-flyweight-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-flyweight-impl.py
     :language: python

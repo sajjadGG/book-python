@@ -21,7 +21,7 @@ Attributes
     }
     ```
 
-.. figure:: ../_img/uml-classdiagram-attributes.png
+.. figure:: img/uml-classdiagram-attributes.png
 
 Methods Without Parameters
 --------------------------
@@ -41,7 +41,7 @@ Methods Without Parameters
     }
     ```
 
-.. figure:: ../_img/uml-classdiagram-method-noparams.png
+.. figure:: img/uml-classdiagram-method-noparams.png
 
 Methods With Parameters
 -----------------------
@@ -61,7 +61,7 @@ Methods With Parameters
     }
     ```
 
-.. figure:: ../_img/uml-classdiagram-method-params.png
+.. figure:: img/uml-classdiagram-method-params.png
 
 Method Return Type
 ------------------
@@ -81,7 +81,7 @@ Method Return Type
     }
     ```
 
-.. figure:: ../_img/uml-classdiagram-method-return.png
+.. figure:: img/uml-classdiagram-method-return.png
 
 Abstract Methods
 ----------------
@@ -104,7 +104,7 @@ Abstract Methods
     }
     ```
 
-.. figure:: ../_img/uml-classdiagram-method-abstract.png
+.. figure:: img/uml-classdiagram-method-abstract.png
 
 Static Methods
 --------------
@@ -125,7 +125,7 @@ Static Methods
     }
     ```
 
-.. figure:: ../_img/uml-classdiagram-method-static.png
+.. figure:: img/uml-classdiagram-method-static.png
 
 Types
 -----
@@ -151,7 +151,7 @@ Types
     }
     ```
 
-.. figure:: ../_img/uml-classdiagram-types.png
+.. figure:: img/uml-classdiagram-types.png
 
 
 Access Modifiers
@@ -184,7 +184,7 @@ Access Modifiers - Public
         +say_hello() str
     }
     ```
-.. figure:: ../_img/uml-classdiagram-accessmodifiers-public.png
+.. figure:: img/uml-classdiagram-accessmodifiers-public.png
 
 Access Modifiers - Protected
 ----------------------------
@@ -208,7 +208,7 @@ Access Modifiers - Protected
         #say_hello() str
     }
     ```
-.. figure:: ../_img/uml-classdiagram-accessmodifiers-protected.png
+.. figure:: img/uml-classdiagram-accessmodifiers-protected.png
 
 Access Modifiers - Private
 --------------------------
@@ -233,7 +233,7 @@ Access Modifiers - Private
     }
     ```
 
-.. figure:: ../_img/uml-classdiagram-accessmodifiers-private.png
+.. figure:: img/uml-classdiagram-accessmodifiers-private.png
 
 
 Cardinality
@@ -249,20 +249,20 @@ Cardinality
 
 Boxes and Arrows
 ----------------
-.. figure:: ../_img/uml-classdiagram-usecase-01.jpg
+.. figure:: img/uml-classdiagram-usecase-01.jpg
 
 
 Use Cases
 ---------
-.. figure:: ../_img/uml-classdiagram-usecase-02.png
-.. figure:: ../_img/uml-classdiagram-usecase-03.png
-.. figure:: ../_img/uml-classdiagram-usecase-04.png
-.. figure:: ../_img/uml-classdiagram-usecase-05.png
-.. figure:: ../_img/uml-classdiagram-usecase-06.png
-.. figure:: ../_img/uml-classdiagram-usecase-07.png
-.. figure:: ../_img/uml-classdiagram-usecase-08.jpg
-.. figure:: ../_img/uml-classdiagram-usecase-09.jpg
-.. figure:: ../_img/uml-classdiagram-usecase-10.png
+.. figure:: img/uml-classdiagram-usecase-02.png
+.. figure:: img/uml-classdiagram-usecase-03.png
+.. figure:: img/uml-classdiagram-usecase-04.png
+.. figure:: img/uml-classdiagram-usecase-05.png
+.. figure:: img/uml-classdiagram-usecase-06.png
+.. figure:: img/uml-classdiagram-usecase-07.png
+.. figure:: img/uml-classdiagram-usecase-08.jpg
+.. figure:: img/uml-classdiagram-usecase-09.jpg
+.. figure:: img/uml-classdiagram-usecase-10.png
 
 
 Django
@@ -270,5 +270,5 @@ Django
 * GraphViz + Dot
 * Django Extensions: https://django-extensions.readthedocs.io/en/latest/graph_models.html
 
-.. figure:: ../_img/uml-django.png
-.. figure:: ../_img/uml-django-models.png
+.. figure:: img/uml-django.png
+.. figure:: img/uml-django-models.png

@@ -268,7 +268,6 @@ Requests OAuth
     $ pip install requests_oauthlib
 
 .. literalinclude:: src/requests-oauthlib.py
-    :name: listing-requests-oauthlib
     :language: python
 
 

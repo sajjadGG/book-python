@@ -33,7 +33,7 @@ Design
 
 Implementation
 --------------
-.. figure:: ../_img/designpatterns-facade-usecase.png
+.. figure:: img/designpatterns-facade-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-facade-impl.py
     :language: python

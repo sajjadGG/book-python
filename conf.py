@@ -23,12 +23,10 @@ html_static_path = [
 ]
 
 bibtex_bibfiles = [
-    '_references/bibliography.bib',
-    '_references/images.bib',
-    '_references/video.bib',
-    'numpy/_references/bibliography.bib',
-    'stdlib/_references/bibliography.bib',
-    'stdlib/regular-expressions/references/bibliography.bib']
+    'network/references.bib',
+    'numpy/references.bib',
+    'stdlib/references.bib',
+    'stdlib/regular-expressions/references.bib']
 
 # -- Standard book config -----------------------------------------------------
 import os
@@ -59,7 +57,7 @@ suppress_warnings = [
     # 'toc.circular',
     'toc.secnum',
     # 'epub.unknown_project_files',
-    'autosectionlabel.*',
+    # 'autosectionlabel.*',
 ]
 
 sys.path.insert(0, os.path.abspath('_extensions'))
@@ -204,6 +202,7 @@ exclude_patterns = [
     'TODO.rst',
     'Thumbs.db',
     '.DS_Store',
+    '*/index.rst',
 ]
 
 html_show_sphinx = False

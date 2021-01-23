@@ -57,15 +57,15 @@ Problem
 
 Design
 ------
-.. figure:: ../_img/designpatterns-templatemethod-gof.png
-.. figure:: ../_img/designpatterns-templatemethod-gof-hooks.png
+.. figure:: img/designpatterns-templatemethod-gof.png
+.. figure:: img/designpatterns-templatemethod-gof-hooks.png
 
 
 Implementation
 --------------
-.. figure:: ../_img/designpatterns-templatemethod-usecase.png
-.. figure:: ../_img/designpatterns-templatemethod-vs-inheritance.png
-.. figure:: ../_img/designpatterns-templatemethod-vs-strategy.png
+.. figure:: img/designpatterns-templatemethod-usecase.png
+.. figure:: img/designpatterns-templatemethod-vs-inheritance.png
+.. figure:: img/designpatterns-templatemethod-vs-strategy.png
 
 .. literalinclude:: ../_src/designpatterns-templatemethod.py
     :language: python

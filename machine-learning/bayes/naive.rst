@@ -180,7 +180,6 @@ Spam Classifier
 #. Zakwalifikuj wiadomości poniżej:
 
 .. list-table:: Lista treści wiadomości email do klasyfikacji
-    :name: Spam Classifier
     :header-rows: 1
 
     * - Treść wiadomości

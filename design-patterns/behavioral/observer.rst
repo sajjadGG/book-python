@@ -19,14 +19,14 @@ Use Cases
 
 Design
 ------
-.. figure:: ../_img/designpatterns-observer-gof.png
-.. figure:: ../_img/designpatterns-observer-push.png
-.. figure:: ../_img/designpatterns-observer-pull.png
+.. figure:: img/designpatterns-observer-gof.png
+.. figure:: img/designpatterns-observer-push.png
+.. figure:: img/designpatterns-observer-pull.png
 
 
 Implementation
 --------------
-.. figure:: ../_img/designpatterns-observer-usecase.png
+.. figure:: img/designpatterns-observer-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-observer.py
     :language: python

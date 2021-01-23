@@ -13,7 +13,6 @@ The straight line can be seen in the plot, showing how linear regression attempt
 The coefficients, the residual sum of squares and the variance score are also calculated.
 
 .. figure:: img/linear-regression.png
-    :name: Linear Regression
 
     The straight line can be seen in the plot, showing how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
 

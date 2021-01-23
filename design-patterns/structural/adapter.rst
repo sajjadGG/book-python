@@ -39,7 +39,7 @@ Implementation
 * Composition is more flexible
 * Favor Composition over Inheritance
 
-.. figure:: ../_img/designpatterns-adapter-usecase.png
+.. figure:: img/designpatterns-adapter-usecase.png
 
     Please mind, that on Picture there is a ``Caramel`` filter but in code ``BlackAndWhite3rdPartyFilter``
 

@@ -9,7 +9,7 @@ About
 
     about/setup.rst
     about/entrytest.rst
-    about/classification.rst
+    about/introduction.rst
 
 
 Annotation
@@ -63,16 +63,18 @@ Idioms
     :maxdepth: 1
     :caption: Idioms
 
-    idioms/comprehensions.rst
-    idioms/assignment-expression.rst
-    idioms/range.rst
-    idioms/enumerate.rst
-    idioms/zip.rst
-    idioms/map.rst
-    idioms/filter.rst
-    idioms/reduce.rst
-    idioms/generator.rst
-    idioms/patterns.rst
+    idiom/comprehensions.rst
+    idiom/assignment-expression.rst
+    idiom/range.rst
+    idiom/enumerate.rst
+    idiom/zip.rst
+    idiom/map.rst
+    idiom/filter.rst
+    idiom/reduce.rst
+    idiom/all.rst
+    idiom/any.rst
+    idiom/generator.rst
+    idiom/patterns.rst
 
 
 Protocols
@@ -81,13 +83,13 @@ Protocols
     :maxdepth: 1
     :caption: Idioms
 
-    protocols/iterator.rst
-    protocols/context-manager.rst
-    protocols/staticmethod.rst
-    protocols/classmethod.rst
-    protocols/property.rst
-    protocols/reflection.rst
-    protocols/descriptor.rst
+    protocol/iterator.rst
+    protocol/context-manager.rst
+    protocol/staticmethod.rst
+    protocol/classmethod.rst
+    protocol/property.rst
+    protocol/reflection.rst
+    protocol/descriptor.rst
 
 
 Decorators
@@ -96,14 +98,14 @@ Decorators
     :maxdepth: 1
     :caption: Decorators
 
-    decorators/about.rst
-    decorators/function-decorator-functions.rst
-    decorators/function-decorator-classes.rst
-    decorators/function-decorator-methods.rst
-    decorators/class-decorator-functions.rst
-    decorators/decorator-arguments.rst
-    decorators/functools.rst
-    decorators/recap.rst
+    decorator/about.rst
+    decorator/function-decorator-functions.rst
+    decorator/function-decorator-classes.rst
+    decorator/function-decorator-methods.rst
+    decorator/class-decorator-functions.rst
+    decorator/decorator-arguments.rst
+    decorator/functools.rst
+    decorator/recap.rst
 
 
 Behavioral
@@ -151,9 +153,9 @@ Creational
     creational/singleton.rst
     creational/borg.rst
     creational/factory-method.rst
-    #creational/abstract-factory.rst
-    #creational/builder.rst
-    #creational/prototype.rst
+    creational/abstract-factory.rst
+    creational/builder.rst
+    creational/prototype.rst
 
 
 Practices
@@ -162,9 +164,9 @@ Practices
     :maxdepth: 1
     :caption: Practices
 
-    #practices/kiss.rst
-    #practices/yagni.rst
-    #practices/efap.rst
+    practices/kiss.rst
+    practices/yagni.rst
+    practices/efap.rst
 
 
 Paradigms
@@ -174,5 +176,5 @@ Paradigms
     :caption: Paradigms
 
     paradigm/callback.rst
-    #paradigm/functional-programming.rst
-    #paradigm/event-programming.rst
+    paradigm/functional-programming.rst
+    paradigm/event-programming.rst

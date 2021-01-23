@@ -29,7 +29,7 @@ In computer networking, unicast refers to a one-to-one transmission from one poi
 
 .. figure:: img/routing-unicast.png
 
-    Unicast routing delivery scheme :cite:`RoutingUnicast`
+    Unicast routing delivery scheme :cite:`ImageRoutingUnicast`
 
 
 Broadcast
@@ -40,7 +40,7 @@ All-to-all communication is a computer communication method in which each sender
 
 .. figure:: img/routing-broadcast.png
 
-    Broadcast routing delivery scheme :cite:`RoutingBroadcast`
+    Broadcast routing delivery scheme :cite:`ImageRoutingBroadcast`
 
 .. code-block:: python
 
@@ -71,7 +71,7 @@ Multicast is often employed in Internet Protocol (IP) applications of streaming 
 
 .. figure:: img/routing-multicast.png
 
-    Multicast routing delivery scheme :cite:`RoutingMulticast`
+    Multicast routing delivery scheme :cite:`ImageRoutingMulticast`
 
 Receive multicast package:
 
@@ -115,7 +115,7 @@ Anycast is a network addressing and routing methodology in which a single destin
 
 .. figure:: img/routing-anycast.png
 
-    Anycast routing delivery scheme :cite:`RoutingAnycast`
+    Anycast routing delivery scheme :cite:`ImageRoutingAnycast`
 
 
 Geocast
@@ -124,4 +124,4 @@ Geocast refers to the delivery of information to a group of destinations in a ne
 
 .. figure:: img/routing-geocast.png
 
-    Geocast routing delivery scheme :cite:`RoutingGeocast`
+    Geocast routing delivery scheme :cite:`ImageRoutingGeocast`

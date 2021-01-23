@@ -6,7 +6,6 @@ About
 .. toctree::
     :maxdepth: 1
     :caption: About
-    :name: Basics About
 
     about/setup.rst
     about/agenda.rst
@@ -21,7 +20,6 @@ Types
 .. toctree::
     :maxdepth: 1
     :caption: Types
-    :name: Basic Types
 
     type/int.rst
     type/float.rst
@@ -37,7 +35,6 @@ Sequences
 .. toctree::
     :maxdepth: 1
     :caption: Sequences
-    :name: Basic Sequences
 
     sequence/list.rst
     sequence/tuple.rst
@@ -55,7 +52,6 @@ Mappings
 .. toctree::
     :maxdepth: 1
     :caption: Mappings
-    :name: Basic Mappings
 
     mapping/dict.rst
     mapping/generate.rst
@@ -68,7 +64,6 @@ Control Flow
 .. toctree::
     :maxdepth: 1
     :caption: Control Flow
-    :name: Basic Control Flow
 
     control-flow/operators.rst
     control-flow/membership.rst
@@ -82,7 +77,6 @@ Loops
 .. toctree::
     :maxdepth: 1
     :caption: Loops
-    :name: Basic Loops
 
     loop/while.rst
     loop/for.rst
@@ -97,7 +91,6 @@ Files
 .. toctree::
     :maxdepth: 1
     :caption: Files
-    :name: Basic Files
 
     files/path.rst
     files/modes.rst
@@ -113,7 +106,6 @@ Functions
 .. toctree::
     :maxdepth: 1
     :caption: Functions
-    :name: Basic Functions
 
     function/definition.rst
     function/return.rst
@@ -132,7 +124,6 @@ Object Oriented Programming
 .. toctree::
     :maxdepth: 1
     :caption: Object Oriented Programming
-    :name: Basic Object Oriented Programming
 
     oop/class.rst
     oop/method.rst
@@ -150,7 +141,6 @@ Recap
 .. toctree::
     :maxdepth: 1
     :caption: Recap
-    :name: Basic Recap
 
     about/good-practices.rst
     ../about/further-reading.rst

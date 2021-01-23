@@ -34,7 +34,7 @@ Problem
             SonyAdvancedRemoteControl
             SamsungAdvancedRemoteControl
 
-.. figure:: ../_img/designpatterns-bridge-problem.png
+.. figure:: img/designpatterns-bridge-problem.png
 
 .. literalinclude:: ../_src/designpatterns-bridge-problem.py
     :language: python
@@ -49,8 +49,8 @@ Implementation
 * Hierarchy grows in two different directions
 * We can split complex hierarchy into two hierarchies which grows independently
 
-.. figure:: ../_img/designpatterns-bridge-usecase1.png
-.. figure:: ../_img/designpatterns-bridge-usecase2.png
+.. figure:: img/designpatterns-bridge-usecase1.png
+.. figure:: img/designpatterns-bridge-usecase2.png
 
 .. literalinclude:: ../_src/designpatterns-bridge-impl.py
     :language: python

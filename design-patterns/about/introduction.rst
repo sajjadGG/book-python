@@ -8,7 +8,7 @@ Rationale
 * Behavioral - Communication and interaction between objects
 * Creational - Creating new objects
 
-.. figure:: ../_img/designpatterns-categories.png
+.. figure:: img/about-designpatterns-categories.png
 
 
 Behavioral Design Patterns
@@ -71,8 +71,8 @@ Paradigm
 
 Abusing Patterns
 ----------------
-.. figure:: ../_img/java-problem-factory.jpg
-.. figure:: ../_img/goodpractices-programmer-exp.png
+.. figure:: img/about-introduction-javaproblemfactory.jpg
+.. figure:: img/about-goodpractices-programmer-exp.png
 
 
 Further Reading

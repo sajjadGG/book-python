@@ -26,7 +26,7 @@ Design
 
 Implementation
 --------------
-.. figure:: ../_img/designpatterns-iterator-usecase.png
+.. figure:: img/designpatterns-iterator-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-iterator-impl.py
     :language: python

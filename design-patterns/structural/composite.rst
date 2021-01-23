@@ -63,12 +63,12 @@ Problem
 
 Design
 ------
-.. figure:: ../_img/designpatterns-composite-gof.png
+.. figure:: img/designpatterns-composite-gof.png
 
 
 Implementation
 --------------
-.. figure:: ../_img/designpatterns-composite-usecase.png
+.. figure:: img/designpatterns-composite-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-composite.py
     :language: python

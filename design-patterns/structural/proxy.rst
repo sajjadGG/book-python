@@ -15,7 +15,7 @@ Use Cases
 * Agent takes message and forwards to remote object
 * Proxy can log, authenticate or cache messages
 
-.. figure:: ../_img/designpatterns-proxy-about.png
+.. figure:: img/designpatterns-proxy-about.png
 
 
 Problem
@@ -29,7 +29,7 @@ Problem
 
 Design
 ------
-.. figure:: ../_img/designpatterns-proxy-gof.png
+.. figure:: img/designpatterns-proxy-gof.png
 
 
 Implementation
@@ -37,7 +37,7 @@ Implementation
 * Lazy evaluation
 * Open/Close Principle
 
-.. figure:: ../_img/designpatterns-proxy-usecase.png
+.. figure:: img/designpatterns-proxy-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-proxy-impl-1.py
     :language: python

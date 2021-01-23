@@ -5,7 +5,6 @@ Introduction
 .. toctree::
     :maxdepth: 1
     :caption: Introduction
-    :name: Data Science Introduction
 
     introduction/description.rst
     introduction/program.rst
@@ -18,7 +17,6 @@ Jupyter
 .. toctree::
     :maxdepth: 1
     :caption: Jupyter
-    :name: Data Science Jupyter
 
     jupyter/index.rst
 
@@ -28,7 +26,6 @@ Python
 .. toctree::
     :maxdepth: 1
     :caption: Introduction
-    :name: Data Science Python
 
     python/index.rst
     python/syntax.rst
@@ -51,7 +48,6 @@ Data Visualization
 .. toctree::
     :maxdepth: 1
     :caption: Data Visualization
-    :name: Data Science Visualization
 
     visualization/plotly.rst
     visualization/bokeh.rst
@@ -64,6 +60,5 @@ Scipy
 .. toctree::
     :maxdepth: 1
     :caption: Scipy
-    :name: Data Science Scipy
 
     scipy/index.rst

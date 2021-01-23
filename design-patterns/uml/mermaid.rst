@@ -32,7 +32,7 @@ Class Diagram
         }
     ```
 
-.. figure:: ../_img/uml-mermaid-classdiagram.png
+.. figure:: img/uml-mermaid-classdiagram.png
 
 Sequence Diagram
 ----------------
@@ -53,7 +53,7 @@ Sequence Diagram
         deactivate Client
     ```
 
-.. figure:: ../_img/uml-mermaid-sequencediagram-web.png
+.. figure:: img/uml-mermaid-sequencediagram-web.png
 
 
 Flowchart
@@ -78,7 +78,7 @@ Flowchart
         end
     ```
 
-.. figure:: ../_img/uml-mermaid-flowchart.png
+.. figure:: img/uml-mermaid-flowchart.png
 
 
 ERD
@@ -99,7 +99,7 @@ ERD
         PRODUCT ||--o{ ORDER-ITEM : "ordered in"
     ```
 
-.. figure:: ../_img/uml-mermaid-erd.png
+.. figure:: img/uml-mermaid-erd.png
 
 
 State Diagram
@@ -130,7 +130,7 @@ State Diagram
             SomethingElse2 --> [*]
     ```
 
-.. figure:: ../_img/uml-mermaid-statediagram.png
+.. figure:: img/uml-mermaid-statediagram.png
 
 
 Gantt
@@ -151,7 +151,7 @@ Gantt
         Testing             :crit, 20d
     ```
 
-.. figure:: ../_img/uml-mermaid-gantt.png
+.. figure:: img/uml-mermaid-gantt.png
 
 
 Theming

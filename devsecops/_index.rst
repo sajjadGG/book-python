@@ -6,7 +6,6 @@ Good Engineering Practices
 .. toctree::
     :maxdepth: 1
     :caption: Good Engineering Practices
-    :name: DevSecOps Good Engineering Practices
 
     good-engineering-practice/pep8.rst
     good-engineering-practice/pep20.rst
@@ -19,7 +18,6 @@ Tests
 .. toctree::
     :maxdepth: 1
     :caption: Tests
-    :name: DevSecOps Tests
 
     tests/unittest.rst
     tests/pytest.rst

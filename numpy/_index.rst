@@ -5,7 +5,6 @@ About
 .. toctree::
     :maxdepth: 1
     :caption: About
-    :name: Numpy About
 
     about.rst
     precision.rst
@@ -17,7 +16,6 @@ Array
 .. toctree::
     :maxdepth: 1
     :caption: Array
-    :name: Numpy Array
 
     array-create.rst
     array-dtype.rst
@@ -39,7 +37,6 @@ Select
 .. toctree::
     :maxdepth: 1
     :caption: Select
-    :name: Numpy Select
 
     array-iteration.rst
     array-arithmetic.rst
@@ -55,7 +52,6 @@ Import & Export
 .. toctree::
     :maxdepth: 1
     :caption: Import & Export
-    :name: Numpy Import & Export
 
     array-serialize.rst
     import-export.rst
@@ -66,10 +62,16 @@ Math
 .. toctree::
     :maxdepth: 1
     :caption: Math
-    :name: Numpy Math
 
     statistics.rst
     trigonometry.rst
     polynomial.rst
     algebra.rst
     performance.rst
+
+
+References
+**********
+.. bibliography:: references.bib
+    :labelprefix: Numpy
+    :cited:

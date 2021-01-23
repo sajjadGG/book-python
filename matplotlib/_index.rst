@@ -5,7 +5,6 @@ About
 .. toctree::
     :maxdepth: 1
     :caption: Matplotlib
-    :name: Matplotlib About
 
     about.rst
 
@@ -15,7 +14,6 @@ Figure
 .. toctree::
     :maxdepth: 1
     :caption: Matplotlib
-    :name: Matplotlib Figure
 
     plots.rst
     subplots.rst
@@ -31,7 +29,6 @@ Style
 .. toctree::
     :maxdepth: 1
     :caption: Matplotlib
-    :name: Matplotlib Style
 
     style-intro.rst
     style-basic.rst
@@ -42,7 +39,6 @@ Chart
 .. toctree::
     :maxdepth: 1
     :caption: Matplotlib
-    :name: Matplotlib Chart
 
     chart-plot.rst
     chart-scatter.rst
@@ -59,7 +55,6 @@ Advanced
 .. toctree::
     :maxdepth: 1
     :caption: Matplotlib
-    :name: Matplotlib Advanced
 
     style-advanced.rst
     customization.rst
@@ -72,7 +67,6 @@ Recap
 .. toctree::
     :maxdepth: 1
     :caption: Matplotlib
-    :name: Matplotlib Recap
 
     example.rst
     lifecycle.rst

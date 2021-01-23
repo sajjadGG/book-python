@@ -14,8 +14,8 @@ Rationale
 * ``..|>`` - Realization
 * ``..`` - Link (Dashed)
 
-.. figure:: ../_img/uml-mermaid-classdiagram-relations.png
-.. figure:: ../_img/uml-relations.png
+.. figure:: img/uml-mermaid-classdiagram-relations.png
+.. figure:: img/uml-relations.png
 
 
 Inheritance
@@ -55,7 +55,7 @@ Simple Inheritance:
             }
         ```
 
-    .. figure:: ../_img/uml-relations-inheritance-simple.png
+    .. figure:: img/uml-relations-inheritance-simple.png
 
 Multilevel Inheritance:
 
@@ -105,7 +105,7 @@ Multilevel Inheritance:
             }
         ```
 
-    .. figure:: ../_img/uml-relations-inheritance-multilevel.png
+    .. figure:: img/uml-relations-inheritance-multilevel.png
 
 
 Composition
@@ -158,7 +158,7 @@ Composition
         }
     ```
 
-.. figure:: ../_img/uml-relations-composition.png
+.. figure:: img/uml-relations-composition.png
 
 
 Aggregation
@@ -193,7 +193,7 @@ Aggregation
         }
     ```
 
-.. figure:: ../_img/uml-relations-aggregation.png
+.. figure:: img/uml-relations-aggregation.png
 
 
 Dependency
@@ -230,4 +230,4 @@ Dependency
         }
     ```
 
-.. figure:: ../_img/uml-relations-dependency.png
+.. figure:: img/uml-relations-dependency.png

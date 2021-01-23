@@ -5,7 +5,6 @@ About
 .. toctree::
     :maxdepth: 1
     :caption: About
-    :name: Advanced About
 
     about/setup.rst
     about/entrytest.rst
@@ -17,7 +16,6 @@ Annotation
 .. toctree::
     :maxdepth: 1
     :caption: Annotation
-    :name: Advanced Annotation
 
     annotation/type.rst
     annotation/sequence.rst
@@ -31,7 +29,6 @@ Unpacking
 .. toctree::
     :maxdepth: 1
     :caption: Unpacking
-    :name: Advanced Unpacking
 
     unpacking/assignment.rst
     unpacking/parameters.rst
@@ -44,7 +41,6 @@ Functions
 .. toctree::
     :maxdepth: 1
     :caption: Functions
-    :name: Advanced Functions
 
     function/parameter-syntax.rst
     function/generator.rst
@@ -59,18 +55,15 @@ Decorators
 .. toctree::
     :maxdepth: 1
     :caption: Decorators
-    :name: Advanced Decorators
 
-    decorators/about.rst
-    decorators/function-decorator-functions.rst
-    decorators/function-decorator-classes.rst
-    decorators/function-decorator-methods.rst
-    decorators/class-decorator-functions.rst
-    decorators/class-decorator-classes.rst
-    decorators/class-decorator-methods.rst
-    decorators/decorator-arguments.rst
-    decorators/functools.rst
-    decorators/recap.rst
+    decorator/about.rst
+    decorator/function-decorator-functions.rst
+    decorator/function-decorator-classes.rst
+    decorator/function-decorator-methods.rst
+    decorator/class-decorator-functions.rst
+    decorator/decorator-arguments.rst
+    decorator/functools.rst
+    decorator/recap.rst
 
 
 Object Oriented Programming
@@ -78,7 +71,6 @@ Object Oriented Programming
 .. toctree::
     :maxdepth: 1
     :caption: Object Oriented Programming
-    :name: Advanced Object Oriented Programming
 
     oop/principles.rst
     oop/mutability.rst
@@ -100,15 +92,14 @@ Protocols
 .. toctree::
     :maxdepth: 1
     :caption: Protocols
-    :name: Advanced Protocols
 
-    protocols/iterator.rst
-    protocols/context-manager.rst
-    protocols/staticmethod.rst
-    protocols/classmethod.rst
-    protocols/property.rst
-    protocols/reflection.rst
-    protocols/descriptor.rst
+    protocol/iterator.rst
+    protocol/context-manager.rst
+    protocol/staticmethod.rst
+    protocol/classmethod.rst
+    protocol/property.rst
+    protocol/reflection.rst
+    protocol/descriptor.rst
 
 
 Performance
@@ -116,7 +107,6 @@ Performance
 .. toctree::
     :maxdepth: 1
     :caption: Performance
-    :name: Advanced Performance
 
     performance/optimization.rst
     performance/micro-benchmarking.rst
@@ -132,7 +122,6 @@ Concurrency
 .. toctree::
     :maxdepth: 1
     :caption: Concurrency
-    :name: Advanced Concurrency
 
     concurrency/models.rst
     concurrency/queues.rst
@@ -147,7 +136,6 @@ Recap
 .. toctree::
     :maxdepth: 1
     :caption: Recap
-    :name: Advanced Recap
 
     ../about/further-reading.rst
     about/recap.rst

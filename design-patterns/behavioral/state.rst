@@ -59,12 +59,12 @@ Problem
 
 Design
 ------
-.. figure:: ../_img/designpatterns-state-gof.png
+.. figure:: img/designpatterns-state-gof.png
 
 
 Implementation
 --------------
-.. figure:: ../_img/designpatterns-state-usecase.png
+.. figure:: img/designpatterns-state-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-state.py
     :language: python
