@@ -1,9 +1,9 @@
 Database SQLite
-***************
+===============
 
 
 Installation
-============
+------------
 #. To check if Sqlite3 is already installed run in Console/Terminal/CMD:
 
     .. code-block:: console
@@ -24,7 +24,7 @@ Installation
 
 
 SQL Syntax
-==========
+----------
 * More information in `Database SQL`
 
 Data Types
@@ -102,7 +102,7 @@ Constrains
     "``INDEX``", "Used to create and retrieve data from the database very quickly"
 
 DB API v2
-=========
+---------
 .. code-block:: python
 
     sqlite3.connect(...) -> connection
@@ -117,7 +117,7 @@ DB API v2
 
 
 Connection
-==========
+----------
 Connection to in-memory database:
 
 .. code-block:: python
@@ -142,9 +142,7 @@ Connection to database file:
 
 
 Execute
-=======
-Execute:
-
+-------
 .. code-block:: python
 
     import sqlite3
@@ -170,24 +168,19 @@ Execute:
         db.execute(SQL_CREATE_TABLE)
 
 
-Executemany
-===========
-
-``list[tuple]``
----------------
+Executemany ``list[tuple]``
+---------------------------
 .. literalinclude:: src/database-executemany-tuple.py
     :language: python
     :caption: Execute many
 
-``list[dict]``
---------------
+
+Execute many ``list[dict]``
+---------------------------
 .. literalinclude:: src/database-executemany-dict.py
     :language: python
     :caption: Execute many
 
-
-Results
-=======
 
 Fetch as ``list[tuple]``
 ------------------------
@@ -203,20 +196,20 @@ Fetch as ``list[dict]``
 
 
 Cursor
-======
+------
 .. literalinclude:: src/database-cursor.py
     :language: python
     :caption: Results with cursor
 
 
 Use cases
-=========
+---------
 .. literalinclude:: src/database-case-study.py
     :language: python
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: assignments/database_sqlite_logs.py
     :caption: :download:`Solution <assignments/database_sqlite_logs.py>`
     :end-before: # Solution

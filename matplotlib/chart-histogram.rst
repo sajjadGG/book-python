@@ -1,14 +1,14 @@
 Histogram
-*********
+=========
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 * used to display number of elements in specific groups
 
 
 Syntax
-======
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -21,7 +21,7 @@ Syntax
 
 
 Histogram
-=========
+-------------------------------------------------------------------------------
 * ``rwidth`` - width of a bar in percentage
 * ``bins`` are groups (segments)
 
@@ -127,7 +127,7 @@ Histogram chart
 
 
 Examples
-========
+-------------------------------------------------------------------------------
 
 Simple
 ------

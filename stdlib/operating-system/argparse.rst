@@ -1,9 +1,9 @@
 Commandline Arguments
-*********************
+=====================
 
 
 Alternatives
-============
+------------
 * Check ``colorama`` - coloring terminal output
 
 Typer
@@ -105,7 +105,7 @@ docopt
 
 
 ``argparse``
-============
+------------
 * https://docs.python.org/3/library/argparse.html#the-add-argument-method
 * Define how a single command-line argument should be parsed.
 
@@ -215,7 +215,7 @@ File handling
 
 
 Examples
-========
+--------
 .. code-block:: python
 
     import argparse
@@ -255,7 +255,7 @@ Examples
 
 
 ``docopt``
-==========
+----------
 * http://docopt.org/
 * http://try.docopt.org/
 * https://github.com/docopt
@@ -314,7 +314,7 @@ Examples
 
 
 Assignments
-===========
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Argument parsing

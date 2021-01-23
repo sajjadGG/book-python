@@ -1,5 +1,5 @@
 Introspection
-*************
+=============
 
 * Introspection is the ability to determine the type of an object at runtime
 * Everything in Python is an object and we can examine those objects
@@ -7,7 +7,7 @@ Introspection
 
 
 Introspecting Types
-===================
+-------------------------------------------------------------------------------
 
 ``id()``
 --------
@@ -101,7 +101,7 @@ Introspecting Types
 
 
 Introspecting Objects
-=====================
+-------------------------------------------------------------------------------
 
 ``dir()``
 ---------
@@ -220,7 +220,7 @@ an object by running:
 
 
 Introspecting Docstrings
-========================
+-------------------------------------------------------------------------------
 
 ``help()``
 ----------
@@ -288,7 +288,7 @@ Introspecting Docstrings
 
 
 Examples
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import settings

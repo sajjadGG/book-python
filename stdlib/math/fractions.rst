@@ -1,12 +1,12 @@
 Math Fractions
-**************
+==============
 
 
 * ``Fractions`` class from ``fractions``
 
 
 Defining fractions
-==================
+------------------
 .. code-block:: python
 
     from fractions import Fraction

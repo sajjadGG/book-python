@@ -1,16 +1,16 @@
 Regexp Match
-************
+============
 
 
 About
-=====
+-------------------------------------------------------------------------------
 * ``re.match()``
 * Checks exact match
 * Checking if user input is correct (email, url, NIP, VAT ID, PESEL)
 
 
 Examples
-========
+-------------------------------------------------------------------------------
 Usage of ``re.match()``:
 
 .. code-block:: python
@@ -32,7 +32,7 @@ Usage of ``re.match()``:
 
 
 Good Engineering Practices
-==========================
+-------------------------------------------------------------------------------
 * Doctests
 
 .. code-block:: python
@@ -190,7 +190,7 @@ Doctests:
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/regexp_match_phones.py
     :caption: :download:`Solution <assignments/regexp_match_phones.py>`
     :end-before: # Solution

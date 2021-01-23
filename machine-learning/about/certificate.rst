@@ -1,5 +1,5 @@
 Certificate
-===========
+-------------------------------------------------------------------------------
 
 Szkolenie obejmowało 16 godzin wykładów oraz warsztatów. Zagadnienia poruszone na szkoleniu:
 

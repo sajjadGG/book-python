@@ -1,5 +1,5 @@
 Pandas
-******
+======
 
 
 Pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis / manipulation tool available in any language. It is already well on its way toward this goal. Here are just a few of the things that pandas does well:
@@ -18,7 +18,7 @@ Pandas is a Python package providing fast, flexible, and expressive data structu
 
 
 Install
-=======
+-------------------------------------------------------------------------------
 .. code-block:: console
 
     $ pip install pandas
@@ -29,7 +29,7 @@ Install
 
 
 Import
-======
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -39,14 +39,14 @@ Import
 
 
 Workflow
-========
+-------------------------------------------------------------------------------
 .. figure:: img/pandas-about-workflow.png
 
     Pandas workflow
 
 
 Read More
-=========
+-------------------------------------------------------------------------------
 * http://pandas.pydata.org/
 * http://pandas.pydata.org/pandas-docs/stable/10min.html
 * http://pandas.pydata.org/pandas-docs/stable/index.html

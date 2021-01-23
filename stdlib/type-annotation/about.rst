@@ -1,9 +1,9 @@
 Type Annotations
-****************
+================
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 * Since Python 3.5: :pep:`484` -- Type Hints
 * Also known as Type Hinting
 * Accessed by ``__annotations__`` attribute
@@ -22,7 +22,7 @@ Rationale
 
 
 Glossary
-========
+-------------------------------------------------------------------------------
 .. glossary::
 
     Generic
@@ -37,7 +37,7 @@ Glossary
 
 
 Data types
-==========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     name: str = 'Jan Twardowski'
@@ -47,7 +47,7 @@ Data types
 
 
 Final
-=====
+-------------------------------------------------------------------------------
 * Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
 
 .. code-block:: python
@@ -104,7 +104,7 @@ Final
 
 
 New Features
-============
+-------------------------------------------------------------------------------
 * Since Python 3.9: :pep:`585` -- Type Hinting Generics In Standard Collections
 * In type annotations you can now use built-in collection types such as list and dict as generic types instead of importing the corresponding capitalized types (e.g. List or Dict) from typing.
 * Some other types in the standard library are also now generic, for example ``queue.Queue``.

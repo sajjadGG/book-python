@@ -1,9 +1,9 @@
 DataFrame Query
-***************
+===============
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     df[df['sales'] > 50000]
@@ -15,7 +15,7 @@ Rationale
 
 
 Query
-=====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -139,7 +139,7 @@ Modify a dataframe in place:
 
 
 References
-==========
+-------------------------------------------------------------------------------
 * Source: https://www.sharpsightlabs.com/blog/pandas-query/
 
 .. [sharpsightlabs] https://www.sharpsightlabs.com/blog/pandas-query/

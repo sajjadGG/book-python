@@ -1,5 +1,5 @@
 Support Vector Machines
-***********************
+=======================
 
 
 .. glossary::
@@ -40,7 +40,7 @@ Support Vector Machines
 
 
 TL;DR
-=====
+-------------------------------------------------------------------------------
 * Jeden z najbardziej popularnych algorytmów Machine Learning
 * Dzieli :term:`vector space` za pomocą linii
 * Wyszukuje linię taką linię, która ma największy margines pomiędzy wszystkimi punktami tzw. :term:`best separating hyperplane`
@@ -51,7 +51,7 @@ TL;DR
 
 
 Charakterystyka algorytmu
-=========================
+-------------------------------------------------------------------------------
 
 Przeznaczenie
 -------------
@@ -72,7 +72,7 @@ Wady algorytmu
 
 
 Opis algorytmu
-==============
+-------------------------------------------------------------------------------
 
 Definicja intuicyjna
 --------------------
@@ -94,7 +94,7 @@ Definicja formalna
     * sigmoidalną.
 
 Support Vector Machines (Kernels)
-=================================
+-------------------------------------------------------------------------------
 * :math:`f(x) = B0 + sum(ai * (x,xi))`
 
 * The equation for making a prediction for a new input using the dot product between the input (x) and each support vector (xi)
@@ -140,7 +140,7 @@ Radial Kernel SVM
     3D Radial Kernel SVM
 
 Przykłady praktyczne
-====================
+-------------------------------------------------------------------------------
 
 Przykład wykorzystania ``sklearn``
 ----------------------------------
@@ -408,7 +408,7 @@ Source: https://github.com/jakevdp/sklearn_pycon2015/blob/master/notebooks/03.1-
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. todo:: Convert assignments to literalinclude
 
 Wykorzystanie biblioteki ``sklearn``

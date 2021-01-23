@@ -1,9 +1,9 @@
 Tools
-*****
+=====
 
 
 pyenv
-=====
+-----
 * pyenv lets you easily switch between multiple versions of Python
 * pyenv intercepts Python commands using shim executables injected into your PATH, determines which Python version has been specified by your application, and passes your commands along to the correct Python installation.
 
@@ -36,7 +36,7 @@ Upgrade:
 
 
 Cookiecutter
-============
+------------
 * template for a Python package
 
 Installation:
@@ -63,7 +63,7 @@ Generate a Python package project:
 
 
 pipenv
-======
+------
 Pipenv is a tool that aims to bring the best of all packaging worlds (bundler, composer, npm, cargo, yarn, etc.) to the Python world. Windows is a first-class citizen, in our world.
 
 It automatically creates and manages a virtualenv for your projects, as well as adds/removes packages from your Pipfile as you install/uninstall packages. It also generates the ever-important ``Pipfile.lock``, which is used to produce deterministic builds.
@@ -86,7 +86,7 @@ Installation:
     brew install pipenv
 
 pip-tools
-=========
+---------
 * pip-tools = pip-compile + pip-sync
 
 * The pip-compile command lets you compile a requirements.txt file from your dependencies, specified in either setup.py or requirements.in.
@@ -185,6 +185,6 @@ pip-sync to update your virtual environment to reflect exactly what’s in there
 
 
 Conda
-=====
+-----
 
 

@@ -1,9 +1,9 @@
 Regexp Non-Greedy
-*****************
+=================
 
 
 About
-=====
+-------------------------------------------------------------------------------
 * Adding ``?`` after the qualifier makes it non-greedy
 * Non-greedy - as few as possible
 * Greedy - as many as possible
@@ -21,7 +21,7 @@ About
 
 
 Examples
-========
+-------------------------------------------------------------------------------
 Usage of greedy and non-greedy search in ``re.findall()``:
 
 .. code-block:: python
@@ -43,7 +43,7 @@ Usage of greedy and non-greedy search with groups:
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/regexp_greedy_moon_speech.py
     :caption: :download:`Solution <assignments/regexp_greedy_moon_speech.py>`
     :end-before: # Solution

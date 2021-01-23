@@ -1,15 +1,15 @@
 Array Data Types
-****************
+================
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 * Array can have only one data type (``dtype``)
 * Type can be "non-primitive" - any class
 
 
 Bits and Bytes
-==============
+-------------------------------------------------------------------------------
 * Signed and unsigned
 * Unsigned cannot be negative
 * For negative signed numbers "Two's complement" is used
@@ -102,7 +102,7 @@ Calculates a two's complement integer from the given input value's bits:
 
 
 Signed int
-==========
+-------------------------------------------------------------------------------
 * Signed (positive and negative)
 * ``np.int`` alias for ``np.int64``
 * ``np.int0`` alias for ``np.int64`` - Integer used for indexing
@@ -154,7 +154,7 @@ Signed int
 
 
 Unsigned int
-============
+-------------------------------------------------------------------------------
 * Unsigned (non-negative only)
 * ``np.uint0``
 * ``np.uint8``
@@ -201,7 +201,7 @@ Unsigned int
 
 
 float
-=====
+-------------------------------------------------------------------------------
 * ``np.float``
 * ``np.float16``
 * ``np.float32``
@@ -259,7 +259,7 @@ float
 
 
 complex
-=======
+-------------------------------------------------------------------------------
 * ``np.complex``
 * ``np.complex64``
 * ``np.complex128``
@@ -288,7 +288,7 @@ complex
 
 
 bool
-====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -314,7 +314,7 @@ bool
 
 
 str
-===
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -328,7 +328,7 @@ str
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/numpy_astype.py
     :caption: :download:`Solution <assignments/numpy_astype.py>`
     :end-before: # Solution

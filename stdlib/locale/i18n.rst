@@ -1,14 +1,14 @@
 Locale i18n
-***********
+===========
 
 
 Rationale
-=========
+---------
 * i18n = internationalization
 
 
 Examples
-========
+--------
 pl_PL.UTF-8:
 
 .. code-block:: text
@@ -29,7 +29,7 @@ en_GB.UTF-8:
 
 
 Gettext
-=======
+-------
 * ``.po`` files
 * ``.mo`` files
 * Using ``gettext`` in code
@@ -40,7 +40,7 @@ Gettext
 
 
 Django
-======
+------
 * ``django-admin makemessages -l en``
 * ``django-admin compilemessages``
 * ``{% blocktranslate %}`` and ``{% endblocktranslate %}``

@@ -1,9 +1,9 @@
 REST
-****
+====
 
 
 RESTful Views
-=============
+-------------------------------------------------------------------------------
 .. literalinclude:: src/django-rest-views.py
     :language: python
 
@@ -17,10 +17,10 @@ RESTful Views
 
 
 ``python -m json.tool``
-=======================
+-------------------------------------------------------------------------------
 
 ``django-rest-framework``
-=========================
+-------------------------------------------------------------------------------
 .. code-block:: console
 
     $ pip install django-rest-swagger
@@ -40,7 +40,7 @@ RESTful Views
         }
 
 ``django-rest-swagger``
-=======================
+-------------------------------------------------------------------------------
 Alternatywa:
 
 * https://github.com/axnsan12/drf-yasg/

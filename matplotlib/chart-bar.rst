@@ -1,14 +1,14 @@
 Bar Chart
-*********
+=========
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 * used to display single values
 
 
 Syntax
-======
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -22,7 +22,7 @@ Syntax
 
 
 Single Plot
-===========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -49,7 +49,7 @@ Single Plot
 
 
 Multiple Plots
-==============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import matplotlib.pyplot as plt

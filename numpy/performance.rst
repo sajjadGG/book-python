@@ -1,5 +1,5 @@
 Performance
-***********
+===========
 
 
 .. glossary::
@@ -25,7 +25,7 @@ Performance
 
 
 References
-==========
+-------------------------------------------------------------------------------
 .. [CPU] https://en.wikipedia.org/wiki/Central_processing_unit
 .. [GPU] https://en.wikipedia.org/wiki/Graphics_processing_unit
 .. [ALU] https://en.wikipedia.org/wiki/Arithmetic_logic_unit

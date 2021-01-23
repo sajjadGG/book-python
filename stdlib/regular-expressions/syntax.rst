@@ -1,9 +1,9 @@
 Regexp Syntax
-*************
+=============
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 * Regular Expressions are also known as ``regexp``, ``regex`` or ``re``
 * Identifiers - what to find
 * Qualifiers - range to find
@@ -21,7 +21,7 @@ Rationale
 
 
 Identifiers
-===========
+-------------------------------------------------------------------------------
 * What to find
 
 * ``\s`` - whitespace (space, tab, newline)
@@ -40,7 +40,7 @@ Identifiers
 
 
 Qualifier
-=========
+-------------------------------------------------------------------------------
 * Range to find
 
 * ``[a-z]`` - any lowercase ASCII letter from `a` to `z`
@@ -68,7 +68,7 @@ Examples:
 
 
 Quantifier
-==========
+-------------------------------------------------------------------------------
 * How many occurrences of preceding qualifier or identifier
 
 Greedy (prefer longest matches):
@@ -103,13 +103,13 @@ Examples:
 
 
 Negation
-========
+-------------------------------------------------------------------------------
 * Logically inverts qualifier
 * ``[^abc]`` - anything but letter `a` or `b` or `c`
 
 
 Groups
-======
+-------------------------------------------------------------------------------
 * Catch expression results
 * Can be named or positional
 * można się odwoływać pozycyjnie oraz keyword
@@ -144,14 +144,14 @@ Examples:
 
 
 Flags
-=====
+-------------------------------------------------------------------------------
 * ``re.IGNORECASE`` - bez względu na wielkość liter
 * ``re.MULTILINE`` - wyrażenie może zacząć się w jednej linii i skończyć w innej; zmienia znaczenie: ``^`` - początek linii, ``$`` - koniec linii
 * ``re.DOTALL`` - ``.`` również łapie końce linii
 
 
 Extensions
-==========
+-------------------------------------------------------------------------------
 * In other programming languages
 
 * ``[:allnum:]`` == ``[a-zA-Z0-9]``
@@ -166,7 +166,7 @@ Extensions
 
 
 Matching
-========
+-------------------------------------------------------------------------------
 * ``\`` - Escapes special characters (allows matching ``*``, ``?``, etc)
 
 .. csv-table:: Regular Expression Pattern Matching
@@ -182,7 +182,7 @@ Matching
 
 
 Negation
-========
+-------------------------------------------------------------------------------
 .. csv-table:: Regular Expression Pattern Negation
     :widths: 15, 85
     :header: "Syntax", "Description"
@@ -192,7 +192,7 @@ Negation
 
 
 Unicode
-=======
+-------------------------------------------------------------------------------
 * ``\w`` - Includes most characters that can be part of a word in any language, as well as numbers and the underscore
 
 .. csv-table:: Regular Expression Patterns
@@ -205,7 +205,7 @@ Unicode
 
 
 Qualifiers
-==========
+-------------------------------------------------------------------------------
 .. csv-table:: Regular Expression Qualifiers
     :widths: 15, 85
     :header: "Syntax", "Description"
@@ -219,7 +219,7 @@ Qualifiers
 
 
 Quantifiers
-===========
+-------------------------------------------------------------------------------
 .. csv-table:: Regular Expression Quantifiers
     :widths: 15, 85
     :header: "Syntax", "Description"
@@ -232,7 +232,7 @@ Quantifiers
 
 
 Non-Greedy
-==========
+-------------------------------------------------------------------------------
 * Adding ``?`` after the qualifier makes it non-greedy
 * Non-greedy - as few as possible
 * Greedy - as many as possible
@@ -250,7 +250,7 @@ Non-Greedy
 
 
 Flags
-=====
+-------------------------------------------------------------------------------
 .. csv-table:: Regular Expression Flags
     :widths: 15, 85
     :header: "Flag", "Description"
@@ -262,14 +262,14 @@ Flags
 
 
 Multiline
-=========
+-------------------------------------------------------------------------------
 * ``re.MULTILINE`` - Flag turns on Multiline search
 * ``^`` - Matches the start of the string, and immediately after each newline
 * ``$`` - Matches the end of the string or just before the newline at the end of the string also matches before a newline
 
 
 Groups
-======
+-------------------------------------------------------------------------------
 * ``(?P<name>...)``- Define named group
 * ``(?P=name)``- Backreferencing by group name
 * ``\number`` - Backreferencing by group number
@@ -323,12 +323,12 @@ Example:
     # '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
 
 Examples
-========
+-------------------------------------------------------------------------------
 * ``r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,20}$'``
 
 
 Visualization
-=============
+-------------------------------------------------------------------------------
 * https://regexper.com/
 * https://regex101.com/
 
@@ -338,6 +338,6 @@ Visualization
 
 
 Further Reading
-===============
+-------------------------------------------------------------------------------
 * https://www.informit.com/articles/article.aspx?p=1278986
 * https://www.rexegg.com/regex-trick-conditional-replacement.html

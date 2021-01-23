@@ -1,5 +1,5 @@
 Math Plotting
-*************
+=============
 
 * ``matplotlib`` allows to plot charts
 * requires installation ``pip install matplotlib``

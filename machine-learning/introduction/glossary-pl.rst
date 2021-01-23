@@ -1,5 +1,5 @@
 Glossary PL
-***********
+===========
 
 .. glossary::
 

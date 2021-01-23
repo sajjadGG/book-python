@@ -1,9 +1,9 @@
 HTTP using ``requests``
-***********************
+=======================
 
 
 Basic API
-=========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import requests
@@ -17,7 +17,7 @@ Basic API
 
 
 Response
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from http import HTTPStatus
@@ -37,7 +37,7 @@ Response
 
 
 GET Requests
-============
+-------------------------------------------------------------------------------
 * params
 
 .. code-block:: python
@@ -91,7 +91,7 @@ GET Requests
 
 
 POST Requests
-=============
+-------------------------------------------------------------------------------
 
 POST Request with data
 ----------------------
@@ -175,7 +175,7 @@ POST Request with JSON
 
 
 DELETE Requests
-===============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import requests
@@ -190,7 +190,7 @@ DELETE Requests
 
 
 Custom Headers
-==============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import requests
@@ -231,7 +231,7 @@ Custom Headers
 
 
 Timeout
-=======
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import requests
@@ -244,7 +244,7 @@ Timeout
 
 
 Basic Auth
-==========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import requests
@@ -260,7 +260,7 @@ Basic Auth
 
 
 Requests OAuth
-==============
+-------------------------------------------------------------------------------
 * http://requests-oauthlib.readthedocs.io/en/latest/index.html
 
 .. code-block:: console
@@ -272,7 +272,7 @@ Requests OAuth
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. todo:: Convert assignments to literalinclude
 
 REST API

@@ -1,5 +1,5 @@
 Survey
-======
+-------------------------------------------------------------------------------
 
 #. Znajomość zagadnień związanych z statystyką matematyczną:
 

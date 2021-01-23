@@ -1,5 +1,5 @@
 Date and Time Frequency
-***********************
+=======================
 
 .. csv-table:: Offset aliases
     :header: "Alias", "Description"

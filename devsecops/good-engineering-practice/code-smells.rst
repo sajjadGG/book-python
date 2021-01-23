@@ -1,5 +1,5 @@
 Code Smells
-***********
+===========
 
 
 Source [CodeSmells]_
@@ -26,7 +26,7 @@ Source [CodeSmells]_
 
 
 Bad practice
-============
+-------------------------------------------------------------------------------
 
 ``range(len())``
 ----------------
@@ -299,6 +299,6 @@ Pythonic way:
 
 
 References
-==========
+-------------------------------------------------------------------------------
 .. [CodeSmells] Flury, Tony. What are some major code smells in Python? https://www.quora.com/What-are-some-major-code-smells-in-Python 2019. Accessed: 2019-03-28
 

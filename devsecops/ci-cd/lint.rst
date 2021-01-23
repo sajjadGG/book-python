@@ -1,9 +1,9 @@
 Linters
-*******
+=======
 
 
 ``pycodestyle``
-===============
+---------------
 * previously known as ``pep8``
 
 :About:
@@ -45,7 +45,7 @@ Linters
 
 
 ``flake8``
-==========
+----------
 Simply speaking flake8 is "the wrapper which verifies ``pycodestyle``, ``pyflakes`` and circular complexity". For other functions, it can control the warnings for specific line (impossible by a simple pyflakes)by # flake8: noqa or it can customize warnings happening by configuration file such as ``pycodestyle``.
 
 .. literalinclude:: ../_src/flake8.ini
@@ -54,7 +54,7 @@ Simply speaking flake8 is "the wrapper which verifies ``pycodestyle``, ``pyflake
 
 
 ``pylint``
-==========
+----------
 Pylint is a Python source code analyzer which looks for programming errors, helps enforcing a coding standard and sniffs for some code smells (as defined in Martin Fowler’s Refactoring book). Pylint has many rules enabled by default, way too much to silence them all on a minimally sized program. It’s highly configurable and handle pragmas to control it from within your code. Additionally, it is possible to write plugins to add your own checks.
 
 Coding Standard:
@@ -91,7 +91,7 @@ Config:
 
 
 ``pyflakes``
-============
+------------
 A simple program which checks Python source files for errors. Pyflakes analyzes programs and detects various errors. It works by parsing the source file, not importing it, so it is safe to use on modules with side effects. It’s also much faster.
 
 Install:
@@ -109,4 +109,4 @@ Learn more at https://pypi.python.org/pypi/pyflakes
 
 
 ``pylama``
-==========
+----------

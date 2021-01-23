@@ -1,9 +1,9 @@
 Survey
-******
+======
 
 
 English
-=======
+-------
 #. How many years have you been programming in Python:
 
     * 0-1
@@ -46,7 +46,7 @@ English
 
 
 Polish
-======
+------
 #. Ile lat programujesz w Pythonie:
 
     * 0-1

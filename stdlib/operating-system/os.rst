@@ -1,9 +1,9 @@
 Operating System
-****************
+================
 
 
 Bitwise operators
-=================
+-----------------
 * ``|`` - OR
 * ``&`` - AND
 * ``~`` - NOT
@@ -28,7 +28,7 @@ Bitwise operators
 
 
 Accessing Environmental Variables
-=================================
+---------------------------------
 .. code-block:: python
 
     import os
@@ -37,7 +37,7 @@ Accessing Environmental Variables
 
 
 Getting filenames and extensions
-================================
+--------------------------------
 
 Extensions
 ----------
@@ -50,7 +50,7 @@ Extensions
     ext         # '.rst'
 
 Checking OS version
-===================
+-------------------
 * Linux: Linux
 * Mac: Darwin
 * Windows: Windows
@@ -110,10 +110,6 @@ Checking OS version
 
     sys.platform    # 'win32'
 
-
-``sys``
-=======
-
 Most commonly used methods
 --------------------------
 .. code-block:: python
@@ -140,7 +136,7 @@ System exit and exit codes
 
 
 ``os``
-======
+------
 .. code-block:: python
 
     import os
@@ -255,7 +251,7 @@ Permissions
 
 
 ``subprocess``
-==============
+--------------
 
 Most commonly used methods
 --------------------------
@@ -428,7 +424,7 @@ Parsing and sanitizing arguments
 
 
 ``tempfile``
-============
+------------
 
 Creating temporary files
 ------------------------
@@ -454,7 +450,7 @@ Creating temporary directories
 
 
 ``io``
-======
+------
 * ``io`` to biblioteka do obsługi strumienia wejściowego i wyjściowego
 * StringIO jest wtedy traktowany jak plik wejściowy.
 
@@ -500,7 +496,7 @@ Creating temporary directories
 
 
 ``configparser``
-================
+----------------
 
 Writing configuration
 ---------------------
@@ -600,7 +596,7 @@ Alternative syntax and using variables in config
 
 
 Running commands in parallel across many hosts
-==============================================
+------------------------------
 * https://linux.die.net/man/1/pssh
 
 .. figure:: img/system-pssh-1.jpg
@@ -611,7 +607,7 @@ Running commands in parallel across many hosts
 
 
 Passwords and secrets
-=====================
+---------------------
 * UMASK
 * Sticky bit
 * setuid
@@ -619,7 +615,7 @@ Passwords and secrets
 
 
 Allegro Tipboard
-================
+----------------
 * http://allegro.tech/tipboard/
 * https://github.com/allegro/tipboard
 
@@ -637,7 +633,7 @@ Similar projects: Geckoboard, Dashing.
 
 
 Assignments
-===========
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Recursive folders walking

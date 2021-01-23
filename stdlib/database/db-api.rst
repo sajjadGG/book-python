@@ -1,8 +1,8 @@
 Database API
-************
+============
 
 Rationale
-=========
+---------
 * DB API v2
 
 .. code-block:: python

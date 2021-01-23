@@ -1,9 +1,9 @@
 Serialization JSON
-******************
+==================
 
 
 JSON Syntax
-===========
+-------------------------------------------------------------------------------
 * JavaScript Object Notation
 * JSON format is similar to ``dict`` notation in Python
 * Differences:
@@ -80,7 +80,7 @@ JSON or Python ``list[dict]``?:
 
 
 Mapping to JSON
-===============
+-------------------------------------------------------------------------------
 * ``json.dumps(DATA: dict) -> str``
 * ``json.loads(DATA: str) -> dict``
 
@@ -119,7 +119,7 @@ Deserializing mapping from JSON:
 
 
 Sequence to JSON
-================
+-------------------------------------------------------------------------------
 * ``json.dumps(data: Sequence[dict]) -> str``
 * ``json.loads(data: str) -> list[dict]``
 
@@ -191,7 +191,7 @@ Serializing sequence to JSON:
 
 
 Write JSON File
-===============
+-------------------------------------------------------------------------------
 * ``json.dump(data: dict, file: TextIOWrapper) -> None``
 * file extension ``.json``
 
@@ -216,7 +216,7 @@ Serialize to JSON:
 
 
 Read JSON File
-==============
+-------------------------------------------------------------------------------
 * ``json.load(file: TextIOWrapper) -> dict``
 * file extension ``.json``
 
@@ -244,7 +244,7 @@ Serialize to JSON:
 
 
 Datetime to JSON
-================
+-------------------------------------------------------------------------------
 * problem with ``date``, ``datetime``, ``time``
 
 Exception during encoding datetime:
@@ -319,7 +319,7 @@ Encoder will be used, when standard procedure fails:
 
 
 JSON to Datetime
-================
+-------------------------------------------------------------------------------
 Simple loading returns ``str`` not ``datetime`` or ``date``:
 
 .. code-block:: python
@@ -476,7 +476,7 @@ Decoding ``datetime`` and ``date``:
 
 
 Python Object to JSON
-=====================
+-------------------------------------------------------------------------------
 Encoding nested objects with relations to JSON:
 
 .. code-block:: python
@@ -556,7 +556,7 @@ Encoding nested objects with relations to JSON:
 
 
 JSON to Python Object
-=====================
+-------------------------------------------------------------------------------
  Encoding nested objects with relations to JSON:
 
 .. code-block:: python
@@ -609,7 +609,7 @@ JSON to Python Object
 
 
 Pretty Printing JSON
-====================
+-------------------------------------------------------------------------------
 * JSON can be minified to save space for network transmission
 * It is not very readable
 
@@ -653,7 +653,7 @@ Pretty Printing JSON:
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/serialization_json_dump.py
     :caption: :download:`Solution <assignments/serialization_json_dump.py>`
     :end-before: # Solution

@@ -1,9 +1,9 @@
 Datetime Time Utils
-*******************
+===================
 
 
 Sleep
-=====
+-----
 Time sleep function:
 
 .. code-block:: python
@@ -14,7 +14,7 @@ Time sleep function:
 
 
 ``calendar``
-============
+------------
 HTML Calendar:
 
 .. code-block:: python

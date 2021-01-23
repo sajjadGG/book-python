@@ -1,9 +1,9 @@
 Comprehensions Nesting
-**********************
+======================
 
 
 Nested Comprehensions
-=====================
+---------------------
 .. code-block:: python
 
    DATA = [{'lastname': 'Jiménez'},
@@ -53,7 +53,7 @@ Nested Comprehensions
 
 
 Generator comprehensions
-========================
+------------------------
 .. code-block:: python
 
    DATA = [{'lastname': 'Jiménez'},
@@ -74,5 +74,5 @@ Generator comprehensions
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

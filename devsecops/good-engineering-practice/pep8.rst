@@ -1,9 +1,9 @@
 Software Engineering Conventions
-********************************
+================================
 
 
 PEP 8 - Style Guide for Python Code
-===================================
+-------------------------------------------------------------------------------
 
 Tabs or spaces?
 ---------------
@@ -798,7 +798,7 @@ PEP 8, but...
 
 
 Static Code Analysis
-====================
+-------------------------------------------------------------------------------
 * More information in `cicd-tools`
 * More information in `cicd-pipelines`
 
@@ -840,7 +840,7 @@ Configuration:
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: ../_assignments/devsecops_gep_pycodestyle.py
     :caption: :download:`Solution <../_assignments/devsecops_gep_pycodestyle.py>`
     :end-before: # Solution

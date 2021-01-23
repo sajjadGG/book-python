@@ -1,9 +1,9 @@
 CI/CD Tools
-***********
+===========
 
 
 Rationale
-=========
+---------
 * https://pre-commit.com/
 
 .. figure:: ../_img/ecosystem-bigpicture.png
@@ -11,7 +11,7 @@ Rationale
 
 
 Static Analysis
-===============
+---------------
 .. csv-table:: Static Analysis
     :header: "Tool", "Description"
 
@@ -25,7 +25,7 @@ Static Analysis
 
 
 Security
-========
+--------
 .. csv-table:: Security
     :header: "Tool", "Description"
 
@@ -34,7 +34,7 @@ Security
 
 
 Distributing and Packaging
-==========================
+--------------------------
 .. csv-table:: Distributing and Packaging
     :header: "Tool", "Description"
 
@@ -43,7 +43,7 @@ Distributing and Packaging
 
 
 Code Style and Practices
-========================
+------------------------
 .. csv-table:: Code Style and Practices
     :header: "Tool", "Description"
 
@@ -55,7 +55,7 @@ Code Style and Practices
 
 
 Code complexity and Coverage
-============================
+----------------------------
 .. csv-table:: Code complexity and Coverage
     :header: "Tool", "Description"
 
@@ -65,7 +65,7 @@ Code complexity and Coverage
 
 
 Testing
-=======
+-------
 .. csv-table:: Testing
     :header: "Tool", "Description"
 
@@ -79,7 +79,7 @@ Testing
 
 
 Type Checking
-=============
+-------------
 .. csv-table:: Type Checking
     :header: "Tool", "Description"
 
@@ -91,7 +91,7 @@ Type Checking
 
 
 Database Schema Migration
-=========================
+-------------------------
 .. csv-table:: Database Schema Migration
     :header: "Tool", "Description"
 
@@ -102,7 +102,7 @@ Database Schema Migration
 
 
 Running
-=======
+-------
 .. code-block:: python
 
     import os

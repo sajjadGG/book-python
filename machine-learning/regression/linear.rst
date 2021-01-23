@@ -1,11 +1,11 @@
 Linear Regression
-*****************
+=================
 
 .. todo:: Zrobić aby wykorzystywało szablon ``_template.rst``
 
 
 Co to jest Linear Regression?
-=============================
+-------------------------------------------------------------------------------
 The straight line can be seen in the plot, showing how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
 
 The coefficients, the residual sum of squares and the variance score are also calculated.
@@ -16,13 +16,13 @@ The coefficients, the residual sum of squares and the variance score are also ca
 
 
 Przed zastosowaniem
-===================
+-------------------------------------------------------------------------------
 * Trzeba usunąć elementy odstające
 * Trzeba sprawdzić czy są osobne klastry danych, tzn. czy linia jest przedziałami ciągła, tzn. gdyby podzielić na segmenty, to można lepiej dostosować regresję
 
 
 Wyznaczanie równania prostej
-============================
+-------------------------------------------------------------------------------
 .. figure:: img/regression-function1.png
 
     Manipulowanie parametrami prostej (klasyfikatora) w celu określenia funkcji.
@@ -61,13 +61,13 @@ Wyznaczanie równania prostej
 
 
 Funkcja przedziałami liniowa
-============================
+-------------------------------------------------------------------------------
 .. figure:: img/regression-linear-fitting.gif
 
     Funkcja przedziałami liniowa
 
 Przykłady praktyczne
-====================
+-------------------------------------------------------------------------------
 
 Wykorzystanie biblioteki ``sklearn``
 
@@ -245,7 +245,7 @@ Własna implementacja
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. todo:: Convert assignments to literalinclude
 
 Least square regression 3 points

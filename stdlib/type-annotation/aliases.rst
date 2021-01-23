@@ -1,9 +1,9 @@
 Type Aliases
-************
+============
 
 
 Type Aliases
-============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     GeographicCoordinate = tuple[float, float]
@@ -30,7 +30,7 @@ Type Aliases
 
 
 Type Vars
-=========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from typing import TypeVar, Iterable, Tuple

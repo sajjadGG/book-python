@@ -1,24 +1,24 @@
 Locale About
-************
+============
 
 Rationale
-=========
+---------
 * l10n = localization
 
 
 Django
-======
+------
 * ``django.utils.timezone``
 * ``from django.conf.locale.en import formats as en_formats``
 
 
 Numbers
-=======
+-------
 * https://github.com/arthurdejong/python-stdnum/tree/master/stdnum
 
 
 Examples
-========
+--------
 pl_PL:
 
 .. code-block:: python
@@ -123,7 +123,7 @@ en_US:
 
 
 Further Reading
-===============
+---------------
 * https://github.com/django/django/blob/master/django/conf/locale/pl/formats.py
 * https://github.com/django/django/blob/master/django/conf/locale/en/formats.py
 * https://github.com/django/django/blob/master/django/conf/locale/en_GB/formats.py

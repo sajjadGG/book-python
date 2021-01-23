@@ -1,9 +1,9 @@
 Array Iteration
-***************
+===============
 
 
 1-dimensional Array
-===================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -20,7 +20,7 @@ Array Iteration
 
 
 2-dimensional Array
-===================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -62,7 +62,7 @@ Array Iteration
 
 
 Flat
-====
+-------------------------------------------------------------------------------
 Flatten:
 
 .. code-block:: python
@@ -112,7 +112,7 @@ Ravel:
     # 9
 
 Enumerate
-=========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -172,7 +172,7 @@ Enumerate
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/numpy_iteration.py
     :caption: :download:`Solution <assignments/numpy_iteration.py>`
     :end-before: # Solution

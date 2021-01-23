@@ -1,5 +1,5 @@
 Introspection
-*************
+=============
 
 
 .. code-block:: python

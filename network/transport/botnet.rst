@@ -1,9 +1,9 @@
 Mini Botnet
-***********
+===========
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. todo:: Convert assignments to literalinclude
 
 Mini Botnet

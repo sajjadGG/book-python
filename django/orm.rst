@@ -1,8 +1,8 @@
 ORM
-***
+===
 
 QuerySet
-========
+-------------------------------------------------------------------------------
 * sklejanie zapytań
 * Tworzenie obiektów
 * Zapisywanie ``save()`` ForeignKey
@@ -38,7 +38,7 @@ QuerySets are lazy
     print(q)
 
 Field lookups
-=============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     Model.objects.filter(pub_date__lte='1969-07-24')
@@ -70,7 +70,7 @@ Lookups that span relationships
     )
 
 Filters can reference fields on the model
-=========================================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from django.db.models import F
@@ -104,7 +104,7 @@ The pk lookup shortcut
     Entry.objects.filter(blog__pk=3)        # __pk implies __id__exact
 
 Complex lookups with Q objects
-==============================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from django.db.models import Q
@@ -120,7 +120,7 @@ Complex lookups with Q objects
     # AND (pub_date = '2005-05-02' OR pub_date = '2005-05-06')
 
 Comparing objects
-=================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     some_entry == other_entry
@@ -130,7 +130,7 @@ Comparing objects
     some_obj.name == other_obj.name
 
 ``Q()`` expressions
-===================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from django.db.models import Q
@@ -149,7 +149,7 @@ Comparing objects
     )
 
 ``F()`` expressions
-===================
+-------------------------------------------------------------------------------
 An F() object represents the value of a model field or annotated column. It makes it possible to refer to model field values and perform database operations using them without actually having to pull them out of the database into Python memory.
 
 .. code-block:: python
@@ -157,7 +157,7 @@ An F() object represents the value of a model field or annotated column. It make
     Iris.objects.all().update(petal_length=F('petal_length') + 1)
 
 Aggregations
-============
+-------------------------------------------------------------------------------
 * Django ORM Cheat sheet
 
 .. literalinclude:: src/django-orm-cheatsheet.py

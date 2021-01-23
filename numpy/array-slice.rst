@@ -1,12 +1,12 @@
 Array Slice
-***********
+===========
 
 
 .. todo:: Split chapters GetItem and Slice by __getitem__ argument type.
 
 
 Recap
-=====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -61,7 +61,7 @@ Recap
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     a[ 0 ]
@@ -102,7 +102,7 @@ Rationale
 
 
 1-dimensional Array
-===================
+-------------------------------------------------------------------------------
 1-dimensional Array:
 
 .. code-block:: python
@@ -155,7 +155,7 @@ Rationale
 
 
 2-dimensional Array
-===================
+-------------------------------------------------------------------------------
 Rows:
 
 .. code-block:: python
@@ -278,7 +278,7 @@ Rows and Columns:
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/numpy_slice_1.py
     :caption: :download:`Solution <assignments/numpy_slice_1.py>`
     :end-before: # Solution

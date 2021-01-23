@@ -1,9 +1,9 @@
 Array Axis
-**********
+==========
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 * ``axis`` is an index in ``a.shape``
 * Columns are always last
 * https://youtu.be/ZB7BZMhfPgk?t=4738
@@ -14,7 +14,7 @@ Rationale
 
 
 Axis
-====
+-------------------------------------------------------------------------------
 * New dimensions are added at the beginning of ``shape``
 * Old axes numbers are pushed to the right
 
@@ -96,7 +96,7 @@ Four Dimensions:
 
 
 Take
-====
+-------------------------------------------------------------------------------
 One Dimensional:
 
 .. code-block:: python
@@ -310,5 +310,5 @@ Three Dimensional - Columns:
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. todo:: Create assignments

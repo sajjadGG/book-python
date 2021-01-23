@@ -1,9 +1,9 @@
 Datetime Timestamp
-******************
+==================
 
 
 What is timestamp?
-==================
+------------------
 * Seconds since midnight of January 1st, 1970 (1970-01-01 00:00:00 UTC)
 * Unix era, also known as "epoch"
 * In most systems represented as 32-bit integer
@@ -13,7 +13,7 @@ What is timestamp?
 
 
 Get current timestamp
-=====================
+---------------------
 Get current timestamp using ``datetime`` module:
 
 .. code-block:: python
@@ -34,7 +34,7 @@ Get current timestamp using ``time`` module:
 
 
 Convert timestamp to ``datetime``
-=================================
+---------------------------------
 Convert timestamp to ``datetime``:
 
 .. code-block:: python
@@ -60,7 +60,7 @@ Convert JavaScript timestamp to ``datetime``:
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: assignments/datetime_timestamp_limits.py
     :caption: :download:`Solution <assignments/datetime_timestamp_limits.py>`
     :end-before: # Solution

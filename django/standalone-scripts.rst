@@ -1,5 +1,5 @@
 Standalone scripts
-******************
+==================
 
 * lepiej management commands
 

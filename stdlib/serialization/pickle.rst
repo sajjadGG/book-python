@@ -1,15 +1,15 @@
 Serialization Pickle
-********************
+====================
 
 
 What is ``pickle``?
-===================
+-------------------------------------------------------------------------------
 * Python object serialization format
 * ``pickle`` vs. ``cPickle``
 
 
 Serialize data types
-====================
+-------------------------------------------------------------------------------
 
 Dump to string
 --------------
@@ -57,7 +57,7 @@ Load from string
 
 
 Serialize sequences
-===================
+-------------------------------------------------------------------------------
 
 Dump to string
 --------------
@@ -99,7 +99,7 @@ Load from string
 
 
 Serialize Dates and Datetimes
-=============================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pickle
@@ -119,7 +119,7 @@ Serialize Dates and Datetimes
 
 
 Serialize and deserialize objects
-=================================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pickle
@@ -140,7 +140,7 @@ Serialize and deserialize objects
 
 
 Serialize and deserialize to file
-=================================
+-------------------------------------------------------------------------------
 * File extension ``pkl``
 
 Dump to file
@@ -173,7 +173,7 @@ Load from file:
 
 
 Examples
-========
+-------------------------------------------------------------------------------
 Advanced Example:
 
 .. code-block:: python
@@ -233,7 +233,7 @@ Advanced Example:
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/serialization_pickle_dump_load.py
     :caption: :download:`Solution <assignments/serialization_pickle_dump_load.py>`
     :end-before: # Solution

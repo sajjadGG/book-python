@@ -1,18 +1,18 @@
 Database MongoDB
-****************
+================
 
 * http://api.mongodb.com/python/current/tutorial.html
 
 
 Install
-=======
+-------
 .. code-block:: console
 
     $ pip install pymongo
 
 
 Insert data
-===========
+-----------
 .. code-block:: python
 
     from datetime import datetime, timezone
@@ -34,8 +34,6 @@ Insert data
     obj.inserted_id
     # ObjectId('...')
 
-Select data
-===========
 
 Select all records
 ------------------
@@ -43,6 +41,7 @@ Select all records
 
     for astro in astronauts.find():
         print(astro)
+
 
 Filter records
 --------------

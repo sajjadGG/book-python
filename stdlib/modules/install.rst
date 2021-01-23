@@ -1,15 +1,15 @@
 Module Install
-**************
+==============
 
 
 Searching
-=========
+---------
 * https://pypi.org
 * ``pip search ...``
 
 
 Installing
-==========
+----------
 * ``Alt+Enter`` on not existing ``import`` -> Install Package
 * ``pip install ...``
 * ``requirements.txt``
@@ -17,14 +17,14 @@ Installing
 
 
 List requirements
-=================
+-----------------
 .. code-block:: console
 
     $ pip freeze
 
 
 Assignments
-===========
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Installing from requirements.txt

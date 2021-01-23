@@ -1,9 +1,9 @@
 OOP Enum
-********
+========
 
 
 Rationale
-=========
+---------
 * List of finite choices
 * Enumerations
 * ``Enum``
@@ -13,7 +13,7 @@ Rationale
 
 
 Definition
-==========
+----------
 Defining ``enum``:
 
 .. code-block:: python
@@ -41,7 +41,7 @@ Defining ``enum``:
 
 
 Accessing names and values
-==========================
+--------------------------
 Accessing names and values:
 
 .. code-block:: python
@@ -81,7 +81,7 @@ Accessing names and values:
 
 
 Iterating over ``Enum``
-=======================
+-----------------------
 Iterating over ``Enum``:
 
 .. code-block:: python
@@ -102,7 +102,7 @@ Iterating over ``Enum``:
 
 
 Identity check
-==============
+--------------
 Identity check:
 
 .. code-block:: python
@@ -114,7 +114,7 @@ Identity check:
 
 
 Use cases
-=========
+---------
 * https://docs.python.org/3/library/os.html#os.stat
 
 ``enum`` - Example usage:
@@ -196,7 +196,7 @@ Use cases
 
 
 Pattern Matching
-================
+----------------
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
 
 .. code-block:: python
@@ -311,5 +311,5 @@ Pattern Matching
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

@@ -1,16 +1,13 @@
 Distributing Packages
-*********************
+=====================
 
 
 Installing Packages
-===================
+-------------------
 * ``pip search``
 * ``pip install``
 * ``pip install -r requirements.txt``
 
-
-Modularization
-==============
 
 ``__init__.py``
 ---------------
@@ -34,7 +31,7 @@ Modularization
 
 
 Creating packages
-=================
+-----------------
 
 ``distutils``
 -------------
@@ -328,7 +325,7 @@ Search:
     myapp                   - My Simple App
 
 
-Future of packaging and distribution
-====================================
+Further Reading
+---------------
 * https://www.youtube.com/watch?v=jOiAp3wtx18
 * https://www.youtube.com/watch?v=Oc9khbXBes8

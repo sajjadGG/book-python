@@ -1,9 +1,9 @@
 Database SQL
-************
+============
 
 
 ACID
-====
+----
 * Atomicity
 * Consistency
 * Isolation
@@ -27,55 +27,55 @@ Durability guarantees that once a transaction has been committed, it will remain
 
 
 CREATE
-======
+------
 .. literalinclude:: src/sql-create.sql
     :language: sql
     :caption: CREATE
 
 INSERT
-======
+------
 .. literalinclude:: src/sql-insert.sql
     :language: sql
     :caption: INSERT
 
 AUTOINCREMENT
-=============
+-------------
 .. literalinclude:: src/sql-autoincrement.sql
     :language: sql
     :caption: Auto Increment
 
 COMMIT and ROLLBACK
-===================
+-------------------
 .. literalinclude:: src/sql-commit-rollback.sql
     :language: sql
     :caption: COMMIT and ROLLBACK
 
 SELECT
-======
+------
 .. literalinclude:: src/sql-select.sql
     :language: sql
     :caption: SELECT
 
 UPDATE
-======
+------
 .. literalinclude:: src/sql-update.sql
     :language: sql
     :caption: UPDATE
 
 GROUP BY
-========
+--------
 .. literalinclude:: src/sql-group.sql
     :language: sql
     :caption: GROUP BY
 
 HAVING
-======
+------
 .. literalinclude:: src/sql-having.sql
     :language: sql
     :caption: HAVING
 
 ALTER
-=====
+-----
 * write your statement starting with ``--``
 * after you're sure, remove comments
 
@@ -84,7 +84,7 @@ ALTER
     :caption: ALTER
 
 DROP
-====
+----
 * https://www.youtube.com/watch?v=1aEqd4bl6Bs
 * write your statement starting with ``--``
 * after you're sure, remove comments
@@ -94,7 +94,7 @@ DROP
     :caption: DROP
 
 DELETE
-======
+------
 * write your statement starting with ``--``
 * after you're sure, remove comments
 
@@ -103,7 +103,7 @@ DELETE
     :caption: DELETE
 
 JOIN
-====
+----
 .. figure:: img/sql-joins.png
 
     Joins
@@ -147,14 +147,14 @@ SELF JOIN
     :caption: SELF JOIN
 
 TRUNCATE
-========
+--------
 .. literalinclude:: src/sql-truncate.sql
     :language: sql
     :caption: TRUNCATE
 
 
 Assignments
-===========
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Database SQL Relations

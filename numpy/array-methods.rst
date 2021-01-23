@@ -1,9 +1,9 @@
 Array Methods
-*************
+=============
 
 
 Copy
-====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -26,7 +26,7 @@ Copy
 
 
 Put
-===
+-------------------------------------------------------------------------------
 
 One dimensional
 ---------------
@@ -76,7 +76,7 @@ Two dimensional
 
 
 Fill
-====
+-------------------------------------------------------------------------------
 * Modifies inplace
 
 Fill all:
@@ -150,7 +150,7 @@ Fill NaN (dtype=np.float):
 
 
 Transpose
-=========
+-------------------------------------------------------------------------------
 * ``a.transpose()`` or ``a.T``
 * ``a.transpose()`` is preferred
 
@@ -188,7 +188,7 @@ Transpose
 
 
 Signum
-======
+-------------------------------------------------------------------------------
 .. figure:: img/numpy-methods-signum.png
 
 .. code-block:: python
@@ -226,7 +226,7 @@ Signum
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/numpy_methods.py
     :caption: :download:`Solution <assignments/numpy_methods.py>`
     :end-before: # Solution

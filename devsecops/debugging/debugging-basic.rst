@@ -1,15 +1,15 @@
 Basic Debugging
-***************
+===============
 
 
 Run in the console
-==================
+-------------------------------------------------------------------------------
 * Execute cell
 * Run File in the console
 
 
 ``print``
-=========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     DATA = ['a', 'b', 'c', [1, 2, 3]]
@@ -66,7 +66,7 @@ Problem with missing coma for ``ADMINISTRATORS`` tuple:
 
 
 ``pprint``
-==========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from pprint import pprint
@@ -131,7 +131,7 @@ Problem with missing coma for ``ADMINISTRATORS`` tuple:
 
 
 ``locals()``
-============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     def hello(a, b, text='My name...'):
@@ -143,7 +143,7 @@ Problem with missing coma for ``ADMINISTRATORS`` tuple:
 
 
 Using debugger in IDE
-=====================
+-------------------------------------------------------------------------------
 
 Setting Break Points
 --------------------

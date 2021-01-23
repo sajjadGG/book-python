@@ -1,5 +1,5 @@
 DataFrame Mapping
-*****************
+=================
 
 
 .. code-block:: python
@@ -25,7 +25,7 @@ DataFrame Mapping
 
 
 Map
-===
+-------------------------------------------------------------------------------
 * ``.map()`` works element-wise on a Series
 
 .. code-block:: python
@@ -54,7 +54,7 @@ Map
 
 
 Apply
-=====
+-------------------------------------------------------------------------------
 * ``.apply()`` works on a row / column basis of a DataFrame
 
 .. code-block:: python
@@ -82,12 +82,12 @@ Apply
 
 
 Applymap
-========
+-------------------------------------------------------------------------------
 * ``.applymap()`` works element-wise on a DataFrame
 
 
 Summary
-=======
+-------------------------------------------------------------------------------
 * ``Series.map`` works element-wise on a Series
 * ``Series.map`` operate on one element at time
 * ``Series.map`` https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html
@@ -139,7 +139,7 @@ Source: https://stackoverflow.com/questions/19798153/difference-between-map-appl
 
 
 Cleaning User Input
-===================
+-------------------------------------------------------------------------------
 * 80% of machine learning and data science is cleaning data
 
 Is This the Same Address?
@@ -263,7 +263,7 @@ Phone Numbers
 
 
 Conversion
-==========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     LETTERS_EN = 'abcdefghijklmnopqrstuvwxyz'
@@ -311,7 +311,7 @@ Conversion
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/pandas_df_mapping_split.py
     :caption: :download:`Solution <assignments/pandas_df_mapping_split.py>`
     :end-before: # Solution

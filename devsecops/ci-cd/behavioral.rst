@@ -1,8 +1,8 @@
 Behavioral Testing
-******************
+==================
 
 ``behave``
-==========
+----------
 * https://github.com/behave/behave
 
 FILE: features/example.feature

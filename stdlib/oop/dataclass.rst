@@ -1,17 +1,14 @@
 OOP Dataclass
-*************
+=============
 
 
 Syntax
-======
+------
 * This are not static fields!
 * Dataclasses require Type Annotations
 * Introduced in Python 3.7
 * Backported to Python 3.6 via ``python3 -m pip install dataclasses``
 
-
-Examples
-========
 
 Example 1
 ---------
@@ -183,7 +180,7 @@ Example 3
 
 
 ``__init__`` vs. ``__post_init__``
-==================================
+----------------------------------
 ``class``:
 
 .. code-block:: python
@@ -232,7 +229,7 @@ Example 3
 
 
 Field Factory
-=============
+-------------
 .. code-block:: python
 
     from dataclasses import dataclass, field
@@ -247,7 +244,7 @@ Field Factory
 
 
 List attributes
-===============
+---------------
 * You should not set mutable objects as a default function argument
 * ``field()`` creates new empty ``list`` for each object
 * It does not reuse pointer
@@ -290,7 +287,7 @@ List attributes
 
 
 Dataclass parameters
-====================
+--------------------
 .. csv-table:: Dataclass options
     :header: "Option", "Default", "Description (if True)"
     :widths: 10, 10, 80
@@ -445,7 +442,7 @@ other flags
 
 
 Under the hood
-==============
+--------------
 Your code:
 
 .. code-block:: python
@@ -515,7 +512,7 @@ Dataclass will generate:
             return NotImplemented
 
 Examples
-========
+--------
 .. code-block:: python
 
     from dataclasses import dataclass
@@ -558,7 +555,7 @@ Examples
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: assignments/oop_dataclass_syntax.py
     :caption: :download:`Solution <assignments/oop_dataclass_syntax.py>`
     :end-before: # Solution

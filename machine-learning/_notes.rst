@@ -1,8 +1,9 @@
 Notes
-*****
+=====
+
 
 Program
-=======
+-------------------------------------------------------------------------------
 
 Wprowadzenie do Machine Learning
 --------------------------------
@@ -46,7 +47,7 @@ Tensorflow
 #. Image recognition
 
 Program 2
-=========
+-------------------------------------------------------------------------------
 
 Cele zajęć
 ----------
@@ -77,7 +78,7 @@ Dzień 2
 
 
 Notatki
-=======
+-------------------------------------------------------------------------------
 .. todo::
     * Luźne notatki
     * tensorFlow
@@ -98,7 +99,7 @@ Notatki
     * braki w danych
 
 Data Science
-============
+-------------------------------------------------------------------------------
 * Scientific Computing (stara nazwa Data Science)
 * analiza danych
 * łączenie danych z różnych źródeł
@@ -136,7 +137,7 @@ Różne źródła danych:
     * pochodzenie
 
 Jupyter
-=======
+-------------------------------------------------------------------------------
 * średnik usuwa wyświetlanie linii
 * zamykanie kerneli
 * instalowanie pluginów - spellchecker
@@ -147,7 +148,7 @@ Jupyter
 * ! uruchamianie terminala pod spodem (interoperacyjne z pythonem)
 
 Machine Learning
-================
+-------------------------------------------------------------------------------
 bez nadzoru:
 
     * Poszukiwanie wzorców
@@ -1043,7 +1044,7 @@ Modelowanie tematów
 * pakiet nie usuwa stopwords
 
 Metody bez nadzoru
-==================
+-------------------------------------------------------------------------------
 * Klastrowanie - Minus: musimy powiedzieć ile chcemy mieć klastrów
 * Algorytm K-Means bardzo często wykorzystywany (liczą gdzie jest środek geometryczny punktów, a później klasyfikuje
 * Batch k-means - nie bierze wszystkich danych na raz, tylko dane po kawałku

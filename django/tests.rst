@@ -1,5 +1,5 @@
 Tests
-*****
+=====
 
 .. code-block:: python
 

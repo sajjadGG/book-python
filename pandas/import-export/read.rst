@@ -1,9 +1,9 @@
 Pandas Read
-***********
+===========
 
 
 Import data
-===========
+-------------------------------------------------------------------------------
 * File paths works also with URLs
 * SQL functions uses SQLAlchemy, which supports many RDBMS
 
@@ -37,7 +37,7 @@ Import data
 
 
 Examples
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -95,7 +95,7 @@ Examples
 
 
 Compressed
-==========
+-------------------------------------------------------------------------------
 * If the extension is ``.gz``, ``.bz2``, ``.zip``, and ``.xz``, the corresponding compression method is automatically selected
 
 .. code-block:: python
@@ -104,7 +104,7 @@ Compressed
 
 
 Read HTML
-=========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     DATA = 'https://python.astrotech.io/numerical-analysis/pandas/df-create.html'
@@ -134,7 +134,7 @@ Read HTML
 
 
 StringIO
-========
+-------------------------------------------------------------------------------
 * Converts ``str`` to File-like object
 
 .. code-block:: python
@@ -192,7 +192,7 @@ StringIO
 
 
 Read SQL
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import sqlite3
@@ -246,7 +246,7 @@ Read SQL
 
 
 XML and XSLT
-============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from io import StringIO
@@ -352,7 +352,7 @@ XML and XSLT
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/pandas_read_csv_dates.py
     :caption: :download:`Solution <assignments/pandas_read_csv_dates.py>`
     :end-before: # Solution

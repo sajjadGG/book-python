@@ -1,5 +1,5 @@
 Array Random
-************
+============
 
 
 * Since ``numpy v1.17``: BitGenerator for the PCG-64 (Parallel Congruent Generator 64 bit) pseudo-random number generator
@@ -7,7 +7,7 @@ Array Random
 
 
 Seed
-====
+-------------------------------------------------------------------------------
 * Seed the generator
 
 .. code-block:: python
@@ -62,7 +62,7 @@ Seed
 
 
 Generate
-========
+-------------------------------------------------------------------------------
 * Random ``int`` from low (inclusive) to high (exclusive)
 * Random ``float`` in the half-open interval ``[0.0, 1.0)``
 
@@ -102,7 +102,7 @@ Generate pseudorandom ``float``:
 
 
 Distributions
-=============
+-------------------------------------------------------------------------------
 
 Uniform Distribution
 --------------------
@@ -201,7 +201,7 @@ Poisson Distribution
 
 
 Drawing and Sampling
-====================
+-------------------------------------------------------------------------------
 Choice:
 
 .. code-block:: python
@@ -242,7 +242,7 @@ Sample:
 
 
 Shuffle
-=======
+-------------------------------------------------------------------------------
 * Modify sequence in-place (!!)
 * Multi-dimensional arrays are only shuffled along the first axis
 
@@ -276,7 +276,7 @@ Shuffle
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/numpy_random_float.py
     :caption: :download:`Solution <assignments/numpy_random_float.py>`
     :end-before: # Solution

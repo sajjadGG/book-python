@@ -1,9 +1,6 @@
 Math Stdlib
-***********
+===========
 
-
-Builtin
-=======
 
 Constans
 --------
@@ -24,7 +21,7 @@ Functions
 
 
 ``math``
-========
+--------
 
 Constants
 ---------
@@ -222,7 +219,7 @@ Absolute value
 
 
 Assignments
-===========
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Trigonometry

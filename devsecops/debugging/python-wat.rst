@@ -1,5 +1,5 @@
 Python WAT?!
-************
+============
 
 
 .. code-block:: python

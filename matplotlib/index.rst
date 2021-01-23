@@ -1,5 +1,6 @@
 .. include:: ../README.rst
 
+
 About
 *****
 .. toctree::
@@ -11,6 +12,7 @@ About
     ../survey.rst
     ../about/references.rst
 
+
 Matplotlib
 **********
 .. toctree::
@@ -19,6 +21,7 @@ Matplotlib
     :caption: Matplotlib
 
     _index.rst
+
 
 Appendixes
 **********

@@ -1,9 +1,9 @@
 Datetime Time Deltas
-********************
+====================
 
 
 Timedelta object
-================
+----------------
 Shifting datetime objects:
 
 .. code-block:: python
@@ -24,7 +24,7 @@ Shifting datetime objects:
 
 
 Time Shift
-==========
+----------
 
 Simple Shifts
 -------------
@@ -159,7 +159,7 @@ Subtract month from ``datetime``:
 
 
 Duration
-========
+--------
 Duration between two datetimes:
 
 .. code-block:: python
@@ -201,7 +201,7 @@ Duration between two datetimes:
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: assignments/datetime_timedelta_period.py
     :caption: :download:`Solution <assignments/datetime_timedelta_period.py>`
     :end-before: # Solution

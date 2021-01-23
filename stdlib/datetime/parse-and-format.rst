@@ -1,9 +1,9 @@
 Datetime Parsing and Formatting
-*******************************
+===============================
 
 
 Date formats
-============
+------------
 * https://en.wikipedia.org/wiki/Date_format_by_country
 
 Date format in USA
@@ -52,7 +52,7 @@ Date format in Poland
 
 
 Time formats
-============
+------------
 
 24 and 12 hour clock
 --------------------
@@ -111,7 +111,7 @@ Military time
 
 
 ISO 8601 Standard
-=================
+-----------------
 * https://en.wikipedia.org/wiki/ISO_8601
 
 Dates
@@ -198,7 +198,7 @@ Period of:
 
 
 Date and time parsing and formatting parameters
-===============================================
+-----------------------------------------------
 * https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 * ``%-I`` or ``%_I`` on \*nix systems (macOS, BSD, Linux) to remove leading zero
 * ``%#I`` on Windows to remove leading zero
@@ -216,7 +216,7 @@ Almost any programming language has very similar date formatting parameters. The
 
 
 Date formatting
-===============
+---------------
 
 ISO Format
 ----------
@@ -294,7 +294,7 @@ Datetime formatting as string with ``.strftime()``:
 
 
 Parsing dates
-=============
+-------------
 * Parsing - analyze (a sentence) into its parts and describe their syntactic roles.
 
 Datetime parsing from string:
@@ -312,7 +312,7 @@ Datetime parsing from string:
     # 1957-10-04 19:28:34
 
 Examples
-========
+--------
 .. code-block:: python
 
     from datetime import datetime
@@ -335,7 +335,7 @@ Examples
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: assignments/datetime_parse_iso.py
     :caption: :download:`Solution <assignments/datetime_parse_iso.py>`
     :end-before: # Solution

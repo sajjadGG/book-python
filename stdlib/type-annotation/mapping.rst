@@ -1,9 +1,9 @@
 Mapping
-*******
+=======
 
 
 Dict
-====
+-------------------------------------------------------------------------------
 * Before Python 3.9 you need ``from typing import Dict``
 * Since Python 3.9: :pep:`585` -- Type Hinting Generics In Standard Collections
 
@@ -23,7 +23,7 @@ Dict
 
 
 TypedDict
-=========
+-------------------------------------------------------------------------------
 * Since Python 3.8: :pep:`589` -- TypedDict: Type Hints for Dictionaries with a Fixed Set of Keys
 
 .. code-block:: python

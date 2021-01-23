@@ -1,9 +1,9 @@
 Array Create
-************
+============
 
 
 Declare
-=======
+-------------------------------------------------------------------------------
 1-dimensional Array:
 
 .. code-block:: python
@@ -66,7 +66,7 @@ Declare
     Multi layer cake as an analog for n-dim array [CAKE]_
 
 Range
-=====
+-------------------------------------------------------------------------------
 Array from Python ``range()``:
 
 .. code-block:: python
@@ -156,7 +156,7 @@ Array from ``np.arange()``:
 
 
 Linspace
-========
+-------------------------------------------------------------------------------
 * ``np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)``
 * Return evenly spaced numbers over a specified interval.
 
@@ -173,7 +173,7 @@ Linspace
 
 
 Zeros
-=====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -213,7 +213,7 @@ Zeros
 
 
 Ones
-====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -255,7 +255,7 @@ Ones
 
 
 Empty
-=====
+-------------------------------------------------------------------------------
 * Garbage from memory
 * Will reuse previous if given shape was already created
 
@@ -295,7 +295,7 @@ Empty
 
 
 Full
-====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -311,7 +311,7 @@ Full
 
 
 Identity
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -334,7 +334,7 @@ Identity
 
 
 Stringify
-=========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -367,7 +367,7 @@ Stringify
 
 
 Performance
-===========
+-------------------------------------------------------------------------------
 * Results with ``%%timeit -n 1_000_000 -r 10``
 
 .. code-block:: python
@@ -395,12 +395,12 @@ Performance
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/numpy_create_arange.py
     :caption: :download:`Solution <assignments/numpy_create_arange.py>`
     :end-before: # Solution
 
 
 References
-==========
+-------------------------------------------------------------------------------
 .. [CAKE] https://i.ytimg.com/vi/iCOhz07Ng6g/maxresdefault.jpg

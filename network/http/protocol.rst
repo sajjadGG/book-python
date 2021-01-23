@@ -1,5 +1,5 @@
 HTTP Protocol
-*************
+=============
 
 * Request vs Response
 * URI vs URL vs URN
@@ -10,7 +10,7 @@ HTTP Protocol
 * Headers
 
 URI vs URL vs URN
-=================
+-------------------------------------------------------------------------------
 * URIs identify
 * URLs locate;
 * Locators are also identifiers, so every URL is also a URI :cite:`URIvsURL`
@@ -29,7 +29,7 @@ This is a locator, which is an identifier for that physical location. It is like
 I say "like" because these examples do not follow the required syntax.
 
 HTTP Methods
-============
+-------------------------------------------------------------------------------
 .. csv-table:: HTTP Methods
     :header-rows: 1
     :widths: 15, 25, 60
@@ -47,7 +47,7 @@ HTTP Methods
 
 
 HTTP Statuses
-=============
+-------------------------------------------------------------------------------
 .. csv-table:: HTTP Status Families
     :header-rows: 1
     :widths: 15, 85
@@ -163,7 +163,7 @@ HTTP Statuses
 
 
 HTTP Headers
-============
+-------------------------------------------------------------------------------
 
 HTTP Request Headers
 --------------------
@@ -222,7 +222,7 @@ HTTP Response Headers
 
 
 MIME types
-==========
+-------------------------------------------------------------------------------
 
 General structure
 -----------------
@@ -322,7 +322,7 @@ Video Types
 
 
 API Versioning
-==============
+-------------------------------------------------------------------------------
 
 Good Engineering Practices
 --------------------------

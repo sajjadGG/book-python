@@ -1,13 +1,15 @@
 Math Complex Numbers
-********************
+====================
 
 
+Rationale
+---------
 * Complex number with real and imaginary parts
 * Engineering notation ``j`` not mathematical ``i``
 * No space inside the expression
 
 Defining ``complex``
-====================
+--------------------
 .. code-block:: python
 
     complex()                # 0j
@@ -39,7 +41,7 @@ Defining ``complex``
 
 
 Arithmetic on ``complex``
-=========================
+-------------------------
 .. code-block:: python
 
     a = complex(1, 2)       # (1+2j)
@@ -51,7 +53,7 @@ Arithmetic on ``complex``
     a / b                   # (0.44+0.08j)
 
 Builtin functions
-=================
+-----------------
 
 Absolute
 --------
@@ -65,6 +67,6 @@ Absolute
 
 
 ``cmath``
-=========
+---------
 * mathematical functions for complex numbers
 * Python complex number z is stored internally using rectangular or Cartesian coordinates

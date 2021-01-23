@@ -1,11 +1,11 @@
 Basic Statistics
-****************
+================
 
 
 * https://www.statsoft.pl/textbook/stathome_stat.html
 
 Rozkłady
-========
+-------------------------------------------------------------------------------
 * kształty przebiegów
 * nazwy
 * zakresy
@@ -18,7 +18,7 @@ Rozkłady
 
 
 Podstawowe pojęcia
-==================
+-------------------------------------------------------------------------------
 .. glossary::
 
     Auto-regression Time Series

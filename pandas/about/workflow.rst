@@ -1,13 +1,13 @@
 Pandas Workflow
-***************
+===============
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 .. figure:: img/pandas-about-workflow.png
 
 Working with Excel file
-=======================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -45,7 +45,7 @@ Working with Excel file
 
 
 Working with dirty CSV
-======================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-dirty.csv'
@@ -61,7 +61,7 @@ Working with dirty CSV
 
 
 Working with CSV
-================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -154,7 +154,7 @@ Working with CSV
 
 
 Plots
-=====
+-------------------------------------------------------------------------------
 
 Hist
 ----

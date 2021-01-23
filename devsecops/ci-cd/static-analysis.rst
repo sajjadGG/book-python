@@ -1,19 +1,19 @@
 Static Code Analysis
-********************
+====================
 
 
 ``SonarLint``
-=============
+-------------
 * https://www.sonarlint.org
 * Plugin do IDE
 
 
 ``SonarScanner``
-================
+----------------
 
 
 ``SonarQube``
-=============
+-------------
 SonarQube software (previously called Sonar) is an open source quality management platform, dedicated to continuously analyze and measure technical quality, from project portfolio to method.
 
 Learn more at:
@@ -25,7 +25,7 @@ Learn more at:
 
 
 Przygotowanie środowiska statycznej analizy
-===========================================
+-------------------------------------------
 Uruchomienie:
 
     .. code-block:: console
@@ -82,8 +82,6 @@ Multi-language
 .. literalinclude:: ../_src/sonar-multilanguage.properties
     :language: properties
     :caption: SonarScanner config for static analysis of Multilanguage code
-
-
 
 
 ``Coverage``

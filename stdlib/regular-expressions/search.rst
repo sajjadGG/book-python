@@ -1,15 +1,15 @@
 Regexp Search
-*************
+=============
 
 
 About
-=====
+-------------------------------------------------------------------------------
 * ``re.search()``
 * Searches if pattern contains a string
 
 
 Examples
-========
+-------------------------------------------------------------------------------
 Usage of ``re.search()``:
 
 .. code-block:: python
@@ -33,7 +33,7 @@ Usage of ``re.search()``:
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/regexp_search_astronauts.py
     :caption: :download:`Solution <assignments/regexp_search_astronauts.py>`
     :end-before: # Solution

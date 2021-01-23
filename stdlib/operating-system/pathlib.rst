@@ -1,9 +1,9 @@
 Pathlib
-*******
+=======
 
 
 Getting filenames and extensions
-================================
+-------------------------------------------------------------------------------
 
 Extensions
 ----------
@@ -32,13 +32,13 @@ Filenames
 
 
 System ``os`` vs. ``pathlib``
-=============================
+-------------------------------------------------------------------------------
 .. csv-table:: System ``os`` vs. ``pathlib``
     :header-rows: 1
     :file: data/system-os-vs-pathlib.csv
 
 ``.home()``
-===========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pathlib
@@ -46,7 +46,7 @@ System ``os`` vs. ``pathlib``
     pathlib.home()  # WindowsPath('C:/Users/José')
 
 ``.drive``
-==========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pathlib
@@ -56,7 +56,7 @@ System ``os`` vs. ``pathlib``
     PurePosixPath('/etc').drive                 # ''
 
 ``.parents``
-============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pathlib
@@ -68,7 +68,7 @@ System ``os`` vs. ``pathlib``
     p.parents[2]    # PureWindowsPath('c:/')
 
 ``.parent``
-===========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pathlib
@@ -77,7 +77,7 @@ System ``os`` vs. ``pathlib``
     p.parent        # PurePosixPath('/a/b/c')
 
 ``.as_posix()``
-===============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pathlib
@@ -88,7 +88,7 @@ System ``os`` vs. ``pathlib``
     p.as_posix()    # 'c:/windows'
 
 ``.as_uri()``
-=============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pathlib
@@ -100,7 +100,7 @@ System ``os`` vs. ``pathlib``
     p.as_uri()      # 'file:///c:/Windows'
 
 ``Path.chmod()``
-================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pathlib
@@ -112,7 +112,7 @@ System ``os`` vs. ``pathlib``
     oct(p.stat().st_mode)  # 0o100444
 
 ``.glob()``
-===========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pathlib
@@ -127,7 +127,7 @@ System ``os`` vs. ``pathlib``
     # [PosixPath('docs/conf.py'), ...]
 
 ``.iterdir()``
-==============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pathlib
@@ -145,7 +145,7 @@ System ``os`` vs. ``pathlib``
     # PosixPath('docs/_templates')
 
 joining paths
-=============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from pathlib import Path

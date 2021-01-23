@@ -1,5 +1,5 @@
 Wprowadzenie do Machine Learning w Pythonie
-*******************************************
+===========================================
 
 Wraz ze wzrostem ilości przetwarzania i gromadzenia danych pojawiła się potrzeba ich szybszej analizy. Dotychczasowe "ręczne" metody stały się niewystarczające. Z tego powodu coraz bardziej popularne stały się algorytmy tzw. maszynowego uczenia (ang. ML - Machine Learning).
 
@@ -27,7 +27,7 @@ O klasach algorytmów i ich trafnym doborze do odpowiedniego problemu, jak równ
 
 
 Czym jest uczenie maszynowe?
-============================
+-------------------------------------------------------------------------------
 Sama definicja uczenia maszynowego została stworzona przez Arthura Samuela w 1959 roku jako:
 
 > "field of study that gives computers the ability to learn without being explicitly programmed"
@@ -39,13 +39,9 @@ w wolnym tłumaczeniu:
 Co można przez to rozumieć?
 
 
-
-
-
 Co trzeba wiedzieć przed rozpoczęciem pracy?
-============================================
+-------------------------------------------------------------------------------
 Machine Learning to bardzo duży i złożony temat, a tak naprawdę to osobna gałąź informatyki. Podczas tych artykułów chciałbym się skupić na praktycznym wykorzystaniu uczenia maszynowego do rozwiązywania problemów.
-
 
 
 Elementy języka Python i biblioteki standardowej
@@ -189,7 +185,7 @@ Datasets
 
 
 Ważne pytania przed przystąpieniem do tworzenia algorytmu
-=========================================================
+-------------------------------------------------------------------------------
 * How does this work in real world?
 * How much training data do you need?
 * How is the tree created?
@@ -201,7 +197,7 @@ Ważne pytania przed przystąpieniem do tworzenia algorytmu
 
 
 Czyszczenie Danych
-==================
+-------------------------------------------------------------------------------
 * Bardzo ważny temat
 * Rzadko kto o tym wspomina!
 * Czy to ten sam adres:
@@ -244,7 +240,7 @@ Czyszczenie Danych
 
 
 Praca z bibliotekami
-====================
+-------------------------------------------------------------------------------
 
 Przykład pracy z ``scikit-learn``
 ---------------------------------
@@ -327,7 +323,7 @@ Przykład pracy z ``PyMC3``
 
 
 Kategorie algorytmów uczenia maszynowego
-========================================
+-------------------------------------------------------------------------------
 
 Supervised Learning
 -------------------

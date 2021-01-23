@@ -1,5 +1,5 @@
 HTML Scrapping
-**************
+==============
 
 
 * Requests HTML https://github.com/psf/requests-html
@@ -7,7 +7,7 @@ HTML Scrapping
 * Scrapy https://scrapy.org/
 
 ``BeautifulSoup``
-=================
+-------------------------------------------------------------------------------
 
 Example usage
 -------------
@@ -158,7 +158,7 @@ Getting Page Text
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. todo:: Convert assignments to literalinclude
 
 Scrapping Iris

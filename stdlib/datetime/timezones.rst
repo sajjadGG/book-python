@@ -1,9 +1,9 @@
 Datetime Timezone
-******************
+=================
 
 
 Rationale
-=========
+---------
 * Always keep dates and times only in UTC (**important!**)
 * Datetimes should be converted to local time only when displaying to user
 * Computerphile Time & Time Zones :cite:`VideoComputerphileTimeZones`
@@ -56,13 +56,13 @@ Timezone aware datetime:
 
 
 IANA Time Zone Database
-=======================
+-----------------------
 * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 * https://www.iana.org/time-zones
 
 
 Standard Library
-================
+----------------
 * Since Python 3.9: :pep:`615` -- Support for the IANA Time Zone Database in the Standard Library
 
 .. code-block:: python
@@ -86,7 +86,7 @@ Standard Library
 
 
 ``pytz``
-========
+--------
 ``pytz`` brings the Olson tz database into Python:
 
 .. code-block:: python
@@ -201,7 +201,7 @@ Descriptor Timezone Converter:
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: assignments/datetime_timezone_convert.py
     :caption: :download:`Solution <assignments/datetime_timezone_convert.py>`
     :end-before: # Solution

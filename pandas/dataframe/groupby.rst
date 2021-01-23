@@ -1,5 +1,5 @@
 DataFrame Group By
-******************
+==================
 
 
 .. code-block:: python
@@ -25,7 +25,7 @@ DataFrame Group By
 
 
 Grouping
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     df.groupby('item')
@@ -38,7 +38,7 @@ Grouping
 
 
 Groupby Methods
-===============
+-------------------------------------------------------------------------------
 * Group series using mapper (dict or key function, apply given function to group, return result as series) or by a series of columns
 * ``.size()``
 * ``.mean()``
@@ -338,7 +338,7 @@ Last
 
 
 Examples
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     list(df.groupby(['month']).groups.keys())
@@ -456,7 +456,7 @@ How many calls, texts, and data are sent per month, split by network_type?:
 
 
 Output format
-=============
+-------------------------------------------------------------------------------
 * Series or DataFrame?
 
 produces Pandas Series:
@@ -486,7 +486,7 @@ Produces Pandas DataFrame:
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/pandas_df_groupby_phones.py
     :caption: :download:`Solution <assignments/pandas_df_groupby_phones.py>`
     :end-before: # Solution
@@ -505,7 +505,7 @@ Assignments
 
 
 References
-==========
+-------------------------------------------------------------------------------
 * https://finance.yahoo.com/quote/SPCE/history
 * https://www.kaggle.com/jessemostipak/astronaut-database
 * https://www.kaggle.com/nasa/astronaut-yearbook

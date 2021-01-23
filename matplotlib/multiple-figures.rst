@@ -1,9 +1,9 @@
 Multiple figures and plots
-**************************
+==========================
 
 
 Multiple Plots on one Figure
-============================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -26,7 +26,7 @@ Multiple Plots on one Figure
 
 
 Multiple Figures with single Plots
-==================================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -80,7 +80,7 @@ Multiple Figures with single Plots
 
 
 Multiple Charts in Grid
-=======================
+-------------------------------------------------------------------------------
 .. literalinclude:: src/matplotlib-multiple-charts.py
     :language: python
     :caption: Multiple Charts in Grid
@@ -89,7 +89,7 @@ Multiple Charts in Grid
 
 
 ``plt.plot()`` vs ``ax.plot()``
-===============================
+-------------------------------------------------------------------------------
 * https://stackoverflow.com/questions/43482191/matplotlib-axes-plot-vs-pyplot-plot
 
 .. code-block:: python

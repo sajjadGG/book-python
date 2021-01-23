@@ -1,9 +1,9 @@
 Array Shape
-***********
+===========
 
 
 Recap
-=====
+-------------------------------------------------------------------------------
     >>> obj = [1, 2, 3]
     >>>
     >>> len(obj)
@@ -33,13 +33,13 @@ Recap
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 * Any shape operation changes only ``np.ndarray.shape`` and ``np.ndarray.strides`` and does not touch data
 
 
 
 Shape
-=====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -90,7 +90,7 @@ Shape
 
 
 Reshape
-=======
+-------------------------------------------------------------------------------
 * Returns new array
 * Does not modify inplace
 * ``a.reshape(1, 2)`` is equivalent to ``a.reshape((1, 2))``
@@ -196,7 +196,7 @@ Reshape
 
 
 Flatten
-=======
+-------------------------------------------------------------------------------
 * Returns new array (makes memory copy - expensive)
 * Does not modify inplace
 
@@ -239,7 +239,7 @@ Flatten
 
 
 Ravel
-=====
+-------------------------------------------------------------------------------
 * Ravel is the same as Flatten but returns a reference (or view) of the array if possible (i.e. memory is contiguous)
 * Otherwise returns new array (makes memory copy)
 
@@ -283,7 +283,7 @@ Ravel
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/numpy_shape_1d.py
     :caption: :download:`Solution <assignments/numpy_shape_1d.py>`
     :end-before: # Solution

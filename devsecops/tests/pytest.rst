@@ -1,9 +1,9 @@
 Pytest
-******
+======
 
 
 Rationale
-=========
+---------
 * Detailed info on failing assert statements (no need to remember self.assert* names);
 * Auto-discovery of test modules and functions;
 * Modular fixtures for managing small or parametrized long-lived test resources;
@@ -20,7 +20,7 @@ Rationale
         assert my_func(3) == 4
 
 Running
-=======
+-------
 .. code-block:: python
 
     python -m pytest my_file.py
@@ -28,7 +28,7 @@ Running
     python -m pytest -v -s my_file.py
 
 Skip
-====
+----
 .. code-block:: python
 
     @pytest.mark.skip(reason="no way of currently testing this")
@@ -70,7 +70,7 @@ Skipif
             "will not be setup or run under 'win32' platform"
 
 ``pytest.raises``
-=================
+-----------------
 .. code-block:: python
 
     with raises(ZeroDivisionError):
@@ -83,7 +83,7 @@ Skipif
         raise ValueError("value must be 42")
 
 Fixtures
-========
+--------
 * Fixtures are requested by test functions or other fixtures by declaring them as argument names.
 * It’s to think of fixtures as a set of resources that need to be set up before a test starts, and cleaned up after.
 * ``@pytest.fixture(scope='module')``

@@ -1,5 +1,5 @@
 API CORS
-********
+========
 
 .. code-block:: python
 

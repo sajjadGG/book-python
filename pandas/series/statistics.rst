@@ -1,5 +1,5 @@
 Series Statistics
-*****************
+=================
 
 
 .. code-block:: python
@@ -21,7 +21,7 @@ Series Statistics
 
 
 Count
-=====
+-------------------------------------------------------------------------------
 * ``Series.count()`` - Number of non-null observations
 
 .. code-block:: python
@@ -42,7 +42,7 @@ Count
 
 
 Sum
-===
+-------------------------------------------------------------------------------
 * ``Series.sum()`` - Sum of values
 * ``Series.cumsum()`` - Cumulative sum
 
@@ -61,7 +61,7 @@ Sum
 
 
 Product
-=======
+-------------------------------------------------------------------------------
 * ``Series.prod()`` - Product of values
 * ``Series.cumprod()`` - Cumulative product
 
@@ -80,7 +80,7 @@ Product
 
 
 Extremes
-========
+-------------------------------------------------------------------------------
 * ``Series.min()`` - Minimum value
 * ``Series.idxmin()`` - Index of minimum value (Float, Int, Object, Datetime, Index)
 * ``Series.argmin()`` - Range index of minimum value
@@ -134,7 +134,7 @@ Maximum, index of maximum and cumulative maximum:
 
 
 Average
-=======
+-------------------------------------------------------------------------------
 Arithmetic mean of values:
 
 .. code-block:: python
@@ -178,7 +178,7 @@ Rolling Average:
 
 
 Distribution
-============
+-------------------------------------------------------------------------------
 Absolute value:
 
 .. code-block:: python
@@ -272,7 +272,7 @@ Correlation Coefficient:
     Correlation Coefficient
 
 Describe
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     s.describe()
@@ -288,5 +288,5 @@ Describe
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. todo:: Create assignments

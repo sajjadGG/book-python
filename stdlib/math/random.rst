@@ -1,9 +1,9 @@
 Math Random
-***********
+===========
 
 
 ``random``
-==========
+----------
 .. csv-table:: ``random``
     :header-rows: 1
 
@@ -18,14 +18,14 @@ Math Random
 
 
 Pseudo and Pure random numbers
-==============================
+------------------------------
 * What are pseudorandom numbers?
 * Why it is not possible to generate a pure random number?
 * What is ``random.seed(0)``?
 
 
 Assignments
-===========
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Random numbers

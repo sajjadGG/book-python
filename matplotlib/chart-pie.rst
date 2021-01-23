@@ -1,5 +1,5 @@
 Pie Chart
-*********
+=========
 
 
 * Display sections in whole group
@@ -14,7 +14,7 @@ Pie Chart
 
 
 Simple Chart
-============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -48,7 +48,7 @@ Simple Chart
 
 
 Donut Pie Chart
-===============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     fig, ax = plt.subplots()

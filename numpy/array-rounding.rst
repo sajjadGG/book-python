@@ -1,9 +1,9 @@
 Array Rounding
-**************
+==============
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 * ``np.ceil(n)`` - rounds `n` up to nearest ``int``
 * ``np.floor(n)`` - rounds `n` down to nearest ``int``
 * ``np.rint(n)`` - rounds `n` to nearest ``int``
@@ -12,7 +12,7 @@ Rationale
 
 
 Floor
-=====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -25,7 +25,7 @@ Floor
 
 
 Ceil
-====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -38,7 +38,7 @@ Ceil
 
 
 Rint
-====
+-------------------------------------------------------------------------------
 * Round elements of the array to the nearest integer.
 
 .. code-block:: python
@@ -53,7 +53,7 @@ Rint
 
 
 Round
-=====
+-------------------------------------------------------------------------------
 * Round elements of the array to the precision
 
 .. code-block:: python
@@ -108,7 +108,7 @@ Round
 
 
 Clip
-====
+-------------------------------------------------------------------------------
 * Increase smaller values to lower bound
 * Decrease higher values to upper bound
 
@@ -157,7 +157,7 @@ Clip
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/numpy_round_rint.py
     :caption: :download:`Solution <assignments/numpy_round_rint.py>`
     :end-before: # Solution

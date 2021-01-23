@@ -1,9 +1,9 @@
 Series NA
-*********
+=========
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 * https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html
 * https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#missing-data-na
 * Experimental: the behaviour of pd.NA can still change without warning.
@@ -14,7 +14,7 @@ Rationale
 
 
 Boolean Value
-=============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -36,7 +36,7 @@ Boolean Value
 
 
 Type
-====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -65,7 +65,7 @@ Type
 
 
 Comparison
-==========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -94,7 +94,7 @@ Comparison
 
 
 Identity
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -123,7 +123,7 @@ Identity
 
 
 Check
-=====
+-------------------------------------------------------------------------------
 * Negated ``~`` versions of all above methods
 
 .. code-block:: python
@@ -142,7 +142,7 @@ Check
 
 
 Select
-======
+-------------------------------------------------------------------------------
 * ``s.isnull()`` and ``s.notnull()``
 * ``s.isna()`` and ``s.notna()``
 * Negated ``~`` versions of all above methods
@@ -213,7 +213,7 @@ Select
 
 
 Update
-======
+-------------------------------------------------------------------------------
 * Works with ``inplace=True`` parameter.
 
 Fill NA - Scalar value:
@@ -335,7 +335,7 @@ Interpolate. ``method: str``, default ``linear``. Does not have ``inplace=True``
 
 
 Drop
-====
+-------------------------------------------------------------------------------
 Drop Rows. Has ``inplace=True`` parameter:
 
 .. code-block:: python
@@ -354,7 +354,7 @@ Drop Rows. Has ``inplace=True`` parameter:
 
 
 Conversion
-==========
+-------------------------------------------------------------------------------
 * If you have a ``DataFrame`` or ``Series`` using traditional types that have missing data represented using ``np.nan``
 * There are convenience methods ``convert_dtypes()`` in ``Series`` and ``DataFrame`` that can convert data to use the newer dtypes for integers, strings and booleans
 * This is especially helpful after reading in data sets when letting the readers such as ``read_csv()`` and ``read_excel()`` infer default dtypes.
@@ -394,7 +394,7 @@ Conversion
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/pandas_series_na.py
     :caption: :download:`Solution <assignments/pandas_series_na.py>`
     :end-before: # Solution

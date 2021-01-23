@@ -1,8 +1,8 @@
 Naive Bayes
-***********
+===========
 
 Co to jest Naiwny klasyfikator Bayesowski?
-==========================================
+-------------------------------------------------------------------------------
 Naiwny klasyfikator Bayesowski, bazujący na twierdzeniu Bayesa, nadaje się szczególnie do problemów o bardzo wielu wymiarach na wejściu. Mimo prostoty metody, często działa ona lepiej od innych, bardzo skomplikowanych metod klasyfikujących.
 
 .. math::
@@ -35,12 +35,12 @@ Mimo, że prawdopodobieństwo a priori wskazuje, że X raczej będzie zielone (b
 W rezultacie klasyfikujemy X jako czerwone, gdyż większe jest prawdopodobieństwo a posteriori takiej właśnie przynależności.
 
 Gaussian Naive Bayes
-====================
+-------------------------------------------------------------------------------
 A Gaussian Naive Bayes algorithm is a special type of NB algorithm. It’s specifically used when the features have continuous values. It’s also assumed that all the features are following a gaussian distribution i.e, normal distribution.
 
 
 Przykłady praktyczne
-====================
+-------------------------------------------------------------------------------
 
 Przykład: Spam
 --------------
@@ -62,7 +62,7 @@ Przykład: Apple
 
 
 Plusy i minusy Naiwnego Bayesa
-==============================
+-------------------------------------------------------------------------------
 
 Plusy
 -----
@@ -82,7 +82,7 @@ Minusy
 * Innym ograniczeniem Naiwnego Bayesa jest założenie o niezależności wskaźników. W prawdziwym życiu, w zasadzie niemożliwym jest uzyskanie zestawu wskaźników kompletnie od siebie niezależnych.
 
 Aplikacje Naiwnego klasyfikatora Bayesa
-=======================================
+-------------------------------------------------------------------------------
 Przewidywanie w czasie rzeczywistym
     Naiwny Bayes jest skorym do nauki klasyfikatorem i z pewnością szybkim. Z tego powodu, może zostać wykorzystany do przewidywania w czasie rzeczywistym.
 
@@ -97,7 +97,7 @@ System rekomendacyjny
 
 
 Przykłady praktyczne
-====================
+-------------------------------------------------------------------------------
 
 .. code-block:: python
 
@@ -118,7 +118,7 @@ Przykłady praktyczne
 
 
 Zadanie kontrolne
-=================
+-------------------------------------------------------------------------------
 
 Pima Indians Diabetes problem
 -----------------------------

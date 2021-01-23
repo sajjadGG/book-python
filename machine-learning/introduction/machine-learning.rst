@@ -1,13 +1,13 @@
 Machine Learning Introduction
-*****************************
+=============================
 
 
 Czym jest uczenie maszynowe?
-============================
+-------------------------------------------------------------------------------
 Machine learning was defined in 1959 by Arthur Samuel as the "field of study that gives computers the ability to learn without being explicitly programmed." This means imbuing knowledge to machines without hard-coding it.
 
 Co trzeba wiedzieć przed rozpoczęciem pracy?
-============================================
+-------------------------------------------------------------------------------
 
 Elementy języka Python i biblioteki standardowej
 ------------------------------------------------
@@ -154,7 +154,7 @@ More information in `Machine Learning Datasets`
 
 
 Ważne pytania przed przystąpieniem do tworzenia algorytmu
-=========================================================
+-------------------------------------------------------------------------------
 * How does this work in real world?
 * How much training data do you need?
 * How is the tree created?
@@ -165,7 +165,7 @@ Ważne pytania przed przystąpieniem do tworzenia algorytmu
     Machine Learning Steps
 
 Czyszczenie Danych
-==================
+-------------------------------------------------------------------------------
 * Bardzo ważny temat
 * Rzadko kto o tym wspomina!
 
@@ -207,7 +207,7 @@ Czyszczenie Danych
 
 
 Praca z bibliotekami
-====================
+-------------------------------------------------------------------------------
 
 Przykład pracy z ``scikit-learn``
 ---------------------------------
@@ -274,7 +274,7 @@ Przykład pracy z ``scikit-learn``
 
 
 Kategorie algorytmów uczenia maszynowego
-========================================
+-------------------------------------------------------------------------------
 
 Supervised Learning
 -------------------

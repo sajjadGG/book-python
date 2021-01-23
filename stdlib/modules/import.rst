@@ -1,9 +1,9 @@
 Module Import
-*************
+=============
 
 
 Importing modules
-=================
+-----------------
 
 Import module
 -------------
@@ -95,7 +95,7 @@ Syntax:
 
 
 What is Python Module
-=====================
+---------------------
 * Every Python file is a module
 * Every directory with ``__init__.py`` file is a module
 * Python does not recognize whether it is a file or dir with init
@@ -124,7 +124,7 @@ Importing from own modules
 
 
 Examples
-========
+--------
 .. code-block:: text
 
     game
@@ -198,7 +198,7 @@ Importing with aliases
 
 
 Import path
-===========
+-----------
 * Watch-out module names which are the same as in stdlib
 
 .. code-block:: python
@@ -222,7 +222,7 @@ Import path
 
 
 ``__name__``
-============
+------------
 * Zmienna ``__name__`` pozwala ustalić czy dany plik jest wykonywany czy importowany.
 * Jeżeli dany plik jest wykonywany, zmienna ``__name__`` ustawiana jest na ``'__main__'``.
 * Jeżeli dany plik jest importowany jako moduł, zmienna ``__name__`` ustawiana jest na nazwę modułu.

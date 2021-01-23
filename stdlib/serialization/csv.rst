@@ -1,9 +1,9 @@
 Serialization CSV
-*****************
+=================
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 * CSV - Comma Separated Values
 * CSV - Character Separated Values
 
@@ -39,7 +39,7 @@ CSV file with mixed values (numeric and strings). First line is a header.:
 
 
 Encoding
-========
+-------------------------------------------------------------------------------
 * ``utf-8`` - international standard (should be always used!)
 * ``iso-8859-1`` - ISO standard for Western Europe and USA
 * ``iso-8859-2`` - ISO standard for Central Europe (including Poland)
@@ -55,7 +55,7 @@ Encoding
 
 
 Quoting
-=======
+-------------------------------------------------------------------------------
 * ``csv.QUOTE_ALL`` (safest)
 * ``csv.QUOTE_MINIMAL``
 * ``csv.QUOTE_NONE``
@@ -99,7 +99,7 @@ Quoting
 
 
 Quotechar
-=========
+-------------------------------------------------------------------------------
 * ``"`` - quote char (best)
 * ``'`` - apostrophe
 
@@ -141,7 +141,7 @@ Quotechar
     /5.7/,/2.8/,/4.1/,/1.3/,/versicolor/
 
 Delimiter
-=========
+-------------------------------------------------------------------------------
 ``delimiter=','``:
 
 .. code-block:: text
@@ -180,14 +180,14 @@ Delimiter
 
 
 Lineterminator
-==============
+-------------------------------------------------------------------------------
 * ``\r\n`` - New line on Windows
 * ``\n`` - New line on ``*nix``
 * ``*nix`` operating systems: Linux, macOS, BSD and other POSIX compliant OSes (excluding Windows)
 
 
 Dialects
-========
+-------------------------------------------------------------------------------
 .. code-block:: text
 
     1,2 and 2,5 -> 1,2;2,5  # delimiter=';'
@@ -215,7 +215,7 @@ Dialects
 
 
 Reader Object
-=============
+-------------------------------------------------------------------------------
 Read data from CSV file using ``csv.reader()``:
 
 .. code-block:: python
@@ -242,7 +242,7 @@ Read data from CSV file using ``csv.reader()``:
 
 
 Writer Object
-=============
+-------------------------------------------------------------------------------
 Writing data to CSV file using ``csv.writer()``:
 
 .. code-block:: python
@@ -267,7 +267,7 @@ Writing data to CSV file using ``csv.writer()``:
 
 
 DictReader
-==========
+-------------------------------------------------------------------------------
 Read data from CSV file using ``csv.DictReader()``:
 
 .. code-block:: python
@@ -364,7 +364,7 @@ Read data from CSV file using ``csv.DictReader()``. While giving custom names no
 
 
 DictWriter
-==========
+-------------------------------------------------------------------------------
 * Remember to add ``mode='w'`` to ``open()`` function
 * Default encoding is ``encoding='utf-8'``
 
@@ -426,7 +426,7 @@ Write data to CSV file using ``csv.DictWriter()``:
 
 
 Parsing Non-CSV Files
-=====================
+-------------------------------------------------------------------------------
 Parsing ``/etc/passwd`` file with ``csv.DictReader()``:
 
 .. code-block:: python
@@ -489,7 +489,7 @@ Parsing Java properties file with ``csv.DictReader()``:
 
 
 Use Cases
-=========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import csv
@@ -512,7 +512,7 @@ Use Cases
 
 
 Serialization
-=============
+-------------------------------------------------------------------------------
 .. figure:: img/csv-relations-serialize-dbdump.png
 
     Relational files or database dump
@@ -551,7 +551,7 @@ Serialization
 
 
 Good Practices
-==============
+-------------------------------------------------------------------------------
 * Always specify:
 
     * ``delimiter=','`` to  ``csv.DictReader()`` object
@@ -562,7 +562,7 @@ Good Practices
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/serialization_csv_dictreader.py
     :caption: :download:`Solution <assignments/serialization_csv_dictreader.py>`
     :end-before: # Solution

@@ -1,5 +1,5 @@
 Classes
-*******
+=======
 
 
 .. code-block:: python

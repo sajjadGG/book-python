@@ -1,9 +1,9 @@
 DataFrame Create
-****************
+================
 
 
 Create from List of Dicts
-=========================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -49,7 +49,7 @@ Create from List of Dicts
 
 
 Create from Dict
-================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -103,7 +103,7 @@ Create from Dict
 
 
 Create from NDArray
-===================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -124,7 +124,7 @@ Create from NDArray
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/pandas_df_create.py
     :caption: :download:`Solution <assignments/pandas_df_create.py>`
     :end-before: # Solution

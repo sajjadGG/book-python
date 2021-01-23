@@ -1,5 +1,5 @@
 Basic customizations
-====================
+-------------------------------------------------------------------------------
 * figure object is implied
 * explicit assignment is needed when customizing
 

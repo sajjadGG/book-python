@@ -1,9 +1,9 @@
 Date and Time Types
-*******************
+===================
 
 
 Timestamp
-=========
+-------------------------------------------------------------------------------
 * subclass of ``datetime.datetime``
 * Timezone naive or aware
 * More information in `Date and Time Timezones`
@@ -49,7 +49,7 @@ Timestamp
 
 
 Date Ranges
-===========
+-------------------------------------------------------------------------------
 
 Period
 ------
@@ -149,5 +149,5 @@ Attributes
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. todo:: Create assignments

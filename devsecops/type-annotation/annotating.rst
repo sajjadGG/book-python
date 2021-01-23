@@ -1,9 +1,9 @@
 Annotating existing code
-************************
+========================
 
 
 ``PyAnnotate``
-==============
+--------------
 * http://mypy-lang.blogspot.com/2017/11/dropbox-releases-pyannotate-auto.html
 
 The -w flag means "go ahead, update the file":
@@ -15,7 +15,7 @@ The -w flag means "go ahead, update the file":
 
 
 ``monkeytype``
-==============
+--------------
 * https://instagram-engineering.com/let-your-code-type-hint-itself-introducing-open-source-monkeytype-a855c7284881
 
 .. code-block:: console

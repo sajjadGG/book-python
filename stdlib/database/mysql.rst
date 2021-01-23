@@ -1,8 +1,10 @@
 Database MySQL
-**************
+==============
 
-``pyMySQL``
-===========
+Rationale
+---------
+* ``pyMySQL``
+
 
 Install
 -------

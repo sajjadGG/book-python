@@ -1,10 +1,9 @@
 Test Automation
-***************
-
+===============
 
 
 ``pssh``
-========
+--------
 * Running commands in parallel across many hosts
 * https://linux.die.net/man/1/pssh
 
@@ -16,7 +15,7 @@ Test Automation
 
 
 ``fabric``
-==========
+----------
  .. code-block:: console
 
     $ pip install fabric

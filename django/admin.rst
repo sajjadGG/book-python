@@ -1,8 +1,9 @@
 Admin panel
-***********
+===========
+
 
 Customizing
-===========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from django.contrib import admin
@@ -13,7 +14,7 @@ Customizing
     admin.site.site_title = _('HabitatOS')
 
 Permissions
-===========
+-------------------------------------------------------------------------------
 
 Users
 -----
@@ -26,7 +27,7 @@ Content Types
 
 
 Model Admin
-===========
+-------------------------------------------------------------------------------
 * ``admin.ModelAdmin``
 
 Model registering
@@ -48,7 +49,7 @@ Writing own ``list_filter``
 
 
 Model Inlines
-=============
+-------------------------------------------------------------------------------
 
 StackedInline
 -------------
@@ -57,7 +58,7 @@ TabularInline
 -------------
 
 Extending Admin
-===============
+-------------------------------------------------------------------------------
 
 Media Class
 -----------
@@ -74,13 +75,13 @@ Media Class
         ]}
 
 ModelAdmin Example
-==================
+-------------------------------------------------------------------------------
 .. literalinclude:: src/django-admin-example.py
     :language: python
     :caption: ModelAdmin Example
 
 ``django-import-export``
-========================
+-------------------------------------------------------------------------------
 .. code-block:: console
 
     $ pip install django-import-export
@@ -101,7 +102,7 @@ ModelAdmin Example
 
 
 Grapelli
-========
+-------------------------------------------------------------------------------
 
 Installation
 ------------

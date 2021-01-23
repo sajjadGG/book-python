@@ -1,11 +1,11 @@
 Database PostgreSQL
-*******************
+===================
 
 
-``psycopg2``
-============
-* http://initd.org/psycopg/
-* http://initd.org/psycopg/docs/usage.html
+Rationale
+---------
+* ``psycopg2``
+
 
 Install
 -------
@@ -18,4 +18,10 @@ Execute
 .. literalinclude:: src/database-psycopg2.py
     :language: python
     :caption: Psycopg2
+
+
+Further Reading
+---------------
+* http://initd.org/psycopg/
+* http://initd.org/psycopg/docs/usage.html
 

@@ -1,9 +1,9 @@
 Python Install
-**************
+==============
 
 
 General Requirements
-====================
+--------------------
 #. Można korzystać ze swojego komputera i dowolnego systemu operacyjnego
 #. Materiały szkoleniowe dostosowane są do Python 3.7 i 3.8 (nowsza wersja jest preferowana)
 #. Python może być zainstalowany albo za pomocą oficjalnej dystrybucji albo z pakietu Anaconda
@@ -27,7 +27,7 @@ General Requirements
 
 
 Install on macOS
-================
+----------------
 #. macOS domyślnie ma zainstalowaną starą wersję Pythona 2 (nie będziemy z niej korzystać)
 #. Pobierz i zainstaluj najnowszą wersję Pythona
 #. Alternatywnie użyj Brew (https://brew.sh) i zainstaluj Python za pomocą: ``brew install python3``
@@ -36,7 +36,7 @@ Install on macOS
 
 
 Install on Linux
-================
+----------------
 #. Niemalże wszystkie dystrybucje Linuxa posiadają zainstalowanego Pythona
 #. Pobierz i zainstaluj najnowszą wersję Pythona z oficjalnej strony internetowej (https://www.python.org/downloads/)
 #. Alternatywnie zainstaluj używając managera pakietów dla dystrybucji z której korzystasz:
@@ -54,7 +54,7 @@ W Ubuntu może nie być ``pip`` wtedy trzeba uruchomić ``sudo apt update; sudo 
 
 
 Install on Windows
-==================
+------------------
 .. figure:: about/img/python-install-1c.png
 
     Podczas instalacji Python zaznacz opcję (1) "Add Python to ``PATH``" a następnie kontynuuj instalację z zalecanymi opcjami (2).

@@ -1,9 +1,9 @@
 Datetime Dates and Time
-***********************
+=======================
 
 
 Creating ``date`` objects
-=========================
+-------------------------
 Create ``date`` object with custom date:
 
 .. code-block:: python
@@ -33,7 +33,7 @@ Create ``date`` object with current date:
     today.day           # 5
 
 ``date`` methods
---------------------
+----------------
 * Python defines Monday as zero
 * ISO defines Monday as one
 
@@ -54,7 +54,7 @@ Create ``date`` object with current date:
 
 
 Creating ``time`` objects
-=========================
+-------------------------
 Create ``time`` object with custom time:
 
 .. code-block:: python
@@ -89,7 +89,7 @@ Create ``time`` object representing midnight and noon:
 
 
 Creating ``datetime`` objects
-=============================
+-----------------------------
 Create ``datetime`` object:
 
 .. code-block:: python
@@ -194,7 +194,7 @@ Current ``datetime`` in local timezone:
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: assignments/datetime_create_custom.py
     :caption: :download:`Solution <assignments/datetime_create_custom.py>`
     :end-before: # Solution

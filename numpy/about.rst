@@ -1,12 +1,12 @@
 Numpy
-*****
+=====
 
 
 NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 NumPy is the fundamental package for scientific computing with Python. It contains among other things:
 
     * a powerful N-dimensional array object
@@ -20,7 +20,7 @@ Besides its obvious scientific uses, NumPy can also be used as an efficient mult
 
 
 Installation
-============
+-------------------------------------------------------------------------------
 Installation:
 
 .. code-block:: console
@@ -44,6 +44,6 @@ Check version:
 
 
 Further Reading
-===============
+-------------------------------------------------------------------------------
 * http://www.labri.fr/perso/nrougier/teaching/numpy.100/
 * https://github.com/rougier/numpy-100

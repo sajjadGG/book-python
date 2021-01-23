@@ -1,9 +1,9 @@
 Types Basics
-************
+============
 
 
 Series
-======
+-------------------------------------------------------------------------------
 * 1-dimensional data structure similar to ``ndarray``
 * Has index
 * Can have name
@@ -22,7 +22,7 @@ Series
 
 
 DataFrame
-=========
+-------------------------------------------------------------------------------
 * 2-dimensional object
 * All columns share the same index
 * List of ``Series``
@@ -47,7 +47,7 @@ DataFrame
 
 
 SparseArray
-===========
+-------------------------------------------------------------------------------
 * Data where a single value is repeated many times (e.g. ``0`` or ``NaN``) may be stored efficiently as a ``SparseArray``
 
 Sparse data with Series:
@@ -86,7 +86,7 @@ Sparse data with DataFrame:
 
 
 Interval
-========
+-------------------------------------------------------------------------------
 Definition:
 
 .. code-block:: python
@@ -166,7 +166,7 @@ Interval between Timestamps:
 
 
 Categorical
-===========
+-------------------------------------------------------------------------------
 * Limited, fixed set of values
 
 .. code-block:: python

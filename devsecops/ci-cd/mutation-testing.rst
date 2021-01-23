@@ -1,5 +1,5 @@
 Mutation Testing
-****************
+================
 
 
 * https://pypi.python.org/pypi/MutPy

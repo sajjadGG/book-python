@@ -1,14 +1,11 @@
-
- _Math Statistics:
-
 Math Statistics
-***************
+===============
 
 * ``statistics`` module
 
 
 Mean
-====
+----
 .. csv-table:: Mean
     :widths: 25,75
     :header: "Function", "Description"
@@ -42,7 +39,7 @@ Harmonic mean of data:
 
 
 Median
-======
+------
 .. csv-table:: Median
     :widths: 25,75
     :header: "Function", "Description"
@@ -115,7 +112,7 @@ Median, or 50th percentile, of grouped data:
 
 
 Mode
-====
+----
 .. csv-table:: Mode
     :widths: 25,75
     :header: "Function", "Description"
@@ -138,7 +135,7 @@ Mode (most common value) of discrete data:
 
 
 Distribution
-============
+------------
 .. csv-table:: Distribution
     :widths: 25,75
     :header: "Function", "Description"
@@ -147,7 +144,7 @@ Distribution
 
 
 Standard Deviation
-==================
+------------------
 .. csv-table:: Standard Deviation
     :widths: 25,75
     :header: "Function", "Description"
@@ -180,7 +177,7 @@ Population standard deviation:
 
 
 Variance
-========
+--------
 .. csv-table:: Variance
     :widths: 25,75
     :header: "Function", "Description"
@@ -210,7 +207,7 @@ Population variance of data:
 
 
 Examples
-========
+--------
 .. code-block:: python
 
     temperature_feb = NormalDist.from_samples([4, 12, -3, 2, 7, 14])
@@ -245,7 +242,7 @@ Examples
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: assignments/stdlib_statistics_stats.py
     :caption: :download:`Solution <assignments/stdlib_statistics_stats.py>`
     :end-before: # Solution

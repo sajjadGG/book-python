@@ -1,28 +1,25 @@
 Templates with ``Jinja2``
-*************************
+=========================
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 * A Jinja template is simply a text file.
 * Jinja can generate any text-based format (HTML, XML, CSV, LaTeX, etc.)
 * A Jinja template doesn't need to have a specific extension: ``.html``, ``.xml``, or any other extension is just fine
 
 
 Syntax
-======
-.. csv-table:: ``Jinja2`` Syntax
-    :header-rows: 1
+-------------------------------------------------------------------------------
+* ``{% ... %}`` - Statements
+* ``{{ ... }}`` - Expressions to print to the template output
+* ``{# ... #}`` - Comments not included in the template output
+* ``# ... ##`` - Line Statements
 
-    "Syntax", "Description"
-    "``{% ... %}``", "Statements"
-    "``{{ ... }}``", "Expressions to print to the template output"
-    "``{# ... #}``", "Comments not included in the template output"
-    "``# ... ##``", "Line Statements"
 
 
 Example usage
-=============
+-------------------------------------------------------------------------------
 .. code-block:: jinja
 
     <h1>List of users</h1>
@@ -56,7 +53,7 @@ Example usage
 
 
 Method Calls
-============
+-------------------------------------------------------------------------------
 .. code-block:: jinja
 
     {% for page in user.get_created_pages() %}
@@ -65,7 +62,7 @@ Method Calls
 
 
 Filters
-=======
+-------------------------------------------------------------------------------
 * http://jinja.pocoo.org/docs/2.10/templates/#list-of-builtin-filters
 
 .. code-block:: jinja
@@ -79,7 +76,7 @@ Filters
     {% endfilter %}
 
 Assignment tag
-==============
+-------------------------------------------------------------------------------
 .. code-block:: jinja
 
     {% set navigation = [('index.html', 'Index'), ('about.html', 'About')] %}
@@ -100,7 +97,7 @@ Assignment tag
     {% endset %}
 
 Include
-=======
+-------------------------------------------------------------------------------
 .. code-block:: jinja
 
     {% include 'header.html' %}
@@ -114,7 +111,7 @@ Include
     {% endfor %}
 
 Conditionals
-============
+-------------------------------------------------------------------------------
 .. code-block:: jinja
 
     {% if loop.index is divisibleby 3 %}
@@ -150,7 +147,7 @@ Conditionals
 
 
 Loops
-=====
+-------------------------------------------------------------------------------
 .. code-block:: jinja
 
     <ul>
@@ -185,7 +182,7 @@ Loops
     "``loop.change``", "True if previously called with a different value (or not called at all)"
 
 Blocks
-======
+-------------------------------------------------------------------------------
 .. code-block:: jinja
 
     <title>{% block title %}{% endblock %}</title>
@@ -202,7 +199,7 @@ Blocks
 
 
 Cycle
-=====
+-------------------------------------------------------------------------------
 .. code-block:: jinja
 
     {% for user in users %}
@@ -211,7 +208,7 @@ Cycle
 
 
 Base Template
-=============
+-------------------------------------------------------------------------------
 .. code-block:: jinja
 
     <!DOCTYPE html>
@@ -250,7 +247,7 @@ Base Template
     {% endblock %}
 
 Import Macros
-=============
+-------------------------------------------------------------------------------
 .. code-block:: jinja
 
     {% macro input(name, value='', type='text') -%}
@@ -285,7 +282,7 @@ Import Macros
     <p>{{ textarea('comment') }}</p>
 
 i18n Trans
-==========
+-------------------------------------------------------------------------------
 .. code-block:: jinja
 
     <p>{% trans %}Hello {{ user }}!{% endtrans %}</p>

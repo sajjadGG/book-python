@@ -1,8 +1,7 @@
 Templates
-*********
+=========
 
 * dir convention
-
 * staticfiles
 * url reversing
 * simpletags

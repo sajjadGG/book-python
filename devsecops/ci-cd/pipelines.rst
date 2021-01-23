@@ -1,9 +1,9 @@
 CI/CD Pipelines
-***************
+===============
 
 
 Bitbucket Pipelines
-===================
+-------------------
 .. code-block:: yaml
 
     image: python:3.7.4
@@ -65,7 +65,7 @@ Bitbucket Pipelines
           - curl -s -D- $HEROKU_URL
 
 Travis
-======
+------
 .. code-block:: yaml
 
     dist: trusty

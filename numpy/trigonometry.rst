@@ -1,5 +1,5 @@
 Trigonometry
-************
+============
 
 
 .. glossary::
@@ -19,7 +19,7 @@ Trigonometry
                  # array([0.84147098, 0.90929743, 0.14112001])
 
 Unit conversion
-===============
+-------------------------------------------------------------------------------
 
 Degrees
 -------
@@ -33,7 +33,7 @@ Radians
 
 
 Trigonometric functions
-=======================
+-------------------------------------------------------------------------------
 
 Basic functions
 ---------------
@@ -61,7 +61,7 @@ Arcus hyperbolic functions
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/numpy_trigonometry.py
     :caption: :download:`Solution <assignments/numpy_trigonometry.py>`
     :end-before: # Solution

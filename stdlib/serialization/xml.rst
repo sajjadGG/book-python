@@ -1,9 +1,9 @@
 Serialization XML, XSLT, XPath
-******************************
+==============================
 
 
 ``xml`` module from standard library
-====================================
+-------------------------------------------------------------------------------
 ``xml`` module from standard library:
 
 .. code-block:: python
@@ -45,7 +45,7 @@ Serialization XML, XSLT, XPath
 
 
 ``lxml`` module
-===============
+-------------------------------------------------------------------------------
 
 * ``pip install lxml``
 
@@ -524,7 +524,7 @@ Serialization
 
 
 Working with HTML
-=================
+-------------------------------------------------------------------------------
 * Using ``lxml`` module
 
 .. code-block:: html
@@ -553,7 +553,7 @@ Working with HTML
 
 
 XPATH
-=====
+-------------------------------------------------------------------------------
 * Using ``lxml`` module
 
 .. code-block:: python
@@ -566,7 +566,7 @@ XPATH
 
 
 XSLT
-====
+-------------------------------------------------------------------------------
 * Using ``lxml`` module
 
 Example 1
@@ -751,7 +751,7 @@ Example 3
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/serialization_xml_parse.py
     :caption: :download:`Solution <assignments/serialization_xml_parse.py>`
     :end-before: # Solution

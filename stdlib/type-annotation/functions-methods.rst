@@ -1,9 +1,9 @@
 Functions and Methods
-*********************
+=====================
 
 
 Simple
-======
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     def add(a: int, b: float) -> float:
@@ -14,7 +14,7 @@ Simple
 
 
 The NoReturn type
-=================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from typing import NoReturn
@@ -25,7 +25,7 @@ The NoReturn type
 
 
 Iterator
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from typing import Iterator
@@ -39,7 +39,7 @@ Iterator
 
 
 Callable
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from typing import Callable
@@ -54,7 +54,7 @@ Callable
 
 
 Overload
-========
+-------------------------------------------------------------------------------
 * Since Python 3.8: :pep:`589` -- TypedDict: Type Hints for Dictionaries with a Fixed Set of Keys
 * The ``@overload`` decorator allows describing functions and methods that support multiple different combinations of argument types.
 * A series of @overload-decorated definitions must be followed by exactly one non-@overload-decorated definition (for the same function/method)
@@ -79,7 +79,7 @@ Overload
 
 
 Final
-=====
+-------------------------------------------------------------------------------
 * Since Python 3.8: :pep:`589` -- TypedDict: Type Hints for Dictionaries with a Fixed Set of Keys
 
 .. code-block:: python

@@ -1,9 +1,9 @@
 SSL
-***
+===
 
 
 Socket creation
-===============
+-------------------------------------------------------------------------------
 
 Client socket example with default context and IPv4/IPv6 dual stack
 -------------------------------------------------------------------
@@ -62,7 +62,7 @@ Server socket example listening on localhost IPv4
             ...
 
 SSLSocket
-=========
+-------------------------------------------------------------------------------
 * Passing a non-zero flags argument is not allowed
 * but os.sendfile will be used for plain-text sockets only, else send() will be used
 
@@ -108,7 +108,7 @@ SSLSocket
 
 
 Client-side operation
-=====================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import ssl
@@ -185,7 +185,7 @@ Client-side operation
     #  b'']
 
 Server-side operation
-=====================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import socket, ssl

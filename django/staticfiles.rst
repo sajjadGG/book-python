@@ -1,9 +1,9 @@
 Staticfiles
-***********
+===========
 
 
 Settings
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     # Static files (CSS, JavaScript, Images)
@@ -16,7 +16,7 @@ Settings
     MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 
 Serving staticfiles
-===================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from django.conf import settings

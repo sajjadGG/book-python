@@ -1,9 +1,9 @@
 Database SQL Injection
-**********************
+======================
 
 
 Prepare query
-=============
+-------------
 Query with SQL injection possibility:
 
 .. code-block:: python
@@ -16,8 +16,9 @@ Query with SQL injection possibility:
 
     """
 
+
 Get user input
-==============
+--------------
 .. code-block:: python
 
     username = input('Username: ')
@@ -26,8 +27,9 @@ Get user input
     password = input('Password: ')
     # 123
 
+
 Execute query
-=============
+-------------
 Exploited SQL injection, will Select all users and then Drop all data from table users:
 
 .. code-block:: python

@@ -1,9 +1,9 @@
 Advanced Debugging
-******************
+==================
 
 
 ``json.tool``
-=============
+-------------
 .. code-block:: console
 
     $ curl -s http://example.com:8000/contact/api/
@@ -64,7 +64,7 @@ Advanced Debugging
 
 
 Using ``pdb``
-=============
+-------------
 .. code-block:: python
 
     print('José Jiménez')
@@ -73,7 +73,7 @@ Using ``pdb``
 
 
 ``breakpoint()``
-================
+----------------
 .. code-block:: python
 
     print('José Jiménez')
@@ -90,8 +90,9 @@ Using ``pdb``
     os.environ['PYTHONBREAKPOINT'] = 'foo.bar.baz'
     breakpoint()    # Imports foo.bar and calls foo.bar.baz()
 
+
 ``code.interact()``
-===================
+-------------------
 * Halt code execution and open REPL with current state
 
 .. code-block:: python
@@ -99,63 +100,63 @@ Using ``pdb``
     import code
     code.interact(local=locals())
 
+
 Using debugger in IDE
-=====================
+---------------------
 
 Break Point
 -----------
 
 View Breakpoints
-~~~~~~~~~~~~~~~~
+----------------
 
 Mute Breakpoints
-~~~~~~~~~~~~~~~~
+----------------
 
 Poruszanie się
 --------------
 
 Step Over
-~~~~~~~~~
+---------
 
 Step Into My Code
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Force Step Into
-~~~~~~~~~~~~~~~
+---------------
 
 Show Execution Point
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 Step Out
-~~~~~~~~
+--------
 
 Run to Cursor
-~~~~~~~~~~~~~
+-------------
 
 Resume Program
-~~~~~~~~~~~~~~
+--------------
 
 New Watch
-~~~~~~~~~
+---------
 
 Frames
 ------
 
 Previous Frame
-~~~~~~~~~~~~~~
+--------------
 
 Next Frame
-~~~~~~~~~~
+----------
 
 Threads
-~~~~~~~
+-------
 
 Scope
 -----
 
 Special Variables
-~~~~~~~~~~~~~~~~~
-
+-----------------
 * ``__file__``
 * ``__name__``
 * ``__builtins__``
@@ -165,25 +166,25 @@ Special Variables
 * ``__package__``
 
 Moduły
-~~~~~~
+------
 
 Stałe
-~~~~~
+-----
 
 Zmienne
-~~~~~~~
+-------
 
 Wartości funkcji
-~~~~~~~~~~~~~~~~
+----------------
 
 Debugging i Wątki
-=================
+-----------------
 
 Debugging i Procesy
-===================
+-------------------
 
 Debugging aplikacji sieciowych
-==============================
+------------------------------
 .. code-block:: python
 
     import logging
@@ -207,7 +208,7 @@ Wyciszanie logowania
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: ../_assignments/devsecops_debugging_doctest.py
     :caption: :download:`Solution <../_assignments/devsecops_debugging_doctest.py>`
     :end-before: # Solution

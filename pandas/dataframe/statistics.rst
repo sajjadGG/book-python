@@ -1,5 +1,5 @@
 DataFrame Statistics
-********************
+====================
 
 .. code-block:: python
 
@@ -24,7 +24,7 @@ DataFrame Statistics
 
 
 Count
-=====
+-------------------------------------------------------------------------------
 Number of non-null observations:
 
 .. code-block:: python
@@ -46,7 +46,7 @@ Number of non-null observations:
 
 
 Sum
-===
+-------------------------------------------------------------------------------
 Sum of values:
 
 .. code-block:: python
@@ -74,7 +74,7 @@ Cumulative sum:
 
 
 Product
-=======
+-------------------------------------------------------------------------------
 Product of values:
 
 .. code-block:: python
@@ -102,7 +102,7 @@ Cumulative product:
 
 
 Extremes
-========
+-------------------------------------------------------------------------------
 Minimum, index of minimum and cumulative minimum:
 
 .. code-block:: python
@@ -147,7 +147,7 @@ Maximum, index of maximum and cumulative maximum:
 
 
 Average
-=======
+-------------------------------------------------------------------------------
 Arithmetic mean of values:
 
 .. code-block:: python
@@ -187,7 +187,7 @@ Rolling Average:
     Rolling Average
 
 Distribution
-============
+-------------------------------------------------------------------------------
 Absolute value:
 
 .. code-block:: python
@@ -290,7 +290,7 @@ Correlation Coefficient:
 
 
 Describe
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     df.describe()
@@ -306,7 +306,7 @@ Describe
 
 
 Examples
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -370,7 +370,7 @@ Number of non-null unique network entries:
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/pandas_df_statistics_cars.py
     :caption: :download:`Solution <assignments/pandas_df_statistics_cars.py>`
     :end-before: # Solution

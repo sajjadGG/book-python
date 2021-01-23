@@ -1,9 +1,9 @@
 Case Studies
-************
+============
 
 
 ISS Ground Track
-================
+-------------------------------------------------------------------------------
 Source: https://beyond.readthedocs.io/en/latest/examples.html:
 
 .. code-block:: python
@@ -103,7 +103,7 @@ Source: https://beyond.readthedocs.io/en/latest/examples.html:
 
 
 ISS Hohmann transfer
-====================
+-------------------------------------------------------------------------------
 https://beyond.readthedocs.io/en/latest/examples.html:
 
 .. code-block:: python
@@ -195,7 +195,7 @@ https://beyond.readthedocs.io/en/latest/examples.html:
 
 
 COVID-19
-========
+-------------------------------------------------------------------------------
 * Data Source: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series
 * https://www.youtube.com/watch?v=54XLXg4fYsc
 * https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series

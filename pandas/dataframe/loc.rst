@@ -1,7 +1,8 @@
 DataFrame Loc
-*************
+=============
 
-
+Rationale
+---------
 * ``loc`` - uses fancy indexing
 * ``iloc`` - only index numbers
 * ``df.loc`` - start and stop are included!!
@@ -15,6 +16,9 @@ DataFrame Loc
 
     Pandas Select Cell
 
+
+Data
+----
 .. code-block:: python
 
     import pandas as pd
@@ -38,7 +42,7 @@ DataFrame Loc
 
 
 All Values in Row
-=================
+-------------------------------------------------------------------------------
 
 Single row
 ----------
@@ -84,7 +88,7 @@ Range of dates
 
 
 Values in Selected Columns
-==========================
+-------------------------------------------------------------------------------
 * Note that both the start and stop of the slice are included
 
 Single row and single column:
@@ -134,7 +138,7 @@ Single row and column range:
 
 
 Fancy Indexing
-==============
+-------------------------------------------------------------------------------
 * Return row for given index is ``True``
 
 Boolean list with the same length as the row axis:
@@ -193,7 +197,7 @@ Conditional that returns a boolean Series with column labels specified:
 
 
 Callable
-========
+-------------------------------------------------------------------------------
 
 Filtering with callable:
 
@@ -216,7 +220,7 @@ Filtering with callable:
 
 
 Setting Values
-==============
+-------------------------------------------------------------------------------
 
 Set value for all items matching the list of labels:
 
@@ -277,5 +281,5 @@ Set value for rows matching callable condition:
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. todo:: Create assignments

@@ -1,9 +1,9 @@
 Series Create
-*************
+=============
 
 
 From Python sequence
-====================
+-------------------------------------------------------------------------------
 * ``list``
 * ``tuple``
 * ``set``
@@ -59,7 +59,7 @@ From Python sequence
 
 
 From Python range
-=================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -73,7 +73,7 @@ From Python range
 
 
 From Numpy ``ndarray``
-======================
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -88,7 +88,7 @@ From Numpy ``ndarray``
 
 
 From Date Range
-===============
+-------------------------------------------------------------------------------
 * From ``pd.Timestamp``
 * From ``pd.date_range()``
 * More information in `Date and Time Types`
@@ -112,7 +112,7 @@ From Date Range
 
 
 Length
-======
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -124,7 +124,7 @@ Length
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/pandas_series_create_float.py
     :caption: :download:`Solution <assignments/pandas_series_create_float.py>`
     :end-before: # Solution

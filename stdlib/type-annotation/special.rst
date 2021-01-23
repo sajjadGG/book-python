@@ -1,9 +1,9 @@
 Special
-*******
+=======
 
 
 Optional
-========
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from typing import Optional
@@ -17,7 +17,7 @@ Optional
 
 
 Union
-=====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from typing import Union
@@ -36,7 +36,7 @@ Union
 
 
 Any
-===
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     from typing import Any
@@ -47,7 +47,7 @@ Any
 
 
 Literal
-=======
+-------------------------------------------------------------------------------
 * Since Python 3.8: :pep:`586` -- Literal Types
 
 .. code-block:: python

@@ -1,15 +1,15 @@
 Locale About
-************
+============
 
 
 Rationale
-=========
+---------
 * i18n = internationalization
 * l10n = localization
 
 
 Syntax
-======
+------
 * language
 * variant
 * encoding
@@ -20,7 +20,7 @@ Syntax
 
 
 Get Locale
-==========
+----------
 .. code-block:: console
 
     $ locale
@@ -41,7 +41,7 @@ Get Locale
 
 
 Set Locale
-==========
+----------
 .. code-block:: console
 
     $ echo 'export LC_ALL=en_US.UTF-8' >> ~/.profile
@@ -52,14 +52,14 @@ Set Locale
 
 
 Locale in Python
-================
+----------------
 .. code-block:: python
 
     import locale
 
 
 Further Reading
-===============
+---------------
 * https://github.com/django/django/blob/master/django/utils/formats.py
 * https://github.com/django/django/blob/master/django/conf/locale/pl/formats.py
 * https://github.com/django/django/blob/master/django/conf/locale/en/formats.py

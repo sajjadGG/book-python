@@ -1,9 +1,9 @@
 Series Index
-************
+============
 
 
 Index Types
-===========
+-------------------------------------------------------------------------------
 * Range Index
 * Int64 Index
 * Float64 Index
@@ -73,7 +73,7 @@ Index Types
 
 
 Range Index
-===========
+-------------------------------------------------------------------------------
 * Default
 
 Define Range Index:
@@ -122,7 +122,7 @@ Define Range Index:
 
 
 Int64 Index
-=============
+-------------------------------------------------------------------------------
 * Int64 Index
 
 .. code-block:: python
@@ -145,7 +145,7 @@ Int64 Index
 
 
 Float64 Index
-=============
+-------------------------------------------------------------------------------
 * Int64 Index
 
 .. code-block:: python
@@ -168,7 +168,7 @@ Float64 Index
 
 
 String Index
-============
+-------------------------------------------------------------------------------
 * Also has ``RangeIndex``
 * ``string.ascii_lowercase``
 * ``string.ascii_uppercase``
@@ -285,7 +285,7 @@ String Index
 
 
 Date Index
-==========
+-------------------------------------------------------------------------------
 * Also has ``RangeIndex``
 * Default is "Daily"
 * Works also with ISO time format ``1970-01-01T00:00:00``
@@ -526,5 +526,5 @@ More information in `Date and Time Calendar`
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. todo:: Create assignments

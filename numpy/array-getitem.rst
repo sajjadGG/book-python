@@ -1,12 +1,12 @@
 Array Getitem
-*************
+=============
 
 
 .. todo:: Split chapters GetItem and Slice by __getitem__ argument type.
 
 
 Rationale
-=========
+-------------------------------------------------------------------------------
 * ``int``
 * ``list[int]``
 * ``list[bool]``
@@ -25,7 +25,7 @@ Rationale
 
 
 Index
-=====
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -114,7 +114,7 @@ Multidimensional:
 
 
 Selecting items
-===============
+-------------------------------------------------------------------------------
 
 1-dimensional Array
 -------------------
@@ -246,7 +246,7 @@ Selecting items
 
 
 Substituting items
-==================
+-------------------------------------------------------------------------------
 
 1-dimensional Array
 -------------------
@@ -311,7 +311,7 @@ Substituting items
 
 
 Multi-indexing
-==============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -352,7 +352,7 @@ Multi-indexing
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/numpy_indexing.py
     :caption: :download:`Solution <assignments/numpy_indexing.py>`
     :end-before: # Solution

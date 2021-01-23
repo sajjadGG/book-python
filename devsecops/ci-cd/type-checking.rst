@@ -1,9 +1,9 @@
 Type Checking
-*************
+=============
 
 
 ``mypy``
-========
+--------
 * http://mypy-lang.org/
 * https://github.com/python/mypy
 
@@ -21,7 +21,7 @@ Type Checking
 
 
 ``pyre-check``
-==============
+--------------
 * https://pyre-check.org/
 
 .. code-block:: console
@@ -30,4 +30,4 @@ Type Checking
 
 
 ``pytypes``
-===========
+-----------

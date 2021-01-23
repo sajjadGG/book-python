@@ -1,9 +1,9 @@
-GUI
-***
+Tkinter
+=======
 
 
 Graphical User Interfaces with Tkinter
-======================================
+--------------------------------------
 
 * Introduction to Tkinter
 * Creating Dialogs with Tkinter
@@ -19,7 +19,7 @@ Graphical User Interfaces with Tkinter
 
 
 Biblioteka Tkinter
-==================
+------------------
 
 * http://www.tkdocs.com/tutorial/index.html
 

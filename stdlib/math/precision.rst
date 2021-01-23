@@ -1,9 +1,9 @@
 Math Precision
-**************
+==============
 
 
 Minimal and Maximal Values
-==========================
+--------------------------
 Maximal and minimal ``float`` values:
 
 .. code-block:: python
@@ -15,7 +15,7 @@ Maximal and minimal ``float`` values:
 
 
 Infinity
-========
+--------
 Infinity representation:
 
 .. code-block:: python
@@ -34,7 +34,7 @@ Infinity representation:
 
 
 Not-a-Number
-============
+------------
 .. code-block:: python
 
     float('nan')
@@ -45,7 +45,7 @@ Not-a-Number
 
 
 NaN vs Inf
-==========
+----------
 .. code-block:: python
 
     float('inf') + float('inf')     # inf
@@ -70,7 +70,7 @@ NaN vs Inf
 
 
 Floating Numbers Precision
-==========================
+--------------------------
 
 .. code-block:: python
 
@@ -119,7 +119,7 @@ Floating Numbers Precision
 
 
 IEEE 754 standard
-=================
+-----------------
 .. figure:: img/float-anatomy.png
 
     What is ``float`` as defined by IEEE 754 standard
@@ -143,7 +143,7 @@ IEEE 754 standard
 
 
 Floats in Doctest
-=================
+-----------------
 .. code-block:: python
 
     def add(a, b):
@@ -161,7 +161,7 @@ Floats in Doctest
 
 
 Decimal Type
-============
+------------
 .. code-block:: python
 
     from decimal import Decimal

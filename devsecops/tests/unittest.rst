@@ -1,5 +1,5 @@
 Unit Testing
-************
+============
 
 .. figure:: ../_img/fun-geekandpoke-development-driven-tests.jpg
 
@@ -10,7 +10,7 @@ Unit Testing
 
 
 Glossary
-========
+--------
 .. glossary::
 
     Stub
@@ -24,7 +24,7 @@ Glossary
 
 
 Running tests
-=============
+-------------
 
 Running tests with your IDE
 ---------------------------
@@ -47,9 +47,6 @@ Display only errors. With ``-v`` display progress:
     $ python -m unittest myfile.py
     $ python -m unittest -v myfile.py
 
-
-Examples
-========
 
 Example 1
 ---------
@@ -82,7 +79,7 @@ Example 5
     :caption: Example ``unittest`` code coverage
 
 Mock
-====
+----
 * Mock and MagicMock objects create all attributes and methods as you access them and store details of how they have been used.
 
 .. code-block:: python
@@ -147,7 +144,7 @@ patch
     mock_method.assert_called_once_with(1, 2, 3)
 
 Stub
-====
+----
 * writing classes or functions but not yet implementing them
 * After you have planned a module or class, for example by drawing it's UML diagram, you begin implementing it.
 * As you may have to implement a lot of methods and classes, you begin with stubs.
@@ -163,7 +160,7 @@ Stub
              raise NotImplementedError
 
 Assignments
-===========
+-----------
 .. literalinclude:: ../_assignments/devsecops_unittest_rectangle.py
     :caption: :download:`Solution <../_assignments/devsecops_unittest_rectangle.py>`
     :end-before: # Solution

@@ -1,5 +1,5 @@
 Cache
-*****
+=====
 
 .. code-block:: python
 

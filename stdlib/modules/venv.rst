@@ -1,10 +1,10 @@
 Module venv
-***********
+===========
 
 
 
 Rationale
-=========
+---------
 * Bundled with Python since 3.3
 * Isolated Python environment
 * Allows to have multiple versions of Python for one project
@@ -14,7 +14,7 @@ Rationale
 
 
 Create
-======
+------
 * ``DIRECTORY`` is the name of venv folder (see "Directory Naming Convention" below)
 
 .. code-block:: console
@@ -31,7 +31,7 @@ Example:
 
 
 Activate
-========
+--------
 * ``Scripts`` for Windows
 * ``bin`` for macOS, Linux, BSD
 * Note the direction of slash and backslash (OS dependent)
@@ -52,7 +52,7 @@ macOS, Linux, BSD:
 
 
 Directory Naming Convention
-===========================
+---------------------------
 * No standard naming convention
 * Naming directory like module (``venv``) name is a good idea
 * Adding Python version is also a good practice
@@ -129,7 +129,7 @@ This convention is from ``virtualenv-wrapper`` module (mostly used in Python 2):
 
 
 Good practices
-==============
+--------------
 * name as version ``venv-3.9.0``
 * place in your project directory and add folder to ``.gitignore`` (important!)
 * otherwise place it in ``~/.virtualenv/``, but some meaningful name is required
@@ -148,12 +148,12 @@ Good practices
 
 
 Further Reading
-===============
+---------------
 * https://github.com/pypa/virtualenv/issues/2007
 
 
 Assignments
-===========
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Virtualenv

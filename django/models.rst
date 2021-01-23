@@ -1,8 +1,10 @@
 Models
-******
+======
+
 
 Model Fields
-============
+-------------------------------------------------------------------------------
+
 
 Text fields
 -----------
@@ -11,12 +13,14 @@ Text fields
 * ``SlugField``
 * ``URLField``
 
+
 Numeric fields
 --------------
 * ``DecimalField``
 * ``IntegerField``
 * ``PositiveIntegerField``
 * ``PositiveSmallIntegerField``
+
 
 Logic fields
 ------------
@@ -40,7 +44,7 @@ Relations
 * ``ManyToManyField``
 
 Model field arguments
-=====================
+-------------------------------------------------------------------------------
 
 All
 ---
@@ -71,25 +75,25 @@ Numeric
 * ``max_digits`` (DecimalField)
 
 Abstract Models
-===============
+-------------------------------------------------------------------------------
 .. code-block:: python
 
     class Meta:
         abstract = True
 
 Architecture
-============
+-------------------------------------------------------------------------------
 * Fat model architecture
 
 Single File vs. Models per file
-===============================
+-------------------------------------------------------------------------------
 
 Reverse engineering database
-============================
+-------------------------------------------------------------------------------
 * ``python manage.py inspectdb``
 
 Database schema migration
-=========================
+-------------------------------------------------------------------------------
 
 Makemigrations
 --------------
@@ -111,14 +115,14 @@ Migrate
       Applying contact.0001_initial... OK
 
 Example Model
-=============
+-------------------------------------------------------------------------------
 .. literalinclude:: src/django-models-example.py
     :language: python
     :caption: Example Model
 
 
 Assignments
-===========
+-------------------------------------------------------------------------------
 .. literalinclude:: assignments/django_addressbook.py
     :caption: :download:`Solution <assignments/django_addressbook.py>`
     :end-before: # Solution
