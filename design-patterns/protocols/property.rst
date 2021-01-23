@@ -1,10 +1,9 @@
-********
 Property
-********
+========
 
 
 Rationale
-=========
+---------
 * Disable attribute modification
 * Logging value access
 * Check boundary
@@ -13,7 +12,7 @@ Rationale
 
 
 Problem
-=======
+-------
 .. code-block:: python
 
     class Point:
@@ -69,8 +68,9 @@ Problem
     pt.set_y(1)
     pt.set_z(1)
 
+
 What if...
-==========
+----------
 .. code-block:: python
 
     class Point:
@@ -108,7 +108,7 @@ Do everyone have first or lastname?
 
 
 Solution
-========
+--------
 .. code-block:: python
 
     class Point:
@@ -183,7 +183,7 @@ What if all parameters can have different ranges:
 
 
 Protocol
-========
+--------
 * ``myattribute = property()`` - creates property
 * ``@myattribute.getter`` - getter for attribute
 * ``@myattribute.setter`` - setter for attribute
@@ -211,7 +211,7 @@ Protocol
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class KelvinTemperature:
@@ -276,7 +276,7 @@ Example
 
 
 Use Cases
-=========
+---------
 .. code-block:: python
 
     class Astronaut:
@@ -336,7 +336,7 @@ Use Cases
 
 
 Attribute Access
-================
+----------------
 * Java way: Setter and Getter
 * Pythonic way: Properties, Reflection, Descriptors
 
@@ -376,7 +376,7 @@ Accessing class fields. Either put ``name`` as an argument for ``__init__()`` or
 
 
 Property class
-==============
+--------------
 * Property's arguments are method pointers ``get_name``, ``set_name``, ``del_name`` and a docstring
 * Don't do that
 
@@ -399,7 +399,7 @@ Property class
 
 
 @property Decorator
-===================
+-------------------
 * Prefer ``name = property()``
 
 .. code-block:: python
@@ -442,10 +442,10 @@ Property class
 
 
 Use Cases
-=========
-
-Astronaut
 ---------
+
+Astronaut:
+
 .. code-block:: python
 
     class Astronaut:
@@ -507,8 +507,8 @@ Astronaut
     print(astro.name)
     # None
 
-Temperature
------------
+Temperature:
+
 .. code-block:: python
 
     class Temperature:
@@ -576,8 +576,7 @@ Temperature
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: ../_assignments/protocol_property_a.py
     :caption: :download:`Solution <../_assignments/protocol_property_a.py>`
     :end-before: # Solution

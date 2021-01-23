@@ -1,10 +1,9 @@
-*********************
 Assignment Expression
-*********************
+=====================
 
 
 Rationale
-=========
+---------
 * Since Python 3.8: :pep:`572` -- Assignment Expressions
 * A.K.A. "the walrus operator"
 * A.K.A. "Named Expressions"
@@ -13,7 +12,7 @@ During discussion of this PEP, the operator became informally known as "the walr
 
 
 Syntax
-======
+------
 .. code-block:: python
 
     (x := <VALUE>)
@@ -78,7 +77,7 @@ SyntaxError: cannot use assignment expressions with subscript
 
 
 Example
-=======
+-------
 
 Reusing Results:
 
@@ -169,7 +168,7 @@ Patterns
 
 
 Comprehensions
-==============
+--------------
 >>> result = [x for x in range(0,10)]
 >>> result = [x for x in range(0,10) if x%2 == 0]
 
@@ -287,7 +286,7 @@ Syntax:
 
 
 Use Case
-========
+--------
 >>> DATA = [{'is_astronaut': True,  'name': 'JaN TwarDOwski'},
 ...         {'is_astronaut': True,  'name': 'Mark Jim WaTNey'},
 ...         {'is_astronaut': False, 'name': 'José Maria Jiménez'},
@@ -366,12 +365,12 @@ Use Case
 
 
 References
-==========
+----------
 .. [pep572] Angelico, C. and Peters T. and van Rossum, G. PEP 572 -- Assignment Expressions. Python Software Foundation. 2018. Url: https://www.python.org/dev/peps/pep-0572/#abstract Accessed: 2020-12-04.
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: ../_assignments/idioms_assignmentexpr_a.py
     :caption: :download:`Solution <../_assignments/idioms_assignmentexpr_a.py>`
     :end-before: # Solution

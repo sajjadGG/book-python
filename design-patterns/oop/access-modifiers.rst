@@ -1,10 +1,9 @@
-****************
 Access Modifiers
-****************
+================
 
 
 Rationale
-=========
+---------
 * Attributes and methods are always public
 * No protected and private keywords
 * Protecting is only by convention [privatevar]_
@@ -24,6 +23,7 @@ Methods:
     * ``__name(self)`` - private method (name mangling)
     * ``__name__(self)`` - system method
     * ``name_(self)`` - avoid name collision
+
 
 Example
 -------
@@ -68,7 +68,7 @@ DataClasses
 
 
 Public Attribute
-================
+----------------
 * ``name`` - public attribute
 
 .. code-block:: python
@@ -95,7 +95,7 @@ Public Attribute
 
 
 Protected Attribute
-===================
+-------------------
 * ``_name`` - protected attribute (non-public by convention)
 * IDE should warn: "Access to a protected member _firstname of a class"
 
@@ -123,7 +123,7 @@ Protected Attribute
 
 
 Private Attribute
-=================
+-----------------
 * ``__name`` - private attribute (name mangling)
 
 .. code-block:: python
@@ -158,7 +158,7 @@ Private Attribute
 
 
 Show Attributes
-===============
+---------------
 * ``vars()`` display ``obj.__dict__``
 
 .. code-block:: python
@@ -195,7 +195,7 @@ Show Attributes
 
 
 System Attributes
-=================
+-----------------
 * ``__name__`` - Current module
 * ``obj.__class__``
 * ``obj.__dict__`` - Getting dynamic fields and values
@@ -226,7 +226,7 @@ System Attributes
 
 
 Protected Method
-================
+----------------
 .. code-block:: python
 
     from dataclasses import dataclass
@@ -261,7 +261,7 @@ Protected Method
 
 
 Private Method
-==============
+--------------
 .. code-block:: python
 
     class Astronaut:
@@ -284,7 +284,7 @@ Private Method
 
 
 System Method
-=============
+-------------
 .. code-block:: python
 
     class Astronaut:
@@ -309,7 +309,7 @@ System Method
 
 
 Show Methods
-============
+------------
 * ``dir()``
 
 .. code-block:: python
@@ -346,7 +346,7 @@ Show Methods
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: ../_assignments/oop_accessmodifiers_a.py
     :caption: :download:`Solution <../_assignments/oop_accessmodifiers_a.py>`
     :end-before: # Solution
@@ -357,5 +357,5 @@ Assignments
 
 
 References
-==========
+----------
 .. [privatevar] https://docs.python.org/3/tutorial/classes.html#private-variables

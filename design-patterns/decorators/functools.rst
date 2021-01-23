@@ -1,10 +1,9 @@
-**************************
 Decorator Stdlib Functools
-**************************
+==========================
 
 
 Wraps
-=====
+-----
 * ``from functools import wraps``
 * ``@wraps(func)``
 
@@ -56,7 +55,7 @@ Wraps
 
 
 Cached Property
-===============
+---------------
 * ``from functools import cached_property``
 * ``@cached_property(func)``
 
@@ -85,7 +84,7 @@ Cached Property
 
 
 LRU (least recently used) cache
-===============================
+-------------------------------
 * ``from functools import lru_cache``
 * ``@lru_cache(maxsize=None)``
 
@@ -109,8 +108,7 @@ LRU (least recently used) cache
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: ../_assignments/decorator_functools_a.py
     :caption: :download:`Solution <../_assignments/decorator_functools_a.py>`
     :end-before: # Solution

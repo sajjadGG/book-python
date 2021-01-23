@@ -1,10 +1,9 @@
-***************************
 Decorator Function with Mth
-***************************
+===========================
 
 
 Rationale
-=========
+---------
 * ``mydecorator`` is a decorator name
 * ``method`` is a method name
 * ``self`` is an instance
@@ -36,7 +35,7 @@ Is equivalent to:
 
 
 Syntax
-======
+------
 * ``mydecorator`` is a decorator name
 * ``mymethod`` is a method name
 * ``self`` is an instance
@@ -71,7 +70,7 @@ Usage:
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     def run(method):
@@ -92,7 +91,7 @@ Example
 
 
 Use Cases
-=========
+---------
 .. code-block:: python
 
     def if_allowed(method):
@@ -157,8 +156,7 @@ Use Cases
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: ../_assignments/decorator_method_a.py
     :caption: :download:`Solution <../_assignments/decorator_method_a.py>`
     :end-before: # Solution

@@ -1,20 +1,19 @@
-**********************
 Functional Programming
-**********************
+======================
 
 
 Pure function
-=============
+-------------
 * Function which returns always the same results based on the same argument.
 * ``random.randint()`` - Not pure
 * ``pow()`` - Pure
 
 
 Lambda - Anonymous functions
-============================
+----------------------------
 
-Example 1
----------
+Example 1:
+
 .. code-block:: python
 
     DATA = [1, 2, 3, 4]
@@ -39,8 +38,8 @@ Example 1
     print(list(result))
     # [2, 4]
 
-Example 2
----------
+Example 2:
+
 .. code-block:: python
 
     DATA = [{'user': 'twardowski', 'uid': 1000},
@@ -73,8 +72,8 @@ Example 2
     print(list(result))
     # [{'user': 'root', 'uid': 0}]
 
-Monkey patching
----------------
+Monkey patching:
+
 .. code-block:: python
 
     class Astronaut:
@@ -87,7 +86,7 @@ Monkey patching
 
 
 Function Passing
-================
+----------------
 .. code-block:: python
 
     print(
@@ -101,160 +100,10 @@ Function Passing
     ))))))))
 
 
-
-Built-in functions
-==================
-
-``map()``
----------
-.. code-block:: python
-
-    DATA = [1, 2, 3]
-
-    result = map(float, DATA)
-
-    print(result)
-    # <map object at 0x11d2241d0>
-
-    print(list(result))
-    # [1.0, 2.0, 3.0]
-
-.. code-block:: python
-
-    DATA = [1, 2, 3]
-
-    def square(x):
-        return pow(x, 2)
-
-    result = map(square, DATA)
-
-    print(list(result))
-    # [1, 4, 9]
-
-.. code-block:: python
-
-    DATA = [1, 2, 3]
-
-    result = map(lambda x: pow(x, 2), DATA)
-
-    print(list(result))
-    # [1, 4, 9]
-
-``zip()``
----------
-.. code-block:: python
-
-    keys = ['a', 'b', 'c']
-    values = [1, 2, 3]
-
-    result = zip(keys, values)
-
-    print(result)
-    # <zip object at 0x11cfea280>
-
-    print(list(result))
-    # [('a', 1), ('b', 2), ('c', 3)]
-
-.. code-block:: python
-
-    keys = ['a', 'b', 'c']
-    values = [1, 2, 3]
-
-    result = zip(keys, values)
-
-    print(dict(result))
-    # {'a': 1, 'b': 2, 'c': 3}
-
-``filter()``
-------------
-.. code-block:: python
-
-    DATA = [{'name': 'Jan Twardowski', 'age': 21},
-            {'name': 'Mark Watney', 'age': 25},
-            {'name': 'Melissa Lewis', 'age': 18}]
-
-    def is_adult(person):
-        if person['age'] >= 21:
-            return True
-        else:
-            return False
-
-
-    result = filter(is_adult, DATA)
-    print(list(result))
-    # [
-    #   {'name': 'Jan Twardowski', 'age': 21},
-    #   {'name': 'Mark Watney', 'age': 25},
-    # ]
-
-.. code-block:: python
-
-    def is_even(number):
-        if number % 2 == 0:
-            return True
-        else:
-            return False
-
-
-    DATA = range(0, 10)
-
-    result = filter(is_even, DATA)
-
-    print(list(result))
-    # [0, 2, 4, 6, 8]
-
-.. code-block:: python
-
-    DATA = range(0, 10)
-
-    result = filter(lambda x: x % 2 == 0, DATA)
-
-    print(list(result))
-    # [0, 2, 4, 6, 8]
-
-
-.. code-block:: python
-
-    result = filter(lambda x: x % 2 == 0, range(0, 10))
-
-    print(list(result))
-    # [0, 2, 4, 6, 8]
-
-``all()``
----------
-Return True if all elements of the iterable are true (or if the iterable is empty). Equivalent to:
-
-.. code-block:: python
-
-    def all(iterable):
-        if not iterable:
-            return False
-
-        for element in iterable:
-            if not element:
-                return False
-
-        return True
-
-``any()``
----------
-Return True if any element of the iterable is true. If the iterable is empty, return False. Equivalent to:
-
-.. code-block:: python
-
-    def any(iterable):
-        if not iterable:
-            return False
-
-        for element in iterable:
-            if element:
-                return True
-
-        return False
-
-
 ``functools``
-=============
+-------------
+
+Reduce:
 
 .. code-block:: python
 
@@ -283,8 +132,8 @@ Return True if any element of the iterable is true. If the iterable is empty, re
     print(result)
     # 15
 
-``lru_cache``
--------------
+``lru_cache``:
+
 .. code-block:: python
 
     from functools import lru_cache
@@ -307,8 +156,8 @@ Return True if any element of the iterable is true. If the iterable is empty, re
     fib.cache_info()
     # CacheInfo(hits=14, misses=17, maxsize=None, currsize=17)
 
-memoize
--------
+memoize:
+
 .. code-block:: python
 
     def factorial(n):
@@ -352,8 +201,9 @@ memoize
 
     fibonacci(25)
 
-partial
--------
+
+partial:
+
 * Create alias function and its arguments
 * Useful when you need to pass function with arguments to for example ``map`` or ``filter``
 
@@ -367,8 +217,9 @@ partial
     basetwo('10010')
     # 18
 
-partialmethod
--------------
+
+partialmethod:
+
 .. code-block:: python
 
     class Cell(object):
@@ -395,8 +246,8 @@ partialmethod
     c.alive
     # True
 
-reduce
-------
+reduce:
+
 Apply function of two arguments cumulatively to the items of iterable, from left to right, so as to reduce the iterable to a single value. For example, reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) calculates ((((1+2)+3)+4)+5). The left argument, x, is the accumulated value and the right argument, y, is the update value from the iterable. If the optional initializer is present, it is placed before the items of the iterable in the calculation, and serves as a default when the iterable is empty. If initializer is not given and iterable contains only one item, the first item is returned.
 
 Roughly equivalent to:
@@ -413,8 +264,8 @@ Roughly equivalent to:
             value = function(value, element)
         return value
 
-singledispatch
---------------
+singledispatch:
+
 * Since Python 3.4
 * Overload a method
 * Python will choose function to run based on argument type
@@ -447,8 +298,8 @@ singledispatch
     # Traceback (most recent call last):
     # NotImplementedError: Argument must be int or list
 
-singledispatchmethod
---------------------
+singledispatchmethod:
+
 * Since Python 3.8
 * Overload a method
 * Python will choose method to run based on argument type
@@ -488,7 +339,7 @@ singledispatchmethod
 
 
 Callback
-========
+--------
 .. code-block:: python
 
     def http(obj):
@@ -520,7 +371,7 @@ Callback
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: ../_assignments/paradigm_functional_a.py
     :caption: :download:`Solution <../_assignments/paradigm_functional_a.py>`
     :end-before: # Solution

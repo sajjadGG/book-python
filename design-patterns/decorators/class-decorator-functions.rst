@@ -1,10 +1,9 @@
-*************************
 Decorator Class with Func
-*************************
+=========================
 
 
 Rationale
-=========
+---------
 * ``MyDecorator`` is a decorator name
 * ``myfunction`` is a function name
 
@@ -22,7 +21,7 @@ Is equivalent to:
 
 
 Syntax
-======
+------
 * ``cls`` is a pointer to class which is being decorated (``MyClass`` in this case)
 * ``Wrapper`` is a closure class
 * ``Wrapper`` name is a convention, but you can name it anyhow
@@ -56,7 +55,7 @@ Usage:
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class Run:
@@ -77,7 +76,7 @@ Example
 
 
 Use Cases
-=========
+---------
 Login Check:
 
 .. code-block:: python
@@ -202,8 +201,7 @@ Dict Cache:
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: ../_assignments/decorator_cls_a.py
     :caption: :download:`Solution <../_assignments/decorator_cls_a.py>`
     :end-before: # Solution

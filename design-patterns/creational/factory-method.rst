@@ -43,6 +43,7 @@ Implementation
 .. literalinclude:: ../_src/designpatterns-factorymethod-8.py
     :language: python
 
+
 Assignments
 -----------
 .. todo:: Create assignments

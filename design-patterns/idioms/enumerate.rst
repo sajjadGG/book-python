@@ -8,6 +8,7 @@ Rationale
 * Generator (lazy evaluated)
 * Built-in
 
+
 Syntax
 ------
 * ``enumerate(*iterables)``

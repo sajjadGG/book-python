@@ -1,8 +1,15 @@
 Callback
 ========
 
-Callback Design Pattern:
 
+Rationale
+---------
+* EN: Callback Design
+* PL:
+
+
+Implementation
+--------------
 .. code-block:: python
 
     from http import HTTPStatus

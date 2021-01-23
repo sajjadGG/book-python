@@ -1,10 +1,9 @@
-************
 Polymorphism
-************
+============
 
 
 Switch
-======
+------
 It all starts with single ``if`` statement
 
 .. code-block:: python
@@ -83,7 +82,7 @@ Problem is that, ``switch`` moves business logic to the execution place:
 
 
 Pattern Matching
-================
+----------------
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
 
 >>> language = 'English'
@@ -208,7 +207,7 @@ Hello
 
 
 Polymorphism
-============
+------------
 .. code-block:: python
 
     from abc import ABCMeta, abstractmethod
@@ -287,7 +286,9 @@ In Python, due to the duck typing and dynamic nature of the language, the Interf
 
 
 Use Cases
-=========
+---------
+UIElement:
+
 .. code-block:: python
 
     from abc import ABCMeta, abstractmethod
@@ -316,8 +317,8 @@ Use Cases
         draw(Button())
 
 
-Factory
-=======
+Factory:
+
 .. code-block:: python
 
     DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -376,6 +377,8 @@ Factory
     #  Versicolor(6.4, 3.2, 4.5, 1.5),
     #  Setosa(4.7, 3.2, 1.3, 0.2)]
 
+Dynamic factory:
+
 .. code-block:: python
 
     from dataclasses import dataclass
@@ -427,5 +430,5 @@ Factory
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

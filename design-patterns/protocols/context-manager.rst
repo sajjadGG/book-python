@@ -1,10 +1,9 @@
-***************
 Context Manager
-***************
+===============
 
 
 Rationale
-=========
+---------
 * Files
 * Buffering data
 * Database connection
@@ -17,7 +16,7 @@ Rationale
 
 
 Protocol
-========
+--------
 * ``__enter__(self) -> self``
 * ``__exit__(self, *args) -> None``
 
@@ -37,7 +36,7 @@ Protocol
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class MyClass:
@@ -83,7 +82,7 @@ Example
 
 
 Inheritance
-===========
+-----------
 .. code-block:: python
 
     from contextlib import ContextDecorator
@@ -110,7 +109,7 @@ Inheritance
 
 
 Decorator
-=========
+---------
 * Split function for before and after ``yield``
 * Code before ``yield`` becomes ``__enter__()``
 * Code after ``yield`` becomes ``__exit__()``
@@ -154,11 +153,8 @@ Decorator
     # </p>
 
 
-Use Cases
-=========
-
-Files
------
+Use Case - Files
+----------------
 .. code-block:: python
 
     f = open(FILE)
@@ -185,8 +181,9 @@ Files
     file[4_294_967_295] = '/tmp/myfileX.txt'
     file[4_294_967_296] -> KernelPanic
 
-Database
---------
+
+Use Case - Database
+-------------------
 .. code-block:: python
 
     import sqlite3
@@ -227,8 +224,8 @@ Database
     # {'id': 3, 'firstname': 'Melissa', 'lastname': 'Lewis', 'age': 36}
 
 
-Lock
-----
+Use Case - Lock
+---------------
 .. code-block:: python
 
     from threading import Lock
@@ -254,8 +251,8 @@ Lock
         print('Critical section 2')
 
 
-String Microbenchmark
----------------------
+Use Case - Microbenchmark
+-------------------------
 .. code-block:: python
 
     from time import time
@@ -321,7 +318,7 @@ String Microbenchmark
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: ../_assignments/protocol_contextmanager_a.py
     :caption: :download:`Solution <../_assignments/protocol_contextmanager_a.py>`
     :end-before: # Solution

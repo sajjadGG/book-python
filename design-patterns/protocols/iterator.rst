@@ -1,15 +1,14 @@
-********
 Iterator
-********
+========
 
 
 Rationale
-=========
+---------
 * Used for iterating in a ``for`` loop
 
 
 Protocol
-========
+--------
 * ``__iter__(self) -> self``
 * ``__next__(self) -> raise StopIteration``
 * ``iter(obj)`` -> ``obj.__iter__()``
@@ -31,7 +30,7 @@ Protocol
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class Crew:
@@ -68,7 +67,7 @@ Example
 
 
 Loop and Iterators
-==================
+------------------
 For loop:
 
 .. code-block:: python
@@ -124,7 +123,7 @@ Intuitive implementation of the ``for`` loop:
 
 
 Built-in Type Iteration
-=======================
+-----------------------
 Iterating ``str``:
 
 .. code-block:: python
@@ -186,7 +185,7 @@ Iterating nested sequences:
 
 
 Use Cases
-=========
+---------
 Iterator implementation:
 
 .. code-block:: python
@@ -224,7 +223,7 @@ Iterator implementation:
 
 
 Standard Library Itertools
-==========================
+--------------------------
 * ``import itertools``
 
 ``itertools.count(start=0, step=1)``:
@@ -623,7 +622,7 @@ Standard Library Itertools
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: ../_assignments/protocol_iterator_a.py
     :caption: :download:`Solution <../_assignments/protocol_iterator_a.py>`
     :end-before: # Solution

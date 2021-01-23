@@ -1,6 +1,7 @@
 Visitor
 =======
 
+
 Rationale
 ---------
 * EN: Visitor

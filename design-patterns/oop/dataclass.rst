@@ -1,18 +1,14 @@
-*************
 OOP Dataclass
-*************
+=============
 
 
 Syntax
-======
+------
 * This are not static fields!
 * Dataclasses require Type Annotations
 * Introduced in Python 3.7
 * Backported to Python 3.6 via ``python3 -m pip install dataclasses``
 
-
-Example
-=======
 
 Example 1
 ---------
@@ -184,7 +180,7 @@ Example 3
 
 
 ``__init__`` vs. ``__post_init__``
-==================================
+----------------------------------
 ``class``:
 
 .. code-block:: python
@@ -233,7 +229,7 @@ Example 3
 
 
 Field Factory
-=============
+-------------
 .. code-block:: python
 
     from dataclasses import dataclass, field
@@ -248,7 +244,7 @@ Field Factory
 
 
 List attributes
-===============
+---------------
 * You should not set mutable objects as a default function argument
 * ``field()`` creates new empty ``list`` for each object
 * It does not reuse pointer
@@ -298,7 +294,7 @@ List attributes
 
 
 Dataclass parameters
-====================
+--------------------
 .. csv-table:: Dataclass options
     :header: "Option", "Default", "Description (if True)"
     :widths: 10, 10, 80
@@ -309,6 +305,7 @@ Dataclass parameters
     "``order``", "``False``", "Generate ``__lt__()``, ``__le__()``, ``__gt__()``, and ``__ge__()`` methods"
     "``unsafe_hash``", "``False``", "if False: the ``__hash__()`` method is generated according to how eq and frozen are set"
     "``frozen``", "``False``", "if ``True``: assigning to fields will generate an exception"
+
 
 init
 ----
@@ -328,6 +325,7 @@ init
     p = Point(10, 20)
     # Traceback (most recent call last):
     # TypeError: Point() takes no arguments
+
 
 repr
 ----
@@ -364,6 +362,7 @@ repr
     print(p)
     # <__main__.Point object at 0x110bf5550>
 
+
 frozen
 ------
 * ``frozen=False`` by default
@@ -384,6 +383,7 @@ frozen
     p.x = 30
     # Traceback (most recent call last):
     # dataclasses.FrozenInstanceError: cannot assign to field 'x'
+
 
 eq
 --
@@ -413,7 +413,6 @@ eq
     astro1 != astro2    # False
     astro1 != astro3    # True
 
-
 .. code-block:: python
 
     from dataclasses import dataclass
@@ -436,6 +435,7 @@ eq
     astro1 != astro2    # True
     astro1 != astro3    # True
 
+
 other flags
 -----------
 .. code-block:: python
@@ -453,7 +453,7 @@ other flags
 
 
 Under the hood
-==============
+--------------
 Your code:
 
 .. code-block:: python
@@ -522,8 +522,8 @@ Dataclass will generate:
                 return (self.name, self.unit_price, self.quantity) >= (other.name, other.unit_price, other.quantity)
             return NotImplemented
 
-Example
-=======
+Use Cases
+---------
 .. code-block:: python
 
     from dataclasses import dataclass
@@ -566,8 +566,7 @@ Example
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: ../_assignments/oop_dataclass_a.py
     :caption: :download:`Solution <../_assignments/oop_dataclass_a.py>`
     :end-before: # Solution

@@ -1,10 +1,9 @@
-***********
 Classmethod
-***********
+===========
 
 
 Rationale
-=========
+---------
 * Using class as namespace
 * Will pass class as a first argument
 * ``self`` is not required
@@ -31,7 +30,7 @@ Rationale
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     import json
@@ -280,7 +279,7 @@ Trying to use methods ``self.__new__()`` and ``self.__init__()``:
 
 
 Use Cases
-=========
+---------
 .. code-block:: python
 
     import json
@@ -350,8 +349,7 @@ Use Cases
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: ../_assignments/protocol_classmethod_a.py
     :caption: :download:`Solution <../_assignments/protocol_classmethod_a.py>`
     :end-before: # Solution

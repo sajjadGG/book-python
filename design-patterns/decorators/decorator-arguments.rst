@@ -1,10 +1,9 @@
-*******************
 Decorator Arguments
-*******************
+===================
 
 
 Rationale
-=========
+---------
 Decorator:
     .. code-block:: python
 
@@ -19,7 +18,7 @@ Is equivalent to:
 
 
 Syntax
-======
+------
 Definition:
 
 .. code-block:: python
@@ -47,7 +46,7 @@ Usage:
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     def run(lang='en'):
@@ -68,7 +67,7 @@ Example
 
 
 Use Cases
-=========
+---------
 Deprecated:
 
 .. code-block:: python
@@ -179,8 +178,7 @@ Timeout using ``threading.Timer``:
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: ../_assignments/decorator_arguments_a.py
     :caption: :download:`Solution <../_assignments/decorator_arguments_a.py>`
     :end-before: # Solution

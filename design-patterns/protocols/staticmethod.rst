@@ -1,10 +1,9 @@
-************
 Staticmethod
-************
+============
 
 
 Rationale
-=========
+---------
 * Should **not** be in a class: method which don't use ``self`` in its body
 * Should be in class: if method takes ``self`` and use it (it requires instances to work)
 * If a method don't use ``self`` but uses class as a namespace use ``@staticmethod`` decorator
@@ -25,7 +24,7 @@ Rationale
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class Astronaut:
@@ -41,7 +40,7 @@ Example
 
 
 Instances
-=========
+---------
 .. code-block:: python
 
     class MyClass:
@@ -63,7 +62,7 @@ Instances
 
 
 Namespace
-=========
+---------
 Functions on a high level of a module lack namespace:
 
 .. code-block:: python
@@ -126,10 +125,10 @@ Class ``Calculator`` is a namespace for functions. ``@staticmethod`` remove inst
 
 
 Use Cases
-=========
+---------
 
-Http Client
------------
+Http Client:
+
 .. code-block:: python
 
     class http:
@@ -145,8 +144,8 @@ Http Client
     http.get('https://python.astrotech.io')
     http.post('https://python.astrotech.io', data={'astronaut': 'Mark Watney'})
 
-Astronaut Hello
----------------
+Astronaut Hello:
+
 .. code-block:: python
 
     def astronaut_say_hello():
@@ -215,9 +214,7 @@ Astronaut Hello
     astro.say_goodbye()
     # goodbye
 
-Helper
-------
-`HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor model:
+Helper `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor model:
 
 .. code-block:: python
 
@@ -376,5 +373,5 @@ Helper
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

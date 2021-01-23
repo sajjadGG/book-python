@@ -1,10 +1,9 @@
-**********
 Descriptor
-**********
+==========
 
 
 Rationale
-=========
+---------
 * Add managed attributes to objects
 * Outsource functionality into specialized classes
 * Descriptors: ``classmethod``, ``staticmethod``, ``property``, functions in general
@@ -13,7 +12,7 @@ Rationale
 
 
 Protocol
-========
+--------
 * ``__get__(self, parent, *args) -> self``
 * ``__set__(self, parent, value) -> None``
 * ``__delete__(self, parent) -> None``
@@ -42,7 +41,7 @@ Protocol
 
 
 Property vs Reflection vs Descriptor
-====================================
+------------------------------------
 Property:
 
     .. code-block:: python
@@ -89,7 +88,7 @@ Descriptor:
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class MyField:
@@ -120,7 +119,7 @@ Example
 
 
 Use Cases
-=========
+---------
 Kelvin Temperature Validator:
 
 .. code-block:: python
@@ -209,7 +208,7 @@ Temperature Conversion:
     print(f'C: {t.celsius}')        # 100.0
     print(f'F: {t.fahrenheit}')     # 212.0
 
-Value Range Descriptor.
+Value Range Descriptor:
 
 .. code-block:: python
 
@@ -407,7 +406,7 @@ Descriptor Timezone Converter:
 
 
 Function Descriptor
-===================
+-------------------
 .. code-block:: python
 
     def hello():
@@ -482,7 +481,7 @@ Function Descriptor
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: ../_assignments/protocol_descriptor_a.py
     :caption: :download:`Solution <../_assignments/protocol_descriptor_a.py>`
     :end-before: # Solution

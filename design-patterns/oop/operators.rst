@@ -1,10 +1,9 @@
-*********
 Operators
-*********
+=========
 
 
 Rationale
-=========
+---------
 * Operator Overload
 * Readable syntax
 * Simpler operations
@@ -51,7 +50,7 @@ Rationale
 
 
 Numerical Operators
-===================
+-------------------
 .. csv-table:: Numerical Operator Overload
     :header: "Operator", "Method"
 
@@ -114,7 +113,7 @@ Numerical Operators
 
 
 Comparison Operators
-====================
+--------------------
 .. csv-table:: Comparison Operators Overload
     :header: "Operator", "Method"
 
@@ -148,7 +147,7 @@ Comparison Operators
 
 
 Boolean Operators
-=================
+-----------------
 .. csv-table:: Boolean Operators Overload
     :header: "Operator", "Method"
 
@@ -209,7 +208,7 @@ Boolean Operators
 
 
 Builtin Functions and Keywords
-==============================
+------------------------------
 .. csv-table:: Builtin Functions Overload
     :header: "Function", "Method"
 
@@ -291,7 +290,7 @@ Builtin Functions and Keywords
 
 
 Accessors Overload
-==================
+------------------
 .. csv-table:: Operator Overload
     :header: "Operator", "Method", "Remarks"
     :widths: 15, 45, 40
@@ -403,7 +402,7 @@ Intuitive implementation of numpy ``array[row,col]`` accessor:
 
 
 Eq Works at Both Sides
-======================
+----------------------
 .. code-block:: python
 
     class Astronaut:
@@ -473,8 +472,8 @@ Eq Works at Both Sides
     # True
 
 
-Use Case
-========
+Use Cases
+---------
 .. code-block:: python
 
     hero @ Position(x=50, y=120)
@@ -527,13 +526,13 @@ Use Case
 
 
 Further Reading
-===============
+---------------
 * https://docs.python.org/reference/datamodel.html#emulating-numeric-types
 * https://docs.python.org/library/operator.html
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: ../_assignments/oop_operators_a.py
     :caption: :download:`Solution <../_assignments/oop_operators_a.py>`
     :end-before: # Solution

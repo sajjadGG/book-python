@@ -9,6 +9,11 @@ Code Language
 * Special cases aren't special enough to break the rules.
 * Although practicality beats purity.
 * If the implementation is hard to explain, it's a bad idea.
+* In US: The states are **not administrative** divisions of the country, in that their powers and responsibilities are in no way assigned to them from above by federal legislation or the Constitution; rather they exercise all powers of government not delegated to the federal government by the Constitution.
+* Political divisions of the United States are the various recognized governing entities that together form the United States – states, the District of Columbia, territories and Indian reservations.
+* https://en.wikipedia.org/wiki/Administrative_division
+* https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country
+* https://en.wikipedia.org/wiki/Administrative_division
 
 >>> class Obywatel:
 ...     def get_wojewodztwo(self):
@@ -19,28 +24,58 @@ Code Language
 ...
 ...     def get_gmina(self):
 ...         pass
+
+>>> class Citizen:
+...     def get_voivodeship(self):
+...         pass
 ...
+...     def get_state(self):
+...         pass
+...
+...     def get_county(self):
+...         pass
+...
+...     def get_ceremonial_county(self):
+...         pass
+...
+...     def get_metropolitan_county(self):
+...         pass
+...
+...     def get_nonmetropolitan_county(self):
+...         pass
+...
+...     def get_district(self):
+...         pass
+...
+...     def get_civil_parish(self):
+...         pass
+...
+
+>>> class Obywatel:
 ...     def get_PESEL(self):
 ...         pass
 ...
 ...     def get_NIP(self):
 ...         pass
 
+
 >>> class Citizen:
-...     def get_state(self):
-...         pass
-...
-...     def get_shire(self):
-...         pass
-...
-...     def get_county(self):
-...         pass
-...
-...     def get_voivodeship(self):
-...         pass
-...
 ...     def get_SSN(self):
 ...         ...
+...
+...     def get_VATEU(self):
+...         pass
+
+>>> class Obywatel:
+...     def get_NIP(self):
+...         pass
+...
+...     def get_PESEL(self):
+...         pass
+
+>>> class Citizen:
+...     def get_VATEU(self):
+...         pass
 
 
 Objects and instances

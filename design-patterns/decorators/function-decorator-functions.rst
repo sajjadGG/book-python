@@ -1,10 +1,9 @@
-****************************
 Decorator Function with Func
-****************************
+============================
 
 
 Rationale
-=========
+---------
 Syntax:
     .. code-block:: python
 
@@ -19,7 +18,7 @@ Is equivalent to:
 
 
 Syntax
-======
+------
 * Decorator must return pointer to ``wrapper``
 * ``wrapper`` is a closure function
 * ``wrapper`` name is a convention, but you can name it anyhow
@@ -50,7 +49,7 @@ Usage:
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     def run(func):
@@ -69,7 +68,7 @@ Example
 
 
 Use Cases
-=========
+---------
 File exists:
 
 .. code-block:: python
@@ -224,7 +223,7 @@ Stacked decorators:
 
 
 Scope
-=====
+-----
 Recap information about factorial (``n!``):
 
 .. code-block:: python
@@ -373,7 +372,7 @@ Cache with embedded scope:
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     DATABASE = {
@@ -503,8 +502,7 @@ Django Login Required. Decorator checks whether user is_authenticated. If not, u
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: ../_assignments/decorator_func_a.py
     :caption: :download:`Solution <../_assignments/decorator_func_a.py>`
     :end-before: # Solution

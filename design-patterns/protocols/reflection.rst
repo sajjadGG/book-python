@@ -1,10 +1,9 @@
-**********
 Reflection
-**********
+==========
 
 
 Rationale
-=========
+---------
 * When accessing an attribute
 * Built-in Functions:
 
@@ -50,7 +49,7 @@ Rationale
 
 
 Protocol
-========
+--------
 * ``__setattr__(self, attrname, value) -> None``
 * ``__delattr__(self, attrname) -> None``
 * ``__getattribute__(self, attrname, default) -> Any``
@@ -74,7 +73,7 @@ Protocol
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class Immutable:
@@ -92,7 +91,7 @@ Example
 
 
 Set Attribute
-=============
+-------------
 * Called when trying to set attribute to a value
 * Call Stack:
 
@@ -122,7 +121,7 @@ Set Attribute
 
 
 Delete Attribute
-================
+----------------
 * Called when trying to delete attribute
 * Call stack:
 
@@ -152,7 +151,7 @@ Delete Attribute
 
 
 Get Attribute
-=============
+-------------
 * Called for every time, when you want to access any attribute
 * Before even checking if this attribute exists
 * If attribute is not found, then raises ``AttributeError`` and calls ``__getattr__()``
@@ -186,7 +185,7 @@ Get Attribute
 
 
 Get Attribute if Missing
-========================
+------------------------
 * Called whenever you request an attribute that hasn't already been defined
 * It will not execute, when attribute already exist
 * Implementing a fallback for missing attributes
@@ -250,7 +249,7 @@ Example ``__getattr__()``:
 
 
 Has Attribute
-=============
+-------------
 * Check if object has attribute
 * There is no ``__hasattr__()`` method
 * Calls ``__getattribute__()`` and checks if raises ``AttributeError``
@@ -276,7 +275,7 @@ Has Attribute
 
 
 Use Cases
-=========
+---------
 .. code-block:: python
 
     class Astronaut:
@@ -362,8 +361,7 @@ Use Cases
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: ../_assignments/protocol_reflection_a.py
     :caption: :download:`Solution <../_assignments/protocol_reflection_a.py>`
     :end-before: # Solution

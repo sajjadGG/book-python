@@ -1,10 +1,9 @@
-****************
 Decorators Recap
-****************
+================
 
 
 Function Decorators with Function Wrappers
-==========================================
+------------------------------------------
 .. code-block:: python
 
     def mydecorator(func):
@@ -24,7 +23,7 @@ Function Decorators with Function Wrappers
 
 
 Function Decorators with Class Wrappers
-=======================================
+---------------------------------------
 .. code-block:: python
 
     def mydecorator(func):
@@ -44,7 +43,7 @@ Function Decorators with Class Wrappers
 
 
 Class Decorators
-================
+----------------
 .. code-block:: python
 
     class MyDecorator:

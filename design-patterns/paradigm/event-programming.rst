@@ -1,6 +1,14 @@
 Event Programming
 =================
 
+
+
+Rationale
+---------
+* EN: Callback Design
+* PL:
+
+
 Metaclass
 ---------
 .. code-block:: python
@@ -91,8 +99,8 @@ Implementation
             return getattr(EventManager, name).register
 
 
-Use Case
---------
+Use Case:
+
 .. code-block:: python
 
     @EventManager.register('on_foo')
@@ -111,8 +119,8 @@ Use Case
 
     EventManager.on_bar()
 
-Use
----
+Use:
+
 .. code-block:: python
 
     EventManager.on_bar + funkcja
