@@ -1,9 +1,9 @@
 Builtin Functions
-*****************
+=================
 
 
 ``range()``
-===========
+-----------
 * Tworzy **iterator**, który zwraca liczby w sekwencji.
 
 .. code-block:: python
@@ -38,9 +38,6 @@ Builtin Functions
     # [0, 1, 2, 3, 4]
 
 
-Sprawdzanie typów
-=================
-
 ``type()``
 ----------
 .. code-block:: python
@@ -73,6 +70,7 @@ Sprawdzanie typów
     type(None) == bool      # False
     type(None) == None      # False
 
+
 ``isinstance()``
 ----------------
 * Sprawdza czy dany obiekt jest instancją danej klasy
@@ -98,12 +96,10 @@ Sprawdzanie typów
     isinstance(None, bool)          # False
     isinstance(None, float)         # False
 
+
 ``issubclass()``
 ----------------
 
-
-Działania na kolekcjach
-=======================
 
 ``any()``
 ---------
@@ -202,10 +198,6 @@ Działania na kolekcjach
     text[get]
     # 'Moon!'
 
-
-Konwersje typów
-===============
-
 ``bin()``
 ---------
 * Konwertuje liczbę na binarną
@@ -264,7 +256,7 @@ Z pozycji w tablicy ASCII konwertuje kod na znak Unicode.
 
 
 Other builtin functions
-=======================
+-----------------------
 .. csv-table:: Most used Built-in functions
     :widths: 20, 80
     :header: "Name", "Description"
@@ -338,9 +330,8 @@ Other builtin functions
     "``zip()``", "zip(iter1 [,iter2 [...]]) --> zip object"
 
 
-
 Assignments
-===========
+-----------
 .. literalinclude:: assignments/builtin_function_average.py
     :caption: :download:`Solution <assignments/builtin_function_average.py>`
     :end-before: # Solution

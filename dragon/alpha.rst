@@ -1,5 +1,5 @@
 Dragon (version alpha)
-**********************
+======================
 
 .. figure:: img/dragon.gif
 

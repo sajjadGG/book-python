@@ -1,9 +1,9 @@
 Monkey Patching
-***************
+===============
 
 
 Recap information about classes and objects
-===========================================
+-------------------------------------------
 .. code-block:: python
 
     class User:
@@ -45,7 +45,7 @@ Recap information about classes and objects
 
 
 Injecting fields
-================
+----------------
 .. code-block:: python
 
     class User:
@@ -81,11 +81,8 @@ Injecting fields
     #  '__weakref__', 'agency', 'hello']
 
 
-Injecting methods
-=================
-
-Static Methods
---------------
+Injecting static methods
+------------------------
 Note, that there is no ``self`` as a first argument to ``function``:
 
 .. code-block:: python
@@ -206,8 +203,8 @@ Injecting static methods with parameters:
     User.my_staticlambda(1, 2, 3, d=4, e=5, f=6)
     # My Static Lambda, args: (1, 2, 3), kwargs: {'d': 4, 'e': 5, 'f': 6}
 
-Dynamic Methods
----------------
+Injecting Dynamic Methods
+-------------------------
 Note, that there is no ``self`` as a first argument to ``lambda``:
 
 .. code-block:: python
@@ -260,7 +257,7 @@ Note, the ``self`` argument to ``lambda``:
 
 
 Backups
-=======
+-------
 .. code-block:: python
 
     class User:
@@ -284,7 +281,7 @@ Backups
 
 
 Create Missing Method
-=====================
+---------------------
 .. code-block:: python
 
     class User:
@@ -311,7 +308,7 @@ Create Missing Method
 
 
 Object Initialization
-=====================
+---------------------
 .. code-block:: python
 
     class User:
@@ -340,7 +337,7 @@ Object Initialization
 
 
 User Cases
-==========
+----------
 .. code-block:: python
 
     from datetime import datetime
@@ -383,5 +380,5 @@ User Cases
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

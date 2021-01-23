@@ -249,7 +249,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Least square regression 3 points
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Least square regression 3 points
 * Complexity: easy
 * Lines of code: 10 lines
@@ -265,7 +265,7 @@ Polish:
     .. todo:: Polish Translation
 
 Least square regression 4 points
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Least square regression 4 points
 * Complexity: easy
 * Lines of code: 10 lines
@@ -280,7 +280,7 @@ Polish:
     .. todo:: Polish Translation
 
 Company sales
--------------
+^^^^^^^^^^^^^
 * Assignment: Company sales
 * Complexity: easy
 * Lines of code: 10 lines

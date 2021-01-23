@@ -1,9 +1,9 @@
 String Interning
-****************
+================
 
 
 Rationale
-=========
+---------
 * https://en.wikipedia.org/wiki/String_interning
 * Method of storing only one copy of each distinct string value, which must be immutable
 * many high level languages use it
@@ -15,7 +15,7 @@ Rationale
 
 
 Example
-=======
+-------
 CPython 3.7, 3.8, 3.9:
 
 .. code-block:: python

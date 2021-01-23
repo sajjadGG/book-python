@@ -157,7 +157,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Virtualenv
-----------
+^^^^^^^^^^
 * Assignment: Virtualenv
 * Complexity: easy
 * Lines of code: 0 lines

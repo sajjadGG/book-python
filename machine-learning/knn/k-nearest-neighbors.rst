@@ -160,7 +160,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Pima Indians Diabetes problem
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Pima Indians Diabetes problem
 * Complexity: medium
 * Lines of code: 15 lines
@@ -173,7 +173,7 @@ Polish:
     1. Dla Pima Indians Diabetes wykonaj analizę algorytmem KNN z biblioteki ``sklearn``.
 
 Płeć
-----
+^^^^
 * Assignment: Płeć
 * Complexity: easy
 * Lines of code: 15 lines

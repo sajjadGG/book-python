@@ -1,9 +1,9 @@
 Builtin Printing
-****************
+================
 
 
 Escape Characters
-=================
+-----------------
 * ``\r\n`` - is used on windows
 * ``\n`` - is used everywhere else
 * https://en.wikipedia.org/wiki/List_of_Unicode_characters
@@ -42,7 +42,7 @@ Escape Characters
 
 
 String Module
-=============
+-------------
 .. code-block:: python
 
     import string
@@ -76,7 +76,7 @@ String Module
 
 
 ``print`` function
-==================
+------------------
 
 Function definition
 -------------------
@@ -120,11 +120,12 @@ Printing multiple values
 
 
 String concatenation
-====================
+--------------------
 * ``+`` operator (with side effects)
 * ``str.join()``
 * ``str.format()``
 * f-string formatting (preferred)
+
 
 ``+`` Operator
 --------------
@@ -160,7 +161,7 @@ String concatenation
 
 
 Variable interpolation
-======================
+----------------------
 
 Operator: ``%s``, ``%d``, ``%f``
 --------------------------------
@@ -274,7 +275,7 @@ f-strings - Python >= 3.6
 
 
 Advanced String Formatting
-==========================
+--------------------------
 * Since Python 3.0: :pep:`3101` -- Advanced String Formatting
 
 Basic formatting
@@ -577,7 +578,7 @@ Quick and easy debugging
     # theta=30  cos(radians(theta))=0.866
 
 ``pprint``
-==========
+------------------------------
 .. code-block:: python
 
     from pprint import pprint
@@ -600,11 +601,11 @@ Quick and easy debugging
 
 
 Assignments
-===========
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Powielanie napisów
-------------------
+^^^^^^^^^^^^^^^^^^
 * Assignment: Powielanie napisów
 * Complexity: easy
 * Lines of code: 8 lines
@@ -626,7 +627,7 @@ Polish:
     5. Napisz doctest do wszystkich funkcji
 
 Przeliczanie temperatury
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Przeliczanie temperatury
 * Complexity: easy
 * Lines of code: 8 lines

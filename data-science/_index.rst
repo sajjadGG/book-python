@@ -26,7 +26,6 @@ Python
     :maxdepth: 1
     :caption: Introduction
 
-    python/index.rst
     python/syntax.rst
     python/types.rst
     python/sequences.rst

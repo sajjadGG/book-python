@@ -125,7 +125,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 PCA dla zbioru Pima Indian Diabetes
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Assignment: PCA dla zbioru Pima Indian Diabetes
 * Complexity: medium
 * Lines of code: 30 lines

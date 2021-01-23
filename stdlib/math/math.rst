@@ -226,7 +226,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Trigonometry
-------------
+^^^^^^^^^^^^
 * Assignment: Trigonometry
 * Complexity: easy
 * Lines of code: 10 lines
@@ -248,7 +248,7 @@ Hints:
     * ``input('Type angle [deg]: ')``
 
 Euclidean distance 2D
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Euclidean distance 2D
 * Complexity: easy
 * Lines of code: 5 lines
@@ -306,7 +306,7 @@ Hints:
     * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2`
 
 Euclidean distance ``n`` dimensions
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Euclidean distance ``n`` dimensions
 * Complexity: easy
 * Lines of code: 10 lines
@@ -363,7 +363,7 @@ Hints:
     * ``for n1, n2 in zip(A, B)``
 
 Matrix multiplication
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Matrix multiplication
 * Complexity: hard
 * Lines of code: 6 lines
@@ -401,7 +401,7 @@ Hints:
     * Three nested ``for`` loops
 
 Triangle
---------
+^^^^^^^^
 * Assignment: Triangle
 * Complexity: easy
 * Lines of code: 5 lines

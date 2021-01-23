@@ -1,9 +1,9 @@
 Operator Library
-****************
+================
 
 
 Rationale
-=========
+---------
 * https://docs.python.org/library/operator.html
 * The operator module exports a set of efficient functions corresponding to the intrinsic operators of Python.
 * For example, ``operator.add(x, y)`` is equivalent to the expression ``x+y``.
@@ -13,7 +13,7 @@ Rationale
 
 
 Mapping Operators to Functions
-==============================
+------------------------------
 
 +-----------------------+-------------------------+---------------------------------------+
 | Operation             | Syntax                  | Function                              |
@@ -91,7 +91,7 @@ Mapping Operators to Functions
 
 
 Comparison
-==========
+----------
 * ``operator.lt(a, b)``
 * ``operator.le(a, b)``
 * ``operator.eq(a, b)``
@@ -134,7 +134,7 @@ Comparison
 
 
 In-place Operators
-==================
+------------------
 * operator.iadd(a, b)
 * operator.iand(a, b)
 * operator.iconcat(a, b)

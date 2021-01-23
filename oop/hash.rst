@@ -1,9 +1,9 @@
 Hash
-****
+====
 
 
 Rationale
-=========
+---------
 * Used for quickly compare two objects
 * All objects compare unequal (except with themselves)
 * ``set()`` elements has to be hashable
@@ -21,7 +21,7 @@ Rationale
 
 
 Hash Method
-===========
+-----------
 * ``hash(obj) ->  int``
 * ``hash()`` returns the hash value of the object (if it has one)
 * ``__hash__`` should return the same value for objects that are equal
@@ -46,7 +46,7 @@ Hash Method
 
 
 Examples
-========
+--------
 ``dict()`` keys has to be hashable:
 
 .. code-block:: python
@@ -91,7 +91,7 @@ Examples
 
 
 Set Definition
-==============
+--------------
 .. code-block:: python
 
     class Astronaut:
@@ -133,7 +133,7 @@ Set Definition
 
 
 Use Cases
-=========
+---------
 .. code-block:: python
 
     class Astronaut:
@@ -195,7 +195,7 @@ Use Cases
 
 
 Hashable
-========
+--------
 .. code-block:: python
 
     key = list([1, 2, 3])
@@ -232,5 +232,5 @@ Hashable
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

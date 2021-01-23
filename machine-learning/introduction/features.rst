@@ -148,7 +148,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Feature Engineering
--------------------
+^^^^^^^^^^^^^^^^^^^
 * Assignment: Feature Engineering
 * Complexity: easy
 * Lines of code: 15 lines

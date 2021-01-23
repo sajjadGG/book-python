@@ -162,7 +162,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Scrapping Iris
---------------
+^^^^^^^^^^^^^^
 * Assignment: Scrapping Iris
 * Complexity: medium
 * Lines of code: 20 lines
@@ -179,7 +179,7 @@ Polish:
     5. Wyświetl dane w formacie listy dictów, kluczami mają być nazwy kolumn.
 
 Scrapping EVA
--------------
+^^^^^^^^^^^^^
 * Assignment: Scrapping EVA
 * Complexity: medium
 * Lines of code: 100 lines

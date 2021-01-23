@@ -1,12 +1,11 @@
 HTTP using stdlib
-*****************
+=================
 
 
 ``http.HTTPStatus``
-===================
+-------------------
+Using statuses:
 
-Using statuses
---------------
 .. code-block:: python
 
     from http import HTTPStatus
@@ -20,8 +19,8 @@ Using statuses
 
     list(HTTPStatus)
 
-Most common statuses
---------------------
+Most common statuses:
+
 .. code-block:: python
 
     from http import HTTPStatus
@@ -38,8 +37,8 @@ Most common statuses
     HTTPStatus.NOT_FOUND                # 404
     HTTPStatus.INTERNAL_SERVER_ERROR    # 500
 
-All statuses
-------------
+All statuses:
+
 .. csv-table:: ``http.HTTPStatus``
     :header-rows: 1
     :widths: 15, 85
@@ -106,26 +105,26 @@ All statuses
 
 
 ``urllib``
-==========
+----------
 .. literalinclude:: src/http-urllib.py
     :language: python
     :caption: ściąganie danych z internetu, które trzeba rozpakować, Dane są w formacie TSV (tab separator values), można je rozpakować modułem CSV i podać jako ``delimiter='\t'``
 
 
 ``http.server``
-===============
+---------------
 * ``http.server`` is not recommended for production. It only implements basic security checks.
 * https://docs.python.org/3.7/library/http.server.html#module-http.server
 
 
-Simple HTTP Server
-------------------
+Simple HTTP Server:
+
 .. code-block:: console
 
     $ python -m http.server 8000 --bind 127.0.0.1
 
-Own HTTP Sever
---------------
+Own HTTP Sever:
+
 .. code-block:: python
 
     import re
@@ -172,48 +171,49 @@ Own HTTP Sever
         print('^C received, shutting down the web server...')
         httpd.socket.close()
 
-Threaded server with JSON response
-----------------------------------
-* ``http.server.ThreadingHTTPServer`` since Python 3.7
+Threaded server with JSON response:
 
-.. code-block:: python
+    * ``http.server.ThreadingHTTPServer`` since Python 3.7
 
-    import json
-    from http import HTTPStatus
-    from http.server import ThreadingHTTPServer
-    from http.server import BaseHTTPRequestHandler
+    .. code-block:: python
 
-
-    class RequestHandler(BaseHTTPRequestHandler):
-        def do_GET(self):
-            data = {
-                'firstname': 'José',
-                'lastname': 'Jiménez'
-            }
-            response = bytes(json.dumps(data), 'UTF-8')
-
-            self.send_response(HTTPStatus.OK)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
-            self.wfile.write(response)
-            self.server.path = self.path
+        import json
+        from http import HTTPStatus
+        from http.server import ThreadingHTTPServer
+        from http.server import BaseHTTPRequestHandler
 
 
-    def run(host='127.0.0.1', port=8080):
-        print(f'Starting server on {host}:{port}, use <Ctrl-C> to stop')
-        httpd = ThreadingHTTPServer((host, port), RequestHandler)
-        httpd.serve_forever()
+        class RequestHandler(BaseHTTPRequestHandler):
+            def do_GET(self):
+                data = {
+                    'firstname': 'José',
+                    'lastname': 'Jiménez'
+                }
+                response = bytes(json.dumps(data), 'UTF-8')
+
+                self.send_response(HTTPStatus.OK)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(response)
+                self.server.path = self.path
 
 
-    if __name__ == '__main__':
-        run()
+        def run(host='127.0.0.1', port=8080):
+            print(f'Starting server on {host}:{port}, use <Ctrl-C> to stop')
+            httpd = ThreadingHTTPServer((host, port), RequestHandler)
+            httpd.serve_forever()
+
+
+        if __name__ == '__main__':
+            run()
 
 
 ``http.client``
-===============
+---------------
 
 Connecting
 ----------
+
 .. code-block:: python
 
     h1 = http.client.HTTPConnection('www.python.org')
@@ -383,11 +383,11 @@ Basic Auth
 
 
 Assignments
-===========
+-----------
 .. todo:: Convert assignments to literalinclude
 
 REST API
---------
+^^^^^^^^
 * Assignment: REST API
 * Complexity: medium
 * Lines of code: 60 lines

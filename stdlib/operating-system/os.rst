@@ -641,7 +641,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Recursive folders walking
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Recursive folders walking
 * Complexity: easy
 * Lines of code: 30 lines
@@ -682,7 +682,7 @@ Hints:
     * Łączenie ścieżek
 
 Tree
-----
+^^^^
 * Assignment: Tree
 * Complexity: hard
 * Lines of code: 60 lines

@@ -16,6 +16,28 @@ Support Vector Machines
     discriminative model
     distribution
 
+.. glossary::
+    Positive
+        Grupa zbioru
+
+    Negative
+        Grupa zbioru
+
+    Discriminative Classifier
+        Draws a boundary between :term:`clusters <cluster>` of data. For tasks such as :term:`classification` and :term:`regression` that do not require the joint :term:`distribution`. :term:`discriminative model` can yield superior performance over :term:`generative model`.
+
+    Support Vector
+        Punkty które leżą na linii "marginesu"
+
+    Vector Space
+        Przestrzeń w której znajdują się dane. Dla danych (wektorów) dwuwymiarowych przestrzeń można zobrazować za pomocą wykresu 2D z kartezjańskim układem współrzędnych.
+
+    Binary classifier
+        Dzieli zbiór na dwie części :term:`positive` i :term:`negative`
+
+    Best separating hyperplane
+        Line that separates two :term:`decision boundary`
+
 
 TL;DR
 =====
@@ -390,7 +412,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Wykorzystanie biblioteki ``sklearn``
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Wykorzystanie biblioteki ``sklearn``
 * Complexity: medium
 * Lines of code: 30 lines
@@ -409,34 +431,3 @@ Given:
 
 .. todo:: Własna implementacja
 
-
-Lektura uzupełniająca
-=====================
-
-.. todo::
-    * Bibliografia
-    * Przydatne odnośniki
-
-Słownictwo
-----------
-.. glossary::
-    Positive
-        Grupa zbioru
-
-    Negative
-        Grupa zbioru
-
-    Discriminative Classifier
-        Draws a boundary between :term:`clusters <cluster>` of data. For tasks such as :term:`classification` and :term:`regression` that do not require the joint :term:`distribution`. :term:`discriminative model` can yield superior performance over :term:`generative model`.
-
-    Support Vector
-        Punkty które leżą na linii "marginesu"
-
-    Vector Space
-        Przestrzeń w której znajdują się dane. Dla danych (wektorów) dwuwymiarowych przestrzeń można zobrazować za pomocą wykresu 2D z kartezjańskim układem współrzędnych.
-
-    Binary classifier
-        Dzieli zbiór na dwie części :term:`positive` i :term:`negative`
-
-    Best separating hyperplane
-        Line that separates two :term:`decision boundary`

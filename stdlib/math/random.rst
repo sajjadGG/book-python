@@ -29,7 +29,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Random numbers
---------------
+^^^^^^^^^^^^^^
 * Assignment: Random numbers
 * Complexity: easy
 * Lines of code: 5 lines
@@ -42,7 +42,7 @@ Polish:
     1. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z zakresu od 1 do 49.
 
 Sum of inner elements
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Sum of inner elements
 * Complexity: medium
 * Lines of code: 5 lines

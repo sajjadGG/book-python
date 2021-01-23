@@ -1,9 +1,9 @@
 Good Engineering Practises
-**************************
+==========================
 
 
 Objects and instances
-=====================
+---------------------
 .. code-block:: python
 
     text = str('Jan,Twardowski')
@@ -24,7 +24,7 @@ Objects and instances
 
 
 Tell - don't ask
-================
+----------------
 * Tell-Don't-Ask is a principle that helps people remember that object-orientation is about bundling data with the functions that operate on that data.
 * It reminds us that rather than asking an object for data and acting on that data, we should instead tell an object what to do.
 * This encourages to move behavior into an object to go with the data.
@@ -90,7 +90,7 @@ Good:
 
 
 Setters, Getters, Deleters
-==========================
+--------------------------
 * Java way: setters, getters, deleters
 * Python way: properties, reflection, descriptors
 * More information in `Protocol Property`
@@ -208,12 +208,12 @@ Rationale for Setters and Getters `HabitatOS <https://www.habitatos.space>`_ Z-W
 
 
 GRASP
-=====
+-----
 **General responsibility assignment software patterns (or principles)**, abbreviated GRASP, consist of guidelines for assigning responsibility to classes and objects in object-oriented design.
 
 The different patterns and principles used in GRASP are controller, creator, indirection, information expert, high cohesion, low coupling, polymorphism, protected variations, and pure fabrication. All these patterns answer some software problem, and these problems are common to almost every software development project. These techniques have not been invented to create new ways of working, but to better document and standardize old, tried-and-tested programming principles in object-oriented design.
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

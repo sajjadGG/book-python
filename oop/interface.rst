@@ -1,9 +1,9 @@
 Interface
-*********
+=========
 
 
 Rationale
-=========
+---------
 * Python don't have interfaces
 * Cannot instantiate
 * Inheriting class must implement all methods
@@ -20,7 +20,7 @@ Rationale
 
 
 Example
-=======
+-------
 Interfaces:
 
 .. code-block:: python
@@ -42,7 +42,7 @@ Interfaces:
 
 
 Use Cases
-=========
+---------
 Interfaces:
 
 .. code-block:: python
@@ -119,7 +119,7 @@ Interfaces:
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: assignments/oop_interface_define.py
     :caption: :download:`Solution <assignments/oop_interface_define.py>`
     :end-before: # Solution

@@ -11,6 +11,53 @@ The SciPy library depends on NumPy, which provides convenient and fast N-dimensi
 SciPy builds on the NumPy array object and is part of the NumPy stack which includes tools like Matplotlib, pandas and SymPy, and an expanding set of scientific computing libraries. This NumPy stack has similar users to other applications such as MATLAB, GNU Octave, and Scilab. The NumPy stack is also sometimes referred to as the SciPy stack.
 
 
+Ecosystem
+---------
+* Python 3.6+
+* Libs manually installed
+
+.. figure:: img/scipy-ecosystem.png
+
+Biblioteki do obsługi danych:
+
+    * ``Pandas``
+    * ``NumPy``
+    * ``SciPy``
+    * ``Dask``
+    * ``xarray``
+
+
+Wykresy i grafy:
+
+    * ``Matplotlib``
+    * ``Bokeh``
+    * ``PyDotPlus`` (not in SciPy ecosystem)
+    * ``Graphviz`` (not in SciPy ecosystem)
+    * ``plotly`` (not in SciPy ecosystem)
+
+Biblioteki do nauczania maszynowego:
+
+    * ``scikit-learn``
+    * ``scikit-image``
+    * ``TensorFlow`` (not in SciPy ecosystem)
+    * ``pyTorch`` (not in SciPy ecosystem)
+    * ``PyMC3``
+    * ``keras``
+
+Other:
+
+    * ``Jupyter``
+    * ``Numba``
+    * ``StatsModels``
+    * ``SymPy``
+    * ``NetworkX``
+    * ``astropy``
+    * ``biopython``
+    * ``dipy``
+    * ``nipy``
+    * ``sunpy``
+
+
 Library
 -------
 .. code-block:: python

@@ -158,7 +158,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Database SQL Relations
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Database SQL Relations
 * Complexity: medium
 * Lines of code: 0 lines

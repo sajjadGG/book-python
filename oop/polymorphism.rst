@@ -1,9 +1,9 @@
 Polymorphism
-************
+============
 
 
 Switch
-======
+------
 Switch moves business logic to the execution place:
 
 .. code-block:: python
@@ -46,7 +46,7 @@ Switch moves business logic to the execution place:
 
 
 Polymorphism in a Function
-==========================
+--------------------------
 Polymorphism on Function:
 
 .. code-block:: python
@@ -85,7 +85,7 @@ Polymorphism on Function:
 
 
 Polymorphism on a Class
-=======================
+-----------------------
 Polymorphism on Classes:
 
 .. code-block:: python
@@ -122,7 +122,7 @@ Polymorphism on Classes:
 
 
 Factory
-=======
+-------
 .. code-block:: python
 
     DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -232,5 +232,5 @@ Factory
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

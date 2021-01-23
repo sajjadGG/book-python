@@ -1,9 +1,9 @@
 Method Resolution Order
-***********************
+=======================
 
 
 Inheritance Method Resolution
-=============================
+-----------------------------
 .. code-block:: python
 
     class A:
@@ -67,7 +67,7 @@ Inheritance Method Resolution
 
 
 Inheritance Diamond
-===================
+-------------------
 .. figure:: img/oop-mro-inheritance-diamond.png
 
     Inheritance Diamond
@@ -157,5 +157,5 @@ Inheritance Diamond:
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

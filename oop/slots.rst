@@ -1,9 +1,9 @@
 Slots
-*****
+=====
 
 
 Rationale
-=========
+---------
 * Faster attribute access
 * Space savings in memory (overhead of dict for every object)
 * Prevents from adding new attributes
@@ -28,7 +28,7 @@ Rationale
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class Astronaut:
@@ -56,7 +56,7 @@ Example
 
 
 ``__slots__`` and ``__dict__``
-==============================
+------------------------------
 * Using ``__slots__`` will prevent from creating ``__dict__``
 
 .. code-block:: python
@@ -93,7 +93,7 @@ Example
 
 
 Slots and Methods
-=================
+-----------------
 .. code-block:: python
 
     class Astronaut:
@@ -109,7 +109,7 @@ Slots and Methods
 
 
 Slots and Init
-==============
+--------------
 .. code-block:: python
 
     class Astronaut:
@@ -139,7 +139,7 @@ Slots and Init
 
 
 Inheritance
-===========
+-----------
 * Slots do not inherit, unless they are specified in subclass
 * Slots are added on inheritance
 
@@ -194,7 +194,7 @@ Inheritance
 
 
 Use Cases
-=========
+---------
 .. code-block:: python
 
     class Astronaut:
@@ -226,7 +226,7 @@ Use Cases
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: assignments/oop_slots_define.py
     :caption: :download:`Solution <assignments/oop_slots_define.py>`
     :end-before: # Solution

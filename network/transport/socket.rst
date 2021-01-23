@@ -121,7 +121,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Heartbeat
----------
+^^^^^^^^^
 * Assignment: Heartbeat
 * Complexity: medium
 * Lines of code: 20 lines
@@ -148,7 +148,7 @@ Hints:
     * ``socketserver.ThreadingUDPServer``
 
 Backdoor
---------
+^^^^^^^^
 * Assignment: Backdoor
 * Complexity: medium
 * Lines of code: 150 lines

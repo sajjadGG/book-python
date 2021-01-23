@@ -319,7 +319,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Klastrowanie zbioru Iris
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Klastrowanie zbioru Iris
 * Complexity: medium
 * Lines of code: 30 lines

@@ -318,7 +318,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Argument parsing
-----------------
+^^^^^^^^^^^^^^^^
 * Assignment: Argument parsing
 * Complexity: easy
 * Lines of code: 5 lines

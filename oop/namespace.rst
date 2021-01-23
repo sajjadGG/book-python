@@ -1,8 +1,8 @@
 Namespace
-*********
+=========
 
 Rationale
-=========
+---------
 * Functions and Classes can be namespaces
 * Functions can be nested in functions
 * Functions can be nested in classes
@@ -11,7 +11,7 @@ Rationale
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class MyClass:
@@ -33,7 +33,7 @@ Example
 
 
 Inner Functions
-===============
+---------------
 .. code-block:: python
 
     def run():
@@ -79,7 +79,7 @@ Inner Functions
 
 
 Inner Classes
-=============
+-------------
 .. code-block:: python
 
     class User:
@@ -112,5 +112,5 @@ Inner Classes
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

@@ -36,7 +36,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 FTP Download
-------------
+^^^^^^^^^^^^
 * Assignment: FTP Download
 * Complexity: easy
 * Lines of code: 20 lines
@@ -58,7 +58,7 @@ Polish:
     6. Skorzystaj z Context Managera do połączenia
 
 FTP Upload
-----------
+^^^^^^^^^^
 * Assignment: FTP Upload
 * Complexity: easy
 * Lines of code: 20 lines

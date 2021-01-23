@@ -1,5 +1,5 @@
 Dragon (version beta)
-*********************
+=====================
 
 .. figure:: img/dragon.gif
 

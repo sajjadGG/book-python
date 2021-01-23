@@ -1,5 +1,5 @@
 Metaclass
-*********
+=========
 
 .. epigraph::
 
@@ -12,7 +12,7 @@ Metaclass
 
 
 Rationale
-=========
+---------
 * Object is an instance of a class
 * Class is an instance of a Metaclass
 
@@ -116,7 +116,7 @@ Create Classes Dynamically
 
 
 Syntax
-======
+------
 .. code-block:: python
 
     class MyMeta(type):
@@ -146,7 +146,7 @@ Syntax
 
 
 Metaclasses
-===========
+-----------
 * Is a callable which returns a class
 * Instances are created by calling the class
 * Classes are created by calling the metaclass (when it executes the ``class`` statement)
@@ -194,7 +194,7 @@ Metaclasses
 
 
 Usage
-=====
+-----
 * Metaclasses allow you to do 'extra things' when creating a class
 * Allow customization of class instantiation
 * Most commonly used as a class-factory
@@ -231,7 +231,7 @@ The potential uses for metaclasses are boundless. Some ideas that have been expl
 
 
 Keyword Arguments
-=================
+-----------------
 .. code-block:: python
 
     class MyMeta(type):
@@ -246,7 +246,7 @@ Keyword Arguments
 
 
 Methods
-=======
+-------
 * ``__prepare__(metacls, name, bases, **kwargs) -> dict`` - on class namespace initialization
 * ``__new__(mcs, classname, bases, attrs) -> cls`` - before class creation
 * ``__init__(self, name, bases, attrs) -> None`` - after class creation
@@ -272,7 +272,7 @@ Once the appropriate metaclass has been identified, then the class namespace is 
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     import logging
@@ -300,7 +300,7 @@ Example
 
 
 Type Metaclass
-==============
+--------------
 .. code-block:: python
 
     type(1)           # <class 'int'>
@@ -388,7 +388,7 @@ Type Metaclass
 
 
 Method Resolution Order
-=======================
+-----------------------
 .. code-block:: python
 
     class Astronaut:
@@ -435,7 +435,7 @@ Method Resolution Order
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     import logging
@@ -492,7 +492,7 @@ Example
 
 
 Use Case
-========
+--------
 Injecting logger instance:
 
 .. code-block:: python
@@ -573,7 +573,7 @@ Abstract Base Class:
 
 
 Metaclass replacements
-======================
+----------------------
 * Effectively accomplish the same thing
 
 Inheritance and ``__init__()`` method:
@@ -658,12 +658,12 @@ Class Decorator:
     # <Logger Astronaut (WARNING)>
 
 
-References
-==========
-.. [pydocsprepare] https://docs.python.org/3/reference/datamodel.html#preparing-the-class-namespace
-
-.. [pydocclassobject] https://docs.python.org/3/reference/datamodel.html#creating-the-class-object
-
 Assignments
-===========
+-----------
 .. todo:: Create assignments
+
+
+References
+----------
+.. [pydocsprepare] https://docs.python.org/3/reference/datamodel.html#preparing-the-class-namespace
+.. [pydocclassobject] https://docs.python.org/3/reference/datamodel.html#creating-the-class-object

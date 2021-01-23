@@ -1,5 +1,5 @@
 Dragon (version release candidate)
-**********************************
+==================================
 
 .. figure:: img/dragon.gif
 

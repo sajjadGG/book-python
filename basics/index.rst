@@ -1,5 +1,6 @@
 .. include:: ../README.rst
 
+
 About
 *****
 .. toctree::
@@ -11,6 +12,7 @@ About
     ../survey.rst
     ../about/references.rst
 
+
 Python Basics
 *************
 .. toctree::
@@ -19,6 +21,7 @@ Python Basics
     :caption: Python Basics
 
     _index.rst
+
 
 Appendixes
 **********

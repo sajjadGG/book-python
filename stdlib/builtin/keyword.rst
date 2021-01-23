@@ -1,10 +1,10 @@
 Builtin Keywords
-****************
+================
 
 * https://www.programiz.com/python-programming/keyword-list
 
 List of keywords
-================
+----------------
 .. code-block:: python
 
     import keyword
@@ -22,7 +22,7 @@ List of keywords
 
 
 ``pass``
-========
+--------
 * Avoid error when you don't specify the body of a block
 
 Exceptions has all the content needed inherited from ``Exception`` class. You need something to avoid ``IndentationError``:
@@ -47,7 +47,7 @@ Exceptions has all the content needed inherited from ``Exception`` class. You ne
 
 
 ``__file__``
-============
+------------
 .. code-block:: python
 
     print(__file__)
@@ -76,7 +76,7 @@ Exceptions has all the content needed inherited from ``Exception`` class. You ne
 
 
 ``del``
-=======
+-------
 .. code-block:: python
 
     DATA = {

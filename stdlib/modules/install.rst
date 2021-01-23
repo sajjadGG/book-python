@@ -28,7 +28,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Installing from requirements.txt
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Assignment: Installing from requirements.txt
 * Complexity: easy
 * Lines of code: 1 line

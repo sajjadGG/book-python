@@ -276,7 +276,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 REST API
---------
+^^^^^^^^
 * Assignment: REST API
 * Complexity: medium
 * Lines of code: 35 lines

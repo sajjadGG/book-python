@@ -28,7 +28,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Send email
-----------
+^^^^^^^^^^
 * Assignment: Send email
 * Complexity: medium
 * Lines of code: 20 lines

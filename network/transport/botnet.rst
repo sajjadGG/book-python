@@ -7,7 +7,7 @@ Assignments
 .. todo:: Convert assignments to literalinclude
 
 Mini Botnet
------------
+^^^^^^^^^^^
 * Assignment: Mini Botnet
 * Complexity: medium
 * Lines of code: 45 lines
@@ -27,7 +27,7 @@ Hints:
     * Do weryfikacji czy port jest otwarty możesz użyć ``telnet`` albo ``netcat``
 
 Heartbeat Receiver
-------------------
+^^^^^^^^^^^^^^^^^^
 * Assignment: Heartbeat Receiver
 * Complexity: medium
 * Lines of code: 45 lines
@@ -48,7 +48,7 @@ Hints:
     * ``socketserver.UDPServer``
 
 Victim
-------
+^^^^^^
 * Assignment: Victim
 * Complexity: medium
 * Lines of code: 150 lines
@@ -83,7 +83,7 @@ Hints:
     * ``xml.etree.ElementTree``
 
 Attacker
---------
+^^^^^^^^
 * Assignment: Attacker
 * Complexity: medium
 * Lines of code: 150 lines

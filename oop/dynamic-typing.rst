@@ -1,9 +1,9 @@
 Dynamic Typing
-**************
+==============
 
 
 Duck typing
-===========
+-----------
 * `The Unreasonable Effectiveness of Dynamic Typing for Practical Programs by Robert Smallshire <http://www.infoq.com/presentations/dynamic-static-typing>`_
 
 Syntax similarities:
@@ -56,8 +56,9 @@ Syntax similarities:
 
 
 Everything is an object
-=======================
+-----------------------
 * even function is an object!
+
 
 Object properties
 -----------------
@@ -79,6 +80,7 @@ Object properties
 
     print(add_numbers.__class__)
     # <class 'function'>
+
 
 Object methods
 --------------
@@ -133,7 +135,7 @@ Injecting methods
 
 
 Proxy methods
-=============
+-------------
 One of the most common use of ``*args``, ``**kwargs`` is for proxy methods:
 
 .. code-block:: python
@@ -173,7 +175,7 @@ One of the most common use of ``*args``, ``**kwargs`` is for proxy methods:
 
 
 Container Class
-===============
+---------------
 * A.K.A. Placeholder class
 
 Dynamically creating fields:
@@ -230,7 +232,7 @@ Dynamically creating fields:
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     DATA = [
@@ -281,5 +283,5 @@ Example
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments
