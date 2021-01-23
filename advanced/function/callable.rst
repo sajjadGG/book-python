@@ -1,10 +1,9 @@
-********
 Callable
-********
+========
 
 
 Rationale
-=========
+---------
 .. code-block:: python
 
     def hello():
@@ -22,7 +21,7 @@ Rationale
 
 
 Function Attributes
-===================
+-------------------
 .. code-block:: python
 
     def hello():
@@ -91,7 +90,7 @@ Function Attributes
 
 
 Calling Call Method
-===================
+-------------------
 * ``__call__()`` method makes object callable
 
 .. code-block:: python
@@ -114,7 +113,7 @@ Calling Call Method
 
 
 Overloading Call Method
-=======================
+-----------------------
 .. code-block:: python
 
     astro = str('Mark Watney')
@@ -149,7 +148,7 @@ Overloading Call Method
 
 
 Callbacks
-=========
+---------
 Callback Design Pattern:
 
 .. code-block:: python
@@ -175,7 +174,7 @@ Callback Design Pattern:
 
 
 Type Annotation
-===============
+---------------
 .. code-block:: python
 
     def add(a: int, b: int) -> int:
@@ -226,7 +225,7 @@ Type Annotation
 
 
 Case Studies
-============
+------------
 .. code-block:: python
 
     import datetime
@@ -260,8 +259,7 @@ Case Studies
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/function_callable_define.py
-    :caption: :download:`Solution <assignments/function_callable_define.py>`
+-----------
+.. literalinclude:: assignments/function_callable_a.py
+    :caption: :download:`Solution <assignments/function_callable_b.py>`
     :end-before: # Solution

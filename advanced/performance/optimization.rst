@@ -1,31 +1,31 @@
-.. _Performance Optimization:
-
-************************
 Performance Optimization
-************************
+========================
 
 
 PyPy
-====
+----
 * http://pypy.org
 * No GIL
 * Can speedup couple order of magnitude
 
 
 Seven strategies
-================
+----------------
 * https://www.youtube.com/watch?v=zQeYx87mfyw
 * https://www.youtube.com/watch?v=EEUXKG97YRw
+
 
 Line Profiling
 --------------
 * ``pip install line_profiler``
 
+
 Numpy vectorization
 -------------------
+Scipy Ecosystem:
+
 .. figure:: img/scipy-ecosystem.png
 
-    Scipy Ecosystem
 
 Specialized data structures
 ---------------------------
@@ -96,9 +96,10 @@ Cython
 
     # which gives a 585 times improvement over the pure-python version
 
+Cython compiling:
+
 .. figure:: img/performance-cython.png
 
-    Cython compiling
 
 Numba
 -----
@@ -118,22 +119,22 @@ Numba gives you the power to speed up your applications with high performance fu
     def add(x, y):
         return x + y
 
+
 Dask
 ----
 Dask natively scales Python. Dask provides advanced parallelism for analytics, enabling performance at scale for the tools you love
 
+
+
 Find existing implementation
 ----------------------------
+* https://pypi.org
 
-
-.. _Performance Optimization Contains:
 
 Contains
-========
-
-Use ``set`` instead of ``list``
--------------------------------
-Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień listę na ``set``, dzięki temu będzie lepsza złożoność
+--------
+* Use ``set`` instead of ``list``
+* Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień listę na ``set``, dzięki temu będzie lepsza złożoność
 
 .. code-block:: python
 
@@ -151,7 +152,7 @@ Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień list
 
 
 String Concatenation
-====================
+--------------------
 How many string are there in a memory?:
 
 .. code-block:: python
@@ -221,7 +222,7 @@ Use ``list.append()`` instead of ``str + str``:
 
 
 Range between two ``float``
-===========================
+---------------------------
 * Uwaga na set zawierający floaty, bo pomiędzy dwoma wartościami jest nieskończona ilość wyrażeń
 
 .. code-block:: python
@@ -234,13 +235,13 @@ Range between two ``float``
     # ...
 
 Inne
-====
+----
 * Jeżeli coś ``collections.deque`` - Double ended Queue
 * Serializowanie kolejki przy wielowątkowości
 
 
 Further Reading
-===============
+---------------
 * https://wiki.python.org/moin/TimeComplexity
 * https://visualgo.net/bn/sorting
 * http://sorting.at/
@@ -248,8 +249,7 @@ Further Reading
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/optimization_memoize.py
     :caption: :download:`Solution <assignments/optimization_memoize.py>`
     :end-before: # Solution

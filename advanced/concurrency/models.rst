@@ -1,10 +1,9 @@
-******************
 Concurrency Models
-******************
+==================
 
 
 Classification of concurrency problems
-======================================
+--------------------------------------
 * Martelli Model of Scalability
 * 1 core: Single thread and single process
 * 2-8 cores: Multiple threads and multiple processes
@@ -17,7 +16,7 @@ Source: [Hettinger2017]_
 
 
 GIL
-===
+---
 * Global Interpreter Lock
 * CPython has a lock for its internal shared global state
 * One lock instead of hundreds smaller
@@ -30,7 +29,7 @@ Source: [Hettinger2017]_
 
 
 Process
-=======
+-------
 #. Co to jest proces?
 #. Ile czasu trwa tworzenie procesów?
 #. Kto zarządza procesami?
@@ -47,7 +46,7 @@ Process
 
 
 Thread
-======
+------
 #. Co to jest wątek?
 #. Ile czasu trwa tworzenie wątków?
 #. Kto zarządza wątkami?
@@ -70,11 +69,11 @@ Thread
 * Accordingly, critical sections have to be a guarded with locks
 * The limit on threads is total CPU power minus the cost of tasks switches and synchronization overhead
 
-
 Source: [Hettinger2017]_
 
+
 Async
-=====
+-----
 * Disadvantage: Async switches cooperatively, so you do need to add explicit code ``yield`` or ``await`` to cause a task to switch.
 * Now you control when tasks switches occur, so locks and other synchronization are no longer needed.
 * Also, cost task switches is incredibly low. Calling a pure Python function has more overhead than restarting a generator or awaitable.
@@ -92,7 +91,7 @@ Async
 
 
 Threads vs processes
-====================
+--------------------
 #. Czym się różnią wątki od procesów?
 #. Ile może być wątków przetwarzanych równolegle na procesorze czterordzeniowym (z i bez Hyper Threading)?
 #. Ile może być procesów przetwarzanych równolegle na procesorze czterordzeniowym (z i bez Hyper Threading)?
@@ -100,7 +99,7 @@ Threads vs processes
 
 
 Threads vs Async
-================
+----------------
 * Async maximizes CPU utilization because it has less overhead than threads.
 * Threading typically works with existing code and tools as long as locks are added around critical sections
 * For complex systems, async is much easier to get right than threads with locks
@@ -111,7 +110,7 @@ Source: [Hettinger2017]_
 
 
 Context Switching
-=================
+-----------------
 * Threads, thread manager does it automatically for you
 * In Async, you specify places to context switch
 * Time consuming
@@ -119,7 +118,7 @@ Context Switching
 
 
 Testing
-=======
+-------
 * In concurrent programs (threading, multiprocessing) testing can hide bugs and errors
 * Some lines of code works so fast, that it requires million runs to make errors to appear
 * But if you put ``sleep()`` than errors will show up
@@ -130,7 +129,7 @@ Source: [Hettinger2017]_
 
 
 Rules
-=====
+-----
 #. If step A and B must be run sequentially, put them in the same thread
 #. If there is several parallel threads launched and you want to be sure that all are complete, just ``join()`` all of the threads. It's called "barrier". Example: Several programmers make improvements to the website, they has to merge their work, before releasing website to the public.
 #. Daemon thread is a service worker, a task which never suppose to finish (by infinite loop). Instead you ``join()`` on the queue itself. It waits until all the requested tasks are marked as being done. Example: a printer sits in the office, it waits for documents, when document arrives, printer prints it, and wait for another job, printer never finish
@@ -145,7 +144,7 @@ Source: [Hettinger2017]_
 
 
 Locks
-=====
+-----
 * Locks don't lock anything. They are just flags and can be ignored. It is a cooperative tool, not an enforced tool
 * IIn general, locks should be considered a low level primitive that is difficult to reason about nontrivial examples. For more complex applications, you're almost always better of with using atomic message queues.
 * The more locks you acquire at one time, the more you loose the advantages of concurrency
@@ -154,7 +153,7 @@ Source: [Hettinger2017]_
 
 
 Multiprocessing Problems
-========================
+------------------------
 * Deadlock (Zakleszczania)
 * Race Condition
 * Starvation (Głodzenie)

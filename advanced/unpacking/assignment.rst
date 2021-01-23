@@ -1,12 +1,9 @@
-.. _Unpacking Assignment:
-
-********************
 Unpacking Assignment
-********************
+====================
 
 
 Recap
-=====
+-----
 .. code-block:: python
 
     a = 1
@@ -25,14 +22,14 @@ Recap
 
 
 Rationale
-=========
-.. figure:: img/unpacking-assignment,args,params.png
+---------
+* Unpacking and Arbitrary Number of Parameters and Arguments
 
-    Unpacking and Arbitrary Number of Parameters and Arguments
+.. figure:: img/unpacking-assignment,args,params.png
 
 
 Errors
-======
+------
 Note, that ``set`` is unordered collection:
 
 .. code-block:: python
@@ -59,7 +56,7 @@ Not enough values to unpack:
 
 
 Arbitrary Number of Arguments
-=============================
+-----------------------------
 Unpacking values at the right side:
 
 .. code-block:: python
@@ -118,7 +115,7 @@ Unpacking requires values for required arguments:
 
 
 Nested
-======
+------
 .. code-block:: python
 
     a, (b, c) = [1, (2, 3)]
@@ -129,7 +126,7 @@ Nested
 
 
 Convention
-==========
+----------
 .. code-block:: python
 
     first, *middle, last = [1, 2, 3, 4]
@@ -148,7 +145,7 @@ Convention
 
 
 Skipping Values
-===============
+---------------
 * ``_`` is regular variable name, not a special Python syntax
 * ``_`` by convention is used for data we don't want to access in future
 
@@ -215,7 +212,7 @@ Skipping Values
 
 
 Examples
-========
+--------
 .. code-block:: python
 
     import sys
@@ -274,7 +271,7 @@ Examples
 
 
 Using in a Loop
-===============
+---------------
 .. code-block:: python
 
     *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
@@ -313,8 +310,7 @@ Using in a Loop
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/unpacking_assignment_nested.py
     :caption: :download:`Solution <assignments/unpacking_assignment_nested.py>`
     :end-before: # Solution

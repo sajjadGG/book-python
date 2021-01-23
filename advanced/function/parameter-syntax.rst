@@ -1,10 +1,9 @@
-****************
 Parameter Syntax
-****************
+================
 
 
 Recap
-=====
+-----
 .. code-block:: python
 
     def echo(a, b, c=3):
@@ -21,7 +20,7 @@ Recap
 
 
 Keyword-only Parameters
-=======================
+-----------------------
 * All parameters after ``*`` must be keyword-only
 
 .. code-block:: python
@@ -40,7 +39,7 @@ Keyword-only Parameters
 
 
 Positional-only Parameters
-==========================
+--------------------------
 * Since Python 3.8: :pep:`570` -- Python Positional-Only Parameters
 * All parameters before ``/`` must be positional-only
 
@@ -60,7 +59,7 @@ Positional-only Parameters
 
 
 Positional and Keyword Parameters
-=================================
+---------------------------------
 .. code-block:: python
 
     def echo(a, /, b, *, c=3):
@@ -76,8 +75,8 @@ Positional and Keyword Parameters
     echo(a=1, b=2, c=3)     # TypeError: echo() got some positional-only arguments passed as keyword arguments: 'a'
 
 
-Examples
-========
+Use Cases
+---------
 https://docs.python.org/3/library/functions.html#sorted:
 
 .. code-block:: python
@@ -107,12 +106,11 @@ https://docs.python.org/3/library/functions.html#sum:
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/function_parameter_syntax_kwargs.py
-    :caption: :download:`Solution <assignments/function_parameter_syntax_kwargs.py>`
+-----------
+.. literalinclude:: assignments/function_parameter_syntax_a.py
+    :caption: :download:`Solution <assignments/function_parameter_syntax_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_parameter_syntax_args.py
-    :caption: :download:`Solution <assignments/function_parameter_syntax_args.py>`
+.. literalinclude:: assignments/function_parameter_syntax_b.py
+    :caption: :download:`Solution <assignments/function_parameter_syntax_b.py>`
     :end-before: # Solution

@@ -1,10 +1,9 @@
-*********
 Namespace
-*********
+=========
 
 
 Rationale
-=========
+---------
 * Functions provide namespaces
 * Only code inside that namespace can access it's locals
 
@@ -24,7 +23,7 @@ Rationale
 
 
 Functions Inside Function
-=========================
+-------------------------
 * Functions inside function
 
 .. code-block:: python
@@ -38,7 +37,7 @@ Functions Inside Function
 
 
 Classes Inside Function
-=======================
+-----------------------
 .. code-block:: python
 
     def run():
@@ -50,7 +49,7 @@ Classes Inside Function
 
 
 Variables, Functions and Classes Inside Function
-================================================
+------------------------------------------------
 .. code-block:: python
 
     def run():
@@ -64,7 +63,7 @@ Variables, Functions and Classes Inside Function
 
 
 Execute
-=======
+-------
 .. code-block:: python
 
     def run():
@@ -87,7 +86,7 @@ Execute
 
 
 Return
-======
+------
 .. code-block:: python
 
     def run():
@@ -198,7 +197,7 @@ Return
 
 
 Locals
-======
+------
 .. code-block:: python
 
     def run(a=1):

@@ -1,12 +1,9 @@
-.. _OOP Constructor:
-
-***********
 Constructor
-***********
+===========
 
 
 Rationale
-=========
+---------
 .. code-block:: python
 
     my = MyClass()
@@ -18,7 +15,7 @@ Rationale
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class Astronaut:
@@ -35,7 +32,7 @@ Example
 
 
 New Method
-==========
+----------
 * the constructor
 * solely for creating the object
 * ``cls`` as it's first parameter
@@ -53,7 +50,7 @@ New Method
 
 
 Init Method
-===========
+-----------
 * the initializer
 * for initializing object with data
 * ``self`` as it's first parameter
@@ -71,7 +68,7 @@ Init Method
 
 
 Return
-======
+------
 .. code-block:: python
 
     class Astronaut:
@@ -131,7 +128,7 @@ Return invalid from initializer:
 
 
 Use Cases
-=========
+---------
 * Factory method
 * Could be used to implement Singleton
 
@@ -220,10 +217,8 @@ Use Cases
     #  Setosa(4.7, 3.2, 1.3, 0.2)]
 
 
-
-
 Do not trigger methods for user
-===============================
+-------------------------------
 * It is better when user can choose a moment when call ``.connect()`` method
 
 Let user to call method:
@@ -309,8 +304,9 @@ However... it is better to use ``self.set_position(position_x, position_y)`` tha
             self.position_x = min(1024, max(0, x))
             self.position_y = min(1024, max(0, y))
 
+
 Use Cases
-=========
+---------
 Note, that this unfortunately does not work this way. ``Path()`` always returns ``PosixPath``:
 
 .. code-block:: python
@@ -331,12 +327,11 @@ Note, that this unfortunately does not work this way. ``Path()`` always returns 
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/oop_constructor_syntax.py
-    :caption: :download:`Solution <assignments/oop_constructor_syntax.py>`
+-----------
+.. literalinclude:: assignments/oop_constructor_a.py
+    :caption: :download:`Solution <assignments/oop_constructor_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_constructor_passwd.py
-    :caption: :download:`Solution <assignments/oop_constructor_passwd.py>`
+.. literalinclude:: assignments/oop_constructor_b.py
+    :caption: :download:`Solution <assignments/oop_constructor_b.py>`
     :end-before: # Solution

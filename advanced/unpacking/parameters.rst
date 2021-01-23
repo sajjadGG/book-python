@@ -1,12 +1,9 @@
-.. _Unpacking Parameters:
-
-********************
 Unpacking Parameters
-********************
+====================
 
 
 Recap
-=====
+-----
 * parameter - Receiving variable used within the function/block
 * required parameters - Parameter which is necessary to call function
 * optional parameters (with default value) - Parameter which is optional and has default value (if not specified at call time)
@@ -19,14 +16,14 @@ Recap
 
 
 Rationale
-=========
+---------
 .. figure:: img/unpacking-assignment,args,params.png
 
     :ref:`Unpacking Assignment`, :ref:`Unpacking Parameters` and :ref:`Unpacking Arguments`.
 
 
 Positional Parameters
-=====================
+---------------------
 * ``*`` is used for positional parameters
 * ``args`` is a convention, but you can use any name
 * ``*args`` unpacks to ``tuple``
@@ -63,7 +60,7 @@ Positional Parameters
 
 
 Keyword Parameters
-==================
+------------------
 * ``**`` is used for keyword parameters
 * ``kwargs`` is a convention, but you can use any name
 * ``**kwargs`` unpacks to ``dict``
@@ -97,8 +94,9 @@ Keyword Parameters
     # Traceback (most recent call last):
     # TypeError: echo() got multiple values for argument 'a'
 
+
 Positional and Keyword Parameters
-=================================
+---------------------------------
 .. code-block:: python
 
     def echo(a, b, c=0, *args, **kwargs):
@@ -119,7 +117,7 @@ Positional and Keyword Parameters
 
 
 Examples
-========
+--------
 Sum:
 
 .. code-block:: python
@@ -194,8 +192,7 @@ Intuitive definition of ``print`` function:
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/unpacking_parameters_define.py
     :caption: :download:`Solution <assignments/unpacking_parameters_define.py>`
     :end-before: # Solution

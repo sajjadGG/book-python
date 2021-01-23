@@ -1,55 +1,294 @@
-.. _OOP Polymorphism:
-
-************
 Polymorphism
-************
+============
 
 
 Switch
-======
-Switch moves business logic to the execution place:
+------
+It all starts with single ``if`` statement
 
 .. code-block:: python
 
-    watney = 'Astronaut'
+    language = 'English'
 
-    if watney == 'Astronaut':
-        print('Hello')
-    elif watney == 'Cosmonaut':
-        print('Привет!')
-    elif watney == 'Taikonaut':
-        print('你好')
+    if language == 'Polish':
+        result = 'Witaj'
+    elif language == 'English':
+        result = 'Hello'
+
+    print(result)
+    # Hello
+
+It quickly grows into multiple ``elif``:
+
+.. code-block:: python
+
+    language = 'English'
+
+    if language == 'Polish':
+        result = 'Witaj'
+    elif language == 'English':
+        result = 'Hello'
+    elif language == 'Russian':
+        result = 'Привет'
     else:
-        print('Default Value')
+        result = 'Unknown language'
 
+    print(result)
+    # Hello
+
+In other languages you may find ``switch`` statement:
+(note that this is not a valid Python code)
+
+.. code-block:: python
+
+    switch(language):
+        case 'Polish':
+            result = 'Witaj'
+        case 'English':
+            result = 'Hello'
+        case 'Russian':
+            result = 'Привет'
+        default:
+            result = 'Unknown language'
+
+It's a bit cleaner, but essentially the same.
+Problem is that, ``switch`` moves business logic to the execution place:
+
+.. code-block:: python
+
+    SWITCH = {'Polish': 'Witaj',
+             'English': 'Hello',
+             'German': 'Guten Tag'}
+
+    language = 'English'
+
+    result = SWITCH.get(language, 'Unknown language')
+    print(result)
     # Hello
 
 .. code-block:: python
 
-    def say_hello(key=None):
+    def switch(key):
         return {
-            'Astronaut': 'Hello',
-            'Cosmonaut': 'Привет!',
-            'Taikonaut': '你好',
-        }.get(key, 'Default Value')
+            'Polish': 'Witaj'
+            'English': 'Hello',
+            'Russian': 'Привет',
+        }.get(key, 'Unknown language')
 
-
-    watney = 'Astronaut'
-    ivanovic = 'Cosmonaut'
-    twardowski = 'Sorcerer'
-
-    say_hello(watney)
+    switch('English')
     # Hello
-
-    say_hello(ivanovic)
-    # Привет!
-
-    say_hello(twardowski):
-    # 'Default Value'
+    switch('Russian')
+    # Привет
 
 
-Polymorphism in a Function
-==========================
+Pattern Matching
+----------------
+* Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
+
+>>> language = 'English'
+>>>
+>>> # doctest: +SKIP
+... match language:
+...     case 'Polish':
+...         result = 'Witaj'
+...     case 'English':
+...         result = 'Hello'
+...     case 'Russian':
+...         result = 'Привет'
+...     case _:
+...         result = 'Unknown language'
+>>>
+>>> # doctest: +SKIP
+... print(result)
+Hello
+
+>>> status = 418
+>>>
+>>> # doctest: +SKIP
+... match status:
+...     case 400:
+...         result = 'Bad request'
+...     case 401 | 403 | 405:
+...         result = 'Not allowed'
+...     case 404:
+...         result = 'Not found'
+...     case 418:
+...         result = "I'm a teapot"
+...     case _:
+...         result = 'Unexpected status'
+
+>>> request = 'GET /index.html HTTP/2.0'
+>>>
+>>> # doctest: +SKIP
+... match request.split():
+...     case ['GET', uri, version]:
+...         server.get(uri)
+...     case ['POST', uri, version]:
+...         server.post(uri)
+...     case ['PUT', uri, version]:
+...         server.put(uri)
+...     case ['DELETE', uri, version]:
+...         server.delete(uri)
+
+>>> class Hero:
+...     def action():
+...         return  ['move', 'left', 20]
+>>>
+>>> # doctest: +SKIP
+... match hero.action():
+...    case ['move', ('up'|'down'|'left'|'right') as direction, value]:
+...        hero.move(direction, value)
+...    case ['make_damage', value]:
+...        hero.make_damage(value)
+...    case ['take_damage', value]:
+...        hero.take_damage(value)
+
+>>> from enum import Enum
+>>>
+>>> class Key(Enum):
+...     ESC = 27
+...     ARROW_LEFT = 37
+...     ARROW_UP = 38
+...     ARROW_RIGHT = 39
+...     ARROW_DOWN = 40
+>>>
+>>> # doctest: +SKIP
+... match keyboard.on_key_press():
+...     case Key.ESC:
+...         game.quit()
+...     case Key.ARROW_LEFT:
+...         game.move_left()
+...     case Key.ARROW_UP:
+...         game.move_up()
+...     case Key.ARROW_RIGHT:
+...         game.move_right()
+...     case Key.ARROW_DOWN:
+...         game.move_down()
+...     case _:
+...         raise ValueError(f'Unrecognized key')
+
+>>> from enum import Enum
+>>>
+>>> class Color(Enum):
+...     RED = 0
+...     BLUE = 1
+...     BLACK = 2
+>>>
+>>> # doctest: +SKIP
+... match color:
+...     case Color.RED:
+...         print('Soviet')
+...     case Color.BLUE:
+...         print('Allies')
+...     case Color.BLACK:
+...         print('Axis')
+
+>>> from enum import Enum
+>>>
+>>> class SpaceMan(Enum):
+...     NASA = 'Astronaut'
+...     ESA = 'Astronaut'
+...     ROSCOSMOS = 'Cosmonaut'
+...     CNSA = 'Taikonaut'
+...     ISRO = 'GaganYatri'
+>>>
+>>> # doctest: +SKIP
+... match agency:
+...     case SpaceMan.NASA:
+...         print('USA')
+...     case SpaceMan.ESA:
+...         print('Europe')
+...     case SpaceMan.ROSCOSMOS:
+...         print('Russia')
+...     case SpaceMan.CNSA:
+...         print('China')
+...     case SpaceMan.ISRO:
+...         print('India')
+
+
+Polymorphism
+------------
+.. code-block:: python
+
+    from abc import ABCMeta, abstractmethod
+    from dataclasses import dataclass
+
+
+    @dataclass
+    class Person(metaclass=ABCMeta):
+        name: str
+
+        @abstractmethod
+        def say_hello(self):
+            pass
+
+
+    class Astronaut(Person):
+        def say_hello(self):
+            return f'Hello {self.name}'
+
+    class Cosmonaut(Person):
+        def say_hello(self):
+            return f'Привет {self.name}'
+
+
+    def hello(crew: list[Person]) -> None:
+        for member in crew:
+            print(member.say_hello())
+
+
+    if __name__ == '__main__':
+        crew = [Astronaut('Mark Watney'),
+                Cosmonaut('Иван Иванович'),
+                Astronaut('Melissa Lewis'),
+                Cosmonaut('Jan Twardowski')]
+
+        hello(crew)
+    # Hello Mark Watney
+    # Привет Иван Иванович
+    # Hello Melissa Lewis
+    # Привет Jan Twardowski
+
+In Python, due to the duck typing and dynamic nature of the language, the Interface or abstract class is not needed to do polymorphism:
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+
+    @dataclass
+    class Astronaut:
+        name: str
+
+        def say_hello(self):
+            return f'Hello {self.name}'
+
+    @dataclass
+    class Cosmonaut:
+        name: str
+
+        def say_hello(self):
+            return f'Привет {self.name}!'
+
+
+    if __name__ == '__main__':
+        crew = [Astronaut('Mark Watney'),
+                Cosmonaut('Иван Иванович'),
+                Astronaut('Melissa Lewis'),
+                Cosmonaut('Jan Twardowski')]
+
+        for member in crew:
+            print(member.say_hello())
+    # Hello Mark Watney
+    # Привет Иван Иванович
+    # Hello Melissa Lewis
+    # Привет Jan Twardowski
+
+
+Use Cases
+---------
+UIElement:
+
 .. code-block:: python
 
     from abc import ABCMeta, abstractmethod
@@ -60,98 +299,26 @@ Polymorphism in a Function
         def draw(self):
             pass
 
-    class TextBox(UIElement):
+    class Input(UIElement):
         def draw(self):
-            print('Drawing text box')
+            print('Drawing input')
 
-
-    class CheckBox(UIElement):
+    class Button(UIElement):
         def draw(self):
-            print('Drawing check box')
+            print('Drawing button')
 
 
-    def draw(control: UIElement):
-        control.draw()
+    def draw(element: UIElement):
+        element.draw()
 
 
     if __name__ == '__main__':
-        draw(TextBox())
-        draw(CheckBox())
-
-.. code-block:: python
-
-    class Sorcerer:
-        pass
-
-    class Astronaut:
-        def say_hello(self):
-            return 'Hello'
-
-    class Cosmonaut:
-        def say_hello(self):
-            return 'Привет!'
+        draw(Textarea())
+        draw(Button())
 
 
-    def say_hello(spaceman):
-        if hasattr(spaceman, 'say_hello')
-            return spaceman.say_hello()
-        else:
-            return 'Default Value'
+Factory:
 
-
-    watney = Astronaut()
-    ivanovic = Cosmonaut()
-    twardowski = Sorcerer()
-
-    say_hello(watney)
-    # Hello
-
-    say_hello(ivanovic)
-    # Привет!
-
-    say_hello(twardowski)
-    # 'Default Value'
-
-
-Polymorphism on a Class
-=======================
-Polymorphism on Classes:
-
-.. code-block:: python
-
-    class Astronaut:
-        def __init__(self, name):
-            self.name = name
-
-        def say_hello(self):
-            return 'Hello'
-
-
-    class Cosmonaut:
-        def __init__(self, name):
-            self.name = name
-
-        def say_hello(self):
-            return 'Привет!'
-
-
-    crew = [
-        Astronaut('Mark Watney'),
-        Cosmonaut('Иван Иванович'),
-        Astronaut('Matt Kowalski'),
-        Cosmonaut('Jan Twardowski'),
-    ]
-
-    for member in crew:
-        print(member.say_hello())
-    # Hello
-    # Привет!
-    # Hello
-    # Привет!
-
-
-Factory
-=======
 .. code-block:: python
 
     DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -210,6 +377,8 @@ Factory
     #  Versicolor(6.4, 3.2, 4.5, 1.5),
     #  Setosa(4.7, 3.2, 1.3, 0.2)]
 
+Dynamic factory:
+
 .. code-block:: python
 
     from dataclasses import dataclass
@@ -261,5 +430,5 @@ Factory
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

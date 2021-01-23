@@ -1,6 +1,5 @@
-*********
 Threading
-*********
+=========
 
 
 .. glossary::
@@ -13,7 +12,7 @@ Threading
 
 
 Daemon
-======
+------
 * https://stackoverflow.com/a/190017/228517
 
 Some threads do background tasks, like sending keepalive packets, or performing periodic garbage collection, or whatever. These are only useful when the main program is running, and it's okay to kill them off once the other, non-daemon, threads have exited.
@@ -22,7 +21,7 @@ Without daemon threads, you'd have to keep track of them, and tell them to exit,
 
 
 Delay execution
-===============
+---------------
 * dlaczego nie ``time.sleep()``
 * rekurencyjny timer
 
@@ -65,7 +64,7 @@ Recurrent timer:
 
 
 Creating Threads
-================
+----------------
 .. code-block:: python
 
     from threading import Thread
@@ -81,7 +80,7 @@ Creating Threads
 
 
 Thread Synchronisation
-======================
+----------------------
 .. code-block:: python
 
     from threading import Thread
@@ -151,7 +150,7 @@ Thread Synchronisation
 
 
 Joining Threads
-===============
+---------------
 Joining Threads:
 
 .. code-block:: python
@@ -214,7 +213,7 @@ Joining Threads:
 
 
 Workers
-=======
+-------
 Worker model:
 
 .. code-block:: python
@@ -255,14 +254,13 @@ Worker model:
         TODO.join()
 
 
-References
-==========
-.. [Hettinger2017] Hettinger, Raymond. Keynote on Concurrency. PyBay 2017. https://youtu.be/9zinZmE3Ogk?t=1243
-
-
 Assignments
-===========
-
-.. literalinclude:: assignments/threading_timer.py
-    :caption: :download:`Solution <assignments/threading_timer.py>`
+-----------
+.. literalinclude:: assignments/concurrency_threading_a.py
+    :caption: :download:`Solution <assignments/concurrency_threading_a.py>`
     :end-before: # Solution
+
+
+References
+----------
+.. [Hettinger2017] Hettinger, Raymond. Keynote on Concurrency. PyBay 2017. https://youtu.be/9zinZmE3Ogk?t=1243

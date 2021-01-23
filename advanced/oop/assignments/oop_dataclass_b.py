@@ -2,7 +2,7 @@
 * Assignment: OOP Dataclass Addressbook
 * Complexity: easy
 * Lines of code: 12 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
     1. Use data from "Given" section (see below)

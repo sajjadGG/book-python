@@ -1,12 +1,9 @@
-.. _OOP Overload:
-
-********
-Overload
-********
+Operators
+=========
 
 
 Rationale
-=========
+---------
 * Operator Overload
 * Readable syntax
 * Simpler operations
@@ -53,25 +50,48 @@ Rationale
 
 
 Numerical Operators
-===================
+-------------------
 .. csv-table:: Numerical Operator Overload
     :header: "Operator", "Method"
 
     "``obj + other``",     "``obj.__add__(other)``"
-    "``obj += other``",    "``obj.__iadd__(other)``"
     "``obj - other``",     "``obj.__sub__(other)``"
-    "``obj -= other``",    "``obj.__isub__(other)``"
     "``obj * other``",     "``obj.__mul__(other)``"
-    "``obj *= other``",    "``obj.__imul__(other)``"
-    "``obj / other``",     "``obj.__div__(other)``"
-    "``obj /= other``",    "``obj.__idiv__(other)``"
+    "``obj / other``",     "``obj.__truediv__(other)``"
+    "``obj // other``",    "``obj.__floordiv__(other)``"
     "``obj ** other``",    "``obj.__pow__(other)``"
     "``obj % other``",     "``obj.__mod__(other)``"
     "``obj @ other``",     "``obj.__matmul__(other)``"
 
+    "``obj += other``",    "``obj.__iadd__(other)``"
+    "``obj -= other``",    "``obj.__isub__(other)``"
+    "``obj *= other``",    "``obj.__imul__(other)``"
+    "``obj /= other``",    "``obj.__idiv__(other)``"
+    "``obj //= other``",   "``obj.__itruediv__(other)``"
+    "``obj **= other``",   "``obj.__ipow__(other)``"
+    "``obj %= other``",    "``obj.__imod__(other)``"
+    "``obj @= other``",    "``obj.__imatmul__(other)``"
+
 ``%`` (``__mod__``) operator behavior for ``int`` and ``str``:
 
 .. code-block:: python
+
+    class int:
+        def __mod__(self, other):
+            """modulo division"""
+
+
+    class str:
+        def __mod__(self, other):
+            """str substitute"""
+
+            if type(other) is str:
+                ...
+            if type(other) is tuple:
+                ...
+            if type(other) is dict:
+                ...
+
 
     3 % 2                         # 1
     4 % 2                         # 0
@@ -93,7 +113,7 @@ Numerical Operators
 
 
 Comparison Operators
-====================
+--------------------
 .. csv-table:: Comparison Operators Overload
     :header: "Operator", "Method"
 
@@ -127,18 +147,46 @@ Comparison Operators
 
 
 Boolean Operators
-=================
+-----------------
 .. csv-table:: Boolean Operators Overload
     :header: "Operator", "Method"
 
     "``-obj``",           "``obj.__neg__()``"
     "``+obj``",           "``obj.__pos__()``"
     "``~obj``",           "``obj.__invert__()``"
+
     "``obj & other``",    "``obj.__and__(other)``"
     "``obj | other``",    "``obj.__or__(other)``"
     "``obj ^ other``",    "``obj.__xor__(other)``"
     "``obj << other``",   "``obj.__lshift__(other)``"
     "``obj >> other``",   "``obj.__rshift__(other)``"
+
+    "``obj &= other``",    "``obj.__iand__(other)``"
+    "``obj |= other``",    "``obj.__ior__(other)``"
+    "``obj ^= other``",    "``obj.__ixor__(other)``"
+    "``obj <<= other``",   "``obj.__ilshift__(other)``"
+    "``obj >>= other``",   "``obj.__irshift__(other)``"
+
+.. code-block:: text
+
+    1 & 1 = 1
+    1 & 0 = 0
+    0 & 1 = 0
+    0 & 0 = 0
+
+.. code-block:: text
+
+    1 | 1 = 1
+    1 | 0 = 1
+    0 | 1 = 1
+    0 | 0 = 0
+
+.. code-block:: text
+
+    1 ^ 1 = 0
+    1 ^ 0 = 1
+    0 ^ 1 = 1
+    0 ^ 0 = 0
 
 .. code-block:: python
 
@@ -160,7 +208,7 @@ Boolean Operators
 
 
 Builtin Functions and Keywords
-==============================
+------------------------------
 .. csv-table:: Builtin Functions Overload
     :header: "Function", "Method"
 
@@ -242,7 +290,7 @@ Builtin Functions and Keywords
 
 
 Accessors Overload
-==================
+------------------
 .. csv-table:: Operator Overload
     :header: "Operator", "Method", "Remarks"
     :widths: 15, 45, 40
@@ -253,6 +301,27 @@ Accessors Overload
     "``obj[x] = 10``", "``obj.__setitem__(x, 10)``"
     "``del obj[x]``",  "``obj.__delitem__(x)``"
     "``x in obj``",    "``obj.__contains__(x)``"
+
+
+>>> data = slice(1, 2, 3)
+>>>
+>>> data.start
+1
+>>> data.stop
+2
+>>> data.step
+3
+
+.. code-block:: python
+
+    class MyClass:
+        def __getitem__(self, item):
+            print(item)
+
+
+    my = MyClass()
+    my[1:2]
+    # slice(1, 2, None)
 
 .. code-block:: python
 
@@ -332,8 +401,79 @@ Intuitive implementation of numpy ``array[row,col]`` accessor:
     # data.__getitem__((slice(), 2))
 
 
-Use Case
-========
+Eq Works at Both Sides
+----------------------
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+
+    class Cosmonaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+
+    a = Astronaut('Mark', 'Watney')
+    c = Cosmonaut('Mark', 'Watney')
+
+    print(a == c)
+    # False
+
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+        def __eq__(self, other):
+            return (self.firstname == other.firstname)
+               and (self.lastname == other.lastname)
+
+
+    class Cosmonaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+
+    a = Astronaut('Mark', 'Watney')
+    c = Cosmonaut('Mark', 'Watney')
+
+    print(a == c)
+    # True
+
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+
+    class Cosmonaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+        def __eq__(self, other):
+            return (self.firstname == other.firstname)
+               and (self.lastname == other.lastname)
+
+
+    a = Astronaut('Mark', 'Watney')
+    c = Cosmonaut('Mark', 'Watney')
+
+    print(a == c)
+    # True
+
+
+Use Cases
+---------
 .. code-block:: python
 
     hero @ Position(x=50, y=120)
@@ -351,7 +491,7 @@ Use Case
 .. code-block:: python
 
     class Cache(dict):
-        def __init__(self, func):s
+        def __init__(self, func):
             self._func = func
 
         def __call__(self, *args):
@@ -386,22 +526,25 @@ Use Case
 
 
 Further Reading
-===============
-* :ref:`Operator Library`
+---------------
 * https://docs.python.org/reference/datamodel.html#emulating-numeric-types
+* https://docs.python.org/library/operator.html
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/oop_overload_matmul.py
-    :caption: :download:`Solution <assignments/oop_overload_matmul.py>`
+-----------
+.. literalinclude:: assignments/oop_operators_a.py
+    :caption: :download:`Solution <assignments/oop_operators_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_overload_iadd.py
-    :caption: :download:`Solution <assignments/oop_overload_iadd.py>`
+.. literalinclude:: assignments/oop_operators_b.py
+    :caption: :download:`Solution <assignments/oop_operators_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_overload_contains.py
-    :caption: :download:`Solution <assignments/oop_overload_contains.py>`
+.. literalinclude:: assignments/oop_operators_c.py
+    :caption: :download:`Solution <assignments/oop_operators_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/oop_operators_d.py
+    :caption: :download:`Solution <assignments/oop_operators_d.py>`
     :end-before: # Solution

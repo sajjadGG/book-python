@@ -1,697 +1,556 @@
-.. _Generators:
-
-**********
 Generators
-**********
+==========
 
 
 Recap
-=====
+-----
 * Comprehensions executes instantly
 * Generators are lazy evaluated
 
-.. code-block:: python
+>>> data = [x for x in range(0,5)]
+>>>
+>>> print(data)
+[0, 1, 2, 3, 4]
+>>> list(data)
+[0, 1, 2, 3, 4]
 
-    list(x for x in range(0,5))        # [0, 1, 2, 3, 4]
-    [x for x in range(0,5)]            # [0, 1, 2, 3, 4]
+>>> data = (x for x in range(0,5))
+>>>
+>>> print(data)  # doctest: +ELLIPSIS
+<generator object <genexpr> at 0x...>
+>>> list(data)
+[0, 1, 2, 3, 4]
 
-    set(x for x in range(0,5))         # {0, 1, 2, 3, 4}
-    {x for x in range(0,5)}            # {0, 1, 2, 3, 4}
+>>> _ = list(x for x in range(0,5))      # list comprehension
+>>> _ = tuple(x for x in range(0,5))     # tuple comprehension
+>>> _ = set(x for x in range(0,5))       # set comprehension
+>>> _ = dict((x,x) for x in range(0,5))  # dict comprehension
 
-    dict((x,x) for x in range(0,5))    # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
-    {x:x for x in range(0,5)}          # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
-
-    tuple(x for x in range(0,5))       # (0, 1, 2, 3, 4)
-    (x for x in range(0,5))            # <generator object <genexpr> at 0x118c1aed0>
-
-    all(x for x in range(0,5))         # False
-    any(x for x in range(0,5))         # True
-    sum(x for x in range(0,5))         # 10
+>>> _ = [x for x in range(0,5)]          # list comprehension
+>>> _ = (x for x in range(0,5))          # generator expression
+>>> _ = {x for x in range(0,5)}          # set comprehension
+>>> _ = {x:x for x in range(0,5)}        # dict comprehension
 
 
 Rationale
-=========
+---------
 * Create generator object and assign pointer (do not execute)
 * Comprehensions will be in the memory until end of a program
 * Generators are cleared once they are executed
 * Comprehensions - Using values more than one
 * Generators - Using values once (for example in the loop iterator)
 
-.. code-block:: python
-
-    data = [x for x in range(0, 5)]
-
-    list(data)
-    # [0, 1, 2, 3, 4]
-
-    list(data)
-    # [0, 1, 2, 3, 4]
-
-    print(data)
-    # [0, 1, 2, 3, 4]
-
-.. code-block:: python
-
-    data = (x for x in range(0, 5))
-
-    list(data)
-    # [0, 1, 2, 3, 4]
-
-    list(data)
-    # []
-
-    print(data)
-    # <generator object <genexpr> at 0x11cb45950>
-
-
-Instant Evaluation
-==================
-* If you need values evaluated instantly, there is no point in using generators
-
-.. code-block:: python
-
-    data = (x for x in range(0,5))
-
-    list(data)
-    # [0, 1, 2, 3, 4]
-
-
-Lazy Evaluation
-===============
-* Code do not execute instantly
-* Sometimes code is not executed at all!
-
-.. code-block:: python
-
-    data = (x for x in range(0,3))
-
-    next(data)
-    # 0
-
-    next(data)
-    # 1
-
-    next(data)
-    # 2
-
-    next(data)
-    # Traceback (most recent call last):
-    # StopIteration
-
-None of those lines will generate any numbers (util executed)!:
-
-.. code-block:: python
-
-    a = (x for x in range(0,5))
-    b = (x for x in range(0,5))
-    c = (x for x in range(0,5))
-
-
-Iterative Evaluation
-====================
 * Generator will calculate next number for every loop iteration
 * Generator forgets previous number
 * Generator doesn't know the next number
 
-.. code-block:: python
+* Code do not execute instantly
+* Sometimes code is not executed at all!
 
-    data = [x for x in range(0,10)]
-    print(data)
-    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-    data = (x for x in range(0,10))
-    print(data)
-    # <generator object <genexpr> at 0x10ef1d040>
-
-Comprehension:
-
-.. code-block:: python
-
-    data = [x for x in range(0,10)]
-
-    for x in data:
-        print(x, end=' ')
-        if x == 3:
-            break
-    # 0 1 2 3
-
-    for x in data:
-        print(x, end=' ')
-        if x == 6:
-            break
-    # 0 1 2 3 4 5 6
-
-    print(list(data))
-    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-    print(list(data))
-    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-Generator:
-
-.. code-block:: python
-
-    data = (x for x in range(0,10))
-
-    for x in data:
-        print(x, end=' ')
-        if x == 3:
-            break
-    # 0 1 2 3
-
-    for x in data:
-        print(x, end=' ')
-        if x == 6:
-            break
-    # 4 5 6
-
-    print(list(data))
-    # [7, 8, 9]
-
-    print(list(data))
-    # []
+* If you need values evaluated instantly, there is no point in using generators
 
 
 Generator Function
-==================
-.. code-block:: python
+------------------
+Function:
+
+>>> def even(data):
+...     result = []
+...     for x in data:
+...         if x % 2 == 0:
+...             result.append(x)
+...     return result
+>>>
+>>>
+>>> DATA = [0, 1, 2, 3, 4, 5]
+>>>
+>>> result = even(DATA)
+>>>
+>>> print(result)
+[0, 2, 4]
+
+Generator:
+
+>>> def even(data):
+...     for x in data:
+...         if x % 2 == 0:
+...             yield x
+>>>
+>>>
+>>> DATA = [0, 1, 2, 3, 4, 5]
+>>>
+>>> result = even(DATA)
+>>>
+>>> print(result)  # doctest: +ELLIPSIS
+<generator object even at 0x...>
+>>> list(result)
+[0, 2, 4]
+
+
+Generator Filter
+----------------
+>>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...         (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>>
+>>>
+>>> def get_values(species):
+...     result = []
+...     for row in DATA:
+...         if row[4] == species:
+...             result.append(row)
+...     return result
+>>>
+>>>
+>>> data = get_values('setosa')
+>>>
+>>> print(data)
+[(5.1, 3.5, 1.4, 0.2, 'setosa'), (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>>
+>>> for row in data:
+...     print(row)
+(5.1, 3.5, 1.4, 0.2, 'setosa')
+(4.7, 3.2, 1.3, 0.2, 'setosa')
+
+>>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...         (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>>
+>>>
+>>> def get_values(species):
+...     for row in DATA:
+...         if row[4] == species:
+...             yield row
+>>>
+>>>
+>>> data = get_values('setosa')
+>>>
+>>> print(data)  # doctest: +ELLIPSIS
+<generator object get_values at 0x...>
+>>>
+>>> for row in data:
+...     print(row)
+(5.1, 3.5, 1.4, 0.2, 'setosa')
+(4.7, 3.2, 1.3, 0.2, 'setosa')
 
-    DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-            (5.8, 2.7, 5.1, 1.9, 'virginica'),
-            (5.1, 3.5, 1.4, 0.2, 'setosa'),
-            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-            (6.3, 2.9, 5.6, 1.8, 'virginica'),
-            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-            (4.7, 3.2, 1.3, 0.2, 'setosa')]
-
-
-    def get_values(species):
-        result = []
-        for row in DATA:
-            if row[4] == species:
-                result.append(row)
-        return result
-
-
-    data = get_values('setosa')
-
-    print(data)
-    # [(5.1, 3.5, 1.4, 0.2, 'setosa'), (4.7, 3.2, 1.3, 0.2, 'setosa')]
-
-    for row in data:
-        print(row)
-    # (5.1, 3.5, 1.4, 0.2, 'setosa')
-    # (4.7, 3.2, 1.3, 0.2, 'setosa')
-
-.. code-block:: python
-
-    DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-            (5.8, 2.7, 5.1, 1.9, 'virginica'),
-            (5.1, 3.5, 1.4, 0.2, 'setosa'),
-            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-            (6.3, 2.9, 5.6, 1.8, 'virginica'),
-            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-            (4.7, 3.2, 1.3, 0.2, 'setosa')]
-
-
-    def get_values(species):
-        for row in DATA:
-            if row[4] == species:
-                yield row
-
-
-    data = get_values('setosa')
-
-    print(data)
-    # <generator object get_values at 0x103632820>
-
-    for row in data:
-        print(row)
-    # (5.1, 3.5, 1.4, 0.2, 'setosa')
-    # (4.7, 3.2, 1.3, 0.2, 'setosa')
-
-
-Built-in generators
-===================
-
-Enumerate
----------
-* ``enumerate(*iterables)``
-
-.. code-block:: python
-
-    months = ['January', 'February', 'March']
-    result = enumerate(months)
-
-    next(result)
-    # (0, 'January')
-
-    next(result)
-    # (1, 'February')
-
-    next(result)
-    # (2, 'March')
-
-    next(result)
-    # Traceback (most recent call last):
-    # StopIteration
-
-.. code-block:: python
-
-    months = ['January', 'February', 'March']
-    result = enumerate(months)
-
-    list(result)
-    # [(0, 'January'), (1, 'February'), (2, 'March')]
-
-.. code-block:: python
-
-    months = ['January', 'February', 'March']
-    result = enumerate(months)
-
-    dict(result)
-    # {0: 'January', 1: 'February', 2: 'March'}
-
-.. code-block:: python
-
-    months = ['January', 'February', 'March']
-    result = enumerate(months, start=1)
-
-    dict(result)
-    # {1: 'January', 2: 'February', 3: 'March'}
-
-.. code-block:: python
-
-    months = ['January', 'February', 'March']
-    result = {f'{i:02}':month for i,month in enumerate(months, start=1)}
-
-    print(result)
-    # {'01': 'January', '02': 'February', '03': 'March'}
-
-.. code-block:: python
-
-    months = ['January', 'February', 'March']
-
-    for i, month in enumerate(months, start=1):
-        print(f'{i} -> {month}')
-
-    # 1 -> January
-    # 2 -> February
-    # 3 -> March
-
-
-Zip
----
-* ``zip(*iterables)``
-
-.. code-block:: python
-
-    firstnames = ['Mark', 'Melissa', 'Alex']
-    lastnames = ['Watney', 'Lewis', 'Vogel']
-    result = zip(firstnames, lastnames)
-
-    next(result)
-    # ('Mark', 'Watney')
-
-    next(result)
-    # ('Melissa', 'Lewis')
-
-    next(result)
-    # ('Alex', 'Vogel')
-
-    next(result)
-    # Traceback (most recent call last):
-    # StopIteration
-
-.. code-block:: python
-
-    firstnames = ['Mark', 'Melissa', 'Alex']
-    lastnames = ['Watney', 'Lewis', 'Vogel']
-    result = zip(firstnames, lastnames)
-
-    list(result)
-    # [('Mark', 'Watney'), ('Melissa', 'Lewis'), ('Alex', 'Vogel')]
-
-.. code-block:: python
-
-    firstnames = ['Mark', 'Melissa', 'Alex']
-    lastnames = ['Watney', 'Lewis', 'Vogel']
-    result = zip(firstnames, lastnames)
-
-    dict(result)
-    # {'Mark': 'Watney', 'Melissa': 'Lewis', 'Alex': 'Vogel'}
-
-.. code-block:: python
-
-    roles = ['botanist', 'commander', 'chemist']
-    names = ['Mark Watney', 'Melissa Lewis', 'Alex Vogel']
-
-    dict(zip(roles, names))
-    # {'botanist': 'Mark Watney',
-    #  'commander': 'Melissa Lewis',
-    #  'chemist': 'Alex Vogel'}
-
-``zip()`` adjusts to the shortest:
-
-.. code-block:: python
-
-    firstnames = ['Mark', 'Melissa']
-    lastnames = ['Watney', 'Lewis', 'Vogel']
-    result = zip(firstnames, lastnames)
-
-    list(result)
-    # [('Mark', 'Watney'), ('Melissa', 'Lewis')]
-
-.. code-block:: python
-
-    roles = ['botanist', 'commander', 'chemist']
-    firstnames = ['Mark', 'Melissa', 'Alex']
-    lastnames = ['Watney', 'Lewis', 'Vogel']
-    result = zip(roles, firstnames, lastnames)
-
-    next(result)
-    # ('botanist', 'Mark', 'Watney')
-
-    next(result)
-    # ('commander', 'Melissa', 'Lewis')
-
-    next(result)
-    # ('chemist', 'Alex', 'Vogel')
-
-    next(result)
-    # Traceback (most recent call last):
-    # StopIteration
-
-.. code-block:: python
-
-    roles = ['botanist', 'commander', 'chemist']
-    names = ['Mark Watney', 'Melissa Lewis', 'Alex Vogel']
-
-    for role, name in zip(roles, names):
-        print(f'{role} -> {name}')
-
-    # botanist -> Mark Watney
-    # commander -> Melissa Lewis
-    # chemist -> Alex Vogel
-
-
-Map
----
-* ``map(callable, *iterables)``
-
-.. code-block:: python
-
-    data = [1, 2, 3]
-    result = map(float, data)
-
-    next(result)
-    # 1.0
-
-    next(result)
-    # 2.0
-
-    next(result)
-    # 3.0
-
-    next(result)
-    # Traceback (most recent call last):
-    # StopIteration
-
-.. code-block:: python
-
-    data = [1, 2, 3]
-    result = map(float, data)
-
-    list(result)
-    # [1.0, 2.0, 3.0]
-
-.. code-block:: python
-
-    data = [1, 2, 3]
-    result = map(float, data)
-
-    tuple(map(float, data))
-    # (1.0, 2.0, 3.0)
-
-.. code-block:: python
-
-    data = [1, 2, 3]
-    result = map(float, data)
-
-    set(map(float, data))
-    # {1.0, 2.0, 3.0}
-
-.. code-block:: python
-
-    DATA = [1, 2, 3]
-
-    result = (float(x) for x in DATA)
-    list(result)
-    # [1.0, 2.0, 3.0]
-
-    result = map(round, DATA)
-    list(result)
-    # [1.0, 2.0, 3.0]
-
-.. code-block:: python
-
-    def square(x):
-        return x ** 2
-
-
-    data = [1, 2, 3]
-
-    result = map(square, data)
-    list(result)
-    # [1, 4, 9]
-
-
-Filter
-------
-* ``filter(callable, *iterables)``
-
-.. code-block:: python
-
-    def even(x):
-        return x % 2 == 0
-
-
-    data = [1, 2, 3, 4, 5, 6]
-    result = filter(even, data)
-
-    next(result)
-    # 2
-
-    next(result)
-    # 4
-
-    next(result)
-    # 6
-
-    next(result)
-    # Traceback (most recent call last):
-    # StopIteration
-
-.. code-block:: python
-
-    def even(x):
-        return x % 2 == 0
-
-
-    data = [1, 2, 3, 4, 5, 6]
-    result = filter(even, data)
-
-    list(result)
-    # [2, 4, 6]
-
-.. code-block:: python
-
-    PEOPLE = [{'age': 21, 'name': 'Jan Twardowski'},
-              {'age': 25, 'name': 'Mark Watney'},
-              {'age': 18, 'name': 'Melissa Lewis'}]
-
-
-    def adult(person):
-        return person['age'] >= 21:
-
-
-    result = filter(adult, PEOPLE)
-
-    list(result)
-    # [{'age': 21, 'name': 'Jan Twardowski'},
-    #  {'age': 25, 'name': 'Mark Watney'}]
-
-Functools
----------
-* https://docs.python.org/3/library/functools.html
-
-.. code-block:: python
-
-    from functools import *
-
-    reduce(callable, iterable[, initializer])
-
-.. code-block:: python
-
-    1 + 2
-    # 3
-
-    1 + 2 + 3 + 4
-    # 10
-
-.. code-block:: python
-
-    from functools import reduce
-
-
-    def add(a,b):
-        return a+b
-
-
-    reduce(add, [1,2])
-    # 3
-    reduce(add, [1,2,3,4])
-    # 10
 
 Itertools
 ---------
-* More information https://docs.python.org/3/library/itertools.html
+* More information https://docs.python.org/library/itertools.html
 * More information :ref:`Itertools`
-
-.. code-block:: python
-
-    from itertools import *
-
-    count(start=0, step=1)
-    cycle(iterable)
-    repeat(object[, times])
-    accumulate(iterable[, func, *, initial=None])
-    chain(*iterables)
-    compress(data, selectors)
-    islice(iterable, start, stop[, step])
-    starmap(function, iterable)
-    product(*iterables, repeat=1)
-    permutations(iterable, r=None)
-    combinations(iterable, r)
-    combinations_with_replacement(iterable, r)
-    groupby(iterable, key=None)
+* ``from itertools import *``
+* ``count(start=0, step=1)``
+* ``cycle(iterable)``
+* ``repeat(object[, times])``
+* ``accumulate(iterable[, func, *, initial=None])``
+* ``chain(*iterables)``
+* ``compress(data, selectors)``
+* ``islice(iterable, start, stop[, step])``
+* ``starmap(function, iterable)``
+* ``product(*iterables, repeat=1)``
+* ``permutations(iterable, r=None)``
+* ``combinations(iterable, r)``
+* ``combinations_with_replacement(iterable, r)``
+* ``groupby(iterable, key=None)``
 
 
 Memory Footprint
-================
+----------------
 * ``sys.getsizeof(obj)`` returns the size of an ``obj`` in bytes
 * ``sys.getsizeof(obj)`` calls ``obj.__sizeof__()`` method
 * ``sys.getsizeof(obj)`` adds an additional garbage collector overhead if the ``obj`` is managed by the garbage collector
 
-.. code-block:: python
+>>> from sys import getsizeof
+>>>
+>>>
+>>> gen1 = (x for x in range(0,1))
+>>> gen10 = (x for x in range(0,10))
+>>> gen100 = (x for x in range(0,100))
+>>> gen1000 = (x for x in range(0,1000))
+>>>
+>>> getsizeof(gen1)
+112
+>>>
+>>> getsizeof(gen10)
+112
+>>>
+>>> getsizeof(gen100)
+112
+>>>
+>>> getsizeof(gen1000)
+112
 
-    from sys import getsizeof
+>>> from sys import getsizeof
+>>>
+>>>
+>>> com1 = [x for x in range(0,1)]
+>>> com10 = [x for x in range(0,10)]
+>>> com100 = [x for x in range(0,100)]
+>>> com1000 = [x for x in range(0,1000)]
+>>>
+>>>
+>>> getsizeof(com1)
+88
+>>>
+>>> getsizeof(com10)
+184
+>>>
+>>> getsizeof(com100)
+920
+>>>
+>>> getsizeof(com1000)
+8856
 
+.. figure:: ../_img/idioms-generators-performance.png
 
-    gen1 = (x for x in range(0,10))
-    gen10 = (x for x in range(0,10))
-    gen100 = (x for x in range(0,100))
-    gen1000 = (x for x in range(0,1000))
-
-    com1 = [x for x in range(0,1)]
-    com10 = [x for x in range(0,10)]
-    com100 = [x for x in range(0,100)]
-    com1000 = [x for x in range(0,1000)]
-
-    getsizeof(gen1)
-    # 112
-
-    getsizeof(gen10)
-    # 112
-
-    getsizeof(gen100)
-    # 112
-
-    getsizeof(gen1000)
-    # 112
-
-    getsizeof(com1)
-    # 88
-
-    getsizeof(com10)
-    # 184
-
-    getsizeof(com100)
-    # 920
-
-    getsizeof(com1000)
-    # 8856
+    Source: https://www.askpython.com/python/python-yield-examples
 
 
 Inspection
-==========
-.. code-block:: python
+----------
+>>> from inspect import isgenerator
+>>>
+>>>
+>>> a = [x for x in range(0,5)]
+>>> b = (x for x in range(0,5))
+>>>
+>>> isgenerator(a)
+False
+>>> isgenerator(b)
+True
 
-    from inspect import isgenerator
-
-    a = [x for x in range(0,5)]
-    b = (x for x in range(0,5))
-
-    isgenerator(a)
-    # False
-
-    isgenerator(b)
-    # True
-
-.. code-block:: python
-
-    from inspect import isgenerator
-
-    data = range(0, 10)
-
-    isgenerator(data)
-    # False
+>>> from inspect import isgenerator
+>>>
+>>>
+>>> data = range(0, 10)
+>>>
+>>> isgenerator(data)
+False
 
 
 Introspection
-=============
-.. code-block:: python
+-------------
+>>> data = (x for x in range(0,10))
+>>>
+>>>
+>>> next(data)
+0
+>>>
+>>> data.gi_code  # doctest: +ELLIPSIS
+<code object <genexpr> at 0x..., file "<...>", line 1>
+>>>
+>>> data.gi_running
+False
+>>>
+>>> data.gi_frame  # doctest: +ELLIPSIS
+<frame at 0x..., file '<...>', line 1, code <genexpr>>
+>>>
+>>> data.gi_frame.f_locals  # doctest: +ELLIPSIS
+{'.0': <range_iterator object at 0x...>, 'x': 0}
+>>>
+>>> data.gi_frame.f_code  # doctest: +ELLIPSIS
+<code object <genexpr> at 0x...0, file "<...>", line 1>
+>>>
+>>> data.gi_frame.f_lineno
+1
+>>>
+>>> data.gi_frame.f_lasti
+8
+>>>
+>>> data.gi_yieldfrom
 
-    data = (x for x in range(0,10))
 
-    next(data)
-    # 0
+Multiple Yields
+---------------
+>>> def run():
+...     for x in range(0, 3):
+...         yield x
+...     for y in range(10, 13):
+...         yield y
+>>>
+>>>
+>>> result = run()
+>>>
+>>> type(result)
+<class 'generator'>
+>>>
+>>> next(result)
+0
+>>> next(result)
+1
+>>> next(result)
+2
+>>> next(result)
+10
+>>> next(result)
+11
+>>> next(result)
+12
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
 
-    data.gi_code
-    # <code object <genexpr> at 0x11fc4dc90, file "<input>", line 1>
 
-    data.gi_running
-    # False
+Yield From
+----------
+* Since Python 3.3: :pep:`380` -- Syntax for Delegating to a Subgenerator
+* Helps with refactoring generators
+* Useful for large generators which can be split into smaller ones
+* Delegation call
+* ``yield from`` terminates on ``GeneratorExit`` from other function
+* The value of the ``yield from`` expression is the first argument to the ``StopIteration`` exception raised by the iterator when it terminates
+* Return expr in a generator causes ``StopIteration(expr)`` to be raised upon exit from the generator
 
-    data.gi_yieldfrom
+>>> def generator1():
+...     for x in range(0, 3):
+...         yield x
+>>>
+>>> def generator2():
+...     for x in range(10, 13):
+...         yield x
+>>>
+>>> def run():
+...     yield from generator1()
+...     yield from generator2()
+>>>
+>>>
+>>> result = run()
+>>>
+>>> type(result)
+<class 'generator'>
+>>>
+>>> next(result)
+0
+>>> next(result)
+1
+>>> next(result)
+2
+>>> next(result)
+10
+>>> next(result)
+11
+>>> next(result)
+12
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
 
-    data.gi_frame
-    # <frame at 0x7f93a1723200, file '<input>', line 1, code <genexpr>>
+The code is equivalent to ``itertools.chain()``:
 
-    data.gi_frame.f_locals
-    # {'.0': <range_iterator object at 0x11fc4c840>, 'x': 0}
+>>> from itertools import chain
+>>>
+>>>
+>>> def generator1():
+...     for x in range(0, 3):
+...         yield x
+>>>
+>>> def generator2():
+...     for x in range(10, 13):
+...         yield x
+>>>
+>>> def run():
+...     for x in chain(generator1(), generator2()):
+...         yield x
+>>>
+>>>
+>>> result = run()
+>>>
+>>> type(result)
+<class 'generator'>
+>>>
+>>> list(result)
+[0, 1, 2, 10, 11, 12]
 
-    data.gi_frame.f_code
-    # <code object <genexpr> at 0x11fc4dc90, file "<input>", line 1>
+``yield from`` turns ordinary function, into a delegation call:
 
-    data.gi_frame.f_lineno
-    # 1
+>>> def worker():
+...     return [1, 2, 3]
+>>>
+>>> def run():
+...     yield from worker()
+>>>
+>>>
+>>> result = run()
+>>>
+>>> next(result)
+1
+>>> next(result)
+2
+>>> next(result)
+3
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
 
-    data.gi_frame.f_lasti
-    # 8
+>>> def worker():
+...     return [x for x in range(0,3)]
+>>>
+>>> def run():
+...     yield from worker()
+>>>
+>>>
+>>> result = run()
+>>>
+>>> next(result)
+0
+>>> next(result)
+1
+>>> next(result)
+2
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
+
+`yield from` with sequences:
+
+>>> def run():
+...     yield from [0, 1, 2]
+>>>
+>>>
+>>> result = run()
+>>>
+>>> type(result)
+<class 'generator'>
+>>>
+>>> next(result)
+0
+>>> next(result)
+1
+>>> next(result)
+2
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
+
+`yield from` with comprehensions:
+
+>>> def run():
+...     yield from [x for x in range(0,3)]
+>>>
+>>>
+>>> result = run()
+>>>
+>>> type(result)
+<class 'generator'>
+>>>
+>>> next(result)
+0
+>>> next(result)
+1
+>>> next(result)
+2
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
+
+`yield from` with generator expressions:
+
+>>> def run():
+...     yield from (x for x in range(0,3))
+>>>
+>>>
+>>> result = run()
+>>>
+>>> type(result)
+<class 'generator'>
+>>>
+>>> next(result)
+0
+>>> next(result)
+1
+>>> next(result)
+2
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
+
+
+Send
+----
+* ``.send()`` method allows to pass value to the generator
+* ``data = yield`` will receive this "sent" value
+* After running you have to send ``None`` value to begin processing
+* Sending anything other will raise ``TypeError``
+
+>>> def run():
+...     while True:
+...         data = yield
+...         print(f'Processing {data}')
+>>>
+>>>
+>>> worker = run()
+>>>
+>>> type(worker)
+<class 'generator'>
+>>>
+>>> worker.send('hello')
+Traceback (most recent call last):
+TypeError: can't send non-None value to a just-started generator
+
+>>> def run():
+...     while True:
+...         data = yield
+...         print(f'Processing {data}')
+>>>
+>>>
+>>> worker = run()
+>>> worker.send(None)
+>>>
+>>> for x in range(0,3):
+...     worker.send(x)
+Processing 0
+Processing 1
+Processing 2
+
+>>> def worker():
+...     while True:
+...         data = yield
+...         print(f'Processing {data}')
+>>>
+>>> def run(gen):
+...     gen.send(None)
+...     while True:
+...         x = yield
+...         gen.send(x)
+>>>
+>>>
+>>> result = run(worker())
+>>> result.send(None)
+>>>
+>>> for x in range(0,3):
+...     result.send(x)
+Processing 0
+Processing 1
+Processing 2
+
+
+Conclusion
+----------
+* Python yield keyword creates a generator function.
+* It’s useful when the function returns a large amount of data by splitting it into multiple chunks.
+* We can also send values to the generator using its ``send()`` function.
+* The ``yield from`` statement is used to create a sub-iterator from the generator function.
+* Source: https://www.askpython.com/python/python-yield-examples
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/function_generators_chain.py
-    :caption: :download:`Solution <assignments/function_generators_chain.py>`
+-----------
+.. literalinclude:: assignments/function_generator_a.py
+    :caption: :download:`Solution <assignments/function_generator_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_generator_iris.py
-    :caption: :download:`Solution <assignments/function_generator_iris.py>`
+.. literalinclude:: assignments/function_generator_b.py
+    :caption: :download:`Solution <assignments/function_generator_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_generator_passwd.py
-    :caption: :download:`Solution <assignments/function_generator_passwd.py>`
+.. literalinclude:: assignments/function_generator_c.py
+    :caption: :download:`Solution <assignments/function_generator_c.py>`
     :end-before: # Solution

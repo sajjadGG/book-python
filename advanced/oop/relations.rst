@@ -1,12 +1,9 @@
-.. _OOP Relations:
-
-*********
-Relations
-*********
-
-
 Relations
 =========
+
+
+Relations
+---------
 .. code-block:: python
 
     class Astronaut:
@@ -39,69 +36,41 @@ Relations
     ]
 
 
-
 Serialization
-=============
+-------------
 * ``pickle`` - has relations
 * ``json`` - has relations
 * ``csv`` - non-relational format
 
 .. figure:: img/oop-relations-serialize-dbdump.png
-
-    Relational files or database dump
-
 .. figure:: img/oop-relations-serialize-ffill1.png
-
-    Ffill - Forward fill
-
 .. figure:: img/oop-relations-serialize-ffill2.png
-
-    Fill in specified columns
-
 .. figure:: img/oop-relations-serialize-uniqid.png
-
-    Data duplication with unique ID
-
 .. figure:: img/oop-relations-serialize-colattr.png
-
-    Each relations attribute adds one column
-
 .. figure:: img/oop-relations-serialize-colobj.png
-
-    Each relations instance adds one column
-
 .. figure:: img/oop-relations-serialize-colcls.png
-
-    Each relations class adds one column
-
 .. figure:: img/oop-relations-serialize-split.png
-
-    Relations attributes split into columns
-
 .. figure:: img/oop-relations-serialize-hybrid.png
-
-    Hybrid compact and separate columns
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/oop_relations_syntax.py
-    :caption: :download:`Solution <assignments/oop_relations_syntax.py>`
+-----------
+.. literalinclude:: assignments/oop_relations_a.py
+    :caption: :download:`Solution <assignments/oop_relations_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_relations_model.py
-    :caption: :download:`Solution <assignments/oop_relations_model.py>`
+.. literalinclude:: assignments/oop_relations_b.py
+    :caption: :download:`Solution <assignments/oop_relations_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_relations_movable.py
-    :caption: :download:`Solution <assignments/oop_relations_movable.py>`
+.. literalinclude:: assignments/oop_relations_c.py
+    :caption: :download:`Solution <assignments/oop_relations_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_relations_flatten.py
-    :caption: :download:`Solution <assignments/oop_relations_flatten.py>`
+.. literalinclude:: assignments/oop_relations_d.py
+    :caption: :download:`Solution <assignments/oop_relations_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_relations_nested.py
-    :caption: :download:`Solution <assignments/oop_relations_nested.py>`
+.. literalinclude:: assignments/oop_relations_e.py
+    :caption: :download:`Solution <assignments/oop_relations_e.py>`
     :end-before: # Solution

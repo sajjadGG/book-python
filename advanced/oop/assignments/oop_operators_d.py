@@ -16,9 +16,6 @@ Polish:
     3. Nie używaj `dataclasses`
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
-Hint:
-    * Define `__eq__()` in `Mission`
-
 Tests:
     >>> astro = Astronaut('Jan Twardowski', missions=[
     ...     Mission(1969, 'Apollo 11'),
@@ -26,11 +23,19 @@ Tests:
     ...     Mission(2035, 'Ares 3'),
     ... ])
 
-    >>> if Mission(2024, 'Artemis 3') in astro:
-    ...    print(True)
-    ... else:
-    ...   print(False)
+    >>> Mission(2035, 'Ares 3') == Mission(2035, 'Ares 3')
     True
+    >>> Mission(2035, 'Ares 3') == Mission(1973, 'Apollo 18')
+    False
+    >>> Mission(2035, 'Ares 3') == Mission(2035, 'Apollo 18')
+    False
+    >>> Mission(2035, 'Ares 3') == Mission(1973, 'Ares 3')
+    False
+
+    >>> Mission(2024, 'Artemis 3') in astro
+    True
+    >>> Mission(1973, 'Apollo 18') in astro
+    False
 """
 
 

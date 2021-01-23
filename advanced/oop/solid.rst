@@ -1,40 +1,45 @@
-.. _OOP Solid:
-
-**********
 S.O.L.I.D.
-**********
+==========
 
 
 Recap
-=====
-* Rigidity - mixing higher level with low level implementation
-* Fragility - if you change something, some other thing will break
-* Reusability
-* Coupling - interdependencies a.k.a "spaghetti code"
-* K.I.S.S.
-* D.R.Y.
-* OOP:
+-----
+OOP Principles:
 
     * Encapsulation
-    * Polymorphism
+    * Abstraction
     * Inheritance
+    * Polymorphism
+
+Problems:
+
+    * Rigidity - mixing higher level with low level implementation
+    * Fragility - if you change something, some other thing will break
+    * Coupling - interdependencies a.k.a "spaghetti code"
+    * No Reusability - cannot reuse code, and need to implement from scratch
+
+Patterns:
+
+    * K.I.S.S. - Keep It Simple Stupid
+    * Y.A.G.N.I. - You Ain't Gonna Need It
+    * D.R.Y. - Do not Repeat Yourself
 
 
 Rationale
-=========
+---------
 * SRP: The Single Responsibility Principle
 * OCP: The Open / Closed Principle
 * LSP: The Liskov Substitution Principle
 * ISP: The Interface Segregation Principle
 * DIP: The Dependency Inversion Principle
 
-.. figure:: img/oop-solid.png
+.. figure:: ../_img/oop-solid.png
 
     S.O.L.I.D. Principles
 
 
 Single Responsibility Principle
-===============================
+-------------------------------
 .. epigraph::
 
     A class should have one, and only one, reason to change.
@@ -43,7 +48,7 @@ Single Responsibility Principle
 
 Every module or class should have responsibility over a single part of the functionality provided by the software, and that responsibility should be entirely encapsulated by the class. All its services should be narrowly aligned with that responsibility.
 
-.. figure:: img/oop-solid-srp.png
+.. figure:: ../_img/oop-solid-srp.png
 
     S.O.L.I.D. - Single Responsibility Principle
 
@@ -130,16 +135,71 @@ Good:
 
 
 Open/Closed Principle
-=====================
+---------------------
 .. epigraph::
 
     Modules [classes] should be open for extension, but closed for modification.
 
     -- Bertrand Mayer
 
-.. figure:: img/oop-solid-ocp.png
+.. figure:: ../_img/oop-solid-ocp.png
 
     S.O.L.I.D. - Open/Closed Principle
+
+.. code-block:: python
+
+    class PDF:
+        pass
+
+
+    class Docx:
+        pass
+
+
+    class Document:
+        def __new__(cls, *args, **kwargs):
+            filename, extension = args[0].split('.')
+            if extension == 'pdf':
+                return PDF()
+            elif extension == 'docx':
+                return Docx()
+
+
+    file1 = Document('myfile.pdf')
+    file2 = Document('myfile.docx')
+
+    print(file1)
+    # <__main__.PDF object at 0x...>
+
+    print(file2)
+    # <__main__.Docx object at 0x...>
+
+.. code-block:: python
+
+    class Setosa:
+        pass
+
+
+    class Versicolor:
+        pass
+
+
+    class Virginica:
+        pass
+
+
+    def factory(species):
+        try:
+            classname = species.capitalize()
+            return globals()[classname]
+        except KeyError:
+            raise NotImplementedError
+
+
+    iris = factory('setosa')
+    print(iris)
+    # <class '__main__.Setosa'>
+
 
 .. code-block:: python
 
@@ -201,7 +261,7 @@ Open/Closed Principle
 
 
 Liskov Substitution Principle
-=============================
+-----------------------------
 .. epigraph::
 
     Derived classes must be usable through the base class interface, without the need for the user to know the difference.
@@ -210,7 +270,7 @@ Liskov Substitution Principle
 
 * Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
 
-.. figure:: img/oop-solid-lsp.png
+.. figure:: ../_img/oop-solid-lsp.png
 
     S.O.L.I.D. - Liskov Substitution Principle
 
@@ -230,12 +290,12 @@ Liskov Substitution Principle
 
 
 Interface Segregation Principle
-===============================
+-------------------------------
 * many specific interfaces are better than one general-purpose interface
 
 The interface-segregation principle (ISP) states that no client should be forced to depend on methods it does not use. ISP splits interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them. Such shrunken interfaces are also called role interfaces. ISP is intended to keep a system decoupled and thus easier to refactor, change, and redeploy. ISP is one of the five SOLID principles of object-oriented design, similar to the High Cohesion Principle of GRASP.
 
-.. figure:: img/oop-solid-isp.png
+.. figure:: ../_img/oop-solid-isp.png
 
     S.O.L.I.D. Principles - Interface Segregation Principle
 
@@ -304,7 +364,7 @@ Good:
 
 
 Dependency Inversion Principle
-==============================
+------------------------------
 .. epigraph::
 
     Clients should not be forced to depend on methods that they do not use.
@@ -316,11 +376,11 @@ Dependency Inversion Principle
 * one should depend upon abstractions, not concretions
 * decoupling software modules
 
-.. figure:: img/oop-solid-dip.png
+.. figure:: ../_img/oop-solid-dip.png
 
     S.O.L.I.D. - Dependency Inversion Principle
 
-.. figure:: img/oop-solid-deps.png
+.. figure:: ../_img/oop-solid-deps.png
 
     Class Dependencies should depend upon abstractions, not concretions
 
@@ -397,3 +457,7 @@ Good:
     db.is_valid('name')
     db.get('name')
 
+
+Assignments
+-----------
+.. todo:: Create assignments

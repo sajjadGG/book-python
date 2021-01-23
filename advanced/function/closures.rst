@@ -1,10 +1,9 @@
-********
 Closures
-********
+========
 
 
 Rationale
-=========
+---------
 * Function local variables are stored on the stack (function stack frame)
 * Inner functions have access to outer functions variables (access to outer function stack)
 * In order to that work, you can call inner function only when outer function is running
@@ -20,7 +19,7 @@ Rationale
 
 
 Nested Function
-===============
+---------------
 * Function inside the function
 * Nested functions can access the variables of the enclosing scope
 
@@ -48,7 +47,7 @@ Nested Function
 
 
 What is closure?
-================
+----------------
 * technique by which the data is attached to some code even after end of those other original functions is called as closures
 * Closures can avoid use of global variables and provides some form of data hiding
 * When the interpreter detects the dependency of inner nested function on the outer function, it stores or makes sure that the variables in which inner function depends on are available even if the outer function goes away
@@ -108,12 +107,11 @@ What is closure?
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/function_closure_define.py
-    :caption: :download:`Solution <assignments/function_closure_define.py>`
+-----------
+.. literalinclude:: assignments/function_closure_a.py
+    :caption: :download:`Solution <assignments/function_closure_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_closure_call.py
-    :caption: :download:`Solution <assignments/function_closure_call.py>`
+.. literalinclude:: assignments/function_closure_b.py
+    :caption: :download:`Solution <assignments/function_closure_b.py>`
     :end-before: # Solution

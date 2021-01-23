@@ -1,10 +1,9 @@
-*********
 C Modules
-*********
+=========
 
 
 Code
-====
+----
 Przykład kodu w C wykorzystującego *C modules*:
 
 .. code-block:: C
@@ -48,11 +47,11 @@ Przykład kodu w C wykorzystującego *C modules*:
         return PyModule_Create(&hello);
     }
 
-Compile
-=======
 
-``setup.py``
-------------
+Compile
+-------
+``setup.py``:
+
 .. code-block:: python
 
     import sys
@@ -67,16 +66,16 @@ Compile
         description = 'Ehlo World!',
         ext_modules = [module])
 
-Execute
--------
+Execute:
+
 .. code-block:: console
 
     $ python setup.py build
     $ cd build/lib*
     $ python
 
-Run
-===
+Run:
+
 .. code-block:: python
 
     import hello
@@ -86,8 +85,7 @@ Run
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/cmodules_datetime.py
     :caption: :download:`Solution <assignments/cmodules_datetime.py>`
     :end-before: # Solution

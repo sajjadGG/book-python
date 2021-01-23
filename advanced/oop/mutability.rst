@@ -1,17 +1,14 @@
-.. _OOP Mutability:
-
-**************
 OOP Mutability
-**************
+==============
 
 
 Rationale
-=========
+---------
 * Function and method arguments should not be mutable
 
 
 Immutable Types
-===============
+---------------
 * ``int``
 * ``float``
 * ``complex``
@@ -24,7 +21,7 @@ Immutable Types
 
 
 Mutable Types
-=============
+-------------
 * ``list``
 * ``set``
 * ``dict``
@@ -33,7 +30,7 @@ Mutable Types
 .. _OOP Mutability Argument:
 
 Argument Mutability
-===================
+-------------------
 Bad:
 
 .. code-block:: python
@@ -74,5 +71,5 @@ Good:
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

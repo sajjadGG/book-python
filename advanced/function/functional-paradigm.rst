@@ -1,10 +1,9 @@
-*******************
 Functional Paradigm
-*******************
+===================
 
 
 Rationale
-=========
+---------
 * Programming paradigm
 * Programs are constructed by applying and composing functions
 * Functions are treated as first-class citizens
@@ -31,7 +30,7 @@ Rationale
 
 
 Higher-Order Function
-=====================
+---------------------
 * Function can take other function as arguments
 * Function can return function
 
@@ -62,7 +61,7 @@ Higher-Order Function
 
 
 Pure Functions
-==============
+--------------
 * Pure functions have no side effects (i.e. memory, state, I/O)
 * If the result of a pure expression is not used, it can be removed without affecting other expressions
 * Calling the pure function again with the same arguments returns the same result (this can enable caching optimizations such as memoization)
@@ -192,7 +191,7 @@ Use Case [impure]:
 
 
 Recursion
-=========
+---------
 .. epigraph::
 
     Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekurencję.
@@ -237,7 +236,7 @@ Cache with global scope:
 
 
 Data Structures
-===============
+---------------
 * Purely functional data structures have persistence (keeps previous versions of the data structure unmodified)
 * The array with constant access and update times is a basic component of most imperative languages, and many imperative data-structures, such as the hash table and binary heap, are based on arrays
 * Arrays can be replaced by maps or random access lists, which admit purely functional implementation, but have logarithmic access and update times
@@ -245,7 +244,7 @@ Data Structures
 
 
 Referential Transparency
-========================
+------------------------
 * Functional programs do not have assignment statements
 * Value of a variable in a functional program never changes once defined
 * This eliminates any chances of side effects
@@ -253,7 +252,7 @@ Referential Transparency
 
 
 First-class Function
-====================
+--------------------
 * Function can be returned
 * Function can be user as a parameter
 * Function can be assigned to variable
@@ -352,17 +351,14 @@ Function can be stored in data structures such as hash tables, lists, ...:
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/function_recurrence_fibonacci.py
-    :caption: :download:`Solution <assignments/function_recurrence_fibonacci.py>`
+-----------
+.. literalinclude:: assignments/function_recurrence_a.py
+    :caption: :download:`Solution <assignments/function_recurrence_a.py>`
     :end-before: # Solution
 
 
-
 References
-==========
-
+----------
 .. [WikipediaFunc] Functional programming. URL: https://en.wikipedia.org/wiki/Functional_programming Retrieved: 2020-10-09
 
 .. [Hudak1989] Hudak, Paul. "Conception, evolution, and application of functional programming languages". ACM Computing Surveys. 21 (3): 359–411. doi:10.1145/72551.72554. S2CID 207637854. 1989.

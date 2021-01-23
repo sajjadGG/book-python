@@ -1,12 +1,9 @@
-.. _Unpacking Arguments:
-
-*******************
 Unpacking Arguments
-*******************
+===================
 
 
 Recap
-=====
+-----
 * argument - Value/variable/reference being passed to the function
 * positional argument - Value passed to function - order is important
 * keyword arguments - Value passed to function resolved by name - order is not important
@@ -26,14 +23,14 @@ Recap
 
 
 Rationale
-=========
-.. figure:: img/unpacking-assignment,args,params.png
+---------
+* Unpacking and Arbitrary Number of Parameters and Arguments
 
-    Unpacking and Arbitrary Number of Parameters and Arguments
+.. figure:: img/unpacking-assignment,args,params.png
 
 
 Positional Arguments
-====================
+--------------------
 * ``*`` is used for positional arguments
 * there is no convention, but you can use any name
 * ``*`` unpacks from ``tuple``, ``list`` or ``set``
@@ -58,7 +55,7 @@ Positional Arguments
 
 
 Keyword Arguments
-=================
+-----------------
 * ``**`` is used for keyword arguments
 * there is no convention, but you can use any name
 * ``**`` unpacks from ``dict``
@@ -80,7 +77,7 @@ Keyword arguments passed directly:
 
 
 Positional and Keyword Arguments
-================================
+--------------------------------
 .. code-block:: python
 
     def echo(a, b, c=0):
@@ -102,7 +99,7 @@ Positional and Keyword Arguments
 
 
 Objects From Sequence
-=====================
+---------------------
 .. code-block:: python
 
     DATA = (6.0, 3.4, 4.5, 1.6, 'versicolor')
@@ -182,7 +179,7 @@ Objects From Sequence
 
 
 Objects From Mappings
-=====================
+---------------------
 .. code-block:: python
 
     DATA = {"sepalLength":5.8,"sepalWidth":2.7,"petalLength":5.1,"petalWidth":1.9,"species":"virginica"}
@@ -227,8 +224,8 @@ Objects From Mappings
     #  virginica, versicolor, setosa]
 
 
-Examples
-========
+Use Cases
+---------
 Defining complex number by passing keyword arguments directly:
 
 .. code-block:: python
@@ -403,8 +400,7 @@ Decorators. Decorators are functions, which get pointer to the decorated functio
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/unpacking_arguments_define.py
     :caption: :download:`Solution <assignments/unpacking_arguments_define.py>`
     :end-before: # Solution

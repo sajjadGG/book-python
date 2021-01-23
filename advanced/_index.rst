@@ -85,8 +85,8 @@ Object Oriented Programming
     oop/mutability.rst
     oop/dataclass.rst
     oop/staticattrs.rst
-    oop/access.rst
-    oop/overload.rst
+    oop/access-modifiers.rst
+    oop/operators.rst
     oop/composition.rst
     oop/polymorphism.rst
     oop/relations.rst
@@ -140,6 +140,7 @@ Concurrency
     concurrency/threading.rst
     concurrency/multiprocessing.rst
     concurrency/async.rst
+    concurrency/asyncio.rst
 
 *****
 Recap

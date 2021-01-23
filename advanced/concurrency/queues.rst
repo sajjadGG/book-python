@@ -1,27 +1,23 @@
-******
 Queues
-******
+======
 
 
-Queue
-=====
+Rationale
+---------
+* Queue
+* FIFO
+* LIFO (stack)
+* Priority Queue
 
-FIFO
-----
+    * Priorytetyzacja
+    * Wywłaszczenie
 
-LIFO (stack)
-------------
+* Network Queue
 
-Priority Queue
---------------
-* Priorytetyzacja
-* Wywłaszczenie
-
-Network Queue
--------------
-* Synchronizacja
-* Routing
+    * Synchronizacja
+    * Routing
 
 
-``queue``
-=========
+Standard Library
+----------------
+* ``queue``

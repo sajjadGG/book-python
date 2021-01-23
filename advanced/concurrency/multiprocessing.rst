@@ -1,7 +1,5 @@
-***************
 Multiprocessing
-***************
-
+===============
 
 .. glossary::
 
@@ -14,23 +12,26 @@ Multiprocessing
     Race Condition
     Starvation
 
+
 Problems
-========
+--------
 * Zakleszczania
 * Race Condition
 
 
 Cykl życia procesów
-===================
+-------------------
 * Tworzenie procesów
 * Zamykanie procesów
 * Multiprocesowość
 * Komunikacja między procesami
 
 
-IPC - Inter-Process Communication
-=================================
-Aby ``pickle`` mógł odtworzyć obiekt, musi posiadać jego definicję - klasę.
+Rationale
+---------
+* IPC - Inter-Process Communication
+* Aby ``pickle`` mógł odtworzyć obiekt, musi posiadać jego definicję - klasę.
+
 
 Define payload
 --------------
@@ -59,7 +60,7 @@ Define payload
 
 Client
 ------
-Obiekt wysyłający dane ``multiprocessing-client.py``:
+* Obiekt wysyłający dane ``multiprocessing-client.py``:
 
 .. code-block:: python
 
@@ -87,9 +88,10 @@ Obiekt wysyłający dane ``multiprocessing-client.py``:
     connection.send('close')
     connection.close()
 
+
 Listener
 --------
-Obiekt nasłuchujący na połączenia ``multiprocessing-listener.py``:
+* Obiekt nasłuchujący na połączenia ``multiprocessing-listener.py``:
 
 .. code-block:: python
 

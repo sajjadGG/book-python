@@ -1,12 +1,15 @@
-******************
 Micro-benchmarking
-******************
+==================
 
-    We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil -- Donald Knuth
+
+.. epigraph::
+
+    We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil
+    -- Donald Knuth
 
 
 Evaluation
-==========
+----------
 * Fresh start of Python process
 * Clean memory before start
 * Same data
@@ -15,13 +18,10 @@ Evaluation
 * Check what you measure
 
 
-.. _timeit:
+Timeit - Programmatic use
+-------------------------
+* ``timeit``
 
-``timeit``
-==========
-
-Programmatic use
-----------------
 .. literalinclude:: src/utils-timeit-simple.py
     :language: python
     :caption: Timeit simple statement
@@ -34,8 +34,9 @@ Programmatic use
     :language: python
     :caption: Timeit with ``globals()``
 
-Console use
------------
+
+Timeit - Console use
+--------------------
 .. literalinclude:: src/utils-timeit.sh
     :language: console
     :caption: Timeit
@@ -66,8 +67,8 @@ Console use
 
 .. _Micro-benchmarking use case:
 
-String Concatenation
-====================
+Use Case - String Concatenation
+-------------------------------
 .. code-block:: python
 
     from time import time
@@ -133,8 +134,8 @@ String Concatenation
     # Duration of %-style is 3.82 second
 
 
-Case Studies - Unique Keys
-==========================
+Use Case - Unique Keys
+----------------------
 * Runtime: Jupyter ``%%timeit``
 
 Setup code used for all examples:
@@ -277,8 +278,8 @@ Update Set Comprehension:
     # 1.71 µs ± 54 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 
-Case Study - Factorial
-======================
+Use Case - Factorial
+--------------------
 Recap information about factorial (``n!``):
 
 .. code-block:: python
@@ -543,5 +544,5 @@ Get from cache:
 
 
 References
-==========
+----------
 * https://www.youtube.com/watch?v=RT88FrHttRI

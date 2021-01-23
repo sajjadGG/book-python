@@ -1,12 +1,9 @@
-.. _OOP Object Identity:
-
-***************
 Object Identity
-***************
+===============
 
 
 Rationale
-=========
+---------
 * ``=`` assignment
 * ``==`` checks for object equality
 * ``is`` checks for object identity
@@ -19,7 +16,7 @@ Rationale
 
 
 Identity
-========
+--------
 * ``id(obj) -> int``
 * ``id()`` will change every time you execute script
 * ``id()`` returns an integer which is guaranteed to be unique and constant for object during its lifetime
@@ -36,7 +33,7 @@ Identity
 
 
 Value Comparison
-================
+----------------
 * ``==`` checks for object equality
 
 .. code-block:: python
@@ -54,7 +51,7 @@ Value Comparison
 
 
 Identity Check
-==============
+--------------
 * ``is`` checks for object identity
 * ``is`` compares ``id()`` output for both objects
 * CPython: compares the memory address a object resides in
@@ -101,7 +98,7 @@ Identity Check
 
 
 Problem
-=======
+-------
 .. code-block:: python
 
     'Mark Watney' is 'Mark Watney'
@@ -131,7 +128,7 @@ Problem
 
 
 Compare Value and Identity
-==========================
+--------------------------
 .. code-block:: python
 
     name = 'Mark Watney'
@@ -151,5 +148,5 @@ Compare Value and Identity
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

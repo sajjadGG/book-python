@@ -1,13 +1,11 @@
-*******
 C Types
-*******
+=======
 
 
 Workflow
-========
+--------
+Code:
 
-Code
-----
 .. code-block:: C
 
     long factorial(long n) {
@@ -17,8 +15,8 @@ Code
         return (n * factorial(n - 1));
     }
 
-Build
------
+Build:
+
 .. code-block:: console
 
     $ INCLUDES='-I/usr/local/Cellar/python/3.7.2_2/Frameworks/Python.framework/Versions/3.7/include/python3.7m/'
@@ -26,8 +24,8 @@ Build
     $ gcc -fPIC -c -o ${FILE}.o ${FILE}.c ${INCLUDE}
     $ gcc -shared ${FILE}.o -o ${FILE}.so
 
-Run
----
+Run:
+
 .. code-block:: python
 
     import ctypes
@@ -40,7 +38,7 @@ Run
 
 
 Arguments
-=========
+---------
 * ``ctypes.c_double``
 * ``ctypes.c_int``
 * ``ctypes.c_char``
@@ -60,84 +58,6 @@ Arguments
     lib.myfunction.restype = ctypes.c_char_p
 
 
-Use cases
-=========
-
-Example 1
----------
-.. code-block:: C
-
-    #include <stdio.h>
-
-    void ehlo() {
-        printf("Ehlo World");
-    }
-
-.. code-block:: python
-
-    import ctypes
-
-
-    lib = ctypes.CDLL('mylibrary.so')
-    lib.ehlo()
-
-Example 2
----------
-.. code-block:: C
-
-    #include <stdio.h>
-
-    void greeting(char *name) {
-        printf("Ehlo %s!\n", name);
-    }
-
-.. code-block:: python
-
-    import ctypes
-
-
-    lib = ctypes.CDLL('mylibrary.so')
-
-    lib.greeting.argtypes = [ctypes.c_char_p]
-    name = ctypes.create_string_buffer('Twardowski'.encode('ASCII'))
-    lib.greeting(name)
-
-Example 3
----------
-.. code-block:: C
-
-    #include <stdio.h>
-
-    void number(int num) {
-        printf("My number %d\n", num);
-    }
-
-.. code-block:: python
-
-    import ctypes
-
-
-    lib = ctypes.CDLL('mylibrary.so')
-    lib.number(10)
-
-Example 4
----------
-.. code-block:: C
-
-    int return_int(int num) {
-        return num;
-    }
-
-.. code-block:: python
-
-    import ctypes
-
-
-    lib = ctypes.CDLL('mylibrary.so')
-
-    i = lib.return_int(15)
-    print(i)
-
 Multi OS code
 -------------
 .. code-block:: python
@@ -156,7 +76,6 @@ Multi OS code
 
     lib.printf("I'm C printf() function called from Python")
 
-
 .. code-block:: python
 
     import ctypes
@@ -164,6 +83,7 @@ Multi OS code
 
     lib = ctypes.CDLL('mylibrary.so')
     print(dir(lib))
+
 
 Overflow
 --------
@@ -189,9 +109,87 @@ Overflow
     # ctypes.ArgumentError: argument 1: <class 'OverflowError'>: int too long to convert
 
 
-Assignments
-===========
+Use Case - 1
+------------
+.. code-block:: C
 
+    #include <stdio.h>
+
+    void ehlo() {
+        printf("Ehlo World");
+    }
+
+.. code-block:: python
+
+    import ctypes
+
+
+    lib = ctypes.CDLL('mylibrary.so')
+    lib.ehlo()
+
+
+Use Case - 2
+------------
+.. code-block:: C
+
+    #include <stdio.h>
+
+    void greeting(char *name) {
+        printf("Ehlo %s!\n", name);
+    }
+
+.. code-block:: python
+
+    import ctypes
+
+
+    lib = ctypes.CDLL('mylibrary.so')
+
+    lib.greeting.argtypes = [ctypes.c_char_p]
+    name = ctypes.create_string_buffer('Twardowski'.encode('ASCII'))
+    lib.greeting(name)
+
+
+Use Case - 3
+------------
+.. code-block:: C
+
+    #include <stdio.h>
+
+    void number(int num) {
+        printf("My number %d\n", num);
+    }
+
+.. code-block:: python
+
+    import ctypes
+
+
+    lib = ctypes.CDLL('mylibrary.so')
+    lib.number(10)
+
+
+Use Case - 4
+------------
+.. code-block:: C
+
+    int return_int(int num) {
+        return num;
+    }
+
+.. code-block:: python
+
+    import ctypes
+
+
+    lib = ctypes.CDLL('mylibrary.so')
+
+    i = lib.return_int(15)
+    print(i)
+
+
+Assignments
+-----------
 .. literalinclude:: assignments/ctypes_datetime.py
     :caption: :download:`Solution <assignments/ctypes_datetime.py>`
     :end-before: # Solution

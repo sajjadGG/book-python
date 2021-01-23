@@ -1,6 +1,5 @@
-***********
 Collections
-***********
+===========
 
 * https://docs.python.org/3/library/collections.html
 
@@ -24,7 +23,7 @@ This module implements specialized container data types providing alternatives t
 
 
 ``OrderedDict``
-===============
+---------------
 .. code-block:: python
 
     jose = {'firstname': 'José', 'lastname': 'Jiménez', 'agency': 'NASA'}
@@ -51,7 +50,7 @@ This module implements specialized container data types providing alternatives t
 
 
 ``namedtuple``
-==============
+--------------
 .. code-block:: python
 
     from collections import namedtuple
@@ -89,7 +88,7 @@ This module implements specialized container data types providing alternatives t
 
 
 Counter
-=======
+-------
 .. code-block:: python
 
     import random
@@ -121,7 +120,7 @@ Counter
 
 
 DefaultDict
-===========
+-----------
 .. code-block:: python
 
     colors = ['red', 'green', 'red', 'blue']
@@ -156,7 +155,7 @@ DefaultDict
 
 
 UserString
-==========
+----------
 .. code-block:: python
 
     from collections import UserString
@@ -198,5 +197,5 @@ UserString
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

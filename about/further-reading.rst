@@ -47,6 +47,18 @@ Django:
     * DjangoCon US: https://pyvideo.org/events/djangocon-us-2019.html
     * DjangoCon EU: https://pyvideo.org/events/djangocon-europe-2019.html
 
+Old:
+
+    * PyCon 2017: https://www.youtube.com/channel/UCrJhliKNQ8g0qoE_zvL8eVg
+    * Kiwi PyCon 2014: https://www.youtube.com/playlist?list=PLBGl1tVyiWQSVwxne3yOH79uaSqgbnCqL
+    * DjangoCon 2014: https://www.youtube.com/playlist?list=PLE7tQUdRKcybbNiuhLcc3h6WzmZGVBMr3
+    * PyGotham 2014: https://www.youtube.com/channel/UC45KSayx_kwQAnhpaPAuVkw/videos
+    * PyCon AU: http://pyvideo.org/category/56/pycon-australia-2014
+    * PyData Berlin: http://pyvideo.org/category/55/pydata-berlin-2014
+    * EuroPython: http://pyvideo.org/category/54/europython-2014
+    * PyOhio: http://pyvideo.org/category/52/pyohio-2014
+    * SciPy: http://pyvideo.org/category/51/scipy-2014
+
 
 Speakers
 --------
@@ -91,6 +103,33 @@ Talks
 * `Łukasz Langa - import asyncio: Learn Python's AsyncIO #1 - The Async Ecosystem <https://www.youtube.com/watch?v=Xbl7XjFYsN4>`_
 * `Łukasz Langa - Life Is Better Painted Black, or: How to Stop Worrying and Embrace Auto-Formatting. PyCon 2019 <https://www.youtube.com/watch?v=esZLCuWs_2Y>`_
 * `Raymond Hettinger - Beyond PEP 8 -- Best practices for beautiful intelligible code - PyCon 2015 <https://www.youtube.com/watch?v=wf-BqAjZb8M>`_
+
+
+Online Courses
+--------------
+Python:
+
+    * Codecademy: http://www.codecademy.com/en/tracks/python
+    * University of Michigan: https://www.coursera.org/learn/python
+    * University of Toronto: https://www.coursera.org/learn/learn-to-program
+    * University of Michigan: https://www.coursera.org/learn/python-databases
+    * Rice University: https://www.coursera.org/learn/python-programming
+    * OReilly: http://shop.oreilly.com/product/110000448.do
+
+Machine Learning and Data Science:
+
+    * https://www.youtube.com/watch?v=mA5nwGoRAOo (+ cała playlista)
+    * (UC San Diego) https://www.edx.org/course/python-for-data-science
+    * (UC San Diego) https://www.edx.org/course/statistics-and-probability-in-data-science-using-python
+    * (MIT) https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11
+    * (University of Michigan) https://www.coursera.org/learn/python-data
+    * (University of Michigan) https://www.coursera.org/learn/python-data-analysis
+    * (deeplearning.ai) https://www.coursera.org/learn/neural-networks-deep-learning
+    * (deeplearning.ai) https://www.coursera.org/specializations/deep-learning
+    * (University of Michigan) https://www.coursera.org/learn/python-machine-learning
+    * (University of Michigan) https://www.coursera.org/learn/python-text-mining
+    * (IBM) https://www.coursera.org/learn/python-for-applied-data-science
+    * (IBM) https://www.coursera.org/learn/data-analysis-with-python
 
 
 Community
@@ -140,3 +179,48 @@ Technology Trends
 Testing
 -------
 * https://martinfowler.com/articles/microservice-testing/#testing-component-in-process-diagram
+
+
+Books
+-----
+Algorithms:
+
+    * http://www.amazon.com/Introduction-Algorithms-Edition-Thomas-Cormen/dp/0262033844/
+    * http://www.amazon.com/Algorithms-4th-Edition-Robert-Sedgewick/dp/032157351X/
+
+Databases:
+
+    * http://www.amazon.com/Database-Design-Mere-Mortals-Hands-/dp/0321884493/
+    * http://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557/
+    * http://www.amazon.com/C.-J.-Date/e/B000AQ6OJA/
+
+
+Software Engineering Practises:
+
+    * http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/
+    * http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/
+    * http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/
+    * http://www.amazon.com/The-Mythical-Man-Month-Engineering-Anniversary/dp/0201835959/
+
+Design pattern:
+
+    * Design Patterns: Elements of Reusable Object-Oriented Software
+    * http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/
+
+Refactoring:
+
+    * Working effectively with legacy code - Michael Feathers
+
+Python:
+
+    * http://www.amazon.com/Learning-Python-Edition-Mark-Lutz/dp/1449355730/
+    * http://www.amazon.com/Python-Programming-Introduction-Computer-Science/dp/1590282418/
+    * http://inventwithpython.com/
+    * http://www.amazon.com/Python-Cookbook-David-Beazley/dp/1449340377/
+    * https://www.jeffknupp.com/writing-idiomatic-python-ebook/
+    * http://www.amazon.com/Python-Practice-Concurrency-Libraries-Developers/dp/0321905636/
+    * http://learnpythonthehardway.org/book/
+    * http://anandology.com/python-practice-book/index.html
+    * http://www.amazon.com/Python-3-Object-Oriented-Programming/dp/1849511268/
+    * http://shop.oreilly.com/product/0636920032519.do
+

@@ -1,16 +1,15 @@
-*********
 Profiling
-*********
+=========
 
 
 Rationale
-=========
+---------
 * A profile is a set of statistics that describes how often and for how long various parts of the program executed
 * The profiler modules are designed to provide an execution profile for a given program, not for benchmarking purposes (for that, there is timeit for reasonably accurate results). This particularly applies to benchmarking Python code against C code: the profilers introduce overhead for Python code, but not for C-level functions, and so the C code would seem faster than any Python one.
 
 
 Profilers
-=========
+---------
 * cProfile (CPython built-in)
 * yappi https://github.com/sumerc/yappi
 * PyCharm IDE
@@ -30,7 +29,7 @@ Profilers
 
 
 Profiling with yappi
-====================
+--------------------
 .. code-block:: python
 
     import yappi
@@ -140,7 +139,7 @@ Async application:
 
 
 Profiling with cProfile
-=======================
+-----------------------
 .. code-block:: python
 
     import cProfile
@@ -227,11 +226,9 @@ Profiling with cProfile
 
     $ python -m cProfile [-o output_file] [-s sort_order] FILE.py
 
+
 References
-==========
-
+----------
 .. [koderdojo] https://www.koderdojo.com/media/default/articles/profile-fibonacci-number-30-pycharm.png
-
 .. [jetbrains] https://resources.jetbrains.com/help/img/idea/2020.3/profiler_call_graph.png
-
 .. [csdnimg] https://img-blog.csdnimg.cn/20191008141801582.png

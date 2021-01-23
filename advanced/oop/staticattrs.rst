@@ -1,12 +1,9 @@
-.. _OOP Static and Dynamic:
-
-******************
 Static and Dynamic
-******************
+==================
 
 
 Static Fields
-=============
+-------------
 * Fields created on class
 * Must have default values
 * Share state
@@ -33,7 +30,7 @@ Static Fields:
 
 
 Dynamic Fields
-==============
+--------------
 * Fields created on instance
 * Do not share state
 * By convention initialized in ``__init__()``
@@ -63,7 +60,7 @@ Dynamic fields:
 
 
 Static vs. Dynamic Fields
-=========================
+-------------------------
 Static vs. Dynamic fields:
 
 .. code-block:: python
@@ -111,7 +108,7 @@ Static vs. Dynamic fields:
 
 
 Static or Dynamic?
-==================
+------------------
 Static Fields:
 
 .. code-block:: python
@@ -177,5 +174,5 @@ Static Fields:
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments
