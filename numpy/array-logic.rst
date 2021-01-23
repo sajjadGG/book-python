@@ -353,7 +353,6 @@ Readability Counts
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_logic_even.py
     :caption: :download:`Solution <assignments/numpy_logic_even.py>`
     :end-before: # Solution

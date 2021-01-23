@@ -256,8 +256,8 @@ Regresja liniowa
 * W zależności od zmiennej regresja działa lepiej albo gorzej
 * Funkcja kosztu to nie tylko błąd średniokwadratowy ale również współczynnik wag.
 
-Zadanie
-^^^^^^^
+Zadanie:
+
 #. Użyj więcej zmiennych do uczenia modelu; porównaj wyniki pomiaru jakości regresji.
 #. Narysuj linię regresji w stosunku do innych zmiennych.
 #. ★ Jakie cechy wpływają na najbardziej na wynik? Jak to sprawdzić?
@@ -326,8 +326,8 @@ Zadanie
     plt.show()
     # Wykres będzie chaotyczny,
 
-Ciąg dalszy
-^^^^^^^^^^^
+Ciąg dalszy:
+
 * Regresję logistyczną można wykorzystać dla tzw. okien danych. Gdy wykres rośnie a później maleje, to regresja liniowa byłaby linią prostą, a tak gdy podzieli się wykres na połowę (rosnącą i malejącą) i stworzy się regresję dla przedziału.
 * Można to łatwiej zrobić tworząc ``pandas.DataFrame`` i przekazując je do ``sklearn``
 * Przypadek dla wielu zmiennych opisujących:
@@ -957,30 +957,30 @@ Nas interesuje jak często wyraz pojawia się w książce, ale nie ile razy:
 
 Zbiór jest zbalansowany do uczenia (wagi są od 0.0-1.0)
 
-Cosine Similarity
-^^^^^^^^^^^^^^^^^
-* długie wektory wielowymiarowe
-* Czy dokumenty są podobne do siebie? - liczymy cosinus konta wektorów
-* Jeżeli naszymi cechami są słowa, to jeżeli w dokumentach są te same ilości słów - to dokumenty są takie same
-* uwaga, bo słowa mogą mieć różną kolejność
-* dostajemy macierz (nasze dokumenty) na diagonalach dostajemy podobieństwo dokumentów
-* każdy wiersz tabelki TF-IDF to wektor (ilość słów to liczba wymiarów), wartości to częstości występowania
-* często używana w modelach
+Cosine Similarity:
 
-Miara Levenshteina
-^^^^^^^^^^^^^^^^^^
-* jak bardzo jedna sekwencja jest podobna do drugiej
-* nie obchodzi jej gdzie ta sekwencja występuje
-* wykorzystanie difflib.SequenceMatcher(None, tekst_a, tekst_b).ratio()
-* czy te literki występują na tych samych miejscach, kompletnie nie ma znaczenia znaczenie (cat i caterpillar)
-* ile trzeba wprowadzić modyfikacji, aby stringi wyglądały tak samo
-* często się stosuje do tekstów
-* jest miarą pozycyjną
+    * długie wektory wielowymiarowe
+    * Czy dokumenty są podobne do siebie? - liczymy cosinus konta wektorów
+    * Jeżeli naszymi cechami są słowa, to jeżeli w dokumentach są te same ilości słów - to dokumenty są takie same
+    * uwaga, bo słowa mogą mieć różną kolejność
+    * dostajemy macierz (nasze dokumenty) na diagonalach dostajemy podobieństwo dokumentów
+    * każdy wiersz tabelki TF-IDF to wektor (ilość słów to liczba wymiarów), wartości to częstości występowania
+    * często używana w modelach
 
-Miara Jacquarda
-^^^^^^^^^^^^^^^
-* można liczyć na wiele sposobów
-* ile mamy elementów na przecięciu zbioru
+Miara Levenshteina:
+
+    * jak bardzo jedna sekwencja jest podobna do drugiej
+    * nie obchodzi jej gdzie ta sekwencja występuje
+    * wykorzystanie difflib.SequenceMatcher(None, tekst_a, tekst_b).ratio()
+    * czy te literki występują na tych samych miejscach, kompletnie nie ma znaczenia znaczenie (cat i caterpillar)
+    * ile trzeba wprowadzić modyfikacji, aby stringi wyglądały tak samo
+    * często się stosuje do tekstów
+    * jest miarą pozycyjną
+
+Miara Jacquarda:
+
+    * można liczyć na wiele sposobów
+    * ile mamy elementów na przecięciu zbioru
 
 Transformatory i pipeline
 -------------------------
@@ -988,19 +988,19 @@ Transformatory i pipeline
 * Pipeline - łączy transformatory
 * Estimator - model
 
-Sposób na rozszerzanie sklearn
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* kolejność elementów w pipeline jest ważna
-* składa się ze steps
-* na każdym obiekcie wykona pipeline.fit_transform()
-* można nazywać kolejne elementy pipeline
-* można je podawać jako słownik (uwaga na zmieniającą się kolejność, lepiej użyć OrderedDict)
-* aby uciszyć error ``sklearn.preprocessing.FunctionTransformer()`` trzeba dać ``validate=False``, ma to związek z tym, że oczekuje wartości ``float``. Transformer jest w pełni gotowy do przetwarzania danych tekstowych
+Sposób na rozszerzanie sklearn:
 
-Pipeline
-^^^^^^^^
-* stosowane do oczyszczania danych, np. usuwania liczb mnogich, usuwania ul. os. pl. itp z nazw ulic
-* jeżeli jest coś bardziej skomplikowanego, to lepiej użyć klasy dziedziczącej po BaseEstimator i FunctionTransformer
+    * kolejność elementów w pipeline jest ważna
+    * składa się ze steps
+    * na każdym obiekcie wykona pipeline.fit_transform()
+    * można nazywać kolejne elementy pipeline
+    * można je podawać jako słownik (uwaga na zmieniającą się kolejność, lepiej użyć OrderedDict)
+    * aby uciszyć error ``sklearn.preprocessing.FunctionTransformer()`` trzeba dać ``validate=False``, ma to związek z tym, że oczekuje wartości ``float``. Transformer jest w pełni gotowy do przetwarzania danych tekstowych
+
+Pipeline:
+
+    * stosowane do oczyszczania danych, np. usuwania liczb mnogich, usuwania ul. os. pl. itp z nazw ulic
+    * jeżeli jest coś bardziej skomplikowanego, to lepiej użyć klasy dziedziczącej po BaseEstimator i FunctionTransformer
 
 Klasyfikacja danych tekstowych
 ------------------------------
@@ -1103,13 +1103,13 @@ Sieci neuronowe
 * PyTorch
 * Caffe
 
-Pojęcia
-^^^^^^^
-* warstwa wejściowa
-* warstwy ukryte
-* warstwa wyjściowa
-* Przestrzeń wag
-* SGD - Stochastic Gradient Descent
-* Backpropagation
-* Epoki (kolejne przejścia dla propagacji)
-* Label detection - wykrywanie cech z obrazka
+Pojęcia:
+
+    * warstwa wejściowa
+    * warstwy ukryte
+    * warstwa wyjściowa
+    * Przestrzeń wag
+    * SGD - Stochastic Gradient Descent
+    * Backpropagation
+    * Epoki (kolejne przejścia dla propagacji)
+    * Label detection - wykrywanie cech z obrazka

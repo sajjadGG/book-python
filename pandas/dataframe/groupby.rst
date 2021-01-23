@@ -488,7 +488,6 @@ Produces Pandas DataFrame:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/pandas_df_groupby_phones.py
     :caption: :download:`Solution <assignments/pandas_df_groupby_phones.py>`
     :end-before: # Solution

@@ -76,7 +76,6 @@ Values
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/pandas_series_attributes.py
     :caption: :download:`Solution <assignments/pandas_series_attributes.py>`
     :end-before: # Solution

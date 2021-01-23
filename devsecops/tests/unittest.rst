@@ -165,7 +165,6 @@ Stub
 
 Assignments
 ===========
-
 .. literalinclude:: ../_assignments/devsecops_unittest_rectangle.py
     :caption: :download:`Solution <../_assignments/devsecops_unittest_rectangle.py>`
     :end-before: # Solution

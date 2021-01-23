@@ -318,7 +318,6 @@ Examples
 
 Assignments
 ===========
-
 .. todo:: Convert assignments to literalinclude
 
 Argument parsing

@@ -110,35 +110,34 @@ Author name or revision version
 
 Naming convention
 -----------------
+Constants and Variables:
 
-Constants and Variables
-^^^^^^^^^^^^^^^^^^^^^^^
-* Używanie ``_`` w nazwach (snake_case) - // Python - snake ;)
-* ``variable`` or ``variable_name``
+    * Używanie ``_`` w nazwach (snake_case) - // Python - snake ;)
+    * ``variable`` or ``variable_name``
 
-    .. code-block:: python
+        .. code-block:: python
 
-        name = 'José Jiménez'
+            name = 'José Jiménez'
 
-        firstname = 'José'
-        lastname = 'Jiménez'
+            firstname = 'José'
+            lastname = 'Jiménez'
 
-* ``CONSTANT`` or ``CONSTANT_NAME``
+    * ``CONSTANT`` or ``CONSTANT_NAME``
 
-    .. code-block:: python
+        .. code-block:: python
 
-        PATH = '/etc/hosts'
+            PATH = '/etc/hosts'
 
-        FILE_NAME = 'README.txt'
+            FILE_NAME = 'README.txt'
 
-Classes
-^^^^^^^
-* ``CamelCase``
+Classes:
 
-    .. code-block:: python
+    * ``PascalCase``
 
-        class MyClass:
-            pass
+        .. code-block:: python
+
+            class MyClass:
+                pass
 
 Class Attributes
 ----------------
@@ -815,36 +814,35 @@ Static Code Analysis
 * Small: Just one Python file, requires only stdlib
 * Comes with a comprehensive test suite
 
-Installation
-^^^^^^^^^^^^
-.. code-block:: console
+Installation:
 
-    $ pip install pycodestyle
+    .. code-block:: console
 
-Usage
-^^^^^
-.. code-block:: console
+        $ pip install pycodestyle
 
-    $ pycodestyle FILE.py
-    $ pycodestyle DIRECTORY/*.py
-    $ pycodestyle DIRECTORY/
-    $ pycodestyle --statistics -qq DIRECTORY/
-    $ pycodestyle --show-source --show-pep8 FILE.py
+Usage:
 
-Configuration
-^^^^^^^^^^^^^
-* ``setup.cfg``
+    .. code-block:: console
 
-.. code-block:: ini
+        $ pycodestyle FILE.py
+        $ pycodestyle DIRECTORY/*.py
+        $ pycodestyle DIRECTORY/
+        $ pycodestyle --statistics -qq DIRECTORY/
+        $ pycodestyle --show-source --show-pep8 FILE.py
 
-    [pycodestyle]
-    max-line-length = 120
-    ignore = E402,W391
+Configuration:
+
+    * ``setup.cfg``
+
+    .. code-block:: ini
+
+        [pycodestyle]
+        max-line-length = 120
+        ignore = E402,W391
 
 
 Assignments
 ===========
-
 .. literalinclude:: ../_assignments/devsecops_gep_pycodestyle.py
     :caption: :download:`Solution <../_assignments/devsecops_gep_pycodestyle.py>`
     :end-before: # Solution

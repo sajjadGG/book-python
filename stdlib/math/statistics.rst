@@ -247,7 +247,6 @@ Examples
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/stdlib_statistics_stats.py
     :caption: :download:`Solution <assignments/stdlib_statistics_stats.py>`
     :end-before: # Solution

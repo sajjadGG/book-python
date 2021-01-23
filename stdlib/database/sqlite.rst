@@ -220,7 +220,6 @@ Use cases
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/database_sqlite_logs.py
     :caption: :download:`Solution <assignments/database_sqlite_logs.py>`
     :end-before: # Solution

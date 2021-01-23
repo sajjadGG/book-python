@@ -285,7 +285,6 @@ Ravel
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_shape_1d.py
     :caption: :download:`Solution <assignments/numpy_shape_1d.py>`
     :end-before: # Solution

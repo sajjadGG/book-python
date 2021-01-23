@@ -160,7 +160,6 @@ Wady
 
 Assignments
 ===========
-
 .. todo:: Convert assignments to literalinclude
 
 Pima Indians Diabetes problem

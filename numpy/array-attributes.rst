@@ -280,7 +280,6 @@ Data
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_attributes.py
     :caption: :download:`Solution <assignments/numpy_attributes.py>`
     :end-before: # Solution

@@ -160,7 +160,6 @@ Getting Page Text
 
 Assignments
 ===========
-
 .. todo:: Convert assignments to literalinclude
 
 Scrapping Iris

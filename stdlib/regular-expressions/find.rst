@@ -40,7 +40,6 @@ Finding All Adverbs:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/regexp_find_dates.py
     :caption: :download:`Solution <assignments/regexp_find_dates.py>`
     :end-before: # Solution

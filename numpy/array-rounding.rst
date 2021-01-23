@@ -159,7 +159,6 @@ Clip
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_round_rint.py
     :caption: :download:`Solution <assignments/numpy_round_rint.py>`
     :end-before: # Solution

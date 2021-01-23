@@ -76,6 +76,5 @@ Przykład zastosowania
 
 Assignments
 ===========
-
 .. todo:: Create assignments
 

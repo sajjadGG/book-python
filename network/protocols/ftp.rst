@@ -34,7 +34,6 @@ Methods
 
 Assignments
 ===========
-
 .. todo:: Convert assignments to literalinclude
 
 FTP Download

@@ -337,7 +337,6 @@ Examples
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/datetime_parse_iso.py
     :caption: :download:`Solution <assignments/datetime_parse_iso.py>`
     :end-before: # Solution

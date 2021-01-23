@@ -123,7 +123,6 @@ Interfaces:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/oop_interface_define.py
     :caption: :download:`Solution <assignments/oop_interface_define.py>`
     :end-before: # Solution

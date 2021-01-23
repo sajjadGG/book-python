@@ -655,7 +655,6 @@ Pretty Printing JSON:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/serialization_json_dump.py
     :caption: :download:`Solution <assignments/serialization_json_dump.py>`
     :end-before: # Solution

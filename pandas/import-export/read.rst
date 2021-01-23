@@ -354,7 +354,6 @@ XML and XSLT
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/pandas_read_csv_dates.py
     :caption: :download:`Solution <assignments/pandas_read_csv_dates.py>`
     :end-before: # Solution

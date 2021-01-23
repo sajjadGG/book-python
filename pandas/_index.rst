@@ -1,6 +1,5 @@
 .. _Pandas:
 
-*****
 About
 *****
 .. toctree::
@@ -11,7 +10,6 @@ About
     about/pandas.rst
     about/types.rst
 
-***************
 Import & Export
 ***************
 .. toctree::
@@ -22,7 +20,6 @@ Import & Export
     import-export/read.rst
     import-export/to.rst
 
-******
 Series
 ******
 .. toctree::
@@ -43,7 +40,6 @@ Series
     series/statistics.rst
     series/mapping.rst
 
-*********
 DataFrame
 *********
 .. toctree::
@@ -72,7 +68,6 @@ DataFrame
     dataframe/join.rst
     dataframe/plot.rst
 
-****
 Date
 ****
 .. toctree::
@@ -86,7 +81,6 @@ Date
     date/frequency.rst
     date/calendar.rst
 
-*****
 Recap
 *****
 .. toctree::
@@ -98,7 +92,6 @@ Recap
     about/setoption.rst
     about/workflow.rst
 
-************
 Case Studies
 ************
 .. toctree::

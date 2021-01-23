@@ -66,9 +66,9 @@ Examples
       </operation>
     </portType>
 
-The <portType> Element
-^^^^^^^^^^^^^^^^^^^^^^
-* The <portType> element defines a web service, the operations that can be performed, and the messages that are involved.
+The ``<portType>`` Element:
+
+* The ``<portType>`` element defines a web service, the operations that can be performed, and the messages that are involved.
 * The request-response type is the most common operation type, but WSDL defines four types:
 
 .. csv-table::

@@ -180,7 +180,6 @@ Sum of two polynomials
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_polyfit.py
     :caption: :download:`Solution <assignments/numpy_polyfit.py>`
     :end-before: # Solution

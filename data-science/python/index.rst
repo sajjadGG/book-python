@@ -1,21 +1,24 @@
-**************
 Tools and libs
-**************
+==============
 
 
-Libraries in Data Science and Machine Learning
-==============================================
+Rationale
+---------
+* Libraries in Data Science and Machine Learning
+
 
 Ecosystem
 ---------
+Scipy Ecosystem:
+
 .. figure:: img/scipy-ecosystem.png
 
-    Scipy Ecosystem
 
 Environment
 -----------
 * Python 3.6+
 * Libs manually installed
+
 
 Biblioteki do obsługi danych
 ----------------------------
@@ -25,6 +28,7 @@ Biblioteki do obsługi danych
 * ``Dask``
 * ``xarray``
 
+
 Wykresy i grafy
 ---------------
 * ``Matplotlib``
@@ -32,6 +36,7 @@ Wykresy i grafy
 * ``Bokeh``
 * ``PyDotPlus``
 * ``Graphviz``
+
 
 Biblioteki do nauczania maszynowego
 -----------------------------------
@@ -41,6 +46,7 @@ Biblioteki do nauczania maszynowego
 * ``PyMC3``
 * ``pyTorch``
 * ``keras``
+
 
 Other
 -----

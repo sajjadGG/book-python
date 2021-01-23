@@ -237,7 +237,6 @@ Advanced Example:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/serialization_pickle_dump_load.py
     :caption: :download:`Solution <assignments/serialization_pickle_dump_load.py>`
     :end-before: # Solution

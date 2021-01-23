@@ -396,7 +396,6 @@ Conversion
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/pandas_series_na.py
     :caption: :download:`Solution <assignments/pandas_series_na.py>`
     :end-before: # Solution

@@ -158,7 +158,6 @@ TRUNCATE
 
 Assignments
 ===========
-
 .. todo:: Convert assignments to literalinclude
 
 Database SQL Relations

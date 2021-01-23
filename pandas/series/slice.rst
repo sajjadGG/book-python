@@ -293,7 +293,6 @@ Date Index
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/pandas_series_slice_datetime.py
     :caption: :download:`Solution <assignments/pandas_series_slice_datetime.py>`
     :end-before: # Solution

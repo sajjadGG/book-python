@@ -45,7 +45,6 @@ Usage of greedy and non-greedy search with groups:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/regexp_greedy_moon_speech.py
     :caption: :download:`Solution <assignments/regexp_greedy_moon_speech.py>`
     :end-before: # Solution

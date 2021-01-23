@@ -126,7 +126,6 @@ Length
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/pandas_series_create_float.py
     :caption: :download:`Solution <assignments/pandas_series_create_float.py>`
     :end-before: # Solution

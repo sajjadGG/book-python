@@ -192,7 +192,6 @@ Doctests:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/regexp_match_phones.py
     :caption: :download:`Solution <assignments/regexp_match_phones.py>`
     :end-before: # Solution

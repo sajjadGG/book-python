@@ -174,7 +174,6 @@ Enumerate
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_iteration.py
     :caption: :download:`Solution <assignments/numpy_iteration.py>`
     :end-before: # Solution

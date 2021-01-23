@@ -114,8 +114,8 @@ Train and test on entire dataset
     Black line represents the decision boundary and represents the signal.
     Green line represents overfitted model which learned the noise.
 
-Testing ``LogisticsRegression`` on Iris dataset
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Testing ``LogisticsRegression`` on Iris dataset:
+
 .. code-block:: python
 
     from sklearn.linear_model import LogisticsRegression
@@ -129,8 +129,8 @@ Testing ``LogisticsRegression`` on Iris dataset
     # 0.96
 
 
-Testing ``KNeighborsClassifier(n_neighbors=1)`` on Iris dataset
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Testing ``KNeighborsClassifier(n_neighbors=1)`` on Iris dataset:
+
 .. code-block:: python
 
     from sklearn.neighbors import KNeighborsClassifier
@@ -143,8 +143,8 @@ Testing ``KNeighborsClassifier(n_neighbors=1)`` on Iris dataset
     metrics.accuracy_score(labels, predicted_labels)
     # 1.0
 
-Testing ``KNeighborsClassifier(n_neighbors=5)`` on Iris dataset
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Testing ``KNeighborsClassifier(n_neighbors=5)`` on Iris dataset:
+
 .. code-block:: python
 
     from sklearn.neighbors import KNeighborsClassifier
@@ -185,8 +185,8 @@ Also known as:
 #. **Testing accuracy** is a better estimate than training accuracy of out-of-sample performance
 
 
-Testing ``LogisticsRegression`` on Iris dataset
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Testing ``LogisticsRegression`` on Iris dataset:
+
 .. code-block:: python
 
     from sklearn.linear_model import LogisticsRegression
@@ -199,8 +199,8 @@ Testing ``LogisticsRegression`` on Iris dataset
     accuracy = metrics.accuracy_score(labels_test, predicted_labels)
     # 0.95
 
-Testing ``KNeighborsClassifier(n_neighbors=1)`` on Iris dataset
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Testing ``KNeighborsClassifier(n_neighbors=1)`` on Iris dataset:
+
 .. code-block:: python
 
     from sklearn.neighbors import KNeighborsClassifier
@@ -213,8 +213,8 @@ Testing ``KNeighborsClassifier(n_neighbors=1)`` on Iris dataset
     accuracy = metrics.accuracy_score(labels_test, predicted_labels)
     # 0.95
 
-Testing ``KNeighborsClassifier(n_neighbors=5)`` on Iris dataset
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Testing ``KNeighborsClassifier(n_neighbors=5)`` on Iris dataset:
+
 .. code-block:: python
 
     from sklearn.neighbors import KNeighborsClassifier
@@ -227,8 +227,8 @@ Testing ``KNeighborsClassifier(n_neighbors=5)`` on Iris dataset
     accuracy = metrics.accuracy_score(labels_test, predicted_labels)
     # 0.966666666667
 
-Can we locate even better value for :math:`k`?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Can we locate even better value for :math:`k`?:
+
 #. **Testing accuracy raises** as model complexity increases
 #. **Testing accuracy penalizes** models that are too complex or not complex enough
 #. For KNN models complexity is determined by the value of :math:`k` (lower value = more complex)
@@ -269,38 +269,42 @@ Can we locate even better value for :math:`k`?
     plt.ylabel('Testing Accuracy')
     plt.show()
 
-Downsides of train/test split
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Downsides of train/test split:
+
 #. Provides a **high-variance estimate** of out-of-sample accuracy
 #. :math:`K` - fold **cross-validation** overcomes the limitation
 #. Train/test split is still used because of its flexibility and speed
 
 Source: https://www.dataschool.io
 
+
 Regularyzacja
 =============
-Regularyzacja – wprowadzenie dodatkowej informacji do rozwiązywanego zagadnienia źle postawionego w celu polepszenia jakości rozwiązania. Regularyzacja jest często wykorzystywana przy rozwiązywaniu problemów odwrotnych.
-
-Regularyzacja jest sposobem na zmniejszenie prawdopodobieństwa pojawienia się overfittingu
+* Regularyzacja – wprowadzenie dodatkowej informacji do rozwiązywanego zagadnienia źle postawionego w celu polepszenia jakości rozwiązania.
+* Regularyzacja jest często wykorzystywana przy rozwiązywaniu problemów odwrotnych.
+* Regularyzacja jest sposobem na zmniejszenie prawdopodobieństwa pojawienia się overfittingu
 
 .. figure:: img/model-quality-regularization.png
 
-    Regularyzacja – wprowadzenie dodatkowej informacji do rozwiązywanego zagadnienia źle postawionego w celu polepszenia jakości rozwiązania.
 
 Random Forrest
 ==============
-A random forest is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and use averaging to improve the predictive accuracy and control over-fitting. The sub-sample size is always the same as the original input sample size but the samples are drawn with replacement if bootstrap=True (default).
+A random forest is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and use averaging to improve the predictive accuracy and control over-fitting.
+The sub-sample size is always the same as the original input sample size but the samples are drawn with replacement if bootstrap=True (default).
+
 
 Ensemble averaging
 ==================
-In machine learning, particularly in the creation of artificial neural networks, ensemble averaging is the process of creating multiple models and combining them to produce a desired output, as opposed to creating just one model. Frequently an ensemble of models performs better than any individual model, because the various errors of the models "average out."
-
-Ensemble averaging is one of the simplest types of committee machines. Along with boosting, it is one of the two major types of static committee machines. In contrast to standard network design in which many networks are generated but only one is kept, ensemble averaging keeps the less satisfactory networks around, but with less weight. The theory of ensemble averaging relies on two properties of artificial neural networks:
+* In machine learning, particularly in the creation of artificial neural networks, ensemble averaging is the process of creating multiple models and combining them to produce a desired output, as opposed to creating just one model.
+* Frequently an ensemble of models performs better than any individual model, because the various errors of the models "average out."
+* Ensemble averaging is one of the simplest types of committee machines. Along with boosting, it is one of the two major types of static committee machines.
+* In contrast to standard network design in which many networks are generated but only one is kept, ensemble averaging keeps the less satisfactory networks around, but with less weight.
+* The theory of ensemble averaging relies on two properties of artificial neural networks:
 
     #. In any network, the bias can be reduced at the cost of increased variance
     #. In a group of networks, the variance can be reduced at no cost to bias
 
-In machine learning ensemble refers only to a concrete finite set of alternative models, but typically allows for much more flexible structure to exist among those alternatives.
+* In machine learning ensemble refers only to a concrete finite set of alternative models, but typically allows for much more flexible structure to exist among those alternatives.
 
 .. code-block:: python
 

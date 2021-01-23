@@ -26,7 +26,6 @@ Secured connection to the SMTP server
 
 Assignments
 ===========
-
 .. todo:: Convert assignments to literalinclude
 
 Send email

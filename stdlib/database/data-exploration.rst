@@ -1,12 +1,11 @@
-********************
 Database Exploration
-********************
+====================
 
 
-Apache Superset
-===============
-* https://superset.incubator.apache.org/
-* https://www.youtube.com/watch?v=W_Sp4jo1ACg
+Rationale
+---------
+* Apache Superset
+
 
 Install
 -------
@@ -84,29 +83,28 @@ Production setup
         --statsd-host localhost:8125 \
         superset:app
 
-Features
---------
 
 Dashboard
-^^^^^^^^^
+---------
 .. figure:: img/superset-01.png
 
-    Dashboard
 
 Data exploration
-^^^^^^^^^^^^^^^^
+----------------
 .. figure:: img/superset-02.png
 
-    Data exploration
 
 SQL IDE
-^^^^^^^
+-------
 .. figure:: img/superset-03.png
 
-    SQL IDE
 
 GIS and spatial data
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 .. figure:: img/superset-04.png
 
-    GIS and spatial data
+
+Further Reading
+---------------
+* https://superset.incubator.apache.org/
+* https://www.youtube.com/watch?v=W_Sp4jo1ACg

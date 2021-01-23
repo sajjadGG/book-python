@@ -230,7 +230,6 @@ Use Cases
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/oop_slots_define.py
     :caption: :download:`Solution <assignments/oop_slots_define.py>`
     :end-before: # Solution

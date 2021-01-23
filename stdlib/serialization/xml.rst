@@ -753,7 +753,6 @@ Example 3
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/serialization_xml_parse.py
     :caption: :download:`Solution <assignments/serialization_xml_parse.py>`
     :end-before: # Solution

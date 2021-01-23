@@ -139,7 +139,6 @@ Other
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_loadtext.py
     :caption: :download:`Solution <assignments/numpy_loadtext.py>`
     :end-before: # Solution

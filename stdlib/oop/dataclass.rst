@@ -562,7 +562,6 @@ Examples
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/oop_dataclass_syntax.py
     :caption: :download:`Solution <assignments/oop_dataclass_syntax.py>`
     :end-before: # Solution

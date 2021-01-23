@@ -340,7 +340,6 @@ Dot
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_broadcasting_arithmetic.py
     :caption: :download:`Solution <assignments/numpy_broadcasting_arithmetic.py>`
     :end-before: # Solution

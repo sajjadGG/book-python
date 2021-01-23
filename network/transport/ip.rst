@@ -52,8 +52,8 @@ IP Addresses
     ipaddress.IPv4Address(b'\xC0\xA8\x00\x01')
     # IPv4Address('192.168.0.1')
 
-Comparison
-^^^^^^^^^^
+Comparison:
+
 .. code-block:: python
 
     IPv4Address('127.0.0.2') > IPv4Address('127.0.0.1')
@@ -77,8 +77,8 @@ Comparison
     # Traceback (most recent call last):
     # ipaddress.AddressValueError: 4294967296 (>= 2**32) is not permitted as an IPv4 address
 
-The name of the reverse DNS PTR record for the IP address
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The name of the reverse DNS PTR record for the IP address:
+
 .. code-block:: python
 
     ipaddress.ip_address("127.0.0.1").reverse_pointer
@@ -115,8 +115,8 @@ IP Network
     # [IPv4Network('192.0.2.8/29'), IPv4Network('192.0.2.4/30'),
     #  IPv4Network('192.0.2.2/31'), IPv4Network('192.0.2.0/32')]
 
-Subnet
-^^^^^^
+Subnet:
+
 .. code-block:: python
 
     list(ip_network('192.0.2.0/24').subnets())
@@ -148,8 +148,8 @@ Subnet
     #    IPv4Network('192.0.2.128/25')
     # ]
 
-Supernet
-^^^^^^^^
+Supernet:
+
 .. code-block:: python
 
     ip_network('192.0.2.0/24').supernet()
@@ -161,8 +161,8 @@ Supernet
     ip_network('192.0.2.0/24').supernet(new_prefix=20)
     # IPv4Network('192.0.0.0/20')
 
-Comparison
-^^^^^^^^^^
+Comparison:
+
 .. code-block:: python
 
     a = ip_network('192.168.1.0/24')
@@ -181,8 +181,8 @@ Comparison
     ip_network('192.0.2.1/32').compare_networks(ip_network('192.0.2.1/32'))
     # 0
 
-Iteration
-^^^^^^^^^
+Iteration:
+
 .. code-block:: python
 
     for addr in IPv4Network('192.0.2.0/28'):

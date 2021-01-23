@@ -260,7 +260,6 @@ Linear Algebra
 
 Assignments
 ===========
-
 .. figure:: img/euclidean-distance.png
 
     Calculate Euclidean distance in Cartesian coordinate system

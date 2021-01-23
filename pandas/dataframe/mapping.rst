@@ -313,7 +313,6 @@ Conversion
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/pandas_df_mapping_split.py
     :caption: :download:`Solution <assignments/pandas_df_mapping_split.py>`
     :end-before: # Solution

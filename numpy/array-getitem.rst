@@ -354,7 +354,6 @@ Multi-indexing
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_indexing.py
     :caption: :download:`Solution <assignments/numpy_indexing.py>`
     :end-before: # Solution

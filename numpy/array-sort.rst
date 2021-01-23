@@ -86,7 +86,6 @@ Flip
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_sort.py
     :caption: :download:`Solution <assignments/numpy_sort.py>`
     :end-before: # Solution

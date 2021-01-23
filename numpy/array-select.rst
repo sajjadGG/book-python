@@ -216,7 +216,6 @@ Take
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_select_isin.py
     :caption: :download:`Solution <assignments/numpy_select_isin.py>`
     :end-before: # Solution

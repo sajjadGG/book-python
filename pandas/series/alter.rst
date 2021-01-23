@@ -77,7 +77,6 @@ Reset Index
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/pandas_series_alter.py
     :caption: :download:`Solution <assignments/pandas_series_alter.py>`
     :end-before: # Solution

@@ -566,7 +566,6 @@ Good Practices
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/serialization_csv_dictreader.py
     :caption: :download:`Solution <assignments/serialization_csv_dictreader.py>`
     :end-before: # Solution

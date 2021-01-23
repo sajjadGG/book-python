@@ -73,7 +73,6 @@ Array Concatenation
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_concatenation.py
     :caption: :download:`Solution <assignments/numpy_concatenation.py>`
     :end-before: # Solution

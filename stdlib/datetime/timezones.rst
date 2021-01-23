@@ -205,7 +205,6 @@ Descriptor Timezone Converter:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/datetime_timezone_convert.py
     :caption: :download:`Solution <assignments/datetime_timezone_convert.py>`
     :end-before: # Solution

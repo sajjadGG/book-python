@@ -1,7 +1,5 @@
-*******
 Program
-*******
-
+=======
 
 1. Biblioteki używane w analizie numerycznej i Data Science
 

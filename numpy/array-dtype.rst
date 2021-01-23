@@ -330,7 +330,6 @@ str
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_astype.py
     :caption: :download:`Solution <assignments/numpy_astype.py>`
     :end-before: # Solution

@@ -12,8 +12,8 @@ Import module
 -------------
 * ``import ...``
 
-Syntax
-^^^^^^
+Syntax:
+
 .. code-block:: python
 
     import module
@@ -22,8 +22,8 @@ Syntax
 
     import module.submodule
 
-Example
-^^^^^^^
+Example:
+
 .. code-block:: python
 
     import random
@@ -32,8 +32,8 @@ Importing function from module
 ------------------------------
 * ``from ... import ...``
 
-Syntax
-^^^^^^
+Syntax:
+
 .. code-block:: python
 
     from module import function
@@ -42,8 +42,8 @@ Syntax
 
     from module.submodule import function
 
-Example
-^^^^^^^
+Example:
+
 .. code-block:: python
 
     from random import randint
@@ -53,8 +53,8 @@ Import and alias
 ----------------
 * ``import ... as ...``
 
-Syntax
-^^^^^^
+Syntax:
+
 .. code-block:: python
 
     import module as alias
@@ -63,8 +63,8 @@ Syntax
 
     from module import function as alias
 
-Example
-^^^^^^^
+Example:
+
 .. code-block:: python
 
     import numpy as np
@@ -78,8 +78,8 @@ Relative imports
 * ``from . import ...``
 * ``from .. import ...``
 
-Syntax
-^^^^^^
+Syntax:
+
 .. code-block:: python
 
     from . import module

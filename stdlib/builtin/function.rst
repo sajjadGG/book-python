@@ -344,7 +344,6 @@ Other builtin functions
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/builtin_function_average.py
     :caption: :download:`Solution <assignments/builtin_function_average.py>`
     :end-before: # Solution

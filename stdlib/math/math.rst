@@ -226,7 +226,6 @@ Absolute value
 
 Assignments
 ===========
-
 .. todo:: Convert assignments to literalinclude
 
 Trigonometry

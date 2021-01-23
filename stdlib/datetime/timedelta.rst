@@ -203,7 +203,6 @@ Duration between two datetimes:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/datetime_timedelta_period.py
     :caption: :download:`Solution <assignments/datetime_timedelta_period.py>`
     :end-before: # Solution

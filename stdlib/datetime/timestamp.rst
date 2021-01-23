@@ -62,7 +62,6 @@ Convert JavaScript timestamp to ``datetime``:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/datetime_timestamp_limits.py
     :caption: :download:`Solution <assignments/datetime_timestamp_limits.py>`
     :end-before: # Solution

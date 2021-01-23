@@ -148,7 +148,6 @@ What Makes a Good Feature?
 
 Assignments
 ===========
-
 .. todo:: Convert assignments to literalinclude
 
 Feature Engineering

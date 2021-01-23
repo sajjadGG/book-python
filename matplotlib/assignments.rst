@@ -1,6 +1,5 @@
 Assignments
 ===========
-
 .. literalinclude:: assignments/matplotlib_trigonometry.py
     :caption: :download:`Solution <assignments/matplotlib_trigonometry.py>`
     :end-before: # Solution

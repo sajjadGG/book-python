@@ -390,7 +390,6 @@ Source: https://github.com/jakevdp/sklearn_pycon2015/blob/master/notebooks/03.1-
 
 Assignments
 ===========
-
 .. todo:: Convert assignments to literalinclude
 
 Wykorzystanie biblioteki ``sklearn``

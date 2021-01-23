@@ -401,7 +401,6 @@ Remove Polish diacritics:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/pandas_series_mapping_clean.py
     :caption: :download:`Solution <assignments/pandas_series_mapping_clean.py>`
     :end-before: # Solution

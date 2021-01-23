@@ -120,7 +120,6 @@ Example Model
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/django_addressbook.py
     :caption: :download:`Solution <assignments/django_addressbook.py>`
     :end-before: # Solution

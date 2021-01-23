@@ -311,7 +311,6 @@ to disk. Note that there are several useful flags we'll show below:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/matplotlib_lifecycle.py
     :caption: :download:`Solution <assignments/matplotlib_lifecycle.py>`
     :end-before: # Solution

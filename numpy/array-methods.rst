@@ -230,7 +230,6 @@ Signum
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_methods.py
     :caption: :download:`Solution <assignments/numpy_methods.py>`
     :end-before: # Solution

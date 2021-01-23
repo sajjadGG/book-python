@@ -280,7 +280,6 @@ Rows and Columns:
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_slice_1.py
     :caption: :download:`Solution <assignments/numpy_slice_1.py>`
     :end-before: # Solution

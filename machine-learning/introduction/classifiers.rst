@@ -1,6 +1,3 @@
-.. _Machine Learning Classifiers:
-
-***********
 Classifiers
 ***********
 

@@ -42,30 +42,27 @@ API
 
 TCP
 ---
+Server:
 
-Server
-^^^^^^
 .. literalinclude:: src/socket-tcp-server.py
     :language: python
     :caption: ``socket`` TCP Server
 
-Client
-^^^^^^
+Client:
+
 .. literalinclude:: src/socket-tcp-client.py
     :language: python
     :caption: ``socket`` TCP Client
 
 UDP
 ---
-
-Server
-^^^^^^
+Server:
 .. literalinclude:: src/socket-udp-server.py
     :language: python
     :caption: ``socket`` UDP Server
 
-Client
-^^^^^^
+Client:
+
 .. literalinclude:: src/socket-udp-client.py
     :language: python
     :caption: ``socket`` UDP Client
@@ -83,38 +80,38 @@ Multicast
 TCP
 ---
 
-Server
-^^^^^^
+Server:
+
 .. literalinclude:: src/socketserver-tcp-server.py
     :language: python
     :caption: ``socketserver`` TCP Server
 
-Client
-^^^^^^
+Client:
+
 .. literalinclude:: src/socket-tcp-client.py
     :language: python
     :caption: ``socket`` TCP Client
 
+
 Asynchronous
 ------------
 
-Threaded
-^^^^^^^^
-* ``socketserver.ThreadingTCPServer``
-* ``socketserver.ThreadingUDPServer``
+Threaded:
+    * ``socketserver.ThreadingTCPServer``
+    * ``socketserver.ThreadingUDPServer``
 
-.. literalinclude:: src/socketserver-tcp-threaded.py
-    :language: python
-    :caption: ``socketserver`` TCP Threaded Client
+    .. literalinclude:: src/socketserver-tcp-threaded.py
+        :language: python
+        :caption: ``socketserver`` TCP Threaded Client
 
-Forking
-^^^^^^^
-* ``socketserver.ForkingTCPServer``
-* ``socketserver.ForkingUDPServer``
+Forking:
 
-.. literalinclude:: src/socketserver-tcp-forking.py
-    :language: python
-    :caption: ``socketserver`` TCP Forking Client
+    * ``socketserver.ForkingTCPServer``
+    * ``socketserver.ForkingUDPServer``
+
+    .. literalinclude:: src/socketserver-tcp-forking.py
+        :language: python
+        :caption: ``socketserver`` TCP Forking Client
 
 
 References
@@ -124,7 +121,6 @@ References
 
 Assignments
 ===========
-
 .. todo:: Convert assignments to literalinclude
 
 Heartbeat

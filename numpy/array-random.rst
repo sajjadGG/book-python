@@ -278,7 +278,6 @@ Shuffle
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_random_float.py
     :caption: :download:`Solution <assignments/numpy_random_float.py>`
     :end-before: # Solution

@@ -29,7 +29,6 @@ Pseudo and Pure random numbers
 
 Assignments
 ===========
-
 .. todo:: Convert assignments to literalinclude
 
 Random numbers

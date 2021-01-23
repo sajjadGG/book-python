@@ -127,7 +127,6 @@ PCA dla zbioru Iris
 
 Assignments
 ===========
-
 .. todo:: Convert assignments to literalinclude
 
 PCA dla zbioru Pima Indian Diabetes

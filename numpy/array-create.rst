@@ -397,7 +397,6 @@ Performance
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/numpy_create_arange.py
     :caption: :download:`Solution <assignments/numpy_create_arange.py>`
     :end-before: # Solution

@@ -164,7 +164,6 @@ Broadcasting
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/pandas_series_arithmetic.py
     :caption: :download:`Solution <assignments/pandas_series_arithmetic.py>`
     :end-before: # Solution

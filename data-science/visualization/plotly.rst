@@ -1,15 +1,16 @@
-******
 Plotly
-******
+======
+
 
 Installation
-============
+------------
 .. code-block:: console
 
     $ pip install plotly
 
+
 Offline usage
-=============
+-------------
 .. code-block:: python
 
     # Change from (this will upload chart to plot.ly)
@@ -18,8 +19,9 @@ Offline usage
     # to (this will render chart offline - on your computer)
     import  plotly.offline as py
 
+
 Jupyter Usage
-=============
+-------------
 .. code-block:: python
 
     import plotly.offline as py
@@ -45,61 +47,61 @@ Jupyter Usage
 
 
 Plot Controls & IPython widgets
-===============================
+-------------------------------
 .. literalinclude:: src/plotly-controls.py
     :language: python
     :caption: Plot Controls & IPython widgets
 
-Charts
-======
 
-Tabl
+Table
 -----
 .. literalinclude:: src/plotly-table.py
     :language: python
     :caption: Plotting Table
 
+
 Bars
 ----
 
-Simple Bars
-^^^^^^^^^^^
+Simple Bars:
+
 .. literalinclude:: src/plotly-bars-simple.py
     :language: python
     :caption: Simple Bars
 
-Multi Bars
-^^^^^^^^^^
+Multi Bars:
+
 .. literalinclude:: src/plotly-bars-simple.py
     :language: python
     :caption: Multi Bars
 
+
 Box Plot
 --------
+Basic Box Plot:
 
-Basic Box Plot
-^^^^^^^^^^^^^^
 .. literalinclude:: src/plotly-box-basic.py
     :language: python
     :caption: Basic Box Plot
 
-Colored Box Plot
-^^^^^^^^^^^^^^^^
+Colored Box Plot:
+
 .. literalinclude:: src/plotly-box-colored.py
     :language: python
     :caption: Colored Box Plot
 
-Grouped Box Plot
-^^^^^^^^^^^^^^^^
+Grouped Box Plot:
+
 .. literalinclude:: src/plotly-box-grouped.py
     :language: python
     :caption: Grouped Box Plot
 
-Outliers
-^^^^^^^^
+Outliers:
+
 .. literalinclude:: src/plotly-box-outliers.py
     :language: python
     :caption: Outliers
+
 
 Line Chart
 ----------
@@ -108,28 +110,26 @@ Line Chart
     :caption: Line Chart
 
 Time Series
-===========
+-----------
 
-Simple Time Series
-------------------
+Simple Time Series:
+
 .. literalinclude:: src/plotly-timeseries-simple.py
     :language: python
     :caption: Simple Time Series
 
-Timeseries Range
-----------------
+Timeseries Range:
+
 .. literalinclude:: src/plotly-timeseries-range.py
     :language: python
     :caption: Timeseries Range
 
-Rangeslider
------------
+Rangeslider:
+
 .. literalinclude:: src/plotly-timeseries-rangeslider.py
     :language: python
     :caption: Timeseries Range
 
-Two plots
-=========
 
 Multiple x-axis
 ---------------
@@ -137,11 +137,13 @@ Multiple x-axis
     :language: python
     :caption: Multiple x-axis
 
+
 Multiple y-axis
 ---------------
 .. literalinclude:: src/plotly-multiaxis-x.py
     :language: python
     :caption: Multiple y-axis
+
 
 Line Plot Modes
 ---------------
@@ -149,11 +151,13 @@ Line Plot Modes
     :language: python
     :caption: Line Plot Modes
 
+
 Labels with annotations
 -----------------------
 .. literalinclude:: src/plotly-multiaxis-annotations.py
     :language: python
     :caption: Labels with annotations
+
 
 Filled Line
 -----------
@@ -161,11 +165,9 @@ Filled Line
     :language: python
     :caption: Filled Line
 
-3D Plotting
-===========
 
-Simple
-------
+3D Plotting
+-----------
 .. literalinclude:: src/plotly-3d-simple.py
     :language: python
     :caption: Simple 3D Plotting

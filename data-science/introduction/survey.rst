@@ -1,7 +1,5 @@
-******
 Survey
-******
-
+======
 
 #. Ile masz lat doświadczenia z programowaniem (poza programowaniem w Pythonie)?
 

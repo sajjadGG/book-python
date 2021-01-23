@@ -464,7 +464,6 @@ Logic operators
 
 Assignments
 ===========
-
 .. literalinclude:: assignments/types_bool.py
     :caption: :download:`Solution <assignments/types_bool.py>`
     :end-before: # Solution
