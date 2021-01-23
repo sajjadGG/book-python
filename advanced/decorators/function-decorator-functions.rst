@@ -1,12 +1,9 @@
-.. _Decorator Function with Func:
-
-****************************
 Decorator Function with Func
-****************************
+============================
 
 
 Rationale
-=========
+---------
 Syntax:
     .. code-block:: python
 
@@ -21,7 +18,7 @@ Is equivalent to:
 
 
 Syntax
-======
+------
 * Decorator must return pointer to ``wrapper``
 * ``wrapper`` is a closure function
 * ``wrapper`` name is a convention, but you can name it anyhow
@@ -52,7 +49,7 @@ Usage:
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     def run(func):
@@ -71,7 +68,7 @@ Example
 
 
 Use Cases
-=========
+---------
 File exists:
 
 .. code-block:: python
@@ -226,7 +223,7 @@ Stacked decorators:
 
 
 Scope
-=====
+-----
 Recap information about factorial (``n!``):
 
 .. code-block:: python
@@ -374,8 +371,8 @@ Cache with embedded scope:
     #  6: 720}
 
 
-Examples
-========
+Example
+-------
 .. code-block:: python
 
     DATABASE = {
@@ -505,37 +502,36 @@ Django Login Required. Decorator checks whether user is_authenticated. If not, u
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/decorator_func_syntax.py
-    :caption: :download:`Solution <assignments/decorator_func_syntax.py>`
+-----------
+.. literalinclude:: assignments/decorator_func_a.py
+    :caption: :download:`Solution <assignments/decorator_func_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_func_disable.py
-    :caption: :download:`Solution <assignments/decorator_func_disable.py>`
+.. literalinclude:: assignments/decorator_func_b.py
+    :caption: :download:`Solution <assignments/decorator_func_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_func_check.py
-    :caption: :download:`Solution <assignments/decorator_func_check.py>`
+.. literalinclude:: assignments/decorator_func_c.py
+    :caption: :download:`Solution <assignments/decorator_func_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_func_astronauts.py
-    :caption: :download:`Solution <assignments/decorator_func_astronauts.py>`
+.. literalinclude:: assignments/decorator_func_d.py
+    :caption: :download:`Solution <assignments/decorator_func_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_func_memoization.py
-    :caption: :download:`Solution <assignments/decorator_func_memoization.py>`
+.. literalinclude:: assignments/decorator_func_e.py
+    :caption: :download:`Solution <assignments/decorator_func_e.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_func_abspath.py
-    :caption: :download:`Solution <assignments/decorator_func_abspath.py>`
+.. literalinclude:: assignments/decorator_func_f.py
+    :caption: :download:`Solution <assignments/decorator_func_f.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_func_numeric.py
-    :caption: :download:`Solution <assignments/decorator_func_numeric.py>`
+.. literalinclude:: assignments/decorator_func_g.py
+    :caption: :download:`Solution <assignments/decorator_func_g.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_func_typecheck.py
-    :caption: :download:`Solution <assignments/decorator_func_typecheck.py>`
+.. literalinclude:: assignments/decorator_func_h.py
+    :caption: :download:`Solution <assignments/decorator_func_h.py>`
     :end-before: # Solution
 

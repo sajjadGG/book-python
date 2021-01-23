@@ -9,7 +9,7 @@ English:
     2. Define class `File` with parameter: `filename: str`
     3. `File` must implement Context Manager protocol
     4. `File` buffers lines added using `File.append(text: str)` method
-    5. On `with` block exit `File` class opens file and write buffer
+    5. On `with` block exit `File` class creates, opens and write buffer to file
     6. Compare result with "Tests" section (see below)
 
 Polish:
@@ -17,7 +17,7 @@ Polish:
     2. Stwórz klasę `File` z parametrem: `filename: str`
     3. `File` ma implementować protokół Context Manager
     4. `File` buforuje linie dodawane za pomocą metody `File.append(text: str)`
-    5. Na wyjściu z bloku `with` klasa `File` otwiera plik i zapisuje bufor
+    5. Na wyjściu z bloku `with` klasa `File` tworzy, otwiera i zapisuje bufor do pliku
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Hints:

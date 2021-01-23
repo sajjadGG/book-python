@@ -1,12 +1,9 @@
-.. _Advanced Annotation Sequence:
-
-*******************
 Annotation Sequence
-*******************
+===================
 
 
 Rationale
-=========
+---------
 * Before Python 3.9 you need ``from typing import List, Set, Tuple, Dict``
 * Since Python 3.9: :pep:`585` -- Type Hinting Generics In Standard Collections
 
@@ -34,7 +31,7 @@ Rationale
 
 
 Tuple
-=====
+-----
 Generic type annotation:
 
 .. code-block:: python
@@ -69,7 +66,7 @@ Before Python 3.9:
 
 
 List
-====
+----
 .. code-block:: python
 
     data: list = list()
@@ -96,7 +93,7 @@ Before Python 3.9:
 
 
 Set
-===
+---
 .. code-block:: python
 
     data: set = set()
@@ -121,7 +118,7 @@ Before Python 3.9:
 
 
 Frozenset
-=========
+---------
 .. code-block:: python
 
     data: frozenset = set()
@@ -146,7 +143,7 @@ Before Python 3.9:
 
 
 List of Tuples
-==============
+--------------
 .. code-block:: python
 
     data: list[tuple] = [
@@ -195,7 +192,7 @@ Before Python 3.9:
 
 
 List of Lists
-=============
+-------------
 .. code-block:: python
 
     data: list[list] = [
@@ -230,7 +227,7 @@ Before Python 3.9:
 
 
 Aliases
-=======
+-------
 .. code-block:: python
 
     Point = tuple[int, int]
@@ -277,7 +274,7 @@ Before Python 3.9:
 
 
 Unions
-======
+------
 .. code-block:: python
 
     from typing import Union
@@ -335,7 +332,7 @@ Before Python 3.9:
 
 
 NamedTuple
-==========
+----------
 .. code-block:: python
 
     from typing import NamedTuple
@@ -347,13 +344,13 @@ NamedTuple
         agency: str = 'NASA'
 
 
-    astro = Astronaut('Mark', lastname='Watney')
+    astro: Astronaut = Astronaut('Mark', lastname='Watney')
 
     print(astro)
     # Astronaut(firstname='Mark', lastname='Watney', agency='NASA')
 
 
 More Information
-================
+----------------
 * Example: https://github.com/pandas-dev/pandas/blob/master/pandas/core/frame.py#L458
 * More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`

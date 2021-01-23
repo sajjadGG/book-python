@@ -202,14 +202,14 @@ Dict Cache:
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/decorator_cls_a.py
-    :caption: :download:`Solution <../_assignments/decorator_cls_a.py>`
+.. literalinclude:: assignments/decorator_cls_a.py
+    :caption: :download:`Solution <assignments/decorator_cls_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_cls_b.py
-    :caption: :download:`Solution <../_assignments/decorator_cls_b.py>`
+.. literalinclude:: assignments/decorator_cls_b.py
+    :caption: :download:`Solution <assignments/decorator_cls_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_cls_c.py
-    :caption: :download:`Solution <../_assignments/decorator_cls_c.py>`
+.. literalinclude:: assignments/decorator_cls_c.py
+    :caption: :download:`Solution <assignments/decorator_cls_c.py>`
     :end-before: # Solution

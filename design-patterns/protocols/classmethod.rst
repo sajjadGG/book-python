@@ -350,6 +350,6 @@ Use Cases
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/protocol_classmethod_a.py
-    :caption: :download:`Solution <../_assignments/protocol_classmethod_a.py>`
+.. literalinclude:: assignments/protocol_classmethod_a.py
+    :caption: :download:`Solution <assignments/protocol_classmethod_a.py>`
     :end-before: # Solution

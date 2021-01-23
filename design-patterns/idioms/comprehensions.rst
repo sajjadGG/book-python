@@ -923,18 +923,18 @@ Conditional Expression
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/idioms_comprehension_a.py
-    :caption: :download:`Solution <../_assignments/idioms_comprehension_a.py>`
+.. literalinclude:: assignments/idioms_comprehension_a.py
+    :caption: :download:`Solution <assignments/idioms_comprehension_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/idioms_comprehension_b.py
-    :caption: :download:`Solution <../_assignments/idioms_comprehension_b.py>`
+.. literalinclude:: assignments/idioms_comprehension_b.py
+    :caption: :download:`Solution <assignments/idioms_comprehension_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/idioms_comprehension_c.py
-    :caption: :download:`Solution <../_assignments/idioms_comprehension_c.py>`
+.. literalinclude:: assignments/idioms_comprehension_c.py
+    :caption: :download:`Solution <assignments/idioms_comprehension_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/idioms_comprehension_d.py
-    :caption: :download:`Solution <../_assignments/idioms_comprehension_d.py>`
+.. literalinclude:: assignments/idioms_comprehension_d.py
+    :caption: :download:`Solution <assignments/idioms_comprehension_d.py>`
     :end-before: # Solution

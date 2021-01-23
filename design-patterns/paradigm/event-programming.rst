@@ -132,6 +132,6 @@ Use:
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/paradigm_event_a.py
-    :caption: :download:`Solution <../_assignments/paradigm_event_a.py>`
+.. literalinclude:: assignments/paradigm_event_a.py
+    :caption: :download:`Solution <assignments/paradigm_event_a.py>`
     :end-before: # Solution

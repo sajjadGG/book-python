@@ -69,7 +69,7 @@ Itertools
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/idioms_range_a.py
-    :caption: :download:`Solution <../_assignments/idioms_range_a.py>`
+.. literalinclude:: assignments/idioms_range_a.py
+    :caption: :download:`Solution <assignments/idioms_range_a.py>`
     :end-before: # Solution
 

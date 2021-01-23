@@ -1,12 +1,9 @@
-.. _Decorator Function with Cls:
-
-***************************
 Decorator Function with Cls
-***************************
+===========================
 
 
 Rationale
-=========
+---------
 * ``mydecorator`` is a decorator name
 * ``MyClass`` is a class name
 
@@ -24,7 +21,7 @@ Is equivalent to:
 
 
 Syntax
-======
+------
 * ``mydecorator`` is a decorator name
 * ``MyClass`` is a class name
 
@@ -61,7 +58,7 @@ Usage:
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     def run(cls):
@@ -83,10 +80,10 @@ Example
 
 
 Use Case
-========
+--------
 
-Logger
-------
+Logger:
+
 .. code-block:: python
 
     import logging
@@ -105,8 +102,8 @@ Logger
     print(Astronaut.logger)
     # <Logger Astronaut (WARNING)>
 
-Object Birthday
----------------
+Object Birthday:
+
 .. code-block:: python
 
     from time import time
@@ -125,8 +122,6 @@ Object Birthday
     print(Astronaut._instance_created)
     # 1607187641.3407109
 
-Singleton with Function Wrapper
--------------------------------
 Singleton using functional wrapper:
 
 .. code-block:: python
@@ -154,8 +149,6 @@ Singleton using functional wrapper:
     b.connect()
     # Connecting... using <__main__.DatabaseConnection object at 0x10cd56fa0>
 
-Singleton with Class Wrapper
-----------------------------
 Singleton using class wrapper:
 
 .. code-block:: python
@@ -184,8 +177,7 @@ Singleton using class wrapper:
     b.connect()
     # Connecting... using <__main__.singleton.<locals>.Wrapper object at 0x1085b6fa0>
 
-
 Assignments
-===========
+-----------
 .. todo:: Create assignments
 

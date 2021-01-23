@@ -623,10 +623,10 @@ Standard Library Itertools
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/protocol_iterator_a.py
-    :caption: :download:`Solution <../_assignments/protocol_iterator_a.py>`
+.. literalinclude:: assignments/protocol_iterator_a.py
+    :caption: :download:`Solution <assignments/protocol_iterator_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_iterator_b.py
-    :caption: :download:`Solution <../_assignments/protocol_iterator_b.py>`
+.. literalinclude:: assignments/protocol_iterator_b.py
+    :caption: :download:`Solution <assignments/protocol_iterator_b.py>`
     :end-before: # Solution

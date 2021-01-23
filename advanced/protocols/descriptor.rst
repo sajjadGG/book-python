@@ -1,59 +1,18 @@
-.. _Protocol Descriptor:
-
-**********
 Descriptor
-**********
+==========
 
 
 Rationale
-=========
+---------
 * Add managed attributes to objects
 * Outsource functionality into specialized classes
 * Descriptors: ``classmethod``, ``staticmethod``, ``property``, functions in general
 * ``__del__(self)`` is reserved when object is being deleted by garbage collector (destructor)
 * ``__set_name()`` After class creation, Python default metaclass will call it with parent and classname
 
-.. code-block:: python
-
-    class Temperature:
-        kelvin = property()
-        _value: float
-
-        @kelvin.setter
-        def myattribute(self, value):
-            if value < 0:
-                raise ValueError
-            else:
-                self._value = value
-
-.. code-block:: python
-
-    class Temperature:
-        kelvin: float
-
-        def __setattr__(self, attrname, value):
-            if attrname == 'kelvin' and value < 0:
-                raise ValueError
-            else:
-                super().__setattr__(attrname, value)
-
-.. code-block:: python
-
-    class Kelvin:
-        def __set__(self, parent, value):
-            if value < 0:
-                raise ValueError
-            else:
-                parent._value = value
-
-
-    class Temperature:
-        kelvin = Kelvin()
-        _value: float
-
 
 Protocol
-========
+--------
 * ``__get__(self, parent, *args) -> self``
 * ``__set__(self, parent, value) -> None``
 * ``__delete__(self, parent) -> None``
@@ -81,8 +40,55 @@ Protocol
             ...
 
 
+Property vs Reflection vs Descriptor
+------------------------------------
+Property:
+
+    .. code-block:: python
+
+        class Temperature:
+            kelvin = property()
+            _value: float
+
+            @kelvin.setter
+            def myattribute(self, value):
+                if value < 0:
+                    raise ValueError
+                else:
+                    self._value = value
+
+Reflection:
+
+    .. code-block:: python
+
+        class Temperature:
+            kelvin: float
+
+            def __setattr__(self, attrname, value):
+                if attrname == 'kelvin' and value < 0:
+                    raise ValueError
+                else:
+                    super().__setattr__(attrname, value)
+
+Descriptor:
+
+    .. code-block:: python
+
+        class Kelvin:
+            def __set__(self, parent, value):
+                if value < 0:
+                    raise ValueError
+                else:
+                    parent._value = value
+
+
+        class Temperature:
+            kelvin = Kelvin()
+            _value: float
+
+
 Example
-=======
+-------
 .. code-block:: python
 
     class MyField:
@@ -113,7 +119,7 @@ Example
 
 
 Use Cases
-=========
+---------
 Kelvin Temperature Validator:
 
 .. code-block:: python
@@ -202,18 +208,73 @@ Temperature Conversion:
     print(f'C: {t.celsius}')        # 100.0
     print(f'F: {t.fahrenheit}')     # 212.0
 
+Value Range Descriptor:
+
 .. code-block:: python
 
+    class Value:
+        MIN: int
+        MAX: int
+        name: str
+        value: float
+
+        def __init__(self, min, max):
+            self.MIN = min
+            self.MAX = max
+
+        def __set__(self, instance, value):
+            if self.MIN <= value < self.MAX:
+                self.value = value
+            else:
+                raise ValueError(f'{self.name} ({value}) is not in range({self.MIN}, {self.MAX})')
+
+        def __get__(self, instance, owner):
+            return self.value
+
+        def __delete__(self, instance):
+            raise PermissionError
+
+        def __set_name__(self, owner, name):
+            self.name = name
+
+
+    class KelvinTemperature:
+        kelvin = Value(min=0, max=99999)
+        celsius = Value(min=-273.15, max=99999)
+
+
+    t = KelvinTemperature()
+
+    t.kelvin = 10
+    t.kelvin = -1
+    # Traceback (most recent call last):
+    # ValueError: kelvin (-1) is not in range(0, 99999)
+
+    t.celsius = -273
+    t.celsius = -274
+    # Traceback (most recent call last):
+    # ValueError: celsius (-274) is not in range(-273.15, 99999)
+
+    print(t.kelvin)
+    # 10
+    print(t.celsius)
+    # -273
+
+
+
+Note ``__repr__()`` method and how to access Descriptor value.
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+
+    @dataclass
     class ValueRange:
         name: str
         min: float
         max: float
-        value: float
-
-        def __init__(self, name, min, max):
-            self.name = name
-            self.min = min
-            self.max = max
+        value: float = None
 
         def __set__(self, parent, value):
             if value not in range(self.min, self.max):
@@ -241,15 +302,57 @@ Temperature Conversion:
     Astronaut('Mark Watney', age=38, height=170)
     # Astronaut(name='Mark Watney', age=38, height=170)
 
-    Astronaut('Mark Watney', age=44, height=170)
+    Astronaut('Melissa Lewis', age=44, height=170)
     # Traceback (most recent call last):
     # ValueError: Age is not between 28 and 42
 
-    Astronaut('Mark Watney', age=38, height=210)
+    Astronaut('Rick Martinez', age=38, height=210)
     # Traceback (most recent call last):
     # ValueError: Height is not between 150 and 200
 
-.. figure:: img/datetime-compare.png
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+
+    @dataclass
+    class ValueRange:
+        name: str
+        min: int
+        max: int
+
+        def __set__(self, instance, value):
+            print(f'Setter: {self.name} -> {value}')
+
+
+    class Point:
+        x = ValueRange('x', 0, 10)
+        y = ValueRange('y', 0, 10)
+        z = ValueRange('z', 0, 10)
+
+        def __init__(self, x, y, z):
+            self.x = x
+            self.y = y
+            self.z = z
+
+        def __setattr__(self, attrname, value):
+            print(f'Setattr: {attrname} -> {value}')
+            super().__setattr__(attrname, value)
+
+
+    p = Point(1,2,3)
+    # Setattr: x -> 1
+    # Setter: x -> 1
+    # Setattr: y -> 2
+    # Setter: y -> 2
+    # Setattr: z -> 3
+    # Setter: z -> 3
+
+    p.notexisting = 1337
+    # Setattr: notexisting -> 1337
+
+
+.. figure:: ../_img/datetime-compare.png
 
     Comparing datetime works only when all has the same timezone (UTC). More information in :ref:`Stdlib Datetime Timezone`
 
@@ -303,31 +406,48 @@ Descriptor Timezone Converter:
 
 
 Function Descriptor
-===================
+-------------------
+.. code-block:: python
+
+    def hello():
+        pass
+
+
+    type(hello)
+    # <class 'function'>
+    hasattr(hello, '__get__')
+    # True
+    hasattr(hello, '__set__')
+    # False
+    hasattr(hello, '__delete__')
+    # False
+    hasattr(hello, '__set_name__')
+    # False
+    dir(hello)
+    # ['__annotations__', '__call__', '__class__', '__closure__', '__code__', '__defaults__',
+    # '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__',
+    # '__get__', '__getattribute__', '__globals__', '__gt__', '__hash__', '__init__',
+    # '__init_subclass__', '__kwdefaults__', '__le__', '__lt__', '__module__', '__name__',
+    # '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__',
+    # '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
+
 .. code-block:: python
 
     class Astronaut:
-        def say_hello(self):
+        def hello(self):
             pass
 
-
-    Astronaut.say_hello
-    # <function __main__.Astronaut.say_hello(self)>
-
-    astro = Astronaut()
-    astro.say_hello
-    # <bound method Astronaut.say_hello of <__main__.Astronaut object at 0x10a270070>>
-
-    Astronaut.say_hello.__get__(astro, Astronaut)
-    # <bound method Astronaut.say_hello of <__main__.Astronaut object at 0x10a270070>>
-
-    type(Astronaut.say_hello)
+    type(Astronaut.hello)
     # <class 'function'>
-
-    type(astro.say_hello)
-    # <class 'method'>
-
-    dir(Astronaut.say_hello)
+    hasattr(Astronaut.hello, '__get__')
+    # True
+    hasattr(Astronaut.hello, '__set__')
+    # False
+    hasattr(Astronaut.hello, '__delete__')
+    # False
+    hasattr(Astronaut.hello, '__set_name__')
+    # False
+    dir(Astronaut.hello)
     # ['__annotations__', '__call__', '__class__', '__closure__', '__code__', '__defaults__',
     #  '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__',
     #  '__get__', '__getattribute__', '__globals__', '__gt__', '__hash__', '__init__',
@@ -335,7 +455,25 @@ Function Descriptor
     #  '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__',
     #  '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
 
-    dir(astro.say_hello)
+.. code-block:: python
+
+    class Astronaut:
+        def hello(self):
+            pass
+
+    astro = Astronaut()
+
+    type(astro.hello)
+    # <class 'method'>
+    hasattr(astro.hello, '__get__')
+    # True
+    hasattr(astro.hello, '__set__')
+    # False
+    hasattr(astro.hello, '__delete__')
+    # False
+    hasattr(astro.hello, '__set_name__')
+    # False
+    dir(astro.hello)
     # ['__call__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__',
     #  '__func__', '__ge__', '__get__', '__getattribute__', '__gt__', '__hash__', '__init__',
     #  '__init_subclass__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
@@ -343,16 +481,15 @@ Function Descriptor
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/protocol_descriptor_simple.py
-    :caption: :download:`Solution <assignments/protocol_descriptor_simple.py>`
+-----------
+.. literalinclude:: assignments/protocol_descriptor_a.py
+    :caption: :download:`Solution <assignments/protocol_descriptor_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/protocol_descriptor_valuerange.py
-    :caption: :download:`Solution <assignments/protocol_descriptor_valuerange.py>`
+.. literalinclude:: assignments/protocol_descriptor_b.py
+    :caption: :download:`Solution <assignments/protocol_descriptor_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/protocol_descriptor_inheritance.py
-    :caption: :download:`Solution <assignments/protocol_descriptor_inheritance.py>`
+.. literalinclude:: assignments/protocol_descriptor_c.py
+    :caption: :download:`Solution <assignments/protocol_descriptor_c.py>`
     :end-before: # Solution

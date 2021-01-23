@@ -1,12 +1,9 @@
-.. _Decorators About:
-
-****************
 Decorators About
-****************
+================
 
 
 Rationale
-=========
+------------------------------
 * Since Python 2.4: :pep:`318` -- Decorators for Functions and Methods
 
 * Decorator is an object, which takes another object as it's argument
@@ -22,7 +19,7 @@ Rationale
 
 
 Syntax
-======
+------
 * ``func`` is a pointer to function which is being decorated
 * ``args`` arbitrary number of positional arguments
 * ``kwargs`` arbitrary number of keyword arguments
@@ -45,7 +42,7 @@ Syntax
 
 
 Names
-=====
+-----
 .. code-block:: python
 
     def mydecorator(func):
@@ -74,7 +71,7 @@ Names
 
 
 Types of decorators
-===================
+-------------------
 By type:
 
     * Function decorators
@@ -99,7 +96,7 @@ By number of arguments:
 
 
 Decorator Types
-===============
+---------------
 * Function decorators
 * Class decorators
 * In this example:
@@ -120,7 +117,7 @@ Decorator Types
 
 
 Wrapper Type
-============
+------------
 * Wrapper function
 * Wrapper class
 * Wrapper method
@@ -155,8 +152,9 @@ Wrapper Type
         def __call__(*args, **kwargs):
             ...
 
+
 Decorated Object
-================
+----------------
 * Decorating function (by convention ``func`` or ``fn``)
 * Decorating class (by convention ``cls``)
 * Decorating method (by convention ``mth``, ``meth`` or ``method``)
@@ -196,7 +194,7 @@ Decorated Object
 
 
 Usage
-=====
+-----
 .. code-block:: python
 
     @mydecorator
@@ -237,7 +235,7 @@ Usage
 
 
 Arguments
-=========
+---------
 * Without arguments
 * With arguments
 

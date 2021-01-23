@@ -1,12 +1,9 @@
-.. _Protocol Context Manager:
-
-***************
 Context Manager
-***************
+===============
 
 
 Rationale
-=========
+---------
 * Files
 * Buffering data
 * Database connection
@@ -19,7 +16,7 @@ Rationale
 
 
 Protocol
-========
+--------
 * ``__enter__(self) -> self``
 * ``__exit__(self, *args) -> None``
 
@@ -39,7 +36,7 @@ Protocol
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class MyClass:
@@ -85,7 +82,7 @@ Example
 
 
 Inheritance
-===========
+-----------
 .. code-block:: python
 
     from contextlib import ContextDecorator
@@ -112,7 +109,7 @@ Inheritance
 
 
 Decorator
-=========
+---------
 * Split function for before and after ``yield``
 * Code before ``yield`` becomes ``__enter__()``
 * Code after ``yield`` becomes ``__exit__()``
@@ -156,11 +153,8 @@ Decorator
     # </p>
 
 
-Use Cases
-=========
-
-Files
------
+Use Case - Files
+----------------
 .. code-block:: python
 
     f = open(FILE)
@@ -187,46 +181,57 @@ Files
     file[4_294_967_295] = '/tmp/myfileX.txt'
     file[4_294_967_296] -> KernelPanic
 
-Database
---------
+
+Use Case - Database
+-------------------
 .. code-block:: python
 
     import sqlite3
 
-
     SQL_CREATE_TABLE = """
         CREATE TABLE IF NOT EXISTS astronauts (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            pesel INTEGER UNIQUE,
-            firstname TEXT,
-            lastname TEXT)"""
-    SQL_INSERT = 'INSERT INTO astronauts VALUES (NULL, :pesel, :firstname, :lastname)'
-    SQL_SELECT = 'SELECT * from astronauts'
+            firstname TEXT NOT NULL,
+            lastname TEXT NOT NULL,
+            age INTEGER
+        )
+    """
 
-    DATA = [{'pesel': '61041212345', 'firstname': 'José', 'lastname': 'Jiménez'},
-            {'pesel': '61041212346', 'firstname': 'Jan', 'lastname': 'Twardowski'},
-            {'pesel': '61041212347', 'firstname': 'Melissa', 'lastname': 'Lewis'},
-            {'pesel': '61041212348', 'firstname': 'Alex', 'lastname': 'Vogel'},
-            {'pesel': '61041212349', 'firstname': 'Ryan', 'lastname': 'Stone'}]
+    SQL_INSERT = """
+        INSERT INTO astronauts VALUES(NULL, :firstname, :lastname, :age)
+    """
+
+    SQL_SELECT = """
+        SELECT * FROM astronauts
+    """
+
+    DATA = [
+        {'firstname': 'Jan', 'lastname': 'Twardowski', 'age': 44},
+        {'firstname': 'Mark', 'lastname': 'Watney', 'age': 33},
+        {'firstname': 'Melissa', 'lastname': 'Lewis', 'age': 36},
+    ]
 
 
-    with sqlite3.connect(':memory:') as db:
+    with sqlite3.connect('/tmp/mydatabase.db') as db:
         db.execute(SQL_CREATE_TABLE)
         db.executemany(SQL_INSERT, DATA)
-
+        db.row_factory = sqlite3.Row
         for row in db.execute(SQL_SELECT):
-            print(row)
+            print(dict(row))
 
-Lock
-----
+    # {'id': 1, 'firstname': 'Jan', 'lastname': 'Twardowski', 'age': 44}
+    # {'id': 2, 'firstname': 'Mark', 'lastname': 'Watney', 'age': 33}
+    # {'id': 3, 'firstname': 'Melissa', 'lastname': 'Lewis', 'age': 36}
+
+
+Use Case - Lock
+---------------
 .. code-block:: python
 
     from threading import Lock
 
-    # Make lock
-    lock = Lock()
 
-    # Use lock
+    lock = Lock()
     lock.acquire()
 
     try:
@@ -239,16 +244,15 @@ Lock
 
     from threading import Lock
 
-    # Make lock
     lock = Lock()
 
-    # Use lock
     with lock:
         print('Critical section 1')
         print('Critical section 2')
 
-String Microbenchmark
----------------------
+
+Use Case - Microbenchmark
+-------------------------
 .. code-block:: python
 
     from time import time
@@ -313,18 +317,16 @@ String Microbenchmark
     # Duration of %-style is 4.02 second
 
 
-
 Assignments
-===========
-
-.. literalinclude:: assignments/protocol_contextmanager_file.py
-    :caption: :download:`Solution <assignments/protocol_contextmanager_file.py>`
+-----------
+.. literalinclude:: assignments/protocol_contextmanager_a.py
+    :caption: :download:`Solution <assignments/protocol_contextmanager_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/protocol_contextmanager_buffer.py
-    :caption: :download:`Solution <assignments/protocol_contextmanager_buffer.py>`
+.. literalinclude:: assignments/protocol_contextmanager_b.py
+    :caption: :download:`Solution <assignments/protocol_contextmanager_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/protocol_contextmanager_autosave.py
-    :caption: :download:`Solution <assignments/protocol_contextmanager_autosave.py>`
+.. literalinclude:: assignments/protocol_contextmanager_c.py
+    :caption: :download:`Solution <assignments/protocol_contextmanager_c.py>`
     :end-before: # Solution

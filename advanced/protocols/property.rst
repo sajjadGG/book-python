@@ -1,12 +1,9 @@
-.. _Protocol Property:
-
-********
 Property
-********
+========
 
 
 Rationale
-=========
+---------
 * Disable attribute modification
 * Logging value access
 * Check boundary
@@ -14,77 +11,253 @@ Rationale
 * Check argument type
 
 
+Problem
+-------
+.. code-block:: python
+
+    class Point:
+        x: int
+
+        def get_x(self): pass
+        def set_x(self, newvalue): pass
+        def del_x(self): pass
+
+
+    pt = Point()
+    pt.set_x(1)
+
+.. code-block:: python
+
+    class Point:
+        x: int
+        y: int
+
+        def get_x(self): pass
+        def set_x(self, newvalue): pass
+        def del_x(self): pass
+        def get_y(self): pass
+        def set_y(self, newvalue): pass
+        def del_y(self): pass
+
+
+    pt = Point()
+    pt.set_x(1)
+    pt.set_y(1)
+
+.. code-block:: python
+
+    class Point:
+        x: int
+        y: int
+        z: int
+
+        def get_x(self) -> int: pass
+        def get_x(self): pass
+        def set_x(self, newvalue): pass
+        def del_x(self): pass
+        def get_y(self): pass
+        def set_y(self, newvalue): pass
+        def del_y(self): pass
+        def get_z(self): pass
+        def set_z(self, newvalue): pass
+        def del_z(self): pass
+
+
+    pt = Point()
+    pt.set_x(1)
+    pt.set_y(1)
+    pt.set_z(1)
+
+
+What if...
+----------
+.. code-block:: python
+
+    class Point:
+        x: int
+        y: int
+        z: int
+
+        def set_position(self, x, y, z):
+            self.x = x
+            self.y = y
+            self.z = z
+
+    pt = Point()
+    pt.set_position(1, 2, 3)
+
+Works for point.
+How about astronauts
+
+.. code-block:: python
+
+    class Astronaut:
+        firstname: str
+        middlename: str
+        lastname: str
+
+        def set_name(self, name):
+            first, mid, last = name.split()
+            self.firstname = first
+            self.middlename = mid
+            self.lastname = last
+
+
+Do everyone have a middle name?
+Do everyone have first or lastname?
+
+
+Solution
+--------
+.. code-block:: python
+
+    class Point:
+        x: int
+        y: int
+        z: int
+
+    pt = Point()
+    pt.x = 1
+    pt.y = 2
+    pt.z = 3
+
+
+But what if we want to make validation:
+
+.. code-block:: python
+
+    class Point:
+        x: int
+        y: int
+        z: int
+
+        def set_x(self, newvalue):
+            if newvalue > 0:
+                self.x = newvalue
+            else:
+                raise ValueError
+
+        def set_y(self, newvalue):
+            if newvalue > 0:
+                self.y = newvalue
+            else:
+                raise ValueError
+
+        def set_z(self, newvalue):
+            if newvalue > 0:
+                self.z = newvalue
+            else:
+                raise ValueError
+
+We can refactor this code:
+
+.. code-block:: python
+
+    class Point:
+        x: int
+        y: int
+        z: int
+
+        def _is_valid(self, value):
+            if newvalue > 0:
+                return value
+            else:
+                raise ValueError
+
+        def set_x(self, newvalue):
+            self.x = self._valid(newvalue)
+
+        def set_y(self, newvalue):
+            self.y = self._valid(newvalue)
+
+        def set_z(self, newvalue):
+            self.z = self._valid(newvalue)
+
+But problem persist.
+
+What if all parameters can have different ranges:
+
+    - age between 0 and 130
+    - height between 150 and 210
+    - name first capital letter, then lowercased letters
+
+
 Protocol
-========
-* ``value = property()`` - creates property
-* ``@value.getter`` - getter for attribute (``value`` has to be ``property``)
-* ``@value.setter`` - setter for attribute (``value`` has to be ``property``)
-* ``@value.deleter`` - deleter for attribute (``value`` has to be ``property``)
+--------
+* ``myattribute = property()`` - creates property
+* ``@myattribute.getter`` - getter for attribute
+* ``@myattribute.setter`` - setter for attribute
+* ``@myattribute.deleter`` - deleter for attribute
+* Method name must be the same as attribute name
+* ``myattribute`` has to be ``property``
 * ``@property`` - creates property and a getter
 
-Syntax:
-    .. code-block:: python
+.. code-block:: python
 
-        class MyClass:
+    class MyClass:
+        myattribute = property()
 
-            @property
-            def myattribute(self):
-                return ...
+        @myattribute.getter
+        def myattribute(self):
+            return ...
 
-Alternative:
-    .. code-block:: python
+        @myattribute.setter
+        def myattribute(self):
+            ...
 
-        class MyClass:
-            myattribute = property()
-
-            @myattribute.getter
-            def myattribute(self):
-                return ...
-
-Are equivalent to:
-    .. code-block:: python
-
-        class MyClass:
-
-            def myattribute(self):
-                return ...
-
-            myattribute = property(myattribute)
+        @myattribute.deleter
+        def myattribute(self):
+            ...
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class KelvinTemperature:
         value: float
 
-        def __init__(self, value):
-            self.value = value
-
+    t = KelvinTemperature()
+    t.value = -2               # Should raise ValueError('Kelvin cannot be negative')
 
 .. code-block:: python
 
     class KelvinTemperature:
         value: float
 
-        def __init__(self, value):
-            if value < 0:
+        def __init__(self, initialvalue):
+            self.value = initialvalue
+
+    t = KelvinTemperature(-1)   # Should raise ValueError('Kelvin cannot be negative')
+    t.value = -2                # Should raise ValueError('Kelvin cannot be negative')
+
+.. code-block:: python
+
+    class KelvinTemperature:
+        value: float
+
+        def __init__(self, initialvalue):
+            if initialvalue < 0:
                 raise ValueError('Negative Kelvin Temperature')
-            self.value = value
+            self.value = initialvalue
+
+
+    t = KelvinTemperature()
+    t.value = -1
+
 
 .. code-block:: python
 
     class KelvinTemperature:
         _value: float
 
-        def __init__(self, value):
-            self.set_value(value)
+        def __init__(self, initialvalue):
+            self.set_value(initialvalue)
 
-        def set_value(self, new_value):
-            if new_value < 0:
+        def set_value(self, newvalue):
+            if newvalue < 0:
                 raise ValueError('Negative Kelvin Temperature')
-            self._value = new_value
+            self._value = newvalue
 
 .. code-block:: python
 
@@ -92,18 +265,18 @@ Example
         _value: float
         value = property()
 
-        def __init__(self, value):
-            self.value = value
+        def __init__(self, initialvalue):
+            self.value = initialvalue
 
         @value.setter
-        def value(self, new_value):
-            if new_value < 0:
+        def value(self, newvalue):
+            if newvalue < 0:
                 raise ValueError('Negative Kelvin Temperature')
-            self._value = new_value
+            self._value = newvalue
 
 
 Use Cases
-=========
+---------
 .. code-block:: python
 
     class Astronaut:
@@ -163,7 +336,7 @@ Use Cases
 
 
 Attribute Access
-================
+----------------
 * Java way: Setter and Getter
 * Pythonic way: Properties, Reflection, Descriptors
 
@@ -203,7 +376,7 @@ Accessing class fields. Either put ``name`` as an argument for ``__init__()`` or
 
 
 Property class
-==============
+--------------
 * Property's arguments are method pointers ``get_name``, ``set_name``, ``del_name`` and a docstring
 * Don't do that
 
@@ -226,7 +399,7 @@ Property class
 
 
 @property Decorator
-===================
+-------------------
 * Prefer ``name = property()``
 
 .. code-block:: python
@@ -269,10 +442,10 @@ Property class
 
 
 Use Cases
-=========
-
-Astronaut
 ---------
+
+Astronaut:
+
 .. code-block:: python
 
     class Astronaut:
@@ -334,8 +507,8 @@ Astronaut
     print(astro.name)
     # None
 
-Temperature
------------
+Temperature:
+
 .. code-block:: python
 
     class Temperature:
@@ -403,16 +576,15 @@ Temperature
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/protocol_property_getter.py
-    :caption: :download:`Solution <assignments/protocol_property_getter.py>`
+-----------
+.. literalinclude:: assignments/protocol_property_a.py
+    :caption: :download:`Solution <assignments/protocol_property_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/protocol_property_setter.py
-    :caption: :download:`Solution <assignments/protocol_property_setter.py>`
+.. literalinclude:: assignments/protocol_property_b.py
+    :caption: :download:`Solution <assignments/protocol_property_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/protocol_property_deleter.py
-    :caption: :download:`Solution <assignments/protocol_property_deleter.py>`
+.. literalinclude:: assignments/protocol_property_c.py
+    :caption: :download:`Solution <assignments/protocol_property_c.py>`
     :end-before: # Solution

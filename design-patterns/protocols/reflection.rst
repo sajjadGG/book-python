@@ -362,14 +362,14 @@ Use Cases
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/protocol_reflection_a.py
-    :caption: :download:`Solution <../_assignments/protocol_reflection_a.py>`
+.. literalinclude:: assignments/protocol_reflection_a.py
+    :caption: :download:`Solution <assignments/protocol_reflection_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_reflection_b.py
-    :caption: :download:`Solution <../_assignments/protocol_reflection_b.py>`
+.. literalinclude:: assignments/protocol_reflection_b.py
+    :caption: :download:`Solution <assignments/protocol_reflection_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_reflection_c.py
-    :caption: :download:`Solution <../_assignments/protocol_reflection_c.py>`
+.. literalinclude:: assignments/protocol_reflection_c.py
+    :caption: :download:`Solution <assignments/protocol_reflection_c.py>`
     :end-before: # Solution

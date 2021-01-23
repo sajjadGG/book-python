@@ -372,10 +372,10 @@ Callback
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/paradigm_functional_a.py
-    :caption: :download:`Solution <../_assignments/paradigm_functional_a.py>`
+.. literalinclude:: assignments/paradigm_functional_a.py
+    :caption: :download:`Solution <assignments/paradigm_functional_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/paradigm_functional_b.py
-    :caption: :download:`Solution <../_assignments/paradigm_functional_b.py>`
+.. literalinclude:: assignments/paradigm_functional_b.py
+    :caption: :download:`Solution <assignments/paradigm_functional_b.py>`
     :end-before: # Solution

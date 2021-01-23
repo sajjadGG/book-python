@@ -577,14 +577,14 @@ Temperature:
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/protocol_property_a.py
-    :caption: :download:`Solution <../_assignments/protocol_property_a.py>`
+.. literalinclude:: assignments/protocol_property_a.py
+    :caption: :download:`Solution <assignments/protocol_property_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_property_b.py
-    :caption: :download:`Solution <../_assignments/protocol_property_b.py>`
+.. literalinclude:: assignments/protocol_property_b.py
+    :caption: :download:`Solution <assignments/protocol_property_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_property_c.py
-    :caption: :download:`Solution <../_assignments/protocol_property_c.py>`
+.. literalinclude:: assignments/protocol_property_c.py
+    :caption: :download:`Solution <assignments/protocol_property_c.py>`
     :end-before: # Solution

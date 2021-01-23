@@ -319,14 +319,14 @@ Use Case - Microbenchmark
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/protocol_contextmanager_a.py
-    :caption: :download:`Solution <../_assignments/protocol_contextmanager_a.py>`
+.. literalinclude:: assignments/protocol_contextmanager_a.py
+    :caption: :download:`Solution <assignments/protocol_contextmanager_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_contextmanager_b.py
-    :caption: :download:`Solution <../_assignments/protocol_contextmanager_b.py>`
+.. literalinclude:: assignments/protocol_contextmanager_b.py
+    :caption: :download:`Solution <assignments/protocol_contextmanager_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_contextmanager_c.py
-    :caption: :download:`Solution <../_assignments/protocol_contextmanager_c.py>`
+.. literalinclude:: assignments/protocol_contextmanager_c.py
+    :caption: :download:`Solution <assignments/protocol_contextmanager_c.py>`
     :end-before: # Solution

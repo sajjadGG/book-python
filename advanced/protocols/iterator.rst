@@ -1,17 +1,14 @@
-.. _Protocol Iterator:
-
-********
 Iterator
-********
+========
 
 
 Rationale
-=========
+---------
 * Used for iterating in a ``for`` loop
 
 
 Protocol
-========
+--------
 * ``__iter__(self) -> self``
 * ``__next__(self) -> raise StopIteration``
 * ``iter(obj)`` -> ``obj.__iter__()``
@@ -27,14 +24,13 @@ Protocol
         def __next__(self):
             if self._current >= len(self.values):
                 raise StopIteration
-
             element = self.values[self._current]
             self._current += 1
             return element
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class Crew:
@@ -52,7 +48,6 @@ Example
         def __next__(self):
             if self._current >= len(self.members):
                 raise StopIteration
-
             result = self.members[self._current]
             self._current += 1
             return result
@@ -72,7 +67,7 @@ Example
 
 
 Loop and Iterators
-==================
+------------------
 For loop:
 
 .. code-block:: python
@@ -128,7 +123,7 @@ Intuitive implementation of the ``for`` loop:
 
 
 Built-in Type Iteration
-=======================
+-----------------------
 Iterating ``str``:
 
 .. code-block:: python
@@ -190,7 +185,7 @@ Iterating nested sequences:
 
 
 Use Cases
-=========
+---------
 Iterator implementation:
 
 .. code-block:: python
@@ -209,7 +204,6 @@ Iterator implementation:
         def __next__(self):
             if self._current >= len(self._parked_cars):
                 raise StopIteration
-
             element = self._parked_cars[self._current]
             self._current += 1
             return element
@@ -228,10 +222,8 @@ Iterator implementation:
     # Toyota
 
 
-.. _Itertools:
-
 Standard Library Itertools
-==========================
+--------------------------
 * ``import itertools``
 
 ``itertools.count(start=0, step=1)``:
@@ -368,7 +360,6 @@ Standard Library Itertools
         def __next__(self):
             if self._current >= len(self.values):
                 raise StopIteration
-
             element = self.values[self._current]
             self._current += 1
             return element
@@ -631,12 +622,11 @@ Standard Library Itertools
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/protocol_iterator_implementation.py
-    :caption: :download:`Solution <assignments/protocol_iterator_implementation.py>`
+-----------
+.. literalinclude:: assignments/protocol_iterator_a.py
+    :caption: :download:`Solution <assignments/protocol_iterator_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/protocol_iterator_range.py
-    :caption: :download:`Solution <assignments/protocol_iterator_range.py>`
+.. literalinclude:: assignments/protocol_iterator_b.py
+    :caption: :download:`Solution <assignments/protocol_iterator_b.py>`
     :end-before: # Solution

@@ -543,14 +543,14 @@ Conclusion
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/idioms_generator_a.py
-    :caption: :download:`Solution <../_assignments/idioms_generator_a.py>`
+.. literalinclude:: assignments/idioms_generator_a.py
+    :caption: :download:`Solution <assignments/idioms_generator_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/idioms_generator_b.py
-    :caption: :download:`Solution <../_assignments/idioms_generator_b.py>`
+.. literalinclude:: assignments/idioms_generator_b.py
+    :caption: :download:`Solution <assignments/idioms_generator_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/idioms_generator_c.py
-    :caption: :download:`Solution <../_assignments/idioms_generator_c.py>`
+.. literalinclude:: assignments/idioms_generator_c.py
+    :caption: :download:`Solution <assignments/idioms_generator_c.py>`
     :end-before: # Solution

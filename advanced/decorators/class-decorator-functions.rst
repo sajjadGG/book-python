@@ -1,12 +1,9 @@
-.. _Decorator Class with Func:
-
-*************************
 Decorator Class with Func
-*************************
+=========================
 
 
 Rationale
-=========
+---------
 * ``MyDecorator`` is a decorator name
 * ``myfunction`` is a function name
 
@@ -24,7 +21,7 @@ Is equivalent to:
 
 
 Syntax
-======
+------
 * ``cls`` is a pointer to class which is being decorated (``MyClass`` in this case)
 * ``Wrapper`` is a closure class
 * ``Wrapper`` name is a convention, but you can name it anyhow
@@ -58,7 +55,7 @@ Usage:
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     class Run:
@@ -79,7 +76,7 @@ Example
 
 
 Use Cases
-=========
+---------
 Login Check:
 
 .. code-block:: python
@@ -204,16 +201,15 @@ Dict Cache:
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/decorator_cls_syntax.py
-    :caption: :download:`Solution <assignments/decorator_cls_syntax.py>`
+-----------
+.. literalinclude:: assignments/decorator_cls_a.py
+    :caption: :download:`Solution <assignments/decorator_cls_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_cls_abspath.py
-    :caption: :download:`Solution <assignments/decorator_cls_abspath.py>`
+.. literalinclude:: assignments/decorator_cls_b.py
+    :caption: :download:`Solution <assignments/decorator_cls_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_cls_typecheck.py
-    :caption: :download:`Solution <assignments/decorator_cls_typecheck.py>`
+.. literalinclude:: assignments/decorator_cls_c.py
+    :caption: :download:`Solution <assignments/decorator_cls_c.py>`
     :end-before: # Solution

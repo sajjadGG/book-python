@@ -9,7 +9,7 @@ About
     :name: Advanced About
 
     about/setup.rst
-    about/entry-test.rst
+    about/entrytest.rst
     about/agenda.rst
 
 **********

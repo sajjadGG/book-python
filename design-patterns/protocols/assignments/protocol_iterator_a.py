@@ -1,8 +1,8 @@
 """
 * Assignment: Protocol Iterator Implementation
 * Complexity: easy
-* Lines of code: 9 lines
-* Time: 8 min
+* Lines of code: 14 lines
+* Time: 13 min
 
 English:
     1. Use data from "Given" section (see below)
@@ -76,7 +76,6 @@ class Astronaut:
     def __next__(self):
         if self._iter_index >= len(self.missions):
             raise StopIteration
-
         result = self.missions[self._iter_index]
         self._iter_index += 1
         return result

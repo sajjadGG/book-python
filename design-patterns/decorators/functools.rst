@@ -109,14 +109,14 @@ LRU (least recently used) cache
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/decorator_functools_a.py
-    :caption: :download:`Solution <../_assignments/decorator_functools_a.py>`
+.. literalinclude:: assignments/decorator_functools_a.py
+    :caption: :download:`Solution <assignments/decorator_functools_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_functools_b.py
-    :caption: :download:`Solution <../_assignments/decorator_functools_b.py>`
+.. literalinclude:: assignments/decorator_functools_b.py
+    :caption: :download:`Solution <assignments/decorator_functools_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_functools_c.py
-    :caption: :download:`Solution <../_assignments/decorator_functools_c.py>`
+.. literalinclude:: assignments/decorator_functools_c.py
+    :caption: :download:`Solution <assignments/decorator_functools_c.py>`
     :end-before: # Solution

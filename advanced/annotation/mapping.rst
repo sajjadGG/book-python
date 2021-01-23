@@ -1,17 +1,14 @@
-.. _Advanced Annotation Mapping:
-
-******************
 Annotation Mapping
-******************
+==================
 
 
 Rationale
-=========
+---------
 * Before Python 3.9 you need ``from typing import List, Set, Tuple, Dict``
 * Since Python 3.9: :pep:`585` -- Type Hinting Generics In Standard Collections
 
 Dict
-====
+----
 .. code-block:: python
 
     data: dict = {}
@@ -36,7 +33,7 @@ Dict
 
 
 List of Dicts
-=============
+-------------
 .. code-block:: python
 
     from typing import Union
@@ -71,7 +68,7 @@ List of Dicts
 
 
 Typed Dict
-==========
+----------
 * Since Python 3.8: :pep:`589` -- TypedDict: Type Hints for Dictionaries with a Fixed Set of Keys
 
 .. code-block:: python
@@ -98,5 +95,5 @@ Typed Dict
 
 
 More Information
-================
+----------------
 * More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`

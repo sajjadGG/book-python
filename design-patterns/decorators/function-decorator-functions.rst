@@ -503,35 +503,35 @@ Django Login Required. Decorator checks whether user is_authenticated. If not, u
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/decorator_func_a.py
-    :caption: :download:`Solution <../_assignments/decorator_func_a.py>`
+.. literalinclude:: assignments/decorator_func_a.py
+    :caption: :download:`Solution <assignments/decorator_func_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_b.py
-    :caption: :download:`Solution <../_assignments/decorator_func_b.py>`
+.. literalinclude:: assignments/decorator_func_b.py
+    :caption: :download:`Solution <assignments/decorator_func_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_c.py
-    :caption: :download:`Solution <../_assignments/decorator_func_c.py>`
+.. literalinclude:: assignments/decorator_func_c.py
+    :caption: :download:`Solution <assignments/decorator_func_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_d.py
-    :caption: :download:`Solution <../_assignments/decorator_func_d.py>`
+.. literalinclude:: assignments/decorator_func_d.py
+    :caption: :download:`Solution <assignments/decorator_func_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_e.py
-    :caption: :download:`Solution <../_assignments/decorator_func_e.py>`
+.. literalinclude:: assignments/decorator_func_e.py
+    :caption: :download:`Solution <assignments/decorator_func_e.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_f.py
-    :caption: :download:`Solution <../_assignments/decorator_func_f.py>`
+.. literalinclude:: assignments/decorator_func_f.py
+    :caption: :download:`Solution <assignments/decorator_func_f.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_g.py
-    :caption: :download:`Solution <../_assignments/decorator_func_g.py>`
+.. literalinclude:: assignments/decorator_func_g.py
+    :caption: :download:`Solution <assignments/decorator_func_g.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_h.py
-    :caption: :download:`Solution <../_assignments/decorator_func_h.py>`
+.. literalinclude:: assignments/decorator_func_h.py
+    :caption: :download:`Solution <assignments/decorator_func_h.py>`
     :end-before: # Solution
 

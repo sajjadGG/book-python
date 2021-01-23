@@ -533,18 +533,18 @@ Further Reading
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/oop_operators_a.py
-    :caption: :download:`Solution <../_assignments/oop_operators_a.py>`
+.. literalinclude:: assignments/oop_operators_a.py
+    :caption: :download:`Solution <assignments/oop_operators_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_operators_b.py
-    :caption: :download:`Solution <../_assignments/oop_operators_b.py>`
+.. literalinclude:: assignments/oop_operators_b.py
+    :caption: :download:`Solution <assignments/oop_operators_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_operators_c.py
-    :caption: :download:`Solution <../_assignments/oop_operators_c.py>`
+.. literalinclude:: assignments/oop_operators_c.py
+    :caption: :download:`Solution <assignments/oop_operators_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_operators_d.py
-    :caption: :download:`Solution <../_assignments/oop_operators_d.py>`
+.. literalinclude:: assignments/oop_operators_d.py
+    :caption: :download:`Solution <assignments/oop_operators_d.py>`
     :end-before: # Solution

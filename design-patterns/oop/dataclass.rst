@@ -567,14 +567,14 @@ Use Cases
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/oop_dataclass_a.py
-    :caption: :download:`Solution <../_assignments/oop_dataclass_a.py>`
+.. literalinclude:: assignments/oop_dataclass_a.py
+    :caption: :download:`Solution <assignments/oop_dataclass_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_dataclass_b.py
-    :caption: :download:`Solution <../_assignments/oop_dataclass_b.py>`
+.. literalinclude:: assignments/oop_dataclass_b.py
+    :caption: :download:`Solution <assignments/oop_dataclass_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_dataclass_c.py
-    :caption: :download:`Solution <../_assignments/oop_dataclass_c.py>`
+.. literalinclude:: assignments/oop_dataclass_c.py
+    :caption: :download:`Solution <assignments/oop_dataclass_c.py>`
     :end-before: # Solution

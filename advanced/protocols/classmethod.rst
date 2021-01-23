@@ -1,12 +1,9 @@
-.. _Protocol Classmethod:
-
-***********
 Classmethod
-***********
+===========
 
 
 Rationale
-=========
+---------
 * Using class as namespace
 * Will pass class as a first argument
 * ``self`` is not required
@@ -33,7 +30,82 @@ Rationale
 
 
 Example
-=======
+-------
+.. code-block:: python
+
+    import json
+    from dataclasses import dataclass
+
+
+    @dataclass
+    class User:
+        firstname: str
+        lastname: str
+
+        def from_json(self, data):
+            data = json.loads(data)
+            return User(**data)
+
+
+    DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+
+    User.from_json(DATA)
+    # Traceback (most recent call last):
+    # TypeError: from_json() missing 1 required positional argument: 'data'
+
+    User().from_json(DATA)
+    # Traceback (most recent call last):
+    # TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
+
+    User(None, None).from_json(DATA)
+    # User(firstname='Jan', lastname='Twardowski'
+
+.. code-block:: python
+
+    import json
+    from dataclasses import dataclass
+
+
+    @dataclass
+    class User:
+        firstname: str
+        lastname: str
+
+        @staticmethod
+        def from_json(data):
+            data = json.loads(data)
+            return User(**data)
+
+
+    DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+
+    User.from_json(DATA)
+    # User(firstname='Jan', lastname='Twardowski'
+
+.. code-block:: python
+
+    import json
+    from dataclasses import dataclass
+
+
+    class JSONMixin:
+        @staticmethod
+        def from_json(data):
+            data = json.loads(data)
+            return User(**data)
+
+
+    @dataclass
+    class User(JSONMixin):
+        firstname: str
+        lastname: str
+
+
+    DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+
+    print(User.from_json(DATA))
+    # User(firstname='Jan', lastname='Twardowski')
+
 .. code-block:: python
 
     import json
@@ -48,8 +120,8 @@ Example
 
     @dataclass
     class User(JSONMixin):
-        firstname: str
-        lastname: str
+        firstname: str = None
+        lastname: str = None
 
 
     DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
@@ -59,10 +131,6 @@ Example
     # TypeError: from_json() missing 1 required positional argument: 'data'
 
     User().from_json(DATA)
-    # Traceback (most recent call last):
-    # TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
-
-    User(None, None).from_json(DATA)
     # User(firstname='Jan', lastname='Twardowski')
 
 Trying to use method with ``self``:
@@ -81,8 +149,8 @@ Trying to use method with ``self``:
 
     @dataclass
     class User(JSONMixin):
-        firstname: str
-        lastname: str
+        firstname: str = None
+        lastname: str = None
 
 
     DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
@@ -92,10 +160,6 @@ Trying to use method with ``self``:
     # TypeError: from_json() missing 1 required positional argument: 'data'
 
     User().from_json(DATA)
-    # Traceback (most recent call last):
-    # TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
-
-    User(None, None).from_json(DATA)
     # Traceback (most recent call last):
     # TypeError: 'User' object is not callable
 
@@ -110,13 +174,14 @@ Trying to use method with ``self.__init__()``:
     class JSONMixin:
         def from_json(self, data):
             data = json.loads(data)
-            return self.__init__(**data)
+            self.__init__(**data)
+            return self
 
 
     @dataclass
     class User(JSONMixin):
-        firstname: str
-        lastname: str
+        firstname: str = None
+        lastname: str = None
 
 
     DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
@@ -126,12 +191,7 @@ Trying to use method with ``self.__init__()``:
     # TypeError: from_json() missing 1 required positional argument: 'data'
 
     User().from_json(DATA)
-    # Traceback (most recent call last):
-    # TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
-
-    result = User(None, None).from_json(DATA)
-    type(result)
-    # <class 'NoneType'>
+    # User(firstname='Jan', lastname='Twardowski')
 
 Trying to use methods ``self.__new__()`` and ``self.__init__()``:
 
@@ -151,8 +211,8 @@ Trying to use methods ``self.__new__()`` and ``self.__init__()``:
 
     @dataclass
     class User(JSONMixin):
-        firstname: str
-        lastname: str
+        firstname: str = None
+        lastname: str = None
 
 
     DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
@@ -162,36 +222,37 @@ Trying to use methods ``self.__new__()`` and ``self.__init__()``:
     # TypeError: from_json() missing 1 required positional argument: 'data'
 
     User().from_json(DATA)
-    # Traceback (most recent call last):
-    # TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
-
-    User(None, None).from_json(DATA)
     # User(firstname='Jan', lastname='Twardowski')
-
-
-Trying to use staticmethod:
 
 .. code-block:: python
 
     import json
     from dataclasses import dataclass
 
+
     class JSONMixin:
-        @staticmethod
-        def from_json(data):
+        def from_json(self, data):
             data = json.loads(data)
-            return User(**data)
+            instance = object.__new__(type(self))
+            instance.__init__(**data)
+            return instance
+
 
     @dataclass
     class User(JSONMixin):
-        firstname: str
-        lastname: str
+        firstname: str = None
+        lastname: str = None
 
 
     DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
 
     User.from_json(DATA)
+    # Traceback (most recent call last):
+    # TypeError: from_json() missing 1 required positional argument: 'data'
+
+    User().from_json(DATA)
     # User(firstname='Jan', lastname='Twardowski')
+
 
 .. code-block:: python
 
@@ -218,7 +279,7 @@ Trying to use staticmethod:
 
 
 Use Cases
-=========
+---------
 .. code-block:: python
 
     import json
@@ -288,8 +349,7 @@ Use Cases
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/protocol_classmethod_csv.py
-    :caption: :download:`Solution <assignments/protocol_classmethod_csv.py>`
+-----------
+.. literalinclude:: assignments/protocol_classmethod_a.py
+    :caption: :download:`Solution <assignments/protocol_classmethod_a.py>`
     :end-before: # Solution

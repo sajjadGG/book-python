@@ -1,12 +1,9 @@
-.. _Decorator Stdlib Functools:
-
-**************************
 Decorator Stdlib Functools
-**************************
+==========================
 
 
 Wraps
-=====
+-----
 * ``from functools import wraps``
 * ``@wraps(func)``
 
@@ -58,7 +55,7 @@ Wraps
 
 
 Cached Property
-===============
+---------------
 * ``from functools import cached_property``
 * ``@cached_property(func)``
 
@@ -87,7 +84,7 @@ Cached Property
 
 
 LRU (least recently used) cache
-===============================
+-------------------------------
 * ``from functools import lru_cache``
 * ``@lru_cache(maxsize=None)``
 
@@ -111,16 +108,15 @@ LRU (least recently used) cache
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/decorator_functools_func.py
-    :caption: :download:`Solution <assignments/decorator_functools_func.py>`
+-----------
+.. literalinclude:: assignments/decorator_functools_a.py
+    :caption: :download:`Solution <assignments/decorator_functools_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_functools_args.py
-    :caption: :download:`Solution <assignments/decorator_functools_args.py>`
+.. literalinclude:: assignments/decorator_functools_b.py
+    :caption: :download:`Solution <assignments/decorator_functools_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_functools_cls.py
-    :caption: :download:`Solution <assignments/decorator_functools_cls.py>`
+.. literalinclude:: assignments/decorator_functools_c.py
+    :caption: :download:`Solution <assignments/decorator_functools_c.py>`
     :end-before: # Solution

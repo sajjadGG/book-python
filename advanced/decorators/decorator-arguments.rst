@@ -1,12 +1,9 @@
-.. _Decorator Arguments:
-
-*******************
 Decorator Arguments
-*******************
+===================
 
 
 Rationale
-=========
+---------
 Decorator:
     .. code-block:: python
 
@@ -21,7 +18,7 @@ Is equivalent to:
 
 
 Syntax
-======
+------
 Definition:
 
 .. code-block:: python
@@ -49,7 +46,7 @@ Usage:
 
 
 Example
-=======
+-------
 .. code-block:: python
 
     def run(lang='en'):
@@ -70,7 +67,7 @@ Example
 
 
 Use Cases
-=========
+---------
 Deprecated:
 
 .. code-block:: python
@@ -181,16 +178,15 @@ Timeout using ``threading.Timer``:
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/decorator_arguments_syntax.py
-    :caption: :download:`Solution <assignments/decorator_arguments_syntax.py>`
+-----------
+.. literalinclude:: assignments/decorator_arguments_a.py
+    :caption: :download:`Solution <assignments/decorator_arguments_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_arguments_astronauts.py
-    :caption: :download:`Solution <assignments/decorator_arguments_astronauts.py>`
+.. literalinclude:: assignments/decorator_arguments_b.py
+    :caption: :download:`Solution <assignments/decorator_arguments_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/decorator_arguments_typecheck.py
-    :caption: :download:`Solution <assignments/decorator_arguments_typecheck.py>`
+.. literalinclude:: assignments/decorator_arguments_c.py
+    :caption: :download:`Solution <assignments/decorator_arguments_c.py>`
     :end-before: # Solution
