@@ -1,6 +1,5 @@
 .. _Machine Learning scikit-learn:
 
-************
 scikit-learn
 ************
 

@@ -1,6 +1,5 @@
 .. _Machine Learning:
 
-*****
 About
 *****
 .. toctree::
@@ -13,7 +12,7 @@ About
     introduction/glossary-pl.rst
     introduction/glossary.rst
 
-************
+
 Introduction
 ************
 .. toctree::
@@ -25,7 +24,7 @@ Introduction
     introduction/features.rst
     introduction/classifiers.rst
 
-*******
+
 Sklearn
 *******
 .. toctree::
@@ -34,7 +33,7 @@ Sklearn
 
     sklearn/sklearn.rst
 
-*************
+
 Model Quality
 *************
 .. toctree::
@@ -45,7 +44,6 @@ Model Quality
     model-quality/principal-component-analysis.rst
 
 
-**************
 Decision Trees
 **************
 .. toctree::
@@ -54,7 +52,7 @@ Decision Trees
 
     tree/decision-tree.rst
 
-***********
+
 Regressions
 ***********
 .. toctree::
@@ -64,7 +62,7 @@ Regressions
     regression/linear.rst
     regression/logistics.rst
 
-*******************
+
 K-Nearest Neighbors
 *******************
 .. toctree::
@@ -73,7 +71,7 @@ K-Nearest Neighbors
 
     knn/k-nearest-neighbors.rst
 
-*****
+
 Bayes
 *****
 .. toctree::
@@ -82,7 +80,7 @@ Bayes
 
     bayes/naive.rst
 
-***********************
+
 Support Vector Machines
 ***********************
 .. toctree::
@@ -91,7 +89,7 @@ Support Vector Machines
 
     svm/support-vector-machines.rst
 
-**********
+
 Clustering
 **********
 .. toctree::
@@ -100,7 +98,7 @@ Clustering
 
     clustering/k-means.rst
 
-***************
+
 Neural Networks
 ***************
 .. toctree::
@@ -110,7 +108,7 @@ Neural Networks
     neural-network/deep.rst
     neural-network/convolutional.rst
 
-**********
+
 References
 **********
 .. toctree::

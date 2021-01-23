@@ -1,6 +1,5 @@
 .. _Dragon Alpha:
 
-**********************
 Dragon (version alpha)
 **********************
 

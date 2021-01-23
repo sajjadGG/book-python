@@ -1,6 +1,5 @@
 .. _Stdlib:
 
-*****
 About
 *****
 .. toctree::
@@ -12,7 +11,7 @@ About
     about/agenda.rst
     about/entry-test.rst
 
-**********************
+
 Datetime and Timezones
 **********************
 .. toctree::
@@ -27,7 +26,7 @@ Datetime and Timezones
     datetime/utils.rst
     datetime/timezones.rst
 
-*************
+
 Serialization
 *************
 .. toctree::
@@ -40,7 +39,7 @@ Serialization
     serialization/pickle.rst
     serialization/xml.rst
 
-********
+
 Database
 ********
 .. toctree::
@@ -59,7 +58,7 @@ Database
     database/sql-injection.rst
     database/sql.rst
 
-*******************
+
 Regular Expressions
 *******************
 .. toctree::
@@ -81,7 +80,7 @@ Regular Expressions
     regular-expressions/standards.rst
     regular-expressions/references/index.rst
 
-********************
+
 Modules and Packages
 ********************
 .. toctree::
@@ -96,7 +95,7 @@ Modules and Packages
     modules/zipapp.rst
     modules/distributing.rst
 
-********
+
 Builtins
 ********
 .. toctree::
@@ -109,7 +108,7 @@ Builtins
     builtin/operator.rst
     builtin/print.rst
 
-******
+
 Locale
 ******
 .. toctree::
@@ -121,7 +120,7 @@ Locale
     locale/i18n.rst
     locale/l10n.rst
 
-*******
+
 Looping
 *******
 .. toctree::
@@ -132,7 +131,7 @@ Looping
     looping/comprehensions.rst
     looping/else.rst
 
-****************
+
 Type Annotations
 ****************
 .. toctree::
@@ -152,7 +151,7 @@ Type Annotations
     type-annotation/checking.rst
     type-annotation/annotate-existing.rst
 
-***************************
+
 Object Oriented Programming
 ***************************
 .. toctree::
@@ -163,7 +162,7 @@ Object Oriented Programming
     oop/enum.rst
     oop/dataclass.rst
 
-***********
+
 Mathematics
 ***********
 .. toctree::
@@ -179,7 +178,7 @@ Mathematics
     math/plotting.rst
     math/complex.rst
 
-****************
+
 Operating System
 ****************
 .. toctree::
@@ -193,7 +192,7 @@ Operating System
     operating-system/os.rst
     operating-system/pathlib.rst
 
-***
+
 GUI
 ***
 .. toctree::
@@ -203,7 +202,7 @@ GUI
 
     gui/tkinter.rst
 
-**********
+
 References
 **********
 

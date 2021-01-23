@@ -1,6 +1,5 @@
 .. _Machine Learning Naive Bayes:
 
-***********
 Naive Bayes
 ***********
 

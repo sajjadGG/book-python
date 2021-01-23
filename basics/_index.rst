@@ -1,6 +1,6 @@
 .. _Basics:
 
-*****
+
 About
 *****
 .. toctree::
@@ -15,7 +15,7 @@ About
     about/syntax.rst
     about/operators.rst
 
-*****
+
 Types
 *****
 .. toctree::
@@ -31,7 +31,7 @@ Types
     type/str-methods.rst
     type/type-annotation.rst
 
-*********
+
 Sequences
 *********
 .. toctree::
@@ -49,7 +49,7 @@ Sequences
     sequence/unpack.rst
     sequence/type-annotation.rst
 
-********
+
 Mappings
 ********
 .. toctree::
@@ -62,7 +62,7 @@ Mappings
     mapping/nested.rst
     mapping/type-annotation.rst
 
-************
+
 Control Flow
 ************
 .. toctree::
@@ -76,7 +76,7 @@ Control Flow
     control-flow/expressions.rst
     control-flow/exception.rst
 
-*****
+
 Loops
 *****
 .. toctree::
@@ -91,7 +91,7 @@ Loops
     loop/dict.rst
     loop/comprehensions.rst
 
-*****
+
 Files
 *****
 .. toctree::
@@ -107,7 +107,7 @@ Files
     files/encoding.rst
     files/binary.rst
 
-*********
+
 Functions
 *********
 .. toctree::
@@ -126,7 +126,7 @@ Functions
     function/lambda.rst
     function/type-annotation.rst
 
-***************************
+
 Object Oriented Programming
 ***************************
 .. toctree::
@@ -145,7 +145,6 @@ Object Oriented Programming
     oop/type-annotation.rst
 
 
-*****
 Recap
 *****
 .. toctree::

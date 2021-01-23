@@ -1,6 +1,5 @@
 .. _Machine Learning Introduction:
 
-*****************************
 Machine Learning Introduction
 *****************************
 

@@ -1,6 +1,5 @@
 .. _Python Intermediate:
 
-*******************
 Python Intermediate
 *******************
 

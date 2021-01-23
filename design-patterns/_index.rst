@@ -1,6 +1,6 @@
 .. _Design Patterns:
 
-*****
+
 About
 *****
 .. toctree::
@@ -11,7 +11,7 @@ About
     about/entrytest.rst
     about/classification.rst
 
-**********
+
 Annotation
 **********
 .. toctree::
@@ -25,7 +25,7 @@ Annotation
     annotation/function.rst
     annotation/oop.rst
 
-***
+
 UML
 ***
 .. toctree::
@@ -38,7 +38,7 @@ UML
     uml/class-diagram.rst
     uml/sequence-diagram.rst
 
-***
+
 OOP
 ***
 .. toctree::
@@ -57,7 +57,7 @@ OOP
     oop/solid.rst
     oop/good-practices.rst
 
-******
+
 Idioms
 ******
 .. toctree::
@@ -75,7 +75,7 @@ Idioms
     idioms/generator.rst
     idioms/patterns.rst
 
-*********
+
 Protocols
 *********
 .. toctree::
@@ -90,7 +90,7 @@ Protocols
     protocols/reflection.rst
     protocols/descriptor.rst
 
-**********
+
 Decorators
 **********
 .. toctree::
@@ -106,7 +106,7 @@ Decorators
     decorators/functools.rst
     decorators/recap.rst
 
-**********
+
 Behavioral
 **********
 .. toctree::
@@ -127,7 +127,7 @@ Behavioral
     behavioral/interpreter.rst
     behavioral/state-machine.rst
 
-**********
+
 Structural
 **********
 .. toctree::
@@ -142,7 +142,7 @@ Structural
     structural/bridge.rst
     structural/proxy.rst
 
-**********
+
 Creational
 **********
 .. toctree::
@@ -156,7 +156,7 @@ Creational
     #creational/builder.rst
     #creational/prototype.rst
 
-*********
+
 Practices
 *********
 .. toctree::
@@ -167,7 +167,7 @@ Practices
     #practices/yagni.rst
     #practices/efap.rst
 
-*********
+
 Paradigms
 *********
 .. toctree::

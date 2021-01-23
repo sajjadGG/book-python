@@ -1,6 +1,5 @@
 .. _Machine Learning K-Means Clustering:
 
-******************
 K-Means Clustering
 ******************
 

@@ -1,6 +1,5 @@
 .. _Matplotlib:
 
-*****
 About
 *****
 .. toctree::
@@ -10,7 +9,7 @@ About
 
     about.rst
 
-******
+
 Figure
 ******
 .. toctree::
@@ -26,7 +25,7 @@ Figure
     interactive.rst
     import-export.rst
 
-*****
+
 Style
 *****
 .. toctree::
@@ -37,7 +36,7 @@ Style
     style-intro.rst
     style-basic.rst
 
-*****
+
 Chart
 *****
 .. toctree::
@@ -54,7 +53,7 @@ Chart
     chart-pie.rst
     chart-3d.rst
 
-********
+
 Advanced
 ********
 .. toctree::
@@ -67,7 +66,7 @@ Advanced
     multiple-figures.rst
     animation.rst
 
-*****
+
 Recap
 *****
 .. toctree::

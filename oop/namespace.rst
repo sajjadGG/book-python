@@ -1,6 +1,5 @@
 .. _OOP Namespace:
 
-*********
 Namespace
 *********
 

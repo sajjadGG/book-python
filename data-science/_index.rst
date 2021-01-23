@@ -1,6 +1,5 @@
 .. _Data Science:
 
-************
 Introduction
 ************
 .. toctree::
@@ -13,7 +12,7 @@ Introduction
     introduction/agenda.rst
     introduction/survey.rst
 
-*******
+
 Jupyter
 *******
 .. toctree::
@@ -23,7 +22,7 @@ Jupyter
 
     jupyter/index.rst
 
-******
+
 Python
 ******
 .. toctree::
@@ -46,7 +45,7 @@ Python
     python/serialization.rst
     python/performance.rst
 
-******************
+
 Data Visualization
 ******************
 .. toctree::
@@ -59,7 +58,7 @@ Data Visualization
     visualization/seaborn.rst
     visualization/graphs.rst
 
-*****
+
 Scipy
 *****
 .. toctree::

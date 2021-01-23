@@ -1,6 +1,5 @@
 .. _Math Stdlib:
 
-***********
 Math Stdlib
 ***********
 

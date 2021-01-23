@@ -1,6 +1,5 @@
 .. _Machine Learning Convolutional Neural Network:
 
-****************************
 Convolutional Neural Network
 ****************************
 

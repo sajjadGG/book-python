@@ -1,6 +1,5 @@
 .. _Advanced:
 
-*****
 About
 *****
 .. toctree::
@@ -12,7 +11,7 @@ About
     about/entrytest.rst
     about/agenda.rst
 
-**********
+
 Annotation
 **********
 .. toctree::
@@ -26,7 +25,7 @@ Annotation
     annotation/function.rst
     annotation/oop.rst
 
-*********
+
 Unpacking
 *********
 .. toctree::
@@ -39,7 +38,7 @@ Unpacking
     unpacking/arguments.rst
     unpacking/assignment-expression.rst
 
-*********
+
 Functions
 *********
 .. toctree::
@@ -54,7 +53,7 @@ Functions
     function/callable.rst
     function/closures.rst
 
-**********
+
 Decorators
 **********
 .. toctree::
@@ -73,7 +72,7 @@ Decorators
     decorators/functools.rst
     decorators/recap.rst
 
-***************************
+
 Object Oriented Programming
 ***************************
 .. toctree::
@@ -95,7 +94,7 @@ Object Oriented Programming
     oop/constructor.rst
     oop/solid.rst
 
-*********
+
 Protocols
 *********
 .. toctree::
@@ -111,7 +110,7 @@ Protocols
     protocols/reflection.rst
     protocols/descriptor.rst
 
-***********
+
 Performance
 ***********
 .. toctree::
@@ -127,7 +126,7 @@ Performance
     performance/c-types.rst
     performance/c-modules.rst
 
-***********
+
 Concurrency
 ***********
 .. toctree::
@@ -142,7 +141,7 @@ Concurrency
     concurrency/async.rst
     concurrency/asyncio.rst
 
-*****
+
 Recap
 *****
 .. toctree::

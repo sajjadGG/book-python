@@ -1,6 +1,5 @@
 .. _Database SQL:
 
-************
 Database SQL
 ************
 

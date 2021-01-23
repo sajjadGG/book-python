@@ -1,6 +1,5 @@
 .. _Pandas Series Index:
 
-************
 Series Index
 ************
 

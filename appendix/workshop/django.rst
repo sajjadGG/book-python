@@ -1,6 +1,5 @@
 .. _Django Framework:
 
-****************
 Django Framework
 ****************
 

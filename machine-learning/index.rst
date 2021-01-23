@@ -1,6 +1,5 @@
 .. include:: ../README.rst
 
-*****
 About
 *****
 .. toctree::
@@ -12,7 +11,6 @@ About
     ../survey.rst
     ../about/references.rst
 
-****************
 Machine Learning
 ****************
 .. toctree::
@@ -22,7 +20,6 @@ Machine Learning
 
     _index.rst
 
-**********
 Appendixes
 **********
 .. toctree::

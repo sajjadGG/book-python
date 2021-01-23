@@ -1,6 +1,5 @@
 .. _Python in Testing:
 
-*****************
 Python in Testing
 *****************
 

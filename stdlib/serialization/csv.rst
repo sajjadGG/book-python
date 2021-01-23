@@ -1,6 +1,5 @@
 .. _CSV Serialization:
 
-*****************
 Serialization CSV
 *****************
 

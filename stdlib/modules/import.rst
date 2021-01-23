@@ -1,6 +1,5 @@
 .. _Module Import:
 
-*************
 Module Import
 *************
 

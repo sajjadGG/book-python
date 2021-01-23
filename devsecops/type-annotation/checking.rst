@@ -1,6 +1,5 @@
 .. _CI/CD Type Checking:
 
-*************
 Type Checking
 *************
 

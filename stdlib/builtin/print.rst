@@ -1,6 +1,5 @@
 .. _Builtin Printing:
 
-****************
 Builtin Printing
 ****************
 

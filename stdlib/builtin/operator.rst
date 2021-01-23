@@ -1,6 +1,5 @@
 .. _Operator Library:
 
-****************
 Operator Library
 ****************
 

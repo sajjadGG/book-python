@@ -1,7 +1,6 @@
 
  _Math Statistics:
 
-***************
 Math Statistics
 ***************
 

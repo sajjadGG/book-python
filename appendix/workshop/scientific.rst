@@ -1,6 +1,5 @@
 .. _Python in Science and Engineering:
 
-*********************************
 Python in Science and Engineering
 *********************************
 

@@ -1,6 +1,5 @@
 .. _Stdlib Datetime Timezone:
 
-******************
 Datetime Timezone
 ******************
 

@@ -1,6 +1,5 @@
 .. _Date and Time Timezones:
 
-***********************
 Date and Time Timezones
 ***********************
 

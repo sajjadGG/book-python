@@ -1,6 +1,5 @@
 .. _Network:
 
-************
 HTTP and Web
 ************
 .. toctree::
@@ -19,7 +18,7 @@ HTTP and Web
     http/soap-wsdl.rst
     http/async.rst
 
-*********
+
 Protocols
 *********
 .. toctree::
@@ -35,7 +34,7 @@ Protocols
     protocols/ssh.rst
     protocols/dns.rst
 
-*********
+
 Transport
 *********
 .. toctree::

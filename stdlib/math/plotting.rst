@@ -1,6 +1,5 @@
 .. _Math Plotting:
 
-*************
 Math Plotting
 *************
 

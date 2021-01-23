@@ -1,6 +1,5 @@
 .. include:: ../README.rst
 
-*****
 About
 *****
 .. toctree::
@@ -12,7 +11,6 @@ About
     ../survey.rst
     ../about/references.rst
 
-******
 Django
 ******
 .. toctree::
@@ -22,7 +20,6 @@ Django
 
     _index.rst
 
-**********
 Appendixes
 **********
 .. toctree::

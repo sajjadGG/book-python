@@ -1,6 +1,5 @@
 .. _Date and Time Types:
 
-*******************
 Date and Time Types
 *******************
 

@@ -1,6 +1,5 @@
 .. _Machine Learning Glossary PL:
 
-***********
 Glossary PL
 ***********
 

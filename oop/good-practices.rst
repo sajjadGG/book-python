@@ -1,6 +1,5 @@
 .. _OOP Good Engineering Practises:
 
-**************************
 Good Engineering Practises
 **************************
 

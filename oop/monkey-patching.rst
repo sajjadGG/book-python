@@ -1,6 +1,5 @@
 .. _OOP Monkey Patching:
 
-***************
 Monkey Patching
 ***************
 

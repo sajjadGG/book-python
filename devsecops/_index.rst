@@ -1,6 +1,6 @@
 .. _DevSecOps:
 
-**************************
+
 Good Engineering Practices
 **************************
 .. toctree::
@@ -13,7 +13,7 @@ Good Engineering Practices
     good-engineering-practice/code-smells.rst
     good-engineering-practice/documentation.rst
 
-*****
+
 Tests
 *****
 .. toctree::
@@ -24,7 +24,7 @@ Tests
     tests/unittest.rst
     tests/pytest.rst
 
-*********
+
 Debugging
 *********
 .. toctree::
@@ -38,7 +38,7 @@ Debugging
     debugging/debugging-advanced.rst
     debugging/introspection.rst
 
-***************
+
 Type Annotation
 ***************
 .. toctree::
@@ -49,7 +49,7 @@ Type Annotation
     type-annotation/annotating.rst
     type-annotation/introspection.rst
 
-*****
+
 CI/CD
 *****
 .. toctree::

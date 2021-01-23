@@ -1,6 +1,5 @@
 .. _Python in Networking:
 
-********************
 Python in Networking
 ********************
 

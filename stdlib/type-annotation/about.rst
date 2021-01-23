@@ -1,6 +1,5 @@
 .. _Type Annotations:
 
-****************
 Type Annotations
 ****************
 

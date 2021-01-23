@@ -1,6 +1,5 @@
 .. include:: README.rst
 
-*****
 About
 *****
 .. toctree::
@@ -12,7 +11,6 @@ About
     survey.rst
     about/references.rst
 
-*************
 Python Basics
 *************
 .. toctree::
@@ -22,7 +20,6 @@ Python Basics
 
     basics/_index.rst
 
-***********************
 Python Standard Library
 ***********************
 .. toctree::
@@ -32,7 +29,6 @@ Python Standard Library
 
     stdlib/_index.rst
 
-***************
 Python Advanced
 ***************
 .. toctree::
@@ -42,7 +38,6 @@ Python Advanced
 
     advanced/_index.rst
 
-******
 Dragon
 ******
 .. toctree::
@@ -54,7 +49,6 @@ Dragon
     dragon/beta.rst
     dragon/rc.rst
 
-*****
 Numpy
 *****
 .. toctree::
@@ -64,7 +58,6 @@ Numpy
 
     numpy/_index.rst
 
-******
 Pandas
 ******
 .. toctree::
@@ -74,7 +67,6 @@ Pandas
 
     pandas/_index.rst
 
-**********
 Matplotlib
 **********
 .. toctree::
@@ -84,7 +76,6 @@ Matplotlib
 
     matplotlib/_index.rst
 
-***************************
 Object Oriented Programming
 ***************************
 .. toctree::
@@ -94,7 +85,6 @@ Object Oriented Programming
 
     oop/_index.rst
 
-***************
 Design Patterns
 ***************
 .. toctree::
@@ -104,7 +94,6 @@ Design Patterns
 
     design-patterns/_index.rst
 
-*********
 DevSecOps
 *********
 .. toctree::
@@ -114,7 +103,6 @@ DevSecOps
 
     devsecops/_index.rst
 
-****************
 Network and HTTP
 ****************
 .. toctree::
@@ -124,7 +112,6 @@ Network and HTTP
 
     network/_index.rst
 
-******
 Django
 ******
 .. toctree::
@@ -134,7 +121,6 @@ Django
 
     django/_index.rst
 
-************
 Data Science
 ************
 .. toctree::
@@ -144,7 +130,6 @@ Data Science
 
     data-science/_index.rst
 
-****************
 Machine Learning
 ****************
 .. toctree::
@@ -154,7 +139,6 @@ Machine Learning
 
     machine-learning/_index.rst
 
-*********
 Blogposts
 *********
 .. toctree::
@@ -164,7 +148,6 @@ Blogposts
 
     _blogpost/ml-introduction.rst
 
-**********
 Appendixes
 **********
 .. toctree::

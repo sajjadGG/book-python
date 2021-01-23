@@ -1,6 +1,5 @@
 .. _Python in Machine Learning:
 
-**************************
 Python in Machine Learning
 **************************
 

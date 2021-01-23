@@ -1,7 +1,6 @@
 .. _Intermediate Comprehensions Nesting:
 
 
-**********************
 Comprehensions Nesting
 **********************
 

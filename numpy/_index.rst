@@ -1,6 +1,5 @@
 .. _Numpy:
 
-*****
 About
 *****
 .. toctree::
@@ -12,7 +11,7 @@ About
     precision.rst
     constants.rst
 
-*****
+
 Array
 *****
 .. toctree::
@@ -34,7 +33,7 @@ Array
     array-methods.rst
     array-concatenation.rst
 
-******
+
 Select
 ******
 .. toctree::
@@ -50,7 +49,7 @@ Select
     array-select.rst
     array-advancedindexing.rst
 
-***************
+
 Import & Export
 ***************
 .. toctree::
@@ -61,7 +60,7 @@ Import & Export
     array-serialize.rst
     import-export.rst
 
-****
+
 Math
 ****
 .. toctree::

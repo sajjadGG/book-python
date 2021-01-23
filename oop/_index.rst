@@ -1,6 +1,5 @@
 .. _Object Oriented Programming:
 
-********
 Paradigm
 ********
 .. toctree::
@@ -13,7 +12,7 @@ Paradigm
     str-interning.rst
     good-practices.rst
 
-******
+
 Python
 ******
 .. toctree::
@@ -28,7 +27,7 @@ Python
     slots.rst
     metaclass.rst
 
-**************
+
 Dynamic Typing
 **************
 .. toctree::

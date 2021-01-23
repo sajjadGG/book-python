@@ -1,6 +1,5 @@
 .. _Math Random:
 
-***********
 Math Random
 ***********
 
