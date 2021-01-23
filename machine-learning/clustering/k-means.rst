@@ -106,17 +106,16 @@ Clustering algorithms group a set of documents into subsets or clusters . The al
 .. figure:: img/clustering-flat.png
     :name: Flat Clustering
 
-    Flat Clustering
+
 
 K-means
 -------
 .. figure:: img/clustering-k-means.png
 
-    K-means
+K-means Convergence:
 
 .. figure:: img/clustering-k-means-convergence.gif
 
-    K-means Convergence
 
 
 Hierarchical Clustering
@@ -128,18 +127,16 @@ Each node in the cluster tree contains a group of similar data; Nodes are placed
 .. figure:: img/clustering-hierarchical.png
     :name: Hierarchical Clustering
 
-    Hierarchical Clustering
 
 Porównanie algorytmów
 =====================
 
 * http://hdbscan.readthedocs.io/en/latest/comparing_clustering_algorithms.html
 
+Porównanie algorytmów klastrowania
 
 .. figure:: img/clustering-overview.png
     :name: clustering-overview
-
-    Porównanie algorytmów klastrowania
 
 
 .. code-block:: python

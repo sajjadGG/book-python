@@ -214,7 +214,6 @@ Use cases
 .. literalinclude:: src/database-case-study.py
     :name: listing-database-case-study
     :language: python
-    :caption: Zapisywanie do bazy danych wyników pobranych z sensorów podłączonych po USB
 
 
 Assignments

@@ -17,7 +17,7 @@ Rationale
 * Object is an instance of a class
 * Class is an instance of a Metaclass
 
-.. figure:: ../_img/oop-metaclass-inheritance.png
+.. figure:: img/oop-metaclass-inheritance.png
 
     Object is an instance of a Class.
     Class is an instance of a Metaclass.
@@ -326,7 +326,7 @@ Type Metaclass
     type(object)      # <class 'type'>
     type(type)        # <class 'type'>
 
-.. figure:: ../_img/oop-metaclass-diagram.png
+.. figure:: img/oop-metaclass-diagram.png
 
     Object is an instance of a Class.
     Class is an instance of a Metaclass.

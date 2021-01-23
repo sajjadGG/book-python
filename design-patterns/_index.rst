@@ -17,7 +17,6 @@ Annotation
 .. toctree::
     :maxdepth: 1
     :caption: Annotation
-    :name: Advanced Annotation
 
     annotation/type.rst
     annotation/sequence.rst

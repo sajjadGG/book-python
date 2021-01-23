@@ -158,8 +158,9 @@ An F() object represents the value of a model field or annotated column. It make
 
 Aggregations
 ============
+* Django ORM Cheat sheet
+
 .. literalinclude:: src/django-orm-cheatsheet.py
     :language: python
     :name: listing-django-orm-cheatsheet
-    :caption: Django ORM Cheat sheet
 

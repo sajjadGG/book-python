@@ -29,9 +29,6 @@ Appendixes
 
     ../about/history.rst
     ../about/further-reading.rst
-    ../about/books.rst
-    ../about/video.rst
-    ../about/python-2vs3.rst
     ../appendix/workshop/intermediate.rst
     ../appendix/workshop/network.rst
     ../appendix/workshop/django.rst

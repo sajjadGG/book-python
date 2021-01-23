@@ -270,7 +270,6 @@ Requests OAuth
 .. literalinclude:: src/requests-oauthlib.py
     :name: listing-requests-oauthlib
     :language: python
-    :caption: Requests OAuth
 
 
 Assignments

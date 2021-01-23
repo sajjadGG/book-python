@@ -8,7 +8,6 @@ Tests
 .. literalinclude:: src/django-tests.py
     :language: python
     :name: listing-django-tests
-    :caption: Django Tests
 
 .. code-block:: console
 

@@ -158,7 +158,6 @@ Assignments
 .. literalinclude:: assignments/function_args_clean.py
     :caption: :download:`Solution <assignments/function_args_clean.py>`
     :end-before: # Solution
-    :name: Function Arguments Clean
 
 .. literalinclude:: assignments/function_args_numstr.py
     :caption: :download:`Solution <assignments/function_args_numstr.py>`

@@ -117,11 +117,10 @@ PCA dla zbioru Iris
 
     plt.show()
 
+PCA dla zbioru Iris:
 
 .. figure:: img/principal-component-analysis-iris.png
     :name: PCA dla zbioru Iris
-
-    PCA dla zbioru Iris
 
 
 Assignments

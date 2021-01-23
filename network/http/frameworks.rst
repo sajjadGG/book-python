@@ -148,15 +148,17 @@ Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intenti
     $ python -m flask run --host=0.0.0.0
      * Running on http://0.0.0.0:5000/
 
+Simple usage of Flask:
+
 .. literalinclude:: src/http-flask-simple.py
     :name: listing-http-flask-simple
     :language: python
-    :caption: Simple usage of Flask
+
+Flask using templates and data from user:
 
 .. literalinclude:: src/http-flask-template.py
     :name: listing-http-flask-template
     :language: python
-    :caption: Flask using templates and data from user
 
 
 ``webapp2``

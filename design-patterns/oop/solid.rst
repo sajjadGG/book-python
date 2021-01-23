@@ -33,7 +33,7 @@ Rationale
 * ISP: The Interface Segregation Principle
 * DIP: The Dependency Inversion Principle
 
-.. figure:: ../_img/oop-solid.png
+.. figure:: img/oop-solid.png
 
     S.O.L.I.D. Principles
 
@@ -48,7 +48,7 @@ Single Responsibility Principle
 
 Every module or class should have responsibility over a single part of the functionality provided by the software, and that responsibility should be entirely encapsulated by the class. All its services should be narrowly aligned with that responsibility.
 
-.. figure:: ../_img/oop-solid-srp.png
+.. figure:: img/oop-solid-srp.png
 
     S.O.L.I.D. - Single Responsibility Principle
 
@@ -142,7 +142,7 @@ Open/Closed Principle
 
     -- Bertrand Mayer
 
-.. figure:: ../_img/oop-solid-ocp.png
+.. figure:: img/oop-solid-ocp.png
 
     S.O.L.I.D. - Open/Closed Principle
 
@@ -270,7 +270,7 @@ Liskov Substitution Principle
 
 * Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
 
-.. figure:: ../_img/oop-solid-lsp.png
+.. figure:: img/oop-solid-lsp.png
 
     S.O.L.I.D. - Liskov Substitution Principle
 
@@ -295,7 +295,7 @@ Interface Segregation Principle
 
 The interface-segregation principle (ISP) states that no client should be forced to depend on methods it does not use. ISP splits interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them. Such shrunken interfaces are also called role interfaces. ISP is intended to keep a system decoupled and thus easier to refactor, change, and redeploy. ISP is one of the five SOLID principles of object-oriented design, similar to the High Cohesion Principle of GRASP.
 
-.. figure:: ../_img/oop-solid-isp.png
+.. figure:: img/oop-solid-isp.png
 
     S.O.L.I.D. Principles - Interface Segregation Principle
 
@@ -376,11 +376,11 @@ Dependency Inversion Principle
 * one should depend upon abstractions, not concretions
 * decoupling software modules
 
-.. figure:: ../_img/oop-solid-dip.png
+.. figure:: img/oop-solid-dip.png
 
     S.O.L.I.D. - Dependency Inversion Principle
 
-.. figure:: ../_img/oop-solid-deps.png
+.. figure:: img/oop-solid-deps.png
 
     Class Dependencies should depend upon abstractions, not concretions
 
