@@ -1,5 +1,3 @@
-.. _Date and Time Calendar:
-
 Date and Time Calendar
 **********************
 

@@ -28,7 +28,7 @@ Author
     "facebook", "https://facebook.com/matt.harasymczuk"
     "slideshare", "https://www.slideshare.net/astrotech/presentations"
 
-.. csv-table:: Other Books from Author. More information at https://www.astronaut.center/books
+.. csv-table:: Other Books from Author. Learn more at https://www.astronaut.center/books
     :widths: 25, 20, 55
     :header: "ISBN", "Online Access", "Title"
 
@@ -43,4 +43,5 @@ Author
 Note
 ====
 * For consulting or training course requests please email book-python@astronaut.center
-* Before training course please setup your environment as described here :ref:`Install`.
+* Before training course please setup your environment
+* More infromation in `Install`

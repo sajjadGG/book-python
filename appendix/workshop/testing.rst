@@ -1,10 +1,8 @@
-.. _Python in Testing:
-
 Python in Testing
 *****************
 
 
-Przed szkoleniem proszę o instalację i konfigurację środowiska zgodnie z :ref:`Install`
+Przed szkoleniem proszę o instalację i konfigurację środowiska zgodnie z `Install`
 
 
 Description

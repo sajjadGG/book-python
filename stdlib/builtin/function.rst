@@ -1,5 +1,3 @@
-.. _Builtin Functions:
-
 Builtin Functions
 *****************
 

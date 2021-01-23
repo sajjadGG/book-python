@@ -1,5 +1,3 @@
-.. _OOP Dataclass:
-
 OOP Dataclass
 *************
 
@@ -254,7 +252,7 @@ List attributes
 * ``field()`` creates new empty ``list`` for each object
 * It does not reuse pointer
 
-.. warning:: Note, You should not set mutable objects as a default function argument. More information: :ref:`Argument Mutability <OOP Mutability Argument>`.
+.. warning:: Note, You should not set mutable objects as a default function argument. More information in `Argument Mutability`
 
     .. code-block:: python
 

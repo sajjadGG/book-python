@@ -1,5 +1,3 @@
-.. _OOP String Interning:
-
 String Interning
 ****************
 

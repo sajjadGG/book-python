@@ -1,5 +1,3 @@
-.. _Machine Learning Deep Neural Network:
-
 Deep Neural Network
 *******************
 

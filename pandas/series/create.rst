@@ -91,7 +91,7 @@ From Date Range
 ===============
 * From ``pd.Timestamp``
 * From ``pd.date_range()``
-* Read more in :ref:`Date and Time Types`
+* More information in `Date and Time Types`
 
 .. code-block:: python
 

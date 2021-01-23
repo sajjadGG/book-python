@@ -16,7 +16,8 @@ Static Code Analysis
 =============
 SonarQube software (previously called Sonar) is an open source quality management platform, dedicated to continuously analyze and measure technical quality, from project portfolio to method.
 
-:More information:
+Learn more at:
+
     * https://sonarqube.com
     * http://docs.sonarqube.org/display/SONAR/Documentation
     * https://sonarqube.com/dashboard/index?did=143
@@ -129,7 +130,8 @@ Multi-language
         $ coverage html
 
 
-:More information:
+Larn more at:
+
     * https://pypi.python.org/pypi/coverage
     * https://coverage.readthedocs.io/
 

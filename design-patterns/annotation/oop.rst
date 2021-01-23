@@ -5,7 +5,8 @@ Annotation OOP
 Rationale
 ---------
 * All classes are types
-* Always depend upon abstraction not an implementation (SOLID Dependency Inversion Principle). More information in :ref:`OOP SOLID`
+* Always depend upon abstraction not an implementation (SOLID Dependency Inversion Principle)
+* More information in `OOP SOLID`
 
 .. code-block:: python
 
@@ -374,7 +375,8 @@ In Python 3.7, 3.8 and 3.9 you can get this behavior by importing it from ``__fu
         friends: list[Astronaut]
 
 
-More Information
-----------------
-* More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
+Further Reading
+---------------
 * What’s New In Python 3.10: https://docs.python.org/dev/whatsnew/3.10.html
+* More information in `Type Annotations`
+* More information in `CI/CD Type Checking`

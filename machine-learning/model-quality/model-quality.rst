@@ -1,5 +1,3 @@
-.. _Machine Learning Model Quality:
-
 Model Quality
 *************
 

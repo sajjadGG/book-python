@@ -1,5 +1,3 @@
-.. _Matplotlib:
-
 About
 *****
 .. toctree::

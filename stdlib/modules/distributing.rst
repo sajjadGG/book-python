@@ -1,7 +1,6 @@
 Distributing Packages
 *********************
 
-.. _Distributing Packages:
 
 Installing Packages
 ===================

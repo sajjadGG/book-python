@@ -1,5 +1,3 @@
-.. _Numpy:
-
 About
 *****
 .. toctree::

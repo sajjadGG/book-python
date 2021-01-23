@@ -94,6 +94,7 @@ Typed Dict
     pt6['z'] = 20                       # TypeDict "Point" has no key 'z'
 
 
-More Information
-----------------
-* More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
+Further Reading
+---------------
+* More information in `Type Annotations`
+* More information in `CI/CD Type Checking`

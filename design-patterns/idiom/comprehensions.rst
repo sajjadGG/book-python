@@ -819,7 +819,7 @@ Filtering:
 >>> print(astronauts)
 ['Jan T.', 'Mark W.', 'Melissa L.']
 
-More information in :ref:`Assignment Expression`
+More information in `Assignment Expression`
 
 Reversing ``dict`` keys with values:
 

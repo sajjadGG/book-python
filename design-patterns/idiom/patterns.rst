@@ -299,7 +299,7 @@ Functools
 Itertools
 ---------
 * https://docs.python.org/3/library/itertools.html
-* :ref:`Itertools`
+* More information in `Itertools`
 * ``itertools.from itertools import *``
 * ``itertools.count(start=0, step=1)``
 * ``itertools.cycle(iterable)``

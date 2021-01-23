@@ -1,8 +1,8 @@
 #. Jakie masz doświadczenie z programowaniem:
 
-    * żadnego (wymagane szkolenie :ref:`Basics` przed zapisem)
-    * tworzyłem pomniejsze programy / skrypty (wymagane szkolenie :ref:`Basics` przed zapisem)
-    * mam na koncie kilka aplikacji, ale raczej nic dużego (wymagane szkolenie :ref:`Basics` przed zapisem)
+    * żadnego (wymagane szkolenie `Basics` przed zapisem)
+    * tworzyłem pomniejsze programy / skrypty (wymagane szkolenie `Basics` przed zapisem)
+    * mam na koncie kilka aplikacji, ale raczej nic dużego (wymagane szkolenie `Basics` przed zapisem)
     * w ciągu ostatnich dwóch lat byłem współautorem większego systemu (ponad 500k LOC)
     * programuję na co dzień
     * jestem zaawansowanym programistą i programuję systemy rozproszone

@@ -1,6 +1,3 @@
-.. _DevSecOps:
-
-
 Good Engineering Practices
 **************************
 .. toctree::

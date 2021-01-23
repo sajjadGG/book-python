@@ -1,5 +1,3 @@
-.. _Pandas DataFrame Plotting:
-
 DataFrame Plotting
 ******************
 

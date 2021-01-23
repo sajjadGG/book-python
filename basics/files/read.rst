@@ -33,7 +33,7 @@ Read Using Context Manager
 * Context managers use ``with ... as ...:`` syntax
 * It closes file automatically upon block exit (dedent)
 * Using context manager is best practice
-* More information in :ref:`Protocol Context Manager`
+* More information in `Protocol Context Manager`
 
     >>> FILE = r'/tmp/myfile.txt'
     >>>

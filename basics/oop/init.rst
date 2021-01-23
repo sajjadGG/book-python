@@ -1,5 +1,3 @@
-.. _OOP Init Method:
-
 OOP Init Method
 ===============
 
@@ -217,7 +215,8 @@ setosa
  'petal_width': 1.9,
  'species': 'virginica'}
 
-Since Python 3.7: there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields. More information in :ref:`OOP Dataclass`.
+Since Python 3.7: there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields.
+More information in `OOP Dataclass`
 
 >>> from dataclasses import dataclass
 >>>

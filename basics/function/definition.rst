@@ -82,7 +82,7 @@ Docstring
 * It is accessible in ``__doc__`` property of an object
 * Used for ``doctest``
 * :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
-* More information in :ref:`Function Doctest`
+* More information in `Function Doctest`
 
 Docstring used for documentation:
 

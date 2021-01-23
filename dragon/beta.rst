@@ -1,5 +1,3 @@
-.. _Dragon Beta:
-
 Dragon (version beta)
 *********************
 

@@ -1,5 +1,3 @@
-.. _Install:
-
 Python Install
 **************
 

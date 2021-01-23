@@ -59,32 +59,32 @@ Pylint is a Python source code analyzer which looks for programming errors, help
 
 Coding Standard:
 
-* checking line-code's length,
-* checking if variable names are well-formed according to your coding standard
-* checking if imported modules are used
+    * checking line-code's length,
+    * checking if variable names are well-formed according to your coding standard
+    * checking if imported modules are used
 
 Error detection:
 
-* checking if declared interfaces are truly implemented
-* checking if modules are imported and much more (see the complete check list)
+    * checking if declared interfaces are truly implemented
+    * checking if modules are imported and much more (see the complete check list)
+
+Learn more at https://pypi.python.org/pypi/pylint/
 
 ``Pylint`` is shipped with ``Pyreverse`` which creates UML diagrams for python code.
 
-:Install:
+Install
     .. code-block:: console
 
         $ pip install pylint
 
-:Usage:
+Usage:
     .. code-block:: console
 
         $ pylint DIRECTORY/
         $ pylint FILE.py
 
-:More information:
-    * https://pypi.python.org/pypi/pylint/
 
-:Config:
+Config:
     .. literalinclude:: ../_src/pylintrc.ini
         :language: ini
         :caption: PyLama
@@ -94,19 +94,19 @@ Error detection:
 ============
 A simple program which checks Python source files for errors. Pyflakes analyzes programs and detects various errors. It works by parsing the source file, not importing it, so it is safe to use on modules with side effects. It’s also much faster.
 
-:Install:
+Install:
     .. code-block:: console
 
         $ pip install pyflakes
 
-:Usage:
+Usage:
     .. code-block:: console
 
         $ pyflakes DIRECTORY/
         $ python -m pyflakes DIRECTORY/
 
-:More information:
-    * https://pypi.python.org/pypi/pyflakes
+Learn more at https://pypi.python.org/pypi/pyflakes
+
 
 ``pylama``
 ==========

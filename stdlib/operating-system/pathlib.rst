@@ -1,5 +1,3 @@
-.. _Stdlib Pathlib:
-
 Pathlib
 *******
 

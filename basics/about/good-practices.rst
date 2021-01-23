@@ -295,7 +295,7 @@ Functools
 Itertools
 ---------
 * https://docs.python.org/3/library/itertools.html
-* :ref:`Itertools`
+* More information in `Itertools`
 * ``count(start=0, step=1)``
 * ``cycle(iterable)``
 * ``repeat(object[, times])``

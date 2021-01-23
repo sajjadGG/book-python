@@ -1,5 +1,3 @@
-.. _OOP Method Resolution Order:
-
 Method Resolution Order
 ***********************
 

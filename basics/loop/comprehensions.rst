@@ -207,7 +207,7 @@ Dict Comprehension
 Tuple Comprehension?!
 ---------------------
 * Tuple Comprehension vs. Generator Expression
-* More information in :ref:`Generators`
+* More information in `Generators`
 
 Tuple Comprehension:
 
@@ -567,7 +567,7 @@ Filtering:
 >>> print(astronauts)
 ['Jan T.', 'Mark W.', 'Melissa L.']
 
-More information in :ref:`Assignment Expression`
+More information in `Assignment Expression`
 
 Using ``list`` comprehension for filtering with more complex expression:
 

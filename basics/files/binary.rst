@@ -62,7 +62,7 @@ Read Binary
 Pickle
 ------
 * Works with any Python object (variables, functions, classes, nested objects)
-* More information in :ref:`Serialization Pickle`
+* More information in `Serialization Pickle`
 
 Write binary data to file:
 

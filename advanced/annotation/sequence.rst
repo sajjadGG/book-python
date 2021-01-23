@@ -350,7 +350,8 @@ NamedTuple
     # Astronaut(firstname='Mark', lastname='Watney', agency='NASA')
 
 
-More Information
-----------------
+Further Reading
+---------------
 * Example: https://github.com/pandas-dev/pandas/blob/master/pandas/core/frame.py#L458
-* More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
+* More information in `Type Annotations`
+* More information in `CI/CD Type Checking`

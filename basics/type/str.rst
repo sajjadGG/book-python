@@ -79,7 +79,7 @@ Docstring
 ---------
 * :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three
   double quote (``"""``) characters
-* More information in :ref:`Function Doctest`
+* More information in `Function Doctest`
 
 If assigned to variable, it serves as multiline ``str`` otherwise
 it's a docstring:
@@ -101,7 +101,7 @@ Escape Characters
 * ``\'`` - Single quote ``'`` (escape in single quoted strings)
 * ``\"`` - Double quote ``"`` (escape in double quoted strings)
 * ``\\`` - Backslash ``\`` (to indicate, that this is not escape char)
-* More information in :ref:`Builtin Printing`
+* More information in `Builtin Printing`
 * https://en.wikipedia.org/wiki/List_of_Unicode_characters
 
     >>> print('\U0001F680')

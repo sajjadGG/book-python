@@ -1,5 +1,3 @@
-.. _Dragon RC:
-
 Dragon (version release candidate)
 **********************************
 

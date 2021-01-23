@@ -1,5 +1,3 @@
-.. _Sequence GetItem:
-
 Sequence GetItem
 ================
 

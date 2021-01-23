@@ -1,5 +1,3 @@
-.. _Date and Time Frequency:
-
 Date and Time Frequency
 ***********************
 

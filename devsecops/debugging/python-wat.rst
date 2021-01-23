@@ -36,7 +36,7 @@ CPython 3.7.4:
     ('a' * 4097) is ('a' * 4097)
     # False
 
-* More details at :ref:`OOP String Interning`
+* More information in `OOP String Interning`
 
 .. code-block:: python
 

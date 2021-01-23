@@ -4,8 +4,6 @@ Conditional Expressions
 
 Conjunction
 -----------
-Inside joke (see :ref:`José Jiménez`):
-
     >>> firstname = 'Mark'
     >>> lastname = 'Watney'
     >>>

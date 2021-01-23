@@ -354,7 +354,8 @@ Note ``__repr__()`` method and how to access Descriptor value.
 
 .. figure:: img/protocol-descriptor-timezone.png
 
-    Comparing datetime works only when all has the same timezone (UTC). More information in :ref:`Stdlib Datetime Timezone`
+    Comparing datetime works only when all has the same timezone (UTC).
+    More information in `Stdlib Datetime Timezone`
 
 Descriptor Timezone Converter:
 

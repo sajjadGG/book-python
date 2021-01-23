@@ -1,5 +1,3 @@
-.. _OOP Metaclass:
-
 Metaclass
 *********
 

@@ -1,5 +1,3 @@
-.. _Function Doctest:
-
 Function Doctest
 ================
 
@@ -125,7 +123,7 @@ This is due to the floating point arithmetic in IEEE 754 standard:
     >>> round(0.1+0.2, 17)
     0.30000000000000004
 
-More information in :ref:`Math Precision`.
+More information in `Math Precision`
 
 
 Test Bool

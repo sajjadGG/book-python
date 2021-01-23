@@ -98,6 +98,7 @@ Since Python 3.8: :pep:`589` -- TypedDict: Type Hints for Dictionaries with a Fi
     ... # TypeDict "Point" has no key 'z'
 
 
-More Information
-----------------
-* More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
+Further Reading
+---------------
+* More information in `Type Annotations`
+* More information in `CI/CD Type Checking`

@@ -1,5 +1,3 @@
-.. _Advanced:
-
 About
 *****
 .. toctree::

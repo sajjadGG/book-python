@@ -187,8 +187,6 @@ Transpose
     #        [3, 6, 9]])
 
 
-.. _Numpy signum:
-
 Signum
 ======
 .. figure:: img/numpy-methods-signum.png

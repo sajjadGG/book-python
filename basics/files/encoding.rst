@@ -87,6 +87,8 @@ Escape Characters
 -----------------
 * ``\r\n`` - is used on windows
 * ``\n`` - is used everywhere else
+* More information in `Builtin Printing`
+* Learn more at https://en.wikipedia.org/wiki/List_of_Unicode_characters
 
 .. figure:: img/type-machine.jpg
 
@@ -123,8 +125,6 @@ Emoticons:
     >>> astronaut = a + b + c
     >>> print(astronaut)
     🧑‍🚀
-
-More information in :ref:`Builtin Printing` and https://en.wikipedia.org/wiki/List_of_Unicode_characters
 
 
 References

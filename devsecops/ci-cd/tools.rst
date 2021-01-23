@@ -1,5 +1,3 @@
-.. _cicd-tools:
-
 CI/CD Tools
 ***********
 

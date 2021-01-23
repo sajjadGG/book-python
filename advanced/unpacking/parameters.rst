@@ -17,9 +17,11 @@ Recap
 
 Rationale
 ---------
-.. figure:: img/unpacking-assignment,args,params.png
+* More information in `Unpacking Assignment`
+* More information in `Unpacking Parameters`
+* More information in `Unpacking Arguments`
 
-    :ref:`Unpacking Assignment`, :ref:`Unpacking Parameters` and :ref:`Unpacking Arguments`.
+.. figure:: img/unpacking-assignment,args,params.png
 
 
 Positional Parameters

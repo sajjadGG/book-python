@@ -1,5 +1,3 @@
-.. _Object Oriented Programming:
-
 Paradigm
 ********
 .. toctree::

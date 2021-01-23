@@ -1,5 +1,3 @@
-.. _Math Fractions:
-
 Math Fractions
 **************
 

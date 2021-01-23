@@ -50,8 +50,8 @@ Lazy Evaluation
 
 Itertools
 ---------
-* More information https://docs.python.org/3/library/itertools.html
-* More information :ref:`Itertools`
+* Learn more at https://docs.python.org/3/library/itertools.html
+* More information in `Itertools`
 * ``itertools.count(start=0, step=1)``
 
 >>> from itertools import count

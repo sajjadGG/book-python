@@ -1,5 +1,3 @@
-.. _OOP Enum:
-
 OOP Enum
 ********
 

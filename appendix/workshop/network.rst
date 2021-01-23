@@ -1,10 +1,8 @@
-.. _Python in Networking:
-
 Python in Networking
 ********************
 
 
-Przed szkoleniem proszę o instalację i konfigurację środowiska zgodnie z :ref:`Install`
+Przed szkoleniem proszę o instalację i konfigurację środowiska zgodnie z `Install`
 
 
 Description

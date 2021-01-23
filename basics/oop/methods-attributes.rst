@@ -96,7 +96,8 @@ Methods calling other methods:
 >>> print(flower.total_area())
 18.13
 
-Since Python 3.7 there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields. More information in :ref:`OOP Dataclass`.
+Since Python 3.7 there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields.
+More information in `OOP Dataclass`
 
 >>> from dataclasses import dataclass
 >>>

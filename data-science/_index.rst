@@ -1,5 +1,3 @@
-.. _Data Science:
-
 Introduction
 ************
 .. toctree::

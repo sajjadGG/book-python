@@ -1,5 +1,3 @@
-.. _Machine Learning K Nearest Neighbors:
-
 K Nearest Neighbors
 *******************
 

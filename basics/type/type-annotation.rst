@@ -24,7 +24,7 @@ Rationale
 * Types are used extensively in system libraries
 * More and more books and documentations use types
 * To type check use: ``mypy``, ``pyre-check``, ``pytypes``
-* More information in :ref:`cicd-tools`
+* More information in `cicd-tools`
 * https://www.infoq.com/presentations/dynamic-static-typing/
 * Example: https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L505
 

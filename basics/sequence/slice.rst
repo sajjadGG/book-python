@@ -1,5 +1,3 @@
-.. _Sequence Slice:
-
 Sequence Slice
 ==============
 

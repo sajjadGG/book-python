@@ -1,5 +1,3 @@
-.. _Software Engineering Conventions:
-
 Software Engineering Conventions
 ********************************
 
@@ -801,7 +799,8 @@ PEP 8, but...
 
 Static Code Analysis
 ====================
-* Topic is covered in details in chapters: :ref:`cicd-tools` and :ref:`cicd-pipelines`.
+* More information in `cicd-tools`
+* More information in `cicd-pipelines`
 
 ``pycodestyle``
 ---------------

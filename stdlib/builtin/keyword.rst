@@ -1,5 +1,3 @@
-.. _Builtin Keywords:
-
 Builtin Keywords
 ****************
 

@@ -4,6 +4,10 @@ Unpacking Assignment
 
 Rationale
 ---------
+* More information in `Unpacking Assignment`
+* More information in `Unpacking Parameters`
+* More information in `Unpacking Arguments`
+
     >>> a = 1
     >>> a, b = 1, 2
     >>> a, b, c = 1, 2, 3
@@ -19,8 +23,6 @@ Rationale
     >>> [a, b, c] = (1, 2, 3)
 
 .. figure:: img/function-unpacking,args,kwargs.png
-
-    :ref:`Unpacking Assignment`, :ref:`Unpacking Parameters` and :ref:`Unpacking Arguments`.
 
 
 Errors

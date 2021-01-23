@@ -71,7 +71,8 @@ Builtin function ``tuple()`` converts argument to ``tuple``
 
 GetItem
 -------
-* More information in :ref:`Sequence GetItem` and :ref:`Sequence Slice`
+* More information in `Sequence GetItem`
+* More information in `Sequence Slice`
 
     >>> data = ('a', 'b', 'c', 'd')
 

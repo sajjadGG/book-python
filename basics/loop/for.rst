@@ -10,7 +10,7 @@ Loop For
 Syntax
 ------
 * ``ITERABLE`` must implement ``iterator`` interface
-* More information in :ref:`Protocol Iterator`
+* More information in `Protocol Iterator`
 
 For loop syntax:
 

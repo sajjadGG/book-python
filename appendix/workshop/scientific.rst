@@ -1,10 +1,8 @@
-.. _Python in Science and Engineering:
-
 Python in Science and Engineering
 *********************************
 
 
-Przed szkoleniem proszę o instalację i konfigurację środowiska zgodnie z :ref:`Install`
+Przed szkoleniem proszę o instalację i konfigurację środowiska zgodnie z `Install`
 
 
 Description

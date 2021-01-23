@@ -1,5 +1,3 @@
-.. _Math Complex Numbers:
-
 Math Complex Numbers
 ********************
 

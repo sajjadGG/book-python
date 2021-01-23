@@ -5,7 +5,8 @@ OOP Type Annotation
 Rationale
 ---------
 * All classes are types
-* Always depend upon abstraction not an implementation (SOLID Dependency Inversion Principle). More information in :ref:`OOP SOLID`
+* Always depend upon abstraction not an implementation (SOLID Dependency Inversion Principle)
+* More information in `OOP SOLID`
 
 >>> class Astronaut:
 ...     pass
@@ -248,6 +249,7 @@ Error: can't override a final attribute:
 >>> Hero.DAMAGE_MIN = 1             # Error: can't override a final attribute
 
 
-More Information
-----------------
-* More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
+Further Reading
+---------------
+* More information in `Type Annotations`
+* More information in `CI/CD Type Checking`

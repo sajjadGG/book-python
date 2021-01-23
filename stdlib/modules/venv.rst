@@ -1,5 +1,3 @@
-.. _Module venv:
-
 Module venv
 ***********
 

@@ -1,5 +1,3 @@
-.. _Machine Learning Introduction:
-
 Machine Learning Introduction
 *****************************
 
@@ -13,19 +11,19 @@ Co trzeba wiedzieć przed rozpoczęciem pracy?
 
 Elementy języka Python i biblioteki standardowej
 ------------------------------------------------
-* :ref:`Python Syntax`
-* :ref:`Basic Types`
-* :ref:`Basic Sequences`
-* :ref:`Basic Mappings`
-* :ref:`Basic Control Flow`
-* :ref:`Basic Loops`
-* :ref:`Basic Files`
-* :ref:`Basic Functions`
-* :ref:`Basic Object Oriented Programming`
-* :ref:`Stdlib Mathematics`
-* :ref:`Stdlib Serialization`
-* :ref:`Stdlib Modules and Packages`
-* :ref:`Advanced Performance`
+* `Python Syntax`
+* `Basic Types`
+* `Basic Sequences`
+* `Basic Mappings`
+* `Basic Control Flow`
+* `Basic Loops`
+* `Basic Files`
+* `Basic Functions`
+* `Basic Object Oriented Programming`
+* `Stdlib Mathematics`
+* `Stdlib Serialization`
+* `Stdlib Modules and Packages`
+* `Advanced Performance`
 
 Środowisko
 ----------
@@ -152,7 +150,7 @@ Other
 
 Datasets
 --------
-More in chapter: :ref:`Machine Learning Datasets`.
+More information in `Machine Learning Datasets`
 
 
 Ważne pytania przed przystąpieniem do tworzenia algorytmu

@@ -1,5 +1,3 @@
-.. _Pandas:
-
 About
 *****
 .. toctree::

@@ -1,5 +1,3 @@
-.. _OOP Dynamic Typing:
-
 Dynamic Typing
 **************
 

@@ -1,8 +1,6 @@
 Standalone Applications
 ***********************
 
-.. _zipapp:
-
 
 ``zipapp``
 ==========

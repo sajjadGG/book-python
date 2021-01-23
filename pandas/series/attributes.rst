@@ -43,7 +43,7 @@ Shape
 
 Index
 =====
-* More information in :ref:`Pandas Series Index`.
+* More information in `Pandas Series Index`
 
 .. code-block:: python
 

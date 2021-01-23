@@ -1,6 +1,3 @@
-.. _Design Patterns:
-
-
 About
 *****
 .. toctree::

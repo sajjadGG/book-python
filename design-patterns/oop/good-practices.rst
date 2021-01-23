@@ -186,7 +186,10 @@ Good:
 Setters, Getters, Deleters
 --------------------------
 * Java way: setters, getters, deleters
-* Python way: :ref:`properties <Protocol Property>`, :ref:`reflection <Protocol Reflection>` or :ref:`descriptors <Protocol Descriptor>`
+* Python way: properties, reflection, descriptors
+* More information in `Protocol Property`
+* More information in `Protocol Reflection`
+* More information in `Protocol Descriptor`
 * In Python you prefer direct attribute access
 
 Accessing class fields using setter and getter:

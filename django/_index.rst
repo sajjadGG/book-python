@@ -1,5 +1,3 @@
-.. _Django:
-
 .. toctree::
     :maxdepth: 1
     :caption: Django

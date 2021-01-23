@@ -1,5 +1,3 @@
-.. _Introspection:
-
 Introspection
 *************
 

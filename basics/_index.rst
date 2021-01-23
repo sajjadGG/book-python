@@ -1,6 +1,3 @@
-.. _Basics:
-
-
 About
 *****
 .. toctree::

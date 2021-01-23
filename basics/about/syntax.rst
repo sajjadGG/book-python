@@ -1,5 +1,3 @@
-.. _Python Syntax:
-
 Python Syntax
 =============
 
@@ -71,7 +69,7 @@ Printing Values
 ---------------
 * Prints on the screen
 * f-string formatting for variable substitution
-* More information in :ref:`Builtin Printing`
+* More information in `Builtin Printing`
 
 >>> print('My name... José Jiménez')
 My name... José Jiménez
@@ -131,7 +129,8 @@ Inline comments:
 Docstring and Doctests
 ----------------------
 * Docstring is a first multiline comment in: File/Module, Class, Method/Function
-* Used for ``doctest``. More information in :ref:`Function Doctest`
+* Used for ``doctest``
+* More information in `Function Doctest`
 * :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
 
 >>> # doctest: +SKIP

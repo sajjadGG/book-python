@@ -60,7 +60,8 @@ Builtin function ``list()`` converts argument to ``list``
 
 GetItem
 -------
-More information in :ref:`Sequence GetItem` and :ref:`Sequence Slice`:
+* More information in `Sequence GetItem`
+* More information in `Sequence Slice`
 
     >>> data = ['a', 'b', 'c', 'd']
     >>>

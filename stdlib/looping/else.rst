@@ -1,5 +1,3 @@
-.. _Loop Else:
-
 Loop ``else``
 *************
 

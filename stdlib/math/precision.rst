@@ -1,5 +1,3 @@
-.. _Math Precision:
-
 Math Precision
 **************
 

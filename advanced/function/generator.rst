@@ -144,8 +144,8 @@ Generator Filter
 
 Itertools
 ---------
-* More information https://docs.python.org/library/itertools.html
-* More information :ref:`Itertools`
+* Learn more at https://docs.python.org/library/itertools.html
+* More information in `Itertools`
 * ``from itertools import *``
 * ``count(start=0, step=1)``
 * ``cycle(iterable)``

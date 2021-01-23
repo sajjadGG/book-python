@@ -15,7 +15,7 @@ Rationale
     * O(1) - ``in frozenset``
     * O(1) - ``in dict``
 
-* More information in :ref:`Performance Optimization Contains`
+* More information in `Performance Optimization Contains`
 
 
 Contains

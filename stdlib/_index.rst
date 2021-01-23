@@ -1,5 +1,3 @@
-.. _Stdlib:
-
 About
 *****
 .. toctree::

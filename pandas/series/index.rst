@@ -1,5 +1,3 @@
-.. _Pandas Series Index:
-
 Series Index
 ************
 
@@ -501,7 +499,9 @@ Every second:
     # 1999-12-30 00:00:04    5.0
     # Freq: S, dtype: float64
 
-Every business day. More in :ref:`Date and Time Frequency` and :ref:`Date and Time Calendar`:
+Every business day.
+More information in `Date and Time Frequency`
+More information in `Date and Time Calendar`
 
 .. code-block:: python
 

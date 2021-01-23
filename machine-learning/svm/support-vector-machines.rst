@@ -1,5 +1,3 @@
-.. _Machine Learning Support Vector Machines:
-
 Support Vector Machines
 ***********************
 

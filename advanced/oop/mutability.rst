@@ -27,8 +27,6 @@ Mutable Types
 * ``dict``
 
 
-.. _OOP Mutability Argument:
-
 Argument Mutability
 -------------------
 Bad:

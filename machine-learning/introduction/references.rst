@@ -1,5 +1,3 @@
-.. _Machine Learning References:
-
 References
 **********
 

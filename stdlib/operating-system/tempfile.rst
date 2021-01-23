@@ -1,5 +1,3 @@
-.. _Stdlib Tempfile:
-
 Tempfile
 ********
 

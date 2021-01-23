@@ -1,10 +1,8 @@
-.. _Python in Machine Learning:
-
 Python in Machine Learning
 **************************
 
 
-Przed szkoleniem proszę o instalację i konfigurację środowiska zgodnie z :ref:`Install`
+Przed szkoleniem proszę o instalację i konfigurację środowiska zgodnie z `Install`
 
 
 Description

@@ -1,5 +1,3 @@
-.. _Date and Time Types:
-
 Date and Time Types
 *******************
 
@@ -7,7 +5,8 @@ Date and Time Types
 Timestamp
 =========
 * subclass of ``datetime.datetime``
-* Timezone naive or :ref:`Timezone aware <Date and Time Timezones>`
+* Timezone naive or aware
+* More information in `Date and Time Timezones`
 
 .. code-block:: python
 
@@ -54,7 +53,7 @@ Date Ranges
 
 Period
 ------
-* Read more in :ref:`Date and Time Frequency`
+* More information in `Date and Time Frequency`
 
 .. code-block:: python
 
@@ -71,7 +70,7 @@ Period
 
 Days in a row
 -------------
-* Read more in :ref:`Date and Time Frequency`
+* More information in `Date and Time Frequency`
 
 .. code-block:: python
 
@@ -105,7 +104,7 @@ Days between
 
 Attributes
 ----------
-* Read more in :ref:`Date and Time Frequency`
+* More information in `Date and Time Frequency`
 
 .. code-block:: python
 

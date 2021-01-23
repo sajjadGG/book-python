@@ -26,7 +26,9 @@ Non-hashable (Mutable):
     * ``set``
     * ``dict``
 
-"Hashable types are also immutable" is true for builtin types, but it's not a universal truth. More info: :ref:`OOP Hash` and :ref:`OOP Object Identity`.
+"Hashable types are also immutable" is true for builtin types, but it's not a universal truth.
+More information in `OOP Hash`
+More information in `OOP Object Identity`
 
 
 Definition

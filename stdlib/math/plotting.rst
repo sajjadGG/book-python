@@ -1,5 +1,3 @@
-.. _Math Plotting:
-
 Math Plotting
 *************
 
@@ -7,7 +5,7 @@ Math Plotting
 * requires installation ``pip install matplotlib``
 * Gallery https://matplotlib.org/gallery/index.html
 * ``matplotlib.pyplot`` is used for 2D charts
-* More information in :ref:`Matplotlib`
+* More information in `Matplotlib`
 
 ``Matplotlib`` and ``Jupyter``
 ------------------------------

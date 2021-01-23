@@ -1,5 +1,3 @@
-.. _OOP New and Old Style Class:
-
 New and Old Style Class
 ***********************
 

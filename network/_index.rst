@@ -1,6 +1,3 @@
-.. _Network:
-
-
 About
 *****
 .. toctree::

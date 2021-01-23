@@ -65,8 +65,6 @@ Timeit - Console use
     print a short usage message and exit
 
 
-.. _Micro-benchmarking use case:
-
 Use Case - String Concatenation
 -------------------------------
 .. code-block:: python
