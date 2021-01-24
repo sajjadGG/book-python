@@ -21,6 +21,7 @@ Python Development
 * https://discuss.python.org
 * https://www.python.org/dev/peps/
 * https://github.com/python/peps
+* News from the Python Software Foundation https://pyfound.blogspot.com
 
 
 Conferences
@@ -30,6 +31,7 @@ Conferences
 
 Python:
 
+    * PyCon US 2021: https://us.pycon.org/2021/speaking/
     * PyCon US: https://pyvideo.org/events/pycon-us-2020.html
     * EuroPython: https://pyvideo.org/events/europython-2019.html
     * PyGotham: https://pyvideo.org/events/pygotham-2019.html
