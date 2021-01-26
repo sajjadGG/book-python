@@ -1,57 +1,80 @@
 """
-* Assignment: Entry Test Endswith
-* Complexity: medium
-* Lines of code: 4 lines
+* Assignment: Entry Test File
+* Complexity: hard
+* Lines of code: 15 lines
 * Time: 13 min
 
 English:
     1. Use data from "Given" section (see below)
-    2. Define `result: set[str]`
-    3. Iterate over `DATA`
-    4. Append to `result` species with endings in `SUFFIXES`
-    5. Compare result with "Tests" section (see below)
+    2. Skip comments (`#`) and empty lines
+    3. Extract from each line: ip, host and protocol and add to `result: list[dict]`
+    4. Each line must be a separate dict
+    5. Merge host names with the same IP
+    6. IPv4 protocol address is when dot (`.`) is in ip address
+    7. `result` must be list of dicts (`list[dict]`)
+    8. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj `result: set[str]`
-    3. Iterując po `DATA`
-    4. Dodaj do `result` nazwy gatunków z końcówkami w `SUFFIXES`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    2. Pomiń komentarze (`#`) i puste linie
+    3. Wyciągnij z każdej linii: ip, host i protokół i dodaj do `result: list[dict]`
+    4. Każda linia ma być osobnym słownikiem
+    5. Protokół IPv4 jest gdy kropka (`.`) znajduje się w adresie
+    6. Scal nazwy hostów dla tego samego IP
+    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> type(result)
-    <class 'set'>
+    <class 'list'>
     >>> len(result) > 0
     True
-    >>> 'virginica' in result
+    >>> all(type(row) is dict
+    ...     for row in result)
     True
-    >>> 'setosa' in result
-    True
-    >>> 'versicolor' in result
-    False
+    >>> result  # doctest: +NORMALIZE_WHITESPACE
+    [{'ip': '127.0.0.1', 'hosts': ['localhost', 'astromatt'], 'protocol': 'ipv4'},
+     {'ip': '10.13.37.1', 'hosts': ['nasa.gov', 'esa.int', 'roscosmos.ru'], 'protocol': 'ipv4'},
+     {'ip': '255.255.255.255', 'hosts': ['broadcasthost'], 'protocol': 'ipv4'},
+     {'ip': '::1', 'hosts': ['localhost'], 'protocol': 'ipv6'}]
 """
 
 
 # Given
-DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-        (5.8, 2.7, 5.1, 1.9, {'virginica'}),
-        (5.1, 3.5, 1.4, 0.2, {'setosa'}),
-        (5.7, 2.8, 4.1, 1.3, {'versicolor'}),
-        (6.3, 2.9, 5.6, 1.8, {'virginica'}),
-        (6.4, 3.2, 4.5, 1.5, {'versicolor'}),
-        (4.7, 3.2, 1.3, 0.2, {'setosa'}),
-        (7.0, 3.2, 4.7, 1.4, {'versicolor'}),
-        (7.6, 3.0, 6.6, 2.1, {'virginica'}),
-        (4.6, 3.1, 1.5, 0.2, {'setosa'})]
+DATA = """
+##
+# `/etc/hosts` structure:
+#   - IPv4 or IPv6
+#   - Hostnames
+ ##
 
-SUFFIXES = ('ca', 'osa')
+127.0.0.1       localhost
+127.0.0.1       astromatt
+10.13.37.1      nasa.gov esa.int roscosmos.ru
+255.255.255.255 broadcasthost
+::1             localhost
+"""
 
-result = set()
+result = []
 
 
 # Solution
-for *features, label in DATA[1:]:
-    species = label.pop()
+for line in DATA.splitlines():
+    line = line.strip()
 
-    if species.endswith(SUFFIXES):
-        result.add(species)
+    if len(line) == 0:
+        continue
+    elif line.startswith('#'):
+        continue
+
+    ip, *hosts = line.split()
+
+    for row in result:
+        if row['ip'] == ip:
+            row['hosts'] += hosts
+            break
+    else:
+        result.append({
+            'ip': ip,
+            'hosts': hosts,
+            'protocol': 'ipv4' if '.' in ip else 'ipv6'
+        })

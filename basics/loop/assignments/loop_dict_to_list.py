@@ -14,8 +14,8 @@ English:
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Wypisz `list[dict]`:
-        a. klucz: nazwa z nagłówka
-        b. wartość: wyniki pomiarów lub gatunek
+        a. klucz - nazwa z nagłówka
+        b. wartość - wyniki pomiarów lub gatunek
     3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:

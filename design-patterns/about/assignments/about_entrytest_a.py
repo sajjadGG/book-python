@@ -15,8 +15,8 @@ English:
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zdefiniuj `result: list[dict]`:
-        a. klucz: nazwa z nagłówka
-        b. wartość: wartość numeryczna lub nazwa gatunku
+        a. klucz - nazwa z nagłówka
+        b. wartość - wartość numeryczna lub nazwa gatunku
     3. Przekonwertuj `DATA` z `list[tuple]` do `list[dict]`
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
