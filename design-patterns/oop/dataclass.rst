@@ -107,7 +107,36 @@ Example 2
     print(twardowski.lastname)    # Twardowski
     print(twardowski.agency)       # POLSA
 
+
 Example 3
+---------
+.. code-block:: python
+
+    from __future__ import annotations
+    from dataclasses import dataclass
+    from datetime import date
+    from typing import Final, Optional
+
+
+    @dataclass
+    class Astronaut:
+        firstname: str
+        lastname: str
+        date_of_birth: date = date.today()
+        height: Optional[int] = None
+        friends: Optional[list[Astronaut]] = None
+        AGE_MIN: Final[int] = 27
+        AGE_MAX: Final[int] = 42
+
+
+    astro = Astronaut('Mark', 'Watney', date(1961, 4, 12), friends=[
+            Astronaut('Melissa', 'Lewis'),
+            Astronaut('Rick', 'Martinez'),
+            Astronaut('Beth', 'Johansen'),
+    ])
+
+
+Example 4
 ---------
 ``class``:
 
