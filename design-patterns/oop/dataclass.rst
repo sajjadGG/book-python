@@ -129,11 +129,21 @@ Example 3
         AGE_MAX: Final[int] = 42
 
 
-    astro = Astronaut('Mark', 'Watney', date(1961, 4, 12), friends=[
-            Astronaut('Melissa', 'Lewis'),
-            Astronaut('Rick', 'Martinez'),
-            Astronaut('Beth', 'Johansen'),
-    ])
+    astro = Astronaut('Mark', 'Watney', date(1994, 10, 12), friends=[
+            Astronaut('Melissa', 'Lewis', date(1995, 7, 15)),
+            Astronaut('Rick', 'Martinez', date(1996, 1, 21)),
+            Astronaut('Beth', 'Johansen', date(2006, 5, 9)),
+            Astronaut('Chris', 'Beck', date(1999, 8, 2)),
+            Astronaut('Alex', 'Vogel', date(1994, 11, 15))])
+
+    print(astro)
+    # Astronaut(firstname='Mark', lastname='Watney', date_of_birth=datetime.date(1994, 10, 12), height=None, friends=[
+    #   Astronaut(firstname='Melissa', lastname='Lewis', date_of_birth=datetime.date(1995, 7, 15), height=None, friends=None, AGE_MIN=27, AGE_MAX=42),
+    #   Astronaut(firstname='Rick', lastname='Martinez', date_of_birth=datetime.date(1996, 1, 21), height=None, friends=None, AGE_MIN=27, AGE_MAX=42),
+    #   Astronaut(firstname='Beth', lastname='Johansen', date_of_birth=datetime.date(2006, 5, 9), height=None, friends=None, AGE_MIN=27, AGE_MAX=42),
+    #   Astronaut(firstname='Chris', lastname='Beck', date_of_birth=datetime.date(1999, 8, 2), height=None, friends=None, AGE_MIN=27, AGE_MAX=42),
+    #   Astronaut(firstname='Alex', lastname='Vogel', date_of_birth=datetime.date(1994, 11, 15), height=None, friends=None, AGE_MIN=27, AGE_MAX=42)
+    # ], AGE_MIN=27, AGE_MAX=42)
 
 
 Example 4

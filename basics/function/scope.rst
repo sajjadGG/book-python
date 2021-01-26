@@ -22,7 +22,7 @@ NameError: name 'c' is not defined
 >>>
 >>> add(1)
 >>>
-print(a)
+>>> print(a)
 Traceback (most recent call last):
 NameError: name 'a' is not defined
 >>> print(b)
