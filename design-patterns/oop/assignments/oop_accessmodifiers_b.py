@@ -80,7 +80,7 @@ class Virginica(Iris):
     pass
 
 
-result: list = []
+result: list
 
 
 # Solution
