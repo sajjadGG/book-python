@@ -54,10 +54,12 @@ DATA = """[
         {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
 ]"""
 
-result = []
+result: list
 
 
 # Solution
+result = []
+
 for astronaut in json.loads(DATA):
     for i, address in enumerate(astronaut.pop('addresses'), start=1):
         columns = [f'{key}{i}' for key in address.keys()]

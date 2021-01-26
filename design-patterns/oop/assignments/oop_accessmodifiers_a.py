@@ -23,15 +23,25 @@ Polish:
     7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> from inspect import isclass
+    >>> isclass(Iris)
+    True
+    >>> iris = Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
+    >>> assert hasattr(iris, '_sepal_length')
+    >>> assert hasattr(iris, '_sepal_width')
+    >>> assert hasattr(iris, '_petal_length')
+    >>> assert hasattr(iris, '_petal_width')
+    >>> assert hasattr(iris, 'species')
+
     >>> DATA = [Iris(5.8, 2.7, 5.1, 1.9, 'virginica'),
     ...         Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
     ...         Iris(5.7, 2.8, 4.1, 1.3, 'versicolor')]
-
+    >>>
     >>> result = [{attribute: value}
     ...           for row in DATA
     ...           for attribute, value in row.__dict__.items()
     ...           if not attribute.startswith('_')]
-
+    >>>
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [{'species': 'virginica'},
      {'species': 'setosa'},

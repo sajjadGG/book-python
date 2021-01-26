@@ -72,6 +72,7 @@ CREW = [
     Astronaut('Melissa', 'Lewis'),
 ]
 
+result: list
 
 # Solution
 result = []

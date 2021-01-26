@@ -61,7 +61,7 @@ DATA = [
     Astronaut('Melissa', 'Lewis')]
 
 
-result: list = []
+result: list
 
 
 # Solution

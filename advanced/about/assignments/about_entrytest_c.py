@@ -54,10 +54,12 @@ DATA = """
 ::1             localhost
 """
 
-result = []
+result: list
 
 
 # Solution
+result = []
+
 for line in DATA.splitlines():
     line = line.strip()
 

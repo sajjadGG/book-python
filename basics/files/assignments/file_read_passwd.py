@@ -29,20 +29,37 @@ Polish:
     7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> result  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
-    [{'username': 'twardowski',
+    >>> result  # doctest: +NORMALIZE_WHITESPACE
+    [{'username': 'watney',
+      'uid': 1000,
+      'gid': 1000,
+      'home': '/home/watney',
+      'shell': '/bin/bash',
+      'algorithm': None,
+      'password': None,
+      'groups': ['astronauts', 'mars'],
+      'last_changed': datetime.date(2015, 4, 25),
+      'locked': True},
+     {'username': 'twardowski',
       'uid': 1001,
       'gid': 1001,
       'home': '/home/twardowski',
       'shell': '/bin/bash',
       'algorithm': 'SHA-512',
-      'password': 'tgfvvFWJJ5...k4kijuhE50',
-      'salt': 'P9zn0KwR',
-      'groups': {'astronauts', 'sysadmin'},
+      'password': 'tgfvvFWJJ5FKmoXiP5rXWOjwoEBOEoAuBi3EphRbJqqjWYvhEM2wa67L9XgQ7W591FxUNklkDIQsk4kijuhE50',
+      'groups': ['astronauts', 'sysadmin', 'moon'],
       'last_changed': datetime.date(2015, 7, 16),
       'locked': False},
-    ...]
-
+     {'username': 'ivanovic',
+      'uid': 1002,
+      'gid': 1002,
+      'home': '/home/ivanovic',
+      'shell': '/bin/bash',
+      'algorithm': 'MD5',
+      'password': 'SWlkjRWexrXYgc98F.',
+      'groups': ['astronauts', 'sysadmin'],
+      'last_changed': datetime.date(2005, 2, 11),
+      'locked': False}]
 """
 
 
@@ -67,13 +84,15 @@ ALGORITHMS = {
     '6': 'SHA-512',
 }
 
+result: list
+
+
+# Solution
 result_group = {}
 result_shadow = {}
 result_passwd = {}
 result = []
 
-
-# Solution
 try:
     with open(FILE_GROUP, encoding='utf-8') as file:
         etc_groups = file.readlines()
@@ -114,9 +133,9 @@ for line in etc_groups:
 
     for member in members.split(','):
         if member not in result_group.keys():
-            result_group[member] = set()
+            result_group[member] = list()
 
-        result_group[member].add(group_name)
+        result_group[member].append(group_name)
 
 
 for line in etc_shadow:

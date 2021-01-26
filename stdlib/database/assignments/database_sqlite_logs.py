@@ -135,10 +135,12 @@ with open(FILE, mode='w') as file:
     file.write(DATA)
 
 
+result: list
+
+# Solution
 result = []
 data = []
 
-# Solution
 with open(FILE) as file:
     for line in file:
         date, time, level, message = line.strip().split(', ', maxsplit=3)

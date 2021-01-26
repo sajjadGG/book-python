@@ -101,9 +101,11 @@ DATA = [
         {"street": "Linder Hoehe", "city": "Köln", "code": 51147, "state": None, "country": "Germany"}]}
 ]
 
-result = []
+result: list
 
 # Solution
+result = []
+
 with sqlite3.connect(DATABASE) as connection:
     db = connection.cursor()
     db.row_factory = sqlite3.Row

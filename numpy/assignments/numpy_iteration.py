@@ -34,10 +34,12 @@ DATA = np.array([[1, 2, 3],
                  [7, 8, 9]])
 
 
-result = []
+result: list
 
 
 # Solution
+result = []
+
 for value in DATA.ravel():
     if value % 2 == 0:
         result.append(value)

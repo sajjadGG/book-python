@@ -76,6 +76,8 @@ DATA = [
         {"street": "Linder Hoehe", "city": "Köln", "postcode": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
 ]
 
+result: list
+
 
 # Solution
 @dataclass

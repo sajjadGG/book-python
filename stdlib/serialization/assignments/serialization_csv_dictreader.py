@@ -51,10 +51,12 @@ with open(FILE, mode='w') as file:
     file.write(DATA)
 
 
-result = []
+result: list
 
 
 # Solution
+result = []
+
 with open(FILE) as file:
     header = file.readline()
     data = DictReader(

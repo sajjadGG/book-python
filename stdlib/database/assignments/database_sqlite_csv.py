@@ -96,11 +96,13 @@ SQL_SELECT = """
     FROM iris
     ORDER BY species DESC, id ASC"""
 
-result = []
-data = []
+result: list
 
 
 # Solution
+result = []
+data = []
+
 with open(FILE, mode='w') as file:
     file.write(DATA)
 

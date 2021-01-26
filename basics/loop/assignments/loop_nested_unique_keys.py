@@ -40,7 +40,7 @@ DATA = [{'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
         {'Sepal width': 2.8, 'Petal length': 4.1, 'Species': 'versicolor'},
         {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'}]
 
-result = ...
+result: set
 
 
 # Solution

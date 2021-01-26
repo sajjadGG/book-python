@@ -77,10 +77,12 @@ class Versicolor(Iris):
     pass
 
 
-result = []
+result: list
 
 
 # Solution
+result = []
+
 for iris in json.loads(DATA):
     species = iris.pop('species')
 

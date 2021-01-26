@@ -92,9 +92,11 @@ DATA = """1969-07-14, 21:00:00, INFO, Terminal countdown started
 1969-07-24, 16:50:35, WARNING, Splashdown (went to apex-down)
 1969-07-24, 17:29, INFO, Crew egress"""
 
-result = []
+result: list
 
 # Solution
+result = []
+
 for line in DATA.splitlines():
     date, time, level, message = line.split(', ', maxsplit=3)
     date = datetime.strptime(date, '%Y-%m-%d')
