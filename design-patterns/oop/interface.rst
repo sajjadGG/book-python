@@ -20,62 +20,54 @@ Rationale
 
 The following code is not a valid Python syntax. It is only to demonstrate how interfaces generally works.
 
-.. code-block:: python
-    :force:
-
-    interface Cache:
-        def set(self, key: str, value: str) -> None
-        def get(self, key: str) -> str
-        def is_valid(self, key: str) -> bool
+>>> # doctest: +SKIP
+...
+... interface Cache:
+...     def set(self, key: str, value: str) -> None
+...     def get(self, key: str) -> str
+...     def is_valid(self, key: str) -> bool
 
 
 Example
 -------
-.. code-block:: python
+>>> class CacheInterface:
+...     def set(self, key: str, value: str) -> None:
+...         raise NotImplementedError
+...
+...     def get(self, key: str) -> str:
+...         raise NotImplementedError
+...
+...     def is_valid(self, key: str) -> bool:
+...         raise NotImplementedError
 
-    class CacheInterface:
-        def set(self, key: str, value: str) -> None:
-            raise NotImplementedError
-
-        def get(self, key: str) -> str:
-            raise NotImplementedError
-
-        def is_valid(self, key: str) -> bool:
-            raise NotImplementedError
-
-.. code-block:: python
-
-    class CacheInterface:
-        def set(self, key: str, value: str) -> None: raise NotImplementedError
-        def get(self, key: str) -> str: raise NotImplementedError
-        def is_valid(self, key: str) -> bool: raise NotImplementedError
+>>> class CacheInterface:
+...     def set(self, key: str, value: str) -> None: raise NotImplementedError
+...     def get(self, key: str) -> str: raise NotImplementedError
+...     def is_valid(self, key: str) -> bool: raise NotImplementedError
 
 Sometimes you may get a shorter code, but it will not raise an error.
 
-.. code-block:: python
-
-    class CacheInterface:
-        def set(self, key: str, value: str) -> None: pass
-        def get(self, key: str) -> str: pass
-        def is_valid(self, key: str) -> bool: pass
+>>> class CacheInterface:
+...     def set(self, key: str, value: str) -> None: pass
+...     def get(self, key: str) -> str: pass
+...     def is_valid(self, key: str) -> bool: pass
 
 The following code is not a valid Python syntax... How nice it would be to write:
 
-    .. code-block:: python
+>>> # doctest: +SKIP
+...
+... @interface
+... class Cache:
+...     def set(self, key: str, value: str) -> None: pass
+...     def get(self, key: str) -> str: pass
+...     def is_valid(self, key: str) -> bool: pass
 
-        @interface
-        class Cache:
-            def set(self, key: str, value: str) -> None: pass
-            def get(self, key: str) -> str: pass
-            def is_valid(self, key: str) -> bool: pass
-
-    .. code-block:: python
-        :force:
-
-        interface Cache:
-            def set(self, key: str, value: str) -> None
-            def get(self, key: str) -> str
-            def is_valid(self, key: str) -> bool
+>>> # doctest: +SKIP
+...
+... interface Cache:
+...     def set(self, key: str, value: str) -> None
+...     def get(self, key: str) -> str
+...     def is_valid(self, key: str) -> bool
 
 
 Use Cases

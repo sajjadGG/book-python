@@ -8,8 +8,8 @@ English:
     1. Use data from "Given" section (see below)
     2. Define class `Setosa` implementing `IrisInterface`
     3. Implement interface
-    4. Note, that attibute `setosa` is a `str`, and you cannot add `str` and `float`
-    5. Create protected method `_get_values()` which returns only values of `int` and `float` type attibutes
+    4. Note, that attribute `setosa` is a `str`, and in Python you cannot add `str` and `float`
+    5. Create protected method `_get_values()` which returns values of `int` and `float` type attibutes
     6. Why this method is not in interface?
     7. Compare result with "Tests" section (see below)
 
@@ -17,13 +17,13 @@ Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Stwórz klasę `Setosa` implementującą `IrisInterface`
     3. Zaimplementuj interfejs
-    4. Zwróć uwagę, że atrybut `setosa` jest `str`, i że nie możesz dodać `str` i `float`
-    5. Stwórz metodę chronioną `_get_values()`, która zwraca tylko wartości atrybutów typu `int` i `float`
+    4. Zwróć uwagę, że atrybut `setosa` jest `str`, a Python nie można dodawać `str` i `float`
+    5. Stwórz metodę chronioną `_get_values()`, która zwraca wartości atrybutów typu `int` i `float`
     6. Dlaczego ta metoda nie jest w interfejsie?
     7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Hints:
-    * `var(self.values())`
+    * `var(self).values()`
     * `instanceof()` or `type()`
     * `mean = sum() / len()`
 
