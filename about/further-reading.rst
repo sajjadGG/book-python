@@ -226,3 +226,8 @@ Python:
     * http://www.amazon.com/Python-3-Object-Oriented-Programming/dp/1849511268/
     * http://shop.oreilly.com/product/0636920032519.do
 
+
+Useful libs
+-----------
+* https://fastapi.tiangolo.com
+* https://pydantic-docs.helpmanual.io
