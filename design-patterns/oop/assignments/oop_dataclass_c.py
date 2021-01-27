@@ -7,12 +7,12 @@
 English:
     1. Use data from "Given" section (see below)
     2. You received input data in JSON format from the API
-    3. Using `dataclass` Model data as class `User`
+    3. Using `dataclass` model data as class `User`
     4. Parse fields with dates and store as `datetime` objects
     5. Parse fields with `true` and `false` values and store as `bool` objects
     6. Do not create additional classes to represent `permission` filed, leave it as `list[dict]`
     6. Iterate over records and create instances of this class
-    7. Collect all instances to one list
+    7. Collect all instances to `result: list[User]`
     8. Compare result with "Tests" section (see below)
 
 Polish:
@@ -23,7 +23,7 @@ Polish:
     5. Sparsuj pola zawierające `true` lub `false` i zapamiętaj ich wartości jako obiekty `bool`
     6. Nie twórz dodatkowych klas do reprezentacji pola `permission`, niech zostanie jako `list[dict]`
     7. Iterując po rekordach twórz instancje tej klasy
-    8. Zbierz wszystkie instancje do jednej listy
+    8. Zbierz wszystkie instancje do `result: list[User]`
     9. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:

@@ -10,12 +10,15 @@ Rationale
 
 Class Diagram
 -------------
+.. figure:: img/uml-mermaid-classdiagram.png
+
 .. code-block:: md
 
     ```mermaid
     classDiagram
-       Human <|-- Astronaut
-       Human <|-- Cosmonaut
+
+        Human <|-- Astronaut
+        Human <|-- Cosmonaut
 
         class Human {
              + firstname: str
@@ -23,7 +26,7 @@ Class Diagram
              + say_hello()
         }
 
-       class Astronaut {
+        class Astronaut {
           + agency: str = 'NASA'
         }
 
@@ -32,10 +35,11 @@ Class Diagram
         }
     ```
 
-.. figure:: img/uml-mermaid-classdiagram.png
 
 Sequence Diagram
 ----------------
+.. figure:: img/uml-mermaid-sequencediagram-web.png
+
 .. code-block:: md
 
     ```mermaid
@@ -48,20 +52,22 @@ Sequence Diagram
         activate Client
         Client ->> +Server: HTTP Request
         Server ->> +Database: SQL Query
-        Database ->> -Server: Result
-        Server ->> -Client: HTTP Response
+        Database -->> -Server: Result
+        Server -->> -Client: HTTP Response
         deactivate Client
     ```
-
-.. figure:: img/uml-mermaid-sequencediagram-web.png
 
 
 Flowchart
 ---------
+.. figure:: img/uml-mermaid-flowchart.png
+.. todo:: better example
+
 .. code-block:: md
 
     ```mermaid
     graph TD
+
         A[Christmas] -->|Get money| B(Go shopping)
         B --> C{Let me think}
         B --> G[/Another/]
@@ -78,8 +84,6 @@ Flowchart
         end
     ```
 
-.. figure:: img/uml-mermaid-flowchart.png
-
 
 ERD
 ---
@@ -89,6 +93,7 @@ ERD
 
     ```mermaid
       erDiagram
+
         CUSTOMER }|..|{ DELIVERY-ADDRESS : has
         CUSTOMER ||--o{ ORDER : places
         CUSTOMER ||--o{ INVOICE : "liable for"
@@ -108,6 +113,7 @@ State Diagram
 
     ```mermaid
     stateDiagram-v2
+
             [*] --> Active
 
             state Active {
@@ -119,6 +125,7 @@ State Diagram
                 CapsLockOff --> CapsLockOn : EvCapsLockPressed
                 CapsLockOn --> CapsLockOff : EvCapsLockPressed
             }
+
             state SomethingElse {
               A --> B
               B --> A
@@ -139,6 +146,7 @@ Gantt
 
     ```mermaid
     gantt
+
         title Example Gantt diagram
         dateFormat  YYYY-MM-DD
 
@@ -147,7 +155,7 @@ Gantt
         Review & documentation  :after a1, 2000-01-14, 20d
 
         section Team 2
-        Implementation      :crit, active, 2000-02-01  , 20d
+        Implementation      :crit, active, 2000-02-01, 20d
         Testing             :crit, 20d
     ```
 
@@ -162,6 +170,7 @@ Theming
 
     %%{init: { 'theme': 'dark' } }%%
     %%{init: { 'theme': 'forest' } }%%
+
 
 Config
 ------

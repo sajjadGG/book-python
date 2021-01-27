@@ -13,19 +13,19 @@ English:
         a. if `species` is "setosa" append instance of a class `Setosa`
         b. if `species` is "versicolor" append instance of a class `Versicolor`
         c. if `species` is "virginica" append instance of a class `Virginica`
-    6. Initialize instances with `features` using `*args` notation
+    6. Initialize instances with `features` using `*features` notation
     7. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Stwórz `result: list[Iris]`
-    3. Iterując po `DATA` pomijając header
+    3. Iterując po `DATA` pomiń nagłówek
     4. Odseparuj `features` od `species` w każdym wierszu
     5. Dodaj do `result`:
-        a. jeżeli `species` jest "setosa" to dodaj instancję klasy `Setosa`
-        b. jeżeli `species` jest "versicolor" to dodaj instancję klasy `Versicolor`
-        c. jeżeli `species` jest "virginica" to dodaj instancję klasy `Virginica`
-    6. Instancje inicjalizuj danymi z `features` używając notacji `*args`
+        a. jeżeli `species` to "setosa" to dodaj instancję klasy `Setosa`
+        b. jeżeli `species` to "versicolor" to dodaj instancję klasy `Versicolor`
+        c. jeżeli `species` to "virginica" to dodaj instancję klasy `Virginica`
+    6. Instancje inicjalizuj danymi z `features` używając notacji `*features`
     7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Hints:

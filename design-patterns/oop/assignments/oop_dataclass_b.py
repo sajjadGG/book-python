@@ -9,8 +9,8 @@ English:
     2. Model `DATA` using `dataclasses`
         a. Create class definition, fields and their types
         b. Do not write code converting `DATA` to your classes
-    4. Fields should have deafault value set to empty `str`
-    5. Compare result with "Tests" section (see below)
+    3. Fields should have deafault value set to empty `str`
+    4. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)

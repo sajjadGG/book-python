@@ -20,121 +20,85 @@ Rationale
 
 Inheritance
 -----------
-Simple Inheritance:
+.. figure:: img/uml-relations-inheritance-simple.png
 
-    .. code-block:: python
+.. code-block:: md
 
-        class Vehicle:
-            def engine_start():
-                pass
+    ```mermaid
+    classDiagram
+        Vehicle <|-- Car
+        Vehicle <|-- Truck
+        Vehicle <|-- Motorcycle
 
-            def engine_stop():
-                pass
+        class Vehicle {
+            engine_start()
+            engine_stop()
+        }
+    ```
 
+>>> class Vehicle:
+...     def engine_start(self): pass
+...     def engine_stop(self): pass
+>>>
+>>>
+>>> class Car(Vehicle):
+...     pass
+>>>
+>>> class Truck(Vehicle):
+...     pass
+>>>
+>>> class Motorcycle(Vehicle):
+...     pass
 
-        class Car(Vehicle):
-            pass
+Multilevel Inheritance
+----------------------
+.. figure:: img/uml-relations-inheritance-multilevel.png
 
-        class Truck(Vehicle):
-            pass
+.. code-block:: md
 
-        class Motorcycle(Vehicle):
-            pass
+    ```mermaid
+    classDiagram
+        Vehicle <|-- Motorcycle
+        Vehicle <|-- VehicleWithWindows
+        VehicleWithWindows <|-- Car
+        VehicleWithWindows <|-- Truck
 
-    .. code-block:: md
+        class Vehicle {
+            engine_start()
+            engine_stop()
+        }
 
-        ```mermaid
-        classDiagram
-            Vehicle <|-- Car
-            Vehicle <|-- Truck
-            Vehicle <|-- Motorcycle
+        class VehicleWithWindows {
+            window_open()
+            window_close()
+        }
+    ```
 
-            class Vehicle {
-                engine_start()
-                engine_stop()
-            }
-        ```
-
-    .. figure:: img/uml-relations-inheritance-simple.png
-
-Multilevel Inheritance:
-
-    .. code-block:: python
-
-        class Vehicle:
-            def engine_start():
-                pass
-
-            def engine_stop():
-                pass
-
-        class HasWindows(Vehicle):
-            def window_open():
-                pass
-
-            def window_close():
-                pass
-
-
-        class Car(HasWindows):
-            pass
-
-        class Truck(HasWindows):
-            pass
-
-        class Motorcycle(Vehicle):
-            pass
-
-    .. code-block:: md
-
-        ```mermaid
-        classDiagram
-            Vehicle <|-- Motorcycle
-            Vehicle <|-- HasWindows
-            HasWindows <|-- Car
-            HasWindows <|-- Truck
-
-            class Vehicle {
-                engine_start()
-                engine_stop()
-            }
-
-            class HasWindows {
-                window_open()
-                window_close()
-            }
-        ```
-
-    .. figure:: img/uml-relations-inheritance-multilevel.png
+>>> class Vehicle:
+...     def engine_start(): pass
+...     def engine_stop(): pass
+>>>
+>>> class VehicleWithWindows(Vehicle):
+...     def window_open(): pass
+...     def window_close(): pass
+>>>
+>>> class Car(VehicleWithWindows):
+...     pass
+>>>
+>>> class Truck(VehicleWithWindows):
+...     pass
+>>>
+>>> class Motorcycle(Vehicle):
+...     pass
 
 
-Composition
------------
-    .. code-block:: python
+Multiple Inheritance
+--------------------
+* Also know as `Mixin Classes`
 
-        class Vehicle:
-            def engine_start():
-                pass
+.. todo:: Update image Multiple Inheritance from mermaid code
 
-            def engine_stop():
-                pass
-
-        class HasWindows:
-            def window_open():
-                pass
-
-            def window_close():
-                pass
-
-
-        class Car(Vehicle, HasWindows):
-            pass
-
-        class Truck(Vehicle, HasWindows):
-            pass
-
-        class Motorcycle(Vehicle):
-            pass
+.. figure:: img/uml-relations-composition.png
 
 .. code-block:: md
 
@@ -158,22 +122,81 @@ Composition
         }
     ```
 
-.. figure:: img/uml-relations-composition.png
+>>> class Vehicle:
+...     pass
+>>>
+>>> class HasEngine:
+...     def engine_start(self): pass
+...     def engine_stop(self): pass
+>>>
+>>> class HasWindows:
+...     def window_open(self): pass
+...     def window_close(self): pass
+>>>
+>>> class Car(Vehicle, HasEngine, HasWindows):
+...     pass
+>>>
+>>> class Truck(Vehicle, HasEngine, HasWindows):
+...     pass
+>>>
+>>> class Motorcycle(Vehicle, HasEngine):
+...     pass
+
+
+Composition
+-----------
+.. todo:: Add image to Composition UML
+
+.. code-block:: md
+
+    ```mermaid
+    classDiagram
+
+        class Engine {
+            engine_start()
+            engine_stop()
+        }
+
+        class Car {
+            engine: Engine
+        }
+
+        class Truck {
+            engine: Engine
+        }
+
+        class Motorcycle {
+            engine: Engine
+        }
+    ```
+
+>>> class Vehicle:
+...     pass
+>>>
+>>> class Engine:
+...     def engine_start(self): pass
+...     def engine_stop(self): pass
+>>>
+>>> class Windows:
+...     def window_open(self): pass
+...     def window_close(self): pass
+>>>
+>>>
+>>> class Car(Vehicle):
+...     engine: Engine
+...     window: Windows
+>>>
+>>> class Truck(Vehicle):
+...     engine: Engine
+...     window: Windows
+>>>
+>>> class Motorcycle(Vehicle):
+...     engine: Engine
 
 
 Aggregation
 -----------
-.. code-block:: python
-
-    class Mission:
-        year: int
-        name: str
-
-
-    class Astronaut:
-        firstname: str
-        lastname: str
-        mission: list[Mission]
+.. figure:: img/uml-relations-aggregation.png
 
 .. code-block:: md
 
@@ -193,12 +216,65 @@ Aggregation
         }
     ```
 
-.. figure:: img/uml-relations-aggregation.png
+.. code-block:: python
+
+    class Mission:
+        year: int
+        name: str
+
+
+    class Astronaut:
+        firstname: str
+        lastname: str
+        mission: list[Mission]
+
+>>> class Vehicle:
+...     pass
+>>>
+>>> class Part:
+...     pass
+>>>
+>>> class Engine(Part):
+...     def engine_start(self): pass
+...     def engine_stop(self): pass
+>>>
+>>> class Windows(Part):
+...     def window_open(self): pass
+...     def window_close(self): pass
+>>>
+>>>
+>>> class Car(Vehicle):
+...     parts: list[Part]       # [Engine, Windows]
+>>>
+>>> class Truck(Vehicle):
+...     parts: list[Part]       # [Engine, Windows]
+>>>
+>>> class Motorcycle(Vehicle):
+...     parts: list[Part]       # [Engine]
 
 
 Dependency
 ----------
-* Somewhere in ``Shape`` class you are using ``Document`` class
+* Somewhere in ``Astronaut`` class you are using ``Spaceship`` class
+
+.. figure:: img/uml-relations-dependency.png
+
+.. code-block:: md
+
+    ```mermaid
+    classDiagram
+        Astronaut ..> Spaceship
+
+        class Astronaut {
+            firstname: str
+            lastname: str
+            enter(spaceship: Spaceship)
+        }
+
+        class Spaceship {
+            name: str
+        }
+    ```
 
 .. code-block:: python
 
@@ -213,21 +289,16 @@ Dependency
         def enter(spaceship: Spaceship):
             pass
 
-.. code-block:: md
 
-    ```mermaid
-    classDiagram
-        Astronaut ..> Spaceship
+Cardinality
+-----------
+* ``0..1`` - Zero or one
+* ``0..n`` - Zero to `n` (where `n` > 1)
+* ``0..*`` - Zero or more
 
-        class Astronaut {
-            firstname: str
-            lastname: str
-            enter(spaceship: Spapceship)
-        }
+* ``1`` - Only one
+* ``1..n`` - One to `n` (where `n` > 1)
+* ``1..*`` - One or more
 
-        class Spaceship {
-            name: str
-        }
-    ```
-
-.. figure:: img/uml-relations-dependency.png
+* ``*`` - Many
+* ``n..n`` - {where n>1}

@@ -23,10 +23,6 @@ Rationale
     # Traceback (most recent call last):
     # TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
 
-    Vector(x=1, y=2) + Vector(x=3, y=4) + Vector(x=5, y=6)
-    # Traceback (most recent call last):
-    # TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
-
 .. code-block:: python
 
     from dataclasses import dataclass
@@ -487,43 +483,67 @@ Use Cases
 
 .. code-block:: python
 
-    hero["gold"] += dragon["gold"]
+    hero['gold'] += dragon['gold']
 
 .. code-block:: python
 
     class Cache(dict):
         def __init__(self, func):
-            self._func = func
+            self.func = func
+
+        def __call__(self, *args):
+            if args not in self:
+                self[args] = self.func(*args)
+            return self[args]
+
+
+    @Cache
+    def add(a, b):
+        return a + b
+
+
+    add(1,2)  # computed
+    add(1,2)  # fetched from cache
+    add(1,2)  # fetched from cache
+    add(1,2)  # fetched from cache
+
+    add(2,1)  # computed
+    add(2,1)  # fetched from cache
+
+    add
+    # {(1, 2): 3,
+    #  (2, 1): 3}
+
+.. code-block:: python
+
+    class Cache(dict):
+        def __init__(self, func):
+            self.func = func
 
         def __call__(self, *args):
             return self[args]
 
         def __missing__(self, key):
-            self[key] = self._func(*key)
+            self[key] = self.func(*key)
             return self[key]
 
 
     @Cache
-    def myfunction(a, b):
-        return a * b
+    def add(a, b):
+        return a + b
 
 
-    myfunction(2, 4)           # 8         # Computed
-    myfunction('hi', 3)        # 'hihihi'  # Computed
-    myfunction('ha', 3)        # 'hahaha'  # Computed
+    add(1,2)  # computed
+    add(1,2)  # fetched from cache
+    add(1,2)  # fetched from cache
+    add(1,2)  # fetched from cache
 
-    myfunction('ha', 3)        # 'hahaha'  # Fetched from cache
-    myfunction('hi', 3)        # 'hihihi'  # Fetched from cache
-    myfunction(2, 4)           # 8         # Fetched from cache
-    myfunction(4, 2)           # 8         # Computed
+    add(2,1)  # computed
+    add(2,1)  # fetched from cache
 
-    myfunction
-    # {
-    #   (2, 4): 8,
-    #   ('hi ', 3): 'hihihi',
-    #   ('ha', 3): 'hahaha',
-    #   (4, 2): 8,
-    # }
+    add
+    # {(1, 2): 3,
+    #  (2, 1): 3}
 
 
 Further Reading

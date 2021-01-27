@@ -210,6 +210,7 @@ Access Modifiers - Protected
     ```
 .. figure:: img/uml-classdiagram-accessmodifiers-protected.png
 
+
 Access Modifiers - Private
 --------------------------
 .. code-block:: python
@@ -234,17 +235,6 @@ Access Modifiers - Private
     ```
 
 .. figure:: img/uml-classdiagram-accessmodifiers-private.png
-
-
-Cardinality
------------
-* ``1`` - Only 1
-* ``0..1`` - Zero or One
-* ``1..*`` - One or more
-* ``*`` - Many
-* ``n n`` - {where n>1}
-* ``0..n`` - zero to n {where n>1}
-* ``1..n`` - one to n {where n>1}
 
 
 Boxes and Arrows

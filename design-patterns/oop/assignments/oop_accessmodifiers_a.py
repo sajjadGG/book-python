@@ -6,21 +6,17 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Define `result: list[dict]`
-    3. Define class `Iris` with attributes
-    4. Protected attributes: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`
-    5. Public attribute: `species`
-    6. Iterate over `DATA` and add all public attributes to `result`
-    7. Compare result with "Tests" section (see below)
+    2. Modify class `Iris` to add attributes:
+        a. Protected attributes: sepal_length, sepal_width, petal_length, petal_width
+        b. Public attribute: species
+    3. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj `result: list[dict]`
-    3. Zdefiniuj klasę `Iris`
-    4. Chronione atrybuty: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`
-    5. Publiczne atrybuty: `species`
-    6. Iteruj po `DATA` i dodaj wszystkie publiczne atrybuty do `result`
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    2. Zmodyfikuj klasę `Iris` by dodać atrybuty:
+        a. Chronione atrybuty: sepal_length, sepal_width, petal_length, petal_width
+        b. Publiczne atrybuty: species`
+    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> from inspect import isclass
