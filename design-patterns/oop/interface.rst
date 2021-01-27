@@ -52,7 +52,15 @@ Sometimes you may get a shorter code, but it will not raise an error.
 ...     def get(self, key: str) -> str: pass
 ...     def is_valid(self, key: str) -> bool: pass
 
-The following code is not a valid Python syntax... How nice it would be to write:
+As of three dots (``...``) is a valid Python object (Ellipsis) you can write that:
+
+>>> class CacheInterface:
+...     def set(self, key: str, value: str) -> None: ...
+...     def get(self, key: str) -> str: ...
+...     def is_valid(self, key: str) -> bool: ...
+
+The following code is not a valid Python syntax...
+How nice it would be to write:
 
 >>> # doctest: +SKIP
 ...
@@ -72,66 +80,59 @@ The following code is not a valid Python syntax... How nice it would be to write
 
 Use Cases
 ---------
-.. code-block:: python
-
-    class Cache:
-        def get(self, key: str) -> str:
-            raise NotImplementedError
-
-        def set(self, key: str, value: str) -> None:
-            raise NotImplementedError
-
-        def is_valid(self, key: str) -> bool:
-            raise NotImplementedError
-
-
-    class CacheDatabase(Cache):
-        def is_valid(self, key: str) -> bool:
-            ...
-
-        def get(self, key: str) -> str:
-            ...
-
-        def set(self, key: str, value: str) -> None:
-            ...
-
-
-    class CacheRAM(Cache):
-        def is_valid(self, key: str) -> bool:
-            ...
-
-        def get(self, key: str) -> str:
-            ...
-
-        def set(self, key: str, value: str) -> None:
-            ...
-
-
-    class CacheFilesystem(Cache):
-        def is_valid(self, key: str) -> bool:
-            ...
-
-        def get(self, key: str) -> str:
-            ...
-
-        def set(self, key: str, value: str) -> None:
-            ...
-
-
-    cache: Cache = CacheFilesystem()
-    cache.set('name', 'Jan Twardowski')
-    cache.is_valid('name')
-    cache.get('name')
-
-    cache: Cache = CacheRAM()
-    cache.set('name', 'Jan Twardowski')
-    cache.is_valid('name')
-    cache.get('name')
-
-    cache: Cache = CacheDatabase()
-    cache.set('name', 'Jan Twardowski')
-    cache.is_valid('name')
-    cache.get('name')
+>>> class Cache:
+...     def get(self, key: str) -> str: raise NotImplementedError
+...     def set(self, key: str, value: str) -> None: raise NotImplementedError
+...     def is_valid(self, key: str) -> bool: raise NotImplementedError
+>>>
+>>>
+>>> class CacheDatabase(Cache):
+...     def is_valid(self, key: str) -> bool:
+...         ...
+...
+...     def get(self, key: str) -> str:
+...         ...
+...
+...     def set(self, key: str, value: str) -> None:
+...         ...
+>>>
+>>>
+>>> class CacheRAM(Cache):
+...     def is_valid(self, key: str) -> bool:
+...         ...
+...
+...     def get(self, key: str) -> str:
+...         ...
+...
+...     def set(self, key: str, value: str) -> None:
+...         ...
+>>>
+>>>
+>>> class CacheFilesystem(Cache):
+...     def is_valid(self, key: str) -> bool:
+...         ...
+...
+...     def get(self, key: str) -> str:
+...         ...
+...
+...     def set(self, key: str, value: str) -> None:
+...         ...
+>>>
+>>>
+>>> cache: Cache = CacheFilesystem()
+>>> cache.set('name', 'Jan Twardowski')
+>>> cache.is_valid('name')
+>>> cache.get('name')
+>>>
+>>> cache: Cache = CacheRAM()
+>>> cache.set('name', 'Jan Twardowski')
+>>> cache.is_valid('name')
+>>> cache.get('name')
+>>>
+>>> cache: Cache = CacheDatabase()
+>>> cache.set('name', 'Jan Twardowski')
+>>> cache.is_valid('name')
+>>> cache.get('name')
 
 
 Assignments
