@@ -1,7 +1,7 @@
 """
 * Assignment: OOP Composition Multilevel
 * Complexity: easy
-* Lines of code: 2 lines
+* Lines of code: 8 lines
 * Time: 3 min
 
 English:
