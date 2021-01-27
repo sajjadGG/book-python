@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Composition Multilevel
+* Assignment: OOP Composition Mixin
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min
@@ -7,16 +7,18 @@
 English:
     1. Use data from "Given" section (see below)
     2. Create class `MarsMission` from `Habitat`, `Rocket`, `Astronaut`
-    3. Use multilevel inheritance
-    4. Assignment demonstrates syntax, so do not add any attributes and methods
-    5. Compare result with "Tests" section (see below)
+    3. Use mixins classes
+    4. You can modify given classes
+    5. Assignment demonstrates syntax, so do not add any attributes and methods
+    6. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Stwórz klasę `MarsMission` z `Habitat`, `Rocket`, `Astronaut`
-    3. Użyj wielopoziomowego dziedziczenia
-    4. Zadanie demonstruje składnię, nie dodawaj żadnych atrybutów i metod
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Użyj klas domieszkowych (mixin)
+    4. Możesz modyfikować dane klasy
+    5. Zadanie demonstruje składnię, nie dodawaj żadnych atrybutów i metod
+    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> from inspect import isclass
@@ -30,18 +32,19 @@ Tests:
 """
 
 
-# Solution
+# Given
 class Habitat:
     pass
 
 
-class Astronaut(Habitat):
+class Astronaut:
     pass
 
 
-class Rocket(Astronaut):
+class Rocket:
     pass
 
 
-class MarsMission(Rocket):
+# Solution
+class MarsMission(Habitat, Astronaut, Rocket):
     pass

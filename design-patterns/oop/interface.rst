@@ -151,3 +151,7 @@ Assignments
 .. literalinclude:: assignments/oop_interface_b.py
     :caption: :download:`Solution <assignments/oop_interface_b.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/oop_interface_c.py
+    :caption: :download:`Solution <assignments/oop_interface_c.py>`
+    :end-before: # Solution

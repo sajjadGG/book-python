@@ -282,3 +282,11 @@ Assignments
 .. literalinclude:: assignments/oop_composition_b.py
     :caption: :download:`Solution <assignments/oop_composition_b.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/oop_composition_c.py
+    :caption: :download:`Solution <assignments/oop_composition_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/oop_composition_d.py
+    :caption: :download:`Solution <assignments/oop_composition_d.py>`
+    :end-before: # Solution
