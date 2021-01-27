@@ -6,14 +6,14 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Create class `MarsMission` from `Habitat`, `Rocket`, `Astronaut`
+    2. Create class `MarsMission` from classes `Habitat`, `Rocket`, `Astronaut`
     3. Use multilevel inheritance
     4. Assignment demonstrates syntax, so do not add any attributes and methods
     5. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz klasę `MarsMission` z `Habitat`, `Rocket`, `Astronaut`
+    2. Stwórz klasę `MarsMission` z klas `Habitat`, `Rocket`, `Astronaut`
     3. Użyj wielopoziomowego dziedziczenia
     4. Zadanie demonstruje składnię, nie dodawaj żadnych atrybutów i metod
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)

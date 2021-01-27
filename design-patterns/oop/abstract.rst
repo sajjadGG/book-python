@@ -81,14 +81,9 @@ Abstract Property
 ...     def DAMAGE(self) -> int:
 ...         pass
 >>>
+>>>
 >>> class Dragon(Monster):
 ...     DAMAGE: int = 10
->>>
->>>
->>> d = Dragon()
->>>
->>> print('no errors')
-no errors
 
 >>> from abc import ABCMeta, abstractmethod
 >>>
@@ -102,12 +97,23 @@ no errors
 >>>
 >>> class Dragon(Monster):
 ...     DAMAGE: int = 10
+
+>>> from abc import ABCMeta, abstractproperty
 >>>
 >>>
->>> d = Dragon()
+>>> class Monster(metaclass=ABCMeta):
+...     @abstractproperty
+...     def DAMAGE_MIN(self):
+...         pass
+...
+...     @abstractproperty
+...     def DAMAGE_MAX(self):
+...         pass
 >>>
->>> print('no errors')
-no errors
+>>>
+>>> class Dragon(Monster):
+...     DAMAGE_MIN: int = 10
+...     DAMAGE_MAX: int = 20
 
 
 Common Problems

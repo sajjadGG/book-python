@@ -6,7 +6,7 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Create class `MarsMission` from `Habitat`, `Rocket`, `Astronaut`
+    2. Create class `MarsMission` from classes `Habitat`, `Rocket`, `Astronaut`
     3. Use mixins classes
     4. You can modify given classes
     5. Assignment demonstrates syntax, so do not add any attributes and methods
@@ -14,7 +14,7 @@ English:
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz klasę `MarsMission` z `Habitat`, `Rocket`, `Astronaut`
+    2. Stwórz klasę `MarsMission` z klas `Habitat`, `Rocket`, `Astronaut`
     3. Użyj klas domieszkowych (mixin)
     4. Możesz modyfikować dane klasy
     5. Zadanie demonstruje składnię, nie dodawaj żadnych atrybutów i metod
