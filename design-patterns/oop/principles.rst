@@ -84,17 +84,30 @@ Abstraction
         ms = MailService()
         ms.send_email(...)
 
+.. todo:: Make example space related MarsMission and Astronauts
+
 
 Inheritance
 -----------
 .. code-block:: python
 
     class Person:
-        _firstname: str
-        _lastname: str
+        firstname: str
+        lastname: str
+
+        def say_hello(self):
+            print(f'Hello {self.firstname} {self.lastname}')
+
 
     class Astronaut(Person):
         pass
+
+
+    astro = Astronaut()
+    astro.firstname = 'Mark'
+    astro.lastname = 'Watney'
+    astro.say_hello()
+    # Hello Mark Watney
 
 
 Polymorphism
@@ -103,20 +116,25 @@ Polymorphism
 
 .. code-block:: python
 
-    class Astronaut:
+    class Person:
         def __init__(self, name):
             self.name = name
 
+        def say_hello(self):
+            pass
+
+    class Astronaut(Person):
         def say_hello(self):
             return f'Hello {self.name}'
 
-
-    class Cosmonaut:
-        def __init__(self, name):
-            self.name = name
-
+    class Cosmonaut(Person):
         def say_hello(self):
-            return f'Привет {self.name}!'
+            return f'Привет {self.name}'
+
+
+    def hello(crew: list[Person]) -> None:
+        for member in crew:
+            print(member.say_hello())
 
 
     if __name__ == '__main__':
@@ -125,8 +143,7 @@ Polymorphism
                 Astronaut('Melissa Lewis'),
                 Cosmonaut('Jan Twardowski')]
 
-        for member in crew:
-            print(member.say_hello())
+        hello(crew)
     # Hello Mark Watney
     # Привет Иван Иванович
     # Hello Melissa Lewis

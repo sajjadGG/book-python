@@ -1,19 +1,13 @@
-class DB:
-    __connection = None
+class Singleton:
+    _instance = None
 
-    @classmethod
-    def connect(cls):
-        if not cls.__connection:
-            print('Establishing connection...')
-            cls.__connection = ...
-        return cls.__connection
+    def __new__(cls, *args, **kwargs):
+        if not cls._instance:
+            cls._instance = super().__new__(*args, **kwargs)
+        obj = cls._instance
+        obj.__init__()
+        return obj
 
 
-# Connecting for the first time
-# Will establish new connection
-first = DB.connect()
-
-# Connecting for the second time
-# Will use existing connection to the DB
-# The same handle as `first`
-second = DB.connect()
+class MyClass(Singleton):
+    pass
