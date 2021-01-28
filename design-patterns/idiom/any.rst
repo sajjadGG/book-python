@@ -9,15 +9,13 @@ Return True if any element of the iterable is true. If the iterable is empty, re
 
 Implementation
 --------------
-.. code-block:: python
-
-    def any(iterable):
-        if not iterable:
-            return False
-        for element in iterable:
-            if element:
-                return True
-        return False
+>>> def any(iterable):
+...     if not iterable:
+...         return False
+...     for element in iterable:
+...         if element:
+...             return True
+...     return False
 
 
 Use Case

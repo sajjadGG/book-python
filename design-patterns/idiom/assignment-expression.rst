@@ -5,8 +5,8 @@ Assignment Expression
 Rationale
 ---------
 * Since Python 3.8: :pep:`572` -- Assignment Expressions
-* A.K.A. "the walrus operator"
-* A.K.A. "Named Expressions"
+* Also known as "Walrus operator"
+* Also known as "Named expression"
 
 During discussion of this PEP, the operator became informally known as "the walrus operator". The construct's formal name is "Assignment Expressions" (as per the PEP title), but they may also be referred to as "Named Expressions" (e.g. the CPython reference implementation uses that name internally). [pep572]_
 
@@ -16,7 +16,6 @@ Syntax
 .. code-block:: python
 
     (x := <VALUE>)
-
 
 It's not substitution for equals:
 

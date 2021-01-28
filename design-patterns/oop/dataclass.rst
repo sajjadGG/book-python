@@ -340,14 +340,12 @@ Mutable attributes
 
 Dataclass parameters
 --------------------
-* ``init`` - (default ``True``) - Generate ``__init__()`` method
-* ``repr`` - (default ``True``) - Generate ``__repr__()`` method
-* ``eq`` - (default ``True``) - Generate ``__eq__()`` and ``__ne__()`` methods
-* ``order`` - (default ``False``) - Generate ``__lt__()``, ``__le__()``, ``__gt__()``, and ``__ge__()`` methods
-* ``unsafe_hash`` - (default ``False``) - if ``False``: the ``__hash__()`` method is generated according to how eq and frozen are set
-* ``frozen`` - (default ``False``) - if ``True``: assigning to fields will generate an exception
-
-
+* ``init`` - Generate ``__init__()`` method (default ``True``)
+* ``repr`` - Generate ``__repr__()`` method (default ``True``)
+* ``eq`` - Generate ``__eq__()`` and ``__ne__()`` methods (default ``True``)
+* ``order`` - Generate ``__lt__()``, ``__le__()``, ``__gt__()``, and ``__ge__()`` methods (default ``False``)
+* ``unsafe_hash`` - if ``False``: the ``__hash__()`` method is generated according to how eq and frozen are set (default ``False``)
+* ``frozen`` - if ``True``: assigning to fields will generate an exception (default ``False``)
 
 .. csv-table:: Dataclass options
     :header: "Option", "Default", "Description (if True)"
