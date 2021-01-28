@@ -105,6 +105,10 @@ Talks
 * `Łukasz Langa - import asyncio: Learn Python's AsyncIO #1 - The Async Ecosystem <https://www.youtube.com/watch?v=Xbl7XjFYsN4>`_
 * `Łukasz Langa - Life Is Better Painted Black, or: How to Stop Worrying and Embrace Auto-Formatting. PyCon 2019 <https://www.youtube.com/watch?v=esZLCuWs_2Y>`_
 * `Raymond Hettinger - Beyond PEP 8 -- Best practices for beautiful intelligible code - PyCon 2015 <https://www.youtube.com/watch?v=wf-BqAjZb8M>`_
+* `Raymond Hettinger - Transforming Code Into Beautiful, Idiomatic Python <https://www.youtube.com/watch?v=anrOzOapJ2E>`_
+* `Raymond Hettinger - Modern Dictionaries <https://www.youtube.com/watch?v=p33CVV29OG8>`_
+* `Raymond Hettinger - Keynote on Concurrency <https://www.youtube.com/watch?v=9zinZmE3Ogk>`_
+* `Raymond Hettinger - Thinking about Concurrency <https://www.youtube.com/watch?v=Bv25Dwe84g0>`_
 
 
 Online Courses

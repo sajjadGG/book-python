@@ -34,20 +34,47 @@ Recap
 
 Rationale
 ---------
-* Create generator object and assign pointer (do not execute)
-* Comprehensions will be in the memory until end of a program
-* Generators are cleared once they are executed
-* Comprehensions - Using values more than one
-* Generators - Using values once (for example in the loop iterator)
+Generators:
 
-* Generator will calculate next number for every loop iteration
-* Generator forgets previous number
-* Generator doesn't know the next number
+    * Lazy Evaluated
+    * Sometimes code is executed partially or not executed at all!
+    * If you want each result once (for example in loop)
+    * Cannot rollback or reset
+    * Forgets previous result
+    * Knows only current result
+    * Don't know the next result
+    * Cleared once they are executed
+    * If you need generator evaluated instantly, there is no point in using generators
 
-* Code do not execute instantly
-* Sometimes code is not executed at all!
+Comprehension:
 
-* If you need values evaluated instantly, there is no point in using generators
+    * Evaluated instantly
+    * Stored in memory until end of a program or freed by ``del``
+    * If you want to use values more than once
+
+
+Yield Keyword
+-------------
+>>> def myfunc():
+...     yield 'a'
+...     yield 'b'
+...     yield 'c'
+>>>
+>>>
+>>> result = myfunc()
+>>>
+>>> result  # doctest: +ELLIPSIS
+<generator object myfunc at 0x...>
+>>>
+>>> next(result)
+'a'
+>>> next(result)
+'b'
+>>> next(result)
+'c'
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
 
 
 Generator Function
@@ -451,7 +478,7 @@ StopIteration
 Traceback (most recent call last):
 StopIteration
 
-`yield from` with generator expressions:
+``yield from`` with generator expressions:
 
 >>> def run():
 ...     yield from (x for x in range(0,3))
@@ -494,6 +521,31 @@ Send
 >>> worker.send('hello')
 Traceback (most recent call last):
 TypeError: can't send non-None value to a just-started generator
+>>>
+>>> worker.send(None)
+>>> worker.send(0)
+Processing 0
+>>> worker.send(1)
+Processing 1
+>>> worker.send(2)
+Processing 2
+>>> worker.send('Mark Watney')
+Processing Mark Watney
+
+>>> def run():
+...     while True:
+...         data = yield
+...         print(f'Processing {data}')
+>>>
+>>>
+>>> worker = run()
+>>> worker.send(None)
+>>>
+>>> for x in range(0,3):
+...     worker.send(x)
+Processing 0
+Processing 1
+Processing 2
 
 >>> def run():
 ...     while True:
@@ -549,8 +601,4 @@ Assignments
 
 .. literalinclude:: assignments/idioms_generator_b.py
     :caption: :download:`Solution <assignments/idioms_generator_b.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/idioms_generator_c.py
-    :caption: :download:`Solution <assignments/idioms_generator_c.py>`
     :end-before: # Solution

@@ -17,24 +17,14 @@ Syntax:
 >>> def even(x):
 ...     return x % 2 == 0
 >>>
->>>
->>> DATA = [0, 1, 2, 3, 4, 5, 6]
->>>
->>> list(x for x in DATA if even(x))
-[0, 2, 4, 6]
->>> list(filter(even, DATA))
-[0, 2, 4, 6]
+>>> result = (x for x in range(0,5) if even(x))
+>>> result = filter(even, range(0,5))
 
->>> DATA = [0, 1, 2, 3, 4, 5, 6]
->>>
->>> list(x for x in DATA if x%2==0)
-[0, 2, 4, 6]
->>>
->>> list(filter(lambda x: x%2==0, DATA))
-[0, 2, 4, 6]
+>>> result = (x for x in range(0,5) if x%2==0)
+>>> result = filter(lambda x: x%2==0, range(0,5))
 
 
-Pattern
+Problem
 -------
 Plain code:
 
@@ -59,13 +49,14 @@ Comprehension:
 >>>
 >>>
 >>> DATA = [1, 2, 3, 4, 5, 6]
->>> result = [x for x in DATA if x%2==0]
+>>> result = [x for x in DATA if even(x)]
 >>>
 >>> print(result)
 [2, 4, 6]
 
-Filter:
 
+Solution
+--------
 >>> def even(x):
 ...     return x % 2 == 0
 >>>
@@ -142,6 +133,17 @@ Use Cases
 >>> result = filter(is_astronaut, people)
 >>> list(result)
 ['Mark Watney', 'Melissa Lewis']
+
+
+Performance
+-----------
+>>> # %%timeit -r 10 -n 100_000
+>>> # result = (x for x in range(0,5) if x%2==0)
+>>> # 490 ns ± 44 ns per loop (mean ± std. dev. of 10 runs, 100000 loops each)
+
+>>> # %%timeit -r 10 -n 100_000
+>>> # result = filter(lambda x: x%2==0, range(0,5))
+>>> # 384 ns ± 34.2 ns per loop (mean ± std. dev. of 10 runs, 100000 loops each)
 
 
 Assignments

@@ -8,8 +8,8 @@ Rationale
 * Since Python 3.9: :pep:`585` -- Type Hinting Generics In Standard Collections
 
 >>> DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
->>>         (5.1, 3.5, 1.4, 0.2, 'setosa'),
->>>         (5.7, 2.8, 4.1, 1.3, 'versicolor')]
+...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...         (5.7, 2.8, 4.1, 1.3, 'versicolor')]
 >>>
 >>> x = DATA[0][-1]
 >>> x  # doctest: +SKIP
@@ -17,8 +17,8 @@ Rationale
 >>> # and cannot give hints for autocompletion
 
 >>> DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
->>>         (5.1, 3.5, 1.4, 0.2, 'setosa'),
->>>         (5.7, 2.8, 4.1, 1.3, 'versicolor')]
+...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...         (5.7, 2.8, 4.1, 1.3, 'versicolor')]
 >>>
 >>> x: str = DATA[0][-1]
 >>> x  # doctest: +SKIP

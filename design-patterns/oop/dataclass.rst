@@ -23,7 +23,7 @@ Syntax
 >>> from dataclasses import dataclass
 >>>
 >>> @dataclass
->>> class Point:
+... class Point:
 ...     x: int
 ...     y: int
 ...     z: int = 0
@@ -128,7 +128,6 @@ POLSA
 
 Example 3
 ---------
->>> from __future__ import annotations
 >>> from dataclasses import dataclass
 >>> from datetime import date
 >>> from typing import Final, Optional
@@ -140,10 +139,13 @@ Example 3
 ...     lastname: str
 ...     date_of_birth: date = date.today()
 ...     height: Optional[int] = None
-...     friends: Optional[list[Astronaut]] = None
+...     friends: Optional[list['Astronaut']] = None
 ...     AGE_MIN: Final[int] = 27
 ...     AGE_MAX: Final[int] = 42
 >>>
+>>>
+>>> Astronaut('Mark', 'Watney', date(1994, 10, 12))
+Astronaut(firstname='Mark', lastname='Watney', date_of_birth=datetime.date(1994, 10, 12), height=None, friends=None, AGE_MIN=27, AGE_MAX=42)
 >>>
 >>> astro = Astronaut('Mark', 'Watney', date(1994, 10, 12), friends=[
 ...         Astronaut('Melissa', 'Lewis', date(1995, 7, 15)),
@@ -152,14 +154,8 @@ Example 3
 ...         Astronaut('Chris', 'Beck', date(1999, 8, 2)),
 ...         Astronaut('Alex', 'Vogel', date(1994, 11, 15))])
 >>>
->>> print(astro)  # doctest: +NORMALIZE_WHITESPACE
-Astronaut(firstname='Mark', lastname='Watney', date_of_birth=datetime.date(1994, 10, 12), height=None, friends=[
-    Astronaut(firstname='Melissa', lastname='Lewis', date_of_birth=datetime.date(1995, 7, 15), height=None, friends=None, AGE_MIN=27, AGE_MAX=42),
-    Astronaut(firstname='Rick', lastname='Martinez', date_of_birth=datetime.date(1996, 1, 21), height=None, friends=None, AGE_MIN=27, AGE_MAX=42),
-    Astronaut(firstname='Beth', lastname='Johansen', date_of_birth=datetime.date(2006, 5, 9), height=None, friends=None, AGE_MIN=27, AGE_MAX=42),
-    Astronaut(firstname='Chris', lastname='Beck', date_of_birth=datetime.date(1999, 8, 2), height=None, friends=None, AGE_MIN=27, AGE_MAX=42),
-    Astronaut(firstname='Alex', lastname='Vogel', date_of_birth=datetime.date(1994, 11, 15), height=None, friends=None, AGE_MIN=27, AGE_MAX=42)
-], AGE_MIN=27, AGE_MAX=42)
+>>> astro  # doctest: +NORMALIZE_WHITESPACE
+Astronaut(firstname='Mark', lastname='Watney', date_of_birth=datetime.date(1994, 10, 12), height=None, friends=[Astronaut(firstname='Melissa', lastname='Lewis', date_of_birth=datetime.date(1995, 7, 15), height=None, friends=None, AGE_MIN=27, AGE_MAX=42), Astronaut(firstname='Rick', lastname='Martinez', date_of_birth=datetime.date(1996, 1, 21), height=None, friends=None, AGE_MIN=27, AGE_MAX=42), Astronaut(firstname='Beth', lastname='Johansen', date_of_birth=datetime.date(2006, 5, 9), height=None, friends=None, AGE_MIN=27, AGE_MAX=42), Astronaut(firstname='Chris', lastname='Beck', date_of_birth=datetime.date(1999, 8, 2), height=None, friends=None, AGE_MIN=27, AGE_MAX=42), Astronaut(firstname='Alex', lastname='Vogel', date_of_birth=datetime.date(1994, 11, 15), height=None, friends=None, AGE_MIN=27, AGE_MAX=42)], AGE_MIN=27, AGE_MAX=42)
 
 
 Example 4
@@ -359,149 +355,153 @@ Dataclass parameters
     "``frozen``", "``False``", "if ``True``: assigning to fields will generate an exception"
 
 
-init
+Init
 ----
 * Generate ``__init__()`` method
 
-.. code-block:: python
-
-    from dataclasses import dataclass
-
-
-    @dataclass(init=False)
-    class Point:
-        x: int
-        y: int
-
-
-    p = Point(10, 20)
-    # Traceback (most recent call last):
-    # TypeError: Point() takes no arguments
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass(init=False)
+... class Point:
+...     x: int
+...     y: int
+>>>
+>>>
+>>> p = Point(10, 20)
+Traceback (most recent call last):
+TypeError: Point() takes no arguments
 
 
-repr
+Repr
 ----
 * ``repr=True`` by default
 * Generate ``__repr__()`` for pretty printing
 
-.. code-block:: python
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass(repr=True)
+... class Point:
+...     x: int
+...     y: int
+>>>
+>>>
+>>> p = Point(10, 20)
+>>>
+>>> print(p)
+Point(x=10, y=20)
 
-    from dataclasses import dataclass
-
-    @dataclass(repr=True)
-    class Point:
-        x: int
-        y: int
-
-
-    p = Point(10, 20)
-
-    print(p)
-    # Point(x=10, y=20)
-
-.. code-block:: python
-
-    from dataclasses import dataclass
-
-    @dataclass(repr=False)
-    class Point:
-        x: int
-        y: int
-
-
-    p = Point(10, 20)
-
-    print(p)
-    # <__main__.Point object at 0x110bf5550>
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass(repr=False)
+... class Point:
+...     x: int
+...     y: int
+>>>
+>>>
+>>> p = Point(10, 20)
+>>>
+>>> print(p)  # doctest: +ELLIPSIS
+<Point object at 0x...>
 
 
-frozen
+Frozen
 ------
 * ``frozen=False`` by default
 * Prevents object from modifications
 
-.. code-block:: python
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass(frozen=True)
+... class Point:
+...     x: int
+...     y: int
+>>>
+>>>
+>>> p = Point(10, 20)
+>>>
+>>> p.x = 30
+Traceback (most recent call last):
+dataclasses.FrozenInstanceError: cannot assign to field 'x'
 
-    from dataclasses import dataclass
 
-    @dataclass(frozen=True)
-    class Point:
-        x: int
-        y: int
-
-
-    p = Point(10, 20)
-
-    p.x = 30
-    # Traceback (most recent call last):
-    # dataclasses.FrozenInstanceError: cannot assign to field 'x'
-
-
-eq
+Eq
 --
 * ``eq=True`` by default
 * when ``eq=False`` compare objects by ``id()`` not values
 * when ``eq=True`` compare objects by value not ``id()``
 
-.. code-block:: python
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass(eq=True)
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+>>>
+>>>
+>>> astro1 = Astronaut('Mark', 'Watney')
+>>> astro2 = Astronaut('Mark', 'Watney')
+>>> astro3 = Astronaut('Jan', 'Twardowski')
+>>>
+>>> astro1 == astro1
+True
+>>> astro1 == astro2
+True
+>>> astro1 == astro3
+False
+>>>
+>>> astro1 != astro1
+False
+>>> astro1 != astro2
+False
+>>> astro1 != astro3
+True
 
-    from dataclasses import dataclass
-
-    @dataclass(eq=True)
-    class Astronaut:
-        firstname: str
-        lastname: str
-
-
-    astro1 = Astronaut('Mark', 'Watney')
-    astro2 = Astronaut('Mark', 'Watney')
-    astro3 = Astronaut('Jan', 'Twardowski')
-
-    astro1 == astro1    # True
-    astro1 == astro2    # True
-    astro1 == astro3    # False
-
-    astro1 != astro1    # False
-    astro1 != astro2    # False
-    astro1 != astro3    # True
-
-.. code-block:: python
-
-    from dataclasses import dataclass
-
-    @dataclass(eq=False)
-    class Astronaut:
-        firstname: str
-        lastname: str
-
-
-    astro1 = Astronaut('Mark', 'Watney')
-    astro2 = Astronaut('Mark', 'Watney')
-    astro3 = Astronaut('Jan', 'Twardowski')
-
-    astro1 == astro1    # True
-    astro1 == astro2    # False
-    astro1 == astro3    # False
-
-    astro1 != astro1    # False
-    astro1 != astro2    # True
-    astro1 != astro3    # True
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass(eq=False)
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+>>>
+>>>
+>>> astro1 = Astronaut('Mark', 'Watney')
+>>> astro2 = Astronaut('Mark', 'Watney')
+>>> astro3 = Astronaut('Jan', 'Twardowski')
+>>>
+>>> astro1 == astro1
+True
+>>> astro1 == astro2
+False
+>>> astro1 == astro3
+False
+>>>
+>>> astro1 != astro1
+False
+>>> astro1 != astro2
+True
+>>> astro1 != astro3
+True
 
 
 Other flags
 -----------
-.. code-block:: python
-
-    from dataclasses import dataclass
-
-    @dataclass(init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False)
-    class Astronaut:
-        firstname: str
-        lastname: str
-
-    astro1 = Astronaut('Mark', 'Watney')
-    astro2 = Astronaut('Mark', 'Watney')
-    astro3 = Astronaut('Jan', 'Twardowski')
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass(init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False)
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+>>>
+>>> astro1 = Astronaut('Mark', 'Watney')
+>>> astro2 = Astronaut('Mark', 'Watney')
+>>> astro3 = Astronaut('Jan', 'Twardowski')
 
 
 InitVar
@@ -509,51 +509,48 @@ InitVar
 * Init-only fields are added as parameters to the generated ``__init__`` method, and are passed to the optional ``__post_init__`` method
 * They are not otherwise used by Data Classes
 
-.. code-block:: python
-
-    from dataclasses import InitVar, dataclass
-
-
-    @dataclass
-    class Astronaut:
-        fullname: InitVar[str] = None
-        _firstname: str = None
-        _lastname: str = None
-
-        def __post_init__(self, fullname):
-            fullname = fullname.split()
-            self._firstname = fullname[0]
-            self._lastname = fullname[1]
-
-
-    astro = Astronaut('Mark Watney')
-
-    print(astro._firstname)
-    # Mark
-    print(astro._lastname)
-    # Watney
+>>> from dataclasses import InitVar, dataclass
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     fullname: InitVar[str] = None
+...     _firstname: str = None
+...     _lastname: str = None
+...
+...     def __post_init__(self, fullname):
+...         fullname = fullname.split()
+...         self._firstname = fullname[0]
+...         self._lastname = fullname[1]
+>>>
+>>>
+>>> astro = Astronaut('Mark Watney')
+>>>
+>>> print(astro._firstname)
+Mark
+>>> print(astro._lastname)
+Watney
 
 
 Inheritance
 -----------
-.. code-block:: python
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Person:
+...     name: str
+...     job: str = None
+>>>
+>>>
+>>> @dataclass
+... class Astronaut(Person):
+...     job: str = 'Astronaut'
+...     agency: str = 'NASA'
+>>>
+>>>
 
-    from dataclasses import dataclass
-
-
-    @dataclass
-    class Person:
-        name: str
-        job: str = None
-
-
-    @dataclass
-    class Astronaut(Person):
-        job: str = 'Astronaut'
-        agency: str = 'NASA'
-
-
-    # def __init__(self, name: str, job: str = 'Astronaut', agency: str = 'NASA')
+Will generate ``def __init__(self, name: str, job: str = 'Astronaut', agency: str = 'NASA')``
 
 
 Helper functions
@@ -565,142 +562,131 @@ Helper functions
 * ``replace(instance, **changes)`` - Creates a new object of the same type of instance, replacing fields with values from changes. If instance is not a Data Class, raises TypeError. If values in changes do not specify fields, raises TypeError.
 * ``is_dataclass(class_or_instance)`` - Returns True if its parameter is a dataclass or an instance of one, otherwise returns False.
 
-.. code-block:: python
-
-    from dataclasses import dataclass
-
-    @dataclass
-    class Point:
-         x: int
-         y: int
-
-    @dataclass
-    class Coordinates:
-         points: List[Point]
-
-
-    p = Point(10, 20)
-    c = Coordinates([Point(0, 0), Point(10, 4)])
-
-    assert asdict(p) == {'x': 10, 'y': 20}
-    assert asdict(c) == {'l': [{'x': 0, 'y': 0}, {'x': 10, 'y': 4}]}
-
-    assert astuple(p) == (10, 20)
-    assert astuple(c) == ([(0, 0), (10, 4)],)
+>>> from dataclasses import dataclass, asdict, astuple
+>>>
+>>>
+>>> @dataclass
+... class Point:
+...      x: int
+...      y: int
+>>>
+>>> @dataclass
+... class Coordinates:
+...      points: list[Point]
+>>>
+>>>
+>>> p = Point(10, 20)
+>>> c = Coordinates([Point(0, 0), Point(10, 4)])
+>>>
+>>> asdict(p)
+{'x': 10, 'y': 20}
+>>> asdict(c)
+{'points': [{'x': 0, 'y': 0}, {'x': 10, 'y': 4}]}
+>>>
+>>> astuple(p)
+(10, 20)
+>>> astuple(c)
+([(0, 0), (10, 4)],)
 
 
 Under the hood
 --------------
 Your code:
 
-.. code-block:: python
-
-    from dataclasses import dataclass
-
-
-    @dataclass
-    class ShoppingCartItem:
-        name: str
-        unit_price: float
-        quantity: int = 0
-
-        def total_cost(self) -> float:
-            return self.unit_price * self.quantity
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class ShoppingCartItem:
+...     name: str
+...     unit_price: float
+...     quantity: int = 0
+...
+...     def total_cost(self) -> float:
+...         return self.unit_price * self.quantity
 
 Dataclass will generate:
 
-.. code-block:: python
-
-    class ShoppingCartItem:
-        name: str
-        unit_price: float
-        quantity: int
-
-        def total_cost(self) -> float:
-            return self.unit_price * self.quantity
-
-        ## All code below is added by dataclass
-
-        def __init__(self, name: str, unit_price: float, quantity: int = 0) -> None:
-            self.name = name
-            self.unit_price = unit_price
-            self.quantity = quantity
-
-        def __repr__(self):
-            return f'ShoppingCartItem(name={self.name!r}, unit_price={self.unit_price!r}, quantity={self.quantity!r})'
-
-        def __eq__(self, other):
-            if other.__class__ is self.__class__:
-                return (self.name, self.unit_price, self.quantity) == (other.name, other.unit_price, other.quantity)
-            return NotImplemented
-
-        def __ne__(self, other):
-            if other.__class__ is self.__class__:
-                return (self.name, self.unit_price, self.quantity) != (other.name, other.unit_price, other.quantity)
-            return NotImplemented
-
-        def __lt__(self, other):
-            if other.__class__ is self.__class__:
-                return (self.name, self.unit_price, self.quantity) < (other.name, other.unit_price, other.quantity)
-            return NotImplemented
-
-        def __le__(self, other):
-            if other.__class__ is self.__class__:
-                return (self.name, self.unit_price, self.quantity) <= (other.name, other.unit_price, other.quantity)
-            return NotImplemented
-
-        def __gt__(self, other):
-            if other.__class__ is self.__class__:
-                return (self.name, self.unit_price, self.quantity) > (other.name, other.unit_price, other.quantity)
-            return NotImplemented
-
-        def __ge__(self, other):
-            if other.__class__ is self.__class__:
-                return (self.name, self.unit_price, self.quantity) >= (other.name, other.unit_price, other.quantity)
-            return NotImplemented
+>>> class ShoppingCartItem:
+...     name: str
+...     unit_price: float
+...     quantity: int
+...
+...     def total_cost(self) -> float:
+...         return self.unit_price * self.quantity
+...
+...     ## All code below is added by dataclass
+...
+...     def __init__(self, name: str, unit_price: float, quantity: int = 0) -> None:
+...         self.name = name
+...         self.unit_price = unit_price
+...         self.quantity = quantity
+...
+...     def __repr__(self):
+...         return f'ShoppingCartItem(name={self.name!r}, unit_price={self.unit_price!r}, quantity={self.quantity!r})'
+...
+...     def __eq__(self, other):
+...         if other.__class__ is self.__class__:
+...             return (self.name, self.unit_price, self.quantity) == (other.name, other.unit_price, other.quantity)
+...         return NotImplemented
+...
+...     def __ne__(self, other):
+...         if other.__class__ is self.__class__:
+...             return (self.name, self.unit_price, self.quantity) != (other.name, other.unit_price, other.quantity)
+...         return NotImplemented
+...
+...     def __lt__(self, other):
+...         if other.__class__ is self.__class__:
+...             return (self.name, self.unit_price, self.quantity) < (other.name, other.unit_price, other.quantity)
+...         return NotImplemented
+...
+...     def __le__(self, other):
+...         if other.__class__ is self.__class__:
+...             return (self.name, self.unit_price, self.quantity) <= (other.name, other.unit_price, other.quantity)
+...         return NotImplemented
+...
+...     def __gt__(self, other):
+...         if other.__class__ is self.__class__:
+...             return (self.name, self.unit_price, self.quantity) > (other.name, other.unit_price, other.quantity)
+...         return NotImplemented
+...
+...     def __ge__(self, other):
+...         if other.__class__ is self.__class__:
+...             return (self.name, self.unit_price, self.quantity) >= (other.name, other.unit_price, other.quantity)
+...         return NotImplemented
 
 
 Use Cases
 ---------
-.. code-block:: python
-
-    from dataclasses import dataclass
-
-
-    DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-            (5.8, 2.7, 5.1, 1.9, 'virginica'),
-            (5.1, 3.5, 1.4, 0.2, 'setosa'),
-            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-            (6.3, 2.9, 5.6, 1.8, 'virginica'),
-            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-            (4.7, 3.2, 1.3, 0.2, 'setosa'),
-            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-            (7.6, 3.0, 6.6, 2.1, 'virginica'),
-            (4.6, 3.1, 1.5, 0.2, 'setosa')]
-
-
-    @dataclass
-    class Iris:
-        sepal_length: float
-        sepal_width: float
-        petal_length: float
-        petal_width: float
-        species: str
-
-
-    flowers = list(Iris(*row) for row in DATA[1:])
-    print(flowers)
-    # [
-    #   Iris(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9, species='virginica'),
-    #   Iris(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2, species='setosa'),
-    #   Iris(sepal_length=5.7, sepal_width=2.8, petal_length=4.1, petal_width=1.3, species='versicolor'),
-    #   Iris(sepal_length=6.3, sepal_width=2.9, petal_length=5.6, petal_width=1.8, species='virginica'),
-    #   Iris(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5, species='versicolor'),
-    #   Iris(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2, species='setosa'),
-    #   Iris(sepal_length=7.0, sepal_width=3.2, petal_length=4.7, petal_width=1.4, species='versicolor'),
-    #   Iris(sepal_length=7.6, sepal_width=3.0, petal_length=6.6, petal_width=2.1, species='virginica'),
-    #   Iris(sepal_length=4.6, sepal_width=3.1, petal_length=1.5, petal_width=0.2, species='setosa')
-    # ]
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...         (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>>
+>>>
+>>> @dataclass
+... class Iris:
+...     sepal_length: float
+...     sepal_width: float
+...     petal_length: float
+...     petal_width: float
+...     species: str
+>>>
+>>>
+>>> flowers = list(Iris(*row) for row in DATA[1:])
+>>> print(flowers)  # doctest: +NORMALIZE_WHITESPACE
+[Iris(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9, species='virginica'),
+ Iris(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2, species='setosa'),
+ Iris(sepal_length=5.7, sepal_width=2.8, petal_length=4.1, petal_width=1.3, species='versicolor'),
+ Iris(sepal_length=6.3, sepal_width=2.9, petal_length=5.6, petal_width=1.8, species='virginica'),
+ Iris(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5, species='versicolor'),
+ Iris(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2, species='setosa')]
 
 
 Assignments

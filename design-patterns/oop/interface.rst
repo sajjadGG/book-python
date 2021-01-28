@@ -30,7 +30,7 @@ The following code is not a valid Python syntax. It is only to demonstrate how i
 
 Example
 -------
->>> class CacheInterface:
+>>> class Cache:
 ...     def set(self, key: str, value: str) -> None:
 ...         raise NotImplementedError
 ...
@@ -40,21 +40,21 @@ Example
 ...     def is_valid(self, key: str) -> bool:
 ...         raise NotImplementedError
 
->>> class CacheInterface:
+>>> class Cache:
 ...     def set(self, key: str, value: str) -> None: raise NotImplementedError
 ...     def get(self, key: str) -> str: raise NotImplementedError
 ...     def is_valid(self, key: str) -> bool: raise NotImplementedError
 
 Sometimes you may get a shorter code, but it will not raise an error.
 
->>> class CacheInterface:
+>>> class Cache:
 ...     def set(self, key: str, value: str) -> None: pass
 ...     def get(self, key: str) -> str: pass
 ...     def is_valid(self, key: str) -> bool: pass
 
 As of three dots (``...``) is a valid Python object (Ellipsis) you can write that:
 
->>> class CacheInterface:
+>>> class Cache:
 ...     def set(self, key: str, value: str) -> None: ...
 ...     def get(self, key: str) -> str: ...
 ...     def is_valid(self, key: str) -> bool: ...

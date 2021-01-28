@@ -1,50 +1,94 @@
 """
-* Assignment: Idioms Generator Chain
+* Assignment: Idioms Generator Iris
 * Complexity: easy
-* Lines of code: 10 lines
+* Lines of code: 8 lines
 * Time: 8 min
 
 English:
-    1. Use generator expression to create `result`
-    2. In generator use `range()` to get numbers from 1 to 33 (inclusive) divisible by 3
-    3. Use `filter()` to get odd numbers from `result`
-    4. Use `map()` to cube all numbers in `result`
-    5. Set `result` with arithmetic mean of `result`
-    6. Compare result with "Tests" section (see below)
+    1. Use code from "Given" section (see below)
+    2. Write filter for `DATA` which returns `features` for given `species`
+    3. Implement solution using function
+    4. Implement solution using generator and `yield` keyword
+    5. Compare results of both using `sys.getsizeof()`
+    6. What will happen if input data will be bigger?
+    7. Note, that in different Python versions you'll get slightly
+       different values for getsizeof generator and function:
+        a. 112 for generator in Python 3.9
+        b. 112 for generator in Python 3.8
+        c. 120 for generator in Python 3.7
+    8. Compare result with "Tests" section (see below)
 
 Polish:
-    1. Użyj wyrażenia generatorowego do stworzenia `result`
-    2. W generatorze użyj `range()` aby otrzymać liczby od 1 do 33 (włącznie) podzielne przez 3
-    3. Użyj `filter()` aby otrzymać liczby nieparzyste z `result`
-    4. Użyj `map()` aby podnieść wszystkie liczby w `result` do sześcianu
-    5. Ustaw `result` ze średnią arytmetyczną z `result`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
-
-Hints:
-    * type cast to `list()` to expand generator before calculating mean
-    * `mean = sum(...) / len(...)`
+    1. Użyj kodu z sekcji "Given" (patrz poniżej)
+    2. Napisz filtr dla `DATA` zwracający `features` dla danego gatunku `species`
+    3. Zaimplementuj rozwiązanie wykorzystując funkcję
+    4. Zaimplementuj rozwiązanie wykorzystując generator i słowo kluczowe `yield`
+    5. Porównaj wyniki obu używając `sys.getsizeof()`
+    6. Co się stanie, gdy ilość danych będzie większa?
+    7. Zwróć uwagę, że w zależności od wersji Python wartości getsizeof
+       dla funkcji i generatora mogą się nieznaczenie różnić:
+        a. 112 dla generator w Python 3.9
+        b. 112 dla generator w Python 3.8
+        c. 120 dla generator w Python 3.7
+    8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> result
-    11502.0
+    >>> from sys import getsizeof
+    >>> from inspect import isfunction, isgeneratorfunction
+    >>> assert isfunction(function)
+    >>> assert isgeneratorfunction(generator)
+
+    >>> list(function(DATA, 'setosa'))
+    [[5.1, 3.5, 1.4, 0.2], [4.7, 3.2, 1.3, 0.2]]
+    >>> list(generator(DATA, 'setosa'))
+    [[5.1, 3.5, 1.4, 0.2], [4.7, 3.2, 1.3, 0.2]]
+
+    >>> getsizeof(function(DATA, 'setosa'))  # Python 3.8: 88
+    88
+    >>> getsizeof(function(DATA*10, 'setosa'))  # Python 3.8: 256
+    248
+    >>> getsizeof(function(DATA*100, 'setosa'))  # Python 3.8: 1664
+    1656
+    >>> getsizeof(generator(DATA, 'setosa'))
+    112
+    >>> getsizeof(generator(DATA*10, 'setosa'))
+    112
+    >>> getsizeof(generator(DATA*100, 'setosa'))
+    112
 """
 
 
 # Given
-def odd(x):
-    return x % 2
+DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
 
-def cube(x):
-    return x ** 3
+def function(data: list, species: str):
+    ...
 
 
-result: float
+def generator(data: list, species: str):
+    ...
 
 
 # Solution
-numbers = (x for x in range(1, 34) if x % 3 == 0)
-numbers = filter(odd, numbers)
-numbers = map(cube, numbers)
-numbers = list(numbers)
-result = sum(numbers) / len(numbers)
+def function(data: list, species: str):
+    result = []
+    for *features, label in data:
+        if label == species:
+            result.append(features)
+    return result
+
+
+def generator(data: list, species: str):
+    for *features, label in data:
+        if label == species:
+            yield features
+
+
+# def comprehension(data: list, species: str):
+#     return [X for *X,y in data if y==species]

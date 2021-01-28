@@ -15,6 +15,14 @@ Syntax
 * required ``callable`` - Function
 * required ``iterables`` - 1 or many sequence or iterator objects
 
+>>> result = (float(x) for x in range(0,5))
+>>> print(list(result))
+[0.0, 1.0, 2.0, 3.0, 4.0]
+
+>>> result = map(float, range(0,5))
+>>> print(list(result))
+[0.0, 1.0, 2.0, 3.0, 4.0]
+
 
 Problem
 -------
@@ -127,6 +135,43 @@ Standard input:
 
     $ cat ~/.profile |grep addnum
     alias addnum='python -c"import sys; print(sum(map(int, sys.stdin)))"'
+
+
+Multi Parameters
+----------------
+>>> def myfunc(x):
+...     return sum(x)
+>>>
+>>>
+>>> DATA = [(1,2), (3,4)]
+>>> result = map(myfunc, DATA)
+>>> print(list(result))
+[3, 7]
+
+
+Starmap
+-------
+>>> from itertools import starmap
+>>>
+>>>
+>>> DATA = [(3.1415,3), (2.71828,2)]
+>>>
+>>> result = starmap(round, DATA)  # round(number=3.1415, ndigits=2)
+>>> print(list(result))
+[3.142, 2.72]
+
+
+Partial
+-------
+>>> from functools import partial
+>>>
+>>>
+>>> myround = partial(round, ndigits=1)
+>>> DATA = [1.111, 2.222, 3.333]
+>>>
+>>> result = map(myround, DATA)  # round(number=1.111, ndigits=1)
+>>> print(list(result))
+[1.1, 2.2, 3.3]
 
 
 Assignments

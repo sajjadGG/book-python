@@ -39,6 +39,8 @@ Code Complexity vs. Programmer Experience:
 
 .. figure:: img/idiom-patterns-programmer-exp.png
 
+Time Complexity: https://wiki.python.org/moin/TimeComplexity
+
 
 Range
 -----
