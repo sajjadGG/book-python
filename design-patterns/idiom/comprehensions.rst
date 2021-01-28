@@ -800,44 +800,7 @@ Filtering:
  {'firstname': 'Mark', 'lastname': 'W.'},
  {'firstname': 'Melissa', 'lastname': 'L.'}]
 
-
->>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
-...         {'is_astronaut': True,  'name': 'Mark Watney'},
-...         {'is_astronaut': False, 'name': 'José Jiménez'},
-...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
-...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
->>>
->>>
->>> astronauts = [{'firstname': fname, 'lastname': lname}
-...                for person in DATA
-...                if person['is_astronaut']
-...                and (name := person['name'].split())
-...                and (fname := name[0].capitalize())
-...                and (lname := f'{name[1][0]}.')]
->>>
->>> print(astronauts)  # doctest: +NORMALIZE_WHITESPACE
-[{'firstname': 'Jan', 'lastname': 'T.'},
- {'firstname': 'Mark', 'lastname': 'W.'},
- {'firstname': 'Melissa', 'lastname': 'L.'}]
-
->>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
-...         {'is_astronaut': True,  'name': 'Mark Watney'},
-...         {'is_astronaut': False, 'name': 'José Jiménez'},
-...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
-...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
->>>
->>>
->>> astronauts = [f'{fname} {lname[0]}.'
-...               for person in DATA
-...               if person['is_astronaut']
-...               and (fullname := person['name'].split())
-...               and (fname := fullname[0].capitalize())
-...               and (lname := fullname[1].upper())]
->>>
->>>
->>> print(astronauts)
-['Jan T.', 'Mark W.', 'Melissa L.']
-
+In this example, using Assignment Expression would be more efficient and readable.
 More information in `Assignment Expression`
 
 Reversing ``dict`` keys with values:

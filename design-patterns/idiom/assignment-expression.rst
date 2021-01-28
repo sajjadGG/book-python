@@ -40,7 +40,6 @@ SyntaxError: invalid syntax
 >>> print(x)
 (1, 2)
 
-
 >>> (x := 1, 2)
 (1, 2)
 >>>
@@ -78,7 +77,6 @@ Guido van Rossum stepped down after accepting :pep:`572` -- Assignment Expressio
 
 Example
 -------
-
 Reusing Results:
 
 >>> def f(x):
@@ -125,7 +123,7 @@ Checking Match
 >>>
 >>> DATA = 'mark.watney@nasa.gov'
 >>>
->>> if (result := re.search(r'@nasa.gov', DATA)):
+>>> if result := re.search(r'@nasa.gov', DATA):
 ...     print(result)
 <re.Match object; span=(11, 20), match='@nasa.gov'>
 
@@ -317,6 +315,43 @@ Use Case
 [{'firstname': 'Jan', 'lastname': 'Twardowski'},
  {'firstname': 'Mark', 'lastname': 'Watney'},
  {'firstname': 'Melissa', 'lastname': 'Lewis'}]
+
+>>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
+...         {'is_astronaut': True,  'name': 'Mark Watney'},
+...         {'is_astronaut': False, 'name': 'José Jiménez'},
+...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
+...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>>
+>>>
+>>> astronauts = [{'firstname': fname, 'lastname': lname}
+...                for person in DATA
+...                if person['is_astronaut']
+...                and (name := person['name'].split())
+...                and (fname := name[0].capitalize())
+...                and (lname := f'{name[1][0]}.')]
+>>>
+>>> print(astronauts)  # doctest: +NORMALIZE_WHITESPACE
+[{'firstname': 'Jan', 'lastname': 'T.'},
+ {'firstname': 'Mark', 'lastname': 'W.'},
+ {'firstname': 'Melissa', 'lastname': 'L.'}]
+
+>>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
+...         {'is_astronaut': True,  'name': 'Mark Watney'},
+...         {'is_astronaut': False, 'name': 'José Jiménez'},
+...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
+...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>>
+>>>
+>>> astronauts = [f'{fname} {lname[0]}.'
+...               for person in DATA
+...               if person['is_astronaut']
+...               and (fullname := person['name'].split())
+...               and (fname := fullname[0].capitalize())
+...               and (lname := fullname[1].upper())]
+>>>
+>>>
+>>> print(astronauts)
+['Jan T.', 'Mark W.', 'Melissa L.']
 
 >>> from dataclasses import dataclass
 >>>

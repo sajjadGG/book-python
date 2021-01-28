@@ -80,9 +80,8 @@ Abstraction
             print('Disconnect')
 
 
-    if __name__ == '__main__':
-        ms = MailService()
-        ms.send_email(...)
+    ms = MailService()
+    ms.send_email(...)
 
 .. todo:: Make example space related MarsMission and Astronauts
 
@@ -137,13 +136,12 @@ Polymorphism
             print(member.say_hello())
 
 
-    if __name__ == '__main__':
-        crew = [Astronaut('Mark Watney'),
-                Cosmonaut('Иван Иванович'),
-                Astronaut('Melissa Lewis'),
-                Cosmonaut('Jan Twardowski')]
+    crew = [Astronaut('Mark Watney'),
+            Cosmonaut('Иван Иванович'),
+            Astronaut('Melissa Lewis'),
+            Cosmonaut('Jan Twardowski')]
 
-        hello(crew)
+    hello(crew)
     # Hello Mark Watney
     # Привет Иван Иванович
     # Hello Melissa Lewis
