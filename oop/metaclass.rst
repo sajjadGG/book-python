@@ -1,6 +1,7 @@
 Metaclass
 =========
 
+
 .. epigraph::
 
     Metaclasses are deeper magic than 99% of users should ever worry about.
@@ -23,6 +24,7 @@ Rationale
     Metaclass is an instance of a type.
     Type is an instance of a type.
 
+
 When a class definition is executed, the following steps occur:
 
     #. MRO entries are resolved;
@@ -37,8 +39,8 @@ When using the default metaclass type, or any metaclass that ultimately calls ``
     #. all of these ``__set_name__`` methods are called with the class being defined and the assigned name of that particular descriptor;
     #. the ``__init_subclass__()`` hook is called on the immediate parent of the new class in its method resolution order. [pydocclassobject]_
 
-Class Definition
-----------------
+Class Definition:
+
 .. code-block:: python
 
     class MyClass:
@@ -48,8 +50,8 @@ Class Definition
 
     MyClass = type('MyClass', (), {})
 
-Class Attributes
-----------------
+Class Attributes:
+
 .. code-block:: python
 
     class MyClass:
@@ -59,8 +61,8 @@ Class Attributes
 
     MyClass = type('MyClass', (), {'myattr': 1})
 
-Class Methods
--------------
+Class Methods:
+
 .. code-block:: python
 
     class MyClass:
@@ -74,8 +76,8 @@ Class Methods
 
     MyClass = type('MyClass', (), {'mymethod': mymethod})
 
-Class Inheritance
------------------
+Class Inheritance:
+
 .. code-block:: python
 
     class Parent:
@@ -89,8 +91,8 @@ Class Inheritance
 
     MyClass = type('MyClass', (Parent,), {})
 
-Recap
------
+Recap:
+
 .. code-block:: python
 
     class Parent:
@@ -107,8 +109,8 @@ Recap
 
     MyClass = type('MyClass', (Parent,), {'myattr': 1, 'mymethod': mymethod})
 
-Create Classes Dynamically
---------------------------
+Create Classes Dynamically:
+
 .. code-block:: python
 
     for classname in ['Astronaut', 'Cosmonaut', 'Taikonaut']:
@@ -540,6 +542,62 @@ Abstract Base Class:
 
 .. code-block:: python
 
+    class EventListener(type):
+        listeners: dict[str, list[callable]] = {}
+
+        @classmethod
+        def register(cls, *clsnames):
+            def wrapper(func):
+                for clsname in clsnames:
+                    if clsname not in cls.listeners:
+                        cls.listeners[clsname] = []
+                    cls.listeners[clsname] += [func]
+            return wrapper
+
+        def __new__(mcs, classname, bases, attrs):
+            for listener in mcs.listeners.get(classname, []):
+                listener.__call__(classname, bases, attrs)
+            return type(classname, bases, attrs)
+
+
+    @EventListener.register('Astronaut')
+    def hello_class(clsname, bases, attrs):
+        print(f'\n\nHello new class {clsname}\n')
+
+
+    @EventListener.register('Astronaut', 'Person')
+    def print_name(clsname, bases, attrs):
+        print('\nNew class created')
+        print('Classname:', clsname)
+        print('Bases:', bases)
+        print('Attrs:', attrs)
+
+
+    class Person(metaclass=EventListener):
+        pass
+
+
+    class Astronaut(Person, metaclass=EventListener):
+        pass
+
+    # New class created
+    # Classname: Person
+    # Bases: ()
+    # Attrs: {'__module__': '__main__', '__qualname__': 'Person'}
+    #
+    #
+    # Hello new class Astronaut
+    #
+    #
+    # New class created
+    # Classname: Astronaut
+    # Bases: (<class '__main__.Person'>,)
+    # Attrs: {'__module__': '__main__', '__qualname__': 'Astronaut'}
+
+
+
+.. code-block:: python
+
     class Singleton(type):
         _instances = {}
         def __call__(cls, *args, **kwargs):
@@ -570,6 +628,46 @@ Abstract Base Class:
 
     # Traceback (most recent call last):
     # TypeError: MyClass is final and cannot inherit from it
+
+Create classes dynamically:
+
+.. code-block:: python
+
+    DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+            (5.8, 2.7, 5.1, 1.9, 'virginica'),
+            (5.1, 3.5, 1.4, 0.2, 'setosa'),
+            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+            (6.3, 2.9, 5.6, 1.8, 'virginica'),
+            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+            (4.7, 3.2, 1.3, 0.2, 'setosa'),
+            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+            (7.6, 3.0, 6.6, 2.1, 'virginica'),
+            (4.9, 3.0, 1.4, 0.2, 'setosa'),]
+
+
+    class Iris:
+        pass
+
+
+    for *data, species in DATA[1:]:
+        species = species.capitalize()
+        if species not in globals():
+            globals()[species] = type(species, (Iris,), {})
+
+
+Access static fields of a class, before creating instance:
+
+.. code-block:: python
+
+    from django.db import models
+
+    # class Model(metaclass=...)
+    #     ...
+
+
+    class Person(models.Model):
+        firstname = models.CharField(max_length=255)
+        lastname = models.CharField(max_length=255)
 
 
 Metaclass replacements
@@ -658,12 +756,13 @@ Class Decorator:
     # <Logger Astronaut (WARNING)>
 
 
-Assignments
------------
-.. todo:: Create assignments
-
-
 References
 ----------
 .. [pydocsprepare] https://docs.python.org/3/reference/datamodel.html#preparing-the-class-namespace
+
 .. [pydocclassobject] https://docs.python.org/3/reference/datamodel.html#creating-the-class-object
+
+
+Assignments
+-----------
+.. todo:: Create assignments

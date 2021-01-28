@@ -49,9 +49,7 @@ OOP
     oop/interface.rst
     oop/abstract.rst
     oop/polymorphism.rst
-    oop/metaclass.rst
     oop/solid.rst
-    oop/good-practices.rst
 
 
 Idioms
