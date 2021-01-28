@@ -41,6 +41,6 @@ Author
 
 Note
 ====
-* For consulting or training course requests please email book-python@astronaut.center
+* For consulting or training course requests please email matt@astrotech.io
 * Before training course please setup your environment
 * More information in `Install`
