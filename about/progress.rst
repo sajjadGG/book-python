@@ -1,5 +1,5 @@
-Book Writing Progress
-=====================
+Writing Progress
+================
 
 .. csv-table:: Python: From None to Machine Learning writing progress
     :widths: 50, 10, 10, 10, 10, 10

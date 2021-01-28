@@ -1,4 +1,4 @@
-Python Install
+Install Python
 ==============
 
 
