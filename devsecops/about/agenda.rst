@@ -1,3 +1,6 @@
+Agenda
+======
+
 1. Wprowadzenie do języka Python:
 
     * konfiguracja środowiska

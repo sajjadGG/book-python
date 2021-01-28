@@ -10,24 +10,25 @@ Video
 
 Documentation
 -------------
-* https://docs.python.org/py-modindex.html
-* https://pyformat.info - Python string formatting
-* http://devdocs.io
+* Python Module Index - https://docs.python.org/py-modindex.html
+* Python string formatting - https://pyformat.info
+* TimeComplexity - https://wiki.python.org/moin/TimeComplexity
+* Multiple APIs documentation - http://devdocs.io
 
 
 Python Development
 ------------------
-* https://github.com/python/cpython
-* https://discuss.python.org
-* https://www.python.org/dev/peps/
-* https://github.com/python/peps
-* News from the Python Software Foundation https://pyfound.blogspot.com
+* CPython compiler - https://github.com/python/cpython
+* Python core development - https://discuss.python.org
+* Index of Python Enhancement Proposals (PEPs) - https://www.python.org/dev/peps/
+* Python Enhancement Proposals repository- https://github.com/python/peps
+* News from the Python Software Foundation - https://pyfound.blogspot.com
 
 
 Conferences
 -----------
-* https://www.python.org/events/python-events/
-* http://crossweb.pl/wydarzenia/python/
+* Python Events Calendar - https://www.python.org/events/python-events/
+* Upcoming events in Python - http://crossweb.pl/wydarzenia/python/
 
 Python:
 

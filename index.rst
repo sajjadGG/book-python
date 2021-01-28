@@ -7,10 +7,7 @@ About
     :maxdepth: 1
 
     LICENSE.rst
-    PROGRESS.rst
     install.rst
-    survey.rst
-    about/references.rst
 
 
 Python Basics
@@ -169,8 +166,9 @@ Appendixes
 **********
 .. toctree::
     :maxdepth: 1
-    :numbered:
-    :caption: Appendixes
 
+    about/progress.rst
+    about/references.rst
+    about/survey.rst
     about/history.rst
     about/further-reading.rst
