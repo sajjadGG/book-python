@@ -339,6 +339,24 @@ ValueError: Kelvin temperature cannot be negative
 >>> print(t.fahrenheit)
 212.0
 
+>>> class Container:
+...     def __init__(self, **kwargs: dict) -> None:
+...         for key, value in kwargs.items():
+...             setattr(self, key, value)
+>>>
+>>>
+>>> a = Container(firstname='Jan', lastname='Twardowski')
+>>> vars(a)
+{'firstname': 'Jan', 'lastname': 'Twardowski'}
+>>>
+>>> b = Container(color='red')
+>>> vars(b)
+{'color': 'red'}
+>>>
+>>> c = Container(min=1, max=10)
+>>> vars(c)
+{'min': 1, 'max': 10}
+
 
 Assignments
 -----------
