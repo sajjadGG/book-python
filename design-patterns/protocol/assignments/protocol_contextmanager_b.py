@@ -2,7 +2,7 @@
 * Assignment: Protocol ContextManager Buffer
 * Complexity: medium
 * Lines of code: 21 lines
-* Time: 21 min
+* Time: 13 min
 
 English:
     1. Use data from "Given" section (see below)
