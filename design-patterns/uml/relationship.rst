@@ -216,17 +216,15 @@ Aggregation
         }
     ```
 
-.. code-block:: python
-
-    class Mission:
-        year: int
-        name: str
-
-
-    class Astronaut:
-        firstname: str
-        lastname: str
-        mission: list[Mission]
+>>> class Mission:
+...     year: int
+...     name: str
+>>>
+>>>
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     mission: list[Mission]
 
 >>> class Vehicle:
 ...     pass
@@ -276,18 +274,16 @@ Dependency
         }
     ```
 
-.. code-block:: python
-
-    class Spaceship:
-        name: str
-
-
-    class Astronaut:
-        firstname: str
-        lastname: str
-
-        def enter(spaceship: Spaceship):
-            pass
+>>> class Spaceship:
+...     name: str
+>>>
+>>>
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...
+...     def enter(spaceship: Spaceship):
+...         pass
 
 
 Cardinality

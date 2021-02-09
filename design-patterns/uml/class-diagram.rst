@@ -4,11 +4,9 @@ UML Class Diagram
 
 Attributes
 ----------
-.. code-block:: python
-
-    class Astronaut:
-        firstname: str
-        lastname: str
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
 
 .. code-block:: md
 
@@ -25,11 +23,9 @@ Attributes
 
 Methods Without Parameters
 --------------------------
-.. code-block:: python
-
-    class Astronaut:
-        def say_hello():
-            pass
+>>> class Astronaut:
+...     def say_hello():
+...         pass
 
 .. code-block:: md
 
@@ -45,11 +41,9 @@ Methods Without Parameters
 
 Methods With Parameters
 -----------------------
-.. code-block:: python
-
-    class Astronaut:
-        def say_hello(firstname: str, lastname: str):
-            pass
+>>> class Astronaut:
+...     def say_hello(firstname: str, lastname: str):
+...         pass
 
 .. code-block:: md
 
@@ -65,11 +59,9 @@ Methods With Parameters
 
 Method Return Type
 ------------------
-.. code-block:: python
-
-    class Astronaut:
-        def say_hello() -> str:
-            pass
+>>> class Astronaut:
+...     def say_hello() -> str:
+...         pass
 
 .. code-block:: md
 
@@ -85,14 +77,13 @@ Method Return Type
 
 Abstract Methods
 ----------------
-.. code-block:: python
-
-    from abc import abstractmethod, ABCMeta
-
-    class Astronaut(metaclass=ABCMeta):
-        @abstractmethod
-        def say_hello():
-            pass
+>>> from abc import abstractmethod, ABCMeta
+>>>
+>>>
+>>> class Astronaut(metaclass=ABCMeta):
+...     @abstractmethod
+...     def say_hello():
+...         pass
 
 .. code-block:: md
 
@@ -108,12 +99,10 @@ Abstract Methods
 
 Static Methods
 --------------
-.. code-block:: python
-
-    class Astronaut:
-        @staticmethod
-        def say_hello():
-            pass
+>>> class Astronaut:
+...     @staticmethod
+...     def say_hello():
+...         pass
 
 .. code-block:: md
 
@@ -129,14 +118,12 @@ Static Methods
 
 Types
 -----
-.. code-block:: python
-
-    class Astronaut:
-        firstname: str
-        lastname: str
-
-        def say_hello(name: str) -> str:
-            pass
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...
+...     def say_hello(name: str) -> str:
+...         pass
 
 .. code-block:: md
 
@@ -164,14 +151,12 @@ Access Modifiers
 
 Access Modifiers - Public
 -------------------------
-.. code-block:: python
-
-    class Astronaut:
-        firstname: str
-        lastname: str
-
-        def say_hello() -> str:
-            pass
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...
+...     def say_hello() -> str:
+...         pass
 
 .. code-block:: md
 
@@ -188,14 +173,12 @@ Access Modifiers - Public
 
 Access Modifiers - Protected
 ----------------------------
-.. code-block:: python
-
-    class Astronaut:
-        _firstname: str
-        _lastname: str
-
-        def _say_hello() -> str:
-            pass
+>>> class Astronaut:
+...     _firstname: str
+...     _lastname: str
+...
+...     def _say_hello() -> str:
+...         pass
 
 .. code-block:: md
 
@@ -213,14 +196,12 @@ Access Modifiers - Protected
 
 Access Modifiers - Private
 --------------------------
-.. code-block:: python
-
-    class Astronaut:
-        __firstname: str
-        __lastname: str
-
-        def __say_hello() -> str:
-            pass
+>>> class Astronaut:
+...     __firstname: str
+...     __lastname: str
+...
+...     def __say_hello() -> str:
+...         pass
 
 .. code-block:: md
 
