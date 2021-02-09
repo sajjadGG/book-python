@@ -443,7 +443,6 @@ Property class
 
 Use Cases
 ---------
-
 Astronaut:
 
 .. code-block:: python
@@ -506,6 +505,60 @@ Astronaut:
     del astro.name
     print(astro.name)
     # None
+
+Age:
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+    from datetime import date
+
+    DAY = 1
+    YEAR = 365.2425 * DAYS
+
+
+    @dataclass
+    class Astronaut:
+        firstname: str
+        lastname: str
+        date_of_birth: date
+
+        @property
+        def age(self):
+            age = date.today() - self.date_of_birth
+            return round(age.days/YEAR, 1)
+
+
+    astro = Astronaut('Mark', 'Watney', date(1969, 7, 21))
+    print(astro.age)
+
+Cached Property:
+
+.. code-block:: python
+
+    from dataclasses import dataclass, field
+    from datetime import date
+
+    YEAR = 365.2425
+
+
+    @dataclass
+    class Astronaut:
+        firstname: str
+        lastname: str
+        date_of_birth: date
+        __cache: dict = field(default_factory=dict)
+
+        @property
+        def age(self):
+            if 'age' not in self.__cache:
+                age = (date.today() - self.date_of_birth).days / YEAR
+                self.__cache['age'] = round(age, 1)
+            return self.__cache['age']
+
+
+    astro = Astronaut('Mark', 'Watney', date(1969, 7, 21))
+    print(astro.age)
 
 Temperature:
 

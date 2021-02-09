@@ -209,33 +209,6 @@ User(firstname='Jan', lastname='Twardowski')
 >>>
 >>>
 >>> class JSONMixin:
-...     def from_json(self, data):
-...         data = json.loads(data)
-...         instance = object.__new__(type(self))
-...         instance.__init__(**data)
-...         return instance
->>>
->>>
->>> @dataclass
-... class User(JSONMixin):
-...     firstname: str = None
-...     lastname: str = None
->>>
->>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
->>>
->>> User.from_json(DATA)
-Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
->>>
->>> User().from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
-
->>> import json
->>> from dataclasses import dataclass
->>>
->>>
->>> class JSONMixin:
 ...     @classmethod
 ...     def from_json(cls, data):
 ...         data = json.loads(data)
