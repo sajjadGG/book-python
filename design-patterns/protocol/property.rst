@@ -218,8 +218,8 @@ Example
 ...         self.value = initialvalue
 >>>
 >>>
->>> t = KelvinTemperature()
->>> t.value = -1
+>>> t = KelvinTemperature(1)
+>>> t.value = -1  # Should raise ValueError('Kelvin cannot be negative')
 
 >>> class KelvinTemperature:
 ...     _value: float
