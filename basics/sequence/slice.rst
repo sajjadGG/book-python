@@ -291,7 +291,6 @@ C    6
 Name: 1, dtype: int64
 
 
-
 Index Arithmetic
 ----------------
 >>> text = 'We choose to go to the Moon!'
