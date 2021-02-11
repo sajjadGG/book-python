@@ -164,7 +164,7 @@ Bytes Literal
     >>> data.encode()
     b'Moon'
 
-    >>>data = b'Moon'
+    >>> data = b'Moon'
     >>>
     >>> type(data)
     <class 'bytes'>
