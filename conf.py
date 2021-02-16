@@ -269,8 +269,10 @@ epub_author = author
 epub_publisher = author
 epub_copyright = copyright
 epub_exclude_files = ['search.html']
+
 man_pages = [
     (master_doc, project_slug, project, [author], 1)]
+
 texinfo_documents = [
     (master_doc, project_slug, project, author, project, '', 'Miscellaneous')]
 
