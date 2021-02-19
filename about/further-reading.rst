@@ -236,3 +236,8 @@ Useful libs
 -----------
 * https://fastapi.tiangolo.com
 * https://pydantic-docs.helpmanual.io
+
+
+Fun
+---
+* https://youtu.be/hgI0p1zf31k

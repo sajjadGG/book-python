@@ -3,12 +3,15 @@ Software Engineering Conventions
 
 
 PEP 8 - Style Guide for Python Code
--------------------------------------------------------------------------------
+-----------------------------------
+* PEP8 song https://youtu.be/hgI0p1zf31k
+
 
 Tabs or spaces?
 ---------------
 * 4 spacje
 * IDE zamienia tab na 4 spacje
+
 
 Line length
 -----------

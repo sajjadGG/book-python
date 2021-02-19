@@ -212,6 +212,7 @@ Good practices
 --------------
 * :pep:`8` -- Style Guide for Python Code
 * :pep:`20` -- The Zen of Python
+* PEP8 song https://youtu.be/hgI0p1zf31k
 
 >>> import this
 
