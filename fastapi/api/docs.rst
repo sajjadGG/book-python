@@ -5,33 +5,31 @@ Documentation
 Rationale
 ---------
 >>> from fastapi import FastAPI
+>>> app = FastAPI()
 >>>
 >>>
->>> api = FastAPI()
->>>
->>>
->>> @api.get('/')
+>>> @app.get('/')
 ... def index():
 ...     return {'data': 'blog list'}
 >>>
 >>>
->>> @api.get('/blog/unpublished')
+>>> @app.get('/blog/unpublished')
 ... def unpublished():
 ...     return {'data': 'all unpublished blogs'}
 >>>
 >>>
->>> @api.get('/blog/{id}')
+>>> @app.get('/blog/{id}')
 ... def show(id: int):
 ...     return {'data': id}
 >>>
 >>>
->>> @api.get('/blog/{id}/comments')
+>>> @app.get('/blog/{id}/comments')
 ... def show(id: int):
 ...     return {'data': 'comments'}
 
 .. code-block:: console
 
-    $ uvicorn main:api
+    $ uvicorn main:app --reload
 
 Open browser to:
 

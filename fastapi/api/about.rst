@@ -12,23 +12,22 @@ Rationale
 * Order of `Path Operation Functions` matters
 
 >>> from fastapi import FastAPI
+>>> app = FastAPI()
 >>>
 >>>
->>> api = FastAPI()
->>>
->>> @api.get('/')
-... def index():
-...     return {'message': 'hello world'}
+>>> @app.get('/hello')
+... def hello():
+...     return {'message': 'hello'}
 >>>
 >>>
->>> @api.get('/hello/{name}')
-... def hello(name: str):
-...     return {'hello': name}
+>>> @app.get('/ehlo')
+... def ehlo():
+...     return {'message': 'ehlo'}
 
 
 Operation
 ---------
-* ``api.get()``
+* ``app.get()``
 * get
 * post
 * put
@@ -43,10 +42,10 @@ Path
 
 Path Operation Decorator
 ------------------------
-* ``@api.get('/')``
+* ``@app.get('/')``
 
 
 Path Operation Function
 -----------------------
->>> def index():
+>>> def hello():
 ...     return {'message': 'hello world'}
