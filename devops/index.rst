@@ -10,12 +10,12 @@ About
     ../install.rst
 
 
-DevSecOps
-*********
+DevOps
+******
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: DevSecOps
+    :caption: DevOps
 
     _index.rst
 

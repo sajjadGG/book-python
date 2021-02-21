@@ -209,6 +209,6 @@ Wyciszanie logowania
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/devsecops_debugging_doctest.py
-    :caption: :download:`Solution <../_assignments/devsecops_debugging_doctest.py>`
+.. literalinclude:: ../_assignments/devops_debugging_doctest.py
+    :caption: :download:`Solution <../_assignments/devops_debugging_doctest.py>`
     :end-before: # Solution

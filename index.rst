@@ -102,14 +102,14 @@ Design Patterns
     design-patterns/_index.rst
 
 
-DevSecOps
+DevOps
 *********
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: DevSecOps
+    :caption: DevOps
 
-    devsecops/_index.rst
+    devops/_index.rst
 
 
 Network and HTTP
@@ -130,6 +130,16 @@ Django
     :caption: Django
 
     django/_index.rst
+
+
+FastAPI
+*******
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: FastAPI
+
+    fastapi/_index.rst
 
 
 Data Science

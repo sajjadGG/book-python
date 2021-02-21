@@ -1,5 +1,5 @@
 """
-* Assignment: DevSecOps Documentation Sphinx
+* Assignment: DevOps Documentation Sphinx
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 13 min

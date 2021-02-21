@@ -1,5 +1,5 @@
 """
-* Assignment: DevSecOps Unittest Rectangle
+* Assignment: DevOps Unittest Rectangle
 * Complexity: medium
 * Lines of code: 100 lines
 * Time: 21 min

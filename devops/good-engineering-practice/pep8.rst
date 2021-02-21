@@ -844,6 +844,6 @@ Configuration:
 
 Assignments
 -------------------------------------------------------------------------------
-.. literalinclude:: ../_assignments/devsecops_gep_pycodestyle.py
-    :caption: :download:`Solution <../_assignments/devsecops_gep_pycodestyle.py>`
+.. literalinclude:: ../_assignments/devops_gep_pycodestyle.py
+    :caption: :download:`Solution <../_assignments/devops_gep_pycodestyle.py>`
     :end-before: # Solution

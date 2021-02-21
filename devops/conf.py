@@ -1,5 +1,5 @@
-project = 'Python: DevSecOps'
-html_baseurl = 'https://devsecops.astrotech.io'
+project = 'Python: DevOps'
+html_baseurl = 'https://devops.astrotech.io'
 author = 'Matt Harasymczuk'
 email = 'book-python@astrotech.io'
 

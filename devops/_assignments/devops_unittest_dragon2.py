@@ -1,5 +1,5 @@
 """
-* Assignment: DevSecOps Unittest Dragon
+* Assignment: DevOps Unittest Dragon
 * Complexity: medium
 * Lines of code: 100 lines
 * Time: 21 min

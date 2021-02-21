@@ -161,10 +161,10 @@ Stub
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/devsecops_unittest_rectangle.py
-    :caption: :download:`Solution <../_assignments/devsecops_unittest_rectangle.py>`
+.. literalinclude:: ../_assignments/devops_unittest_rectangle.py
+    :caption: :download:`Solution <../_assignments/devops_unittest_rectangle.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/devsecops_unittest_dragon.py
-    :caption: :download:`Solution <../_assignments/devsecops_unittest_dragon.py>`
+.. literalinclude:: ../_assignments/devops_unittest_dragon.py
+    :caption: :download:`Solution <../_assignments/devops_unittest_dragon.py>`
     :end-before: # Solution
