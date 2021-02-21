@@ -1,9 +1,9 @@
 project = 'Python: Machine Learning'
 html_baseurl = 'https://machine-learning.astrotech.io'
 author = 'Matt Harasymczuk'
-email = 'book-python@astrotech.io'
+email = 'matt@astrotech.io'
 
-needs_sphinx = '3.4'
+needs_sphinx = '3.5'
 project_language = 'en'
 html_theme = 'sphinx_rtd_theme'
 pygments_style = 'stata-dark'

@@ -1,5 +1,5 @@
-project = 'Python: From None to Machine Learning'
-html_baseurl = 'https://python.astrotech.io'
+project = 'Python: FastAPI'
+html_baseurl = 'https://fastapi.astrotech.io'
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
 
@@ -9,24 +9,10 @@ html_theme = 'sphinx_rtd_theme'
 pygments_style = 'stata-dark'
 
 todo_emit_warnings = False
-todo_include_todos = False
-html_menu_autohide = True
+todo_include_todos = True
+html_menu_autohide = False
 
-html_static_path = [
-    '_static',
-    '_data/csv',
-    '_data/json',
-    '_data/sas',
-    '_data/sqlite3',
-    '_data/xml',
-    '_data/xlsx',
-]
-
-bibtex_bibfiles = [
-    'network/references.bib',
-    'numpy/references.bib',
-    'stdlib/references.bib',
-    'stdlib/regular-expressions/references.bib']
+bibtex_bibfiles = []
 
 # -- Standard book config -----------------------------------------------------
 import os
@@ -57,7 +43,7 @@ suppress_warnings = [
     # 'toc.circular',
     'toc.secnum',
     # 'epub.unknown_project_files',
-    # 'autosectionlabel.*',
+    'autosectionlabel.*',
 ]
 
 sys.path.insert(0, os.path.abspath('_extensions'))
@@ -74,6 +60,7 @@ extensions = [
     # 'recommonmark',
     # 'nbsphinx'
 ]
+
 
 source_suffix = {
     '.rst': 'restructuredtext',
@@ -181,32 +168,27 @@ release = f'#{sha1}, {today}'
 copyright = f'{year}, CC-BY-SA-4.0, {author} <{email}>, last update: {today}'
 
 exclude_patterns = [
-    '.github',              '*/.github',
-    '.idea',                '*/.idea',
-    '.run',                 '*/.run',
-    '_bin',                 '*/_bin',
-    '_build',               '*/_build',
-    '_contrib',             '*/_contrib',
-    '_extensions',          '*/_extensions',
-    '_i18n',                '*/_i18n',
-    '_img',                 '*/_img',
-    '_slides',              '*/_slides',
-    '_static',              '*/_static',
-    '_themes',              '*/_themes',
-    '_tmp',                 '*/_tmp',
-    '.*',                   '*/.*',
-    'venv*',                '*/venv*',
-    'virtualenv*',          '*/virtualenv*',
-    '.virtualenv*',         '*/.virtualenv*',
-    '.venv*',               '*/.venv*',
-    'README.rst',           '*/README.rst',
-    'TODO.rst',             '*/TODO.rst',
-    'Thumbs.db',            '*/Thumbs.db',
-    '.DS_Store',            '*/.DS_Store',
-    'assignments',          '*/assignments',
-    '_template.rst',        '*/_template.rst',
-    '*.ipynb_checkpoints',  '*/*.ipynb_checkpoints',
-    '*/index.rst',
+    '.*',
+    'venv*',
+    'virtualenv*',
+    '.venv*',
+    '.virtualenv*',
+    '_build',
+    '_extensions',
+    '_img',
+    '_slides',
+    '_i18n',
+    '_static',
+    '_themes',
+    '_tmp',
+    '_contrib',
+    '**/assignments',
+    '**/_template.rst',
+    '**.ipynb_checkpoints',
+    'README.rst',
+    'TODO.rst',
+    'Thumbs.db',
+    '.DS_Store',
 ]
 
 html_show_sphinx = False
@@ -269,10 +251,7 @@ epub_author = author
 epub_publisher = author
 epub_copyright = copyright
 epub_exclude_files = ['search.html']
-
 man_pages = [
     (master_doc, project_slug, project, [author], 1)]
-
 texinfo_documents = [
     (master_doc, project_slug, project, author, project, '', 'Miscellaneous')]
-
