@@ -17,6 +17,8 @@ To install ``Uvicorn`` you have two options: ``uvicorn`` or ``uvicorn[standard]`
     # Install uvicorn with minimal (pure Python) dependencies
     $ pip install uvicorn
 
+.. code-block:: console
+
     # Install uvicorn with "Cython-based" dependencies (where possible) and other "optional extras"
     $ pip install 'uvicorn[standard]'
 
@@ -39,7 +41,7 @@ To install ``Uvicorn`` you have two options: ``uvicorn`` or ``uvicorn[standard]`
 
 App
 ---
-Create file `main.py` with content:
+Create file ``main.py`` with content:
 
 >>> from fastapi import FastAPI
 >>>
@@ -66,6 +68,8 @@ Run
     INFO:     Started server process [63404]
     INFO:     Waiting for application startup.
     INFO:     Application startup complete.
+
+Optional configuration arguments:
 
 .. code-block:: console
 
@@ -100,6 +104,11 @@ Create file ``main.py``:
 .. code-block:: console
 
     $ python main.py
+    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+    INFO:     Started reloader process [68005] using watchgod
+    INFO:     Started server process [68007]
+    INFO:     Waiting for application startup.
+    INFO:     Application startup complete.
 
 
 Further Reading

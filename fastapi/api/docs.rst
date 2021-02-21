@@ -10,26 +10,36 @@ Rationale
 >>>
 >>> @app.get('/')
 ... def index():
-...     return {'data': 'blog list'}
+...     return {'data': 'list all astronauts'}
 >>>
 >>>
->>> @app.get('/blog/unpublished')
-... def unpublished():
-...     return {'data': 'all unpublished blogs'}
+>>> @app.get('/astronauts/active')
+... def active():
+...     return {'data': 'list all active astronauts'}
 >>>
 >>>
->>> @app.get('/blog/{id}')
-... def show(id: int):
+>>> @app.get('/astronaut/{id}')
+... def show_by_id(id: int):
 ...     return {'data': id}
 >>>
 >>>
->>> @app.get('/blog/{id}/comments')
-... def show(id: int):
+>>> @app.get('/astronaut/{firstname}-{lastname}')
+... def show_by_name(firstname: str, lastname: str):
+...     return {'data': f'{firstname} {lastname}'}
+>>>
+>>>
+>>> @app.get('/astronaut/{id}/friends')
+... def show_friends(id: int):
 ...     return {'data': 'comments'}
 
 .. code-block:: console
 
     $ uvicorn main:app --reload
+    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+    INFO:     Started reloader process [68005] using watchgod
+    INFO:     Started server process [68007]
+    INFO:     Waiting for application startup.
+    INFO:     Application startup complete.
 
 Open browser to:
 

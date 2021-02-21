@@ -1,5 +1,5 @@
-Parameters
-==========
+GET
+===
 
 
 Rationale
@@ -43,6 +43,11 @@ Single Parameter
 .. code-block:: console
 
     $ uvicorn main:app --reload
+    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+    INFO:     Started reloader process [68005] using watchgod
+    INFO:     Started server process [68007]
+    INFO:     Waiting for application startup.
+    INFO:     Application startup complete.
 
     $ curl http://localhost:8000/hello/?name=Mark
     {"data":"Mark"}
@@ -61,6 +66,11 @@ Multiple Parameters
 .. code-block:: console
 
     $ uvicorn main:app --reload
+    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+    INFO:     Started reloader process [68005] using watchgod
+    INFO:     Started server process [68007]
+    INFO:     Waiting for application startup.
+    INFO:     Application startup complete.
 
     $ curl http://localhost:8000/hello/?firstname=Mark&lastname=Watney
     {"data":"Mark Watney"}
@@ -79,6 +89,11 @@ Default Values
 .. code-block:: console
 
     $ uvicorn main:app --reload
+    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+    INFO:     Started reloader process [68005] using watchgod
+    INFO:     Started server process [68007]
+    INFO:     Waiting for application startup.
+    INFO:     Application startup complete.
 
     $ curl http://localhost:8000/hello/?firstname=Mark&lastname=Watney
     {"data":"Mark Watney is 69 years old"}
@@ -102,6 +117,11 @@ Optional
 .. code-block:: console
 
     $ uvicorn main:app --reload
+    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+    INFO:     Started reloader process [68005] using watchgod
+    INFO:     Started server process [68007]
+    INFO:     Waiting for application startup.
+    INFO:     Application startup complete.
 
     $ curl http://localhost:8000/hello/?firstname=Mark&lastname=Watney
     {"data":"Mark Watney is None years old"}

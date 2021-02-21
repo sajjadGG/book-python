@@ -17,8 +17,8 @@ API
 
     api/about.rst
     api/docs.rst
-    api/parameters.rst
-    api/body.rst
+    api/get.rst
+    api/post.rst
 
 
 Auth
