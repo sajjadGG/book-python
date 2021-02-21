@@ -1,5 +1,5 @@
-About
-=====
+Introduction
+============
 
 
 Rationale
@@ -51,6 +51,73 @@ Key Features
 Source: [fastapidoc]_
 
 
+Used by
+-------
+* Microsoft in Windows and Office
+* Netflix in Dispatch (crisis management)
+
+
+Table of Contents
+-----------------
+* Source: [fastapicourse]_
+
+1. Getting Started
+
+    * Install and Setup
+    * Break it down, how it structured
+
+2. Basic concepts
+
+    * Path parameters
+    * API Doc - swagger / redoc
+    * Query parameters
+    * Request body
+
+3. Intermediate concepts
+
+    * Debugging FastAPI
+    * Pydantic schemas
+    * SQLAlchemy database connections
+    * Models and tables
+
+4. Database tasks
+
+    * Insert data to database
+    * Select data from database
+    * Delete
+    * Update
+    * Relationships: fk, m2m
+
+5. Responses
+
+    * Handling exceptions
+    * Return response
+    * Define response model
+
+6. User and Password
+
+    * Create user
+    * Hash user password
+    * Show single user
+    * Define docs tags
+
+7. API Router
+
+    * API Router
+    * API Router with parameters
+
+8. Authentication using JWT
+
+    * Create Login route
+    * Login and verify password
+    * Return JSON Web Token (JWT) access token
+    * Routes behind authentication
+
+9. Deploy
+
+    * Deployment
+
+
 Further Reading
 ---------------
 * https://github.com/tiangolo/fastapi
@@ -58,71 +125,8 @@ Further Reading
 * https://pydantic-docs.helpmanual.io
 * https://swagger.io
 * https://petstore.swagger.io
-
-
-Getting Started
----------------
-* Install and Setup
-* Break it down, how it structured
-
-
-Basic concepts
---------------
-* Path parameters
-* API Doc - swagger / redoc
-* Query parameters
-* Request body
-
-
-Intermediate concepts
----------------------
-* Debugging FastAPI
-* Pydantic schemas
-* SQLAlchemy database connections
-* Models and tables
-
-
-Database tasks
---------------
-* Insert data to database
-* Select data from database
-* Delete
-* Update
-* Relationships: fk, m2m
-
-
-Responses
----------
-* Handling exceptions
-* Return response
-* Define response model
-
-
-User and Password
------------------
-* Create user
-* Hash user password
-* Show single user
-* Define docs tags
-
-
-API Router
-----------
-* API Router
-* API Router with parameters
-
-
-Authentication using JWT
-------------------------
-* Create Login route
-* Login and verify password
-* Return JSON Web Token (JWT) access token
-* Routes behind authentication
-
-
-Deploy
-------
-* Deployment
+* https://www.uvicorn.org
+* https://www.starlette.io
 
 
 References
