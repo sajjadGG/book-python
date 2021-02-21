@@ -90,7 +90,7 @@ Create file ``main.py``:
 >>>
 >>>
 >>> @app.get('/')
->>> def index():
+... def index():
 ...     return {'data': 'hello world'}
 >>>
 >>>

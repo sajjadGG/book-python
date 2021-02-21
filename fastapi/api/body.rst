@@ -15,6 +15,7 @@ Models
 * Represents data in your system
 * Pydantic class
 
+>>> from typing import Optional
 >>> from pydantic import BaseModel
 >>>
 >>>
@@ -39,7 +40,7 @@ POST Method
 >>>
 >>>
 >>> @app.post('/astronaut/')
->>> def astronaut_selection(astronaut: Astronaut):
+... def astronaut_selection(astronaut: Astronaut):
 ...     return {'data': f'{astronaut.firstname} {astronaut.lastname} is active: {astronaut.active}'}
 
 .. code-block:: console
