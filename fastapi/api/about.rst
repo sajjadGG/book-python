@@ -4,11 +4,12 @@ About
 
 Rationale
 ---------
-* Path
-* Operation
-* Path Operation Function
-* Path Operation Decorator
+* `Path`
+* `Operation`
+* `Path Operation Function`
+* `Path Operation Decorator`
 * Routing
+* Order of `Path Operation Functions` matters
 
 >>> from fastapi import FastAPI
 >>>
@@ -47,5 +48,5 @@ Path Operation Decorator
 
 Path Operation Function
 -----------------------
-... def index():
+>>> def index():
 ...     return {'message': 'hello world'}
