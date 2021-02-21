@@ -15,3 +15,8 @@ pandas
 matplotlib
 django
 lxml
+
+
+# FastAPI
+fastapi
+uvicorn
