@@ -19,7 +19,7 @@ lxml
 
 # FastAPI
 fastapi
-uvicorn
-SQLAlchemy
+uvicorn[standard]
+sqlalchemy
+passlib[bcrypt]
 pydantic
-requests

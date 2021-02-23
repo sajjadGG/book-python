@@ -8,6 +8,7 @@ Rationale
 * ORM has tools to convert (`map`) between objects in code and database tables (`relations`)
 * Declarative - First define model, which then maps to the database tables
 
+
 Install
 -------
 .. code-block:: console
@@ -15,6 +16,8 @@ Install
     $ pip install sqlalchemy
 
 >>> import sqlalchemy
+>>>
+>>>
 >>> sqlalchemy.__version__.startswith('1.3')
 True
 
@@ -59,6 +62,7 @@ Schema
 ------
 * Represents JSON request/response data
 
+>>> from typing import Optional
 >>> from pydantic import BaseModel
 >>>
 >>>
