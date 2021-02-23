@@ -22,6 +22,7 @@ API
     api/post.rst
     api/status.rst
 
+
 Database
 ********
 .. toctree::
@@ -29,6 +30,8 @@ Database
     :caption: API
 
     database/orm.rst
+    database/auth.rst
+    database/relationship.rst
 
 
 Auth
