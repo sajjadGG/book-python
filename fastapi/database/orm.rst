@@ -26,17 +26,17 @@ Connection
 >>> from sqlalchemy.orm import sessionmaker
 >>>
 >>>
->>> SQLALCHEMY_DATABASE_URL = 'sqlite:///./blog.db'
->>> SQLALCHEMY_ARGS = {'check_same_thread': False}
+>>> SQLALCHEMY_DATABASE_URL = 'sqlite:////tmp/mydatabase.sqlite3'
 >>>
->>>
->>> engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args=SQLALCHEMY_ARGS)
+>>> engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={'check_same_thread': False})
 >>> SessionLocal = sessionmaker(bind= engine, autocommit=False, autoflush=False)
 >>> Base = declarative_base()
 
 
 Models
 ------
+* Represents database entity
+
 >>> from sqlalchemy import Column, Integer, String
 >>>
 >>>
@@ -53,6 +53,33 @@ Models
 ...         lastname = self.fullname
 ...         age = self.age
 ...         return f'<User({firstname=}, {lastname=}, {age=})>'
+
+
+Schema
+------
+* Represents JSON request/response data
+
+>>> from pydantic import BaseModel
+>>>
+>>>
+>>> class AstronautSchema(BaseModel):
+...     firstname: str
+...     lastname: str
+...     active: Optional[bool] = True
+
+``Config.orm_mode = True`` is required to have model as a ``response_model`` (a decorator parameter).
+Note, that if you set ``orm_mode = True``, then not all fields need to be specified.
+Listed fields will be in response, and not listed will be hidden in response.
+
+>>> from pydantic import BaseModel
+>>>
+>>>
+>>> class AstronautSchema(BaseModel):
+...     firstname: str
+...     lastname: str
+...
+...     class Config:
+...         orm_mode = True
 
 
 Example
@@ -94,6 +121,9 @@ Example
 ...     firstname: str
 ...     lastname: str
 ...     active: Optional[bool] = True
+...
+...     class Config:
+...         orm_mode = True
 >>>
 >>>
 >>> Base.metadata.create_all(engine)
@@ -108,12 +138,12 @@ Example
 ...     return astro
 >>>
 >>>
->>> @app.get('/astronaut')
+>>> @app.get('/astronaut', response_model=list[AstronautSchema])
 ... def list_all(db: Session = Depends(get_db)):
 ...     return db.query(AstronautModel).all()
 >>>
 >>>
->>> @app.get('/astronaut/{id}', status_code=status.HTTP_200_OK)
+>>> @app.get('/astronaut/{id}', status_code=status.HTTP_200_OK, response_model=AstronautSchema)
 ... def get(id: int, db: Session = Depends(get_db)):
 ...     if result := db.query(AstronautModel).filter(AstronautModel.id == id).first():
 ...         return result

@@ -10,21 +10,6 @@ Rationale
 * Pydantic models
 
 
-Models
-------
-* Represents data in your system
-* Pydantic class
-
->>> from typing import Optional
->>> from pydantic import BaseModel
->>>
->>>
->>> class Astronaut(BaseModel):
-...     firstname: str
-...     lastname: str
-...     active: Optional[bool] = True
-
-
 POST Method
 -----------
 >>> from typing import Optional

@@ -16,6 +16,7 @@ API
     :caption: API
 
     api/about.rst
+    api/schema.rst
     api/docs.rst
     api/get.rst
     api/post.rst
