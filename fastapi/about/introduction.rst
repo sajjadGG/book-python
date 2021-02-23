@@ -131,6 +131,6 @@ Further Reading
 
 References
 ----------
-.. [fastapidoc] Sebastián Ramírez. FastAPI. Accessed Date: 2021-02-21. URL: https://fastapi.tiangolo.com
-.. [fastapigithub] Sebastián Ramírez. FastAPI. Accessed Date: 2021-02-21. URL: https://github.com/tiangolo/fastapi
-.. [fastapicourse] Bitfumes. FastAPI - A python framework | Full Course. Accessed Date: 2021-02-21. URL: https://www.youtube.com/watch?v=7t2alSnE2-I
+.. [fastapidoc] Sebastián Ramírez. FastAPI official documentation. Accessed Date: 2021-02-21. URL: https://fastapi.tiangolo.com
+.. [fastapigithub] Sebastián Ramírez. FastAPI Github repository. Accessed Date: 2021-02-21. URL: https://github.com/tiangolo/fastapi
+.. [fastapicourse] Bitfumes. FastAPI - A python framework full course. Accessed Date: 2021-02-21. URL: https://www.youtube.com/watch?v=7t2alSnE2-I

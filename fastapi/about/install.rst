@@ -110,7 +110,3 @@ Create file ``main.py``:
     INFO:     Waiting for application startup.
     INFO:     Application startup complete.
 
-
-Further Reading
----------------
-* https://www.uvicorn.org

@@ -19,6 +19,15 @@ API
     api/docs.rst
     api/get.rst
     api/post.rst
+    api/status.rst
+
+Database
+********
+.. toctree::
+    :maxdepth: 1
+    :caption: API
+
+    database/orm.rst
 
 
 Auth

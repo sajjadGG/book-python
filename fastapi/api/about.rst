@@ -10,6 +10,7 @@ Rationale
 * `Path Operation Decorator`
 * Routing
 * Order of `Path Operation Functions` matters
+* `Tags` are identifiers used to group routes. Routes with the same tags are grouped into a section on the API documentation.
 
 >>> from fastapi import FastAPI
 >>> app = FastAPI()
