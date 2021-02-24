@@ -11,9 +11,46 @@ Installing Packages
 
 ``__init__.py``
 ---------------
+* Since Python 3.3 - :pep:`420` -- Implicit Namespace Packages
 * https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/linear_model/__init__.py
 * https://github.com/django/django/blob/master/django/views/generic/__init__.py
 
+It is true that Python 3.3+ supports Implicit Namespace Packages that allows it to create a package without an __init__.py file. This is called a namespace package in contrast to a regular package which does have an __init__.py file (empty or not empty).
+
+However, creating a namespace package should ONLY be done if there is a need for it. For most use cases and developers out there, this doesn't apply so you should stick with EMPTY __init__.py files regardless.
+
+Namespace package use case
+
+To demonstrate the difference between the two types of python packages, lets look at the following example:
+
+.. code-block:: text
+
+    google_pubsub/              <- Package 1
+        google/                 <- Namespace package (there is no __init__.py)
+            cloud/              <- Namespace package (there is no __init__.py)
+                pubsub/         <- Regular package (with __init__.py)
+                    __init__.py <- Required to make the package a regular package
+                    foo.py
+
+    google_storage/             <- Package 2
+        google/                 <- Namespace package (there is no __init__.py)
+            cloud/              <- Namespace package (there is no __init__.py)
+                storage/        <- Regular package (with __init__.py)
+                    __init__.py <- Required to make the package a regular package
+                    bar.py
+
+google_pubsub and google_storage are separate packages but they share the same namespace google/cloud. In order to share the same namespace, it is required to make each directory of the common path a namespace package, i.e. google/ and cloud/. This should be the only use case for creating namespace packages, otherwise, there is no need for it.
+
+It's crucial that there are no __init__py files in the google and google/cloud directories so that both directories can be interpreted as namespace packages. In Python 3.3+ any directory on the sys.path with a name that matches the package name being looked for will be recognized as contributing modules and subpackages to that package. As a result, when you import both from google_pubsub and google_storage, the Python interpreter will be able to find them.
+
+This is different from regular packages which are self-contained meaning all parts live in the same directory hierarchy. When importing a package and the Python interpreter encounters a subdirectory on the sys.path with an __init__.py file, then it will create a single directory package containing only modules from that directory, rather than finding all appropriately named subdirectories outside that directory. This is perfectly fine for packages that don't want to share a namespace. I highly recommend taking a look at Traps for the Unwary in Python’s Import System to get a better understanding of how Python importing behaves with regular and namespace package and what __init__.py traps to watch out for.
+
+Summary:
+
+    - Only skip __init__.py files if you want to create namespace packages. Only create namespace packages if you have different libraries that reside in different locations and you want them each to contribute a subpackage to the parent package, i.e. the namespace package.
+    - Keep on adding empty __init__py to your directories because 99% of the time you just want to create regular packages. Also, Python tools out there such as mypy and pytest require empty __init__.py files to interpret the code structure accordingly. This can lead to weird errors if not done with care.
+
+* Source: https://stackoverflow.com/a/48804718/228517
 
 ``__all__``
 -----------

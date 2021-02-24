@@ -1,0 +1,48 @@
+from fastapi import HTTPException, status, Depends, APIRouter
+from sqlalchemy.orm import Session
+from blog.models import Blog
+from blog.schemas import BlogIn, BlogOut
+from database import database
+
+api = APIRouter(tags=['Blog'])
+
+
+@api.post('/blog', status_code=status.HTTP_201_CREATED, response_model=BlogOut)
+def post(request: BlogIn, db: Session = Depends(database)):
+    astro = Blog(creator_id=1, **request.dict())
+    db.add(astro)
+    db.commit()
+    db.refresh(astro)
+    return astro
+
+
+@api.get('/blog', response_model=list[BlogOut])
+def list_all(db: Session = Depends(database)):
+    return db.query(Blog).all()
+
+
+@api.get('/blog/{id}', status_code=status.HTTP_200_OK, response_model=BlogOut)
+def get(id: int, db: Session = Depends(database)):
+    if result := db.query(Blog).filter(Blog.id == id).first():
+        return result
+    else:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Blog does not exist')
+
+
+@api.delete('/blog/{id}', status_code=status.HTTP_204_NO_CONTENT)
+def delete(id: int, db: Session = Depends(database)):
+    astro = db.query(Blog).filter(Blog.id == id)
+    if not astro.first():
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Blog does not exist')
+    astro.delete(synchronize_session=False)
+    db.commit()
+
+
+@api.put('/blog/{id}', status_code=status.HTTP_202_ACCEPTED)
+def put(id: int, request: BlogOut, db: Session = Depends(database)):
+    astro = db.query(Blog).filter(Blog.id == id)
+    if not astro.first():
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Blog does not exist')
+    astro.update(request)
+    db.commit()
+    return request
