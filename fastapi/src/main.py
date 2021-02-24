@@ -1,13 +1,13 @@
 import uvicorn
 from fastapi import FastAPI
 from blog.views import api as blog
-from user.views import api as user
+from auth.views import api as auth
 from database import Model, engine
 
 
 app = FastAPI()
+app.include_router(auth)
 app.include_router(blog)
-app.include_router(user)
 
 Model.metadata.create_all(engine)
 

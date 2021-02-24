@@ -1,14 +1,75 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session, sessionmaker
+from settings import SQLALCHEMY_DATABASE_URL
 
 
-SQLALCHEMY_DATABASE_URL = 'sqlite:////tmp/mydatabase.sqlite3'
-
-engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={'check_same_thread': False})
+engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={'check_same_thread': False}, echo=True)
 SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
-Model = declarative_base()
-Model.metadata.create_all(engine)
+
+
+class Database:
+    session: Session
+
+    def __getattr__(self, attribute):
+        return getattr(self.session, attribute)
+
+    def __enter__(self):
+        self.session = SessionLocal()
+        return self
+
+    def __exit__(self, *args):
+        self.session.close()
+
+
+class Model(declarative_base()):
+    __abstract__ = True
+
+    class DoesNotExist(Exception):
+        pass
+
+    @classmethod
+    def insert(cls, **kwargs):
+        obj = cls(**kwargs)
+        with Database() as db:
+            db.add(obj)
+            db.commit()
+            db.refresh(obj)
+        return obj
+
+
+    @classmethod
+    def filter(cls, *criterion):
+        with Database() as db:
+            if result := db.query(cls).filter(*criterion):
+                return result
+            else:
+                raise cls.DoesNotExist
+
+
+    @classmethod
+    def all(cls, *criterion):
+        with Database() as db:
+            if result := db.query(cls).all():
+                return result
+            else:
+                raise cls.DoesNotExist
+
+
+    @classmethod
+    def get(cls, *criterion):
+        if result := cls.filter(*criterion).first():
+            return result
+        else:
+            raise cls.DoesNotExist
+
+
+    @classmethod
+    def delete(cls, *criterion):
+        result = cls.filter(*criterion)
+        result.delete(synchronize_session=False)
+        with Database() as db:
+            db.commit()
 
 
 def database():

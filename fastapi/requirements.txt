@@ -2,7 +2,9 @@ sphinx==3.5.*
 sphinx_rtd_theme
 
 fastapi
-uvicorn[standard]
-sqlalchemy
-passlib[bcrypt]
 pydantic
+sqlalchemy
+uvicorn[standard]
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart

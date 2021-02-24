@@ -1,6 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel as Schema
-from user.schemas import UserOut
+from auth.schemas import UserOut
 
 
 class BlogIn(Schema):
