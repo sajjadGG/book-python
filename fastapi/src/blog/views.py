@@ -9,10 +9,9 @@ from database import database
 api = APIRouter(tags=['Blog'])
 
 
-@api.post('/blog', status_code=status.HTTP_201_CREATED)
+@api.post('/blog', status_code=status.HTTP_201_CREATED, response_model=BlogOut)
 def post(request: BlogIn, user: UserIn = Depends(get_current_user)):
-    Blog.insert(creator_id=1, **request.dict())
-    return {'status': 201, 'reason': 'Created'}
+    return Blog.insert(creator_id=1, **request.dict())
 
 
 @api.get('/blog', response_model=list[BlogOut])
