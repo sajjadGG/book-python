@@ -29,18 +29,18 @@ def get(id: int, db: Session = Depends(database), user: UserIn = Depends(get_cur
 
 @api.delete('/blog/{id}', status_code=status.HTTP_204_NO_CONTENT)
 def delete(id: int, db: Session = Depends(database), user: UserIn = Depends(get_current_user)):
-    astro = db.query(Blog).filter(Blog.id == id)
-    if not astro.first():
+    blog = db.query(Blog).filter(Blog.id == id)
+    if not blog.first():
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Blog does not exist')
-    astro.delete(synchronize_session=False)
+    blog.delete(synchronize_session=False)
     db.commit()
 
 
 @api.put('/blog/{id}', status_code=status.HTTP_202_ACCEPTED)
 def put(id: int, request: BlogOut, db: Session = Depends(database), user: UserIn = Depends(get_current_user)):
-    astro = db.query(Blog).filter(Blog.id == id)
-    if not astro.first():
+    blog = db.query(Blog).filter(Blog.id == id)
+    if not blog.first():
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Blog does not exist')
-    astro.update(request)
+    blog.update(request)
     db.commit()
     return request
