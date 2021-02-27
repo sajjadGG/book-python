@@ -2,7 +2,7 @@ from __future__ import annotations
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from auth.helpers import Password
-from database import Model, Database
+from database import Model
 
 
 class User(Model):

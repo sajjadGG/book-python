@@ -37,7 +37,6 @@ class Model(declarative_base()):
             db.refresh(obj)
         return obj
 
-
     @classmethod
     def filter(cls, *criterion):
         with Database() as db:
@@ -45,7 +44,6 @@ class Model(declarative_base()):
                 return result
             else:
                 raise cls.DoesNotExist
-
 
     @classmethod
     def all(cls, *criterion):
@@ -55,14 +53,12 @@ class Model(declarative_base()):
             else:
                 raise cls.DoesNotExist
 
-
     @classmethod
     def get(cls, *criterion):
         if result := cls.filter(*criterion).first():
             return result
         else:
             raise cls.DoesNotExist
-
 
     @classmethod
     def delete(cls, *criterion):

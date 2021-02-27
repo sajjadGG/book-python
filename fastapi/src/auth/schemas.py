@@ -2,13 +2,13 @@ from typing import Optional
 from pydantic import BaseModel as Schema
 
 
-class UserIn(Schema):
+class UserIn(Schema):  # CreateUserRequest
     username: str
     email: str
     password: str
 
 
-class UserOut(Schema):
+class UserOut(Schema):  # CreateUserResponse
     username: str
     email: str
 
