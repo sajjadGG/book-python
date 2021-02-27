@@ -23,6 +23,8 @@ Polish:
     5. Zastosuj f-string
 
 Tests:
+    >>> 'Mark Watney' in result
+    True
     >>> result
     'Hello World Mark Watney'
 """

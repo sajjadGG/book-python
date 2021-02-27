@@ -66,10 +66,10 @@ Keyboard Shortcuts
 
 Assignments
 -----------
-.. literalinclude:: assignments/about_ide_usage.py
-    :caption: :download:`Solution <assignments/about_ide_usage.py>`
+.. literalinclude:: assignments/about_ide_a.py
+    :caption: :download:`Solution <assignments/about_ide_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/about_ide_spellchecker.py
-    :caption: :download:`Solution <assignments/about_ide_spellchecker.py>`
+.. literalinclude:: assignments/about_ide_b.py
+    :caption: :download:`Solution <assignments/about_ide_b.py>`
     :end-before: # Solution

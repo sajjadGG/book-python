@@ -15,8 +15,12 @@ Polish:
     3. "World" ma być w drugiej linii
 
 Tests:
-    >>> result
-    'Hello\\nWorld'
+    >>> 'Hello' in result
+    True
+    >>> '\\n' in result
+    True
+    >>> 'World' in result
+    True
 """
 
 # Solution

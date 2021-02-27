@@ -4,35 +4,56 @@ Python Syntax
 
 Variables
 ---------
-* Names are case sensitive
-* Lowercase letters for variable names
-* Underscore ``_`` is used for multi-word names
+Identifiers (variable/constant names) are case sensitive
 * ``NameError`` when using not declared variable
 * ``AttributeError`` when cannot assign to variables
+* By convention you should use English language
+
+Lowercase letters for variable names:
 
 >>> name = 'Mark Watney'
+
+Underscore ``_`` is used for multi-word names
 
 >>> first_name = 'Mark'
 >>> last_name = 'Watney'
 
+You can also join words.
+It works for two words, but could be hard to read for three and more:
+
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 
->>> name = 'Mark Watney'     # Lower cased names are reserved for variables
->>> Name = 'Jan Twardowski'  # Upper cased names are reserved for classes
+Not ok by convention (but the code will run):
+
+>>> name = 'Mark Watney'
+>>> Name = 'Jan Twardowski'  # Pascal Case - reserved for class names
+>>>
+>>> imię = 'Mark'            # Non-ASCII characters in an identifier (use Latin characters, and English names)
+>>>
+>>> firstName = 'Mark'       # Camel Case - not used in Python
+>>> Firstname = 'Mark'       # Pascal Case - reserved for class names
+>>> FirstName = 'Mark'       # Pascal Case - reserved for class names
+
+This will not work:
+
+>>> 1firstname               # doctest: +SKIP
 
 
 Constants
 ---------
-* Names are case sensitive
-* Underscore ``_`` is used for multi-word names
-* Uppercase letters for "constant" names
-* Python do not distinguish between variables and constants
-* Python allows you to change "constants" but it's a bad practice (good IDE will tell you)
+Identifiers (variable/constant names) are case sensitive.
+Uppercase letters are used for constants (by convention):
 
 >>> FILE = '/etc/passwd'
->>> FILE_NAME = '/etc/shadow'
 >>> FILENAME = '/etc/group'
+
+Underscore ``_`` is used for multi-word names:
+
+>>> FILE_NAME = '/etc/shadow'
+
+Python do not distinguish between variables and constants.
+Python allows you to change "constants" but it's a bad practice (good IDE will tell you):
 
 >>> NAME = 'Mark Watney'
 >>> NAME = 'Jan Twardowski'
@@ -241,10 +262,10 @@ Namespaces are one honking great idea -- let's do more of those!
 
 Assignments
 -----------
-.. literalinclude:: assignments/about_print.py
-    :caption: :download:`assignments/about_print.py`
+.. literalinclude:: assignments/about_syntax_a.py
+    :caption: :download:`assignments/about_syntax_a.py`
     :end-before: # Solution
 
-.. literalinclude:: assignments/about_syntax.py
-    :caption: :download:`assignments/about_syntax.py`
+.. literalinclude:: assignments/about_syntax_b.py
+    :caption: :download:`assignments/about_syntax_b.py`
     :end-before: # Solution
