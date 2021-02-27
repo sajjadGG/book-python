@@ -19,19 +19,19 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> type(result)
+    >>> type(altitude)
     <class 'float'>
-    >>> result / ft
+    >>> altitude / ft
     10000.0
-    >>> result / m
+    >>> altitude / m
     3048.0
 """
-
 
 # Given
 m = 1
 ft = 0.3048 * m
 
+altitude = ...  # feet
 
 # Solution
-result = 10_000 * ft
+altitude = 10_000 * ft

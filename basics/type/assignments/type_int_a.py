@@ -44,10 +44,12 @@ Tests:
     210
 """
 
-
 # Given
 Kelvin = 273
 
+mars_max = 20  # Celsius
+mars_min = -153  # Celsius
+mars_avg = -63  # Celsius
 
 # Solution
 mars_max = 20 + Kelvin

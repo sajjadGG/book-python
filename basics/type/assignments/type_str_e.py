@@ -43,7 +43,6 @@ Tests:
     'Jana III Sobieskiego'
 """
 
-
 # Given
 example = 'UL. jana \tTWArdoWskIEGO 3'
 a = 'ul Jana III SobIESkiego'
@@ -57,7 +56,6 @@ h = ' Jana 3 Sobieskiego  '
 i = 'Jana III\tSobieskiego '
 
 example = example.upper().replace('UL. ', '').replace('\t', '').strip().title().replace('3', 'III')
-
 
 # Solution
 a = a.upper().replace('UL', '').strip().title().replace('Iii', 'III')

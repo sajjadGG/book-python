@@ -38,10 +38,11 @@ Tests:
     -180
 """
 
-
 # Given
 Kelvin = 273
 
+moon_day = 453  # Kelvins
+moon_night = 93  # Kelvins
 
 # Solution
 moon_day = 453 - Kelvin

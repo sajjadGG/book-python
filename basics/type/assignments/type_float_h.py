@@ -38,16 +38,15 @@ Tests:
     <class 'float'>
     >>> type(gradient)
     <class 'float'>
-    >>> type(result)
+    >>> type(altitude)
     <class 'float'>
     >>> pO2
     21223.5345
     >>> gradient
     11.3
-    >>> round(result/m, 2)
+    >>> round(altitude/m, 2)
     7088.63
 """
-
 
 # Given
 m = 1
@@ -55,9 +54,12 @@ Pa = 1
 hPa = 100 * Pa
 ata = 1013.25 * hPa
 O2 = 20.946
+pO2 = O2 / 100 * ata
 
+gradient = ...  # 11.3 Pascals per meter
+altitude = ...  # Pressure at sea level minis oxygen partial pressure divided by gradient
 
 # Solution
-pO2 = O2/100 * ata
+pO2 = O2 / 100 * ata
 gradient = 11.3 * Pa / m
-result = (ata - pO2) / gradient
+altitude = (ata - pO2) / gradient

@@ -37,13 +37,15 @@ Tests:
     123.0
 """
 
-
 # Given
 PLN = 1
 VAT = 23 / 100
 
+net = 100.0  # PLN,  without tax
+tax = ...  # PLN
+gross = ...  # PLN, with tax
 
 # Solution
 net = 100.00 * PLN
 tax = net * VAT
-gross = net * (1+VAT)
+gross = net * (1 + VAT)

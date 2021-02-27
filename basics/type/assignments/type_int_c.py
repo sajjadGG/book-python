@@ -34,11 +34,14 @@ Tests:
     100000
 """
 
-
 # Given
 m = 1
 km = 1000 * m
 
+armstrong_line = 18  # kilometers
+stratosphere = 20  # kilometers
+usaf_space = 80  # kilometers
+iaf_space = 100  # kilometers
 
 # Solution
 armstrong_line = 18 * km

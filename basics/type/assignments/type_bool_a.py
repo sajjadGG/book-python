@@ -51,7 +51,6 @@ Tests:
     False
 """
 
-
 # Given
 a = bool(False)
 b = bool(True)
@@ -74,6 +73,5 @@ n = bool(float(str(-0)))
 o = bool(-0.0 + 0.0j)
 p = bool('-0.0+0.0j')
 q = bool(complex('-0.0+0.0j'))
-
 
 # Solution

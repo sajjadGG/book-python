@@ -4,14 +4,18 @@ Python Syntax
 
 Variables
 ---------
-Identifiers (variable/constant names) are case sensitive
 * ``NameError`` when using not declared variable
 * ``AttributeError`` when cannot assign to variables
-* By convention you should use English language
 
-Lowercase letters for variable names:
+Identifiers (variable/constant names) are case sensitive
+Use lowercase letters for variable names:
 
 >>> name = 'Mark Watney'
+
+By convention you should use use Latin characters and English names:
+
+>>> name = 'Mark'
+>>> imię = 'Mark'            # Non-ASCII characters in an identifier
 
 Underscore ``_`` is used for multi-word names
 
@@ -19,25 +23,35 @@ Underscore ``_`` is used for multi-word names
 >>> last_name = 'Watney'
 
 You can also join words.
-It works for two words, but could be hard to read for three and more:
 
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 
-Not ok by convention (but the code will run):
+Although it works for two words, it could be hard to read for three or more:
+
+You should always use lowercase letters:
 
 >>> name = 'Mark Watney'
->>> Name = 'Jan Twardowski'  # Pascal Case - reserved for class names
->>>
->>> imię = 'Mark'            # Non-ASCII characters in an identifier (use Latin characters, and English names)
->>>
->>> firstName = 'Mark'       # Camel Case - not used in Python
->>> Firstname = 'Mark'       # Pascal Case - reserved for class names
->>> FirstName = 'Mark'       # Pascal Case - reserved for class names
+>>> Name = 'Jan Twardowski'
 
-This will not work:
+Capital letters by convention has different meaning.
+The code will run without errors or warnings, but you can mislead others.
+Remember code is read by 80% of a time, and written in 20%.
 
->>> 1firstname               # doctest: +SKIP
+Not ok by convention :
+
+>>> firstName = 'Mark'  # Camel Case - not used in Python (/C/C++/Java/JS convention)
+>>> Firstname = 'Mark'  # Pascal Case - reserved for class names
+>>> FirstName = 'Mark'  # Pascal Case - reserved for class names
+
+You can put numbers in variables:
+
+>>> name1 = 'Mark'
+>>> name2 = 'Mark'
+
+BUt the number cannot be the first character (otherwise will produce ``SyntaxError``):
+
+>>> 1name = 'Mark'  # doctest: +SKIP
 
 
 Constants

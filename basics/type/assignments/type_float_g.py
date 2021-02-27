@@ -39,7 +39,6 @@ Tests:
     21.22
 """
 
-
 # Given
 Pa = 1
 hPa = 100 * Pa
@@ -47,6 +46,7 @@ kPa = 1000 * Pa
 ata = 1013.25 * hPa
 O2 = 20.946
 
+pO2 = ...  # Oxygen partial pressure
 
 # Solution
-pO2 = O2/100 * ata
+pO2 = O2 / 100 * ata

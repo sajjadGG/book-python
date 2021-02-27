@@ -25,18 +25,17 @@ Tests:
     <class 'float'>
     >>> type(mph)
     <class 'float'>
-    >>> type(result)
+    >>> type(speed_limit)
     <class 'float'>
     >>> round(kph, 3)
     0.278
     >>> round(mph, 3)
     0.447
-    >>> round(result/mph, 1)
+    >>> round(speed_limit/mph, 1)
     75.0
-    >>> round(result/kph, 1)
+    >>> round(speed_limit/kph, 1)
     120.7
 """
-
 
 # Given
 SECOND = 1
@@ -47,9 +46,13 @@ m = 1
 km = 1000 * m
 mi = 1609.344 * m
 
+mph = ...  # miles per hour
+kph = ...  # kilometers per hour
+
+speed_limit = 70  # miles per hour
 
 # Solution
 kph = km / HOUR
 mph = mi / HOUR
 
-result = 75 * mph
+speed_limit = 75 * mph

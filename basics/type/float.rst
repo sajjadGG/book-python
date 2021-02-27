@@ -119,6 +119,8 @@ Rounding a number in string formatting
     Pi number is 3.1416
     >>> print(f'Pi number is {pi:.2f}')
     Pi number is 3.14
+    >>> print(f'Pi number is {pi:.0f}')
+    Pi number is 3
 
     >>> round(10.5)
     10

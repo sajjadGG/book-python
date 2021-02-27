@@ -38,14 +38,15 @@ Tests:
     250
 """
 
-
 # Given
 m = 1
 km = 1000 * m
 
+karman_line_earth = 100000  # meters
+karman_line_mars = 80000  # meters
+karman_line_venus = 250000  # meters
 
 # Solution
 karman_line_earth = 100000 // km
 karman_line_mars = 80000 // km
 karman_line_venus = 250000 // km
-

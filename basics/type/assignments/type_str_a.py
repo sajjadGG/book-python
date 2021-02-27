@@ -19,6 +19,5 @@ Tests:
     'NASA'
 """
 
-
 # Solution
 result = input('Type text: ')

@@ -37,7 +37,6 @@ Tests:
     False
 """
 
-
 # Given
 a = True == ...
 b = True != ...
@@ -48,7 +47,6 @@ f = ... or ...
 g = ... and ...
 h = bool(bool(...) == ...) or False
 i = bool(...) is not bool(False)
-
 
 # Solution
 a = True == True

@@ -51,18 +51,23 @@ Tests:
     176
 """
 
-
 # Given
 SECOND = 1
 MINUTE = 60 * SECOND
 HOUR = 60 * MINUTE
 DAY = 24 * HOUR
 
+day = ...  # 1 day in seconds
+week = ...  # 7 days in minutes
+month = ...  # 31 days in hours
+workday = ...  # 8 hours in seconds
+workweek = ...  # 5 workdays in minutes
+workmonth = ...  # 22 workdays in hours
 
 # Solution
-day = (1*DAY) // SECOND
-week = (7*DAY) // MINUTE
-month = (31*DAY) // HOUR
-workday = (8*HOUR) // SECOND
-workweek = (5*workday) // MINUTE
-workmonth = (22*workday) // HOUR
+day = (1 * DAY) // SECOND
+week = (7 * DAY) // MINUTE
+month = (31 * DAY) // HOUR
+workday = (8 * HOUR) // SECOND
+workweek = (5 * workday) // MINUTE
+workmonth = (22 * workday) // HOUR

@@ -17,20 +17,19 @@ Polish:
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> type(result)
+    >>> type(volume)
     <class 'float'>
-    >>> result / floz
+    >>> volume / floz
     20.0
-    >>> result / liter
+    >>> volume / liter
     0.5914688
 """
-
 
 # Given
 liter = 1
 floz = 0.02957344 * liter
 
+volume = 20  # Fl Oz
 
 # Solution
-result = 20 * floz
-
+volume = 20 * floz
