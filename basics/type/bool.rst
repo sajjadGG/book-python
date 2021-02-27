@@ -181,6 +181,7 @@ Use Case:
 >>> name = 'Mark Watney'
 >>>
 >>> name == 'Mark Watney' or name == 'Melissa Lewis'
+True
 
 
 Boolean Algebra
