@@ -1,5 +1,5 @@
-Exceptions
-==========
+ControlFlow Exceptions
+======================
 
 .. testsetup::
 
@@ -579,30 +579,30 @@ Exit Status Code
 
 Assignments
 -----------
-.. literalinclude:: assignments/controlflow_exception_assert.py
-    :caption: :download:`Solution <assignments/controlflow_exception_assert.py>`
+.. literalinclude:: assignments/controlflow_exception_a.py
+    :caption: :download:`Solution <assignments/controlflow_exception_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/controlflow_exception_raise.py
-    :caption: :download:`Solution <assignments/controlflow_exception_raise.py>`
+.. literalinclude:: assignments/controlflow_exception_b.py
+    :caption: :download:`Solution <assignments/controlflow_exception_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/controlflow_exception_except.py
-    :caption: :download:`Solution <assignments/controlflow_exception_except.py>`
+.. literalinclude:: assignments/controlflow_exception_c.py
+    :caption: :download:`Solution <assignments/controlflow_exception_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/controlflow_exception_finally.py
-    :caption: :download:`Solution <assignments/controlflow_exception_finally.py>`
+.. literalinclude:: assignments/controlflow_exception_d.py
+    :caption: :download:`Solution <assignments/controlflow_exception_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/controlflow_exception_else.py
-    :caption: :download:`Solution <assignments/controlflow_exception_else.py>`
+.. literalinclude:: assignments/controlflow_exception_e.py
+    :caption: :download:`Solution <assignments/controlflow_exception_e.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/controlflow_exception_custom.py
-    :caption: :download:`Solution <assignments/controlflow_exception_custom.py>`
+.. literalinclude:: assignments/controlflow_exception_f.py
+    :caption: :download:`Solution <assignments/controlflow_exception_f.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/controlflow_exception_input.py
-    :caption: :download:`Solution <assignments/controlflow_exception_input.py>`
+.. literalinclude:: assignments/controlflow_exception_g.py
+    :caption: :download:`Solution <assignments/controlflow_exception_g.py>`
     :end-before: # Solution

@@ -243,14 +243,14 @@ References
 
 Assignments
 -----------
-.. literalinclude:: assignments/sequence_list_create.py
-    :caption: :download:`Solution <assignments/sequence_list_create.py>`
+.. literalinclude:: assignments/sequence_list_a.py
+    :caption: :download:`Solution <assignments/sequence_list_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/sequence_list_many.py
-    :caption: :download:`Solution <assignments/sequence_list_many.py>`
+.. literalinclude:: assignments/sequence_list_b.py
+    :caption: :download:`Solution <assignments/sequence_list_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/sequence_list_modify.py
-    :caption: :download:`Solution <assignments/sequence_list_modify.py>`
+.. literalinclude:: assignments/sequence_list_c.py
+    :caption: :download:`Solution <assignments/sequence_list_c.py>`
     :end-before: # Solution

@@ -378,11 +378,11 @@ Cardinality
 
 Assignments
 -----------
-.. literalinclude:: assignments/sequence_set_create.py
-    :caption: :download:`Solution <assignments/sequence_set_create.py>`
+.. literalinclude:: assignments/sequence_set_a.py
+    :caption: :download:`Solution <assignments/sequence_set_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/sequence_set_many.py
-    :caption: :download:`Solution <assignments/sequence_set_many.py>`
+.. literalinclude:: assignments/sequence_set_b.py
+    :caption: :download:`Solution <assignments/sequence_set_b.py>`
     :end-before: # Solution
 

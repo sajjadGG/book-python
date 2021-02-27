@@ -7,7 +7,7 @@
 English:
     1. One Kelvin is equal to 1 Celsius degree (1K = 1°C)
     2. Zero Celsius degrees is equal to 273.15 Kelvins
-    3. For calculation use round number 273 (0°K = -273K)
+    3. For calculation use round number 273 (0°C = -273K)
     4. How many Kelvins has average temperatures at surface [1]:
         a. Mars highest: 20 °C
         b. Mars lowest: -153 °C
@@ -17,7 +17,7 @@ English:
 Polish:
     1. Jeden Kelwin to jeden stopień Celsiusza (1K = 1°C)
     2. Zero stopni Celsiusza to 273.15 Kelwiny
-    3. W zadaniu przyjmij równe 273°C (0°K = -273K)
+    3. W zadaniu przyjmij równe 273°C (0°C = -273K)
     4. Ile Kelwinów wynoszą średnie temperatury powierzchni [1]:
         a. Mars najwyższa: 20 °C
         b. Mars najniższa: -153 °C

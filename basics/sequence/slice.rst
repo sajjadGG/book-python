@@ -378,20 +378,21 @@ Example
 >>> pprint(DATA[1:-5:-2])
 []
 
+
 Assignments
 -----------
-.. literalinclude:: assignments/sequence_slice_substr.py
-    :caption: :download:`Solution <assignments/sequence_slice_substr.py>`
+.. literalinclude:: assignments/sequence_slice_a.py
+    :caption: :download:`Solution <assignments/sequence_slice_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/sequence_slice_sequence.py
-    :caption: :download:`Solution <assignments/sequence_slice_sequence.py>`
+.. literalinclude:: assignments/sequence_slice_b.py
+    :caption: :download:`Solution <assignments/sequence_slice_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/sequence_slice_text.py
-    :caption: :download:`Solution <assignments/sequence_slice_text.py>`
+.. literalinclude:: assignments/sequence_slice_c.py
+    :caption: :download:`Solution <assignments/sequence_slice_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/sequence_slice_split.py
-    :caption: :download:`Solution <assignments/sequence_slice_split.py>`
+.. literalinclude:: assignments/sequence_slice_d.py
+    :caption: :download:`Solution <assignments/sequence_slice_d.py>`
     :end-before: # Solution

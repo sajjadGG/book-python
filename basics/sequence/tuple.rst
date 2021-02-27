@@ -205,14 +205,14 @@ Memory Footprint:
 
 Assignments
 -----------
-.. literalinclude:: assignments/sequence_tuple_create.py
-    :caption: :download:`Solution <assignments/sequence_tuple_create.py>`
+.. literalinclude:: assignments/sequence_tuple_a.py
+    :caption: :download:`Solution <assignments/sequence_tuple_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/sequence_tuple_select.py
-    :caption: :download:`Solution <assignments/sequence_tuple_select.py>`
+.. literalinclude:: assignments/sequence_tuple_b.py
+    :caption: :download:`Solution <assignments/sequence_tuple_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/sequence_tuple_mean.py
-    :caption: :download:`Solution <assignments/sequence_tuple_mean.py>`
+.. literalinclude:: assignments/sequence_tuple_c.py
+    :caption: :download:`Solution <assignments/sequence_tuple_c.py>`
     :end-before: # Solution

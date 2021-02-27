@@ -325,14 +325,14 @@ Conversion to ``float`` cannot handle comma (',') as a decimal separator:
 
 Assignments
 -----------
-.. literalinclude:: assignments/type_str_input.py
-    :caption: :download:`Solution <assignments/type_str_input.py>`
+.. literalinclude:: assignments/type_str_a.py
+    :caption: :download:`Solution <assignments/type_str_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/type_str_emoticon.py
-    :caption: :download:`Solution <assignments/type_str_emoticon.py>`
+.. literalinclude:: assignments/type_str_b.py
+    :caption: :download:`Solution <assignments/type_str_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/type_str_quotes.py
-    :caption: :download:`Solution <assignments/type_str_quotes.py>`
+.. literalinclude:: assignments/type_str_c.py
+    :caption: :download:`Solution <assignments/type_str_c.py>`
     :end-before: # Solution

@@ -105,6 +105,6 @@ Many Types
 
 Assignments
 -----------
-.. literalinclude:: assignments/sequence_nested_create.py
-    :caption: :download:`Solution <assignments/sequence_nested_create.py>`
+.. literalinclude:: assignments/sequence_nested_a.py
+    :caption: :download:`Solution <assignments/sequence_nested_a.py>`
     :end-before: # Solution

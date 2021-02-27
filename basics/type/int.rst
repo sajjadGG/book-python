@@ -172,34 +172,34 @@ Type Checking
 
 Assignments
 -----------
-.. literalinclude:: assignments/type_int_add.py
-    :caption: :download:`Solution <assignments/type_int_add.py>`
+.. literalinclude:: assignments/type_int_a.py
+    :caption: :download:`Solution <assignments/type_int_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/type_int_sub.py
-    :caption: :download:`Solution <assignments/type_int_sub.py>`
+.. literalinclude:: assignments/type_int_b.py
+    :caption: :download:`Solution <assignments/type_int_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/type_int_mul.py
-    :caption: :download:`Solution <assignments/type_int_mul.py>`
+.. literalinclude:: assignments/type_int_c.py
+    :caption: :download:`Solution <assignments/type_int_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/type_int_truediv.py
-    :caption: :download:`Solution <assignments/type_int_truediv.py>`
+.. literalinclude:: assignments/type_int_d.py
+    :caption: :download:`Solution <assignments/type_int_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/type_int_time.py
-    :caption: :download:`Solution <assignments/type_int_time.py>`
+.. literalinclude:: assignments/type_int_e.py
+    :caption: :download:`Solution <assignments/type_int_e.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/type_int_bits.py
-    :caption: :download:`Solution <assignments/type_int_bits.py>`
+.. literalinclude:: assignments/type_int_f.py
+    :caption: :download:`Solution <assignments/type_int_f.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/type_int_bytes.py
-    :caption: :download:`Solution <assignments/type_int_bytes.py>`
+.. literalinclude:: assignments/type_int_g.py
+    :caption: :download:`Solution <assignments/type_int_g.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/type_int_bandwidth.py
-    :caption: :download:`Solution <assignments/type_int_bandwidth.py>`
+.. literalinclude:: assignments/type_int_h.py
+    :caption: :download:`Solution <assignments/type_int_h.py>`
     :end-before: # Solution

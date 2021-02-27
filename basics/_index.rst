@@ -56,16 +56,24 @@ Mappings
     mapping/type-annotation.rst
 
 
+Conditional
+***********
+.. toctree::
+    :maxdepth: 1
+    :caption: Conditional
+
+    conditional/operator.rst
+    conditional/membership.rst
+    conditional/statement.rst
+    conditional/expression.rst
+
+
 Control Flow
 ************
 .. toctree::
     :maxdepth: 1
     :caption: Control Flow
 
-    control-flow/operators.rst
-    control-flow/membership.rst
-    control-flow/statements.rst
-    control-flow/expressions.rst
     control-flow/exception.rst
 
 

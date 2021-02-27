@@ -331,10 +331,10 @@ Example
 
 Assignments
 -----------
-.. literalinclude:: assignments/type_bool_true_or_false.py
-    :caption: :download:`Solution <assignments/type_bool_true_or_false.py>`
+.. literalinclude:: assignments/type_bool_a.py
+    :caption: :download:`Solution <assignments/type_bool_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/type_bool_simple.py
-    :caption: :download:`Solution <assignments/type_bool_simple.py>`
+.. literalinclude:: assignments/type_bool_b.py
+    :caption: :download:`Solution <assignments/type_bool_b.py>`
     :end-before: # Solution

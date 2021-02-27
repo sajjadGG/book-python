@@ -1,5 +1,5 @@
 """
-* Assignment: Exception Assert
+* Assignment: ControlFlow Exception Assert
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

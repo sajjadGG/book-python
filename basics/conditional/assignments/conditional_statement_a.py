@@ -1,5 +1,5 @@
 """
-* Assignment: Conditional Statements
+* Assignment: Conditional Statement Adult
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

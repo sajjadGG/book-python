@@ -255,6 +255,6 @@ Get elements from list of sequences:
 
 Assignments
 -----------
-.. literalinclude:: assignments/sequence_getitem_select.py
-    :caption: :download:`Solution <assignments/sequence_getitem_select.py>`
+.. literalinclude:: assignments/sequence_getitem_a.py
+    :caption: :download:`Solution <assignments/sequence_getitem_a.py>`
     :end-before: # Solution

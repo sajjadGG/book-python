@@ -527,10 +527,10 @@ Phone Numbers:
 
 Assignments
 -----------
-.. literalinclude:: assignments/type_str_normalize.py
-    :caption: :download:`Solution <assignments/type_str_normalize.py>`
+.. literalinclude:: assignments/type_str_d.py
+    :caption: :download:`Solution <assignments/type_str_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/type_str_clean.py
-    :caption: :download:`Solution <assignments/type_str_clean.py>`
+.. literalinclude:: assignments/type_str_e.py
+    :caption: :download:`Solution <assignments/type_str_e.py>`
     :end-before: # Solution

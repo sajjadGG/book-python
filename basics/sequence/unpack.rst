@@ -241,10 +241,10 @@ Use Cases
 
 Assignments
 -----------
-.. literalinclude:: assignments/sequence_unpack_nested.py
-    :caption: :download:`Solution <assignments/sequence_unpack_nested.py>`
+.. literalinclude:: assignments/sequence_unpack_a.py
+    :caption: :download:`Solution <assignments/sequence_unpack_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/sequence_unpack_split.py
-    :caption: :download:`Solution <assignments/sequence_unpack_split.py>`
+.. literalinclude:: assignments/sequence_unpack_b.py
+    :caption: :download:`Solution <assignments/sequence_unpack_b.py>`
     :end-before: # Solution
