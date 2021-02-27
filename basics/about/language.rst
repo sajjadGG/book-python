@@ -123,11 +123,11 @@ Python Console (REPL)
 
 In documentation and books you may find ``>>>`` and ``...`` at the beginning of code listing lines
 
-    >>> if True:
-    ...     print('yes')
-    ... else:
-    ...     print('no')
-    yes
+>>> if True:
+...     print('yes')
+... else:
+...     print('no')
+yes
 
 
 Jupyter
