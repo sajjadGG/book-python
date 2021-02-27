@@ -193,7 +193,7 @@ SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in positio
 
 * Problem: ``\Users``
 * after ``\U...`` python expects Unicode codepoint in hex
-i.e. '\\U0001F680' which is 🚀 emoticon
+  i.e. '\\U0001F680' which is 🚀 emoticon
 * ``s`` is invalid hexadecimal character
 * Only valid characters are ``0123456789abcdefABCDEF``
 
@@ -242,14 +242,14 @@ Concatenation
 
 Value Check
 -----------
+* ``<input>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?``
+
 >>> name = 'Mark Watney'
 >>>
 >>> name == 'Mark Watney'
 True
 >>>
 >>> name is 'Mark Watney'
-<input>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
-<input>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
 False
 
 
@@ -270,13 +270,16 @@ Reading Input
 specific information. Note colon space (": ") at the end. Space is needed
 to separate user input from prompt.
 
-Note, that the line ``input = lambda x: 'Mark Watney'`` is only for testing
-purposes (it is called "Stub"), and you should not do that in your programs!
-This assumes, that user will input str ``Mark Watney``:
+Note, that the following code is only for testing purposes (it is called "Stub"),
+and you should not do that in your programs!
+This assumes, that user will input particular str such as ``'Mark Watney'``, ``42`` or ``42.5``, ``42,5``:
 
->>> # Assume user will input 'Mark Watney' and then hit ENTER key
->>> input = lambda x: 'Mark Watney'  # Don't do this in your code
->>>
+>>> # Stub
+... def input(prompt):
+...     return 'Mark Watney'
+
+How the code would look like?
+
 >>> name = input('What is your name: ')
 >>>
 >>> print(name)
@@ -287,12 +290,11 @@ Mark Watney
 ``input()`` always returns a ``str``.
 To get numeric value type casting to ``int`` is needed.
 
-.. testsetup::
+>>> # Stub
+... def input(prompt):
+...     return '42'
 
-    def input(prompt):
-        return 42
-
->>> age = input('What is your age: ')   # Assume user will input: 42
+>>> age = input('What is your age: ')
 >>>
 >>> print(age)
 42
@@ -307,12 +309,11 @@ To get numeric value type casting to ``int`` is needed.
 
 Conversion to ``float`` handles decimals, which ``int`` does not support:
 
-.. testsetup::
+>>> # Stub
+... def input(prompt):
+...     return '42.5'
 
-    def input(prompt):
-        return 42.5
-
->>> age = input('What is your age: ')  # Assume user will input: 42.5
+>>> age = input('What is your age: ')
 >>>
 >>> age = int(age)
 Traceback (most recent call last):
@@ -326,12 +327,11 @@ ValueError: invalid literal for int() with base 10: '42.5'
 
 Conversion to ``float`` cannot handle comma (',') as a decimal separator:
 
-.. testsetup::
+>>> # Stub
+... def input(prompt):
+...     return '42,5'
 
-    def input(prompt):
-        return 42,5
-
->>> age = input('What is your age: ')  # Assume user will input: 42,5
+>>> age = input('What is your age: ')
 >>>
 >>> age = int(age)
 Traceback (most recent call last):
@@ -342,7 +342,7 @@ Traceback (most recent call last):
 ValueError: could not convert string to float: '45,5'
 >>>
 >>> float(age.replace(',', '.'))
-45.5
+42.5
 
 
 Assignments

@@ -155,20 +155,14 @@ Programming Language Trends
 
 Python Developer Survey
 -----------------------
-* Annual survey:
-
-    * https://surveys.jetbrains.com/s3/c12-python-developers-survey-2020
-    * https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-professional-developers
-
-Results:
-
-    * https://www.jetbrains.com/lp/devecosystem-2020/python/
-    * https://www.jetbrains.com/lp/python-developers-survey-2019/
-    * https://www.jetbrains.com/research/python-developers-survey-2018/
-    * https://www.jetbrains.com/research/python-developers-survey-2017/
-    * https://insights.stackoverflow.com/survey/2020
-    * https://insights.stackoverflow.com/survey/2019
-    * https://insights.stackoverflow.com/survey/2018
+* https://www.jetbrains.com/lp/python-developers-survey-2020/
+* https://www.jetbrains.com/lp/devecosystem-2020/python/
+* https://www.jetbrains.com/lp/python-developers-survey-2019/
+* https://www.jetbrains.com/research/python-developers-survey-2018/
+* https://www.jetbrains.com/research/python-developers-survey-2017/
+* https://insights.stackoverflow.com/survey/2020
+* https://insights.stackoverflow.com/survey/2019
+* https://insights.stackoverflow.com/survey/2018
 
 
 Experiments

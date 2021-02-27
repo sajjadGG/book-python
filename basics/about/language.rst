@@ -141,6 +141,7 @@ Jupyter
 Python Developer Survey
 -----------------------
 * Annual survey
+* https://www.jetbrains.com/lp/python-developers-survey-2020/
 * https://www.jetbrains.com/lp/devecosystem-2020/python/
 * https://www.jetbrains.com/lp/python-developers-survey-2019/
 * https://www.jetbrains.com/research/python-developers-survey-2018/

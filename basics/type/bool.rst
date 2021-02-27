@@ -154,6 +154,7 @@ True
 >>> firstname == 'Mark' and lastname == 'Twardowski'
 False
 
+
 Disjunction
 -----------
 Definition:
