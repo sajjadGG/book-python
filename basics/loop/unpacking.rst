@@ -197,10 +197,10 @@ chemist -> Alex Vogel
 
 Assignments
 -----------
-.. literalinclude:: assignments/loop_unpacking_months.py
-    :caption: :download:`Solution <assignments/loop_unpacking_months.py>`
+.. literalinclude:: assignments/loop_unpacking_a.py
+    :caption: :download:`Solution <assignments/loop_unpacking_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_unpacking_endswith.py
-    :caption: :download:`Solution <assignments/loop_unpacking_endswith.py>`
+.. literalinclude:: assignments/loop_unpacking_b.py
+    :caption: :download:`Solution <assignments/loop_unpacking_b.py>`
     :end-before: # Solution

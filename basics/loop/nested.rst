@@ -151,10 +151,10 @@ False
 
 Assignments
 -----------
-.. literalinclude:: assignments/loop_nested_mean.py
-    :caption: :download:`Solution <assignments/loop_nested_mean.py>`
+.. literalinclude:: assignments/loop_nested_a.py
+    :caption: :download:`Solution <assignments/loop_nested_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_nested_unique_keys.py
-    :caption: :download:`Solution <assignments/loop_nested_unique_keys.py>`
+.. literalinclude:: assignments/loop_nested_b.py
+    :caption: :download:`Solution <assignments/loop_nested_b.py>`
     :end-before: # Solution

@@ -708,18 +708,18 @@ Conditional Expression
 
 Assignments
 -----------
-.. literalinclude:: assignments/loop_comprehension_create.py
-    :caption: :download:`Solution <assignments/loop_comprehension_create.py>`
+.. literalinclude:: assignments/loop_comprehension_a.py
+    :caption: :download:`Solution <assignments/loop_comprehension_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_comprehension_months.py
-    :caption: :download:`Solution <assignments/loop_comprehension_months.py>`
+.. literalinclude:: assignments/loop_comprehension_b.py
+    :caption: :download:`Solution <assignments/loop_comprehension_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_comprehension_translate.py
-    :caption: :download:`Solution <assignments/loop_comprehension_translate.py>`
+.. literalinclude:: assignments/loop_comprehension_c.py
+    :caption: :download:`Solution <assignments/loop_comprehension_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_comprehension_split.py
-    :caption: :download:`Solution <assignments/loop_comprehension_split.py>`
+.. literalinclude:: assignments/loop_comprehension_d.py
+    :caption: :download:`Solution <assignments/loop_comprehension_d.py>`
     :end-before: # Solution

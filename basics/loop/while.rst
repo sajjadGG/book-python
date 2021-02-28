@@ -191,18 +191,18 @@ Force skip iteration using ``continue`` keyword:
 
 Assignments
 -----------
-.. literalinclude:: assignments/loop_while_float.py
-    :caption: :download:`Solution <assignments/loop_while_float.py>`
+.. literalinclude:: assignments/loop_while_a.py
+    :caption: :download:`Solution <assignments/loop_while_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_while_str.py
-    :caption: :download:`Solution <assignments/loop_while_str.py>`
+.. literalinclude:: assignments/loop_while_b.py
+    :caption: :download:`Solution <assignments/loop_while_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_while_translate.py
-    :caption: :download:`Solution <assignments/loop_while_translate.py>`
+.. literalinclude:: assignments/loop_while_c.py
+    :caption: :download:`Solution <assignments/loop_while_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_while_input.py
-    :caption: :download:`Solution <assignments/loop_while_input.py>`
+.. literalinclude:: assignments/loop_while_d.py
+    :caption: :download:`Solution <assignments/loop_while_d.py>`
     :end-before: # Solution

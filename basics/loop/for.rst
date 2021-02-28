@@ -162,30 +162,30 @@ A3 B3 C3
 
 Assignments
 -----------
-.. literalinclude:: assignments/loop_for_count.py
-    :caption: :download:`Solution <assignments/loop_for_count.py>`
+.. literalinclude:: assignments/loop_for_a.py
+    :caption: :download:`Solution <assignments/loop_for_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_for_counter.py
-    :caption: :download:`Solution <assignments/loop_for_counter.py>`
+.. literalinclude:: assignments/loop_for_b.py
+    :caption: :download:`Solution <assignments/loop_for_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_for_segmentation.py
-    :caption: :download:`Solution <assignments/loop_for_segmentation.py>`
+.. literalinclude:: assignments/loop_for_c.py
+    :caption: :download:`Solution <assignments/loop_for_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_for_newline.py
-    :caption: :download:`Solution <assignments/loop_for_newline.py>`
+.. literalinclude:: assignments/loop_for_d.py
+    :caption: :download:`Solution <assignments/loop_for_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_for_translate.py
-    :caption: :download:`Solution <assignments/loop_for_translate.py>`
+.. literalinclude:: assignments/loop_for_e.py
+    :caption: :download:`Solution <assignments/loop_for_e.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_for_months.py
-    :caption: :download:`Solution <assignments/loop_for_months.py>`
+.. literalinclude:: assignments/loop_for_f.py
+    :caption: :download:`Solution <assignments/loop_for_f.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_for_text.py
-    :caption: :download:`Solution <assignments/loop_for_text.py>`
+.. literalinclude:: assignments/loop_for_g.py
+    :caption: :download:`Solution <assignments/loop_for_g.py>`
     :end-before: # Solution
