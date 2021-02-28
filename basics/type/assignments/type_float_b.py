@@ -21,9 +21,9 @@ Polish:
 Tests:
     >>> type(altitude)
     <class 'float'>
-    >>> altitude / ft
+    >>> imperial
     10000.0
-    >>> altitude / m
+    >>> metric
     3048.0
 """
 
@@ -31,7 +31,11 @@ Tests:
 m = 1
 ft = 0.3048 * m
 
-altitude: float  # feet
+altitude: float  # Plane altitude is 10.000 ft
+imperial: float
+metric: float
 
 # Solution
 altitude = 10_000 * ft
+imperial = altitude / ft
+metric = altitude / m

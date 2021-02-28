@@ -19,9 +19,9 @@ Polish:
 Tests:
     >>> type(volume)
     <class 'float'>
-    >>> volume / floz
+    >>> imperial
     20.0
-    >>> volume / liter
+    >>> metric
     0.5914688
 """
 
@@ -29,7 +29,11 @@ Tests:
 liter = 1
 floz = 0.02957344 * liter
 
-volume: float  # 20 Fl Oz
+volume: float  # Bottle volume is 20 Fl Oz
+imperial: float
+metric: float
 
 # Solution
 volume = 20 * floz
+imperial = volume / floz
+metric = volume / liter

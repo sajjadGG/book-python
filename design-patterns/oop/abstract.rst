@@ -296,7 +296,7 @@ TypeError: Can't instantiate abstract class Document with abstract method displa
 Further Reading
 ---------------
 * https://docs.python.org/dev/library/collections.abc.html#collections-abstract-base-classes
-
+* https://www.youtube.com/watch?v=S_ipdVNSFlo
 
 Assignments
 -----------
