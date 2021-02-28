@@ -247,14 +247,14 @@ Local Scope
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_scope_global.py
-    :caption: :download:`Solution <assignments/function_scope_global.py>`
+.. literalinclude:: assignments/function_scope_a.py
+    :caption: :download:`Solution <assignments/function_scope_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_scope_romanint.py
-    :caption: :download:`Solution <assignments/function_scope_romanint.py>`
+.. literalinclude:: assignments/function_scope_b.py
+    :caption: :download:`Solution <assignments/function_scope_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_scope_introman.py
-    :caption: :download:`Solution <assignments/function_scope_introman.py>`
+.. literalinclude:: assignments/function_scope_c.py
+    :caption: :download:`Solution <assignments/function_scope_c.py>`
     :end-before: # Solution

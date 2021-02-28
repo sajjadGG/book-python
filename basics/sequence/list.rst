@@ -236,11 +236,6 @@ Built-in Functions
     False
 
 
-References
-----------
-.. [timsort] https://en.wikipedia.org/wiki/Timsort
-
-
 Assignments
 -----------
 .. literalinclude:: assignments/sequence_list_a.py
@@ -254,3 +249,8 @@ Assignments
 .. literalinclude:: assignments/sequence_list_c.py
     :caption: :download:`Solution <assignments/sequence_list_c.py>`
     :end-before: # Solution
+
+
+References
+----------
+.. [timsort] https://en.wikipedia.org/wiki/Timsort

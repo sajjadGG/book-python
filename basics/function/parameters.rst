@@ -154,14 +154,14 @@ Example 4. Definition of pandas.read_csv() function. Source:  https://pandas.pyd
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_parameters_sequence.py
-    :caption: :download:`Solution <assignments/function_parameters_sequence.py>`
+.. literalinclude:: assignments/function_parameters_a.py
+    :caption: :download:`Solution <assignments/function_parameters_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_parameters_echo.py
-    :caption: :download:`Solution <assignments/function_parameters_echo.py>`
+.. literalinclude:: assignments/function_parameters_b.py
+    :caption: :download:`Solution <assignments/function_parameters_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_parameters_default.py
-    :caption: :download:`Solution <assignments/function_parameters_default.py>`
+.. literalinclude:: assignments/function_parameters_c.py
+    :caption: :download:`Solution <assignments/function_parameters_c.py>`
     :end-before: # Solution

@@ -613,14 +613,14 @@ Celsius to Kelvin temperature conversion:
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_doctest_temperature.py
-    :caption: :download:`Solution <assignments/function_doctest_temperature.py>`
+.. literalinclude:: assignments/function_doctest_a.py
+    :caption: :download:`Solution <assignments/function_doctest_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_doctest_distance.py
-    :caption: :download:`Solution <assignments/function_doctest_distance.py>`
+.. literalinclude:: assignments/function_doctest_b.py
+    :caption: :download:`Solution <assignments/function_doctest_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_doctest_regexp.py
-    :caption: :download:`Solution <assignments/function_doctest_regexp.py>`
+.. literalinclude:: assignments/function_doctest_c.py
+    :caption: :download:`Solution <assignments/function_doctest_c.py>`
     :end-before: # Solution

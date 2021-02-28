@@ -127,6 +127,6 @@ say_hello()
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_definition_print.py
-    :caption: :download:`Solution <assignments/function_definition_print.py>`
+.. literalinclude:: assignments/function_definition_a.py
+    :caption: :download:`Solution <assignments/function_definition_a.py>`
     :end-before: # Solution

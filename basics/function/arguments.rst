@@ -139,30 +139,30 @@ Example 3:
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_args_sequence.py
-    :caption: :download:`Solution <assignments/function_args_sequence.py>`
+.. literalinclude:: assignments/function_args_a.py
+    :caption: :download:`Solution <assignments/function_args_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_args_divide.py
-    :caption: :download:`Solution <assignments/function_args_divide.py>`
+.. literalinclude:: assignments/function_args_b.py
+    :caption: :download:`Solution <assignments/function_args_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_args_power.py
-    :caption: :download:`Solution <assignments/function_args_power.py>`
+.. literalinclude:: assignments/function_args_c.py
+    :caption: :download:`Solution <assignments/function_args_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_args_translate.py
-    :caption: :download:`Solution <assignments/function_args_translate.py>`
+.. literalinclude:: assignments/function_args_d.py
+    :caption: :download:`Solution <assignments/function_args_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_args_clean.py
-    :caption: :download:`Solution <assignments/function_args_clean.py>`
+.. literalinclude:: assignments/function_args_e.py
+    :caption: :download:`Solution <assignments/function_args_e.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_args_numstr.py
-    :caption: :download:`Solution <assignments/function_args_numstr.py>`
+.. literalinclude:: assignments/function_args_f.py
+    :caption: :download:`Solution <assignments/function_args_f.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_args_numhuman.py
-    :caption: :download:`Solution <assignments/function_args_numhuman.py>`
+.. literalinclude:: assignments/function_args_g.py
+    :caption: :download:`Solution <assignments/function_args_g.py>`
     :end-before: # Solution

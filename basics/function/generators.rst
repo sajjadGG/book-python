@@ -362,6 +362,6 @@ Use Cases
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_generators_chain.py
-    :caption: :download:`Solution <assignments/function_generators_chain.py>`
+.. literalinclude:: assignments/function_generators_a.py
+    :caption: :download:`Solution <assignments/function_generators_a.py>`
     :end-before: # Solution

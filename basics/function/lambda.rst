@@ -137,6 +137,6 @@ Astronauts:
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_lambda_chain.py
-    :caption: :download:`Solution <assignments/function_lambda_chain.py>`
+.. literalinclude:: assignments/function_lambda_a.py
+    :caption: :download:`Solution <assignments/function_lambda_a.py>`
     :end-before: # Solution

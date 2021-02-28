@@ -66,12 +66,12 @@ Recursion Depth Limit
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_recurrence_fibonacci.py
-    :caption: :download:`Solution <assignments/function_recurrence_fibonacci.py>`
+.. literalinclude:: assignments/function_recurrence_a.py
+    :caption: :download:`Solution <assignments/function_recurrence_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_recurrence_brackets.py
-    :caption: :download:`Solution <assignments/function_recurrence_brackets.py>`
+.. literalinclude:: assignments/function_recurrence_b.py
+    :caption: :download:`Solution <assignments/function_recurrence_b.py>`
     :end-before: # Solution
 
 

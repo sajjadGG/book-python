@@ -133,6 +133,6 @@ Intercept returned value
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_return_numbers.py
-    :caption: :download:`Solution <assignments/function_return_numbers.py>`
+.. literalinclude:: assignments/function_return_a.py
+    :caption: :download:`Solution <assignments/function_return_a.py>`
     :end-before: # Solution

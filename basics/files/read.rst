@@ -141,28 +141,28 @@ Examples
 
 Assignments
 -----------
-.. literalinclude:: assignments/file_read_str.py
-    :caption: :download:`Solution <assignments/file_read_str.py>`
+.. literalinclude:: assignments/file_read_a.py
+    :caption: :download:`Solution <assignments/file_read_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/file_read_multiline.py
-    :caption: :download:`Solution <assignments/file_read_multiline.py>`
+.. literalinclude:: assignments/file_read_b.py
+    :caption: :download:`Solution <assignments/file_read_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/file_read_csv.py
-    :caption: :download:`Solution <assignments/file_read_csv.py>`
+.. literalinclude:: assignments/file_read_c.py
+    :caption: :download:`Solution <assignments/file_read_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/file_read_dict.py
-    :caption: :download:`Solution <assignments/file_read_dict.py>`
+.. literalinclude:: assignments/file_read_d.py
+    :caption: :download:`Solution <assignments/file_read_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/file_read_listdict.py
-    :caption: :download:`Solution <assignments/file_read_listdict.py>`
+.. literalinclude:: assignments/file_read_e.py
+    :caption: :download:`Solution <assignments/file_read_e.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/file_read_passwd.py
-    :caption: :download:`Solution <assignments/file_read_passwd.py>`
+.. literalinclude:: assignments/file_read_f.py
+    :caption: :download:`Solution <assignments/file_read_f.py>`
     :end-before: # Solution
 
 .. literalinclude:: data/etc-passwd.txt
