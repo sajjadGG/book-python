@@ -69,9 +69,9 @@ DATA = ['sepal_length,sepal_width,petal_length,petal_width,species',
         '6.3,2.9,5.6,1.8,virginica',
         '6.4,3.2,4.5,1.5,versicolor']
 
-a = ...  # with data from row 1
-b = ...  # with data from row 2
-c = ...  # with data from row 3
+a: list  # with data from row 1
+b: list  # with data from row 2
+c: list  # with data from row 3
 
 # Solution
 a = [5.8, 2.7, 5.1, 1.9, 'virginica']

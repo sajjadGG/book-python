@@ -63,6 +63,8 @@ DATA = ['sepal_length,sepal_width,petal_length,petal_width,species',
         '6.3,2.9,5.6,1.8,virginica',
         '6.4,3.2,4.5,1.5,versicolor']
 
+result: set
+
 # Solution
 result = {5.8, 2.7, 5.1, 1.9, 'virginica'}
 

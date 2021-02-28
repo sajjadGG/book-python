@@ -132,16 +132,16 @@ List:
 
 Memory Footprint:
 
-    >>> from sys import getsizeof
-    >>>
-    >>> a = [1, 2, 3]
-    >>> b = (1, 2, 3)
-    >>>
-    >>> getsizeof(a)
-    120
-    >>>
-    >>> getsizeof(b)
-    64
+>>> from sys import getsizeof
+>>>
+>>> a = [1, 2, 3]
+>>> b = (1, 2, 3)
+>>>
+>>> getsizeof(a)
+120
+>>>
+>>> getsizeof(b)
+64
 
 .. figure:: img/memory-tuple.png
 

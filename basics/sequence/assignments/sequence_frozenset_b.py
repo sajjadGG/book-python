@@ -1,5 +1,5 @@
 """
-* Assignment: Sequence Frozenset Newline
+* Assignment: Sequence Frozenset Split
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
@@ -15,6 +15,9 @@ Polish:
     2. Zdefiniuj `result: frozenset`
     3. Podziel linie i przekonwertuj wynik do frozenset
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+
+Hint:
+    * `str.splitlines()`
 
 Tests:
     >>> type(result)
@@ -34,7 +37,7 @@ DATA = """We choose to go to the Moon.
 We choose to go to the Moon in this decade and do the other things.
 Not because they are easy, but because they are hard."""
 
-result = ...  #
+result: frozenset  # Split lines and convert to frozenset
 
 # Solution
 result = DATA.splitlines()

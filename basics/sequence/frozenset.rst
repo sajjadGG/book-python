@@ -17,55 +17,55 @@ Definition
 ----------
 Defining only with ``frozenset()`` - no short syntax:
 
-    >>> data = frozenset()
+>>> data = frozenset()
 
 Comma after last element of a one element frozenset is optional:
 
-    >>> data = frozenset({1})
-    >>> data = frozenset({1,})
+>>> data = frozenset({1})
+>>> data = frozenset({1,})
 
 Brackets inside are required:
 
-    >>> data = frozenset({1})
-    >>> data = frozenset({1, 2, 3})
-    >>> data = frozenset({1.1, 2.2, 3.3})
-    >>> data = frozenset({True, False})
-    >>> data = frozenset({'a', 'b', 'c'})
-    >>> data = frozenset({'a', 1, 2.2, True, None})
+>>> data = frozenset({1})
+>>> data = frozenset({1, 2, 3})
+>>> data = frozenset({1.1, 2.2, 3.3})
+>>> data = frozenset({True, False})
+>>> data = frozenset({'a', 'b', 'c'})
+>>> data = frozenset({'a', 1, 2.2, True, None})
 
 
 Type Casting
 ------------
 Builtin function ``frozenset()`` converts argument to ``frozenset``
 
-    >>> data = 'abcd'
-    >>> frozenset(data) == frozenset({'a', 'b', 'c', 'd'})
-    True
+>>> data = 'abcd'
+>>> frozenset(data) == frozenset({'a', 'b', 'c', 'd'})
+True
 
-    >>> data = ['a', 'b', 'c', 'd']
-    >>> frozenset(data) == frozenset({'a', 'b', 'c', 'd'})
-    True
+>>> data = ['a', 'b', 'c', 'd']
+>>> frozenset(data) == frozenset({'a', 'b', 'c', 'd'})
+True
 
-    >>> data = ('a', 'b', 'c', 'd')
-    >>> frozenset(data) == frozenset({'a', 'b', 'c', 'd'})
-    True
+>>> data = ('a', 'b', 'c', 'd')
+>>> frozenset(data) == frozenset({'a', 'b', 'c', 'd'})
+True
 
-    >>> data = {'a', 'b', 'c', 'd'}
-    >>> frozenset(data) == frozenset({'a', 'b', 'c', 'd'})
-    True
+>>> data = {'a', 'b', 'c', 'd'}
+>>> frozenset(data) == frozenset({'a', 'b', 'c', 'd'})
+True
 
-    >>> data = frozenset({'a', 'b', 'c', 'd'})
-    >>> frozenset(data) == frozenset({'a', 'b', 'c', 'd'})
-    True
+>>> data = frozenset({'a', 'b', 'c', 'd'})
+>>> frozenset(data) == frozenset({'a', 'b', 'c', 'd'})
+True
 
-    >>> data = [1, 2, 3, [4, 5]]
-    >>> frozenset(data)
-    Traceback (most recent call last):
-    TypeError: unhashable type: 'list'
+>>> data = [1, 2, 3, [4, 5]]
+>>> frozenset(data)
+Traceback (most recent call last):
+TypeError: unhashable type: 'list'
 
-    >>> data = [1, 2, 3, (4, 5)]
-    >>> frozenset(data) == frozenset({(4, 5), 1, 2, 3})
-    True
+>>> data = [1, 2, 3, (4, 5)]
+>>> frozenset(data) == frozenset({(4, 5), 1, 2, 3})
+True
 
 
 Frozenset vs. Set
@@ -80,13 +80,23 @@ Both:
 Frozenset:
 
     * immutable
-    * one contingent block of data in memory
 
 Set:
 
     * mutable
-    * implemented in memory as list of pointers to objects
-    * objects are scattered in memory
+
+Memory Footprint:
+
+>>> from sys import getsizeof
+>>>
+>>> a = {1, 2, 3}
+>>> b = frozenset({1, 2, 3})
+>>>
+>>> getsizeof(a)
+216
+>>>
+>>> getsizeof(b)
+216
 
 
 Assignments
@@ -97,4 +107,8 @@ Assignments
 
 .. literalinclude:: assignments/sequence_frozenset_b.py
     :caption: :download:`Solution <assignments/sequence_frozenset_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/sequence_frozenset_c.py
+    :caption: :download:`Solution <assignments/sequence_frozenset_c.py>`
     :end-before: # Solution

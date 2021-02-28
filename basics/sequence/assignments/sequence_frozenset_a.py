@@ -32,7 +32,7 @@ Tests:
 """
 
 # Given
-result = ...  # with 'a' and 1 and 2.2
+result: frozenset  # with 'a' and 1 and 2.2
 
 # Solution
 result = frozenset({'a', 1, 2.2})
