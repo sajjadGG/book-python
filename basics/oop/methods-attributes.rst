@@ -200,10 +200,10 @@ Point(x=1, y=2, z=3)
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_method_sequence.py
-    :caption: :download:`Solution <assignments/oop_method_sequence.py>`
+.. literalinclude:: assignments/oop_mthattr_a.py
+    :caption: :download:`Solution <assignments/oop_mthattr_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_method_nested.py
-    :caption: :download:`Solution <assignments/oop_method_nested.py>`
+.. literalinclude:: assignments/oop_mthattr_b.py
+    :caption: :download:`Solution <assignments/oop_mthattr_b.py>`
     :end-before: # Solution

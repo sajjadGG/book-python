@@ -152,12 +152,12 @@ Use Cases
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_class_iris.py
-    :caption: :download:`Solution <assignments/oop_class_iris.py>`
+.. literalinclude:: assignments/oop_class_a.py
+    :caption: :download:`Solution <assignments/oop_class_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_class_instance.py
-    :caption: :download:`Solution <assignments/oop_class_instance.py>`
+.. literalinclude:: assignments/oop_class_b.py
+    :caption: :download:`Solution <assignments/oop_class_b.py>`
     :end-before: # Solution
 
 

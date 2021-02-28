@@ -48,6 +48,13 @@ f = 'Ryan Stone, MD-PhD'
 g = 'lt. col. Jan Twardowski\t'
 
 example = example[4:-5]
+a: str  # Jan Twardowski
+b: str  # Jan Twardowski
+c: str  # Mark Watney
+d: str  # Melissa Lewis
+e: str  # Ryan Stone
+f: str  # Ryan Stone
+g: str  # Jan Twardowski
 
 # Solution
 a = a[13:-12]

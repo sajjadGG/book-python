@@ -1,41 +1,54 @@
 Sequence Nested
 ===============
 
+Rationale
+---------
+>>> obj = 1
+>>> data = [obj, obj, obj]
+>>> data
+[1, 1, 1]
+
+>>> obj = [1, 2, 3]
+>>> data = [obj, obj, obj]
+>>> data  # doctest: +NORMALIZE_WHITESPACE
+[[1, 2, 3],
+ [1, 2, 3],
+ [1, 2, 3]]
+
 
 List of Lists
 -------------
-* Multidimensional lists
-* Readability differs depending on whitespaces
+Also known as multidimensional lists or matrix.
 
->>> data = [[1, 2, 3],
-...         [4, 5, 6],
-...         [7, 8, 9]]
+Readability differs depending on whitespaces:
 
 >>> a = [[1,2,3],[4,5,6],[7,8,9]]
->>>
+
 >>> b = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
->>>
+
 >>> c = [[1,2,3], [4,5,6], [7,8,9]]
->>>
+
 >>> d = [
 ...      [1, 2, 3],
 ...      [4, 5, 6],
 ...      [7, 8, 9],
 ... ]
->>>
+
 >>> e = [
 ...      [1, 2, 3],
 ...      [4, 5, 6],
 ...      [7, 8, 9]]
->>>
+
 >>> f = [[1, 2, 3],
 ...      [4, 5, 6],
 ...      [7, 8, 9],
 ... ]
->>>
+
 >>> g = [[1, 2, 3],
 ...      [4, 5, 6],
 ...      [7, 8, 9]]
+
+Length:
 
 >>> data = [[1, 2, 3],
 ...         [4, 5, 6],
@@ -49,7 +62,7 @@ List of Lists
 
 List of Tuples
 --------------
-* Readability differs depending on whitespaces
+Readability differs depending on whitespaces:
 
 >>> data = [(4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
@@ -65,7 +78,6 @@ List of Tuples
 ...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
 ...     (7.6, 3.0, 6.6, 2.1, 'virginica'),
 ... ]
-
 
 Append elements using ``list.append()``:
 
@@ -101,6 +113,8 @@ Append elements using ``list.extend()``:
  1.7,
  'virginica']
 
+Length:
+
 >>> data = [(4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
 ...         (7.6, 3.0, 6.6, 2.1, 'virginica')]
@@ -113,20 +127,24 @@ Append elements using ``list.extend()``:
 
 Many Types
 ----------
+Readability differs depending on whitespaces:
+
 >>> data = [
 ...     [1, 2],
 ...     (3, 4, 5, 6),
 ...     {7, 8, 9, 10, 11}]
-
+>>>
 >>> data = [
 ...     [1, 2],
 ...     (3, 4, 5, 6),
 ...     {7, 8, 9, 10, 11}
 ... ]
-
+>>>
 >>> data = [[1, 2],
 ...         (3, 4, 5, 6),
 ...         {7, 8, 9, 10, 11}]
+
+Length:
 
 >>> data = [[1, 2],
 ...         (3, 4, 5, 6),

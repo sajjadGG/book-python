@@ -86,14 +86,14 @@ My name... Unknown
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_method_syntax.py
-    :caption: :download:`Solution <assignments/oop_method_syntax.py>`
+.. literalinclude:: assignments/oop_method_a.py
+    :caption: :download:`Solution <assignments/oop_method_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_method_mean.py
-    :caption: :download:`Solution <assignments/oop_method_mean.py>`
+.. literalinclude:: assignments/oop_method_b.py
+    :caption: :download:`Solution <assignments/oop_method_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_method_call.py
-    :caption: :download:`Solution <assignments/oop_method_call.py>`
+.. literalinclude:: assignments/oop_method_c.py
+    :caption: :download:`Solution <assignments/oop_method_c.py>`
     :end-before: # Solution

@@ -29,7 +29,7 @@ Tests:
 liter = 1
 floz = 0.02957344 * liter
 
-volume = 20  # Fl Oz
+volume: float  # 20 Fl Oz
 
 # Solution
 volume = 20 * floz

@@ -27,7 +27,7 @@ Tests:
 a = (0, 1, 2, 3)
 b = [2, 3, 4, 5]
 
-result: set
+result: set  # every second element from `a` and `b`
 
 # Solution
 result = set()

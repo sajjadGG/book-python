@@ -42,8 +42,8 @@ PLN = 1
 VAT = 23 / 100
 
 net = 100.0  # PLN,  without tax
-tax = ...  # PLN
-gross = ...  # PLN, with tax
+tax: float  # PLN
+gross: float  # PLN, with tax
 
 # Solution
 net = 100.00 * PLN

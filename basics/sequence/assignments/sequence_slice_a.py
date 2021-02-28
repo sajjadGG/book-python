@@ -27,6 +27,8 @@ Tests:
 TEXT = 'We choose to go to the Moon!'
 REMOVE = 'to go to '
 
+result: str  # TEXT without REMOVE part
+
 # Solution
 a = TEXT.find(REMOVE)  # 10
 b = a + len(REMOVE)  # 19

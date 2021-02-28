@@ -288,18 +288,18 @@ Point(x=1, y=2, z=0)
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_stringify_str.py
-    :caption: :download:`Solution <assignments/oop_stringify_str.py>`
+.. literalinclude:: assignments/oop_stringify_a.py
+    :caption: :download:`Solution <assignments/oop_stringify_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_stringify_repr.py
-    :caption: :download:`Solution <assignments/oop_stringify_repr.py>`
+.. literalinclude:: assignments/oop_stringify_b.py
+    :caption: :download:`Solution <assignments/oop_stringify_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_stringify_format.py
-    :caption: :download:`Solution <assignments/oop_stringify_format.py>`
+.. literalinclude:: assignments/oop_stringify_c.py
+    :caption: :download:`Solution <assignments/oop_stringify_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_stringify_nested.py
-    :caption: :download:`Solution <assignments/oop_stringify_nested.py>`
+.. literalinclude:: assignments/oop_stringify_d.py
+    :caption: :download:`Solution <assignments/oop_stringify_d.py>`
     :end-before: # Solution

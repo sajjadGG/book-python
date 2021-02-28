@@ -314,6 +314,6 @@ AttributeError: 'Astronaut' object has no attribute 'address'
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_attribute_model.py
-    :caption: :download:`Solution <assignments/oop_attribute_model.py>`
+.. literalinclude:: assignments/oop_attribute_a.py
+    :caption: :download:`Solution <assignments/oop_attribute_a.py>`
     :end-before: # Solution

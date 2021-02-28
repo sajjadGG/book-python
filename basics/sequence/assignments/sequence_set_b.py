@@ -8,9 +8,9 @@ English:
     1. Use data from "Given" section (see below)
     2. Non-functional requirements:
         a. Assignmnet verifies creation of `set()` and method `.add()` and `.update()` usage
-        b. For simplicity numerical values type as `floats`
-        c. Do not use `str.split()`, `slice`, `getitem`, `for`, `while` or any other control-flow statement
-        d. Example: instead of '5.8' just type 5.8
+        b. For simplicity numerical values type as `floats`, and not `str`
+        c. Example: instead of '5.8' just type 5.8
+        d. Do not use `str.split()`, `slice`, `getitem`, `for`, `while` or any other control-flow statement
     3. Create set `result` representing row with index 1
     4. Values from row at index 2 add to `result` using `.add()` (five calls)
     5. From row at index 3 create `set` and add it to `result` using `.update()` (one call)
@@ -22,9 +22,9 @@ Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Wymagania niefunkcjonalne:
         a. Zadanie sprawdza tworzenie `set()` oraz użycie metod `.add()` i `.update()`
-        b. Dla uproszczenia wartości numeryczne wypisuj jako `float`
-        c. Nie używaj `str.split()`, `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
-        d. Przykład: zamiast '5.8' zapisz 5.8
+        b. Dla uproszczenia wartości numeryczne wypisuj jako `float`, a nie `str`
+        c. Przykład: zamiast '5.8' zapisz 5.8
+        d. Nie używaj `str.split()`, `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
     3. Stwórz zbiór `result` reprezentujący wiersz o indeksie 1
     4. Wartości z wiersza o indeksie 2 dodawaj do `result` używając `.add()` (pięć wywołań)
     5. Na podstawie wiersza o indeksie 3 stwórz `set` i dodaj go do `result` używając `.update()` (jedno wywołanie)

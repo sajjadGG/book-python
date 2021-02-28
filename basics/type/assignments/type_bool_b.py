@@ -38,15 +38,15 @@ Tests:
 """
 
 # Given
-a = True == ...
-b = True != ...
-c = not ...
-d = bool(...) == True
-e = bool(...) == False
-f = ... or ...
-g = ... and ...
-h = bool(bool(...) == ...) or False
-i = bool(...) is not bool(False)
+a = True == ...  # True
+b = True != ...  # True
+c = not ...  # False
+d = bool(...) == True  # True
+e = bool(...) == False  # True
+f = ... or ...  # False
+g = ... and ...  # True
+h = bool(bool(...) == ...) or False  # True
+i = bool(...) is not bool(False)  # False
 
 # Solution
 a = True == True

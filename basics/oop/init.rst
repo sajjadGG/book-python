@@ -281,10 +281,10 @@ ValueError: Temperature must be greater than 0
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_init_print.py
-    :caption: :download:`Solution <assignments/oop_init_print.py>`
+.. literalinclude:: assignments/oop_init_a.py
+    :caption: :download:`Solution <assignments/oop_init_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_init_model.py
-    :caption: :download:`Solution <assignments/oop_init_model.py>`
+.. literalinclude:: assignments/oop_init_b.py
+    :caption: :download:`Solution <assignments/oop_init_b.py>`
     :end-before: # Solution

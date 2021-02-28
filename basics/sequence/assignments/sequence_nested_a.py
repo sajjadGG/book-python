@@ -34,7 +34,7 @@ Tests:
 """
 
 # Given
-result: list  # with 'a' and 1 and 2.2
+result: list  # with (1, 2, 3) and [1.1, 2.2, 3.3] and {'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'}
 
 # Solution
 result = [

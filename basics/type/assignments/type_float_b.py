@@ -31,7 +31,7 @@ Tests:
 m = 1
 ft = 0.3048 * m
 
-altitude = ...  # feet
+altitude: float  # feet
 
 # Solution
 altitude = 10_000 * ft
