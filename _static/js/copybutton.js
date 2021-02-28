@@ -74,8 +74,9 @@ $(document).ready(function() {
         })
     });
 
-    div.each(function(index) {
-        $(this).find('.copybutton').click();
-    });
+    // Following code, if uncommented, hides code listing outputs onload
+    // div.each(function(index) {
+    //     $(this).find('.copybutton').click();
+    // });
 });
 
