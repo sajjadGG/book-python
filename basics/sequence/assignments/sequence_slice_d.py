@@ -59,7 +59,6 @@ Tests:
      (4.9, 2.5, 4.5, 1.7, 'virginica')]
 """
 
-
 # Given
 DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
         (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -72,7 +71,6 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
         (7.6, 3.0, 6.6, 2.1, 'virginica'),
         (4.9, 3.0, 1.4, 0.2, 'setosa'),
         (4.9, 2.5, 4.5, 1.7, 'virginica')]
-
 
 # Solution
 ratio = 0.6  # 60%

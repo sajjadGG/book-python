@@ -63,7 +63,6 @@ Tests:
     True
 """
 
-
 # Given
 DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
         (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -88,4 +87,3 @@ result.append(list())
 result.append(tuple())
 result.append(set())
 result.append(frozenset())
-

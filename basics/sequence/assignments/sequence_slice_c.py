@@ -37,7 +37,6 @@ Tests:
     'Jan Twardowski'
 """
 
-
 # Given
 example = 'lt. Mark Watney, PhD'
 a = 'dr hab. inż. Jan Twardowski, prof. AATC'
@@ -49,7 +48,6 @@ f = 'Ryan Stone, MD-PhD'
 g = 'lt. col. Jan Twardowski\t'
 
 example = example[4:-5]
-
 
 # Solution
 a = a[13:-12]

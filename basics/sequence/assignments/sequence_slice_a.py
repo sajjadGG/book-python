@@ -23,13 +23,11 @@ Tests:
     'We choose the Moon!'
 """
 
-
 # Given
 TEXT = 'We choose to go to the Moon!'
 REMOVE = 'to go to '
 
-
 # Solution
-a = TEXT.find(REMOVE)   # 10
-b = a + len(REMOVE)     # 19
+a = TEXT.find(REMOVE)  # 10
+b = a + len(REMOVE)  # 19
 result = TEXT[:a] + TEXT[b:]

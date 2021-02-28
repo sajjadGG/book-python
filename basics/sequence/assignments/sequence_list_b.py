@@ -9,7 +9,11 @@ English:
     2. Create list `a` with data from row 1
     3. Create list `b` with data from row 2
     4. Create list `c` with data from row 3
-    5. Do not use `str.split()`, `slice`, `getitem`, `for`, `while` or any other control-flow statement
+    5. Rewrite data manually:
+        a. Do not automate by writing code
+        b. Do not use `str.split()`, `slice`, `getitem`, `for`, `while` or any other control-flow statement
+        c. Objective is to learn the syntax, not automation
+        d. Convert numerical values to float (manually)
     6. Compare result with "Tests" section (see below)
 
 Polish:
@@ -17,7 +21,11 @@ Polish:
     2. Stwórz listę `a` z danymi z wiersza 1
     3. Stwórz listę `b` z danymi z wiersza 2
     4. Stwórz listę `c` z danymi z wiersza 3
-    5. Nie używaj `str.split()`, `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
+    5. Przepisz dane ręcznie:
+        a. Nie automatyzuj pisząc kod
+        b. Nie używaj `str.split()`, `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
+        c. Celem jest nauka składni, a nie automatyzacja
+        d. Przekonwertuj wartości numeryczne do float (ręcznie)
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
@@ -53,7 +61,6 @@ Tests:
     True
 """
 
-
 # Given
 DATA = ['sepal_length,sepal_width,petal_length,petal_width,species',
         '5.8,2.7,5.1,1.9,virginica',
@@ -62,6 +69,9 @@ DATA = ['sepal_length,sepal_width,petal_length,petal_width,species',
         '6.3,2.9,5.6,1.8,virginica',
         '6.4,3.2,4.5,1.5,versicolor']
 
+a = ...  # with data from row 1
+b = ...  # with data from row 2
+c = ...  # with data from row 3
 
 # Solution
 a = [5.8, 2.7, 5.1, 1.9, 'virginica']

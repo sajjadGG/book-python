@@ -33,10 +33,8 @@ Tests:
     ['nasa.gov', 'esa.int', 'roscosmos.ru']
 """
 
-
 # Given
 DATA = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
-
 
 # Solution
 ip, *hosts = DATA.split()

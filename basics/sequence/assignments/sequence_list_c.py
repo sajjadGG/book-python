@@ -35,12 +35,10 @@ Tests:
     [7.6, 3.0, 6.6, 2.1]
 """
 
-
 # Given
 a = [4.7, 3.2, 1.3, 0.2, 'setosa']
 b = [7.0, 3.2, 4.7, 1.4, 'versicolor']
 c = [7.6, 3.0, 6.6, 2.1, 'virginica']
-
 
 # Solution
 a.insert(0, b.pop())
