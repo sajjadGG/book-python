@@ -74,9 +74,12 @@ $(document).ready(function() {
         })
     });
 
-    // Following code, if uncommented, hides code listing outputs onload
-    // div.each(function(index) {
-    //     $(this).find('.copybutton').click();
-    // });
+    // Following code show/hide code listing outputs onload
+    // .click() - hides
+    // .click().click(); - show
+    // if commented out, there will be some artifacts in code listings
+    div.each(function(index) {
+        $(this).find('.copybutton').click().click();
+    });
 });
 
