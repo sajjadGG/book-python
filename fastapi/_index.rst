@@ -9,6 +9,24 @@ About
     about/architecture.rst
 
 
+HTTP and Web
+************
+.. toctree::
+    :maxdepth: 1
+    :caption: HTTP and Web
+
+    http/protocol.rst
+    http/stdlib.rst
+    http/requests.rst
+    http/scrapping.rst
+    http/frameworks.rst
+    http/fastapi.rst
+    http/jinja.rst
+    http/paas.rst
+    http/soap-wsdl.rst
+    http/async.rst
+
+
 API
 ***
 .. toctree::
