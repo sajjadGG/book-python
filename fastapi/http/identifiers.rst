@@ -7,8 +7,8 @@ Rationale
 * URN - name (i.e. book title)
 * URI - resource (i.e. one particular unit of book with that title)
 * URL - location (i.e. where to get it)
-* Locators are also identifiers, so every URL is also a URI :cite:`URIvsURL`
-* There are URIs which are not URLs :cite:`URIvsURL`
+* Locators are also identifiers, so every URL is also a URI [#Pate2019]_
+* There are URIs which are not URLs [#Pate2019]_
 
 Examples:
 
@@ -83,3 +83,5 @@ References
 .. [#WikipediaURL] https://en.wikipedia.org/wiki/URL
 .. [#WikipediaURN] https://en.wikipedia.org/wiki/Uniform_Resource_Name
 .. [#WikipediaURI] https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
+.. [#Pate2019] Pate, Roger. What is the difference between a URI, a URL and a URN? https://stackoverflow.com/questions/176264/what-is-the-difference-between-a-uri-a-url-and-a-urn Accessed Date: 2019-05-22, Year: 2019
+

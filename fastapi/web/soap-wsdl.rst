@@ -3,12 +3,12 @@ SOAP and WSDL
 
 
 WSDL
--------------------------------------------------------------------------------
+----
 .. glossary::
 
     WSDL
     Web Services Description Language
-        is an XML-based interface description language that is used for describing the functionality offered by a web service. The acronym is also used for any specific WSDL description of a web service (also referred to as a WSDL file), which provides a machine-readable description of how the service can be called, what parameters it expects, and what data structures it returns. Therefore, its purpose is roughly similar to that of a type signature in a programming language :cite:`DefinitionWSDL`.
+        is an XML-based interface description language that is used for describing the functionality offered by a web service. The acronym is also used for any specific WSDL description of a web service (also referred to as a WSDL file), which provides a machine-readable description of how the service can be called, what parameters it expects, and what data structures it returns. Therefore, its purpose is roughly similar to that of a type signature in a programming language [#WikipediaWSDL]_.
 
     WADL
     Web Application Description Language
@@ -205,9 +205,10 @@ Example WSDL file
        </service>
     </description>
 
+
 Example WADL
 ------------
-* :cite:`DefinitionWADL`
+* WADL - Web Application Description Language [#WikipediaWADL]_
 
 .. code-block:: xml
 
@@ -253,7 +254,7 @@ Example WADL
 
 
 ``suds``
--------------------------------------------------------------------------------
+--------
 .. code-block:: python
 
     from suds.client import Client
@@ -280,7 +281,7 @@ Example WADL
 
 
 ``zeep``
--------------------------------------------------------------------------------
+--------
 * maintained
 
 .. code-block:: python
@@ -299,3 +300,9 @@ Example WADL
     wsdl = 'http://www.soapclient.com/xml/soapresponder.wsdl'
     client = zeep.Client(wsdl=wsdl)
     print(client.service.Method1('Zeep', 'is cool'))
+
+
+References
+----------
+.. [#WikipediaWSDL] Web Services Description Language. https://en.wikipedia.org/wiki/Web_Services_Description_Language. Accessed Date: 2019-05-22. Year: 2019.
+.. [#WikipediaWADL] Web Application Description Language. https://en.wikipedia.org/wiki/Web_Application_Description_Language. Accessed Date: 2019-05-22. Year: 2019.
