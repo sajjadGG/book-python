@@ -56,7 +56,6 @@ Basic usage
 #. Define task in ``tasks.py`` file by decorating function
 
     .. code-block:: python
-        :caption: tasks.py
 
         from celery import Celery
 

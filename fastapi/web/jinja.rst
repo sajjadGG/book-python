@@ -3,14 +3,14 @@ Templates with ``Jinja2``
 
 
 Rationale
--------------------------------------------------------------------------------
+---------
 * A Jinja template is simply a text file.
 * Jinja can generate any text-based format (HTML, XML, CSV, LaTeX, etc.)
 * A Jinja template doesn't need to have a specific extension: ``.html``, ``.xml``, or any other extension is just fine
 
 
 Syntax
--------------------------------------------------------------------------------
+------
 * ``{% ... %}`` - Statements
 * ``{{ ... }}`` - Expressions to print to the template output
 * ``{# ... #}`` - Comments not included in the template output
@@ -19,7 +19,7 @@ Syntax
 
 
 Example usage
--------------------------------------------------------------------------------
+-------------
 .. code-block:: jinja
 
     <h1>List of users</h1>
@@ -53,7 +53,7 @@ Example usage
 
 
 Method Calls
--------------------------------------------------------------------------------
+------------
 .. code-block:: jinja
 
     {% for page in user.get_created_pages() %}
@@ -62,7 +62,7 @@ Method Calls
 
 
 Filters
--------------------------------------------------------------------------------
+-------
 * http://jinja.pocoo.org/docs/2.10/templates/#list-of-builtin-filters
 
 .. code-block:: jinja
@@ -76,7 +76,7 @@ Filters
     {% endfilter %}
 
 Assignment tag
--------------------------------------------------------------------------------
+--------------
 .. code-block:: jinja
 
     {% set navigation = [('index.html', 'Index'), ('about.html', 'About')] %}
@@ -97,7 +97,7 @@ Assignment tag
     {% endset %}
 
 Include
--------------------------------------------------------------------------------
+-------
 .. code-block:: jinja
 
     {% include 'header.html' %}
@@ -111,7 +111,7 @@ Include
     {% endfor %}
 
 Conditionals
--------------------------------------------------------------------------------
+------------
 .. code-block:: jinja
 
     {% if loop.index is divisibleby 3 %}
@@ -147,7 +147,21 @@ Conditionals
 
 
 Loops
--------------------------------------------------------------------------------
+-----
+* ``loop.index`` - The current iteration of the loop. (1 indexed)
+* ``loop.index0`` - The current iteration of the loop. (0 indexed)
+* ``loop.revindex`` - The number of iterations from the end of the loop (1 indexed)
+* ``loop.revindex0`` - The number of iterations from the end of the loop (0 indexed)
+* ``loop.first`` - True if first iteration.
+* ``loop.last`` - True if last iteration.
+* ``loop.length`` - The number of items in the sequence.
+* ``loop.cycle`` - A helper function to cycle between a list of sequences. See the explanation below.
+* ``loop.depth`` - Indicates how deep in a recursive loop the rendering currently is. Starts at level 1
+* ``loop.depth0`` - Indicates how deep in a recursive loop the rendering currently is. Starts at level 0
+* ``loop.previtem`` - The item from the previous iteration of the loop. Undefined during the first iteration
+* ``loop.nextitem`` - The item from the following iteration of the loop. Undefined during the last iteration
+* ``loop.change`` - True if previously called with a different value (or not called at all)
+
 .. code-block:: jinja
 
     <ul>
@@ -164,25 +178,9 @@ Loops
         No items!
     {% endfor %}
 
-.. csv-table:: Loops special variables
-
-    "Variable", "Description"
-    "``loop.index``", "The current iteration of the loop. (1 indexed)"
-    "``loop.index0``", "The current iteration of the loop. (0 indexed)"
-    "``loop.revindex``", "The number of iterations from the end of the loop (1 indexed)"
-    "``loop.revindex0``", "The number of iterations from the end of the loop (0 indexed)"
-    "``loop.first``", "True if first iteration."
-    "``loop.last``", "True if last iteration."
-    "``loop.length``", "The number of items in the sequence."
-    "``loop.cycle``", "A helper function to cycle between a list of sequences. See the explanation below."
-    "``loop.depth``", "Indicates how deep in a recursive loop the rendering currently is. Starts at level 1"
-    "``loop.depth0``", "Indicates how deep in a recursive loop the rendering currently is. Starts at level 0"
-    "``loop.previtem``", "The item from the previous iteration of the loop. Undefined during the first iteration"
-    "``loop.nextitem``", "The item from the following iteration of the loop. Undefined during the last iteration"
-    "``loop.change``", "True if previously called with a different value (or not called at all)"
 
 Blocks
--------------------------------------------------------------------------------
+------
 .. code-block:: jinja
 
     <title>{% block title %}{% endblock %}</title>
@@ -199,7 +197,7 @@ Blocks
 
 
 Cycle
--------------------------------------------------------------------------------
+-----
 .. code-block:: jinja
 
     {% for user in users %}
@@ -208,7 +206,7 @@ Cycle
 
 
 Base Template
--------------------------------------------------------------------------------
+-------------
 .. code-block:: jinja
 
     <!DOCTYPE html>
@@ -247,7 +245,7 @@ Base Template
     {% endblock %}
 
 Import Macros
--------------------------------------------------------------------------------
+-------------
 .. code-block:: jinja
 
     {% macro input(name, value='', type='text') -%}
@@ -282,7 +280,7 @@ Import Macros
     <p>{{ textarea('comment') }}</p>
 
 i18n Trans
--------------------------------------------------------------------------------
+----------
 .. code-block:: jinja
 
     <p>{% trans %}Hello {{ user }}!{% endtrans %}</p>

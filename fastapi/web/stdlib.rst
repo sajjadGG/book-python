@@ -106,9 +106,10 @@ All statuses:
 
 ``urllib``
 ----------
+ściąganie danych z internetu, które trzeba rozpakować, Dane są w formacie TSV (tab separator values), można je rozpakować modułem CSV i podać jako ``delimiter='\t'``
+
 .. literalinclude:: src/http-urllib.py
     :language: python
-    :caption: ściąganie danych z internetu, które trzeba rozpakować, Dane są w formacie TSV (tab separator values), można je rozpakować modułem CSV i podać jako ``delimiter='\t'``
 
 
 ``http.server``

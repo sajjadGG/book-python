@@ -72,6 +72,7 @@ The ``<portType>`` Element:
 
 .. csv-table::
     :header-rows: 1
+    :widths: 20, 80
 
     "Type", "Definition"
     "One-way", "The operation can receive a message but will not return a response"
