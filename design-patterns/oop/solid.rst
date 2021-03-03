@@ -146,7 +146,7 @@ Open/Closed Principle
 * Sometimes it refers to use of abstract base classes to create fixed interfaces with multiple implementations
 * The view we take is that objects have internal invariants and that subclasses shouldn't be able to break those invariants
 * In other words, the classes capabilities can be extended but the underlying class shouldn't get broken
-* Source: [Hettinger2012]_
+* Source: [#Hettinger2012]_
 
 Adding new parser (PDF,Txt) class should not break the ``Document`` class.
 
@@ -285,7 +285,7 @@ Liskov Substitution Principle
     * More importantly, it challenges our conceptual view of a subclass as simple a form of specialization
     * Clarity comes from thinking about the design in terms of code reuse (the class that has the most reusable code should be the parent)
 
-* Source: [Hettinger2012]_
+* Source: [#Hettinger2012]_
 
 .. figure:: img/oop-solid-lsp.png
 
@@ -497,7 +497,7 @@ Hello
 
 References
 ----------
-.. [Hettinger2012] Raymond Hettinger. The Art of Subclassing. 2012. https://www.youtube.com/watch?v=miGolgp9xq8
+.. [#Hettinger2012] Raymond Hettinger. The Art of Subclassing. 2012. https://www.youtube.com/watch?v=miGolgp9xq8
 
 
 Assignments

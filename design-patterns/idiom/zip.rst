@@ -164,8 +164,8 @@ Unzip
 Future
 ------
 * ``zip(*iterables, strict=False)``
-* Since Python 3.10: :pep:`618` -- Add Optional Length-Checking To zip [pep618]_
-* Source [py310doc]_
+* Since Python 3.10: :pep:`618` -- Add Optional Length-Checking To zip [#pep618]_
+* Source [#pydoc310]_
 
 ``zip()`` adjusts to the shortest:
 
@@ -206,5 +206,5 @@ Assignments
 
 References
 ----------
-.. [pep618] https://www.python.org/dev/peps/pep-0618/
-.. [py310doc] https://docs.python.org/3.10/library/functions.html#zip
+.. [#pep618] https://www.python.org/dev/peps/pep-0618/
+.. [#pydoc310] https://docs.python.org/3.10/library/functions.html#zip

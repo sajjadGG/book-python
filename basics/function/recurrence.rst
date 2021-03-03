@@ -51,7 +51,7 @@ Use Case
 --------
 .. figure:: img/function-recurrence-hanoi.jpg
 
-    Hanoi Tower as a standard example of a recurrence. Source: [1]_
+    Hanoi Tower as a standard example of a recurrence. Source: [#hanoi]_
 
 
 Recursion Depth Limit
@@ -77,4 +77,4 @@ Assignments
 
 References
 ----------
-.. [1] https://dyermath.files.wordpress.com/2015/06/hanoi-13.jpg
+.. [#hanoi] https://dyermath.files.wordpress.com/2015/06/hanoi-13.jpg

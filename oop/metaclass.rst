@@ -37,7 +37,7 @@ When using the default metaclass type, or any metaclass that ultimately calls ``
 
     #. ``type.__new__`` collects all of the descriptors in the class namespace that define a ``__set_name__()`` method;
     #. all of these ``__set_name__`` methods are called with the class being defined and the assigned name of that particular descriptor;
-    #. the ``__init_subclass__()`` hook is called on the immediate parent of the new class in its method resolution order. [pydocclassobject]_
+    #. the ``__init_subclass__()`` hook is called on the immediate parent of the new class in its method resolution order. [#pydocclassobject]_
 
 Class Definition:
 
@@ -207,7 +207,7 @@ Usage
 * Ensure subclass implementation
 * Metaclasses run when Python defines class (even if no instance is created)
 
-The potential uses for metaclasses are boundless. Some ideas that have been explored include enum, logging, interface checking, automatic delegation, automatic property creation, proxies, frameworks, and automatic resource locking/synchronization. [pydocclassobject]_
+The potential uses for metaclasses are boundless. Some ideas that have been explored include enum, logging, interface checking, automatic delegation, automatic property creation, proxies, frameworks, and automatic resource locking/synchronization. [#pydocclassobject]_
 
 .. code-block:: python
 
@@ -254,7 +254,7 @@ Methods
 * ``__init__(self, name, bases, attrs) -> None`` - after class creation
 * ``__call__(self, *args, **kwargs)`` - allows custom behavior when the class is called
 
-Once the appropriate metaclass has been identified, then the class namespace is prepared. If the metaclass has a ``__prepare__`` attribute, it is called as ``namespace = metaclass.__prepare__(name, bases, **kwds)`` (where the additional keyword arguments, if any, come from the class definition). The ``__prepare__`` method should be implemented as a ``classmethod()``. The namespace returned by ``__prepare__`` is passed in to ``__new__``, but when the final class object is created the namespace is copied into a new ``dict``. If the metaclass has no ``__prepare__`` attribute, then the class namespace is initialised as an empty ordered mapping. [pydocsprepare]_
+Once the appropriate metaclass has been identified, then the class namespace is prepared. If the metaclass has a ``__prepare__`` attribute, it is called as ``namespace = metaclass.__prepare__(name, bases, **kwds)`` (where the additional keyword arguments, if any, come from the class definition). The ``__prepare__`` method should be implemented as a ``classmethod()``. The namespace returned by ``__prepare__`` is passed in to ``__new__``, but when the final class object is created the namespace is copied into a new ``dict``. If the metaclass has no ``__prepare__`` attribute, then the class namespace is initialised as an empty ordered mapping. [#pydocsprepare]_
 
 .. code-block:: python
 
@@ -758,9 +758,8 @@ Class Decorator:
 
 References
 ----------
-.. [pydocsprepare] https://docs.python.org/3/reference/datamodel.html#preparing-the-class-namespace
-
-.. [pydocclassobject] https://docs.python.org/3/reference/datamodel.html#creating-the-class-object
+.. [#pydocsprepare] https://docs.python.org/3/reference/datamodel.html#preparing-the-class-namespace
+.. [#pydocclassobject] https://docs.python.org/3/reference/datamodel.html#creating-the-class-object
 
 
 Assignments

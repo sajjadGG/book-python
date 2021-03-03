@@ -110,7 +110,7 @@ Get Keys, Values and Key-Value Pairs
 ------------------------------------
 * Key can be any hashable object
 
-In Python 2, the methods items(), keys() and values() used to "take a snapshot" of the dictionary contents and return it as a list. It meant that if the dictionary changed while you were iterating over the list, the contents in the list would not change. In Python 3, these methods return a view object whose contents change dynamically as the dictionary changes. Therefore, in order for the behavior of iterations over the result of these methods to remain consistent with previous versions, an additional call to list() has to be performed in Python 3 to "take a snapshot" of the view object contents. [Hamidi2017]_
+In Python 2, the methods items(), keys() and values() used to "take a snapshot" of the dictionary contents and return it as a list. It meant that if the dictionary changed while you were iterating over the list, the contents in the list would not change. In Python 3, these methods return a view object whose contents change dynamically as the dictionary changes. Therefore, in order for the behavior of iterations over the result of these methods to remain consistent with previous versions, an additional call to list() has to be performed in Python 3 to "take a snapshot" of the view object contents. [#Hamidi2017]_
 
 >>> crew = {
 ...    'commander': 'Melissa Lewis',
@@ -494,4 +494,4 @@ Assignments
 
 References
 ----------
-.. [Hamidi2017] Frédéric Hamidi. Why does Python 3 need dict.items to be wrapped with list()? Accessed Data: 2021-02-28. URL: https://stackoverflow.com/a/17695716
+.. [#Hamidi2017] Frédéric Hamidi. Why does Python 3 need dict.items to be wrapped with list()? Accessed Data: 2021-02-28. URL: https://stackoverflow.com/a/17695716

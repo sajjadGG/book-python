@@ -24,7 +24,7 @@ DataFrame Aggregations
     "network_type", "Whether the number being called was a mobile, international ('world'), voicemail, landline, or other ('special') number."
 
 
-Source [PandasAggregations]_
+Source [#PandasAggregations]_
 
 
 Single Statistic
@@ -241,5 +241,5 @@ Assignments
 
 
 References
--------------------------------------------------------------------------------
-.. [PandasAggregations] Lynn, Shane. Summarising, Aggregating, and Grouping data in Python Pandas. https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/ Access date: 2019-12-03. 2019.
+----------
+.. [#PandasAggregations] Lynn, Shane. Summarising, Aggregating, and Grouping data in Python Pandas. https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/ Access date: 2019-12-03. 2019.

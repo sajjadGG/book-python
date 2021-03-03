@@ -505,7 +505,7 @@ Assignments
 
 
 References
--------------------------------------------------------------------------------
+----------
 * https://finance.yahoo.com/quote/SPCE/history
 * https://www.kaggle.com/jessemostipak/astronaut-database
 * https://www.kaggle.com/nasa/astronaut-yearbook

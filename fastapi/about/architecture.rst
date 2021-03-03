@@ -16,7 +16,7 @@ Uvicorn
 * Until recently Python has lacked a minimal low-level server/application interface for asyncio frameworks. The ASGI specification fills this gap, and means we're now able to start building a common set of tooling usable across all asyncio frameworks.
 * ASGI should help enable an ecosystem of Python web frameworks that are highly competitive against Node and Go in terms of achieving high throughput in IO-bound contexts. It also provides support for HTTP/2 and WebSockets, which cannot be handled by WSGI.
 * Uvicorn currently supports HTTP/1.1 and WebSockets. Support for HTTP/2 is planned.
-* Source: [uvicorndoc]_
+* Source: [#uvicorndoc]_
 
 
 Starlette
@@ -36,7 +36,7 @@ Starlette
     * 100% type annotated codebase.
     * Zero hard dependencies.
 
-* Source: [starlettedoc]_
+* Source: [#starlettedoc]_
 
 
 Pydantic
@@ -53,11 +53,11 @@ Pydantic
     * ``pydantic`` allows custom data types to be defined or you can extend validation with methods on a model decorated with the validator decorator.
     * ``dataclasses`` integration
 
-* Source: [pydanticdoc]_
+* Source: [#pydanticdoc]_
 
 
 References
 ----------
-.. [uvicorndoc] Uvicorn official documentation. Accessed Date: 2021-02-23. URL: https://www.uvicorn.org
-.. [pydanticdoc] Pydantic official documentation. Accessed Date: 2021-02-23. URL: https://pydantic-docs.helpmanual.io
-.. [starlettedoc] Starlette official documentation. Accessed Date: 2021-02-23. URL: https://www.starlette.io
+.. [#uvicorndoc] Uvicorn official documentation. Accessed Date: 2021-02-23. URL: https://www.uvicorn.org
+.. [#pydanticdoc] Pydantic official documentation. Accessed Date: 2021-02-23. URL: https://pydantic-docs.helpmanual.io
+.. [#starlettedoc] Starlette official documentation. Accessed Date: 2021-02-23. URL: https://www.starlette.io

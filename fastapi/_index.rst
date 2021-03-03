@@ -9,22 +9,36 @@ About
     about/architecture.rst
 
 
-HTTP and Web
-************
+HTTP
+****
 .. toctree::
     :maxdepth: 1
-    :caption: HTTP and Web
+    :caption: HTTP
 
     http/protocol.rst
-    http/stdlib.rst
-    http/requests.rst
-    http/scrapping.rst
-    http/frameworks.rst
-    http/fastapi.rst
-    http/jinja.rst
-    http/paas.rst
-    http/soap-wsdl.rst
-    http/async.rst
+    http/identifiers.rst
+    http/method.rst
+    http/headers.rst
+    http/mimetype.rst
+    http/status.rst
+    http/api-versioning.rst
+
+
+Web
+***
+.. toctree::
+    :maxdepth: 1
+    :caption: Web
+
+    web/stdlib.rst
+    web/requests.rst
+    web/scrapping.rst
+    web/frameworks.rst
+    web/fastapi.rst
+    web/jinja.rst
+    web/paas.rst
+    web/soap-wsdl.rst
+    web/async.rst
 
 
 API

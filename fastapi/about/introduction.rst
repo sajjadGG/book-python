@@ -34,7 +34,7 @@ Rationale
     * NoSQL Database
     * GraphQL
 
-Source: [fastapicourse]_
+Source: [#fastapicourse]_
 
 
 Key Features
@@ -48,7 +48,7 @@ Key Features
 * Robust: Get production-ready code. With automatic interactive documentation.
 * Standards-based: Based on (and fully compatible with) the open standards for APIs: OpenAPI (previously known as Swagger) and JSON Schema.
 
-Source: [fastapidoc]_
+Source: [#fastapidoc]_
 
 
 Used by
@@ -59,7 +59,7 @@ Used by
 
 Table of Contents
 -----------------
-* Source: [fastapicourse]_
+* Source: [#fastapicourse]_
 
 1. Getting Started
 
@@ -131,6 +131,6 @@ Further Reading
 
 References
 ----------
-.. [fastapidoc] Sebastián Ramírez. FastAPI official documentation. Accessed Date: 2021-02-21. URL: https://fastapi.tiangolo.com
-.. [fastapigithub] Sebastián Ramírez. FastAPI Github repository. Accessed Date: 2021-02-21. URL: https://github.com/tiangolo/fastapi
-.. [fastapicourse] Bitfumes. FastAPI - A python framework full course. Accessed Date: 2021-02-21. URL: https://www.youtube.com/watch?v=7t2alSnE2-I
+.. [#fastapidoc] Sebastián Ramírez. FastAPI official documentation. Accessed Date: 2021-02-21. URL: https://fastapi.tiangolo.com
+.. [#fastapigithub] Sebastián Ramírez. FastAPI Github repository. Accessed Date: 2021-02-21. URL: https://github.com/tiangolo/fastapi
+.. [#fastapicourse] Bitfumes. FastAPI - A python framework full course. Accessed Date: 2021-02-21. URL: https://www.youtube.com/watch?v=7t2alSnE2-I

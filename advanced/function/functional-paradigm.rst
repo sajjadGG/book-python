@@ -7,13 +7,13 @@ Rationale
 * Programming paradigm
 * Programs are constructed by applying and composing functions
 * Functions are treated as first-class citizens
-* Functions can be bound to names (including local identifiers), passed as arguments, and returned from other functions, just as any other data type can [WikipediaFunc]_
+* Functions can be bound to names (including local identifiers), passed as arguments, and returned from other functions, just as any other data type can [#WikipediaFunc]_
 * Functional programming avoids side effects, which are used in imperative programming to implement state and I/O
 * Pure functional programming completely prevents side-effects and provides referential transparency
 * Higher-order functions are rarely used in older imperative programming.
-* Imperative program will use a loop to traverse and modify a list, while a functional program, would prefer using a higher-order ``map`` function that takes a function and a list, generating and returning a new list by applying the function to each list item [Spiewak2008]_
-* Restricting side effects, can decrease number of bugs, be easier to debug and test, and be more suited to formal verification [Hughes1984]_ [Hudak1989]_
-* Functional programming languages are typically less efficient in their use of CPU and memory than imperative languages such as C, Java, Python [Paulson1996]_
+* Imperative program will use a loop to traverse and modify a list, while a functional program, would prefer using a higher-order ``map`` function that takes a function and a list, generating and returning a new list by applying the function to each list item [#Spiewak2008]_
+* Restricting side effects, can decrease number of bugs, be easier to debug and test, and be more suited to formal verification [#Hughes1984]_ [#Hudak1989]_
+* Functional programming languages are typically less efficient in their use of CPU and memory than imperative languages such as C, Java, Python [#Paulson1996]_
 * This is due that some mutable data structures like arrays have a very straightforward implementation using present hardware
 
 .. code-block:: python
@@ -66,7 +66,7 @@ Pure Functions
 * If the result of a pure expression is not used, it can be removed without affecting other expressions
 * Calling the pure function again with the same arguments returns the same result (this can enable caching optimizations such as memoization)
 * If there is no data dependency between two pure expressions, their order can be reversed, or they can be performed in parallel and they cannot interfere with one another (the evaluation of any pure expression is thread-safe)
-* Source: [WikipediaFunc]_
+* Source: [#WikipediaFunc]_
 
 Definition:
     .. code-block:: python
@@ -199,7 +199,7 @@ Recursion
 * Also known as recurrence
 * Recursive functions invoke themselves, operation is repeated until it reaches the base case
 * Iteration (looping) in functional languages is usually accomplished via recursion
-* In general, recursion requires maintaining a stack, which consumes space in a linear amount to the depth of recursion. This could make recursion prohibitively expensive to use instead of imperative loops. However, a special form of recursion known as tail recursion can be recognized and optimized by a compiler into the same code used to implement iteration in imperative languages. Tail recursion optimization can be implemented by transforming the program into continuation passing style during compiling, among other approaches. [WikipediaFunc]_
+* In general, recursion requires maintaining a stack, which consumes space in a linear amount to the depth of recursion. This could make recursion prohibitively expensive to use instead of imperative loops. However, a special form of recursion known as tail recursion can be recognized and optimized by a compiler into the same code used to implement iteration in imperative languages. Tail recursion optimization can be implemented by transforming the program into continuation passing style during compiling, among other approaches. [#WikipediaFunc]_
 * CPython doesn't optimize tail recursion
 * Tail recursion is not efficient technique in Python
 * Rewriting the algorithm iteratively, is generally a better idea
@@ -240,7 +240,7 @@ Data Structures
 * Purely functional data structures have persistence (keeps previous versions of the data structure unmodified)
 * The array with constant access and update times is a basic component of most imperative languages, and many imperative data-structures, such as the hash table and binary heap, are based on arrays
 * Arrays can be replaced by maps or random access lists, which admit purely functional implementation, but have logarithmic access and update times
-* Source: [WikipediaFunc]_
+* Source: [#WikipediaFunc]_
 
 
 Referential Transparency
@@ -248,7 +248,7 @@ Referential Transparency
 * Functional programs do not have assignment statements
 * Value of a variable in a functional program never changes once defined
 * This eliminates any chances of side effects
-* Any variable can be replaced with its actual value at any point of execution [Hughes1984]_
+* Any variable can be replaced with its actual value at any point of execution [#Hughes1984]_
 
 
 First-class Function
@@ -359,12 +359,8 @@ Assignments
 
 References
 ----------
-.. [WikipediaFunc] Functional programming. URL: https://en.wikipedia.org/wiki/Functional_programming Retrieved: 2020-10-09
-
-.. [Hudak1989] Hudak, Paul. "Conception, evolution, and application of functional programming languages". ACM Computing Surveys. 21 (3): 359–411. doi:10.1145/72551.72554. S2CID 207637854. 1989.
-
-.. [Hughes1984] Hughes, John. "Why Functional Programming Matters". Chalmers University of Technology. 1984.
-
-.. [Spiewak2008] Spiewak, Daniel. "Implementing Persistent Vectors in Scala". Code Commit. 2008.
-
-.. [Paulson1996] Paulson, Larry C. "ML for the Working Programmer". Cambridge University Press. ISBN: 978-0-521-56543-1. Retrieved: 2013-02-10. 1996.
+.. [#WikipediaFunc] Functional programming. URL: https://en.wikipedia.org/wiki/Functional_programming Retrieved: 2020-10-09
+.. [#Hudak1989] Hudak, Paul. "Conception, evolution, and application of functional programming languages". ACM Computing Surveys. 21 (3): 359–411. doi:10.1145/72551.72554. S2CID 207637854. 1989.
+.. [#Hughes1984] Hughes, John. "Why Functional Programming Matters". Chalmers University of Technology. 1984.
+.. [#Spiewak2008] Spiewak, Daniel. "Implementing Persistent Vectors in Scala". Code Commit. 2008.
+.. [#Paulson1996] Paulson, Larry C. "ML for the Working Programmer". Cambridge University Press. ISBN: 978-0-521-56543-1. Retrieved: 2013-02-10. 1996.

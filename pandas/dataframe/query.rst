@@ -11,7 +11,7 @@ Rationale
 
 .. figure:: img/pandas-dataframe-query.png
 
-    Pandas query expression [sharpsightlabs]_
+    Pandas query expression [#sharpsightlabs]_
 
 
 Query
@@ -139,7 +139,7 @@ Modify a dataframe in place:
 
 
 References
--------------------------------------------------------------------------------
+----------
 * Source: https://www.sharpsightlabs.com/blog/pandas-query/
 
-.. [sharpsightlabs] https://www.sharpsightlabs.com/blog/pandas-query/
+.. [#sharpsightlabs] https://www.sharpsightlabs.com/blog/pandas-query/

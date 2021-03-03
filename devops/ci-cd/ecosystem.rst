@@ -151,7 +151,7 @@ Quality Assurance
 
 .. raw:: html
 
-    <video autoplay="" loop="" muted="" playsinline="" src="../_img/qa-sonarlint-b.mp4" poster="../_img/qa-sonarlint-a.jpg" width="100%" height="100%" alt="SonarLint is an IDE extension that helps you detect and fix quality issues as you write code. [sonarlintorg]_"></video>
+    <video autoplay="" loop="" muted="" playsinline="" src="../_img/qa-sonarlint-b.mp4" poster="../_img/qa-sonarlint-a.jpg" width="100%" height="100%" alt="SonarLint is an IDE extension that helps you detect and fix quality issues as you write code. [#sonarlintorg]_"></video>
 
 .. figure:: ../_img/qa-sonarlint-a.jpg
 .. figure:: ../_img/qa-sonarlint-b.mp4
@@ -444,4 +444,4 @@ Tests:
 
 References
 ----------
-.. [sonarlintorg] https://www.sonarlint.org
+.. [#sonarlintorg] https://www.sonarlint.org

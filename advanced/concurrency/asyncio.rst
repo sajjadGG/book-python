@@ -106,8 +106,8 @@ Sleeping
 Coroutines
 ----------
 * Python coroutines are awaitables
-* Coroutines declared with the async/await syntax is the preferred way of writing asyncio applications. [AsyncioTask]_
-* Term 'coroutine' can be used for two closely related concepts [AsyncioTask]_:
+* Coroutines declared with the async/await syntax is the preferred way of writing asyncio applications. [#AsyncioTask]_
+* Term 'coroutine' can be used for two closely related concepts [#AsyncioTask]_:
 
     * a coroutine function: an ``async def`` function;
     * a coroutine object: an object returned by calling a coroutine function.
@@ -505,9 +505,9 @@ Async code can only run inside an event loop.
 The event loop is the driver code that manages the cooperative multitasking.
 You can create multiple threads and run different event loops in each of them.
 For example, Django uses the main thread to wait for incoming requests, so we can’t run an asyncio event loop there, but we can start a separate worker thread for our event loop.
-[cheat]_
+[#cheat]_
 
-An event loop runs in a thread (typically the main thread) and executes all callbacks and Tasks in its thread. While a Task is running in the event loop, no other Tasks can run in the same thread. When a Task executes an await expression, the running Task gets suspended, and the event loop executes the next Task. [pydocmultithreading]_
+An event loop runs in a thread (typically the main thread) and executes all callbacks and Tasks in its thread. While a Task is running in the event loop, no other Tasks can run in the same thread. When a Task executes an await expression, the running Task gets suspended, and the event loop executes the next Task. [#pydocmultithreading]_
 
 .. code-block:: python
 
@@ -837,6 +837,6 @@ References
 * https://www.youtube.com/watch?v=Pe3b9bdRtiE
 * https://www.youtube.com/watch?v=Xbl7XjFYsN4
 
-.. [AsyncioTask] https://docs.python.org/3/library/asyncio-task.html
-.. [cheat] https://cheat.readthedocs.io/en/latest/python/asyncio.html
-.. [pydocmultithreading] https://docs.python.org/3/library/asyncio-dev.html#concurrency-and-multithreading
+.. [#AsyncioTask] https://docs.python.org/3/library/asyncio-task.html
+.. [#cheat] https://cheat.readthedocs.io/en/latest/python/asyncio.html
+.. [#pydocmultithreading] https://docs.python.org/3/library/asyncio-dev.html#concurrency-and-multithreading

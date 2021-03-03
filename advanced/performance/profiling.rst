@@ -17,15 +17,15 @@ Profilers
 
 .. figure:: img/performance-profiler-factorial.png
 
-    PyCharm Profiler Factorial [jetbrains]_
+    PyCharm Profiler Factorial [#jetbrainsprofiler]_
 
 .. figure:: img/performance-profiler-fibonacci.png
 
-    PyCharm Profiler Fibonacci [koderdojo]_
+    PyCharm Profiler Fibonacci [#koderdojo]_
 
 .. figure:: img/performance-profiler-pycharm.png
 
-    PyCharm Profiler [csdnimg]_
+    PyCharm Profiler [#csdnimg]_
 
 
 Profiling with yappi
@@ -229,6 +229,6 @@ Profiling with cProfile
 
 References
 ----------
-.. [koderdojo] https://www.koderdojo.com/media/default/articles/profile-fibonacci-number-30-pycharm.png
-.. [jetbrains] https://resources.jetbrains.com/help/img/idea/2020.3/profiler_call_graph.png
-.. [csdnimg] https://img-blog.csdnimg.cn/20191008141801582.png
+.. [#koderdojo] https://www.koderdojo.com/media/default/articles/profile-fibonacci-number-30-pycharm.png
+.. [#jetbrainsprofiler] https://resources.jetbrains.com/help/img/idea/2020.3/profiler_call_graph.png
+.. [#csdnimg] https://img-blog.csdnimg.cn/20191008141801582.png

@@ -6,7 +6,7 @@ Rationale
 ---------
 * Attributes and methods are always public
 * No protected and private keywords
-* Protecting is only by convention [privatevar]_
+* Protecting is only by convention [#pydocprivatevar]_
 
 Attributes:
 
@@ -331,4 +331,4 @@ Assignments
 
 References
 ----------
-.. [privatevar] https://docs.python.org/3/tutorial/classes.html#private-variables
+.. [#pydocprivatevar] https://docs.python.org/3/tutorial/classes.html#private-variables

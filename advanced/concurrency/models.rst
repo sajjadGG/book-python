@@ -12,7 +12,7 @@ Classification of concurrency problems
 Martelli's observation: As time goes on, the second category becomes less common and relevant.
 Single cores become more powerful. Big datasets grow ever larger [to use 2-8 cores].
 
-Source: [Hettinger2017]_
+Source: [#Hettinger2017]_
 
 
 GIL
@@ -25,7 +25,7 @@ GIL
 * For CPU bound applications, using threads makes the application speed worse
 * Accordingly, that drives us to multiprocessing to gain more CPU cycles
 
-Source: [Hettinger2017]_
+Source: [#Hettinger2017]_
 
 
 Process
@@ -69,7 +69,7 @@ Thread
 * Accordingly, critical sections have to be a guarded with locks
 * The limit on threads is total CPU power minus the cost of tasks switches and synchronization overhead
 
-Source: [Hettinger2017]_
+Source: [#Hettinger2017]_
 
 
 Async
@@ -106,7 +106,7 @@ Threads vs Async
 * Threads require very little tooling (locks and queues)
 * Async needs a great deal of tooling (futures, event loops, and non-blocking version of just about everything.
 
-Source: [Hettinger2017]_
+Source: [#Hettinger2017]_
 
 
 Context Switching
@@ -125,7 +125,7 @@ Testing
 * In Internet of Things (IoT) I'd prefer to stand in front of a car which has code written in async way, than a threaded way
 * Async is profoundly easier to debug and get it right
 
-Source: [Hettinger2017]_
+Source: [#Hettinger2017]_
 
 
 Rules
@@ -140,7 +140,7 @@ Rules
 #. Reason for threads is a shared state. When you have shared state, you've got race conditions. And you manage this race conditions through a locks. You acquire a lock, do stuff and release. What if you get killed, between acquire and release. You never know if this thread acquired a lock. If you kill it, it will become a deadlock for all other threads. That's the reason why there is no API for killing a thread.
 #. For large systems when you need to isolate parts of the running code, use processes, because you can kill them.
 
-Source: [Hettinger2017]_
+Source: [#Hettinger2017]_
 
 
 Locks
@@ -149,7 +149,7 @@ Locks
 * IIn general, locks should be considered a low level primitive that is difficult to reason about nontrivial examples. For more complex applications, you're almost always better of with using atomic message queues.
 * The more locks you acquire at one time, the more you loose the advantages of concurrency
 
-Source: [Hettinger2017]_
+Source: [#Hettinger2017]_
 
 
 Multiprocessing Problems
@@ -167,3 +167,8 @@ Multiprocessing Problems
 
 * Problem producenta i konsumenta
 * Problem czytelników i pisarzy
+
+
+References
+----------
+.. [#Hettinger2017] Hettinger, Raymond. Keynote on Concurrency. PyBay 2017. https://youtu.be/9zinZmE3Ogk?t=1243

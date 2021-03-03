@@ -17,7 +17,7 @@ Implementation
 
 Borg vs Singleton
 -----------------
-* Source [borg]_
+* Source [#borg]_
 
 The real reason that borg is different comes down to subclassing.
 
@@ -28,4 +28,4 @@ Also in the singleton pattern the objects are actually the same, not just the st
 
 References
 ----------
-.. [borg] https://stackoverflow.com/a/1318444
+.. [#borg] https://stackoverflow.com/a/1318444

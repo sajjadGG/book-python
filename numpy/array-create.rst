@@ -63,7 +63,7 @@ Declare
 
 .. figure:: img/numpy-create-cake.png
 
-    Multi layer cake as an analog for n-dim array [CAKE]_
+    Multi layer cake as an analog for n-dim array [#CAKE]_
 
 Range
 -------------------------------------------------------------------------------
@@ -367,7 +367,7 @@ Stringify
 
 
 Performance
--------------------------------------------------------------------------------
+-----------
 * Results with ``%%timeit -n 1_000_000 -r 10``
 
 .. code-block:: python
@@ -395,12 +395,12 @@ Performance
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_create_arange.py
     :caption: :download:`Solution <assignments/numpy_create_arange.py>`
     :end-before: # Solution
 
 
 References
--------------------------------------------------------------------------------
-.. [CAKE] https://i.ytimg.com/vi/iCOhz07Ng6g/maxresdefault.jpg
+----------
+.. [#CAKE] https://i.ytimg.com/vi/iCOhz07Ng6g/maxresdefault.jpg

@@ -2,7 +2,7 @@ Code Smells
 ===========
 
 
-Source [CodeSmells]_
+Source [#CodeSmells]_
 
 
 #. Using globals - but that is a code smell in any language.
@@ -300,5 +300,5 @@ Pythonic way:
 
 References
 -------------------------------------------------------------------------------
-.. [CodeSmells] Flury, Tony. What are some major code smells in Python? https://www.quora.com/What-are-some-major-code-smells-in-Python 2019. Accessed: 2019-03-28
+.. [#CodeSmells] Flury, Tony. What are some major code smells in Python? https://www.quora.com/What-are-some-major-code-smells-in-Python 2019. Accessed: 2019-03-28
 

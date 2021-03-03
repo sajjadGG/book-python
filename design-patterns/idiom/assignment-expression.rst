@@ -8,7 +8,7 @@ Rationale
 * Also known as "Walrus operator"
 * Also known as "Named expression"
 
-During discussion of this PEP, the operator became informally known as "the walrus operator". The construct's formal name is "Assignment Expressions" (as per the PEP title), but they may also be referred to as "Named Expressions" (e.g. the CPython reference implementation uses that name internally). [pep572]_
+During discussion of this PEP, the operator became informally known as "the walrus operator". The construct's formal name is "Assignment Expressions" (as per the PEP title), but they may also be referred to as "Named Expressions" (e.g. the CPython reference implementation uses that name internally). [#pep572]_
 
 
 Syntax
@@ -400,7 +400,7 @@ Use Case
 
 References
 ----------
-.. [pep572] Angelico, C. and Peters T. and van Rossum, G. PEP 572 -- Assignment Expressions. Python Software Foundation. 2018. Url: https://www.python.org/dev/peps/pep-0572/#abstract Accessed: 2020-12-04.
+.. [#pep572] Angelico, C. and Peters T. and van Rossum, G. PEP 572 -- Assignment Expressions. Python Software Foundation. 2018. Url: https://www.python.org/dev/peps/pep-0572/#abstract Accessed: 2020-12-04.
 
 
 Assignments
