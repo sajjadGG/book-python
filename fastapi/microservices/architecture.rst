@@ -143,7 +143,7 @@ Hermes
 * load ballancing
 * security policy dla wiadomości
 
-... figure:: img/microservices-hermes.png
+.. figure:: img/microservices-hermes.png
 
 * można zapchać sieć, gdy ma się zcentralizowaną infrastrukturę
 * wykorzystanie HTTP/2.0 (multipleksowanie połączeń http, kompresja nagłówków, TLS)
@@ -155,7 +155,7 @@ Przepisywanie architektury
 
 Architektura systemu zgodna z Sidecar:
 
-... figure:: img/microservices-sidecar.png
+.. figure:: img/microservices-sidecar.png
 
 * Anti Corruption Layer (ACL)
 * Tworzenie nowych funckonalności na nowej platformie
@@ -169,7 +169,7 @@ Architektura systemu zgodna z Sidecar:
 
 Anti Corruption Layer:
 
-... figure:: img/microservices-anti-corruption-layer.png
+.. figure:: img/microservices-anti-corruption-layer.png
 
 
 Tworzenie nowej usługi
@@ -202,7 +202,7 @@ Mesos
 
 Ścieżka rozwoju platform uruchomieniowych w architekturze mikrousługowej:
 
-... figure:: img/microservices-platform-path.png
+.. figure:: img/microservices-platform-path.png
 
 
 Monitoring
@@ -343,7 +343,7 @@ Build an application with a monolithic architecture. For example:
 
 Monolithic architecture:
 
-... figure:: img/microservices-monolithic-application.jpg
+.. figure:: img/microservices-monolithic-application.jpg
 
 
 Microservices architecture
@@ -364,7 +364,7 @@ Microservices architecture
 
 Microservices Architecture:
 
-... figure:: img/microservices-architecture.jpg
+.. figure:: img/microservices-architecture.jpg
 
 
 API
@@ -401,7 +401,7 @@ API gateway
 
 Microservices API gateway:
 
-... figure:: img/microservices-api-gateway.jpg
+.. figure:: img/microservices-api-gateway.jpg
 
 
 Service discovery
@@ -418,7 +418,7 @@ Client-side discovery
 
 Microservices client side discovery:
 
-... figure:: img/microservices-client-side-discovery.jpg
+.. figure:: img/microservices-client-side-discovery.jpg
 
 Server-side discovery
 ^^^^^^^^^^^^^^^^^^^^^
@@ -430,7 +430,7 @@ Server-side discovery
 
 Server side-discovery:
 
-... figure:: img/microservices-server-side-discovery.jpg
+.. figure:: img/microservices-server-side-discovery.jpg
 
 
 Service registry
@@ -534,7 +534,7 @@ Database per Service
 
 Database per Service:
 
-... figure:: img/microservices-database-per-service.png
+.. figure:: img/microservices-database-per-service.png
 
 .. todo:: Wiele baz danych w jednej usłudze
 .. todo:: Mieszane, usługi mają jedną bazę danych
@@ -547,7 +547,7 @@ Shared database
 
 Shared database
 
-... figure:: img/microservices-database-shared.png
+.. figure:: img/microservices-database-shared.png
 
 
 Database triggers
@@ -586,7 +586,7 @@ Event sourcing
 
 Event sourcing:
 
-... figure:: img/microservices-event-sourcing.png
+.. figure:: img/microservices-event-sourcing.png
 
 
 Application events

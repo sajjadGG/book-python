@@ -20,6 +20,7 @@ lxml
 # FastAPI
 fastapi
 pydantic
+pydantic[email]
 sqlalchemy
 uvicorn[standard]
 passlib[bcrypt]

@@ -6,7 +6,8 @@ Rationale
 * Reactive System Traits
 * Reactive Systems
 
-... figure:: img/microservices-reactive.png
+.. figure:: img/microservices-reactive.png
+
 
 Responsive
 ----------

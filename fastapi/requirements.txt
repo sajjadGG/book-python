@@ -3,6 +3,7 @@ sphinx_rtd_theme
 
 fastapi
 pydantic
+pydantic[email]
 sqlalchemy
 uvicorn[standard]
 passlib[bcrypt]
