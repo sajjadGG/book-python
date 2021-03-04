@@ -49,6 +49,73 @@ Although the MIME formalism was designed mainly for SMTP, its content types are 
     --frontier--
 
 
+Html, xhtml, xml, html5
+-----------------------
+* HTML5 = html = living standard
+
+XML has
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <crew>
+        <astronaut firstname="Mark" lastname="Watney" />
+        <astronaut firstname="Melissa" lastname="Lewis" />
+        <astronaut>
+            <firstname>Mark</firstname>
+            <lastname>Watney</lastname>
+        </astronaut>
+    </crew>
+
+.. code-block:: xml
+
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        </head>
+        <body>
+            <h1>hello</h1>
+            <p>hello world</p>
+            <p>hello world</p>
+            <img src="..." />
+            <br />
+        </body>
+    <html>
+
+.. code-block:: html
+
+    <html>
+        <body>
+            <h1>hello</h1>
+            <p>hello world
+            <p>hello world
+            <img src="...">
+            <br>
+        </body>
+    </html>
+
+.. code-block:: html
+
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        </head>
+        <body>
+        </body>
+    </html>
+
+.. code-block:: html
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8" />
+        </head>
+        <body>
+        </body>
+    </html>
+
+
 Text Types
 ----------
 * ``text/plain``

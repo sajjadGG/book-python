@@ -1,6 +1,7 @@
 HTTP Protocol
 =============
 
+
 Rationale
 ---------
 * Request vs Response
