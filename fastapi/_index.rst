@@ -75,3 +75,14 @@ Auth
     auth/oauth2.rst
     auth/basic.rst
     auth/json-web-token.rst
+
+
+Microservices
+*************
+.. toctree::
+    :maxdepth: 1
+    :caption: Microservices
+
+    microservices/reactive.rst
+    microservices/architecture.rst
+    microservices/cloud.rst
