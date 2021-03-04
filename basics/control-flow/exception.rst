@@ -233,6 +233,7 @@ Assertion
 ---------
 * Raises ``AssertionError`` if argument is ``False``
 * Can have optional message
+* Running Python with the ``-O`` optimization flag disables assert statements
 
     >>> data = [1, 2, 3]
     >>> assert type(data) is list

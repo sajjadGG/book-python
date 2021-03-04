@@ -29,16 +29,15 @@ Rationale
 Operation
 ---------
 * ``app.get()``
-* get
-* post
-* put
-* delete
-* head
+* ``app.post()``
+* ``app.put()``
+* ``app.delete()``
+* ``app.head()``
 
 
 Path
 ----
-* ``'/'``
+* ``/`` - URI
 
 
 Path Operation Decorator

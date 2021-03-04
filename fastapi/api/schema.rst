@@ -18,3 +18,111 @@ Example
 ...     firstname: str
 ...     lastname: str
 ...     active: Optional[bool] = True
+
+
+Validation
+----------
+* Validators are "class methods", so the first argument value they receive is the Astronaut class, not an instance of Astronaut.
+* The second argument is always the field value to validate; it can be named as you please
+* Validators should either return the parsed value or raise a ValueError, TypeError, or AssertionError (assert statements may be used).
+* Validation is done in the order fields are defined
+
+>>> from string import ascii_uppercase
+>>> from typing import Optional, Union
+>>> from pydantic import BaseModel, root_validator, validator
+>>>
+>>>
+>>> class Astronaut(BaseModel):
+...     firstname: str
+...     lastname: str
+...     age: Optional[float] = None
+...
+...     @validator('firstname', 'lastname', allow_reuse=True)
+...     def is_capitalize(cls, value: str):
+...         uppercase = tuple(ascii_uppercase)
+...         if not value.startswith(uppercase):
+...             raise ValueError('Must starts with uppercase letter')
+...         return value
+...
+...     @validator('age', allow_reuse=True)
+...     def age_in_range(cls, value: float):
+...         if 0 < value < 130:
+...             return value
+...         else:
+...             raise ValueError('Age must be in range from 0 to 130')
+...
+...     @validator('*', allow_reuse=True)
+...     def not_empty(cls, value: Union[str, Optional[float]]):
+...         if type(value) is str and value == '':
+...             raise ValueError('Invalid field value')
+...         return value
+...
+...     @root_validator(pre=True, allow_reuse=True)
+...     def check_names_differs(cls, values: dict):
+...         firstname = values.get('firstname')
+...         lastname = values.get('lastname')
+...
+...         if firstname is None or lastname is None:
+...             raise ValueError('fields firstname and lastname are not optional')
+...         if firstname == lastname:
+...             raise ValueError('firstname and lastname cannot be the same')
+...         else:
+...             return values
+>>>
+>>>
+>>> Astronaut(firstname='Mark', lastname='Watney')
+Astronaut(firstname='Mark', lastname='Watney', age=None)
+>>>
+>>> Astronaut(firstname='Mark', lastname='Watney', age=10)
+Astronaut(firstname='Mark', lastname='Watney', age=10.0)
+>>>
+>>> Astronaut(firstname='Mark', lastname='Watney', age=-1)
+Traceback (most recent call last):
+pydantic.error_wrappers.ValidationError: 1 validation error for Astronaut
+age
+  Age must be in range from 0 to 130 (type=value_error)
+>>>
+>>> Astronaut(firstname='Mark', lastname='Mark', age=1)
+Traceback (most recent call last):
+pydantic.error_wrappers.ValidationError: 1 validation error for Astronaut
+__root__
+  firstname and lastname cannot be the same (type=value_error)
+>>>
+>>> Astronaut(firstname='mark', lastname='watney', age=-1)
+Traceback (most recent call last):
+pydantic.error_wrappers.ValidationError: 3 validation errors for Astronaut
+firstname
+  Must starts with uppercase letter (type=value_error)
+lastname
+  Must starts with uppercase letter (type=value_error)
+age
+  Age must be in range from 0 to 130 (type=value_error)
+
+>>> from datetime import datetime
+>>> from pydantic import BaseModel, validator
+>>>
+>>>
+>>> class PastDate(BaseModel):
+...     dt: datetime = None
+...
+...     @validator('dt', pre=True, always=True, allow_reuse=True)
+...     def past_timestamp(cls, value):
+...         if datetime.fromisoformat(value) >= datetime.now():
+...             raise ValueError('Timestamp is not in the past')
+...         return value
+>>>
+>>> print(PastDate(dt='1969-07-21T02:56:15'))
+dt=datetime.datetime(1969, 7, 21, 2, 56, 15)
+>>>
+>>> print(PastDate(dt='2969-07-21T02:56:15'))
+Traceback (most recent call last):
+pydantic.error_wrappers.ValidationError: 1 validation error for PastDate
+timestamp
+  Timestamp is not in the past (type=value_error)
+
+
+Assignments
+-----------
+.. literalinclude:: assignments/fastapi_schema_a.py
+    :caption: :download:`Solution <assignments/fastapi_schema_a.py>`
+    :end-before: # Solution

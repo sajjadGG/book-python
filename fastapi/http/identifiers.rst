@@ -52,7 +52,7 @@ A Uniform Resource Name (URN) is a Uniform Resource Identifier (URI) that uses t
 
 Examples:
 
-    * ``urn:isbn:0451450523`` - The 1968 book The Last Unicorn, identified by its book number.
+    * ``urn:isbn:9788395718625`` - Python3: from None to Machine Learning book, identified by its book number.
     * ``urn:ISSN:0167-6423`` - The scientific journal Science of Computer Programming, identified by its serial number.
     * ``urn:uuid:6e8bc430-9c3a-11d9-9669-0800200c9a66`` - A version 1 UUID.
 
