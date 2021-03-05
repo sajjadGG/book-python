@@ -33,20 +33,20 @@ Verify
 ------
 .. code-block:: console
 
-$ curl -X GET http://localhost:8000/blog
-{"detail":"Not authenticated"}
+    $ curl -X GET http://localhost:8000/blog
+    {"detail":"Not authenticated"}
 
-$ curl -X GET http://localhost:8000/login
-{"detail":"Method Not Allowed"}
+    $ curl -X GET http://localhost:8000/login
+    {"detail":"Method Not Allowed"}
 
-$ curl -X POST http://localhost:8000/login -d 'username=admin&password=admin'
-{"detail":"Invalid credentials"}
+    $ curl -X POST http://localhost:8000/login -d 'username=admin&password=admin'
+    {"detail":"Invalid credentials"}
 
-$ curl -X POST http://localhost:8000/login -d 'username=mwatney&password=MyVoiceIsMyPassword'
-{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtd2F0bmV5IiwiZXhwIjoxNjE0MTM1MDE4fQ.bbbXexg1lOLENxb-gAoU5xGLrk_VdcB4Aw9_cezEN0w","token_type":"bearer"}
+    $ curl -X POST http://localhost:8000/login -d 'username=mwatney&password=MyVoiceIsMyPassword'
+    {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtd2F0bmV5IiwiZXhwIjoxNjE0MTM1MDE4fQ.bbbXexg1lOLENxb-gAoU5xGLrk_VdcB4Aw9_cezEN0w","token_type":"bearer"}
 
-$ curl -X GET http://localhost:8000/blog
-{"detail":"Not authenticated"}
+    $ curl -X GET http://localhost:8000/blog
+    {"detail":"Not authenticated"}
 
-$ curl -X GET http://localhost:8000/blog -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtd2F0bmV5IiwiZXhwIjoxNjE0MTM1MDE4fQ.bbbXexg1lOLENxb-gAoU5xGLrk_VdcB4Aw9_cezEN0w'
-[{"title":"My Title","body":"My Content","published":true,"creator":{"username":"mwatney","email":"mwatney@nasa.gov"}}]
+    $ curl -X GET http://localhost:8000/blog -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtd2F0bmV5IiwiZXhwIjoxNjE0MTM1MDE4fQ.bbbXexg1lOLENxb-gAoU5xGLrk_VdcB4Aw9_cezEN0w'
+    [{"title":"My Title","body":"My Content","published":true,"creator":{"username":"mwatney","email":"mwatney@nasa.gov"}}]

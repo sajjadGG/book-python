@@ -83,6 +83,15 @@ Auth
     auth/json-web-token.rst
 
 
+DevOps
+******
+.. toctree::
+    :maxdepth: 1
+    :caption: DevOps
+
+    devops/docker.rst
+
+
 Microservices
 *************
 .. toctree::
