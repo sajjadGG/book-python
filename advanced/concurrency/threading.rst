@@ -259,8 +259,3 @@ Assignments
 .. literalinclude:: assignments/concurrency_threading_a.py
     :caption: :download:`Solution <assignments/concurrency_threading_a.py>`
     :end-before: # Solution
-
-
-References
-----------
-.. [#Hettinger2017] Hettinger, Raymond. Keynote on Concurrency. PyBay 2017. https://youtu.be/9zinZmE3Ogk?t=1243

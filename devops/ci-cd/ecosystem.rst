@@ -125,7 +125,7 @@ Continuous Integration / Delivery
 Quality Assurance
 -----------------
 * SonarQube
-* SonarLint
+* SonarLint [#sonarlintorg]_
 * SonarScanner
 * SonarCloud
 * Coverage

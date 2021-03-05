@@ -1,6 +1,7 @@
 Schema
 ======
 
+
 Rationale
 ---------
 * Schema - also known as Model
@@ -119,6 +120,7 @@ Traceback (most recent call last):
 pydantic.error_wrappers.ValidationError: 1 validation error for PastDate
 timestamp
   Timestamp is not in the past (type=value_error)
+
 
 Use Case
 --------
