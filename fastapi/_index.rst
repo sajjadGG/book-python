@@ -53,7 +53,13 @@ API
     api/get.rst
     api/post.rst
     api/status.rst
-
+    api/cookies.rst
+    api/headers.rst
+    api/files.rst
+    api/middleware.rst
+    api/websockets.rst
+    api/test.rst
+    api/background-tasks.rst
 
 Database
 ********
