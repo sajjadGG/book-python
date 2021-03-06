@@ -5,28 +5,36 @@
 * Time: 3 min
 
 English:
-    1. Ask user to input temperature in Kelvins
-    2. Try converting temperature to `float`
-    3. If unsuccessful, then print 'Invalid temperature' and exit with status code 1
+    1. Check value passed to a function
+    2. Try converting it to `float`
+    3. If unsuccessful, then print 'Invalid value' and exit with status code 1
+    4. Write solution inside `check` function
+    5. Mind the indentation level
 
 Polish:
-    1. Poproś użytkownika o wprowadzenie temperatury w Kelwinach
-    2. Spróbuj skonwertować temperaturę do `float`
-    3. Jeżeli się nie uda to wypisz 'Invalid temperature' i wyjdź z kodem błędu 1
+    1. Sprawdź wartość przekazaną do funkcji
+    2. Spróbuj skonwertować ją do `float`
+    3. Jeżeli się nie uda to wypisz 'Invalid value' i wyjdź z kodem błędu 1
+    4. Rozwiązanie zapisz wewnątrz funkcji `check`
+    5. Zwróć uwagę na poziom wcięć
 
 Tests:
-    TODO: Doctests
-    TODO: Input Stub
+    >>> check('1')
+    >>> check('1.0')
+    >>> check('1,0')
+    Traceback (most recent call last):
+    SystemExit: 1
 """
 
 
 # Given
-temperature = input('Type temperature: ')
+def check(value):
+    ...
 
 
 # Solution
-try:
-    float(temperature)
-except ValueError:
-    print('Invalid temperature')
-    exit(1)
+def check(value):
+    try:
+        float(value)
+    except ValueError:
+        exit(1)

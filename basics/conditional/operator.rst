@@ -128,6 +128,21 @@ False
 True
 
 
+Problems
+--------
+>>> 1, 2 == (1, 2)
+(1, False)
+>>> 1
+1
+>>> 2 == (1, 2)
+False
+>>> 1,     2==(1,2)
+(1, False)
+
+>>> (1, 2) == 1, 2
+(False, 2)
+
+
 Examples
 --------
 >>> import sys

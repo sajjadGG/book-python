@@ -5,31 +5,31 @@
 * Time: 3 min
 
 English:
-    1. Ask user to input temperature in Kelvins
-    2. User will always type proper `int` or `float`
-    3. Raise `ValueError` exception if temperature is less than 0
+    1. Check value passed to a function
+    2. If value is below zero, raise `ValueError`
+    3. Write solution inside `check` function
+    4. Mind the indentation level
 
 Polish:
-    1. Poproś użytkownika o wprowadzenie temperatury w Kelwinach
-    2. Użytkownik zawsze poda poprawne `int` lub `float`
-    3. Podnieś wyjątek `ValueError` jeżeli temperatura jest poniżej 0
+    1. Sprawdź wartość przekazaną do funkcji
+    2. Jeżeli wartość jest poniżej zera, podnieś wyjątek `ValueError`
+    3. Rozwiązanie zapisz wewnątrz funkcji `check`
+    4. Zwróć uwagę na poziom wcięć
 
 Tests:
-    TODO: Doctests
-    TODO: Input Stub
-    >>> type(temperature)
-    <class 'float'>
-    >>> import sys
-    >>> sys.modules[__name__]
+    >>> check(1)
+    >>> check(-1)
+    Traceback (most recent call last):
+    ValueError
 """
 
 
 # Given
-# temperature = input('Type temperature: ')
-temperature = 10
-temperature = float(temperature)
+def check(value):
+    ...
 
 
 # Solution
-if temperature < 0:
-    raise ValueError
+def check(value):
+    if value < 0:
+        raise ValueError

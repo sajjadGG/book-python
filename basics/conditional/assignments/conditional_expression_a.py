@@ -63,7 +63,11 @@ Tests:
     >>> assert blood_pressure == '140/89' and result == ['Hypertension stage 2'] or True
     >>> assert blood_pressure == '141/90' and result == ['Hypertension stage 2'] or True
     >>> assert blood_pressure == '141/91' and result == ['Hypertension stage 2'] or True
-    >>> assert blood_pressure == '180/120' and result == ['Hypertension stage 2', 'Hypertensive Crisis'] or True
+    >>> assert blood_pressure == '180/120' and result == ['Hypertension stage 2', 'Hypertensive Crisis'] or False
+    >>> assert blood_pressure == '181/121' and result == ['Hypertension stage 2', 'Hypertensive Crisis'] or True
+    >>> assert blood_pressure == '181/50' and result == ['Hypertension stage 2', 'Hypertensive Crisis'] or True
+    >>> assert blood_pressure == '100/121' and result == ['Hypertension stage 2', 'Hypertensive Crisis'] or True
+    >>> assert blood_pressure == '181/121' and result == ['Hypertension stage 2', 'Hypertensive Crisis'] or True
 """
 
 

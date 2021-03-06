@@ -5,26 +5,35 @@
 * Time: 2 min
 
 English:
-    1. Ask user to input age
-    2. If user has less than 18 years
-    3. Raise an exception `PermissionError` with message "Adults only"
+    1. Check age passed to a function
+    2. If value is below AGE,
+       raise `PermissionError` with message "Adults only"
+    3. Write solution inside `check` function
+    4. Mind the indentation level
 
 Polish:
-    1. Poproś użytkownika o wprowadzenie wieku
-    2. Jeżeli użytkownik ma mniej niż 18 lat
-    3. Wyrzuć wyjątek `PermissionError` z komunikatem "Adults only"
+    1. Sprawdź wiek przekazany do funkcji
+    2. Jeżeli wartość jest poniżej AGE,
+       podnieś wyjątek `PermissionError` z komunikatem "Adults only"
+    3. Rozwiązanie zapisz wewnątrz funkcji `check`
+    4. Zwróć uwagę na poziom wcięć
 
 Tests:
-    TODO: Doctests
-    TODO: Input Stub
+    >>> check(1)
+    >>> check(-1)
+    Traceback (most recent call last):
+    ValueError
 """
-
 
 # Given
 ADULT = 18
-age = input('Type age: ')
+
+
+def check(age):
+    ...
 
 
 # Solution
-if float(age) < ADULT:
-    raise PermissionError('Adults only')
+def check(age):
+    if float(age) < ADULT:
+        raise PermissionError('Adults only')
