@@ -31,12 +31,12 @@ Tests:
 a = ... is None
 b = ... is not None
 c = bool(bool(...) is not bool(...)) == False
-d = (bool(bool(...) is not bool(...)) == False and bool(...))
+d = bool(bool(...) is not bool(...)) == False and bool(...)
 e = (bool(bool(...) is not bool(...)) == False and bool(...)) and (... is not None)
 
 # Solution
 a = None is None
 b = None is not None
 c = bool(bool(None) is not bool(None)) == False
-d = (bool(bool(None) is not bool(None)) == False and bool(None))
+d = bool(bool(None) is not bool(None)) == False and bool(None)
 e = (bool(bool(None) is not bool(None)) == False and bool(None)) and (None is not None)

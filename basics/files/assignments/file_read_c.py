@@ -79,7 +79,7 @@ with open(FILE) as file:
     header = file.readline().strip().split(',')
 
     for line in file:
-        *X,y = line.strip().split(',')
+        *X, y = line.strip().split(',')
         X = [float(x) for x in X]
         features.append(tuple(X))
         labels.append(y)

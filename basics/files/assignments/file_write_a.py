@@ -34,4 +34,4 @@ DATA = 'hello world'
 
 # Solution
 with open(FILE, mode='wt') as file:
-    file.write(DATA+'\n')
+    file.write(DATA + '\n')

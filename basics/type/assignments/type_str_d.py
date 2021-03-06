@@ -25,9 +25,4 @@ Tests:
 DATA = 'UL. jana \tTWArdoWskIEGO 3'
 
 # Solution
-result = (
-        DATA.replace('UL. ', '')
-            .replace('\t', '')
-            .title()
-            .replace('3', 'III')
-)
+result = DATA.replace('UL. ', '').replace('\t', '').title().replace('3', 'III')

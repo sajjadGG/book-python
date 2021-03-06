@@ -49,6 +49,7 @@ Tests:
 """
 
 # Given
+# fmt: off
 m = 1
 Pa = 1
 hPa = 100 * Pa
@@ -58,6 +59,7 @@ pO2 = O2 / 100 * ata
 
 gradient = ...  # 11.3 Pascals per meter
 altitude = ...  # Pressure at sea level minis oxygen partial pressure divided by gradient
+# fmt: on
 
 # Solution
 pO2 = O2 / 100 * ata

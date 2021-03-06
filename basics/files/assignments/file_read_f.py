@@ -196,15 +196,17 @@ for user in result_passwd:
     if passwd['uid'] < 1000:
         continue
 
-    result.append({
-        'username': user,
-        'uid': passwd['uid'],
-        'gid': passwd['gid'],
-        'home': passwd['home'],
-        'shell': passwd['shell'],
-        'algorithm': shadow['algorithm'],
-        'password': shadow['password'],
-        'groups': groups,
-        'last_changed': shadow['last_change'],
-        'locked': shadow['locked'],
-    })
+    result.append(
+        {
+            'username': user,
+            'uid': passwd['uid'],
+            'gid': passwd['gid'],
+            'home': passwd['home'],
+            'shell': passwd['shell'],
+            'algorithm': shadow['algorithm'],
+            'password': shadow['password'],
+            'groups': groups,
+            'last_changed': shadow['last_change'],
+            'locked': shadow['locked'],
+        }
+    )

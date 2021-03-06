@@ -80,7 +80,7 @@ DATA = {
 
 
 # Solution
-data = {str(k):v for k,v in DATA.items()}
+data = {str(k): v for k, v in DATA.items()}
 data['-'] = 'minus'
 data['.'] = 'and'
 

@@ -42,13 +42,13 @@ def celsius_to_kelvin(degrees):
         return 273.15 + degrees
 
     if type(degrees) is tuple:
-        return tuple(x+273.15 for x in degrees)
+        return tuple(x + 273.15 for x in degrees)
 
     if type(degrees) is list:
-        return list(x+273.15 for x in degrees)
+        return list(x + 273.15 for x in degrees)
 
     if type(degrees) is set:
-        return set(x+273.15 for x in degrees)
+        return set(x + 273.15 for x in degrees)
 
     raise TypeError('Invalid argument')
 

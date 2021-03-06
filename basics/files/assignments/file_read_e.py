@@ -92,11 +92,13 @@ with open(FILE) as file:
                 break
 
         if not found:
+            # fmt: off
             result.append({
                 'ip': ip,
                 'hostnames': list(hostnames),
                 'protocol': 'IPv4' if '.' in ip else 'IPv6'
             })
+            # fmt: on
 
 
 ## Alternative solution
@@ -110,4 +112,3 @@ with open(FILE) as file:
 #         'protocol': 'IPv4' if '.' in ip else 'IPv6',
 #         'ip': ip,
 #     })
-

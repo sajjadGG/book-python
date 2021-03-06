@@ -62,9 +62,7 @@ Tests:
 
 # Given
 class Iris:
-    def __init__(self, sepal_length, sepal_width,
-                 petal_length, petal_width, species):
-
+    def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
         self.sepal_length = sepal_length
         self.sepal_width = sepal_width
         self.petal_length = petal_length
@@ -74,9 +72,7 @@ class Iris:
 
 # Solution
 class Iris:
-    def __init__(self, sepal_length, sepal_width,
-                 petal_length, petal_width, species):
-
+    def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
         self.sepal_length = sepal_length
         self.sepal_width = sepal_width
         self.petal_length = petal_length
@@ -84,7 +80,7 @@ class Iris:
         self.species = species
 
     def get_numeric_values(self):
-        return [v for k,v in self.__dict__.items() if isinstance(v, float)]
+        return [v for k, v in self.__dict__.items() if isinstance(v, float)]
 
     def total(self):
         return sum(self.get_numeric_values())
@@ -97,4 +93,3 @@ class Iris:
 
     def show(self):
         return f'total={self.total():.2f} mean={self.mean():.2f} {self.species}'
-

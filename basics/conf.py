@@ -68,11 +68,17 @@ source_suffix = {
 }
 
 if 'recommonmark' in extensions:
+
     def setup(app):
         from recommonmark.transform import AutoStructify
-        app.add_config_value('recommonmark_config', {
+
+        app.add_config_value(
+            'recommonmark_config',
+            {
                 'enable_eval_rst': True,
-        }, True)
+            },
+            True,
+        )
         app.add_transform(AutoStructify)
 
 
@@ -83,7 +89,8 @@ if 'sphinx.ext.mathjax' in extensions:
     mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
     mathjax_config = {
         'extensions': ['tex2jax.js'],
-        'jax': ['input/TeX', 'output/HTML-CSS']}
+        'jax': ['input/TeX', 'output/HTML-CSS'],
+    }
 
 
 if 'nbsphinx' in extensions:
@@ -95,13 +102,16 @@ if 'nbsphinx' in extensions:
     nbsphinx_timeout = 5
     nbsphinx_execute_arguments = [
         "--InlineBackend.figure_formats={'svg'}",  # 'pdf'
-        "--InlineBackend.rc={'figure.dpi': 96}"]
-    suppress_warnings += ['nbsphinx',
-                          'nbsphinx.localfile',
-                          'nbsphinx.gallery',
-                          'nbsphinx.thumbnail',
-                          'nbsphinx.notebooktitle',
-                          'nbsphinx.ipywidgets']
+        "--InlineBackend.rc={'figure.dpi': 96}",
+    ]
+    suppress_warnings += [
+        'nbsphinx',
+        'nbsphinx.localfile',
+        'nbsphinx.gallery',
+        'nbsphinx.thumbnail',
+        'nbsphinx.notebooktitle',
+        'nbsphinx.ipywidgets',
+    ]
 
 
 if 'sphinxcontrib.bibtex' in extensions:
@@ -111,11 +121,17 @@ if 'sphinxcontrib.bibtex' in extensions:
 
 
 if 'sphinx.ext.extlinks' in extensions:
-    extlinks = {'isbn': ('https://e-isbn.pl/IsbnWeb/start/search.html?szukaj_fraza=%s', 'ISBN: ')}
+    extlinks = {
+        'isbn': (
+            'https://e-isbn.pl/IsbnWeb/start/search.html?szukaj_fraza=%s',
+            'ISBN: ',
+        )
+    }
 
 
 if 'sphinx.ext.doctest' in extensions:
     import doctest
+
     trim_doctest_flags = False
     # doctest_global_cleanup = """"""
     # doctest_default_flags = doctest.ELLIPSIS | doctest.IGNORE_EXCEPTION_DETAIL | doctest.NORMALIZE_WHITESPACE
@@ -150,7 +166,8 @@ numfig_format = {
     'section': 'Section %s.',
     'figure': 'Figure %s.',
     'table': 'Table %s.',
-    'code-block': 'Code %s.'}
+    'code-block': 'Code %s.',
+}
 
 master_doc = 'index'
 templates_path = ['_templates']
@@ -160,7 +177,9 @@ autosectionlabel_maxdepth = 4
 autosectionlabel_prefix_document = True
 
 project_slug = re.sub(r'[\W]+', '', project)
-sha1 = subprocess.run('git log -1 --format="%h"', stdout=subprocess.PIPE, shell=True, encoding='utf-8').stdout.strip()
+sha1 = subprocess.run(
+    'git log -1 --format="%h"', stdout=subprocess.PIPE, shell=True, encoding='utf-8'
+).stdout.strip()
 year = date.today().year
 today = date.today().strftime('%Y-%m-%d')
 version = f'#{sha1}, {today}'
@@ -214,44 +233,48 @@ elif os.path.isdir('../_static'):
     html_static_path += ['../_static']
 
 if html_theme == 'sphinx_rtd_theme':
-    html_context.update({
-        'css_files': [
-                '_static/css/dark.css',
-                '_static/css/print.css'],
-        'script_files': [
+    html_context.update(
+        {
+            'css_files': ['_static/css/dark.css', '_static/css/print.css'],
+            'script_files': [
                 '_static/js/jquery.min.js',
                 '_static/js/assignment-numbers.js',
                 '_static/js/menu-search.js',
                 '_static/js/copybutton.js',
-                mathjax_path]})
+                mathjax_path,
+            ],
+        }
+    )
 
 if 'html_menu_autohide' in globals() and html_menu_autohide is True:
     html_context['script_files'].append('_static/js/menu-autohide.js')
 
 if html_theme == 'thesis':
-    html_context.update({
-        'css_files': ['_static/theme-overrides.css'],
-        'script_files': [mathjax_path]})
+    html_context.update(
+        {'css_files': ['_static/theme-overrides.css'], 'script_files': [mathjax_path]}
+    )
 
-latex_documents = [('index', f'{project_slug}.tex', project, author, latex_documentclass)]
+latex_documents = [
+    ('index', f'{project_slug}.tex', project, author, latex_documentclass)
+]
 latex_elements = {
     'papersize': 'a4paper',
     'pointsize': '10pt',
     'figure_align': 'H',  # 'htbp',
-
     # Fix for: LaTeX Backend Fails with Citations In Figure Captions
     'preamble': r"""
         \usepackage{float}
         \usepackage{etoolbox}
         \AtBeginEnvironment{figure}{\renewcommand{\phantomsection}{}}
-    """}
+    """,
+}
 
 epub_title = project
 epub_author = author
 epub_publisher = author
 epub_copyright = copyright
 epub_exclude_files = ['search.html']
-man_pages = [
-    (master_doc, project_slug, project, [author], 1)]
+man_pages = [(master_doc, project_slug, project, [author], 1)]
 texinfo_documents = [
-    (master_doc, project_slug, project, author, project, '', 'Miscellaneous')]
+    (master_doc, project_slug, project, author, project, '', 'Miscellaneous')
+]

@@ -53,4 +53,3 @@ numbers = filter(odd, numbers)
 numbers = map(cube, numbers)
 numbers = list(numbers)
 result = sum(numbers) / len(numbers)
-

@@ -60,7 +60,4 @@ class SpaceAgency:
 
 watney = Astronaut('Watney', 'USA', '1969-07-21')
 
-nasa = SpaceAgency(
-    name='NASA',
-    country='USA',
-    date='1958-07-29')
+nasa = SpaceAgency(name='NASA', country='USA', date='1958-07-29')

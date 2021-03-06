@@ -52,7 +52,8 @@ NUMBER = {
     '8': 'eight',
     '9': 'nine',
     '.': 'and',
-    '-': 'minus'}
+    '-': 'minus',
+}
 
 
 def number_to_str(number):

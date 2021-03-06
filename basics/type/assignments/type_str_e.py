@@ -55,7 +55,9 @@ g = 'ULICA. JANA III SOBIeskieGO'
 h = ' Jana 3 Sobieskiego  '
 i = 'Jana III\tSobieskiego '
 
+# fmt: off
 example = example.upper().replace('UL. ', '').replace('\t', '').strip().title().replace('3', 'III')
+# fmt: on
 
 # Solution
 a = a.upper().replace('UL', '').strip().title().replace('Iii', 'III')

@@ -24,7 +24,11 @@ run('clear')
 cmd = split(f'sphinx-build -a -E -j auto --color -b {FORMAT} {sourcedir} {outdir}')
 run(cmd)
 
-last = run('git log -1 --format="%ad" --date=iso', shell=True, capture_output=True).stdout.strip().decode()
+last = (
+    run('git log -1 --format="%ad" --date=iso', shell=True, capture_output=True)
+    .stdout.strip()
+    .decode()
+)
 last = datetime.strptime(last, '%Y-%m-%d %H:%M:%S %z')
 delta = datetime.now(tz=timezone.utc) - last
 since = round(delta.total_seconds() / MINUTE)
