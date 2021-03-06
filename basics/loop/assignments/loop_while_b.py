@@ -30,11 +30,9 @@ Tests:
     'hello'
 """
 
-
 # Given
 DATA = ['h', 'e', 'l', 'l', 'o']
 result: str = ''
-
 
 # Solution
 i = 0

@@ -10,7 +10,8 @@ English:
     3. Convert `MONTH` into dict:
         a. Keys: month number
         b. Values: month name
-    4. Month number must be two letter string (zero padded) - `f'{number:02}'`
+    4. Month number must be two letter string
+       (zero padded) - `f'{number:02}'`
     5. Compare result with "Tests" section (see below)
 
 Polish:
@@ -19,7 +20,8 @@ Polish:
     3. Przekonwertuj `MONTH` w słownik:
         a. klucz: numer miesiąca
         b. wartość: nazwa miesiąca
-    4. Numer miesiąca ma być dwuznakowym stringiem (wypełnij zerem) - `f'{number:02}'`
+    4. Numer miesiąca ma być dwuznakowym stringiem
+       (wypełnij zerem) - `f'{number:02}'`
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
@@ -49,14 +51,23 @@ Tests:
      '12': 'December'}
 """
 
-
 # Given
-MONTHS = ['January', 'February', 'March', 'April',
-          'May', 'June', 'July', 'August',
-          'September', 'October', 'November', 'December']
+MONTHS = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+]
 
 result: dict
 
-
 # Solution
-result = {f'{k:02}':v for k,v in enumerate(MONTHS, start=1)}
+result = {f'{k:02}': v for k, v in enumerate(MONTHS, start=1)}

@@ -15,13 +15,14 @@ English:
         b. sentences
         c. words
         d. letters
-        e. characters (including spaces inside sentences, but without comas `,`)
+        e. characters (including spaces inside sentences, but not comas `,`)
         f. comas (`,`)
     7. Compare results with "Tests" section below
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Dany jest tekst przemówienia "Moon Speech" wygłoszonej przez John F. Kennedy'ego [1]
+    2. Dany jest tekst przemówienia "Moon Speech" wygłoszonej
+       przez John F. Kennedy'ego [1]
     3. Zdania oddzielone są kropkami (`.`)
     4. Każde zdanie oczyść z białych znaków na początku i końcu
     5. Słowa oddzielone są spacjami
@@ -35,7 +36,8 @@ Polish:
     7. Porównaj wynik z sekcją "Tests" poniżej
 
 References:
-    [1] Kennedy, J.F. Moon Speech - Rice Stadium. 1962. URL: http://er.jsc.nasa.gov/seh/ricetalk.htm
+    [1] Kennedy, J.F. Moon Speech - Rice Stadium. 1962.
+        Accessed date: 2021-03-06. URL: http://er.jsc.nasa.gov/seh/ricetalk.htm
 
 Tests:
     >>> type(result)
@@ -48,7 +50,6 @@ Tests:
     'commas': 1,
     'adverbs': 0}
 """
-
 
 # Given
 TEXT = """
@@ -70,7 +71,6 @@ result: dict = {
     'adverbs': 0,
 }
 
-
 # Solution
 for sentence in TEXT.split('.'):
     sentence = sentence.strip()
@@ -88,5 +88,3 @@ for sentence in TEXT.split('.'):
     for word in words:
         if word.endswith('ly'):
             result['adverbs'] += 1
-
-

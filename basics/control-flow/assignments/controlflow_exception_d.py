@@ -1,39 +1,44 @@
 """
-* Assignment: ControlFlow Exception Finally
+* Assignment: ControlFlow Exception Except
 * Complexity: easy
-* Lines of code: 2 lines
-* Time: 2 min
+* Lines of code: 4 lines
+* Time: 3 min
 
 English:
-    1. Check age passed to a function
-    2. If value is below AGE,
-       raise `PermissionError` with message "Adults only"
-    3. Write solution inside `check` function
-    4. Mind the indentation level
+    1. Use data from "Given" section (see below)
+    2. Convert value passed to the `check` function as a `float`
+        a. If conversion fails, exit program with status code 1
+    3. Non functional Requirements
+        a. Write solution inside `check` function
+        b. Mind the indentation level
+    4. Compare result with "Tests" section (see below)
 
 Polish:
-    1. Sprawdź wiek przekazany do funkcji
-    2. Jeżeli wartość jest poniżej AGE,
-       podnieś wyjątek `PermissionError` z komunikatem "Adults only"
-    3. Rozwiązanie zapisz wewnątrz funkcji `check`
-    4. Zwróć uwagę na poziom wcięć
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Przekonwertuj wartośc przekazaną do funckji `check` jako `float`
+        a. Jeżeli konwersja się nie powiedzie, zakończ program ze statusem 1
+    3. Non functional Requirements
+        a. Rozwiązanie zapisz wewnątrz funkcji `check`
+        b. Zwróć uwagę na poziom wcięć
+    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> check(1)
-    >>> check(-1)
+    >>> check('1')
+    >>> check('1.0')
+    >>> check('1,0')
     Traceback (most recent call last):
-    ValueError
+    SystemExit: 1
 """
 
+
 # Given
-ADULT = 18
-
-
-def check(age):
+def check(value):
     ...
 
 
 # Solution
-def check(age):
-    if float(age) < ADULT:
-        raise PermissionError('Adults only')
+def check(value):
+    try:
+        float(value)
+    except ValueError:
+        exit(1)

@@ -6,6 +6,7 @@
 
 English:
     1. Ask user to input angle in degrees
+    2. Validate value passed to a `check` function
     2. Define custom exception `NegativeKelvin`
     3. If input temperature is lower than 0, raise `NegativeKelvin`
 
@@ -26,10 +27,9 @@ Tests:
 TODO: Input Stub
 """
 
-
 # Given
-temperature = input('Type temperature: ')
-temperature = float(temperature)
+def check(value):
+    ...
 
 
 # Solution
@@ -37,5 +37,6 @@ class NegativeKelvin(Exception):
     pass
 
 
-if temperature < 0:
-    raise NegativeKelvin
+def check(value):
+    if value < 0:
+        raise NegativeKelvin

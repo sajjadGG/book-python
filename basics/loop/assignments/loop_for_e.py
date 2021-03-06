@@ -27,16 +27,22 @@ Tests:
     'zazolc gesla jazn'
 """
 
-
 # Given
-PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
-      'ł': 'l', 'ń': 'n', 'ó': 'o',
-      'ś': 's', 'ż': 'z', 'ź': 'z'}
+PL = {
+    'ą': 'a',
+    'ć': 'c',
+    'ę': 'e',
+    'ł': 'l',
+    'ń': 'n',
+    'ó': 'o',
+    'ś': 's',
+    'ż': 'z',
+    'ź': 'z',
+}
 
 DATA = 'zażółć gęślą jaźń'
 
 result: str = ''
-
 
 # Solution
 for letter in DATA:

@@ -7,6 +7,28 @@ Loop For
         pass
 
 
+Rationale
+---------
+>>> data = ['a', 'b', 'c']
+>>> i = 0
+>>>
+>>> while i < len(data):
+...     x = data[i]
+...     print(x)
+...     i += 1
+a
+b
+c
+
+>>> data = ['a', 'b', 'c']
+>>>
+>>> for x in data:
+...     print(x)
+a
+b
+c
+
+
 Syntax
 ------
 * ``ITERABLE`` must implement ``iterator`` interface
@@ -54,12 +76,6 @@ Convention
     * ``i`` - for loop counter
     * ``_`` - if value is not used
 
->>> for digit in [1, 2, 3]:
-...     print(digit)
-1
-2
-3
-
 >>> for x in [1, 2, 3]:
 ...     print(x)
 1
@@ -88,14 +104,38 @@ Iterating Sequences
     * ``frozenset``
     * ``dict``
 
->>> for letter in 'setosa':
+>>> DATA = 'NASA'
+>>>
+>>> for letter in DATA:
 ...     print(letter)
-s
-e
-t
-o
-s
+N
+A
+S
+A
+
+>>> DATA = [1, 2, 3]
+>>>
+>>> for digit in DATA:
+...     print(digit)
+1
+2
+3
+
+>>> DATA = ['a', 'b', 'c']
+>>>
+>>> for letter in DATA:
+...     print(litera)
 a
+b
+c
+
+>>> CREW = ['Mark Watney', 'Melissa Lewis', 'Rick Martinez']
+>>>
+>>> for astronaut in CREW:
+...     print(astronaut)
+Mark Watney
+Melissa Lewis
+Rick Martinez
 
 >>> DATA = [5.1, 3.5, 1.4, 0.2, 'setosa']
 >>>
@@ -148,8 +188,92 @@ Loops with ``range``:
 10
 
 
+Note to the Programmers of Other Languages
+------------------------------------------
+There are several types of loops in general:
+
+    * for
+    * foreach
+    * while
+    * do while
+    * until
+
+But in Python we have only two:
+
+    * while
+    * for
+
+This does not takes into consideration comprehensions and generator
+expressions, which will be covered in next chapters.
+
+Note, that Python ``for`` is not the same as ``for`` in other languages,
+such as C, C++, C#, JAVA, Java Script. Python ``for`` loop is more like
+``foreach``. Check the following example in JAVA:
+
+.. code-block:: java
+
+    char[] DATA = {'a', 'b', 'c'};
+
+    forEach (var letter : DATA) {
+        System.out.println(letter);
+    }
+
+And this relates to Python regular ``for`` loop:
+
+>>> DATA = ['a', 'b', 'c']
+>>>
+>>> for letter in DATA:
+...     print(letter)
+
+Regular ``for`` loop in other languages looks like that (example in C++):
+
+.. code-block:: cpp
+
+    char DATA[] = {'a', 'b', 'c'}
+
+    for (int i = 0; i < std::size(DATA); i++) {
+       letter = data[i];
+       printf(letter);
+    }
+
+Python equivalent will be:
+
+>>> DATA = ['a', 'b', 'c']
+>>> i = 0
+>>>
+>>> while i < len(DATA):
+...     litera = DATA[i]
+...     print(litera)
+...     i += 1
+
+Yes, that's true, it is a ``while`` loop. This is due to the fact, that ``for``
+loop from other languages is more like a ``while`` loop in Python.
+
+Nevertheless, the very common bad practice is to do ``range(len())``:
+
+>>> data = ['a', 'b', 'c']
+>>>
+>>> for i in range(len(data)):
+...     letter = data[i]
+...     print(letter)
+a
+b
+c
+
+Note, how similar are those concepts. This is trying to take syntax from other
+languages and apply it to Python. ``range(len())`` is considered a bad practice
+and it will not work with generators. But it gives similar look-and-feel.
+
+Please remember:
+
+    * Python ``for`` is more like ``foreach`` in other languages.
+    * Python ``while`` is more like ``for`` in other languages.
+
+
 Nested Loops
 ------------
+You can have loop inside a loop:
+
 >>> for row in [1, 2, 3]:  # doctest: +NORMALIZE_WHITESPACE
 ...     print()
 ...

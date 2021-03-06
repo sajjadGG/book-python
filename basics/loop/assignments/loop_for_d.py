@@ -24,18 +24,20 @@ Tests:
     >>> assert type(result) is str
     >>> result.count('\\n')
     3
-    >>> result
-    'We choose to go to the Moon.\\nWe choose to go to the Moon in this decade and do the other things.\\nNot because they are easy, but because they are hard.\\n'
+    >>> result  # doctest: +NORMALIZE_WHITESPACE
+    'We choose to go to the Moon.\\nWe choose to go to the Moon in this decade
+    and do the other things.\\nNot because they are easy, but because they are
+    hard.\\n'
 """
 
-
 # Given
-DATA = ['We choose to go to the Moon.',
-        'We choose to go to the Moon in this decade and do the other things.',
-        'Not because they are easy, but because they are hard.']
+DATA = [
+    'We choose to go to the Moon.',
+    'We choose to go to the Moon in this decade and do the other things.',
+    'Not because they are easy, but because they are hard.',
+]
 
 result: str = ''
-
 
 # Solution
 for line in DATA:

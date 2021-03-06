@@ -28,15 +28,21 @@ Tests:
     'zazolc gesla jazn'
 """
 
-
 # Given
-PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
-      'ł': 'l', 'ń': 'n', 'ó': 'o',
-      'ś': 's', 'ż': 'z', 'ź': 'z'}
+PL = {
+    'ą': 'a',
+    'ć': 'c',
+    'ę': 'e',
+    'ł': 'l',
+    'ń': 'n',
+    'ó': 'o',
+    'ś': 's',
+    'ż': 'z',
+    'ź': 'z',
+}
 
 DATA = 'zażółć gęślą jaźń'
 result: str = ''
-
 
 # Solution
 i = 0
@@ -45,4 +51,3 @@ while i < len(DATA):
     letter = DATA[i]
     result += PL.get(letter, letter)
     i += 1
-

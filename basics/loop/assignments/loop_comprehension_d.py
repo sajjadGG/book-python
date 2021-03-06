@@ -14,7 +14,8 @@ English:
     3. In order to do so, calculate pivot point:
         a. length of `DATA` times given percent (60% = 0.6)
         b. remember, that slice indicies must be `int`, not `float`
-        c. for example: if dataset has 10 rows, then 6 rows will be for training, and 4 rows for test
+        c. for example: if dataset has 10 rows, then 6 rows will be for
+        training, and 4 rows for test
     4. Compare results with "Tests" section below
 
 Polish:
@@ -27,18 +28,35 @@ Polish:
     3. Aby to zrobić, wylicz punkt podziału:
         a. długość `DATA` razy zadany procent (60% = 0.6)
         b. pamiętaj, że indeksy slice muszą być `int` a nie `float`
-        c. na przykład: if zbiór danych ma 10 wierszy, to 6 wierszy będzie do treningu, a 4 do testów
+        c. na przykład: if zbiór danych ma 10 wierszy, to 6 wierszy będzie
+        do treningu, a 4 do testów
     4. Porównaj wynik z sekcją "Tests" poniżej
 
 Tests:
-    >>> assert type(features_train) is list
-    >>> assert type(features_test) is list
-    >>> assert type(labels_train) is list
-    >>> assert type(labels_test) is list
-    >>> assert all(type(x) is tuple for x in features_train), 'features_train: expected type list[tuple]'
-    >>> assert all(type(x) is tuple for x in features_test), 'features_test: expected type list[tuple]'
-    >>> assert all(type(x) is str for x in labels_train)
-    >>> assert all(type(x) is str for x in labels_test)
+    >>> assert type(features_train) is list, \
+    'make sure features_train is a list'
+
+    >>> assert type(features_test) is list, \
+    'make sure features_test is a list'
+
+    >>> assert type(labels_train) is list, \
+    'make sure labels_train is a list'
+
+    >>> assert type(labels_test) is list, \
+    'make sure labels_test is a list'
+
+    >>> assert all(type(x) is tuple for x in features_train), \
+    'all elements in features_train should be tuple'
+
+    >>> assert all(type(x) is tuple for x in features_test), \
+    'all elements in features_test should be tuple'
+
+    >>> assert all(type(x) is str for x in labels_train), \
+    'all elements in labels_train should be str'
+
+    >>> assert all(type(x) is str for x in labels_test), \
+    'all elements in labels_test should be str'
+
     >>> features_train  # doctest: +NORMALIZE_WHITESPACE
     [(5.8, 2.7, 5.1, 1.9),
      (5.1, 3.5, 1.4, 0.2),
@@ -46,36 +64,39 @@ Tests:
      (6.3, 2.9, 5.6, 1.8),
      (6.4, 3.2, 4.5, 1.5),
      (4.7, 3.2, 1.3, 0.2)]
+
     >>> features_test  # doctest: +NORMALIZE_WHITESPACE
     [(7.0, 3.2, 4.7, 1.4),
      (7.6, 3.0, 6.6, 2.1),
      (4.9, 3.0, 1.4, 0.2),
      (4.9, 2.5, 4.5, 1.7)]
+
     >>> labels_train
     ['virginica', 'setosa', 'versicolor', 'virginica', 'versicolor', 'setosa']
+
     >>> labels_test
     ['versicolor', 'virginica', 'setosa', 'virginica']
 """
 
-
 # Given
-DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-        (5.8, 2.7, 5.1, 1.9, 'virginica'),
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-        (4.7, 3.2, 1.3, 0.2, 'setosa'),
-        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-        (7.6, 3.0, 6.6, 2.1, 'virginica'),
-        (4.9, 3.0, 1.4, 0.2, 'setosa'),
-        (4.9, 2.5, 4.5, 1.7, 'virginica')]
+DATA = [
+    ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+    (5.8, 2.7, 5.1, 1.9, 'virginica'),
+    (5.1, 3.5, 1.4, 0.2, 'setosa'),
+    (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+    (4.7, 3.2, 1.3, 0.2, 'setosa'),
+    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+    (7.6, 3.0, 6.6, 2.1, 'virginica'),
+    (4.9, 3.0, 1.4, 0.2, 'setosa'),
+    (4.9, 2.5, 4.5, 1.7, 'virginica'),
+]
 
 features_train: list
 features_test: list
 labels_train: list
 labels_test: list
-
 
 # Solution
 RATIO = 0.6

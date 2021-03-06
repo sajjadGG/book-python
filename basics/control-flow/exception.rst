@@ -109,6 +109,18 @@ Most Common Exceptions
     Traceback (most recent call last):
     ValueError: invalid literal for int() with base 10: 'one'
 
+``FileNotFoundError`` File does not exists:
+
+    >>> open('notexisting.txt')
+    Traceback (most recent call last):
+    FileNotFoundError: [Errno 2] No such file or directory: 'notexisting.txt'
+
+``IsADirectoryError`` Trying to open directory instead of file:
+
+    >>> open('/tmp')
+    Traceback (most recent call last):
+    IsADirectoryError: [Errno 21] Is a directory: '/tmp'
+
 
 Exception Hierarchy
 -------------------
@@ -196,15 +208,6 @@ Exception with additional message:
 
 Use Case
 --------
-    >>> input = lambda _: -10  # Assume user will input -10
-    >>>
-    >>> temperature = input('Type temperature [Kelvin]: ')
-    >>>
-    >>> if float(temperature) < 0:
-    ...    raise ValueError('Kelvin temperature cannot be negative')
-    Traceback (most recent call last):
-    ValueError: Kelvin temperature cannot be negative
-
     >>> def convert(temperature):
     ...    if type(temperature) not in {float, int}:
     ...        raise TypeError('Temperature must be int or float')
@@ -236,16 +239,20 @@ Assertion
 * Running Python with the ``-O`` optimization flag disables assert statements
 
     >>> data = [1, 2, 3]
-    >>> assert type(data) is list
-    >>> assert all(type(x) is int for x in data)
+    >>>
+    >>> 1 in data
+    True
+    >>> assert 1 in data
+    >>>
+    >>> 4 in data
+    False
+    >>> assert 4 in data
+    Traceback (most recent call last):
+    AssertionError
 
-    >>> data = ('a', 'b', 'c')
+    >>> data = [1, 2, 3]
     >>> assert type(data) is list
-    Traceback (most recent call last):
-    AssertionError
     >>> assert all(type(x) is int for x in data)
-    Traceback (most recent call last):
-    AssertionError
 
     >>> import sys
     >>> assert sys.version_info >= (3, 9)
@@ -337,17 +344,13 @@ Catching Exceptions
 * ``try`` is required and then one of the others blocks
 
     >>> try:
-    ...     # try to execute
-    ...     pass
+    ...     'try to execute'
     ... except Exception:
-    ...     # what to do if exception occurs
-    ...     pass
+    ...     'what to do if exception occurs'
     ... else:
-    ...     # what to do if no exception occurs
-    ...     pass
+    ...     'what to do if no exception occurs'
     ... finally:
-    ...     # What to do either if exception occurs or not
-    ...     pass
+    ...     'What to do either if exception occurs or not'
 
 Catch single exception:
 
@@ -403,15 +406,6 @@ Else and Finally
 ----------------
 * ``else`` is executed when no exception occurred
 * ``finally`` is executed always (even if there was exception)
-* Used to close file, connection or transaction to database
-
-    >>> try:
-    ...     file = open('/tmp/myfile.txt')
-    ... except Exception:
-    ...     print('Error, file cannot be open')
-    ... else:
-    ...     file.close()
-    Error, file cannot be open
 
 ``else`` is executed when no exception occurred:
 
@@ -428,6 +422,15 @@ Else and Finally
     Landing a man on the Moon
 
 ``finally`` is executed always (even if there was exception):
+Used to close file, connection or transaction to database:
+
+    >>> try:
+    ...     file = open('/tmp/myfile.txt')
+    ... except Exception:
+    ...     print('Error, file cannot be open')
+    ... finally:
+    ...     file.close()
+    Error, file cannot be open
 
     >>> def apollo11():
     ...    print('Try landing on the Moon')
@@ -503,6 +506,19 @@ Defining Own Exceptions
     >>> raise MyError('More verbose description')
     Traceback (most recent call last):
     MyError: More verbose description
+
+Example:
+
+    >>> class AstronautsOnlyError(Exception):
+    ...    pass
+    >>>
+    >>>
+    >>> profession = 'pilot'
+    >>>
+    >>> if profession != 'astronaut'
+    ...     raise AstronautsOnlyError
+    Traceback (most recent call last):
+    AstronautsOnlyError
 
 Django Framework Use-case of Custom Exceptions:
 

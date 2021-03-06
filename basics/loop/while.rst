@@ -7,6 +7,46 @@ Loop While
         return 1
 
 
+Rationale
+---------
+>>> data = ['a', 'b', 'c']
+>>>
+>>> data[0]
+'a'
+>>> data[1]
+'b'
+>>> data[2]
+'c'
+
+>>> data = ['a', 'b', 'c']
+>>> i = 0
+>>>
+>>> if i < 3:
+...     print(data[i])
+...     i += 1
+a
+>>>
+>>> if i < 3:
+...     print(data[i])
+...     i += 1
+b
+>>>
+>>> if i < 3:
+...     print(data[i])
+...     i += 1
+c
+
+>>> data = ['a', 'b', 'c']
+>>> i = 0
+>>>
+>>> while i < 3:
+...     print(data[i])
+...     i += 1
+a
+b
+c
+
+
 Syntax
 ------
 * Continue execution when argument is ``True``
@@ -35,15 +75,20 @@ Convention
     * ``abort_flag`` - for abort flags
 
 
-Use Cases
----------
-Never ending loop. Used in servers to wait forever for incoming connections:
+Infinite Loop
+-------------
+Never ending loop.
+Used in servers to wait forever for incoming connections.
+Used in games for game logic.
 
 >>> # doctest: +SKIP
 ... while True:
 ...    print('hello')
 
-Stop conditions:
+
+Until
+-----
+Has stop conditions
 
 >>> i = 0
 >>>
@@ -54,7 +99,31 @@ Stop conditions:
 1
 2
 
-Iterating over sequence. Better idea for this is to use ``for`` loop. ``for`` loop supports Iterators. ``len()`` must write all ``numbers`` to memory, to calculate its length:
+
+Iterating Over Sequence
+-----------------------
+Better idea for this is to use ``for`` loop. ``for`` loop supports Iterators. ``len()`` must write all ``numbers`` to memory, to calculate its length:
+
+>>> i = 0
+>>> data = ['a', 'b', 'c']
+>>>
+>>> while i < 3:
+...     print(i, data[i])
+...     i += 1
+0 a
+1 b
+2 c
+
+>>> i = 0
+>>> data = ['a', 'b', 'c']
+>>> length = 3
+>>>
+>>> while i < length:
+...     print(i, data[i])
+...     i += 1
+0 a
+1 b
+2 c
 
 >>> i = 0
 >>> data = ['a', 'b', 'c']
@@ -66,7 +135,10 @@ Iterating over sequence. Better idea for this is to use ``for`` loop. ``for`` lo
 1 b
 2 c
 
-Exit flag. Exit flag pattern is useful if you have for example multi-threaded application:
+
+Exit flag
+---------
+Exit flag pattern is useful if you have for example multi-threaded application:
 
 >>> abort = False
 >>> i = 10
@@ -120,27 +192,21 @@ Force Skip Iteration
 --------------------
 * if ``continue`` is encountered, it will jump to next loop iteration
 
->>> TEXT = """
-...     # "Moon Speech" by John F. Kennedy, Rice Stadium, Houston, TX, 1962-09-12
-...     # Source: http://er.jsc.nasa.gov/seh/ricetalk.htm
-...     We choose to go to the Moon.
-...     We choose to go to the Moon in this decade and do the other things.
-...     Not because they are easy, but because they are hard.
-...     Because that goal will serve to organize and measure the best of our energies a skills.
-...     Because that challenge is one that we are willing to accept.
-...     One we are unwilling to postpone.
-...     And one we intend to win
-... """
+>>> TEXT = ['# "Moon Speech" by John F. Kennedy, Rice Stadium, Houston, TX, 1962-09-12',
+...         '# Source: http://er.jsc.nasa.gov/seh/ricetalk.htm',
+...         'We choose to go to the Moon.',
+...         'We choose to go to the Moon in this decade and do the other things.',
+...         'Not because they are easy, but because they are hard.',
+...         'Because that goal will serve to organize and measure the best of our energies a skills.',
+...         'Because that challenge is one that we are willing to accept.',
+...         'One we are unwilling to postpone.',
+...         'And one we intend to win']
 >>>
->>> data = TEXT.splitlines()
 >>> i = 0
 >>>
 >>> while i < len(data):
-...     line = data[i].strip()
+...     line = data[i]
 ...     i += 1
-...
-...     if len(line) == 0:
-...         continue
 ...
 ...     if line.startswith('#'):
 ...         continue
@@ -153,23 +219,6 @@ Because that goal will serve to organize and measure the best of our energies a 
 Because that challenge is one that we are willing to accept.
 One we are unwilling to postpone.
 And one we intend to win
-
-Force skip iteration using ``continue`` keyword:
-
->>> all_astronauts = ['Mark Watney', 'Jan Twardowski', 'Melissa Lewis', 'José Jiménez']
->>> assigned_to_mission = ['Mark Watney', 'Melissa Lewis']
->>> i = 0
->>>
->>> while i < len(all_astronauts):
-...     name = all_astronauts[i]
-...     i += 1
-...
-...     if name not in assigned_to_mission:
-...         continue
-...
-...     print(name)
-Mark Watney
-Melissa Lewis
 
 Force skip iteration using ``continue`` keyword:
 
