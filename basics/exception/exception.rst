@@ -16,13 +16,17 @@ Catching Exceptions
 * ``try`` is required and then one of the others blocks
 
     >>> try:
-    ...     'try to execute'
+    ...     'Try to execute'
     ... except Exception:
-    ...     'what to do if exception occurs'
+    ...     'What to do if exception occurs'
     ... else:
-    ...     'what to do if no exception occurs'
+    ...     'What to do if no exception occurs'
     ... finally:
     ...     'What to do either if exception occurs or not'
+
+    'Try to execute'
+    'What to do if no exception occurs'
+    'What to do either if exception occurs or not'
 
 Catch single exception:
 
@@ -101,8 +105,9 @@ Used to close file, connection or transaction to database:
     ... except Exception:
     ...     print('Error, file cannot be open')
     ... finally:
-    ...     file.close()
+    ...     print('Close file')
     Error, file cannot be open
+    Close file
 
     >>> def apollo11():
     ...    print('Try landing on the Moon')

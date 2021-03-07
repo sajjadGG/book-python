@@ -27,7 +27,7 @@ Example
     >>>
     >>> profession = 'pilot'
     >>>
-    >>> if profession != 'astronaut'
+    >>> if profession != 'astronaut':
     ...     raise AstronautsOnlyError
     Traceback (most recent call last):
     AstronautsOnlyError

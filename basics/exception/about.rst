@@ -50,11 +50,15 @@ We can break execution of a program in erroneous situations.
 
     >>> temperature = input('Type temperature: ')  # User inputs: -1
     >>> temperature = float(temperature)
+    >>> print(temperature)
     -1
+    >>>
     >>> if temperature > 0.0:
     ...     print('Temperature is valid')
     ... else:
     ...     raise ValueError('Kelvin cannot be negative')
+    Traceback (most recent call last):
+    ValueError: Kelvin cannot be negative
 
 Good software communicates well with programmer. Exceptions are common language to talk about problems
 and not-nominal (abnormal) situations in your code.

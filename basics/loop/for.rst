@@ -124,7 +124,7 @@ A
 >>> DATA = ['a', 'b', 'c']
 >>>
 >>> for letter in DATA:
-...     print(litera)
+...     print(letter)
 a
 b
 c
@@ -224,6 +224,9 @@ And this relates to Python regular ``for`` loop:
 >>>
 >>> for letter in DATA:
 ...     print(letter)
+a
+b
+c
 
 Regular ``for`` loop in other languages looks like that (example in C++):
 
@@ -242,9 +245,12 @@ Python equivalent will be:
 >>> i = 0
 >>>
 >>> while i < len(DATA):
-...     litera = DATA[i]
-...     print(litera)
+...     letter = DATA[i]
+...     print(letter)
 ...     i += 1
+a
+b
+c
 
 Yes, that's true, it is a ``while`` loop. This is due to the fact, that ``for``
 loop from other languages is more like a ``while`` loop in Python.

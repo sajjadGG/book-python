@@ -79,7 +79,7 @@ Note the length change while encoding:
 >>> text = 'Księżyc'.encode()
 >>> text
 b'Ksi\xc4\x99\xc5\xbcyc'
->>> len(text_bytes)
+>>> len(text)
 9
 
 Note also, that those characters produce longer output:

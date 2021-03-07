@@ -204,8 +204,8 @@ Force Skip Iteration
 >>>
 >>> i = 0
 >>>
->>> while i < len(data):
-...     line = data[i]
+>>> while i < len(TEXT):
+...     line = TEXT[i]
 ...     i += 1
 ...
 ...     if line.startswith('#'):
