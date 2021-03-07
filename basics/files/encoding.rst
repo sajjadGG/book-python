@@ -6,6 +6,7 @@ File Encoding
     from pathlib import Path
     Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
+
 Rationale
 ---------
 * ``utf-8`` - a.k.a. Unicode - international standard (should be always used!)
@@ -35,6 +36,108 @@ Rationale
 .. figure:: img/files-encoding-unicode3.png
 
     Unicode. Source: [#ilovefreesoftware]_
+
+
+Str vs Bytes
+------------
+* That was a big change in Python 3
+* In Python 2, str was bytes
+* In Python 3, str is unicode (UTF-8)
+
+>>> text = 'Księżyc'
+>>> text
+'Księżyc'
+
+>>> text = b'Księżyc'
+Traceback (most recent call last):
+SyntaxError: bytes can only contain ASCII literal characters.
+
+Default encoding is ``UTF-8``. Encoding names are case insensitive.
+``cp1250`` and ``windows-1250`` are aliases the same codec:
+
+>>> text = 'Księżyc'
+>>>
+>>> text.encode()
+b'Ksi\xc4\x99\xc5\xbcyc'
+>>> text.encode('utf-8')
+b'Ksi\xc4\x99\xc5\xbcyc'
+>>> text.encode('iso-8859-2')
+b'Ksi\xea\xbfyc'
+>>> text.encode('cp1250')
+b'Ksi\xea\xbfyc'
+>>> text.encode('windows-1250')
+b'Ksi\xea\xbfyc'
+
+Note the length change while encoding:
+
+>>> text = 'Księżyc'
+>>> text
+'Księżyc'
+>>> len(text)
+7
+
+>>> text = 'Księżyc'.encode()
+>>> text
+b'Ksi\xc4\x99\xc5\xbcyc'
+>>> len(text_bytes)
+9
+
+Note also, that those characters produce longer output:
+
+>>> 'ó'.encode()
+b'\xc3\xb3'
+
+But despite being several "characters" long, the length is different:
+
+>>> len(b'\xc3\xb3')
+2
+
+Here's the output of all Polish diacritics (accented characters) with their encoding:
+
+>>> 'ą'.encode()
+b'\xc4\x85'
+>>> 'ć'.encode()
+b'\xc4\x87'
+>>> 'ę'.encode()
+b'\xc4\x99'
+>>> 'ł'.encode()
+b'\xc5\x82'
+>>> 'ń'.encode()
+b'\xc5\x84'
+>>> 'ó'.encode()
+b'\xc3\xb3'
+>>> 'ś'.encode()
+b'\xc5\x9b'
+>>> 'ż'.encode()
+b'\xc5\xbc'
+>>> 'ź'.encode()
+b'\xc5\xba'
+
+Note also a different way of iterating over ``bytes``:
+
+>>> text = 'Księżyc'
+>>>
+>>> for character in text:
+...    print(character)
+K
+s
+i
+ę
+ż
+y
+c
+>>>
+>>> for character in text.encode():
+...    print(character)
+75
+115
+105
+196
+153
+197
+188
+121
+99
 
 
 UTF-8

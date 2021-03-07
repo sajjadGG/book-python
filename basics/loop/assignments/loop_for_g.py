@@ -44,11 +44,11 @@ Tests:
     <class 'dict'>
     >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
     {'sentences': 7,
-    'words': 71,
-    'characters': 347,
-    'letters': 283,
-    'commas': 1,
-    'adverbs': 0}
+     'words': 71,
+     'characters': 347,
+     'letters': 283,
+     'commas': 1,
+     'adverbs': 0}
 """
 
 # Given

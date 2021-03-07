@@ -34,17 +34,22 @@ My name... José Jiménez
 
 Convention
 ----------
-* Do not use ``camelCase`` names
-* ``CamelCase`` is reserved for class names
-* Use ``snake_case`` names # Python - snake ;)
 * Add underscore (``_``) at the end of name when name collide
 * System functions names starts and ends with 'dunder' - double underscore: ``__``
 
-Do not use ``camelCase``, CamelCase is reserved for class names. Use ``snake_case``:
+Do not use ``camelCase`` or ``PascalCase`` names:
 
 >>> def sayHello():
-...     print('This is camelCase() name')
+...     print('This is camelCase name')
 ...     print('It is c/c++/Java/JavaScript convention')
+
+>>> def SayHello():
+...     print('This is PascalCase name')
+...     print('It is c/c++/Java/JavaScript convention')
+
+Both ``camelCase`` and ``PascalCase`` are reserved for class names (by convention).
+
+Use ``snake_case`` names # Python - snake ;)
 
 >>> def say_hello():
 ...     print('This is snake_case() name')

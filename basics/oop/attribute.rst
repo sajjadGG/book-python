@@ -14,6 +14,11 @@ Rationale
 .. glossary::
 
     attribute
+        Variable inside the class.
+        In Python, methods also can be described as attributes,
+        but justification for that is a bit more complex which will
+        be introduced later in a book.
+
     field
         Variable inside the class.
         Can be used as a synonym of :term:`property` or :term:`state`.
@@ -181,9 +186,11 @@ setosa
 
 Get All Dynamic Attributes and Values
 -------------------------------------
+* ``vars(obj)``
 * ``obj.__dict__``
+* ``vars(obj)`` returns the same as ``obj.__dict__``
 
-``__dict__`` - Getting dynamic fields and values:
+Getting dynamic fields and values:
 
 >>> class Iris:
 ...     sepal_length: float
@@ -200,7 +207,7 @@ Get All Dynamic Attributes and Values
 >>> flower.petal_width = 0.2
 >>> flower.species = 'setosa'
 >>>
->>> print(flower.__dict__)  # doctest: +NORMALIZE_WHITESPACE
+>>> vars(flower)  # doctest: +NORMALIZE_WHITESPACE
 {'sepal_length': 5.1,
  'sepal_width': 3.5,
  'petal_length': 1.4,
@@ -299,13 +306,13 @@ AttributeError: 'Astronaut' object has no attribute 'address'
 >>> lewis.mission = 'Ares 3'
 >>> lewis.agency = 'NASA'
 >>>
->>> watney.__dict__  # doctest: +NORMALIZE_WHITESPACE
+>>> vars(watney)  # doctest: +NORMALIZE_WHITESPACE
 {'firstname': 'Mark',
  'lastname': 'Watney',
  'mission': 'Ares 3',
  'agency': 'NASA'}
 >>>
->>> lewis.__dict__  # doctest: +NORMALIZE_WHITESPACE
+>>> vars(lewis)  # doctest: +NORMALIZE_WHITESPACE
 {'firstname': 'Melissa',
  'lastname': 'Lewis',
  'mission': 'Ares 3',

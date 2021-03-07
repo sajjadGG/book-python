@@ -68,14 +68,20 @@ Conditional
     conditional/expression.rst
 
 
-Control Flow
-************
+Exception
+*********
 .. toctree::
     :maxdepth: 1
-    :caption: Control Flow
+    :caption: Exception
 
-    control-flow/exception.rst
-
+    exception/about.rst
+    exception/most-common.rst
+    exception/exception.rst
+    exception/hierarchy.rst
+    exception/assert.rst
+    exception/traceback.rst
+    exception/exit-status.rst
+    exception/custom.rst
 
 Loops
 *****

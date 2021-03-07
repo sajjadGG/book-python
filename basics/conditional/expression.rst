@@ -50,15 +50,14 @@ Complex conditions:
 
 >>> # doctest: +SKIP
 ... for line in file:
-...   if len(line) == 0:
-...       continue
+...    if len(line) == 0:
+...        continue
 ...
-...   if line.startswith('#'):
-...       continue
+...    if line.startswith('#'):
+...        continue
 ...
-...   if line.isspace():
-...       continue
-...
+...    if line.isspace():
+...        continue
 
 
 Contains

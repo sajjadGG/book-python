@@ -9,7 +9,7 @@ English:
     2. Create instance of `Stats` class
     3. Iterate over `DATA` skipping header
     4. Separate features from label
-    5. Call `mean()` method of `Stats` class passing list of features as an argument
+    5. Call `mean()` method of `Stats` class passing list of features
     6. Define `result: list[float]` with list of means from each row
     7. Compare result with "Tests" section (see below)
 
@@ -18,7 +18,7 @@ Polish:
     2. Stwórz instancję klasy `Stats`
     3. Iteruj po `DATA` pomijając nagłówek
     4. Rozdziel cechy od etykiety
-    5. Wywołuj metodę `mean()` klasy `Stats` przekazując listę features jako argument
+    5. Wywołuj metodę `mean()` klasy `Stats` przekazując listę features
     6. Zdefiniuj `result: list[float]` z listą średnich każdego z wierszy
     7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
@@ -47,8 +47,8 @@ DATA = [
 
 class Stats:
     def mean(self, data):
-        result = sum(data) / len(data)
-        return round(result, 1)
+        avg = sum(data) / len(data)
+        return round(avg, 1)
 
 
 # Solution

@@ -245,6 +245,20 @@ Local Scope
 {'a': 1, 'b': 2, 'c': 3}
 
 
+Shadowing Global Scope
+----------------------
+* Stubs in tests
+
+>>> def input(prompt):  # Stub
+...     return '44'
+>>>
+>>> age = input('Type your age: ')
+>>> age
+'44'
+>>> float(age)
+44.0
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/function_scope_a.py

@@ -70,4 +70,5 @@ MONTHS = [
 result: dict
 
 # Solution
-result = {f'{k:02}': v for k, v in enumerate(MONTHS, start=1)}
+result = {f'{number:02}': month
+          for number, month in enumerate(MONTHS, start=1)}

@@ -16,16 +16,10 @@ Rationale
     object
         Object created from class.
 
->>> class MyClass:
-...     pass
->>>
->>>
->>> my = MyClass()
-
 
 Classes
 -------
-* Capitalized ``CamelCase`` name convention
+* Capitalized ``PascalCase`` name convention
 * Classes are templates for objects
 
 Defining class. Classes should have capitalized name:
@@ -33,7 +27,7 @@ Defining class. Classes should have capitalized name:
 >>> class Astronaut:
 ...     pass
 
-Multi-word class names should use ``CamelCase``:
+Multi-word class names should use ``PascalCase``:
 
 >>> class AstronautPilot:
 ...     pass
@@ -147,7 +141,6 @@ Use Cases
 >>> g = set()
 >>> h = frozenset()
 >>> i = dict()
->>> j = range(1)
 
 
 Assignments
