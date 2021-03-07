@@ -23,7 +23,6 @@ Catching Exceptions
     ...     'What to do if no exception occurs'
     ... finally:
     ...     'What to do either if exception occurs or not'
-
     'Try to execute'
     'What to do if no exception occurs'
     'What to do either if exception occurs or not'
