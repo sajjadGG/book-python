@@ -173,27 +173,14 @@ User can kill program with ``Ctrl-C``:
 
 Assignments
 -----------
-
-.. literalinclude:: assignments/controlflow_exception_b.py
-    :caption: :download:`Solution <assignments/controlflow_exception_b.py>`
+.. literalinclude:: assignments/exception_catch_a.py
+    :caption: :download:`Solution <assignments/exception_catch_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/controlflow_exception_c.py
-    :caption: :download:`Solution <assignments/controlflow_exception_c.py>`
+.. literalinclude:: assignments/exception_catch_b.py
+    :caption: :download:`Solution <assignments/exception_catch_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/controlflow_exception_d.py
-    :caption: :download:`Solution <assignments/controlflow_exception_d.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/controlflow_exception_e.py
-    :caption: :download:`Solution <assignments/controlflow_exception_e.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/controlflow_exception_f.py
-    :caption: :download:`Solution <assignments/controlflow_exception_f.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/controlflow_exception_g.py
-    :caption: :download:`Solution <assignments/controlflow_exception_g.py>`
+.. literalinclude:: assignments/exception_catch_c.py
+    :caption: :download:`Solution <assignments/exception_catch_c.py>`
     :end-before: # Solution

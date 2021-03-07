@@ -63,7 +63,6 @@ Note, that this exception is also raised when you don't have this module install
 Such as while importing ``pandas`` or ``numpy`` without installing it first.
 
 
-
 NameError
 ---------
 Local or global name is not found:
@@ -89,7 +88,7 @@ Syntax errors related to incorrect indentation:
 
 >>> if True:
 ...     print('Hello!')
-...     print('My name...')
+...      print('My name...')
 ...     print('José Jiménez')
 Traceback (most recent call last):
 IndentationError: unexpected indent

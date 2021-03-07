@@ -87,3 +87,13 @@ Use Case
     Traceback (most recent call last):
     NotImplementedError: Mission dropped due to budget cuts
 
+
+Assignments
+-----------
+.. literalinclude:: assignments/exception_raise_a.py
+    :caption: :download:`Solution <assignments/exception_raise_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/exception_raise_b.py
+    :caption: :download:`Solution <assignments/exception_raise_b.py>`
+    :end-before: # Solution

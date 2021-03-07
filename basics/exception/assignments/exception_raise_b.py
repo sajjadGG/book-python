@@ -1,5 +1,5 @@
 """
-* Assignment: ControlFlow Exception RaiseMany
+* Assignment: Exception Raise Many
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 2 min

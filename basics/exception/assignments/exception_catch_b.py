@@ -1,5 +1,5 @@
 """
-* Assignment: ControlFlow Exception Else
+* Assignment: Exception Catch Else
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 2 min

@@ -69,3 +69,8 @@ Dragon:
     Dragon is dead
 
 
+Assignments
+-----------
+.. literalinclude:: assignments/exception_custom_a.py
+    :caption: :download:`Solution <assignments/exception_custom_a.py>`
+    :end-before: # Solution

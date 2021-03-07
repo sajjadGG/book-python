@@ -125,14 +125,16 @@ Since Python 3.10 :pep:`613` -- TypeAlias Annotation
 
 Since Python 3.10:
 
-    >>> from typing import TypeAlias
-    >>>
-    >>>
-    >>> Timestamp: TypeAlias = float
+    >>> # doctest: +SKIP
+    ... from typing import TypeAlias
+    ...
+    ...
+    ... Timestamp: TypeAlias = float
 
 Before Python 3.10:
 
     >>> Timestamp = float
+
 
 Final
 -----
