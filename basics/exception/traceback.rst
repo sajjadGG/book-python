@@ -23,7 +23,7 @@ Traceback Analysis
 * Start analysing traceback from bottom-up
 
     >>> def apollo13():
-    ...    raise RuntimeError('Oxygen tank explosion')
+    ...     raise RuntimeError('Oxygen tank explosion')
     >>>
     >>>
     >>> apollo13()
@@ -33,7 +33,7 @@ Traceback Analysis
     RuntimeError: Oxygen tank explosion
 
     >>> def apollo13():
-    ...    raise RuntimeError('Oxygen tank explosion')
+    ...     raise RuntimeError('Oxygen tank explosion')
     >>>
     >>>
     >>> apollo13()
@@ -45,7 +45,7 @@ Traceback Analysis
     RuntimeError: Oxygen tank explosion
 
     >>> def apollo13():
-    ...    raise RuntimeError('Oxygen tank explosion')
+    ...     raise RuntimeError('Oxygen tank explosion')
     >>>
     >>>
     >>> apollo13()
@@ -73,7 +73,8 @@ Change Verbosity Level
     >>>
     >>>
     >>> def apollo13():
-    ...    raise RuntimeError('Oxygen tank explosion')
+    ...     raise RuntimeError('Oxygen tank explosion')
+    >>>
     >>>
     >>> apollo13()
     Traceback (most recent call last):

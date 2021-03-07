@@ -46,7 +46,7 @@ Positional Arguments
 * Order of positional arguments has significance
 
     >>> def subtract(a, b):
-    ...    return a - b
+    ...     return a - b
     >>>
     >>>
     >>> subtract(2, 1)

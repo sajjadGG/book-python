@@ -75,13 +75,14 @@ Exception
     :caption: Exception
 
     exception/raise.rst
-    exception/most-common.rst
+    exception/commonly-raised.rst
     exception/catching.rst
     exception/hierarchy.rst
     exception/assert.rst
     exception/traceback.rst
     exception/custom.rst
     exception/exit-status.rst
+
 
 Loops
 *****

@@ -1,5 +1,5 @@
-Most Common Exceptions
-======================
+Exception Commonly Raised
+=========================
 
 
 AttributeError

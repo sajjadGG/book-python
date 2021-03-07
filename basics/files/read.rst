@@ -133,8 +133,8 @@ Examples
     >>> total = 0
     >>>
     >>> with open(FILE) as file:
-    ...    for line in file:
-    ...        total += sum(float(line))
+    ...     for line in file:
+    ...         total += sum(float(line))
     >>>
     >>> print(total)
     0

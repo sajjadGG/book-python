@@ -4,10 +4,11 @@ Exception Define
 
 Define Custom Exceptions
 ------------------------
-* class which inherits from ``Exception``
+* Class which inherits from ``Exception``
+* Exceptions should have ``Error`` at the end of their names
 
     >>> class MyError(Exception):
-    ...    pass
+    ...     pass
     >>>
     >>>
     >>> raise MyError
@@ -22,7 +23,7 @@ Define Custom Exceptions
 Example
 -------
     >>> class AstronautsOnlyError(Exception):
-    ...    pass
+    ...     pass
     >>>
     >>>
     >>> profession = 'pilot'
@@ -42,22 +43,22 @@ Django Framework Use-case of Custom Exceptions:
     >>>
     >>>
     >>> def login(request):
-    ...    username = request.POST.get('username')
-    ...    password = request.POST.get('password')
+    ...     username = request.POST.get('username')
+    ...     password = request.POST.get('password')
     ...
-    ...    try:
-    ...        user = User.objects.get(username, password)
-    ...    except User.DoesNotExist:
-    ...        print('Sorry, no such user in database')
+    ...     try:
+    ...         user = User.objects.get(username, password)
+    ...     except User.DoesNotExist:
+    ...         print('Sorry, no such user in database')
 
 Dragon:
 
     >>> class Dragon:
-    ...    def take_damage(self, damage):
-    ...        raise self.IsDead
+    ...     def take_damage(self, damage):
+    ...         raise self.IsDead
     ...
-    ...    class IsDead(Exception):
-    ...        pass
+    ...     class IsDead(Exception):
+    ...         pass
     >>>
     >>>
     >>> wawelski = Dragon()

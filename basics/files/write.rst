@@ -70,7 +70,7 @@ Write Multiple Lines
     >>> result = '\n'.join(DATA)
     >>>
     >>> with open(FILE, mode='w') as file:
-    ...    file.write(result)
+    ...     file.write(result)
     150
 
     >>> FILE = r'/tmp/myfile.txt'
@@ -81,7 +81,7 @@ Write Multiple Lines
     >>> result = [line+'\n' for line in DATA]
     >>>
     >>> with open(FILE, mode='w') as file:
-    ...    file.writelines(result)
+    ...     file.writelines(result)
 
 
 Write Non-Str Data
@@ -95,7 +95,7 @@ Write Non-Str Data
     >>> result = ','.join(str(x) for x in DATA) + '\n'
     >>>
     >>> with open(FILE, mode='w') as file:
-    ...    file.write(result)
+    ...     file.write(result)
     6
 
 When writing output to the stream, if newline is ``None``, any ``'\n'`` characters written are translated to the system default line separator, ``os.linesep``. If newline is ``''`` or ``'\n'``, no translation takes place. If newline is any of the other legal values, any ``'\n'`` characters written are translated to the given string. Source: https://docs.python.org/3/library/io.html#io.TextIOWrapper

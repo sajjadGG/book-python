@@ -26,7 +26,7 @@ Tests:
     Melissa Lewis
 
     >>> mark = Astronaut('Mark Watney', experience=[
-    ...    Mission(2035, 'Ares 3')])
+    ...     Mission(2035, 'Ares 3')])
     >>> print(f'Space Pirate: \\n{mark}\\n')  # doctest: +NORMALIZE_WHITESPACE
     Space Pirate:
     Mark Watney veteran of [

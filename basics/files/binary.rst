@@ -81,7 +81,7 @@ Load binary data from file:
     >>> FILE = r'/tmp/myfile.pkl'
     >>>
     >>> with open(FILE, mode='rb') as file:
-    ...    result = pickle.load(file)
+    ...     result = pickle.load(file)
     ...
     >>> print(result)
     [1, 2, 3]
@@ -96,7 +96,7 @@ Seek
     >>>
     >>>
     >>> with open(FILE, mode='wb') as file:
-    ...    file.write(DATA)
+    ...     file.write(DATA)
     30
     >>>
     >>> file = open(FILE, mode='rb')

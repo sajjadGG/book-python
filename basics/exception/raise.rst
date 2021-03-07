@@ -65,14 +65,14 @@ and not-nominal (abnormal) situations in your code.
 Use Case
 --------
     >>> def check(temperature):
-    ...    if type(temperature) not in {float, int}:
-    ...        raise TypeError('Temperature must be int or float')
-    ...    if temperature < 0:
-    ...        raise ValueError('Kelvin temperature cannot be negative')
-    ...    return temperature
+    ...     if type(temperature) not in {float, int}:
+    ...         raise TypeError('Temperature must be int or float')
+    ...     if temperature < 0:
+    ...         raise ValueError('Kelvin temperature cannot be negative')
+    ...     return temperature
 
     >>> def apollo13():
-    ...    raise RuntimeError('Oxygen tank explosion')
+    ...     raise RuntimeError('Oxygen tank explosion')
     >>>
     >>>
     >>> apollo13()
@@ -80,7 +80,7 @@ Use Case
     RuntimeError: Oxygen tank explosion
 
     >>> def apollo18():
-    ...    raise NotImplementedError('Mission dropped due to budget cuts')
+    ...     raise NotImplementedError('Mission dropped due to budget cuts')
     >>>
     >>>
     >>> apollo18()

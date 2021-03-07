@@ -30,5 +30,5 @@ Appending to File
     >>> DATA = 'We choose to go to the Moon...'
     >>>
     >>> with open(FILE, mode='a') as file:
-    ...    file.write(DATA)
+    ...     file.write(DATA)
     30

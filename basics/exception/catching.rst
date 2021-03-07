@@ -30,7 +30,7 @@ Catching Exceptions
 Catch single exception:
 
     >>> def apollo13():
-    ...    raise RuntimeError('Oxygen tank explosion')
+    ...     raise RuntimeError('Oxygen tank explosion')
     >>>
     >>>
     >>> try:
@@ -42,7 +42,7 @@ Catch single exception:
 Catch many exceptions with the same handling:
 
     >>> def apollo13():
-    ...    raise RuntimeError('Oxygen tank explosion')
+    ...     raise RuntimeError('Oxygen tank explosion')
     >>>
     >>>
     >>> try:
@@ -54,7 +54,7 @@ Catch many exceptions with the same handling:
 Catch many exceptions with different handling:
 
     >>> try:
-    ...    with open(r'/tmp/my-file.txt') as file:
+    ...     with open(r'/tmp/my-file.txt') as file:
     ...         print(file.read())
     ... except FileNotFoundError:
     ...     print('File does not exist')
@@ -111,25 +111,25 @@ Used to close file, connection or transaction to database:
     Close file
 
     >>> def apollo11():
-    ...    print('Try landing on the Moon')
+    ...     print('Try landing on the Moon')
     >>>
     >>>
     >>> try:
-    ...    apollo11()
+    ...     apollo11()
     ... except Exception:
-    ...    print('Abort')
+    ...     print('Abort')
     ... finally:
-    ...    print('Returning safely to the Earth')
+    ...     print('Returning safely to the Earth')
     Try landing on the Moon
     Returning safely to the Earth
 
     >>> def apollo11():
-    ...    print('Program P63 - Landing Manoeuvre Approach Phase')
-    ...    raise RuntimeError('1201 Alarm')
-    ...    raise RuntimeError('1202 Alarm')
-    ...    print('Contact lights')
-    ...    print('The Eagle has landed!')
-    ...    print("That's one small step for [a] man, one giant leap for mankind.")
+    ...     print('Program P63 - Landing Manoeuvre Approach Phase')
+    ...     raise RuntimeError('1201 Alarm')
+    ...     raise RuntimeError('1202 Alarm')
+    ...     print('Contact lights')
+    ...     print('The Eagle has landed!')
+    ...     print("That's one small step for [a] man, one giant leap for mankind.")
     >>>
     >>>
     >>> try:
@@ -156,10 +156,10 @@ User cannot simply kill program with ``Ctrl-C``:
 
     >>> # doctest: +SKIP
     ... while True:
-    ...    try:
-    ...        number = float(input('Type number: '))
-    ...    except:
-    ...        continue
+    ...     try:
+    ...         number = float(input('Type number: '))
+    ...     except:
+    ...         continue
 
 User can kill program with ``Ctrl-C``:
 

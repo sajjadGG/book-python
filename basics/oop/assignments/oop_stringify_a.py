@@ -18,8 +18,8 @@ Polish:
 
 Tests:
     >>> for *features, label in DATA:
-    ...    iris = Iris(features, label)
-    ...    print(iris)
+    ...     iris = Iris(features, label)
+    ...     print(iris)
     setosa 9.4
     versicolor 16.3
     virginica 19.3
