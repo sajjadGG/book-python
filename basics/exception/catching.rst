@@ -70,6 +70,7 @@ Exceptions logging:
     >>> def apollo13():
     ...     raise RuntimeError('Oxygen tank explosion')
     >>>
+    >>>
     >>> try:
     ...     apollo13()
     ... except RuntimeError as err:
@@ -86,6 +87,7 @@ Else and Finally
 
     >>> def apollo11():
     ...     print('Try landing on the Moon')
+    >>>
     >>>
     >>> try:
     ...     apollo11()
@@ -111,6 +113,7 @@ Used to close file, connection or transaction to database:
     >>> def apollo11():
     ...    print('Try landing on the Moon')
     >>>
+    >>>
     >>> try:
     ...    apollo11()
     ... except Exception:
@@ -127,6 +130,7 @@ Used to close file, connection or transaction to database:
     ...    print('Contact lights')
     ...    print('The Eagle has landed!')
     ...    print("That's one small step for [a] man, one giant leap for mankind.")
+    >>>
     >>>
     >>> try:
     ...     apollo11()
@@ -169,9 +173,6 @@ User can kill program with ``Ctrl-C``:
 
 Assignments
 -----------
-.. literalinclude:: assignments/controlflow_exception_a.py
-    :caption: :download:`Solution <assignments/controlflow_exception_a.py>`
-    :end-before: # Solution
 
 .. literalinclude:: assignments/controlflow_exception_b.py
     :caption: :download:`Solution <assignments/controlflow_exception_b.py>`

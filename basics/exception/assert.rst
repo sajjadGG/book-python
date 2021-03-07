@@ -50,3 +50,10 @@ Assertion of Sequences
     >>> import sys
     >>> assert sys.version_info >= (3, 9)
     >>> assert sys.version_info >= (3, 9), 'Python 3.9+ required'
+
+
+Assignments
+-----------
+.. literalinclude:: assignments/controlflow_assert_a.py
+    :caption: :download:`Solution <assignments/controlflow_assert_a.py>`
+    :end-before: # Solution

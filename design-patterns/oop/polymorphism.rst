@@ -75,6 +75,13 @@ Problem is that, ``switch`` moves business logic to the execution place:
 Pattern Matching
 ----------------
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
+* x ⟼ assign x = subject
+* 'x' ⟼ test subject == 'x'
+* x.y ⟼ test subject == x.y
+* x() ⟼ test isinstance(subject, x)
+* {'x': 'y'} ⟼ test isinstance(subject, Mapping) and subject.get('x') == 'y'
+* ['x'] ⟼ test isinstance(subject, Sequence) and len(subject) == 1 and subject[0] == 'x'
+* Source: [#patternmatching]_
 
 >>> language = 'English'
 >>>
@@ -408,3 +415,8 @@ Dynamic factory:
 Assignments
 -----------
 .. todo:: Create assignments
+
+
+References
+----------
+.. [#patternmatching] Raymond Hettinger. Accessed Date: 2021-03-07. URL: https://twitter.com/raymondh/status/1361780586570948609?s=20

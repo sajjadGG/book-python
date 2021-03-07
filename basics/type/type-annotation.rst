@@ -114,7 +114,7 @@ Since Python 3.10 :pep:`613` -- TypeAlias Annotation
     ordinary assignments, especially when forward references or invalid types
     were involved. Compare:
 
->>> StrCache = 'Cache[str]'  # a type alias                 # doctest: +SKIP
+>>> Number = 'Cache[str]'  # a type alias                 # doctest: +SKIP
 >>> LOG_PREFIX = 'LOG[DEBUG]'  # a module constant          # doctest: +SKIP
 
     Now the typing module has a special annotation TypeAlias to declare
@@ -123,6 +123,16 @@ Since Python 3.10 :pep:`613` -- TypeAlias Annotation
 >>> StrCache: TypeAlias = 'Cache[str]'  # a type alias      # doctest: +SKIP
 >>> LOG_PREFIX = 'LOG[DEBUG]'  # a module constant          # doctest: +SKIP
 
+Since Python 3.10:
+
+    >>> from typing import TypeAlias
+    >>>
+    >>>
+    >>> Timestamp: TypeAlias = float
+
+Before Python 3.10:
+
+    >>> Timestamp = float
 
 Final
 -----
