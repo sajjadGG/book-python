@@ -35,15 +35,15 @@ Definition
 ...    'chemist': 'Alex Vogel'}
 
 >>> data = dict(
-...    commander='Melissa Lewis',
-...    botanist='Mark Watney',
-...    chemist='Alex Vogel')
+...     commander='Melissa Lewis',
+...     botanist='Mark Watney',
+...     chemist='Alex Vogel')
 
 Duplicating items are overridden by latter:
 
 >>> data = {
-...    'commander': 'Melissa Lewis',
-...    'commander': 'Jan Twardowski'}
+...     'commander': 'Melissa Lewis',
+...     'commander': 'Jan Twardowski'}
 >>>
 >>> data
 {'commander': 'Jan Twardowski'}

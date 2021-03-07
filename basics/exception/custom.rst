@@ -1,5 +1,5 @@
-Exception Custom Made
-=====================
+Exception Define
+================
 
 
 Define Custom Exceptions

@@ -115,11 +115,11 @@ Classes
 >>>
 >>>
 >>> class Position:
-...      def __init__(self, initial_position: Point = Point()) -> None:
-...          self.position = initial_position
+...     def __init__(self, initial_position: Point = Point()) -> None:
+...         self.position = initial_position
 ...
-...      def get_coordinates(self) -> Point:
-...          return self.position
+...     def get_coordinates(self) -> Point:
+...         return self.position
 >>>
 >>>
 >>> pos: Position = Position()

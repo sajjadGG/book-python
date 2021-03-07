@@ -118,7 +118,7 @@ Note also a different way of iterating over ``bytes``:
 >>> text = 'Księżyc'
 >>>
 >>> for character in text:
-...    print(character)
+...     print(character)
 K
 s
 i
@@ -128,7 +128,7 @@ y
 c
 >>>
 >>> for character in text.encode():
-...    print(character)
+...     print(character)
 75
 115
 105

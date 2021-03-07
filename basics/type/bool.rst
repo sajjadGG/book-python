@@ -210,8 +210,8 @@ Use Case:
 >>> lastname = 'Watney'
 >>>
 >>> (firstname == 'Mark' and lastname == 'Watney') \
-...  or (firstname == 'Jan' and lastname == 'Twardowski') \
-...  or (firstname == 'Melissa' and lastname == 'Lewis')
+...     or (firstname == 'Jan' and lastname == 'Twardowski') \
+...     or (firstname == 'Melissa' and lastname == 'Lewis')
 True
 
 

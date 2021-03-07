@@ -114,7 +114,7 @@ Checking Match
 >>> result = re.search(r'@nasa.gov', DATA)
 >>>
 >>> if result:
-...      print(result)
+...     print(result)
 <re.Match object; span=(11, 20), match='@nasa.gov'>
 
 >>> import re

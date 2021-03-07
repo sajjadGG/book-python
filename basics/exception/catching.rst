@@ -1,5 +1,5 @@
-Exception Hierarchy
-===================
+Exception Catching
+==================
 
 .. testsetup::
 
@@ -165,7 +165,6 @@ User can kill program with ``Ctrl-C``:
     ...         number = float(input('Type number: '))
     ...     except Exception:
     ...         continue
-
 
 
 Assignments

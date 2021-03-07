@@ -136,12 +136,12 @@ Hello
 >>>
 >>> # doctest: +SKIP
 ... match hero.action():
-...    case ['move', ('up'|'down'|'left'|'right') as direction, value]:
-...        hero.move(direction, value)
-...    case ['make_damage', value]:
-...        hero.make_damage(value)
-...    case ['take_damage', value]:
-...        hero.take_damage(value)
+...     case ['move', ('up'|'down'|'left'|'right') as direction, value]:
+...         hero.move(direction, value)
+...     case ['make_damage', value]:
+...         hero.make_damage(value)
+...     case ['take_damage', value]:
+...         hero.take_damage(value)
 
 >>> from enum import Enum
 >>>

@@ -78,7 +78,7 @@ SyntaxError
 Parser encounters a syntax error:
 
 >>> if True
-...    print('Yes')
+...     print('Yes')
 Traceback (most recent call last):
 SyntaxError: invalid syntax
 
@@ -88,9 +88,9 @@ IndentationError
 Syntax errors related to incorrect indentation:
 
 >>> if True:
-...    print('Hello!')
+...     print('Hello!')
 ...     print('My name...')
-...    print('José Jiménez')
+...     print('José Jiménez')
 Traceback (most recent call last):
 IndentationError: unexpected indent
 

@@ -74,14 +74,14 @@ Exception
     :maxdepth: 1
     :caption: Exception
 
-    exception/about.rst
+    exception/raise.rst
     exception/most-common.rst
-    exception/exception.rst
+    exception/catching.rst
     exception/hierarchy.rst
     exception/assert.rst
     exception/traceback.rst
-    exception/exit-status.rst
     exception/custom.rst
+    exception/exit-status.rst
 
 Loops
 *****

@@ -47,10 +47,10 @@ Range
 >>> i = 0
 >>>
 >>> while i < 5:
-...    i += 1
+...     i += 1
 
 >>> for i in range(5):
-...    pass
+...     pass
 
 
 ForEach
@@ -58,12 +58,12 @@ ForEach
 >>> DATA = ['a', 'b', 'c']
 >>>
 >>> for i in range(len(DATA)):
-...    value = DATA[i]
+...     value = DATA[i]
 
 >>> DATA = ['a', 'b', 'c']
 >>>
 >>> for value in DATA:
-...    pass
+...     pass
 
 
 Sum
@@ -72,7 +72,7 @@ Sum
 >>> result = 0
 >>>
 >>> for i in range(len(DATA)):
-...    result += DATA[i]
+...     result += DATA[i]
 
 >>> DATA = [1, 2, 3]
 >>> result = sum(DATA)
@@ -84,13 +84,13 @@ Enumerate
 >>> i = 0
 >>>
 >>> while i < len(DATA):
-...    value = DATA[i]
-...    i += 1
+...     value = DATA[i]
+...     i += 1
 
 >>> DATA = ['a', 'b', 'c']
 >>>
 >>> for i, value in enumerate(DATA):
-...    pass
+...     pass
 
 
 Zip
@@ -100,9 +100,9 @@ Zip
 >>> result = {}
 >>>
 >>> for i in range(len(header)):
-...    key = header[i]
-...    val = values[i]
-...    result[key] = value
+...     key = header[i]
+...     val = values[i]
+...     result[key] = value
 
 >>> header = ['a', 'b', 'c']
 >>> values = [1, 2, 3]
@@ -118,7 +118,7 @@ List Comprehension
 >>> result = list()
 >>>
 >>> for x in DATA:
-...    result.append(x)
+...     result.append(x)
 ...
 >>> result
 ['a', 'b', 'c']
@@ -136,7 +136,7 @@ Set Comprehension
 >>> result = set()
 >>>
 >>> for x in DATA:
-...    result.add(x)
+...     result.add(x)
 
 >>> DATA = ['a', 'b', 'c']
 >>> result = {x for x in DATA}
@@ -148,7 +148,7 @@ Dict Comprehension
 >>> result = dict()
 >>>
 >>> for key, value in DATA.items():
-...    result[key] = value
+...     result[key] = value
 
 >>> DATA = {'a': 1, 'b': 2, 'c': 3}
 >>> result = {k:v for k,v in DATA.items()}

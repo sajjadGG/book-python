@@ -272,8 +272,8 @@ Strict type annotation, before Python 3.9:
 >>> from typing import Union, List, Tuple, Set
 >>>
 >>> Row = Union[List[int],
-...            Tuple[int, int, int],
-...            Set[int]]
+...             Tuple[int, int, int],
+...             Set[int]]
 ...
 >>> data: List[Row] = [
 ...    [1, 2, 3],

@@ -74,8 +74,8 @@ Since Python 3.8: :pep:`589` -- TypedDict: Type Hints for Dictionaries with a Fi
 >>> from typing import TypedDict
 >>>
 >>> class Point(TypedDict):
-...    x: int
-...    y: int
+...     x: int
+...     y: int
 ...
 >>> pt1: Point = {'x':1, 'y':2}
 ... # Ok

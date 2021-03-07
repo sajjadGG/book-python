@@ -538,8 +538,8 @@ Nested Loops
 >>> result = {}
 >>>
 >>> for i, titles in DATA.items():
-...       for title in titles:
-...           result[title] = str(i)
+...     for title in titles:
+...         result[title] = str(i)
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 {'Doctorate': '6',

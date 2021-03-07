@@ -45,19 +45,19 @@ Complex conditions:
 
 >>> # doctest: +SKIP
 ... for line in file:
-...    if line and (not line.startswith('#') or not line.isspace()):
-...        ...
+...     if line and (not line.startswith('#') or not line.isspace()):
+...         ...
 
 >>> # doctest: +SKIP
 ... for line in file:
-...    if len(line) == 0:
-...        continue
+...     if len(line) == 0:
+...         continue
 ...
-...    if line.startswith('#'):
-...        continue
+...     if line.startswith('#'):
+...         continue
 ...
-...    if line.isspace():
-...        continue
+...     if line.isspace():
+...         continue
 
 
 Contains
@@ -92,7 +92,7 @@ Identity
 >>> name = None
 >>>
 >>> if name is None:
-...    print('Name is empty')
+...     print('Name is empty')
 Name is empty
 
 
@@ -103,19 +103,19 @@ Negation
 >>> name = None
 >>>
 >>> if not name:
-...    print('Name is empty')
+...     print('Name is empty')
 Name is empty
 
 >>> crew = {'Lewis', 'Watney', 'Twardowski'}
 >>>
 >>> if 'Ivanovich' not in crew:
-...    print('You are not assigned to the crew')
+...     print('You are not assigned to the crew')
 You are not assigned to the crew
 
 >>> name = None
 >>>
 >>> if name is not None:
-...    print(name)
+...     print(name)
 
 
 Assignments

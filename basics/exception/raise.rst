@@ -1,4 +1,4 @@
-About Exception
+Exception Raise
 ===============
 
 
@@ -50,8 +50,6 @@ We can break execution of a program in erroneous situations.
 
     >>> temperature = input('Type temperature: ')  # User inputs: -1
     >>> temperature = float(temperature)
-    >>> print(temperature)
-    -1.0
     >>>
     >>> if temperature > 0.0:
     ...     print('Temperature is valid')

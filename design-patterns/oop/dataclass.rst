@@ -569,12 +569,12 @@ Helper functions
 >>>
 >>> @dataclass
 ... class Point:
-...      x: int
-...      y: int
+...     x: int
+...     y: int
 >>>
 >>> @dataclass
 ... class Coordinates:
-...      points: list[Point]
+...     points: list[Point]
 >>>
 >>>
 >>> p = Point(10, 20)

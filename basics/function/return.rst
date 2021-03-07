@@ -10,12 +10,12 @@ Syntax
         return <expression>
 
 >>> def mean():
-...    return (1+2) / 2
+...     return (1+2) / 2
 
 >>> def add():
-...    a = 1
-...    b = 2
-...    return a + b
+...     a = 1
+...     b = 2
+...     return a + b
 
 
 Return Keyword

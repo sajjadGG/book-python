@@ -83,7 +83,7 @@ Used in games for game logic.
 
 >>> # doctest: +SKIP
 ... while True:
-...    print('hello')
+...     print('hello')
 
 
 Until
