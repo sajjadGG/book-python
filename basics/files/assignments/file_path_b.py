@@ -45,13 +45,13 @@ path: Path = ...
 result: str = ...
 
 # Solution
-file = Path(Path.cwd(), filename)
+path = Path(Path.cwd(), filename)
 
-if not file.exists():
+if not path.exists():
     result = 'not exist'
 
-if file.is_dir():
+if path.is_dir():
     result = 'directory'
 
-if file.is_file():
+if path.is_file():
     result = 'file'
