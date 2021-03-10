@@ -5,12 +5,12 @@ Install Python
 General Requirements
 --------------------
 #. Można korzystać ze swojego komputera i dowolnego systemu operacyjnego
-#. Materiały szkoleniowe dostosowane są do Python 3.7 i 3.8 (nowsza wersja jest preferowana)
+#. Materiały szkoleniowe dostosowane są do Python 3.8 i 3.9 (nowsza wersja jest preferowana)
 #. Python może być zainstalowany albo za pomocą oficjalnej dystrybucji albo z pakietu Anaconda
 #. Wybór dystrybucji Python nie będzie miał wpływu na przebieg szkolenia
 #. Podczas szkolenia trener będzie korzystał z PyCharm jako środowisko programistyczne (IDE)
 #. Można korzystać z innego IDE, ale proszę zaznajomić się z nim przed szkoleniem
-#. Niestety nie będzie czasu na rozwiązywanie problemów technicznych z IDE
+#. Niestety nie będzie czasu na rozwiązywanie problemów technicznych z innymi IDE
 #. Podczas instalacji PyCharm zaznacz opcję: "powiąż z rozszerzeniem plików ``.py``" (nie jest to konieczne ale ułatwia pracę)
 #. Proszę o zainstalowanie Git i założenie darmowego konta na Github oraz potwierdzenie linka aktywacyjnego na mailu
 #. Odnośniki do pobierania oprogramowania:
@@ -22,7 +22,7 @@ General Requirements
 #. Dla szkolenia z Analizy Numerycznej lub Machine Learning dodatkowo trzeba:
 
     * Posiadać uprawnienia na komputerze do instalacji pakietów Python za pomocą ``pip``
-    * Do instalacji pakietów konieczny jest dostęp do internetu (zapewniany przez organizatora szkolenia)
+    * Do instalacji pakietów konieczny jest dostęp do internetu
     * Instalacja: ``pip3 install --upgrade jupyter numpy pandas matplotlib scikit-learn statsmodels seaborn bokeh``
 
 
