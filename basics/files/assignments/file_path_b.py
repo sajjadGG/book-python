@@ -6,21 +6,33 @@
 
 English:
     1. Define `path` with converted `filename` to absolute path
-    2. Print if path exists and leads to file or directory
+    2. To `result` assgin string:
+        a. `file` if path is a file
+        b. `directory` if path is a directory
+        c. `not exist` if path does not exist
     3. Compare result with "Tests" section (see below)
 
 Polish:
     1. Zdefiniuj `path` z przekonwertowym `filename` do ścieżki bezwzględnej
-    2. Wypisz czy ścieżka istnieje i czy prowadzi do pliku czy katalogu
+    2. Do `result` przypisz ciąg znaków:
+        a. `file` jeżeli ścieżka jest plikiem
+        b. `directory` jeżeli ścieżka jest katalogiem
+        c. `not exist` jeżeli ścieżka nie istnieje
     3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    TODO: Input Stub
-    >>> isinstance(result, Path)
-    True
+    >>> assert isinstance(result, str), \
+    'Result must be a str with: `file`, `directory` or `not exist`'
+
+    >>> assert isinstance(path, Path), \
+    'Use Path class from pathlib library to create a filepath'
+
     >>> current_directory = Path.cwd()
-    >>> str(current_directory) in str(result)
-    True
+    >>> assert str(current_directory) in str(path), \
+    'File Path must be absolute, check if you have current directory in path'
+
+    >>> result
+    'not exist'
 """
 
 
@@ -28,9 +40,9 @@ Tests:
 from pathlib import Path
 
 
-filename = 'myfile.txt'
-path = ...
-result = ...
+filename: str = 'myfile.txt'
+path: Path = ...
+result: str = ...
 
 # Solution
 file = Path(Path.cwd(), filename)
