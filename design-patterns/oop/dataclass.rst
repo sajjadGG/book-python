@@ -260,7 +260,6 @@ ValueError: Temperature must be greater than 0
 Traceback (most recent call last):
 ValueError: Temperature must be greater than 0
 
-
 >>> from dataclasses import dataclass, field
 >>>
 >>>
