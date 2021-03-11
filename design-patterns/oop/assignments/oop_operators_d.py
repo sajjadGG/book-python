@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Overload Contains
+* Assignment: OOP Operators Contains
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

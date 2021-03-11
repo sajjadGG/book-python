@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Access Protected
+* Assignment: OOP AccessModifiers Protected
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 8 min
