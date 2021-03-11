@@ -7,7 +7,12 @@
 English:
     1. Use data from "Given" section (see below)
     2. You received input data in JSON format from the API
+        a. `str` fields: firstname, lastname, role, username, password, email,
+        b. `datetime` fields: date_of_birth, last_login,
+        c. `bool` fields: is_active, is_staff, is_superuser,
+        d. `list[dict]` field: user_permissions
     3. Using `dataclass` model data as class `User`
+        * Note, that fields order is important for tests to pass
     4. Parse fields with dates and store as `datetime` objects
     5. Parse fields with `true` and `false` values and store as `bool` objects
     6. Do not create additional classes to represent `permission` filed, leave it as `list[dict]`
@@ -18,7 +23,12 @@ English:
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Otrzymałeś z API dane wejściowe w formacie JSON
+        a. pola `str`: firstname, lastname, role, username, password, email,
+        b. pola `datetime`: date_of_birth, last_login,
+        c. pola `bool`: is_active, is_staff, is_superuser,
+        d. pola `list[dict]`: user_permissions
     3. Wykorzystując `dataclass` zamodeluj dane za pomocą klasy `User`
+        * Zwróć uwagę, że kolejność pól ma znaczenie aby testy przechodziły
     4. Sparsuj pola zwierające daty i zapisz je jako obiekty `datetime`
     5. Sparsuj pola zawierające `true` lub `false` i zapamiętaj ich wartości jako obiekty `bool`
     6. Nie twórz dodatkowych klas do reprezentacji pola `permission`, niech zostanie jako `list[dict]`
