@@ -12,8 +12,8 @@ English:
     3. All tests must pass
     4. Note the line with comment `# doctest: +NORMALIZE_WHITESPACE`
         a. This is the doctest flag
-        b. It allows to ignore whitesapces and newlines in lists, tuples, dicts, etc.
-        c. Try to remove it (without chaning the result) and check if tests still passes
+        b. It allows to ignore whitespaces and newlines in lists, tuples, dicts, etc.
+        c. Try to remove it (without changing the result) and check if tests still passes
     5. Write `100%` in shared spreadsheet at assignment row
 
 Polish:
@@ -41,7 +41,7 @@ Tests:
     'Mark Watney'
     >>> [firstname] + [lastname]
     ['Mark', 'Watney']
-    >>> [firstname] + [lastname] # doctest: +NORMALIZE_WHITESPACE
+    >>> [firstname] + [lastname]  # doctest: +NORMALIZE_WHITESPACE
     ['Mark',
      'Watney']
     >>> name = 'Mark Watney'

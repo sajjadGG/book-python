@@ -84,6 +84,7 @@ List of Tuples
 ...     (7.6, 3.0, 6.6, 2.1, 'virginica')]
 
 >>> row = tuple[float, float, float, float, str]
+>>>
 >>> data: list[row] = [
 ...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
@@ -108,6 +109,7 @@ List of Lists
 Aliases
 -------
 >>> GeographicCoordinate = tuple[float, float]
+>>>
 >>> locations: list[GeographicCoordinate] = [
 ...     (25.91375, -60.15503),
 ...     (-11.01983, -166.48477),
@@ -115,6 +117,7 @@ Aliases
 ... ]
 
 >>> Iris = tuple[float, float, float, float, str]
+>>>
 >>> data: list[Iris] = [
 ...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),

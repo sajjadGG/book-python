@@ -174,9 +174,6 @@ Classes as Method Arguments
 
     pos: Position = Position()
 
-    pos.get_coordinates()
-    # <__main__.Point object at 0x11c5531c0>
-
     print(pos.get_coordinates())
     # Point(x=0, y=0)
 
@@ -283,6 +280,20 @@ Final Attribute
     from typing import Final
 
 
+    class Hero:
+        DAMAGE_MIN: Final[int] = 10
+        DAMAGE_MAX: Final[int] = 20
+
+
+    Hero.DAMAGE_MIN = 1             # Error: can't override a final attribute
+
+Error: can't override a final attribute:
+
+.. code-block:: python
+
+    from typing import Final
+
+
     class Position:
         x: Final[int]
         y: Final[int]
@@ -321,20 +332,6 @@ Error: can't override a final attribute:
 
     class Game(Settings):
         RESOLUTION_X_MIN = 3        # Error: can't override a final attribute
-
-Error: can't override a final attribute:
-
-.. code-block:: python
-
-    from typing import Final
-
-
-    class Hero:
-        DAMAGE_MIN: Final[int] = 10
-        DAMAGE_MAX: Final[int] = 20
-
-
-    Hero.DAMAGE_MIN = 1             # Error: can't override a final attribute
 
 
 Forward References
