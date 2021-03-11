@@ -261,7 +261,7 @@ Traceback (most recent call last):
 ValueError: Temperature must be greater than 0
 
 
->>> from dataclasses import dataclass
+>>> from dataclasses import dataclass, field
 >>>
 >>>
 >>> @dataclass
@@ -335,7 +335,7 @@ Field Object
 ...                   agency='NASA')
 >>>
 >>> astro
-# Astronaut(firstname='Mark', lastname='Watney', age=44, height=170, weight=75, mission=[Mission(year=2035, name='Ares 3')], friends=[], agency='NASA', country='USA')
+Astronaut(firstname='Mark', lastname='Watney', age=44, height=170, weight=75, mission=[Mission(year=2035, name='Ares 3')], agency='NASA', friends=[], country='USA')
 >>>
 >>> astro.__dataclass_fields__['agency'].metadata['choices']
 ['NASA', 'ESA']
@@ -584,26 +584,27 @@ InitVar
 * Init-only fields are added as parameters to the generated ``__init__`` method, and are passed to the optional ``__post_init__`` method
 * They are not otherwise used by Data Classes
 
->>> from dataclasses import InitVar, dataclass
->>>
->>>
->>> @dataclass
+>>> # doctest: +SKIP
+... from dataclasses import dataclass, InitVar
+...
+...
+... @dataclass
 ... class Astronaut:
 ...     fullname: InitVar[str] = None
 ...     _firstname: str = None
 ...     _lastname: str = None
 ...
-...     def __post_init__(self, fullname):
+...     def __post_init__(self, fullname: str):
 ...         fullname = fullname.split()
 ...         self._firstname = fullname[0]
 ...         self._lastname = fullname[1]
->>>
->>>
->>> astro = Astronaut('Mark Watney')
->>>
->>> print(astro._firstname)
+...
+...
+... astro = Astronaut('Mark Watney')
+...
+... print(astro._firstname)
 Mark
->>> print(astro._lastname)
+... print(astro._lastname)
 Watney
 
 
