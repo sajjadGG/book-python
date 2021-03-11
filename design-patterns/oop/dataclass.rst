@@ -261,6 +261,19 @@ Traceback (most recent call last):
 ValueError: Temperature must be greater than 0
 
 
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     publicname: str = field(init=False)
+...
+...     def __post_init__(self):
+...         self.publicname = f'{self.firstname} {self.lastname[0]}.'
+
+
 Field Object
 ------------
 * ``name`` - The name of the field.
@@ -271,7 +284,7 @@ Field Object
 * ``repr``
 * ``hash``
 * ``compare``
-* ``metadata``
+* ``metadata`` - This can be a mapping or ``None``. ``None`` is treated as an empty ``dict``. It is not used at all by Data Classes, and is provided as a third-party extension mechanism.
 
 >>> from dataclasses import dataclass, field
 >>>
@@ -282,6 +295,54 @@ Field Object
 ...     lastname: str
 ...     publicname: int = field(repr=False)
 ...     agency: int = field(repr=False, default='NASA')
+
+>>> from __future__ import annotations
+>>> from dataclasses import dataclass, field
+>>>
+>>>
+>>> @dataclass(frozen=True)
+... class Mission:
+...     year: int
+...     name: str
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: float
+...     height: float = field(metadata={'unit': 'cm'})
+...     weight: float = field(metadata={'unit': 'km'})
+...     mission: list[Mission]
+...     agency: str = field(default='NASA', metadata={'choices': ['NASA', 'ESA']})
+...     friends: list[Astronaut] = field(default_factory=list)
+...     country: str = 'USA'
+...
+...     def __post_init__(self):
+...         if self.age > 65:
+...             raise ValueError('Too old for an astronaut')
+...
+...     def say_hello(self):
+...         print(f'Howdy, I am {self.firstname} {self.lastname}')
+...
+...
+>>> astro = Astronaut('Mark', 'Watney',
+...                   age=44,
+...                   height=170,
+...                   weight=75,
+...                   mission=[Mission(2035, 'Ares 3')],
+...                   friends=[],
+...                   agency='NASA')
+>>>
+>>> astro
+# Astronaut(firstname='Mark', lastname='Watney', age=44, height=170, weight=75, mission=[Mission(year=2035, name='Ares 3')], friends=[], agency='NASA', country='USA')
+>>>
+>>> astro.__dataclass_fields__['agency'].metadata['choices']
+['NASA', 'ESA']
+>>> astro.__dataclass_fields__['height'].metadata['unit']
+'cm'
+>>> Astronaut.__dataclass_fields__['agency'].metadata['choices']
+['NASA', 'ESA']
 
 
 Mutable attributes
@@ -314,6 +375,18 @@ Mutable attributes
     >>>
     >>> print('Twardowski:', twardowski.missions)
     Twardowski: ['Ares 1', 'Ares 2', 'Ares 3', 'Ares 4', 'Ares 5']
+
+>>> from dataclasses import dataclass, field
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     missions: dict[int,str] = field(default_factory=dict)
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney')
 
 >>> from dataclasses import dataclass, field
 >>>
