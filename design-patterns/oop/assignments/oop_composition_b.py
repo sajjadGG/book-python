@@ -24,9 +24,9 @@ Tests:
     >>> assert isclass(Astronaut)
     >>> assert isclass(Rocket)
     >>> assert isclass(MarsMission)
-    >>> assert issubclass(MarsMission, Habitat)
-    >>> assert issubclass(MarsMission, Astronaut)
-    >>> assert issubclass(MarsMission, Rocket)
+    >>> assert MarsMission.__annotations__['habitat'] is Habitat
+    >>> assert MarsMission.__annotations__['astronaut'] is Astronaut
+    >>> assert MarsMission.__annotations__['rocket'] is Rocket
 """
 
 

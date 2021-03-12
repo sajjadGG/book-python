@@ -42,5 +42,6 @@ class Mission:
         self.name = name
 
     def __eq__(self, other):
-        return (self.year == other.year) \
-           and (self.name == other.name)
+        return self.__class__ == other.__class__ \
+           and self.year == other.year \
+           and self.name == other.name
