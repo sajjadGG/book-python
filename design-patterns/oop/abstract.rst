@@ -29,10 +29,10 @@ Syntax
 * ``abc.ABC`` basically just an extra layer over ``metaclass=abc.ABCMeta``
 * ``abc.ABC`` implicitly defines the metaclass for you
 
->>> from abc import ABCMeta, abstractmethod
+>>> from abc import ABC, abstractmethod
 >>>
 >>>
->>> class MyClass(metaclass=ABCMeta):
+>>> class MyClass(ABC):
 ...
 ...     @abstractmethod
 ...     def mymethod(self):
@@ -41,10 +41,10 @@ Syntax
 
 Abstract Method
 ---------------
->>> from abc import ABCMeta, abstractmethod
+>>> from abc import ABC, abstractmethod
 >>>
 >>>
->>> class Astronaut(metaclass=ABCMeta):
+>>> class Astronaut(ABC):
 ...     @abstractmethod
 ...     def say_hello(self):
 ...         pass
@@ -54,10 +54,10 @@ Abstract Method
 Traceback (most recent call last):
 TypeError: Can't instantiate abstract class Astronaut with abstract method say_hello
 
->>> from abc import ABC, abstractmethod
+>>> from abc import ABCMeta, abstractmethod
 >>>
 >>>
->>> class Astronaut(ABC):
+>>> class Astronaut(metaclass=ABCMeta):
 ...     @abstractmethod
 ...     def say_hello(self):
 ...         pass
@@ -73,10 +73,10 @@ Abstract Property
 * ``abc.abstractproperty`` is deprecated since Python 3.3
 * Use ``property`` with ``abc.abstractmethod`` instead
 
->>> from abc import ABCMeta, abstractproperty
+>>> from abc import ABC, abstractproperty
 >>>
 >>>
->>> class Monster(metaclass=ABCMeta):
+>>> class Monster(ABC):
 ...     @abstractproperty
 ...     def DAMAGE(self) -> int:
 ...         pass
@@ -85,10 +85,10 @@ Abstract Property
 >>> class Dragon(Monster):
 ...     DAMAGE: int = 10
 
->>> from abc import ABCMeta, abstractmethod
+>>> from abc import ABC, abstractmethod
 >>>
 >>>
->>> class Monster(metaclass=ABCMeta):
+>>> class Monster(ABC):
 ...     @property
 ...     @abstractmethod
 ...     def DAMAGE(self) -> int:
@@ -98,10 +98,10 @@ Abstract Property
 >>> class Dragon(Monster):
 ...     DAMAGE: int = 10
 
->>> from abc import ABCMeta, abstractproperty
+>>> from abc import ABC, abstractproperty
 >>>
 >>>
->>> class Monster(metaclass=ABCMeta):
+>>> class Monster(ABC):
 ...     @abstractproperty
 ...     def DAMAGE_MIN(self):
 ...         pass
@@ -120,10 +120,10 @@ Common Problems
 ---------------
 In order to use Abstract Base Class you must create abstract method. Otherwise it won't prevent from instantiating:
 
->>> from abc import ABCMeta
+>>> from abc import ABC
 >>>
 >>>
->>> class Astronaut(metaclass=ABCMeta):
+>>> class Astronaut(ABC):
 ...     pass
 >>>
 >>>
@@ -132,12 +132,32 @@ In order to use Abstract Base Class you must create abstract method. Otherwise i
 >>> print('no errors')
 no errors
 
+The ``Human`` class does not inherits from ``ABC`` or has ``metaclass=ABCMeta``:
+
+>>> from abc import abstractmethod
+>>>
+>>>
+>>> class Human:
+...     @abstractmethod
+...     def get_name(self):
+...         pass
+>>>
+>>>
+>>> class Astronaut(Human):
+...     pass
+>>>
+>>>
+>>> astro = Astronaut()  # None abstractmethod is implemented in child class
+>>>
+>>> print('no errors')
+no errors
+
 Must implement all abstract methods:
 
->>> from abc import ABCMeta, abstractmethod
+>>> from abc import ABC, abstractmethod
 >>>
 >>>
->>> class Human(metaclass=ABCMeta):
+>>> class Human(ABC):
 ...     @abstractmethod
 ...     def get_name(self):
 ...         pass
@@ -157,10 +177,10 @@ TypeError: Can't instantiate abstract class Astronaut with abstract methods get_
 
 All abstract methods must be implemented in child class:
 
->>> from abc import ABCMeta, abstractmethod
+>>> from abc import ABC, abstractmethod
 >>>
 >>>
->>> class Human(metaclass=ABCMeta):
+>>> class Human(ABC):
 ...     @abstractmethod
 ...     def get_name(self):
 ...         pass
@@ -181,10 +201,10 @@ TypeError: Can't instantiate abstract class Astronaut with abstract method set_n
 
 Problem - Child class has no abstract attribute (using ``abstractproperty``):
 
->>> from abc import ABCMeta, abstractproperty
+>>> from abc import ABC, abstractproperty
 >>>
 >>>
->>> class Monster(metaclass=ABCMeta):
+>>> class Monster(ABC):
 ...     @abstractproperty
 ...     def DAMAGE(self) -> int:
 ...         pass
@@ -199,10 +219,10 @@ TypeError: Can't instantiate abstract class Dragon with abstract method DAMAGE
 
 Problem - Child class has no abstract attribute (using ``property`` and ``abstractmethod``):
 
->>> from abc import ABCMeta, abstractmethod
+>>> from abc import ABC, abstractmethod
 >>>
 >>>
->>> class Monster(metaclass=ABCMeta):
+>>> class Monster(ABC):
 ...     @property
 ...     @abstractmethod
 ...     def DAMAGE(self) -> int:
@@ -218,10 +238,10 @@ TypeError: Can't instantiate abstract class Dragon with abstract method DAMAGE
 
 Problem - Despite having defined property, the order of decorators (``abstractmethod`` and ``property`` is invalid). Should be reversed: first ``@property`` then ``@abstractmethod``:
 
->>> from abc import ABCMeta, abstractmethod
+>>> from abc import ABC, abstractmethod
 >>>
 >>>
->>> class Monster(metaclass=ABCMeta):
+>>> class Monster(ABC):
 ...     @property
 ...     @abstractmethod
 ...     def DAMAGE(self) -> int:

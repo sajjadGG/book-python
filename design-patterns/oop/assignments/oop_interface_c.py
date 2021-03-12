@@ -61,14 +61,14 @@ class IrisInterface:
     sepal_width: float
     petal_length: float
     petal_width: float
-    setosa: str
+    species: str
 
     def __init__(self,
                  sepal_length: float,
                  sepal_width: float,
                  petal_length: float,
                  petal_width: float,
-                 setosa: str) -> None:
+                 species: str) -> None:
         raise NotImplementedError
 
     def mean(self) -> float:

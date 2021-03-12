@@ -2,7 +2,7 @@
 * Assignment: OOP Abstract Annotate
 * Complexity: easy
 * Lines of code: 13 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
     1. Define abstract class `IrisAbstract`

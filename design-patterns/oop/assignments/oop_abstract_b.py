@@ -2,7 +2,7 @@
 * Assignment: OOP Abstract Interface
 * Complexity: easy
 * Lines of code: 10 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Define abstract class `IrisAbstract`
