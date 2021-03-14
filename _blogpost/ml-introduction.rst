@@ -3,7 +3,8 @@ Machine Learning Introduction
 
 
 .. epigraph::
-    Machine Learning - Field of study that gives computers the ability to learn without being explicitly programmed.
+    Machine Learning - Field of study that gives computers the ability to
+    learn without being explicitly programmed.
     -- Arthur Samuel, 1959
 
 
@@ -18,23 +19,23 @@ What is Machine Learning?
 -------------------------
 * Dzięki specjalnym algorytmom komputery będą w stanie z coraz większą dokładnością przewidywać rozwiązanie problemów. Bez względu na to czy mamy zamiar wykryć:
 
-* trend w danych marketingowych,
-* przewidzieć sprzedaż danego produktu,
-* przewidzieć wynik wyborów,
-* anomalię w logach płatności i danych kredytowych,
-* wykryć oszustwa (ang. fraud),
-* wykryć nietypowe odczyty urządzeń,
-* kategoryzować chorych wg. klas i stanu zdrowia,
+    * trend w danych marketingowych,
+    * przewidzieć sprzedaż danego produktu,
+    * przewidzieć wynik wyborów,
+    * anomalię w logach płatności i danych kredytowych,
+    * wykryć oszustwa (ang. fraud),
+    * wykryć nietypowe odczyty urządzeń,
+    * kategoryzować chorych wg. klas i stanu zdrowia,
 
 komputer zrobi to szybciej i dokładniej niż człowiek. Do każdego z wyżej wymienionych tematów możemy zastosować odpowiedni model, który podpowie nam odpowiedź.
 
-* Czym jest Machine Learning?
-* Czy temat rzeczywiście wymaga znajomości zaawansowanej matematyki?
-* Jak określić problem i tworzyć zbiór danych?
-* Jak wyselekcjonować dobre cechy?
-* Jak wybrać a później dostosować model?
-* Jak przedstawić go graficznie i zinterpretować wyniki?
-* Jak konstruować sieci neuronowe i jak wykorzystywać istniejące biblioteki?
+    * Czym jest Machine Learning?
+    * Czy temat rzeczywiście wymaga znajomości zaawansowanej matematyki?
+    * Jak określić problem i tworzyć zbiór danych?
+    * Jak wyselekcjonować dobre cechy?
+    * Jak wybrać a później dostosować model?
+    * Jak przedstawić go graficznie i zinterpretować wyniki?
+    * Jak konstruować sieci neuronowe i jak wykorzystywać istniejące biblioteki?
 
 O klasach algorytmów i ich trafnym doborze do odpowiedniego problemu, jak również ich przykładowej implementacji opowiemy w trakcie cyklu Machine Learning w Pythonie. Zapraszam do artykułu gdzie odpowiemy na powyższe zagadnienia!
 
@@ -96,7 +97,9 @@ More information in `Machine Learning Datasets`
 
 Python Requirements
 -------------------
-Machine Learning to bardzo duży i złożony temat, a tak naprawdę to osobna gałąź informatyki. Podczas tych artykułów chciałbym się skupić na praktycznym wykorzystaniu uczenia maszynowego do rozwiązywania problemów.
+Machine Learning to bardzo duży i złożony temat, a tak naprawdę to osobna
+gałąź informatyki. Podczas tych artykułów chciałbym się skupić na
+praktycznym wykorzystaniu uczenia maszynowego do rozwiązywania problemów.
 
     * Either select other algorithm
     * Optimize or change parameters to algorithm
@@ -137,9 +140,21 @@ Runtime
 * Jupyter Lab
 
 ``Jupyter``
-    The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.
+    The Jupyter Notebook is an open-source web application that allows you
+    to create and share documents that contain live code, equations,
+    visualizations and explanatory text. Uses include: data cleaning and
+    transformation, numerical simulation, statistical modeling, machine
+    learning and much more.
 
-    Jupyter notebook is a language-agnostic HTML notebook application for Project Jupyter. In 2015, Jupyter notebook was released as a part of The Big Split™ of the IPython codebase. IPython 3 was the last major monolithic release containing both language-agnostic code, such as the IPython notebook, and language specific code, such as the IPython kernel for Python. As computing spans across many languages, Project Jupyter will continue to develop the language-agnostic Jupyter notebook in this repo and with the help of the community develop language specific kernels which are found in their own discrete repos.
+    Jupyter notebook is a language-agnostic HTML notebook application for
+    Project Jupyter. In 2015, Jupyter notebook was released as a part of The
+    Big Split™ of the IPython codebase. IPython 3 was the last major
+    monolithic release containing both language-agnostic code, such as the
+    IPython notebook, and language specific code, such as the IPython kernel
+    for Python. As computing spans across many languages, Project Jupyter will
+    continue to develop the language-agnostic Jupyter notebook in this repo
+    and with the help of the community develop language specific kernels
+    which are found in their own discrete repos.
 
     * http://jupyter.org/
     * http://jupyter.readthedocs.io/en/latest/install.html
@@ -239,7 +254,13 @@ Neural Networks
 * ``PyTorch``
 
 ``TensorFlow``
-    TensorFlow is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) that flow between them. This flexible architecture lets you deploy computation to one or more CPUs or GPUs in a desktop, server, or mobile device without rewriting code. TensorFlow also includes TensorBoard, a data visualization toolkit.
+    TensorFlow is an open source software library for numerical computation
+    using data flow graphs. Nodes in the graph represent mathematical
+    operations, while the graph edges represent the multidimensional data
+    arrays (tensors) that flow between them. This flexible architecture lets
+    you deploy computation to one or more CPUs or GPUs in a desktop, server,
+    or mobile  device without rewriting code. TensorFlow also includes
+    TensorBoard, a data visualization toolkit.
 
     TensorFlow was originally developed by researchers and engineers working on the Google Brain team within Google's Machine Intelligence Research organization for the purposes of conducting machine learning and deep neural networks research. The system is general enough to be applicable in a wide variety of other domains, as well.
 
@@ -396,13 +417,18 @@ Working with scikit-learn
     # Import the class you plan to use
     from sklearn.neighbours import KNeighboursClassifier
 
+
     features = ...  # Pandas DataFrame or Python list[list|tuple]
     labels = ... # Pandas DataFrame or Python list[int|str|float]
 
+    # Instantiate the estimator
+    model = KNeighboursClassifier(n_neighbours=1)
 
-    model = KNeighboursClassifier(n_neighbours=1)    # Instantiate the estimator
-    model.fit(features, labels)     # Fit the model with data (aka "model training")
-    model.predict([3, 5, 4, 2])     # Predict the response for a new observation
+    # Fit the model with data (aka "model training")
+    model.fit(features, labels)
+
+    # Predict the response for a new observation
+    model.predict([3, 5, 4, 2])
     # array([2])
 
     # Can predict for multiple observations at once
@@ -414,7 +440,11 @@ Working with scikit-learn
 
 .. code-block:: python
 
-    from sklearn.neighbours import KNeighboursClassifier()
+    from sklearn.neighbours import KNeighboursClassifier
+
+
+    features = ...  # Pandas DataFrame or Python list[list|tuple]
+    labels = ... # Pandas DataFrame or Python list[int|str|float]
 
     model = KNeighboursClassifier(n_neighbours=5)
     model.fit(features, labels)
@@ -427,7 +457,7 @@ Working with scikit-learn
 
 .. code-block:: python
 
-    from sklearn.linear_model import LogisticsRegression()
+    from sklearn.linear_model import LogisticsRegression
 
     model = LogisticsRegression()
     model.fit(features, labels)
@@ -438,15 +468,50 @@ Working with scikit-learn
     ])
     # array([2, 0])
 
+Training models can take a while for small datasets, but several hours
+or days for huge data. In order to avoid learning model each time when
+we run script, you can persist trained model to a file:
+
+.. code-block:: python
+
+    from sklearn.linear_model import LogisticsRegression
+    from sklearn.externals import joblib
+
+
+    features = ...  # Pandas DataFrame or Python list[list|tuple]
+    labels = ... # Pandas DataFrame or Python list[int|str|float]
+
+    model = LogisticsRegression()
+    model.fit(features, labels)
+
+    joblib.dump(model, 'myfile.joblib')
+
+Then it is very easy to restore trained model and use it to predict:
+
+.. code-block:: python
+
+    from sklearn.linear_model import LogisticsRegression
+    from sklearn.externals import joblib
+
+    model = joblib.load('myfile.joblib')
+
+    model.predict([
+        [3, 5, 4, 2],
+        [5, 4, 3, 2],
+    ])
+    # array([2, 0])
 
 Machine Learning Algorithms Categories
 --------------------------------------
 
 Supervised Learning
 -------------------
-Input data is called training data and has a known label or result such as spam/not-spam or a stock price at a time.
-
-A model is prepared through a training process in which it is required to make predictions and is corrected when those predictions are wrong. The training process continues until the model achieves a desired level of accuracy on the training data.
+* Input data is called training data and has a known label or result such as
+  spam/not-spam or a stock price at a time.
+* A model is prepared through a training process in which it is required to
+  make predictions and is corrected when those predictions are wrong.
+* The training process continues until the model achieves a desired level
+  of accuracy on the training data.
 
 Example problems are classification and regression.
 
@@ -465,30 +530,32 @@ Example problems are classification and regression.
 
 Unsupervised Learning
 ---------------------
-Input data is not labeled and does not have a known result.
+* Input data is not labeled and does not have a known result.
+* A model is prepared by deducing structures present in the input data.
+* This may be to extract general rules. It may be through a mathematical
+  process to systematically reduce redundancy, or it may be to organize data
+  by similarity.
 
-A model is prepared by deducing structures present in the input data. This may be to extract general rules. It may be through a mathematical process to systematically reduce redundancy, or it may be to organize data by similarity.
+Example problems are clustering, dimensionality reduction and association
+  rule learning:
 
-Example problems are clustering, dimensionality reduction and association rule learning.
+    * Klastrowanie (ang. flat clustering, hierarchical clustering)
+    * Principal Component Analysis (PCA)
+    * Sztuczne sieci neuronowe (ang. neural networks)
 
 .. figure:: img/algorithms-unsupervised.png
 
     Unsupervised Learning - Bez nadzoru
 
-* Klastrowanie (ang. flat clustering, hierarchical clustering)
-* Principal Component Analysis (PCA)
-* Sztuczne sieci neuronowe (ang. neural networks)
-
 
 Semi-Supervised Learning
 ------------------------
-Input data is a mixture of labeled and unlabelled examples.
-
-There is a desired prediction problem but the model must learn the structures to organize the data as well as make predictions.
-
-Example problems are classification and regression.
-
-Example algorithms are extensions to other flexible methods that make assumptions about how to model the unlabeled data.
+* Input data is a mixture of labeled and unlabelled examples.
+* There is a desired prediction problem but the model must learn the structures
+  to organize the data as well as make predictions.
+* Example problems are classification and regression.
+* Example algorithms are extensions to other flexible methods that make
+  assumptions about how to model the unlabeled data.
 
 .. figure:: img/algorithms-semisupervised.png
 
@@ -509,9 +576,24 @@ Example algorithms are extensions to other flexible methods that make assumption
 
 Reinforcement Learning
 ----------------------
-* Reinforcement learning (RL) is an area of machine learning concerned with how intelligent agents ought to take actions in an environment in order to maximize the notion of cumulative reward [#Hu2020]. Reinforcement learning is one of three basic machine learning paradigms, alongside supervised learning and unsupervised learning.
-* Reinforcement learning differs from supervised learning in not needing labelled input/output pairs be presented, and in not needing sub-optimal actions to be explicitly corrected. Instead the focus is on finding a balance between exploration (of uncharted territory) and exploitation (of current knowledge) [#Kaelbling1996].
-* The environment is typically stated in the form of a Markov decision process (MDP), because many reinforcement learning algorithms for this context use dynamic programming techniques [#Otterlo2012]. The main difference between the classical dynamic programming methods and reinforcement learning algorithms is that the latter do not assume knowledge of an exact mathematical model of the MDP and they target large MDPs where exact methods become infeasible.
+* Reinforcement learning (RL) is an area of machine learning concerned with how
+  intelligent agents ought to take actions in an environment in order to
+  maximize the notion of cumulative reward [#Hu2020].
+* Reinforcement learning is one of three basic machine learning paradigms,
+  alongside supervised learning and unsupervised learning.
+* Reinforcement learning differs from supervised learning in not needing
+  labelled input/output pairs be presented, and in not needing sub-optimal
+  actions to be explicitly corrected. Instead the focus is on finding a balance
+  between exploration (of uncharted territory) and exploitation (of current
+  knowledge) [#Kaelbling1996].
+* The environment is typically stated in the form of a Markov decision process
+  (MDP), because many reinforcement learning algorithms for this context use
+  dynamic programming techniques [#Otterlo2012]. The main difference between
+  the classical dynamic programming methods and reinforcement learning
+  algorithms is that the latter do not assume knowledge of an exact
+  mathematical model of the MDP and they target large MDPs where exact methods
+  become infeasible.
+
 * Source: [#WikiReinforcementLearning]
 
 
