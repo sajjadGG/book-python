@@ -3,7 +3,7 @@ Machine Learning Introduction
 
 
 .. epigraph::
-    Machine Learning - Field of study that gives computers the ability to
+    Machine Learning is a field of study that gives computers the ability to
     learn without being explicitly programmed.
     -- Arthur Samuel, 1959
 
@@ -17,7 +17,9 @@ Rationale
 
 What is Machine Learning?
 -------------------------
-* Dzięki specjalnym algorytmom komputery będą w stanie z coraz większą dokładnością przewidywać rozwiązanie problemów. Bez względu na to czy mamy zamiar wykryć:
+Dzięki specjalnym algorytmom komputery będą w stanie z coraz większą
+dokładnością przewidywać rozwiązanie problemów. Bez względu na to czy mamy
+zamiar wykryć:
 
     * trend w danych marketingowych,
     * przewidzieć sprzedaż danego produktu,
@@ -25,9 +27,11 @@ What is Machine Learning?
     * anomalię w logach płatności i danych kredytowych,
     * wykryć oszustwa (ang. fraud),
     * wykryć nietypowe odczyty urządzeń,
-    * kategoryzować chorych wg. klas i stanu zdrowia,
+    * kategoryzować chorych wg. klas i stanu zdrowia.
 
-komputer zrobi to szybciej i dokładniej niż człowiek. Do każdego z wyżej wymienionych tematów możemy zastosować odpowiedni model, który podpowie nam odpowiedź.
+Komputer zrobi to szybciej i dokładniej niż człowiek. Do każdego z wyżej
+wymienionych tematów możemy zastosować odpowiedni model, który podpowie nam
+odpowiedź.
 
     * Czym jest Machine Learning?
     * Czy temat rzeczywiście wymaga znajomości zaawansowanej matematyki?
@@ -37,7 +41,10 @@ komputer zrobi to szybciej i dokładniej niż człowiek. Do każdego z wyżej wy
     * Jak przedstawić go graficznie i zinterpretować wyniki?
     * Jak konstruować sieci neuronowe i jak wykorzystywać istniejące biblioteki?
 
-O klasach algorytmów i ich trafnym doborze do odpowiedniego problemu, jak również ich przykładowej implementacji opowiemy w trakcie cyklu Machine Learning w Pythonie. Zapraszam do artykułu gdzie odpowiemy na powyższe zagadnienia!
+O klasach algorytmów i ich trafnym doborze do odpowiedniego problemu, jak
+również ich przykładowej implementacji opowiemy w trakcie cyklu Machine
+Learning w Pythonie. Zapraszam do artykułu gdzie odpowiemy na powyższe
+zagadnienia!
 
 
 Application
@@ -168,40 +175,79 @@ Data Analysis
 * ``SciPy``
 
 ``NumPy``
-    NumPy is the fundamental package for scientific computing with Python. It contains among other things:
+    NumPy is the fundamental package for scientific computing with Python. It
+    contains among other things:
 
         * a powerful N-dimensional array object
         * sophisticated (broadcasting) functions
         * tools for integrating C/C++ and Fortran code
         * useful linear algebra, Fourier transform, and random number capabilities
 
-    Besides its obvious scientific uses, NumPy can also be used as an efficient multi-dimensional container of generic data. Arbitrary data-types can be defined. This allows NumPy to seamlessly and speedily integrate with a wide variety of databases.
+    Besides its obvious scientific uses, NumPy can also be used as an
+    efficient multi-dimensional container of generic data. Arbitrary
+    data-types can be defined. This allows NumPy to seamlessly and speedily
+    integrate with a wide variety of databases.
 
     * http://www.numpy.org/
 
 ``Pandas``
-    pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis / manipulation tool available in any language. It is already well on its way toward this goal. Here are just a few of the things that pandas does well:
+    pandas is a Python package providing fast, flexible, and expressive data
+    structures designed to make working with "relational" or "labeled" data
+    both easy and intuitive. It aims to be the fundamental high-level
+    building block for doing practical, real world data analysis in Python.
+    Additionally, it has the broader goal of becoming the most powerful and
+    flexible open source data analysis / manipulation tool available in any
+    language. It is already well on its way toward this goal. Here are just a
+    few of the things that pandas does well:
 
-        * Easy handling of missing data (represented as NaN) in floating point as well as non-floating point data
-        * Size mutability: columns can be inserted and deleted from DataFrame and higher dimensional objects
-        * Automatic and explicit data alignment: objects can be explicitly aligned to a set of labels, or the user can simply ignore the labels and let Series, DataFrame, etc. automatically align the data for you in computations
-        * Powerful, flexible group by functionality to perform split-apply-combine operations on data sets, for both aggregating and transforming data
-        * Make it easy to convert ragged, differently-indexed data in other Python and NumPy data structures into DataFrame objects
-        * Intelligent label-based slicing, fancy indexing, and subsetting of large data sets
+        * Easy handling of missing data (represented as NaN) in floating point
+          as well as non-floating point data
+        * Size mutability: columns can be inserted and deleted from DataFrame
+          and higher dimensional objects
+        * Automatic and explicit data alignment: objects can be explicitly
+          aligned to a set of labels, or the user can simply ignore the labels
+          and let Series, DataFrame, etc. automatically align the data for you
+          in computations
+        * Powerful, flexible group by functionality to perform
+          split-apply-combine operations on data sets, for both aggregating
+          and transforming data
+        * Make it easy to convert ragged, differently-indexed data in other
+          Python and NumPy data structures into DataFrame objects
+        * Intelligent label-based slicing, fancy indexing, and subsetting of
+          large data sets
         * Intuitive merging and joining data sets
         * Flexible reshaping and pivoting of data sets
         * Hierarchical labeling of axes (possible to have multiple labels per tick)
-        * Robust IO tools for loading data from flat files (CSV and delimited), Excel files, databases, and saving/loading data from the ultrafast HDF5 format
-        * Time series-specific functionality: date range generation and frequency conversion, moving window statistics, moving window linear regressions, date shifting and lagging, etc.
+        * Robust IO tools for loading data from flat files (CSV and delimited),
+          Excel files, databases, and saving/loading data from the ultrafast HDF5 format
+        * Time series-specific functionality: date range generation and
+          frequency conversion, moving window statistics, moving window linear
+          regressions, date shifting and lagging, etc.
 
     * http://pandas.pydata.org/
 
 ``SciPy``
-    SciPy (pronounced "Sigh Pie") is open-source software for mathematics, science, and engineering. It includes modules for statistics, optimization, integration, linear algebra, Fourier transforms, signal and image processing, ODE solvers, and more. It is also the name of a very popular conference on scientific programming with Python.
+    SciPy (pronounced "Sigh Pie") is open-source software for mathematics,
+    science, and engineering. It includes modules for statistics,
+    optimization, integration, linear algebra, Fourier transforms, signal and
+    image processing, ODE solvers, and more. It is also the name of a very
+    popular conference on scientific programming with Python.
 
-    The SciPy library depends on NumPy, which provides convenient and fast N-dimensional array manipulation. The SciPy library is built to work with NumPy arrays, and provides many user-friendly and efficient numerical routines such as routines for numerical integration and optimization. Together, they run on all popular operating systems, are quick to install, and are free of charge. NumPy and SciPy are easy to use, but powerful enough to be depended upon by some of the world's leading scientists and engineers. If you need to manipulate numbers on a computer and display or publish the results.
+    The SciPy library depends on NumPy, which provides convenient and fast
+    N-dimensional array manipulation. The SciPy library is built to work with
+    NumPy arrays, and provides many user-friendly and efficient numerical
+    routines such as routines for numerical integration and optimization.
+    Together, they run on all popular operating systems, are quick to
+    install, and are free of charge. NumPy and SciPy are easy to use, but
+    powerful enough to be depended upon by some of the world's leading
+    scientists and engineers. If you need to manipulate numbers on a computer
+    and display or publish the results.
 
-    SciPy builds on the NumPy array object and is part of the NumPy stack which includes tools like Matplotlib, pandas and SymPy, and an expanding set of scientific computing libraries. This NumPy stack has similar users to other applications such as MATLAB, GNU Octave, and Scilab. The NumPy stack is also sometimes referred to as the SciPy stack.
+    SciPy builds on the NumPy array object and is part of the NumPy stack
+    which includes tools like Matplotlib, pandas and SymPy, and an expanding
+    set of scientific computing libraries. This NumPy stack has similar users
+    to other applications such as MATLAB, GNU Octave, and Scilab. The NumPy
+    stack is also sometimes referred to as the SciPy stack.
 
     * https://www.scipy.org/
     * https://github.com/scipy/scipy
@@ -214,9 +260,17 @@ Data Visualization
 * ``Seaborn``
 
 ``Matplotlib``
-    Matplotlib is a Python 2D plotting library which produces publication-quality figures in a variety of hardcopy formats and interactive environments across platforms. Matplotlib can be used in Python scripts, the Python and IPython shell (à la MATLAB or Mathematica), web application servers, and various graphical user interface toolkits.
+    Matplotlib is a Python 2D plotting library which produces
+    publication-quality figures in a variety of hardcopy formats and
+    interactive environments across platforms. Matplotlib can be used in
+    Python scripts, the Python and IPython shell (à la MATLAB or Mathematica),
+    web application servers, and various graphical user interface toolkits.
 
-    It provides an object-oriented API for embedding plots into applications using general-purpose GUI toolkits like Tkinter, wxPython, Qt, or GTK+. There is also a procedural "pylab" interface based on a state machine (like OpenGL), designed to closely resemble that of MATLAB, though its use is discouraged. SciPy makes use of matplotlib.
+    It provides an object-oriented API for embedding plots into applications
+    using general-purpose GUI toolkits like Tkinter, wxPython, Qt, or GTK+.
+    There is also a procedural "pylab" interface based on a state machine
+    (like OpenGL), designed to closely resemble that of MATLAB, though its
+    use is discouraged. SciPy makes use of matplotlib.
 
     * https://github.com/matplotlib/matplotlib
     * http://matplotlib.org/
@@ -228,7 +282,11 @@ Machine Learning
 * ``PyMC3``
 
 ``Scikit-learn``
-    A set of python modules for machine learning and data mining. It features various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
+    A set of python modules for machine learning and data mining. It features
+    various classification, regression and clustering algorithms including
+    support vector machines, random forests, gradient boosting, k-means and
+    DBSCAN, and is designed to interoperate with the Python numerical and
+    scientific libraries NumPy and SciPy.
 
         * Simple and efficient tools for data mining and data analysis
         * Accessible to everybody, and reusable in various contexts
@@ -240,7 +298,10 @@ Machine Learning
     * `Przykłady <https://github.com/scikit-learn/scikit-learn/tree/master/examples>`_
 
 ``PyMC3``
-    PyMC3 is a Python package for Bayesian statistical modeling and Probabilistic Machine Learning which focuses on advanced Markov chain Monte Carlo and variational fitting algorithms. Its flexibility and extensibility make it applicable to a large suite of problems.
+    PyMC3 is a Python package for Bayesian statistical modeling and
+    Probabilistic Machine Learning which focuses on advanced Markov chain
+    Monte Carlo and variational fitting algorithms. Its flexibility and
+    extensibility make it applicable to a large suite of problems.
 
     * `PyMC3 Github <https://github.com/pymc-devs/pymc3>`_
     * `PyMC3 tutorial <http://pymc-devs.github.io/pymc3/notebooks/getting_started.html>`_
@@ -262,7 +323,11 @@ Neural Networks
     or mobile  device without rewriting code. TensorFlow also includes
     TensorBoard, a data visualization toolkit.
 
-    TensorFlow was originally developed by researchers and engineers working on the Google Brain team within Google's Machine Intelligence Research organization for the purposes of conducting machine learning and deep neural networks research. The system is general enough to be applicable in a wide variety of other domains, as well.
+    TensorFlow was originally developed by researchers and engineers working
+    on the Google Brain team within Google's Machine Intelligence Research
+    organization for the purposes of conducting machine learning and deep
+    neural networks research. The system is general enough to be applicable
+    in a wide variety of other domains, as well.
 
     * `TensorFlow Github <https://github.com/tensorflow/tensorflow>`_
     * `TensorFlow website <https://tensorflow.org/>`_
@@ -578,23 +643,23 @@ Reinforcement Learning
 ----------------------
 * Reinforcement learning (RL) is an area of machine learning concerned with how
   intelligent agents ought to take actions in an environment in order to
-  maximize the notion of cumulative reward [#Hu2020].
+  maximize the notion of cumulative reward [#Hu2020]_.
 * Reinforcement learning is one of three basic machine learning paradigms,
   alongside supervised learning and unsupervised learning.
 * Reinforcement learning differs from supervised learning in not needing
   labelled input/output pairs be presented, and in not needing sub-optimal
   actions to be explicitly corrected. Instead the focus is on finding a balance
   between exploration (of uncharted territory) and exploitation (of current
-  knowledge) [#Kaelbling1996].
+  knowledge) [#Kaelbling1996]_.
 * The environment is typically stated in the form of a Markov decision process
   (MDP), because many reinforcement learning algorithms for this context use
-  dynamic programming techniques [#Otterlo2012]. The main difference between
+  dynamic programming techniques [#Otterlo2012]_. The main difference between
   the classical dynamic programming methods and reinforcement learning
   algorithms is that the latter do not assume knowledge of an exact
   mathematical model of the MDP and they target large MDPs where exact methods
   become infeasible.
 
-* Source: [#WikiReinforcementLearning]
+* Source: [#WikiReinforcementLearning]_
 
 
 References
