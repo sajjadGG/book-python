@@ -46,7 +46,10 @@ Single Responsibility Principle
 
     -- Robert C. Martin
 
-Every module or class should have responsibility over a single part of the functionality provided by the software, and that responsibility should be entirely encapsulated by the class. All its services should be narrowly aligned with that responsibility.
+Every module or class should have responsibility over a single part of the
+functionality provided by the software, and that responsibility should be
+entirely encapsulated by the class. All its services should be narrowly
+aligned with that responsibility.
 
 .. figure:: img/oop-solid-srp.png
 
@@ -266,7 +269,8 @@ Liskov Substitution Principle
 
     -- Barbara Liskov
 
-* Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
+* Objects in a program should be replaceable with instances of their subtypes
+  without altering the correctness of that program
 * It's all about polymorphism
 * Example:
 
@@ -276,14 +280,19 @@ Liskov Substitution Principle
 
 * Any part of the API which is not fully substitutable is a Liskov violation
 * This is common and normal
-* In particular, subclasses can have different constructor signatures (for example the array API [``from array import array``] is very similar to the list API but the constructor is different)
+* In particular, subclasses can have different constructor signatures (for
+  example the array API [``from array import array``] is very similar to the
+  list API but the constructor is different)
 * Goal is to isolate or minimize the impact
 * Problem:
 
-    * Taxonomy hierarchies do not neatly transform into useful class hierarchies (Circle and Ellipse problem)
+    * Taxonomy hierarchies do not neatly transform into useful class
+      hierarchies (Circle and Ellipse problem)
     * Substitutability can be a hard problem
-    * More importantly, it challenges our conceptual view of a subclass as simple a form of specialization
-    * Clarity comes from thinking about the design in terms of code reuse (the class that has the most reusable code should be the parent)
+    * More importantly, it challenges our conceptual view of a subclass as
+      simple a form of specialization
+    * Clarity comes from thinking about the design in terms of code reuse
+      (the class that has the most reusable code should be the parent)
 
 * Source: [#Hettinger2012]_
 
@@ -302,6 +311,33 @@ Liskov Substitution Principle
 >>> b = mystr('Mark Watney')
 >>> b.upper()
 'MARK WATNEY'
+
+>>> from collections import OrderedDict
+>>>
+>>>
+>>> assert hasattr(dict, 'clear')
+>>> assert hasattr(dict, 'copy')
+>>> assert hasattr(dict, 'fromkeys')
+>>> assert hasattr(dict, 'get')
+>>> assert hasattr(dict, 'items')
+>>> assert hasattr(dict, 'keys')
+>>> assert hasattr(dict, 'pop')
+>>> assert hasattr(dict, 'popitem')
+>>> assert hasattr(dict, 'setdefault')
+>>> assert hasattr(dict, 'update')
+>>> assert hasattr(dict, 'values')
+>>>
+>>> assert hasattr(OrderedDict, 'clear')
+>>> assert hasattr(OrderedDict, 'copy')
+>>> assert hasattr(OrderedDict, 'fromkeys')
+>>> assert hasattr(OrderedDict, 'get')
+>>> assert hasattr(OrderedDict, 'items')
+>>> assert hasattr(OrderedDict, 'keys')
+>>> assert hasattr(OrderedDict, 'pop')
+>>> assert hasattr(OrderedDict, 'popitem')
+>>> assert hasattr(OrderedDict, 'setdefault')
+>>> assert hasattr(OrderedDict, 'update')
+>>> assert hasattr(OrderedDict, 'values')
 
 >>> from abc import ABCMeta, abstractmethod
 >>> from dataclasses import dataclass
@@ -345,7 +381,14 @@ Interface Segregation Principle
 -------------------------------
 * many specific interfaces are better than one general-purpose interface
 
-The interface-segregation principle (ISP) states that no client should be forced to depend on methods it does not use. ISP splits interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them. Such shrunken interfaces are also called role interfaces. ISP is intended to keep a system decoupled and thus easier to refactor, change, and redeploy. ISP is one of the five SOLID principles of object-oriented design, similar to the High Cohesion Principle of GRASP.
+The interface-segregation principle (ISP) states that no client should be
+forced to depend on methods it does not use. ISP splits interfaces that are
+very large into smaller and more specific ones so that clients will only have
+to know about the methods that are of interest to them. Such shrunken
+interfaces are also called role interfaces. ISP is intended to keep a system
+decoupled and thus easier to refactor, change, and redeploy. ISP is one of
+the five SOLID principles of object-oriented design, similar to the High
+Cohesion Principle of GRASP.
 
 .. figure:: img/oop-solid-isp.png
 
@@ -433,12 +476,20 @@ Dependency Inversion Principle
 
     Class Dependencies should depend upon abstractions, not concretions
 
-When following this principle, the conventional dependency relationships established from high-level, policy-setting modules to low-level, dependency modules are reversed, thus rendering high-level modules independent of the low-level module implementation details. The principle states:
+When following this principle, the conventional dependency relationships
+established from high-level, policy-setting modules to low-level, dependency
+modules are reversed, thus rendering high-level modules independent of the
+low-level module implementation details. The principle states:
 
-    #. High-level modules should not depend on low-level modules. Both should depend on abstractions.
-    #. Abstractions should not depend on details. Details should depend on abstractions.
+    1. High-level modules should not depend on low-level modules. Both should
+       depend on abstractions.
 
-By dictating that both high-level and low-level objects must depend on the same abstraction this design principle inverts the way some people may think about object-oriented programming.
+    2. Abstractions should not depend on details. Details should depend on
+       abstractions.
+
+By dictating that both high-level and low-level objects must depend on the
+same abstraction this design principle inverts the way some people may think
+about object-oriented programming.
 
 Bad:
 
