@@ -18,7 +18,7 @@ Install
 >>> import sqlalchemy
 >>>
 >>>
->>> sqlalchemy.__version__.startswith('1.3')
+>>> sqlalchemy.__version__.startswith('1.4')
 True
 
 
