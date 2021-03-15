@@ -50,18 +50,19 @@ Tests:
 
 # Given
 # fmt: off
+PERCENT = 100
 m = 1
 Pa = 1
 hPa = 100 * Pa
-ata = 1013.25 * hPa
-O2 = 20.946
-pO2 = O2 / 100 * ata
+
+ata = 1013.25 * hPa  # Pressure at sea level
+O2 = 20.946 / PERCENT
+pO2 = O2 * ata  # oxygen partial pressure
 
 gradient = ...  # 11.3 Pascals per meter
-altitude = ...  # Pressure at sea level minis oxygen partial pressure divided by gradient
+altitude = ...  # Pressure at sea level minus oxygen partial pressure divided by gradient
 # fmt: on
 
 # Solution
-pO2 = O2 / 100 * ata
 gradient = 11.3 * Pa / m
 altitude = (ata - pO2) / gradient

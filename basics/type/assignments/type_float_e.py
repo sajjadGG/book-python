@@ -46,11 +46,12 @@ m = 1
 km = 1000 * m
 mi = 1609.344 * m
 
-mph: float  # miles per hour
-kph: float  # kilometers per hour
+mph = ...  # miles per hour
+kph = ...  # kilometers per hour
 
-speed_limit_mph: float  # 70 MPH
-speed_limit_kph: float  # in KPH
+speed_limit = ...  # 70 miles per hour
+speed_limit_mph = ...  # speed limit in miles per hour
+speed_limit_kph = ...  # speed limit in kilometers per hour
 
 # Solution
 kph = km / HOUR

@@ -42,10 +42,10 @@ b = 1
 kb = 1024 * b
 Mb = 1024 * kb
 
-size = 1337*Mb  # megabits
-size_b = ...  # bytes
-size_kb = ...  # kilobytes
-size_Mb = ...  # megabytes
+size = ...  # 1337 megabits
+size_b = ...  # size in bytes
+size_kb = ...  # size in kilobytes
+size_Mb = ...  # size in megabytes
 
 # Solution
 size = 1337 * Mb

@@ -49,11 +49,11 @@ B = 8 * b
 kB = 1024 * B
 MB = 1024 * kB
 
-bandwidth = 100  # megabits
-size = 100  # megabytes
-duration = ...  # seconds
+bandwidth = ...  # 100 megabits per second
+size = ...  # 100 megabytes
+duration = ...  # size by bandwidth in seconds
 
 # Solution
-bandwidth = int(100 * Mb / SECOND)
-size = int(100 * MB)
-duration = int(size // bandwidth)
+bandwidth = (100 * Mb) // SECOND
+size = 100 * MB
+duration = (size // bandwidth)

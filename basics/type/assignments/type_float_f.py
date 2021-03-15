@@ -45,8 +45,8 @@ hPa = 100 * Pa
 kPa = 1000 * Pa
 psi = 6894.757 * Pa
 
-emu = 4.3  # Pounds per square inch
-orlan = 400  # hectopascals
+emu = ...  # 4.3 pounds per square inch
+orlan = ...  # 400 hectopascals
 
 # Solution
 emu = 4.3 * psi

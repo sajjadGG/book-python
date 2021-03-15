@@ -29,9 +29,9 @@ Tests:
 liter = 1
 floz = 0.02957344 * liter
 
-volume: float  # Bottle volume is 20 Fl Oz
-imperial: float
-metric: float
+volume = ...  # 20 Fl Oz
+imperial = ...  # volume in fluid ounces
+metric = ...  # volume in liters
 
 # Solution
 volume = 20 * floz

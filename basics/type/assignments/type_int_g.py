@@ -45,12 +45,11 @@ B = 8 * b
 kB = 1024 * B
 MB = 1024 * kB
 
-size = 100  # Megabytes
-size_kB = ...  # kilobytes
-size_Mb = ...  # megabits
+size = ...  # 100 Megabytes
+size_kB = ...  # size in kilobytes
+size_Mb = ...  # size in megabits
 
 # Solution
-
 size = 100 * MB
 size_kB = size // kB
 size_Mb = size // Mb

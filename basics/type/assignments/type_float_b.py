@@ -31,9 +31,9 @@ Tests:
 m = 1
 ft = 0.3048 * m
 
-altitude: float  # Plane altitude is 10.000 ft
-imperial: float
-metric: float
+altitude = ...  # 10.000 ft
+imperial = ...  # altitude in feet
+metric = ...  # altitude in meters
 
 # Solution
 altitude = 10_000 * ft

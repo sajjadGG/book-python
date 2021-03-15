@@ -40,13 +40,16 @@ Tests:
 """
 
 # Given
+PERCENT = 100
 Pa = 1
 hPa = 100 * Pa
 kPa = 1000 * Pa
-ata = 1013.25 * hPa
-O2 = 20.946
 
-pO2 = ...  # Oxygen partial pressure
+ata = ...  # Pressure at sea level: 1013.25 hectopascals
+O2 = ...  # oxygen: 20.946%
+pO2 = ...  # oxygen partial pressure: 20.946% of pressure at sea level
 
 # Solution
-pO2 = O2 / 100 * ata
+O2 = 20.946 / PERCENT
+ata = 1013.25 * hPa
+pO2 = O2 * ata
