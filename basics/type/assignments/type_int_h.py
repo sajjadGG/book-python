@@ -9,7 +9,7 @@ English:
     2. How long will take to download 100 MB?
     3. To calculate time divide file size by speed
     3. Note, that all values must be `int` (type cast if needed)
-    3. In Calculations use truediv (`//`)
+    3. In Calculations use floordiv (`//`)
     4. Compare result with "Tests" section (see below)
 
 Polish:
@@ -17,7 +17,7 @@ Polish:
     2. Ile zajmie ściągnięcie pliku 100 MB?
     3. Aby wyliczyć czas podziel wielkość pliku przez prękość
     3. Zwróć uwagę, że wszystkie wartości mają być `int` (rzutuj typ jeżeli potrzeba)
-    3. W obliczeniach użyj truediv (`//`)
+    3. W obliczeniach użyj floordiv (`//`)
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Hints:

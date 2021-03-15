@@ -52,6 +52,6 @@ mars_min = -153  # Celsius
 mars_avg = -63  # Celsius
 
 # Solution
-mars_max = 20 + Kelvin
-mars_min = -153 + Kelvin
-mars_avg = -63 + Kelvin
+mars_max += Kelvin
+mars_min += Kelvin
+mars_avg += Kelvin

@@ -1,5 +1,5 @@
 """
-* Assignment: About Setup VCS
+* Assignment: About Setup Git
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 5 min
@@ -9,7 +9,7 @@ English:
         a. Github is owned by Microsoft
         b. Linux kernel is developed on Github
         c. Python is developed on Github
-        d. Many open source projects i.e. .NET`, `Swift`, `Django` are developed on Github
+        d. Many open source projects i.e. `.NET`, `Swift`, `Django` are developed on Github
     1. If you dont have Github account please create on (it's free)
         a. This is needed for the training course
         b. You will be asked for an email address

@@ -44,7 +44,7 @@ usaf_space = 80  # kilometers
 iaf_space = 100  # kilometers
 
 # Solution
-armstrong_line = 18 * km
-stratosphere = 20 * km
-usaf_space = 80 * km
-iaf_space = 100 * km
+armstrong_line *= km
+stratosphere *= km
+usaf_space *= km
+iaf_space *= km

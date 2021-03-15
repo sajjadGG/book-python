@@ -45,5 +45,5 @@ moon_day = 453  # Kelvins
 moon_night = 93  # Kelvins
 
 # Solution
-moon_day = 453 - Kelvin
-moon_night = 93 - Kelvin
+moon_day -= Kelvin
+moon_night -= Kelvin
