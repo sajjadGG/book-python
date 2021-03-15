@@ -49,7 +49,7 @@ mi = 1609.344 * m
 mph = ...  # miles per hour
 kph = ...  # kilometers per hour
 
-speed_limit = ...  # 70 miles per hour
+speed_limit = ...  # 75 miles per hour
 speed_limit_mph = ...  # speed limit in miles per hour
 speed_limit_kph = ...  # speed limit in kilometers per hour
 

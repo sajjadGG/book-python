@@ -22,7 +22,7 @@ Tests:
     >>> meters
     'Meters: 1337'
     >>> kilometers
-    'Kilometers: 1.337'
+    'Kilometers: 1'
     >>> miles
     'Miles: 0.83'
     >>> nautical_miles
@@ -47,7 +47,7 @@ all_units = f'All: km: {...}, mi: {...}, nm: {...}'  # 0, 1, 2 decimal places
 
 # Solution
 meters = f'Meters: {distance/m:.0f}'
-kilometers = f'Kilometers: {distance/km:.3f}'
+kilometers = f'Kilometers: {distance/km:.0f}'
 miles = f'Miles: {distance/mi:.2f}'
 nautical_miles = f'Nautical Miles: {distance/NM:.3f}'
 all_units = f'All: km: {distance/km:.0f}, mi: {distance/mi:.1f}, nm: {distance/NM:.2f}'

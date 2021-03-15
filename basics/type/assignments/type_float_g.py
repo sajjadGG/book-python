@@ -12,7 +12,7 @@ English:
     5. Compare result with "Tests" section (see below)
 
 Polish:
-    1. International Standard Atmosphere (ISA) na poziomie morza wynosi 1 ata = 1013.25 hPa
+    1. Międzynarodowa standardowa atmosfera (ISA) na poziomie morza wynosi 1 ata = 1013.25 hPa
     2. Oblicz `pO2` - ciśnienie parcjalne tlenu na poziomie morza
     3. Wynik wypisz w kPa zaokrąglając do dwóch miejsc po przecinku
     4. Aby policzyć ciśnienie parcjalne skorzystaj z proporcji (100% to 1013.25 hPa, 20.946% to ile hPa?)
