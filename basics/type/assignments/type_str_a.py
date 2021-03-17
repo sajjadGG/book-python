@@ -19,5 +19,8 @@ Tests:
     'NASA'
 """
 
+# Given
+result = ...  # Type NASA
+
 # Solution
-result = input('Type text: ')
+result = input('Type NASA: ')

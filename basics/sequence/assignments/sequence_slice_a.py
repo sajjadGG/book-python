@@ -17,6 +17,8 @@ Polish:
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> assert result is not Ellipsis, \
+    'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> type(result)
     <class 'str'>
     >>> result
@@ -27,7 +29,7 @@ Tests:
 TEXT = 'We choose to go to the Moon!'
 REMOVE = 'to go to '
 
-result: str  # TEXT without REMOVE part
+result = ...  # str TEXT without REMOVE part
 
 # Solution
 a = TEXT.find(REMOVE)  # 10

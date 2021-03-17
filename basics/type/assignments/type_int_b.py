@@ -39,11 +39,12 @@ Tests:
 """
 
 # Given
+Celsius = 1
 Kelvin = 273
 
-moon_day = 453  # Kelvins
-moon_night = 93  # Kelvins
+moon_day = ...  # 453 Kelvins
+moon_night = ...  # 93 Kelvins
 
 # Solution
-moon_day -= Kelvin
-moon_night -= Kelvin
+moon_day = 453*Celsius - Kelvin
+moon_night = 93*Celsius - Kelvin

@@ -33,6 +33,8 @@ Polish:
     8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> assert result is not Ellipsis, \
+    'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> type(result)
     <class 'set'>
     >>> ('sepal_length' not in result
@@ -65,7 +67,15 @@ DATA = [
     '6.4,3.2,4.5,1.5,versicolor',
 ]
 
-result: set
+result = ...  # with row at DATA[2] (manually converted to float and str)
+result  # add to result float 5.1
+result  # add to result float 3.5
+result  # add to result float 1.4
+result  # add to result float 0.2
+result  # add to result str setosa
+result  # update result with set 5.7, 2.8, 4.1, 1.3, 'versicolor'
+result  # update result with tuple 6.3, 2.9, 5.6, 1.8, 'virginica'
+result  # update result with list 6.4, 3.2, 4.5, 1.5, 'versicolor'
 
 # Solution
 result = {5.8, 2.7, 5.1, 1.9, 'virginica'}

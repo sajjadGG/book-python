@@ -17,6 +17,10 @@ Polish:
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> assert header is not Ellipsis, \
+    'Assignment solution must be in `header` instead of ... (Ellipsis)'
+    >>> assert data is not Ellipsis, \
+    'Assignment solution must be in `data` instead of ... (Ellipsis)'
     >>> type(header)
     <class 'tuple'>
     >>> type(data)
@@ -44,6 +48,9 @@ DATA = [
     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
+
+header = ...  # tuple with row with index 0: ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
+data = ...  # list with all the other rows: (5.8, 2.7, 5.1, 1.9, 'virginica'), (5.1, 3.5, 1.4, 0.2, 'setosa'), ...
 
 # Solution
 header, *data = DATA

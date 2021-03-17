@@ -33,5 +33,7 @@ Tests:
 # Given
 name = 'José Jiménez'
 
+result = ...  # str with '''My name... "José Jiménez".<newline><tab>I'm an \"\"\"astronaut!\"\"\"'''
+
 # Solution
 result = f"""'''My name... "{name}".\n\tI\'m an \"\"\"astronaut!\"\"\"'''"""

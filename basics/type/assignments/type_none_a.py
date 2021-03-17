@@ -15,28 +15,41 @@ Polish:
     3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> bool(a)
+    >>> bool(result_a)
     True
-    >>> bool(b)
+    >>> bool(result_b)
     False
-    >>> bool(c)
+    >>> bool(result_c)
     True
-    >>> bool(d)
+    >>> bool(result_d)
     False
-    >>> bool(e)
+    >>> bool(result_e)
     False
 """
 
 # Given
-a = ... is None
-b = ... is not None
-c = bool(bool(...) is not bool(...)) == False
-d = bool(bool(...) is not bool(...)) == False and bool(...)
-e = (bool(bool(...) is not bool(...)) == False and bool(...)) and (... is not None)
+a = ...  # bool True
+b = ...  # bool False
+c = ...  # bool True
+d = ...  # bool False
+e = ...  # bool False
+
+# Do not modify following lines
+result_a = a is None
+result_b = b is not None
+result_c = bool(bool(c) is not bool(c)) == False
+result_d = bool(bool(d) is not bool(d)) == False and bool(d)
+result_e = (bool(bool(e) is not bool(e)) == False and bool(e)) and (e is not None)
 
 # Solution
-a = None is None
-b = None is not None
-c = bool(bool(None) is not bool(None)) == False
-d = bool(bool(None) is not bool(None)) == False and bool(None)
-e = (bool(bool(None) is not bool(None)) == False and bool(None)) and (None is not None)
+a = None  # bool True
+b = None  # bool False
+c = None  # bool True
+d = None  # bool False
+e = None  # bool False
+
+result_a = a is None
+result_b = b is not None
+result_c = bool(bool(c) is not bool(c)) == False
+result_d = bool(bool(d) is not bool(d)) == False and bool(d)
+result_e = (bool(bool(e) is not bool(e)) == False and bool(e)) and (e is not None)

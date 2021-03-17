@@ -6,37 +6,29 @@
 
 English:
     1. Operational pressure of EMU spacesuit: 4.3 PSI
-    2. Operational pressure of ORLAN spacesuit: 400 hPa
-    3. Calculate operational pressure in kPa for EMU
-    4. Calculate operational pressure in PSI for Orlan
-    5. Print all results in kPa and PSI rounding to one decimal places
+    2. Operational pressure of ORLAN spacesuit: 40 kPa
+    3. Calculate operational pressure in hPa for EMU
+    4. Calculate operational pressure in hPa for Orlan
+    5. Results round to one decimal place
     6. Compare result with "Tests" section (see below)
 
 Polish:
     1. Ciśnienie operacyjne skafandra kosmicznego EMU (NASA): 4.3 PSI
-    2. Ciśnienie operacyjne skafandra kosmicznego ORLAN (Roscosmos): 400 hPa
-    3. Oblicz ciśnienie operacyjne skafandra EMU w kPa
-    4. Oblicz ciśnienie operacyjne skafandra Orlan w PSI
-    5. Wypisz wszystkie wyniki w kPa oraz PSI zaokrąglając do jednego miejsca po przecinku
+    2. Ciśnienie operacyjne skafandra kosmicznego ORLAN (Roscosmos): 40 kPa
+    3. Oblicz ciśnienie operacyjne skafandra EMU w hPa
+    4. Oblicz ciśnienie operacyjne skafandra Orlan w hPa
+    5. Wynik zaokrąglij do jednego miejsca po przecinku
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> type(emu)
     <class 'float'>
     >>> type(orlan)
-    <class 'int'>
-    >>> emu
-    29647.455099999996
+    <class 'float'>
     >>> orlan
-    40000
-    >>> emu / psi
-    4.3
-    >>> orlan / kPa
-    40.0
-    >>> round(emu/kPa, 1)
-    29.6
-    >>> round(orlan/psi, 1)
-    5.8
+    400.0
+    >>> emu
+    296.5
 """
 
 # Given
@@ -45,9 +37,9 @@ hPa = 100 * Pa
 kPa = 1000 * Pa
 psi = 6894.757 * Pa
 
-emu = ...  # 4.3 pounds per square inch
-orlan = ...  # 400 hectopascals
+emu = ...  # 4.3 pounds per square inch in pascals
+orlan = ...  # 40 kilopascals in pascals
 
 # Solution
-emu = 4.3 * psi
-orlan = 400 * hPa
+emu = round(4.3*psi / hPa, 1)
+orlan = round(40*kPa / hPa, 1)

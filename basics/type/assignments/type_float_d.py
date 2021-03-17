@@ -28,7 +28,7 @@ Tests:
     >>> nautical_miles
     'Nautical Miles: 0.722'
     >>> all_units
-    'All: km: 1, mi: 0.8, nm: 0.72'
+    'All: km: 1, mi: 0.8, NM: 0.72'
 """
 
 # Given
@@ -39,15 +39,15 @@ NM = 1852 * m
 
 distance = 1337 * m
 
-meters = f'Meters: {...}'  # 0 decimal places
-kilometers = f'Kilometers: {...}'  # 0 decimal places
-miles = f'Miles: {...}'  # 2 decimal places
-nautical_miles = f'Nautical Miles: {...}'  # 3 decimal places
-all_units = f'All: km: {...}, mi: {...}, nm: {...}'  # 0, 1, 2 decimal places
+meters = f'Meters: {...}'  # distance in meters 0 decimal places
+kilometers = f'Kilometers: {...}'  # distance in kilometers with decimal places
+miles = f'Miles: {...}'  # distance in miles with 2 decimal places
+nautical_miles = f'Nautical Miles: {...}'  # distance in nautical miles with 3 decimal places
+all_units = f'All: km: {...}, mi: {...}, NM: {...}'  # distance in km, mi, NM with 0, 1, 2 decimal places
 
 # Solution
 meters = f'Meters: {distance/m:.0f}'
 kilometers = f'Kilometers: {distance/km:.0f}'
 miles = f'Miles: {distance/mi:.2f}'
 nautical_miles = f'Nautical Miles: {distance/NM:.3f}'
-all_units = f'All: km: {distance/km:.0f}, mi: {distance/mi:.1f}, nm: {distance/NM:.2f}'
+all_units = f'All: km: {distance/km:.0f}, mi: {distance/mi:.1f}, NM: {distance/NM:.2f}'

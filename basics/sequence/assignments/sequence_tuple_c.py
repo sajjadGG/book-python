@@ -60,6 +60,11 @@ DATA = [
     '6.4,3.2,4.5,1.5,versicolor',
 ]
 
+sepal_length = ...  # arithmetic mean from tuple with 5.8, 5.1, 5.7, 6.3, 6.4
+sepal_width = ...  # arithmetic mean from tuple with 2.7, 3.5, 2.8, 2.9, 3.2
+petal_length = ...  # arithmetic mean from tuple with 5.1, 1.4, 4.1, 5.6, 4.5
+petal_width = ...  # arithmetic mean from tuple with 1.9, 0.2, 1.3, 1.8, 1.5
+
 # Solution
 sepal_length = (5.8, 5.1, 5.7, 6.3, 6.4)
 sepal_width = (2.7, 3.5, 2.8, 2.9, 3.2)

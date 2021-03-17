@@ -19,6 +19,8 @@ Polish:
     2. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> assert result is not Ellipsis, \
+    'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> type(result)
     <class 'tuple'>
     >>> len(result)
@@ -32,7 +34,7 @@ Tests:
 """
 
 # Given
-result = ...  # with 'a' and 1 and 2.2
+result = ...  # tuple with 'a' and 1 and 2.2
 
 # Solution
 result = ('a', 1, 2.2)

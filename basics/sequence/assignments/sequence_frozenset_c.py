@@ -20,6 +20,8 @@ Hint:
     * `str.join()`
 
 Tests:
+    >>> assert result is not Ellipsis, \
+    'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> type(result)
     <class 'str'>
     >>> len(result)
@@ -42,7 +44,7 @@ DATA = frozenset({
         'Not because they are easy, but because they are hard.'})
 # fmt: on
 
-result: frozenset  # join lines with newline (`\n`) character
+result = ...  # frozenset with lines from DATA joined with newline (`\n`) character
 
 # Solution
 result = '\n'.join(DATA)

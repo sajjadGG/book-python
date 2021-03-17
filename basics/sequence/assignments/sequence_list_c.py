@@ -21,6 +21,12 @@ Polish:
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> assert a is not Ellipsis, \
+    'Assignment solution must be in `a` instead of ... (Ellipsis)'
+    >>> assert b is not Ellipsis, \
+    'Assignment solution must be in `b` instead of ... (Ellipsis)'
+    >>> assert c is not Ellipsis, \
+    'Assignment solution must be in `c` instead of ... (Ellipsis)'
     >>> type(a)
     <class 'list'>
     >>> type(b)
@@ -39,6 +45,11 @@ Tests:
 a = [4.7, 3.2, 1.3, 0.2, 'setosa']
 b = [7.0, 3.2, 4.7, 1.4, 'versicolor']
 c = [7.6, 3.0, 6.6, 2.1, 'virginica']
+
+# insert at the begin of `a` last element popped from `b`
+# append to the `b` last element popped from `a`
+# for getting elements use `list.pop()`
+# from list `c` using `del` delete last element
 
 # Solution
 a.insert(0, b.pop())

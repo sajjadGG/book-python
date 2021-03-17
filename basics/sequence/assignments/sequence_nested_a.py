@@ -14,13 +14,15 @@ English:
 
 Polish:
     1. Stwórz zagnieżdżoną sekwencję `result` z elementami:
-        a. krotka: `1`, `2`, `3`
-        b. lista: `1.1`, `2.2`, `3.3`
-        c. zbiór: `'Mark Watney'`, `'Melissa Lewis'`, `'Jan Twardowski'`
+        a. tuple: `1`, `2`, `3`
+        b. list: `1.1`, `2.2`, `3.3`
+        c. set: `'Mark Watney'`, `'Melissa Lewis'`, `'Jan Twardowski'`
     2. Wypisz `result`
     3. Wypisz liczbę elementów `result`
 
 Tests:
+    >>> assert result is not Ellipsis, \
+    'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> type(result)
     <class 'list'>
     >>> (1, 2, 3) in result
@@ -34,11 +36,11 @@ Tests:
 """
 
 # Given
-result: list  # with (1, 2, 3) and [1.1, 2.2, 3.3] and {'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'}
+result = ...  # list with tuple 1, 2, 3 and list 1.1, 2.2, 3.3 and set 'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'
 
 # Solution
 result = [
-    (1, 2, 3),
-    [1.1, 2.2, 3.3],
-    {'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'},
+        (1, 2, 3),
+        [1.1, 2.2, 3.3],
+        {'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'},
 ]

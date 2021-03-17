@@ -23,6 +23,8 @@ Hints:
     * `ALT` + `SHIFT` + `left mouse button drag` = vertical selection
 
 Tests:
+    >>> assert result is not Ellipsis, \
+    'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> type(result)
     <class 'tuple'>
     >>> all(type(x) is str for x in result)
@@ -52,6 +54,8 @@ DATA = [
     '6.3,2.9,5.6,1.8,virginica',
     '6.4,3.2,4.5,1.5,versicolor',
 ]
+
+result = ...  # define a tuple from header - DATA row with index 0
 
 # Solution
 result = ('virginica', 'setosa', 'versicolor', 'virginica', 'versicolor')

@@ -57,6 +57,15 @@ i = 'Jana III\tSobieskiego '
 
 # fmt: off
 example = example.upper().replace('UL. ', '').replace('\t', '').strip().title().replace('3', 'III')
+a = a  # Jana III Sobieskiego
+b = b  # Jana III Sobieskiego
+c = c  # Jana III Sobieskiego
+d = d  # Jana III Sobieskiego
+e = e  # Jana III Sobieskiego
+f = f  # Jana III Sobieskiego
+g = g  # Jana III Sobieskiego
+h = h  # Jana III Sobieskiego
+i = i  # Jana III Sobieskiego
 # fmt: on
 
 # Solution

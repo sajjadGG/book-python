@@ -29,6 +29,12 @@ Polish:
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> assert a is not Ellipsis, \
+    'Assignment solution must be in `a` instead of ... (Ellipsis)'
+    >>> assert b is not Ellipsis, \
+    'Assignment solution must be in `b` instead of ... (Ellipsis)'
+    >>> assert c is not Ellipsis, \
+    'Assignment solution must be in `c` instead of ... (Ellipsis)'
     >>> type(a)
     <class 'list'>
     >>> type(b)
@@ -71,9 +77,9 @@ DATA = [
     '6.4,3.2,4.5,1.5,versicolor',
 ]
 
-a: list  # with data from row 1
-b: list  # with data from row 2
-c: list  # with data from row 3
+a = ...  # list with data from row[1]: 5.8, 2.7, 5.1, 1.9 and virginica
+b = ...  # list with data from row[2]: 5.1, 3.5, 1.4, 0.2 and setosa
+c = ...  # list with data from row[3]: 5.7, 2.8, 4.1, 1.3 and versicolor
 
 # Solution
 a = [5.8, 2.7, 5.1, 1.9, 'virginica']

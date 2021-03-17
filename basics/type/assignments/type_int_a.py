@@ -45,13 +45,14 @@ Tests:
 """
 
 # Given
+Celsius = 1
 Kelvin = 273
 
-mars_max = 20  # Celsius
-mars_min = -153  # Celsius
-mars_avg = -63  # Celsius
+mars_max = ...  # 20 Celsius in Kelvin
+mars_min = ...  # -153 Celsius in Kelvin
+mars_avg = ...  # -63 Celsius in Kelvin
 
 # Solution
-mars_max += Kelvin
-mars_min += Kelvin
-mars_avg += Kelvin
+mars_max = 20*Celsius + Kelvin
+mars_min = -153*Celsius + Kelvin
+mars_avg = -63*Celsius + Kelvin

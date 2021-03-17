@@ -38,13 +38,13 @@ Tests:
 m = 1
 km = 1000 * m
 
-armstrong_line = 18  # kilometers
-stratosphere = 20  # kilometers
-usaf_space = 80  # kilometers
-iaf_space = 100  # kilometers
+armstrong_line = ...  # 18 kilometers in meters
+stratosphere = ...  # 20 kilometers in meters
+usaf_space = ...  # 80 kilometers in meters
+iaf_space = ...  # 100 kilometers in meters
 
 # Solution
-armstrong_line *= km
-stratosphere *= km
-usaf_space *= km
-iaf_space *= km
+armstrong_line = 18*km // m
+stratosphere = 20*km // m
+usaf_space = 80*km // m
+iaf_space = 100*km // m

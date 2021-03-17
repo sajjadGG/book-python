@@ -17,6 +17,8 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> assert result is not Ellipsis, \
+    'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> type(result)
     <class 'set'>
     >>> result
@@ -27,7 +29,7 @@ Tests:
 a = (0, 1, 2, 3)
 b = [2, 3, 4, 5]
 
-result: set  # every second element from `a` and `b`
+result = ...  # set with every second element from `a` and `b`
 
 # Solution
 result = set()

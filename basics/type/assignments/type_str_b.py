@@ -21,14 +21,20 @@ Polish:
 Tests:
     >>> type(result)
     <class 'str'>
-    >>> '\U0001F642' in result
+    >>> '\U0001F680' in result
     True
     >>> name in result
     True
     >>> result
-    'Hello Mark Watney 🙂'
+    'Hello Mark Watney 🚀'
 """
+
+# Given
+EMOTICON = '\U0001F680'
+
+name = ...  # str Mark Watney
+result = ...  # Hello Mark Watney EMOTICON
 
 # Solution
 name = 'Mark Watney'
-result = f'Hello {name} \U0001F642'
+result = f'Hello {name} {EMOTICON}'

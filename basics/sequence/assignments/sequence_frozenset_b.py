@@ -20,6 +20,8 @@ Hint:
     * `str.splitlines()`
 
 Tests:
+    >>> assert result is not Ellipsis, \
+    Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> type(result)
     <class 'frozenset'>
     >>> len(result)
@@ -37,8 +39,7 @@ DATA = """We choose to go to the Moon.
 We choose to go to the Moon in this decade and do the other things.
 Not because they are easy, but because they are hard."""
 
-result: frozenset  # Split lines and convert to frozenset
+result = ...  # frozenset with DATA split by lines
 
 # Solution
-result = DATA.splitlines()
-result = frozenset(result)
+result = frozenset(DATA.splitlines())

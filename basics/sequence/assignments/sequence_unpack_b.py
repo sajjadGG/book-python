@@ -22,6 +22,10 @@ Hints:
     * Use `str.split()` without any argument
 
 Tests:
+    >>> assert ip is not Ellipsis, \
+    'Assignment solution must be in `ip` instead of ... (Ellipsis)'
+    >>> assert hosts is not Ellipsis, \
+    'Assignment solution must be in `hosts` instead of ... (Ellipsis)'
     >>> type(ip)
     <class 'str'>
     >>> type(hosts)
@@ -35,6 +39,9 @@ Tests:
 
 # Given
 DATA = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
+
+ip = ...  # first str: 10.13.37.1
+hosts = ...  # list with all the other str: ['nasa.gov', 'esa.int', 'roscosmos.ru']
 
 # Solution
 ip, *hosts = DATA.split()

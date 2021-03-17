@@ -35,6 +35,8 @@ Polish:
     10. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> assert result is not Ellipsis, \
+    'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> type(header)
     <class 'tuple'>
     >>> type(result)
@@ -78,8 +80,18 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
 
-header: tuple  # row with index 0
-result: list
+header = ...  # tuple with row with index 0
+result = ...  # list
+
+result  # append list from DATA with index 2
+result  # append tuple from DATA with index 4
+result  # append set from DATA with index -4
+result  # append frozenset DATA with index -2
+
+result  # append empty list
+result  # append empty tuple
+result  # append empty set
+result  # append empty frozenset
 
 # Solution
 header = DATA[0]
