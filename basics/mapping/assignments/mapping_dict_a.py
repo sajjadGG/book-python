@@ -49,10 +49,12 @@ DATA = """
     Missions: Apollo, Artemis
 """
 
+result = ...  # dict with First Name, Last Name and Missions as keys
+
 
 # Solution
 result = {
-    'firstname': 'Jan',
-    'lastname': 'Twardowski',
-    'missions': ['Apollo', 'Artemis'],
+    'First Name': 'Jan',
+    'Last Name': 'Twardowski',
+    'Missions': ['Apollo', 'Artemis'],
 }

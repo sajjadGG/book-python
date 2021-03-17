@@ -51,6 +51,7 @@ DATA = [
     ('Species', 'virginica'),
 ]
 
+result = ...  # dict from DATA
 
 # Solution
 result = dict(DATA)

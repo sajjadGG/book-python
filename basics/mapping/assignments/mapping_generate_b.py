@@ -33,6 +33,7 @@ Tests:
 # Given
 DATA = ['setosa', 'versicolor', 'virginica']
 
+result = ...  # dict from DATA enumeration
 
 # Solution
 result = dict(enumerate(DATA))

@@ -47,6 +47,10 @@ DATA = {
     'Petal width': 1.9,
 }
 
+keys = ...  # dict with keys from DATA
+values = ...  # dict with values from DATA
+items = ...  # dict with key-value pairs from DATA
+
 
 # Solution
 keys = list(DATA.keys())

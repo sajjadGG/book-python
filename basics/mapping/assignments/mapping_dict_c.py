@@ -59,6 +59,8 @@ ALPHABET = {
     'Z': 'Zulu',
 }
 
+letter = ...  # str with letter from user
+result = ...  # str with converted letter to Pilot alphabet or "Pilots don't say that"
 
 # Solution
 letter = input('Type letter: ')

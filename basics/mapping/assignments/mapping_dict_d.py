@@ -51,7 +51,11 @@ PL = {
     'ź': 'z',
 }
 
+letter = ...  # str with letter from user
+result = ...  # str with converted letter without PL accent chars
+
 
 # Solution
 letter = input('Type single letter: ').strip().lower()
 result = PL.get(letter, letter)
+
