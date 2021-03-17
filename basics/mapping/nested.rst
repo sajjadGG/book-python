@@ -5,20 +5,20 @@ Mapping Nested
 Dict Keys
 ---------
 >>> data = {(1,): 'setosa',
-...        (2,): 'virginica',
-...        (3,): 'versicolor'}
+...         (2,): 'virginica',
+...         (3,): 'versicolor'}
 
 >>> data = {(5.8, 2.7, 5.1, 1.9): 'virginica',
-...        (5.1, 3.5, 1.4, 0.2): 'setosa',
-...        (5.7, 2.8, 4.1, 1.3): 'versicolor'}
+...         (5.1, 3.5, 1.4, 0.2): 'setosa',
+...         (5.7, 2.8, 4.1, 1.3): 'versicolor'}
 
 >>> data = {{1}: 'setosa',
-...        {1,2,3}: 'virginica'}
+...         {1,2,3}: 'virginica'}
 Traceback (most recent call last):
 TypeError: unhashable type: 'set'
 
 >>> data = {[1]: 'setosa',
-...        [1,2,3]: 'virginica',}
+...         [1,2,3]: 'virginica',}
 Traceback (most recent call last):
 TypeError: unhashable type: 'list'
 

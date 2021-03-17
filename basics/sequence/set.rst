@@ -113,9 +113,9 @@ Works with ``str``, ``list``, ``tuple``, ``frozenset``
 Converting ``set`` deduplicate items:
 
 >>> data = ['Twardowski',
-...        'Twardowski',
-...        'Watney',
-...        'Twardowski']
+...         'Twardowski',
+...         'Watney',
+...         'Twardowski']
 ...
 >>> set(data) == {'Twardowski', 'Watney'}
 True
