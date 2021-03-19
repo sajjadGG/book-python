@@ -4,7 +4,7 @@ All
 
 Rationale
 ---------
-Return True if all elements of the iterable are true (or if the iterable is empty). Equivalent to:
+Return True if all elements of the iterable are true (or if the iterable is empty).
 
 
 Implementation

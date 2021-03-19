@@ -28,6 +28,8 @@ Hint:
     * `str.splitlines()`
     * `str.strip()`
     * `str.split()`
+    * `bool(0) is False`
+    * `bool('0') is True`
 
 Tests:
     >>> from sys import getsizeof

@@ -77,7 +77,9 @@ Tests:
 # Given
 class GeographicCoordinate:
     def __str__(self):
-        return f'Latitude: {self.latitude}, Longitude: {self.longitude}, Elevation: {self.elevation}'
+        return f'Latitude: {self.latitude},' +\
+               f'Longitude: {self.longitude},' +\
+               f'Elevation: {self.elevation}'
 
     def __repr__(self):
         return self.__str__()
@@ -147,7 +149,9 @@ class GeographicCoordinate:
         self.elevation = elevation
 
     def __str__(self):
-        return f'Latitude: {self.latitude}, Longitude: {self.longitude}, Elevation: {self.elevation}'
+        return f'Latitude: {self.latitude},' +\
+               f'Longitude: {self.longitude},' +\
+               f'Elevation: {self.elevation}'
 
     def __repr__(self):
         return self.__str__()

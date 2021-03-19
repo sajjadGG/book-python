@@ -8,7 +8,7 @@ English:
     1. Use data from "Given" section (see below)
     2. Create class `Point` with `x`, `y`, `z` attributes
     3. Prevent creation of new attributes
-    4. Allow to define `x`, `y`, `z` but only at the initialization
+    4. Allow defining `x`, `y`, `z` but only at the initialization
     5. Prevent later modification of `x`, `y`, `z`
     6. Compare result with "Tests" section (see below)
 
@@ -44,19 +44,22 @@ Tests:
 
 
 # Given
+from dataclasses import dataclass
+
+
+@dataclass
 class Point:
-    def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
+    x: int
+    y: int
+    z: int
 
 
 # Solution
+@dataclass
 class Point:
-    def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
+    x: int
+    y: int
+    z: int
 
     def __setattr__(self, name, value):
         if name not in ('x', 'y', 'z'):

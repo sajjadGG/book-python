@@ -54,6 +54,25 @@ Composition:
         :language: python
 
 
+Use Cases
+---------
+>>> def otherrange(a, b, c):  # function with bad API
+...     current = a
+...     result = []
+...     while current < b:
+...         result.append(current)
+...         current += c
+...     return result
+>>>
+>>>
+>>> def myrange(start, stop, step):  # adapter
+...     return otherrange(a=start, b=stop, c=step)
+>>>
+>>>
+>>> myrange(start=10, stop=20, step=2)
+[10, 12, 14, 16, 18]
+
+
 Assignments
 -----------
 .. todo:: Create assignments

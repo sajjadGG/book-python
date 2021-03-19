@@ -76,6 +76,24 @@ Yield Keyword
 Traceback (most recent call last):
 StopIteration
 
+>>> def myfunc():
+>>>     yield [x for x in range(0,5)]
+>>>     yield [x for x in range(5,10)]
+>>>     yield [x for x in range(10,15)]
+>>>
+>>>
+>>> data = myfunc()
+>>>
+>>> next(data)
+[0, 1, 2, 3, 4]
+>>> next(data)
+[5, 6, 7, 8, 9]
+>>> next(data)
+[10, 11, 12, 13, 14]
+>>> next(data)
+Traceback (most recent call last):
+StopIteration
+
 
 Generator Function
 ------------------

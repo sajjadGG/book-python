@@ -32,19 +32,22 @@ Tests:
 
 
 # Given
+from dataclasses import dataclass
+
+
+@dataclass
 class Point:
-    def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
+    x: int
+    y: int
+    z: int
 
 
 # Solution
+@dataclass
 class Point:
-    def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
+    x: int
+    y: int
+    z: int
 
     def __delattr__(self, item):
         raise PermissionError('Cannot delete attributes')

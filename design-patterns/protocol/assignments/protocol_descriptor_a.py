@@ -14,7 +14,7 @@ English:
 Polish:
     1. Zdefiniuj klasę deskryptor `Kelvin`
     2. Temperatura musi być zawsze być dodatnia
-    3. Użyj deskryptorów do sprawdzania wartości granicznych przy każdej modyfikacji
+    3. Użyj deskryptorów do sprawdzania zakresów przy każdej modyfikacji
     4. Wszystkie testy muszą przejść
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 

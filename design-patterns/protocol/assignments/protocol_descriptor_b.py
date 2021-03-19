@@ -13,7 +13,7 @@ English:
     2. Define class `Astronaut` with attributes:
         a. `age = ValueRange('Age', min=28, max=42)`
         b. `height = ValueRange('Height', min=150, max=200)`
-    3. Setting `Astronaut` attribute should invoke boundary check of `ValueRange`
+    3. Setting `Astronaut` attribute should invoke `ValueRange` check
     4. Compare result with "Tests" section (see below)
 
 Polish:
@@ -25,7 +25,7 @@ Polish:
     2. Zdefiniuj klasę `Astronaut` z atrybutami:
         a. `age = ValueRange('Age', min=28, max=42)`
         b. `height = ValueRange('Height', min=150, max=200)`
-    3. Ustawianie atrybutu `Astronaut` powinno wywołać sprawdzanie zakresu z `ValueRange`
+    3. Ustawianie atrybutu `Astronaut` powinno sprawdzanie `ValueRange`
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
@@ -71,7 +71,8 @@ class ValueRange:
 
     def __set__(self, parent, value):
         if value not in range(self.min, self.max):
-            raise ValueError(f'{self.name} is not between {self.min} and {self.max}')
+            err = f'{self.name} is not between {self.min} and {self.max}'
+            raise ValueError(err)
         self.value = value
 
 

@@ -8,7 +8,7 @@ English:
     1. Use data from "Given" section (see below)
     2. Define class `Range` with parameters: `start`, `stop`, `step`
     3. Write own implementation of a built-in `range(start, stop, step)` function
-    4. Assume, that user will never giv only one argument; always it will be either two or three arguments
+    4. Assume, that user will never give only one argument; always it will be either two or three arguments
     5. Use Iterator protocol
     6. All tests must pass
     7. Compare result with "Tests" section (see below)
@@ -39,21 +39,31 @@ Tests:
     [0, 1, 2, 3, 4]
 """
 
+# Given
+from dataclasses import dataclass
+
+
+@dataclass
+class Range:
+    start: int = 0
+    stop: int = None
+    step: int = 1
+
 
 # Solution
+@dataclass
 class Range:
-    def __init__(self, start, stop, step=1):
-        self.start = start
-        self.stop = stop
-        self.step = step
+    start: int = 0
+    stop: int = None
+    step: int = 1
 
     def __iter__(self):
-        self._iter_index = self.start
+        self.current = self.start
         return self
 
     def __next__(self):
-        if self._iter_index >= self.stop:
+        if self.current >= self.stop:
             raise StopIteration
-        result = self._iter_index
-        self._iter_index += self.step
+        result = self.current
+        self.current += self.step
         return result

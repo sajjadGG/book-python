@@ -8,14 +8,18 @@ English:
     1. Use data from "Given" section (see below)
     2. Define class configuration attribute `AUTOSAVE_SECONDS: float = 1.0`
     3. Save buffer content to file every `AUTOSAVE_SECONDS` seconds
-    4. Writing and reading takes time, how to make buffer save data in the background, but it could be still used?
+    4. Writing and reading takes time,
+       how to make buffer save data in the background,
+       but it could be still used?
     5. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zdefiniuj klasowy atrybut konfiguracyjny `AUTOSAVE_SECONDS: float = 1.0`
     3. Zapisuj zawartość bufora do pliku co `AUTOSAVE_SECONDS` sekund
-    4. Operacje zapisu i odczytu trwają, jak zrobić, aby do bufora podczas zapisu na dysk, nadal można było pisać?
+    4. Operacje zapisu i odczytu trwają, jak zrobić,
+       aby do bufora podczas zapisu na dysk,
+       nadal można było pisać?
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Hint:

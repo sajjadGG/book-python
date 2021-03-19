@@ -6,16 +6,20 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Define class configuration attribute `BUFFER_LIMIT: int = 100` bytes
+    2. Define class attribute `BUFFER_LIMIT: int = 100` bytes
     3. File has to be written to disk every X bytes of buffer
-    4. Writing and reading takes time, how to make buffer save data in the background, but it could be still used?
+    4. Writing and reading takes time,
+       how to make buffer save data in the background,
+       but it could be still used?
     5. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj klasowy atrybut konfiguracyjny `BUFFER_LIMIT: int = 100` bajtów
+    2. Zdefiniuj klasowy atrybut `BUFFER_LIMIT: int = 100` bajtów
     3. Plik na dysku ma być zapisywany co X bajtów bufora
-    4. Operacje zapisu i odczytu trwają, jak zrobić, aby do bufora podczas zapisu na dysk, nadal można było pisać?
+    4. Operacje zapisu i odczytu trwają, jak zrobić,
+       aby do bufora podczas zapisu na dysk,
+       nadal można było pisać?
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Hints:

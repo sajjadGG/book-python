@@ -29,21 +29,22 @@ Tests:
 
 
 # Given
-class Point:
-    def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
+from dataclasses import dataclass
 
+
+@dataclass
+class Point:
+    x: int
+    y: int
+    z: int
 
 # Solution
+@dataclass
 class Point:
+    x: int
+    y: int
+    z: int
     position = property()
-
-    def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
 
     @position.deleter
     def position(self):
