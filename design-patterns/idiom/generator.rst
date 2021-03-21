@@ -77,9 +77,9 @@ Traceback (most recent call last):
 StopIteration
 
 >>> def myfunc():
->>>     yield [x for x in range(0,5)]
->>>     yield [x for x in range(5,10)]
->>>     yield [x for x in range(10,15)]
+...     yield [x for x in range(0,5)]
+...     yield [x for x in range(5,10)]
+...     yield [x for x in range(10,15)]
 >>>
 >>>
 >>> data = myfunc()
