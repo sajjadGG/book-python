@@ -24,13 +24,15 @@ Polish:
     7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> type(result)
-    <class 'list'>
-    >>> len(result) > 0
-    True
-    >>> all(type(row) is dict
-    ...     for row in result)
-    True
+    >>> assert type(result) is list, \
+    'Result must be a list'
+
+    >>> assert len(result) > 0, \
+    'Result cannot be empty'
+
+    >>> assert all(type(row) is dict for row in result), \
+    'All elements in result must be a dict'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [{'ip': '127.0.0.1', 'hosts': ['localhost', 'astromatt'], 'protocol': 'ipv4'},
      {'ip': '10.13.37.1', 'hosts': ['nasa.gov', 'esa.int', 'roscosmos.ru'], 'protocol': 'ipv4'},

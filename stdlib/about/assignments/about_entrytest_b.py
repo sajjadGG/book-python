@@ -19,10 +19,15 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> type(result)
-    <class 'set'>
-    >>> len(result) > 0
-    True
+    >>> assert type(result) is set, \
+    'Result must be a set'
+
+    >>> assert len(result) > 0, \
+    'Result cannot be empty'
+
+    >>> assert all(type(element) is str for element in result), \
+    'All elements in result must be a str'
+
     >>> 'virginica' in result
     True
     >>> 'setosa' in result
