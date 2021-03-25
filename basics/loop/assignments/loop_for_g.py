@@ -36,8 +36,10 @@ Polish:
     7. Porównaj wynik z sekcją "Tests" poniżej
 
 References:
-    [1] Kennedy, J.F. Moon Speech - Rice Stadium. 1962.
-        Accessed date: 2021-03-06. URL: http://er.jsc.nasa.gov/seh/ricetalk.htm
+    [1] Kennedy, J.F. Moon Speech - Rice Stadium.
+        Year: 1962.
+        Retrieved: 2021-03-06.
+        URL: http://er.jsc.nasa.gov/seh/ricetalk.htm
 
 Tests:
     >>> type(result)

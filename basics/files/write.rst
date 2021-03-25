@@ -143,7 +143,7 @@ Assignments
 
 References
 ----------
-.. [#POSIX] Section 3.206 IEEE Std 1003.1-2017 (Revision of IEEE Std 1003.1-2008). Open Group Base Specifications Issue 7, 2018 edition. URL: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_206 Accessed Date: 2020-12-17s
+.. [#POSIX] Section 3.206 IEEE Std 1003.1-2017 (Revision of IEEE Std 1003.1-2008). Open Group Base Specifications Issue 7. Year: 2018. Retrieved: 2020-12-17. URL: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_206
 .. [#C89] Section 2.1.1.2 of the ANSI C 1989 standard
 .. [#C99] Section 5.1.1.2 of the ISO C 1999 standard
 .. [#GCC] https://gcc.gnu.org/legacy-ml/gcc/2003-11/msg01568.html

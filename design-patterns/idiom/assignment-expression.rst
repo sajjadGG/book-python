@@ -403,10 +403,7 @@ Use Case
 
 References
 ----------
-.. [#pep572] Angelico, C. and Peters T. and van Rossum, G.
-             PEP 572 -- Assignment Expressions. Python Software Foundation.
-             Url: https://www.python.org/dev/peps/pep-0572/#abstract
-             Accessed: 2020-12-04. Year: 2018.
+.. [#pep572] Angelico, C. and Peters T. and van Rossum, G. PEP 572 -- Assignment Expressions. Python Software Foundation. Year: 2018. Retrieved: 2020-12-04. Url: https://www.python.org/dev/peps/pep-0572/#abstract
 
 
 Assignments

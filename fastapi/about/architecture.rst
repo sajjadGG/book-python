@@ -58,6 +58,6 @@ Pydantic
 
 References
 ----------
-.. [#uvicorndoc] Uvicorn official documentation. Accessed Date: 2021-02-23. URL: https://www.uvicorn.org
-.. [#pydanticdoc] Pydantic official documentation. Accessed Date: 2021-02-23. URL: https://pydantic-docs.helpmanual.io
-.. [#starlettedoc] Starlette official documentation. Accessed Date: 2021-02-23. URL: https://www.starlette.io
+.. [#uvicorndoc] Uvicorn official documentation. Retrieved: 2021-02-23. URL: https://www.uvicorn.org
+.. [#pydanticdoc] Pydantic official documentation. Retrieved: 2021-02-23. URL: https://pydantic-docs.helpmanual.io
+.. [#starlettedoc] Starlette official documentation. Retrieved: 2021-02-23. URL: https://www.starlette.io

@@ -494,4 +494,4 @@ Assignments
 
 References
 ----------
-.. [#Hamidi2017] Frédéric Hamidi. Why does Python 3 need dict.items to be wrapped with list()? Accessed Data: 2021-02-28. URL: https://stackoverflow.com/a/17695716
+.. [#Hamidi2017] Frédéric Hamidi. Why does Python 3 need dict.items to be wrapped with list()? Retrieved: 2021-02-28. URL: https://stackoverflow.com/a/17695716

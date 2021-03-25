@@ -305,5 +305,5 @@ Example WADL
 
 References
 ----------
-.. [#WikipediaWSDL] Web Services Description Language. https://en.wikipedia.org/wiki/Web_Services_Description_Language. Accessed Date: 2019-05-22. Year: 2019.
-.. [#WikipediaWADL] Web Application Description Language. https://en.wikipedia.org/wiki/Web_Application_Description_Language. Accessed Date: 2019-05-22. Year: 2019.
+.. [#WikipediaWSDL] Web Services Description Language. Year: 2019. Retrieved: 2019-05-22. URL: https://en.wikipedia.org/wiki/Web_Services_Description_Language.
+.. [#WikipediaWADL] Web Application Description Language. Year: 2019. Retrieved: 2019-05-22. URL: https://en.wikipedia.org/wiki/Web_Application_Description_Language.

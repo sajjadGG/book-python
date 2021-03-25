@@ -33,10 +33,10 @@ Polish:
 References:
     [1] Wikipedia. List of tz database time zones.
         URL: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-        Accessed Date: 2021-03-24
+        Retrieved: 2021-03-24
     [2] IANA. Time Zone Database.
         URL: https://data.iana.org/time-zones/releases/
-        Accessed Date: 2021-03-24
+        Retrieved: 2021-03-24
 
 Extra Task:
     1. Cape Canaveral, FL, USA

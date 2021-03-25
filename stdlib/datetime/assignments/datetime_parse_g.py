@@ -21,7 +21,7 @@ Polish:
 References:
     [1] National Aeronautics and Space Administration.
         Apollo 11 timeline.
-        Accessed Date: 2021-03-25.
+        Retrieved: 2021-03-25.
         URL: https://history.nasa.gov/SP-4029/Apollo_11i_Timeline.htm
 
 Hints:

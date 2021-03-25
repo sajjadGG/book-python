@@ -60,6 +60,10 @@ IANA Time Zone Database
 * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 * https://www.iana.org/time-zones
 
+IANA 2017a timezone database [#IANA]_:
+
+.. figure:: img/datetime-timezone-iana2017a.png
+
 
 Standard Library
 ----------------
@@ -205,3 +209,8 @@ Assignments
 .. literalinclude:: assignments/datetime_timezone_a.py
     :caption: :download:`Solution <assignments/datetime_timezone_a.py>`
     :end-before: # Solution
+
+
+References
+----------
+.. [#IANA] IANA. Time Zone Database. Year: 2017. Retrieved: 2019-08-05.
