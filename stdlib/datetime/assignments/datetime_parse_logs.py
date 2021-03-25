@@ -27,6 +27,12 @@ Hints:
     * ` try ... except ValueError: ...`
 
 Tests:
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, must be a list'
+
+    >>> assert all(type(row) is dict for row in result), \
+    'All elements in result must be dict'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [{'date': datetime.datetime(1969, 7, 14, 21, 0), 'level': 'INFO', 'message': 'Terminal countdown started'},
      {'date': datetime.datetime(1969, 7, 16, 13, 31, 53), 'level': 'WARNING', 'message': 'S-IC engine ignition (#5)'},

@@ -33,14 +33,14 @@ Given:
     * 15 seconds
 
 Tests:
-    # This will change every second
-    >>> result
-    {'years': 42,
-     'months': 7,
-     'days': 28,
-     'hours': 7,
-     'minutes': 54,
-     'seconds': 46}
+    >>> assert type(result) is dict, \
+    'Variable `result` has invalid type, must be a dict'
+
+    >>> result.keys()
+    dict_keys(['years', 'months', 'days', 'hours', 'minutes', 'seconds'])
+
+    >>> assert all(type(value) is int for value in result.values()), \
+    'All elements in `result` must be an int'
 """
 
 

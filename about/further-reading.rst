@@ -198,7 +198,6 @@ Databases:
 
 Software Engineering Practises:
 
-    * http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/
     * http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/
     * http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/
     * http://www.amazon.com/The-Mythical-Man-Month-Engineering-Anniversary/dp/0201835959/
@@ -207,10 +206,17 @@ Design pattern:
 
     * Design Patterns: Elements of Reusable Object-Oriented Software
     * http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/
+    * https://helion.pl/ksiazki/wzorce-projektowe-elementy-oprogramowania-obiektowego-wielokrotnego-uzytku-erich-gamma-richard-helm-ralph-johnson-john-vli,wzoelv.htm
 
 Refactoring:
 
     * Working effectively with legacy code - Michael Feathers
+    * https://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052
+
+Clean Code by Uncle Bob:
+
+    * https://helion.pl/ksiazki/czysty-kod-podrecznik-dobrego-programisty-robert-c-martin,czykov.htm
+    * http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/
 
 Python:
 

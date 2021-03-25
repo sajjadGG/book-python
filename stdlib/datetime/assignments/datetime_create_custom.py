@@ -15,7 +15,21 @@ Polish:
     3. Stwórz obiekt `datetime` z datą i czasem Twojego urodzenia
 
 Tests:
-    TODO
+    >>> assert type(dt) is datetime, \
+    'Variable `dt` has invalid type, must be a datetime'
+
+    >>> assert type(d) is date, \
+    'Variable `dt` has invalid type, must be a date'
+
+    >>> assert type(t) is time, \
+    'Variable `t` has invalid type, must be a time'
+
+    >>> str(d)
+    '1970-01-01'
+    >>> str(t)
+    '00:00:00'
+    >>> str(dt)
+    '1970-01-01 00:00:00'
 """
 
 

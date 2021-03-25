@@ -15,8 +15,9 @@ Polish:
     3. Przedstaw datę jako obiekt `datetime`
 
 Tests:
-    >>> type(result)
-    <class 'datetime.datetime'>
+    >>> assert type(result) is datetime, \
+    'Variable `result` has invalid type, must be a datetime'
+
     >>> result
     datetime.datetime(1969, 7, 21, 2, 56, 15, 123000)
 """

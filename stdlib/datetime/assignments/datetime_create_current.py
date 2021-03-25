@@ -17,12 +17,19 @@ Polish:
     4. Data i czas ma być pobierana z systemu, nie zapisana w kodzie
 
 Tests:
-    TODO
+    >>> assert type(dt) is datetime, \
+    'Variable `dt` has invalid type, must be a datetime'
+
+    >>> assert type(d) is date, \
+    'Variable `dt` has invalid type, must be a date'
+
+    >>> assert type(t) is time, \
+    'Variable `t` has invalid type, must be a time'
 """
 
 
 # Given
-from datetime import datetime, date
+from datetime import datetime, date, time
 
 
 # Solution

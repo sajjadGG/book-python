@@ -20,8 +20,9 @@ Hints:
     * Add string `local time` to format statement
 
 Tests:
-    >>> type(result)
-    <class 'str'>
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, must be a str'
+
     >>> result
     '1961-04-12T06:07:00.000000Z'
 """

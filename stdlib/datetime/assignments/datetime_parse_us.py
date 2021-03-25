@@ -27,8 +27,9 @@ Hints:
     * Use `%#I` on Windows to remove leading zero
 
 Tests:
-    >>> type(result)
-    <class 'str'>
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, must be a str'
+
     >>> result
     '07/21/69 2:56 AM'
 """
