@@ -53,6 +53,15 @@ Date format in Poland
 
 Time formats
 ------------
+.. code-block:: text
+
+    7/21/69 2:53
+    7/21/69 02:53
+    7/21/69 02:53:00
+    7/21/69 02:53:0
+    07/21/69 02:53:0
+    07/21/69 02:53:00
+
 
 24 and 12 hour clock
 --------------------
@@ -336,18 +345,30 @@ Examples
 
 Assignments
 -----------
-.. literalinclude:: assignments/datetime_parse_iso.py
-    :caption: :download:`Solution <assignments/datetime_parse_iso.py>`
+.. literalinclude:: assignments/datetime_parse_a.py
+    :caption: :download:`Solution <assignments/datetime_parse_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/datetime_parse_local.py
-    :caption: :download:`Solution <assignments/datetime_parse_local.py>`
+.. literalinclude:: assignments/datetime_parse_b.py
+    :caption: :download:`Solution <assignments/datetime_parse_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/datetime_parse_us.py
-    :caption: :download:`Solution <assignments/datetime_parse_us.py>`
+.. literalinclude:: assignments/datetime_parse_c.py
+    :caption: :download:`Solution <assignments/datetime_parse_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/datetime_parse_logs.py
-    :caption: :download:`Solution <assignments/datetime_parse_logs.py>`
+.. literalinclude:: assignments/datetime_parse_d.py
+    :caption: :download:`Solution <assignments/datetime_parse_d.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/datetime_parse_e.py
+    :caption: :download:`Solution <assignments/datetime_parse_e.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/datetime_parse_f.py
+    :caption: :download:`Solution <assignments/datetime_parse_f.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/datetime_parse_g.py
+    :caption: :download:`Solution <assignments/datetime_parse_g.py>`
     :end-before: # Solution

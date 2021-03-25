@@ -1,7 +1,7 @@
 """
-* Assignment: Datetime Parse US
+* Assignment: Datetime Parse Local
 * Complexity: easy
-* Lines of code: 5 lines
+* Lines of code: 1 lines
 * Time: 3 min
 
 English:
@@ -21,17 +21,20 @@ Polish:
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Hints:
+    * Add string `local time` to format statement
+
+Hints:
     * Add quote sign `"` like normal text to `fmt` parameter of `.strptime()`
     * `%dst`
     * Use `%-I` or `%_I` on \*nix systems (macOS, BSD, Linux) to remove leading zero
     * Use `%#I` on Windows to remove leading zero
 
 Tests:
-    >>> assert type(result) is str, \
-    'Variable `result` has invalid type, must be a str'
+    >>> assert type(result) is datetime, \
+    'Variable `result` has invalid type, must be a datetime'
 
     >>> result
-    '07/21/69 2:56 AM'
+    datetime.datetime(1969, 7, 21, 2, 56, 15)
 """
 
 
@@ -39,12 +42,10 @@ Tests:
 from datetime import datetime
 
 
-DATA = '"July 21st, 1969 2:56:15 AM UTC"'
-result = ''
+DATA = 'July 21st, 1969 2:56:15 AM local time'
+
+result = ...  # datetime: representation of DATA
 
 
 # Solution
-dt = datetime.strptime(DATA, '"%B %dst, %Y %I:%M:%S %p %Z"')
-
-result = dt.strftime('%m/%d/%y %#I:%M %p')  # Windows
-result = dt.strftime('%m/%d/%y %-I:%M %p')  # *nix
+result = datetime.strptime(DATA, '%B %dst, %Y %I:%M:%S %p local time')

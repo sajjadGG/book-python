@@ -25,6 +25,8 @@ Polish:
 Hints:
     * type cast to `list()` before calculating mean to expand generator
     * `mean = sum(...) / len(...)`
+    * TypeError: object of type 'map' has no len()
+    * ZeroDivisionError: division by zero
 
 Tests:
     >>> from inspect import isfunction

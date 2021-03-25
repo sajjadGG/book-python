@@ -195,10 +195,10 @@ Current ``datetime`` in local timezone:
 
 Assignments
 -----------
-.. literalinclude:: assignments/datetime_create_custom.py
-    :caption: :download:`Solution <assignments/datetime_create_custom.py>`
+.. literalinclude:: assignments/datetime_create_a.py
+    :caption: :download:`Solution <assignments/datetime_create_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/datetime_create_current.py
-    :caption: :download:`Solution <assignments/datetime_create_current.py>`
+.. literalinclude:: assignments/datetime_create_b.py
+    :caption: :download:`Solution <assignments/datetime_create_b.py>`
     :end-before: # Solution

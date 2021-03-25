@@ -32,6 +32,10 @@ Tests:
 from datetime import datetime, date, time
 
 
+dt = ...  # datetime: representing current moment
+d = ...  # date: representing current moment
+t = ...  # time: representing current moment
+
 # Solution
 dt = datetime.now()
 d = dt.date()

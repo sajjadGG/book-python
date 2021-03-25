@@ -202,6 +202,18 @@ Duration between two datetimes:
 
 Assignments
 -----------
-.. literalinclude:: assignments/datetime_timedelta_period.py
-    :caption: :download:`Solution <assignments/datetime_timedelta_period.py>`
+.. literalinclude:: assignments/datetime_timedelta_a.py
+    :caption: :download:`Solution <assignments/datetime_timedelta_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/datetime_timedelta_b.py
+    :caption: :download:`Solution <assignments/datetime_timedelta_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/datetime_timedelta_c.py
+    :caption: :download:`Solution <assignments/datetime_timedelta_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/datetime_timedelta_d.py
+    :caption: :download:`Solution <assignments/datetime_timedelta_d.py>`
     :end-before: # Solution

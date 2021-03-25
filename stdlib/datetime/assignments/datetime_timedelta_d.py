@@ -1,28 +1,24 @@
 """
-* Assignment: Datetime Timedelta Period
+* Assignment: Datetime Timedelta Dict
 * Complexity: easy
-* Lines of code: 15 lines
+* Lines of code: 13 lines
 * Time: 13 min
 
 English:
     1. Use data from "Given" section (see below)
-    2. Given period is the time between Gagarin launch and Armstrong first step on the Moon
+    2. Given period `DATA` is the time between Gagarin launch and Armstrong first step on the Moon
     3. Assume:
         a. year = 365.2425 days
-        * month = 30.436875 days
-    4. From current date subtract this period
-    5. Print calculated date
-    6. How old were you at the given moment?
+        b. month = 30.436875 days
+    4. Define `result: dict[str, int]` representing period
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Podany jest czas, który upłynął między startem Gagarina a pierwszym krokiem Armstronga na Księżycu
+    2. Podany jest okres `DATA`, który upłynął między startem Gagarina a pierwszym krokiem Armstronga na Księżycu
     3. Uwzględnij założenie:
         a. rok = 365.2425 dni
-        * miesiąc = 30.436875 dni
-    4. Od obecnej chwili odejmij ten czas
-    5. Wyświetl wyliczoną datę
-    6. Ile miałeś wtedy lat?
+        b. miesiąc = 30.436875 dni
+    4. Zdefiniuj `result: dict[str, int]` reprezentujący okres
 
 Given:
     * 8 years
@@ -41,33 +37,40 @@ Tests:
 
     >>> assert all(type(value) is int for value in result.values()), \
     'All elements in `result` must be an int'
+
+    >>> result
+    {'years': 8, 'months': 3, 'days': 9, 'hours': 6, 'minutes': 50, 'seconds': 9}
 """
 
 
 # Given
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 
 SECOND = 1
 MINUTE = 60 * SECOND
 HOUR = 60 * MINUTE
 DAY = 24 * HOUR
-
 MONTH = 30.436875 * DAY
 YEAR = 365.2425 * DAY
 
+DATA = timedelta(days=3022, seconds=24609)
 
-shift = int(8*YEAR + 3*MONTH + 9*DAY + 49*MINUTE + 15*SECOND)
-birthday = datetime(1970, 1, 1, 0, 0, 0)
+result = {
+    'years': ...,
+    'months': ...,
+    'days': ...,
+    'hours': ...,
+    'minutes': ...,
+    'seconds': ...,
+}
+
 
 # Solution
-past = datetime.now() - timedelta(seconds=shift)
-duration = past - birthday
-
-years, seconds = divmod(duration.total_seconds(), YEAR)
+years, seconds = divmod(DATA.total_seconds(), YEAR)
 months, seconds = divmod(seconds, MONTH)
 days, seconds = divmod(seconds, DAY)
-hours, seconds = divmod(duration.seconds, HOUR)
+hours, seconds = divmod(DATA.seconds, HOUR)
 minutes, seconds = divmod(seconds, MINUTE)
 
 result = {

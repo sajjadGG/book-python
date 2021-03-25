@@ -23,6 +23,8 @@ Polish:
 Hints:
     * type cast to `list()` to expand generator before calculating mean
     * `mean = sum(...) / len(...)`
+    * TypeError: object of type 'map' has no len()
+    * ZeroDivisionError: division by zero
 
 Tests:
     >>> result
