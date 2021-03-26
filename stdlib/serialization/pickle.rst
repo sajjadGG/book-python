@@ -234,6 +234,6 @@ Advanced Example:
 
 Assignments
 -------------------------------------------------------------------------------
-.. literalinclude:: assignments/serialization_pickle_dump_load.py
-    :caption: :download:`Solution <assignments/serialization_pickle_dump_load.py>`
+.. literalinclude:: assignments/serialization_pickle_a.py
+    :caption: :download:`Solution <assignments/serialization_pickle_a.py>`
     :end-before: # Solution

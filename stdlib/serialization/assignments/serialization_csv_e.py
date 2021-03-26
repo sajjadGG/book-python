@@ -44,7 +44,7 @@ Tests:
 
 
 # Given
-import csv
+from csv import DictWriter
 
 
 class Iris:
@@ -68,10 +68,10 @@ DATA = [Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
 
 
 # Solution
-data = [row.__dict__ for row in DATA]
-header = list(data[0].keys())
+data = [vars(iris) for iris in DATA]
+header = data[0].keys()
 
 with open(FILE, mode='w', encoding='utf-8') as file:
-    result = csv.DictWriter(file, fieldnames=header, delimiter=',', quotechar='"')
-    result.writeheader()
-    result.writerows(data)
+    writer = DictWriter(file, fieldnames=header)
+    writer.writeheader()
+    writer.writerows(data)

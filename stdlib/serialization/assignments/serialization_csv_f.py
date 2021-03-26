@@ -1,7 +1,7 @@
 """
 * Assignment: Serialization CSV Relations
 * Complexity: hard
-* Lines of code: 13 lines
+* Lines of code: 11 lines
 * Time: 21 min
 
 English:
@@ -34,7 +34,7 @@ Tests:
     >>> result = open(FILE).read()
     >>> print(result)
     "lastname","missions","name"
-    "Twardowski","1969,Apollo 11; 2024,Artemis 3","Jan"
+    "Twardowski","1969,Apollo 11;2024,Artemis 3","Jan"
     "Watney","2035,Ares 3","Mark"
     "Lewis","","Melissa"
     <BLANKLINE>
@@ -75,31 +75,25 @@ CREW = [
 result: list
 
 # Solution
-result = []
+result = list()
 
-for astronaut in CREW:
-    astronaut.missions = [','.join(str(field)
-                          for field in mission.__dict__.values())
-                          for mission in astronaut.missions]
-    astronaut.missions = '; '.join(astronaut.missions)
-    result.append(astronaut.__dict__)
-
-
-fieldnames = set()
-
-for contact in result:
-    for field_name in contact.keys():
-        fieldnames.add(field_name)
+for member in CREW:
+    astronaut = vars(member)
+    missions = [','.join(str(x) for x in vars(mission).values())
+                for mission in astronaut.pop('missions')]
+    astronaut['missions'] = ';'.join(missions)
+    result.append(astronaut)
 
 
-with open(FILE, mode='w', encoding='utf-8') as file:
-    writer = csv.DictWriter(
-        f=file,
-        fieldnames=sorted(fieldnames),
-        delimiter=',',
-        quotechar='"',
-        quoting=csv.QUOTE_ALL,
-        lineterminator='\n')
+# result = [astronaut | {'missions': ';'.join(values)}
+#           for member in CREW
+#           if (astronaut := vars(member))
+#           and (values := [','.join(str(x) for x in vars(mission).values())
+#                           for mission in astronaut.pop('missions')]) or True]
 
+
+
+with open(FILE, mode='w') as file:
+    writer = csv.DictWriter(file, fieldnames=sorted(result[0].keys()), quoting=csv.QUOTE_ALL)
     writer.writeheader()
     writer.writerows(result)

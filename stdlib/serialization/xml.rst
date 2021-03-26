@@ -752,10 +752,10 @@ Example 3
 
 Assignments
 -------------------------------------------------------------------------------
-.. literalinclude:: assignments/serialization_xml_parse.py
-    :caption: :download:`Solution <assignments/serialization_xml_parse.py>`
+.. literalinclude:: assignments/serialization_xml_a.py
+    :caption: :download:`Solution <assignments/serialization_xml_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/serialization_xml_xslt.py
-    :caption: :download:`Solution <assignments/serialization_xml_xslt.py>`
+.. literalinclude:: assignments/serialization_xml_b.py
+    :caption: :download:`Solution <assignments/serialization_xml_b.py>`
     :end-before: # Solution

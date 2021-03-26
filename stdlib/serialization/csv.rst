@@ -563,26 +563,26 @@ Good Practices
 
 Assignments
 -------------------------------------------------------------------------------
-.. literalinclude:: assignments/serialization_csv_dictreader.py
-    :caption: :download:`Solution <assignments/serialization_csv_dictreader.py>`
+.. literalinclude:: assignments/serialization_csv_a.py
+    :caption: :download:`Solution <assignments/serialization_csv_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/serialization_csv_dictwriter.py
-    :caption: :download:`Solution <assignments/serialization_csv_dictwriter.py>`
+.. literalinclude:: assignments/serialization_csv_b.py
+    :caption: :download:`Solution <assignments/serialization_csv_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/serialization_csv_list_of_tuple.py
-    :caption: :download:`Solution <assignments/serialization_csv_list_of_tuple.py>`
+.. literalinclude:: assignments/serialization_csv_c.py
+    :caption: :download:`Solution <assignments/serialization_csv_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/serialization_csv_schemaless.py
-    :caption: :download:`Solution <assignments/serialization_csv_schemaless.py>`
+.. literalinclude:: assignments/serialization_csv_d.py
+    :caption: :download:`Solution <assignments/serialization_csv_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/serialization_csv_objects.py
-    :caption: :download:`Solution <assignments/serialization_csv_objects.py>`
+.. literalinclude:: assignments/serialization_csv_e.py
+    :caption: :download:`Solution <assignments/serialization_csv_e.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/serialization_csv_relations.py
-    :caption: :download:`Solution <assignments/serialization_csv_relations.py>`
+.. literalinclude:: assignments/serialization_csv_f.py
+    :caption: :download:`Solution <assignments/serialization_csv_f.py>`
     :end-before: # Solution

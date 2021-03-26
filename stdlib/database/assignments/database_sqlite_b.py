@@ -109,7 +109,6 @@ with open(FILE, mode='w') as file:
 with open(FILE) as file:
     for line in file:
         line = line.strip().split(',')
-
         data.append({
             'sepal_length': float(line[0]),
             'sepal_width': float(line[1]),

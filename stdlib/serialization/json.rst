@@ -654,22 +654,22 @@ Pretty Printing JSON:
 
 Assignments
 -------------------------------------------------------------------------------
-.. literalinclude:: assignments/serialization_json_dump.py
-    :caption: :download:`Solution <assignments/serialization_json_dump.py>`
+.. literalinclude:: assignments/serialization_json_a.py
+    :caption: :download:`Solution <assignments/serialization_json_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/serialization_json_load.py
-    :caption: :download:`Solution <assignments/serialization_json_load.py>`
+.. literalinclude:: assignments/serialization_json_b.py
+    :caption: :download:`Solution <assignments/serialization_json_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/serialization_json_datetime.py
-    :caption: :download:`Solution <assignments/serialization_json_datetime.py>`
+.. literalinclude:: assignments/serialization_json_c.py
+    :caption: :download:`Solution <assignments/serialization_json_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/serialization_json_object.py
-    :caption: :download:`Solution <assignments/serialization_json_object.py>`
+.. literalinclude:: assignments/serialization_json_d.py
+    :caption: :download:`Solution <assignments/serialization_json_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/serialization_json_http.py
-    :caption: :download:`Solution <assignments/serialization_json_http.py>`
+.. literalinclude:: assignments/serialization_json_e.py
+    :caption: :download:`Solution <assignments/serialization_json_e.py>`
     :end-before: # Solution

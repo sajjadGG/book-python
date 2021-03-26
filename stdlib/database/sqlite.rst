@@ -210,14 +210,14 @@ Use cases
 
 Assignments
 -----------
-.. literalinclude:: assignments/database_sqlite_logs.py
-    :caption: :download:`Solution <assignments/database_sqlite_logs.py>`
+.. literalinclude:: assignments/database_sqlite_a.py
+    :caption: :download:`Solution <assignments/database_sqlite_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/database_sqlite_csv.py
-    :caption: :download:`Solution <assignments/database_sqlite_csv.py>`
+.. literalinclude:: assignments/database_sqlite_b.py
+    :caption: :download:`Solution <assignments/database_sqlite_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/database_sqlite_relations.py
-    :caption: :download:`Solution <assignments/database_sqlite_relations.py>`
+.. literalinclude:: assignments/database_sqlite_c.py
+    :caption: :download:`Solution <assignments/database_sqlite_c.py>`
     :end-before: # Solution

@@ -1,8 +1,8 @@
 """
 * Assignment: Serialization CSV List of Tuples
 * Complexity: easy
-* Lines of code: 6 lines
-* Time: 8 min
+* Lines of code: 3 lines
+* Time: 5 min
 
 English:
     1. Use data from "Given" section (see below)
@@ -62,10 +62,6 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
 
 
 # Solution
-header, *data = DATA
-data = [dict(zip(header, row)) for row in data]
-
-with open(FILE, mode='w', encoding='utf-8') as file:
-    result = csv.DictWriter(file, fieldnames=header, delimiter=',', quotechar='"')
-    result.writeheader()
-    result.writerows(data)
+with open(FILE, mode='w') as file:
+    writer = csv.writer(file)
+    writer.writerows(DATA)
