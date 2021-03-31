@@ -24,8 +24,8 @@ Tests:
     >>> type(PATTERN)
     <class 'str'>
     >>> import re
-    >>> url = re.compile(PATTERN)
-    # Note that (?:[a-z\x{00a1} will fail in Python
+    >>> url = re.compile(PATTERN) # doctest: +SKIP
+    # Note that (?:[a-z\\x{00a1} will fail in Python
 """
 
 # Author: @diegoperini

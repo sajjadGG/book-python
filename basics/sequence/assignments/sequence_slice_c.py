@@ -19,20 +19,30 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert a is not Ellipsis, \
     'Assignment solution must be in `a` instead of ... (Ellipsis)'
+
     >>> assert b is not Ellipsis, \
     'Assignment solution must be in `b` instead of ... (Ellipsis)'
+
     >>> assert c is not Ellipsis, \
     'Assignment solution must be in `c` instead of ... (Ellipsis)'
+
     >>> assert d is not Ellipsis, \
     'Assignment solution must be in `d` instead of ... (Ellipsis)'
+
     >>> assert e is not Ellipsis, \
     'Assignment solution must be in `e` instead of ... (Ellipsis)'
+
     >>> assert f is not Ellipsis, \
     'Assignment solution must be in `f` instead of ... (Ellipsis)'
+
     >>> assert g is not Ellipsis, \
     'Assignment solution must be in `g` instead of ... (Ellipsis)'
+
     >>> example
     'Mark Watney'
     >>> a

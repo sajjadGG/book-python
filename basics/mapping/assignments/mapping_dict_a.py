@@ -23,21 +23,21 @@ Polish:
 Tests:
     >>> type(result)
     <class 'dict'>
-    >>> 'firstname' in result.keys()
+    >>> 'First Name' in result.keys()
     True
-    >>> 'lastname' in result.keys()
+    >>> 'Last Name' in result.keys()
     True
-    >>> 'missions' in result.keys()
+    >>> 'Missions' in result.keys()
     True
-    >>> result['firstname'] == 'Jan'
+    >>> result['First Name'] == 'Jan'
     True
-    >>> result['lastname'] == 'Twardowski'
+    >>> result['Last Name'] == 'Twardowski'
     True
-    >>> type(result['missions']) is list
+    >>> type(result['Missions']) is list
     True
-    >>> 'Apollo' in result['missions']
+    >>> 'Apollo' in result['Missions']
     True
-    >>> 'Artemis' in result['missions']
+    >>> 'Artemis' in result['Missions']
     True
 """
 

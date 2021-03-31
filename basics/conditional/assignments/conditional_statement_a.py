@@ -15,8 +15,6 @@ Polish:
     3. Wypisz czy użytkownik jest pełnoletni
 
 Tests:
-    >>> type(age)
-    <class 'int'>
     >>> type(result)
     <class 'str'>
     >>> result in ('Adult', 'Young')

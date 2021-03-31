@@ -25,6 +25,9 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> type(result)
     <class 'dict'>
     >>> '00' not in result
@@ -33,9 +36,11 @@ Tests:
     True
     >>> result['01'] == 'January'
     True
+
     >>> assert all(type(x) is str for x in result.keys())
     >>> assert all(type(x) is str for x in result.values())
     >>> assert all(len(x) == 2 for x in result.keys())
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     {'01': 'January',
      '02': 'February',

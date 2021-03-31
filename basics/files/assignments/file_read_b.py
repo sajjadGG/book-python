@@ -19,10 +19,15 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert type(result) is list
     >>> assert all(type(x) is str for x in result)
+
     >>> result
     ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+
     >>> from os import remove
     >>> remove(FILE)
 """

@@ -36,11 +36,14 @@ References:
 
 Tests:
     TODO: Doctests
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> type(result)
     <class 'list'>
     >>> len(result) in (1, 2)
     True
-    >>>
+
     >>> if len(result) == 2:
     ...     (STATUS_HYPERTENSIVE_CRISIS in result
     ...      and STATUS_HYPERTENSION_STAGE_2 in result)
@@ -53,6 +56,7 @@ Tests:
     ... else:
     ...     raise ValueError
     True
+
     >>> assert blood_pressure == '119/79' and result == ['Normal'] or True
     >>> assert blood_pressure == '120/80' and result == ['Hypertension stage 1'] or True
     >>> assert blood_pressure == '121/79' and result == ['Elevated'] or True

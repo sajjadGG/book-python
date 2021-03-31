@@ -20,12 +20,17 @@ Hint:
     * `str.splitlines()`
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert result is not Ellipsis, \
-    Assignment solution must be in `result` instead of ... (Ellipsis)'
+    'Assignment solution must be in `result` instead of ... (Ellipsis)'
+
     >>> type(result)
     <class 'frozenset'>
     >>> len(result)
     3
+
     >>> 'We choose to go to the Moon.' in result
     True
     >>> 'We choose to go to the Moon in this decade and do the other things.' in result

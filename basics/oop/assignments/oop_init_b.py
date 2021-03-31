@@ -25,14 +25,17 @@ Polish:
     8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert isinstance(watney, Astronaut)
     >>> assert isinstance(nasa, SpaceAgency)
-    >>> assert 'Watney' in watney.__dict__.values()
-    >>> assert 'USA' in watney.__dict__.values()
-    >>> assert '1969-07-21' in watney.__dict__.values()
-    >>> assert 'NASA' in nasa.__dict__.values()
-    >>> assert 'USA' in nasa.__dict__.values()
-    >>> assert '1958-07-29' in nasa.__dict__.values()
+    >>> assert 'Watney' in vars(watney).values()
+    >>> assert 'USA' in vars(watney).values()
+    >>> assert '1969-07-21' in vars(watney).values()
+    >>> assert 'NASA' in vars(nasa).values()
+    >>> assert 'USA' in vars(nasa).values()
+    >>> assert '1958-07-29' in vars(nasa).values()
 """
 
 

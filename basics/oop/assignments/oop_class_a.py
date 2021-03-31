@@ -20,6 +20,9 @@ Polish:
 
 Tests:
     >>> from inspect import isclass
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert isclass(Iris)
     >>> assert isinstance(setosa, Iris)
     >>> assert isinstance(versicolor, Iris)

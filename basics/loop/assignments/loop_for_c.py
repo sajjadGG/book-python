@@ -29,10 +29,15 @@ Polish:
     5. Porównaj wynik z sekcją "Tests" poniżej
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> type(result)
     <class 'dict'>
+
     >>> assert all(type(x) is str for x in result.keys())
     >>> assert all(type(x) is int for x in result.values())
+
     >>> result
     {'small': 16, 'medium': 19, 'large': 15}
 """

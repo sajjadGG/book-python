@@ -33,6 +33,9 @@ Polish:
     4. Porównaj wynik z sekcją "Tests" poniżej
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert type(features_train) is list, \
     'make sure features_train is a list'
 

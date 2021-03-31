@@ -2,37 +2,41 @@
 * Assignment: Exception Custom Exception
 * Complexity: easy
 * Lines of code: 4 lines
-* Time: 3 min
+* Time: 5 min
 
 English:
-    1. Ask user to input angle in degrees
+    1. Use data from "Given" section (see below)
     2. Define custom exception `NegativeKelvin`
-    3. If input temperature is lower than 0, raise `NegativeKelvin`
-    4. Non-functional requirements
+    3. Check value passed to a `check` function
+    4. If input value is lower than 0, raise `NegativeKelvin`
+    5. Non-functional requirements
         a. Write solution inside `check` function
         b. Mind the indentation level
-    5. Compare result with "Tests" section (see below)
+    6. Compare result with "Tests" section (see below)
 
 Polish:
-    1. Poproś użytkownika o wprowadzenie kąta
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zdefiniuj własny wyjątek `NegativeKelvin`
-    3. Jeżeli wprowadzona temperature jest mniejsza niż 0, podnieś `NegativeKelvin`
-    4. Wymagania niefunkcjonalne
+    3. Sprawdź wartośc przekazaną do funckji jako `float`
+    4. Jeżeli wprowadzona wartość jest mniejsza niż 0, podnieś `NegativeKelvin`
+    5. Wymagania niefunkcjonalne
         a. Rozwiązanie zapisz wewnątrz funkcji `check`
         b. Zwróć uwagę na poziom wcięć
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> type(temperature)
-    <class 'float'>
     >>> from inspect import isclass
     >>> isclass(NegativeKelvin)
     True
     >>> issubclass(NegativeKelvin, Exception)
     True
-
-TODO: Input Stub
+    >>> check(1)
+    >>> check(0)
+    >>> check(-1)
+    Traceback (most recent call last):
+    exception_custom_a.NegativeKelvin
 """
+
 
 # Given
 def check(value):

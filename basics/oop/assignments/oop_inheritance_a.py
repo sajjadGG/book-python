@@ -16,6 +16,9 @@ Polish:
 
 Tests:
     >>> from inspect import isclass
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert isclass(Venus)
     >>> assert isclass(Woman)
     >>> assert isclass(Mars)

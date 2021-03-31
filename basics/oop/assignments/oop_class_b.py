@@ -20,6 +20,9 @@ Polish:
 
 Tests:
     >>> from inspect import isclass
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert isclass(Astronaut)
     >>> assert isclass(SpaceAgency)
     >>> assert isinstance(watney, Astronaut)

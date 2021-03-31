@@ -17,10 +17,15 @@ Polish:
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert result is not Ellipsis, \
     'Assignment solution must be in `result` instead of ... (Ellipsis)'
+
     >>> type(result)
     <class 'str'>
+
     >>> result
     'We choose the Moon!'
 """

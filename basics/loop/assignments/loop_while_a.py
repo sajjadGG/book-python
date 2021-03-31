@@ -24,9 +24,14 @@ Hints:
     * `Stop` or `Ctrl+C` kills infinite loop
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> type(result)
     <class 'list'>
+
     >>> assert all(type(x) is float for x in result)
+
     >>> result
     [2.0, 3.0, 3.5, 4.0, 4.5, 5.0]
 """

@@ -19,12 +19,17 @@ Polish:
     2. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert result is not Ellipsis, \
     'Assignment solution must be in `result` instead of ... (Ellipsis)'
+
     >>> type(result)
     <class 'set'>
     >>> len(result)
     3
+
     >>> 'a' in result
     True
     >>> 1 in result

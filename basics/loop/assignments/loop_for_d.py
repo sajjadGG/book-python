@@ -21,9 +21,14 @@ Polish:
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert type(result) is str
+
     >>> result.count('\\n')
     3
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     'We choose to go to the Moon.\\nWe choose to go to the Moon in this decade
     and do the other things.\\nNot because they are easy, but because they are

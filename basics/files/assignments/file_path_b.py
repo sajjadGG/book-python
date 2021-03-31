@@ -21,6 +21,9 @@ Polish:
     3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert isinstance(result, str), \
     'Result must be a str with: `file`, `directory` or `not exist`'
 

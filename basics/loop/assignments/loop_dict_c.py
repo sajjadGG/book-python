@@ -44,6 +44,9 @@ Hints:
     * Reversed lookup dict
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert type(features) is list
     >>> assert type(labels) is list
     >>> assert type(label_encoder) is dict
@@ -51,6 +54,7 @@ Tests:
     >>> assert all(type(x) is int for x in labels)
     >>> assert all(type(x) is int for x in label_encoder.keys())
     >>> assert all(type(x) is str for x in label_encoder.values())
+
     >>> features  # doctest: +NORMALIZE_WHITESPACE
     [(5.8, 2.7, 5.1, 1.9),
      (5.1, 3.5, 1.4, 0.2),

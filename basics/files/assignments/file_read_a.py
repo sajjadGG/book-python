@@ -19,9 +19,14 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert type(result) is str
+
     >>> result
     'hello'
+
     >>> from os import remove
     >>> remove(FILE)
 """

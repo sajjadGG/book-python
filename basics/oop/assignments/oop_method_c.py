@@ -26,8 +26,12 @@ Hints:
     * `round()`
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert type(result) is list
     >>> assert all(type(x) is float for x in result)
+
     >>> result
     [3.9, 2.5, 3.5, 4.1, 3.9, 2.4]
 """

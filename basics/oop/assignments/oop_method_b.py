@@ -27,9 +27,13 @@ Hints:
 
 Tests:
     >>> from inspect import isclass, ismethod
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert isclass(Stats)
     >>> stats = Stats()
     >>> assert ismethod(stats.mean)
+
     >>> stats.mean([1, 2])
     1.5
     >>> stats.mean([5.8, 2.7, 5.1, 1.9])

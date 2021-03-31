@@ -23,7 +23,11 @@ Polish:
     7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert type(result) is str
+
     >>> result
     'zazolc gesla jazn'
 """

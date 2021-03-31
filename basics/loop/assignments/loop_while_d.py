@@ -36,11 +36,16 @@ Hints:
     * `mean = sum(...) / len(...)`
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> type(grades)
     <class 'list'>
     >>> type(result)
     <class 'float'>
+
     >>> assert all(type(x) is float for x in grades)
+
     >>> len(grades) > 0
     True
     >>> from statistics import mean

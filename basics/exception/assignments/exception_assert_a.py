@@ -2,11 +2,11 @@
 * Assignment: Exception Assert Version
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 2 min
+* Time: 3 min
 
 English:
     1. Use data from "Given" section (see below)
-    2. Validate value passed to a `check` function
+    2. Check value passed to a `check` function
         a. Check if `version` is greater or equal to `REQUIRED_VERSION`
         b. If not, raise exception with message 'Python 3.7+ required'
     3. Non-functional requirements

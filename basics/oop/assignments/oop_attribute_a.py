@@ -21,6 +21,9 @@ Polish:
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert isinstance(watney, Astronaut)
     >>> assert isinstance(nasa, SpaceAgency)
     >>> assert 'Watney' in watney.__dict__.values()

@@ -17,18 +17,30 @@ Polish:
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert header is not Ellipsis, \
     'Assignment solution must be in `header` instead of ... (Ellipsis)'
+
     >>> assert data is not Ellipsis, \
     'Assignment solution must be in `data` instead of ... (Ellipsis)'
-    >>> type(header)
-    <class 'tuple'>
-    >>> type(data)
-    <class 'list'>
-    >>> assert all(type(x) is str for x in header)
-    >>> assert all(type(row) is tuple for row in data)
+
+    >>> assert type(header) is tuple, \
+    'header should be a tuple'
+
+    >>> assert type(data) is list, \
+    'data should be a list'
+
+    >>> assert all(type(x) is str for x in header), \
+    'All elements in header should be str'
+
+    >>> assert all(type(row) is tuple for row in data), \
+    'All elements in data should be tuple'
+
     >>> header
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
+
     >>> data  # doctest: +NORMALIZE_WHITESPACE
     [(5.8, 2.7, 5.1, 1.9, 'virginica'),
      (5.1, 3.5, 1.4, 0.2, 'setosa'),

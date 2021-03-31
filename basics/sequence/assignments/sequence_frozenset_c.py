@@ -20,20 +20,25 @@ Hint:
     * `str.join()`
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert result is not Ellipsis, \
     'Assignment solution must be in `result` instead of ... (Ellipsis)'
+
     >>> type(result)
     <class 'str'>
     >>> len(result)
     150
+    >>> result.count('\\n')
+    2
+
     >>> 'We choose to go to the Moon.' in result
     True
     >>> 'We choose to go to the Moon in this decade and do the other things.' in result
     True
     >>> 'Not because they are easy, but because they are hard.' in result
     True
-    >>> result.count('\\n')
-    2
 """
 
 # Given

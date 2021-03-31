@@ -30,7 +30,7 @@ generated while executing particular steps of the CI/CD pipeline.
 
 .. code-block:: console
 
-    $ python3.9 -m doctest myscript.py
+    $ python -m doctest myscript.py
     $ echo $?
     0
 
@@ -39,7 +39,7 @@ if tests failed, therefore it yields an error for whole build or pipeline execut
 
 .. code-block:: console
 
-    $ python3.9 -m doctest myscript.py
+    $ python -m doctest myscript.py
     **********************************************************************
     File "/home/watney/myscript.py", line 41, in myscript
     Failed example:

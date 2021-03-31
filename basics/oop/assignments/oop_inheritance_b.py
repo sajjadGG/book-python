@@ -16,6 +16,9 @@ Polish:
 
 Tests:
     >>> from inspect import isclass
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert isclass(Scientist)
     >>> assert isclass(Engineer)
     >>> assert isclass(Pilot)

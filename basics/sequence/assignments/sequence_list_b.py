@@ -29,24 +29,32 @@ Polish:
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert a is not Ellipsis, \
     'Assignment solution must be in `a` instead of ... (Ellipsis)'
+
     >>> assert b is not Ellipsis, \
     'Assignment solution must be in `b` instead of ... (Ellipsis)'
+
     >>> assert c is not Ellipsis, \
     'Assignment solution must be in `c` instead of ... (Ellipsis)'
+
     >>> type(a)
     <class 'list'>
     >>> type(b)
     <class 'list'>
     >>> type(c)
     <class 'list'>
+
     >>> len(a)
     5
     >>> len(b)
     5
     >>> len(c)
     5
+
     >>> (5.8 in a
     ...  and 2.7 in a
     ...  and 5.1 in a

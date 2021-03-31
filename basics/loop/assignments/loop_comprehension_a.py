@@ -17,8 +17,15 @@ Polish:
     3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> assert type(result) is list
-    >>> assert all(type(x) is int for x in result)
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(result) is list, \
+    'Result should be a list'
+
+    >>> assert all(type(x) is int for x in result), \
+    'Result should be a list of int'
+
     >>> result
     [6, 8, 10, 12, 14, 16, 18]
 """

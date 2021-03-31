@@ -35,12 +35,17 @@ Polish:
     10. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert result is not Ellipsis, \
     'Assignment solution must be in `result` instead of ... (Ellipsis)'
+
     >>> type(header)
     <class 'tuple'>
     >>> type(result)
     <class 'list'>
+
     >>> ('sepal_length' not in result
     ...  and 'sepal_width' not in result
     ...  and 'petal_length' not in result
@@ -49,6 +54,7 @@ Tests:
     True
     >>> len(result)
     8
+
     >>> header
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
     >>> [5.1, 3.5, 1.4, 0.2, 'setosa'] in result

@@ -33,18 +33,24 @@ Polish:
     8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert result is not Ellipsis, \
     'Assignment solution must be in `result` instead of ... (Ellipsis)'
+
     >>> type(result)
     <class 'set'>
+    >>> len(result)
+    22
+
     >>> ('sepal_length' not in result
     ...  and 'sepal_width' not in result
     ...  and 'petal_length' not in result
     ...  and 'petal_width' not in result
     ...  and 'species' not in result)
     True
-    >>> len(result)
-    22
+
     >>> result >= {5.8, 2.7, 5.1, 1.9, 'virginica'}
     True
     >>> result >= {5.1, 3.5, 1.4, 0.2, 'setosa'}

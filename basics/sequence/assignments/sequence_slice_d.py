@@ -33,28 +33,36 @@ Polish:
     9. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert header is not Ellipsis, \
     'Assignment solution must be in `header` instead of ... (Ellipsis)'
+
     >>> assert data is not Ellipsis, \
     'Assignment solution must be in `data` instead of ... (Ellipsis)'
+
     >>> assert train is not Ellipsis, \
     'Assignment solution must be in `train` instead of ... (Ellipsis)'
+
     >>> assert test is not Ellipsis, \
     'Assignment solution must be in `test` instead of ... (Ellipsis)'
+
     >>> type(header)
     <class 'tuple'>
     >>> type(train)
     <class 'list'>
     >>> type(test)
     <class 'list'>
-    >>> ('Sepal length', 'Sepal width', 'Petal length', 'Petal width',
-    'Species') not in train
+
+    >>> ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species') not in train
     True
-    >>> ('Sepal length', 'Sepal width', 'Petal length', 'Petal width',
-    'Species') not in test
+    >>> ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species') not in test
     True
+
     >>> assert all(type(x) is tuple for x in train)
     >>> assert all(type(x) is tuple for x in test)
+
     >>> header  # doctest: +NORMALIZE_WHITESPACE
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
     >>> train  # doctest: +NORMALIZE_WHITESPACE

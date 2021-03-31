@@ -22,15 +22,22 @@ Hints:
     * Use `str.split()` without any argument
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
     >>> assert ip is not Ellipsis, \
     'Assignment solution must be in `ip` instead of ... (Ellipsis)'
+
     >>> assert hosts is not Ellipsis, \
     'Assignment solution must be in `hosts` instead of ... (Ellipsis)'
+
     >>> type(ip)
     <class 'str'>
     >>> type(hosts)
     <class 'list'>
+
     >>> assert all(type(host) is str for host in hosts)
+
     >>> ip
     '10.13.37.1'
     >>> hosts
