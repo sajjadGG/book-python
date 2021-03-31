@@ -33,20 +33,23 @@ Exception with additional message:
 Example
 -------
 We want to check if Kelvin temperature given by user is not negative.
-Note that Kelvin temperatures below zero doesn't exist, hence it's an absolute scale.
+Note that Kelvin temperatures below zero doesn't exist, hence it's an absolute
+scale.
 
-In order to do so, we need to ask user to input value. Let's assume user input ``-1``.
-Remember, ``input()`` function always returns ``str`` and you have to convert it manually.
+In order to do so, we need to ask user to input value. Let's assume user input
+``-1``. Remember, ``input()`` function always returns ``str`` and you have to
+convert it manually.
 
 .. testsetup::
 
     def input(prompt):
         return '-1'
 
-We need to check if the temperature is not negative. If temperature is 0 or above, it is ok,
-and we can proceed with program execution. However if the temperature is below zero...
-Then we should warn user about problem and exit program. This is why we have exceptions.
-We can break execution of a program in erroneous situations.
+We need to check if the temperature is not negative. If temperature is 0 or
+above, it is ok, and we can proceed with program execution. However if the
+temperature is below zero... Then we should warn user about problem and exit
+program. This is why we have exceptions. We can break execution of a program
+in erroneous situations.
 
     >>> temperature = input('Type temperature: ')  # User inputs: -1
     >>> temperature = float(temperature)
@@ -58,12 +61,9 @@ We can break execution of a program in erroneous situations.
     Traceback (most recent call last):
     ValueError: Kelvin cannot be negative
 
-Good software communicates well with programmer. Exceptions are common language to talk about problems
-and not-nominal (abnormal) situations in your code.
+Good software communicates well with programmer. Exceptions are common language
+to talk about problems and not-nominal (abnormal) situations in your code.
 
-
-Use Case
---------
     >>> def check(temperature):
     ...     if type(temperature) not in {float, int}:
     ...         raise TypeError('Temperature must be int or float')
@@ -71,6 +71,9 @@ Use Case
     ...         raise ValueError('Kelvin temperature cannot be negative')
     ...     return temperature
 
+
+Use Case
+--------
     >>> def apollo13():
     ...     raise RuntimeError('Oxygen tank explosion')
     >>>

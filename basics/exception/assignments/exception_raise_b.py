@@ -10,8 +10,8 @@ English:
     3. If `value` is:
         a. other type than `int` or `float` raise `TypeError`
         a. less than zero, raise `ValueError`
-        a. below ADULT, raise `PermissionError`
-    3. Non functional Requirements
+        a. below `ADULT`, raise `PermissionError`
+    3. Non-functional requirements
         a. Write solution inside `check` function
         b. Mind the indentation level
     4. Compare result with "Tests" section (see below)
@@ -20,10 +20,10 @@ Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Sprawdź poprawność wartości przekazanej do funckji `check`
     3. Jeżeli `age` jest:
-        b. innego typu niż `float` lub int, podnieś wyjątek `TypeError`
+        b. innego typu niż `int` lub `float`, podnieś wyjątek `TypeError`
         b. mniejsze niż zero, podnieś wyjątek `ValueError`
-        c. mniejsze niż ADULT, podnieś wyjątek `PermissionError`
-    3. Non functional Requirements
+        c. mniejsze niż `ADULT`, podnieś wyjątek `PermissionError`
+    3. Wymagania niefunkcjonalne
         a. Rozwiązanie zapisz wewnątrz funkcji `check`
         b. Zwróć uwagę na poziom wcięć
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)

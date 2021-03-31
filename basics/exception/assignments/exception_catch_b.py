@@ -1,29 +1,37 @@
 """
 * Assignment: Exception Catch Else
 * Complexity: easy
-* Lines of code: 2 lines
-* Time: 2 min
+* Lines of code: 7 lines
+* Time: 5 min
 
 English:
-    1. Check age passed to a function
-    2. Validate value passed to a `check` function
-    2. If value is below AGE,
-       raise `PermissionError` with message "Adults only"
-    3. Write solution inside `check` function
-    4. Mind the indentation level
+    1. Use data from "Given" section (see below)
+    2. Convert value passed to the `check` function as a `float`
+    3. If conversion fails, raise `TypeError`
+    4. If value is below AGE, raise `PermissionError`
+    5. Non-functional requirements
+        a. Write solution inside `check` function
+        b. Mind the indentation level
+    6. Compare result with "Tests" section (see below)
 
 Polish:
-    1. Sprawdź wiek przekazany do funkcji
-    2. Jeżeli wartość jest poniżej AGE,
-       podnieś wyjątek `PermissionError` z komunikatem "Adults only"
-    3. Rozwiązanie zapisz wewnątrz funkcji `check`
-    4. Zwróć uwagę na poziom wcięć
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Przekonwertuj wartośc przekazaną do funckji `check` jako `float`
+    3. Jeżeli konwersja się nie powiedzie, podnieś `TypeError`
+    4. Jeżeli wartość jest poniżej AGE, podnieś `PermissionError`
+    5. Wymagania niefunkcjonalne
+        a. Rozwiązanie zapisz wewnątrz funkcji `check`
+        b. Zwróć uwagę na poziom wcięć
+    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> check(1)
-    >>> check(-1)
+    >>> check(21)
+    >>> check('one')
     Traceback (most recent call last):
-    ValueError
+    TypeError
+    >>> check(1)
+    Traceback (most recent call last):
+    PermissionError
 """
 
 # Given
@@ -36,5 +44,10 @@ def check(age):
 
 # Solution
 def check(age):
-    if float(age) < ADULT:
-        raise PermissionError('Adults only')
+    try:
+        age = float(age)
+    except Exception:
+        raise TypeError
+    else:
+        if age < ADULT:
+            raise PermissionError

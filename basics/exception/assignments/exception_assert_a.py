@@ -9,7 +9,7 @@ English:
     2. Validate value passed to a `check` function
         a. Check if `version` is greater or equal to `REQUIRED_VERSION`
         b. If not, raise exception with message 'Python 3.7+ required'
-    3. Non functional Requirements
+    3. Non-functional requirements
         a. Write solution inside `check` function
         b. Mind the indentation level
         c. Use `assert` kyword
@@ -20,7 +20,7 @@ Polish:
     2. Sprawdź poprawność wartości przekazanej do funckji `check`
         a. Sprawdź czy `version` jest większe lub równe `REQUIRED_VERSION`
         b. Jeżeli nie, podnieś wyjątek z komunikatem 'Python 3.7+ required'
-    3. Non functional Requirements
+    3. Wymagania niefunkcjonalne
         a. Rozwiązanie zapisz wewnątrz funkcji `check`
         b. Zwróć uwagę na poziom wcięć
         c. Użyj słowa kluczowego `assert`

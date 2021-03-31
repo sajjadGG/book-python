@@ -8,7 +8,7 @@ English:
     1. Use data from "Given" section (see below)
     2. Validate value passed to a `check` function
         a. If `value` is less than zero, raise `ValueError`
-    3. Non functional Requirements
+    3. Non-functional requirements
         a. Write solution inside `check` function
         b. Mind the indentation level
     4. Compare result with "Tests" section (see below)
@@ -17,7 +17,7 @@ Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Sprawdź poprawność wartości przekazanej do funckji `check`
         a. Jeżeli `value` jest mniejsze niż zero, podnieś wyjątek `ValueError`
-    3. Non functional Requirements
+    3. Wymagania niefunkcjonalne
         a. Rozwiązanie zapisz wewnątrz funkcji `check`
         b. Zwróć uwagę na poziom wcięć
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
