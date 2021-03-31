@@ -1,5 +1,5 @@
 """
-* Assignment: Exception Catch Else
+* Assignment: Exception Catch Finally
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 8 min
