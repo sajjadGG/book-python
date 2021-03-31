@@ -249,8 +249,10 @@ Shadowing Global Scope
 ----------------------
 * Stubs in tests
 
->>> def input(prompt):  # Stub
+>>> def input(stub):
+...     """Stub user input, for testing purpose only"""
 ...     return '44'
+>>>
 >>>
 >>> age = input('Type your age: ')
 >>> age
@@ -263,12 +265,4 @@ Assignments
 -----------
 .. literalinclude:: assignments/function_scope_a.py
     :caption: :download:`Solution <assignments/function_scope_a.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/function_scope_b.py
-    :caption: :download:`Solution <assignments/function_scope_b.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/function_scope_c.py
-    :caption: :download:`Solution <assignments/function_scope_c.py>`
     :end-before: # Solution

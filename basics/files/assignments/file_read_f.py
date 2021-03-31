@@ -65,11 +65,12 @@ Tests:
 
 # Given
 from datetime import date
+from os.path import dirname, join
 
-
-FILE_GROUP = r'../data/etc-group.txt'
-FILE_SHADOW = r'../data/etc-shadow.txt'
-FILE_PASSWD = r'../data/etc-passwd.txt'
+BASE_DIR = dirname(__file__)
+FILE_GROUP = join(BASE_DIR, '../data/etc-group.txt')
+FILE_SHADOW = join(BASE_DIR, '../data/etc-shadow.txt')
+FILE_PASSWD = join(BASE_DIR, '../data/etc-passwd.txt')
 
 SECOND = 1
 MINUTE = 60 * SECOND
@@ -95,9 +96,9 @@ result = []
 
 try:
     with open(FILE_GROUP, encoding='utf-8') as file:
-        etc_groups = file.readlines()
+        etc_group = file.readlines()
 except FileNotFoundError:
-    print('File does not exist')
+    print(f'File {FILE_GROUP} does not exist')
 except PermissionError:
     print('Permission denied')
 
@@ -106,7 +107,7 @@ try:
     with open(FILE_SHADOW, encoding='utf-8') as file:
         etc_shadow = file.readlines()
 except FileNotFoundError:
-    print('File does not exist')
+    print(f'File {FILE_SHADOW} does not exist')
 except PermissionError:
     print('Permission denied')
 
@@ -115,12 +116,12 @@ try:
     with open(FILE_PASSWD, encoding='utf-8') as file:
         etc_passwd = file.readlines()
 except FileNotFoundError:
-    print('File does not exist')
+    print(f'File {FILE_PASSWD} does not exist')
 except PermissionError:
     print('Permission denied')
 
 
-for line in etc_groups:
+for line in etc_group:
     line = line.strip()
 
     if not line or line.startswith('#'):

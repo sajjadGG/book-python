@@ -33,6 +33,10 @@ Tests:
     True
 """
 
+# Stub
+def input(stub):
+    """Stub user input, for testing purpose only"""
+    return '13'
 
 # Given
 number = input('What is your number?: ')

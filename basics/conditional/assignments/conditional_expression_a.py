@@ -74,6 +74,10 @@ Tests:
     >>> assert blood_pressure == '181/121' and result == ['Hypertension stage 2', 'Hypertensive Crisis'] or True
 """
 
+# Stub
+def input(stub):
+    """Stub user input, for testing purpose only"""
+    return '181/121'
 
 # Given
 STATUS_NORMAL = 'Normal'

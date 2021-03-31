@@ -105,7 +105,10 @@ Yes
 
 Checking if has value:
 
->>> input = lambda _: 'Jan Twardowski'  # Stub user input, for testing purpose only
+>>> def input(stub):
+...     """Stub user input, for testing purpose only"""
+...     return 'Jan Twardowski'
+>>>
 >>>
 >>> name = input('What is your name?: ')
 >>>
@@ -115,7 +118,9 @@ My name is... Jan Twardowski
 
 Checking if has value:
 
->>> input = lambda _: ''  # Stub user input, for testing purpose only
+>>> def input(stub):
+...     """Stub user input, for testing purpose only"""
+...     return ''
 >>>
 >>> name = input('What is your name?: ')
 >>>
@@ -199,7 +204,10 @@ cosmonaut
 
 Checking if variable is certain value:
 
->>> input = lambda _: ''  # Stub user input, for testing purpose only
+>>> def input(stub):
+...     """Stub user input, for testing purpose only"""
+...     return ''
+>>>
 >>>
 >>> name = input('What is your name?: ')
 >>>
@@ -242,7 +250,10 @@ Conditional Alternative
     else:
         <do something>
 
->>> input = lambda _: 'Polish'  # Stub user input, for testing purpose only
+>>> def input(stub):
+...     """Stub user input, for testing purpose only"""
+...     return 'Polish'
+>>>
 >>>
 >>> language = input('What is your language?: ')
 >>>
@@ -320,7 +331,9 @@ cosmonaut
 
 Type Str Methods is Numeric:
 
->>> input = lambda _: '10'  # Stub user input, for testing purpose only
+>>> def input(stub):
+...     """Stub user input, for testing purpose only"""
+...     return '10'
 >>>
 >>> age = input('What is your age?: ')
 >>> age = float(age) if age.isnumeric() else None
@@ -334,6 +347,11 @@ Switch
 * ``switch`` in Object Oriented Programming is considered a bad practise
 * :pep:`275` -- Switching on Multiple Values [Rejected]
 
+>>> def input(stub):
+...     """Stub user input, for testing purpose only"""
+...     return 'French'
+>>>
+>>>
 >>> switch = {
 ...     'English': 'Hello',
 ...     'Russian': 'Здравствуйте',
@@ -341,7 +359,6 @@ Switch
 ...     'Polish': 'Witaj',
 ...     'default': "I don't speak this language"}
 >>>
->>> input = lambda _: 'French'  # Stub user input, for testing purpose only
 >>> language = input('What is your language?: ')
 >>>
 >>> switch.get(language, switch['default'])

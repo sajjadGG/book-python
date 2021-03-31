@@ -27,5 +27,8 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Doctest
+    - name: Doctest listings
       run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
+
+    - name: Doctest assignments
+      run: find basics -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;

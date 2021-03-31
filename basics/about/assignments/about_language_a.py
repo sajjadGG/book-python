@@ -14,6 +14,11 @@ Polish:
     4. Gdzie Python jest zainstalowany?
     5. Czy korzystasz z "Virtualenv"?
     6. Upewnij się, że w linijce z "Virtualenv" nie masz `None`
+
+Tests:
+    >>> assert python_executable is not None
+    >>> assert python_version is not None
+    >>> assert venv is not None
 """
 
 
@@ -22,9 +27,11 @@ import sys
 import os
 
 
-print(f'Python Executable: {sys.executable}')
-print(f'Python Version: {sys.version}')
-print(f'Virtualenv: {os.getenv("VIRTUAL_ENV")}')
-
+python_executable = sys.executable
+python_version = tuple(sys.version_info)
+venv = os.getenv("VIRTUAL_ENV")
 
 # Solution
+python_executable = sys.executable
+python_version = tuple(sys.version_info)
+venv = os.getenv("VIRTUAL_ENV")

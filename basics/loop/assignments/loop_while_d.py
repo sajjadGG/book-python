@@ -36,6 +36,7 @@ Hints:
     * `mean = sum(...) / len(...)`
 
 Tests:
+    >>> from statistics import mean
     >>> import sys
     >>> sys.tracebacklimit = 0
 
@@ -46,12 +47,14 @@ Tests:
 
     >>> assert all(type(x) is float for x in grades)
 
-    >>> len(grades) > 0
-    True
-    >>> from statistics import mean
-    >>> mean(grades) == result
+    >>> mean(grades) == result  # doctest: +SKIP
     True
 """
+
+# Stub
+def input(stub):
+    """Stub user input, for testing purpose only"""
+    return ''
 
 # Given
 GRADE_SCALE = (2.0, 3.0, 3.5, 4.0, 4.5, 5.0)

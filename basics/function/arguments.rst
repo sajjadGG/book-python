@@ -162,7 +162,3 @@ Assignments
 .. literalinclude:: assignments/function_args_f.py
     :caption: :download:`Solution <assignments/function_args_f.py>`
     :end-before: # Solution
-
-.. literalinclude:: assignments/function_args_g.py
-    :caption: :download:`Solution <assignments/function_args_g.py>`
-    :end-before: # Solution

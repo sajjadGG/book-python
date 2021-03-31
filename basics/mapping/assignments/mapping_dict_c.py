@@ -29,6 +29,10 @@ Tests:
     TODO: Input Stub
 """
 
+# Stub
+def input(stub):
+    """Stub user input, for testing purpose only"""
+    return 'A'
 
 # Given
 ALPHABET = {

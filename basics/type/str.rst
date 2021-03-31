@@ -275,7 +275,8 @@ and you should not do that in your programs!
 This assumes, that user will input particular str such as ``'Mark Watney'``, ``42`` or ``42.5``, ``42,5``:
 
 >>> # Stub
-... def input(prompt):
+... def input(stub):
+...     """Stub user input, for testing purpose only"""
 ...     return 'Mark Watney'
 
 How the code would look like?
@@ -291,7 +292,8 @@ Mark Watney
 To get numeric value type casting to ``int`` is needed.
 
 >>> # Stub
-... def input(prompt):
+... def input(stub):
+...     """Stub user input, for testing purpose only"""
 ...     return '42'
 
 >>> age = input('What is your age: ')
@@ -310,7 +312,8 @@ To get numeric value type casting to ``int`` is needed.
 Conversion to ``float`` handles decimals, which ``int`` does not support:
 
 >>> # Stub
-... def input(prompt):
+... def input(stub):
+...     """Stub user input, for testing purpose only"""
 ...     return '42.5'
 
 >>> age = input('What is your age: ')
@@ -328,7 +331,8 @@ ValueError: invalid literal for int() with base 10: '42.5'
 Conversion to ``float`` cannot handle comma (',') as a decimal separator:
 
 >>> # Stub
-... def input(prompt):
+... def input(stub):
+...     """Stub user input, for testing purpose only"""
 ...     return '42,5'
 
 >>> age = input('What is your age: ')

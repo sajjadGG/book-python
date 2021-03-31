@@ -21,6 +21,10 @@ Tests:
     True
 """
 
+# Stub
+def input(stub):
+    """Stub user input, for testing purpose only"""
+    return '21'
 
 # Given
 ADULT = 18

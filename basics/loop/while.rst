@@ -3,7 +3,8 @@ Loop While
 
 .. testsetup::
 
-    def input(_):
+    def input(stub):
+        """Stub user input, for testing purpose only"""
         return 1
 
 

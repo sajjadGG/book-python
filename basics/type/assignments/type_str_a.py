@@ -19,6 +19,11 @@ Tests:
     'NASA'
 """
 
+# Stub
+def input(stub):
+    """Stub user input, for testing purpose only"""
+    return 'NASA'
+
 # Given
 result = ...  # Type NASA
 

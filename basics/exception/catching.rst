@@ -167,6 +167,11 @@ Pokemon Exception Handling
 
 User cannot simply kill program with ``Ctrl-C``:
 
+    >>> def input(stub):
+    ...     """Stub user input, for testing purpose only"""
+    ...     return ''
+    >>>
+    >>>
     >>> # doctest: +SKIP
     ... while True:
     ...     try:
@@ -176,6 +181,11 @@ User cannot simply kill program with ``Ctrl-C``:
 
 User can kill program with ``Ctrl-C``:
 
+    >>> def input(stub):
+    ...     """Stub user input, for testing purpose only"""
+    ...     return ''
+    >>>
+    >>>
     >>> # doctest: +SKIP
     ... while True:
     ...     try:

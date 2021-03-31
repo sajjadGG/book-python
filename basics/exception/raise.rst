@@ -42,7 +42,8 @@ convert it manually.
 
 .. testsetup::
 
-    def input(prompt):
+    def input(stub):
+        """Stub user input, for testing purpose only"""
         return '-1'
 
 We need to check if the temperature is not negative. If temperature is 0 or

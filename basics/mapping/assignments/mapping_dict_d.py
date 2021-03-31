@@ -37,6 +37,10 @@ Tests:
     True
 """
 
+# Stub
+def input(stub):
+    """Stub user input, for testing purpose only"""
+    return ''
 
 # Given
 PL = {
@@ -56,6 +60,6 @@ result = ...  # str with converted letter without PL accent chars
 
 
 # Solution
-letter = input('Type single letter: ').strip().lower()
+letter = input('Type letter: ').strip().lower()
 result = PL.get(letter, letter)
 
