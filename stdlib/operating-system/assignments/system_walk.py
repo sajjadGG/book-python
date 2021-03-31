@@ -15,4 +15,4 @@ for root, dirs, files in os.walk(PATH):
             readme_found = True
 
 if not readme_found:
-    logging.critical('Readme not found')
+    logging.debug('Readme not found')

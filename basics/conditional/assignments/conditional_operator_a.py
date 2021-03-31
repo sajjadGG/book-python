@@ -34,7 +34,7 @@ Tests:
 """
 
 # Stub
-def input(stub):
+def input(__prompt):
     """Stub user input, for testing purpose only"""
     return '13'
 

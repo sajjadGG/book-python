@@ -249,7 +249,7 @@ Shadowing Global Scope
 ----------------------
 * Stubs in tests
 
->>> def input(stub):
+>>> def input(__prompt):
 ...     """Stub user input, for testing purpose only"""
 ...     return '44'
 >>>

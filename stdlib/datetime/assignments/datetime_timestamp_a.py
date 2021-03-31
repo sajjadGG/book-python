@@ -48,6 +48,6 @@ c = ...  # float: timestamp of C
 
 
 # Solution
-a = datetime.fromisoformat(a).timestamp()
-b = datetime.fromisoformat(b).timestamp()
-c = datetime.fromisoformat(c).timestamp()
+a = datetime.fromisoformat(A).timestamp()
+b = datetime.fromisoformat(B).timestamp()
+c = datetime.fromisoformat(C).timestamp()

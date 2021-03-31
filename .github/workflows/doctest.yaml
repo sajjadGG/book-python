@@ -27,8 +27,53 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Doctest listings
+    - name: Doctest Listings
       run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
 
-    - name: Doctest assignments
+    - name: Doctest About Assignments
+      run: find about -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Advanced Assignments
+    #  run: find advanced -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Basics Assignments
       run: find basics -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Data Science Assignments
+      run: find data-science -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Design Patterns Assignments
+    #  run: find design-patterns -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Devops Assignments
+      run: find devops -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Django Assignments
+    #  run: find django -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Dragon Assignments
+    #  run: find dragon -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Fastapi Assignments
+      run: find fastapi -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Machine Learning Assignments
+    #  run: find machine-learning -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Matplotlib Assignments
+    #  run: find matplotlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Network Assignments
+    #  run: find network -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Numpy Assignments
+      run: find numpy -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest OOP Assignments
+      run: find oop -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Pandas Assignments
+      run: find pandas -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Stdlib Assignments
+      run: find stdlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;

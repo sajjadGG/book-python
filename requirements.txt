@@ -15,6 +15,9 @@ pandas
 matplotlib
 django
 lxml
+xlrd
+openpyxl
+sklearn
 
 
 # FastAPI
@@ -26,3 +29,4 @@ uvicorn[standard]
 passlib[bcrypt]
 python-jose[cryptography]
 python-multipart
+beautifulsoup4

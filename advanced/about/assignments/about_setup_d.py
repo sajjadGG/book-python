@@ -25,17 +25,16 @@ Polish:
     8. Zapisz `100%` we arkuszu zadań w wierszu z tym zadaniem
 
 Tests:
-    >>> import sys
-    >>> sys.version_info > (3, 7, 0)
+    >>> python_version > (3, 7, 0)
     True
 """
 
 
 # Given
 import sys
-print(sys.version[:6])
+
+python_version = sys.version_info
 
 
 # Solution
-import sys
-print(sys.version[:6])
+python_version = sys.version_info

@@ -105,7 +105,7 @@ Yes
 
 Checking if has value:
 
->>> def input(stub):
+>>> def input(__prompt):
 ...     """Stub user input, for testing purpose only"""
 ...     return 'Jan Twardowski'
 >>>
@@ -118,7 +118,7 @@ My name is... Jan Twardowski
 
 Checking if has value:
 
->>> def input(stub):
+>>> def input(__prompt):
 ...     """Stub user input, for testing purpose only"""
 ...     return ''
 >>>
@@ -204,7 +204,7 @@ cosmonaut
 
 Checking if variable is certain value:
 
->>> def input(stub):
+>>> def input(__prompt):
 ...     """Stub user input, for testing purpose only"""
 ...     return ''
 >>>
@@ -250,7 +250,7 @@ Conditional Alternative
     else:
         <do something>
 
->>> def input(stub):
+>>> def input(__prompt):
 ...     """Stub user input, for testing purpose only"""
 ...     return 'Polish'
 >>>
@@ -331,7 +331,7 @@ cosmonaut
 
 Type Str Methods is Numeric:
 
->>> def input(stub):
+>>> def input(__prompt):
 ...     """Stub user input, for testing purpose only"""
 ...     return '10'
 >>>
@@ -347,7 +347,7 @@ Switch
 * ``switch`` in Object Oriented Programming is considered a bad practise
 * :pep:`275` -- Switching on Multiple Values [Rejected]
 
->>> def input(stub):
+>>> def input(__prompt):
 ...     """Stub user input, for testing purpose only"""
 ...     return 'French'
 >>>

@@ -32,9 +32,10 @@ Tests:
     True
     >>> result[0]  # doctest: +NORMALIZE_WHITESPACE
     User(login='mojombo',
-         id=1, url='https://api.github.com/users/mojombo',
+         id=1,
+         url='https://api.github.com/users/mojombo',
          node_id='MDQ6VXNlcjE=',
-         avatar_url='https://avatars0.githubusercontent.com/u/1?v=4',
+         avatar_url='https://avatars.githubusercontent.com/u/1?v=4',
          gravatar_id='',
          html_url='https://github.com/mojombo',
          followers_url='https://api.github.com/users/mojombo/followers',

@@ -1,4 +1,16 @@
+"""
+Tests:
+    >>> result
+    {'sin': 0.02, 'cos': 1.0, 'tg': 0.02, 'ctg': 0.02, 'PI': 3.14}
+"""
+
 import math
+
+# Stub
+def input(__prompt):
+    """Stub user input, for testing purpose only"""
+    return '1'
+
 
 PRECISION = 2
 
@@ -12,5 +24,3 @@ result = {
     'ctg': round(math.atan(radians), PRECISION),
     'PI': round(math.pi, PRECISION),
 }
-
-print(result)

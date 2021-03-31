@@ -162,7 +162,6 @@ Mathematics
     math/random.rst
     math/fractions.rst
     math/precision.rst
-    math/plotting.rst
     math/complex.rst
 
 

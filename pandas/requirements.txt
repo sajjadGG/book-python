@@ -2,6 +2,7 @@ sphinx==3.5.*
 sphinx_rtd_theme
 
 
-# pandas
-# numpy
-# matplotlib
+pandas
+numpy
+matplotlib
+xlrd
