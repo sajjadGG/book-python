@@ -40,6 +40,7 @@ input = MagicMock(return_value='4')
 # Given
 number = input('What is your number?: ')
 
+result = ... # bool: Whether input number is even or odd (modulo divide)
 
 # Solution
 result = float(number) % 2 == 0

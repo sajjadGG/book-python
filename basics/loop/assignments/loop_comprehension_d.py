@@ -1,5 +1,5 @@
 """
-* Assignment: Idioms Comprehension Train/Test Split
+* Assignment: Loop Comprehension Split
 * Complexity: medium
 * Lines of code: 9 lines
 * Time: 13 min
@@ -96,10 +96,10 @@ DATA = [
     (4.9, 2.5, 4.5, 1.7, 'virginica'),
 ]
 
-features_train: list
-features_test: list
-labels_train: list
-labels_test: list
+features_train = ...  # list[tuple]: with 60% of features from DATA
+features_test = ...  # list[tuple]: with 40% of features from DATA
+labels_train = ...  # list[str]: with with 60% of labels from DATA
+labels_test = ...  # list[str]: with with 40% of labels from DATA
 
 # Solution
 RATIO = 0.6
@@ -109,6 +109,7 @@ features_train = [tuple(X) for *X, y in data[:pivot]]
 features_test = [tuple(X) for *X, y in data[pivot:]]
 labels_train = [y for *X, y in data[:pivot]]
 labels_test = [y for *X, y in data[pivot:]]
+
 
 ## Alternative Solution
 # features = [tuple(measurements) for *measurements,_ in data]

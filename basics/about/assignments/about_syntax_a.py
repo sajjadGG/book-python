@@ -25,9 +25,16 @@ Polish:
 Tests:
     >>> 'Mark Watney' in result
     True
+
+    >>> name
+    'Mark Watney'
+
     >>> result
     'Hello World Mark Watney'
 """
+
+name = ...  # str: with Mark Watney
+result = ...  # str: with Hello World {name}
 
 # Solution
 

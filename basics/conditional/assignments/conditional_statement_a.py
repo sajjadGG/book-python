@@ -30,6 +30,7 @@ input = MagicMock(return_value='21')
 ADULT = 18
 age = input('What is your age?: ')
 
+result = ...  # str: Whether 'Young' or 'Adult'
 
 # Solution
 if int(age) >= ADULT:

@@ -72,7 +72,7 @@ MONTHS = [
     'December',
 ]
 
-result: dict
+result = ...  # dict[str,str]: with zero-padded number and month name
 
 # Solution
 result = {f'{number:02}': month
