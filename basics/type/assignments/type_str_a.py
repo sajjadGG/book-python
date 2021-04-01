@@ -19,10 +19,9 @@ Tests:
     'NASA'
 """
 
-# Stub
-def input(__prompt):
-    """Stub user input, for testing purpose only"""
-    return 'NASA'
+# Mock input() built-in function
+from unittest.mock import MagicMock
+input = MagicMock(return_value='NASA')
 
 # Given
 result = ...  # Type NASA

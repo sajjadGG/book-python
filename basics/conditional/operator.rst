@@ -148,7 +148,7 @@ Examples
 >>> import sys
 >>>
 >>> print(sys.version_info)
-sys.version_info(major=3, minor=9, micro=1, releaselevel='final', serial=0)
+sys.version_info(major=3, minor=9, micro=2, releaselevel='final', serial=0)
 >>>
 >>> sys.version_info > (3, 8)
 True
@@ -161,7 +161,9 @@ False
 True
 >>> sys.version_info > (3, 9, 1)
 True
->>> sys.version_info > (3, 9, 2)
+>>> sys.version_info >= (3, 9, 2)
+True
+>>> sys.version_info > (3, 9, 3)
 False
 
 

@@ -21,10 +21,10 @@ Tests:
     True
 """
 
-# Stub
-def input(__prompt):
-    """Stub user input, for testing purpose only"""
-    return '21'
+# Mock input() built-in function
+from unittest.mock import MagicMock
+input = MagicMock(return_value='21')
+
 
 # Given
 ADULT = 18

@@ -42,8 +42,10 @@ PL = {
 
 DATA = 'zażółć gęślą jaźń'
 
-result: str = ''
+result = ...  # str: DATA with substituted PL diacritic chars to ASCII letters
 
 # Solution
+result = ''
+
 for letter in DATA:
     result += PL.get(letter, letter)

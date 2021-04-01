@@ -1,6 +1,12 @@
 Type Str
 ========
 
+.. testsetup::
+
+    # Mock input() built-in function
+    from unittest.mock import MagicMock
+    input = MagicMock(side_effect=['Mark Watney', '42', '42.5', '42,5'])
+
 
 Definition
 ----------
@@ -270,18 +276,11 @@ Reading Input
 specific information. Note colon space (": ") at the end. Space is needed
 to separate user input from prompt.
 
-Note, that the following code is only for testing purposes (it is called "Stub"),
-and you should not do that in your programs!
-This assumes, that user will input particular str such as ``'Mark Watney'``, ``42`` or ``42.5``, ``42,5``:
-
->>> # Stub
-... def input(__prompt):
-...     """Stub user input, for testing purpose only"""
-...     return 'Mark Watney'
+Note, that the following code is only for testing purposes (it is called "Stub"), and you should not do that in your programs! This assumes, that user will input particular str such as ``'Mark Watney'``, ``42`` or ``42.5``, ``42,5``:
 
 How the code would look like?
 
->>> name = input('What is your name: ')
+>>> name = input('What is your name: ')  # User input: 'Mark Watney'
 >>>
 >>> print(name)
 Mark Watney
@@ -291,12 +290,7 @@ Mark Watney
 ``input()`` always returns a ``str``.
 To get numeric value type casting to ``int`` is needed.
 
->>> # Stub
-... def input(__prompt):
-...     """Stub user input, for testing purpose only"""
-...     return '42'
-
->>> age = input('What is your age: ')
+>>> age = input('What is your age: ')  # User input: 42
 >>>
 >>> print(age)
 42
@@ -311,12 +305,7 @@ To get numeric value type casting to ``int`` is needed.
 
 Conversion to ``float`` handles decimals, which ``int`` does not support:
 
->>> # Stub
-... def input(__prompt):
-...     """Stub user input, for testing purpose only"""
-...     return '42.5'
-
->>> age = input('What is your age: ')
+>>> age = input('What is your age: ')  # User input: 42.5
 >>>
 >>> age = int(age)
 Traceback (most recent call last):
@@ -330,20 +319,15 @@ ValueError: invalid literal for int() with base 10: '42.5'
 
 Conversion to ``float`` cannot handle comma (',') as a decimal separator:
 
->>> # Stub
-... def input(__prompt):
-...     """Stub user input, for testing purpose only"""
-...     return '42,5'
-
->>> age = input('What is your age: ')
+>>> age = input('What is your age: ')  # User input: 42.5
 >>>
 >>> age = int(age)
 Traceback (most recent call last):
-ValueError: invalid literal for int() with base 10: '45,5'
+ValueError: invalid literal for int() with base 10: '42,5'
 >>>
 >>> age = float(age)
 Traceback (most recent call last):
-ValueError: could not convert string to float: '45,5'
+ValueError: could not convert string to float: '42,5'
 >>>
 >>> float(age.replace(',', '.'))
 42.5

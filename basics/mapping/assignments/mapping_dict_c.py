@@ -25,14 +25,14 @@ Polish:
     8. Nie używaj `if`, `try` ani `except`
 
 Tests:
-    TODO doctests
-    TODO: Input Stub
+    >>> result
+    'Mike'
 """
 
-# Stub
-def input(__prompt):
-    """Stub user input, for testing purpose only"""
-    return 'A'
+# Mock input() built-in function
+from unittest.mock import MagicMock
+input = MagicMock(return_value='M')
+
 
 # Given
 ALPHABET = {

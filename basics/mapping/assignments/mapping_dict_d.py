@@ -37,10 +37,10 @@ Tests:
     True
 """
 
-# Stub
-def input(__prompt):
-    """Stub user input, for testing purpose only"""
-    return ''
+# Mock input() built-in function
+from unittest.mock import MagicMock
+input = MagicMock(return_value='ł')
+
 
 # Given
 PL = {
@@ -55,8 +55,8 @@ PL = {
     'ź': 'z',
 }
 
-letter = ...  # str with letter from user
-result = ...  # str with converted letter without PL accent chars
+letter = ...  # str: with letter from user
+result = ...  # str: with converted letter without PL diacritic chars
 
 
 # Solution

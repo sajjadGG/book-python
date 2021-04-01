@@ -50,9 +50,11 @@ DATA = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
         4, 8, 1, 9, 6, 3]
 # fmt: on
 
-result: dict = {}
+result = ...  # dict[int,int]: number of occurrences of each digit from DATA
 
 # Solution
+result = {}
+
 for digit in DATA:
     if digit not in result:
         result[digit] = 1

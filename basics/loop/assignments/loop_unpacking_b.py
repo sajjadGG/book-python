@@ -48,9 +48,16 @@ DATA = [
 ]
 
 SUFFIXES = ('ca', 'osa')
-result: set = set()
+
+features: tuple
+label: set
+species: str
+
+result = ...  # set[str]: species names ending with 'ca' or 'osa'
 
 # Solution
+result = set()
+
 for *features, label in DATA[1:]:
     species = label.pop()
 

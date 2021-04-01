@@ -47,10 +47,11 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
 
-result: list = []
+result = ...  # list[dict]: with converted DATA
 
 # Solution
 header, *data = DATA
+result = []
 
 for values in data:
     pair = zip(header, values)

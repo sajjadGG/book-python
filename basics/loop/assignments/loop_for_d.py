@@ -42,8 +42,10 @@ DATA = [
     'Not because they are easy, but because they are hard.',
 ]
 
-result: str = ''
+result = ...  # str: DATA joined with newline - \n
 
 # Solution
+result = ''
+
 for line in DATA:
     result += line + '\n'

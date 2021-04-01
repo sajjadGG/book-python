@@ -32,11 +32,15 @@ Tests:
 # Given
 DATA = ['red', 'green', 'blue', 'red', 'green', 'red', 'blue']
 
-red: int = 0
-green: int = 0
-blue: int = 0
+red = ...  # int: number of 'red' elements in DATA
+green = ...  # int: number of 'green' elements in DATA
+blue = ...  # int: number of 'blue' elements in DATA
 
 # Solution
+red = 0
+green = 0
+blue = 0
+
 for color in DATA:
     if color == 'red':
         red += 1

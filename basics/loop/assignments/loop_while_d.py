@@ -49,19 +49,24 @@ Tests:
 
     >>> mean(grades) == result  # doctest: +SKIP
     True
+
+    >>> result
+    3.5
 """
 
-# Stub
-def input(__prompt):
-    """Stub user input, for testing purpose only"""
-    return ''
+# Mock input() built-in function
+from unittest.mock import MagicMock
+input = MagicMock(side_effect=['1', '2', '2.5', '3', '3.5', '4', '5', '6', ''])
+
 
 # Given
 GRADE_SCALE = (2.0, 3.0, 3.5, 4.0, 4.5, 5.0)
-grades: list = []
-result: float = 0.0
+
+result = ...  # float: arithmetic mean of grades
 
 # Solution
+grades = []
+
 while True:
     grade = input('What grade you received?: ')
 

@@ -32,9 +32,10 @@ Tests:
 
 # Given
 DATA = ['h', 'e', 'l', 'l', 'o']
-result: str = ''
+result = ...  # str: joined DATA values
 
 # Solution
+result = ''
 i = 0
 
 while i < len(DATA):

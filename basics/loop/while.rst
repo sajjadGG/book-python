@@ -3,9 +3,9 @@ Loop While
 
 .. testsetup::
 
-    def input(__prompt):
-        """Stub user input, for testing purpose only"""
-        return 1
+    # Mock input() built-in function
+    from unittest.mock import MagicMock
+    input = MagicMock(return_value='1')
 
 
 Rationale

@@ -1,7 +1,7 @@
 ##
-# ``/etc/passwd`` structure:
+# `/etc/passwd` structure:
 #   - Username
-#   - Password: ``x`` indicates that shadow passwords are used
+#   - Password: `x` indicates that shadow passwords are used
 #   - UID: User ID number
 #   - GID: User's group ID number
 #   - GECOS: Full name of the user

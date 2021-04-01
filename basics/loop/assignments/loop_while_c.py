@@ -42,9 +42,11 @@ PL = {
 }
 
 DATA = 'zażółć gęślą jaźń'
-result: str = ''
+
+result = ...  # str: DATA with substituted PL diacritic chars to ASCII letters
 
 # Solution
+result = ''
 i = 0
 
 while i < len(DATA):

@@ -42,9 +42,9 @@ convert it manually.
 
 .. testsetup::
 
-    def input(__prompt):
-        """Stub user input, for testing purpose only"""
-        return '-1'
+    # Mock input() built-in function
+    from unittest.mock import MagicMock
+    input = MagicMock(return_value='-1')
 
 We need to check if the temperature is not negative. If temperature is 0 or
 above, it is ok, and we can proceed with program execution. However if the

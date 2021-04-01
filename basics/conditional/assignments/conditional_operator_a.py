@@ -26,17 +26,16 @@ Hints:
     * `%` on `int` is overloaded as a modulo division
 
 Tests:
-    TODO: Input Stub
     >>> type(result)
     <class 'bool'>
-    >>> result in (True, False)
+
+    >>> result
     True
 """
 
-# Stub
-def input(__prompt):
-    """Stub user input, for testing purpose only"""
-    return '13'
+# Mock input() built-in function
+from unittest.mock import MagicMock
+input = MagicMock(return_value='4')
 
 # Given
 number = input('What is your number?: ')

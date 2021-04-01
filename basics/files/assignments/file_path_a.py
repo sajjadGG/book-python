@@ -19,11 +19,9 @@ Tests:
     TODO: Input Stub
 """
 
-# Stub
-def input(__prompt):
-    """Stub user input, for testing purpose only"""
-    return '_temporary.txt'
-
+# Mock input() built-in function
+from unittest.mock import MagicMock
+input = MagicMock(return_value='_temporary.txt')
 
 # Given
 filename = input('Type filename: ')

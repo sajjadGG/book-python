@@ -38,9 +38,10 @@ Tests:
 
 # Given
 DATA = (2, 3, 3.5, 4, 4.5, 5)
-result: list = []
+result = ...  # list[float]: values from DATA converted to float
 
 # Solution
+result = []
 i = 0
 
 while i < len(DATA):

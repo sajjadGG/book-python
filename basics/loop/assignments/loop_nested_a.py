@@ -37,12 +37,12 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-result: float = ...
+result = ...  # float: arithmetic mean from `Sepal length` column
 
 # Solution
-sepal_length = []
+values = []
 
 for row in DATA[1:]:
-    sepal_length.append(row[0])
+    values.append(row[0])
 
-result = sum(sepal_length) / len(sepal_length)
+result = sum(values) / len(values)

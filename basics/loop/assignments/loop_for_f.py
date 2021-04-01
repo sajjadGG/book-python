@@ -68,9 +68,10 @@ MONTHS = [
     'December',
 ]
 
-result: dict = {}
+result = ...  # dict[int,str]: dict with month number and name. Start with 1
 
 # Solution
+result = {}
 i = 1
 
 for month in MONTHS:

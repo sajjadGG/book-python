@@ -39,9 +39,11 @@ DATA = {
     1: ['Kindergarten'],
 }
 
-result: dict = {}
+result = ...  # dict[str,str]: converted DATA. Note values are str not int!
 
 # Solution
+result = {}
+
 for idx, titles in DATA.items():
     for title in titles:
         result[title] = str(idx)
