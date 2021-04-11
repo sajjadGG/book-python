@@ -97,4 +97,6 @@ Case Studies
     :caption: Case Studies
 
     case-studies/covid19.rst
-    case-studies/espn.rst
+    case-studies/esa-astronauts.rst
+    case-studies/espn-standings.rst
+    case-studies/livescores.rst
