@@ -110,6 +110,14 @@ Checking OS version
 
     sys.platform    # 'win32'
 
+
+``sysconfig``
+-------------
+>>> import sysconfig
+>>> sysconfig.get_platform()
+'macosx-11-x86_64'
+
+
 Most commonly used methods
 --------------------------
 .. code-block:: python
