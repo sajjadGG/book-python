@@ -21,7 +21,7 @@ Polish:
         d. Jakie wyrażenie może być na czwartym miejscu w PESEL?
         e. Jakie wyrażenie może być na piątym miejscu w PESEL?
         f. Jakie wyrażenie może być na szóstym miejscu w PESEL?
-    4. Mając PESEL "18220801234"
+    4. Mając PESEL "18220812345"
         a. Jakie wyrażenie może być na pierwszym miejscu w PESEL?
         b. Jakie wyrażenie może być na drugim miejscu w PESEL?
         c. Jakie wyrażenie może być na trzecim miejscu w PESEL?
@@ -31,9 +31,13 @@ Polish:
     5. Sprawdź sumę kontrolną
 
 Tests:
-    >>> is_pesel_valid('12345678901')
+    >>> is_pesel_valid('69072101234')
     True
-    >>> is_pesel_woman('12345678901')
+    >>> is_pesel_valid('18220812345')
+    True
+    >>> is_pesel_woman('69072101234')
+    False
+    >>> is_pesel_woman('18220812345')
     True
 """
 

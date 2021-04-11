@@ -1,7 +1,7 @@
 """
 * Assignment: Regexp Split Moon Speech
 * Complexity: easy
-* Lines of code: 5 lines
+* Lines of code: 4 lines
 * Time: 8 min
 * References: "Moon Speech" by John F. Kennedy at Rice Stadium, Houston, TX on 1962-09-12 :cite:`RegexpKennedy1962`
 

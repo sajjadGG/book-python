@@ -5,14 +5,14 @@
 * Time: 3 min
 
 English:
-    1. Create `date` object with current date
-    2. Create `datetime` object with current date and time
+    1. Create `datetime` object with current date and time
+    2. Create `date` object with current date
     3. Create `time` object with current time
     4. Date and time must be from system, not hardcoded in code
 
 Polish:
-    1. Stwórz obiekt `date` z obecną datą
-    2. Stwórz obiekt `datetime` z obecną datą i czasem
+    1. Stwórz obiekt `datetime` z obecną datą i czasem
+    2. Stwórz obiekt `date` z obecną datą
     3. Stwórz obiekt `time` z obecnym czasem
     4. Data i czas ma być pobierana z systemu, nie zapisana w kodzie
 
