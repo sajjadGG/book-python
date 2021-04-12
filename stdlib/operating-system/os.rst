@@ -114,7 +114,9 @@ Checking OS version
 ``sysconfig``
 -------------
 >>> import sysconfig
->>> sysconfig.get_platform()
+>>>
+>>>
+>>> sysconfig.get_platform()  # doctest: +SKIP
 'macosx-11-x86_64'
 
 
