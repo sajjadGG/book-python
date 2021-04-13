@@ -22,20 +22,16 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(meters) is str, \
-    'Variable `volume` has invalid type, should be str'
-
-    >>> assert type(kilometers) is str, \
-    'Variable `volume` has invalid type, should be str'
-
-    >>> assert type(miles) is str, \
-    'Variable `volume` has invalid type, should be str'
-
-    >>> assert type(nautical_miles) is str, \
-    'Variable `volume` has invalid type, should be str'
-
-    >>> assert type(all_units) is str, \
-    'Variable `volume` has invalid type, should be str'
+    >>> assert meters is not Ellipsis, 'Assignment solution must be in `meters` instead of ... (Ellipsis)'
+    >>> assert kilometers is not Ellipsis, 'Assignment solution must be in `kilometers` instead of ... (Ellipsis)'
+    >>> assert miles is not Ellipsis, 'Assignment solution must be in `miles` instead of ... (Ellipsis)'
+    >>> assert nautical_miles is not Ellipsis, 'Assignment solution must be in `nautical_miles` instead of ... (Ellipsis)'
+    >>> assert all_units is not Ellipsis, 'Assignment solution must be in `all_units` instead of ... (Ellipsis)'
+    >>> assert type(meters) is str, 'Variable `volume` has invalid type, should be str'
+    >>> assert type(kilometers) is str, 'Variable `volume` has invalid type, should be str'
+    >>> assert type(miles) is str, 'Variable `volume` has invalid type, should be str'
+    >>> assert type(nautical_miles) is str, 'Variable `volume` has invalid type, should be str'
+    >>> assert type(all_units) is str, 'Variable `volume` has invalid type, should be str'
 
     >>> meters
     'Meters: 1337'

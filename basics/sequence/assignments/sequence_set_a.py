@@ -22,13 +22,9 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, \
-    'Assignment solution must be in `result` instead of ... (Ellipsis)'
-
-    >>> type(result)
-    <class 'set'>
-    >>> len(result)
-    3
+    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
+    >>> assert type(result) is set, 'Variable `result` has invalid type, should be set'
+    >>> assert len(c) == 5, 'Variable `result` length should be 3'
 
     >>> 'a' in result
     True

@@ -26,21 +26,13 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(net) is float, \
-    'Variable `net` has invalid type, should be float'
+    >>> assert net is not Ellipsis, 'Assignment solution must be in `net` instead of ... (Ellipsis)'
+    >>> assert tax is not Ellipsis, 'Assignment solution must be in `tax` instead of ... (Ellipsis)'
+    >>> assert gross is not Ellipsis, 'Assignment solution must be in `gross` instead of ... (Ellipsis)'
+    >>> assert type(net) is float, 'Variable `net` has invalid type, should be float'
+    >>> assert type(tax) is float, 'Variable `tax` has invalid type, should be float'
+    >>> assert type(gross) is float, 'Variable `gross` has invalid type, should be float'
 
-    >>> assert type(tax) is float, \
-    'Variable `tax` has invalid type, should be float'
-
-    >>> assert type(gross) is float, \
-    'Variable `gross` has invalid type, should be float'
-
-    >>> type(net)
-    <class 'float'>
-    >>> type(tax)
-    <class 'float'>
-    >>> type(gross)
-    <class 'float'>
     >>> net / PLN
     100.0
     >>> tax / PLN

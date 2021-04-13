@@ -38,13 +38,10 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, \
-    'Assignment solution must be in `result` instead of ... (Ellipsis)'
-
-    >>> type(header)
-    <class 'tuple'>
-    >>> type(result)
-    <class 'list'>
+    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
+    >>> assert type(header) is tuple, 'Variable `header` has invalid type, should be tuple'
+    >>> assert type(result) is list, 'Variable `result` has invalid type, should be list'
+    >>> assert len(result) == 8, 'Variable `result` length should be 8'
 
     >>> ('sepal_length' not in result
     ...  and 'sepal_width' not in result
@@ -52,11 +49,10 @@ Tests:
     ...  and 'petal_width' not in result
     ...  and 'species' not in result)
     True
-    >>> len(result)
-    8
 
     >>> header
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
+
     >>> [5.1, 3.5, 1.4, 0.2, 'setosa'] in result
     True
     >>> (6.3, 2.9, 5.6, 1.8, 'virginica') in result

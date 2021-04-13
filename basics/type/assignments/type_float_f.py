@@ -24,11 +24,10 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(emu) is float, \
-    'Variable `emu` has invalid type, should be float'
-
-    >>> assert type(orlan) is float, \
-    'Variable `orlan` has invalid type, should be float'
+    >>> assert emu is not Ellipsis, 'Assignment solution must be in `emu` instead of ... (Ellipsis)'
+    >>> assert orlan is not Ellipsis, 'Assignment solution must be in `orlan` instead of ... (Ellipsis)'
+    >>> assert type(emu) is float, 'Variable `emu` has invalid type, should be float'
+    >>> assert type(orlan) is float, 'Variable `orlan` has invalid type, should be float'
 
     >>> orlan
     400.0

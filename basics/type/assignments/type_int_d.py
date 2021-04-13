@@ -30,14 +30,12 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(karman_line_earth) is int, \
-    'Variable `karman_line_earth` has invalid type, should be int'
-
-    >>> assert type(karman_line_mars) is int, \
-    'Variable `karman_line_mars` has invalid type, should be int'
-
-    >>> assert type(karman_line_venus) is int, \
-    'Variable `karman_line_venus` has invalid type, should be int'
+    >>> assert karman_line_earth is not Ellipsis, 'Assignment solution must be in `karman_line_earth` instead of ... (Ellipsis)'
+    >>> assert karman_line_mars is not Ellipsis, 'Assignment solution must be in `karman_line_mars` instead of ... (Ellipsis)'
+    >>> assert karman_line_venus is not Ellipsis, 'Assignment solution must be in `karman_line_venus` instead of ... (Ellipsis)'
+    >>> assert type(karman_line_earth) is int, 'Variable `karman_line_earth` has invalid type, should be int'
+    >>> assert type(karman_line_mars) is int, 'Variable `karman_line_mars` has invalid type, should be int'
+    >>> assert type(karman_line_venus) is int, 'Variable `karman_line_venus` has invalid type, should be int'
 
     >>> karman_line_earth
     100

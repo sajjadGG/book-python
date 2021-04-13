@@ -24,35 +24,26 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(example) is str, \
-    'Variable `example` has invalid type, should be str'
-
-    >>> assert type(a) is str, \
-    'Variable `a` has invalid type, should be str'
-
-    >>> assert type(b) is str, \
-    'Variable `b` has invalid type, should be str'
-
-    >>> assert type(c) is str, \
-    'Variable `c` has invalid type, should be str'
-
-    >>> assert type(d) is str, \
-    'Variable `d` has invalid type, should be str'
-
-    >>> assert type(e) is str, \
-    'Variable `e` has invalid type, should be str'
-
-    >>> assert type(f) is str, \
-    'Variable `f` has invalid type, should be str'
-
-    >>> assert type(g) is str, \
-    'Variable `g` has invalid type, should be str'
-
-    >>> assert type(h) is str, \
-    'Variable `h` has invalid type, should be str'
-
-    >>> assert type(i) is str, \
-    'Variable `i` has invalid type, should be str'
+    >>> assert example is not Ellipsis, 'Assignment solution must be in `example` instead of ... (Ellipsis)'
+    >>> assert a is not Ellipsis, 'Assignment solution must be in `a` instead of ... (Ellipsis)'
+    >>> assert b is not Ellipsis, 'Assignment solution must be in `b` instead of ... (Ellipsis)'
+    >>> assert c is not Ellipsis, 'Assignment solution must be in `c` instead of ... (Ellipsis)'
+    >>> assert d is not Ellipsis, 'Assignment solution must be in `d` instead of ... (Ellipsis)'
+    >>> assert e is not Ellipsis, 'Assignment solution must be in `e` instead of ... (Ellipsis)'
+    >>> assert f is not Ellipsis, 'Assignment solution must be in `f` instead of ... (Ellipsis)'
+    >>> assert g is not Ellipsis, 'Assignment solution must be in `g` instead of ... (Ellipsis)'
+    >>> assert h is not Ellipsis, 'Assignment solution must be in `h` instead of ... (Ellipsis)'
+    >>> assert i is not Ellipsis, 'Assignment solution must be in `i` instead of ... (Ellipsis)'
+    >>> assert type(example) is str, 'Variable `example` has invalid type, should be str'
+    >>> assert type(a) is str, 'Variable `a` has invalid type, should be str'
+    >>> assert type(b) is str, 'Variable `b` has invalid type, should be str'
+    >>> assert type(c) is str, 'Variable `c` has invalid type, should be str'
+    >>> assert type(d) is str, 'Variable `d` has invalid type, should be str'
+    >>> assert type(e) is str, 'Variable `e` has invalid type, should be str'
+    >>> assert type(f) is str, 'Variable `f` has invalid type, should be str'
+    >>> assert type(g) is str, 'Variable `g` has invalid type, should be str'
+    >>> assert type(h) is str, 'Variable `h` has invalid type, should be str'
+    >>> assert type(i) is str, 'Variable `i` has invalid type, should be str'
 
     >>> example
     'Jana Twardowskiego III'

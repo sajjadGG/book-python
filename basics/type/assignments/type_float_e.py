@@ -24,22 +24,22 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(kph) is float, \
-    'Variable `kph` has invalid type, should be float'
-
-    >>> assert type(mph) is float, \
-    'Variable `mph` has invalid type, should be float'
-
-    >>> assert type(speed_limit) is float, \
-    'Variable `speed_limit` has invalid type, should be float'
+    >>> assert kph is not Ellipsis, 'Assignment solution must be in `kph` instead of ... (Ellipsis)'
+    >>> assert mph is not Ellipsis, 'Assignment solution must be in `mph` instead of ... (Ellipsis)'
+    >>> assert speed_limit_mph is not Ellipsis, 'Assignment solution must be in `speed_limit_mph` instead of ... (Ellipsis)'
+    >>> assert speed_limit_kph is not Ellipsis, 'Assignment solution must be in `speed_limit_kph` instead of ... (Ellipsis)'
+    >>> assert type(kph) is float, 'Variable `kph` has invalid type, should be float'
+    >>> assert type(mph) is float, 'Variable `mph` has invalid type, should be float'
+    >>> assert type(speed_limit_mph) is float, 'Variable `speed_limit_mph` has invalid type, should be float'
+    >>> assert type(speed_limit_kph) is float, 'Variable `speed_limit_kph` has invalid type, should be float'
 
     >>> round(kph, 3)
     0.278
     >>> round(mph, 3)
     0.447
-    >>> round(speed_limit/mph, 1)
+    >>> speed_limit_mph
     75.0
-    >>> round(speed_limit/kph, 1)
+    >>> speed_limit_kph
     120.7
 """
 

@@ -36,13 +36,9 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, \
-    'Assignment solution must be in `result` instead of ... (Ellipsis)'
-
-    >>> type(result)
-    <class 'set'>
-    >>> len(result)
-    22
+    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
+    >>> assert type(result) is set, 'Variable `result` has invalid type, should be set'
+    >>> assert len(result) == 22, 'Variable `result` length should be 22'
 
     >>> ('sepal_length' not in result
     ...  and 'sepal_width' not in result

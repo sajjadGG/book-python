@@ -22,14 +22,12 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(altitude) is float, \
-    'Variable `altitude` has invalid type, should be float'
-
-    >>> assert type(altitude_m) is float, \
-    'Variable `altitude_m` has invalid type, should be float'
-
-    >>> assert type(altitude_ft) is float, \
-    'Variable `altitude_ft` has invalid type, should be float'
+    >>> assert altitude is not Ellipsis, 'Assignment solution must be in `altitude` instead of ... (Ellipsis)'
+    >>> assert altitude_m is not Ellipsis, 'Assignment solution must be in `altitude_m` instead of ... (Ellipsis)'
+    >>> assert altitude_ft is not Ellipsis, 'Assignment solution must be in `altitude_ft` instead of ... (Ellipsis)'
+    >>> assert type(altitude) is float, 'Variable `altitude` has invalid type, should be float'
+    >>> assert type(altitude_m) is float, 'Variable `altitude_m` has invalid type, should be float'
+    >>> assert type(altitude_ft) is float, 'Variable `altitude_ft` has invalid type, should be float'
 
     >>> altitude
     3048.0

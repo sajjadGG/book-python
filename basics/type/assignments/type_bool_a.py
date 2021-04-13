@@ -18,56 +18,41 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(a) is bool, \
-    'Variable `a` has invalid type, should be bool'
-
-    >>> assert type(b) is bool, \
-    'Variable `b` has invalid type, should be bool'
-
-    >>> assert type(c) is bool, \
-    'Variable `c` has invalid type, should be bool'
-
-    >>> assert type(d) is bool, \
-    'Variable `d` has invalid type, should be bool'
-
-    >>> assert type(e) is bool, \
-    'Variable `e` has invalid type, should be bool'
-
-    >>> assert type(f) is bool, \
-    'Variable `f` has invalid type, should be bool'
-
-    >>> assert type(g) is bool, \
-    'Variable `g` has invalid type, should be bool'
-
-    >>> assert type(h) is bool, \
-    'Variable `h` has invalid type, should be bool'
-
-    >>> assert type(i) is bool, \
-    'Variable `i` has invalid type, should be bool'
-
-    >>> assert type(j) is bool, \
-    'Variable `j` has invalid type, should be bool'
-
-    >>> assert type(k) is bool, \
-    'Variable `k` has invalid type, should be bool'
-
-    >>> assert type(l) is bool, \
-    'Variable `l` has invalid type, should be bool'
-
-    >>> assert type(m) is bool, \
-    'Variable `m` has invalid type, should be bool'
-
-    >>> assert type(n) is bool, \
-    'Variable `n` has invalid type, should be bool'
-
-    >>> assert type(o) is bool, \
-    'Variable `o` has invalid type, should be bool'
-
-    >>> assert type(p) is bool, \
-    'Variable `p` has invalid type, should be bool'
-
-    >>> assert type(q) is bool, \
-    'Variable `q` has invalid type, should be bool'
+    >>> assert a is not Ellipsis, 'Assignment solution must be in `a` instead of ... (Ellipsis)'
+    >>> assert b is not Ellipsis, 'Assignment solution must be in `b` instead of ... (Ellipsis)'
+    >>> assert c is not Ellipsis, 'Assignment solution must be in `c` instead of ... (Ellipsis)'
+    >>> assert d is not Ellipsis, 'Assignment solution must be in `d` instead of ... (Ellipsis)'
+    >>> assert e is not Ellipsis, 'Assignment solution must be in `e` instead of ... (Ellipsis)'
+    >>> assert f is not Ellipsis, 'Assignment solution must be in `f` instead of ... (Ellipsis)'
+    >>> assert g is not Ellipsis, 'Assignment solution must be in `g` instead of ... (Ellipsis)'
+    >>> assert h is not Ellipsis, 'Assignment solution must be in `h` instead of ... (Ellipsis)'
+    >>> assert i is not Ellipsis, 'Assignment solution must be in `i` instead of ... (Ellipsis)'
+    >>> assert j is not Ellipsis, 'Assignment solution must be in `j` instead of ... (Ellipsis)'
+    >>> assert k is not Ellipsis, 'Assignment solution must be in `k` instead of ... (Ellipsis)'
+    >>> assert l is not Ellipsis, 'Assignment solution must be in `l` instead of ... (Ellipsis)'
+    >>> assert m is not Ellipsis, 'Assignment solution must be in `m` instead of ... (Ellipsis)'
+    >>> assert n is not Ellipsis, 'Assignment solution must be in `n` instead of ... (Ellipsis)'
+    >>> assert o is not Ellipsis, 'Assignment solution must be in `o` instead of ... (Ellipsis)'
+    >>> assert n is not Ellipsis, 'Assignment solution must be in `n` instead of ... (Ellipsis)'
+    >>> assert p is not Ellipsis, 'Assignment solution must be in `p` instead of ... (Ellipsis)'
+    >>> assert q is not Ellipsis, 'Assignment solution must be in `q` instead of ... (Ellipsis)'
+    >>> assert type(a) is bool, 'Variable `a` has invalid type, should be bool'
+    >>> assert type(b) is bool, 'Variable `b` has invalid type, should be bool'
+    >>> assert type(c) is bool, 'Variable `c` has invalid type, should be bool'
+    >>> assert type(d) is bool, 'Variable `d` has invalid type, should be bool'
+    >>> assert type(e) is bool, 'Variable `e` has invalid type, should be bool'
+    >>> assert type(f) is bool, 'Variable `f` has invalid type, should be bool'
+    >>> assert type(g) is bool, 'Variable `g` has invalid type, should be bool'
+    >>> assert type(h) is bool, 'Variable `h` has invalid type, should be bool'
+    >>> assert type(i) is bool, 'Variable `i` has invalid type, should be bool'
+    >>> assert type(j) is bool, 'Variable `j` has invalid type, should be bool'
+    >>> assert type(k) is bool, 'Variable `k` has invalid type, should be bool'
+    >>> assert type(l) is bool, 'Variable `l` has invalid type, should be bool'
+    >>> assert type(m) is bool, 'Variable `m` has invalid type, should be bool'
+    >>> assert type(n) is bool, 'Variable `n` has invalid type, should be bool'
+    >>> assert type(o) is bool, 'Variable `o` has invalid type, should be bool'
+    >>> assert type(p) is bool, 'Variable `p` has invalid type, should be bool'
+    >>> assert type(q) is bool, 'Variable `q` has invalid type, should be bool'
 
     >>> a
     False

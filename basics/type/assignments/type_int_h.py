@@ -31,16 +31,14 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(bandwidth) is int, \
-    'Variable `bandwidth` has invalid type, should be int'
+    >>> assert bandwidth is not Ellipsis, 'Assignment solution must be in `bandwidth` instead of ... (Ellipsis)'
+    >>> assert size is not Ellipsis, 'Assignment solution must be in `size` instead of ... (Ellipsis)'
+    >>> assert duration is not Ellipsis, 'Assignment solution must be in `duration` instead of ... (Ellipsis)'
+    >>> assert type(bandwidth) is int, 'Variable `bandwidth` has invalid type, should be int'
+    >>> assert type(size) is int, 'Variable `size` has invalid type, should be int'
+    >>> assert type(duration) is int, 'Variable `duration` has invalid type, should be int'
 
-    >>> assert type(size) is int, \
-    'Variable `size` has invalid type, should be int'
-
-    >>> assert type(duration) is int, \
-    'Variable `duration` has invalid type, should be int'
-
-    >>> duration // SECOND
+    >>> duration
     8
 """
 
@@ -62,4 +60,4 @@ duration = ...  # int: size by bandwidth in seconds
 # Solution
 bandwidth = (100 * Mb) // SECOND
 size = 100 * MB
-duration = (size // bandwidth)
+duration = (size // bandwidth) // SECOND

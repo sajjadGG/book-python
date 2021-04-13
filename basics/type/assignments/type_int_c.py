@@ -34,17 +34,14 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(armstrong_limit) is int, \
-    'Variable `armstrong_limit` has invalid type, should be int'
-
-    >>> assert type(stratosphere) is int, \
-    'Variable `stratosphere` has invalid type, should be int'
-
-    >>> assert type(usaf_space) is int, \
-    'Variable `usaf_space` has invalid type, should be int'
-
-    >>> assert type(iaf_space) is int, \
-    'Variable `iaf_space` has invalid type, should be int'
+    >>> assert armstrong_limit is not Ellipsis, 'Assignment solution must be in `armstrong_limit` instead of ... (Ellipsis)'
+    >>> assert stratosphere is not Ellipsis, 'Assignment solution must be in `stratosphere` instead of ... (Ellipsis)'
+    >>> assert usaf_space is not Ellipsis, 'Assignment solution must be in `usaf_space` instead of ... (Ellipsis)'
+    >>> assert iaf_space is not Ellipsis, 'Assignment solution must be in `iaf_space` instead of ... (Ellipsis)'
+    >>> assert type(armstrong_limit) is int, 'Variable `armstrong_limit` has invalid type, should be int'
+    >>> assert type(stratosphere) is int, 'Variable `stratosphere` has invalid type, should be int'
+    >>> assert type(usaf_space) is int, 'Variable `usaf_space` has invalid type, should be int'
+    >>> assert type(iaf_space) is int, 'Variable `iaf_space` has invalid type, should be int'
 
     >>> armstrong_limit
     19000

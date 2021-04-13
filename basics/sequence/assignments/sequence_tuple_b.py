@@ -26,26 +26,13 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, \
-    'Assignment solution must be in `result` instead of ... (Ellipsis)'
-
-    >>> assert type(result) is tuple, \
-    'Results must be a tuple'
-
-    >>> assert len(result) == 5, \
-    'Results length should be 5'
-
-    >>> assert result.count('virginica') == 2, \
-    'Result should have 2 elements of virginica'
-
-    >>> assert result.count('setosa') == 1, \
-    'Result should have 1 elements of setosa'
-
-    >>> assert result.count('versicolor') == 2, \
-    'Result should have 2 elements of versicolor'
-
-    >>> assert all(type(x) is str for x in result), \
-    'All elements in result should be str'
+    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
+    >>> assert type(result) is tuple, 'Variable `result` has invalid type, should be tuple'
+    >>> assert all(type(x) is str for x in result), 'All elements in result should be str'
+    >>> assert len(result) == 5, 'Variable `result` length should be 5'
+    >>> assert result.count('virginica') == 2, 'Result should have 2 elements of virginica'
+    >>> assert result.count('setosa') == 1, 'Result should have 1 elements of setosa'
+    >>> assert result.count('versicolor') == 2, 'Result should have 2 elements of versicolor'
 
     >>> ('sepal_length' not in result
     ...  and 'sepal_width' not in result

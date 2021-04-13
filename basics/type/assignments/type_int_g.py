@@ -27,14 +27,12 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(size) is int, \
-    'Variable `size` has invalid type, should be int'
-
-    >>> assert type(size_kB) is int, \
-    'Variable `size_kB` has invalid type, should be int'
-
-    >>> assert type(size_Mb) is int, \
-    'Variable `size_Mb` has invalid type, should be int'
+    >>> assert size is not Ellipsis, 'Assignment solution must be in `size` instead of ... (Ellipsis)'
+    >>> assert size_kB is not Ellipsis, 'Assignment solution must be in `size_kB` instead of ... (Ellipsis)'
+    >>> assert size_Mb is not Ellipsis, 'Assignment solution must be in `size_Mb` instead of ... (Ellipsis)'
+    >>> assert type(size) is int, 'Variable `size` has invalid type, should be int'
+    >>> assert type(size_kB) is int, 'Variable `size_kB` has invalid type, should be int'
+    >>> assert type(size_Mb) is int, 'Variable `size_Mb` has invalid type, should be int'
 
     >>> size_kB
     102400

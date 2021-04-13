@@ -37,14 +37,12 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(pO2) is float, \
-    'Variable `pO2` has invalid type, should be float'
-
-    >>> assert type(gradient) is float, \
-    'Variable `gradient` has invalid type, should be float'
-
-    >>> assert type(altitude) is float, \
-    'Variable `altitude` has invalid type, should be float'
+    >>> assert pO2 is not Ellipsis, 'Assignment solution must be in `pO2` instead of ... (Ellipsis)'
+    >>> assert gradient is not Ellipsis, 'Assignment solution must be in `gradient` instead of ... (Ellipsis)'
+    >>> assert altitude is not Ellipsis, 'Assignment solution must be in `altitude` instead of ... (Ellipsis)'
+    >>> assert type(pO2) is float, 'Variable `pO2` has invalid type, should be float'
+    >>> assert type(gradient) is float, 'Variable `gradient` has invalid type, should be float'
+    >>> assert type(altitude) is float, 'Variable `altitude` has invalid type, should be float'
 
     >>> pO2
     21223.5345

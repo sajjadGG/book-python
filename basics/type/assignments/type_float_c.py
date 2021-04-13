@@ -20,17 +20,13 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(volume) is float, \
-    'Variable `volume` has invalid type, should be float'
+    >>> assert volume is not Ellipsis, 'Assignment solution must be in `volume` instead of ... (Ellipsis)'
+    >>> assert volume_floz is not Ellipsis, 'Assignment solution must be in `volume_floz` instead of ... (Ellipsis)'
+    >>> assert volume_l is not Ellipsis, 'Assignment solution must be in `volume_l` instead of ... (Ellipsis)'
+    >>> assert type(volume) is float, 'Variable `volume` has invalid type, should be float'
+    >>> assert type(volume_floz) is float, 'Variable `volume_floz` has invalid type, should be float'
+    >>> assert type(volume_l) is float, 'Variable `volume_l` has invalid type, should be float'
 
-    >>> assert type(volume_floz) is float, \
-    'Variable `volume_floz` has invalid type, should be float'
-
-    >>> assert type(volume_l) is float, \
-    'Variable `volume_l` has invalid type, should be float'
-
-    >>> type(volume)
-    <class 'float'>
     >>> volume_floz
     20.0
     >>> volume_l

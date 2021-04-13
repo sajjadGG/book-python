@@ -18,20 +18,16 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(result_a) is bool, \
-    'Variable `result_a` has invalid type, should be bool'
-
-    >>> assert type(result_b) is bool, \
-    'Variable `result_b` has invalid type, should be bool'
-
-    >>> assert type(result_c) is bool, \
-    'Variable `result_c` has invalid type, should be bool'
-
-    >>> assert type(result_d) is bool, \
-    'Variable `result_d` has invalid type, should be bool'
-
-    >>> assert type(result_e) is bool, \
-    'Variable `result_e` has invalid type, should be bool'
+    >>> assert result_a is not Ellipsis, 'Assignment solution must be in `result_a` instead of ... (Ellipsis)'
+    >>> assert result_b is not Ellipsis, 'Assignment solution must be in `result_b` instead of ... (Ellipsis)'
+    >>> assert result_c is not Ellipsis, 'Assignment solution must be in `result_c` instead of ... (Ellipsis)'
+    >>> assert result_d is not Ellipsis, 'Assignment solution must be in `result_d` instead of ... (Ellipsis)'
+    >>> assert result_e is not Ellipsis, 'Assignment solution must be in `result_e` instead of ... (Ellipsis)'
+    >>> assert type(result_a) is bool, 'Variable `result_a` has invalid type, should be bool'
+    >>> assert type(result_b) is bool, 'Variable `result_b` has invalid type, should be bool'
+    >>> assert type(result_c) is bool, 'Variable `result_c` has invalid type, should be bool'
+    >>> assert type(result_d) is bool, 'Variable `result_d` has invalid type, should be bool'
+    >>> assert type(result_e) is bool, 'Variable `result_e` has invalid type, should be bool'
 
     >>> bool(result_a)
     True

@@ -20,32 +20,24 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(a) is bool, \
-    'Variable `a` has invalid type, should be bool'
-
-    >>> assert type(b) is bool, \
-    'Variable `b` has invalid type, should be bool'
-
-    >>> assert type(c) is bool, \
-    'Variable `c` has invalid type, should be bool'
-
-    >>> assert type(d) is bool, \
-    'Variable `d` has invalid type, should be bool'
-
-    >>> assert type(e) is bool, \
-    'Variable `e` has invalid type, should be bool'
-
-    >>> assert type(f) is bool, \
-    'Variable `f` has invalid type, should be bool'
-
-    >>> assert type(g) is bool, \
-    'Variable `g` has invalid type, should be bool'
-
-    >>> assert type(h) is bool, \
-    'Variable `h` has invalid type, should be bool'
-
-    >>> assert type(i) is bool, \
-    'Variable `i` has invalid type, should be bool'
+    >>> assert a is not Ellipsis, 'Assignment solution must be in `a` instead of ... (Ellipsis)'
+    >>> assert b is not Ellipsis, 'Assignment solution must be in `b` instead of ... (Ellipsis)'
+    >>> assert c is not Ellipsis, 'Assignment solution must be in `c` instead of ... (Ellipsis)'
+    >>> assert d is not Ellipsis, 'Assignment solution must be in `d` instead of ... (Ellipsis)'
+    >>> assert e is not Ellipsis, 'Assignment solution must be in `e` instead of ... (Ellipsis)'
+    >>> assert f is not Ellipsis, 'Assignment solution must be in `f` instead of ... (Ellipsis)'
+    >>> assert g is not Ellipsis, 'Assignment solution must be in `g` instead of ... (Ellipsis)'
+    >>> assert h is not Ellipsis, 'Assignment solution must be in `h` instead of ... (Ellipsis)'
+    >>> assert i is not Ellipsis, 'Assignment solution must be in `i` instead of ... (Ellipsis)'
+    >>> assert type(a) is bool, 'Variable `a` has invalid type, should be bool'
+    >>> assert type(b) is bool, 'Variable `b` has invalid type, should be bool'
+    >>> assert type(c) is bool, 'Variable `c` has invalid type, should be bool'
+    >>> assert type(d) is bool, 'Variable `d` has invalid type, should be bool'
+    >>> assert type(e) is bool, 'Variable `e` has invalid type, should be bool'
+    >>> assert type(f) is bool, 'Variable `f` has invalid type, should be bool'
+    >>> assert type(g) is bool, 'Variable `g` has invalid type, should be bool'
+    >>> assert type(h) is bool, 'Variable `h` has invalid type, should be bool'
+    >>> assert type(i) is bool, 'Variable `i` has invalid type, should be bool'
 
     >>> bool(a)
     True

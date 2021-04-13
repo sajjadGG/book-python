@@ -20,23 +20,12 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert header is not Ellipsis, \
-    'Assignment solution must be in `header` instead of ... (Ellipsis)'
-
-    >>> assert data is not Ellipsis, \
-    'Assignment solution must be in `data` instead of ... (Ellipsis)'
-
-    >>> assert type(header) is tuple, \
-    'header should be a tuple'
-
-    >>> assert type(data) is list, \
-    'data should be a list'
-
-    >>> assert all(type(x) is str for x in header), \
-    'All elements in header should be str'
-
-    >>> assert all(type(row) is tuple for row in data), \
-    'All elements in data should be tuple'
+    >>> assert header is not Ellipsis, 'Assignment solution must be in `header` instead of ... (Ellipsis)'
+    >>> assert data is not Ellipsis, 'Assignment solution must be in `data` instead of ... (Ellipsis)'
+    >>> assert type(header) is tuple, 'Variable `header` has invalid type, should be tuple'
+    >>> assert type(data) is list, 'Variable `data` has invalid type, should be list'
+    >>> assert all(type(x) is str for x in header), 'All elements in header should be str'
+    >>> assert all(type(row) is tuple for row in data), 'All elements in data should be tuple'
 
     >>> header
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')

@@ -36,35 +36,22 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert header is not Ellipsis, \
-    'Assignment solution must be in `header` instead of ... (Ellipsis)'
-
-    >>> assert data is not Ellipsis, \
-    'Assignment solution must be in `data` instead of ... (Ellipsis)'
-
-    >>> assert train is not Ellipsis, \
-    'Assignment solution must be in `train` instead of ... (Ellipsis)'
-
-    >>> assert test is not Ellipsis, \
-    'Assignment solution must be in `test` instead of ... (Ellipsis)'
-
-    >>> type(header)
-    <class 'tuple'>
-    >>> type(train)
-    <class 'list'>
-    >>> type(test)
-    <class 'list'>
-
-    >>> ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species') not in train
-    True
-    >>> ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species') not in test
-    True
-
-    >>> assert all(type(x) is tuple for x in train)
-    >>> assert all(type(x) is tuple for x in test)
+    >>> assert header is not Ellipsis, 'Assignment solution must be in `header` instead of ... (Ellipsis)'
+    >>> assert data is not Ellipsis, 'Assignment solution must be in `data` instead of ... (Ellipsis)'
+    >>> assert train is not Ellipsis, 'Assignment solution must be in `train` instead of ... (Ellipsis)'
+    >>> assert test is not Ellipsis, 'Assignment solution must be in `test` instead of ... (Ellipsis)'
+    >>> assert type(header) is tuple, 'Variable `header` has invalid type, should be tuple'
+    >>> assert type(train) is list, 'Variable `train` has invalid type, should be list'
+    >>> assert type(train) is list, 'Variable `train` has invalid type, should be list'
+    >>> assert type(test) is list, 'Variable `test` has invalid type, should be list'
+    >>> assert all(type(x) is tuple for x in train), 'All elements in `train` should be tuple'
+    >>> assert all(type(x) is tuple for x in test), 'All elements in `test` should be tuple'
+    >>> assert header not in train, 'Header should not be in `train`'
+    >>> assert header not in test, 'Header should not be in `test`'
 
     >>> header  # doctest: +NORMALIZE_WHITESPACE
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
+
     >>> train  # doctest: +NORMALIZE_WHITESPACE
     [(5.8, 2.7, 5.1, 1.9, 'virginica'),
      (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -72,6 +59,7 @@ Tests:
      (6.3, 2.9, 5.6, 1.8, 'virginica'),
      (6.4, 3.2, 4.5, 1.5, 'versicolor'),
      (4.7, 3.2, 1.3, 0.2, 'setosa')]
+
     >>> test  # doctest: +NORMALIZE_WHITESPACE
     [(7.0, 3.2, 4.7, 1.4, 'versicolor'),
      (7.6, 3.0, 6.6, 2.1, 'virginica'),

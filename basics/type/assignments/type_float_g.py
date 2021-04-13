@@ -34,8 +34,8 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(pO2) is float, \
-    'Variable `pO2` has invalid type, should be float'
+    >>> assert pO2 is not Ellipsis, 'Assignment solution must be in `pO2` instead of ... (Ellipsis)'
+    >>> assert type(pO2) is float, 'Variable `pO2` has invalid type, should be float'
 
     >>> pO2
     212.2

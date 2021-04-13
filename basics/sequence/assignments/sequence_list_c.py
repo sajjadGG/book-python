@@ -24,21 +24,12 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert a is not Ellipsis, \
-    'Assignment solution must be in `a` instead of ... (Ellipsis)'
-
-    >>> assert b is not Ellipsis, \
-    'Assignment solution must be in `b` instead of ... (Ellipsis)'
-
-    >>> assert c is not Ellipsis, \
-    'Assignment solution must be in `c` instead of ... (Ellipsis)'
-
-    >>> type(a)
-    <class 'list'>
-    >>> type(b)
-    <class 'list'>
-    >>> type(c)
-    <class 'list'>
+    >>> assert a is not Ellipsis, 'Assignment solution must be in `a` instead of ... (Ellipsis)'
+    >>> assert b is not Ellipsis, 'Assignment solution must be in `b` instead of ... (Ellipsis)'
+    >>> assert c is not Ellipsis, 'Assignment solution must be in `c` instead of ... (Ellipsis)'
+    >>> assert type(a) is list, 'Variable `a` has invalid type, should be list'
+    >>> assert type(b) is list, 'Variable `b` has invalid type, should be list'
+    >>> assert type(c) is list, 'Variable `c` has invalid type, should be list'
 
     >>> a
     ['versicolor', 4.7, 3.2, 1.3, 0.2]

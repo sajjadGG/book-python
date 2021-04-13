@@ -32,28 +32,15 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert a is not Ellipsis, \
-    'Assignment solution must be in `a` instead of ... (Ellipsis)'
-
-    >>> assert b is not Ellipsis, \
-    'Assignment solution must be in `b` instead of ... (Ellipsis)'
-
-    >>> assert c is not Ellipsis, \
-    'Assignment solution must be in `c` instead of ... (Ellipsis)'
-
-    >>> type(a)
-    <class 'list'>
-    >>> type(b)
-    <class 'list'>
-    >>> type(c)
-    <class 'list'>
-
-    >>> len(a)
-    5
-    >>> len(b)
-    5
-    >>> len(c)
-    5
+    >>> assert a is not Ellipsis, 'Assignment solution must be in `a` instead of ... (Ellipsis)'
+    >>> assert b is not Ellipsis, 'Assignment solution must be in `b` instead of ... (Ellipsis)'
+    >>> assert c is not Ellipsis, 'Assignment solution must be in `c` instead of ... (Ellipsis)'
+    >>> assert type(a) is list, 'Variable `a` has invalid type, should be list'
+    >>> assert type(b) is list, 'Variable `b` has invalid type, should be list'
+    >>> assert type(c) is list, 'Variable `c` has invalid type, should be list'
+    >>> assert len(a) == 5, 'Variable `a` length should be 5'
+    >>> assert len(b) == 5, 'Variable `b` length should be 5'
+    >>> assert len(c) == 5, 'Variable `c` length should be 5'
 
     >>> (5.8 in a
     ...  and 2.7 in a

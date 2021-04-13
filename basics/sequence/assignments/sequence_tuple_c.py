@@ -32,14 +32,18 @@ Hints:
     * `CMD` + `ALT` + L = Reformat Code on macOS
 
 Tests:
-    >>> type(sepal_length)
-    <class 'float'>
-    >>> type(sepal_width)
-    <class 'float'>
-    >>> type(petal_length)
-    <class 'float'>
-    >>> type(petal_width)
-    <class 'float'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert sepal_length is not Ellipsis, 'Assignment solution must be in `sepal_length` instead of ... (Ellipsis)'
+    >>> assert sepal_width is not Ellipsis, 'Assignment solution must be in `sepal_width` instead of ... (Ellipsis)'
+    >>> assert petal_length is not Ellipsis, 'Assignment solution must be in `petal_length` instead of ... (Ellipsis)'
+    >>> assert petal_width is not Ellipsis, 'Assignment solution must be in `petal_width` instead of ... (Ellipsis)'
+    >>> assert type(sepal_length) is float, 'Variable `sepal_length` has invalid type, should be float'
+    >>> assert type(sepal_width) is float, 'Variable `sepal_width` has invalid type, should be float'
+    >>> assert type(petal_length) is float, 'Variable `petal_length` has invalid type, should be float'
+    >>> assert type(petal_width) is float, 'Variable `petal_width` has invalid type, should be float'
+
     >>> sepal_length
     5.859999999999999
     >>> sepal_width
