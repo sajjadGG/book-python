@@ -28,12 +28,18 @@ Hints:
     * 1 MB = 1024 KB
 
 Tests:
-    >>> type(bandwidth)
-    <class 'int'>
-    >>> type(size)
-    <class 'int'>
-    >>> type(duration)
-    <class 'int'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(bandwidth) is int, \
+    'Variable `bandwidth` has invalid type, should be int'
+
+    >>> assert type(size) is int, \
+    'Variable `size` has invalid type, should be int'
+
+    >>> assert type(duration) is int, \
+    'Variable `duration` has invalid type, should be int'
+
     >>> duration // SECOND
     8
 """
@@ -49,9 +55,9 @@ B = 8 * b
 kB = 1024 * B
 MB = 1024 * kB
 
-bandwidth = ...  # 100 megabits per second
-size = ...  # 100 megabytes
-duration = ...  # size by bandwidth in seconds
+bandwidth = ...  # int: 100 megabits per second
+size = ...  # int: 100 megabytes
+duration = ...  # int: size by bandwidth in seconds
 
 # Solution
 bandwidth = (100 * Mb) // SECOND

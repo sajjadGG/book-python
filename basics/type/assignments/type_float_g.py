@@ -31,8 +31,12 @@ Hints:
         * Others 0.001%
 
 Tests:
-    >>> type(pO2)
-    <class 'float'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(pO2) is float, \
+    'Variable `pO2` has invalid type, should be float'
+
     >>> pO2
     212.2
 """
@@ -43,9 +47,9 @@ Pa = 1
 hPa = 100 * Pa
 kPa = 1000 * Pa
 
-ata = ...  # Pressure at sea level: 1013.25 hectopascals
-O2 = ...  # oxygen: 20.946%
-pO2 = ...  # oxygen partial pressure: 20.946% of pressure at sea level
+ata = ...  # float: pressure at sea level: 1013.25 hectopascals
+O2 = ...  # float: oxygen: 20.946%
+pO2 = ...  # float: oxygen partial pressure: 20.946% of pressure at sea level
 
 # Solution
 O2 = 20.946 / PERCENT

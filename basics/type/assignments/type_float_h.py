@@ -34,12 +34,18 @@ Hints:
         * Others 0.001%
 
 Tests:
-    >>> type(pO2)
-    <class 'float'>
-    >>> type(gradient)
-    <class 'float'>
-    >>> type(altitude)
-    <class 'float'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(pO2) is float, \
+    'Variable `pO2` has invalid type, should be float'
+
+    >>> assert type(gradient) is float, \
+    'Variable `gradient` has invalid type, should be float'
+
+    >>> assert type(altitude) is float, \
+    'Variable `altitude` has invalid type, should be float'
+
     >>> pO2
     21223.5345
     >>> gradient
@@ -49,19 +55,17 @@ Tests:
 """
 
 # Given
-# fmt: off
 PERCENT = 100
 m = 1
 Pa = 1
 hPa = 100 * Pa
 
-ata = 1013.25 * hPa  # Pressure at sea level
+ata = 1013.25 * hPa  # float: pressure at sea level
 O2 = 20.946 / PERCENT
-pO2 = O2 * ata  # oxygen partial pressure
+pO2 = O2 * ata  # float: oxygen partial pressure
 
-gradient = ...  # 11.3 Pascals per meter
-altitude = ...  # Pressure at sea level minus oxygen partial pressure divided by gradient
-# fmt: on
+gradient = ...  # float: 11.3 Pascals per meter
+altitude = ...  # float: pressure at sea level minus oxygen partial pressure divided by gradient
 
 # Solution
 gradient = 11.3 * Pa / m

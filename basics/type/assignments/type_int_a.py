@@ -32,12 +32,18 @@ References:
         URL: http://cab.inta-csic.es/rems/marsweather.html
 
 Tests:
-    >>> type(mars_max)
-    <class 'int'>
-    >>> type(mars_min)
-    <class 'int'>
-    >>> type(mars_avg)
-    <class 'int'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(mars_max) is int, \
+    'Variable `mars_max` has invalid type, should be int'
+
+    >>> assert type(mars_min) is int, \
+    'Variable `mars_min` has invalid type, should be int'
+
+    >>> assert type(mars_min) is int, \
+    'Variable `mars_avg` has invalid type, should be int'
+
     >>> mars_max
     293
     >>> mars_min
@@ -50,9 +56,9 @@ Tests:
 Celsius = 1
 Kelvin = 273
 
-mars_max = ...  # 20 Celsius in Kelvin
-mars_min = ...  # -153 Celsius in Kelvin
-mars_avg = ...  # -63 Celsius in Kelvin
+mars_max = ...  # int: 20 Celsius in Kelvin
+mars_min = ...  # int: -153 Celsius in Kelvin
+mars_avg = ...  # int: -63 Celsius in Kelvin
 
 # Solution
 mars_max = 20*Celsius + Kelvin

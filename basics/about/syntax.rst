@@ -283,3 +283,11 @@ Assignments
 .. literalinclude:: assignments/about_syntax_b.py
     :caption: :download:`assignments/about_syntax_b.py`
     :end-before: # Solution
+
+.. literalinclude:: assignments/about_syntax_c.py
+    :caption: :download:`assignments/about_syntax_c.py`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/about_syntax_d.py
+    :caption: :download:`assignments/about_syntax_d.py`
+    :end-before: # Solution

@@ -8,19 +8,8 @@ Python 3 dynamically extends ``int`` when it's too big, hence there is no
 maximal or minimal ``int`` value:
 
 >>> data = 1337
->>>
->>> print(data)
-1337
-
 >>> data = +1337
->>>
->>> print(data)
-1337
-
 >>> data = -1337
->>>
->>> print(data)
--1337
 
 You can use ``_`` for easier read especially with big numbers:
 

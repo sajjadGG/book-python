@@ -15,6 +15,24 @@ Polish:
     3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(result_a) is bool, \
+    'Variable `result_a` has invalid type, should be bool'
+
+    >>> assert type(result_b) is bool, \
+    'Variable `result_b` has invalid type, should be bool'
+
+    >>> assert type(result_c) is bool, \
+    'Variable `result_c` has invalid type, should be bool'
+
+    >>> assert type(result_d) is bool, \
+    'Variable `result_d` has invalid type, should be bool'
+
+    >>> assert type(result_e) is bool, \
+    'Variable `result_e` has invalid type, should be bool'
+
     >>> bool(result_a)
     True
     >>> bool(result_b)
@@ -28,11 +46,11 @@ Tests:
 """
 
 # Given
-a = ...  # bool True
-b = ...  # bool False
-c = ...  # bool True
-d = ...  # bool False
-e = ...  # bool False
+a = ...  # bool: True
+b = ...  # bool: False
+c = ...  # bool: True
+d = ...  # bool: False
+e = ...  # bool: False
 
 # Do not modify following lines
 result_a = a is None
@@ -42,11 +60,11 @@ result_d = bool(bool(d) is not bool(d)) == False and bool(d)
 result_e = (bool(bool(e) is not bool(e)) == False and bool(e)) and (e is not None)
 
 # Solution
-a = None  # bool True
-b = None  # bool False
-c = None  # bool True
-d = None  # bool False
-e = None  # bool False
+a = None  # bool: True
+b = None  # bool: False
+c = None  # bool: True
+d = None  # bool: False
+e = None  # bool: False
 
 result_a = a is None
 result_b = b is not None

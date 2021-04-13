@@ -21,12 +21,18 @@ Polish:
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> type(kph)
-    <class 'float'>
-    >>> type(mph)
-    <class 'float'>
-    >>> type(speed_limit)
-    <class 'float'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(kph) is float, \
+    'Variable `kph` has invalid type, should be float'
+
+    >>> assert type(mph) is float, \
+    'Variable `mph` has invalid type, should be float'
+
+    >>> assert type(speed_limit) is float, \
+    'Variable `speed_limit` has invalid type, should be float'
+
     >>> round(kph, 3)
     0.278
     >>> round(mph, 3)
@@ -46,12 +52,12 @@ m = 1
 km = 1000 * m
 mi = 1609.344 * m
 
-mph = ...  # miles per hour
-kph = ...  # kilometers per hour
+mph = ...  # float: miles per hour
+kph = ...  # float: kilometers per hour
 
-speed_limit = ...  # 75 miles per hour
-speed_limit_mph = ...  # speed limit in miles per hour
-speed_limit_kph = ...  # speed limit in kilometers per hour
+speed_limit = ...  # float: 75 miles per hour
+speed_limit_mph = ...  # float: speed limit in miles per hour
+speed_limit_kph = ...  # float: speed limit in kilometers per hour
 
 # Solution
 kph = km / HOUR

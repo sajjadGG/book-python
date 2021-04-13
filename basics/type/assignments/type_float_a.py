@@ -23,6 +23,18 @@ Polish:
     7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(net) is float, \
+    'Variable `net` has invalid type, should be float'
+
+    >>> assert type(tax) is float, \
+    'Variable `tax` has invalid type, should be float'
+
+    >>> assert type(gross) is float, \
+    'Variable `gross` has invalid type, should be float'
+
     >>> type(net)
     <class 'float'>
     >>> type(tax)
@@ -41,9 +53,9 @@ Tests:
 PLN = 1
 VAT = 23 / 100
 
-net = ...  # 100.0 PLN, without tax
-tax = ...  # 23% of net
-gross = ...  # net + 23%
+net = ...  # float: 100.0 PLN, without tax
+tax = ...  # float: 23% of net
+gross = ...  # float: net + 23%
 
 # Solution
 net = 100.0 * PLN

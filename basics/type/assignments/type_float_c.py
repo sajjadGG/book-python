@@ -17,11 +17,23 @@ Polish:
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(volume) is float, \
+    'Variable `volume` has invalid type, should be float'
+
+    >>> assert type(volume_floz) is float, \
+    'Variable `volume_floz` has invalid type, should be float'
+
+    >>> assert type(volume_l) is float, \
+    'Variable `volume_l` has invalid type, should be float'
+
     >>> type(volume)
     <class 'float'>
-    >>> imperial
+    >>> volume_floz
     20.0
-    >>> metric
+    >>> volume_l
     0.5914688
 """
 
@@ -29,11 +41,11 @@ Tests:
 liter = 1
 floz = 0.02957344 * liter
 
-volume = ...  # 20 Fl Oz
-imperial = ...  # volume in fluid ounces
-metric = ...  # volume in liters
+volume = ...  # float: 20 Fl Oz
+volume_floz = ...  # float: volume in fluid ounces
+volume_l = ...  # float: volume in liters
 
 # Solution
 volume = 20 * floz
-imperial = volume / floz
-metric = volume / liter
+volume_floz = volume / floz
+volume_l = volume / liter

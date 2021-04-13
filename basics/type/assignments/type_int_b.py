@@ -30,10 +30,15 @@ References:
         URL: http://cab.inta-csic.es/rems/marsweather.html
 
 Tests:
-    >>> type(moon_day)
-    <class 'int'>
-    >>> type(moon_night)
-    <class 'int'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(moon_day) is int, \
+    'Variable `moon_day` has invalid type, should be int'
+
+    >>> assert type(moon_night) is int, \
+    'Variable `moon_night` has invalid type, should be int'
+
     >>> moon_day
     180
     >>> moon_night
@@ -44,8 +49,8 @@ Tests:
 Celsius = 1
 Kelvin = 273
 
-moon_day = ...  # 453 Kelvins
-moon_night = ...  # 93 Kelvins
+moon_day = ...  # int: 453 Kelvins in Celsius
+moon_night = ...  # int: 93 Kelvins in Celsius
 
 # Solution
 moon_day = 453*Celsius - Kelvin

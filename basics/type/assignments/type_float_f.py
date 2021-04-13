@@ -21,10 +21,15 @@ Polish:
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> type(emu)
-    <class 'float'>
-    >>> type(orlan)
-    <class 'float'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(emu) is float, \
+    'Variable `emu` has invalid type, should be float'
+
+    >>> assert type(orlan) is float, \
+    'Variable `orlan` has invalid type, should be float'
+
     >>> orlan
     400.0
     >>> emu
@@ -37,8 +42,8 @@ hPa = 100 * Pa
 kPa = 1000 * Pa
 psi = 6894.757 * Pa
 
-emu = ...  # 4.3 pounds per square inch in pascals
-orlan = ...  # 40 kilopascals in pascals
+emu = ...  # float: 4.3 pounds per square inch in pascals
+orlan = ...  # float: 40 kilopascals in pascals
 
 # Solution
 emu = round(4.3*psi / hPa, 1)

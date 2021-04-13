@@ -25,18 +25,27 @@ Polish:
     8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> type(day)
-    <class 'int'>
-    >>> type(week)
-    <class 'int'>
-    >>> type(month)
-    <class 'int'>
-    >>> type(workday)
-    <class 'int'>
-    >>> type(workweek)
-    <class 'int'>
-    >>> type(workmonth)
-    <class 'int'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(day) is int, \
+    'Variable `day` has invalid type, should be int'
+
+    >>> assert type(week) is int, \
+    'Variable `week` has invalid type, should be int'
+
+    >>> assert type(month) is int, \
+    'Variable `month` has invalid type, should be int'
+
+    >>> assert type(workday) is int, \
+    'Variable `workday` has invalid type, should be int'
+
+    >>> assert type(workweek) is int, \
+    'Variable `workweek` has invalid type, should be int'
+
+    >>> assert type(workmonth) is int, \
+    'Variable `workmonth` has invalid type, should be int'
+
     >>> day
     86400
     >>> week
@@ -57,12 +66,12 @@ MINUTE = 60 * SECOND
 HOUR = 60 * MINUTE
 DAY = 24 * HOUR
 
-day = ...  # 1 day in seconds
-week = ...  # 7 days in minutes
-month = ...  # 31 days in hours
-workday = ...  # 8 hours in seconds
-workweek = ...  # 5 workdays in minutes
-workmonth = ...  # 22 workdays in hours
+day = ...  # int: 1 day in seconds
+week = ...  # int: 7 days in minutes
+month = ...  # int: 31 days in hours
+workday = ...  # int: 8 hours in seconds
+workweek = ...  # int: 5 workdays in minutes
+workmonth = ...  # int: 22 workdays in hours
 
 # Solution
 day = (1 * DAY) // SECOND

@@ -15,8 +15,12 @@ Polish:
     3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> type(result)
-    <class 'str'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
     >>> result
     'Jana Twardowskiego III'
 """
@@ -24,7 +28,7 @@ Tests:
 # Given
 DATA = 'UL. jana \tTWArdoWskIEGO 3'
 
-result = ...  # Jana Twardowskiego III
+result = ...  # str: Jana Twardowskiego III
 
 # Solution
 result = DATA.replace('UL. ', '').replace('\t', '').title().replace('3', 'III')

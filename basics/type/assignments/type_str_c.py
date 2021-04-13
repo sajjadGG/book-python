@@ -25,6 +25,12 @@ Polish:
     8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
     >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
     '''My name... "José Jiménez".
         I'm an \"\"\"astronaut!\"\"\"'''
@@ -33,7 +39,7 @@ Tests:
 # Given
 name = 'José Jiménez'
 
-result = ...  # str with '''My name... "José Jiménez".<newline><tab>I'm an \"\"\"astronaut!\"\"\"'''
+result = ...  # str: with '''My name... "José Jiménez".<newline><tab>I'm an \"\"\"astronaut!\"\"\"'''
 
 # Solution
 result = f"""'''My name... "{name}".\n\tI\'m an \"\"\"astronaut!\"\"\"'''"""

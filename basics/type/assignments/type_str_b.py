@@ -19,8 +19,12 @@ Polish:
     3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> type(result)
-    <class 'str'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
     >>> '\U0001F680' in result
     True
     >>> name in result
@@ -32,8 +36,8 @@ Tests:
 # Given
 EMOTICON = '\U0001F680'
 
-name = ...  # str Mark Watney
-result = ...  # Hello Mark Watney EMOTICON
+name = ...  # str: Mark Watney
+result = ...  # str: Hello Mark Watney EMOTICON
 
 # Solution
 name = 'Mark Watney'

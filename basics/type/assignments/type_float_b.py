@@ -19,23 +19,35 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> type(altitude)
-    <class 'float'>
-    >>> imperial
-    10000.0
-    >>> metric
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(altitude) is float, \
+    'Variable `altitude` has invalid type, should be float'
+
+    >>> assert type(altitude_m) is float, \
+    'Variable `altitude_m` has invalid type, should be float'
+
+    >>> assert type(altitude_ft) is float, \
+    'Variable `altitude_ft` has invalid type, should be float'
+
+    >>> altitude
     3048.0
+    >>> altitude_m
+    3048.0
+    >>> altitude_ft
+    10000.0
 """
 
 # Given
 m = 1
 ft = 0.3048 * m
 
-altitude = ...  # 10.000 ft
-imperial = ...  # altitude in feet
-metric = ...  # altitude in meters
+altitude = ...  # float: 10.000 ft
+altitude_m = ...  # float: altitude in feet
+altitude_ft = ...  # float: altitude in meters
 
 # Solution
 altitude = 10_000 * ft
-imperial = altitude / ft
-metric = altitude / m
+altitude_m = altitude / m
+altitude_ft = altitude / ft

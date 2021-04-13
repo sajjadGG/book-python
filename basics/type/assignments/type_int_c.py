@@ -6,7 +6,7 @@
 
 English:
     1. Calculate altitude in meters:
-        a. Armstrong Line: 18 km
+        a. Armstrong Limit: 19 km
         b. Stratosphere: 20 km
         c. USAF Space Line: 80 km
         d. IAF Space Line: 100 km
@@ -14,18 +14,40 @@ English:
 
 Polish:
     1. Oblicz wysokości w metrach:
-        a. Linia Armstronga: 18 km
+        a. Linia Armstronga: 19 km
         b. Stratosfera: 20 km
         c. Granica kosmosu wg. USAF: 80 km
         d. Granica kosmosu wg. IAF 100 km
     2. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
+References:
+    * USAF - United States Air Force
+    * IAF - International Astronautical Federation
+    * Kármán line (100 km) - boundary between Earth's atmosphere and outer space
+    * Armstrong limit (19 km) - altitude above which atmospheric pressure is
+      sufficiently low that water boils at the normal temperature of the human body
+
 Hints:
     * 1 km = 1000 m
 
 Tests:
-    >>> armstrong_line
-    18000
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(armstrong_limit) is int, \
+    'Variable `armstrong_limit` has invalid type, should be int'
+
+    >>> assert type(stratosphere) is int, \
+    'Variable `stratosphere` has invalid type, should be int'
+
+    >>> assert type(usaf_space) is int, \
+    'Variable `usaf_space` has invalid type, should be int'
+
+    >>> assert type(iaf_space) is int, \
+    'Variable `iaf_space` has invalid type, should be int'
+
+    >>> armstrong_limit
+    19000
     >>> stratosphere
     20000
     >>> usaf_space
@@ -38,13 +60,13 @@ Tests:
 m = 1
 km = 1000 * m
 
-armstrong_line = ...  # 18 kilometers in meters
-stratosphere = ...  # 20 kilometers in meters
-usaf_space = ...  # 80 kilometers in meters
-iaf_space = ...  # 100 kilometers in meters
+armstrong_limit = ...  # int: 19 kilometers in meters
+stratosphere = ...  # int: 20 kilometers in meters
+usaf_space = ...  # int: 80 kilometers in meters
+iaf_space = ...  # int: 100 kilometers in meters
 
 # Solution
-armstrong_line = 18*km // m
+armstrong_limit = 19*km // m
 stratosphere = 20*km // m
 usaf_space = 80*km // m
 iaf_space = 100*km // m

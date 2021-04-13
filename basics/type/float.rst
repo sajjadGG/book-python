@@ -17,6 +17,7 @@ Notation
 >>> data = 69.
 >>> print(data)
 69.0
+>>>
 >>> data = .44
 >>> print(data)
 0.44
@@ -26,6 +27,7 @@ Scientific and engineering notation
 >>> million = 1e6
 >>> print(million)
 1000000.0
+>>>
 >>> million = 1E6
 >>> print(million)
 1000000.0

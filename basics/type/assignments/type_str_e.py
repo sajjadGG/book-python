@@ -21,6 +21,39 @@ Polish:
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(example) is str, \
+    'Variable `example` has invalid type, should be str'
+
+    >>> assert type(a) is str, \
+    'Variable `a` has invalid type, should be str'
+
+    >>> assert type(b) is str, \
+    'Variable `b` has invalid type, should be str'
+
+    >>> assert type(c) is str, \
+    'Variable `c` has invalid type, should be str'
+
+    >>> assert type(d) is str, \
+    'Variable `d` has invalid type, should be str'
+
+    >>> assert type(e) is str, \
+    'Variable `e` has invalid type, should be str'
+
+    >>> assert type(f) is str, \
+    'Variable `f` has invalid type, should be str'
+
+    >>> assert type(g) is str, \
+    'Variable `g` has invalid type, should be str'
+
+    >>> assert type(h) is str, \
+    'Variable `h` has invalid type, should be str'
+
+    >>> assert type(i) is str, \
+    'Variable `i` has invalid type, should be str'
+
     >>> example
     'Jana Twardowskiego III'
     >>> a
@@ -55,18 +88,16 @@ g = 'ULICA. JANA III SOBIeskieGO'
 h = ' Jana 3 Sobieskiego  '
 i = 'Jana III\tSobieskiego '
 
-# fmt: off
 example = example.upper().replace('UL. ', '').replace('\t', '').strip().title().replace('3', 'III')
-a = a  # Jana III Sobieskiego
-b = b  # Jana III Sobieskiego
-c = c  # Jana III Sobieskiego
-d = d  # Jana III Sobieskiego
-e = e  # Jana III Sobieskiego
-f = f  # Jana III Sobieskiego
-g = g  # Jana III Sobieskiego
-h = h  # Jana III Sobieskiego
-i = i  # Jana III Sobieskiego
-# fmt: on
+a = a  # str: Jana III Sobieskiego
+b = b  # str: Jana III Sobieskiego
+c = c  # str: Jana III Sobieskiego
+d = d  # str: Jana III Sobieskiego
+e = e  # str: Jana III Sobieskiego
+f = f  # str: Jana III Sobieskiego
+g = g  # str: Jana III Sobieskiego
+h = h  # str: Jana III Sobieskiego
+i = i  # str: Jana III Sobieskiego
 
 # Solution
 a = a.upper().replace('UL', '').strip().title().replace('Iii', 'III')

@@ -20,16 +20,25 @@ Polish:
     2. W obliczeniach użyj floordiv (`//`)
     3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
+References:
+    * Kármán line (100 km) - boundary between planets's atmosphere and outer space
+
 Hints:
     * 1 km = 1000 m
 
 Tests:
-    >>> type(karman_line_earth)
-    <class 'int'>
-    >>> type(karman_line_mars)
-    <class 'int'>
-    >>> type(karman_line_venus)
-    <class 'int'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(karman_line_earth) is int, \
+    'Variable `karman_line_earth` has invalid type, should be int'
+
+    >>> assert type(karman_line_mars) is int, \
+    'Variable `karman_line_mars` has invalid type, should be int'
+
+    >>> assert type(karman_line_venus) is int, \
+    'Variable `karman_line_venus` has invalid type, should be int'
+
     >>> karman_line_earth
     100
     >>> karman_line_mars
@@ -42,9 +51,9 @@ Tests:
 m = 1
 km = 1000 * m
 
-karman_line_earth = ...  # 100_000 meters in km
-karman_line_mars = ...  # 80_000 meters in km
-karman_line_venus = ...  # 250_000 meters in km
+karman_line_earth = ...  # int: 100_000 meters in km
+karman_line_mars = ...  # int: 80_000 meters in km
+karman_line_venus = ...  # int: 250_000 meters in km
 
 # Solution
 karman_line_earth = 100_000*m // km

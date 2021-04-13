@@ -23,12 +23,18 @@ Hints:
     * 1 Mb = 1024 Kb
 
 Tests:
-    >>> type(size_b)
-    <class 'int'>
-    >>> type(size_kb)
-    <class 'int'>
-    >>> type(size_Mb)
-    <class 'int'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(size_b) is int, \
+    'Variable `size_b` has invalid type, should be int'
+
+    >>> assert type(size_kb) is int, \
+    'Variable `size_kb` has invalid type, should be int'
+
+    >>> assert type(size_Mb) is int, \
+    'Variable `size_Mb` has invalid type, should be int'
+
     >>> size_b
     1401946112
     >>> size_kb
@@ -42,10 +48,10 @@ b = 1
 kb = 1024 * b
 Mb = 1024 * kb
 
-size = ...  # 1337 megabits
-size_b = ...  # size in bytes
-size_kb = ...  # size in kilobytes
-size_Mb = ...  # size in megabytes
+size = ...  # int: 1337 megabits
+size_b = ...  # int: size in bytes
+size_kb = ...  # int: size in kilobytes
+size_Mb = ...  # int: size in megabytes
 
 # Solution
 size = 1337 * Mb

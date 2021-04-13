@@ -13,8 +13,12 @@ Polish:
     2. Zdefiniuj `result` z tekstem wprowadzonym od użytkownika
 
 Tests:
-    >>> type(result)
-    <class 'str'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
     >>> result
     'NASA'
 """
@@ -24,7 +28,7 @@ from unittest.mock import MagicMock
 input = MagicMock(return_value='NASA')
 
 # Given
-result = ...  # Type NASA
+result = ...  # str: Type NASA
 
 # Solution
 result = input('Type NASA: ')

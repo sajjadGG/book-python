@@ -19,6 +19,24 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert type(meters) is str, \
+    'Variable `volume` has invalid type, should be str'
+
+    >>> assert type(kilometers) is str, \
+    'Variable `volume` has invalid type, should be str'
+
+    >>> assert type(miles) is str, \
+    'Variable `volume` has invalid type, should be str'
+
+    >>> assert type(nautical_miles) is str, \
+    'Variable `volume` has invalid type, should be str'
+
+    >>> assert type(all_units) is str, \
+    'Variable `volume` has invalid type, should be str'
+
     >>> meters
     'Meters: 1337'
     >>> kilometers
@@ -39,11 +57,11 @@ NM = 1852 * m
 
 distance = 1337 * m
 
-meters = f'Meters: {...}'  # distance in meters 0 decimal places
-kilometers = f'Kilometers: {...}'  # distance in kilometers with decimal places
-miles = f'Miles: {...}'  # distance in miles with 2 decimal places
-nautical_miles = f'Nautical Miles: {...}'  # distance in nautical miles with 3 decimal places
-all_units = f'All: km: {...}, mi: {...}, NM: {...}'  # distance in km, mi, NM with 0, 1, 2 decimal places
+meters = f'Meters: {...}'  # float: distance in meters 0 decimal places
+kilometers = f'Kilometers: {...}'  # float: distance in kilometers with decimal places
+miles = f'Miles: {...}'  # float: distance in miles with 2 decimal places
+nautical_miles = f'Nautical Miles: {...}'  # float: distance in nautical miles with 3 decimal places
+all_units = f'All: km: {...}, mi: {...}, NM: {...}'  # float: distance in km, mi, NM with 0, 1, 2 decimal places
 
 # Solution
 meters = f'Meters: {distance/m:.0f}'
