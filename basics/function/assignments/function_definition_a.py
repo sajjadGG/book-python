@@ -6,26 +6,28 @@
 
 English:
     1. Define function `call` without parameters
-    2. Function prints `Beetlejuice`
+    2. Function appends `Beetlejuice` to `results`
     3. Call function three times
 
 Polish:
     1. Zdefiniuj funkcję `call` bez parametrów
-    2. Funkcja wypisuje `Beetlejuice`
+    2. Funkcja dodaje `Beetlejuice` do `result`
     3. Wywołaj funkcję trzy razy
 
 Tests:
     >>> from inspect import isfunction
     >>> isfunction(call)
     True
-    >>> call()
-    Beetlejuice
+    >>> result
+    ['Beetlejuice', 'Beetlejuice', 'Beetlejuice']
 """
+
+result = []
 
 
 # Solution
 def call():
-    print('Beetlejuice')
+    result.append('Beetlejuice')
 
 
 call()

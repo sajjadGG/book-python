@@ -24,7 +24,7 @@ Tests:
 
     >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> assert type(result) is set, 'Variable `result` has invalid type, should be set'
-    >>> assert len(c) == 5, 'Variable `result` length should be 3'
+    >>> assert len(result) == 3, 'Variable `result` length should be 3'
 
     >>> 'a' in result
     True

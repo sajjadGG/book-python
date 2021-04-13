@@ -11,8 +11,7 @@ English:
     4. User will type only valid `int` or `float`
     5. To iterate use only `while` loop
     6. If grade is in `GRADE_SCALE` - add it to `grades`
-    7. If grade is not in `GRADE_SCALE`
-        print "Grade is not allowed" and continue input
+    7. If grade is not in `GRADE_SCALE`, skip this iteration
     8. If user pressed Enter key, end inserting data
     9. At the end, define `result: float` with calculated mean of `grades`
     10. Test case when report list is empty
@@ -24,8 +23,7 @@ Polish:
     4. Używając `input()` poproś użytkownika o ocenę, jedną na raz
     5. Użytkownik poda tylko poprawne `int` lub `float`
     6. Jeżeli ocena jest w `GRADE_SCALE` - dodaj ją do `grades`
-    7. Jeżeli oceny nie ma w `GRADE_SCALE`
-       wyświetl "Grade is not allowed" i kontynuuj wpisywanie
+    7. Jeżeli oceny nie ma w `GRADE_SCALE`, pomiń tą iterację
     8. Jeżeli użytkownik wcisnął Enter, zakończ wprowadzanie danych
     9. Na zakończenie zdefiniuj `result` z wyliczeniem średniej
        arytmetycznej `grades`
@@ -77,8 +75,7 @@ while True:
 
     if grade in GRADE_SCALE:
         grades.append(grade)
-    else:
-        print('Grade is not allowed')
+
 
 if grades:
     result = sum(grades) / len(grades)

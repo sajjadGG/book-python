@@ -5,32 +5,32 @@
 * Time: 3 min
 
 English:
-    1. Using `input()` ask user for a file path
-    3. Handle exception for not existing file
-    4. Handle exception for not having sufficient permissions
+    1. Modify `check` function
+    3. If `filename` exists, print 'Ok'
+    2. If `filename` does not exist, print 'File not found'
 
 Polish:
-    1. Używając `input()` zapytaj użytkownika o ścieżkę do pliku
-    3. Obsłuż wyjątek dla nieistniejącego pliku
-    4. Obsłuż wyjątek dla braku wystarczających uprawnień
+    1. Zmodyfikuj funkcję `check`
+    2. Jeżeli `filename` istnieje, wypisz 'Ok'
+    2. Jeżeli `filename` nie istnieje, wypisz 'File not found'
 
 Tests:
-    TODO: Doctests
-    TODO: Input Stub
+    >>> check(__file__)
+    Ok
+    >>> check('_notexisting.txt')
+    File not found
 """
 
-# Mock input() built-in function
-from unittest.mock import MagicMock
-input = MagicMock(return_value='_temporary.txt')
-
 # Given
-filename = input('Type filename: ')
+def check(filename):
+    ...
 
 
 # Solution
-try:
-    file = open(filename)
-except FileNotFoundError:
-    print('Sorry, file not found')
-except PermissionError:
-    print('Sorry, not permitted')
+def check(filename):
+    try:
+        open(filename)
+    except FileNotFoundError:
+        print('File not found')
+    else:
+        print('Ok')
