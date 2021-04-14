@@ -16,9 +16,9 @@ Polish:
     6. Upewnij się, że w linijce z "Virtualenv" nie masz `None`
 
 Tests:
-    >>> assert python_executable is not None
-    >>> assert python_version is not None
-    >>> assert venv is not None
+    >>> assert python_executable
+    >>> assert python_version
+    >>> assert venv
 """
 
 

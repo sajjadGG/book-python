@@ -28,12 +28,12 @@ Tests:
      'tan': 1.633123935319537e+16, 'ctg': inf}
     >>> trigonometry(0)
     {'rad': 0.0, 'sin': 0.0, 'cos': 1.0, 'tan': 0.0, 'ctg': inf}
-    >>> trigonometry(np.pi)  # doctest: +NORMALIZE_WHITESPACE
-    {'rad': 0.05483113556160755,
-     'sin': 0.05480366514878953,
-     'cos': 0.9984971498638638,
-     'tan': 0.054886150808003326,
-     'ctg': 18.21953234611204}
+    >>> trigonometry(np.pi)  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
+    {'rad': 0.05483...,
+     'sin': 0.05480...,
+     'cos': 0.99849...,
+     'tan': 0.05488...,
+     'ctg': 18.2195...}
 """
 
 
