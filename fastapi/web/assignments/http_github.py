@@ -1,4 +1,11 @@
-#!/usr/bin/env python3
+"""
+>>> date
+datetime.datetime(2021, 1, 23, 17, 51, 48, tzinfo=datetime.timezone.utc)
+>>> name
+'Florian Apolloner'
+>>> result
+{'1'}
+"""
 
 import re
 import json
@@ -6,8 +13,8 @@ from http.client import HTTPSConnection
 from http import HTTPStatus
 from base64 import b64encode
 from datetime import datetime
-import logging
 
+PATTERN = r'#([0-9]+)'
 
 USERNAME = 'your username'
 TOKEN = 'your password'
@@ -26,7 +33,6 @@ conn = HTTPSConnection(host="api.github.com", port=443)
 
 
 def GET(url):
-    logging.warning(f'URL: {url}')
     conn.request('GET', url, headers=headers)
     response = conn.getresponse()
 
@@ -38,7 +44,7 @@ def GET(url):
 
 
 for repository in GET('/orgs/django/repos'):
-    if repository['fullname'] == 'django/django':
+    if repository['name'] == 'django/django':
         break
 
 
@@ -52,13 +58,10 @@ name = commits[0]['commit']['author']['name']
 messages = [commit['commit']['message'] for commit in commits]
 date = datetime.strptime(date, '%Y-%m-%dT%H:%M:%S%z')
 
-issues = set()
+result = set()
 
 for msg in messages:
-    tickets = re.findall(r'#([0-9]+)', msg, flags=re.MULTILINE)
-    issues.update(tickets)
-
-print(f'Last commit: {date} by {name}')
-print(f'Issues: {issues}')
+    tickets = re.findall(PATTERN, msg, flags=re.MULTILINE)
+    result.update(tickets)
 
 conn.close()
