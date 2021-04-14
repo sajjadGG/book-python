@@ -620,7 +620,3 @@ Assignments
 .. literalinclude:: assignments/function_doctest_b.py
     :caption: :download:`Solution <assignments/function_doctest_b.py>`
     :end-before: # Solution
-
-.. literalinclude:: assignments/function_doctest_c.py
-    :caption: :download:`Solution <assignments/function_doctest_c.py>`
-    :end-before: # Solution

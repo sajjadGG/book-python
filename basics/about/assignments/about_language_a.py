@@ -18,7 +18,6 @@ Polish:
 Tests:
     >>> assert python_executable
     >>> assert python_version
-    >>> assert venv
 """
 
 

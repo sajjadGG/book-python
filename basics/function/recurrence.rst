@@ -70,10 +70,6 @@ Assignments
     :caption: :download:`Solution <assignments/function_recurrence_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_recurrence_b.py
-    :caption: :download:`Solution <assignments/function_recurrence_b.py>`
-    :end-before: # Solution
-
 
 References
 ----------
