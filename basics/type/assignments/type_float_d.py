@@ -52,7 +52,7 @@ NM = 1852 * m
 distance = 1337 * m
 
 meters = f'Meters: {...}'  # float: distance in meters 0 decimal places
-kilometers = f'Kilometers: {...}'  # float: distance in kilometers with decimal places
+kilometers = f'Kilometers: {...}'  # float: distance in kilometers with 0 decimal places
 miles = f'Miles: {...}'  # float: distance in miles with 2 decimal places
 nautical_miles = f'Nautical Miles: {...}'  # float: distance in nautical miles with 3 decimal places
 all_units = f'All: km: {...}, mi: {...}, NM: {...}'  # float: distance in km, mi, NM with 0, 1, 2 decimal places

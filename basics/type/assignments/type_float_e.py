@@ -56,8 +56,8 @@ mph = ...  # float: miles per hour
 kph = ...  # float: kilometers per hour
 
 speed_limit = ...  # float: 75 miles per hour
-speed_limit_mph = ...  # float: speed limit in miles per hour, round one decimal place
-speed_limit_kph = ...  # float: speed limit in kilometers per hour, round one decimal place
+speed_limit_mph = ...  # float: speed limit in miles per hour, round to one decimal place
+speed_limit_kph = ...  # float: speed limit in kilometers per hour, round to one decimal place
 
 # Solution
 kph = km / HOUR
@@ -65,5 +65,5 @@ mph = mi / HOUR
 
 speed_limit = 75 * mph
 
-speed_limit_mph = round(speed_limit / mph, 1)
-speed_limit_kph = round(speed_limit / kph, 1)
+speed_limit_mph = round(speed_limit/mph, 1)
+speed_limit_kph = round(speed_limit/kph, 1)

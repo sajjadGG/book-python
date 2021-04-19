@@ -54,8 +54,8 @@ hPa = 100 * Pa
 kPa = 1000 * Pa
 
 ata = ...  # float: pressure at sea level: 1013.25 hectopascals
-pO2 = ...  # float: oxygen partial pressure: 20.946% of pressure at sea level
+pO2 = ...  # float: oxygen partial pressure: 20.946% of pressure at sea level in hectopascals
 
 # Solution
 ata = 1013.25 * hPa
-pO2 = round(O2*ata / hPa, 1)
+pO2 = round(ata*O2 / hPa, 1)

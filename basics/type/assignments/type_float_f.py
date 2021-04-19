@@ -41,9 +41,9 @@ hPa = 100 * Pa
 kPa = 1000 * Pa
 psi = 6894.757 * Pa
 
-emu = ...  # float: 4.3 pounds per square inch in hectopascals, round one decimal place
-orlan = ...  # float: 40 kilopascals in hectopascals, round one decimal place
+emu = ...  # float: 4.3 pounds per square inch in hectopascals, round to one decimal place
+orlan = ...  # float: 40 kilopascals in hectopascals, round to one decimal place
 
 # Solution
-emu = round(4.3*psi / hPa, 1)
-orlan = round(40*kPa / hPa, 1)
+emu = round(4.3*psi/hPa, 1)
+orlan = round(40*kPa/hPa, 1)

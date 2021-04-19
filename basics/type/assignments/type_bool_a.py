@@ -6,14 +6,12 @@
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Which variables are `True`?
-    3. Which variables are `False`?
+    1. Which variables are `True`?
+    2. Which variables are `False`?
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Które zmienne są `True`?
-    3. Które zmienne są `False`?
+    1. Które zmienne są `True`?
+    2. Które zmienne są `False`?
 
 Tests:
     >>> import sys
@@ -91,7 +89,6 @@ Tests:
     False
 """
 
-# Given
 a = bool(False)
 b = bool(True)
 

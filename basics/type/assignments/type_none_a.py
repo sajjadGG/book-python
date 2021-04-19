@@ -6,14 +6,12 @@
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. What you need to put in expressions to get the expected outcome?
-    3. Compare result with "Tests" section (see below)
+    1. What you need to put in expressions to get the expected outcome?
+    2. Compare result with "Tests" section (see below)
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Co należy podstawić w wyrażeniach aby otrzymać wartość oczekiwaną?
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Co należy podstawić w wyrażeniach aby otrzymać wartość oczekiwaną?
+    2. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> import sys
@@ -42,7 +40,6 @@ Tests:
     False
 """
 
-# Given
 a = ...  # bool: True
 b = ...  # bool: False
 c = ...  # bool: True

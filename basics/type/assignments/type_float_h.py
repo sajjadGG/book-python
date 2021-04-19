@@ -67,7 +67,7 @@ ata = 1013.25 * hPa
 pO2 = O2 * ata
 
 gradient = ...  # float: 11.3 Pascals per meter
-altitude = ...  # float: pressure at sea level minus oxygen partial pressure divided by gradient
+altitude = ...  # float: pressure at sea level minus oxygen partial pressure all that divided by gradient
 
 # Solution
 gradient = 11.3 * Pa / m
