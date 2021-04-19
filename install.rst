@@ -4,18 +4,19 @@ Install
 
 Requirements
 ------------
-* Python [#DownloadPython]_ w wersji 3.7, 3.8 lub 3.9 (preferowany)
-  `[Download] <https://www.python.org/downloads/>`_
+* `[Zainstaluj] <https://www.python.org/downloads/>`_
+  Python w wersji 3.7, 3.8 lub 3.9 (preferowany) [#DownloadPython]_
 
-* Konto na Github (potwierdzone mailem) [#GithubJoin]_
-  `[Załóż] <https://github.com/join>`_
 
-* PyCharm [#DownloadPyCharm]_ w wersji 2021.1 lub nowszy
-  (bez znaczenia czy Community czy Professional)
-  `[Download] <https://www.jetbrains.com/pycharm/download/>`_
+* `[Załóż] <https://github.com/join>`_
+  konto na Github (potwierdzone mailem) [#GithubJoin]_
 
-* GIT [#DownloadGit]_ w wersji 2.4 lub nowszy
-  `[Download] <https://git-scm.com/download/>`_
+* `[Zainstaluj] <https://www.jetbrains.com/pycharm/download/>`_
+  PyCharm w wersji 2021.1 lub nowszy
+  (bez znaczenia czy Community czy Professional) [#DownloadPyCharm]_
+
+* `[Zainstaluj] <https://git-scm.com/download/>`_
+  Git w wersji 2.4 lub nowszy [#DownloadGit]_
 
 
 FAQ

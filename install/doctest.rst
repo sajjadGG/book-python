@@ -14,14 +14,14 @@ są kontynuacją poprzedniej linii. Linie poniżej wyświetlają oczekiwany wyni
 Doctesty muszą znajdować się w pierwszym wieloliniowym ciągu znaków w pliku,
 funkcji lub klasie. Przykład:
 
-.. code-block:: python
+    .. code-block:: python
 
-    """
-    >>> x = 1
-    >>> y = 2
-    >>> x + y
-    3
-    """
+        """
+        >>> x = 1
+        >>> y = 2
+        >>> x + y
+        3
+        """
 
 1. W swoim katalogu stwórz plik ``about_python.py``:
 

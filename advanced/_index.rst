@@ -4,7 +4,6 @@ About
     :maxdepth: 1
     :caption: About
 
-    about/setup.rst
     about/entrytest.rst
     about/agenda.rst
 

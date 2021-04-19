@@ -15,17 +15,17 @@ wystarczy.
 
 0. Uruchom PyCharm:
 
-   a. Jeżeli nie masz PyCharm to ściągnij go i zainstaluj [#DownloadPyCharm]_
-   b. Na chwilę obecną nie twórz projektu
-   c. Jeżeli projekt stworzył/otworzył Ci się automatycznie, to
-      zamknij go `File -> Close Project in Current Window`
+    a. Jeżeli nie masz PyCharm to ściągnij go i zainstaluj [#DownloadPyCharm]_
+    b. Na chwilę obecną nie twórz projektu
+    c. Jeżeli projekt stworzył/otworzył Ci się automatycznie, to
+       zamknij go `File -> Close Project in Current Window`
 
 1. W arkuszu zadań zapisz wersję PyCharm z której korzystasz:
 
-   a. Na ekranie głównym w lewym górnym rogu jest numer wersji PyCharm
-   b. Format zapisu, np. `2021.1 CE` lub `2021.1 PRO` itp.
-   c. `CE` - Community Edition
-   d. `PRO` - Professional
+    a. Na ekranie głównym w lewym górnym rogu jest numer wersji PyCharm
+    b. Format zapisu, np. `2021.1 CE` lub `2021.1 PRO` itp.
+    c. `CE` - Community Edition
+    d. `PRO` - Professional
 
 2. W lewym menu przejdź na zakładkę `Customize` i następnie `All settings`
 
