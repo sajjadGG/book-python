@@ -4,9 +4,9 @@ Setup Środowiska
 
 Co będzie potrzebne?
 --------------------
-* Python 3.8, lub 3.9 (preferowany)
-* PyCharm 2021 lub nowszy (bez znaczenia czy Community czy Professional)
-* GIT w wersji 2.4 lub nowszy
+* Python 3.8, lub 3.9 (preferowany) [#DownloadPython]_
+* PyCharm 2021 lub nowszy (bez znaczenia czy Community czy Professional) [#DownloadPyCharm]_
+* GIT w wersji 2.4 lub nowszy [#DownloadGit]_
 * Konto na Github (potwierdzone mailem)
 
 
@@ -118,7 +118,7 @@ pierwszym wieloliniowym ciągu znaków w pliku, funkcji lub klasie. Przykład:
     """
 
 3. Upewnij się, że:
-    a. Skopiowałeś/aś również trzy cudzysłowia ``"""`` na początku i końcu
+    a. Skopiowałeś/aś również trzy znaki cudzysłowu ``"""`` na początku i końcu
     b. Tło testów zmieniło kolor na żółty lub zielony w zależności od skórki
 2. Uruchom doctesty z tego pliku
     a. Górne menu -> Run -> Run... -> `Doctest in about_python`
@@ -141,6 +141,12 @@ Tests:
 
 References
 ----------
+.. [#DownloadPython] https://www.python.org/downloads/
+.. [#DownloadGit] https://git-scm.com/download
+.. [#DownloadPyCharm] https://www.jetbrains.com/pycharm/download/
+.. [#GithubSignin]
+
+
 .. [#MicrosoftAcquireGithub] Microsoft News Center. Microsoft to acquire GitHub for $7.5 billion
     URL: https://news.microsoft.com/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/
     Year: 2018
