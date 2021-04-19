@@ -1,22 +1,21 @@
 """
 * Assignment: Type Float Distance
+* Status: required
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
 
 English:
-    1. Use code from "Given" section (see below)
-    2. Convert units
-    3. Instead `...` substitute calculated and converted values
-    4. Note the number of decimal places
-    5. Compare result with "Tests" section (see below)
+    1. Convert units
+    2. Instead `...` substitute calculated and converted values
+    3. Note the number of decimal places
+    4. Compare result with "Tests" section (see below)
 
 Polish:
-    1. Użyj kodu z sekcji "Given" (patrz poniżej)
-    2. Przekonwertuj jednostki
-    3. Zamiast `...` podstaw wyliczone i przekonwertowane wartości
-    4. Zwróć uwagę na ilość miejsc po przecinku
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Przekonwertuj jednostki
+    2. Zamiast `...` podstaw wyliczone i przekonwertowane wartości
+    3. Zwróć uwagę na ilość miejsc po przecinku
+    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> import sys
@@ -45,7 +44,6 @@ Tests:
     'All: km: 1, mi: 0.8, NM: 0.72'
 """
 
-# Given
 m = 1
 km = 1000 * m
 mi = 1609.344 * m

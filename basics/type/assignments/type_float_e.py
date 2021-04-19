@@ -1,5 +1,6 @@
 """
 * Assignment: Type Float Velocity
+* Status: required
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 3 min
@@ -43,7 +44,6 @@ Tests:
     120.7
 """
 
-# Given
 SECOND = 1
 MINUTE = 60 * SECOND
 HOUR = 60 * MINUTE

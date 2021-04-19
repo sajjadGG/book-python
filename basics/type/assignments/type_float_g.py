@@ -1,5 +1,6 @@
 """
 * Assignment: Type Float Percent
+* Status: optional
 * Complexity: medium
 * Lines of code: 2 lines
 * Time: 3 min
@@ -41,17 +42,20 @@ Tests:
     212.2
 """
 
-# Given
 PERCENT = 100
+N2 = 78.084 / PERCENT
+O2 = 20.946 / PERCENT
+Ar = 0.9340 / PERCENT
+CO2 = 0.0407 / PERCENT
+Others = 0.001 / PERCENT
+
 Pa = 1
 hPa = 100 * Pa
 kPa = 1000 * Pa
 
 ata = ...  # float: pressure at sea level: 1013.25 hectopascals
-O2 = ...  # float: oxygen: 20.946%
 pO2 = ...  # float: oxygen partial pressure: 20.946% of pressure at sea level
 
 # Solution
-O2 = 20.946 / PERCENT
 ata = 1013.25 * hPa
 pO2 = round(O2*ata / hPa, 1)

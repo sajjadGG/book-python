@@ -1,5 +1,6 @@
 """
 * Assignment: Type Int Add
+* Status: required
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min
@@ -50,7 +51,6 @@ Tests:
     210
 """
 
-# Given
 Celsius = 1
 Kelvin = 273
 

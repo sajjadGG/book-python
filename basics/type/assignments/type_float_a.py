@@ -1,5 +1,6 @@
 """
 * Assignment: Type Float Tax
+* Status: required
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min
@@ -41,7 +42,6 @@ Tests:
     123.0
 """
 
-# Given
 PLN = 1
 VAT = 23 / 100
 

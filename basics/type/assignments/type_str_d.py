@@ -1,5 +1,6 @@
 """
 * Assignment: Type String Normalize
+* Status: required
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 8 min

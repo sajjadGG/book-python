@@ -1,5 +1,6 @@
 """
 * Assignment: Type Bool Simple
+* Status: required
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 5 min

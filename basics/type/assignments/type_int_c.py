@@ -1,5 +1,6 @@
 """
 * Assignment: Type Int Mul
+* Status: required
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
@@ -53,7 +54,6 @@ Tests:
     100000
 """
 
-# Given
 m = 1
 km = 1000 * m
 

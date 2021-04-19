@@ -1,5 +1,6 @@
 """
 * Assignment: Type Int Bytes
+* Status: optional
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 3 min
@@ -40,7 +41,6 @@ Tests:
     800
 """
 
-# Given
 b = 1
 kb = 1024 * b
 Mb = 1024 * kb

@@ -1,5 +1,6 @@
 """
 * Assignment: Type String Emoticon
+* Status: required
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

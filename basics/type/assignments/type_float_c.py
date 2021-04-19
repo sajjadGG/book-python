@@ -1,5 +1,6 @@
 """
 * Assignment: Type Float Volume
+* Status: required
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min
@@ -33,7 +34,6 @@ Tests:
     0.5914688
 """
 
-# Given
 liter = 1
 floz = 0.02957344 * liter
 

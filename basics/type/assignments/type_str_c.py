@@ -1,5 +1,6 @@
 """
 * Assignment: Type String Quotes
+* Status: optional
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 5 min

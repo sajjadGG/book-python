@@ -1,5 +1,6 @@
 """
 * Assignment: Type Int Bits
+* Status: required
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
@@ -45,7 +46,6 @@ Tests:
     250
 """
 
-# Given
 m = 1
 km = 1000 * m
 

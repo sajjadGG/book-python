@@ -1,5 +1,6 @@
 """
 * Assignment: Type String Clean
+* Status: required
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 13 min

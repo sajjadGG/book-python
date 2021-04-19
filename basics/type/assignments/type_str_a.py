@@ -1,5 +1,6 @@
 """
 * Assignment: Type String Input
+* Status: required
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 2 min

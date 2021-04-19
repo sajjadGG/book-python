@@ -1,5 +1,6 @@
 """
 * Assignment: Type Int Bandwidth
+* Status: optional
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 3 min
@@ -42,7 +43,6 @@ Tests:
     8
 """
 
-# Given
 SECOND = 1
 
 b = 1

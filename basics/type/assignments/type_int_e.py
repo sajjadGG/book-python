@@ -1,5 +1,6 @@
 """
 * Assignment: Type Int Time
+* Status: required
 * Complexity: easy
 * Lines of code: 12 lines
 * Time: 8 min
@@ -55,7 +56,6 @@ Tests:
     176
 """
 
-# Given
 SECOND = 1
 MINUTE = 60 * SECOND
 HOUR = 60 * MINUTE

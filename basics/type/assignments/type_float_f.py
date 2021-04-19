@@ -1,5 +1,6 @@
 """
 * Assignment: Type Float Pressure
+* Status: optional
 * Complexity: medium
 * Lines of code: 2 lines
 * Time: 3 min
@@ -35,7 +36,6 @@ Tests:
     296.5
 """
 
-# Given
 Pa = 1
 hPa = 100 * Pa
 kPa = 1000 * Pa

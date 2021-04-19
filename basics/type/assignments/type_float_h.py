@@ -1,5 +1,6 @@
 """
 * Assignment: Type Float Gradient
+* Status: optional
 * Complexity: hard
 * Lines of code: 7 lines
 * Time: 8 min
@@ -52,15 +53,18 @@ Tests:
     7088.63
 """
 
-# Given
 PERCENT = 100
+N2 = 78.084 / PERCENT
+O2 = 20.946 / PERCENT
+Ar = 0.9340 / PERCENT
+CO2 = 0.0407 / PERCENT
+Others = 0.001 / PERCENT
+
 m = 1
 Pa = 1
 hPa = 100 * Pa
-
-ata = 1013.25 * hPa  # float: pressure at sea level
-O2 = 20.946 / PERCENT
-pO2 = O2 * ata  # float: oxygen partial pressure
+ata = 1013.25 * hPa
+pO2 = O2 * ata
 
 gradient = ...  # float: 11.3 Pascals per meter
 altitude = ...  # float: pressure at sea level minus oxygen partial pressure divided by gradient

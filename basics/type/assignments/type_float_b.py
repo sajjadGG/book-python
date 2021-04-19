@@ -1,5 +1,6 @@
 """
 * Assignment: Type Float Altitude
+* Status: required
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
@@ -37,7 +38,6 @@ Tests:
     10000.0
 """
 
-# Given
 m = 1
 ft = 0.3048 * m
 

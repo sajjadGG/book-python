@@ -1,5 +1,6 @@
 """
 * Assignment: Type None
+* Status: required
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min
