@@ -13,7 +13,7 @@ English:
        b. first line: This is first line of a multiline comment
        c. second line: This is second line of a multiline comment
     3. Add third comment:
-       a. inline comment to `name` variable
+       a. inline comment to `left_alone_on_mars` variable
        b. content: Space Pirate
     4. Run tests and check if solution is correct
 
@@ -26,7 +26,7 @@ Polish:
        b. pierwsza linia: This is first line of a multiline comment
        c. druga linia: This is second line of a multiline comment
     3. Dodaj trzeci komentarz:
-       a. komentarz na końcu linii
+       a. komentarz na końcu linii definicji zmiennej `left_alone_on_mars`
        b. treść: Space Pirate
     4. Uruchom testy i sprawdź czy rozwiązanie jest poprawne
 
@@ -34,8 +34,13 @@ Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert type(left_alone_on_mars) is str, \
-    'Variable `left_alone_on_mars` has invalid type, should be str'
+    >>> result = open(__file__).read()
+
+    >>> assert type(left_alone_on_mars) is str, 'Variable `left_alone_on_mars` has invalid type, should be str'
+    >>> assert '# This is my first Python script' in result, 'Please write proper line comment'
+    >>> assert '# This is first line of a multiline comment' in result, 'Please write proper multiline comment'
+    >>> assert '# This is second line of a multiline comment' in result, 'Please write proper multiline comment'
+    >>> assert "left_alone_on_mars = 'Mark Watney'  # Space Pirate" in result, 'Please write proper inline comment'
 
     >>> left_alone_on_mars
     'Mark Watney'

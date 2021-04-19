@@ -22,11 +22,11 @@ Tests:
 
     >>> 'Hello' in result
     True
+    >>> ' ' in result.strip()
+    True
     >>> 'World' in result
     True
 """
-
-# Given
 
 result = ...  # str: with Hello and World
 

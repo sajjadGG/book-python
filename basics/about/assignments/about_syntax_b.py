@@ -32,8 +32,6 @@ Tests:
     True
 """
 
-# Given
-
 result = ...  # str: with Hello and World in separate lines
 
 # Solution
