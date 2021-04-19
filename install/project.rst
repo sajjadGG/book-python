@@ -28,16 +28,16 @@ katalogu będziesz tworzył/tworzyła rozwiązania do wszystkich zadań.
        projekt - w tym miejscu będziemy przechowywać kod źródłowy [2]
     e. Kliknij `Clone` i zaczekaj na pobranie repozytorium [3]
 
-3. Autoryzacja do `Github`
+3. Autoryzacja do `Github`:
 
     a. Jeżeli zostaniesz zapytany o autoryzację wybierz "Use Token..."
     b. Powinno Cię przekierować na stronę Github:
        https://github.com/settings/tokens/new
     c. Wszystkie opcje powinny być zaznaczone prawidłowo - nic nie zmieniaj
     d. Na dole strony kliknij `Generate token` i zaakceptuj formularz
-    d. Skopiuj token poprzez kliknięcie ikony kopiowania
-    e. Wklej token do PyCharm w oknie w polu `Token`
-    e. Zwróć uwagę, by nie skopiować spacji na końcu tokena (częsty błąd)
+    e. Skopiuj token poprzez kliknięcie ikony kopiowania
+    f. Wklej token do PyCharm w oknie w polu `Token`
+    g. Zwróć uwagę, by nie skopiować spacji na końcu tokena (częsty błąd)
 
 4. Po kilkunastu sekundach w PyCharm powinien otworzyć się projekt
 

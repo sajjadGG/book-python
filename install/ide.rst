@@ -28,6 +28,7 @@ wystarczy.
    d. `PRO` - Professional
 
 2. W lewym menu przejdź na zakładkę `Customize` i następnie `All settings`
+
 3. W menu po lewej wybierz `Version Control` a następnie `Git`:
 
     a. Zmień `Update Method` na `Rebase` (to jest bardzo ważne)

@@ -14,6 +14,8 @@ są kontynuacją poprzedniej linii. Linie poniżej wyświetlają oczekiwany wyni
 Doctesty muszą znajdować się w pierwszym wieloliniowym ciągu znaków w pliku,
 funkcji lub klasie. Przykład:
 
+.. code-block:: python
+
     """
     >>> x = 1
     >>> y = 2
@@ -21,7 +23,7 @@ funkcji lub klasie. Przykład:
     3
     """
 
-1. W swoim katalogu stwórz plik ``about_python.py``
+1. W swoim katalogu stwórz plik ``about_python.py``:
 
     a. Kliknij prawym klawiszem myszy na swój katalog
     b. Z menu wybierz `New` a następnie `File`
@@ -53,12 +55,12 @@ funkcji lub klasie. Przykład:
 4. Alternatywnie możesz uruchomić doctest, przez wybranie z górnego menu
    -> `Run` -> `Run...` -> `Doctest in about_python`
 
-5. Test musi przechodzić (tzn. być na zielono)
+5. Test musi przechodzić (tzn. być na zielono):
 
     a. Po lewej stronie jest haczyk (ptaszek) `Show Passed` [1] - zaznacz go
     b. Po prawej stronie kliknij na ikonę trybiku -> `Move to` -> `Right Top`
 
-6. Panel doctestów powinien otworzyć się po prawej
+6. Panel doctestów powinien otworzyć się po prawej:
 
     a. Wyniki doctestów są w panelu po prawej stronie u góry [1]
     b. W treści pliku powinien być napis ``Your Python version: ...``
