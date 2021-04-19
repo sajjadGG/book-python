@@ -51,6 +51,7 @@ Setup
     install/ide.rst
     install/project.rst
     install/doctest.rst
+    install/git.rst
 
 
 References

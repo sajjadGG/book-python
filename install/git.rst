@@ -1,5 +1,5 @@
-Install Push
-============
+Install Git
+===========
 
 
 Polish
@@ -34,7 +34,8 @@ tzw. `push`.
     c. Ewentualnie użyj skrótu klawiszowego: `ctrl+shift+k` na Windows i Linux,
        lub `cmd+shift+k` na macOS
     d. Po dziesięciu sekundach zmiany powinny być zapisane i wypchnięte
-       (powiadomi Cię o tym komunikat w prawym dolnym rogu - `Push successful`)
+       (powiadomi Cię o tym komunikat w prawym dolnym rogu -
+       `Pushed 1 commit to origin/master`)
 
 4. Ściągnięcie zmian z Github (``git pull``):
 
@@ -57,13 +58,13 @@ tzw. `push`.
 
 Figures
 -------
-.. figure:: img/install-pycharm-push-1a.png
-.. figure:: img/install-pycharm-push-1b.png
-.. figure:: img/install-pycharm-push-2.png
-.. figure:: img/install-pycharm-push-3a.png
-.. figure:: img/install-pycharm-push-3b.png
-.. figure:: img/install-pycharm-push-4a.png
-.. figure:: img/install-pycharm-push-4b.png
-.. figure:: img/install-pycharm-push-4c.png
-.. figure:: img/install-pycharm-push-4d.png
-.. figure:: img/install-pycharm-push-4e.png
+.. figure:: img/install-git-1a.png
+.. figure:: img/install-git-1b.png
+.. figure:: img/install-git-2.png
+.. figure:: img/install-git-3a.png
+.. figure:: img/install-git-3b.png
+.. figure:: img/install-git-4a.png
+.. figure:: img/install-git-4b.png
+.. figure:: img/install-git-4c.png
+.. figure:: img/install-git-4d.png
+.. figure:: img/install-git-4e.png
