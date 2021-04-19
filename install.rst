@@ -7,7 +7,6 @@ Requirements
 * `[Zainstaluj] <https://www.python.org/downloads/>`_
   Python w wersji 3.7, 3.8 lub 3.9 (preferowany) [#DownloadPython]_
 
-
 * `[Załóż] <https://github.com/join>`_
   konto na Github (potwierdzone mailem) [#GithubJoin]_
 
