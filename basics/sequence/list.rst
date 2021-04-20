@@ -9,10 +9,16 @@ Rationale
 
 Definition
 ----------
-Defining empty list with ``[]`` is used more often, but ``list()`` is more explicit:
+Defining empty list with ``[]`` is used more often, but ``list()`` is more
+explicit:
 
 >>> data = list()
 >>> data = []
+
+Comma after last element is optional:
+
+>>> data = [1]
+>>> data = [1,]
 
 Can store elements of any types:
 
@@ -25,16 +31,6 @@ Can store elements of any types:
 Brackets are required
 
 >>> data = [1, 2, 3]
-
-Comma after last element of a one element list is optional
-
->>> data = [1,]
->>> type(data)
-<class 'list'>
-
->>> data = [1]
->>> type(data)
-<class 'list'>
 
 
 Type Casting
@@ -113,14 +109,24 @@ Append
 * ``list.extend()``
 * ``list.append()``
 
->>> data = [1, 2]
->>> data = data + [3, 4]
->>>
->>> print(data)
+>>> [1, 2, 3] + [4, 5, 6]
+[1, 2, 3, 4, 5, 6]
+
+>>> [1, 2, 3] + 4
+Traceback (most recent call last):
+TypeError: can only concatenate list (not "int") to list
+
+>>> [1, 2, 3] + [4]
 [1, 2, 3, 4]
 
->>> data = [1, 2]
->>> data += [3, 4]
+>>> data = [1, 2, 3]
+>>> data = data + [4, 5, 6]
+>>>
+>>> print(data)
+[1, 2, 3, 4, 5, 6]
+
+>>> data = [1, 2, 3]
+>>> data += [4, 5, 6]
 >>>
 >>> print(data)
 [1, 2, 3, 4]
@@ -163,33 +169,36 @@ Insert
 
 Sort vs Sorted
 --------------
-Timsort is a hybrid stable sorting algorithm, derived from merge sort and insertion sort, designed to perform well on many kinds of real-world data. It was implemented by Tim Peters in 2002 for use in the Python programming language. The algorithm finds subsequences of the data that are already ordered (runs) and uses them to sort the remainder more efficiently. This is done by merging runs until certain criteria are fulfilled. Timsort has been Python's standard sorting algorithm since version 2.3. It is also used to sort arrays of non-primitive type in Java SE 7, on the Android platform, in GNU Octave, on V8, Swift, and Rust. [#timsort]_
+Timsort is a hybrid stable sorting algorithm, derived from merge sort and
+insertion sort, designed to perform well on many kinds of real-world data. It
+was implemented by Tim Peters in 2002 for use in the Python programming
+language. The algorithm finds subsequences of the data that are already
+ordered (runs) and uses them to sort the remainder more efficiently. This is
+done by merging runs until certain criteria are fulfilled. Timsort has been
+Python's standard sorting algorithm since version 2.3. It is also used to
+sort arrays of non-primitive type in Java SE 7, on the Android platform, in
+GNU Octave, on V8, Swift, and Rust. [#timsort]_
 
 * Worst-case performance: :math:`O(n\log{n})`
-* Best-case performance:	:math:`O(n)`
+* Best-case performance: :math:`O(n)`
 * Average performance: :math:`O(n\log{n})`
 * Worst-case space complexity: :math:`O(n)`
 
 * ``sorted()`` - Returns sorted list, do not modify the original
-* ``list.sort()`` - Changes object permanently, returns None
+* ``list.sort()`` - Changes object permanently, returns ``None``
 
->>> a = [3, 1, 2]
->>> b = sorted(a)
->>>
->>> print(a)
-[3, 1, 2]
->>>
->>> print(b)
+>>> data = [3, 1, 2]
+>>> sorted(data)
 [1, 2, 3]
 
->>> a = [3, 1, 2]
->>> b = a.sort()
->>>
->>> print(a)
+>>> data = [3, 1, 2]
+>>> data.sort()
+>>> data
 [1, 2, 3]
->>>
->>> print(b)
-None
+
+>>> data = ['a', 'c', 'b']
+>>> sorted(data)
+['a', 'b', 'c']
 
 
 Method Chaining
@@ -235,6 +244,12 @@ True
 >>> all(data)
 False
 
+>>> data = ['a', 'c', 'b']
+>>>
+>>> min(data)
+'a'
+>>> max(data)
+'c'
 
 Assignments
 -----------
