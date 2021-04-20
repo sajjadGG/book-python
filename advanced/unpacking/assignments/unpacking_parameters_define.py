@@ -8,13 +8,13 @@ English:
     1. Create function `mean()`, which calculates arithmetic mean
     2. Function can have arbitrary number of positional arguments
     3. Do not import any libraries and modules
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Napisz funkcję `mean()`, wyliczającą średnią arytmetyczną
     2. Funkcja przyjmuje dowolną ilość pozycyjnych argumentów
     3. Nie importuj żadnych bibliotek i modułów
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `sum(...) / len(...)`

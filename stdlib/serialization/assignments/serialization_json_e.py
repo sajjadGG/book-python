@@ -11,7 +11,7 @@ English:
     3. Model data as class `User`
     4. Iterate over records and create instances of this class
     5. Collect all instances to one list
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     3. Zamodeluj dane za pomocą klasy `User`
     4. Iterując po rekordach twórz instancje tej klasy
     5. Zbierz wszystkie instancje do jednej listy
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)

@@ -9,14 +9,14 @@ English:
     2. Create class `Point` with `x`, `y`, `z` attributes
     3. Prevent creation of new attributes
     4. Allow to modify values of `x`, `y`, `z`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Stwórz klasę `Point` z atrybutami `x`, `y`, `z`
     3. Zablokuj tworzenie nowych atrybutów
     4. Zezwól na modyfikowanie wartości `x`, `y`, `z`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> pt = Point(1, 2, 3)

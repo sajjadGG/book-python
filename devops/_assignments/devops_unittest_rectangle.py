@@ -6,9 +6,11 @@
 
 English:
     1. Write unittest for `Rectangle`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Napisz testy jednostkowe dla `Rectangle`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 """
 
 

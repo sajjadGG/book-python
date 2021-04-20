@@ -11,7 +11,7 @@ English:
     4. Separate features from label
     5. Call `mean()` method of `Stats` class passing list of features
     6. Define `result: list[float]` with list of means from each row
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Rozdziel cechy od etykiety
     5. Wywołuj metodę `mean()` klasy `Stats` przekazując listę features
     6. Zdefiniuj `result: list[float]` z listą średnich każdego z wierszy
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `round()`

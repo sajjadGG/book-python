@@ -16,7 +16,7 @@ English:
         b. going left subtract from `x`
         c. going up subtract from `y`
         d. going down add to `y`
-    8. Compare result with "Tests" section (see below)
+    8. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj klasę `Point`
@@ -30,7 +30,7 @@ Polish:
         b. idąc w lewo odejmujesz `x`
         c. idąc w górę odejmujesz `y`
         d. idąc w dół dodajesz `y`
-    8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    8. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass, ismethod

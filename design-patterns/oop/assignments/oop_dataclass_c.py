@@ -18,7 +18,7 @@ English:
     6. Do not create additional classes to represent `permission` filed, leave it as `list[dict]`
     6. Iterate over records and create instances of this class
     7. Collect all instances to `result: list[User]`
-    8. Compare result with "Tests" section (see below)
+    8. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -34,7 +34,7 @@ Polish:
     6. Nie twórz dodatkowych klas do reprezentacji pola `permission`, niech zostanie jako `list[dict]`
     7. Iterując po rekordach twórz instancje tej klasy
     8. Zbierz wszystkie instancje do `result: list[User]`
-    9. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    9. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE

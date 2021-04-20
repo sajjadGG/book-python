@@ -8,13 +8,13 @@ English:
     1. Use data from "Given" section (see below)
     2. Define class `Setosa` implementing `IrisInterface`
     3. Implement interface
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Stwórz klasę `Setosa` implementującą `IrisInterface`
     3. Zaimplementuj interfejs
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `vars(self).values()`

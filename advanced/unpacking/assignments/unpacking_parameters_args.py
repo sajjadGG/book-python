@@ -11,7 +11,7 @@ English:
     4. Return `True` if all arguments are `int` or `float` only
     5. Return `False` if any argument is different type
     6. Do not use `all()` and `any()`
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Stwórz funkcję `isnumeric`
@@ -20,7 +20,7 @@ Polish:
     4. Zwróć `True` jeżeli wszystkie argumenty są tylko typów `int` lub `float`
     5. Zwróć `False` jeżeli którykolwiek jest innego typu
     6. Nie używaj `all()` oraz `any()`
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `isinstance(obj, (type1, type2))`

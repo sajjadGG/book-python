@@ -10,7 +10,7 @@ English:
     3. Coordinates are in cartesian system
     4. Points `a` and `b` are in two dimensional space
     5. Calculate distance between points using Euclidean algorithm
-    6. Function must pass `doctest`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Input" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     3. Koordynaty są w systemie kartezjańskim
     4. Punkty `a` i `b` są w dwuwymiarowej przestrzeni
     5. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    6. Funkcja musi przechodzić `doctest`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> a = (1, 0)

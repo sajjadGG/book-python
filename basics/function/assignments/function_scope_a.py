@@ -10,7 +10,7 @@ English:
     3. Define function `sumif(features, label)`
     4. Function sums `features`, only when `label` is in `SELECT`
     5. When `label` is not in `select` return `0` (zero)
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     3. Zdefiniuj funkcję `sumif(features, label)`
     4. Funkcja sumuje `features`, tylko gdy `label` jest w `SELECT`
     5. Gdy `label` nie występuje w `select` zwróć `0` (zero)
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

@@ -11,7 +11,7 @@ English:
     4. Method takes `data: list[float]` as an argument
     5. Method returns arithmetic mean of the `data`
     6. Returned value must me rounded to one decimal places
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Metoda przyjmuje `data: list[float]` jako argument
     5. Metoda zwraca średnią arytmetyczną z `data`
     6. Zwracana wartość ma być zaokrąglona do jednego miejsca po przecinku
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `round()`

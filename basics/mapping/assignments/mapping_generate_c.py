@@ -1,20 +1,19 @@
 """
 * Assignment: Mapping Generate Zip
+* Status: required
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Create `result: dict`
-    3. Using `zip()` convert data to `dict` and assign to `result`
-    4. Compare result with "Tests" section (see below)
+    1. Define `result: dict`
+    2. Using `zip()` convert data to `dict` and assign to `result`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz `result: dict`
-    3. Używając `zip()` przekonwertuj dane do `dict` i przypisz do `result`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Zdefiniuj `result: dict`
+    2. Używając `zip()` przekonwertuj dane do `dict` i przypisz do `result`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)
@@ -41,12 +40,10 @@ Tests:
      'Species': 'virginica'}
 """
 
-
-# Given
 KEYS = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
 VALUES = [5.8, 2.7, 5.1, 1.9, 'virginica']
 
-result = ...  # dict from zipped KEYS and VALUES
+result = ...  # dict[str,float|str]: converted zipped KEYS and VALUES
 
 # Solution
 result = dict(zip(KEYS, VALUES))

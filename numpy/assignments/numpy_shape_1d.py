@@ -9,12 +9,14 @@ English:
     2. Define `result_ravel` with result of flattening `DATA` using `.ravel()` method
     2. Define `result_flatten` with result of flattening `DATA` using `.flatten()` method
     3. Define `result_reshape` with result of reshaping `DATA` into 1x9
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zdefiniuj `result_ravel` z wynikiem spłaszczenia `DATA` używając metody `.ravel()`
     2. Zdefiniuj `result_flatten` z wynikiem spłaszczenia `DATA` używając metody `.flatten()`
     3. Zdefiniuj `result_reshape` z wynikiem zmiany kształtu `DATA` na 1x9
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result_ravel) is np.ndarray

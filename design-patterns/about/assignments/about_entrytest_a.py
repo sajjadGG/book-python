@@ -10,7 +10,7 @@ English:
     3. Convert `DATA` from `list[tuple]` to `list[dict]`
         a. key - name from the header
         b. value - numerical value or species name
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
         a. klucz - nazwa z nagłówka
         b. wartość - wartość numeryczna lub nazwa gatunku
     3. Przekonwertuj `DATA` z `list[tuple]` do `list[dict]`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> assert type(result) is list, \

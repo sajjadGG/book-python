@@ -11,7 +11,7 @@ English:
     4. Non-functional requirements:
         a. Use `,` to separate fields
         b. Use `;` to separate columns
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Wymagania niefunkcjonalne:
         b. Użyj `,` do oddzielenia pól
         b. Użyj `;` do oddzielenia kolumn
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE

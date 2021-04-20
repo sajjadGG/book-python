@@ -8,13 +8,13 @@ English:
     1. Use data from "Given" section (see below)
     2. Iterate over data splitting `*features` from `label`
     3. Define `result: list[str]` with species names ending with "ca" or "osa"
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Iteruj po danych rozdzielając `*features` od `label`
     3. Zdefiniuj `result: list[str]` z nazwami gatunków kończącymi się na "ca" lub "osa"
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `str.endswith()`

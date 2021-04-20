@@ -11,7 +11,7 @@ English:
         a. key - name from the header
         b. value - measurement or species
     4. Write structure to file `iris_serialize.json` in JSON format
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
         a. klucz - nazwa z nagłówka
         b. wartość - wyniki pomiarów lub gatunek
     4. Zapisz strukturę do pliku `iris_serialize.json` w formacie JSON
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)

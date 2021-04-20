@@ -10,7 +10,7 @@ English:
         b. `y: int` with default value `0`
     2. Use Dataclass to define class `Path` with attributes:
         a. `points: list[Point]` with default empty list
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Użyj Dataclass do zdefiniowania klasy `Point` z atrybutami:
@@ -18,7 +18,7 @@ Polish:
         b. `y: int` z domyślną wartością `0`
     2. Użyj Dataclass do zdefiniowania klasy `Path` z atrybutami:
         a. `points: list[Point]` z domyślną pustą listą
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

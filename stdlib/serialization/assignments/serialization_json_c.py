@@ -9,14 +9,14 @@ English:
     2. Save data to file in JSON format
     3. Read data from file
     4. Recreate data structure
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zapisz dane do pliku w formacie JSON
     3. Odczytaj dane z pliku
     4. Odtwórz strukturę danych
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

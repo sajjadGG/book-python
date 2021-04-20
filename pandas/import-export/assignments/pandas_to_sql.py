@@ -9,12 +9,14 @@ English:
     2. Read data from `DATA` as `result: pd.DataFrame`
     3. Select 146 head rows, and last 11 from it
     4. Export data from column `Event` to database `FILE` to table `apollo11`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Wczytaj dane z `DATA` jako `result: pd.DataFrame`
     3. Wybierz pierwszych 146 wierszy, a z nich ostatnie 11
     4. Wyeksportuj dane z kolumny `Event` do bazy danych `FILE` do tabeli `apollo11`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> db = sqlite3.connect(FILE)

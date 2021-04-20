@@ -10,7 +10,7 @@ English:
     3. Define method `add` in class `Calculator`
     4. Method `add` take `a` and `b` as arguments
     5. Method returns sum of `a` and `b`
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     3. Zdefiniuj metodę `add` w klasie `Calculator`
     4. Metoda `add` przyjmuje `a` i `b` jako argumenty
     5. Metoda zwraca sumę `a` i `b`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass, ismethod

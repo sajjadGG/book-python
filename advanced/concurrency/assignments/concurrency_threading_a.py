@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Stwórz kolejkę `queue` do której dodasz różne polecenia systemowe do wykonania, np.:
@@ -15,6 +16,7 @@ Polish:
     3. Wątki powinny być uruchamiane jako `subprocess.run()` w systemie operacyjnym z timeoutem równym `TIMEOUT = 2.0` sekundy
     4. Ilość poleceń może się zwiększać w miarę wykonywania zadania.
     5. Wątki mają być uruchomione w tle (ang. `daemon`)
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 :Extra task:
     1. Wątki powinny być uśpione za pomocą `Timer` przez `DELAY = 5.0` sekund, a następnie ruszyć do roboty

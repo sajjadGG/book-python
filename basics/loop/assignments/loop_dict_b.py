@@ -1,5 +1,6 @@
 """
 * Assignment: Loop Dict To List
+* Status: required
 * Complexity: medium
 * Lines of code: 4 lines
 * Time: 5 min
@@ -9,14 +10,14 @@ English:
     2. Print `list[dict]`:
         a. key - name from the header
         b. value - measurement or species
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Wypisz `list[dict]`:
         a. klucz - nazwa z nagłówka
         b. wartość - wyniki pomiarów lub gatunek
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys

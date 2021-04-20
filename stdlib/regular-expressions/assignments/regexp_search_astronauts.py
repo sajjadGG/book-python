@@ -14,6 +14,7 @@ English:
         c. Michael Collins
         d. Jan Twardowski
         e. Mark Watney
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -24,6 +25,7 @@ Polish:
         c. Michael Collins
         d. Jan Twardowski
         e. Mark Watney
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result['armstrong']

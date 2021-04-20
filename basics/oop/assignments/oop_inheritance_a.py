@@ -8,11 +8,13 @@ English:
     1. Use data from "Given" section (see below)
     2. Create class `Woman` which inherits from `Venus`
     3. Create class `Man` which inherits from `Mars`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Stwórz klasę `Woman`, która dziedziczy po `Venus`
     3. Stwórz klasę `Man`, która dziedziczy po `Mars`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

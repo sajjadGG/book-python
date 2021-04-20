@@ -12,6 +12,7 @@ Dragon (version release candidate)
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Dodaj możliwość poruszania się smoka i bohatera w 3 wymiarach
@@ -30,4 +31,5 @@ Polish:
     9. Bohater nie może zadawać obrażeń jak jest dalej niż 50 punktów od przeciwnika
     10. Wszystkie istoty mogą levelować a bazowe punty życia i obrażeń się zmieniają z poziomem
     11. Przeprowadź symulację walki. Kto zginie pierwszy?
+    X. Uruchom doctesty - wszystkie muszą się powieść
 

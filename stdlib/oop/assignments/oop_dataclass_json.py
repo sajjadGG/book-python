@@ -12,7 +12,7 @@ English:
     5. Parse fields with `true` and `false` values and store as `bool` objects
     6. Iterate over records and create instances of this class
     7. Collect all instances to one list
-    8. Compare result with "Tests" section (see below)
+    8. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -22,7 +22,7 @@ Polish:
     5. Sparsuj pola zawierające `true` lub `false` i zapamiętaj ich wartości jako obiekty `bool`
     6. Iterując po rekordach twórz instancje tej klasy
     7. Zbierz wszystkie instancje do jednej listy
-    8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    8. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE

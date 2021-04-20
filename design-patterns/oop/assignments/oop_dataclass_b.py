@@ -10,7 +10,7 @@ English:
         a. Create class definition, fields and their types
         b. Do not write code converting `DATA` to your classes
     3. Fields should have deafault value set to empty `str`
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
         a. Stwórz definicję klas, pól i ich typów
         b. Nie pisz kodu konwertującego `DATA` do Twoich klas
     3. Pola mają mieć wartość domyślną pusty `str`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

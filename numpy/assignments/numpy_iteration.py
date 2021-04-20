@@ -8,11 +8,13 @@ English:
     1. Use data from "Given" section (see below)
     2. Use `for` to iterate over `DATA`
     3. Define `result: list[int]` with even numbers from `DATA`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Używając `for` iteruj po `DATA`
     3. Zdefiniuj `result: list[int]` z liczbami parzystymi z `DATA`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `number % 2 == 0`

@@ -7,12 +7,12 @@
 English:
     1. Use list comprehension
     2. Generate `result: list[int]` of even numbers from 5 to 20 (without 20)
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Użyj rozwinięcia listowego
     2. Wygeneruj `result: list[int]` parzystych liczb z przedziału 5 do 20 (bez 20)
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> assert type(result) is list

@@ -8,13 +8,13 @@ English:
     1. Use data from "Given" section (see below)
     2. Modify decorator `disable`
     3. Decorator raises an exception `PermissionError` and does not execute function
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
     2. Zmodyfikuj dekorator `disable`
     3. Dekorator podnosi wyjątek `PermissionError` i nie wywołuje funkcji
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

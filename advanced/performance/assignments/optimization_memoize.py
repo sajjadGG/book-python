@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,6 +19,7 @@ Polish:
         a. jeżeli tak, to zwraca dane z `CACHE`
         b. jeżeli nie, to oblicza, aktualizuje `CACHE`, a następnie zwraca wartość
     6. Porównaj prędkość działania
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     TODO: Doctests

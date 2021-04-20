@@ -7,12 +7,12 @@
 English:
     1. Define function which takes sequence of integers as an argument
     2. Sum only even numbers
-    3. Print returned value
+    3. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj funkcję biorącą sekwencję liczb całkowitych jako argument
     2. Zsumuj tylko parzyste liczby
-    3. Wypisz zwróconą wartość
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

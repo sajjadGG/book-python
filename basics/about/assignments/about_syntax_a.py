@@ -6,9 +6,11 @@
 
 English:
     1. Define `result` with text 'Hello World'
+    X. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj zmienną `result` z tekstem 'Hello World'
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:
     * Either quotes (") or apostrophes (') will work

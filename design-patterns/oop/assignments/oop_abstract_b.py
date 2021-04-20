@@ -7,12 +7,12 @@
 English:
     1. Define abstract class `IrisAbstract`
     3. Abstract methods: `__init__`, `sum()`, `len()`, `mean()`
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj klasę abstrakcyjną `IrisAbstract`
     3. Metody abstrakcyjne: `__init__`, `sum()`, `len()`, `mean()`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isabstract

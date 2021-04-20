@@ -13,7 +13,7 @@ English:
         a. argument name
         b. actual type
         c. expected type
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -24,7 +24,7 @@ Polish:
         a. nazwa argumentu
         b. aktualny typ
         c. oczekiwany typ
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `echo.__annotations__`

@@ -10,8 +10,7 @@ English:
     3. Second argument is optional
     4. Function returns power of the first argument to the second
     5. If only one argument was passed, consider second equal to the first one
-    6. Print returned values
-    7. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj funkcję `power`
@@ -19,8 +18,7 @@ Polish:
     3. Drugi argument jest opcjonalny
     4. Funkcja zwraca wynik pierwszego argumentu do potęgi drugiego
     5. Jeżeli tylko jeden argument był podany, przyjmij drugi równy pierwszemu
-    6. Wypisz zwracane wartości
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

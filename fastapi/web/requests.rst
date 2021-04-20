@@ -284,6 +284,7 @@ REST API
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Załóż darmowe konto na Github i potwierdź email
@@ -296,6 +297,7 @@ Polish:
     8. Przeglądnij to repozytorium i jego listę komitów
     9. Podaj datę i opis ostatniego komita
     10. Znajdź numery ID tiketów (``Fixed #...``) z issue trackera, które zostały rozwiązane w ostatnim miesiącu
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     .. code-block:: console

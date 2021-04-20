@@ -1,40 +1,44 @@
 """
 * Assignment: Mapping Dict Get
+* Status: optional
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Create translator of pilot's alphabet
-    3. Each letter has it's phonetic counterpart
-    4. Ask user to input letter
-    5. User will always put only one capitalized letter or number
-    6. Print phonetic letter pronunciation
-    7. If user type character not existing in alphabet, print: "Pilots don't say that"
-    8. Do not use `if`, `try`, and `except`
+    1. Create translator of pilot's alphabet
+    2. Each letter has it's phonetic counterpart
+    3. Ask user to input letter
+    4. User will always put only one capitalized letter or number
+    5. Define `result: str` with phonetic letter pronunciation
+    6. If user type character not existing in alphabet, print: "Pilots don't say that"
+    7. Do not use `if`, `try`, and `except`
+    8. `MagicMock` will simulate inputting a letter by user
+    9. Use `input()` function as normal
+    X. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz tłumacza alfabetu pilotów
-    3. Pojedynczym literom przyporządkuj ich fonetyczne odpowiedniki
-    4. Poproś użytkownika o wprowadzenie litery
-    5. Użytkownik zawsze poda tylko jedną dużą literę lub cyfrę
-    6. Wypisz fonetyczną wymowę litery
-    7. Jeżeli wpisał znak, który nie występuje w alfabecie, wypisz: "Pilots don't say that"
-    8. Nie używaj `if`, `try` ani `except`
+    1. Stwórz tłumacza alfabetu pilotów
+    2. Pojedynczym literom przyporządkuj ich fonetyczne odpowiedniki
+    3. Poproś użytkownika o wprowadzenie litery
+    4. Użytkownik zawsze poda tylko jedną dużą literę lub cyfrę
+    5. Zdefiniuj `result: str` z fonetyczną wymową litery
+    6. Jeżeli wpisał znak, który nie występuje w alfabecie, wypisz: "Pilots don't say that"
+    7. Nie używaj `if`, `try` ani `except`
+    8. `MagicMock` zasymuluje wpisanie litery przez użytkownika
+    9. Skorzytaj z funkcji `input()` tak jak normalnie
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result
     'Mike'
 """
 
-# Mock input() built-in function
+# `MagicMock` will simulate inputting of a letter by user
 from unittest.mock import MagicMock
 input = MagicMock(return_value='M')
 
 
-# Given
 ALPHABET = {
     'A': 'Alfa',
     'B': 'Bravo',
@@ -63,8 +67,8 @@ ALPHABET = {
     'Z': 'Zulu',
 }
 
-letter = ...  # str with letter from user
-result = ...  # str with converted letter to Pilot alphabet or "Pilots don't say that"
+letter = ...  # str: with letter from user
+result = ...  # str: with converted letter to Pilot alphabet or "Pilots don't say that"
 
 # Solution
 letter = input('Type letter: ')

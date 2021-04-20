@@ -11,6 +11,7 @@ English:
     4. Read labels from the first row
     5. Replace data in `label` column with values extracted above
     6. Define `result: pd.DataFrame` with 20 first rows
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -19,6 +20,7 @@ Polish:
     4. Wczytaj nazwy labeli z pierwszego wiersza
     5. Podmień dane w kolumnie `label` na wartości wyciągnięte powyżej
     6. Zdefiniuj `result: pd.DataFrame` z 20stoma pierwszymi wierszami
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `hader = pd.read_csv(url, nrows=0).columns`

@@ -12,6 +12,7 @@ English:
     5. Mind the encoding
     6. Substitute Polish Diacritics to English alphabet letters
     7. Compare `df.replace(regex=True)` with `df.applymap()`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -21,6 +22,7 @@ Polish:
     5. Zwróć uwagę na encoding
     6. Podmień polskie znaki diakrytyczne na litery z alfabetu angielskiego
     7. Porównaj `df.replace(regex=True)` z `df.applymap()`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is pd.DataFrame

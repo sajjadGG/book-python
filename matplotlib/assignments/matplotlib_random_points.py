@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Wygeneruj 100 losowych punktów:
@@ -27,6 +28,7 @@ Polish:
     11. Czy dwa wykresy są takie same?
     12. Co się stanie jeżeli będziemy zwiększali odchylenie standardowe przy generacji punktów?
     13. Albo przybliżymy do siebie punkty A i B?
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * argument `color='red'` w funkcji `plt.plot`

@@ -6,6 +6,7 @@
 
 English:
     TODO: Translate to English
+    X. Run doctests - all must succeed
 
 Polish:
     1. Na podstawie podanych URL:
@@ -17,6 +18,7 @@ Polish:
     3. Połącz dane wykorzystując `pd.concat`
     4. Przygotuj plik `CSV` z danymi dotyczącymi spacerów kosmicznych
     5. Zapisz dane do pliku
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> pd.set_option('display.width', 500)

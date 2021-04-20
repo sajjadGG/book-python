@@ -655,6 +655,7 @@ Recursive folders walking
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Sprawdź czy katalog "Python" już istnieje na pulpicie w Twoim systemie
@@ -670,6 +671,7 @@ Polish:
     7. Ścieżkę do powyższego pliku ``README`` skonstruuj za pomocą ``os.path.join()``
     8. Ścieżka ma być względna w stosunku do pliku, który aktualnie jest uruchamiany
     9. Jeżeli po przeszukaniu całego Pulpitu rekurencyjnie skrypt nie znajdzie pliku ``LICENSE.rst``, to ma rzucić informację ``logging.critical()`` i wyjść z kodem błędu ``1``.
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * Gdyby był problem ze znalezieniem pliku, a ścieżka jest poprawna to zastosuj ``shell=True``
@@ -696,10 +698,12 @@ Tree
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Za pomocą znaków unicode: "┣━", "┗━" , "┃  "
     2. Wygeneruj wynik przypominający wynik polecenia ``tree``.
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     .. code-block:: text

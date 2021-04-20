@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Opracuj podobny wykres dla danych `DATA`
@@ -13,6 +14,7 @@ Polish:
     3. Species ma być w osi `y`
     4. Na osi `x` ma być `sepal_length`
     5. Czerwony marker opisuje średnią długość `sepal_length` dla wszystkich gatunków
+    X. Uruchom doctesty - wszystkie muszą się powieść
 """
 
 

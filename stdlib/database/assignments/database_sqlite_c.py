@@ -8,13 +8,15 @@ English:
     1. Use data from "Given" section (see below)
     2. Create database and two tables `astronaut` and `address`
     3. Insert data to separate tables
-    4. Print data joining information from both tables
+    4. Join information from both tables
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Stwórz bazę danych i dwie tabele `astronaut` i `address`
     3. Zapisz dane do osobnych tabel
-    4. Wypisz dane łącząc informacje z obu tabel
+    4. Połączącz informacje z obu tabel
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)

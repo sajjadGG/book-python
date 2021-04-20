@@ -8,15 +8,13 @@ English:
     1. Use data from "Given" section (see below)
     2. Define class `GeographicCoordinate`
     3. Use descriptors to check value boundaries
-    4. All tests must pass
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zdefiniuj klasę `GeographicCoordinate`
     3. Użyj deskryptory do sprawdzania wartości brzegowych
-    4. Wszystkie testy muszą przejść
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> place1 = GeographicCoordinate(50, 120, 8000)

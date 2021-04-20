@@ -15,7 +15,7 @@ English:
         c. Use `;` to separate missions
         d. Use Unix `\n` newline
         e. Sort fieldnames
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -28,7 +28,7 @@ Polish:
         c. Użyj `;` do oddzielenia missions
         d. Użyj zakończenia linii Unix `\n`
         e. Posortuj fieldnames
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result = open(FILE).read()

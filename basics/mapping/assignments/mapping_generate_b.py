@@ -1,20 +1,19 @@
 """
 * Assignment: Mapping Generate Enumerate
+* Status: required
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Create `result: dict`
-    3. Using `enumerate()` convert data to `dict` and assign to `result`
-    4. Compare result with "Tests" section (see below)
+    1. Define `result: dict`
+    2. Using `enumerate()` convert data to `dict` and assign to `result`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz `result: dict`
-    3. Używając `enumerate()` przekonwertuj dane do `dict` i przypisz do `result`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Zdefiniu `result: dict`
+    2. Używając `enumerate()` przekonwertuj dane do `dict` i przypisz do `result`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)
@@ -29,11 +28,9 @@ Tests:
      2: 'virginica'}
 """
 
-
-# Given
 DATA = ['setosa', 'versicolor', 'virginica']
 
-result = ...  # dict from DATA enumeration
+result = ...  # dict[int,str]: converted enumeration of DATA
 
 # Solution
 result = dict(enumerate(DATA))

@@ -10,7 +10,7 @@ English:
     3. Name indexes like letters from ASCII alphabet (`ascii_lowercase: str`)
     4. Find middle letter of alphabet
     5. Slice from series 3 elements up and down from middle
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     3. Nazwij indeksy jak kolejne litery alfabetu ASCII (`ascii_lowercase: str`)
     4. Znajdź środkową literę alfabetu
     5. Wytnij z serii po 3 elementy w górę i w dół od wyszukanego środka
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `np.random.randint(..., ..., size=...)`

@@ -8,13 +8,13 @@ English:
     1. Define function `total`
     2. Function parameter is `data` sequence of integers
     3. Function returns sum of all values in sequence
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj funkcję `total`
     2. Parametrem do funkcji jest `data` sekwencja liczb
     3. Funkcja zwraca sumę wszystkich wartości z sekwencji
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

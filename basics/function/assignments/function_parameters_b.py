@@ -9,14 +9,14 @@ English:
     2. Parameter `a` is required
     3. Parameter `b` is required
     4. Return `a` and `b` as a `tuple`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj funkcję `echo` z dwoma parametrami
     2. Parametr `a` jest wymagany
     3. Parametr `b` jest wymagany
     4. zwróć `a` i `b` jako `tuple`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

@@ -170,6 +170,7 @@ English:
     3. There are at least four methods
     4. Discuss pros and cons of each method
     5. Which methods is ACID compliant?
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -177,6 +178,7 @@ Polish:
     3. Są przynajmniej cztery metody
     4. Przeprowadź dyskusję na temat zalet i wad każdej metody
     5. Która metody jest zgodna z ACID?
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Given:
     .. code-block:: text

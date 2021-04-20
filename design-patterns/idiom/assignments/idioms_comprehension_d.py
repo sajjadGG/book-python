@@ -15,7 +15,7 @@ English:
         a. length of `DATA` times given percent (60% = 0.6)
         b. remember, that slice indicies must be `int`, not `float`
         c. for example: if dataset has 10 rows, then 6 rows will be for training, and 4 rows for test
-    4. Compare results with "Tests" section below
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -28,7 +28,7 @@ Polish:
         a. długość `DATA` razy zadany procent (60% = 0.6)
         b. pamiętaj, że indeksy slice muszą być `int` a nie `float`
         c. na przykład: if zbiór danych ma 10 wierszy, to 6 wierszy będzie do treningu, a 4 do testów
-    4. Porównaj wynik z sekcją "Tests" poniżej
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> assert type(features_train) is list

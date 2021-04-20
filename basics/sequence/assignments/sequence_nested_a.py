@@ -1,24 +1,23 @@
 """
 * Assignment: Sequence Nested Create
+* Status: required
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min
 
 English:
-    1. Create nested sequence `result` with elements:
+    1. Create nested list `result` with elements:
         a. tuple: `1`, `2`, `3`
         b. list: `1.1`, `2.2`, `3.3`
         c. set: `'Mark Watney'`, `'Melissa Lewis'`, `'Jan Twardowski'`
-    2. Print `result`
-    3. Print number of elements in `result`
+    X. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz zagnieżdżoną sekwencję `result` z elementami:
+    1. Stwórz zagnieżdżoną listę `result` z elementami:
         a. tuple: `1`, `2`, `3`
         b. list: `1.1`, `2.2`, `3.3`
         c. set: `'Mark Watney'`, `'Melissa Lewis'`, `'Jan Twardowski'`
-    2. Wypisz `result`
-    3. Wypisz liczbę elementów `result`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys
@@ -36,8 +35,7 @@ Tests:
     True
 """
 
-# Given
-result = ...  # list with tuple 1, 2, 3 and list 1.1, 2.2, 3.3 and set 'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'
+result = ...  # list[tuple|list|set]: with tuple 1, 2, 3 and list 1.1, 2.2, 3.3 and set 'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'
 
 # Solution
 result = [

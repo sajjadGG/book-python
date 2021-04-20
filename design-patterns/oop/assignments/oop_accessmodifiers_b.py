@@ -14,7 +14,7 @@ English:
         b. if `species` is "versicolor" append instance of a class `Versicolor`
         c. if `species` is "virginica" append instance of a class `Virginica`
     6. Initialize instances with `features` using `*features` notation
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -26,7 +26,7 @@ Polish:
         b. jeżeli `species` to "versicolor" to dodaj instancję klasy `Versicolor`
         c. jeżeli `species` to "virginica" to dodaj instancję klasy `Virginica`
     6. Instancje inicjalizuj danymi z `features` używając notacji `*features`
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `globals()[classname]`

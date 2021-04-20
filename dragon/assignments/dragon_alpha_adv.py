@@ -54,22 +54,22 @@ English:
         a. This is a simulation of development process
         b. Trainer act as Product Owner with little technical knowledge
         c. You are the software engineer who need to decide and live with
-        consequences of your choices
+           consequences of your choices
         d. Task is a narrative story telling to demonstrate OOP and good
-        engineering practices
+           engineering practices
         e. Calculated last position of the game should be x=20, y=40
         f. You can introduce new fields, methods, functions, variables,
-        constants, classes, objects, whatever you want
+           constants, classes, objects, whatever you want
         g. Don't use modules form outside the Python Standard Library
         h. Task is business requirements specification, not a technical
-        documentation, i.e. "what Dragon has to do, not how to do it"
+           documentation, i.e. "what Dragon has to do, not how to do it"
         i. You don't have to keep order of business specification while
-        writing code
+           writing code
         j. This is `alpha` version, so no new functionality like negative
-        position checking etc.
+           position checking etc.
         k. Do not read solution or any future iterations of this exercise.
         l. If you read future tasks, you will spoil fun and what is the most
-        important: learning.
+           important: learning.
 
 Polish:
     1. Smok ma (atrybuty):
@@ -120,22 +120,22 @@ Polish:
         a. Zadanie jest symulacją procesu developmentu
         b. Trener zachowuje się jak Product Owner z niewielką techniczną wiedzą
         c. Ty jesteś inżynierem oprogramowania, który musi podejmować
-        decyzje i ponosić ich konsekwencje
+           decyzje i ponosić ich konsekwencje
         d. Zadanie jest tylko narracją do demonstracji OOP i dobrych praktyk
-        programowania
+           programowania
         e. Wyliczona pozycja Smoka na końcu gry powinna być x=20, y=40
         f. Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne,
-        stały, klasy, obiekty, co tylko chcesz
+           stały, klasy, obiekty, co tylko chcesz
         g. Nie korzystaj z modułów spoza standardowej biblioteki Pythona
         h. Zadanie jest specyfikacją wymagań biznesowych, a nie dokumentacją
-        techniczną. tj. "co Smok ma robić, a nie jak to ma robić"
+           techniczną. tj. "co Smok ma robić, a nie jak to ma robić"
         i. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
         j. Jest to wersja `alpha` więc bez dodatkowych funkcjonalności (np.
-        sprawdzanie koordynatów, wychodzenia poza planszę itp.)
+           sprawdzanie koordynatów, wychodzenia poza planszę itp.)
         k. Nie przeglądaj rozwiązań ani treści kolejnych (przyszłych) części
-        zadania.
+           zadania.
         l. Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i co
-        najważniejsze naukę.
+           najważniejsze naukę.
 
 Hints:
     * `from random import randint`

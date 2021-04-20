@@ -10,6 +10,7 @@ English:
     3. Function `wrapper` takes `*args` and `**kwargs` as arguments
     4. Function `wrapper` returns `None`
     5. Function `check` must return `wrapper: Callable`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj funkcję `check`, która przyjmuje `func: Callable` jako argument
@@ -17,6 +18,7 @@ Polish:
     3. Funkcja `wrapper` przyjmuje `*args` i `**kwargs` jako argumenty
     4. Funkcja `wrapper` zwraca `None`
     5. Funkcja `check` ma zwracać `wrapper: Callable`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> assert callable(check)

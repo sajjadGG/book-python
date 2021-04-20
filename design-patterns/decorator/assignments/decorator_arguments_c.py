@@ -8,13 +8,13 @@ English:
     1. Use data from "Given" section (see below)
     2. Create decorator function `typecheck`
     3. Decorator checks return type only if `check_return` is `True`
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Stwórz dekorator funkcję `typecheck`
     3. Dekorator sprawdza typ zwracany tylko gdy `check_return` jest `True`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `echo.__annotations__`

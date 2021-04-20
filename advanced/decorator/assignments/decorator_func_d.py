@@ -12,7 +12,7 @@ English:
     4. Decorator will call function, only if all crew members are astronauts
     5. If any member is not an astronaut raise `PermissionError` and print
        his first name and last name
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
@@ -22,7 +22,7 @@ Polish:
     4. Dekorator wywoła funkcję, tylko gdy wszyscy członkowie załogi są astronautami
     5. Jeżeli, jakikolwiek członek nie jest astronautą, podnieś wyjątek
        `PermissionError` i wypisz jego imię i nazwisko
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

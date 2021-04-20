@@ -10,7 +10,7 @@ English:
     4. Using date formatting converts `DATA` to string and assign to `result`
        in american short date format (np. '07/21/69 2:56 AM')
     5. Make sure, that hour is without leading zero
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     4. Używając parametrów formatowania daty przekonwertuj `DATA` do stringa
        i zapisz do `result` w formacie amerykańskim krótkim (np. '07/21/69 2:56 AM')
     5. Upewnij się, że godzina jest bez wiodącego zera
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * Add string `local time` to format statement

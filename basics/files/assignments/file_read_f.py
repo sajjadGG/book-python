@@ -14,7 +14,7 @@ English:
     4. Parse files and convert it to `result: list[dict]`
     5. Return list of users with `UID` greater than 1000
     6. User dict should contains data collected from all files
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -26,7 +26,7 @@ Polish:
     4. Sparsuj plik i przedstaw go w formacie `result: list[dict]`
     5. Zwróć listę użytkowników, których `UID` jest większy niż 1000
     6. Dict użytkownika powinien zawierać dane z wszystkich plików
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE

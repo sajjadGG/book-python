@@ -8,11 +8,13 @@ English:
     1. Use data from "Given" section (see below)
     2. Read data from `DATA` as `data: pd.DataFrame`
     3. Define `result` with active European Space Agency astronauts
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Wczytaj dane z `DATA` jako `data: pd.DataFrame`
     3. Zdefiniuj `result` z aktywnymi astronautami Europejskiej Agencji Kosmicznej
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `pip install --upgrade lxml`

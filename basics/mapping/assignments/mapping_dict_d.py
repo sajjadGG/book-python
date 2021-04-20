@@ -1,22 +1,25 @@
 """
 * Assignment: Mapping Dict Translate
+* Status: optional
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Ask user to input single letter
-    3. Convert to lowercase
-    4. If letter is in `PL` then use conversion value as letter
-    5. Print letter
+    1. Ask user to input single letter
+    2. Convert to lowercase
+    3. If letter is in `PL` then use conversion value as letter
+    4. `MagicMock` will simulate inputting of a letter by user
+    5. Use `input()` function as normal
+    X. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Poproś użytkownika o wprowadzenie jednej litery
-    3. Przekonwertuj literę na małą
-    4. Jeżeli litera jest w `PL` to użyj skonwertowanej wartości jako litera
-    5. Wypisz literę
+    1. Poproś użytkownika o wprowadzenie jednej litery
+    2. Przekonwertuj literę na małą
+    3. Jeżeli litera jest w `PL` to użyj skonwertowanej wartości jako litera
+    4. `MagicMock` zasymuluje wpisanie litery przez użytkownika
+    5. Skorzytaj z funkcji `input()` tak jak normalnie
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Example:
     | Input | Output |
@@ -27,7 +30,6 @@ Example:
     |   Ź   |    z   |
 
 Tests:
-    TODO: Doctests
     >>> type(result)
     <class 'str'>
     >>> result not in PL.keys()
@@ -37,12 +39,11 @@ Tests:
     True
 """
 
-# Mock input() built-in function
+# `MagicMock` will simulate inputting of a letter by user
 from unittest.mock import MagicMock
 input = MagicMock(return_value='ł')
 
 
-# Given
 PL = {
     'ą': 'a',
     'ć': 'c',

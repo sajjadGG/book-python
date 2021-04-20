@@ -10,6 +10,7 @@ English:
     3. Set header and index to data from file
     4. Convert Polish month names to English
     5. Parse dates to `datetime` objects
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -17,6 +18,7 @@ Polish:
     3. Ustaw nagłówek i index na dane zaczytane z pliku
     4. Przekonwertuj polskie nazwy miesięcy na angielskie
     5. Sparsuj daty do obiektów `datetime`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `pd.Series.replace(regex=True)`

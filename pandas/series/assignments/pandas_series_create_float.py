@@ -7,10 +7,12 @@
 English:
     1. Create `result: pd.Series` with 5 float numbers
     2. One of those values must be `None`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Stwórz `result: pd.Series` z 5 liczbami zmiennoprzecinkowymi
     2. Jedną z tych wartości musi być `None`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is pd.Series

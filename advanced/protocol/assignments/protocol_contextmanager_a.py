@@ -10,7 +10,7 @@ English:
     3. `File` must implement Context Manager protocol
     4. `File` buffers lines added using `File.append(text: str)` method
     5. On `with` block exit `File` class creates, opens and write buffer to file
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     3. `File` ma implementować protokół Context Manager
     4. `File` buforuje linie dodawane za pomocą metody `File.append(text: str)`
     5. Na wyjściu z bloku `with` klasa `File` tworzy, otwiera i zapisuje bufor do pliku
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * Append newline character (`\n`) before adding to buffer

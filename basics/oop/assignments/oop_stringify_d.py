@@ -7,12 +7,12 @@
 English:
     1. Use code from "Given" section (see below)
     2. Overload `str` and `repr` to achieve desired printing output
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
     2. Przeciąż `str` i `repr` aby osiągnąć oczekiwany rezultat wypisywania
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * Define `Crew.__str__()`

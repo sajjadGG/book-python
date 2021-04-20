@@ -10,7 +10,7 @@ English:
     3. Create class `Setosa` inheriting from `Iris`
     4. Try to create instance of a class `Setosa`
     5. Try to create instance of a class `Iris`
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Stwórz klasę abstrakcyjną `Iris`
@@ -18,7 +18,7 @@ Polish:
     3. Stwórz klasę `Setosa` dziedziczące po `Iris`
     4. Spróbuj stworzyć instancje klasy `Setosa`
     5. Spróbuj stworzyć instancję klasy `Iris`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> iris = Iris()

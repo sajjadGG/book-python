@@ -1,5 +1,6 @@
 """
 * Assignment: Loop While to Str
+* Status: required
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
@@ -10,7 +11,7 @@ English:
     3. Use `while` to iterate over `DATA`
     4. Add current element of `DATA` to `result`
     5. Do not use `str.join()`
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +19,7 @@ Polish:
     3. Użyj `while` do iterowania po `DATA`
     4. Dodaj obecny element z `DATA` do `result`
     5. Nie używaj `str.join()`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `Stop` or `Ctrl+C` kills infinite loop

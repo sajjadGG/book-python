@@ -13,6 +13,7 @@ English:
         d. element size;
         e. shape;
         f. strides.
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -23,6 +24,7 @@ Polish:
         d. rozmiar elementu,
         e. kształt,
         f. przeskoki (strides).
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is dict

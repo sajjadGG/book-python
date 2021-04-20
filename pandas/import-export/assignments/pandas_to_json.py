@@ -10,6 +10,7 @@ English:
     3. Select 146 head rows, and last 11 from it
     4. Export data from column `Event` to file the `FILE`
     5. Data has to be in JSON format
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -17,6 +18,7 @@ Polish:
     3. Wybierz pierwszych 146 wierszy, a z nich ostatnie 11
     4. Wyeksportuj dane z kolumny `Event` do pliku `FILE`
     5. Dane mają być w formacie JSON
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result = open(FILE).read()

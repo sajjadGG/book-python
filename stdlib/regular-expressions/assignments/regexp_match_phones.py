@@ -11,7 +11,7 @@ English:
     4. Valid phone number formats:
         a. Easy version: `+## ### ### ###`
         b. Harder version: `+## ### ### ###` or `+## ## ### ####`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Poprawne formaty numeru:
         a. Wersja łatwa: `+## ### ### ###`
         b. Wersja trudniejsza: `+## ### ### ###` lub `+## ## ### ####`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> is_valid_phone('+48 (12) 355 5678')

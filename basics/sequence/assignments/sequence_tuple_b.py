@@ -1,22 +1,21 @@
 """
 * Assignment: Sequence Tuple Select
+* Status: required
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Create a `tuple` representing all species
-    3. To convert table use multiline select with `alt` key in your IDE
-    4. Do not use `slice`, `getitem`, `for`, `while` or any other control-flow statement
-    5. Compare result with "Tests" section (see below)
+    1. Define `result: tuple` representing all species
+    2. To convert table use multiline select with `alt` key in your IDE
+    3. Do not use `slice`, `getitem`, `for`, `while` or any other control-flow statement
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz `tuple` z nazwami gatunków
-    3. Do konwersji tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza `alt` w Twoim IDE
-    4. Nie używaj `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Zdefiniuj `result: tuple` z nazwami gatunków
+    2. Do konwersji tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza `alt` w Twoim IDE
+    3. Nie używaj `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `ALT` + `left mouse button` = multiple select
@@ -43,7 +42,6 @@ Tests:
 
 """
 
-# Given
 DATA = [
     'sepal_length,sepal_width,petal_length,petal_width,species',
     '5.8,2.7,5.1,1.9,virginica',
@@ -53,7 +51,7 @@ DATA = [
     '6.4,3.2,4.5,1.5,versicolor',
 ]
 
-result = ...  # define a tuple from header - DATA row with index 0
+result = ...  # tuple[str]: define a tuple with species names
 
 # Solution
 result = ('virginica', 'setosa', 'versicolor', 'virginica', 'versicolor')

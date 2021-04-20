@@ -16,17 +16,17 @@ List of Pairs
 >>> pairs = [
 ...    ('commander', 'Melissa Lewis'),
 ...    ('botanist', 'Mark Watney'),
-...    ('chemist', 'Alex Vogel')]
+...    ('chemist', 'Rick Martinez')]
 >>>
 >>> dict(pairs)  # doctest: +NORMALIZE_WHITESPACE
 {'commander': 'Melissa Lewis',
   'botanist': 'Mark Watney',
-  'chemist': 'Alex Vogel'}
+  'chemist': 'Rick Martinez'}
 
 
 Enumerate
 ---------
->>> crew = ['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
+>>> crew = ['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
 >>> astronaut = enumerate(crew)
 >>>
 >>> next(astronaut)
@@ -34,21 +34,21 @@ Enumerate
 >>> next(astronaut)
 (1, 'Mark Watney')
 >>> next(astronaut)
-(2, 'Alex Vogel')
+(2, 'Rick Martinez')
 >>> next(astronaut)
 Traceback (most recent call last):
 StopIteration
 
->>> crew = ['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
+>>> crew = ['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
 >>>
 >>> list(enumerate(crew))  # doctest: +NORMALIZE_WHITESPACE
 [(0, 'Melissa Lewis'),
  (1, 'Mark Watney'),
- (2, 'Alex Vogel')]
+ (2, 'Rick Martinez')]
 >>> dict(enumerate(crew))  # doctest: +NORMALIZE_WHITESPACE
 {0: 'Melissa Lewis',
  1: 'Mark Watney',
- 2: 'Alex Vogel'}
+ 2: 'Rick Martinez'}
 
 
 Zip
@@ -57,7 +57,7 @@ Zip
 * ``zip`` will create a list of pairs (like ``dict.items()``)
 
 >>> roles = ['commander', 'botanist', 'chemist']
->>> crew = ['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
+>>> crew = ['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
 >>>
 >>> astronaut = zip(roles, crew)
 >>> next(astronaut)
@@ -65,26 +65,42 @@ Zip
 >>> next(astronaut)
 ('botanist', 'Mark Watney')
 >>> next(astronaut)
-('chemist', 'Alex Vogel')
+('chemist', 'Rick Martinez')
 >>> next(astronaut)
 Traceback (most recent call last):
 StopIteration
 
 >>> roles = ['commander', 'botanist', 'chemist']
->>> crew = ['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
+>>> crew = ['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
 >>>
 >>> list(zip(roles, crew))  # doctest: +NORMALIZE_WHITESPACE
 [('commander', 'Melissa Lewis'),
  ('botanist', 'Mark Watney'),
- ('chemist', 'Alex Vogel')]
+ ('chemist', 'Rick Martinez')]
 >>>
 >>> dict(zip(roles, crew))  # doctest: +NORMALIZE_WHITESPACE
 {'commander': 'Melissa Lewis',
  'botanist': 'Mark Watney',
- 'chemist': 'Alex Vogel'}
+ 'chemist': 'Rick Martinez'}
 
 >>> roles = ['commander', 'botanist', 'chemist']
->>> crew = [('Melissa', 'Lewis'), ('Mark', 'Watney'), ('Alex', 'Vogel')]
+>>> firstnames = ['Melissa', 'Mark', 'Rick']
+>>> lastnames = ['Lewis', 'Watney', 'Martinez']
+>>>
+>>> data = zip(roles, firstnames, lastnames)
+>>> next(data)
+('commander', 'Melissa', 'Lewis')
+>>>
+>>> role, fname, lname = next(data)
+>>> role
+'botanist'
+>>> fname
+'Mark'
+>>> lname
+'Watney'
+
+>>> roles = ['commander', 'botanist', 'chemist']
+>>> crew = [('Melissa', 'Lewis'), ('Mark', 'Watney'), ('Rick', 'Martinez')]
 >>>
 >>> astronauts = zip(roles, crew)
 >>> next(astronauts)
@@ -92,22 +108,22 @@ StopIteration
 >>> next(astronauts)
 ('botanist', ('Mark', 'Watney'))
 >>> next(astronauts)
-('chemist', ('Alex', 'Vogel'))
+('chemist', ('Rick', 'Martinez'))
 >>> next(astronauts)
 Traceback (most recent call last):
 StopIteration
 
 >>> roles = ['commander', 'botanist', 'chemist']
->>> crew = [('Melissa', 'Lewis'), ('Mark', 'Watney'), ('Alex', 'Vogel')]
+>>> crew = [('Melissa', 'Lewis'), ('Mark', 'Watney'), ('Rick', 'Martinez')]
 >>>
 >>> list(zip(roles, crew))  # doctest: +NORMALIZE_WHITESPACE
 [('commander', ('Melissa', 'Lewis')),
  ('botanist', ('Mark', 'Watney')),
- ('chemist', ('Alex', 'Vogel'))]
+ ('chemist', ('Rick', 'Martinez'))]
 >>> dict(zip(roles, crew))  # doctest: +NORMALIZE_WHITESPACE
 {'commander': ('Melissa', 'Lewis'),
  'botanist': ('Mark', 'Watney'),
- 'chemist': ('Alex', 'Vogel')}
+ 'chemist': ('Rick', 'Martinez')}
 
 
 Assignments

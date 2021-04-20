@@ -9,14 +9,14 @@ English:
     2. Define class `Point` with methods:
         a. `__new__()` returning new `Point` class instances
         b. `__init__()` taking `x` and `y` and stores them as attributes
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
     2. Zdefiniuj klasę `Point` z metodami:
         a. `__new__()` zwraca nową instancję klasy `Point`
         b. `__init__()` przyjmuje `x` i `y` i zapisuje je jako atrybuty
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

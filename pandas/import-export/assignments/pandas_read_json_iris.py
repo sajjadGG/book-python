@@ -7,12 +7,12 @@
 English:
     1. Use data from "Given" section (see below)
     2. Read data from `DATA` as `result: pd.DataFrame`
-    3. Print `result`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Wczytaj dane z DATA jako result: pd.DataFrame
-    3. Wypisz `result`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is pd.DataFrame

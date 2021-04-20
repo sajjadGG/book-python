@@ -10,6 +10,7 @@ English:
     3. Convert to `int` and save result as `result_int`
     4. Convert to `bool` and save result as `result_bool`
     5. What happened in each of those steps?
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -17,6 +18,7 @@ Polish:
     3. Przekonwertuj do typu `int` i wynik zapisz jako `result_int`
     4. Przekonwertuj do typu `bool` i wynik zapisz jako `result_bool`
     5. Co się stało w każdym z tych kroków?
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result_int) is np.ndarray

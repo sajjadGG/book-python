@@ -9,14 +9,14 @@ English:
     2. Iterate over `DATA` with Apollo 11 timeline [1]
     3. From each line extract date, time, level and message
     4. Collect data to `result: list[dict]`
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Iteruj po `DATA` z harmonogramem Apollo 11 [1]
     3. Dla każdej linii wyciągnij datę, czas, poziom logowania oraz wiadomość
     4. Zbierz dane do `result: list[dict]`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 References:
     [1] National Aeronautics and Space Administration.

@@ -13,7 +13,7 @@ English:
         b. never give keyword arguments; always it will be positional arguments
         c. never give more than three arguments
     5. All tests must pass
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj funkcję `myrange` z parametrami: `start`, `stop`, `step`
@@ -24,7 +24,7 @@ Polish:
         b. nigdy nie poda argumentów keywordowych; zawsze będą to argumenty pozycyjne
         c. nigdy nie poda więcej niż trzy argumenty
     5. Wszystkie testy muszą przejść
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:
     * `if len(args) == ...`

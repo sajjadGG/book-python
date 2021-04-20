@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Dokonano pomiarów z urządzeń temperatury
@@ -17,6 +18,7 @@ Polish:
     7. Dodaj Colorbar ze skalą temperatur zimno-ciepło
     8. Użyj kolorów niebieski (zimno), czerwony (ciepło)
     9. Wykres ma mieć grid
+    X. Uruchom doctesty - wszystkie muszą się powieść
 """
 
 

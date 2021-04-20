@@ -11,7 +11,7 @@ English:
     4. If letter is in `PL` then use conversion value as letter
     5. Add letter to `result`
     6. Redefine `result: str` as a joined `result`
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Jeżeli litera jest w `PL` to użyj skonwertowanej wartości jako litera
     5. Dodaj literę do `result`
     6. Przedefiniuj `result: str` jako złączony `result`
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> assert type(result) is str

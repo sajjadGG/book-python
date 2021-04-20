@@ -14,7 +14,7 @@ English:
     7. Define `result` with result of calling `check(hello)`
     8. Delete `check` using `del` keyword
     9. Call `result`
-    10. Compare result with "Tests" section (see below)
+    10. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj funkcję `check` z parametrem `func: Callable`
@@ -26,7 +26,7 @@ Polish:
     7. Zdefiniuj zmienną `result`, która jest wynikiem wywołania `check(hello)`
     8. Skasuj `check` za pomocą słowa kluczowego `del`
     9. Wywołaj `result`
-    10. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    10. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

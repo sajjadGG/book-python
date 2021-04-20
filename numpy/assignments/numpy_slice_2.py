@@ -8,11 +8,13 @@ English:
     1. Use data from "Given" section (see below)
     2. Print inner 4x4 elements
     3. Inner matrix is exactly in the middle of outer
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Wypisz środkowe 4x4 elementy
     3. Środkowa macierz jest dokładnie w środku większej
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is np.ndarray

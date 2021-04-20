@@ -9,14 +9,14 @@ English:
     2. Create instance `setosa` of a class `Iris`
     3. Create instance `virginica` of a class `Iris`
     4. Create instance `versicolor` of a class `Iris`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj klasę `Iris`
     2. Stwórz instancję `setosa` klasy `Iris`
     3. Stwórz instancję `virginica` klasy `Iris`
     4. Stwórz instancję `versicolor` klasy `Iris`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

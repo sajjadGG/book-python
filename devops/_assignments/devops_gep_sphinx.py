@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Za pomocą `sphinx-quickstart` stwórz dokumentację.
@@ -20,6 +21,7 @@ Polish:
         b. prosty skrypt jako `code-block` w nagłówku drugiego poziomu "Pozostałe przykłady"
         c. które podejście jest lepsze?
     7. Tekst lorem ipsum oznacz jako cytowanie cycerona wykorzystując bibtext
+    X. Uruchom doctesty - wszystkie muszą się powieść
 """
 
 

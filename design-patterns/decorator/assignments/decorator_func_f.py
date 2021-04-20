@@ -10,7 +10,7 @@ English:
     3. Create function decorator `abspath`
     4. If `path` is relative, then `abspath` will convert it to absolute
     5. If `path` is absolute, then `abspath` will not modify it
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     3. Stwórz funkcję dekorator `abspath`
     4. Jeżeli `path` jest względne, to `abspath` zamieni ją na bezwzględną
     5. Jeżeli `path` jest bezwzględna, to `abspath` nie będzie jej modyfikował
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `path = Path(CURRENT_DIR, filename)`

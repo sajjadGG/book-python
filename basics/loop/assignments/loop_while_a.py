@@ -1,5 +1,6 @@
 """
 * Assignment: Loop While to Float
+* Status: required
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
@@ -10,7 +11,7 @@ English:
     3. Use `while` to iterate over `DATA`
     4. Convert current elements of `DATA` to `float`
     5. Converted value append to `result`
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +19,7 @@ Polish:
     3. Użyj `while` do iterowania po `DATA`
     4. Przekonwertuj obecny element `DATA` do `float`
     5. Przekonwertowaną wartość dodaj na koniec `result`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `Stop` or `Ctrl+C` kills infinite loop

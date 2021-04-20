@@ -16,6 +16,7 @@ English:
         g. Auckland, New Zealand
         h. New York, USA
     3. Use `List of tz database time zones` [1]
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -29,6 +30,7 @@ Polish:
         g. Auckland, Nowa Zelandia
         h. New York, USA
     3. Użyj `List of tz database time zones` [1]
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 References:
     [1] Wikipedia. List of tz database time zones.

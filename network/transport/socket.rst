@@ -129,6 +129,7 @@ Heartbeat
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Stwórz klienta i serwer Heart Beat
@@ -141,6 +142,8 @@ Polish:
 
         a. datę UTC przyjścia pakietu,
         b. IP i PORT przesłany przez klienta.
+
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * ``threading.Timer(frequency: int, fn: Callable).start()``
@@ -156,6 +159,7 @@ Backdoor
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Stwórz uruchamiany w wątku serwer TCP
@@ -176,6 +180,8 @@ Polish:
         d. ``stdout: str``,
         e. ``stderr: str``,
         f. ``exit_code: int``
+
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * ``random.randint()``

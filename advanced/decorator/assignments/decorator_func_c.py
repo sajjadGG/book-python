@@ -11,7 +11,7 @@ English:
     4. Note that decorators overwrite pointers and in `wrapper`
        you must check if `wrapper.disabled` is `False`
     5. Else raise an exception `PermissionError`
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Zwróć uwagę, że dekoratory nadpisują wskaźniki i we `wrapper`
        musisz sprawdzić czy `wrapper.disabled` jest `False`
     5. W przeciwnym przypadku podnieś wyjątek `PermissionError`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> @check

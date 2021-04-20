@@ -8,13 +8,13 @@ English:
     1. Use code from "Given" section (see below)
     2. Overload `@` operator
     3. Set position based on argument `tuple[int, int]`
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
     2. Przeciąż operator `@`
     3. Ustaw pozycję na podstawie argumentu `tuple[int, int]`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> position = Position()

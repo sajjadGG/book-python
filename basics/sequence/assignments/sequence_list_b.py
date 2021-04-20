@@ -1,32 +1,31 @@
 """
 * Assignment: Sequence List Many
+* Status: required
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Create list `a` with data from row 1
-    3. Create list `b` with data from row 2
-    4. Create list `c` with data from row 3
-    5. Rewrite data manually:
+    1. Create list `a` with data from row 1
+    2. Create list `b` with data from row 2
+    3. Create list `c` with data from row 3
+    4. Rewrite data manually:
         a. Do not automate by writing code
         b. Do not use `str.split()`, `slice`, `getitem`, `for`, `while` or any other control-flow statement
         c. Objective is to learn the syntax, not automation
         d. Convert numerical values to float (manually)
-    6. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz listę `a` z danymi z wiersza 1
-    3. Stwórz listę `b` z danymi z wiersza 2
-    4. Stwórz listę `c` z danymi z wiersza 3
-    5. Przepisz dane ręcznie:
+    1. Stwórz listę `a` z danymi z wiersza 1
+    2. Stwórz listę `b` z danymi z wiersza 2
+    3. Stwórz listę `c` z danymi z wiersza 3
+    4. Przepisz dane ręcznie:
         a. Nie automatyzuj pisząc kod
         b. Nie używaj `str.split()`, `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
         c. Celem jest nauka składni, a nie automatyzacja
         d. Przekonwertuj wartości numeryczne do float (ręcznie)
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys
@@ -62,7 +61,6 @@ Tests:
     True
 """
 
-# Given
 DATA = [
     'sepal_length,sepal_width,petal_length,petal_width,species',
     '5.8,2.7,5.1,1.9,virginica',
@@ -72,9 +70,9 @@ DATA = [
     '6.4,3.2,4.5,1.5,versicolor',
 ]
 
-a = ...  # list with data from row[1]: 5.8, 2.7, 5.1, 1.9 and virginica
-b = ...  # list with data from row[2]: 5.1, 3.5, 1.4, 0.2 and setosa
-c = ...  # list with data from row[3]: 5.7, 2.8, 4.1, 1.3 and versicolor
+a = ...  # list[float|str]: with data from row[1]: 5.8, 2.7, 5.1, 1.9 and virginica
+b = ...  # list[float|str]: with data from row[2]: 5.1, 3.5, 1.4, 0.2 and setosa
+c = ...  # list[float|str]: with data from row[3]: 5.7, 2.8, 4.1, 1.3 and versicolor
 
 # Solution
 a = [5.8, 2.7, 5.1, 1.9, 'virginica']

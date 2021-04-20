@@ -133,6 +133,8 @@ PCA dla zbioru Pima Indian Diabetes
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Przeprowadź analizę PCA dla zbioru Indian Pima
+    X. Uruchom doctesty - wszystkie muszą się powieść

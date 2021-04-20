@@ -10,7 +10,7 @@ English:
     3. Distance cannot be negative
     4. Returned value must by float
     5. Write doctests
-    6. All tests must pass
+    X. Run doctests - all must succeed
 
 Polish:
     1. Napisz funkcję, która przeliczy dystans podany w kilometrach na metry
@@ -18,7 +18,7 @@ Polish:
     3. Dystans nie może być ujemny
     4. Zwracany dystans musi być float
     5. Napisz doctesty
-    6. Wszystkie testy muszą przechodzić
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     1. Valid arguments:

@@ -14,6 +14,7 @@ English:
     7. Active is when `Luminance` is not zero
     8. Easy: for day 2019-09-28
     9. Advanced: for each day, as subplots
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -25,6 +26,7 @@ Polish:
     7. Wyświetl wykres (line) z godzinami aktywności w dla lokacji "Sleeping Quarters upper"
     8. Łatwe: dla dnia 2019-09-28
     9. Zaawansowane: dla wszystkich dni, jako subplot
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `pd.Series.apply(np.sign)` :ref:`Numpy signum`

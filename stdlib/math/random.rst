@@ -37,9 +37,11 @@ Random numbers
 
 English:
     1. Print 6 random integers without repetition in range from 1 to 49
+    X. Run doctests - all must succeed
 
 Polish:
     1. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z zakresu od 1 do 49.
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Sum of inner elements
 ^^^^^^^^^^^^^^^^^^^^^
@@ -54,6 +56,7 @@ English:
     3. Generate ``outer: list[list[int]]`` with 16x16 random digits (0-9 inclusive)
     4. Calculate sum of inner 4x4 elements
     5. Inner matrix is exactly in the middle of outer
+    X. Run doctests - all must succeed
 
 Polish:
     1. Używaj tylko modułu ``random``
@@ -61,6 +64,7 @@ Polish:
     3. Wygeneruj ``outer: list[list[int]]`` z 16x16 losowych cyfr (0-9 włącznie)
     4. Policz sumę środkowych 4x4 elementów
     5. Środkowa macierz jest dokładnie w środku większej
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 .. figure:: img/random-inner-sum.png
 

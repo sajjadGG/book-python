@@ -1,28 +1,27 @@
 """
 * Assignment: Exception Custom Exception
+* Status: optional
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Define custom exception `NegativeKelvin`
-    3. Check value passed to a `check` function
-    4. If input value is lower than 0, raise `NegativeKelvin`
-    5. Non-functional requirements
+    1. Define custom exception `NegativeKelvin`
+    2. Check value passed to a `check` function
+    3. If input value is lower than 0, raise `NegativeKelvin`
+    4. Non-functional requirements
         a. Write solution inside `check` function
         b. Mind the indentation level
-    6. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj własny wyjątek `NegativeKelvin`
-    3. Sprawdź wartośc przekazaną do funckji jako `float`
-    4. Jeżeli wprowadzona wartość jest mniejsza niż 0, podnieś `NegativeKelvin`
-    5. Wymagania niefunkcjonalne
+    1. Zdefiniuj własny wyjątek `NegativeKelvin`
+    2. Sprawdź wartośc przekazaną do funckji jako `float`
+    3. Jeżeli wprowadzona wartość jest mniejsza niż 0, podnieś `NegativeKelvin`
+    4. Wymagania niefunkcjonalne
         a. Rozwiązanie zapisz wewnątrz funkcji `check`
         b. Zwróć uwagę na poziom wcięć
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass
@@ -37,8 +36,6 @@ Tests:
     exception_custom_a.NegativeKelvin
 """
 
-
-# Given
 def check(value):
     ...
 

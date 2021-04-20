@@ -1,5 +1,6 @@
 """
 * Assignment: Loop Nested Unique Keys
+* Status: required
 * Complexity: medium
 * Lines of code: 3 lines
 * Time: 8 min
@@ -9,14 +10,14 @@ English:
     2. Collect keys from all rows in one sequence `result`
     3. Sort `result`
     4. Print unique keys
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zbierz klucze z wszystkich wierszy w jednej sekwencji `result`
     3. Posortuj `result`
     4. Wypisz unikalne klucze
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `row.keys()`

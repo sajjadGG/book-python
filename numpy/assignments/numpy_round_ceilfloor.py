@@ -9,14 +9,14 @@ English:
     2. Ceil round `data` values and assign to `result_ceil`
     3. Floor round `data` values and assign to `result_floor`
     4. Round `data` values and assign to `result_round`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zaokrąglij wartości `data` w górę (ceil) i przypisz do `result_ceil`
     3. Zaokrąglij wartości `data` w dół (floor) i przypisz do `result_floor`
     4. Zaokrąglij wartości `data` i przypisz do `result_round`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result_ceil) is np.ndarray

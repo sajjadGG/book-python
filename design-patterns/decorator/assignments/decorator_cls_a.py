@@ -10,7 +10,7 @@ English:
     3. `MyDecorator` should have `__call__` with parameters: `*args` and `**kwargs`
     4. `__call__` should call original function with original parameters,
        and return its value
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Stwórz dekorator klasę `MyDecorator`
@@ -18,7 +18,7 @@ Polish:
     3. `MyDecorator` powinien mieć `__call__` z parameterami: `*args` i `**kwargs`
     4.`__call__` powinien wywoływać oryginalną funkcję oryginalnymi
        parametrami i zwracać jej wartość
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

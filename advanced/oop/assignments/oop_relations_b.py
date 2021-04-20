@@ -10,14 +10,14 @@ English:
     2. In `DATA` we have two classes
     3. Model data using classes and relations
     4. Create instances dynamically based on `DATA`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. W `DATA` mamy dwie klasy
     3. Zamodeluj problem wykorzystując klasy i relacje między nimi
     4. Twórz instancje dynamicznie na podstawie `DATA`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> assert type(result) is list

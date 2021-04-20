@@ -1,30 +1,29 @@
 """
 * Assignment: Exception Assert Version
+* Status: required
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Check value passed to a `check` function
+    1. Check value passed to a `check` function
         a. Check if `version` is greater or equal to `REQUIRED_VERSION`
         b. If not, raise exception with message 'Python 3.7+ required'
-    3. Non-functional requirements
+    2. Non-functional requirements
         a. Write solution inside `check` function
         b. Mind the indentation level
         c. Use `assert` kyword
-    4. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Sprawdź poprawność wartości przekazanej do funckji `check`
+    1. Sprawdź poprawność wartości przekazanej do funckji `check`
         a. Sprawdź czy `version` jest większe lub równe `REQUIRED_VERSION`
         b. Jeżeli nie, podnieś wyjątek z komunikatem 'Python 3.7+ required'
-    3. Wymagania niefunkcjonalne
+    2. Wymagania niefunkcjonalne
         a. Rozwiązanie zapisz wewnątrz funkcji `check`
         b. Zwróć uwagę na poziom wcięć
         c. Użyj słowa kluczowego `assert`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> check( (3,6,0) )
@@ -41,7 +40,6 @@ Tests:
     >>> check( (3,10) )
 """
 
-# Given
 REQUIRED_VERSION = (3, 7)
 
 

@@ -1,5 +1,6 @@
 """
 * Assignment: Loop For Text
+* Status: optional
 * Complexity: medium
 * Lines of code: 14 lines
 * Time: 13 min
@@ -17,7 +18,7 @@ English:
         d. letters
         e. characters (including spaces inside sentences, but not comas `,`)
         f. comas (`,`)
-    7. Compare results with "Tests" section below
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -33,7 +34,7 @@ Polish:
         d. liter
         e. znaków (łącznie ze spacjami wewnątrz zdań, ale bez przecinków `,`)
         f. przecinków (`,`)
-    7. Porównaj wynik z sekcją "Tests" poniżej
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 References:
     [1] Kennedy, J.F. Moon Speech - Rice Stadium.

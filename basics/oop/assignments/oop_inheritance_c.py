@@ -11,7 +11,7 @@ English:
     4. Set attribute `mission` in `Astronaut` inicializer method
     5. Call initializer method of `Person` passing `name` as an argument
     6. Define method `show()` returning name and after coma - a mission name
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Ustaw atrybut `mission` w metodzie inicjalizacyjnej w `Astronaut`
     5. Wywołaj metodę inicjalizacyjną z `Person` podając `name` jako argument
     6. Zdefiniuj metodę `show()` zwracającą imię i po przecinku - nazwę misji
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> watney = Astronaut('Watney', 'Ares 3')

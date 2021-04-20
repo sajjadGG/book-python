@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Zainstaluj w PyCharm plugin 'Hunspell' (File -> Settings -> Plugins -> Marketplace -> 'Hunspell')
@@ -13,6 +14,7 @@ Polish:
         a. https://raw.githubusercontent.com/LibreOffice/dictionaries/master/pl_PL/pl_PL.aff
         b. https://raw.githubusercontent.com/LibreOffice/dictionaries/master/pl_PL/pl_PL.dic
     3. Skonfiguruj IDE do korzystania z tego słownika (File -> Settings -> Editor -> Spelling -> Add custom dictionary)
+    X. Uruchom doctesty - wszystkie muszą się powieść
 """
 
 # Solution

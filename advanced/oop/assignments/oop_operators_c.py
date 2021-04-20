@@ -8,13 +8,13 @@ English:
     1. Use code from "Given" section (see below)
     2. Override operator for code to work correctly
     3. Do not use `dataclasses`
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
     2. Nadpisz operator aby poniższy kod zadziałał poprawnie
     3. Nie używaj `dataclasses`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> Mission(2035, 'Ares 3') == Mission(2035, 'Ares 3')

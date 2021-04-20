@@ -9,14 +9,14 @@ English:
     2. Create `result: np.ndarray` copy of `DATA`
     3. Clip numbers only in first column to 50 (inclusive) to 80 (exclusive)
     4. Print `result`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Stwórz `result: np.ndarray` z kopią danych z `DATA`
     3. Przytnij liczby w pierwszej kolumnie od 50 (włącznie) do 80 (rozłącznie)
     4. Wypisz `result`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `result[:, 0]`

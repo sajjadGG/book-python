@@ -326,6 +326,7 @@ Argument parsing
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Napisz parser parametrów linii poleceń
@@ -338,3 +339,4 @@ Polish:
                 return sum(args) / len(args)
 
     4. Uruchamianie ``python argparse_avg.py --numbers 5 10 100 32 -90 27.5``
+    X. Uruchom doctesty - wszystkie muszą się powieść

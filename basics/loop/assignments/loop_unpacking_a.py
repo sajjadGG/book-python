@@ -1,5 +1,6 @@
 """
 * Assignment: Loop Unpacking Months
+* Status: required
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min
@@ -9,14 +10,14 @@ English:
     2. Use `enumerate()` to convert `MONTH` into dict:
         a. Keys: month number
         b. Values: month name
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Użyj `enumerate()` do konwersji `MONTH` w słownik:
         a. klucz: numer miesiąca
         b. wartość: nazwa miesiąca
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys

@@ -7,6 +7,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Przeprowadź eksperyment myślowy (**tylko dyskusja**)
@@ -29,6 +30,7 @@ Polish:
         e. Jakie wyrażenie może być na piątym miejscu w PESEL?
         f. Jakie wyrażenie może być na szóstym miejscu w PESEL?
     5. Sprawdź sumę kontrolną
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> is_pesel_valid('69072101234')

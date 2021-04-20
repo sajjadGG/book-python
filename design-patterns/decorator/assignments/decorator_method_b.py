@@ -9,14 +9,14 @@ English:
     2. Create `if_alive` method decorator
     3. Decorator will allow running `make_damage` method
        only if `current_health` is greater than 0
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
     2. Stwórz dekorator metody `if_alive`
     3. Dekorator pozwoli na wykonanie metody `make_damage`,
        tylko gdy `current_health` jest większe niż 0
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> class Hero:

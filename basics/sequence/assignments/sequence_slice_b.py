@@ -1,38 +1,37 @@
 """
-* Assignment: Sequence Slice Sequence
+* Assignment: Sequence Slice Substr
+* Status: required
 * Complexity: easy
-* Lines of code: 2 lines
-* Time: 3 min
+* Lines of code: 3 lines
+* Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    3. Create set `result` with every second element from `a` and `b`
-    4. Print `result`
-    5. Compare result with "Tests" section (see below)
+    1. Use `str.find()` and slicing
+    2. Print `TEXT` without text in `REMOVE`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    3. Stwórz zbiór `result` z co drugim elementem `a` i `b`
-    4. Wypisz `result`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Użyj `str.find()` oraz wycinania
+    2. Wypisz `TEXT` bez tekstu z `REMOVE`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
-    >>> assert type(result) is set, 'Variable `result` has invalid type, should be set'
+    >>> assert type(result) is str, 'Variable `result` has invalid type, should be str'
 
     >>> result
-    {0, 2, 4}
+    'We choose the Moon!'
 """
 
-# Given
-a = (0, 1, 2, 3)
-b = [2, 3, 4, 5]
+TEXT = 'We choose to go to the Moon!'
+REMOVE = 'to go to '
 
-result = ...  # set with every second element from `a` and `b`
+result = ...  # str: TEXT without REMOVE part
 
 # Solution
-result = set()
-result.update(a[::2], b[::2])
+a = TEXT.find(REMOVE)  # 10
+b = a + len(REMOVE)  # 19
+result = TEXT[:a] + TEXT[b:]

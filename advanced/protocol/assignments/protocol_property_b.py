@@ -12,7 +12,7 @@ English:
         a. If argument is not list, tuple, set raise Type Error
         b. If argument has length other than 3, raise Value
         b. Else sets `x`, `y`, `z` attributes from sequence
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -22,7 +22,7 @@ Polish:
         a. Jeżeli argument nie jest list, tuple, set podnieś TypeError
         b. Jeżeli argument nie ma długości 3, podnieś ValueError
         b. W przeciwnym wypadku ustaw kolejne atrybuty `x`, `y`, `z` z sekwencji
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> pt = Point(x=1, y=2, z=3)

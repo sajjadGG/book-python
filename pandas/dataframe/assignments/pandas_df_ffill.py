@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -19,6 +20,7 @@ Polish:
     6. Wypisz
         a. Pierwsze trzy wiersze
         b. Ostatnie 10% wierszy
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is pd.DataFrame

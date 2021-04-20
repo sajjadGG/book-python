@@ -10,6 +10,7 @@ English:
     3. Function `wrapper` prints `hello from wrapper`
     4. Define function `check` with `func: Callable` as a parameter
     5. Function `check` must return `wrapper: Callable`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj funkcję `wrapper`
@@ -17,6 +18,7 @@ Polish:
     3. Funkcja `wrapper` wypisuje `hello from wrapper`
     4. Zdefiniuj funkcję `check` z `func: Callable` jako parametr
     5. Funkcja `check` ma zwracać `wrapper: Callable`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

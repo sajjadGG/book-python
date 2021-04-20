@@ -13,6 +13,7 @@ English:
         b. if not, calculate new result, update cache and return computed value
     4. Compare execution time using `timeit` (it might take around 30 seconds)
     5. Last three tests will fail, this is only infomation about execution time
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
@@ -23,6 +24,7 @@ Polish:
         b. jeżeli nie, to oblicza, aktualizuje `_cache`, a następnie zwraca wartość
     4. Porównaj prędkość działania za pomocą `timeit` (może to trwać około 30 sekund)
     5. Ostatnie trzy testy nie przejdą, to tylko informacja o czasie wykonywania
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from timeit import timeit

@@ -1,5 +1,6 @@
 """
 * Assignment: Loop Dict To Dict
+* Status: required
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 8 min
@@ -7,12 +8,12 @@
 English:
     1. Use data from "Given" section (see below)
     2. Convert to `result: dict[str, str]`
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Przekonwertuj do `result: dict[str, str]`
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)

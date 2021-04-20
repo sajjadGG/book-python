@@ -8,13 +8,13 @@ English:
     1. Write function cleaning up data
     2. Function takes one argument of type `str`
     3. Function returns cleaned text
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Napisz funkcję czyszczącą dane
     2. Funkcja przyjmuje jeden argument typu `str`
     3. Funkcja zwraca oczyszczony tekst
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

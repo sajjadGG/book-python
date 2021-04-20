@@ -6,12 +6,14 @@
 
 English:
     TODO: Translate to English
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Wczytaj dane z `DATA` jako `df: pd.DataFrame`
     3. Przefiltruj `inplace` kolumnę 'petal_length' i pozostaw wartości powyżej 2.0
     4. Wyświetl 5 pierwszych wierszy
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is pd.DataFrame

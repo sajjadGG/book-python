@@ -12,7 +12,7 @@ English:
     5. Add all logs to database
     6. Use `SQL_SELECT` query to extract data
     7. Iterate over rows and append each to `result: list[dict]`
-    8. Compare result with "Tests" section (see below)
+    8. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -22,7 +22,7 @@ Polish:
     5. Dodaj wszystkie linie do bazy danych
     6. Użyj zapytania `SQL_SELECT` do wyciągnięcia danych
     7. Iterując po wierszach dopisuj je do `result: list[dict]`
-    8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    8. Uruchom doctesty - wszystkie muszą się powieść
 
 References:
     * Apollo 11 timeline https://history.nasa.gov/SP-4029/Apollo_11i_Timeline.htm

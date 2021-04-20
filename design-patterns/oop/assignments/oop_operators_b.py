@@ -7,12 +7,12 @@
 English:
     1. Use code from "Given" section (see below)
     2. Override operator `+=` for code to work correctly
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
     2. Nadpisz operatory `+=` aby poniższy kod zadziałał poprawnie
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `obj.__iadd__(other) -> self`

@@ -1,20 +1,19 @@
 """
 * Assignment: Sequence Frozenset Split
+* Status: optional
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Define `result: frozenset`
-    3. Split lines and convert result to frozenset
-    4. Compare result with "Tests" section (see below)
+    1. Define `result: frozenset`
+    2. Split lines and convert result to frozenset
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj `result: frozenset`
-    3. Podziel linie i przekonwertuj wynik do frozenset
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Zdefiniuj `result: frozenset`
+    2. Podziel linie i przekonwertuj wynik do frozenset
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:
     * `str.splitlines()`
@@ -35,12 +34,11 @@ Tests:
     True
 """
 
-# Given
 DATA = """We choose to go to the Moon.
 We choose to go to the Moon in this decade and do the other things.
 Not because they are easy, but because they are hard."""
 
-result = ...  # frozenset with DATA split by lines
+result = ...  # frozenset[str]: with DATA split by lines
 
 # Solution
 result = frozenset(DATA.splitlines())

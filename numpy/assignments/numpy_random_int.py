@@ -7,10 +7,12 @@
 English:
     1. Set random seed to zero
     2. Define `result: np.ndarray` of size 16x16 with random integers `[0;9]` (inclusive)
+    X. Run doctests - all must succeed
 
 Polish:
     1. Ustaw ziarno losowości na zero
     2. Zdefiniuj `result: np.ndarray` o rozmiarze 16x16 z losowymi liczbami całkowitymi `<0,9>` (włącznie)
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is np.ndarray

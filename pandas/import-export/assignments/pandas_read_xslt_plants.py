@@ -10,6 +10,7 @@ English:
     3. Use XSLT transformation
     4. Make sure that columns and indexes are named properly
     5. Calculate average cost of flower
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -17,6 +18,7 @@ Polish:
     3. Użyj transformaty XSLT
     4. Upewnij się, że nazwy kolumn i indeks są dobrze ustawione
     5. Wylicz średni koszt kwiatów
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `pip install --upgrade lxml`

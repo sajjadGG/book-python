@@ -44,6 +44,7 @@ FTP Download
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Stwórz na swoim komputerze plik o nazwie ``imie-nazwisko.txt``, gdzie:
@@ -56,6 +57,7 @@ Polish:
     4. Pobierz plik ``README.txt`` z głównego folderu
     5. Do katalogu ``files`` uploaduj plik ``imie-nazwisko.txt``
     6. Skorzystaj z Context Managera do połączenia
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 FTP Upload
 ^^^^^^^^^^
@@ -66,6 +68,7 @@ FTP Upload
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Pobierz na swój komputer plik :download:`http://python.astrotech.io/_static/favicon.png`
@@ -78,3 +81,4 @@ Polish:
     4. Do katalogu ``img`` uploaduj plik pobrany w poprzednim kroku
     5. Skorzystaj z Context Managera do połączenia
     6. Przesyłanie danych ma odbywać się w trybie binarnym
+    X. Uruchom doctesty - wszystkie muszą się powieść

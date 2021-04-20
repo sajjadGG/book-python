@@ -11,6 +11,7 @@ English:
     3. Create `time` object representing time of the launch
     4. Combine date and time into `datetime` object representing
        exact moment of the launch
+    X. Run doctests - all must succeed
 
 Polish:
     1. Pierwszy człowiek (Juri Gagarin) poleciał w kosmos
@@ -19,6 +20,7 @@ Polish:
     2. Stwórz obiekt `time` reprezentujący czas startu
     3. Połącz datę i czas w obiekt `datetime` reprezentujący
        dokładny moment startu
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> assert type(d) is date, \

@@ -1,5 +1,6 @@
 """
 * Assignment: Loop Comprehension Split
+* Status: optional
 * Complexity: medium
 * Lines of code: 9 lines
 * Time: 13 min
@@ -17,6 +18,7 @@ English:
         c. for example: if dataset has 10 rows, then 6 rows will be for
         training, and 4 rows for test
     4. Compare results with "Tests" section below
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -30,7 +32,7 @@ Polish:
         b. pamiętaj, że indeksy slice muszą być `int` a nie `float`
         c. na przykład: if zbiór danych ma 10 wierszy, to 6 wierszy będzie
         do treningu, a 4 do testów
-    4. Porównaj wynik z sekcją "Tests" poniżej
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys

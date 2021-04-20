@@ -1,84 +1,34 @@
 """
-* Assignment: Sequence Slice Text
+* Assignment: Sequence Slice Sequence
+* Status: required
 * Complexity: easy
-* Lines of code: 8 lines
-* Time: 8 min
+* Lines of code: 2 lines
+* Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Remove title and military rank in each variable
-    3. Remove also whitespaces at the beginning and end of a text
-    4. Use only `slice` to clean text
-    5. Compare result with "Tests" section (see below)
+    1. Create set `result` with every second element from `a` and `b`
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Usuń tytuł naukowy i stopień wojskowy z każdej zmiennej
-    3. Usuń również białe znaki na początku i końcu tekstu
-    4. Użyj tylko `slice` do oczyszczenia tekstu
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Stwórz zbiór `result` z co drugim elementem `a` i `b`
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> assert a is not Ellipsis, 'Assignment solution must be in `a` instead of ... (Ellipsis)'
-    >>> assert b is not Ellipsis, 'Assignment solution must be in `b` instead of ... (Ellipsis)'
-    >>> assert c is not Ellipsis, 'Assignment solution must be in `c` instead of ... (Ellipsis)'
-    >>> assert d is not Ellipsis, 'Assignment solution must be in `d` instead of ... (Ellipsis)'
-    >>> assert e is not Ellipsis, 'Assignment solution must be in `e` instead of ... (Ellipsis)'
-    >>> assert f is not Ellipsis, 'Assignment solution must be in `f` instead of ... (Ellipsis)'
-    >>> assert g is not Ellipsis, 'Assignment solution must be in `g` instead of ... (Ellipsis)'
-    >>> assert type(a) is str, 'Variable `a` has invalid type, should be str'
-    >>> assert type(b) is str, 'Variable `b` has invalid type, should be str'
-    >>> assert type(c) is str, 'Variable `c` has invalid type, should be str'
-    >>> assert type(d) is str, 'Variable `d` has invalid type, should be str'
-    >>> assert type(e) is str, 'Variable `e` has invalid type, should be str'
-    >>> assert type(f) is str, 'Variable `f` has invalid type, should be str'
-    >>> assert type(g) is str, 'Variable `g` has invalid type, should be str'
+    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
+    >>> assert type(result) is set, 'Variable `result` has invalid type, should be set'
 
-    >>> example
-    'Mark Watney'
-    >>> a
-    'Jan Twardowski'
-    >>> b
-    'Jan Twardowski'
-    >>> c
-    'Mark Watney'
-    >>> d
-    'Melissa Lewis'
-    >>> e
-    'Ryan Stone'
-    >>> f
-    'Ryan Stone'
-    >>> g
-    'Jan Twardowski'
+    >>> result
+    {0, 2, 4}
 """
 
-# Given
-example = 'lt. Mark Watney, PhD'
-a = 'dr hab. inż. Jan Twardowski, prof. AATC'
-b = 'gen. pil. Jan Twardowski'
-c = 'Mark Watney, PhD'
-d = 'lt. col. ret. Melissa Lewis'
-e = 'dr n. med. Ryan Stone'
-f = 'Ryan Stone, MD-PhD'
-g = 'lt. col. Jan Twardowski\t'
+a = (0, 1, 2, 3)
+b = [2, 3, 4, 5]
 
-example: str = example[4:-5]
-a: str  # Jan Twardowski
-b: str  # Jan Twardowski
-c: str  # Mark Watney
-d: str  # Melissa Lewis
-e: str  # Ryan Stone
-f: str  # Ryan Stone
-g: str  # Jan Twardowski
+result = ...  # set[int]: with every second element from `a` and `b`
 
 # Solution
-a = a[13:-12]
-b = b[10:]
-c = c[:-5]
-d = d[14:]
-e = e[11:]
-f = f[:-8]
-g = g[9:-1]
+result = set()
+result.update(a[::2], b[::2])

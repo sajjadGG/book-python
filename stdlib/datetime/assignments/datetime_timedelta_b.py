@@ -10,7 +10,7 @@ English:
     3. How old was Neil Armstrong when he made a first step on the Moon?
     4. Result round to full years
     5. Mind, that there are two different objects: `date` and `datetime`
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     3. Ile lat miał Neil Armstrong kiedy zrobił pierwszy krok na Księżycu?
     4. Rezultat zaokrąglij do pełnych lat
     5. Mind, that there are two different objects: `date` and `datetime`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> assert type(gagarin_age) is int, \

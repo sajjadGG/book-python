@@ -9,12 +9,14 @@ English:
     2. Given are points coordinates in Cartesian system
     3. Separate first row (header) from data
     4. Calculate coefficients of best approximating polynomial of 3rd degree
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Dane są koordynaty punktów w układzie kartezjańskim
     3. Odseparuj pierwszy wiersz (nagłówek) do danych
     4. Oblicz współczynniki najlepiej dopasowanego wielomianu 3 stopnia
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is np.ndarray

@@ -10,7 +10,7 @@ English:
         a. `file` if path is a file
         b. `directory` if path is a directory
         c. `not exist` if path does not exist
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj `path` z przekonwertowym `filename` do ścieżki bezwzględnej
@@ -18,7 +18,7 @@ Polish:
         a. `file` jeżeli ścieżka jest plikiem
         b. `directory` jeżeli ścieżka jest katalogiem
         c. `not exist` jeżeli ścieżka nie istnieje
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys

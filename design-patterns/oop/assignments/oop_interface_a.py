@@ -9,14 +9,14 @@ English:
     2. Attributes: `sepal_length, sepal_width, petal_length, petal_width`
     3. Methods: `sum()`, `len()`, `mean()` in `IrisInterface`
     4. All methods and constructor must raise exception `NotImplementedError`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj interfejs `IrisInterface`
     2. Attributes: `sepal_length, sepal_width, petal_length, petal_width`
     3. Metody: `sum()`, `len()`, `mean()` w `IrisInterface`
     4. Wszystkie metody oraz konstruktor muszą podnosić wyjątek `NotImplementedError`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> assert hasattr(IrisInterface, 'mean')

@@ -17,6 +17,7 @@ English:
         c. standard deviation,
         d. variance.
     4. Use `statistics` module from Python standard library
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -31,6 +32,7 @@ Polish:
         c. odchylenie standardowe,
         d. wariancję.
     4. Użyj modułu `statistics` z biblioteki standardowej Python
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> stats(sepal_length)

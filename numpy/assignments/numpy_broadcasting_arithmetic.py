@@ -11,7 +11,7 @@ English:
     4. Calculate second power (square) of each element in `c`
     5. Add elements from `a` to `b`
     6. Multiply the result by `c`
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Oblicz drugą potęgę (kwadrat) każdego z elementu w `c`
     5. Dodaj elementy z `a` do `b`
     6. Przemnóż wynik przez `c`
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)

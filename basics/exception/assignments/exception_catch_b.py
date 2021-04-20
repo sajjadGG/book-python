@@ -1,28 +1,27 @@
 """
 * Assignment: Exception Catch Else
+* Status: required
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Convert value passed to the `check` function as a `float`
-    3. If conversion fails, raise `TypeError`
-    4. If value is below AGE, raise `PermissionError`
-    5. Non-functional requirements
+    1. Convert value passed to the `check` function as a `float`
+    2. If conversion fails, raise `TypeError`
+    3. If value is below AGE, raise `PermissionError`
+    4. Non-functional requirements
         a. Write solution inside `check` function
         b. Mind the indentation level
-    6. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Przekonwertuj wartośc przekazaną do funckji `check` jako `float`
-    3. Jeżeli konwersja się nie powiedzie, podnieś `TypeError`
-    4. Jeżeli wartość jest poniżej AGE, podnieś `PermissionError`
-    5. Wymagania niefunkcjonalne
+    1. Przekonwertuj wartośc przekazaną do funckji `check` jako `float`
+    2. Jeżeli konwersja się nie powiedzie, podnieś `TypeError`
+    3. Jeżeli wartość jest poniżej AGE, podnieś `PermissionError`
+    4. Wymagania niefunkcjonalne
         a. Rozwiązanie zapisz wewnątrz funkcji `check`
         b. Zwróć uwagę na poziom wcięć
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> check(21)
@@ -34,7 +33,6 @@ Tests:
     PermissionError
 """
 
-# Given
 ADULT = 18
 
 

@@ -11,7 +11,7 @@ English:
     4. Protected attributes: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`
     5. Public attribute: `species`
     6. Iterate over `DATA` and add all public attributes to `result`
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Chronione atrybuty: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`
     5. Publiczne atrybuty: `species`
     6. Iteruj po `DATA` i dodaj wszystkie publiczne atrybuty do `result`
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> DATA = [Iris(5.8, 2.7, 5.1, 1.9, 'virginica'),

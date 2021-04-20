@@ -7,10 +7,12 @@
 English:
     1. Set random seed to zero
     2. Define `result: np.ndarray` of 10 random floats
+    X. Run doctests - all must succeed
 
 Polish:
     1. Ustaw ziarno losowości na zero
     2. Zdefiniuj `result: np.ndarray` z 10 losowymi liczbami zmiennoprzecinkowymi
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is np.ndarray

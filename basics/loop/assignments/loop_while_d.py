@@ -1,5 +1,6 @@
 """
 * Assignment: Loop While Input
+* Status: optional
 * Complexity: medium
 * Lines of code: 14 lines
 * Time: 13 min
@@ -15,6 +16,7 @@ English:
     8. If user pressed Enter key, end inserting data
     9. At the end, define `result: float` with calculated mean of `grades`
     10. Test case when report list is empty
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -28,6 +30,7 @@ Polish:
     9. Na zakończenie zdefiniuj `result` z wyliczeniem średniej
        arytmetycznej `grades`
     10. Przetestuj przypadek, gdy dzienniczek jest pusty
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `Stop` or `Ctrl+C` kills infinite loop

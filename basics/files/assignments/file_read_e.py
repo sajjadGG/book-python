@@ -15,7 +15,7 @@ English:
         f. If is present then protocol is IPv4 otherwise IPv6
         g. Append IP address and hosts names to `result`
     3. Merge hostnames for the same IP
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -28,7 +28,7 @@ Polish:
         f. Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
         g. Dodaj adres IP i nazwy hostów do `result`
     3. Scal nazwy hostów dla tego samego IP
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `str.split()` - without an argument

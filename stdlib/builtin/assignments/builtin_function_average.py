@@ -13,7 +13,7 @@ English:
     6. Return `None` if any argument to the function is not `float` or `int`
     7. To calculate mean use built-in functions
     8. Iterating over `result` print column name and calculated average
-    9. Compare result with "Tests" section (see below)
+    9. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -24,7 +24,7 @@ Polish:
     6. Zwróć `None` jeżeli którykolwiek z argumentów do funkcji nie jest `float` lub `int`
     7. Do wyliczenia średniej wykorzystaj wbudowane funkcje
     8. Iterując po `result` wypisz nazwę kolumny oraz wyliczoną średnią
-    9. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    9. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE

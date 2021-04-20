@@ -11,7 +11,7 @@ English:
     4. Note, that attribute `species` is a `str`, and in Python you cannot add `str` and `float`
     5. Create protected method `_get_values()` which returns values of `int` and `float` type attibutes
     6. Why this method is not in interface?
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Zwróć uwagę, że atrybut `species` jest `str`, a Python nie można dodawać `str` i `float`
     5. Stwórz metodę chronioną `_get_values()`, która zwraca wartości atrybutów typu `int` i `float`
     6. Dlaczego ta metoda nie jest w interfejsie?
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `var(self).values()`

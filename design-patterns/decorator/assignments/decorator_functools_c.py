@@ -7,12 +7,12 @@
 English:
     1. Use code from "Given" section (see below)
     2. Modify code to restore docstring and name from decorated class
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
     2. Zmodyfikuj kod aby przywrócić docstring oraz nazwę z dekorowanej klasy
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> @mydecorator

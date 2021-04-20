@@ -1,5 +1,6 @@
 """
 * Assignment: Conditional Statement Adult
+* Status: required
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min
@@ -8,11 +9,13 @@ English:
     1. Ask user to input age
     2. User will pass only valid `int`
     3. Print whether user is adult
+    X. Run doctests - all must succeed
 
 Polish:
     1. Poproś użytkownika o wprowadzenie swojego wieku
     2. Użytkownika poda tylko poprawne `int`
     3. Wypisz czy użytkownik jest pełnoletni
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)
@@ -26,7 +29,6 @@ from unittest.mock import MagicMock
 input = MagicMock(return_value='21')
 
 
-# Given
 ADULT = 18
 age = input('What is your age?: ')
 

@@ -260,6 +260,7 @@ English:
     2. Find the least square regression line for the given data points.
     3. Plot the given points and the regression line in the same rectangular system of axes.
     4. Napisz własny kod implementujący rozwiązanie
+    X. Run doctests - all must succeed
 
 Polish:
     .. todo:: Polish Translation
@@ -275,9 +276,11 @@ English:
     1. Find the least square regression line for the following set of data: :math:`{(-1 , 0),(0 , 2),(1 , 4),(2 , 5)}`
     2. Plot the given points and the regression line in the same rectangular system of axes.
     3. Użyj kodu z przykładu własnej implementacji do rozwiązania
+    X. Run doctests - all must succeed
 
 Polish:
     .. todo:: Polish Translation
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Company sales
 ^^^^^^^^^^^^^
@@ -297,6 +300,8 @@ English:
     2. Find the least square regression line :math:`y = ax + b` .
     3. Use the least squares regression line as a model to estimate the sales of the company in 2012.
     4. Use ``sklearn``
+    X. Run doctests - all must succeed
 
 Polish:
     .. todo:: Polish Translation
+    X. Uruchom doctesty - wszystkie muszą się powieść

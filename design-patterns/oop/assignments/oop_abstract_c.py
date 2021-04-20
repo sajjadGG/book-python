@@ -9,14 +9,14 @@ English:
     2. Attributes: `sepal_length, sepal_width, petal_length, petal_width`
     3. Abstract methods: `__init__`, `sum()`, `len()`, `mean()`
     4. Add type annotation to all methods and attibutes
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj klasę abstrakcyjną `IrisAbstract`
     2. Atrybuty: `sepal_length, sepal_width, petal_length, petal_width`
     3. Metody abstrakcyjne: `__init__`, `sum()`, `len()`, `mean()`
     4. Dodaj anotację typów do wszystkich metod i atrybutów
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isabstract

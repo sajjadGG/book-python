@@ -139,6 +139,7 @@ Nearest Neighbor Classifier
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Napisz klasyfikator najbliższego sąsiada
@@ -150,6 +151,7 @@ Polish:
         b. ``.predict()`` - do predykcji
 
     5. Do porównania użyj ``accuracy = metrics.accuracy_score(labels_test, labels_predicted)``
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * Dla każdego feature sprawdzasz jaka jest najmniejsza odległość
@@ -199,12 +201,14 @@ Sklearn Classifier Compare
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Pobierz dane Brest Cancer Dataset (``datasets.load_breast_cancer()``)
     2. Podziel zestaw na dane testowe (15%) i dane treningowe (85%) i ustaw ``random_state=0``
     3. Dla danych przeprowadź analizę wykorzystując różne modele danych
     4. Wyświetl nazwę, dokładność oraz odchylenie standardowe modelu
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 .. code-block:: text
 

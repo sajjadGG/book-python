@@ -7,10 +7,12 @@
 English:
     1. Use data from "Given" section (see below)
     2. Convert input data to `list[dict]`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Przekonwertuj dane wejściowe do `list[dict]`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 """
 
 

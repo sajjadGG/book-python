@@ -9,14 +9,14 @@ English:
     2. Text form must be in proper grammar form
     3. Max 6 digits before decimal separator (point `.`)
     4. Max 5 digits after decimal separator (point `.`)
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj funkcję konwertującą `int` lub `float` na formę tekstową
     2. Forma tekstowa musi być poprawna gramatycznie
     3. Max 6 cyfr przed separatorem dziesiętnym (point `.`)
     4. Max 5 cyfr po separatorze dziesiętnym (point `.`)
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

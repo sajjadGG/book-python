@@ -1,38 +1,37 @@
 """
 * Assignment: Sequence GetItem Select
+* Status: required
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 8 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Non-functional requirements:
+    1. Non-functional requirements:
         a. Use only indexes (`getitem`)
         b. Do not use `str.split()`, `slice`, `for`, `while` or any other control-flow statement
         c. All tests must pass
-    3. Write header (row with index 0) to `header: tuple` variable
-    4. Create `result: list`
-    5. Select row at index 2, convert it to `list` and add to `result`
-    6. Select row at index 4, convert it to `tuple` and add to `result`
-    7. Select row at index -2, convert it to `set` and add to `result`
-    8. Select row at index -4, convert it to `frozenset` and add to `result`
-    9. Append to `result`: empty `list`, empty `tuple`, empty `set` and empty `frozenset`
-    10. Compare result with "Tests" section (see below)
+    2. Write header (row with index 0) to `header: tuple` variable
+    3. Create `result: list`
+    4. Select row at index 2, convert it to `list` and add to `result`
+    5. Select row at index 4, convert it to `tuple` and add to `result`
+    6. Select row at index -2, convert it to `set` and add to `result`
+    7. Select row at index -4, convert it to `frozenset` and add to `result`
+    8. Append to `result`: empty `list`, empty `tuple`, empty `set` and empty `frozenset`
+    9. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wymagania niefunkcjonalne:
+    1. Wymagania niefunkcjonalne:
         a. Korzystaj tylko z indeksów (`getitem`)
         b. Nie używaj `str.split()`, `slice`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
         c. Wszystkie testy muszą przejść
-    3. Zapisz nagłówek (wiersz o indeksie 0) do zmiennej `header: tuple`
-    4. Stwórz `result: list`
-    5. Wybierz wiersz o indeksie 2, przekonwertuj go do `list` i dodaj do `result`
-    6. Wybierz wiersz o indeksie 4, przekonwertuj go do `tuple` i dodaj do `result`
-    7. Wybierz wiersz o indeksie -4, przekonwertuj go do `set` i dodaj do `result`
-    8. Wybierz wiersz o indeksie -2, przekonwertuj go do `frozenset` i dodaj do `result`
-    9. Dodaj na koniec `result`: pustą `list`, pustą `tuple`, pusty `set`, pusty `frozenset`
-    10. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    2. Zapisz nagłówek (wiersz o indeksie 0) do zmiennej `header: tuple`
+    3. Stwórz `result: list`
+    4. Wybierz wiersz o indeksie 2, przekonwertuj go do `list` i dodaj do `result`
+    5. Wybierz wiersz o indeksie 4, przekonwertuj go do `tuple` i dodaj do `result`
+    6. Wybierz wiersz o indeksie -4, przekonwertuj go do `set` i dodaj do `result`
+    7. Wybierz wiersz o indeksie -2, przekonwertuj go do `frozenset` i dodaj do `result`
+    8. Dodaj na koniec `result`: pustą `list`, pustą `tuple`, pusty `set`, pusty `frozenset`
+    9. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys
@@ -71,7 +70,6 @@ Tests:
     True
 """
 
-# Given
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -82,13 +80,13 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
 
-header = ...  # tuple with row with index 0
-result = ...  # list
+header = ...  # tuple[str]: from row at index 0
+result = ...  # list[list|tuple|set|frozenset]: empty list
 
-result  # append list from DATA with index 2
-result  # append tuple from DATA with index 4
-result  # append set from DATA with index -4
-result  # append frozenset DATA with index -2
+result  # append list from DATA at index 2
+result  # append tuple from DATA at index 4
+result  # append set from DATA at index -4
+result  # append frozenset DATA at index -2
 
 result  # append empty list
 result  # append empty tuple

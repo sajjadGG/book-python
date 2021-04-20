@@ -8,14 +8,12 @@
 English:
     1. Use data from "Given" section (see below)
     2. Using regular expressions find dates in US format (example: "April 12, 1961")
-    3. Print all dates
-    4. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Używając wyrażeń regularnych wyszukaj dat w formacie US (przykład: "April 12, 1961")
-    3. Wyświetl wszystkie daty
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE

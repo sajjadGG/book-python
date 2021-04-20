@@ -9,14 +9,14 @@ English:
     2. Modify classes to implement iterator protocol
     3. Iterator should return instances of `Mission`
     4. All tests must pass
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zmodyfikuj klasy aby zaimplementować protokół iterator
     3. Iterator powinien zwracać instancje `Mission`
     4. Wszystkie testy muszą przejść
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass, ismethod

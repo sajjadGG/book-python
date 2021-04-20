@@ -8,11 +8,13 @@ English:
     1. Define variable `name` and set its value to 'Mark Watney'
     2. Define `result` with text 'Hello World {name}',
        where "Mark Watney" is the value of `name` variable
+    X. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniiuj zmienną `name` i ustaw jej wartość na 'Mark Watney'
     2. Zdefiniiuj `result` z tekstem 'Hello World {name}',
        gdzie "Mark Watney" jest wartością zmiennej `name`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:
     * Either quotes (") or apostrophes (') will work

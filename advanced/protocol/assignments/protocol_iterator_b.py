@@ -11,7 +11,7 @@ English:
     4. Assume, that user will never giv only one argument; always it will be either two or three arguments
     5. Use Iterator protocol
     6. All tests must pass
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Przyjmij, że użytkownik nigdy nie poda tylko jednego argumentu; zawsze będą to dwa lub trzy argumenty
     5. Użyj protokołu Iterator
     6. Wszystkie testy muszą przejść
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass, ismethod

@@ -13,7 +13,7 @@ English:
     4. `CSVMixin.from_csv()` should return instance of a class on which it was called
     5. Use `@classmethod` decorator in proper place
     6. All tests must pass
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -24,7 +24,7 @@ Polish:
     4. `CSVMixin.from_csv()` powinna zwracać instancje klasy na której została wywołana
     5. Użyj dekoratora `@classmethod` w odpowiednim miejscu
     6. Wszystkie testy muszą przejść
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `CSVMixin.to_csv()` should add newline `\n` at the end of line

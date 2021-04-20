@@ -7,12 +7,12 @@
 English:
     1. Use data from "Given" section (see below)
     2. Create class `Astronaut` which inherits from all of those classes
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Use data from "Given" section (see below)
     2. Stwórz klasę `Astronaut`, która dziedziczy po tych wszystkich klasach
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

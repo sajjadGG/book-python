@@ -11,6 +11,7 @@ English:
     4. Create `s: pd.Series` from `data` and `index`
     5. Multiply `s` by 10
     6. Multiply `s` by `s`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Ustaw random ziarno losowości na zero
@@ -19,6 +20,7 @@ Polish:
     4. Stwórz `s: pd.Series` z `data` oraz `index`
     5. Pomnóż `s` przez 10
     6. Pomnóż `s` przez  wartości `s`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is pd.Series

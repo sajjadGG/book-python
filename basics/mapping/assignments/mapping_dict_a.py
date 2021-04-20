@@ -1,24 +1,25 @@
 """
 * Assignment: Mapping Dict Define
+* Status: required
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Create `result: dict` representing input data
-    3. Non-functional requirements:
+    1. Create `result: dict` representing input data
+    2. Non-functional requirements:
         a. Assignmnet verifies creation of `dict()`
         b. Do not parse `DATA`, simply model `result` based on `DATA`
         c. Do not use `str.split()`, `slice`, `getitem`, `for`, `while` or any other control-flow statement
+    X. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz `result: dict` reprezentujący dane wejściowe
-    3. Wymagania niefunkcjonalne:
+    1. Stwórz `result: dict` reprezentujący dane wejściowe
+    2. Wymagania niefunkcjonalne:
         a. Zadanie sprawdza tworzenie `dict()`
         b. Nie parsuj `DATA`, po prostu zamodeluj `result` bazując na `DATA`
         c. Nie używaj `str.split()`, `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)
@@ -33,23 +34,19 @@ Tests:
     True
     >>> result['Last Name'] == 'Twardowski'
     True
-    >>> type(result['Missions']) is list
-    True
     >>> 'Apollo' in result['Missions']
     True
     >>> 'Artemis' in result['Missions']
     True
 """
 
-
-# Given
 DATA = """
     First Name: Jan
     Last Name: Twardowski
     Missions: Apollo, Artemis
 """
 
-result = ...  # dict with First Name, Last Name and Missions as keys
+result = ...  # dict[str,str|list]: with First Name, Last Name and Missions as keys
 
 
 # Solution

@@ -1,5 +1,6 @@
 """
 * Assignment: Loop For Months
+* Status: required
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
@@ -10,7 +11,7 @@ English:
         a. Keys: month number
         b. Values: month name
     3. Do not use `enumerate`
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +19,7 @@ Polish:
         a. klucz: numer miesiąca
         b. wartość: nazwa miesiąca
     3. Nie używaj `enumerate`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys

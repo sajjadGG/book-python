@@ -13,9 +13,9 @@ English:
         c. standard deviation,
         d. variance.
     4. Save data to `result` dict
-    5. Compare result with "Tests" section (see below)
-    6. Non-functional requirements:
+    5. Non-functional requirements:
         a. Use `statistics` module from Python standard library
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -26,9 +26,9 @@ Polish:
         c. odchylenie standardowe,
         d. wariancję.
     4. Dane zapisz w słowniku `result`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
-    6. Wymagania niefunkcjonalne:
+    5. Wymagania niefunkcjonalne:
         a. Użyj modułu `statistics` z biblioteki standardowej Python
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Given:
     .. code-block:: python

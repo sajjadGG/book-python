@@ -168,9 +168,11 @@ Pima Indians Diabetes problem
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Dla Pima Indians Diabetes wykonaj analizę algorytmem KNN z biblioteki ``sklearn``.
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Płeć
 ^^^^
@@ -181,6 +183,7 @@ Płeć
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Napisz własną implementacje k Nearest Neighbors, która dla danych:
@@ -211,6 +214,8 @@ Polish:
         b. bez normalizacji i skalowania?
         c. tylko z normalizacją?
         d. tylko skalowaniem?
+
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * ``preprocessing.LabelEncoder()``

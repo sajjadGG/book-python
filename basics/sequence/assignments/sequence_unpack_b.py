@@ -1,22 +1,21 @@
 """
 * Assignment: Function Unpack Split
+* Status: required
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Using `str.split()` split input data by white space
-    3. Separate ip address and host names
-    4. Use asterisk `*` notation
-    5. Compare result with "Tests" section (see below)
+    1. Using `str.split()` split input data by white space
+    2. Separate ip address and host names
+    3. Use asterisk `*` notation
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Używając `str.split()` podziel dane wejściowe po białych znakach
-    3. Odseparuj adres ip i nazw hostów
-    4. Skorzystaj z notacji z gwiazdką `*`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Używając `str.split()` podziel dane wejściowe po białych znakach
+    2. Odseparuj adres ip i nazw hostów
+    3. Skorzystaj z notacji z gwiazdką `*`
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * Use `str.split()` without any argument
@@ -37,11 +36,10 @@ Tests:
     ['nasa.gov', 'esa.int', 'roscosmos.ru']
 """
 
-# Given
 DATA = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
 
-ip = ...  # first str: 10.13.37.1
-hosts = ...  # list with all the other str: ['nasa.gov', 'esa.int', 'roscosmos.ru']
+ip = ...  # str: first str: 10.13.37.1
+hosts = ...  # list[str]: list with all the other str: ['nasa.gov', 'esa.int', 'roscosmos.ru']
 
 # Solution
 ip, *hosts = DATA.split()

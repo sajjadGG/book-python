@@ -11,6 +11,7 @@ English:
         a. year = 365.2425 days
         b. month = 30.436875 days
     4. Define `result: dict[str, int]` representing period
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -19,6 +20,7 @@ Polish:
         a. rok = 365.2425 dni
         b. miesiąc = 30.436875 dni
     4. Zdefiniuj `result: dict[str, int]` reprezentujący okres
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Given:
     * 8 years

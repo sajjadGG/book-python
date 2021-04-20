@@ -7,10 +7,12 @@
 English:
     1. Create `a: np.ndarray` with even numbers from 0 to 100 (without 100)
     2. Numbers must be `float` type
+    X. Run doctests - all must succeed
 
 Polish:
     1. Stwórz `a: np.ndarray` z liczbami parzystymi od 0 do 100 (bez 100)
     2. Liczby muszą być typu `float`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is np.ndarray

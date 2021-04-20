@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Stwórz plik o nazwie `about_env.py`
@@ -14,6 +15,7 @@ Polish:
     4. Gdzie Python jest zainstalowany?
     5. Czy korzystasz z "Virtualenv"?
     6. Upewnij się, że w linijce z "Virtualenv" nie masz `None`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> assert python_executable

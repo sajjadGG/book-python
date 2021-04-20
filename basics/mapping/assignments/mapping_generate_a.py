@@ -1,20 +1,19 @@
 """
 * Assignment: Mapping Generate Pairs
+* Status: required
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Create `result: dict`
-    3. Convert `DATA` to `dict` and assign to `result`
-    4. Compare result with "Tests" section (see below)
+    1. Define `result: dict`
+    2. Convert `DATA` to `dict` and assign to `result`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz `result: dict`
-    3. Przekonwertuj `DATA` do `dict` i przypisz do `result`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Zdefiniuj `result: dict`
+    2. Przekonwertuj `DATA` do `dict` i przypisz do `result`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)
@@ -41,8 +40,6 @@ Tests:
      'Species': 'virginica'}
 """
 
-
-# Given
 DATA = [
     ('Sepal length', 5.8),
     ('Sepal width', 2.7),
@@ -51,7 +48,7 @@ DATA = [
     ('Species', 'virginica'),
 ]
 
-result = ...  # dict from DATA
+result = ...  # dict[str,float|str]: converted DATA
 
 # Solution
 result = dict(DATA)

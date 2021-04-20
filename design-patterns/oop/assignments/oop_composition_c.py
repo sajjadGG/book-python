@@ -10,7 +10,7 @@ English:
     3. Use mixins classes
     4. You can modify given classes
     5. Assignment demonstrates syntax, so do not add any attributes and methods
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     3. Użyj klas domieszkowych (mixin)
     4. Możesz modyfikować dane klasy
     5. Zadanie demonstruje składnię, nie dodawaj żadnych atrybutów i metod
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

@@ -16,7 +16,7 @@ English:
         a. 112 for generator in Python 3.9
         b. 112 for generator in Python 3.8
         c. 120 for generator in Python 3.7
-    8. Compare result with "Tests" section (see below)
+    8. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
@@ -30,7 +30,7 @@ Polish:
         a. 112 dla generator w Python 3.9
         b. 112 dla generator w Python 3.8
         c. 120 dla generator w Python 3.7
-    8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    8. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from sys import getsizeof

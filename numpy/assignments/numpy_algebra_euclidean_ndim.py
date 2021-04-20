@@ -12,7 +12,7 @@ English:
     4. Points `a` and `b` are in n-dimensional space
     5. Points `a` and `b` must be in the same space
     6. Calculate distance between points using Euclidean algorithm
-    7. Function must pass `doctest`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Input" (patrz poniżej)
@@ -21,7 +21,7 @@ Polish:
     4. Punkty `a` i `b` są w n-wymiarowej przestrzeni
     5. Punkty `b` i `b` muszą być w tej samej przestrzeni
     6. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    7. Funkcja musi przechodzić `doctest`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `for n1,n2 in zip(a,b)`

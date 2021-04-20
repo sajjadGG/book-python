@@ -12,7 +12,7 @@ English:
         a. Try to inherit from `HasPosition`, `HasHealth`
         b. Then `HasHealth`, `HasPosition`
         c. What changes?
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -22,7 +22,7 @@ Polish:
         a. Spróbuj dziedziczyć po `HasPosition`, `HasHealth`
         b. A później `HasHealth`, `HasPosition`
         c. Co się zmieniło?
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from random import seed; seed(0)

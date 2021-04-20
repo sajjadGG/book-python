@@ -1,5 +1,6 @@
 """
 * Assignment: Loop Nested Mean
+* Status: required
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
@@ -7,12 +8,12 @@
 English:
     1. Use data from "Given" section (see below)
     2. Calculate mean `Sepal length` value
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Wylicz średnią wartość `Sepal length`
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result is not Ellipsis

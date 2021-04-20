@@ -11,7 +11,7 @@ English:
     4. Return list of system account logins
     5. Implement solution using list comprehension and assignment expression
     6. Mind the `root` user who has `uid == 0` (whether is not filtered-out in if statement)
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Zwróć listę loginów użytkowników systemowych
     5. Zaimplementuj rozwiązanie wykorzystując list comprehension i assignment expression
     6. Zwróć uwagę na użytkownika `root`, który ma `uid == 0` (czy nie jest odfiltrowany w instrukcji if)
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:
     * `str.splitlines()`

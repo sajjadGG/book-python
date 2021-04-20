@@ -1,20 +1,19 @@
 """
 * Assignment: Function Unpack Nested
+* Status: required
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Separate header and records
-    3. Use asterisk `*` notation
-    4. Compare result with "Tests" section (see below)
+    1. Separate header and records
+    2. Use asterisk `*` notation
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Odseparuj nagłówek od danych
-    3. Skorzystaj z konstrukcji z gwiazdką `*`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Odseparuj nagłówek od danych
+    2. Skorzystaj z konstrukcji z gwiazdką `*`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys
@@ -39,7 +38,6 @@ Tests:
      (4.7, 3.2, 1.3, 0.2, 'setosa')]
 """
 
-# Given
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -50,8 +48,8 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
 
-header = ...  # tuple with row with index 0: ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
-data = ...  # list with all the other rows: (5.8, 2.7, 5.1, 1.9, 'virginica'), (5.1, 3.5, 1.4, 0.2, 'setosa'), ...
+header = ...  # tuple[str]: with row with index 0: ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
+data = ...  # list[tuple]: with all the other rows: (5.8, 2.7, 5.1, 1.9, 'virginica'), (5.1, 3.5, 1.4, 0.2, 'setosa'), ...
 
 # Solution
 header, *data = DATA

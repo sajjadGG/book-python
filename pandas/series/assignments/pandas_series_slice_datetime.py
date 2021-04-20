@@ -9,14 +9,14 @@ English:
     2. Create `s: pd.Series` with 100 random numbers from standard distribution
     3. Series Index are following dates since 2000
     4. Define `result: pd.Series` with slice dates from 2000-02-14 to end of February 2000
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Ustaw ziarno losowości na zero
     2. Stwórz `s: pd.Series` z 100 losowymi liczbami z rozkładu normalnego
     3. Indeksem w serii mają być kolejne dni od 2000 roku
     4. Zdefiniuj `result: pd.Series` z wytciętymi datami od 2000-02-14 do końca lutego 2000
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `np.random.randn()`

@@ -9,14 +9,14 @@ English:
     2. Modify decorator `numeric`
     3. Decorator must check arguments `a` and `b` types
     4. If type `a` or `b` are not `int` or `float` raise exception `TypeError`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
     2. Zmodyfikuj dekorator `numeric`
     3. Dekorator ma sprawdzać typy argumentów `a` oraz `b`
     4. Jeżeli typ `a` lub `b` nie jest `int` lub `float` to podnieś wyjątek `TypeError`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

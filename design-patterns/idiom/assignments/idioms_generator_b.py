@@ -12,7 +12,7 @@ English:
     5. Implement solution using function
     6. Implement solution using generator and `yield` keyword
     7. Compare results of both using `sys.getsizeof()`
-    8. Compare result with "Tests" section (see below)
+    8. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
@@ -22,7 +22,7 @@ Polish:
     5. Zaimplementuj rozwiązanie wykorzystując funkcję
     6. Zaimplementuj rozwiązanie wykorzystując generator i słowo kluczowe `yield`
     7. Porównaj wyniki obu używając `sys.getsizeof()`
-    8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    8. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:
     * `str.splitlines()`

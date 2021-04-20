@@ -13,6 +13,7 @@ English:
         b. square: `[` i `]`
         c. curly `{` i `}`
         d. angle `<` i `>`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Stwórz funkcję, która sprawdzi czy nawiasy są zbalansowane
@@ -23,6 +24,7 @@ Polish:
         b. kwadratowe: `[` i `]`
         c. klamrowe `{` i `}`
         d. trójkątne `<` i `>`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

@@ -9,14 +9,14 @@ English:
     2. Modify class `Iris` to add attributes:
         a. Protected attributes: sepal_length, sepal_width, petal_length, petal_width
         b. Public attribute: species
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zmodyfikuj klasę `Iris` by dodać atrybuty:
         a. Chronione atrybuty: sepal_length, sepal_width, petal_length, petal_width
         b. Publiczne atrybuty: species`
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

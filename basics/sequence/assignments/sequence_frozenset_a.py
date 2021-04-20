@@ -1,5 +1,6 @@
 """
 * Assignment: Sequence Frozenset Create
+* Status: optional
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 2 min
@@ -9,14 +10,14 @@ English:
         a. `'a'`
         b. `1`
         c. `2.2`
-    2. Compare result with "Tests" section (see below)
+    2. Run doctests - all must succeed
 
 Polish:
     1. Stwórz frozenset `result` z elementami:
         a. `'a'`
         b. `1`
         c. `2.2`
-    2. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys
@@ -34,8 +35,7 @@ Tests:
     True
 """
 
-# Given
-result = ...  # frozenset with 'a' and 1 and 2.2
+result = ...  # frozenset[str|int|float]: with 'a' and 1 and 2.2
 
 # Solution
 result = frozenset({'a', 1, 2.2})

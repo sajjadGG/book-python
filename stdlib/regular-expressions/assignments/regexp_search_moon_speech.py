@@ -11,12 +11,14 @@ English:
     2. Save as `moon_speech.html`
     3. Using `re.search()` split text by paragraphs
     4. Define `result: str` containing paragraph starting with 'We choose to go to the moon'
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zapisz jako `moon_speech.html`
     3. Za pomocą `re.search()` podziel tekst na paragrafy
     4. Zdefiniuj `result: str` zawierający tekst paragrafu zaczynający się od słów "We choose to go to the moon"
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result

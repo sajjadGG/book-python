@@ -327,8 +327,10 @@ Klastrowanie zbioru Iris
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Dla zbioru Iris dokonaj klastrowania za pomocą algorytmu ``KMeans`` z biblioteki ``sklearn``.
     2. Dla jakiego hiperparametru ``n_clusters`` osiągniemy największe accuracy?
     3. Zwizualizuj graficznie rozwiązanie problemu
+    X. Uruchom doctesty - wszystkie muszą się powieść

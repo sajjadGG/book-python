@@ -16,6 +16,7 @@ English:
        a. inline comment to `left_alone_on_mars` variable
        b. content: Space Pirate
     4. Run tests and check if solution is correct
+    X. Run doctests - all must succeed
 
 Polish:
     1. Dodaj pierwszy komentarz:
@@ -28,7 +29,7 @@ Polish:
     3. Dodaj trzeci komentarz:
        a. komentarz na końcu linii definicji zmiennej `left_alone_on_mars`
        b. treść: Space Pirate
-    4. Uruchom testy i sprawdź czy rozwiązanie jest poprawne
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys

@@ -12,7 +12,7 @@ English:
     5. Merge host names with the same IP
     6. IPv4 protocol address is when dot (`.`) is in ip address
     7. `result` must be list of dicts (`list[dict]`)
-    8. Compare result with "Tests" section (see below)
+    8. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -21,7 +21,7 @@ Polish:
     4. Każda linia ma być osobnym słownikiem
     5. Protokół IPv4 jest gdy kropka (`.`) znajduje się w adresie
     6. Scal nazwy hostów dla tego samego IP
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> assert type(result) is list, \

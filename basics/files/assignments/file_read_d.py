@@ -14,7 +14,7 @@ English:
         d. Separate IP address and hosts names
         e. Append IP address and hosts names to `result`
     4. Merge hostnames for the same IP
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -26,7 +26,7 @@ Polish:
         d. Odseparuj adres IP i nazwy hostów
         e. Dodaj adres IP i nazwy hostów do `result`
     4. Scal nazwy hostów dla tego samego IP
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `str.isspace()`

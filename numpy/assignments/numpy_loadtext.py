@@ -11,7 +11,7 @@ English:
     4. For other lines:
         a. Read columns with data and save as float to `features: np.ndarray`
         b. Read last column with species numbers and save as `int` to `labels: np.ndarray`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. W pozostałych linii:
         a Wczytaj kolumny z danymi i zapisz jako float do `features: np.ndarray`
         b Wczytaj ostatnią kolumnę z numerami gatunków i zapisz jako `int` do `labels: np.ndarray`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(species) is np.ndarray

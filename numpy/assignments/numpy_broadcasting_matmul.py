@@ -11,6 +11,7 @@ English:
     4. Multiply `b` and `a` using scalar multiplication
     5. Multiply `b` and `a` using matrix multiplication
     6. Discuss results
+    X. Run doctests - all must succeed
 
 Polish:
     1. Dla danych: `a: np.ndarray`, `b: np.ndarray` (patrz sekcja input)
@@ -19,6 +20,7 @@ Polish:
     4. Przemnóż `b` i `a` używając mnożenia skalarnego
     5. Przemnóż `b` i `a` używając mnożenia macierzowego
     6. Omów wyniki
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> mul_ab(a, b)  # doctest: +NORMALIZE_WHITESPACE

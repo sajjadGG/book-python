@@ -10,7 +10,7 @@ English:
     3. Drop values at index 2, 4, 6
     4. Drop duplicates
     5. Reindex series (without old copy)
-    6. Print series
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     3. Usuń wartości na indeksach 2, 4, 6
     4. Usuń duplikujące się wartości
     5. Zresetuj indeks (bez kopii starego)
-    6. Wypisz serię
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is pd.Series

@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -26,6 +27,7 @@ Polish:
     8. Interpoluj liniowo wszystkie wartości `NaN`
     9. Usuń wiersze z pozostałymi wartościami `NaN`
     10. Zdefiniuj `result` jako dwa pierwsze wiersze
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is pd.DataFrame

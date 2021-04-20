@@ -11,7 +11,7 @@ English:
     3. Argument must be passed only as positional
     4. Test function by running with positional arguments
     5. Test function by running with keyword arguments
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Stwórz funkcję `take_damage`
@@ -19,7 +19,7 @@ Polish:
     3. Argument można podawać tylko pozycyjnie
     4. Przetestuj funkcję uruchamiając z pozycyjnymi parametrami
     5. Przetestuj funkcję uruchamiając z nazwanymi parametrami
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

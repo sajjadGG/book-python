@@ -10,7 +10,7 @@ English:
     3. Prevent creation of new attributes
     4. Allow to define `x`, `y`, `z` but only at the initialization
     5. Prevent later modification of `x`, `y`, `z`
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     3. Zablokuj tworzenie nowych atrybutów
     4. Pozwól na zdefiniowanie `x`, `y`, `z` ale tylko przy inicjalizacji
     5. Zablokuj późniejsze modyfikacje `x`, `y`, `z`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> pt = Point(1, 2, 3)

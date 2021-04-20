@@ -11,6 +11,7 @@ English:
     4. Transpose data
     5. If cell is a `dict`, then extract value for `summary`
     6. If cell is empty, leave `pd.NA`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -19,6 +20,7 @@ Polish:
     4. Transponuj dane
     5. Jeżeli komórka jest `dict`, to wyciągnij wartość dla `summary`
     6. Jeżeli komórka jest pusta, pozostaw `pd.NA`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is pd.DataFrame

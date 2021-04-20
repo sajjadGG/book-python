@@ -11,6 +11,7 @@ English:
     4. Fix pattern without writing automated tests
     5. Don't break classification of the other cases
     6. Discuss whether this is sane and how tests are helping?
+    X. Run doctests - all must succeed
 
 Polish:
     1. Nie pisz żadnego kodu, to jest tylko dyskusja!
@@ -19,6 +20,7 @@ Polish:
     4. Popraw wyrażenie bez pisania testów automatycznych
     5. Nie zepsuj klasyfikacji pozostałych przypadków
     6. Przedyskutuj czy ma to sens i czy jak pomagają?
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(PATTERN)

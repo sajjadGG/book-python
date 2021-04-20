@@ -8,11 +8,13 @@ English:
     1. Use data from "Given" section (see below)
     2. Define `result_sort` with sorted `DATA` by columns
     3. Define `result_flip` with flipped `DATA` by rows
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zdefiniuj `result_sort` z posortowanym `DATA` po kolumnach
     3. Zdefiniuj `result_flip` z flipniętym `DATA` po wierszach
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `.sort()` returns `None`

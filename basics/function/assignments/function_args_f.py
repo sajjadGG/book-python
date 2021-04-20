@@ -10,7 +10,7 @@ English:
     3. Convert `DATA: dict[int, str]` to `data: dict[str, str]` (keys as `str`)
     4. Define function `pilot_say` converting `int` or `float` to text form in Pilot's Speak
     5. You cannot change `DATA`, but you can modify `data`
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     3. Przekonwertuj `DATA: dict[int, str]` na `data: dict[str, str]` (klucze jako `str`)
     4. Zdefiniuj funkcję `pilot_say` konwertującą `int` lub `float` na formę tekstową w mowie pilotów
     5. Nie możesz zmieniać `DATA`, ale możesz modyfikować `data`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

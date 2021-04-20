@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Ustaw ziarno losowości na zero
@@ -23,6 +24,7 @@ Polish:
     5. Przeanalizuj dane statystycznie:
         a. Zapisz podstawowe statystyki opisowe (`DataFrame.describe()`) do `result: pd.DataFrame`
         b. Sprawdź liczność grup (`DataFrame.count()`, `Series.value_counts()`)
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Extra Task:
     1. (wymaga wiedzy z przyszłych rozdziałów)

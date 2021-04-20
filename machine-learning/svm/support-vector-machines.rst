@@ -420,9 +420,11 @@ Wykorzystanie biblioteki ``sklearn``
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Naucz algorytm rozpoznawania danych wykorzystując algorytm Support Vector Machines.
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Given:
     .. code-block:: python

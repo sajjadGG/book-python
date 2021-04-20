@@ -234,12 +234,14 @@ English:
     2. User will type ``int`` or ``float``
     3. Print all trigonometric functions (sin, cos, tg, ctg)
     4. If there is no value for this angle, raise an exception
+    X. Run doctests - all must succeed
 
 Polish:
     1. Program wczytuje od użytkownika wielkość kąta w stopniach
     2. Użytkownik zawsze podaje ``int`` albo ``float``
     3. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
     4. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta podnieś stosowny wyjątek
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * ``input('Type angle [deg]: ')``
@@ -257,7 +259,7 @@ English:
     3. Coordinates are in cartesian system
     4. Points ``A`` and ``B`` are in two dimensional space
     5. Calculate distance between points using Euclidean algorithm
-    6. Function must pass ``doctest``
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -265,7 +267,7 @@ Polish:
     3. Koordynaty są w systemie kartezjańskim
     4. Punkty ``A`` i ``B`` są w dwuwymiarowej przestrzeni
     5. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    6. Funkcja musi przechodzić ``doctest``
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Given:
     .. code-block:: python
@@ -316,7 +318,7 @@ English:
     4. Points ``A`` and ``B`` are in ``N``-dimensional space
     5. Points ``A` and ``B`` must be in the same space
     6. Calculate distance between points using Euclidean algorithm
-    7. Function must pass ``doctest``
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -325,7 +327,7 @@ Polish:
     4. Punkty ``A`` i ``B`` są w ``N``-wymiarowej przestrzeni
     5. Punkty ``A`` i ``B`` muszą być w tej samej przestrzeni
     6. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    7. Funkcja musi przechodzić ``doctest``
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Given:
     .. code-block:: python
@@ -369,12 +371,12 @@ Matrix multiplication
 English:
     1. Use code from "Input" section (see below)
     2. Multiply matrices using nested ``for`` loops
-    3. Function must pass ``doctest``
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj code z sekcji "Input" (patrz poniżej)
     2. Pomnóż macierze wykorzystując zagnieżdżone pętle ``for``
-    3. Funkcja musi przechodzić ``doctest``
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Given:
     .. code-block:: python
@@ -408,10 +410,10 @@ English:
     1. Calculate triangle area
     2. User will input base and height
     3. Input numbers will be only ``int`` and ``float``
-    4. Function must pass ``doctest``
+    X. Run doctests - all must succeed
 
 Polish:
     1. Obliczy pole trójkąta
     2. Użytkownik poda wysokość i długość podstawy
     3. Wprowadzone dane będą tylko ``int`` lub ``float``
-    4. Funkcja musi przechodzić ``doctest``
+    X. Uruchom doctesty - wszystkie muszą się powieść

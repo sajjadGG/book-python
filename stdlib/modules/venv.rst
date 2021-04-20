@@ -166,7 +166,9 @@ Virtualenv
 English:
     1. Create ``venv``
     2. Add ``venv`` as a Python interpreter in your IDE
+    X. Run doctests - all must succeed
 
 Polish:
     1. Stwórz ``venv``
     2. Dodaj ``venv`` jako interpreter Python w Twoim IDE
+    X. Uruchom doctesty - wszystkie muszą się powieść

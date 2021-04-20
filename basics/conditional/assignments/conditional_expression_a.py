@@ -1,30 +1,31 @@
 """
 * Assignment: Conditional Expression BloodPressure
+* Status: required
 * Complexity: medium
 * Lines of code: 10 lines
 * Time: 13 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Table contains Blood Pressure classification according to American Heart Association [1]
-    3. User inputs blood pressure in `XXX/YY` or `XXX/YYY` format
-    4. User will not try to input invalid data
-    5. Data format:
+    1. Table contains Blood Pressure classification according to American Heart Association [1]
+    2. User inputs blood pressure in `XXX/YY` or `XXX/YYY` format
+    3. User will not try to input invalid data
+    4. Data format:
         a. `XXX: int` systolic pressure
         b. `YY: int` or `YYY: int` diastolic pressure
-    6. Print status of given blood pressure
-    7. If systolic and diastolic values are in different categories, assume worst case
+    5. Print status of given blood pressure
+    6. If systolic and diastolic values are in different categories, assume worst case
+    X. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Tabela zawiera klasyfikację ciśnienia krwi wg American Heart Association [1]
-    3. Użytkownik wprowadza ciśnienie krwi w formacie `XXX/YY` lub `XXX/YYY`
-    4. Użytkownik nie będzie próbował wprowadzać danych niepoprawnych
-    5. Format danych:
+    1. Tabela zawiera klasyfikację ciśnienia krwi wg American Heart Association [1]
+    2. Użytkownik wprowadza ciśnienie krwi w formacie `XXX/YY` lub `XXX/YYY`
+    3. Użytkownik nie będzie próbował wprowadzać danych niepoprawnych
+    4. Format danych:
         a. `XXX: int` to wartość ciśnienia skurczowego (ang. *systolic*)
         b. `YY: int` lub `YYY: int` to wartość ciśnienia rozkurczowego (ang. *diastolic*)
-    6. Wypisz status wprowadzonego ciśnienia krwi
-    7. Gdy wartości ciśnienia skurczowego i rozkurczowego należą do różnych kategorii, przyjmij gorszy przypadek
+    5. Wypisz status wprowadzonego ciśnienia krwi
+    6. Gdy wartości ciśnienia skurczowego i rozkurczowego należą do różnych kategorii, przyjmij gorszy przypadek
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 References:
     [1] Whelton, Paul K. and et al.
@@ -70,8 +71,6 @@ input = MagicMock(side_effect=['119/79', '120/80', '121/79',
                                '141/91', '180/120', '181/121',
                                '181/50', '100/121', '181/121'])
 
-
-# Given
 STATUS_NORMAL = 'Normal'
 STATUS_ELEVATED = 'Elevated'
 STATUS_HYPERTENSION_STAGE_1 = 'Hypertension stage 1'

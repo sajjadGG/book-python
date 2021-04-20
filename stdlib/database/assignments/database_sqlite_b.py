@@ -11,7 +11,7 @@ English:
     4. Replace species from `int` to `str` according to `SPECIES` conversion table
     5. Connect to the `sqlite3` using context manager (`with`)
     6. Create table `iris` and write data to it
-    7. Print all rows as dicts
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Podmień gatunki z `int` na `str` zgodnie z tabelą podstawień `SPECIES`
     5. Połącz się do bazy danych `sqlite3` używając context managera (`with`)
     6. Stwórz tabelę `iris` i zapisz do niej dane
-    7. Wypisz wszystkie wiersze jako słowniki
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)

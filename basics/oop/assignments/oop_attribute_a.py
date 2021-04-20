@@ -10,7 +10,7 @@ English:
     3. How many classes are there?
     4. How many instances are there?
     5. Create instances filling it with data
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -18,7 +18,7 @@ Polish:
     3. Ile jest klas?
     4. Ile jest instancji?
     5. Stwórz instancje wypełniając je danymi
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys

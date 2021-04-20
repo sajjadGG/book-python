@@ -1,5 +1,6 @@
 """
 * Assignment: Loop Unpacking Endswith
+* Status: required
 * Complexity: medium
 * Lines of code: 4 lines
 * Time: 13 min
@@ -9,14 +10,14 @@ English:
     2. Define `result: set[str]`
     3. Iterating over data unpack row to `*features` and `label`
     4. Append to `result` species with endings in `SUFFIXES`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zdefiniuj `result: set[str]`
     3. Iterując po danych rozpakuj wiersz do `*features` oraz `label`
     4. Dodaj do `result` nazwy gatunków z końcówkami w `SUFFIXES`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `str.endswith()`

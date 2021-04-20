@@ -6,12 +6,14 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Z podanego powyżej adresu URL pobierz dane
     2. Dla każdego gatunku
     3. Dane stosunku `sepal_length` do `sepal_width` zwizualizuj w formie `scatter` za pomocą `matplotlib`
     4. Każdy gatunek powinien mieć inny kolor
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `pd.groupby()`

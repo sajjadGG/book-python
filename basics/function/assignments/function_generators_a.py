@@ -11,7 +11,7 @@ English:
     4. Use `map()` to cube all numbers in `numbers`
     5. Create `result: float` with arithmetic mean of `numbers`
     6. Do not use `lambda` expressions
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj wyrażenia generatorowego do stworzenia `numbers`
@@ -20,7 +20,7 @@ Polish:
     4. Użyj `map()` aby podnieść wszystkie liczby w `numbers` do sześcianu
     5. Stwórz `result: float` ze średnią arytmetyczną z `numbers`
     6. Nie używaj wyrażeń lambda
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * type cast to `list()` before calculating mean to expand generator

@@ -7,10 +7,12 @@
 English:
     1. Use data from "Given" section (see below)
     2. Define function converting integer to roman numerals
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zdefiniuj funkcję przeliczającą liczbę całkowitą na rzymską
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

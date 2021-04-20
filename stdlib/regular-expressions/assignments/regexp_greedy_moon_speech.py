@@ -9,11 +9,13 @@ English:
     1. Use data from "Given" section (see below)
     2. Using `re.findall()` and non-greedy qualifier split text by paragraphs
     3. Print paragraph starting with "We choose to go to the moon"
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Za pomocą `re.findall()` i non-greedy qualifier podziel tekst na paragrafy
     3. Wyświetl paragraf zaczynający się od słów "We choose to go to the moon"
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Test:
     >>> type(result) is str

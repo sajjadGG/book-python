@@ -14,7 +14,7 @@ English:
     5. Both field name and value are given as keyword arguments to decorator
     6. If any member is not an astronaut raise `PermissionError` and print
        his first name and last name
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
@@ -26,7 +26,7 @@ Polish:
     5. Zarówno nazwa pola jak i wartość są podawane jako argumenty nazwane do dekoratora
     6. Jeżeli, jakikolwiek członek nie jest astronautą, podnieś wyjątek
        `PermissionError` i wypisz jego imię i nazwisko
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> CREW_PRIMARY = [

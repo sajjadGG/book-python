@@ -1,36 +1,35 @@
 """
 * Assignment: Sequence Set Many
+* Status: required
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 8 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Non-functional requirements:
+    1. Non-functional requirements:
         a. Assignmnet verifies creation of `set()` and method `.add()` and `.update()` usage
         b. For simplicity numerical values type as `floats`, and not `str`
         c. Example: instead of '5.8' just type 5.8
         d. Do not use `str.split()`, `slice`, `getitem`, `for`, `while` or any other control-flow statement
-    3. Create set `result` representing row with index 1
-    4. Values from row at index 2 add to `result` using `.add()` (five calls)
-    5. From row at index 3 create `set` and add it to `result` using `.update()` (one call)
-    6. From row at index 4 `tuple` and add it to `result` using `.update()` (one call)
-    7. From row at index 5 `list` and add it to `result` using `.update()` (one call)
-    8. Compare result with "Tests" section (see below)
+    2. Create set `result` representing row with index 1
+    3. Values from row at index 2 add to `result` using `.add()` (five calls)
+    4. From row at index 3 create `set` and add it to `result` using `.update()` (one call)
+    5. From row at index 4 `tuple` and add it to `result` using `.update()` (one call)
+    6. From row at index 5 `list` and add it to `result` using `.update()` (one call)
+    7. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wymagania niefunkcjonalne:
+    1. Wymagania niefunkcjonalne:
         a. Zadanie sprawdza tworzenie `set()` oraz użycie metod `.add()` i `.update()`
         b. Dla uproszczenia wartości numeryczne wypisuj jako `float`, a nie `str`
         c. Przykład: zamiast '5.8' zapisz 5.8
         d. Nie używaj `str.split()`, `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
-    3. Stwórz zbiór `result` reprezentujący wiersz o indeksie 1
-    4. Wartości z wiersza o indeksie 2 dodawaj do `result` używając `.add()` (pięć wywołań)
-    5. Na podstawie wiersza o indeksie 3 stwórz `set` i dodaj go do `result` używając `.update()` (jedno wywołanie)
-    6. Na podstawie wiersza o indeksie 4 stwórz `tuple` i dodaj go do `result` używając `.update()` (jedno wywołanie)
-    7. Na podstawie wiersza o indeksie 5 stwórz `list` i dodaj go do `result` używając `.update()` (jedno wywołanie)
-    8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    2. Stwórz zbiór `result` reprezentujący wiersz o indeksie 1
+    3. Wartości z wiersza o indeksie 2 dodawaj do `result` używając `.add()` (pięć wywołań)
+    4. Na podstawie wiersza o indeksie 3 stwórz `set` i dodaj go do `result` używając `.update()` (jedno wywołanie)
+    5. Na podstawie wiersza o indeksie 4 stwórz `tuple` i dodaj go do `result` używając `.update()` (jedno wywołanie)
+    6. Na podstawie wiersza o indeksie 5 stwórz `list` i dodaj go do `result` używając `.update()` (jedno wywołanie)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys
@@ -59,7 +58,6 @@ Tests:
     True
 """
 
-# Given
 DATA = [
     'sepal_length,sepal_width,petal_length,petal_width,species',
     '5.8,2.7,5.1,1.9,virginica',
@@ -69,7 +67,7 @@ DATA = [
     '6.4,3.2,4.5,1.5,versicolor',
 ]
 
-result = ...  # with row at DATA[2] (manually converted to float and str)
+result = ...  # set[float|str]: with row at DATA[1] (manually converted to float and str)
 result  # add to result float 5.1
 result  # add to result float 3.5
 result  # add to result float 1.4

@@ -11,7 +11,7 @@ English:
     3. Note, that this is slightly modified text than previously
     4. Check if text contains time in UTC (format: `%H:%M UTC`)
     5. Found match must be a valid time
-    6. Print found time
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -19,7 +19,7 @@ Polish:
     3. Zwróć uwagę, że to lekko zmodyfikowany tekst niż poprzednio
     4. Sprawdź czy tekst zawiera godzinę w UTC (format: `%H:%M UTC`)
     5. Znalezisko musi być poprawnym czasem
-    6. Wyświetl znaleziony czas
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result

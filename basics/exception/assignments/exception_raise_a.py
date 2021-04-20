@@ -1,26 +1,25 @@
 """
 * Assignment: Exception Raise One
+* Status: required
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 2 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Validate value passed to a `check` function
+    1. Validate value passed to a `check` function
         a. If `value` is less than zero, raise `ValueError`
-    3. Non-functional requirements
+    2. Non-functional requirements
         a. Write solution inside `check` function
         b. Mind the indentation level
-    4. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Sprawdź poprawność wartości przekazanej do funckji `check`
+    1. Sprawdź poprawność wartości przekazanej do funckji `check`
         a. Jeżeli `value` jest mniejsze niż zero, podnieś wyjątek `ValueError`
-    3. Wymagania niefunkcjonalne
+    2. Wymagania niefunkcjonalne
         a. Rozwiązanie zapisz wewnątrz funkcji `check`
         b. Zwróć uwagę na poziom wcięć
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> check(1)
@@ -30,8 +29,6 @@ Tests:
     ValueError
 """
 
-
-# Given
 def check(value):
     ...
 

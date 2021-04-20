@@ -10,7 +10,7 @@ English:
         b. `y: int` with default value `0`
     2. When `x` or `y` has negative value raise en exception `ValueError('Coordinate cannot be negative')`
     3. Use `datalass` and validation in `__post_init__()`
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj Dataclass do zdefiniowania klasy `Point` z atrybutami:
@@ -18,7 +18,7 @@ Polish:
         b. `y: int` z domyślną wartością `0`
     2. Gdy `x` lub `y` mają wartość ujemną podnieś wyjątek `ValueError('Coordinate cannot be negative')`
     3. Użyj `datalass` i walidacji w `__post_init__()`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

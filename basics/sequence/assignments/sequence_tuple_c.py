@@ -1,22 +1,21 @@
 """
 * Assignment: Sequence Tuple Mean
+* Status: optional
 * Complexity: medium
 * Lines of code: 8 lines
 * Time: 8 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Calculate mean for each numerical values column
-    3. To convert table use multiline select with `alt` key in your IDE
-    7. Do not use `str.split()`, `slice`, `getitem`, `for`, `while` or any other control-flow statement
-    5. Compare result with "Tests" section (see below)
+    1. Calculate mean for each numerical values column
+    2. To convert table use multiline select with `alt` key in your IDE
+    3. Do not use `str.split()`, `slice`, `getitem`, `for`, `while` or any other control-flow statement
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wylicz średnią arytmetyczną dla każdej z kolumn numerycznych
-    3. Do konwersji tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza `alt` w Twoim IDE
-    4. Nie używaj `str.split()`, `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Wylicz średnią arytmetyczną dla każdej z kolumn numerycznych
+    2. Do konwersji tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza `alt` w Twoim IDE
+    3. Nie używaj `str.split()`, `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `mean = sum(...) / len(...)`
@@ -54,7 +53,6 @@ Tests:
     1.34
 """
 
-# Given
 DATA = [
     'sepal_length,sepal_width,petal_length,petal_width,species',
     '5.8,2.7,5.1,1.9,virginica',
@@ -64,10 +62,10 @@ DATA = [
     '6.4,3.2,4.5,1.5,versicolor',
 ]
 
-sepal_length = ...  # arithmetic mean from tuple with 5.8, 5.1, 5.7, 6.3, 6.4
-sepal_width = ...  # arithmetic mean from tuple with 2.7, 3.5, 2.8, 2.9, 3.2
-petal_length = ...  # arithmetic mean from tuple with 5.1, 1.4, 4.1, 5.6, 4.5
-petal_width = ...  # arithmetic mean from tuple with 1.9, 0.2, 1.3, 1.8, 1.5
+sepal_length = ...  # float: arithmetic mean from tuple with 5.8, 5.1, 5.7, 6.3, 6.4
+sepal_width = ...  # float: arithmetic mean from tuple with 2.7, 3.5, 2.8, 2.9, 3.2
+petal_length = ...  # float: arithmetic mean from tuple with 5.1, 1.4, 4.1, 5.6, 4.5
+petal_width = ...  # float: arithmetic mean from tuple with 1.9, 0.2, 1.3, 1.8, 1.5
 
 # Solution
 sepal_length = (5.8, 5.1, 5.7, 6.3, 6.4)

@@ -9,14 +9,14 @@ English:
     2. Convert from JSON format to Python
     3. Reading file create instances of `Setosa`, `Virginica`, `Versicolor`
        classes based on value in field "species"
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Przekonwertuj dane z JSON do Python
     3. Czytając plik twórz obiekty klas `Setosa`, `Virginica`, `Versicolor`
        w zależności od wartości pola "species"
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)

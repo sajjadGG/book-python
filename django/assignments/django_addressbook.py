@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Stwórz projekt `addressbook`
@@ -32,6 +33,7 @@ Polish:
     7. Można wypisać kontakty i na głównym ekranie widoczne są podstawowe pola osoby
     8. Dodaj wyszukiwarkę po nazwisku
     9. Dodaj filtrowanie po dacie urodzenia
+    X. Uruchom doctesty - wszystkie muszą się powieść
 """
 
 

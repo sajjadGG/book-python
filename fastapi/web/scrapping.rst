@@ -170,6 +170,7 @@ Scrapping Iris
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Za pomocą beautifulsoup4 ze strony https://github.com/AstroMatt/book-python/blob/master/numerical-analysis/data/iris-dirty.csv pobierz dane zbioru Irysów.
@@ -177,6 +178,7 @@ Polish:
     3. Skasuj pierwszy wiersz nagłówkowy.
     4. Kolumny nazwij: ``Sepal length``, ``Sepal width``, ``Petal length``, ``Petal width``, ``Species``
     5. Wyświetl dane w formacie listy dictów, kluczami mają być nazwy kolumn.
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Scrapping EVA
 ^^^^^^^^^^^^^
@@ -187,6 +189,7 @@ Scrapping EVA
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Na podstawie podanych URL:
@@ -202,4 +205,6 @@ Polish:
 
         a. Podając jako parametr czwarty URL
         b. Dla częściowo sparsowanej strony, np. wyciągniętej tabelki
+
+    X. Uruchom doctesty - wszystkie muszą się powieść
 

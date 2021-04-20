@@ -11,7 +11,7 @@ English:
         a. Keys: month number
         b. Values: month name
     4. Month number must be two letter string (zero padded) - `f'{number:02}'`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
         a. klucz: numer miesiąca
         b. wartość: nazwa miesiąca
     4. Numer miesiąca ma być dwuznakowym stringiem (wypełnij zerem) - `f'{number:02}'`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)

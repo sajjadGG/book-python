@@ -6,12 +6,14 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Używając generatora zbuduj listę zawierającą wszystkie liczby podzielne przez 3 z zakresu od 1 do 33:
     2. Używając funkcji `filter()` usuń z niej wszystkie liczby parzyste
     3. Używając wyrażenia `lambda` i funkcji `map()` podnieś wszystkie elementy tak otrzymanej listy do sześcianu
     4. Odpowiednio używając funkcji `sum()`  i `len()` oblicz średnią arytmetyczną z elementów tak otrzymanej listy.
+    X. Uruchom doctesty - wszystkie muszą się powieść
 """
 
 

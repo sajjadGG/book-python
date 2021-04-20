@@ -11,7 +11,7 @@ English:
     4. Transpose `result`
     5. Convert `result` to float
     6. Fill first row with `np.nan`
-    7. Print `result`
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Transponuj `result`
     5. Przekonwertuj `result` do float
     6. Wypełnij pierwszy wiersz `np.nan`
-    7. Wypisz `result`
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is np.ndarray

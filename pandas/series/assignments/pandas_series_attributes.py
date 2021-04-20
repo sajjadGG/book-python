@@ -11,6 +11,7 @@ English:
         b. number of elements;
         c. data type;
         e. shape.
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -19,6 +20,7 @@ Polish:
         b. liczbę elementów,
         c. typ danych,
         e. kształt.
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is dict

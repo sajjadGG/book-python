@@ -13,7 +13,7 @@ English:
     6. Do not use `all()` and `any()`
     7. Compare using `type()` and `isinstance()` passing `True` as an argument
     8. Run the function without any arguments
-    9. Compare result with "Tests" section (see below)
+    9. Run doctests - all must succeed
 
 Polish:
     1. Stwórz funkcję `isnumeric`
@@ -24,7 +24,7 @@ Polish:
     6. Nie używaj `all()` oraz `any()`
     7. Porównaj użycie `type()` i `isinstance()` podając argument do funkcji `True`
     8. Uruchom funkcję bez podawania argumentów
-    9. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    9. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `isinstance(obj, (type1, type2))`

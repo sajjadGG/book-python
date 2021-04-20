@@ -9,14 +9,14 @@ English:
     2. Model data using `dataclasses`
     3. Create classes to represent `DATA`, but do not convert it
     4. Fields should have deafault value set to empty `str`
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zamodeluj dane wykorzystując `dataclass`
     3. Stwórz klasy do reprezentacji `DATA`, ale nie konwertuj tego
     4. Pola mają mieć wartość domyślną pusty `str`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

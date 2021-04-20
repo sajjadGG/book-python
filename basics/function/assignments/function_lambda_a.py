@@ -7,12 +7,12 @@
 English:
     1. Use data from "Given" section (see below)
     2. Inline functions `odd()` and `cube()` with `lambda` expressions
-    3. Compare result with "Tests" section (see below)
+    3. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Wciel kod `odd()` i `cube()` wykorzystując wyrażenia `lambda`
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `mean = sum(...) / len(...)`

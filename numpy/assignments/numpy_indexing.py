@@ -14,7 +14,7 @@ English:
         d. row 1, column 0
     4. `result` size must be 2x2
     5. `result` type must be float
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -26,7 +26,7 @@ Polish:
         d. wiersz 1, kolumna 0
     4. Rozmiar `result` musi być 2x2
     5. Typ `result` musi być float
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `np.zeros(shape, dtype)`

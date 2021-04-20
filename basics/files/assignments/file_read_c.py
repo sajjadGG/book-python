@@ -17,7 +17,7 @@ English:
         d. Append measurements to `features`
         e. Append species name to `labels`
     7. Print `header`, `features` and `labels`
-    8. Compare result with "Tests" section (see below)
+    8. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -32,7 +32,7 @@ Polish:
         d. Dodaj pomiary do `features`
         e. Dodaj gatunek do `labels`
     7. Wyświetl `header`, `features` i `labels`
-    8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    8. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `tuple(float(x) for x in X)`

@@ -11,7 +11,7 @@ English:
     4. Replace column names to `FIELDNAMES`
     5. Skip the first line (header)
     6. Print rows with data
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Podmień nazwy kolumn na `FIELDNAMES`
     5. Pomiń pierwszą linię (nagłówek)
     6. Wypisz wiersze z danymi
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)

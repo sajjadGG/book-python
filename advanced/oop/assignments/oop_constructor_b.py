@@ -6,6 +6,7 @@
 
 English:
     TODO: English translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
@@ -16,7 +17,7 @@ Polish:
     6. User ID (UID) to trzecie pole, np. `root:x:0:0:root:/root:/bin/bash` to UID jest równy `0`
     7. Konta systemowe (`SystemAccount`) to takie, które w polu UID mają wartość poniżej `1000`
     8. Konta użytkowników (`UserAccount`) to takie, które w polu UID mają wartość `1000` lub więcej
-    9. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    9. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE

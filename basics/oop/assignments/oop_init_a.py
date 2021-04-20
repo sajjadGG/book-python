@@ -10,7 +10,7 @@ English:
     3. At initialization instance print `text`
     4. Do not store values in the instances (only print on instance creation)
     5. Do not use `@dataclass`
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Stwórz jedną klasę `Echo`
@@ -18,7 +18,7 @@ Polish:
     3. Przy inicjalizacji instancja wypisuje `text`
     4. Nie przechowuj informacji w instancjach (tylko wypisz przy inicjalizacji)
     5. Nie używaj `@dataclass`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> _ = Echo('hello')

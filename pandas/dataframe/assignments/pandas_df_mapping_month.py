@@ -9,12 +9,14 @@ English:
     2. Read data from `DATA` as `df: pd.DataFrame`
     3. Add column `year` and `month` by parsing `period` column
     4. Month name must be a string month name, not a number (i.e.: 'January', 'May')
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Wczytaj dane z `DATA` jako `df: pd.DataFrame`
     3. Dodaj kolumnę `year` i `month` poprzez sparsowanie kolumny `period`
     4. Nazwa miesiąca musi być ciągiem znaków, a nie liczbą (i.e. 'January', 'May')
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 :Example:
     * if `period` column is "2015-01"

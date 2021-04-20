@@ -10,7 +10,7 @@ English:
     3. Wrapper should call original method with it's original parameters,
        and return its value
     4. Decorator should return `wrapper` method
-    5. Compare result with "Tests" section (see below)
+    5. Run doctests - all must succeed
 
 Polish:
     1. Stwórz dekorator metod `mydecorator`
@@ -18,7 +18,7 @@ Polish:
     3. Wrapper powinien wywoływać oryginalną funkcję z jej oryginalnymi
        parametrami i zwracać jej wartość
     4. Decorator powinien zwracać metodę `wrapper`
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction

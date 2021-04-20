@@ -223,8 +223,6 @@ Built-in Functions
 * ``max()`` - Maximal value
 * ``sum()`` - Sum of elements
 * ``len()`` - Length of a list
-* ``all()`` - All values are ``True``
-* ``any()`` - Any values is ``True``
 
 >>> data = [2, 0, 1]
 >>>
@@ -237,6 +235,22 @@ Built-in Functions
 >>> len(data)
 3
 
+>>> data = ['a', 'c', 'b']
+>>>
+>>> min(data)
+'a'
+>>> max(data)
+'c'
+>>> sum(data)
+Traceback (most recent call last):
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+
+Any, All
+--------
+* ``all()`` - All values are ``True``
+* ``any()`` - Any values is ``True``
+
 >>> data = [True, False, True]
 >>>
 >>> any(data)
@@ -244,12 +258,23 @@ True
 >>> all(data)
 False
 
->>> data = ['a', 'c', 'b']
+>>> import numpy as np
 >>>
->>> min(data)
-'a'
->>> max(data)
-'c'
+>>>
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]])
+...
+>>> a > 2
+array([[False, False,  True],
+       [ True,  True,  True],
+       [ True,  True,  True]])
+>>>
+>>> (a>2).any()
+True
+>>> (a>2).all()
+False
+
 
 Assignments
 -----------

@@ -8,13 +8,13 @@ English:
     1. Use code from "Given" section (see below)
     2. While printing object show: species name and a sum of `self.features`
     3. Result of sum round to one decimal place
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
     2. Przy wypisywaniu obiektu pokaż: nazwę gatunku i sumę `self.features`
     3. Wynik sumowania zaokrąglij do jednego miejsca po przecinku
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> for *features, label in DATA:

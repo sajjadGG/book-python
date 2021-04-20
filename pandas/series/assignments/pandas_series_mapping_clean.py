@@ -12,7 +12,7 @@ English:
     4. Function takes one `str` argument
     5. Function returns cleaned text
     6. Apply function to all elements of `pd.Series`
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -21,7 +21,8 @@ Polish:
     4. Funkcja przyjmuje jeden argument typu `str`
     5. Funkcja zwraca oczyszczony tekst
     6. Zaaplikuj funkcję na wszystkich elementach `pd.Series`
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is pd.Series

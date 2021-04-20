@@ -9,14 +9,14 @@ English:
     2. List `DATA` has dates in multiple formats
     3. Define `result: list` with converted `DATA` elements
        to `datetime` objects
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Lista `DATA` ma dane w różnych formatach
     3. Zdefiniuj `result: list` z przekonwertowanymi elementami `DATA`
        do obiektów `datetime`
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `try ... except`

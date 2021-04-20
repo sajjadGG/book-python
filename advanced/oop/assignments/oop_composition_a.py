@@ -8,13 +8,13 @@ English:
     1. Use data from "Given" section (see below)
     2. Compose class `MarsMission` from `Habitat`, `Rocket`, `Astronaut`
     3. Assignment demonstrates syntax, so do not add any attributes and methods
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Skomponuj klasę `MarsMission` z `Habitat`, `Rocket`, `Astronaut`
     3. Zadanie demonstruje składnię, nie dodawaj żadnych atrybutów i metod
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass

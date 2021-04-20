@@ -9,13 +9,16 @@ English:
     2. Convert given dates to `datetime` objects
     3. Print timestamp for each date
     4. What is special about those dates?
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Przekonwertuj podane daty do obiektów `datetime`
     3. Wypisz timestamp każdej daty
     4. Co to za daty?
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
+Tests:
     >>> assert type(a) is float, \
     '`a` must be a float object'
 

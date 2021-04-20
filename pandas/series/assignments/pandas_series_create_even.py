@@ -6,9 +6,11 @@
 
 English:
     1. Create `result: pd.Series` with 10 even numbers
+    X. Run doctests - all must succeed
 
 Polish:
     1. Stwórz `result: pd.Series` z 10 liczbami parzystymi
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result) is pd.Series

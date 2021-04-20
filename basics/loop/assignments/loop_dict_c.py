@@ -1,5 +1,6 @@
 """
 * Assignment: Loop Dict Label Encoder
+* Status: optional
 * Complexity: hard
 * Lines of code: 9 lines
 * Time: 13 min
@@ -17,10 +18,8 @@ English:
         a. key - id (incremented integer value)
         b. value - species name
     5. `label_encoder` must be generated from `DATA`
-    6. For each row add appropriate data to `features`, `labels` and
-    `label_encoder`
-    7. Print `features`, `labels` and `label_encoder`
-    8. Compare result with "Tests" section (see below)
+    6. For each row add values to `features`, `labels` and `label_encoder`
+    8. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -35,10 +34,9 @@ Polish:
         a. key - identyfikator (kolejna liczba rzeczywista)
         b. value - nazwa gatunku
     5. `label_encoder` musi być wygenerowany z `DATA`
-    6. Dla każdego wiersza dodawaj odpowiednie dane do
-        `feature`, `labels` i `label_encoder`
-    7. Wypisz `feature`, `labels` i `label_encoder`
-    8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Dla każdego wiersza dodawaj wartości do `feature`, `labels`
+       i `label_encoder`
+    8. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * Reversed lookup dict

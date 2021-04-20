@@ -11,7 +11,7 @@ English:
     4. Define `result: list[tuple[str, float]]`
     5. Iterate over `DATA` separating `features` from `label`
     6. To `result` append `label` and arithmetic mean of `features`
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj kodu z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Zdefiniuj `result: list[tuple[str, float]]`
     5. Iteruj po `DATA` separując `features` od `label`
     6. Do `result` dodawaj `label` oraz wynik średniej arytmetycznej `features`
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> mean(1)

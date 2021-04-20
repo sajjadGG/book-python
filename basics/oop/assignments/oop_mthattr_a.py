@@ -11,7 +11,7 @@ English:
     4. Set class attributes at the initialization from positional arguments
     5. Create method which sums values of all `features`
     6. In `result` gather species and sum of each row
-    7. Compare result with "Tests" section (see below)
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -20,7 +20,7 @@ Polish:
     4. Ustaw atrybuty klasy przy inicjalizacji z argumentów pozycyjnych
     5. Stwórz metodę sumującą wartości wszystkich `features`
     6. W `result` zbieraj nazwę gatunku i sumę z każdego wiersza
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE

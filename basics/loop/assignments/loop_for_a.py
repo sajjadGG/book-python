@@ -1,5 +1,6 @@
 """
 * Assignment: Loop For Count
+* Status: required
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 5 min
@@ -7,12 +8,13 @@
 English:
     1. Use data from "Given" section (see below)
     2. Count occurrences of each color
-    3. Compare results with "Tests" section below
+    X. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zlicz wystąpienia każdego z kolorów
     3. Porównaj wynik z sekcją "Tests" poniżej
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(red)

@@ -8,11 +8,13 @@ English:
     1. Modify `check` function
     3. If `filename` exists, print 'Ok'
     2. If `filename` does not exist, print 'File not found'
+    X. Run doctests - all must succeed
 
 Polish:
     1. Zmodyfikuj funkcję `check`
     2. Jeżeli `filename` istnieje, wypisz 'Ok'
     2. Jeżeli `filename` nie istnieje, wypisz 'File not found'
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> check(__file__)

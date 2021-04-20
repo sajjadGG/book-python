@@ -156,6 +156,7 @@ Feature Engineering
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Celem zadania będzie opracowanie tabeli, cech osób, które czynią z niego astronautę.
@@ -171,6 +172,7 @@ Polish:
     7. Do
     8. Uruchom test wagi parametrów
     9. Czy Twoje features mają wysokie znaczenie?
+    X. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * ``np.genfromtxt()``

@@ -10,7 +10,7 @@ English:
     3. Use `filter()` to get odd numbers from `result`
     4. Use `map()` to cube all numbers in `result`
     5. Set `result` with arithmetic mean of `result`
-    6. Compare result with "Tests" section (see below)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj wyrażenia generatorowego do stworzenia `result`
@@ -18,7 +18,7 @@ Polish:
     3. Użyj `filter()` aby otrzymać liczby nieparzyste z `result`
     4. Użyj `map()` aby podnieść wszystkie liczby w `result` do sześcianu
     5. Ustaw `result` ze średnią arytmetyczną z `result`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * type cast to `list()` to expand generator before calculating mean

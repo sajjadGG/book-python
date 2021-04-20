@@ -6,6 +6,7 @@
 
 English:
     TODO: English Translation
+    X. Run doctests - all must succeed
 
 Polish:
     1. Jak zrobić w Twoim IDE:
@@ -23,6 +24,7 @@ Polish:
     4. Czym się różni `Python Console` od `Terminal`
     5. Czym się różni `Distraction Free Mode` od `Full Screen`
     6. Ustaw Scope tak, aby ukryć katalog z Virtualenv
+    X. Uruchom doctesty - wszystkie muszą się powieść
 """
 
 # Solution

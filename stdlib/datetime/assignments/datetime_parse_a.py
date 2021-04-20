@@ -9,14 +9,14 @@ English:
     2. Given `DATA` is in ISO format
     3. Define `a: datetime` with converted `DATA` to `datetime` object
     4. Define `b: str` with converted `a` to to ISO format
-    4. Compare result with "Tests" section (see below)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Dana `DATA` jest w formacie ISO
     3. Zdefiniuj `a: datetime` z przekonwertowaną `DATA` do obiektu `datetime`
     4. Zdefiniuj `b: str` z przekonwertowaną `a` do formatu ISO
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> assert type(a) is datetime, \

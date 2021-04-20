@@ -23,7 +23,7 @@ English:
     7. Create `virginica` object with attributes set at the initialization
     8. Print sum, mean and species name of each objects
     9. Do not use `@dataclass`
-    10. Compare result with "Tests" section (see below)
+    10. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -44,7 +44,7 @@ Polish:
     7. Stwórz obiekt `virginica` z atrybutami ustawionymi przy inicjalizacji
     8. Wypisz sumę, średnią oraz nazwę gatunku każdego z obiektów
     9. Nie używaj `@dataclass`
-    10. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    10. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `isinstance(value, float)`
