@@ -11,7 +11,7 @@ Docstring
 If assigned to variable, it serves as multiline ``str`` otherwise
 it's a docstring:
 
->>> """We choose to go to the Moon!
+>>> TEXT = """We choose to go to the Moon!
 ... We choose to go to the Moon in this decade and do the other things,
 ... not because they are easy, but because they are hard;
 ... because that goal will serve to organize and measure the best of our

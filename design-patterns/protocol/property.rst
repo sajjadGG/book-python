@@ -517,7 +517,7 @@ Use Case 3
 >>>
 >>> astro = Astronaut('Mark', 'Watney', date(1969, 7, 21))
 >>> print(astro.age)
-51.7
+51.8
 
 
 Use Case 4
