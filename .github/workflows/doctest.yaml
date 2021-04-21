@@ -31,49 +31,49 @@ jobs:
       run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
 
     - name: Doctest About Assignments
-      run: find about -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+      run: find about -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     #- name: Doctest Advanced Assignments
-    #  run: find advanced -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+    #  run: find advanced -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     - name: Doctest Basics Assignments
-      run: find basics -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+      run: find basics -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     - name: Doctest Data Science Assignments
-      run: find data-science -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+      run: find data-science -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     #- name: Doctest Design Patterns Assignments
-    #  run: find design-patterns -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+    #  run: find design-patterns -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     - name: Doctest Devops Assignments
-      run: find devops -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+      run: find devops -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     #- name: Doctest Django Assignments
-    #  run: find django -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+    #  run: find django -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     #- name: Doctest Dragon Assignments
-    #  run: find dragon -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+    #  run: find dragon -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     - name: Doctest Fastapi Assignments
-      run: find fastapi -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+      run: find fastapi -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     #- name: Doctest Machine Learning Assignments
-    #  run: find machine-learning -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+    #  run: find machine-learning -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     #- name: Doctest Matplotlib Assignments
-    #  run: find matplotlib -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+    #  run: find matplotlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     #- name: Doctest Network Assignments
-    #  run: find network -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+    #  run: find network -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     - name: Doctest Numpy Assignments
-      run: find numpy -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+      run: find numpy -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     - name: Doctest OOP Assignments
-      run: find oop -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+      run: find oop -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     - name: Doctest Pandas Assignments
-      run: find pandas -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+      run: find pandas -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
 
     - name: Doctest Stdlib Assignments
-      run: find stdlib -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +\;
+      run: find stdlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' +\; -print
