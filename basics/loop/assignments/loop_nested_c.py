@@ -18,7 +18,7 @@ English:
         d. letters
         e. characters (including spaces inside sentences, but not comas `,`)
         f. comas (`,`)
-    X. Run doctests - all must succeed
+    7. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -34,7 +34,7 @@ Polish:
         d. liter
         e. znaków (łącznie ze spacjami wewnątrz zdań, ale bez przecinków `,`)
         f. przecinków (`,`)
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 References:
     [1] Kennedy, J.F. Moon Speech - Rice Stadium.

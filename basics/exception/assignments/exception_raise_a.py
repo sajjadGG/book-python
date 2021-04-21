@@ -3,7 +3,7 @@
 * Status: required
 * Complexity: easy
 * Lines of code: 2 lines
-* Time: 2 min
+* Time: 3 min
 
 English:
     1. Validate value passed to a `check` function

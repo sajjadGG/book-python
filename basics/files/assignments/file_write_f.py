@@ -13,7 +13,7 @@ English:
     6. Use coma (`,`) as a value separator
     7. Add line terminator (`\n`) to each row
     8. Save row values to file
-    X. Run doctests - all must succeed
+    9. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -24,7 +24,7 @@ Polish:
     6. Użyj przecinka (`,`) jako separatora wartości
     7. Użyj `\n` jako koniec linii w każdym wierszu
     8. Zapisz do pliku wartości z wiersza
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    9. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `','.join(...)`

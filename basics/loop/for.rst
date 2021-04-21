@@ -276,20 +276,6 @@ Please remember:
     * Python ``while`` is more like ``for`` in other languages.
 
 
-Nested Loops
-------------
-You can have loop inside a loop:
-
->>> for row in [1, 2, 3]:  # doctest: +NORMALIZE_WHITESPACE
-...     print()
-...
-...     for column in ['A', 'B', 'C']:
-...         print(f'{column}{row}', end=' ')
-A1 B1 C1
-A2 B2 C2
-A3 B3 C3
-
-
 Assignments
 -----------
 .. literalinclude:: assignments/loop_for_a.py
@@ -314,8 +300,4 @@ Assignments
 
 .. literalinclude:: assignments/loop_for_f.py
     :caption: :download:`Solution <assignments/loop_for_f.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/loop_for_g.py
-    :caption: :download:`Solution <assignments/loop_for_g.py>`
     :end-before: # Solution

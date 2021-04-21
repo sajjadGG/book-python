@@ -15,7 +15,7 @@ English:
     5. Iterating over numbers check if number is already in `result`
         a. If first occurrence, then add it to `result` with value 1
         b. If exists, then increment the value by 1
-    X. Run doctests - all must succeed
+    6. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -27,7 +27,7 @@ Polish:
     5. Iterując po cyfrach sprawdź czy cyfra znajduje się już w `result`
         a. Jeżeli pierwsze wystąpienie, to dodaj ją do `result` z wartością 1
         b. Jeżeli istnieje, to zwiększ w wartość o 1
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys

@@ -10,14 +10,14 @@ English:
     2. Define `result: str` with text from user
     3. `MagicMock` will simulate inputting of `NASA` by user
     4. Use `input()` function as normal
-    X. Run doctests - all must succeed
+    5. Run doctests - all must succeed
 
 Polish:
     1. Poproś użytkownika o wprowadzenie tekstu `NASA`
     2. Zdefiniuj `result: str` z tekstem wprowadzonym od użytkownika
     3. `MagicMock` zasymuluje wpisanie `NASA` przez użytkownika
     4. Skorzytaj z funkcji `input()` tak jak normalnie
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys
@@ -32,10 +32,10 @@ Tests:
     'NASA'
 """
 
-# Mock input() built-in function
 from unittest.mock import MagicMock
-input = MagicMock(return_value='NASA')
 
+
+input = MagicMock(return_value='NASA')
 
 result = ...  # str: Ask user to type NASA
 

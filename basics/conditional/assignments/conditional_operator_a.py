@@ -11,7 +11,7 @@ English:
     3. Define `result: bool` with parity check of input number
     4. Number is even, when divided modulo (`%`) by 2 reminder equal to 0
     5. Do not use `if` statement
-    X. Run doctests - all must succeed
+    6. Run doctests - all must succeed
 
 Polish:
     1. Wczytaj liczbę od użytkownika
@@ -19,7 +19,7 @@ Polish:
     3. Zdefiniuj `result: bool` z wynikiem sprawdzania parzystości liczby wprowadzonej
     4. Liczba jest parzysta, gdy dzielona modulo (`%`) przez 2 ma resztę równą 0
     5. Nie używaj instrukcji `if`
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `%` has different meaning for `int` and `str`
@@ -27,20 +27,23 @@ Hints:
     * `%` on `int` is overloaded as a modulo division
 
 Tests:
-    >>> type(result)
-    <class 'bool'>
+    >>> import sys
+    >>> sys.tracebacklimit = 0
+
+    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
+    >>> assert type(result) is bool, 'Variable `result` has invalid type, should be bool'
 
     >>> result
     True
 """
 
-# Mock input() built-in function
 from unittest.mock import MagicMock
-input = MagicMock(return_value='4')
 
+
+input = MagicMock(return_value='4')
 number = input('What is your number?: ')
 
-result = ... # bool: Whether input number is even or odd (modulo divide)
+result = ...  # bool: Whether input number is even or odd (modulo divide)
 
 # Solution
 result = float(number) % 2 == 0

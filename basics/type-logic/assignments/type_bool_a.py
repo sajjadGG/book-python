@@ -8,12 +8,12 @@
 English:
     1. Which variables are `True`?
     2. Which variables are `False`?
-    X. Run doctests - all must succeed
+    3. Run doctests - all must succeed
 
 Polish:
     1. Które zmienne są `True`?
     2. Które zmienne są `False`?
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys

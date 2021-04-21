@@ -15,7 +15,7 @@ English:
     7. Do not use `if`, `try`, and `except`
     8. `MagicMock` will simulate inputting a letter by user
     9. Use `input()` function as normal
-    X. Run doctests - all must succeed
+    10. Run doctests - all must succeed
 
 Polish:
     1. Stwórz tłumacza alfabetu pilotów
@@ -27,7 +27,7 @@ Polish:
     7. Nie używaj `if`, `try` ani `except`
     8. `MagicMock` zasymuluje wpisanie litery przez użytkownika
     9. Skorzytaj z funkcji `input()` tak jak normalnie
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    10. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result

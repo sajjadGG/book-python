@@ -14,7 +14,7 @@ English:
         b. `YY: int` or `YYY: int` diastolic pressure
     5. Print status of given blood pressure
     6. If systolic and diastolic values are in different categories, assume worst case
-    X. Run doctests - all must succeed
+    7. Run doctests - all must succeed
 
 Polish:
     1. Tabela zawiera klasyfikację ciśnienia krwi wg American Heart Association [1]
@@ -25,7 +25,7 @@ Polish:
         b. `YY: int` lub `YYY: int` to wartość ciśnienia rozkurczowego (ang. *diastolic*)
     5. Wypisz status wprowadzonego ciśnienia krwi
     6. Gdy wartości ciśnienia skurczowego i rozkurczowego należą do różnych kategorii, przyjmij gorszy przypadek
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    7. Uruchom doctesty - wszystkie muszą się powieść
 
 References:
     [1] Whelton, Paul K. and et al.
@@ -36,11 +36,12 @@ References:
         Journal of Hypertension. vol 71. pages 1269–1324. 2018. doi: 10.1161/HYP.0000000000000066
 
 Tests:
+    TODO: Better Tests
     >>> import sys
     >>> sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'str'>
+    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
+    >>> assert type(result) is str, 'Variable `result` has invalid type, should be str'
 
     >>> result in (STATUS_NORMAL, STATUS_ELEVATED, STATUS_HYPERTENSION_STAGE_1,
     ...            STATUS_HYPERTENSION_STAGE_2, STATUS_HYPERTENSIVE_CRISIS)
@@ -63,8 +64,9 @@ Tests:
     >>> assert blood_pressure == '181/121' and result == 'Hypertensive Crisis' or True
 """
 
-# Mock input() built-in function
 from unittest.mock import MagicMock
+
+
 input = MagicMock(side_effect=['119/79', '120/80', '121/79',
                                '120/81', '130/80', '130/89',
                                '140/85', '140/89', '141/90',

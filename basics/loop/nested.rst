@@ -19,6 +19,20 @@ Convention
 * Note that ``i`` may interfere with ``i`` used as loop counter
 
 
+Nested Loops
+------------
+You can have loop inside a loop:
+
+>>> for row in [1, 2, 3]:  # doctest: +NORMALIZE_WHITESPACE
+...     print()
+...
+...     for column in ['A', 'B', 'C']:
+...         print(f'{column}{row}', end=' ')
+A1 B1 C1
+A2 B2 C2
+A3 B3 C3
+
+
 List of Pairs
 -------------
 >>> DATA = [('commander', 'Melissa Lewis'),
@@ -98,28 +112,47 @@ a=7 b=8 c=9
 
 Mixed
 -----
+Let's analyze the following example. We received data as follows:
+
+>>> DATA = [('Mark', 'Watney'), 'Lewis', 69, 13.37, [True, None, False]]
+
+The desired format should be:
+
+.. code-block:: text
+
+    Mark
+    Watney
+    Lewis
+    69
+    13.37
+    True
+    None
+    False
+
+How to convert ``DATA`` to desired format?
+
 Iterating over ``list`` with scalar and vector values - simple loop:
 
->>> DATA = [('Jan', 'Twardowski'), 'Watney', 69, 13.37, [True, None, False]]
+>>> DATA = [('Mark', 'Watney'), 'Lewis', 69, 13.37, [True, None, False]]
 >>>
 >>> for obj in DATA:
 ...     print(obj)
-('Jan', 'Twardowski')
-Watney
+('Mark', 'Watney')
+Lewis
 69
 13.37
 [True, None, False]
 
 Iterating over ``list`` with scalar and vector values - nested loop:
 
->>> DATA = [('Jan', 'Twardowski'), 'Watney', 69, 13.37, [True, None, False]]
+>>> DATA = [('Mark', 'Watney'), 'Lewis', 69, 13.37, [True, None, False]]
 >>>
 >>> # doctest: +SKIP
 ... for obj in DATA:
 ...     for element in obj:
 ...         print(element)
-Jan
-Twardowski
+Mark
+Watney
 W
 a
 t
@@ -131,7 +164,7 @@ TypeError: 'int' object is not iterable
 
 Iterating over ``list`` with scalar and vector values - smart loop:
 
->>> DATA = [('Jan', 'Twardowski'), 'Watney', 69, 13.37, [True, None, False]]
+>>> DATA = [('Mark', 'Watney'), 'Lewis', 69, 13.37, [True, None, False]]
 >>>
 >>> for obj in DATA:
 ...     if type(obj) in (list, tuple, set, frozenset):
@@ -139,9 +172,9 @@ Iterating over ``list`` with scalar and vector values - smart loop:
 ...             print(element)
 ...     else:
 ...         print(obj)
-Jan
-Twardowski
+Mark
 Watney
+Lewis
 69
 13.37
 True
@@ -157,4 +190,8 @@ Assignments
 
 .. literalinclude:: assignments/loop_nested_b.py
     :caption: :download:`Solution <assignments/loop_nested_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/loop_nested_c.py
+    :caption: :download:`Solution <assignments/loop_nested_c.py>`
     :end-before: # Solution

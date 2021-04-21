@@ -11,7 +11,7 @@ English:
         a. Assignmnet verifies creation of `dict()`
         b. Do not parse `DATA`, simply model `result` based on `DATA`
         c. Do not use `str.split()`, `slice`, `getitem`, `for`, `while` or any other control-flow statement
-    X. Run doctests - all must succeed
+    3. Run doctests - all must succeed
 
 Polish:
     1. Stwórz `result: dict` reprezentujący dane wejściowe
@@ -19,7 +19,7 @@ Polish:
         a. Zadanie sprawdza tworzenie `dict()`
         b. Nie parsuj `DATA`, po prostu zamodeluj `result` bazując na `DATA`
         c. Nie używaj `str.split()`, `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)

@@ -8,13 +8,13 @@ English:
     1. Define `result` with text 'Hello World'
     2. 'Hello' must be in a first line
     3. 'World' must be in a second line
-    X. Run doctests - all must succeed
+    4. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj zmienną `result` z tekstem 'Hello World'
     2. 'Hello' ma być w pierwszej linii
     3. 'World' ma być w drugiej linii
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:
     * Either quotes (") or apostrophes (') will work

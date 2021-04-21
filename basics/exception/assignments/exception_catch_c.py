@@ -6,20 +6,20 @@
 * Time: 8 min
 
 English:
-    1. Convert value passed to the function as a `int`
+    1. Convert value passed to the function as a `degrees: int`
     2. If conversion fails, raise exception `TypeError` with message:
         'Invalid type, expected int or float'
-    3. Use `finally` to print `degree` value
+    3. Use `finally` to print `degrees` value
     4. Non-functional requirements
         a. Write solution inside `check` function
         b. Mind the indentation level
     5. Run doctests - all must succeed
 
 Polish:
-    1. Przekonwertuj wartośc przekazaną do funckji jako `int`
+    1. Przekonwertuj wartość przekazaną do funckji jako `degrees: int`
     2. Jeżeli konwersja się nie powiedzie to podnieś wyjątek `TypeError`
         z komunikatem 'Invalid type, expected int or float'
-    3. Użyj `finally` do wypisania wartości `degree`
+    3. Użyj `finally` do wypisania wartości `degrees`
     4. Wymagania niefunkcjonalne
         a. Rozwiązanie zapisz wewnątrz funkcji `check`
         b. Zwróć uwagę na poziom wcięć

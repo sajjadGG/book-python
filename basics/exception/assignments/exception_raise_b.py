@@ -2,8 +2,8 @@
 * Assignment: Exception Raise Many
 * Status: required
 * Complexity: easy
-* Lines of code: 2 lines
-* Time: 2 min
+* Lines of code: 6 lines
+* Time: 5 min
 
 English:
     1. Validate value passed to a `check` function
@@ -54,7 +54,9 @@ def check(age):
 def check(age):
     if type(age) not in (int, float):
         raise TypeError
+
     if age < 0:
         raise ValueError
+
     if age < ADULT:
         raise PermissionError

@@ -15,7 +15,7 @@ English:
     4. Print `result: dict[str, int]`:
         a. key - group
         b. value - number of occurrences
-    X. Run doctests - all must succeed
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -27,7 +27,7 @@ Polish:
     4. Wypisz `result: dict[str, int]`:
         a. klucz - grupa
         b. wartość - liczba wystąpień
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys

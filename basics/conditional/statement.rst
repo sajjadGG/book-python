@@ -1,6 +1,12 @@
 Conditional Statement
 =====================
 
+.. testsetup::
+
+    # Mock input() built-in function
+    from unittest.mock import MagicMock
+    input = MagicMock(side_effect=['Mark Watney', '', '', 'Polish'])
+
 
 Positive and Negative Values
 ----------------------------
@@ -105,24 +111,15 @@ Yes
 
 Checking if has value:
 
->>> def input(__prompt):
-...     """Stub user input, for testing purpose only"""
-...     return 'Jan Twardowski'
->>>
->>>
->>> name = input('What is your name?: ')
+>>> name = input('What is your name?: ')  # User input: Mark Watney
 >>>
 >>> if name:
 ...     print(f'My name is... {name}')
-My name is... Jan Twardowski
+My name is... Mark Watney
 
 Checking if has value:
 
->>> def input(__prompt):
-...     """Stub user input, for testing purpose only"""
-...     return ''
->>>
->>> name = input('What is your name?: ')
+>>> name = input('What is your name?: ')  # User input: '' (nothing)
 >>>
 >>> if name:
 ...     print(f'My name... {name}')
@@ -204,12 +201,7 @@ cosmonaut
 
 Checking if variable is certain value:
 
->>> def input(__prompt):
-...     """Stub user input, for testing purpose only"""
-...     return ''
->>>
->>>
->>> name = input('What is your name?: ')
+>>> name = input('What is your name?: ')  # User input: '' (nothing)
 >>>
 >>> if name:
 ...     print(f'My name is... {name}')
@@ -250,12 +242,7 @@ Conditional Alternative
     else:
         <do something>
 
->>> def input(__prompt):
-...     """Stub user input, for testing purpose only"""
-...     return 'Polish'
->>>
->>>
->>> language = input('What is your language?: ')
+>>> language = input('What is your language?: ')  # User input 'Polish'
 >>>
 >>> if language == 'English':
 ...     print('Hello')

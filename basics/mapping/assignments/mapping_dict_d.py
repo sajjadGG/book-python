@@ -11,7 +11,7 @@ English:
     3. If letter is in `PL` then use conversion value as letter
     4. `MagicMock` will simulate inputting of a letter by user
     5. Use `input()` function as normal
-    X. Run doctests - all must succeed
+    6. Run doctests - all must succeed
 
 Polish:
     1. Poproś użytkownika o wprowadzenie jednej litery
@@ -19,7 +19,7 @@ Polish:
     3. Jeżeli litera jest w `PL` to użyj skonwertowanej wartości jako litera
     4. `MagicMock` zasymuluje wpisanie litery przez użytkownika
     5. Skorzytaj z funkcji `input()` tak jak normalnie
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Example:
     | Input | Output |

@@ -10,14 +10,14 @@ English:
         a. tuple: `1`, `2`, `3`
         b. list: `1.1`, `2.2`, `3.3`
         c. set: `'Mark Watney'`, `'Melissa Lewis'`, `'Jan Twardowski'`
-    X. Run doctests - all must succeed
+    2. Run doctests - all must succeed
 
 Polish:
     1. Stwórz zagnieżdżoną listę `result` z elementami:
         a. tuple: `1`, `2`, `3`
         b. list: `1.1`, `2.2`, `3.3`
         c. set: `'Mark Watney'`, `'Melissa Lewis'`, `'Jan Twardowski'`
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys

@@ -16,7 +16,7 @@ English:
     8. If user pressed Enter key, end inserting data
     9. At the end, define `result: float` with calculated mean of `grades`
     10. Test case when report list is empty
-    X. Run doctests - all must succeed
+    11. Run doctests - all must succeed
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -30,7 +30,7 @@ Polish:
     9. Na zakończenie zdefiniuj `result` z wyliczeniem średniej
        arytmetycznej `grades`
     10. Przetestuj przypadek, gdy dzienniczek jest pusty
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    11. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `Stop` or `Ctrl+C` kills infinite loop
@@ -63,6 +63,7 @@ input = MagicMock(side_effect=['1', '2', '2.5', '3', '3.5', '4', '5', '6', ''])
 # Given
 GRADE_SCALE = (2.0, 3.0, 3.5, 4.0, 4.5, 5.0)
 
+grades = ...  # list[float]: all user grades
 result = ...  # float: arithmetic mean of grades
 
 # Solution

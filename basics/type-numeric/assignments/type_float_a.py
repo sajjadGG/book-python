@@ -52,4 +52,4 @@ gross = ...  # float: net + VAT
 # Solution
 net = 100.0 * PLN
 tax = net * VAT
-gross = net * tax
+gross = net + tax
