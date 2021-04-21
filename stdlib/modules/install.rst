@@ -39,11 +39,11 @@ English:
     2. Add line ``mypy``
     3. Let your IDE install package automatically (click in yellow banner)
     4. Run ``mypy`` on last edited Python script
-    X. Run doctests - all must succeed
+    5. Run doctests - all must succeed
 
 Polish:
     1. Stwórz plik ``requirements.txt``
     2. Dopisz linię ``mypy``
     3. Niech Twoje IDE zainstaluje package automatycznie (kliknięcie w żółty banner)
     4. Uruchom ``mypy`` na ostatnio edytowanym skrypcie Python
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    5. Uruchom doctesty - wszystkie muszą się powieść

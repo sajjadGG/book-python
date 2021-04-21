@@ -52,3 +52,8 @@ Figures
 .. figure:: img/install-ide-2.png
 .. figure:: img/install-ide-3.png
 .. figure:: img/install-ide-4.png
+
+
+References
+----------
+.. [#DownloadPyCharm] JetBrains. Download PyCharm. Year: 2021. Retrieved: 2021-04-19. URL: https://www.jetbrains.com/pycharm/download/

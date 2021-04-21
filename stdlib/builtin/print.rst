@@ -613,7 +613,7 @@ Powielanie napisów
 
 English:
     TODO: English Translation
-    X. Run doctests - all must succeed
+    Run doctests - all must succeed
 
 Polish:
     1. Dany jest ciąg znaków: ``text = 'Lorem Ipsum'``
@@ -626,7 +626,7 @@ Polish:
     3. Każda funkcja ma wyświetlić 5 kopii tego ciągu znaków
     4. Każdy ciąg znaków w osobnej linii
     5. Napisz doctest do wszystkich funkcji
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Przeliczanie temperatury
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -637,7 +637,7 @@ Przeliczanie temperatury
 
 English:
     TODO: English Translation
-    X. Run doctests - all must succeed
+    Run doctests - all must succeed
 
 Polish:
     1. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni).

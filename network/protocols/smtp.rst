@@ -36,10 +36,10 @@ Send email
 
 English:
     TODO: English Translation
-    X. Run doctests - all must succeed
+          Run doctests - all must succeed
 
 Polish:
     1. Połącz się z serwerem podanym przez prowadzącego
     2. Wyślij wiadomość email na podany przez prowadzącego adres
     3. Do wiadomości załącz plik ``pep20.txt``, który będzie wynikiem polecenia ``import this`` :pep:`20` -- The Zen of Python
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    4. Uruchom doctesty - wszystkie muszą się powieść

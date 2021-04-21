@@ -72,3 +72,8 @@ Figures
 .. figure:: img/install-project-4.png
 .. figure:: img/install-project-5.png
 .. figure:: img/install-project-6.png
+
+
+References
+----------
+.. [#DownloadGit] Download Git. Year: 2021. Retrieved: 2021-04-19. URL: https://git-scm.com/download

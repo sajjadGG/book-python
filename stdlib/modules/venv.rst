@@ -27,7 +27,7 @@ Example:
 .. code-block:: console
 
     $ cd PROJECT
-    $ python3.9 -m venv venv-3.9.0
+    $ python3.9 -m venv venv-3.9.4
 
 
 Activate
@@ -41,14 +41,14 @@ Windows:
 .. code-block:: console
 
     $ cd PROJECT
-    $ venv-3.9.0\Scripts\activate.bat
+    $ venv-3.9.4\Scripts\activate.bat
 
 macOS, Linux, BSD:
 
 .. code-block:: console
 
     $ cd PROJECT
-    $ venv-3.9.0/bin/activate
+    $ venv-3.9.4/bin/activate
 
 
 Directory Naming Convention
@@ -74,13 +74,13 @@ Directory Naming Convention
     python
     py-3.9
     python-3.9
-    python-3.9.0
+    python-3.9.4
 
     .py
     .python
     .py-3.9
     .python-3.9
-    .python-3.9.0
+    .python-3.9.4
 
     venv-3.6/
     venv-3.7/
@@ -93,7 +93,7 @@ Directory Naming Convention
     venv-3.8.2/
     venv-3.8.3/
 
-    venv-3.9.0/
+    venv-3.9.4/
     venv-3.9.1/
     venv-3.9.2/
     venv-3.9.3/
@@ -130,10 +130,10 @@ This convention is from ``virtualenv-wrapper`` module (mostly used in Python 2):
 
 Good practices
 --------------
-* name as version ``venv-3.9.0``
+* name as version ``venv-3.9.4``
 * place in your project directory and add folder to ``.gitignore`` (important!)
 * otherwise place it in ``~/.virtualenv/``, but some meaningful name is required
-* Append at the end of ``venv-3.9.0/bin/activate``:
+* Append at the end of ``venv-3.9.4/bin/activate``:
 
     .. code-block:: bash
 
@@ -166,9 +166,9 @@ Virtualenv
 English:
     1. Create ``venv``
     2. Add ``venv`` as a Python interpreter in your IDE
-    X. Run doctests - all must succeed
+    3. Run doctests - all must succeed
 
 Polish:
     1. Stwórz ``venv``
     2. Dodaj ``venv`` jako interpreter Python w Twoim IDE
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    3. Uruchom doctesty - wszystkie muszą się powieść

@@ -5,7 +5,7 @@ Linear Regression
 
 
 Co to jest Linear Regression?
--------------------------------------------------------------------------------
+-----------------------------
 The straight line can be seen in the plot, showing how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
 
 The coefficients, the residual sum of squares and the variance score are also calculated.
@@ -16,13 +16,13 @@ The coefficients, the residual sum of squares and the variance score are also ca
 
 
 Przed zastosowaniem
--------------------------------------------------------------------------------
+-------------------
 * Trzeba usunąć elementy odstające
 * Trzeba sprawdzić czy są osobne klastry danych, tzn. czy linia jest przedziałami ciągła, tzn. gdyby podzielić na segmenty, to można lepiej dostosować regresję
 
 
 Wyznaczanie równania prostej
--------------------------------------------------------------------------------
+----------------------------
 .. figure:: img/regression-function1.png
 
     Manipulowanie parametrami prostej (klasyfikatora) w celu określenia funkcji.
@@ -61,13 +61,13 @@ Wyznaczanie równania prostej
 
 
 Funkcja przedziałami liniowa
--------------------------------------------------------------------------------
+----------------------------
 .. figure:: img/regression-linear-fitting.gif
 
     Funkcja przedziałami liniowa
 
 Przykłady praktyczne
--------------------------------------------------------------------------------
+--------------------
 
 Wykorzystanie biblioteki ``sklearn``
 
@@ -245,7 +245,7 @@ Własna implementacja
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Least square regression 3 points
@@ -260,10 +260,11 @@ English:
     2. Find the least square regression line for the given data points.
     3. Plot the given points and the regression line in the same rectangular system of axes.
     4. Napisz własny kod implementujący rozwiązanie
-    X. Run doctests - all must succeed
+    5. Run doctests - all must succeed
 
 Polish:
     .. todo:: Polish Translation
+              Uruchom doctesty - wszystkie muszą się powieść
 
 Least square regression 4 points
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -276,11 +277,11 @@ English:
     1. Find the least square regression line for the following set of data: :math:`{(-1 , 0),(0 , 2),(1 , 4),(2 , 5)}`
     2. Plot the given points and the regression line in the same rectangular system of axes.
     3. Użyj kodu z przykładu własnej implementacji do rozwiązania
-    X. Run doctests - all must succeed
+    4. Run doctests - all must succeed
 
 Polish:
     .. todo:: Polish Translation
-    X. Uruchom doctesty - wszystkie muszą się powieść
+              Uruchom doctesty - wszystkie muszą się powieść
 
 Company sales
 ^^^^^^^^^^^^^
@@ -300,8 +301,8 @@ English:
     2. Find the least square regression line :math:`y = ax + b` .
     3. Use the least squares regression line as a model to estimate the sales of the company in 2012.
     4. Use ``sklearn``
-    X. Run doctests - all must succeed
+    5. Run doctests - all must succeed
 
 Polish:
     .. todo:: Polish Translation
-    X. Uruchom doctesty - wszystkie muszą się powieść
+              Uruchom doctesty - wszystkie muszą się powieść

@@ -2,7 +2,7 @@ Features
 ========
 
 Czym są features?
--------------------------------------------------------------------------------
+-----------------
 Attribute is also known as field, variable or feature.
 
 A quantity describing an instance. An attribute has a domain defined by the attribute type, which denotes the values that can be taken by an attribute. The following domain types are common:
@@ -16,7 +16,7 @@ A quantity describing an instance. An attribute has a domain defined by the attr
         A feature is the specification of an attribute and its value. For example, color is an attribute. "Color is blue" is a feature of an example. Many transformations to the attribute set leave the feature set unchanged (for example, regrouping attribute values or transforming multi-valued attributes to binary attributes). Some authors use feature as a synonym for attribute (e.g., in feature-subset selection).
 
 Przykład praktyczny
--------------------------------------------------------------------------------
+-------------------
 Jak odróżnić jabłko od pomarańczy?
 
 * ilość pikseli pomarańczowych i ich stosunek do zielonych/czerwonych
@@ -93,7 +93,7 @@ Scikit-learn uses real-valued features:
 
 
 What Makes a Good Feature?
--------------------------------------------------------------------------------
+--------------------------
 .. figure:: img/features-and-labels.png
 
     Features and labels. Features are input to classifier and labels are output from it.
@@ -156,7 +156,7 @@ Feature Engineering
 
 English:
     TODO: English Translation
-    X. Run doctests - all must succeed
+          Run doctests - all must succeed
 
 Polish:
     1. Celem zadania będzie opracowanie tabeli, cech osób, które czynią z niego astronautę.
@@ -172,7 +172,7 @@ Polish:
     7. Do
     8. Uruchom test wagi parametrów
     9. Czy Twoje features mają wysokie znaczenie?
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    10. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * ``np.genfromtxt()``
@@ -208,7 +208,6 @@ Hints:
 
         # display the relative importance of each attribute
         print(model.feature_importances_)
-
 
 
 .. code-block:: python

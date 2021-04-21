@@ -7,7 +7,7 @@ HTML Scrapping
 * Scrapy https://scrapy.org/
 
 ``BeautifulSoup``
--------------------------------------------------------------------------------
+-----------------
 
 Example usage
 -------------
@@ -158,7 +158,7 @@ Getting Page Text
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Scrapping Iris
@@ -178,7 +178,7 @@ Polish:
     3. Skasuj pierwszy wiersz nagłówkowy.
     4. Kolumny nazwij: ``Sepal length``, ``Sepal width``, ``Petal length``, ``Petal width``, ``Species``
     5. Wyświetl dane w formacie listy dictów, kluczami mają być nazwy kolumn.
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Scrapping EVA
 ^^^^^^^^^^^^^
@@ -189,7 +189,7 @@ Scrapping EVA
 
 English:
     TODO: English Translation
-    X. Run doctests - all must succeed
+          Run doctests - all must succeed
 
 Polish:
     1. Na podstawie podanych URL:
@@ -206,5 +206,5 @@ Polish:
         a. Podając jako parametr czwarty URL
         b. Dla częściowo sparsowanej strony, np. wyciągniętej tabelki
 
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    5. Uruchom doctesty - wszystkie muszą się powieść
 

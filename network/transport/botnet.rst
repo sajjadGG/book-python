@@ -19,6 +19,8 @@ Mini Botnet
     b. Victim - ofiara,
     c. Attacker - atakujący.
 
+2. Run doctests - all must succeed
+
 .. figure:: img/botnet.png
 
     Architektura botnet
@@ -35,7 +37,7 @@ Heartbeat Receiver
 
 English:
     TODO: English Translation
-    X. Run doctests - all must succeed
+          Run doctests - all must succeed
 
 Polish:
     1. Server ma przyjmować komunikaty UDP na porcie 1337
@@ -45,7 +47,7 @@ Polish:
         b. ``host TEXT``,
         c. ``port INTEGER``.
 
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * ``socketserver.UDPServer``
@@ -59,7 +61,7 @@ Victim
 
 English:
     TODO: English Translation
-    X. Run doctests - all must succeed
+          Run doctests - all must succeed
 
 Polish:
     1. Po zainfekowaniu otwiera randomowy port TCP (backdoor) z przedziału 1025-65535 na którym nasłuchuje komunikatów
@@ -76,7 +78,7 @@ Polish:
 
     6. Stwórz dekorator ``is_valid_xml``, który sprawdzi czy XML się waliduje (czy ma poprawną strukturę) i tylko wtedy wykona polecenia
     7. Stwórz dekorator ``log_incoming_requests``, który zapisze do pliku ``botnet.log`` logi w formacie ``Request from IP:PORT to execute COMMAND ARGUMENTS`` dla każdego polecenia wykonywanego na systemie ofiary
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    8. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * ``random``
@@ -96,7 +98,7 @@ Attacker
 
 English:
     TODO: English Translation
-    X. Run doctests - all must succeed
+          Run doctests - all must succeed
 
 Polish:
     1. Skopiuj zawartość listingu z sekcji "Given" do pliku ``botnet-commands.xml``
@@ -123,7 +125,7 @@ Polish:
     8. Do obsługi parametrów z linii poleceń wykorzystaj ``argparse``
     9. Przetwarzanie requestów jest nieblokujące, tzn. otwieraj wątek dla każdego zapytania
     10. Wykorzystaj ``os.path.join`` (łączenie ścieżki) oraz ``os.walk`` (wyświetlanie zawartości).
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    11. Uruchom doctesty - wszystkie muszą się powieść
 
 Given:
     .. literalinclude:: src/botnet-commands.xml
@@ -135,7 +137,7 @@ Hints:
     * ``socket``
     * ``json.dumps()``, ``json.loads()``
 
-:Extra task:
+Extra task:
     Za pomocą ``Django`` stwórz panel administracyjny dla botnet:
 
         * Wyszukiwanie aktywnych hostów

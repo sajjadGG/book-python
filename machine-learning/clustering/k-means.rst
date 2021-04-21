@@ -15,14 +15,14 @@ A loose definition of clustering could be "the process of organizing objects int
 * Algorithms only work when you tell them, how many groups you want data in.
 
 Przykłady zastosowania
--------------------------------------------------------------------------------
+----------------------
 * pixels colors
 * patients in hospital: how sick they are
 * cars: new, used
 * jobs: different kinds
 
 Algorytmy klastrowania
--------------------------------------------------------------------------------
+----------------------
 
 .. list-table::
    :header-rows: 1
@@ -98,7 +98,7 @@ Similarities
 
 
 Flat Clustering
--------------------------------------------------------------------------------
+---------------
 Clustering algorithms group a set of documents into subsets or clusters . The algorithms' goal is to create clusters that are coherent internally, but clearly different from each other. In other words, documents within a cluster should be as similar as possible; and documents in one cluster should be as dissimilar as possible from documents in other clusters.
 
 .. figure:: img/clustering-flat.png
@@ -116,7 +116,7 @@ K-means Convergence:
 
 
 Hierarchical Clustering
--------------------------------------------------------------------------------
+-----------------------
 Hierarchical clustering is where you build a cluster tree (a dendrogram) to represent data, where each group (or "node") is linked to two or more successor groups. The groups are nested and organized as a tree, which ideally ends up as a meaningful classification scheme.
 
 Each node in the cluster tree contains a group of similar data; Nodes are placed on the graph next to other, similar nodes. Clusters at one level are joined with clusters in the next level up, using a degree of similarity; The process carries on until all nodes are in the tree, which gives a visual snapshot of the data contained in the whole set. The total number of clusters is not predetermined before you start the tree creation.
@@ -125,7 +125,7 @@ Each node in the cluster tree contains a group of similar data; Nodes are placed
 
 
 Porównanie algorytmów
--------------------------------------------------------------------------------
+---------------------
 
 * http://hdbscan.readthedocs.io/en/latest/comparing_clustering_algorithms.html
 
@@ -237,7 +237,7 @@ Porównanie algorytmów klastrowania
     plt.show()
 
 Przykład praktyczny
--------------------------------------------------------------------------------
+-------------------
 
 K-means Clustering dla zbioru Iris
 ----------------------------------
@@ -315,7 +315,7 @@ K-means Clustering dla zbioru Iris
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Klastrowanie zbioru Iris
@@ -327,10 +327,10 @@ Klastrowanie zbioru Iris
 
 English:
     TODO: English Translation
-    X. Run doctests - all must succeed
+          Run doctests - all must succeed
 
 Polish:
     1. Dla zbioru Iris dokonaj klastrowania za pomocą algorytmu ``KMeans`` z biblioteki ``sklearn``.
     2. Dla jakiego hiperparametru ``n_clusters`` osiągniemy największe accuracy?
     3. Zwizualizuj graficznie rozwiązanie problemu
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    4. Uruchom doctesty - wszystkie muszą się powieść

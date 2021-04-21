@@ -13,7 +13,7 @@ Dragon (version beta)
 
 English:
     TODO: English Translation
-    X. Run doctests - all must succeed
+          Run doctests - all must succeed
 
 Polish:
     1. Zaimportuj smoka z poprzedniej części zadania ("Part 1")
@@ -42,7 +42,7 @@ Polish:
     9. Bohater przejmuje złoto smoka, jeżeli go zabije
     10. Przeprowadź walkę, tak długo aż ktoś pierwszy nie zginie
     11. Jeżeli konieczne jest wprowadzenie nowej metody, klasy lub pól to należy to zrobić
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    12. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * Aby zaimportować trzeba najpierw w katalogu stworzyć pusty plik ``__init__.py``

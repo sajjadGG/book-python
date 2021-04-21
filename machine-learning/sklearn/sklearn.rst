@@ -3,28 +3,28 @@ scikit-learn
 
 
 Loading Sample Datasets
--------------------------------------------------------------------------------
+-----------------------
 .. literalinclude:: src/ml-sklearn-datasets.py
     :language: python
     :caption: Loading Sample Datasets
 
 
 Fit and Predict
--------------------------------------------------------------------------------
+---------------
 .. literalinclude:: src/ml-sklearn-fit-predict.py
     :language: python
     :caption: Fit and Predict
 
 
 Classifier
--------------------------------------------------------------------------------
+----------
 .. literalinclude:: src/ml-sklearn-classifier.py
     :language: python
     :caption: Classifier
 
 
 Feature Selection
--------------------------------------------------------------------------------
+-----------------
 * http://scikit-learn.org/stable/modules/feature_selection.html
 * :math:`\mathrm{Var}[X] = p(1 - p)`
 
@@ -77,7 +77,7 @@ Feature Selection
 
 
 Evaluation
--------------------------------------------------------------------------------
+----------
 
 Score
 -----
@@ -93,14 +93,14 @@ Cross Validation
 
 
 Label Encoder
--------------------------------------------------------------------------------
+-------------
 .. literalinclude:: src/ml-sklearn-label-encoder.py
     :language: python
     :caption: Label Encoder
 
 
 Writing Own Classifier
--------------------------------------------------------------------------------
+----------------------
 
 Random Classifier
 -----------------
@@ -128,7 +128,7 @@ Accuracy for Iris dataset: 0.346666666667
 
 
 Zadania praktyczne
--------------------------------------------------------------------------------
+------------------
 
 Nearest Neighbor Classifier
 ---------------------------
@@ -201,14 +201,14 @@ Sklearn Classifier Compare
 
 English:
     TODO: English Translation
-    X. Run doctests - all must succeed
+          Run doctests - all must succeed
 
 Polish:
     1. Pobierz dane Brest Cancer Dataset (``datasets.load_breast_cancer()``)
     2. Podziel zestaw na dane testowe (15%) i dane treningowe (85%) i ustaw ``random_state=0``
     3. Dla danych przeprowadź analizę wykorzystując różne modele danych
     4. Wyświetl nazwę, dokładność oraz odchylenie standardowe modelu
-    X. Uruchom doctesty - wszystkie muszą się powieść
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 .. code-block:: text
 
