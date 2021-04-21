@@ -1,6 +1,11 @@
 Str Input
 =========
 
+.. testsetup::
+
+    from unittest.mock import MagicMock
+    input = MagicMock(side_effect=['Mark Watney', '42', '42.5', '42,5'])
+
 
 Rationale
 ---------
@@ -62,7 +67,7 @@ ValueError: invalid literal for int() with base 10: '42.5'
 
 Conversion to ``float`` cannot handle comma (',') as a decimal separator:
 
->>> age = input('What is your age: ')  # User input: 42.5
+>>> age = input('What is your age: ')  # User input: 42,5
 >>>
 >>> age = int(age)
 Traceback (most recent call last):
