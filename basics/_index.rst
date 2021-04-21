@@ -8,22 +8,41 @@ About
     about/ide.rst
     about/language.rst
     about/syntax.rst
-    about/operators.rst
 
 
-Types
-*****
+Type Numeric
+************
 .. toctree::
     :maxdepth: 1
-    :caption: Types
+    :caption: Type Numeric
 
-    type/int.rst
-    type/float.rst
-    type/bool.rst
-    type/none.rst
-    type/str.rst
-    type/str-methods.rst
-    type/type-annotation.rst
+    type-numeric/operators.rst
+    type-numeric/int.rst
+    type-numeric/float.rst
+
+
+Type Logic
+**********
+.. toctree::
+    :maxdepth: 1
+    :caption: Type Logic
+
+    type-logic/bool.rst
+    type-logic/none.rst
+
+
+Type String
+***********
+.. toctree::
+    :maxdepth: 1
+    :caption: Type String
+
+    type-string/define.rst
+    type-string/values.rst
+    type-string/literals.rst
+    type-string/input.rst
+    type-string/methods.rst
+    type-annotation.rst
 
 
 Sequences
