@@ -129,25 +129,25 @@ TypeError: can only concatenate list (not "int") to list
 >>> data += [4, 5, 6]
 >>>
 >>> print(data)
-[1, 2, 3, 4]
+[1, 2, 3, 4, 5, 6]
 
->>> data = [1, 2]
->>> data.extend([3, 4])
+>>> data = [1, 2, 3]
+>>> data.extend([4, 5, 6])
+>>>
+>>> print(data)
+[1, 2, 3, 4, 5, 6]
+
+>>> data = [1, 2, 3]
+>>> data.append(4)
 >>>
 >>> print(data)
 [1, 2, 3, 4]
 
->>> data = [1, 2]
->>> data.append(3)
+>>> data = [1, 2, 3]
+>>> data.append([4, 5, 6])
 >>>
 >>> print(data)
-[1, 2, 3]
-
->>> data = [1, 2]
->>> data.append([3, 4])
->>>
->>> print(data)
-[1, 2, [3, 4]]
+[1, 2, 3, [4, 5, 6]]
 
 
 Insert
