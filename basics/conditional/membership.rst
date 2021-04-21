@@ -147,13 +147,19 @@ TypeError: unhashable type: 'set'
 True
 >>> 'pilot' in crew
 False
->>> 'Melissa Lewis'
+>>> 'Melissa Lewis' in crew
 False
+
+>>> crew = {
+...    'commander': 'Melissa Lewis',
+...    'botanist': 'Mark Watney',
+...    'chemist': 'Alex Vogel'}
 >>>
 >>> 'commander' in crew.keys()
 True
 >>> 'Melissa Lewis' in crew.values()
 True
+
 
 Missing
 -------
