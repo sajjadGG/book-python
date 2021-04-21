@@ -166,6 +166,25 @@ True
 >>> sys.version_info > (3, 9, 5)
 False
 
+>>> '3.8.0' > '3.9.0'
+False
+>>> '3.9.0' > '3.10.0'
+True
+>>> '3.09.0' > '3.10.0'
+False
+
+>>> myversion = '3.9.0'
+>>> required = '3.7.0'
+>>>
+>>> myversion >= required
+True
+
+>>> myversion = '3.9.0'.split('.')
+>>> required = '3.7.0'.split('.')
+>>>
+>>> myversion >= required
+True
+
 
 Operator Precedence
 -------------------
