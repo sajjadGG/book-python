@@ -6,7 +6,7 @@ import requests
 
 
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.WARNING,
     format='"%(asctime).19s", "%(levelname)s", "%(message)s"'
 )
 log = logging.getLogger(__name__)

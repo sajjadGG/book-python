@@ -1,3 +1,11 @@
+"""
+>>> sorted(result)  # doctest: +NORMALIZE_WHITESPACE
+['#25287', '#27149', '#28017', '#29899', '#31530', '#32548', '#32574',
+ '#32609', '#32611', '#32635', '#32637', '#32641', '#32643', '#32645',
+ '#32647', '#32648', '#32649', '#32650', '#32652', '#32662', '#32664',
+ '#32665', '#32667']
+"""
+
 import datetime
 import json
 import logging
@@ -12,6 +20,7 @@ logging.basicConfig(
 )
 
 log = logging.getLogger(__name__)
+
 
 class Cache:
     def set(self): pass
@@ -32,7 +41,6 @@ class HTTPGateway:
 
     def _fetch_from_url(self, url):
         connection = requests.get(url, auth=(self.username, self.password))
-
         if connection.status_code != 200:
             log.error(f'Cannot fetch from URL: {url}')
             raise ConnectionError
@@ -43,15 +51,15 @@ class HTTPGateway:
     def _fetch_from_cache(self, url):
         cache_name = self._get_cache_name_from_url(url)
         path = os.path.join(self.cache_directory, cache_name)
-
         with open(path) as file:
             log.debug(f'Reading from cache file {path}')
             return file.read()
 
     def _set_cache(self, url, data):
         cache_name = self._get_cache_name_from_url(url)
+        if not os.path.exists(self.cache_directory):
+            os.makedirs(self.cache_directory)
         path = os.path.join(self.cache_directory, cache_name)
-
         with open(path, 'w') as file:
             log.debug(f'Writing to cache file {path}')
             file.write(data)
@@ -62,10 +70,8 @@ class HTTPGateway:
             modification_datetime = datetime.datetime.fromtimestamp(modification_timestamp)
             now = datetime.datetime.now()
             return (now - modification_datetime).days < self.cache_expiry_days
-
         cache_name = self._get_cache_name_from_url(url)
         path = os.path.join(self.cache_directory, cache_name)
-
         if os.path.isfile(path) and last_modified_less_than_month_ago(path):
             return False
         else:
@@ -79,21 +85,22 @@ class HTTPGateway:
         else:
             log.info(f'Will read from cache')
             data = self._fetch_from_cache(url)
-
         return json.loads(data)
 
 
 http = HTTPGateway(
     username='username',
     password='password',
-    cache_directory='tmp'
+    cache_directory='/tmp'
 )
 
 month_ago = datetime.datetime.now() - datetime.timedelta(days=30)
 issue_number = re.compile(r'#[0-9]+')
-issue_list = set()
+result = set()
 
-for repository in http.get('https://api.github.com/orgs/django/repos'):
+DATA = 'https://api.github.com/orgs/django/repos'
+
+for repository in http.get(DATA):
     if repository['name'] == 'django':
         repository_url = repository['commits_url'].replace('{/sha}', '')
 
@@ -104,6 +111,4 @@ for repository in http.get('https://api.github.com/orgs/django/repos'):
 
             if commit_date > month_ago:
                 for issue in issue_number.findall(message):
-                    issue_list.add(issue)
-
-print(issue_list)
+                    result.add(issue)
