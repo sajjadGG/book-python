@@ -58,15 +58,18 @@ Tests:
     False
 """
 
-a = True == ...  # bool: True
-b = True != ...  # bool: True
-c = not ...  # bool: False
-d = bool(...) == True  # bool: True
-e = bool(...) == False  # bool: True
-f = ... or ...  # bool: False
-g = ... and ...  #bool:  True
-h = bool(bool(...) == ...) or False  # bool: True
-i = bool(...) is not bool(False)  # bool: False
+a = True == ...         # bool: the expression result must be True
+b = True != ...         # bool: the expression result must be True
+c = not ...             # bool: the expression result must be False
+
+d = bool(...) == True   # bool: the expression result must be True
+e = bool(...) == False  # bool: the expression result must be True
+
+f = ... or ...          # bool: the expression result must be False
+g = ... and ...         # bool: the expression result must be True
+
+h = bool(bool(...) == ...) or False  # bool: the expression result must be True
+i = bool(...) is not bool(False)     # bool: the expression result must be False
 
 # Solution
 a = True == True

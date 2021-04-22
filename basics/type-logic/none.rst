@@ -2,14 +2,22 @@ Logic None
 ==========
 
 
+Rationale
+---------
+* Empty (null) or unknown (unset) value
+
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
+>>> age = None
+
+
 Definition
 ----------
 * First letter capitalized, other are lower cased
-* Empty (null) or unknown (unset) value
-* It is not ``False`` value
-* With ``if`` statements behaves like negative values
 
 >>> data = None
+
+It is not ``False`` value:
 
 >>> None == False
 False
@@ -17,8 +25,11 @@ False
 >>> None is False
 False
 
+
 Type Casting
 ------------
+With ``if`` statements behaves like negative values
+
 >>> bool(False)
 False
 >>>

@@ -27,36 +27,8 @@ Cython
 Cython
 
 
-String Immutability
--------------------
-How many string are there in a memory?
-
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
->>>
->>> firstname + ' ' + lastname
-'Jan Twardowski'
-
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
->>>
->>> f'{firstname} {lastname}'
-'Jan Twardowski'
-
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
->>> age = 42
->>>
->>> 'Hello ' + firstname + ' ' + lastname + ' ' + str(age) + '!'
-'Hello Jan Twardowski 42!'
-
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
->>> age = 42
->>>
->>> f'Hello {firstname} {lastname} {age}!'
-'Hello Jan Twardowski 42!'
-
+Memory
+------
 .. figure:: img/memory-str-1.png
 .. figure:: img/memory-str-2.png
 .. figure:: img/memory-str-3.png
@@ -102,6 +74,33 @@ Concatenation
 >>>
 >>> firstname + ' ' + lastname
 'Jan Twardowski'
+
+
+>>> firstname = 'Jan'
+>>> lastname = 'Twardowski'
+>>>
+>>> firstname + ' ' + lastname
+'Jan Twardowski'
+
+>>> firstname = 'Jan'
+>>> lastname = 'Twardowski'
+>>>
+>>> f'{firstname} {lastname}'
+'Jan Twardowski'
+
+>>> firstname = 'Jan'
+>>> lastname = 'Twardowski'
+>>> age = 42
+>>>
+>>> 'Hello ' + firstname + ' ' + lastname + ' ' + str(age) + '!'
+'Hello Jan Twardowski 42!'
+
+>>> firstname = 'Jan'
+>>> lastname = 'Twardowski'
+>>> age = 42
+>>>
+>>> f'Hello {firstname} {lastname} {age}!'
+'Hello Jan Twardowski 42!'
 
 
 Value Check

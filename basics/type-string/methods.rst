@@ -7,25 +7,25 @@ Rationale
 * ``str`` is immutable
 * ``str`` methods create a new modified ``str``
 
-    >>> a = 'Python'
-    >>> a.replace('P', 'C')
-    'Cython'
-    >>> print(a)
-    Python
+>>> a = 'Python'
+>>> a.replace('P', 'C')
+'Cython'
+>>> print(a)
+Python
 
-    >>> a = 'Python'
-    >>> b = a.replace('P', 'C')
-    >>>
-    >>> print(a)
-    Python
-    >>> print(b)
-    Cython
+>>> a = 'Python'
+>>> b = a.replace('P', 'C')
+>>>
+>>> print(a)
+Python
+>>> print(b)
+Cython
 
-    >>> a = 'Python'
-    >>> a = a.replace('P', 'C')
-    >>>
-    >>> print(a)
-    Cython
+>>> a = 'Python'
+>>> a = a.replace('P', 'C')
+>>>
+>>> print(a)
+Cython
 
 
 Strip Whitespace
@@ -66,45 +66,69 @@ Replace
 
 Starts With
 -----------
-    >>> name = 'Angus MacGyver III'
-    >>> name.startswith('Angus')
-    True
+>>> email = 'mark.watney@nasa.gov'
+>>>
+>>> email.startswith('mark.watney')
+True
+>>> email.startswith('melissa.lewis')
+False
 
-    >>> PREFIX = ('vir', 'ver')
-    >>>
-    >>> 'virginica'.startswith(PREFIX)
-    True
-    >>> 'versicolor'.startswith(PREFIX)
-    True
-    >>> 'setosa'.startswith(PREFIX)
-    False
+>>> email = 'mark.watney@nasa.gov'
+>>>
+>>> email.startswith(('mark.watney', 'melissa.lewis'))
+True
+
+>>> email = 'mark.watney@nasa.gov'
+>>> vip = ('mark.watney', 'melissa.lewis')
+>>>
+>>> email.startswith(vip)
+True
 
 
 Ends With
 ---------
-    >>> name = 'Angus MacGyver Iii'
-    >>>
-    >>> name.endswith('III')
-    False
+>>> email = 'mark.watney@nasa.gov'
+>>>
+>>> email.endswith('nasa.gov')
+True
+>>> email.endswith('esa.int')
+False
 
-    >>> DOMAINS = ('@nasa.gov', '@esa.int')
-    >>>
-    >>> email = 'mark.watney@nasa.gov'
-    >>> email.endswith(DOMAINS)
-    True
-    >>> email = 'ivan.ivanovich@roscosmos.ru'
-    >>> email.endswith(DOMAINS)
-    False
+>>> email = 'mark.watney@nasa.gov'
+>>>
+>>> email.endswith(('nasa.gov', 'esa.int'))
+True
+
+>>> email = 'mark.watney@nasa.gov'
+>>> whitelist = ('nasa.gov', 'esa.int')
+>>>
+>>> email.endswith(whitelist)
+True
 
 
 Split by Line
 -------------
-    >>> DATA = """First Line
-    ... Second Line
-    ... Third Line
-    ... """
-    >>> DATA.splitlines()
-    ['First Line', 'Second Line', 'Third Line']
+>>> text = 'Hello\nPython\nWorld'
+>>>
+>>> text.splitlines()
+['Hello', 'Python', 'World']
+
+>>> text = """We choose to go to the Moon!
+... We choose to go to the Moon in this decade and do the other things,
+... not because they are easy, but because they are hard;
+... because that goal will serve to organize and measure the best of our
+... energies and skills, because that challenge is one that we are willing
+... to accept, one we are unwilling to postpone, and one we intend to win,
+... and the others, too."""
+>>>
+>>> text.splitlines()  # doctest: +NORMALIZE_WHITESPACE
+['We choose to go to the Moon!',
+ 'We choose to go to the Moon in this decade and do the other things,',
+ 'not because they are easy, but because they are hard;',
+ 'because that goal will serve to organize and measure the best of our',
+ 'energies and skills, because that challenge is one that we are willing',
+ 'to accept, one we are unwilling to postpone, and one we intend to win,',
+ 'and the others, too.']
 
 
 Split by Character

@@ -82,7 +82,7 @@ Tests:
     >>> m
     False
     >>> n
-    True
+    False
     >>> o
     False
     >>> p
@@ -112,6 +112,7 @@ n = bool(float(str(-0)))
 o = bool(-0.0+0.0j)
 p = bool('-0.0+0.0j')
 q = bool(complex('-0.0+0.0j'))
+
 
 # Solution
 a == False
