@@ -31,8 +31,8 @@ Identity Check
 * ``x is None`` - ``x`` is the same object as ``y``
 * ``x is not None`` - ``x`` is not the same object as ``y``
 
->>> firstname == 'Mark'
->>> lastname == 'Watney'
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
 >>> age = None
 >>>
 >>> age is None
@@ -46,8 +46,8 @@ Value Check
 * Do not use ``==`` or ``!=`` to check ``None`` values
 * It works, but it is a subject to change
 
->>> firstname == 'Mark'
->>> lastname == 'Watney'
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
 >>> age = None
 >>>
 >>> age == None

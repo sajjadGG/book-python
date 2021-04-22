@@ -209,7 +209,7 @@ True
 >>> name == 'Melissa Lewis'
 False
 >>> True or False
-False
+True
 
 
 Boolean Algebra

@@ -6,8 +6,18 @@ Definition
 ----------
 * ``str`` is a sequence
 
+Empty string:
+
 >>> data = ''
->>> data = 'Jan Twardowski'
+>>> data = str()
+
+Define string:
+
+>>> data = 'Mark Watney'
+>>> data = str('Mark Watney')
+
+Multiline string:
+
 >>> data =  'First line\nSecond line\nThird line'
 >>>
 >>> data = """First line

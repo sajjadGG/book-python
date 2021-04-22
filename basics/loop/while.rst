@@ -5,7 +5,7 @@ Loop While
 
     # Simulate user input (for test automation)
     from unittest.mock import MagicMock
-    input = side_effect(return_value=['1'])
+    input = MagicMock(side_effect=['1'])
 
 
 Rationale
