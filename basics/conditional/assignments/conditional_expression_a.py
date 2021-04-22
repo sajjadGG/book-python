@@ -64,9 +64,8 @@ Tests:
     >>> assert blood_pressure == '181/121' and result == 'Hypertensive Crisis' or True
 """
 
+# Simulate user input (for test automation)
 from unittest.mock import MagicMock
-
-
 input = MagicMock(side_effect=['119/79', '120/80', '121/79',
                                '120/81', '130/80', '130/89',
                                '140/85', '140/89', '141/90',

@@ -281,6 +281,30 @@ Strict type annotation, before Python 3.9:
 ...    {7, 8, 9}]
 
 
+NamedTuple
+----------
+>>> from typing import NamedTuple
+>>> from sys import getsizeof
+>>>
+>>>
+>>> class Astronaut(NamedTuple):
+...     firstname: str
+...     lastname: str
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney')
+>>> astro
+Astronaut(firstname='Mark', lastname='Watney')
+>>>
+>>> getsizeof(astro)
+56
+>>>
+
+>>> astro = ('Mark', 'Watney')
+>>> getsizeof(astro)
+56
+
+
 Further Reading
 ---------------
 * Example: https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L505

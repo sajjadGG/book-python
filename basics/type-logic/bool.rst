@@ -151,7 +151,25 @@ Use Cases:
 >>>
 >>> firstname == 'Mark' and lastname == 'Watney'
 True
+
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
+>>>
 >>> firstname == 'Mark' and lastname == 'Twardowski'
+False
+
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
+>>>
+>>> firstname == 'Mark'
+True
+>>> lastname == 'Watney'
+True
+>>> lastname == 'Twardowski'
+False
+>>> True and True
+True
+>>> True and False
 False
 
 
@@ -184,6 +202,15 @@ Use Case:
 >>> name == 'Mark Watney' or name == 'Melissa Lewis'
 True
 
+>>> name = 'Mark Watney'
+>>>
+>>> name == 'Mark Watney'
+True
+>>> name == 'Melissa Lewis'
+False
+>>> True or False
+False
+
 
 Boolean Algebra
 ---------------
@@ -212,6 +239,18 @@ Use Case:
 >>> (firstname == 'Mark' and lastname == 'Watney') \
 ...     or (firstname == 'Jan' and lastname == 'Twardowski') \
 ...     or (firstname == 'Melissa' and lastname == 'Lewis')
+True
+
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
+>>>
+>>> firstname == 'Mark' and lastname == 'Watney'
+True
+>>> firstname == 'Jan' and lastname == 'Twardowski'
+False
+>>> firstname == 'Melissa' and lastname == 'Lewis'
+False
+>>> True or False or False
 True
 
 
@@ -256,6 +295,9 @@ False
 
 Example
 -------
+* ``&`` - and
+* ``|`` - or
+
 >>> import numpy as np
 >>>
 >>>

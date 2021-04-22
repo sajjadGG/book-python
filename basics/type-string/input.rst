@@ -3,6 +3,7 @@ Str Input
 
 .. testsetup::
 
+    # Simulate user input (for test automation)
     from unittest.mock import MagicMock
     input = MagicMock(side_effect=['Mark Watney', '42', '42.5', '42,5'])
 
@@ -97,7 +98,7 @@ Then, usage of ``input()`` is as normal.
 >>> from unittest.mock import MagicMock
 >>>
 >>>
->>> input = MagicMock(return_value='Mark Watney')
+>>> input = MagicMock(side_effect=['Mark Watney'])
 >>>
 >>> input('What is your name?: ')
 'Mark Watney'

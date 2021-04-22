@@ -42,9 +42,9 @@ convert it manually.
 
 .. testsetup::
 
-    # Mock input() built-in function
+    # Simulate user input (for test automation)
     from unittest.mock import MagicMock
-    input = MagicMock(return_value='-1')
+    input = MagicMock(side_effect=['-1'])
 
 We need to check if the temperature is not negative. If temperature is 0 or
 above, it is ok, and we can proceed with program execution. However if the

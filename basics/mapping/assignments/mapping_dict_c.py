@@ -34,9 +34,9 @@ Tests:
     'Mike'
 """
 
-# `MagicMock` will simulate inputting of a letter by user
+# Simulate user input (for test automation)
 from unittest.mock import MagicMock
-input = MagicMock(return_value='M')
+input = MagicMock(side_effect=['M'])
 
 
 ALPHABET = {

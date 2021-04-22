@@ -55,7 +55,7 @@ Tests:
     3.5
 """
 
-# Mock input() built-in function
+# Simulate user input (for test automation)
 from unittest.mock import MagicMock
 input = MagicMock(side_effect=['1', '2', '2.5', '3', '3.5', '4', '5', '6', ''])
 

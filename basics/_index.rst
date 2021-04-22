@@ -42,6 +42,7 @@ Type String
     type-string/literals.rst
     type-string/input.rst
     type-string/methods.rst
+    type-string/clean.rst
     type-annotation.rst
 
 
