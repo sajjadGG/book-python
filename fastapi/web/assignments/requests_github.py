@@ -1,8 +1,6 @@
 """
->>> sorted(result)  # doctest: +NORMALIZE_WHITESPACE
-['bpo-25460', 'bpo-36076', 'bpo-37630', 'bpo-38530', 'bpo-38605', 'bpo-38659',
- 'bpo-40849', 'bpo-42333', 'bpo-42854', 'bpo-43362', 'bpo-43641', 'bpo-43669',
- 'bpo-43799', 'bpo-43837', 'bpo-43859', 'bpo-43880', 'bpo-43888']
+>>> sorted(result)
+['bpo-30555', 'bpo-31870', 'bpo-35114', 'bpo-37322', 'bpo-37363', 'bpo-37751', 'bpo-38222', 'bpo-38659', 'bpo-38820', 'bpo-39572', 'bpo-39950', 'bpo-41282', 'bpo-43538', 'bpo-43607', 'bpo-43795', 'bpo-43852', 'bpo-43868', 'bpo-43907', 'bpo-43914', 'bpo-43917', 'bpo-43920', 'bpo-43921']
 """
 
 import re
