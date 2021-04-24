@@ -21,6 +21,12 @@ Polish:
     X. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
+    >>> type(result) is pd.DataFrame
+    True
+    >>> pd.set_option('display.width', 500)
+    >>> pd.set_option('display.max_columns', 10)
+    >>> pd.set_option('display.max_rows', 20)
+
     >>> pd.read_pickle(FILE)
     135                                    LM lunar landing.
     136                   LM powered descent  engine cutoff.
@@ -34,6 +40,7 @@ Tests:
     144    CDR at foot of ladder  and described surface a...
     145    1st step  taken lunar surface (CDR). “That’s o...
     Name: Event, dtype: object
+
     >>> from os import remove
     >>> remove(FILE)
 """
