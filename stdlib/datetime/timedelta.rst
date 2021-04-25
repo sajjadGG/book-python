@@ -200,6 +200,12 @@ Duration between two datetimes:
     # {'years': 8, 'months': 3, 'days': 8, 'hours': 20, 'minutes': 49, 'seconds': 15}
 
 
+Further Reading
+---------------
+* https://dateutil.readthedocs.io/en/stable/examples.html
+* https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/datetime_timedelta_a.py
