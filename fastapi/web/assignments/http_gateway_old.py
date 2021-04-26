@@ -1,6 +1,6 @@
 """
 >>> sorted(result)  # doctest: +NORMALIZE_WHITESPACE
-['#25287', '#27149', '#28017', '#28034', '#29899', '#32574', '#32609', '#32611', '#32641', '#32643', '#32647', '#32650', '#32652', '#32662', '#32664', '#32665', '#32667', '#32673']
+['#25287', '#27149', '#28017', '#28034', '#29899', '#32574', '#32609', '#32611', '#32641', '#32647', '#32650', '#32652', '#32662', '#32664', '#32665', '#32667', '#32673', '#32681']
 """
 
 import datetime
@@ -18,6 +18,9 @@ logging.basicConfig(
 
 log = logging.getLogger(__name__)
 
+
+DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/github-django-repos.json'
+# DATA = 'https://api.github.com/orgs/django/repos'
 
 class Cache:
     def set(self): pass
@@ -95,7 +98,6 @@ month_ago = datetime.datetime.now() - datetime.timedelta(days=30)
 issue_number = re.compile(r'#[0-9]+')
 result = set()
 
-DATA = 'https://api.github.com/orgs/django/repos'
 
 for repository in http.get(DATA):
     if repository['name'] == 'django':
