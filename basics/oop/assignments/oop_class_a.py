@@ -1,5 +1,6 @@
 """
 * Assignment: OOP Class Iris
+* Required: yes
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 2 min
@@ -20,8 +21,7 @@ Polish:
 
 Tests:
     >>> from inspect import isclass
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert isclass(Iris)
     >>> assert isinstance(setosa, Iris)

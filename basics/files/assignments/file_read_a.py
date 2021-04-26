@@ -1,44 +1,41 @@
 """
 * Assignment: File Read Str
+* Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
     2. Write `DATA` to file `FILE`
     3. Read `FILE` to `result: str`
     4. Print `result`
     5. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zapisz `DATA` do pliku `FILE`
-    3. Wczytaj `FILE` do `result: str`
-    4. Wypisz `result`
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zapisz `DATA` do pliku `FILE`
+    2. Wczytaj `FILE` do `result: str`
+    3. Wypisz `result`
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert type(result) is str
+    >>> assert result == DATA
 
     >>> result
     'hello'
 
-    >>> from os import remove
-    >>> remove(FILE)
+    >>> from os import remove; remove(FILE)
 """
 
-
-# Given
-FILE = r'_temporary.txt'
+FILE = '_temporary.txt'
 DATA = 'hello'
 
 with open(FILE, mode='wt') as file:
     file.write(DATA)
 
+result = ...  # str: FILE content
 
 # Solution
 with open(FILE, mode='rt') as file:

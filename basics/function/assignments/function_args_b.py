@@ -1,5 +1,6 @@
 """
 * Assignment: Function Arguments Divide
+* Required: yes
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

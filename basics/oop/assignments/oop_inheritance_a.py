@@ -1,25 +1,23 @@
 """
 * Assignment: OOP Inheritance Simple
+* Required: yes
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Create class `Woman` which inherits from `Venus`
-    3. Create class `Man` which inherits from `Mars`
-    4. Run doctests - all must succeed
+    1. Create class `Woman` which inherits from `Venus`
+    2. Create class `Man` which inherits from `Mars`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz klasę `Woman`, która dziedziczy po `Venus`
-    3. Stwórz klasę `Man`, która dziedziczy po `Mars`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    1. Stwórz klasę `Woman`, która dziedziczy po `Venus`
+    2. Stwórz klasę `Man`, która dziedziczy po `Mars`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert isclass(Venus)
     >>> assert isclass(Woman)
@@ -30,7 +28,6 @@ Tests:
 """
 
 
-# Given
 class Venus:
     pass
 

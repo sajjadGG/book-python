@@ -31,8 +31,7 @@ Polish:
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> result = open(__file__).read()
 

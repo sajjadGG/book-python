@@ -1,32 +1,31 @@
 """
 * Assignment: File Read Passwd
+* Required: no
 * Complexity: hard
 * Lines of code: 100 lines
 * Time: 55 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Save listings content to files:
+    1. Save listings content to files:
         a. `etc_passwd.txt`
         b. `etc_shadow.txt`
         c. `etc_group.txt`
-    3. Copy also comments and empty lines
-    4. Parse files and convert it to `result: list[dict]`
-    5. Return list of users with `UID` greater than 1000
-    6. User dict should contains data collected from all files
-    7. Run doctests - all must succeed
+    2. Copy also comments and empty lines
+    3. Parse files and convert it to `result: list[dict]`
+    4. Return list of users with `UID` greater than 1000
+    5. User dict should contains data collected from all files
+    6. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zapisz treści listingów do plików:
+    1. Zapisz treści listingów do plików:
         a. `etc_passwd.txt`
         b. `etc_shadow.txt`
         c. `etc_group.txt`
-    3. Skopiuj również komentarze i puste linie
-    4. Sparsuj plik i przedstaw go w formacie `result: list[dict]`
-    5. Zwróć listę użytkowników, których `UID` jest większy niż 1000
-    6. Dict użytkownika powinien zawierać dane z wszystkich plików
-    7. Uruchom doctesty - wszystkie muszą się powieść
+    2. Skopiuj również komentarze i puste linie
+    3. Sparsuj plik i przedstaw go w formacie `result: list[dict]`
+    4. Zwróć listę użytkowników, których `UID` jest większy niż 1000
+    5. Dict użytkownika powinien zawierać dane z wszystkich plików
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE
@@ -62,8 +61,6 @@ Tests:
       'locked': False}]
 """
 
-
-# Given
 from datetime import date
 from os.path import dirname, join
 

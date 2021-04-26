@@ -1,6 +1,6 @@
 """
 * Assignment: Type Float Percent
-* Status: optional
+* Required: no
 * Complexity: medium
 * Lines of code: 2 lines
 * Time: 3 min
@@ -32,8 +32,7 @@ Hints:
         * Others 0.001%
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert pO2 is not Ellipsis, 'Assignment solution must be in `pO2` instead of ... (Ellipsis)'
     >>> assert type(pO2) is float, 'Variable `pO2` has invalid type, should be float'

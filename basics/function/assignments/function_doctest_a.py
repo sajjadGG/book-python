@@ -1,5 +1,6 @@
 """
 * Assignment: Function Doctest Temperature
+* Required: no
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 13 min

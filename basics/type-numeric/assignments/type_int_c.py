@@ -1,6 +1,6 @@
 """
 * Assignment: Type Int Mul
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
@@ -32,8 +32,7 @@ Hints:
     * 1 km = 1000 m
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert armstrong_limit is not Ellipsis, 'Assignment solution must be in `armstrong_limit` instead of ... (Ellipsis)'
     >>> assert stratosphere is not Ellipsis, 'Assignment solution must be in `stratosphere` instead of ... (Ellipsis)'

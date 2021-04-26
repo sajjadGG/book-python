@@ -1,6 +1,6 @@
 """
 * Assignment: Type Int Time
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 12 lines
 * Time: 8 min
@@ -26,8 +26,7 @@ Polish:
     8. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert day is not Ellipsis, 'Assignment solution must be in `day` instead of ... (Ellipsis)'
     >>> assert week is not Ellipsis, 'Assignment solution must be in `week` instead of ... (Ellipsis)'

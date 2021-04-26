@@ -1,6 +1,6 @@
 """
 * Assignment: Sequence List Modify
-* Status: optional
+* Required: no
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min
@@ -20,8 +20,7 @@ Polish:
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert a is not Ellipsis, 'Assignment solution must be in `a` instead of ... (Ellipsis)'
     >>> assert b is not Ellipsis, 'Assignment solution must be in `b` instead of ... (Ellipsis)'

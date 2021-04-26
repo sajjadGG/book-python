@@ -1,24 +1,23 @@
 """
 * Assignment: Function Arguments Numbers to Str
+* Required: no
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 8 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Given is pilot's alphabet for numbers
-    3. Convert `DATA: dict[int, str]` to `data: dict[str, str]` (keys as `str`)
-    4. Define function `pilot_say` converting `int` or `float` to text form in Pilot's Speak
-    5. You cannot change `DATA`, but you can modify `data`
-    6. Run doctests - all must succeed
+    1. Given is pilot's alphabet for numbers
+    2. Convert `DATA: dict[int, str]` to `data: dict[str, str]` (keys as `str`)
+    3. Define function `pilot_say` converting `int` or `float` to text form in Pilot's Speak
+    4. You cannot change `DATA`, but you can modify `data`
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Dany jest alfabet pilotów dla numerów
-    3. Przekonwertuj `DATA: dict[int, str]` na `data: dict[str, str]` (klucze jako `str`)
-    4. Zdefiniuj funkcję `pilot_say` konwertującą `int` lub `float` na formę tekstową w mowie pilotów
-    5. Nie możesz zmieniać `DATA`, ale możesz modyfikować `data`
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    1. Dany jest alfabet pilotów dla numerów
+    2. Przekonwertuj `DATA: dict[int, str]` na `data: dict[str, str]` (klucze jako `str`)
+    3. Zdefiniuj funkcję `pilot_say` konwertującą `int` lub `float` na formę tekstową w mowie pilotów
+    4. Nie możesz zmieniać `DATA`, ale możesz modyfikować `data`
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction
@@ -63,8 +62,6 @@ Tests:
     SyntaxError: invalid syntax
 """
 
-
-# Given
 DATA = {
     0: 'zero',
     1: 'one',

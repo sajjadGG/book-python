@@ -1,6 +1,6 @@
 """
 * Assignment: Exception Catch Finally
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 8 min
@@ -11,7 +11,7 @@ English:
         'Invalid type, expected int or float'
     3. Use `finally` to print `degrees` value
     4. Non-functional requirements
-        a. Write solution inside `check` function
+        a. Write solution inside `result` function
         b. Mind the indentation level
     5. Run doctests - all must succeed
 
@@ -21,28 +21,28 @@ Polish:
         z komunikatem 'Invalid type, expected int or float'
     3. Użyj `finally` do wypisania wartości `degrees`
     4. Wymagania niefunkcjonalne
-        a. Rozwiązanie zapisz wewnątrz funkcji `check`
+        a. Rozwiązanie zapisz wewnątrz funkcji `result`
         b. Zwróć uwagę na poziom wcięć
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> check(1)
+    >>> result(1)
     1
-    >>> check(180)
+    >>> result(180)
     180
-    >>> check(1.0)
+    >>> result(1.0)
     1
-    >>> check('one')
+    >>> result('one')
     Traceback (most recent call last):
     TypeError: Invalid type, expected int or float
 """
 
-def check(value):
+def result(value):
     ...
 
 
 # Solution
-def check(degrees):
+def result(degrees):
     try:
         degrees = int(degrees)
     except ValueError:

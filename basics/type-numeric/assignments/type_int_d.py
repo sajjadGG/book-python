@@ -1,6 +1,6 @@
 """
 * Assignment: Type Int Bits
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
@@ -28,8 +28,7 @@ Hints:
     * 1 km = 1000 m
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert karman_line_earth is not Ellipsis, 'Assignment solution must be in `karman_line_earth` instead of ... (Ellipsis)'
     >>> assert karman_line_mars is not Ellipsis, 'Assignment solution must be in `karman_line_mars` instead of ... (Ellipsis)'

@@ -1,6 +1,6 @@
 """
 * Assignment: Type None
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min
@@ -14,8 +14,7 @@ Polish:
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result_a is not Ellipsis, 'Assignment solution must be in `result_a` instead of ... (Ellipsis)'
     >>> assert result_b is not Ellipsis, 'Assignment solution must be in `result_b` instead of ... (Ellipsis)'

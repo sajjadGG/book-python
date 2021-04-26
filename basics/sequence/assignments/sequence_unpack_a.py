@@ -1,6 +1,6 @@
 """
 * Assignment: Function Unpack Nested
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
@@ -16,8 +16,7 @@ Polish:
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert header is not Ellipsis, 'Assignment solution must be in `header` instead of ... (Ellipsis)'
     >>> assert data is not Ellipsis, 'Assignment solution must be in `data` instead of ... (Ellipsis)'

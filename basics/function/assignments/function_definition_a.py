@@ -1,5 +1,6 @@
 """
 * Assignment: Function Definition Print
+* Required: yes
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min

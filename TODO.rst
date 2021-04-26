@@ -62,6 +62,7 @@ Python PEP
 ----------
 * str.isfloat()
 * str.isint()
+* Path.rmtree() # skasowanie katalogu z podkatalogami
 * datetime time.now()
 * type_check decorator, sprawdzający ``function.__annotations__``
 * dict(keys=[...], values=[...])

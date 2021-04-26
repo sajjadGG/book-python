@@ -1,23 +1,21 @@
 """
 * Assignment: OOP Inheritance Multiple
+* Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 2 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Create class `Astronaut` which inherits from all of those classes
-    3. Run doctests - all must succeed
+    1. Create class `Astronaut` which inherits from all of those classes
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Use data from "Given" section (see below)
-    2. Stwórz klasę `Astronaut`, która dziedziczy po tych wszystkich klasach
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Stwórz klasę `Astronaut`, która dziedziczy po tych wszystkich klasach
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isclass
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert isclass(Scientist)
     >>> assert isclass(Engineer)
@@ -31,7 +29,6 @@ Tests:
 """
 
 
-# Given
 class Scientist:
     pass
 

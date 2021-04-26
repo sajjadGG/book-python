@@ -1,5 +1,6 @@
 """
 * Assignment: Function Arguments Translate
+* Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min
@@ -33,7 +34,6 @@ Tests:
 """
 
 
-# Given
 PL = {
     'ą': 'a',
     'ć': 'c',

@@ -1,18 +1,17 @@
 """
 * Assignment: OOP Stringify Format
+* Required: yes
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 5 min
 
 English:
-    1. Use code from "Given" section (see below)
-    2. Overload `__format__()` to convert length units
-    3. Run doctests - all must succeed
+    1. Overload `__format__()` to convert length units
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Użyj kodu z sekcji "Given" (patrz poniżej)
-    2. Przeciąż `__format__()` aby konwertował jednostki długości
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Przeciąż `__format__()` aby konwertował jednostki długości
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * 1 km = 1000 m
@@ -29,7 +28,6 @@ Tests:
 """
 
 
-# Given
 class Distance:
     def __init__(self, meters):
         self.meters = meters

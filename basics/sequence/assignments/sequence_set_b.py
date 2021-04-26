@@ -1,6 +1,6 @@
 """
 * Assignment: Sequence Set Many
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 8 min
@@ -32,8 +32,7 @@ Polish:
     7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> assert type(result) is set, 'Variable `result` has invalid type, should be set'

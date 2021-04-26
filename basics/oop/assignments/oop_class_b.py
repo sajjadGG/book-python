@@ -1,5 +1,6 @@
 """
 * Assignment: OOP Class Instance
+* Required: yes
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 3 min
@@ -20,8 +21,7 @@ Polish:
 
 Tests:
     >>> from inspect import isclass
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert isclass(Astronaut)
     >>> assert isclass(SpaceAgency)

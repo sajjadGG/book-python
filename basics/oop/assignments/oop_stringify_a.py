@@ -1,20 +1,19 @@
 """
 * Assignment: OOP Stringify Str
+* Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min
 
 English:
-    1. Use code from "Given" section (see below)
-    2. While printing object show: species name and a sum of `self.features`
-    3. Result of sum round to one decimal place
-    4. Run doctests - all must succeed
+    1. While printing object show: species name and a sum of `self.features`
+    2. Result of sum round to one decimal place
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj kodu z sekcji "Given" (patrz poniżej)
-    2. Przy wypisywaniu obiektu pokaż: nazwę gatunku i sumę `self.features`
-    3. Wynik sumowania zaokrąglij do jednego miejsca po przecinku
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    1. Przy wypisywaniu obiektu pokaż: nazwę gatunku i sumę `self.features`
+    2. Wynik sumowania zaokrąglij do jednego miejsca po przecinku
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> for *features, label in DATA:
@@ -26,7 +25,6 @@ Tests:
 """
 
 
-# Given
 DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
     (7.0, 3.2, 4.7, 1.4, 'versicolor'),

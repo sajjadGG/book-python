@@ -1,19 +1,17 @@
 """
 * Assignment: Loop Nested Mean
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Calculate mean `Sepal length` value
-    3. Run doctests - all must succeed
+    1. Calculate mean `Sepal length` value
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wylicz średnią wartość `Sepal length`
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Wylicz średnią wartość `Sepal length`
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result is not Ellipsis
@@ -24,7 +22,6 @@ Tests:
     5.911111111111111
 """
 
-# Given
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),

@@ -1,6 +1,6 @@
 """
 * Assignment: Type String Clean
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 13 min
@@ -20,8 +20,7 @@ Polish:
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert example is not Ellipsis, 'Assignment solution must be in `example` instead of ... (Ellipsis)'
     >>> assert a is not Ellipsis, 'Assignment solution must be in `a` instead of ... (Ellipsis)'

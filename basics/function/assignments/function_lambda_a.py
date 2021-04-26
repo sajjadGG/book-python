@@ -1,18 +1,17 @@
 """
 * Assignment: Function Lambda Chain
+* Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Inline functions `odd()` and `cube()` with `lambda` expressions
-    3. Run doctests - all must succeed
+    1. Inline functions `odd()` and `cube()` with `lambda` expressions
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wciel kod `odd()` i `cube()` wykorzystując wyrażenia `lambda`
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Wciel kod `odd()` i `cube()` wykorzystując wyrażenia `lambda`
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `mean = sum(...) / len(...)`
@@ -31,7 +30,6 @@ Tests:
 """
 
 
-# Given
 def odd(x):
     return x % 2
 

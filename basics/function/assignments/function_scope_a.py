@@ -1,24 +1,23 @@
 """
 * Assignment: Function Scope Global
+* Required: yes
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Define in global scope `SELECT: set[str]` with values: `'setosa', 'versicolor'`
-    3. Define function `sumif(features, label)`
-    4. Function sums `features`, only when `label` is in `SELECT`
-    5. When `label` is not in `select` return `0` (zero)
-    6. Run doctests - all must succeed
+    1. Define in global scope `SELECT: set[str]` with values: `'setosa', 'versicolor'`
+    2. Define function `sumif(features, label)`
+    3. Function sums `features`, only when `label` is in `SELECT`
+    4. When `label` is not in `select` return `0` (zero)
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj w przestrzeni globalnej `SELECT: set[str]` z wartościami: `'setosa', 'versicolor'`
-    3. Zdefiniuj funkcję `sumif(features, label)`
-    4. Funkcja sumuje `features`, tylko gdy `label` jest w `SELECT`
-    5. Gdy `label` nie występuje w `select` zwróć `0` (zero)
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniuj w przestrzeni globalnej `SELECT: set[str]` z wartościami: `'setosa', 'versicolor'`
+    2. Zdefiniuj funkcję `sumif(features, label)`
+    3. Funkcja sumuje `features`, tylko gdy `label` jest w `SELECT`
+    4. Gdy `label` nie występuje w `select` zwróć `0` (zero)
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> from inspect import isfunction
@@ -28,8 +27,6 @@ Tests:
     49.1
 """
 
-
-# Given
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),

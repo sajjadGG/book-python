@@ -212,7 +212,7 @@ Current Working Directory
     >>>
     >>> # doctest: +SKIP
     ... Path.cwd()
-    PosixPath('/home/python/')
+    PosixPath('/home/watney/')
 
 
 Convert Relative Path to Absolute
@@ -221,7 +221,7 @@ Convert Relative Path to Absolute
     >>>
     >>> # doctest: +SKIP
     ... Path(Path.cwd(), 'myfile.txt')
-    PosixPath('/home/python/myfile.txt')
+    PosixPath('/home/watney/myfile.txt')
 
 
 Script Path
@@ -229,7 +229,40 @@ Script Path
 * Returns an absolute path to currently running script
 
     >>> print(__file__)  # doctest: +SKIP
-    /home/python/myscript.py
+    /home/watney/myscript.py
+
+    >>> from os.abspath import basename, dirname
+    >>>
+    >>> file = '/home/watney/myfile.py'
+    >>>
+    >>> dirname(file)
+    '/home/watney'
+    >>> basename(file)
+    'myfile.py'
+
+    >>> print(__file__)  # doctest: +SKIP
+    /home/watney/myscript.py
+
+    >>> from os.abspath import basename, dirname
+    >>>
+    >>> file = '/home/watney/myfile.py'
+    >>>
+    >>> dirname(file)
+    '/home/watney'
+    >>> basename(file)
+    'myfile.py'
+
+    >>> print(__file__)  # doctest: +SKIP
+    /home/watney/myscript.py
+
+    >>> from os.path import basename, dirname
+    >>>
+    >>> file = '/home/watney/myfile.py'
+    >>>
+    >>> dirname(file)
+    '/home/watney'
+    >>> basename(file)
+    'myfile.py'
 
 
 Assignments

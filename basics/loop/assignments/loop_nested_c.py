@@ -1,40 +1,38 @@
 """
 * Assignment: Loop For Text
-* Status: optional
+* Required: no
 * Complexity: medium
 * Lines of code: 14 lines
 * Time: 13 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Given is text of the "Moon Speech" by John F. Kennedy's [1]
-    3. Sentences are separated by period (`.`)
-    4. Clean each sentence from whitespaces at the beginning and at the end
-    5. Words are separated by spaces
-    6. Print the total number in whole text:
+    1. Given is text of the "Moon Speech" by John F. Kennedy's [1]
+    2. Sentences are separated by period (`.`)
+    3. Clean each sentence from whitespaces at the beginning and at the end
+    4. Words are separated by spaces
+    5. Print the total number in whole text:
         a. adverbs (words ending with "ly")
         b. sentences
         c. words
         d. letters
         e. characters (including spaces inside sentences, but not comas `,`)
         f. comas (`,`)
-    7. Run doctests - all must succeed
+    6. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Dany jest tekst przemówienia "Moon Speech" wygłoszonej
+    1. Dany jest tekst przemówienia "Moon Speech" wygłoszonej
        przez John F. Kennedy'ego [1]
-    3. Zdania oddzielone są kropkami (`.`)
-    4. Każde zdanie oczyść z białych znaków na początku i końcu
-    5. Słowa oddzielone są spacjami
-    6. Wypisz także ile jest łącznie w całym tekście:
+    2. Zdania oddzielone są kropkami (`.`)
+    3. Każde zdanie oczyść z białych znaków na początku i końcu
+    4. Słowa oddzielone są spacjami
+    5. Wypisz także ile jest łącznie w całym tekście:
         a. przysłówków (słów zakończonych na "ly")
         b. zdań
         c. słów
         d. liter
         e. znaków (łącznie ze spacjami wewnątrz zdań, ale bez przecinków `,`)
         f. przecinków (`,`)
-    7. Uruchom doctesty - wszystkie muszą się powieść
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 References:
     [1] Kennedy, J.F. Moon Speech - Rice Stadium.
@@ -54,7 +52,6 @@ Tests:
      'adverbs': 0}
 """
 
-# Given
 TEXT = """
     We choose to go to the Moon.
     We choose to go to the Moon in this decade and do the other things.

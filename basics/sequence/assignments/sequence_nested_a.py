@@ -1,6 +1,6 @@
 """
 * Assignment: Sequence Nested Create
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min
@@ -20,8 +20,7 @@ Polish:
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> assert type(result) is list, 'Variable `result` has invalid type, should be list'

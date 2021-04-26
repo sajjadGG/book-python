@@ -1,6 +1,6 @@
 """
 * Assignment: Sequence Slice Text
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 8 min
@@ -18,8 +18,7 @@ Polish:
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert a is not Ellipsis, 'Assignment solution must be in `a` instead of ... (Ellipsis)'
     >>> assert b is not Ellipsis, 'Assignment solution must be in `b` instead of ... (Ellipsis)'

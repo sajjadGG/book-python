@@ -1,6 +1,6 @@
 """
 * Assignment: Type Float Altitude
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
@@ -20,8 +20,7 @@ Polish:
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert altitude is not Ellipsis, 'Assignment solution must be in `altitude` instead of ... (Ellipsis)'
     >>> assert altitude_m is not Ellipsis, 'Assignment solution must be in `altitude_m` instead of ... (Ellipsis)'

@@ -1,32 +1,31 @@
 """
 * Assignment: File Read Dict
+* Required: no
 * Complexity: medium
 * Lines of code: 10 lines
 * Time: 8 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Write `DATA` to file `FILE`
-    3. Read `FILE` and for each line:
+    1. Write `DATA` to file `FILE`
+    2. Read `FILE` and for each line:
         a. Remove leading and trailing whitespaces
         b. Skip line if it is empty
         c. Split line by whitespace
         d. Separate IP address and hosts names
         e. Append IP address and hosts names to `result`
-    4. Merge hostnames for the same IP
-    5. Run doctests - all must succeed
+    3. Merge hostnames for the same IP
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zapisz `DATA` do pliku `FILE`
-    3. Wczytaj `FILE` i dla każdej linii:
+    1. Zapisz `DATA` do pliku `FILE`
+    2. Wczytaj `FILE` i dla każdej linii:
         a. Usuń białe znaki na początku i końcu linii
         b. Pomiń linię, jeżeli jest pusta
         c. Podziel linię po białych znakach
         d. Odseparuj adres IP i nazwy hostów
         e. Dodaj adres IP i nazwy hostów do `result`
-    4. Scal nazwy hostów dla tego samego IP
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    3. Scal nazwy hostów dla tego samego IP
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `str.isspace()`
@@ -38,13 +37,10 @@ Tests:
      '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
      '255.255.255.255': ['broadcasthost'],
      '::1': ['localhost']}
-    >>> from os import remove
-    >>> remove(FILE)
+    >>> from os import remove; remove(FILE)
 """
 
-
-# Given
-FILE = r'_temporary.txt'
+FILE = '_temporary.txt'
 
 DATA = """127.0.0.1       localhost
 10.13.37.1      nasa.gov esa.int roscosmos.ru

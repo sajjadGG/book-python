@@ -1,29 +1,26 @@
 """
 * Assignment: Loop For Newline
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Define `result: str`
-    3. Use `for` to iterate over `DATA`
-    4. Join lines of text with newline (`\n`) character
-    5. Do not use `str.join()`
-    6. Run doctests - all must succeed
+    1. Define `result: str`
+    2. Use `for` to iterate over `DATA`
+    3. Join lines of text with newline (`\n`) character
+    4. Do not use `str.join()`
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj `result: str`
-    3. Użyj `for` do iterowania po `DATA`
-    4. Połącz linie tekstu znakiem końca linii (`\n`)
-    5. Nie używaj `str.join()`
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniuj `result: str`
+    2. Użyj `for` do iterowania po `DATA`
+    3. Połącz linie tekstu znakiem końca linii (`\n`)
+    4. Nie używaj `str.join()`
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert type(result) is str
 
@@ -36,7 +33,6 @@ Tests:
     hard.\\n'
 """
 
-# Given
 DATA = [
     'We choose to go to the Moon.',
     'We choose to go to the Moon in this decade and do the other things.',

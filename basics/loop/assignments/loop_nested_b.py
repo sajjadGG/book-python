@@ -1,23 +1,17 @@
 """
 * Assignment: Loop Nested Unique Keys
-* Status: required
+* Required: yes
 * Complexity: medium
 * Lines of code: 3 lines
 * Time: 8 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Collect keys from all rows in one sequence `result`
-    3. Sort `result`
-    4. Print unique keys
-    5. Run doctests - all must succeed
+    1. Collect unique keys from all rows in one sequence `result`
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zbierz klucze z wszystkich wierszy w jednej sekwencji `result`
-    3. Posortuj `result`
-    4. Wypisz unikalne klucze
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zbierz unikalne klucze z wszystkich wierszy w jednej sekwencji `result`
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `row.keys()`
@@ -32,7 +26,6 @@ Tests:
     ['Petal length', 'Petal width', 'Sepal length', 'Sepal width', 'Species']
 """
 
-# Given
 DATA = [
     {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
     {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},

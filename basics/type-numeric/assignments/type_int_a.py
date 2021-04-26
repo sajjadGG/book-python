@@ -1,6 +1,6 @@
 """
 * Assignment: Type Int Add
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min
@@ -33,8 +33,7 @@ References:
         URL: http://cab.inta-csic.es/rems/marsweather.html
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert mars_max is not Ellipsis, 'Assignment solution must be in `mars_max` instead of ... (Ellipsis)'
     >>> assert mars_min is not Ellipsis, 'Assignment solution must be in `mars_min` instead of ... (Ellipsis)'

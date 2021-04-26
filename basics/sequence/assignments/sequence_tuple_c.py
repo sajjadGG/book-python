@@ -1,6 +1,6 @@
 """
 * Assignment: Sequence Tuple Mean
-* Status: optional
+* Required: no
 * Complexity: medium
 * Lines of code: 8 lines
 * Time: 8 min
@@ -31,8 +31,7 @@ Hints:
     * `CMD` + `ALT` + L = Reformat Code on macOS
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert sepal_length is not Ellipsis, 'Assignment solution must be in `sepal_length` instead of ... (Ellipsis)'
     >>> assert sepal_width is not Ellipsis, 'Assignment solution must be in `sepal_width` instead of ... (Ellipsis)'

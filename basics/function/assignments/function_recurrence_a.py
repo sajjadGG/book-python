@@ -1,5 +1,6 @@
 """
 * Assignment: Function Recurrence Fibonacci
+* Required: no
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

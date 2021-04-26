@@ -1,6 +1,6 @@
 """
 * Assignment: Conditional Expression BloodPressure
-* Status: required
+* Required: yes
 * Complexity: medium
 * Lines of code: 10 lines
 * Time: 13 min
@@ -37,8 +37,7 @@ References:
 
 Tests:
     TODO: Better Tests
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> assert type(result) is str, 'Variable `result` has invalid type, should be str'

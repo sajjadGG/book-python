@@ -1,5 +1,6 @@
 """
 * Assignment: Function Parameters Echo
+* Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

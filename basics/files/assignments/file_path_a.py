@@ -1,35 +1,40 @@
 """
 * Assignment: File Path Exception
+* Required: yes
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 3 min
 
 English:
-    1. Modify `check` function
+    1. Modify `result` function
     2. If `filename` exists, print 'Ok'
     3. If `filename` does not exist, print 'File not found'
     4. Run doctests - all must succeed
 
 Polish:
-    1. Zmodyfikuj funkcję `check`
+    1. Zmodyfikuj funkcję `result`
     2. Jeżeli `filename` istnieje, wypisz 'Ok'
     3. Jeżeli `filename` nie istnieje, wypisz 'File not found'
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> check(__file__)
+    >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction
+    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
+    >>> assert isfunction(result), 'Variable `result` has invalid type, should be function'
+
+    >>> result(__file__)
     Ok
-    >>> check('_notexisting.txt')
+    >>> result('_notexisting.txt')
     File not found
 """
 
-# Given
-def check(filename):
+def result(filename):
     ...
 
 
 # Solution
-def check(filename):
+def result(filename):
     try:
         open(filename)
     except FileNotFoundError:

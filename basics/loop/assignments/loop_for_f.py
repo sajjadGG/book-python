@@ -1,29 +1,26 @@
 """
 * Assignment: Loop For Months
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Convert `MONTH` into dict:
+    1. Convert `MONTH` into `result: dict[int,str]`:
         a. Keys: month number
         b. Values: month name
-    3. Do not use `enumerate`
-    4. Run doctests - all must succeed
+    2. Do not use `enumerate`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Przekonwertuj `MONTH` w słownik:
+    1. Przekonwertuj `MONTH` w `result: dict[int,str]`:
         a. klucz: numer miesiąca
         b. wartość: nazwa miesiąca
-    3. Nie używaj `enumerate`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    2. Nie używaj `enumerate`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> type(result)
     <class 'dict'>
@@ -53,7 +50,6 @@ Tests:
      12: 'December'}
 """
 
-# Given
 MONTHS = [
     'January',
     'February',

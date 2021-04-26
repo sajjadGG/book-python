@@ -21,8 +21,7 @@ Hint:
     * Use f-string
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert type(name) is str, \
     'Variable `name` has invalid type, should be str'

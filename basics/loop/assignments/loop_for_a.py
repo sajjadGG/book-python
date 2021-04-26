@@ -1,19 +1,17 @@
 """
 * Assignment: Loop For Count
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Count occurrences of each color
-    3. Run doctests - all must succeed
+    1. Count occurrences of each color
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zlicz wystąpienia każdego z kolorów
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zlicz wystąpienia każdego z kolorów
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(red)
@@ -30,7 +28,6 @@ Tests:
     2
 """
 
-# Given
 DATA = ['red', 'green', 'blue', 'red', 'green', 'red', 'blue']
 
 red = ...  # int: number of 'red' elements in DATA

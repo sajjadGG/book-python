@@ -1,33 +1,31 @@
 """
 * Assignment: OOP Method Call
+* Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 2 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Create instance of `Stats` class
-    3. Iterate over `DATA` skipping header
-    4. Separate features from label
-    5. Call `mean()` method of `Stats` class passing list of features
-    6. Define `result: list[float]` with list of means from each row
-    7. Run doctests - all must succeed
+    1. Create instance of `Stats` class
+    2. Iterate over `DATA` skipping header
+    3. Separate features from label
+    4. Call `mean()` method of `Stats` class passing list of features
+    5. Define `result: list[float]` with list of means from each row
+    6. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz instancję klasy `Stats`
-    3. Iteruj po `DATA` pomijając nagłówek
-    4. Rozdziel cechy od etykiety
-    5. Wywołuj metodę `mean()` klasy `Stats` przekazując listę features
-    6. Zdefiniuj `result: list[float]` z listą średnich każdego z wierszy
-    7. Uruchom doctesty - wszystkie muszą się powieść
+    1. Stwórz instancję klasy `Stats`
+    2. Iteruj po `DATA` pomijając nagłówek
+    3. Rozdziel cechy od etykiety
+    4. Wywołuj metodę `mean()` klasy `Stats` przekazując listę features
+    5. Zdefiniuj `result: list[float]` z listą średnich każdego z wierszy
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `round()`
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert type(result) is list
     >>> assert all(type(x) is float for x in result)
@@ -37,7 +35,6 @@ Tests:
 """
 
 
-# Given
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),

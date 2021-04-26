@@ -1,6 +1,6 @@
 """
 * Assignment: Type Float Volume
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min
@@ -18,8 +18,7 @@ Polish:
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert volume is not Ellipsis, 'Assignment solution must be in `volume` instead of ... (Ellipsis)'
     >>> assert volume_floz is not Ellipsis, 'Assignment solution must be in `volume_floz` instead of ... (Ellipsis)'

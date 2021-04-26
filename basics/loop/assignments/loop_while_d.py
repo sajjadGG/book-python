@@ -1,36 +1,33 @@
 """
 * Assignment: Loop While Input
-* Status: optional
+* Required: no
 * Complexity: medium
 * Lines of code: 14 lines
 * Time: 13 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Define `grades: list[float]`
-    3. Using `input()` ask user about grade, one at a time
-    4. User will type only valid `int` or `float`
-    5. To iterate use only `while` loop
-    6. If grade is in `GRADE_SCALE` - add it to `grades`
-    7. If grade is not in `GRADE_SCALE`, skip this iteration
-    8. If user pressed Enter key, end inserting data
-    9. At the end, define `result: float` with calculated mean of `grades`
-    10. Test case when report list is empty
-    11. Run doctests - all must succeed
+    1. Define `grades: list[float]`
+    2. Using `input()` ask user about grade, one at a time
+    3. User will type only valid `int` or `float`
+    4. To iterate use only `while` loop
+    5. If grade is in `GRADE_SCALE` - add it to `grades`
+    6. If grade is not in `GRADE_SCALE`, skip this iteration
+    7. If user pressed Enter key, end inserting data
+    8. Define `result: float` with arithmetic mean of `grades`
+    9. Test case when report list is empty
+    10. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj `grades: list[float]`
-    3. Do iterowania użyj tylko pętli `while`
-    4. Używając `input()` poproś użytkownika o ocenę, jedną na raz
-    5. Użytkownik poda tylko poprawne `int` lub `float`
-    6. Jeżeli ocena jest w `GRADE_SCALE` - dodaj ją do `grades`
-    7. Jeżeli oceny nie ma w `GRADE_SCALE`, pomiń tą iterację
-    8. Jeżeli użytkownik wcisnął Enter, zakończ wprowadzanie danych
-    9. Na zakończenie zdefiniuj `result` z wyliczeniem średniej
-       arytmetycznej `grades`
-    10. Przetestuj przypadek, gdy dzienniczek jest pusty
-    11. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniuj `grades: list[float]`
+    2. Do iterowania użyj tylko pętli `while`
+    3. Używając `input()` poproś użytkownika o ocenę, jedną na raz
+    4. Użytkownik poda tylko poprawne `int` lub `float`
+    5. Jeżeli ocena jest w `GRADE_SCALE` - dodaj ją do `grades`
+    6. Jeżeli oceny nie ma w `GRADE_SCALE`, pomiń tą iterację
+    7. Jeżeli użytkownik wcisnął Enter, zakończ wprowadzanie danych
+    8. Zdefiniuj `result: float` ze średnią arytmetyczą `grades`
+    9. Przetestuj przypadek, gdy dzienniczek jest pusty
+    10. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `Stop` or `Ctrl+C` kills infinite loop
@@ -38,8 +35,7 @@ Hints:
 
 Tests:
     >>> from statistics import mean
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> type(grades)
     <class 'list'>
@@ -60,7 +56,6 @@ from unittest.mock import MagicMock
 input = MagicMock(side_effect=['1', '2', '2.5', '3', '3.5', '4', '5', '6', ''])
 
 
-# Given
 GRADE_SCALE = (2.0, 3.0, 3.5, 4.0, 4.5, 5.0)
 
 grades = ...  # list[float]: all user grades

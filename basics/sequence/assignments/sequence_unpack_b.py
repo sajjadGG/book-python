@@ -1,6 +1,6 @@
 """
 * Assignment: Function Unpack Split
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
@@ -21,8 +21,7 @@ Hints:
     * Use `str.split()` without any argument
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert ip is not Ellipsis, 'Assignment solution must be in `ip` instead of ... (Ellipsis)'
     >>> assert hosts is not Ellipsis, 'Assignment solution must be in `hosts` instead of ... (Ellipsis)'

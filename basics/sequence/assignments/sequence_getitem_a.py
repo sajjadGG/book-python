@@ -1,6 +1,6 @@
 """
 * Assignment: Sequence GetItem Select
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 8 min
@@ -34,8 +34,7 @@ Polish:
     9. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> assert type(header) is tuple, 'Variable `header` has invalid type, should be tuple'

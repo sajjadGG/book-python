@@ -1,19 +1,17 @@
 """
 * Assignment: Loop Dict To Dict
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 8 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Convert to `result: dict[str, str]`
-    3. Run doctests - all must succeed
+    1. Convert to `result: dict[str, str]`
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Przekonwertuj do `result: dict[str, str]`
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Przekonwertuj do `result: dict[str, str]`
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> type(result)
@@ -30,7 +28,6 @@ Tests:
      'Kindergarten': '1'}
 """
 
-# Given
 DATA = {
     6: ['Doctorate', 'Prof-school'],
     5: ['Masters', 'Bachelor', 'Engineer'],

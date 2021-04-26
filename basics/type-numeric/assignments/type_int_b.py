@@ -1,6 +1,6 @@
 """
 * Assignment: Type Int Sub
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
@@ -31,8 +31,7 @@ References:
         URL: http://cab.inta-csic.es/rems/marsweather.html
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert moon_day is not Ellipsis, 'Assignment solution must be in `moon_day` instead of ... (Ellipsis)'
     >>> assert moon_night is not Ellipsis, 'Assignment solution must be in `moon_night` instead of ... (Ellipsis)'

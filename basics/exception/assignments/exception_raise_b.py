@@ -1,44 +1,44 @@
 """
 * Assignment: Exception Raise Many
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 5 min
 
 English:
-    1. Validate value passed to a `check` function
+    1. Validate value passed to a `result` function
     2. If `value` is:
         a. other type than `int` or `float` raise `TypeError`
         a. less than zero, raise `ValueError`
         a. below `ADULT`, raise `PermissionError`
     3. Non-functional requirements
-        a. Write solution inside `check` function
+        a. Write solution inside `result` function
         b. Mind the indentation level
     4. Run doctests - all must succeed
 
 Polish:
-    1. Sprawdź poprawność wartości przekazanej do funckji `check`
+    1. Sprawdź poprawność wartości przekazanej do funckji `result`
     2. Jeżeli `age` jest:
         b. innego typu niż `int` lub `float`, podnieś wyjątek `TypeError`
         b. mniejsze niż zero, podnieś wyjątek `ValueError`
         c. mniejsze niż `ADULT`, podnieś wyjątek `PermissionError`
     3. Wymagania niefunkcjonalne
-        a. Rozwiązanie zapisz wewnątrz funkcji `check`
+        a. Rozwiązanie zapisz wewnątrz funkcji `result`
         b. Zwróć uwagę na poziom wcięć
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> check(18)
-    >>> check(17.9999)
+    >>> result(18)
+    >>> result(17.9999)
     Traceback (most recent call last):
     PermissionError
-    >>> check(-1)
+    >>> result(-1)
     Traceback (most recent call last):
     ValueError
-    >>> check('one')
+    >>> result('one')
     Traceback (most recent call last):
     TypeError
-    >>> check(True)
+    >>> result(True)
     Traceback (most recent call last):
     TypeError
 """
@@ -46,12 +46,12 @@ Tests:
 ADULT = 18
 
 
-def check(age):
+def result(age):
     ...
 
 
 # Solution
-def check(age):
+def result(age):
     if type(age) not in (int, float):
         raise TypeError
 

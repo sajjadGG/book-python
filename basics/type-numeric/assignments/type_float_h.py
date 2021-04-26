@@ -1,6 +1,6 @@
 """
 * Assignment: Type Float Gradient
-* Status: optional
+* Required: no
 * Complexity: hard
 * Lines of code: 7 lines
 * Time: 8 min
@@ -35,8 +35,7 @@ Hints:
         * Others 0.001%
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert pO2 is not Ellipsis, 'Assignment solution must be in `pO2` instead of ... (Ellipsis)'
     >>> assert gradient is not Ellipsis, 'Assignment solution must be in `gradient` instead of ... (Ellipsis)'

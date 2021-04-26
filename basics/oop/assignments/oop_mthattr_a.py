@@ -1,26 +1,25 @@
 """
 * Assignment: OOP Method Sequence
+* Required: yes
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 8 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Create class `Iris` with `features: list[float]` and `label: str` attributes
-    3. For each row in `DATA` create `Iris` instance with row values
-    4. Set class attributes at the initialization from positional arguments
-    5. Create method which sums values of all `features`
-    6. In `result` gather species and sum of each row
-    7. Run doctests - all must succeed
+    1. Create class `Iris` with `features: list[float]` and `label: str` attributes
+    2. For each row in `DATA` create `Iris` instance with row values
+    3. Set class attributes at the initialization from positional arguments
+    4. Create method which sums values of all `features`
+    5. In `result` gather species and sum of each row
+    6. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz klasę `Iris` z atrybutami `features: list[float]` i `label: str`
-    3. Dla każdego wiersza w `DATA` twórz instancję `Iris` z danymi z wiersza
-    4. Ustaw atrybuty klasy przy inicjalizacji z argumentów pozycyjnych
-    5. Stwórz metodę sumującą wartości wszystkich `features`
-    6. W `result` zbieraj nazwę gatunku i sumę z każdego wiersza
-    7. Uruchom doctesty - wszystkie muszą się powieść
+    1. Stwórz klasę `Iris` z atrybutami `features: list[float]` i `label: str`
+    2. Dla każdego wiersza w `DATA` twórz instancję `Iris` z danymi z wiersza
+    3. Ustaw atrybuty klasy przy inicjalizacji z argumentów pozycyjnych
+    4. Stwórz metodę sumującą wartości wszystkich `features`
+    5. W `result` zbieraj nazwę gatunku i sumę z każdego wiersza
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE
@@ -30,7 +29,6 @@ Tests:
 """
 
 
-# Given
 DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
     (7.0, 3.2, 4.7, 1.4, 'versicolor'),

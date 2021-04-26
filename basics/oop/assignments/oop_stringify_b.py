@@ -1,20 +1,19 @@
 """
 * Assignment: OOP Stringify Repr
+* Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min
 
 English:
-    1. Use code from "Given" section (see below)
-    2. Print representation of each instance with values (use `repr()`)
-    3. Result of sum round to two decimal places
-    4. Run doctests - all must succeed
+    1. Print representation of each instance with values (use `repr()`)
+    2. Result of sum round to two decimal places
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj kodu z sekcji "Given" (patrz poniżej)
-    2. Wypisz reprezentację każdej z instancji z wartościami (użyj `repr()`)
-    3. Wynik sumowania zaokrąglij do dwóch miejsc po przecinku
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    1. Wypisz reprezentację każdej z instancji z wartościami (użyj `repr()`)
+    2. Wynik sumowania zaokrąglij do dwóch miejsc po przecinku
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> result = [Iris(X,y) for *X,y in DATA]
@@ -25,7 +24,6 @@ Tests:
 """
 
 
-# Given
 DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
     (7.0, 3.2, 4.7, 1.4, 'versicolor'),

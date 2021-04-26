@@ -1,6 +1,6 @@
 """
 * Assignment: Sequence Tuple Select
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 5 min
@@ -22,8 +22,7 @@ Hints:
     * `ALT` + `SHIFT` + `left mouse button drag` = vertical selection
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
     >>> assert type(result) is tuple, 'Variable `result` has invalid type, should be tuple'

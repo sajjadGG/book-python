@@ -1,23 +1,21 @@
 """
 * Assignment: Loop Unpacking Endswith
-* Status: required
+* Required: yes
 * Complexity: medium
 * Lines of code: 4 lines
 * Time: 13 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Define `result: set[str]`
-    3. Iterating over data unpack row to `*features` and `label`
-    4. Append to `result` species with endings in `SUFFIXES`
-    5. Run doctests - all must succeed
+    1. Define `result: set[str]`
+    2. Iterating over data unpack row to `*features` and `label`
+    3. Append to `result` species with endings in `SUFFIXES`
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj `result: set[str]`
-    3. Iterując po danych rozpakuj wiersz do `*features` oraz `label`
-    4. Dodaj do `result` nazwy gatunków z końcówkami w `SUFFIXES`
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniuj `result: set[str]`
+    2. Iterując po danych rozpakuj wiersz do `*features` oraz `label`
+    3. Dodaj do `result` nazwy gatunków z końcówkami w `SUFFIXES`
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `str.endswith()`
@@ -34,7 +32,6 @@ Tests:
     False
 """
 
-# Given
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, {'virginica'}),

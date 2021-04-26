@@ -1,27 +1,24 @@
 """
 * Assignment: Loop Unpacking Months
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Use `enumerate()` to convert `MONTH` into dict:
+    1. Use `enumerate()` to convert `MONTH` into `result: dict[int,str]`:
         a. Keys: month number
         b. Values: month name
-    3. Run doctests - all must succeed
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Użyj `enumerate()` do konwersji `MONTH` w słownik:
+    1. Użyj `enumerate()` do konwersji `MONTH` w `result: dict[int,str]`:
         a. klucz: numer miesiąca
         b. wartość: nazwa miesiąca
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> type(result)
     <class 'dict'>
@@ -51,7 +48,6 @@ Tests:
      12: 'December'}
 """
 
-# Given
 MONTHS = [
     'January',
     'February',

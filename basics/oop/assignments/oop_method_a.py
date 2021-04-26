@@ -1,5 +1,6 @@
 """
 * Assignment: OOP Method Syntax
+* Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
@@ -22,8 +23,7 @@ Polish:
 
 Tests:
     >>> from inspect import isclass, ismethod
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert isclass(Calculator)
     >>> calc = Calculator()

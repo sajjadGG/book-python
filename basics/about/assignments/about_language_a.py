@@ -25,8 +25,6 @@ Tests:
     >>> assert python_version
 """
 
-
-# Given
 import sys
 import os
 

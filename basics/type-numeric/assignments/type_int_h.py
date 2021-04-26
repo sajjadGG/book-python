@@ -1,6 +1,6 @@
 """
 * Assignment: Type Int Bandwidth
-* Status: optional
+* Required: no
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 3 min
@@ -29,8 +29,7 @@ Hints:
     * 1 MB = 1024 KB
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert bandwidth is not Ellipsis, 'Assignment solution must be in `bandwidth` instead of ... (Ellipsis)'
     >>> assert size is not Ellipsis, 'Assignment solution must be in `size` instead of ... (Ellipsis)'

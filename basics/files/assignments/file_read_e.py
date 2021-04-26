@@ -1,12 +1,12 @@
 """
 * Assignment: File Read List of Dicts
+* Required: no
 * Complexity: hard
 * Lines of code: 19 lines
 * Time: 21 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Read file and for each line:
+    1. Read file and for each line:
         a. Skip line if it's empty, is whitespace or starts with comment `#`
         b. Remove leading and trailing whitespaces
         c. Split line by whitespace
@@ -14,12 +14,11 @@ English:
         e. Use one line `if` to check whether dot `.` is in the IP address
         f. If is present then protocol is IPv4 otherwise IPv6
         g. Append IP address and hosts names to `result`
-    3. Merge hostnames for the same IP
-    4. Run doctests - all must succeed
+    2. Merge hostnames for the same IP
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Przeczytaj plik i dla każdej linii:
+    1. Przeczytaj plik i dla każdej linii:
         a. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza `#`
         b. Usuń białe znaki na początku i końcu linii
         c. Podziel linię po białych znakach
@@ -27,8 +26,8 @@ Polish:
         e. Wykorzystaj jednolinikowego `if` do sprawdzenia czy jest kropka `.` w adresie IP
         f. Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
         g. Dodaj adres IP i nazwy hostów do `result`
-    3. Scal nazwy hostów dla tego samego IP
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    2. Scal nazwy hostów dla tego samego IP
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `str.split()` - without an argument
@@ -42,13 +41,10 @@ Tests:
      {'ip': '10.13.37.1', 'hostnames': ['nasa.gov', 'esa.int', 'roscosmos.ru'], 'protocol': 'IPv4'},
      {'ip': '255.255.255.255', 'hostnames': ['broadcasthost'], 'protocol': 'IPv4'},
      {'ip': '::1', 'hostnames': ['localhost'], 'protocol': 'IPv6'}]
-    >>> from os import remove
-    >>> remove(FILE)
+    >>> from os import remove; remove(FILE)
 """
 
-
-# Given
-FILE = r'_temporary.txt'
+FILE = '_temporary.txt'
 
 DATA = """
 ##

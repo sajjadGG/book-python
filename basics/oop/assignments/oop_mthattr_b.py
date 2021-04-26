@@ -1,50 +1,49 @@
 """
 * Assignment: OOP Method Nested
+* Required: yes
 * Complexity: medium
 * Lines of code: 17 lines
 * Time: 13 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Define class `Iris`
-    3. `Iris` has:
+    1. Define class `Iris`
+    2. `Iris` has:
         a. "Sepal length" type `float`
         b. "Sepal width" type `float`
         c. "Petal length" type `float`
         d. "Petal width" type `float`
         e. "Species" type `str`
-    4. `Iris` can:
+    3. `Iris` can:
         a. Return number of `float` type attributes
         b. Return list of all `float` type attributes
         c. Return sum of values of all `float` type attributes
         d. Return mean of all `float` type attributes
-    5. Use `self.__dict__` iteration to return values of numeric fields
-    6. Create `setosa` object with attributes set at the initialization
-    7. Create `virginica` object with attributes set at the initialization
-    8. Print sum, mean and species name of each objects
-    9. Do not use `@dataclass`
-    10. Run doctests - all must succeed
+    4. Use `self.__dict__` iteration to return values of numeric fields
+    5. Create `setosa` object with attributes set at the initialization
+    6. Create `virginica` object with attributes set at the initialization
+    7. Print sum, mean and species name of each objects
+    8. Do not use `@dataclass`
+    9. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj klasę `Iris`
-    3. `Iris` ma:
+    1. Zdefiniuj klasę `Iris`
+    2. `Iris` ma:
         a. "Sepal length" typu `float`
         b. "Sepal width" typu `float`
         c. "Petal length" typu `float`
         d. "Petal width" typu `float`
         e. "Species" typu `str`
-    4. `Iris` może:
+    3. `Iris` może:
         a. Zwrócić liczbę pól typu `float`
         b. Zwrócić listę wartości wszystkich pól typu `float`
         c. Zwrócić sumę wartości pól typu `float`
         d. Zwrócić średnią arytmetyczną wartość pól typu `float`
-    5. Użyj iterowania po `self.__dict__` do zwrócenia wartości pól numerycznych
-    6. Stwórz obiekt `setosa` z atrybutami ustawionymi przy inicjalizacji
-    7. Stwórz obiekt `virginica` z atrybutami ustawionymi przy inicjalizacji
-    8. Wypisz sumę, średnią oraz nazwę gatunku każdego z obiektów
-    9. Nie używaj `@dataclass`
-    10. Uruchom doctesty - wszystkie muszą się powieść
+    4. Użyj iterowania po `self.__dict__` do zwrócenia wartości pól numerycznych
+    5. Stwórz obiekt `setosa` z atrybutami ustawionymi przy inicjalizacji
+    6. Stwórz obiekt `virginica` z atrybutami ustawionymi przy inicjalizacji
+    7. Wypisz sumę, średnią oraz nazwę gatunku każdego z obiektów
+    8. Nie używaj `@dataclass`
+    9. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `isinstance(value, float)`
@@ -60,7 +59,6 @@ Tests:
 """
 
 
-# Given
 class Iris:
     def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
         self.sepal_length = sepal_length

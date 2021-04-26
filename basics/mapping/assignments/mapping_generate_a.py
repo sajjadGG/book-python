@@ -1,6 +1,6 @@
 """
 * Assignment: Mapping Generate Pairs
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

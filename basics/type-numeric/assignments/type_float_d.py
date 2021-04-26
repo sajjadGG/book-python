@@ -1,6 +1,6 @@
 """
 * Assignment: Type Float Distance
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
@@ -18,8 +18,7 @@ Polish:
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert meters is not Ellipsis, 'Assignment solution must be in `meters` instead of ... (Ellipsis)'
     >>> assert kilometers is not Ellipsis, 'Assignment solution must be in `kilometers` instead of ... (Ellipsis)'

@@ -1,27 +1,24 @@
 """
 * Assignment: Loop Dict To List
-* Status: required
+* Required: yes
 * Complexity: medium
 * Lines of code: 4 lines
 * Time: 5 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Print `list[dict]`:
+    1. Define `result: list[dict]`:
         a. key - name from the header
         b. value - measurement or species
-    3. Run doctests - all must succeed
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wypisz `list[dict]`:
+    1. Zdefiniuj `result: list[dict]`:
         a. klucz - nazwa z nagłówka
         b. wartość - wyniki pomiarów lub gatunek
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> type(result)
     <class 'list'>
@@ -37,7 +34,6 @@ Tests:
      {'Sepal length': 4.7, 'Sepal width': 3.2, 'Petal length': 1.3, 'Petal width': 0.2, 'Species': 'setosa'}]
 """
 
-# Given
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),

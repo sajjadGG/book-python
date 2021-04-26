@@ -1,6 +1,6 @@
 """
 * Assignment: Mapping Dict Define
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

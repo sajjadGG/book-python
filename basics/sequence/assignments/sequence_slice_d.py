@@ -1,6 +1,6 @@
 """
 * Assignment: Sequence Slice Split
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 8 min
@@ -32,8 +32,7 @@ Polish:
     8. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert header is not Ellipsis, 'Assignment solution must be in `header` instead of ... (Ellipsis)'
     >>> assert data is not Ellipsis, 'Assignment solution must be in `data` instead of ... (Ellipsis)'

@@ -1,6 +1,6 @@
 """
 * Assignment: Mapping Dict Translate
-* Status: optional
+* Required: no
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min

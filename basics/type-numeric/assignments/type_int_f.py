@@ -1,6 +1,6 @@
 """
 * Assignment: Type Int Bits
-* Status: optional
+* Required: no
 * Complexity: medium
 * Lines of code: 4 lines
 * Time: 3 min
@@ -24,8 +24,7 @@ Hints:
     * 1 Mb = 1024 Kb
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert size_b is not Ellipsis, 'Assignment solution must be in `size_b` instead of ... (Ellipsis)'
     >>> assert size_kb is not Ellipsis, 'Assignment solution must be in `size_kb` instead of ... (Ellipsis)'

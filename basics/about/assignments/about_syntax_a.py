@@ -16,8 +16,7 @@ Hint:
     * Either quotes (") or apostrophes (') will work
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'

@@ -1,49 +1,45 @@
 """
 * Assignment: Loop Dict Label Encoder
-* Status: optional
+* Required: no
 * Complexity: hard
 * Lines of code: 9 lines
 * Time: 13 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Define:
+    1. Define:
         a. `features: list[tuple]` - measurements
         b. `labels: list[int]` - species
         c. `label_encoder: dict[int, str]`
             dictionary with encoded (as numbers) species names
-    3. Separate header from data
-    4. To encode and decode `labels` (species) we need:
+    2. Separate header from data
+    3. To encode and decode `labels` (species) we need:
         a. Define `label_encoder: dict[int, str]`
         a. key - id (incremented integer value)
         b. value - species name
-    5. `label_encoder` must be generated from `DATA`
-    6. For each row add values to `features`, `labels` and `label_encoder`
-    8. Run doctests - all must succeed
+    4. `label_encoder` must be generated from `DATA`
+    5. For each row add values to `features`, `labels` and `label_encoder`
+    6. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj:
+    1. Zdefiniuj:
         a. `features: list[tuple]` - pomiary
         b. `labels: list[int]` - gatunki
         c. `label_encoder: dict[int, str]`
             słownik zakodowanych (jako cyfry) nazw gatunków
-    3. Odseparuj nagłówek od danych
-    4. Aby móc zakodować i odkodować `labels` (gatunki) potrzebujesz:
+    2. Odseparuj nagłówek od danych
+    3. Aby móc zakodować i odkodować `labels` (gatunki) potrzebujesz:
         a. Zdefiniuj `label_encoder: dict[int, str]`:
         a. key - identyfikator (kolejna liczba rzeczywista)
         b. value - nazwa gatunku
-    5. `label_encoder` musi być wygenerowany z `DATA`
-    6. Dla każdego wiersza dodawaj wartości do `feature`, `labels`
-       i `label_encoder`
-    8. Uruchom doctesty - wszystkie muszą się powieść
+    4. `label_encoder` musi być wygenerowany z `DATA`
+    5. Dla każdego wiersza dodawaj wartości do `feature`, `labels` i `label_encoder`
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * Reversed lookup dict
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert type(features) is list
     >>> assert type(labels) is list
@@ -68,7 +64,6 @@ Tests:
      2: 'versicolor'}
 """
 
-# Given
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),

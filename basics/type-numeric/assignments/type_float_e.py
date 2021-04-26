@@ -1,6 +1,6 @@
 """
 * Assignment: Type Float Velocity
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 3 min
@@ -22,8 +22,7 @@ Polish:
     6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert kph is not Ellipsis, 'Assignment solution must be in `kph` instead of ... (Ellipsis)'
     >>> assert mph is not Ellipsis, 'Assignment solution must be in `mph` instead of ... (Ellipsis)'

@@ -1,5 +1,6 @@
 """
 * Assignment: Function Arguments Clean
+* Required: no
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 13 min

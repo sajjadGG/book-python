@@ -1,6 +1,6 @@
 """
 * Assignment: Type Float Pressure
-* Status: optional
+* Required: no
 * Complexity: medium
 * Lines of code: 2 lines
 * Time: 3 min
@@ -22,8 +22,7 @@ Polish:
     6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert emu is not Ellipsis, 'Assignment solution must be in `emu` instead of ... (Ellipsis)'
     >>> assert orlan is not Ellipsis, 'Assignment solution must be in `orlan` instead of ... (Ellipsis)'

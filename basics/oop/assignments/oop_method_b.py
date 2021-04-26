@@ -1,5 +1,6 @@
 """
 * Assignment: OOP Method Mean
+* Required: yes
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
@@ -27,8 +28,7 @@ Hints:
 
 Tests:
     >>> from inspect import isclass, ismethod
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert isclass(Stats)
     >>> stats = Stats()

@@ -1,18 +1,17 @@
 """
 * Assignment: OOP Stringify Nested
+* Required: yes
 * Complexity: medium
 * Lines of code: 9 lines
 * Time: 21 min
 
 English:
-    1. Use code from "Given" section (see below)
-    2. Overload `str` and `repr` to achieve desired printing output
-    3. Run doctests - all must succeed
+    1. Overload `str` and `repr` to achieve desired printing output
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Użyj kodu z sekcji "Given" (patrz poniżej)
-    2. Przeciąż `str` i `repr` aby osiągnąć oczekiwany rezultat wypisywania
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Przeciąż `str` i `repr` aby osiągnąć oczekiwany rezultat wypisywania
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * Define `Crew.__str__()`
@@ -54,7 +53,6 @@ Tests:
 """
 
 
-# Given
 class Crew:
     def __init__(self, members=()):
         self.members = list(members)

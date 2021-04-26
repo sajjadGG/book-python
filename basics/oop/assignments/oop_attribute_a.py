@@ -1,28 +1,30 @@
 """
 * Assignment: OOP Attribute Model
+* Required: yes
 * Complexity: easy
 * Lines of code: 15 lines
 * Time: 8 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Model the data using classes
-    3. How many classes are there?
-    4. How many instances are there?
-    5. Create instances filling it with data
-    6. Run doctests - all must succeed
+    1. Model the data using classes
+       a. Watney, USA, 1969-07-21
+       b. NASA, USA, 1958-07-29
+    2. How many classes are there?
+    3. How many instances are there?
+    4. Create instances filling it with data
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zamodeluj dane za pomocą klas
-    3. Ile jest klas?
-    4. Ile jest instancji?
-    5. Stwórz instancje wypełniając je danymi
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zamodeluj dane za pomocą klas
+       a. Watney, USA, 1969-07-21
+       b. NASA, USA, 1958-07-29
+    2. Ile jest klas?
+    3. Ile jest instancji?
+    4. Stwórz instancje wypełniając je danymi
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert isinstance(watney, Astronaut)
     >>> assert isinstance(nasa, SpaceAgency)
@@ -34,12 +36,8 @@ Tests:
     >>> assert '1958-07-29' in nasa.__dict__.values()
 """
 
-
-# Given
-"""
-Watney, USA, 1969-07-21
-NASA, USA, 1958-07-29
-"""
+# Watney, USA, 1969-07-21
+# NASA, USA, 1958-07-29
 
 
 # Solution
