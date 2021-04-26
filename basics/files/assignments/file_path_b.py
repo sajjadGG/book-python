@@ -1,5 +1,6 @@
 """
 * Assignment: File Path Abspath
+* Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min
@@ -9,7 +10,7 @@ English:
     2. To `result` assgin string:
         a. `file` if path is a file
         b. `directory` if path is a directory
-        c. `not exist` if path does not exist
+        c. `missing` if path does not exist
     3. Run doctests - all must succeed
 
 Polish:
@@ -17,44 +18,41 @@ Polish:
     2. Do `result` przypisz ciąg znaków:
         a. `file` jeżeli ścieżka jest plikiem
         b. `directory` jeżeli ścieżka jest katalogiem
-        c. `not exist` jeżeli ścieżka nie istnieje
+        c. `missing` jeżeli ścieżka nie istnieje
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert isinstance(result, str), \
     'Result must be a str with: `file`, `directory` or `not exist`'
 
-    >>> assert isinstance(path, Path), \
+    >>> assert isinstance(abspath, Path), \
     'Use Path class from pathlib library to create a filepath'
 
     >>> current_directory = Path.cwd()
-    >>> assert str(current_directory) in str(path), \
+    >>> assert str(current_directory) in str(abspath), \
     'File Path must be absolute, check if you have current directory in path'
 
     >>> result
-    'not exist'
+    'missing'
 """
 
-
-# Given
 from pathlib import Path
 
 
-filename: str = 'myfile.txt'
-path: Path = ...
-result: str = ...
+FILENAME = 'myfile.txt'
+
+abspath = ...  # Path: Absolute path to FILENAME
+result = ...  # str: file, directory or missing
+
 
 # Solution
-path = Path(Path.cwd(), filename)
+abspath = Path(Path.cwd(), FILENAME)
 
-if not path.exists():
-    result = 'not exist'
-
-if path.is_dir():
-    result = 'directory'
-
-if path.is_file():
+if abspath.is_file():
     result = 'file'
+elif abspath.is_dir():
+    result = 'directory'
+elif not abspath.exists():
+    result = 'missing'
