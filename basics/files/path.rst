@@ -21,17 +21,17 @@ Rationale
 
 Absolute path on Windows:
 
-    >>> FILE = r'C:\Users\Watney\myfile.txt'
+>>> FILE = r'C:\Users\Watney\myfile.txt'
 
 Absolute path on ``*nix`` (Linux, macOS, BSD, etc.):
 
-    >>> FILE = '/tmp/myfile.txt'
+>>> FILE = '/tmp/myfile.txt'
 
 Relative paths works the same on Windows and ``*nix`` (Linux, macOS, BSD, etc.):
 
-    >>> FILE = 'myfile.txt'
-    >>> FILE = 'tmp/myfile.txt'
-    >>> FILE = '../myfile.txt'
+>>> FILE = 'myfile.txt'
+>>> FILE = 'tmp/myfile.txt'
+>>> FILE = '../myfile.txt'
 
 
 Good Engineering Practices
@@ -41,11 +41,11 @@ Good Engineering Practices
 * Convention (plural form): ``FILES``, ``FILENAMES``, ``FILEPATHS``, ``PATHS``
 * Note, that ``PATH`` is usually used for other purposes (``sys.path`` or ``os.getenv('PATH')``)
 
-    >>> FILE = 'myfile.txt'
+>>> FILE = 'myfile.txt'
 
-    >>> FILES = [
-    ...     'myfile.txt',
-    ...     'myfile.csv']
+>>> FILES = [
+...     'myfile.txt',
+...     'myfile.csv']
 
 
 Raw Strings
@@ -53,26 +53,26 @@ Raw Strings
 * Always use raw-strings (``r"..."``) for paths
 * Escapes does not matters
 
-    >>> print(r'C:\Users\Admin\file.txt')
-    C:\Users\Admin\file.txt
+>>> print(r'C:\Users\Admin\file.txt')
+C:\Users\Admin\file.txt
 
-    >>> print('C:\\Users\\Admin\\file.txt')
-    C:\Users\Admin\file.txt
+>>> print('C:\\Users\\Admin\\file.txt')
+C:\Users\Admin\file.txt
 
-    >>> print('C:\Users\Admin\file.txt')
-    Traceback (most recent call last):
-    SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+>>> print('C:\Users\Admin\file.txt')
+Traceback (most recent call last):
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
 
 * Problem: ``\Users``
 * after ``\U...`` python expects Unicode codepoint in hex i.e. '\U0001F680' which is 🚀 emoticon
 * ``s`` is invalid hexadecimal character
 * Only valid characters are ``0123456789abcdefABCDEF``
 
-    >>> import string
-    >>>
-    >>>
-    >>> print(string.hexdigits)
-    0123456789abcdefABCDEF
+>>> import string
+>>>
+>>>
+>>> print(string.hexdigits)
+0123456789abcdefABCDEF
 
 
 Absolute Path
@@ -81,9 +81,9 @@ Absolute Path
 * Absolute path on ``*nix`` starts with root ``/`` dir
 * Absolute path include all entries in the directories hierarchy
 
-    >>> FILE = r'C:\Users\Watney\myfile.txt'
+>>> FILE = r'C:\Users\Watney\myfile.txt'
 
-    >>> FILE = r'/tmp/myfile.txt'
+>>> FILE = r'/tmp/myfile.txt'
 
 
 Relative Path
@@ -110,159 +110,153 @@ Escaping Characters in Path
 * "\\ " (backslash space) - escapes space
 * Note that in Python escapes in paths are not required
 
-    >>> FILE = '/tmp/my file.txt'
+>>> FILE = '/tmp/my file.txt'
 
-    >>> FILE = r'/tmp/my file.txt'
+>>> FILE = r'/tmp/my file.txt'
 
-    >>> FILE = r'C:\Users\Admin\myfile.txt'
-    >>>
-    >>>
-    >>> repr(FILE)
-    "'C:\\\\Users\\\\Admin\\\\myfile.txt'"
-    >>>
-    >>> str(FILE)
-    'C:\\Users\\Admin\\myfile.txt'
-    >>>
-    >>> print(repr(FILE))
-    'C:\\Users\\Admin\\myfile.txt'
-    >>>
-    >>> print(FILE)
-    C:\Users\Admin\myfile.txt
+>>> FILE = r'C:\Users\Admin\myfile.txt'
+>>>
+>>>
+>>> repr(FILE)
+"'C:\\\\Users\\\\Admin\\\\myfile.txt'"
+>>>
+>>> str(FILE)
+'C:\\Users\\Admin\\myfile.txt'
+>>>
+>>> print(repr(FILE))
+'C:\\Users\\Admin\\myfile.txt'
+>>>
+>>> print(FILE)
+C:\Users\Admin\myfile.txt
 
 
 Exception Handling
 ------------------
-    >>> try:
-    ...     file = open('/tmp/myfile.txt')
-    ... except FileNotFoundError:
-    ...     print('Sorry, file not found')
-    ... except PermissionError:
-    ...     print('Sorry, not permitted')
-    Sorry, file not found
+>>> try:
+...     file = open('/tmp/myfile.txt')
+... except FileNotFoundError:
+...     print('Sorry, file not found')
+... except PermissionError:
+...     print('Sorry, not permitted')
+Sorry, file not found
 
 
 Create Directories
 ------------------
-    >>> from pathlib import Path
-    >>>
-    >>> Path('/tmp/a').mkdir()
+>>> from pathlib import Path
+>>>
+>>> Path('/tmp/a').mkdir()
 
-    >>> from pathlib import Path
-    >>>
-    >>> Path('/tmp/a').mkdir()
-    Traceback (most recent call last):
-    FileExistsError: [Errno 17] File exists: '/tmp/a'
+>>> from pathlib import Path
+>>>
+>>> Path('/tmp/a').mkdir()
+Traceback (most recent call last):
+FileExistsError: [Errno 17] File exists: '/tmp/a'
 
-    >>> from pathlib import Path
-    >>>
-    >>> Path('/tmp/a').mkdir(exist_ok=True)
+>>> from pathlib import Path
+>>>
+>>> Path('/tmp/a').mkdir(exist_ok=True)
 
-    >>> from pathlib import Path
-    >>>
-    >>> Path('/tmp/a/b/c').mkdir(parents=True, exist_ok=True)
+>>> from pathlib import Path
+>>>
+>>> Path('/tmp/a/b/c').mkdir(parents=True, exist_ok=True)
 
 
 Touch File
 ----------
-    >>> from pathlib import Path
-    >>>
-    >>> Path('/tmp/myfile.txt').touch()
+>>> from pathlib import Path
+>>>
+>>> Path('/tmp/myfile.txt').touch()
 
 
 Exists and is Directory or File
 -------------------------------
-    >>> from pathlib import Path
-    >>>
-    >>> Path('/tmp/myfile.txt').exists()
-    True
+>>> from pathlib import Path
+>>>
+>>> Path('/tmp/myfile.txt').exists()
+True
 
-    >>> from pathlib import Path
-    >>>
-    >>> Path('/tmp/myfile.txt').is_dir()
-    False
+>>> from pathlib import Path
+>>>
+>>> Path('/tmp/myfile.txt').is_dir()
+False
 
-    >>> from pathlib import Path
-    >>>
-    >>> Path('/tmp/myfile.txt').is_file()
-    True
+>>> from pathlib import Path
+>>>
+>>> Path('/tmp/myfile.txt').is_file()
+True
 
 
 Delete directory
 ----------------
 Works only with empty directories:
 
-    >>> from pathlib import Path
-    >>>
-    >>> Path('/tmp/a').rmdir()
-    Traceback (most recent call last):
-    OSError: [Errno 66] Directory not empty: '/tmp/a'
+>>> from pathlib import Path
+>>>
+>>> Path('/tmp/a').rmdir()
+Traceback (most recent call last):
+OSError: [Errno 66] Directory not empty: '/tmp/a'
 
 Remove directories with files:
 
-    >>> from shutil import rmtree
-    >>>
-    >>> rmtree('/tmp/a', ignore_errors=True)
+>>> from shutil import rmtree
+>>>
+>>> rmtree('/tmp/a', ignore_errors=True)
 
 
 Current Working Directory
 -------------------------
 * Returns an absolute path to current working directory
 
-    >>> from pathlib import Path
-    >>>
-    >>> # doctest: +SKIP
-    ... Path.cwd()
-    PosixPath('/home/watney/')
+>>> from pathlib import Path
+>>>
+>>>
+>>> current_directory = Path.cwd()
+>>>
+>>> print(current_directory)  # doctest: +SKIP
+/home/watney/
 
 
 Convert Relative Path to Absolute
 ---------------------------------
-    >>> from pathlib import Path
-    >>>
-    >>> # doctest: +SKIP
-    ... Path(Path.cwd(), 'myfile.txt')
-    PosixPath('/home/watney/myfile.txt')
+>>> from pathlib import Path
+>>>
+>>>
+>>> abspath = Path(Path.cwd(), 'myfile.txt')
+>>>
+>>> print(abspath)  # doctest: +SKIP
+/home/watney/myfile.txt
+
+
+Dirname, Filename
+-----------------
+>>> from pathlib import Path
+>>>
+>>>
+>>> file = Path('/home/watney/myfile.py')
+>>>
+>>> print(file.parent)
+/home/watney
+>>> print(file.name)
+myfile.py
 
 
 Script Path
 -----------
-* Returns an absolute path to currently running script
+* ``__file__`` - Returns an absolute path to currently running script
 
-    >>> print(__file__)  # doctest: +SKIP
-    /home/watney/myscript.py
+>>> print(__file__)  # doctest: +SKIP
+/home/watney/myscript.py
 
-    >>> from os.abspath import basename, dirname
-    >>>
-    >>> file = '/home/watney/myfile.py'
-    >>>
-    >>> dirname(file)
-    '/home/watney'
-    >>> basename(file)
-    'myfile.py'
-
-    >>> print(__file__)  # doctest: +SKIP
-    /home/watney/myscript.py
-
-    >>> from os.abspath import basename, dirname
-    >>>
-    >>> file = '/home/watney/myfile.py'
-    >>>
-    >>> dirname(file)
-    '/home/watney'
-    >>> basename(file)
-    'myfile.py'
-
-    >>> print(__file__)  # doctest: +SKIP
-    /home/watney/myscript.py
-
-    >>> from os.path import basename, dirname
-    >>>
-    >>> file = '/home/watney/myfile.py'
-    >>>
-    >>> dirname(file)
-    '/home/watney'
-    >>> basename(file)
-    'myfile.py'
+>>> from pathlib import Path
+>>>
+>>>
+>>> file = Path(__file__)
+>>>
+>>> print(file.parent)  # doctest: +SKIP
+/home/watney
+>>> print(file.name)  # doctest: +SKIP
+myfile.py
 
 
 Assignments

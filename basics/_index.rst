@@ -152,9 +152,9 @@ Functions
     function/arguments.rst
     function/scope.rst
     function/recurrence.rst
-    function/doctest.rst
     function/generators.rst
     function/lambda.rst
+    function/doctest.rst
     function/type-annotation.rst
 
 

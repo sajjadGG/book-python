@@ -247,18 +247,25 @@ Local Scope
 
 Shadowing Global Scope
 ----------------------
-* Stubs in tests
+Shadowing of a global scope is used frequently in Mocks and Stubs.
+This way, we can simulate user input. Note that Mocks and Stubs will
+stay until the end of a program.
 
 >>> def input(__prompt):
-...     """Stub user input, for testing purpose only"""
-...     return '44'
+...     return 'Mark Watney'
 >>>
+>>>
+>>> name = input('Type your name: ')
+>>> name
+'Mark Watney'
 >>>
 >>> age = input('Type your age: ')
 >>> age
-'44'
->>> float(age)
-44.0
+'Mark Watney'
+
+To restore default behavior of ``input()`` function use:
+
+>>> input = __builtins__.input
 
 
 Assignments

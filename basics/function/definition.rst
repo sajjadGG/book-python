@@ -37,23 +37,31 @@ Convention
 * Add underscore (``_``) at the end of name when name collide
 * System functions names starts and ends with 'dunder' - double underscore: ``__``
 
-Do not use ``camelCase`` or ``PascalCase`` names:
+Do not use ``camelCase`` or ``PascalCase`` names.
+
+The ``camelCase`` name is c/c++/Java/JavaScript convention. It is not good
+to mix conventions from different languages. If you write C code, use C
+conventions. If you program in Python, use Python conventions. Remember,
+there are different communities around both of those languages:
 
 >>> def sayHello():
-...     print('This is camelCase name')
-...     print('It is c/c++/Java/JavaScript convention')
+...     pass
+
+The ``PascalCase`` name has completely different meaning in Python - it is
+used for classes. Using such name convention will mistake others.
 
 >>> def SayHello():
-...     print('This is PascalCase name')
-...     print('It is c/c++/Java/JavaScript convention')
+...     pass
 
-Both ``camelCase`` and ``PascalCase`` are reserved for class names (by convention).
+Use ``snake_case`` names in Python. It is easy to remember. Python looks like
+a snake, and sounds like a snake ;) This is double internal joke, because
+Python name came from Monty Python, of which Guido van Rossum was a big fun.
+The other reference is to duck typing (dynamic typing) - "If it walks like a duck and it quacks like a duck, then it must be a duck":
 
-Use ``snake_case`` names # Python - snake ;)
+This is ``snake_case()`` name. It is Pythonic way:
 
 >>> def say_hello():
-...     print('This is snake_case() name')
-...     print('It is Pythonic way')
+...     pass
 
 Use better names, rather than comments:
 
@@ -78,56 +86,6 @@ System functions names starts and ends with 'dunder' - double underscore: ``__``
 
 >>> def __import__(module_name):
 ...     pass
-
-
-Docstring
----------
-* Docstring is a first multiline comment in: File/Module, Class, Method/Function
-* Used for generating ``help()`` documentation
-* It is accessible in ``__doc__`` property of an object
-* Used for ``doctest``
-* :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
-* More information in `Function Doctest`
-
-Docstring used for documentation:
-
->>> def say_hello():
-...     """This is the say_hello function"""
-...     print('Hello')
->>>
->>>
->>> # doctest: +SKIP
-... help(say_hello)
-Help on function say_hello in module __main__:
-<BLANKLINE>
-say_hello()
-    This is the say_hello function
->>>
->>> print(say_hello.__doc__)
-This is the say_hello function
-
-Docstring used for documentation:
-
->>> def say_hello():
-...     """
-...     This is the say_hello function
-...     And the description is longer then one line
-...     """
-...     print('Hello')
->>>
->>>
->>> help(say_hello)  # doctest: +SKIP
-Help on function say_hello in module __main__:
-<BLANKLINE>
-say_hello()
-    This is the say_hello function
-    And the description is longer then one line
->>>
->>> print(say_hello.__doc__)
-<BLANKLINE>
-    This is the say_hello function
-    And the description is longer then one line
-<BLANKLINE>
 
 
 Assignments

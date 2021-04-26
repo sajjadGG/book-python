@@ -15,6 +15,56 @@ Rationale
     * https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L434
 
 
+Docstring
+---------
+* Docstring is a first multiline comment in: File/Module, Class, Method/Function
+* Used for generating ``help()`` documentation
+* It is accessible in ``__doc__`` property of an object
+* Used for ``doctest``
+* :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
+* More information in `Function Doctest`
+
+Docstring used for documentation:
+
+>>> def say_hello():
+...     """This is the say_hello function"""
+...     print('Hello')
+>>>
+>>>
+>>> # doctest: +SKIP
+... help(say_hello)
+Help on function say_hello in module __main__:
+<BLANKLINE>
+say_hello()
+    This is the say_hello function
+>>>
+>>> print(say_hello.__doc__)
+This is the say_hello function
+
+Docstring used for documentation:
+
+>>> def say_hello():
+...     """
+...     This is the say_hello function
+...     And the description is longer then one line
+...     """
+...     print('Hello')
+>>>
+>>>
+>>> help(say_hello)  # doctest: +SKIP
+Help on function say_hello in module __main__:
+<BLANKLINE>
+say_hello()
+    This is the say_hello function
+    And the description is longer then one line
+>>>
+>>> print(say_hello.__doc__)
+<BLANKLINE>
+    This is the say_hello function
+    And the description is longer then one line
+<BLANKLINE>
+
+
 Syntax
 ------
 * Docstring is a first multiline comment in: File/Module, Class, Method/Function
