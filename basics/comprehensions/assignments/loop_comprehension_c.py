@@ -1,33 +1,30 @@
 """
-* Assignment: Loop Comprehension Months
-* Status: required
+* Assignment: Loop Comprehension ZeroPadded
+* Required: yes
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
 
 English:
-    1. Use data from "Given" section (see below)
-    2. Use dict comprehension
-    3. Convert `MONTH` into dict:
+    1. Use dict comprehension and enumerate
+    2. Convert `MONTH` into `result: dict[str,str]`:
         a. Keys: month number
         b. Values: month name
-    4. Month number must be two letter string
+    3. Month number must be two letter string
        (zero padded) - `f'{number:02}'`
-    5. Run doctests - all must succeed
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Użyj rozwinięcia słownikowego
-    3. Przekonwertuj `MONTH` w słownik:
+    1. Użyj rozwinięcia słownikowego i enumeracji
+    2. Przekonwertuj `MONTH` w `result: dict[str,str]`:
         a. klucz: numer miesiąca
         b. wartość: nazwa miesiąca
-    4. Numer miesiąca ma być dwuznakowym stringiem
+    3. Numer miesiąca ma być dwuznakowym stringiem
        (wypełnij zerem) - `f'{number:02}'`
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> type(result)
     <class 'dict'>
@@ -57,7 +54,6 @@ Tests:
      '12': 'December'}
 """
 
-# Given
 MONTHS = [
     'January',
     'February',

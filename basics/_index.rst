@@ -114,7 +114,15 @@ Loops
     loop/nested.rst
     loop/unpacking.rst
     loop/dict.rst
-    loop/comprehensions.rst
+
+
+Comprehensions
+**************
+.. toctree::
+    :maxdepth: 1
+    :caption: Comprehensions
+
+    comprehensions/index.rst
 
 
 Files

@@ -1,6 +1,6 @@
 """
 * Assignment: Loop Comprehension Create
-* Status: required
+* Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min
@@ -18,8 +18,7 @@ Polish:
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    >>> import sys
-    >>> sys.tracebacklimit = 0
+    >>> import sys; sys.tracebacklimit = 0
 
     >>> assert type(result) is list, \
     'Result should be a list'
@@ -31,7 +30,6 @@ Tests:
     [6, 8, 10, 12, 14, 16, 18]
 """
 
-# Given
 result = ...  # list[int]: even numbers from 5 to 20 (without 20)
 
 # Solution

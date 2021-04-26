@@ -723,3 +723,7 @@ Assignments
 .. literalinclude:: assignments/loop_comprehension_d.py
     :caption: :download:`Solution <assignments/loop_comprehension_d.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/loop_comprehension_e.py
+    :caption: :download:`Solution <assignments/loop_comprehension_e.py>`
+    :end-before: # Solution
