@@ -2,4 +2,4 @@ sphinx==3.5.*
 sphinx_rtd_theme
 sphinxcontrib-bibtex
 
-# numpy
+numpy
