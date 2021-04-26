@@ -76,6 +76,6 @@ with open(FILE) as file:
 
     for line in file:
         *X, y = line.strip().split(',')
-        X = [float(x) for x in X]
-        features.append(tuple(X))
+        X = tuple(float(x) for x in X)
+        features.append(X)
         labels.append(y)
