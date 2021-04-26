@@ -145,46 +145,22 @@ Create Directories
 ------------------
 >>> from pathlib import Path
 >>>
->>> Path('/tmp/a').mkdir()
-
->>> from pathlib import Path
 >>>
->>> Path('/tmp/a').mkdir()
+>>> path = Path('/tmp/a')
+>>>
+>>> path.mkdir()
+>>>
+>>> path.mkdir()
 Traceback (most recent call last):
 FileExistsError: [Errno 17] File exists: '/tmp/a'
+>>>
+>>> path.mkdir(exist_ok=True)
 
 >>> from pathlib import Path
 >>>
->>> Path('/tmp/a').mkdir(exist_ok=True)
-
->>> from pathlib import Path
 >>>
->>> Path('/tmp/a/b/c').mkdir(parents=True, exist_ok=True)
-
-
-Touch File
-----------
->>> from pathlib import Path
->>>
->>> Path('/tmp/myfile.txt').touch()
-
-
-Exists and is Directory or File
--------------------------------
->>> from pathlib import Path
->>>
->>> Path('/tmp/myfile.txt').exists()
-True
-
->>> from pathlib import Path
->>>
->>> Path('/tmp/myfile.txt').is_dir()
-False
-
->>> from pathlib import Path
->>>
->>> Path('/tmp/myfile.txt').is_file()
-True
+>>> path = Path('/tmp/a/b/c')
+>>> path.mkdir(parents=True, exist_ok=True)
 
 
 Delete directory
@@ -193,7 +169,9 @@ Works only with empty directories:
 
 >>> from pathlib import Path
 >>>
->>> Path('/tmp/a').rmdir()
+>>>
+>>> path = Path('/tmp/a')
+>>> path.rmdir()
 Traceback (most recent call last):
 OSError: [Errno 66] Directory not empty: '/tmp/a'
 
@@ -201,7 +179,9 @@ Remove directories with files:
 
 >>> from shutil import rmtree
 >>>
->>> rmtree('/tmp/a', ignore_errors=True)
+>>>
+>>> path = '/tmp/a'
+>>> rmtree(path, ignore_errors=True)
 
 
 Current Working Directory
@@ -211,10 +191,28 @@ Current Working Directory
 >>> from pathlib import Path
 >>>
 >>>
->>> current_directory = Path.cwd()
->>>
->>> print(current_directory)  # doctest: +SKIP
+>>> path = Path.cwd()
+>>> print(path)  # doctest: +SKIP
 /home/watney/
+
+
+Exists and is Directory or File
+-------------------------------
+* Touch creates a file
+
+>>> from pathlib import Path
+>>>
+>>>
+>>> file = Path('/tmp/myfile.txt')
+>>>
+>>> file.touch()
+>>>
+>>> file.exists()
+True
+>>> file.is_dir()
+False
+>>> file.is_file()
+True
 
 
 Convert Relative Path to Absolute
@@ -222,9 +220,8 @@ Convert Relative Path to Absolute
 >>> from pathlib import Path
 >>>
 >>>
->>> abspath = Path(Path.cwd(), 'myfile.txt')
->>>
->>> print(abspath)  # doctest: +SKIP
+>>> file = Path('myfile.txt')
+>>> file.absolute()  # doctest: +SKIP
 /home/watney/myfile.txt
 
 
@@ -237,6 +234,7 @@ Dirname, Filename
 >>>
 >>> print(file.parent)
 /home/watney
+>>>
 >>> print(file.name)
 myfile.py
 
@@ -255,6 +253,7 @@ Script Path
 >>>
 >>> print(file.parent)  # doctest: +SKIP
 /home/watney
+>>>
 >>> print(file.name)  # doctest: +SKIP
 myfile.py
 
