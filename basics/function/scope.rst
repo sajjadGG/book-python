@@ -265,7 +265,7 @@ stay until the end of a program.
 
 To restore default behavior of ``input()`` function use:
 
->>> input = __builtins__.input
+>>> input = __builtins__['input']
 
 
 Assignments

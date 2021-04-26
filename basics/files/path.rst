@@ -249,7 +249,7 @@ Script Path
 >>> from pathlib import Path
 >>>
 >>>
->>> file = Path(__file__)
+>>> file = Path(__file__)  # doctest: +SKIP
 >>>
 >>> print(file.parent)  # doctest: +SKIP
 /home/watney
