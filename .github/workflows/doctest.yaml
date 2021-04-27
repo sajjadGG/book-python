@@ -5,6 +5,14 @@ jobs:
     runs-on: ubuntu-20.04
     container: 'python:3.9.4-alpine'
     steps:
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+      - run: pip install -r requirements.txt
       - uses: actions/checkout@v2
 
   about:
