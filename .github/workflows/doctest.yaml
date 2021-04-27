@@ -6,29 +6,51 @@ jobs:
     container: 'python:3.9.4-alpine'
     steps:
       - uses: actions/checkout@v2
-      - run: pip install --upgrade pip
-      - run: pip install -r requirements.txt
 
   about:
     runs-on: ubuntu-20.04
     needs: setup
     steps:
-    - run: sphinx-build -a -E -j auto --color -b doctest about /tmp/
-    - run: find about -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+      - run: pip install -r about/requirements.txt
+      - run: sphinx-build -a -E -j auto --color -b doctest about /tmp/
+      - run: find about -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
 
   advanced:
     runs-on: ubuntu-20.04
     needs: setup
     steps:
-    - run: sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
-    # - run: find advanced -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+      - run: pip install -r advanced/requirements.txt
+      - run: sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
+      # - run: find advanced -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
 
   basics:
     runs-on: ubuntu-20.04
     needs: setup
     steps:
-    - run: sphinx-build -a -E -j auto --color -b doctest basics /tmp/
-    - run: find basics -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+      - run: pip install -r basics/requirements.txt
+      - run: sphinx-build -a -E -j auto --color -b doctest basics /tmp/
+      - run: find basics -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
 #
 #    data-science:
 #      - needs: setup
