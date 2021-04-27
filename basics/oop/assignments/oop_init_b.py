@@ -6,10 +6,10 @@
 * Time: 8 min
 
 English:
-    1. Model the data using classes
+    1. Model the data using classes Astronaut and SpaceAgency
        a. Watney, USA, 1969-07-21
        b. NASA, USA, 1958-07-29
-    2. Create instances for each record
+    2. Create instances (watney, nasa) filling it with data
     3. Values must be passed at the initialization
     4. Create instances of a first class using positional arguments
     5. Create instances of a second class using keyword arguments
@@ -17,10 +17,10 @@ English:
     7. Run doctests - all must succeed
 
 Polish:
-    1. Zamodeluj dane za pomocą klas
+    1. Zamodeluj dane za pomocą klas Astronaut i SpaceAgency
        a. Watney, USA, 1969-07-21
        b. NASA, USA, 1958-07-29
-    2. Stwórz instancje dla każdego wpisu
+    2. Stwórz instancje (watney, nasa) wypełniając je danymi
     3. Wartości mają być podawane przy inicjalizacji
     4. Twórz instancje pierwszej klasy używając argumentów pozycyjnych
     5. Twórz instancje drugiej klasy używając argumentów nazwanych

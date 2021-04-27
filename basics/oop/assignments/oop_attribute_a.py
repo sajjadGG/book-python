@@ -2,25 +2,25 @@
 * Assignment: OOP Attribute Model
 * Required: yes
 * Complexity: easy
-* Lines of code: 15 lines
+* Lines of code: 12 lines
 * Time: 8 min
 
 English:
-    1. Model the data using classes
+    1. Model the data using classes Astronaut and SpaceAgency
        a. Watney, USA, 1969-07-21
        b. NASA, USA, 1958-07-29
-    2. How many classes are there?
-    3. How many instances are there?
-    4. Create instances filling it with data
+    2. Create instances (watney, nasa) filling it with data
+    3. How many classes are there?
+    4. How many instances are there?
     5. Run doctests - all must succeed
 
 Polish:
-    1. Zamodeluj dane za pomocą klas
+    1. Zamodeluj dane za pomocą klas Astronaut i SpaceAgency
        a. Watney, USA, 1969-07-21
        b. NASA, USA, 1958-07-29
-    2. Ile jest klas?
-    3. Ile jest instancji?
-    4. Stwórz instancje wypełniając je danymi
+    2. Stwórz instancje (watney, nasa) wypełniając je danymi
+    3. Ile jest klas?
+    4. Ile jest instancji?
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:

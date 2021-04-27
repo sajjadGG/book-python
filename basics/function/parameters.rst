@@ -4,16 +4,29 @@ Function Parameters
 
 Rationale
 ---------
+* Parameter - Receiving variable used within the function
+* Required parameter:
+
+    * Necessary to call that function
+    * Specified at leftmost side
+
+* Default parameter:
+
+    * Optional to call that function
+    * Has default value
+    * Default value will be overridden if specified at a call time
+    * Specified at rightmost side
+
 .. glossary::
 
     parameter
         Receiving variable used within the function/block
 
-    default parameter
-        Parameter which is optional and has default value (if not specified at call time)
-
     required parameter
         Parameter which is necessary to call function
+
+    default parameter
+        Parameter which is optional and has default value (if not specified at call time)
 
 Syntax
 ------

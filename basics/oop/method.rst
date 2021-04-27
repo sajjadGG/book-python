@@ -5,12 +5,15 @@ OOP Methods
 Rationale
 ---------
 * Methods are functions in the class
-* First argument is always instance (``self``)
-* While calling function you never pass ``self``
 * Prevents copy-paste code
 * Improves readability
 * Improves refactoring
 * Decomposes bigger problem into smaller chunks
+* At this moment:
+
+    * At definition - ``self`` should always be a first parameter
+    * At call - ``self`` is not passed as an argument (Python will do that)
+    * Later you will learn more advanced things like static methods etc.
 
 .. glossary::
 
@@ -21,15 +24,58 @@ Syntax:
 
 >>> class MyClass:
 ...     def mymethod(self):
-...         ...
+...         pass
+>>>
 >>>
 >>> my = MyClass()
 >>> my.mymethod()
 
 
-Methods Without Arguments
--------------------------
-Methods without arguments:
+Method Parameters
+-----------------
+* At definition - ``self`` should always be a first parameter
+* Later you will learn more advanced things like static methods etc.
+* Parameter - Receiving variable used within the function
+* Required parameter:
+
+    * Necessary to call that function
+    * Specified at leftmost side
+
+* Default parameter:
+
+    * Optional to call that function
+    * Has default value
+    * Default value will be overridden if specified at a call time
+    * Specified at rightmost side
+
+Without parameters:
+
+>>> class Astronaut:
+...     def say_hello(self):
+...         print('My name... José Jiménez')
+
+Methods with required parameter:
+
+>>> class Astronaut:
+...     def say_hello(self, firstname):
+...         print(f'My name... {firstname}')
+
+Method with optional parameter:
+
+>>> class Astronaut:
+...     def say_hello(self, firstname='unknown'):
+...         print(f'My name... {firstname}')
+
+Method with required and optional parameter:
+
+>>> class Astronaut:
+...     def say_hello(self, firstname, lastname='unknown'):
+...         print(f'My name... {firstname} {lastname}')
+
+
+Arguments
+---------
+* At call - ``self`` is not passed as an argument (Python will do that)
 
 >>> class Astronaut:
 ...     def say_hello(self):
@@ -41,13 +87,16 @@ Methods without arguments:
 My name... José Jiménez
 
 
+
+
+
+
+
 Methods With Required Argument
 ------------------------------
 Methods with required argument:
 
->>> class Astronaut:
-...     def say_hello(self, name):
-...         print(f'My name... {name}')
+
 >>>
 >>>
 >>> jose = Astronaut()

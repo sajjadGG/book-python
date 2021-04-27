@@ -195,30 +195,34 @@ Duration was 0.04 day
 >>>
 >>>
 >>> class Duration:
+...     seconds: int
+...
 ...     def __init__(self, seconds):
 ...         self.seconds = seconds
 ...
 ...     def __format__(self, unit):
-...         if unit in ('s', 'sec', 'seconds'):
-...             result = self.seconds / SECOND
-...         elif unit in ('m', 'min', 'minutes'):
-...             result = self.seconds / MINUTE
-...         elif unit in ('h', 'hr', 'hours'):
-...             result = self.seconds / HOUR
-...         elif unit in ('d', 'days'):
-...             result = self.seconds / DAY
-...         return str(round(result, 2))
->>>
->>>
+...         duration = self.seconds
+...         unit = 'seconds' if unit == '' else unit
+...
+...         if unit in ('s', 'sec', 'second', 'seconds'):
+...              duration /= SECOND
+...         elif unit in ('m', 'min', 'minute', 'minutes'):
+...             duration /= MINUTE
+...         elif unit in ('h', 'hour', 'hours'):
+...             duration /= HOUR
+...         elif unit in ('d', 'day', 'days'):
+...             duration /= DAY
+...         return f'{duration:.2f} {unit}'
+...
 >>> duration = Duration(seconds=3600)
 >>>
->>> print(f'Duration: {duration:s} seconds')
-Duration: 3600.0 seconds
->>> print(f'Duration: {duration:m} minutes')
-Duration: 60.0 minutes
->>> print(f'Duration: {duration:h} hours')
-Duration: 1.0 hours
->>> print(f'Duration: {duration:d} days')
+>>> print(f'Duration: {duration:s}')
+Duration: 3600.00 s
+>>> print(f'Duration: {duration:min}')
+Duration: 60.00 min
+>>> print(f'Duration: {duration:h}')
+Duration: 1.00 h
+>>> print(f'Duration: {duration:days}')
 Duration: 0.04 days
 
 >>> class Temperature:
@@ -238,16 +242,17 @@ Duration: 0.04 days
 ...             value = self.to_celsius()
 ...         elif unit == 'fahrenheit':
 ...             value = self.to_fahrenheit()
-...         return f'{value:.2f}'
+...         unit = unit[0].upper()
+...         return f'{value:.2f} {unit}'
 >>>
 >>>
 >>> temp = Temperature(309.75)
 >>>
->>> print(f'Temperature is {temp:kelvin} K')
+>>> print(f'Temperature is {temp:kelvin}')
 Temperature is 309.75 K
->>> print(f'Temperature is {temp:celsius} C')
+>>> print(f'Temperature is {temp:celsius}')
 Temperature is 36.60 C
->>> print(f'Temperature is {temp:fahrenheit} F')
+>>> print(f'Temperature is {temp:fahrenheit}')
 Temperature is 97.88 F
 
 >>> class Point:

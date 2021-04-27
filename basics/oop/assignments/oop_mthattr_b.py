@@ -18,10 +18,12 @@ English:
         b. Return list of all `float` type attributes
         c. Return sum of values of all `float` type attributes
         d. Return mean of all `float` type attributes
-    4. Use `self.__dict__` iteration to return values of numeric fields
+    4. Use `vars(self)` iteration to return values of numeric fields
     5. Create `setosa` object with attributes set at the initialization
     6. Create `virginica` object with attributes set at the initialization
-    7. Print sum, mean and species name of each objects
+    7. Method `.show()` returns sum, mean and species name, example:
+       a. 'total=10.20 mean=2.55 setosa'
+       b. 'total=15.50 mean=3.88 virginica'
     8. Do not use `@dataclass`
     9. Run doctests - all must succeed
 
@@ -38,16 +40,18 @@ Polish:
         b. Zwrócić listę wartości wszystkich pól typu `float`
         c. Zwrócić sumę wartości pól typu `float`
         d. Zwrócić średnią arytmetyczną wartość pól typu `float`
-    4. Użyj iterowania po `self.__dict__` do zwrócenia wartości pól numerycznych
-    5. Stwórz obiekt `setosa` z atrybutami ustawionymi przy inicjalizacji
-    6. Stwórz obiekt `virginica` z atrybutami ustawionymi przy inicjalizacji
-    7. Wypisz sumę, średnią oraz nazwę gatunku każdego z obiektów
+    4. Użyj iterowania po `vars(self)` do zwrócenia wartości pól numerycznych
+    7. Method `.show()` returns sumę, średnią oraz nazwę gatunku, przykład:
+       a. 'total=10.20 mean=2.55 setosa'
+       b. 'total=15.50 mean=3.88 virginica'
     8. Nie używaj `@dataclass`
     9. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * `isinstance(value, float)`
-    * `self.__dict__.items()`
+    * `type(value) is float`
+    * `vars(self).values()`
+    * `{total=:.2f}`
+    * `{mean=:.2f}`
 
 Tests:
     >>> setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
@@ -67,6 +71,8 @@ class Iris:
         self.petal_width = petal_width
         self.species = species
 
+    def get_numeric_values(self):
+        return [x for x in vars(self).values() if type(x) is float]
 
 # Solution
 class Iris:
@@ -78,7 +84,7 @@ class Iris:
         self.species = species
 
     def get_numeric_values(self):
-        return [v for k, v in self.__dict__.items() if isinstance(v, float)]
+        return [x for x in vars(self).values() if type(x) is float]
 
     def total(self):
         return sum(self.get_numeric_values())
@@ -90,4 +96,6 @@ class Iris:
         return self.total() / self.length()
 
     def show(self):
-        return f'total={self.total():.2f} mean={self.mean():.2f} {self.species}'
+        total = self.total()
+        mean = self.mean()
+        return f'{total=:.2f} {mean=:.2f} {self.species}'

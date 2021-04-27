@@ -18,10 +18,6 @@ Rationale
     subclass
         Class which inherits from :term:`parent`
 
-    overload
-        When :term:`child` has method or attribute with the same name as :term:`parent`.
-        In such case :term:`child` attribute will be used (will overload :term:`parent`).
-
 
 Syntax
 ------
@@ -40,15 +36,15 @@ Syntax
 
 Simple Inheritance
 ------------------
->>> class Engineer:
+>>> class Person:
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
 >>>
->>> class Astronaut(Engineer):
+>>> class Astronaut(Person):
 ...     pass
 >>>
->>> class Cosmonaut(Engineer):
+>>> class Cosmonaut(Person):
 ...     pass
 >>>
 >>>
@@ -58,10 +54,10 @@ Simple Inheritance
 
 Multilevel Inheritance
 ----------------------
->>> class Engineer:
+>>> class Person:
 ...     pass
 >>>
->>> class Pilot(Engineer):
+>>> class Pilot(Person):
 ...     pass
 >>>
 >>> class Astronaut(Pilot):
@@ -71,7 +67,7 @@ Multilevel Inheritance
 >>> watney = Astronaut()
 >>> type(watney)
 <class 'Astronaut'>
->>> isinstance(watney, Engineer)
+>>> isinstance(watney, Person)
 True
 >>> isinstance(watney, Pilot)
 True
@@ -81,20 +77,20 @@ True
 
 Multiple Inheritance
 --------------------
->>> class Engineer:
+>>> class Person:
 ...     pass
 >>>
 >>> class Pilot:
 ...     pass
 >>>
->>> class Astronaut(Engineer, Pilot):
+>>> class Astronaut(Person, Pilot):
 ...     pass
 >>>
 >>>
 >>> watney = Astronaut()
 >>> type(watney)
 <class 'Astronaut'>
->>> isinstance(watney, Engineer)
+>>> isinstance(watney, Person)
 True
 >>> isinstance(watney, Pilot)
 True
@@ -112,11 +108,9 @@ Overload
 ...     pass
 >>>
 >>>
->>> obj = B()
->>> obj.show()
+>>> B().show()
 'a'
->>>
->>>
+
 >>> class A:
 ...     def show(self):
 ...         return 'a'
@@ -126,8 +120,7 @@ Overload
 ...         return 'b'
 >>>
 >>>
->>> obj = B()
->>> obj.show()
+>>> B().show()
 'b'
 
 >>> class Person:
@@ -144,167 +137,6 @@ Overload
 >>> a = Astronaut()
 >>> a.hello()
 Hello Mark Watney
-
-
-Super Function
---------------
->>> class A:
-...     def show(self):
-...         return 'a'
->>>
->>> class B(A):
-...     def show(self):
-...         old_value = super().show()
-...         return old_value + 'b'
->>>
->>>
->>> obj = B()
->>> obj.show()
-'ab'
-
->>> class Engineer:
-...     def __init__(self):
-...         self.education = 'Engineer'
-...         self.profession = 'Engineer'
->>>
->>> class Astronaut(Engineer):
-...     def __init__(self):
-...         super().__init__()
-...         self.profession = 'Astronaut'
->>>
->>>
->>> mark = Astronaut()
->>>
->>> print(mark.__dict__)  # doctest: +NORMALIZE_WHITESPACE
-{'education': 'Engineer',
- 'profession': 'Astronaut'}
-
->>> class Engineer:
-...     def __init__(self):
-...         self.education = 'Engineer'
-...         self.profession = 'Engineer'
->>>
->>> class Astronaut(Engineer):
-...     def __init__(self):
-...         self.profession = 'Astronaut'
-...         super().__init__()
->>>
->>>
->>> mark = Astronaut()
->>>
->>> print(mark.__dict__)  # doctest: +NORMALIZE_WHITESPACE
-{'profession': 'Engineer',
- 'education': 'Engineer'}
-
->>> class Engineer:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
-...         self.education = 'Engineer'
-...         self.profession = 'Engineer'
->>>
->>> class Astronaut(Engineer):
-...     def __init__(self, firstname, lastname):
-...         super().__init__(firstname, lastname)
-...         self.profession = 'Astronaut'
->>>
->>>
->>> mark = Astronaut('Mark', 'Watney')
->>>
->>> print(mark.__dict__)  # doctest: +NORMALIZE_WHITESPACE
-{'firstname': 'Mark',
- 'lastname': 'Watney',
- 'education': 'Engineer',
- 'profession': 'Astronaut'}
-
-
-Inheritance vs Composition
---------------------------
->>> class Car:
-...     def engine_start(self):
-...         print('Starting engine...')
->>>
->>>
->>> class Truck:
-...     def engine_start(self):
-...         print('Starting engine...')
-
-Simple Inheritance:
-
->>> class Vehicle:
-...     def engine_start(self):
-...         print('Starting engine...')
->>>
->>>
->>> class Car(Vehicle):
-...     pass
->>>
->>> class Truck(Vehicle):
-...     pass
-
-Inheritance Problem:
-
->>> class Vehicle:
-...     def engine_start(self):
-...         print('Starting engine...')
->>>
->>>
->>> class Car(Vehicle):
-...     def windows_open(self):
-...         print('Opening windows...')
->>>
->>>
->>> class Truck(Vehicle):
-...     def windows_open(self):
-...         print('Opening windows...')
->>>
->>>
->>> class Motorcycle(Vehicle):
-...     pass
-
-Not Implemented Error:
-
->>> class Vehicle:
-...     def engine_start(self):
-...         print('Starting engine...')
-...
-...     def windows_open():
-...         print('Opening windows...')
->>>
->>>
->>> class Car(Vehicle):
-...     pass
->>>
->>> class Truck(Vehicle):
-...     pass
->>>
->>> class Motorcycle(Vehicle):
-...     def windows_open(self):
-...         raise NotImplementedError('Has no windows')
-
-Composition:
-
->>> class Vehicle:
-...     def engine_start(self):
-...         print('Starting engine...')
-...
-...     def engine_stop():
-...         print('Stopping engine...')
->>>
->>>
->>> class HasWindows:
-...     def windows_open(self):
-...         print('Opening windows...')
->>>
->>>
->>> class Car(Vehicle, HasWindows):
-...     pass
->>>
->>> class Truck(Vehicle, HasWindows):
-...     pass
->>>
->>> class Motorcycle(Vehicle):
-...     pass
 
 
 Use Cases
@@ -346,8 +178,4 @@ Assignments
 
 .. literalinclude:: assignments/oop_inheritance_b.py
     :caption: :download:`Solution <assignments/oop_inheritance_b.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/oop_inheritance_c.py
-    :caption: :download:`Solution <assignments/oop_inheritance_c.py>`
     :end-before: # Solution
