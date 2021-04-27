@@ -1,8 +1,8 @@
-name: Tests
 on: push
 
 jobs:
   setup:
+    runs-on: ubuntu-20.04
     container: 'python:3.9.4-alpine'
     steps:
       - uses: actions/checkout@v2
