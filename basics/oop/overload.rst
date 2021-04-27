@@ -56,7 +56,7 @@ Super Function
 >>>
 >>>
 >>> astro = Astronaut()
->>> vars(mark))  # doctest: +NORMALIZE_WHITESPACE
+>>> vars(mark)  # doctest: +NORMALIZE_WHITESPACE
 {'education': 'Engineer',
  'profession': 'Astronaut'}
 
@@ -73,7 +73,7 @@ Super Function
 >>>
 >>> mark = Astronaut()
 >>>
->>> print(mark.__dict__)  # doctest: +NORMALIZE_WHITESPACE
+>>> vars(mark)  # doctest: +NORMALIZE_WHITESPACE
 {'profession': 'Engineer',
  'education': 'Engineer'}
 
@@ -92,7 +92,7 @@ Super Function
 >>>
 >>> mark = Astronaut('Mark', 'Watney')
 >>>
->>> print(mark.__dict__)  # doctest: +NORMALIZE_WHITESPACE
+>>> vars(mark)  # doctest: +NORMALIZE_WHITESPACE
 {'firstname': 'Mark',
  'lastname': 'Watney',
  'education': 'Engineer',

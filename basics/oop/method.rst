@@ -73,9 +73,10 @@ Method with required and optional parameter:
 ...         print(f'My name... {firstname} {lastname}')
 
 
-Arguments
----------
+Method Arguments
+----------------
 * At call - ``self`` is not passed as an argument (Python will do that)
+
 
 >>> class Astronaut:
 ...     def say_hello(self):
@@ -86,23 +87,14 @@ Arguments
 >>> jose.say_hello()
 My name... José Jiménez
 
+Method with positional argument:
 
-
-
-
-
-
-Methods With Required Argument
-------------------------------
-Methods with required argument:
-
-
+>>> class Astronaut:
+...     def say_hello(self, name):
+...         print(f'My name... {name}')
 >>>
 >>>
 >>> jose = Astronaut()
->>>
->>> jose.say_hello(name='José Jiménez')
-My name... José Jiménez
 >>>
 >>> jose.say_hello('José Jiménez')
 My name... José Jiménez
@@ -111,26 +103,24 @@ My name... José Jiménez
 Traceback (most recent call last):
 TypeError: say_hello() missing 1 required positional argument: 'name'
 
-
-Methods With Optional Argument
-------------------------------
-Methods with arguments with default value:
+Method with keyword argument:
 
 >>> class Astronaut:
-...     def say_hello(self, name='Unknown'):
-...         print(f'My name... {name}')
+...     def say_hello(self, firstname, lastname):
+...         print(f'My name... {firstname} {lastname}')
 >>>
 >>>
 >>> jose = Astronaut()
 >>>
->>> jose.say_hello(name='José Jiménez')
+>>> jose.say_hello(firstname='José', lastname='Jiménez')
 My name... José Jiménez
 >>>
->>> jose.say_hello('José Jiménez')
+>>> jose.say_hello(lastname='Jiménez', firstname='José')
 My name... José Jiménez
 >>>
 >>> jose.say_hello()
-My name... Unknown
+Traceback (most recent call last):
+TypeError: say_hello() missing 1 required positional argument: 'name'
 
 
 Assignments
