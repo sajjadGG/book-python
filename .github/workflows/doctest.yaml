@@ -6,13 +6,12 @@ jobs:
     container: 'python:3.9.4-alpine'
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
+      - run: pip install --upgrade pip
+      - run: pip install -r requirements.txt
 
   about:
     needs: setup
+    runs-on: ubuntu-20.04
     steps:
     - run: sphinx-build -a -E -j auto --color -b doctest about /tmp/
     - run: find about -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
