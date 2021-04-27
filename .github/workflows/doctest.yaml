@@ -1,104 +1,79 @@
+name: Doctests
 on: push
 
 jobs:
-  setup:
-    runs-on: ubuntu-20.04
-    container: 'python:3.9.4-alpine'
-    steps:
-      - uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-            ${{ runner.os }}-
-      - run: pip install -r requirements.txt
-      - uses: actions/checkout@v2
+  doctest:
+    runs-on: ubuntu-latest
 
-  about:
-    runs-on: ubuntu-20.04
-    needs: setup
     steps:
-      - uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-            ${{ runner.os }}-
-      - run: pip install -r about/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest about /tmp/
-      - run: find about -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
+    - uses: actions/checkout@v2
 
-  advanced:
-    runs-on: ubuntu-20.04
-    needs: setup
-    steps:
-      - uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-            ${{ runner.os }}-
-      - run: pip install -r advanced/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
-      # - run: find advanced -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9.4'
 
-  basics:
-    runs-on: ubuntu-20.04
-    needs: setup
-    steps:
-      - uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-            ${{ runner.os }}-
-      - run: pip install -r basics/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest basics /tmp/
-      - run: find basics -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    data-science:
-#      - needs: setup
-#      - run: sphinx-build -a -E -j auto --color -b doctest data-science /tmp/
-#      - run: find data-science -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    design-patterns:
-#      - needs: setup
-#      - run: sphinx-build -a -E -j auto --color -b doctest design-patterns /tmp/
-#      - run: find design-patterns -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    - name: Doctest Devops Assignments
-#      run: find devops -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    #- name: Doctest Django Assignments
-#    #  run: find django -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    #- name: Doctest Dragon Assignments
-#    #  run: find dragon -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    - name: Doctest Fastapi Assignments
-#      run: find fastapi -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    #- name: Doctest Machine Learning Assignments
-#    #  run: find machine-learning -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    #- name: Doctest Matplotlib Assignments
-#    #  run: find matplotlib -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    #- name: Doctest Network Assignments
-#    #  run: find network -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    - name: Doctest Numpy Assignments
-#      run: find numpy -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    - name: Doctest OOP Assignments
-#      run: find oop -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    - name: Doctest Pandas Assignments
-#      run: find pandas -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
-#
-#    - name: Doctest Stdlib Assignments
-#      run: find stdlib -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
+    - name: Cache pip
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+          ${{ runner.os }}-
+
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Doctest Listings
+      run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
+
+    - name: Doctest About Assignments
+      run: find about -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Advanced Assignments
+    #  run: find advanced -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Basics Assignments
+      run: find basics -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Data Science Assignments
+      run: find data-science -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Design Patterns Assignments
+    #  run: find design-patterns -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Devops Assignments
+      run: find devops -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Django Assignments
+    #  run: find django -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Dragon Assignments
+    #  run: find dragon -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Fastapi Assignments
+      run: find fastapi -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Machine Learning Assignments
+    #  run: find machine-learning -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Matplotlib Assignments
+    #  run: find matplotlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    #- name: Doctest Network Assignments
+    #  run: find network -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Numpy Assignments
+      run: find numpy -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest OOP Assignments
+      run: find oop -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Pandas Assignments
+      run: find pandas -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+
+    - name: Doctest Stdlib Assignments
+      run: find stdlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
