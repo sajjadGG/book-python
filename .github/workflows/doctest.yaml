@@ -11,20 +11,20 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-    about:
-      - needs: setup
-      - run: sphinx-build -a -E -j auto --color -b doctest about /tmp/
-      - run: find about -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
+  about:
+    - needs: setup
+    - run: sphinx-build -a -E -j auto --color -b doctest about /tmp/
+    - run: find about -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
 
-    advanced:
-      - needs: setup
-      - run: sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
-      # - run: find advanced -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
+  advanced:
+    - needs: setup
+    - run: sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
+    # - run: find advanced -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
 
-    basics:
-      - needs: setup
-      - run: sphinx-build -a -E -j auto --color -b doctest basics /tmp/
-      - run: find basics -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
+  basics:
+    - needs: setup
+    - run: sphinx-build -a -E -j auto --color -b doctest basics /tmp/
+    - run: find basics -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
 #
 #    data-science:
 #      - needs: setup
