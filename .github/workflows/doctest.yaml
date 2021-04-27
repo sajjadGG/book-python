@@ -10,19 +10,21 @@ jobs:
       - run: pip install -r requirements.txt
 
   about:
-    needs: setup
     runs-on: ubuntu-20.04
+    needs: setup
     steps:
     - run: sphinx-build -a -E -j auto --color -b doctest about /tmp/
     - run: find about -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
 
   advanced:
+    runs-on: ubuntu-20.04
     needs: setup
     steps:
     - run: sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
     # - run: find advanced -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' +
 
   basics:
+    runs-on: ubuntu-20.04
     needs: setup
     steps:
     - run: sphinx-build -a -E -j auto --color -b doctest basics /tmp/
