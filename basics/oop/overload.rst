@@ -55,8 +55,7 @@ Super Function
 ...         self.profession = 'Astronaut'
 >>>
 >>>
->>> astro = Astronaut()
->>> vars(mark)  # doctest: +NORMALIZE_WHITESPACE
+>>> vars(Astronaut())  # doctest: +NORMALIZE_WHITESPACE
 {'education': 'Engineer',
  'profession': 'Astronaut'}
 
@@ -71,9 +70,7 @@ Super Function
 ...         super().__init__()
 >>>
 >>>
->>> mark = Astronaut()
->>>
->>> vars(mark)  # doctest: +NORMALIZE_WHITESPACE
+>>> vars(Astronaut())  # doctest: +NORMALIZE_WHITESPACE
 {'profession': 'Engineer',
  'education': 'Engineer'}
 
@@ -90,9 +87,7 @@ Super Function
 ...         self.profession = 'Astronaut'
 >>>
 >>>
->>> mark = Astronaut('Mark', 'Watney')
->>>
->>> vars(mark)  # doctest: +NORMALIZE_WHITESPACE
+>>> vars(Astronaut('Mark', 'Watney'))  # doctest: +NORMALIZE_WHITESPACE
 {'firstname': 'Mark',
  'lastname': 'Watney',
  'education': 'Engineer',
