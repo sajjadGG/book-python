@@ -8,10 +8,15 @@ jobs:
       fail-fast: false
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - name: Checkout the Code from GIT Repository
+      uses: actions/checkout@v2
+
+    - name: Setup Python Version
+      uses: actions/setup-python@v2
       with:
         python-version: '3.9.4'
+
+    - name: Setup PIP Cache
     - uses: actions/cache@v2
       with:
         path: ~/.cache/pip
@@ -20,7 +25,7 @@ jobs:
           ${{ runner.os }}-pip-
           ${{ runner.os }}-
 
-    - name: Install dependencies
+    - name: Install Dependencies
       run: |
         pip install --upgrade pip
         pip install -r requirements.txt
@@ -28,50 +33,82 @@ jobs:
     - name: Doctest Listings
       run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
 
-    - name: Doctest About Assignments
-      run: find about -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: About
+      run: |
+        sphinx-build -a -E -j auto --color -b doctest about /tmp/
+        find about -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    #- name: Doctest Advanced Assignments
-    #  run: find advanced -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: Advanced
+    #  run: |
+    #    sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
+    #    find advanced -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Doctest Basics Assignments
-      run: find basics -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: Basics
+      run: |
+        sphinx-build -a -E -j auto --color -b doctest basics /tmp/
+        find basics -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Doctest Data Science Assignments
-      run: find data-science -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: Data Science
+      run: |
+        sphinx-build -a -E -j auto --color -b doctest data-science /tmp/
+        find data-science -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    #- name: Doctest Design Patterns Assignments
-    #  run: find design-patterns -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: Design Patterns
+    #  run: |
+    #    sphinx-build -a -E -j auto --color -b doctest design-patterns /tmp/
+    #    find design-patterns -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Doctest Devops Assignments
-      run: find devops -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: DevOps
+      run: |
+        sphinx-build -a -E -j auto --color -b doctest devops /tmp/
+        find devops -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    #- name: Doctest Django Assignments
-    #  run: find django -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: Django
+    #  run: |
+    #    sphinx-build -a -E -j auto --color -b doctest django /tmp/
+    #    find django -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    #- name: Doctest Dragon Assignments
-    #  run: find dragon -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: Dragon
+    #  run: |
+    #    sphinx-build -a -E -j auto --color -b doctest dragon /tmp/
+    #    find dragon -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Doctest Fastapi Assignments
-      run: find fastapi -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: FastAPI
+      run: |
+        sphinx-build -a -E -j auto --color -b doctest fastapi /tmp/
+        find fastapi -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    #- name: Doctest Machine Learning Assignments
-    #  run: find machine-learning -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: Machine Learning
+    #  run: |
+    #    sphinx-build -a -E -j auto --color -b doctest machine-learning /tmp/
+    #    find machine-learning -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    #- name: Doctest Matplotlib Assignments
-    #  run: find matplotlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: Matplotlib
+    #  run: |
+    #    sphinx-build -a -E -j auto --color -b doctest matplotlib /tmp/
+    #    find matplotlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    #- name: Doctest Network Assignments
-    #  run: find network -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: Network
+    #  run: |
+    #    sphinx-build -a -E -j auto --color -b doctest network /tmp/
+    #    find network -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Doctest Numpy Assignments
-      run: find numpy -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: NumPy
+      run: |
+        sphinx-build -a -E -j auto --color -b doctest numpy /tmp/
+        find numpy -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Doctest OOP Assignments
-      run: find oop -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: OOP
+      run: |
+        sphinx-build -a -E -j auto --color -b doctest oop /tmp/
+        find oop -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Doctest Pandas Assignments
-      run: find pandas -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: Pandas
+      run: |
+        sphinx-build -a -E -j auto --color -b doctest pandas /tmp/
+        find pandas -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Doctest Stdlib Assignments
-      run: find stdlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    - name: Stdlib
+      run: |
+        sphinx-build -a -E -j auto --color -b doctest stdlib /tmp/
+        find stdlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
