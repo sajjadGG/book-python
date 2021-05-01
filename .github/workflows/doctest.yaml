@@ -30,85 +30,82 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Doctest Listings
-      run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
-
-    - name: About
+    - name: Doctest About
       run: |
         sphinx-build -a -E -j auto --color -b doctest about /tmp/
         find about -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    # - name: Advanced
+    # - name: Doctest Advanced
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
     #    find advanced -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Basics
+    - name: Doctest Basics
       run: |
         sphinx-build -a -E -j auto --color -b doctest basics /tmp/
         find basics -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Data Science
+    - name: Doctest Data Science
       run: |
         sphinx-build -a -E -j auto --color -b doctest data-science /tmp/
         find data-science -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    # - name: Design Patterns
+    # - name: Doctest Design Patterns
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest design-patterns /tmp/
     #    find design-patterns -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: DevOps
+    - name: Doctest DevOps
       run: |
         sphinx-build -a -E -j auto --color -b doctest devops /tmp/
         find devops -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    # - name: Django
+    # - name: Doctest Django
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest django /tmp/
     #    find django -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    # - name: Dragon
+    # - name: Doctest Dragon
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest dragon /tmp/
     #    find dragon -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: FastAPI
+    - name: Doctest FastAPI
       run: |
         sphinx-build -a -E -j auto --color -b doctest fastapi /tmp/
         find fastapi -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    # - name: Machine Learning
+    # - name: Doctest Machine Learning
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest machine-learning /tmp/
     #    find machine-learning -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    # - name: Matplotlib
+    # - name: Doctest Matplotlib
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest matplotlib /tmp/
     #    find matplotlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    # - name: Network
+    # - name: Doctest Network
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest network /tmp/
     #    find network -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: NumPy
+    - name: Doctest NumPy
       run: |
         sphinx-build -a -E -j auto --color -b doctest numpy /tmp/
         find numpy -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: OOP
+    - name: Doctest OOP
       run: |
         sphinx-build -a -E -j auto --color -b doctest oop /tmp/
         find oop -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Pandas
+    - name: Doctest Pandas
       run: |
         sphinx-build -a -E -j auto --color -b doctest pandas /tmp/
         find pandas -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Stdlib
+    - name: Doctest Stdlib
       run: |
         sphinx-build -a -E -j auto --color -b doctest stdlib /tmp/
         find stdlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
