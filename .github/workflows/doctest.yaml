@@ -32,18 +32,24 @@ jobs:
 
     - name: Doctest About
       run: |
-        sphinx-build -a -E -j auto --color -b doctest about /tmp/
-        find about -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+        cd about
+        pip install -r requirements.txt
+        sphinx-build -a -E -j auto --color -b doctest . /tmp/
+        find . -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
     # - name: Doctest Advanced
     #   run: |
-    #     sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
-    #     find advanced -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+    #       cd advanced
+    #       pip install -r requirements.txt
+    #       sphinx-build -a -E -j auto --color -b doctest . /tmp/
+    #       find . -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
     - name: Doctest Basics
       run: |
-        sphinx-build -a -E -j auto --color -b doctest basics /tmp/
-        find basics -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+        cd basics
+        pip install -r requirements.txt
+        sphinx-build -a -E -j auto --color -b doctest . /tmp/
+        find . -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
     - name: Doctest Data Science
       run: |
