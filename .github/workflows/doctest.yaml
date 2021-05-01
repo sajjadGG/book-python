@@ -38,7 +38,7 @@ jobs:
         sphinx-build -a -E -j auto --color -b doctest about /tmp/
         find about -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Advanced
+    # - name: Advanced
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
     #    find advanced -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
@@ -53,7 +53,7 @@ jobs:
         sphinx-build -a -E -j auto --color -b doctest data-science /tmp/
         find data-science -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Design Patterns
+    # - name: Design Patterns
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest design-patterns /tmp/
     #    find design-patterns -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
@@ -63,12 +63,12 @@ jobs:
         sphinx-build -a -E -j auto --color -b doctest devops /tmp/
         find devops -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Django
+    # - name: Django
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest django /tmp/
     #    find django -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Dragon
+    # - name: Dragon
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest dragon /tmp/
     #    find dragon -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
@@ -78,17 +78,17 @@ jobs:
         sphinx-build -a -E -j auto --color -b doctest fastapi /tmp/
         find fastapi -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Machine Learning
+    # - name: Machine Learning
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest machine-learning /tmp/
     #    find machine-learning -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Matplotlib
+    # - name: Matplotlib
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest matplotlib /tmp/
     #    find matplotlib -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
-    - name: Network
+    # - name: Network
     #  run: |
     #    sphinx-build -a -E -j auto --color -b doctest network /tmp/
     #    find network -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
