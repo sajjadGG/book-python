@@ -36,6 +36,9 @@ tzw. `push`.
     d. Po dziesięciu sekundach zmiany powinny być zapisane i wypchnięte
        (powiadomi Cię o tym komunikat w prawym dolnym rogu -
        `Pushed 1 commit to origin/master`)
+    e. Gdyby wyskoczyło okno z prośbą o Twoje imie i email, wpisz poprawne dane
+       Git używa ich do wyświetlania informacji o autorach commitów
+       (``git log``)
 
 4. Ściągnięcie zmian z Github (``git pull``):
 
