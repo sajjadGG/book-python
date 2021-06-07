@@ -46,9 +46,9 @@ kb = 1024 * b
 Mb = 1024 * kb
 
 size = ...  # int: 1337 megabits
-size_b = ...  # int: size in bytes
-size_kb = ...  # int: size in kilobytes
-size_Mb = ...  # int: size in megabytes
+size_b = ...  # int: size in bits
+size_kb = ...  # int: size in kilobits
+size_Mb = ...  # int: size in megabits
 
 # Solution
 size = 1337 * Mb
