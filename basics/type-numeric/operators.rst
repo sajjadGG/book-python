@@ -151,14 +151,14 @@ Increment Operators
 In Python for each operator there is also an increment version of it:
 
     * ``+=`` - Incremental addition
-    * ``+=`` - Incremental subtraction
+    * ``-=`` - Incremental subtraction
     * ``*=`` - Incremental multiplication
     * ``**=`` - Incremental power
     * ``/=`` - Incremental true division
     * ``//=`` - Incremental floor division
     * ``%=`` - Incremental modulo division
 
-However, most of a time only ``+=`` and ``+=`` are used. Others are very rare.
+However, most of a time only ``+=`` and ``-=`` are used. Others are very rare.
 
 >>> x = 10
 >>> x = x + 1
@@ -177,6 +177,9 @@ However, most of a time only ``+=`` and ``+=`` are used. Others are very rare.
 >>>
 >>> print(x)
 9
+
+In other programming languages you may find postfix and prefix increment
+notation. There is no such thing in Python.
 
 >>> x = 1
 >>> x++
