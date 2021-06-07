@@ -67,6 +67,20 @@ True
 False
 
 
+Use Case
+--------
+>>> dane = [3, 1, 2]
+>>> dane.append(4)
+>>> dane.sort()
+>>> dane
+[1, 2, 3, 4]
+
+>>> dane = [3, 1, 2]
+>>> dane.append(4).sort()
+Traceback (most recent call last):
+AttributeError: 'NoneType' object has no attribute 'sort'
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/type_none_a.py

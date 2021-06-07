@@ -7,17 +7,11 @@
 
 English:
     1. Define `name` with value `Mark Watney`
-    2. Print `Hello NAME EMOTICON`, where:
-        a. NAME is a name read from user
-        b. EMOTICON is Unicode Codepoint "\U0001F642"
-    3. Run doctests - all must succeed
+    2. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj `name` z wartością `Mark Watney`
-    2. Wypisz `Hello NAME EMOTICON`, gdzie:
-        a. NAME to imię wczytane od użytkownika
-        b. EMOTICON to Unicode Codepoint "\U0001F642"
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
