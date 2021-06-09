@@ -197,6 +197,10 @@ twardowski
 2
 
 
+>>> a, b, (c, [d]) = [1, 2, (3, [4])]
+>>> _, _, (_, [interesting]) = [1, 2, (3, [4])]
+
+
 Use Cases
 ---------
 >>> import sys
@@ -237,6 +241,21 @@ virginica 3.875
 1
 >>> others
 [2, 3, 4, 5, 6, 7, 8, 9]
+
+Use Case
+--------
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>>
+>>> for *features, label in DATA[1:]:
+...     avg = sum(features) / len(features)
+...     print(label, avg)
 
 
 Assignments

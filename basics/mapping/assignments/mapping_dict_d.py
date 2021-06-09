@@ -26,6 +26,7 @@ Example:
     |-------|--------|
     |   A   |    a   |
     |   x   |    x   |
+    |   Ł   |    ł   |
     |   ś   |    s   |
     |   Ź   |    z   |
 
@@ -43,7 +44,7 @@ Tests:
 
 # Simulate user input (for test automation)
 from unittest.mock import MagicMock
-input = MagicMock(side_effect=['ł'])
+input = MagicMock(side_effect=['Ł'])
 
 
 PL = {
