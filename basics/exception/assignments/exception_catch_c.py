@@ -39,7 +39,7 @@ Tests:
     TypeError: Invalid type, expected int or float
 """
 
-def result(value):
+def result(degrees):
     ...
 
 
