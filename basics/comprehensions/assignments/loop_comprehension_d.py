@@ -17,6 +17,9 @@ Polish:
     3. Dodaj literę do `result`
     5. Uruchom doctesty - wszystkie muszą się powieść
 
+Hint:
+    * use `str.join()`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
