@@ -94,13 +94,11 @@ Return Nested Sequence
 ----------------------
 
 >>> def myfunction():
-...     return [
-...     ('Mark', 'Watney'),
-...     {'Jan Twardowski', 'Melissa Lewis'},
-...     {'astro': 'Иванович', 'agency': {'name': 'Roscosmos'}},
-...     {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini', 'Apollo')},
-...     {'astro': 'Vogel', 'missions': (list(), tuple(), set(), frozenset())},
-... ]
+...     return [('Mark', 'Watney'),
+...             {'Jan Twardowski', 'Melissa Lewis'},
+...             {'astro': 'Иванович', 'agency': {'name': 'Roscosmos'}},
+...             {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini', 'Apollo')},
+...             {'astro': 'Vogel', 'missions': (list(), tuple(), set()}]
 
 
 Return None
