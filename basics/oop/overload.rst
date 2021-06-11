@@ -74,28 +74,9 @@ Super Function
 {'profession': 'Engineer',
  'education': 'Engineer'}
 
->>> class Engineer:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
-...         self.education = 'Engineer'
-...         self.profession = 'Engineer'
->>>
->>> class Astronaut(Engineer):
-...     def __init__(self, firstname, lastname):
-...         super().__init__(firstname, lastname)
-...         self.profession = 'Astronaut'
->>>
->>>
->>> vars(Astronaut('Mark', 'Watney'))  # doctest: +NORMALIZE_WHITESPACE
-{'firstname': 'Mark',
- 'lastname': 'Watney',
- 'education': 'Engineer',
- 'profession': 'Astronaut'}
 
-
-Inheritance vs Composition
---------------------------
+Inheritance vs Mixin
+--------------------
 >>> class Car:
 ...     def engine_start(self):
 ...         print('Starting engine...')
@@ -117,6 +98,8 @@ Simple Inheritance:
 >>>
 >>> class Truck(Vehicle):
 ...     pass
+
+.. figure:: img/uml-relations-inheritance-simple.png
 
 Inheritance Problem:
 
@@ -144,7 +127,7 @@ Not Implemented Error:
 ...     def engine_start(self):
 ...         print('Starting engine...')
 ...
-...     def windows_open():
+...     def windows_open(self):
 ...         print('Opening windows...')
 >>>
 >>>
@@ -158,7 +141,29 @@ Not Implemented Error:
 ...     def windows_open(self):
 ...         raise NotImplementedError('Has no windows')
 
-Composition:
+Multilevel Inheritance:
+
+>>> class Vehicle:
+...     def engine_start(self):
+...         print('Starting engine...')
+>>>
+>>> class HasWindows(Vehicle):
+...     def windows_open(self):
+...         print('Opening windows...')
+>>>
+>>>
+>>> class Car(HasWindows):
+...     pass
+>>>
+>>> class Truck(HasWindows):
+...     pass
+>>>
+>>> class Motorcycle(Vehicle):
+...     pass
+
+.. figure:: img/uml-relations-inheritance-multilevel.png
+
+Mixin Classes:
 
 >>> class Vehicle:
 ...     def engine_start(self):
@@ -181,6 +186,8 @@ Composition:
 >>>
 >>> class Motorcycle(Vehicle):
 ...     pass
+
+.. figure:: img/uml-relations-mixin.png
 
 
 Use Cases

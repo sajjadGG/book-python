@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Inheritance Super
+* Assignment: OOP Overload Super
 * Required: yes
 * Complexity: easy
 * Lines of code: 6 lines
