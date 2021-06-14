@@ -185,7 +185,7 @@ Descriptor Timezone Converter:
 ...         return parent.utc.astimezone(self.timezone)
 ...
 ...     def __set__(self, parent, new_datetime):
-...         local_time = new_datetime.astimezone(self.timezone)
+...         local_time = new_datetime.replace(tzinfo=self.timezone)
 ...         parent.utc = local_time.astimezone(ZoneInfo('UTC'))
 >>>
 >>>
@@ -202,15 +202,15 @@ Descriptor Timezone Converter:
 >>>
 >>> t.utc = datetime(1961, 4, 12, 6, 7)  # Gagarin's launch to space
 >>> print(t.utc)
-1961-04-12 06:07:00+00:00
+1961-04-12 06:07:00
 >>> print(t.moscow)
 1961-04-12 09:07:00+03:00
 >>> print(t.warsaw)
-1961-04-12 08:07:00+02:00
+1961-04-12 07:07:00+02:00
 >>> print(t.eastern)
-1961-04-12 02:07:00-04:00
+1961-04-12 01:07:00-04:00
 >>> print(t.pacific)
-1961-04-11 23:07:00-07:00
+1961-04-11 22:07:00-07:00
 >>>
 >>>
 >>> t.warsaw = datetime(1969, 7, 21, 3, 56, 15)  # Armstrong's first Lunar step
