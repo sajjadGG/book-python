@@ -1,0 +1,25 @@
+name: Matplotlib
+
+on:
+  push:
+    paths:
+      - 'matplotlib/**'
+
+defaults:
+  run:
+    shell: bash
+    working-directory: 'matplotlib/'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.9.5'
+
+    - run: pip install --upgrade pip
+    - run: pip install -r requirements.txt
+    - run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
+    - run: find . -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
