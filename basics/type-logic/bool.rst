@@ -293,42 +293,6 @@ True
 False
 
 
-Example
--------
-* ``&`` - and
-* ``|`` - or
-
->>> import numpy as np
->>>
->>>
->>> a = np.array([[1, 2, 3],
-...               [4, 5, 6],
-...               [7, 8, 9]])
-...
->>> a > 2
-array([[False, False,  True],
-       [ True,  True,  True],
-       [ True,  True,  True]])
->>>
->>> a < 7
-array([[ True,  True,  True],
-       [ True,  True,  True],
-       [False, False, False]])
->>>
->>> a == 9
-array([[False, False, False],
-       [False, False, False],
-       [False, False,  True]])
->>>
->>> (a>2) & (a<7) | (a==9)
-array([[False, False,  True],
-       [ True,  True,  True],
-       [False, False,  True]])
->>>
->>> a[(a>2) & (a<7) | (a==9)]
-array([3, 4, 5, 6, 9])
-
-
 Assignments
 -----------
 .. literalinclude:: assignments/type_bool_a.py

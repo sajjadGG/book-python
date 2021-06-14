@@ -226,21 +226,7 @@ Slice All
 >>> text[:]
 'We choose to go to the Moon!'
 
-Used in ``numpy`` to get all rows or columns:
-
->>> import numpy as np
->>>
->>> data = np.array([[1, 2, 3],
-...                  [4, 5, 6],
-...                  [7, 8, 9]])
-...
->>> data[:, 1]
-array([2, 5, 8])
->>>
->>> data[1, :]
-array([4, 5, 6])
-
-This unfortunately does not work on ``list``:
+Column selection unfortunately does not work on ``list``:
 
 >>> data = [[1, 2, 3],
 ...         [4, 5, 6],
@@ -256,39 +242,7 @@ TypeError: list indices must be integers or slices, not tuple
 >>> data[:][1]
 [4, 5, 6]
 
-Used in ``pandas`` to get all rows or columns:
-
->>> import pandas as pd
->>> pd.set_option('display.max_columns', 10)
->>>
->>>
->>> df = pd.DataFrame([
-...     {'A': 1, 'B': 2, 'C': 3},
-...     {'A': 4, 'B': 5, 'C': 6},
-...     {'A': 7, 'B': 8, 'C': 9}])
->>>
->>> df
-   A  B  C
-0  1  2  3
-1  4  5  6
-2  7  8  9
->>>
->>> df.loc[:, ('A','B')]
-   A  B
-0  1  2
-1  4  5
-2  7  8
->>>
->>> df.loc[::2, ::2]
-   A  C
-0  1  3
-2  7  9
->>>
->>> df.loc[1, :]
-A    4
-B    5
-C    6
-Name: 1, dtype: int64
+However this syntax is valid in `numpy` and `pandas`.
 
 
 Index Arithmetic

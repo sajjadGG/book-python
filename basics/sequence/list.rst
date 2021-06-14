@@ -258,23 +258,6 @@ True
 >>> all(data)
 False
 
->>> import numpy as np
->>>
->>>
->>> a = np.array([[1, 2, 3],
-...               [4, 5, 6],
-...               [7, 8, 9]])
-...
->>> a > 2
-array([[False, False,  True],
-       [ True,  True,  True],
-       [ True,  True,  True]])
->>>
->>> (a>2).any()
-True
->>> (a>2).all()
-False
-
 
 Assignments
 -----------
