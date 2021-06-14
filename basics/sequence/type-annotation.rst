@@ -33,23 +33,13 @@ Generic type annotation:
 >>> data: tuple = 'a', 2, 3.3
 >>> data: tuple = ('a', 2, 3.3)
 
-Strict type annotation, since Python 3.9:
+Strict type annotation:
 
 >>> data: tuple[int, int, int] = (1, 2, 3)
 >>> data: tuple[str, str, str] = ('setosa', 'virginica', 'versicolor')
 >>> data: tuple[str, int, float] = ('a', 2, 3.3)
 >>> data: tuple[int, ...] = (1, 2, 3)
 >>> data: tuple[str, ...] = ('setosa', 'virginica', 'versicolor')
-
-Strict type annotation, before Python 3.9:
-
->>> from typing import Tuple
->>>
->>> data: Tuple[int, int, int] = (1, 2, 3)
->>> data: Tuple[str, str, str] = ('setosa', 'virginica', 'versicolor')
->>> data: Tuple[str, int, float] = ('a', 2, 3.3)
->>> data: Tuple[int, ...] = (1, 2, 3)
->>> data: Tuple[str, ...] = ('setosa', 'virginica', 'versicolor')
 
 
 List
@@ -60,19 +50,11 @@ Generic type annotation:
 >>> data: list = []
 >>> data: list = ['a', 1, 2.2]
 
-Strict type annotation, since Python 3.9:
+Strict type annotation:
 
 >>> data: list[int] = [1, 2, 3, 4]
 >>> data: list[float] = [5.8, 2.7, 5.1, 1.9]
 >>> data: list[str] = ['a', 'b', 'c', 'd']
-
-Strict type annotation, before Python 3.9:
-
->>> from typing import List
->>>
->>> data: List[int] = [1, 2, 3, 4]
->>> data: List[float] = [5.8, 2.7, 5.1, 1.9]
->>> data: List[str] = ['a', 'b', 'c', 'd']
 
 
 Set
@@ -82,19 +64,11 @@ Generic type annotation:
 >>> data: set = set()
 >>> data: set = {'a', 1, 2.2}
 
-Strict type annotation, since Python 3.9:
+Strict type annotation:
 
 >>> data: set[int] = {1, 2, 3}
 >>> data: set[float] = {0.0, 1.1, 2.2}
 >>> data: set[str] = {'a', 'b', 'c'}
-
-Strict type annotation, before Python 3.9:
-
->>> from typing import Set
->>>
->>> data: Set[int] = {1, 2, 3}
->>> data: Set[float] = {0.0, 1.1, 2.2}
->>> data: Set[str] = {'a', 'b', 'c'}
 
 
 Frozenset
@@ -104,19 +78,11 @@ Generic type annotation:
 >>> data: frozenset = set()
 >>> data: frozenset = {'a', 1, 2.2}
 
-Strict type annotation, since Python 3.9:
+Strict type annotation:
 
 >>> data: frozenset[int] = {1, 2, 3}
 >>> data: frozenset[float] = {0.0, 1.1, 2.2}
 >>> data: frozenset[str] = {'a', 'b', 'c'}
-
-Strict type annotation, before Python 3.9:
-
->>> from typing import FrozenSet
->>>
->>> data: FrozenSet[int] = {1, 2, 3}
->>> data: FrozenSet[float] = {0.0, 1.1, 2.2}
->>> data: FrozenSet[str] = {'a', 'b', 'c'}
 
 
 List of Tuples
@@ -128,28 +94,9 @@ Generic type annotation:
 ...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
 ...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
 
-Strict type annotation, since Python 3.9:
+Strict type annotation:
 
 >>> data: list[tuple[float, float, float, float, str]] = [
-...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
-...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
-
-Generic type annotation, before Python 3.9:
-
->>> from typing import List
->>>
->>> data: List[tuple] = [
-...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
-...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
-
-
-Strict type annotation, before Python 3.9:
-
->>> from typing import List, Tuple
->>>
->>> data: List[Tuple[float, float, float, float, str]] = [
 ...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
 ...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
@@ -165,25 +112,6 @@ Generic type annotation:
 ...    [7, 8, 9]]
 
 >>> data: list[list[int]] = [
-...    [1, 2, 3],
-...    [4, 5, 6],
-...    [7, 8, 9]]
-
-
-Generic type annotation, before Python 3.9:
-
->>> from typing import List
->>>
->>> data: List[list] = [
-...    [1, 2, 3],
-...    [4, 5, 6],
-...    [7, 8, 9]]
-
-Strict type annotation, since Python 3.9:
-
->>> from typing import List
->>>
->>> data: List[List[int]] = [
 ...    [1, 2, 3],
 ...    [4, 5, 6],
 ...    [7, 8, 9]]
@@ -211,26 +139,13 @@ Generic type annotation:
 ...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
 ...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
 
-Strict type annotation, before Python 3.9:
-
->>> GeographicCoordinate = Tuple[float, float]
->>> locations: List[GeographicCoordinate] = [
-...    (25.91375, -60.15503),
-...    (-11.01983, -166.48477),
-...    (-11.01983, -166.48477)]
-
->>> Iris = Tuple[float, float, float, float, str]
->>> data: List[Iris] = [
-...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
-...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
-
 
 Unions
 ------
 Generic type annotation:
 
 >>> from typing import Union
+>>>
 >>>
 >>> data: list[Union[list, tuple, set]] = [
 ...    [1, 2, 3],
@@ -239,6 +154,7 @@ Generic type annotation:
 
 >>> from typing import Union
 >>>
+>>>
 >>> data: list[Union[list[int], tuple[int, ...], set[int]]] = [
 ...    [1, 2, 3],
 ...    (4, 5, 6),
@@ -246,36 +162,9 @@ Generic type annotation:
 
 >>> from typing import Union
 >>>
+>>>
 >>> row = Union[list[int], tuple[int, ...], set[int]]
 >>> data: list[row] = [
-...    [1, 2, 3],
-...    (4, 5, 6),
-...    {7, 8, 9}]
-
-Strict type annotation, before Python 3.9:
-
->>> from typing import Union, List
->>>
->>> data: List[Union[list, tuple, set]] = [
-...    [1, 2, 3],
-...    (4, 5, 6),
-...    {7, 8, 9}]
-
-
->>> from typing import Union, List, Tuple, Set
->>>
->>> data: List[Union[List[int], Tuple[int, int, int], Set[int]]] = [
-...    [1, 2, 3],
-...    (4, 5, 6),
-...    {7, 8, 9}]
-
->>> from typing import Union, List, Tuple, Set
->>>
->>> Row = Union[List[int],
-...             Tuple[int, int, int],
-...             Set[int]]
-...
->>> data: List[Row] = [
 ...    [1, 2, 3],
 ...    (4, 5, 6),
 ...    {7, 8, 9}]
@@ -303,6 +192,102 @@ Astronaut(firstname='Mark', lastname='Watney')
 >>> astro = ('Mark', 'Watney')
 >>> getsizeof(astro)
 56
+
+
+Before Python 3.9
+-----------------
+>>> from typing import Tuple
+>>>
+>>>
+>>> data: Tuple[int, int, int] = (1, 2, 3)
+>>> data: Tuple[str, str, str] = ('setosa', 'virginica', 'versicolor')
+>>> data: Tuple[str, int, float] = ('a', 2, 3.3)
+>>> data: Tuple[int, ...] = (1, 2, 3)
+>>> data: Tuple[str, ...] = ('setosa', 'virginica', 'versicolor')
+
+>>> from typing import List
+>>>
+>>>
+>>> data: List[int] = [1, 2, 3, 4]
+>>> data: List[float] = [5.8, 2.7, 5.1, 1.9]
+>>> data: List[str] = ['a', 'b', 'c', 'd']
+
+>>> from typing import Set
+>>>
+>>>
+>>> data: Set[int] = {1, 2, 3}
+>>> data: Set[float] = {0.0, 1.1, 2.2}
+>>> data: Set[str] = {'a', 'b', 'c'}
+
+>>> from typing import FrozenSet
+>>>
+>>>
+>>> data: FrozenSet[int] = {1, 2, 3}
+>>> data: FrozenSet[float] = {0.0, 1.1, 2.2}
+>>> data: FrozenSet[str] = {'a', 'b', 'c'}
+
+>>> from typing import List, Tuple
+>>>
+>>>
+>>> data: List[tuple] = [
+...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
+>>>
+>>> data: List[Tuple[float, float, float, float, str]] = [
+...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
+
+>>> from typing import List
+>>>
+>>>
+>>> data: List[list] = [
+...    [1, 2, 3],
+...    [4, 5, 6],
+...    [7, 8, 9]]
+>>>
+>>> data: List[List[int]] = [
+...    [1, 2, 3],
+...    [4, 5, 6],
+...    [7, 8, 9]]
+
+>>> from typing import List, Tuple
+>>>
+>>>
+>>> GeographicCoordinate = Tuple[float, float]
+>>> locations: List[GeographicCoordinate] = [
+...    (25.91375, -60.15503),
+...    (-11.01983, -166.48477),
+...    (-11.01983, -166.48477)]
+>>>
+>>> Iris = Tuple[float, float, float, float, str]
+>>> data: List[Iris] = [
+...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
+
+>>> from typing import Union, List, Tuple, Set
+>>>
+>>>
+>>> data: List[Union[list, tuple, set]] = [
+...    [1, 2, 3],
+...    (4, 5, 6),
+...    {7, 8, 9}]
+>>>
+>>> data: List[Union[List[int], Tuple[int, int, int], Set[int]]] = [
+...    [1, 2, 3],
+...    (4, 5, 6),
+...    {7, 8, 9}]
+>>>
+>>> Row = Union[List[int],
+...             Tuple[int, int, int],
+...             Set[int]]
+...
+>>> data: List[Row] = [
+...    [1, 2, 3],
+...    (4, 5, 6),
+...    {7, 8, 9}]
 
 
 Further Reading
