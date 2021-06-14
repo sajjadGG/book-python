@@ -3,7 +3,7 @@ Writing Progress
 
 .. csv-table:: Python: From None to Machine Learning writing progress
     :widths: 50, 10, 10, 10, 10, 10
-    :header: "Chapter", "Structure", "Code Examples", "Assignments", "TL;DR", "Text"
+    :header: "Chapter", "Structure", "Listings", "Assignments", "TL;DR", "Text"
 
     "Python Basics",                    "100%", "100%", "100%", "100%", "10%"
     "Python Standard Library",          "100%", "75%",  "75%",  "75%",  "10%"

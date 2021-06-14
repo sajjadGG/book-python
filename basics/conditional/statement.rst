@@ -388,26 +388,29 @@ Pattern Matching
     >>> request = 'GET /index.html HTTP/2.0'
     >>>
     >>> # doctest: +SKIP
-    ... match request.split():
-    ...     case ['GET', uri, version]:
-    ...         server.get(uri)
-    ...     case ['POST', uri, version]:
-    ...         server.post(uri)
-    ...     case ['PUT', uri, version]:
-    ...         server.put(uri)
-    ...     case ['DELETE', uri, version]:
-    ...         server.delete(uri)
+    ... def http_handle(request):
+    ...     match request.split():
+    ...         case ['GET', uri, version]:
+    ...             server.get(uri)
+    ...         case ['POST', uri, version]:
+    ...             server.post(uri)
+    ...         case ['PUT', uri, version]:
+    ...             server.put(uri)
+    ...         case ['DELETE', uri, version]:
+    ...             server.delete(uri)
 
     >>> # doctest: +SKIP
-    ... match hero.action():
-    ...     case ['move', ('up'|'down'|'left'|'right') as direction, value]:
-    ...         hero.move(direction, value)
-    ...     case ['make_damage', value]:
-    ...         hero.make_damage(value)
-    ...     case ['take_damage', value]:
-    ...         hero.take_damage(value)
+    ... def hero.do(action):
+    ...     match action:
+    ...         case ['move', ('up'|'down'|'left'|'right') as direction, value]:
+    ...             hero.move(direction, value)
+    ...         case ['make_damage', value]:
+    ...             hero.make_damage(value)
+    ...         case ['take_damage', value]:
+    ...             hero.take_damage(value)
 
     >>> from enum import Enum
+    >>>
     >>>
     >>> class Key(Enum):
     ...     ESC = 27
@@ -430,44 +433,6 @@ Pattern Matching
     ...         game.move_down()
     ...     case _:
     ...         raise ValueError(f'Unrecognized key')
-
-    >>> from enum import Enum
-    >>>
-    >>> class Color(Enum):
-    ...     RED = 0
-    ...     BLUE = 1
-    ...     BLACK = 2
-    >>>
-    >>> # doctest: +SKIP
-    ... match color:
-    ...     case Color.RED:
-    ...         print('Soviet')
-    ...     case Color.BLUE:
-    ...         print('Allies')
-    ...     case Color.BLACK:
-    ...         print('Axis')
-
-    >>> from enum import Enum
-    >>>
-    >>> class SpaceMan(Enum):
-    ...     NASA = 'Astronaut'
-    ...     ESA = 'Astronaut'
-    ...     ROSCOSMOS = 'Cosmonaut'
-    ...     CNSA = 'Taikonaut'
-    ...     ISRO = 'GaganYatri'
-    >>>
-    >>> # doctest: +SKIP
-    ... match agency:
-    ...     case SpaceMan.NASA:
-    ...         print('USA')
-    ...     case SpaceMan.ESA:
-    ...         print('Europe')
-    ...     case SpaceMan.ROSCOSMOS:
-    ...         print('Russia')
-    ...     case SpaceMan.CNSA:
-    ...         print('China')
-    ...     case SpaceMan.ISRO:
-    ...         print('India')
 
 
 Assignments
