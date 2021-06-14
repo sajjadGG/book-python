@@ -242,8 +242,6 @@ virginica 3.875
 >>> others
 [2, 3, 4, 5, 6, 7, 8, 9]
 
-Use Case
---------
 >>> DATA = [
 ...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
 ...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -256,6 +254,12 @@ Use Case
 >>> for *features, label in DATA[1:]:
 ...     avg = sum(features) / len(features)
 ...     print(label, avg)
+virginica 3.875
+setosa 2.55
+versicolor 3.475
+virginica 4.1499999999999995
+versicolor 3.9000000000000004
+setosa 2.35
 
 
 Assignments

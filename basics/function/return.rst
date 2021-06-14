@@ -92,13 +92,12 @@ Return Mapping
 
 Return Nested Sequence
 ----------------------
-
 >>> def myfunction():
 ...     return [('Mark', 'Watney'),
 ...             {'Jan Twardowski', 'Melissa Lewis'},
-...             {'astro': 'Иванович', 'agency': {'name': 'Roscosmos'}},
-...             {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini', 'Apollo')},
-...             {'astro': 'Vogel', 'missions': (list(), tuple(), set()}]
+...             {'astro': 'Иван Иванович', 'agency': {'name': 'Roscosmos'}},
+...             {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini')},
+...             {'astro': 'Vogel', 'missions': (list(), tuple(), set())}]
 
 
 Return None

@@ -1,0 +1,34 @@
+name: Doctests
+on: push
+
+jobs:
+  doctest:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    env:
+      CHAPTER: basics
+
+    steps:
+    - name: Checkout the Code from GIT Repository
+      uses: actions/checkout@v2
+
+    - name: Setup Python Version
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9.5'
+
+    - name: Install Dependencies
+      run: |
+        pip install --upgrade pip
+        pip install -r ${{ CHAPTER }}/requirements.txt
+
+    - name: Doctest Listings
+      run: |
+        cd ${{ CHAPTER }}
+        sphinx-build -a -E -j auto --color -b doctest . /tmp/
+
+    - name: Doctest Assignments
+      run: |
+        cd ${{ CHAPTER }}
+        find . -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
