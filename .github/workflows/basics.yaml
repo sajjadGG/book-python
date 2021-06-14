@@ -21,14 +21,14 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install --upgrade pip
-        pip install -r ${{ CHAPTER }}/requirements.txt
+        pip install -r ${{ env.CHAPTER }}/requirements.txt
 
     - name: Doctest Listings
       run: |
-        cd ${{ CHAPTER }}
+        cd ${{ env.CHAPTER }}
         sphinx-build -a -E -j auto --color -b doctest . /tmp/
 
     - name: Doctest Assignments
       run: |
-        cd ${{ CHAPTER }}
+        cd ${{ env.CHAPTER }}
         find . -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
