@@ -69,10 +69,6 @@ Serialization
     :maxdepth: 1
     :caption: Serialization
 
-    serialization/json-standard.rst
-    serialization/json-readwrite.rst
-    serialization/json-datetime.rst
-    serialization/json-object.rst
     serialization/pickle.rst
     serialization/xml.rst
 
@@ -155,6 +151,7 @@ Locale
     locale/about.rst
     locale/i18n.rst
     locale/l10n.rst
+    locale/encoding.rst
 
 
 Looping

@@ -194,23 +194,23 @@ Descriptor Timezone Converter:
 ...     utc = datetime.now(tz=ZoneInfo('UTC'))
 ...     warsaw = Timezone('Europe/Warsaw')
 ...     moscow = Timezone('Europe/Moscow')
-...     est = Timezone('America/New_York')
-...     pdt = Timezone('America/Los_Angeles')
+...     eastern = Timezone('America/New_York')
+...     pacific = Timezone('America/Los_Angeles')
 >>>
 >>>
 >>> t = Time()
 >>>
->>> t.moscow = datetime(1961, 4, 12, 9, 6, 59)  # Gagarin's launch to space
+>>> t.utc = datetime(1961, 4, 12, 6, 7)  # Gagarin's launch to space
 >>> print(t.utc)
-1961-04-12 08:06:59+00:00
->>> print(t.warsaw)
-1961-04-12 09:06:59+01:00
+1961-04-12 06:07:00+00:00
 >>> print(t.moscow)
-1961-04-12 11:06:59+03:00
->>> print(t.est)
-1961-04-12 03:06:59-05:00
->>> print(t.pdt)
-1961-04-12 00:06:59-08:00
+1961-04-12 09:07:00+03:00
+>>> print(t.warsaw)
+1961-04-12 08:07:00+02:00
+>>> print(t.eastern)
+1961-04-12 02:07:00-04:00
+>>> print(t.pacific)
+1961-04-11 23:07:00-07:00
 >>>
 >>>
 >>> t.warsaw = datetime(1969, 7, 21, 3, 56, 15)  # Armstrong's first Lunar step
@@ -220,9 +220,9 @@ Descriptor Timezone Converter:
 1969-07-21 03:56:15+01:00
 >>> print(t.moscow)
 1969-07-21 05:56:15+03:00
->>> print(t.est)
+>>> print(t.eastern)
 1969-07-20 22:56:15-04:00
->>> print(t.pdt)
+>>> print(t.pacific)
 1969-07-20 19:56:15-07:00
 
 .. todo:: Check if those times are correct
