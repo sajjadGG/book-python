@@ -22,10 +22,14 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
-    >>> assert type(result) is str, 'Variable `result` has invalid type, should be str'
-    >>> assert input.call_count == 1, 'Call `input()` function'
-    >>> assert 'NASA' in input.call_args.args[0], 'Ask user to input `NASA`'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+    >>> assert input.call_count == 1, \
+    'Call `input()` function'
+    >>> assert 'NASA' in input.call_args.args[0], \
+    'Ask user to input `NASA`'
 
     >>> result
     'NASA'

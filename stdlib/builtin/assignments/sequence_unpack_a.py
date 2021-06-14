@@ -18,8 +18,8 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert header is not Ellipsis, 'Assignment solution must be in `header` instead of ... (Ellipsis)'
-    >>> assert data is not Ellipsis, 'Assignment solution must be in `data` instead of ... (Ellipsis)'
+    >>> assert header is not Ellipsis, 'Assign result to variable: `header`'
+    >>> assert data is not Ellipsis, 'Assign result to variable: `data`'
     >>> assert type(header) is tuple, 'Variable `header` has invalid type, should be tuple'
     >>> assert type(data) is list, 'Variable `data` has invalid type, should be list'
     >>> assert all(type(x) is str for x in header), 'All elements in header should be str'

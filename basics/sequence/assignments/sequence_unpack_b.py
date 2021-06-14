@@ -1,5 +1,5 @@
 """
-* Assignment: Function Unpack Split
+* Assignment: Sequence Unpack Split
 * Required: yes
 * Complexity: easy
 * Lines of code: 1 lines
@@ -23,10 +23,14 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert ip is not Ellipsis, 'Assignment solution must be in `ip` instead of ... (Ellipsis)'
-    >>> assert hosts is not Ellipsis, 'Assignment solution must be in `hosts` instead of ... (Ellipsis)'
-    >>> assert type(ip) is str, 'Variable `ip` has invalid type, should be str'
-    >>> assert type(hosts) is list, 'Variable `hosts` has invalid type, should be list'
+    >>> assert ip is not Ellipsis, \
+    'Assign result to variable: `ip`'
+    >>> assert hosts is not Ellipsis, \
+    'Assign result to variable: `hosts`'
+    >>> assert type(ip) is str, \
+    'Variable `ip` has invalid type, should be str'
+    >>> assert type(hosts) is list, \
+    'Variable `hosts` has invalid type, should be list'
     >>> assert all(type(host) is str for host in hosts)
 
     >>> ip
@@ -37,8 +41,11 @@ Tests:
 
 DATA = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
 
-ip = ...  # str: first str: 10.13.37.1
-hosts = ...  # list[str]: list with all the other str: ['nasa.gov', 'esa.int', 'roscosmos.ru']
+# str: first str: 10.13.37.1
+ip = ...
+
+# list[str]: list with other strings: ['nasa.gov', 'esa.int', 'roscosmos.ru']
+hosts = ...
 
 # Solution
 ip, *hosts = DATA.split()

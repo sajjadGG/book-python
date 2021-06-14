@@ -34,10 +34,10 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert header is not Ellipsis, 'Assignment solution must be in `header` instead of ... (Ellipsis)'
-    >>> assert data is not Ellipsis, 'Assignment solution must be in `data` instead of ... (Ellipsis)'
-    >>> assert train is not Ellipsis, 'Assignment solution must be in `train` instead of ... (Ellipsis)'
-    >>> assert test is not Ellipsis, 'Assignment solution must be in `test` instead of ... (Ellipsis)'
+    >>> assert header is not Ellipsis, 'Assign result to variable: `header`'
+    >>> assert data is not Ellipsis, 'Assign result to variable: `data`'
+    >>> assert train is not Ellipsis, 'Assign result to variable: `train`'
+    >>> assert test is not Ellipsis, 'Assign result to variable: `test`'
     >>> assert type(header) is tuple, 'Variable `header` has invalid type, should be tuple'
     >>> assert type(train) is list, 'Variable `train` has invalid type, should be list'
     >>> assert type(train) is list, 'Variable `train` has invalid type, should be list'
@@ -77,10 +77,18 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
         (4.9, 3.0, 1.4, 0.2, 'setosa'),
         (4.9, 2.5, 4.5, 1.7, 'virginica')]
 
-header = ...  # tuple[str]: with row at index 0 from DATA
-data = ...  # list[tuple]: with rows at all the other indexes from DATA
-train = ...  # list[tuple]: first 60% from data
-test = ...  # list[tuple]: last 40% from data
+# tuple[str]: with row at index 0 from DATA
+header = ...
+
+# list[tuple]: with rows at all the other indexes from DATA
+data = ...
+
+# list[tuple]: first 60% from data
+train = ...
+
+# list[tuple]: last 40% from data
+test = ...
+
 
 # Solution
 ratio = 0.6  # 60%

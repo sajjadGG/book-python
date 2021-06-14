@@ -26,8 +26,10 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
-    >>> assert type(result) is str, 'Variable `result` has invalid type, should be str'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
 
     >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
     '''My name... "José Jiménez".
@@ -36,7 +38,8 @@ Tests:
 
 name = 'José Jiménez'
 
-result = ...  # str: with '''My name... "José Jiménez".<newline><tab>I'm an \"\"\"astronaut!\"\"\"'''
+# str: with '''My name... "José Jiménez".<newline><tab>I'm an \"\"\"astronaut!\"\"\"'''
+result = ...
 
 # Solution
 result = f"""'''My name... "{name}".\n\tI\'m an \"\"\"astronaut!\"\"\"'''"""

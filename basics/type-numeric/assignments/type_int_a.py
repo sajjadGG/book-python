@@ -35,12 +35,18 @@ References:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert mars_max is not Ellipsis, 'Assignment solution must be in `mars_max` instead of ... (Ellipsis)'
-    >>> assert mars_min is not Ellipsis, 'Assignment solution must be in `mars_min` instead of ... (Ellipsis)'
-    >>> assert mars_min is not Ellipsis, 'Assignment solution must be in `mars_min` instead of ... (Ellipsis)'
-    >>> assert type(mars_max) is int, 'Variable `mars_max` has invalid type, should be int'
-    >>> assert type(mars_min) is int, 'Variable `mars_min` has invalid type, should be int'
-    >>> assert type(mars_min) is int, 'Variable `mars_avg` has invalid type, should be int'
+    >>> assert mars_max is not Ellipsis, \
+    'Assign result to variable: `mars_max`'
+    >>> assert mars_min is not Ellipsis, \
+    'Assign result to variable: `mars_min`'
+    >>> assert mars_min is not Ellipsis, \
+    'Assign result to variable: `mars_min`'
+    >>> assert type(mars_max) is int, \
+    'Variable `mars_max` has invalid type, should be int'
+    >>> assert type(mars_min) is int, \
+    'Variable `mars_min` has invalid type, should be int'
+    >>> assert type(mars_min) is int, \
+    'Variable `mars_avg` has invalid type, should be int'
 
     >>> mars_max
     293

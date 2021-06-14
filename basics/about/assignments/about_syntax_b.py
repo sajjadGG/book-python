@@ -33,7 +33,8 @@ Tests:
     True
 """
 
-result = ...  # str: with Hello and World in separate lines
+# str: with Hello and World in separate lines
+result = ...
 
 # Solution
 result = 'Hello\nWorld'

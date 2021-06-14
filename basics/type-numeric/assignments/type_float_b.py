@@ -22,12 +22,18 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert altitude is not Ellipsis, 'Assignment solution must be in `altitude` instead of ... (Ellipsis)'
-    >>> assert altitude_m is not Ellipsis, 'Assignment solution must be in `altitude_m` instead of ... (Ellipsis)'
-    >>> assert altitude_ft is not Ellipsis, 'Assignment solution must be in `altitude_ft` instead of ... (Ellipsis)'
-    >>> assert type(altitude) is float, 'Variable `altitude` has invalid type, should be float'
-    >>> assert type(altitude_m) is float, 'Variable `altitude_m` has invalid type, should be float'
-    >>> assert type(altitude_ft) is float, 'Variable `altitude_ft` has invalid type, should be float'
+    >>> assert altitude is not Ellipsis, \
+    'Assign result to variable: `altitude`'
+    >>> assert altitude_m is not Ellipsis, \
+    'Assign result to variable: `altitude_m`'
+    >>> assert altitude_ft is not Ellipsis, \
+    'Assign result to variable: `altitude_ft`'
+    >>> assert type(altitude) is float, \
+    'Variable `altitude` has invalid type, should be float'
+    >>> assert type(altitude_m) is float, \
+    'Variable `altitude_m` has invalid type, should be float'
+    >>> assert type(altitude_ft) is float, \
+    'Variable `altitude_ft` has invalid type, should be float'
 
     >>> altitude
     3048.0
@@ -40,9 +46,14 @@ Tests:
 m = 1
 ft = 0.3048 * m
 
-altitude = ...  # float: 10.000 ft
-altitude_m = ...  # float: altitude in feet
-altitude_ft = ...  # float: altitude in meters
+# float: 10.000 ft
+altitude = ...
+
+# float: altitude in meters
+altitude_m = ...
+
+# float: altitude in feet
+altitude_ft = ...
 
 # Solution
 altitude = 10_000 * ft

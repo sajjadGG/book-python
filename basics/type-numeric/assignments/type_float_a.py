@@ -26,12 +26,18 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert net is not Ellipsis, 'Assignment solution must be in `net` instead of ... (Ellipsis)'
-    >>> assert tax is not Ellipsis, 'Assignment solution must be in `tax` instead of ... (Ellipsis)'
-    >>> assert gross is not Ellipsis, 'Assignment solution must be in `gross` instead of ... (Ellipsis)'
-    >>> assert type(net) is float, 'Variable `net` has invalid type, should be float'
-    >>> assert type(tax) is float, 'Variable `tax` has invalid type, should be float'
-    >>> assert type(gross) is float, 'Variable `gross` has invalid type, should be float'
+    >>> assert net is not Ellipsis, \
+    'Assign result to variable: `net`'
+    >>> assert tax is not Ellipsis, \
+    'Assign result to variable: `tax`'
+    >>> assert gross is not Ellipsis, \
+    'Assign result to variable: `gross`'
+    >>> assert type(net) is float, \
+    'Variable `net` has invalid type, should be float'
+    >>> assert type(tax) is float, \
+    'Variable `tax` has invalid type, should be float'
+    >>> assert type(gross) is float, \
+    'Variable `gross` has invalid type, should be float'
 
     >>> net / PLN
     100.0
@@ -44,9 +50,14 @@ Tests:
 PLN = 1
 VAT = 23 / 100
 
-net = ...  # float: 100.0 PLN, without tax
-tax = ...  # float: 23% of net
-gross = ...  # float: net + VAT
+# float: 100.0 PLN, without tax
+net = ...
+
+# float: 23% of net
+tax = ...
+
+# float: net plus tax
+gross = ...
 
 # Solution
 net = 100.0 * PLN

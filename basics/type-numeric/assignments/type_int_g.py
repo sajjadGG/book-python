@@ -27,12 +27,18 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert size is not Ellipsis, 'Assignment solution must be in `size` instead of ... (Ellipsis)'
-    >>> assert size_kB is not Ellipsis, 'Assignment solution must be in `size_kB` instead of ... (Ellipsis)'
-    >>> assert size_Mb is not Ellipsis, 'Assignment solution must be in `size_Mb` instead of ... (Ellipsis)'
-    >>> assert type(size) is int, 'Variable `size` has invalid type, should be int'
-    >>> assert type(size_kB) is int, 'Variable `size_kB` has invalid type, should be int'
-    >>> assert type(size_Mb) is int, 'Variable `size_Mb` has invalid type, should be int'
+    >>> assert size is not Ellipsis, \
+    'Assign result to variable: `size`'
+    >>> assert size_kB is not Ellipsis, \
+    'Assign result to variable: `size_kB`'
+    >>> assert size_Mb is not Ellipsis, \
+    'Assign result to variable: `size_Mb`'
+    >>> assert type(size) is int, \
+    'Variable `size` has invalid type, should be int'
+    >>> assert type(size_kB) is int, \
+    'Variable `size_kB` has invalid type, should be int'
+    >>> assert type(size_Mb) is int, \
+    'Variable `size_Mb` has invalid type, should be int'
 
     >>> size_kB
     102400
@@ -48,9 +54,14 @@ B = 8 * b
 kB = 1024 * B
 MB = 1024 * kB
 
-size = ...  # int: 100 Megabytes
-size_kB = ...  # int: size in kilobytes
-size_Mb = ...  # int: size in megabits
+# int: 100 Megabytes
+size = ...
+
+# int: size in kilobytes
+size_kB = ...
+
+# int: size in megabits
+size_Mb = ...
 
 # Solution
 size = 100 * MB

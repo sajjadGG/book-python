@@ -34,9 +34,12 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
-    >>> assert type(result) is set, 'Variable `result` has invalid type, should be set'
-    >>> assert len(result) == 22, 'Variable `result` length should be 22'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is set, \
+    'Variable `result` has invalid type, should be set'
+    >>> assert len(result) == 22, \
+    'Variable `result` length should be 22'
 
     >>> ('sepal_length' not in result
     ...  and 'sepal_width' not in result
@@ -66,15 +69,32 @@ DATA = [
     '6.4,3.2,4.5,1.5,versicolor',
 ]
 
-result = ...  # set[float|str]: with row at DATA[1] (manually converted to float and str)
-result  # add to result float 5.1
-result  # add to result float 3.5
-result  # add to result float 1.4
-result  # add to result float 0.2
-result  # add to result str setosa
-result  # update result with set 5.7, 2.8, 4.1, 1.3, 'versicolor'
-result  # update result with tuple 6.3, 2.9, 5.6, 1.8, 'virginica'
-result  # update result with list 6.4, 3.2, 4.5, 1.5, 'versicolor'
+# set[float|str]: with row at DATA[1] (manually converted to float and str)
+result = ...
+
+# add to result float 5.1
+result = ...
+
+# add to result float 3.5
+result = ...
+
+# add to result float 1.4
+result = ...
+
+# add to result float 0.2
+result = ...
+
+# add to result str setosa
+result = ...
+
+# update result with set 5.7, 2.8, 4.1, 1.3, 'versicolor'
+result = ...
+
+# update result with tuple 6.3, 2.9, 5.6, 1.8, 'virginica'
+result = ...
+
+# update result with list 6.4, 3.2, 4.5, 1.5, 'versicolor'
+result = ...
 
 # Solution
 result = {5.8, 2.7, 5.1, 1.9, 'virginica'}

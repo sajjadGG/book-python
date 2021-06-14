@@ -24,14 +24,22 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert kph is not Ellipsis, 'Assignment solution must be in `kph` instead of ... (Ellipsis)'
-    >>> assert mph is not Ellipsis, 'Assignment solution must be in `mph` instead of ... (Ellipsis)'
-    >>> assert speed_limit_mph is not Ellipsis, 'Assignment solution must be in `speed_limit_mph` instead of ... (Ellipsis)'
-    >>> assert speed_limit_kph is not Ellipsis, 'Assignment solution must be in `speed_limit_kph` instead of ... (Ellipsis)'
-    >>> assert type(kph) is float, 'Variable `kph` has invalid type, should be float'
-    >>> assert type(mph) is float, 'Variable `mph` has invalid type, should be float'
-    >>> assert type(speed_limit_mph) is float, 'Variable `speed_limit_mph` has invalid type, should be float'
-    >>> assert type(speed_limit_kph) is float, 'Variable `speed_limit_kph` has invalid type, should be float'
+    >>> assert kph is not Ellipsis, \
+    'Assign result to variable: `kph`'
+    >>> assert mph is not Ellipsis, \
+    'Assign result to variable: `mph`'
+    >>> assert speed_limit_mph is not Ellipsis, \
+    'Assign result to variable: `speed_limit_mph`'
+    >>> assert speed_limit_kph is not Ellipsis, \
+    'Assign result to variable: `speed_limit_kph`'
+    >>> assert type(kph) is float, \
+    'Variable `kph` has invalid type, should be float'
+    >>> assert type(mph) is float, \
+    'Variable `mph` has invalid type, should be float'
+    >>> assert type(speed_limit_mph) is float, \
+    'Variable `speed_limit_mph` has invalid type, should be float'
+    >>> assert type(speed_limit_kph) is float, \
+    'Variable `speed_limit_kph` has invalid type, should be float'
 
     >>> round(kph, 3)
     0.278
@@ -51,12 +59,20 @@ m = 1
 km = 1000 * m
 mi = 1609.344 * m
 
-mph = ...  # float: miles per hour
-kph = ...  # float: kilometers per hour
+# float: miles per hour
+mph = ...
 
-speed_limit = ...  # float: 75 miles per hour
-speed_limit_mph = ...  # float: speed limit in miles per hour, round to one decimal place
-speed_limit_kph = ...  # float: speed limit in kilometers per hour, round to one decimal place
+# float: kilometers per hour
+kph = ...
+
+# float: 75 miles per hour
+speed_limit = ...
+
+# float: speed limit in miles per hour, round to one decimal place
+speed_limit_mph = ...
+
+# float: speed limit in kilometers per hour, round to one decimal place
+speed_limit_kph = ...
 
 # Solution
 kph = km / HOUR

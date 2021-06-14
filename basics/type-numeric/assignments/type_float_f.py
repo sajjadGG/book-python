@@ -24,10 +24,14 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert emu is not Ellipsis, 'Assignment solution must be in `emu` instead of ... (Ellipsis)'
-    >>> assert orlan is not Ellipsis, 'Assignment solution must be in `orlan` instead of ... (Ellipsis)'
-    >>> assert type(emu) is float, 'Variable `emu` has invalid type, should be float'
-    >>> assert type(orlan) is float, 'Variable `orlan` has invalid type, should be float'
+    >>> assert emu is not Ellipsis, \
+    'Assign result to variable: `emu`'
+    >>> assert orlan is not Ellipsis, \
+    'Assign result to variable: `orlan`'
+    >>> assert type(emu) is float, \
+    'Variable `emu` has invalid type, should be float'
+    >>> assert type(orlan) is float, \
+    'Variable `orlan` has invalid type, should be float'
 
     >>> orlan
     400.0
@@ -40,8 +44,11 @@ hPa = 100 * Pa
 kPa = 1000 * Pa
 psi = 6894.757 * Pa
 
-emu = ...  # float: 4.3 pounds per square inch in hectopascals, round to one decimal place
-orlan = ...  # float: 40 kilopascals in hectopascals, round to one decimal place
+# float: 4.3 pounds per square inch in hectopascals, round to one decimal place
+emu = ...
+
+# float: 40 kilopascals in hectopascals, round to one decimal place
+orlan = ...
 
 # Solution
 emu = round(4.3*psi/hPa, 1)

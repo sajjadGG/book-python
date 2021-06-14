@@ -18,8 +18,10 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
-    >>> assert type(result) is str, 'Variable `result` has invalid type, should be str'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
 
     >>> result
     'We choose the Moon!'
@@ -28,7 +30,8 @@ Tests:
 TEXT = 'We choose to go to the Moon!'
 REMOVE = 'to go to '
 
-result = ...  # str: TEXT without REMOVE part
+# str: TEXT without REMOVE part
+result = ...
 
 # Solution
 a = TEXT.find(REMOVE)  # 10

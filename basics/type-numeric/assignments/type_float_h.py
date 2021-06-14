@@ -6,18 +6,24 @@
 * Time: 8 min
 
 English:
-    1. At what altitude above sea level, pressure is equal to partial pressure of Oxygen
+    1. At what altitude above sea level, pressure is equal
+       to partial pressure of Oxygen
     2. Print result in meters rounding to two decimal places
-    3. To calculate partial pressure use ratio (100% is 1013.25 hPa, 20.946% is how many hPa?)
-    4. Calculated altitude is pressure at sea level minis oxygen partial pressure divided by gradient
+    3. To calculate partial pressure use ratio
+       (100% is 1013.25 hPa, 20.946% is how many hPa?)
+    4. Calculated altitude is pressure at sea level minus
+       oxygen partial pressure divided by gradient
     5. Mind the operator precedence
     6. Run doctests - all must succeed
 
 Polish:
-    1. Na jakiej wysokości nad poziomem morza panuje ciśnienie równe ciśnieniu parcjalnemu tlenu?
+    1. Na jakiej wysokości nad poziomem morza panuje ciśnienie
+       równe ciśnieniu parcjalnemu tlenu?
     2. Wypisz rezultat w metrach zaokrąglając do dwóch miejsc po przecinku
-    3. Aby policzyć ciśnienie parcjalne skorzystaj z proporcji (100% to 1013.25 hPa, 20.946% to ile hPa?)
-    4. Wyliczona wysokość to ciśnienie atmosferyczne na poziomie morza minus ciśnienie parcjalne tlenu podzielone przez gradient
+    3. Aby policzyć ciśnienie parcjalne skorzystaj z proporcji
+       (100% to 1013.25 hPa, 20.946% to ile hPa?)
+    4. Wyliczona wysokość to ciśnienie atmosferyczne na poziomie morza minus
+       ciśnienie parcjalne tlenu podzielone przez gradient
     5. Zwróć uwagę na kolejność wykonywania działań
     6. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -37,12 +43,18 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert pO2 is not Ellipsis, 'Assignment solution must be in `pO2` instead of ... (Ellipsis)'
-    >>> assert gradient is not Ellipsis, 'Assignment solution must be in `gradient` instead of ... (Ellipsis)'
-    >>> assert altitude is not Ellipsis, 'Assignment solution must be in `altitude` instead of ... (Ellipsis)'
-    >>> assert type(pO2) is float, 'Variable `pO2` has invalid type, should be float'
-    >>> assert type(gradient) is float, 'Variable `gradient` has invalid type, should be float'
-    >>> assert type(altitude) is float, 'Variable `altitude` has invalid type, should be float'
+    >>> assert pO2 is not Ellipsis, \
+    'Assign result to variable: `pO2`'
+    >>> assert gradient is not Ellipsis, \
+    'Assign result to variable: `gradient`'
+    >>> assert altitude is not Ellipsis, \
+    'Assign result to variable: `altitude`'
+    >>> assert type(pO2) is float, \
+    'Variable `pO2` has invalid type, should be float'
+    >>> assert type(gradient) is float, \
+    'Variable `gradient` has invalid type, should be float'
+    >>> assert type(altitude) is float, \
+    'Variable `altitude` has invalid type, should be float'
 
     >>> pO2
     21223.5345
@@ -65,8 +77,11 @@ hPa = 100 * Pa
 ata = 1013.25 * hPa
 pO2 = O2 * ata
 
-gradient = ...  # float: 11.3 Pascals per meter
-altitude = ...  # float: pressure at sea level minus oxygen partial pressure all that divided by gradient
+# float: 11.3 Pascals per meter
+gradient = ...
+
+# float: ata minus p02 all that divided by gradient
+altitude = ...
 
 # Solution
 gradient = 11.3 * Pa / m

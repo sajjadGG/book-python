@@ -20,7 +20,7 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
+    >>> assert result is not Ellipsis, 'Assign result to variable: `result`'
     >>> assert type(result) is str, 'Variable `result` has invalid type, should be str'
 
     >>> result in ('Adult', 'Young')

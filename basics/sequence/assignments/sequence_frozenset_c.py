@@ -21,10 +21,14 @@ Hint:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
-    >>> assert type(result) is str, 'Variable `result` has invalid type, should be str'
-    >>> assert len(result) == 150, 'Variable `result` length should be 150'
-    >>> assert result.count('\\n') == 2, 'There should be only two newline characters in result'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+    >>> assert len(result) == 150, \
+    'Variable `result` length should be 150'
+    >>> assert result.count('\\n') == 2, \
+    'There should be only two newline characters in result'
 
     >>> 'We choose to go to the Moon.' in result
     True
@@ -39,7 +43,8 @@ DATA = frozenset({
         'We choose to go to the Moon in this decade and do the other things.',
         'Not because they are easy, but because they are hard.'})
 
-result = ...  # str: with lines from DATA joined with newline (`\n`) character
+# str: with lines from DATA joined with newline (`\n`) character
+result = ...
 
 # Solution
 result = '\n'.join(DATA)

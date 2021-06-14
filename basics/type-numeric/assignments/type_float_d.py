@@ -20,16 +20,26 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert meters is not Ellipsis, 'Assignment solution must be in `meters` instead of ... (Ellipsis)'
-    >>> assert kilometers is not Ellipsis, 'Assignment solution must be in `kilometers` instead of ... (Ellipsis)'
-    >>> assert miles is not Ellipsis, 'Assignment solution must be in `miles` instead of ... (Ellipsis)'
-    >>> assert nautical_miles is not Ellipsis, 'Assignment solution must be in `nautical_miles` instead of ... (Ellipsis)'
-    >>> assert all_units is not Ellipsis, 'Assignment solution must be in `all_units` instead of ... (Ellipsis)'
-    >>> assert type(meters) is str, 'Variable `volume` has invalid type, should be str'
-    >>> assert type(kilometers) is str, 'Variable `volume` has invalid type, should be str'
-    >>> assert type(miles) is str, 'Variable `volume` has invalid type, should be str'
-    >>> assert type(nautical_miles) is str, 'Variable `volume` has invalid type, should be str'
-    >>> assert type(all_units) is str, 'Variable `volume` has invalid type, should be str'
+    >>> assert meters is not Ellipsis, \
+    'Assign result to variable: `meters`'
+    >>> assert kilometers is not Ellipsis, \
+    'Assign result to variable: `kilometers`'
+    >>> assert miles is not Ellipsis, \
+    'Assign result to variable: `miles`'
+    >>> assert nautical_miles is not Ellipsis, \
+    'Assign result to variable: `nautical_miles`'
+    >>> assert all_units is not Ellipsis, \
+    'Assign result to variable: `all_units`'
+    >>> assert type(meters) is str, \
+    'Variable `volume` has invalid type, should be str'
+    >>> assert type(kilometers) is str, \
+    'Variable `volume` has invalid type, should be str'
+    >>> assert type(miles) is str, \
+    'Variable `volume` has invalid type, should be str'
+    >>> assert type(nautical_miles) is str, \
+    'Variable `volume` has invalid type, should be str'
+    >>> assert type(all_units) is str, \
+    'Variable `volume` has invalid type, should be str'
 
     >>> meters
     'Meters: 1337'
@@ -40,7 +50,7 @@ Tests:
     >>> nautical_miles
     'Nautical Miles: 0.722'
     >>> all_units
-    'All: km: 1, mi: 0.8, NM: 0.72'
+    'km: 1, mi: 0.8, NM: 0.72'
 """
 
 m = 1
@@ -49,16 +59,34 @@ mi = 1609.344 * m
 NM = 1852 * m
 
 distance = 1337 * m
+distance_m = distance / m
+distance_km = distance / km
+distance_mi = distance / mi
+distance_NM = distance / NM
 
-meters = f'Meters: {...}'  # float: distance in meters 0 decimal places
-kilometers = f'Kilometers: {...}'  # float: distance in kilometers with 0 decimal places
-miles = f'Miles: {...}'  # float: distance in miles with 2 decimal places
-nautical_miles = f'Nautical Miles: {...}'  # float: distance in nautical miles with 3 decimal places
-all_units = f'All: km: {...}, mi: {...}, NM: {...}'  # float: distance in km, mi, NM with 0, 1, 2 decimal places
+
+# str: distance in meters 0 decimal places
+meters = f'Meters: {...}'
+
+# str: distance in kilometers with 0 decimal places
+kilometers = f'Kilometers: {...}'
+
+# str: distance in miles with 2 decimal places
+miles = f'Miles: {...}'
+
+# str: distance in nautical miles with 3 decimal places
+nautical_miles = f'Nautical Miles: {...}'
+
+# str: distance in km, mi, NM with 0, 1, 2 decimal places
+all_units = (f'km: {...}, '
+             f'mi: {...}, '
+             f'NM: {...}')
 
 # Solution
-meters = f'Meters: {distance/m:.0f}'
-kilometers = f'Kilometers: {distance/km:.0f}'
-miles = f'Miles: {distance/mi:.2f}'
-nautical_miles = f'Nautical Miles: {distance/NM:.3f}'
-all_units = f'All: km: {distance/km:.0f}, mi: {distance/mi:.1f}, NM: {distance/NM:.2f}'
+meters = f'Meters: {distance_m:.0f}'
+kilometers = f'Kilometers: {distance_km:.0f}'
+miles = f'Miles: {distance_mi:.2f}'
+nautical_miles = f'Nautical Miles: {distance_NM:.3f}'
+all_units = (f'km: {distance_km:.0f}, '
+             f'mi: {distance_mi:.1f}, '
+             f'NM: {distance_NM:.2f}')

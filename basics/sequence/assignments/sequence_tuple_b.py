@@ -24,13 +24,20 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
-    >>> assert type(result) is tuple, 'Variable `result` has invalid type, should be tuple'
-    >>> assert all(type(x) is str for x in result), 'All elements in result should be str'
-    >>> assert len(result) == 5, 'Variable `result` length should be 5'
-    >>> assert result.count('virginica') == 2, 'Result should have 2 elements of virginica'
-    >>> assert result.count('setosa') == 1, 'Result should have 1 elements of setosa'
-    >>> assert result.count('versicolor') == 2, 'Result should have 2 elements of versicolor'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is tuple, \
+    'Variable `result` has invalid type, should be tuple'
+    >>> assert all(type(x) is str for x in result), \
+    'All elements in result should be str'
+    >>> assert len(result) == 5, \
+    'Variable `result` length should be 5'
+    >>> assert result.count('virginica') == 2, \
+    'Result should have 2 elements of virginica'
+    >>> assert result.count('setosa') == 1, \
+    'Result should have 1 elements of setosa'
+    >>> assert result.count('versicolor') == 2, \
+    'Result should have 2 elements of versicolor'
 
     >>> ('sepal_length' not in result
     ...  and 'sepal_width' not in result
@@ -50,7 +57,8 @@ DATA = [
     '6.4,3.2,4.5,1.5,versicolor',
 ]
 
-result = ...  # tuple[str]: define a tuple with species names
+# tuple[str]: define a tuple with species names
+result = ...
 
 # Solution
 result = ('virginica', 'setosa', 'versicolor', 'virginica', 'versicolor')

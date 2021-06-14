@@ -33,10 +33,14 @@ References:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert moon_day is not Ellipsis, 'Assignment solution must be in `moon_day` instead of ... (Ellipsis)'
-    >>> assert moon_night is not Ellipsis, 'Assignment solution must be in `moon_night` instead of ... (Ellipsis)'
-    >>> assert type(moon_day) is int, 'Variable `moon_day` has invalid type, should be int'
-    >>> assert type(moon_night) is int, 'Variable `moon_night` has invalid type, should be int'
+    >>> assert moon_day is not Ellipsis, \
+    'Assign result to variable: `moon_day`'
+    >>> assert moon_night is not Ellipsis, \
+    'Assign result to variable: `moon_night`'
+    >>> assert type(moon_day) is int, \
+    'Variable `moon_day` has invalid type, should be int'
+    >>> assert type(moon_night) is int, \
+    'Variable `moon_night` has invalid type, should be int'
 
     >>> moon_day
     180

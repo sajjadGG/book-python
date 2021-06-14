@@ -8,13 +8,16 @@
 English:
     1. Calculate mean for each numerical values column
     2. To convert table use multiline select with `alt` key in your IDE
-    3. Do not use `str.split()`, `slice`, `getitem`, `for`, `while` or any other control-flow statement
+    3. Do not use `str.split()`, `slice`, `getitem`, `for`, `while`
+       or any other control-flow statement
     4. Run doctests - all must succeed
 
 Polish:
     1. Wylicz średnią arytmetyczną dla każdej z kolumn numerycznych
-    2. Do konwersji tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza `alt` w Twoim IDE
-    3. Nie używaj `str.split()`, `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
+    2. Do konwersji tabelki wykorzystaj zaznaczanie wielu linijek
+       za pomocą klawisza `alt` w Twoim IDE
+    3. Nie używaj `str.split()`, `slice`, `getitem`, `for`, `while`
+       lub jakiejkolwiek innej instrukcji sterującej
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
@@ -33,14 +36,22 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert sepal_length is not Ellipsis, 'Assignment solution must be in `sepal_length` instead of ... (Ellipsis)'
-    >>> assert sepal_width is not Ellipsis, 'Assignment solution must be in `sepal_width` instead of ... (Ellipsis)'
-    >>> assert petal_length is not Ellipsis, 'Assignment solution must be in `petal_length` instead of ... (Ellipsis)'
-    >>> assert petal_width is not Ellipsis, 'Assignment solution must be in `petal_width` instead of ... (Ellipsis)'
-    >>> assert type(sepal_length) is float, 'Variable `sepal_length` has invalid type, should be float'
-    >>> assert type(sepal_width) is float, 'Variable `sepal_width` has invalid type, should be float'
-    >>> assert type(petal_length) is float, 'Variable `petal_length` has invalid type, should be float'
-    >>> assert type(petal_width) is float, 'Variable `petal_width` has invalid type, should be float'
+    >>> assert sepal_length is not Ellipsis, \
+    'Assign result to variable: `sepal_length`'
+    >>> assert sepal_width is not Ellipsis, \
+    'Assign result to variable: `sepal_width`'
+    >>> assert petal_length is not Ellipsis, \
+    'Assign result to variable: `petal_length`'
+    >>> assert petal_width is not Ellipsis, \
+    'Assign result to variable: `petal_width`'
+    >>> assert type(sepal_length) is float, \
+    'Variable `sepal_length` has invalid type, should be float'
+    >>> assert type(sepal_width) is float, \
+    'Variable `sepal_width` has invalid type, should be float'
+    >>> assert type(petal_length) is float, \
+    'Variable `petal_length` has invalid type, should be float'
+    >>> assert type(petal_width) is float, \
+    'Variable `petal_width` has invalid type, should be float'
 
     >>> sepal_length
     5.859999999999999
@@ -61,10 +72,17 @@ DATA = [
     '6.4,3.2,4.5,1.5,versicolor',
 ]
 
-sepal_length = ...  # float: arithmetic mean from tuple with 5.8, 5.1, 5.7, 6.3, 6.4
-sepal_width = ...  # float: arithmetic mean from tuple with 2.7, 3.5, 2.8, 2.9, 3.2
-petal_length = ...  # float: arithmetic mean from tuple with 5.1, 1.4, 4.1, 5.6, 4.5
-petal_width = ...  # float: arithmetic mean from tuple with 1.9, 0.2, 1.3, 1.8, 1.5
+# float: arithmetic mean from tuple with 5.8, 5.1, 5.7, 6.3, 6.4
+sepal_length = ...
+
+# float: arithmetic mean from tuple with 2.7, 3.5, 2.8, 2.9, 3.2
+sepal_width = ...
+
+# float: arithmetic mean from tuple with 5.1, 1.4, 4.1, 5.6, 4.5
+petal_length = ...
+
+# float: arithmetic mean from tuple with 1.9, 0.2, 1.3, 1.8, 1.5
+petal_width = ...
 
 # Solution
 sepal_length = (5.8, 5.1, 5.7, 6.3, 6.4)

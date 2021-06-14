@@ -39,8 +39,11 @@ Tests:
     'Hello World Mark Watney'
 """
 
-name = ...  # str: with Mark Watney
-result = ...  # str: with Hello World {name}
+# str: with Mark Watney
+name = ...
+
+# str: with Hello World {name}
+result = ...
 
 # Solution
 name = 'Mark Watney'

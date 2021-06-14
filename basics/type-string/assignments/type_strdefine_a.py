@@ -16,8 +16,10 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
-    >>> assert type(result) is str, 'Variable `result` has invalid type, should be str'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
 
     >>> name in result
     True
@@ -26,8 +28,11 @@ Tests:
 """
 
 
-name = ...  # str: Mark Watney
-result = ...  # str: Hello Mark Watney
+# str: Mark Watney
+name = ...
+
+# str: Hello Mark Watney
+result = ...
 
 # Solution
 name = 'Mark Watney'

@@ -20,12 +20,18 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert volume is not Ellipsis, 'Assignment solution must be in `volume` instead of ... (Ellipsis)'
-    >>> assert volume_floz is not Ellipsis, 'Assignment solution must be in `volume_floz` instead of ... (Ellipsis)'
-    >>> assert volume_l is not Ellipsis, 'Assignment solution must be in `volume_l` instead of ... (Ellipsis)'
-    >>> assert type(volume) is float, 'Variable `volume` has invalid type, should be float'
-    >>> assert type(volume_floz) is float, 'Variable `volume_floz` has invalid type, should be float'
-    >>> assert type(volume_l) is float, 'Variable `volume_l` has invalid type, should be float'
+    >>> assert volume is not Ellipsis, \
+    'Assign result to variable: `volume`'
+    >>> assert volume_floz is not Ellipsis, \
+    'Assign result to variable: `volume_floz`'
+    >>> assert volume_l is not Ellipsis, \
+    'Assign result to variable: `volume_l`'
+    >>> assert type(volume) is float, \
+    'Variable `volume` has invalid type, should be float'
+    >>> assert type(volume_floz) is float, \
+    'Variable `volume_floz` has invalid type, should be float'
+    >>> assert type(volume_l) is float, \
+    'Variable `volume_l` has invalid type, should be float'
 
     >>> volume_floz
     20.0
@@ -36,9 +42,14 @@ Tests:
 liter = 1
 floz = 0.02957344 * liter
 
-volume = ...  # float: 20 Fl Oz
-volume_floz = ...  # float: volume in fluid ounces
-volume_l = ...  # float: volume in liters
+# float: 20 Fl Oz
+volume = ...
+
+# float: volume in fluid ounces
+volume_floz = ...
+
+# float: volume in liters
+volume_l = ...
 
 # Solution
 volume = 20 * floz

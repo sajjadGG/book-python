@@ -28,18 +28,30 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert day is not Ellipsis, 'Assignment solution must be in `day` instead of ... (Ellipsis)'
-    >>> assert week is not Ellipsis, 'Assignment solution must be in `week` instead of ... (Ellipsis)'
-    >>> assert month is not Ellipsis, 'Assignment solution must be in `month` instead of ... (Ellipsis)'
-    >>> assert workday is not Ellipsis, 'Assignment solution must be in `workday` instead of ... (Ellipsis)'
-    >>> assert workweek is not Ellipsis, 'Assignment solution must be in `workweek` instead of ... (Ellipsis)'
-    >>> assert workmonth is not Ellipsis, 'Assignment solution must be in `workmonth` instead of ... (Ellipsis)'
-    >>> assert type(day) is int, 'Variable `day` has invalid type, should be int'
-    >>> assert type(week) is int, 'Variable `week` has invalid type, should be int'
-    >>> assert type(month) is int, 'Variable `month` has invalid type, should be int'
-    >>> assert type(workday) is int, 'Variable `workday` has invalid type, should be int'
-    >>> assert type(workweek) is int, 'Variable `workweek` has invalid type, should be int'
-    >>> assert type(workmonth) is int, 'Variable `workmonth` has invalid type, should be int'
+    >>> assert day is not Ellipsis, \
+    'Assign result to variable: `day`'
+    >>> assert week is not Ellipsis, \
+    'Assign result to variable: `week`'
+    >>> assert month is not Ellipsis, \
+    'Assign result to variable: `month`'
+    >>> assert workday is not Ellipsis, \
+    'Assign result to variable: `workday`'
+    >>> assert workweek is not Ellipsis, \
+    'Assign result to variable: `workweek`'
+    >>> assert workmonth is not Ellipsis, \
+    'Assign result to variable: `workmonth`'
+    >>> assert type(day) is int, \
+    'Variable `day` has invalid type, should be int'
+    >>> assert type(week) is int, \
+    'Variable `week` has invalid type, should be int'
+    >>> assert type(month) is int, \
+    'Variable `month` has invalid type, should be int'
+    >>> assert type(workday) is int, \
+    'Variable `workday` has invalid type, should be int'
+    >>> assert type(workweek) is int, \
+    'Variable `workweek` has invalid type, should be int'
+    >>> assert type(workmonth) is int, \
+    'Variable `workmonth` has invalid type, should be int'
 
     >>> day
     86400

@@ -9,17 +9,18 @@ English:
     1. Having internet connection with speed 100 Mb/s
     2. How long will take to download 100 MB?
     3. To calculate time divide file size by speed
-    3. Note, that all values must be `int` (type cast if needed)
-    3. In Calculations use floordiv (`//`)
-    4. Run doctests - all must succeed
+    4. Note, that all values must be `int` (type cast if needed)
+    5. In Calculations use floordiv (`//`)
+    6. Run doctests - all must succeed
 
 Polish:
     1. Mając łącze internetowe 100 Mb/s
     2. Ile zajmie ściągnięcie pliku 100 MB?
     3. Aby wyliczyć czas podziel wielkość pliku przez prękość
-    3. Zwróć uwagę, że wszystkie wartości mają być `int` (rzutuj typ jeżeli potrzeba)
-    3. W obliczeniach użyj floordiv (`//`)
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    4. Zwróć uwagę, że wszystkie wartości mają być `int`
+       (rzutuj typ jeżeli potrzeba)
+    5. W obliczeniach użyj floordiv (`//`)
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * 1 Kb = 1024 b
@@ -31,12 +32,18 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert bandwidth is not Ellipsis, 'Assignment solution must be in `bandwidth` instead of ... (Ellipsis)'
-    >>> assert size is not Ellipsis, 'Assignment solution must be in `size` instead of ... (Ellipsis)'
-    >>> assert duration is not Ellipsis, 'Assignment solution must be in `duration` instead of ... (Ellipsis)'
-    >>> assert type(bandwidth) is int, 'Variable `bandwidth` has invalid type, should be int'
-    >>> assert type(size) is int, 'Variable `size` has invalid type, should be int'
-    >>> assert type(duration) is int, 'Variable `duration` has invalid type, should be int'
+    >>> assert bandwidth is not Ellipsis, \
+    'Assign result to variable: `bandwidth`'
+    >>> assert size is not Ellipsis, \
+    'Assign result to variable: `size`'
+    >>> assert duration is not Ellipsis, \
+    'Assign result to variable: `duration`'
+    >>> assert type(bandwidth) is int, \
+    'Variable `bandwidth` has invalid type, should be int'
+    >>> assert type(size) is int, \
+    'Variable `size` has invalid type, should be int'
+    >>> assert type(duration) is int, \
+    'Variable `duration` has invalid type, should be int'
 
     >>> duration
     8
@@ -52,9 +59,14 @@ B = 8 * b
 kB = 1024 * B
 MB = 1024 * kB
 
-bandwidth = ...  # int: 100 megabits per second
-size = ...  # int: 100 megabytes
-duration = ...  # int: size by bandwidth in seconds
+# int: 100 megabits per second
+bandwidth = ...
+
+# int: 100 megabytes
+size = ...
+
+# int: size by bandwidth in seconds
+duration = ...
 
 # Solution
 bandwidth = (100 * Mb) // SECOND

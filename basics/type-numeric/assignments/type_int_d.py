@@ -22,7 +22,7 @@ Polish:
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 References:
-    * Kármán line (100 km) - boundary between planets's atmosphere and outer space
+    * Kármán line (100 km) - boundary between planets's atmosphere and space
 
 Hints:
     * 1 km = 1000 m
@@ -30,12 +30,18 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert karman_line_earth is not Ellipsis, 'Assignment solution must be in `karman_line_earth` instead of ... (Ellipsis)'
-    >>> assert karman_line_mars is not Ellipsis, 'Assignment solution must be in `karman_line_mars` instead of ... (Ellipsis)'
-    >>> assert karman_line_venus is not Ellipsis, 'Assignment solution must be in `karman_line_venus` instead of ... (Ellipsis)'
-    >>> assert type(karman_line_earth) is int, 'Variable `karman_line_earth` has invalid type, should be int'
-    >>> assert type(karman_line_mars) is int, 'Variable `karman_line_mars` has invalid type, should be int'
-    >>> assert type(karman_line_venus) is int, 'Variable `karman_line_venus` has invalid type, should be int'
+    >>> assert karman_line_earth is not Ellipsis, \
+    'Assign result to variable: `karman_line_earth`'
+    >>> assert karman_line_mars is not Ellipsis, \
+    'Assign result to variable: `karman_line_mars`'
+    >>> assert karman_line_venus is not Ellipsis, \
+    'Assign result to variable: `karman_line_venus`'
+    >>> assert type(karman_line_earth) is int, \
+    'Variable `karman_line_earth` has invalid type, should be int'
+    >>> assert type(karman_line_mars) is int, \
+    'Variable `karman_line_mars` has invalid type, should be int'
+    >>> assert type(karman_line_venus) is int, \
+    'Variable `karman_line_venus` has invalid type, should be int'
 
     >>> karman_line_earth
     100

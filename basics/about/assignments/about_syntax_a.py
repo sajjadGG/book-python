@@ -29,7 +29,8 @@ Tests:
     True
 """
 
-result = ...  # str: with Hello and World
+# str: with Hello and World
+result = ...
 
 # Solution
 result = 'Hello World'

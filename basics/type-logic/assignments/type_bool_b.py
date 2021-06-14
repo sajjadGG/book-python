@@ -18,15 +18,15 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert a is not Ellipsis, 'Assignment solution must be in `a` instead of ... (Ellipsis)'
-    >>> assert b is not Ellipsis, 'Assignment solution must be in `b` instead of ... (Ellipsis)'
-    >>> assert c is not Ellipsis, 'Assignment solution must be in `c` instead of ... (Ellipsis)'
-    >>> assert d is not Ellipsis, 'Assignment solution must be in `d` instead of ... (Ellipsis)'
-    >>> assert e is not Ellipsis, 'Assignment solution must be in `e` instead of ... (Ellipsis)'
-    >>> assert f is not Ellipsis, 'Assignment solution must be in `f` instead of ... (Ellipsis)'
-    >>> assert g is not Ellipsis, 'Assignment solution must be in `g` instead of ... (Ellipsis)'
-    >>> assert h is not Ellipsis, 'Assignment solution must be in `h` instead of ... (Ellipsis)'
-    >>> assert i is not Ellipsis, 'Assignment solution must be in `i` instead of ... (Ellipsis)'
+    >>> assert a is not Ellipsis, 'Assign result to variable: `a`'
+    >>> assert b is not Ellipsis, 'Assign result to variable: `b`'
+    >>> assert c is not Ellipsis, 'Assign result to variable: `c`'
+    >>> assert d is not Ellipsis, 'Assign result to variable: `d`'
+    >>> assert e is not Ellipsis, 'Assign result to variable: `e`'
+    >>> assert f is not Ellipsis, 'Assign result to variable: `f`'
+    >>> assert g is not Ellipsis, 'Assign result to variable: `g`'
+    >>> assert h is not Ellipsis, 'Assign result to variable: `h`'
+    >>> assert i is not Ellipsis, 'Assign result to variable: `i`'
     >>> assert type(a) is bool, 'Variable `a` has invalid type, should be bool'
     >>> assert type(b) is bool, 'Variable `b` has invalid type, should be bool'
     >>> assert type(c) is bool, 'Variable `c` has invalid type, should be bool'
@@ -57,18 +57,32 @@ Tests:
     False
 """
 
-a = True == ...         # bool: the expression result must be True
-b = True != ...         # bool: the expression result must be True
-c = not ...             # bool: the expression result must be False
+# bool: the expression result must be True
+a = True == ...
 
-d = bool(...) == True   # bool: the expression result must be True
-e = bool(...) == False  # bool: the expression result must be True
+# bool: the expression result must be True
+b = True != ...
 
-f = ... or ...          # bool: the expression result must be False
-g = ... and ...         # bool: the expression result must be True
+# bool: the expression result must be False
+c = not ...
 
-h = bool(bool(...) == ...) or False  # bool: the expression result must be True
-i = bool(...) is not bool(False)     # bool: the expression result must be False
+# bool: the expression result must be True
+d = bool(...) == True
+
+# bool: the expression result must be True
+e = bool(...) == False
+
+# bool: the expression result must be False
+f = ... or ...
+
+# bool: the expression result must be True
+g = ... and ...
+
+# bool: the expression result must be True
+h = bool(bool(...) == ...) or False
+
+# bool: the expression result must be False
+i = bool(...) is not bool(False)
 
 # Solution
 a = True == True

@@ -23,8 +23,8 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert ip is not Ellipsis, 'Assignment solution must be in `ip` instead of ... (Ellipsis)'
-    >>> assert hosts is not Ellipsis, 'Assignment solution must be in `hosts` instead of ... (Ellipsis)'
+    >>> assert ip is not Ellipsis, 'Assign result to variable: `ip`'
+    >>> assert hosts is not Ellipsis, 'Assign result to variable: `hosts`'
     >>> assert type(ip) is str, 'Variable `ip` has invalid type, should be str'
     >>> assert type(hosts) is list, 'Variable `hosts` has invalid type, should be list'
     >>> assert all(type(host) is str for host in hosts)

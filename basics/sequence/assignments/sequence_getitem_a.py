@@ -36,10 +36,14 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert result is not Ellipsis, 'Assignment solution must be in `result` instead of ... (Ellipsis)'
-    >>> assert type(header) is tuple, 'Variable `header` has invalid type, should be tuple'
-    >>> assert type(result) is list, 'Variable `result` has invalid type, should be list'
-    >>> assert len(result) == 8, 'Variable `result` length should be 8'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(header) is tuple, \
+    'Variable `header` has invalid type, should be tuple'
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, should be list'
+    >>> assert len(result) == 8, \
+    'Variable `result` length should be 8'
 
     >>> ('sepal_length' not in result
     ...  and 'sepal_width' not in result
@@ -79,8 +83,11 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
 
-header = ...  # tuple[str]: from row at index 0
-result = ...  # list[list|tuple|set|frozenset]: empty list
+# tuple[str]: from row at index 0
+header = ...
+
+# list[list|tuple|set|frozenset]: empty list
+result = ...
 
 result  # append list from DATA at index 2
 result  # append tuple from DATA at index 4
