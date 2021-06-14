@@ -47,8 +47,12 @@ Tests:
 Celsius = 273
 Kelvin = 1
 
-moon_day = ...  # int: 453 Kelvins in Celsius
-moon_night = ...  # int: 93 Kelvins in Celsius
+# int: 453 Kelvins in Celsius
+moon_day = ...
+
+# int: 93 Kelvins in Celsius
+moon_night = ...
+
 
 # Solution
 moon_day = 453*Kelvin - Celsius

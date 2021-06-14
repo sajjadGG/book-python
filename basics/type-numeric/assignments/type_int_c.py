@@ -56,10 +56,18 @@ Tests:
 m = 1
 km = 1000 * m
 
-armstrong_limit = ...  # int: 19 kilometers in meters
-stratosphere = ...  # int: 20 kilometers in meters
-usaf_space = ...  # int: 80 kilometers in meters
-iaf_space = ...  # int: 100 kilometers in meters
+# int: 19 kilometers in meters
+armstrong_limit = ...
+
+# int: 20 kilometers in meters
+stratosphere = ...
+
+# int: 80 kilometers in meters
+usaf_space = ...
+
+# int: 100 kilometers in meters
+iaf_space = ...
+
 
 # Solution
 armstrong_limit = 19*km // m
