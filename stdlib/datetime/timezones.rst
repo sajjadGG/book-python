@@ -206,11 +206,11 @@ Descriptor Timezone Converter:
 >>> print(t.moscow)
 1961-04-12 09:07:00+03:00
 >>> print(t.warsaw)
-1961-04-12 07:07:00+02:00
+1961-04-12 07:07:00+01:00
 >>> print(t.eastern)
-1961-04-12 01:07:00-04:00
+1961-04-12 01:07:00-05:00
 >>> print(t.pacific)
-1961-04-11 22:07:00-07:00
+1961-04-11 22:07:00-08:00
 >>>
 >>>
 >>> t.warsaw = datetime(1969, 7, 21, 3, 56, 15)  # Armstrong's first Lunar step
