@@ -1,4 +1,4 @@
-name: Doctests
+name: Basics
 on: push
 
 jobs:
