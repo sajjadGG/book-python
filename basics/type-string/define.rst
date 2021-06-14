@@ -61,8 +61,8 @@ This is the behavior of Python console:
 >>> data
 "My name's José Jiménez"
 
-HTML and XML uses double quotes to enclose attribute values, hence it's better
-to use single quotes for the string:
+HTML and XML uses double quotes to enclose attribute values, hence it's
+better to use single quotes for the string:
 
 >>> data = '<a href="http://python.astrotech.io">Python and Machine Learning</a>'
 >>> data

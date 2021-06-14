@@ -1,16 +1,14 @@
 name: Basics
-env:
-  chapter: basics
 
 on:
   push:
     paths:
-      - ${{ env.chapter }}/**
+      - 'basics/**'
 
 defaults:
   run:
     shell: bash
-    working-directory: ${{ env.chapter }}
+    working-directory: 'basics/'
 
 jobs:
   run:
