@@ -2,33 +2,29 @@ name: Basics
 on: push
 
 jobs:
-  doctest:
+  setup:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    env:
-      CHAPTER: basics
-
     steps:
     - name: Checkout the Code from GIT Repository
       uses: actions/checkout@v2
-
     - name: Setup Python Version
       uses: actions/setup-python@v2
       with:
         python-version: '3.9.5'
-
     - name: Install Dependencies
       run: |
         pip install --upgrade pip
-        pip install -r ${{ env.CHAPTER }}/requirements.txt
+        pip install -r requirements.txt
 
+  basics:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
     - name: Doctest Listings
       run: |
-        cd ${{ env.CHAPTER }}
+        cd basics
         sphinx-build -a -E -j auto --color -b doctest . /tmp/
-
     - name: Doctest Assignments
       run: |
-        cd ${{ env.CHAPTER }}
+        cd basics
         find . -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
