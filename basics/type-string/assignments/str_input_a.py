@@ -1,5 +1,5 @@
 """
-* Assignment: Type String Input
+* Assignment: Str Input Prompt
 * Required: yes
 * Complexity: easy
 * Lines of code: 1 lines

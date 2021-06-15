@@ -95,10 +95,10 @@ runs ``str()`` on its arguments:
 
 Assignments
 -----------
-.. literalinclude:: assignments/type_strdefine_a.py
-    :caption: :download:`Solution <assignments/type_strdefine_a.py>`
+.. literalinclude:: assignments/str_define_a.py
+    :caption: :download:`Solution <assignments/str_define_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/type_strdefine_b.py
-    :caption: :download:`Solution <assignments/type_strdefine_b.py>`
+.. literalinclude:: assignments/str_define_b.py
+    :caption: :download:`Solution <assignments/str_define_b.py>`
     :end-before: # Solution

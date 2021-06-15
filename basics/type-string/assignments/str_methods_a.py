@@ -1,5 +1,5 @@
 """
-* Assignment: Type String Normalize
+* Assignment: Str Methods Normalize
 * Required: yes
 * Complexity: easy
 * Lines of code: 4 lines

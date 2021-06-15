@@ -1,5 +1,5 @@
 """
-* Assignment: Type String Quotes
+* Assignment: Str Define Quotes
 * Required: no
 * Complexity: easy
 * Lines of code: 1 lines

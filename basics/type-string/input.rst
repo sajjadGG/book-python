@@ -141,6 +141,6 @@ All three methods: MagickMock, Function Stub and Lambda Stub works the same.
 
 Assignments
 -----------
-.. literalinclude:: assignments/type_strinput_a.py
-    :caption: :download:`Solution <assignments/type_strinput_a.py>`
+.. literalinclude:: assignments/str_input_a.py
+    :caption: :download:`Solution <assignments/str_input_a.py>`
     :end-before: # Solution

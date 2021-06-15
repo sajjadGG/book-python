@@ -391,6 +391,6 @@ Note, that there cannot be any char, not even space after ``\`` character:
 
 Assignments
 -----------
-.. literalinclude:: assignments/type_strmethods_a.py
-    :caption: :download:`Solution <assignments/type_strmethods_a.py>`
+.. literalinclude:: assignments/str_methods_a.py
+    :caption: :download:`Solution <assignments/str_methods_a.py>`
     :end-before: # Solution

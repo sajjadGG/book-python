@@ -122,3 +122,10 @@ SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in positio
   i.e. '\\U0001F680' which is 🚀 emoticon
 * ``s`` is invalid hexadecimal character
 * Only valid characters are ``0123456789abcdefABCDEF``
+
+
+Assignments
+-----------
+.. literalinclude:: assignments/str_literals_a.py
+    :caption: :download:`Solution <assignments/str_literals_a.py>`
+    :end-before: # Solution
