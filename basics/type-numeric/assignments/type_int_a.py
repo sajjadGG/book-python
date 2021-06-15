@@ -68,7 +68,6 @@ mars_min = ...
 # int: -63 Celsius in Kelvin
 mars_avg = ...
 
-
 # Solution
 mars_max = 20*Celsius + Kelvin
 mars_min = -153*Celsius + Kelvin

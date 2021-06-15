@@ -57,7 +57,6 @@ moon_day = ...
 # int: 93 Kelvins in Celsius
 moon_night = ...
 
-
 # Solution
 moon_day = 453*Kelvin - Celsius
 moon_night = 93*Kelvin - Celsius

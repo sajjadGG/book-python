@@ -90,7 +90,6 @@ workweek = ...
 # int: 22 workdays in hours
 workmonth = ...
 
-
 # Solution
 day = (1 * DAY) // SECOND
 week = (7 * DAY) // MINUTE

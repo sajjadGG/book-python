@@ -64,7 +64,6 @@ distance_km = distance / km
 distance_mi = distance / mi
 distance_NM = distance / NM
 
-
 # str: distance in meters 0 decimal places
 meters = f'Meters: {...}'
 

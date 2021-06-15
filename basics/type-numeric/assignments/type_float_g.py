@@ -57,7 +57,7 @@ kPa = 1000 * Pa
 # float: pressure at sea level: 1013.25 hectopascals
 ata = ...
 
-# float: oxygen partial pressure: 20.946% of pressure at sea level in hectopascals
+# float: 20.946% of pressure at sea level in hectopascals
 pO2 = ...
 
 # Solution

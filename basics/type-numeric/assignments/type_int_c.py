@@ -76,7 +76,6 @@ usaf_space = ...
 # int: 100 kilometers in meters
 iaf_space = ...
 
-
 # Solution
 armstrong_limit = 19*km // m
 stratosphere = 20*km // m

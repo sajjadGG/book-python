@@ -63,7 +63,6 @@ karman_line_mars = ...
 # int: 250_000 meters in km
 karman_line_venus = ...
 
-
 # Solution
 karman_line_earth = 100_000*m // km
 karman_line_mars = 80_000*m // km
