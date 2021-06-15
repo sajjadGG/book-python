@@ -35,13 +35,13 @@ Tests:
     'NASA'
 """
 
-# Simulate user input (for test automation)
 from unittest.mock import MagicMock
+
+# Simulate user input (for test automation)
 input = MagicMock(side_effect=['NASA'])
 
-
-result = ...  # str: Ask user to type NASA
-
+# str: Ask user to type NASA
+result = ...
 
 # Solution
 result = input('Type NASA: ')

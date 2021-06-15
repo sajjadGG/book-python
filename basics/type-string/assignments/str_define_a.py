@@ -27,7 +27,6 @@ Tests:
     'Hello Mark Watney'
 """
 
-
 # str: Mark Watney
 name = ...
 

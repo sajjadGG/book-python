@@ -32,8 +32,9 @@ Tests:
 """
 
 EMOTICON = '\U0001F600'
-result = ...  # str: Hello World EMOTICON
 
+# str: Hello World EMOTICON
+result = ...
 
 # Solution
 result = f'Hello World {EMOTICON}'

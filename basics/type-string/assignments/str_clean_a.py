@@ -100,7 +100,7 @@ h = ' Jana 3 Sobieskiego  '
 i = 'Jana III\tSobieskiego '
 
 example = example.upper().replace('UL. ', '').replace('\t', '') \
-                 .strip().title().replace('3', 'III')
+    .strip().title().replace('3', 'III')
 
 # str: Jana III Sobieskiego
 a = a
