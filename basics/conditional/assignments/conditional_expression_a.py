@@ -108,3 +108,31 @@ elif 140 <= systolic or 90 <= diastolic:
 
 if 180 <= systolic or 120 <= diastolic:
     result = STATUS_HYPERTENSIVE_CRISIS
+
+
+# Alternative Solution
+NORMAL_SYSTOLIC = systolic < 120
+NORMAL_DIASTOLIC = diastolic < 80
+ELEVATED_SYSTOLIC = 120 <= systolic <= 129
+ELEVATED_DIASTOLIC = diastolic < 80
+STAGE1_SYSTOLIC = 130 <= systolic <= 139
+STAGE1_DIASTOLIC = 80 <= diastolic <= 89
+STAGE2_SYSTOLIC = diastolic >= 90
+STAGE2_DIASTOLIC = systolic >= 140
+CRISIS_SYSTOLIC = systolic > 180
+CRISIS_DIASTOLIC = diastolic > 120
+
+if NORMAL_SYSTOLIC and NORMAL_DIASTOLIC:
+    result = STATUS_NORMAL
+
+elif ELEVATED_SYSTOLIC and ELEVATED_DIASTOLIC:
+    result = STATUS_ELEVATED
+
+elif STAGE1_SYSTOLIC or STAGE1_DIASTOLIC:
+    result = STATUS_HYPERTENSION_STAGE_1
+
+elif STAGE2_DIASTOLIC or STAGE2_SYSTOLIC:
+    result = STATUS_HYPERTENSION_STAGE_2
+
+if CRISIS_SYSTOLIC or CRISIS_DIASTOLIC:
+    result = STATUS_HYPERTENSIVE_CRISIS
