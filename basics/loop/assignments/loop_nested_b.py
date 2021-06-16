@@ -37,7 +37,8 @@ DATA = [
     {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
 ]
 
-result = ...  # set[str]: unique keys from DATA dicts
+# set[str]: unique keys from DATA dicts
+result = ...
 
 # Solution
 result = set()

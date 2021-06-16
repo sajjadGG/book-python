@@ -40,7 +40,8 @@ DATA = {
     1: ['Kindergarten'],
 }
 
-result = ...  # dict[str,str]: converted DATA. Note values are str not int!
+# dict[str,str]: converted DATA. Note values are str not int!
+result = ...
 
 # Solution
 result = {}

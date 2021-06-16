@@ -15,8 +15,7 @@ English:
     4. Select row at index 2, convert it to `list` and add to `result`
     5. Select row at index 4, convert it to `tuple` and add to `result`
     6. Select row at index -2, convert it to `set` and add to `result`
-    7. Select row at index -4, convert it to `frozenset` and add to `result`
-    8. Append to `result`: empty `list`, empty `tuple`, empty `set` and empty `frozenset`
+    8. Append to `result`: empty `list`, empty `tuple` and empty `set`
     9. Run doctests - all must succeed
 
 Polish:
@@ -29,8 +28,7 @@ Polish:
     4. Wybierz wiersz o indeksie 2, przekonwertuj go do `list` i dodaj do `result`
     5. Wybierz wiersz o indeksie 4, przekonwertuj go do `tuple` i dodaj do `result`
     6. Wybierz wiersz o indeksie -4, przekonwertuj go do `set` i dodaj do `result`
-    7. Wybierz wiersz o indeksie -2, przekonwertuj go do `frozenset` i dodaj do `result`
-    8. Dodaj na koniec `result`: pustą `list`, pustą `tuple`, pusty `set`, pusty `frozenset`
+    8. Dodaj na koniec `result`: pustą `list`, pustą `tuple` i pusty `set`
     9. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -42,8 +40,8 @@ Tests:
     'Variable `header` has invalid type, should be tuple'
     >>> assert type(result) is list, \
     'Variable `result` has invalid type, should be list'
-    >>> assert len(result) == 8, \
-    'Variable `result` length should be 8'
+    >>> assert len(result) == 6, \
+    'Variable `result` length should be 6'
 
     >>> ('sepal_length' not in result
     ...  and 'sepal_width' not in result
@@ -61,15 +59,11 @@ Tests:
     True
     >>> {1.3, 2.8, 4.1, 5.7, 'versicolor'} in result
     True
-    >>> frozenset({1.5, 3.2, 4.5, 6.4, 'versicolor'}) in result
-    True
     >>> list() in result
     True
     >>> tuple() in result
     True
     >>> set() in result
-    True
-    >>> frozenset() in result
     True
 """
 
@@ -89,15 +83,23 @@ header = ...
 # list[list|tuple|set|frozenset]: empty list
 result = ...
 
-result  # append list from DATA at index 2
-result  # append tuple from DATA at index 4
-result  # append set from DATA at index -4
-result  # append frozenset DATA at index -2
+# append list from DATA at index 2
+result
 
-result  # append empty list
-result  # append empty tuple
-result  # append empty set
-result  # append empty frozenset
+# append tuple from DATA at index 4
+result
+
+# append set from DATA at index -4
+result
+
+# append empty list
+result
+
+# append empty tuple
+result
+
+# append empty set
+result
 
 # Solution
 header = DATA[0]
@@ -106,9 +108,7 @@ result = []
 result.append(list(DATA[2]))
 result.append(tuple(DATA[4]))
 result.append(set(DATA[-4]))
-result.append(frozenset(DATA[-2]))
 
 result.append(list())
 result.append(tuple())
 result.append(set())
-result.append(frozenset())

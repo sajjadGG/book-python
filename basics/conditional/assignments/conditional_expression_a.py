@@ -83,7 +83,8 @@ systolic, diastolic = blood_pressure.strip().split('/')
 systolic = int(systolic)
 diastolic = int(diastolic)
 
-result = ...  # str: one of the STATUS_*
+# str: one of the STATUS_*
+result = ...
 
 """
 | Blood Pressure Category | Systolic [mm Hg] | Operator | Diastolic [mm Hg] |

@@ -64,7 +64,8 @@ MONTHS = [
     'December',
 ]
 
-result = ...  # dict[str,str]: number and month name
+# dict[str,str]: number and month name
+result = ...
 
 # Solution
 result = {i:month for i,month in enumerate(MONTHS, start=1)}

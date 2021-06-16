@@ -35,7 +35,8 @@ DATA = 'hello'
 with open(FILE, mode='wt') as file:
     file.write(DATA)
 
-result = ...  # str: FILE content
+# str: FILE content
+result = ...
 
 # Solution
 with open(FILE, mode='rt') as file:

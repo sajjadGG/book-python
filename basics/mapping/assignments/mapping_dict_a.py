@@ -48,7 +48,8 @@ DATA = """
     Missions: Apollo, Artemis
 """
 
-result = ...  # dict[str,str|list]: with First Name, Last Name and Missions as keys
+# dict[str,str|list]: with First Name, Last Name and Missions as keys
+result = ...
 
 
 # Solution

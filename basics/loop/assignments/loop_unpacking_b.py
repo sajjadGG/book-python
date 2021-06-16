@@ -54,7 +54,8 @@ features: tuple
 label: set
 species: str
 
-result = ...  # set[str]: species names ending with 'ca' or 'osa'
+# set[str]: species names ending with 'ca' or 'osa'
+result = ...
 
 # Solution
 result = set()

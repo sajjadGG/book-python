@@ -27,13 +27,16 @@ Tests:
     True
 """
 
-# Simulate user input (for test automation)
+
 from unittest.mock import MagicMock
+
+# Simulate user input (for test automation)
 input = MagicMock(side_effect=['21'])
 age = input('What is your age?: ')
 
 
-result = ...  # str: Whether 'Adult' or 'Young'
+# str: Whether 'Adult' or 'Young'
+result = ...
 
 
 # Solution

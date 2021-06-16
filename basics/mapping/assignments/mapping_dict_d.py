@@ -59,8 +59,11 @@ PL = {
     'ź': 'z',
 }
 
-letter = ...  # str: with letter from user
-result = ...  # str: with converted letter without PL diacritic chars
+# str: with letter from user
+letter = ...
+
+# str: with converted letter without PL diacritic chars
+result = ...
 
 
 # Solution

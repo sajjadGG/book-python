@@ -39,7 +39,8 @@ DATA = [
     'Not because they are easy, but because they are hard.',
 ]
 
-result = ...  # str: DATA joined with newline - \n
+# str: DATA joined with newline - \n
+result = ...
 
 # Solution
 result = ''

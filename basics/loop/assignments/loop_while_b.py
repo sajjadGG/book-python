@@ -32,7 +32,9 @@ Tests:
 """
 
 DATA = ['h', 'e', 'l', 'l', 'o']
-result = ...  # str: joined DATA values
+
+# str: joined DATA values
+result = ...
 
 # Solution
 result = ''

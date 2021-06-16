@@ -32,9 +32,14 @@ Tests:
 
 DATA = ['red', 'green', 'blue', 'red', 'green', 'red', 'blue']
 
-red = ...  # int: number of 'red' elements in DATA
-green = ...  # int: number of 'green' elements in DATA
-blue = ...  # int: number of 'blue' elements in DATA
+# int: number of 'red' elements in DATA
+red = ...
+
+# int: number of 'green' elements in DATA
+green = ...
+
+# int: number of 'blue' elements in DATA
+blue = ...
 
 # Solution
 red = 0

@@ -46,7 +46,8 @@ Tests:
 KEYS = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
 VALUES = [5.8, 2.7, 5.1, 1.9, 'virginica']
 
-result = ...  # dict[str,float|str]: converted zipped KEYS and VALUES
+# dict[str,float|str]: converted zipped KEYS and VALUES
+result = ...
 
 # Solution
 result = dict(zip(KEYS, VALUES))

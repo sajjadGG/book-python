@@ -38,7 +38,8 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-result = ...  # float: arithmetic mean from `Sepal length` column
+# float: arithmetic mean from `Sepal length` column
+result = ...
 
 # Solution
 values = []

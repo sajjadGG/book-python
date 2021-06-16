@@ -43,8 +43,11 @@ from pathlib import Path
 
 FILENAME = 'myfile.txt'
 
-abspath = ...  # Path: Absolute path to FILENAME
-result = ...  # str: file, directory or missing
+# Path: Absolute path to FILENAME
+abspath = ...
+
+# str: file, directory or missing
+result = ...
 
 
 # Solution

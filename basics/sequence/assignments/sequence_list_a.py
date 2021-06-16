@@ -37,7 +37,8 @@ Tests:
     True
 """
 
-result = ...  # list[str|int|float]: with 'a' and 1 and 2.2
+# list[str|int|float]: with 'a' and 1 and 2.2
+result = ...
 
 # Solution
 result = ['a', 1, 2.2]

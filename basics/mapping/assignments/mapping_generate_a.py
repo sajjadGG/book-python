@@ -50,7 +50,8 @@ DATA = [
     ('Species', 'virginica'),
 ]
 
-result = ...  # dict[str,float|str]: converted DATA
+# dict[str,float|str]: converted DATA
+result = ...
 
 # Solution
 result = dict(DATA)

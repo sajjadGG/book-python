@@ -30,7 +30,8 @@ Tests:
     [6, 8, 10, 12, 14, 16, 18]
 """
 
-result = ...  # list[int]: even numbers from 5 to 20 (without 20)
+# list[int]: even numbers from 5 to 20 (without 20)
+result = ...
 
 # Solution
 result = [x for x in range(5, 20) if x % 2 == 0]

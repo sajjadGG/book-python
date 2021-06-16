@@ -46,9 +46,14 @@ DATA = {
     'Petal width': 1.9,
 }
 
-keys = ...  # list[str]: with keys from DATA
-values = ...  # list[float]: with values from DATA
-items = ...  # list[tuple]: with key-value pairs from DATA
+# list[str]: with keys from DATA
+keys = ...
+
+# list[float]: with values from DATA
+values = ...
+
+# list[tuple]: with key-value pairs from DATA
+items = ...
 
 
 # Solution

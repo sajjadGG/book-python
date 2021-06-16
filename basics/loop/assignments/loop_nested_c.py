@@ -65,7 +65,8 @@ TEXT = """
     And one we intend to win
 """
 
-result = {  # dict[str,int]: number of occurrences of each grammar object
+# dict[str,int]: number of occurrences of each grammar object
+result = {
     'sentences': 0,
     'words': 0,
     'characters': 0,

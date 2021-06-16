@@ -44,7 +44,8 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
 
-result = ...  # list[dict]: with converted DATA
+# list[dict]: with converted DATA
+result = ...
 
 # Solution
 header, *data = DATA
