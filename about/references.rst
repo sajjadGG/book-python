@@ -155,7 +155,7 @@ Characters
 ----------
 Jan Twardowski:
 
-    * Wizard from Polish fairytale who escaped before the devil to the Moon
+    * Wizard from Polish fairytale who escaped from the devil to the Moon
     * Modern Film Adaptation by Allegro: https://www.youtube.com/watch?v=hRdYz8cnOW4
 
     .. figure:: img/about-references-jan-twardowski.jpg
