@@ -2,10 +2,11 @@
 
 from datetime import datetime, timezone
 from os import makedirs
-from os.path import dirname, abspath, join, basename
+from os.path import abspath, basename, dirname, join
 from shlex import split
 from shutil import rmtree
 from subprocess import run
+
 
 FORMAT = 'html'
 
@@ -24,8 +25,8 @@ run(cmd)
 
 last = (
     run('git log -1 --format="%ad" --date=iso', shell=True, capture_output=True)
-            .stdout.strip()
-            .decode()
+        .stdout.strip()
+        .decode()
 )
 last = datetime.strptime(last, '%Y-%m-%d %H:%M:%S %z')
 delta = datetime.now(tz=timezone.utc) - last

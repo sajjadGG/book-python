@@ -70,6 +70,7 @@ Tests:
 from datetime import date
 from os.path import dirname, join
 
+
 BASE_DIR = dirname(__file__)
 FILE_GROUP = join(BASE_DIR, '../data/etc-group.txt')
 FILE_SHADOW = join(BASE_DIR, '../data/etc-shadow.txt')

@@ -32,12 +32,12 @@ Tests:
 """
 
 DATA = {
-        6: ['Doctorate', 'Prof-school'],
-        5: ['Masters', 'Bachelor', 'Engineer'],
-        4: ['HS-grad'],
-        3: ['Junior High'],
-        2: ['Primary School'],
-        1: ['Kindergarten'],
+    6: ['Doctorate', 'Prof-school'],
+    5: ['Masters', 'Bachelor', 'Engineer'],
+    4: ['HS-grad'],
+    3: ['Junior High'],
+    2: ['Primary School'],
+    1: ['Kindergarten'],
 }
 
 # dict[str,str]: converted DATA. Note values are str not int!

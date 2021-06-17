@@ -31,6 +31,7 @@ Tests:
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
+
     >>> assert type(result) is bool, \
     'Variable `result` has invalid type, should be bool'
 
@@ -39,6 +40,7 @@ Tests:
 """
 
 from unittest.mock import MagicMock
+
 
 # Simulate user input (for test automation)
 input = MagicMock(side_effect=['4'])

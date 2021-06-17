@@ -42,7 +42,7 @@ result = ...
 
 # Solution
 result = [
-        (1, 2, 3),
-        [1.1, 2.2, 3.3],
-        {'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'},
+    (1, 2, 3),
+    [1.1, 2.2, 3.3],
+    {'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'},
 ]

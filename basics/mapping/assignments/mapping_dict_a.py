@@ -62,7 +62,7 @@ result = ...
 
 # Solution
 result = {
-        'First Name': 'Jan',
-        'Last Name': 'Twardowski',
-        'Missions': ['Apollo', 'Artemis'],
+    'First Name': 'Jan',
+    'Last Name': 'Twardowski',
+    'Missions': ['Apollo', 'Artemis'],
 }

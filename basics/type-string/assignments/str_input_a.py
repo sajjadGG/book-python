@@ -37,6 +37,7 @@ Tests:
 
 from unittest.mock import MagicMock
 
+
 # Simulate user input (for test automation)
 input = MagicMock(side_effect=['NASA'])
 

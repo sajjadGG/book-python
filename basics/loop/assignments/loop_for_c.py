@@ -47,10 +47,7 @@ DATA = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
         4, 8, 1, 9, 6, 3]
 
 # dict[str,int] number of digit occurrences in segments
-result = {
-        'small': 0,
-        'medium': 0,
-        'large': 0}
+result = {'small': 0, 'medium': 0, 'large': 0}
 
 # Solution
 SMALL = {0, 1, 2}

@@ -44,20 +44,13 @@ Tests:
 
 from unittest.mock import MagicMock
 
+
 # Simulate user input (for test automation)
 input = MagicMock(side_effect=['Ł'])
 
-PL = {
-        'ą': 'a',
-        'ć': 'c',
-        'ę': 'e',
-        'ł': 'l',
-        'ń': 'n',
-        'ó': 'o',
-        'ś': 's',
-        'ż': 'z',
-        'ź': 'z',
-}
+PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+      'ł': 'l', 'ń': 'n', 'ó': 'o',
+      'ś': 's', 'ż': 'z', 'ź': 'z'}
 
 # str: with letter from user
 letter = ...

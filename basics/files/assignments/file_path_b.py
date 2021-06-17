@@ -40,6 +40,7 @@ Tests:
 
 from pathlib import Path
 
+
 FILENAME = 'myfile.txt'
 
 # Path: Absolute path to FILENAME

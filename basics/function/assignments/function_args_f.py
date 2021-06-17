@@ -68,16 +68,16 @@ Tests:
 """
 
 DATA = {
-        0: 'zero',
-        1: 'one',
-        2: 'two',
-        3: 'tree',
-        4: 'fower',
-        5: 'fife',
-        6: 'six',
-        7: 'seven',
-        8: 'ait',
-        9: 'niner',
+    0: 'zero',
+    1: 'one',
+    2: 'two',
+    3: 'tree',
+    4: 'fower',
+    5: 'fife',
+    6: 'six',
+    7: 'seven',
+    8: 'ait',
+    9: 'niner',
 }
 
 # Solution

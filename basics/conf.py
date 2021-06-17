@@ -61,14 +61,12 @@ extensions = [
     # 'nbsphinx'
 ]
 
-
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
 }
 
 if 'recommonmark' in extensions:
-
     def setup(app):
         from recommonmark.transform import AutoStructify
 
@@ -81,7 +79,6 @@ if 'recommonmark' in extensions:
         )
         app.add_transform(AutoStructify)
 
-
 if 'sphinx.ext.mathjax' in extensions:
     imgmath_image_format = 'png'
     imgmath_latex = 'latex'
@@ -91,7 +88,6 @@ if 'sphinx.ext.mathjax' in extensions:
         'extensions': ['tex2jax.js'],
         'jax': ['input/TeX', 'output/HTML-CSS'],
     }
-
 
 if 'nbsphinx' in extensions:
     # https://nbsphinx.readthedocs.io/en/latest/usage.html
@@ -113,12 +109,10 @@ if 'nbsphinx' in extensions:
         'nbsphinx.ipywidgets',
     ]
 
-
 if 'sphinxcontrib.bibtex' in extensions:
     bibtex_bibliography_header = ".. rubric:: References"
     bibtex_footbibliography_header = bibtex_bibliography_header
     bibtex_default_style = 'alpha'
-
 
 if 'sphinx.ext.extlinks' in extensions:
     extlinks = {
@@ -128,15 +122,11 @@ if 'sphinx.ext.extlinks' in extensions:
         )
     }
 
-
 if 'sphinx.ext.doctest' in extensions:
-    import doctest
-
     trim_doctest_flags = False
     # doctest_global_cleanup = """"""
     # doctest_default_flags = doctest.ELLIPSIS | doctest.IGNORE_EXCEPTION_DETAIL | doctest.NORMALIZE_WHITESPACE
     # doctest_default_flags = doctest.FAIL_FAST | doctest.IGNORE_EXCEPTION_DETAIL
-
 
 # article - For articles in scientific journals, presentations, short reports,
 #           Program documentation, invitations, etc
