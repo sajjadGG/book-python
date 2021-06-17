@@ -36,10 +36,11 @@ Tests:
         I'm an \"\"\"astronaut!\"\"\"'''
 """
 
-name = 'José Jiménez'
+NAME = 'José Jiménez'
 
-# str: with '''My name... "José Jiménez".<newline><tab>I'm an \"\"\"astronaut!\"\"\"'''
+# result: str
+# Add whitespace and quotes to: My name... José Jiménez. I'm an astronaut!
 result = ...
 
 # Solution
-result = f"""'''My name... "{name}".\n\tI\'m an \"\"\"astronaut!\"\"\"'''"""
+result = f"""'''My name... "{NAME}".\n\tI\'m an \"\"\"astronaut!\"\"\"'''"""
