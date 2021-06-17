@@ -24,17 +24,16 @@ Tests:
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
+
     >>> assert type(result) is list, \
     'Variable `result` has invalid type, should be list'
+
     >>> assert len(result) == 3, \
     'Variable `result` length should be 3'
 
-    >>> (1, 2, 3) in result
-    True
-    >>> [1.1, 2.2, 3.3] in result
-    True
-    >>> {'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'} in result
-    True
+    >>> assert (1, 2, 3) in result
+    >>> assert [1.1, 2.2, 3.3] in result
+    >>> assert {'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'} in result
 """
 
 # list[tuple|list|set]: with tuple 1, 2, 3 and list 1.1, 2.2, 3.3

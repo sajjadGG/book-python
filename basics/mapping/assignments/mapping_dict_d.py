@@ -42,21 +42,21 @@ Tests:
     True
 """
 
-# Simulate user input (for test automation)
 from unittest.mock import MagicMock
+
+# Simulate user input (for test automation)
 input = MagicMock(side_effect=['Ł'])
 
-
 PL = {
-    'ą': 'a',
-    'ć': 'c',
-    'ę': 'e',
-    'ł': 'l',
-    'ń': 'n',
-    'ó': 'o',
-    'ś': 's',
-    'ż': 'z',
-    'ź': 'z',
+        'ą': 'a',
+        'ć': 'c',
+        'ę': 'e',
+        'ł': 'l',
+        'ń': 'n',
+        'ó': 'o',
+        'ś': 's',
+        'ż': 'z',
+        'ź': 'z',
 }
 
 # str: with letter from user
@@ -65,8 +65,6 @@ letter = ...
 # str: with converted letter without PL diacritic chars
 result = ...
 
-
 # Solution
 letter = input('Type letter: ').strip().lower()
 result = PL.get(letter, letter)
-

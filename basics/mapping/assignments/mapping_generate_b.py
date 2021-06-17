@@ -7,23 +7,27 @@
 
 English:
     1. Define `result: dict`
-    2. Using `enumerate()` convert data to `dict` and assign to `result`
-    3. Run doctests - all must succeed
+    2. Assign to `result` converted `DATA` to `dict`
+    3. Use `enumerate()`
+    4. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniu `result: dict`
-    2. Używając `enumerate()` przekonwertuj dane do `dict` i przypisz do `result`
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    2. Przypisz do `result` przekonwertowane `DATA` do `dict`
+    3. Użyj `enumerate()`
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'dict'>
-    >>> all(type(x) is int for x in result.keys())
-    True
-    >>> all(type(x) is str for x in result.values())
-    True
+    >>> assert type(result) is dict, \
+    'Variable `result` has invalid type, should be dict'
+
+    >>> assert all(type(x) is int for x in result.keys()), \
+    'All dict keys should be int'
+
+    >>> assert all(type(x) is str for x in result.values()), \
+    'All dict values should be str'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     {0: 'setosa',

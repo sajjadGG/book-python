@@ -20,18 +20,24 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(keys)
-    <class 'list'>
-    >>> type(values)
-    <class 'list'>
-    >>> type(items)
-    <class 'list'>
-    >>> all(type(x) is tuple for x in items)
-    True
+    >>> assert type(keys) is list, \
+    'Variable `keys` has invalid type, should be list'
+
+    >>> assert type(values) is list, \
+    'Variable `values` has invalid type, should be list'
+
+    >>> assert type(items) is list, \
+    'Variable `items` has invalid type, should be list'
+
+    >>> assert all(type(x) is tuple for x in items), \
+    'All rows in items should be tuples'
+
     >>> keys
     ['Sepal length', 'Sepal width', 'Petal length', 'Petal width']
+
     >>> values
     [5.8, 2.7, 5.1, 1.9]
+
     >>> items  # doctest: +NORMALIZE_WHITESPACE
     [('Sepal length', 5.8),
      ('Sepal width', 2.7),
@@ -39,12 +45,10 @@ Tests:
      ('Petal width', 1.9)]
 """
 
-DATA = {
-    'Sepal length': 5.8,
-    'Sepal width': 2.7,
-    'Petal length': 5.1,
-    'Petal width': 1.9,
-}
+DATA = {'Sepal length': 5.8,
+        'Sepal width': 2.7,
+        'Petal length': 5.1,
+        'Petal width': 1.9}
 
 # list[str]: with keys from DATA
 keys = ...
@@ -54,7 +58,6 @@ values = ...
 
 # list[tuple]: with key-value pairs from DATA
 items = ...
-
 
 # Solution
 keys = list(DATA.keys())
