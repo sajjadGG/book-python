@@ -31,6 +31,7 @@ Tests:
     ValueError
 """
 
+
 def result(value):
     ...
 

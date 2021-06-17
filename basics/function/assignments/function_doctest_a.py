@@ -53,7 +53,6 @@ def celsius_to_kelvin(degrees):
 
     raise TypeError('Invalid argument')
 
-
 ## Solution 2
 # if type(degrees) in (int, float):
 #     return 273.15 + degrees

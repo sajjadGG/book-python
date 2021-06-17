@@ -33,11 +33,8 @@ Tests:
 
 IP_ADDRESS = '127.0.0.1'
 
-
-
 # str: Whether 'Adult' or 'Young'
 result = ...
-
 
 # Solution
 result = 'IPv4' if '.' in IP_ADDRESS else 'IPv6'

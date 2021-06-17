@@ -18,18 +18,25 @@ Tests:
 
     >>> assert result_a is not Ellipsis, \
     'Assign result to variable: `result_a`'
+
     >>> assert result_b is not Ellipsis, \
     'Assign result to variable: `result_b`'
+
     >>> assert result_c is not Ellipsis, \
     'Assign result to variable: `result_c`'
+
     >>> assert result_d is not Ellipsis, \
     'Assign result to variable: `result_d`'
+
     >>> assert type(result_a) is bool, \
     'Variable `result_a` has invalid type, should be bool'
+
     >>> assert type(result_b) is bool, \
     'Variable `result_b` has invalid type, should be bool'
+
     >>> assert type(result_c) is bool, \
     'Variable `result_c` has invalid type, should be bool'
+
     >>> assert type(result_d) is bool, \
     'Variable `result_d` has invalid type, should be bool'
 
@@ -54,7 +61,6 @@ c = ...
 
 # bool: result must be logic False
 d = ...
-
 
 # Do not modify following lines
 result_a = a is None

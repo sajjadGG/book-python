@@ -30,7 +30,6 @@ Tests:
 FILE = '_temporary.txt'
 DATA = ['hello', 'world']
 
-
 # Solution
 data = '\n'.join(DATA) + '\n'
 

@@ -21,14 +21,18 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert result is not Ellipsis, 'Assign result to variable: `result`'
-    >>> assert isfunction(result), 'Variable `result` has invalid type, should be function'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+
+    >>> assert isfunction(result), \
+    'Variable `result` has invalid type, should be function'
 
     >>> result(__file__)
     Ok
     >>> result('_notexisting.txt')
     File not found
 """
+
 
 def result(filename):
     ...

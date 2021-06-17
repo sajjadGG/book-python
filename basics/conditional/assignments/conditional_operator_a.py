@@ -38,12 +38,10 @@ Tests:
     True
 """
 
-
 from unittest.mock import MagicMock
 
 # Simulate user input (for test automation)
 input = MagicMock(side_effect=['4'])
-
 
 number = input('What is your number?: ')
 

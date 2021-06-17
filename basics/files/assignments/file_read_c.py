@@ -71,7 +71,6 @@ labels = []
 with open(FILE, mode='w') as file:
     file.write(DATA)
 
-
 # Solution
 with open(FILE) as file:
     header = file.readline().strip().split(',')

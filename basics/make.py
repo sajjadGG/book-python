@@ -7,9 +7,7 @@ from shlex import split
 from shutil import rmtree
 from subprocess import run
 
-
 FORMAT = 'html'
-
 
 SECOND = 1
 MINUTE = 60 * SECOND
@@ -26,8 +24,8 @@ run(cmd)
 
 last = (
     run('git log -1 --format="%ad" --date=iso', shell=True, capture_output=True)
-    .stdout.strip()
-    .decode()
+            .stdout.strip()
+            .decode()
 )
 last = datetime.strptime(last, '%Y-%m-%d %H:%M:%S %z')
 delta = datetime.now(tz=timezone.utc) - last

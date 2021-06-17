@@ -17,7 +17,7 @@ English:
         a. key - id (incremented integer value)
         b. value - species name
     4. `label_encoder` must be generated from `DATA`
-    5. For each row add values to `features`, `labels` and `label_encoder`
+    5. For each row append to `features`, `labels` and `label_encoder`
     6. Run doctests - all must succeed
 
 Polish:
@@ -32,7 +32,7 @@ Polish:
         a. key - identyfikator (kolejna liczba rzeczywista)
         b. value - nazwa gatunku
     4. `label_encoder` musi być wygenerowany z `DATA`
-    5. Dla każdego wiersza dodawaj wartości do `feature`, `labels` i `label_encoder`
+    5. Dla każdego wiersza dodawaj do `feature`, `labels` i `label_encoder`
     6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
@@ -65,13 +65,13 @@ Tests:
 """
 
 DATA = [
-    ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-    (5.8, 2.7, 5.1, 1.9, 'virginica'),
-    (5.1, 3.5, 1.4, 0.2, 'setosa'),
-    (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-    (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-    (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
 
 # list[tuple]: values from column 0-3 from DATA without header

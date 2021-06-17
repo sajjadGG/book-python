@@ -90,7 +90,6 @@ ALGORITHMS = {
 
 result: list
 
-
 # Solution
 result_group = {}
 result_shadow = {}
@@ -105,7 +104,6 @@ except FileNotFoundError:
 except PermissionError:
     print('Permission denied')
 
-
 try:
     with open(FILE_SHADOW, encoding='utf-8') as file:
         etc_shadow = file.readlines()
@@ -114,7 +112,6 @@ except FileNotFoundError:
 except PermissionError:
     print('Permission denied')
 
-
 try:
     with open(FILE_PASSWD, encoding='utf-8') as file:
         etc_passwd = file.readlines()
@@ -122,7 +119,6 @@ except FileNotFoundError:
     print(f'File {FILE_PASSWD} does not exist')
 except PermissionError:
     print('Permission denied')
-
 
 for line in etc_group:
     line = line.strip()
@@ -140,7 +136,6 @@ for line in etc_group:
             result_group[member] = list()
 
         result_group[member].append(group_name)
-
 
 for line in etc_shadow:
     line = line.strip()
@@ -172,7 +167,6 @@ for line in etc_shadow:
         'locked': locked,
     }
 
-
 for line in etc_passwd:
     line = line.strip()
 
@@ -191,7 +185,6 @@ for line in etc_passwd:
         'shell': record[6],
     }
 
-
 for user in result_passwd:
     passwd = result_passwd.get(user)
     groups = result_group.get(user)
@@ -200,17 +193,14 @@ for user in result_passwd:
     if passwd['uid'] < 1000:
         continue
 
-    result.append(
-        {
-            'username': user,
-            'uid': passwd['uid'],
-            'gid': passwd['gid'],
-            'home': passwd['home'],
-            'shell': passwd['shell'],
-            'algorithm': shadow['algorithm'],
-            'password': shadow['password'],
-            'groups': groups,
-            'last_changed': shadow['last_change'],
-            'locked': shadow['locked'],
-        }
-    )
+    result.append({
+        'username': user,
+        'uid': passwd['uid'],
+        'gid': passwd['gid'],
+        'home': passwd['home'],
+        'shell': passwd['shell'],
+        'algorithm': shadow['algorithm'],
+        'password': shadow['password'],
+        'groups': groups,
+        'last_changed': shadow['last_change'],
+        'locked': shadow['locked']})

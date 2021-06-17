@@ -7,12 +7,14 @@
 
 English:
     1. Define function `myrange` with parameters: `start`, `stop`, `step`
-    2. Write own implementation of a built-in `myrange(start, stop, step)` function
+    2. Write own implementation of a built-in function
+       `myrange(start, stop, step)`
     5. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj funkcję `myrange` z parametrami: `start`, `stop`, `step`
-    2. Zaimplementuj własne rozwiązanie wbudowanej funkcji `myrange(start, stop, step)`
+    2. Zaimplementuj własne rozwiązanie wbudowanej funkcji
+       `myrange(start, stop, step)`
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:

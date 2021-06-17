@@ -27,9 +27,8 @@ Tests:
     >>> assert python_version
 """
 
-import sys
 import os
-
+import sys
 
 python_executable = sys.executable
 python_version = tuple(sys.version_info)

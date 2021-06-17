@@ -17,7 +17,8 @@ Polish:
     1. Stwórz jedną klasę `Echo`
     2. Wartość `text` maja być podawana przy inicjalizacji
     3. Przy inicjalizacji instancja wypisuje `text`
-    4. Nie przechowuj informacji w instancjach (tylko wypisz przy inicjalizacji)
+    4. Nie przechowuj informacji w instancjach
+       (tylko wypisz przy inicjalizacji)
     5. Nie używaj `@dataclass`
     6. Uruchom doctesty - wszystkie muszą się powieść
 

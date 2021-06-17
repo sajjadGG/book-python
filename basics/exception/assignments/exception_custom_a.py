@@ -38,6 +38,7 @@ Tests:
     exception_custom_a.NegativeKelvinError
 """
 
+
 def result(value):
     ...
 

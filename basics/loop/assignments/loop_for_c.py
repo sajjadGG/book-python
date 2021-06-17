@@ -46,12 +46,11 @@ DATA = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
         1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
         4, 8, 1, 9, 6, 3]
 
-
 # dict[str,int] number of digit occurrences in segments
 result = {
-    'small': 0,
-    'medium': 0,
-    'large': 0}
+        'small': 0,
+        'medium': 0,
+        'large': 0}
 
 # Solution
 SMALL = {0, 1, 2}
@@ -65,7 +64,6 @@ for digit in DATA:
         result['medium'] += 1
     elif digit in LARGE:
         result['large'] += 1
-
 
 ## Alternative Solution
 #

@@ -6,7 +6,7 @@
 * Time: 8 min
 
 English:
-    1. Create class `Iris` with `features: list[float]` and `label: str` attributes
+    1. Create class `Iris` with `features: list[float]` and `label: str` fields
     2. For each row in `DATA` create `Iris` instance with row values
     3. Set class attributes at the initialization from positional arguments
     4. Create method which sums values of all `features`
@@ -14,7 +14,7 @@ English:
     6. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz klasę `Iris` z atrybutami `features: list[float]` i `label: str`
+    1. Stwórz klasę `Iris` z polami `features: list[float]` i `label: str`
     2. Dla każdego wiersza w `DATA` twórz instancję `Iris` z danymi z wiersza
     3. Ustaw atrybuty klasy przy inicjalizacji z argumentów pozycyjnych
     4. Stwórz metodę sumującą wartości wszystkich `features`
@@ -30,11 +30,10 @@ Tests:
      'virginica': 19.3}
 """
 
-
 DATA = [
-    (4.7, 3.2, 1.3, 0.2, 'setosa'),
-    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-    (7.6, 3.0, 6.6, 2.1, 'virginica'),
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (7.6, 3.0, 6.6, 2.1, 'virginica'),
 ]
 
 result = {}

@@ -41,7 +41,6 @@ numbers = map(cube, numbers)
 numbers = list(numbers)
 result = sum(numbers) / len(numbers)
 
-
 # Solution
 numbers = (x for x in range(1, 34) if x % 3 == 0)
 numbers = filter(lambda x: x % 2, numbers)

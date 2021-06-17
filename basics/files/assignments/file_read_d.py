@@ -53,9 +53,7 @@ DATA = """127.0.0.1       localhost
 with open(FILE, mode='w') as file:
     file.write(DATA)
 
-
 result = {}
-
 
 # Solution
 with open(FILE) as file:

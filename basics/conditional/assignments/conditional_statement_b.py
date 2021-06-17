@@ -32,11 +32,8 @@ Tests:
 ADULT = 18
 AGE = 12
 
-
-
 # str: Whether 'Adult' or 'Young'
 result = ...
-
 
 # Solution
 result = 'Adult' if AGE >= ADULT else 'Young'

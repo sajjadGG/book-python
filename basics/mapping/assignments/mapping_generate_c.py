@@ -46,7 +46,8 @@ Tests:
      'Species': 'virginica'}
 """
 
-KEYS = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
+KEYS = ['Sepal length', 'Sepal width', 'Petal length',
+        'Petal width', 'Species']
 VALUES = [5.8, 2.7, 5.1, 1.9, 'virginica']
 
 # dict[str,float|str]: converted zipped KEYS and VALUES

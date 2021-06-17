@@ -6,17 +6,21 @@
 * Time: 3 min
 
 English:
-    1. International Standard Atmosphere (ISA) at sea level is 1 ata = 1013.25 hPa
+    1. International Standard Atmosphere (ISA) at sea level is
+       1 ata = 1013.25 hPa
     2. Calculate `pO2` - partial pressure of Oxygen at sea level in hPa
     3. Round result to one decimal place
-    4. To calculate partial pressure use ratio (100% is 1013.25 hPa, 20.946% is how many hPa?)
+    4. To calculate partial pressure use ratio
+       (100% is 1013.25 hPa, 20.946% is how many hPa?)
     5. Run doctests - all must succeed
 
 Polish:
-    1. Międzynarodowa standardowa atmosfera (ISA) na poziomie morza wynosi 1 ata = 1013.25 hPa
+    1. Międzynarodowa standardowa atmosfera (ISA) na poziomie morza wynosi
+       1 ata = 1013.25 hPa
     2. Oblicz `pO2` - ciśnienie parcjalne tlenu na poziomie morza w hPa
     3. Wynik zaokrąglij do jednego miejsca po przecinku
-    4. Aby policzyć ciśnienie parcjalne skorzystaj z proporcji (100% to 1013.25 hPa, 20.946% to ile hPa?)
+    4. Aby policzyć ciśnienie parcjalne skorzystaj z proporcji
+       (100% to 1013.25 hPa, 20.946% to ile hPa?)
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:

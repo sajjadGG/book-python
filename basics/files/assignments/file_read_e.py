@@ -19,12 +19,15 @@ English:
 
 Polish:
     1. Przeczytaj plik i dla każdej linii:
-        a. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza `#`
+        a. Pomiń linię jeżeli jest pusta, jest białym znakiem
+           lub zaczyna się od komentarza `#`
         b. Usuń białe znaki na początku i końcu linii
         c. Podziel linię po białych znakach
         d. Odseparuj adres IP i nazwy hostów
-        e. Wykorzystaj jednolinikowego `if` do sprawdzenia czy jest kropka `.` w adresie IP
-        f. Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
+        e. Wykorzystaj jednolinikowego `if` do sprawdzenia czy jest
+           kropka `.` w adresie IP
+        f. Jeżeli jest obecna to protokół  jest IPv4,
+           w przeciwnym przypadku IPv6
         g. Dodaj adres IP i nazwy hostów do `result`
     2. Scal nazwy hostów dla tego samego IP
     3. Uruchom doctesty - wszystkie muszą się powieść
@@ -65,7 +68,6 @@ DATA = """
 with open(FILE, mode='w') as file:
     file.write(DATA)
 
-
 result: list
 
 # Solution
@@ -95,7 +97,6 @@ with open(FILE) as file:
                 'hostnames': list(hostnames),
                 'protocol': 'IPv4' if '.' in ip else 'IPv6'
             })
-
 
 ## Alternative solution
 # for record in result:

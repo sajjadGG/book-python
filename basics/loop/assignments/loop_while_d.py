@@ -51,10 +51,10 @@ Tests:
     3.5
 """
 
-# Simulate user input (for test automation)
 from unittest.mock import MagicMock
-input = MagicMock(side_effect=['1', '2', '2.5', '3', '3.5', '4', '5', '6', ''])
 
+# Simulate user input (for test automation)
+input = MagicMock(side_effect=['1', '2', '2.5', '3', '3.5', '4', '5', '6', ''])
 
 GRADE_SCALE = (2.0, 3.0, 3.5, 4.0, 4.5, 5.0)
 
@@ -77,7 +77,6 @@ while True:
 
     if grade in GRADE_SCALE:
         grades.append(grade)
-
 
 if grades:
     result = sum(grades) / len(grades)

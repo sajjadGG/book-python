@@ -77,6 +77,7 @@ class Iris:
     def get_numeric_values(self):
         return [x for x in vars(self).values() if type(x) is float]
 
+
 # Solution
 class Iris:
     def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):

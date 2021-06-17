@@ -40,7 +40,6 @@ Tests:
 
 from pathlib import Path
 
-
 FILENAME = 'myfile.txt'
 
 # Path: Absolute path to FILENAME
@@ -48,7 +47,6 @@ abspath = ...
 
 # str: file, directory or missing
 result = ...
-
 
 # Solution
 abspath = Path(Path.cwd(), FILENAME)

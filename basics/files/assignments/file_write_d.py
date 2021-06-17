@@ -31,7 +31,6 @@ Tests:
 FILE = '_temporary.txt'
 DATA = (5.1, 3.5, 1.4, 0.2, 'setosa')
 
-
 # Solution
 data = ','.join(str(x) for x in DATA) + '\n'
 

@@ -30,7 +30,6 @@ DATA = """127.0.0.1       localhost
 ::1             localhost
 """
 
-
 # Solution
 with open(FILE, mode='wt') as file:
     file.write(DATA)

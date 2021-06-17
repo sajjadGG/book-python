@@ -67,12 +67,12 @@ TEXT = """
 
 # dict[str,int]: number of occurrences of each grammar object
 result = {
-    'sentences': 0,
-    'words': 0,
-    'characters': 0,
-    'letters': 0,
-    'commas': 0,
-    'adverbs': 0,
+        'sentences': 0,
+        'words': 0,
+        'characters': 0,
+        'letters': 0,
+        'commas': 0,
+        'adverbs': 0,
 }
 
 # Solution
