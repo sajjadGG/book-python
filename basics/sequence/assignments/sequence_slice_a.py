@@ -68,13 +68,13 @@ Tests:
 """
 
 example = 'lt. Mark Watney, PhD'
-a = 'dr hab. inż. Jan Twardowski, prof. AATC'
-b = 'gen. pil. Jan Twardowski'
-c = 'Mark Watney, PhD'
-d = 'lt. col. ret. Melissa Lewis'
-e = 'dr n. med. Ryan Stone'
-f = 'Ryan Stone, MD-PhD'
-g = 'lt. col. Jan Twardowski\t'
+A = 'dr hab. inż. Jan Twardowski, prof. AATC'
+B = 'gen. pil. Jan Twardowski'
+C = 'Mark Watney, PhD'
+D = 'lt. col. ret. Melissa Lewis'
+E = 'dr n. med. Ryan Stone'
+F = 'Ryan Stone, MD-PhD'
+G = 'lt. col. Jan Twardowski\t'
 
 example: str = example[4:-5]
 
@@ -100,10 +100,10 @@ f = ...
 g = ...
 
 # Solution
-a = a[13:-12]
-b = b[10:]
-c = c[:-5]
-d = d[14:]
-e = e[11:]
-f = f[:-8]
-g = g[9:-1]
+a = A[13:-12]
+b = B[10:]
+c = C[:-5]
+d = D[14:]
+e = E[11:]
+f = F[:-8]
+g = G[9:-1]
