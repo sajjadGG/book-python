@@ -34,51 +34,56 @@ Tests:
 
     >>> assert a is not Ellipsis, \
     'Assign result to variable: `a`'
+
     >>> assert b is not Ellipsis, \
     'Assign result to variable: `b`'
+
     >>> assert c is not Ellipsis, \
     'Assign result to variable: `c`'
+
     >>> assert type(a) is list, \
     'Variable `a` has invalid type, should be list'
+
     >>> assert type(b) is list, \
     'Variable `b` has invalid type, should be list'
+
     >>> assert type(c) is list, \
     'Variable `c` has invalid type, should be list'
+
     >>> assert len(a) == 5, \
     'Variable `a` length should be 5'
+
     >>> assert len(b) == 5, \
     'Variable `b` length should be 5'
+
     >>> assert len(c) == 5, \
     'Variable `c` length should be 5'
 
-    >>> (5.8 in a
-    ...  and 2.7 in a
-    ...  and 5.1 in a
-    ...  and 1.9 in a
-    ...  and 'virginica' in a)
-    True
-    >>> (5.1 in b
-    ...  and 3.5 in b
-    ...  and 1.4 in b
-    ...  and 0.2 in b
-    ...  and 'setosa' in b)
-    True
-    >>> (5.7 in c
-    ...  and 2.8 in c
-    ...  and 4.1 in c
-    ...  and 1.3 in c
-    ...  and 'versicolor' in c)
-    True
+    >>> assert (5.8 in a
+    ...     and 2.7 in a
+    ...     and 5.1 in a
+    ...     and 1.9 in a
+    ...     and 'virginica' in a)
+
+    >>> assert (5.1 in b
+    ...     and 3.5 in b
+    ...     and 1.4 in b
+    ...     and 0.2 in b
+    ...     and 'setosa' in b)
+
+    >>> assert (5.7 in c
+    ...     and 2.8 in c
+    ...     and 4.1 in c
+    ...     and 1.3 in c
+    ...     and 'versicolor' in c)
 """
 
-DATA = [
-    'sepal_length,sepal_width,petal_length,petal_width,species',
-    '5.8,2.7,5.1,1.9,virginica',
-    '5.1,3.5,1.4,0.2,setosa',
-    '5.7,2.8,4.1,1.3,versicolor',
-    '6.3,2.9,5.6,1.8,virginica',
-    '6.4,3.2,4.5,1.5,versicolor',
-]
+DATA = ['sepal_length,sepal_width,petal_length,petal_width,species',
+        '5.8,2.7,5.1,1.9,virginica',
+        '5.1,3.5,1.4,0.2,setosa',
+        '5.7,2.8,4.1,1.3,versicolor',
+        '6.3,2.9,5.6,1.8,virginica',
+        '6.4,3.2,4.5,1.5,versicolor']
 
 # list[float|str]: with data from row[1]: 5.8, 2.7, 5.1, 1.9 and virginica
 a = ...

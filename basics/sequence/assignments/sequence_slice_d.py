@@ -34,18 +34,41 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert header is not Ellipsis, 'Assign result to variable: `header`'
-    >>> assert data is not Ellipsis, 'Assign result to variable: `data`'
-    >>> assert train is not Ellipsis, 'Assign result to variable: `train`'
-    >>> assert test is not Ellipsis, 'Assign result to variable: `test`'
-    >>> assert type(header) is tuple, 'Variable `header` has invalid type, should be tuple'
-    >>> assert type(train) is list, 'Variable `train` has invalid type, should be list'
-    >>> assert type(train) is list, 'Variable `train` has invalid type, should be list'
-    >>> assert type(test) is list, 'Variable `test` has invalid type, should be list'
-    >>> assert all(type(x) is tuple for x in train), 'All elements in `train` should be tuple'
-    >>> assert all(type(x) is tuple for x in test), 'All elements in `test` should be tuple'
-    >>> assert header not in train, 'Header should not be in `train`'
-    >>> assert header not in test, 'Header should not be in `test`'
+    >>> assert header is not Ellipsis, \
+    'Assign result to variable: `header`'
+
+    >>> assert data is not Ellipsis, \
+    'Assign result to variable: `data`'
+
+    >>> assert train is not Ellipsis, \
+    'Assign result to variable: `train`'
+
+    >>> assert test is not Ellipsis, \
+    'Assign result to variable: `test`'
+
+    >>> assert type(header) is tuple, \
+    'Variable `header` has invalid type, should be tuple'
+
+    >>> assert type(train) is list, \
+    'Variable `train` has invalid type, should be list'
+
+    >>> assert type(train) is list, \
+    'Variable `train` has invalid type, should be list'
+
+    >>> assert type(test) is list, \
+    'Variable `test` has invalid type, should be list'
+
+    >>> assert all(type(x) is tuple for x in train), \
+    'All elements in `train` should be tuple'
+
+    >>> assert all(type(x) is tuple for x in test), \
+    'All elements in `test` should be tuple'
+
+    >>> assert header not in train, \
+    'Header should not be in `train`'
+
+    >>> assert header not in test, \
+    'Header should not be in `test`'
 
     >>> header  # doctest: +NORMALIZE_WHITESPACE
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
@@ -88,7 +111,6 @@ train = ...
 
 # list[tuple]: last 40% from data
 test = ...
-
 
 # Solution
 ratio = 0.6  # 60%

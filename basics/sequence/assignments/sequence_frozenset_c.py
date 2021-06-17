@@ -23,24 +23,26 @@ Tests:
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
+
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
-    >>> assert len(result) == 150, \
-    'Variable `result` length should be 150'
+
     >>> assert result.count('\\n') == 2, \
     'There should be only two newline characters in result'
 
-    >>> 'We choose to go to the Moon.' in result
-    True
-    >>> 'We choose to go to the Moon in this decade and do the other things.' in result
-    True
-    >>> 'Not because they are easy, but because they are hard.' in result
-    True
+    >>> line = 'We choose to go to the Moon'
+    >>> assert line in result, f'Line "{line}" is not in the result'
+
+    >>> line = 'in this decade and do the other things.'
+    >>> assert line in result, f'Line "{line}" is not in the result'
+
+    >>> line = 'Not because they are easy, but because they are hard.'
+    >>> assert line in result, f'Line "{line}" is not in the result'
 """
 
 DATA = frozenset({
-        'We choose to go to the Moon.',
-        'We choose to go to the Moon in this decade and do the other things.',
+        'We choose to go to the Moon',
+        'in this decade and do the other things.',
         'Not because they are easy, but because they are hard.'})
 
 # str: with lines from DATA joined with newline (`\n`) character

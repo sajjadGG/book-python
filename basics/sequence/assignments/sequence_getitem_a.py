@@ -7,27 +7,29 @@
 
 English:
     1. Non-functional requirements:
-        a. Use only indexes (`getitem`)
-        b. Do not use `str.split()`, `slice`, `for`, `while` or any other control-flow statement
-        c. All tests must pass
+       a. Use only indexes (`getitem`)
+       b. Do not use `str.split()`, `slice`, `for`, `while` or any other
+          control-flow statement
+       c. All tests must pass
     2. Write header (row with index 0) to `header: tuple` variable
     3. Create `result: list`
-    4. Select row at index 2, convert it to `list` and add to `result`
-    5. Select row at index 4, convert it to `tuple` and add to `result`
-    6. Select row at index -2, convert it to `set` and add to `result`
+    4. Append to `result` a list with row at index 2
+    4. Append to `result` a tuple with row at index 4
+    4. Append to `result` a set with row at index -2
     8. Append to `result`: empty `list`, empty `tuple` and empty `set`
     9. Run doctests - all must succeed
 
 Polish:
     1. Wymagania niefunkcjonalne:
-        a. Korzystaj tylko z indeksów (`getitem`)
-        b. Nie używaj `str.split()`, `slice`, `for`, `while` lub jakiejkolwiek innej instrukcji sterującej
-        c. Wszystkie testy muszą przejść
+       a. Korzystaj tylko z indeksów (`getitem`)
+       b. Nie używaj `str.split()`, `slice`, `for`, `while` lub
+          jakiejkolwiek innej instrukcji sterującej
+       c. Wszystkie testy muszą przejść
     2. Zapisz nagłówek (wiersz o indeksie 0) do zmiennej `header: tuple`
     3. Stwórz `result: list`
-    4. Wybierz wiersz o indeksie 2, przekonwertuj go do `list` i dodaj do `result`
-    5. Wybierz wiersz o indeksie 4, przekonwertuj go do `tuple` i dodaj do `result`
-    6. Wybierz wiersz o indeksie -4, przekonwertuj go do `set` i dodaj do `result`
+    4. Dodaj do `result` listę z wiersza o indeksie 2
+    4. Dodaj do `result` krotkę z wiersza o indeksie 4
+    4. Dodaj do `result` zbiór z wiersza o indeksie -2
     8. Dodaj na koniec `result`: pustą `list`, pustą `tuple` i pusty `set`
     9. Uruchom doctesty - wszystkie muszą się powieść
 
