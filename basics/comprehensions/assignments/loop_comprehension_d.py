@@ -9,13 +9,13 @@ English:
     1. Use list comprehension to iterate over `DATA`
     2. If letter is in `PL` then use conversion value as letter
     3. Add letter to `result`
-    5. Run doctests - all must succeed
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj rozwinięcia listowego do iteracji po `DATA`
     2. Jeżeli litera jest w `PL` to użyj skonwertowanej wartości jako litera
     3. Dodaj literę do `result`
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:
     * use `str.join()`
@@ -29,17 +29,9 @@ Tests:
     'zazolc gesla jazn'
 """
 
-PL = {
-    'ą': 'a',
-    'ć': 'c',
-    'ę': 'e',
-    'ł': 'l',
-    'ń': 'n',
-    'ó': 'o',
-    'ś': 's',
-    'ż': 'z',
-    'ź': 'z',
-}
+PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+      'ł': 'l', 'ń': 'n', 'ó': 'o',
+      'ś': 's', 'ż': 'z', 'ź': 'z'}
 
 DATA = 'zażółć gęślą jaźń'
 

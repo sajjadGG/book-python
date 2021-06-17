@@ -49,23 +49,12 @@ Tests:
      12: 'December'}
 """
 
-MONTHS = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-]
+MONTHS = ['January', 'February', 'March', 'April',
+          'May', 'June', 'July', 'August', 'September',
+          'October', 'November', 'December']
 
 # dict[str,str]: number and month name
 result = ...
 
 # Solution
-result = {i:month for i,month in enumerate(MONTHS, start=1)}
+result = {i: month for i, month in enumerate(MONTHS, start=1)}
