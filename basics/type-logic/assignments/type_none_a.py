@@ -24,8 +24,6 @@ Tests:
     'Assign result to variable: `result_c`'
     >>> assert result_d is not Ellipsis, \
     'Assign result to variable: `result_d`'
-    >>> assert result_e is not Ellipsis, \
-    'Assign result to variable: `result_e`'
     >>> assert type(result_a) is bool, \
     'Variable `result_a` has invalid type, should be bool'
     >>> assert type(result_b) is bool, \
@@ -34,8 +32,6 @@ Tests:
     'Variable `result_c` has invalid type, should be bool'
     >>> assert type(result_d) is bool, \
     'Variable `result_d` has invalid type, should be bool'
-    >>> assert type(result_e) is bool, \
-    'Variable `result_e` has invalid type, should be bool'
 
     >>> bool(result_a)
     True
@@ -44,8 +40,6 @@ Tests:
     >>> bool(result_c)
     True
     >>> bool(result_d)
-    False
-    >>> bool(result_e)
     False
 """
 
@@ -61,25 +55,20 @@ c = ...
 # bool: result must be logic False
 d = ...
 
-# bool: result must be logic False
-e = ...
 
 # Do not modify following lines
 result_a = a is None
 result_b = b is not None
 result_c = bool(bool(c) is not bool(c)) == False
 result_d = bool(bool(d) is not bool(d)) == False and bool(d)
-result_e = (bool(bool(e) is not bool(e)) == False and bool(e)) and (e is not None)
 
 # Solution
 a = None
 b = None
 c = None
 d = None
-e = None
 
 result_a = a is None
 result_b = b is not None
 result_c = bool(bool(c) is not bool(c)) == False
 result_d = bool(bool(d) is not bool(d)) == False and bool(d)
-result_e = (bool(bool(e) is not bool(e)) == False and bool(e)) and (e is not None)
