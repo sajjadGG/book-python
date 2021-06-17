@@ -120,7 +120,7 @@ labels_test = [y for *X, y in test]
 # memory complexity - How memory consuming is the task
 # computational complexity - How many computations
 # cyclomatic complexity - How many loops are in the code, how nested they are
-# cognitive complexity - How hard it to understand code (complex structures, bool logic)
+# cognitive complexity - How hard it to understand code (ie. inline bool logic)
 
 
 """
