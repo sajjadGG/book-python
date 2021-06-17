@@ -7,17 +7,17 @@ Exception Catching
     Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 
-def mean(data):
-    try:
-        avg = sum(data) / len(data)
-    except TypeError:
-        print(f'Invalid type of an argument: {data}')
-    except ZeroDivisionError:
-        print('Empty data')
-    else:
-        print(avg)
-    finally:
-        ...
+    def mean(data):
+        try:
+            avg = sum(data) / len(data)
+        except TypeError:
+            print(f'Invalid type of an argument: {data}')
+        except ZeroDivisionError:
+            print('Empty data')
+        else:
+            print(avg)
+        finally:
+            ...
 
 
 Catching Exceptions

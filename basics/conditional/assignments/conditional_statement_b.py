@@ -1,18 +1,20 @@
 """
-* Assignment: Conditional Statement Adult
+* Assignment: Conditional Statement Oneliner
 * Required: yes
 * Complexity: easy
-* Lines of code: 4 lines
+* Lines of code: 1 lines
 * Time: 3 min
 
 English:
-    1. Ask user to input age
+    1. User typed his/her age
     2. Check whether user is adult (age above 18)
-    3. Run doctests - all must succeed
+    3. Use one line `if`
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Poproś użytkownika o wprowadzenie wieku
+    1. Użytkownik wprowadził swój wiek
     2. Sprawdź czy użytkownik jest pełnoletni (wiek powyżej 18)
+    3. Wykorzystaj jednolinikowego `if`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -23,16 +25,13 @@ Tests:
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
 
-    >>> result in ('Adult', 'Young')
+    >>> result in 'Young'
     True
 """
 
+ADULT = 18
+AGE = 12
 
-from unittest.mock import MagicMock
-
-# Simulate user input (for test automation)
-input = MagicMock(side_effect=['21'])
-age = input('What is your age?: ')
 
 
 # str: Whether 'Adult' or 'Young'
@@ -40,9 +39,4 @@ result = ...
 
 
 # Solution
-ADULT = 18
-
-if int(age) >= ADULT:
-    result = 'Adult'
-else:
-    result = 'Young'
+result = 'Adult' if AGE >= ADULT else 'Young'

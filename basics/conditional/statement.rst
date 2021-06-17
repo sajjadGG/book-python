@@ -440,3 +440,11 @@ Assignments
 .. literalinclude:: assignments/conditional_statement_a.py
     :caption: :download:`Solution <assignments/conditional_statement_a.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/conditional_statement_b.py
+    :caption: :download:`Solution <assignments/conditional_statement_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/conditional_statement_c.py
+    :caption: :download:`Solution <assignments/conditional_statement_c.py>`
+    :end-before: # Solution
