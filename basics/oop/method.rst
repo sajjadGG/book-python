@@ -122,6 +122,39 @@ My name... José Jiménez
 Traceback (most recent call last):
 TypeError: say_hello() missing 1 required positional argument: 'name'
 
+Use Cases
+---------
+>>> class Counter:
+...     current_value: int
+...
+...     def __init__(self):
+...         self.current_value = 0
+...
+...     def increment(self):
+...         self.current_value += 1
+...
+...     def decrement(self):
+...         if self.current_value - 1 < 0:
+...             raise ValueError('Cannot decrement below zero')
+...         self.current_value -= 1
+...
+...     def show(self):
+...         return self.current_value
+>>>
+>>>
+>>> c = Counter()
+>>> c.increment()
+>>> c.increment()
+>>> c.show()
+2
+>>> c.decrement()
+>>> c.decrement()
+>>> c.show()
+0
+>>> c.decrement()
+Traceback (most recent call last):
+ValueError: Cannot decrement below zero
+
 
 Assignments
 -----------

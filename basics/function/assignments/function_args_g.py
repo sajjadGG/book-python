@@ -9,13 +9,15 @@ English:
     1. Define function `myrange` with parameters: `start`, `stop`, `step`
     2. Write own implementation of a built-in function
        `myrange(start, stop, step)`
-    5. Run doctests - all must succeed
+    3. Do not use built-in `range()` function
+    4. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj funkcję `myrange` z parametrami: `start`, `stop`, `step`
     2. Zaimplementuj własne rozwiązanie wbudowanej funkcji
        `myrange(start, stop, step)`
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    3. Nie używaj wbudowanej funkcji `range()`
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:
     * `while`
