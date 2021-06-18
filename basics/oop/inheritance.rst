@@ -34,8 +34,56 @@ Syntax
 'Hello'
 
 
+No Inheritance
+--------------
+>>> class Parent:
+...     pass
+>>>
+>>>
+>>> class Child:
+...     pass
+
+
 Simple Inheritance
 ------------------
+>>> class Parent:
+...     pass
+>>>
+>>>
+>>> class Child(Parent):
+...     pass
+
+
+Multilevel Inheritance
+----------------------
+>>> class Mother:
+...     pass
+>>>
+>>>
+>>> class Parent(Mother):
+...     pass
+>>>
+>>>
+>>> class Child(Parent):
+...     pass
+
+
+Multiple Inheritance
+--------------------
+>>> class Mother:
+...     pass
+>>>
+>>>
+>>> class Father:
+...     pass
+>>>
+>>>
+>>> class Child(Mother, Father):
+...     pass
+
+
+Use Cases
+---------
 >>> class Person:
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
@@ -51,100 +99,9 @@ Simple Inheritance
 >>> mark = Astronaut('Mark', 'Watney')
 >>> ivan = Cosmonaut('Ivan', 'Ivanovic')
 
-
-Multilevel Inheritance
-----------------------
->>> class Person:
-...     pass
->>>
->>> class Pilot(Person):
-...     pass
->>>
->>> class Astronaut(Pilot):
-...     pass
->>>
->>>
->>> watney = Astronaut()
->>> type(watney)
-<class 'Astronaut'>
->>> isinstance(watney, Person)
-True
->>> isinstance(watney, Pilot)
-True
->>> isinstance(watney, Astronaut)
-True
-
-
-Multiple Inheritance
---------------------
->>> class Person:
-...     pass
->>>
->>> class Pilot:
-...     pass
->>>
->>> class Astronaut(Person, Pilot):
-...     pass
->>>
->>>
->>> watney = Astronaut()
->>> type(watney)
-<class 'Astronaut'>
->>> isinstance(watney, Person)
-True
->>> isinstance(watney, Pilot)
-True
->>> isinstance(watney, Astronaut)
-True
-
-
-Overload
---------
->>> class A:
-...     def show(self):
-...         return 'a'
->>>
->>> class B(A):
-...     pass
->>>
->>>
->>> B().show()
-'a'
-
->>> class A:
-...     def show(self):
-...         return 'a'
->>>
->>> class B(A):
-...     def show(self):
-...         return 'b'
->>>
->>>
->>> B().show()
-'b'
-
->>> class Person:
-...     lastname = 'Watney'
-...
-...     def hello(self):
-...         print(f'Hello {self.firstname} {self.lastname}')
->>>
->>>
->>> class Astronaut(Person):
-...     firstname = 'Mark'
->>>
->>>
->>> a = Astronaut()
->>> a.hello()
-Hello Mark Watney
-
-
-Use Cases
----------
 >>> class Iris:
 ...     def __init__(self, sepal_length, sepal_width,
 ...                  petal_length, petal_width, species):
-...
 ...         self.sepal_length = sepal_length
 ...         self.sepal_width = sepal_width
 ...         self.petal_length = petal_length

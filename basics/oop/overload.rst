@@ -19,84 +19,104 @@ Syntax
 ------
 >>> class Parent:
 ...     def say_hello(self):
-...         return 'Hello'
+...         return 'Parent'
 >>>
 >>> class Child(Parent):
-...     pass
+...     def say_hello(self):
+...         return 'Child'
 >>>
 >>>
->>> Child().say_hello()
-'Hello'
+>>> c = Child()
+>>> c.say_hello()
+'Child'
 
 
 Super Function
 --------------
->>> class A:
-...     def show(self):
-...         return 'a'
->>>
->>> class B(A):
-...     def show(self):
-...         old_value = super().show()
-...         return old_value + 'b'
->>>
->>>
->>> B().show()
-'ab'
-
->>> class Engineer:
+>>> class Person:
 ...     def __init__(self):
-...         self.education = 'Engineer'
-...         self.profession = 'Engineer'
+...         self.name = 'Mark Watney'
+...         self.job = 'unemployed'
 >>>
->>> class Astronaut(Engineer):
+>>>
+>>> class Astronaut(Person):
 ...     def __init__(self):
 ...         super().__init__()
-...         self.profession = 'Astronaut'
+...         self.job = 'astronaut'
 >>>
 >>>
->>> vars(Astronaut())  # doctest: +NORMALIZE_WHITESPACE
-{'education': 'Engineer',
- 'profession': 'Astronaut'}
+>>> astro = Astronaut()
+>>> vars(astro)
+{'name': 'Mark Watney', 'job': 'astronaut'}
 
->>> class Engineer:
+>>> class Person:
 ...     def __init__(self):
-...         self.education = 'Engineer'
-...         self.profession = 'Engineer'
+...         self.name = 'Mark Watney'
+...         self.job = 'unemployed'
 >>>
->>> class Astronaut(Engineer):
+>>>
+>>> class Astronaut(Person):
 ...     def __init__(self):
-...         self.profession = 'Astronaut'
+...         self.job = 'astronaut'
 ...         super().__init__()
 >>>
 >>>
->>> vars(Astronaut())  # doctest: +NORMALIZE_WHITESPACE
-{'profession': 'Engineer',
- 'education': 'Engineer'}
+>>> astro = Astronaut()
+>>> vars(astro)
+{'job': 'unemployed', 'name': 'Mark Watney'}
+
+>>> class Person:
+...     def hello(self):
+...         return 'Mark Watney'
+>>>
+>>>
+>>> class Astronaut(Person):
+...     def hello(self):
+...         name = super().hello()
+...         return f'Hello {name}'
+>>>
+>>>
+>>> astro = Astronaut()
+>>> astro.hello()
+'Hello Mark Watney'
 
 
-Inheritance vs Mixin
---------------------
+Inheritance Problem
+-------------------
 >>> class Car:
-...     def engine_start(self):
-...         print('Starting engine...')
->>>
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 >>>
 >>> class Truck:
-...     def engine_start(self):
-...         print('Starting engine...')
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 
 Simple Inheritance:
 
 >>> class Vehicle:
-...     def engine_start(self):
-...         print('Starting engine...')
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 >>>
 >>>
 >>> class Car(Vehicle):
 ...     pass
 >>>
 >>> class Truck(Vehicle):
+...     pass
+
+
+>>> class Vehicle:
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
+>>>
+>>>
+>>> class Car(Vehicle):
+...     pass
+>>>
+>>> class Truck(Vehicle):
+...     pass
+>>>
+>>> class Motorcycle(Vehicle):
 ...     pass
 
 .. figure:: img/uml-relations-inheritance-simple.png
@@ -104,18 +124,18 @@ Simple Inheritance:
 Inheritance Problem:
 
 >>> class Vehicle:
-...     def engine_start(self):
-...         print('Starting engine...')
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 >>>
 >>>
 >>> class Car(Vehicle):
-...     def windows_open(self):
-...         print('Opening windows...')
+...     def window_open(self): ...
+...     def window_close(self): ...
 >>>
 >>>
 >>> class Truck(Vehicle):
-...     def windows_open(self):
-...         print('Opening windows...')
+...     def window_open(self): ...
+...     def window_close(self): ...
 >>>
 >>>
 >>> class Motorcycle(Vehicle):
@@ -124,11 +144,10 @@ Inheritance Problem:
 Not Implemented Error:
 
 >>> class Vehicle:
-...     def engine_start(self):
-...         print('Starting engine...')
-...
-...     def windows_open(self):
-...         print('Opening windows...')
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
+...     def window_open(self): ...
+...     def window_close(self): ...
 >>>
 >>>
 >>> class Car(Vehicle):
@@ -138,24 +157,24 @@ Not Implemented Error:
 ...     pass
 >>>
 >>> class Motorcycle(Vehicle):
-...     def windows_open(self):
-...         raise NotImplementedError('Has no windows')
+...     def windows_open(self): raise NotImplementedError
+...     def windows_close(self): raise NotImplementedError
 
 Multilevel Inheritance:
 
 >>> class Vehicle:
-...     def engine_start(self):
-...         print('Starting engine...')
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 >>>
->>> class HasWindows(Vehicle):
-...     def windows_open(self):
-...         print('Opening windows...')
+>>> class VehicleWithWindows(Vehicle):
+...     def window_open(self): ...
+...     def window_close(self): ...
 >>>
 >>>
->>> class Car(HasWindows):
+>>> class Car(VehicleWithWindows):
 ...     pass
 >>>
->>> class Truck(HasWindows):
+>>> class Truck(VehicleWithWindows):
 ...     pass
 >>>
 >>> class Motorcycle(Vehicle):
@@ -165,60 +184,25 @@ Multilevel Inheritance:
 
 Mixin Classes:
 
->>> class Vehicle:
-...     def engine_start(self):
-...         print('Starting engine...')
-...
-...     def engine_stop():
-...         print('Stopping engine...')
->>>
+>>> class HasEngine:
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 >>>
 >>> class HasWindows:
-...     def windows_open(self):
-...         print('Opening windows...')
+...     def window_open(self): ...
+...     def window_close(self): ...
 >>>
 >>>
->>> class Car(Vehicle, HasWindows):
+>>> class Car(HasEngine, HasWindows):
 ...     pass
 >>>
->>> class Truck(Vehicle, HasWindows):
+>>> class Truck(HasEngine, HasWindows):
 ...     pass
 >>>
->>> class Motorcycle(Vehicle):
+>>> class Motorcycle(HasEngine):
 ...     pass
 
 .. figure:: img/uml-relations-mixin.png
-
-
-Use Cases
----------
->>> class Iris:
-...     def __init__(self, sepal_length, sepal_width,
-...                  petal_length, petal_width, species):
-...
-...         self.sepal_length = sepal_length
-...         self.sepal_width = sepal_width
-...         self.petal_length = petal_length
-...         self.petal_width = petal_width
-...         self.species = species
->>>
->>>
->>> class Setosa(Iris):
-...     pass
->>>
->>> class Versicolor(Iris):
-...     pass
->>>
->>> class Virginica(Iris):
-...     pass
->>>
->>>
->>> setosa = Setosa(
-...     sepal_length=5.1,
-...     sepal_width=3.5,
-...     petal_length=1.4,
-...     petal_width=0.2,
-...     species='setosa')
 
 
 Assignments

@@ -35,25 +35,24 @@ Rationale
     namespace
         Container for storing related data
 
-Class example with distinction of properties and state attributes:
+Class example with distinction of properties and state attributes.
 
-.. code-block:: text
+An example "Glass with Water" can illustrate the distinction of properties
+and state attributes:
 
-    Bucket with Water
+Properties:
+    - color
+    - width
+    - height
+    - radius
+    - capacity
+    - net mass (without water)
 
-        Properties:
-            - color
-            - width
-            - height
-            - radius
-            - capacity
-            - net mass (without water)
+State:
+    - volume  (how much water is currently in the glass)
+    - gross mass = net mass + water mass (water mass depends on its volume used))
 
-        State:
-            - volume  (how much water is currently in bucket)
-            - gross mass = net mass + water mass (water mass depends on its volume used))
-
-.. figure:: img/bucket.jpg
+.. figure:: img/oop-classes-glass.jpg
 
 
 Syntax
@@ -110,6 +109,7 @@ My name... José Jiménez
 >>> print(f'My name... {mark.name}')
 Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute 'name'
+
 
 Namespace
 ---------
@@ -186,9 +186,7 @@ setosa
 
 Get All Dynamic Attributes and Values
 -------------------------------------
-* ``vars(obj)``
-* ``obj.__dict__``
-* ``vars(obj)`` returns the same as ``obj.__dict__``
+* ``vars(obj)`` - returns all fields in dict format
 
 Getting dynamic fields and values:
 
@@ -324,3 +322,7 @@ Assignments
 .. literalinclude:: assignments/oop_attribute_a.py
     :caption: :download:`Solution <assignments/oop_attribute_a.py>`
     :end-before: # Solution
+
+References
+----------
+.. [glassimg] https://media.istockphoto.com/vectors/glasses-set-for-water-glasses-full-empty-halffilled-with-water-vector-vector-id905957960?k=6&m=905957960&s=612x612&w=0&h=DE0uCDCehEA_eDHzHW38jvhl3pYjNuoqXZ_6ZzHbz0M=

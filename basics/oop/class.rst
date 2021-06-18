@@ -19,10 +19,10 @@ Rationale
 
 Classes
 -------
-* Capitalized ``PascalCase`` name convention
 * Classes are templates for objects
+* ``PascalCase`` name convention
 
-Defining class. Classes should have capitalized name:
+Classes should have capitalized name:
 
 >>> class Astronaut:
 ...     pass

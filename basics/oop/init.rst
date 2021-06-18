@@ -208,7 +208,7 @@ setosa
 ...     petal_width=1.9,
 ...     species='virginica')
 >>>
->>> print(virginica.__dict__)  # doctest: +NORMALIZE_WHITESPACE
+>>> vars(virginica)  # doctest: +NORMALIZE_WHITESPACE
 {'sepal_length': 5.8,
  'sepal_width': 2.7,
  'petal_length': 5.1,
@@ -230,20 +230,6 @@ More information in `OOP Dataclass`
 ...     species: str = 'Iris'
 >>>
 >>>
->>> setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
->>>
->>> print(setosa.sepal_length)
-5.1
->>> print(setosa.sepal_width)
-3.5
->>> print(setosa.petal_length)
-1.4
->>> print(setosa.petal_width)
-0.2
->>> print(setosa.species)
-setosa
->>>
->>>
 >>> virginica = Iris(
 ...     sepal_length=5.8,
 ...     sepal_width=2.7,
@@ -251,7 +237,7 @@ setosa
 ...     petal_width=1.9,
 ...     species='virginica')
 >>>
->>> print(virginica.__dict__)  # doctest: +NORMALIZE_WHITESPACE
+>>> vars(virginica)  # doctest: +NORMALIZE_WHITESPACE
 {'sepal_length': 5.8,
  'sepal_width': 2.7,
  'petal_length': 5.1,

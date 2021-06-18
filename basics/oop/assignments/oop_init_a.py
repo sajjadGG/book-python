@@ -31,7 +31,7 @@ Tests:
     world
     >>> result = Echo('Test')
     Test
-    >>> result.__dict__
+    >>> vars(result)
     {}
 """
 

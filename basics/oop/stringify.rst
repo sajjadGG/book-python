@@ -268,12 +268,12 @@ Temperature is 97.88 F
 ...         elif name == 'in_3D':
 ...             result = f"Point(x={self.x}, y={self.y}, z={self.z})"
 ...         elif name == 'as_dict':
-...             result = self.__dict__
+...             result = vars(self)
 ...         elif name == 'as_tuple':
-...             result = tuple(self.__dict__.values())
+...             result = tuple(vars(self).values())
 ...         elif name == 'as_json':
 ...             import json
-...             result = json.dumps(self.__dict__)
+...             result = json.dumps(vars(self))
 ...         return str(result)
 >>>
 >>>
