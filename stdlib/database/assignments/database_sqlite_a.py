@@ -67,7 +67,7 @@ Tests:
      (21, '1969-07-21 05:11:13', 'DEBUG', 'EVA ended (hatch closed)'),
      (20, '1969-07-21 03:15:16', 'INFO', 'LMP on lunar surface'),
      (19, '1969-07-21 03:05:58', 'DEBUG', 'Contingency sample collection started (CDR)'),
-     (18, '1969-07-21 02:56:16', 'WARNING', "That's one small step for [a] man... one giant leap for mankind"),
+     (18, '1969-07-21 02:56:16', 'WARNING', 'Neil Armstrong first words on the Moon'),
      (17, '1969-07-21 02:56:15', 'WARNING', '1st step taken lunar surface (CDR)'),
      (16, '1969-07-21 02:39:33', 'DEBUG', 'EVA started (hatch open)'),
      (15, '1969-07-20 20:17:39', 'WARNING', 'LM lunar landing'),
@@ -109,7 +109,7 @@ DATA = """1969-07-14, 21:00:00, INFO, Terminal countdown started
 1969-07-20, 20:17:39, WARNING, LM lunar landing
 1969-07-21, 02:39:33, DEBUG, EVA started (hatch open)
 1969-07-21, 02:56:15, WARNING, 1st step taken lunar surface (CDR)
-1969-07-21, 02:56:16, WARNING, That's one small step for [a] man... one giant leap for mankind
+1969-07-21, 02:56:16, WARNING, Neil Armstrong first words on the Moon
 1969-07-21, 03:05:58, DEBUG, Contingency sample collection started (CDR)
 1969-07-21, 03:15:16, INFO, LMP on lunar surface
 1969-07-21, 05:11:13, DEBUG, EVA ended (hatch closed)

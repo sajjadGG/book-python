@@ -34,9 +34,9 @@ Tests:
 from datetime import datetime
 
 DATA = [
-        '1957-10-04 19:28:34',  # Sputnik launch (first satellite in space)
-        '1961-04-12 06:07',  # Gagarin launch (first human in space)
-        '1969-07-21T02:56:15',  # Armstrong first step on the Moon
+    '1957-10-04 19:28:34',  # Sputnik launch (first satellite in space)
+    '1961-04-12 06:07',  # Gagarin launch (first human in space)
+    '1969-07-21T02:56:15',  # Armstrong first step on the Moon
 ]
 
 # list[datetime]: DATA elements in datetime format
