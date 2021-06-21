@@ -27,7 +27,8 @@ from datetime import datetime
 
 DATA = 'July 21, 1969 2:56:15 AM'
 
-result = ...  # datetime: DATA from US long format
+# datetime: DATA from US long format
+result = ...
 
 
 # Solution

@@ -42,6 +42,12 @@ YEAR = 365.2425 * DAY
 GAGARIN = datetime(1961, 4, 12, 6, 7)
 ARMSTRONG = datetime(1969, 7, 21, 2, 56, 15)
 
+# timedelta: Time between GAGARIN and ARMSTRONG
+duration = ...
+
+# float: Number of years rounded to 1 decimal place
+result = ...
+
 # Solution
 duration = ARMSTRONG - GAGARIN
 result = round(duration.days / YEAR, 1)

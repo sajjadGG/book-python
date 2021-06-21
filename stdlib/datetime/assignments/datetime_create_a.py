@@ -45,9 +45,14 @@ Tests:
 from datetime import datetime, date, time
 
 
-d = ...  # date: representing April 12th, 1961 6:07 a.m.
-t = ...  # time: representing April 12th, 1961 6:07 a.m.
-dt = ...  # datetime: representing April 12th, 1961 6:07 a.m.
+# date: representing April 12th, 1961 6:07 a.m.
+d = ...
+
+# time: representing April 12th, 1961 6:07 a.m.
+t = ...
+
+# datetime: representing April 12th, 1961 6:07 a.m.
+dt = ...
 
 
 # Solution

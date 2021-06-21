@@ -77,7 +77,7 @@ Attributes
 >>> from datetime import time
 >>>
 >>>
->>> t = datetime(1969, 7, 21, 2, 56, 15)
+>>> t = time(2, 56, 15)
 >>>
 >>> t.hour
 2

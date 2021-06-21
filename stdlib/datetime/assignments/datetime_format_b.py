@@ -33,7 +33,8 @@ from datetime import datetime
 
 DATA = datetime(1969, 7, 21, 2, 56, 15)
 
-result = ...  # str: DATA in short US format: '07/21/69 2:56 AM'
+# str: DATA in short US format: '07/21/69 2:56 AM'
+result = ...
 
 
 # Solution

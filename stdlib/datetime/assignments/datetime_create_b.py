@@ -34,9 +34,14 @@ Tests:
 from datetime import datetime, date, time
 
 
-dt = ...  # datetime: representing current moment
-d = ...  # date: representing current moment
-t = ...  # time: representing current moment
+# datetime: representing current moment
+dt = ...
+
+# date: representing current moment
+d = ...
+
+# time: representing current moment
+t = ...
 
 # Solution
 dt = datetime.now()

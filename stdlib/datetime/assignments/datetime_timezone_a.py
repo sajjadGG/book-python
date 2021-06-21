@@ -119,20 +119,44 @@ Tests:
 from pytz import timezone
 
 
-utc: timezone = ...  # timezone in UTC
-london: timezone = ...  # timezone in London, United Kingdom
-moscow: timezone = ...  # timezone in Moscow, Russian Federation
-warsaw: timezone = ...  # timezone in Warsaw, Poland
-tokyo: timezone = ...  # timezone in Tokyo, Japan
-sydney: timezone = ...  # timezone in Sydney, Australia
-auckland: timezone = ...  # timezone in Auckland, New Zealand
-new_york: timezone = ...  # timezone in New York, USA
+# timezone in UTC
+utc: timezone = ...
 
-cape_canaveral: timezone = ...  # timezone in Cape Canaveral, FL, USA
-houston: timezone = ...  # timezone in Houston, TX, USA
-bajkonur: timezone = ...  # timezone in Bajkonur Cosmodrome, Kazachstan
-north_pole: timezone = ...  # timezone in North Pole
-south_pole: timezone = ...  # timezone in South Pole
+# timezone in London, United Kingdom
+london: timezone = ...
+
+# timezone in Moscow, Russian Federation
+moscow: timezone = ...
+
+# timezone in Warsaw, Poland
+warsaw: timezone = ...
+
+# timezone in Tokyo, Japan
+tokyo: timezone = ...
+
+# timezone in Sydney, Australia
+sydney: timezone = ...
+
+# timezone in Auckland, New Zealand
+auckland: timezone = ...
+
+# timezone in New York, USA
+new_york: timezone = ...
+
+# timezone in Cape Canaveral, FL, USA
+cape_canaveral: timezone \
+
+# timezone in Houston, TX, USA= ...
+houston: timezone = ...
+
+# timezone in Bajkonur Cosmodrome, Kazachstan
+bajkonur: timezone = ...
+
+# timezone in North Pole
+north_pole: timezone = ...
+
+# timezone in South Pole
+south_pole: timezone = ...
 
 
 # Solution

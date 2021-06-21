@@ -27,7 +27,8 @@ from datetime import datetime
 
 DATA = '1969-07-21T02:56:15.123'
 
-result = ...  # datetime: DATA from ISO-8601 format
+# datetime: DATA from ISO-8601 format
+result = ...
 
 
 # Solution

@@ -40,7 +40,8 @@ DATA = [
     '1969-07-21T02:56:15',  # Armstrong first step on the Moon
 ]
 
-result = ...  # list[datetime]: DATA elements in datetime format
+# list[datetime]: DATA elements in datetime format
+result = ...
 
 # Solution
 result = []

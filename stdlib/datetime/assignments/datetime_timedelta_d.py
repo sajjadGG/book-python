@@ -56,6 +56,8 @@ YEAR = 365.2425 * DAY
 
 DATA = timedelta(days=3022, seconds=24609)
 
+
+# dict[str, int]
 result = {
     'years': ...,
     'months': ...,

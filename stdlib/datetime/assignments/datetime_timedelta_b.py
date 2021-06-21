@@ -46,8 +46,11 @@ GAGARIN_LAUNCH = datetime(1961, 4, 12, 6, 7)
 ARMSTRONG_BIRTHDAY = date(1930, 8, 5)
 ARMSTRONG_STEP = datetime(1969, 7, 21, 2, 56, 15)
 
-gagarin_age = ...  # int: Gagarin's age when he was launched to space
-armstrong_age = ...  # int: Armstrong's age when he made a first step on the Moon
+# int: Gagarin's age when he was launched to space
+gagarin_age = ...
+
+# int: Armstrong's age when he made a first step on the Moon
+armstrong_age = ...
 
 
 # Solution
