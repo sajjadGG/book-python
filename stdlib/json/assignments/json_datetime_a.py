@@ -56,8 +56,8 @@ Tests:
               {'astronaut': 'Mark Watney', 'date_of_birth': datetime.date(1994, 10, 12)}]}
 """
 
-from datetime import datetime, date, timezone
 import json
+from datetime import date, datetime, timezone
 
 FILE = '_temporary.json'
 
@@ -66,12 +66,13 @@ DATA = {'mission': 'Ares 3',
         'destination': 'Mars',
         'destination_landing': datetime(2035, 11, 7, tzinfo=timezone.utc),
         'destination_location': 'Acidalia Planitia',
-        'crew': [{'astronaut': 'Melissa Lewis', 'date_of_birth': date(1995, 7, 15)},
-                 {'astronaut': 'Rick Martinez', 'date_of_birth': date(1996, 1, 21)},
-                 {'astronaut': 'Alex Vogel', 'date_of_birth': date(1994, 11, 15)},
-                 {'astronaut': 'Chris Beck', 'date_of_birth': date(1999, 8, 2)},
-                 {'astronaut': 'Beth Johansen', 'date_of_birth': date(2006, 5, 9)},
-                 {'astronaut': 'Mark Watney', 'date_of_birth': date(1994, 10, 12)}]}
+        'crew': [
+            {'astronaut': 'Melissa Lewis', 'date_of_birth': date(1995, 7, 15)},
+            {'astronaut': 'Rick Martinez', 'date_of_birth': date(1996, 1, 21)},
+            {'astronaut': 'Alex Vogel', 'date_of_birth': date(1994, 11, 15)},
+            {'astronaut': 'Chris Beck', 'date_of_birth': date(1999, 8, 2)},
+            {'astronaut': 'Beth Johansen', 'date_of_birth': date(2006, 5, 9)},
+            {'astronaut': 'Mark Watney', 'date_of_birth': date(1994, 10, 12)}]}
 
 
 class Encoder(json.JSONEncoder):

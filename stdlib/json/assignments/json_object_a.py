@@ -48,7 +48,6 @@ Tests:
 import json
 from dataclasses import dataclass
 
-
 FILE = r'_temporary.json'
 
 DATA = """
@@ -85,7 +84,6 @@ class Versicolor(Iris):
 
 result: list = []
 
-
 # Solution 1
 for iris in json.loads(DATA):
     species = iris.pop('species')
@@ -101,14 +99,12 @@ for iris in json.loads(DATA):
 
     result.append(cls(**iris))
 
-
 # Solution 2
 for row in json.loads(DATA):
     species = row.pop('species').capitalize()
     cls = globals()[species]
     iris = cls(**row)
     result.append(iris)
-
 
 # Solution 3
 result = [iris(**row)

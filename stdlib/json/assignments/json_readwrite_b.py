@@ -57,10 +57,8 @@ with open(FILE, mode='w') as file:
 
 result: list = []
 
-
 # Solution
 import json
-
 
 with open(FILE) as file:
     data = json.load(file)

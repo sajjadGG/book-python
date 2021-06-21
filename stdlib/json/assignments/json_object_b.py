@@ -53,7 +53,6 @@ Tests:
 
 import requests
 
-
 DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/github-users.json'
 DATA = requests.get(DATA).json()
 result: list = []
@@ -101,7 +100,6 @@ class User:
 
 
 result = [User(**data) for data in DATA]
-
 
 # Solution 2
 from dataclasses import dataclass
