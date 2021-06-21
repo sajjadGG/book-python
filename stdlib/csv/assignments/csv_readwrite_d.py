@@ -5,7 +5,7 @@
 * Time: 8 min
 
 English:
-    1. Using `csv.DictWriter()` write variable schema data to CSV file
+    1. Using `csv.DictWriter()` write variable schema data
     2. `fieldnames` must be automatically generated from `DATA`
     3. Non functional requirements:
         a. All fields must be enclosed by double quote `"` character
@@ -16,7 +16,7 @@ English:
     4. Run doctests - all must succeed
 
 Polish:
-    1. Za pomocą `csv.DictWriter()` zapisz do pliku CSV dane o zmiennej strukturze
+    1. Za pomocą `csv.DictWriter()` zapisz dane o zmiennej strukturze
     2. `fieldnames` musi być generowane automatycznie na podstawie `DATA`
     3. Wymagania niefunkcjonalne:
         a. Wszystkie pola muszą być otoczone znakiem cudzysłowu `"`
@@ -55,15 +55,12 @@ DATA = [{'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
         {'Sepal width': 2.8, 'Petal length': 4.1, 'Species': 'versicolor'},
         {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'}]
 
-
 # Solution
 from csv import DictWriter, QUOTE_ALL
-
 
 fieldnames = set()
 for row in DATA:
     fieldnames.update(row.keys())
-
 
 with open(FILE, mode='w', encoding='utf-8') as file:
     data = DictWriter(

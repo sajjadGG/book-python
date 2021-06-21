@@ -60,6 +60,7 @@ class Astronaut:
         self.lastname = lastname
         self.missions = list(missions) if missions else []
 
+
 class Mission:
     def __init__(self, year, name):
         self.year = year
@@ -78,7 +79,6 @@ CREW = [
 ]
 
 result: list = []
-
 
 # Solution
 for member in CREW:

@@ -6,8 +6,10 @@
 
 English:
     1. Using `csv.DictWriter()` save `DATA` to file
-    2. Open file in your spreadsheet program like Microsoft Excel / Libre Office / Numbers etc.
-    3. Open file in simple in your IDE and simple text editor (like Notepad, vim, gedit)
+    2. Open file in your spreadsheet program like:
+       Microsoft Excel, Libre Office or Numbers etc.
+    3. Open file in simple in your IDE and simple text editor like:
+       Notepad, vim, gedit
     4. Non functional requirements:
         a. All fields must be enclosed by double quote `"` character
         b. Use `,` to separate columns
@@ -16,8 +18,10 @@ English:
 
 Polish:
     1. Za pomocą `csv.DictWriter()` zapisz `DATA` do pliku
-    2. Spróbuj otworzyć plik w arkuszu kalkulacyjnym tj. Microsoft Excel / Libre Office / Numbers itp
-    3. Spróbuj otworzyć plik w IDE i prostym edytorze tekstu tj. Notepad, vim lub gedit
+    2. Spróbuj otworzyć plik w arkuszu kalkulacyjnym tj.
+       Microsoft Excel, Libre Office lub Numbers itp
+    3. Spróbuj otworzyć plik w IDE i prostym edytorze tekstu tj.
+       Notepad, vim lub gedit
     4. Wymagania niefunkcjonalne:
         a. Wszystkie pola muszą być otoczone znakiem cudzysłowu `"`
         b. Użyj `,` do oddzielenia kolumn
@@ -50,10 +54,8 @@ DATA = [{'firstname': 'Jan', 'lastname': 'Twardowski'},
         {'firstname': 'Ivan', 'lastname': 'Ivanovic'},
         {'firstname': 'Melissa', 'lastname': 'Lewis'}]
 
-
 # Solution
 from csv import DictWriter, QUOTE_ALL
-
 
 with open(FILE, mode='w') as file:
     data = DictWriter(file, fieldnames=['firstname', 'lastname'],

@@ -65,7 +65,6 @@ DATA = [Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
         Iris(6.3, 2.9, 5.6, 1.8, 'virginica'),
         Iris(6.4, 3.2, 4.5, 1.5, 'versicolor')]
 
-
 # Solution
 data = [vars(iris) for iris in DATA]
 header = data[0].keys()
