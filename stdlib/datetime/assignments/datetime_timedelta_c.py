@@ -2,7 +2,7 @@
 * Assignment: Datetime Timedelta Period
 * Complexity: easy
 * Lines of code: 2 lines
-* Time: 8 min
+* Time: 3 min
 
 English:
     1. Given period is the time between Gagarin launch and Armstrong first step on the Moon:

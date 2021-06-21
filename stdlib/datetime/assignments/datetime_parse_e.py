@@ -2,7 +2,7 @@
 * Assignment: Datetime Parse Logs
 * Complexity: medium
 * Lines of code: 13 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
     1. Iterate over `DATA` with Apollo 11 timeline [1]
@@ -70,10 +70,9 @@ Tests:
      {'when': datetime.datetime(1969, 7, 24, 16, 50, 35), 'level': 'WARNING', 'message': 'Splashdown (went to apex-down)'},
      {'when': datetime.datetime(1969, 7, 24, 17, 29), 'level': 'INFO', 'message': 'Crew egress'}]
 """
-
-
+from datetime import date
 from datetime import datetime
-
+from datetime import time
 
 DATA = """1969-07-14, 21:00:00, INFO, Terminal countdown started
 1969-07-16, 13:31:53, WARNING, S-IC engine ignition (#5)
@@ -111,16 +110,11 @@ result = ...
 result = []
 
 for line in DATA.splitlines():
-    date, time, level, message = line.split(', ', maxsplit=3)
-    date = datetime.strptime(date, '%Y-%m-%d')
-
-    try:
-        time = datetime.strptime(time, '%H:%M:%S').time()
-    except ValueError:
-        time = datetime.strptime(time, '%H:%M').time()
-
+    d, t, lvl, msg = line.strip().split(', ', maxsplit=3)
+    d = date.fromisoformat(d)
+    t = time.fromisoformat(t)
     result.append({
-        'when': datetime.combine(date, time),
-        'level': level,
-        'message': message,
+        'when': datetime.combine(d, t),
+        'level': lvl,
+        'message': msg,
     })

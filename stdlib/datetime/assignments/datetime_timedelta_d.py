@@ -2,7 +2,7 @@
 * Assignment: Datetime Timedelta Dict
 * Complexity: easy
 * Lines of code: 13 lines
-* Time: 13 min
+* Time: 5 min
 
 English:
     1. `DATA` is the time between Gagarin launch and Armstrong first step on the Moon

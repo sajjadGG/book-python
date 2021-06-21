@@ -2,7 +2,7 @@
 * Assignment: Datetime Timedelta Age
 * Complexity: easy
 * Lines of code: 6 lines
-* Time: 11 min
+* Time: 5 min
 
 English:
     1. How old was Yuri Gagarin when he was launched to space?
