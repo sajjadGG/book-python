@@ -17,6 +17,12 @@ Rationale
     * ``r'hello\nworld'`` - text ``hello``, then ``\n`` and ``world``
 
 
+Type Annotation
+---------------
+* ``re.Pattern``
+* ``re.Match``
+
+
 Identifiers
 -----------
 Identifiers specifies what to find.

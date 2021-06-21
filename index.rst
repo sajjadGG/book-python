@@ -162,6 +162,15 @@ Machine Learning
     machine-learning/_index.rst
 
 
+GUI
+***
+.. toctree::
+    :maxdepth: 1
+    :caption: GUI
+
+    gui/tkinter.rst
+
+
 Blogposts
 *********
 .. toctree::

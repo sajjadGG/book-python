@@ -9,17 +9,18 @@ About
     about/entrytest.rst
 
 
-Annotation
-**********
+Type Annotation
+***************
 .. toctree::
     :maxdepth: 1
-    :caption: Annotation
+    :caption: Type Annotation
 
-    annotation/type.rst
-    annotation/sequence.rst
-    annotation/mapping.rst
-    annotation/function.rst
-    annotation/oop.rst
+    type-annotation/type.rst
+    type-annotation/sequence.rst
+    type-annotation/mapping.rst
+    type-annotation/function.rst
+    type-annotation/oop.rst
+    type-annotation/others.rst
 
 
 Datetime and Timezones
@@ -164,25 +165,6 @@ Looping
     looping/else.rst
 
 
-Type Annotations
-****************
-.. toctree::
-    :maxdepth: 1
-    :caption: Type Annotations
-
-    type-annotation/about.rst
-    type-annotation/vars.rst
-    type-annotation/sequences.rst
-    type-annotation/mapping.rst
-    type-annotation/special.rst
-    type-annotation/classes.rst
-    type-annotation/functions-methods.rst
-    type-annotation/aliases.rst
-    type-annotation/introspection.rst
-    type-annotation/checking.rst
-    type-annotation/annotate-existing.rst
-
-
 Object Oriented Programming
 ***************************
 .. toctree::
@@ -231,15 +213,6 @@ Operating System
     operating-system/argparse.rst
     operating-system/os.rst
     operating-system/pathlib.rst
-
-
-GUI
-***
-.. toctree::
-    :maxdepth: 1
-    :caption: GUI
-
-    gui/tkinter.rst
 
 
 References
