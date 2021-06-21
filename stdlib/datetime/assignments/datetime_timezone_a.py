@@ -118,7 +118,6 @@ Tests:
 
 from pytz import timezone
 
-
 # timezone in UTC
 utc: timezone = ...
 
@@ -144,7 +143,7 @@ auckland: timezone = ...
 new_york: timezone = ...
 
 # timezone in Cape Canaveral, FL, USA
-cape_canaveral: timezone \
+cape_canaveral: timezone = ...
 
 # timezone in Houston, TX, USA= ...
 houston: timezone = ...
@@ -157,7 +156,6 @@ north_pole: timezone = ...
 
 # timezone in South Pole
 south_pole: timezone = ...
-
 
 # Solution
 utc = timezone('UTC')
@@ -174,4 +172,3 @@ houston = timezone('America/Chicago')
 bajkonur = timezone('Asia/Almaty')
 north_pole = timezone('Arctic/Longyearbyen')
 south_pole = timezone('Europe/Warsaw')
-

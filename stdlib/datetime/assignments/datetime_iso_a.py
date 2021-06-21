@@ -24,12 +24,10 @@ Tests:
 
 from datetime import datetime
 
-
 DATA = datetime(1969, 7, 21, 2, 56, 15)
 
 # datetime: DATA in ISO-8601 format: '1969-07-21T02:56:15'
 result = ...
-
 
 # Solution
 result = DATA.isoformat()

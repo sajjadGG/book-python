@@ -33,7 +33,6 @@ Tests:
 
 from datetime import datetime
 
-
 DATA = [
     '1957-10-04 19:28:34',  # Sputnik launch (first satellite in space)
     '1961-04-12 06:07',  # Gagarin launch (first human in space)

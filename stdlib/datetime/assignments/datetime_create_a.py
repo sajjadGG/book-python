@@ -54,7 +54,6 @@ t = ...
 # datetime: representing April 12th, 1961 6:07 a.m.
 dt = ...
 
-
 # Solution
 d = date(1961, 4, 12)
 t = time(6, 7)

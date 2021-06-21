@@ -2,10 +2,11 @@
 * Assignment: Datetime Timedelta Period
 * Complexity: easy
 * Lines of code: 2 lines
-* Time: 3 min
+* Time: 5 min
 
 English:
-    1. Given period is the time between Gagarin launch and Armstrong first step on the Moon:
+    1. Given period is the time between Gagarin launch and Armstrong
+       first step on the Moon:
         * 8 years
         * 3 months
         * 8 days
@@ -19,7 +20,8 @@ English:
     4. Run doctests - all must succeed
 
 Polish:
-    1. Podany jest czas, który upłynął między startem Gagarina a pierwszym krokiem Armstronga na Księżycu:
+    1. Podany jest czas, który upłynął między startem Gagarina
+       a pierwszym krokiem Armstronga na Księżycu:
         * 8 lat
         * 3 miesięcy
         * 8 dni
@@ -40,11 +42,10 @@ Tests:
     'Variable `result` has invalid type, must be a timedelta'
 
     >>> result
-    datetime.timedelta(days=3022, seconds=24609)
+    datetime.timedelta(days=3022, seconds=10209)
 """
 
 from datetime import timedelta
-
 
 SECOND = 1
 MINUTE = 60 * SECOND
@@ -63,7 +64,6 @@ YEAR = 365.2425 * DAY
 # timedelta: representing given period
 result = ...
 
-
 # Solution
-period = int(8*YEAR + 3*MONTH + 9*DAY + 49*MINUTE + 15*SECOND)
+period = int(8*YEAR + 3*MONTH + 8*DAY + 20*HOUR + 49*MINUTE + 15*SECOND)
 result = timedelta(seconds=period)

@@ -52,7 +52,6 @@ gagarin_age = ...
 # int: Armstrong's age when he made a first step on the Moon
 armstrong_age = ...
 
-
 # Solution
 g = GAGARIN_BIRTHDAY
 a = ARMSTRONG_BIRTHDAY

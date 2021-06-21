@@ -24,13 +24,10 @@ Tests:
 
 from datetime import datetime
 
-
 DATA = 'July 21, 1969 2:56:15 AM'
 
 # datetime: DATA from US long format
 result = ...
 
-
 # Solution
 result = datetime.strptime(DATA, '%B %d, %Y %H:%M:%S %p')
-

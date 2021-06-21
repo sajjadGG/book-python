@@ -5,7 +5,8 @@
 * Time: 5 min
 
 English:
-    1. `DATA` is the time between Gagarin launch and Armstrong first step on the Moon
+    1. `DATA` is the time between Gagarin launch and Armstrong
+       first step on the Moon
     2. Assume:
         a. year = 365.2425 days
         b. month = 30.436875 days
@@ -13,7 +14,8 @@ English:
     4. Run doctests - all must succeed
 
 Polish:
-    1. `DATA`, to czas który upłynął między startem Gagarina a pierwszym krokiem Armstronga na Księżycu
+    1. `DATA`, to czas który upłynął między startem Gagarina
+       a pierwszym krokiem Armstronga na Księżycu
     2. Uwzględnij założenie:
         a. rok = 365.2425 dni
         b. miesiąc = 30.436875 dni
@@ -40,12 +42,16 @@ Tests:
     >>> assert all(type(value) is int for value in result.values()), \
     'All elements in `result` must be an int'
 
-    >>> result
-    {'years': 8, 'months': 3, 'days': 9, 'hours': 6, 'minutes': 50, 'seconds': 9}
+    >>> result  # doctest: +NORMALIZE_WHITESPACE
+    {'years': 8,
+     'months': 3,
+     'days': 9,
+     'hours': 6,
+     'minutes': 50,
+     'seconds': 9}
 """
 
 from datetime import timedelta
-
 
 SECOND = 1
 MINUTE = 60 * SECOND
@@ -56,7 +62,6 @@ YEAR = 365.2425 * DAY
 
 DATA = timedelta(days=3022, seconds=24609)
 
-
 # dict[str, int]
 result = {
     'years': ...,
@@ -66,7 +71,6 @@ result = {
     'minutes': ...,
     'seconds': ...,
 }
-
 
 # Solution
 years, seconds = divmod(DATA.total_seconds(), YEAR)
