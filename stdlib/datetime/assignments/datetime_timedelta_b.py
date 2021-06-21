@@ -34,8 +34,7 @@ Tests:
     39
 """
 
-from datetime import datetime, date
-
+from datetime import date, datetime
 
 DAY = 1
 MONTH = 30.436875 * DAY

@@ -31,8 +31,7 @@ Tests:
     'Variable `t` has invalid type, must be a time'
 """
 
-from datetime import datetime, date, time
-
+from datetime import date, datetime, time
 
 # datetime: representing current moment
 dt = ...

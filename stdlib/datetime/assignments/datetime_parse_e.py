@@ -70,9 +70,7 @@ Tests:
      {'when': datetime.datetime(1969, 7, 24, 16, 50, 35), 'level': 'WARNING', 'message': 'Splashdown (went to apex-down)'},
      {'when': datetime.datetime(1969, 7, 24, 17, 29), 'level': 'INFO', 'message': 'Crew egress'}]
 """
-from datetime import date
-from datetime import datetime
-from datetime import time
+from datetime import date, datetime, time
 
 DATA = """1969-07-14, 21:00:00, INFO, Terminal countdown started
 1969-07-16, 13:31:53, WARNING, S-IC engine ignition (#5)

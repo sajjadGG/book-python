@@ -42,8 +42,7 @@ Tests:
     '1961-04-12 06:07:00'
 """
 
-from datetime import datetime, date, time
-
+from datetime import date, datetime, time
 
 # date: representing April 12th, 1961 6:07 a.m.
 d = ...

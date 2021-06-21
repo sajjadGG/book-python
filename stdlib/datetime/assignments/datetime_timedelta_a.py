@@ -32,8 +32,7 @@ Tests:
     8.3
 """
 
-from datetime import datetime, timedelta
-
+from datetime import datetime
 
 DAY = 1
 MONTH = 30.436875 * DAY
