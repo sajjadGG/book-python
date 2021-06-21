@@ -29,9 +29,12 @@ Tests:
     >>> type(result)
     <class 'list'>
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'Sepal Length': '5.8', 'Sepal Width': '2.7', 'Petal Length': '5.1', 'Petal Width': '1.9', 'Species': 'virginica'},
-     {'Sepal Length': '5.1', 'Sepal Width': '3.5', 'Petal Length': '1.4', 'Petal Width': '0.2', 'Species': 'setosa'},
-     {'Sepal Length': '5.7', 'Sepal Width': '2.8', 'Petal Length': '4.1', 'Petal Width': '1.3', 'Species': 'versicolor'}]
+    [{'Sepal Length': '5.8', 'Sepal Width': '2.7', 'Petal Length': '5.1',
+      'Petal Width': '1.9', 'Species': 'virginica'},
+     {'Sepal Length': '5.1', 'Sepal Width': '3.5', 'Petal Length': '1.4',
+      'Petal Width': '0.2', 'Species': 'setosa'},
+     {'Sepal Length': '5.7', 'Sepal Width': '2.8', 'Petal Length': '4.1',
+      'Petal Width': '1.3', 'Species': 'versicolor'}]
     >>> from os import remove
     >>> remove(FILE)
 """

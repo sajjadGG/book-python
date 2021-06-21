@@ -66,7 +66,6 @@ Tests:
 
 import sqlite3
 
-
 DATABASE = r':memory:'
 
 DATA = [
@@ -130,7 +129,6 @@ SQL_SELECT = """
 """
 
 result: list = []
-
 
 # Solution
 with sqlite3.connect(DATABASE) as connection:

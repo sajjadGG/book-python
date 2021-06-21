@@ -6,7 +6,8 @@
 
 English:
     1. Read data from `FILE` (don't use `csv` or `pandas` library)
-    2. Replace species from `int` to `str` according to `SPECIES` conversion table
+    2. Replace species from `int` to `str` according to `SPECIES`
+       conversion table
     3. Connect to the `sqlite3` using context manager (`with`)
     4. Create table `iris` and write data to it
     5. Select data and add them to `result: list[dict]`
@@ -48,7 +49,6 @@ Tests:
 """
 
 import sqlite3
-
 
 DATABASE = r':memory:'
 FILE = r'_temporary.csv'
@@ -92,13 +92,10 @@ SQL_SELECT = """
     FROM iris
     ORDER BY species DESC, id ASC"""
 
-
 with open(FILE, mode='w') as file:
     file.write(DATA)
 
-
 result: list = []
-
 
 # Solution
 data = []
@@ -113,7 +110,6 @@ with open(FILE) as file:
             'petal_width': float(line[3]),
             'species': SPECIES[int(line[4])],
         })
-
 
 with sqlite3.connect(DATABASE) as db:
     db.execute(SQL_CREATE_TABLE)

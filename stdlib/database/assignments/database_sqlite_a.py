@@ -133,7 +133,6 @@ SQL_SELECT = 'SELECT * FROM logs ORDER BY datetime DESC'
 
 result: list = []
 
-
 # Solution
 data = []
 
@@ -147,11 +146,9 @@ for line in DATA.splitlines():
     dt = datetime.combine(date, time)
     data.append((dt, level, message))
 
-
 with sqlite3.connect(DATABASE) as db:
     db.execute(SQL_CREATE_TABLE)
     db.executemany(SQL_INSERT, data)
 
     for row in db.execute(SQL_SELECT):
         result.append(row)
-
