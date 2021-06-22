@@ -29,8 +29,15 @@ Protocol
 >>>
 >>>
 >>> with ContextManager() as cm:
-...     print('Do something with `cm`')
-Do something with `cm`
+...     print('Do something with: cm')
+Do something with: cm
+
+
+Type Annotations
+----------------
+* ``contextlib.AbstractContextManager``
+* ``contextlib.AbstractAsyncContextManager``
+
 
 Example
 -------

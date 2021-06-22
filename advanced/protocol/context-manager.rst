@@ -20,19 +20,23 @@ Protocol
 * ``__enter__(self) -> self``
 * ``__exit__(self, *args) -> None``
 
-.. code-block:: python
+>>> class ContextManager:
+...     def __enter__(self):
+...         return self
+...
+...     def __exit__(self, *args):
+...         return None
+>>>
+>>>
+>>> with ContextManager() as cm:
+...     print('Do something with: cm')
+Do something with: cm
 
-    class ContextManager:
-        def __enter__(self):
-            return self
 
-        def __exit__(self, *args):
-            return None
-
-.. code-block:: python
-
-    with ContextManager as cm:
-        ...
+Type Annotations
+----------------
+* ``contextlib.AbstractContextManager``
+* ``contextlib.AbstractAsyncContextManager``
 
 
 Example

@@ -1,16 +1,5 @@
-ContextManager
---------------
-* ``contextlib.AbstractContextManager``
-* ``contextlib.AbstractAsyncContextManager``
-
-
-Async
------
-* ``collections.abc.Awaitable``
-* ``collections.abc.Coroutine``
-* ``collections.abc.AsyncIterable``
-* ``collections.abc.AsyncIterator``
-* ``collections.abc.AsyncGenerator``
+Others
+======
 
 
 Iterator
@@ -41,36 +30,8 @@ Callable
 ...     pass
 
 
-
-Overload
---------
-* Since Python 3.8: :pep:`589` -- TypedDict: Type Hints for Dictionaries with a Fixed Set of Keys
-* The ``@overload`` decorator allows describing functions and methods that support multiple different combinations of argument types.
-* A series of @overload-decorated definitions must be followed by exactly one non-@overload-decorated definition (for the same function/method)
-* The @overload-decorated definitions are for the benefit of the type checker only, since they will be overwritten by the non-@overload-decorated definition
-
->>> @overload
->>> def process(response: None) -> None:
-...     ...
->>>
->>> @overload
->>> def process(response: int) -> tuple[int, str]:
-...     ...
->>>
->>> @overload
->>> def process(response: bytes) -> str:
-...     ...
->>>
->>> def process(response):
-...     <actual implementation>
-
-
-Type Checking
-=============
-
-
-``MyPy``
---------
+Type Checking - MyPy
+--------------------
 * http://mypy-lang.org/
 * https://github.com/python/mypy
 
@@ -87,8 +48,8 @@ Type Checking
     strict_optional = True
 
 
-``PyType``
-----------
+Type Checking - PyType
+----------------------
 * https://github.com/google/pytype
 
 .. code-block:: console
@@ -97,15 +58,12 @@ Type Checking
     $ pytype -V 3.7 FILE
 
 
-``pyre-check``
---------------
-
-Annotating Existing Code
-========================
+Type Checking - pyre-check
+--------------------------
 
 
-``PyAnnotate``
---------------
+Annotating Existing - PyAnnotate
+--------------------------------
 * http://mypy-lang.blogspot.com/2017/11/dropbox-releases-pyannotate-auto.html
 
 The -w flag means "go ahead, update the file":
@@ -116,8 +74,8 @@ The -w flag means "go ahead, update the file":
     $ pyannotate -w FILE
 
 
-``monkeytype``
---------------
+Annotating Existing - monkeytype
+--------------------------------
 * https://instagram-engineering.com/let-your-code-type-hint-itself-introducing-open-source-monkeytype-a855c7284881
 
 .. code-block:: console
@@ -132,14 +90,15 @@ Type Vars
 =========
 >>> from typing import TypeVar, Iterable, Tuple
 >>>
+>>>
 >>> T = TypeVar('T', int, float, complex)
 >>> Vector = Iterable[tuple[T, T]]
 >>>
->>> def product(v: Vector[T]) -> T:
-...     return sum(x*y for x, y in v)
 >>>
->>> def dilate(v: Vector[T], scale: T) -> Vector[T]:
-...     return ((x * scale, y * scale) for x, y in v)
+>>> def product(data: Vector[T]) -> T:
+...     return sum(x*y for x,y in data)
 >>>
->>> vec = []  # type: Vector[float]
+>>>
+>>> def dilate(data: Vector[T], scale: T) -> Vector[T]:
+...     return ((x*scale, y*scale) for x,y in data)
 

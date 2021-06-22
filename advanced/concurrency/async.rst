@@ -26,6 +26,16 @@ Rationale
     * Using Queues and Threading
     * Using Futures and Threading
 
+
+Type Annotations
+----------------
+* ``collections.abc.Awaitable``
+* ``collections.abc.Coroutine``
+* ``collections.abc.AsyncIterable``
+* ``collections.abc.AsyncIterator``
+* ``collections.abc.AsyncGenerator``
+
+
 Async Programming
 -----------------
 * Source: https://www.youtube.com/watch?v=F19R_M4Nay4
