@@ -115,6 +115,5 @@ with sqlite3.connect(DATABASE) as db:
     db.execute(SQL_CREATE_TABLE)
     db.executemany(SQL_INSERT, data)
     db.row_factory = sqlite3.Row
-
     for row in db.execute(SQL_SELECT):
         result.append(dict(row))

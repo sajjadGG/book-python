@@ -88,7 +88,7 @@ Tests:
 """
 
 import sqlite3
-from datetime import datetime
+from datetime import date, datetime, time
 
 DATABASE = r':memory:'
 
@@ -134,21 +134,19 @@ SQL_SELECT = 'SELECT * FROM logs ORDER BY datetime DESC'
 result: list = []
 
 # Solution
+result: list = []
 data = []
 
 for line in DATA.splitlines():
-    date, time, level, message = line.strip().split(', ', maxsplit=3)
-    date = datetime.fromisoformat(date).date()
-    try:
-        time = datetime.strptime(time, '%H:%M:%S').time()
-    except ValueError:
-        time = datetime.strptime(time, '%H:%M').time()
-    dt = datetime.combine(date, time)
-    data.append((dt, level, message))
+    d,t,lvl,msg = line.strip().split(', ', maxsplit=3)
+    d = date.fromisoformat(d)
+    t = time.fromisoformat(t)
+    dt = datetime.combine(d,t)
+    data.append((dt, lvl, msg))
+
 
 with sqlite3.connect(DATABASE) as db:
     db.execute(SQL_CREATE_TABLE)
     db.executemany(SQL_INSERT, data)
-
     for row in db.execute(SQL_SELECT):
         result.append(row)

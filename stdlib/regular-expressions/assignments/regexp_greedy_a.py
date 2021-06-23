@@ -57,8 +57,6 @@ result = ...
 
 
 # Solution
-paragraphs = re.compile(r'<p>(.*?)</p>')
-
-for p in paragraphs.findall(DATA):
+for p in re.findall(r'<p>(.*?)</p>', DATA):
     if p.startswith('We choose'):
         result = p
