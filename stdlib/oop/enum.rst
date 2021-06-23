@@ -12,93 +12,128 @@ Rationale
 * ``IntFlag``
 
 
-Definition
-----------
-Defining ``enum``:
+Example
+-------
+>>> from enum import Enum
+>>>
+>>>
+>>> class Color(Enum):
+...     RED = '#00FF00'
+...     GREEN = '#00FF00'
+...     BLUE = '#0000FF'
 
-.. code-block:: python
+>>> from enum import Enum
+>>>
+>>>
+>>> class HTTPStatus(Enum):
+...     OK = 200
+...     CREATED = 201
+...     BAD_REQUEST = 400
+...     NOT_FOUND = 404
+...     INTERNAL_ERROR = 500
 
-    from enum import Enum
+>>> from enum import Enum
+>>>
+>>>
+>>> class Status(Enum):
+...     ALIVE = 'alive'
+...     DEAD = 'dead'
 
 
-    class Color(Enum):
-        RED = '#00FF00'
-        GREEN = '#00FF00'
-        BLUE = '#0000FF'
-
-
-    color = Color.RED
-
-Defining ``enum``:
-
-.. code-block:: python
-
-    from enum import Enum
-
-    class Status(Enum):
-        ALIVE = 'alive'
-        DEAD = 'dead'
+Use Case
+--------
+>>> from enum import Enum
+>>>
+>>>
+>>> class Color(Enum):
+...     RED = '#00FF00'
+...     GREEN = '#00FF00'
+...     BLUE = '#0000FF'
+>>>
+>>>
+>>> def draw_line(A:tuple[int,int], B:tuple[int,int], color: Color):
+...     print(f'Drawing line from {A} to {B} with color {color.value}')
+>>>
+>>>
+>>> draw_line(A=(0,0), B=(3,5), color=Color.RED)
+Drawing line from (0, 0) to (3, 5) with color #00FF00
 
 
 Accessing names and values
 --------------------------
-Accessing names and values:
-
-.. code-block:: python
-
-    from enum import Enum
-
-    class Color(Enum):
-        RED = '#FF0000'
-        GREEN = '#00FF00'
-        BLUE = '#0000FF'
-
-
-    print(Color.RED)        # Color.RED
-    print(Color.RED.name)   # RED
-    print(Color.RED.value)  # '#FF0000'
-
-.. code-block:: python
-
-    from enum import Enum
+>>> from enum import Enum
+>>>
+>>>
+>>> class Color(Enum):
+...     RED = '#00FF00'
+...     GREEN = '#00FF00'
+...     BLUE = '#0000FF'
+>>>
+>>>
+>>> Color.RED
+Color.RED
+>>> Color.RED.name
+RED
+>>> Color.RED.value
+'#FF0000'
 
 
-    class Status(Enum):
-        FULL_HEALTH = 100
-        DEAD = 0
+Switch
+------
+>>> from enum import Enum
+>>>
+>>>
+>>> class Color(Enum):
+...     RED = '#00FF00'
+...     GREEN = '#00FF00'
+...     BLUE = '#0000FF'
+>>>
+>>>
+>>> mycolor = Color('#00FF00')
+>>>
+>>> mycolor.name
+'Green'
+>>> mycolor.value
+'#00FF00'
 
 
-    hit_points = 100
-    status = Status(hit_points)
-    print(status)
-    # Status.FULL_HEALTH
+Identity Check
+--------------
+>>> from enum import Enum
+>>>
+>>>
+>>> class Color(Enum):
+...     RED = '#00FF00'
+...     GREEN = '#00FF00'
+...     BLUE = '#0000FF'
+>>>
+>>>
+>>> mycolor = Color('#00FF00')
+>>>
+>>> mycolor is Color.RED
+False
+>>> mycolor is Color.GREEN
+True
 
 
-    hit_points = 0
-    status = Status(hit_points)
-    print(status)
-    # Status.DEAD
-
-
-Iterating over ``Enum``
------------------------
+Iterating
+---------
 Iterating over ``Enum``:
 
-.. code-block:: python
-
-    from enum import Enum
-
-    class Color(Enum):
-        RED = '#00FF00'
-        GREEN = '#00FF00'
-        BLUE = '#0000FF'
-
-    for color in Color:
-        print(color)
-
-    # Color.RED
-    # Color.GREEN
-    # Color.BLUE
+>>> from enum import Enum
+>>>
+>>>
+>>> class Color(Enum):
+...     RED = '#00FF00'
+...     GREEN = '#00FF00'
+...     BLUE = '#0000FF'
+>>>
+>>>
+>>> for color in Color:
+...     print(color)
+Color.RED
+Color.GREEN
+Color.BLUE
 
 
 Identity check
@@ -112,204 +147,142 @@ Identity check:
     color is Color.GREEN         # True
 
 
-
-Use cases
----------
-* https://docs.python.org/3/library/os.html#os.stat
-
-``enum`` - Example usage:
-
-.. code-block:: python
-
-    from enum import Enum
-
-    class Permission(Enum):
-        READ_WRITE_EXECUTE = 0b111
-        READ_WRITE = 0b110
-        READ_EXECUTE = 0b101
-        READ = 0b100
-        WRITE_EXECUTE = 0b011
-        WRITE = 0b010
-        EXECUTE = 0b001
-        NONE = 0b000
-
-.. code-block:: python
-
-    import os
-    from enum import Enum
-
-    class Permission(Enum):
-        READ_WRITE_EXECUTE = 0b111
-        READ_WRITE = 0b110
-        READ_EXECUTE = 0b101
-        READ = 0b100
-        WRITE_EXECUTE = 0b011
-        WRITE = 0b010
-        EXECUTE = 0b001
-        NONE = 0b000
-
-
-    os.stat('/tmp/myfile.txt')
-    # os.stat_result(
-    #   st_mode=33260,
-    #   st_ino=44792722,
-    #   st_dev=16777222,
-    #   st_nlink=1,
-    #   st_uid=501,
-    #   st_gid=0,
-    #   st_size=2930,
-    #   st_atime=1587481434,
-    #   st_mtime=1587481422,
-    #   st_ctime=1587484635)
-
-    permissions = os.stat('/tmp/myfile.txt').st_mode
-
-    print(f'dec={permissions}, oct={oct(permissions)}, bin={bin(permissions)}')
-    # dec=33260, oct=0o100754, bin=0b1000000111101100
-
-    *_, user, group, others = oct(permissions)
-
-    print(f'{user=} {group=} {others=}')
-    # user='7' group='5' others='4'
-
-    Permission(int(user))
-    # <Permission.READ_WRITE_EXECUTE: 7>
-
-    Permission(int(group))
-    # <Permission.READ_EXECUTE: 5>
-
-    Permission(int(others))
-    # <Permission.READ: 4>
-
-``enum`` - Example usage:
-
-.. code-block:: python
-
-    from enum import IntEnum
-
-    class IndexDrives(IntEnum):
-        """ This enum holds the index value of drive object entries
-        """
-        ControlWord = 0x6040
-        StatusWord = 0x6041
-        OperationMode = 0x6060
-
-
 Pattern Matching
 ----------------
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
 
-.. code-block:: python
-    :force:
+.. figure:: img/oop-enum-keycodes1.png
+.. figure:: img/oop-enum-keycodes2.png
 
-    request = 'GET 1.1 /index.html'
+Note, keycodes can vary depending on OS and programming language used [mskeycodes]_, [jskeycodes]_
 
-    match request.split():
-        case ['GET', version, uri]:
-            server.get(uri)
-        case ['POST', version, uri]:
-            server.post(uri)
-        case ['PUT', version, uri]:
-            server.put(uri)
-        case ['DELETE', version, uri]:
-            server.delete(uri)
+>>> int('0x1B', base=16)
+27
+>>> 0x1b
+27
+>>> hex(27)
+'0x1b'
 
-.. code-block:: python
-    :force:
+>>> from enum import Enum
+>>>
+>>>
+>>> class Key(Enum):
+...     ESC = 27            # 0x1B
+...     ARROW_LEFT = 37     # 0x25
+...     ARROW_UP = 38       # 0x26
+...     ARROW_RIGHT = 39    # 0x27
+...     ARROW_DOWN = 40     # 0x28
+>>>
+>>> # doctest: +SKIP
+... match keyboard.on_key_press():
+...     case Key.ESC:
+...         game.quit()
+...     case Key.ARROW_LEFT:
+...         game.move_left()
+...     case Key.ARROW_UP:
+...         game.move_up()
+...     case Key.ARROW_RIGHT:
+...         game.move_right()
+...     case Key.ARROW_DOWN:
+...         game.move_down()
+...     case _:
+...         raise ValueError(f'Unrecognized key')
 
-    def http_error(status):
-        match status:
-            case 400:
-                return 'Bad request'
-            case 401 | 403 | 404:
-                return 'Not allowed'
-            case 404:
-                return 'Not found'
-            case 418:
-                return "I'm a teapot"
-            case _:
-                return 'Unexpected status'
 
-.. code-block:: python
-    :force:
+Use Case - Health
+-----------------
+>>> from enum import Enum
+>>>
+>>>
+>>> class Status(Enum):
+...     FULL_HEALTH = 100
+...     DEAD = 0
+>>>
+>>>
+>>> hit_points = 100
+>>> status = Status(hit_points)
+>>> print(status)
+Status.FULL_HEALTH
+>>>
+>>>
+>>> hit_points = 0
+>>> status = Status(hit_points)
+>>> print(status)
+Status.DEAD
 
-    match hero.action():
-        case ['move', ('up'|'down'|'left'|'right') as direction, value]:
-            hero.move(direction, value)
-        case ['make_damage', value]:
-            hero.make_damage(value)
-        case ['take_damage', value]:
-            hero.take_damage(value)
 
-.. code-block:: python
-    :force:
+Use Case - Permission
+---------------------
+* ``r`` - read
+* ``w`` - write
+* ``x`` - execute
+* ``rwx`` - read, write, execute; 0b111 == 0o7
+* ``rw-`` - read, write; 0b110 == 0o6
+* ``r-x`` - read, execute; 0b101 == 0o5
+* ``r--`` - read only; 0b100 == 0o4
+* ``rwxr-xr--`` - user=(read,write,execute); group=(read,execute); others=(read)
 
-    from enum import Enum
+* https://docs.python.org/3/library/os.html#os.stat
 
-    class Key(Enum):
-        ESC = 27
-        ARROW_LEFT = 37
-        ARROW_UP = 38
-        ARROW_RIGHT = 39
-        ARROW_DOWN = 40
+>>> from enum import Enum
+>>> from pathlib import Path
+>>>
+>>>
+>>> class Permission(Enum):
+...     READ_WRITE_EXECUTE = 0b111
+...     READ_WRITE = 0b110
+...     READ_EXECUTE = 0b101
+...     READ = 0b100
+...     WRITE_EXECUTE = 0b011
+...     WRITE = 0b010
+...     EXECUTE = 0b001
+...     NONE = 0b000
+>>>
+>>> file = Path('_temporary.txt')
+>>> file.touch()
+>>> file.stat()  # doctest: +SKIP
+os.stat_result(st_mode=33188, st_ino=98480473, st_dev=16777220, st_nlink=1, st_uid=501, st_gid=20, st_size=0, st_atime=1624458230, st_mtime=1624458230, st_ctime=1624458230)
+>>>
+>>> permissions = file.stat().st_mode
+>>> decimal = int(permissions)
+>>> octal = oct(permissions)
+>>> binary = bin(permissions)
+>>> print(f'{decimal=}, {octal=}, {binary}')
+decimal=33188, octal='0o100644', 0b1000000110100100
+>>>
+>>> *_, user, group, others = oct(permissions)
+>>> print(f'{user=} {group=} {others=}')
+user='6' group='4' others='4'
+>>>
+>>> Permission(int(user))
+<Permission.READ_WRITE: 6>
+>>>
+>>> Permission(int(group))
+<Permission.READ: 4>
+>>>
+>>> Permission(int(others))
+<Permission.READ: 4>
+>>> file.unlink()
 
-    match keyboard.on_key_press():
-        case Key.ESC:
-            game.quit()
-        case Key.ARROW_LEFT:
-            game.move_left()
-        case Key.ARROW_UP:
-            game.move_up()
-        case Key.ARROW_RIGHT:
-            game.move_right()
-        case Key.ARROW_DOWN:
-            game.move_down()
-        case _:
-            raise ValueError(f'Unrecognized key')
 
-.. code-block:: python
-    :force:
-
-    from enum import Enum
-
-    class Color(Enum):
-        RED = 0
-        BLUE = 1
-        BLACK = 2
-
-    match color:
-        case Color.RED:
-            print('Soviet')
-        case Color.BLUE:
-            print('Allies')
-        case Color.BLACK:
-            print('Axis')
-
-.. code-block:: python
-    :force:
-
-    from enum import Enum
-
-    class SpaceMan(Enum):
-        NASA = 'Astronaut'
-        ESA = 'Astronaut'
-        ROSCOSMOS = 'Cosmonaut'
-        CNSA = 'Taikonaut'
-        ISRO = 'GaganYatri'
-
-    match agency:
-        case SpaceMan.NASA:
-            print('USA')
-        case SpaceMan.ESA:
-            print('Europe')
-        case SpaceMan.ROSCOSMOS:
-            print('Russia')
-        case SpaceMan.CNSA:
-            print('China')
-        case SpaceMan.ISRO:
-            print('India')
+Use Case - Drivers
+------------------
+>>> from enum import IntEnum
+>>>
+>>>
+>>> class IndexDrives(IntEnum):
+...     ControlWord = 0x6040
+...     StatusWord = 0x6041
+...     OperationMode = 0x6060
 
 
 Assignments
 -----------
 .. todo:: Create assignments
+
+
+References
+----------
+.. [mskeycodes] https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes?redirectedfrom=MSDN
+
+.. [jskeycodes] https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
