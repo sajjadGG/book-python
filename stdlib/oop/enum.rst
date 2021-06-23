@@ -56,26 +56,7 @@ Use Case
 >>>
 >>>
 >>> draw_line(A=(0,0), B=(3,5), color=Color.RED)
-Drawing line from (0, 0) to (3, 5) with color #00FF00
-
-
-Accessing names and values
---------------------------
->>> from enum import Enum
->>>
->>>
->>> class Color(Enum):
-...     RED = '#FF0000'
-...     GREEN = '#00FF00'
-...     BLUE = '#0000FF'
->>>
->>>
->>> Color.RED
-<Color.RED: '#FF0000'>
->>> Color.RED.name
-'RED'
->>> Color.RED.value
-'#FF0000'
+Drawing line from (0, 0) to (3, 5) with color #FF0000
 
 
 Switch
@@ -91,8 +72,12 @@ Switch
 >>>
 >>> mycolor = Color('#00FF00')
 >>>
+>>> mycolor
+<Color.GREEN: '#00FF00'>
+>>>
 >>> mycolor.name
 'GREEN'
+>>>
 >>> mycolor.value
 '#00FF00'
 
@@ -151,15 +136,16 @@ Pattern Matching
 ----------------
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
 
-.. figure:: img/oop-enum-keycodes1.png
-.. figure:: img/oop-enum-keycodes2.png
+.. figure:: img/oop-enum-keycodes.png
 
 Note, keycodes can vary depending on OS and programming language used [mskeycodes]_, [jskeycodes]_
 
 >>> int('0x1B', base=16)
 27
+>>>
 >>> 0x1b
 27
+>>>
 >>> hex(27)
 '0x1b'
 
@@ -200,15 +186,13 @@ Use Case - Health
 >>>
 >>>
 >>> hit_points = 100
->>> status = Status(hit_points)
->>> print(status)
-Status.FULL_HEALTH
+>>> Status(hit_points)
+<Status.FULL_HEALTH: 100>
 >>>
 >>>
 >>> hit_points = 0
->>> status = Status(hit_points)
->>> print(status)
-Status.DEAD
+>>> Status(hit_points)
+<Status.DEAD: 0>
 
 
 Use Case - Permission
@@ -242,7 +226,10 @@ Use Case - Permission
 >>> file = Path('_temporary.txt')
 >>> file.touch()
 >>> file.stat()  # doctest: +SKIP
-os.stat_result(st_mode=33188, st_ino=98480473, st_dev=16777220, st_nlink=1, st_uid=501, st_gid=20, st_size=0, st_atime=1624458230, st_mtime=1624458230, st_ctime=1624458230)
+os.stat_result(st_mode=33188, st_ino=98480473, st_dev=16777220,
+               st_nlink=1, st_uid=501, st_gid=20, st_size=0,
+               st_atime=1624458230, st_mtime=1624458230,
+               st_ctime=1624458230)
 >>>
 >>> permissions = file.stat().st_mode
 >>> decimal = int(permissions)
@@ -263,6 +250,7 @@ user='6' group='4' others='4'
 >>>
 >>> Permission(int(others))
 <Permission.READ: 4>
+>>>
 >>> file.unlink()
 
 
