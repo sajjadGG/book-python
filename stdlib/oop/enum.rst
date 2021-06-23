@@ -18,7 +18,7 @@ Example
 >>>
 >>>
 >>> class Color(Enum):
-...     RED = '#00FF00'
+...     RED = '#FF0000'
 ...     GREEN = '#00FF00'
 ...     BLUE = '#0000FF'
 
@@ -46,7 +46,7 @@ Use Case
 >>>
 >>>
 >>> class Color(Enum):
-...     RED = '#00FF00'
+...     RED = '#FF0000'
 ...     GREEN = '#00FF00'
 ...     BLUE = '#0000FF'
 >>>
@@ -65,15 +65,15 @@ Accessing names and values
 >>>
 >>>
 >>> class Color(Enum):
-...     RED = '#00FF00'
+...     RED = '#FF0000'
 ...     GREEN = '#00FF00'
 ...     BLUE = '#0000FF'
 >>>
 >>>
 >>> Color.RED
-Color.RED
+<Color.RED: '#FF0000'>
 >>> Color.RED.name
-RED
+'RED'
 >>> Color.RED.value
 '#FF0000'
 
@@ -84,7 +84,7 @@ Switch
 >>>
 >>>
 >>> class Color(Enum):
-...     RED = '#00FF00'
+...     RED = '#FF0000'
 ...     GREEN = '#00FF00'
 ...     BLUE = '#0000FF'
 >>>
@@ -92,7 +92,7 @@ Switch
 >>> mycolor = Color('#00FF00')
 >>>
 >>> mycolor.name
-'Green'
+'GREEN'
 >>> mycolor.value
 '#00FF00'
 
@@ -103,7 +103,7 @@ Identity Check
 >>>
 >>>
 >>> class Color(Enum):
-...     RED = '#00FF00'
+...     RED = '#FF0000'
 ...     GREEN = '#00FF00'
 ...     BLUE = '#0000FF'
 >>>
@@ -124,7 +124,7 @@ Iterating over ``Enum``:
 >>>
 >>>
 >>> class Color(Enum):
-...     RED = '#00FF00'
+...     RED = '#FF0000'
 ...     GREEN = '#00FF00'
 ...     BLUE = '#0000FF'
 >>>
@@ -237,6 +237,7 @@ Use Case - Permission
 ...     WRITE = 0b010
 ...     EXECUTE = 0b001
 ...     NONE = 0b000
+>>>
 >>>
 >>> file = Path('_temporary.txt')
 >>> file.touch()

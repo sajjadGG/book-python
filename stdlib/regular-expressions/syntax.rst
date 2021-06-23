@@ -172,6 +172,7 @@ Groups
 ------
 * Catch expression results
 * Can be named or positional
+* Note, that for backreference, must use raw-sting or double backslash
 
 Syntax:
 
@@ -182,7 +183,9 @@ Syntax:
 
 Backreference:
 
-    * ``(?P=name)``- backreferencing by group name
+    * ``\g<number>`` - backreferencing by group number
+    * ``\g<name>`` - backreferencing by group name
+    * ``(?P=name)`` - backreferencing by group name
     * ``\number`` - backreferencing by group number
 
 Examples:
