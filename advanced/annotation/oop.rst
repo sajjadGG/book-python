@@ -353,16 +353,16 @@ Forward References
         lastname: str
         friends: list['Astronaut']
 
-Since Python 3.10: :pep:`563` -- Postponed Evaluation of Annotations
+Since Python 3.11: :pep:`563` -- Postponed Evaluation of Annotations
 
 .. code-block:: python
 
     class Astronaut:
         firstname: str
         lastname: str
-        friends: list[Astronaut]   # This code will work only in Python 3.10
+        friends: list[Astronaut]   # This code will work only in Python 3.11
 
-In Python 3.7, 3.8 and 3.9 you can get this behavior by importing it from ``__future__``:
+In Python 3.7, 3.8, 3.9, 3.10 you can get this behavior by importing it from ``__future__``:
 
 .. code-block:: python
 

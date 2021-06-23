@@ -89,7 +89,7 @@ Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 >>> find('Python', 'o')
 4
 
-Since Python 3.10: :pep:`645` -- Allow writing optional types as x?
+Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
 
 >>> # doctest: +SKIP
 ... def find(text: str, what: str) -> int?:
@@ -156,7 +156,7 @@ Annotations
 >>> add.__annotations__
 {'a': <class 'int'>, 'b': <class 'int'>, 'return': <class 'int'>}
 
-Since Python 3.10: :pep:`563` -- Postponed Evaluation of Annotations
+Since Python 3.11: :pep:`563` -- Postponed Evaluation of Annotations
 
 >>> def add(a: int, b: int) -> int:
 ...     return a + b

@@ -88,7 +88,7 @@ Optional
 >>> lastname: str = 'Lewis'
 >>> age: Optional[float] = None
 
-Since Python 3.10: :pep:`645` -- Allow writing optional types as x?
+Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
 
 >>> age: int? = 1337                # doctest: +SKIP
 >>> age: int? = None                # doctest: +SKIP

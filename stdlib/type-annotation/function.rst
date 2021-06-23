@@ -117,7 +117,7 @@ Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
     find('Python', 'o')      # 4
     find('Python', 'x')      # None
 
-Since Python 3.10: :pep:`645` -- Allow writing optional types as x?
+Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
 
 .. code-block:: python
     :force:
@@ -196,7 +196,7 @@ Annotations
     #  'b': <class 'int'>,
     #  'return': <class 'int'>}
 
-Since Python 3.10: :pep:`563` -- Postponed Evaluation of Annotations
+Since Python 3.11: :pep:`563` -- Postponed Evaluation of Annotations
 
 .. code-block:: python
 
