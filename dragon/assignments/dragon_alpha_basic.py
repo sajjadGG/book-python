@@ -52,8 +52,8 @@ English:
         m. Make 25 points damage to the dragon
         n. Make 75 points damage to the dragon
     7. Non-functional requirements:
-        a. This is a simulation of development process
-        b. Trainer act as Product Owner with little technical knowledge
+        a. This assignment is a simulation of development process
+        b. Trainer acts as Product Owner with little technical knowledge
         c. You are the software engineer who need to decide and live with
            consequences of your choices
         d. Task is a narrative story telling to demonstrate OOP
@@ -62,14 +62,14 @@ English:
         f. You can introduce new fields, methods, functions, variables,
            constants, classes, objects, whatever you want
         g. Don't use modules form outside the Python Standard Library
-        h. Task is business requirements specification, not a technical
-           documentation, i.e. "what Dragon has to do, not how to do it"
-        i. You don't have to keep order of business specification while writing code
+        h. Task is business requirement specification, not a technical
+           documentation, i.e., "what Dragon has to do, not how to do it"
+        i. You don't have to keep order of specification while writing code
         j. This is `alpha` version, so no new functionality like
            negative position checking etc.
-        k. Do not read solution or any future iterations of this exercise
-        l. If you read future tasks, you will spoil fun and what
-           is the most important: learning
+        k. Do not read solution or any future iterations of this exercise;
+           if you read future tasks, you will spoil fun and
+           what is the most important learning
 
 Polish:
     0. Stwórz plik `dragon_alpha.py`
@@ -125,7 +125,7 @@ Polish:
         d. Zadanie jest tylko narracją do demonstracji OOP i dobrych
            praktyk programowania
         e. Wyliczona pozycja Smoka na końcu gry powinna być x=20, y=40
-        f. Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stały,
+        f. Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stałe,
            klasy, obiekty, co tylko chcesz
         g. Nie korzystaj z modułów spoza standardowej biblioteki Pythona
         h. Zadanie jest specyfikacją wymagań biznesowych, a nie dokumentacją
@@ -133,12 +133,13 @@ Polish:
         i. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
         j. Jest to wersja `alpha` więc bez dodatkowych funkcjonalności
            (np. sprawdzanie koordynatów, wychodzenia poza planszę itp.)
-        k. Nie przeglądaj rozwiązań ani treści kolejnych (przyszłych) części zadania.
-        l. Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i co najważniejsze naukę
+        k. Nie przeglądaj rozwiązań ani treści kolejnych części zadania;
+           jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę
+           i co najważniejsze naukę
 
 Hints:
     * `from random import randint`
-    * `randint` returns random integer between a and b (including both ends!)
+    * `randint()` returns random integer between a and b (including both ends!)
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
