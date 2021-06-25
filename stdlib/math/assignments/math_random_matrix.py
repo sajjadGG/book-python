@@ -48,15 +48,17 @@ Tests:
 """
 
 from random import seed, randint
+seed(0)
 
 
+result = []
+
+
+# Solution
 X_MAX = 16
 Y_MAX = 16
 X_INNER = 4
 Y_INNER = 4
-
-seed(0)
-result = []
 total = 0
 
 x_offset = int((X_MAX - X_INNER) / 2)
