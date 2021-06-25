@@ -221,80 +221,17 @@ Absolute value
 
 Assignments
 -----------
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/math_trigonometry.py
+    :caption: :download:`Solution <assignments/math_trigonometry.py>`
+    :end-before: # Solution
 
-Trigonometry
-^^^^^^^^^^^^
-* Assignment: Trigonometry
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 13 min
+.. literalinclude:: assignments/math_euclidean_2d.py
+    :caption: :download:`Solution <assignments/math_euclidean_2d.py>`
+    :end-before: # Solution
 
-English:
-    1. Read input (angle in degrees) from user
-    2. User will type ``int`` or ``float``
-    3. Print all trigonometric functions (sin, cos, tg, ctg)
-    4. If there is no value for this angle, raise an exception
-    5. Run doctests - all must succeed
-
-Polish:
-    1. Program wczytuje od użytkownika wielkość kąta w stopniach
-    2. Użytkownik zawsze podaje ``int`` albo ``float``
-    3. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
-    4. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta podnieś
-       stosowny wyjątek
-    5. Uruchom doctesty - wszystkie muszą się powieść
-
-Hints:
-    * ``input('Type angle [deg]: ')``
-
-Euclidean distance 2D
-^^^^^^^^^^^^^^^^^^^^^
-* Assignment: Euclidean distance 2D
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 13 min
-
-English:
-    1. Given are two points ``A: tuple[int, int]`` and ``B: tuple[int, int]``
-    2. Coordinates are in cartesian system
-    3. Points ``A`` and ``B`` are in two dimensional space
-    4. Calculate distance between points using Euclidean algorithm
-    5. Run doctests - all must succeed
-
-Polish:
-    1. Dane są dwa punkty ``A: tuple[int, int]`` i ``B: tuple[int, int]``
-    2. Koordynaty są w systemie kartezjańskim
-    3. Punkty ``A`` i ``B`` są w dwuwymiarowej przestrzeni
-    4. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    5. Uruchom doctesty - wszystkie muszą się powieść
-
-.. code-block:: python
-
-    def euclidean_distance(A, B):
-        """
-        >>> A = (1, 0)
-        >>> B = (0, 1)
-        >>> euclidean_distance(A, B)
-        1.4142135623730951
-
-        >>> euclidean_distance((0,0), (1,0))
-        1.0
-
-        >>> euclidean_distance((0,0), (1,1))
-        1.4142135623730951
-
-        >>> euclidean_distance((0,1), (1,1))
-        1.0
-
-        >>> euclidean_distance((0,10), (1,1))
-        9.055385138137417
-        """
-        x1 = ...
-        y1 = ...
-        x2 = ...
-        y2 = ...
-        return ...
+.. literalinclude:: assignments/math_euclidean_multi_dim.py
+    :caption: :download:`Solution <assignments/math_euclidean_multi_dim.py>`
+    :end-before: # Solution
 
 .. figure:: img/math-euclidean-distance.png
 
@@ -302,61 +239,7 @@ Polish:
 
 Hints:
     * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2`
-
-Euclidean distance ``n`` dimensions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* Assignment: Euclidean distance ``n`` dimensions
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 13 min
-
-English:
-    1. Given are two points ``A: Sequence[int]`` and ``B: Sequence[int]``
-    2. Coordinates are in cartesian system
-    3. Points ``A`` and ``B`` are in ``N``-dimensional space
-    4. Points ``A` and ``B`` must be in the same space
-    5. Calculate distance between points using Euclidean algorithm
-    6. Run doctests - all must succeed
-
-Polish:
-    1. Dane są dwa punkty ``A: Sequence[int]`` i ``B: Sequence[int]``
-    2. Koordynaty są w systemie kartezjańskim
-    3. Punkty ``A`` i ``B`` są w ``N``-wymiarowej przestrzeni
-    4. Punkty ``A`` i ``B`` muszą być w tej samej przestrzeni
-    5. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    6. Uruchom doctesty - wszystkie muszą się powieść
-
-Given:
-    .. code-block:: python
-
-        def euclidean_distance(A, B):
-            """
-            >>> A = (0,1,0,1)
-            >>> B = (1,1,0,0)
-            >>> euclidean_distance(A, B)
-            1.4142135623730951
-
-            >>> euclidean_distance((0,0,0), (0,0,0))
-            0.0
-
-            >>> euclidean_distance((0,0,0), (1,1,1))
-            1.7320508075688772
-
-            >>> euclidean_distance((0,1,0,1), (1,1,0,0))
-            1.4142135623730951
-
-            >>> euclidean_distance((0,0,1,0,1), (1,1,0,0,1))
-            1.7320508075688772
-
-            >>> euclidean_distance((0,0,1,0,1), (1,1))
-            Traceback (most recent call last):
-            ValueError: Points must be in the same dimensions
-            """
-            return ...
-
-Hints:
     * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + ... + (n_2 - n_1)^2}`
-    * ``for n1, n2 in zip(A, B)``
 
 Matrix multiplication
 ^^^^^^^^^^^^^^^^^^^^^

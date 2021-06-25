@@ -26,48 +26,13 @@ Pseudo and Pure random numbers
 
 Assignments
 -----------
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/math_random_sample.py
+    :caption: :download:`Solution <assignments/math_random_sample.py>`
+    :end-before: # Solution
 
-Random numbers
-^^^^^^^^^^^^^^
-* Assignment: Random numbers
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 13 min
-
-English:
-    1. Print 6 random integers without repetition in range from 1 to 49
-    2. Run doctests - all must succeed
-
-Polish:
-    1. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z
-       zakresu od 1 do 49.
-    2. Uruchom doctesty - wszystkie muszą się powieść
-
-Sum of inner elements
-^^^^^^^^^^^^^^^^^^^^^
-* Assignment: Sum of inner elements
-* Complexity: medium
-* Lines of code: 5 lines
-* Time: 13 min
-
-English:
-    1. Use only ``random`` module
-    2. Set ``random.seed(0)``
-    3. Generate ``outer: list[list[int]]`` with 16x16 random digits
-       (0-9 inclusive)
-    4. Calculate sum of inner 4x4 elements
-    5. Inner matrix is exactly in the middle of outer
-    6. Run doctests - all must succeed
-
-Polish:
-    1. Używaj tylko modułu ``random``
-    2. Ustaw ``random.seed(0)``
-    3. Wygeneruj ``outer: list[list[int]]`` z 16x16 losowych cyfr
-       (0-9 włącznie)
-    4. Policz sumę środkowych 4x4 elementów
-    5. Środkowa macierz jest dokładnie w środku większej
-    6. Uruchom doctesty - wszystkie muszą się powieść
+.. literalinclude:: assignments/math_random_matrix.py
+    :caption: :download:`Solution <assignments/math_random_matrix.py>`
+    :end-before: # Solution
 
 .. figure:: img/random-inner-sum.png
 

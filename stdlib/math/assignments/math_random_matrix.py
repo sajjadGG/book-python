@@ -1,4 +1,27 @@
 """
+* Assignment: Math Random Matrix
+* Complexity: medium
+* Lines of code: 5 lines
+* Time: 13 min
+
+English:
+    1. Use only ``random`` module
+    2. Set ``random.seed(0)``
+    3. Generate ``outer: list[list[int]]`` with 16x16 random digits
+       (0-9 inclusive)
+    4. Calculate sum of inner 4x4 elements
+    5. Inner matrix is exactly in the middle of outer
+    6. Run doctests - all must succeed
+
+Polish:
+    1. Używaj tylko modułu ``random``
+    2. Ustaw ``random.seed(0)``
+    3. Wygeneruj ``outer: list[list[int]]`` z 16x16 losowych cyfr
+       (0-9 włącznie)
+    4. Policz sumę środkowych 4x4 elementów
+    5. Środkowa macierz jest dokładnie w środku większej
+    6. Uruchom doctesty - wszystkie muszą się powieść
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
