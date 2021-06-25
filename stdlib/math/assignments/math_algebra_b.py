@@ -1,5 +1,5 @@
 """
-* Assignment: Math Euclidean Distance n-dim
+* Assignment: Math Algebra DistanceND
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 5 min
@@ -24,19 +24,19 @@ Hints:
     * `for n1, n2 in zip(A, B)`
 
 Tests:
-    >>> euclidean_distance_n_dimensions((0,0,0), (0,0,0))
+    >>> distance((0,0,0), (0,0,0))
     0.0
 
-    >>> euclidean_distance_n_dimensions((0,0,0), (1,1,1))
+    >>> distance((0,0,0), (1,1,1))
     1.7320508075688772
 
-    >>> euclidean_distance_n_dimensions((0,1,0,1), (1,1,0,0))
+    >>> distance((0,1,0,1), (1,1,0,0))
     1.4142135623730951
 
-    >>> euclidean_distance_n_dimensions((0,0,1,0,1), (1,1,0,0,1))
+    >>> distance((0,0,1,0,1), (1,1,0,0,1))
     1.7320508075688772
 
-    >>> euclidean_distance_n_dimensions((0,0,1,0,1), (1,1))
+    >>> distance((0,0,1,0,1), (1,1))
     Traceback (most recent call last):
     ValueError: Points must be in the same dimensions
 """
@@ -44,12 +44,12 @@ Tests:
 from math import sqrt
 
 
-def euclidean_distance_n_dimensions(A, B):
+def distance(A, B):
     ...
 
 
 # Solution
-def euclidean_distance_n_dimensions(A, B):
+def distance(A, B):
     if len(A) != len(B):
         raise ValueError('Points must be in the same dimensions')
 

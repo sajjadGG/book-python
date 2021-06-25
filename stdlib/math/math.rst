@@ -221,16 +221,16 @@ Absolute value
 
 Assignments
 -----------
-.. literalinclude:: assignments/math_trigonometry.py
-    :caption: :download:`Solution <assignments/math_trigonometry.py>`
+.. literalinclude:: assignments/math_trigonometry_a.py
+    :caption: :download:`Solution <assignments/math_trigonometry_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/math_euclidean_2d.py
-    :caption: :download:`Solution <assignments/math_euclidean_2d.py>`
+.. literalinclude:: assignments/math_algebra_a.py
+    :caption: :download:`Solution <assignments/math_algebra_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/math_euclidean_multi_dim.py
-    :caption: :download:`Solution <assignments/math_euclidean_multi_dim.py>`
+.. literalinclude:: assignments/math_algebra_b.py
+    :caption: :download:`Solution <assignments/math_algebra_b.py>`
     :end-before: # Solution
 
 .. figure:: img/math-euclidean-distance.png
@@ -241,41 +241,10 @@ Hints:
     * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2`
     * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + ... + (n_2 - n_1)^2}`
 
-Matrix multiplication
-^^^^^^^^^^^^^^^^^^^^^
-* Assignment: Matrix multiplication
-* Complexity: hard
-* Lines of code: 6 lines
-* Time: 21 min
+.. literalinclude:: assignments/math_algebra_c.py
+    :caption: :download:`Solution <assignments/math_algebra_c.py>`
+    :end-before: # Solution
 
-English:
-    1. Multiply matrices using nested ``for`` loops
-    2. Run doctests - all must succeed
-
-Polish:
-    1. Pomnóż macierze wykorzystując zagnieżdżone pętle ``for``
-    2. Uruchom doctesty - wszystkie muszą się powieść
-
-Given:
-    .. code-block:: python
-
-        def matrix_multiplication(A, B):
-            """
-            >>> A = [[1, 0], [0, 1]]
-            >>> B = [[4, 1], [2, 2]]
-            >>> matrix_multiplication(A, B)
-            [[4, 1], [2, 2]]
-
-            >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
-            >>> B = [[4,1], [2,2], [5,1], [2,3]]
-            >>> matrix_multiplication(A, B)
-            [[9, 2], [7, 3], [21, 8], [28, 8]]
-            """
-            return
-
-Hints:
-    * Zero matrix
-    * Three nested ``for`` loops
 
 Triangle
 ^^^^^^^^

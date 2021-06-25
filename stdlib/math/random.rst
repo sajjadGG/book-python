@@ -26,12 +26,12 @@ Pseudo and Pure random numbers
 
 Assignments
 -----------
-.. literalinclude:: assignments/math_random_sample.py
-    :caption: :download:`Solution <assignments/math_random_sample.py>`
+.. literalinclude:: assignments/math_random_a.py
+    :caption: :download:`Solution <assignments/math_random_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/math_random_matrix.py
-    :caption: :download:`Solution <assignments/math_random_matrix.py>`
+.. literalinclude:: assignments/math_random_b.py
+    :caption: :download:`Solution <assignments/math_random_b.py>`
     :end-before: # Solution
 
 .. figure:: img/random-inner-sum.png

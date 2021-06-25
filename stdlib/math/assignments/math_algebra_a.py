@@ -1,5 +1,5 @@
 """
-* Assignment: Math Euclidean Distance 2D
+* Assignment: Math Algebra Distance2D
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min
@@ -21,31 +21,31 @@ Polish:
 Tests:
     >>> A = (1, 0)
     >>> B = (0, 1)
-    >>> euclidean_distance(A, B)
+    >>> distance(A, B)
     1.4142135623730951
 
-    >>> euclidean_distance((0,0), (1,0))
+    >>> distance((0,0), (1,0))
     1.0
 
-    >>> euclidean_distance((0,0), (1,1))
+    >>> distance((0,0), (1,1))
     1.4142135623730951
 
-    >>> euclidean_distance((0,1), (1,1))
+    >>> distance((0,1), (1,1))
     1.0
 
-    >>> euclidean_distance((0,10), (1,1))
+    >>> distance((0,10), (1,1))
     9.055385138137417
 """
 
 from math import sqrt
 
 
-def euclidean_distance(A, B):
+def distance(A, B):
     ...
 
 
 # Solution
-def euclidean_distance(A, B):
+def distance(A, B):
     x1 = A[0]
     y1 = A[1]
 
