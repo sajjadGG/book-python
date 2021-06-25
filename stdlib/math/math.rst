@@ -244,23 +244,3 @@ Hints:
 .. literalinclude:: assignments/math_algebra_c.py
     :caption: :download:`Solution <assignments/math_algebra_c.py>`
     :end-before: # Solution
-
-
-Triangle
-^^^^^^^^
-* Assignment: Triangle
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 13 min
-
-English:
-    1. Calculate triangle area
-    2. User will input base and height
-    3. Input numbers will be only ``int`` and ``float``
-    4. Run doctests - all must succeed
-
-Polish:
-    1. Obliczy pole trójkąta
-    2. Użytkownik poda wysokość i długość podstawy
-    3. Wprowadzone dane będą tylko ``int`` lub ``float``
-    4. Uruchom doctesty - wszystkie muszą się powieść

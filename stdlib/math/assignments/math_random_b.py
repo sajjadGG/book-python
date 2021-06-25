@@ -1,31 +1,31 @@
 """
 * Assignment: Math Random Matrix
 * Complexity: medium
-* Lines of code: 5 lines
+* Lines of code: 4 lines
 * Time: 13 min
 
 English:
-    1. Use only ``random`` module
-    2. Set ``random.seed(0)``
-    3. Generate ``outer: list[list[int]]`` with 16x16 random digits
-       (0-9 inclusive)
-    4. Calculate sum of inner 4x4 elements
+    1. Use only `random` module
+    2. Set `random.seed(0)`
+    3. Define `matrix: list[list[int]]` with generated
+       16x16 random digits (0-9 inclusive)
+    4. Define `result: int` with sum of inner 4x4 elements
     5. Inner matrix is exactly in the middle of outer
     6. Run doctests - all must succeed
 
 Polish:
-    1. Używaj tylko modułu ``random``
-    2. Ustaw ``random.seed(0)``
-    3. Wygeneruj ``outer: list[list[int]]`` z 16x16 losowych cyfr
-       (0-9 włącznie)
-    4. Policz sumę środkowych 4x4 elementów
+    1. Używaj tylko modułu `random`
+    2. Ustaw `random.seed(0)`
+    3. Zdefiniuj `matrix: list[list[int]]` z wygenerowanymi
+       16x16 losowymi cyframi (0-9 włącznie)
+    4. Zdefiniuj `result: int` z sumą środkowych 4x4 elementów
     5. Środkowa macierz jest dokładnie w środku większej
     6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
+    >>> matrix  # doctest: +NORMALIZE_WHITESPACE
     [[6, 6, 0, 4, 8, 7, 6, 4, 7, 5, 9, 3, 8, 2, 4, 2],
      [1, 9, 4, 8, 9, 2, 4, 1, 1, 5, 7, 8, 1, 5, 6, 5],
      [9, 3, 8, 7, 7, 8, 4, 0, 8, 0, 1, 6, 0, 9, 7, 5],
@@ -43,7 +43,7 @@ Tests:
      [1, 0, 9, 3, 5, 2, 3, 3, 7, 6, 9, 6, 0, 6, 9, 6],
      [0, 2, 7, 1, 4, 2, 7, 8, 7, 8, 9, 0, 0, 7, 5, 4]]
 
-    >>> total
+    >>> result
     62
 """
 
@@ -51,31 +51,17 @@ from random import seed, randint
 seed(0)
 
 
-result = []
-
+matrix: list
+result: int
+ROWS = range(16)
+COLS = range(16)
 
 # Solution
-X_MAX = 16
-Y_MAX = 16
-X_INNER = 4
-Y_INNER = 4
-total = 0
+result = 0
 
-x_offset = int((X_MAX - X_INNER) / 2)
-x_offset_left = x_offset
-x_offset_right = X_MAX - x_offset
+matrix = [[randint(0,9) for y in ROWS]
+          for x in COLS]
 
-y_offset = int((Y_MAX - Y_INNER) / 2)
-y_offset_left = y_offset
-y_offset_right = Y_MAX - y_offset
-
-
-for x in range(X_MAX):
-    result.append([])
-
-    for y in range(Y_MAX):
-        result[x].append(randint(0, 9))
-
-        if x_offset_left <= x < x_offset_right and y_offset_left <= y < y_offset_right:
-            total += result[x][y]
+for row in matrix[6:-6]:
+    result += sum(row[6:-6])
 
