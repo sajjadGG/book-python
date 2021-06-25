@@ -243,10 +243,10 @@ Examples
 
 Assignments
 -----------
-.. literalinclude:: assignments/stdlib_statistics_stats.py
-    :caption: :download:`Solution <assignments/stdlib_statistics_stats.py>`
+.. literalinclude:: assignments/math_statistics_a.py
+    :caption: :download:`Solution <assignments/math_statistics_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/stdlib_statistics_iris.py
-    :caption: :download:`Solution <assignments/stdlib_statistics_iris.py>`
+.. literalinclude:: assignments/math_statistics_b.py
+    :caption: :download:`Solution <assignments/math_statistics_b.py>`
     :end-before: # Solution

@@ -1,5 +1,5 @@
 """
-* Assignment: Stdlib Statistics Iris
+* Assignment: Math Statistics Iris
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 21 min

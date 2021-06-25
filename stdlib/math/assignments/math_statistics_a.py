@@ -1,5 +1,5 @@
 """
-* Assignment: Stdlib Statistics Stats
+* Assignment: Math Statistics Stats
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 21 min
