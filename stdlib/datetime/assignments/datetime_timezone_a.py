@@ -118,6 +118,7 @@ Tests:
 
 from pytz import timezone
 
+
 # timezone in UTC
 utc: timezone = ...
 

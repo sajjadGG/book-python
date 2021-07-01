@@ -74,6 +74,24 @@ Serialization
     serialization/xml.rst
 
 
+Database
+********
+.. toctree::
+    :maxdepth: 1
+    :caption: Database
+
+    database/db-api.rst
+    database/sqlite.rst
+    database/mysql.rst
+    database/postgresql.rst
+    database/mongodb.rst
+    database/orm.rst
+    database/migrations.rst
+    database/data-exploration.rst
+    database/sql-injection.rst
+    database/sql.rst
+
+
 Regular Expressions
 *******************
 .. toctree::
@@ -94,24 +112,15 @@ Regular Expressions
     regular-expressions/standards.rst
     regular-expressions/references.rst
 
-
-Database
-********
+Object Oriented Programming
+***************************
 .. toctree::
     :maxdepth: 1
-    :caption: Database
+    :caption: Object Oriented Programming
 
-    database/db-api.rst
-    database/sqlite.rst
-    database/mysql.rst
-    database/postgresql.rst
-    database/mongodb.rst
-    database/orm.rst
-    database/migrations.rst
-    database/data-exploration.rst
-    database/sql-injection.rst
-    database/sql.rst
-
+    oop/enum.rst
+    oop/dataclass.rst
+    oop/operators.rst
 
 Modules and Packages
 ********************
@@ -127,20 +136,26 @@ Modules and Packages
     modules/distributing.rst
 
 
-Builtins
-********
+Unpacking
+*********
 .. toctree::
     :maxdepth: 1
-    :caption: Builtins
+    :caption: Unpacking
 
-    builtin/function.rst
-    builtin/keyword.rst
-    builtin/operator.rst
-    builtin/print.rst
-    builtin/logging.rst
-    builtin/parameter-syntax.rst
-    builtin/assignment-expression.rst
-    builtin/unpack.rst
+    unpacking/assignment.rst
+    unpacking/parameters.rst
+    unpacking/arguments.rst
+    unpacking/assignment-expression.rst
+    unpacking/parameter-syntax.rst
+
+
+Logging
+*******
+.. toctree::
+    :maxdepth: 1
+    :caption: Logging
+
+    logging/logging.rst
 
 
 Locale
@@ -153,39 +168,6 @@ Locale
     locale/i18n.rst
     locale/l10n.rst
     locale/encoding.rst
-
-
-Looping
-*******
-.. toctree::
-    :maxdepth: 1
-    :caption: Builtins
-
-    looping/comprehensions.rst
-    looping/else.rst
-
-
-Object Oriented Programming
-***************************
-.. toctree::
-    :maxdepth: 1
-    :caption: Object Oriented Programming
-
-    oop/enum.rst
-    oop/dataclass.rst
-    oop/operators.rst
-
-
-Unpacking
-*********
-.. toctree::
-    :maxdepth: 1
-    :caption: Unpacking
-
-    unpacking/assignment.rst
-    unpacking/parameters.rst
-    unpacking/arguments.rst
-    unpacking/assignment-expression.rst
 
 
 Mathematics
@@ -213,6 +195,28 @@ Operating System
     operating-system/argparse.rst
     operating-system/os.rst
     operating-system/pathlib.rst
+
+
+Builtins
+********
+.. toctree::
+    :maxdepth: 1
+    :caption: Builtins
+
+    builtin/function.rst
+    builtin/keyword.rst
+    builtin/operator.rst
+    builtin/print.rst
+
+
+Looping
+*******
+.. toctree::
+    :maxdepth: 1
+    :caption: Builtins
+
+    looping/comprehensions.rst
+    looping/else.rst
 
 
 References

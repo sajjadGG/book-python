@@ -10,6 +10,13 @@ Time sleep function:
 >>>
 >>> sleep(1)
 
+>>> from time import sleep
+>>>
+>>>
+>>> for i in range(3):
+...     # do something
+...     sleep(1)
+
 
 ``calendar``
 ------------

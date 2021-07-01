@@ -2,6 +2,88 @@ Datetime Format
 ===============
 
 
+Rationale
+---------
+* ``format(dt, '%Y-%m-%d')``
+* ``dt.__format__('%Y-%m-%d')``
+* ``dt.strftime('%Y-%m-%d')``
+* ``f'Today is {dt:%Y-%m-%d}'``
+
+
+Formats
+-------
+>>> from datetime import datetime
+>>>
+>>>
+>>> d = datetime(1961, 4, 12, 6, 7)
+>>>
+>>> format(d, '%Y')
+'1961'
+>>> format(d, '%Y-%m-%d')
+'1961-04-12'
+>>> format(d, '%d.%m.%Y')
+'12.04.1961'
+>>> format(d, '%H:M')
+'06:07'
+>>> format(d, '%Y-%m-%d %H:%M')
+'1961-04-12 06:07'
+>>> format(d, '%Y-%m-%d %H:%M:%S')
+'1961-04-12 06:07:00'
+>>> format(d, '%B %d, %Y')
+'April 12, 1961'
+
+
+Parameters
+----------
+* Similar in almost all programming language
+* Some minor differences like in JavaScript minutes are ``i``, not ``M``
+
+.. csv-table:: Date and time parsing and formatting parameters
+    :header-rows: 1
+    :widths: 5,35,60
+    :file: data/datetime-formatting.csv
+
+.. todo:: Convert table into smaller parts, based on categories: months, day, hour etc.
+
+
+Leading Zero
+------------
+* ``%#H`` - remove leading zero (Windows)
+* ``%-H`` - remove leading zero (macOS, Linux, \*nix)
+* ``%_H`` - replace leading zero with space (macOS, Linux, \*nix)
+* Works only with formatting
+* raises ValueError while parsing [#pydocdtformat]_
+
+>>> from datetime import datetime
+>>>
+>>>
+>>> d = datetime(1961, 4, 12, 6, 7)
+>>>
+>>> format(d, '%H:%M')
+'06:07'
+>>> format(d, '%_H:%M')
+' 6:07'
+>>> format(d, '%-H:%M')
+'6:07'
+
+.. csv-table:: Leading Zero
+    :header: "Meaning", "With", "Without (macOS, Linux, \*nix)", "Without (Windows)"
+    :widths: 55, 15, 15, 15
+
+    "day",                          ``%d``, ``%-d``, ``%#d``,
+    "hour 24h",                     ``%H``, ``%-H``, ``%#H``,
+    "hour 12h",                     ``%I``, ``%-I``, ``%#I``,
+    "day of a year",                ``%j``, ``%-j``, ``%#j``,
+    "month",                        ``%m``, ``%-m``, ``%#m``,
+    "minute",                       ``%M``, ``%-M``, ``%#M``,
+    "second",                       ``%S``, ``%-S``, ``%#S``,
+    "week number (Sunday first)",   ``%U``, ``%-U``, ``%#U``,
+    "week number (Monday first)",   ``%W``, ``%-W``, ``%#W``,
+    "weekday (Sunday first)",       ``%w``, ``%-w``, ``%#w``,
+    "year short",                   ``%y``, ``%-y``, ``%#y``,
+    "year long",                    ``%Y``, ``%-Y``, ``%#Y``,
+
+
 String Format Time
 ------------------
 >>> from datetime import datetime
@@ -37,27 +119,6 @@ Gagarin launched on 1961-04-12 06:07
 Gagarin launched on 1961-04-12 06:07
 
 
-Parameters
-----------
-* Almost any programming language has very similar date formatting parameters
-* Some minor differences like in JavaScript minutes are ``i``, not ``M``
-
-.. csv-table:: Date and time parsing and formatting parameters
-    :header-rows: 1
-    :widths: 5,35,60
-    :file: data/datetime-formatting.csv
-
-.. todo:: Convert table into smaller parts, based on categories: months, day, hour etc.
-
-
-Leading Zero
-------------
-* https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
-* ``%-I`` or ``%_I`` on \*nix systems (macOS, BSD, Linux) to remove leading zero
-* ``%#I`` on Windows to remove leading zero
-* \*nix: ``%-d``, ``%-H``, ``%-I``, ``%-j``, ``%-m``, ``%-M``, ``%-S``, ``%-U``, ``%-w``, ``%-W``, ``%-y``, ``%-Y``
-* Windows: ``%#d``, ``%#H``, ``%#I``, ``%#j``, ``%#m``, ``%#M``, ``%#S``, ``%#U``, ``%#w``, ``%#W``, ``%#y``, ``%#Y``
-
 
 Assignments
 -----------
@@ -68,3 +129,8 @@ Assignments
 .. literalinclude:: assignments/datetime_format_b.py
     :caption: :download:`Solution <assignments/datetime_format_b.py>`
     :end-before: # Solution
+
+
+References
+----------
+.. [#pydocdtformat] https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior

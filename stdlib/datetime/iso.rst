@@ -9,71 +9,55 @@ Rationale
 
 Dates
 -----
-.. code-block:: text
+* Format: ``YYYY-mm-dd``
+* Year-Month-Day
 
-    1961-04-12
-    1969-07-21
+Example:
 
-Format ``date`` to string in ISO-8601 standard:
-
->>> from datetime import date
->>>
->>>
->>> d = date(1969, 7, 21)
->>> d.isoformat()
-'1969-07-21'
-
-Create ``date`` object from ISO-8601 formatted string:
-
->>> from datetime import date
->>>
->>> text = '1969-07-21'
->>> date.fromisoformat(text)
-datetime.date(1969, 7, 21)
+    * 1961-04-12
+    * 1969-07-21
 
 
 Time
 ----
+* Format: ``HH:MM:SS.ffffff`` or ``HH:MM:SS`` or ``HH:MM``
 * 24 hour clock
+* Optional seconds and microseconds
+* ``00:00`` - midnight, at the beginning of a day
 * ``00:00`` - midnight, at the beginning of a day
 * ``24:00`` - midnight, at the end of a day (not recommended)
-* ``2007-04-05T24:00`` is equal to ``2007-04-06T00:00``
+* ``1969-12-31T24:00`` is equal to ``1970-01-01T00:00``
+
+Example:
+
+    * 00:00
+    * 06:07:00
+    * 13:00:00.123
+    * 23:59:59.999999
 
 
 Date and Time
 -------------
-* "T" separates date and time):
+* Format: ``YYYY-mm-ddTHH:MM:SS.ffffff``
+* "T" separates date and time)
+* Optional seconds and microseconds
 
-.. code-block:: text
+Example:
 
-    1961-04-12T06:07:00
-    1961-04-12T06:07:00.123
-    1961-04-12T06:07:00.123456
-
-
-Format ``datetime`` to string in ISO-8601 standard:
-
->>> from datetime import datetime
->>>
->>>
->>> dt = datetime(1969, 7, 21, 2, 56, 15)
->>> dt.isoformat()
-'1969-07-21T02:56:15'
-
-Create ``datetime`` object from ISO-8601 formatted string:
-
->>> from datetime import datetime
->>>
->>>
->>> text = '1969-07-21T02:56:15'
->>> datetime.fromisoformat(text)
-datetime.datetime(1969, 7, 21, 2, 56, 15)
+    * 1961-04-12T06:07
+    * 1961-04-12T06:07:00
+    * 1961-04-12T06:07:00.123
+    * 1961-04-12T06:07:00.123456
 
 
 Timezone
 --------
+* Format: ``YYYY-mm-ddTHH:MM:SS.ffffffUTC``
+* Format: ``YYYY-mm-ddTHH:MM:SS.ffffffZ``
+* Optional seconds and microseconds
 * "Z" (Zulu) means UTC
-* Time zone notation:
+
+Time zone notation:
 
     * ``<time>UTC``
     * ``<time>Z``
@@ -81,37 +65,48 @@ Timezone
     * ``<time>±hhmm``
     * ``<time>±hh``
 
-.. code-block:: text
+Example:
 
-    1961-04-12T06:07:00.123456Z
-    1961-04-12T06:07:00.123456UTC
+    * 1961-04-12T06:07:00.123456Z
+    * 1961-04-12T06:07:00.123456UTC
+    * 1961-04-12T06:07:00.123456CEST
+    * 1961-04-12T06:07:00.123456CET
+    * 1961-04-12T06:07:00.123456+02:00
+    * 1961-04-12T06:07:00.123456+0200
+    * 1961-04-12T06:07:00.123456+02
 
-    1961-04-12T06:07:00.123456CEST
-    1961-04-12T06:07:00.123456CET
-    1961-04-12T06:07:00.123456+02:00
-    1961-04-12T06:07:00.123456+0200
-    1961-04-12T06:07:00.123456+02
+
+Week
+----
+* Format: ``YYYY-Www``
+* The ISO 8601 definition for week 01 is the week with the first Thursday of the Gregorian year (i.e. of January) in it. [#wikisoweekdate]_
+* ``2009-W01`` - First week of 2009
+* ``2009-W53`` - Sunday 3 January 2010
 
 
 Weekday
 -------
+* Format: ``YYYY-Www-dd``
 * Note year/month changes during the week
-* ``2009-W01`` - First week of 2009
 * ``2009-W01-1`` - Monday 29 December 2008
 * ``2009-W53-7`` - Sunday 3 January 2010
+* Week starts on Monday
 * ISO defines Monday as one
 
 >>> from datetime import datetime
 >>>
 >>>
 >>> dt = datetime(1969, 7, 21, 2, 56, 15)
+>>>
 >>> dt.isoweekday()
 1
-
+>>>
+>>> dt.weekday()
+0
 
 Duration
 --------
-* Format: ``P[n]Y[n]M[n]DT[n]H[n]M[n]S``
+* Format: ``P...Y...M...DT...H...M...S``
 * ``P`` - placed at the start of the duration (period) representation
 * ``Y`` - number of years
 * ``M`` - number of months
@@ -134,6 +129,61 @@ Duration
     15 seconds
 
 
+Python and ISO Format
+---------------------
+Format to string in ISO-8601 standard:
+
+>>> from datetime import date, time, datetime
+>>>
+>>>
+>>> dt = datetime(1969, 7, 21, 2, 56, 15)
+>>> d = date(1969, 7, 21)
+>>> t = time(2, 56, 15)
+>>>
+>>> dt.isoformat()
+'1969-07-21T02:56:15'
+>>>
+>>> d.isoformat()
+'1969-07-21'
+>>>
+>>> t.isoformat()
+'02:56:15'
+
+Parse from string in ISO-8601 standard:
+
+>>> from datetime import date, time, datetime
+>>>
+>>>
+>>> datetime.fromisoformat('1969-07-21T02:56:15')
+datetime.datetime(1969, 7, 21, 2, 56, 15)
+>>>
+>>> date.fromisoformat('1969-07-21')
+datetime.date(1969, 7, 21)
+>>>
+>>> time.fromisoformat('02:56:15')
+datetime.time(2, 56, 15)
+
+Note, that ``.fromisoformat()`` is fault-tolerant:
+
+>>> from datetime import date, time, datetime
+>>>
+>>>
+>>> datetime.fromisoformat('1969-07-21T02:56:15')
+datetime.datetime(1969, 7, 21, 2, 56, 15)
+>>>
+>>> datetime.fromisoformat('1969-07-21 02:56:15')
+datetime.datetime(1969, 7, 21, 2, 56, 15)
+>>>
+>>> datetime.fromisoformat('1969-07-21')
+datetime.datetime(1969, 7, 21, 0, 0)
+>>>
+>>> time.fromisoformat('02:56:15')
+datetime.time(2, 56, 15)
+>>> time.fromisoformat('2:56:15')
+datetime.time(2, 56, 15)
+>>> time.fromisoformat('2:56')
+datetime.time(2, 56, 15)
+
 
 Assignments
 -----------
@@ -144,3 +194,9 @@ Assignments
 .. literalinclude:: assignments/datetime_iso_b.py
     :caption: :download:`Solution <assignments/datetime_iso_b.py>`
     :end-before: # Solution
+
+
+References
+----------
+.. [#wikisoweekdate] https://en.wikipedia.org/wiki/ISO_week_date
+.. [#wikiISO8601] https://en.wikipedia.org/wiki/ISO_8601

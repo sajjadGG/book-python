@@ -36,6 +36,7 @@ Tests:
 
 from datetime import date, datetime
 
+
 DAY = 1
 MONTH = 30.436875 * DAY
 YEAR = 365.2425 * DAY

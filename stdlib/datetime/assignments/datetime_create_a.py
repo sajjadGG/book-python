@@ -44,6 +44,7 @@ Tests:
 
 from datetime import date, datetime, time
 
+
 # date: representing April 12th, 1961 6:07 a.m.
 d = ...
 

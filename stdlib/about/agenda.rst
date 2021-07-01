@@ -9,14 +9,15 @@ Day 1
     :widths: 15, 85
 
     "Estimated Time", "Topic"
-    "30m", "Korzystanie z ustawień IDE: Docker, refactoring, debugging"
-    "180m", "Podsumowanie zagadnień podstawowych"
-    "60m", "Zaawansowane struktury danych i kolekcje"
-    "30m", "Optymalizacja kodu i złożoność obliczeniowa struktur danych"
-    "30m", "Funkcje matematyczne"
-    "30m", "Debugging, unittest, doctest, TDD"
-    "30m", "Dobre praktyki i standardy kodowania"
-    "30m", "Modularyzacja i Virtualenv"
+    "15m", "Kwestie organizacyjne: przedstawienie się, przerwy, spreadsheet"
+    "75m", "Przygotowanie środowiska do pracy: github, git, python, doctest"
+    "30m", "Zadania testowe ewaluujące umiejętności użytkownika"
+    "90m", "Live Coding rozwiązań zadań i demonstracja funkcji IDE, tj.
+            debugging, praca z VCS, refactoring, dokumentacja i typy,
+            sygnatury funkcji"
+    "90m", "Type Annotation"
+    "120m", "Daty, czas i strefy czasowe"
+
 
 Day 2
 -----
@@ -25,13 +26,12 @@ Day 2
     :widths: 15, 85
 
     "Estimated Time", "Topic"
-    "180m", "Programowanie obiektowe i dataclass"
-    "60m", "Przetwarzanie i transformacja danych JSON, XML, CSV"
-    "60m", "Operacje na datach, czasie i strefach czasowych"
-    "30m", "Generators i List Comprehensions"
-    "30m", "Decorators"
-    "30m", "Context Managers"
-    "30m", "Biblioteka standardowa i biblioteki zewnętrzne"
+    "150m", "Praca z plikami CSV: (dane nierelacyjne i relacyjne)"
+    "120m", "Praca z plikami JSON (proste struktury danych, daty i czas,
+            zagnieżdżone dane relacyjne"
+    "15m", "Serializacja i deserializacja danych z Pickle"
+    "135m", "Bazy danych: (zapis, odczyt, kursory, relacje, indeksy)"
+
 
 Day 3
 -----
@@ -40,13 +40,11 @@ Day 3
     :widths: 15, 85
 
     "Estimated Time", "Topic"
-    "30m", "Refaktoryzacja kodu na przykładach"
-    "15m", "Alternatywne wersje interpretera/kompilatora"
-    "45m", "Programowanie wielowątkowe"
-    "30m", "Python - moduły w języku C i C++"
-    "60m", "Programowanie sieciowe"
-    "120m", "Programowanie HTTP i projektowanie REST API, dobre praktyki, wersjonowanie, dokumentacja API"
-    "120m", "Wprowadzenie do Django ORM, widoki, routing, translation, modele, admin itp"
+    "180m", "Wyrażenia regularne (re)"
+    "30m", "Enumeracja (enum)"
+    "90m", "Dataclasses (dataclasses)"
+    "120m", "Przeciążanie operatorów"
+
 
 Day 4
 -----
@@ -55,10 +53,13 @@ Day 4
     :widths: 15, 85
 
     "Estimated Time", "Topic"
-    "120m", "CI/CD i testowanie aplikacji"
-    "60m", "Python w środowisku produkcyjnym"
-    "60m", "Wzorce projektowe w Python"
-    "180m", "Implementacja wybranych wzorców na przykładach"
+    "120m", "Zadanie samodzielne z programowania obiektowego (Smok)"
+    "240m", "Live Coding rozwiązań zadań i demonstracja dobrych praktyk
+             OOP, architektury aplikacji jak również funkcji IDE, tj.
+             debugging, praca z VCS, refactoring, dokumentacja i typy,
+             sygnatury funkcji"
+    "60m", "Moduły i pakiety (venv, pip, zipapp)"
+
 
 Day 5
 -----
@@ -67,9 +68,10 @@ Day 5
     :widths: 15, 85
 
     "Estimated Time", "Topic"
-    "30m", "Jupyter (Enhanced Interactive Console)"
-    "60m", "NumPy (Base N-dimensional array package)"
-    "30m", "Pandas (Data structures & analysis)"
-    "30m", "SciPy (scientific computing)"
-    "30m", "Matplotlib (Comprehensive 2D Plotting)"
-    "240m", "Scikit-learn (Machine Learning Library)"
+    "45m", "Logowanie zdarzeń (logging)"
+    "120m", "Rozpakowywanie (w przypisaniu, parametrów, argumentów,
+             assignment expression, parameter syntax)"
+    "120m", "Matematyka, statystyka, losowość i problemy precyzji"
+    "15m", "Lokalizacja i internacjonalizacja (locale, i18n, l10n)"
+    "30m", "Parametry linii poleceń (argparse)"
+    "90m", "System operacyjny (os, pathlib, tempfile, subprocess)"

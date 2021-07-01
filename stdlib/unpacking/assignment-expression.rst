@@ -5,10 +5,14 @@ Assignment Expression
 Rationale
 ---------
 * Since Python 3.8: :pep:`572` -- Assignment Expressions
-* A.K.A. "the walrus operator"
-* A.K.A. "Named Expressions"
+* Also known as "Walrus operator"
+* Also known as "Named expression"
 
-During discussion of this PEP, the operator became informally known as "the walrus operator". The construct's formal name is "Assignment Expressions" (as per the PEP title), but they may also be referred to as "Named Expressions" (e.g. the CPython reference implementation uses that name internally). [#pep572]_
+During discussion of this PEP, the operator became informally
+known as "the walrus operator". The construct's formal name is
+"Assignment Expressions" (as per the PEP title), but they may
+also be referred to as "Named Expressions". The CPython reference
+implementation uses that name internally). [#pep572]_
 
 
 Syntax
@@ -16,7 +20,6 @@ Syntax
 .. code-block:: python
 
     (x := <VALUE>)
-
 
 It's not substitution for equals:
 
@@ -39,7 +42,6 @@ SyntaxError: invalid syntax
 >>>
 >>> print(x)
 (1, 2)
-
 
 >>> (x := 1, 2)
 (1, 2)
@@ -71,14 +73,13 @@ SyntaxError: invalid syntax
 Traceback (most recent call last):
 SyntaxError: cannot use assignment expressions with subscript
 
-.. figure:: img/unpacking-assignmentexpr-bdfl.png
+Guido van Rossum stepped down after accepting :pep:`572` -- Assignment Expressions:
 
-    Guido van Rossum stepped down after accepting :pep:`572` -- Assignment Expressions
+.. figure:: img/idiom-assignmentexpr-bdfl.png
 
 
 Example
 -------
-
 Reusing Results:
 
 >>> def f(x):
@@ -125,7 +126,7 @@ Checking Match
 >>>
 >>> DATA = 'mark.watney@nasa.gov'
 >>>
->>> if (result := re.search(r'@nasa.gov', DATA)):
+>>> if result := re.search(r'@nasa.gov', DATA):
 ...     print(result)
 <re.Match object; span=(11, 20), match='@nasa.gov'>
 
@@ -317,6 +318,43 @@ Use Case
 [{'firstname': 'Jan', 'lastname': 'Twardowski'},
  {'firstname': 'Mark', 'lastname': 'Watney'},
  {'firstname': 'Melissa', 'lastname': 'Lewis'}]
+
+>>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
+...         {'is_astronaut': True,  'name': 'Mark Watney'},
+...         {'is_astronaut': False, 'name': 'José Jiménez'},
+...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
+...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>>
+>>>
+>>> astronauts = [{'firstname': fname, 'lastname': lname}
+...                for person in DATA
+...                if person['is_astronaut']
+...                and (name := person['name'].split())
+...                and (fname := name[0].capitalize())
+...                and (lname := f'{name[1][0]}.')]
+>>>
+>>> print(astronauts)  # doctest: +NORMALIZE_WHITESPACE
+[{'firstname': 'Jan', 'lastname': 'T.'},
+ {'firstname': 'Mark', 'lastname': 'W.'},
+ {'firstname': 'Melissa', 'lastname': 'L.'}]
+
+>>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
+...         {'is_astronaut': True,  'name': 'Mark Watney'},
+...         {'is_astronaut': False, 'name': 'José Jiménez'},
+...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
+...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>>
+>>>
+>>> astronauts = [f'{fname} {lname[0]}.'
+...               for person in DATA
+...               if person['is_astronaut']
+...               and (fullname := person['name'].split())
+...               and (fname := fullname[0].capitalize())
+...               and (lname := fullname[1].upper())]
+>>>
+>>>
+>>> print(astronauts)
+['Jan T.', 'Mark W.', 'Melissa L.']
 
 >>> from dataclasses import dataclass
 >>>

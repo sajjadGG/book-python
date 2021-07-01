@@ -128,6 +128,7 @@ Tests:
 """
 from datetime import date, datetime, time
 
+
 DATA = """1969-07-14, 21:00:00, INFO, Terminal countdown started
 1969-07-16, 13:31:53, WARNING, S-IC engine ignition (#5)
 1969-07-16, 13:33:23, DEBUG, Maximum dynamic pressure (735.17 lb/ft^2)
@@ -167,8 +168,5 @@ for line in DATA.splitlines():
     d, t, lvl, msg = line.strip().split(', ', maxsplit=3)
     d = date.fromisoformat(d)
     t = time.fromisoformat(t)
-    result.append({
-        'when': datetime.combine(d, t),
-        'level': lvl,
-        'message': msg,
-    })
+    dt = datetime.combine(d, t)
+    result.append({'when': dt, 'level': lvl, 'message': msg})
