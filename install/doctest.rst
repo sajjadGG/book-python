@@ -9,10 +9,10 @@ poprawności kodu. Wszystkie listingi w tych materiałach, a także wszystkie
 zadania do samodzielnego rozwiązania wykorzystują ten mechanizm.
 
 Składnią doctesty przypominają sesję Pythona w konsoli. Każda z linii kodu
-zaczyna się od ``>>>``. Ewentualnie linie mogą zaczynać się od ``...`` jeżeli
-są kontynuacją poprzedniej linii. Linie poniżej wyświetlają oczekiwany wynik.
-Doctesty muszą znajdować się w pierwszym wieloliniowym ciągu znaków w pliku,
-funkcji lub klasie. Przykład:
+zaczyna się od ``>>>``. Ewentualnie linie mogą zaczynać się od ``...``
+jeżeli są kontynuacją poprzedniej linii. Linie poniżej wyświetlają
+oczekiwany wynik. Doctesty muszą znajdować się w pierwszym wieloliniowym
+ciągu znaków w pliku, funkcji lub klasie. Przykład:
 
     .. code-block:: python
 
@@ -36,8 +36,9 @@ funkcji lub klasie. Przykład:
     .. code-block:: python
 
         """
-        >>> sys.version_info > (3, 7, 0)
-        True
+        >>> sys.tracebacklimit = 0
+        >>> assert sys.version_info > (3, 8, 0), \
+        'Python 3.8+ is required'
         """
 
         import sys

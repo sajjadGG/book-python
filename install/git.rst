@@ -42,14 +42,14 @@ tzw. `push`.
 
 4. Ściągnięcie zmian z Github (``git pull``):
 
-    a. Kliknij prawym klawiszem na nazwę projektu (w panelu po lewej stronie)
-       -> `Git` -> `Pull...`
+    a. Kliknij prawym klawiszem na nazwę projektu (w panelu po lewej
+       stronie) -> `Git` -> `Pull...`
     b. Ewentualnie w menu u góry jest ikona strzałki w dół - `git pull`
     c. W okienku `Pull to main` wybierz `Modify options`
     d. Z opcji wybierz ``--rebase``
     e. Wciśnij przycisk `Pull` aby ściągnąć zmiany z Github
-    f. Po dziesięciu sekundach zmiany powinny być pobrane (komunikat w prawym
-       dolnym rogu - `Project is up-to-date`)
+    f. Po dziesięciu sekundach zmiany powinny być pobrane (komunikat
+       w prawym dolnym rogu - `Project is up-to-date`)
 
 5. Sprawdzić Github czy:
 

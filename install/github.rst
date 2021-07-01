@@ -6,11 +6,12 @@ Polish
 ------
 Github jest najpopularniejszym na świecie miejscem wymiany kodu źródłowego.
 Serwis od 2018 roku Github należy do Microsoft [#MicrosoftAcquireGithub]_.
-Język Python, Kernel Linuxa oraz wiele projektów open source, np. .NET, Swift,
-Django są rozwijane na Github. Założenie i posiadanie konta jest darmowe.
-Będzie konieczne do sprawnego przeprowadzenia szkolenia. W trakcie rejestracji
-konieczne będzie podanie adresu email (użyj prywatnego lub firmowego). Maila
-będzie trzeba zweryfikować klikając w link aktywacyjny
+Język Python, Kernel Linuxa oraz wiele projektów open source, np. .NET,
+Swift, Django są rozwijane na Github. Założenie i posiadanie konta jest
+darmowe. Będzie konieczne do sprawnego przeprowadzenia szkolenia.
+W trakcie rejestracji konieczne będzie podanie adresu email (użyj
+prywatnego lub firmowego). Maila będzie trzeba zweryfikować klikając
+w link aktywacyjny.
 
 1. Jeżeli nie masz konta na Github to proszę załóż je [#GithubJoin]_
 2. Wpisz swój username z Github w arkuszu kalkulacyjnym zadań

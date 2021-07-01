@@ -8,10 +8,10 @@ PyCharm jest środowiskiem programistycznym (IDE), w którym będziemy
 programować. Podczas szkolenia trener będzie korzystał tylko z tego IDE. Nie
 będzie czasu na rozwiązywanie problemów z innymi środowiskami
 programistycznymi, więc proszę o instalację PyCharm w najnowszej dostępnej
-wersji. Bez znaczenia czy Community czy Professional. Wersja Professional jest
-płatna i ma więcej funkcjonalności (np. debugger JavaScript). Ale nie będziemy
-z nich korzystać podczas szkolenia. Wersja Community w zupełności nam
-wystarczy.
+wersji. Bez znaczenia czy Community czy Professional. Wersja Professional
+jest płatna i ma więcej funkcjonalności (np. debugger JavaScript). Ale nie
+będziemy z nich korzystać podczas szkolenia. Wersja Community w zupełności
+nam wystarczy.
 
 0. Uruchom PyCharm:
 

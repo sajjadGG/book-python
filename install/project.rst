@@ -5,12 +5,13 @@ Install Project
 Polish
 ------
 Repozytorium posłuży nam do wymiany kodu źródłowego. Trener będzie w nim
-umieszczał treści ćwiczeń do samodzielnego wykonania podczas szkolenia. Twoim
-zadaniem będzie zapisywanie zmian z rozwiązaniami do zadań. Podczas szkolenia
-mie będziemy pracowali na gałęziach! Wszyscy uczestnicy będą wrzucali kod do
-jednego brancha do swoich katalogów. Dzięki oddzielnym katalogom dla każdego
-uczestnika unikniemy konfliktów w Git. Do końca szkolenia jedynie w tym
-katalogu będziesz tworzył/tworzyła rozwiązania do wszystkich zadań.
+umieszczał treści ćwiczeń do samodzielnego wykonania podczas szkolenia.
+Twoim zadaniem będzie zapisywanie zmian z rozwiązaniami do zadań. Podczas
+szkolenia mie będziemy pracowali na gałęziach! Wszyscy uczestnicy będą
+wrzucali kod do jednego brancha do swoich katalogów. Dzięki oddzielnym
+katalogom dla każdego uczestnika unikniemy konfliktów w Git. Do końca
+szkolenia jedynie w tym katalogu będziesz tworzył/tworzyła rozwiązania
+do wszystkich zadań.
 
 0. Jeżeli nie masz Git to proszę zainstaluj go [#DownloadGit]_
 
@@ -24,8 +25,8 @@ katalogu będziesz tworzył/tworzyła rozwiązania do wszystkich zadań.
     a. W polu `URL` wklej link do repozytorium z Github [1]
     b. Upewnij się, że adres rozpoczyna się na ``https://github.com/``
     c. Upewnij się, że na końcu adresu jest ``.git``
-    d. Sprawdź, czy katalog w polu `Directory` jest tym, w którym chcesz mieć
-       projekt - w tym miejscu będziemy przechowywać kod źródłowy [2]
+    d. Sprawdź, czy katalog w polu `Directory` jest tym, w którym chcesz
+       mieć projekt - w tym miejscu będziemy przechowywać kod źródłowy [2]
     e. Kliknij `Clone` i zaczekaj na pobranie repozytorium [3]
 
 3. Autoryzacja do `Github`:
