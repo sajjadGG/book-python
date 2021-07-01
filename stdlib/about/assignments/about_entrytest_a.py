@@ -13,9 +13,9 @@ English:
 
 Polish:
     1. Zdefiniuj `result: list[dict]`:
-    2   a. klucz - nazwa z nagłówka
+    2. Przekonwertuj `DATA` z `list[tuple]` do `list[dict]`
+        a. klucz - nazwa z nagłówka
         b. wartość - wartość numeryczna lub nazwa gatunku
-    3. Przekonwertuj `DATA` z `list[tuple]` do `list[dict]`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
