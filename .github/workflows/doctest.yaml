@@ -95,8 +95,8 @@ jobs:
       - name: Doctest Machine Learning
         run: |
           cd machine-learning
-          pip install -r requirements.txt
-          sphinx-build -a -E -j auto --color -b doctest . /tmp/
+          # pip install -r requirements.txt
+          # sphinx-build -a -E -j auto --color -b doctest . /tmp/
           # find . -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
 
       - name: Doctest Matplotlib
