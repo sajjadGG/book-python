@@ -1,5 +1,5 @@
 """
-* Assignment: CSV Read/Write DictWriter
+* Assignment: CSV DictWriter Fixed
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 8 min

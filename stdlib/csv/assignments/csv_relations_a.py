@@ -49,7 +49,7 @@ Tests:
     >>> remove(FILE)
 """
 
-import csv
+from csv import DictWriter, QUOTE_ALL
 
 FILE = r'_temporary.csv'
 
@@ -88,8 +88,6 @@ for member in CREW:
     astronaut['missions'] = ';'.join(missions)
     result.append(astronaut)
 
-fieldnames = sorted(result[0].keys())
-
 # result = [astronaut | {'missions': ';'.join(values)}
 #           for member in CREW
 #           if (astronaut := vars(member))
@@ -97,7 +95,9 @@ fieldnames = sorted(result[0].keys())
 #                           for mission in astronaut.pop('missions')]) or True]
 
 
+fieldnames = sorted(result[0].keys())
+
 with open(FILE, mode='w') as file:
-    writer = csv.DictWriter(file, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
+    writer = DictWriter(file, fieldnames=fieldnames, quoting=QUOTE_ALL)
     writer.writeheader()
     writer.writerows(result)

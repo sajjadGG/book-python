@@ -1,25 +1,23 @@
 """
-* Assignment: CSV Read/Write Objects
+* Assignment: CSV DictWriter Objects
 * Complexity: medium
 * Lines of code: 6 lines
 * Time: 8 min
 
 English:
     1. Using `csv.DictWriter()` save data to CSV file
-    2. Non functional requirements:
-        a. All fields must be enclosed by double quote `"` character
-        b. Use `,` to separate columns
-        c. Use `utf-8` encoding
-        d. Use Unix `\n` line terminator
+    2. Non-functional requirements:
+        a. Use `,` to separate columns
+        b. Use `utf-8` encoding
+        c. Use Unix `\n` line terminator
     3. Run doctests - all must succeed
 
 Polish:
     1. Za pomocą `csv.DictWriter()` zapisz dane do pliku CSV
     2. Wymagania niefunkcjonalne:
-        a. Wszystkie pola muszą być otoczone znakiem cudzysłowu `"`
-        b. Użyj `,` do oddzielenia kolumn
-        c. Użyj kodowania `utf-8`
-        d. Użyj zakończenia linii Unix `\n`
+        a. Użyj `,` do oddzielenia kolumn
+        b. Użyj kodowania `utf-8`
+        c. Użyj zakończenia linii Unix `\n`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:

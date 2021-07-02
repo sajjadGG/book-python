@@ -1,5 +1,5 @@
 """
-* Assignment: CSV Read/Write DictReader
+* Assignment: CSV DictReader Iris
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 8 min

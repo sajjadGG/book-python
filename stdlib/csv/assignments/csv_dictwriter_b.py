@@ -1,5 +1,5 @@
 """
-* Assignment: CSV Read/Write Schemaless
+* Assignment: CSV DictWriter Schemaless
 * Complexity: medium
 * Lines of code: 7 lines
 * Time: 8 min
@@ -45,6 +45,8 @@ Tests:
     >>> from os import remove
     >>> remove(FILE)
 """
+from csv import DictWriter, QUOTE_ALL
+
 
 FILE = r'_temporary.csv'
 
@@ -56,20 +58,12 @@ DATA = [{'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
         {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'}]
 
 # Solution
-from csv import DictWriter, QUOTE_ALL
-
 fieldnames = set()
 for row in DATA:
     fieldnames.update(row.keys())
 
 with open(FILE, mode='w', encoding='utf-8') as file:
-    data = DictWriter(
-        f=file,
-        fieldnames=sorted(fieldnames),
-        delimiter=',',
-        quotechar='"',
-        quoting=QUOTE_ALL,
-        lineterminator='\n')
-
+    data = DictWriter(f=file, fieldnames=sorted(fieldnames), delimiter=',',
+                      quotechar='"', quoting=QUOTE_ALL, lineterminator='\n')
     data.writeheader()
     data.writerows(DATA)

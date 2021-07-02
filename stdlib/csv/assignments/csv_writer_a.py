@@ -1,5 +1,5 @@
 """
-* Assignment: CSV Read/Write Writer
+* Assignment: CSV Writer Iris
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
