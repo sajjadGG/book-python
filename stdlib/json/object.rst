@@ -2,138 +2,152 @@ JSON Object
 ===========
 
 
-Python Object to JSON
----------------------
-Encoding nested objects with relations to JSON:
+Encode Simple Object
+--------------------
+>>> from dataclasses import dataclass
+>>> import json
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     role: str
+>>>
+>>>
+>>> DATA = Astronaut('Mark', 'Watney', 'Botanist')
+>>>
+>>> result = json.dumps(vars(DATA))
+>>>
+>>> print(result)
+{"firstname": "Mark", "lastname": "Watney", "role": "Botanist"}
 
-.. code-block:: python
-
-    import json
-    from dataclasses import dataclass
-
-
-    @dataclass
-    class Mission:
-        year: int
-        name: str
-
-
-    @dataclass
-    class Astronaut:
-        name: str
-        missions: list[Mission]
-
-
-
-    CREW = [
-        Astronaut('Melissa Lewis', []),
-
-        Astronaut('Mark Watney', missions=[
-            Mission(2035, 'Ares 3')]),
-
-        Astronaut('Jan Twardowski', missions=[
-            Mission(1969, 'Apollo 18'),
-            Mission(2024, 'Artemis 3')]),
-    ]
-
-
-    class MyEncoder(json.JSONEncoder):
-        def default(self, obj):
-            result = vars(obj)
-            result['__type__'] = obj.__class__.__name__
-            return result
-
-
-    result = json.dumps(CREW, cls=MyEncoder, sort_keys=True, indent=2)
-    print(type(result))
-    # <class 'str'>
-    print(result)
-    # [
-    #   {
-    #     "__type__": "Astronaut",
-    #     "missions": [],
-    #     "name": "Melissa Lewis"
-    #   },
-    #   {
-    #     "__type__": "Astronaut",
-    #     "missions": [
-    #       {
-    #         "__type__": "Mission",
-    #         "name": "Ares 3",
-    #         "year": 2035
-    #       }
-    #     ],
-    #     "name": "Mark Watney"
-    #   },
-    #   {
-    #     "__type__": "Astronaut",
-    #     "missions": [
-    #       {
-    #         "__type__": "Mission",
-    #         "name": "Apollo 18",
-    #         "year": 1969
-    #       },
-    #       {
-    #         "__type__": "Mission",
-    #         "name": "Artemis 3",
-    #         "year": 2024
-    #       }
-    #     ],
-    #     "name": "Jan Twardowski"
-    #   }
-    # ]
+Decode Simple Object
+--------------------
+>>> from dataclasses import dataclass
+>>> import json
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     role: str
+>>>
+>>> DATA = '{"firstname": "Mark", "lastname": "Watney", "role": "Botanist"}'
+>>>
+>>> data = json.loads(DATA)
+>>> result = Astronaut(**data)
+>>>
+>>> print(result)
+Astronaut(firstname='Mark', lastname='Watney', role='Botanist')
 
 
-JSON to Python Object
----------------------
+Encode Object with Relation
+---------------------------
+>>> from dataclasses import dataclass
+>>> import json
+>>>
+>>>
+>>> @dataclass
+... class Mission:
+...     year: int
+...     name: str
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     role: str
+...     missions: list[Mission]
+>>>
+>>>
+>>> CREW = [
+...     Astronaut('Mark', 'Watney', 'Botanist', missions=[
+...         Mission(2035, 'Ares 3')]),
+...     Astronaut('Melissa', 'Lewis', 'Commander', missions=[
+...         Mission(2035, 'Ares 3'),
+...         Mission(2031, 'Ares 1')]),
+...     Astronaut('Rick', 'Martinez', 'Pilot', missions=[])]
+>>>
+>>>
+>>> class MyEncoder(json.JSONEncoder):
+...     def default(self, obj):
+...         result = vars(obj)
+...         result['__type__'] = obj.__class__.__name__
+...         return result
+>>>
+>>>
+>>> result = json.dumps(CREW, cls=MyEncoder)
+>>>
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[{"firstname": "Mark",
+  "lastname": "Watney",
+  "role": "Botanist",
+  "missions": [
+     {"year": 2035, "name": "Ares 3", "__type__": "Mission"}],
+  "__type__": "Astronaut"},
+
+ {"firstname": "Melissa",
+  "lastname": "Lewis",
+  "role": "Commander",
+  "missions": [
+     {"year": 2035, "name": "Ares 3", "__type__": "Mission"},
+     {"year": 2031, "name": "Ares 1", "__type__": "Mission"}],
+  "__type__": "Astronaut"},
+
+ {"firstname": "Rick",
+  "lastname": "Martinez",
+  "role": "Pilot",
+  "missions": [],
+  "__type__": "Astronaut"}]
+
+
+Decode
+------
  Encoding nested objects with relations to JSON:
 
-.. code-block:: python
-
-    from dataclasses import dataclass
-    import json
-
-
-    DATA = """[
-        {"__type__": "Astronaut", "name": "Melissa Lewis", "missions": []},
-        {"__type__": "Astronaut", "name": "Mark Watney", "missions": [{"__type__": "Mission", "name": "Ares 3", "year": 2035}]},
-        {"__type__": "Astronaut", "name": "Jan Twardowski", "missions": [
-            {"__type__": "Mission", "name": "Apollo 18", "year": 1969},
-            {"__type__": "Mission", "name": "Artemis 3", "year": 2024}]}]"""
-
-
-    @dataclass
-    class Mission:
-        year: int
-        name: str
-
-
-    @dataclass
-    class Astronaut:
-        name: str
-        missions: list[Mission]
-
-
-    class MyDecoder(json.JSONDecoder):
-        def __init__(self):
-            super().__init__(object_hook=self.default)
-
-        def default(self, obj):
-            clsname = obj.pop('__type__')
-            cls = globals()[class_name]
-            return cls(**obj)
-
-
-    result = json.loads(DATA, cls=MyDecoder)
-    print(type(result))
-    # <class 'list'>
-    print(result)
-    # [Astronaut(name='Melissa Lewis', missions=[]),
-    #  Astronaut(name='Mark Watney', missions=[
-    #       Mission(year=2035, name='Ares 3')]),
-    #  Astronaut(name='Jan Twardowski', missions=[
-    #       Mission(year=1969, name='Apollo 18'),
-    #       Mission(year=2024, name='Artemis 3')])]
+>>> from dataclasses import dataclass
+>>> import json
+>>>
+>>>
+>>> @dataclass
+... class Mission:
+...     year: int
+...     name: str
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     role: str
+...     missions: list[Mission]
+>>>
+>>>
+>>> DATA = """[{"firstname": "Mark", "lastname": "Watney", "role": "Botanist", "missions": [{"year": 2035, "name": "Ares 3", "__type__": "Mission"}], "__type__": "Astronaut"}, {"firstname": "Melissa", "lastname": "Lewis", "role": "Commander", "missions": [{"year": 2035, "name": "Ares 3", "__type__": "Mission"}, {"year": 2031, "name": "Ares 1", "__type__": "Mission"}], "__type__": "Astronaut"}, {"firstname": "Rick", "lastname": "Martinez", "role": "Pilot", "missions": [], "__type__": "Astronaut"}]"""
+>>>
+>>>
+>>> class MyDecoder(json.JSONDecoder):
+...     def __init__(self):
+...         super().__init__(object_hook=self.default)
+...
+...     def default(self, obj):
+...         clsname = obj.pop('__type__')
+...         cls = globals()[class_name]
+...         return cls(**obj)
+>>>
+>>>
+>>> result = json.loads(DATA, cls=MyDecoder)
+>>>
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[Astronaut('Mark', 'Watney', 'Botanist', missions=[
+     Mission(2035, 'Ares 3')]),
+ Astronaut('Melissa', 'Lewis', 'Commander', missions=[
+     Mission(2035, 'Ares 3'),
+     Mission(2031, 'Ares 1')]),
+ Astronaut('Rick', 'Martinez', 'Pilot', missions=[])]
 
 
 Assignments

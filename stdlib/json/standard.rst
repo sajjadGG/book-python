@@ -12,6 +12,7 @@ JSON Syntax
     * Fields are enclosed only by double quote ``"`` character
     * ``true`` and ``false`` is always lower-cased
     * Instead of ``None`` there is ``null``
+    * In JSON there is not ``tuple``
     * ``camelCase`` is convention, although ``snake_case`` is also valid
 
 Example JSON file:
@@ -27,32 +28,32 @@ JSON or Python ``list[dict]``?:
 .. code-block:: python
 
     {'mission': 'Ares 3',
-     'launch_date': datetime(2035, 6, 29, tzinfo=timezone.utc),
+     'launch_date': datetime(2035, 6, 29),
      'destination': 'Mars',
-     'destination_landing': datetime(2035, 11, 7, tzinfo=timezone.utc),
+     'destination_landing': datetime(2035, 11, 7),
      'destination_location': 'Acidalia Planitia',
-     'crew': [{'astronaut': 'Melissa Lewis', 'date_of_birth': date(1995, 7, 15)},
-              {'astronaut': 'Rick Martinez', 'date_of_birth': date(1996, 1, 21)},
-              {'astronaut': 'Alex Vogel', 'date_of_birth': date(1994, 11, 15)},
-              {'astronaut': 'Chris Beck', 'date_of_birth': date(1999, 8, 2)},
-              {'astronaut': 'Beth Johansen', 'date_of_birth': date(2006, 5, 9)},
-              {'astronaut': 'Mark Watney', 'date_of_birth': date(1994, 10, 12)}]}
+     'crew': [{'name': 'Melissa Lewis', 'born': date(1995, 7, 15)},
+              {'name': 'Rick Martinez', 'born': date(1996, 1, 21)},
+              {'name': 'Alex Vogel', 'born': date(1994, 11, 15)},
+              {'name': 'Chris Beck', 'born': date(1999, 8, 2)},
+              {'name': 'Beth Johansen', 'born': date(2006, 5, 9)},
+              {'name': 'Mark Watney', 'born': date(1994, 10, 12)}]}
 
 JSON or Python ``list[dict]``?:
 
 .. code-block:: json
 
     {"mission": "Ares 3",
-     "launch_date": "2035-06-29T00:00:00+00:00",
+     "launch_date": "2035-06-29T00:00:00",
      "destination": "Mars",
-     "destination_landing": "2035-11-07T00:00:00+00:00",
+     "destination_landing": "2035-11-07T00:00:00",
      "destination_location": "Acidalia Planitia",
-     "crew": [{"astronaut": "Melissa Lewis", "date_of_birth": "1995-07-15"},
-              {"astronaut": "Rick Martinez", "date_of_birth": "1996-01-21"},
-              {"astronaut": "Alex Vogel", "date_of_birth": "1994-11-15"},
-              {"astronaut": "Chris Beck", "date_of_birth": "1999-08-02"},
-              {"astronaut": "Beth Johansen", "date_of_birth": "2006-05-09"},
-              {"astronaut": "Mark Watney", "date_of_birth": "1994-10-12"}]}
+     "crew": [{"name": "Melissa Lewis", "born": "1995-07-15"},
+              {"name": "Rick Martinez", "born": "1996-01-21"},
+              {"name": "Alex Vogel", "born": "1994-11-15"},
+              {"name": "Chris Beck", "born": "1999-08-02"},
+              {"name": "Beth Johansen", "born": "2006-05-09"},
+              {"name": "Mark Watney", "born": "1994-10-12"}]}
 
 JSON or Python ``list[dict]``?:
 
