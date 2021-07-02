@@ -498,6 +498,7 @@ Use Case 3
 >>> from datetime import date
 >>>
 >>> YEAR = 365.2425
+>>> TODAY = date(2000, 1, 1)
 >>>
 >>>
 >>> @dataclass
@@ -510,14 +511,14 @@ Use Case 3
 ...     @property
 ...     def age(self):
 ...         if 'age' not in self.__cache:
-...             age = (date.today() - self.date_of_birth).days / YEAR
+...             age = (TODAY - self.date_of_birth).days / YEAR
 ...             self.__cache['age'] = round(age, 1)
 ...         return self.__cache['age']
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney', date(1969, 7, 21))
 >>> print(astro.age)
-51.8
+30.4
 
 
 Use Case 4

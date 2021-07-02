@@ -81,7 +81,7 @@ Encode Object with Relation
 >>>
 >>> result = json.dumps(CREW, cls=MyEncoder)
 >>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+>>> print(result)
 [{"firstname": "Mark", "lastname": "Watney", "role": "Botanist", "missions": [{"year": 2035, "name": "Ares 3", "__type__": "Mission"}], "__type__": "Astronaut"}, {"firstname": "Melissa", "lastname": "Lewis", "role": "Commander", "missions": [{"year": 2035, "name": "Ares 3", "__type__": "Mission"}, {"year": 2031, "name": "Ares 1", "__type__": "Mission"}], "__type__": "Astronaut"}, {"firstname": "Rick", "lastname": "Martinez", "role": "Pilot", "missions": [], "__type__": "Astronaut"}]
 
 
@@ -122,13 +122,8 @@ Decode
 >>>
 >>> result = json.loads(DATA, cls=MyDecoder)
 >>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[Astronaut('Mark', 'Watney', 'Botanist', missions=[
-     Mission(2035, 'Ares 3')]),
- Astronaut('Melissa', 'Lewis', 'Commander', missions=[
-     Mission(2035, 'Ares 3'),
-     Mission(2031, 'Ares 1')]),
- Astronaut('Rick', 'Martinez', 'Pilot', missions=[])]
+>>> print(result)
+[Astronaut(firstname='Mark', lastname='Watney', role='Botanist', missions=[Mission(year=2035, name='Ares 3')]), Astronaut(firstname='Melissa', lastname='Lewis', role='Commander', missions=[Mission(year=2035, name='Ares 3'), Mission(year=2031, name='Ares 1')]), Astronaut(firstname='Rick', lastname='Martinez', role='Pilot', missions=[])]
 
 
 Assignments
