@@ -47,7 +47,10 @@ CSV
     :caption: CSV
 
     csv/standard.rst
-    csv/readwrite.rst
+    csv/reader.rst
+    csv/writer.rst
+    csv/dictreader.rst
+    csv/dictwriter.rst
     csv/nonstandard.rst
     csv/relations.rst
 
@@ -59,19 +62,20 @@ JSON
     :caption: Serialization
 
     json/standard.rst
-    json/readwrite.rst
-    json/datetime.rst
+    json/to-string.rst
+    json/to-file.rst
+    json/encoder.rst
+    json/decoder.rst
     json/object.rst
 
 
-Serialization
-*************
+Pickle
+******
 .. toctree::
     :maxdepth: 1
-    :caption: Serialization
+    :caption: Pickle
 
-    serialization/pickle.rst
-    serialization/xml.rst
+    pickle/pickle.rst
 
 
 Database
@@ -195,6 +199,19 @@ Operating System
     operating-system/argparse.rst
     operating-system/os.rst
     operating-system/pathlib.rst
+
+
+XML
+***
+.. toctree::
+    :maxdepth: 1
+    :caption: XML
+
+    xml/xml.rst
+    xml/lxml.rst
+    xml/html.rst
+    xml/xpath.rst
+    xml/xslt.rst
 
 
 Builtins
