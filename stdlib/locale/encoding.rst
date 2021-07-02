@@ -17,25 +17,29 @@ Rationale
 * ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
 * ``ASCII`` - ASCII characters only
 
-.. figure:: img/files-windows2000-notepad-saveas.png
+.. figure:: img/locale-encoding-windows2000-notepad-saveas.png
 
-    Windows 2000 Notepad "Save As" window with possibility to select encoding. UTF-8 is not selected by default... Source: [#Windows2000]_
+    Windows 2000 Notepad "Save As" window with possibility to select encoding. UTF-8 is not selected by default... [#Windows2000]_
 
-.. figure:: img/files-windows10-notepad-saveas.png
+.. figure:: img/locale-encoding-windows10-notepad-saveas.png
 
-    Windows 10 Notepad "Save As" window with possibility to select encoding. Since Windows 10.1903 (May 2019) notepad writes files in UTF-8 by default! Source: [#Windows10]_ [#Microsoft]_
+    Windows 10 Notepad "Save As" window with possibility to select encoding. Since Windows 10.1903 (May 2019) notepad writes files in UTF-8 by default! [#Windows10]_ [#Microsoft]_
 
-.. figure:: img/files-encoding-ascii2.jpg
+.. figure:: img/locale-encoding-ascii.jpg
 
-    ASCII table. Source: [#Spinall2015]_
+    ASCII table [#Spinall2015]_
 
-.. figure:: img/files-encoding-unicode2.png
+.. figure:: img/locale-encoding-asciiext.png
 
-    Unicode. Source: [#gammon]_
+    ASCII table extended [#wikiAsciiExtened]_
 
-.. figure:: img/files-encoding-unicode3.png
+.. figure:: img/locale-encoding-unicode2.png
 
-    Unicode. Source: [#ilovefreesoftware]_
+    Unicode [#gammon]_
+
+.. figure:: img/locale-encoding-unicode3.png
+
+    Unicode [#ilovefreesoftware]_
 
 
 Str vs Bytes
@@ -153,11 +157,11 @@ UTF-8
     Иван Иванович
 
 
-.. figure:: img/files-encoding-utf.png
+.. figure:: img/locale-encoding-utf.png
 
     UTF-8. Source: [#unicode1]_
 
-.. figure:: img/files-encoding-utf2.jpg
+.. figure:: img/locale-encoding-utf2.jpg
 
     UTF-8. Source: [#unicode2]_
 
@@ -240,3 +244,4 @@ References
 .. [#ilovefreesoftware] http://cdn.ilovefreesoftware.com/wp-content/uploads/2016/10/unicode-Character-list-1.png
 .. [#unicode1] https://camo.githubusercontent.com/7806142e30089cac76da9fe9fb1c5bbd0521cde6/68747470733a2f2f692e696d6775722e636f6d2f7a414d74436a622e706e67
 .. [#unicode2] https://i.pinimg.com/736x/12/e2/37/12e237271c063313762fcafa1cf58e39--web-development-tools.jpg
+.. [#wikiAsciiExtened] Yuriy Arabskyy. ASCII Tabelle, alt. 2013. https://commons.wikimedia.org/wiki/File:Ascii-codes-table.png
