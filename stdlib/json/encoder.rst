@@ -77,11 +77,10 @@ Content Dependency Injection
 >>>
 >>> result = json.dumps(DATA, cls=MyEncoder)
 >>>
->>> result  # doctest: +NORMALIZE_WHITESPACE
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 {"firstname": "Mark",
  "lastname": "Watney",
- "born": "1994-10-12",
- "first_mission": "1969-07-21T02:56:15.000000+00:00"}
+ "born": "1994-10-12"}
 
 
 Use Case
@@ -102,7 +101,7 @@ Use Case
 ...         if type(value) in (datetime, date, time):
 ...             return value.isoformat()
 ...         if type(value) is timedelta:
-...             return value.days // YEAR
+...             return value.days
 >>>
 >>>
 >>> result = json.dumps(DATA, cls=MyEncoder)

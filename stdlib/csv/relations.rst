@@ -53,7 +53,7 @@ Extend
 >>>
 >>>
 >>> CREW = [
-...     Astronaut('Mark', 'Watney', 'Botanist,' 2035, 'Ares 3'),
+...     Astronaut('Mark', 'Watney', 'Botanist', 2035, 'Ares 3'),
 ...     Astronaut('Melissa', 'Lewis', 'Commander', 2035, 'Ares 3'),
 ...     Astronaut('Rick', 'Martinez', 'Pilot', 2035, 'Ares 3')]
 
@@ -85,7 +85,7 @@ Boolean Vector
 ...     Astronaut('Melissa', 'Lewis', 'Commander', missions=[
 ...         Mission(2035, 'Ares 3'),
 ...         Mission(2031, 'Ares 1')]),
-...     Astronaut('Rick', 'Martinez', 'Pilot')]
+...     Astronaut('Rick', 'Martinez', 'Pilot', missions=[])]
 
 .. figure:: img/csv-relations-boolvector.png
 
@@ -115,7 +115,7 @@ FFill
 ...     Astronaut('Melissa', 'Lewis', 'Commander', missions=[
 ...         Mission(2035, 'Ares 3'),
 ...         Mission(2031, 'Ares 1')]),
-...     Astronaut('Rick', 'Martinez', 'Pilot')]
+...     Astronaut('Rick', 'Martinez', 'Pilot', missions=[])]
 
 
 .. figure:: img/csv-relations-ffill-empty.png
@@ -150,7 +150,7 @@ Relations
 ...     Astronaut('Melissa', 'Lewis', 'Commander', missions=[
 ...         Mission(2035, 'Ares 3'),
 ...         Mission(2031, 'Ares 1')]),
-...     Astronaut('Rick', 'Martinez', 'Pilot')]
+...     Astronaut('Rick', 'Martinez', 'Pilot', missions=[])]
 
 .. figure:: img/csv-relations-rel-m2o.png
 .. figure:: img/csv-relations-rel-m2m.png
@@ -181,7 +181,7 @@ Serialization
 ...     Astronaut('Melissa', 'Lewis', 'Commander', missions=[
 ...         Mission(2035, 'Ares 3'),
 ...         Mission(2031, 'Ares 1')]),
-...     Astronaut('Rick', 'Martinez', 'Pilot')]
+...     Astronaut('Rick', 'Martinez', 'Pilot', missions=[])]
 
 .. figure:: img/csv-relations-serialize-cls.png
 .. figure:: img/csv-relations-serialize-obj.png

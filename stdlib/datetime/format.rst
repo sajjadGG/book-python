@@ -67,7 +67,7 @@ Leading Zero
 '6:07'
 
 .. csv-table:: Leading Zero
-    :header: "Meaning", "With", "Without (macOS, Linux, \*nix)", "Without (Windows)"
+    :header: "Meaning", "With", "Without (macOS, Linux)", "Without (Windows)"
     :widths: 55, 15, 15, 15
 
     "day",                          ``%d``, ``%-d``, ``%#d``

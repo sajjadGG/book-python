@@ -103,7 +103,7 @@ Load Int from Bytes
 
 
 Load Float from Bytes
--------------------
+---------------------
 >>> import pickle
 >>>
 >>>
@@ -144,6 +144,7 @@ Load Mapping from Bytes
 
 Serialize Datetimes
 -------------------
+>>> from datetime import datetime
 >>> import pickle
 >>>
 >>>
@@ -177,7 +178,7 @@ b'\x80\x04\x95,\x00\x00\x00\x00\x00\x00\x00}\x94(\x8c\tfirstname\x94\x8c\x04Mark
 >>>
 >>> data = pickle.loads(result)
 >>> Astronaut(**data)  # doctest: +ELLIPSIS
-<__main__.Astronaut object at 0x...>
+<Astronaut object at 0x...>
 
 
 Serialize and deserialize to file

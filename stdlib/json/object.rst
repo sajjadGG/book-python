@@ -88,7 +88,6 @@ Encode Object with Relation
   "missions": [
      {"year": 2035, "name": "Ares 3", "__type__": "Mission"}],
   "__type__": "Astronaut"},
-<BLANKLINE>
  {"firstname": "Melissa",
   "lastname": "Lewis",
   "role": "Commander",
@@ -96,7 +95,6 @@ Encode Object with Relation
      {"year": 2035, "name": "Ares 3", "__type__": "Mission"},
      {"year": 2031, "name": "Ares 1", "__type__": "Mission"}],
   "__type__": "Astronaut"},
-<BLANKLINE>
  {"firstname": "Rick",
   "lastname": "Martinez",
   "role": "Pilot",
