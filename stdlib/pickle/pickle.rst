@@ -8,72 +8,121 @@ What is ``pickle``?
 * ``pickle`` vs. ``cPickle``
 
 
-Dump to string
---------------
+Dump Str to Bytes
+-----------------
 >>> import pickle
 >>>
 >>>
->>> pickle.dumps('Jan Twardowski')
-b'\x80\x03X\x0e\x00\x00\x00Jan Twardowskiq\x00.'
+>>> pickle.dumps('Mark Watney')
+b'\x80\x04\x95\x0f\x00\x00\x00\x00\x00\x00\x00\x8c\x0bMark Watney\x94.'
+
+
+Dump Int to Bytes
+-----------------
+>>> import pickle
+>>>
 >>>
 >>> pickle.dumps(1)
-b'\x80\x03K\x01.'
+b'\x80\x04K\x01.'
 >>>
->>> pickle.dumps(1.0)
-b'\x80\x03G?\xf0\x00\x00\x00\x00\x00\x00.'
+>>> pickle.dumps(0)
+b'\x80\x04K\x00.'
 >>>
->>> pickle.dumps(1.2)
-b'\x80\x03G?\xf3333333.'
->>>
->>> pickle.dumps(1.5)
-b'\x80\x03G?\xf8\x00\x00\x00\x00\x00\x00.'
+>>> pickle.dumps(-1)
+b'\x80\x04\x95\x06\x00\x00\x00\x00\x00\x00\x00J\xff\xff\xff\xff.'
 
 
-Load from string
-----------------
+Dump Float to Bytes
+-------------------
 >>> import pickle
 >>>
 >>>
->>> pickle.loads(b'\x80\x03X\x0e\x00\x00\x00Jan Twardowskiq\x00.')
-'Jan Twardowski'
+>>> pickle.dumps(1)
+b'\x80\x04K\x01.'
 >>>
->>> pickle.loads(b'\x80\x03K\x01.')
-1
+>>> pickle.dumps(1.0)
+b'\x80\x04\x95\n\x00\x00\x00\x00\x00\x00\x00G?\xf0\x00\x00\x00\x00\x00\x00.'
+
+>>> import pickle
 >>>
->>> pickle.loads(b'\x80\x03G?\xf0\x00\x00\x00\x00\x00\x00.')
-1.0
 >>>
->>> pickle.loads(b'\x80\x03G?\xf3333333.')
-1.2
+>>> pickle.dumps(0.1)
+b'\x80\x04\x95\n\x00\x00\x00\x00\x00\x00\x00G?\xb9\x99\x99\x99\x99\x99\x9a.'
 >>>
->>> pickle.loads(b'\x80\x03G?\xf8\x00\x00\x00\x00\x00\x00.')
-1.5
+>>> pickle.dumps(0.2)
+b'\x80\x04\x95\n\x00\x00\x00\x00\x00\x00\x00G?\xc9\x99\x99\x99\x99\x99\x9a.'
+>>>
+>>> pickle.dumps(0.3)
+b'\x80\x04\x95\n\x00\x00\x00\x00\x00\x00\x00G?\xd3333333.'
 
 
-Dump to string
---------------
+Dump Sequence to Bytes
+----------------------
 >>> import pickle
 >>>
 >>>
 >>> pickle.dumps([1, 2, 3])
-b'\x80\x03]q\x00(K\x01K\x02K\x03e.
+b'\x80\x04\x95\x0b\x00\x00\x00\x00\x00\x00\x00]\x94(K\x01K\x02K\x03e.'
 >>>
 >>> pickle.dumps((1, 2, 3))
-b'\x80\x03K\x01K\x02K\x03\x87q\x00.'
+b'\x80\x04\x95\t\x00\x00\x00\x00\x00\x00\x00K\x01K\x02K\x03\x87\x94.'
 >>>
 >>> pickle.dumps({1, 2, 3})
-b'\x80\x03cbuiltins\nset\nq\x00]q\x01(K\x01K\x02K\x03e\x85q\x02Rq\x03.'
->>>
->>> pickle.dumps({'a': 1, 'b': 2, 'c': 3})
-b'\x80\x03}q\x00(X\x01\x00\x00\x00aq\x01K\x01X\x01\x00\x00\x00bq\x02K\x02X\x01\x00\x00\x00cq\x03K\x03u.'
+b'\x80\x04\x95\x0b\x00\x00\x00\x00\x00\x00\x00\x8f\x94(K\x01K\x02K\x03\x90.'
 
 
-Load from string
-----------------
+Dump Mapping to Bytes
+---------------------
 >>> import pickle
 >>>
 >>>
->>> pickle.loads(b'\x80\x03]q\x00(K\x01K\x02K\x03e.)
+>>> pickle.dumps({'a': 1, 'b': 2, 'c': 3})
+b'\x80\x04\x95\x17\x00\x00\x00\x00\x00\x00\x00}\x94(\x8c\x01a\x94K\x01\x8c\x01b\x94K\x02\x8c\x01c\x94K\x03u.'
+
+
+Load Str from Bytes
+-------------------
+>>> import pickle
+>>>
+>>>
+>>> pickle.loads(b'\x80\x04\x95\x0f\x00\x00\x00\x00\x00\x00\x00\x8c\x0bMark Watney\x94.')
+'Mark Watney'
+
+
+Load Int from Bytes
+-------------------
+>>> import pickle
+>>>
+>>>
+>>> pickle.loads(b'\x80\x03K\x01.')
+1
+>>> pickle.loads(b'\x80\x04K\x00.')
+0
+>>> pickle.loads(b'\x80\x04\x95\x06\x00\x00\x00\x00\x00\x00\x00J\xff\xff\xff\xff.')
+-1
+
+
+Load Float from Bytes
+-------------------
+>>> import pickle
+>>>
+>>>
+>>> pickle.loads(b'\x80\x04\x95\n\x00\x00\x00\x00\x00\x00\x00G?\xb9\x99\x99\x99\x99\x99\x9a.')
+0.1
+>>>
+>>> pickle.loads(b'\x80\x04\x95\n\x00\x00\x00\x00\x00\x00\x00G?\xc9\x99\x99\x99\x99\x99\x9a.')
+0.2
+>>>
+>>> pickle.loads(b'\x80\x04\x95\n\x00\x00\x00\x00\x00\x00\x00G?\xd3333333.')
+0.3
+
+
+Load Sequence from Bytes
+------------------------
+>>> import pickle
+>>>
+>>>
+>>> pickle.loads(b'\x80\x03]q\x00(K\x01K\x02K\x03e.')
 [1, 2, 3]
 >>>
 >>> pickle.loads(b'\x80\x03K\x01K\x02K\x03\x87q\x00.')
@@ -82,23 +131,30 @@ Load from string
 >>> pickle.loads(b'\x80\x03cbuiltins\nset\nq\x00]q\x01(K\x01K\x02K\x03e\x85q\x02Rq\x03.')
 {1, 2, 3}
 >>>
+
+
+Load Mapping from Bytes
+-----------------------
+>>> import pickle
+>>>
+>>>
 >>> pickle.loads(b'\x80\x03}q\x00(X\x01\x00\x00\x00aq\x01K\x01X\x01\x00\x00\x00bq\x02K\x02X\x01\x00\x00\x00cq\x03K\x03u.')
 {'a': 1, 'b': 2, 'c': 3}
 
 
-Serialize Dates and Datetimes
------------------------------
+Serialize Datetimes
+-------------------
 >>> import pickle
 >>>
 >>>
 >>> dt = datetime(1969, 7, 21, 2, 56, 15)
 >>> pickle.dumps(dt)
-b'\x80\x03cdatetime\ndatetime\nq\x00C\n\x07\xb1\x07\x15\x028\x0f\x00\x00\x00q\x01\x85q\x02Rq\x03.'
+b'\x80\x04\x95*\x00\x00\x00\x00\x00\x00\x00\x8c\x08datetime\x94\x8c\x08datetime\x94\x93\x94C\n\x07\xb1\x07\x15\x028\x0f\x00\x00\x00\x94\x85\x94R\x94.'
 
 >>> import pickle
 >>>
 >>>
->>> pickle.loads(b'\x80\x03cdatetime\ndatetime\nq\x00C\n\x07\xb1\x07\x15\x028\x0f\x00\x00\x00q\x01\x85q\x02Rq\x03.')
+>>> pickle.loads(b'\x80\x04\x95*\x00\x00\x00\x00\x00\x00\x00\x8c\x08datetime\x94\x8c\x08datetime\x94\x93\x94C\n\x07\xb1\x07\x15\x028\x0f\x00\x00\x00\x94\x85\x94R\x94.')
 datetime.datetime(1969, 7, 21, 2, 56, 15)
 
 
@@ -108,16 +164,19 @@ Serialize and deserialize objects
 >>>
 >>>
 >>> class Astronaut:
->>>     def __init__(self, firstname, lastname):
->>>         self.firstname = firstname
->>>         self.lastname = lastname
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
 >>>
->>> jan = Astronaut('Jan', 'Twardowski')
 >>>
->>> pickle.dumps(jan)
-b'\x80\x03c__main__\nAstronaut\nq\x00)\x81q\x01}q\x02(X\n\x00\x00\x00firstnameq\x03X\x03\x00\x00\x00Janq\x04X\t\x00\x00\x00lastnameq\x05X\n\x00\x00\x00Twardowskiq\x06ub.'
+>>> astro = Astronaut('Mark', 'Watney')
+>>> result = pickle.dumps(vars(astro))
 >>>
->>> pickle.loads(b'\x80\x03c__main__\nAstronaut\nq\x00)\x81q\x01}q\x02(X\n\x00\x00\x00firstnameq\x03X\x03\x00\x00\x00Janq\x04X\t\x00\x00\x00lastnameq\x05X\n\x00\x00\x00Twardowskiq\x06ub.')  # doctest: +ELLIPSIS
+>>> result
+b'\x80\x04\x95,\x00\x00\x00\x00\x00\x00\x00}\x94(\x8c\tfirstname\x94\x8c\x04Mark\x94\x8c\x08lastname\x94\x8c\x06Watney\x94u.'
+>>>
+>>> data = pickle.loads(result)
+>>> Astronaut(**data)  # doctest: +ELLIPSIS
 <__main__.Astronaut object at 0x...>
 
 

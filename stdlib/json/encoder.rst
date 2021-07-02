@@ -13,8 +13,8 @@ Rationale
 >>>
 >>>
 >>> DATA = {'firstname': 'Mark',
->>>         'lastname': 'Watney',
->>>         'date_of_birth': date(1994, 10, 12)}
+...         'lastname': 'Watney',
+...         'born': date(1994, 10, 12)}
 >>>
 >>> result = json.dumps(DATA)
 Traceback (most recent call last):
@@ -28,14 +28,14 @@ Monkey Patching Lambda Expression
 >>>
 >>>
 >>> DATA = {'firstname': 'Mark',
->>>         'lastname': 'Watney',
->>>         'date_of_birth': date(1994, 10, 12)}
+...         'lastname': 'Watney',
+...         'born': date(1994, 10, 12)}
 >>>
 >>> json.JSONEncoder.default = lambda self,x: x.isoformat()
 >>> result = json.dumps(DATA)
 >>>
 >>> print(result)
-{"firstname": "Mark", "lastname": "Watney", "date_of_birth": "1994-10-12"}
+{"firstname": "Mark", "lastname": "Watney", "born": "1994-10-12"}
 
 
 Monkey Patching Function
@@ -46,7 +46,7 @@ Monkey Patching Function
 >>>
 >>> DATA = {'firstname': 'Mark',
 ...         'lastname': 'Watney',
-...         'date_of_birth': date(1994, 10, 12)}
+...         'born': date(1994, 10, 12)}
 >>>
 >>>
 >>> def encoder(self, x):
@@ -56,7 +56,7 @@ Monkey Patching Function
 >>> result = json.dumps(DATA)
 >>>
 >>> print(result)
-{"firstname": "Mark", "lastname": "Watney", "date_of_birth": "1994-10-12"}
+{"firstname": "Mark", "lastname": "Watney", "born": "1994-10-12"}
 
 
 Content Dependency Injection
@@ -67,7 +67,7 @@ Content Dependency Injection
 >>>
 >>> DATA = {'firstname': 'Mark',
 ...         'lastname': 'Watney',
-...         'date_of_birth': date(1994, 10, 12)}
+...         'born': date(1994, 10, 12)}
 >>>
 >>>
 >>> class MyEncoder(json.JSONEncoder):
@@ -80,7 +80,7 @@ Content Dependency Injection
 >>> result  # doctest: +NORMALIZE_WHITESPACE
 {"firstname": "Mark",
  "lastname": "Watney",
- "date_of_birth": "1994-10-12",
+ "born": "1994-10-12",
  "first_mission": "1969-07-21T02:56:15.000000+00:00"}
 
 
@@ -90,14 +90,11 @@ Use Case
 >>> import json
 >>>
 >>>
->>> YEAR = 365
->>>
->>> DATA = {'firstname': 'Mark',
-...         'lastname': 'Watney',
-...         'date_of_birth': date(1994, 10, 12),
-...         'first_mission': datetime(1969, 7, 21, 2, 56, 15),
-...         'nap_time': time(12, 30, 0),
-...         'age': timedelta(days=44*YEAR)}
+>>> DATA = {'name': 'Mark Watney',
+...         'born': date(1994, 10, 12),
+...         'launch': datetime(1969, 7, 21, 2, 56, 15),
+...         'landing': time(12, 30),
+...         'duration': timedelta(days=13)}
 >>>
 >>>
 >>> class MyEncoder(json.JSONEncoder):
@@ -111,12 +108,11 @@ Use Case
 >>> result = json.dumps(DATA, cls=MyEncoder)
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-{"firstname": "Mark",
- "lastname": "Watney",
- "date_of_birth": "1994-10-12",
- "first_mission": "1969-07-21T02:56:15",
- "nap_time": "12:30:00",
- "age": 44}
+{"name": "Mark Watney",
+ "born": "1994-10-12",
+ "launch": "1969-07-21T02:56:15",
+ "landing": "12:30:00",
+ "duration": 13}
 
 
 Assignments

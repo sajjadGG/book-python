@@ -75,7 +75,7 @@ SyntaxError: cannot use assignment expressions with subscript
 
 Guido van Rossum stepped down after accepting :pep:`572` -- Assignment Expressions:
 
-.. figure:: img/idiom-assignmentexpr-bdfl.png
+.. figure:: img/unpacking-assignmentexpr-bdfl.png
 
 
 Example

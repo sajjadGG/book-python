@@ -23,7 +23,7 @@ Formats
 '1961-04-12'
 >>> format(d, '%d.%m.%Y')
 '12.04.1961'
->>> format(d, '%H:M')
+>>> format(d, '%H:%M')
 '06:07'
 >>> format(d, '%Y-%m-%d %H:%M')
 '1961-04-12 06:07'
@@ -70,18 +70,18 @@ Leading Zero
     :header: "Meaning", "With", "Without (macOS, Linux, \*nix)", "Without (Windows)"
     :widths: 55, 15, 15, 15
 
-    "day",                          ``%d``, ``%-d``, ``%#d``,
-    "hour 24h",                     ``%H``, ``%-H``, ``%#H``,
-    "hour 12h",                     ``%I``, ``%-I``, ``%#I``,
-    "day of a year",                ``%j``, ``%-j``, ``%#j``,
-    "month",                        ``%m``, ``%-m``, ``%#m``,
-    "minute",                       ``%M``, ``%-M``, ``%#M``,
-    "second",                       ``%S``, ``%-S``, ``%#S``,
-    "week number (Sunday first)",   ``%U``, ``%-U``, ``%#U``,
-    "week number (Monday first)",   ``%W``, ``%-W``, ``%#W``,
-    "weekday (Sunday first)",       ``%w``, ``%-w``, ``%#w``,
-    "year short",                   ``%y``, ``%-y``, ``%#y``,
-    "year long",                    ``%Y``, ``%-Y``, ``%#Y``,
+    "day",                          ``%d``, ``%-d``, ``%#d``
+    "hour 24h",                     ``%H``, ``%-H``, ``%#H``
+    "hour 12h",                     ``%I``, ``%-I``, ``%#I``
+    "day of a year",                ``%j``, ``%-j``, ``%#j``
+    "month",                        ``%m``, ``%-m``, ``%#m``
+    "minute",                       ``%M``, ``%-M``, ``%#M``
+    "second",                       ``%S``, ``%-S``, ``%#S``
+    "week number (Sunday first)",   ``%U``, ``%-U``, ``%#U``
+    "week number (Monday first)",   ``%W``, ``%-W``, ``%#W``
+    "weekday (Sunday first)",       ``%w``, ``%-w``, ``%#w``
+    "year short",                   ``%y``, ``%-y``, ``%#y``
+    "year long",                    ``%Y``, ``%-Y``, ``%#Y``
 
 
 String Format Time

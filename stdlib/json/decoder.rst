@@ -14,7 +14,7 @@ Problem
 >>> DATA = """
 ...     {"firstname": "Mark",
 ...      "lastname": "Watney",
-...      "date_of_birth": "1994-10-12"}"""
+...      "born": "1994-10-12"}"""
 >>>
 >>>
 >>> result = json.loads(DATA)
@@ -22,7 +22,7 @@ Problem
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 {'firstname': 'Mark',
  'lastname': 'Watney',
- 'date_of_birth': '1994-10-12'}
+ 'born': '1994-10-12'}
 
 
 Function Decoder
@@ -34,12 +34,12 @@ Function Decoder
 >>> DATA = """
 ...     {"firstname": "Mark",
 ...      "lastname": "Watney",
-...      "date_of_birth": "1994-10-12"}"""
+...      "born": "1994-10-12"}"""
 >>>
 >>>
 >>> def decoder(data: dict) -> dict:
 ...     for field, value in data.items():
-...         if field == 'date_of_birth':
+...         if field == 'born':
 ...             data[field] = date.fromisoformat(value)
 ...     return data
 >>>
@@ -49,7 +49,7 @@ Function Decoder
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 {'firstname': 'Mark',
  'lastname': 'Watney',
- 'date_of_birth': datetime.date(1994, 10, 12)}
+ 'born': datetime.date(1994, 10, 12)}
 
 
 Context Dependency Injection
@@ -61,16 +61,16 @@ Context Dependency Injection
 >>> DATA = """
 ...     {"firstname": "Mark",
 ...      "lastname": "Watney",
-...      "date_of_birth": "1994-10-12"}"""
+...      "born": "1994-10-12"}"""
 >>>
 >>>
 >>> class Decoder(json.JSONDecoder):
 ...     def __init__(self):
 ...         super().__init__(object_hook=self.default)
 ...
-...     def decoder(self, data: dict) -> dict:
+...     def default(self, data: dict) -> dict:
 ...         for field, value in data.items():
-...             if field == 'date_of_birth':
+...             if field == 'born':
 ...                 data[field] = date.fromisoformat(value)
 ...         return data
 >>>
@@ -80,7 +80,7 @@ Context Dependency Injection
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 {'firstname': 'Mark',
  'lastname': 'Watney',
- 'date_of_birth': datetime.date(1994, 10, 12)}
+ 'born': datetime.date(1994, 10, 12)}
 
 
 Use Case 1
@@ -115,12 +115,13 @@ Use Case 1
 >>>
 >>> result = json.loads(DATA, cls=MyDecoder)
 >>>
->>> print(result)
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 {'name': 'Mark Watney',
  'born': datetime.date(1994, 10, 12),
  'launch': datetime.datetime(1969, 7, 21, 2, 56, 15),
  'landing': datetime.time(12, 30),
  'duration': datetime.timedelta(days=13)}
+
 
 Use Case 2
 ----------
@@ -164,7 +165,7 @@ Use Case 2
 ...          return str(value)
 >>>
 >>>
->>> result = json.loads(result, cls=MyDecoder)
+>>> result = json.loads(DATA, cls=MyDecoder)
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 {'name': 'Mark Watney',

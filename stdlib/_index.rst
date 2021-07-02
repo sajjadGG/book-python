@@ -114,7 +114,6 @@ Regular Expressions
     regular-expressions/split.rst
     regular-expressions/greedy.rst
     regular-expressions/standards.rst
-    regular-expressions/references.rst
 
 Object Oriented Programming
 ***************************

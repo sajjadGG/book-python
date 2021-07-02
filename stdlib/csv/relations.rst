@@ -4,7 +4,11 @@ CSV Relations
 
 Base
 ----
->>> class Astronaut:
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
 ...     firstname: str
 ...     lastname: str
 >>>
@@ -19,7 +23,11 @@ Base
 
 Extend
 ------
->>> class Astronaut:
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     role: str
@@ -32,7 +40,11 @@ Extend
 
 .. figure:: img/csv-relations-extend1.png
 
->>> class Astronaut:
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     role: str
@@ -50,12 +62,17 @@ Extend
 
 Boolean Vector
 --------------
->>> class Mission:
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Mission:
 ...     year: int
 ...     name: str
 >>>
 >>>
->>> class Astronaut:
+>>> @dataclass
+... class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     role: str
@@ -75,12 +92,17 @@ Boolean Vector
 
 FFill
 -----
->>> class Mission:
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Mission:
 ...     year: int
 ...     name: str
 >>>
 >>>
->>> class Astronaut:
+>>> @dataclass
+... class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     role: str
@@ -105,12 +127,17 @@ FFill
 
 Relations
 ---------
->>> class Mission:
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Mission:
 ...     year: int
 ...     name: str
 >>>
 >>>
->>> class Astronaut:
+>>> @dataclass
+... class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     role: str
@@ -131,12 +158,17 @@ Relations
 
 Serialization
 -------------
->>> class Mission:
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Mission:
 ...     year: int
 ...     name: str
 >>>
 >>>
->>> class Astronaut:
+>>> @dataclass
+... class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     role: str

@@ -137,7 +137,7 @@ Example 3
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     date_of_birth: date = date.today()
+...     born: date = date.today()
 ...     height: Optional[int] = None
 ...     friends: Optional[list['Astronaut']] = None
 ...     AGE_MIN: Final[int] = 27
@@ -145,7 +145,7 @@ Example 3
 >>>
 >>>
 >>> Astronaut('Mark', 'Watney', date(1994, 10, 12))
-Astronaut(firstname='Mark', lastname='Watney', date_of_birth=datetime.date(1994, 10, 12), height=None, friends=None, AGE_MIN=27, AGE_MAX=42)
+Astronaut(firstname='Mark', lastname='Watney', born=datetime.date(1994, 10, 12), height=None, friends=None, AGE_MIN=27, AGE_MAX=42)
 >>>
 >>> astro = Astronaut('Mark', 'Watney', date(1994, 10, 12), friends=[
 ...         Astronaut('Melissa', 'Lewis', date(1995, 7, 15)),
@@ -155,7 +155,7 @@ Astronaut(firstname='Mark', lastname='Watney', date_of_birth=datetime.date(1994,
 ...         Astronaut('Alex', 'Vogel', date(1994, 11, 15))])
 >>>
 >>> astro  # doctest: +NORMALIZE_WHITESPACE
-Astronaut(firstname='Mark', lastname='Watney', date_of_birth=datetime.date(1994, 10, 12), height=None, friends=[Astronaut(firstname='Melissa', lastname='Lewis', date_of_birth=datetime.date(1995, 7, 15), height=None, friends=None, AGE_MIN=27, AGE_MAX=42), Astronaut(firstname='Rick', lastname='Martinez', date_of_birth=datetime.date(1996, 1, 21), height=None, friends=None, AGE_MIN=27, AGE_MAX=42), Astronaut(firstname='Beth', lastname='Johansen', date_of_birth=datetime.date(2006, 5, 9), height=None, friends=None, AGE_MIN=27, AGE_MAX=42), Astronaut(firstname='Chris', lastname='Beck', date_of_birth=datetime.date(1999, 8, 2), height=None, friends=None, AGE_MIN=27, AGE_MAX=42), Astronaut(firstname='Alex', lastname='Vogel', date_of_birth=datetime.date(1994, 11, 15), height=None, friends=None, AGE_MIN=27, AGE_MAX=42)], AGE_MIN=27, AGE_MAX=42)
+Astronaut(firstname='Mark', lastname='Watney', born=datetime.date(1994, 10, 12), height=None, friends=[Astronaut(firstname='Melissa', lastname='Lewis', born=datetime.date(1995, 7, 15), height=None, friends=None, AGE_MIN=27, AGE_MAX=42), Astronaut(firstname='Rick', lastname='Martinez', born=datetime.date(1996, 1, 21), height=None, friends=None, AGE_MIN=27, AGE_MAX=42), Astronaut(firstname='Beth', lastname='Johansen', born=datetime.date(2006, 5, 9), height=None, friends=None, AGE_MIN=27, AGE_MAX=42), Astronaut(firstname='Chris', lastname='Beck', born=datetime.date(1999, 8, 2), height=None, friends=None, AGE_MIN=27, AGE_MAX=42), Astronaut(firstname='Alex', lastname='Vogel', born=datetime.date(1994, 11, 15), height=None, friends=None, AGE_MIN=27, AGE_MAX=42)], AGE_MIN=27, AGE_MAX=42)
 
 
 Example 4

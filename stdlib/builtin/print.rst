@@ -563,11 +563,11 @@ Quick and easy debugging
 .. code-block:: python
 
     astronaut = 'Watney'
-    date_of_birth = date(1975, 7, 31)
+    born = date(1975, 7, 31)
     delta = date.today() - member_since
 
     f'{user=} {member_since=}'
-    # "astronaut='Watney' date_of_birth=datetime.date(1975, 7, 31)"
+    # "astronaut='Watney' born=datetime.date(1975, 7, 31)"
 
     f'{astronaut=!s}  {delta.days=:,d}'
     # 'astronaut=Watney  delta.days=16,075'

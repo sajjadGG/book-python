@@ -174,15 +174,19 @@ datetime.datetime(1969, 7, 21, 2, 56, 15)
 >>> datetime.fromisoformat('1969-07-21 02:56:15')
 datetime.datetime(1969, 7, 21, 2, 56, 15)
 >>>
->>> datetime.fromisoformat('1969-07-21')
-datetime.datetime(1969, 7, 21, 0, 0)
+>>> date.fromisoformat('1969-07-21')
+datetime.date(1969, 7, 21)
 >>>
 >>> time.fromisoformat('02:56:15')
 datetime.time(2, 56, 15)
+>>>
 >>> time.fromisoformat('2:56:15')
-datetime.time(2, 56, 15)
+Traceback (most recent call last):
+ValueError: Invalid isoformat string: '2:56:15'
+>>>
 >>> time.fromisoformat('2:56')
-datetime.time(2, 56, 15)
+Traceback (most recent call last):
+ValueError: Invalid isoformat string: '2:56'
 
 
 Assignments

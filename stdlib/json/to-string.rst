@@ -13,7 +13,7 @@ Serialize mapping to JSON:
 >>>
 >>>
 >>> DATA = {'firstname': 'Mark',
->>>         'lastname': 'Watney'}
+...         'lastname': 'Watney'}
 >>>
 >>>
 >>> result = json.dumps(DATA)
@@ -88,10 +88,10 @@ Serialize list of sequences to JSON:
 >>> import json
 >>>
 >>> DATA = [
->>>     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
->>>     (5.8, 2.7, 5.1, 1.9, 'virginica'),
->>>     (5.1, 3.5, 1.4, 0.2, 'setosa'),
->>>     (5.7, 2.8, 4.1, 1.3, 'versicolor')]
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor')]
 >>>
 >>>
 >>> result = json.dumps(DATA)
