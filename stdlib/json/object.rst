@@ -82,24 +82,7 @@ Encode Object with Relation
 >>> result = json.dumps(CREW, cls=MyEncoder)
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[{"firstname": "Mark",
-  "lastname": "Watney",
-  "role": "Botanist",
-  "missions": [
-     {"year": 2035, "name": "Ares 3", "__type__": "Mission"}],
-  "__type__": "Astronaut"},
- {"firstname": "Melissa",
-  "lastname": "Lewis",
-  "role": "Commander",
-  "missions": [
-     {"year": 2035, "name": "Ares 3", "__type__": "Mission"},
-     {"year": 2031, "name": "Ares 1", "__type__": "Mission"}],
-  "__type__": "Astronaut"},
- {"firstname": "Rick",
-  "lastname": "Martinez",
-  "role": "Pilot",
-  "missions": [],
-  "__type__": "Astronaut"}]
+[{"firstname": "Mark", "lastname": "Watney", "role": "Botanist", "missions": [{"year": 2035, "name": "Ares 3", "__type__": "Mission"}], "__type__": "Astronaut"}, {"firstname": "Melissa", "lastname": "Lewis", "role": "Commander", "missions": [{"year": 2035, "name": "Ares 3", "__type__": "Mission"}, {"year": 2031, "name": "Ares 1", "__type__": "Mission"}], "__type__": "Astronaut"}, {"firstname": "Rick", "lastname": "Martinez", "role": "Pilot", "missions": [], "__type__": "Astronaut"}]
 
 
 Decode
@@ -133,7 +116,7 @@ Decode
 ...
 ...     def default(self, obj):
 ...         clsname = obj.pop('__type__')
-...         cls = globals()[class_name]
+...         cls = globals()[clsname]
 ...         return cls(**obj)
 >>>
 >>>
