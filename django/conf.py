@@ -116,7 +116,7 @@ if 'sphinx.ext.extlinks' in extensions:
 
 if 'sphinx.ext.doctest' in extensions:
     import doctest
-    trim_doctest_flags = False
+    trim_doctest_flags = True
     # doctest_global_cleanup = """"""
     # doctest_default_flags = doctest.ELLIPSIS | doctest.IGNORE_EXCEPTION_DETAIL | doctest.NORMALIZE_WHITESPACE
     # doctest_default_flags = doctest.FAIL_FAST | doctest.IGNORE_EXCEPTION_DETAIL
