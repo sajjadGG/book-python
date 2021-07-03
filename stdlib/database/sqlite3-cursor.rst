@@ -23,7 +23,7 @@ Create Cursor
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, ?, ?)"""
+...     VALUES (NULL, :firstname, :lastname)"""
 >>>
 >>> SQL_SELECT = """
 ...     SELECT *
@@ -66,7 +66,7 @@ Last Row ID
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, ?, ?)"""
+...     VALUES (NULL, :firstname, lastname)"""
 >>>
 >>> SQL_SELECT = """
 ...     SELECT *

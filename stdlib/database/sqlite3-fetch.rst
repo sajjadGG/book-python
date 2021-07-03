@@ -17,7 +17,7 @@ Fetch Sequences
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, ?, ?)"""
+...     VALUES (NULL, :firstname, :lastname)"""
 >>>
 >>> SQL_SELECT = """
 ...     SELECT *
@@ -59,7 +59,7 @@ Fetch Mappings
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, ?, ?)"""
+...     VALUES (NULL, :firstname, :lastname)"""
 >>>
 >>> SQL_SELECT = """
 ...     SELECT *

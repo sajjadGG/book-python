@@ -17,7 +17,8 @@ Create Table
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
-...     db.execute(SQL_CREATE_TABLE)
+...     db.execute(SQL_CREATE_TABLE)  # doctest: +ELLIPSIS
+<sqlite3.Cursor object at 0x...>
 
 
 Create Index
@@ -37,9 +38,10 @@ Create Index
 ...     CREATE INDEX
 ...     IF NOT EXISTS
 ...     astronauts_lastname_index
-...     ON astronaut (lastname);"""
+...     ON astronauts (lastname);"""
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
 ...     db.execute(SQL_CREATE_TABLE)
-...     db.execute(SQL_CREATE_INDEX)
+...     db.execute(SQL_CREATE_INDEX)  # doctest: +ELLIPSIS
+<sqlite3.Cursor object at 0x...>

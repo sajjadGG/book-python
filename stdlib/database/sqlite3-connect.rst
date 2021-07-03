@@ -52,4 +52,4 @@ Context Managers
 >>> DATABASE = ':memory:'
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
-...     ...
+...     pass

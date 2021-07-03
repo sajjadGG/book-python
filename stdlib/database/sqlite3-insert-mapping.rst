@@ -17,16 +17,16 @@ Insert One
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, ?, ?)"""
+...     VALUES (NULL, :firstname, :lastname)"""
 >>>
 >>>
 >>> data = {'firstname': 'Mark',
-...         'lastname': 'Watney'}]
+...         'lastname': 'Watney'}
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
-...     cursor.execute(SQL_CREATE_TABLE)
-...     cursor.executemany(SQL_INSERT, data)
+...     _ = db.execute(SQL_CREATE_TABLE)
+...     _ = db.executemany(SQL_INSERT, data)
 
 
 Insert Many
@@ -44,7 +44,7 @@ Insert Many
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, ?, ?)"""
+...     VALUES (NULL, :firstname, :lastname)"""
 >>>
 >>>
 >>> data = [{'firstname': 'Mark', 'lastname': 'Watney'},
@@ -56,5 +56,5 @@ Insert Many
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
-...     cursor.execute(SQL_CREATE_TABLE)
-...     cursor.executemany(SQL_INSERT, data)
+...     _ = db.execute(SQL_CREATE_TABLE)
+...     _ = db.executemany(SQL_INSERT, data)

@@ -6,7 +6,7 @@ SQL Injection
     # Simulate user input (for test automation)
     from unittest.mock import MagicMock
 
-    IN1 = "' OR 1=1; DROP TABLE users --",
+    IN1 = "' OR 1=1; DROP TABLE users --"
     IN2 = "whatever"
     input = MagicMock(side_effect=[IN1, IN2])
 
@@ -36,8 +36,12 @@ System uses SQL query with variable substitution:
 System executes query on database:
 
 >>> print(SQL_QUERY)
-SELECT * FROM users
-WHERE username='' OR 1=1; DROP TABLE users -- ' AND password='whatever'
+<BLANKLINE>
+<BLANKLINE>
+    SELECT * FROM users
+    WHERE username='' OR 1=1; DROP TABLE users --' AND password='whatever';
+<BLANKLINE>
+<BLANKLINE>
 
 Exploited SQL injection, will SELECT all users with their data and then
 DROP all data from table users!

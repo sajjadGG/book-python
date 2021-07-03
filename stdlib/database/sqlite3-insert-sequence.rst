@@ -23,8 +23,8 @@ Insert One
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
-...     db.execute(SQL_CREATE_TABLE)
-...     db.execute(SQL_INSERT, data)
+...     _ = db.execute(SQL_CREATE_TABLE)
+...     _ = db.execute(SQL_INSERT, data)
 
 
 Insert Many
@@ -53,5 +53,5 @@ Insert Many
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
-...     db.execute(SQL_CREATE_TABLE)
-...     db.execute(SQL_INSERT, data)
+...     _ = db.execute(SQL_CREATE_TABLE)
+...     _ = db.executemany(SQL_INSERT, data)
