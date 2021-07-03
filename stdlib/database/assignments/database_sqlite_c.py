@@ -99,7 +99,7 @@ SQL_CREATE_TABLE_ADDRESS = """
         street TEXT,
         city TEXT,
         state TEXT,
-        code INT,
+        code INTEGER,
         country TEXT);"""
 
 SQL_CREATE_INDEX_ASTRONAUT_LASTNAME = """

@@ -1,0 +1,66 @@
+SQLite3 About
+=============
+
+
+Rationale
+---------
+* The most popular database in the world
+* File database with
+* Open Source (Public Domain license), written in C
+* It is only 699 KiB
+* Supports for SQL-92 standard (Postgres flavor)
+* SQLite3 is built in in Python
+* It is used by mobile apps on iOS, Android, etc.
+* Almost every app has it's own sqlite3 database
+* Almost every web browser (on desktop) uses SQLite3 database
+
+
+Limits
+------
+* Maximum database size: 281 terabytes
+* Maximum number of rows in a table: 2**64 (1.8e+19)
+* Maximum number of columns in a table: 2000
+* Maximum Number Of Tables In A Schema: 2147483646 (a little over 2 billion)
+* Maximum BLOB size: 2147483647 (2**31 - 1)
+* Maximum bytes of SQL statement: 1,000,000,000
+* Maximum tables in a join: 64 tables
+* Maximum number of arguments on a function: 127
+* Maximum number of terms in a compound select statement: 500
+* Maximum length of a LIKE or GLOB pattern: 50000
+* Only partially provides triggers
+* Cannot write to views
+* https://sqlite.org/limits.html
+
+
+Installation
+------------
+* Download from https://sqlite.org/download.html
+* Extract archive
+* Add ``sqlite`` executable to ``$PATH``:
+
+    * \*nix systems (Linux, macOS, etc...): move ``sqlite`` executable to ``/usr/local/bin/``
+    * Windows (better): Add folder with extracted ``sqlite`` executable to ``$PATH`` directory by following instruction (https://python.astrotech.io/install.html)
+    * Windows (simple): If you have GIT installed, move ``sqlite`` executable to ``C:\Program Files\Git\cmd``
+
+
+Verification
+------------
+To check if Sqlite3 is already installed run in Console/Terminal/CMD:
+
+.. code-block:: console
+
+    $ sqlite3 --version
+
+
+DB API v2
+---------
+.. code-block:: python
+
+    sqlite3.connect(...) -> connection
+    connection.execute(...) -> result
+    connection.executemany(...) -> list[result]
+    connection.fetchmany(...) -> list[result]
+    connection.fetchone(...) -> result
+    connection.cursor(...) -> cursor
+    connection.commit(...)
+    connection.close()
