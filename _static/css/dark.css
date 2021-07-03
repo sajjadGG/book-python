@@ -42,14 +42,14 @@
 
     /* figure and image */
     img {max-width: 100% !important; max-height: 450px !important;}
-    .figure {width: 80%; max-height: 500px !important; display: block; text-align: center; margin-left: auto; margin-right: auto}
+    .figure {width: 80%; max-height: 500px !important; display: block; text-align: center; margin-left: auto; margin-right: auto; margin-top: 2em; margin-bottom: 2em;}
 
     /* text selection */
     ::-moz-selection {color: var(--selection-text); background: var(--selection-background);}
     ::selection {color: var(--selection-text); background: var(--selection-background);}
 
     /* RTD theme's default is 800px as max width for the content */
-    .wy-nav-content {max-width: 1100px; background: var(--body-background)}
+    .wy-nav-content {max-width: 800px; background: var(--body-background)}
     .wy-nav-content-wrap {background: var(--body-background)}
 
     /* hide double entries on main page toc-tree */
