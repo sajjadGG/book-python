@@ -63,7 +63,3 @@ Parsing Java properties file with ``csv.DictReader()``:
     # {'property': 'sonar.language', 'value': 'py'}
     # {'property': 'sonar.sourceEncoding', 'value': 'UTF-8'}
     # {'property': 'sonar.verbose', 'value': 'true'}
-
-
-Assignments
------------
