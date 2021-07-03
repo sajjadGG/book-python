@@ -32,8 +32,8 @@ Fetch Sequences
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
-...     db.execute(SQL_CREATE_TABLE)
-...     db.executemany(SQL_INSERT, data)
+...     _ = db.execute(SQL_CREATE_TABLE)
+...     _ = db.executemany(SQL_INSERT, data)
 ...     for row in db.execute(SQL_SELECT):
 ...         print(row)
 (1, 'Mark', 'Watney')
@@ -74,10 +74,10 @@ Fetch Mappings
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
-...     cursor = db.cursor()
-...     cursor.execute(SQL_CREATE_TABLE)
-...     cursor.executemany(SQL_INSERT, data)
-...     for row in cursor.execute(SQL_SELECT):
+...     db.row_factory = sqlite3.Row
+...     _ = db.execute(SQL_CREATE_TABLE)
+...     _ = db.executemany(SQL_INSERT, data)
+...     for row in db.execute(SQL_SELECT):
 ...         print(row)
 {'id': 1, 'firstname': 'Mark', 'lastname': 'Watney'}
 {'id': 2, 'firstname': 'Melissa', 'lastname': 'Lewis'}

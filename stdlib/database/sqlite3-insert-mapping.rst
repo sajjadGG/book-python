@@ -26,7 +26,7 @@ Insert One
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
 ...     _ = db.execute(SQL_CREATE_TABLE)
-...     _ = db.executemany(SQL_INSERT, data)
+...     _ = db.execute(SQL_INSERT, data)
 
 
 Insert Many

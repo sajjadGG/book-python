@@ -39,8 +39,8 @@ Create Cursor
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
 ...     cursor = db.cursor()
-...     cursor.execute(SQL_CREATE_TABLE)
-...     cursor.executemany(SQL_INSERT, data)
+...     _ = cursor.execute(SQL_CREATE_TABLE)
+...     _ = cursor.executemany(SQL_INSERT, data)
 ...     for row in cursor.execute(SQL_SELECT):
 ...         print(row)
 (1, 'Mark', 'Watney')
@@ -66,7 +66,7 @@ Last Row ID
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, :firstname, lastname)"""
+...     VALUES (NULL, :firstname, :lastname)"""
 >>>
 >>> SQL_SELECT = """
 ...     SELECT *
@@ -82,8 +82,8 @@ Last Row ID
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
 ...     cursor = db.cursor()
-...     cursor.execute(SQL_CREATE_TABLE)
-...     cursor.executemany(SQL_INSERT, data)
+...     _ = cursor.execute(SQL_CREATE_TABLE)
+...     _ = cursor.executemany(SQL_INSERT, data)
 ...     print(cursor.lastrowid)
 6
 

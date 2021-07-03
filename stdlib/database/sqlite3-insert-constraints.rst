@@ -30,13 +30,19 @@ Unique
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
-...     db.execute(SQL_CREATE_TABLE)
+...     _ = db.execute(SQL_CREATE_TABLE)
+...     _ = db.executemany(SQL_INSERT, data)
+Traceback (most recent call last):
+sqlite3.IntegrityError: UNIQUE constraint failed: astronauts.login
+>>>
+>>>
+>>> with sqlite3.connect(DATABASE) as db:
+...     _ = db.execute(SQL_CREATE_TABLE)
 ...     try:
 ...         db.executemany(SQL_INSERT, data)
 ...     except sqlite3.IntegrityError:
 ...         print('Login need to be UNIQUE')
-Traceback (most recent call last):
-sqlite3.IntegrityError: UNIQUE constraint failed: astronauts.login
+Login need to be UNIQUE
 
 
 Programming Error
