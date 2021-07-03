@@ -78,7 +78,7 @@ Fetch Mappings
 ...     _ = db.execute(SQL_CREATE_TABLE)
 ...     _ = db.executemany(SQL_INSERT, data)
 ...     for row in db.execute(SQL_SELECT):
-...         print(row)
+...         print(dict(row))
 {'id': 1, 'firstname': 'Mark', 'lastname': 'Watney'}
 {'id': 2, 'firstname': 'Melissa', 'lastname': 'Lewis'}
 {'id': 3, 'firstname': 'Rick', 'lastname': 'Martinez'}

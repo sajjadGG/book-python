@@ -72,18 +72,13 @@ Last Row ID
 ...     SELECT *
 ...     FROM astronauts"""
 >>>
->>> data = [{'firstname': 'Mark', 'lastname': 'Watney'},
-...         {'firstname': 'Melissa', 'lastname': 'Lewis'},
-...         {'firstname': 'Rick', 'lastname': 'Martinez'},
-...         {'firstname': 'Alex', 'lastname': 'Vogel'},
-...         {'firstname': 'Beth', 'lastname': 'Johansen'},
-...         {'firstname': 'Chris', 'lastname': 'Beck'}]
+>>> data = {'firstname': 'Mark', 'lastname': 'Watney'}
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
 ...     cursor = db.cursor()
 ...     _ = cursor.execute(SQL_CREATE_TABLE)
-...     _ = cursor.executemany(SQL_INSERT, data)
+...     _ = cursor.execute(SQL_INSERT, data)
 ...     print(cursor.lastrowid)
-6
+1
 
