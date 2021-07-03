@@ -20,12 +20,12 @@ Python Basics
     basics/_index.rst
 
 
-Python Standard Library
-***********************
+Python Intermediate
+*******************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Python Standard Library
+    :caption: Python Intermediate
 
     stdlib/_index.rst
 
@@ -40,16 +40,14 @@ Python Advanced
     advanced/_index.rst
 
 
-Dragon
-******
+Design Patterns
+***************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Dragon
+    :caption: Design Patterns
 
-    dragon/alpha.rst
-    dragon/beta.rst
-    dragon/rc.rst
+    design-patterns/_index.rst
 
 
 Numpy
@@ -80,26 +78,6 @@ Matplotlib
     :caption: Matplotlib
 
     matplotlib/_index.rst
-
-
-Object Oriented Programming
-***************************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Object Oriented Programming
-
-    oop/_index.rst
-
-
-Design Patterns
-***************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Design Patterns
-
-    design-patterns/_index.rst
 
 
 DevOps
@@ -162,6 +140,16 @@ Machine Learning
     machine-learning/_index.rst
 
 
+Object Oriented Programming
+***************************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Object Oriented Programming
+
+    oop/_index.rst
+
+
 GUI
 ***
 .. toctree::
@@ -179,6 +167,17 @@ Blogposts
     :caption: Blogposts
 
     _blogpost/ml-introduction.rst
+
+Dragon
+******
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Dragon
+
+    dragon/alpha.rst
+    dragon/beta.rst
+    dragon/rc.rst
 
 
 Appendixes
