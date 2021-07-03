@@ -19,9 +19,10 @@ Having
 .. code-block:: sql
 
     SELECT
-        COUNT(id) as headcount,
         firstname,
-        lastname
+        lastname,
+        agency,
+        COUNT(id) as headcount
     FROM astronauts
     GROUP BY agency
     HAVING COUNT(headcount) > 5;

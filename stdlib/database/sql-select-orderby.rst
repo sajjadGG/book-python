@@ -43,9 +43,8 @@ Multiple
 
     SELECT *
     FROM astronauts
-    ORDER BY
-        lastname ASC,
-        firstname DESC;
+    ORDER BY lastname ASC,
+             firstname DESC;
 
 
 Empty
@@ -63,4 +62,4 @@ Empty
 
     SELECT *
     FROM astronauts
-    ORDER BY mission NULLS LAST;
+    ORDER BY mission ASC NULLS LAST;

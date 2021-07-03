@@ -1,5 +1,5 @@
 """
-* Assignment: Database SQLite Logs
+* Assignment: SQLite3 Fetch Logs
 * Complexity: easy
 * Lines of code: 17 lines
 * Time: 21 min

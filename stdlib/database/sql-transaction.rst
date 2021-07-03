@@ -22,52 +22,60 @@ ACID
 Transactions have the following four standard properties, usually referred
 to by the acronym ACID.
 
-* **Atomicity**
-  Ensures that all operations within the work unit are completed
-  successfully; otherwise, the transaction is aborted at the point of
-  failure and previous operations are rolled back to their former state.
+**Atomicity**
 
-  Transactions are often composed of multiple statements. Atomicity
-  guarantees that each transaction is treated as a single "unit", which
-  either succeeds completely, or fails completely: if any of the statements
-  constituting a transaction fails to complete, the entire transaction fails
-  and the database is left unchanged. An atomic system must guarantee
-  atomicity in each and every situation, including power failures, errors
-  and crashes.
+Ensures that all operations within the work unit are completed
+successfully; otherwise, the transaction is aborted at the point of
+failure and previous operations are rolled back to their former state.
 
-* **Consistency**
-  Ensures that the database properly changes states upon a successfully
-  committed transaction.
+Transactions are often composed of multiple statements. Atomicity
+guarantees that each transaction is treated as a single "unit", which
+either succeeds completely, or fails completely: if any of the statements
+constituting a transaction fails to complete, the entire transaction fails
+and the database is left unchanged. An atomic system must guarantee
+atomicity in each and every situation, including power failures, errors
+and crashes.
 
-  Consistency ensures that a transaction can only bring the database from
-  one valid state to another, maintaining database invariants: any data
-  written to the database must be valid according to all defined rules,
-  including constraints, cascades, triggers, and any combination thereof.
-  This prevents database corruption by an illegal transaction, but does not
-  guarantee that a transaction is correct.
 
-* **Isolation**
-  Enables transactions to operate independently of and transparent
-  to each other.
+**Consistency**
 
-  Transactions are often executed concurrently (e.g., reading and writing
-  to multiple tables at the same time). Isolation ensures that concurrent
-  execution of transactions leaves the database in the same state that
-  would have been obtained if the transactions were executed sequentially.
-  Isolation is the main goal of concurrency control; depending on the method
-  used, the effects of an incomplete transaction might not even be visible
-  to other transactions.
+Ensures that the database properly changes states upon a successfully
+committed transaction.
 
-* **Durability**
-  Ensures that the result or effect of a committed transaction persists
-  in case of a system failure.
+Consistency ensures that a transaction can only bring the database from
+one valid state to another, maintaining database invariants: any data
+written to the database must be valid according to all defined rules,
+including constraints, cascades, triggers, and any combination thereof.
+This prevents database corruption by an illegal transaction, but does not
+guarantee that a transaction is correct.
 
-  Durability guarantees that once a transaction has been committed, it will
-  remain committed even in the case of a system failure (e.g., power outage
-  or crash). This usually means that completed transactions (or their
-  effects) are recorded in non-volatile memory.
 
-Source: [#tutorialspoint]_ [#sqlitetranaction]_
+**Isolation**
+
+Enables transactions to operate independently of and transparent
+to each other.
+
+Transactions are often executed concurrently (e.g., reading and writing
+to multiple tables at the same time). Isolation ensures that concurrent
+execution of transactions leaves the database in the same state that
+would have been obtained if the transactions were executed sequentially.
+Isolation is the main goal of concurrency control; depending on the method
+used, the effects of an incomplete transaction might not even be visible
+to other transactions.
+
+
+**Durability**
+
+Ensures that the result or effect of a committed transaction persists
+in case of a system failure.
+
+Durability guarantees that once a transaction has been committed, it will
+remain committed even in the case of a system failure (e.g., power outage
+or crash). This usually means that completed transactions (or their
+effects) are recorded in non-volatile memory.
+
+
+Source: [#sqlitetranaction]_ [#tutorialspoint]_
 
 
 Rationale

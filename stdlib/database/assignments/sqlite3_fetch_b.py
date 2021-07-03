@@ -1,5 +1,5 @@
 """
-* Assignment: Database SQLite CSV
+* Assignment: SQLite3 Fetch CSV
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 21 min

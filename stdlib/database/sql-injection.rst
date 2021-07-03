@@ -27,20 +27,18 @@ Ask user for credentials:
 System uses SQL query with variable substitution:
 
 >>> SQL_QUERY = f"""
-...
 ...     SELECT * FROM users
-...     WHERE username='{username}' AND password='{password}';
-...
+...     WHERE username='{username}'
+...     AND password='{password}';
 ... """
 
 System executes query on database:
 
 >>> print(SQL_QUERY)
 <BLANKLINE>
-<BLANKLINE>
     SELECT * FROM users
-    WHERE username='' OR 1=1; DROP TABLE users --' AND password='whatever';
-<BLANKLINE>
+    WHERE username='' OR 1=1; DROP TABLE users --'
+    AND password='whatever';
 <BLANKLINE>
 
 Exploited SQL injection, will SELECT all users with their data and then

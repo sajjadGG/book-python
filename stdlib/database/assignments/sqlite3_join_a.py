@@ -1,5 +1,5 @@
 """
-* Assignment: Database SQLite Relations
+* Assignment: SQLite3 Join Relations
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min
