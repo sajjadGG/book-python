@@ -177,10 +177,10 @@ Literal
     def open(filename: str, mode: Literal['r','w','a']) -> None:
         pass
 
-    open('data.csv', mode='w')  # Ok
-    open('data.csv', mode='r')  # Ok
-    open('data.csv', mode='a')  # Ok
-    open('data.csv', mode='x')  # Error
+    open('myfile.txt', mode='w')  # Ok
+    open('myfile.txt', mode='r')  # Ok
+    open('myfile.txt', mode='a')  # Ok
+    open('myfile.txt', mode='x')  # Error
 
 
 Annotations

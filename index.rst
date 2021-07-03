@@ -150,13 +150,37 @@ Object Oriented Programming
     oop/_index.rst
 
 
-GUI
-***
+Other
+*****
 .. toctree::
     :maxdepth: 1
-    :caption: GUI
+    :caption: Other
 
     gui/tkinter.rst
+
+    stdlib/_old_database/db-api.rst
+    stdlib/_old_database/sqlite.rst
+    stdlib/_old_database/mysql.rst
+    stdlib/_old_database/postgresql.rst
+    stdlib/_old_database/mongodb.rst
+    stdlib/_old_database/orm.rst
+    stdlib/_old_database/migrations.rst
+    stdlib/_old_database/data-exploration.rst
+
+    stdlib/xml/xml.rst
+    stdlib/xml/lxml.rst
+    stdlib/xml/html.rst
+    stdlib/xml/xpath.rst
+    stdlib/xml/xslt.rst
+
+    stdlib/builtin/function.rst
+    stdlib/builtin/keyword.rst
+    stdlib/builtin/operator.rst
+    stdlib/builtin/print.rst
+
+    stdlib/looping/comprehensions.rst
+    stdlib/looping/else.rst
+
 
 
 Blogposts

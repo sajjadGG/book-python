@@ -75,7 +75,10 @@ Pickle
     :maxdepth: 1
     :caption: Pickle
 
-    pickle/pickle.rst
+    pickle/dump.rst
+    pickle/load.rst
+    pickle/objects.rst
+    pickle/to-file.rst
 
 
 Database
@@ -84,14 +87,7 @@ Database
     :maxdepth: 1
     :caption: Database
 
-    database/db-api.rst
     database/sqlite.rst
-    database/mysql.rst
-    database/postgresql.rst
-    database/mongodb.rst
-    database/orm.rst
-    database/migrations.rst
-    database/data-exploration.rst
     database/sql-injection.rst
     database/sql.rst
 
@@ -115,6 +111,7 @@ Regular Expressions
     regular-expressions/greedy.rst
     regular-expressions/standards.rst
 
+
 Object Oriented Programming
 ***************************
 .. toctree::
@@ -124,6 +121,7 @@ Object Oriented Programming
     oop/enum.rst
     oop/dataclass.rst
     oop/operators.rst
+
 
 Modules and Packages
 ********************
@@ -198,41 +196,6 @@ Operating System
     operating-system/argparse.rst
     operating-system/os.rst
     operating-system/pathlib.rst
-
-
-XML
-***
-.. toctree::
-    :maxdepth: 1
-    :caption: XML
-
-    xml/xml.rst
-    xml/lxml.rst
-    xml/html.rst
-    xml/xpath.rst
-    xml/xslt.rst
-
-
-Builtins
-********
-.. toctree::
-    :maxdepth: 1
-    :caption: Builtins
-
-    builtin/function.rst
-    builtin/keyword.rst
-    builtin/operator.rst
-    builtin/print.rst
-
-
-Looping
-*******
-.. toctree::
-    :maxdepth: 1
-    :caption: Builtins
-
-    looping/comprehensions.rst
-    looping/else.rst
 
 
 References
