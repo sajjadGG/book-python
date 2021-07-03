@@ -25,10 +25,8 @@ jobs:
             ${{ runner.os }}-pip-
             ${{ runner.os }}-
 
-      - name: Install Dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
+      - name: Upgrade PIP
+        run: pip install --upgrade pip
 
       - name: Doctest About
         run: |
