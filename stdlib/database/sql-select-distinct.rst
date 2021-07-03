@@ -1,21 +1,33 @@
-Select Distinct
-===============
+SQL Select Distinct
+===================
 
 
-SQL Syntax - Distinct
----------------------
+Rationale
+---------
+* Unique values
+
+
+Distinct
+--------
 .. code-block:: sql
 
     SELECT DISTINCT agency
     FROM astronauts;
 
+
+Alias
+-----
+.. code-block:: sql
+
+    SELECT DISTINCT agency AS ag
+    FROM astronauts
+
+
+With Query
+----------
 .. code-block:: sql
 
     SELECT DISTINCT agency
     FROM astronauts
     WHERE location = 'Europe';
 
-.. code-block:: sql
-
-    SELECT DISTINCT agency AS ag
-    FROM astronauts

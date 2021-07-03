@@ -1,4 +1,4 @@
-Database Types
+SQL Data Types
 ==============
 
 

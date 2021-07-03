@@ -1,15 +1,18 @@
-Select Limit
-============
+SQL Select Limit
+================
 
 
-SQL Syntax
-----------
+Limit Results
+-------------
 .. code-block:: sql
 
     SELECT *
     FROM astronauts
     LIMIT 5;
 
+
+Pagination
+----------
 .. code-block:: sql
 
     SELECT *

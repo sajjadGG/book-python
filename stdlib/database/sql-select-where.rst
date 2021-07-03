@@ -1,5 +1,5 @@
-Select Where
-============
+SQL Select Where
+================
 
 
 Rationale
@@ -7,8 +7,8 @@ Rationale
 * Order clauses to filter out the most data first!
 
 
-WHERE
------
+Selection
+---------
 * ``=`` - equals
 * ``!=`` - not equal
 * ``<>`` - not equal
@@ -36,8 +36,8 @@ WHERE
     WHERE age > 30;
 
 
-AND
----
+Conjunction
+-----------
 * ``AND`` - conjunction
 
 .. code-block:: sql
@@ -55,8 +55,8 @@ AND
     AND age < 55;
 
 
-OR
---
+Alternative
+-----------
 * ``OR`` - alternative
 
 .. code-block:: sql
@@ -67,8 +67,8 @@ OR
     OR lastname = 'Lewis';
 
 
-IN
---
+Contains
+--------
 * ``IN`` - contains
 * ``NOT IN`` - not contains
 
@@ -85,8 +85,8 @@ IN
     WHERE lastname NOT IN ('Watney', 'Lewis', 'Martinez');
 
 
-IS
---
+Identity
+--------
 * ``IS`` - identity check
 * ``IS NOT`` - negation of an identity check
 
@@ -103,7 +103,7 @@ IS
     WHERE mission IS NOT NULL;
 
 
-LIKE
+Like
 ----
 * ``LIKE``
 * ``%`` - Any character (many)

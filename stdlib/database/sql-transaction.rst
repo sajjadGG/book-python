@@ -1,5 +1,5 @@
-Database Transaction
-====================
+SQL Transaction
+===============
 
 
 Rationale
@@ -87,10 +87,13 @@ Begin
 .. code-block:: sql
 
     BEGIN;
-    DELETE FROM astronauts WHERE agency = 'NASA';
+
+    DELETE FROM astronauts
+    WHERE agency = 'NASA';
+
     -- COMMIT or ROLLBACK;
 
-.. figure:: img/sqlite3-transaction-begin.png
+.. figure:: img/sql-transaction-begin.png
 
 
 Rollback
@@ -103,7 +106,7 @@ Rollback
     DELETE FROM astronauts WHERE agency = 'NASA';
     ROLLBACK;
 
-.. figure:: img/sqlite3-transaction-rollback.png
+.. figure:: img/sql-transaction-rollback.png
 
 
 Commit
@@ -117,7 +120,7 @@ Commit
     DELETE FROM astronauts WHERE agency = 'NASA';
     COMMIT;
 
-.. figure:: img/sqlite3-transaction-commit.png
+.. figure:: img/sql-transaction-commit.png
 
 
 Example

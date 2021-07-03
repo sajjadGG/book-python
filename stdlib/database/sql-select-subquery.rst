@@ -1,11 +1,14 @@
-Select Subquery
-===============
+SQL Select Subquery
+===================
 
 
-SQL Syntax
-----------
+Rationale
+---------
 * ``IN (SELECT ...)`` - subquery
 
+
+Subqueries
+----------
 .. code-block:: sql
 
     SELECT *

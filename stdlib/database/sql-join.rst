@@ -1,5 +1,5 @@
-Database Join
-=============
+SQL Join
+========
 
 
 Rationale
@@ -10,9 +10,9 @@ by using values common to each. [#sqljoin]_
 
 .. figure:: img/sql-joins.png
 
-.. figure:: img/sqlite3-join-clause.png
-.. figure:: img/sqlite3-join-constraint.png
-.. figure:: img/sqlite3-join-operator.png
+.. figure:: img/sql-join-clause.png
+.. figure:: img/sql-join-constraint.png
+.. figure:: img/sql-join-operator.png
 
 
 INNER JOIN
@@ -141,13 +141,6 @@ the statement. [#sqljoincartesian]_
            missions.name,
            missions.year
     FROM astronauts, missions
-
-
-Assignments
------------
-.. literalinclude:: assignments/database_sqlite_c.py
-    :caption: :download:`Solution <assignments/database_sqlite_c.py>`
-    :end-before: # Solution
 
 
 References

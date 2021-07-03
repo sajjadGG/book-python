@@ -1,18 +1,19 @@
-Database Connect
-================
+SQLite3 Connect
+===============
 
 
 Rationale
 ---------
-* Can connect to file or to in-memory
+* File database - persistent storage
+* In-memory - very fast, but volatile
 * sqlite3.connect() -> connection
 * connection.close()
 
 
 In-Memory Database
 ------------------
-* Useful for tests
-* Very fast
+* Useful for tests, development and demonstrations
+* Very fast (do not write any data to disk)
 * Remember to close connection
 
 Connection to in-memory database:

@@ -34,13 +34,20 @@ Limits
 
 Installation
 ------------
-* Download from https://sqlite.org/download.html
-* Extract archive
-* Add ``sqlite`` executable to ``$PATH``:
+1. Download from https://sqlite.org/download.html
+2. Extract archive
+3. Add ``sqlite`` executable to ``PATH``:
 
-    * \*nix systems (Linux, macOS, etc...): move ``sqlite`` executable to ``/usr/local/bin/``
-    * Windows (better): Add folder with extracted ``sqlite`` executable to ``$PATH`` directory by following instruction (https://python.astrotech.io/install.html)
-    * Windows (simple): If you have GIT installed, move ``sqlite`` executable to ``C:\Program Files\Git\cmd``
+    * Linux, macOS, etc:
+      move ``sqlite`` executable to ``/usr/local/bin/``
+
+    * Windows (proper way):
+      Add folder with extracted ``sqlite`` executable to ``%path%``
+      directory by following instruction [#pybookinstall]_
+
+    * Windows (simple way):
+      If you have GIT installed, move ``sqlite`` executable
+      to ``C:\Program Files\Git\cmd``
 
 
 Verification
@@ -64,3 +71,8 @@ DB API v2
     connection.cursor(...) -> cursor
     connection.commit(...)
     connection.close()
+
+
+References
+----------
+.. [#pybookinstall] https://python.astrotech.io/install.html

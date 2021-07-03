@@ -1,5 +1,5 @@
-Database Constraints
-====================
+SQL Constraints
+===============
 
 
 Rationale
@@ -8,8 +8,8 @@ Rationale
 * Prevents from duplicating information
 * Prevents from loss of integrity
 
-.. figure:: img/sqlite3-constraints.gif
-.. figure:: img/sqlite3-literalvalue.gif
+.. figure:: img/sql-constraints.png
+.. figure:: img/sql-literalvalue.png
 
 
 NOT NULL
@@ -48,4 +48,4 @@ INDEX
 * Used to create and retrieve data from the database very quickly
 * Analog to notebook calendar tabs
 
-.. figure:: img/database-notebookcalendar.png
+.. figure:: img/sql-index-notebookcalendar.png

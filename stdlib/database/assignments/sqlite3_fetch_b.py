@@ -50,8 +50,8 @@ Tests:
 
 import sqlite3
 
-DATABASE = r':memory:'
-FILE = r'_temporary.csv'
+DATABASE = ':memory:'
+FILE = '_temporary.csv'
 
 SPECIES = {
     0: 'setosa',

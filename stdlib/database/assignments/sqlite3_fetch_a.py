@@ -90,7 +90,7 @@ Tests:
 import sqlite3
 from datetime import date, datetime, time
 
-DATABASE = r':memory:'
+DATABASE = ':memory:'
 
 DATA = """1969-07-14, 21:00:00, INFO, Terminal countdown started
 1969-07-16, 13:31:53, WARNING, S-IC engine ignition (#5)

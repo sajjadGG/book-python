@@ -1,8 +1,8 @@
-Database Update
-===============
+SQL Update
+==========
 
 
-SQL Syntax
+Update One
 ----------
 .. code-block:: sql
 
@@ -10,6 +10,9 @@ SQL Syntax
         agency = 'NASA'
     WHERE lastname = 'Watney';
 
+
+Update Many Columns
+-------------------
 .. code-block:: sql
 
     UPDATE astronauts SET
@@ -18,6 +21,9 @@ SQL Syntax
         agency = 'NASA'
     WHERE id = 1
 
+
+Update Many Rows
+----------------
 .. code-block:: sql
 
     UPDATE astronauts SET

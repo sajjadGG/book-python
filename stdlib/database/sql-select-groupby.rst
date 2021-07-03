@@ -1,9 +1,9 @@
-Select Group By
-===============
+SQL Select Group By
+===================
 
 
-SQL Syntax
-----------
+Group By
+--------
 .. code-block:: sql
 
     SELECT
@@ -13,6 +13,9 @@ SQL Syntax
     FROM astronauts
     GROUP BY agency;
 
+
+Having
+------
 .. code-block:: sql
 
     SELECT
@@ -24,8 +27,8 @@ SQL Syntax
     HAVING COUNT(headcount) > 5;
 
 
-Example
--------
+Use Case
+--------
 .. code-block:: sql
 
     SELECT

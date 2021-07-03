@@ -66,7 +66,7 @@ Tests:
 
 import sqlite3
 
-DATABASE = r':memory:'
+DATABASE = ':memory:'
 
 DATA = [
     {"firstname": "José", "lastname": "Jiménez", "addresses": [

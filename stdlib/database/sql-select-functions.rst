@@ -1,9 +1,27 @@
-Select Functions
-================
+SQL Select Functions
+====================
 
 
-SQL Syntax
-----------
+Sum
+---
+.. code-block:: sql
+
+    SELECT SUM(experience)
+    FROM astronauts
+    WHERE agency = 'NASA';
+
+
+Average
+-------
+.. code-block:: sql
+
+    SELECT AVG(age)
+    FROM astronauts
+    WHERE agency = 'NASA';
+
+
+Count
+-----
 .. code-block:: sql
 
     SELECT COUNT(id)
@@ -12,19 +30,8 @@ SQL Syntax
 
 .. code-block:: sql
 
-    SELECT AVG(age)
-    FROM astronauts
-    WHERE agency = 'NASA';
-
-.. code-block:: sql
-
-    SELECT SUM(experience)
-    FROM astronauts
-    WHERE agency = 'NASA';
-
-.. code-block:: sql
-
-    SELECT COUNT(DISTINCT agency) FROM astronauts;
+    SELECT COUNT(DISTINCT agency)
+    FROM astronauts;
 
 .. code-block:: sql
 

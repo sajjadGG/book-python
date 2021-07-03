@@ -1,9 +1,9 @@
-SQLite3 Insert Sequence
-=======================
+SQLite3 Execute
+===============
 
 
-Insert One
-----------
+Create Table
+------------
 >>> import sqlite3
 >>>
 >>>
@@ -15,20 +15,13 @@ Insert One
 ...         firstname TEXT,
 ...         lastname TEXT)"""
 >>>
->>> SQL_INSERT = """
-...     INSERT INTO astronauts
-...     VALUES (NULL, ?, ?)"""
->>>
->>> data = ('Mark', 'Watney')
->>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
 ...     db.execute(SQL_CREATE_TABLE)
-...     db.execute(SQL_INSERT, data)
 
 
-Insert Many
------------
+Create Index
+------------
 >>> import sqlite3
 >>>
 >>>
@@ -40,18 +33,13 @@ Insert Many
 ...         firstname TEXT,
 ...         lastname TEXT)"""
 >>>
->>> SQL_INSERT = """
-...     INSERT INTO astronauts
-...     VALUES (NULL, ?, ?)"""
->>>
->>> data = [('Mark', 'Watney'),
-...         ('Melissa', 'Lewis'),
-...         ('Rick', 'Martinez'),
-...         ('Alex', 'Vogel'),
-...         ('Beth', 'Johansen'),
-...         ('Chris', 'Beck')]
+>>> SQL_CREATE_INDEX = """
+...     CREATE INDEX
+...     IF NOT EXISTS
+...     astronauts_lastname_index
+...     ON astronaut (lastname);"""
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
 ...     db.execute(SQL_CREATE_TABLE)
-...     db.execute(SQL_INSERT, data)
+...     db.execute(SQL_CREATE_INDEX)
