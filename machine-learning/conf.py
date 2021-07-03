@@ -56,7 +56,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.todo',
     # 'sphinx.ext.viewcode',
-    'sphinxcontrib.bibtex',
+    # 'sphinxcontrib.bibtex',
     # 'recommonmark',
     # 'nbsphinx'
 ]

@@ -6,7 +6,7 @@ Rationale
 ---------
 * Always keep dates and times only in UTC (**important!**)
 * Datetimes should be converted to local time only when displaying to user
-* Computerphile Time & Time Zones :cite:`VideoComputerphileTimeZones`
+* Computerphile Time & Time Zones [#ytComputerphileTimeZones]_
 
 Comparing datetime works only when all has the same timezone (UTC):
 
@@ -238,3 +238,4 @@ Assignments
 References
 ----------
 .. [#IANA] IANA. Time Zone Database. Year: 2017. Retrieved: 2019-08-05.
+.. [#ytComputerphileTimeZones] Computerphile. The Problem with Time & Timezones. Year: 2019. Retrieved: 2019-04-05. URL: https://www.youtube.com/watch?v=-5wpm-gesOY

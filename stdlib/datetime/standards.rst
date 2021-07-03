@@ -9,14 +9,14 @@ Rationale
 
 Date
 ----
-Formal date format in USA :cite:`DateFormatUS`:
+Formal date format in USA [#wikiDateFormatUS]_:
 
 .. code-block:: text
 
     4/12/61
     April 12, 1961
 
-Formal date format in Japan :cite:`DateFormatJapan`:
+Formal date format in Japan [#wikiDateFormatJapan]_:
 
 .. code-block:: text
 
@@ -130,3 +130,7 @@ References
 .. [#wikiMilitaryTimezones] https://en.wikipedia.org/wiki/List_of_military_time_zones
 
 .. [#wikiISO8601] https://en.wikipedia.org/wiki/ISO_8601
+
+.. [#wikiDateFormatJapan] Date and time notation in Japan. Wikipedia. Year: 2019. Retrieved: 2019-06-27. URL: https://en.wikipedia.org/wiki/Date_and_time_notation_in_Japan#Date
+
+.. [#wikiDateFormatUS] Date and time notation in the United States. Wikipedia. Year: 2019. Retrieved: 2019-06-27. URL: https://en.wikipedia.org/wiki/Date_and_time_notation_in_the_United_States
