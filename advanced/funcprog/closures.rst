@@ -24,16 +24,19 @@ Example
 ...         return x + y
 ...     return g
 
+
 Recap
 -----
+* Function can access data from outer scope
+
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
->>> def hello():
+>>> def run():
 ...     print(f'Hello {firstname} {lastname}')
 >>>
 >>>
->>> hello()
+>>> run()
 Hello Mark Watney
 
 

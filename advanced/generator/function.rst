@@ -133,8 +133,6 @@ StopIteration
 ...     print('c')
 ...     print('cc')
 ...     yield 3
-...     print('d')
-...     print('dd')
 >>>
 >>>
 >>> result = run()
@@ -152,8 +150,6 @@ c
 cc
 3
 >>> next(result)
-d
-dd
 Traceback (most recent call last):
 StopIteration
 

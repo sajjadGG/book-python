@@ -42,7 +42,7 @@ Hello Mark Watney
 >>> hello.lastname = 'Watney'
 >>>
 >>> hello()
-Hello Mark Watney
+'Hello Mark Watney'
 
 
 Function Code
