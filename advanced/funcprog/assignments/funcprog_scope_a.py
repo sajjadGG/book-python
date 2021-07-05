@@ -3,7 +3,7 @@
 * Required: yes
 * Complexity: easy
 * Lines of code: 5 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Define in global scope `SELECT: set[str]` with values:
