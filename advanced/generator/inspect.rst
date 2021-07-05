@@ -1,5 +1,5 @@
-Generator Introspection
-=======================
+Generator Inspect
+=================
 
 
 Is Generator
@@ -106,3 +106,10 @@ Memory Footprint
 .. figure:: img/idioms-generators-performance.png
 
     Source: https://www.askpython.com/python/python-yield-examples
+
+
+Assignments
+-----------
+.. literalinclude:: assignments/generator_inspect_a.py
+    :caption: :download:`Solution <assignments/generator_inspect_a.py>`
+    :end-before: # Solution

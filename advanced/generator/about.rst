@@ -4,17 +4,62 @@ Generator About
 
 Rationale
 ---------
-* Create generator object and assign pointer (do not execute)
-* Comprehensions will be in the memory until end of a program
-* Generators are cleared once they are executed
-* Comprehensions - Using values more than one
-* Generators - Using values once (for example in the loop iterator)
+* Processes one element at a time
+* Does not remember previous element
+* Does not know next element
+* Can be used only once
+* Save memory (does not require more memory for processing large data)
+* Uses around 10% more CPU than regular processing
+* Typical usage: streams, processing larger than memory files or data
+* Cannot use ``len()`` as of generators don't have length
+* Previous element is overridden by current on ``next()``
+* Functions (list, dict, tuple, frozenset, set, sum, all, any, etc)
+  will evaluate generator instantly
 
-* Generator will calculate next number for every loop iteration
-* Generator forgets previous number
-* Generator doesn't know the next number
 
-* Code do not execute instantly
-* Sometimes code is not executed at all!
+Example
+-------
+Generator Expression:
 
-* If you need values evaluated instantly, there is no point in using generators
+>>> result = (x for x in range(0,5))
+
+Generator Function:
+
+>>> def mygenerator():
+...    yield 'something'
+
+
+Inspect
+-------
+>>> from inspect import isgeneratorfunction, isgenerator
+>>>
+>>>
+>>> result = (x for x in range(0,5))
+>>>
+>>> isgenerator(result)
+True
+>>> isgeneratorfunction(result)
+False
+
+>>> from inspect import isgeneratorfunction, isgenerator
+>>>
+>>>
+>>> def mygenerator():
+...    yield 'something'
+>>>
+>>>
+>>> isgenerator(mygenerator)
+False
+>>> isgeneratorfunction(mygenerator)
+True
+>>>
+>>> result = mygenerator()
+>>>
+>>> isgenerator(result)
+True
+>>> isgeneratorfunction(result)
+False
+
+
+
+

@@ -254,18 +254,3 @@ Conclusion
 * We can also send values to the generator using its ``send()`` function.
 * The ``yield from`` statement is used to create a sub-iterator from the generator function.
 * Source: https://www.askpython.com/python/python-yield-examples
-
-
-Assignments
------------
-.. literalinclude:: assignments/function_generator_a.py
-    :caption: :download:`Solution <assignments/function_generator_a.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/function_generator_b.py
-    :caption: :download:`Solution <assignments/function_generator_b.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/function_generator_c.py
-    :caption: :download:`Solution <assignments/function_generator_c.py>`
-    :end-before: # Solution

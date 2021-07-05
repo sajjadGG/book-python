@@ -2,9 +2,30 @@ Generator Builtin
 =================
 
 
+Rationale
+---------
+* Generator like objects
+* Behaves similar, but is not generator
+
+
+isgeneratorfunction(enumerate)
+False
+m = enumerate(months)
+isgenerator(m)
+False
+
+
+data = range(0,5)
+data
+range(0, 5)
+isgeneratorfunction(range)
+False
+isgenerator(data)
+False
+
+
 Range
 -----
-* It is not a generator
 * optional ``start``, inclusive, default: ``0``
 * required ``stop``, exclusive,
 * optional ``step``, default: ``1``
@@ -238,50 +259,8 @@ StopIteration
 [2, 4, 6]
 
 
-Functools
----------
-* https://docs.python.org/3/library/functools.html
-* ``functools.reduce(callable, iterable[, initializer])``
-
->>> 1 + 2
-3
->>> 1 + 2 + 3 + 4
-10
-
->>> from functools import reduce
->>>
->>>
->>> def add(x, y):
-...     return x + y
->>>
->>>
->>> reduce(add, [1, 2])
-3
->>> reduce(add, [1, 2, 3, 4])
-10
-
-
-Itertools
----------
-* Learn more at https://docs.python.org/3/library/itertools.html
-* More information in `Itertools`
-* ``itertools.count(start=0, step=1)``
-* ``itertools.cycle(iterable)``
-* ``itertools.repeat(object[, times])``
-* ``itertools.accumulate(iterable[, func, *, initial=None])``
-* ``itertools.chain(*iterables)``
-* ``itertools.compress(data, selectors)``
-* ``itertools.islice(iterable, start, stop[, step])``
-* ``itertools.starmap(function, iterable)``
-* ``itertools.product(*iterables, repeat=1)``
-* ``itertools.permutations(iterable, r=None)``
-* ``itertools.combinations(iterable, r)``
-* ``itertools.combinations_with_replacement(iterable, r)``
-* ``itertools.groupby(iterable, key=None)``
-
-
-Use Cases
----------
+Use Case 1
+----------
 >>> def increment(x):
 ...     return x + 1
 >>>
@@ -292,6 +271,9 @@ Use Cases
 >>> list(result)
 [2, 3, 4, 5]
 
+
+Use Case 2
+----------
 >>> PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
 ...       'ł': 'l', 'ń': 'n', 'ó': 'o',
 ...       'ś': 's', 'ż': 'z', 'ź': 'z'}
@@ -305,6 +287,9 @@ Use Cases
 >>> ''.join(result)
 'zazolc gesla jazn'
 
+
+Use Case 3
+----------
 >>> people = [
 ...     {'age': 21, 'name': 'Jan Twardowski'},
 ...     {'age': 25, 'name': 'Mark Watney'},
@@ -320,6 +305,9 @@ Use Cases
 [{'age': 21, 'name': 'Jan Twardowski'},
  {'age': 25, 'name': 'Mark Watney'}]
 
+
+Use Case 3
+----------
 >>> people = [
 ...     {'is_astronaut': False, 'name': 'Jan Twardowski'},
 ...     {'is_astronaut': True, 'name': 'Mark Watney'},
@@ -335,6 +323,9 @@ Use Cases
 [{'is_astronaut': True, 'name': 'Mark Watney'},
  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
+
+Use Case 4
+----------
 >>> astronauts = ['Mark Watney', 'Melissa Lewis']
 >>>
 >>> people = ['Jan Twardowski', 'Mark Watney',
@@ -349,6 +340,9 @@ Use Cases
 >>> list(result)
 ['Mark Watney', 'Melissa Lewis']
 
+
+Use Case 5
+----------
 >>> import sys
 >>>
 >>> # doctest: +SKIP
