@@ -8,19 +8,6 @@ About
     about/introduction.rst
 
 
-Annotation
-**********
-.. toctree::
-    :maxdepth: 1
-    :caption: Annotation
-
-    annotation/type.rst
-    annotation/sequence.rst
-    annotation/mapping.rst
-    annotation/function.rst
-    annotation/oop.rst
-
-
 UML
 ***
 .. toctree::

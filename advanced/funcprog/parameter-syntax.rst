@@ -107,10 +107,10 @@ https://docs.python.org/3/library/functions.html#sum:
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_parameter_syntax_a.py
-    :caption: :download:`Solution <assignments/function_parameter_syntax_a.py>`
+.. literalinclude:: assignments/funcprog_parameter_syntax_a.py
+    :caption: :download:`Solution <assignments/funcprog_parameter_syntax_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_parameter_syntax_b.py
-    :caption: :download:`Solution <assignments/function_parameter_syntax_b.py>`
+.. literalinclude:: assignments/funcprog_parameter_syntax_b.py
+    :caption: :download:`Solution <assignments/funcprog_parameter_syntax_b.py>`
     :end-before: # Solution

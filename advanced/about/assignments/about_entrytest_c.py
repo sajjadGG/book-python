@@ -10,16 +10,16 @@ English:
     3. Each line must be a separate dict
     4. Merge host names with the same IP
     5. IPv4 protocol address is when dot (`.`) is in ip address
-    6. `result` must be `list[dict]`
+    6. Define `result: list[dict]` with parsed lines
     7. Run doctests - all must succeed
 
 Polish:
     1. Pomiń komentarze (`#`) i puste linie
     2. Wyciągnij z każdej linii: ip, host i protokół i dodaj do `result: list[dict]`
     3. Każda linia ma być osobnym słownikiem
-    4. Protokół IPv4 jest gdy kropka (`.`) znajduje się w adresie
-    5. Scal nazwy hostów dla tego samego IP
-    6. `result` musi być `list[dict]`
+    4. Scal nazwy hostów dla tego samego IP
+    5. Protokół IPv4 jest gdy kropka (`.`) znajduje się w adresie
+    6. Zdefiniuj `result: list[dict]` ze sparsowanymi liniami
     7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -55,12 +55,10 @@ DATA = """
 ::1             localhost
 """
 
-result: list
+result = []
 
 
 # Solution
-result = []
-
 for line in DATA.splitlines():
     line = line.strip()
 

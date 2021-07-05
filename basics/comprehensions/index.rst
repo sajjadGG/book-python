@@ -84,8 +84,11 @@ Generator Expression:
 >>> _ = {x:x for x in range(0,5)}        # dict comprehension
 
 
+
 Comprehensions or Generator Expression
 --------------------------------------
+Comprehensions vs Generator Expression:
+
 >>> data = [x for x in range(0,10)]
 >>> print(data)
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -116,7 +119,7 @@ Comprehension:
 >>> print(list(data))
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-Generator:
+Generator Expressions:
 
 >>> data = (x for x in range(0,10))
 >>>

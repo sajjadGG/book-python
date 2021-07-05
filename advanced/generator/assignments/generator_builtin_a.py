@@ -1,5 +1,5 @@
 """
-* Assignment: Function Generator Chain
+* Assignment: Generator Builtin Chain
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 8 min

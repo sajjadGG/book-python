@@ -8,43 +8,32 @@ About
     about/agenda.rst
 
 
-Annotation
+Generators
 **********
 .. toctree::
     :maxdepth: 1
-    :caption: Annotation
+    :caption: Generators
 
-    annotation/type.rst
-    annotation/sequence.rst
-    annotation/mapping.rst
-    annotation/function.rst
-    annotation/oop.rst
-
-
-Unpacking
-*********
-.. toctree::
-    :maxdepth: 1
-    :caption: Unpacking
-
-    unpacking/assignment.rst
-    unpacking/parameters.rst
-    unpacking/arguments.rst
-    unpacking/assignment-expression.rst
+    generator/builtin.rst
+    generator/expression.rst
+    generator/function.rst
+    generator/introspection.rst
+    generator/itertools.rst
+    generator/yield-from.rst
 
 
-Functions
-*********
+Functional Programming
+**********************
 .. toctree::
     :maxdepth: 1
     :caption: Functions
 
-    function/parameter-syntax.rst
-    function/generator.rst
-    function/namespace.rst
-    function/functional-paradigm.rst
-    function/callable.rst
-    function/closures.rst
+    funcprog/lambda.rst
+    funcprog/scope.rst
+    funcprog/namespace.rst
+    funcprog/functional-paradigm.rst
+    funcprog/callable.rst
+    funcprog/closures.rst
 
 
 Decorators

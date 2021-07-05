@@ -352,8 +352,8 @@ Function can be stored in data structures such as hash tables, lists, ...:
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_recurrence_a.py
-    :caption: :download:`Solution <assignments/function_recurrence_a.py>`
+.. literalinclude:: assignments/funcprog_recurrence_a.py
+    :caption: :download:`Solution <assignments/funcprog_recurrence_a.py>`
     :end-before: # Solution
 
 

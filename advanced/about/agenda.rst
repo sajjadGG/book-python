@@ -8,20 +8,8 @@ Agenda
     #. Entry Test
     #. Agenda
 
-#. Annotation
-
-    #. Annotation Type
-    #. Annotation Sequence
-    #. Annotation Mapping
-    #. Annotation Function
-    #. Annotation OOP
-
 #. Functions
 
-    #. Function Unpack
-    #. Arbitrary Number of Parameters
-    #. Arbitrary Number of Arguments
-    #. Parameter Syntax
     #. Generators
     #. Functional Paradigm
     #. Callable
