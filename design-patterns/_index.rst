@@ -45,7 +45,6 @@ Idioms
     :caption: Idioms
 
     idiom/comprehensions.rst
-    idiom/assignment-expression.rst
     idiom/range.rst
     idiom/enumerate.rst
     idiom/zip.rst
@@ -54,7 +53,6 @@ Idioms
     idiom/reduce.rst
     idiom/all.rst
     idiom/any.rst
-    idiom/generator.rst
     idiom/patterns.rst
 
 
