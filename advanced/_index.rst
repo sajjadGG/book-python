@@ -14,6 +14,7 @@ Generators
     :maxdepth: 1
     :caption: Generators
 
+    generator/about.rst
     generator/builtin.rst
     generator/expression.rst
     generator/function.rst

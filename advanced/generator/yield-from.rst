@@ -1,6 +1,7 @@
 Generator Yield From
 ====================
 
+
 Rationale
 ---------
 * Since Python 3.3: :pep:`380` -- Syntax for Delegating to a Subgenerator
