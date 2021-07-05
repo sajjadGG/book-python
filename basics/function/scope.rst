@@ -4,7 +4,20 @@ Function Scope
 
 Rationale
 ---------
+* Values defined in function does not leak out
 * Functions has access to global values
+* Shadowing is when you define variable with name identical to the one
+  from outer scope
+* Shadowing in a function is valid only in a function
+* After function return, the original value of a shadowed variable
+  is restored
+* ``global`` keyword allows modification of global variable
+* Using ``global`` keyword is considered as a bad practice
+
+
+Values Leaking
+--------------
+Values defined in function does not leak out:
 
 >>> def add(a, b=1):
 ...     c = 0
@@ -52,6 +65,12 @@ Outer Scope
 
 Shadowing
 ---------
+* Shadowing is when you define variable with name identical to the one
+  from outer scope
+* Shadowing in a function is valid only in a function
+* After function return, the original value of a shadowed variable
+  is restored
+
 >>> data = [1, 2, 3]
 >>>
 >>>
@@ -68,8 +87,8 @@ Shadowing
 
 Global
 ------
-* Allows modification of global variable
-* BAD PRACTICE!!
+* ``global`` keyword allows modification of global variable
+* Using ``global`` keyword is considered as a bad practice
 
 >>> data = [1, 2, 3]
 >>>
@@ -86,76 +105,9 @@ Global
 [10, 20, 30]
 
 
-Pure Function
--------------
->>> def add(a, b):
-...     return a + b
->>>
->>>
->>> add(1, 2)
-3
->>> add(1, 2)
-3
->>> add(1, 2)
-3
-
-
-Impure Function
----------------
->>> c = 3
->>>
->>>
->>> def add(a, b):
-...     return a + b + c
->>>
->>>
->>> add(1, 2)
-6
->>> add(1, 2)
-6
->>> add(1, 2)
-6
->>>
->>> c = 4
->>>
->>> add(1, 2)
-7
->>> add(1, 2)
-7
->>> add(1, 2)
-7
-
-
-Impure to Pure Function
------------------------
->>> c = 3
->>>
->>>
->>> def add(a, b, c):
-...     return a + b + c
->>>
->>>
->>> add(1, 2, c)
-6
->>> add(1, 2, c)
-6
->>> add(1, 2, c)
-6
->>>
->>> c = 4
->>>
->>> add(1, 2, c)
-7
->>> add(1, 2, c)
-7
->>> add(1, 2, c)
-7
-
-
 Global Scope
 ------------
->>> # doctest: +SKIP
-... globals()
+>>> globals()   # doctest: +SKIP
 {'__name__': '__main__',
  '__doc__': None,
  '__package__': None,
@@ -164,8 +116,7 @@ Global Scope
  '__annotations__': {},
  '__builtins__': <module 'builtins' (built-in)>}
 
->>> # doctest: +SKIP
-... dir(globals()['__builtins__'])
+>>> dir(globals()['__builtins__'])   # doctest: +SKIP
 ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException',
  'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning',
  'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError',
@@ -199,8 +150,7 @@ Global Scope
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
->>> # doctest: +SKIP
-... globals()
+>>> globals()  # doctest: +SKIP
 {'__name__': '__main__',
  '__doc__': None,
  '__package__': None,
@@ -218,8 +168,7 @@ Local Scope
 * Variables are not available from outside
 * If outside the function, will return the same as ``globals()``
 
->>> # doctest: +SKIP
-... locals()
+>>> locals()  # doctest: +SKIP
 {'__name__': '__main__',
  '__doc__': None,
  '__package__': None,

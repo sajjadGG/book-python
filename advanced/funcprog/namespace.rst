@@ -1,5 +1,5 @@
-Namespace
-=========
+FuncProg Namespace
+==================
 
 
 Rationale

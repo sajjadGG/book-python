@@ -32,9 +32,14 @@ Functional Programming
 
     funcprog/lambda.rst
     funcprog/scope.rst
-    funcprog/namespace.rst
-    funcprog/functional-paradigm.rst
+    funcprog/pure-function.rst
     funcprog/recurrence.rst
+    funcprog/immutable.rst
+    funcprog/higher-order.rst
+    funcprog/referential-transparency.rst
+    funcprog/functional-paradigm.rst
+    funcprog/namespace.rst
+    funcprog/function-attributes.rst
     funcprog/callable.rst
     funcprog/closures.rst
 

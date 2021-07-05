@@ -8,12 +8,8 @@ Agenda
     #. Entry Test
     #. Agenda
 
-#. Functions
-
-    #. Generators
-    #. Functional Paradigm
-    #. Callable
-    #. Closures
+#. Generators
+#. Functional Programming
 
 #. Decorators
 

@@ -1,92 +1,24 @@
-Callable
-========
+FuncProg Callable
+=================
 
 
 Rationale
 ---------
-.. code-block:: python
-
-    def hello():
-        return 'My name... José Jiménez'
-
-
-    callable(hello)
-    # True
-
-    type(hello)           # <class 'function'>
-    hello                 # <function hello at 0x0C55D420>
-
-    type(hello())         # <class 'str'>
-    hello()               # My name... José Jiménez
-
-
-Function Attributes
--------------------
-.. code-block:: python
-
-    def hello():
-        print('My name... José Jiménez')
-
-
-    hello.myvar = 10
-    print(hello.myvar)
-    # 10
-
-.. code-block:: python
-
-    def hello():
-        if not hello.disabled:
-            print('My name... José Jiménez')
-        else:
-            raise PermissionError
-
-
-    hello.disabled = False
-    hello()
-    # My name... José Jiménez
-
-    hello.disabled = True
-    hello()
-    # Traceback (most recent call last):
-    # PermissionError
-
-.. code-block:: python
-
-    def add(a, b):
-        return a + b
-
-
-    add.__code__.co_varnames
-    # ('a', 'b')
-
-    dir(add.__code__)
-    # [...,
-    #  'co_argcount',
-    #  'co_cellvars',
-    #  'co_code',
-    #  'co_consts',
-    #  'co_filename',
-    #  'co_firstlineno',
-    #  'co_flags',
-    #  'co_freevars',
-    #  'co_kwonlyargcount',
-    #  'co_lnotab',
-    #  'co_name',
-    #  'co_names',
-    #  'co_nlocals',
-    #  'co_posonlyargcount',
-    #  'co_stacksize',
-    #  'co_varnames',
-    #  'replace']
-
-.. code-block:: python
-
-    def add(a: int, b: int) -> int:
-        return a + b
-
-
-    add.__annotations__
-    # {'a': int, 'b': int, 'return': int}
+>>> def hello():
+...     return 'Hello World'
+>>>
+>>>
+>>> callable(hello)
+True
+>>>
+>>> type(hello)
+<class 'function'>
+>>>
+>>> hello  # doctest: +ELLIPSIS
+<function hello at 0x...>
+>>>
+>>> hello()
+'Hello World'
 
 
 Calling Call Method
@@ -224,8 +156,8 @@ Type Annotation
         ...
 
 
-Case Studies
-------------
+Use Case
+--------
 .. code-block:: python
 
     import datetime
