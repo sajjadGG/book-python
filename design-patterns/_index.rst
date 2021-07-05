@@ -44,7 +44,6 @@ Idioms
     :maxdepth: 1
     :caption: Idioms
 
-    idiom/comprehensions.rst
     idiom/range.rst
     idiom/enumerate.rst
     idiom/zip.rst
