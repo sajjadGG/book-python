@@ -25,7 +25,7 @@ Function Annotations
 Setattr, Getattr
 ----------------
 >>> def hello():
-...     return 'Hello World'
+...     pass
 >>>
 >>>
 >>> hello.firstname = 'Mark'
@@ -35,7 +35,7 @@ Setattr, Getattr
 Hello Mark Watney
 
 >>> def hello():
-...     return f'Hello {hello.firstname} {hello.lastname'
+...     return f'Hello {hello.firstname} {hello.lastname}'
 >>>
 >>>
 >>> hello.firstname = 'Mark'
@@ -54,7 +54,7 @@ Function Code
 >>> add.__code__.co_varnames
 ('a', 'b')
 >>>
->>> dir(add.__code__)
+>>> dir(add.__code__)  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE
 [...,
  'co_argcount',
  'co_cellvars',

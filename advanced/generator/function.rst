@@ -161,8 +161,8 @@ StopIteration
 Yield in a Loop
 ---------------
 >>> def run():
->>>     for x in range(0,3):
->>>         yield x
+...     for x in range(0,3):
+...         yield x
 >>>
 >>>
 >>> result = run()
