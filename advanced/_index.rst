@@ -18,9 +18,10 @@ Generators
     generator/builtin.rst
     generator/expression.rst
     generator/function.rst
-    generator/introspection.rst
-    generator/itertools.rst
+    generator/inspect.rst
     generator/yield-from.rst
+    generator/send.rst
+    generator/itertools.rst
 
 
 Functional Programming

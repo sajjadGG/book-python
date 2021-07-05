@@ -15,6 +15,59 @@ Rationale
 
 Example
 -------
+>>> def run():
+...     for x in range(0, 3):
+...         yield x
+...     for x in range(10, 13):
+...         yield x
+
+>>> def generator1():
+...     for x in range(0, 3):
+...         yield x
+>>>
+>>> def generator2():
+...     for x in range(10, 13):
+...         yield x
+>>>
+>>> def run():
+...     yield from generator1()
+...     yield from generator2()
+
+
+Why?
+----
+This will not work at all! Mind that no code is executed by a function
+after the ``return`` keyword.
+
+>>> def generator1():
+...     for x in range(0, 3):
+...         yield x
+>>>
+>>> def generator2():
+...     for x in range(10, 13):
+...         yield x
+>>>
+>>> def run():
+...     return generator1()
+...     return generator2()
+
+This will yield generators (not their values):
+
+>>> def generator1():
+...     for x in range(0, 3):
+...         yield x
+>>>
+>>> def generator2():
+...     for x in range(10, 13):
+...         yield x
+>>>
+>>> def run():
+...     yield generator1()
+...     yield generator2()
+
+
+Execute
+-------
 >>> def generator1():
 ...     for x in range(0, 3):
 ...         yield x
@@ -188,69 +241,11 @@ Traceback (most recent call last):
 StopIteration
 
 
-Send
-----
-* ``.send()`` method allows to pass value to the generator
-* ``data = yield`` will receive this "sent" value
-* After running you have to send ``None`` value to begin processing
-* Sending anything other will raise ``TypeError``
-
->>> def run():
-...     while True:
-...         data = yield
-...         print(f'Processing {data}')
->>>
->>>
->>> worker = run()
->>>
->>> type(worker)
-<class 'generator'>
->>>
->>> worker.send('hello')
-Traceback (most recent call last):
-TypeError: can't send non-None value to a just-started generator
-
->>> def run():
-...     while True:
-...         data = yield
-...         print(f'Processing {data}')
->>>
->>>
->>> worker = run()
->>> worker.send(None)
->>>
->>> for x in range(0,3):
-...     worker.send(x)
-Processing 0
-Processing 1
-Processing 2
-
->>> def worker():
-...     while True:
-...         data = yield
-...         print(f'Processing {data}')
->>>
->>> def run(gen):
-...     gen.send(None)
-...     while True:
-...         x = yield
-...         gen.send(x)
->>>
->>>
->>> result = run(worker())
->>> result.send(None)
->>>
->>> for x in range(0,3):
-...     result.send(x)
-Processing 0
-Processing 1
-Processing 2
-
-
 Conclusion
 ----------
 * Python yield keyword creates a generator function.
-* It’s useful when the function returns a large amount of data by splitting it into multiple chunks.
+* It’s useful when the function returns a large amount of data by
+  splitting it into multiple chunks.
 * We can also send values to the generator using its ``send()`` function.
-* The ``yield from`` statement is used to create a sub-iterator from the generator function.
-* Source: https://www.askpython.com/python/python-yield-examples
+* The ``yield from`` statement is used to create a sub-iterator from the
+  generator function.
