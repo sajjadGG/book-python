@@ -1,5 +1,5 @@
 """
-* Assignment: Functional Lambda Chain
+* Assignment: FuncProg Lambda Chain
 * Required: yes
 * Complexity: easy
 * Lines of code: 2 lines

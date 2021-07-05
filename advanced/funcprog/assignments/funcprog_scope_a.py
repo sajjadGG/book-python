@@ -1,5 +1,5 @@
 """
-* Assignment: Function Scope Global
+* Assignment: FuncProg Scope Global
 * Required: yes
 * Complexity: easy
 * Lines of code: 5 lines

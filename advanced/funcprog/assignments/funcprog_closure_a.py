@@ -1,5 +1,5 @@
 """
-* Assignment: Function Closure Define
+* Assignment: FuncProg Closure Define
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

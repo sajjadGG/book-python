@@ -32,6 +32,7 @@ Functional Programming
     funcprog/scope.rst
     funcprog/namespace.rst
     funcprog/functional-paradigm.rst
+    funcprog/recurrence.rst
     funcprog/callable.rst
     funcprog/closures.rst
 

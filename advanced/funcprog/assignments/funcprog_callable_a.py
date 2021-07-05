@@ -1,5 +1,5 @@
 """
-* Assignment: Function First Class Define
+* Assignment: FuncProg Callable Define
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

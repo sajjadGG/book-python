@@ -1,5 +1,5 @@
 """
-* Assignment: Function Closure Call
+* Assignment: FuncProg Closure Call
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 5 min
