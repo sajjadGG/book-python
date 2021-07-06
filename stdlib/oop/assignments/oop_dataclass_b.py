@@ -21,16 +21,64 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isclass
+    >>> from dataclasses import is_dataclass
 
     >>> assert isclass(Astronaut)
     >>> assert isclass(Address)
-    >>> assert hasattr(Astronaut, 'firstname')
-    >>> assert hasattr(Astronaut, 'lastname')
-    >>> assert hasattr(Address, 'street')
-    >>> assert hasattr(Address, 'city')
-    >>> assert hasattr(Address, 'post_code')
-    >>> assert hasattr(Address, 'region')
-    >>> assert hasattr(Address, 'country')
+    >>> assert is_dataclass(Astronaut)
+    >>> assert is_dataclass(Address)
+
+    >>> astronaut = Astronaut.__dataclass_fields__
+    >>> address = Address.__dataclass_fields__
+
+
+    >>> assert 'firstname' in astronaut, \
+    'Class Astronaut is missing field: firstname'
+
+    >>> assert 'lastname' in astronaut, \
+    'Class Astronaut is missing field: lastname'
+
+    >>> assert 'addresses' in astronaut, \
+    'Class Astronaut is missing field: addresses'
+
+    >>> assert 'street' in address, \
+    'Class Address is missing field: street'
+
+    >>> assert 'city' in address, \
+    'Class Address is missing field: city'
+
+    >>> assert 'post_code' in address, \
+    'Class Address is missing field: post_code'
+
+    >>> assert 'region' in address, \
+    'Class Address is missing field: region'
+
+    >>> assert 'country' in address, \
+    'Class Address is missing field: country'
+
+    >>> assert astronaut['firstname'].type is str, \
+    'Astronaut.firstname has invalid type annotation, expected: str'
+
+    >>> assert astronaut['lastname'].type is str, \
+    'Astronaut.lastname has invalid type annotation, expected: str'
+
+    >>> assert astronaut['addresses'].type.__name__ == 'list', \
+    'Astronaut.addresses has invalid type annotation, expected: list[Address]'
+
+    >>> assert address['street'].type is str, \
+    'Address.street has invalid type annotation, expected: str'
+
+    >>> assert address['city'].type is str, \
+    'Address.city has invalid type annotation, expected: str'
+
+    >>> assert address['post_code'].type is str, \
+    'Address.post_code has invalid type annotation, expected: str'
+
+    >>> assert address['region'].type is str, \
+    'Address.region has invalid type annotation, expected: str'
+
+    >>> assert address['country'].type is str, \
+    'Address.country has invalid type annotation, expected: str'
 """
 
 from dataclasses import dataclass, field
@@ -38,39 +86,56 @@ from dataclasses import dataclass, field
 
 DATA = [
     {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
-        {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Małopolskie", "country": "Poland"}]},
+        {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków",
+         "post_code": "31-008", "region": "Małopolskie",
+         "country": "Poland"}]},
 
     {"firstname": "José", "lastname": "Jiménez", "addresses": [
-        {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058, "region": "Texas", "country": "USA"},
-        {"street": "", "city": "Kennedy Space Center", "post_code": 32899, "region": "Florida", "country": "USA"}]},
+        {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058,
+         "region": "Texas", "country": "USA"},
+        {"street": "", "city": "Kennedy Space Center", "post_code": 32899,
+         "region": "Florida", "country": "USA"}]},
 
     {"firstname": "Mark", "lastname": "Watney", "addresses": [
-        {"street": "4800 Oak Grove Dr", "city": "Pasadena", "post_code": 91109, "region": "California", "country": "USA"},
-        {"street": "2825 E Ave P", "city": "Palmdale", "post_code": 93550, "region": "California", "country": "USA"}]},
+        {"street": "4800 Oak Grove Dr", "city": "Pasadena", "post_code": 91109,
+         "region": "California", "country": "USA"},
+        {"street": "2825 E Ave P", "city": "Palmdale", "post_code": 93550,
+         "region": "California", "country": "USA"}]},
 
     {"firstname": "Иван", "lastname": "Иванович", "addresses": [
-        {"street": "", "city": "Космодро́м Байкону́р", "post_code": "", "region": "Кызылординская область", "country": "Қазақстан"},
-        {"street": "", "city": "Звёздный городо́к", "post_code": 141160, "region": "Московская область", "country": "Россия"}]},
+        {"street": "", "city": "Космодро́м Байкону́р", "post_code": "",
+         "region": "Кызылординская область", "country": "Қазақстан"},
+        {"street": "", "city": "Звёздный городо́к", "post_code": 141160,
+         "region": "Московская область", "country": "Россия"}]},
 
     {"firstname": "Melissa", "lastname": "Lewis"},
 
     {"firstname": "Alex", "lastname": "Vogel", "addresses": [
-        {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
+        {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147,
+         "region": "North Rhine-Westphalia", "country": "Germany"}]}
 ]
+
+
+class Address:
+    ...
+
+
+class Astronaut:
+    ...
 
 
 # Solution
 @dataclass
 class Address:
-    street: str = ''
-    city: str = ''
-    post_code: str = ''
-    region: str = ''
-    country: str = ''
+    street: str
+    city: str
+    post_code: str
+    region: str
+    country: str
 
 
 @dataclass
 class Astronaut:
-    firstname: str = ''
-    lastname: str = ''
+    firstname: str
+    lastname: str
     addresses: list[Address] = field(default_factory=list)
