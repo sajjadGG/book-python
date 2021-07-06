@@ -230,7 +230,7 @@ Itertools Compress
 
 
 Itertools ISlice
----------------
+----------------
 * ``itertools.islice(iterable, start, stop[, step])``
 
 .. code-block:: python
