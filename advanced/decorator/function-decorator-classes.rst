@@ -9,13 +9,13 @@ Rationale
 
 Syntax:
 
->>> @mydecorator
+>>> @mydecorator  # doctest: +SKIP
 ... class MyClass:
 ...     ...
 
 Is equivalent to:
 
->>> MyClass = mydecorator(MyClass)
+>>> MyClass = mydecorator(MyClass)  # doctest: +SKIP
 
 
 Syntax
@@ -87,12 +87,12 @@ Use Case - Logger
 
 Use Case - Since
 ----------------
->>> from time import time
+>>> from datetime import datetime
 >>>
 >>>
 >>> def since(cls):
 ...     class Wrapper(cls):
-...         _instance_created = time()
+...         _instance_created = datetime.now()
 ...     return Wrapper
 >>>
 >>>
@@ -101,8 +101,8 @@ Use Case - Since
 ...     pass
 >>>
 >>>
->>> print(Astronaut._instance_created)
-1607187641.3407109
+>>> print(Astronaut._instance_created)  #   # doctest: +SKIP
+datetime.datetime(1969, 7, 21, 2, 56, 15)
 
 
 Use Case - Singleton Func
@@ -119,16 +119,16 @@ Use Case - Singleton Func
 >>> @singleton
 ... class DatabaseConnection:
 ...     def connect(self):
-...         print(f'Connecting... using {self._instance}')
+...         print(f'Connecting...')
 >>>
 >>>
->>> a = DatabaseConnection()  # Creating instance
+>>> a = DatabaseConnection()  # Will create instance
 >>> a.connect()  # doctest: +ELLIPSIS
-Connecting... using <DatabaseConnection object at 0x...>
+Connecting...
 >>>
->>> b = DatabaseConnection()  # Reusing instance
+>>> b = DatabaseConnection()  # Will reuse instance
 >>> b.connect()  # doctest: +ELLIPSIS
-Connecting... using <DatabaseConnection object at 0x...>
+Connecting...
 
 
 Use Case - Singleton Cls
@@ -146,16 +146,16 @@ Use Case - Singleton Cls
 >>> @singleton
 ... class DatabaseConnection:
 ...     def connect(self):
-...         print(f'Connecting... using {self._instance}')
+...         print(f'Connecting...')
 >>>
 >>>
->>> a = DatabaseConnection()  # Creating instance
+>>> a = DatabaseConnection()  # Will create instance
 >>> a.connect()  # doctest: +ELLIPSIS
-Connecting... using <DatabaseConnection object at 0x...>
+Connecting...
 >>>
->>> b = DatabaseConnection()  # Reusing instance
+>>> b = DatabaseConnection()  # Will reuse instance
 >>> b.connect()  # doctest: +ELLIPSIS
-Connecting... using <DatabaseConnection object at 0x...>
+Connecting...
 
 
 Assignments

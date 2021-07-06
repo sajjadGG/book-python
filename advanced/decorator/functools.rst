@@ -53,7 +53,7 @@ myfunction docstring
 Cached Property
 ---------------
 * ``from functools import cached_property``
-* ``@cached_property(func)``
+* ``@cached_property(method)``
 
 >>> import statistics
 >>> from functools import cached_property
@@ -74,7 +74,9 @@ Cached Property
 >>>
 >>> flower = Iris(5.1, 3.5, 1.4, 0.2)
 >>> flower.stdev
+2.1794494717703365
 >>> flower.mean
+2.55
 
 
 LRU (least recently used) cache

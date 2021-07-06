@@ -15,7 +15,7 @@ Syntax
 ...         def wrapper(*args, **kwargs):
 ...             return func(*args, **kwargs)
 ...         return wrapper
-...     return mydecorator
+...     return decorator
 >>>
 >>>
 >>> @mydecorator(a=0)
@@ -46,7 +46,6 @@ Example
 ... def say_hello():
 ...     return 'Hello'
 >>>
->>>
 >>> say_hello()
 'Hello'
 >>>
@@ -54,6 +53,8 @@ Example
 >>> @translate(lang='pl')
 ... def say_hello():
 ...     return 'Hello'
+>>>
+>>> say_hello()
 'Cześć'
 
 
@@ -81,7 +82,7 @@ Use Case - Deprecated
 ...     pass
 >>>
 >>>
->>> myfunction()
+>>> myfunction()  # doctest: +SKIP
 /home/python/myscript.py:11: DeprecationWarning: Call to deprecated function myfunction in /home/python/myscript.py at line 19
 It will be removed in 2.0
 
@@ -155,7 +156,7 @@ Use Case - Timeout (Timer)
 ...         sleep(1)
 ...     print('countdown finished')
 >>>
->>> countdown(5)
+>>> countdown(5)  # doctest: +SKIP
 4
 3
 2

@@ -198,14 +198,14 @@ Arguments
 ... def myfunction(*args, **kwargs):
 ...     ...
 
->>> @mydecorator('arg1', 'arg2')
+>>> @MyDecorator
 ... def myfunction(*args, **kwargs):
 ...     ...
 
->>> @MyClass
+>>> @mydecorator('arg1', 'arg2')  # doctest: +SKIP
 ... def myfunction(*args, **kwargs):
 ...     ...
 
->>> @MyClass('arg1', 'arg2')
+>>> @MyClass('arg1', 'arg2')  # doctest: +SKIP
 ... def myfunction(*args, **kwargs):
 ...     ...
