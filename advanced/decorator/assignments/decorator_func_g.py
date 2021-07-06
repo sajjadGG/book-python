@@ -7,13 +7,15 @@
 English:
     1. Modify decorator `numeric`
     2. Decorator must check arguments `a` and `b` types
-    3. If type `a` or `b` are not `int` or `float` raise exception `TypeError`
+    3. If type `a` or `b` are not `int` or `float`
+       raise exception `TypeError`
     4. Run doctests - all must succeed
 
 Polish:
     1. Zmodyfikuj dekorator `numeric`
     2. Dekorator ma sprawdzać typy argumentów `a` oraz `b`
-    3. Jeżeli typ `a` lub `b` nie jest `int` lub `float` to podnieś wyjątek `TypeError`
+    3. Jeżeli typ `a` lub `b` nie jest `int` lub `float`
+       to podnieś wyjątek `TypeError`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -48,6 +50,7 @@ Tests:
     Traceback (most recent call last):
     TypeError: Argument "b" must be int or float
 """
+
 
 def numeric(func):
     def wrapper(a, b):
