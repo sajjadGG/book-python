@@ -111,9 +111,9 @@ Doing something else...
 >>> my._is_allowed = False
 >>>
 >>> my.do_something()
-Sorry, you cannot do anything
+Sorry, Permission Denied
 >>> my.do_something_else()
-Sorry, you cannot do anything
+Sorry, Permission Denied
 
 
 Use Case - Paragraph

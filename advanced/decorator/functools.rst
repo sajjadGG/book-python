@@ -73,8 +73,8 @@ Cached Property
 >>>
 >>>
 >>> flower = Iris(5.1, 3.5, 1.4, 0.2)
->>> flower.stdev()
->>> flower.mean()
+>>> flower.stdev
+>>> flower.mean
 
 
 LRU (least recently used) cache
@@ -86,7 +86,7 @@ LRU (least recently used) cache
 >>>
 >>>
 >>> @lru_cache(maxsize=None)
->>> def fib(n):
+... def fib(n):
 ...     if n < 2:
 ...         return n
 ...     return fib(n-1) + fib(n-2)

@@ -124,11 +124,11 @@ Use Case - Singleton Func
 >>>
 >>> a = DatabaseConnection()  # Creating instance
 >>> a.connect()  # doctest: +ELLIPSIS
-Connecting... using <__main__.DatabaseConnection object at 0x...>
+Connecting... using <DatabaseConnection object at 0x...>
 >>>
 >>> b = DatabaseConnection()  # Reusing instance
 >>> b.connect()  # doctest: +ELLIPSIS
-Connecting... using <__main__.DatabaseConnection object at 0x...>
+Connecting... using <DatabaseConnection object at 0x...>
 
 
 Use Case - Singleton Cls
@@ -151,11 +151,11 @@ Use Case - Singleton Cls
 >>>
 >>> a = DatabaseConnection()  # Creating instance
 >>> a.connect()  # doctest: +ELLIPSIS
-Connecting... using <__main__.DatabaseConnection object at 0x...>
+Connecting... using <DatabaseConnection object at 0x...>
 >>>
 >>> b = DatabaseConnection()  # Reusing instance
 >>> b.connect()  # doctest: +ELLIPSIS
-Connecting... using <__main__.DatabaseConnection object at 0x...>
+Connecting... using <DatabaseConnection object at 0x...>
 
 
 Assignments
