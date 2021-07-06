@@ -6,17 +6,15 @@
 
 English:
     1. Model `DATA` using `dataclasses`
-        a. Create class definition, fields and their types
-        b. Do not write code converting `DATA` to your classes
-    2. Fields should have deafault value set to empty `str`
-    3. Run doctests - all must succeed
+    2. Create class definition, fields and their types
+    3. Do not write code converting `DATA` to your classes
+    4. Run doctests - all must succeed
 
 Polish:
     1. Zamodeluj `DATA` wykorzystując `dataclass`
-        a. Stwórz definicję klas, pól i ich typów
-        b. Nie pisz kodu konwertującego `DATA` do Twoich klas
-    2. Pola mają mieć wartość domyślną pusty `str`
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    2. Stwórz definicję klas, pól i ich typów
+    3. Nie pisz kodu konwertującego `DATA` do Twoich klas
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
