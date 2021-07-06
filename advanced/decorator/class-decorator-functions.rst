@@ -132,9 +132,6 @@ Use Case - Cache Args
 
 Use Case - Cache Kwargs
 -----------------------
->>> from pickle import dumps
->>>
->>>
 >>> class Cache(dict):
 ...     _func: callable
 ...     _args: tuple
@@ -146,7 +143,7 @@ Use Case - Cache Kwargs
 ...     def __call__(self, *args, **kwargs):
 ...         self._args = args
 ...         self._kwargs = kwargs
-...         key = hash(dumps(args) + dumps(kwargs))
+...         key = hash(args + tuple(kwargs.values()))
 ...         return self[key]
 ...
 ...     def __missing__(self, key):
@@ -158,6 +155,7 @@ Use Case - Cache Kwargs
 >>> def myfunction(a, b):
 ...     return a * b
 >>>
+>>>
 >>> myfunction(1, 2)
 2
 >>> myfunction(2, 1)
@@ -168,12 +166,12 @@ Use Case - Cache Kwargs
 42
 >>> myfunction(9, 7)
 63
->>> myfunction
-{-5031589639694290544: 2,
- -7391056524300571861: 2,
- -2712444627064717062: 6,
- 7201789803359913928: 42,
- 8409437572158207229: 63}
+>>> myfunction  # doctest: +SKIP
+{-3550055125485641917: 2,
+ 6794810172467074373: 2,
+ 8062003079928221385: 6,
+ 1461316589696902609: 42,
+ -4120545409808486724: 63}
 
 
 Assignments

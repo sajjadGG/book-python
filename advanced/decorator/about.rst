@@ -114,22 +114,22 @@ Wrapper Type
 * If ``obj`` and ``Wrapper`` are classes, ``Wrapper`` can inherit from ``obj`` (to extend it)
 
 >>> def mydecorator(obj):
-...     def wrapper(*args, **kwargs)
+...     def wrapper(*args, **kwargs):
 ...         ...
 ...     return wrapper
 
 >>> def mydecorator(obj):
 ...     class Wrapper:
-...         def __init__(*args, **kwargs)
+...         def __init__(self, *args, **kwargs):
 ...             ...
 ...     return Wrapper
 
 >>> class MyDecorator:
->>>     def __init__(self, obj):
->>>         ...
->>>
->>>     def __call__(*args, **kwargs):
->>>         ...
+...     def __init__(self, obj):
+...         ...
+...
+...     def __call__(self, *args, **kwargs):
+...         ...
 
 
 Decorated Object
@@ -198,7 +198,7 @@ Arguments
 ... def myfunction(*args, **kwargs):
 ...     ...
 
->>> @mydecorator(a, b)
+>>> @mydecorator('arg1', 'arg2')
 ... def myfunction(*args, **kwargs):
 ...     ...
 
@@ -206,6 +206,6 @@ Arguments
 ... def myfunction(*args, **kwargs):
 ...     ...
 
->>> @MyClass(a, b)
+>>> @MyClass('arg1', 'arg2')
 ... def myfunction(*args, **kwargs):
 ...     ...

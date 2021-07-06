@@ -57,6 +57,21 @@ Tests:
     >>> echo('one', c=1.1, b=1.1)
     Traceback (most recent call last):
     TypeError: "b" is <class 'float'>, but <class 'int'> was expected
+
+    >>> @typecheck(check_return=True)
+    ... def echo(a: str, b: int, c: float = 0.0) -> bool:
+    ...     return str(a * b)
+    >>>
+    >>> echo('one', 1, 1.1)
+    Traceback (most recent call last):
+    TypeError: "return" is <class 'str'>, but <class 'bool'> was expected
+
+    >>> @typecheck(check_return=False)
+    ... def echo(a: str, b: int, c: float = 0.0) -> bool:
+    ...     return str(a * b)
+    >>>
+    >>> echo('one', 1, 1.1)
+    'one'
 """
 
 def decorator(func):

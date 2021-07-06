@@ -29,7 +29,7 @@ Tests:
 
     >>> class MyClass:
     ...     @mydecorator
-    ...     def echo(text):
+    ...     def echo(self, text):
     ...         return text
 
     >>> my = MyClass()
