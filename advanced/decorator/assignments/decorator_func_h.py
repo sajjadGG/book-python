@@ -71,6 +71,14 @@ Tests:
     >>> echo('one', c=1.1, b=1.1)
     Traceback (most recent call last):
     TypeError: "b" is <class 'float'>, but <class 'int'> was expected
+
+    >>> @typecheck
+    ... def echo(a: str, b: int, c: float = 0.0) -> bool:
+    ...     return str(a * b)
+    >>>
+    >>> echo('one', 1, 1.1)
+    Traceback (most recent call last):
+    TypeError: "return" is <class 'str'>, but <class 'bool'> was expected
 """
 
 def typecheck(func):

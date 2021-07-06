@@ -33,10 +33,18 @@ Tests:
     4.0
     >>> add(-1, 1.5)
     0.5
+
     >>> add('one', 1)
     Traceback (most recent call last):
     TypeError: Argument "a" must be int or float
     >>> add(1, 'two')
+    Traceback (most recent call last):
+    TypeError: Argument "b" must be int or float
+
+    >>> add(True, 0)
+    Traceback (most recent call last):
+    TypeError: Argument "a" must be int or float
+    >>> add(0, True)
     Traceback (most recent call last):
     TypeError: Argument "b" must be int or float
 """
