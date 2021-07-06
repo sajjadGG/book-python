@@ -5,7 +5,7 @@
 * Time: 21 min
 
 English:
-    1. Create decorator class `TypeCheck`
+    1. Refactor decorator `decorator` to decorator `TypeCheck`
     2. Decorator checks types of all arguments (`*args` oraz `**kwargs`)
     3. Decorator checks return type
     4. In case when received type is not expected throw an exception `TypeError` with:
@@ -15,7 +15,7 @@ English:
     5. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz dekorator klasę `TypeCheck`
+    1. Przerób dekorator `decorator` na klasę `TypeCheck`
     2. Dekorator sprawdza typy wszystkich argumentów (`*args` oraz `**kwargs`)
     3. Dekorator sprawdza typ zwracany
     4. W przypadku gdy otrzymany typ nie jest równy oczekiwanemu wyrzuć wyjątek `TypeError` z:

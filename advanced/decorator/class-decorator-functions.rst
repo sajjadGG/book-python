@@ -125,9 +125,9 @@ Use Case - Cache Args
 >>>
 >>> myfunction  # doctest: +NORMALIZE_WHITESPACE
 {(2, 4): 8,
- ('hi ', 3): 'hihihi',
+ ('hi', 3): 'hihihi',
  ('ha', 3): 'hahaha',
- (4, 2): 8,}
+ (4, 2): 8}
 
 
 Use Case - Cache Kwargs
@@ -152,7 +152,7 @@ Use Case - Cache Kwargs
 >>>
 >>>
 >>> @Cache
->>> def myfunction(a, b):
+... def myfunction(a, b):
 ...     return a * b
 >>>
 >>>

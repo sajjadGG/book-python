@@ -28,21 +28,33 @@ Syntax
 
 Example
 -------
->>> def run(lang='en'):
+>>> def translate(lang='en'):
+...     TRANSLATION = {
+...         'Hello': {'en': 'Hello', 'pl': 'Cześć', 'ru': 'Привет'},
+...         'Goodbye': {'en': 'Goodbye', 'pl': 'Pa', 'ru': 'Пока'},
+...     }
 ...     def decorator(func):
 ...         def wrapper(*args, **kwargs):
-...             return func(*args, **kwargs)
+...             result = func(*args, **kwargs)
+...             i18n = TRANSLATION.get(result, result)
+...             return i18n.get(lang, result) if type(i18n) else i18n
 ...         return wrapper
 ...     return decorator
 >>>
 >>>
->>> @run(lang='en')
-... def hello(name):
-...     return f'My name... {name}'
+>>> @translate(lang='en')
+... def say_hello():
+...     return 'Hello'
 >>>
 >>>
->>> hello('José Jiménez')
-'My name... José Jiménez'
+>>> say_hello()
+'Hello'
+>>>
+>>>
+>>> @translate(lang='pl')
+... def say_hello():
+...     return 'Hello'
+'Cześć'
 
 
 Use Case - Deprecated
@@ -110,7 +122,7 @@ Use Case - Timeout (SIGALRM)
 4
 3
 2
-Sorry, timeout
+Timeout
 
 
 Use Case - Timeout (Timer)

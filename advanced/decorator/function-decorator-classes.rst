@@ -71,14 +71,14 @@ Use Case - Logger
 >>>
 >>>
 >>> def logger(cls):
->>>     class Wrapper(cls):
->>>         logger = logging.getLogger(cls.__name__)
->>>     return Wrapper
+...     class Wrapper(cls):
+...         logger = logging.getLogger(cls.__name__)
+...     return Wrapper
 >>>
 >>>
 >>> @logger
->>> class Astronaut:
->>>     pass
+... class Astronaut:
+...     pass
 >>>
 >>>
 >>> print(Astronaut.logger)
