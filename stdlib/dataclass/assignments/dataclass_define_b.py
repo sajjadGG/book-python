@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Dataclass JSON
+* Assignment: Dataclass Define JSON
 * Complexity: medium
 * Lines of code: 23 lines
 * Time: 21 min

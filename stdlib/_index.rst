@@ -138,15 +138,37 @@ Regular Expressions
     regular-expressions/standards.rst
 
 
-Object Oriented Programming
-***************************
+Enum
+****
 .. toctree::
     :maxdepth: 1
-    :caption: Object Oriented Programming
+    :caption: Enum
 
-    oop/enum.rst
-    oop/dataclass.rst
-    oop/operators.rst
+    enum/about.rst
+
+
+Dataclass
+*********
+.. toctree::
+    :maxdepth: 1
+    :caption: Dataclass
+
+    dataclass/about.rst
+    dataclass/define.rst
+    dataclass/postinit.rst
+    dataclass/field.rst
+    dataclass/flags.rst
+    dataclass/helpers.rst
+    dataclass/inheritance.rst
+
+
+Operators
+*********
+.. toctree::
+    :maxdepth: 1
+    :caption: Operators
+
+    operators/about.rst
 
 
 Modules and Packages

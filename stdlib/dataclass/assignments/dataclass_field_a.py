@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Dataclass Addressbook
+* Assignment: Dataclass Field Addressbook
 * Complexity: easy
 * Lines of code: 12 lines
 * Time: 8 min

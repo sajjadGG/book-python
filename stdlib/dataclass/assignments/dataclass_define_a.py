@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Dataclass Syntax
+* Assignment: Dataclass Define Syntax
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 5 min
