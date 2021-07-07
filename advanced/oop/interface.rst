@@ -21,101 +21,106 @@ Rationale
 
 Example
 -------
-Interfaces:
+>>> class CacheInterface:
+...     def get(self, key: str) -> str:
+...         raise NotImplementedError
+...
+...     def set(self, key: str, value: str) -> None:
+...         raise NotImplementedError
+...
+...     def is_valid(self, key: str) -> bool:
+...         raise NotImplementedError
 
-.. code-block:: python
 
-    from datetime import timedelta
+Alternative Notation
+--------------------
+>>> class CacheInterface:
+...     def get(self, key: str) -> str: raise NotImplementedError
+...     def set(self, key: str, value: str) -> None: raise NotImplementedError
+...     def is_valid(self, key: str) -> bool: raise NotImplementedError
 
+>>> class CacheInterface:
+...     def get(self, key: str) -> str: pass
+...     def set(self, key: str, value: str) -> None: pass
+...     def is_valid(self, key: str) -> bool: pass
 
-    class CacheInterface:
-        timeout: timedelta
-
-        def get(self, key: str) -> str:
-            raise NotImplementedError
-
-        def set(self, key: str, value: str) -> None:
-            raise NotImplementedError
-
-        def is_valid(self, key: str) -> bool:
-            raise NotImplementedError
+>>> class CacheInterface:
+...     def get(self, key: str) -> str: ...
+...     def set(self, key: str, value: str) -> None: ...
+...     def is_valid(self, key: str) -> bool: ...
 
 
 Use Cases
 ---------
-Interfaces:
-
-.. code-block:: python
-
-    from datetime import timedelta
-
-
-    class Cache:
-        timeout: timedelta
-
-        def get(self, key: str) -> str:
-            raise NotImplementedError
-
-        def set(self, key: str, value: str) -> None:
-            raise NotImplementedError
-
-        def is_valid(self, key: str) -> bool:
-            raise NotImplementedError
-
-
-    class CacheDatabase(Cache):
-        timeout: timedelta
-
-        def is_valid(self, key: str) -> bool:
-            ...
-
-        def get(self, key: str) -> str:
-            ...
-
-        def set(self, key: str, value: str) -> None:
-            ...
-
-
-    class CacheRAM(Cache):
-        timeout: timedelta
-
-        def is_valid(self, key: str) -> bool:
-            ...
-
-        def get(self, key: str) -> str:
-            ...
-
-        def set(self, key: str, value: str) -> None:
-            ...
-
-
-    class CacheFilesystem(Cache):
-        timeout: timedelta
-
-        def is_valid(self, key: str) -> bool:
-            ...
-
-        def get(self, key: str) -> str:
-            ...
-
-        def set(self, key: str, value: str) -> None:
-            ...
-
-
-    fs: Cache = CacheFilesystem()
-    fs.set('name', 'Jan Twardowski')
-    fs.is_valid('name')
-    fs.get('name')
-
-    ram: Cache = CacheRAM()
-    ram.set('name', 'Jan Twardowski')
-    ram.is_valid('name')
-    ram.get('name')
-
-    db: Cache = CacheDatabase()
-    db.set('name', 'Jan Twardowski')
-    db.is_valid('name')
-    db.get('name')
+>>> from datetime import timedelta
+>>>
+>>>
+>>> class Cache:
+...     timeout: timedelta
+...
+...     def get(self, key: str) -> str:
+...         raise NotImplementedError
+...
+...     def set(self, key: str, value: str) -> None:
+...         raise NotImplementedError
+...
+...     def is_valid(self, key: str) -> bool:
+...         raise NotImplementedError
+>>>
+>>>
+>>> class CacheDatabase(Cache):
+...     timeout: timedelta
+...
+...     def is_valid(self, key: str) -> bool:
+...         ...
+...
+...     def get(self, key: str) -> str:
+...         ...
+...
+...     def set(self, key: str, value: str) -> None:
+...         ...
+>>>
+>>>
+>>> class CacheRAM(Cache):
+...     timeout: timedelta
+...
+...     def is_valid(self, key: str) -> bool:
+...         ...
+...
+...     def get(self, key: str) -> str:
+...         ...
+...
+...     def set(self, key: str, value: str) -> None:
+...         ...
+>>>
+>>>
+>>> class CacheFilesystem(Cache):
+...     timeout: timedelta
+...
+...     def is_valid(self, key: str) -> bool:
+...         ...
+...
+...     def get(self, key: str) -> str:
+...         ...
+...
+...     def set(self, key: str, value: str) -> None:
+...         ...
+>>>
+>>>
+>>> fs: Cache = CacheFilesystem()
+>>> fs.set('name', 'Mark Watney')
+>>> fs.is_valid('name')
+>>> fs.get('name')
+>>>
+>>> ram: Cache = CacheRAM()
+>>> ram.set('name', 'Mark Watney')
+>>> ram.is_valid('name')
+>>> ram.get('name')
+>>>
+>>> db: Cache = CacheDatabase()
+>>> db.set('name', 'Mark Watney')
+>>> db.is_valid('name')
+>>> db.get('name')
 
 
 Assignments

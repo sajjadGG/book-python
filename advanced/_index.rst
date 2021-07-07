@@ -77,7 +77,6 @@ Object Oriented Programming
     oop/abstract.rst
     oop/identity.rst
     oop/constructor.rst
-    oop/solid.rst
     oop/method-resolution-order.rst
     oop/slots.rst
     oop/metaclass.rst
