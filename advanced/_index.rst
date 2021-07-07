@@ -66,7 +66,6 @@ Object Oriented Programming
     :maxdepth: 1
     :caption: Object Oriented Programming
 
-    oop/principles.rst
     oop/mutability.rst
     oop/staticattrs.rst
     oop/access-modifiers.rst
