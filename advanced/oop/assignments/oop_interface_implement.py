@@ -1,7 +1,7 @@
 """
 * Assignment: OOP Interface Implement
 * Complexity: easy
-* Lines of code: 12 lines
+* Lines of code: 3 lines
 * Time: 8 min
 
 English:
@@ -15,7 +15,7 @@ Polish:
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * `self.__dict__.values()`
+    * `vars(self).values()`
     * `mean = sum() / len()`
 
 Tests:
@@ -92,7 +92,7 @@ class Setosa(IrisInterface):
         return self.sum() / self.len()
 
     def sum(self) -> float:
-        return sum(self.__dict__.values())
+        return sum(vars(self).values())
 
     def len(self) -> int:
-        return len(self.__dict__)
+        return len(vars(self))

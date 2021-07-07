@@ -1,5 +1,4 @@
 """
-
 * Assignment: OOP Slots Define
 * Complexity: easy
 * Lines of code: 11 lines
