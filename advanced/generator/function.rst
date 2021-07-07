@@ -204,6 +204,23 @@ Yields in Loops
 Traceback (most recent call last):
 StopIteration
 
+Yield in a Zip Loop
+-------------------
+>>> def names():
+...     yield 'Mark Watney'
+...     yield 'Melissa Lewis'
+...     yield 'Rick Martinez'
+>>>
+>>>
+>>> def roles():
+...     yield 'botanist'
+...     yield 'commander'
+...     yield 'pilot'
+>>>
+>>>
+>>> for n, r in zip(names(), roles()):
+...     print(r, n)
+
 
 Example
 -------

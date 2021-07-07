@@ -42,6 +42,26 @@ Code Complexity vs. Programmer Experience:
 Time Complexity: https://wiki.python.org/moin/TimeComplexity
 
 
+Loop Patterns
+-------------
+>>> data = ['a', 'b', 'c']
+>>> i = 0
+>>> result = []
+>>>
+>>> while i < len(data):
+...     x = data[i]
+...     result.append(x.upper())
+
+>>> data = ['a', 'b', 'c']
+>>> result = []
+>>>
+>>> for x in data:
+...     result.append(x.upper())
+
+>>> data = ['a', 'b', 'c']
+>>> result = [x.upper() for x in data]
+
+
 Range
 -----
 >>> i = 0

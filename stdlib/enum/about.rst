@@ -51,7 +51,9 @@ Use Case
 ...     BLUE = '#0000FF'
 >>>
 >>>
->>> def draw_line(A:tuple[int,int], B:tuple[int,int], color: Color):
+>>> Point = tuple[int,int]
+>>>
+>>> def draw_line(A: Point, B: Point, color: Color):
 ...     print(f'Drawing line from {A} to {B} with color {color.value}')
 >>>
 >>>

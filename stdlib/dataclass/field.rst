@@ -73,6 +73,20 @@ Field Object
 ...     publicname: int = field(repr=False)
 ...     agency: int = field(repr=False, default='NASA')
 
+>>> from dataclasses import dataclass, field
+>>>
+>>>
+>>> @dataclass(frozen=True)
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     weight: float = field(metadata={'unit': 'kg'})
+...     missions: list[str] = field(metadata={'choices': ['Apollo11', 'Apollo12']})
+...     groups: list[str] = field(default_factory=lambda: ['astronauts', 'managers'])
+...     job: str = 'astronaut'
+>>>
+>>> mark = Astronaut('Mark', 'Watney', weight=..., missions=['Apollo18', 'Ares3'])
+
 >>> from __future__ import annotations
 >>> from dataclasses import dataclass, field
 >>>
@@ -149,6 +163,30 @@ Metadata
 >>>
 >>> astro = Astronaut('Mark', 'Watney', agency='NASA', age=51)
 
+
+>>> @dataclass
+... class Astronaut:
+...     email: str
+...     username: str
+...     firstname: str
+...     lastname: str
+...     friends: List[Astronaut] = field(default_factory=list)
+...     agency: str = field(default='NASA')
+...     weight: float = None
+...     height: float = field(default=None, metadata={'unit': 'cm', 'min': 140, 'max': 210})
+...     age: float = None
+...     account_last_login: datetime = datetime.now(tz=timezone.utc)
+...     account_updated: datetime = datetime.now(tz=timezone.utc)
+...     account_created: datetime = datetime.now(tz=timezone.utc)
+...
+...     def __setattr__(self, attrname, attrvalue):
+...         min = Astronaut.__dataclass_fields__[attrname].metadata['min']
+...         max = Astronaut.__dataclass_fields__[attrname].metadata['max']
+...
+...         if attrvalue < min:
+...             raise ValueError
+...         if attrvalue > max:
+...             raise ValueError
 
 
 Mutable attributes
