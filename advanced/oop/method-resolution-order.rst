@@ -1,5 +1,5 @@
-Method Resolution Order
-=======================
+OOP Method Resolution Order
+===========================
 
 
 Inheritance Method Resolution

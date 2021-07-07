@@ -1,5 +1,5 @@
-Inheritance vs. Composition
-===========================
+OOP Inheritance vs. Composition
+===============================
 
 
 Rationale

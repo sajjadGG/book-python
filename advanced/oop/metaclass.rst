@@ -1,13 +1,13 @@
-Metaclass
-=========
+OOP Metaclass
+=============
 
 
 .. epigraph::
 
     Metaclasses are deeper magic than 99% of users should ever worry about.
     If you wonder whether you need them, you don’t.
-    The people who actually need them know with certainty that they need them,
-    and don’t need an explanation about why.
+    The people who actually need them know with certainty that they need
+    them, and don’t need an explanation about why.
 
     -- Tim Peters
 

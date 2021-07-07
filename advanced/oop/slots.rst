@@ -1,5 +1,5 @@
-Slots
-=====
+OOP Slots
+=========
 
 
 Rationale

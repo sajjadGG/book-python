@@ -1,5 +1,5 @@
-Static and Dynamic
-==================
+OOP Static and Dynamic Attrs
+============================
 
 
 Static Fields
