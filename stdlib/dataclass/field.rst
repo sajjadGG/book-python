@@ -73,6 +73,35 @@ Astronaut(firstname='Mark', lastname='Watney', age=44, height=170, weight=75, mi
 ['NASA', 'ESA']
 
 
+Metadata
+--------
+>>> from dataclasses import dataclass, field
+>>> from typing import Literal
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     agency: Literal['NASA', 'ESA', 'Roscosmos']
+...     height: float = field(default=None, metadata={'unit': 'cm'})
+...     weight: float = field(default=None, metadata={'unit': 'kg'})
+...     age: float = field(default=None, metadata={'min': 27, 'max': 50})
+...
+...     def __post_init__(self):
+...         AGE_MIN = self.__dataclass_fields__['age'].metadata['min']
+...         AGE_MAX = self.__dataclass_fields__['age'].metadata['max']
+...
+...         if self.age < AGE_MIN:
+...             raise ValueError('Age is below minimum')
+...         if self.age > AGE_MAX:
+...             raise ValueError('Age is above maximum')
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney', agency='NASA', age=51)
+
+
+
 Mutable attributes
 ------------------
 * problem with ``dict``, ``list``, ``set``

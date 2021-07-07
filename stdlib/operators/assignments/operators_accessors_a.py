@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Operators Contains
+* Assignment: Operators Accessors Contains
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

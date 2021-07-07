@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Operators Equals
+* Assignment: Operators Comparison Equals
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min

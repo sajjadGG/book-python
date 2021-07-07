@@ -169,6 +169,11 @@ Operators
     :caption: Operators
 
     operators/about.rst
+    operators/accessors.rst
+    operators/boolean.rst
+    operators/builtin.rst
+    operators/comparison.rst
+    operators/numerical.rst
 
 
 Modules and Packages
