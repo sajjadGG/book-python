@@ -79,12 +79,12 @@ Inheritance Problem
 Multilevel Inheritance
 ----------------------
 >>> class Vehicle:
-...     def engine_start(): pass
-...     def engine_stop(): pass
+...     def engine_start(self): pass
+...     def engine_stop(self): pass
 >>>
 >>> class VehicleWithWindows(Vehicle):
-...     def window_open(): pass
-...     def window_close(): pass
+...     def window_open(self): pass
+...     def window_close(self): pass
 >>>
 >>>
 >>> class Car(VehicleWithWindows):

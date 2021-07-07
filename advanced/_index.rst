@@ -68,10 +68,8 @@ Object Oriented Programming
 
     oop/principles.rst
     oop/mutability.rst
-    oop/dataclass.rst
     oop/staticattrs.rst
     oop/access-modifiers.rst
-    oop/operators.rst
     oop/composition.rst
     oop/polymorphism.rst
     oop/relations.rst
