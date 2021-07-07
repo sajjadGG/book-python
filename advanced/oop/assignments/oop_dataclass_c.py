@@ -71,12 +71,10 @@ class User:
     user_permissions: list[dict]
 
     def __post_init__(self):
-        if self.born:
-            self.born = date.fromisoformat(self.born)
-        if self.last_login:
-            self.last_login = datetime.fromisoformat(self.last_login)
+        self.last_login = datetime.fromisoformat(self.last_login) if self.last_login else None
+        self.born = date.fromisoformat(self.born) if self.born else None
 
 
-result = [User(**u['fields'])
-          for u in json.loads(DATA)]
+result = [User(**user['fields'])
+          for user in json.loads(DATA)]
 

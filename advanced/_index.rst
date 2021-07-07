@@ -75,10 +75,14 @@ Object Oriented Programming
     oop/composition.rst
     oop/polymorphism.rst
     oop/relations.rst
+    oop/interface.rst
     oop/abstract.rst
     oop/identity.rst
     oop/constructor.rst
     oop/solid.rst
+    oop/method-resolution-order.rst
+    oop/slots.rst
+    oop/metaclass.rst
 
 
 Protocols
