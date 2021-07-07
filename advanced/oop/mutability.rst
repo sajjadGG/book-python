@@ -18,6 +18,7 @@ Immutable Types
 * ``bytes``
 * ``tuple``
 * ``frozenset``
+* ``mappingproxy``
 
 
 Mutable Types
@@ -88,6 +89,24 @@ Good:
     twardowski = Astronaut('Jan', 'Twardowski')
     print('Twardowski:', twardowski.missions)
 
+>>> from typing import Optional
+>>>
+>>>
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname, missions: Optional[list[str]] = None):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...         self.missions = missions if missions else []
+>>>
+>>>
+>>> watney = Astronaut('Mark', 'Watney')
+>>> watney.missions.append('Ares 3')
+>>> watney.missions.append('Apollo 18')
+>>> print('Watney:', watney.missions)
+>>>
+>>>
+>>> twardowski = Astronaut('Jan', 'Twardowski')
+>>> print('Twardowski:', twardowski.missions)
 
 
 Assignments

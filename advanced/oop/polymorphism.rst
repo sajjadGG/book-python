@@ -18,6 +18,18 @@ It all starts with single ``if`` statement
     print(result)
     # Hello
 
+.. code-block:: python
+
+    language = 'English'
+
+    if language == 'Polish':
+        result = 'Witaj'
+    elif language == 'English':
+        result = 'Hello'
+
+    print(result)
+    # Hello
+
 It quickly grows into multiple ``elif``:
 
 .. code-block:: python
@@ -57,8 +69,8 @@ Problem is that, ``switch`` moves business logic to the execution place:
 .. code-block:: python
 
     SWITCH = {'Polish': 'Witaj',
-             'English': 'Hello',
-             'German': 'Guten Tag'}
+              'English': 'Hello',
+              'German': 'Guten Tag'}
 
     language = 'English'
 
@@ -316,9 +328,54 @@ UIElement:
         draw(Textarea())
         draw(Button())
 
+Use Case 2
+----------
+.. code-block:: python
 
-Factory:
+    from abc import ABC, abstractmethod
 
+
+    class UIElement(ABC):
+        def __init__(self, name):
+            self.name = name
+
+        @abstractmethod
+        def render(self):
+            raise NotImplementedError
+
+
+    class Button(UIElement):
+        def render(self):
+            print('Rendering button')
+
+
+    class Input(UIElement):
+        def render(self):
+            print('Rendering Input')
+
+
+    class TextArea(UIElement):
+        def render(self):
+            print('Rendering TextArea')
+
+
+    def render(elements: list[UIElement]):
+        for element in elements:
+            element.render()
+
+
+    render([
+        Input('From'),
+        Input('To'),
+        Input('Subject'),
+        TextArea('Body'),
+        Button('Send')
+    ])
+
+
+
+Use Case - Factory
+------------------
 .. code-block:: python
 
     DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),

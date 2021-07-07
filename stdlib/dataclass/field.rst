@@ -14,6 +14,55 @@ Field Object
 * ``compare``
 * ``metadata`` - This can be a mapping or ``None``. ``None`` is treated as an empty ``dict``. It is not used at all by Data Classes, and is provided as a third-party extension mechanism.
 
+
+>>> from dataclasses import dataclass, field
+>>> from typing import Literal
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     agency: Literal['NASA', 'ESA', 'Roscosmos']
+...     weight: float = field(metadata=)
+...     height: float
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney', agency='NASA', weight=, height=)
+
+
+
+>>> from __future__ import annotations  # od Python 3.7
+>>> from dataclasses import dataclass, field
+>>> from typing import Optional, Union
+>>>
+>>>
+>>>
+>>> @dataclass
+>>> class Person:
+>>>     firstname: str
+>>>     lastname: str
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     agency: Optional[str] = 'Polsa'
+...     missions: Optional[list[str]] = field(default_factory=list)
+...     age: Optional[int|float] = field(repr=False, default=None)
+...     height: Optional[float] = field(repr=False, default=None)
+...     weight: Optional[float] = field(repr=False, default=None)
+...     friends: list[Person] = field(default_factory=list)
+...     crew_mates: list[Astronaut] = field(default_factory=list)
+...
+...     def __post_init__(self):
+...         if self.age and self.age < 0:
+...             raise ValueError('Age must above 0')
+>>>
+>>>
+>>> mark = Astronaut('Mark', 'Watney', age=44)
+
 >>> from dataclasses import dataclass, field
 >>>
 >>>

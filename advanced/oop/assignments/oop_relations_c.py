@@ -2,7 +2,7 @@
 * Assignment: OOP Relations Movable
 * Complexity: medium
 * Lines of code: 18 lines
-* Time: 21 min
+* Time: 8 min
 
 English:
     1. Define class `Point`

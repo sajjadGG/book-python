@@ -2,7 +2,7 @@
 * Assignment: OOP Relations Nested
 * Complexity: medium
 * Lines of code: 7 lines
-* Time: 21 min
+* Time: 13 min
 
 English:
     1. Convert `DATA` to format with one column per each attrbute

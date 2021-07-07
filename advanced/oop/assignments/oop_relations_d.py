@@ -1,8 +1,8 @@
 """
 * Assignment: OOP Relations Flatten
-* Complexity: hard
+* Complexity: medium
 * Lines of code: 5 lines
-* Time: 21 min
+* Time: 13 min
 
 English:
     1. How to write relations to CSV file (contact has many addresses)?

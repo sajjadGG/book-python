@@ -71,13 +71,13 @@ Object Oriented Programming
     oop/staticattrs.rst
     oop/access-modifiers.rst
     oop/composition.rst
+    oop/method-resolution-order.rst
     oop/polymorphism.rst
     oop/relations.rst
     oop/interface.rst
     oop/abstract.rst
     oop/identity.rst
     oop/constructor.rst
-    oop/method-resolution-order.rst
     oop/slots.rst
     oop/metaclass.rst
 

@@ -3,7 +3,7 @@
 * Assignment: OOP Relations Model
 * Complexity: easy
 * Lines of code: 10 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
     1. In `DATA` we have two classes
