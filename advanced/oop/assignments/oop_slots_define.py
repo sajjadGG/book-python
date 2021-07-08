@@ -5,15 +5,20 @@
 * Time: 13 min
 
 English:
-    1. Define class `Iris` with attributes: `sepal_length, sepal_width, petal_length, petal_width, species`
+    1. Define class `Iris` with attributes: `sepal_length, sepal_width,
+       petal_length, petal_width, species`
     2. All attributes must be in `__slots__`
-    3. Define method `__repr__` which prints class name and all values positionally, ie. `Iris(5.8, 2.7, 5.1, 1.9, 'virginica')`
+    3. Define method `__repr__` which prints class name and all values
+       positionally, ie. `Iris(5.8, 2.7, 5.1, 1.9, 'virginica')`
     4. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj klasę `Iris` z atrybutami: `sepal_length, sepal_width, petal_length, petal_width, species`
+    1. Zdefiniuj klasę `Iris` z atrybutami: `sepal_length, sepal_width,
+       petal_length, petal_width, species`
     2. Wszystkie atrybuty muszą być w `__slots__`
-    3. Zdefiniuj metodę `__repr__` wypisującą nazwę klasy i wszystkie wartości atrybutów pozycyjnie, np. `Iris(5.8, 2.7, 5.1, 1.9, 'virginica')`
+    3. Zdefiniuj metodę `__repr__` wypisującą nazwę klasy i wszystkie
+       wartości atrybutów pozycyjnie, np. `Iris(5.8, 2.7, 5.1, 1.9,
+       'virginica')`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -38,8 +43,13 @@ Tests:
     >>> [getattr(iris, x) for x in iris.__slots__]
     [5.8, 2.7, 5.1, 1.9, 'virginica']
 
-    >>> {x: getattr(iris, x) for x in iris.__slots__}
-    {'sepal_length': 5.8, 'sepal_width': 2.7, 'petal_length': 5.1, 'petal_width': 1.9, 'species': 'virginica'}
+    >>> {x: getattr(iris, x)
+    ...  for x in iris.__slots__}  # doctest: +NORMALIZE_WHITESPACE
+    {'sepal_length': 5.8,
+     'sepal_width': 2.7,
+     'petal_length': 5.1,
+     'petal_width': 1.9,
+     'species': 'virginica'}
 
     >>> iris.__dict__
     Traceback (most recent call last):
@@ -53,13 +63,24 @@ Hint:
     * In `__repr__()` use tuple comprehension to get `self.__slots__` values
 """
 
-DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-        (5.8, 2.7, 5.1, 1.9, 'virginica'),
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-        (4.7, 3.2, 1.3, 0.2, 'setosa')]
+DATA = [
+    ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+    (5.8, 2.7, 5.1, 1.9, 'virginica'),
+    (5.1, 3.5, 1.4, 0.2, 'setosa'),
+    (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+    (4.7, 3.2, 1.3, 0.2, 'setosa')]
+
+
+class Iris:
+    def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
+        self.sepal_length = sepal_length
+        self.sepal_width = sepal_width
+        self.petal_length = petal_length
+        self.petal_width = petal_width
+        self.species = species
+
 
 
 # Solution
@@ -67,7 +88,8 @@ class Iris:
     __slots__ = ('sepal_length', 'sepal_width', 'petal_length',
                  'petal_width', 'species')
 
-    def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
+    def __init__(self, sepal_length, sepal_width,
+                 petal_length, petal_width, species):
         self.sepal_length = sepal_length
         self.sepal_width = sepal_width
         self.petal_length = petal_length
