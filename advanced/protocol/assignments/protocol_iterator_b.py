@@ -2,7 +2,7 @@
 * Assignment: Protocol Iterator Range
 * Complexity: medium
 * Lines of code: 14 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
     1. Define class `Range` with parameters: `start`, `stop`, `step`
