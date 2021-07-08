@@ -87,6 +87,7 @@ Protocols
     :maxdepth: 1
     :caption: Protocols
 
+    protocol/about.rst
     protocol/iterator.rst
     protocol/context-manager.rst
     protocol/staticmethod.rst

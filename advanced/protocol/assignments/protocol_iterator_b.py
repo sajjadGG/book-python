@@ -41,19 +41,23 @@ Tests:
 
 
 # Solution
+from dataclasses import dataclass
+
+
+@dataclass
 class Range:
-    def __init__(self, start, stop, step=1):
-        self.start = start
-        self.stop = stop
-        self.step = step
+    start: int = 0
+    stop: int = 0
+    step: int = 1
+    _current: int = 0
 
     def __iter__(self):
-        self._iter_index = self.start
+        self._current = self.start
         return self
 
     def __next__(self):
-        if self._iter_index >= self.stop:
+        if self._current >= self.stop:
             raise StopIteration
-        result = self._iter_index
-        self._iter_index += self.step
+        result = self._current
+        self._current += self.step
         return result

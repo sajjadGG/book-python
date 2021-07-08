@@ -13,6 +13,7 @@ Rationale
 * Network sockets
 * Network streams
 * HTTP sessions
+* Since Python 3.10: Parenthesized context managers [#pydocpython310]_
 
 
 Protocol
@@ -334,3 +335,8 @@ Assignments
 .. literalinclude:: assignments/protocol_contextmanager_c.py
     :caption: :download:`Solution <assignments/protocol_contextmanager_c.py>`
     :end-before: # Solution
+
+
+References
+----------
+.. [#pydocpython310] https://docs.python.org/3.10/whatsnew/3.10.html#new-features

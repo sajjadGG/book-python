@@ -61,6 +61,7 @@ Protocols
     :maxdepth: 1
     :caption: Idioms
 
+    protocol/about.rst
     protocol/iterator.rst
     protocol/context-manager.rst
     protocol/staticmethod.rst
