@@ -2,74 +2,108 @@ Agenda
 ======
 
 
-#. About
+Day 1
+-----
+.. csv-table::
+    :widths: 15, 85
+    :header: "Estimated Time", "Topic"
 
-    #. Setup
-    #. Entry Test
-    #. Agenda
+    "15m", "Kwestie organizacyjne: przedstawienie się, przerwy, spreadsheet"
+    "75m", "Przygotowanie środowiska do pracy: github, git, python, doctest"
+    "30m", "Zadania testowe ewaluujące umiejętności użytkownika"
+    "90m", "Live Coding rozwiązań zadań i demonstracja funkcji IDE, tj.
+            debugging, praca z VCS, refactoring, dokumentacja i typy,
+            sygnatury funkcji"
+    "210m", "Generatory"
 
-#. Generators
-#. Functional Programming
+    "", "Generators: about"
+    "", "Generators: builtin"
+    "", "Generators: expression"
+    "", "Generators: function"
+    "", "Generators: inspect"
+    "", "Generators: yield-from"
+    "", "Generators: send"
+    "", "Generators: itertools"
 
-#. Decorators
 
-    #. About Decorators
-    #. Function Decorator with Functions
-    #. Function Decorator with Classes
-    #. Function Decorator with Methods
-    #. Class Decorator with Functions
-    #. Class Decorator with Classes
-    #. Class Decorator with Methods
-    #. Decorator with Arguments
-    #. Standard Library Functools
-    #. Decorators Recap
+Day 2
+-----
+.. csv-table::
+    :widths: 15, 85
+    :header: "Estimated Time", "Topic"
 
-#. Object Oriented Programming
+    "420m", "Programowanie funkcyjne"
+    "", "Functional Programming: lambda"
+    "", "Functional Programming: scope"
+    "", "Functional Programming: pure-function"
+    "", "Functional Programming: recurrence"
+    "", "Functional Programming: immutable"
+    "", "Functional Programming: higher-order"
+    "", "Functional Programming: referential-transparency"
+    "", "Functional Programming: functional-paradigm"
+    "", "Functional Programming: namespace"
+    "", "Functional Programming: function-attributes"
+    "", "Functional Programming: callable"
+    "", "Functional Programming: closures"
 
-    #. Static and Dynamic
-    #. Access Modifiers
-    #. Argument Mutability
-    #. Overload
-    #. Inheritance vs. Composition
-    #. Relations
-    #. Abstract Class
-    #. Object Identity
-    #. Constructor
-    #. S.O.L.I.D.
 
-#. Protocols
+Day 3
+-----
+.. csv-table::
+    :widths: 15, 85
+    :header: "Estimated Time", "Topic"
 
-    #. Iterator
-    #. Context Manager
-    #. Staticmethod
-    #. Classmethod
-    #. Property
-    #. Reflection
-    #. Descriptor
+    "150m", "Dekoratory: funkcji z wrapperem funkcją oraz klasą"
+    "60m", "Dekoratory klas z wrapperem funkcją oraz klasą"
+    "60m", "Dekoratory metod z wrapperem funkcją oraz klasą"
+    "30m", "Dekoratory z argumentami, Functools.wraps"
+    "30m", "OOP Mutowalne argumenty"
+    "45m", "OOP Atrybuty statyczne i dynamiczne"
+    "45m", "OOP Modyfikatory dostępu"
 
-#. Performance
 
-    #. Performance Optimization
-    #. Micro-benchmarking
-    #. Profiling
-    #. Compilers and Interpreters
-    #. Collections
-    #. C Types
-    #. C Modules
+Day 4
+-----
+.. csv-table::
+    :widths: 15, 85
+    :header: "Estimated Time", "Topic"
 
-#. Concurrency
+    "60m", "OOP: Dziedziczenie i kompozycja"
+    "15m", "OOP: Method Resolution Order"
+    "30m", "OOP: Polimorfizm"
+    "60m", "OOP: Relacje między obiektami"
+    "30m", "OOP: Interfejsy"
+    "45m", "OOP: Klasy abstrakcyjne"
+    "30m", "OOP: Tożsamość obiektów"
+    "60m", "OOP: Konstruktor klas: __new__ vs __init__"
+    "30m", "OOP: Sloty"
+    "60m", "OOP: Metaklasy"
 
-    #. Concurrency Models
-    #. Queues
-    #. Threading
-    #. Multiprocessing
-    #. Async Programming
 
-#. Recap
+Day 5
+-----
+.. csv-table::
+    :widths: 15, 85
+    :header: "Estimated Time", "Topic"
 
-    #. Recap
-    #. Certificate
+    "", "Iterator"
+    "", "Context Manager"
+    "", "Staticmethod"
+    "", "Classmethod"
+    "", "Property"
+    "", "Reflection"
+    "", "Descriptor"
 
-#. References
+    "", "Performance Optimization"
+    "", "Micro-benchmarking"
+    "", "Profiling"
+    "", "Compilers and Interpreters"
+    "", "Collections"
+    "", "C Types"
+    "", "C Modules"
 
-    #. Bibliography
+    "", "Concurrency Models"
+    "", "Queues"
+    "", "Threading"
+    "", "Multiprocessing"
+    "", "Async Programming"
