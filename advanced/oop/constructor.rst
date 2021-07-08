@@ -194,7 +194,7 @@ Use Cases
 
         def __repr__(self):
             cls = self.__class__.__name__
-            args = tuple(self.__dict__.values())
+            args = tuple(vars(self).values())
             return f'\n{cls}{args}'
 
     class Setosa(Iris):

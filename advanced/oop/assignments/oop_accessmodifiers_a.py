@@ -29,7 +29,7 @@ Tests:
 
     >>> result = [{attribute: value}
     ...           for row in DATA
-    ...           for attribute, value in row.__dict__.items()
+    ...           for attribute, value in vars(row).items()
     ...           if not attribute.startswith('_')]
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE

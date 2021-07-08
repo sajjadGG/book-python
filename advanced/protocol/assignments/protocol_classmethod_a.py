@@ -81,7 +81,7 @@ class CSVMixin:
 # Solution
 class CSVMixin:
     def to_csv(self) -> str:
-        return ','.join(self.__dict__.values()) + '\n'
+        return ','.join(vars(self).values()) + '\n'
 
     @classmethod
     def from_csv(cls, line: str) -> Union['Astronaut', 'Cosmonaut']:

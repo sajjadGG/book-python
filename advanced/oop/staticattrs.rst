@@ -159,6 +159,9 @@ Static Fields:
     Taikonaut.firstname = ...
     Taikonaut.lastname = ...
 
+    vars(Taikonaut)
+
+
 Static Fields:
 
 .. code-block:: python
@@ -170,7 +173,7 @@ Static Fields:
     Taikonaut.lastname = ...
 
     t = Taikonaut()
-    print(t.__dict__)
+    vars(t)
 
 
 Assignments

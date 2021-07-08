@@ -1,8 +1,8 @@
 """
 * Assignment: OOP Abstract Annotate
 * Complexity: easy
-* Lines of code: 13 lines
-* Time: 13 min
+* Lines of code: 5 lines
+* Time: 5 min
 
 English:
     1. Define abstract class `IrisAbstract`
@@ -20,17 +20,22 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from inspect import isabstract
+    >>> from inspect import isabstract, isclass
 
+    >>> assert isclass(IrisAbstract)
     >>> assert isabstract(IrisAbstract)
     >>> assert hasattr(IrisAbstract, '__init__')
     >>> assert hasattr(IrisAbstract, 'mean')
     >>> assert hasattr(IrisAbstract, 'sum')
     >>> assert hasattr(IrisAbstract, 'len')
-    >>> assert IrisAbstract.__init__.__isabstractmethod__
-    >>> assert IrisAbstract.mean.__isabstractmethod__
-    >>> assert IrisAbstract.sum.__isabstractmethod__
-    >>> assert IrisAbstract.len.__isabstractmethod__
+    >>> assert hasattr(IrisAbstract.__init__, '__isabstractmethod__')
+    >>> assert hasattr(IrisAbstract.mean, '__isabstractmethod__')
+    >>> assert hasattr(IrisAbstract.sum, '__isabstractmethod__')
+    >>> assert hasattr(IrisAbstract.len, '__isabstractmethod__')
+    >>> assert IrisAbstract.__init__.__isabstractmethod__ == True
+    >>> assert IrisAbstract.mean.__isabstractmethod__ == True
+    >>> assert IrisAbstract.sum.__isabstractmethod__ == True
+    >>> assert IrisAbstract.len.__isabstractmethod__ == True
 
     >>> IrisAbstract.__annotations__  # doctest: +NORMALIZE_WHITESPACE
     {'sepal_length': <class 'float'>,
@@ -56,6 +61,29 @@ Tests:
 """
 
 from abc import ABCMeta, abstractmethod
+
+
+class IrisAbstract:
+    sepal_length: float
+    sepal_width: float
+    petal_length: float
+    petal_width: float
+
+    def __init__(self,
+                 sepal_length: float,
+                 sepal_width: float,
+                 petal_length: float,
+                 petal_width: float) -> None:
+        ...
+
+    def mean(self) -> float:
+        ...
+
+    def sum(self) -> float:
+        ...
+
+    def len(self) -> int:
+        ...
 
 
 # Solution

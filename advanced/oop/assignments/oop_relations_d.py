@@ -66,6 +66,6 @@ result: list
 result = []
 
 for astronaut in DATA:
-    astronaut.missions = [','.join(x.__dict__.values()) for x in astronaut.missions]
+    astronaut.missions = [','.join(vars(x).values()) for x in astronaut.missions]
     astronaut.missions = ';'.join(astronaut.missions)
-    result.append(astronaut.__dict__)
+    result.append(vars(astronaut))

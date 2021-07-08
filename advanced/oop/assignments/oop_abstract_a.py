@@ -22,11 +22,25 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isclass, isabstract, ismethod
+
+    >>> assert isclass(Iris)
+    >>> assert isclass(Setosa)
+    >>> assert isabstract(Iris)
+    >>> assert not isabstract(Setosa)
+    >>> assert hasattr(Iris, 'get_name')
+    >>> assert hasattr(Setosa, 'get_name')
+    >>> assert not hasattr(Setosa.get_name, '__isabstractmethod__')
+    >>> assert hasattr(Iris.get_name, '__isabstractmethod__')
+    >>> assert Iris.get_name.__isabstractmethod__ == True
+    >>> assert not hasattr(Iris, '__annotations__')
+    >>> assert not hasattr(Setosa, '__annotations__')
 
     >>> iris = Iris()
     Traceback (most recent call last):
     TypeError: Can't instantiate abstract class Iris with abstract method get_name
     >>> setosa = Setosa()
+    >>> assert ismethod(setosa.get_name)
 
 Warning:
     * Last line of doctest, second to last word of `TypeError` message

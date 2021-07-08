@@ -396,7 +396,7 @@ Use Case - Factory
 
         def __repr__(self):
             name = self.__class__.__name__
-            values = tuple(self.__dict__.values())
+            values = tuple(vars(self).values())
             return f'\n {name}{values}'
 
 

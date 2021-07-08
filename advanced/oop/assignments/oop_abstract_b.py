@@ -1,7 +1,7 @@
 """
 * Assignment: OOP Abstract Interface
 * Complexity: easy
-* Lines of code: 10 lines
+* Lines of code: 11 lines
 * Time: 8 min
 
 English:
@@ -16,22 +16,58 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from inspect import isabstract
+    >>> from inspect import isabstract, isclass
 
+    >>> assert isclass(IrisAbstract)
     >>> assert isabstract(IrisAbstract)
+    >>> assert hasattr(IrisAbstract, '__init__')
     >>> assert hasattr(IrisAbstract, 'mean')
     >>> assert hasattr(IrisAbstract, 'sum')
     >>> assert hasattr(IrisAbstract, 'len')
-    >>> assert IrisAbstract.mean.__isabstractmethod__
-    >>> assert IrisAbstract.sum.__isabstractmethod__
-    >>> assert IrisAbstract.len.__isabstractmethod__
+    >>> assert IrisAbstract.__init__.__isabstractmethod__ == True
+    >>> assert IrisAbstract.mean.__isabstractmethod__ == True
+    >>> assert IrisAbstract.sum.__isabstractmethod__ == True
+    >>> assert IrisAbstract.len.__isabstractmethod__ == True
+
+    >>> IrisAbstract.__annotations__  # doctest: +NORMALIZE_WHITESPACE
+    {'sepal_length': <class 'float'>,
+     'sepal_width': <class 'float'>,
+     'petal_length': <class 'float'>,
+     'petal_width': <class 'float'>}
 """
 
 from abc import ABCMeta, abstractmethod
 
 
+class IrisAbstract:
+    sepal_length: float
+    sepal_width: float
+    petal_length: float
+    petal_width: float
+
+    def __init__(self,
+                 sepal_length: float,
+                 sepal_width: float,
+                 petal_length: float,
+                 petal_width: float) -> None:
+        ...
+
+
 # Solution
 class IrisAbstract(metaclass=ABCMeta):
+    sepal_length: float
+    sepal_width: float
+    petal_length: float
+    petal_width: float
+
+    @abstractmethod
+    def __init__(self,
+                 sepal_length: float,
+                 sepal_width: float,
+                 petal_length: float,
+                 petal_width: float) -> None:
+        ...
+
     @abstractmethod
     def mean(self) -> float:
         ...

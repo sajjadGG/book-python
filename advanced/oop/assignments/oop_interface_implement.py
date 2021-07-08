@@ -20,8 +20,12 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isclass
 
+    >>> assert isclass(IrisInterface)
+    >>> assert isclass(Setosa)
     >>> assert issubclass(Setosa, IrisInterface)
+    >>> assert hasattr(Setosa, '__init__')
     >>> assert hasattr(Setosa, 'mean')
     >>> assert hasattr(Setosa, 'sum')
     >>> assert hasattr(Setosa, 'len')
@@ -36,6 +40,22 @@ Tests:
      'sepal_width': <class 'float'>,
      'petal_length': <class 'float'>,
      'petal_width': <class 'float'>}
+
+    >>> Setosa.__init__.__annotations__  # doctest: +NORMALIZE_WHITESPACE
+    {'sepal_length': <class 'float'>,
+     'sepal_width': <class 'float'>,
+     'petal_length': <class 'float'>,
+     'petal_width': <class 'float'>,
+     'return': None}
+
+    >>> Setosa.mean.__annotations__
+    {'return': <class 'float'>}
+
+    >>> Setosa.sum.__annotations__
+    {'return': <class 'float'>}
+
+    >>> Setosa.len.__annotations__
+    {'return': <class 'int'>}
 
     >>> setosa = Setosa(5.1, 3.5, 1.4, 0.2)
     >>> setosa.len()
