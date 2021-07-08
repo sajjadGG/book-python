@@ -214,6 +214,34 @@ Astronaut Hello:
     astro.say_goodbye()
     # goodbye
 
+Example:
+
+>>> from dataclasses import dataclass
+>>> from datetime import datetime, timezone
+>>> from typing import Literal
+>>>
+>>>
+>>> @dataclass
+... class Measurement:
+...     when: datetime
+...     device_id: str
+...     parameter: Literal['temperature', 'humidity']
+...     value: float
+...     unit: Literal['Celsius', 'Kelvin', 'Fahrenheit', '%']
+...
+...     def __post_init__(self):
+...         self.when = datetime.now(timezone.utc)
+...         if self.unit == 'Kelvin' and self.value < 0:
+...             raise ValueError('Negative Kelvin')
+>>>
+>>>
+>>> m = Measurement(
+...         device_id='1a2b7c8d38',
+...         parameter='temperature',
+...         value=21.3,
+...         unit='Celsius')
+
+
 Helper `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor model:
 
 .. code-block:: python
