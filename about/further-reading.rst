@@ -18,6 +18,9 @@ Documentation
 
 Python Development
 ------------------
+* Python Insider: https://blog.python.org
+* Newest PEPs RSS: http://www.python.org/dev/peps/peps.rss
+* Python Releases: https://github.com/python/cpython/releases
 * CPython compiler - https://github.com/python/cpython
 * Python core development - https://discuss.python.org
 * Index of Python Enhancement Proposals (PEPs) - https://www.python.org/dev/peps/
