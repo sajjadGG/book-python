@@ -1,5 +1,5 @@
-Descriptor
-==========
+Accessor Descriptor
+===================
 
 
 Rationale
@@ -483,14 +483,14 @@ Function Descriptor
 
 Assignments
 -----------
-.. literalinclude:: assignments/protocol_descriptor_a.py
-    :caption: :download:`Solution <assignments/protocol_descriptor_a.py>`
+.. literalinclude:: assignments/accessor_descriptor_a.py
+    :caption: :download:`Solution <assignments/accessor_descriptor_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/protocol_descriptor_b.py
-    :caption: :download:`Solution <assignments/protocol_descriptor_b.py>`
+.. literalinclude:: assignments/accessor_descriptor_b.py
+    :caption: :download:`Solution <assignments/accessor_descriptor_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/protocol_descriptor_c.py
-    :caption: :download:`Solution <assignments/protocol_descriptor_c.py>`
+.. literalinclude:: assignments/accessor_descriptor_c.py
+    :caption: :download:`Solution <assignments/accessor_descriptor_c.py>`
     :end-before: # Solution

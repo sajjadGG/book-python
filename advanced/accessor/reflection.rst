@@ -1,5 +1,5 @@
-Reflection
-==========
+Accessor Reflection
+===================
 
 
 Rationale
@@ -362,14 +362,14 @@ Use Cases
 
 Assignments
 -----------
-.. literalinclude:: assignments/protocol_reflection_a.py
-    :caption: :download:`Solution <assignments/protocol_reflection_a.py>`
+.. literalinclude:: assignments/accessor_reflection_a.py
+    :caption: :download:`Solution <assignments/accessor_reflection_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/protocol_reflection_b.py
-    :caption: :download:`Solution <assignments/protocol_reflection_b.py>`
+.. literalinclude:: assignments/accessor_reflection_b.py
+    :caption: :download:`Solution <assignments/accessor_reflection_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/protocol_reflection_c.py
-    :caption: :download:`Solution <assignments/protocol_reflection_c.py>`
+.. literalinclude:: assignments/accessor_reflection_c.py
+    :caption: :download:`Solution <assignments/accessor_reflection_c.py>`
     :end-before: # Solution

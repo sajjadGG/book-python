@@ -1,5 +1,5 @@
 """
-* Assignment: Protocol Classmethod CSV
+* Assignment: OOP Classmethod CSV
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 13 min
@@ -11,8 +11,7 @@ English:
     2. `CSVMixin.to_csv()` should return attribute values separated with coma
     3. `CSVMixin.from_csv()` should return instance of a class on which it was called
     4. Use `@classmethod` decorator in proper place
-    5. All tests must pass
-    6. Run doctests - all must succeed
+    5. Run doctests - all must succeed
 
 Polish:
     1. Do klasy `CSVMixin` dodaj metody:
@@ -21,8 +20,7 @@ Polish:
     2. `CSVMixin.to_csv()` powinna zwracać wartości atrybutów klasy rozdzielone po przecinku
     3. `CSVMixin.from_csv()` powinna zwracać instancje klasy na której została wywołana
     4. Użyj dekoratora `@classmethod` w odpowiednim miejscu
-    5. Wszystkie testy muszą przejść
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `CSVMixin.to_csv()` should add newline `\n` at the end of line

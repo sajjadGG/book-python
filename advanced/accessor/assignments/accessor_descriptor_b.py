@@ -1,5 +1,5 @@
 """
-* Assignment: Protocol Descriptor ValueRange
+* Assignment: Accessor Descriptor ValueRange
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 13 min

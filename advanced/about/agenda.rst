@@ -75,9 +75,11 @@ Day 4
     "30m", "OOP: Interfejsy"
     "45m", "OOP: Klasy abstrakcyjne"
     "30m", "OOP: Tożsamość obiektów"
-    "60m", "OOP: Konstruktor klas: __new__ vs __init__"
+    "60m", "OOP: Konstruktor klas __new__ vs __init__"
     "30m", "OOP: Sloty"
     "60m", "OOP: Metaklasy"
+    "", "OOP: Staticmethod"
+    "", "OOP: Classmethod"
 
 
 Day 5
@@ -86,13 +88,11 @@ Day 5
     :widths: 15, 85
     :header: "Estimated Time", "Topic"
 
-    "", "Iterator"
-    "", "Context Manager"
-    "", "Staticmethod"
-    "", "Classmethod"
-    "", "Property"
-    "", "Reflection"
-    "", "Descriptor"
+    "", "Protocol: Iterator"
+    "", "Protocol: Context Manager"
+    "", "Accessor: Property"
+    "", "Accessor: Reflection"
+    "", "Accessor: Descriptor"
 
     "", "Performance Optimization"
     "", "Micro-benchmarking"

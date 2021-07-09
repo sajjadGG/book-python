@@ -1,5 +1,5 @@
 """
-* Assignment: Protocol Descriptor Simple
+* Assignment: Accessor Descriptor Simple
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 13 min

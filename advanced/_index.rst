@@ -68,6 +68,8 @@ Object Oriented Programming
 
     oop/mutability.rst
     oop/staticattrs.rst
+    oop/staticmethod.rst
+    oop/classmethod.rst
     oop/access-modifiers.rst
     oop/composition.rst
     oop/method-resolution-order.rst
@@ -90,11 +92,18 @@ Protocols
     protocol/about.rst
     protocol/iterator.rst
     protocol/context-manager.rst
-    protocol/staticmethod.rst
-    protocol/classmethod.rst
-    protocol/property.rst
-    protocol/reflection.rst
-    protocol/descriptor.rst
+
+
+Accessors
+*********
+.. toctree::
+    :maxdepth: 1
+    :caption: Accessors
+
+    accessor/about.rst
+    accessor/property.rst
+    accessor/reflection.rst
+    accessor/descriptor.rst
 
 
 Performance

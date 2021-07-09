@@ -1,5 +1,5 @@
 """
-* Assignment: Protocol Reflection Delattr
+* Assignment: Accessor Reflection Delattr
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min

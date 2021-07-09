@@ -1,5 +1,5 @@
 """
-* Assignment: Protocol Descriptor Inheritance
+* Assignment: Accessor Descriptor Inheritance
 * Complexity: medium
 * Lines of code: 25 lines
 * Time: 21 min

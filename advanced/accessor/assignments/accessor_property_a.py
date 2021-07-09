@@ -1,19 +1,19 @@
 """
-* Assignment: Protocol Property Deleter
+* Assignment: Accessor Property Getter
 * Complexity: easy
-* Lines of code: 6 lines
+* Lines of code: 4 lines
 * Time: 5 min
 
 English:
     1. Define class `Point` with `x`, `y`, `z` attributes
     2. Define property `position` in class `Point`
-    3. Deleting `position` sets all attributes to 0 (`x=0`, `y=0`, `z=0`)
+    3. Accessing `position` returns `(x, y, z)`
     4. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj klasę `Point` z atrybutami `x`, `y`, `z`
     2. Zdefiniuj property `position` w klasie `Point`
-    3. Usunięcie `position` ustawia wszystkie atrybuty na 0 (`x=0`, `y=0`, `z=0`)
+    3. Dostęp do `position` zwraca `(x, y, z)`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -22,9 +22,8 @@ Tests:
     >>> pt = Point(x=1, y=2, z=3)
     >>> pt.x, pt.y, pt.z
     (1, 2, 3)
-    >>> del pt.position
-    >>> pt.x, pt.y, pt.z
-    (0, 0, 0)
+    >>> pt.position
+    (1, 2, 3)
 """
 
 class Point:
@@ -43,8 +42,6 @@ class Point:
         self.y = y
         self.z = z
 
-    @position.deleter
+    @position.getter
     def position(self):
-        self.x = 0
-        self.y = 0
-        self.z = 0
+        return self.x, self.y, self.z

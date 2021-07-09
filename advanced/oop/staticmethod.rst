@@ -1,5 +1,5 @@
-Staticmethod
-============
+OOP Staticmethod
+================
 
 
 Rationale

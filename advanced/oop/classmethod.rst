@@ -1,5 +1,5 @@
-Classmethod
-===========
+OOP Classmethod
+===============
 
 
 Rationale
@@ -350,6 +350,6 @@ Use Cases
 
 Assignments
 -----------
-.. literalinclude:: assignments/protocol_classmethod_a.py
-    :caption: :download:`Solution <assignments/protocol_classmethod_a.py>`
+.. literalinclude:: assignments/oop_classmethod_a.py
+    :caption: :download:`Solution <assignments/oop_classmethod_a.py>`
     :end-before: # Solution
