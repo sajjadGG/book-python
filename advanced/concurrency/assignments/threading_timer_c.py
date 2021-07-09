@@ -1,5 +1,5 @@
 """
-* Assignment: Wielowątkowość
+* Assignment: Concurrency Threading Subprocess
 * Complexity: easy
 * Lines of code: 20 lines
 * Time: 21 min

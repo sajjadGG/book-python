@@ -38,13 +38,3 @@ for element in data:
 log.debug('Closing connection')
 client.send('close')
 client.close()
-
-
-## Stworzenie Listenera
-# stworzenie listenera
-# akceptacja połączeń przychodzących
-# pętla
-#     przyjecie wiadomości
-#     if wiadomość == close: zamkniecie połączenia, wyjście z pętli
-#     else: wyświetl treść
-# zamknięcie listenera

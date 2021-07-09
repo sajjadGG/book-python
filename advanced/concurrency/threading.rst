@@ -256,6 +256,14 @@ Worker model:
 
 Assignments
 -----------
-.. literalinclude:: assignments/concurrency_threading_a.py
-    :caption: :download:`Solution <assignments/concurrency_threading_a.py>`
+.. literalinclude:: assignments/threading_timer_a.py
+    :caption: :download:`Solution <assignments/threading_timer_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/threading_timer_b.py
+    :caption: :download:`Solution <assignments/threading_timer_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/threading_timer_c.py
+    :caption: :download:`Solution <assignments/threading_timer_c.py>`
     :end-before: # Solution
