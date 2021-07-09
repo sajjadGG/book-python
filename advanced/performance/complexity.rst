@@ -9,8 +9,34 @@ Rationale
 * Cognitive Complexity
 * Cyclomatic Complexity
 * Big O notation [#wikibigonotation]_
+* https://wiki.python.org/moin/TimeComplexity
 
 .. figure:: img/performance-complexity-bionotation.png
+
+
+
+
+
+Computational Complexity
+------------------------
+
+
+Memory Complexity
+-----------------
+
+
+Cognitive Complexity
+--------------------
+* Measure of how difficult the application is to understand
+* Measure of how hard the control flow of a function is to understand
+* Functions with high Cognitive Complexity will be difficult to maintain.
+* https://www.sonarsource.com/docs/CognitiveComplexity.pdf
+
+
+
+Cyclomatic Complexity
+---------------------
+* Measures the minimum number of test cases required for full test coverage.
 
 
 Big O notation
@@ -21,6 +47,7 @@ Most common:
     * O(log_n)
     * O(log2_n)
     * O(1)
+    * O(n)
     * O(nlog2_n)
     * O(n^2)
     * O(2^n)
@@ -42,9 +69,9 @@ Most common:
     "``O(n log n)``",            "linearithmic time",                       "Fastest possible comparison sort; Fast Fourier transform"
     "``n poly(log n)``",         "quasilinear time",                        ""
     "``O(n2)``",                 "quadratic time",                          "Bubble sort; Insertion sort; Direct convolution"
-    "``O(n3)``",                 "cubic time",                              "Naive multiplication of two n×n matrices. Calculating partial correlation."
+    "``O(n3)``",                 "cubic time",                              "Naive multiplication of two n×n matrices. Calculating partial correlation"
     "``2O(log n) = poly(n)``",   "polynomial time",                         "Karmarkar's algorithm for linear programming; AKS primality test"
-    "``2poly(log n)``",          "quasi-polynomial time",                   "Best-known O(log2 n)-approximation algorithm for the directed Steiner tree problem."
+    "``2poly(log n)``",          "quasi-polynomial time",                   "Best-known O(log2 n)-approximation algorithm for the directed Steiner tree problem"
     "``O(2nε) for all ε > 0``",  "sub-exponential time",                    "Best-known algorithm for integer factorization; formerly-best algorithm for graph isomorphism"
     "``2o(n)``",                 "sub-exponential time",                    "Best-known algorithm for integer factorization; formerly-best algorithm for graph isomorphism"
     "``2O(n)``",                 "exponential time (with linear exponent)", "Solving the traveling salesman problem using dynamic programming"

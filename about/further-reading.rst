@@ -26,6 +26,7 @@ Python Development
 * Index of Python Enhancement Proposals (PEPs) - https://www.python.org/dev/peps/
 * Python Enhancement Proposals repository- https://github.com/python/peps
 * News from the Python Software Foundation - https://pyfound.blogspot.com
+* Future of Python: https://www.youtube.com/watch?v=fOdCxum-qLA
 
 
 Conferences
@@ -74,6 +75,7 @@ Python:
 
         * https://pyvideo.org/speaker/lukasz-langa.html
         * https://www.youtube.com/results?search_query=Łukasz+Langa
+        * https://www.youtube.com/watch?v=fOdCxum-qLA
 
     * Raymond Hettinger:
 
