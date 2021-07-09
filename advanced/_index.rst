@@ -112,6 +112,7 @@ Performance
     :maxdepth: 1
     :caption: Performance
 
+    performance/complexity.rst
     performance/optimization.rst
     performance/micro-benchmarking.rst
     performance/profiling.rst
