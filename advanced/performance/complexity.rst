@@ -4,17 +4,17 @@ Complexity
 
 Rationale
 ---------
-* Big O notation [#wikibigonotation]_:
 * Computational Complexity
 * Memory Complexity
 * Cognitive Complexity
 * Cyclomatic Complexity
+* Big O notation [#wikibigonotation]_
 
 .. figure:: img/performance-complexity-bionotation.png
 
 
-Table of common time complexities
----------------------------------
+Big O notation
+--------------
 Most common:
 
     * O(sqrt_n)
