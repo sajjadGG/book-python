@@ -1,40 +1,20 @@
-from dataclasses import dataclass
+import json
 from multiprocessing.connection import Client
-import logging
-import pickle
-
-logging.basicConfig(
-    level=logging.DEBUG,
-    #filename='/_tmp/processes.log',
-    format='[%(asctime).19s] %(levelname)-9s %(name)10s: %(message)s')
-
-log = logging.getLogger('client')
 
 
-@dataclass
-class Point:
-    x: int
-    y: int
+DATA = dict(
+    sepal_length=5.1,
+    sepal_width=3.5,
+    petal_length=1.4,
+    petal_width=0.2,
+    species='setosa')
 
+data = json.dumps(DATA)
 
-log.debug('Opening connection')
-client = Client(
-    address=('localhost', 1337),
-    authkey=b'Welcome:)'
-)
+ADDRESS = ('localhost', 6000)
+PASSWORD = b'My voice is my password, verify me.'
 
-
-log.debug('Sending data')
-rectangle = Point(x=1, y=2)
-
-pickled = pickle.dumps(rectangle, protocol=pickle.HIGHEST_PROTOCOL)
-
-data = ['ehlo', 10, 10.6, None, True, {'asd': 10}, [{1, 2, 3}], rectangle, pickled]
-
-for element in data:
-    client.send(element)
-
-
-log.debug('Closing connection')
-client.send('close')
-client.close()
+connection = Client(ADDRESS, authkey=PASSWORD)
+connection.send(data)
+connection.send('close')
+connection.close()

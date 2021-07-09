@@ -119,3 +119,13 @@ Listener
 
     listener.close()
 
+
+Assignments
+-----------
+.. literalinclude:: assignments/multiprocessing_client.py
+    :caption: :download:`Solution <assignments/multiprocessing_client.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/multiprocessing_server.py
+    :caption: :download:`Solution <assignments/multiprocessing_server.py>`
+    :end-before: # Solution
