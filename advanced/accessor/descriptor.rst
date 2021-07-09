@@ -352,58 +352,58 @@ Note ``__repr__()`` method and how to access Descriptor value.
     # Setattr: notexisting -> 1337
 
 
-.. figure:: img/protocol-descriptor-timezone.png
-
-    Comparing datetime works only when all has the same timezone (UTC).
-    More information in `Stdlib Datetime Timezone`
-
-Descriptor Timezone Converter:
-
+Inheritance
+-----------
 .. code-block:: python
 
-    from dataclasses import dataclass
-    from datetime import datetime
-    from pytz import timezone
+    from typing import Union
 
 
-    class Timezone:
-        def __init__(self, name):
-            self.timezone = timezone(name)
+    class Validator:
+        attribute_name: str
 
-        def __get__(self, parent, *args):
-            return parent.utc.astimezone(self.timezone)
+        def __set_name__(self, parent, attribute_name):
+            self.attribute_name = f'_{attribute_name}'
 
-        def __set__(self, parent, new_datetime):
-            local_time = self.timezone.localize(new_datetime)
-            parent.utc = local_time.astimezone(timezone('UTC'))
+        def __get__(self, parent, parent_type):
+            return getattr(parent, self.attribute_name)
 
-
-    @dataclass
-    class Time:
-        utc = datetime.now(tz=timezone('UTC'))
-        warsaw = Timezone('Europe/Warsaw')
-        moscow = Timezone('Europe/Moscow')
-        est = Timezone('America/New_York')
-        pdt = Timezone('America/Los_Angeles')
+        def __delete__(self, parent):
+            setattr(parent, self.attribute_name, None)
 
 
-    t = Time()
+    class RangeValidator(Validator):
+        min: Union[int, float]
+        max: Union[int, float]
 
-    print('Launch of a first man to space:')
-    t.moscow = datetime(1961, 4, 12, 9, 6, 59)
-    print(t.utc)        # 1961-04-12 06:06:59+00:00
-    print(t.warsaw)     # 1961-04-12 07:06:59+01:00
-    print(t.moscow)     # 1961-04-12 09:06:59+03:00
-    print(t.est)        # 1961-04-12 01:06:59-05:00
-    print(t.pdt)        # 1961-04-11 22:06:59-08:00
+        def __init__(self, min: float, max: float):
+            self.min = min
+            self.max = max
 
-    print('First man set foot on a Moon:')
-    t.warsaw = datetime(1969, 7, 21, 3, 56, 15)
-    print(t.utc)        # 1969-07-21 02:56:15+00:00
-    print(t.warsaw)     # 1969-07-21 03:56:15+01:00
-    print(t.moscow)     # 1969-07-21 05:56:15+03:00
-    print(t.est)        # 1969-07-20 22:56:15-04:00
-    print(t.pdt)        # 1969-07-20 19:56:15-07:00
+        def __set__(self, parent, newvalue):
+            if self.min <= newvalue < self.max:
+                setattr(parent, self.attribute_name, newvalue)
+            else:
+                attr = f'{parent.__class__.__name__}.{self.attribute_name.removeprefix("_")}'
+                min = self.min
+                max = self.max
+                raise ValueError(f'{attr} value: {newvalue} is out of range {min=}, {max=}')
+
+
+    class Astronaut:
+        firstname: str
+        lastname: str
+        age: int = RangeValidator(min=27, max=50)
+        height: float = RangeValidator(min=150, max=200)
+        weight: float = RangeValidator(min=50, max=90)
+        _firstname: str
+        _lastname: str
+        _age: int
+        _height: float
+        _weight: float
+
+
+    astro = Astronaut()
 
 
 Function Descriptor
@@ -479,6 +479,119 @@ Function Descriptor
     #  '__func__', '__ge__', '__get__', '__getattribute__', '__gt__', '__hash__', '__init__',
     #  '__init_subclass__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
     #  '__repr__', '__self__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
+
+
+Use Case - Timezone Converter
+-----------------------------
+.. figure:: img/accessor-descriptor-timezone.png
+
+    Comparing datetime works only when all has the same timezone (UTC).
+    More information in `Stdlib Datetime Timezone`
+
+Descriptor Timezone Converter:
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+    from datetime import datetime
+    from pytz import timezone
+
+
+    class Timezone:
+        def __init__(self, name):
+            self.timezone = timezone(name)
+
+        def __get__(self, parent, *args):
+            return parent.utc.astimezone(self.timezone)
+
+        def __set__(self, parent, new_datetime):
+            local_time = self.timezone.localize(new_datetime)
+            parent.utc = local_time.astimezone(timezone('UTC'))
+
+
+    @dataclass
+    class Time:
+        utc = datetime.now(tz=timezone('UTC'))
+        warsaw = Timezone('Europe/Warsaw')
+        moscow = Timezone('Europe/Moscow')
+        est = Timezone('America/New_York')
+        pdt = Timezone('America/Los_Angeles')
+
+
+    t = Time()
+
+    print('Launch of a first man to space:')
+    t.moscow = datetime(1961, 4, 12, 9, 6, 59)
+    print(t.utc)        # 1961-04-12 06:06:59+00:00
+    print(t.warsaw)     # 1961-04-12 07:06:59+01:00
+    print(t.moscow)     # 1961-04-12 09:06:59+03:00
+    print(t.est)        # 1961-04-12 01:06:59-05:00
+    print(t.pdt)        # 1961-04-11 22:06:59-08:00
+
+    print('First man set foot on a Moon:')
+    t.warsaw = datetime(1969, 7, 21, 3, 56, 15)
+    print(t.utc)        # 1969-07-21 02:56:15+00:00
+    print(t.warsaw)     # 1969-07-21 03:56:15+01:00
+    print(t.moscow)     # 1969-07-21 05:56:15+03:00
+    print(t.est)        # 1969-07-20 22:56:15-04:00
+    print(t.pdt)        # 1969-07-20 19:56:15-07:00
+
+
+>>> from dataclasses import dataclass
+>>> from datetime import datetime
+>>> from zoneinfo import ZoneInfo
+>>>
+>>>
+>>> class Timezone:
+...     def __init__(self, name):
+...         self.timezone = ZoneInfo(name)
+...
+...     def __get__(self, parent, *args):
+...         return parent.utc.astimezone(self.timezone)
+...
+...     def __set__(self, parent, new_datetime):
+...         local_time = new_datetime.replace(tzinfo=self.timezone)
+...         parent.utc = local_time.astimezone(ZoneInfo('UTC'))
+>>>
+>>>
+>>> @dataclass
+... class Time:
+...     utc = datetime.now(tz=ZoneInfo('UTC'))
+...     warsaw = Timezone('Europe/Warsaw')
+...     moscow = Timezone('Europe/Moscow')
+...     eastern = Timezone('America/New_York')
+...     pacific = Timezone('America/Los_Angeles')
+>>>
+>>>
+>>> t = Time()
+>>>
+>>> t.utc = datetime(1961, 4, 12, 6, 7)  # Gagarin's launch to space
+>>> print(t.utc)
+1961-04-12 06:07:00
+>>> print(t.moscow)
+1961-04-12 09:07:00+03:00
+>>> print(t.warsaw)
+1961-04-12 07:07:00+01:00
+>>> print(t.eastern)
+1961-04-12 01:07:00-05:00
+>>> print(t.pacific)
+1961-04-11 22:07:00-08:00
+>>>
+>>>
+>>> t.warsaw = datetime(1969, 7, 21, 3, 56, 15)  # Armstrong's first Lunar step
+>>> print(t.utc)
+1969-07-21 02:56:15+00:00
+>>> print(t.warsaw)
+1969-07-21 03:56:15+01:00
+>>> print(t.moscow)
+1969-07-21 05:56:15+03:00
+>>> print(t.eastern)
+1969-07-20 22:56:15-04:00
+>>> print(t.pacific)
+1969-07-20 19:56:15-07:00
+
+.. todo:: Check if those times are correct
+
 
 
 Assignments
