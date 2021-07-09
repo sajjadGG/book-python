@@ -1,7 +1,7 @@
 """
-* Assignment: Loop Comprehension Split
+* Assignment: Performance Compexity SplitTrainTest
 * Required: no
-* Complexity: medium
+* Complexity: easy
 * Lines of code: 9 lines
 * Time: 13 min
 

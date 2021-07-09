@@ -1,7 +1,7 @@
 """
-* Assignment: Loop Nested Unique Keys
+* Assignment: Performance Compexity UniqueKeys
 * Required: yes
-* Complexity: medium
+* Complexity: easy
 * Lines of code: 3 lines
 * Time: 8 min
 

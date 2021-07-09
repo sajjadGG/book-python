@@ -1,5 +1,5 @@
 """
-* Assignment: Loop For Segmentation
+* Assignment: Performance Compexity Segmentation
 * Required: yes
 * Complexity: easy
 * Lines of code: 10 lines
