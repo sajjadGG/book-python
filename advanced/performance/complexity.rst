@@ -26,7 +26,7 @@ Most common:
     * O(2^n)
     * O(n!)
 
-.. csv-table:: Table of common time complexities
+.. csv-table:: Table of common time complexities [#wikibigonotation]_
     :widths: 20, 20, 60
     :header: "Running time (T(n))", "Name", "Example algorithms"
 
@@ -38,7 +38,7 @@ Most common:
     "``poly(log n)``",           "polylogarithmic time",                    ""
     "``O(nc) where 0 < c < 1``", "fractional power",                        "Searching in a kd-tree"
     "``O(n)``",                  "linear time",                             "Finding the smallest or largest item in an unsorted array, Kadane's algorithm, linear search"
-    "``O(n log* n)``",           "n log-star n" time",                     "Seidel's polygon triangulation algorithm"
+    "``O(n log* n)``",           "n log-star n" time",                      "Seidel's polygon triangulation algorithm"
     "``O(n log n)``",            "linearithmic time",                       "Fastest possible comparison sort; Fast Fourier transform"
     "``n poly(log n)``",         "quasilinear time",                        ""
     "``O(n2)``",                 "quadratic time",                          "Bubble sort; Insertion sort; Direct convolution"
