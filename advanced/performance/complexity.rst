@@ -14,9 +14,6 @@ Rationale
 .. figure:: img/performance-complexity-bionotation.png
 
 
-
-
-
 Computational Complexity
 ------------------------
 
@@ -31,7 +28,6 @@ Cognitive Complexity
 * Measure of how hard the control flow of a function is to understand
 * Functions with high Cognitive Complexity will be difficult to maintain.
 * https://www.sonarsource.com/docs/CognitiveComplexity.pdf
-
 
 
 Cyclomatic Complexity
@@ -65,7 +61,7 @@ Most common:
     "``poly(log n)``",           "polylogarithmic time",                    ""
     "``O(nc) where 0 < c < 1``", "fractional power",                        "Searching in a kd-tree"
     "``O(n)``",                  "linear time",                             "Finding the smallest or largest item in an unsorted array, Kadane's algorithm, linear search"
-    "``O(n log* n)``",           "n log-star n" time",                      "Seidel's polygon triangulation algorithm"
+    "``O(n log* n)``",           "n log-star n time",                       "Seidel's polygon triangulation algorithm"
     "``O(n log n)``",            "linearithmic time",                       "Fastest possible comparison sort; Fast Fourier transform"
     "``n poly(log n)``",         "quasilinear time",                        ""
     "``O(n2)``",                 "quadratic time",                          "Bubble sort; Insertion sort; Direct convolution"
