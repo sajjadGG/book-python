@@ -22,6 +22,7 @@ Encode Simple Object
 >>> print(result)
 {"firstname": "Mark", "lastname": "Watney", "role": "Botanist"}
 
+
 Decode Simple Object
 --------------------
 >>> from dataclasses import dataclass

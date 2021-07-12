@@ -43,7 +43,7 @@ ciągu znaków w pliku, funkcji lub klasie. Przykład:
 
         import sys
 
-        print('Your Python version:', sys.version[:5])
+        print('Your Python version:', sys.version[:6])
 
     a. Upewnij się, że skopiowałeś/aś również trzy znaki cudzysłowu
        ``"""`` na początku i końcu doctest - to ważne
