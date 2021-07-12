@@ -1,47 +1,12 @@
 Protocols
 =========
 
+
 Rationale
 ---------
-
-.. list-table::
-    :header-rows: 1
-
-    * - Abstract Base Class
-      - Inherits from
-      - Methods
-
-    * - Container
-    * - Hashable
-    * - Iterable
-
-    * - Iterator
-      - Iterable
-      - ``__next__``, ``__iter__``
-
-    * - Reversible
-    * - Generator
-    * - Callable
-    * - Collection
-    * - Sequence
-    * - MutableSequence
-    * - ByteString
-    * - Set
-    * - MutableSet
-    * - Mapping
-    * - MutableMapping
-    * - MappingView
-    * - ItemsView
-    * - KeysView
-    * - ValuesView
-    * - Awaitable
-    * - Coroutine
-    * - AsyncIterator
-    * - AsyncGenerator
-
-.. csv-table::
+.. csv-table:: Protocols
     :header: "Abstract Base Class", "Inherits from", "Methods"
-    :width: 15, 15, 60
+    :widths: 15, 15, 60
 
     "Container",           "",                           "``__contains__``"
     "Hashable",            "",                           "``__hash__``"
