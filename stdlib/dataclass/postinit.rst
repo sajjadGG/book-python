@@ -82,7 +82,7 @@ Initial Validation in Dataclasses
 >>>
 >>>
 >>> Astronaut('Mark', 'Watney', age=44)
-Astronaut(firstname='Mark', lastname='Watney', age=44)
+Astronaut(firstname='Mark', lastname='Watney', age=44, AGE_MIN=30, AGE_MAX=50)
 >>>
 >>> Astronaut('Mark', 'Watney', age=60)
 Traceback (most recent call last):
@@ -126,7 +126,7 @@ Astronaut(firstname='Mark', lastname='Watney',
 >>>
 >>>
 >>> Astronaut('Mark', 'Watney')
-Astronaut(firstname='Mark', lastname='Watney', launch=None))
+Astronaut(firstname='Mark', lastname='Watney', launch=None)
 >>>
 >>> Astronaut('Mark', 'Watney', '1969-07-21T02:56:15+00:00')  # doctest: +NORMALIZE_WHITESPACE
 Astronaut(firstname='Mark', lastname='Watney',
