@@ -43,6 +43,7 @@ Sepal Length,Sepal Width,Petal Length,Petal Width,Species
 5.4,3.9,1.3,0.4,setosa
 5.9,3.0,5.1,1.8,virginica
 6.0,3.4,4.5,1.6,versicolor
+<BLANKLINE>
 
 Write data to CSV file using ``csv.DictWriter()``:
 
@@ -83,6 +84,7 @@ Write data to CSV file using ``csv.DictWriter()``:
 "5.4","3.9","1.3","0.4","setosa"
 "5.9","3.0","5.1","1.8","virginica"
 "6.0","3.4","4.5","1.6","versicolor"
+<BLANKLINE>
 
 
 Assignments
