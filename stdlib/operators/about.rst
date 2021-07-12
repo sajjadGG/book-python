@@ -7,8 +7,12 @@ Rationale
 * Operator Overload
 * Readable syntax
 * Simpler operations
-* Following examples uses ``dataclasses`` to focus on action code, not boilerplate
+* All examples in this chapter uses ``dataclasses`` for you to focus
+  on the important code, not boilerplate code just to make it works
 
+
+Example
+-------
 >>> from dataclasses import dataclass
 >>>
 >>>
@@ -31,9 +35,9 @@ TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
 ...     y: int = 0
 ...
 ...     def __add__(self, other):
-...         return Vector(
-...             self.x + other.x,
-...             self.y + other.y)
+...         new_x = self.x + other.x
+...         new_y = self.y + other.y
+...         return Vector(new_x, new_y)
 >>>
 >>>
 >>> Vector(x=1, y=2) + Vector(x=3, y=4)

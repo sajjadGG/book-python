@@ -56,8 +56,9 @@ Example
 ...     y: int
 ...
 ...     def __add__(self, other):
-...         return Vector(x=self.x + other.x,
-...                       y=self.y + other.y)
+...         new_x = self.x + other.x
+...         new_y = self.y + other.y
+...         return Vector(new_x, new_y)
 ...
 ...     def __iadd__(self, other):
 ...         self.x += other.x
@@ -78,8 +79,8 @@ Vector(x=9, y=12)
 Vector(x=11, y=22)
 
 
-Use Case - MOD
---------
+Use Case - Mod
+--------------
 * ``%`` (``__mod__``) operator behavior for ``int`` and ``str``:
 
 >>> 13 % 4
@@ -91,6 +92,7 @@ TypeError: not all arguments converted during string formatting
 
 >>> pi = 3.1514
 >>>
+>>>
 >>> 'String: %s' % pi
 'String: 3.1514'
 >>>
@@ -100,22 +102,18 @@ TypeError: not all arguments converted during string formatting
 >>> 'Float: %f' % pi
 'Float: 3.151400'
 
->>> name = 'Mark Watney'
->>>
->>> 'Hello %s, how are you?' % name
-'Hello Mark Watney, how are you?'
-
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
+>>>
+>>>
+>>> 'Hello %s, how are you?' % firstname
+'Hello Mark, how are you?'
 >>>
 >>> 'Hello %s %s' % (firstname, lastname)
-'Echo 1 2'
-
->>> firstname = 'Mark'
->>> lastname = 'Watney'
+'Hello Mark Watney'
 >>>
->>> 'Echo %(fname)s %(lname)s' % {'fname': firstname, 'lname': lastname}
-'Echo Mark Watney'
+>>> 'Hello %(fname)s %(lname)s' % {'fname': firstname, 'lname': lastname}
+'Hello Mark Watney'
 
 >>> class Str:
 ...     def __mod__(self, other):
