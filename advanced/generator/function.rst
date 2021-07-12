@@ -220,6 +220,9 @@ Yield in a Zip Loop
 >>>
 >>> for n, r in zip(names(), roles()):
 ...     print(r, n)
+botanist Mark Watney
+commander Melissa Lewis
+pilot Rick Martinez
 
 
 Example
