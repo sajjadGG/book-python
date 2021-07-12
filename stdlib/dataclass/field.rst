@@ -58,6 +58,18 @@ Default Factory
 ...     missions: list[str] = field(default_factory=lambda: ['Ares3', 'Apollo18'])
 
 
+Init
+----
+>>> from dataclasses import dataclass, field
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
+...     AGE_MIN: Final[int] = field(init=False, default=27)
+...     AGE_MAX: Final[int] = field(init=False, default=50)
 
 
 

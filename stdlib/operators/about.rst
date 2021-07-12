@@ -1,5 +1,5 @@
-Operators
-=========
+Operators About
+===============
 
 
 Rationale
@@ -45,72 +45,13 @@ Vector(x=9, y=12)
 
 Use Case - Game
 ---------------
->>> # doctest: +SKIP
-...
-... hero @ Position(x=50, y=120)
-... hero >> Direction(left=10, up=20)
-...
-... hero < Damage(20)
-... hero > Damage(20)
-...
-... hero['gold'] += dragon['gold']
-
-
-Use Case - Cache
-----------------
->>> class Cache(dict):
-...     def __init__(self, func):
-...         self.func = func
-...
-...     def __call__(self, *args):
-...         if args not in self:
-...             self[args] = self.func(*args)
-...         return self[args]
+>>> hero @ Position(x=50, y=120)  # doctest: +SKIP
+>>> hero >> Direction(left=10, up=20)  # doctest: +SKIP
 >>>
+>>> hero < Damage(20)  # doctest: +SKIP
+>>> hero > Damage(20)  # doctest: +SKIP
 >>>
->>> @Cache
-... def add(a, b):
-...     return a + b
->>>
->>>
->>> _ = add(1,2)  # computed
->>> _ = add(1,2)  # fetched from cache
->>> _ = add(1,2)  # fetched from cache
->>> _ = add(1,2)  # fetched from cache
->>> _ = add(2,1)  # computed
->>> _ = add(2,1)  # fetched from cache
->>>
->>> add  # doctest: +NORMALIZE_WHITESPACE
-{(1, 2): 3,
- (2, 1): 3}
-
->>> class Cache(dict):
-...     def __init__(self, func):
-...         self.func = func
-...
-...     def __call__(self, *args):
-...         return self[args]
-...
-...     def __missing__(self, key):
-...         self[key] = self.func(*key)
-...         return self[key]
->>>
->>>
->>> @Cache
-... def add(a, b):
-...     return a + b
->>>
->>>
->>> _ = add(1,2)  # computed
->>> _ = add(1,2)  # fetched from cache
->>> _ = add(1,2)  # fetched from cache
->>> _ = add(1,2)  # fetched from cache
->>> _ = add(2,1)  # computed
->>> _ = add(2,1)  # fetched from cache
->>>
->>> add  # doctest: +NORMALIZE_WHITESPACE
-{(1, 2): 3,
- (2, 1): 3}
+>>> hero['gold'] += dragon['gold']  # doctest: +SKIP
 
 
 Further Reading

@@ -14,29 +14,88 @@ Rationale
     "``obj > other``",    "``obj.__gt__(other)``"
     "``obj >= other``",   "``obj.__ge__(other)``"
 
+    "``-obj``",           "``obj.__neg__()``"
+    "``+obj``",           "``obj.__pos__()``"
+    "``~obj``",           "``obj.__invert__()``"
 
-Example
--------
->>> from dataclasses import dataclass
->>>
->>>
->>> @dataclass
-... class Vector:
-...     x: int = 0
-...     y: int = 0
+
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
 ...
 ...     def __eq__(self, other):
-...         if (self.x == other.x) and (self.y == other.y):
-...             return True
-...         else:
-...             return False
+...         return (self.firstname == other.firstname) \
+...            and (self.lastname == other.lastname)
 >>>
 >>>
->>> Vector(x=1, y=2) == Vector(x=3, y=4)
+>>>
+>>> a = Astronaut('Mark', 'Watney')
+>>> b = Astronaut('Mark', 'Watney')
+>>> c = Astronaut('Melissa', 'Lewis')
+>>>
+>>> print(a == c)
 False
->>>
->>> Vector(x=1, y=2) == Vector(x=1, y=2)
+>>> print(b == c)
+False
+>>> print(a == b)
 True
+
+
+Problem
+--------
+* When you compare objects with the same fields from two different classes
+
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...
+...     def __eq__(self, other):
+...         return (self.firstname == other.firstname) \
+...            and (self.lastname == other.lastname)
+>>>
+>>>
+>>> class Cosmonaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+>>>
+>>>
+>>> a = Astronaut('Mark', 'Watney')
+>>> c = Cosmonaut('Mark', 'Watney')
+>>>
+>>> print(a == c)
+True
+
+
+Solution
+--------
+* Always remember to compare classes
+* This way you avoid bug, when both has the same fields and values
+
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...
+...     def __eq__(self, other):
+...         return (self.__class__ is other.__class) \
+...            and (self.firstname == other.firstname) \
+...            and (self.lastname == other.lastname)
+>>>
+>>>
+>>> class Cosmonaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+>>>
+>>>
+>>> a = Astronaut('Mark', 'Watney')
+>>> c = Cosmonaut('Mark', 'Watney')
+>>>
+>>> print(a == c)
+False
 
 
 Eq Works at Both Sides

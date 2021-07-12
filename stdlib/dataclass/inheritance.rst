@@ -29,3 +29,7 @@ Inheritance
 >>>
 
 Will generate ``def __init__(self, name: str, job: str = 'Astronaut', agency: str = 'NASA')``
+
+
+Post Init Inheritance
+---------------------

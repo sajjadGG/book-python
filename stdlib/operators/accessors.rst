@@ -8,12 +8,12 @@ Rationale
     :header: "Operator", "Method", "Remarks"
     :widths: 15, 45, 40
 
-    "``obj(x)``",      "``obj.__call__(x)``"
-    "``obj[x]``",      "``obj.__getitem__(x)``"
-    "``obj[x]``",      "``obj.__missing__(x)``", "(when ``x`` is not in ``obj``)"
-    "``obj[x] = 10``", "``obj.__setitem__(x, 10)``"
-    "``del obj[x]``",  "``obj.__delitem__(x)``"
-    "``x in obj``",    "``obj.__contains__(x)``"
+    "``obj(x)``",        "``obj.__call__(x)``"
+    "``obj[x]``",        "``obj.__getitem__(x)``"
+    "``obj[x]``",        "``obj.__missing__(x)``", "(when ``x`` is not in ``obj``)"
+    "``obj[x] = 10``",   "``obj.__setitem__(x, 10)``"
+    "``del obj[x]``",    "``obj.__delitem__(x)``"
+    "``x in obj``",      "``obj.__contains__(x)``"
 
 
 Use Case
@@ -104,6 +104,36 @@ array([[4, 5, 6]])
 >>> data[:, 2]      # data.__getitem__((:, 2))  # data.__getitem__((slice(), 2))
 array([3, 6])
 
+
+Use Case - Cache
+----------------
+>>> class Cache(dict):
+...     def __init__(self, func):
+...         self.func = func
+...
+...     def __call__(self, *args):
+...         return self[args]
+...
+...     def __missing__(self, key):
+...         self[key] = self.func(*key)
+...         return self[key]
+>>>
+>>>
+>>> @Cache
+... def add(a, b):
+...     return a + b
+>>>
+>>>
+>>> _ = add(1,2)  # computed
+>>> _ = add(1,2)  # fetched from cache
+>>> _ = add(1,2)  # fetched from cache
+>>> _ = add(1,2)  # fetched from cache
+>>> _ = add(2,1)  # computed
+>>> _ = add(2,1)  # fetched from cache
+>>>
+>>> add  # doctest: +NORMALIZE_WHITESPACE
+{(1, 2): 3,
+ (2, 1): 3}
 
 
 Assignments
