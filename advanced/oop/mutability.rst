@@ -30,83 +30,47 @@ Mutable Types
 
 Argument Mutability
 -------------------
-Bad:
+Note, You should not set mutable objects as a default function argument.
+More information in `Argument Mutability`. This is how all dynamically typed
+languages work (including PHP, Ruby, Perl etc).
 
-.. code-block:: python
-
-    class Astronaut:
-        def __init__(self, name, missions=[]):
-            self.name = name
-            self.missions = missions
-
-
-    watney = Astronaut('Mark Watney')
-    watney.missions.append('Ares 3')
-    print('Watney:', watney.missions)
-    # Watney: ['Ares 3']
-
-    twardowski = Astronaut('Jan Twardowski')
-    print('Twardowski:', twardowski.missions)
-    # 'Twardowski:' ['Ares 3']
-
-Good:
-
-.. code-block:: python
-
-    class Astronaut:
-        def __init__(self, name, missions=()):
-            self.name = name
-            self.missions = list(missions)
-
-
-    watney = Astronaut('Mark Watney')
-    watney.missions.append('Ares 3')
-    print('Watney:', watney.missions)
-    # Watney: ['Ares 3']
-
-    twardowski = Astronaut('Jan Twardowski')
-    print('Twardowski:', twardowski.missions)
-    # 'Twardowski:' []
-
-.. code-block:: python
-
-    from typing import Optional
-
-
-    class Astronaut:
-        def __init__(self, firstname, lastname, missions: Optional[list[str]] = None):
-            self.firstname = firstname
-            self.lastname = lastname
-            self.missions = missions if missions else []
-
-
-    watney = Astronaut('Mark', 'Watney')
-    watney.missions.append('Ares 3')
-    watney.missions.append('Apollo 18')
-    print('Watney:', watney.missions)
-
-
-    twardowski = Astronaut('Jan', 'Twardowski')
-    print('Twardowski:', twardowski.missions)
-
->>> from typing import Optional
->>>
->>>
 >>> class Astronaut:
-...     def __init__(self, firstname, lastname, missions: Optional[list[str]] = None):
-...         self.firstname = firstname
-...         self.lastname = lastname
+...     def __init__(self, name, missions=[]):
+...         self.name = name
+...         self.missions = missions
+>>>
+>>>
+>>> watney = Astronaut('Mark Watney')
+>>> lewis = Astronaut('Melissa Lewis')
+>>>
+>>> watney.missions.append('Ares 1')
+>>> watney.missions.append('Ares 2')
+>>> watney.missions.append('Ares 3')
+>>>
+>>> print(f'Name: {watney.name}, Missions: {watney.missions}')
+Name: Mark Watney, Missions: ['Ares 1', 'Ares 2', 'Ares 3']
+>>>
+>>> print(f'Name: {lewis.name}, Missions: {lewis.missions}')
+Name: Melissa Lewis, Missions: ['Ares 1', 'Ares 2', 'Ares 3']
+
+>>> class Astronaut:
+...     def __init__(self, name, missions=None):
+...         self.name = name
 ...         self.missions = missions if missions else []
 >>>
 >>>
->>> watney = Astronaut('Mark', 'Watney')
+>>> watney = Astronaut('Mark Watney')
+>>> lewis = Astronaut('Melissa Lewis')
+>>>
+>>> watney.missions.append('Ares 1')
+>>> watney.missions.append('Ares 2')
 >>> watney.missions.append('Ares 3')
->>> watney.missions.append('Apollo 18')
->>> print('Watney:', watney.missions)
 >>>
+>>> print(f'Name: {watney.name}, Missions: {watney.missions}')
+Name: Mark Watney, Missions: ['Ares 1', 'Ares 2', 'Ares 3']
 >>>
->>> twardowski = Astronaut('Jan', 'Twardowski')
->>> print('Twardowski:', twardowski.missions)
+>>> print(f'Name: {lewis.name}, Missions: {lewis.missions}')
+Name: Melissa Lewis, Missions: []
 
 
 Assignments

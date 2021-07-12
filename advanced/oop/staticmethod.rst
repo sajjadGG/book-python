@@ -223,14 +223,13 @@ Example:
 >>>
 >>> @dataclass
 ... class Measurement:
-...     when: datetime
 ...     device_id: str
 ...     parameter: Literal['temperature', 'humidity']
 ...     value: float
 ...     unit: Literal['Celsius', 'Kelvin', 'Fahrenheit', '%']
+...     when: datetime = datetime.now(timezone.utc)
 ...
 ...     def __post_init__(self):
-...         self.when = datetime.now(timezone.utc)
 ...         if self.unit == 'Kelvin' and self.value < 0:
 ...             raise ValueError('Negative Kelvin')
 >>>
