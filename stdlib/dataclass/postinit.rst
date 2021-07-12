@@ -11,8 +11,8 @@ Rationale
 * Hence you have to take care about negative cases (errors)
 
 
-Class Init Time Validation
---------------------------
+Initial Validation in Classes
+-----------------------------
 >>> class Kelvin:
 ...     def __init__(self, value):
 ...         if value < 0.0:
@@ -26,8 +26,8 @@ Traceback (most recent call last):
 ValueError: Temperature must be greater than 0
 
 
-Dataclass Init Time Validation
-------------------------------
+Initial Validation in Dataclasses
+---------------------------------
 >>> from dataclasses import dataclass
 >>>
 >>>

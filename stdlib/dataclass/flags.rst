@@ -32,6 +32,20 @@ Init
 >>> from dataclasses import dataclass
 >>>
 >>>
+>>> @dataclass(init=True)
+... class Point:
+...     x: int
+...     y: int
+>>>
+>>>
+>>> p = Point(10, 20)
+>>>
+>>> print(p)
+Point(x=10, y=20)
+
+>>> from dataclasses import dataclass
+>>>
+>>>
 >>> @dataclass(init=False)
 ... class Point:
 ...     x: int
@@ -85,6 +99,21 @@ Frozen
 >>> from dataclasses import dataclass
 >>>
 >>>
+>>> @dataclass(frozen=False)
+... class Point:
+...     x: int
+...     y: int
+>>>
+>>>
+>>> p = Point(10, 20)
+>>> p.x = 30
+>>>
+>>> print(p)
+Point(x=30, y=20)
+
+>>> from dataclasses import dataclass
+>>>
+>>>
 >>> @dataclass(frozen=True)
 ... class Point:
 ...     x: int
@@ -92,7 +121,6 @@ Frozen
 >>>
 >>>
 >>> p = Point(10, 20)
->>>
 >>> p.x = 30
 Traceback (most recent call last):
 dataclasses.FrozenInstanceError: cannot assign to field 'x'
@@ -172,32 +200,3 @@ Other flags
 >>> astro1 = Astronaut('Mark', 'Watney')
 >>> astro2 = Astronaut('Mark', 'Watney')
 >>> astro3 = Astronaut('Jan', 'Twardowski')
-
-
-InitVar
--------
-* Init-only fields are added as parameters to the generated ``__init__`` method, and are passed to the optional ``__post_init__`` method
-* They are not otherwise used by Data Classes
-
->>> # doctest: +SKIP
-... from dataclasses import dataclass, InitVar
-...
-...
-... @dataclass
-... class Astronaut:
-...     fullname: InitVar[str] = None
-...     _firstname: str = None
-...     _lastname: str = None
-...
-...     def __post_init__(self, fullname: str):
-...         fullname = fullname.split()
-...         self._firstname = fullname[0]
-...         self._lastname = fullname[1]
-...
-...
-... astro = Astronaut('Mark Watney')
-...
-... print(astro._firstname)
-Mark
-... print(astro._lastname)
-Watney
