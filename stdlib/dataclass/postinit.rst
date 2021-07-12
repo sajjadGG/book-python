@@ -13,48 +13,120 @@ Rationale
 
 Initial Validation in Classes
 -----------------------------
->>> class Kelvin:
-...     def __init__(self, value):
-...         if value < 0.0:
-...             raise ValueError('Temperature must be greater than 0')
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname, age):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...         if 30 <= age < 50:
+...             raise ValueError('Age is out of range')
 ...         else:
-...             self.value = value
+...             self.age = age
 >>>
 >>>
->>> t = Kelvin(-1)
+>>> astro = Astronaut('Mark', 'Watney', age=44)
+>>> vars(astro)
+{'firstname': 'Mark', 'lastname': 'Watney', 'age': 44}
+>>>
+>>> Astronaut('Mark', 'Watney', age=60)
 Traceback (most recent call last):
-ValueError: Temperature must be greater than 0
+ValueError: Age is out of range
+
+>>> from typing import Final
+>>>
+>>>
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
+...     AGE_MIN: Final[int] = 30
+...     AGE_MAX: Final[int] = 50
+...
+...     def __init__(self, firstname, lastname, age):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...         if not self.AGE_MIN <= age < self.AGE_MAX:
+...             raise ValueError('Age is out of range')
+...         else:
+...             self.age = age
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney', age=44)
+>>> vars(astro)
+{'firstname': 'Mark', 'lastname': 'Watney', 'age': 44}
+>>>
+>>> Astronaut('Mark', 'Watney', age=60)
+Traceback (most recent call last):
+ValueError: Age is out of range
 
 
 Initial Validation in Dataclasses
 ---------------------------------
 >>> from dataclasses import dataclass
+>>> from typing import Final
 >>>
 >>>
 >>> @dataclass
-... class Kelvin:
-...     value: float = 0.0
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
+...     AGE_MIN: Final[int] = 30
+...     AGE_MAX: Final[int] = 50
 ...
 ...     def __post_init__(self):
-...         if self.value < 0.0:
-...             raise ValueError('Temperature must be greater than 0')
+...         if not self.AGE_MIN <= self.age < self.AGE_MAX:
+...             raise ValueError('Age is out of range')
+...         else:
+...             self.age = age
 >>>
 >>>
->>> t = Kelvin(-1)
+>>> Astronaut('Mark', 'Watney', age=44)
+Astronaut(firstname='Mark', lastname='Watney', age=44)
+>>>
+>>> Astronaut('Mark', 'Watney', age=60)
 Traceback (most recent call last):
-ValueError: Temperature must be greater than 0
+ValueError: Age is out of range
 
->>> from dataclasses import dataclass, field
+
+Date and Time Conversion
+------------------------
+>>> from dataclasses import dataclass
+>>> from datetime import date
 >>>
 >>>
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     publicname: str = field(init=False)
+...     born: date
 ...
 ...     def __post_init__(self):
-...         self.publicname = f'{self.firstname} {self.lastname[0]}.'
+...         self.born = date.fromisoformat(self.born)
+>>>
+>>>
+>>> Astronaut('Mark', 'Watney', '1961-04-12')
+Astronaut(firstname='Mark', lastname='Watney', born=datetime.date(1961, 4, 12))
+
+>>> from dataclasses import dataclass
+>>> from datetime import datetime
+>>> from typing import Optional
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     fist_mission: Optional[datetime]
+...
+...     def __post_init__(self):
+...         self.fist_mission = datetime.fromisoformat(self.fist_mission) if self.fist_mission else None
+>>>
+>>>
+>>> Astronaut('Mark', 'Watney')
+Astronaut(firstname='Mark', lastname='Watney', fist_mission=None))
+>>>
+>>> Astronaut('Mark', 'Watney', '1969-07-21T02:56:15+00:00')
+Astronaut(firstname='Mark', lastname='Watney', fist_mission=datetime.datetime(1969, 7, 21, 2, 56, 15, datetime.timezone.utc))
 
 
 InitVar
@@ -62,25 +134,160 @@ InitVar
 * Init-only fields are added as parameters to the generated ``__init__`` method, and are passed to the optional ``__post_init__`` method
 * They are not otherwise used by Data Classes
 
->>> # doctest: +SKIP
-... from dataclasses import dataclass, InitVar
-...
-...
-... @dataclass
+>>> from dataclasses import dataclass, InitVar, field
+>>>
+>>>
+>>> @dataclass
 ... class Astronaut:
 ...     fullname: InitVar[str] = None
-...     _firstname: str = None
-...     _lastname: str = None
+...     firstname: str = field(init=False, default=None)
+...     lastname: str = field(init=False, default=None)
 ...
 ...     def __post_init__(self, fullname: str):
-...         fullname = fullname.split()
-...         self._firstname = fullname[0]
-...         self._lastname = fullname[1]
+...         self.firstname, self.lastname = fullname.split()
+>>>
+>>>
+>>> astro = Astronaut('Mark Watney')
+>>>
+>>> astro
+Astronaut(firstname='Mark', lastname='Watney')
+>>>
+>>> vars(astro)
+{'firstname': 'Mark', 'lastname': 'Watney'}
+
+
+Use Case 1
+----------
+... class Point:
+...     def __init__(self, x, y):
+...         if x < 0:
+...             raise ValueError('Coordinate cannot be negative')
+...         else:
+...             self.x = x
+...         if y < 0:
+...             raise ValueError('Coordinate cannot be negative')
+...         else:
+...             self.y = y
+
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Point:
+...     x: int = 0
+...     y: int = 0
 ...
+...     def __post_init__(self):
+...         if self.x < 0 or self.y < 0:
+...             raise ValueError('Coordinate cannot be negative')
+
+
+Use Case 2
+----------
+>>> from dataclasses import dataclass, field
+>>> from typing import Final
+>>>
+>>>
+>>> @dataclass
+... class Point:
+...     x: int = 0
+...     y: int = 0
+...     X_MIN: Final[int] = 0
+...     X_MAX: Final[int] = 1024
+...     Y_MIN: Final[int] = 0
+...     Y_MAX: Final[int] = 768
 ...
-... astro = Astronaut('Mark Watney')
+...     def __post_init__(self):
+...         if not self.X_MIN <= self.x < self.X_MAX:
+...             raise ValueError(f'x value ({self.x}) is out of range({self.X_MIN}, {self.X_MAX})')
+...         if not self.Y_MIN <= self.y < self.Y_MAX:
+...             raise ValueError(f'y value ({self.y}) is out of range({self.Y_MIN}, {self.Y_MAX})')
+>>>
+>>>
+>>> Point(-1,10)
+Traceback (most recent call last):
+ValueError: x value (-1) is out of range(0, 1024)
+>>>
+>>> Point(0,2000)
+Traceback (most recent call last):
+ValueError: y value (2000) is out of range(0, 768)
+>>>
+>>> Point(0,0)
+Point(x=0, y=0, X_MIN=0, X_MAX=1024, Y_MIN=0, Y_MAX=768)
+>>>
+>>> Point(0,0, X_MIN=10)
+Traceback (most recent call last):
+ValueError: x value (0) is out of range(10, 1024)
+>>>
+>>> Point(0,0, X_MIN=10, X_MAX=100)
+Traceback (most recent call last):
+ValueError: x value (0) is out of range(10, 100)
+
+>>> from dataclasses import dataclass, field
+>>> from typing import Final
+>>>
+>>>
+>>> @dataclass
+... class Point:
+...     x: int = 0
+...     y: int = 0
+...     X_MIN: Final[int] = field(init=False, default=0)
+...     X_MAX: Final[int] = field(init=False, default=1024)
+...     Y_MIN: Final[int] = field(init=False, default=0)
+...     Y_MAX: Final[int] = field(init=False, default=768)
 ...
-... print(astro._firstname)
-Mark
-... print(astro._lastname)
-Watney
+...     def __post_init__(self):
+...         if not self.X_MIN <= self.x < self.X_MAX:
+...             raise ValueError(f'x value ({self.x}) is out of range({self.X_MIN}, {self.X_MAX})')
+...         if not self.Y_MIN <= self.y < self.Y_MAX:
+...             raise ValueError(f'y value ({self.y}) is out of range({self.Y_MIN}, {self.Y_MAX})')
+>>>
+>>>
+>>> Point(0,0, X_MIN=10, X_MAX=100)
+Traceback (most recent call last):
+TypeError: __init__() got an unexpected keyword argument 'X_MIN'
+>>>
+>>> Point(0,0)
+Point(x=0, y=0, X_MIN=0, X_MAX=1024, Y_MIN=0, Y_MAX=768)
+
+>>> from dataclasses import dataclass, field
+>>> from typing import Final
+>>>
+>>>
+>>> @dataclass
+... class Point:
+...     x: int = 0
+...     y: int = 0
+...     X_MIN: Final[int] = field(init=False, repr=False, default=0)
+...     X_MAX: Final[int] = field(init=False, repr=False, default=1024)
+...     Y_MIN: Final[int] = field(init=False, repr=False, default=0)
+...     Y_MAX: Final[int] = field(init=False, repr=False, default=768)
+...
+...     def __post_init__(self):
+...         if not self.X_MIN <= self.x < self.X_MAX:
+...             raise ValueError(f'x value ({self.x}) is out of range({self.X_MIN}, {self.X_MAX})')
+...         if not self.Y_MIN <= self.y < self.Y_MAX:
+...             raise ValueError(f'y value ({self.y}) is out of range({self.Y_MIN}, {self.Y_MAX})')
+>>>
+>>>
+>>> Point(0,0)
+Point(x=0, y=0)
+>>>
+>>> Point(-1,0)
+Traceback (most recent call last):
+ValueError: x value (-1) is out of range(0, 1024)
+>>>
+>>> Point(0,-1)
+Traceback (most recent call last):
+ValueError: y value (-1) is out of range(0, 768)
+
+
+Assignments
+-----------
+.. literalinclude:: assignments/dataclass_postinit_a.py
+    :caption: :download:`Solution <assignments/dataclass_postinit_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/dataclass_postinit_b.py
+    :caption: :download:`Solution <assignments/dataclass_postinit_b.py>`
+    :end-before: # Solution

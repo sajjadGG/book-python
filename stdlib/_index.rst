@@ -157,6 +157,7 @@ Dataclass
     dataclass/define.rst
     dataclass/postinit.rst
     dataclass/field.rst
+    dataclass/mutable-args.rst
     dataclass/flags.rst
     dataclass/helpers.rst
     dataclass/inheritance.rst

@@ -2,8 +2,8 @@ Dataclass Field
 ===============
 
 
-Field Object
-------------
+Rationale
+---------
 * ``name`` - The name of the field.
 * ``type`` - The type of the field.
 * ``default`` - Default value
@@ -15,20 +15,50 @@ Field Object
 * ``metadata`` - This can be a mapping or ``None``. ``None`` is treated as an empty ``dict``. It is not used at all by Data Classes, and is provided as a third-party extension mechanism.
 
 
+
+Default
+-------
 >>> from dataclasses import dataclass, field
->>> from typing import Literal
 >>>
 >>>
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     agency: Literal['NASA', 'ESA', 'Roscosmos']
-...     weight: float = field(metadata=)
-...     height: float
+...     mission: str = 'Ares3'
+
+>>> from dataclasses import dataclass, field
 >>>
 >>>
->>> astro = Astronaut('Mark', 'Watney', agency='NASA', weight=, height=)
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     mission: str = field(default='Ares3')
+
+
+Default Factory
+---------------
+>>> from dataclasses import dataclass, field
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     missions: list[str] = ['Ares3', 'Apollo18']
+
+>>> from dataclasses import dataclass, field
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     missions: list[str] = field(default_factory=lambda: ['Ares3', 'Apollo18'])
+
+
+
 
 
 
@@ -62,16 +92,6 @@ Field Object
 >>>
 >>>
 >>> mark = Astronaut('Mark', 'Watney', age=44)
-
->>> from dataclasses import dataclass, field
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     publicname: int = field(repr=False)
-...     agency: int = field(repr=False, default='NASA')
 
 >>> from dataclasses import dataclass, field
 >>>
@@ -187,68 +207,6 @@ Metadata
 ...             raise ValueError
 ...         if attrvalue > max:
 ...             raise ValueError
-
-
-Mutable attributes
-------------------
-* problem with ``dict``, ``list``, ``set``
-* You should not set mutable objects as a default function argument
-* ``field()`` creates new empty ``list`` for each object
-* It does not reuse pointer
-* Discussion: https://github.com/ericvsmith/dataclasses/issues/3
-
-.. warning:: Note, You should not set mutable objects as a default function argument. More information in `Argument Mutability`
-
-    >>> class Astronaut:
-    ...     def __init__(self, name, missions=[]):
-    ...         self.name = name
-    ...         self.missions = missions
-    >>>
-    >>>
-    >>> watney = Astronaut('Mark Watney')
-    >>> twardowski = Astronaut('Jan Twardowski')
-    >>>
-    >>> watney.missions.append('Ares 1')
-    >>> watney.missions.append('Ares 2')
-    >>> watney.missions.append('Ares 3')
-    >>> watney.missions.append('Ares 4')
-    >>> watney.missions.append('Ares 5')
-    >>>
-    >>> print('Watney:', watney.missions)
-    Watney: ['Ares 1', 'Ares 2', 'Ares 3', 'Ares 4', 'Ares 5']
-    >>>
-    >>> print('Twardowski:', twardowski.missions)
-    Twardowski: ['Ares 1', 'Ares 2', 'Ares 3', 'Ares 4', 'Ares 5']
-
->>> from dataclasses import dataclass, field
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     missions: dict[int,str] = field(default_factory=dict)
->>>
->>>
->>> astro = Astronaut('Mark', 'Watney')
-
->>> from dataclasses import dataclass, field
->>>
->>>
->>> @dataclass
-... class Mission:
-...     year: int
-...     name: str
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     missions: list[Mission] = field(default_factory=list)
->>>
->>>
->>> astro = Astronaut('Mark', 'Watney')
 
 
 Assignments

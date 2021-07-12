@@ -29,7 +29,6 @@ Tests:
     >>> astronaut = Astronaut.__dataclass_fields__
     >>> address = Address.__dataclass_fields__
 
-
     >>> assert 'firstname' in astronaut, \
     'Class Astronaut is missing field: firstname'
 
@@ -63,14 +62,14 @@ Tests:
     >>> assert astronaut['addresses'].type.__name__ == 'list', \
     'Astronaut.addresses has invalid type annotation, expected: list[Address]'
 
-    >>> assert address['street'].type is str, \
-    'Address.street has invalid type annotation, expected: str'
+    >>> assert address['street'].type is Optional[str], \
+    'Address.street has invalid type annotation, expected: Optional[str]'
 
     >>> assert address['city'].type is str, \
     'Address.city has invalid type annotation, expected: str'
 
-    >>> assert address['post_code'].type is str, \
-    'Address.post_code has invalid type annotation, expected: str'
+    >>> assert address['post_code'].type is Optional[int], \
+    'Address.post_code has invalid type annotation, expected: Optional[str]'
 
     >>> assert address['region'].type is str, \
     'Address.region has invalid type annotation, expected: str'
@@ -78,15 +77,14 @@ Tests:
     >>> assert address['country'].type is str, \
     'Address.country has invalid type annotation, expected: str'
 """
-
 from dataclasses import dataclass, field
+from typing import Optional
 
 
 DATA = [
     {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
         {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków",
-         "post_code": "31-008", "region": "Małopolskie",
-         "country": "Poland"}]},
+         "post_code": 31008, "region": "Małopolskie", "country": "Poland"}]},
 
     {"firstname": "José", "lastname": "Jiménez", "addresses": [
         {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058,
@@ -101,7 +99,7 @@ DATA = [
          "region": "California", "country": "USA"}]},
 
     {"firstname": "Иван", "lastname": "Иванович", "addresses": [
-        {"street": "", "city": "Космодро́м Байкону́р", "post_code": "",
+        {"street": "", "city": "Космодро́м Байкону́р", "post_code": None,
          "region": "Кызылординская область", "country": "Қазақстан"},
         {"street": "", "city": "Звёздный городо́к", "post_code": 141160,
          "region": "Московская область", "country": "Россия"}]},
@@ -125,9 +123,9 @@ class Astronaut:
 # Solution
 @dataclass
 class Address:
-    street: str
+    street: Optional[str]
     city: str
-    post_code: str
+    post_code: Optional[int]
     region: str
     country: str
 
