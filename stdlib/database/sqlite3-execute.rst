@@ -13,7 +13,7 @@ Create Table
 ...     CREATE TABLE IF NOT EXISTS astronauts (
 ...         id INTEGER PRIMARY KEY AUTOINCREMENT,
 ...         firstname TEXT,
-...         lastname TEXT)"""
+...         lastname TEXT);"""
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
@@ -32,7 +32,7 @@ Create Index
 ...     CREATE TABLE IF NOT EXISTS astronauts (
 ...         id INTEGER PRIMARY KEY AUTOINCREMENT,
 ...         firstname TEXT,
-...         lastname TEXT)"""
+...         lastname TEXT);"""
 >>>
 >>> SQL_CREATE_INDEX = """
 ...     CREATE INDEX

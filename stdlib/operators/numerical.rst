@@ -106,8 +106,8 @@ TypeError: not all arguments converted during string formatting
 >>> lastname = 'Watney'
 >>>
 >>>
->>> 'Hello %s, how are you?' % firstname
-'Hello Mark, how are you?'
+>>> 'Hello %s' % firstname
+'Hello Mark'
 >>>
 >>> 'Hello %s %s' % (firstname, lastname)
 'Hello Mark Watney'
@@ -126,7 +126,8 @@ TypeError: not all arguments converted during string formatting
 ...         if type(other) is dict:
 ...             ...
 
-.. note:: Using ``%s``, ``%d``, ``%f`` is currently deprecated in favor of ``f'...'`` string formatting. More information in `Builtin Printing`
+Note, that using ``%s``, ``%d``, ``%f`` is currently deprecated in favor
+of ``f'...'`` string formatting. More information in `Builtin Printing`
 
 
 Assignments

@@ -13,15 +13,15 @@ Fetch Sequences
 ...     CREATE TABLE IF NOT EXISTS astronauts (
 ...         id INTEGER PRIMARY KEY AUTOINCREMENT,
 ...         firstname TEXT,
-...         lastname TEXT)"""
+...         lastname TEXT);"""
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, :firstname, :lastname)"""
+...     VALUES (NULL, :firstname, :lastname);"""
 >>>
 >>> SQL_SELECT = """
 ...     SELECT *
-...     FROM astronauts"""
+...     FROM astronauts;"""
 >>>
 >>> data = [{'firstname': 'Mark', 'lastname': 'Watney'},
 ...         {'firstname': 'Melissa', 'lastname': 'Lewis'},
@@ -55,15 +55,15 @@ Fetch Mappings
 ...     CREATE TABLE IF NOT EXISTS astronauts (
 ...         id INTEGER PRIMARY KEY AUTOINCREMENT,
 ...         firstname TEXT,
-...         lastname TEXT)"""
+...         lastname TEXT);"""
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, :firstname, :lastname)"""
+...     VALUES (NULL, :firstname, :lastname);"""
 >>>
 >>> SQL_SELECT = """
 ...     SELECT *
-...     FROM astronauts"""
+...     FROM astronauts;"""
 >>>
 >>> data = [{'firstname': 'Mark', 'lastname': 'Watney'},
 ...         {'firstname': 'Melissa', 'lastname': 'Lewis'},

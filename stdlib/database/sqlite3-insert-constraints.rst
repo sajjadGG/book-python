@@ -1,5 +1,5 @@
-SQLite3 Insert Sequence
-=======================
+SQLite3 Insert Constraints
+==========================
 
 
 Unique
@@ -14,15 +14,15 @@ Unique
 ...         id INTEGER PRIMARY KEY AUTOINCREMENT,
 ...         login INTEGER UNIQUE,
 ...         firstname TEXT,
-...         lastname TEXT)"""
+...         lastname TEXT);"""
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, :login, :firstname, :lastname)"""
+...     VALUES (NULL, :login, :firstname, :lastname);"""
 >>>
 >>> SQL_SELECT = """
 ...     SELECT *
-...     FROM astronauts"""
+...     FROM astronauts;"""
 >>>
 >>> data = [
 ...     {'login': 'mwatney', 'firstname': 'Mark', 'lastname': 'Watney'},
@@ -56,11 +56,11 @@ Programming Error
 ...     CREATE TABLE IF NOT EXISTS astronauts (
 ...         id INTEGER PRIMARY KEY AUTOINCREMENT,
 ...         firstname TEXT,
-...         lastname TEXT)"""
+...         lastname TEXT);"""
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, ?, ?)"""
+...     VALUES (NULL, ?, ?);"""
 >>>
 >>>
 >>> data = [{'firstname': 'Mark', 'lastname': 'Watney'},
@@ -90,7 +90,7 @@ Operational Error
 ...     CREATE TABLE IF NOT EXISTS astronauts (
 ...         id INTEGER PRIMARY KEY AUTOINCREMENT,
 ...         firstname TEXT,
-...         lastname TEXT)"""
+...         lastname TEXT);"""
 >>>
 >>> SQL_CREATE_INDEX = """
 ...     CREATE INDEX

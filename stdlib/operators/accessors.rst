@@ -68,7 +68,7 @@ KeyError: x
 Traceback (most recent call last):
 TypeError: 'dict' object is not callable
 
-Contains in ``numpy``:
+Getitem in ``numpy``:
 
 >>> import numpy as np
 >>>

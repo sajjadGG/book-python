@@ -13,11 +13,11 @@ Insert One
 ...     CREATE TABLE IF NOT EXISTS astronauts (
 ...         id INTEGER PRIMARY KEY AUTOINCREMENT,
 ...         firstname TEXT,
-...         lastname TEXT)"""
+...         lastname TEXT);"""
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, ?, ?)"""
+...     VALUES (NULL, ?, ?);"""
 >>>
 >>> data = ('Mark', 'Watney')
 >>>
@@ -38,11 +38,11 @@ Insert Many
 ...     CREATE TABLE IF NOT EXISTS astronauts (
 ...         id INTEGER PRIMARY KEY AUTOINCREMENT,
 ...         firstname TEXT,
-...         lastname TEXT)"""
+...         lastname TEXT);"""
 >>>
 >>> SQL_INSERT = """
 ...     INSERT INTO astronauts
-...     VALUES (NULL, ?, ?)"""
+...     VALUES (NULL, ?, ?);"""
 >>>
 >>> data = [('Mark', 'Watney'),
 ...         ('Melissa', 'Lewis'),

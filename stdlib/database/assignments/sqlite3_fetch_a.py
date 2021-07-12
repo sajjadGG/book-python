@@ -129,7 +129,7 @@ SQL_CREATE_TABLE = """
         message TEXT);"""
 
 SQL_INSERT = 'INSERT INTO logs VALUES (NULL, ?, ?, ?);'
-SQL_SELECT = 'SELECT * FROM logs ORDER BY datetime DESC'
+SQL_SELECT = 'SELECT * FROM logs ORDER BY datetime DESC;'
 
 result: list = []
 

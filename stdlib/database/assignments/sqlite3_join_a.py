@@ -125,8 +125,7 @@ SQL_SELECT = """
     SELECT *
     FROM astronaut
     JOIN address
-    ON astronaut.id=address.astronaut_id;
-"""
+    ON astronaut.id=address.astronaut_id;"""
 
 result: list = []
 

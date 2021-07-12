@@ -140,7 +140,7 @@ the statement. [#sqljoincartesian]_
            astronauts.lastname,
            missions.name,
            missions.year
-    FROM astronauts, missions
+    FROM astronauts, missions;
 
 
 References

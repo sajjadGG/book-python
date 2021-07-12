@@ -43,8 +43,7 @@ Multiple
 
     SELECT *
     FROM astronauts
-    ORDER BY lastname ASC,
-             firstname DESC;
+    ORDER BY lastname ASC, firstname DESC;
 
 
 Empty

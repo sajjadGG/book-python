@@ -209,6 +209,7 @@ Use Case - Var Range
 ...         if not self.Y_MIN <= self.y < self.Y_MAX:
 ...             raise ValueError(f'y value ({self.y}) is not between {self.Y_MIN} and {self.Y_MAX}')
 >>>
+>>>
 >>> Point(0, 0)
 Point(x=0, y=0, X_MIN=0, X_MAX=1024, Y_MIN=0, Y_MAX=768)
 >>>

@@ -90,7 +90,7 @@ SQL_INSERT = """
 SQL_SELECT = """
     SELECT *
     FROM iris
-    ORDER BY species DESC, id ASC"""
+    ORDER BY species DESC, id ASC;"""
 
 with open(FILE, mode='w') as file:
     file.write(DATA)

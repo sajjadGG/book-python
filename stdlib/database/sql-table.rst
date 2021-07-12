@@ -38,8 +38,7 @@ Create Table
         mycolumn14 DATETIME DEFAULT (DATETIME('NOW', 'LOCALTIME')),
         mycolumn15 DATETIME DEFAULT (DATETIME('NOW', 'UTC')),
         mycolumn16 DATETIME DEFAULT (STRFTIME('%Y-%m-%d %H:%M:%f', 'NOW')),
-        mycolumn17 TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
+        mycolumn17 TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 
 .. figure:: img/sql-create.png
 
@@ -86,8 +85,7 @@ Example
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         firstname TEXT,
         lastname TEXT,
-        agency TEXT
-    );
+        agency TEXT);
 
 .. code-block:: sql
 
@@ -97,5 +95,4 @@ Example
         device_id INTEGER,
         parameter TEXT,
         value REAL,
-        unit TEXT
-    );
+        unit TEXT);

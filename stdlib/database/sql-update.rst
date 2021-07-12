@@ -19,7 +19,7 @@ Update Many Columns
         firstname = 'Mark',
         lastname = 'Watney',
         agency = 'NASA'
-    WHERE id = 1
+    WHERE id = 1;
 
 
 Update Many Rows

@@ -252,6 +252,16 @@ Use Case - Setattr
 ...             super().__setattr__(attrname, attrvalue)
 >>>
 >>>
+>>>
+>>> Astronaut('Mark', 'Watney')
+Astronaut(firstname='Mark', lastname='Watney', age=None, weight=None, height=None)
+>>>
+>>> Astronaut('Mark', 'Watney', age=44)
+Astronaut(firstname='Mark', lastname='Watney', age=44, height=None, weight=None)
+>>>
+>>> Astronaut('Mark', 'Watney', age=44, height=175, weight=75)
+Astronaut(firstname='Mark', lastname='Watney', age=44, height=175, weight=75)
+>>>
 >>> Astronaut('Mark', 'Watney', age=99)
 Traceback (most recent call last):
 AssertionError: age value 99 is not between 30 and 50
@@ -263,15 +273,6 @@ AssertionError: weight value 200 is not between 50 and 90
 >>> Astronaut('Mark', 'Watney', age=44, height=120)
 Traceback (most recent call last):
 AssertionError: height value 120 is not between 156 and 210
->>>
->>> Astronaut('Mark', 'Watney', age=44, height=175, weight=75)
-Astronaut(firstname='Mark', lastname='Watney', age=44, height=175, weight=75)
->>>
->>> Astronaut('Mark', 'Watney')
-Astronaut(firstname='Mark', lastname='Watney', age=None, weight=None, height=None)
->>>
->>> Astronaut('Mark', 'Watney', age=44)
-Astronaut(firstname='Mark', lastname='Watney', age=44, height=None, weight=None)
 
 
 Assignments

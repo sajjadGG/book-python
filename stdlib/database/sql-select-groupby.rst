@@ -46,4 +46,4 @@ Use Case
     GROUP BY level
     HAVING count > 5
     ORDER BY datetime DESC
-    LIMIT 5
+    LIMIT 5;

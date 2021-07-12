@@ -14,8 +14,7 @@ Subqueries
     SELECT *
     FROM astronauts
     WHERE agency IN (
-        SELECT name FROM agencies
-    );
+        SELECT name FROM agencies);
 
 .. code-block:: sql
 

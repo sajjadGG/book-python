@@ -69,7 +69,7 @@ List of Strings
 >>>
 >>>
 >>> Astronaut('Mark', 'Watney')
->>> print(astro)  # doctest: +NORMALIZE_WHITESPACE
+>>> print(astro)
 Astronaut(firstname='Mark', lastname='Watney', missions=[])
 
 
@@ -92,7 +92,7 @@ List of Objects
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
->>> print(astro)  # doctest: +NORMALIZE_WHITESPACE
+>>> print(astro)
 Astronaut(firstname='Mark', lastname='Watney', missions=[])
 
 
@@ -109,7 +109,7 @@ Dict
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
->>> print(astro)  # doctest: +NORMALIZE_WHITESPACE
+>>> print(astro)
 Astronaut(firstname='Mark', lastname='Watney', missions={})
 
 
@@ -126,9 +126,8 @@ Default Values
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
->>> print(astro)  # doctest: +NORMALIZE_WHITESPACE
-Astronaut(firstname='Mark', lastname='Watney',
-          groups=['astronaut', 'managers'])
+>>> print(astro)
+Astronaut(firstname='Mark', lastname='Watney', groups=['astronaut', 'managers'])
 
 >>> from dataclasses import dataclass, field
 >>>
@@ -141,6 +140,5 @@ Astronaut(firstname='Mark', lastname='Watney',
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
->>> print(astro)  # doctest: +NORMALIZE_WHITESPACE
-Astronaut(firstname='Mark', lastname='Watney',
-          groups=['astronaut', 'managers'])
+>>> print(astro)
+Astronaut(firstname='Mark', lastname='Watney', groups=['astronaut', 'managers'])

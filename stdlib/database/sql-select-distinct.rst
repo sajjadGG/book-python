@@ -20,7 +20,7 @@ Alias
 .. code-block:: sql
 
     SELECT DISTINCT agency AS ag
-    FROM astronauts
+    FROM astronauts;
 
 
 With Query
