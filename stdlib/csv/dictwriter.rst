@@ -35,10 +35,10 @@ DictWriter
 ...     result = csv.DictWriter(file, fieldnames=header)
 ...     result.writeheader()
 ...     result.writerows(DATA)
-68
+59
 >>>
 >>> with open(FILE) as file:
-...     file.read()
+...     print(file.read())
 Sepal Length,Sepal Width,Petal Length,Petal Width,Species
 5.4,3.9,1.3,0.4,setosa
 5.9,3.0,5.1,1.8,virginica
@@ -78,7 +78,7 @@ Write data to CSV file using ``csv.DictWriter()``:
 68
 >>>
 >>> with open(FILE) as file:
-...
+...     print(file.read())
 "Sepal Length","Sepal Width","Petal Length","Petal Width","Species"
 "5.4","3.9","1.3","0.4","setosa"
 "5.9","3.0","5.1","1.8","virginica"
