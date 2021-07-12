@@ -1,5 +1,5 @@
-Iterator
-========
+Protocol Iterator
+=================
 
 
 Rationale

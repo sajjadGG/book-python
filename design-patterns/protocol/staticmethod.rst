@@ -1,5 +1,5 @@
-Staticmethod
-============
+Protocol Staticmethod
+=====================
 
 
 Rationale

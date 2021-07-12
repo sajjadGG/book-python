@@ -1,5 +1,5 @@
-Reflection
-==========
+Protocol Reflection
+===================
 
 
 Rationale

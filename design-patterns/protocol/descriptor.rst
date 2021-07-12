@@ -1,5 +1,5 @@
-Descriptor
-==========
+Protocol Descriptor
+===================
 
 
 Rationale

@@ -1,5 +1,5 @@
-Property
-========
+Protocol Property
+=================
 
 
 Rationale

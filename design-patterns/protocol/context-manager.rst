@@ -1,5 +1,5 @@
-Context Manager
-===============
+Protocol Context Manager
+========================
 
 
 Rationale

@@ -1,5 +1,5 @@
-Classmethod
-===========
+Protocol Classmethod
+====================
 
 
 Rationale

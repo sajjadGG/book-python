@@ -51,15 +51,25 @@ Loop Patterns
 >>> while i < len(data):
 ...     x = data[i]
 ...     result.append(x.upper())
+...     i += 1
+>>>
+>>> print(result)
+['A', 'B', 'C']
 
 >>> data = ['a', 'b', 'c']
 >>> result = []
 >>>
 >>> for x in data:
 ...     result.append(x.upper())
+>>>
+>>> print(result)
+['A', 'B', 'C']
 
 >>> data = ['a', 'b', 'c']
 >>> result = [x.upper() for x in data]
+>>>
+>>> print(result)
+['A', 'B', 'C']
 
 
 Range
