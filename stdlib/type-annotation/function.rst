@@ -1,4 +1,4 @@
-Function Type Annotation
+Type Annotation Function
 ========================
 
 
@@ -16,198 +16,179 @@ Return
 
 Parameters
 ----------
-.. code-block:: python
-
-    def add_numbers(a: int, b: int) -> int:
-        return a + b
-
-    add_numbers(1, 2)
-    # 3
+>>> def add_numbers(a: int, b: int) -> int:
+...     return a + b
 
 
 Union
 -----
-.. code-block:: python
+>>> from typing import Union
+>>>
+>>>
+>>> def add_numbers(a: Union[int,float], b: Union[int,float]) -> Union[int,float]:
+...     return a + b
 
-    from typing import Union
-
-
-    def add_numbers(a: Union[int,float], b: Union[int,float]) -> Union[int,float]:
-        return a + b
-
-
-    add_numbers(1, 2)       # 'Ok'
-    add_numbers(1.5, 2.5)   # 'Ok'
-
-.. code-block:: python
-
-    from typing import Union
-
-    Number = Union[int, float]
-
-    def add_numbers(a: Number, b: Number) -> Number:
-        return a + b
-
-    add_numbers(1, 2)       # 'Ok'
-    add_numbers(1.5, 2.5)   # 'Ok'
+>>> from typing import Union
+>>>
+>>> Number = Union[int, float]
+>>>
+>>> def add_numbers(a: Number, b: Number) -> Number:
+...     return a + b
 
 Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
-.. code-block:: python
-    :force:
-
-    def add_numbers(a: int|float, b: int|float) -> int|float:
-        return a + b
-
-
-    add_numbers(1, 2)       # 'Ok'
-    add_numbers(1.5, 2.5)   # 'Ok'
+>>> # doctest: +SKIP
+... def add_numbers(a: int|float, b: int|float) -> int|float:
+...     return a + b
 
 
 Optional
 --------
-.. code-block:: python
+>>> from typing import Union
+>>>
+>>>
+>>> def find(text: str, what: str) -> Union[int, None]:
+...     position = text.find(what)
+...     if position == -1:
+...         return None
+...     else:
+...         return position
+>>>
+>>>
+>>> find('Python', 'x')
+>>> find('Python', 'o')
+4
 
-    from typing import Union
-
-
-    def find(text: str, what: str) -> Union[int,None]:
-        position = text.find(what)
-
-        if position == -1:
-            return None
-        else:
-            return position
-
-
-    find('Python', 'o')      # 4
-    find('Python', 'x')      # None
-
-.. code-block:: python
-
-    from typing import Optional
-
-
-    def find(text: str, what: str) -> Optional[int]:
-        position = text.find(what)
-
-        if position == -1:
-            return None
-        else:
-            return position
-
-
-    find('Python', 'o')      # 4
-    find('Python', 'x')      # None
+>>> from typing import Optional
+>>>
+>>>
+>>> def find(text: str, what: str) -> Optional[int]:
+...     position = text.find(what)
+...     if position == -1:
+...         return None
+...     else:
+...         return position
+>>>
+>>>
+>>> find('Python', 'x')
+>>> find('Python', 'o')
+4
 
 Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
-.. code-block:: python
-    :force:
-
-    def find(text: str, what: str) -> int|None:
-        position = text.find(what)
-
-        if position == -1:
-            return None
-        else:
-            return position
-
-
-    find('Python', 'o')      # 4
-    find('Python', 'x')      # None
+>>> # doctest: +SKIP
+... def find(text: str, what: str) -> int|None:
+...     position = text.find(what)
+...     if position == -1:
+...         return None
+...     else:
+...         return position
+>>>
+>>>
+>>> find('Python', 'x')
+>>> find('Python', 'o')
+4
 
 Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
 
-.. code-block:: python
-    :force:
-
-    def find(text: str, what: str) -> int?:
-        position = text.find(what)
-
-        if position == -1:
-            return None
-        else:
-            return position
-
-
-    find('Python', 'o')      # 4
-    find('Python', 'x')      # None
+>>> # doctest: +SKIP
+... def find(text: str, what: str) -> int?:
+...     position = text.find(what)
+...     if position == -1:
+...         return None
+...     else:
+...         return position
+>>>
+>>>
+>>> find('Python', 'x')
+>>> find('Python', 'o')
+4
 
 
-NoReturn
---------
-.. code-block:: python
+Exception
+---------
+>>> def stop() -> Exception:
+...     raise RuntimeError
 
-    from typing import NoReturn
-
-
-    def stop() -> NoReturn:
-        raise RuntimeError
-
-.. code-block:: python
-
-    from typing import Union, NoReturn
-
-
-    def valid_email(email: str) -> Union[NoReturn, str]:
-        if '@' in email:
-            return email
-        else:
-            raise ValueError('Invalid Email')
-
-
-    valid_email('mark.watney@nasa.gov')
-    # 'mark.watney@nasa.gov'
-
-    valid_email('mark.watney_at_nasa.gov')
-    # Traceback (most recent call last):
-    # ValueError: Invalid Email
+>>> from typing import Union
+>>>
+>>>
+>>> def valid_email(email: str) -> Union[str,Exception]:
+...     if '@' in email:
+...         return email
+...     else:
+...         raise ValueError('Invalid Email')
+>>>
+>>>
+>>> valid_email('mark.watney@nasa.gov')
+'mark.watney@nasa.gov'
+>>>
+>>> valid_email('mark.watney_at_nasa.gov')
+Traceback (most recent call last):
+ValueError: Invalid Email
 
 
 Literal
 -------
 * Since Python 3.8: :pep:`586` -- Literal Types
 
-.. code-block:: python
+>>> from typing import Literal
+>>>
+>>>
+>>> def open(filename: str, mode: Literal['r','w','a']) -> None:
+...     pass
+>>>
+>>> open('data.csv', mode='w')  # mypy: OK
+>>> open('data.csv', mode='r')  # mypy: OK
+>>> open('data.csv', mode='a')  # mypy: OK
+>>> open('data.csv', mode='x')  # mypy: ERROR
 
-    from typing import Literal
+
+Callable
+--------
+>>> from typing import Callable
+>>>
+>>>
+>>> def feeder(get_next_item: Callable[[], str]) -> None:
+...     pass
+
+>>> from typing import Callable
+>>>
+>>>
+>>> def async_query(on_success: Callable[[int], None],
+...                 on_error: Callable[[int, Exception], None]) -> None:
+...     pass
 
 
-    def open(filename: str, mode: Literal['r','w','a']) -> None:
-        pass
-
-    open('myfile.txt', mode='w')  # Ok
-    open('myfile.txt', mode='r')  # Ok
-    open('myfile.txt', mode='a')  # Ok
-    open('myfile.txt', mode='x')  # Error
+Iterator
+--------
+>>> from typing import Iterator
+>>>
+>>>
+>>> def fib(n: int) -> Iterator[int]:
+...     a, b = 0, 1
+...     while a < n:
+...         yield a
+...         a, b = b, a + b
 
 
 Annotations
 -----------
-.. code-block:: python
-
-    def add(a: int, b: int) -> int:
-        return a + b
-
-
-    add.__annotations__
-    # {'a': <class 'int'>,
-    #  'b': <class 'int'>,
-    #  'return': <class 'int'>}
+>>> def add(a: int, b: int) -> int:
+...     return a + b
+>>>
+>>>
+>>> add.__annotations__
+{'a': <class 'int'>, 'b': <class 'int'>, 'return': <class 'int'>}
 
 Since Python 3.11: :pep:`563` -- Postponed Evaluation of Annotations
 
-.. code-block:: python
-
-    def add(a: int, b: int) -> int:
-        return a + b
-
-
-    add.__annotations__
-    # {'a': 'int',
-    #  'b': 'int',
-    #  'return': 'int'}
+>>> def add(a: int, b: int) -> int:
+...     return a + b
+>>>
+>>> # doctest: +SKIP
+... add.__annotations__
+{'a': 'int', 'b': 'int', 'return': 'int'}
 
 
 Errors
@@ -215,29 +196,31 @@ Errors
 * Python will execute without even warning
 * Your IDE and ``mypy`` et. al. will yield errors
 
-.. code-block:: python
-
-    def add_numbers(a: int, b: int) -> int:
-        return a + b
-
-
-    add_numbers('Mark', 'Watney')
-    # 'MarkWatney'
+>>> def add_numbers(a: int, b: int) -> int:
+...     return a + b
+>>>
+>>>
+>>> add_numbers('Mark', 'Watney')
+'MarkWatney'
 
 
 Good Engineering Practices
 --------------------------
-.. code-block:: python
-
-    from typing import Union
-
-    def add_numbers(a: Union[int,float],
-                    b: Union[int,float]
-                    ) -> Union[int,float]:
-        return a + b
-
-    add_numbers(1, 2)       # 'Ok'
-    add_numbers(1.5, 2.5)   # 'Ok'
+>>> from typing import Union
+>>>
+>>>
+>>> def add_numbers(a: Union[int,float],
+...                 b: Union[int,float]
+...                 ) -> Union[int,float]:
+...     return a + b
+>>>
+>>>
+>>> add_numbers(1, 2)       # mypy: OK
+3
+>>> add_numbers(1, 2.5)     # mypy: OK
+3.5
+>>> add_numbers(1.5, 2.5)   # mypy: OK
+4.0
 
 
 Further Reading

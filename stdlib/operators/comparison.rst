@@ -40,6 +40,7 @@ False
 False
 >>> a == b
 False
+>>>
 >>> hex(id(a))  # doctest: +SKIP
 '0x11b9706a0'
 >>> hex(id(b))  # doctest: +SKIP
@@ -68,6 +69,7 @@ False
 False
 >>> print(a == b)
 True
+>>>
 >>> hex(id(a))  # doctest: +SKIP
 '0x11b970c70'
 >>> hex(id(b))  # doctest: +SKIP

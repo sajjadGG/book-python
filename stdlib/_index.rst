@@ -20,7 +20,7 @@ Type Annotation
     type-annotation/mapping.rst
     type-annotation/function.rst
     type-annotation/oop.rst
-    type-annotation/others.rst
+    type-annotation/static-analysis.rst
 
 
 Datetime and Timezones

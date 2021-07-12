@@ -43,7 +43,6 @@ Type String
     type-string/input.rst
     type-string/methods.rst
     type-string/clean.rst
-    type-annotation.rst
 
 
 Sequences
@@ -60,7 +59,6 @@ Sequences
     sequence/getitem.rst
     sequence/slice.rst
     sequence/unpack.rst
-    sequence/type-annotation.rst
 
 
 Mappings
@@ -72,7 +70,6 @@ Mappings
     mapping/dict.rst
     mapping/generate.rst
     mapping/nested.rst
-    mapping/type-annotation.rst
 
 
 Conditional
@@ -155,7 +152,6 @@ Functions
     function/generators.rst
     function/lambda.rst
     function/doctest.rst
-    function/type-annotation.rst
 
 
 Object Oriented Programming
@@ -173,7 +169,6 @@ Object Oriented Programming
     oop/overload.rst
     oop/stringify.rst
     oop/architecture.rst
-    oop/type-annotation.rst
 
 
 Recap

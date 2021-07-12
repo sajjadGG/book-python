@@ -8,8 +8,9 @@ Type Annotation
 
 .. epigraph::
 
-    It should be emphasized that Python will remain a dynamically typed language,
-    and the authors have no desire to ever make type hints mandatory, even by convention.
+    It should be emphasized that Python will remain a dynamically typed
+    language, and the authors have no desire to ever make type hints
+    mandatory, even by convention.
     -- Python Software Foundation
 
 
@@ -122,6 +123,39 @@ Since Python 3.10 :pep:`613` -- TypeAlias Annotation
 
 >>> StrCache: TypeAlias = 'Cache[str]'  # a type alias      # doctest: +SKIP
 >>> LOG_PREFIX = 'LOG[DEBUG]'  # a module constant          # doctest: +SKIP
+
+Since Python 3.10:
+
+    >>> # doctest: +SKIP
+    ... from typing import TypeAlias
+    ...
+    ...
+    ... Timestamp: TypeAlias = float
+
+Before Python 3.10:
+
+    >>> Timestamp = float
+
+
+Type Vars
+---------
+>>> from typing import TypeVar, Iterable, Tuple
+>>>
+>>>
+>>> T = TypeVar('T', int, float, complex)
+>>> Vector = Iterable[tuple[T, T]]
+>>>
+>>> def product(data: Vector[T]) -> T:
+...     return sum(x*y for x,y in data)
+
+>>> from typing import TypeVar, Iterable, Tuple
+>>>
+>>>
+>>> T = TypeVar('T', int, float, complex)
+>>> Vector = Iterable[tuple[T, T]]
+>>>
+>>> def dilate(data: Vector[T], scale: T) -> Vector[T]:
+...     return ((x*scale, y*scale) for x,y in data)
 
 
 Final

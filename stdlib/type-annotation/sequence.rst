@@ -1,5 +1,5 @@
-Annotation Sequence
-===================
+Type Annotation Sequence
+========================
 
 
 Rationale
@@ -28,10 +28,14 @@ Rationale
 
 Tuple
 -----
+Generic type annotation:
+
 >>> data: tuple = ()
 >>> data: tuple = tuple()
 >>> data: tuple = 'a', 2, 3.3
 >>> data: tuple = ('a', 2, 3.3)
+
+Strict type annotation:
 
 >>> data: tuple[int, int, int] = (1, 2, 3)
 >>> data: tuple[str, str, str] = ('setosa', 'virginica', 'versicolor')
@@ -42,9 +46,13 @@ Tuple
 
 List
 ----
+Generic type annotation:
+
 >>> data: list = list()
 >>> data: list = []
 >>> data: list = ['a', 1, 2.2]
+
+Strict type annotation:
 
 >>> data: list[int] = [1, 2, 3, 4]
 >>> data: list[float] = [5.8, 2.7, 5.1, 1.9]
@@ -53,8 +61,12 @@ List
 
 Set
 ---
+Generic type annotation:
+
 >>> data: set = set()
 >>> data: set = {'a', 1, 2.2}
+
+Strict type annotation:
 
 >>> data: set[int] = {1, 2, 3}
 >>> data: set[float] = {0.0, 1.1, 2.2}
@@ -63,29 +75,30 @@ Set
 
 Frozenset
 ---------
->>> data: frozenset = frozenset()
->>> data: frozenset = frozenset({'a', 1, 2.2})
+Generic type annotation:
 
->>> data: frozenset[int] = frozenset({1, 2, 3})
->>> data: frozenset[float] = frozenset({0.0, 1.1, 2.2})
->>> data: frozenset[str] = frozenset({'a', 'b', 'c'})
+>>> data: frozenset = set()
+>>> data: frozenset = {'a', 1, 2.2}
+
+Strict type annotation:
+
+>>> data: frozenset[int] = {1, 2, 3}
+>>> data: frozenset[float] = {0.0, 1.1, 2.2}
+>>> data: frozenset[str] = {'a', 'b', 'c'}
 
 
 List of Tuples
 --------------
+Generic type annotation:
+
 >>> data: list[tuple] = [
 ...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
 ...     (7.6, 3.0, 6.6, 2.1, 'virginica')]
 
->>> data: list[tuple[float, float, float, float, str]] = [
-...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
-...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-...     (7.6, 3.0, 6.6, 2.1, 'virginica')]
+Strict type annotation:
 
->>> row = tuple[float, float, float, float, str]
->>>
->>> data: list[row] = [
+>>> data: list[tuple[float, float, float, float, str]] = [
 ...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
 ...     (7.6, 3.0, 6.6, 2.1, 'virginica')]
@@ -93,240 +106,192 @@ List of Tuples
 
 List of Lists
 -------------
+Generic type annotation:
+
 >>> data: list[list] = [
 ...     [1, 2, 3],
 ...     [4, 5, 6],
-...     [7, 8, 9],
-... ]
+...     [7, 8, 9]]
+
+Strict type annotation:
 
 >>> data: list[list[int]] = [
 ...     [1, 2, 3],
 ...     [4, 5, 6],
-...     [7, 8, 9],
-... ]
+...     [7, 8, 9]]
 
 
 Aliases
 -------
+Generic type annotation:
+
 >>> GeographicCoordinate = tuple[float, float]
 >>>
 >>> locations: list[GeographicCoordinate] = [
 ...     (25.91375, -60.15503),
 ...     (-11.01983, -166.48477),
-...     (-11.01983, -166.48477)
-... ]
+...     (-11.01983, -166.48477)]
 
 >>> Iris = tuple[float, float, float, float, str]
 >>>
 >>> data: list[Iris] = [
 ...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-...     (7.6, 3.0, 6.6, 2.1, 'virginica'),
-... ]
+...     (7.6, 3.0, 6.6, 2.1, 'virginica')]
 
 
 Unions
 ------
-.. code-block:: python
+Generic type annotation:
 
-    from typing import Union
+>>> from typing import Union
+>>>
+>>>
+>>> data: list[Union[list, tuple, set]] = [
+...    [1, 2, 3],
+...    (4, 5, 6),
+...    {7, 8, 9}]
 
+>>> from typing import Union
+>>>
+>>>
+>>> data: list[Union[list[int], tuple[int, ...], set[int]]] = [
+...    [1, 2, 3],
+...    (4, 5, 6),
+...    {7, 8, 9}]
 
-    data: list[Union[list, tuple, set]] = [
-        [1, 2, 3],
-        (4, 5, 6),
-        {7, 8, 9},
-    ]
-
-    data: list[Union[list[int], tuple[int, ...], set[int]]] = [
-        [1, 2, 3],
-        (4, 5, 6),
-        {7, 8, 9},
-    ]
-
-    row = Union[list[int], tuple[int, ...], set[int]]
-    data: list[row] = [
-        [1, 2, 3],
-        (4, 5, 6),
-        {7, 8, 9},
-    ]
+>>> from typing import Union
+>>>
+>>>
+>>> row = Union[list[int], tuple[int, ...], set[int]]
+>>> data: list[row] = [
+...    [1, 2, 3],
+...    (4, 5, 6),
+...    {7, 8, 9}]
 
 
 NamedTuple
 ----------
-.. code-block:: python
+>>> from typing import NamedTuple
+>>> from sys import getsizeof
+>>>
+>>>
+>>> class Astronaut(NamedTuple):
+...     firstname: str
+...     lastname: str
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney')
+>>> astro
+Astronaut(firstname='Mark', lastname='Watney')
+>>>
+>>> getsizeof(astro)
+56
+>>>
 
-    from typing import NamedTuple
-
-
-    class Astronaut(NamedTuple):
-        firstname: str
-        lastname: str
-        agency: str = 'NASA'
-
-
-    astro: Astronaut = Astronaut('Mark', lastname='Watney')
-
-    print(astro)
-    # Astronaut(firstname='Mark', lastname='Watney', agency='NASA')
+>>> astro = ('Mark', 'Watney')
+>>> getsizeof(astro)
+56
 
 
 Before Python 3.9
 -----------------
-Tuple:
+>>> from typing import Tuple
+>>>
+>>>
+>>> data: Tuple[int, int, int] = (1, 2, 3)
+>>> data: Tuple[str, str, str] = ('setosa', 'virginica', 'versicolor')
+>>> data: Tuple[str, int, float] = ('a', 2, 3.3)
+>>> data: Tuple[int, ...] = (1, 2, 3)
+>>> data: Tuple[str, ...] = ('setosa', 'virginica', 'versicolor')
 
-.. code-block:: python
+>>> from typing import List
+>>>
+>>>
+>>> data: List[int] = [1, 2, 3, 4]
+>>> data: List[float] = [5.8, 2.7, 5.1, 1.9]
+>>> data: List[str] = ['a', 'b', 'c', 'd']
 
-    from typing import Tuple
+>>> from typing import Set
+>>>
+>>>
+>>> data: Set[int] = {1, 2, 3}
+>>> data: Set[float] = {0.0, 1.1, 2.2}
+>>> data: Set[str] = {'a', 'b', 'c'}
 
-    data: tuple = ()
-    data: tuple = tuple()
-    data: tuple = 'a', 2, 3.3
-    data: tuple = ('a', 2, 3.3)
+>>> from typing import FrozenSet
+>>>
+>>>
+>>> data: FrozenSet[int] = {1, 2, 3}
+>>> data: FrozenSet[float] = {0.0, 1.1, 2.2}
+>>> data: FrozenSet[str] = {'a', 'b', 'c'}
 
-    data: Tuple[int, int, int] = (1, 2, 3)
-    data: Tuple[str, str, str] = ('setosa', 'virginica', 'versicolor')
-    data: Tuple[str, int, float] = ('a', 2, 3.3)
-    data: Tuple[int, ...] = (1, 2, 3)
-    data: Tuple[str, ...] = ('setosa', 'virginica', 'versicolor')
+>>> from typing import List, Tuple
+>>>
+>>>
+>>> data: List[tuple] = [
+...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
+>>>
+>>> data: List[Tuple[float, float, float, float, str]] = [
+...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
 
-List:
+>>> from typing import List
+>>>
+>>>
+>>> data: List[list] = [
+...    [1, 2, 3],
+...    [4, 5, 6],
+...    [7, 8, 9]]
+>>>
+>>> data: List[List[int]] = [
+...    [1, 2, 3],
+...    [4, 5, 6],
+...    [7, 8, 9]]
 
-.. code-block:: python
+>>> from typing import List, Tuple
+>>>
+>>>
+>>> GeographicCoordinate = Tuple[float, float]
+>>> locations: List[GeographicCoordinate] = [
+...    (25.91375, -60.15503),
+...    (-11.01983, -166.48477),
+...    (-11.01983, -166.48477)]
+>>>
+>>> Iris = Tuple[float, float, float, float, str]
+>>> data: List[Iris] = [
+...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
 
-    from typing import List
+>>> from typing import Union, List, Tuple, Set
+>>>
+>>>
+>>> data: List[Union[list, tuple, set]] = [
+...    [1, 2, 3],
+...    (4, 5, 6),
+...    {7, 8, 9}]
+>>>
+>>> data: List[Union[List[int], Tuple[int, int, int], Set[int]]] = [
+...    [1, 2, 3],
+...    (4, 5, 6),
+...    {7, 8, 9}]
+>>>
+>>> Row = Union[List[int],
+...             Tuple[int, int, int],
+...             Set[int]]
+...
+>>> data: List[Row] = [
+...    [1, 2, 3],
+...    (4, 5, 6),
+...    {7, 8, 9}]
 
-    data: list = list()
-    data: list = []
-    data: list = ['a', 1, 2.2]
-
-    data: List[int] = [1, 2, 3, 4]
-    data: List[float] = [5.8, 2.7, 5.1, 1.9]
-    data: List[str] = ['a', 'b', 'c', 'd']
-
-Set:
-
-.. code-block:: python
-
-    from typing import Set
-
-    data: set = set()
-    data: set = {'a', 1, 2.2}
-
-    data: Set[int] = {1, 2, 3}
-    data: Set[float] = {0.0, 1.1, 2.2}
-    data: Set[str] = {'a', 'b', 'c'}
-
-Frozenset:
-
-.. code-block:: python
-
-    from typing import FrozenSet
-
-    data: frozenset = frozenset()
-    data: frozenset = frozenset({'a', 1, 2.2})
-
-    data: FrozenSet[int] = frozenset({1, 2, 3})
-    data: FrozenSet[float] = frozenset({0.0, 1.1, 2.2})
-    data: FrozenSet[str] = frozenset({'a', 'b', 'c'})
-
-List[Tuple]:
-
-.. code-block:: python
-
-    from typing import List, Tuple
-
-    data: List[tuple] = [
-        (4.7, 3.2, 1.3, 0.2, 'setosa'),
-        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-        (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    ]
-
-    data: List[Tuple[float, float, float, float, str]] = [
-        (4.7, 3.2, 1.3, 0.2, 'setosa'),
-        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-        (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    ]
-
-    Row = Tuple[float, float, float, float, str]
-    data: List[Row] = [
-        (4.7, 3.2, 1.3, 0.2, 'setosa'),
-        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-        (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    ]
-
-List[List]:
-
-.. code-block:: python
-
-    from typing import List
-
-    data: List[list] = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
-
-    data: List[List[int]] = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
-
-Aliases:
-
-.. code-block:: python
-
-    from typing import List, Tuple
-
-
-    GeographicCoordinate = Tuple[float, float]
-    locations: List[GeographicCoordinate] = [
-        (25.91375, -60.15503),
-        (-11.01983, -166.48477),
-        (-11.01983, -166.48477)
-    ]
-
-    Iris = Tuple[float, float, float, float, str]
-    data: List[Iris] = [
-        (4.7, 3.2, 1.3, 0.2, 'setosa'),
-        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-        (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    ]
-
-Union:
-
-.. code-block:: python
-
-    from typing import Union, List, Tuple, Set
-
-
-    data: List[Union[list, tuple, set]] = [
-        [1, 2, 3],
-        (4, 5, 6),
-        {7, 8, 9},
-    ]
-
-
-    data: List[Union[List[int], Tuple[int, int, int], Set[int]]] = [
-        [1, 2, 3],
-        (4, 5, 6),
-        {7, 8, 9},
-    ]
-
-
-    Row = Union[List[int],
-                Tuple[int, int, int],
-                Set[int]]
-
-    data: List[Row] = [
-        [1, 2, 3],
-        (4, 5, 6),
-        {7, 8, 9},
-    ]
 
 Further Reading
 ---------------
-* Example: https://github.com/pandas-dev/pandas/blob/master/pandas/core/frame.py#L458
+* Example: https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L505
 * More information in `Type Annotations`
 * More information in `CI/CD Type Checking`

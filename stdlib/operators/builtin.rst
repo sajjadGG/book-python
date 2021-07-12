@@ -66,6 +66,7 @@ Use Case
 ...     def __repr__(self) -> str:
 ...         return f'Astronaut()'
 >>>
+>>>
 >>> astro = Astronaut()
 >>>
 >>> float(astro)

@@ -34,10 +34,13 @@ Use Case
 --------
 >>> data = slice(1, 2, 3)
 >>>
+>>>
 >>> data.start
 1
+>>>
 >>> data.stop
 2
+>>>
 >>> data.step
 3
 
@@ -47,6 +50,7 @@ Use Case
 >>>
 >>>
 >>> my = MyClass()
+>>>
 >>> my[1:2]
 slice(1, 2, None)
 
