@@ -40,27 +40,6 @@ Example
 ...     DEAD = 'dead'
 
 
-Use Case
---------
->>> from enum import Enum
->>>
->>>
->>> class Color(Enum):
-...     RED = '#FF0000'
-...     GREEN = '#00FF00'
-...     BLUE = '#0000FF'
->>>
->>>
->>> Point = tuple[int,int]
->>>
->>> def draw_line(A: Point, B: Point, color: Color):
-...     print(f'Drawing line from {A} to {B} with color {color.value}')
->>>
->>>
->>> draw_line(A=(0,0), B=(3,5), color=Color.RED)
-Drawing line from (0, 0) to (3, 5) with color #FF0000
-
-
 Switch
 ------
 >>> from enum import Enum
@@ -123,29 +102,16 @@ Color.GREEN
 Color.BLUE
 
 
-Identity check
---------------
-Identity check:
-
-.. code-block:: python
-
-    color = Color('#00FF00')     # <Color.GREEN: '#00FF00'>
-    color is Color.RED           # False
-    color is Color.GREEN         # True
-
-
 Pattern Matching
 ----------------
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
 
 .. figure:: img/oop-enum-keycodes.png
 
-Note, keycodes can vary depending on OS and programming language used [mskeycodes]_, [jskeycodes]_
+Note, keycodes can vary depending on operating system and programming
+language used [mskeycodes]_, [jskeycodes]_.
 
 >>> int('0x1B', base=16)
-27
->>>
->>> 0x1b
 27
 >>>
 >>> hex(27)
@@ -175,6 +141,39 @@ Note, keycodes can vary depending on OS and programming language used [mskeycode
 ...         game.move_down()
 ...     case _:
 ...         raise ValueError(f'Unrecognized key')
+
+
+Use Case - HTTP Status
+----------------------
+>>> from http import HTTPStatus
+>>>
+>>>
+>>> response = 418
+>>>
+>>> status = HTTPStatus(response)
+>>> print(status.name)
+IM_A_TEAPOT
+
+
+Use Case - Colors
+-----------------
+>>> from enum import Enum
+>>>
+>>>
+>>> class Color(Enum):
+...     RED = '#FF0000'
+...     GREEN = '#00FF00'
+...     BLUE = '#0000FF'
+>>>
+>>>
+>>> Point = tuple[int,int]
+>>>
+>>> def draw_line(A: Point, B: Point, color: Color):
+...     print(f'Drawing line from {A} to {B} with color {color.value}')
+>>>
+>>>
+>>> draw_line(A=(0,0), B=(3,5), color=Color.RED)
+Drawing line from (0, 0) to (3, 5) with color #FF0000
 
 
 Use Case - Health

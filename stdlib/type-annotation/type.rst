@@ -1,5 +1,5 @@
-Type Annotation
-===============
+Type Annotation Scalar
+======================
 
 .. epigraph::
 
