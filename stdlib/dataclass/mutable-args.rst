@@ -13,7 +13,9 @@ Rationale
 
 Problem
 -------
-.. warning:: Note, You should not set mutable objects as a default function argument. More information in `Argument Mutability`
+Note, You should not set mutable objects as a default function argument.
+More information in `Argument Mutability`. This is how all dynamically typed
+languages work (including PHP, Ruby, Perl etc).
 
 >>> class Astronaut:
 ...     def __init__(self, name, missions=[]):
@@ -34,6 +36,25 @@ Name: Mark Watney, Missions: ['Ares 1', 'Ares 2', 'Ares 3']
 >>> print(f'Name: {lewis.name}, Missions: {lewis.missions}')
 Name: Melissa Lewis, Missions: ['Ares 1', 'Ares 2', 'Ares 3']
 
+>>> class Astronaut:
+...     def __init__(self, name, missions=None):
+...         self.name = name
+...         self.missions = missions if missions else []
+>>>
+>>>
+>>> watney = Astronaut('Mark Watney')
+>>> lewis = Astronaut('Melissa Lewis')
+>>>
+>>> watney.missions.append('Ares 1')
+>>> watney.missions.append('Ares 2')
+>>> watney.missions.append('Ares 3')
+>>>
+>>> print(f'Name: {watney.name}, Missions: {watney.missions}')
+Name: Mark Watney, Missions: ['Ares 1', 'Ares 2', 'Ares 3']
+>>>
+>>> print(f'Name: {lewis.name}, Missions: {lewis.missions}')
+Name: Melissa Lewis, Missions: []
+
 
 List of Strings
 ---------------
@@ -48,6 +69,7 @@ List of Strings
 >>>
 >>>
 >>> Astronaut('Mark', 'Watney')
+>>> print(astro)  # doctest: +NORMALIZE_WHITESPACE
 Astronaut(firstname='Mark', lastname='Watney', missions=[])
 
 
@@ -70,6 +92,7 @@ List of Objects
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
+>>> print(astro)  # doctest: +NORMALIZE_WHITESPACE
 Astronaut(firstname='Mark', lastname='Watney', missions=[])
 
 
@@ -86,6 +109,7 @@ Dict
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
+>>> print(astro)  # doctest: +NORMALIZE_WHITESPACE
 Astronaut(firstname='Mark', lastname='Watney', missions={})
 
 
@@ -98,9 +122,25 @@ Default Values
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     jobs: list[str] = field(default_factory=lambda: ['Astronaut'])
+...     groups: list[str] = field(default_factory=lambda: ['astronauts', 'managers'])
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
->>> astro
-Astronaut(firstname='Mark', lastname='Watney', jobs=['Astronaut'])
+>>> print(astro)  # doctest: +NORMALIZE_WHITESPACE
+Astronaut(firstname='Mark', lastname='Watney',
+          groups=['astronaut', 'managers'])
+
+>>> from dataclasses import dataclass, field
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     groups: list[str] = field(default_factory=lambda: ['astronauts', 'managers'])
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney')
+>>> print(astro)  # doctest: +NORMALIZE_WHITESPACE
+Astronaut(firstname='Mark', lastname='Watney',
+          groups=['astronaut', 'managers'])

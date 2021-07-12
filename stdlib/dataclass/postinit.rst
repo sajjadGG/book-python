@@ -14,6 +14,7 @@ Rationale
 Initial Validation in Classes
 -----------------------------
 >>> class Astronaut:
+...
 ...     def __init__(self, firstname, lastname, age):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
@@ -44,6 +45,7 @@ ValueError: Age is out of range
 ...     def __init__(self, firstname, lastname, age):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
+...
 ...         if not self.AGE_MIN <= age < self.AGE_MAX:
 ...             raise ValueError('Age is out of range')
 ...         else:
@@ -66,7 +68,7 @@ Initial Validation in Dataclasses
 >>>
 >>>
 >>> @dataclass
->>> class Astronaut:
+... class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     age: int
@@ -104,8 +106,9 @@ Date and Time Conversion
 ...         self.born = date.fromisoformat(self.born)
 >>>
 >>>
->>> Astronaut('Mark', 'Watney', '1961-04-12')
-Astronaut(firstname='Mark', lastname='Watney', born=datetime.date(1961, 4, 12))
+>>> Astronaut('Mark', 'Watney', '1961-04-12')  # doctest: +NORMALIZE_WHITESPACE
+Astronaut(firstname='Mark', lastname='Watney',
+          born=datetime.date(1961, 4, 12))
 
 >>> from dataclasses import dataclass
 >>> from datetime import datetime
@@ -116,17 +119,19 @@ Astronaut(firstname='Mark', lastname='Watney', born=datetime.date(1961, 4, 12))
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     fist_mission: Optional[datetime]
+...     launch: Optional[datetime]
 ...
 ...     def __post_init__(self):
-...         self.fist_mission = datetime.fromisoformat(self.fist_mission) if self.fist_mission else None
+...         if self.launch is not None:
+...             self.launch = datetime.fromisoformat(self.launch)
 >>>
 >>>
 >>> Astronaut('Mark', 'Watney')
-Astronaut(firstname='Mark', lastname='Watney', fist_mission=None))
+Astronaut(firstname='Mark', lastname='Watney', launch=None))
 >>>
->>> Astronaut('Mark', 'Watney', '1969-07-21T02:56:15+00:00')
-Astronaut(firstname='Mark', lastname='Watney', fist_mission=datetime.datetime(1969, 7, 21, 2, 56, 15, datetime.timezone.utc))
+>>> Astronaut('Mark', 'Watney', '1969-07-21T02:56:15+00:00')  # doctest: +NORMALIZE_WHITESPACE
+Astronaut(firstname='Mark', lastname='Watney',
+          launch=datetime.datetime(1969, 7, 21, 2, 56, 15, datetime.timezone.utc))
 
 
 InitVar
@@ -156,14 +161,15 @@ Astronaut(firstname='Mark', lastname='Watney')
 {'firstname': 'Mark', 'lastname': 'Watney'}
 
 
-Use Case 1
-----------
-... class Point:
+Use Case - Boundary check
+-------------------------
+>>> class Point:
 ...     def __init__(self, x, y):
 ...         if x < 0:
 ...             raise ValueError('Coordinate cannot be negative')
 ...         else:
 ...             self.x = x
+...
 ...         if y < 0:
 ...             raise ValueError('Coordinate cannot be negative')
 ...         else:
@@ -182,8 +188,8 @@ Use Case 1
 ...             raise ValueError('Coordinate cannot be negative')
 
 
-Use Case 2
-----------
+Use Case - Var Range
+--------------------
 >>> from dataclasses import dataclass, field
 >>> from typing import Final
 >>>
@@ -199,30 +205,28 @@ Use Case 2
 ...
 ...     def __post_init__(self):
 ...         if not self.X_MIN <= self.x < self.X_MAX:
-...             raise ValueError(f'x value ({self.x}) is out of range({self.X_MIN}, {self.X_MAX})')
+...             raise ValueError(f'x value ({self.x}) is not between {self.X_MIN} and {self.X_MAX}')
 ...         if not self.Y_MIN <= self.y < self.Y_MAX:
-...             raise ValueError(f'y value ({self.y}) is out of range({self.Y_MIN}, {self.Y_MAX})')
+...             raise ValueError(f'y value ({self.y}) is not between {self.Y_MIN} and {self.Y_MAX}')
 >>>
->>>
->>> Point(-1,10)
-Traceback (most recent call last):
-ValueError: x value (-1) is out of range(0, 1024)
->>>
->>> Point(0,2000)
-Traceback (most recent call last):
-ValueError: y value (2000) is out of range(0, 768)
->>>
->>> Point(0,0)
+>>> Point(0, 0)
 Point(x=0, y=0, X_MIN=0, X_MAX=1024, Y_MIN=0, Y_MAX=768)
 >>>
->>> Point(0,0, X_MIN=10)
+>>> Point(-1, 0)
 Traceback (most recent call last):
-ValueError: x value (0) is out of range(10, 1024)
+ValueError: x value (-1) is not between 0 and 1024
 >>>
->>> Point(0,0, X_MIN=10, X_MAX=100)
+>>> Point(0, 2000)
 Traceback (most recent call last):
-ValueError: x value (0) is out of range(10, 100)
+ValueError: y value (2000) is not between 0 and 768
+>>>
+>>> Point(0, 0, X_MIN=10, X_MAX=100)
+Traceback (most recent call last):
+ValueError: x value (0) is not between 10 and 100
 
+
+Use Case - Const Range
+----------------------
 >>> from dataclasses import dataclass, field
 >>> from typing import Final
 >>>
@@ -238,18 +242,21 @@ ValueError: x value (0) is out of range(10, 100)
 ...
 ...     def __post_init__(self):
 ...         if not self.X_MIN <= self.x < self.X_MAX:
-...             raise ValueError(f'x value ({self.x}) is out of range({self.X_MIN}, {self.X_MAX})')
+...             raise ValueError(f'x value ({self.x}) is not between {self.X_MIN} and {self.X_MAX}')
 ...         if not self.Y_MIN <= self.y < self.Y_MAX:
-...             raise ValueError(f'y value ({self.y}) is out of range({self.Y_MIN}, {self.Y_MAX})')
+...             raise ValueError(f'y value ({self.y}) is not between {self.Y_MIN} and {self.Y_MAX}')
 >>>
 >>>
->>> Point(0,0, X_MIN=10, X_MAX=100)
+>>> Point(0, 0)
+Point(x=0, y=0, X_MIN=0, X_MAX=1024, Y_MIN=0, Y_MAX=768)
+>>>
+>>> Point(0, 0, X_MIN=10, X_MAX=100)
 Traceback (most recent call last):
 TypeError: __init__() got an unexpected keyword argument 'X_MIN'
->>>
->>> Point(0,0)
-Point(x=0, y=0, X_MIN=0, X_MAX=1024, Y_MIN=0, Y_MAX=768)
 
+
+Use Case - Init, Repr
+---------------------
 >>> from dataclasses import dataclass, field
 >>> from typing import Final
 >>>
@@ -265,21 +272,21 @@ Point(x=0, y=0, X_MIN=0, X_MAX=1024, Y_MIN=0, Y_MAX=768)
 ...
 ...     def __post_init__(self):
 ...         if not self.X_MIN <= self.x < self.X_MAX:
-...             raise ValueError(f'x value ({self.x}) is out of range({self.X_MIN}, {self.X_MAX})')
+...             raise ValueError(f'x value ({self.x}) is not between {self.X_MIN} and {self.X_MAX}')
 ...         if not self.Y_MIN <= self.y < self.Y_MAX:
-...             raise ValueError(f'y value ({self.y}) is out of range({self.Y_MIN}, {self.Y_MAX})')
+...             raise ValueError(f'y value ({self.y}) is not between {self.Y_MIN} and {self.Y_MAX}')
 >>>
 >>>
->>> Point(0,0)
+>>> Point(0, 0)
 Point(x=0, y=0)
 >>>
->>> Point(-1,0)
+>>> Point(-1, 0)
 Traceback (most recent call last):
-ValueError: x value (-1) is out of range(0, 1024)
+ValueError: x value (-1) is not between 0 and 1024
 >>>
->>> Point(0,-1)
+>>> Point(0, -1)
 Traceback (most recent call last):
-ValueError: y value (-1) is out of range(0, 768)
+ValueError: y value (-1) is not between 0 and 768
 
 
 Assignments

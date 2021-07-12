@@ -21,6 +21,27 @@ Class. Accepts either a Data Class, or an instance of a Data Class. Raises
 ValueError if not passed a Data Class or instance of one. Does not return
 pseudo-fields which are ClassVar or InitVar.
 
+>>> from dataclasses import dataclass, asdict
+>>>
+>>>
+>>> @dataclass
+... class Mission:
+...     year: int
+...     name: str
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     missions: list[Mission]
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney', missions=[Mission(2035, 'Ares3')])
+>>> fields(Astronaut)  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE
+(Field(name='firstname',type=<class 'str'>,default=<dataclasses._MISSING_TYPE object at 0x...>,default_factory=<dataclasses._MISSING_TYPE object at 0x...>,init=True,repr=True,hash=None,compare=True,metadata=mappingproxy({}),_field_type=_FIELD),
+ Field(name='lastname',type=<class 'str'>,default=<dataclasses._MISSING_TYPE object at 0x...>,default_factory=<dataclasses._MISSING_TYPE object at 0x...>,init=True,repr=True,hash=None,compare=True,metadata=mappingproxy({}),_field_type=_FIELD),
+ Field(name='missions',type=list[__main__.Mission],default=<dataclasses._MISSING_TYPE object at 0x...>,default_factory=<dataclasses._MISSING_TYPE object at 0x...>,init=True,repr=True,hash=None,compare=True,metadata=mappingproxy({}),_field_type=_FIELD))
+
 
 As Dict
 -------
@@ -128,6 +149,7 @@ otherwise returns False.
 >>>
 >>> is_dataclass(Astronaut)
 True
+>>>
 >>> is_dataclass(astro)
 True
 
@@ -147,5 +169,6 @@ True
 >>>
 >>> is_dataclass(Astronaut)
 False
+>>>
 >>> is_dataclass(astro)
 False

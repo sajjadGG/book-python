@@ -57,42 +57,51 @@ Dataclass will generate:
 ...
 ...     ## All code below is added by dataclass
 ...
-...     def __init__(self, name: str, unit_price: float, quantity: int = 0) -> None:
+...     def __init__(self, name: str, unit_price: float,
+...                  quantity: int = 0) -> None:
 ...         self.name = name
 ...         self.unit_price = unit_price
 ...         self.quantity = quantity
 ...
 ...     def __repr__(self):
-...         return f'ShoppingCartItem(name={self.name!r}, unit_price={self.unit_price!r}, quantity={self.quantity!r})'
+...         return f'ShoppingCartItem(name={self.name!r}, '
+...                f'unit_price={self.unit_price!r}, '
+...                f'quantity={self.quantity!r})'
 ...
 ...     def __eq__(self, other):
 ...         if other.__class__ is self.__class__:
-...             return (self.name, self.unit_price, self.quantity) == (other.name, other.unit_price, other.quantity)
+...             return (self.name, self.unit_price, self.quantity) \
+...                 == (other.name, other.unit_price, other.quantity)
 ...         return NotImplemented
 ...
 ...     def __ne__(self, other):
 ...         if other.__class__ is self.__class__:
-...             return (self.name, self.unit_price, self.quantity) != (other.name, other.unit_price, other.quantity)
+...             return (self.name, self.unit_price, self.quantity) \
+...                 != (other.name, other.unit_price, other.quantity)
 ...         return NotImplemented
 ...
 ...     def __lt__(self, other):
 ...         if other.__class__ is self.__class__:
-...             return (self.name, self.unit_price, self.quantity) < (other.name, other.unit_price, other.quantity)
+...             return (self.name, self.unit_price, self.quantity) \
+...                  < (other.name, other.unit_price, other.quantity)
 ...         return NotImplemented
 ...
 ...     def __le__(self, other):
 ...         if other.__class__ is self.__class__:
-...             return (self.name, self.unit_price, self.quantity) <= (other.name, other.unit_price, other.quantity)
+...             return (self.name, self.unit_price, self.quantity) \
+...                 <= (other.name, other.unit_price, other.quantity)
 ...         return NotImplemented
 ...
 ...     def __gt__(self, other):
 ...         if other.__class__ is self.__class__:
-...             return (self.name, self.unit_price, self.quantity) > (other.name, other.unit_price, other.quantity)
+...             return (self.name, self.unit_price, self.quantity) \
+...                  > (other.name, other.unit_price, other.quantity)
 ...         return NotImplemented
 ...
 ...     def __ge__(self, other):
 ...         if other.__class__ is self.__class__:
-...             return (self.name, self.unit_price, self.quantity) >= (other.name, other.unit_price, other.quantity)
+...             return (self.name, self.unit_price, self.quantity) \
+...                 >= (other.name, other.unit_price, other.quantity)
 ...         return NotImplemented
 
 

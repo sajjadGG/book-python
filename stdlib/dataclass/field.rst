@@ -48,6 +48,8 @@ Default
 
 Default Factory
 ---------------
+The following code will not work:
+
 >>> from dataclasses import dataclass, field
 >>>
 >>>
@@ -56,6 +58,12 @@ Default Factory
 ...     firstname: str
 ...     lastname: str
 ...     missions: list[str] = ['Ares3', 'Apollo18']
+Traceback (most recent call last):
+ValueError: mutable default <class 'list'> for field missions is not allowed: use default_factory
+
+If you want to create a list with default values, you have to create a field
+with ``default_factory=lambda: ['Ares3', 'Apollo18']``. Lambda expression
+will be evaluated on field initialization.
 
 >>> from dataclasses import dataclass, field
 >>>
@@ -65,6 +73,10 @@ Default Factory
 ...     firstname: str
 ...     lastname: str
 ...     missions: list[str] = field(default_factory=lambda: ['Ares3', 'Apollo18'])
+>>>
+>>>
+>>> Astronaut('Mark', 'Watney')
+Astronaut(firstname='Mark', lastname='Watney', missions=['Ares3', 'Apollo18'])
 
 
 Init
