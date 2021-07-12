@@ -68,7 +68,7 @@ Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 >>> from dataclasses import dataclass
 >>>
 >>>
->>> @dataclass
+>>> @dataclass  # doctest: +SKIP
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
@@ -146,12 +146,12 @@ Relation to Self
 ...     Astronaut('Alex', 'Vogel')])
 >>>
 >>> astro  # doctest: +NORMALIZE_WHITESPACE
-Astronaut(firstname='Mark', lastname='Watney', friends=[
-    Astronaut(firstname='Melissa', lastname='Lewis', friends=None),
-    Astronaut(firstname='Rick', lastname='Martinez', friends=None),
-    Astronaut(firstname='Beth', lastname='Johansen', friends=None),
-    Astronaut(firstname='Chris', lastname='Beck', friends=None),
-    Astronaut(firstname='Alex', lastname='Vogel', friends=None)])
+Astronaut(firstname='Mark', lastname='Watney',
+          friends=[Astronaut(firstname='Melissa', lastname='Lewis', friends=None),
+                   Astronaut(firstname='Rick', lastname='Martinez', friends=None),
+                   Astronaut(firstname='Beth', lastname='Johansen', friends=None),
+                   Astronaut(firstname='Chris', lastname='Beck', friends=None),
+                   Astronaut(firstname='Alex', lastname='Vogel', friends=None)])
 
 
 Usecase

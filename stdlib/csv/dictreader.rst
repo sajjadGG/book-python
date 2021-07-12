@@ -16,7 +16,7 @@ Example
 ... 5.9,3.0,5.1,1.8,virginica
 ... 6.0,3.4,4.5,1.6,versicolor"""
 >>>
->>> with open(FILE, mode='w') as file
+>>> with open(FILE, mode='w') as file:
 ...     _ = file.write(DATA)
 >>>
 >>>
@@ -46,7 +46,7 @@ Read data from CSV file using ``csv.DictReader()``. While giving custom names no
 ... 5.9,3.0,5.1,1.8,virginica
 ... 6.0,3.4,4.5,1.6,versicolor"""
 >>>
->>> with open(FILE, mode='w') as file
+>>> with open(FILE, mode='w') as file:
 ...     _ = file.write(DATA)
 >>>
 >>>
@@ -79,7 +79,7 @@ Use Cases
 ... '5,9';'3,0';'5,1';'1,8';'virginica'
 ... '6,0';'3,4';'4,5';'1,6';'versicolor'"""
 >>>
->>> with open(FILE, mode='w') as file
+>>> with open(FILE, mode='w') as file:
 ...     _ = file.write(DATA)
 >>>
 >>>

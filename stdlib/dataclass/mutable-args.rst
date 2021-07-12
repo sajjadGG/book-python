@@ -68,7 +68,7 @@ List of Strings
 ...     missions: list[str] = field(default_factory=list)
 >>>
 >>>
->>> Astronaut('Mark', 'Watney')
+>>> astro = Astronaut('Mark', 'Watney')
 >>> print(astro)
 Astronaut(firstname='Mark', lastname='Watney', missions=[])
 
@@ -127,7 +127,7 @@ Default Values
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
 >>> print(astro)
-Astronaut(firstname='Mark', lastname='Watney', groups=['astronaut', 'managers'])
+Astronaut(firstname='Mark', lastname='Watney', groups=['astronauts', 'managers'])
 
 >>> from dataclasses import dataclass, field
 >>>
@@ -141,4 +141,4 @@ Astronaut(firstname='Mark', lastname='Watney', groups=['astronaut', 'managers'])
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
 >>> print(astro)
-Astronaut(firstname='Mark', lastname='Watney', groups=['astronaut', 'managers'])
+Astronaut(firstname='Mark', lastname='Watney', groups=['astronauts', 'managers'])

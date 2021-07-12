@@ -21,7 +21,7 @@ Class. Accepts either a Data Class, or an instance of a Data Class. Raises
 ValueError if not passed a Data Class or instance of one. Does not return
 pseudo-fields which are ClassVar or InitVar.
 
->>> from dataclasses import dataclass, asdict
+>>> from dataclasses import dataclass, fields
 >>>
 >>>
 >>> @dataclass

@@ -116,7 +116,7 @@ Solution
 ...         self.lastname = lastname
 ...
 ...     def __eq__(self, other):
-...         return (self.__class__ is other.__class) \
+...         return (self.__class__ is other.__class__) \
 ...            and (self.firstname == other.firstname) \
 ...            and (self.lastname == other.lastname)
 >>>
@@ -197,7 +197,6 @@ True
 >>>
 >>> print(a == c)
 True
-
 
 
 Use Case - Game

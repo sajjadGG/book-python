@@ -64,8 +64,8 @@ Dataclass will generate:
 ...         self.quantity = quantity
 ...
 ...     def __repr__(self):
-...         return f'ShoppingCartItem(name={self.name!r}, '
-...                f'unit_price={self.unit_price!r}, '
+...         return f'ShoppingCartItem(name={self.name!r}, ' \
+...                f'unit_price={self.unit_price!r}, ' \
 ...                f'quantity={self.quantity!r})'
 ...
 ...     def __eq__(self, other):

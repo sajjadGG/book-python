@@ -34,12 +34,13 @@ Will generate:
 ...     lastname: str
 ...     job: str = 'astronaut'
 ...     agency: str = 'NASA'
->>>
->>>     def __init__(self,
+...
+...     def __init__(self,
 ...                  firstname: str,
 ...                  lastname: str,
 ...                  job: str = 'astronaut',
 ...                  agency: str = 'NASA'):
+...
 ...         self.firstname = firstname
 ...         self.lastname = lastname
 ...         self.job = job

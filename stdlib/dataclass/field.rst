@@ -254,7 +254,7 @@ Use Case - Setattr
 >>>
 >>>
 >>> Astronaut('Mark', 'Watney')
-Astronaut(firstname='Mark', lastname='Watney', age=None, weight=None, height=None)
+Astronaut(firstname='Mark', lastname='Watney', age=None, height=None, weight=None)
 >>>
 >>> Astronaut('Mark', 'Watney', age=44)
 Astronaut(firstname='Mark', lastname='Watney', age=44, height=None, weight=None)

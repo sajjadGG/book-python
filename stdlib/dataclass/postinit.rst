@@ -19,16 +19,17 @@ Initial Validation in Classes
 ...         self.firstname = firstname
 ...         self.lastname = lastname
 ...         if 30 <= age < 50:
-...             raise ValueError('Age is out of range')
-...         else:
 ...             self.age = age
+...         else:
+...             raise ValueError('Age is out of range')
+...
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney', age=44)
 >>> vars(astro)
 {'firstname': 'Mark', 'lastname': 'Watney', 'age': 44}
 >>>
->>> Astronaut('Mark', 'Watney', age=60)
+>>> astro = Astronaut('Mark', 'Watney', age=60)
 Traceback (most recent call last):
 ValueError: Age is out of range
 
@@ -78,8 +79,6 @@ Initial Validation in Dataclasses
 ...     def __post_init__(self):
 ...         if not self.AGE_MIN <= self.age < self.AGE_MAX:
 ...             raise ValueError('Age is out of range')
-...         else:
-...             self.age = age
 >>>
 >>>
 >>> Astronaut('Mark', 'Watney', age=44)
@@ -119,7 +118,7 @@ Astronaut(firstname='Mark', lastname='Watney',
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     launch: Optional[datetime]
+...     launch: Optional[datetime] = None
 ...
 ...     def __post_init__(self):
 ...         if self.launch is not None:
@@ -131,7 +130,7 @@ Astronaut(firstname='Mark', lastname='Watney', launch=None))
 >>>
 >>> Astronaut('Mark', 'Watney', '1969-07-21T02:56:15+00:00')  # doctest: +NORMALIZE_WHITESPACE
 Astronaut(firstname='Mark', lastname='Watney',
-          launch=datetime.datetime(1969, 7, 21, 2, 56, 15, datetime.timezone.utc))
+          launch=datetime.datetime(1969, 7, 21, 2, 56, 15, tzinfo=datetime.timezone.utc))
 
 
 InitVar
