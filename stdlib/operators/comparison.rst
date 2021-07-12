@@ -19,6 +19,34 @@ Rationale
     "``~obj``",           "``obj.__invert__()``"
 
 
+Object Equality
+---------------
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+>>>
+>>>
+>>> a = Astronaut('Mark', 'Watney')
+>>> b = Astronaut('Mark', 'Watney')
+>>> c = Astronaut('Melissa', 'Lewis')
+>>>
+>>> a == c
+False
+>>> b == c
+False
+>>> a == b
+False
+>>> hex(id(a))  # doctest: +SKIP
+'0x11b9706a0'
+>>> hex(id(b))  # doctest: +SKIP
+'0x11b970700'
+>>> id(a) == id(b)
+False
+
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
@@ -40,6 +68,12 @@ False
 False
 >>> print(a == b)
 True
+>>> hex(id(a))  # doctest: +SKIP
+'0x11b970c70'
+>>> hex(id(b))  # doctest: +SKIP
+'0x11b9704c0'
+>>> id(a) == id(b)
+False
 
 
 Problem
@@ -161,6 +195,18 @@ True
 >>>
 >>> print(a == c)
 True
+
+
+
+Use Case - Game
+---------------
+>>> hero @ Position(x=50, y=120)  # doctest: +SKIP
+>>> hero >> Direction(left=10, up=20)  # doctest: +SKIP
+>>>
+>>> hero < Damage(20)  # doctest: +SKIP
+>>> hero > Damage(20)  # doctest: +SKIP
+>>>
+>>> hero['gold'] += dragon['gold']  # doctest: +SKIP
 
 
 Assignments

@@ -4,16 +4,25 @@ Dataclass Field
 
 Rationale
 ---------
-* ``name`` - The name of the field.
-* ``type`` - The type of the field.
-* ``default`` - Default value
-* ``default_factory`` - Field factory
-* ``init``
-* ``repr``
-* ``hash``
-* ``compare``
-* ``metadata`` - This can be a mapping or ``None``. ``None`` is treated as an empty ``dict``. It is not used at all by Data Classes, and is provided as a third-party extension mechanism.
+.. code-block:: text
 
+    def field(*,
+              default: Any,
+              default_factory: Any,
+              init: Any = True,
+              repr: Any = True,
+              hash: Any = None,
+              compare: Any = True,
+              metadata: Any = None) -> None
+
+* ``default`` - Default value for the field
+* ``default_factory`` - Field factory
+* ``init`` - Use this field in ``__init__()``
+* ``repr`` - Use this field in ``__repr__()``
+* ``hash`` - Use this field in ``__hash__()``
+* ``compare`` - Use this field in comparison functions
+  (le, lt, gt, ge, eq, ne)
+* ``metadata`` - For storing extra information about field
 
 
 Default
@@ -61,6 +70,7 @@ Default Factory
 Init
 ----
 >>> from dataclasses import dataclass, field
+>>> from typing import Final
 >>>
 >>>
 >>> @dataclass
@@ -68,157 +78,188 @@ Init
 ...     firstname: str
 ...     lastname: str
 ...     age: int
-...     AGE_MIN: Final[int] = field(init=False, default=27)
-...     AGE_MAX: Final[int] = field(init=False, default=50)
+...     AGE_MIN: Final[int] = field(default=27, init=False)
+...     AGE_MAX: Final[int] = field(default=50, init=False)
+>>>
+>>>
+>>> Astronaut('Mark', 'Watney', age=44)
+Astronaut(firstname='Mark', lastname='Watney', age=44, AGE_MIN=27, AGE_MAX=50)
 
 
-
-
->>> from __future__ import annotations  # od Python 3.7
+Repr
+----
 >>> from dataclasses import dataclass, field
->>> from typing import Optional, Union
->>>
->>>
->>>
->>> @dataclass
->>> class Person:
->>>     firstname: str
->>>     lastname: str
+>>> from typing import Final
 >>>
 >>>
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     agency: Optional[str] = 'Polsa'
-...     missions: Optional[list[str]] = field(default_factory=list)
-...     age: Optional[int|float] = field(repr=False, default=None)
-...     height: Optional[float] = field(repr=False, default=None)
-...     weight: Optional[float] = field(repr=False, default=None)
-...     friends: list[Person] = field(default_factory=list)
-...     crew_mates: list[Astronaut] = field(default_factory=list)
-...
-...     def __post_init__(self):
-...         if self.age and self.age < 0:
-...             raise ValueError('Age must above 0')
+...     age: int
+...     AGE_MIN: Final[int] = field(default=27, init=False, repr=False)
+...     AGE_MAX: Final[int] = field(default=50, init=False, repr=False)
 >>>
 >>>
->>> mark = Astronaut('Mark', 'Watney', age=44)
-
->>> from dataclasses import dataclass, field
->>>
->>>
->>> @dataclass(frozen=True)
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     weight: float = field(metadata={'unit': 'kg'})
-...     missions: list[str] = field(metadata={'choices': ['Apollo11', 'Apollo12']})
-...     groups: list[str] = field(default_factory=lambda: ['astronauts', 'managers'])
-...     job: str = 'astronaut'
->>>
->>> mark = Astronaut('Mark', 'Watney', weight=..., missions=['Apollo18', 'Ares3'])
-
->>> from __future__ import annotations
->>> from dataclasses import dataclass, field
->>>
->>>
->>> @dataclass(frozen=True)
-... class Mission:
-...     year: int
-...     name: str
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     age: float
-...     height: float = field(metadata={'unit': 'cm'})
-...     weight: float = field(metadata={'unit': 'km'})
-...     mission: list[Mission]
-...     agency: str = field(default='NASA', metadata={'choices': ['NASA', 'ESA']})
-...     friends: list[Astronaut] = field(default_factory=list)
-...     country: str = 'USA'
-...
-...     def __post_init__(self):
-...         if self.age > 65:
-...             raise ValueError('Too old for an astronaut')
-...
-...     def say_hello(self):
-...         print(f'Howdy, I am {self.firstname} {self.lastname}')
-...
-...
->>> astro = Astronaut('Mark', 'Watney',
-...                   age=44,
-...                   height=170,
-...                   weight=75,
-...                   mission=[Mission(2035, 'Ares 3')],
-...                   friends=[],
-...                   agency='NASA')
->>>
->>> astro
-Astronaut(firstname='Mark', lastname='Watney', age=44, height=170, weight=75, mission=[Mission(year=2035, name='Ares 3')], agency='NASA', friends=[], country='USA')
->>>
->>> astro.__dataclass_fields__['agency'].metadata['choices']
-['NASA', 'ESA']
->>> astro.__dataclass_fields__['height'].metadata['unit']
-'cm'
->>> Astronaut.__dataclass_fields__['agency'].metadata['choices']
-['NASA', 'ESA']
+>>> Astronaut('Mark', 'Watney', age=44)
+Astronaut(firstname='Mark', lastname='Watney', age=44)
 
 
 Metadata
 --------
+* ``Optional[dict]``
+* ``None`` is treated as an empty ``dict``
+* Metadata is not used at all by Data Classes
+* Metadata is provided as a third-party extension mechanism
+
+Using Metadata for hints:
+
 >>> from dataclasses import dataclass, field
->>> from typing import Literal
 >>>
 >>>
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     agency: Literal['NASA', 'ESA', 'Roscosmos']
 ...     height: float = field(default=None, metadata={'unit': 'cm'})
 ...     weight: float = field(default=None, metadata={'unit': 'kg'})
-...     age: float = field(default=None, metadata={'min': 27, 'max': 50})
+
+Using Metadata for validation:
+
+>>> from dataclasses import dataclass, field
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int = field(default=None, metadata={'min': 27, 'max': 50})
 ...
 ...     def __post_init__(self):
 ...         AGE_MIN = self.__dataclass_fields__['age'].metadata['min']
 ...         AGE_MAX = self.__dataclass_fields__['age'].metadata['max']
 ...
-...         if self.age < AGE_MIN:
-...             raise ValueError('Age is below minimum')
-...         if self.age > AGE_MAX:
-...             raise ValueError('Age is above maximum')
+...         if self.age not in range(AGE_MIN, AGE_MAX):
+...             raise ValueError('Invalid age')
 >>>
 >>>
->>> astro = Astronaut('Mark', 'Watney', agency='NASA', age=51)
+>>> astro = Astronaut('Mark', 'Watney', age=99)
+Traceback (most recent call last):
+ValueError: Invalid age
 
 
+Use Case - Validation
+---------------------
+>>> from dataclasses import dataclass, field
+>>> from typing import Optional, Union
+>>> from datetime import date, time, datetime, timezone, timedelta
+>>>
+>>>
 >>> @dataclass
+... class Mission:
+...     year: int
+...     name: str
+>>>
+>>>
+>>> @dataclass(frozen=True)
 ... class Astronaut:
-...     email: str
-...     username: str
 ...     firstname: str
 ...     lastname: str
-...     friends: List[Astronaut] = field(default_factory=list)
-...     agency: str = field(default='NASA')
-...     weight: float = None
-...     height: float = field(default=None, metadata={'unit': 'cm', 'min': 140, 'max': 210})
-...     age: float = None
-...     account_last_login: datetime = datetime.now(tz=timezone.utc)
-...     account_updated: datetime = datetime.now(tz=timezone.utc)
+...     born: date
+...     job: str = 'astronaut'
+...     agency: str = field(default='NASA', metadata={'choices': ['NASA', 'ESA']})
+...     age: Optional[int] = None
+...     height: Optional[Union[float,int]] = field(default=None, metadata={'unit': 'cm', 'min': 156, 'max': 210})
+...     weight: Optional[Union[float,int]] = field(default=None, metadata={'unit': 'kg', 'min': 50, 'max': 90})
+...     groups: list[str] = field(default_factory=lambda: ['astronauts', 'managers'])
+...     friends: dict[str,str] = field(default_factory=dict)
+...     assignments: Optional[list[str]] = field(default=None, metadata={'choices': ['Apollo18', 'Ares3', 'STS-136']})
+...     missions: list[Mission] = field(default_factory=list)
+...     experience: timedelta = timedelta(hours=0)
+...     account_last_login: Optional[datetime] = None
 ...     account_created: datetime = datetime.now(tz=timezone.utc)
+...     AGE_MIN: int = field(default=30, init=False, repr=False)
+...     AGE_MAX: int = field(default=50, init=False, repr=False)
+...
+...     def __post_init__(self):
+...         HEIGHT_MIN = self.__dataclass_fields__['height'].metadata['min']
+...         HEIGHT_MAX = self.__dataclass_fields__['height'].metadata['max']
+...         WEIGHT_MIN = self.__dataclass_fields__['weight'].metadata['min']
+...         WEIGHT_MAX = self.__dataclass_fields__['weight'].metadata['max']
+...         if not HEIGHT_MIN <= self.height < HEIGHT_MAX:
+...             raise ValueError(f'Height {self.height} is not in between {HEIGHT_MIN} and {HEIGHT_MAX}')
+...         if not WEIGHT_MIN <= self.weight < WEIGHT_MAX:
+...             raise ValueError(f'Height {self.weight} is not in between {WEIGHT_MIN} and {WEIGHT_MAX}')
+...         if self.age not in range(self.AGE_MIN, self.AGE_MAX):
+...             raise ValueError('Age is not valid for an astronaut')
+>>>
+>>>
+>>> astro = Astronaut(firstname='Mark',
+...                   lastname='Watney',
+...                   born=date(1961, 4, 12),
+...                   age=44,
+...                   height=175.5,
+...                   weight=75.5,
+...                   assignments=['STS-136'],
+...                   missions=[Mission(2035, 'Ares 3'), Mission(1973, 'Apollo 18')])
+>>>
+>>> print(astro)  # doctest: +NORMALIZE_WHITESPACE +SKIP
+Astronaut(firstname='Mark', lastname='Watney', born=datetime.date(1961, 4, 12),
+          job='astronaut', agency='NASA', age=44, height=175.5, weight=75.5,
+          groups=['astronauts', 'managers'], friends={}, assignments=['STS-136'],
+          missions=[Mission(year=2035, name='Ares 3'), Mission(year=1973, name='Apollo 18')],
+          experience=datetime.timedelta(0), account_last_login=None,
+          account_created=datetime.datetime(1969, 7, 21, 2, 56, 15, 123456, tzinfo=datetime.timezone.utc))
+
+
+Use Case - Setattr
+------------------
+>>> from dataclasses import dataclass, field
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: float = field(default=None, metadata={'unit': 'cm', 'min': 30, 'max': 50})
+...     height: float = field(default=None, metadata={'unit': 'cm', 'min': 156, 'max': 210})
+...     weight: float = field(default=None, metadata={'unit': 'kg', 'min': 50, 'max': 90})
 ...
 ...     def __setattr__(self, attrname, attrvalue):
-...         min = Astronaut.__dataclass_fields__[attrname].metadata['min']
-...         max = Astronaut.__dataclass_fields__[attrname].metadata['max']
-...
-...         if attrvalue < min:
-...             raise ValueError
-...         if attrvalue > max:
-...             raise ValueError
+...         if attrvalue is None:
+...             return super().__setattr__(attrname, attrvalue)
+...         try:
+...             min = Astronaut.__dataclass_fields__[attrname].metadata['min']
+...             max = Astronaut.__dataclass_fields__[attrname].metadata['max']
+...         except KeyError:
+...             # field does not have min and max metadata
+...             pass
+...         else:
+...             assert min <= attrvalue < max, f'{attrname} value {attrvalue} is not between {min} and {max}'
+...         finally:
+...             super().__setattr__(attrname, attrvalue)
+>>>
+>>>
+>>> Astronaut('Mark', 'Watney', age=99)
+Traceback (most recent call last):
+AssertionError: age value 99 is not between 30 and 50
+>>>
+>>> Astronaut('Mark', 'Watney', age=44, weight=200)
+Traceback (most recent call last):
+AssertionError: weight value 200 is not between 50 and 90
+>>>
+>>> Astronaut('Mark', 'Watney', age=44, height=120)
+Traceback (most recent call last):
+AssertionError: height value 120 is not between 156 and 210
+>>>
+>>> Astronaut('Mark', 'Watney', age=44, height=175, weight=75)
+Astronaut(firstname='Mark', lastname='Watney', age=44, height=175, weight=75)
+>>>
+>>> Astronaut('Mark', 'Watney')
+Astronaut(firstname='Mark', lastname='Watney', age=None, weight=None, height=None)
+>>>
+>>> Astronaut('Mark', 'Watney', age=44)
+Astronaut(firstname='Mark', lastname='Watney', age=44, height=None, weight=None)
 
 
 Assignments

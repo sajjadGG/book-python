@@ -1,5 +1,5 @@
-Dataclass Flags
-===============
+Dataclass Parameters
+====================
 
 
 Flags
@@ -23,6 +23,20 @@ Flags
     "``order``", "``False``", "Generate ``__lt__()``, ``__le__()``, ``__gt__()``, and ``__ge__()`` methods"
     "``unsafe_hash``", "``False``", "if False: the ``__hash__()`` method is generated according to how eq and frozen are set"
     "``frozen``", "``False``", "if ``True``: assigning to fields will generate an exception"
+
+
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass(init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False)
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+>>>
+>>> astro1 = Astronaut('Mark', 'Watney')
+>>> astro2 = Astronaut('Mark', 'Watney')
+>>> astro3 = Astronaut('Jan', 'Twardowski')
+
 
 
 Init
@@ -185,18 +199,3 @@ False
 True
 >>> astro1 != astro3
 True
-
-
-Other flags
------------
->>> from dataclasses import dataclass
->>>
->>>
->>> @dataclass(init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False)
-... class Astronaut:
-...     firstname: str
-...     lastname: str
->>>
->>> astro1 = Astronaut('Mark', 'Watney')
->>> astro2 = Astronaut('Mark', 'Watney')
->>> astro3 = Astronaut('Jan', 'Twardowski')

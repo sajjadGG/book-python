@@ -32,16 +32,17 @@ Rationale
 
 Operator Module
 ---------------
->>> from operator import and_
->>> and_(True, True)
->>> True
->>> and_(True, False)
->>> False
-
->>> from operator import or_
 >>> from operator import add
->>> from operator import mod
+>>> from operator import sub
+>>> from operator import mul
 >>> from operator import truediv
+>>> from operator import floordiv
+>>> from operator import mod
+>>> from operator import pow
+>>> from operator import matmul
+>>> from operator import neg
+>>> from operator import pos
+>>> from operator import invert
 
 
 Example
@@ -77,9 +78,44 @@ Vector(x=9, y=12)
 Vector(x=11, y=22)
 
 
-Use Case
+Use Case - MOD
 --------
 * ``%`` (``__mod__``) operator behavior for ``int`` and ``str``:
+
+>>> 13 % 4
+1
+>>>
+>>> '13' % '4'
+Traceback (most recent call last):
+TypeError: not all arguments converted during string formatting
+
+>>> pi = 3.1514
+>>>
+>>> 'String: %s' % pi
+'String: 3.1514'
+>>>
+>>> 'Double: %d' % pi
+'Double: 3'
+>>>
+>>> 'Float: %f' % pi
+'Float: 3.151400'
+
+>>> name = 'Mark Watney'
+>>>
+>>> 'Hello %s, how are you?' % name
+'Hello Mark Watney, how are you?'
+
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
+>>>
+>>> 'Hello %s %s' % (firstname, lastname)
+'Echo 1 2'
+
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
+>>>
+>>> 'Echo %(fname)s %(lname)s' % {'fname': firstname, 'lname': lastname}
+'Echo Mark Watney'
 
 >>> class Str:
 ...     def __mod__(self, other):
@@ -92,28 +128,7 @@ Use Case
 ...         if type(other) is dict:
 ...             ...
 
->>> 'Echo' % 2
-Traceback (most recent call last):
-TypeError: not all arguments converted during string formatting
->>> 'Echo %s' % 2
-'Echo 2'
->>> 'Echo %d' % 2
-'Echo 2'
->>> 'Echo %f' % 2
-'Echo 2.000000'
->>> 'Echo %s %s' % (1, 2)
-'Echo 1 2'
->>> 'Echo %s %d %f' % (1, 2, 3)
-'Echo 1 2 3.000000'
->>>
->>> 'Echo %(firstname)s %(lastname)s' % {'firstname': 'Mark', 'lastname': 'Watney'}
-'Echo Mark Watney'
->>>
->>> 'Echo %(name)s %(age)d' % {'name': 'Mark Watney', 'age': 44}
-'Echo Mark Watney 44'
-
-``%s``, ``%d``, ``%f`` is currently deprecated in favor of ``f'...'`` string formatting.
-More information in `Builtin Printing`
+.. note:: Using ``%s``, ``%d``, ``%f`` is currently deprecated in favor of ``f'...'`` string formatting. More information in `Builtin Printing`
 
 
 Assignments

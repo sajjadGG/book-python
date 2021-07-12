@@ -183,11 +183,11 @@ Modules and Packages
     :maxdepth: 1
     :caption: Modules and Packages
 
-    modules/venv.rst
-    modules/install.rst
+    venv/about.rst
+    pip/install.rst
     modules/import.rst
     modules/tools.rst
-    modules/zipapp.rst
+    zipapp/about.rst
     modules/distributing.rst
 
 

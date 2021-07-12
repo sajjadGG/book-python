@@ -54,7 +54,7 @@ Literal Field
 Union Fields
 ------------
 >>> from dataclasses import dataclass
->>> from typing import Optional
+>>> from typing import Union
 >>>
 >>>
 >>> @dataclass
@@ -63,8 +63,9 @@ Union Fields
 ...     lastname: str
 ...     age: Union[int,float]
 
+Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
+
 >>> from dataclasses import dataclass
->>> from typing import Optional
 >>>
 >>>
 >>> @dataclass
@@ -89,7 +90,6 @@ Final Fields
 ...     age: int
 ...     AGE_MIN: Final[int] = 30
 ...     AGE_MAX: Final[int] = 50
-
 
 
 Relation to Objects
@@ -129,14 +129,13 @@ Relation to Self
 * We will cover this topic later
 
 >>> from dataclasses import dataclass
->>> from typing import Optional
 >>>
 >>>
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     friends: Optional[list['Astronaut']] = None
+...     friends: list['Astronaut'] = None
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney', friends=[
@@ -190,7 +189,7 @@ Usecase
 ...    WEIGHT_MIN: Final[int] = 50
 ...    WEIGHT_MAX: Final[int] = 90
 ...    HEIGHT_MIN: Final[int] = 156
-...    HEIGHT_MAX: Final[int] = 198
+...    HEIGHT_MAX: Final[int] = 210
 ...
 ...
 ...    def __init__(self,
@@ -219,9 +218,6 @@ Usecase
 ...        self.agency = agency
 ...        self.firstname = firstname
 ...        self.lastname = lastname
-...
-...
->>> astro = Astronaut('Mark', 'Watney')
 
 ``dataclass``:
 
@@ -255,10 +251,7 @@ Usecase
 ...     WEIGHT_MIN: Final[int] = 50
 ...     WEIGHT_MAX: Final[int] = 90
 ...     HEIGHT_MIN: Final[int] = 156
-...     HEIGHT_MAX: Final[int] = 198
->>>
->>>
->>> astro = Astronaut('Mark', 'Watney')
+...     HEIGHT_MAX: Final[int] = 210
 
 
 Assignments

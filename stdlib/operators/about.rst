@@ -43,17 +43,6 @@ Vector(x=4, y=6)
 Vector(x=9, y=12)
 
 
-Use Case - Game
----------------
->>> hero @ Position(x=50, y=120)  # doctest: +SKIP
->>> hero >> Direction(left=10, up=20)  # doctest: +SKIP
->>>
->>> hero < Damage(20)  # doctest: +SKIP
->>> hero > Damage(20)  # doctest: +SKIP
->>>
->>> hero['gold'] += dragon['gold']  # doctest: +SKIP
-
-
 Further Reading
 ---------------
 * https://docs.python.org/reference/datamodel.html#emulating-numeric-types

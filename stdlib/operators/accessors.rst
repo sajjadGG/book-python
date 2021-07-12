@@ -16,6 +16,20 @@ Rationale
     "``x in obj``",      "``obj.__contains__(x)``"
 
 
+Example
+-------
+>>> def echo(text):
+...     return text
+>>>
+>>>
+>>> echo('Mark Watney')
+'Mark Watney'
+>>>
+>>> echo.__call__('Mark Watney')
+'Mark Watney'
+
+
+
 Use Case
 --------
 >>> data = slice(1, 2, 3)

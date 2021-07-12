@@ -17,19 +17,91 @@ Inheritance
 >>>
 >>> @dataclass
 ... class Person:
-...     name: str
-...     job: str = None
+...     firstname: str
+...     lastname: str
+...     job: str = 'unemployed'
 >>>
 >>>
 >>> @dataclass
 ... class Astronaut(Person):
-...     job: str = 'Astronaut'
+...     job: str = 'astronaut'
+...     agency: str = 'NASA'
+
+Will generate:
+
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     job: str = 'astronaut'
 ...     agency: str = 'NASA'
 >>>
+>>>     def __init__(self,
+...                  firstname: str,
+...                  lastname: str,
+...                  job: str = 'astronaut',
+...                  agency: str = 'NASA'):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...         self.job = job
+...         self.agency = agency
+
+
+Post Init
+---------
+When a child class define ``__post_init__()`` method it will overwrite
+this method from a parent class:
+
+>>> from dataclasses import dataclass
 >>>
+>>>
+>>> @dataclass
+... class Person:
+...     firstname: str
+...     lastname: str
+...
+...     def __post_init__(self):
+...         print('Person post init')
+>>>
+>>>
+>>> @dataclass
+... class Astronaut(Person):
+...     job: str = 'astronaut'
+...
+...     def __post_init__(self):
+...         print('Astronaut post init')
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney')
+Astronaut post init
 
-Will generate ``def __init__(self, name: str, job: str = 'Astronaut', agency: str = 'NASA')``
 
+Super
+-----
+Using ``super()`` allows a child class to call ``__post_init__()`` from
+a superclass. Note that all the parameters are already assigned, no need
+to pass them like for ``__init__()`` function.
 
-Post Init Inheritance
----------------------
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Person:
+...     firstname: str
+...     lastname: str
+...
+...     def __post_init__(self):
+...         print('Person post init')
+>>>
+>>>
+>>> @dataclass
+... class Astronaut(Person):
+...     job: str = 'astronaut'
+...
+...     def __post_init__(self):
+...         super().__post_init__()
+...         print('Astronaut post init')
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney')
+Person post init
+Astronaut post init

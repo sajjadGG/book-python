@@ -1,5 +1,5 @@
-Mutable Attributes
-==================
+Dataclass Mutable Attrs
+=======================
 
 
 Rationale
