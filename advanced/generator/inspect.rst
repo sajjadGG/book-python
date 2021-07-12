@@ -103,7 +103,7 @@ Memory Footprint
 >>> getsizeof(com1000)
 8856
 
-.. figure:: img/idioms-generators-performance.png
+.. figure:: img/generator-function-performance.png
 
     Source: https://www.askpython.com/python/python-yield-examples
 

@@ -158,7 +158,7 @@ Dataclass
     dataclass/postinit.rst
     dataclass/field.rst
     dataclass/mutable-args.rst
-    dataclass/flags.rst
+    dataclass/parameters.rst
     dataclass/helpers.rst
     dataclass/inheritance.rst
 
@@ -184,7 +184,7 @@ Modules and Packages
     :caption: Modules and Packages
 
     venv/about.rst
-    pip/install.rst
+    pip/about.rst
     modules/import.rst
     modules/tools.rst
     zipapp/about.rst
