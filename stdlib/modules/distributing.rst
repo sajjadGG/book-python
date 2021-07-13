@@ -1,5 +1,5 @@
-Distributing Packages
-=====================
+Module Distributing
+===================
 
 
 Installing Packages
