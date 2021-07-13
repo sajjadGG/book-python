@@ -124,18 +124,26 @@ Regular Expressions
     :maxdepth: 1
     :caption: Regular Expressions
 
-    regular-expressions/syntax.rst
-    regular-expressions/match.rst
-    regular-expressions/search.rst
-    regular-expressions/find.rst
-    regular-expressions/compare.rst
-    regular-expressions/compile.rst
-    regular-expressions/groups.rst
-    regular-expressions/multiline.rst
-    regular-expressions/substitute.rst
-    regular-expressions/split.rst
-    regular-expressions/greedy.rst
-    regular-expressions/standards.rst
+    regular-expression/about.rst
+    regular-expression/qualifier.rst
+    regular-expression/identifier.rst
+    regular-expression/negation.rst
+    regular-expression/quantifier.rst
+    regular-expression/group.rst
+    regular-expression/flag.rst
+    regular-expression/look-ahead-behind.rst
+    regular-expression/extension.rst
+    re/match.rst
+    re/search.rst
+    re/find.rst
+    re/compare.rst
+    re/compile.rst
+    re/groups.rst
+    re/multiline.rst
+    re/substitute.rst
+    re/split.rst
+    re/greedy.rst
+    re/standards.rst
 
 
 Enum
