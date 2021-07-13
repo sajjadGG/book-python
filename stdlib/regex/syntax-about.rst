@@ -32,55 +32,196 @@ Escape characters
 * ``\v`` - vertical space
 * ``\f`` - form feed
 
+>>> import string
+>>>
+>>>
+>>> string.whitespace
+' \t\n\r\x0b\x0c'
+
+>>> print('hello\nworld')
+hello
+world
+
+Linefeed means to advance downward to the next line; however, it has been
+repurposed and renamed. Used as "newline", it terminates lines (commonly
+confused with separating lines). This is commonly escaped as \n,
+abbreviated LF or NL, and has ASCII value 10 or 0x0A. CRLF (but not CRNL)
+is used for the pair \r\n [#stackFF]_.
+
+>>> print('hello\r\nworld')
+hello
+world
+
+Carriage return means to return to the beginning of the current line
+without advancing downward. The name comes from a printer's carriage, as
+monitors were rare when the name was coined. This is commonly escaped as
+\r, abbreviated CR, and has ASCII value 13 or 0x0D [#stackFF]_.
+
+>>> print('hello\rworld')
+world
+
+The most common difference (and probably the only one worth worrying
+about) is lines end with CRLF on Windows, NL on Unix-likes, and CR on
+older Macs (the situation has changed with OS X to be like Unix). Note the
+shift in meaning from LF to NL, for the exact same character, gives the
+differences between Windows and Unix. (Windows is, of course, newer than
+Unix, so it didn't adopt this semantic shift. That probably came from the
+Apple II using CR. CR was common on other 8-bit systems, too, like the
+Commodore and Tandy. ASCII wasn't universal on these systems: Commodore
+used PETSCII, which had LF at 0x8d (!). Atari had no LF character at all.
+For whatever reason, CR = 0x0d was more-or-less standard. Many text
+editors can read files in any of these three formats and convert between
+them, but not all utilities can [#stackFF]_.
+
+print('hello\bworld')
+hellworld
+
+\b is a nondestructive backspace. It moves the cursor backward, but
+doesn't erase what's there. Then following output overwrites the previous.
+
+>>> print('hello\sworld')
+hello\sworld
+
+>>> print('hello\tworld')
+hello	world
+
+Form feed means advance downward to the next "page". It was commonly used
+as page separators, but now is also used as section separators. (It's
+uncommonly used in source code to divide logically independent functions
+or groups of functions.) Text editors can use this character when you
+"insert a page break". This is commonly escaped as \f, abbreviated FF, and
+has ASCII value 12 or 0x0C [#stackFF]_.
+
+>>> print('hello\fworld')
+helloworld
+
+Form feed is a bit more interesting (even though less commonly used
+directly), and with the usual definition of page separator, it can only
+come between lines (e.g. after the newline sequence of NL, CRLF, or CR) or
+at the start or end of the file [#stackFF]_.
+
+Vertical tab was used to speed up printer vertical movement. Some printers
+used special tab belts with various tab spots. This helped align content
+on forms. VT to header space, fill in header, VT to body area, fill in
+lines, VT to form footer. Generally it was coded in the program as a
+character constant. From the keyboard, it would be CTRL-K. It is hardly
+used any more. Most forms are generated in a printer control language like
+postscript [#stackVT1]_.
+
+>>> print('hello\vworld')
+hello
+     world
+
+The above output appears to result in the default vertical size being one
+line. This could be used to do line feed without a carriage return on
+devices with convert linefeed to carriage-return + linefeed [#stackVT1]_.
+
+Microsoft Word uses VT as a line separator in order to distinguish it from
+the normal new line function, which is used as a paragraph separator
+[#stackVT2]_.
+
 
 Raw Strings
 -----------
-* Recall information about raw strings ``r'...'``
-* ``'hello\nworld'`` - text ``hello`` and then ``world`` in a new line
-* ``'hello\\nworld'`` - text ``hello``, then ``\n`` and ``world``
-* ``r'hello\nworld'`` - text ``hello``, then ``\n`` and ``world``
+* Recap information about raw strings ``r'...'``
+
+>>> print('hello\nworld')
+hello
+world
+
+>>> print('hello\\nworld')
+hello\nworld
+
+>>> print(r'hello\nworld')
+hello\nworld
 
 
-String
-------
-.. code-block:: python
+ASCII vs Unicode
+----------------
+>>> import string
+>>>
+>>>
+>>> string.ascii_lowercase
+'abcdefghijklmnopqrstuvwxyz'
+>>>
+>>> string.ascii_uppercase
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+>>>
+>>> string.ascii_letters
+'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-    import string
+>>> import unicodedata
+>>>
+>>>
+>>> unicodedata.name('a')
+'LATIN SMALL LETTER A'
+>>>
+>>> unicodedata.name('ą')
+'LATIN SMALL LETTER A WITH OGONEK'
+>>>
+>>> unicodedata.name('ś')
+'LATIN SMALL LETTER S WITH ACUTE'
+>>>
+>>> unicodedata.name('ł')
+'LATIN SMALL LETTER L WITH STROKE'
+>>>
+>>> unicodedata.name('ż')
+'LATIN SMALL LETTER Z WITH DOT ABOVE'
+>>>
 
-    string.punctuation
-    # '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+>>> print('\U0001F680')
+🚀
 
-    string.whitespace
-    # ' \t\n\r\x0b\x0c'
+>>> import unicodedata
+>>>
+>>>
+>>> a = '\U0001F9D1'  # 🧑
+>>> b = '\U0000200D'  # ''
+>>> c = '\U0001F680'  # 🚀
+>>>
+>>> astronaut = a + b + c
+>>> print(astronaut)
+🧑‍🚀
+>>>
+>>> unicodedata.name(a)
+'ADULT'
+>>>
+>>> unicodedata.name(b)
+'ZERO WIDTH JOINER'
+>>>
+>>> unicodedata.name(c)
+'ROCKET'
+>>>
+>>> unicodedata.name(astronaut)
+Traceback (most recent call last):
+TypeError: name() argument 1 must be a unicode character, not str
 
-    string.ascii_lowercase
-    # 'abcdefghijklmnopqrstuvwxyz'
 
-    string.ascii_uppercase
-    # 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
-    string.ascii_letters
-    # 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
-    string.digits
-    # '0123456789'
-
-    string.hexdigits
-    # '0123456789abcdefABCDEF'
-
-    string.octdigits
-    # '01234567'
-
-    string.printable
-    # '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
+Digit, Hexadecimal, Octal
+-------------------------
+>>> import string
+>>>
+>>>
+>>> string.digits
+'0123456789'
+>>>
+>>> string.hexdigits
+'0123456789abcdefABCDEF'
+>>>
+>>> string.octdigits
+'01234567'
 
 
-Examples
---------
-* ISO Date: ``r'^\d{4}-\d{2}-\d{2}$'``
-* US Long Date: ``r'^\w+ \d{2}, \d{4}$'``
-* US Short Date: ``r'^\d{2}/\d{2}/\d{2}$'``
-* Email [#rfc3696]_: ``r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,20}$'``
+Punctuation
+-----------
+>>> import string
+>>>
+>>>
+>>> string.punctuation
+'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+>>>
+>>> string.printable
+'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
 
 
 Visualization
@@ -104,3 +245,7 @@ Further Reading
 References
 ----------
 .. [#rfc3696] Klensin, J. RFC-3696: Application Techniques for Checking and Transformation of Names. The Internet Society Network Working Group. Year: 2004. Retrieved: 2021-05-12. https://datatracker.ietf.org/doc/html/rfc3696#section-3
+
+.. [#stackVT1] https://stackoverflow.com/a/3380554
+.. [#stackVT2] https://stackoverflow.com/a/3385152
+.. [#stackFF] https://stackoverflow.com/a/3098328

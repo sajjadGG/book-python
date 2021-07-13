@@ -1,9 +1,5 @@
-RE Standards
-============
-
-
-Rationale
----------
+Use Cases
+=========
 
 
 National Identification Numbers
@@ -12,16 +8,31 @@ National Identification Numbers
 * https://github.com/arthurdejong/python-stdnum/tree/master/stdnum/pl
 
 
+Dates
+-----
+ISO Date:
+
+>>> r'^\d{4}-\d{2}-\d{2}$'
+
+US Long Date:
+
+>>> r'^\w+ \d{2}, \d{4}$'
+
+US Short Date:
+
+>>> r'^\d{2}/\d{2}/\d{2}$'
+
+
 Email
 -----
-* https://datatracker.ietf.org/doc/html/rfc3696#section-3
-* https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address
+* [#rfc3696]_
 
-W3C HTML5 Standard regexp for email field
+>>> r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,20}$'
 
-    .. code-block:: text
+W3C HTML5 Standard [#w3cemailregex]_ regexp for email field
 
-        /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+>>> r'^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
+
 
 
 URL
@@ -101,4 +112,8 @@ Assignments
 
 References
 ----------
+.. [#rfc3696] RFC 3696. Year: 2019. Retrieved: 2019-03-13. URL: https://datatracker.ietf.org/doc/html/rfc3696#section-3
+
+.. [#w3cemailregex] W3C. Parsing Email. Year: 2019. Retrieved: 2019-03-13. URL: https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address
+
 .. [#W3CParsingURLs] W3C. Parsing URLs. Year: 2019. Retrieved: 2019-03-13. URL: https://dev.w3.org/html5/spec-LC/urls.html#parsing-urls

@@ -146,6 +146,7 @@ Regular Expressions
     regex/syntax-flag.rst
     regex/syntax-look-ahead-behind.rst
     regex/syntax-extension.rst
+    regex/syntax-usecases.rst
     regex/re-match.rst
     regex/re-search.rst
     regex/re-find.rst
@@ -156,7 +157,6 @@ Regular Expressions
     regex/re-substitute.rst
     regex/re-split.rst
     regex/re-greedy.rst
-    regex/re-standards.rst
     regex/re-type-annotation.rst
 
 
