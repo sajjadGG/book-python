@@ -1,5 +1,5 @@
-Regexp Search
-=============
+Re Search
+=========
 
 
 About
@@ -8,9 +8,9 @@ About
 * Searches if pattern contains a string
 
 
-Examples
---------
-Usage of ``re.search()``:
+Example
+-------
+* Usage of ``re.search()``
 
 .. code-block:: python
 

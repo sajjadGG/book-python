@@ -1,9 +1,9 @@
-Regexp Non-Greedy
-=================
+RE Non-Greedy
+=============
 
 
-About
------
+Rationale
+---------
 * Adding ``?`` after the qualifier makes it non-greedy
 * Non-greedy - as few as possible
 * Greedy - as many as possible
@@ -20,8 +20,8 @@ About
     "``+?``", "one or more (non greedy)"
 
 
-Examples
---------
+Example
+-------
 Usage of greedy and non-greedy search in ``re.findall()``:
 
 .. code-block:: python

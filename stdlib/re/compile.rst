@@ -1,15 +1,15 @@
-Regexp Compile
-==============
+RE Compile
+==========
 
 
-About
------
+Rationale
+---------
 * ``re.compile()``
 * Used when pattern is reused (especially in the loop)
 
 
-Examples
---------
+Example
+-------
 Compiles at every loop iteration, and then matches:
 
 .. code-block:: python

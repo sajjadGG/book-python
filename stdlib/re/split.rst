@@ -1,15 +1,15 @@
-Regexp Split
-============
+Re Split
+========
 
 
-About
------
+Rationale
+---------
 * ``re.split()``
 * Split text by pattern
 
 
-Examples
---------
+Example
+-------
 Usage of ``re.split()``:
 
 .. code-block:: python
@@ -22,7 +22,10 @@ Usage of ``re.split()``:
     re.split(PATTERN, DATA, flags=re.IGNORECASE)
     # ['Baked Beans', 'Spam']
 
-Making a Phonebook:
+
+Use Case
+--------
+* Making a Phonebook
 
 .. code-block:: python
 

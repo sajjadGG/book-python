@@ -1,9 +1,9 @@
-Regexp Groups
-=============
+RE Group
+========
 
 
-About
------
+Rationale
+---------
 * ``(?P<name>...)``- Define named group
 * ``(?P=name)``- Backreferencing by group name
 * ``\number`` - Backreferencing by group number
@@ -25,9 +25,9 @@ Example:
     * ``(.+) \1`` not matches ``thethe`` (note the space after the group)
 
 
-Examples
---------
-Usage of group in ``re.match()``:
+Example
+-------
+* Usage of group in ``re.match()``
 
 .. code-block:: python
 

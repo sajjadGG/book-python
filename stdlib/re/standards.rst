@@ -1,5 +1,9 @@
-Regexp Standards
-================
+Re Standards
+============
+
+
+Rationale
+---------
 
 
 National Identification Numbers

@@ -1,9 +1,9 @@
-Regexp Substitute
-=================
+Re Substitute
+=============
 
 
-About
------
+Rationale
+---------
 * ``re.sub()``
 * Replace matched substring with text
 

@@ -1,15 +1,15 @@
-Regexp Findall, Finditer
-========================
+RE Findall, Finditer
+====================
 
 
-About
------
+Rationale
+---------
 * ``re.findall()``
 * ``re.finditer()``
 
 
-Examples
---------
+Example
+-------
 Usage of ``re.findall()`` and ``re.finditer()``:
 
 .. code-block:: python
@@ -23,6 +23,9 @@ Usage of ``re.findall()`` and ``re.finditer()``:
     re.findall(PATTERN, DATA)
     # ['MYPROJ-1337', 'MYPROJ-997']
 
+
+Use Case
+--------
 Finding All Adverbs:
 
 .. code-block:: python

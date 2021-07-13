@@ -1,16 +1,16 @@
-Regexp Match
-============
+RE Match
+========
 
 
-About
------
+Rationale
+---------
 * ``re.match()``
 * Checks exact match
 * Checking if user input is correct (email, url, NIP, VAT ID, PESEL)
 
 
-Examples
---------
+Example
+-------
 Usage of ``re.match()``:
 
 .. code-block:: python

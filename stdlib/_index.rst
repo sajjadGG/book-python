@@ -138,7 +138,7 @@ Regular Expressions
     re/find.rst
     re/compare.rst
     re/compile.rst
-    re/groups.rst
+    re/group.rst
     re/multiline.rst
     re/substitute.rst
     re/split.rst

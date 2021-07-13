@@ -1,8 +1,9 @@
-Regexp Multiline
-================
+Re Multiline
+============
 
-About
------
+
+Rationale
+---------
 * ``re.MULTILINE`` - Flag turns on Multiline search
 * ``^`` - Matches the start of the string, and immediately after each newline
 * ``$`` - Matches the end of the string or just before the newline at the end of the string also matches before a newline
@@ -17,9 +18,9 @@ About
     "``re.DOTALL``",     "``.`` matches newlines"
 
 
-Examples
---------
-Usage of regexp:
+Example
+-------
+* Usage of regexp
 
 .. code-block:: python
 
@@ -37,8 +38,6 @@ Usage of regexp:
 
     re.findall(PATTERN, TEXT, flags=re.MULTILINE)
     # ['MYPROJ-1337', 'MYPROJ-997']
-
-Usage of regexp:
 
 .. code-block:: python
 
