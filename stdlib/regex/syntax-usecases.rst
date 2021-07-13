@@ -16,7 +16,7 @@ ISO Date:
 
 US Long Date:
 
->>> r'^\w+ \d{2}, \d{4}$'
+>>> pattern = r'^\w+ \d{2}, \d{4}$'
 
 US Short Date:
 
@@ -32,7 +32,6 @@ Email
 W3C HTML5 Standard [#w3cemailregex]_ regexp for email field
 
 >>> pattern = r'^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
-
 
 
 URL
