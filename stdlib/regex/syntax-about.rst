@@ -73,7 +73,7 @@ For whatever reason, CR = 0x0d was more-or-less standard. Many text
 editors can read files in any of these three formats and convert between
 them, but not all utilities can [#stackFF]_.
 
-print('hello\bworld')
+>>> print('hello\bworld')  # doctest: +SKIP
 hellworld
 
 \b is a nondestructive backspace. It moves the cursor backward, but
