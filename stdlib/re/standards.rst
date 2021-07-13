@@ -1,4 +1,4 @@
-Re Standards
+RE Standards
 ============
 
 

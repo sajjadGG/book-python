@@ -1,4 +1,4 @@
-Re Substitute
+RE Substitute
 =============
 
 
