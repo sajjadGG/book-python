@@ -137,27 +137,27 @@ Regular Expressions
     :maxdepth: 1
     :caption: Regular Expressions
 
-    regular-expression/about.rst
-    regular-expression/qualifier.rst
-    regular-expression/identifier.rst
-    regular-expression/negation.rst
-    regular-expression/quantifier.rst
-    regular-expression/group.rst
-    regular-expression/flag.rst
-    regular-expression/look-ahead-behind.rst
-    regular-expression/extension.rst
-    re/match.rst
-    re/search.rst
-    re/find.rst
-    re/compare.rst
-    re/compile.rst
-    re/group.rst
-    re/multiline.rst
-    re/substitute.rst
-    re/split.rst
-    re/greedy.rst
-    re/standards.rst
-    re/type-annotation.rst
+    regex/syntax-about.rst
+    regex/syntax-qualifier.rst
+    regex/syntax-identifier.rst
+    regex/syntax-negation.rst
+    regex/syntax-quantifier.rst
+    regex/syntax-group.rst
+    regex/syntax-flag.rst
+    regex/syntax-look-ahead-behind.rst
+    regex/syntax-extension.rst
+    regex/re-match.rst
+    regex/re-search.rst
+    regex/re-find.rst
+    regex/re-compare.rst
+    regex/re-compile.rst
+    regex/re-group.rst
+    regex/re-multiline.rst
+    regex/re-substitute.rst
+    regex/re-split.rst
+    regex/re-greedy.rst
+    regex/re-standards.rst
+    regex/re-type-annotation.rst
 
 
 Enum
