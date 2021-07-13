@@ -17,22 +17,29 @@ Rationale
 * ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
 * ``ASCII`` - ASCII characters only
 
-.. figure:: img/locale-encoding-windows2000-notepad-saveas.png
 
-    Windows 2000 Notepad "Save As" window with possibility to select encoding. UTF-8 is not selected by default... [#Windows2000]_
+ASCII Table
+-----------
+* Standard (0–127)
+* Extended (128–255)
+* Standard ASCII is the same everywhere
+* Extended ASCII is Operating System dependent
 
-.. figure:: img/locale-encoding-windows10-notepad-saveas.png
+.. figure:: img/locale-encoding-ascii-std.png
 
-    Windows 10 Notepad "Save As" window with possibility to select encoding. Since Windows 10.1903 (May 2019) notepad writes files in UTF-8 by default! [#Windows10]_ [#Microsoft]_
+    ASCII table [#asciioreilly]_
 
-.. figure:: img/locale-encoding-ascii.jpg
+.. figure:: img/locale-encoding-ascii-ext.png
 
-    ASCII table [#Spinall2015]_
+    ASCII table extended [#asciioreilly]_
 
-.. figure:: img/locale-encoding-asciiext.png
+.. figure:: img/locale-encoding-ascii-all.jpg
 
-    ASCII table extended [#wikiAsciiExtened]_
+    Source: [#ascii2]_
 
+
+Unicode
+-------
 .. figure:: img/locale-encoding-unicode2.png
 
     Unicode [#gammon]_
@@ -40,6 +47,17 @@ Rationale
 .. figure:: img/locale-encoding-unicode3.png
 
     Unicode [#ilovefreesoftware]_
+
+
+Windows Encoding
+----------------
+.. figure:: img/locale-encoding-windows2000-notepad-saveas.png
+
+    Windows 2000 Notepad "Save As" window with possibility to select encoding. UTF-8 is not selected by default... [#Windows2000]_
+
+.. figure:: img/locale-encoding-windows10-notepad-saveas.png
+
+    Windows 10 Notepad "Save As" window with possibility to select encoding. Since Windows 10.1903 (May 2019) notepad writes files in UTF-8 by default! [#Windows10]_ [#Microsoft]_
 
 
 Str vs Bytes
@@ -146,15 +164,15 @@ c
 
 UTF-8
 -----
-    >>> FILE = r'/tmp/myfile.txt'
-    >>>
-    >>> with open(FILE, mode='w', encoding='utf-8') as file:
-    ...     file.write('Иван Иванович')
-    13
-    >>>
-    >>> with open(FILE, encoding='utf-8') as file:
-    ...     print(file.read())
-    Иван Иванович
+>>> FILE = r'/tmp/myfile.txt'
+>>>
+>>> with open(FILE, mode='w', encoding='utf-8') as file:
+...     file.write('Иван Иванович')
+13
+>>>
+>>> with open(FILE, encoding='utf-8') as file:
+...     print(file.read())
+Иван Иванович
 
 
 .. figure:: img/locale-encoding-utf.png
@@ -168,26 +186,26 @@ UTF-8
 
 Unicode Encode Error
 --------------------
-    >>> FILE = r'/tmp/myfile.txt'
-    >>>
-    >>> with open(FILE, mode='w', encoding='cp1250') as file:
-    ...     file.write('Иван Иванович')
-    Traceback (most recent call last):
-    UnicodeEncodeError: 'charmap' codec can't encode characters in position 0-3: character maps to <undefined>
+>>> FILE = r'/tmp/myfile.txt'
+>>>
+>>> with open(FILE, mode='w', encoding='cp1250') as file:
+...     file.write('Иван Иванович')
+Traceback (most recent call last):
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 0-3: character maps to <undefined>
 
 
 Unicode Decode Error
 --------------------
-    >>> FILE = r'/tmp/myfile.txt'
-    >>>
-    >>> with open(FILE, mode='w', encoding='utf-8') as file:
-    ...     file.write('Иван Иванович')
-    13
-    >>>
-    >>> with open(FILE, encoding='cp1250') as file:
-    ...     print(file.read())
-    Traceback (most recent call last):
-    UnicodeDecodeError: 'charmap' codec can't decode byte 0x98 in position 1: character maps to <undefined>
+>>> FILE = r'/tmp/myfile.txt'
+>>>
+>>> with open(FILE, mode='w', encoding='utf-8') as file:
+...     file.write('Иван Иванович')
+13
+>>>
+>>> with open(FILE, encoding='cp1250') as file:
+...     print(file.read())
+Traceback (most recent call last):
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x98 in position 1: character maps to <undefined>
 
 
 Escape Characters
@@ -200,6 +218,8 @@ Escape Characters
 .. figure:: img/type-machine.jpg
 
     Why we have '\\r\\n' on Windows?
+
+.. figure:: img/type-machine.gif
 
 Frequently used escape characters:
 
@@ -222,16 +242,16 @@ Less frequently used escape characters:
 
 Emoticons:
 
-    >>> print('\U0001F680')
-    🚀
+>>> print('\U0001F680')
+🚀
 
-    >>> a = '\U0001F9D1'  # 🧑
-    >>> b = '\U0000200D'  # ''
-    >>> c = '\U0001F680'  # 🚀
-    >>>
-    >>> astronaut = a + b + c
-    >>> print(astronaut)
-    🧑‍🚀
+>>> a = '\U0001F9D1'  # 🧑
+>>> b = '\U0000200D'  # ''
+>>> c = '\U0001F680'  # 🚀
+>>>
+>>> astronaut = a + b + c
+>>> print(astronaut)
+🧑‍🚀
 
 
 References
@@ -239,9 +259,9 @@ References
 .. [#Windows2000] redhotwords.com. Windows 2000 Notepad. http://redhotwords.com/assets/Uninotepadunicode.png
 .. [#Windows10] digitalcitizen.life. Windows 10 Notepad. https://www.digitalcitizen.life/sites/default/files/gdrive/windows_notepad/notepad_10.png
 .. [#Microsoft] https://docs.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1903
-.. [#Spinall2015] Briana Spinall. Better Ascii Table. 2015. http://brianaspinall.com/wp-content/uploads/2015/11/better_ascii_table.jpg
+.. [#asciioreilly] https://www.oreilly.com/library/view/c/9781482214512/K21756_A002.xhtml
 .. [#gammon] http://www.gammon.com.au/unicode/gbk.svg.png
 .. [#ilovefreesoftware] http://cdn.ilovefreesoftware.com/wp-content/uploads/2016/10/unicode-Character-list-1.png
 .. [#unicode1] https://camo.githubusercontent.com/7806142e30089cac76da9fe9fb1c5bbd0521cde6/68747470733a2f2f692e696d6775722e636f6d2f7a414d74436a622e706e67
 .. [#unicode2] https://i.pinimg.com/736x/12/e2/37/12e237271c063313762fcafa1cf58e39--web-development-tools.jpg
-.. [#wikiAsciiExtened] Yuriy Arabskyy. ASCII Tabelle, alt. 2013. https://commons.wikimedia.org/wiki/File:Ascii-codes-table.png
+.. [#ascii2] https://www.keepandshare.com/userpics/r/o/b/e/rt/2019-12/sb/screen_shot_2019_12_01_at_3.26.20_pm-34867850.jpg?ts=1575242835
