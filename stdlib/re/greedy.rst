@@ -44,6 +44,6 @@ Usage of greedy and non-greedy search with groups:
 
 Assignments
 -----------
-.. literalinclude:: assignments/regexp_greedy_a.py
-    :caption: :download:`Solution <assignments/regexp_greedy_a.py>`
+.. literalinclude:: assignments/re_greedy_a.py
+    :caption: :download:`Solution <assignments/re_greedy_a.py>`
     :end-before: # Solution

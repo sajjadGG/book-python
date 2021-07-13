@@ -94,8 +94,8 @@ To parse a *URL* url into its component parts, the user agent must use the follo
 
 Assignments
 -----------
-.. literalinclude:: assignments/regexp_standards_a.py
-    :caption: :download:`Solution <assignments/regexp_standards_a.py>`
+.. literalinclude:: assignments/re_standards_a.py
+    :caption: :download:`Solution <assignments/re_standards_a.py>`
     :end-before: # Solution
 
 

@@ -1,5 +1,5 @@
-Pickle To File
-==============
+Pickle File
+===========
 
 
 Rationale
@@ -34,6 +34,10 @@ Load from file:
 
 Assignments
 -----------
-.. literalinclude:: assignments/pickle_tofile_a.py
-    :caption: :download:`Solution <assignments/pickle_tofile_a.py>`
+.. literalinclude:: assignments/pickle_file_a.py
+    :caption: :download:`Solution <assignments/pickle_file_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/pickle_file_b.py
+    :caption: :download:`Solution <assignments/pickle_file_b.py>`
     :end-before: # Solution

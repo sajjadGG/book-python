@@ -60,6 +60,6 @@ Use Case
 
 Assignments
 -----------
-.. literalinclude:: assignments/regexp_split_a.py
-    :caption: :download:`Solution <assignments/regexp_split_a.py>`
+.. literalinclude:: assignments/re_split_a.py
+    :caption: :download:`Solution <assignments/re_split_a.py>`
     :end-before: # Solution

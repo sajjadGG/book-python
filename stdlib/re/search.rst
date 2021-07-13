@@ -32,20 +32,47 @@ Example
     contains(REDMINE_NUMBER, COMMIT_MESSAGE)     # False
 
 
+result = re.search('Neil Armstrong', DATA)
+result.span()
+(78, 92)
+result.regs
+((78, 92),)
+DATA[78]
+'N'
+DATA[78:92]
+'Neil Armstrong'
+
+
+
+result = re.search('Mark Watney', DATA)
+result.group()
+AttributeError: 'NoneType' object has no attribute 'group'
+
+
+
+result = re.search('Mark Watney', DATA)
+if result:
+    result.group()
+
+
+if result := re.search('Mark Watney', DATA):
+    result.group()
+
+
 Assignments
 -----------
-.. literalinclude:: assignments/regexp_search_a.py
-    :caption: :download:`Solution <assignments/regexp_search_a.py>`
+.. literalinclude:: assignments/re_search_a.py
+    :caption: :download:`Solution <assignments/re_search_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/regexp_search_b.py
-    :caption: :download:`Solution <assignments/regexp_search_b.py>`
+.. literalinclude:: assignments/re_search_b.py
+    :caption: :download:`Solution <assignments/re_search_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/regexp_search_c.py
-    :caption: :download:`Solution <assignments/regexp_search_c.py>`
+.. literalinclude:: assignments/re_search_c.py
+    :caption: :download:`Solution <assignments/re_search_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/regexp_search_d.py
-    :caption: :download:`Solution <assignments/regexp_search_d.py>`
+.. literalinclude:: assignments/re_search_d.py
+    :caption: :download:`Solution <assignments/re_search_d.py>`
     :end-before: # Solution

@@ -1,17 +1,17 @@
 """
-* Assignment: Regexp Search Time
+* Assignment: RE Search Time
 * Complexity: medium
 * Lines of code: 4 lines
 * Time: 5 min
 
 English:
-    1. Use regular expressions to check text [1] contains time in UTC (format: `%H:%M UTC`)
+    1. Use regular expressions to check `TEXT` [1] contains time in UTC (format: `%H:%M UTC`)
     2. Use simplified checking: `##:## UTC`, where `#` is a digit
     3. Define `result: str` with matched time
     4. Run doctests - all must succeed
 
 Polish:
-    1. Użyj wyrażeń regularnych do sprawdzenia czy tekst [1] zawiera godzinę w UTC (format: `%H:%M UTC`)
+    1. Użyj wyrażeń regularnych do sprawdzenia czy `TEXT` [1] zawiera godzinę w UTC (format: `%H:%M UTC`)
     2. Użyj uproszczonego sprawdzania: `##:## UTC`, gdzie `#` to dowolna cyfra
     3. Zdefiniuj `result: str` ze znalezionym czasem
     4. Uruchom doctesty - wszystkie muszą się powieść
@@ -23,10 +23,13 @@ References:
         Retreived: 2019-12-14
 
 Hints:
-    * `.group()`
+    * `re.Match.group()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+
+    >>> assert type(result) is str, 'result must be a str'
+    >>> assert result.endswith('UTC'), 'result must contain timezone'
 
     >>> result
     '20:17 UTC'
@@ -35,7 +38,7 @@ Tests:
 import re
 
 
-DATA = ("Apollo 11 was the spaceflight that first landed humans on the Moon. "
+TEXT = ("Apollo 11 was the spaceflight that first landed humans on the Moon. "
         "Commander Neil Armstrong and lunar module pilot Buzz Aldrin formed "
         "the American crew that landed the Apollo Lunar Module Eagle on July "
         "20, 1969, at 20:17 UTC. Armstrong became the first person to step "
@@ -49,9 +52,14 @@ DATA = ("Apollo 11 was the spaceflight that first landed humans on the Moon. "
         "at a site they named Tranquility Base before lifting off to rejoin "
         "Columbia in lunar orbit.")
 
+
+# str: Pattern for searching time with timezone in 24 format, i.e. '23:59 UTC'
+pattern = ...
+
+# re.Match: use re.search() to find pattern in TEXT, get result text
 result = ...
 
 
 # Solution
 pattern = r'\d{2}:\d{2} UTC'
-result = re.search(pattern, DATA).group()
+result = re.search(pattern, TEXT).group()

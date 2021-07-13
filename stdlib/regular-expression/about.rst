@@ -15,8 +15,8 @@ Regular Expressions are also known as:
 
 Syntax
 ------
-* Identifiers - what to find
-* Qualifiers - range to find
+* Identifiers - what to find (single character)
+* Qualifiers - range to find (range)
 * Quantifiers - how many occurrences of preceding qualifier or identifier
 
 
@@ -39,12 +39,6 @@ Raw Strings
 * ``'hello\nworld'`` - text ``hello`` and then ``world`` in a new line
 * ``'hello\\nworld'`` - text ``hello``, then ``\n`` and ``world``
 * ``r'hello\nworld'`` - text ``hello``, then ``\n`` and ``world``
-
-
-Type Annotation
----------------
-* ``re.Pattern``
-* ``re.Match``
 
 
 String

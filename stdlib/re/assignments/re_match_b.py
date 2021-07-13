@@ -1,5 +1,5 @@
 """
-* Assignment: Regexp Match Git Flow
+* Assignment: RE Match Git Flow
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min

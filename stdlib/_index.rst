@@ -9,6 +9,19 @@ About
     about/entrytest.rst
 
 
+Unpacking
+*********
+.. toctree::
+    :maxdepth: 1
+    :caption: Unpacking
+
+    unpacking/assignment.rst
+    unpacking/parameters.rst
+    unpacking/arguments.rst
+    unpacking/assignment-expression.rst
+    unpacking/parameter-syntax.rst
+
+
 Type Annotation
 ***************
 .. toctree::
@@ -78,7 +91,7 @@ Pickle
     pickle/dump.rst
     pickle/load.rst
     pickle/objects.rst
-    pickle/to-file.rst
+    pickle/file.rst
 
 
 Database
@@ -144,6 +157,7 @@ Regular Expressions
     re/split.rst
     re/greedy.rst
     re/standards.rst
+    re/type-annotation.rst
 
 
 Enum
@@ -197,19 +211,6 @@ Modules and Packages
     modules/tools.rst
     zipapp/about.rst
     modules/distributing.rst
-
-
-Unpacking
-*********
-.. toctree::
-    :maxdepth: 1
-    :caption: Unpacking
-
-    unpacking/assignment.rst
-    unpacking/parameters.rst
-    unpacking/arguments.rst
-    unpacking/assignment-expression.rst
-    unpacking/parameter-syntax.rst
 
 
 Logging

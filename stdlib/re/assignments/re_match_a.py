@@ -1,5 +1,5 @@
 """
-* Assignment: Regexp Match Phones
+* Assignment: RE Match Phones
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min
@@ -18,7 +18,7 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> def is_valid_phone(number):
-    ...     if re.match(pattern, number):
+    ...     if re.match(result, number):
     ...         return True
     ...     else:
     ...         return False
@@ -53,10 +53,18 @@ Tests:
 
 import re
 
-pattern = ...  # str: pattern matching `+## ### ### ###` and `+## ## ### ####`
+
+# str: pattern matching `+## ### ### ###`
+cell = ...
+
+# str: pattern matching `+## ## ### ####`
+work = ...
+
+# str: combination of `+## ### ### ###` and `+## ## ### ####`
+result = ...
 
 
 # Solution
 cell = r'\+\d{2} \d{3} \d{3} \d{3}'
 work = r'\+\d{2} \d{2} \d{3} \d{4}'
-pattern = f'^({cell}|{work})$'
+result = f'^({cell}|{work})$'

@@ -42,6 +42,6 @@ Finding All Adverbs:
 
 Assignments
 -----------
-.. literalinclude:: assignments/regexp_find_a.py
-    :caption: :download:`Solution <assignments/regexp_find_a.py>`
+.. literalinclude:: assignments/re_find_a.py
+    :caption: :download:`Solution <assignments/re_find_a.py>`
     :end-before: # Solution

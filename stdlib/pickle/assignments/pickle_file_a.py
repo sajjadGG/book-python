@@ -1,26 +1,30 @@
 """
-* Assignment: Pickle Serialization
+* Assignment: Pickle File Serialize
 * Complexity: easy
-* Lines of code: 4 lines
-* Time: 5 min
+* Lines of code: 2 lines
+* Time: 3 min
 
 English:
-    1. Using `pickle` save data structure to file
-    2. Recreate data structure from file
+    1. Save `DATA` to `FILE`
+    2. Use `pickle` module
     3. Run doctests - all must succeed
 
 Polish:
-    1. Za pomocą `pickle` zapisz strukturę danych do pliku
-    2. Odtwórz strukturę danych na podstawie danych z pliku
+    1. Zapisz `DATA` do `FILE`
+    2. Użyj modułu `pickle`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> with open(FILE, mode='rb') as file:
+    ...     result = pickle.load(file)
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [Astronaut(name='Jan Twardowski', missions=[Mission(year=1969, name='Apollo 18'), Mission(year=2024, name='Artemis 3')]),
      Astronaut(name='Mark Watney', missions=[Mission(year=2035, name='Ares 3')]),
      Astronaut(name='Melissa Lewis', missions=[])]
+
     >>> from os import remove
     >>> remove(FILE)
 """
@@ -43,7 +47,7 @@ class Mission:
     name: str
 
 
-CREW = [
+DATA = [
     Astronaut('Jan Twardowski', missions=[
         Mission(1969, 'Apollo 18'),
         Mission(2024, 'Artemis 3')]),
@@ -57,8 +61,4 @@ CREW = [
 
 # Solution
 with open(FILE, mode='wb') as file:
-    pickle.dump(CREW, file)
-
-
-with open(FILE, mode='rb') as file:
-    result = pickle.load(file)
+    pickle.dump(DATA, file)

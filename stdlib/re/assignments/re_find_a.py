@@ -1,17 +1,17 @@
 """
-* Assignment: Regexp Find Dates
+* Assignment: RE Find Dates
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min
 
 English:
-    1. Using regular expressions find dates in US long format
-       example: "April 12, 1961"
+    1. Using regular expressions find dates in:
+       US long format, i.e. "April 12, 1961"
     2. Run doctests - all must succeed
 
 Polish:
-    1. Używając wyrażeń regularnych wyszukaj dat w formacie amerykańskim długim
-       przykład: "April 12, 1961"
+    1. Używając wyrażeń regularnych wyszukaj dat w:
+       formacie amerykańskim długim np. "April 12, 1961"
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 References:
@@ -96,6 +96,8 @@ TEXT = ("In the late 1950s and early 1960s, the United States was engaged in "
         "challenge is one that we are willing to accept, one we are unwilling "
         "to postpone, and one we intend to win, and the others, too.")
 
+
+# re.Match: use re.findall() to get dates in US format, i.e. "April 12, 1961"
 result = ...
 
 

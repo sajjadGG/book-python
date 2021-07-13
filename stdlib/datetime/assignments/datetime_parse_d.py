@@ -13,7 +13,7 @@ Polish:
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * `for ... in``
+    * `for ... in`
     * nested `try ... except`
 
 Tests:

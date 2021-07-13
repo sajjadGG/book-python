@@ -1,5 +1,5 @@
 """
-* Assignment: Regexp Search Datetime
+* Assignment: RE Search Datetime
 * Complexity: hard
 * Lines of code: 4 lines
 * Time: 13 min
@@ -25,10 +25,13 @@ References:
         Retreived: 2019-12-14
 
 Hints:
-    * `.group()`
+    * `re.Match.group()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+
+    >>> assert type(result) is str, 'result must be a str'
+    >>> assert result.endswith('UTC'), 'result must contain timezone'
 
     >>> result
     '02:56 UTC'
@@ -40,7 +43,7 @@ import re
 DATA = ("Apollo 11 was the spaceflight that first landed humans on the Moon. "
         "Commander Neil Armstrong and lunar module pilot Buzz Aldrin formed "
         "the American crew that landed the Apollo Lunar Module Eagle on July "
-        "20, 1969, at 20:60 UTC. Armstrong became the first person to step "
+        "20, 1969, at 24:56 UTC. Armstrong became the first person to step "
         "onto the lunar surface six hours and 39 minutes later on July 21 at "
         "02:56 UTC; Aldrin joined him 19 minutes later. They spent about two "
         "and a quarter hours together outside the spacecraft, and they "
@@ -51,10 +54,17 @@ DATA = ("Apollo 11 was the spaceflight that first landed humans on the Moon. "
         "at a site they named Tranquility Base before lifting off to rejoin "
         "Columbia in lunar orbit.")
 
+
+# str: Pattern for searching time with timezone in 24 format, i.e. '23:59 UTC'
+pattern = ...
+
+# re.Match: use re.search() to find pattern in TEXT, get result text
 result = ...
 
 
 # Solution
-pattern = r'([01][0-9]|[2][0-4]):[0-5][0-9] UTC'
+hour = '([01][0-9]|2[0-3])'
+minute = '[0-5][0-9]'
+pattern = f'{hour}:{minute} UTC'
 result = re.search(pattern, DATA).group()
 

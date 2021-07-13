@@ -1,5 +1,5 @@
 """
-* Assignment: Regexp Standards PESEL
+* Assignment: RE Standards PESEL
 * Complexity: medium
 * Lines of code: 0 lines
 * Time: 5 min
