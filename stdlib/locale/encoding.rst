@@ -1,5 +1,5 @@
-File Encoding
-=============
+Locale Encoding
+===============
 
 .. testsetup::
 

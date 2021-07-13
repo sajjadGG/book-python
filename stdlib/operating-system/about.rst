@@ -1,5 +1,5 @@
-Interpreter declaration
-=======================
+OS Interpreter
+==============
 
 * Declare interpreter for standalone scripts ``#!/usr/bin/env python3``
 

@@ -1,5 +1,5 @@
-Operating System
-================
+OS Operating System
+===================
 
 
 Bitwise operators
