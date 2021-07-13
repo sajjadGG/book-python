@@ -1,5 +1,5 @@
-Regex Group
-===========
+Syntax Group
+============
 
 
 Rationale

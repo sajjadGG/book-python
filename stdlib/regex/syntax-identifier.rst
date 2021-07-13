@@ -1,5 +1,5 @@
-Regex Identifier
-================
+Syntax Identifier
+=================
 
 
 Rationale

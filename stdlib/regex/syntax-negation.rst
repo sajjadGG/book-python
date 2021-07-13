@@ -1,5 +1,5 @@
-Regex Negation
-==============
+Syntax Negation
+===============
 
 
 Rationale

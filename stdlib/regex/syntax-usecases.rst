@@ -1,5 +1,5 @@
-Use Cases
-=========
+Syntax Use Cases
+================
 
 
 National Identification Numbers
@@ -12,7 +12,7 @@ Dates
 -----
 ISO Date:
 
->>> r'^\d{4}-\d{2}-\d{2}$'
+>>> pattern = r'^\d{4}-\d{2}-\d{2}$'
 
 US Long Date:
 
@@ -20,18 +20,18 @@ US Long Date:
 
 US Short Date:
 
->>> r'^\d{2}/\d{2}/\d{2}$'
+>>> pattern = r'^\d{2}/\d{2}/\d{2}$'
 
 
 Email
 -----
 * [#rfc3696]_
 
->>> r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,20}$'
+>>> pattern = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,20}$'
 
 W3C HTML5 Standard [#w3cemailregex]_ regexp for email field
 
->>> r'^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
+>>> pattern = r'^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
 
 
 
@@ -39,10 +39,15 @@ URL
 ---
 W3C standard for URL understanding
 
-    .. code-block:: text
-
-        ^(?=[^&])(?:(?<scheme>[^:/?#]+):)?(?://(?<authority>[^/?#]*))?(?<path>[^?#]*)(?:\?(?<query>[^#]*))?(?:#(?<fragment>.*))?
-
+>>> scheme = r'(?:(?<scheme>[^:/?#]+):)?'
+>>> authority = r'(?://(?<authority>[^/?#]*))?'
+>>> path = r'(?<path>[^?#]*)'
+>>> query = r'(?:\?(?<query>[^#]*))?'
+>>> fragment = r'(?:#(?<fragment>.*))?'
+>>>
+>>> pattern = f'^(?=[^&]){scheme}{authority}{path}{query}{fragment}'
+>>> print(pattern)
+^(?=[^&])(?:(?<scheme>[^:/?#]+):)?(?://(?<authority>[^/?#]*))?(?<path>[^?#]*)(?:\?(?<query>[^#]*))?(?:#(?<fragment>.*))?
 
 W3C standard for URL parsing
 

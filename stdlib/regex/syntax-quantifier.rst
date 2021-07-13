@@ -1,5 +1,5 @@
-Regex Quantifier
-================
+Syntax Quantifier
+=================
 
 
 Rationale

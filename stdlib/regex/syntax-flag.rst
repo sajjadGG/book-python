@@ -1,5 +1,5 @@
-Regex Flag
-==========
+Syntax Flag
+===========
 
 
 Rationale

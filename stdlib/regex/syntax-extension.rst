@@ -1,5 +1,5 @@
-Regex Extension
-===============
+Syntax Extension
+================
 
 
 Rationale

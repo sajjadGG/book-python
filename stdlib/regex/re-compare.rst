@@ -24,4 +24,4 @@ Example
 'MYPROJ-1337'
 >>>
 >>> re.match(PATTERN, DATA)
-# None
+<re.Match object; span=(0, 11), match='MYPROJ-1337'>

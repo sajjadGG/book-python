@@ -1,5 +1,5 @@
-Regex About
-===========
+Syntax About
+============
 
 
 Rationale
@@ -48,7 +48,7 @@ confused with separating lines). This is commonly escaped as \n,
 abbreviated LF or NL, and has ASCII value 10 or 0x0A. CRLF (but not CRNL)
 is used for the pair \r\n [#stackFF]_.
 
->>> print('hello\r\nworld')
+>>> print('hello\r\nworld')  # doctest: +SKIP
 hello
 world
 
@@ -57,7 +57,7 @@ without advancing downward. The name comes from a printer's carriage, as
 monitors were rare when the name was coined. This is commonly escaped as
 \r, abbreviated CR, and has ASCII value 13 or 0x0D [#stackFF]_.
 
->>> print('hello\rworld')
+>>> print('hello\rworld')  # doctest: +SKIP
 world
 
 The most common difference (and probably the only one worth worrying
@@ -79,10 +79,10 @@ hellworld
 \b is a nondestructive backspace. It moves the cursor backward, but
 doesn't erase what's there. Then following output overwrites the previous.
 
->>> print('hello\sworld')
+>>> print('hello\sworld')  # doctest: +SKIP
 hello\sworld
 
->>> print('hello\tworld')
+>>> print('hello\tworld')  # doctest: +SKIP
 hello	world
 
 Form feed means advance downward to the next "page". It was commonly used
@@ -92,7 +92,7 @@ or groups of functions.) Text editors can use this character when you
 "insert a page break". This is commonly escaped as \f, abbreviated FF, and
 has ASCII value 12 or 0x0C [#stackFF]_.
 
->>> print('hello\fworld')
+>>> print('hello\fworld')  # doctest: +SKIP
 helloworld
 
 Form feed is a bit more interesting (even though less commonly used
@@ -108,7 +108,7 @@ character constant. From the keyboard, it would be CTRL-K. It is hardly
 used any more. Most forms are generated in a printer control language like
 postscript [#stackVT1]_.
 
->>> print('hello\vworld')
+>>> print('hello\vworld')  # doctest: +SKIP
 hello
      world
 

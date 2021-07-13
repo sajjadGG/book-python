@@ -1,5 +1,5 @@
-Regex Qualifier
-===============
+Syntax Qualifier
+================
 
 
 Rationale
