@@ -142,6 +142,15 @@ language used [mskeycodes]_, [jskeycodes]_.
 ...     case _:
 ...         raise ValueError(f'Unrecognized key')
 
+>>> # doctest: +SKIP
+... match keyboard.on_key_press():
+...     case Key.ESC:          game.quit()
+...     case Key.ARROW_LEFT:   game.move_left()
+...     case Key.ARROW_UP:     game.move_up()
+...     case Key.ARROW_RIGHT:  game.move_right()
+...     case Key.ARROW_DOWN:   game.move_down()
+...     case _: raise ValueError(f'Unrecognized key')
+
 
 Use Case - HTTP Status
 ----------------------

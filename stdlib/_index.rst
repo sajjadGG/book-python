@@ -18,8 +18,8 @@ Unpacking
     unpacking/assignment.rst
     unpacking/parameters.rst
     unpacking/arguments.rst
-    unpacking/assignment-expression.rst
     unpacking/parameter-syntax.rst
+    unpacking/assignment-expression.rst
 
 
 Type Annotation
