@@ -4,21 +4,21 @@ Linear Algebra
 
 
 Linear Algebra
--------------------------------------------------------------------------------
+--------------
 * ``np.sign()``
 * ``np.abs()``
 * ``np.sqrt()``
 * ``np.power()``
 
 Logarithms
--------------------------------------------------------------------------------
+----------
 * ``np.log()``
 * ``np.log10()``
 * ``np.exp()``
 
 
 Vector and matrix mathematics
--------------------------------------------------------------------------------
+-----------------------------
 
 
 Determinant of a square matrix
@@ -135,7 +135,7 @@ One vector with dimension 2:
 
 
 Eigenvalues and vectors of a square matrix
--------------------------------------------------------------------------------
+------------------------------------------
 * Each of a set of values of a parameter for which a differential equation has a nonzero solution (an eigenfunction) under given conditions
 * Any number such that a given matrix minus that number times the identity matrix has a zero determinant
 
@@ -161,7 +161,7 @@ Eigenvalues and vectors of a square matrix
 
 
 Inverse of a square matrix
--------------------------------------------------------------------------------
+--------------------------
 .. code-block:: python
 
     import numpy as np
@@ -192,7 +192,7 @@ Inverse of a square matrix
 
 
 Singular value decomposition of a matrix
--------------------------------------------------------------------------------
+----------------------------------------
 .. code-block:: python
 
     import numpy as np
@@ -216,7 +216,7 @@ Singular value decomposition of a matrix
 
 
 Linear Algebra
--------------------------------------------------------------------------------
+--------------
 .. csv-table:: Linear algebra basics
     :header-rows: 1
 
@@ -258,8 +258,8 @@ Linear Algebra
 
 
 Assignments
--------------------------------------------------------------------------------
-.. figure:: img/euclidean-distance.png
+-----------
+.. figure:: img/algebra-euclidean-distance.png
 
     Calculate Euclidean distance in Cartesian coordinate system
 

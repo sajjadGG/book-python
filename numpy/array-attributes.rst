@@ -3,7 +3,7 @@ Array Attributes
 
 
 Size
--------------------------------------------------------------------------------
+----
 * Number of elements
 
 .. code-block:: python
@@ -39,7 +39,7 @@ Size
 
 
 Shape
--------------------------------------------------------------------------------
+-----
 .. code-block:: python
 
     import numpy as np
@@ -73,7 +73,7 @@ Shape
 
 
 NDim
--------------------------------------------------------------------------------
+----
 * Number of Dimensions
 * ``len(ndarray.shape)``
 
@@ -110,7 +110,7 @@ NDim
 
 
 Length
--------------------------------------------------------------------------------
+------
 * Number of elements in first dimension
 * ``ndarray.shape[0]``
 
@@ -147,7 +147,7 @@ Length
 
 
 Itemsize
--------------------------------------------------------------------------------
+--------
 * ``int64`` takes 64 bits (8 bytes of memory)
 
 .. code-block:: python
@@ -182,7 +182,7 @@ Itemsize
 
 
 Strides
--------------------------------------------------------------------------------
+-------
 * ``int64`` takes 64 bits (8 bytes of memory)
 * Strides inform how many bytes numpy has to jump to access values in each dimensions
 
@@ -219,7 +219,7 @@ Strides
 
 
 Data
--------------------------------------------------------------------------------
+----
 .. code-block:: python
 
     import numpy as np
@@ -276,9 +276,16 @@ Data
     a.data
     # <memory at 0x107933c70>
 
+.. figure:: img/array-attributes-data.png
+
+
+Recap
+-----
+.. figure:: img/array-attributes-recap.png
+
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_attributes.py
     :caption: :download:`Solution <assignments/numpy_attributes.py>`
     :end-before: # Solution

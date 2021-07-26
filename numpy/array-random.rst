@@ -7,7 +7,7 @@ Array Random
 
 
 Seed
--------------------------------------------------------------------------------
+----
 * Seed the generator
 
 .. code-block:: python
@@ -62,7 +62,7 @@ Seed
 
 
 Generate
--------------------------------------------------------------------------------
+--------
 * Random ``int`` from low (inclusive) to high (exclusive)
 * Random ``float`` in the half-open interval ``[0.0, 1.0)``
 
@@ -101,9 +101,6 @@ Generate pseudorandom ``float``:
     #        [0.39650574, 0.8811032 , 0.58127287]])
 
 
-Distributions
--------------------------------------------------------------------------------
-
 Uniform Distribution
 --------------------
 * Results are from the "continuous uniform" distribution over the stated interval
@@ -129,6 +126,7 @@ Uniform Distribution
     # array([[0.5488135 , 0.71518937],
     #        [0.60276338, 0.54488318],
     #        [0.4236548 , 0.64589411]])
+
 
 Normal (Gaussian) Distribution
 ------------------------------
@@ -168,6 +166,7 @@ Normal (Gaussian) Distribution
 
     Normal (Gaussian) distribution :cite:`NumpyNormalDistribution`
 
+
 Poisson Distribution
 --------------------
 * Draw samples from a Poisson distribution
@@ -201,7 +200,7 @@ Poisson Distribution
 
 
 Drawing and Sampling
--------------------------------------------------------------------------------
+--------------------
 Choice:
 
 .. code-block:: python

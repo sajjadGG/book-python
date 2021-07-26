@@ -3,43 +3,43 @@ Array Shape
 
 
 Recap
--------------------------------------------------------------------------------
-    >>> obj = [1, 2, 3]
-    >>>
-    >>> len(obj)
-    3
+-----
+>>> obj = [1, 2, 3]
+>>>
+>>> len(obj)
+3
 
-    >>> obj1 = [1, 2, 3]
-    >>> obj2 = [4, 5, 6]
-    >>>
-    >>> len([obj1, obj2])
-    2
-    >>> len([ [1,2,3], [4,5,6] ])
-    2
-    >>> len([[1,2,3],
-    ...      [4,5,6]])
-    2
+>>> obj1 = [1, 2, 3]
+>>> obj2 = [4, 5, 6]
+>>>
+>>> len([obj1, obj2])
+2
+>>> len([ [1,2,3], [4,5,6] ])
+2
+>>> len([[1,2,3],
+...      [4,5,6]])
+2
 
-    >>> obj1 = [1, 2, 3]
-    >>> obj2 = [4, 5, 6]
-    >>> obj3 = [7, 8, 9]
-    >>> obj4 = [10, 11, 12]
-    >>>
-    >>> len([ [obj1, obj2], [obj3, obj4] ])
-    2
-    >>> len([[obj1, obj2],
-    ...      [obj3, obj4]])
-    2
+>>> obj1 = [1, 2, 3]
+>>> obj2 = [4, 5, 6]
+>>> obj3 = [7, 8, 9]
+>>> obj4 = [10, 11, 12]
+>>>
+>>> len([ [obj1, obj2], [obj3, obj4] ])
+2
+>>> len([[obj1, obj2],
+...      [obj3, obj4]])
+2
 
 
 Rationale
--------------------------------------------------------------------------------
+---------
 * Any shape operation changes only ``np.ndarray.shape`` and ``np.ndarray.strides`` and does not touch data
 
 
 
 Shape
--------------------------------------------------------------------------------
+-----
 .. code-block:: python
 
     import numpy as np
@@ -90,7 +90,7 @@ Shape
 
 
 Reshape
--------------------------------------------------------------------------------
+-------
 * Returns new array
 * Does not modify inplace
 * ``a.reshape(1, 2)`` is equivalent to ``a.reshape((1, 2))``
@@ -196,7 +196,7 @@ Reshape
 
 
 Flatten
--------------------------------------------------------------------------------
+-------
 * Returns new array (makes memory copy - expensive)
 * Does not modify inplace
 
@@ -239,7 +239,7 @@ Flatten
 
 
 Ravel
--------------------------------------------------------------------------------
+-----
 * Ravel is the same as Flatten but returns a reference (or view) of the array if possible (i.e. memory is contiguous)
 * Otherwise returns new array (makes memory copy)
 
@@ -282,8 +282,12 @@ Ravel
     # array([ 1,  2,  3,  4,  5,  6,  5,  6,  7, 11, 22, 33, 44, 55, 66, 77, 88, 99])
 
 
+Recap
+-----
+.. figure:: img/array-shape-ravel-vs-flatten.png
+
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_shape_1d.py
     :caption: :download:`Solution <assignments/numpy_shape_1d.py>`
     :end-before: # Solution

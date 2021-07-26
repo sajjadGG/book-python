@@ -391,7 +391,7 @@ Correlation coefficient
 * Pearson product-moment correlation coefficient (PPMCC)
 * bivariate correlation
 
-.. figure:: img/correlation-coefficient.png
+.. figure:: img/statistics-correlation-coefficient.png
 
     Examples of scatter diagrams with different values of correlation coefficient (ρ) :cite:`NumpyPearsonCorrelationCoefficient`
 

@@ -3,7 +3,7 @@ Array Methods
 
 
 Copy
--------------------------------------------------------------------------------
+----
 .. code-block:: python
 
     import numpy as np
@@ -25,11 +25,15 @@ Copy
     # array([1, 2, 3])
 
 
-Put
--------------------------------------------------------------------------------
+.. figure:: img/array-methods-deepcopy-vs-reference-1.png
+.. figure:: img/array-methods-deepcopy-vs-reference-2.png
 
-One dimensional
----------------
+
+Put
+---
+
+One dimensional:
+
 .. code-block:: python
 
     import numpy as np
@@ -53,8 +57,8 @@ One dimensional
     a
     # array([99,  2, 88,  4,  5, 77])
 
-Two dimensional
----------------
+Two dimensional:
+
 * Equivalent to ``a.flat[indexes] = value``
 
 .. code-block:: python
@@ -76,7 +80,7 @@ Two dimensional
 
 
 Fill
--------------------------------------------------------------------------------
+----
 * Modifies inplace
 
 Fill all:
@@ -150,7 +154,7 @@ Fill NaN (dtype=np.float):
 
 
 Transpose
--------------------------------------------------------------------------------
+---------
 * ``a.transpose()`` or ``a.T``
 * ``a.transpose()`` is preferred
 
@@ -188,8 +192,8 @@ Transpose
 
 
 Signum
--------------------------------------------------------------------------------
-.. figure:: img/numpy-methods-signum.png
+------
+.. figure:: img/array-methods-signum.png
 
 .. code-block:: python
 
@@ -226,7 +230,7 @@ Signum
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_methods.py
     :caption: :download:`Solution <assignments/numpy_methods.py>`
     :end-before: # Solution
