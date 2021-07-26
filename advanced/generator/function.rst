@@ -204,6 +204,7 @@ Yields in Loops
 Traceback (most recent call last):
 StopIteration
 
+
 Yield in a Zip Loop
 -------------------
 >>> def names():

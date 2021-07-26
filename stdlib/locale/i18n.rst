@@ -74,3 +74,10 @@ Django
     $ django-admin compilemessages
     processing file django.po in /tmp/myproject/locale/en/LC_MESSAGES
     processing file django.po in /tmp/myproject/locale/pl/LC_MESSAGES
+
+
+Poedit
+------
+.. figure:: img/locale-i18n-poedit1.png
+.. figure:: img/locale-i18n-poedit2.png
+.. figure:: img/locale-i18n-poedit3.png

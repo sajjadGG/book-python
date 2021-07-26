@@ -5,12 +5,12 @@
 * Time: 3 min
 
 English:
-    1. Create `a: np.ndarray` with even numbers from 0 to 100 (without 100)
+    1. Create `result: np.ndarray` with even numbers from 0 to 100 (without 100)
     2. Numbers must be `float` type
     3. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz `a: np.ndarray` z liczbami parzystymi od 0 do 100 (bez 100)
+    1. Stwórz `result: np.ndarray` z liczbami parzystymi od 0 do 100 (bez 100)
     2. Liczby muszą być typu `float`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -19,6 +19,7 @@ Tests:
 
     >>> type(result) is np.ndarray
     True
+
     >>> result
     array([ 0.,  2.,  4.,  6.,  8., 10., 12., 14., 16., 18., 20., 22., 24.,
            26., 28., 30., 32., 34., 36., 38., 40., 42., 44., 46., 48., 50.,
