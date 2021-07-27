@@ -24,7 +24,7 @@ DataFrame Sample
 
 
 Head
--------------------------------------------------------------------------------
+----
 .. code-block:: python
 
     df.head(2)
@@ -38,7 +38,7 @@ Head
 
 
 Tail
--------------------------------------------------------------------------------
+----
 .. code-block:: python
 
     df.tail(2)
@@ -52,7 +52,7 @@ Tail
 
 
 First
--------------------------------------------------------------------------------
+-----
 .. code-block:: python
 
     df.first('Y')
@@ -78,7 +78,7 @@ First
 
 
 Last
--------------------------------------------------------------------------------
+----
 .. code-block:: python
 
     df.last('Y')
@@ -109,7 +109,7 @@ Last
 
 
 Sample
--------------------------------------------------------------------------------
+------
 * 1/4 is 25%
 * .05 is 5%
 * 0.5 is 50%
@@ -147,7 +147,7 @@ Sample
 
 
 Reset Index
--------------------------------------------------------------------------------
+-----------
 .. code-block:: python
 
     df.sample(frac=1.0).reset_index()
@@ -164,6 +164,7 @@ Reset Index
 
     import pandas as pd
 
+
     DATA = [{'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'},
             {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8, 'species': 'virginica'},
             {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6, 'species': 'versicolor'},
@@ -171,7 +172,8 @@ Reset Index
             {'sepal_length': 5.6, 'sepal_width': 2.5, 'petal_length': 3.9, 'petal_width': 1.1, 'species': 'versicolor'},
             {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'}]
 
-    df = pd.read_csv(DATA)
+
+    df = pd.DataFrame(DATA)
 
     selected = df.sample(frac=0.02)
     #      sepal_length  sepal_width  petal_length  petal_width     species
@@ -194,7 +196,7 @@ Reset Index
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/pandas_df_sample.py
     :caption: :download:`Solution <assignments/pandas_df_sample.py>`
     :end-before: # Solution

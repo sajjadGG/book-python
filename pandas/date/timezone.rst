@@ -3,7 +3,7 @@ Date and Time Timezones
 
 
 Timezone aware
--------------------------------------------------------------------------------
+--------------
 .. code-block:: python
 
     import pandas as pd

@@ -28,7 +28,7 @@ Source [#PandasAggregations]_
 
 
 Single Statistic
--------------------------------------------------------------------------------
+----------------
 The groupby output will have an index or multi-index on rows corresponding to your chosen grouping variables. To avoid setting this index, pass ``as_index=False`` to the groupby operation:
 
 .. code-block:: python
@@ -43,7 +43,7 @@ The groupby output will have an index or multi-index on rows corresponding to yo
 
 
 Multiple Statistics per Group
--------------------------------------------------------------------------------
+-----------------------------
 Group the data frame by month and item and extract a number of stats from each group:
 
 .. code-block:: python
@@ -89,7 +89,7 @@ Define the aggregation procedure outside of the groupby operation:
 
 
 Applying multiple functions to columns in groups
--------------------------------------------------------------------------------
+------------------------------------------------
 Group the data frame by month and item and extract a number of stats from each group:
 
 .. code-block:: python
@@ -125,7 +125,7 @@ Group the data frame by month and item and extract a number of stats from each g
 
 
 Named Aggregations
--------------------------------------------------------------------------------
+------------------
 Named Aggregations:
 
 .. code-block:: python
@@ -170,7 +170,7 @@ Named Aggregations:
     )
 
 Renaming index
--------------------------------------------------------------------------------
+--------------
 * using ``droplevel`` and ``ravel``
 * Dictionary ``groupby`` format is deprecated
 
@@ -236,7 +236,7 @@ Using ravel, and a string join, we can create better names for the columns::
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Create assignments
 
 

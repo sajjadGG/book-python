@@ -8,7 +8,7 @@ DataFrame Plotting
 
 
 Plot kinds
--------------------------------------------------------------------------------
+----------
 * ``line`` - Line Plot
 * ``bar`` - Vertical Bar Plot
 * ``barh`` - Horizontal Bar Plot
@@ -22,7 +22,7 @@ Plot kinds
 
 
 Parameters
--------------------------------------------------------------------------------
+----------
 .. csv-table:: Parameters
     :header: "Parameter", "Default value"
 
@@ -204,7 +204,7 @@ Parameters
 
 
 Prepare Data
--------------------------------------------------------------------------------
+------------
 .. code-block:: python
 
     import pandas as pd
@@ -221,8 +221,6 @@ Prepare Data
         'Species'
     ]
 
-Generate Plot
--------------------------------------------------------------------------------
 
 Line Plot
 ---------
@@ -338,8 +336,6 @@ Hexbin Plot
 
     Hexbin Plot
 
-Other
--------------------------------------------------------------------------------
 
 Hist
 ----
@@ -419,20 +415,20 @@ Scatter matrix
 
 
 Actinograms
--------------------------------------------------------------------------------
+-----------
 .. figure:: img/pandas-dataframe-actinogram-1.png
 
 .. figure:: img/pandas-dataframe-actinogram-2.png
 
 
 Further Reading
--------------------------------------------------------------------------------
+---------------
 * https://www.data-to-viz.com/#explore
 * https://www.data-to-viz.com/img/poster/poster_big.png
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/pandas_df_plot.py
     :caption: :download:`Solution <assignments/pandas_df_plot.py>`
     :end-before: # Solution

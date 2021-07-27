@@ -3,7 +3,7 @@ Date and Time Types
 
 
 Timestamp
--------------------------------------------------------------------------------
+---------
 * subclass of ``datetime.datetime``
 * Timezone naive or aware
 * More information in `Date and Time Timezones`
@@ -47,9 +47,6 @@ Timestamp
     # Traceback (most recent call last):
     # ValueError: second must be in 0..59
 
-
-Date Ranges
--------------------------------------------------------------------------------
 
 Period
 ------
@@ -149,5 +146,5 @@ Attributes
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Create assignments

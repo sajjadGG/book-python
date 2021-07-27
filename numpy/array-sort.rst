@@ -3,7 +3,7 @@ Array Sort
 
 
 Sort
--------------------------------------------------------------------------------
+----
 .. code-block:: python
 
     import numpy as np
@@ -46,7 +46,7 @@ Sort
 
 
 Flip
--------------------------------------------------------------------------------
+----
 * Does not modify inplace
 * Returns new ``np.ndarray``
 * Reverse the order of elements in an array along the given axis
@@ -84,7 +84,7 @@ Flip
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_sort.py
     :caption: :download:`Solution <assignments/numpy_sort.py>`
     :end-before: # Solution

@@ -3,7 +3,7 @@ Date and Time Calendar
 
 
 Business Days
--------------------------------------------------------------------------------
+-------------
 .. code-block:: python
 
     from pandas.tseries.holiday import USFederalHolidayCalendar
@@ -19,7 +19,7 @@ Business Days
 
 
 Business Hours
--------------------------------------------------------------------------------
+--------------
 .. code-block:: python
 
     from datetime import datetime, time
@@ -41,7 +41,7 @@ Business Hours
 
 
 Custom Calendar
--------------------------------------------------------------------------------
+---------------
 .. code-block:: python
 
     import pandas as pd
@@ -104,7 +104,7 @@ Custom Calendar
 
 
 Custom mask
--------------------------------------------------------------------------------
+-----------
 .. code-block:: python
 
     from datetime import datetime

@@ -2,8 +2,13 @@ DataFrame Index
 ===============
 
 
-Index Types
--------------------------------------------------------------------------------
+Rationale
+---------
+* Range Index
+* Integer Index
+* String Index
+* Datetime Index
+
 
 Range Index
 -----------
@@ -96,7 +101,7 @@ Datetime Index
 
 
 Set Index
--------------------------------------------------------------------------------
+---------
 .. code-block:: python
 
     import pandas as pd
@@ -126,5 +131,5 @@ Set Index
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Create assignments

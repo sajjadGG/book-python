@@ -3,7 +3,7 @@ Statistics
 
 
 Mean
--------------------------------------------------------------------------------
+----
 * Compute the arithmetic mean along the specified axis.
 * The arithmetic mean is the sum of the elements along the axis divided by the number of elements.
 * The average is taken over the flattened array by default, otherwise over the specified axis.

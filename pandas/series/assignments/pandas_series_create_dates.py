@@ -44,6 +44,9 @@ Tests:
 import pandas as pd
 
 
+result = ...
+
+
 # Solution
 data = pd.date_range(
     start='1961-04-12',

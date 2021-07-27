@@ -36,6 +36,8 @@ import numpy as np
 np.random.seed(0)
 
 
+result = ...
+
 # Solution
 data = np.arange(0, 20, 2)
 result = pd.Series(data)

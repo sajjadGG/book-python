@@ -3,7 +3,7 @@ Advanced Indexing
 
 
 Indexing
--------------------------------------------------------------------------------
+--------
 * two types of indexes: int, bool
 * Also known as Fancy indexing
 
@@ -125,7 +125,7 @@ Indexing
 
 
 Use Cases
--------------------------------------------------------------------------------
+---------
 .. code-block:: python
 
     import numpy as np
@@ -232,7 +232,7 @@ Use Cases
 
 
 Diagonal problem
--------------------------------------------------------------------------------
+----------------
 * .. warning:: Without the ``np.ix_`` call, only the diagonal elements would be selected. This difference is the most important thing to remember about indexing with multiple advanced indexes.
 
 .. code-block:: python

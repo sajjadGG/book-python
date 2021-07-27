@@ -57,12 +57,12 @@ import numpy as np
 np.random.seed(0)
 
 
-result = ...
-
 df = pd.DataFrame({
     'mileage': np.random.randint(0, 200_000, size=50),
     'consumption': np.random.randint(0, 21, size=50),
 })
+
+result = ...
 
 
 # Solution

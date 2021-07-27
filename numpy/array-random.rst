@@ -241,7 +241,7 @@ Sample:
 
 
 Shuffle
--------------------------------------------------------------------------------
+-------
 * Modify sequence in-place (!!)
 * Multi-dimensional arrays are only shuffled along the first axis
 
@@ -275,7 +275,7 @@ Shuffle
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_random_float.py
     :caption: :download:`Solution <assignments/numpy_random_float.py>`
     :end-before: # Solution

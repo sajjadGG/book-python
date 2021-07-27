@@ -3,7 +3,7 @@ Data Import and Export
 
 
 np.loadtxt()
--------------------------------------------------------------------------------
+------------
 .. code-block:: python
 
     import numpy as np
@@ -42,7 +42,7 @@ np.loadtxt()
 
 
 np.savetxt()
--------------------------------------------------------------------------------
+------------
 
 ``int``
 -------
@@ -98,7 +98,7 @@ np.savetxt()
 
 
 Other
--------------------------------------------------------------------------------
+-----
 .. csv-table:: NumPy Export methods
     :header: "Method", "Data Type", "Format", "Description"
     :widths: 15, 5, 5, 75
@@ -137,7 +137,7 @@ Other
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_loadtext.py
     :caption: :download:`Solution <assignments/numpy_loadtext.py>`
     :end-before: # Solution

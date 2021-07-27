@@ -3,7 +3,7 @@ Series Getitem
 
 
 Range Index
--------------------------------------------------------------------------------
+-----------
 .. code-block:: python
 
     import pandas as pd
@@ -31,7 +31,7 @@ Range Index
 
 
 Float and Int Index
--------------------------------------------------------------------------------
+-------------------
 .. code-block:: python
 
     import pandas as pd
@@ -61,7 +61,7 @@ Float and Int Index
 
 
 String Index
--------------------------------------------------------------------------------
+------------
 .. code-block:: python
 
     import pandas as pd
@@ -95,7 +95,7 @@ String Index
 
 
 Date Index
--------------------------------------------------------------------------------
+----------
 .. code-block:: python
 
     import pandas as pd
@@ -141,7 +141,7 @@ Date Index
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/pandas_series_getitem.py
     :caption: :download:`Solution <assignments/pandas_series_getitem.py>`
     :end-before: # Solution

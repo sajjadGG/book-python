@@ -25,7 +25,7 @@ Performance
 
 
 References
--------------------------------------------------------------------------------
+----------
 .. [#WikipediaCPU] https://en.wikipedia.org/wiki/Central_processing_unit
 .. [#WikipediaGPU] https://en.wikipedia.org/wiki/Graphics_processing_unit
 .. [#WikipediaALU] https://en.wikipedia.org/wiki/Arithmetic_logic_unit

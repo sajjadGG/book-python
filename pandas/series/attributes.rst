@@ -3,7 +3,7 @@ Series Attributes
 
 
 Size
--------------------------------------------------------------------------------
+----
 .. code-block:: python
 
     import pandas as pd
@@ -15,7 +15,7 @@ Size
 
 
 NDim
--------------------------------------------------------------------------------
+----
 * Number of Dimensions
 
 .. code-block:: python
@@ -29,7 +29,7 @@ NDim
 
 
 Shape
--------------------------------------------------------------------------------
+-----
 .. code-block:: python
 
     import pandas as pd
@@ -42,7 +42,7 @@ Shape
 
 
 Index
--------------------------------------------------------------------------------
+-----
 * More information in `Pandas Series Index`
 
 .. code-block:: python
@@ -62,7 +62,7 @@ Index
 
 
 Values
--------------------------------------------------------------------------------
+------
 .. code-block:: python
 
     import pandas as pd
@@ -74,7 +74,7 @@ Values
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/pandas_series_attributes.py
     :caption: :download:`Solution <assignments/pandas_series_attributes.py>`
     :end-before: # Solution

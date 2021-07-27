@@ -41,9 +41,6 @@ Data
     # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
 
-All Values in Row
--------------------------------------------------------------------------------
-
 Single row
 ----------
 * Returns the row as a ``pd.Series``
@@ -57,6 +54,7 @@ Single row
     # Midnight    1.454274
     # Name: 2000-01-01 00:00:00, dtype: float64
 
+
 Range of rows
 -------------
 * Returns the rows as a ``pd.DataFrame``
@@ -68,6 +66,7 @@ Range of rows
     # 2000-01-02  0.761038  0.121675  0.443863  0.333674
     # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
     # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+
 
 Range of dates
 --------------
@@ -88,7 +87,7 @@ Range of dates
 
 
 Values in Selected Columns
--------------------------------------------------------------------------------
+--------------------------
 * Note that both the start and stop of the slice are included
 
 Single row and single column:
@@ -138,7 +137,7 @@ Single row and column range:
 
 
 Fancy Indexing
--------------------------------------------------------------------------------
+--------------
 * Return row for given index is ``True``
 
 Boolean list with the same length as the row axis:
@@ -197,7 +196,7 @@ Conditional that returns a boolean Series with column labels specified:
 
 
 Callable
--------------------------------------------------------------------------------
+--------
 
 Filtering with callable:
 
@@ -220,7 +219,7 @@ Filtering with callable:
 
 
 Setting Values
--------------------------------------------------------------------------------
+--------------
 
 Set value for all items matching the list of labels:
 
@@ -281,5 +280,5 @@ Set value for rows matching callable condition:
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Create assignments

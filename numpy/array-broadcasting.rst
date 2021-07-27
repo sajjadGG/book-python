@@ -3,7 +3,7 @@ Array Broadcasting
 
 
 Rationale
--------------------------------------------------------------------------------
+---------
 .. glossary::
 
     Vector
@@ -12,7 +12,7 @@ Rationale
 
 
 Broadcasting Rules
--------------------------------------------------------------------------------
+------------------
 * Source :cite:`NumpyBroadcastingRules`
 
 #. Operations between multiple array objects are first checked for proper shape match
@@ -22,7 +22,7 @@ Broadcasting Rules
 
 
 Addition
--------------------------------------------------------------------------------
+--------
 .. code-block:: python
 
     import numpy as np
@@ -51,7 +51,7 @@ Addition
 
 
 Subtraction
--------------------------------------------------------------------------------
+-----------
 .. code-block:: python
 
     import numpy as np
@@ -80,7 +80,7 @@ Subtraction
 
 
 Division
--------------------------------------------------------------------------------
+--------
 .. code-block:: python
 
     import numpy as np
@@ -109,7 +109,7 @@ Division
 
 
 True Division
--------------------------------------------------------------------------------
+-------------
 .. code-block:: python
 
     import numpy as np
@@ -138,7 +138,7 @@ True Division
 
 
 Modulo
--------------------------------------------------------------------------------
+------
 .. code-block:: python
 
     import numpy as np
@@ -167,7 +167,7 @@ Modulo
 
 
 Power
--------------------------------------------------------------------------------
+-----
 .. code-block:: python
 
     import numpy as np
@@ -196,7 +196,7 @@ Power
 
 
 Root
--------------------------------------------------------------------------------
+----
 .. code-block:: python
 
     import numpy as np
@@ -225,7 +225,7 @@ Root
 
 
 Array Multiplication
--------------------------------------------------------------------------------
+--------------------
 * Multiplication ``*`` remains elementwise and does not correspond to matrix multiplication.
 
 .. code-block:: python
@@ -256,7 +256,7 @@ Array Multiplication
 
 
 Matrix Multiplication
--------------------------------------------------------------------------------
+---------------------
 .. figure:: img/arithmetic-matmul.gif
 
 .. figure:: img/arithmetic-matmul.jpg
@@ -294,7 +294,7 @@ Matrix Multiplication
 
 
 Dot
--------------------------------------------------------------------------------
+---
 * ``np.dot()``
 * If either a or b is 0-D (scalar), it is equivalent to ``multiply`` and using ``numpy.multiply(a, b)`` or ``a * b`` is preferred.
 * If both a and b are 1-D arrays, it is inner product of vectors (without complex conjugation).
@@ -338,7 +338,7 @@ Dot
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_broadcasting_arithmetic.py
     :caption: :download:`Solution <assignments/numpy_broadcasting_arithmetic.py>`
     :end-before: # Solution

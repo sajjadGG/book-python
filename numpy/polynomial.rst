@@ -3,7 +3,7 @@ Polynomials
 
 
 Defining
--------------------------------------------------------------------------------
+--------
 
 Polynomial of degree three
 --------------------------
@@ -49,7 +49,7 @@ Polynomial of degree six:
 
 
 Find coefficients
--------------------------------------------------------------------------------
+-----------------
 * Find the coefficients of a polynomial with the given sequence of roots
 * Specifying the roots of a polynomial still leaves one degree of freedom, typically represented by an undetermined leading coefficient.
 
@@ -70,7 +70,7 @@ Find coefficients
 
 
 Roots
--------------------------------------------------------------------------------
+-----
 * Return the roots of a polynomial
 
 .. code-block:: python
@@ -93,7 +93,7 @@ Roots
 
 
 Derivatives
--------------------------------------------------------------------------------
+-----------
 
 Derivative of a polynomial
 --------------------------
@@ -128,7 +128,7 @@ Antiderivative (indefinite integral) of a polynomial
 
 
 Evaluation
--------------------------------------------------------------------------------
+----------
 
 Evaluate a polynomial at specific values
 ----------------------------------------
@@ -160,7 +160,7 @@ Least squares polynomial fit
 
 
 Polynomial Arithmetic
--------------------------------------------------------------------------------
+---------------------
 * ``np.polyadd()``
 * ``np.polysub()``
 * ``np.polymul()``
@@ -178,7 +178,7 @@ Sum of two polynomials
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_polyfit.py
     :caption: :download:`Solution <assignments/numpy_polyfit.py>`
     :end-before: # Solution

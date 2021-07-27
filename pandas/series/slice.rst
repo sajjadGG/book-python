@@ -3,7 +3,7 @@ Series Slicing
 
 
 Numeric Index
--------------------------------------------------------------------------------
+-------------
 .. code-block:: python
 
     import pandas as pd
@@ -47,7 +47,7 @@ Numeric Index
 
 
 String Index
--------------------------------------------------------------------------------
+------------
 * Using string index upper and lower bound are inclusive!
 * String indexes has also numeric index underneath
 
@@ -156,7 +156,7 @@ String Index
 
 
 Date Index
--------------------------------------------------------------------------------
+----------
 .. code-block:: python
 
     import pandas as pd
@@ -291,7 +291,7 @@ Date Index
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/pandas_series_slice_datetime.py
     :caption: :download:`Solution <assignments/pandas_series_slice_datetime.py>`
     :end-before: # Solution

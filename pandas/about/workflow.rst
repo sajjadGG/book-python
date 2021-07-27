@@ -3,11 +3,12 @@ Pandas Workflow
 
 
 Rationale
--------------------------------------------------------------------------------
+---------
 .. figure:: img/pandas-about-workflow.png
 
+
 Working with Excel file
--------------------------------------------------------------------------------
+-----------------------
 .. code-block:: python
 
     import pandas as pd
@@ -45,7 +46,7 @@ Working with Excel file
 
 
 Working with dirty CSV
--------------------------------------------------------------------------------
+----------------------
 .. code-block:: python
 
     DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-dirty.csv'
@@ -61,7 +62,7 @@ Working with dirty CSV
 
 
 Working with CSV
--------------------------------------------------------------------------------
+----------------
 .. code-block:: python
 
     import pandas as pd
@@ -153,11 +154,8 @@ Working with CSV
     "``cummin``", "Cumulative minimum"
 
 
-Plots
--------------------------------------------------------------------------------
-
-Hist
-----
+Hist Plot
+---------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -174,8 +172,9 @@ Hist
 
     Visualization using hist
 
-Density
--------
+
+Density Plot
+------------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -192,8 +191,9 @@ Density
 
     Visualization using density
 
-Box
----
+
+Box Plot
+--------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -209,6 +209,7 @@ Box
 .. figure:: img/pandas-about-workflow-plot-box.png
 
     Visualization using density
+
 
 Scatter matrix
 --------------

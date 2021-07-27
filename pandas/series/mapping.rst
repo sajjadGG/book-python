@@ -3,13 +3,13 @@ Series Mapping
 
 
 Rationale
--------------------------------------------------------------------------------
+---------
 * ``Series.apply`` - apply function to data, function can have args and/or kwargs
 * ``Series.map`` - convert data from one to another using function or dict
 
 
 Apply
--------------------------------------------------------------------------------
+-----
 * Signature: ``Series.apply(func, convert_dtype=True, args=(), **kwds)``
 * Parameters:
 
@@ -117,7 +117,7 @@ Apply
 
 
 Map
--------------------------------------------------------------------------------
+---
 * Signature: ``Series.map(arg, na_action=None)``
 * Parameters:
 
@@ -321,7 +321,7 @@ Phone Numbers
 
 
 Example
--------------------------------------------------------------------------------
+-------
 String cleaning:
 
 .. code-block:: python
@@ -399,7 +399,7 @@ Remove Polish diacritics:
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/pandas_series_mapping_clean.py
     :caption: :download:`Solution <assignments/pandas_series_mapping_clean.py>`
     :end-before: # Solution

@@ -3,7 +3,7 @@ Series Arithmetic
 
 
 Vectorized Operations
--------------------------------------------------------------------------------
+---------------------
 * ``s + 2``,  ``s.add(2)``, ``s.__add__(2)``
 * ``s - 2``,  ``s.sub(2)``, ``s.subtract(2)``, ``s.__sub__(2)``
 * ``s * 2``,  ``s.mul(2)``, ``s.multiply(2)``, ``s.__mul__(2)``
@@ -59,7 +59,7 @@ Vectorized Operations
 
 
 Broadcasting
--------------------------------------------------------------------------------
+------------
 * Uses inner join
 * ``fill_value``: If data in both corresponding ``Series`` locations is missing the result will be missing
 
@@ -162,7 +162,7 @@ Broadcasting
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/pandas_series_arithmetic.py
     :caption: :download:`Solution <assignments/pandas_series_arithmetic.py>`
     :end-before: # Solution

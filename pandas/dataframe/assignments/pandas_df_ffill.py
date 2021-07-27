@@ -51,7 +51,7 @@ import numpy as np
 np.random.seed(0)
 
 
-DATA = r'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/astro-order.csv'
+DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/astro-order.csv'
 
 result = ...
 

@@ -3,10 +3,10 @@ Pandas Set Option
 
 
 Display Output
--------------------------------------------------------------------------------
+--------------
 
-Limited
--------
+Limited:
+
 .. code-block:: python
 
     import pandas as pd
@@ -21,8 +21,8 @@ Limited
     pd.set_option('display.max_columns', 500)
     pd.set_option('display.width', 1000)
 
-Unlimited
----------
+Unlimited:
+
 .. code-block:: python
 
     import pandas as pd
@@ -48,5 +48,5 @@ Using in context
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Create assignments

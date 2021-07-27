@@ -29,7 +29,7 @@ DataFrame Select
 
 
 Query Data
--------------------------------------------------------------------------------
+----------
 * ``df.where()`` Works with ``inplace=True``
 
 .. code-block:: python
@@ -70,7 +70,7 @@ Query Data
 
 
 Logical NOT
--------------------------------------------------------------------------------
+-----------
 .. code-block:: python
 
     query = df['Midnight'] < 0.0
@@ -93,7 +93,7 @@ Logical NOT
 
 
 Logical AND
--------------------------------------------------------------------------------
+-----------
 * In first and in second query
 
 .. code-block:: text
@@ -138,7 +138,7 @@ Logical AND
 
 
 Logical OR
--------------------------------------------------------------------------------
+----------
 * In first or in second query
 
 .. code-block:: text
@@ -173,7 +173,7 @@ Logical OR
 
 
 Logical XOR
--------------------------------------------------------------------------------
+-----------
 * In first or in second, but not in both queries
 
 .. code-block:: text
@@ -207,7 +207,7 @@ Logical XOR
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/pandas_df_select.py
     :caption: :download:`Solution <assignments/pandas_df_select.py>`
     :end-before: # Solution

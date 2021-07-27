@@ -3,7 +3,7 @@ DataFrame Export
 
 
 Export data
--------------------------------------------------------------------------------
+-----------
 * File paths works also with DATAs
 * SQL functions uses SQLAlchemy, which supports many RDBMS
 
@@ -43,7 +43,7 @@ Export data
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/pandas_to_csv.py
     :caption: :download:`Solution <assignments/pandas_to_csv.py>`
     :end-before: # Solution

@@ -3,7 +3,7 @@ Series Sort
 
 
 Sort Values
--------------------------------------------------------------------------------
+-----------
 .. code-block:: python
 
     import pandas as pd
@@ -30,7 +30,7 @@ Sort Values
 
 
 Sort Index
--------------------------------------------------------------------------------
+----------
 .. code-block:: python
 
     import pandas as pd
@@ -57,5 +57,5 @@ Sort Index
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Create assignments

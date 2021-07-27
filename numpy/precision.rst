@@ -3,7 +3,7 @@ Precision
 
 
 Rationale
--------------------------------------------------------------------------------
+---------
 >>> 0.1
 0.1
 
@@ -27,7 +27,7 @@ False
 
 
 IEEE 754 standard
--------------------------------------------------------------------------------
+-----------------
 >>> 1.234 == 1234 * 10e-4
 True
 
@@ -57,7 +57,7 @@ True
 
 
 Solutions
--------------------------------------------------------------------------------
+---------
 * Round values to 4 decimal places (generally acceptable)
 * Store values as ``int``, do operation and then divide. For example instead of 1.99 USD, store price as 199 US cents
 * Use ``Decimal`` type

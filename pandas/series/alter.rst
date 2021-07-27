@@ -3,7 +3,7 @@ Series Alter
 
 
 Drop Rows
--------------------------------------------------------------------------------
+---------
 * Drop element at index
 * Works with ``inplace=True``
 
@@ -27,7 +27,7 @@ Drop Rows
 
 
 Drop Duplicates
--------------------------------------------------------------------------------
+---------------
 * Works with ``inplace=True``
 
 .. code-block:: python
@@ -45,7 +45,7 @@ Drop Duplicates
 
 
 Reset Index
--------------------------------------------------------------------------------
+-----------
 * Works with ``inplace=True``
 * ``drop=True`` prevents the old index being added as a column
 
@@ -75,7 +75,7 @@ Reset Index
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/pandas_series_alter.py
     :caption: :download:`Solution <assignments/pandas_series_alter.py>`
     :end-before: # Solution

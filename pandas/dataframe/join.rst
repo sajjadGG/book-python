@@ -31,7 +31,7 @@ DataFrame Join
 
 
 Concatenate
--------------------------------------------------------------------------------
+-----------
 * Useful for merging data from two files or datasources
 
 .. code-block:: python
@@ -45,8 +45,9 @@ Concatenate
     # 2000-01-02  1.494079 -0.205158  0.313068 -0.854096
     # 2000-01-03 -2.552990  0.653619  0.864436 -0.742165
 
+
 Append
--------------------------------------------------------------------------------
+------
 * jak robi append, to nie zmienia indeksów (uwaga na indeksy powtórzone)
 * Resulting ``DataFrame`` will have auto-incremented indexes
 
@@ -168,7 +169,7 @@ Add Row:
 
 
 Merge
--------------------------------------------------------------------------------
+-----
 * Merge DataFrame or named Series objects with a database-style join.
 * The join is done on columns or indexes.
 * If joining columns on columns, the DataFrame indexes will be ignored.
@@ -254,7 +255,7 @@ Merge
 
 
 Join
--------------------------------------------------------------------------------
+----
 * Join columns of another DataFrame.
 * Join columns with other DataFrame either on index or on a key column.
 * Efficiently join multiple DataFrame objects by index at once by passing a list.
@@ -342,7 +343,7 @@ This method preserves the original DataFrame's index in the result:
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/pandas_df_join_eva.py
     :caption: :download:`Solution <assignments/pandas_df_join_eva.py>`
     :end-before: # Solution

@@ -3,7 +3,7 @@ Array Logic
 
 
 Contains
--------------------------------------------------------------------------------
+--------
 .. code-block:: python
 
     import numpy as np
@@ -29,7 +29,7 @@ Contains
 
 
 Is In
--------------------------------------------------------------------------------
+-----
 .. code-block:: python
 
     import numpy as np
@@ -46,7 +46,7 @@ Is In
 
 
 Scalar Comparison
--------------------------------------------------------------------------------
+-----------------
 .. code-block:: python
 
     import numpy as np
@@ -81,7 +81,7 @@ Scalar Comparison
 
 
 Broadcasting Comparison
--------------------------------------------------------------------------------
+-----------------------
 .. code-block:: python
 
     import numpy as np
@@ -110,7 +110,7 @@ Broadcasting Comparison
 
 
 Any
--------------------------------------------------------------------------------
+---
 .. code-block:: python
 
     import numpy as np
@@ -141,7 +141,7 @@ Any
 
 
 All
--------------------------------------------------------------------------------
+---
 .. code-block:: python
 
     import numpy as np
@@ -171,7 +171,7 @@ All
 
 
 Logical NOT
--------------------------------------------------------------------------------
+-----------
 * ``np.logical_not(...)``
 * ``~(...)``
 
@@ -209,7 +209,7 @@ Logical NOT
 
 
 Logical AND
--------------------------------------------------------------------------------
+-----------
 * Meets first and second condition at the same time
 * ``np.logical_and(..., ...)``
 * ``(...) & (...)``
@@ -246,7 +246,7 @@ Logical AND
 
 
 Logical OR
--------------------------------------------------------------------------------
+----------
 * Meets first or second condition at the same time
 * ``np.logical_or(..., ...)``
 * ``(...) | (...)``
@@ -283,7 +283,7 @@ Logical OR
 
 
 Logical XOR
--------------------------------------------------------------------------------
+-----------
 * Meets first or second condition, but not both at the same time
 * ``np.logical_xor(..., ...)``
 * ``(...) ^ (...)``
@@ -306,7 +306,7 @@ Logical XOR
 
 
 Readability Counts
--------------------------------------------------------------------------------
+------------------
 .. code-block:: python
 
     import numpy as np
@@ -351,7 +351,7 @@ Readability Counts
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_logic_even.py
     :caption: :download:`Solution <assignments/numpy_logic_even.py>`
     :end-before: # Solution

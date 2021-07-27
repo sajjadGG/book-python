@@ -3,7 +3,7 @@ Date and Time Shifts
 
 
 Timedelta
--------------------------------------------------------------------------------
+---------
 * Represents a duration, the difference between two dates or times
 * Difference expressed in: days, hours, minutes, seconds
 * Similar to ``datetime.timedelta`` from the standard library
@@ -66,7 +66,7 @@ Leap second has not been added:
 
 
 DateOffset
--------------------------------------------------------------------------------
+----------
 * A relative time duration that respects calendar arithmetic
 * If a date is Sat then adding a ``Bday`` will return the next Monday (next Business day) instead of a Saturday
 * Test if a date is in the ``DateOffset().onOffset(date)``

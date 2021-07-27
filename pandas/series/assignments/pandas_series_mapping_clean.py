@@ -66,6 +66,9 @@ def clean(text: str) -> str:
     pass
 
 
+result = ...
+
+
 # Solution
 
 def clean(text: str) -> str:

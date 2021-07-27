@@ -6,7 +6,7 @@ Array Getitem
 
 
 Rationale
--------------------------------------------------------------------------------
+---------
 * ``int``
 * ``list[int]``
 * ``list[bool]``
@@ -25,7 +25,7 @@ Rationale
 
 
 Index
--------------------------------------------------------------------------------
+-----
 .. code-block:: python
 
     import numpy as np
@@ -114,10 +114,10 @@ Multidimensional:
 
 
 Selecting items
--------------------------------------------------------------------------------
+---------------
 
-1-dimensional Array
--------------------
+1-dimensional Array:
+
 .. code-block:: python
 
     import numpy as np
@@ -138,8 +138,8 @@ Selecting items
     a[-1]
     # 3
 
-2-dimensional Array
--------------------
+2-dimensional Array:
+
 .. code-block:: python
 
     import numpy as np
@@ -212,8 +212,8 @@ Selecting items
     a[2,2]
     # 9
 
-3-dimensional Array
--------------------
+3-dimensional Array:
+
 .. code-block:: python
 
     import numpy as np
@@ -246,10 +246,10 @@ Selecting items
 
 
 Substituting items
--------------------------------------------------------------------------------
+------------------
 
-1-dimensional Array
--------------------
+1-dimensional Array:
+
 * Will type cast values to ``np.ndarray.dtype``
 
 .. code-block:: python
@@ -291,8 +291,8 @@ Substituting items
     a[-1] = 11.1
     # array([99,  2,  11])
 
-2-dimensional Array
--------------------
+2-dimensional Array:
+
 .. code-block:: python
 
     import numpy as np
@@ -311,7 +311,7 @@ Substituting items
 
 
 Multi-indexing
--------------------------------------------------------------------------------
+--------------
 .. code-block:: python
 
     import numpy as np
@@ -352,7 +352,7 @@ Multi-indexing
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_indexing.py
     :caption: :download:`Solution <assignments/numpy_indexing.py>`
     :end-before: # Solution

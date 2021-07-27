@@ -3,7 +3,7 @@ Array Select
 
 
 Unique
--------------------------------------------------------------------------------
+------
 .. code-block:: python
 
     import numpy as np
@@ -25,7 +25,7 @@ Unique
 
 
 Diagonal
--------------------------------------------------------------------------------
+--------
 .. code-block:: python
 
     import numpy as np
@@ -62,7 +62,7 @@ Diagonal
 
 
 Nonzero
--------------------------------------------------------------------------------
+-------
 * Each element of the tuple contains one of the indices for each nonzero value.
 * Therefore, the length of each tuple element is the number of nonzeros in the array.
 * The first element of the tuple is the first index for each of the nonzero values: (``[0, 0, 1, 1]``).
@@ -91,7 +91,7 @@ Nonzero
 
 
 Where
--------------------------------------------------------------------------------
+-----
 
 Single argument
 ---------------
@@ -179,7 +179,7 @@ Multiple argument
 
 
 Take
--------------------------------------------------------------------------------
+----
 .. code-block:: python
 
     import numpy as np
@@ -214,7 +214,7 @@ Take
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_select_isin.py
     :caption: :download:`Solution <assignments/numpy_select_isin.py>`
     :end-before: # Solution

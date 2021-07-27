@@ -3,7 +3,7 @@ Array Concatenation
 
 
 1-dimensional Array
--------------------------------------------------------------------------------
+-------------------
 .. code-block:: python
 
     import numpy as np
@@ -44,7 +44,7 @@ Array Concatenation
 
 
 2-dimensional Array
--------------------------------------------------------------------------------
+-------------------
 .. code-block:: python
 
     import numpy as np
@@ -71,7 +71,7 @@ Array Concatenation
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/numpy_concatenation.py
     :caption: :download:`Solution <assignments/numpy_concatenation.py>`
     :end-before: # Solution

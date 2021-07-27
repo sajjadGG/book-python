@@ -26,7 +26,7 @@ DataFrame NA
 
 
 Select
--------------------------------------------------------------------------------
+------
 Any:
 
 .. code-block:: python
@@ -79,7 +79,7 @@ Is NA:
 
 
 Update
--------------------------------------------------------------------------------
+------
 * ``axis=0`` - rows
 * ``axis=1`` - columns
 
@@ -187,7 +187,7 @@ Interpolate:
 
 
 Drop
--------------------------------------------------------------------------------
+----
 * ``axis=0`` - rows
 * ``axis=1`` - columns
 
@@ -275,7 +275,7 @@ Drop Columns:
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/pandas_df_nan.py
     :caption: :download:`Solution <assignments/pandas_df_nan.py>`
     :end-before: # Solution

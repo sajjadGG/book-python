@@ -18,7 +18,7 @@ Pandas is a Python package providing fast, flexible, and expressive data structu
 
 
 Install
--------------------------------------------------------------------------------
+-------
 .. code-block:: console
 
     $ pip install pandas
@@ -29,7 +29,7 @@ Install
 
 
 Import
--------------------------------------------------------------------------------
+------
 .. code-block:: python
 
     import pandas as pd
@@ -39,14 +39,14 @@ Import
 
 
 Workflow
--------------------------------------------------------------------------------
+--------
 .. figure:: img/pandas-about-workflow.png
 
     Pandas workflow
 
 
 Read More
--------------------------------------------------------------------------------
+---------
 * http://pandas.pydata.org/
 * http://pandas.pydata.org/pandas-docs/stable/10min.html
 * http://pandas.pydata.org/pandas-docs/stable/index.html

@@ -25,7 +25,7 @@ DataFrame Sort
 
 
 Sort by Index
--------------------------------------------------------------------------------
+-------------
 * Works with ``inplace=True``
 * ``axis=0`` - Rows
 * ``axis=1`` - Columns
@@ -101,7 +101,7 @@ Sort Columns
 
 
 Sort Values
--------------------------------------------------------------------------------
+-----------
 * Works with ``inplace=True``
 * ``axis=0`` - Rows
 * ``axis=1`` - Columns
@@ -164,5 +164,5 @@ Sorting whole DataFrame, according to values by in row (change column order):
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Create assignments
