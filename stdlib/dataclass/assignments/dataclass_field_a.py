@@ -69,7 +69,7 @@ Tests:
     'Address.city has invalid type annotation, expected: str'
 
     >>> assert address['post_code'].type is Optional[int], \
-    'Address.post_code has invalid type annotation, expected: Optional[str]'
+    'Address.post_code has invalid type annotation, expected: Optional[int]'
 
     >>> assert address['region'].type is str, \
     'Address.region has invalid type annotation, expected: str'

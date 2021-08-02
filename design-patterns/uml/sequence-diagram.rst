@@ -28,7 +28,7 @@ Conversation
         participant Bob
 
         Alice ->> Bob: Hello, how are you?
-        Bob ->> Alice: Great!
+        Bob -->> Alice: Great!
     ```
 
 .. figure:: img/uml-mermaid-sequencediagram-alicebob.png
@@ -48,12 +48,40 @@ Nested
         activate Client
         Client ->> +Server: HTTP Request
         Server ->> +Database: SQL Query
-        Database ->> -Server: Result
-        Server ->> -Client: HTTP Response
+        Database -->> -Server: Result
+        Server -->> -Client: HTTP Response
         deactivate Client
     ```
 
 .. figure:: img/uml-mermaid-sequencediagram-web.png
+
+
+Async
+-----
+.. code-block:: md
+
+    ```mermaid
+    sequenceDiagram
+
+    participant Client
+    participant Server
+    participant Database
+
+    activate Client
+
+    Client -x +Server: HTTP Request
+    Client -x Server: HTTP Request
+    Server ->> +Database: SQL Query
+    Client -x Server: HTTP Request
+    Client -x Server: HTTP Request
+    Client -x Server: HTTP Request
+
+    Database -->> -Server: Result
+
+    Server --x -Client: HTTP Response
+
+    deactivate Client
+    ```
 
 
 Use Cases

@@ -28,9 +28,7 @@ OOP
     :caption: OOP
 
     oop/principles.rst
-    oop/dataclass.rst
     oop/access-modifiers.rst
-    oop/operators.rst
     oop/composition.rst
     oop/interface.rst
     oop/abstract.rst
