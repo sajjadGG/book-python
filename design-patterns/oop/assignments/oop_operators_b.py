@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Operators IAdd
+* Assignment: Operators Numerical IAdd
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min
@@ -18,14 +18,14 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> astro = Astronaut('Jan Twardowski', missions=[
+    >>> astro = Astronaut(firstname='Jan', lastname='Twardowski', missions=[
     ...     Mission(1969, 'Apollo 11'),
     ... ])
     >>> astro += Mission(2024, 'Artemis 3')
     >>> astro += Mission(2035, 'Ares 3')
 
     >>> print(astro)  # doctest: +NORMALIZE_WHITESPACE
-    Astronaut(name='Jan Twardowski',
+    Astronaut(firstname='Jan', lastname='Twardowski',
               missions=[Mission(year=1969, name='Apollo 11'),
                         Mission(year=2024, name='Artemis 3'),
                         Mission(year=2035, name='Ares 3')])
@@ -36,7 +36,8 @@ from dataclasses import dataclass
 
 @dataclass
 class Astronaut:
-    name: str
+    firstname: str
+    lastname: str
     missions: list
 
 
@@ -49,7 +50,8 @@ class Mission:
 # Solution
 @dataclass
 class Astronaut:
-    name: str
+    firstname: str
+    lastname: str
     missions: list
 
     def __iadd__(self, other):

@@ -1,5 +1,5 @@
-Abstract Class
-==============
+OOP Abstract Class
+==================
 
 
 Rationale
@@ -9,6 +9,7 @@ Rationale
 * Possible to indicate which method must be implemented by child
 * Inheriting class must implement all methods
 * Some methods can have implementation
+* Python Abstract Base Classes [#pydocabc]_
 
 .. glossary::
 
@@ -332,3 +333,8 @@ Assignments
 .. literalinclude:: assignments/oop_abstract_c.py
     :caption: :download:`Solution <assignments/oop_abstract_b.py>`
     :end-before: # Solution
+
+
+References
+----------
+.. [#pydocabc] https://docs.python.org/3/library/collections.abc.html

@@ -20,14 +20,12 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from inspect import isfunction, isclass
+    >>> from inspect import isfunction
 
-    >>> assert isclass(IrisInterface)
-    >>> assert hasattr(IrisInterface, '__init__')
     >>> assert hasattr(IrisInterface, 'mean')
     >>> assert hasattr(IrisInterface, 'sum')
     >>> assert hasattr(IrisInterface, 'len')
-    >>> assert isfunction(IrisInterface.__init__)
+
     >>> assert isfunction(IrisInterface.mean)
     >>> assert isfunction(IrisInterface.sum)
     >>> assert isfunction(IrisInterface.len)
@@ -38,36 +36,7 @@ Tests:
      'petal_length': <class 'float'>,
      'petal_width': <class 'float'>}
 
-    >>> IrisInterface.__init__.__annotations__  # doctest: +NORMALIZE_WHITESPACE
-    {'sepal_length': <class 'float'>,
-     'sepal_width': <class 'float'>,
-     'petal_length': <class 'float'>,
-     'petal_width': <class 'float'>,
-     'return': None}
-
-    >>> IrisInterface.mean.__annotations__
-    {'return': <class 'float'>}
-
-    >>> IrisInterface.sum.__annotations__
-    {'return': <class 'float'>}
-
-    >>> IrisInterface.len.__annotations__
-    {'return': <class 'int'>}
-
     >>> iris = IrisInterface(5.8, 2.7, 5.1, 1.9)
-    Traceback (most recent call last):
-    NotImplementedError
-
-    >>> IrisInterface.mean(None)
-    Traceback (most recent call last):
-    NotImplementedError
-    >>> IrisInterface.len(None)
-    Traceback (most recent call last):
-    NotImplementedError
-    >>> IrisInterface.sum(None)
-    Traceback (most recent call last):
-    NotImplementedError
-    >>> IrisInterface.__init__(None,1,2,3,4)
     Traceback (most recent call last):
     NotImplementedError
 """

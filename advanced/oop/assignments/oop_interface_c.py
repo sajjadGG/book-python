@@ -1,36 +1,39 @@
 """
-* Assignment: OOP Interface Implement
+* Assignment: OOP Interface Protected
 * Complexity: easy
-* Lines of code: 3 lines
+* Lines of code: 12 lines
 * Time: 8 min
 
 English:
     1. Define class `Setosa` implementing `IrisInterface`
     2. Implement interface
-    3. Run doctests - all must succeed
+    3. Note, that attribute `species` is a `str`, and in Python you cannot add `str` and `float`
+    4. Create protected method `_get_values()` which returns values of `int` and `float` type attibutes
+    5. Why this method is not in interface?
+    6. Run doctests - all must succeed
 
 Polish:
     1. Stwórz klasę `Setosa` implementującą `IrisInterface`
     2. Zaimplementuj interfejs
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    3. Zwróć uwagę, że atrybut `species` jest `str`, a Python nie można dodawać `str` i `float`
+    4. Stwórz metodę chronioną `_get_values()`, która zwraca wartości atrybutów typu `int` i `float`
+    5. Dlaczego ta metoda nie jest w interfejsie?
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * `vars(self).values()`
+    * `var(self).values()`
+    * `instanceof()` or `type()`
     * `mean = sum() / len()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from inspect import isclass
+    >>> from inspect import isfunction
 
-    >>> assert isclass(IrisInterface)
-    >>> assert isclass(Setosa)
     >>> assert issubclass(Setosa, IrisInterface)
-    >>> assert hasattr(Setosa, '__init__')
     >>> assert hasattr(Setosa, 'mean')
     >>> assert hasattr(Setosa, 'sum')
     >>> assert hasattr(Setosa, 'len')
 
-    >>> from inspect import isfunction
     >>> assert isfunction(Setosa.mean)
     >>> assert isfunction(Setosa.sum)
     >>> assert isfunction(Setosa.len)
@@ -39,25 +42,10 @@ Tests:
     {'sepal_length': <class 'float'>,
      'sepal_width': <class 'float'>,
      'petal_length': <class 'float'>,
-     'petal_width': <class 'float'>}
-
-    >>> Setosa.__init__.__annotations__  # doctest: +NORMALIZE_WHITESPACE
-    {'sepal_length': <class 'float'>,
-     'sepal_width': <class 'float'>,
-     'petal_length': <class 'float'>,
      'petal_width': <class 'float'>,
-     'return': None}
+     'species': <class 'str'>}
 
-    >>> Setosa.mean.__annotations__
-    {'return': <class 'float'>}
-
-    >>> Setosa.sum.__annotations__
-    {'return': <class 'float'>}
-
-    >>> Setosa.len.__annotations__
-    {'return': <class 'int'>}
-
-    >>> setosa = Setosa(5.1, 3.5, 1.4, 0.2)
+    >>> setosa = Setosa(5.1, 3.5, 1.4, 0.2, 'setosa')
     >>> setosa.len()
     4
     >>> setosa.sum()
@@ -66,19 +54,19 @@ Tests:
     2.55
 """
 
-
-
 class IrisInterface:
     sepal_length: float
     sepal_width: float
     petal_length: float
     petal_width: float
+    species: str
 
     def __init__(self,
                  sepal_length: float,
                  sepal_width: float,
                  petal_length: float,
-                 petal_width: float) -> None:
+                 petal_width: float,
+                 species: str) -> None:
         raise NotImplementedError
 
     def mean(self) -> float:
@@ -97,22 +85,29 @@ class Setosa(IrisInterface):
     sepal_width: float
     petal_length: float
     petal_width: float
+    species: str
 
     def __init__(self,
                  sepal_length: float,
                  sepal_width: float,
                  petal_length: float,
-                 petal_width: float) -> None:
+                 petal_width: float,
+                 species: str) -> None:
         self.sepal_length = sepal_length
         self.sepal_width = sepal_width
         self.petal_length = petal_length
         self.petal_width = petal_width
+        self.species = species
+
+    def _get_values(self):
+        return [x for x in vars(self).values()
+                  if isinstance(x, (float,int))]
 
     def mean(self) -> float:
         return self.sum() / self.len()
 
     def sum(self) -> float:
-        return sum(vars(self).values())
+        return sum(self._get_values())
 
     def len(self) -> int:
-        return len(vars(self))
+        return len(self._get_values())

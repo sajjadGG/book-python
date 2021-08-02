@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Operators Contains
+* Assignment: Operators Accessors Contains
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min
@@ -17,7 +17,7 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> astro = Astronaut('Jan Twardowski', missions=[
+    >>> astro = Astronaut(firstname='Jan', lastname='Twardowski', missions=[
     ...     Mission(1969, 'Apollo 11'),
     ...     Mission(2024, 'Artemis 3'),
     ...     Mission(2035, 'Ares 3'),
@@ -38,33 +38,52 @@ Tests:
     False
 """
 
-class Astronaut:
-    def __init__(self, name, missions):
-        self.name = name
-        self.missions = missions
-
 
 class Mission:
-    def __init__(self, year, name):
+    year: int
+    name: str
+
+    def __init__(self, year: int, name: str) -> None:
         self.year = year
         self.name = name
 
 
-# Solution
 class Astronaut:
-    def __init__(self, name, missions):
-        self.name = name
+    firstname: str
+    lastname: str
+    missions: list
+
+    def __init__(self, firstname: str, lastname: str, missions: list) -> None:
+        self.firstname = firstname
+        self.lastname = lastname
         self.missions = missions
 
-    def __contains__(self, flight):
-        return flight in self.missions
 
-
+# Solution
 class Mission:
-    def __init__(self, year, name):
+    year: int
+    name: str
+
+    def __init__(self, year: int, name: str) -> None:
         self.year = year
         self.name = name
 
     def __eq__(self, other):
         return (self.year == other.year) \
            and (self.name == other.name)
+
+
+class Astronaut:
+    firstname: str
+    lastname: str
+    missions: list
+
+    def __init__(self, firstname: str, lastname: str, missions: list) -> None:
+        self.firstname = firstname
+        self.lastname = lastname
+        self.missions = missions
+
+
+    def __contains__(self, flight):
+        return flight in self.missions
+

@@ -18,14 +18,23 @@ Rationale
     implement
         Class implements interface if has all public fields and methods from interface
 
+The following code is not a valid Python syntax. It is only to demonstrate how interfaces generally works.
+
+>>> # doctest: +SKIP
+...
+... interface Cache:
+...     def set(self, key: str, value: str) -> None
+...     def get(self, key: str) -> str
+...     def is_valid(self, key: str) -> bool
+
 
 Example
 -------
 >>> class CacheInterface:
-...     def get(self, key: str) -> str:
+...     def set(self, key: str, value: str) -> None:
 ...         raise NotImplementedError
 ...
-...     def set(self, key: str, value: str) -> None:
+...     def get(self, key: str) -> str:
 ...         raise NotImplementedError
 ...
 ...     def is_valid(self, key: str) -> bool:
@@ -35,42 +44,52 @@ Example
 Alternative Notation
 --------------------
 >>> class CacheInterface:
-...     def get(self, key: str) -> str: raise NotImplementedError
 ...     def set(self, key: str, value: str) -> None: raise NotImplementedError
+...     def get(self, key: str) -> str: raise NotImplementedError
 ...     def is_valid(self, key: str) -> bool: raise NotImplementedError
 
->>> class CacheInterface:
-...     def get(self, key: str) -> str: pass
-...     def set(self, key: str, value: str) -> None: pass
-...     def is_valid(self, key: str) -> bool: pass
+Sometimes you may get a shorter code, but it will not raise an error.
 
 >>> class CacheInterface:
-...     def get(self, key: str) -> str: ...
+...     def set(self, key: str, value: str) -> None: pass
+...     def get(self, key: str) -> str: pass
+...     def is_valid(self, key: str) -> bool: pass
+
+As of three dots (``...``) is a valid Python object (Ellipsis) you can write that:
+
+>>> class CacheInterface:
 ...     def set(self, key: str, value: str) -> None: ...
+...     def get(self, key: str) -> str: ...
 ...     def is_valid(self, key: str) -> bool: ...
+
+The following code is not a valid Python syntax...
+How nice it would be to write:
+
+>>> # doctest: +SKIP
+...
+... @interface
+... class Cache:
+...     def set(self, key: str, value: str) -> None: pass
+...     def get(self, key: str) -> str: pass
+...     def is_valid(self, key: str) -> bool: pass
+
+>>> # doctest: +SKIP
+...
+... interface Cache:
+...     def set(self, key: str, value: str) -> None
+...     def get(self, key: str) -> str
+...     def is_valid(self, key: str) -> bool
 
 
 Use Cases
 ---------
->>> from datetime import timedelta
->>>
->>>
 >>> class Cache:
-...     timeout: timedelta
-...
-...     def get(self, key: str) -> str:
-...         raise NotImplementedError
-...
-...     def set(self, key: str, value: str) -> None:
-...         raise NotImplementedError
-...
-...     def is_valid(self, key: str) -> bool:
-...         raise NotImplementedError
+...     def get(self, key: str) -> str: raise NotImplementedError
+...     def set(self, key: str, value: str) -> None: raise NotImplementedError
+...     def is_valid(self, key: str) -> bool: raise NotImplementedError
 >>>
 >>>
 >>> class CacheDatabase(Cache):
-...     timeout: timedelta
-...
 ...     def is_valid(self, key: str) -> bool:
 ...         ...
 ...
@@ -82,8 +101,6 @@ Use Cases
 >>>
 >>>
 >>> class CacheRAM(Cache):
-...     timeout: timedelta
-...
 ...     def is_valid(self, key: str) -> bool:
 ...         ...
 ...
@@ -95,8 +112,6 @@ Use Cases
 >>>
 >>>
 >>> class CacheFilesystem(Cache):
-...     timeout: timedelta
-...
 ...     def is_valid(self, key: str) -> bool:
 ...         ...
 ...
@@ -125,10 +140,14 @@ Use Cases
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_interface_define.py
-    :caption: :download:`Solution <assignments/oop_interface_define.py>`
+.. literalinclude:: assignments/oop_interface_a.py
+    :caption: :download:`Solution <assignments/oop_interface_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_interface_implement.py
-    :caption: :download:`Solution <assignments/oop_interface_implement.py>`
+.. literalinclude:: assignments/oop_interface_b.py
+    :caption: :download:`Solution <assignments/oop_interface_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/oop_interface_c.py
+    :caption: :download:`Solution <assignments/oop_interface_c.py>`
     :end-before: # Solution

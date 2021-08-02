@@ -1,5 +1,5 @@
-Inheritance vs. Composition
-===========================
+OOP Inheritance vs. Composition
+===============================
 
 
 Rationale
@@ -187,11 +187,13 @@ Problem:
 ...
 ...     def to_pickle(self):
 ...         import pickle
-...         return pickle.dumps(self)
+...         data = vars(self)
+...         return pickle.dumps(data)
 ...
 ...     def to_json(self):
 ...         import json
-...         return json.dumps(self.__dict__)
+...         data = vars(self)
+...         return json.dumps(data)
 
 This class contains methods, which could be also used by other classes,
 this will lower the amount of code to maintain. So we refactor and
@@ -200,11 +202,13 @@ this will lower the amount of code to maintain. So we refactor and
 >>> class Serialize:
 ...     def to_pickle(self):
 ...         import pickle
-...         return pickle.dumps(self)
+...         data = vars(self)
+...         return pickle.dumps(data)
 ...
 ...     def to_json(self):
 ...         import json
-...         return json.dumps(self.__dict__)
+...         data = vars(self)
+...         return json.dumps(data)
 >>>
 >>>
 >>> class Astronaut(Serialize):
@@ -221,12 +225,14 @@ In this case, the `Multi level inheritance` is a bad pattern here:
 >>> class ToJSON:
 ...     def to_json(self):
 ...         import json
-...         return json.dumps(self.__dict__)
+...         data = vars(self)
+...         return json.dumps(data)
 >>>
 >>> class ToPickle(ToJSON):
 ...     def to_pickle(self):
 ...         import pickle
-...         return pickle.dumps(self)
+...         data = vars(self)
+...         return pickle.dumps(data)
 >>>
 >>>
 >>> class Astronaut(ToPickle):
@@ -255,13 +261,18 @@ extreme, by considering inheritance a bad practice. They use composition:
 >>> class ToJSON:
 ...     def to_json(self):
 ...         import json
-...         data = {k: v for k, v in vars(self).items() if not k.startswith('_')}
+...         data = {attrname: attrvalue
+...                 for attrname, attrvalue in vars(self).items()
+...                 if not attrname.startswith('_')}
 ...         return json.dumps(data)
 >>>
 >>> class ToPickle:
 ...     def to_pickle(self):
 ...         import pickle
-...         return pickle.dumps(self)
+...         data = {attrname: attrvalue
+...                 for attrname, attrvalue in vars(self).items()
+...                 if not attrname.startswith('_')}
+...         return pickle.dumps(data)
 >>>
 >>>
 >>> class Astronaut:
@@ -312,12 +323,14 @@ are called `Mixin classes` and they use `multiple inheritance` mechanism:
 >>> class ToJSON:
 ...     def to_json(self):
 ...         import json
-...         return json.dumps(self.__dict__)
+...         data = vars(self)
+...         return json.dumps(data)
 >>>
 >>> class ToPickle:
 ...     def to_pickle(self):
 ...         import pickle
-...         return pickle.dumps(self)
+...         data = vars(self)
+...         return pickle.dumps(data)
 >>>
 >>>
 >>> class Astronaut(ToJSON, ToPickle):

@@ -1,5 +1,5 @@
-Interface
-=========
+OOP Interface
+=============
 
 
 Rationale
@@ -30,7 +30,7 @@ The following code is not a valid Python syntax. It is only to demonstrate how i
 
 Example
 -------
->>> class Cache:
+>>> class CacheInterface:
 ...     def set(self, key: str, value: str) -> None:
 ...         raise NotImplementedError
 ...
@@ -40,21 +40,24 @@ Example
 ...     def is_valid(self, key: str) -> bool:
 ...         raise NotImplementedError
 
->>> class Cache:
+
+Alternative Notation
+--------------------
+>>> class CacheInterface:
 ...     def set(self, key: str, value: str) -> None: raise NotImplementedError
 ...     def get(self, key: str) -> str: raise NotImplementedError
 ...     def is_valid(self, key: str) -> bool: raise NotImplementedError
 
 Sometimes you may get a shorter code, but it will not raise an error.
 
->>> class Cache:
+>>> class CacheInterface:
 ...     def set(self, key: str, value: str) -> None: pass
 ...     def get(self, key: str) -> str: pass
 ...     def is_valid(self, key: str) -> bool: pass
 
 As of three dots (``...``) is a valid Python object (Ellipsis) you can write that:
 
->>> class Cache:
+>>> class CacheInterface:
 ...     def set(self, key: str, value: str) -> None: ...
 ...     def get(self, key: str) -> str: ...
 ...     def is_valid(self, key: str) -> bool: ...
@@ -119,20 +122,20 @@ Use Cases
 ...         ...
 >>>
 >>>
->>> cache: Cache = CacheFilesystem()
->>> cache.set('name', 'Jan Twardowski')
->>> cache.is_valid('name')
->>> cache.get('name')
+>>> fs: Cache = CacheFilesystem()
+>>> fs.set('name', 'Mark Watney')
+>>> fs.is_valid('name')
+>>> fs.get('name')
 >>>
->>> cache: Cache = CacheRAM()
->>> cache.set('name', 'Jan Twardowski')
->>> cache.is_valid('name')
->>> cache.get('name')
+>>> ram: Cache = CacheRAM()
+>>> ram.set('name', 'Mark Watney')
+>>> ram.is_valid('name')
+>>> ram.get('name')
 >>>
->>> cache: Cache = CacheDatabase()
->>> cache.set('name', 'Jan Twardowski')
->>> cache.is_valid('name')
->>> cache.get('name')
+>>> db: Cache = CacheDatabase()
+>>> db.set('name', 'Mark Watney')
+>>> db.is_valid('name')
+>>> db.get('name')
 
 
 Assignments
