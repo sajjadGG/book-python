@@ -465,29 +465,29 @@ Use Case 2
 ----------
 * Calculate age
 
-.. code-block:: python
-
-    from dataclasses import dataclass
-    from datetime import date
-
-    DAY = 1
-    YEAR = 365.2425 * DAYS
-
-
-    @dataclass
-    class Astronaut:
-        firstname: str
-        lastname: str
-        date_of_birth: date
-
-        @property
-        def age(self):
-            age = date.today() - self.date_of_birth
-            return round(age.days/YEAR, 1)
-
-
-    astro = Astronaut('Mark', 'Watney', date(1969, 7, 21))
-    print(astro.age)
+>>> from dataclasses import dataclass
+>>> from datetime import date
+>>>
+>>> DAY = 1
+>>> YEAR = 365.2425 * DAY
+>>> TODAY = date(2000, 1, 1)  # date.today()
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     date_of_birth: date
+...
+...     @property
+...     def age(self):
+...         age = TODAY - self.date_of_birth
+...         return round(age.days/YEAR, 1)
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney', date(1969, 7, 21))
+>>> print(astro.age)
+30.4
 
 
 Use Case 3

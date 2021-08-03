@@ -12,8 +12,6 @@ Rationale
     * ``getattr(obj, 'attrname', 'default_value') -> Any``
     * ``hasattr(obj, 'attrname') -> bool``
 
-.. code-block:: python
-
 >>> class Astronaut:
 ...     def __init__(self, name):
 ...         self.name = name
