@@ -10,11 +10,11 @@ jobs:
       - run: pip install -r requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
       - run: find . -path '*assignments*' -name '*.py' \
-                    -not -path "./advanced/*" \
-                    -not -path "./django/*" \
-                    -not -path "./machine-learning/*" \
-                    -not -path "./matplotlib/*" \
-                    -not -path "./network/*" \
+                    -not -path './advanced/*' \
+                    -not -path './django/*' \
+                    -not -path './machine-learning/*' \
+                    -not -path './matplotlib/*' \
+                    -not -path './network/*' \
                     -print -exec python -m doctest '{}' \;
 
   about:
@@ -86,7 +86,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - run: pip install -r dragon/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest dragon /tmp/
       - run: find dragon -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
 
   fastapi:
@@ -104,7 +103,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - run: pip install -r install/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest install /tmp/
       - run: find install -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
 
   intermediate:
@@ -121,6 +119,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
       - run: pip install -r machine-learning/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest machine-learning /tmp/
       # - run: find machine-learning -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -167,5 +172,5 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - run: pip install -r pandas/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b pandas oop /tmp/
+      - run: sphinx-build -a -E -j auto --color -b doctest pandas /tmp/
       - run: find pandas -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
