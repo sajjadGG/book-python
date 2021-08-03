@@ -1,5 +1,5 @@
-Protocol Staticmethod
-=====================
+OOP Staticmethod
+================
 
 
 Rationale
@@ -59,141 +59,181 @@ Namespace
 ---------
 Functions on a high level of a module lack namespace:
 
->>> def add(a, b):
-...     return a + b
->>>
->>> def sub(a, b):
-...     return a - b
->>>
->>>
->>> add(1, 2)
-3
->>> sub(8, 4)
-4
+.. code-block:: python
+
+
+    def add(a, b):
+        return a + b
+
+    def sub(a, b):
+        return a - b
+
+
+    add(1, 2)
+    sub(8, 4)
 
 When ``add`` and ``sub`` are in ``Calculator`` class (namespace) they get instance (``self``) as a first argument. Instantiating Calculator is not needed, as of functions do not read or write to instance variables:
 
->>> class Calculator:
-...
-...     def add(self, a, b):
-...         return a + b
-...
-...     def sub(self, a, b):
-...         return a - b
->>>
->>>
->>> Calculator.add(10, 20)
-Traceback (most recent call last):
-TypeError: add() missing 1 required positional argument: 'b'
->>>
->>> Calculator.sub(8, 4)
-Traceback (most recent call last):
-TypeError: add() missing 1 required positional argument: 'b'
->>>
->>> calc = Calculator()
->>> calc.add(1, 2)
-3
->>> calc.sub(8, 4)
-4
+.. code-block:: python
+
+    class Calculator:
+
+        def add(self, a, b):
+            return a + b
+
+        def sub(self, a, b):
+            return a - b
+
+
+    Calculator.add(10, 20)
+    # Traceback (most recent call last):
+    # TypeError: add() missing 1 required positional argument: 'b'
+
+    Calculator.sub(8, 4)
+    # Traceback (most recent call last):
+    # TypeError: add() missing 1 required positional argument: 'b'
+
+    calc = Calculator()
+    calc.add(1, 2)
+    # 3
+    calc.sub(8, 4)
+    # 4
 
 Class ``Calculator`` is a namespace for functions. ``@staticmethod`` remove instance (``self``) argument to method:
 
->>> class Calculator:
-...
-...     @staticmethod
-...     def add(a, b):
-...         return a + b
-...
-...     @staticmethod
-...     def sub(a, b):
-...         return a - b
->>>
->>>
->>> Calculator.add(1, 2)
-3
->>> Calculator.sub(8, 4)
-4
+.. code-block:: python
+
+    class Calculator:
+
+        @staticmethod
+        def add(a, b):
+            return a + b
+
+        @staticmethod
+        def sub(a, b):
+            return a - b
+
+
+    Calculator.add(1, 2)
+    Calculator.sub(8, 4)
+
 
 Use Cases
 ---------
+
 Http Client:
 
->>> class http:
-...
-...     @staticmethod
-...     def get(url):
-...         ...
-...
-...     @staticmethod
-...     def post(url, data):
-...         ...
->>>
->>>
->>> http.get('https://python.astrotech.io')
->>> http.post('https://python.astrotech.io', data={'astronaut': 'Mark Watney'})
+.. code-block:: python
+
+    class http:
+
+        @staticmethod
+        def get(url):
+            ...
+
+        @staticmethod
+        def post(url, data):
+            ...
+
+    http.get('https://python.astrotech.io')
+    http.post('https://python.astrotech.io', data={'astronaut': 'Mark Watney'})
 
 Astronaut Hello:
 
->>> def astronaut_say_hello():
-...     print('hello')
->>>
->>> def astronaut_say_goodbye():
-...     print('goodbye')
->>>
->>>
->>> class Astronaut:
-...     pass
->>>
->>>
->>> a = Astronaut()
->>> astronaut_say_hello()
-hello
->>> astronaut_say_goodbye()
-goodbye
+.. code-block:: python
 
->>> class Astronaut:
-...     def say_hello(self):
-...         print('hello')
-...
-...     def say_goodbye(self):
-...         print('goodbye')
->>>
->>>
->>> a = Astronaut()
->>> a.say_hello()
-hello
->>> a.say_goodbye()
-goodbye
->>>
->>> Astronaut.say_hello()
-Traceback (most recent call last):
-TypeError: say_hello() missing 1 required positional argument: 'self'
->>>
->>> Astronaut.say_goodbye()
-Traceback (most recent call last):
-TypeError: say_goodbye() missing 1 required positional argument: 'self'
+    def astronaut_say_hello():
+        print('hello')
 
->>> class Astronaut:
+    def astronaut_say_goodbye():
+        print('goodbye')
+
+
+    class Astronaut:
+        pass
+
+
+    a = Astronaut()
+    astronaut_say_hello()
+    # hello
+    astronaut_say_goodbye()
+    # 'goodbye'
+
+.. code-block:: python
+
+    class Astronaut:
+        def say_hello(self):
+            print('hello')
+
+        def say_goodbye(self):
+            print('goodbye')
+
+
+    a = Astronaut()
+    a.say_hello()
+    # hello
+    a.say_goodbye()
+    # 'goodbye'
+
+    Astronaut.say_hello()
+    # Traceback (most recent call last):
+    # TypeError: say_hello() missing 1 required positional argument: 'self'
+
+    Astronaut.say_goodbye()
+    # Traceback (most recent call last):
+    # TypeError: say_goodbye() missing 1 required positional argument: 'self'
+
+.. code-block:: python
+
+    class Astronaut:
+
+        @staticmethod
+        def say_hello():
+            print('hello')
+
+        @staticmethod
+        def say_goodbye():
+            print('goodbye')
+
+
+    Astronaut.say_hello()
+    # hello
+
+    Astronaut.say_goodbye()
+    # 'goodbye'
+
+    astro = Astronaut()
+    astro.say_hello()
+    # hello
+    astro.say_goodbye()
+    # goodbye
+
+Example:
+
+>>> from dataclasses import dataclass
+>>> from datetime import datetime, timezone
+>>> from typing import Literal
+>>>
+>>>
+>>> @dataclass
+... class Measurement:
+...     device_id: str
+...     parameter: Literal['temperature', 'humidity']
+...     value: float
+...     unit: Literal['Celsius', 'Kelvin', 'Fahrenheit', '%']
+...     when: datetime = datetime.now(timezone.utc)
 ...
-...     @staticmethod
-...     def say_hello():
-...         print('hello')
-...
-...     @staticmethod
-...     def say_goodbye():
-...         print('goodbye')
+...     def __post_init__(self):
+...         if self.unit == 'Kelvin' and self.value < 0:
+...             raise ValueError('Negative Kelvin')
 >>>
 >>>
->>> Astronaut.say_hello()
-hello
->>> Astronaut.say_goodbye()
-goodbye
->>>
->>> astro = Astronaut()
->>> astro.say_hello()
-hello
->>> astro.say_goodbye()
-goodbye
+>>> m = Measurement(
+...         device_id='1a2b7c8d38',
+...         parameter='temperature',
+...         value=21.3,
+...         unit='Celsius')
+
 
 Helper `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor model:
 
@@ -346,6 +386,7 @@ Helper `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor model:
             'unit': clean_unit(unit)}
 
     obj = ZWaveSensor.objects.update_or_create(datetime=dt, defaults=data)
+
 
 .. code-block:: python
 

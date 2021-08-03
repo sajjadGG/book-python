@@ -32,6 +32,9 @@ OOP
     oop/composition.rst
     oop/interface.rst
     oop/abstract.rst
+    oop/staticattrs.rst
+    oop/staticmethod.rst
+    oop/classmethod.rst
     oop/polymorphism.rst
     oop/solid.rst
 
@@ -62,8 +65,6 @@ Protocols
     protocol/about.rst
     protocol/iterator.rst
     protocol/context-manager.rst
-    protocol/staticmethod.rst
-    protocol/classmethod.rst
     protocol/property.rst
     protocol/reflection.rst
     protocol/descriptor.rst

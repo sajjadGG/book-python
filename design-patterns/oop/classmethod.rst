@@ -1,5 +1,5 @@
-Protocol Classmethod
-====================
+OOP Classmethod
+===============
 
 
 Rationale
@@ -297,6 +297,10 @@ Coordinated Mars Time
 
 Assignments
 -----------
-.. literalinclude:: assignments/protocol_classmethod_a.py
-    :caption: :download:`Solution <assignments/protocol_classmethod_a.py>`
+.. literalinclude:: assignments/oop_classmethod_a.py
+    :caption: :download:`Solution <assignments/oop_classmethod_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/oop_classmethod_b.py
+    :caption: :download:`Solution <assignments/oop_classmethod_b.py>`
     :end-before: # Solution

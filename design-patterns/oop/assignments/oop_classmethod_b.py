@@ -1,5 +1,5 @@
 """
-* Assignment: Protocol Classmethod CSV
+* Assignment: OOP Classmethod CSV
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 13 min

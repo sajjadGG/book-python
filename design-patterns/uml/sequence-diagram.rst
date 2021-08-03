@@ -83,6 +83,8 @@ Async
     deactivate Client
     ```
 
+.. todo:: generate image from mermaid code
+
 
 Use Cases
 ---------
