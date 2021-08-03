@@ -2,7 +2,7 @@ name: __all__
 on: push
 
 jobs:
-  __all__:
+  all:
     runs-on: ubuntu-20.04
     steps:
 
