@@ -24,12 +24,22 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isabstract
 
+    >>> assert isabstract(Iris), \
+    'Iris class should be abstract, inherit from ABC or use metaclass=ABCMeta'
+
+    >>> assert hasattr(Iris.get_name, '__isabstractmethod__'), \
+    'Iris.get_name() method should be abstract, use @abstractmethod decorator'
+
+    >>> assert not isabstract(Setosa), \
+    'Setosa should not be abstract class'
+
+    >>> assert not hasattr(Setosa.get_name, '__isabstractmethod__'), \
+    'Setosa.get_name() should not be an abstract method'
+
     >>> iris = Iris()
     Traceback (most recent call last):
     TypeError: Can't instantiate abstract class Iris with abstract method get_name
     >>> setosa = Setosa()
-
-    >>> assert isabstract(Iris)
 
 Warning:
     * Last line of doctest, second to last word of `TypeError` message

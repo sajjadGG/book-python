@@ -23,13 +23,27 @@ Tests:
     >>> from inspect import isfunction
 
     >>> assert issubclass(Setosa, IrisInterface)
-    >>> assert hasattr(Setosa, 'mean')
-    >>> assert hasattr(Setosa, 'sum')
-    >>> assert hasattr(Setosa, 'len')
 
-    >>> assert isfunction(Setosa.mean)
-    >>> assert isfunction(Setosa.sum)
-    >>> assert isfunction(Setosa.len)
+    >>> assert hasattr(Setosa, '__annotations__'), \
+    'Setosa has no field type annotations'
+
+    >>> assert hasattr(Setosa, 'mean'), \
+    'Setosa has no method .mean()'
+
+    >>> assert hasattr(Setosa, 'sum'), \
+    'Setosa has no method .sum()'
+
+    >>> assert hasattr(Setosa, 'len'), \
+    'Setosa has no method .len()'
+
+    >>> assert isfunction(Setosa.mean), \
+    'Setosa.mean() is not a method'
+
+    >>> assert isfunction(Setosa.sum), \
+    'Setosa.sum() is not a method'
+
+    >>> assert isfunction(Setosa.len), \
+    'Setosa.len() is not a method'
 
     >>> Setosa.__annotations__  # doctest: +NORMALIZE_WHITESPACE
     {'sepal_length': <class 'float'>,

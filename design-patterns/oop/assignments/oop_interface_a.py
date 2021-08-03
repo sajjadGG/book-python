@@ -22,13 +22,26 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert hasattr(IrisInterface, 'mean')
-    >>> assert hasattr(IrisInterface, 'sum')
-    >>> assert hasattr(IrisInterface, 'len')
+    >>> assert hasattr(IrisInterface, '__annotations__'), \
+    'IrisInterface has no field type annotations'
 
-    >>> assert isfunction(IrisInterface.mean)
-    >>> assert isfunction(IrisInterface.sum)
-    >>> assert isfunction(IrisInterface.len)
+    >>> assert hasattr(IrisInterface, 'mean'), \
+    'IrisInterface has no method .mean()'
+
+    >>> assert hasattr(IrisInterface, 'sum'), \
+    'IrisInterface has no method .sum()'
+
+    >>> assert hasattr(IrisInterface, 'len'), \
+    'IrisInterface has no method .len()'
+
+    >>> assert isfunction(IrisInterface.mean), \
+    'IrisInterface.mean() is not a method'
+
+    >>> assert isfunction(IrisInterface.sum), \
+    'IrisInterface.sum() is not a method'
+
+    >>> assert isfunction(IrisInterface.len), \
+    'IrisInterface.len() is not a method'
 
     >>> IrisInterface.__annotations__  # doctest: +NORMALIZE_WHITESPACE
     {'sepal_length': <class 'float'>,

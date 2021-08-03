@@ -22,15 +22,38 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isabstract
 
-    >>> assert isabstract(IrisAbstract)
-    >>> assert hasattr(IrisAbstract, '__init__')
-    >>> assert hasattr(IrisAbstract, 'mean')
-    >>> assert hasattr(IrisAbstract, 'sum')
-    >>> assert hasattr(IrisAbstract, 'len')
-    >>> assert IrisAbstract.__init__.__isabstractmethod__
-    >>> assert IrisAbstract.mean.__isabstractmethod__
-    >>> assert IrisAbstract.sum.__isabstractmethod__
-    >>> assert IrisAbstract.len.__isabstractmethod__
+    >>> assert isabstract(IrisAbstract), \
+    'IrisAbstract should be an abstract class, inherit from ABC or use ABCMeta'
+
+    >>> assert hasattr(IrisAbstract, '__init__'), \
+    'IrisAbstract, should have .__init__() abstract method'
+
+    >>> assert hasattr(IrisAbstract, 'mean'), \
+    'IrisAbstract, should have .mean() abstract method'
+
+    >>> assert hasattr(IrisAbstract, 'sum'), \
+    'IrisAbstract should have .sum() abstract method'
+
+    >>> assert hasattr(IrisAbstract, 'len'), \
+    'IrisAbstract should have .len() abstract method'
+
+    >>> assert hasattr(IrisAbstract.__init__, '__isabstractmethod__'), \
+    'IrisAbstract.__init__() should be an abstract method, use @abstractmethod'
+
+    >>> assert hasattr(IrisAbstract.mean, '__isabstractmethod__'), \
+    'IrisAbstract.mean() should be an abstract method, use @abstractmethod'
+
+    >>> assert hasattr(IrisAbstract.sum, '__isabstractmethod__'), \
+    'IrisAbstract.sum() should be an abstract method, use @abstractmethod'
+
+    >>> assert hasattr(IrisAbstract.len, '__isabstractmethod__'), \
+    'IrisAbstract.len() should be an abstract method, use @abstractmethod'
+
+    >>> assert hasattr(IrisAbstract, '__annotations__'), \
+    'IrisAbstract class should have fields type annotations'
+
+    >>> assert hasattr(IrisAbstract.__init__, '__annotations__'), \
+    'IrisAbstract.__init__() method should have parameter type annotations'
 
     >>> IrisAbstract.__annotations__  # doctest: +NORMALIZE_WHITESPACE
     {'sepal_length': <class 'float'>,

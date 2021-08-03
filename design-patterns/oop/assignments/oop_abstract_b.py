@@ -18,13 +18,26 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isabstract
 
-    >>> assert isabstract(IrisAbstract)
-    >>> assert hasattr(IrisAbstract, 'mean')
-    >>> assert hasattr(IrisAbstract, 'sum')
-    >>> assert hasattr(IrisAbstract, 'len')
-    >>> assert IrisAbstract.mean.__isabstractmethod__
-    >>> assert IrisAbstract.sum.__isabstractmethod__
-    >>> assert IrisAbstract.len.__isabstractmethod__
+    >>> assert isabstract(IrisAbstract), \
+    'IrisAbstract should be an abstract class, inherit from ABC or use ABCMeta'
+
+    >>> assert hasattr(IrisAbstract, 'mean'), \
+    'IrisAbstract, should have .mean() abstract method'
+
+    >>> assert hasattr(IrisAbstract, 'sum'), \
+    'IrisAbstract should have .sum() abstract method'
+
+    >>> assert hasattr(IrisAbstract, 'len'), \
+    'IrisAbstract should have .len() abstract method'
+
+    >>> assert hasattr(IrisAbstract.mean, '__isabstractmethod__'), \
+    'IrisAbstract.mean() should be an abstract method, use @abstractmethod'
+
+    >>> assert hasattr(IrisAbstract.sum, '__isabstractmethod__'), \
+    'IrisAbstract.sum() should be an abstract method, use @abstractmethod'
+
+    >>> assert hasattr(IrisAbstract.len, '__isabstractmethod__'), \
+    'IrisAbstract.len() should be an abstract method, use @abstractmethod'
 """
 
 from abc import ABCMeta, abstractmethod
