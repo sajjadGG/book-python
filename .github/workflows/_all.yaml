@@ -9,13 +9,7 @@ jobs:
       - uses: actions/setup-python@v2
       - run: pip install -r requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
-      - run: find . -path "*assignments*" -name "*.py" \
-                    -not -path "./advanced/*" \
-                    -not -path "./django/*" \
-                    -not -path "./machine-learning/*" \
-                    -not -path "./matplotlib/*" \
-                    -not -path "./network/*" \
-                    -print -exec python -m doctest '{}' \;
+      - run: find . -path "*assignments*" -name "*.py" -not -path "./advanced/*" -not -path "./django/*" -not -path "./machine-learning/*" -not -path "./matplotlib/*" -not -path "./network/*" -print -exec python -m doctest '{}' \;
 
   about:
     runs-on: ubuntu-20.04
