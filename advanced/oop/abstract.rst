@@ -331,7 +331,7 @@ Assignments
     :end-before: # Solution
 
 .. literalinclude:: assignments/oop_abstract_c.py
-    :caption: :download:`Solution <assignments/oop_abstract_b.py>`
+    :caption: :download:`Solution <assignments/oop_abstract_c.py>`
     :end-before: # Solution
 
 

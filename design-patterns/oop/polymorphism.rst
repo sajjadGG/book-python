@@ -29,7 +29,7 @@ Polymorphism
 >>>
 >>> language = Polish()
 >>> language.hello()
-
+Witaj
 
 Use Case - Astronauts
 ---------------------
@@ -133,8 +133,8 @@ Use Case - UI Elements
 >>>
 >>>
 >>> render([
-...     Textarea('Username')
-...     Textarea('Password')
+...     Textarea('Username'),
+...     Textarea('Password'),
 ...     Button('Submit'),
 ... ])
 Rendering Username Textarea

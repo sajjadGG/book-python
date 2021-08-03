@@ -18,18 +18,6 @@ Rationale
     implement
         Class implements interface if has all public fields and methods from interface
 
-The following code is not a valid Python syntax. It is only to demonstrate how interfaces generally works.
-
->>> # doctest: +SKIP
-...
-... interface Cache:
-...     def set(self, key: str, value: str) -> None
-...     def get(self, key: str) -> str
-...     def is_valid(self, key: str) -> bool
-
-
-Example
--------
 >>> class CacheInterface:
 ...     def set(self, key: str, value: str) -> None:
 ...         raise NotImplementedError
@@ -65,17 +53,18 @@ As of three dots (``...``) is a valid Python object (Ellipsis) you can write tha
 The following code is not a valid Python syntax...
 How nice it would be to write:
 
->>> # doctest: +SKIP
-...
-... @interface
+>>> @interface # doctest: +SKIP
 ... class Cache:
-...     def set(self, key: str, value: str) -> None: pass
-...     def get(self, key: str) -> str: pass
-...     def is_valid(self, key: str) -> bool: pass
+...     def set(self, key: str, value: str) -> None: ...
+...     def get(self, key: str) -> str: ...
+...     def is_valid(self, key: str) -> bool: ...
 
->>> # doctest: +SKIP
-...
-... interface Cache:
+>>> class Cache(interface=True): # doctest: +SKIP
+...     def set(self, key: str, value: str) -> None: ...
+...     def get(self, key: str) -> str: ...
+...     def is_valid(self, key: str) -> bool: ...
+
+>>> interface Cache: # doctest: +SKIP
 ...     def set(self, key: str, value: str) -> None
 ...     def get(self, key: str) -> str
 ...     def is_valid(self, key: str) -> bool

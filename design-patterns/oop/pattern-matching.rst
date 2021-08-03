@@ -16,7 +16,7 @@ Problem
 ... elif language == 'English':
 ...     result = 'Hello'
 ... elif language == 'German':
-...     result = 'Hallo'
+...     result = 'Guten Tag'
 ... elif language == 'Russian':
 ...     result = 'Здравствуй'
 ... elif language == 'Chinese':
@@ -40,7 +40,7 @@ In other languages you may find ``switch`` statement:
 >>> switch(language):  # doctest: +SKIP
 ...     case 'Polish': result = 'Witaj'
 ...     case 'English': result = 'Hello'
-...     case 'German': result = 'Hallo'
+...     case 'German': result = 'Guten Tag'
 ...     case 'Russian': result = 'Здравствуй'
 ...     case 'Chinese': result = '你好'
 ...     case 'French': result = 'Bonjour'
@@ -57,16 +57,16 @@ Pattern Matching
 >>> language = 'Polish'
 >>>
 >>> match language:  # doctest: +SKIP
->>>     case 'Polish': result = 'Cześć'
->>>     case 'English': result = 'Hello'
->>>     case 'German': result = 'Hallo'
->>>     case 'Russian': result = 'Здравствуй'
->>>     case 'Chinese': result = '你好'
->>>     case 'French': result = 'Bonjour'
->>>     case _: result = 'Unknown language'
+...     case 'Polish': result = 'Cześć'
+...     case 'English': result = 'Hello'
+...     case 'German': result = 'Guten Tag'
+...     case 'Russian': result = 'Здравствуй'
+...     case 'Chinese': result = '你好'
+...     case 'French': result = 'Bonjour'
+...     case _: result = 'Unknown language'
 >>>
 >>> print(result)
-'Cześć'
+Cześć
 
 
 Behavior

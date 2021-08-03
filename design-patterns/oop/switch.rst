@@ -48,12 +48,12 @@ Unknown language
 ... elif language == 'English':
 ...     result = 'Hello'
 ... elif language == 'German':
-...     result = 'Hallo'
+...     result = 'Guten Tag'
 ... else:
 ...     result = 'Unknown language'
 >>>
 >>> print(result)
-Hallo
+Guten Tag
 
 >>> language = 'Russian'
 >>>
@@ -62,7 +62,7 @@ Hallo
 ... elif language == 'English':
 ...     result = 'Hello'
 ... elif language == 'German':
-...     result = 'Hallo'
+...     result = 'Guten Tag'
 ... elif language == 'Russian':
 ...     result = 'Здравствуй'
 ... else:
@@ -78,7 +78,7 @@ Hallo
 ... elif language == 'English':
 ...     result = 'Hello'
 ... elif language == 'German':
-...     result = 'Hallo'
+...     result = 'Guten Tag'
 ... elif language == 'Russian':
 ...     result = 'Здравствуй'
 ... elif language == 'Chinese':
@@ -100,16 +100,16 @@ Iteration 3 - Switch / Pattern Matching
 >>> language = 'Polish'
 >>>
 >>> match language:  # doctest: +SKIP
->>>     case 'Polish': result = 'Cześć'
->>>     case 'English': result = 'Hello'
->>>     case 'German': result = 'Hallo'
->>>     case 'Russian': result = 'Здравствуй'
->>>     case 'Chinese': result = '你好'
->>>     case 'French': result = 'Bonjour'
->>>     case _: result = 'Unknown language'
+...     case 'Polish': result = 'Cześć'
+...     case 'English': result = 'Hello'
+...     case 'German': result = 'Guten Tag'
+...     case 'Russian': result = 'Здравствуй'
+...     case 'Chinese': result = '你好'
+...     case 'French': result = 'Bonjour'
+...     case _: result = 'Unknown language'
 >>>
 >>> print(result)
-'Cześć'
+Cześć
 
 It's a bit cleaner, but essentially the same problem persists. Both
 ``switch/pattern matching`` and ``if/elif/else`` statements moves business
@@ -125,7 +125,7 @@ Content of a `myapp.i18n` module:
 >>> HELLO = {
 ...     'Polish': 'Cześć',
 ...     'English': 'Hello',
-...     'German': 'Hallo',
+...     'German': 'Guten Tag',
 ...     'Russian': 'Здравствуй',
 ...     'Chinese': '你好',
 ...     'French':  'Bonjour',
@@ -157,12 +157,11 @@ Content of a `myapp.i18n` module:
 ...     return {
 ...         'Polish': 'Cześć',
 ...         'English': 'Hello',
-...         'German': 'Hallo',
+...         'German': 'Guten Tag',
 ...         'Russian': 'Здравствуй',
 ...         'Chinese': '你好',
 ...         'French':  'Bonjour',
 ...     }.get(language, 'Unknown language')
-
 
 Then import this in the desired location:
 
@@ -191,22 +190,22 @@ to use Polymorphism:
 >>>
 >>> class Language(ABC):
 ...     @abstractmethod
-...     def hello(self): ...
+...     def hello(self) -> str: ...
 >>>
 >>>
 >>> class Polish(Language):
 ...     def hello(self):
-...         print('Cześć')
+...         return 'Cześć'
 >>>
 >>>
 >>> class English(Language):
 ...     def hello(self):
-...         print('Hello')
+...         return 'Hello'
 >>>
 >>>
 >>> class Russian(Language):
 ...     def hello(self):
-...         print('Здравствуй')
+...         return 'Здравствуй'
 >>>
 >>>
 >>> language = Polish()

@@ -57,6 +57,41 @@ aligned with that responsibility.
 
 Bad:
 
+>>> class Hero:
+...     def is_alive(self): ...
+...     def is_dead(self): ...
+...     def position_set(self): ...
+...     def position_get(self): ...
+...     def position_change(self): ...
+...     def damage_make(self): ...
+...     def damage_take(self): ...
+...     def texture_set(self): ...
+...     def texture_get(self): ...
+
+Good:
+
+>>> class HasPosition:
+...     def position_set(self): ...
+...     def position_get(self): ...
+...     def position_change(self): ...
+>>>
+>>> class HasHealth:
+...     def damage_take(self): ...
+...     def is_alive(self): ...
+...     def is_dead(self): ...
+>>>
+>>> class HasTexture:
+...     def texture_set(self): ...
+...     def texture_get(self): ...
+>>>
+>>> class CanAttack:
+...     def damage_make(self): ...
+>>>
+>>> class Hero(HasPosition, HasHealth, HasTexture, CanAttack):
+...     pass
+
+Bad:
+
 >>> from dataclasses import dataclass
 >>>
 >>>
@@ -153,12 +188,16 @@ Open/Closed Principle
 
 Adding new parser (PDF,Txt) class should not break the ``Document`` class.
 
+Bad:
+
 >>> class PDF:
 ...     pass
 >>>
 >>> class Txt:
 ...     pass
 >>>
+>>> class Docx(FileFormat):
+>>>     pass
 >>>
 >>> class Document:
 ...     def __new__(cls, *args, **kwargs):
@@ -167,6 +206,8 @@ Adding new parser (PDF,Txt) class should not break the ``Document`` class.
 ...             return PDF()
 ...         elif extension == 'txt':
 ...             return Txt()
+...         elif extension == 'docx':
+...             return Docx()
 >>>
 >>>
 >>> file1 = Document('myfile.pdf')
@@ -177,6 +218,47 @@ Adding new parser (PDF,Txt) class should not break the ``Document`` class.
 >>>
 >>> print(file2)  # doctest: +ELLIPSIS
 <Txt object at 0x...>
+
+Good:
+
+>>> class FileFormat:
+>>>     def __init__(self, *args, **kwargs):
+>>>         ...
+>>>
+>>> class PDF(FileFormat):
+>>>     pass
+>>>
+>>> class Txt(FileFormat):
+>>>     pass
+>>>
+>>> class Docx(FileFormat):
+>>>     pass
+>>>
+>>>
+>>> class Document:
+>>>     def __new__(cls, *args, **kwargs):
+>>>         filename, extension = args[0].split('.')
+>>>         for format in FileFormat.__subclasses__():
+>>>             if extension == format.__name__.lower():
+>>>                 return format(*args, **kwargs)
+>>>         else:
+>>>             raise NotImplementedError(extension)
+>>>
+>>>
+>>> file1 = Document('myfile.pdf')
+>>> file2 = Document('myfile.txt')
+>>> file3 = Document('myfile.docx')
+>>>
+>>> print(file1)  # doctest: +ELLIPSIS
+<PDF object at 0x...>
+>>>
+>>> print(file2)  # doctest: +ELLIPSIS
+<Txt object at 0x...>
+>>>
+>>> print(file3)  # doctest: +ELLIPSIS
+<Docx object at 0x...>
+
+Good:
 
 >>> class Setosa:
 ...     pass
@@ -229,8 +311,8 @@ Adding new parser (PDF,Txt) class should not break the ``Document`` class.
 >>>
 >>>
 >>> class Critter:
-...     HEALTH_MIN: int
-...     HEALTH_MAX: int
+...     HEALTH_MIN: int = 0
+...     HEALTH_MAX: int = 10
 ...
 ...     def __init__(self):
 ...         self._health = self._get_initial_health()
@@ -259,23 +341,26 @@ Liskov Substitution Principle
 -----------------------------
 .. epigraph::
 
-    Derived classes must be usable through the base class interface, without the need for the user to know the difference.
+    Derived classes must be usable through the base class interface,
+    without the need for the user to know the difference.
 
     -- Barbara Liskov
 
 .. epigraph::
 
-    If S is a subtype of T, then objects of type T may be replaced with objects of the S
+    If S is a subtype of T, then objects of type T may be replaced with
+    objects of the S
 
     -- Barbara Liskov
 
-* Objects in a program should be replaceable with instances of their subtypes
-  without altering the correctness of that program
+* Objects in a program should be replaceable with instances of their
+  subtypes without altering the correctness of that program
 * It's all about polymorphism
 * Example:
 
     * Lots of code in Python works with dictionaries
-    * An OrderedDict is a dict subclass that keeps most of the API intact (fully Liskov substitutable)
+    * An ``OrderedDict`` is a dict subclass that keeps most of the API
+      intact (fully Liskov substitutable)
     * It can be used just about everywhere in Python instead of dicts
 
 * Any part of the API which is not fully substitutable is a Liskov violation
@@ -339,43 +424,6 @@ Liskov Substitution Principle
 >>> assert hasattr(OrderedDict, 'update')
 >>> assert hasattr(OrderedDict, 'values')
 
->>> from abc import ABCMeta, abstractmethod
->>> from dataclasses import dataclass
->>>
->>>
->>> @dataclass
-... class Person(metaclass=ABCMeta):
-...     name: str
-...
-...     @abstractmethod
-...     def say_hello(self):
-...         pass
->>>
->>>
->>> class Astronaut(Person):
-...     def say_hello(self):
-...         return f'Hello {self.name}'
->>>
->>> class Cosmonaut(Person):
-...     def say_hello(self):
-...         return f'Привет {self.name}'
->>>
->>>
->>> def hello(crew: list[Person]) -> None:
-...     for member in crew:
-...         print(member.say_hello())
->>>
->>>
->>> crew = [Astronaut('Mark Watney'),
-...         Cosmonaut('Иван Иванович'),
-...         Astronaut('Melissa Lewis'),
-...         Cosmonaut('Jan Twardowski')]
->>>
->>> hello(crew)
-Hello Mark Watney
-Привет Иван Иванович
-Hello Melissa Lewis
-Привет Jan Twardowski
 
 Interface Segregation Principle
 -------------------------------
