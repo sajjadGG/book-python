@@ -225,13 +225,10 @@ class Dragon:
         return not self.is_dead()
 
     def is_dead(self):
-        if self.status == Status.DEAD:
-            return True
-        else:
-            return False
+        return self.status == Status.DEAD
 
     def take_damage(self, damage):
-        if self.is_alive():
+        if self.is_dead():
             return None
 
         self.current_health -= damage

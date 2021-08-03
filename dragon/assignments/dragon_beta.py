@@ -42,7 +42,7 @@ class Character(Dragon):
         else:
             self.status = Status.DEAD
 
-    def set_position(self, position: Point = Point()) -> None:
+    def __matmul__(self, position: Point = Point()) -> None:
         """
         >>> dragon = Character(name='Red', position_x=0, position_y=0)
         >>> dragon >> Direction(right=1)
@@ -56,11 +56,10 @@ class Character(Dragon):
         Point(x=0, y=1)
         >>> dragon >> Direction(up=2)
         >>> dragon.position
-        Point(x=1, y=1)
+        Point(x=0, y=0)
         """
-        current_position = self.position
-        x = current_position.x
-        y = current_position.y
+        x = position.x
+        y = position.y
 
         if x > Config.BORDER_X_MAX:
             x = Config.BORDER_X_MAX
@@ -74,7 +73,7 @@ class Character(Dragon):
         if y < Config.BORDER_Y_MIN:
             y = Config.BORDER_Y_MIN
 
-        self @ Point(x, y)
+        super().__matmul__(Point(x, y))
 
 
 class CharacterClass(Enum):
