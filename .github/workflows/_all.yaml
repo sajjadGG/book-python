@@ -5,35 +5,10 @@ jobs:
   all:
     runs-on: ubuntu-20.04
     steps:
-
-      - name: Checkout the Code from GIT Repository
-        uses: actions/checkout@v2
-
-      - name: Setup Python Version
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9.6'
-
-      - name: Setup PIP Cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-            ${{ runner.os }}-
-
-      - name: Upgrade PIP
-        run: pip install --upgrade pip
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Doctest Listings
-        run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
-
-      - name: Doctest Assignments
-        run: find . -path '*assignments*' -name '*.py' \
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
+      - run: find . -path '*assignments*' -name '*.py' \
                     -not -path "./advanced/*" \
                     -not -path "./design-patterns/*" \
                     -not -path "./django/*" \
@@ -41,3 +16,39 @@ jobs:
                     -not -path "./matplotlib/*" \
                     -not -path "./network/*" \
                     -print -exec python -m doctest '{}' \;
+
+  basics:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: pip install -r requirements.txt
+      - run: sphinx-build -a -E -j auto --color -b doctest basics /tmp/
+      - run: find basics -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
+
+  intermediate:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: pip install -r requirements.txt
+      - run: sphinx-build -a -E -j auto --color -b doctest stdlib /tmp/
+      - run: find stdlib -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
+
+  advanced:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: pip install -r requirements.txt
+      - run: sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
+      - run: find advanced -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
+
+  design-patterns:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: pip install -r requirements.txt
+      - run: sphinx-build -a -E -j auto --color -b doctest design-patterns /tmp/
+      - run: find design-patterns -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
