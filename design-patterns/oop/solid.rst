@@ -196,7 +196,7 @@ Bad:
 >>> class Txt:
 ...     pass
 >>>
->>> class Docx(FileFormat):
+>>> class Docx:
 ...     pass
 >>>
 >>> class Document:

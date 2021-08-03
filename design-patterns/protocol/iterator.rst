@@ -245,10 +245,10 @@ Standard Library Itertools
 ...     print(i, status)
 ...     if i == 3:
 ...         break
-0, even
-1, odd
-2, even
-3, odd
+0 even
+1 odd
+2 even
+3 odd
 
 ``itertools.repeat(object[, times])``:
 

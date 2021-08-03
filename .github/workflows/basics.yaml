@@ -33,4 +33,4 @@ jobs:
         run: sphinx-build -a -E -j auto --color -b doctest basics /tmp/
 
       - name: Doctest Assignments
-        run: find basics -path '*assignments*' -name '*.py' -exec python -m doctest '{}' \;
+        run: find basics -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;

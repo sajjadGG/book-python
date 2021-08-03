@@ -25,7 +25,7 @@ Attributes
 Methods Without Parameters
 --------------------------
 >>> class Astronaut:
-...     def say_hello(self:
+...     def say_hello(self):
 ...         pass
 
 .. code-block:: md
