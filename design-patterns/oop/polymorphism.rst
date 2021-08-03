@@ -85,8 +85,8 @@ Pattern Matching
 
 >>> language = 'English'
 >>>
->>> # doctest: +SKIP
-... match language:
+>>>
+>>> match language:  # doctest: +SKIP
 ...     case 'Polish':
 ...         result = 'Witaj'
 ...     case 'English':
@@ -98,8 +98,8 @@ Pattern Matching
 
 >>> status = 418
 >>>
->>> # doctest: +SKIP
-... match status:
+>>>
+>>> match status:  # doctest: +SKIP
 ...     case 400:
 ...         result = 'Bad request'
 ...     case 401 | 403 | 405:
@@ -113,8 +113,8 @@ Pattern Matching
 
 >>> request = 'GET /index.html HTTP/2.0'
 >>>
->>> # doctest: +SKIP
-... match request.split():
+>>>
+>>> match request.split():  # doctest: +SKIP
 ...     case ['GET', uri, version]:
 ...         server.get(uri)
 ...     case ['POST', uri, version]:
@@ -128,8 +128,8 @@ Pattern Matching
 ...     def action():
 ...         return  ['move', 'left', 20]
 >>>
->>> # doctest: +SKIP
-... match hero.action():
+>>>
+>>> match hero.action():  # doctest: +SKIP
 ...     case ['move', ('up'|'down'|'left'|'right') as direction, value]:
 ...         hero.move(direction, value)
 ...     case ['make_damage', value]:
@@ -139,6 +139,7 @@ Pattern Matching
 
 >>> from enum import Enum
 >>>
+>>>
 >>> class Key(Enum):
 ...     ESC = 27
 ...     ARROW_LEFT = 37
@@ -146,62 +147,53 @@ Pattern Matching
 ...     ARROW_RIGHT = 39
 ...     ARROW_DOWN = 40
 >>>
->>> # doctest: +SKIP
-... match keyboard.on_key_press():
+>>>
+>>> match keyboard.on_key_press():  # doctest: +SKIP
 ...     case Key.ESC:
 ...         game.quit()
 ...     case Key.ARROW_LEFT:
-...         game.move_left()
+...         hero.move_left()
 ...     case Key.ARROW_UP:
-...         game.move_up()
+...         hero.move_up()
 ...     case Key.ARROW_RIGHT:
-...         game.move_right()
+...         hero.move_right()
 ...     case Key.ARROW_DOWN:
-...         game.move_down()
+...         hero.move_down()
 ...     case _:
 ...         raise ValueError(f'Unrecognized key')
-
->>> from enum import Enum
->>>
->>> class Color(Enum):
-...     RED = 0
-...     BLUE = 1
-...     BLACK = 2
->>>
->>> # doctest: +SKIP
-... match color:
-...     case Color.RED:
-...         print('Soviet')
-...     case Color.BLUE:
-...         print('Allies')
-...     case Color.BLACK:
-...         print('Axis')
-
->>> from enum import Enum
->>>
->>> class SpaceMan(Enum):
-...     NASA = 'Astronaut'
-...     ESA = 'Astronaut'
-...     ROSCOSMOS = 'Cosmonaut'
-...     CNSA = 'Taikonaut'
-...     ISRO = 'GaganYatri'
->>>
->>> # doctest: +SKIP
-... match agency:
-...     case SpaceMan.NASA:
-...         print('USA')
-...     case SpaceMan.ESA:
-...         print('Europe')
-...     case SpaceMan.ROSCOSMOS:
-...         print('Russia')
-...     case SpaceMan.CNSA:
-...         print('China')
-...     case SpaceMan.ISRO:
-...         print('India')
 
 
 Polymorphism
 ------------
+>>> from abc import ABC, abstractmethod
+>>>
+>>>
+>>> class Language(ABC):
+...     @abstractmethod
+...     def hello(self): ...
+>>>
+>>>
+>>> class Polish(Language):
+...     def hello(self):
+...         print('Witaj')
+>>>
+>>>
+>>> class English(Language):
+...     def hello(self):
+...         print('Hello')
+>>>
+>>>
+>>> class German(Language):
+...     def hello(self):
+...         print('Guten Tag')
+>>>
+>>>
+>>> language = Polish()
+>>> language.hello()
+
+
+Use Case - Astronauts
+---------------------
 >>> from abc import ABCMeta, abstractmethod
 >>> from dataclasses import dataclass
 >>>

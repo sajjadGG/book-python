@@ -22,11 +22,14 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isabstract
 
     >>> iris = Iris()
     Traceback (most recent call last):
     TypeError: Can't instantiate abstract class Iris with abstract method get_name
     >>> setosa = Setosa()
+
+    >>> assert isabstract(Iris)
 
 Warning:
     * Last line of doctest, second to last word of `TypeError` message
