@@ -15,12 +15,23 @@ Rationale
 * ``..`` - Link (Dashed)
 
 .. figure:: img/uml-mermaid-classdiagram-relations.png
-.. figure:: img/uml-relations.png
 
 
 Inheritance
 -----------
-.. figure:: img/uml-relations-inheritance-simple.png
+>>> class Vehicle:
+...     def engine_start(self): pass
+...     def engine_stop(self): pass
+>>>
+>>>
+>>> class Car(Vehicle):
+...     pass
+>>>
+>>> class Truck(Vehicle):
+...     pass
+>>>
+>>> class Motorcycle(Vehicle):
+...     pass
 
 .. code-block:: md
 
@@ -36,23 +47,28 @@ Inheritance
         }
     ```
 
+.. figure:: img/uml-relations-inheritance-simple.png
+
+
+Multilevel Inheritance
+----------------------
 >>> class Vehicle:
 ...     def engine_start(self): pass
 ...     def engine_stop(self): pass
 >>>
+>>> class VehicleWithWindows(Vehicle):
+...     def window_open(self): pass
+...     def window_close(self): pass
 >>>
->>> class Car(Vehicle):
+>>>
+>>> class Car(VehicleWithWindows):
 ...     pass
 >>>
->>> class Truck(Vehicle):
+>>> class Truck(VehicleWithWindows):
 ...     pass
 >>>
 >>> class Motorcycle(Vehicle):
 ...     pass
-
-Multilevel Inheritance
-----------------------
-.. figure:: img/uml-relations-inheritance-multilevel.png
 
 .. code-block:: md
 
@@ -74,31 +90,32 @@ Multilevel Inheritance
         }
     ```
 
->>> class Vehicle:
-...     def engine_start(): pass
-...     def engine_stop(): pass
->>>
->>> class VehicleWithWindows(Vehicle):
-...     def window_open(): pass
-...     def window_close(): pass
->>>
->>> class Car(VehicleWithWindows):
-...     pass
->>>
->>> class Truck(VehicleWithWindows):
-...     pass
->>>
->>> class Motorcycle(Vehicle):
-...     pass
+.. figure:: img/uml-relations-inheritance-multilevel.png
 
 
 Multiple Inheritance
 --------------------
 * Also know as `Mixin Classes`
 
-.. todo:: Update image Multiple Inheritance from mermaid code
-
-.. figure:: img/uml-relations-composition.png
+>>> class Vehicle:
+...     pass
+>>>
+>>> class HasEngine:
+...     def engine_start(self): pass
+...     def engine_stop(self): pass
+>>>
+>>> class HasWindows:
+...     def window_open(self): pass
+...     def window_close(self): pass
+>>>
+>>> class Car(Vehicle, HasEngine, HasWindows):
+...     pass
+>>>
+>>> class Truck(Vehicle, HasEngine, HasWindows):
+...     pass
+>>>
+>>> class Motorcycle(Vehicle, HasEngine):
+...     pass
 
 .. code-block:: md
 
@@ -122,53 +139,13 @@ Multiple Inheritance
         }
     ```
 
->>> class Vehicle:
-...     pass
->>>
->>> class HasEngine:
-...     def engine_start(self): pass
-...     def engine_stop(self): pass
->>>
->>> class HasWindows:
-...     def window_open(self): pass
-...     def window_close(self): pass
->>>
->>> class Car(Vehicle, HasEngine, HasWindows):
-...     pass
->>>
->>> class Truck(Vehicle, HasEngine, HasWindows):
-...     pass
->>>
->>> class Motorcycle(Vehicle, HasEngine):
-...     pass
+.. figure:: img/uml-relations-composition.png
+.. todo:: Update image Multiple Inheritance from mermaid code
 
 
 Composition
 -----------
 .. todo:: Add image to Composition UML
-
-.. code-block:: md
-
-    ```mermaid
-    classDiagram
-
-        class Engine {
-            engine_start()
-            engine_stop()
-        }
-
-        class Car {
-            engine: Engine
-        }
-
-        class Truck {
-            engine: Engine
-        }
-
-        class Motorcycle {
-            engine: Engine
-        }
-    ```
 
 >>> class Vehicle:
 ...     pass
@@ -193,29 +170,32 @@ Composition
 >>> class Motorcycle(Vehicle):
 ...     engine: Engine
 
-
-Aggregation
------------
-.. figure:: img/uml-relations-aggregation.png
-
 .. code-block:: md
 
     ```mermaid
     classDiagram
-        Astronaut *--|> Mission
 
-        class Astronaut {
-            firstname: str
-            lastname: str
-            missions: list[Mission]
+        class Engine {
+            engine_start()
+            engine_stop()
         }
 
-        class Mission {
-            year: int
-            name: str
+        class Car {
+            engine: Engine
+        }
+
+        class Truck {
+            engine: Engine
+        }
+
+        class Motorcycle {
+            engine: Engine
         }
     ```
 
+
+Aggregation
+-----------
 >>> class Mission:
 ...     year: int
 ...     name: str
@@ -242,20 +222,49 @@ Aggregation
 >>>
 >>>
 >>> class Car(Vehicle):
-...     parts: list[Part]       # [Engine, Windows]
+...     parts: list[Part] = [Engine, Windows]
 >>>
 >>> class Truck(Vehicle):
-...     parts: list[Part]       # [Engine, Windows]
+...     parts: list[Part] = [Engine, Windows]
 >>>
 >>> class Motorcycle(Vehicle):
-...     parts: list[Part]       # [Engine]
+...     parts: list[Part] = [Engine]
+
+.. code-block:: md
+
+    ```mermaid
+    classDiagram
+        Astronaut *--|> Mission
+
+        class Astronaut {
+            firstname: str
+            lastname: str
+            missions: list[Mission]
+        }
+
+        class Mission {
+            year: int
+            name: str
+        }
+    ```
+
+.. figure:: img/uml-relations-aggregation.png
 
 
 Dependency
 ----------
 * Somewhere in ``Astronaut`` class you are using ``Spaceship`` class
 
-.. figure:: img/uml-relations-dependency.png
+>>> class Spaceship:
+...     name: str
+>>>
+>>>
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...
+...     def enter(spaceship: Spaceship):
+...         pass
 
 .. code-block:: md
 
@@ -274,16 +283,7 @@ Dependency
         }
     ```
 
->>> class Spaceship:
-...     name: str
->>>
->>>
->>> class Astronaut:
-...     firstname: str
-...     lastname: str
-...
-...     def enter(spaceship: Spaceship):
-...         pass
+.. figure:: img/uml-relations-dependency.png
 
 
 Cardinality

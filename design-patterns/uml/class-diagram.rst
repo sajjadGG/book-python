@@ -21,10 +21,11 @@ Attributes
 
 .. figure:: img/uml-classdiagram-attributes.png
 
+
 Methods Without Parameters
 --------------------------
 >>> class Astronaut:
-...     def say_hello():
+...     def say_hello(self:
 ...         pass
 
 .. code-block:: md
@@ -39,10 +40,11 @@ Methods Without Parameters
 
 .. figure:: img/uml-classdiagram-method-noparams.png
 
+
 Methods With Parameters
 -----------------------
 >>> class Astronaut:
-...     def say_hello(firstname: str, lastname: str):
+...     def say_hello(self, firstname: str, lastname: str):
 ...         pass
 
 .. code-block:: md
@@ -57,10 +59,11 @@ Methods With Parameters
 
 .. figure:: img/uml-classdiagram-method-params.png
 
+
 Method Return Type
 ------------------
 >>> class Astronaut:
-...     def say_hello() -> str:
+...     def say_hello(self) -> str:
 ...         pass
 
 .. code-block:: md
@@ -75,6 +78,7 @@ Method Return Type
 
 .. figure:: img/uml-classdiagram-method-return.png
 
+
 Abstract Methods
 ----------------
 >>> from abc import abstractmethod, ABCMeta
@@ -82,7 +86,7 @@ Abstract Methods
 >>>
 >>> class Astronaut(metaclass=ABCMeta):
 ...     @abstractmethod
-...     def say_hello():
+...     def say_hello(self):
 ...         pass
 
 .. code-block:: md
@@ -96,6 +100,7 @@ Abstract Methods
     ```
 
 .. figure:: img/uml-classdiagram-method-abstract.png
+
 
 Static Methods
 --------------
@@ -115,6 +120,8 @@ Static Methods
     ```
 
 .. figure:: img/uml-classdiagram-method-static.png
+.. todo:: update image from mermaid code
+
 
 Types
 -----
@@ -122,7 +129,7 @@ Types
 ...     firstname: str
 ...     lastname: str
 ...
-...     def say_hello(name: str) -> str:
+...     def say_hello(self, name: str) -> str:
 ...         pass
 
 .. code-block:: md
@@ -155,7 +162,7 @@ Access Modifiers - Public
 ...     firstname: str
 ...     lastname: str
 ...
-...     def say_hello() -> str:
+...     def say_hello(self) -> str:
 ...         pass
 
 .. code-block:: md
@@ -171,13 +178,14 @@ Access Modifiers - Public
     ```
 .. figure:: img/uml-classdiagram-accessmodifiers-public.png
 
+
 Access Modifiers - Protected
 ----------------------------
 >>> class Astronaut:
 ...     _firstname: str
 ...     _lastname: str
 ...
-...     def _say_hello() -> str:
+...     def _say_hello(self) -> str:
 ...         pass
 
 .. code-block:: md
@@ -200,7 +208,7 @@ Access Modifiers - Private
 ...     __firstname: str
 ...     __lastname: str
 ...
-...     def __say_hello() -> str:
+...     def __say_hello(self) -> str:
 ...         pass
 
 .. code-block:: md

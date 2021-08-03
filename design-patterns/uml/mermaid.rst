@@ -1,5 +1,5 @@
-Mermaid
-=======
+UML Mermaid
+===========
 
 
 Rationale
