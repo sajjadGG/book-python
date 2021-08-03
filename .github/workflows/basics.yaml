@@ -1,11 +1,11 @@
-name: Doctests
+name: Basics
 on: push
 
 jobs:
   basics:
     runs-on: ubuntu-20.04
-
     steps:
+
       - name: Checkout the Code from GIT Repository
         uses: actions/checkout@v2
 

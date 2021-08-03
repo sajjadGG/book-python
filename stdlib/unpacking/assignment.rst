@@ -201,7 +201,7 @@ Use Cases
 >>> import sys
 >>>
 >>> sys.version_info
-sys.version_info(major=3, minor=9, micro=5, releaselevel='final', serial=0)
+sys.version_info(major=3, minor=9, micro=6, releaselevel='final', serial=0)
 >>>
 >>> major, minor, *_ = sys.version_info
 >>> print(major, minor, sep='.')

@@ -1,11 +1,11 @@
-name: Doctests
+name: __all__
 on: push
 
 jobs:
-  doctest:
+  __all__:
     runs-on: ubuntu-20.04
-
     steps:
+
       - name: Checkout the Code from GIT Repository
         uses: actions/checkout@v2
 
