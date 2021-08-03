@@ -1,12 +1,14 @@
 from enum import Enum
-from .dragon_alpha_adv import Dragon, Status, Position, Movable
+from dragon_alpha_adv import Dragon, Status, Point, Direction
 
 
-class Status(Status):
-    FULL_HEALTH = 'Full Health'
-    INJURED = 'Injured'
-    BADLY_WOUNDED = 'Badly Wounded'
-    NEAR_DEAD = 'Near Death'
+class Status(Enum):
+    ALIVE: str = 'alive'
+    DEAD: str = 'dead'
+    FULL_HEALTH: str = 'Full Health'
+    INJURED: str = 'Injured'
+    BADLY_WOUNDED: str = 'Badly Wounded'
+    NEAR_DEAD: str = 'Near Death'
 
 
 class Config:
@@ -21,13 +23,13 @@ class Character(Dragon):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._items = []
-        self._health_full = self._health_current
+        self._health_full = self._health
 
     def update_status(self):
         if not hasattr(self, '_health_full'):
-            self._health_full = self._health_current
+            self._health_full = self._health
 
-        percent = self._health_current / self._health_full * 100
+        percent = self._health / self._health_full * 100
 
         if percent == 100:
             self.status = Status.FULL_HEALTH
@@ -40,23 +42,23 @@ class Character(Dragon):
         else:
             self.status = Status.DEAD
 
-    def set_position(self, position: Position = Position()) -> None:
+    def set_position(self, position: Point = Point()) -> None:
         """
-        >>> dragon = Character(name='Red', position=Position(0, 0))
-        >>> dragon.position_change(right=1)
-        >>> dragon.position_get()
+        >>> dragon = Character(name='Red', position_x=0, position_y=0)
+        >>> dragon >> Direction(right=1)
+        >>> dragon.position
         Point(x=1, y=0)
-        >>> dragon.position_change(down=1)
-        >>> dragon.position_get()
+        >>> dragon >> Direction(down=1)
+        >>> dragon.position
         Point(x=1, y=1)
-        >>> dragon.position_change(left=2)
-        >>> dragon.position_get()
+        >>> dragon >> Direction(left=2)
+        >>> dragon.position
         Point(x=0, y=1)
-        >>> dragon.position_change(up=2)
-        >>> dragon.position_get()
+        >>> dragon >> Direction(up=2)
+        >>> dragon.position
         Point(x=1, y=1)
         """
-        current_position = self.position_get()
+        current_position = self.position
         x = current_position.x
         y = current_position.y
 
@@ -72,7 +74,7 @@ class Character(Dragon):
         if y < Config.BORDER_Y_MIN:
             y = Config.BORDER_Y_MIN
 
-        super().position_set(Position(x, y))
+        self @ Point(x, y)
 
 
 class CharacterClass(Enum):

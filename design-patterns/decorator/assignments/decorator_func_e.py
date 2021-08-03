@@ -49,10 +49,14 @@ Tests:
     >>> duration_nocache = timeit(stmt='fn2(500); fn2(400); fn2(450); fn2(350)',
     ...                           globals=globals(), number=10_000)
 
+
     >>> duration_ratio = duration_nocache / duration_cache
-    >>> print(f'With Cache time: {duration_cache:.4f} seconds')
-    >>> print(f'Without Cache time: {duration_nocache:.3f} seconds')
-    >>> print(f'Cached solution is {duration_ratio:.1f} times faster')
+    >>> print(f'With Cache time: {duration_cache:.4f} seconds')  # doctest: +ELLIPSIS
+    With Cache time: ... seconds
+    >>> print(f'Without Cache time: {duration_nocache:.3f} seconds')  # doctest: +ELLIPSIS
+    Without Cache time: ... seconds
+    >>> print(f'Cached solution is {duration_ratio:.1f} times faster')  # doctest: +ELLIPSIS
+    Cached solution is ... times faster
 
     TODO: Make tests faster
 """
@@ -73,3 +77,4 @@ def cache(func):
             _cache[n] = func(n)
         return _cache[n]
     return wrapper
+

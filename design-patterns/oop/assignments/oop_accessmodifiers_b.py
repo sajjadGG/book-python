@@ -89,6 +89,7 @@ result = [iris(*features)
 
 
 # Solution 2
+result = []
 for *features, label in DATA[1:]:
     if label == 'setosa':
         iris = Setosa(*features)

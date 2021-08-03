@@ -38,9 +38,9 @@ Tests:
 
 import pandas as pd
 
-DATA = 'https://en.wikipedia.org/wiki/European_Astronaut_Corps'
-
+# DATA = 'https://en.wikipedia.org/wiki/European_Astronaut_Corps'
+DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/html/european-astronaut-corps.html'
 
 # Solution
 data = pd.read_html(DATA)
-result = data[3]
+result = data[0]
