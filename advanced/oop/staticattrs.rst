@@ -10,23 +10,21 @@ Static Fields
 
 Static Fields:
 
-.. code-block:: python
-
-    class Astronaut:
-        agency = 'NASA'
-
-
-    watney = Astronaut()
-    jimenez = Astronaut()
-
-    print(watney.agency)
-    # NASA
-
-    print(jimenez.agency)
-    # NASA
-
-    print(Astronaut.agency)
-    # NASA
+>>> class Astronaut:
+...     agency = 'NASA'
+>>>
+>>>
+>>> watney = Astronaut()
+>>> jimenez = Astronaut()
+>>>
+>>> print(watney.agency)
+NASA
+>>>
+>>> print(jimenez.agency)
+NASA
+>>>
+>>> print(Astronaut.agency)
+NASA
 
 
 Dynamic Fields
@@ -38,142 +36,128 @@ Dynamic Fields
 
 Dynamic fields:
 
-.. code-block:: python
-
-    class Astronaut:
-        def __init__(self, agency='NASA'):
-            self.agency = agency
-
-
-    watney = Astronaut()
-    twardowski = Astronaut()
-
-    print(watney.agency)
-    # NASA
-
-    print(twardowski.agency)
-    # NASA
-
-    print(Astronaut.agency)
-    # Traceback (most recent call last):
-    # AttributeError: type object 'Astronaut' has no attribute 'agency'
+>>> class Astronaut:
+...     def __init__(self, agency='NASA'):
+...         self.agency = agency
+>>>
+>>>
+>>> watney = Astronaut()
+>>> twardowski = Astronaut()
+>>>
+>>> print(watney.agency)
+NASA
+>>>
+>>> print(twardowski.agency)
+NASA
+>>>
+>>> print(Astronaut.agency)
+Traceback (most recent call last):
+AttributeError: type object 'Astronaut' has no attribute 'agency'
 
 
 Static vs. Dynamic Fields
 -------------------------
 Static vs. Dynamic fields:
 
-.. code-block:: python
-
-    class Astronaut:
-        agency = 'NASA'
-
-
-    watney = Astronaut()
-    twardowski = Astronaut()
-    ivanovic = Astronaut()
-
-    # Print field
-    print(watney.agency)           # NASA
-    print(twardowski.agency)       # NASA
-    print(ivanovic.agency)         # NASA
-    print(Astronaut.agency)        # NASA
-
-    # Change field on a class
-    Astronaut.agency = 'ESA'
-
-    # Print field
-    print(watney.agency)           # ESA
-    print(twardowski.agency)       # ESA
-    print(ivanovic.agency)         # ESA
-    print(Astronaut.agency)        # ESA
-
-    # Change field on the instance
-    ivanovic.agency = 'Roscosmos'
-
-    # Print field
-    print(watney.agency)           # ESA
-    print(twardowski.agency)       # ESA
-    print(ivanovic.agency)         # Roscosmos
-    print(Astronaut.agency)        # ESA
-
-    # Change field on a class
-    Astronaut.agency = 'POLSA'
-
-    # Print field
-    print(watney.agency)           # POLSA
-    print(twardowski.agency)       # POLSA
-    print(ivanovic.agency)         # Roscosmos
-    print(Astronaut.agency)        # POLSA
+>>> class Astronaut:
+...     agency = 'NASA'
+>>>
+>>>
+>>> watney = Astronaut()
+>>> twardowski = Astronaut()
+>>> ivanovic = Astronaut()
+>>>
+>>> # Print field
+>>> print(watney.agency)
+NASA
+>>> print(twardowski.agency)
+NASA
+>>> print(ivanovic.agency)
+NASA
+>>> print(Astronaut.agency)
+NASA
+>>>
+>>> # Change field on a class
+>>> Astronaut.agency = 'ESA'
+>>>
+>>> # Print field
+>>> print(watney.agency)
+ESA
+>>> print(twardowski.agency)
+ESA
+>>> print(ivanovic.agency)
+ESA
+>>> print(Astronaut.agency)
+ESA
+>>>
+>>> # Change field on the instance
+>>> ivanovic.agency = 'Roscosmos'
+>>>
+>>> # Print field
+>>> print(watney.agency)
+ESA
+>>> print(twardowski.agency)
+ESA
+>>> print(ivanovic.agency)
+Roscosmos
+>>> print(Astronaut.agency)
+ESA
+>>>
+>>> # Change field on a class
+>>> Astronaut.agency = 'POLSA'
+>>>
+>>> # Print field
+>>> print(watney.agency)
+POLSA
+>>> print(twardowski.agency)
+POLSA
+>>> print(ivanovic.agency)
+Roscosmos
+>>> print(Astronaut.agency)
+POLSA
 
 
 Static or Dynamic?
 ------------------
 Static Fields:
 
-.. code-block:: python
-
-    class Astronaut:
-        firstname = ...
-        lastname = ...
+>>> class Astronaut:
+...     firstname = ...
+...     lastname = ...
 
 Dynamic Fields:
 
-.. code-block:: python
-
-    class Cosmonaut:
-        def __init__(self):
-            self.firstname = ...
-            self.lastname = ...
+>>> class Cosmonaut:
+...     def __init__(self):
+...         self.firstname = ...
+...         self.lastname = ...
 
 Dynamic Fields:
 
-.. code-block:: python
-
-    from dataclasses import dataclass
-
-
-    @dataclass
-    class GaganYatri:
-        firstname: str = ...
-        lastname: list = ...
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class GaganYatri:
+...     firstname: str = ...
+...     lastname: list = ...
 
 Dynamic Fields:
 
-.. code-block:: python
-
-    class Taikonaut:
-        pass
-
-    t = Taikonaut()
-    t.firstname = ...
-    t.lastname = ...
+>>> class Taikonaut:
+...     pass
+>>>
+>>> t = Taikonaut()
+>>> t.firstname = ...
+>>> t.lastname = ...
 
 Static Fields:
 
-.. code-block:: python
-
-    class Taikonaut:
-        pass
-
-    Taikonaut.firstname = ...
-    Taikonaut.lastname = ...
-
-    vars(Taikonaut)
-
-
-Static Fields:
-
-.. code-block:: python
-
-    class Taikonaut:
-        pass
-
-    Taikonaut.firstname = ...
-    Taikonaut.lastname = ...
-
-    t = Taikonaut()
-    vars(t)
+>>> class Taikonaut:
+...     pass
+>>>
+>>> Taikonaut.firstname = ...
+>>> Taikonaut.lastname = ...
 
 
 Assignments

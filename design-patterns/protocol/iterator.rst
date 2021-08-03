@@ -238,20 +238,16 @@ Standard Library Itertools
 
 ``itertools.cycle(iterable)``:
 
-.. code-block:: python
-
-    from itertools import cycle
-
-    DATA = ['even', 'odd']
-
-    for i, status in enumerate(cycle(DATA)):
-        print(i, status)
-
-    # 0, even
-    # 1, odd
-    # 2, even
-    # 3, odd
-    # ...
+>>> from itertools import cycle
+>>>
+>>>
+>>> for i, status in enumerate(cycle(['even', 'odd'])):  # doctest + SKIP
+...     print(i, status)
+0, even
+1, odd
+2, even
+3, odd
+...
 
 ``itertools.repeat(object[, times])``:
 
