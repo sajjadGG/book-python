@@ -9,5 +9,5 @@ jupyter
 pandas
 tensorflow
 keras
-pytorch
+torch
 plotly
