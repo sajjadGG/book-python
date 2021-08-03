@@ -4,8 +4,6 @@ on: push
 jobs:
   doctest:
     runs-on: ubuntu-20.04
-    strategy:
-      fail-fast: false
 
     steps:
       - name: Checkout the Code from GIT Repository
@@ -14,7 +12,7 @@ jobs:
       - name: Setup Python Version
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9.5'
+          python-version: '3.9.6'
 
       - name: Setup PIP Cache
         uses: actions/cache@v2
