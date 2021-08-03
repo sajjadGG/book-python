@@ -26,6 +26,8 @@ It quickly grows into multiple ``elif``:
 ...     result = 'Hello'
 ... elif language == 'Russian':
 ...     result = 'Привет'
+... elif language == 'Chinese':
+...     result = '你好'
 ... else:
 ...     result = 'Unknown language'
 >>>
@@ -44,6 +46,8 @@ In other languages you may find ``switch`` statement:
 ...         result = 'Hello'
 ...     case 'Russian':
 ...         result = 'Привет'
+...     case 'Chinese':
+...         result = '你好'
 ...     default:
 ...         result = 'Unknown language'
 
@@ -52,7 +56,9 @@ Problem is that, ``switch`` moves business logic to the execution place:
 
 >>> SWITCH = {'Polish': 'Witaj',
 ...           'English': 'Hello',
-...           'German': 'Guten Tag'}
+...           'German': 'Guten Tag',
+...           'Russian': 'Привет',
+...           'Chinese': '你好'}
 >>>
 >>> language = 'English'
 >>>
@@ -64,6 +70,7 @@ Problem is that, ``switch`` moves business logic to the execution place:
 ...         'Polish': 'Witaj',
 ...         'English': 'Hello',
 ...         'Russian': 'Привет',
+...         'Chinese': '你好',
 ...     }.get(key, 'Unknown language')
 >>>
 >>> switch('English')
@@ -93,6 +100,8 @@ Pattern Matching
 ...         result = 'Hello'
 ...     case 'Russian':
 ...         result = 'Привет'
+...     case 'Chinese':
+...         result = '你好'
 ...     case _:
 ...         result = 'Unknown language'
 

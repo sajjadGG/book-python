@@ -34,6 +34,35 @@ ForEach Element:
         for element in collection        # Python
         for i in range(0,10)             # Python
 
+Enumerate:
+
+    .. code-block:: text
+
+        for (int i = 0; i <= collection.length; i++)  # C++ / JAVA / JavaScript
+            element = collection[i]
+
+        for (let i in collection)  # JavaScript
+            element = collection[i]
+
+        for i in range(len(collection)):  # Python (1to1 algorithm conversion)
+            element = collection[i]
+
+        for i, element in enumerate(collection)  # Python (Pythonic way)
+
+Zip:
+
+    .. code-block:: text
+
+        for (int i = 0; i <= collection.length; i++)  # C++ / JAVA / JavaScript
+            a = collection1[i]
+            b = collection2[i]
+
+        for i in range(len(collection1)):  # Python (1to1 algorithm conversion)
+            a = collection1[i]
+            b = collection2[i]
+
+        for a, b in zip(collection1, collection2)  # Python (Pythonic way)
+
 
 Code Complexity vs. Programmer Experience:
 
