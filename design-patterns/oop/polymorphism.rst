@@ -2,176 +2,6 @@ OOP Polymorphism
 ================
 
 
-Switch
-------
-It all starts with single ``if`` statement
-
->>> language = 'English'
->>>
->>> if language == 'Polish':
-...     result = 'Witaj'
-... elif language == 'English':
-...     result = 'Hello'
->>>
->>> print(result)
-Hello
-
-It quickly grows into multiple ``elif``:
-
->>> language = 'English'
->>>
->>> if language == 'Polish':
-...     result = 'Witaj'
-... elif language == 'English':
-...     result = 'Hello'
-... elif language == 'Russian':
-...     result = 'Привет'
-... elif language == 'Chinese':
-...     result = '你好'
-... else:
-...     result = 'Unknown language'
->>>
->>> print(result)
-Hello
-
-In other languages you may find ``switch`` statement:
-(note that this is not a valid Python code)
-
->>> # doctest: +SKIP
-...
-... switch(language):
-...     case 'Polish':
-...         result = 'Witaj'
-...     case 'English':
-...         result = 'Hello'
-...     case 'Russian':
-...         result = 'Привет'
-...     case 'Chinese':
-...         result = '你好'
-...     default:
-...         result = 'Unknown language'
-
-It's a bit cleaner, but essentially the same.
-Problem is that, ``switch`` moves business logic to the execution place:
-
->>> SWITCH = {'Polish': 'Witaj',
-...           'English': 'Hello',
-...           'German': 'Guten Tag',
-...           'Russian': 'Привет',
-...           'Chinese': '你好'}
->>>
->>> language = 'English'
->>>
->>> SWITCH.get(language, 'Unknown language')
-'Hello'
-
->>> def switch(key):
-...     return {
-...         'Polish': 'Witaj',
-...         'English': 'Hello',
-...         'Russian': 'Привет',
-...         'Chinese': '你好',
-...     }.get(key, 'Unknown language')
->>>
->>> switch('English')
-'Hello'
->>> switch('Russian')
-'Привет'
-
-
-Pattern Matching
-----------------
-* Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
-* x ⟼ assign x = subject
-* 'x' ⟼ test subject == 'x'
-* x.y ⟼ test subject == x.y
-* x() ⟼ test isinstance(subject, x)
-* {'x': 'y'} ⟼ test isinstance(subject, Mapping) and subject.get('x') == 'y'
-* ['x'] ⟼ test isinstance(subject, Sequence) and len(subject) == 1 and subject[0] == 'x'
-* Source: [#patternmatching]_
-
->>> language = 'English'
->>>
->>>
->>> match language:  # doctest: +SKIP
-...     case 'Polish':
-...         result = 'Witaj'
-...     case 'English':
-...         result = 'Hello'
-...     case 'Russian':
-...         result = 'Привет'
-...     case 'Chinese':
-...         result = '你好'
-...     case _:
-...         result = 'Unknown language'
-
->>> status = 418
->>>
->>>
->>> match status:  # doctest: +SKIP
-...     case 400:
-...         result = 'Bad request'
-...     case 401 | 403 | 405:
-...         result = 'Not allowed'
-...     case 404:
-...         result = 'Not found'
-...     case 418:
-...         result = "I'm a teapot"
-...     case _:
-...         result = 'Unexpected status'
-
->>> request = 'GET /index.html HTTP/2.0'
->>>
->>>
->>> match request.split():  # doctest: +SKIP
-...     case ['GET', uri, version]:
-...         server.get(uri)
-...     case ['POST', uri, version]:
-...         server.post(uri)
-...     case ['PUT', uri, version]:
-...         server.put(uri)
-...     case ['DELETE', uri, version]:
-...         server.delete(uri)
-
->>> class Hero:
-...     def action():
-...         return  ['move', 'left', 20]
->>>
->>>
->>> match hero.action():  # doctest: +SKIP
-...     case ['move', ('up'|'down'|'left'|'right') as direction, value]:
-...         hero.move(direction, value)
-...     case ['make_damage', value]:
-...         hero.make_damage(value)
-...     case ['take_damage', value]:
-...         hero.take_damage(value)
-
->>> from enum import Enum
->>>
->>>
->>> class Key(Enum):
-...     ESC = 27
-...     ARROW_LEFT = 37
-...     ARROW_UP = 38
-...     ARROW_RIGHT = 39
-...     ARROW_DOWN = 40
->>>
->>>
->>> match keyboard.on_key_press():  # doctest: +SKIP
-...     case Key.ESC:
-...         game.quit()
-...     case Key.ARROW_LEFT:
-...         hero.move_left()
-...     case Key.ARROW_UP:
-...         hero.move_up()
-...     case Key.ARROW_RIGHT:
-...         hero.move_right()
-...     case Key.ARROW_DOWN:
-...         hero.move_down()
-...     case _:
-...         raise ValueError(f'Unrecognized key')
-
-
 Polymorphism
 ------------
 >>> from abc import ABC, abstractmethod
@@ -274,38 +104,46 @@ Hello Melissa Lewis
 Привет Jan Twardowski
 
 
-Use Cases
----------
-UIElement:
-
+Use Case - UI Elements
+----------------------
 >>> from abc import ABCMeta, abstractmethod
 >>>
 >>>
 >>> class UIElement(metaclass=ABCMeta):
+...     def __init__(self, name):
+...         self.name = name
+...
 ...     @abstractmethod
 ...     def render(self):
-...         pass
+...         ...
+>>>
 >>>
 >>> class Textarea(UIElement):
 ...     def render(self):
-...         print('Rendering Textarea')
+...         print(f'Rendering {self.name} Textarea')
 >>>
 >>> class Button(UIElement):
 ...     def render(self):
-...         print('Rendering Button')
+...         print(f'Rendering {self.name} Button')
 >>>
 >>>
->>> def render(element: UIElement):
-...     element.render()
+>>> def render(elements: list[UIElement]):
+...     for element in elements:
+...         element.render()
 >>>
 >>>
->>> render(Textarea())
-Rendering Textarea
->>> render(Button())
-Rendering Button
+>>> render([
+...     Textarea('Username')
+...     Textarea('Password')
+...     Button('Submit'),
+... ])
+Rendering Username Textarea
+Rendering Password Textarea
+Rendering Submit Button
 
-Factory:
 
+Use Case - Static Factory
+-------------------------
 >>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
 ...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
 ...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -362,8 +200,9 @@ Factory:
  Versicolor(6.4, 3.2, 4.5, 1.5),
  Setosa(4.7, 3.2, 1.3, 0.2)]
 
-Dynamic factory:
 
+Use Case - Dynamic factory
+--------------------------
 >>> from dataclasses import dataclass
 >>>
 >>>

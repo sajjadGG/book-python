@@ -67,7 +67,9 @@ Functions on a high level of a module lack namespace:
 >>>
 >>>
 >>> add(1, 2)
+3
 >>> sub(8, 4)
+4
 
 When ``add`` and ``sub`` are in ``Calculator`` class (namespace) they get instance (``self``) as a first argument. Instantiating Calculator is not needed, as of functions do not read or write to instance variables:
 
@@ -106,7 +108,9 @@ Class ``Calculator`` is a namespace for functions. ``@staticmethod`` remove inst
 >>>
 >>>
 >>> Calculator.add(1, 2)
+3
 >>> Calculator.sub(8, 4)
+4
 
 
 Use Case - Http Client

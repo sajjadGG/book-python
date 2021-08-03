@@ -35,6 +35,8 @@ OOP
     oop/staticattrs.rst
     oop/staticmethod.rst
     oop/classmethod.rst
+    oop/switch.rst
+    oop/pattern-matching.rst
     oop/polymorphism.rst
     oop/solid.rst
 
