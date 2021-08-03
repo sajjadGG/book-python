@@ -71,7 +71,7 @@ Guten Tag
 >>> print(result)
 Здравствуй
 
->>> language = 'Chinese'
+>>> language = 'English'
 >>>
 >>> if language == 'Polish':
 ...     result = 'Cześć'
@@ -89,7 +89,7 @@ Guten Tag
 ...     result = 'Unknown language'
 >>>
 >>> print(result)
-你好
+Hello
 
 
 Iteration 3 - Switch / Pattern Matching
@@ -97,7 +97,7 @@ Iteration 3 - Switch / Pattern Matching
 * In other languages you may find ``switch`` statement
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
 
->>> language = 'Polish'
+>>> language = 'English'
 >>>
 >>> match language:  # doctest: +SKIP
 ...     case 'Polish': result = 'Cześć'
@@ -109,7 +109,7 @@ Iteration 3 - Switch / Pattern Matching
 ...     case _: result = 'Unknown language'
 >>>
 >>> print(result)
-Cześć
+Hello
 
 It's a bit cleaner, but essentially the same problem persists. Both
 ``switch/pattern matching`` and ``if/elif/else`` statements moves business

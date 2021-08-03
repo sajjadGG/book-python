@@ -197,7 +197,7 @@ Bad:
 ...     pass
 >>>
 >>> class Docx(FileFormat):
->>>     pass
+...     pass
 >>>
 >>> class Document:
 ...     def __new__(cls, *args, **kwargs):
@@ -222,27 +222,27 @@ Bad:
 Good:
 
 >>> class FileFormat:
->>>     def __init__(self, *args, **kwargs):
->>>         ...
+...     def __init__(self, *args, **kwargs):
+...         ...
 >>>
 >>> class PDF(FileFormat):
->>>     pass
+...     pass
 >>>
 >>> class Txt(FileFormat):
->>>     pass
+...     pass
 >>>
 >>> class Docx(FileFormat):
->>>     pass
+...     pass
 >>>
 >>>
 >>> class Document:
->>>     def __new__(cls, *args, **kwargs):
->>>         filename, extension = args[0].split('.')
->>>         for format in FileFormat.__subclasses__():
->>>             if extension == format.__name__.lower():
->>>                 return format(*args, **kwargs)
->>>         else:
->>>             raise NotImplementedError(extension)
+...     def __new__(cls, *args, **kwargs):
+...         filename, extension = args[0].split('.')
+...         for format in FileFormat.__subclasses__():
+...             if extension == format.__name__.lower():
+...                 return format(*args, **kwargs)
+...         else:
+...             raise NotImplementedError(extension)
 >>>
 >>>
 >>> file1 = Document('myfile.pdf')

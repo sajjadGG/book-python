@@ -9,7 +9,7 @@ Let's take the following code and do the refactoring:
 
 Problem
 -------
->>> language = 'Chinese'
+>>> language = 'English'
 >>>
 >>> if language == 'Polish':
 ...     result = 'Cześć'
@@ -27,7 +27,7 @@ Problem
 ...     result = 'Unknown language'
 >>>
 >>> print(result)
-你好
+Hello
 
 
 Switch
@@ -35,10 +35,10 @@ Switch
 In other languages you may find ``switch`` statement:
 (note that this is not a valid Python code)
 
->>> language = 'Greek'
+>>> language = 'English'
 >>>
 >>> switch(language):  # doctest: +SKIP
-...     case 'Polish': result = 'Witaj'
+...     case 'Polish': result = 'Cześć'
 ...     case 'English': result = 'Hello'
 ...     case 'German': result = 'Guten Tag'
 ...     case 'Russian': result = 'Здравствуй'
@@ -47,14 +47,14 @@ In other languages you may find ``switch`` statement:
 ...     default: result = 'Unknown language'
 >>>
 >>> print(result)  # doctest: +SKIP
-Unknown language
+Hello
 
 
 Pattern Matching
 ----------------
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
 
->>> language = 'Polish'
+>>> language = 'English'
 >>>
 >>> match language:  # doctest: +SKIP
 ...     case 'Polish': result = 'Cześć'
@@ -66,7 +66,7 @@ Pattern Matching
 ...     case _: result = 'Unknown language'
 >>>
 >>> print(result)
-Cześć
+Hello
 
 
 Behavior
