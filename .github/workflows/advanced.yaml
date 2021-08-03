@@ -1,0 +1,36 @@
+name: Advanced
+on: push
+
+jobs:
+  advanced:
+    runs-on: ubuntu-20.04
+    steps:
+
+      - name: Checkout the Code from GIT Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python Version
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9.6'
+
+      - name: Setup PIP Cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+
+      - name: Upgrade PIP
+        run: pip install --upgrade pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Doctest Listings
+        run: sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
+
+      - name: Doctest Assignments
+        run: find advanced -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
