@@ -130,6 +130,11 @@ Python:
 
 Machine Learning and Data Science:
 
+    * https://www.youtube.com/user/sentdex
+    * https://www.youtube.com/watch?v=OGxgnH8y2NM&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v
+    * https://www.youtube.com/watch?v=wQ8BIBpya2k&list=PLQVvvaa0QuDfhTox0AjmQ6tvTgMBZBEXN
+    * https://www.youtube.com/watch?v=nLw1RNvfElg&list=PLQVvvaa0QuDfSfqQuee6K8opKtZsh7sA9
+    * https://www.youtube.com/watch?v=Wo5dMEP_BbI&list=PLQVvvaa0QuDcjD5BAw2DxE6OF2tius3V3
     * https://www.youtube.com/watch?v=mA5nwGoRAOo (+ cała playlista)
     * (UC San Diego) https://www.edx.org/course/python-for-data-science
     * (UC San Diego) https://www.edx.org/course/statistics-and-probability-in-data-science-using-python
