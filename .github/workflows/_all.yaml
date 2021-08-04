@@ -117,9 +117,6 @@ jobs:
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-            ${{ runner.os }}-
       - run: pip install -r machine-learning/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest machine-learning /tmp/
       # - run: find machine-learning -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
