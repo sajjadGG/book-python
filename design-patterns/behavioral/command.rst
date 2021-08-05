@@ -71,7 +71,7 @@ Composite commands (Macros):
 
 Undoable commands:
 
-.. literalinclude:: ../_src/designpatterns-command-2.py
+.. literalinclude:: ../_src/designpatterns-command-3.py
     :language: python
 
 
