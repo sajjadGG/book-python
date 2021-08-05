@@ -13,6 +13,7 @@ class Task(metaclass=ABCMeta):
 
     def execute(self) -> None:
         self.__audit_trail.record()
+        self._do_execute()
         print('Transfer Money')
 
     @abstractmethod
