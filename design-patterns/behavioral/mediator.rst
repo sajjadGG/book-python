@@ -42,7 +42,6 @@ Mediator with Observer Pattern:
 
 Assignments
 -----------
-.. todo:: Create assignments
-
-* Form with Username and Password
-* If username and password is provided enable ``login`` button
+.. literalinclude:: assignments/designpatterns_mediator.py
+    :caption: :download:`Solution <assignments/designpatterns_mediator.py>`
+    :end-before: # Solution
