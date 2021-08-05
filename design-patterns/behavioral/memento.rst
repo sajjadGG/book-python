@@ -30,4 +30,6 @@ Implementation
 
 Assignments
 -----------
-.. todo:: Create assignments
+.. literalinclude:: assignments/designpatterns_memento.py
+    :caption: :download:`Solution <assignments/designpatterns_memento.py>`
+    :end-before: # Solution
