@@ -40,7 +40,7 @@ Design
 
 Implementation
 --------------
-.. literalinclude:: ../_src/designpatterns-state.py
+.. literalinclude:: ../_src/designpatterns-statemachine.py
     :language: python
 
 
