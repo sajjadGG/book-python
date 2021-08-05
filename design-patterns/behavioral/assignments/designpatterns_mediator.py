@@ -20,10 +20,15 @@ Tests:
     >>> form = LoginForm()
     >>> form.set_username('root')
     >>> form.set_password('')
-    >>> form.set_password('MyVoiceIsMyPasswordVerifyMe')
-    >>> form.submit_button_is_enabled()
-    True
+    >>> form.submit()
+    Traceback (most recent call last):
+    PermissionError: Cannot submit form without Username and Password
 
+    >>> form = LoginForm()
+    >>> form.set_username('root')
+    >>> form.set_password('MyVoiceIsMyPasswordVerifyMe')
+    >>> form.submit()
+    'Submitted'
 """
 from abc import ABCMeta, abstractmethod
 from dataclasses import dataclass, field
@@ -93,7 +98,7 @@ class LoginForm:
     def __try_enable_submit(self):
         raise NotImplementedError
 
-    def submit_button_is_enabled(self):
+    def submit(self):
         raise NotImplementedError
 
 
@@ -125,7 +130,8 @@ class Input(UIControl):
     __content: str
 
     def get_content(self) -> str:
-        return self.__content
+        if hasattr(self, '__content'):
+            return self.__content
 
     def set_content(self, content: str) -> None:
         self.__content = content
@@ -140,6 +146,8 @@ class Button(UIControl):
         self._notify_event_handlers()
 
     def is_enabled(self) -> bool:
+        if not hasattr(self, '__enabled'):
+            return False
         return self.__enabled
 
 
@@ -168,8 +176,11 @@ class LoginForm:
     def __try_enable_submit(self):
         username = self.__username_input.get_content()
         password = self.__password_input.get_content()
-        if username and password:
+        if username is not None and password is not None:
             self.__submit_button.set_enabled(True)
 
-    def submit_button_is_enabled(self):
-        return self.__submit_button.is_enabled()
+    def submit(self):
+        if not self.__submit_button.is_enabled():
+            raise PermissionError('Cannot submit form without Username and Password')
+        else:
+            return 'Submitted'
