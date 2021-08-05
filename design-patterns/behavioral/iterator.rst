@@ -43,4 +43,6 @@ Pythonic
 
 Assignments
 -----------
-.. todo:: Create assignments
+.. literalinclude:: assignments/designpatterns_iterator.py
+    :caption: :download:`Solution <assignments/designpatterns_iterator.py>`
+    :end-before: # Solution
