@@ -5,7 +5,7 @@
 * Time: 21 min
 
 English:
-    1. Create decorator class `TypeCheck`
+    1. Refactor decorator `decorator` to decorator `TypeCheck`
     2. Decorator checks types of all arguments (`*args` oraz `**kwargs`)
     3. Decorator checks return type
     4. In case when received type is not expected throw an exception `TypeError` with:
@@ -15,7 +15,7 @@ English:
     5. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz dekorator klasę `TypeCheck`
+    1. Przerób dekorator `decorator` na klasę `TypeCheck`
     2. Dekorator sprawdza typy wszystkich argumentów (`*args` oraz `**kwargs`)
     3. Dekorator sprawdza typ zwracany
     4. W przypadku gdy otrzymany typ nie jest równy oczekiwanemu wyrzuć wyjątek `TypeError` z:
@@ -71,6 +71,14 @@ Tests:
     >>> echo('one', c=1.1, b=1.1)
     Traceback (most recent call last):
     TypeError: "b" is <class 'float'>, but <class 'int'> was expected
+
+    >>> @TypeCheck
+    ... def echo(a: str, b: int, c: float = 0.0) -> bool:
+    ...     return str(a * b)
+    >>>
+    >>> echo('one', 1, 1.1)
+    Traceback (most recent call last):
+    TypeError: "return" is <class 'str'>, but <class 'bool'> was expected
 """
 
 def decorator(func):

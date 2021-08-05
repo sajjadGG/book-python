@@ -57,24 +57,40 @@ Tests:
     >>> echo('one', c=1.1, b=1.1)
     Traceback (most recent call last):
     TypeError: "b" is <class 'float'>, but <class 'int'> was expected
+
+    >>> @typecheck(check_return=True)
+    ... def echo(a: str, b: int, c: float = 0.0) -> bool:
+    ...     return str(a * b)
+    >>>
+    >>> echo('one', 1, 1.1)
+    Traceback (most recent call last):
+    TypeError: "return" is <class 'str'>, but <class 'bool'> was expected
+
+    >>> @typecheck(check_return=False)
+    ... def echo(a: str, b: int, c: float = 0.0) -> bool:
+    ...     return str(a * b)
+    >>>
+    >>> echo('one', 1, 1.1)
+    'one'
 """
+
 
 def decorator(func):
     def validate(argname, argval):
         argtype = type(argval)
         expected = func.__annotations__[argname]
         if argtype is not expected:
-            raise TypeError(f'"{argname}" is {argtype}, but {expected} was expected')
+            raise TypeError(f'"{argname}" is {argtype}, '
+                            f'but {expected} was expected')
 
     def merge(*args, **kwargs):
         args = dict(zip(func.__annotations__.keys(), args))
-        return kwargs | args          # Python 3.9
+        return kwargs | args  # Python 3.9
         # return {**args, **kwargs)}  # Python 3.7, 3.8
 
     def wrapper(*args, **kwargs):
         for argname, argval in merge(*args, **kwargs).items():
             validate(argname, argval)
-
         result = func(*args, **kwargs)
         validate('return', result)
         return result
@@ -88,7 +104,8 @@ def typecheck(check_return: bool = True):
             argtype = type(argval)
             expected = func.__annotations__[argname]
             if argtype is not expected:
-                raise TypeError(f'"{argname}" is {argtype}, but {expected} was expected')
+                raise TypeError(f'"{argname}" is {argtype}, '
+                                f'but {expected} was expected')
 
         def merge(*args, **kwargs):
             args = dict(zip(func.__annotations__.keys(), args))
@@ -98,7 +115,6 @@ def typecheck(check_return: bool = True):
         def wrapper(*args, **kwargs):
             for argname, argval in merge(*args, **kwargs).items():
                 validate(argname, argval)
-
             result = func(*args, **kwargs)
             if check_return:
                 validate('return', result)

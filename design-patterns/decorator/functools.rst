@@ -7,51 +7,47 @@ Wraps
 * ``from functools import wraps``
 * ``@wraps(func)``
 
-.. code-block:: python
+>>> def mydecorator(func):
+...     def wrapper(*args, **kwargs):
+...         """wrapper docstring"""
+...         return func(*args, **kwargs)
+...     return wrapper
+>>>
+>>>
+>>> @mydecorator
+... def myfunction(x):
+...     """myfunction docstring"""
+...     print(x)
+>>>
+>>>
+>>> print(myfunction.__name__)
+wrapper
+>>>
+>>> print(myfunction.__doc__)
+wrapper docstring
 
-    def mydecorator(func):
-        def wrapper(*args, **kwargs):
-            """wrapper docstring"""
-            return func(*args, **kwargs)
-        return wrapper
-
-
-    @mydecorator
-    def myfunction(x):
-        """myfunction docstring"""
-        print(x)
-
-
-    print(myfunction.__name__)
-    # wrapper
-
-    print(myfunction.__doc__)
-    # wrapper docstring
-
-.. code-block:: python
-
-    from functools import wraps
-
-
-    def mydecorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            """wrapper docstring"""
-            return func(*args, **kwargs)
-        return wrapper
-
-
-    @mydecorator
-    def myfunction(x):
-        """myfunction docstring"""
-        print(x)
-
-
-    print(myfunction.__name__)
-    # myfunction
-
-    print(myfunction.__doc__)
-    # myfunction docstring
+>>> from functools import wraps
+>>>
+>>>
+>>> def mydecorator(func):
+...     @wraps(func)
+...     def wrapper(*args, **kwargs):
+...         """wrapper docstring"""
+...         return func(*args, **kwargs)
+...     return wrapper
+>>>
+>>>
+>>> @mydecorator
+... def myfunction(x):
+...     """myfunction docstring"""
+...     print(x)
+>>>
+>>>
+>>> print(myfunction.__name__)
+myfunction
+>>>
+>>> print(myfunction.__doc__)
+myfunction docstring
 
 
 Cached Property

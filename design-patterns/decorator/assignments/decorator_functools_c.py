@@ -18,7 +18,6 @@ Tests:
     >>> @mydecorator
     ... class Hello:
     ...     '''Hello Docstring'''
-
     >>> hello = Hello()
     >>> hello.__name__
     'Hello'

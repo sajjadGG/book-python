@@ -1,11 +1,10 @@
-Decorators About
-================
+Decorator About
+===============
 
 
 Rationale
 ---------
 * Since Python 2.4: :pep:`318` -- Decorators for Functions and Methods
-
 * Decorator is an object, which takes another object as it's argument
 * Decorators can:
 
@@ -25,49 +24,39 @@ Syntax
 * ``kwargs`` arbitrary number of keyword arguments
 * By calling ``func(*args, **kwargs)`` you actually run original (wrapped) function with it's original arguments
 
-.. code-block:: python
-
-    def mydecorator(func):
-        def wrapper(*args, **kwargs):
-            return func(*args, **kwargs)
-        return wrapper
-
-
-    @mydecorator
-    def myfunction(*args, **kwargs):
-        pass
-
-
-    myfunction()
+>>> def mydecorator(func):
+...     def wrapper(*args, **kwargs):
+...         return func(*args, **kwargs)
+...     return wrapper
+>>>
+>>>
+>>> @mydecorator
+... def myfunction(*args, **kwargs):
+...     pass
+>>>
+>>>
+>>> myfunction()
 
 
 Names
 -----
-.. code-block:: python
+>>> def mydecorator(func):
+...     def wrapper(*args, **kwargs):
+...         return func(*args, **kwargs)
+...     return wrapper
 
-    def mydecorator(func):
-        def wrapper(*args, **kwargs):
-            return func(*args, **kwargs)
-        return wrapper
+>>> def mydecorator(fn):
+...     def wrap(*a, **b):
+...         return fn(*a, **b)
+...     return wrap
 
-.. code-block:: python
+>>> def mydecorator(fn):
+...     def _(*a, **b):
+...         return fn(*a, **b)
+...     return _
 
-    def mydecorator(fn):
-        def wrap(*a, **b):
-            return fn(*a, **b)
-        return wrap
-
-.. code-block:: python
-
-    def mydecorator(fn):
-        def _(*a, **b):
-            return fn(*a, **b)
-        return _
-
-.. code-block:: python
-
-    def mydecorator(fn):
-        return lambda *a, **kw: fn(*a, **kw)
+>>> def mydecorator(fn):
+...     return lambda *a, **kw: fn(*a, **kw)
 
 
 Types of decorators
@@ -104,16 +93,12 @@ Decorator Types
     * ``obj`` is a decorated object
     * doesn't matter, whether is a function, class or method
 
-.. code-block:: python
+>>> def mydecorator(obj):
+...     ...
 
-    def mydecorator(obj):
-        ...
-
-.. code-block:: python
-
-    class MyDecorator:
-        def __init__(self, obj):
-            ...
+>>> class MyDecorator:
+...     def __init__(self, obj):
+...         ...
 
 
 Wrapper Type
@@ -128,29 +113,23 @@ Wrapper Type
 
 * If ``obj`` and ``Wrapper`` are classes, ``Wrapper`` can inherit from ``obj`` (to extend it)
 
-.. code-block:: python
+>>> def mydecorator(obj):
+...     def wrapper(*args, **kwargs):
+...         ...
+...     return wrapper
 
-    def mydecorator(obj):
-        def wrapper(*args, **kwargs)
-            ...
-        return wrapper
+>>> def mydecorator(obj):
+...     class Wrapper:
+...         def __init__(self, *args, **kwargs):
+...             ...
+...     return Wrapper
 
-.. code-block:: python
-
-    def mydecorator(obj):
-        class Wrapper:
-            def __init__(*args, **kwargs)
-                ...
-        return Wrapper
-
-.. code-block:: python
-
-    class MyDecorator:
-        def __init__(self, obj):
-            ...
-
-        def __call__(*args, **kwargs):
-            ...
+>>> class MyDecorator:
+...     def __init__(self, obj):
+...         ...
+...
+...     def __call__(self, *args, **kwargs):
+...         ...
 
 
 Decorated Object
@@ -159,79 +138,55 @@ Decorated Object
 * Decorating class (by convention ``cls``)
 * Decorating method (by convention ``mth``, ``meth`` or ``method``)
 
-.. code-block:: python
+>>> def mydecorator(func):
+...     ...
 
-    def mydecorator(func):
-        ...
+>>> def mydecorator(cls):
+...     ...
 
-.. code-block:: python
+>>> def mydecorator(mth):
+...     ...
 
-    def mydecorator(cls):
-        ...
+>>> class MyDecorator:
+...     def __init__(self, func):
+...         ...
 
-.. code-block:: python
+>>> class MyDecorator:
+...     def __init__(self, cls):
+...         ...
 
-    def mydecorator(mth):
-        ...
-
-.. code-block:: python
-
-    class MyDecorator:
-        def __init__(self, func):
-            ...
-
-.. code-block:: python
-
-    class MyDecorator:
-        def __init__(self, cls):
-            ...
-
-.. code-block:: python
-
-    class MyDecorator:
-        def __init__(self, mth):
-            ...
+>>> class MyDecorator:
+...     def __init__(self, mth):
+...         ...
 
 
 Usage
 -----
-.. code-block:: python
+>>> @mydecorator
+... def myfunction(*args, **kwargs):
+...     ...
 
-    @mydecorator
-    def myfunction(*args, **kwargs):
-        ...
+>>> class MyClass:
+...     @mydecorator
+...     def mymethod(self, *args, **kwargs):
+...         ...
 
-.. code-block:: python
+>>> @mydecorator
+... class MyClass:
+...     ...
 
-    class MyClass:
-        @mydecorator
-        def mymethod(self, *args, **kwargs):
-            ...
+>>> @MyDecorator
+... def myfunction(*args, **kwargs):
+...     ...
 
-.. code-block:: python
+>>> class MyClass:
+...     @MyDecorator
+...     def mymethod(self, *args, **kwargs):
+...         ...
 
-    @mydecorator
-    class MyClass:
-        ...
-
-.. code-block:: python
-
-    @MyDecorator
-    def myfunction(*args, **kwargs):
-        ...
-
-.. code-block:: python
-
-    class MyClass:
-        @MyDecorator
-        def mymethod(self, *args, **kwargs):
-            ...
-
-.. code-block:: python
-
-    @MyDecorator
-    class MyClass:
-        ...
+>>> @MyDecorator
+... class MyClass:
+...     ...
 
 
 Arguments
@@ -239,26 +194,18 @@ Arguments
 * Without arguments
 * With arguments
 
-.. code-block:: python
+>>> @mydecorator
+... def myfunction(*args, **kwargs):
+...     ...
 
-    @mydecorator
-    def myfunction(*args, **kwargs):
-        ...
+>>> @MyDecorator
+... def myfunction(*args, **kwargs):
+...     ...
 
-.. code-block:: python
+>>> @mydecorator('arg1', 'arg2')  # doctest: +SKIP
+... def myfunction(*args, **kwargs):
+...     ...
 
-    @mydecorator(a, b)
-    def myfunction(*args, **kwargs):
-        ...
-
-.. code-block:: python
-
-    @MyClass
-    def myfunction(*args, **kwargs):
-        ...
-
-.. code-block:: python
-
-    @MyClass(a, b)
-    def myfunction(*args, **kwargs):
-        ...
+>>> @MyClass('arg1', 'arg2')  # doctest: +SKIP
+... def myfunction(*args, **kwargs):
+...     ...

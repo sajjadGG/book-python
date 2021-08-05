@@ -7,15 +7,18 @@
 English:
     1. Create decorator class `MyDecorator`
     2. `MyDecorator` should have `__init__` which takes function as an argument
-    3. `MyDecorator` should have `__call__` with parameters: `*args` and `**kwargs`
+    3. `MyDecorator` should have `__call__` with parameters:
+       `*args` and `**kwargs`
     4. `__call__` should call original function with original parameters,
        and return its value
     5. Run doctests - all must succeed
 
 Polish:
     1. Stwórz dekorator klasę `MyDecorator`
-    2. `MyDecorator` powinien mieć `__init__`, który przyjmuje funkcję jako argument
-    3. `MyDecorator` powinien mieć `__call__` z parameterami: `*args` i `**kwargs`
+    2. `MyDecorator` powinien mieć `__init__`, który przyjmuje funkcję
+       jako argument
+    3. `MyDecorator` powinien mieć `__call__` z parameterami:
+       `*args` i `**kwargs`
     4.`__call__` powinien wywoływać oryginalną funkcję oryginalnymi
        parametrami i zwracać jej wartość
     5. Uruchom doctesty - wszystkie muszą się powieść

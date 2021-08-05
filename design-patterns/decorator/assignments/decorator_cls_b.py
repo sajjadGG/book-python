@@ -28,7 +28,8 @@ Tests:
     ... def display(path):
     ...     return str(path)
 
-    >>> display('iris.csv').startswith(str(CURRENT_DIR))
+    >>> current_dir = str(Path().cwd())
+    >>> display('iris.csv').startswith(current_dir)
     True
     >>> display('iris.csv').endswith('iris.csv')
     True
@@ -39,15 +40,12 @@ Tests:
 from pathlib import Path
 
 
-CURRENT_DIR = Path().cwd()
-
-
 # Solution
 class Abspath:
     def __init__(self, func):
         self._func = func
 
     def __call__(self, file):
-        file = Path(CURRENT_DIR, file)
-        return self._func(file)
+        abspath = Path(file).absolute()
+        return self._func(abspath)
 

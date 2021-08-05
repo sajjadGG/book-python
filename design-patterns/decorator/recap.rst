@@ -1,5 +1,5 @@
-Decorators Recap
-================
+Decorator Recap
+===============
 
 
 Function Decorators with Function Wrappers

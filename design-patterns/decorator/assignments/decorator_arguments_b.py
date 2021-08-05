@@ -10,7 +10,7 @@ English:
        `is_astronaut` in `crew: list[dict]`
     3. Decorator will call decorated function, only if all crew members has
        field with specified value
-    4. Both field name and value are given as keyword arguments to decorator
+    4. Field name and value are given as keyword arguments to decorator
     5. If any member is not an astronaut raise `PermissionError` and print
        his first name and last name
     6. Run doctests - all must succeed
@@ -21,7 +21,7 @@ Polish:
        `is_astronaut` in `crew: list[dict]`
     3. Dekorator wywoła dekorowaną funkcję tylko wtedy, gdy każdy członek
        załogi ma pole o podanej wartości
-    4. Zarówno nazwa pola jak i wartość są podawane jako argumenty nazwane do dekoratora
+    4. Nazwa pola jak i wartość są podawane jako argumenty nazwane do dekoratora
     5. Jeżeli, jakikolwiek członek nie jest astronautą, podnieś wyjątek
        `PermissionError` i wypisz jego imię i nazwisko
     6. Uruchom doctesty - wszystkie muszą się powieść
@@ -64,6 +64,7 @@ Tests:
     Traceback (most recent call last):
     PermissionError: Mark Watney is not an astronaut
 """
+
 
 def check_astronauts(field, value):
     def decorator(func):

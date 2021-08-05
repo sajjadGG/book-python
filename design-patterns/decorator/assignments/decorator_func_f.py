@@ -19,7 +19,7 @@ Polish:
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * `path = Path(CURRENT_DIR, filename)`
+    * `Path(filename).absolute()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -28,7 +28,8 @@ Tests:
     ... def display(path):
     ...     return str(path)
 
-    >>> display('iris.csv').startswith(str(CURRENT_DIR))
+    >>> current_dir = str(Path().cwd())
+    >>> display('iris.csv').startswith(current_dir)
     True
     >>> display('iris.csv').endswith('iris.csv')
     True
@@ -39,12 +40,9 @@ Tests:
 from pathlib import Path
 
 
-CURRENT_DIR = Path().cwd()
-
-
 # Solution
 def abspath(func):
     def wrapper(path):
-        path = Path(CURRENT_DIR, path)
+        path = Path(path).absolute()
         return func(path)
     return wrapper

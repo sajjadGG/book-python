@@ -18,7 +18,6 @@ Tests:
     >>> @mydecorator(happy=False)
     ... def hello():
     ...     '''Hello Docstring'''
-
     >>> hello.__name__
     'hello'
     >>> hello.__doc__

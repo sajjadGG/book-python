@@ -8,7 +8,7 @@ English:
     1. Define decorator `mydecorator`
     2. Decorator should take `a` and `b` as arguments
     2. Define `wrapper` with `*args` and `**kwargs` parameters
-    3. Wrapper should call original function with it's original parameters,
+    3. Wrapper should call original function with its original parameters,
        and return its value
     4. Decorator should return `wrapper` function
     5. Run doctests - all must succeed
