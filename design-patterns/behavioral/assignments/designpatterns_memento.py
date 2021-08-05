@@ -1,6 +1,6 @@
 """
 * Assignment: DesignPatterns Behavioral Memento
-* Complexity: easy
+* Complexity: medium
 * Lines of code: 10 lines
 * Time: 13 min
 

@@ -1,6 +1,6 @@
 """
 * Assignment: DesignPatterns Behavioral State
-* Complexity: easy
+* Complexity: medium
 * Lines of code: 34 lines
 * Time: 21 min
 

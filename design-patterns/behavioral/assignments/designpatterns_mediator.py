@@ -1,6 +1,6 @@
 """
 * Assignment: DesignPatterns Behavioral Mediator
-* Complexity: easy
+* Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min
 

@@ -46,5 +46,6 @@ Implementation
 
 Assignments
 -----------
-.. todo:: Create assignments
-
+.. literalinclude:: assignments/designpatterns-factorymethod.py
+    :caption: :download:`Solution <assignments/designpatterns-factorymethod.py>`
+    :end-before: # Solution
