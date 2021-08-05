@@ -7,14 +7,12 @@
 English:
     1. Define class `GeographicCoordinate`
     2. Use descriptors to check value boundaries
-    3. All tests must pass
-    4. Run doctests - all must succeed
+    3. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj klasę `GeographicCoordinate`
     2. Użyj deskryptory do sprawdzania wartości brzegowych
-    3. Wszystkie testy muszą przejść
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -75,7 +73,9 @@ Tests:
 
 class GeographicCoordinate:
     def __str__(self):
-        return f'Latitude: {self.latitude}, Longitude: {self.longitude}, Elevation: {self.elevation}'
+        return f'Latitude: {self.latitude}, ' +\
+               f'Longitude: {self.longitude}, ' +\
+               f'Elevation: {self.elevation}'
 
     def __repr__(self):
         return self.__str__()
@@ -145,7 +145,9 @@ class GeographicCoordinate:
         self.elevation = elevation
 
     def __str__(self):
-        return f'Latitude: {self.latitude}, Longitude: {self.longitude}, Elevation: {self.elevation}'
+        return f'Latitude: {self.latitude}, ' + \
+               f'Longitude: {self.longitude}, ' + \
+               f'Elevation: {self.elevation}'
 
     def __repr__(self):
         return self.__str__()
