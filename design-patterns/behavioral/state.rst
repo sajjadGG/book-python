@@ -72,50 +72,6 @@ Implementation
 
 Assignments
 -----------
-Change the following code to implement the State pattern:
-
-.. code-block:: python
-
-    from enum import Enum
-
-
-    class Language(Enum):
-        POLISH = 'pl'
-        ENGLISH = 'en'
-        RUSSIAN = 'ru'
-
-
-    class Translation:
-        _language: Language
-
-        def __init__(self, language: Language):
-            self._language = language
-
-        def hello(self) -> str:
-            if self._language is Language.POLISH:
-                return 'Cześć'
-            elif self._language is Language.ENGLISH:
-                return 'Hello'
-            elif self._language is Language.RUSSIAN:
-                return 'Здравствуй'
-            else:
-                return 'Unknown language'
-
-        def goodbye(self) -> str:
-            if self._language is Language.POLISH:
-                return 'Do widzenia'
-            elif self._language is Language.ENGLISH:
-                return 'Goodbye'
-            elif self._language is Language.RUSSIAN:
-                return 'До свидания'
-            else:
-                return 'Unknown language'
-
-
-Then add another language:
-
-    * Chinese hello: 你好
-    * Chinese goodbye: 再见
-
-
-.. todo:: Create assignments
+.. literalinclude:: assignments/designpatterns_state.py
+    :caption: :download:`Solution <assignments/designpatterns_state.py>`
+    :end-before: # Solution
