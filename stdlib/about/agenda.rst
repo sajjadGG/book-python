@@ -17,7 +17,9 @@ Day 1
     "30m", "Zadania testowe ewaluujące umiejętności użytkownika"
     "60m", "Live Coding rozwiązań zadań i demonstracja funkcji IDE, tj. debugging, praca z VCS, refactoring, dokumentacja i typy, sygnatury funkcji"
     "90m", "Type Annotation"
-    "90m", "Rozpakowywanie (w przypisaniu, parametrów, argumentów)"
+    "90m", "Unpacking assignment"
+    "30m", "Unpacking parameters"
+    "30m", "Unpacking arguments"
     "30m", "Assignment Expression"
     "30m", "Parameter Syntax"
 
@@ -69,8 +71,8 @@ Day 5
 .. csv-table::
     :header-rows: 1
     :widths: 15, 85
+    :header: "Estimated Time", "Topic"
 
-    "Estimated Time", "Topic"
     "90m", "Zadanie samodzielne z programowania obiektowego (Smok)"
     "180m", "Live Coding rozwiązań zadań i demonstracja dobrych praktyk OOP, architektury aplikacji jak również funkcji IDE, tj. debugging, praca z VCS, refactoring, dokumentacja i typy, sygnatury funkcji"
     "90m", "Smok druga część"
