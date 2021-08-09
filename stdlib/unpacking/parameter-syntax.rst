@@ -150,12 +150,13 @@ Use Case - Sorted
 
 >>> help(sorted)
 Help on built-in function sorted in module builtins:
-
+<BLANKLINE>
 sorted(iterable, /, *, key=None, reverse=False)
     Return a new list containing all items from the iterable in ascending order.
-
+<BLANKLINE>
     A custom key function can be supplied to customize the sort order, and the
     reverse flag can be set to request the result in descending order.
+<BLANKLINE>
 
 
 Use Case - Sum
@@ -164,13 +165,14 @@ Use Case - Sum
 
 >>> help(sum)
 Help on built-in function sum in module builtins:
-
+<BLANKLINE>
 sum(iterable, /, start=0)
     Return the sum of a 'start' value (default: 0) plus an iterable of numbers
-
+<BLANKLINE>
     When the iterable is empty, return the start value.
     This function is intended specifically for use with numeric values and may
     reject non-numeric types.
+<BLANKLINE>
 
 
 Use Case - Strip
@@ -179,11 +181,12 @@ Use Case - Strip
 
 >>> help(str.strip)
 Help on method_descriptor:
-
+<BLANKLINE>
 strip(self, chars=None, /)
     Return a copy of the string with leading and trailing whitespace removed.
-
+<BLANKLINE>
     If chars is given and not None, remove characters in chars instead.
+<BLANKLINE>
 
 
 Use Case - Split
@@ -192,10 +195,10 @@ Use Case - Split
 
 >>> help(str.split)
 Help on method_descriptor:
-
+<BLANKLINE>
 split(self, /, sep=None, maxsplit=-1)
     Return a list of the words in the string, using sep as the delimiter string.
-
+<BLANKLINE>
     sep
       The delimiter according which to split the string.
       None (the default value) means split according to any whitespace,
@@ -203,6 +206,7 @@ split(self, /, sep=None, maxsplit=-1)
     maxsplit
       Maximum number of splits to do.
       -1 (the default value) means no limit.
+<BLANKLINE>
 
 
 Assignments
