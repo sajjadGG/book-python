@@ -16,12 +16,12 @@ Day 1
     "75m", "Przygotowanie środowiska do pracy: github, git, python, doctest"
     "30m", "Zadania testowe ewaluujące umiejętności użytkownika"
     "60m", "Live Coding rozwiązań zadań i demonstracja funkcji IDE, tj. debugging, praca z VCS, refactoring, dokumentacja i typy, sygnatury funkcji"
-    "90m", "Type Annotation"
-    "90m", "Unpacking assignment"
+    "30m", "Unpacking assignment"
     "30m", "Unpacking parameters"
     "30m", "Unpacking arguments"
     "30m", "Assignment Expression"
     "30m", "Parameter Syntax"
+    "90m", "Type Annotation"
 
 
 Day 2
