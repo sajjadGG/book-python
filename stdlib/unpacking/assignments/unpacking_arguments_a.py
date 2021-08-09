@@ -56,6 +56,8 @@ def mean(*args):
     return sum(args) / len(args)
 
 
+result: list
+
 # Solution
 result = [(label, mean(*features))
           for *features, label in DATA[1:]]

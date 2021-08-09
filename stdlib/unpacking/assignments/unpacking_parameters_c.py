@@ -2,7 +2,7 @@
 * Assignment: Unpacking Parameters Kwargs
 * Complexity: medium
 * Lines of code: 8 lines
-* Time: 5 min
+* Time: 8 min
 
 English:
     1. Create function `isnumeric`
@@ -32,6 +32,10 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction
+
+    >>> assert isfunction(isnumeric), \
+    'isnumeric must be a function'
 
     >>> isnumeric()
     False
