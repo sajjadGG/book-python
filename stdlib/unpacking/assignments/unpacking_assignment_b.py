@@ -1,55 +1,45 @@
 """
-* Assignment: Unpacking Assignment Nested
+* Assignment: Unpacking Assignment Func
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
 
 English:
-    1. Separate header and records
-    2. Use asterisk `*` notation
-    3. Run doctests - all must succeed
+    1. Using `str.split()` split input data by white space
+    2. Separate ip address and host names
+    3. Use asterisk `*` notation
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Odseparuj nagłówek od danych
-    2. Skorzystaj z konstrukcji z gwiazdką `*`
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Używając `str.split()` podziel dane wejściowe po białych znakach
+    2. Odseparuj adres ip i nazw hostów
+    3. Skorzystaj z notacji z gwiazdką `*`
+    4. Uruchom doctesty - wszystkie muszą się powieść
+
+Hints:
+    * Use `str.split()` without any argument
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(header)
-    <class 'tuple'>
-    >>> type(data)
+    >>> type(ip)
+    <class 'str'>
+    >>> type(hosts)
     <class 'list'>
-    >>> len(header) > 0
+    >>> assert all(type(host) is str for host in hosts)
+    >>> '' not in hosts
     True
-    >>> len(data) > 0
-    True
-    >>> assert all(type(x) is str for x in header)
-    >>> assert all(type(row) is tuple for row in data)
-    >>> header
-    ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
-    >>> data  # doctest: +NORMALIZE_WHITESPACE
-    [(5.8, 2.7, 5.1, 1.9, 'virginica'),
-     (5.1, 3.5, 1.4, 0.2, 'setosa'),
-     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-     (6.3, 2.9, 5.6, 1.8, 'virginica'),
-     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-     (4.7, 3.2, 1.3, 0.2, 'setosa')]
-
+    >>> ip
+    '10.13.37.1'
+    >>> hosts
+    ['nasa.gov', 'esa.int', 'roscosmos.ru']
 """
 
-DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-        (5.8, 2.7, 5.1, 1.9, 'virginica'),
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-        (4.7, 3.2, 1.3, 0.2, 'setosa')]
+DATA = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
 
-header: tuple
-data: list
+ip: str
+hosts: list
 
 
 # Solution
-header, *data = DATA
+ip, *hosts = DATA.split()

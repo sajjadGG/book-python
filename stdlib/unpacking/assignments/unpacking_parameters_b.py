@@ -64,7 +64,6 @@ def isnumeric(*args) -> bool:
         return False
 
     for arg in args:
-        # if not isinstance(arg, (int, float)):
         if type(arg) not in (int, float):
             return False
 
