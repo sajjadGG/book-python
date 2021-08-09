@@ -132,6 +132,8 @@ TypeError: echo() got some positional-only arguments passed as keyword arguments
 
 Use Case - Add
 --------------
+* https://docs.python.org/3/library/operator.html#operator.add
+
 >>> def add(a, b, /):
 ...     return a + b
 
@@ -173,6 +175,8 @@ sum(iterable, /, start=0)
 
 Use Case - Strip
 ----------------
+* https://docs.python.org/3/library/stdtypes.html#str.strip
+
 >>> help(str.strip)
 Help on method_descriptor:
 
@@ -184,6 +188,8 @@ strip(self, chars=None, /)
 
 Use Case - Split
 ----------------
+* https://docs.python.org/3/library/stdtypes.html#str.split
+
 >>> help(str.split)
 Help on method_descriptor:
 
