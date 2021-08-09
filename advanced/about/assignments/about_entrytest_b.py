@@ -2,7 +2,7 @@
 * Assignment: Entry Test Endswith
 * Complexity: medium
 * Lines of code: 4 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
     1. Define `result: set[str]`
@@ -19,11 +19,11 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert type(result) is set, \
-    'Result must be a set'
-
     >>> assert len(result) > 0, \
     'Result cannot be empty'
+
+    >>> assert type(result) is set, \
+    'Result must be a set'
 
     >>> assert all(type(element) is str for element in result), \
     'All elements in result must be a str'
@@ -49,12 +49,10 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
 
 SUFFIXES = ('ca', 'osa')
 
-result: set
+result = set()
 
 
 # Solution
-result = set()
-
 for *features, label in DATA[1:]:
     species = label.pop()
 

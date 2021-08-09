@@ -1,7 +1,7 @@
 """
 * Assignment: Entry Test File
 * Complexity: hard
-* Lines of code: 15 lines
+* Lines of code: 16 lines
 * Time: 13 min
 
 English:
@@ -25,11 +25,11 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert type(result) is list, \
-    'Result must be a list'
-
     >>> assert len(result) > 0, \
     'Result cannot be empty'
+
+    >>> assert type(result) is list, \
+    'Result must be a list'
 
     >>> assert all(type(row) is dict for row in result), \
     'All elements in result must be a dict'
@@ -55,12 +55,10 @@ DATA = """
 ::1             localhost
 """
 
-result: list
+result = []
 
 
 # Solution
-result = []
-
 for line in DATA.splitlines():
     line = line.strip()
 

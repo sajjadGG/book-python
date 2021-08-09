@@ -1,7 +1,7 @@
 """
 * Assignment: Entry Test List of Dict
 * Complexity: easy
-* Lines of code: 6 lines
+* Lines of code: 4 lines
 * Time: 8 min
 
 English:
@@ -21,11 +21,11 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert type(result) is list, \
-    'Result must be a list'
-
     >>> assert len(result) > 0, \
     'Result cannot be empty'
+
+    >>> assert type(result) is list, \
+    'Result must be a list'
 
     >>> assert all(type(element) is dict for element in result), \
     'All elements in result must be a dict'

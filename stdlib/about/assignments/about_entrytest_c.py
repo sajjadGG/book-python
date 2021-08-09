@@ -1,7 +1,7 @@
 """
 * Assignment: Entry Test File
 * Complexity: hard
-* Lines of code: 15 lines
+* Lines of code: 16 lines
 * Time: 13 min
 
 English:
@@ -10,7 +10,7 @@ English:
     3. Each line must be a separate dict
     4. Merge host names with the same IP
     5. IPv4 protocol address is when dot (`.`) is in ip address
-    6. Define `result: list[dict]` with parsed lines
+    6. `result` must be `list[dict]`
     7. Run doctests - all must succeed
 
 Polish:
@@ -19,17 +19,17 @@ Polish:
     3. Każda linia ma być osobnym słownikiem
     4. Scal nazwy hostów dla tego samego IP
     5. Protokół IPv4 jest gdy kropka (`.`) znajduje się w adresie
-    6. Zdefiniuj `result: list[dict]` ze sparsowanymi liniami
+    6. `result` musi być `list[dict]`
     7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert type(result) is list, \
-    'Result must be a list'
-
     >>> assert len(result) > 0, \
     'Result cannot be empty'
+
+    >>> assert type(result) is list, \
+    'Result must be a list'
 
     >>> assert all(type(row) is dict for row in result), \
     'All elements in result must be a dict'
