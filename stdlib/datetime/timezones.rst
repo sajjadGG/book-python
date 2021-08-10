@@ -64,6 +64,7 @@ IANA Time Zone Database
 -----------------------
 * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 * https://www.iana.org/time-zones
+* https://pypi.org/project/tzdata/
 
 IANA 2017a timezone database [#IANA]_:
 
