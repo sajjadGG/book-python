@@ -143,6 +143,12 @@ Use Cases
 >>> i = dict()
 
 
+References
+----------
+.. [#class] http://makieta.pl/12344-thickbox_default/faller-130803-blok-z-wielkiej-plyty-skala-h0.jpg
+.. [#instances] https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Os_Rusa_Poznań_RB1.jpg/1200px-Os_Rusa_Poznań_RB1.jpg
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/oop_class_a.py
@@ -152,10 +158,3 @@ Assignments
 .. literalinclude:: assignments/oop_class_b.py
     :caption: :download:`Solution <assignments/oop_class_b.py>`
     :end-before: # Solution
-
-
-References
-----------
-.. [#class] http://makieta.pl/12344-thickbox_default/faller-130803-blok-z-wielkiej-plyty-skala-h0.jpg
-.. [#instances] https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Os_Rusa_Poznań_RB1.jpg/1200px-Os_Rusa_Poznań_RB1.jpg
-

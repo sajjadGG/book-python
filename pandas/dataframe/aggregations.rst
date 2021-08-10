@@ -235,11 +235,11 @@ Using ravel, and a string join, we can create better names for the columns::
     # 2015-03           1.0       10528.0     225.251891
 
 
-Assignments
------------
-.. todo:: Create assignments
-
-
 References
 ----------
 .. [#PandasAggregations] Lynn, Shane. Summarising, Aggregating, and Grouping data in Python Pandas. https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/ Access date: 2019-12-03. 2019.
+
+
+Assignments
+-----------
+.. todo:: Create assignments

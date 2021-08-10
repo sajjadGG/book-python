@@ -189,6 +189,12 @@ Traceback (most recent call last):
 ValueError: Invalid isoformat string: '2:56'
 
 
+References
+----------
+.. [#wikisoweekdate] https://en.wikipedia.org/wiki/ISO_week_date
+.. [#wikiISO8601] https://en.wikipedia.org/wiki/ISO_8601
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/datetime_iso_a.py
@@ -198,9 +204,3 @@ Assignments
 .. literalinclude:: assignments/datetime_iso_b.py
     :caption: :download:`Solution <assignments/datetime_iso_b.py>`
     :end-before: # Solution
-
-
-References
-----------
-.. [#wikisoweekdate] https://en.wikipedia.org/wiki/ISO_week_date
-.. [#wikiISO8601] https://en.wikipedia.org/wiki/ISO_8601

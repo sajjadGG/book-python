@@ -245,7 +245,6 @@ Further Reading
 References
 ----------
 .. [#rfc3696] Klensin, J. RFC-3696: Application Techniques for Checking and Transformation of Names. The Internet Society Network Working Group. Year: 2004. Retrieved: 2021-05-12. https://datatracker.ietf.org/doc/html/rfc3696#section-3
-
 .. [#stackVT1] https://stackoverflow.com/a/3380554
 .. [#stackVT2] https://stackoverflow.com/a/3385152
 .. [#stackFF] https://stackoverflow.com/a/3098328

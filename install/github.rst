@@ -29,5 +29,4 @@ Figures
 References
 ----------
 .. [#MicrosoftAcquireGithub] Microsoft News Center. Microsoft to acquire GitHub for $7.5 billion. Year: 2018. Retrieved: 2021-04-19. URL: https://news.microsoft.com/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/
-
 .. [#GithubJoin] Github. Join Github. Year: 2021. Retrieved: 2021-04-19. URL: https://github.com/join

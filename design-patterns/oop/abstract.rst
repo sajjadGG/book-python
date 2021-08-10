@@ -320,6 +320,11 @@ Further Reading
 * https://www.youtube.com/watch?v=S_ipdVNSFlo
 
 
+References
+----------
+.. [#pydocabc] https://docs.python.org/3/library/collections.abc.html
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/oop_abstract_a.py
@@ -333,8 +338,3 @@ Assignments
 .. literalinclude:: assignments/oop_abstract_c.py
     :caption: :download:`Solution <assignments/oop_abstract_c.py>`
     :end-before: # Solution
-
-
-References
-----------
-.. [#pydocabc] https://docs.python.org/3/library/collections.abc.html

@@ -485,6 +485,18 @@ Produces Pandas DataFrame:
     # 2015-03  22750.441
 
 
+References
+----------
+* https://finance.yahoo.com/quote/SPCE/history
+* https://www.kaggle.com/jessemostipak/astronaut-database
+* https://www.kaggle.com/nasa/astronaut-yearbook
+* https://www.kaggle.com/samruddhim/international-astronaut-database
+* https://www.kaggle.com/spacex/spacex-missions
+* https://www.kaggle.com/rosetabares/spacemissionsflightstatus
+* https://www.kaggle.com/rohanrao/rspacex-data
+* https://www.kaggle.com/agirlcoding/all-space-missions-from-1957
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/pandas_df_groupby_phones.py
@@ -502,15 +514,3 @@ Assignments
 .. literalinclude:: assignments/pandas_df_groupby_astro_eva.py
     :caption: :download:`Solution <assignments/pandas_df_groupby_astro_eva.py>`
     :end-before: # Solution
-
-
-References
-----------
-* https://finance.yahoo.com/quote/SPCE/history
-* https://www.kaggle.com/jessemostipak/astronaut-database
-* https://www.kaggle.com/nasa/astronaut-yearbook
-* https://www.kaggle.com/samruddhim/international-astronaut-database
-* https://www.kaggle.com/spacex/spacex-missions
-* https://www.kaggle.com/rosetabares/spacemissionsflightstatus
-* https://www.kaggle.com/rohanrao/rspacex-data
-* https://www.kaggle.com/agirlcoding/all-space-missions-from-1957

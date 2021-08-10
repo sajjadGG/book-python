@@ -81,13 +81,13 @@ Recursion Depth Limit
 >>> sys.setrecursionlimit(3000)
 
 
+References
+----------
+.. [#hanoi] https://dyermath.files.wordpress.com/2015/06/hanoi-13.jpg
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/funcprog_recurrence_a.py
     :caption: :download:`Solution <assignments/funcprog_recurrence_a.py>`
     :end-before: # Solution
-
-
-References
-----------
-.. [#hanoi] https://dyermath.files.wordpress.com/2015/06/hanoi-13.jpg

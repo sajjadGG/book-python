@@ -228,14 +228,14 @@ Descriptor Timezone Converter:
 .. todo:: Check if those times are correct
 
 
+References
+----------
+.. [#IANA] IANA. Time Zone Database. Year: 2017. Retrieved: 2019-08-05.
+.. [#ytComputerphileTimeZones] Computerphile. The Problem with Time & Timezones. Year: 2019. Retrieved: 2019-04-05. URL: https://www.youtube.com/watch?v=-5wpm-gesOY
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/datetime_timezone_a.py
     :caption: :download:`Solution <assignments/datetime_timezone_a.py>`
     :end-before: # Solution
-
-
-References
-----------
-.. [#IANA] IANA. Time Zone Database. Year: 2017. Retrieved: 2019-08-05.
-.. [#ytComputerphileTimeZones] Computerphile. The Problem with Time & Timezones. Year: 2019. Retrieved: 2019-04-05. URL: https://www.youtube.com/watch?v=-5wpm-gesOY

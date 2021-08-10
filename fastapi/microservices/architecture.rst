@@ -472,12 +472,12 @@ Self registration
 *  Clustering frameworks such as Kubernetes and Marathon (un)register
    service instances with the built-in/implicit registry
 
+
 Instancje
 ---------
 
 Multiple service instances per host
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 *  Run multiple instances of different services on a host (Physical or
    Virtual machine).
 *  There are various ways of deploying a service instance on a shared
@@ -489,18 +489,16 @@ Multiple service instances per host
 
 Single service instance per host
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 *  Deploy each single service instance on it’s own host
 
 Service instance per VM
 ^^^^^^^^^^^^^^^^^^^^^^^
-
 *  Package the service as a virtual machine image and deploy each
    service instance as a separate VM
 
+
 Service instance per Container
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 *  Package the service as a (Docker) container image and deploy each
    service instance as a container
 * Kubernetes, Marathon/Mesos, Amazon EC2 Container Service
@@ -508,7 +506,6 @@ Service instance per Container
 
 Serverless deployment
 ---------------------
-
 *  Use a deployment infrastructure that hides any concept of servers
    (i.e. reserved or preallocated resources)- physical or virtual hosts,
    or containers. The infrastructure takes your service’s code and runs
@@ -524,6 +521,7 @@ Serverless deployment
    virtual machines, etc.
 *  AWS Lambda, Google Cloud Functions, Azure Functions
 
+
 Baza danych
 -----------
 
@@ -538,6 +536,7 @@ Database per Service:
 
 .. todo:: Wiele baz danych w jednej usłudze
 .. todo:: Mieszane, usługi mają jedną bazę danych
+
 
 Shared database
 ^^^^^^^^^^^^^^^
@@ -561,7 +560,6 @@ Database triggers
 
 Microservice chassis
 --------------------
-
 *  Build your microservices using a microservice chassis framework,
    which handles cross-cutting concerns
 *  Spring Boot, Spring Cloud, Dropwizard
@@ -571,7 +569,6 @@ Zdarzenia
 
 Event-driven architecture
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-
 *  Use an event-driven, eventually consistent approach. Each service
    publishes an event whenever it update it’s data. Other service
    subscribe to events. When an event is received, a service updates
@@ -579,7 +576,6 @@ Event-driven architecture
 
 Event sourcing
 ^^^^^^^^^^^^^^
-
 *  Reliably publish events whenever state changes by using Event
    Sourcing. Event Sourcing persists each business entity as a sequence
    of events, which are replayed to reconstruct the current state.
@@ -591,7 +587,6 @@ Event sourcing:
 
 Application events
 ^^^^^^^^^^^^^^^^^^
-
 *  Reliably publish events whenever state changes by having the
    application insert events into an EVENTS table as part of the local
    transaction. A separate process polls the EVENTS table and publishes
@@ -600,14 +595,13 @@ Application events
 
 CQRS - Command Query Responsibility Segregation
 -----------------------------------------------
-
 *  Split the system into two parts. The command side handles create,
    update and delete requests. The query side handles queries using one
    or more materialized views of the application’s data.
 
+
 Transaction log tailing
 -----------------------
-
 *  Reliably publish events whenever state changes by tailing the
    transaction log.
 
@@ -621,6 +615,7 @@ Dobre praktyki
 * zawsze używaj wersjonowania api
 * zawsze bądź backward compatible
 * walidować dane między requestami
+
 
 References
 ----------

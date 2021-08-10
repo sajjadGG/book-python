@@ -412,11 +412,11 @@ Dynamic factory:
  Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2)]
 
 
-Assignments
------------
-.. todo:: Create assignments
-
-
 References
 ----------
 .. [#patternmatching] Raymond Hettinger. Retrieved: 2021-03-07. URL: https://twitter.com/raymondh/status/1361780586570948609?s=20
+
+
+Assignments
+-----------
+.. todo:: Create assignments

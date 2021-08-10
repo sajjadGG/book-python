@@ -75,12 +75,12 @@ Undoable commands:
     :language: python
 
 
+References
+----------
+.. [#medium] https://medium.com/design-patterns-in-python/command-design-pattern-in-python-2f15b09f3774
+
+
 
 Assignments
 -----------
 .. todo:: Create assignments
-
-
-References
-----------
-.. [#medium] https://medium.com/design-patterns-in-python/command-design-pattern-in-python-2f15b09f3774

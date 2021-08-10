@@ -199,12 +199,12 @@ ValueError: zip() argument 2 is longer than argument 1
 Without the ``strict=True`` argument, any bug that results in iterables of different lengths will be silenced, possibly manifesting as a hard-to-find bug in another part of the program.
 
 
-Assignments
------------
-.. todo:: Create assignments
-
-
 References
 ----------
 .. [#pep618] https://www.python.org/dev/peps/pep-0618/
 .. [#pydoc310] https://docs.python.org/3.10/library/functions.html#zip
+
+
+Assignments
+-----------
+.. todo:: Create assignments

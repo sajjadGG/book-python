@@ -107,6 +107,11 @@ Remove Outer Function
 Hello Mark Watney
 
 
+References
+----------
+.. [#ytclosures] https://youtu.be/t86v3N4OshQ?t=954
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/funcprog_closure_a.py
@@ -117,7 +122,3 @@ Assignments
     :caption: :download:`Solution <assignments/funcprog_closure_b.py>`
     :end-before: # Solution
 
-
-References
-----------
-.. [#ytclosures] https://youtu.be/t86v3N4OshQ?t=954

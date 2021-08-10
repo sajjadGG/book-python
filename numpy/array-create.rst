@@ -393,6 +393,10 @@ Performance
     # 5.89 µs ± 77 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 
+References
+----------
+.. [#CAKE] https://i.ytimg.com/vi/iCOhz07Ng6g/maxresdefault.jpg
+
 
 Assignments
 -----------
@@ -400,7 +404,3 @@ Assignments
     :caption: :download:`Solution <assignments/numpy_create_arange.py>`
     :end-before: # Solution
 
-
-References
-----------
-.. [#CAKE] https://i.ytimg.com/vi/iCOhz07Ng6g/maxresdefault.jpg

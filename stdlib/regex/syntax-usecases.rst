@@ -107,17 +107,15 @@ To parse a *URL* url into its component parts, the user agent must use the follo
             The substring that follows the substring matched by the <authority> production, or the whole string if the ``<authority>`` production wasn't matched.
 
 
+References
+----------
+.. [#rfc3696] RFC 3696. Year: 2019. Retrieved: 2019-03-13. URL: https://datatracker.ietf.org/doc/html/rfc3696#section-3
+.. [#w3cemailregex] W3C. Parsing Email. Year: 2019. Retrieved: 2019-03-13. URL: https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address
+.. [#W3CParsingURLs] W3C. Parsing URLs. Year: 2019. Retrieved: 2019-03-13. URL: https://dev.w3.org/html5/spec-LC/urls.html#parsing-urls
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/re_standards_a.py
     :caption: :download:`Solution <assignments/re_standards_a.py>`
     :end-before: # Solution
-
-
-References
-----------
-.. [#rfc3696] RFC 3696. Year: 2019. Retrieved: 2019-03-13. URL: https://datatracker.ietf.org/doc/html/rfc3696#section-3
-
-.. [#w3cemailregex] W3C. Parsing Email. Year: 2019. Retrieved: 2019-03-13. URL: https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address
-
-.. [#W3CParsingURLs] W3C. Parsing URLs. Year: 2019. Retrieved: 2019-03-13. URL: https://dev.w3.org/html5/spec-LC/urls.html#parsing-urls

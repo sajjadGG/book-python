@@ -76,6 +76,11 @@ Most common:
     "``22poly(n)``",             "double exponential time",                 "Deciding the truth of a given statement in Presburger arithmetic"
 
 
+References
+----------
+.. [#wikibigonotation] https://en.wikipedia.org/wiki/Big_O_notation
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/performance_complexity_a.py
@@ -89,8 +94,3 @@ Assignments
 .. literalinclude:: assignments/performance_complexity_c.py
     :caption: :download:`Solution <assignments/performance_complexity_c.py>`
     :end-before: # Solution
-
-
-References
-----------
-.. [#wikibigonotation] https://en.wikipedia.org/wiki/Big_O_notation

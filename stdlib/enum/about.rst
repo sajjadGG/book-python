@@ -275,13 +275,12 @@ Use Case - Drivers
 ...     OperationMode = 0x6060
 
 
-Assignments
------------
-.. todo:: Create assignments
-
-
 References
 ----------
 .. [mskeycodes] https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes?redirectedfrom=MSDN
-
 .. [jskeycodes] https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
+
+
+Assignments
+-----------
+.. todo:: Create assignments

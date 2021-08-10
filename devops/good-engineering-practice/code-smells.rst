@@ -299,6 +299,6 @@ Pythonic way:
 
 
 References
--------------------------------------------------------------------------------
+----------
 .. [#CodeSmells] Flury, Tony. What are some major code smells in Python? Year: 2019. Retrieved: 2019-03-28. URL: https://www.quora.com/What-are-some-major-code-smells-in-Python
 

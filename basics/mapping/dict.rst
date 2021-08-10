@@ -473,6 +473,11 @@ Examples
 ...    'b3bbd85a': 'tag/v1.0'}
 
 
+References
+----------
+.. [#Hamidi2017] Frédéric Hamidi. Why does Python 3 need dict.items to be wrapped with list()? Retrieved: 2021-02-28. URL: https://stackoverflow.com/a/17695716
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/mapping_dict_a.py
@@ -490,8 +495,3 @@ Assignments
 .. literalinclude:: assignments/mapping_dict_d.py
     :caption: :download:`Solution <assignments/mapping_dict_d.py>`
     :end-before: # Solution
-
-
-References
-----------
-.. [#Hamidi2017] Frédéric Hamidi. Why does Python 3 need dict.items to be wrapped with list()? Retrieved: 2021-02-28. URL: https://stackoverflow.com/a/17695716

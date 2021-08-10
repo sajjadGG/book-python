@@ -119,6 +119,10 @@ Gagarin launched on 1961-04-12 06:07
 Gagarin launched on 1961-04-12 06:07
 
 
+References
+----------
+.. [#pydocdtformat] https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
+
 
 Assignments
 -----------
@@ -129,8 +133,3 @@ Assignments
 .. literalinclude:: assignments/datetime_format_b.py
     :caption: :download:`Solution <assignments/datetime_format_b.py>`
     :end-before: # Solution
-
-
-References
-----------
-.. [#pydocdtformat] https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior

@@ -8,7 +8,7 @@ Requirements
   Python w wersji 3.8 lub 3.9 (preferowany) [#DownloadPython]_
 
 * `[Załóż] <https://github.com/join>`_
-  konto na Github (potwierdzone mailem) [#GithubJoin]_
+  konto na Github (potwierdź konto mailem!) [#GithubJoin]_
 
 * `[Zainstaluj] <https://www.jetbrains.com/pycharm/download/>`_
   PyCharm w wersji 2021.1 lub nowszy
@@ -18,23 +18,26 @@ Requirements
   Git w wersji 2.4 lub nowszy [#DownloadGit]_
 
 
-FAQ
----
+FAQ - Najczęściej zadawane pytania
+----------------------------------
 1. Można korzystać ze swojego komputera i dowolnego systemu operacyjnego
+
 2. Python może być zainstalowany albo za pomocą oficjalnej dystrybucji albo
-   z pakietu Anaconda
-3. Wybór dystrybucji Python nie będzie miał wpływu na przebieg szkolenia
-4. Podczas szkolenia trener będzie korzystał z PyCharm jako środowisko
-   programistyczne (IDE)
-5. Można korzystać z innego IDE, ale proszę zaznajomić się z nim przed
-   szkoleniem
-6. Podczas szkolenia nie będzie czasu na rozwiązywanie problemów technicznych
-   z innymi IDE
-7. Podczas instalacji PyCharm zaznacz opcję: "powiąż z rozszerzeniem plików
+   z pakietu Anaconda, a wybór dystrybucji Python nie będzie miał wpływu
+   na przebieg szkolenia
+
+3. Podczas szkolenia trener będzie korzystał z PyCharm jako środowisko
+   programistyczne (IDE). Można korzystać z innego IDE, ale proszę
+   zaznajomić się z nim przed szkoleniem. Podczas szkolenia nie będzie
+   czasu na rozwiązywanie problemów technicznych z innymi IDE
+
+4. Podczas instalacji PyCharm zaznacz opcję: "powiąż z rozszerzeniem plików
    ``.py``" (nie jest to konieczne ale ułatwia pracę)
-8. Proszę o zainstalowanie Git i założenie darmowego konta na Github oraz
+
+5. Proszę o zainstalowanie Git i założenie darmowego konta na Github oraz
    potwierdzenie linka aktywacyjnego na mailu
-9. Dla szkolenia z Analizy Numerycznej lub Machine Learning dodatkowo trzeba:
+
+6. Dla szkolenia z Analizy Numerycznej lub Machine Learning dodatkowo trzeba:
 
     * Posiadać uprawnienia na komputerze do instalacji pakietów Python za pomocą ``pip``
     * Do instalacji pakietów konieczny jest dostęp do internetu

@@ -322,6 +322,11 @@ Use Case - Microbenchmark
     # Duration of %-style is 4.02 second
 
 
+References
+----------
+.. [#pydocpython310] https://docs.python.org/3.10/whatsnew/3.10.html#new-features
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/protocol_contextmanager_a.py
@@ -335,8 +340,3 @@ Assignments
 .. literalinclude:: assignments/protocol_contextmanager_c.py
     :caption: :download:`Solution <assignments/protocol_contextmanager_c.py>`
     :end-before: # Solution
-
-
-References
-----------
-.. [#pydocpython310] https://docs.python.org/3.10/whatsnew/3.10.html#new-features

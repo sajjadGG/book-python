@@ -318,6 +318,11 @@ Show Methods
 ['get_publicname']
 
 
+References
+----------
+.. [#pydocprivatevar] https://docs.python.org/3/tutorial/classes.html#private-variables
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/oop_accessmodifiers_a.py
@@ -327,8 +332,3 @@ Assignments
 .. literalinclude:: assignments/oop_accessmodifiers_b.py
     :caption: :download:`Solution <assignments/oop_accessmodifiers_b.py>`
     :end-before: # Solution
-
-
-References
-----------
-.. [#pydocprivatevar] https://docs.python.org/3/tutorial/classes.html#private-variables

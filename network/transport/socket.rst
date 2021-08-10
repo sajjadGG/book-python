@@ -112,12 +112,12 @@ Forking:
 
 
 References
--------------------------------------------------------------------------------
+----------
 * https://realpython.com/python-sockets/
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Heartbeat
