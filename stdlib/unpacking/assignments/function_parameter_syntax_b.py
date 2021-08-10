@@ -1,5 +1,5 @@
 """
-* Assignment: Function Parameter Syntax Args
+* Assignment: Unpacking ParameterSyntax Args
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

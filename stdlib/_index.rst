@@ -28,7 +28,7 @@ Type Annotation
     :maxdepth: 1
     :caption: Type Annotation
 
-    type-annotation/type.rst
+    type-annotation/scalar.rst
     type-annotation/sequence.rst
     type-annotation/mapping.rst
     type-annotation/function.rst

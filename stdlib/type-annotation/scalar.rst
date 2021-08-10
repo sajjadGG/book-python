@@ -19,7 +19,8 @@ Rationale
 * Introduced in Python 3.5
 * Since Python 3.5: :pep:`484` -- Type Hints
 * Since Python 3.6: :pep:`526` -- Syntax for Variable Annotations
-* Since Python 3.8: :pep:`544` -- Protocols: Structural subtyping (static duck typing)
+* Since Python 3.8: :pep:`544` -- Protocols: Structural subtyping
+  (static duck typing)
 * Also known as: "type annotations", "type hints", "gradual typing"
 * Good IDE will give you hints
 * Types are used extensively in system libraries
@@ -139,23 +140,14 @@ Before Python 3.10:
 
 Type Vars
 ---------
->>> from typing import TypeVar, Iterable, Tuple
+>>> from typing import TypeVar
 >>>
 >>>
->>> T = TypeVar('T', int, float, complex)
->>> Vector = Iterable[tuple[T, T]]
+>>> T = TypeVar('T', int, float)
+>>> Vector = tuple[T, T]
 >>>
 >>> def product(data: Vector[T]) -> T:
 ...     return sum(x*y for x,y in data)
-
->>> from typing import TypeVar, Iterable, Tuple
->>>
->>>
->>> T = TypeVar('T', int, float, complex)
->>> Vector = Iterable[tuple[T, T]]
->>>
->>> def dilate(data: Vector[T], scale: T) -> Vector[T]:
-...     return ((x*scale, y*scale) for x,y in data)
 
 
 Final

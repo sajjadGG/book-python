@@ -16,12 +16,11 @@ Day 1
     "75m", "Przygotowanie środowiska do pracy: github, git, python, doctest"
     "30m", "Zadania testowe ewaluujące umiejętności użytkownika"
     "60m", "Live Coding rozwiązań zadań i demonstracja funkcji IDE, tj. debugging, praca z VCS, refactoring, dokumentacja i typy, sygnatury funkcji"
-    "30m", "Unpacking assignment"
-    "30m", "Unpacking parameters"
-    "30m", "Unpacking arguments"
-    "30m", "Assignment Expression"
-    "30m", "Parameter Syntax"
-    "90m", "Type Annotation"
+    "45m", "Unpacking assignment"
+    "45m", "Unpacking parameters"
+    "60m", "Unpacking arguments"
+    "15m", "Parameter Syntax"
+    "75m", "Assignment Expression"
 
 
 Day 2
@@ -31,9 +30,10 @@ Day 2
     :widths: 15, 85
     :header: "Estimated Time", "Topic"
 
+    "60m", "Type Annotation"
     "120m", "Daty, czas i strefy czasowe"
-    "150m", "Praca z plikami CSV: (dane nierelacyjne i relacyjne)"
-    "135m", "Praca z plikami JSON (dane nierelacyjne i relacyjne, daty i czas, zagnieżdżone dane relacyjne)"
+    "120m", "Praca z plikami CSV: (dane nierelacyjne i relacyjne)"
+    "105m", "Praca z plikami JSON (dane nierelacyjne i relacyjne, daty i czas, zagnieżdżone dane relacyjne)"
     "15m", "Serializacja i deserializacja danych z Pickle"
 
 

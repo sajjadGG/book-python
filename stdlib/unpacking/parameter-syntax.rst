@@ -102,7 +102,7 @@ TypeError: echo() got some positional-only arguments passed as keyword arguments
 Positional and Keyword Parameters
 ---------------------------------
 >>> def echo(a, /, b, *, c=3):
-...     print(a, b, c)
+...     print(f'{a=} {b=} {c=}')
 >>>
 >>>
 >>> echo(1, 2)

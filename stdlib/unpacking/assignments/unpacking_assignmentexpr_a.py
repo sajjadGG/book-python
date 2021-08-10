@@ -1,5 +1,5 @@
 """
-* Assignment: Idioms Assignement Expression
+* Assignment: Unpacking Assignement Expression
 * Complexity: medium
 * Lines of code: 6 lines
 * Time: 13 min
