@@ -31,7 +31,7 @@ Tests:
     27
 
     >>> armstrong_age
-    39
+    38
 """
 
 from datetime import date, datetime
@@ -47,17 +47,7 @@ ARMSTRONG_BIRTHDAY = date(1930, 8, 5)
 ARMSTRONG_STEP = datetime(1969, 7, 21, 2, 56, 15)
 
 # int: Gagarin's age when he was launched to space
-gagarin_age = ...
+gagarin_age = int((GAGARIN_LAUNCH.date() - GAGARIN_BIRTHDAY).days / YEAR)
 
 # int: Armstrong's age when he made a first step on the Moon
-armstrong_age = ...
-
-# Solution
-g = GAGARIN_BIRTHDAY
-a = ARMSTRONG_BIRTHDAY
-
-gagarin_birthday = datetime(g.year, g.month, g.day)
-armstrong_birthday = datetime(a.year, a.month, a.day)
-
-gagarin_age = round((GAGARIN_LAUNCH - gagarin_birthday).days / YEAR)
-armstrong_age = round((ARMSTRONG_STEP - armstrong_birthday).days / YEAR)
+armstrong_age = int((ARMSTRONG_STEP.date() - ARMSTRONG_BIRTHDAY).days / YEAR)

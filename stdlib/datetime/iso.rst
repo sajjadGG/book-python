@@ -80,7 +80,7 @@ Week
 * Format: ``YYYY-Www``
 * The ISO 8601 definition for week 01 is the week with the first Thursday of the Gregorian year (i.e. of January) in it. [#wikisoweekdate]_
 * ``2009-W01`` - First week of 2009
-* ``2009-W53`` - 53rd week of 2009
+* ``2009-W53`` - Sunday 3 January 2010
 
 
 Weekday
@@ -102,7 +102,6 @@ Weekday
 >>>
 >>> dt.weekday()
 0
-
 
 Duration
 --------

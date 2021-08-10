@@ -39,20 +39,22 @@ Tests:
 
 """
 
-DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-        (5.8, 2.7, 5.1, 1.9, 'virginica'),
-        (5.1, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 5.7, 'virginica'),
-        (6.4, 1.5, 'versicolor'),
-        (4.7,  'setosa')]
+DATA = [
+    ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+    (5.8, 2.7, 5.1, 1.9, 'virginica'),
+    (5.1, 0.2, 'setosa'),
+    (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    (6.3, 5.7, 'virginica'),
+    (6.4, 1.5, 'versicolor'),
+    (4.7, 'setosa')]
 
 
 def mean(*args):
     return sum(args) / len(args)
 
 
-result: list
+# list[dict]: calculate mean and append dict with {'label': ..., 'mean': ...}
+result = ...
 
 # Solution
 result = [{'label': label,

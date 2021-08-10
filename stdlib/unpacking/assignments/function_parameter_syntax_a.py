@@ -1,24 +1,20 @@
 """
 * Assignment: Unpacking ParameterSyntax Kwargs
 * Complexity: easy
-* Lines of code: 2 lines
+* Lines of code: 1 lines
 * Time: 3 min
 
 English:
     1. Create function `set_position`
     2. Function takes two arguments `x`, `y` and always returns `None`
     3. Arguments must be passed only as keywords
-    4. Test function by running with keyword arguments
-    5. Test function by running with positional arguments
-    6. Run doctests - all must succeed
+    4. Run doctests - all must succeed
 
 Polish:
     1. Stwórz funkcję `set_position`
     2. Funkcja przyjmuje dwa argumenty `x`, `y` i zawsze zwraca `None`
     3. Argumenty można podawać tylko nazwanie (keyword)
-    4. Przetestuj funkcję uruchamiając z nazwanymi parametrami
-    5. Przetestuj funkcję uruchamiając z pozycyjnymi parametrami
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -29,9 +25,10 @@ Tests:
 
     >>> set_position(x=1, y=2)
 
-    >>> set_position()
+    >>> set_position()  # doctest: +NORMALIZE_WHITESPACE
     Traceback (most recent call last):
-    TypeError: set_position() missing 2 required keyword-only arguments: 'x' and 'y'
+    TypeError: set_position() missing 2 required keyword-only arguments: 'x'
+    and 'y'
 
     >>> set_position(1)
     Traceback (most recent call last):
@@ -41,9 +38,10 @@ Tests:
     Traceback (most recent call last):
     TypeError: set_position() takes 0 positional arguments but 2 were given
 
-    >>> set_position(1, y=1)
+    >>> set_position(1, y=1)  # doctest: +NORMALIZE_WHITESPACE
     Traceback (most recent call last):
-    TypeError: set_position() takes 0 positional arguments but 1 positional argument (and 1 keyword-only argument) were given
+    TypeError: set_position() takes 0 positional arguments but 1 positional
+    argument (and 1 keyword-only argument) were given
 
     >>> set_position(x=1, 2)
     Traceback (most recent call last):
@@ -51,6 +49,11 @@ Tests:
 """
 
 
+# callable: Arguments must be passed only as keywords
+def set_position(x, y):
+    pass
+
+
 # Solution
 def set_position(*, x, y):
-    ...
+    pass

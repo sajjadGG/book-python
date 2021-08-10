@@ -58,6 +58,8 @@ Tests:
 """
 
 
+# callable: myrange(start=0, stop=???, step=1)
+#           note, function does not take keyword arguments
 def myrange():
     current = start
     result = []
@@ -67,7 +69,6 @@ def myrange():
         current += step
 
     return result
-
 
 
 # Solution
