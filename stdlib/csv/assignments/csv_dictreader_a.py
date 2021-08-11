@@ -1,7 +1,7 @@
 """
 * Assignment: CSV DictReader Iris
 * Complexity: easy
-* Lines of code: 10 lines
+* Lines of code: 5 lines
 * Time: 8 min
 
 English:
@@ -39,15 +39,18 @@ Tests:
     >>> remove(FILE)
 """
 
-FILE = r'_temporary.csv'
+import csv
 
-FIELDNAMES = ['Sepal Length', 'Sepal Width',
-              'Petal Length', 'Petal Width', 'Species']
 
 DATA = """sepal_length,sepal_width,petal_length,petal_width,species
 5.8,2.7,5.1,1.9,virginica
 5.1,3.5,1.4,0.2,setosa
 5.7,2.8,4.1,1.3,versicolor"""
+
+FIELDNAMES = ['Sepal Length', 'Sepal Width',
+              'Petal Length', 'Petal Width', 'Species']
+
+FILE = r'_temporary.csv'
 
 with open(FILE, mode='w') as file:
     file.write(DATA)
@@ -55,12 +58,10 @@ with open(FILE, mode='w') as file:
 result: list = []
 
 # Solution
-from csv import DictReader, QUOTE_NONE
-
 with open(FILE) as file:
     header = file.readline()
-    data = DictReader(file, fieldnames=FIELDNAMES,
-                      delimiter=',', quoting=QUOTE_NONE)
+    data = csv.DictReader(file, fieldnames=FIELDNAMES,
+                          delimiter=',', quoting=csv.QUOTE_NONE)
 
     for row in data:
         result.append(row)

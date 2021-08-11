@@ -228,8 +228,6 @@ Encoding
     with open(FILE, encoding='utf-8') as file:
         ...
 
-.. figure:: img/csv-standard-dialects.png
-
 
 Dialects
 --------
@@ -242,6 +240,7 @@ Dialects
 
 * Microsoft Excel 2016-2020:
 
+    * ``quoting=csv.QUOTE_MINIMAL``
     * ``quotechar='"'``
     * ``delimiter=','``
     * ``lineterminator='\n'``
@@ -249,10 +248,56 @@ Dialects
 
 * Microsoft Excel macOS:
 
+    * ``quoting=csv.QUOTE_MINIMAL``
     * ``quotechar='"'``
     * ``delimiter=','``
     * ``lineterminator='\r\n'``
     * ``encoding='utf-8'``
+
+* Microsoft export options:
+
+.. figure:: img/csv-standard-dialects.png
+
+    .. code-block:: console
+
+        $ file utf8.csv
+        utf8.csv: CSV text
+
+        $ cat utf8.csv
+        Firstname,Lastname,Age,Comment
+        Mark,Watney,21,zażółć gęślą jaźń
+        Melissa,Lewis,21.5,"Some, comment"
+        ,,"21,5",Some; Comment
+
+    .. code-block:: console
+
+        $ file standard.csv
+        standard.csv: CSV text
+
+        $ cat standard.csv
+        Firstname,Lastname,Age,Comment
+        Mark,Watney,21,za_?__ g__l_ ja__
+        Melissa,Lewis,21.5,"Some, comment"
+        ,,"21,5",Some; Comment
+
+    .. code-block:: console
+
+        $ file dos.csv
+        dos.csv: CSV text
+
+        $ cat dos.csv
+        Firstname,Lastname,Age,Comment
+        Mark,Watney,21,za_?__ g__l_ ja__
+        Melissa,Lewis,21.5,"Some, comment"
+        ,,"21,5",Some; Comment
+
+    .. code-block:: console
+
+        $ file macintosh.csv
+        macintosh.csv: Non-ISO extended-ASCII text, with CR line terminators
+
+        $ cat macintosh.csv
+        ,,"21,5",Some; Comment
 
 
 Good Practices

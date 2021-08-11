@@ -49,9 +49,7 @@ Tests:
     >>> remove(FILE)
 """
 
-from csv import DictWriter, QUOTE_ALL
-
-FILE = r'_temporary.csv'
+import csv
 
 
 class Astronaut:
@@ -78,14 +76,13 @@ CREW = [
     Astronaut('Rick', 'Martinez', missions=[]),
 ]
 
-result: list = []
-
+FILE = r'_temporary.csv'
 
 result: list = []
 
 # Solution
-for member in CREW:
-    astronaut = vars(member)
+for astronaut in CREW:
+    astronaut = vars(astronaut)
     missions = [','.join(str(x) for x in vars(mission).values())
                 for mission in astronaut.pop('missions')]
     astronaut['missions'] = ';'.join(missions)
@@ -101,6 +98,6 @@ for member in CREW:
 fieldnames = sorted(result[0].keys())
 
 with open(FILE, mode='w') as file:
-    writer = DictWriter(file, fieldnames=fieldnames, quoting=QUOTE_ALL)
+    writer = csv.DictWriter(file, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
     writer.writeheader()
     writer.writerows(result)

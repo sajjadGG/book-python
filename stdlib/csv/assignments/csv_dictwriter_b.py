@@ -45,10 +45,8 @@ Tests:
     >>> from os import remove
     >>> remove(FILE)
 """
-from csv import DictWriter, QUOTE_ALL
+import csv
 
-
-FILE = r'_temporary.csv'
 
 DATA = [{'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
         {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
@@ -57,13 +55,16 @@ DATA = [{'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
         {'Sepal width': 2.8, 'Petal length': 4.1, 'Species': 'versicolor'},
         {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'}]
 
+FILE = r'_temporary.csv'
+
 # Solution
 fieldnames = set()
 for row in DATA:
     fieldnames.update(row.keys())
 
 with open(FILE, mode='w', encoding='utf-8') as file:
-    data = DictWriter(f=file, fieldnames=sorted(fieldnames), delimiter=',',
-                      quotechar='"', quoting=QUOTE_ALL, lineterminator='\n')
+    data = csv.DictWriter(f=file, fieldnames=sorted(fieldnames), delimiter=',',
+                          quotechar='"', quoting=csv.QUOTE_ALL,
+                          lineterminator='\n')
     data.writeheader()
     data.writerows(DATA)

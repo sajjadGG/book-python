@@ -41,7 +41,7 @@ Tests:
     >>> remove(FILE)
 """
 
-from csv import DictWriter
+import csv
 
 
 class Iris:
@@ -54,8 +54,6 @@ class Iris:
         self.species = species
 
 
-FILE = r'_temporary.txt'
-
 DATA = [Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
         Iris(5.8, 2.7, 5.1, 1.9, 'virginica'),
         Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -63,11 +61,14 @@ DATA = [Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
         Iris(6.3, 2.9, 5.6, 1.8, 'virginica'),
         Iris(6.4, 3.2, 4.5, 1.5, 'versicolor')]
 
+FILE = r'_temporary.txt'
+
+
 # Solution
 data = [vars(iris) for iris in DATA]
-header = data[0].keys()
+header = list(data[0].keys())
 
 with open(FILE, mode='w', encoding='utf-8') as file:
-    writer = DictWriter(file, fieldnames=header)
+    writer = csv.DictWriter(file, fieldnames=header)
     writer.writeheader()
     writer.writerows(data)

@@ -1,7 +1,7 @@
 """
 * Assignment: CSV Writer Iris
 * Complexity: easy
-* Lines of code: 4 lines
+* Lines of code: 3 lines
 * Time: 5 min
 
 English:
@@ -37,7 +37,8 @@ Tests:
     >>> remove(FILE)
 """
 
-FILE = r'_temporary.csv'
+import csv
+
 
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -51,9 +52,9 @@ DATA = [
     (7.6, 3.0, 6.6, 2.1, 'virginica'),
     (4.9, 3.0, 1.4, 0.2, 'setosa')]
 
-# Solution
-from csv import writer
+FILE = r'_temporary.csv'
 
+# Solution
 with open(FILE, mode='w') as file:
-    data = writer(file, lineterminator='\n')
+    data = csv.writer(file, lineterminator='\n')
     data.writerows(DATA)

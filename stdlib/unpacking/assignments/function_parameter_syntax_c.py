@@ -6,20 +6,16 @@
 * Warning: This assignment will work only in Python 3.8+
 
 English:
-    1. Create function `take_damage`
-    2. Function takes one argument `dmg` and always returns `None`
-    3. Argument must be passed only as positional
-    4. Test function by running with positional arguments
-    5. Test function by running with keyword arguments
-    6. Run doctests - all must succeed
+    1. Create function `compute`
+    2. Function takes 4 arguments `a, b, c, func` and always returns `None`
+    3. Arguments `a, b, c` must be passed only as positional, and `func` as keyword
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz funkcję `take_damage`
-    2. Funkcja przyjmuje jeden argument `dmg` i zawsze zwraca `None`
-    3. Argument można podawać tylko pozycyjnie
-    4. Przetestuj funkcję uruchamiając z pozycyjnymi parametrami
-    5. Przetestuj funkcję uruchamiając z nazwanymi parametrami
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    1. Stwórz funkcję `compute`
+    2. Funkcja przyjmuje cztery argumenty `a, b, c, func` i zawsze zwraca `None`
+    3. Argumenty `a, b, c` można podawać pozycyjnie, a `func` keyword
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

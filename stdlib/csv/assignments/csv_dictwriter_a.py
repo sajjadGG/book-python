@@ -1,7 +1,7 @@
 """
 * Assignment: CSV DictWriter Fixed
 * Complexity: easy
-* Lines of code: 10 lines
+* Lines of code: 4 lines
 * Time: 8 min
 
 English:
@@ -45,8 +45,8 @@ Tests:
     >>> from os import remove
     >>> remove(FILE)
 """
+import csv
 
-FILE = r'_temporary.csv'
 
 DATA = [{'firstname': 'Jan', 'lastname': 'Twardowski'},
         {'firstname': 'Rick', 'lastname': 'Martinez'},
@@ -54,13 +54,13 @@ DATA = [{'firstname': 'Jan', 'lastname': 'Twardowski'},
         {'firstname': 'Ivan', 'lastname': 'Ivanovic'},
         {'firstname': 'Melissa', 'lastname': 'Lewis'}]
 
-# Solution
-from csv import DictWriter, QUOTE_ALL
+FILE = r'_temporary.csv'
 
+# Solution
 with open(FILE, mode='w') as file:
-    data = DictWriter(file, fieldnames=['firstname', 'lastname'],
-                      delimiter=',', quotechar='"', quoting=QUOTE_ALL,
-                      lineterminator='\n')
+    data = csv.DictWriter(file, fieldnames=['firstname', 'lastname'],
+                          delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL,
+                          lineterminator='\n')
 
     data.writeheader()
     data.writerows(DATA)
