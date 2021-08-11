@@ -40,10 +40,10 @@ Tests:
 
     >>> result = open(FILE).read()
     >>> print(result)
-    "lastname","missions","name"
-    "Twardowski","1969,Apollo 11;2024,Artemis 3","Jan"
-    "Watney","2035,Ares 3","Mark"
-    "Lewis","","Melissa"
+    "firstname","lastname","missions"
+    "Jan","Twardowski","1969,Apollo 11;2024,Artemis 3"
+    "Mark","Watney","2035,Ares 3"
+    "Melissa","Lewis",""
     <BLANKLINE>
     >>> from os import remove
     >>> remove(FILE)
@@ -56,7 +56,7 @@ FILE = r'_temporary.csv'
 
 class Astronaut:
     def __init__(self, firstname, lastname, missions=None):
-        self.name = firstname
+        self.firstname = firstname
         self.lastname = lastname
         self.missions = list(missions) if missions else []
 

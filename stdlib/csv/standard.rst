@@ -7,35 +7,38 @@ Rationale
 * CSV - Comma Separated Values
 * CSV - Character Separated Values
 
-CSV file with numeric values.:
+CSV file with mixed values (numeric and strings). First line is a header:
 
 .. code-block:: text
 
-    5.4,3.9,1.3,0.4,0
-    5.9,3.0,5.1,1.8,1
-    6.0,3.4,4.5,1.6,2
+    SepalLength, SepalWidth, PetalLength, PetalWidth, Species
+    5.4, 3.9, 1.3, 0.4, setosa
+    5.9, 3.0, 5.1, 1.8, virginica
+    6.0, 3.4, 4.5, 1.6, versicolor
+    7.3, 2.9, 6.3, 1.8, virginica
+    5.6, 2.5, 3.9, 1.1, versicolor
+    5.4, 3.9, 1.3, 0.4, setosa
 
-CSV file with text values. First line is a header.:
 
-.. code-block:: text
-
-    "First Name", "Last Name"
-    "Mark", "Watney"
-    "Jan", "Twardowski"
-    "Melissa", "Lewis"
-    "Alex", "Vogel"
-
-CSV file with mixed values (numeric and strings). First line is a header.:
+Variants
+--------
+CSV file with numeric values:
 
 .. code-block:: text
 
-    sepal_length,sepal_width,petal_length,petal_width,species
-    5.4,3.9,1.3,0.4,setosa
-    5.9,3.0,5.1,1.8,virginica
-    6.0,3.4,4.5,1.6,versicolor
-    7.3,2.9,6.3,1.8,virginica
-    5.6,2.5,3.9,1.1,versicolor
-    5.4,3.9,1.3,0.4,setosa
+    5.4, 3.9, 1.3, 0.4, 0
+    5.9, 3.0, 5.1, 1.8, 1
+    6.0, 3.4, 4.5, 1.6, 2
+
+CSV file with text values. First line is a header:
+
+.. code-block:: text
+
+    Firstname, Lastname
+    Mark, Watney
+    Jan, Twardowski
+    Melissa, Lewis
+    Alex, Vogel
 
 
 Delimiter
@@ -58,6 +61,13 @@ Delimiter
     5.1;3.5;1.4;0.2;setosa
     5.7;2.8;4.1;1.3;versicolor
 
+.. code-block:: text
+
+    Sepal length;Sepal width;Petal length;Petal width;Species
+    5,8;2,7;5,1;1,9;virginica
+    5,1;3,5;1,4;0,2;setosa
+    5,7;2,8;4,1;1,3;versicolor
+
 ``delimiter=':'``:
 
 .. code-block:: text
@@ -67,6 +77,14 @@ Delimiter
     5.1:3.5:1.4:0.2;setosa
     5.7:2.8:4.1:1.3;versicolor
 
+.. code-block:: text
+
+    root:x:0:0:root:/root:/bin/bash
+    watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
+    jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
+    ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
+    lewis:x:1003:1002:Melissa Lewis:/home/ivanovic:/bin/bash
+
 ``delimiter='|'``:
 
 .. code-block:: text
@@ -75,6 +93,22 @@ Delimiter
     5.8|2.7|5.1|1.9|virginica
     5.1|3.5|1.4|0.2|setosa
     5.7|2.8|4.1|1.3|versicolor
+
+.. code-block:: text
+
+    Header   | Another Header | Yet Another Header
+    ---------|----------------|-------------------
+    Value 11 | Value 12       | Value 13
+    Value 21 | Value 22       | Value 23
+    Value 31 | Value 32       | Value 33
+
+.. code-block:: text
+
+    | Header A | Header B | Header C |
+    |----------|----------|----------|
+    | Value A1 | Value B1 | Value C1 |
+    | Value A2 | Value B2 | Value C2 |
+    | Value A2 | Value B2 | Value C2 |
 
 ``delimiter='\t'``:
 
@@ -117,7 +151,6 @@ Quotechar
     |5.8|,|2.7|,|5.1|,|1.9|,|virginica|
     |5.1|,|3.5|,|1.4|,|0.2|,|setosa|
     |5.7|,|2.8|,|4.1|,|1.3|,|versicolor|
-
 
 ``quotechar='/'``:
 
@@ -195,20 +228,11 @@ Encoding
     with open(FILE, encoding='utf-8') as file:
         ...
 
+.. figure:: img/csv-standard-dialects.png
+
 
 Dialects
 --------
-.. code-block:: text
-
-    1,2 and 2,5 -> 1,2;2,5  # delimiter=';'
-    1.2 and 2.5 -> 1.2,2.5  # delimiter=','
-
-.. code-block:: text
-
-    1,2;2,5 -> 1 and 2; and 2 and 5  # delimiter=','
-    1,2 -> 1,2;2,5  # delimiter=';'
-    1.2,2.5 -> 1.2 and 2.5  # delimiter=','
-
 .. code-block:: python
 
     import csv
@@ -216,17 +240,24 @@ Dialects
     csv.list_dialects()
     # ['excel', 'excel-tab', 'unix']
 
-* Microsoft Excel 2016 uses:
+* Microsoft Excel 2016-2020:
 
     * ``quotechar='"'``
     * ``delimiter=','``
     * ``lineterminator='\n'``
     * ``encoding='...'`` - depends on Windows version and settings typically ``windows-*``
 
+* Microsoft Excel macOS:
+
+    * ``quotechar='"'``
+    * ``delimiter=','``
+    * ``lineterminator='\r\n'``
+    * ``encoding='utf-8'``
+
 
 Good Practices
 --------------
-* Always specify:
+Always specify:
 
     * ``delimiter=','`` to  ``csv.DictReader()`` object
     * ``quotechar='"'`` to ``csv.DictReader()`` object
