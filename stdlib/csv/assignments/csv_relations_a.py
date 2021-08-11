@@ -41,9 +41,9 @@ Tests:
     >>> result = open(FILE).read()
     >>> print(result)
     "firstname","lastname","missions"
-    "Jan","Twardowski","1969,Apollo 11;2024,Artemis 3"
     "Mark","Watney","2035,Ares 3"
-    "Melissa","Lewis",""
+    "Melissa","Lewis","2030,Ares 1;2035,Ares 3"
+    "Rick","Martinez",""
     <BLANKLINE>
     >>> from os import remove
     >>> remove(FILE)
@@ -68,15 +68,18 @@ class Mission:
 
 
 CREW = [
-    Astronaut('Jan', 'Twardowski', missions=[
-        Mission(1969, 'Apollo 11'),
-        Mission(2024, 'Artemis 3')]),
-
     Astronaut('Mark', 'Watney', missions=[
         Mission(2035, 'Ares 3')]),
 
-    Astronaut('Melissa', 'Lewis'),
+    Astronaut('Melissa', 'Lewis', missions=[
+        Mission(2030, 'Ares 1'),
+        Mission(2035, 'Ares 3')]),
+
+    Astronaut('Rick', 'Martinez', missions=[]),
 ]
+
+result: list = []
+
 
 result: list = []
 
