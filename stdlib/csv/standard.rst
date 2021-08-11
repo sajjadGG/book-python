@@ -258,46 +258,46 @@ Dialects
 
 .. figure:: img/csv-standard-dialects.png
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ file utf8.csv
-        utf8.csv: CSV text
+    $ file utf8.csv
+    utf8.csv: CSV text
 
-        $ cat utf8.csv
-        Firstname,Lastname,Age,Comment
-        Mark,Watney,21,zażółć gęślą jaźń
-        Melissa,Lewis,21.5,"Some, comment"
-        ,,"21,5",Some; Comment
+    $ cat utf8.csv
+    Firstname,Lastname,Age,Comment
+    Mark,Watney,21,zażółć gęślą jaźń
+    Melissa,Lewis,21.5,"Some, comment"
+    ,,"21,5",Some; Comment
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ file standard.csv
-        standard.csv: CSV text
+    $ file standard.csv
+    standard.csv: CSV text
 
-        $ cat standard.csv
-        Firstname,Lastname,Age,Comment
-        Mark,Watney,21,za_?__ g__l_ ja__
-        Melissa,Lewis,21.5,"Some, comment"
-        ,,"21,5",Some; Comment
+    $ cat standard.csv
+    Firstname,Lastname,Age,Comment
+    Mark,Watney,21,za_?__ g__l_ ja__
+    Melissa,Lewis,21.5,"Some, comment"
+    ,,"21,5",Some; Comment
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ file dos.csv
-        dos.csv: CSV text
+    $ file dos.csv
+    dos.csv: CSV text
 
-        $ cat dos.csv
-        Firstname,Lastname,Age,Comment
-        Mark,Watney,21,za_?__ g__l_ ja__
-        Melissa,Lewis,21.5,"Some, comment"
-        ,,"21,5",Some; Comment
+    $ cat dos.csv
+    Firstname,Lastname,Age,Comment
+    Mark,Watney,21,za_?__ g__l_ ja__
+    Melissa,Lewis,21.5,"Some, comment"
+    ,,"21,5",Some; Comment
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ file macintosh.csv
-        macintosh.csv: Non-ISO extended-ASCII text, with CR line terminators
+    $ file macintosh.csv
+    macintosh.csv: Non-ISO extended-ASCII text, with CR line terminators
 
-        $ cat macintosh.csv
-        ,,"21,5",Some; Comment
+    $ cat macintosh.csv
+    ,,"21,5",Some; Comment
 
 
 Good Practices
