@@ -96,19 +96,19 @@ Delimiter
 
 .. code-block:: text
 
-    Header   | Another Header | Yet Another Header
-    ---------|----------------|-------------------
-    Value 11 | Value 12       | Value 13
-    Value 21 | Value 22       | Value 23
-    Value 31 | Value 32       | Value 33
+    Firstname | Lastname | Role
+    ----------|----------|----------
+    Mark      | Watney   | Botanist
+    Melissa   | Lewis    | Commander
+    Rick      | Martinez | Pilot
 
 .. code-block:: text
 
-    | Header A | Header B | Header C |
-    |----------|----------|----------|
-    | Value A1 | Value B1 | Value C1 |
-    | Value A2 | Value B2 | Value C2 |
-    | Value A2 | Value B2 | Value C2 |
+    | Firstname | Lastname | Role      |
+    |-----------|----------|-----------|
+    | Mark      | Watney   | Botanist  |
+    | Melissa   | Lewis    | Commander |
+    | Rick      | Martinez | Pilot     |
 
 ``delimiter='\t'``:
 
