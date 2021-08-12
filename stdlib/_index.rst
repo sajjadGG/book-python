@@ -139,8 +139,8 @@ Regular Expressions
 
     regex/syntax-about.rst
     regex/syntax-qualifier.rst
-    regex/syntax-identifier.rst
     regex/syntax-negation.rst
+    regex/syntax-identifier.rst
     regex/syntax-quantifier.rst
     regex/syntax-group.rst
     regex/syntax-flag.rst
