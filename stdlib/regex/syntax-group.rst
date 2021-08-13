@@ -101,13 +101,13 @@ Named Group
 [('Yuri', 'Gagarin')]
 >>>
 >>> re.search(name, TEXT)
-<re.Match object; span=(0, 12), match='Juri Gagarin'>
+<re.Match object; span=(0, 12), match='Yuri Gagarin'>
 >>>
 >>> re.search(name, TEXT).groups()
-('Juri', 'Gagarin')
+('Yuri', 'Gagarin')
 >>>
 >>> re.search(name, TEXT).groupdict()
-{'firstname': 'Juri', 'lastname': 'Gagarin'}
+{'firstname': 'Yuri', 'lastname': 'Gagarin'}
 
 
 Non-Capturing Group

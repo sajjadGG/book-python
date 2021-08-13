@@ -118,9 +118,9 @@ Turns on UNICODE mode
 >>> import re
 >>>
 >>>
->>>TEXT = 'zażółć gęślą jaźń'
+>>> TEXT = 'zażółć gęślą jaźń'
 >>>
->>>re.findall('\w', TEXT)
+>>> re.findall('\w', TEXT)
 ['zażółć', 'gęślą', 'jaźń']
 >>>
 >>> re.findall('\w+', TEXT, flags=re.UNICODE)
@@ -172,6 +172,7 @@ MAX_REPEAT 1 MAXREPEAT
     LITERAL 32
     LITERAL 10
 LITERAL 46
+<BLANKLINE>
  0. INFO 8 0b100 3 MAXREPEAT (to 9)
       in
  5.     RANGE 0x41 0x5a ('A'-'Z')
