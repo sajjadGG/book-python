@@ -137,3 +137,8 @@ array([[False, False, False],
 array([[ True,  True,  True],
        [False, False, False],
        [False, False, False]])
+
+
+Use Case - Game
+---------------
+>>> hero >> Direction(left=10, up=20)  # doctest: +SKIP

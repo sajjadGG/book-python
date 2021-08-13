@@ -14,10 +14,6 @@ Rationale
     "``obj > other``",    "``obj.__gt__(other)``"
     "``obj >= other``",   "``obj.__ge__(other)``"
 
-    "``-obj``",           "``obj.__neg__()``"
-    "``+obj``",           "``obj.__pos__()``"
-    "``~obj``",           "``obj.__invert__()``"
-
 
 Object Equality
 ---------------
@@ -32,12 +28,7 @@ Object Equality
 >>>
 >>> a = Astronaut('Mark', 'Watney')
 >>> b = Astronaut('Mark', 'Watney')
->>> c = Astronaut('Melissa', 'Lewis')
 >>>
->>> a == c
-False
->>> b == c
-False
 >>> a == b
 False
 >>>
@@ -61,12 +52,7 @@ False
 >>>
 >>> a = Astronaut('Mark', 'Watney')
 >>> b = Astronaut('Mark', 'Watney')
->>> c = Astronaut('Melissa', 'Lewis')
 >>>
->>> print(a == c)
-False
->>> print(b == c)
-False
 >>> print(a == b)
 True
 >>>
@@ -140,24 +126,6 @@ Eq Works at Both Sides
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
->>>
->>>
->>> class Cosmonaut:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
->>>
->>>
->>> a = Astronaut('Mark', 'Watney')
->>> c = Cosmonaut('Mark', 'Watney')
->>>
->>> print(a == c)
-False
-
->>> class Astronaut:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
 ...
 ...     def __eq__(self, other):
 ...         return (self.firstname == other.firstname) \
@@ -201,13 +169,8 @@ True
 
 Use Case - Game
 ---------------
->>> hero @ Position(x=50, y=120)  # doctest: +SKIP
->>> hero >> Direction(left=10, up=20)  # doctest: +SKIP
->>>
 >>> hero < Damage(20)  # doctest: +SKIP
 >>> hero > Damage(20)  # doctest: +SKIP
->>>
->>> hero['gold'] += dragon['gold']  # doctest: +SKIP
 
 
 Assignments

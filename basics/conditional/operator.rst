@@ -100,7 +100,7 @@ False
 True
 >>> 'abc' > 'xy'
 False
->>> 'abc' > 'xyz'
+>>> 'abc' > 'self'
 False
 
 >>> (3, 9) > (3, 8)

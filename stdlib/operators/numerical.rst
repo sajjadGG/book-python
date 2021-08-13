@@ -129,6 +129,12 @@ TypeError: not all arguments converted during string formatting
 Note, that using ``%s``, ``%d``, ``%f`` is currently deprecated in favor
 of ``f'...'`` string formatting. More information in `Builtin Printing`
 
+Use Case - Game
+---------------
+>>> hero @ Position(x=50, y=120)  # doctest: +SKIP
+>>>
+>>> hero['gold'] += dragon['gold']  # doctest: +SKIP
+
 
 Assignments
 -----------

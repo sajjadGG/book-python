@@ -186,7 +186,7 @@ Return
         def abc():
             pass
 
-        def xyz():
+        def self():
             pass
 
         return MyClass
