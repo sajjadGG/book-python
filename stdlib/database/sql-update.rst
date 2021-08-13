@@ -27,5 +27,5 @@ Update Many Rows
 .. code-block:: sql
 
     UPDATE astronauts SET
-        mission = 'Ares 3',
+        mission = 'Ares 3'
     WHERE lastname IN ('Watney', 'Lewis', 'Martinez');

@@ -14,8 +14,7 @@ SQL Syntax
 ----------
 .. code-block:: sql
 
-    CREATE INDEX
-    astronaut_agency_index
+    CREATE INDEX astronaut_agency_index
     ON astronaut (agency);
 
 
@@ -25,9 +24,7 @@ If Not Exists
 
 .. code-block:: sql
 
-    CREATE INDEX
-    IF NOT EXISTS
-    astronaut_agency_index
+    CREATE INDEX IF NOT EXISTS astronaut_agency_index
     ON astronaut (agency);
 
 
@@ -37,7 +34,5 @@ Unique Index
 
 .. code-block:: sql
 
-    CREATE UNIQUE INDEX
-    IF NOT EXISTS
-    astronaut_agency_index
+    CREATE UNIQUE INDEX IF NOT EXISTS astronaut_agency_index
     ON astronaut (agency);

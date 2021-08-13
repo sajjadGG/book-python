@@ -118,7 +118,7 @@ SELF JOIN
 
     SELECT *
     FROM astronauts Astro1,
-         astronauts Astro2,
+         astronauts Astro2
     WHERE Astro1.id != Astro2.id
     AND Astro1.agency = Astro2.agency
     ORDER BY Astro1.agency;

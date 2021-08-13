@@ -17,4 +17,16 @@ Pagination
 
     SELECT *
     FROM astronauts
-    LIMIT 5, 10;
+    LIMIT 0, 10;
+
+.. code-block:: sql
+
+    SELECT *
+    FROM astronauts
+    LIMIT 10, 10;
+
+.. code-block:: sql
+
+    SELECT *
+    FROM astronauts
+    LIMIT 20, 10;
