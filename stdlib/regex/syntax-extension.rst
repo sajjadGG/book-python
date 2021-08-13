@@ -43,6 +43,7 @@ Traceback (most recent call last):
 re.error: bad character range a-Z at position 1
 >>>
 >>> re.findall('[a-9]', TEXT)
+Traceback (most recent call last):
 re.error: bad character range a-9 at position 1
 
 
