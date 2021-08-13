@@ -46,6 +46,7 @@ Case-insensitive (has Unicode support i.e. Ą and ą)
 >>>
 >>> re.findall(r'gagarin', TEXT)
 []
+>>>
 >>> re.findall(r'gagarin', TEXT, flags=re.IGNORECASE)
 ['Gagarin']
 

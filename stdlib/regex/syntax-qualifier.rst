@@ -65,10 +65,6 @@ Range
 >>>
 >>> re.findall('[C-Y]', TEXT)
 ['Y', 'G']
->>>
->>> re.findall('[a-Z]', TEXT)
-Traceback (most recent call last):
-re.error: bad character range a-Z at position 1
 
 >>> import re
 >>>

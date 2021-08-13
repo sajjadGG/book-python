@@ -72,6 +72,7 @@ Whitespaces
 >>>
 >>> re.findall('\s', TEXT)
 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+>>>
 >>> re.findall('\S', TEXT)
 ['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n', 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p', 'r', '1', '2', 't', 'h', ',', '1', '9', '6', '1', 'a', 't', '6', ':', '0', '7', 'a', 'm', '.']
 
@@ -82,8 +83,10 @@ Whitespaces
 >>>
 >>> re.findall('\n', TEXT)
 []
+>>>
 >>> re.findall('\r\n', TEXT)
 []
+>>>
 >>> re.findall('\r', TEXT)
 []
 
@@ -157,5 +160,6 @@ Use Case - Number and Spaces
 >>>
 >>> re.findall('[0-9]\s', TEXT)
 ['1 ', '7 ']
+>>>
 >>> re.findall('\d\s', TEXT)
 ['1 ', '7 ']

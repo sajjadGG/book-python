@@ -28,8 +28,10 @@ Positional Group
 >>>
 >>> re.findall(r'\d{2}th', TEXT)
 ['12th']
+>>>
 >>> re.findall(r'(\d{2})th', TEXT)
 ['12']
+>>>
 >>> re.findall(r'\d{2}(th)', TEXT)
 ['th']
 
