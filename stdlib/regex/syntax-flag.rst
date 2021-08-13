@@ -25,10 +25,10 @@ Make ``\w``, ``\W``, ``\b``, ``\B``, ``\d``, ``\D``, ``\s`` and ``\S`` perform A
 >>>
 >>> TEXT = 'zażółć gęślą jaźń'
 >>>
->>> re.findall('\w', TEXT)
+>>> re.findall('\w+', TEXT)
 ['zażółć', 'gęślą', 'jaźń']
 >>>
->>> re.findall('\w', TEXT, flags=re.ASCII)
+>>> re.findall('\w+', TEXT, flags=re.ASCII)
 ['za', 'g', 'l', 'ja']
 
 
@@ -120,7 +120,7 @@ Turns on UNICODE mode
 >>>
 >>> TEXT = 'zażółć gęślą jaźń'
 >>>
->>> re.findall('\w', TEXT)
+>>> re.findall('\w+', TEXT)
 ['zażółć', 'gęślą', 'jaźń']
 >>>
 >>> re.findall('\w+', TEXT, flags=re.UNICODE)
