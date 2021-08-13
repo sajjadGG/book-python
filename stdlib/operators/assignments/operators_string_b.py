@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Stringify Repr
+* Assignment: Operators String Repr
 * Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
@@ -32,7 +32,7 @@ DATA = (4.7, 3.2, 1.3, 0.2, 'setosa')
 
 # repr() -> Iris(features=[4.7, 3.2, 1.3, 0.2], label='setosa')
 class Iris:
-    features: list[float]
+    features: list
     label: str
 
     def __init__(self, data):
@@ -42,7 +42,7 @@ class Iris:
 
 # Solution
 class Iris:
-    features: list[float]
+    features: list
     label: str
 
     def __init__(self, data):

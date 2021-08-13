@@ -193,6 +193,7 @@ Operators
 
     operators/about.rst
     operators/numerical.rst
+    operators/string.rst
     operators/comparison.rst
     operators/boolean.rst
     operators/builtin.rst

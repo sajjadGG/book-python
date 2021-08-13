@@ -1,9 +1,9 @@
 """
-* Assignment: OOP Stringify Nested
+* Assignment: Operators String Nested
 * Required: yes
 * Complexity: medium
 * Lines of code: 9 lines
-* Time: 21 min
+* Time: 13 min
 
 English:
     1. Overload `str` and `repr` to achieve desired printing output
