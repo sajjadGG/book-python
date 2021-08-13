@@ -8,22 +8,126 @@ Rationale
 * Can be named or positional
 * Note, that for backreference, must use raw-sting or double backslash
 
-
 Syntax
 ------
 * ``()`` - matches whatever regular expression is inside the parentheses, and indicates the start and end of a group
 * ``(...)`` - unnamed group
-* ``(?P<mygroup>...)`` - define named group `mygroup`
+* ``(?P<mygroup>...)`` - named group `mygroup`
 * ``(?:...)`` - non-capturing group
 * ``(?#...) - comment
 
 
+Positional Group
+----------------
+* ``(...)`` - unnamed (positional) group
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall(r'\d{2}th', TEXT)
+['12th']
+>>> re.findall(r'(\d{2})th', TEXT)
+['12']
+>>> re.findall(r'\d{2}(th)', TEXT)
+['th']
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall(r'([A-Z][a-z]+\s[A-Z][a-z]+)', TEXT)
+['Yuri Gagarin']
+>>>
+>>> re.findall(r'([A-Z][a-z]+) ([A-Z][a-z]+)', TEXT)
+[('Yuri', 'Gagarin')]
+>>>
+>>> re.findall(r'([A-Z][a-z]+) ([A-Z][a-z]+)', TEXT)[0]
+('Yuri', 'Gagarin')
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> firstname = r'([A-Z][a-z]+)'
+>>> lastname = r'([A-Z][a-z]+)'
+>>>
+>>> re.findall(f'{firstname} {lastname}', TEXT)[0]
+('Yuri', 'Gagarin')
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> firstname = r'([A-Z][a-z]+)'
+>>> lastname = r'([A-Z][a-z]+)'
+>>> name = f'{firstname} {lastname}'
+>>>
+>>> re.findall(name, TEXT)[0]
+('Yuri', 'Gagarin')
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> firstname = r'[A-Z][a-z]+'
+>>> lastname = r'[A-Z][a-z]+'
+>>> name = f'({firstname}) ({lastname})'
+>>>
+>>> re.findall(name, TEXT)[0]
+('Yuri', 'Gagarin')
+
+
+Named Group
+-----------
+* ``(?P<mygroup>...)`` - named group `mygroup`
+
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> firstname = r'[A-Z][a-z]+'
+>>> lastname = r'[A-Z][a-z]+'
+>>> name = f'(?P<firstname>{firstname}) (?P<lastname>{lastname})'
+>>>
+>>> re.findall(name, TEXT)
+[('Yuri', 'Gagarin')]
+>>>
+>>> re.search(name, TEXT)
+<re.Match object; span=(0, 12), match='Juri Gagarin'>
+>>>
+>>> re.search(name, TEXT).groups()
+('Juri', 'Gagarin')
+>>>
+>>> re.search(name, TEXT).groupdict()
+{'firstname': 'Juri', 'lastname': 'Gagarin'}
+
+
+Non-Capturing Group
+-------------------
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> date = r'([A-Z][a-z]{2} \d{2}(?:st|nd|rd|th)+?, \d{4})'
+>>> re.findall(date, TEXT)
+['Apr 12th, 1961']
+
+
 Backreference
 -------------
-    * ``\g<number>`` - backreferencing by group number
-    * ``\g<name>`` - backreferencing by group name
-    * ``(?P=name)`` - backreferencing by group name
-    * ``\number`` - backreferencing by group number
+* ``\g<number>`` - backreferencing by group number
+* ``\g<name>`` - backreferencing by group name
+* ``(?P=name)`` - backreferencing by group name
+* ``\number`` - backreferencing by group number
 
 
 Examples
@@ -37,21 +141,54 @@ Examples
 * ``(.+) \1`` - not matches ``thethe`` (note the space after the group)
 
 
-Use Case
---------
 >>> import re
 >>>
 >>>
->>> DATA = 'My name... José Jiménez'
->>> result = re.search(r'(?P<firstname>[A-Z]\w+) (?P<lastname>[A-Z]\w+)', DATA)
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
 >>>
->>> result.groupdict()
-{'firstname': 'José', 'lastname': 'Jiménez'}
->>> result.groups()
-('José', 'Jiménez')
->>> result[0]
-'José Jiménez'
->>> result[1]
-'José'
->>> result[2]
-'Jiménez'
+>>> re.findall(r'\d{,2}(st|nd|rd|th)?', TEXT)
+['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'th', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+>>>
+>>> re.findall(r'\d{2}(st|nd|rd|th)?', TEXT)
+['th', '', '', '']
+>>>
+>>> re.findall(r'\d{2}(st|nd|rd|th)+?', TEXT)
+['th']
+>>>
+>>> re.findall(r'\d{2}st|nd|rd|th+?', TEXT)
+['th']
+>>>
+>>> re.findall(r'\d{2}(?:st|nd|rd|th)+?', TEXT)
+['12th']
+>>>
+>>> re.findall(r'(\d{2})(st|nd|rd|th)+?', TEXT)
+[('12', 'th')]
+>>>
+>>> re.findall(r'(\d{2})(?:st|nd|rd|th)+?', TEXT)
+['12']
+>>>
+>>> re.findall(r'([A-Z][a-z]{2}) (\d{2})(?:st|nd|rd|th)+?, (\d{4})', TEXT)
+[('Apr', '12', '1961')]
+>>>
+>>> re.findall(r'([A-Z][a-z]{2}) (\d{2})(?:st|nd|rd|th)+?, (\d{4})', TEXT)[0]
+('Apr', '12', '1961')
+>>>
+>>> re.findall(r'([A-Z][a-z]{2} \d{2}(?:st|nd|rd|th)+?, \d{4})', TEXT)
+['Apr 12th, 1961']
+
+
+Use Case - Dates
+----------------
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> year = r'(?P<year>\d{4})'
+>>> month = r'(?P<month>[A-Z][a-z]{2})'
+>>> day = r'(?P<day>\d{2}(?:st|nd|rd|th)+?)'
+>>> date = f'{month} {day}, {year}'
+>>>
+>>> re.search(date, TEXT).groupdict()
+{'month': 'Apr', 'day': '12th', 'year': '1961'}
+

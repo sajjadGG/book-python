@@ -7,31 +7,78 @@ Rationale
 Quantifier specifies how many occurrences of preceding qualifier or identifier.
 
 
+Exact
+-----
+* Exact match
+
+* ``{n}`` - exactly `n` repetitions, prefer longer
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall(r'[0-9]{2}', TEXT)
+['12', '19', '61', '07']
+>>>
+>>> re.findall(r'\d{2}', TEXT)
+['12', '19', '61', '07']
+
+
 Greedy
 ------
 * Prefer longest matches
-* Default
+* Default behavior
 
-* ``{n}`` - exactly `n` repetitions, prefer longer
 * ``{,n}`` - maximum `n` repetitions, prefer longer
 * ``{n,}`` - minimum `n` repetitions, prefer longer
 * ``{n,m}`` - minimum `n` repetitions, maximum `m` times, prefer longer
-* ``*`` - minimum 0 repetitions, no maximum, prefer longer
-* ``+`` - minimum 1 repetitions, no maximum, prefer longer
-* ``?`` - minimum 0 repetitions, maximum 1 repetitions, prefer longer
+* ``*`` - minimum 0 repetitions, no maximum, prefer longer (alias to ``{0,}``)
+* ``+`` - minimum 1 repetitions, no maximum, prefer longer (alias to ``{1,}``)
+* ``?`` - minimum 0 repetitions, maximum 1 repetitions, prefer longer  (alias to ``{0,1}``)
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall(r'\d{2,4}', TEXT)
+['12', '1961', '07']
 
 
 Lazy
 ----
-* Non-greedy
 * Prefer shortest matches
+* Non-greedy
 
 * ``{,n}?`` - maximum `n` repetitions, prefer shorter
 * ``{n,}?`` - minimum `n` repetitions, prefer shorter
 * ``{n,m}?`` - minimum `n` repetitions, maximum `m` times, prefer shorter
-* ``*?`` - minimum 0 repetitions, no maximum, prefer shorter
-* ``+?`` - minimum 1 repetitions, no maximum, prefer shorter
-* ``??`` - minimum 0 repetitions, maximum 1 repetition, prefer shorter
+* ``*?`` - minimum 0 repetitions, no maximum, prefer shorter (alias to ``{0,}?``)
+* ``+?`` - minimum 1 repetitions, no maximum, prefer shorter (alias to ``{1,}?``)
+* ``??`` - minimum 0 repetitions, maximum 1 repetition, prefer shorter (alias to ``{0,1}?``)
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall(r'\d{2,4}?', TEXT)
+['12', '19', '61', '07']
+
+
+Greedy vs. Lazy
+---------------
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall(r'\d{2,4}', TEXT)  # Greedy
+['12', '1961', '07']
+>>>
+>>> re.findall(r'\d{2,4}?', TEXT)  # Lazy
+['12', '19', '61', '07']
 
 
 Examples

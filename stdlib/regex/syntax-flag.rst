@@ -20,6 +20,17 @@ ASCII
 
 Make ``\w``, ``\W``, ``\b``, ``\B``, ``\d``, ``\D``, ``\s`` and ``\S`` perform ASCII-only matching instead of full Unicode matching
 
+>>> import re
+>>>
+>>>
+>>> TEXT = 'zażółć gęślą jaźń'
+>>>
+>>> re.findall('\w', TEXT)
+['zażółć', 'gęślą', 'jaźń']
+>>>
+>>> re.findall('\w', TEXT, flags=re.ASCII)
+['za', 'g', 'l', 'ja']
+
 
 IGNORECASE
 ----------
@@ -27,6 +38,16 @@ IGNORECASE
 * Long: ``re.IGNORECASE``
 
 Case-insensitive (has Unicode support i.e. Ą and ą)
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall(r'gagarin', TEXT)
+[]
+>>> re.findall(r'gagarin', TEXT, flags=re.IGNORECASE)
+['Gagarin']
 
 
 LOCALE
@@ -44,6 +65,28 @@ MULTILINE
 
 match can start in one line, and end in another: ``^`` - start of line, ``$`` - end of line
 
+>>> import re
+>>>
+>>>
+>>> TEXT = """We choose to go to the moon.
+... We choose to go to the moon in this decade and do the other things,
+... not because they are easy,
+... but because they are hard,
+... because that goal will serve to organize and measure the best of our energies and skills,
+... because that challenge is one that we are willing to accept,
+... one we are unwilling to postpone,
+... and one which we intend to win,
+... and the others, too."""
+>>>
+>>>
+>>> sentence = '[A-Z][a-z, ]+\.'
+>>> re.findall(sentence, TEXT)
+['We choose to go to the moon.']
+>>>
+>>> sentence = '[A-Z][a-z, \n]+\.'
+>>> re.findall(sentence, TEXT)
+['We choose to go to the moon.', 'We choose to go to the moon in this decade and do the other things,\nnot because they are easy,\nbut because they are hard,\nbecause that goal will serve to organize and measure the best of our energies and skills,\nbecause that challenge is one that we are willing to accept,\none we are unwilling to postpone,\nand one which we intend to win,\nand the others, too.']
+
 
 DOTALL
 ------
@@ -52,13 +95,36 @@ DOTALL
 
 ``.`` matches also newlines (default newlines are not matched by ``.``)
 
+>>> import re
+>>>
+>>>
+>>> TEXT = 'hello\nworld'
+>>>
+>>> re.findall('.+', TEXT)
+['hello', 'world']
+>>>
+>>> re.findall('.+', TEXT, flags=re.DOTALL)
+['hello\nworld']
+
 
 UNICODE
 -------
 * Short: ``u``
 * Long: ``re.UNICODE``
+* On by default
 
-turns on UNICODE mode
+Turns on UNICODE mode
+
+>>> import re
+>>>
+>>>
+>>>TEXT = 'zażółć gęślą jaźń'
+>>>
+>>>re.findall('\w', TEXT)
+['zażółć', 'gęślą', 'jaźń']
+>>>
+>>> re.findall('\w+', TEXT, flags=re.UNICODE)
+['zażółć', 'gęślą', 'jaźń']
 
 
 VERBOSE
@@ -83,6 +149,44 @@ If the flags are set this way, they should be put at the start of the regex; the
 The letters used for the flags are the same as the ones used by Perl's regex engine, which is why s is used for re.DOTALL and x is used for re.VERBOSE.
 
 Source: [#Summerfield2008]_
+
+
+DEBUG
+-----
+>>> import re
+>>>
+>>>
+>>> re.compile(r'[A-Z][a-z, \n]+\.')
+re.compile('[A-Z][a-z, \\n]+\\.')
+
+>>> import re
+>>>
+>>>
+>>> re.compile(r'[A-Z][a-z, \n]+\.', flags=re.DEBUG)
+IN
+  RANGE (65, 90)
+MAX_REPEAT 1 MAXREPEAT
+  IN
+    RANGE (97, 122)
+    LITERAL 44
+    LITERAL 32
+    LITERAL 10
+LITERAL 46
+ 0. INFO 8 0b100 3 MAXREPEAT (to 9)
+      in
+ 5.     RANGE 0x41 0x5a ('A'-'Z')
+ 8.     FAILURE
+ 9: IN 5 (to 15)
+11.   RANGE 0x41 0x5a ('A'-'Z')
+14.   FAILURE
+15: REPEAT_ONE 16 1 MAXREPEAT (to 32)
+19.   IN 11 (to 31)
+21.     CHARSET [0x00000400, 0x00001001, 0x00000000, 0x07fffffe, 0x00000000, 0x00000000, 0x00000000, 0x00000000]
+30.     FAILURE
+31:   SUCCESS
+32: LITERAL 0x2e ('.')
+34. SUCCESS
+re.compile('[A-Z][a-z, \\n]+\\.', re.DEBUG)
 
 
 References
