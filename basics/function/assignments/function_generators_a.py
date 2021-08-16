@@ -26,7 +26,7 @@ Polish:
     7. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * type cast to `list()` before calculating mean to expand generator
+    * type cast to `list()` to expand generator before calculating mean
     * `mean = sum(...) / len(...)`
     * TypeError: object of type 'map' has no len()
     * ZeroDivisionError: division by zero
@@ -53,6 +53,11 @@ def odd(x):
 
 def cube(x):
     return x ** 3
+
+
+# float: generator expr with numbers from 1 to 33 (inclusive) divisible by 3
+#        filter out even numbers; cube result; calculate mean
+result: float
 
 
 numbers = (x for x in range(1, 34) if x % 3 == 0)
