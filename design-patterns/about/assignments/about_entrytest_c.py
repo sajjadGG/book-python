@@ -55,6 +55,8 @@ DATA = """
 ::1             localhost
 """
 
+# list[dict]: keys: ip, hosts, protocol; merge hosts for the same ip address
+#             protocol is "ipv4" when '.' is in address; use conditional expr.
 result = []
 
 

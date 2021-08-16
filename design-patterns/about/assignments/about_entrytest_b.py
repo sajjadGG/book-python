@@ -49,6 +49,7 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
 
 SUFFIXES = ('ca', 'osa')
 
+# set[str]: species names with word endings in `SUFFIXES`
 result = set()
 
 
