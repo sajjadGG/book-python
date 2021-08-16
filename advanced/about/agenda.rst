@@ -14,19 +14,15 @@ Day 1
     "15m", "Kwestie organizacyjne: przedstawienie się, przerwy, spreadsheet"
     "75m", "Przygotowanie środowiska do pracy: github, git, python, doctest"
     "30m", "Zadania testowe ewaluujące umiejętności użytkownika"
-    "90m", "Live Coding rozwiązań zadań i demonstracja funkcji IDE, tj.
-            debugging, praca z VCS, refactoring, dokumentacja i typy,
-            sygnatury funkcji"
-    "210m", "Generatory"
-
-    "", "Generators: about"
-    "", "Generators: builtin"
-    "", "Generators: expression"
-    "", "Generators: function"
-    "", "Generators: inspect"
-    "", "Generators: yield-from"
-    "", "Generators: send"
-    "", "Generators: itertools"
+    "60m", "Live Coding rozwiązań zadań i demonstracja funkcji IDE, tj. debugging, praca z VCS, refactoring, dokumentacja i typy, sygnatury funkcji"
+    "15m", "Generators: about"
+    "60m", "Generators: builtin"
+    "30m", "Generators: expression"
+    "60m", "Generators: function"
+    "15m", "Generators: inspect"
+    "15m", "Generators: yield-from"
+    "15m", "Generators: send"
+    "30m", "Generators: itertools"
 
 
 Day 2
@@ -35,20 +31,19 @@ Day 2
     :widths: 15, 85
     :header: "Estimated Time", "Topic"
 
-    "420m", "Programowanie funkcyjne"
-    "", "Functional Programming: lambda"
-    "", "Functional Programming: scope"
-    "", "Functional Programming: pure-function"
-    "", "Functional Programming: recurrence"
-    "", "Functional Programming: immutable"
-    "", "Functional Programming: higher-order"
-    "", "Functional Programming: referential-transparency"
-    "", "Functional Programming: functional-paradigm"
-    "", "Functional Programming: namespace"
-    "", "Functional Programming: function-attributes"
-    "", "Functional Programming: callable"
-    "", "Functional Programming: closures"
-
+    "45m", "Functional Programming: lambda"
+    "45m", "Functional Programming: scope"
+    "30m", "Functional Programming: pure-function"
+    "30m", "Functional Programming: recurrence"
+    "15m", "Functional Programming: immutable"
+    "15m", "Functional Programming: higher-order"
+    "15m", "Functional Programming: referential-transparency"
+    "15m", "Functional Programming: functional-paradigm"
+    "30m", "Functional Programming: namespace"
+    "15m", "Functional Programming: function-attributes"
+    "15m", "Functional Programming: callable"
+    "30m", "Functional Programming: closures"
+    "120m", "Dekoratory: funkcji z wrapperem funkcją oraz klasą"
 
 Day 3
 -----
@@ -56,14 +51,15 @@ Day 3
     :widths: 15, 85
     :header: "Estimated Time", "Topic"
 
-    "150m", "Dekoratory: funkcji z wrapperem funkcją oraz klasą"
-    "60m", "Dekoratory klas z wrapperem funkcją oraz klasą"
-    "60m", "Dekoratory metod z wrapperem funkcją oraz klasą"
+    "90m", "Dekoratory klas z wrapperem funkcją oraz klasą"
+    "75m", "Dekoratory metod z wrapperem funkcją oraz klasą"
     "30m", "Dekoratory z argumentami, Functools.wraps"
     "30m", "OOP Mutowalne argumenty"
     "45m", "OOP Atrybuty statyczne i dynamiczne"
     "45m", "OOP Modyfikatory dostępu"
-
+    "60m", "OOP: Dziedziczenie i kompozycja"
+    "15m", "OOP: Method Resolution Order"
+    "30m", "OOP: Polimorfizm"
 
 Day 4
 -----
@@ -71,18 +67,15 @@ Day 4
     :widths: 15, 85
     :header: "Estimated Time", "Topic"
 
-    "60m", "OOP: Dziedziczenie i kompozycja"
-    "15m", "OOP: Method Resolution Order"
-    "30m", "OOP: Polimorfizm"
-    "60m", "OOP: Relacje między obiektami"
+    "90m", "OOP: Relacje między obiektami"
     "30m", "OOP: Interfejsy"
     "45m", "OOP: Klasy abstrakcyjne"
+    "30m", "OOP: Staticmethod"
+    "30m", "OOP: Classmethod"
     "30m", "OOP: Tożsamość obiektów"
     "60m", "OOP: Konstruktor klas __new__ vs __init__"
-    "30m", "OOP: Sloty"
-    "60m", "OOP: Metaklasy"
-    "", "OOP: Staticmethod"
-    "", "OOP: Classmethod"
+    "30m", "OOP: Slots"
+    "75m", "OOP: Metaclass"
 
 
 Day 5
@@ -91,22 +84,21 @@ Day 5
     :widths: 15, 85
     :header: "Estimated Time", "Topic"
 
-    "", "Protocol: Iterator"
-    "", "Protocol: Context Manager"
-    "", "Accessor: Property"
-    "", "Accessor: Reflection"
-    "", "Accessor: Descriptor"
+    "30m", "Protocol: Iterator"
+    "30m", "Protocol: Context Manager"
+    "30m", "Accessor: Property"
+    "30m", "Accessor: Reflection"
+    "60m", "Accessor: Descriptor"
 
-    "", "Performance Optimization"
-    "", "Micro-benchmarking"
-    "", "Profiling"
-    "", "Compilers and Interpreters"
-    "", "Collections"
-    "", "C Types"
-    "", "C Modules"
+    "15m", "Performance Optimization"
+    "15m", "Micro-benchmarking"
+    "15m", "Profiling"
+    "15m", "Compilers and Interpreters"
+    "15m", "Collections"
+    "15m", "C Types"
+    "15m", "C Modules"
 
-    "", "Concurrency Models"
-    "", "Queues"
-    "", "Threading"
-    "", "Multiprocessing"
-    "", "Async Programming"
+    "15m", "Concurrency Models"
+    "15m", "Multiprocessing"
+    "45m", "Threading and Queues"
+    "60m", "Async Programming"
