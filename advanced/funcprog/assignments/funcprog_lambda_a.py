@@ -36,8 +36,6 @@ def cube(x):
 
 
 # float: Inline lambda expressions
-result = ...
-
 result = (x for x in range(1, 34) if x % 3 == 0)
 result = filter(odd, result)
 result = map(cube, result)
