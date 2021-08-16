@@ -37,3 +37,26 @@ Mutable Types
 * ``list``
 * ``set``
 * ``dict``
+
+
+Comparison
+----------
+.. csv-table:: Comparison
+    :header: Immutable, Mutable
+    :widths: 50, 50
+
+    int          ,
+    float        ,
+    complex      ,
+    bool         ,
+    None         ,
+    str          ,
+    bytes        , bytearray
+    tuple        , list
+    frozenset    , set
+    mappingproxy , dict
+    NamedTuple   ,
+    namedtuple   ,
+                 , array
+                 , TypedDict
+    dataclass    , dataclass

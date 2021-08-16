@@ -9,29 +9,37 @@ Rationale
 
 Recap
 -----
->>> def myfunction():
+>>> def run():
 ...     return 1
 >>>
 >>>
->>> result = myfunction()
+>>> result = run()
 >>> print(result)
 1
 
->>> def myfunction():
+>>> def run():
 ...     return 1
 ...     return 2  # this will not execute
 >>>
 >>>
->>> result = myfunction()
+>>> result = run()
 >>> print(result)
 1
+
+>>> def run():
+...     return 1, 2
+>>>
+>>>
+>>> result = run()
+>>> print(result)
+(1, 2)
 
 
 Definition
 ----------
 Generators can return (or yield) something:
 
->>> def mygenerator():
+>>> def run():
 ...     yield 'something'
 
 Generators can be defined with required and optional parameters just like

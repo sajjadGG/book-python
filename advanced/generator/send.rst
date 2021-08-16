@@ -21,11 +21,39 @@ Example
 >>> worker = run()
 >>> worker.send(None)
 >>>
->>> for x in range(0,3):
-...     worker.send(x)
+>>> worker.send(0)
 Processing 0
+>>>
+>>> worker.send(1)
 Processing 1
+>>>
+>>> worker.send(2)
 Processing 2
+
+>>> from inspect import isgenerator, isgeneratorfunction
+>>>
+>>>
+>>> def run():
+...     while True:
+...         data = yield
+...         print(f'Processing {data}')
+>>>
+>>> worker = run()
+>>> worker.send(None)
+>>>
+>>> worker.send(1)
+Processing 1
+>>>
+>>> worker.send('hello')
+Processing hello
+>>>
+>>> worker.send([1,2,3])
+Processing [1, 2, 3]
+>>>
+>>> isgeneratorfunction(run)
+True
+>>> isgenerator(worker)
+True
 
 
 Why Send None?!

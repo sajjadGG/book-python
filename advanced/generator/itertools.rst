@@ -103,6 +103,20 @@ Itertools Repeat
     # Traceback (most recent call last):
     # StopIteration
 
+>>> from itertools import repeat
+>>>
+>>>
+>>> x = repeat('Beetlejuice', 3)
+>>> next(x)
+'Beetlejuice'
+>>> next(x)
+'Beetlejuice'
+>>> next(x)
+'Beetlejuice'
+>>> next(x)
+Traceback (most recent call last):
+StopIteration
+
 
 Itertools Accumulate
 --------------------
