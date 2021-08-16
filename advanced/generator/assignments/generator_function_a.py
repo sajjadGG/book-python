@@ -51,10 +51,12 @@ ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
 lewis:x:1003:1002:Melissa Lewis:/home/ivanovic:/bin/bash"""
 
 
+# Callable: list[str] with usernames when UID [third field] is less than 1000
 def function(data: str):
     ...
 
 
+# Generator: list[str] with usernames when UID [third field] is less than 1000
 def generator(data: str):
     ...
 

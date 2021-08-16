@@ -40,6 +40,12 @@ Tests:
 """
 
 
+# int: use recursion to add two previous numbers;
+#      For `n` less or equal to 1, return 1;
+#      Else return sum `fib(n-1)` and `fib(n-2)`
+def fib():
+    ...
+
 # Solution
 def fib(n):
     if n <= 1:

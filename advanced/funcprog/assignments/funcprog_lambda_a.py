@@ -35,15 +35,18 @@ def cube(x):
     return x ** 3
 
 
-numbers = (x for x in range(1, 34) if x % 3 == 0)
-numbers = filter(odd, numbers)
-numbers = map(cube, numbers)
-numbers = list(numbers)
-result = sum(numbers) / len(numbers)
+# float: Inline lambda expressions
+result = ...
+
+result = (x for x in range(1, 34) if x % 3 == 0)
+result = filter(odd, result)
+result = map(cube, result)
+result = list(result)
+result = sum(result) / len(result)
 
 # Solution
-numbers = (x for x in range(1, 34) if x % 3 == 0)
-numbers = filter(lambda x: x % 2, numbers)
-numbers = map(lambda x: x ** 3, numbers)
-numbers = list(numbers)
-result = sum(numbers) / len(numbers)
+result = (x for x in range(1, 34) if x % 3 == 0)
+result = filter(lambda x: x % 2, result)
+result = map(lambda x: x ** 3, result)
+result = list(result)
+result = sum(result) / len(result)

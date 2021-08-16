@@ -5,7 +5,7 @@
 * Time: 8 min
 
 English:
-    1. Write filter for `DATA` which returns `features` for given `species`
+    1. Write filter for `DATA` which returns `features: list[float]` for given `species: str`
     2. Implement solution using function
     3. Implement solution using generator and `yield` keyword
     4. Compare results of both using `sys.getsizeof()`
@@ -18,7 +18,7 @@ English:
     7. Run doctests - all must succeed
 
 Polish:
-    1. Napisz filtr dla `DATA` zwracający `features` dla danego gatunku `species`
+    1. Napisz filtr dla `DATA` zwracający `features: list[float]` dla danego gatunku `species: str`
     2. Zaimplementuj rozwiązanie wykorzystując funkcję
     3. Zaimplementuj rozwiązanie wykorzystując generator i słowo kluczowe `yield`
     4. Porównaj wyniki obu używając `sys.getsizeof()`
@@ -65,10 +65,12 @@ DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
         (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
 
+# Callable: get `features: list[float]` from `DATA` for given `species`
 def function(data: list, species: str):
     ...
 
 
+# Generator: get `features: list[float]` from `DATA` for given `species`
 def generator(data: list, species: str):
     ...
 
@@ -86,7 +88,3 @@ def generator(data: list, species: str):
     for *features, label in data:
         if label == species:
             yield features
-
-
-# def comprehension(data: list, species: str):
-#     return [X for *X,y in data if y==species]

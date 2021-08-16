@@ -7,7 +7,9 @@
 English:
     1. Define function `check` with parameter `func: Callable`
     2. Define closure function `wrapper` inside `check`
-    3. Function `wrapper` takes arbitrary number of positional and keyword arguments
+    3. Function `wrapper` takes:
+       - arbitrary number of positional arguments
+       - arbitrary number of keyword arguments
     4. Function `wrapper` prints `hello from wrapper` on the screen
     5. Function `check` must return `wrapper: Callable`
     6. Define function `hello()` which prints `hello from function`
@@ -19,7 +21,9 @@ English:
 Polish:
     1. Zdefiniuj funkcję `check` z parametrem `func: Callable`
     2. Zdefiniuj funkcję closure `wrapper` wewnątrz `check`
-    3. Funkcja `wrapper` przyjmuje dowolną ilość argumentów pozycyjnych i nazwanych
+    3. Funkcja `wrapper` przyjmuje:
+       - dowolną ilość argumentów pozycyjnych
+       - dowolną ilość argumentów nazwanych
     4. Funkcja `wrapper` wypisuje `hello from wrapper`
     5. Funkcja `check` ma zwracać `wrapper: Callable`
     6. Zdefiniuj funkcję `hello()`, która wypisuje `hello from function`
@@ -46,6 +50,17 @@ Tests:
     Traceback (most recent call last):
     NameError: name 'check' is not defined
 """
+
+# Callable: parameter: func; inside: wrapper with args, kwargs; return: wrapper
+def check():
+    ...
+
+# Callable: prints `hello from function`
+def hello():
+    ...
+
+# callable: call check(hello); delete check; call result
+result: callable = ...
 
 
 # Solution
