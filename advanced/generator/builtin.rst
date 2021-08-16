@@ -8,33 +8,22 @@ Rationale
 * Behaves similar, but is not generator
 
 
-isgeneratorfunction(enumerate)
-False
-m = enumerate(months)
-isgenerator(m)
-False
-
-
-data = range(0,5)
-data
-range(0, 5)
-isgeneratorfunction(range)
-False
-isgenerator(data)
-False
-
-
 Range
 -----
+* ``range([start], <stop>, [step])``
 * optional ``start``, inclusive, default: ``0``
 * required ``stop``, exclusive,
 * optional ``step``, default: ``1``
 
-``range()`` syntax:
-
-.. code-block:: python
-
-    range([start], <stop>, [step])
+>>> from inspect import isgeneratorfunction, isgenerator
+>>>
+>>>
+>>> isgeneratorfunction(range)
+False
+>>>
+>>> result = range(0,5)
+>>> isgenerator(result)
+False
 
 >>> range(0,3)
 range(0, 3)
@@ -47,9 +36,19 @@ range(0, 3)
 >>> list(range(4,11,2))
 [4, 6, 8, 10]
 
+
 Enumerate
 ---------
 * ``enumerate(*iterables)``
+
+>>> from inspect import isgeneratorfunction, isgenerator
+>>>
+>>>
+>>> isgeneratorfunction(enumerate)
+False
+>>> result = enumerate(['a', 'b', 'c'])
+>>> isgenerator(result)
+False
 
 >>> months = ['January', 'February', 'March']
 >>> result = enumerate(months)
@@ -100,6 +99,16 @@ StopIteration
 Zip
 ---
 * ``zip(*iterables)``
+
+>>> from inspect import isgeneratorfunction, isgenerator
+>>>
+>>>
+>>> isgeneratorfunction(zip)
+False
+>>>
+>>> result = zip(['a','b','c'], [1,2,3])
+>>> isgenerator(result)
+False
 
 >>> firstnames = ['Mark', 'Melissa', 'Alex']
 >>> lastnames = ['Watney', 'Lewis', 'Vogel']
@@ -175,6 +184,16 @@ Map
 ---
 * ``map(callable, *iterables)``
 
+>>> from inspect import isgeneratorfunction, isgenerator
+>>>
+>>>
+>>> isgeneratorfunction(map)
+False
+>>>
+>>> result = map(float, [1,2,3])
+>>> isgenerator(result)
+False
+
 >>> data = [1, 2, 3]
 >>> result = map(float, data)
 >>>
@@ -231,6 +250,20 @@ Filter
 ------
 * ``filter(callable, *iterables)``
 
+>>> from inspect import isgeneratorfunction, isgenerator
+>>>
+>>>
+>>> def even(x):
+...     return x % 2 == 0
+>>>
+>>>
+>>> isgeneratorfunction(filter)
+False
+>>>
+>>> result = filter(even, [1,2,3])
+>>> isgenerator(result)
+False
+
 >>> def even(x):
 ...     return x % 2 == 0
 >>>
@@ -259,8 +292,8 @@ StopIteration
 [2, 4, 6]
 
 
-Use Case 1
-----------
+Use Case - Increment
+--------------------
 >>> def increment(x):
 ...     return x + 1
 >>>
@@ -272,8 +305,8 @@ Use Case 1
 [2, 3, 4, 5]
 
 
-Use Case 2
-----------
+Use Case - Translate
+--------------------
 >>> PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
 ...       'ł': 'l', 'ń': 'n', 'ó': 'o',
 ...       'ś': 's', 'ż': 'z', 'ź': 'z'}
@@ -288,8 +321,8 @@ Use Case 2
 'zazolc gesla jazn'
 
 
-Use Case 3
-----------
+Use Case - Compare
+------------------
 >>> people = [
 ...     {'age': 21, 'name': 'Jan Twardowski'},
 ...     {'age': 25, 'name': 'Mark Watney'},
@@ -306,8 +339,8 @@ Use Case 3
  {'age': 25, 'name': 'Mark Watney'}]
 
 
-Use Case 3
-----------
+Use Case - Bool
+---------------
 >>> people = [
 ...     {'is_astronaut': False, 'name': 'Jan Twardowski'},
 ...     {'is_astronaut': True, 'name': 'Mark Watney'},
@@ -324,8 +357,8 @@ Use Case 3
  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
 
-Use Case 4
-----------
+Use Case - Contains
+-------------------
 >>> astronauts = ['Mark Watney', 'Melissa Lewis']
 >>>
 >>> people = ['Jan Twardowski', 'Mark Watney',
@@ -341,8 +374,8 @@ Use Case 4
 ['Mark Watney', 'Melissa Lewis']
 
 
-Use Case 5
-----------
+Use Case - Stdin
+----------------
 >>> import sys
 >>>
 >>> # doctest: +SKIP

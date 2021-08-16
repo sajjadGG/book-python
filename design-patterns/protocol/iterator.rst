@@ -255,14 +255,14 @@ Standard Library Itertools
 >>> from itertools import repeat
 >>>
 >>>
->>> data = repeat(10, 3)
+>>> data = repeat('Beetlejuice', 3)
 >>>
 >>> next(data)
-10
+'Beetlejuice'
 >>> next(data)
-10
+'Beetlejuice'
 >>> next(data)
-10
+'Beetlejuice'
 >>> next(data)
 Traceback (most recent call last):
 StopIteration
