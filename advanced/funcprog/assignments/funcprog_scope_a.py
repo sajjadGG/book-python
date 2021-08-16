@@ -23,10 +23,23 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from inspect import isfunction
+    >>> from inspect import isfunction, signature
 
-    >>> isfunction(sumif)
-    True
+    >>> assert type(SELECT) is set, \
+    'Define in global scope `SELECT: set[str]`'
+
+    >>> assert 'setosa' in SELECT, \
+    'Value setosa must be in SELECT'
+
+    >>> assert 'versicolor' in SELECT, \
+    'Value versicolor must be in SELECT'
+
+    >>> assert isfunction(sumif), \
+    'Define function `sumif(features, label)`'
+
+    >>> signature(sumif)
+    <Signature (features, label)>
+
     >>> sum(sumif(X,y) for *X, y in DATA[1:])
     49.1
 """
@@ -40,6 +53,11 @@ DATA = [
     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
+
+
+# Callable: sums features, when label is in SELECT, else return 0 (zero)
+def sumif():
+    ...
 
 # Solution
 SELECT = {'setosa', 'versicolor'}

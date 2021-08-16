@@ -91,6 +91,7 @@ Translate:
     >>> ''.join(result)
     'zazolc gesla jazn'
 
+
 Lambda with Filter
 ------------------
 Even numbers:
@@ -133,6 +134,30 @@ Astronauts:
     >>> result = filter(lambda x: x in astronauts, people)
     >>> list(result)
     ['Mark Watney', 'Melissa Lewis']
+
+
+Performance
+-----------
+>>> %%timeit -r 1000 -n 10_000  # doctest: +SKIP
+... def increment(x):
+...     return x + 1
+... map(increment, range(0,100))
+271 ns ± 30.6 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
+>>>
+>>>
+>>> %%timeit -r 1000 -n 10_000  # doctest: +SKIP
+... map(lambda x: x+1, range(0,100))
+262 ns ± 29 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
+
+>>> %%timeit -r 1000 -n 1000  # doctest: +SKIP
+... def increment(x):
+...     return x + 1
+... list(map(increment, range(0,100)))
+7.48 µs ± 608 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
+>>>
+>>> %%timeit -r 1000 -n 1000  # doctest: +SKIP
+... list(map(lambda x: x+1, range(0,100)))
+7.36 µs ± 545 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
 
 
 Assignments
