@@ -67,11 +67,11 @@ AttributeError: 'NoneType' object has no attribute 'group'
 >>>
 >>> result = re.search('Mars', TEXT)
 >>> if result:
->>>     result.group()
+...     result.group()
 >>>
 >>>
 >>> if result := re.search('Mars', TEXT):
->>>     result.group()
+...     result.group()
 
 
 Assignments
