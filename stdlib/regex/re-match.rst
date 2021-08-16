@@ -194,7 +194,3 @@ Assignments
 .. literalinclude:: assignments/re_match_a.py
     :caption: :download:`Solution <assignments/re_match_a.py>`
     :end-before: # Solution
-
-.. literalinclude:: assignments/re_match_b.py
-    :caption: :download:`Solution <assignments/re_match_b.py>`
-    :end-before: # Solution

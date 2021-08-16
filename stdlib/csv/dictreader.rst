@@ -69,7 +69,10 @@ Use Cases
 ---------
 .. code-block:: text
 
-
+    'sepal_length';'sepal_width';'petal_length';'petal_width';'species'
+    '5,4';'3,9';'1,3';'0,4';'setosa'
+    '5,9';'3,0';'5,1';'1,8';'virginica'
+    '6,0';'3,4';'4,5';'1,6';'versicolor'
 
 >>> import csv
 >>>

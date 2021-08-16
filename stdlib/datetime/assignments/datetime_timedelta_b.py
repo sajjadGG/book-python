@@ -46,8 +46,14 @@ GAGARIN_LAUNCH = datetime(1961, 4, 12, 6, 7)
 ARMSTRONG_BIRTHDAY = date(1930, 8, 5)
 ARMSTRONG_STEP = datetime(1969, 7, 21, 2, 56, 15)
 
+
 # int: Gagarin's age when he was launched to space
-gagarin_age = int((GAGARIN_LAUNCH.date() - GAGARIN_BIRTHDAY).days / YEAR)
+gagarin_age = ...
 
 # int: Armstrong's age when he made a first step on the Moon
+armstrong_age = ...
+
+
+# Solution
+gagarin_age = int((GAGARIN_LAUNCH.date() - GAGARIN_BIRTHDAY).days / YEAR)
 armstrong_age = int((ARMSTRONG_STEP.date() - ARMSTRONG_BIRTHDAY).days / YEAR)

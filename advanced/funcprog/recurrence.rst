@@ -85,6 +85,8 @@ References
 ----------
 .. [#hanoi] https://dyermath.files.wordpress.com/2015/06/hanoi-13.jpg
 
+.. [#WikipediaFunc] Functional programming. Retrieved: 2020-10-09. URL: https://en.wikipedia.org/wiki/Functional_programming
+
 
 Assignments
 -----------

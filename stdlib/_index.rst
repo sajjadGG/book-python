@@ -156,6 +156,7 @@ Regular Expressions
     regex/re-multiline.rst
     regex/re-substitute.rst
     regex/re-split.rst
+    regex/re-sub.rst
     regex/re-greedy.rst
     regex/re-type-annotation.rst
 

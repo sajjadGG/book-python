@@ -32,31 +32,46 @@ Example
     contains(REDMINE_NUMBER, COMMIT_MESSAGE)     # False
 
 
-result = re.search('Neil Armstrong', DATA)
-result.span()
-(78, 92)
-result.regs
-((78, 92),)
-DATA[78]
-'N'
-DATA[78:92]
-'Neil Armstrong'
+>>> import re
+>>>
+>>>
+>>> TEXT = 'We choose to go to the moon.'
+>>>
+>>> result = re.search('moon', TEXT)
+>>>
+>>> result
+<re.Match object; span=(23, 27), match='moon'>
+>>>
+>>> result.span()
+(23, 27)
+>>>
+>>> result.regs
+((23, 27),)
+>>>
+>>> TEXT[23]
+'m'
+>>> TEXT[23:27]
+'moon'
 
-
-
-result = re.search('Mark Watney', DATA)
-result.group()
+>>> import re
+>>>
+>>>
+>>> TEXT = 'We choose to go to the moon.'
+>>>
+>>>
+>>> result = re.search('Mars', TEXT)
+>>>
+>>> result.group()
+Traceback (most recent call last):
 AttributeError: 'NoneType' object has no attribute 'group'
-
-
-
-result = re.search('Mark Watney', DATA)
-if result:
-    result.group()
-
-
-if result := re.search('Mark Watney', DATA):
-    result.group()
+>>>
+>>> result = re.search('Mars', TEXT)
+>>> if result:
+>>>     result.group()
+>>>
+>>>
+>>> if result := re.search('Mars', TEXT):
+>>>     result.group()
 
 
 Assignments

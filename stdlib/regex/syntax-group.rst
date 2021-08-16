@@ -14,7 +14,7 @@ Syntax
 * ``(...)`` - unnamed group
 * ``(?P<mygroup>...)`` - named group `mygroup`
 * ``(?:...)`` - non-capturing group
-* ``(?#...) - comment
+* ``(?#...)`` - comment
 
 
 Positional Group
@@ -114,6 +114,8 @@ Named Group
 
 Non-Capturing Group
 -------------------
+* ``(?:...)``
+
 >>> import re
 >>>
 >>>
@@ -122,6 +124,19 @@ Non-Capturing Group
 >>> date = r'([A-Z][a-z]{2} \d{2}(?:st|nd|rd|th)+?, \d{4})'
 >>> re.findall(date, TEXT)
 ['Apr 12th, 1961']
+
+
+Comment
+-------
+* ``(?#...)`` - comment
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall(r'\d{4}(?#year)', TEXT)
+['1961']
 
 
 Backreference

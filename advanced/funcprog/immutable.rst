@@ -60,3 +60,8 @@ Comparison
                  , array
                  , TypedDict
     dataclass    , dataclass
+
+
+References
+----------
+.. [#WikipediaFunc] Functional programming. Retrieved: 2020-10-09. URL: https://en.wikipedia.org/wiki/Functional_programming
