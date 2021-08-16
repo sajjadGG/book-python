@@ -76,6 +76,7 @@ Use Cases
 
 >>> import csv
 >>>
+>>>
 >>> FILE = r'_temporary.csv'
 >>> DATA = """'sepal_length';'sepal_width';'petal_length';'petal_width';'species'
 ... '5,4';'3,9';'1,3';'0,4';'setosa'
@@ -95,9 +96,9 @@ Use Cases
 >>>
 >>>
 >>> def clean(line):
-....     return {key: float(v) if isnumeric(v) else v
-....             for key, value in line.items()
-....             if (v := value.replace(',', '.'))}
+...     return {key: float(v) if isnumeric(v) else v
+...             for key, value in line.items()
+...             if (v := value.replace(',', '.'))}
 >>>
 >>>
 >>> with open(FILE) as file:
