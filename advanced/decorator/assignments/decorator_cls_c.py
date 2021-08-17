@@ -8,7 +8,8 @@ English:
     1. Refactor decorator `decorator` to decorator `TypeCheck`
     2. Decorator checks types of all arguments (`*args` oraz `**kwargs`)
     3. Decorator checks return type
-    4. In case when received type is not expected throw an exception `TypeError` with:
+    4. In case when received type is not expected throw an exception
+    `TypeError` with:
         a. argument name
         b. actual type
         c. expected type
@@ -18,7 +19,8 @@ Polish:
     1. Przerób dekorator `decorator` na klasę `TypeCheck`
     2. Dekorator sprawdza typy wszystkich argumentów (`*args` oraz `**kwargs`)
     3. Dekorator sprawdza typ zwracany
-    4. W przypadku gdy otrzymany typ nie jest równy oczekiwanemu wyrzuć wyjątek `TypeError` z:
+    4. W przypadku gdy otrzymany typ nie jest równy oczekiwanemu wyrzuć
+    wyjątek `TypeError` z:
         a. nazwa argumentu
         b. aktualny typ
         c. oczekiwany typ
@@ -29,6 +31,16 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isclass
+
+    >>> assert isclass(TypeCheck), \
+    'TypeCheck should be a decorator class'
+
+    >>> assert TypeCheck(lambda: ...), \
+    'TypeCheck should take function as an argument'
+
+    >>> assert isinstance(TypeCheck(lambda: ...), TypeCheck), \
+    'TypeCheck() should return an object which is an instance of TypeCheck'
 
     >>> @TypeCheck
     ... def echo(a: str, b: int, c: float = 0.0) -> bool:
@@ -81,16 +93,18 @@ Tests:
     TypeError: "return" is <class 'str'>, but <class 'bool'> was expected
 """
 
+
 def decorator(func):
     def validate(argname, argval):
         argtype = type(argval)
         expected = func.__annotations__[argname]
         if argtype is not expected:
-            raise TypeError(f'"{argname}" is {argtype}, but {expected} was expected')
+            raise TypeError(
+                f'"{argname}" is {argtype}, but {expected} was expected')
 
     def merge(*args, **kwargs):
         args = dict(zip(func.__annotations__.keys(), args))
-        return kwargs | args          # Python 3.9
+        return kwargs | args  # Python 3.9
         # return {**args, **kwargs)}  # Python 3.7, 3.8
 
     def wrapper(*args, **kwargs):
@@ -99,6 +113,7 @@ def decorator(func):
         result = func(*args, **kwargs)
         validate('return', result)
         return result
+
     return wrapper
 
 
@@ -122,11 +137,12 @@ class TypeCheck:
 
     def merge(self, *args, **kwargs):
         args = dict(zip(self._func.__annotations__.keys(), args))
-        return kwargs | args          # Python 3.9
+        return kwargs | args  # Python 3.9
         # return {**args, **kwargs)}  # Python 3.7, 3.8
 
     def validate(self, argname, argval):
         argtype = type(argval)
         expected = self._func.__annotations__[argname]
         if argtype is not expected:
-            raise TypeError(f'"{argname}" is {argtype}, but {expected} was expected')
+            raise TypeError(
+                f'"{argname}" is {argtype}, but {expected} was expected')

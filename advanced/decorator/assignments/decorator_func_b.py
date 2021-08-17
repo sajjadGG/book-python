@@ -6,7 +6,8 @@
 
 English:
     1. Modify decorator `disable`
-    2. Decorator raises an exception `PermissionError` and does not execute function
+    2. Decorator raises an exception `PermissionError` and does not execute
+    function
     3. Run doctests - all must succeed
 
 Polish:
@@ -33,9 +34,11 @@ Tests:
     PermissionError: Function is disabled
 """
 
+
 def disable(func):
     def wrapper(*args, **kwargs):
         return func(*args, **kwargs)
+
     return wrapper
 
 
@@ -43,5 +46,5 @@ def disable(func):
 def disable(func):
     def wrapper(*args, **kwargs):
         raise PermissionError('Function is disabled')
-    return wrapper
 
+    return wrapper

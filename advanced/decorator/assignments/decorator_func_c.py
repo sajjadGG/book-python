@@ -49,9 +49,11 @@ Tests:
     >>> assert hasattr(echo, 'disabled')
 """
 
+
 def check(func):
     def wrapper(*args, **kwargs):
         return func(*args, **kwargs)
+
     return wrapper
 
 
@@ -62,4 +64,5 @@ def check(func):
             return func(*args, **kwargs)
         else:
             raise PermissionError('Function is disabled')
+
     return wrapper

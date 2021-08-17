@@ -44,9 +44,11 @@ Tests:
     RuntimeError: Hero is dead and cannot make damage
 """
 
+
 def if_alive(method):
     def wrapper(hero, *args, **kwargs):
         return method(hero, *args, **kwargs)
+
     return wrapper
 
 
@@ -57,4 +59,5 @@ def if_alive(method):
             return method(self, *args, **kwargs)
         else:
             raise RuntimeError('Hero is dead and cannot make damage')
+
     return wrapper

@@ -17,7 +17,8 @@ Polish:
     1. Zmodufikuj dekorator `check_astronauts`
     2. Aby odpowiedzieć czy osoba jest astronautą sprawdź pole:
         a. `is_astronaut` in `crew: list[dict]`
-    3. Dekorator wywoła funkcję, tylko gdy wszyscy członkowie załogi są astronautami
+    3. Dekorator wywoła funkcję, tylko gdy wszyscy członkowie załogi są
+    astronautami
     4. Jeżeli, jakikolwiek członek nie jest astronautą, podnieś wyjątek
        `PermissionError` i wypisz jego imię i nazwisko
     5. Uruchom doctesty - wszystkie muszą się powieść
@@ -59,6 +60,7 @@ CREW_BACKUP = [
 def check_astronauts(func):
     def wrapper(crew):
         return func(crew)
+
     return wrapper
 
 
@@ -69,4 +71,5 @@ def check_astronauts(func):
             if not member['is_astronaut']:
                 raise PermissionError(f'{member["name"]} is not an astronaut')
         return func(crew)
+
     return wrapper

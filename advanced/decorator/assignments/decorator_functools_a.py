@@ -38,6 +38,7 @@ from functools import wraps
 def mydecorator(func):
     def wrapper(*args, **kwargs):
         return func(*args, **kwargs)
+
     return wrapper
 
 
@@ -46,4 +47,5 @@ def mydecorator(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         return func(*args, **kwargs)
+
     return wrapper

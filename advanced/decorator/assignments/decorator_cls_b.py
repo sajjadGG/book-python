@@ -23,6 +23,16 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isclass
+
+    >>> assert isclass(Abspath), \
+    'Abspath should be a decorator class'
+
+    >>> assert Abspath(lambda: ...), \
+    'Abspath should take function as an argument'
+
+    >>> assert isinstance(Abspath(lambda: ...), Abspath), \
+    'Abspath() should return an object which is an instance of Abspath'
 
     >>> @Abspath
     ... def display(path):
@@ -33,7 +43,7 @@ Tests:
     True
     >>> display('iris.csv').endswith('iris.csv')
     True
-    >>> display('/home/python/iris.csv')
+    >>> display('/home/python/iris.csv')  # Should pass regardless your OS
     '/home/python/iris.csv'
 """
 
@@ -48,4 +58,3 @@ class Abspath:
     def __call__(self, file):
         abspath = Path(file).absolute()
         return self._func(abspath)
-

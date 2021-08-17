@@ -8,7 +8,8 @@ English:
     1. Modify decorator `typecheck`
     2. Decorator checks types of all arguments (`*args` oraz `**kwargs`)
     3. Decorator checks return type
-    4. In case when received type is not expected throw an exception `TypeError` with:
+    4. In case when received type is not expected throw an exception
+    `TypeError` with:
         a. argument name
         b. actual type
         c. expected type
@@ -18,13 +19,17 @@ Polish:
     1. Zmodyfikuj dekorator `typecheck`
     2. Dekorator sprawdza typy wszystkich argumentów (`*args` oraz `**kwargs`)
     3. Dekorator sprawdza typ zwracany
-    4. W przypadku gdy otrzymany typ nie jest równy oczekiwanemu wyrzuć wyjątek `TypeError` z:
+    4. W przypadku gdy otrzymany typ nie jest równy oczekiwanemu wyrzuć
+    wyjątek `TypeError` z:
         a. nazwa argumentu
         b. aktualny typ
         c. oczekiwany typ
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
+    * Merge dict since Python 3.9: `kwargs | args`
+    * Merge dict in Python 3.7, 3.8: `{**args, **kwargs)}`
+    * Convert args into dict: `dict(zip(func.__annotations__.keys(), args))`
     * `echo.__annotations__`
     # {'a': <class 'str'>,
     #  'b': <class 'int'>,
@@ -88,15 +93,11 @@ Tests:
     TypeError: "return" is <class 'str'>, but <class 'bool'> was expected
 """
 
-def typecheck(func):
-    def merge(*args, **kwargs):
-        """Function merges *args, and **kwargs into single dict"""
-        args = dict(zip(func.__annotations__.keys(), args))
-        return kwargs | args          # Python 3.9
-        # return {**args, **kwargs)}  # Python 3.7, 3.8
 
+def typecheck(func):
     def wrapper(*args, **kwargs):
         return func(*args, **kwargs)
+
     return wrapper
 
 
@@ -106,18 +107,14 @@ def typecheck(func):
         argtype = type(argval)
         expected = func.__annotations__[argname]
         if argtype is not expected:
-            raise TypeError(f'"{argname}" is {argtype}, but {expected} was expected')
-
-    def merge(*args, **kwargs):
-        args = dict(zip(func.__annotations__.keys(), args))
-        return kwargs | args          # Python 3.9
-        # return {**args, **kwargs)}  # Python 3.7, 3.8
+            raise TypeError(f'"{argname}" is {argtype}, '
+                            f'but {expected} was expected')
 
     def wrapper(*args, **kwargs):
-        for argname, argval in merge(*args, **kwargs).items():
-            validate(argname, argval)
-
+        arguments = kwargs | dict(zip(func.__annotations__.keys(), args))
+        [validate(k,v) for k,v in arguments.items()]
         result = func(*args, **kwargs)
         validate('return', result)
         return result
+
     return wrapper

@@ -58,6 +58,7 @@ Tests:
 def numeric(func):
     def wrapper(a, b):
         return func(a, b)
+
     return wrapper
 
 
@@ -69,4 +70,5 @@ def numeric(func):
         if type(b) not in (int, float):
             raise TypeError('Argument "b" must be int or float')
         return func(a, b)
+
     return wrapper

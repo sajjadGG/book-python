@@ -6,7 +6,8 @@
 
 English:
     1. Create method decorator `mydecorator`
-    2. Decorator should have `wrapper` with `self`, `*args` and `**kwargs` parameters
+    2. Decorator should have `wrapper` with `self`, `*args` and `**kwargs`
+    parameters
     3. Wrapper should call original method with it's original parameters,
        and return its value
     4. Decorator should return `wrapper` method
@@ -45,5 +46,5 @@ Tests:
 def mydecorator(method):
     def wrapper(self, *args, **kwargs):
         return method(self, *args, **kwargs)
-    return wrapper
 
+    return wrapper

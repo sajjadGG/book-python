@@ -19,6 +19,19 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction, isclass
+
+    >>> assert isfunction(typecheck), \
+    'Create typecheck() function'
+
+    >>> assert isfunction(typecheck(True)), \
+    'typecheck() should take one positional arguments'
+
+    >>> assert isfunction(typecheck(check_return=True)), \
+    'typecheck() should take one keyword arguments: check_return'
+
+    >>> assert isfunction(typecheck(check_return=True)(lambda: ...)), \
+    'typecheck() should return decorator which can take a function'
 
     >>> @typecheck(check_return=True)
     ... def echo(a: str, b: int, c: float = 0.0) -> bool:
@@ -83,17 +96,13 @@ def decorator(func):
             raise TypeError(f'"{argname}" is {argtype}, '
                             f'but {expected} was expected')
 
-    def merge(*args, **kwargs):
-        args = dict(zip(func.__annotations__.keys(), args))
-        return kwargs | args  # Python 3.9
-        # return {**args, **kwargs)}  # Python 3.7, 3.8
-
     def wrapper(*args, **kwargs):
-        for argname, argval in merge(*args, **kwargs).items():
-            validate(argname, argval)
+        arguments = kwargs | dict(zip(func.__annotations__.keys(), args))
+        [validate(k,v) for k,v in arguments.items()]
         result = func(*args, **kwargs)
         validate('return', result)
         return result
+
     return wrapper
 
 
@@ -107,17 +116,14 @@ def typecheck(check_return: bool = True):
                 raise TypeError(f'"{argname}" is {argtype}, '
                                 f'but {expected} was expected')
 
-        def merge(*args, **kwargs):
-            args = dict(zip(func.__annotations__.keys(), args))
-            return kwargs | args  # Python 3.9
-            # return {**args, **kwargs)}  # Python 3.7, 3.8
-
         def wrapper(*args, **kwargs):
-            for argname, argval in merge(*args, **kwargs).items():
-                validate(argname, argval)
+            arguments = kwargs | dict(zip(func.__annotations__.keys(), args))
+            [validate(k, v) for k, v in arguments.items()]
             result = func(*args, **kwargs)
             if check_return:
                 validate('return', result)
             return result
+
         return wrapper
+
     return decorator
