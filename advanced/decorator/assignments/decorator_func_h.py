@@ -33,6 +33,13 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction
+
+    >>> assert isfunction(typecheck), \
+    'Create typecheck() function'
+
+    >>> assert isfunction(typecheck(lambda: ...)), \
+    'typecheck() should take function as an argument'
 
     >>> @typecheck
     ... def echo(a: str, b: int, c: float = 0.0) -> bool:

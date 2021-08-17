@@ -14,6 +14,19 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction
+
+    >>> assert isfunction(mydecorator), \
+    'Create mydecorator() function'
+
+    >>> assert isfunction(mydecorator(True)), \
+    'mydecorator() should take one positional argument'
+
+    >>> assert isfunction(mydecorator(happy=True)), \
+    'mydecorator() should take one keyword argument'
+
+    >>> assert isfunction(mydecorator(happy=True)(lambda: ...)), \
+    'The result of mydecorator() should take function as an argument'
 
     >>> @mydecorator(happy=False)
     ... def hello():

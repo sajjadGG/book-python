@@ -23,6 +23,13 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction
+
+    >>> assert isfunction(abspath), \
+    'Create abspath() function'
+
+    >>> assert isfunction(abspath(lambda: ...)), \
+    'abspath() should take function as an argument'
 
     >>> @abspath
     ... def display(path):

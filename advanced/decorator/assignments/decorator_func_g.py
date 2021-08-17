@@ -22,8 +22,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(numeric)
-    >>> assert isfunction(numeric(lambda: None))
+    >>> assert isfunction(numeric), \
+    'Create numeric() function'
+
+    >>> assert isfunction(numeric(lambda: ...)), \
+    'numeric() should take function as an argument'
 
     >>> @numeric
     ... def add(a, b):

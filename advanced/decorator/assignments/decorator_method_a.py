@@ -24,8 +24,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(mydecorator)
-    >>> assert isfunction(mydecorator(lambda: None))
+    >>> assert isfunction(mydecorator), \
+    'Create mydecorator() function'
+
+    >>> assert isfunction(mydecorator(lambda: ...)), \
+    'mydecorator() should take method as an argument'
 
     >>> class MyClass:
     ...     @mydecorator
@@ -41,6 +44,6 @@ Tests:
 # Solution
 def mydecorator(method):
     def wrapper(self, *args, **kwargs):
-        return method(*args, **kwargs)
+        return method(self, *args, **kwargs)
     return wrapper
 

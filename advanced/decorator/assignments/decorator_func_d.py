@@ -26,8 +26,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(check_astronauts)
-    >>> assert isfunction(check_astronauts(lambda: None))
+    >>> assert isfunction(check_astronauts), \
+    'Create check_astronauts() function'
+
+    >>> assert isfunction(check_astronauts(lambda: ...)), \
+    'check_astronauts() should take function as an argument'
 
     >>> @check_astronauts
     ... def launch(crew):

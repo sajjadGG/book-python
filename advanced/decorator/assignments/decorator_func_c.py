@@ -22,15 +22,20 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction
+
+    >>> assert isfunction(check), \
+    'Create check() function'
+
+    >>> assert isfunction(check(lambda: ...)), \
+    'check() should take function as an argument'
 
     >>> @check
     ... def echo(text):
     ...     print(text)
 
-    >>> from inspect import isfunction
-    >>> assert isfunction(check)
-    >>> assert isfunction(check(lambda: None))
-    >>> assert isfunction(echo)
+    >>> assert isfunction(echo), \
+    'Decorator check() should return a function'
 
     >>> echo.disabled = False
     >>> echo('hello')

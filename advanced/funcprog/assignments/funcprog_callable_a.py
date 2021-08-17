@@ -28,8 +28,8 @@ Tests:
 
     >>> assert isfunction(check)
     >>> assert isfunction(wrapper)
-    >>> assert isfunction(check(lambda: None))
-    >>> check(lambda: None)()
+    >>> assert isfunction(check(lambda: ...))
+    >>> check(lambda: ...)()
     hello from wrapper
 """
 

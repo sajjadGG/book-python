@@ -14,6 +14,16 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction, isclass
+
+    >>> assert isfunction(mydecorator), \
+    'Create mydecorator() function'
+
+    >>> assert mydecorator(object), \
+    'mydecorator() should take class as an argument'
+
+    >>> assert isclass(mydecorator(object)), \
+    'The result of mydecorator() should be a class'
 
     >>> @mydecorator
     ... class Hello:

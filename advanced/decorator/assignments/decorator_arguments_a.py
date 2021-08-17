@@ -26,9 +26,17 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(mydecorator)
-    >>> assert isfunction(mydecorator(a=1, b=2))
-    >>> assert isfunction(mydecorator(a=1, b=2)(lambda: None))
+    >>> assert isfunction(mydecorator), \
+    'Create mydecorator() function'
+
+    >>> assert isfunction(mydecorator(1, 2)), \
+    'mydecorator() should take two positional arguments'
+
+    >>> assert isfunction(mydecorator(a=1, b=2)), \
+    'mydecorator() should take two keyword arguments: a and b'
+
+    >>> assert isfunction(mydecorator(a=1, b=2)(lambda: ...)), \
+    'mydecorator() should return decorator which can take a function as arg'
 
     >>> @mydecorator(a=1, b=2)
     ... def echo(text):

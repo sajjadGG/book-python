@@ -18,6 +18,13 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction
+
+    >>> assert isfunction(if_alive), \
+    'Create if_alive() function'
+
+    >>> assert isfunction(if_alive(lambda: ...)), \
+    'if_alive() should take method as an argument'
 
     >>> class Hero:
     ...    def __init__(self, name):

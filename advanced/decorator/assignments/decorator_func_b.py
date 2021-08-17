@@ -18,8 +18,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(disable)
-    >>> assert isfunction(disable(lambda: None))
+    >>> assert isfunction(disable), \
+    'Create disable() function'
+
+    >>> assert isfunction(disable(lambda: ...)), \
+    'disable() should take function as an argument'
 
     >>> @disable
     ... def echo(text):

@@ -14,6 +14,13 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction
+
+    >>> assert isfunction(mydecorator), \
+    'Create mydecorator() function'
+
+    >>> assert isfunction(mydecorator(lambda: ...)), \
+    'mydecorator() should take function as an argument'
 
     >>> @mydecorator
     ... def hello():
