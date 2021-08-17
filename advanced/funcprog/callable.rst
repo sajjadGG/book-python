@@ -48,35 +48,29 @@ Overloading Call Method
 -----------------------
 .. code-block:: python
 
-    astro = str('Mark Watney')
+    data = str('Mark Watney')
 
-    astro()
+    data()
     # Traceback (most recent call last):
     # TypeError: 'str' object is not callable
 
-    callable(astro)
+    callable(data)
     # False
-
-    type(astro)
-    # <class 'str'>
 
 .. code-block:: python
 
     class str(str):
         def __call__(self):
-            print('hello')
+            print('Calling str')
 
 
-    astro = str('Mark Watney')
+    data = str('Mark Watney')
 
-    astro()
-    # hello
+    data()
+    # Calling str
 
-    callable(astro)
+    callable(data)
     # True
-
-    type(astro)
-    # <class '__main__.str'>
 
 
 Callbacks
@@ -89,7 +83,7 @@ Callback Design Pattern:
     import requests
 
 
-    def http_request(url, on_success=lambda: None, on_error=lambda: None):
+    def http_request(url, on_success=lambda: ..., on_error=lambda: ...):
         result = requests.get(url)
         if result.status_code == HTTPStatus.OK:
             return on_success(result)
@@ -134,9 +128,28 @@ Type Annotation
 
 
     def http_request(url: str,
-                     on_success: Callable = lambda: None,
-                     on_error: Callable = lambda: None) -> None:
+                     on_success: Callable = lambda: ...,
+                     on_error: Callable = lambda: ...) -> None:
         ...
+
+
+.. code-block:: python
+
+    from typing import Callable
+
+
+    def request(url: str,
+                on_success: Callable[[int,int], int],
+                on_error: Callable) -> callable:
+        ...
+
+    def handle_success(x: int, y: int) -> int:
+        ...
+
+    request('https://...',
+            on_success=handle_success,
+            on_error=lambda: ...)
+
 
 .. code-block:: python
 

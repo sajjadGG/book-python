@@ -83,6 +83,19 @@ Impure to Pure Function
 >>> add(1, 2, c)
 7
 
+Side Effects
+------------
+* I/O
+* Looks like a pure function
+* File content can change by other process
+
+>>> def read(filename):
+...     with open(filename) as file:
+...         return file.read()
+...
+...
+>>> read('myfile.txt')  # doctest: +SKIP
+
 
 Use Case 1
 ----------
