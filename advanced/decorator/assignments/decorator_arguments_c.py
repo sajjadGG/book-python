@@ -98,7 +98,7 @@ def decorator(func):
 
     def wrapper(*args, **kwargs):
         arguments = kwargs | dict(zip(func.__annotations__.keys(), args))
-        [validate(k,v) for k,v in arguments.items()]
+        [validate(k, v) for k, v in arguments.items()]
         result = func(*args, **kwargs)
         validate('return', result)
         return result

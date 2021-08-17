@@ -8,22 +8,20 @@ English:
     1. Modify decorator `typecheck`
     2. Decorator checks types of all arguments (`*args` oraz `**kwargs`)
     3. Decorator checks return type
-    4. In case when received type is not expected throw an exception
-    `TypeError` with:
-        a. argument name
-        b. actual type
-        c. expected type
+    4. When received type is not expected raise `TypeError` with:
+       a. argument name
+       b. actual type
+       c. expected type
     5. Run doctests - all must succeed
 
 Polish:
     1. Zmodyfikuj dekorator `typecheck`
     2. Dekorator sprawdza typy wszystkich argumentów (`*args` oraz `**kwargs`)
     3. Dekorator sprawdza typ zwracany
-    4. W przypadku gdy otrzymany typ nie jest równy oczekiwanemu wyrzuć
-    wyjątek `TypeError` z:
-        a. nazwa argumentu
-        b. aktualny typ
-        c. oczekiwany typ
+    4. Gdy otrzymany typ nie jest równy oczekiwanemu podnieś `TypeError` z:
+       a. nazwa argumentu
+       b. aktualny typ
+       c. oczekiwany typ
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
@@ -112,7 +110,7 @@ def typecheck(func):
 
     def wrapper(*args, **kwargs):
         arguments = kwargs | dict(zip(func.__annotations__.keys(), args))
-        [validate(k,v) for k,v in arguments.items()]
+        [validate(k, v) for k, v in arguments.items()]
         result = func(*args, **kwargs)
         validate('return', result)
         return result

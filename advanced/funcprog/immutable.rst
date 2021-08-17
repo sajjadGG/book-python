@@ -17,6 +17,17 @@ Rational
 
 * Source: [#WikipediaFunc]_
 
+Mutable vs Immutable
+--------------------
+.. figure:: img/funcprog-immutable-tuple.png
+.. figure:: img/funcprog-immutable-str.png
+.. figure:: img/funcprog-immutable-tables.png
+
+
+Changes
+-------
+.. figure:: img/funcprog-immutable-sharedstate.png
+
 
 Immutable Types
 ---------------
@@ -60,6 +71,7 @@ Comparison
                  , array
                  , TypedDict
     dataclass    , dataclass
+
 
 
 References

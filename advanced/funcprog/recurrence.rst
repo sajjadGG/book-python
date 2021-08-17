@@ -66,7 +66,7 @@ Recap information about factorial (``n!``):
 
 Use Case
 --------
-.. figure:: img/function-recurrence-hanoi.jpg
+.. figure:: img/funcprog-recurrence-hanoi.jpg
 
     Hanoi Tower as a standard example of a recurrence. Source: [#hanoi]_
 

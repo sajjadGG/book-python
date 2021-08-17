@@ -6,13 +6,12 @@
 
 English:
     1. Modify decorator `disable`
-    2. Decorator raises an exception `PermissionError` and does not execute
-    function
+    2. Decorator raises `PermissionError` and does not execute function
     3. Run doctests - all must succeed
 
 Polish:
     1. Zmodyfikuj dekorator `disable`
-    2. Dekorator podnosi wyjątek `PermissionError` i nie wywołuje funkcji
+    2. Dekorator podnosi `PermissionError` i nie wywołuje funkcji
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:

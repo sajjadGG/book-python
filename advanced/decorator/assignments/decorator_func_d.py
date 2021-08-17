@@ -7,7 +7,7 @@
 English:
     1. Modify decorator `check_astronauts`
     2. To answer if person is an astronaut check field:
-        a. `is_astronaut` in `crew: list[dict]`
+       a. `is_astronaut` in `crew: list[dict]`
     3. Decorator will call function, only if all crew members are astronauts
     4. If any member is not an astronaut raise `PermissionError` and print
        his first name and last name
@@ -16,9 +16,8 @@ English:
 Polish:
     1. Zmodufikuj dekorator `check_astronauts`
     2. Aby odpowiedzieć czy osoba jest astronautą sprawdź pole:
-        a. `is_astronaut` in `crew: list[dict]`
-    3. Dekorator wywoła funkcję, tylko gdy wszyscy członkowie załogi są
-    astronautami
+       a. `is_astronaut` in `crew: list[dict]`
+    3. Dekorator wywoła funkcję, tylko gdy wszyscy załoganci są astronautami
     4. Jeżeli, jakikolwiek członek nie jest astronautą, podnieś wyjątek
        `PermissionError` i wypisz jego imię i nazwisko
     5. Uruchom doctesty - wszystkie muszą się powieść

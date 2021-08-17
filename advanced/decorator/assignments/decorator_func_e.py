@@ -8,8 +8,8 @@ English:
     1. Create decorator `@cache`
     2. Decorator must check before running function, if for given argument
        the computation was already done:
-        a. if yes, return from `_cache`
-        b. if not, calculate new result, update cache and return value
+       a. if yes, return from `_cache`
+       b. if not, calculate new result, update cache and return value
     3. Using `timeit` compare execution time (it might take around 30 seconds)
     4. Last three tests (prints) are only infomation about execution time
     5. Run doctests - all must succeed (beside three prints)
@@ -18,8 +18,8 @@ Polish:
     1. Stwórz dekorator `@cache`
     2. Decorator ma sprawdzać przed uruchomieniem funkcji, czy dla danego
        argumentu wynik został już wcześniej obliczony:
-        a. jeżeli tak, zwróć dane z `_cache`
-        b. jeżeli nie, oblicz, zaktualizuj `_cache` i zwróć wartość
+       a. jeżeli tak, zwróć dane z `_cache`
+       b. jeżeli nie, oblicz, zaktualizuj `_cache` i zwróć wartość
     3. Używając `timeit` porównaj czas wykonywania (może trwać około 30 sekund)
     4. Ostatnie trzy testy (printy) to tylko informacja o czasie wykonywania
     5. Uruchom doctesty - wszystkie muszą się powieść (poza trzema printami)

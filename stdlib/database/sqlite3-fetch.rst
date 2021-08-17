@@ -2,6 +2,16 @@ SQLite3 Fetch
 =============
 
 
+Rationale
+---------
+* Fetch as `list[tuple]` / `list[list]`
+* Fetch as `list[Row]` / `list[dict]`
+* `sqlite3.row_factory`
+
+.. figure:: img/sqlite3-fetch-rowfactory-tuple.png
+.. figure:: img/sqlite3-fetch-rowfactory-row.png
+
+
 Fetch Sequences
 ---------------
 >>> import sqlite3

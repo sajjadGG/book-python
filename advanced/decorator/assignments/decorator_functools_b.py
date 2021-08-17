@@ -44,7 +44,9 @@ def mydecorator(happy=True):
     def decorator(func):
         def wrapper(*args, **kwargs):
             return func(*args, **kwargs)
+
         return wrapper
+
     return decorator
 
 
@@ -54,5 +56,7 @@ def mydecorator(happy=True):
         @wraps(func)
         def wrapper(*args, **kwargs):
             return func(*args, **kwargs)
+
         return wrapper
+
     return decorator

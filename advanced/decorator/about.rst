@@ -16,6 +16,8 @@ Rationale
     * Modify globals
     * Add or change metadata
 
+.. figure:: img/decorator-about-call.png
+
 
 Syntax
 ------
