@@ -1,8 +1,8 @@
 """
 * Assignment: Decorator Method Alive
 * Complexity: easy
-* Lines of code: 5 lines
-* Time: 13 min
+* Lines of code: 4 lines
+* Time: 5 min
 
 English:
     1. Create `if_alive` method decorator

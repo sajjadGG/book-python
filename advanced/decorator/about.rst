@@ -5,6 +5,7 @@ Decorator About
 Rationale
 ---------
 * Since Python 2.4: :pep:`318` -- Decorators for Functions and Methods
+* Since Python 3.9: :pep:`614` -- Relaxing Grammar Restrictions On Decorators
 * Decorator is an object, which takes another object as it's argument
 * Decorators can:
 

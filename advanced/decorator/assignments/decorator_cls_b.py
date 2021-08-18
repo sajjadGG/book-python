@@ -19,7 +19,7 @@ Polish:
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * `path = Path(CURRENT_DIR, filename)`
+    * `path = Path(path).absolute()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -48,6 +48,14 @@ Tests:
 """
 
 from pathlib import Path
+
+
+def abspath(func):
+    def wrapper(path):
+        path = Path(path).absolute()
+        return func(path)
+
+    return wrapper
 
 
 # Solution

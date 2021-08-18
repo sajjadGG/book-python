@@ -1,8 +1,8 @@
 """
 * Assignment: Decorator Class Type Check
 * Complexity: medium
-* Lines of code: 15 lines
-* Time: 21 min
+* Lines of code: 18 lines
+* Time: 13 min
 
 English:
     1. Refactor decorator `decorator` to decorator `TypeCheck`
@@ -90,29 +90,29 @@ Tests:
     Traceback (most recent call last):
     TypeError: "return" is <class 'str'>, but <class 'bool'> was expected
 """
+from typing import Optional
 
 
-def decorator(func):
+def typecheck(func):
     def validate(argname, argval):
         argtype = type(argval)
         expected = func.__annotations__[argname]
         if argtype is not expected:
-            raise TypeError(
-                f'"{argname}" is {argtype}, but {expected} was expected')
-
-    def merge(*args, **kwargs):
-        args = dict(zip(func.__annotations__.keys(), args))
-        return kwargs | args  # Python 3.9
-        # return {**args, **kwargs)}  # Python 3.7, 3.8
+            raise TypeError(f'"{argname}" is {argtype}, '
+                            f'but {expected} was expected')
 
     def wrapper(*args, **kwargs):
-        for argname, argval in merge(*args, **kwargs).items():
-            validate(argname, argval)
+        arguments = kwargs | dict(zip(func.__annotations__.keys(), args))
+        [validate(k, v) for k, v in arguments.items()]
         result = func(*args, **kwargs)
         validate('return', result)
         return result
 
     return wrapper
+
+
+class TypeCheck:
+    pass
 
 
 # Solution
@@ -127,20 +127,15 @@ class TypeCheck:
         return result
 
     def check_arguments(self, *args, **kwargs):
-        for argname, argval in self.merge(*args, **kwargs).items():
-            self.validate(argname, argval)
+        arguments = kwargs | dict(zip(self._func.__annotations__.keys(), args))
+        [self.validate(k, v) for k, v in arguments.items()]
 
     def check_result(self, result):
         self.validate('return', result)
 
-    def merge(self, *args, **kwargs):
-        args = dict(zip(self._func.__annotations__.keys(), args))
-        return kwargs | args  # Python 3.9
-        # return {**args, **kwargs)}  # Python 3.7, 3.8
-
-    def validate(self, argname, argval):
+    def validate(self, argname, argval) -> Optional[Exception]:
         argtype = type(argval)
         expected = self._func.__annotations__[argname]
         if argtype is not expected:
-            raise TypeError(
-                f'"{argname}" is {argtype}, but {expected} was expected')
+            raise TypeError(f'"{argname}" is {argtype}, '
+                            f'but {expected} was expected')
