@@ -18,6 +18,9 @@ Polish:
     4. Jeżeli `path` jest bezwzględna, to `Abspath` nie będzie jej modyfikował
     5. Uruchom doctesty - wszystkie muszą się powieść
 
+    TODO: Windows Path().absolute()
+    TODO: Test if function was called
+
 Hints:
     * `path = Path(path).absolute()`
 

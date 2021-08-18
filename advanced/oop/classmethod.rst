@@ -8,14 +8,23 @@ Rationale
 * Will pass class as a first argument
 * ``self`` is not required
 
+
+Syntax
+------
+Dynamic methods:
+
 >>> class MyClass:
 ...     def mymethod(self):
 ...         pass
+
+Static methods:
 
 >>> class MyClass:
 ...     @staticmethod
 ...     def mymethod():
 ...         pass
+
+Class methods:
 
 >>> class MyClass:
 ...     @classmethod
@@ -25,6 +34,21 @@ Rationale
 
 Example
 -------
+>>> class Astronaut:
+...     def my_dynamic_method(self):
+...         return 'Hello'
+...
+...     @staticmethod
+...     def my_static_method():
+...         return 'Hello'
+...
+...     @classmethod
+...     def my_class_method(cls):
+...         return 'Hello'
+
+
+Manifestation
+-------------
 >>> import json
 >>> from dataclasses import dataclass
 >>>

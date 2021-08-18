@@ -79,6 +79,22 @@ Callback Design Pattern:
 
 .. code-block:: python
 
+    def request(url, on_success, on_error):
+        try:
+            result = f'Downloading from {url}'
+        except Exception as error:
+            on_error(error)
+        else:
+            on_success(result)
+
+
+    request(
+        url='https://python.astrotech.io',
+        on_success=lambda result: print(result),
+        on_error=lambda error: print(error))
+
+.. code-block:: python
+
     from http import HTTPStatus
     import requests
 

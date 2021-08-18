@@ -11,6 +11,9 @@ Rationale
 * No need to create a class instance
 * Will not pass instance (``self``) as a first method argument
 
+
+Syntax
+------
 >>> class MyClass:
 ...
 ...     @staticmethod
@@ -190,6 +193,56 @@ goodbye
 hello
 >>> astro.say_goodbye()
 goodbye
+
+
+Use Case - User
+---------------
+>>> import json
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class User:
+...     firstname: str
+...     lastname: str
+...
+...     def from_json(self, data):
+...         data = json.loads(data)
+...         return User(**data)
+>>>
+>>>
+>>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>>
+>>> User.from_json(DATA)
+Traceback (most recent call last):
+TypeError: from_json() missing 1 required positional argument: 'data'
+>>>
+>>> User().from_json(DATA)
+Traceback (most recent call last):
+TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
+>>>
+>>> User(None, None).from_json(DATA)
+User(firstname='Jan', lastname='Twardowski')
+
+>>> import json
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class User:
+...     firstname: str
+...     lastname: str
+...
+...     @staticmethod
+...     def from_json(data):
+...         data = json.loads(data)
+...         return User(**data)
+>>>
+>>>
+>>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>>
+>>> User.from_json(DATA)
+User(firstname='Jan', lastname='Twardowski')
 
 
 Use Case - Measurement

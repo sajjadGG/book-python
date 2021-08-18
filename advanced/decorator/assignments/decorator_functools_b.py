@@ -2,7 +2,7 @@
 * Assignment: Decorator Functools Args
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 2 min
+* Time: 3 min
 
 English:
     1. Use `functools.wraps` in correct place
