@@ -79,7 +79,7 @@ True
 >>> a is b
 False
 
->>> 'Mark Watney' is 'Mark Watney'  # doctest: +ELLIPSIS
+>>> 'Mark Watney' is 'Mark Watney'  # doctest: +SKIP
 <...>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
 True
 
