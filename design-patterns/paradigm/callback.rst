@@ -40,3 +40,35 @@ Implementation
 ...     on_success=success,
 ...     on_error=error,
 ... )
+
+
+Object
+------
+>>> import requests
+>>> from http import HTTPStatus
+>>>
+>>>
+>>> def http(obj):
+...     response = requests.request(
+...         method=obj.method,
+...         data=obj.data,
+...         path=obj.path)
+...
+...     if response == HTTPStatus.OK:
+...         return obj.on_success(response)
+...     else:
+...         return obj.on_error(response)
+>>>
+>>>
+>>> class Request:
+...     method = 'GET'
+...     path = '/index'
+...     data = None
+...
+...     def on_success(self, response):
+...         print('Success!')
+...
+...     def on_error(self, response):
+...         print('Error')
+>>>
+>>> http(Request())  # doctest: +SKIP

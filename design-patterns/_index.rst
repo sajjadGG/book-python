@@ -157,5 +157,4 @@ Paradigms
     :caption: Paradigms
 
     paradigm/callback.rst
-    paradigm/functional-programming.rst
     paradigm/event-programming.rst

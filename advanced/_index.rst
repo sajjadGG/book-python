@@ -42,6 +42,7 @@ Functional Programming
     funcprog/function-attributes.rst
     funcprog/callable.rst
     funcprog/closures.rst
+    funcprog/functools.rst
 
 
 Decorators
