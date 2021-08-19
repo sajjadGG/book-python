@@ -185,7 +185,7 @@ False
 >>> name == 'Mark Watney'
 True
 >>>
->>> name is 'Mark Watney'  # doctest: +ELLIPSIS
+>>> name is 'Mark Watney'  # doctest: +SKIP
 <...>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
 False
 
@@ -202,7 +202,7 @@ String Value vs Identity Problem
 True
 >>> a is b
 False
->>> a is 'Mark Watney'  # doctest: +ELLIPSIS
+>>> a is 'Mark Watney'  # doctest: +SKIP
 <...>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
 False
 
@@ -213,7 +213,7 @@ False
 True
 >>> a is b
 True
->>> a is 'Mark'  # doctest: +ELLIPSIS
+>>> a is 'Mark'  # doctest: +SKIP
 <...>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
 True
 

@@ -126,6 +126,9 @@ Missing ``return`` from constructor. The instantiation is evaluated to
 >>>
 >>> astro = Astronaut()
 Constructing object
+>>>
+>>> type(astro)
+<class 'NoneType'>
 
 Return invalid from constructor:
 
@@ -134,6 +137,10 @@ Return invalid from constructor:
 ...         return 'Mark Watney'
 >>>
 >>> astro = Astronaut()
+>>>
+>>> type(astro)
+<class 'str'>
+>>> astro
 'Mark Watney'
 
 Return invalid from initializer:
@@ -145,7 +152,6 @@ Return invalid from initializer:
 >>> astro = Astronaut()
 Traceback (most recent call last):
 TypeError: __init__() should return None, not 'str'
-
 
 
 Do not trigger methods for user
