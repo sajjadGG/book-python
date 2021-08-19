@@ -74,7 +74,7 @@ New Method
 ...         return super().__new__(cls)
 >>>
 >>>
->>> Astronaut()
+>>> astro = Astronaut()
 Constructing object
 
 
@@ -89,11 +89,11 @@ Init Method
   instance
 
 >>> class Astronaut:
->>>     def __init__(self):
->>>         print('Initializing object')
+...     def __init__(self):
+...         print('Initializing object')
 >>>
 >>>
->>> Astronaut()
+>>> astro = Astronaut()
 Initializing object
 
 
@@ -108,7 +108,7 @@ Return
 ...         print('Initializing object')
 >>>
 >>>
->>> Astronaut()
+>>> astro = Astronaut()
 Constructing object
 Initializing object
 
@@ -124,7 +124,7 @@ Missing ``return`` from constructor. The instantiation is evaluated to
 ...         print('Initializing object')  # -> is actually never called
 >>>
 >>>
->>> Astronaut()
+>>> astro = Astronaut()
 Constructing object
 
 Return invalid from constructor:
@@ -133,16 +133,16 @@ Return invalid from constructor:
 ...     def __new__(cls):
 ...         return 'Mark Watney'
 >>>
->>> Astronaut()
+>>> astro = Astronaut()
 'Mark Watney'
 
 Return invalid from initializer:
 
 >>> class Astronaut:
->>>     def __init__(self):
->>>         return 'Mark Watney'
+...     def __init__(self):
+...         return 'Mark Watney'
 >>>
->>> Astronaut()
+>>> astro = Astronaut()
 Traceback (most recent call last):
 TypeError: __init__() should return None, not 'str'
 

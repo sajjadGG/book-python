@@ -79,8 +79,8 @@ True
 >>> a is b
 False
 
->>> 'Mark Watney' is 'Mark Watney'
-<stdin>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
+>>> 'Mark Watney' is 'Mark Watney'  # doctest: +ELLIPSIS
+<...>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
 True
 
 
@@ -185,8 +185,8 @@ False
 >>> name == 'Mark Watney'
 True
 >>>
->>> name is 'Mark Watney'
-<stdin>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
+>>> name is 'Mark Watney'  # doctest: +ELLIPSIS
+<...>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
 False
 
 
@@ -202,8 +202,8 @@ String Value vs Identity Problem
 True
 >>> a is b
 False
->>> a is 'Mark Watney'
-<stdin>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
+>>> a is 'Mark Watney'  # doctest: +ELLIPSIS
+<...>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
 False
 
 >>> a = 'Mark'
@@ -213,8 +213,8 @@ False
 True
 >>> a is b
 True
->>> a is 'Mark'
-<stdin>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
+>>> a is 'Mark'  # doctest: +ELLIPSIS
+<...>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
 True
 
 
@@ -297,7 +297,7 @@ False
 Use Case - Overload
 -------------------
 * Could be implemented through `from functools import singledispatchmethod`
-* More information: https://python.astrotech.io/design-patterns/paradigm/functional-programming.html#functools
+* More information: https://python.astrotech.io/advanced/funcprog/functools.html#singledispatchmethod
 
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname):

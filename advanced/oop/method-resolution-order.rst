@@ -65,23 +65,23 @@ Inheritance Diamond
 .. figure:: img/oop-mro-diamond-both-empty.png
 
 >>> class Person:
->>>     def __init__(self):
->>>         print('Person init')
+...     def __init__(self):
+...         print('Person init')
 >>>
 >>>
 >>> class Astronaut(Person):
->>>     def __init__(self):
->>>         print('Astronaut init')
+...     def __init__(self):
+...         print('Astronaut init')
 >>>
 >>>
 >>> class Cosmonaut(Person):
->>>     def __init__(self):
->>>         print('Cosmonaut init')
+...     def __init__(self):
+...         print('Cosmonaut init')
 >>>
 >>>
 >>> class Crew(Astronaut, Cosmonaut):
->>>     def __init__(self):
->>>         print('Crew init')
+...     def __init__(self):
+...         print('Crew init')
 >>>
 >>>
 >>> crew = Crew()
@@ -93,22 +93,22 @@ Small Diamond
 .. figure:: img/oop-mro-diamond-small-empty.png
 
 >>> class Person:
->>>     def __init__(self):
->>>         print('Person init')
+...     def __init__(self):
+...         print('Person init')
 >>>
 >>>
 >>> class Astronaut(Person):
->>>     def __init__(self):
->>>         print('Astronaut init')
+...     def __init__(self):
+...         print('Astronaut init')
 >>>
 >>>
 >>> class Cosmonaut(Person):
->>>     def __init__(self):
->>>         print('Cosmonaut init')
+...     def __init__(self):
+...         print('Cosmonaut init')
 >>>
 >>>
 >>> class Crew(Astronaut, Cosmonaut):
->>>     pass
+...     pass
 >>>
 >>>
 >>> crew = Crew()
@@ -140,18 +140,18 @@ Astronaut init
 .. figure:: img/oop-mro-diamond-small-path.png
 
 >>> Crew.mro()  # doctest: +NORMALIZE_WHITESPACE
-[__main__.Crew,
- __main__.Astronaut,
- __main__.Cosmonaut,
- __main__.Person,
- object]
+[<class 'Crew'>,
+ <class 'Astronaut'>,
+ <class 'Cosmonaut'>,
+ <class 'Person'>,
+ <class 'object'>]
 
 >>> Crew.__mro__  # doctest: +NORMALIZE_WHITESPACE
-(__main__.Crew,
- __main__.Astronaut,
- __main__.Cosmonaut,
- __main__.Person,
- object)
+(<class 'Crew'>,
+ <class 'Astronaut'>,
+ <class 'Cosmonaut'>,
+ <class 'Person'>,
+ <class 'object'>)
 
 
 Large Diamond
@@ -226,34 +226,34 @@ VeteranAstronaut init
 Problematic super()
 -------------------
 >>> class Person:
->>>     def __init__(self):
->>>         print('Person init')
+...     def __init__(self):
+...         print('Person init')
 >>>
 >>>
 >>> class Astronaut(Person):
->>>     def __init__(self):
->>>         super().__init__()
->>>         print('Astronaut init')
+...     def __init__(self):
+...         super().__init__()
+...         print('Astronaut init')
 >>>
 >>> class VeteranAstronaut(Astronaut):
->>>     def __init__(self):
->>>         super().__init__()
->>>         print('VeteranAstronaut init')
+...     def __init__(self):
+...         super().__init__()
+...         print('VeteranAstronaut init')
 >>>
 >>>
 >>> class Cosmonaut(Person):
->>>     def __init__(self):
->>>         super().__init__()
->>>         print('Cosmonaut init')
+...     def __init__(self):
+...         super().__init__()
+...         print('Cosmonaut init')
 >>>
 >>> class VeteranCosmonaut(Cosmonaut):
->>>     def __init__(self):
->>>         super().__init__()
->>>         print('VeteranCosmonaut init')
+...     def __init__(self):
+...         super().__init__()
+...         print('VeteranCosmonaut init')
 >>>
 >>>
 >>> class Crew(VeteranAstronaut, VeteranCosmonaut):
->>>     pass
+...     pass
 >>>
 >>>
 >>> crew = Crew()
@@ -307,13 +307,13 @@ Why?!
 .. figure:: img/oop-mro-diamond-large-path.png
 
 >>> Crew.mro()  # doctest: +NORMALIZE_WHITESPACE
-[__main__.Crew,
- __main__.VeteranAstronaut,
- __main__.Astronaut,
- __main__.VeteranCosmonaut,
- __main__.Cosmonaut,
- __main__.Person,
- object]
+[<class 'Crew'>,
+ <class 'VeteranAstronaut'>,
+ <class 'Astronaut'>,
+ <class 'VeteranCosmonaut'>,
+ <class 'Cosmonaut'>,
+ <class 'Person'>,
+ <class 'object'>]
 
 
 Compare

@@ -306,13 +306,11 @@ Show Methods
  '__weakref__', '_firstname', '_lastname', 'get_publicname']
 >>>
 >>> [method for method in dir(astro) if callable(getattr(astro, method))]  # doctest: +NORMALIZE_WHITESPACE
-['_Astronaut__get_fullname', '__class__', '__delattr__', '__dir__',
- '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__',
- '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__',
- '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
- '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__',
- 'get_publicname']
-
+['_Astronaut__get_fullname', '__class__', '__delattr__', '__dir__', '__eq__',
+ '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__',
+ '__init_subclass__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__',
+ '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__',
+ '__subclasshook__', 'get_publicname']
 >>>
 >>> public_methods = [method
 ...                   for method in dir(astro)

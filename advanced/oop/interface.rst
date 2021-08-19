@@ -178,9 +178,6 @@ Use Case - Settings
 >>> from myapp.cache import CacheInterface  # doctest: +SKIP
 >>>
 >>> cache = DatabaseCache
->>>
->>>
->>> assert isinstance(cache, CacheInterface)
 
 >>> # myapp/usage.py
 >>> from myapp.settings import cache  # doctest: +SKIP

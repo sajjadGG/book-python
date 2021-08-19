@@ -4,36 +4,38 @@ OOP Polymorphism
 
 History
 -------
+* UNIX ``getchar()`` function used function lookup table with pointers
+
 >>> keyboard = {
 ...     'open': lambda: ...,
 ...     'close':  lambda: ...,
-...     'read':  lambda: ...,
-...     'write':  lambda: ...,
-...     'seek':  lambda: ...,
+...     'read':  lambda bytes: ...,
+...     'write':  lambda content: ...,
+...     'seek':  lambda position: ...,
 ... }
 >>>
 >>> file = {
 ...     'open': lambda: ...,
 ...     'close':  lambda: ...,
-...     'read':  lambda: ...,
-...     'write':  lambda: ...,
-...     'seek':  lambda: ...,
+...     'read':  lambda bytes: ...,
+...     'write':  lambda content: ...,
+...     'seek':  lambda position: ...,
 ... }
 >>>
 >>> socket = {
 ...     'open': lambda: ...,
 ...     'close':  lambda: ...,
-...     'read':  lambda: ...,
-...     'write':  lambda: ...,
-...     'seek':  lambda: ...,
+...     'read':  lambda bytes: ...,
+...     'write':  lambda content: ...,
+...     'seek':  lambda position: ...,
 ... }
 >>>
 >>>
 >>> def getchar(obj):
-...     obj.open()
-...     obj.seek(0)
-...     obj.read(1)
-...     obj.close()
+...     obj['open']()
+...     obj['seek'](0)
+...     obj['read'](1)
+...     obj['close']()
 >>>
 >>>
 >>> getchar(file)
