@@ -304,6 +304,8 @@ Person init
 
 Why?!
 -----
+* Raymond Hettinger - Super considered super! - PyCon 2015 [#Hettinger2015]_
+
 .. figure:: img/oop-mro-diamond-large-path.png
 
 >>> Crew.mro()  # doctest: +NORMALIZE_WHITESPACE
@@ -319,6 +321,11 @@ Why?!
 Compare
 -------
 .. figure:: img/oop-mro-diamond-both-path.png
+
+
+References
+----------
+.. [#Hettinger2015] https://www.youtube.com/watch?v=EiOglTERPEo
 
 
 Assignments

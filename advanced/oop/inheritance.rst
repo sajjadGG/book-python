@@ -48,6 +48,7 @@ Inheritance Dynamic Fields
 Super
 -----
 * Order is important
+* Raymond Hettinger - Super considered super! - PyCon 2015 [#Hettinger2015]_
 
 >>> class Person:
 ...     def __init__(self):
@@ -82,3 +83,8 @@ Super
 >>> astro = Astronaut()
 >>> print(vars(astro))
 {'firstname': 'Mark', 'lastname': 'Watney', 'job': 'astronaut'}
+
+
+References
+----------
+.. [#Hettinger2015] https://www.youtube.com/watch?v=EiOglTERPEo

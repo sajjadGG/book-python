@@ -224,8 +224,11 @@ Use Cases
     print(result)
     # {'firstname': 'Mark', 'lastname': 'Watney'}
 
+
 Use Case - Deep Size
 --------------------
+* Source: https://code.activestate.com/recipes/577504/
+
 .. code-block:: python
 
     from sys import getsizeof, stderr
