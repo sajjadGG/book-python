@@ -250,8 +250,8 @@ User(firstname='Jan', lastname='Twardowski')
 User(firstname='Jan', lastname='Twardowski')
 
 
-Use Cases
----------
+Use Cases - JSONMixin
+---------------------
 >>> import json
 >>> from dataclasses import dataclass
 >>>
@@ -281,6 +281,10 @@ Guest(firstname='Jan', lastname='Twardowski')
 >>> Admin.from_json(DATA)
 Admin(firstname='Jan', lastname='Twardowski')
 
+
+Use Case - Interplanetary time
+------------------------------
+>>> # myapp/time.py
 >>> class AbstractTime:
 ...     tzname: str
 ...     tzcode: str
@@ -304,13 +308,14 @@ Admin(firstname='Jan', lastname='Twardowski')
 >>> class EarthTime(AbstractTime):
 ...     tzname = 'Universal Time Coordinated'
 ...     tzcode = 'UTC'
+
+>>> # myapp/settings.py
+>>> from myapp.time import *  # doctest: +SKIP
 >>>
->>>
->>> # Settings
 >>> time = MartianTime
->>>
->>> # Usage
->>> from settings import time  # doctest: +SKIP
+
+>>> # myapp/usage.py
+>>> from myapp.settings import time  # doctest: +SKIP
 >>>
 >>> UTC = '1969-07-21T02:53:07Z'
 >>>

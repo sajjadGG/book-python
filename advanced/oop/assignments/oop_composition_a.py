@@ -27,6 +27,11 @@ Tests:
     >>> assert issubclass(MarsMission, Habitat)
     >>> assert issubclass(MarsMission, Astronaut)
     >>> assert issubclass(MarsMission, Rocket)
+
+    >>> assert len(Habitat.__subclasses__()) == 1
+    >>> assert len(Astronaut.__subclasses__()) == 1
+    >>> assert len(Rocket.__subclasses__()) == 1
+    >>> assert len(MarsMission.__subclasses__()) == 0
 """
 
 

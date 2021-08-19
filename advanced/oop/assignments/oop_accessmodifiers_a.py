@@ -1,52 +1,49 @@
 """
-* Assignment: OOP Access Protected
+* Assignment: OOP Access Dataclass
 * Complexity: easy
-* Lines of code: 7 lines
-* Time: 5 min
+* Lines of code: 5 lines
+* Time: 3 min
 
 English:
-    1. Define `result: list[dict]`
-    2. Define class `Iris` with attributes
-    3. Protected attributes: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`
-    4. Public attribute: `species`
-    5. Iterate over `DATA` and add all public attributes to `result`
-    6. Run doctests - all must succeed
+    1. Modify dataclass `Iris` to add attributes:
+        a. Protected attributes: `sepal_length, sepal_width`
+        b. Private attributes: `petal_length, petal_width`
+        c. Public attribute: `species`
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj `result: list[dict]`
-    2. Zdefiniuj klasę `Iris`
-    3. Chronione atrybuty: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`
-    4. Publiczne atrybuty: `species`
-    5. Iteruj po `DATA` i dodaj wszystkie publiczne atrybuty do `result`
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zmodyfikuj dataclass `Iris` aby dodać atrybuty:
+        a. Chronione atrybuty: `sepal_length, sepal_width`
+        b. Private attributes: `petal_length, petal_width`
+        c. Publiczne atrybuty: `species`
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isclass
 
-    >>> DATA = [Iris(5.8, 2.7, 5.1, 1.9, 'virginica'),
-    ...         Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
-    ...         Iris(5.7, 2.8, 4.1, 1.3, 'versicolor')]
+    >>> assert isclass(Iris)
+    >>> assert hasattr(Iris, '__annotations__')
 
-    >>> result = [{attribute: value}
-    ...           for row in DATA
-    ...           for attribute, value in vars(row).items()
-    ...           if not attribute.startswith('_')]
-
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'species': 'virginica'},
-     {'species': 'setosa'},
-     {'species': 'versicolor'}]
+    >>> assert '_sepal_width' in Iris.__dataclass_fields__
+    >>> assert '_sepal_length' in Iris.__dataclass_fields__
+    >>> assert '_Iris__petal_width' in Iris.__dataclass_fields__
+    >>> assert '_Iris__petal_length' in Iris.__dataclass_fields__
+    >>> assert 'species' in Iris.__dataclass_fields__
 """
+from dataclasses import dataclass
 
+
+@dataclass
 class Iris:
     pass
 
 
 # Solution
+@dataclass
 class Iris:
-    def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
-        self._sepal_width = sepal_width
-        self._sepal_length = sepal_length
-        self._petal_width = petal_width
-        self._petal_length = petal_length
-        self.species = species
+    _sepal_width: float
+    _sepal_length: float
+    __petal_width: float
+    __petal_length: float
+    species: str

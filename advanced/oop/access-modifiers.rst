@@ -91,7 +91,6 @@ Watney
 Protected Attribute
 -------------------
 * ``_name`` - protected attribute (non-public by convention)
-* IDE should warn: "Access to a protected member _firstname of a class"
 
 >>> from dataclasses import dataclass
 >>>
@@ -103,14 +102,19 @@ Protected Attribute
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
->>>
+
+To list all the attributes once again we can use `vars()`:
+
 >>> vars(astro)
 {'_firstname': 'Mark', '_lastname': 'Watney'}
->>>
->>> print(astro._firstname)       # IDE should warn: "Access to a protected member _firstname of a class"
+
+Python will allow the following statement, however your IDE should warn you
+"Access to a protected member _firstname of a class":
+
+>>> print(astro._firstname)
 Mark
 >>>
->>> print(astro._lastname)        # IDE should warn: "Access to a protected member _lastname of a class"
+>>> print(astro._lastname)
 Watney
 
 
@@ -224,20 +228,8 @@ Protected Method
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
->>>
->>> print(dir(astro))  # doctest: +NORMALIZE_WHITESPACE
-['__annotations__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__',
- '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__',
- '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
- '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_firstname',
- '_get_fullname', '_lastname', 'get_publicname']
->>>
->>> public_methods = [method
-...                   for method in dir(astro)
-...                   if not method.startswith('_')]
->>>
->>> print(public_methods)
-['get_publicname']
+>>> astro._get_fullname()  # IDE should warn: "Access to a protected member _get_fullname of a class"
+'Mark Watney'
 
 
 Private Method
@@ -259,6 +251,9 @@ Private Method
 >>> astro.__get_fullname()
 Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute '__get_fullname'
+>>>
+>>> astro._Astronaut__get_fullname()  # IDE should warn: "Access to a protected member _Astronaut__get_fullname of a class"
+'Mark Watney'
 
 
 System Method
@@ -310,12 +305,30 @@ Show Methods
  '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__',
  '__weakref__', '_firstname', '_lastname', 'get_publicname']
 >>>
+>>> [method for method in dir(astro) if callable(getattr(astro, method))]  # doctest: +NORMALIZE_WHITESPACE
+['_Astronaut__get_fullname', '__class__', '__delattr__', '__dir__',
+ '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__',
+ '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__',
+ '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
+ '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__',
+ 'get_publicname']
+
+>>>
 >>> public_methods = [method
 ...                   for method in dir(astro)
-...                   if not method.startswith('_')]
+...                   if callable(getattr(astro, method))
+...                   and not method.startswith('_')]
 >>>
->>> print(public_methods)
-['get_publicname']
+>>> protected_methods = [method
+...                      for method in dir(astro)
+...                      if callable(getattr(astro, method))
+...                      and method.startswith('_')]
+>>>
+>>> private_methods = [method
+...                    for method in dir(astro)
+...                    if callable(getattr(astro, method))
+...                    and method.startswith(f'_{astro.__class__.__name__}')]
+
 
 
 References
@@ -331,4 +344,12 @@ Assignments
 
 .. literalinclude:: assignments/oop_accessmodifiers_b.py
     :caption: :download:`Solution <assignments/oop_accessmodifiers_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/oop_accessmodifiers_c.py
+    :caption: :download:`Solution <assignments/oop_accessmodifiers_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/oop_accessmodifiers_d.py
+    :caption: :download:`Solution <assignments/oop_accessmodifiers_d.py>`
     :end-before: # Solution

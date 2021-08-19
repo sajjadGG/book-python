@@ -2,21 +2,17 @@
 * Assignment: OOP Abstract Annotate
 * Complexity: easy
 * Lines of code: 5 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
-    1. Define abstract class `IrisAbstract`
-    2. Attributes: `sepal_length, sepal_width, petal_length, petal_width`
-    3. Abstract methods: `__init__`, `sum()`, `len()`, `mean()`
-    4. Add type annotation to all methods and attibutes
-    5. Run doctests - all must succeed
+    1. Modify abstract class `IrisAbstract`
+    2. Add type annotation to all methods and attibutes
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj klasę abstrakcyjną `IrisAbstract`
-    2. Atrybuty: `sepal_length, sepal_width, petal_length, petal_width`
-    3. Metody abstrakcyjne: `__init__`, `sum()`, `len()`, `mean()`
-    4. Dodaj anotację typów do wszystkich metod i atrybutów
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    1. Modify klasę abstrakcyjną `IrisAbstract`
+    2. Dodaj anotację typów do wszystkich metod i atrybutów
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -64,25 +60,16 @@ from abc import ABCMeta, abstractmethod
 
 
 class IrisAbstract:
-    sepal_length: float
-    sepal_width: float
-    petal_length: float
-    petal_width: float
-
-    def __init__(self,
-                 sepal_length: float,
-                 sepal_width: float,
-                 petal_length: float,
-                 petal_width: float) -> None:
+    def __init__(self, sepal_length, sepal_width, petal_length, petal_width):
         ...
 
-    def mean(self) -> float:
+    def mean(self):
         ...
 
-    def sum(self) -> float:
+    def sum(self):
         ...
 
-    def len(self) -> int:
+    def len(self):
         ...
 
 

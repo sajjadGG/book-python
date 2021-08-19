@@ -2,6 +2,45 @@ OOP Polymorphism
 ================
 
 
+History
+-------
+>>> keyboard = {
+...     'open': lambda: ...,
+...     'close':  lambda: ...,
+...     'read':  lambda: ...,
+...     'write':  lambda: ...,
+...     'seek':  lambda: ...,
+... }
+>>>
+>>> file = {
+...     'open': lambda: ...,
+...     'close':  lambda: ...,
+...     'read':  lambda: ...,
+...     'write':  lambda: ...,
+...     'seek':  lambda: ...,
+... }
+>>>
+>>> socket = {
+...     'open': lambda: ...,
+...     'close':  lambda: ...,
+...     'read':  lambda: ...,
+...     'write':  lambda: ...,
+...     'seek':  lambda: ...,
+... }
+>>>
+>>>
+>>> def getchar(obj):
+...     obj.open()
+...     obj.seek(0)
+...     obj.read(1)
+...     obj.close()
+>>>
+>>>
+>>> getchar(file)
+>>> getchar(keyboard)
+>>> getchar(socket)
+
+
 Switch
 ------
 It all starts with single ``if`` statement
@@ -410,6 +449,98 @@ Dynamic factory:
  Virginica(sepal_length=6.3, sepal_width=2.9, petal_length=5.6, petal_width=1.8),
  Versicolor(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5),
  Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2)]
+
+Use Case - Login Window
+-----------------------
+>>> import re
+>>> from typing import Optional
+>>>
+>>>
+>>> class UIElement:
+...     def __init__(self, name):
+...         self.name = name
+...
+...     def on_mouse_hover(self):
+...         raise NotImplementedError
+...
+...     def on_mouse_out(self):
+...         raise NotImplementedError
+...
+...     def on_mouse_click(self):
+...         raise NotImplementedError
+...
+...     def on_key_press(self):
+...         raise NotImplementedError
+...
+...     def render(self):
+...         raise NotImplementedError
+>>>
+>>>
+>>> class Button(UIElement):
+...     action: str
+...
+...     def __init__(self, *args, action: Optional[str] = None, **kwargs):
+...         self.action = action
+...         super().__init__(*args, **kwargs)
+...
+...     def on_key_press(self):
+...         pass
+...
+...     def on_mouse_hover(self):
+...         pass
+...
+...     def on_mouse_out(self):
+...         pass
+...
+...     def on_mouse_click(self):
+...         pass
+...
+...     def render(self):
+...         action = self.action
+...         print(f'Rendering Button with {action}')
+>>>
+>>>
+>>> class Input(UIElement):
+...     regex: re.Pattern
+...
+...     def __init__(self, *args, regex: Optional[str] = None, **kwargs):
+...         self.regex = re.compile(regex)
+...         super().__init__(*args, **kwargs)
+...
+...     def on_key_press(self):
+...         pass
+...
+...     def on_mouse_hover(self):
+...         pass
+...
+...     def on_mouse_out(self):
+...         pass
+...
+...     def on_mouse_click(self):
+...         pass
+...
+...     def render(self):
+...         regex = self.regex
+...         print(f'Rendering Input with {regex}')
+>>>
+>>>
+>>> def render(components: list[UIElement]):
+...     for obj in components:
+...         obj.render()
+>>>
+>>>
+>>> login_window = [
+...     Input('Username', regex='[a-zA-Z0-9]'),
+...     Input('Password', regex='[a-zA-Z0-9!@#$%^&*()]'),
+...     Button('Submit', action='/login.html'),
+... ]
+>>>
+>>> render(login_window)
+Rendering Input with re.compile('[a-zA-Z0-9]')
+Rendering Input with re.compile('[a-zA-Z0-9!@#$%^&*()]')
+Rendering Button with /login.html
+
+
 
 
 References

@@ -2,7 +2,7 @@
 * Assignment: OOP Interface Implement
 * Complexity: easy
 * Lines of code: 12 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Define class `Setosa` implementing `IrisInterface`

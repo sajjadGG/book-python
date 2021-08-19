@@ -72,6 +72,7 @@ Object Oriented Programming
     oop/classmethod.rst
     oop/access-modifiers.rst
     oop/composition.rst
+    oop/inheritance.rst
     oop/method-resolution-order.rst
     oop/polymorphism.rst
     oop/relations.rst

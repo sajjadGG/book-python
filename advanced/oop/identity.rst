@@ -8,11 +8,17 @@ Rationale
 * ``==`` checks for object equality
 * ``is`` checks for object identity
 
-.. code-block:: python
-
-    found = True
-    found == True
-    found is True
+>>> from typing import Optional
+>>>
+>>>
+>>> firstname: str = 'Melissa'
+>>> lastname: str = 'Lewis'
+>>> age: Optional[int] = None
+>>>
+>>> age is None
+True
+>>> age is not None
+False
 
 
 Identity
@@ -23,31 +29,11 @@ Identity
 * Two objects with non-overlapping lifetimes may have the same ``id()`` value
 * In CPython it's also the memory address of the corresponding C object
 
-.. code-block:: python
-
-    id('Watney')
-    # 4499664048
-
-    hex(id('Watney'))
-    # '0x10c336cb0'
-
-
-Value Comparison
-----------------
-* ``==`` checks for object equality
-
-.. code-block:: python
-
-    'Mark Watney' == 'Mark Watney'
-    # True
-
-.. code-block:: python
-
-    a = 'Mark Watney'
-    b = 'Mark Watney'
-
-    a == b
-    # True
+>>> id('Watney')  # doctest: +SKIP
+4499664048
+>>>
+>>> hex(id('Watney'))  # doctest: +SKIP
+'0x10c336cb0'
 
 
 Identity Check
@@ -58,93 +44,287 @@ Identity Check
 * Testing strings with ``is`` only works when the strings are interned
 * Since Python 3.8 - Compiler produces a ``SyntaxWarning`` when identity checks (``is`` and ``is not``) are used with certain types of literals (e.g. ``str``, ``int``). These can often work by accident in *CPython*, but are not guaranteed by the language spec. The warning advises users to use equality tests (``==`` and ``!=``) instead.
 
-.. code-block:: python
-
-    'Mark Watney' is 'Mark Watney'
-    # <stdin>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
-    # True
-
-.. code-block:: python
-
-    a = 'Mark Watney'
-    b = 'Mark Watney'
-
-    a is b
-
-.. code-block:: python
-
-    name = None
-
-    name is None
-    name is True
-    name is False
-
-.. code-block:: python
-
-    name = None
-
-    type(name) is int
-    type(name) is float
-    type(name) is complex
-    type(name) is bool
-    type(name) is None
-    type(name) is str
-    type(name) is bytes
-    type(name) is list
-    type(name) is tuple
-    type(name) is set
-    type(name) is frozenset
-    type(name) is dict
+>>> name = None
+>>>
+>>> name is None
+True
+>>> name is not None
+False
 
 
-Problem
--------
-.. code-block:: python
+Bool Identity
+-------------
+>>> name = None
+>>>
+>>> name is None
+True
+>>> name is False
+False
 
-    'Mark Watney' is 'Mark Watney'
-    # True
-
-.. code-block:: python
-
-    >>> a = 'Mark Watney'
-    ... b = 'Mark Watney'
-
-    >>> a == b
-    True
-
-    >>> a is b
-    True
-
-.. code-block:: python
-
-    >>> a = 'Mark Watney'
-    >>> b = 'Mark Watney'
-
-    >>> a == b
-    True
-
-    >>> a is b
-    False
+>>> found = True
+>>>
+>>> found == True
+True
+>>> found is True
+True
 
 
-Compare Value and Identity
+String Identity
+---------------
+>>> a = 'Mark Watney'
+>>> b = 'Mark Watney'
+>>>
+>>> a == b
+True
+>>> a is b
+False
+
+>>> 'Mark Watney' is 'Mark Watney'
+<stdin>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
+True
+
+
+Type Identity
+-------------
+>>> name = ...
+>>>
+>>> type(name) is int
+False
+>>> type(name) is float
+False
+>>> type(name) is complex
+False
+>>> type(name) is bool
+False
+>>> type(name) is None
+False
+>>> type(name) is str
+False
+>>> type(name) is bytes
+False
+>>> type(name) is list
+False
+>>> type(name) is tuple
+False
+>>> type(name) is set
+False
+>>> type(name) is frozenset
+False
+>>> type(name) is dict
+False
+
+
+Object Identity
+---------------
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+>>>
+>>>
+>>> astro1 = Astronaut('Jan', 'Twardowski')
+>>> astro2 = Astronaut('Jan', 'Twardowski')
+>>>
+>>> astro1 is astro2
+False
+
+>>> id(astro1)  # doctest: +SKIP
+4421890496
+>>> id(astro2)  # doctest: +SKIP
+4421893328
+
+>>> hex(id(astro1))  # doctest: +SKIP
+'0x10790b1c0'
+>>> hex(id(astro2))  # doctest: +SKIP
+'0x10790bcd0'
+
+>>> print(astro1)  # doctest: +SKIP
+<Astronaut object at 0x107905820>
+>>> print(astro2)  # doctest: +SKIP
+<Astronaut object at 0x10790bcd0>
+
+
+Value Comparison
+----------------
+* ``==`` checks for object equality
+
+>>> 'Mark Watney' == 'Mark Watney'
+True
+
+>>> a = 'Mark Watney'
+>>> b = 'Mark Watney'
+>>>
+>>> a == b
+True
+
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+>>>
+>>>
+>>> astro1 = Astronaut('Jan', 'Twardowski')
+>>> astro2 = Astronaut('Jan', 'Twardowski')
+>>>
+>>> astro1 == astro2
+False
+
+
+Compare Value vs. Identity
 --------------------------
-.. code-block:: python
+>>> name = 'Mark Watney'
+>>> expected = 'Mark Watney'
+>>>
+>>> name == expected
+True
+>>> name is expected
+False
 
-    name = 'Mark Watney'
-    expected = 'Mark Watney'
+>>> name = 'Mark Watney'
+>>>
+>>> name == 'Mark Watney'
+True
+>>>
+>>> name is 'Mark Watney'
+<stdin>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
+False
 
-    name == expected
-    # True
 
-    name is expected
-    # False
+String Value vs Identity Problem
+--------------------------------
+* CPython optimization
+* Can be misleading
 
-    name == 'Mark Watney'
-    # True
+>>> a = 'Mark Watney'
+>>> b = 'Mark Watney'
+>>>
+>>> a == b
+True
+>>> a is b
+False
+>>> a is 'Mark Watney'
+<stdin>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
+False
 
-    name is 'Mark Watney'
-    # False
+>>> a = 'Mark'
+>>> b = 'Mark'
+>>>
+>>> a == b
+True
+>>> a is b
+True
+>>> a is 'Mark'
+<stdin>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
+True
+
+
+Use Case - Make Equal
+---------------------
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...
+...     def __eq__(self, other):
+...         return self.firstname == other.firstname \
+...            and self.lastname == other.lastname
+>>>
+>>>
+>>> a1 = Astronaut('Jan', 'Twardowski')
+>>> a2 = Astronaut('Jan', 'Twardowski')
+>>>
+>>> a1 == a2
+True
+>>> a1 is a2
+False
+
+
+Use Case - Equal Problem
+------------------------
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...
+...     def __eq__(self, other):
+...         return self.firstname == other.firstname \
+...            and self.lastname == other.lastname
+>>>
+>>>
+>>> class Cosmonaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+>>>
+>>>
+>>> a = Astronaut('Jan', 'Twardowski')
+>>> c = Cosmonaut('Jan', 'Twardowski')
+>>>
+>>> a == c
+True
+>>> a is c
+False
+
+
+Use Case - Make Unequal
+-----------------------
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...
+...     def __eq__(self, other):
+...         return self.__class__ is other.__class__ \
+...            and self.firstname == other.firstname \
+...            and self.lastname == other.lastname
+>>>
+>>>
+>>> class Cosmonaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+>>>
+>>>
+>>> a = Astronaut('Jan', 'Twardowski')
+>>> c = Cosmonaut('Jan', 'Twardowski')
+>>>
+>>> a == c
+False
+>>> a is c
+False
+
+
+Use Case - Overload
+-------------------
+* Could be implemented through `from functools import singledispatchmethod`
+* More information: https://python.astrotech.io/design-patterns/paradigm/functional-programming.html#functools
+
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...
+...     def __eq__(self, other: Astronaut):
+...         return self.firstname == other.firstname \
+...            and self.lastname == other.lastname
+...
+...     def __eq__(self, other: Cosmonaut):
+...         return False
+>>>
+>>>
+>>> class Cosmonaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+>>>
+>>>
+>>> a = Astronaut('Jan', 'Twardowski')
+>>> c = Cosmonaut('Jan', 'Twardowski')
+>>>
+>>> a == c
+False
+>>> a is c
+False
 
 
 Assignments

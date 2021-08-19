@@ -68,16 +68,14 @@ New Method
 * when calling ``__new__()`` you actually don't have an instance yet,
   therefore no ``self`` exists at that moment
 
-.. code-block:: python
-
-    class Astronaut:
-        def __new__(cls):
-            print('Constructing object')
-            return super().__new__(cls)
-
-
-    Astronaut()
-    # Constructing object
+>>> class Astronaut:
+...     def __new__(cls):
+...         print('Constructing object')
+...         return super().__new__(cls)
+>>>
+>>>
+>>> Astronaut()
+Constructing object
 
 
 Init Method
@@ -90,74 +88,63 @@ Init Method
 * it's purpose is just to alter the fresh state of the newly created
   instance
 
-.. code-block:: python
-
-    class Astronaut:
-        def __init__(self):
-            print('Initializing object')
-
-
-    Astronaut()
-    # Initializing object
+>>> class Astronaut:
+>>>     def __init__(self):
+>>>         print('Initializing object')
+>>>
+>>>
+>>> Astronaut()
+Initializing object
 
 
 Return
 ------
-.. code-block:: python
-
-    class Astronaut:
-        def __new__(cls):
-            print('Constructing object')
-            return super().__new__(cls)
-
-        def __init__(self):
-            print('Initializing object')
-
-
-    Astronaut()
-    # Constructing object
-    # Initializing object
-
+>>> class Astronaut:
+...     def __new__(cls):
+...         print('Constructing object')
+...         return super().__new__(cls)
+...
+...     def __init__(self):
+...         print('Initializing object')
+>>>
+>>>
+>>> Astronaut()
+Constructing object
+Initializing object
 
 Missing ``return`` from constructor. The instantiation is evaluated to
 ``None`` since we don't return anything from the constructor:
 
-.. code-block:: python
-
-    class Astronaut:
-        def __new__(cls):
-            print('Constructing object')
-            super().__new__(cls)
-
-        def __init__(self):
-            print('Initializing object')  # -> is actually never called
-
-
-    Astronaut()
-    # Constructing object
+>>> class Astronaut:
+...     def __new__(cls):
+...         print('Constructing object')
+...         super().__new__(cls)
+...
+...     def __init__(self):
+...         print('Initializing object')  # -> is actually never called
+>>>
+>>>
+>>> Astronaut()
+Constructing object
 
 Return invalid from constructor:
 
-.. code-block:: python
-
-    class Astronaut:
-        def __new__(cls):
-            return 'Mark Watney'
-
-    Astronaut()
-    # 'Mark Watney'
+>>> class Astronaut:
+...     def __new__(cls):
+...         return 'Mark Watney'
+>>>
+>>> Astronaut()
+'Mark Watney'
 
 Return invalid from initializer:
 
-.. code-block:: python
-
-    class Astronaut:
-        def __init__(self):
-            return 'Mark Watney'
-
-    Astronaut()
-    # Traceback (most recent call last):
-    # TypeError: __init__() should return None, not 'str'
+>>> class Astronaut:
+>>>     def __init__(self):
+>>>         return 'Mark Watney'
+>>>
+>>> Astronaut()
+Traceback (most recent call last):
+TypeError: __init__() should return None, not 'str'
 
 
 
@@ -251,39 +238,6 @@ will be a condition boundary checking (for example for negative values):
             self.position_y = min(1024, max(0, y))
 
 
-Use Cases - Abstract Factory
-----------------------------
-* Factory method
-* Could be used to implement Singleton
-
-.. code-block:: python
-
-    class PDF:
-        pass
-
-    class Docx:
-        pass
-
-    class Document:
-        def __new__(cls, *args, **kwargs):
-            filename, extension = args[0].split('.')
-
-            if extension == 'pdf':
-                return PDF()
-            elif extension == 'docx':
-                return Docx()
-
-
-    file1 = Document('myfile.pdf')
-    file2 = Document('myfile.docx')
-
-    print(file1)
-    # <__main__.PDF object at 0x10f89afa0>
-
-    print(file2)
-    # <__main__.Docx object at 0x10f6fe9a0>
-
-
 Use Case - Iris Factory
 -----------------------
 .. code-block:: python
@@ -338,8 +292,8 @@ Use Case - Iris Factory
     #  Setosa(4.7, 3.2, 1.3, 0.2)]
 
 
-Use Cases - Path
-----------------
+Use Case - Path
+---------------
 Note, that this unfortunately does not work this way. ``Path()`` always returns ``PosixPath``:
 
 .. code-block:: python
@@ -358,6 +312,189 @@ Note, that this unfortunately does not work this way. ``Path()`` always returns 
 
     Path(r'C:/Users/Admin/myfile.txt')
     # WindowsPath('C:/Users/Admin/myfile.txt')
+
+
+Use Case - Document Factory 1
+-----------------------------
+* Factory method
+* Could be used to implement Singleton
+
+.. code-block:: python
+
+    class PDF:
+        pass
+
+    class Docx:
+        pass
+
+    class Document:
+        def __new__(cls, *args, **kwargs):
+            filename, extension = args[0].split('.')
+
+            if extension == 'pdf':
+                return PDF()
+            elif extension == 'docx':
+                return Docx()
+
+
+    file1 = Document('myfile.pdf')
+    file2 = Document('myfile.docx')
+
+    print(file1)
+    # <__main__.PDF object at 0x10f89afa0>
+
+    print(file2)
+    # <__main__.Docx object at 0x10f6fe9a0>
+
+
+Use Case - Document Factory 2
+-----------------------------
+.. code-block:: python
+
+    from abc import ABC, abstractmethod
+
+
+    class Filetype(ABC):
+        @abstractmethod
+        def display(self):
+            raise NotImplementedError
+
+        def __init__(self, filename):
+            self.filename = filename
+
+
+    class PDF(Filetype):
+        def display(self):
+            pass
+
+
+    class DOCX(Filetype):
+        def display(self):
+            pass
+
+
+    class Document:
+        def __new__(cls, filename):
+            filetypes = Filetype.__subclasses__()
+            _, extension = filename.split('.')
+
+            for typ in filetypes:
+                if typ.__name__ == extension.upper():
+                    return typ(filename)
+            else:
+                raise NotImplementedError('Filetype is not recognized')
+
+
+    Document('myfile.pdf')
+    # <__main__.PDF at 0x107a5a1f0>
+    Document('myfile.docx')
+    # <__main__.DOCX at 0x107a5a580>
+
+
+Use Case - Document Factory 3
+-----------------------------
+.. code-block:: python
+
+    from abc import ABC, abstractmethod, abstractproperty
+
+
+    class Filetype(ABC):
+        @abstractproperty
+        def EXTENSIONS(self) -> str: ...
+
+        @abstractmethod
+        def display(self):
+            raise NotImplementedError
+
+        def __init__(self, filename):
+            self.filename = filename
+
+
+    class PDF(Filetype):
+        EXTENSIONS = ['pdf']
+
+        def display(self):
+            pass
+
+
+    class DOCX(Filetype):
+        EXTENSIONS = ['docx', 'doc']
+
+        def display(self):
+            pass
+
+
+    class Document:
+        def __new__(cls, filename):
+            filetypes = Filetype.__subclasses__()
+            _, extension = filename.split('.')
+
+            for typ in filetypes:
+                if extension in typ.EXTENSIONS:
+                    return typ(filename)
+            else:
+                raise NotImplementedError('Filetype is not recognized')
+
+
+    Document('myfile.pdf')
+    # <__main__.PDF at 0x107a509a0>
+    Document('myfile.doc')
+    # <__main__.DOCX at 0x107a507c0>
+    Document('myfile.docx')
+    # <__main__.DOCX at 0x107a50880>
+
+
+Use Case - Document Factory 4
+-----------------------------
+.. code-block:: python
+
+    from abc import ABC, abstractmethod, abstractproperty
+
+
+    class Document(ABC):
+        @abstractproperty
+        def EXTENSIONS(self) -> list[str]: ...
+
+        def __new__(cls, filename):
+            filetypes = cls.__subclasses__()
+            _, extension = filename.split('.')
+
+            for typ in filetypes:
+                if extension in typ.EXTENSIONS:
+                    instance = object.__new__(typ)
+                    instance.__init__(filename)
+                    return instance
+            else:
+                raise NotImplementedError('Filetype is not recognized')
+
+        def __init__(self, filename):
+            self.filename = filename
+
+        @abstractmethod
+        def display(self):
+            raise NotImplementedError
+
+
+    class PDF(Document):
+        EXTENSIONS = ['pdf']
+
+        def display(self):
+            pass
+
+
+    class DOCX(Document):
+        EXTENSIONS = ['docx', 'doc']
+
+        def display(self):
+            pass
+
+
+    Document('myfile.pdf')
+    # <__main__.PDF at 0x107a4f9a0>
+    Document('myfile.doc')
+    # <__main__.DOCX at 0x107a4f5e0>
+    Document('myfile.docx')
+    # <__main__.DOCX at 0x107a4f250>
 
 
 Assignments

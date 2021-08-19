@@ -5,21 +5,21 @@
 * Time: 8 min
 
 English:
-    1. Refactor class `Hero` to use composition
+    1. Refactor class `Hero` to use multiple inheritance
     2. Name mixin classes: `HasHealth` and `HasPosition`
     3. Note, that order of inheritance is important
         a. Try to inherit from `HasPosition`, `HasHealth`
         b. Then `HasHealth`, `HasPosition`
-        c. What changes?
+        c. What changed and why?
     4. Run doctests - all must succeed
 
 Polish:
-    1. Zrefaktoruj klasę `Hero` aby użyć kompozycji
+    1. Zrefaktoruj klasę `Hero` aby użyć wielodziedziczenia
     2. Nazwij klasy domieszkowe: `HasHealth` i `HasPosition`
     3. Zwróć uwagę, że kolejność dziedziczenia ma znaczenie
         a. Spróbuj dziedziczyć po `HasPosition`, `HasHealth`
         b. A później `HasHealth`, `HasPosition`
-        c. Co się zmieniło?
+        c. Co się zmieniło i dlaczego?
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:

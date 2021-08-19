@@ -1,99 +1,50 @@
 """
-* Assignment: OOP Access Dict
-* Complexity: medium
-* Lines of code: 8 lines
-* Time: 8 min
+* Assignment: OOP Access Init
+* Complexity: easy
+* Lines of code: 6 lines
+* Time: 5 min
 
 English:
-    1. Create `result: list[Iris]`
-    2. Iterate over `DATA` skipping header
-    3. Separate `features` from `species` in each row
-    4. Append to `result`:
-        a. if `species` is "setosa" append instance of a class `Setosa`
-        b. if `species` is "versicolor" append instance of a class `Versicolor`
-        c. if `species` is "virginica" append instance of a class `Virginica`
-    5. Initialize instances with `features` using `*args` notation
-    6. Run doctests - all must succeed
+    1. Modify class `Iris` to add attributes:
+        a. Protected attributes: `sepal_length, sepal_width`
+        b. Private attributes: `petal_length, petal_width`
+        c. Public attribute: `species`
+    2. Do not use `dataclass`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz `result: list[Iris]`
-    2. Iterując po `DATA` pomijając header
-    3. Odseparuj `features` od `species` w każdym wierszu
-    4. Dodaj do `result`:
-        a. jeżeli `species` jest "setosa" to dodaj instancję klasy `Setosa`
-        b. jeżeli `species` jest "versicolor" to dodaj instancję klasy `Versicolor`
-        c. jeżeli `species` jest "virginica" to dodaj instancję klasy `Virginica`
-    5. Instancje inicjalizuj danymi z `features` używając notacji `*args`
-    6. Uruchom doctesty - wszystkie muszą się powieść
-
-Hints:
-    * `globals()[classname]`
+    1. Zmodyfikuj klasę `Iris` aby dodać atrybuty:
+        a. Chronione atrybuty: `sepal_length, sepal_width`
+        b. Private attributes: `petal_length, petal_width`
+        c. Publiczne atrybuty: `species`
+    2. Nie używaj `dataclass`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isclass
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [Virginica(5.8, 2.7, 5.1, 1.9),
-     Setosa(5.1, 3.5, 1.4, 0.2),
-     Versicolor(5.7, 2.8, 4.1, 1.3),
-     Virginica(6.3, 2.9, 5.6, 1.8),
-     Versicolor(6.4, 3.2, 4.5, 1.5),
-     Setosa(4.7, 3.2, 1.3, 0.2)]
+    >>> assert isclass(Iris)
+
+    >>> result = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
+    >>> assert hasattr(result, '_sepal_width')
+    >>> assert hasattr(result, '_sepal_length')
+    >>> assert hasattr(result, '_Iris__petal_width')
+    >>> assert hasattr(result, '_Iris__petal_length')
+    >>> assert hasattr(result, 'species')
 """
 
-from dataclasses import dataclass
 
-
-DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-        (5.8, 2.7, 5.1, 1.9, 'virginica'),
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-        (4.7, 3.2, 1.3, 0.2, 'setosa')]
-
-
-@dataclass(repr=False)
 class Iris:
-    _sepal_length: float
-    _sepal_width: float
-    _petal_length: float
-    _petal_width: float
-
-    def __repr__(self):
-        name = self.__class__.__name__
-        args = tuple(self.__dict__.values())
-        return f'{name}{args}'
-
-
-class Setosa(Iris):
     pass
-
-
-class Versicolor(Iris):
-    pass
-
-
-class Virginica(Iris):
-    pass
-
-
-result: list = []
 
 
 # Solution
-result = [iris(*features)
-          for *features, label in DATA[1:]
-          if (classname := label.capitalize())
-          and (iris := globals()[classname])]
-
-
-# Solution 2
-for *features, label in DATA[1:]:
-    if label == 'setosa':
-        iris = Setosa(*features)
-    elif label == 'virginica':
-        iris = Virginica(*features)
-    elif label == 'versicolor':
-        iris = Versicolor(*features)
-    result.append(iris)
+class Iris:
+    def __init__(self, sepal_width: float, sepal_length: float,
+                 petal_width: float, petal_length: float, species: str):
+        self._sepal_width = sepal_width
+        self._sepal_length = sepal_length
+        self.__petal_width = petal_width
+        self.__petal_length = petal_length
+        self.species = species

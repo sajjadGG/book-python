@@ -18,6 +18,9 @@ Rationale
     implement
         Class implements interface if has all public fields and methods from interface
 
+
+Syntax
+------
 >>> class CacheInterface:
 ...     def set(self, key: str, value: str) -> None:
 ...         raise NotImplementedError
@@ -69,9 +72,45 @@ How nice it would be to write:
 ...     def get(self, key: str) -> str
 ...     def is_valid(self, key: str) -> bool
 
+Example
+-------
+>>> class Cache:
+...     def set(self, key: str, value: str) -> None: ...
+...     def get(self, key: str) -> str: ...
+...     def is_valid(self, key: str) -> bool: ...
+>>>
+>>>
+>>> class DatabaseCache(Cache):
+...      ...
+>>>
+>>> class InMemoryCache(Cache):
+...      ...
+>>>
+>>> class FilesystemCache(Cache):
+...      ...
+>>>
+>>>
+>>> c: Cache = DatabaseCache()
+>>> c.set('firstname', 'Mark')
+>>> c.is_valid('firstname')
+>>> c.is_valid('lastname')
+>>> c.get('firstname')
+>>>
+>>> c: Cache = InMemoryCache()
+>>> c.set('firstname', 'Mark')
+>>> c.is_valid('firstname')
+>>> c.is_valid('lastname')
+>>> c.get('firstname')
+>>>
+>>> c: Cache = FilesystemCache()
+>>> c.set('firstname', 'Mark')
+>>> c.is_valid('firstname')
+>>> c.is_valid('lastname')
+>>> c.get('firstname')
 
-Use Cases
----------
+
+Use Cases - Cache
+-----------------
 >>> class Cache:
 ...     def get(self, key: str) -> str: raise NotImplementedError
 ...     def set(self, key: str, value: str) -> None: raise NotImplementedError
@@ -115,16 +154,42 @@ Use Cases
 >>> fs.set('name', 'Mark Watney')
 >>> fs.is_valid('name')
 >>> fs.get('name')
+
+
+Use Case - Settings
+-------------------
+>>> # myapp/cache.py
+>>> class CacheInterface:
+...     def set(self, key: str, value: str) -> None: ...
+...     def get(self, key: str) -> str: ...
+...     def is_valid(self, key: str) -> bool: ...
 >>>
->>> ram: Cache = CacheRAM()
->>> ram.set('name', 'Mark Watney')
->>> ram.is_valid('name')
->>> ram.get('name')
 >>>
->>> db: Cache = CacheDatabase()
->>> db.set('name', 'Mark Watney')
->>> db.is_valid('name')
->>> db.get('name')
+>>> class DatabaseCache(CacheInterface):
+...      pass
+>>>
+>>> class InMemoryCache(CacheInterface):
+...      pass
+>>>
+>>> class FilesystemCache(CacheInterface):
+...      pass
+
+>>> # myapp/settings.py
+>>> from myapp.cache import CacheInterface  # doctest: +SKIP
+>>>
+>>> cache = DatabaseCache
+>>>
+>>>
+>>> assert isinstance(cache, CacheInterface)
+
+>>> # myapp/usage.py
+>>> from myapp.settings import cache  # doctest: +SKIP
+>>>
+>>> c: CacheInterface = cache()
+>>> c.set('firstname', 'Mark')
+>>> c.is_valid('firstname')
+>>> c.is_valid('lastname')
+>>> c.get('firstname')
 
 
 Assignments
