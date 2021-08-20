@@ -241,6 +241,7 @@ if html_theme == 'sphinx_rtd_theme':
                 '_static/js/jquery.min.js',
                 '_static/js/assignment-numbers.js',
                 '_static/js/menu-search.js',
+                '_static/js/menu-autonumber.js',
                 '_static/js/copybutton.js',
                 mathjax_path,
             ],
