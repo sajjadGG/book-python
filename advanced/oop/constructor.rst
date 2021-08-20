@@ -240,7 +240,7 @@ will be a condition boundary checking (for example for negative values):
 
 Use Case - Iris Factory
 -----------------------
->>> from dataclasses import dataclass
+>>> from dataclasses import dataclass, field
 >>>
 >>>
 >>> DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -257,7 +257,7 @@ Use Case - Iris Factory
 ...     sepal_width: float
 ...     petal_length: float
 ...     petal_width: float
-...     species: str
+...     species: str = field(repr=False)
 ...
 ...     def __new__(cls, *args, **kwargs):
 ...         *measurements, species = args
@@ -277,13 +277,13 @@ Use Case - Iris Factory
 >>>
 >>>
 >>> result = [Iris(*row) for row in DATA]
->>> result
-[Virginica(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9, species='virginica'),
- Setosa(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2, species='setosa'),
- Versicolor(sepal_length=5.7, sepal_width=2.8, petal_length=4.1, petal_width=1.3, species='versicolor'),
- Virginica(sepal_length=6.3, sepal_width=2.9, petal_length=5.6, petal_width=1.8, species='virginica'),
- Versicolor(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5, species='versicolor'),
- Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2, species='setosa')]
+>>> result  # doctest: +NORMALIZE_WHITESPACE
+[Virginica(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9),
+ Setosa(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2),
+ Versicolor(sepal_length=5.7, sepal_width=2.8, petal_length=4.1, petal_width=1.3),
+ Virginica(sepal_length=6.3, sepal_width=2.9, petal_length=5.6, petal_width=1.8),
+ Versicolor(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5),
+ Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2)]
 
 
 Use Case - Path
@@ -373,9 +373,9 @@ Use Case - Document Factory 2
 >>>
 >>>
 >>> Document('myfile.pdf')  # doctest: +ELLIPSIS
-<PDF at 0x...>
+<PDF object at  0x...>
 >>> Document('myfile.docx')  # doctest: +ELLIPSIS
-<DOCX at 0x...>
+<DOCX object at 0x...>
 
 
 Use Case - Document Factory 3
@@ -422,11 +422,11 @@ Use Case - Document Factory 3
 >>>
 >>>
 >>> Document('myfile.pdf')  # doctest: +ELLIPSIS
-<PDF at 0x...>
+<PDF object at 0x...>
 >>> Document('myfile.doc')  # doctest: +ELLIPSIS
-<DOCX at 0x...>
+<DOCX object at 0x...>
 >>> Document('myfile.docx')  # doctest: +ELLIPSIS
-<DOCX at 0x...>
+<DOCX object at 0x...>
 
 
 Use Case - Document Factory 4
@@ -473,11 +473,11 @@ Use Case - Document Factory 4
 >>>
 >>>
 >>> Document('myfile.pdf')  # doctest: +ELLIPSIS
-<PDF at 0x...>
+<PDF object at 0x...>
 >>> Document('myfile.doc')  # doctest: +ELLIPSIS
-<DOCX at 0x...>
+<DOCX object at 0x...>
 >>> Document('myfile.docx')  # doctest: +ELLIPSIS
-<DOCX at 0x...>
+<DOCX object at 0x...>
 
 
 Assignments
