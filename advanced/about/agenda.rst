@@ -1,8 +1,8 @@
 Agenda
 ======
-* Szkolenie 9:00 - 17:00
-* Przerwa obiadowa 13:00 - 13:45
-* 5-10 min przerwy co godzinę/półtora
+* Training course: 9:00 - 17:00
+* Lunch break: 12:15 - 13:00
+* 5-10 min break every one/one-and-half hour
 
 
 Day 1
@@ -14,11 +14,12 @@ Day 1
     "15m", "Welcome note, agenda, work organization"
     "60m", "Prepare work environment: github, git, python, doctest"
     "30m", "Entry test evaluating proficiency, skills and knowledge"
-    "45m", "Live coding solution i IDE demonstration, i.e. debugging, version control, refactoring, documentation i type annotations, function signatures"
-    "30m", "Generators: About and builtin generator-like objects"
+    "45m", "Live coding solution and IDE demonstration: debugging, version control, refactoring, documentation, type annotations and Python syntactic sugars"
+
+    "30m", "Generators: Builtin generator-like objects"
     "30m", "Generators: Generator expression"
     "45m", "Generators: Generator function"
-    "15m", "Generators: Inspect and introspection"
+    "15m", "Generators: Introspection"
     "15m", "Generators: Yield-from and Send"
     "15m", "Generators: Itertools module"
 
@@ -35,14 +36,14 @@ Day 2
     :header: "Estimated Time", "Topic"
 
     "15m", "Functional Programming: Mutable and immutable data structures"
-    "30m", "Functional Programming: Higher-order functions and referential-transparency"
-    "30m", "Functional Programming: Namespace and function-attributes"
+    "30m", "Functional Programming: Higher-order functions and referential transparency"
+    "30m", "Functional Programming: Namespace and function attributes"
     "45m", "Functional Programming: Callable and closures"
 
     "120m", "Decorators: Function decorators"
-    "90m", "Decorators: Class decorators"
     "75m", "Decorators: Method decorators"
-    "15m", "Decorators: Arguments, functools.wraps"
+    "90m", "Decorators: Class decorators"
+    "15m", "Decorators: Decorator arguments and functools.wraps"
 
 
 Day 3
@@ -51,7 +52,7 @@ Day 3
     :widths: 15, 85
     :header: "Estimated Time", "Topic"
 
-    "30m", "OOP Mutable and immutable data structures and arguments"
+    "30m", "OOP Mutable and immutable data structures in parameters"
     "45m", "OOP Static and dynamic attributes"
     "45m", "OOP Access modifiers for methods and attributes"
     "45m", "OOP: Inheritance, Mixin, Composition"
@@ -68,9 +69,9 @@ Day 4
     :header: "Estimated Time", "Topic"
 
     "45m", "OOP: Staticmethod and classmethod"
-    "30m", "OOP: Object identity and comparison"
-    "45m", "OOP: Class constructor __new__ vs __init__"
+    "30m", "OOP: Object identity and equality"
     "30m", "OOP: Slots"
+    "45m", "OOP: Class constructor __new__ vs __init__"
     "60m", "OOP: Metaclass"
 
     "30m", "Protocol: Iterator"
@@ -91,9 +92,9 @@ Day 5
     "15m", "Performance: Alternative compilers, interpreters and modules"
     "15m", "Performance: C Types and C Modules"
 
-    "30m", "Concurrency Models"
-    "30m", "Multiprocessing"
-    "45m", "Threading and Queues"
-    "60m", "Async Programming"
+    "30m", "Concurrency: Concurrency models and their specificity"
+    "30m", "Concurrency: Multiprocessing"
+    "45m", "Concurrency: Threading and queues"
+    "60m", "Concurrency: Asynchronous programming"
 
     "180m", "Dragon"
