@@ -373,7 +373,7 @@ Use Case - Document Factory 2
 >>>
 >>>
 >>> Document('myfile.pdf')  # doctest: +ELLIPSIS
-<PDF object at  0x...>
+<PDF object at 0x...>
 >>> Document('myfile.docx')  # doctest: +ELLIPSIS
 <DOCX object at 0x...>
 
