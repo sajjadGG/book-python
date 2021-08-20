@@ -160,164 +160,154 @@ Do not trigger methods for user
 
 Let user to call method:
 
-.. code-block:: python
-
-    class Server:
-        def __init__(self, host, username, password=None):
-            self.host = host
-            self.username = username
-            self.password = password
-            self.connect()    # Better ask user to ``connect()`` explicitly
-
-        def connect(self):
-            print(f'Logging to {self.host} using: {self.username}:{self.password}')
-
-
-    connection = Server(
-        host='example.com',
-        username='myusername',
-        password='mypassword')
+>>> class Server:
+...     def __init__(self, host, username, password=None):
+...         self.host = host
+...         self.username = username
+...         self.password = password
+...         self.connect()    # Better ask user to ``connect()`` explicitly
+...
+...     def connect(self):
+...         print(f'Logging to {self.host} using: {self.username}:{self.password}')
+>>>
+>>>
+>>> connection = Server(
+...     host='example.com',
+...     username='admin',
+...     password='myVoiceIsMyPassword')
+Logging to example.com using: admin:myVoiceIsMyPassword
 
 Let user to call method:
 
-.. code-block:: python
-
-    class Server:
-        def __init__(self, host, username, password=None):
-            self.host = host
-            self.username = username
-            self.password = password
-
-        def connect(self):
-            print(f'Logging to {self.host} using: {self.username}:{self.password}')
-
-
-    connection = Server(
-        host='example.com',
-        username='myusername',
-        password='mypassword')
-
-    connection.connect()
+>>> class Server:
+...     def __init__(self, host, username, password=None):
+...         self.host = host
+...         self.username = username
+...         self.password = password
+...
+...     def connect(self):
+...         print(f'Logging to {self.host} using: {self.username}:{self.password}')
+>>>
+>>>
+>>> connection = Server(
+...     host='example.com',
+...     username='admin',
+...     password='myVoiceIsMyPassword')
+>>>
+>>> connection.connect()
+Logging to example.com using: admin:myVoiceIsMyPassword
 
 However it is better to use ``self.set_position(position_x, position_y)``
 than to set those values one by one and duplicate code. Imagine if there
 will be a condition boundary checking (for example for negative values):
 
-.. code-block:: python
+>>> class PositionBad:
+...     def __init__(self, position_x=0, position_y=0):
+...         self.position_x = position_x
+...         self.position_y = position_y
+...
+...     def set_position(self, x, y):
+...         self.position_x = x
+...         self.position_y = y
+>>>
+>>>
+>>> class PositionGood:
+...     def __init__(self, position_x=0, position_y=0):
+...         self.set_position(position_x, position_y)
+...
+...     def set_position(self, x, y):
+...         self.position_x = x
+...         self.position_y = y
 
-    class PositionBad:
-        def __init__(self, position_x=0, position_y=0):
-            self.position_x = position_x
-            self.position_y = position_y
-
-        def set_position(self, x, y):
-            self.position_x = x
-            self.position_y = y
-
-
-    class PositionGood:
-        def __init__(self, position_x=0, position_y=0):
-            self.set_position(position_x, position_y)
-
-        def set_position(self, x, y):
-            self.position_x = x
-            self.position_y = y
-
-.. code-block:: python
-
-    class PositionBad:
-        def __init__(self, position_x=0, position_y=0):
-            self.position_x = min(1024, max(0, position_x))
-            self.position_y = min(1024, max(0, position_y))
-
-        def set_position(self, x, y):
-            self.position_x = min(1024, max(0, x))
-            self.position_y = min(1024, max(0, y))
-
-
-    class PositionGood:
-        def __init__(self, position_x=0, position_y=0):
-            self.set_position(position_x, position_y)
-
-        def set_position(self, x, y):
-            self.position_x = min(1024, max(0, x))
-            self.position_y = min(1024, max(0, y))
+>>> class PositionBad:
+...     def __init__(self, position_x=0, position_y=0):
+...         self.position_x = min(1024, max(0, position_x))
+...         self.position_y = min(1024, max(0, position_y))
+...
+...     def set_position(self, x, y):
+...         self.position_x = min(1024, max(0, x))
+...         self.position_y = min(1024, max(0, y))
+>>>
+>>>
+>>> class PositionGood:
+...     def __init__(self, position_x=0, position_y=0):
+...         self.set_position(position_x, position_y)
+...
+...     def set_position(self, x, y):
+...         self.position_x = min(1024, max(0, x))
+...         self.position_y = min(1024, max(0, y))
 
 
 Use Case - Iris Factory
 -----------------------
-.. code-block:: python
-
-    from dataclasses import dataclass
-
-
-    DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
-            (5.1, 3.5, 1.4, 0.2, 'setosa'),
-            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-            (6.3, 2.9, 5.6, 1.8, 'virginica'),
-            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-            (4.7, 3.2, 1.3, 0.2, 'setosa')]
-
-
-    @dataclass(repr=False)
-    class Iris:
-        sepal_length: float
-        sepal_width: float
-        petal_length: float
-        petal_width: float
-
-        def __new__(cls, *args, **kwargs):
-            *measurements, species = args
-            clsname = species.capitalize()
-            cls = globals()[clsname]
-            return super().__new__(cls)
-
-        def __repr__(self):
-            cls = self.__class__.__name__
-            args = tuple(vars(self).values())
-            return f'\n{cls}{args}'
-
-
-    class Setosa(Iris):
-        pass
-
-    class Virginica(Iris):
-        pass
-
-    class Versicolor(Iris):
-        pass
-
-
-    result = [Iris(*row) for row in DATA]
-    result
-    # [Virginica(5.8, 2.7, 5.1, 1.9),
-    #  Setosa(5.1, 3.5, 1.4, 0.2),
-    #  Versicolor(5.7, 2.8, 4.1, 1.3),
-    #  Virginica(6.3, 2.9, 5.6, 1.8),
-    #  Versicolor(6.4, 3.2, 4.5, 1.5),
-    #  Setosa(4.7, 3.2, 1.3, 0.2)]
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
+...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...         (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>>
+>>>
+>>> @dataclass(repr=False)
+... class Iris:
+...     sepal_length: float
+...     sepal_width: float
+...     petal_length: float
+...     petal_width: float
+...
+...     def __new__(cls, *args, **kwargs):
+...         *measurements, species = args
+...         clsname = species.capitalize()
+...         cls = globals()[clsname]
+...         return super().__new__(cls)
+...
+...     def __repr__(self):
+...         cls = self.__class__.__name__
+...         args = tuple(vars(self).values())
+...         return f'\n{cls}{args}'
+>>>
+>>>
+>>> class Setosa(Iris):
+...     pass
+>>>
+>>> class Virginica(Iris):
+...     pass
+>>>
+>>> class Versicolor(Iris):
+...     pass
+>>>
+>>>
+>>> result = [Iris(*row) for row in DATA]
+>>> result
+[Virginica(5.8, 2.7, 5.1, 1.9),
+ Setosa(5.1, 3.5, 1.4, 0.2),
+ Versicolor(5.7, 2.8, 4.1, 1.3),
+ Virginica(6.3, 2.9, 5.6, 1.8),
+ Versicolor(6.4, 3.2, 4.5, 1.5),
+ Setosa(4.7, 3.2, 1.3, 0.2)]
 
 
 Use Case - Path
 ---------------
 Note, that this unfortunately does not work this way. ``Path()`` always returns ``PosixPath``:
 
-.. code-block:: python
-
-    from pathlib import Path
-
-
-    Path('/etc/passwd')
-    # PosixPath('/etc/passwd')
-
-    Path('c:\\Users\\Admin\\myfile.txt')
-    # WindowsPath('c:\\Users\\Admin\\myfile.txt')
-
-    Path(r'C:\Users\Admin\myfile.txt')
-    # WindowsPath('C:\\Users\\Admin\\myfile.txt')
-
-    Path(r'C:/Users/Admin/myfile.txt')
-    # WindowsPath('C:/Users/Admin/myfile.txt')
+>>> from pathlib import Path
+>>>
+>>>
+>>> Path('/etc/passwd')
+PosixPath('/etc/passwd')
+>>>
+>>> Path('c:\\Users\\Admin\\myfile.txt')  # doctest: +SKIP
+WindowsPath('c:\\Users\\Admin\\myfile.txt')
+>>>
+>>> Path(r'C:\Users\Admin\myfile.txt')  # doctest: +SKIP
+WindowsPath('C:\\Users\\Admin\\myfile.txt')
+>>>
+>>> Path(r'C:/Users/Admin/myfile.txt')  # doctest: +SKIP
+WindowsPath('C:/Users/Admin/myfile.txt')
 
 
 Use Case - Document Factory 1
@@ -325,182 +315,174 @@ Use Case - Document Factory 1
 * Factory method
 * Could be used to implement Singleton
 
-.. code-block:: python
-
-    class PDF:
-        pass
-
-    class Docx:
-        pass
-
-    class Document:
-        def __new__(cls, *args, **kwargs):
-            filename, extension = args[0].split('.')
-
-            if extension == 'pdf':
-                return PDF()
-            elif extension == 'docx':
-                return Docx()
-
-
-    file1 = Document('myfile.pdf')
-    file2 = Document('myfile.docx')
-
-    print(file1)
-    # <__main__.PDF object at 0x10f89afa0>
-
-    print(file2)
-    # <__main__.Docx object at 0x10f6fe9a0>
+>>> class PDF:
+...     pass
+>>>
+>>> class Docx:
+...     pass
+>>>
+>>> class Document:
+...     def __new__(cls, *args, **kwargs):
+...         filename, extension = args[0].split('.')
+...
+...         if extension == 'pdf':
+...             return PDF()
+...         elif extension == 'docx':
+...             return Docx()
+>>>
+>>>
+>>> file1 = Document('myfile.pdf')
+>>> file2 = Document('myfile.docx')
+>>>
+>>> print(file1)  # doctest: +ELLIPSIS
+<__main__.PDF object at 0x...>
+>>>
+>>> print(file2)  # doctest: +ELLIPSIS
+<__main__.Docx object at 0x...>
 
 
 Use Case - Document Factory 2
 -----------------------------
-.. code-block:: python
-
-    from abc import ABC, abstractmethod
-
-
-    class Filetype(ABC):
-        @abstractmethod
-        def display(self):
-            raise NotImplementedError
-
-        def __init__(self, filename):
-            self.filename = filename
-
-
-    class PDF(Filetype):
-        def display(self):
-            pass
-
-
-    class DOCX(Filetype):
-        def display(self):
-            pass
-
-
-    class Document:
-        def __new__(cls, filename):
-            filetypes = Filetype.__subclasses__()
-            _, extension = filename.split('.')
-
-            for typ in filetypes:
-                if typ.__name__ == extension.upper():
-                    return typ(filename)
-            else:
-                raise NotImplementedError('Filetype is not recognized')
-
-
-    Document('myfile.pdf')
-    # <__main__.PDF at 0x107a5a1f0>
-    Document('myfile.docx')
-    # <__main__.DOCX at 0x107a5a580>
+>>> from abc import ABC, abstractmethod
+>>>
+>>>
+>>> class Filetype(ABC):
+...     @abstractmethod
+...     def display(self):
+...         raise NotImplementedError
+...
+...     def __init__(self, filename):
+...         self.filename = filename
+>>>
+>>>
+>>> class PDF(Filetype):
+...     def display(self):
+...         pass
+>>>
+>>>
+>>> class DOCX(Filetype):
+...     def display(self):
+...         pass
+>>>
+>>>
+>>> class Document:
+...     def __new__(cls, filename):
+...         filetypes = Filetype.__subclasses__()
+...         _, extension = filename.split('.')
+...
+...         for typ in filetypes:
+...             if typ.__name__ == extension.upper():
+...                 return typ(filename)
+...         else:
+...             raise NotImplementedError('Filetype is not recognized')
+>>>
+>>>
+>>> Document('myfile.pdf')  # doctest: +ELLIPSIS
+<__main__.PDF at 0x...>
+>>> Document('myfile.docx')  # doctest: +ELLIPSIS
+<__main__.DOCX at 0x...>
 
 
 Use Case - Document Factory 3
 -----------------------------
-.. code-block:: python
-
-    from abc import ABC, abstractmethod, abstractproperty
-
-
-    class Filetype(ABC):
-        @abstractproperty
-        def EXTENSIONS(self) -> str: ...
-
-        @abstractmethod
-        def display(self):
-            raise NotImplementedError
-
-        def __init__(self, filename):
-            self.filename = filename
-
-
-    class PDF(Filetype):
-        EXTENSIONS = ['pdf']
-
-        def display(self):
-            pass
-
-
-    class DOCX(Filetype):
-        EXTENSIONS = ['docx', 'doc']
-
-        def display(self):
-            pass
-
-
-    class Document:
-        def __new__(cls, filename):
-            filetypes = Filetype.__subclasses__()
-            _, extension = filename.split('.')
-
-            for typ in filetypes:
-                if extension in typ.EXTENSIONS:
-                    return typ(filename)
-            else:
-                raise NotImplementedError('Filetype is not recognized')
-
-
-    Document('myfile.pdf')
-    # <__main__.PDF at 0x107a509a0>
-    Document('myfile.doc')
-    # <__main__.DOCX at 0x107a507c0>
-    Document('myfile.docx')
-    # <__main__.DOCX at 0x107a50880>
+>>> from abc import ABC, abstractmethod, abstractproperty
+>>>
+>>>
+>>> class Filetype(ABC):
+...     @abstractproperty
+...     def EXTENSIONS(self) -> str: ...
+...
+...     @abstractmethod
+...     def display(self):
+...         raise NotImplementedError
+...
+...     def __init__(self, filename):
+...         self.filename = filename
+>>>
+>>>
+>>> class PDF(Filetype):
+...     EXTENSIONS = ['pdf']
+...
+...     def display(self):
+...         pass
+>>>
+>>>
+>>> class DOCX(Filetype):
+...     EXTENSIONS = ['docx', 'doc']
+...
+...     def display(self):
+...         pass
+>>>
+>>>
+>>> class Document:
+...     def __new__(cls, filename):
+...         filetypes = Filetype.__subclasses__()
+...         _, extension = filename.split('.')
+...
+...         for typ in filetypes:
+...             if extension in typ.EXTENSIONS:
+...                 return typ(filename)
+...         else:
+...             raise NotImplementedError('Filetype is not recognized')
+>>>
+>>>
+>>> Document('myfile.pdf')  # doctest: +ELLIPSIS
+<__main__.PDF at 0x...>
+>>> Document('myfile.doc')  # doctest: +ELLIPSIS
+<__main__.DOCX at 0x...>
+>>> Document('myfile.docx')  # doctest: +ELLIPSIS
+<__main__.DOCX at 0x...>
 
 
 Use Case - Document Factory 4
 -----------------------------
-.. code-block:: python
-
-    from abc import ABC, abstractmethod, abstractproperty
-
-
-    class Document(ABC):
-        @abstractproperty
-        def EXTENSIONS(self) -> list[str]: ...
-
-        def __new__(cls, filename):
-            filetypes = cls.__subclasses__()
-            _, extension = filename.split('.')
-
-            for typ in filetypes:
-                if extension in typ.EXTENSIONS:
-                    instance = object.__new__(typ)
-                    instance.__init__(filename)
-                    return instance
-            else:
-                raise NotImplementedError('Filetype is not recognized')
-
-        def __init__(self, filename):
-            self.filename = filename
-
-        @abstractmethod
-        def display(self):
-            raise NotImplementedError
-
-
-    class PDF(Document):
-        EXTENSIONS = ['pdf']
-
-        def display(self):
-            pass
-
-
-    class DOCX(Document):
-        EXTENSIONS = ['docx', 'doc']
-
-        def display(self):
-            pass
-
-
-    Document('myfile.pdf')
-    # <__main__.PDF at 0x107a4f9a0>
-    Document('myfile.doc')
-    # <__main__.DOCX at 0x107a4f5e0>
-    Document('myfile.docx')
-    # <__main__.DOCX at 0x107a4f250>
+>>> from abc import ABC, abstractmethod, abstractproperty
+>>>
+>>>
+>>> class Document(ABC):
+...     @abstractproperty
+...     def EXTENSIONS(self) -> list[str]: ...
+...
+...     def __new__(cls, filename):
+...         filetypes = cls.__subclasses__()
+...         _, extension = filename.split('.')
+...
+...         for typ in filetypes:
+...             if extension in typ.EXTENSIONS:
+...                 instance = object.__new__(typ)
+...                 instance.__init__(filename)
+...                 return instance
+...         else:
+...             raise NotImplementedError('Filetype is not recognized')
+...
+...     def __init__(self, filename):
+...         self.filename = filename
+...
+...     @abstractmethod
+...     def display(self):
+...         raise NotImplementedError
+>>>
+>>>
+>>> class PDF(Document):
+...     EXTENSIONS = ['pdf']
+...
+...     def display(self):
+...         pass
+>>>
+>>>
+>>> class DOCX(Document):
+...     EXTENSIONS = ['docx', 'doc']
+...
+...     def display(self):
+...         pass
+>>>
+>>>
+>>> Document('myfile.pdf')  # doctest: +ELLIPSIS
+<__main__.PDF at 0x...>
+>>> Document('myfile.doc')  # doctest: +ELLIPSIS
+<__main__.DOCX at 0x...>
+>>> Document('myfile.docx')  # doctest: +ELLIPSIS
+<__main__.DOCX at 0x...>
 
 
 Assignments
