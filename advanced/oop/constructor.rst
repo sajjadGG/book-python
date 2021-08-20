@@ -251,23 +251,19 @@ Use Case - Iris Factory
 ...         (4.7, 3.2, 1.3, 0.2, 'setosa')]
 >>>
 >>>
->>> @dataclass(repr=False)
+>>> @dataclass
 ... class Iris:
 ...     sepal_length: float
 ...     sepal_width: float
 ...     petal_length: float
 ...     petal_width: float
+...     species: str
 ...
 ...     def __new__(cls, *args, **kwargs):
 ...         *measurements, species = args
 ...         clsname = species.capitalize()
 ...         cls = globals()[clsname]
 ...         return super().__new__(cls)
-...
-...     def __repr__(self):
-...         cls = self.__class__.__name__
-...         args = tuple(vars(self).values())
-...         return f'\n{cls}{args}'
 >>>
 >>>
 >>> class Setosa(Iris):
@@ -282,12 +278,12 @@ Use Case - Iris Factory
 >>>
 >>> result = [Iris(*row) for row in DATA]
 >>> result
-[Virginica(5.8, 2.7, 5.1, 1.9),
- Setosa(5.1, 3.5, 1.4, 0.2),
- Versicolor(5.7, 2.8, 4.1, 1.3),
- Virginica(6.3, 2.9, 5.6, 1.8),
- Versicolor(6.4, 3.2, 4.5, 1.5),
- Setosa(4.7, 3.2, 1.3, 0.2)]
+[Virginica(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9, species='virginica'),
+ Setosa(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2, species='setosa'),
+ Versicolor(sepal_length=5.7, sepal_width=2.8, petal_length=4.1, petal_width=1.3, species='versicolor'),
+ Virginica(sepal_length=6.3, sepal_width=2.9, petal_length=5.6, petal_width=1.8, species='virginica'),
+ Versicolor(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5, species='versicolor'),
+ Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2, species='setosa')]
 
 
 Use Case - Path
@@ -324,7 +320,6 @@ Use Case - Document Factory 1
 >>> class Document:
 ...     def __new__(cls, *args, **kwargs):
 ...         filename, extension = args[0].split('.')
-...
 ...         if extension == 'pdf':
 ...             return PDF()
 ...         elif extension == 'docx':
@@ -335,10 +330,10 @@ Use Case - Document Factory 1
 >>> file2 = Document('myfile.docx')
 >>>
 >>> print(file1)  # doctest: +ELLIPSIS
-<__main__.PDF object at 0x...>
+<PDF object at 0x...>
 >>>
 >>> print(file2)  # doctest: +ELLIPSIS
-<__main__.Docx object at 0x...>
+<Docx object at 0x...>
 
 
 Use Case - Document Factory 2
@@ -378,9 +373,9 @@ Use Case - Document Factory 2
 >>>
 >>>
 >>> Document('myfile.pdf')  # doctest: +ELLIPSIS
-<__main__.PDF at 0x...>
+<PDF at 0x...>
 >>> Document('myfile.docx')  # doctest: +ELLIPSIS
-<__main__.DOCX at 0x...>
+<DOCX at 0x...>
 
 
 Use Case - Document Factory 3
@@ -427,11 +422,11 @@ Use Case - Document Factory 3
 >>>
 >>>
 >>> Document('myfile.pdf')  # doctest: +ELLIPSIS
-<__main__.PDF at 0x...>
+<PDF at 0x...>
 >>> Document('myfile.doc')  # doctest: +ELLIPSIS
-<__main__.DOCX at 0x...>
+<DOCX at 0x...>
 >>> Document('myfile.docx')  # doctest: +ELLIPSIS
-<__main__.DOCX at 0x...>
+<DOCX at 0x...>
 
 
 Use Case - Document Factory 4
@@ -478,11 +473,11 @@ Use Case - Document Factory 4
 >>>
 >>>
 >>> Document('myfile.pdf')  # doctest: +ELLIPSIS
-<__main__.PDF at 0x...>
+<PDF at 0x...>
 >>> Document('myfile.doc')  # doctest: +ELLIPSIS
-<__main__.DOCX at 0x...>
+<DOCX at 0x...>
 >>> Document('myfile.docx')  # doctest: +ELLIPSIS
-<__main__.DOCX at 0x...>
+<DOCX at 0x...>
 
 
 Assignments
