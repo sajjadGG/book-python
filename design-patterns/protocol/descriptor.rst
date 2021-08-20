@@ -330,12 +330,68 @@ Setter: z -> 3
 Setattr: notexisting -> 1337
 
 
-Use Case - Timezone Converter Descriptor
-----------------------------------------
+Inheritance
+-----------
+.. code-block:: python
+
+    from typing import Union
+
+
+    class Validator:
+        attribute_name: str
+
+        def __set_name__(self, parent, attribute_name):
+            self.attribute_name = f'_{attribute_name}'
+
+        def __get__(self, parent, parent_type):
+            return getattr(parent, self.attribute_name)
+
+        def __delete__(self, parent):
+            setattr(parent, self.attribute_name, None)
+
+
+    class RangeValidator(Validator):
+        min: Union[int, float]
+        max: Union[int, float]
+
+        def __init__(self, min: float, max: float):
+            self.min = min
+            self.max = max
+
+        def __set__(self, parent, newvalue):
+            if self.min <= newvalue < self.max:
+                setattr(parent, self.attribute_name, newvalue)
+            else:
+                attr = f'{parent.__class__.__name__}.{self.attribute_name.removeprefix("_")}'
+                min = self.min
+                max = self.max
+                raise ValueError(f'{attr} value: {newvalue} is out of range {min=}, {max=}')
+
+
+    class Astronaut:
+        firstname: str
+        lastname: str
+        age: int = RangeValidator(min=27, max=50)
+        height: float = RangeValidator(min=150, max=200)
+        weight: float = RangeValidator(min=50, max=90)
+        _firstname: str
+        _lastname: str
+        _age: int
+        _height: float
+        _weight: float
+
+
+    astro = Astronaut()
+
+
+Use Case - Timezone Converter Descriptor (pytz)
+-----------------------------------------------
 .. figure:: img/protocol-descriptor-timezone.png
 
     Comparing datetime works only when all has the same timezone (UTC).
     More information in `Stdlib Datetime Timezone`
+
+Descriptor Timezone Converter:
 
 >>> from dataclasses import dataclass
 >>> from datetime import datetime
@@ -359,8 +415,8 @@ Use Case - Timezone Converter Descriptor
 ...     utc = datetime.now(tz=timezone('UTC'))
 ...     warsaw = Timezone('Europe/Warsaw')
 ...     moscow = Timezone('Europe/Moscow')
-...     est = Timezone('America/New_York')
-...     pdt = Timezone('America/Los_Angeles')
+...     eastern = Timezone('America/New_York')
+...     pacific = Timezone('America/Los_Angeles')
 >>>
 >>>
 >>> t = Time()
@@ -373,9 +429,9 @@ Use Case - Timezone Converter Descriptor
 1961-04-12 07:06:59+01:00
 >>> print(t.moscow)
 1961-04-12 09:06:59+03:00
->>> print(t.est)
+>>> print(t.eastern)
 1961-04-12 01:06:59-05:00
->>> print(t.pdt)
+>>> print(t.pacific)
 1961-04-11 22:06:59-08:00
 >>>
 >>> # First man set foot on a Moon
@@ -386,10 +442,73 @@ Use Case - Timezone Converter Descriptor
 1969-07-21 03:56:15+01:00
 >>> print(t.moscow)
 1969-07-21 05:56:15+03:00
->>> print(t.est)
+>>> print(t.eastern)
 1969-07-20 22:56:15-04:00
->>> print(t.pdt)
+>>> print(t.pacific)
 1969-07-20 19:56:15-07:00
+
+
+Use Case - Timezone Converter Descriptor (zoneinfo)
+---------------------------------------------------
+.. figure:: img/protocol-descriptor-timezone.png
+
+    Comparing datetime works only when all has the same timezone (UTC).
+    More information in `Stdlib Datetime Timezone`
+
+>>> from dataclasses import dataclass
+>>> from datetime import datetime
+>>> from zoneinfo import ZoneInfo
+>>>
+>>>
+>>> class Timezone:
+...     def __init__(self, name):
+...         self.timezone = ZoneInfo(name)
+...
+...     def __get__(self, parent, *args):
+...         return parent.utc.astimezone(self.timezone)
+...
+...     def __set__(self, parent, new_datetime):
+...         local_time = new_datetime.replace(tzinfo=self.timezone)
+...         parent.utc = local_time.astimezone(ZoneInfo('UTC'))
+>>>
+>>>
+>>> @dataclass
+... class Time:
+...     utc = datetime.now(tz=ZoneInfo('UTC'))
+...     warsaw = Timezone('Europe/Warsaw')
+...     moscow = Timezone('Europe/Moscow')
+...     eastern = Timezone('America/New_York')
+...     pacific = Timezone('America/Los_Angeles')
+>>>
+>>>
+>>> t = Time()
+>>>
+>>>pacificeasternt.utc = datetime(1961, 4, 12, 6, 7)  # Gagarin's launch to space
+>>> print(t.utc)
+1961-04-12 06:07:00
+>>> print(t.moscow)
+1961-04-12 09:07:00+03:00
+>>> print(t.warsaw)
+1961-04-12 07:07:00+01:00
+>>> print(t.eastern)
+1961-04-12 01:07:00-05:00
+>>> print(t.pacific)
+1961-04-11 22:07:00-08:00
+>>>
+>>>
+>>> t.warsaw = datetime(1969, 7, 21, 3, 56, 15)  # Armstrong's first Lunar step
+>>> print(t.utc)
+1969-07-21 02:56:15+00:00
+>>> print(t.warsaw)
+1969-07-21 03:56:15+01:00
+>>> print(t.moscow)
+1969-07-21 05:56:15+03:00
+>>> print(t.eastern)
+1969-07-20 22:56:15-04:00
+>>> print(t.pacific)
+1969-07-20 19:56:15-07:00
+
+.. todo:: Check if those times are correct
 
 
 Function Descriptor

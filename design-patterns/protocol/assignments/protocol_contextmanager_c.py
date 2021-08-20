@@ -1,24 +1,22 @@
 """
 * Assignment: Protocol Context Manager AutoSave
 * Complexity: hard
-* Lines of code: 28 lines
-* Time: 21 min
+* Lines of code: 13 lines
+* Time: 13 min
 
 English:
-    1. Define class configuration attribute `AUTOSAVE_SECONDS: float = 1.0`
-    2. Save buffer content to file every `AUTOSAVE_SECONDS` seconds
-    3. Writing and reading takes time,
-       how to make buffer save data in the background,
-       but it could be still used?
-    4. Run doctests - all must succeed
+    1. Modify class `File`
+    2. Add class configuration attribute `AUTOSAVE_SECONDS: float = 1.0`
+    3. Save buffer content to file every `AUTOSAVE_SECONDS` seconds
+    4. Writing and reading takes time, how to make buffer save data in the background, but it could be still used?
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj klasowy atrybut konfiguracyjny `AUTOSAVE_SECONDS: float = 1.0`
-    2. Zapisuj zawartość bufora do pliku co `AUTOSAVE_SECONDS` sekund
-    3. Operacje zapisu i odczytu trwają, jak zrobić,
-       aby do bufora podczas zapisu na dysk,
-       nadal można było pisać?
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zmodyfikuj klasę `File`
+    2. Dodaj klasowy atrybut konfiguracyjny `AUTOSAVE_SECONDS: float = 1.0`
+    3. Zapisuj zawartość bufora do pliku co `AUTOSAVE_SECONDS` sekund
+    4. Operacje zapisu i odczytu trwają, jak zrobić, aby do bufora podczas zapisu na dysk, nadal można było pisać?
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:
     * `from threading import Timer`
@@ -56,6 +54,25 @@ Tests:
 """
 
 from threading import Timer
+
+
+class File:
+    filename: str
+    _content: list[str]
+
+    def __init__(self, filename):
+        self.filename = filename
+        self._content = list()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        with open(self.filename, mode='w') as file:
+            file.writelines(self._content)
+
+    def append(self, line):
+        self._content.append(line + '\n')
 
 
 # Solution

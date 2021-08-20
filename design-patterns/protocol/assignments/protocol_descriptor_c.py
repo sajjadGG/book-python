@@ -73,8 +73,8 @@ Tests:
 
 class GeographicCoordinate:
     def __str__(self):
-        return f'Latitude: {self.latitude}, ' + \
-               f'Longitude: {self.longitude}, ' + \
+        return f'Latitude: {self.latitude}, ' +\
+               f'Longitude: {self.longitude}, ' +\
                f'Elevation: {self.elevation}'
 
     def __repr__(self):

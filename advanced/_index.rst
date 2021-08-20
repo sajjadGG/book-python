@@ -80,32 +80,9 @@ Object Oriented Programming
     oop/interface.rst
     oop/abstract.rst
     oop/identity.rst
-    oop/constructor.rst
     oop/slots.rst
+    oop/constructor.rst
     oop/metaclass.rst
-
-
-Protocols
-*********
-.. toctree::
-    :maxdepth: 1
-    :caption: Protocols
-
-    protocol/about.rst
-    protocol/iterator.rst
-    protocol/context-manager.rst
-
-
-Accessors
-*********
-.. toctree::
-    :maxdepth: 1
-    :caption: Accessors
-
-    accessor/about.rst
-    accessor/property.rst
-    accessor/reflection.rst
-    accessor/descriptor.rst
 
 
 Performance

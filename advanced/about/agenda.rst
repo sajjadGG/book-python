@@ -68,18 +68,15 @@ Day 4
     :widths: 15, 85
     :header: "Estimated Time", "Topic"
 
-    "45m", "OOP: Staticmethod and classmethod"
-    "30m", "OOP: Object identity and equality"
-    "30m", "OOP: Slots"
-    "45m", "OOP: Class constructor __new__ vs __init__"
-    "60m", "OOP: Metaclass"
+    "60m", "OOP: Staticmethod and classmethod"
+    "60m", "OOP: Object identity and equality"
+    "45m", "OOP: Slots"
+    "60m", "OOP: Class constructor __new__ vs __init__"
+    "90m", "OOP: Metaclass"
 
-    "30m", "Protocol: Iterator"
-    "45m", "Protocol: Context Manager"
-
-    "45m", "Accessor: Property"
-    "45m", "Accessor: Reflection"
-    "45m", "Accessor: Descriptor"
+    "60m", "Performance: Optimization, Micro-benchmarking and Profiling"
+    "30m", "Performance: Alternative compilers, interpreters and modules"
+    "15m", "Performance: C Types and C Modules"
 
 
 Day 5
@@ -88,13 +85,9 @@ Day 5
     :widths: 15, 85
     :header: "Estimated Time", "Topic"
 
-    "45m", "Performance: Optimization, Micro-benchmarking and Profiling"
-    "15m", "Performance: Alternative compilers, interpreters and modules"
-    "15m", "Performance: C Types and C Modules"
-
-    "30m", "Concurrency: Concurrency models and their specificity"
-    "30m", "Concurrency: Multiprocessing"
-    "45m", "Concurrency: Threading and queues"
-    "60m", "Concurrency: Asynchronous programming"
+    "45m", "Concurrency: Concurrency models and their specificity"
+    "45m", "Concurrency: Multiprocessing"
+    "60m", "Concurrency: Threading and queues"
+    "90m", "Concurrency: Asynchronous programming"
 
     "180m", "Dragon"

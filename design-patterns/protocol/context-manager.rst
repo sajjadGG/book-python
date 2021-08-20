@@ -13,6 +13,7 @@ Rationale
 * Network sockets
 * Network streams
 * HTTP sessions
+* Since Python 3.10: Parenthesized context managers [#pydocpython310]_
 
 
 Protocol

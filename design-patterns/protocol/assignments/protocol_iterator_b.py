@@ -2,21 +2,23 @@
 * Assignment: Protocol Iterator Range
 * Complexity: medium
 * Lines of code: 14 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
-    1. Define class `Range` with parameters: `start`, `stop`, `step`
-    2. Write own implementation of a built-in `range(start, stop, step)` function
-    3. Assume, that user will never give only one argument; always it will be either two or three arguments
-    4. Use Iterator protocol
-    5. Run doctests - all must succeed
+    1. Modify class `Range` to write own implementation
+       of a built-in `range(start, stop, step)` function
+    2. Assume, that user will never give only one argument;
+       it will always be either two or three arguments
+    3. Use Iterator protocol
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj klasę `Range` z parametrami: `start`, `stop`, `step`
-    2. Zaimplementuj własne rozwiązanie wbudowanej funkcji `range(start, stop, step)`
-    3. Przyjmij, że użytkownik nigdy nie poda tylko jednego argumentu; zawsze będą to dwa lub trzy argumenty
-    4. Użyj protokołu Iterator
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zmodyfikuj klasę `Range` aby napisać własną implementację
+       wbudowanej funkcji `range(start, stop, step)`
+    2. Przyjmij, że użytkownik nigdy nie poda tylko jednego argumentu;
+       zawsze będą to dwa lub trzy argumenty
+    3. Użyj protokołu Iterator
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -49,17 +51,18 @@ class Range:
 # Solution
 @dataclass
 class Range:
-    start: int = 0
-    stop: int = None
+    start: int
+    stop: int
     step: int = 1
+    _current: int = 0
 
     def __iter__(self):
-        self.current = self.start
+        self._current = self.start
         return self
 
     def __next__(self):
-        if self.current >= self.stop:
+        if self._current >= self.stop:
             raise StopIteration
-        result = self.current
-        self.current += self.step
+        result = self._current
+        self._current += self.step
         return result

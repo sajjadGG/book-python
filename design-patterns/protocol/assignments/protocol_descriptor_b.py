@@ -13,7 +13,7 @@ English:
     2. Define class `Astronaut` with attributes:
         a. `age = ValueRange('Age', min=28, max=42)`
         b. `height = ValueRange('Height', min=150, max=200)`
-    3. Setting `Astronaut` attribute should invoke `ValueRange` check
+    3. Setting `Astronaut` attribute should invoke boundary check of `ValueRange`
     4. Run doctests - all must succeed
 
 Polish:
@@ -25,7 +25,7 @@ Polish:
     2. Zdefiniuj klasę `Astronaut` z atrybutami:
         a. `age = ValueRange('Age', min=28, max=42)`
         b. `height = ValueRange('Height', min=150, max=200)`
-    3. Ustawianie atrybutu `Astronaut` powinno sprawdzanie `ValueRange`
+    3. Ustawianie atrybutu `Astronaut` powinno wywołać sprawdzanie zakresu z `ValueRange`
     6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:

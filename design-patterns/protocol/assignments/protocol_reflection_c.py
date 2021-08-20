@@ -7,7 +7,7 @@
 English:
     1. Create class `Point` with `x`, `y`, `z` attributes
     2. Prevent creation of new attributes
-    3. Allow defining `x`, `y`, `z` but only at the initialization
+    3. Allow to define `x`, `y`, `z` but only at the initialization
     4. Prevent later modification of `x`, `y`, `z`
     5. Run doctests - all must succeed
 

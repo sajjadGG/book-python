@@ -7,7 +7,7 @@
 English:
     1. Create class `Point` with `x`, `y`, `z` attributes
     2. Prevent creation of new attributes
-    3. Allow modifying values of `x`, `y`, `z`
+    3. Allow to modify values of `x`, `y`, `z`
     4. Run doctests - all must succeed
 
 Polish:
