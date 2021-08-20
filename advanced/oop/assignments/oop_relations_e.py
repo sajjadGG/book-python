@@ -5,28 +5,82 @@
 * Time: 13 min
 
 English:
-    1. Convert `DATA` to format with one column per each attrbute
-       for example: `street1`, `street2`, `city1`, `city2`, etc.
-    2. Run doctests - all must succeed
+    1. Convert `DATA` to format with one column per each attrbute for example:
+       a. `address1_street`, `address2_street`,
+       b. `address1_city`, `address2_city`
+       c. `address1_city`, `address2_city`
+    2. Note, that enumeration starts with one
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Przekonweruj `DATA` do formatu z jedną kolumną dla każdego atrybutu,
-       np. `street1`, `street2`, `city1`, `city2`, itd.
-    2. Uruchom doctesty - wszystkie muszą się powieść
+    1. Przekonweruj `DATA` do formatu z jedną kolumną dla każdego atrybutu, np:
+       a. `address1_street`, `address2_street`,
+       b. `address1_city`, `address2_city`
+       c. `address1_city`, `address2_city`
+    2. Zwróć uwagę, że enumeracja zaczyna się od jeden
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'list'>
+    >>> assert type(result) is list
+    >>> assert len(result) > 0
+    >>> assert all(type(x) is dict for x in result)
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'firstname': 'Jan', 'lastname': 'Twardowski', 'street1': 'Kamienica Pod św. Janem Kapistranem', 'city1': 'Kraków', 'post_code1': '31-008', 'region1': 'Małopolskie', 'country1': 'Poland'},
-     {'firstname': 'José', 'lastname': 'Jiménez', 'street1': '2101 E NASA Pkwy', 'city1': 'Houston', 'post_code1': 77058, 'region1': 'Texas', 'country1': 'USA', 'street2': '', 'city2': 'Kennedy Space Center', 'post_code2': 32899, 'region2': 'Florida', 'country2': 'USA'},
-     {'firstname': 'Mark', 'lastname': 'Watney', 'street1': '4800 Oak Grove Dr', 'city1': 'Pasadena', 'post_code1': 91109, 'region1': 'California', 'country1': 'USA', 'street2': '2825 E Ave P', 'city2': 'Palmdale', 'post_code2': 93550, 'region2': 'California', 'country2': 'USA'},
-     {'firstname': 'Иван', 'lastname': 'Иванович', 'street1': '', 'city1': 'Космодро́м Байкону́р', 'post_code1': '', 'region1': 'Кызылординская область', 'country1': 'Қазақстан', 'street2': '', 'city2': 'Звёздный городо́к', 'post_code2': 141160, 'region2': 'Московская область', 'country2': 'Россия'},
-     {'firstname': 'Melissa', 'lastname': 'Lewis'},
-     {'firstname': 'Alex', 'lastname': 'Vogel', 'street1': 'Linder Hoehe', 'city1': 'Köln', 'post_code1': 51147, 'region1': 'North Rhine-Westphalia', 'country1': 'Germany'}]
+    [{'firstname': 'Jan',
+      'lastname': 'Twardowski',
+      'address1_street': 'Kamienica Pod św. Janem Kapistranem',
+      'address1_city': 'Kraków',
+      'address1_post_code': '31-008',
+      'address1_region': 'Małopolskie',
+      'address1_country': 'Poland'},
+     {'firstname': 'José',
+      'lastname': 'Jiménez',
+      'address1_street': '2101 E NASA Pkwy',
+      'address1_city': 'Houston',
+      'address1_post_code': 77058,
+      'address1_region': 'Texas',
+      'address1_country': 'USA',
+      'address2_street': '',
+      'address2_city': 'Kennedy Space Center',
+      'address2_post_code': 32899,
+      'address2_region': 'Florida',
+      'address2_country': 'USA'},
+     {'firstname': 'Mark',
+      'lastname': 'Watney',
+      'address1_street': '4800 Oak Grove Dr',
+      'address1_city': 'Pasadena',
+      'address1_post_code': 91109,
+      'address1_region': 'California',
+      'address1_country': 'USA', 'address2_street': '2825 E Ave P',
+      'address2_city': 'Palmdale',
+      'address2_post_code': 93550,
+      'address2_region': 'California',
+      'address2_country': 'USA'},
+     {'firstname': 'Иван',
+      'lastname': 'Иванович',
+      'address1_street': '',
+      'address1_city': 'Космодро́м Байкону́р',
+      'address1_post_code': '',
+      'address1_region': 'Кызылординская область',
+      'address1_country': 'Қазақстан',
+      'address2_street': '',
+      'address2_city': 'Звёздный городо́к',
+      'address2_post_code': 141160,
+      'address2_region': 'Московская область',
+      'address2_country': 'Россия'},
+     {'firstname': 'Melissa',
+      'lastname': 'Lewis'},
+     {'firstname': 'Alex',
+      'lastname': 'Vogel',
+      'address1_street': 'Linder Hoehe',
+      'address1_city': 'Köln',
+      'address1_post_code': 51147,
+      'address1_region': 'North Rhine-Westphalia',
+      'address1_country': 'Germany'}]
 """
+
 
 import json
 
@@ -52,26 +106,16 @@ DATA = """[
         {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
 ]"""
 
-result: list
+# list[dict]: flatten data, each address field prefixed with address and number
+result = ...
 
 
 # Solution
-result = []
+result: list = []
 
 for astronaut in json.loads(DATA):
     for i, address in enumerate(astronaut.pop('addresses'), start=1):
-        columns = [f'{key}{i}' for key in address.keys()]
-        addresses = zip(columns, address.values())
-        astronaut.update(dict(addresses))
+        for field,value in address.items():
+            column_name = f'address{i}_{field}'
+            astronaut[column_name] = value
     result.append(astronaut)
-
-
-# Note that
-# * dictionary merging `dict|dict` was introduced in Python 3.9
-# * assignment expressions `:=` was introduced in Python 3.8
-#
-# result = [astronaut | dict(addresses)
-#           for astronaut in json.loads(DATA)
-#           for i, address in enumerate(astronaut.pop('addresses'), start=1)
-#           if (columns := [f'{key}{i}' for key in address.keys()])
-#           and (addresses := zip(columns, address.values()))]
