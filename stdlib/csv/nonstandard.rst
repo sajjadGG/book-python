@@ -4,7 +4,7 @@ CSV Non-Standard
 
 SSHd Config
 -----------
-* /etc/ssh/sshd_config
+* ``/etc/ssh/sshd_config``
 
 .. code-block:: text
 
@@ -20,7 +20,7 @@ SSHd Config
 
 Config
 ------
-* postgresql.conf
+* ``/etc/postgresql/12/main/postgresql.conf``
 
 .. code-block:: text
 
@@ -34,12 +34,12 @@ Config
 
 Properties
 ----------
-Parsing Java properties file with ``csv.DictReader()``:
+* Java properties
 
 .. code-block:: text
 
     sonar.projectKey=MP
-    sonar.projectName=My Project
+    sonar.projectName=MyProject
     sonar.language=py
     sonar.sourceEncoding=UTF-8
     sonar.verbose=true
@@ -62,7 +62,7 @@ Parsing Java properties file with ``csv.DictReader()``:
             print(line)
 
     # {'property': 'sonar.projectKey', 'value': 'MP'}
-    # {'property': 'sonar.projectName', 'value': 'My Project'}
+    # {'property': 'sonar.projectName', 'value': 'MyProject'}
     # {'property': 'sonar.language', 'value': 'py'}
     # {'property': 'sonar.sourceEncoding', 'value': 'UTF-8'}
     # {'property': 'sonar.verbose', 'value': 'true'}
@@ -70,7 +70,7 @@ Parsing Java properties file with ``csv.DictReader()``:
 
 Passwd
 ------
-* /etc/passwd
+* ``/etc/passwd``
 
 .. code-block:: text
 
@@ -111,7 +111,7 @@ Hosts
     # `/etc/hosts` structure:
     #   - IPv4 or IPv6
     #   - Hostnames
-     ##
+    ##
 
     127.0.0.1       localhost
     127.0.0.1       astromatt
@@ -168,8 +168,8 @@ Sensors
 .. code-block:: text
 
     Name;Long;Lat;ModuleName;ModuleType
-    "European Astronaut Centre (EAC) - ESA";50.8522831,7.1312263;;Indoor
-    Timestamp;"Timezone : Europe/Warsaw";Temperature;Humidity;CO2;Noise;Pressure
+    "European Astronaut Centre (EAC) - ESA";50.8524881,7.1315254;;Indoor
+    Timestamp;"Timezone : Europe/Berlin";Temperature;Humidity;CO2;Noise;Pressure
     1622498702;"2021/06/01 00:05:02";22.6;46;981;32;1019.1
     1622499004;"2021/06/01 00:10:04";22.6;46;981;31;1019.1
     1622499306;"2021/06/01 00:15:06";22.6;46;968;32;1019.1
