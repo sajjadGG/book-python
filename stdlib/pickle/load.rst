@@ -18,8 +18,10 @@ Deserialize Int
 >>>
 >>> pickle.loads(b'\x80\x03K\x01.')
 1
+>>>
 >>> pickle.loads(b'\x80\x04K\x00.')
 0
+>>>
 >>> pickle.loads(b'\x80\x04\x95\x06\x00\x00\x00\x00\x00\x00\x00J\xff\xff\xff\xff.')
 -1
 
