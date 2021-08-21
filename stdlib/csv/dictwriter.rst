@@ -24,7 +24,7 @@ Conversion
 ...     pairs = zip(header, row)
 ...     result.append(dict(pairs))
 >>>
->>> result
+>>> result  # doctest: +NORMALIZE_WHITESPACE
 [{'SepalLength': 5.8, 'SepalWidth': 2.7, 'PetalLength': 5.1, 'PetalWidth': 1.9, 'Species': 'virginica'},
  {'SepalLength': 5.1, 'SepalWidth': 3.5, 'PetalLength': 1.4, 'PetalWidth': 0.2, 'Species': 'setosa'},
  {'SepalLength': 5.7, 'SepalWidth': 2.8, 'PetalLength': 4.1, 'PetalWidth': 1.3, 'Species': 'versicolor'}]

@@ -13,8 +13,8 @@ Rationale
 * Logs can be rotated
 * Logs can change format
 
->>> def run()
->>>     print('Program start')
+>>> def run():
+...     print('Program start')
 ...     for number in range(0,3):
 ...         print(f'Current number: {number}')
 ...     print('Program end')
@@ -31,8 +31,8 @@ Program end
 >>> import logging
 >>>
 >>>
->>> def run()
->>>     logging.warning('Program start')
+>>> def run():
+...     logging.warning('Program start')
 ...     for number in range(0,3):
 ...         logging.info(f'Current number: {number}')
 ...     logging.warning('Program end')
@@ -179,11 +179,11 @@ Default mode is ``%`` percent.
 ...     format='{asctime}, "{levelname}", "{message}"',
 ...     style='{')
 >>>
->>> log.critical('Error, cannot continue')
->>> log.error('Error, can continue')
->>> log.warning('Information, warn about something')
->>> log.info('Information, inform about something')
->>> log.debug('Debug, show detailed debugging information')
+>>> logging.critical('Error, cannot continue')
+>>> logging.error('Error, can continue')
+>>> logging.warning('Information, warn about something')
+>>> logging.info('Information, inform about something')
+>>> logging.debug('Debug, show detailed debugging information')
 
 >>> import logging
 >>>
@@ -192,11 +192,11 @@ Default mode is ``%`` percent.
 ...     format='$asctime, "$levelname", "$message"',
 ...     style='$')
 >>>
->>> log.critical('Error, cannot continue')
->>> log.error('Error, can continue')
->>> log.warning('Information, warn about something')
->>> log.info('Information, inform about something')
->>> log.debug('Debug, show detailed debugging information')
+>>> logging.critical('Error, cannot continue')
+>>> logging.error('Error, can continue')
+>>> logging.warning('Information, warn about something')
+>>> logging.info('Information, inform about something')
+>>> logging.debug('Debug, show detailed debugging information')
 
 
 Get Logger
@@ -233,8 +233,9 @@ Use Case - CSV log format
 ...     level='DEBUG',
 ...     datefmt='"%Y-%m-%d" "%H:%M:%S"',
 ...     format='{asctime}, "{levelname}", "{message}"',
-...     style='{'
+...     style='{',
 ...     filename='/tmp/myapp-log.csv')
+>>>
 >>> log = logging.getLogger(__name__)
 >>>
 >>> log.critical('Error, cannot continue')
@@ -252,7 +253,7 @@ Use Case - CSV log format
     logging.basicConfig(
         level=logging.DEBUG,
         format='"%(asctime).19s", "%(levelname)s", "%(message)s"',
-        filename="log.csv",
+        filename='log.csv',
     )
 
     logging.info('Loop start')
