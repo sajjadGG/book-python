@@ -2,87 +2,246 @@ Logging
 =======
 
 
+Rationale
+---------
+* Do not print
+* Always use logger
+* Logs can be displayed on console
+* Logs can be redirected to file
+* Logs can be redirected to database
+* Logs can be silenced (certain level)
+* Logs can be rotated
+* Logs can change format
+
+>>> def run()
+>>>     print('Program start')
+...     for number in range(0,3):
+...         print(f'Current number: {number}')
+...     print('Program end')
+>>>
+>>>
+>>> run()
+Program start
+Program start
+Current number: 0
+Current number: 1
+Current number: 2
+Program end
+
+>>> import logging
+>>>
+>>>
+>>> def run()
+>>>     logging.warning('Program start')
+...     for number in range(0,3):
+...         logging.info(f'Current number: {number}')
+...     logging.warning('Program end')
+>>>
+>>>
+>>> run()
+WARNING:root:Program start
+WARNING:root:Program end
+
+
 Logging levels
 --------------
-* Critical - Critical Error, and cannot continue
-* Error - Error, but can continue
+* Critical - Error, cannot continue
+* Error - Error, can continue
 * Warning - Warning, will do something important
 * Info - I will do something
 * Debug - This is how I am doing this
 
-.. code-block:: python
+Default level is ``WARNING``, so all the information with level below
+will not be displayed.
 
-    import logging
+>>> import logging
+>>>
+>>>
+>>> logging.critical('Error, cannot continue')
+>>> logging.error('Error, can continue')
+>>> logging.warning('Information, warn about something')
+>>> logging.info('Information, inform about something')
+>>> logging.debug('Debug, show detailed debugging information')
 
-    logging.critical('Permission Denied, cannot continue')
-    logging.error('File not found, will create a new one')
-    logging.warning('Warning, will overwrite the file')
-    logging.info('Writing to file')
-    logging.debug('Data {DATA} will be written to file {path}')
+In logging you can set minimum level required. Setting it to ``DEBUG``
+will show all the information above ``DEBUG`` level, which means everything.
+
+>>> import logging
+>>>
+>>>
+>>> logging.basicConfig(level='DEBUG')
+>>>
+>>> logging.critical('Error, cannot continue')
+>>> logging.error('Error, can continue')
+>>> logging.warning('Information, warn about something')
+>>> logging.info('Information, inform about something')
+>>> logging.debug('Debug, show detailed debugging information')
+
+Setting it to ``ERROR`` will display only error and critical information.
+
+>>> import logging
+>>>
+>>>
+>>> logging.basicConfig(level='ERROR')
+>>>
+>>> logging.critical('Error, cannot continue')
+>>> logging.error('Error, can continue')
+>>> logging.warning('Information, warn about something')
+>>> logging.info('Information, inform about something')
+>>> logging.debug('Debug, show detailed debugging information')
+
+You can also use ``logging.ERROR`` constant. Note, that similar constants
+exists for other levels too.
+
+>>> import logging
+>>>
+>>>
+>>> logging.basicConfig(level=logging.ERROR)
+>>>
+>>> logging.critical('Error, cannot continue')
+>>> logging.error('Error, can continue')
+>>> logging.warning('Information, warn about something')
+>>> logging.info('Information, inform about something')
+>>> logging.debug('Debug, show detailed debugging information')
 
 
-Use Case
---------
-.. code-block:: python
-
-    import logging
-
-
-    print('Program start')
-
-    for number in range(0,3):
-        print(f'Current number: {number}')
-
-    print('Program end')
-
-    # Program start
-    # Current number: 0
-    # Current number: 1
-    # Current number: 2
-    # Program end
-
-.. code-block:: python
-
-    import logging
+Redirect to File
+----------------
+>>> import logging
+>>>
+>>>
+>>> logging.basicConfig(filename='/tmp/myapp.log')
+>>>
+>>> logging.critical('Error, cannot continue')
+>>> logging.error('Error, can continue')
+>>> logging.warning('Information, warn about something')
+>>> logging.info('Information, inform about something')
+>>> logging.debug('Debug, show detailed debugging information')
 
 
-    logging.warning('Program start')
+Log Format
+----------
+>>> import logging
+>>>
+>>>
+>>> logging.basicConfig(format='%(asctime).19s %(levelname)s %(message)s')
+>>>
+>>> logging.critical('Error, cannot continue')
+>>> logging.error('Error, can continue')
+>>> logging.warning('Information, warn about something')
+>>> logging.info('Information, inform about something')
+>>> logging.debug('Debug, show detailed debugging information')
 
-    for number in range(0,3):
-        logging.debug(f'Current number: {number}')
 
-    logging.warning('Program end')
+Date Format
+-----------
+>>> import logging
+>>>
+>>>
+>>> logging.basicConfig(
+...     format='%(asctime)s %(levelname)s %(message)s',
+...     datefmt='"%Y-%m-%d" "%H:%M:%S"',)
+>>>
+>>> logging.critical('Error, cannot continue')
+>>> logging.error('Error, can continue')
+>>> logging.warning('Information, warn about something')
+>>> logging.info('Information, inform about something')
+>>> logging.debug('Debug, show detailed debugging information')
 
-    # WARNING:root:Program start
-    # WARNING:root:Program end
 
-Konfiguracja logowania
-----------------------
+Log Style
+---------
+Logs has three distinct styles:
 
-.. code-block:: python
+    * ``{`` - curly brackets; compare to f-string formatting
+    * ``%`` - percent sign; compare to formatting string with ``%``
+    * ``$`` - dollar sign; compare to template vars from other languages
 
-    import logging
+Default mode is ``%`` percent.
 
-    logging.basicConfig(level=logging.INFO)
-    log = logging.getLogger(__name__)
+>>> import logging
+>>>
+>>>
+>>> logging.basicConfig(
+...     format='%(asctime)s %(levelname)s %(message)s',
+...     style='%')
+>>>
+>>> logging.critical('Error, cannot continue')
+>>> logging.error('Error, can continue')
+>>> logging.warning('Information, warn about something')
+>>> logging.info('Information, inform about something')
+>>> logging.debug('Debug, show detailed debugging information')
 
-    log.warning('warning!')     # zostanie zapisana do pliku
-    log.debug('Debug message')  # nie zostanie zapisana, bo level jest INFO, czyli powyżej DEBUG
+>>> import logging
+>>>
+>>>
+>>> logging.basicConfig(
+...     format='{asctime}, "{levelname}", "{message}"',
+...     style='{')
+>>>
+>>> log.critical('Error, cannot continue')
+>>> log.error('Error, can continue')
+>>> log.warning('Information, warn about something')
+>>> log.info('Information, inform about something')
+>>> log.debug('Debug, show detailed debugging information')
 
-.. code-block:: python
+>>> import logging
+>>>
+>>>
+>>> logging.basicConfig(
+...     format='$asctime, "$levelname", "$message"',
+...     style='$')
+>>>
+>>> log.critical('Error, cannot continue')
+>>> log.error('Error, can continue')
+>>> log.warning('Information, warn about something')
+>>> log.info('Information, inform about something')
+>>> log.debug('Debug, show detailed debugging information')
 
-    import logging
 
-    logging.basicConfig(
-        level=logging.INFO,
-        filename='/tmp/logging.csv',
-        format='"%(asctime).19s", "%(levelname)s", "%(message)s"'
-    )
+Get Logger
+----------
+>>> import logging
+>>>
+>>>
+>>> log = logging.getLogger('myapp')
+>>>
+>>> log.critical('Error, cannot continue')
+>>> log.error('Error, can continue')
+>>> log.warning('Information, warn about something')
+>>> log.info('Information, inform about something')
+>>> log.debug('Debug, show detailed debugging information')
 
-    log = logging.getLogger(__name__)
+>>> import logging
+>>>
+>>>
+>>> log = logging.getLogger(__name__)
+>>>
+>>> log.critical('Error, cannot continue')
+>>> log.error('Error, can continue')
+>>> log.warning('Information, warn about something')
+>>> log.info('Information, inform about something')
+>>> log.debug('Debug, show detailed debugging information')
 
-    log.warning('warning!')     # zostanie zapisana do pliku
-    log.debug('Debug message')  # nie zostanie zapisana, bo level jest INFO, czyli powyżej DEBUG
+
+Use Case - CSV log format
+-------------------------
+>>> import logging
+>>>
+>>>
+>>> logging.basicConfig(
+...     level='DEBUG',
+...     datefmt='"%Y-%m-%d" "%H:%M:%S"',
+...     format='{asctime}, "{levelname}", "{message}"',
+...     style='{'
+...     filename='/tmp/myapp-log.csv')
+>>> log = logging.getLogger(__name__)
+>>>
+>>> log.critical('Error, cannot continue')
+>>> log.error('Error, can continue')
+>>> log.warning('Information, warn about something')
+>>> log.info('Information, inform about something')
+>>> log.debug('Debug, show detailed debugging information')
 
 
 .. code-block:: python
@@ -120,16 +279,6 @@ Konfiguracja logowania
     log.warning('warning!')  # zostanie zapisana do pliku
     log.debug('Debug message')  # nie zostanie zapisana, bo level jest INFO, czyli powyżej DEBUG
 
-.. code-block:: python
-
-    import logging
-
-    logging.basicConfig(
-        level='DEBUG',
-        datefmt='"%Y-%m-%d" "%H:%M:%S"',
-        format='{asctime}, "{levelname}", "{message}"',
-        style='{'
-    )
 
 Logowanie zdarzeń
 -----------------

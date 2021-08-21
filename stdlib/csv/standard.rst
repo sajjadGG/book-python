@@ -40,6 +40,16 @@ CSV file with text values. First line is a header:
     Melissa, Lewis
     Alex, Vogel
 
+.. code-block:: text
+
+    150,4,setosa,versicolor,virginica
+    5.1,3.5,1.4,0.2,0
+    7.0,3.2,4.7,1.4,1
+    6.3,3.3,6.0,2.5,2
+    5.8,2.7,5.1,1.9,2
+    4.9,3.0,1.4,0.2,0
+    6.4,3.2,4.5,1.5,1
+
 
 Delimiter
 ---------
@@ -47,7 +57,7 @@ Delimiter
 
 .. code-block:: text
 
-    Sepal length,Sepal width,Petal length,Petal width,Species
+    SepalLength,SepalWidth,PetalLength,PetalWidth,Species
     5.8,2.7,5.1,1.9,virginica
     5.1,3.5,1.4,0.2,setosa
     5.7,2.8,4.1,1.3,versicolor
@@ -56,14 +66,14 @@ Delimiter
 
 .. code-block:: text
 
-    Sepal length;Sepal width;Petal length;Petal width;Species
+    SepalLength;SepalWidth;PetalLength;PetalWidth;Species
     5.8;2.7;5.1;1.9;virginica
     5.1;3.5;1.4;0.2;setosa
     5.7;2.8;4.1;1.3;versicolor
 
 .. code-block:: text
 
-    Sepal length;Sepal width;Petal length;Petal width;Species
+    SepalLength;SepalWidth;PetalLength;PetalWidth;Species
     5,8;2,7;5,1;1,9;virginica
     5,1;3,5;1,4;0,2;setosa
     5,7;2,8;4,1;1,3;versicolor
@@ -72,7 +82,7 @@ Delimiter
 
 .. code-block:: text
 
-    Sepal length:Sepal width:Petal length:Petal width:Species
+    SepalLength:SepalWidth:PetalLength:PetalWidth:Species
     5.8:2.7:5.1:1.9;virginica
     5.1:3.5:1.4:0.2;setosa
     5.7:2.8:4.1:1.3;versicolor
@@ -89,7 +99,7 @@ Delimiter
 
 .. code-block:: text
 
-    Sepal length|Sepal width|Petal length|Petal width|Species
+    SepalLength|SepalWidth|PetalLength|PetalWidth|Species
     5.8|2.7|5.1|1.9|virginica
     5.1|3.5|1.4|0.2|setosa
     5.7|2.8|4.1|1.3|versicolor
