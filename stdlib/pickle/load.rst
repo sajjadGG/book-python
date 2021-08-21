@@ -81,7 +81,7 @@ Use Case - Astronaut
 ...     name: str
 >>>
 >>>
->>> @dataclass(frozen=True)
+>>> @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
@@ -98,8 +98,8 @@ Use Case - Astronaut
 ...     experience: timedelta = timedelta(hours=0)
 ...     account_last_login: Optional[datetime] = None
 ...     account_created: datetime = datetime.now(tz=timezone.utc)
-...     AGE_MIN: int = field(default=30, init=False, repr=False)
-...     AGE_MAX: int = field(default=50, init=False, repr=False)
+...     AGE_MIN: int = field(default=30, repr=False)
+...     AGE_MAX: int = field(default=50, repr=False)
 ...
 ...     def __post_init__(self):
 ...         HEIGHT_MIN = self.__dataclass_fields__['height'].metadata['min']
@@ -124,5 +124,16 @@ Use Case - Astronaut
 ...                   missions=[Mission(2035, 'Ares 3'), Mission(1973, 'Apollo 18')])
 >>>
 >>>
->>> pickle.loads(b"\x80\x04\x95\xf3\x01\x00\x00\x00\x00\x00\x00\x8c\x08__main__\x94\x8c\tAstronaut\x94\x93\x94)\x81\x94}\x94(\x8c\tfirstname\x94\x8c\x04Mark\x94\x8c\x08lastname\x94\x8c\x06Watney\x94\x8c\x04born\x94\x8c\x08datetime\x94\x8c\x04date\x94\x93\x94C\x04\x07\xa9\x04\x0c\x94\x85\x94R\x94\x8c\x03job\x94\x8c\tastronaut\x94\x8c\x06agency\x94\x8c\x04NASA\x94\x8c\x03age\x94K,\x8c\x06height\x94G@e\xf0\x00\x00\x00\x00\x00\x8c\x06weight\x94G@R\xe0\x00\x00\x00\x00\x00\x8c\x06groups\x94]\x94(\x8c\nastronauts\x94\x8c\x08managers\x94e\x8c\x07friends\x94}\x94\x8c\x0bassignments\x94]\x94\x8c\x07STS-136\x94a\x8c\x08missions\x94]\x94(h\x00\x8c\x07Mission\x94\x93\x94)\x81\x94}\x94(\x8c\x04year\x94M\xf3\x07\x8c\x04name\x94\x8c\x06Ares 3\x94ubh#)\x81\x94}\x94(h&M\xb5\x07h'\x8c\tApollo 18\x94ube\x8c\nexperience\x94h\n\x8c\ttimedelta\x94\x93\x94K\x00K\x00K\x00\x87\x94R\x94\x8c\x12account_last_login\x94N\x8c\x0faccount_created\x94h\n\x8c\x08datetime\x94\x93\x94C\n\x07\xe5\x08\x15\x0f\x14\x10\x0b\x02\xa0\x94h\n\x8c\x08timezone\x94\x93\x94h.K\x00K\x00K\x00\x87\x94R\x94\x85\x94R\x94\x86\x94R\x94ub.")
-Astronaut(firstname='Mark', lastname='Watney', born=datetime.date(1961, 4, 12), job='astronaut', agency='NASA', age=44, height=175.5, weight=75.5, groups=['astronauts', 'managers'], friends={}, assignments=['STS-136'], missions=[Mission(year=2035, name='Ares 3'), Mission(year=1973, name='Apollo 18')], experience=datetime.timedelta(0), account_last_login=None, account_created=datetime.datetime(2021, 8, 21, 15, 20, 16, 721568, tzinfo=datetime.timezone.utc))
+>>> data = pickle.loads(b'\x80\x04\x95\xd6\x01\x00\x00\x00\x00\x00\x00}\x94(\x8c\tfirstname\x94\x8c\x04Mark\x94\x8c\x08lastname\x94\x8c\x06Watney\x94\x8c\x04born\x94\x8c\x08datetime\x94\x8c\x04date\x94\x93\x94C\x04\x07\xa9\x04\x0c\x94\x85\x94R\x94\x8c\x03job\x94\x8c\tastronaut\x94\x8c\x06agency\x94\x8c\x04NASA\x94\x8c\x03age\x94K,\x8c\x06height\x94G@e\xf0\x00\x00\x00\x00\x00\x8c\x06weight\x94G@R\xe0\x00\x00\x00\x00\x00\x8c\x06groups\x94]\x94(\x8c\nastronauts\x94\x8c\x08managers\x94e\x8c\x07friends\x94}\x94\x8c\x0bassignments\x94]\x94\x8c\x07STS-136\x94a\x8c\x08missions\x94]\x94(}\x94(\x8c\x04year\x94M\xf3\x07\x8c\x04name\x94\x8c\x06Ares 3\x94u}\x94(h\x1fM\xb5\x07h \x8c\tApollo 18\x94ue\x8c\nexperience\x94h\x06\x8c\ttimedelta\x94\x93\x94K\x00K\x00K\x00\x87\x94R\x94\x8c\x12account_last_login\x94N\x8c\x0faccount_created\x94h\x06\x8c\x08datetime\x94\x93\x94C\n\x07\xe5\x08\x15\x11\x07\x1c\n\xc1\x94\x94h\x06\x8c\x08timezone\x94\x93\x94h&K\x00K\x00K\x00\x87\x94R\x94\x85\x94R\x94\x86\x94R\x94\x8c\x07AGE_MIN\x94K\x1e\x8c\x07AGE_MAX\x94K2u.')
+>>>
+>>> astro = Astronaut(**data)
+>>>
+>>> astro.missions
+[{'year': 2035, 'name': 'Ares 3'}, {'year': 1973, 'name': 'Apollo 18'}]
+>>>
+>>> astro.missions = [Mission(**data) for data in astro.missions]
+>>> astro.missions
+[Mission(year=2035, name='Ares 3'), Mission(year=1973, name='Apollo 18')]
+>>>
+>>> astro
+Astronaut(firstname='Mark', lastname='Watney', born=datetime.date(1961, 4, 12), job='astronaut', agency='NASA', age=44, height=175.5, weight=75.5, groups=['astronauts', 'managers'], friends={}, assignments=['STS-136'], missions=[Mission(year=2035, name='Ares 3'), Mission(year=1973, name='Apollo 18')], experience=datetime.timedelta(0), account_last_login=None, account_created=datetime.datetime(2021, 8, 21, 17, 7, 28, 704916, tzinfo=datetime.timezone.utc))

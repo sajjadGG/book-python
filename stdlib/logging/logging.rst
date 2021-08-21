@@ -22,7 +22,6 @@ Rationale
 >>>
 >>> run()
 Program start
-Program start
 Current number: 0
 Current number: 1
 Current number: 2
@@ -38,7 +37,7 @@ Program end
 ...     logging.warning('Program end')
 >>>
 >>>
->>> run()
+>>> run()  # doctest: +SKIP
 WARNING:root:Program start
 WARNING:root:Program end
 
