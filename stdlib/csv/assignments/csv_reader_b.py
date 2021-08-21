@@ -1,17 +1,17 @@
 """
-* Assignment: CSV Reader Iris
-* Complexity: medium
-* Lines of code: 8 lines
+* Assignment: CSV Reader Substitute
+* Complexity: easy
+* Lines of code: 6 lines
 * Time: 8 min
 
 English:
-    1. Using `csv.reader()` data from file
+    1. Using `csv.reader()` read data from file
     2. Define `result: list[tuple]` with converted data
     3. Use Unix `\n` line terminator
     4. Run doctests - all must succeed
 
 Polish:
-    1. Za pomocą `csv.reader()` data z pliku
+    1. Za pomocą `csv.reader()` wczytaj dane z pliku
     2. Zdefiniuj `result: list[tuple]` z przekonwerowanymi danymi
     3. Użyj zakończenia linii Unix `\n`
     4. Uruchom doctesty - wszystkie muszą się powieść
@@ -32,17 +32,16 @@ Tests:
 import csv
 
 
+FILE = r'_temporary.csv'
+
 DATA = """5.8,2.7,5.1,1.9,1
 5.1,3.5,1.4,0.2,0
 5.7,2.8,4.1,1.3,2"""
 
-FILE = r'_temporary.csv'
-
 SPECIES = {
     '0': 'setosa',
     '1': 'virginica',
-    '2': 'versicolor',
-}
+    '2': 'versicolor'}
 
 with open(FILE, mode='w') as file:
     file.write(DATA)
@@ -50,11 +49,12 @@ with open(FILE, mode='w') as file:
 # list[tuple]: data from file (note the list[tuple] format!)
 result = []
 
+
 # Solution
 with open(FILE, mode='r') as file:
     reader = csv.reader(file, lineterminator='\n')
 
-    for *data, species in reader:
-        species = SPECIES[species]
-        data.append(species)
-        result.append(tuple(data))
+    for *features, label in reader:
+        label = SPECIES[label]
+        row = features + [label]
+        result.append(tuple(row))

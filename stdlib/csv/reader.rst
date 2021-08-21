@@ -39,3 +39,15 @@ Assignments
 .. literalinclude:: assignments/csv_reader_a.py
     :caption: :download:`Solution <assignments/csv_reader_a.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/csv_reader_b.py
+    :caption: :download:`Solution <assignments/csv_reader_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/csv_reader_c.py
+    :caption: :download:`Solution <assignments/csv_reader_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/csv_reader_d.py
+    :caption: :download:`Solution <assignments/csv_reader_d.py>`
+    :end-before: # Solution
