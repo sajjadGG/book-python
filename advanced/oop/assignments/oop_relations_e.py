@@ -1,121 +1,71 @@
 """
-* Assignment: OOP Relations Nested
+* Assignment: OOP Relations Flatten
 * Complexity: medium
-* Lines of code: 7 lines
+* Lines of code: 5 lines
 * Time: 13 min
 
 English:
-    1. Convert `DATA` to format with one column per each attrbute for example:
-       a. `address1_street`, `address2_street`,
-       b. `address1_city`, `address2_city`
-       c. `address1_city`, `address2_city`
-    2. Note, that enumeration starts with one
-    3. Run doctests - all must succeed
+    1. How to write relations to CSV file (contact has many addresses)?
+    2. Convert `DATA` to `resul: list[dict[str,str]]`
+    3. Non-functional requirements:
+        a. Use `,` to separate fields
+        b. Use `;` to separate columns
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Przekonweruj `DATA` do formatu z jedną kolumną dla każdego atrybutu, np:
-       a. `address1_street`, `address2_street`,
-       b. `address1_city`, `address2_city`
-       c. `address1_city`, `address2_city`
-    2. Zwróć uwagę, że enumeracja zaczyna się od jeden
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
+    2. Przekonwertuj `DATA` do `resul: list[dict[str,str]]`
+    3. Wymagania niefunkcjonalne:
+        b. Użyj `,` do oddzielenia pól
+        b. Użyj `;` do oddzielenia kolumn
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert type(result) is list
-    >>> assert len(result) > 0
-    >>> assert all(type(x) is dict for x in result)
-
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'firstname': 'Jan',
-      'lastname': 'Twardowski',
-      'address1_street': 'Kamienica Pod św. Janem Kapistranem',
-      'address1_city': 'Kraków',
-      'address1_post_code': '31-008',
-      'address1_region': 'Małopolskie',
-      'address1_country': 'Poland'},
-     {'firstname': 'José',
-      'lastname': 'Jiménez',
-      'address1_street': '2101 E NASA Pkwy',
-      'address1_city': 'Houston',
-      'address1_post_code': 77058,
-      'address1_region': 'Texas',
-      'address1_country': 'USA',
-      'address2_street': '',
-      'address2_city': 'Kennedy Space Center',
-      'address2_post_code': 32899,
-      'address2_region': 'Florida',
-      'address2_country': 'USA'},
-     {'firstname': 'Mark',
-      'lastname': 'Watney',
-      'address1_street': '4800 Oak Grove Dr',
-      'address1_city': 'Pasadena',
-      'address1_post_code': 91109,
-      'address1_region': 'California',
-      'address1_country': 'USA', 'address2_street': '2825 E Ave P',
-      'address2_city': 'Palmdale',
-      'address2_post_code': 93550,
-      'address2_region': 'California',
-      'address2_country': 'USA'},
-     {'firstname': 'Иван',
-      'lastname': 'Иванович',
-      'address1_street': '',
-      'address1_city': 'Космодро́м Байкону́р',
-      'address1_post_code': '',
-      'address1_region': 'Кызылординская область',
-      'address1_country': 'Қазақстан',
-      'address2_street': '',
-      'address2_city': 'Звёздный городо́к',
-      'address2_post_code': 141160,
-      'address2_region': 'Московская область',
-      'address2_country': 'Россия'},
-     {'firstname': 'Melissa',
-      'lastname': 'Lewis'},
-     {'firstname': 'Alex',
-      'lastname': 'Vogel',
-      'address1_street': 'Linder Hoehe',
-      'address1_city': 'Köln',
-      'address1_post_code': 51147,
-      'address1_region': 'North Rhine-Westphalia',
-      'address1_country': 'Germany'}]
+    [{'firstname': 'Jan', 'lastname': 'Twardowski', 'missions': '1967,Apollo 1;1970,Apollo 13;1973,Apollo 18'},
+     {'firstname': 'Ivan', 'lastname': 'Ivanovic', 'missions': '2023,Artemis 2;2024,Artemis 3'},
+     {'firstname': 'Mark', 'lastname': 'Watney', 'missions': '2035,Ares 3'},
+     {'firstname': 'Melissa', 'lastname': 'Lewis', 'missions': ''}]
 """
 
+class Astronaut:
+    def __init__(self, firstname, lastname, missions=()):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.missions = list(missions)
 
-import json
 
-DATA = """[
-    {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
-        {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Małopolskie", "country": "Poland"}]},
+class Mission:
+    def __init__(self, year, name):
+        self.year = year
+        self.name = name
 
-    {"firstname": "José", "lastname": "Jiménez", "addresses": [
-        {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058, "region": "Texas", "country": "USA"},
-        {"street": "", "city": "Kennedy Space Center", "post_code": 32899, "region": "Florida", "country": "USA"}]},
 
-    {"firstname": "Mark", "lastname": "Watney", "addresses": [
-        {"street": "4800 Oak Grove Dr", "city": "Pasadena", "post_code": 91109, "region": "California", "country": "USA"},
-        {"street": "2825 E Ave P", "city": "Palmdale", "post_code": 93550, "region": "California", "country": "USA"}]},
+DATA = [
+    Astronaut('Jan', 'Twardowski', missions=[
+        Mission('1967', 'Apollo 1'),
+        Mission('1970', 'Apollo 13'),
+        Mission('1973', 'Apollo 18')]),
 
-    {"firstname": "Иван", "lastname": "Иванович", "addresses": [
-        {"street": "", "city": "Космодро́м Байкону́р", "post_code": "", "region": "Кызылординская область", "country": "Қазақстан"},
-        {"street": "", "city": "Звёздный городо́к", "post_code": 141160, "region": "Московская область", "country": "Россия"}]},
+    Astronaut('Ivan', 'Ivanovic', missions=[
+        Mission('2023', 'Artemis 2'),
+        Mission('2024', 'Artemis 3')]),
 
-    {"firstname": "Melissa", "lastname": "Lewis", "addresses": []},
+    Astronaut('Mark', 'Watney', missions=[
+        Mission('2035', 'Ares 3')]),
 
-    {"firstname": "Alex", "lastname": "Vogel", "addresses": [
-        {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
-]"""
+    Astronaut('Melissa', 'Lewis')]
 
-# list[dict]: flatten data, each address field prefixed with address and number
-result = ...
+
+result: list
 
 
 # Solution
-result: list = []
+result = []
 
-for astronaut in json.loads(DATA):
-    for i, address in enumerate(astronaut.pop('addresses'), start=1):
-        for field,value in address.items():
-            column_name = f'address{i}_{field}'
-            astronaut[column_name] = value
-    result.append(astronaut)
+for astronaut in DATA:
+    astronaut.missions = [','.join(vars(x).values()) for x in astronaut.missions]
+    astronaut.missions = ';'.join(astronaut.missions)
+    result.append(vars(astronaut))

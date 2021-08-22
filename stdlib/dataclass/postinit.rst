@@ -160,6 +160,28 @@ Astronaut(firstname='Mark', lastname='Watney')
 {'firstname': 'Mark', 'lastname': 'Watney'}
 
 
+ClassVar
+--------
+One of two places where dataclass() actually inspects the type of a field
+is to determine if a field is a class variable as defined in PEP 526. It
+does this by checking if the type of the field is typing.ClassVar. If a
+field is a ClassVar, it is excluded from consideration as a field and is
+ignored by the dataclass mechanisms. Such ClassVar pseudo-fields are not
+returned by the module-level fields() function.
+
+>>> from typing import ClassVar
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     fullname: str
+...     firstname: str
+...     age: int
+...     AGE_MIN: ClassVar[int] = 30
+...     AGE_MAX: ClassVar[int] = 50
+
+
 Use Case - Boundary check
 -------------------------
 >>> class Point:

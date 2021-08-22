@@ -217,3 +217,7 @@ Assignments
 .. literalinclude:: assignments/oop_relations_e.py
     :caption: :download:`Solution <assignments/oop_relations_e.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/oop_relations_f.py
+    :caption: :download:`Solution <assignments/oop_relations_f.py>`
+    :end-before: # Solution

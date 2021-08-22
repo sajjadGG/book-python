@@ -1,9 +1,9 @@
-Pandas Read HTML
-================
+Pandas Read String
+==================
 
 
-Import data
------------
+Rationale
+---------
 * File paths works also with URLs
 * `io.StringIO` Converts ``str`` to File-like object
 

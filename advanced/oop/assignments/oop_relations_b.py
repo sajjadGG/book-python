@@ -74,7 +74,15 @@ DATA = [
         {"street": "Linder Hoehe", "city": "Köln", "postcode": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
 ]
 
-result: list
+class Astronaut:
+    ...
+
+class Address:
+    ...
+
+
+# list[Astronaut]: Iterate over `DATA` and create instances
+result = ...
 
 
 # Solution

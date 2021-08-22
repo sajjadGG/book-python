@@ -1,71 +1,78 @@
 """
-* Assignment: OOP Relations Flatten
+* Assignment: OOP Relations Nested
 * Complexity: medium
-* Lines of code: 5 lines
+* Lines of code: 14 lines
 * Time: 13 min
 
 English:
-    1. How to write relations to CSV file (contact has many addresses)?
-    2. Convert `DATA` to `resul: list[dict[str,str]]`
-    3. Non-functional requirements:
-        a. Use `,` to separate fields
-        b. Use `;` to separate columns
-    4. Run doctests - all must succeed
+    1. Convert `DATA` to format with one column per each attrbute for example:
+       a. `mission1_year`, `mission2_year`,
+       b. `mission1_name`, `mission2_name`
+    2. Note, that enumeration starts with one
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
-    2. Przekonwertuj `DATA` do `resul: list[dict[str,str]]`
-    3. Wymagania niefunkcjonalne:
-        b. Użyj `,` do oddzielenia pól
-        b. Użyj `;` do oddzielenia kolumn
+    1. Przekonweruj `DATA` do formatu z jedną kolumną dla każdego atrybutu, np:
+       a. `mission1_year`, `mission2_year`,
+       b. `mission1_name`, `mission2_name`
+    2. Zwróć uwagę, że enumeracja zaczyna się od jeden
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert type(result) is list
+    >>> assert len(result) > 0
+    >>> assert all(type(x) is dict for x in result)
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'firstname': 'Jan', 'lastname': 'Twardowski', 'missions': '1967,Apollo 1;1970,Apollo 13;1973,Apollo 18'},
-     {'firstname': 'Ivan', 'lastname': 'Ivanovic', 'missions': '2023,Artemis 2;2024,Artemis 3'},
-     {'firstname': 'Mark', 'lastname': 'Watney', 'missions': '2035,Ares 3'},
-     {'firstname': 'Melissa', 'lastname': 'Lewis', 'missions': ''}]
+    [{'firstname': 'Mark',
+      'lastname': 'Watney',
+      'mission1_year': '2035',
+      'mission1_name': 'Ares3'},
+     {'firstname': 'Melissa',
+      'lastname': 'Lewis',
+      'mission1_year': '2030',
+      'mission1_name': 'Ares1',
+      'mission2_year': '2035',
+      'mission2_name': 'Ares3'},
+     {'firstname': 'Rick',
+      'lastname': 'Martinez'}]
+
+      >>> result = open(FILE).read()
+      >>> print(result)
+      "firstname","lastname","mission1_name","mission1_year","mission2_name","mission2_year"
+      "Mark","Watney","Ares3","2035","",""
+      "Melissa","Lewis","Ares1","2030","Ares3","2035"
+      "Rick","Martinez","","","",""
+      <BLANKLINE>
+      >>> import os; os.remove(FILE)
 """
 
-class Astronaut:
-    def __init__(self, firstname, lastname, missions=()):
-        self.firstname = firstname
-        self.lastname = lastname
-        self.missions = list(missions)
+import csv
 
-
-class Mission:
-    def __init__(self, year, name):
-        self.year = year
-        self.name = name
-
+FILE = r'_temporary.csv'
 
 DATA = [
-    Astronaut('Jan', 'Twardowski', missions=[
-        Mission('1967', 'Apollo 1'),
-        Mission('1970', 'Apollo 13'),
-        Mission('1973', 'Apollo 18')]),
+    {"firstname": "Mark", "lastname": "Watney", "missions": [
+        {"year": "2035", "name": "Ares3"}]},
 
-    Astronaut('Ivan', 'Ivanovic', missions=[
-        Mission('2023', 'Artemis 2'),
-        Mission('2024', 'Artemis 3')]),
+    {"firstname": "Melissa", "lastname": "Lewis", "missions": [
+         {"year": "2030", "name": "Ares1"},
+         {"year": "2035", "name": "Ares3"}]},
 
-    Astronaut('Mark', 'Watney', missions=[
-        Mission('2035', 'Ares 3')]),
+    {"firstname": "Rick", "lastname": "Martinez", "missions": []}
+]
 
-    Astronaut('Melissa', 'Lewis')]
-
-
-result: list
+# list[dict]: flatten data, each mission field prefixed with mission and number
+result = ...
 
 
 # Solution
 result = []
-
 for astronaut in DATA:
-    astronaut.missions = [','.join(vars(x).values()) for x in astronaut.missions]
-    astronaut.missions = ';'.join(astronaut.missions)
-    result.append(vars(astronaut))
+    for i, mission in enumerate(astronaut.pop('missions'), start=1):
+        for field,value in mission.items():
+            column_name = f'mission{i}_{field}'
+            astronaut[column_name] = value
+    result.append(astronaut)
