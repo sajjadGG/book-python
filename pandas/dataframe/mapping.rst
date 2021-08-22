@@ -312,22 +312,22 @@ Conversion
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_df_mapping_split.py
-    :caption: :download:`Solution <assignments/pandas_df_mapping_split.py>`
+.. literalinclude:: assignments/pandas_df_mapping_a.py
+    :caption: :download:`Solution <assignments/pandas_df_mapping_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_df_mapping_translate.py
-    :caption: :download:`Solution <assignments/pandas_df_mapping_translate.py>`
+.. literalinclude:: assignments/pandas_df_mapping_b.py
+    :caption: :download:`Solution <assignments/pandas_df_mapping_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_df_mapping_month.py
-    :caption: :download:`Solution <assignments/pandas_df_mapping_month.py>`
+.. literalinclude:: assignments/pandas_df_mapping_c.py
+    :caption: :download:`Solution <assignments/pandas_df_mapping_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_df_mapping_substitute.py
-    :caption: :download:`Solution <assignments/pandas_df_mapping_substitute.py>`
+.. literalinclude:: assignments/pandas_df_mapping_d.py
+    :caption: :download:`Solution <assignments/pandas_df_mapping_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_df_mapping_openapi.py
-    :caption: :download:`Solution <assignments/pandas_df_mapping_openapi.py>`
+.. literalinclude:: assignments/pandas_df_mapping_e.py
+    :caption: :download:`Solution <assignments/pandas_df_mapping_e.py>`
     :end-before: # Solution

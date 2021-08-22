@@ -429,6 +429,6 @@ Further Reading
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_df_plot.py
-    :caption: :download:`Solution <assignments/pandas_df_plot.py>`
+.. literalinclude:: assignments/pandas_df_plot_a.py
+    :caption: :download:`Solution <assignments/pandas_df_plot_a.py>`
     :end-before: # Solution

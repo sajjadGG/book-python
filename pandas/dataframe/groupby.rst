@@ -499,18 +499,18 @@ References
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_df_groupby_phones.py
-    :caption: :download:`Solution <assignments/pandas_df_groupby_phones.py>`
+.. literalinclude:: assignments/pandas_df_groupby_a.py
+    :caption: :download:`Solution <assignments/pandas_df_groupby_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_df_groupby_astro_female.py
-    :caption: :download:`Solution <assignments/pandas_df_groupby_astro_female.py>`
+.. literalinclude:: assignments/pandas_df_groupby_b.py
+    :caption: :download:`Solution <assignments/pandas_df_groupby_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_df_groupby_astro_flights.py
-    :caption: :download:`Solution <assignments/pandas_df_groupby_astro_flights.py>`
+.. literalinclude:: assignments/pandas_df_groupby_c.py
+    :caption: :download:`Solution <assignments/pandas_df_groupby_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_df_groupby_astro_eva.py
-    :caption: :download:`Solution <assignments/pandas_df_groupby_astro_eva.py>`
+.. literalinclude:: assignments/pandas_df_groupby_d.py
+    :caption: :download:`Solution <assignments/pandas_df_groupby_d.py>`
     :end-before: # Solution

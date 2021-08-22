@@ -125,6 +125,6 @@ Create from NDArray
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_df_create.py
-    :caption: :download:`Solution <assignments/pandas_df_create.py>`
+.. literalinclude:: assignments/pandas_df_create_a.py
+    :caption: :download:`Solution <assignments/pandas_df_create_a.py>`
     :end-before: # Solution

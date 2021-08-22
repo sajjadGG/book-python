@@ -197,6 +197,10 @@ Reset Index
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_df_sample.py
-    :caption: :download:`Solution <assignments/pandas_df_sample.py>`
+.. literalinclude:: assignments/pandas_df_sample_a.py
+    :caption: :download:`Solution <assignments/pandas_df_sample_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/pandas_df_sample_b.py
+    :caption: :download:`Solution <assignments/pandas_df_sample_b.py>`
     :end-before: # Solution

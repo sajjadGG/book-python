@@ -276,6 +276,6 @@ Drop Columns:
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_df_nan.py
-    :caption: :download:`Solution <assignments/pandas_df_nan.py>`
+.. literalinclude:: assignments/pandas_df_na_a.py
+    :caption: :download:`Solution <assignments/pandas_df_na_a.py>`
     :end-before: # Solution

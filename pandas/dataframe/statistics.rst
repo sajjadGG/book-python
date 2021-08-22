@@ -371,6 +371,6 @@ Number of non-null unique network entries:
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_df_statistics_cars.py
-    :caption: :download:`Solution <assignments/pandas_df_statistics_cars.py>`
+.. literalinclude:: assignments/pandas_df_statistics_a.py
+    :caption: :download:`Solution <assignments/pandas_df_statistics_a.py>`
     :end-before: # Solution

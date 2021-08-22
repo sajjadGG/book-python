@@ -208,6 +208,6 @@ Logical XOR
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_df_select.py
-    :caption: :download:`Solution <assignments/pandas_df_select.py>`
+.. literalinclude:: assignments/pandas_df_select_a.py
+    :caption: :download:`Solution <assignments/pandas_df_select_a.py>`
     :end-before: # Solution

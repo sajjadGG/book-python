@@ -344,6 +344,6 @@ This method preserves the original DataFrame's index in the result:
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_df_join_eva.py
-    :caption: :download:`Solution <assignments/pandas_df_join_eva.py>`
+.. literalinclude:: assignments/pandas_df_join_a.py
+    :caption: :download:`Solution <assignments/pandas_df_join_a.py>`
     :end-before: # Solution
