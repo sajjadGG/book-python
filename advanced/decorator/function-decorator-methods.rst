@@ -11,27 +11,25 @@ Rationale
 * ``kwargs`` arbitrary number of keyword arguments
 
 Syntax:
-    .. code-block:: python
 
-        class MyClass:
-            @mydecorator
-            def mymethod(self, *args, **kwargs):
-                ...
-
-
-        obj = MyClass()
-        obj.mymethod()
+>>> class MyClass:
+...     @mydecorator
+...     def mymethod(self, *args, **kwargs):
+...         ...
+>>>
+>>>
+>>> obj = MyClass()
+>>> obj.mymethod()
 
 Is equivalent to:
-    .. code-block:: python
 
-        class MyClass:
-            def mymethod(self, *args, **kwargs):
-                ...
-
-
-        obj = MyClass()
-        obj.mymethod = mydecorator(obj.mymethod)
+>>> class MyClass:
+...     def mymethod(self, *args, **kwargs):
+...         ...
+>>>
+>>>
+>>> obj = MyClass()
+>>> obj.mymethod = mydecorator(obj.mymethod)
 
 
 Syntax
