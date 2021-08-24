@@ -8,7 +8,7 @@ Recap
 * /etc/hosts
 
 
-Narzędzia
+Tooling
 ---------
 * Web Inspector
 * curl
