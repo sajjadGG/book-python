@@ -57,7 +57,7 @@ Example
 >>>
 >>>
 >>> hello('José Jiménez')
-... # 'My name... José Jiménez'
+'My name... José Jiménez'
 
 
 Use Cases - If Exists
@@ -370,23 +370,24 @@ Use Case - Database Cache
 
 Use Case - FastAPI URL Routing
 ------------------------------
->>> from typing import Optional
->>> from fastapi import FastAPI
->>>
->>> app = FastAPI()
->>>
->>>
->>> @app.get('/')
+>>> # doctest: +SKIP
+... from typing import Optional
+... from fastapi import FastAPI
+...
+... app = FastAPI()
+...
+...
+... @app.get('/')
 ... async def index():
 ...     return {'message': 'Hello World'}
->>>
->>>
->>> @app.get('/user/{pk}')
+...
+...
+... @app.get('/user/{pk}')
 ... async def user(pk: int):
 ...     return {'pk': pk}
->>>
->>>
->>> @app.get('/search')
+...
+...
+... @app.get('/search')
 ... async def items(q: Optional[str] = None):
 ...     return {'q': q}
 
@@ -396,33 +397,34 @@ Use Case - Django Login Required
 Decorator checks whether user is_authenticated.
 If not, user will be redirected to login page:
 
->>> from django.shortcuts import render  # doctest: +SKIP
->>>
->>>
->>> def edit_profile(request):
+>>> # doctest: +SKIP
+... from django.shortcuts import render
+...
+...
+... def edit_profile(request):
 ...     if not request.user.is_authenticated:
 ...         return render(request, 'templates/login_error.html')
 ...     else:
 ...         return render(request, 'templates/edit-profile.html')
->>>
->>>
->>> def delete_profile(request):
+...
+...
+... def delete_profile(request):
 ...     if not request.user.is_authenticated:
 ...         return render(request, 'templates/login_error.html')
 ...     else:
 ...         return render(request, 'templates/delete-profile.html')
 
-
->>> from django.shortcuts import render  # doctest: +SKIP
->>> from django.contrib.auth.decorators import login_required  # doctest: +SKIP
->>>
->>>
->>> @login_required
+>>> # doctest: +SKIP
+... from django.shortcuts import render
+... from django.contrib.auth.decorators import login_required
+...
+...
+... @login_required
 ... def edit_profile(request):
 ...     return render(request, 'templates/edit-profile.html')
->>>
->>>
->>> @login_required
+...
+...
+... @login_required
 ... def delete_profile(request):
 ...     return render(request, 'templates/delete-profile.html')
 
