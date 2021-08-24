@@ -3,34 +3,72 @@ Apps
 
 
 Reusability
--------------------------------------------------------------------------------
+-----------
+
 
 Location
--------------------------------------------------------------------------------
-.. literalinclude:: src/django-apps-location.py
-    :language: python
-    :caption: Django Apps Location
+--------
+
 
 Create
--------------------------------------------------------------------------------
+------
 .. code-block:: console
 
     $ cd addressbook
-    $ django-admin startapp contact
+    $ django-admin startapp myapp
 
 .. code-block:: python
 
     # settings.py
-    INSTALLED_APPS += ['addressbook.contact.apps.ContactConfig']
+    INSTALLED_APPS += ['myproject.myapp.apps.ContactConfig']
+
 
 Structure
--------------------------------------------------------------------------------
-.. literalinclude:: src/django-apps-structure.txt
-    :language: python
-    :caption: Django Apps Structure
+---------
+.. code-block:: text
+
+    myproject/
+        manage.py
+        myproject/
+            __init__.py
+            asgi.py
+            settings.py
+            urls.py
+            wsgi.py
+        myapp/
+            __init__.py
+            admin.py
+            migrations/
+                __init__.py
+                0001_initial.py
+            models.py
+            static/
+                myapp/
+                    img/
+                        image.png
+                    css/
+                        style.css
+                    js/
+                        script.js
+            templates/
+                myapp/
+                    detail.html
+                    index.html
+                    results.html
+            tests.py
+            urls.py
+            views.py
+
 
 Configuration
--------------------------------------------------------------------------------
-.. literalinclude:: src/django-apps-config.py
-    :language: python
-    :caption: Django Apps Configuration
+-------------
+.. code-block:: python
+
+    from django.apps import AppConfig
+    from django.utils.translation import gettext_lazy as _
+
+
+    class ContactConfig(AppConfig):
+        default_auto_field = 'django.db.models.BigAutoField'
+        name = 'myapp'
+        verbose_name = _('MyApp')
