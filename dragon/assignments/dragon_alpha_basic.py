@@ -23,20 +23,17 @@ English:
         b. going left subtract from `x`
         c. going up subtract from `y`
         d. going down add to `y`
-    4. When dragon receives damage:
-        a. print name of the Dragon
-        b. health points which left
-    5. When health points drop to, and below zero:
+    4. When health points drop to, and below zero:
         a. Dragon is dead
         b. Set object status to dead
         c. Print `XXX is dead`, where XXX is the name of the dragon
         d. Change texture file name to  `img/dragon/dead.png`
         e. Print position where dragon died
-        f. Return gold dropped by Dragon (random in range from 1 to 100)
+        f. Print how much gold Dragon dropped (random in range from 1 to 100)
         g. Dragon cannot take any more damage
         h. Dragon cannot make any more damage
         i. Dragon cannot move or have position set
-    6. Run the game:
+    5. Run the game:
         a. Create dragon at x=50, y=120 position and name it "Wawelski"
         b. Set new position to x=10, y=20
         c. Move dragon left by 10 and down by 20
@@ -51,7 +48,7 @@ English:
         l. Make 15 points damage to the dragon
         m. Make 25 points damage to the dragon
         n. Make 75 points damage to the dragon
-    7. Non-functional requirements:
+    6. Non-functional requirements:
         a. This assignment is a simulation of development process
         b. Trainer acts as Product Owner with little technical knowledge
         c. You are the software engineer who need to decide and live with
@@ -89,20 +86,17 @@ Polish:
         b. idąc w lewo odejmujesz `x`
         c. idąc w górę odejmujesz `y`
         d. idąc w dół dodajesz `y`
-    4. Gdy smok otrzymuje obrażenia:
-        a. wypisz nazwę smoka,
-        b. pozostałe punkty życia
-    5. Kiedy punkty życia Smoka spadną do, lub poniżej zera:
+    4. Kiedy punkty życia Smoka spadną do, lub poniżej zera:
         a. Smok jest martwy
         b. Ustaw status obiektu na dead
         c. Wypisz napis `XXX is dead` gdzie XXX to nazwa smoka
         d. Zmień nazwę pliku tekstury na `img/dragon/dead.png`
         e. Wypisz pozycję gdzie smok zginął
-        f. Zwróć ile złota smok wyrzucił (losowa 1-100)
+        f. Wypisz ile złota smok wyrzucił (losowa 1-100)
         g. Nie można zadawać mu obrażeń
         h. Smok nie może zadawać obrażeń
         i. Smok nie może się poruszać
-    6. Przeprowadź grę:
+    5. Przeprowadź grę:
         a. Stwórz smoka w pozycji x=50, y=120 i nazwij go "Wawelski"
         b. Ustaw nową pozycję na x=10, y=20
         c. Przesuń smoka w lewo o 10 i w dół o 20
@@ -117,7 +111,7 @@ Polish:
         l. Zadaj 15 obrażeń smokowi
         m. Zadaj 25 obrażeń smokowi
         n. Zadaj 75 obrażeń smokowi
-    7. Wymagania niefunkcjonalne:
+    6. Wymagania niefunkcjonalne:
         a. Zadanie jest symulacją procesu developmentu
         b. Trener zachowuje się jak Product Owner z niewielką techniczną wiedzą
         c. Ty jesteś inżynierem oprogramowania, który musi podejmować decyzje

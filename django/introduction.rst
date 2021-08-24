@@ -36,6 +36,19 @@ Versioning
 * 4.0 (new features)
 * ...
 
+
+Release Notes
+-------------
+* List of releases: https://docs.djangoproject.com/en/dev/releases/
+* 1.11 - https://docs.djangoproject.com/en/dev/releases/1.11/
+* 2.0 - https://docs.djangoproject.com/en/dev/releases/2.0/
+* 2.1 - https://docs.djangoproject.com/en/dev/releases/2.1/
+* 2.2 - https://docs.djangoproject.com/en/dev/releases/2.2/
+* 3.1 - https://docs.djangoproject.com/en/dev/releases/3.1/
+* 3.2 - https://docs.djangoproject.com/en/dev/releases/3.2/
+* 4.0 - https://docs.djangoproject.com/en/dev/releases/4.0/
+
+
 LTS - Long Time Support
 -----------------------
 * What is LTS?
