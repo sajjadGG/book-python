@@ -2,38 +2,27 @@ HTTP
 ====
 
 
-Narzędzia
--------------------------------------------------------------------------------
-
-Web Inspector
--------------
-
-curl
-----
-
-wget
-----
-
-DNS
--------------------------------------------------------------------------------
-* /etc/hosts
+Recap
+-----
 * DNS
+* /etc/hosts
+
+
+Narzędzia
+---------
+* Web Inspector
+* curl
+* wget
+
 
 HTTP Protocol
--------------------------------------------------------------------------------
-
-HTTP and HTTPS
---------------
-
-HTTP/1.1 vs. HTTP/2.0
----------------------
-
-URI vs URL
-----------
-* SEO friendly URL
-
-text protocol
 -------------
+* Stateless
+* Text protocol
+* HTTP and HTTPS
+* HTTP/1.1 vs. HTTP/2.0
+* URI vs URL
+
 
 Status Code
 -----------
@@ -43,6 +32,7 @@ Status Code
     :header-rows: 1
     :widths: 10, 20, 70
     :file: data/http-status-codes.csv
+
 
 Header
 ------
@@ -83,6 +73,7 @@ Request
     Upgrade-Insecure-Requests: 1
     User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
 
+
 Response
 --------
 .. code-block:: text
@@ -96,10 +87,8 @@ Response
     X-Deity: web01
     X-Served: Nginx
 
-stateless
----------
 
-sessions
+Sessions
 --------
 * bazy danych
 * cache
@@ -108,14 +97,16 @@ sessions
 
 Cookies
 -------
-* ustawa o cookies
+* Ustawa o cookies
+
 
 HTTP Methods
--------------------------------------------------------------------------------
+------------
 .. csv-table:: Http Response Codes
     :header-rows: 1
     :widths: 20, 80
     :file: data/http-methods.csv
+
 
 GET vs POST
 -----------
@@ -152,4 +143,4 @@ OPTIONS and CORS
 
 
 HTML + JS + CSS
--------------------------------------------------------------------------------
+---------------

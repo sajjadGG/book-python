@@ -2,18 +2,21 @@ Introduction to Django
 ======================
 
 
-Co to jest Django?
--------------------------------------------------------------------------------
-Web Framework
+Rationale
+---------
+* Why use Django?
+* What problems Django solves?
+* What is Django?
+* Web Framework
 
 
-Dokumentacja
--------------------------------------------------------------------------------
-* jedna z najlepszych dokumentacji
+Documentation
+-------------
+* One of the best in Open Source
 
 
-Wersjonowanie
--------------------------------------------------------------------------------
+Versioning
+----------
 * Semantic Versioning
 * Bugfix releases
 * alpha - feature freeze
@@ -35,9 +38,16 @@ Wersjonowanie
 
 LTS - Long Time Support
 -----------------------
+* What is LTS?
+* How long support last?
+
+.. figure:: img/django-roadmap.png
+
+Source: https://static.djangoproject.com/img/release-roadmap.688d8d65db0b.png
+
 
 ``setup.cfg``
--------------------------------------------------------------------------------
+-------------
 .. code-block:: ini
 
     [bdist_wheel]
@@ -65,23 +75,13 @@ LTS - Long Time Support
         dist,
         */migrations/*
 
+
 IDE Support
--------------------------------------------------------------------------------
-
-Runserver
----------
-
-Debugging
----------
-
-Database Explorer
------------------
-
-Mark as Sources Root
---------------------
-
-Podpowiadanie składni
----------------------
-* Template
-* templatetags
-* filters
+-----------
+* Runserver
+* Debugging
+* Profiling
+* Docker
+* Database Explorer
+* Mark as Sources Root
+* Syntax Autocompletion (Template, Templatetags, Filters)

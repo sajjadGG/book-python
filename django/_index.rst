@@ -4,6 +4,7 @@
 
     about/certificate.rst
     http-protocol.rst
+    http-identifiers.rst
     introduction.rst
     architecture.rst
     installation-and-usage.rst
