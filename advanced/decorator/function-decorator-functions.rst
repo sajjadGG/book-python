@@ -212,6 +212,7 @@ Use Case - Global Scope Cache
 -----------------------------
 Recap information about factorial (``n!``):
 
+
 .. code-block:: text
 
     5! = 5 * 4!

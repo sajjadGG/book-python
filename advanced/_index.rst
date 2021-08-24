@@ -95,6 +95,9 @@ Performance
     performance/complexity.rst
     performance/optimization.rst
     performance/micro-benchmarking.rst
+    performance/casestudy-memoize.rst
+    performance/casestudy-strconcat.rst
+    performance/casestudy-uniquekeys.rst
     performance/profiling.rst
     performance/compilers.rst
     performance/collections.rst

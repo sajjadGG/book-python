@@ -361,13 +361,13 @@ Example
 >>>
 >>>
 >>> def new(cls):
->>>     obj = super().__new__(cls)
->>>     obj._logger = logging.getLogger(cls.__name__)
->>>     return obj
+...     obj = super().__new__(cls)
+...     obj._logger = logging.getLogger(cls.__name__)
+...     return obj
 >>>
 >>>
 >>> class Astronaut:
->>>     pass
+...     pass
 >>>
 >>>
 >>> Astronaut.__new__ = new
@@ -376,256 +376,247 @@ Example
 >>> melissa = Astronaut()
 >>>
 >>> print(mark._logger)
->>> # <Logger Astronaut (WARNING)>
+<Logger Astronaut (WARNING)>
 >>>
 >>> print(melissa._logger)
->>> # <Logger Astronaut (WARNING)>
+<Logger Astronaut (WARNING)>
 
-.. code-block:: python
+>>> import logging
+>>>
+>>>
+>>> def new(cls):
+...     obj = super().__new__(cls)
+...     obj._logger = logging.getLogger(cls.__name__)
+...     return obj
+>>>
+>>> str.__new__ = new
+Traceback (most recent call last):
+TypeError: can't set attributes of built-in/extension type 'str'
 
-    import logging
-
-
-    def new(cls):
-        obj = super().__new__(cls)
-        obj._logger = logging.getLogger(cls.__name__)
-        return obj
-
-    str.__new__ = new
-    # Traceback (most recent call last):
-    # TypeError: can't set attributes of built-in/extension type 'str'
-
-.. code-block:: python
-
-    import logging
-
-
-    def new(cls):
-        obj = super().__new__(cls)
-        obj._logger = logging.getLogger(cls.__name__)
-        return obj
-
-    type.__new__ = new
-    # Traceback (most recent call last):
-    # TypeError: can't set attributes of built-in/extension type 'type'
+>>> import logging
+>>>
+>>>
+>>> def new(cls):
+>>>     obj = super().__new__(cls)
+>>>     obj._logger = logging.getLogger(cls.__name__)
+>>>     return obj
+>>>
+>>> type.__new__ = new
+Traceback (most recent call last):
+TypeError: can't set attributes of built-in/extension type 'type'
 
 
-Use Case
---------
+Use Case - Logger
+-----------------
 Injecting logger instance:
 
-.. code-block:: python
+>>> import logging
+>>>
+>>> class Logger(type):
+...     def __init__(cls, *args, **kwargs):
+...         cls._logger = logging.getLogger(cls.__name__)
+>>>
+>>> class Astronaut(metaclass=Logger):
+...     pass
+>>>
+>>> class Cosmonaut(metaclass=Logger):
+...     pass
+>>>
+>>>
+>>> print(Astronaut._logger)
+<Logger Astronaut (WARNING)>
+>>>
+>>> print(Cosmonaut._logger)
+<Logger Cosmonaut (WARNING)>
 
-    import logging
 
-
-    class Logger(type):
-        def __init__(cls, *args, **kwargs):
-            cls._logger = logging.getLogger(cls.__name__)
-
-
-    class Astronaut(metaclass=Logger):
-        pass
-
-
-    class Cosmonaut(metaclass=Logger):
-        pass
-
-
-
-    print(Astronaut._logger)
-    # <Logger Astronaut (WARNING)>
-
-    print(Cosmonaut._logger)
-    # <Logger Cosmonaut (WARNING)>
-
+Use Case - Abstract Class
+-------------------------
 Abstract Base Class:
 
-.. code-block:: python
-
-    from abc import ABCMeta, abstractmethod
-
-
-    class Astronaut(metaclass=ABCMeta):
-
-        @abstractmethod
-        def say_hello(self):
-            pass
-
-
-    astro = Astronaut()
-    # Traceback (most recent call last):
-    # TypeError: Can't instantiate abstract class Astronaut with abstract methods say_hello
-
-.. code-block:: python
-
-    class EventListener(type):
-        listeners: dict[str, list[callable]] = {}
-
-        @classmethod
-        def register(cls, *clsnames):
-            def wrapper(func):
-                for clsname in clsnames:
-                    if clsname not in cls.listeners:
-                        cls.listeners[clsname] = []
-                    cls.listeners[clsname] += [func]
-            return wrapper
-
-        def __new__(mcs, classname, bases, attrs):
-            for listener in mcs.listeners.get(classname, []):
-                listener.__call__(classname, bases, attrs)
-            return type(classname, bases, attrs)
+>>> from abc import ABCMeta, abstractmethod
+>>>
+>>> class Astronaut(metaclass=ABCMeta):
+>>>     @abstractmethod
+>>>     def say_hello(self):
+>>>         pass
+>>>
+>>>
+>>> astro = Astronaut()
+Traceback (most recent call last):
+TypeError: Can't instantiate abstract class Astronaut with abstract methods say_hello
 
 
-    @EventListener.register('Astronaut')
-    def hello_class(clsname, bases, attrs):
-        print(f'\n\nHello new class {clsname}\n')
+Use Case - Event Listener
+-------------------------
+>>> class EventListener(type):
+...     listeners: dict[str, list[callable]] = {}
+...
+...     @classmethod
+...     def register(cls, *clsnames):
+...         def wrapper(func):
+...             for clsname in clsnames:
+...                 if clsname not in cls.listeners:
+...                     cls.listeners[clsname] = []
+...                 cls.listeners[clsname] += [func]
+...         return wrapper
+...
+...     def __new__(mcs, classname, bases, attrs):
+...         for listener in mcs.listeners.get(classname, []):
+...             listener.__call__(classname, bases, attrs)
+...         return type(classname, bases, attrs)
+>>>
+>>>
+>>> @EventListener.register('Astronaut')
+... def hello_class(clsname, bases, attrs):
+...     print(f'Hello new class {clsname}')
+>>>
+>>>
+>>> @EventListener.register('Astronaut', 'Person')
+... def print_name(clsname, bases, attrs):
+...     print('New class created')
+...     print('Classname:', clsname)
+...     print('Bases:', bases)
+...     print('Attrs:', attrs)
+>>>
+>>>
+>>> class Person(metaclass=EventListener):
+>>>     pass
+New class created
+Classname: Person
+Bases: ()
+Attrs: {'__module__': '__main__', '__qualname__': 'Person'}
+>>>
+>>> class Astronaut(Person, metaclass=EventListener):
+>>>     pass
+>>>
+Hello new class Astronaut
+New class created
+Classname: Astronaut
+Bases: (<class '__main__.Person'>,)
+Attrs: {'__module__': '__main__', '__qualname__': 'Astronaut'}
 
 
-    @EventListener.register('Astronaut', 'Person')
-    def print_name(clsname, bases, attrs):
-        print('\nNew class created')
-        print('Classname:', clsname)
-        print('Bases:', bases)
-        print('Attrs:', attrs)
+Use Case - Singleton
+--------------------
+>>> class Singleton(type):
+>>>     _instances = {}
+>>>     def __call__(cls, *args, **kwargs):
+>>>         if cls not in cls._instances:
+>>>             cls._instances[cls] = super().__call__(*args, **kwargs)
+>>>         return cls._instances[cls]
+>>>
+>>>
+>>> class MyClass(metaclass=Singleton):
+...     pass
 
 
-    class Person(metaclass=EventListener):
-        pass
+Use Case - Final
+----------------
+>>> class Final(type):
+>>>     def __new__(mcs, classname, base, attrs):
+>>>         for cls in base:
+>>>             if isinstance(cls, Final):
+>>>                 raise TypeError(f'{cls.__name__} is final and cannot inherit from it')
+>>>         return type.__new__(mcs, classname, base, attrs)
+>>>
+>>>
+>>> class MyClass(metaclass=Final):
+...     pass
+>>>
+>>> class SomeOtherClass(MyClass):
+...    pass
+Traceback (most recent call last):
+TypeError: MyClass is final and cannot inherit from it
 
 
-    class Astronaut(Person, metaclass=EventListener):
-        pass
-
-    # New class created
-    # Classname: Person
-    # Bases: ()
-    # Attrs: {'__module__': '__main__', '__qualname__': 'Person'}
-    #
-    #
-    # Hello new class Astronaut
-    #
-    #
-    # New class created
-    # Classname: Astronaut
-    # Bases: (<class '__main__.Person'>,)
-    # Attrs: {'__module__': '__main__', '__qualname__': 'Astronaut'}
-
-
-
-.. code-block:: python
-
-    class Singleton(type):
-        _instances = {}
-        def __call__(cls, *args, **kwargs):
-            if cls not in cls._instances:
-                cls._instances[cls] = super().__call__(*args, **kwargs)
-            return cls._instances[cls]
-
-
-    class MyClass(metaclass=Singleton):
-        pass
-
-.. code-block:: python
-
-    class Final(type):
-        def __new__(mcs, classname, base, attrs):
-            for cls in base:
-                if isinstance(cls, Final):
-                    raise TypeError(f'{cls.__name__} is final and cannot inherit from it')
-            return type.__new__(mcs, classname, base, attrs)
-
-
-    class MyClass(metaclass=Final):
-        pass
-
-
-    class SomeOtherClass(MyClass):
-       pass
-
-    # Traceback (most recent call last):
-    # TypeError: MyClass is final and cannot inherit from it
-
+Use Case - Create Classes
+-------------------------
 Create classes dynamically:
 
-.. code-block:: python
+>>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...         (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+...         (7.6, 3.0, 6.6, 2.1, 'virginica'),
+...         (4.9, 3.0, 1.4, 0.2, 'setosa'),]
+>>>
+>>>
+>>> class Iris:
+...     pass
+>>>
+>>>
+>>> for *data, species in DATA[1:]:
+...     species = species.capitalize()
+...     if species not in globals():
+...         globals()[species] = type(species, (Iris,), {})
 
-    DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-            (5.8, 2.7, 5.1, 1.9, 'virginica'),
-            (5.1, 3.5, 1.4, 0.2, 'setosa'),
-            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-            (6.3, 2.9, 5.6, 1.8, 'virginica'),
-            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-            (4.7, 3.2, 1.3, 0.2, 'setosa'),
-            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-            (7.6, 3.0, 6.6, 2.1, 'virginica'),
-            (4.9, 3.0, 1.4, 0.2, 'setosa'),]
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+...     (7.6, 3.0, 6.6, 2.1, 'virginica'),
+...     (4.9, 3.0, 1.4, 0.2, 'setosa')]
+>>>
+>>> header, *data = DATA
+>>> header = [x.lower().replace(' ', '_') for x in header]
+>>>
+>>>
+>>> class Iris:
+...     def __init__(self, *args):
+...         for attrname, attrvalue in zip(header, args):
+...             setattr(self, attrname, attrvalue)
+...
+...     def __repr__(self):
+...         cls = self.__class__.__name__
+...         attrs = tuple(vars(self).values())
+...         return f'{cls}{attrs}'
+>>>
+>>>
+>>> results = []
+>>>
+>>> for *features, species in data:
+...     species = species.capitalize()
+...     if species not in globals():
+...         globals()[species] = type(species, (Iris,), {})
+...     cls = globals()[species]
+...     results.append(cls(*features))
+>>>
+>>> print(results)  # doctest: +NORMALIZE_WHITESPACE
+[Virginica(5.8, 2.7, 5.1, 1.9),
+ Setosa(5.1, 3.5, 1.4, 0.2),
+ Versicolor(5.7, 2.8, 4.1, 1.3),
+ Virginica(6.3, 2.9, 5.6, 1.8),
+ Versicolor(6.4, 3.2, 4.5, 1.5),
+ Setosa(4.7, 3.2, 1.3, 0.2),
+ Versicolor(7.0, 3.2, 4.7, 1.4),
+ Virginica(7.6, 3.0, 6.6, 2.1),
+ Setosa(4.9, 3.0, 1.4, 0.2)]
 
 
-    class Iris:
-        pass
-
-
-    for *data, species in DATA[1:]:
-        species = species.capitalize()
-        if species not in globals():
-            globals()[species] = type(species, (Iris,), {})
-
-.. code-block:: python
-
-    DATA = [
-        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-        (5.8, 2.7, 5.1, 1.9, 'virginica'),
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-        (4.7, 3.2, 1.3, 0.2, 'setosa'),
-        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-        (7.6, 3.0, 6.6, 2.1, 'virginica'),
-        (4.9, 3.0, 1.4, 0.2, 'setosa')]
-
-    header, *data = DATA
-    header = [x.lower().replace(' ', '_') for x in header]
-
-
-    class Iris:
-        def __init__(self, *args):
-            for attrname, attrvalue in zip(header, args):
-                setattr(self, attrname, attrvalue)
-
-        def __repr__(self):
-            cls = self.__class__.__name__
-            attrs = tuple(vars(self).values())
-            return f'{cls}{attrs}'
-
-
-    results = []
-
-    for *features, species in data:
-        species = species.capitalize()
-        if species not in globals():
-            globals()[species] = type(species, (Iris,), {})
-        cls = globals()[species]
-        results.append(cls(*features))
-
-    print(results)
-    # [Virginica(5.8, 2.7, 5.1, 1.9), Setosa(5.1, 3.5, 1.4, 0.2), Versicolor(5.7, 2.8, 4.1, 1.3), Virginica(6.3, 2.9, 5.6, 1.8), Versicolor(6.4, 3.2, 4.5, 1.5), Setosa(4.7, 3.2, 1.3, 0.2), Versicolor(7.0, 3.2, 4.7, 1.4), Virginica(7.6, 3.0, 6.6, 2.1), Setosa(4.9, 3.0, 1.4, 0.2)]
-
-
+Use Case Django
+---------------
 Access static fields of a class, before creating instance:
 
-.. code-block:: python
-
-    from django.db import models
-
-    # class Model(metaclass=...)
-    #     ...
-
-
-    class Person(models.Model):
-        firstname = models.CharField(max_length=255)
-        lastname = models.CharField(max_length=255)
+>>> # doctest: +SKIP
+... from django.db import models
+...
+... # class Model(metaclass=...)
+... #     ...
+...
+...
+... class Person(models.Model):
+...     firstname = models.CharField(max_length=255)
+...     lastname = models.CharField(max_length=255)
 
 
 Metaclass replacements
@@ -634,84 +625,73 @@ Metaclass replacements
 
 Inheritance and ``__init__()`` method:
 
-.. code-block:: python
-
-    import logging
-
-
-    class Logger:
-        def __init__(self):
-            self._logger = logging.getLogger(self.__class__.__name__)
-
-
-    class Astronaut(Logger):
-        pass
-
-
-    astro = Astronaut()
-    print(astro._logger)
-    # <Logger Astronaut (WARNING)>
+>>> import logging
+>>>
+>>>
+>>> class Logger:
+>>>     def __init__(self):
+>>>         self._logger = logging.getLogger(self.__class__.__name__)
+>>>
+>>> class Astronaut(Logger):
+>>>     pass
+>>>
+>>>
+>>> astro = Astronaut()
+>>> print(astro._logger)
+<Logger Astronaut (WARNING)>
 
 Inheritance and ``__new__()`` method:
 
-.. code-block:: python
-
-    import logging
-
-
-    class Logger:
-        def __new__(cls, *args, **kwargs):
-            obj = super().__new__(cls)
-            obj._logger = logging.getLogger(obj.__class__.__name__)
-            return obj
-
-
-    class Astronaut(Logger):
-        pass
-
-
-    astro = Astronaut()
-    print(astro._logger)
-    # <Logger Astronaut (WARNING)>
+>>> import logging
+>>>
+>>>
+>>> class Logger:
+>>>     def __new__(cls, *args, **kwargs):
+>>>         obj = super().__new__(cls)
+>>>         obj._logger = logging.getLogger(obj.__class__.__name__)
+>>>         return obj
+>>>
+>>> class Astronaut(Logger):
+>>>     pass
+>>>
+>>>
+>>> astro = Astronaut()
+>>> print(astro._logger)
+<Logger Astronaut (WARNING)>
 
 Inheritance for abstract base class validation:
 
-.. code-block:: python
-
-    from abc import ABC, abstractmethod
-
-
-    class Astronaut(ABC):
-
-        @abstractmethod
-        def say_hello(self):
-            pass
-
-
-    astro = Astronaut()
-    # Traceback (most recent call last):
-    # TypeError: Can't instantiate abstract class Astronaut with abstract methods hello
+>>> from abc import ABC, abstractmethod
+>>>
+>>>
+>>> class Astronaut(ABC):
+...     @abstractmethod
+...     def say_hello(self):
+...         pass
+>>>
+>>>
+>>> astro = Astronaut()
+Traceback (most recent call last):
+TypeError: Can't instantiate abstract class Astronaut with abstract methods hello
 
 Class Decorator:
 
-.. code-block:: python
-
-    import logging
-
-
-    def add_logger(cls):
-        class Wrapper(cls):
-            _logger = logging.getLogger(cls.__name__)
-        return Wrapper
-
-
-    @add_logger
-    class Astronaut:
-        pass
-
-
-    print(Astronaut._logger)
-    # <Logger Astronaut (WARNING)>
+>>> import logging
+>>>
+>>>
+>>> def add_logger(cls):
+...     class Wrapper(cls):
+...         _logger = logging.getLogger(cls.__name__)
+...     return Wrapper
+>>>
+>>>
+>>> @add_logger
+... class Astronaut:
+...     pass
+>>>
+>>>
+>>> print(Astronaut._logger)
+<Logger Astronaut (WARNING)>
 
 
 References

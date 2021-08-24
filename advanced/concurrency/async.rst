@@ -43,27 +43,16 @@ Async Programming
 * By Michael Kennedy
 
 .. figure:: img/sync-execution-sequence.png
-
 .. figure:: img/sync-execution-timeline.png
-
 .. figure:: img/async-execution-sequence.png
-
 .. figure:: img/async-execution-timeline.png
-
 .. figure:: img/eventloop-sync.png
-
 .. figure:: img/eventloop-async.png
-
 .. figure:: img/async-python.png
-
 .. figure:: img/async-threads.png
-
 .. figure:: img/async-gil.png
-
 .. figure:: img/async-anatomy.png
-
 .. figure:: img/uvloop-doc.png
-
 .. figure:: img/uvloop-using.png
 
 
@@ -78,20 +67,18 @@ Iterator
 * ``__aiter__``
 * ``__anext__``
 
-.. code-block:: python
-
-    class Reader:
-        async def readline(self):
-            ...
-
-        def __aiter__(self):
-            return self
-
-        async def __anext__(self):
-            val = await self.readline()
-            if val == b'':
-                raise StopAsyncIteration
-            return val
+>>> class Reader:
+...     async def readline(self):
+...         ...
+...
+...     def __aiter__(self):
+...         return self
+...
+...     async def __anext__(self):
+...         val = await self.readline()
+...         if val == b'':
+...             raise StopAsyncIteration
+...         return val
 
 
 Context Manager
@@ -99,14 +86,12 @@ Context Manager
 * ``__aenter__``
 * ``__aexit__``
 
-.. code-block:: python
-
-    class AsyncContextManager:
-        async def __aenter__(self):
-            await print('entering context')
-
-        async def __aexit__(self, exc_type, exc, tb):
-            await print('exiting context')
+>>> class AsyncContextManager:
+...     async def __aenter__(self):
+...         await print('entering context')
+...
+...     async def __aexit__(self, exc_type, exc, tb):
+...         await print('exiting context')
 
 
 3rd Party Library - Trio
@@ -117,34 +102,32 @@ Context Manager
 
     $ pip install trio
 
-.. code-block:: python
-
-    import trio
-
-    async def child1():
-        print("  child1: started! sleeping now...")
-        await trio.sleep(1)
-        print("  child1: exiting!")
-
-    async def child2():
-        print("  child2: started! sleeping now...")
-        await trio.sleep(1)
-        print("  child2: exiting!")
-
-    async def parent():
-        print("parent: started!")
-        async with trio.open_nursery() as nursery:
-            print("parent: spawning child1...")
-            nursery.start_soon(child1)
-
-            print("parent: spawning child2...")
-            nursery.start_soon(child2)
-
-            print("parent: waiting for children to finish...")
-            # -- we exit the nursery block here --
-        print("parent: all done!")
-
-    trio.run(parent)
+>>> import trio
+>>>
+>>> async def child1():
+...     print("  child1: started! sleeping now...")
+...     await trio.sleep(1)
+...     print("  child1: exiting!")
+>>>
+>>> async def child2():
+...     print("  child2: started! sleeping now...")
+...     await trio.sleep(1)
+...     print("  child2: exiting!")
+>>>
+>>> async def parent():
+...     print("parent: started!")
+...     async with trio.open_nursery() as nursery:
+...         print("parent: spawning child1...")
+...         nursery.start_soon(child1)
+...
+...         print("parent: spawning child2...")
+...         nursery.start_soon(child2)
+...
+...         print("parent: waiting for children to finish...")
+...         # -- we exit the nursery block here --
+...     print("parent: all done!")
+...
+... trio.run(parent)
 
 Client:
 

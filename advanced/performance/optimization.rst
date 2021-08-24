@@ -2,6 +2,11 @@ Performance Optimization
 ========================
 
 
+Rationale
+---------
+* https://wiki.python.org/moin/TimeComplexity
+
+
 PyPy
 ----
 * http://pypy.org
@@ -105,25 +110,33 @@ Numba
 -----
 Numba gives you the power to speed up your applications with high performance functions written directly in Python. With a few annotations, array-oriented and math-heavy Python code can be just-in-time compiled to native machine instructions, similar in performance to C, C++ and Fortran, without having to switch languages or Python interpreters.
 
-.. code-block:: python
-
-    from numba import jit, int32
-
-
-    @jit(nogil=True)
-    def do_something():
-        pass
-
-
-    @jit(int32(int32, int32))
-    def add(x, y):
-        return x + y
+>>> from numba import jit, int32
+>>>
+>>>
+>>> @jit(nogil=True)
+... def do_something():
+...     pass
+>>>
+>>>
+>>> @jit(int32(int32, int32))
+... def add(x, y):
+...     return x + y
 
 
 Dask
 ----
-Dask natively scales Python. Dask provides advanced parallelism for analytics, enabling performance at scale for the tools you love
+* https://dask.org
 
+Dask natively scales Python. Dask provides advanced parallelism for
+analytics, enabling performance at scale for the tools you love.
+
+Dask's schedulers scale to thousand-node clusters and its algorithms have
+been tested on some of the largest supercomputers in the world.
+
+But you don't need a massive cluster to get started. Dask ships with
+schedulers designed for use on personal machines. Many people use Dask
+today to scale computations on their laptop, using multiple cores for
+computation and their disk for excess storage.
 
 
 Find existing implementation
@@ -134,110 +147,103 @@ Find existing implementation
 Contains
 --------
 * Use ``set`` instead of ``list``
-* Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień listę na ``set``, dzięki temu będzie lepsza złożoność
 
-.. code-block:: python
+>>> NAMES = ['José', 'Иван', 'Max']
+>>>
+>>> if 'Max' in NAMES:
+...     pass
 
-    NAMES = ['José', 'Иван', 'Max']
-
-    if 'Max' in NAMES:
-        pass
-
-.. code-block:: python
-
-    NAMES = {'José', 'Иван', 'Max'}
-
-    if 'Max' in NAMES:
-        pass
+>>> NAMES = {'José', 'Иван', 'Max'}
+>>>
+>>> if 'Max' in NAMES:
+...     pass
 
 
 String Concatenation
 --------------------
 How many string are there in a memory?:
 
-.. code-block:: python
-
-    firstname = 'Jan'
-    lastname = 'Twardowski'
-
-    firstname + ' ' + lastname
-    # Jan Twardowski
+>>> firstname = 'Jan'
+>>> lastname = 'Twardowski'
+>>>
+>>> firstname + ' ' + lastname
+Jan Twardowski
 
 How many string are there in a memory?:
 
-.. code-block:: python
-
-    firstname = 'Jan'
-    lastname = 'Twardowski'
-
-    f'{firstname} {lastname}'
-    # Jan Twardowski
+>>> firstname = 'Jan'
+>>> lastname = 'Twardowski'
+>>>
+>>> f'{firstname} {lastname}'
+Jan Twardowski
 
 How many string are there in a memory?:
 
-.. code-block:: python
-
-    firstname = 'Jan'
-    lastname = 'Twardowski'
-    age = 42
-
-    'Hello ' + firstname + ' ' + lastname + ' ' + str(age) + '!'
-    # 'Hello Jan Twardowski 42!'
+>>> firstname = 'Jan'
+>>> lastname = 'Twardowski'
+>>> age = 42
+>>>
+>>> 'Hello ' + firstname + ' ' + lastname + ' ' + str(age) + '!'
+'Hello Jan Twardowski 42!'
 
 How many string are there in a memory?:
 
-.. code-block:: python
-
-    firstname = 'Jan'
-    lastname = 'Twardowski'
-    age = 42
-
-    f'Hello {firstname} {lastname} {age}!'
-    # 'Hello Jan Twardowski 42!'
+>>> firstname = 'Jan'
+>>> lastname = 'Twardowski'
+>>> age = 42
+>>>
+>>> f'Hello {firstname} {lastname} {age}!'
+'Hello Jan Twardowski 42!'
 
 
-Use ``list.append()`` instead of ``str + str``:
+String Append
+-------------
+* Use ``list.append()`` instead of ``str + str``:
 
-.. code-block:: python
+Concatenates strings using + in a loop:
 
-    # Performance - Method concatenates strings using + in a loop
-    html = '<table>'
+>>> DATA = ['Mark Watney', 'Melissa Lewis', 'Rick Martinez']
+>>> result = '<table>'
+>>>
+>>> for element in DATA:
+...     result += f'<tr><td>{element}</td></tr>'
+>>>
+>>> result += '</table>'
+>>> print(result)
+<table><tr><td>Mark Watney</td></tr><tr><td>Melissa Lewis</td></tr><tr><td>Rick Martinez</td></tr></table>
 
-    for element in lista:
-        html += f'<tr><td>{element}</td></tr>'
+Problem solved:
 
-    html += '</table>'
-    print(html)
-
-.. code-block:: python
-
-    # Problem solved
-    html = ['<table>']
-
-    for element in lista:
-        html.append(f'<tr><td>{element}</td></tr>')
-
-    html.append('</table>')
-    print(''.join(html))
+>>> DATA = ['Mark Watney', 'Melissa Lewis', 'Rick Martinez']
+>>> result = ['<table>']
+>>>
+>>> for element in DATA:
+...     result.append(f'<tr><td>{element}</td></tr>')
+>>>
+>>> result.append('</table>')
+>>> print(''.join(result))
+<table><tr><td>Mark Watney</td></tr><tr><td>Melissa Lewis</td></tr><tr><td>Rick Martinez</td></tr></table>
 
 
 Range between two ``float``
 ---------------------------
-* Uwaga na set zawierający floaty, bo pomiędzy dwoma wartościami jest nieskończona ilość wyrażeń
+* There are indefinitely many values between two floats
 
-.. code-block:: python
+>>> range(0, 1)
+0
 
-    range(0, 2)
-    # 0
-    # 1
+Note, that in Python following code will not execute, as of ``range()`` requires two integers. However similar code with ``numpy.arange()`` will work.
 
-    range(0.0, 2.0)
-    # ...
+>>> range(0.0, 1.0)  # doctest: +SKIP
+0.000...000
+0.000...001
+0.000...002
+0.000...003
 
-Inne
-----
-* Jeżeli coś ``collections.deque`` - Double ended Queue
-* Serializowanie kolejki przy wielowątkowości
+
+Deque
+-----
+* ``collections.deque`` - Double ended Queue
 
 
 Further Reading

@@ -52,19 +52,17 @@ Compile
 -------
 ``setup.py``:
 
-.. code-block:: python
-
-    import sys
-    from distutils.core import setup, Extension
-
-    print('Building for Python 3')
-    module = Extension('hello', sources = ['mylib-cmodules.c'])
-
-    setup(
-        name = 'hello',
-        version='1.0',
-        description = 'Ehlo World!',
-        ext_modules = [module])
+>>> import sys
+>>> from distutils.core import setup, Extension
+>>>
+>>> print('Building for Python 3')
+>>> module = Extension('hello', sources = ['mylib-cmodules.c'])
+>>>
+>>> setup(
+...     name = 'hello',
+...     version='1.0',
+...     description = 'Ehlo World!',
+...     ext_modules = [module])
 
 Execute:
 
@@ -76,12 +74,10 @@ Execute:
 
 Run:
 
-.. code-block:: python
-
-    import hello
-
-    hello.say_hello('José Jiménez')
-    # José Jiménez
+>>> import hello  # doctest: +SKIP
+>>>
+>>> hello.say_hello('José Jiménez')  # doctest: +SKIP
+José Jiménez
 
 
 Assignments
