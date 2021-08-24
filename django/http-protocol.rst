@@ -90,14 +90,15 @@ Response
 
 Sessions
 --------
-* bazy danych
-* cache
-* pliki
-* memory
+* Database
+* Cache
+* Files
+* Memory
+
 
 Cookies
 -------
-* Ustawa o cookies
+* EU cookies regulation from 2009
 
 
 HTTP Methods
