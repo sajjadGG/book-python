@@ -2,7 +2,7 @@ ORM
 ===
 
 QuerySet
--------------------------------------------------------------------------------
+--------
 * sklejanie zapytań
 * Tworzenie obiektów
 * Zapisywanie ``save()`` ForeignKey
@@ -157,9 +157,25 @@ An F() object represents the value of a model field or annotated column. It make
     Iris.objects.all().update(petal_length=F('petal_length') + 1)
 
 Aggregations
--------------------------------------------------------------------------------
+------------
 * Django ORM Cheat sheet
 
 .. literalinclude:: src/django-orm-cheatsheet.py
     :language: python
+
+
+Functions
+---------
+* https://docs.djangoproject.com/en/dev/ref/models/database-functions/
+
+>>> # doctest: +SKIP
+... from django.db.models import Value
+... from myapp.models import Contact
+...
+...
+... Contact.objects
+...     .all()
+...     .annotate(fullname=Concat('firstname', Value(' '), 'lastname'))
+...     .values('fullname')
+<QuerySet [{'fullname': 'Melissa Lewis'}, {'fullname': 'Rick Martinez'}, {'fullname': 'Alex Vogel'}, {'fullname': 'Beth Johnssen'}, {'fullname': 'Jan Twardowski'}, {'fullname': 'Jan Twardowski'}]>
 
