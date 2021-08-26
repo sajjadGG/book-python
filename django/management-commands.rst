@@ -3,7 +3,7 @@ Management Commands
 
 
 Built-in
--------------------------------------------------------------------------------
+--------
 .. code-block:: text
 
     [auth]
@@ -49,8 +49,6 @@ Built-in
         findstatic
         runserver
 
-Writing own management commands
--------------------------------------------------------------------------------
 
 Structure
 ---------
@@ -62,6 +60,7 @@ Structure
             commands
             __init__.py
             my_command.py
+
 
 Minimal command boilerplate code
 --------------------------------
@@ -76,8 +75,46 @@ Minimal command boilerplate code
         def handle(self, *args, **options):
             pass
 
-Cleaning data in database
--------------------------
+
+Writing own management commands
+-------------------------------
+.. code-block:: python
+
+    import csv
+    from django.core.management import BaseCommand
+    from contact.models import Contact
+
+
+    class Command(BaseCommand):
+        help = 'What my command does?'
+
+        def add_arguments(self, parser):
+            parser.add_argument('--action', dest='action', help='Action to do')
+            parser.add_argument('--file', dest='file', help='Filename to parse')
+
+        def handle(self, *args, **options):
+            action = options['action']
+            file = options['file']
+
+            if action == 'parse':
+                with open(file) as f:
+                    header = f.readline()
+                    reader = csv.DictReader(f, fieldnames=['firstname', 'lastname'])
+                    for line in reader:
+                        Contact.add(**line)
+
+
+Call
+----
+.. code-block:: python
+
+    from django.core import management
+    management.call_command("syncdata")
+
+
+
+Use Case - Cleaning data in database
+------------------------------------
 .. code-block:: python
 
     from django.core.management.base import BaseCommand
@@ -93,8 +130,9 @@ Cleaning data in database
                 p.lastname = p.lastname.title()
                 p.save()
 
-Parse file line by line
------------------------
+
+Use Case - Parse file line by line
+----------------------------------
 .. code-block:: python
 
     from django.core.management.base import BaseCommand
