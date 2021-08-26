@@ -102,10 +102,12 @@ Relations
 * ``related_name`` (ForeignKey, ManyToManyField)
 * ``on_delete`` (ForeignKey, ManyToManyField)
 
-Date and time
+
+Date and Time
 -------------
 * ``auto_add`` (DateField, DateTimeField)
 * ``auto_add_now`` (DateField, DateTimeField)
+
 
 Numeric
 -------

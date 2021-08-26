@@ -120,7 +120,7 @@ Complex lookups with Q objects
     # AND (pub_date = '2005-05-02' OR pub_date = '2005-05-06')
 
 Comparing objects
--------------------------------------------------------------------------------
+-----------------
 .. code-block:: python
 
     some_entry == other_entry
@@ -130,7 +130,7 @@ Comparing objects
     some_obj.name == other_obj.name
 
 ``Q()`` expressions
--------------------------------------------------------------------------------
+-------------------
 .. code-block:: python
 
     from django.db.models import Q
