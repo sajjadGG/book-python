@@ -2,7 +2,7 @@ i18n and l10n
 =============
 
 Timezone
--------------------------------------------------------------------------------
+--------
 * django.utils.timezone
 * from django.conf.locale.en import formats as en_formats
 
@@ -16,7 +16,7 @@ Timezone
 
 
 Gettext
--------------------------------------------------------------------------------
+-------
 * ``.po`` files
 * ``.mo`` files
 * Using ``gettext`` in code
@@ -27,7 +27,7 @@ Gettext
 
 
 i18n - internationalization
--------------------------------------------------------------------------------
+---------------------------
 * ``django-admin makemessages -l en``
 * ``django-admin compilemessages``
 * ``{% blocktranslate %}`` and ``{% endblocktranslate %}``

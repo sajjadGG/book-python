@@ -3,7 +3,7 @@ CI/CD - Continuous Integration and Deployment
 
 
 Bitbucket Pipelines
--------------------------------------------------------------------------------
+-------------------
 .. code-block:: yaml
 
     image: python:3.6.5
@@ -57,7 +57,7 @@ Bitbucket Pipelines
               - git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git HEAD
 
 Travis
--------------------------------------------------------------------------------
+------
 .. code-block:: yaml
 
     dist: trusty

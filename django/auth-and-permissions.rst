@@ -3,7 +3,7 @@ Auth and Permissions
 
 
 Basic Auth
--------------------------------------------------------------------------------
+----------
 .. code-block:: python
 
     from django.contrib.auth import authenticate, login
@@ -39,7 +39,7 @@ Basic Auth
 
 
 Require Permissions
--------------------------------------------------------------------------------
+-------------------
 .. code-block:: python
 
     from django.contrib.auth.mixins import PermissionRequiredMixin

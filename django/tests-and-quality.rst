@@ -3,7 +3,7 @@ Tests and quality
 
 
 Tests
--------------------------------------------------------------------------------
+-----
 * https://docs.djangoproject.com/en/dev/topics/testing/overview/
 
 .. literalinclude:: src/django-tests.py
@@ -27,7 +27,7 @@ Tests
     $ ./manage.py test animals.tests.AnimalTestCase.test_animals_can_speak
 
 Test URLs
--------------------------------------------------------------------------------
+---------
 .. code-block:: python
 
     import logging
@@ -79,7 +79,7 @@ Test URLs
 
 
 SonarQube
--------------------------------------------------------------------------------
+---------
 .. code-block:: text
 
     sonar.host.url=https://sonarcloud.io
@@ -123,8 +123,9 @@ SonarQube
     sonar.issue.ignore.multicriteria.e2.ruleKey=python:S100
     sonar.issue.ignore.multicriteria.e2.resourceKey=**/tests.py
 
+
 Debug Toolbar
--------------------------------------------------------------------------------
+-------------
 .. code-block:: python
 
     INSTALLED_APPS += ['debug_toolbar']

@@ -3,7 +3,7 @@ Forms
 
 
 Forms
--------------------------------------------------------------------------------
+-----
 
 Simple "contact us" form
 ------------------------
@@ -89,7 +89,7 @@ Simple "contact us" form
 * ``{{ form.as_ul }}`` will render them wrapped in ``<li>`` tags
 
 Model Forms
--------------------------------------------------------------------------------
+-----------
 .. code-block:: python
 
     from django.db import models
@@ -161,7 +161,7 @@ Model Forms
 
 
 Widgets
--------------------------------------------------------------------------------
+-------
 .. code-block:: python
 
     from django.forms import ModelForm, Textarea

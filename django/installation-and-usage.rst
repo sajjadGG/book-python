@@ -2,15 +2,15 @@ Installation and Running
 ========================
 
 
-Instalacja
--------------------------------------------------------------------------------
+Installation
+------------
 .. code-block:: console
 
     $ pip install django
 
 
 Starting new project
--------------------------------------------------------------------------------
+--------------------
 .. code-block:: console
 
     $ django-admin startproject addressbook
@@ -39,7 +39,7 @@ Sprawdź w przeglądarce strony:
 * ``http://localhost:8000/admin/``
 
 IDE Run configuration
--------------------------------------------------------------------------------
+---------------------
 
 Run configuration
 -----------------

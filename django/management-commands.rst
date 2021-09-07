@@ -2,6 +2,11 @@ Management Commands
 ===================
 
 
+Rationale
+---------
+Custom management commands are especially useful for running standalone scripts or for scripts that are periodically executed from the UNIX crontab or from Windows scheduled tasks control panel.
+
+
 Built-in
 --------
 .. code-block:: text
@@ -172,6 +177,7 @@ Use Case - Parse file line by line
                     content.append(line)
 
             print('\n'.join(content))
+
 
 Use cases
 ---------

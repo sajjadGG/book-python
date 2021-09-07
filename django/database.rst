@@ -3,10 +3,12 @@ Database
 
 
 Database schema migration
--------------------------------------------------------------------------------
+-------------------------
 
 Makemigrations
 --------------
+* ``--squash``
+
 .. code-block:: console
 
     $ python manage.py makemigrations
@@ -25,7 +27,7 @@ Migrate
       Applying contact.0001_initial... OK
 
 Management commands
--------------------------------------------------------------------------------
+-------------------
 
 dbshell
 -------
@@ -42,13 +44,10 @@ inspectdb
 
 makemigrations
 --------------
-* ``--squash``
 
 migrate
 -------
 
-Database settings
--------------------------------------------------------------------------------
 
 Sqlite3
 -------
@@ -61,6 +60,7 @@ Sqlite3
             'NAME': os.path.join(BASE_DIR, 'HabitatOS.sqlite3'),
         }
     }
+
 
 PostgreSQL
 ----------
@@ -85,9 +85,11 @@ Heroku
         import dj_database_url
         DATABASES['default'] = dj_database_url.config()
 
+
 Fixtures
--------------------------------------------------------------------------------
+--------
 fixtures directory of every installed application
 
+
 Multiple DB and db routing
--------------------------------------------------------------------------------
+--------------------------
