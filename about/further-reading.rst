@@ -29,6 +29,11 @@ Python Development
 * Future of Python: https://www.youtube.com/watch?v=fOdCxum-qLA
 
 
+Django
+------
+* Class-Based Views http://ccbv.co.uk
+
+
 Conferences
 -----------
 * Python Events Calendar - https://www.python.org/events/python-events/
