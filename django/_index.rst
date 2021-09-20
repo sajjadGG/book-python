@@ -3,13 +3,14 @@
     :caption: Django
 
     about/certificate.rst
-    http-protocol.rst
-    http-identifiers.rst
-    introduction.rst
-    architecture.rst
-    installation-and-usage.rst
-    settings.rst
-    apps.rst
+    about/protocol.rst
+    about/identifiers.rst
+    about/introduction.rst
+    about/architecture.rst
+
+    conf/installation-and-usage.rst
+    conf/settings.rst
+    conf/apps.rst
 
     models/about.rst
     models/text.rst
@@ -35,29 +36,26 @@
     orm/functions.rst
     orm/aggregate.rst
 
-    views.rst
-    urls.rst
-    staticfiles.rst
-    templates.rst
-    templatetags.rst
-    forms.rst
-    internationalization.rst
+    views/views.rst
+    views/urls.rst
+    views/staticfiles.rst
+    views/templates.rst
+    views/templatetags.rst
+    views/forms.rst
 
-    management-commands.rst
-    standalone-scripts.rst
+    internals/internationalization.rst
+    internals/management-commands.rst
+    internals/standalone-scripts.rst
+    internals/middleware.rst
+    internals/database.rst
+    internals/cache.rst
+    internals/signals.rst
 
+    api/rest.rst
+    api/auth-and-permissions.rst
+    api/api-cors.rst
 
-    rest.rst
-
-    database.rst
-    cache.rst
-    signals.rst
-    auth-and-permissions.rst
-    api-cors.rst
-
-
-
-    tests-and-quality.rst
-    tests.rst
-    ci-cd.rst
-    deployment.rst
+    devops/tests-and-quality.rst
+    devops/tests.rst
+    devops/ci-cd.rst
+    devops/deployment.rst

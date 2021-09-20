@@ -1,5 +1,5 @@
 """
-* Assignment: Address Book
+* Assignment: Django Models AddressBook
 * Complexity: medium
 * Lines of code: 50 lines
 * Time: 21 min

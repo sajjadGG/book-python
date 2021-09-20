@@ -74,6 +74,28 @@ Assignments
     :caption: :download:`Solution <assignments/django_model_a.py>`
     :end-before: # Solution
 
+.. figure:: img/iris-setosa.jpg
+
+    Iris Setosa [#irissetosa]_
+
+.. figure:: img/iris-versicolor.jpg
+
+    Iris Versicolor [#irisversicolor]_
+
+.. figure:: img/iris-virginica.jpg
+
+    Iris Virginica [#irisvirginica]_
+
 .. literalinclude:: assignments/django_model_b.py
     :caption: :download:`Solution <assignments/django_model_b.py>`
     :end-before: # Solution
+
+
+References
+----------
+.. [#irissetosa] https://commons.wikimedia.org/wiki/File:Iris_setosa_2.jpg
+
+.. [#irisversicolor] Blue flag flower (Iris versicolor). Photo taken by Danielle Langlois in July 2005 at the Forillon National Park of Canada, Quebec, Canada. https://commons.wikimedia.org/wiki/File:Iris_versicolor_2.jpg
+
+.. [#irisvirginica] https://commons.wikimedia.org/wiki/File:Iris_virginica.jpg
+
