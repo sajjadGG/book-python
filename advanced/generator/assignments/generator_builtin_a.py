@@ -6,23 +6,29 @@
 
 English:
     1. Use generator expression to create `numbers`
-    2. In generator use `range()` to get numbers from 1 to 33
-       (inclusive) divisible by 3
-    3. Use `filter()` to get odd numbers from `numbers`
+    2. In generator use `range()` to get numbers:
+       a. from 1 (inclusive)
+       b. to 34 (exclusive)
+       c. divisible by 3
+    3. Use `filter()` to get odd numbers from `numbers` (and assign to numbers)
     4. Use `map()` to cube all numbers in `numbers`
     5. Create `result: float` with arithmetic mean of `numbers`
     6. Do not use `lambda` expressions
-    7. Run doctests - all must succeed
+    7. Note, that all the time you are working on one data stream
+    8. Run doctests - all must succeed
 
 Polish:
     1. Użyj wyrażenia generatorowego do stworzenia `numbers`
-    2. W generatorze użyj `range()` aby otrzymać liczby od 1 do 33
-       (włącznie) podzielne przez 3
-    3. Użyj `filter()` aby otrzymać liczby nieparzyste z `numbers`
+    2. W generatorze użyj `range()` aby otrzymać liczby:
+       a. od 1 (włącznie)
+       b. do 34 (rozłącznie)
+       c. podzielne przez 3
+    3. Użyj `filter()` aby otrzymać liczby nieparzyste z `numbers` (i przypisz je do numbers)
     4. Użyj `map()` aby podnieść wszystkie liczby w `numbers` do sześcianu
     5. Stwórz `result: float` ze średnią arytmetyczną z `numbers`
     6. Nie używaj wyrażeń lambda
-    7. Uruchom doctesty - wszystkie muszą się powieść
+    7. Zwróć uwagę, że cały czas pracujesz na jednym strumieniu danych
+    8. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * type cast to `list()` to expand generator before calculating mean
