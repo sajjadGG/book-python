@@ -8,7 +8,35 @@ Rationale
 * This eliminates any chances of side effects
 * Any variable can be replaced with its actual value at any point of execution [#Hughes1984]_
 
->>> data = 1
+Bad:
+
+>>> a = 1
+>>> a += 2
+
+Good:
+
+>>> a = 1
+>>> b = a + 2
+
+
+Example
+-------
+>>> x = 1
+>>> y = 2
+>>>
+>>>
+>>> def add(a,b):
+...     return a + b
+>>>
+>>>
+>>> add(x,y)
+3
+>>> add(1,y)
+3
+>>> add(x,2)
+3
+>>> add(1,2)
+3
 
 
 References
