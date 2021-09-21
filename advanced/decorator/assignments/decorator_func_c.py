@@ -7,7 +7,7 @@
 English:
     1. Create decorator `check`
     2. Decorator calls function, only when `echo.disabled` is `False`
-    3. Note that decorators overwrite pointers and in `wrapper`
+    3. Note that decorators overwrite reference and in `wrapper`
        you must check if `wrapper.disabled` is `False`
     4. Else raise an exception `PermissionError`
     5. Run doctests - all must succeed
@@ -15,7 +15,7 @@ English:
 Polish:
     1. Stwórz dekorator `check`
     2. Dekorator wywołuje funkcję, tylko gdy `echo.disabled` jest `False`
-    3. Zwróć uwagę, że dekoratory nadpisują wskaźniki i we `wrapper`
+    3. Zwróć uwagę, że dekoratory nadpisują referencje i we `wrapper`
        musisz sprawdzić czy `wrapper.disabled` jest `False`
     4. W przeciwnym przypadku podnieś wyjątek `PermissionError`
     5. Uruchom doctesty - wszystkie muszą się powieść

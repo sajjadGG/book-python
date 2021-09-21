@@ -127,7 +127,7 @@ Tuple:
 List:
 
     * mutable
-    * implemented in memory as list of pointers to objects
+    * implemented in memory as list of references to objects
     * objects are scattered in memory
 
 Memory Footprint:

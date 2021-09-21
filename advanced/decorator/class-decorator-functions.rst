@@ -10,11 +10,11 @@ Rationale
 
 Syntax
 ------
-* ``cls`` is a pointer to class which is being decorated (``MyClass`` in this case)
+* ``cls`` is a reference to class which is being decorated (``MyClass`` in this case)
 * ``Wrapper`` is a closure class
 * ``Wrapper`` name is a convention, but you can name it anyhow
 * ``Wrapper`` can inherit from ``MyClass``
-* Decorator must return pointer to ``Wrapper``
+* Decorator must return reference to ``Wrapper``
 
 >>> class MyDecorator:
 ...     def __init__(self, func):

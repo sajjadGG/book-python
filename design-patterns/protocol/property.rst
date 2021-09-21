@@ -338,7 +338,7 @@ Jan Twardowski
 
 Property class
 --------------
-* Property's arguments are method pointers ``get_name``, ``set_name``, ``del_name`` and a docstring
+* Property's arguments are method references ``get_name``, ``set_name``, ``del_name`` and a docstring
 * Not recommended
 
 >>> class Astronaut:

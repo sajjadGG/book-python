@@ -1,5 +1,5 @@
 """
-* Assignment: Decorator Arguments Type Check
+* Assignment: Decorator Arguments TypeCheck
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min
@@ -16,6 +16,10 @@ Polish:
 
 Hints:
     * `echo.__annotations__`
+    * `dict(zip(...))`
+    * `kwargs.items()`
+    * `list(kwargs.items())[:-1]`
+    * `dict1 | dict2` - merging dicts since Python 3.9
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

@@ -1,5 +1,5 @@
 """
-* Assignment: Decorator Function Type Check
+* Assignment: Decorator Function TypeCheck
 * Complexity: hard
 * Lines of code: 15 lines
 * Time: 21 min
@@ -25,14 +25,18 @@ Polish:
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * Merge dict since Python 3.9: `kwargs | args`
-    * Merge dict in Python 3.7, 3.8: `{**args, **kwargs)}`
+    * Merge dict since Python 3.9: `dict1 | dict2`
+    * Merge dict in Python 3.7, 3.8: `{**dict1, **dict2)}`
     * Convert args into dict: `dict(zip(func.__annotations__.keys(), args))`
     * `echo.__annotations__`
     # {'a': <class 'str'>,
     #  'b': <class 'int'>,
     #  'c': <class 'float'>,
     #  'return': <class 'bool'>}
+    * `dict(zip(...))`
+    * `kwargs.items()`
+    * `list(kwargs.items())[:-1]`
+    * `dict1 | dict2` - merging dicts since Python 3.9
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

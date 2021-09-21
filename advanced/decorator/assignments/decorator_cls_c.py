@@ -1,5 +1,5 @@
 """
-* Assignment: Decorator Class Type Check
+* Assignment: Decorator Class TypeCheck
 * Complexity: medium
 * Lines of code: 18 lines
 * Time: 13 min
@@ -26,6 +26,10 @@ Polish:
 
 Hints:
     * `echo.__annotations__`
+    * `dict(zip(...))`
+    * `kwargs.items()`
+    * `list(kwargs.items())[:-1]`
+    * `dict1 | dict2` - merging dicts since Python 3.9
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -111,8 +115,9 @@ def typecheck(func):
     return wrapper
 
 
+# class: Refactor typecheck into class
 class TypeCheck:
-    pass
+    ...
 
 
 # Solution

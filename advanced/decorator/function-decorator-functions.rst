@@ -4,7 +4,7 @@ Decorator Function with Func
 
 Rationale
 ---------
-* Decorator must return pointer to ``wrapper``
+* Decorator must return reference to ``wrapper``
 * ``wrapper`` is a closure function
 * ``wrapper`` name is a convention, but you can name it anyhow
 * ``wrapper`` gets arguments passed to ``function``

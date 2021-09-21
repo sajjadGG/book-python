@@ -1,8 +1,8 @@
 """
 * Assignment: Decorator Class Abspath
 * Complexity: easy
-* Lines of code: 10 lines
-* Time: 13 min
+* Lines of code: 6 lines
+* Time: 5 min
 
 English:
     1. Absolute path is when `path` starts with `current_directory`

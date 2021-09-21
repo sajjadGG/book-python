@@ -71,7 +71,7 @@ Comprehensions or Generator Expression
 --------------------------------------
 Generator Expressions:
 
-    * Creates generator object and assign pointer
+    * Creates generator object and assign reference
     * Code is not executed instantly
     * Sometimes code is not executed at all!
     * Are cleared once they are executed

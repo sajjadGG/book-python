@@ -34,54 +34,54 @@ Pure Function
 
 Impure Function
 ---------------
->>> c = 3
->>>
->>>
 >>> def add(a, b):
 ...     return a + b + c
 >>>
 >>>
->>> add(1, 2)
-6
->>> add(1, 2)
-6
->>> add(1, 2)
-6
->>>
->>> c = 4
+>>> c = 0
 >>>
 >>> add(1, 2)
-7
+3
 >>> add(1, 2)
-7
+3
 >>> add(1, 2)
-7
+3
+>>>
+>>>
+>>> c = 1
+>>>
+>>> add(1, 2)
+4
+>>> add(1, 2)
+4
+>>> add(1, 2)
+4
 
 
 Impure to Pure Function
 -----------------------
->>> c = 3
->>>
->>>
 >>> def add(a, b, c):
 ...     return a + b + c
 >>>
 >>>
->>> add(1, 2, c)
-6
->>> add(1, 2, c)
-6
->>> add(1, 2, c)
-6
->>>
->>> c = 4
+>>> c = 0
 >>>
 >>> add(1, 2, c)
-7
+3
 >>> add(1, 2, c)
-7
+3
 >>> add(1, 2, c)
-7
+3
+>>>
+>>>
+>>> c = 1
+>>>
+>>> add(1, 2, c)
+4
+>>> add(1, 2, c)
+4
+>>> add(1, 2, c)
+4
 
 Side Effects
 ------------
@@ -97,8 +97,8 @@ Side Effects
 >>> read('myfile.txt')  # doctest: +SKIP
 
 
-Use Case 1
-----------
+Use Case - Math Functions
+-------------------------
 Mathematical functions are pure in general
 
 >>> def add(a, b):
@@ -111,8 +111,8 @@ Mathematical functions are pure in general
 ...     return x ** 3
 
 
-Use Case 2
-----------
+Use Case - Select
+-----------------
 Pure:
 
 >>> DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),

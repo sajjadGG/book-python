@@ -382,7 +382,7 @@ Proxy functions. One of the most common use of ``*args``, ``**kwargs``:
     mycsv('iris3.csv', encoding='cp1250', verbose=True)
     mycsv('iris4.csv', verbose=True, usecols=['Sepal Length', 'Species'])
 
-Decorators. Decorators are functions, which get pointer to the decorated function as it's argument, and has closure which gets original function arguments as positional and keyword arguments:
+Decorators. Decorators are functions, which get reference to the decorated function as it's argument, and has closure which gets original function arguments as positional and keyword arguments:
 
 .. code-block:: python
 

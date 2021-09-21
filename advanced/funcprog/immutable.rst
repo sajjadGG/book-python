@@ -17,6 +17,7 @@ Rational
 
 * Source: [#WikipediaFunc]_
 
+
 Mutable vs Immutable
 --------------------
 .. figure:: img/funcprog-immutable-tuple.png
