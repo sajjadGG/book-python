@@ -22,6 +22,11 @@ Polish:
     6. Porównaj wyniki obu używając `sys.getsizeof()`
     7. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * ``str.splitlines()``
+    * ``str.split()``
+    * unpacking expression
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from sys import getsizeof

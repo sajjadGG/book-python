@@ -1,7 +1,7 @@
 Agenda
 ======
 * Szkolenie 9:00 - 17:00
-* Przerwa obiadowa 13:00 - 13:45
+* Przerwa obiadowa 12:30 - 13:15
 * 5-10 min przerwy co godzinę/półtora
 
 

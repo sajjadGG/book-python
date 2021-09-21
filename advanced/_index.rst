@@ -35,6 +35,7 @@ Functional Programming
     funcprog/pure-function.rst
     funcprog/recurrence.rst
     funcprog/immutable.rst
+    funcprog/first-class.rst
     funcprog/higher-order.rst
     funcprog/referential-transparency.rst
     funcprog/functional-paradigm.rst

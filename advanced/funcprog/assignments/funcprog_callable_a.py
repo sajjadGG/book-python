@@ -40,7 +40,7 @@ def wrapper():
     ...
 
 
-# Callable: takes `func` as an argument, returns wrapper
+# Callable: takes `func` as an argument, returns wrapper function
 def check():
     ...
 

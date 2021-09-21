@@ -5,6 +5,19 @@ FuncProg Callable
 Rationale
 ---------
 >>> def hello():
+...     print('My name... José Jiménez')
+>>>
+>>>
+>>> type(hello)
+<class 'function'>
+>>>
+>>> callable(hello)
+True
+
+
+Details
+-------
+>>> def hello():
 ...     return 'Hello World'
 >>>
 >>>

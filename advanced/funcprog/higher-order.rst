@@ -18,6 +18,34 @@ Example
 ...     return lower
 
 
+Calling
+-------
+>>> def lower():
+...     return 'My name... José Jiménez'
+>>>
+>>> def higher():
+...     return lower
+>>>
+>>>
+>>> a = higher
+>>> b = higher()
+>>>
+>>> a
+<function higher at 0x10a999040>
+>>>
+>>> a()
+<function lower at 0x10a802a60>
+>>>
+>>> a()()
+'My name... José Jiménez'
+>>>
+>>> b
+<function lower at 0x10a802a60>
+>>>
+>>> b()
+'My name... José Jiménez'
+
+
 Use Case
 --------
 >>> def http_request(url, on_success, on_error):

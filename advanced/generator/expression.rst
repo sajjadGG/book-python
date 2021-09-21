@@ -43,15 +43,28 @@ Generator Expression
 
 Example
 -------
+>>> data = [x for x in range(0,5)]          # list comprehension
+>>> data = (x for x in range(0,5))          # generator expression
+>>> data = {x for x in range(0,5)}          # set comprehension
+>>> data = {x:x for x in range(0,5)}        # dict comprehension
+
 >>> data = list(x for x in range(0,5))      # list comprehension
 >>> data = tuple(x for x in range(0,5))     # tuple comprehension
 >>> data = set(x for x in range(0,5))       # set comprehension
 >>> data = dict((x,x) for x in range(0,5))  # dict comprehension
 
->>> data = [x for x in range(0,5)]          # list comprehension
->>> data = (x for x in range(0,5))          # generator expression
->>> data = {x for x in range(0,5)}          # set comprehension
->>> data = {x:x for x in range(0,5)}        # dict comprehension
+>>> data = all(x for x in range(0,5))
+>>> data = any(x for x in range(0,5))
+>>> data = bool(x for x in range(0,5))
+>>> data = sum(x for x in range(0,5))
+>>> data = min(x for x in range(0,5))
+>>> data = max(x for x in range(0,5))
+>>> data = hash(x for x in range(0,5))
+>>> data = callable(x for x in range(0,5))
+
+>>> data = len(x for x in range(0,5))
+Traceback (most recent call last):
+TypeError: object of type 'generator' has no len()
 
 
 Comprehensions or Generator Expression
