@@ -296,7 +296,7 @@ False
 
 Use Case - Overload
 -------------------
-* Could be implemented through `from functools import singledispatchmethod`
+* Could be implemented through ``from functools import singledispatchmethod``
 * More information: https://python.astrotech.io/advanced/funcprog/functools.html#singledispatchmethod
 
 >>> class Astronaut:

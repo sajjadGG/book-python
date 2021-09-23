@@ -60,8 +60,9 @@ Tests:
     >>> assert isclass(Setosa)
     >>> result = Setosa(5.1, 3.5, 1.4, 0.2)
 
-    >>> result.__annotations__
-    {'sepal_length': <class 'float'>, 'sepal_width': <class 'float'>, 'petal_length': <class 'float'>, 'petal_width': <class 'float'>}
+    >>> result.__annotations__  # doctest: +NORMALIZE_WHITESPACE
+    {'sepal_length': <class 'float'>, 'sepal_width': <class 'float'>,
+     'petal_length': <class 'float'>, 'petal_width': <class 'float'>}
 
     >>> assert hasattr(result, '__init__')
     >>> assert hasattr(result, 'len')
@@ -73,8 +74,9 @@ Tests:
     >>> assert ismethod(result.sum)
     >>> assert ismethod(result.mean)
 
-    >>> signature(result.__init__)
-    <Signature (sepal_length: float, sepal_width: float, petal_length: float, petal_width: float) -> None>
+    >>> signature(result.__init__)  # doctest: +NORMALIZE_WHITESPACE
+    <Signature (sepal_length: float, sepal_width: float, petal_length:
+    float, petal_width: float) -> None>
     >>> signature(result.len)
     <Signature () -> int>
     >>> signature(result.sum)

@@ -1,7 +1,7 @@
 """
 * Assignment: OOP Relations Nested
 * Complexity: medium
-* Lines of code: 14 lines
+* Lines of code: 6 lines
 * Time: 13 min
 
 English:
@@ -38,15 +38,6 @@ Tests:
       'mission2_name': 'Ares3'},
      {'firstname': 'Rick',
       'lastname': 'Martinez'}]
-
-      >>> result = open(FILE).read()
-      >>> print(result)
-      "firstname","lastname","mission1_name","mission1_year","mission2_name","mission2_year"
-      "Mark","Watney","Ares3","2035","",""
-      "Melissa","Lewis","Ares1","2030","Ares3","2035"
-      "Rick","Martinez","","","",""
-      <BLANKLINE>
-      >>> import os; os.remove(FILE)
 """
 
 import csv

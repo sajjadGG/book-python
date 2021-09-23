@@ -1,8 +1,8 @@
 """
 * Assignment: OOP Slots Define
 * Complexity: easy
-* Lines of code: 11 lines
-* Time: 13 min
+* Lines of code: 4 lines
+* Time: 8 min
 
 English:
     1. Define class `Iris` with attributes: `sepal_length, sepal_width,
