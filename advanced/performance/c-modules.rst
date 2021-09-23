@@ -56,13 +56,14 @@ Compile
 >>> from distutils.core import setup, Extension
 >>>
 >>> print('Building for Python 3')
+Building for Python 3
 >>> module = Extension('hello', sources = ['mylib-cmodules.c'])
 >>>
 >>> setup(
 ...     name = 'hello',
 ...     version='1.0',
 ...     description = 'Ehlo World!',
-...     ext_modules = [module])
+...     ext_modules = [module])  # doctest: +SKIP
 
 Execute:
 
@@ -75,6 +76,7 @@ Execute:
 Run:
 
 >>> import hello  # doctest: +SKIP
+>>>
 >>>
 >>> hello.say_hello('José Jiménez')  # doctest: +SKIP
 José Jiménez

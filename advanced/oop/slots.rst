@@ -86,7 +86,7 @@ Slots and Init
 >>> class Astronaut:
 ...     __slots__ = ('firstname', 'lastname')
 ...
-...     def __init__(self, firstname, lastname)
+...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
 >>>
@@ -101,7 +101,7 @@ Watney
 >>> class Astronaut:
 ...     __slots__ = ('firstname', 'lastname')
 ...
-...     def __init__(self, firstname, lastname)
+...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
 ...         self.role = role
@@ -151,7 +151,7 @@ AttributeError: 'Astronaut' object has no attribute '__dict__'
 >>>
 >>>
 >>> vars(Astronaut)  # doctest: +NORMALIZE_WHITESPACE
-mappingproxy({'__module__': '__main__',
+mappingproxy({'__module__': 'builtins',
               '__slots__': ('firstname', 'lastname'),
               'firstname': <member 'firstname' of 'Astronaut' objects>,
               'lastname': <member 'lastname' of 'Astronaut' objects>,
@@ -222,7 +222,7 @@ Botanist
 {'role': 'Botanist'}
 >>>
 >>> vars(Astronaut)  # doctest: +NORMALIZE_WHITESPACE
-mappingproxy({'__module__': '__main__',
+mappingproxy({'__module__': 'builtins',
               '__dict__': <attribute '__dict__' of 'Astronaut' objects>,
               '__weakref__': <attribute '__weakref__' of 'Astronaut' objects>,
               '__doc__': None})
@@ -247,7 +247,7 @@ Traceback (most recent call last):
 TypeError: vars() argument must have __dict__ attribute
 >>>
 >>> vars(Astronaut)
-mappingproxy({'__module__': '__main__', '__slots__': (), '__doc__': None})
+mappingproxy({'__module__': 'builtins', '__slots__': (), '__doc__': None})
 
 
 >>> class Person:
@@ -271,14 +271,14 @@ Traceback (most recent call last):
 TypeError: vars() argument must have __dict__ attribute
 >>>
 >>> vars(Person)  # doctest: +NORMALIZE_WHITESPACE
-mappingproxy({'__module__': '__main__',
+mappingproxy({'__module__': 'builtins',
               '__slots__': ('firstname', 'lastname'),
               'firstname': <member 'firstname' of 'Person' objects>,
               'lastname': <member 'lastname' of 'Person' objects>,
               '__doc__': None})
 >>>
 >>> vars(Astronaut)  # doctest: +NORMALIZE_WHITESPACE
-mappingproxy({'__module__': '__main__',
+mappingproxy({'__module__': 'builtins',
               '__slots__': ('role',),
               'role': <member 'role' of 'Astronaut' objects>,
               '__doc__': None})
@@ -310,7 +310,7 @@ AttributeError: 'Astronaut' object attribute '__slots__' is read-only
 ('myslot1', 'myslot2')
 >>>
 >>> vars(Astronaut)  # doctest: +NORMALIZE_WHITESPACE
-mappingproxy({'__module__': '__main__',
+mappingproxy({'__module__': 'builtins',
               '__slots__': ('myslot1', 'myslot2'),
               'firstname': <member 'firstname' of 'Astronaut' objects>,
               'lastname': <member 'lastname' of 'Astronaut' objects>,
@@ -421,7 +421,8 @@ Use Case - Deep Size
 ...     return sizeof(o)
 >>>
 >>>
->>> if __name__ == '__main__':
+>>> doctest: +SKIP
+... if __name__ == 'builtins':
 ...     class Astronaut:
 ...        __slots__ = ('firstname', 'lastname')
 ...

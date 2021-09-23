@@ -34,11 +34,8 @@ José Jiménez NASA
 >>> from collections import OrderedDict
 >>>
 >>> jose = OrderedDict(firstname='José', lastname='Jiménez', agency='NASA')
->>> print(jose)  # doctest: +NORMALIZE_WHITESPACE
-OrderedDict([
-  ('firstname', 'José'),
-  ('lastname', 'Jiménez'),
-  ('agency', 'NASA')])
+>>> print(jose)
+OrderedDict([('firstname', 'José'), ('lastname', 'Jiménez'), ('agency', 'NASA')])
 >>>
 >>> dict(jose)
 {'firstname': 'José', 'lastname': 'Jiménez', 'agency': 'NASA'}

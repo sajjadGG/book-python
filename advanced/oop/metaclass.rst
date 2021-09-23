@@ -220,10 +220,10 @@ Use Case - Logging
 >>>
 >>>
 >>> print(Astronaut._logger)
-<Logger Astronaut (WARNING)>
+<Logger Astronaut (DEBUG)>
 >>>
 >>> print(Cosmonaut._logger)
-<Logger Cosmonaut (WARNING)>
+<Logger Cosmonaut (DEBUG)>
 
 
 Type Metaclass
@@ -378,10 +378,10 @@ Example
 >>> melissa = Astronaut()
 >>>
 >>> print(mark._logger)
-<Logger Astronaut (WARNING)>
+<Logger Astronaut (DEBUG)>
 >>>
 >>> print(melissa._logger)
-<Logger Astronaut (WARNING)>
+<Logger Astronaut (DEBUG)>
 
 >>> import logging
 >>>
@@ -414,6 +414,7 @@ Injecting logger instance:
 
 >>> import logging
 >>>
+>>>
 >>> class Logger(type):
 ...     def __init__(cls, *args, **kwargs):
 ...         cls._logger = logging.getLogger(cls.__name__)
@@ -426,10 +427,10 @@ Injecting logger instance:
 >>>
 >>>
 >>> print(Astronaut._logger)
-<Logger Astronaut (WARNING)>
+<Logger Astronaut (DEBUG)>
 >>>
 >>> print(Cosmonaut._logger)
-<Logger Cosmonaut (WARNING)>
+<Logger Cosmonaut (DEBUG)>
 
 
 Use Case - Abstract Class
@@ -438,10 +439,11 @@ Abstract Base Class:
 
 >>> from abc import ABCMeta, abstractmethod
 >>>
+>>>
 >>> class Astronaut(metaclass=ABCMeta):
->>>     @abstractmethod
->>>     def say_hello(self):
->>>         pass
+...     @abstractmethod
+...     def say_hello(self):
+...         pass
 >>>
 >>>
 >>> astro = Astronaut()
@@ -483,7 +485,7 @@ Use Case - Event Listener
 >>>
 >>>
 >>> class Person(metaclass=EventListener):
->>>     pass
+...     pass
 New class created
 Classname: Person
 Bases: ()
@@ -640,7 +642,7 @@ Inheritance and ``__init__()`` method:
 >>>
 >>> astro = Astronaut()
 >>> print(astro._logger)
-<Logger Astronaut (WARNING)>
+<Logger Astronaut (DEBUG)>
 
 Inheritance and ``__new__()`` method:
 
@@ -659,7 +661,7 @@ Inheritance and ``__new__()`` method:
 >>>
 >>> astro = Astronaut()
 >>> print(astro._logger)
-<Logger Astronaut (WARNING)>
+<Logger Astronaut (DEBUG)>
 
 Inheritance for abstract base class validation:
 
@@ -693,7 +695,7 @@ Class Decorator:
 >>>
 >>>
 >>> print(Astronaut._logger)
-<Logger Astronaut (WARNING)>
+<Logger Astronaut (DEBUG)>
 
 
 References
