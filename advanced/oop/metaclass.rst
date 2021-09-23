@@ -59,13 +59,13 @@ Syntax
 <class 'type'>
 >>>
 >>> type(MyClass)
-<class '__main__.MyMeta'>
+<class 'MyMeta'>
 >>>
 >>> type(MySubclass)
-<class '__main__.MyMeta'>
+<class 'MyMeta'>
 >>>
 >>> type(myinstance)
-<class '__main__.MySubclass'>
+<class 'MySubclass'>
 
 
 Metaclasses
@@ -143,7 +143,7 @@ The potential uses for metaclasses are boundless. Some ideas that have been expl
 ...     def mymethod(self):
 ...         pass
 ...
-{'self': <class '__main__.MyMeta'>,
+{'self': <class 'MyMeta'>,
  'classname': 'MyClass',
  'bases': (),
  'attrs': {'__module__': '__main__',
@@ -183,6 +183,9 @@ is copied into a new ``dict``. If the metaclass has no ``__prepare__``
 attribute, then the class namespace is initialised as an empty ordered
 mapping. [#pydocsprepare]_
 
+>>> from typing import Any
+>>>
+>>>
 >>> class MyMeta(type):
 ...     @classmethod
 ...     def __prepare__(metacls, name, bases) -> dict:
@@ -327,7 +330,7 @@ True
 True
 >>>
 >>> Astronaut.__mro__
-(<class '__main__.Astronaut'>, <class 'object'>)
+(<class 'Astronaut'>, <class 'object'>)
 
 >>> class AstroMeta(type):
 ...     pass
@@ -352,7 +355,7 @@ False
 True
 >>>
 >>> Astronaut.__mro__
-(<class '__main__.Astronaut'>, <class 'object'>)
+(<class 'Astronaut'>, <class 'object'>)
 
 
 Example
@@ -493,7 +496,7 @@ Attrs: {'__module__': '__main__', '__qualname__': 'Person'}
 Hello new class Astronaut
 New class created
 Classname: Astronaut
-Bases: (<class '__main__.Person'>,)
+Bases: (<class 'Person'>,)
 Attrs: {'__module__': '__main__', '__qualname__': 'Astronaut'}
 
 

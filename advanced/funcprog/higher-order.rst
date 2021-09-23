@@ -30,17 +30,17 @@ Calling
 >>> a = higher
 >>> b = higher()
 >>>
->>> a
-<function higher at 0x10a999040>
+>>> a  # doctest: +ELLIPSIS
+<function higher at 0x...>
 >>>
->>> a()
-<function lower at 0x10a802a60>
+>>> a()  # doctest: +ELLIPSIS
+<function lower at 0x...>
 >>>
 >>> a()()
 'My name... José Jiménez'
 >>>
->>> b
-<function lower at 0x10a802a60>
+>>> b  # doctest: +ELLIPSIS
+<function lower at 0x...>
 >>>
 >>> b()
 'My name... José Jiménez'
@@ -61,3 +61,4 @@ Use Case
 ...     url = 'https://python.astrotech.io',
 ...     on_success = lambda result: print(result),
 ...     on_error = lambda error: print(error))
+Ellipsis

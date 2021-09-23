@@ -62,7 +62,7 @@ Returning Functions
 ...     return lower
 >>>
 >>>
->>> result = higher()     # <function __main__.lower()>
+>>> result = higher()     # <function lower()>
 >>> result()              # 'Hello world'
 'Hello world'
 
@@ -84,7 +84,7 @@ Parameter Functions
 ...     url = 'https://python.astrotech.io',
 ...     on_success = lambda result: print(result),
 ...     on_error = lambda error: print(error))
-
+Ellipsis
 
 Use Case
 --------

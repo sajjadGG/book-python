@@ -96,6 +96,7 @@ Recap
 Dynamic Class Creation
 ----------------------
 >>> Taikonaut()
+Traceback (most recent call last):
 NameError: name 'Taikonaut' is not defined
 >>>
 >>>
@@ -106,7 +107,7 @@ NameError: name 'Taikonaut' is not defined
 >>> Taikonaut
 <class 'Taikonaut'>
 >>> Taikonaut()  # doctest: +ELLIPSIS
-<__main__.Taikonaut at 0x...>
+<Taikonaut object at 0x...>
 
 
 Use Case - Init
@@ -176,7 +177,7 @@ Use Case - Dynamic Classes 1
  Versicolor(7.0, 3.2, 4.7, 1.4),
  Virginica(7.6, 3.0, 6.6, 2.1)]
 >>>
->>> vars(result[0])
+>>> vars(result[0])  # doctest: +NORMALIZE_WHITESPACE
 {'sepal_length': 5.8,
  'sepal_width': 2.7,
  'petal_length': 5.1,

@@ -2,6 +2,11 @@ Decorator Function with Mth
 ===========================
 
 
+.. testsetup::
+
+    def mydecorator(method): ...
+
+
 Rationale
 ---------
 * ``mydecorator`` is a decorator name

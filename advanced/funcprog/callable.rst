@@ -78,6 +78,7 @@ Callback Design Pattern:
 ...     url='https://python.astrotech.io',
 ...     on_success=lambda result: print(result),
 ...     on_error=lambda error: print(error))
+Downloading from https://python.astrotech.io
 
 >>> from http import HTTPStatus
 >>> import requests
@@ -100,6 +101,9 @@ Callback Design Pattern:
 
 Type Annotation
 ---------------
+>>> from typing import Callable
+>>>
+>>>
 >>> def add(a: int, b: int) -> int:
 ...     return a + b
 >>>

@@ -114,7 +114,7 @@ Global
 60
 >>>
 >>> print(data)
-[10 20, 30]
+[10, 20, 30]
 
 
 Global Scope

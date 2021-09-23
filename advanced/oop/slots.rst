@@ -438,10 +438,10 @@ Use Case - Deep Size
 ...
 ...     print('Astronaut', deepsizeof(a))
 ...     print('Cosmonaut', deepsizeof(c))
-DEBUG:deepsizeof:Size: 48, Type: <class '__main__.Astronaut'>, Repr: <__main__.Astronaut object at 0x10790b940>
+DEBUG:deepsizeof:Size: 48, Type: <class 'Astronaut'>, Repr: <Astronaut object at 0x10790b940>
 DEBUG:deepsizeof:Size: 53, Type: <class 'str'>, Repr: 'Mark'
 DEBUG:deepsizeof:Size: 55, Type: <class 'str'>, Repr: 'Watney'
-DEBUG:deepsizeof:Size: 48, Type: <class '__main__.Cosmonaut'>, Repr: <__main__.Cosmonaut object at 0x10790b9d0>
+DEBUG:deepsizeof:Size: 48, Type: <class 'Cosmonaut'>, Repr: <Cosmonaut object at 0x10790b9d0>
 DEBUG:deepsizeof:Size: 104, Type: <class 'dict'>, Repr: {'firstname': 'Mark', 'lastname': 'Watney'}
 DEBUG:deepsizeof:Size: 58, Type: <class 'str'>, Repr: 'firstname'
 DEBUG:deepsizeof:Size: 53, Type: <class 'str'>, Repr: 'Mark'

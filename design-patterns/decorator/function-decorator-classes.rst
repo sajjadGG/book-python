@@ -82,7 +82,7 @@ Use Case - Logger
 >>>
 >>>
 >>> print(Astronaut.logger)
-<Logger Astronaut (DEBUG)>
+<Logger Astronaut (WARNING)>
 
 
 Use Case - Since

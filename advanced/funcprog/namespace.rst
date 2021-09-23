@@ -47,7 +47,7 @@ Variables, Functions and Classes Inside Function
 >>> def run():
 ...     myvariable = 1
 ...
-...     def myfunction:
+...     def myfunction():
 ...         pass
 ...
 ...     class MyClass:
@@ -109,7 +109,7 @@ TypeError: 'tuple' object is not callable
 >>>
 >>>
 >>> run()
-<function __main__.run.<locals>.b()>
+<function run.<locals>.b()>
 >>>
 >>> run()()
 B
@@ -125,15 +125,15 @@ B
 >>>
 >>>
 >>> run()  # doctest: +NORMALIZE_WHITESPACE
-(<function __main__.run.<locals>.a()>,
- <function __main__.run.<locals>.b()>)
+(<function run.<locals>.a()>,
+ <function run.<locals>.b()>)
 >>>
 >>> run()()
 Traceback (most recent call last):
 TypeError: 'tuple' object is not callable
 >>>
 >>> run()[0]
-<function __main__.run.<locals>.a()>
+<function run.<locals>.a()>
 >>>
 >>> run()[0]()
 A
@@ -172,7 +172,7 @@ B
 >>>
 >>>
 >>> run()
-<class '__main__.run.<locals>.Astronaut'>
+<class 'Astronaut'>
 
 
 Locals
@@ -203,4 +203,4 @@ Locals
 {'firstname': 'Mark',
  'lastname': 'Watney',
  'say_hello': <function run.<locals>.say_hello at 0x...>,
- 'Astronaut': <class '__main__.run.<locals>.Astronaut'>}
+ 'Astronaut': <class 'Astronaut'>}
