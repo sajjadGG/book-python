@@ -133,6 +133,28 @@ Singledispatch
 Traceback (most recent call last):
 NotImplementedError: Argument must be int or list
 
+>>> from functools import singledispatch
+>>>
+>>>
+>>> @singledispatch
+... def km_to_m(km):
+...     raise NotImplementedError('...')
+>>>
+>>>
+>>> @km_to_m.register
+... def _(km: int):
+...     return km * 1000
+>>>
+>>>
+>>> @km_to_m.register
+... def _(km: float):
+...     return km * 1000.0
+>>>
+>>>
+>>> @km_to_m.register
+... def _(km: list):
+...     return [x*1000 for x in km]
+
 
 Singledispatchmethod
 --------------------

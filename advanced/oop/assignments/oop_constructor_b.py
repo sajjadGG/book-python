@@ -53,17 +53,15 @@ lewis:x:1002:1002:Melissa Lewis:/home/lewis:/bin/bash"""
 # Solution
 from dataclasses import dataclass
 
+
 class Account:
-    def __new__(cls, username: str, uid: int):
-        if int(uid) >= 1000:
-            return UserAccount(username)
-        else:
+    def __new__(cls, *record):
+        username = record[0]
+        uid = int(record[2])
+        if uid < 1000:
             return SystemAccount(username)
-
-
-@dataclass
-class SystemAccount:
-    username: str
+        else:
+            return UserAccount(username)
 
 
 @dataclass
@@ -71,13 +69,11 @@ class UserAccount:
     username: str
 
 
-result = [Account(username, uid)
-          for line in DATA.splitlines()
-          if (fields := line.strip().split(':'))
-          and (username := fields[0])
-          and (uid := fields[2])]
+@dataclass
+class SystemAccount:
+    username: str
 
-# result = []
-# for line in DATA.splitlines():
-#     username, _, uid, *_ = line.strip().split(':')
-#     result.append(Account(username, uid))
+
+result = [Account(*record)
+          for line in DATA.splitlines()
+          if (record := line.strip().split(':'))]
