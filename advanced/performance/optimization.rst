@@ -167,7 +167,7 @@ How many string are there in a memory?:
 >>> lastname = 'Twardowski'
 >>>
 >>> firstname + ' ' + lastname
-Jan Twardowski
+'Jan Twardowski'
 
 How many string are there in a memory?:
 
@@ -175,7 +175,7 @@ How many string are there in a memory?:
 >>> lastname = 'Twardowski'
 >>>
 >>> f'{firstname} {lastname}'
-Jan Twardowski
+'Jan Twardowski'
 
 How many string are there in a memory?:
 
@@ -230,7 +230,7 @@ Range between two ``float``
 * There are indefinitely many values between two floats
 
 >>> range(0, 1)
-0
+range(0, 1)
 
 Note, that in Python following code will not execute, as of ``range()`` requires two integers. However similar code with ``numpy.arange()`` will work.
 

@@ -34,7 +34,7 @@ José Jiménez NASA
 >>> from collections import OrderedDict
 >>>
 >>> jose = OrderedDict(firstname='José', lastname='Jiménez', agency='NASA')
->>> print(jose)
+>>> print(jose)  # doctest: +NORMALIZE_WHITESPACE
 OrderedDict([
   ('firstname', 'José'),
   ('lastname', 'Jiménez'),
@@ -81,10 +81,11 @@ José Jiménez NASA
 
 Counter
 -------
->>> import random
+>>> from random import randint, seed
+>>> seed(0)
 >>>
 >>>
->>> random_numbers = [random.randint(0, 10) for a in range(0, 50)]
+>>> random_numbers = [randint(0, 10) for a in range(0, 50)]
 >>> counter = dict()
 >>>
 >>> for number in random_numbers:
@@ -94,17 +95,18 @@ Counter
 ...         counter[number] = 1
 >>>
 >>> counter.items()
-[(7, 12), (4, 8), (9, 6), (1, 5), (2, 4)]
+dict_items([(6, 5), (0, 4), (4, 6), (8, 7), (7, 5), (5, 4), (9, 5), (3, 2), (2, 3), (1, 5), (10, 4)])
 
->>> import random
 >>> from collections import Counter
+>>> from random import randint, seed
+>>> seed(0)
 >>>
 >>>
->>> random_numbers = [random.randint(0, 10) for a in range(0, 50)]
+>>> random_numbers = [randint(0, 10) for a in range(0, 50)]
 >>> counter = Counter(random_numbers)
 >>>
 >>> counter.most_common(5)
-[(7, 12), (4, 8), (9, 6), (1, 5), (2, 4)]
+[(8, 7), (4, 6), (6, 5), (7, 5), (9, 5)]
 
 
 DefaultDict

@@ -24,7 +24,7 @@ Append if object not in the list:
 >>> for row in DATA:
 ...     for key in row.keys():
 ...         if key not in result:
-...             result.append(key)
+...             result.append(key)  # doctest: +SKIP
 2.16 µs ± 26.5 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
 
 
@@ -34,10 +34,10 @@ Append to list and deduplicate at the end:
 
 >>> #%%timeit -r 1000 -n 10_000
 >>> result = list()
-... for row in DATA:
+>>> for row in DATA:
 ...     for key in row.keys():
 ...         result.append(key)
->>> set(result)
+>>> result = set(result)  # doctest: +SKIP
 2.5 µs ± 32.9 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
 
 
@@ -47,7 +47,7 @@ Set Add
 >>> result = set()
 >>> for row in DATA:
 ...     for key in row.keys():
-...         result.add(key)
+...         result.add(key)  # doctest: +SKIP
 2.12 µs ± 32.4 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
 
 Set Update
@@ -55,7 +55,7 @@ Set Update
 >>> #%%timeit -r 1000 -n 10_000
 >>> result = set()
 >>> for row in DATA:
-...     result.update(row.keys())
+...     result.update(row.keys())  # doctest: +SKIP
 1.57 µs ± 26.7 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
 
 
@@ -64,7 +64,7 @@ Set Comprehension
 >>> #%%timeit -r 1000 -n 10_000
 >>> result = set(key
 ...     for record in DATA
-...         for key in record.keys())
+...         for key in record.keys())  # doctest: +SKIP
 2.06 µs ± 79.7 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
 
 
@@ -77,7 +77,7 @@ Set Comprehension Add
 >>> result = set()
 >>> result.add(key
 ...     for record in DATA
-...        for key in record.keys())
+...        for key in record.keys())  # doctest: +SKIP
 447 ns ± 9.52 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
 
 Set Comprehension Update
@@ -86,7 +86,7 @@ Update Set Comprehension:
 
 >>> #%%timeit -r 1000 -n 10_000
 >>> result = set()
->>> result.update(tuple(x.keys()) for x in DATA)
+>>> result.update(tuple(x.keys()) for x in DATA)  # doctest: +SKIP
 2.06 µs ± 45.9 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
 
 
@@ -95,7 +95,7 @@ Set Comprehension Update
 >>> #%%timeit -r 1000 -n 10_000
 >>> result = set()
 >>> for row in DATA:
-...     result.update(row)
+...     result.update(row)  # doctest: +SKIP
 
 
 Set Comprehension Update Tuple
@@ -103,7 +103,7 @@ Set Comprehension Update Tuple
 >>> #%%timeit -r 1000 -n 10_000
 >>> result = set()
 >>> for row in DATA:
-...     result.update(tuple(row))
+...     result.update(tuple(row))  # doctest: +SKIP
 2.09 µs ± 16.1 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
 
 
@@ -112,7 +112,7 @@ Set Comprehension Update List
 >>> #%%timeit -r 1000 -n 10_000
 >>> result = set()
 >>> for row in DATA:
-...     result.update(list(row))
+...     result.update(list(row))  # doctest: +SKIP
 2.33 µs ± 30.2 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
 
 
@@ -121,5 +121,5 @@ Set Comprehension Update Set
 >>> #%%timeit -r 1000 -n 10_000
 >>> result = set()
 >>> for row in DATA:
-...     result.update(set(row))
+...     result.update(set(row))  # doctest: +SKIP
 1.71 µs ± 54 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)

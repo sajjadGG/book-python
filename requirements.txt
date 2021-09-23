@@ -18,7 +18,8 @@ lxml
 xlrd
 openpyxl
 sklearn
-
+yappi
+numba
 
 # FastAPI
 fastapi
