@@ -101,7 +101,7 @@ Watney
 >>> class Astronaut:
 ...     __slots__ = ('firstname', 'lastname')
 ...
-...     def __init__(self, firstname, lastname):
+...     def __init__(self, firstname, lastname, role):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
 ...         self.role = role
@@ -314,7 +314,6 @@ mappingproxy({'__module__': 'builtins',
               '__slots__': ('myslot1', 'myslot2'),
               'firstname': <member 'firstname' of 'Astronaut' objects>,
               'lastname': <member 'lastname' of 'Astronaut' objects>,
-              'role': <member 'role' of 'Astronaut' objects>,
               '__doc__': None})
 
 >>> class Astronaut:
@@ -421,7 +420,7 @@ Use Case - Deep Size
 ...     return sizeof(o)
 >>>
 >>>
->>> doctest: +SKIP
+>>> # doctest: +SKIP
 ... if __name__ == 'builtins':
 ...     class Astronaut:
 ...        __slots__ = ('firstname', 'lastname')

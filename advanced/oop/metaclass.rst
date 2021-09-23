@@ -489,16 +489,16 @@ Use Case - Event Listener
 New class created
 Classname: Person
 Bases: ()
-Attrs: {'__module__': '__main__', '__qualname__': 'Person'}
+Attrs: {'__module__': 'builtins', '__qualname__': 'Person'}
 >>>
 >>> class Astronaut(Person, metaclass=EventListener):
->>>     pass
+...     pass
 >>>
 Hello new class Astronaut
 New class created
 Classname: Astronaut
 Bases: (<class 'Person'>,)
-Attrs: {'__module__': '__main__', '__qualname__': 'Astronaut'}
+Attrs: {'__module__': 'builtins', '__qualname__': 'Astronaut'}
 
 
 Use Case - Singleton
