@@ -81,7 +81,7 @@ Use Case - Logger
 ...     pass
 >>>
 >>>
->>> print(Astronaut.logger)
+>>> print(Astronaut.logger)  # doctest: +SKIP
 <Logger Astronaut (DEBUG)>
 
 
