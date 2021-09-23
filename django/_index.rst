@@ -23,7 +23,7 @@
     models/custom.rst
     models/use-case.rst
 
-    admin.rst
+    admin/about.rst
 
     orm/about.rst
     orm/create.rst
