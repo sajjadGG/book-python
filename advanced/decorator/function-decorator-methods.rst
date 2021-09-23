@@ -4,7 +4,8 @@ Decorator Function with Mth
 
 .. testsetup::
 
-    def mydecorator(method): ...
+    def mydecorator(method):
+        return method
 
 
 Rationale

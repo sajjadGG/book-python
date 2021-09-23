@@ -141,15 +141,14 @@ The potential uses for metaclasses are boundless. Some ideas that have been expl
 ...     myattr = 1
 ...
 ...     def mymethod(self):
-...         pass
-...
-{'self': <class 'MyMeta'>,
+...         pass  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE
+{'mcs': <class 'MyMeta'>,
  'classname': 'MyClass',
  'bases': (),
- 'attrs': {'__module__': '__main__',
+ 'attrs': {'__module__': 'builtins',
            '__qualname__': 'MyClass',
            'myattr': 1,
-           'mymethod': <function MyClass.mymethod at 0x10ae39ca0>}}
+           'mymethod': <function MyClass.mymethod at 0x...>}}
 
 
 Keyword Arguments
@@ -364,7 +363,7 @@ Example
 >>>
 >>>
 >>> def new(cls):
-...     obj = super().__new__(cls)
+...     obj = object.__new__(cls)
 ...     obj._logger = logging.getLogger(cls.__name__)
 ...     return obj
 >>>
@@ -388,7 +387,7 @@ Example
 >>>
 >>>
 >>> def new(cls):
-...     obj = super().__new__(cls)
+...     obj = object.__new__(cls)
 ...     obj._logger = logging.getLogger(cls.__name__)
 ...     return obj
 >>>
@@ -400,9 +399,9 @@ TypeError: can't set attributes of built-in/extension type 'str'
 >>>
 >>>
 >>> def new(cls):
->>>     obj = super().__new__(cls)
->>>     obj._logger = logging.getLogger(cls.__name__)
->>>     return obj
+...     obj = object.__new__(cls)
+...     obj._logger = logging.getLogger(cls.__name__)
+...     return obj
 >>>
 >>> type.__new__ = new
 Traceback (most recent call last):
@@ -503,11 +502,11 @@ Attrs: {'__module__': '__main__', '__qualname__': 'Astronaut'}
 Use Case - Singleton
 --------------------
 >>> class Singleton(type):
->>>     _instances = {}
->>>     def __call__(cls, *args, **kwargs):
->>>         if cls not in cls._instances:
->>>             cls._instances[cls] = super().__call__(*args, **kwargs)
->>>         return cls._instances[cls]
+...     _instances = {}
+...     def __call__(cls, *args, **kwargs):
+...         if cls not in cls._instances:
+...             cls._instances[cls] = super().__call__(*args, **kwargs)
+...         return cls._instances[cls]
 >>>
 >>>
 >>> class MyClass(metaclass=Singleton):
@@ -517,11 +516,11 @@ Use Case - Singleton
 Use Case - Final
 ----------------
 >>> class Final(type):
->>>     def __new__(mcs, classname, base, attrs):
->>>         for cls in base:
->>>             if isinstance(cls, Final):
->>>                 raise TypeError(f'{cls.__name__} is final and cannot inherit from it')
->>>         return type.__new__(mcs, classname, base, attrs)
+...     def __new__(mcs, classname, base, attrs):
+...         for cls in base:
+...             if isinstance(cls, Final):
+...                 raise TypeError(f'{cls.__name__} is final and cannot inherit from it')
+...         return type.__new__(mcs, classname, base, attrs)
 >>>
 >>>
 >>> class MyClass(metaclass=Final):
@@ -632,11 +631,11 @@ Inheritance and ``__init__()`` method:
 >>>
 >>>
 >>> class Logger:
->>>     def __init__(self):
->>>         self._logger = logging.getLogger(self.__class__.__name__)
+...     def __init__(self):
+...         self._logger = logging.getLogger(self.__class__.__name__)
 >>>
 >>> class Astronaut(Logger):
->>>     pass
+...     pass
 >>>
 >>>
 >>> astro = Astronaut()
@@ -649,13 +648,13 @@ Inheritance and ``__new__()`` method:
 >>>
 >>>
 >>> class Logger:
->>>     def __new__(cls, *args, **kwargs):
->>>         obj = super().__new__(cls)
->>>         obj._logger = logging.getLogger(obj.__class__.__name__)
->>>         return obj
+...     def __new__(cls, *args, **kwargs):
+...         obj = super().__new__(cls)
+...         obj._logger = logging.getLogger(obj.__class__.__name__)
+...         return obj
 >>>
 >>> class Astronaut(Logger):
->>>     pass
+...     pass
 >>>
 >>>
 >>> astro = Astronaut()

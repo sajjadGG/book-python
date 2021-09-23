@@ -124,7 +124,6 @@ hello
 mappingproxy({'firstname': 'Mark',
               'lastname': 'Watney',
               'hello': <function <lambda> at 0x...>,
-              '__module__': '__main__',
               '__dict__': <attribute '__dict__' of 'Astronaut' objects>,
               '__weakref__': <attribute '__weakref__' of 'Astronaut' objects>,
               '__doc__': None})

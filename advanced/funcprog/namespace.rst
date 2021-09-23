@@ -108,8 +108,8 @@ TypeError: 'tuple' object is not callable
 ...     return b
 >>>
 >>>
->>> run()
-<function run.<locals>.b()>
+>>> run()  # doctest: +ELLIPSIS
+<function run.<locals>.b at 0x...>
 >>>
 >>> run()()
 B
@@ -124,16 +124,16 @@ B
 ...     return a, b
 >>>
 >>>
->>> run()  # doctest: +NORMALIZE_WHITESPACE
-(<function run.<locals>.a()>,
- <function run.<locals>.b()>)
+>>> run()  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE
+(<function run.<locals>.a at 0x...>,
+ <function run.<locals>.b at 0x...>)
 >>>
 >>> run()()
 Traceback (most recent call last):
 TypeError: 'tuple' object is not callable
 >>>
->>> run()[0]
-<function run.<locals>.a()>
+>>> run()[0]  # doctest: +ELLIPSIS
+<function run.<locals>.a at 0x...>
 >>>
 >>> run()[0]()
 A
