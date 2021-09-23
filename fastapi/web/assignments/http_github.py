@@ -1,9 +1,9 @@
 """
->>> date
+>>> date  # doctest: +SKIP
 datetime.datetime(2021, 1, 23, 17, 51, 48, tzinfo=datetime.timezone.utc)
->>> name
+>>> name  # doctest: +SKIP
 'Florian Apolloner'
->>> result
+>>> result  # doctest: +SKIP
 {'1'}
 """
 

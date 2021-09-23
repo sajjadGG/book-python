@@ -1,5 +1,5 @@
 """
->>> sorted(result)
+>>> sorted(result)  # doctest: +SKIP
 ['bpo-27275', 'bpo-33671', 'bpo-34013', 'bpo-35183', 'bpo-37880', 'bpo-39091', 'bpo-41737', 'bpo-41886', 'bpo-43625', 'bpo-44206', 'bpo-44648', 'bpo-44667', 'bpo-44771', 'bpo-44781', 'bpo-44782', 'bpo-44784', 'bpo-44785', 'bpo-44792', 'bpo-44793', 'bpo-44794', 'bpo-44806', 'bpo-44808']
 """
 

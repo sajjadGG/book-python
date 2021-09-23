@@ -1,5 +1,5 @@
 """
->>> sorted(result)  # doctest: +NORMALIZE_WHITESPACE
+>>> sorted(result)  # doctest: +SKIP
 ['#23895', '#31621', '#31676', '#32800', '#32880', '#32916', '#32919', '#32956', '#32966']
 """
 
@@ -21,6 +21,7 @@ log = logging.getLogger(__name__)
 
 DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/github-django-repos.json'
 # DATA = 'https://api.github.com/orgs/django/repos'
+
 
 class Cache:
     def set(self): pass
