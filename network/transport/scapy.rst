@@ -8,21 +8,21 @@
 
 
 Installation
--------------------------------------------------------------------------------
+------------
 .. code-block:: console
 
     $ pip install scapy
 
 
 Running
--------------------------------------------------------------------------------
+-------
 .. code-block:: console
 
     $ sudo scapy
 
 
 Basic usage
--------------------------------------------------------------------------------
+-----------
 
 Displays all available protocols
 --------------------------------
@@ -180,7 +180,7 @@ List of possible fields
     dir(Ether)
 
 IP packages
--------------------------------------------------------------------------------
+-----------
 * Packets are constructed as layers of protocols, loosely analogous to the *OSI* model, which can be manipulated independently or glued together.
 * ``IP()`` object represents an *IPv4* header.
 
@@ -235,7 +235,7 @@ Show package
 
 
 TCP Package
--------------------------------------------------------------------------------
+-----------
 
 Add TCP layer to IP package
 ---------------------------
@@ -288,7 +288,7 @@ Manipulate the TCP header fields just as IP header:
 
 
 Ethernet frames
--------------------------------------------------------------------------------
+---------------
 ``scapy`` also supports Ethernet and IEEE 802.11 at layer two:
 
 .. code-block:: python
@@ -305,7 +305,7 @@ Ethernet frames
 
 
 Sending packets
--------------------------------------------------------------------------------
+---------------
 
 OSI layer three
 ---------------
@@ -336,7 +336,7 @@ OSI layer two
 
 
 Send and Receive
--------------------------------------------------------------------------------
+----------------
 * ``scapy`` has the ability to listen for responses to packets it sends, such as *ICMP* echo requests (pings).
 
 One packet
@@ -378,7 +378,7 @@ Many packets
 
 
 SYN Scans
--------------------------------------------------------------------------------
+---------
 * ``SA`` or ``SYN-ACK`` flags indicating an open port.
 
 Scan one port
@@ -432,5 +432,5 @@ Scan port range:
 
 
 Advanced examples
--------------------------------------------------------------------------------
+-----------------
 * https://scapy.readthedocs.io/en/latest/usage.html

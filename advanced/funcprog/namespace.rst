@@ -161,21 +161,18 @@ B
 ...     a = 10
 ...     b = 20
 ...
-...     class MyClass:
+...     def say_hello():
+...         pass
+...
+...     class Astronaut:
 ...         def hello(self):
 ...             pass
 ...
-...     def abc():
-...         pass
-...
-...     def self():
-...         pass
-...
-...     return MyClass
+...     return Astronaut
 >>>
 >>>
 >>> run()
-<class '__main__.run.<locals>.MyClass'>
+<class '__main__.run.<locals>.Astronaut'>
 
 
 Locals
@@ -187,3 +184,23 @@ Locals
 >>>
 >>> run()
 {'a': 1, 'b': 1}
+
+>>> def run():
+...     firstname = 'Mark'
+...     lastname = 'Watney'
+...
+...     def say_hello():
+...         pass
+...
+...     class Astronaut:
+...         def hello(self):
+...             pass
+...
+...     print(locals())
+>>>
+>>>
+>>> run()  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE
+{'firstname': 'Mark',
+ 'lastname': 'Watney',
+ 'say_hello': <function run.<locals>.say_hello at 0x...>,
+ 'Astronaut': <class '__main__.run.<locals>.Astronaut'>}

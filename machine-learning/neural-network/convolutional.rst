@@ -18,7 +18,7 @@ Combination of:
 
 
 Problemy z przetwarzaniem obrazów
--------------------------------------------------------------------------------
+---------------------------------
 * cienie
 * nakładające się obrazy
 * zmiany kąta i pochyłości kamery
@@ -29,7 +29,7 @@ Problemy z przetwarzaniem obrazów
 
 
 What is and Kernel Convolution?
--------------------------------------------------------------------------------
+-------------------------------
 
 .. figure:: img/convolutional-neural-network-kernels.png
 
@@ -45,7 +45,7 @@ What is and Kernel Convolution?
 
 
 What is Convolutional Neural Network (CNN / ConvNet)
--------------------------------------------------------------------------------
+----------------------------------------------------
 
 .. figure:: img/convolutional-neural-network-architecture.jpg
 
@@ -276,5 +276,5 @@ Gets to 99.25% test accuracy after 12 epochs
 
 
 Przydatne odnośniki
--------------------------------------------------------------------------------
+-------------------
 * https://github.com/fchollet/keras/tree/master/examples

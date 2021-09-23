@@ -3,7 +3,7 @@ Matplotlib Config
 
 
 Size
--------------------------------------------------------------------------------
+----
 * In Inches
 
 .. code-block:: python
@@ -11,7 +11,7 @@ Size
     plt.figure(figsize=(12, 6))
 
 RC Parameters
--------------------------------------------------------------------------------
+-------------
 Matplotlib Config Available Options:
 
 .. code-block:: python
@@ -403,7 +403,7 @@ Set Config:
 
 
 Styles
--------------------------------------------------------------------------------
+------
 .. code-block:: python
 
     import matplotlib.pyplot as plt

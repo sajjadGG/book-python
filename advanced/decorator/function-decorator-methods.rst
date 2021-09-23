@@ -106,6 +106,7 @@ Doing...
 >>> my.do_something_else()
 Doing something else...
 >>>
+>>>
 >>> my._is_allowed = False
 >>>
 >>> my.do_something()

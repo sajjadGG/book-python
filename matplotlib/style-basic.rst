@@ -3,7 +3,7 @@ Plot Styles
 
 
 Axis naming
--------------------------------------------------------------------------------
+-----------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -20,7 +20,7 @@ Axis naming
 
 
 Title
--------------------------------------------------------------------------------
+-----
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -49,7 +49,7 @@ Title
 
 
 Legend
--------------------------------------------------------------------------------
+------
 * Good practice: always have labels
 
 .. code-block:: python
@@ -71,7 +71,7 @@ Legend
 
 
 Colors
--------------------------------------------------------------------------------
+------
 * first color name letter (not recommended):
 
     * ``r`` - red
@@ -114,7 +114,7 @@ Colors
 
 
 Line styles
--------------------------------------------------------------------------------
+-----------
 * Other line styles https://matplotlib.org/gallery/lines_bars_and_markers/linestyles.html#sphx-glr-gallery-lines-bars-and-markers-linestyles-py
 
 .. figure:: img/matplotlib-plt-linestyle-basic.png
@@ -162,7 +162,7 @@ Line styles
 
 
 Line2D parameters
--------------------------------------------------------------------------------
+-----------------
 .. csv-table:: Line2D parameters
     :header: "Property", "Value Type"
     :widths: 30, 70

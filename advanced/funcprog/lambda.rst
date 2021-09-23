@@ -134,6 +134,7 @@ Use Case - Translate
 >>>
 >>> text = 'zażółć gęślą jaźń'
 >>>
+>>>
 >>> result = map(lambda x: PL.get(x,x), text)
 >>> str.join('', result)
 'zazolc gesla jazn'
@@ -145,6 +146,7 @@ Use Cases - Adults
 ...     {'age': 21, 'name': 'Jan Twardowski'},
 ...     {'age': 25, 'name': 'Mark Watney'},
 ...     {'age': 18, 'name': 'Melissa Lewis'}]
+>>>
 >>>
 >>> result = filter(lambda x: x['age'] >= 21, people)
 >>> list(result)  # doctest: +NORMALIZE_WHITESPACE
@@ -159,6 +161,7 @@ Use Case - Astronaut
 ...     {'is_astronaut': True, 'name': 'Mark Watney'},
 ...     {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 >>>
+>>>
 >>> result = filter(lambda x: x['is_astronaut'], people)
 >>> list(result)  # doctest: +NORMALIZE_WHITESPACE
 [{'is_astronaut': True, 'name': 'Mark Watney'},
@@ -168,6 +171,7 @@ Use Case - Astronaut
 >>>
 >>> people = ['Jan Twardowski', 'Mark Watney',
 ...           'Melissa Lewis', 'Jose Jimenez']
+>>>
 >>>
 >>> result = filter(lambda x: x in astronauts, people)
 >>> list(result)

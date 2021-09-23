@@ -3,7 +3,7 @@ What is Data?
 
 
 NOIR
--------------------------------------------------------------------------------
+----
 * https://www.youtube.com/watch?v=SEeQgNdJ6AQ
 * Nominal
 * Ordinal
@@ -12,7 +12,7 @@ NOIR
 
 
 Nominal
--------------------------------------------------------------------------------
+-------
 * No distance
 * No quantities
 * Cannot order
@@ -33,7 +33,7 @@ Examples
 
 
 Ordinal
--------------------------------------------------------------------------------
+-------
 * Has order
 * Has numerical value
 
@@ -54,7 +54,7 @@ Examples
 
 
 Interval
--------------------------------------------------------------------------------
+--------
 * Have order
 * Have distance
 * Has scale
@@ -78,7 +78,7 @@ Examples
 
 
 Ratio
--------------------------------------------------------------------------------
+-----
 * Has order, distance
 
 Can Calculate

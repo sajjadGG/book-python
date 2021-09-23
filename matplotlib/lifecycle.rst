@@ -15,7 +15,7 @@ to highlight some neat features and best-practices using Matplotlib.
 
 
 A note on the Object-Oriented API vs Pyplot
--------------------------------------------------------------------------------
+-------------------------------------------
 Matplotlib has two interfaces. The first is an object-oriented (OO)
 interface. In this case, we utilize an instance of ``axes.Axes``
 in order to render visualizations on an instance of ``figure.Figure``.
@@ -38,7 +38,7 @@ In general, try to use the object-oriented interface over the pyplot interface.
 
 
 Our data
--------------------------------------------------------------------------------
+--------
 We'll use the data from the post from which this tutorial was derived.
 It contains sales information for a number of companies.
 
@@ -65,7 +65,7 @@ It contains sales information for a number of companies.
 
 
 Getting started
--------------------------------------------------------------------------------
+---------------
 
 This data is naturally visualized as a barplot, with one bar per
 group. To do this with the object-oriented approach, we'll first generate
@@ -90,7 +90,7 @@ Now that we have an Axes instance, we can plot on top of it.
 
 
 Controlling the style
--------------------------------------------------------------------------------
+---------------------
 There are many styles available in Matplotlib in order to let you tailor
 your visualization to your needs. To see a list of styles, we can use
 ``pyplot.style``.
@@ -126,7 +126,7 @@ Now let's remake the above plot to see how it looks:
 
 
 Customizing the plot
--------------------------------------------------------------------------------
+--------------------
 Now we've got a plot with the general look that we want, so let's fine-tune
 it so that it's ready for print. First let's rotate the labels on the x-axis
 so that they show up more clearly. We can gain access to these labels
@@ -239,7 +239,7 @@ actions on a specific axis on our plot.
 
 
 Combining multiple visualizations
--------------------------------------------------------------------------------
+---------------------------------
 It is possible to draw multiple plot elements on the same instance of
 ``axes.Axes``. To do this we simply need to call another one of
 the plot methods on that axes object.
@@ -274,7 +274,7 @@ the plot methods on that axes object.
 
 
 Saving our plot
--------------------------------------------------------------------------------
+---------------
 Now that we're happy with the outcome of our plot, we want to save it to
 disk. There are many file formats we can save to in Matplotlib. To see
 a list of available options, use:
@@ -309,7 +309,7 @@ to disk. Note that there are several useful flags we'll show below:
     fig.savefig('sales.png', transparent=False, dpi=80, bbox_inches="tight")
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: assignments/matplotlib_lifecycle.py
     :caption: :download:`Solution <assignments/matplotlib_lifecycle.py>`
     :end-before: # Solution

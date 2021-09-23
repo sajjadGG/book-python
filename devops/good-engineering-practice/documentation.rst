@@ -3,11 +3,11 @@ ReST and Sphinx documentation
 
 
 reStructuredText vs. Markdown
--------------------------------------------------------------------------------
+-----------------------------
 
 
 Format reStructuredText
--------------------------------------------------------------------------------
+-----------------------
 * https://devguide.python.org/documenting/#rst-primer
 * https://devguide.python.org/documenting/#sections
 
@@ -70,7 +70,7 @@ Cytowanie
 
 
 Sphinx
--------------------------------------------------------------------------------
+------
 
 Zależności
 ----------
@@ -126,12 +126,12 @@ Budowanie
 * generowanie Word (docx) -> pandoc
 
 Read the docs
--------------------------------------------------------------------------------
+-------------
 * http://readthedocs.org
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: ../_assignments/devops_gep_sphinx.py
     :caption: :download:`Solution <../_assignments/devops_gep_sphinx.py>`
     :end-before: # Solution

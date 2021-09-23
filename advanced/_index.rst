@@ -30,6 +30,7 @@ Functional Programming
     :maxdepth: 1
     :caption: Functions
 
+    funcprog/about.rst
     funcprog/lambda.rst
     funcprog/scope.rst
     funcprog/pure-function.rst
@@ -38,7 +39,6 @@ Functional Programming
     funcprog/first-class.rst
     funcprog/higher-order.rst
     funcprog/referential-transparency.rst
-    funcprog/functional-paradigm.rst
     funcprog/namespace.rst
     funcprog/function-attributes.rst
     funcprog/callable.rst

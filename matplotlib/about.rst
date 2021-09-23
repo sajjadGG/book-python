@@ -3,7 +3,7 @@ Matplotlib About
 
 
 What is matplotlib
--------------------------------------------------------------------------------
+------------------
 Moduł ``matplotlib`` pozwala na rysowanie wykresów i diagramów. Jest to bardzo rozbudowana biblioteka z setkami opcji konfiguracyjnych. Najczęściej używanym modułem biblioteki ``matplotlib`` jest moduł ``pyplot``, który implementuje szereg funkcji umożliwiających rysowanie wykresów 2d.
 
 Pyplot's state-machine environment behaves similarly to MATLAB and should be most familiar to users with MATLAB experience.
@@ -17,14 +17,14 @@ It provides an object-oriented API for embedding plots into applications using g
 
 
 Install
--------------------------------------------------------------------------------
+-------
 .. code-block:: console
 
     $ pip install matplotlib
 
 
 Usage
--------------------------------------------------------------------------------
+-----
 
 Import
 ------
@@ -67,11 +67,11 @@ Exporting plot as an image
 
 
 Charts Gallery
--------------------------------------------------------------------------------
+--------------
 * https://matplotlib.org/gallery/index.html
 
 
 Further Reading
--------------------------------------------------------------------------------
+---------------
 * https://www.data-to-viz.com/#explore
 * https://www.data-to-viz.com/img/poster/poster_big.png

@@ -122,7 +122,6 @@ Use Case - Cache Args
 >>> myfunction(4, 2)  # Computed
 8
 >>>
->>>
 >>> myfunction  # doctest: +NORMALIZE_WHITESPACE
 {(2, 4): 8,
  ('hi', 3): 'hihihi',
@@ -166,6 +165,7 @@ Use Case - Cache Kwargs
 42
 >>> myfunction(9, 7)
 63
+>>>
 >>> myfunction  # doctest: +SKIP
 {-3550055125485641917: 2,
  6794810172467074373: 2,

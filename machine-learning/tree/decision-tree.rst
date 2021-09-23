@@ -88,7 +88,7 @@ Note identical API for classifiers!
 
 
 Visualizing a Decision Tree
--------------------------------------------------------------------------------
+---------------------------
 
 .. code-block:: python
 
@@ -160,7 +160,7 @@ Visualizing a Decision Tree
 
 
 Zadania praktyczne
--------------------------------------------------------------------------------
+------------------
 
 Prosta klasyfikacja na podstawie features i labels
 --------------------------------------------------

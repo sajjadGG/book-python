@@ -1,7 +1,7 @@
 """
 * Assignment: OOP Classmethod CSV
 * Complexity: easy
-* Lines of code: 5 lines
+* Lines of code: 4 lines
 * Time: 13 min
 
 English:
@@ -79,7 +79,8 @@ class CSVMixin:
 # Solution
 class CSVMixin:
     def to_csv(self) -> str:
-        return ','.join(vars(self).values()) + '\n'
+        data = vars(self).values()
+        return ','.join(data) + '\n'
 
     @classmethod
     def from_csv(cls, line: str) -> Union['Astronaut', 'Cosmonaut']:

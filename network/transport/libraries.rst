@@ -3,7 +3,7 @@
 
 
 Allegro Ralph
--------------------------------------------------------------------------------
+-------------
 * http://allegro.tech/ralph/
 * https://github.com/allegro/ralph
 
@@ -25,7 +25,7 @@ Live demo:
 
 
 ``Pcapy`` and ``libpcap``
--------------------------------------------------------------------------------
+-------------------------
 * Python libpcap module is a low-level binding for libpcap C library.
 * http://www.tcpdump.org/manpages/pcap.3pcap.html
 * https://www.comparitech.com/net-admin/tcpdump-cheat-sheet/
@@ -38,17 +38,17 @@ Live demo:
 
 
 ``Dpkt``
--------------------------------------------------------------------------------
+--------
 * fast, simple packet creation / parsing, with definitions for the basic TCP/IP protocols
 * https://dpkt.readthedocs.io/en/latest/
 
 
 ``Scanpy``
--------------------------------------------------------------------------------
+----------
 
 
 ``Twisted``
--------------------------------------------------------------------------------
+-----------
 * An extensible framework for Python programming, with special focus on event-based network programming and multiprotocol integration.
 * Twisted includes lots and lots of protocol implementations, meaning that more likely than not there will be an API you can use to talk to some remote system (either client or server in most cases) - be it:
 
@@ -181,7 +181,7 @@ IMAP4 Client
 
 
 ``Pyro4``
--------------------------------------------------------------------------------
+---------
 * https://github.com/irmen/Pyro4
 * https://pyro4.readthedocs.io/en/stable/
 * Pyro means PYthon Remote Objects.

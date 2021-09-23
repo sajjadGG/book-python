@@ -19,8 +19,8 @@ Values Leaking
 --------------
 Values defined in function does not leak out:
 
->>> def add(a, b=1):
-...     c = 0
+>>> def add(a, b=0):
+...     c = 1
 >>>
 >>>
 >>> print(a)
@@ -57,8 +57,12 @@ Outer Scope
 ...     return sum(data)
 >>>
 >>>
+>>> print(data)
+[1, 2, 3]
+>>>
 >>> add()
 6
+>>>
 >>> print(data)
 [1, 2, 3]
 
@@ -79,8 +83,12 @@ Shadowing
 ...     return sum(data)
 >>>
 >>>
+>>> print(data)
+[1, 2, 3]
+>>>
 >>> add()
 60
+>>>
 >>> print(data)
 [1, 2, 3]
 
@@ -99,10 +107,14 @@ Global
 ...     return sum(data)
 >>>
 >>>
+>>> print(data)
+[1, 2, 3]
+>>>
 >>> add()
 60
+>>>
 >>> print(data)
-[10, 20, 30]
+[10 20, 30]
 
 
 Global Scope

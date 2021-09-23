@@ -801,7 +801,7 @@ PEP 8, but...
 
 
 Static Code Analysis
--------------------------------------------------------------------------------
+--------------------
 * More information in `cicd-tools`
 * More information in `cicd-pipelines`
 
@@ -843,7 +843,7 @@ Configuration:
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: ../_assignments/devops_gep_pycodestyle.py
     :caption: :download:`Solution <../_assignments/devops_gep_pycodestyle.py>`
     :end-before: # Solution

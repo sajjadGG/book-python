@@ -3,7 +3,7 @@ Matplotlib Plots
 
 
 Pie Chart
--------------------------------------------------------------------------------
+---------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -28,7 +28,7 @@ Pie Chart
 
 
 Donut Chart
--------------------------------------------------------------------------------
+-----------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -60,7 +60,7 @@ Donut Chart
 
 
 Stack Plot
--------------------------------------------------------------------------------
+----------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -82,7 +82,7 @@ Stack Plot
 
 
 Box Plot
--------------------------------------------------------------------------------
+--------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -139,7 +139,7 @@ Box Plot
 
 
 Error
--------------------------------------------------------------------------------
+-----
 .. code-block:: python
 
     import matplotlib.pyplot as plt

@@ -3,10 +3,11 @@ Socket
 
 
 ``socket``
--------------------------------------------------------------------------------
+----------
 .. figure:: img/socket-flow.jpg
 
     Socket Flow
+
 
 Protocols
 ---------
@@ -15,6 +16,7 @@ Protocols
 * UDP - ``socket.SOCK_DGRAM``
 * TCP - ``socket.SOCK_STREAM``
 * Broadcast - ``socket.SO_BROADCAST``
+
 
 API
 ---
@@ -72,7 +74,7 @@ Multicast
 
 
 ``socketserver``
--------------------------------------------------------------------------------
+----------------
 
 TCP
 ---

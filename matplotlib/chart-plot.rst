@@ -3,12 +3,12 @@ Line Chart
 
 
 Rationale
--------------------------------------------------------------------------------
+---------
 * Show linear relation of two variables
 
 
 Syntax
--------------------------------------------------------------------------------
+------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -22,14 +22,14 @@ Syntax
 
 
 Line Styles
--------------------------------------------------------------------------------
+-----------
 .. figure:: img/matplotlib-plt-linestyle-basic.png
 
 .. figure:: img/matplotlib-plt-linestyle-advanced.png
 
 
 Single Plot
--------------------------------------------------------------------------------
+-----------
 Vectorized Operations:
 
 .. code-block:: python
@@ -60,7 +60,7 @@ Universal Function:
 
 
 Multiple Plots
--------------------------------------------------------------------------------
+--------------
 .. code-block:: python
 
     import matplotlib.pyplot as plt

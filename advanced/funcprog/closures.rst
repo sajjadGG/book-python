@@ -29,6 +29,15 @@ Recap
 -----
 * Function can access data from outer scope
 
+>>> def run():
+...     firstname = 'Mark'
+...     lastname = 'Watney'
+...     print(f'Hello {firstname} {lastname}')
+>>>
+>>>
+>>> run()
+Hello Mark Watney
+
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
@@ -90,9 +99,8 @@ What is closure?
 >>> result()
 Hello Mark Watney
 
+Remove Outer Function:
 
-Remove Outer Function
----------------------
 >>> def run():
 ...     firstname = 'Mark'
 ...     lastname = 'Watney'
@@ -109,7 +117,7 @@ Hello Mark Watney
 
 References
 ----------
-.. [#ytclosures] https://youtu.be/t86v3N4OshQ?t=954
+.. [#ytclosures] Martin, Robert C. The S.O.L.I.D. Principles of OO & Agile Design. Year: 2015. Retrieved: 2021-09-22. https://youtu.be/t86v3N4OshQ?t=954
 
 
 Assignments

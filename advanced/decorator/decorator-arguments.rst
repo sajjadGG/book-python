@@ -156,6 +156,7 @@ Use Case - Timeout (Timer)
 ...         sleep(1)
 ...     print('countdown finished')
 >>>
+>>>
 >>> countdown(5)  # doctest: +SKIP
 4
 3

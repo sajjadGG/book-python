@@ -43,15 +43,15 @@ languages work (including PHP, Ruby, Perl etc).
 >>> watney = Astronaut('Mark Watney')
 >>> lewis = Astronaut('Melissa Lewis')
 >>>
->>> watney.missions.append('Ares 1')
->>> watney.missions.append('Ares 2')
->>> watney.missions.append('Ares 3')
+>>> watney.missions.append('Ares1')
+>>> watney.missions.append('Ares2')
+>>> watney.missions.append('Ares3')
 >>>
 >>> print(f'Name: {watney.name}, Missions: {watney.missions}')
-Name: Mark Watney, Missions: ['Ares 1', 'Ares 2', 'Ares 3']
+Name: Mark Watney, Missions: ['Ares1', 'Ares2', 'Ares3']
 >>>
 >>> print(f'Name: {lewis.name}, Missions: {lewis.missions}')
-Name: Melissa Lewis, Missions: ['Ares 1', 'Ares 2', 'Ares 3']
+Name: Melissa Lewis, Missions: ['Ares1', 'Ares2', 'Ares3']
 
 >>> class Astronaut:
 ...     def __init__(self, name, missions=None):
@@ -62,12 +62,12 @@ Name: Melissa Lewis, Missions: ['Ares 1', 'Ares 2', 'Ares 3']
 >>> watney = Astronaut('Mark Watney')
 >>> lewis = Astronaut('Melissa Lewis')
 >>>
->>> watney.missions.append('Ares 1')
->>> watney.missions.append('Ares 2')
->>> watney.missions.append('Ares 3')
+>>> watney.missions.append('Ares1')
+>>> watney.missions.append('Ares2')
+>>> watney.missions.append('Ares3')
 >>>
 >>> print(f'Name: {watney.name}, Missions: {watney.missions}')
-Name: Mark Watney, Missions: ['Ares 1', 'Ares 2', 'Ares 3']
+Name: Mark Watney, Missions: ['Ares1', 'Ares2', 'Ares3']
 >>>
 >>> print(f'Name: {lewis.name}, Missions: {lewis.missions}')
 Name: Melissa Lewis, Missions: []

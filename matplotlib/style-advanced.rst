@@ -3,7 +3,7 @@ Advanced Styling
 
 
 Label rotation
--------------------------------------------------------------------------------
+--------------
 .. literalinclude:: src/matplotlib-tick-rotation.py
     :language: python
     :caption: Label rotation
@@ -14,7 +14,7 @@ Label rotation
 
 
 Grid
--------------------------------------------------------------------------------
+----
 .. literalinclude:: src/matplotlib-grid-simple.py
     :language: python
     :caption: Grid Simple
@@ -33,7 +33,7 @@ Grid
 
 
 Trend line
--------------------------------------------------------------------------------
+----------
 .. literalinclude:: src/matplotlib-trendline.py
     :language: python
     :caption: Trend line
@@ -44,7 +44,7 @@ Trend line
 
 
 Error bars
--------------------------------------------------------------------------------
+----------
 .. literalinclude:: src/matplotlib-plt-errorbar.py
     :language: python
     :caption: Error bars
@@ -55,7 +55,7 @@ Error bars
 
 
 Colorbar
--------------------------------------------------------------------------------
+--------
 .. literalinclude:: src/matplotlib-colorbar.py
     :language: python
     :caption: Colorbar
@@ -66,7 +66,7 @@ Colorbar
 
 
 Changing colors
--------------------------------------------------------------------------------
+---------------
 .. code-block:: python
 
     ax.spines['bottom'].set_color('#dddddd')
@@ -90,14 +90,14 @@ Changing colors
 
 
 Using mathematical expressions in text
--------------------------------------------------------------------------------
+--------------------------------------
 .. code-block:: python
 
     plt.title(r'$\sigma_i=15$')
 
 
 Annotations
--------------------------------------------------------------------------------
+-----------
 
 Single Annotation
 -----------------

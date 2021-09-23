@@ -3,16 +3,16 @@ PaaS - Platform as a Service
 
 
 Heroku
--------------------------------------------------------------------------------
+------
 
 
 Amazon AWS
--------------------------------------------------------------------------------
+----------
 * Amazon Lambda
 
 
 Google App Engine
--------------------------------------------------------------------------------
+-----------------
 * https://cloud.google.com/appengine/
 
 A powerful platform to build apps and scale automatically

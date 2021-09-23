@@ -3,7 +3,7 @@ HTTP Frameworks
 
 
 ``atlassian-python-api``
--------------------------------------------------------------------------------
+------------------------
 * https://github.com/atlassian-api/atlassian-python-api
 
 .. code-block:: python
@@ -35,12 +35,12 @@ HTTP Frameworks
 
 
 Standard WSGI
--------------------------------------------------------------------------------
+-------------
 * Web Server Gateway Interface
 
 
 Standard ASGI
--------------------------------------------------------------------------------
+-------------
 * https://asgi.readthedocs.io/en/latest/
 
 ASGI (Asynchronous Server Gateway Interface) is a spiritual successor to WSGI, intended to provide a standard interface between async-capable Python web servers, frameworks, and applications.
@@ -49,7 +49,7 @@ Where WSGI provided a standard for synchronous Python apps, ASGI provides one fo
 
 
 ``django``
--------------------------------------------------------------------------------
+----------
 * https://www.djangoproject.com/
 * https://github.com/django/django
 
@@ -64,7 +64,7 @@ Django is a high-level Python Web framework that encourages rapid development an
     $ pip install django
 
 FastAPI
--------------------------------------------------------------------------------
+-------
 * https://github.com/tiangolo/fastapi
 
 .. code-block:: console
@@ -128,7 +128,7 @@ Examples
 
 
 ``flask``
--------------------------------------------------------------------------------
+---------
 * http://flask.pocoo.org/
 
 Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It's BSD licensed!
@@ -160,7 +160,7 @@ Flask using templates and data from user:
 
 
 ``webapp2``
--------------------------------------------------------------------------------
+-----------
 * https://webapp2.readthedocs.io/en/latest/
 * https://github.com/GoogleCloudPlatform/webapp2
 
@@ -196,7 +196,7 @@ webapp2 is a lightweight Python web framework compatible with Google App Engineâ
 
 
 ``tornado``
--------------------------------------------------------------------------------
+-----------
 * http://www.tornadoweb.org/en/stable/
 * https://github.com/tornadoweb/tornado
 

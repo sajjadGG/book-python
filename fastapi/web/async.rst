@@ -3,7 +3,7 @@ Asynchronous processing
 
 
 ASGI
--------------------------------------------------------------------------------
+----
 * https://asgi.readthedocs.io/en/latest/
 
 ASGI (Asynchronous Server Gateway Interface) is a spiritual successor to WSGI, intended to provide a standard interface between async-capable Python web servers, frameworks, and applications.
@@ -12,7 +12,7 @@ Where WSGI provided a standard for synchronous Python apps, ASGI provides one fo
 
 
 ``Celery``
--------------------------------------------------------------------------------
+----------
 .. glossary::
 
     Celery
@@ -109,7 +109,7 @@ More info
 
 
 ``RabbitMQ``
--------------------------------------------------------------------------------
+------------
 * *RabbitMQ* is the most widely deployed open source message broker
 * Implementation of the *Advanced Message Queuing Protocol* (*AQMP*)
 * *AQMP* is an open standard

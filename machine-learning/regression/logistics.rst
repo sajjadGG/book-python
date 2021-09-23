@@ -4,7 +4,7 @@ Logistic Regression
 .. todo:: Zrobić aby wykorzystywało szablon ``_template.rst``
 
 Co to jest Logistic Regression?
--------------------------------------------------------------------------------
+-------------------------------
 In general when we make a machine learning based program, we are trying to come up with a function that can predict for future inputs based on the experience it has gained through the past inputs and their outputs (training set).
 
 Logistic Regression is - coming up with a probability function that can give us 'the chance, for an input to belong to any one of the various classes' we have (classification).
@@ -19,13 +19,13 @@ Since the logistic function has two different asymptotes, it can be used to divi
 
 
 Linear vs Logistics
--------------------------------------------------------------------------------
+-------------------
 .. figure:: img/regression-linear-vs-logistic.png
 
     Linear vs Logistics
 
 Podstawowe pojęcia
--------------------------------------------------------------------------------
+------------------
 .. glossary::
     Binary Model
         Model który ma dwa typy wartości (przykład: spam, nie spam)
@@ -49,7 +49,7 @@ Podstawowe pojęcia
     Cross Entropy
 
 Przykład zastosowania
--------------------------------------------------------------------------------
+---------------------
 * whether an email is SPAM(y=1) OR NOT(y=0)
 
 * whether a person will vote or not in upcoming elections
@@ -72,6 +72,6 @@ Przykład zastosowania
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Create assignments
 

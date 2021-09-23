@@ -2,14 +2,14 @@ Model Quality
 =============
 
 Metody doboru modelu i poprawienia jakości
--------------------------------------------------------------------------------
+------------------------------------------
 * Walidacje
 * Poszukiwanie parametrów
 * Regularyzacja
 * Ensemble
 
 Słownictwo
--------------------------------------------------------------------------------
+----------
 .. glossary::
 
     Cost Function
@@ -26,7 +26,7 @@ Słownictwo
 
 
 Diagnostyka Bias vs. Wariancja
--------------------------------------------------------------------------------
+------------------------------
 Osiąganie kiepskich rezultatów na zbiorze testowym wiąże się zazwyczaj z jednym z dwóch zjawisk:
 
 * wysoki bias - niedopasowanie (under fitting)
@@ -74,7 +74,7 @@ Tworząc sieci neuronowe mamy dwie opcje:
 * Najczęściej wykorzystanie dużej sieci neuronowej z regularyzacją (w celu zmniejszenia overfittingu) jest bardziej efektywne od stworzenia małej sieci. Decyzję o liczbie ukrytych warstw można podjąć mierząc błąd zbioru testowego dla różnych wariantów i wybierając liczbę warstw przy której błąd ten jest najmniejszy.
 
 Model Evaluation Procedure
--------------------------------------------------------------------------------
+--------------------------
 
 Train and test on entire dataset
 --------------------------------
@@ -276,7 +276,7 @@ Source: https://www.dataschool.io
 
 
 Regularyzacja
--------------------------------------------------------------------------------
+-------------
 * Regularyzacja – wprowadzenie dodatkowej informacji do rozwiązywanego zagadnienia źle postawionego w celu polepszenia jakości rozwiązania.
 * Regularyzacja jest często wykorzystywana przy rozwiązywaniu problemów odwrotnych.
 * Regularyzacja jest sposobem na zmniejszenie prawdopodobieństwa pojawienia się overfittingu
@@ -285,13 +285,13 @@ Regularyzacja
 
 
 Random Forrest
--------------------------------------------------------------------------------
+--------------
 A random forest is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and use averaging to improve the predictive accuracy and control over-fitting.
 The sub-sample size is always the same as the original input sample size but the samples are drawn with replacement if bootstrap=True (default).
 
 
 Ensemble averaging
--------------------------------------------------------------------------------
+------------------
 * In machine learning, particularly in the creation of artificial neural networks, ensemble averaging is the process of creating multiple models and combining them to produce a desired output, as opposed to creating just one model.
 * Frequently an ensemble of models performs better than any individual model, because the various errors of the models "average out."
 * Ensemble averaging is one of the simplest types of committee machines. Along with boosting, it is one of the two major types of static committee machines.

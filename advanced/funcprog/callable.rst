@@ -5,19 +5,6 @@ FuncProg Callable
 Rationale
 ---------
 >>> def hello():
-...     print('My name... José Jiménez')
->>>
->>>
->>> type(hello)
-<class 'function'>
->>>
->>> callable(hello)
-True
-
-
-Details
--------
->>> def hello():
 ...     return 'Hello World'
 >>>
 >>>
@@ -39,20 +26,14 @@ Calling Call Method
 * ``__call__()`` method makes object callable
 
 >>> def hello():
-...     print('My name... José Jiménez')
+...     return 'Hello World'
 >>>
->>>
->>> type(hello)
-<class 'function'>
->>>
->>> callable(hello)
-True
 >>>
 >>> hello()
-My name... José Jiménez
+'Hello World'
 >>>
 >>> hello.__call__()
-My name... José Jiménez
+'Hello World'
 
 
 Overloading Call Method

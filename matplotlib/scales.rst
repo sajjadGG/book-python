@@ -3,7 +3,7 @@ Matplotlib Scales
 
 
 Rationale
--------------------------------------------------------------------------------
+---------
 * Liniowa
 * Logarytmiczna
 * Symmetrical log (można ustawić fragmentami liniowo ``linthreshx: int``)
@@ -13,7 +13,7 @@ Rationale
 
 
 Linear Scale
--------------------------------------------------------------------------------
+------------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -30,7 +30,7 @@ Linear Scale
 
 
 Logarithmic Scale
--------------------------------------------------------------------------------
+-----------------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -47,7 +47,7 @@ Logarithmic Scale
 
 
 Symmetrical Logarithmic Scale
--------------------------------------------------------------------------------
+-----------------------------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -64,7 +64,7 @@ Symmetrical Logarithmic Scale
 
 
 Logit Scale
--------------------------------------------------------------------------------
+-----------
 .. code-block:: python
 
     import matplotlib.pyplot as plt

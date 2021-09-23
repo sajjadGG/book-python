@@ -3,7 +3,7 @@ SSH
 
 
 ``paramiko``
--------------------------------------------------------------------------------
+------------
 .. code-block:: python
 
     import paramiko
@@ -103,7 +103,7 @@ SFTP
 
 
 ``pysftp``
--------------------------------------------------------------------------------
+----------
 .. code-block:: console
 
     $ pip install pysftp
@@ -128,7 +128,7 @@ SFTP
 
 
 ``fabric``
--------------------------------------------------------------------------------
+----------
 * http://www.fabfile.org/
 * https://pypi.python.org/pypi/Fabric3
 
@@ -299,7 +299,7 @@ Host
 
 
 ``pssh``
--------------------------------------------------------------------------------
+--------
 * Running commands in parallel across many hosts
 * https://linux.die.net/man/1/pssh
 

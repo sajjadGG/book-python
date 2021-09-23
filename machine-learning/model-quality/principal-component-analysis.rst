@@ -3,7 +3,7 @@ Principal Component Analysis
 
 
 Rationale
--------------------------------------------------------------------------------
+---------
 * Principal component analysis (PCA)
 * Technique used to emphasize variation and bring out strong patterns in a dataset.
 * It's often used to make data easy to explore and visualize.
@@ -11,10 +11,10 @@ Rationale
 
 
 What is Principal Component Analysis?
--------------------------------------------------------------------------------
+-------------------------------------
 
 2D example
--------------------------------------------------------------------------------
+----------
 * http://setosa.io/ev/principal-component-analysis/
 
 First, consider a dataset in only two dimensions, like (height, weight). This dataset can be plotted as points in a plane. But if we want to tease out variation, PCA finds a new coordinate system in which every point has a new (x,y) value. The axes don't actually mean anything physical; they're combinations of height and weight called "principal components" that are chosen to give one axes lots of variation.
@@ -61,13 +61,13 @@ First, consider a dataset in only two dimensions, like (height, weight). This da
     # [ 0.99244...]
 
 3D example
--------------------------------------------------------------------------------
+----------
 .. figure:: img/principal-component-analysis-3d.png
 
     Principal Component Analysis 3D
 
 Przykłady praktyczne
--------------------------------------------------------------------------------
+--------------------
 * https://github.com/scikit-learn/scikit-learn/tree/master/examples/decomposition
 
 PCA dla zbioru Iris
@@ -121,7 +121,7 @@ PCA dla zbioru Iris:
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Convert assignments to literalinclude
 
 PCA dla zbioru Pima Indian Diabetes

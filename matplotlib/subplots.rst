@@ -3,13 +3,13 @@ Matplotlib Subplots
 
 
 Rationale
--------------------------------------------------------------------------------
+---------
 * `plt.subplot()`
 * `plt.subplots()`
 
 
 Subplot
--------------------------------------------------------------------------------
+-------
 * nrows
 * ncols
 * index
@@ -74,7 +74,7 @@ Subplot
 
 
 Subplots
--------------------------------------------------------------------------------
+--------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -143,7 +143,7 @@ Subplots
 
 
 Adjustments
--------------------------------------------------------------------------------
+-----------
 * https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplot.html
 
 .. code-block:: python

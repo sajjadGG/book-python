@@ -62,7 +62,7 @@ Mean
 
 
 Average
--------------------------------------------------------------------------------
+-------
 * Compute the weighted average along the specified axis.
 
 .. code-block:: python
@@ -131,7 +131,7 @@ Average
 
 
 Median
--------------------------------------------------------------------------------
+------
 * Compute the median along the specified axis
 
 .. code-block:: python
@@ -198,7 +198,7 @@ Median
     # 2.5
 
 Variance
--------------------------------------------------------------------------------
+--------
 * Compute the variance along the specified axis.
 * Variance of the array elements is a measure of the spread of a distribution.
 * The variance is the average of the squared deviations from the mean, i.e., ``var = mean(abs(x - x.mean())**2)``
@@ -258,7 +258,7 @@ Variance
 
 
 Standard Deviation
--------------------------------------------------------------------------------
+------------------
 * Compute the standard deviation along the specified axis.
 * Standard deviation is a measure of the spread of a distribution, of the array elements.
 * The standard deviation is the square root of the average of the squared deviations from the mean, i.e., ``std = sqrt(mean(abs(x - x.mean())**2))``
@@ -318,7 +318,7 @@ Standard Deviation
 
 
 Covariance
--------------------------------------------------------------------------------
+----------
 * Estimate a covariance matrix, given data and weights
 * Covariance indicates the level to which two variables vary together
 * ``ddof`` - Delta Degrees of Freedom
@@ -385,7 +385,7 @@ Covariance
 
 
 Correlation coefficient
--------------------------------------------------------------------------------
+-----------------------
 * measure of the linear correlation between two variables X and Y
 * Pearson correlation coefficient (PCC)
 * Pearson product-moment correlation coefficient (PPMCC)
@@ -469,5 +469,5 @@ Correlation coefficient
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Create assignments

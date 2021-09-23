@@ -10,8 +10,11 @@ Rationale
 >>>
 >>> [method for method in dir(functools)
 ...         if not method.startswith('_')
-...         and callable(getattr(functools, method))]
-['GenericAlias', 'RLock', 'cache', 'cached_property', 'cmp_to_key', 'get_cache_token', 'lru_cache', 'namedtuple', 'partial', 'partialmethod', 'recursive_repr', 'reduce', 'singledispatch', 'singledispatchmethod', 'total_ordering', 'update_wrapper', 'wraps']
+...         and callable(getattr(functools, method))]   # doctest: +NORMALIZE_WHITESPACE
+['GenericAlias', 'RLock', 'cache', 'cached_property', 'cmp_to_key',
+ 'get_cache_token', 'lru_cache', 'namedtuple', 'partial', 'partialmethod',
+ 'recursive_repr', 'reduce', 'singledispatch', 'singledispatchmethod',
+ 'total_ordering', 'update_wrapper', 'wraps']
 
 
 Partial

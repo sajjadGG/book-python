@@ -16,14 +16,14 @@ Matplotlib Style
 
 
 Figure Anatomy
--------------------------------------------------------------------------------
+--------------
 .. figure:: img/matplotlib-figure-anatomy.png
 
     Matplotlib Figure Anatomy
 
 
 Annotations
--------------------------------------------------------------------------------
+-----------
 * Title
 * X Axis Label
 * Y Axis Label
@@ -82,7 +82,7 @@ Annotations
 
 
 Axis Limits
--------------------------------------------------------------------------------
+-----------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -100,7 +100,7 @@ Axis Limits
 
 
 Legend
--------------------------------------------------------------------------------
+------
 * location
 
 .. code-block:: python
@@ -131,7 +131,7 @@ Legend
 
 
 Ticks
--------------------------------------------------------------------------------
+-----
 * Minor
 * Major
 * Rotation
@@ -232,7 +232,7 @@ Ticks
     plt.show()
 
 Spines
--------------------------------------------------------------------------------
+------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -279,7 +279,7 @@ Spines
 
 
 Grid
--------------------------------------------------------------------------------
+----
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -337,7 +337,7 @@ Grid
 
 
 Trend Line
--------------------------------------------------------------------------------
+----------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -374,7 +374,7 @@ Trend Line
 
 
 Styles
--------------------------------------------------------------------------------
+------
 .. code-block:: python
 
     import matplotlib.pyplot as plt

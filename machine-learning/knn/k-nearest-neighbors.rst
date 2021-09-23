@@ -4,7 +4,7 @@ K Nearest Neighbors
 .. todo:: Zrobić aby wykorzystywało szablon ``_template.rst``
 
 Jak działa algorytm "K najbliższych sąsiadów"
--------------------------------------------------------------------------------
+---------------------------------------------
 Algorytm polega na:
 
 #. porównaniu wartości zmiennych objaśniających dla obserwacji :math:`C` z wartościami tych zmiennych dla każdej obserwacji w zbiorze uczącym.
@@ -19,7 +19,7 @@ Algorytm polega na:
 
 
 Przykład praktyczny
--------------------------------------------------------------------------------
+-------------------
 
 Jak to działa na przykładzie Iris
 ---------------------------------
@@ -128,21 +128,21 @@ Because of some variation for each run, it might give different results.
 
 
 Określanie przynależności do zbioru
--------------------------------------------------------------------------------
+-----------------------------------
 
 .. figure:: img/k-nearest-neighbors-membership.png
 
     Przynależność do zbioru
 
 Wyznaczanie odległości
--------------------------------------------------------------------------------
+----------------------
 
 .. figure:: img/k-nearest-neighbors-euclidean-distance.png
 
     Wyliczanie odległości w celu oszacowania przynależności do zbioru. Zwróć uwagę, że bez względu na ilość wymiarów wzór się niewiele różni.
 
 Zalety i wady
--------------------------------------------------------------------------------
+-------------
 
 Zalety
 ------
@@ -156,7 +156,7 @@ Wady
 
 
 Assignments
--------------------------------------------------------------------------------
+-----------
 .. todo:: Convert assignments to literalinclude
 
 Pima Indians Diabetes problem

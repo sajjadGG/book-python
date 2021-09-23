@@ -24,7 +24,7 @@ Routing schemes differ in how they deliver messages :cite:`DefinitionRouting`:
 
 
 Unicast
--------------------------------------------------------------------------------
+-------
 In computer networking, unicast refers to a one-to-one transmission from one point in the network to another point; that is, one sender and one receiver, each identified by a network address :cite:`DefinitionUnicast`.
 
 .. figure:: img/routing-unicast.png
@@ -33,7 +33,7 @@ In computer networking, unicast refers to a one-to-one transmission from one poi
 
 
 Broadcast
--------------------------------------------------------------------------------
+---------
 In computer networking, telecommunication and information theory, broadcasting is a method of transferring a message to all recipients simultaneously. Broadcasting can be performed as a high level operation in a program, for example broadcasting in Message Passing Interface, or it may be a low level networking operation, for example broadcasting on Ethernet :cite:`DefinitionBroadcast`.
 
 All-to-all communication is a computer communication method in which each sender transmits messages to all receivers within a group. In networking this is often accomplished using multicast. This is in contrast with the point-to-point method in which each sender communicates with one receiver :cite:`DefinitionBroadcast`.
@@ -62,7 +62,7 @@ All-to-all communication is a computer communication method in which each sender
 
 
 Multicast
--------------------------------------------------------------------------------
+---------
 In computer networking, multicast is group communication[1] where data transmission is addressed to a group of destination computers simultaneously. Multicast can be one-to-many or many-to-many distribution.[2] Multicast should not be confused with physical layer point-to-multipoint communication :cite:`DefinitionMulticast`.
 
 Group communication may either be application layer multicast[1] or network assisted multicast, where the latter makes it possible for the source to efficiently send to the group in a single transmission. Copies are automatically created in other network elements, such as routers, switches and cellular network base stations, but only to network segments that currently contain members of the group. Network assisted multicast may be implemented at the data link layer using one-to-many addressing and switching such as Ethernet multicast addressing, Asynchronous Transfer Mode (ATM), point-to-multipoint virtual circuits (P2MP)[3] or Infiniband multicast. Network assisted multicast may also be implemented at the Internet layer using IP multicast. In IP multicast the implementation of the multicast concept occurs at the IP routing level, where routers create optimal distribution paths for datagrams sent to a multicast destination address :cite:`DefinitionMulticast`.
@@ -110,7 +110,7 @@ Send multicast package:
 
 
 Anycast
--------------------------------------------------------------------------------
+-------
 Anycast is a network addressing and routing methodology in which a single destination address has multiple routing paths to two or more endpoint destinations. Routers will select the desired path on the basis of number of hops, distance, lowest cost, latency measurements or based on the least congested route. Anycast networks are widely used for content delivery network (CDN) products to bring their content closer to the end user :cite:`DefinitionAnycast`.
 
 .. figure:: img/routing-anycast.png
@@ -119,7 +119,7 @@ Anycast is a network addressing and routing methodology in which a single destin
 
 
 Geocast
--------------------------------------------------------------------------------
+-------
 Geocast refers to the delivery of information to a group of destinations in a network identified by their geographical locations. It is a specialized form of multicast addressing used by some routing protocols for mobile ad hoc networks :cite:`DefinitionGeocast`.
 
 .. figure:: img/routing-geocast.png

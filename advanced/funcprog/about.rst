@@ -1,5 +1,5 @@
-Functional Paradigm
-===================
+FuncProg About
+==============
 
 
 Rationale

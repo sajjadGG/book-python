@@ -3,34 +3,34 @@ References
 
 
 Data Visualization
--------------------------------------------------------------------------------
+------------------
 * https://www.data-to-viz.com/#explore
 * https://www.data-to-viz.com/img/poster/poster_big.png
 
 
 Neural Networks
--------------------------------------------------------------------------------
+---------------
 * https://www.youtube.com/watch?v=oYbVFhK_olY&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v&index=43
 
 
 Understanding the Bias-Variance Tradeoff
--------------------------------------------------------------------------------
+----------------------------------------
 * http://scott.fortmann-roe.com/docs/BiasVariance.html
 
 
 Bayes
--------------------------------------------------------------------------------
+-----
 * http://pyvideo.org/pycon-us-2017/bayesian-statistical-analysis-with-python.html
 * https://github.com/ericmjl/bayesian-stats-talk/blob/master/slides.ipynb
 
 
 PyMC3
--------------------------------------------------------------------------------
+-----
 * https://www.youtube.com/watch?v=5TyvJ6jXHYE
 
 
 Inne
--------------------------------------------------------------------------------
+----
 * UCI Machine Learning Repository http://www.ics.uci.edu/~mlearn/MLRepository
 * David W. Aha: Machine Learning Page http://www.aic.nrl.navy.mil/~aha/research/machine-learning.html
 * ML Online Net Info http://id001.wkap.nl/mach/ml_links.htm

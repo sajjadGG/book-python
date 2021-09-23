@@ -75,8 +75,8 @@ Function Code
  'replace']
 
 
-Use Case 1
-----------
+Use Case - Disabled
+-------------------
 >>> def hello():
 ...     if not hello.disabled:
 ...         print('My name... José Jiménez')
@@ -93,16 +93,18 @@ My name... José Jiménez
 Traceback (most recent call last):
 PermissionError
 
-Use Case 2
-----------
+Use Case - Cache
+----------------
 >>> def add(a, b):
 ...     return a + b
 >>>
 >>>
 >>> add(1, 2)
 3
+>>>
 >>> add(1, 2)
 3
+>>>
 >>> add(1, 2)
 3
 
@@ -121,9 +123,11 @@ Use Case 2
 >>> add(1, 2)
 Not in cache; computing and updating cache...
 3
+>>>
 >>> add(1, 2)
 Found in cache; fetching...
 3
+>>>
 >>> add(1, 2)
 Found in cache; fetching...
 3

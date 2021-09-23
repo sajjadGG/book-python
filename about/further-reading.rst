@@ -2,6 +2,11 @@ Further reading
 ===============
 
 
+Matt Harasymczuk's Webinars
+---------------------------
+* https://www.youtube.com/playlist?list=PLv4THqSPE6meFeo_jNLgUVKkP40UstIQv
+
+
 Video
 -----
 * https://pyvideo.org/

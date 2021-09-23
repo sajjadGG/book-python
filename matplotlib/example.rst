@@ -3,7 +3,7 @@ Matplotlib Examples
 
 
 Examples
--------------------------------------------------------------------------------
+--------
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -39,12 +39,12 @@ Examples
 
 
 Gallery
--------------------------------------------------------------------------------
+-------
 * https://matplotlib.org/gallery/index.html
 
 
 Scales
--------------------------------------------------------------------------------
+------
 .. literalinclude:: src/matplotlib-scales.py
     :language: python
     :caption: Scales
@@ -53,7 +53,7 @@ Scales
 
 
 Grid
--------------------------------------------------------------------------------
+----
 .. literalinclude:: src/matplotlib-grid-extra.py
     :language: python
     :caption: Grid
@@ -62,7 +62,7 @@ Grid
 
 
 Legend using pre-defined labels
--------------------------------------------------------------------------------
+-------------------------------
 .. literalinclude:: src/matplotlib-legend.py
     :language: python
     :caption: Legend using pre-defined labels
@@ -71,7 +71,7 @@ Legend using pre-defined labels
 
 
 Radar Chart
--------------------------------------------------------------------------------
+-----------
 .. literalinclude:: src/matplotlib-radar-chart.py
     :language: python
     :caption: Radar Chart

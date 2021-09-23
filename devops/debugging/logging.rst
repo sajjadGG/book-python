@@ -3,7 +3,7 @@ Logging
 
 
 Logging levels
--------------------------------------------------------------------------------
+--------------
 * Critical - Critical Error, and cannot continue
 * Error - Error, but can continue
 * Warning - Warning, will do something important
@@ -22,7 +22,7 @@ Logging levels
 
 
 Use Case
--------------------------------------------------------------------------------
+--------
 .. code-block:: python
 
     import logging
@@ -166,7 +166,7 @@ Wyciszanie logowania
 
 
 Konfiguracja formatowania logów
--------------------------------------------------------------------------------
+-------------------------------
 .. todo:: convert table to CSV
 
 +-------------------------+-----------------------------------------------+
@@ -295,7 +295,7 @@ Konfiguracja formatowania logów
 
 
 Rotate
--------------------------------------------------------------------------------
+------
 * ``logging.handlers.WatchedFileHandler``
 * ``logging.handlers.RotatingFileHandler``
 * ``logging.handlers.TimedRotatingFileHandler``
@@ -312,7 +312,7 @@ Rotate
     #set your log format
 
 Examples
--------------------------------------------------------------------------------
+--------
 .. code-block:: python
 
     import logging
@@ -401,5 +401,5 @@ Decorators:
 
 
 Further Reading
--------------------------------------------------------------------------------
+---------------
 * https://pyvideo.org/pycon-au-2018/a-guided-tour-of-python-logging.html

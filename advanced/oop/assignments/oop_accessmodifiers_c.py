@@ -14,7 +14,7 @@ English:
 
 Polish:
     1. Zdefiniuj `result: list[dict]`
-    2. Zdefiniuj klasę `Iris`
+    2.  klasę `Iris`
     3. Chronione atrybuty: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`
     4. Publiczne atrybuty: `species`
     5. Iteruj po `DATA` i dodaj wszystkie publiczne atrybuty do `result`
@@ -69,13 +69,13 @@ class Iris:
 DATA = Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
 
 
-# list[dict]: all public attributes and their values
+# dict[str,float|str]: all public attributes and their values
 public = ...
 
-# list[dict]: all protected attributes and their values
+# dict[str,float|str]: all protected attributes and their values
 protected = ...
 
-# list[dict]: all private attributes and their values
+# dict[str,float|str]: all private attributes and their values
 private = ...
 
 # Solution
