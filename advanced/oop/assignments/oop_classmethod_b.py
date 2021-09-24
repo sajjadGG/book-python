@@ -71,7 +71,6 @@ class CSVMixin:
     def to_csv(self) -> str:
         ...
 
-    @classmethod
     def from_csv(cls, line: str) -> Union['Astronaut', 'Cosmonaut']:
         ...
 

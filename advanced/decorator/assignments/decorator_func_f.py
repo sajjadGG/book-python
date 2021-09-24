@@ -9,14 +9,18 @@ English:
     2. Create function decorator `abspath`
     3. If `path` is relative, then `abspath` will convert it to absolute
     4. If `path` is absolute, then `abspath` will not modify it
-    5. Run doctests - all must succeed
+    5. Note: if you are using Windows operating system,
+       then one doctest (with absolute path) can fail
+    6. Run doctests - all must succeed
 
 Polish:
     1. Ścieżka bezwzględna jest gdy `path` zaczyna się od `current_directory`
     2. Stwórz funkcję dekorator `abspath`
     3. Jeżeli `path` jest względne, to `abspath` zamieni ją na bezwzględną
     4. Jeżeli `path` jest bezwzględna, to `abspath` nie będzie jej modyfikował
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    5. Uwaga: jeżeli korzystasz z systemu operacyjnego Windows,
+       to jeden z doctestów (ścieżki bezwzględnej) może nie przejść pomyślnie
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `Path(filename).absolute()`
@@ -42,6 +46,9 @@ Tests:
     True
     >>> display('/home/python/iris.csv')
     '/home/python/iris.csv'
+
+TODO: Windows Path().absolute()
+TODO: Test if function was called
 """
 
 from pathlib import Path
