@@ -19,12 +19,12 @@ Syntax:
 ...         self.myfield = 'some value'
 ...
 ...     def mymethod(self):
-...         print(self.myfield)
+...         return self.myfield
 >>>
 >>>
 >>> my = MyClass()
 >>> my.mymethod()
-some value
+'some value'
 
 
 Methods Accessing Fields
@@ -36,18 +36,18 @@ Methods Accessing Fields:
 ...         self.name = name
 ...
 ...     def say_hello(self):
-...         print(f'My name... {self.name}')
+...         return f'My name... {self.name}'
 >>>
 >>>
 >>> jose = Astronaut('José Jiménez')
 >>> jose.say_hello()
-My name... José Jiménez
+'My name... José Jiménez'
 
 ``self.name`` must be defined before accessing:
 
 >>> class Astronaut:
 ...     def say_hello(self):
-...         print(f'My name... {self.name}')
+...         return f'My name... {self.name}'
 >>>
 >>>
 >>> jose = Astronaut()
@@ -66,12 +66,12 @@ Methods Calling Other Methods:
 ...
 ...     def say_hello(self):
 ...         name = self.get_name()
-...         print(f'My name... {name}')
+...         return f'My name... {name}'
 >>>
 >>>
 >>> jose = Astronaut()
 >>> jose.say_hello()
-My name... José Jiménez
+'My name... José Jiménez'
 
 Methods calling other methods:
 
@@ -93,7 +93,7 @@ Methods calling other methods:
 >>>
 >>>
 >>> flower = Iris()
->>> print(flower.total_area())
+>>> flower.total_area()
 18.13
 
 Since Python 3.7 there is a ``@dataclass`` decorator, which automatically
@@ -122,7 +122,7 @@ More information in `OOP Dataclass`.
 >>>
 >>>
 >>> flower = Iris()
->>> print(flower.total_area())
+>>> flower.total_area()
 18.13
 
 
@@ -174,19 +174,19 @@ Examples
 ...         return self.x, self.y, self.z
 ...
 ...     def show(self):
-...         print(f'Point(x={self.x}, y={self.y}, z={self.z})')
+...         return f'Point(x={self.x}, y={self.y}, z={self.z})'
 >>>
 >>>
 >>> point = Point(x=1, y=2, z=3)
 >>>
 >>> vars(point)
-{'x':1, 'y':2, 'z':3}
+{'x': 1, 'y': 2, 'z': 3}
 >>>
 >>> point.get_coordinates()
 (1, 2, 3)
 >>>
 >>> point.show()
-Point(x=1, y=2, z=3)
+'Point(x=1, y=2, z=3)'
 
 
 Use Cases - Counter
@@ -201,23 +201,26 @@ Use Cases - Counter
 ...         self.current_value += 1
 ...
 ...     def decrement(self):
-...         if self.current_value - 1 < 0:
-...             raise ValueError('Cannot decrement below zero')
 ...         self.current_value -= 1
+...         if self.current_value < 0:
+...             raise ValueError('Cannot decrement below zero')
 ...
 ...     def show(self):
 ...         return self.current_value
 >>>
 >>>
 >>> c = Counter()
+>>>
 >>> c.increment()
 >>> c.increment()
 >>> c.show()
 2
+>>>
 >>> c.decrement()
 >>> c.decrement()
 >>> c.show()
 0
+>>>
 >>> c.decrement()
 Traceback (most recent call last):
 ValueError: Cannot decrement below zero
@@ -226,7 +229,6 @@ ValueError: Cannot decrement below zero
 Use Case - Car
 --------------
 >>> from typing import Literal
->>>
 >>>
 >>>
 >>> class Car:
@@ -254,17 +256,18 @@ Use Case - Car
 Traceback (most recent call last):
 RuntimeError: Engine must be turned on to drive
 >>>
->>> print(maluch.engine)
+>>> maluch.engine
 'off'
+>>>
 >>> maluch.engine_start()
->>> print(maluch.engine)
+>>> maluch.engine
 'on'
 >>>
 >>> maluch.drive_to('Bajkonur')
 'Driving to Bajkonur'
 >>>
 >>> maluch.engine_stop()
->>> print(maluch.engine)
+>>> maluch.engine
 'off'
 
 

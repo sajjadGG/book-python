@@ -31,10 +31,10 @@ Syntax
 ...         self.myattribute = myvar
 >>>
 >>>
->>> myobj = MyClass('my value')
+>>> myobj = MyClass('myvalue')
 >>>
 >>> print(myobj.myattribute)
-my value
+myvalue
 
 
 Initializer Method Without Arguments
@@ -68,6 +68,7 @@ TypeError: __init__() missing 2 required positional arguments: 'firstname' and '
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
 Hello Mark Watney
+>>>
 >>> astro = Astronaut(firstname='Mark', lastname='Watney')
 Hello Mark Watney
 
@@ -78,6 +79,7 @@ Hello Mark Watney
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
 Hello Mark Watney
+>>>
 >>> astro = Astronaut('Mark')
 Hello Mark Unknown
 
@@ -108,16 +110,12 @@ Variable Attributes
 >>>
 >>>
 >>> mark = Astronaut('Mark', 'Watney')
->>> print(mark.firstname)
-Mark
->>> print(mark.lastname)
-Watney
+>>> vars(mark)
+{'firstname': 'Mark', 'lastname': 'Watney'}
 >>>
 >>> ivan = Astronaut(a='Ivan', b='Ivanovich')
->>> print(ivan.firstname)
-Ivan
->>> print(ivan.lastname)
-Ivanovich
+>>> vars(ivan)
+{'firstname': 'Ivan', 'lastname': 'Ivanovich'}
 
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname):
@@ -126,16 +124,12 @@ Ivanovich
 >>>
 >>>
 >>> mark = Astronaut('Mark', 'Watney')
->>> print(mark.firstname)
-Mark
->>> print(mark.lastname)
-Watney
+>>> vars(mark)
+{'firstname': 'Mark', 'lastname': 'Watney'}
 >>>
 >>> ivan = Astronaut(firstname='Ivan', lastname='Ivanovich')
->>> print(ivan.firstname)
-Ivan
->>> print(ivan.lastname)
-Ivanovich
+>>> vars(ivan)
+{'firstname': 'Ivan', 'lastname': 'Ivanovich'}
 
 
 Combine Attributes
@@ -149,9 +143,11 @@ Combine Attributes
 >>>
 >>> print(mark.name)
 Mark Watney
+>>>
 >>> print(mark.firstname)
 Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute 'firstname'
+>>>
 >>> print(mark.lastname)
 Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute 'lastname'
@@ -200,7 +196,6 @@ Use Case - Iris
 >>> class Iris:
 ...     def __init__(self, sepal_length, sepal_width,
 ...                  petal_length, petal_width, species):
-...
 ...         self.sepal_length = sepal_length
 ...         self.sepal_width = sepal_width
 ...         self.petal_length = petal_length
@@ -210,16 +205,21 @@ Use Case - Iris
 >>>
 >>> setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
 >>>
->>> print(setosa.sepal_length)
-5.1
->>> print(setosa.sepal_width)
-3.5
->>> print(setosa.petal_length)
-1.4
->>> print(setosa.petal_width)
-0.2
->>> print(setosa.species)
-setosa
+>>> vars(setosa)  # doctest: +NORMALIZE_WHITESPACE
+{'sepal_length': 5.1,
+ 'sepal_width': 3.5,
+ 'petal_length': 1.4,
+ 'petal_width': 0.2,
+ 'species': 'setosa'}
+
+>>> class Iris:
+...     def __init__(self, sepal_length, sepal_width,
+...                  petal_length, petal_width, species):
+...         self.sepal_length = sepal_length
+...         self.sepal_width = sepal_width
+...         self.petal_length = petal_length
+...         self.petal_width = petal_width
+...         self.species = species
 >>>
 >>>
 >>> virginica = Iris(
@@ -239,8 +239,9 @@ setosa
 
 Use Case - Dataclasses
 ----------------------
-Since Python 3.7: there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields.
-More information in `OOP Dataclass`
+Since Python 3.7: there is a ``@dataclass`` decorator, which automatically
+generates ``__init__()`` arguments and fields. More information in
+`OOP Dataclass`.
 
 >>> from dataclasses import dataclass
 >>>
@@ -267,7 +268,6 @@ More information in `OOP Dataclass`
  'petal_length': 5.1,
  'petal_width': 1.9,
  'species': 'virginica'}
-
 
 
 Use Case - Kelvin
@@ -309,9 +309,9 @@ Use Case - Boundaries
 ...             self.x = x
 ...             self.y = y
 ...             self.z = z
-...
-...
-... point1 = Point(x=-10, y=1, z=0)
+>>>
+>>>
+>>> point1 = Point(x=-10, y=1, z=0)
 Traceback (most recent call last):
 ValueError: x=-10 is out of boundary 0, 1024
 
@@ -341,9 +341,9 @@ Use Case - Parametrized Boundaries
 ...             self.x = x
 ...             self.y = y
 ...             self.z = z
-...
-...
-... point1 = Point(x=-10, y=1, z=0)
+>>>
+>>>
+>>> point1 = Point(x=-10, y=1, z=0)
 Traceback (most recent call last):
 ValueError: x=-10 is out of boundary 0, 1024
 

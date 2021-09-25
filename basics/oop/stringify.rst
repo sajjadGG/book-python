@@ -53,8 +53,10 @@ Object without ``__str__()`` method overloaded prints their memory address:
 >>>
 >>> print(astro)  # doctest: +ELLIPSIS
 <Astronaut object at 0x...>
+>>>
 >>> str(astro)  # doctest: +ELLIPSIS
 '<Astronaut object at 0x...>'
+>>>
 >>> astro.__str__()  # doctest: +ELLIPSIS
 '<Astronaut object at 0x...>'
 
@@ -73,8 +75,10 @@ Objects can verbose print if ``__str__()`` method is present:
 >>>
 >>> print(astro)
 Hello Mark Watney
+>>>
 >>> str(astro)
 'Hello Mark Watney'
+>>>
 >>> astro.__str__()
 'Hello Mark Watney'
 
@@ -95,12 +99,10 @@ Representation
 ...         self.lastname = lastname
 >>>
 >>>
->>> astro = Astronaut()
+>>> astro = Astronaut('Mark', 'Watney')
 >>>
 >>> repr(astro)  # doctest: +ELLIPSIS
 '<Astronaut object at 0x...>'
->>> astro  # doctest: +ELLIPSIS
-<Astronaut object at 0x...>
 
 Using ``__repr__()`` on a class:
 
@@ -118,9 +120,10 @@ Using ``__repr__()`` on a class:
 >>> astro = Astronaut('Mark', 'Watney')
 >>>
 >>> repr(astro)
-'Astronaut(firstname="Mark", lastname="Watney")'
+"Astronaut(firstname='Mark', lastname='Watney')"
+>>>
 >>> astro
-Astronaut(firstname="Mark", lastname="Watney")
+Astronaut(firstname='Mark', lastname='Watney')
 
 
 Printing Sequence Elements
@@ -131,6 +134,7 @@ Printing ``list`` will call ``__repr__()`` method on each element:
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
+>>>
 >>>
 >>> crew = [Astronaut('Jan', 'Twardowski'),
 ...         Astronaut('Mark', 'Watney'),
@@ -148,6 +152,7 @@ Printing ``list`` will call ``__repr__()`` method on each element:
 ...
 ...     def __repr__(self):
 ...         return f'{self.firstname} {self.lastname}'
+>>>
 >>>
 >>> crew = [Astronaut('Jan', 'Twardowski'),
 ...         Astronaut('Mark', 'Watney'),
