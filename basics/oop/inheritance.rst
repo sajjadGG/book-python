@@ -18,24 +18,13 @@ Rationale
     subclass
         Class which inherits from :term:`parent`
 
-    inherits
-    derives
+    inherit
+    derive
         Class takes attributes and methods from parent.
 
-    single inheritance
-        One class inherits from one other class. Has one parent.
 
-    multilevel inheritance
-        One class inherits from other class, and yet another class inherits
-        from it. This creates hierarchical structure.
-
-    multiple inheritance
-    mixin classes
-        One class derives from several other classes at once.
-
-
-Syntax
-------
+Methods
+-------
 >>> class Parent:
 ...     def say_hello(self):
 ...         return 'Hello'
@@ -49,60 +38,16 @@ Syntax
 'Hello'
 
 
-No Inheritance
---------------
->>> class Parent:
-...     pass
->>>
->>>
->>> class Child:
-...     pass
-
-
-Single Inheritance
-------------------
->>> class Parent:
-...     pass
->>>
->>>
->>> class Child(Parent):
-...     pass
-
-
-Multilevel Inheritance
-----------------------
+Attributes
+----------
 >>> class Person:
-...     pass
->>>
->>>
->>> class Parent(Person):
-...     pass
->>>
->>>
->>> class Child(Parent):
-...     pass
-
-
-Multiple Inheritance
---------------------
->>> class Mother:
-...     pass
->>>
->>>
->>> class Father:
-...     pass
->>>
->>>
->>> class Child(Mother, Father):
-...     pass
-
-
-Use Cases
----------
->>> class Person:
+...     firstname: str
+...     lastname: str
+...
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
+>>>
 >>>
 >>> class Astronaut(Person):
 ...     pass
@@ -114,7 +59,16 @@ Use Cases
 >>> mark = Astronaut('Mark', 'Watney')
 >>> ivan = Cosmonaut('Ivan', 'Ivanovic')
 
+
+Use Case - Iris
+---------------
 >>> class Iris:
+...     sepal_length: float
+...     sepal_width: float
+...     petal_length: float
+...     petal_width: float
+...     species: str
+...
 ...     def __init__(self, sepal_length, sepal_width,
 ...                  petal_length, petal_width, species):
 ...         self.sepal_length = sepal_length
@@ -142,12 +96,13 @@ Use Cases
 ...     species='setosa')
 
 
+References
+----------
+.. [#Hettinger2015] https://www.youtube.com/watch?v=EiOglTERPEo
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/oop_inheritance_a.py
     :caption: :download:`Solution <assignments/oop_inheritance_a.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/oop_inheritance_b.py
-    :caption: :download:`Solution <assignments/oop_inheritance_b.py>`
     :end-before: # Solution

@@ -166,7 +166,9 @@ Object Oriented Programming
     oop/method.rst
     oop/methods-attributes.rst
     oop/inheritance.rst
-    oop/overload.rst
+    oop/inheritance-patterns.rst
+    oop/inheritance-problem.rst
+    oop/super.rst
     oop/stringify.rst
     oop/architecture.rst
 

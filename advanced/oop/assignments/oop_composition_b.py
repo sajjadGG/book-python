@@ -1,8 +1,8 @@
 """
 * Assignment: OOP Composition Composition
 * Complexity: easy
-* Lines of code: 2 lines
-* Time: 5 min
+* Lines of code: 10 lines
+* Time: 3 min
 
 English:
     1. Create class `MarsMission` from classes `Habitat`, `Rocket`, `Astronaut`

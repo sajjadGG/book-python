@@ -25,7 +25,7 @@ Tests:
     'Variable `result` has invalid type, must be a str'
 
     >>> result
-    '07/21/69 2:56 AM'
+    '7/21/69 2:56 AM'
 """
 
 from datetime import datetime
@@ -37,5 +37,5 @@ DATA = datetime(1969, 7, 21, 2, 56, 15)
 result = ...
 
 # Solution
-result = DATA.strftime('%m/%d/%y %#I:%M %p')  # Windows
-result = DATA.strftime('%m/%d/%y %-I:%M %p')  # *nix
+result = DATA.strftime('%#m/%d/%y %#I:%M %p')  # Windows
+result = DATA.strftime('%-m/%d/%y %-I:%M %p')  # *nix
