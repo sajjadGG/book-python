@@ -57,14 +57,14 @@ State:
 
 Syntax
 ------
->>> class Astronaut:
-...     firstname: str
-...     lastname: str
+>>> class MyClass:
+...     myattribute: str
 >>>
 >>>
->>> astro = Astronaut()
->>> astro.firstname = 'Mark'
->>> astro.lastname = 'Watney'
+>>> myobj = MyClass()
+>>> myobj.myattribute = 'MyValue'
+>>> print(myobj.myattribute)
+MyValue
 
 
 Dynamic Attributes
@@ -76,12 +76,12 @@ Dynamic attributes:
 ...     lastname: str
 >>>
 >>>
->>> jose = Astronaut()
->>> jose.firstname = 'José'
->>> jose.lastname = 'Jiménez'
+>>> astro = Astronaut()
+>>> astro.firstname = 'Mark'
+>>> astro.lastname = 'Watney'
 >>>
->>> print(f'My name... {jose.firstname} {jose.lastname}')
-My name... José Jiménez
+>>> print(f'Hello {astro.firstname} {astro.lastname}')
+Hello Mark Watney
 
 Accessing not existing attributes:
 
@@ -91,6 +91,8 @@ Accessing not existing attributes:
 >>>
 >>>
 >>> astro = Astronaut()
+>>> astro.firstname = 'Mark'
+>>> astro.lastname = 'Watney'
 >>>
 >>> print(astro.missions)
 Traceback (most recent call last):

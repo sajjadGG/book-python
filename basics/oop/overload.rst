@@ -17,26 +17,100 @@ Rationale
 
 Syntax
 ------
->>> class Parent:
+>>> class Person:
 ...     def say_hello(self):
-...         return 'Parent'
+...         print('Hello Person')
 >>>
->>> class Child(Parent):
+>>>
+>>> class Astronaut(Person):
 ...     def say_hello(self):
-...         return 'Child'
+...         print('Hello Astronaut')
 >>>
 >>>
->>> c = Child()
->>> c.say_hello()
-'Child'
+>>> a = Astronaut()
+>>> a.say_hello()
+Hello Astronaut
 
 
-Super Function
---------------
+Super Method
+------------
+>>> class Person:
+...     def say_hello(self):
+...         print('Hello Person')
+>>>
+>>>
+>>> class Astronaut(Person):
+...     def say_hello(self):
+...         print('Hello Astronaut')
+...         super().say_hello()
+>>>
+>>>
+>>> a = Astronaut()
+>>> a.say_hello()
+Hello Astronaut
+Hello Person
+
+>>> class Person:
+...     def say_hello(self):
+...         print('Hello Person')
+>>>
+>>>
+>>> class Astronaut(Person):
+...     def say_hello(self):
+...         super().say_hello()
+...         print('Hello Astronaut')
+>>>
+>>>
+>>> a = Astronaut()
+>>> a.say_hello()
+Hello Person
+Hello Astronaut
+
+
+Super Attributes
+----------------
+Call to __init__ of super class is missed:
+
 >>> class Person:
 ...     def __init__(self):
-...         self.name = 'Mark Watney'
+...         self.firstname = 'Mark'
+...         self.lastname = 'Watney'
+>>>
+>>>
+>>> class Astronaut(Person):
+...     def __init__(self):
+...         self.job = 'astronaut'
+>>>
+>>>
+>>> astro = Astronaut()
+>>> print(vars(astro))
+{'job': 'astronaut'}
+
+Call ``super().__init__()`` after initialization:
+
+>>> class Person:
+...     def __init__(self):
+...         self.firstname = 'Mark'
+...         self.lastname = 'Watney'
 ...         self.job = 'unemployed'
+>>>
+>>>
+>>> class Astronaut(Person):
+...     def __init__(self):
+...         self.job = 'astronaut'
+...         super().__init__()
+>>>
+>>>
+>>> astro = Astronaut()
+>>> print(vars(astro))
+{'job': 'unemployed', 'firstname': 'Mark', 'lastname': 'Watney'}
+
+Call ``super().__init__()`` before initialization:
+
+>>> class Person:
+...     def __init__(self):
+...         self.firstname = 'Mark'
+...         self.lastname = 'Watney'
 >>>
 >>>
 >>> class Astronaut(Person):
@@ -46,39 +120,8 @@ Super Function
 >>>
 >>>
 >>> astro = Astronaut()
->>> vars(astro)
-{'name': 'Mark Watney', 'job': 'astronaut'}
-
->>> class Person:
-...     def __init__(self):
-...         self.name = 'Mark Watney'
-...         self.job = 'unemployed'
->>>
->>>
->>> class Astronaut(Person):
-...     def __init__(self):
-...         self.job = 'astronaut'
-...         super().__init__()
->>>
->>>
->>> astro = Astronaut()
->>> vars(astro)
-{'job': 'unemployed', 'name': 'Mark Watney'}
-
->>> class Person:
-...     def hello(self):
-...         return 'Mark Watney'
->>>
->>>
->>> class Astronaut(Person):
-...     def hello(self):
-...         name = super().hello()
-...         return f'Hello {name}'
->>>
->>>
->>> astro = Astronaut()
->>> astro.hello()
-'Hello Mark Watney'
+>>> print(vars(astro))
+{'firstname': 'Mark', 'lastname': 'Watney', 'job': 'astronaut'}
 
 
 Inheritance Problem

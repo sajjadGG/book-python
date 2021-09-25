@@ -96,8 +96,9 @@ Methods calling other methods:
 >>> print(flower.total_area())
 18.13
 
-Since Python 3.7 there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields.
-More information in `OOP Dataclass`
+Since Python 3.7 there is a ``@dataclass`` decorator, which automatically
+generates ``__init__()`` method with arguments and set-up fields for you.
+More information in `OOP Dataclass`.
 
 >>> from dataclasses import dataclass
 >>>
@@ -137,36 +138,30 @@ Examples
 
 >>> # doctest: +SKIP
 ... from atlassian import Jira
->>>
->>> # doctest: +SKIP
+...
 ... jira = Jira(
 ...     url='http://example.com:8080',
 ...     username='myusername',
 ...     password='mypassword')
->>>
->>> JQL = 'project = DEMO AND status IN ("To Do", "In Progress") ORDER BY issuekey'
->>>
->>> # doctest: +SKIP
+...
+... JQL = 'project = DEMO AND status IN ("To Do", "In Progress") ORDER BY issuekey'
+...
 ... result = jira.jql(JQL)
->>> # doctest: +SKIP
 ... print(result)
 
 >>> # doctest: +SKIP
 ... from atlassian import Confluence
->>>
->>> # doctest: +SKIP
+...
 ... confluence = Confluence(
 ...     url='http://example.com:8090',
 ...     username='myusername',
 ...     password='mypassword')
->>>
->>> # doctest: +SKIP
+...
 ... result = confluence.create_page(
 ...     space='DEMO',
 ...     title='This is the title',
 ...     body='This is the body. You can use <strong>HTML tags</strong>!')
->>>
->>> # doctest: +SKIP
+...
 ... print(result)
 
 >>> class Point:
@@ -184,12 +179,8 @@ Examples
 >>>
 >>> point = Point(x=1, y=2, z=3)
 >>>
->>> print(point.x)
-1
->>> print(point.y)
-2
->>> print(point.z)
-3
+>>> vars(point)
+{'x':1, 'y':2, 'z':3}
 >>>
 >>> point.get_coordinates()
 (1, 2, 3)
@@ -230,6 +221,51 @@ Use Cases - Counter
 >>> c.decrement()
 Traceback (most recent call last):
 ValueError: Cannot decrement below zero
+
+
+Use Case - Car
+--------------
+>>> from typing import Literal
+>>>
+>>>
+>>>
+>>> class Car:
+...     engine: Literal['on', 'off']
+...
+...     def __init__(self):
+...         self.engine = 'off'
+...
+...     def engine_start(self):
+...         self.engine = 'on'
+...
+...     def engine_stop(self):
+...         self.engine = 'off'
+...
+...     def drive_to(self, location: str):
+...         if self.engine != 'on':
+...             raise RuntimeError('Engine must be turned on to drive')
+...         else:
+...             return f'Driving to {location}'
+>>>
+>>>
+>>> maluch = Car()
+>>>
+>>> maluch.drive_to('Bajkonur')
+Traceback (most recent call last):
+RuntimeError: Engine must be turned on to drive
+>>>
+>>> print(maluch.engine)
+'off'
+>>> maluch.engine_start()
+>>> print(maluch.engine)
+'on'
+>>>
+>>> maluch.drive_to('Bajkonur')
+'Driving to Bajkonur'
+>>>
+>>> maluch.engine_stop()
+>>> print(maluch.engine)
+'off'
 
 
 Assignments

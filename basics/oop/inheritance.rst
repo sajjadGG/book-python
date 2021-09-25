@@ -18,6 +18,21 @@ Rationale
     subclass
         Class which inherits from :term:`parent`
 
+    inherits
+    derives
+        Class takes attributes and methods from parent.
+
+    single inheritance
+        One class inherits from one other class. Has one parent.
+
+    multilevel inheritance
+        One class inherits from other class, and yet another class inherits
+        from it. This creates hierarchical structure.
+
+    multiple inheritance
+    mixin classes
+        One class derives from several other classes at once.
+
 
 Syntax
 ------
@@ -44,7 +59,7 @@ No Inheritance
 ...     pass
 
 
-Simple Inheritance
+Single Inheritance
 ------------------
 >>> class Parent:
 ...     pass
@@ -56,11 +71,11 @@ Simple Inheritance
 
 Multilevel Inheritance
 ----------------------
->>> class Mother:
+>>> class Person:
 ...     pass
 >>>
 >>>
->>> class Parent(Mother):
+>>> class Parent(Person):
 ...     pass
 >>>
 >>>

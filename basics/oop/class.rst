@@ -69,7 +69,8 @@ Two classes and two instances:
 >>> mark = Astronaut()
 >>> ivan = Cosmonaut()
 
-Two classes and four instances (two instances of an ``Astronaut`` class, and two of a ``Cosmonaut`` class):
+Two classes and four instances (two instances of an ``Astronaut`` class,
+and two of a ``Cosmonaut`` class):
 
 >>> class SeniorAstronaut:
 ...     pass

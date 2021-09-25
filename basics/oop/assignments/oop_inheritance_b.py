@@ -3,7 +3,7 @@
 * Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
-* Time: 2 min
+* Time: 3 min
 
 English:
     1. Create class `Astronaut` which inherits from all of those classes
