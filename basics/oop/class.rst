@@ -29,7 +29,7 @@ Classes should have capitalized name:
 
 Multi-word class names should use ``PascalCase``:
 
->>> class AstronautPilot:
+>>> class SeniorAstronaut:
 ...     pass
 
 
@@ -71,17 +71,17 @@ Two classes and two instances:
 
 Two classes and four instances (two instances of an ``Astronaut`` class, and two of a ``Cosmonaut`` class):
 
->>> class AstronautPilot:
+>>> class SeniorAstronaut:
 ...     pass
 >>>
->>> class CosmonautPilot:
+>>> class SeniorCosmonaut:
 ...     pass
 >>>
 >>>
->>> mark_watney = AstronautPilot()
->>> melissa_lewis = AstronautPilot()
->>> ivan_ivanovich = CosmonautPilot()
->>> jan_twardowski = CosmonautPilot()
+>>> mark_watney = SeniorAstronaut()
+>>> melissa_lewis = SeniorAstronaut()
+>>> ivan_ivanovich = SeniorCosmonaut()
+>>> jan_twardowski = SeniorCosmonaut()
 
 
 Class vs Instance

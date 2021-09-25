@@ -3,7 +3,7 @@
 * Required: yes
 * Complexity: easy
 * Lines of code: 5 lines
-* Time: 2 min
+* Time: 3 min
 
 English:
     1. Define class `Iris`
