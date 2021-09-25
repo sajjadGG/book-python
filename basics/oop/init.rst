@@ -10,29 +10,31 @@ Rationale
 .. glossary::
 
     constructor
-        Method called at object instantiation used to create object. Constructor is called on not fully initialized object and hence do not have access to object methods. Constructor should return ``None``.
+        Method called at object instantiation used to create object.
+        Constructor is called on not fully initialized object and hence do
+        not have access to object methods. Constructor should return
+        ``None``.
 
     initializer
-        Method called at object instantiation used to fill empty object with values. Initializer is called upon object initialization and hence can modify object and use its methods. Initializer should return ``None``.
+        Method called at object instantiation used to fill empty object with
+        values. Initializer is called upon object initialization and hence
+        can modify object and use its methods. Initializer should return
+        ``None``.
 
 
 Syntax
 ------
->>> class Astronaut:
-...     firstname: str
-...     lastname: str
+>>> class MyClass:
+...     myattribute: str
 ...
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
+...     def __init__(self, myvar):
+...         self.myattribute = myvar
 >>>
 >>>
->>> astro = Astronaut('Mark', 'Watney')
+>>> myobj = MyClass('my value')
 >>>
->>> print(astro.firstname)
-Mark
->>> print(astro.lastname)
-Watney
+>>> print(myobj.myattribute)
+my value
 
 
 Initializer Method Without Arguments
@@ -41,41 +43,47 @@ Initializer method without arguments:
 
 >>> class Astronaut:
 ...     def __init__(self):
-...         print('My name... José Jiménez')
+...         print('Hello')
 >>>
 >>>
->>> jose = Astronaut()
-My name... José Jiménez
+>>> astro = Astronaut()
+Hello
 
 
 Initializer Method With Arguments
 ---------------------------------
-Initializer method with arguments:
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         print(f'Hello {firstname} {lastname}')
+>>>
+>>>
+>>> astro = Astronaut()
+Traceback (most recent call last):
+TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
+
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         print(f'Hello {firstname} {lastname}')
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney')
+Hello Mark Watney
+>>> astro = Astronaut(firstname='Mark', lastname='Watney')
+Hello Mark Watney
 
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname='Unknown'):
-...         print(f'My name... {firstname} {lastname}')
+...         print(f'Hello {firstname} {lastname}')
 >>>
 >>>
->>> jan = Astronaut('Jan')
-My name... Jan Unknown
->>> jose = Astronaut('José', 'Jiménez')
-My name... José Jiménez
->>> melissa = Astronaut('Melissa', lastname='Lewis')
-My name... Melissa Lewis
->>> mark = Astronaut(firstname='José', lastname='Jiménez')
-My name... José Jiménez
->>> ryan = Astronaut(lastname='Stone', firstname='Ryan')
-My name... Ryan Stone
->>> ivan = Astronaut()
-Traceback (most recent call last):
-TypeError: __init__() missing 1 required positional argument: 'firstname'
+>>> astro = Astronaut('Mark', 'Watney')
+Hello Mark Watney
+>>> astro = Astronaut('Mark')
+Hello Mark Unknown
 
 
 Constant Attributes
 -------------------
-Init time attributes:
-
 >>> class Astronaut:
 ...     def __init__(self):
 ...         self.firstname = 'Mark'
@@ -83,22 +91,12 @@ Init time attributes:
 >>>
 >>>
 >>> mark = Astronaut()
->>> print(mark.firstname)
-Mark
->>> print(mark.lastname)
-Watney
->>> print(mark.missions)
-Traceback (most recent call last):
-AttributeError: 'Astronaut' object has no attribute 'mission'
+>>> vars(mark)
+{'firstname': 'Mark', 'lastname': 'Watney'}
 >>>
->>> ivan = Astronaut()
->>> print(ivan.firstname)
-Mark
->>> print(ivan.lastname)
-Watney
->>> print(ivan.missions)
-Traceback (most recent call last):
-AttributeError: 'Astronaut' object has no attribute 'mission'
+>>> melissa = Astronaut()
+>>> vars(melissa)
+{'firstname': 'Mark', 'lastname': 'Watney'}
 
 
 Variable Attributes
@@ -121,8 +119,6 @@ Ivan
 >>> print(ivan.lastname)
 Ivanovich
 
-Init time attributes:
-
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
@@ -141,8 +137,9 @@ Ivan
 >>> print(ivan.lastname)
 Ivanovich
 
-Init time attributes:
 
+Combine Attributes
+------------------
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname):
 ...         self.name = f'{firstname} {lastname}'
@@ -159,8 +156,9 @@ AttributeError: 'Astronaut' object has no attribute 'firstname'
 Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute 'lastname'
 
-Init time attributes:
 
+Example
+-------
 >>> class Point:
 ...     def __init__(self, x, y, z=0):
 ...         self.x = x
@@ -174,8 +172,31 @@ Init time attributes:
 >>> p4 = Point(10, 20, z=30)
 >>> p5 = Point(x=10, y=20, z=30)
 
-Init time attributes:
 
+Checking Values
+---------------
+>>> class Point:
+...     x: int
+...     y: int
+...
+...     def __init__(self, x, y):
+...         if x < 0 or y < 0:
+...             raise ValueError('Coordinate cannot be negative')
+...         self.x = x
+...         self.y = y
+>>>
+>>>
+>>> point1 = Point(x=1, y=2)
+>>> vars(point1)
+{'x': 1, 'y': 2}
+>>>
+>>> point2 = Point(x=-1, y=-2)
+Traceback (most recent call last):
+ValueError: Coordinate cannot be negative
+
+
+Use Case - Iris
+---------------
 >>> class Iris:
 ...     def __init__(self, sepal_length, sepal_width,
 ...                  petal_length, petal_width, species):
@@ -215,6 +236,9 @@ setosa
  'petal_width': 1.9,
  'species': 'virginica'}
 
+
+Use Case - Dataclasses
+----------------------
 Since Python 3.7: there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields.
 More information in `OOP Dataclass`
 
@@ -245,9 +269,11 @@ More information in `OOP Dataclass`
  'species': 'virginica'}
 
 
-Checking Values
----------------
+
+Use Case - Kelvin
+-----------------
 >>> class Kelvin:
+...     value: float
 ...     MINIMAL_VALUE = 0.0
 ...
 ...     def __init__(self, value):
@@ -263,6 +289,63 @@ Checking Values
 >>> t2 = Kelvin(-300)
 Traceback (most recent call last):
 ValueError: Temperature must be greater than 0
+
+
+Use Case - Boundaries
+---------------------
+>>> class Point:
+...     x: int
+...     y: int
+...     z: int
+...
+...     def __init__(self, x, y, z):
+...         if not 0 <= x < 1024:
+...             raise ValueError(f'{x} is out of boundary')
+...         elif not 0 <= y < 1024:
+...             raise ValueError(f'{y} is out of boundary')
+...         elif not 0 <= z < 1024:
+...             raise ValueError(f'{z} is out of boundary')
+...         else:
+...             self.x = x
+...             self.y = y
+...             self.z = z
+...
+...
+... point1 = Point(x=-10, y=1, z=0)
+Traceback (most recent call last):
+ValueError: x=-10 is out of boundary 0, 1024
+
+
+Use Case - Parametrized Boundaries
+----------------------------------
+>>> class Point:
+...     x: int
+...     y: int
+...     z: int
+...
+...     X_MIN: int = 0
+...     X_MAX: int = 1024
+...     Y_MIN: int = 0
+...     Y_MAX: int = 1024
+...     Z_MIN: int = 20
+...     Z_MAX: int = 500
+...
+...     def __init__(self, x: int, y: int, z: int):
+...         if not self.X_MIN <= x < self.X_MAX:
+...             raise ValueError(f'{x=} is out of boundary {self.X_MIN}, {self.X_MAX}')
+...         elif not self.Y_MIN <= y < self.Y_MAX:
+...             raise ValueError(f'{y=} is out of boundary {self.Y_MIN}, {self.Y_MAX}')
+...         elif not self.Z_MIN <= z < self.Z_MAX:
+...             raise ValueError(f'{z=} is out of boundary {self.Z_MIN}, {self.Z_MAX}')
+...         else:
+...             self.x = x
+...             self.y = y
+...             self.z = z
+...
+...
+... point1 = Point(x=-10, y=1, z=0)
+Traceback (most recent call last):
+ValueError: x=-10 is out of boundary 0, 1024
 
 
 Assignments

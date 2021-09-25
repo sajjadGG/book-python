@@ -2,24 +2,20 @@
 * Assignment: OOP Method Call
 * Required: yes
 * Complexity: easy
-* Lines of code: 2 lines
-* Time: 2 min
+* Lines of code: 1 lines
+* Time: 3 min
 
 English:
-    1. Create instance of `Stats` class
-    2. Iterate over `DATA` skipping header
-    3. Separate features from label
-    4. Call `mean()` method of `Stats` class passing list of features
-    5. Define `result: list[float]` with list of means from each row
-    6. Run doctests - all must succeed
+    1. Iterate over `DATA` skipping header and separating features from labels
+    2. Call `mean()` method of `Stats` class instance passing list of features
+    3. Define `result: list[float]` with list of means from each row
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz instancję klasy `Stats`
-    2. Iteruj po `DATA` pomijając nagłówek
-    3. Rozdziel cechy od etykiety
-    4. Wywołuj metodę `mean()` klasy `Stats` przekazując listę features
-    5. Zdefiniuj `result: list[float]` z listą średnich każdego z wierszy
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    1. Iteruj po `DATA` pomijając nagłówek i rodzielając cechy od etykiet
+    2. Wywołuj metodę `mean()` instancji klasy `Stats` przekazując listę cech
+    3. Zdefiniuj `result: list[float]` z listą średnich każdego z wierszy
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `round()`
@@ -51,6 +47,10 @@ class Stats:
         return round(avg, 1)
 
 
-# Solution
 stats = Stats()
+
+# list[float]: apply `mean()` to each feature
+result = ...
+
+# Solution
 result = [stats.mean(X) for *X, y in DATA[1:]]

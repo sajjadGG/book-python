@@ -25,14 +25,13 @@ Tests:
     >>> repr(iris)
     "Iris(features=[4.7, 3.2, 1.3, 0.2], label='setosa')"
 """
-from typing import Any, List
-
 
 DATA = (4.7, 3.2, 1.3, 0.2, 'setosa')
 
+
 # repr() -> Iris(features=[4.7, 3.2, 1.3, 0.2], label='setosa')
 class Iris:
-    features: list[float]
+    features: list
     label: str
 
     def __init__(self, data):
@@ -42,7 +41,7 @@ class Iris:
 
 # Solution
 class Iris:
-    features: list[float]
+    features: list
     label: str
 
     def __init__(self, data):
