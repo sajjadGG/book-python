@@ -193,19 +193,19 @@ Intuitive definition of ``print`` function:
 >>>
 >>>
 >>> print('a')
-a
+'a\n'
 >>>
 >>> print('a', 'b')
-a b
+'a b\n'
 >>>
 >>> print('a', 'b', 'c')
-a b c
+'a b c\n'
 >>>
 >>> print('a', 'b', 'c', sep=',')
-a,b,c
+'a,b,c\n'
 >>>
 >>> print('a', 'b', 'c', sep='|')
-a|b|c
+'a|b|c\n'
 
 
 Assignments

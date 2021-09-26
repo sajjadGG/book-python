@@ -3,7 +3,7 @@ Unpacking Arguments
 
 .. testsetup::
 
-    def echo():
+    def echo(a=None, b=None):
         pass
 
 
@@ -77,6 +77,7 @@ Keyword arguments passed directly:
 >>> echo(a=1, b=2)
 a=1, b=2, c=0
 >>>
+>>> data = {'a': 1, 'b': 2}
 >>> echo(a=data['a'], b=data['b'])
 a=1, b=2, c=0
 >>>
@@ -89,6 +90,7 @@ Positional and Keyword Arguments
 --------------------------------
 >>> def echo(a, b, c=0):
 ...     print(f'{a=}, {b=}, {c=}')
+>>>
 >>>
 >>> echo(1, b=2)
 a=1, b=2, c=0
@@ -172,7 +174,7 @@ Objects From Mappings
 ...         self.species = species
 >>>
 >>>
->>> DATA = {"sepalLength":5.8,"sepalWidth":2.7,"petalLength":5.1,"petalWidth":1.9,"species":"virginica"}
+>>> DATA = {"sepal_length":5.8,"sepal_width":2.7,"petal_length":5.1,"petal_width":1.9,"species":"virginica"}
 >>>
 >>> iris = Iris(**DATA)
 >>> vars(iris)  # doctest: +NORMALIZE_WHITESPACE
@@ -194,12 +196,12 @@ Objects From Mappings
 ...         return str(vars(self))
 >>>
 >>>
->>> DATA = [{"sepalLength":5.8,"sepalWidth":2.7,"petalLength":5.1,"petalWidth":1.9,"species":"virginica"},
-...         {"sepalLength":5.1,"sepalWidth":3.5,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},
-...         {"sepalLength":5.7,"sepalWidth":2.8,"petalLength":4.1,"petalWidth":1.3,"species":"versicolor"},
-...         {"sepalLength":6.3,"sepalWidth":2.9,"petalLength":5.6,"petalWidth":1.8,"species":"virginica"},
-...         {"sepalLength":6.4,"sepalWidth":3.2,"petalLength":4.5,"petalWidth":1.5,"species":"versicolor"},
-...         {"sepalLength":4.7,"sepalWidth":3.2,"petalLength":1.3,"petalWidth":0.2,"species":"setosa"}]
+>>> DATA = [{"sepal_length":5.8,"sepal_width":2.7,"petal_length":5.1,"petal_width":1.9,"species":"virginica"},
+...         {"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2,"species":"setosa"},
+...         {"sepal_length":5.7,"sepal_width":2.8,"petal_length":4.1,"petal_width":1.3,"species":"versicolor"},
+...         {"sepal_length":6.3,"sepal_width":2.9,"petal_length":5.6,"petal_width":1.8,"species":"virginica"},
+...         {"sepal_length":6.4,"sepal_width":3.2,"petal_length":4.5,"petal_width":1.5,"species":"versicolor"},
+...         {"sepal_length":4.7,"sepal_width":3.2,"petal_length":1.3,"petal_width":0.2,"species":"setosa"}]
 >>>
 >>> result = [Iris(**row) for row in DATA]
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
@@ -290,12 +292,12 @@ Use Case - Dataclass KWArgs
 ...     species: str
 >>>
 >>>
->>> DATA = [{"sepalLength":5.8,"sepalWidth":2.7,"petalLength":5.1,"petalWidth":1.9,"species":"virginica"},
-...         {"sepalLength":5.1,"sepalWidth":3.5,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},
-...         {"sepalLength":5.7,"sepalWidth":2.8,"petalLength":4.1,"petalWidth":1.3,"species":"versicolor"},
-...         {"sepalLength":6.3,"sepalWidth":2.9,"petalLength":5.6,"petalWidth":1.8,"species":"virginica"},
-...         {"sepalLength":6.4,"sepalWidth":3.2,"petalLength":4.5,"petalWidth":1.5,"species":"versicolor"},
-...         {"sepalLength":4.7,"sepalWidth":3.2,"petalLength":1.3,"petalWidth":0.2,"species":"setosa"}]
+>>> DATA = [{"sepal_length":5.8,"sepal_width":2.7,"petal_length":5.1,"petal_width":1.9,"species":"virginica"},
+...         {"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2,"species":"setosa"},
+...         {"sepal_length":5.7,"sepal_width":2.8,"petal_length":4.1,"petal_width":1.3,"species":"versicolor"},
+...         {"sepal_length":6.3,"sepal_width":2.9,"petal_length":5.6,"petal_width":1.8,"species":"virginica"},
+...         {"sepal_length":6.4,"sepal_width":3.2,"petal_length":4.5,"petal_width":1.5,"species":"versicolor"},
+...         {"sepal_length":4.7,"sepal_width":3.2,"petal_length":1.3,"petal_width":0.2,"species":"setosa"}]
 >>>
 >>>
 >>> result = [Iris(**row) for row in DATA]
@@ -400,9 +402,9 @@ Database connection configuration read from config file:
 ...     'password': 'mypassword',
 ...     'database': 'mydatabase'}
 >>>
->>> database(
+>>> connection = database_connect(
 ...     host=CONFIG['host'],
-...     port=CONFIG['PORT'],
+...     port=CONFIG['port'],
 ...     username=CONFIG['username'],
 ...     password=CONFIG['password'],
 ...     database=CONFIG['database'])

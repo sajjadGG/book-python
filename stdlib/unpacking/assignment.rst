@@ -104,7 +104,7 @@ Use Case
 --------
 >>> _, _, important = (True, [1, 2, 3, 4], 5)
 >>> important
-123
+5
 
 >>> _, _,  important = (True, [1, 2, 3, 4], (5, True))
 >>> important
