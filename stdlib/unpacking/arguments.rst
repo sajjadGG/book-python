@@ -166,11 +166,11 @@ Objects From Sequence
 Objects From Mappings
 ---------------------
 >>> class Iris:
-...     def __init__(self, sepalLength, sepalWidth, petalLength, petalWidth, species):
-...         self.sepal_length = sepalLength
-...         self.sepal_width = sepalWidth
-...         self.petal_length = petalLength
-...         self.petal_width = petalWidth
+...     def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
+...         self.sepal_length = sepal_length
+...         self.sepal_width = sepal_width
+...         self.petal_length = petal_length
+...         self.petal_width = petal_width
 ...         self.species = species
 >>>
 >>>
@@ -185,11 +185,11 @@ Objects From Mappings
  'species': 'virginica'}
 
 >>> class Iris:
-...     def __init__(self, sepalLength, sepalWidth, petalLength, petalWidth, species):
-...         self.sepal_length = sepalLength
-...         self.sepal_width = sepalWidth
-...         self.petal_length = petalLength
-...         self.petal_width = petalWidth
+...     def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
+...         self.sepal_length = sepal_length
+...         self.sepal_width = sepal_width
+...         self.petal_length = petal_length
+...         self.petal_width = petal_width
 ...         self.species = species
 ...
 ...     def __repr__(self):
