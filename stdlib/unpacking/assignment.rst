@@ -21,8 +21,6 @@ Rationale
 >>> [a, b, c] = [1, 2, 3]
 >>> [a, b, c] = (1, 2, 3)
 
-.. figure:: img/unpacking-assignment,args,params.png
-
 
 Errors
 ------
@@ -39,65 +37,6 @@ Traceback (most recent call last):
 ValueError: not enough values to unpack (expected 4, got 3)
 
 
-Arbitrary Number of Arguments
------------------------------
-Unpacking values at the right side:
-
->>> a, b, *c = [1, 2, 3, 4]
->>>
->>> a
-1
->>> b
-2
->>> c
-[3, 4]
-
-Unpacking values at the left side:
-
->>> *a, b, c = [1, 2, 3, 4]
->>>
->>> a
-[1, 2]
->>> b
-3
->>> c
-4
-
-Unpacking values from both sides at once:
-
->>> a, *b, c = [1, 2, 3, 4]
->>>
->>> a
-1
->>> b
-[2, 3]
->>> c
-4
-
-Unpacking from variable length:
-
->>> a, *b, c = [1, 2]
->>>
->>> a
-1
->>> b
-[]
->>> c
-2
-
-Cannot unpack from both sides at once:
-
->>> *a, b, *c = [1, 2, 3, 4]
-Traceback (most recent call last):
-SyntaxError: two starred expressions in assignment
-
-Unpacking requires values for required arguments:
-
->>> a, *b, c = [1]
-Traceback (most recent call last):
-ValueError: not enough values to unpack (expected at least 2, got 1)
-
-
 Nested
 ------
 >>> a, (b, c) = [1, (2, 3)]
@@ -108,27 +47,6 @@ Nested
 2
 >>> c
 3
-
-
-Convention
-----------
->>> first, *middle, last = [1, 2, 3, 4]
->>>
->>> first
-1
->>> middle
-[2, 3]
->>> last
-4
-
->>> first, second, *others = [1, 2, 3, 4]
->>>
->>> first
-1
->>> second
-2
->>> others
-[3, 4]
 
 
 Skipping Values
@@ -168,87 +86,40 @@ Twardowski
 >>> print(b)
 2
 
->>> line = '4.9,3.1,1.5,0.1,setosa'
->>> *_, label = line.split(',')
+>>> _, (interesting, _) = [1, (2, 3)]
 >>>
->>> print(label)
-setosa
+>>> print(interesting)
+2
 
 >>> line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
->>> username, _, _, _, fullname, *_ = line.split(':')
+>>> username, _, _, _, fullname, _, _ = line.split(':')
 >>>
 >>> print(username)
 twardowski
 >>> print(fullname)
 Jan Twardowski
 
->>> line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
->>> username, *_, home, _ = line.split(':')
->>>
->>> print(username)
-twardowski
->>> print(home)
-/home/twardowski
 
->>> _, (interesting, _) = [1, (2, 3)]
->>>
->>> print(interesting)
-2
+Use Case
+--------
+>>> _, _, important = (True, [1, 2, 3, 4], 5)
+>>> important
+123
 
+>>> _, _,  important = (True, [1, 2, 3, 4], (5, True))
+>>> important
+(5, True)
+>>>
+>>> _, _, (important, _) = (True, [1, 2, 3, 4], (5, True))
+>>> important
+5
 
-Use Cases
----------
->>> import sys
->>>
->>> sys.version_info
-sys.version_info(major=3, minor=9, micro=7, releaselevel='final', serial=0)
->>>
->>> major, minor, *_ = sys.version_info
->>> print(major, minor, sep='.')
-3.9
+Python understands this as:
 
->>> *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
+>>> _ = (True, [1, 2, 3, 4], (5, True))
 >>>
->>> features
-[5.8, 2.7, 5.1, 1.9]
->>> label
-'virginica'
-
->>> *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
->>> avg = sum(features) / len(features)
->>>
->>> print(label, avg)
-virginica 3.875
-
->>> DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
-...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
-...         (5.7, 2.8, 4.1, 1.3, 'versicolor')]
->>>
->>>
->>> for *features, label in DATA:
-...     avg = sum(features) / len(features)
-...     print(label, avg)
-virginica 3.875
-setosa 2.55
-versicolor 3.475
-
-
->>> line = 'ares3,watney,lewis,vogel,johanssen'
->>> mission, *crew = line.split(',')
->>>
->>> mission
-'ares3'
->>> crew
-['watney', 'lewis', 'vogel', 'johanssen']
-
->>> first, second, *others = range(10)
->>>
->>> first
-0
->>> second
-1
->>> others
-[2, 3, 4, 5, 6, 7, 8, 9]
+>>> a,b,c = (object, object, object)
+>>> a,b,(c,d) = (object, object, (object,object))
 
 
 Assignments

@@ -40,6 +40,20 @@ Positional Group
 >>>
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
 >>>
+>>> re.findall('\d:\d\d', TEXT)
+['6:07']
+>>> re.findall('(\d):\d\d', TEXT)
+['6']
+>>> re.findall('\d:(\d\d)', TEXT)
+['07']
+>>> re.findall('(\d):(\d\d)', TEXT)
+[('6', '07')]
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
 >>> re.findall(r'([A-Z][a-z]+\s[A-Z][a-z]+)', TEXT)
 ['Yuri Gagarin']
 >>>
@@ -111,6 +125,28 @@ Named Group
 >>> re.search(name, TEXT).groupdict()
 {'firstname': 'Yuri', 'lastname': 'Gagarin'}
 
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall('(?P<hour>\d):(?P<minute>\d\d)', TEXT)
+[('6', '07')]
+>>>
+>>> re.search('(?P<hour>\d):(?P<minute>\d\d)', TEXT).groups()
+('6', '07')
+>>>
+>>> re.search('(?P<hour>\d):(?P<minute>\d\d)', TEXT).group(0)
+'6:07'
+>>>
+>>> re.search('(?P<hour>\d):(?P<minute>\d\d)', TEXT).group(1)
+'6'
+>>>
+>>> re.search('(?P<hour>\d):(?P<minute>\d\d)', TEXT).group(2)
+'07'
+>>>
+>>> re.search('(?P<hour>\d):(?P<minute>\d\d)', TEXT).groupdict()
+{'hour': '6', 'minute': '07'}
 
 Non-Capturing Group
 -------------------
@@ -123,6 +159,28 @@ Non-Capturing Group
 >>>
 >>> date = r'([A-Z][a-z]{2} \d{2}(?:st|nd|rd|th)+?, \d{4})'
 >>> re.findall(date, TEXT)
+['Apr 12th, 1961']
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> year = '\d{4}'
+>>> month = '[A-Z][a-z]{2}'
+>>> ordinal = '(st|nd|rd|th)'
+>>> day = '\d{2}'
+>>>
+>>> re.findall(f'{month} {day}{ordinal}, {year}', TEXT)
+['th']
+>>>
+>>> date
+'[A-Z][a-z]{2} \\d{2}(st|nd|rd|th), \\d{4}'
+>>>
+>>>
+>>> ordinal = '(?:st|nd|rd|th)'
+>>>
+>>> re.findall(f'{month} {day}{ordinal}, {year}', TEXT)
 ['Apr 12th, 1961']
 
 
@@ -138,6 +196,28 @@ Comment
 >>> re.findall(r'\d{4}(?#year)', TEXT)
 ['1961']
 
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall('\d{1,2}(?#hour):\d{2}(?#minute)', TEXT)
+['6:07']
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> hour = '\d{1,2}(?#hour)'
+>>> minute = '\d{2}(?#minute)'
+>>> time = f'{hour}:{minute}'
+>>>
+>>> re.findall(time, TEXT)
+['6:07']
+>>>
+>>> time
+'\\d{1,2}(?#hour):\\d{2}(?#minute)'
 
 Backreference
 -------------

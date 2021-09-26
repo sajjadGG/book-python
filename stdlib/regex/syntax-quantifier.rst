@@ -80,6 +80,87 @@ Greedy vs. Lazy
 >>> re.findall(r'\d{2,4}?', TEXT)  # Lazy
 ['12', '19', '61', '07']
 
+Greedy vs Lazy in exact match:
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall('\d{2}?', TEXT)
+['12', '19', '61', '07']
+>>>
+>>> re.findall('\d{2}', TEXT)
+['12', '19', '61', '07']
+
+
+Special
+-------
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall('\d{0,}', TEXT) == re.findall('\d*', TEXT)
+True
+>>>
+>>> re.findall('\d{1,}', TEXT) == re.findall('\d+', TEXT)
+True
+
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall('\d+', TEXT)
+['12', '1961', '6', '07']
+>>>
+>>> re.findall('\d*', TEXT)
+['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '12', '', '', '', '', '1961', '', '', '', '', '6', '', '07', '', '', '', '', '']
+
+
+Use Case - Float
+----------------
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Pi number is 3.1415...'
+>>>
+>>> pi = re.findall('\d+\.\d+', TEXT)
+>>> pi
+['3.1415']
+
+
+Use Case - Time
+---------------
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> re.findall('\d\d:\d\d', TEXT)
+[]
+>>>
+>>> re.findall('\d\d?:\d\d', TEXT)
+['6:07']
+
+
+Use Case - Date
+---------------
+>>> import re
+>>> from datetime import datetime
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>>
+>>> result = re.findall('[A-Z][a-z]{2} \d{2}th, \d{4}', TEXT)
+>>> result
+['Apr 12th, 1961']
+>>> datetime.strptime(result[0], '%b %dth, %Y')
+>>> datetime.datetime(1961, 4, 12, 0, 0).date()
+datetime.date(1961, 4, 12)
+
 
 Examples
 --------
@@ -90,3 +171,4 @@ Examples
 * ``[a-z]+`` - at least one lowercase letter from `a` to `z`, but try to fit the longest match
 * ``\d+`` - number
 * ``\d+\.\d+`` - float
+

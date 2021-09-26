@@ -133,6 +133,21 @@ Use Case - Phone
 ['4', '8', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 
+Use Case - Compare Phones
+-------------------------
+>>> import re
+>>>
+>>>
+>>> PHONE1 = '+48 123 456 789'
+>>> PHONE2 = '+48 (12) 345 6789'
+>>>
+>>> phone1 = re.findall('\d', PHONE1)
+>>> phone2 = re.findall('\d', PHONE2)
+>>>
+>>> phone1 == phone2
+True
+
+
 Use Case - EU VAT Tax ID
 ------------------------
 >>> import re

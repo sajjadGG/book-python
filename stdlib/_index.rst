@@ -16,6 +16,7 @@ Unpacking
     :caption: Unpacking
 
     unpacking/assignment.rst
+    unpacking/assignment-star.rst
     unpacking/parameters.rst
     unpacking/arguments.rst
     unpacking/parameter-syntax.rst
