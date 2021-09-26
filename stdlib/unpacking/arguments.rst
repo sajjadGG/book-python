@@ -250,7 +250,7 @@ Use Case - Dataclass Args
 >>>
 >>>
 >>> @dataclass
->>> class Iris:
+... class Iris:
 ...     sepal_length: float
 ...     sepal_width: float
 ...     petal_length: float
@@ -282,7 +282,7 @@ Use Case - Dataclass KWArgs
 >>>
 >>>
 >>> @dataclass
->>> class Iris:
+... class Iris:
 ...     sepal_length: float
 ...     sepal_width: float
 ...     petal_length: float

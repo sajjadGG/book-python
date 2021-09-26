@@ -148,6 +148,7 @@ Named Group
 >>> re.search('(?P<hour>\d):(?P<minute>\d\d)', TEXT).groupdict()
 {'hour': '6', 'minute': '07'}
 
+
 Non-Capturing Group
 -------------------
 * ``(?:...)``
@@ -157,7 +158,7 @@ Non-Capturing Group
 >>>
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
 >>>
->>> date = r'([A-Z][a-z]{2} \d{2}(?:st|nd|rd|th)+?, \d{4})'
+>>> date = r'([A-Z][a-z]{2} \d{2}(?:st|nd|rd|th), \d{4})'
 >>> re.findall(date, TEXT)
 ['Apr 12th, 1961']
 
@@ -168,19 +169,12 @@ Non-Capturing Group
 >>>
 >>> year = '\d{4}'
 >>> month = '[A-Z][a-z]{2}'
->>> ordinal = '(st|nd|rd|th)'
 >>> day = '\d{2}'
 >>>
->>> re.findall(f'{month} {day}{ordinal}, {year}', TEXT)
+>>> re.findall(f'{month} {day}(st|nd|rd|th), {year}', TEXT)
 ['th']
 >>>
->>> date
-'[A-Z][a-z]{2} \\d{2}(st|nd|rd|th), \\d{4}'
->>>
->>>
->>> ordinal = '(?:st|nd|rd|th)'
->>>
->>> re.findall(f'{month} {day}{ordinal}, {year}', TEXT)
+>>> re.findall(f'{month} {day}(?:st|nd|rd|th), {year}', TEXT)
 ['Apr 12th, 1961']
 
 

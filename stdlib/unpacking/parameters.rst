@@ -81,7 +81,7 @@ Keyword Parameters
 {'color': 'red'}
 >>>
 >>> echo(firstname='Jan', lastname='Twardowski')
-{'firstname': 'Jan', 'lastname': Twardowski}
+{'firstname': 'Jan', 'lastname': 'Twardowski'}
 
 >>> def echo(a, b, c=0, **kwargs):
 ...     print(f'{a=}, {b=}, {c=}, {kwargs=}')
@@ -126,16 +126,16 @@ Use Case - Range
 ...     print(locals())
 >>>
 >>> echo(*range(0,10))
-{'a': 0, 'b': 1, 'c': 2, 'args': (3, 4, 5, 6, 7, 8, 9, 10)}
+{'a': 0, 'b': 1, 'c': 2, 'args': (3, 4, 5, 6, 7, 8, 9)}
 
 
 Use Case - Sum
 --------------
 >>> def sum(*values):
->>>     total = 0
->>>     for value in values:
->>>         total += value
->>>     return total
+...     total = 0
+...     for value in values:
+...         total += value
+...     return total
 >>>
 >>>
 >>> sum()
@@ -188,7 +188,7 @@ Use Case - Print
 ----------------
 Intuitive definition of ``print`` function:
 
->>> def print(*values, sep=' ', end='\n', ...):
+>>> def print(*values, sep=' ', end='\n'):
 ...     return sep.join(values) + end
 >>>
 >>>
@@ -196,16 +196,16 @@ Intuitive definition of ``print`` function:
 a
 >>>
 >>> print('a', 'b')
-'a b'
+a b
 >>>
 >>> print('a', 'b', 'c')
-'a b c'
+a b c
 >>>
 >>> print('a', 'b', 'c', sep=',')
-'a,b,c'
+a,b,c
 >>>
 >>> print('a', 'b', 'c', sep='|')
-'a|b|c'
+a|b|c
 
 
 Assignments

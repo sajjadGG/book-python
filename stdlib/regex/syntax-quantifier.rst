@@ -157,8 +157,7 @@ Use Case - Date
 >>> result = re.findall('[A-Z][a-z]{2} \d{2}th, \d{4}', TEXT)
 >>> result
 ['Apr 12th, 1961']
->>> datetime.strptime(result[0], '%b %dth, %Y')
->>> datetime.datetime(1961, 4, 12, 0, 0).date()
+>>> datetime.strptime(result[0], '%b %dth, %Y').date()
 datetime.date(1961, 4, 12)
 
 
