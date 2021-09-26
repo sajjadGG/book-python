@@ -153,6 +153,7 @@ Use Case - Sum
 >>> sum(1, 2, 3, 4)
 10
 
+
 Use Case - Kelvin to Celsius
 ----------------------------
 >>> def kelvin_to_celsius(*degrees):
@@ -164,6 +165,7 @@ Use Case - Kelvin to Celsius
 >>>
 >>> kelvin_to_celsius(1, 2, 3, 4, 5)
 [274.15, 275.15, 276.15, 277.15, 278.15]
+
 
 Use Case - HTML list
 --------------------
