@@ -46,7 +46,7 @@ Tests:
 m = 1
 ft = 0.3048 * m
 
-# float: 10.000 ft
+# float: 10_000 ft
 altitude = ...
 
 # float: altitude in meters
