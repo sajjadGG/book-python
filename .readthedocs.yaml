@@ -8,18 +8,15 @@ build:
   tools:
     python: "3.10"
 
+python:
+  install:
+    - requirements: requirements-readthedocs.txt
 
 sphinx:
   builder: html
   configuration: conf.py
   fail_on_warning: false
 
-# Additional formats
-formats:
-   - pdf
-   - epub
-#   - htmlzip
-
-python:
-  install:
-    - requirements: requirements-readthedocs.txt
+#formats:
+#   - pdf
+#   - epub
