@@ -60,6 +60,9 @@ Pandas
 
 Python PEP
 ----------
+* monthlen
+* input(default=...)
+* dict.get(default=...)
 * str.isfloat()
 * str.isint()
 * Path.rmtree() # skasowanie katalogu z podkatalogami
