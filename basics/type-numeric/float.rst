@@ -11,8 +11,7 @@ Definition
 
 Notation
 --------
-* Without leading or trailing zero
-* Used by ``numpy``
+Without leading or trailing zero. Used by ``numpy``.
 
 >>> data = 69.
 >>> print(data)
@@ -22,7 +21,7 @@ Notation
 >>> print(data)
 0.44
 
-Scientific and engineering notation
+Engineering notation:
 
 >>> million = 1e6
 >>> print(million)
@@ -34,10 +33,22 @@ Scientific and engineering notation
 
 >>> 1e6
 1000000.0
+>>>
 >>> +1e6
 1000000.0
+>>>
 >>> -1e6
 -1000000.0
+
+Scientific notation:
+
+>>> 1e1
+10.0
+>>> 1e2
+100.0
+>>> 1e3
+1000.0
+
 >>> 1e-3
 0.001
 >>> 1e-4
@@ -47,10 +58,14 @@ Scientific and engineering notation
 >>> 1e-6
 1e-06
 
+>>> 1e3
+1000.0
+>>> -1e3
+-1000.0
+>>> 1e-3
+0.001
 >>> -1e-3
 -0.001
->>> -1e-4
--0.0001
 
 >>> 1.337 * 1e3
 1337.0
@@ -108,6 +123,8 @@ Rounding a number
 3.14
 >>> round(pi)
 3
+>>> round(pi, 0)
+3.0
 
 Rounding a number in string formatting
 

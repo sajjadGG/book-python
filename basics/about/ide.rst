@@ -21,12 +21,23 @@ What is IDE?
 
 How to Choose?
 --------------
-* Nie ma znaczenia z jakiego IDE skorzystasz!
-* Do edycji skryptów Pythona wystarczy sam Notatnik lub Jupyter
-* W miarę rośnięcia złożoności projektu oraz ilości plików przyda nam się coś co ułatwi nam pracę
-* Dobre IDE pomoże Ci w refaktoringu, podpowiedziach typów, debuggingu oraz pracy z systemem kontroli wersji
-* PyCharm ma dwie wersję płatną oraz darmową, wersja darmowa w zupełności nam wystarczy
-* Ciekawą alternatywą może być PyDev - plugin do środowiska Eclipse
+Python is about the source code, so in the end, it doesn't matter which
+IDE you choose. For editing plain source code you can also use Windows
+Notepad or VIM. However the bigger your program grows, and the more files
+it will contain, the harder it will be to maintain all that without proper
+tool. Good IDE will help you in refactoring, type hinting, debugging and
+working with Version Control System such as Git.
+
+PyCharm has two versions: Community and Professional. For the regular
+development Community version will be more then enough. Professional
+version include better support for web-development (such as Java Script
+debugger, support for Django, FastAPI, and some other frameworks too).
+Database viewer is also available in paid version. Professional also better
+equipped for Data Science and Machine Learning. However as I said before
+you don't have to use all of that, because in the end the source code is
+what matters.
+
+There is also a free alternative PyDev plugin for Eclipse.
 
 
 Which One is the Best?

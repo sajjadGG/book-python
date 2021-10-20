@@ -30,28 +30,41 @@ Which Version?
 .. csv-table:: Future Versions
     :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
 
-    "3.11", "TBA",        "future",       "2022-10-04", "TBA",     "Pablo Galindo Salgado"
-    "3.10", "TBA",        "development",  "2021-10-04", "TBA",     "Pablo Galindo Salgado"
+    "3.12", "TBA",        "future",      "2023-10",    "2028-10",    "TBA"
+    "3.11", ":pep:`664`", "features",    "2022-10-03", "2027-10",    "Pablo Galindo Salgado"
+    "3.10", ":pep:`619`", "bugfix",      "2021-10-04", "2026-10",    "Pablo Galindo Salgado"
+    "3.9",  ":pep:`596`", "bugfix",      "2020-10-05", "2025-10",    "Łukasz Langa"
+    "3.8",  ":pep:`569`", "security",    "2019-10-20", "2024-10",    "Łukasz Langa"
+    "3.7",  ":pep:`537`", "security",    "2018-06-27", "2023-06-27", "Ned Deily"
+    "3.6",  ":pep:`494`", "security",    "2016-12-23", "2021-12-23", "Ned Deily"
+    "3.5",  ":pep:`478`", "end-of-life", "2015-09-13", "2020-09-13", "Larry Hastings"
+    "3.4",  ":pep:`429`", "end-of-life", "2014-03-16", "2019-03-16", "Larry Hastings"
+    "3.3",  ":pep:`398`", "end-of-life", "2012-09-29", "2017-09-29", "Georg Brandl"
+    "3.2",  ":pep:`392`", "end-of-life", "2011-02-20", "2016-02-20", "Georg Brandl"
+    "3.1",  ":pep:`375`", "end-of-life", "2009-06-27", "2012-04-09", "Benjamin Peterson"
+    "3.0",  ":pep:`361`", "end-of-life", "2008-12-03", "2009-01-13", "Barry Warsaw"
+    "2.7",  ":pep:`373`", "end-of-life", "2010-07-03", "2020-04-20", "Benjamin Peterson"
+    "2.6",  ":pep:`361`", "end-of-life", "2008-10-01", "2013-10-29", "Barry Warsaw"
 
-.. csv-table:: Currently Supported Versions
-    :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
+.. glossary::
 
-    "3.9",  ":pep:`596`", "features",     "2020-10-05", "TBA",     "Łukasz Langa"
-    "3.8",  ":pep:`569`", "features",     "2019-10-20", "2024-10",     "Łukasz Langa"
-    "3.7",  ":pep:`537`", "bugfix",       "2018-06-27", "2023-06-27",  "Ned Deily"
-    "3.6",  ":pep:`494`", "security",     "2016-12-23", "2021-12-23",  "Ned Deily"
+    features
+        new features, bugfixes, and security fixes are accepted.
 
-.. csv-table:: Unsupported Versions
-    :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
+    prerelease
+        feature fixes, bugfixes, and security fixes are accepted for the
+        upcoming feature release.
 
-    "3.5",  ":pep:`478`", "end of life",  "2015-09-13", "2020-09-13",  "Larry Hastings"
-    "3.4",  ":pep:`429`", "end of life",  "2014-03-16", "2019-03-16",  "Larry Hastings"
-    "3.3",  ":pep:`398`", "end of life",  "2012-09-29", "2017-09-29",  "Georg Brandl"
-    "3.2",  ":pep:`392`", "end of life",  "2011-02-20", "2016-02-20",  "Georg Brandl"
-    "3.1",  ":pep:`375`", "end of life",  "2009-06-27", "2012-04-09",  "Benjamin Peterson"
-    "3.0",  ":pep:`361`", "end of life",  "2008-12-03", "2009-01-13",  "Barry Warsaw"
-    "2.7",  ":pep:`373`", "end of life",  "2010-07-03", "2020-04-20",  "Benjamin Peterson"
-    "2.6",  ":pep:`361`", "end of life",  "2008-10-01", "2013-10-29",  "Barry Warsaw"
+    bugfix
+        bugfixes and security fixes are accepted, new binaries are still
+        released. (Also called maintenance mode or stable release)
+
+    security
+        only security fixes are accepted and no more binaries are released,
+        but new source-only versions can be released
+
+    end-of-life
+        release cycle is frozen; no further changes can be pushed to it.
 
 
 Why not Python 2?
