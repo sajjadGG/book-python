@@ -50,7 +50,8 @@ You can put numbers in variables:
 >>> name1 = 'Mark'
 >>> name2 = 'Mark'
 
-BUt the number cannot be the first character (otherwise will produce ``SyntaxError``):
+BUt the number cannot be the first character (otherwise will produce
+``SyntaxError``):
 
 >>> 1name = 'Mark'  # doctest: +SKIP
 
@@ -68,7 +69,8 @@ Underscore ``_`` is used for multi-word names:
 >>> FILE_NAME = '/etc/shadow'
 
 Python do not distinguish between variables and constants.
-Python allows you to change "constants" but it's a bad practice (good IDE will tell you):
+Python allows you to change "constants" but it's a bad practice (good IDE will
+tell you):
 
 >>> NAME = 'Mark Watney'
 >>> NAME = 'Jan Twardowski'

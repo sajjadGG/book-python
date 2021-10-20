@@ -11,6 +11,14 @@ Definition
 >>> data = True
 >>> data = False
 
+>>> data = true
+Traceback (most recent call last):
+NameError: name 'true' is not defined
+>>>
+>>> data = TRUE
+Traceback (most recent call last):
+NameError: name 'TRUE' is not defined
+
 
 Type Casting
 ------------
@@ -149,26 +157,32 @@ Use Cases:
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
+>>>
 >>> firstname == 'Mark' and lastname == 'Watney'
 True
-
->>> firstname = 'Mark'
->>> lastname = 'Watney'
->>>
->>> firstname == 'Mark' and lastname == 'Twardowski'
-False
-
->>> firstname = 'Mark'
->>> lastname = 'Watney'
 >>>
 >>> firstname == 'Mark'
 True
+>>>
 >>> lastname == 'Watney'
 True
->>> lastname == 'Twardowski'
-False
+>>>
 >>> True and True
 True
+
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
+>>>
+>>>
+>>> firstname == 'Mark' and lastname == 'Twardowski'
+False
+>>>
+>>> firstname == 'Mark'
+True
+>>>
+>>> lastname == 'Twardowski'
+False
+>>>
 >>> True and False
 False
 
@@ -204,10 +218,13 @@ True
 
 >>> name = 'Mark Watney'
 >>>
+>>>
 >>> name == 'Mark Watney'
 True
+>>>
 >>> name == 'Melissa Lewis'
 False
+>>>
 >>> True or False
 True
 
@@ -236,20 +253,25 @@ Use Case:
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
+>>>
 >>> (firstname == 'Mark' and lastname == 'Watney') \
-...     or (firstname == 'Jan' and lastname == 'Twardowski') \
-...     or (firstname == 'Melissa' and lastname == 'Lewis')
+...     or (firstname == 'Melissa' and lastname == 'Lewis') \
+...     or (firstname == 'Rick' and lastname == 'Martinez')
 True
 
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
+>>>
 >>> firstname == 'Mark' and lastname == 'Watney'
 True
->>> firstname == 'Jan' and lastname == 'Twardowski'
-False
+>>>
 >>> firstname == 'Melissa' and lastname == 'Lewis'
 False
+>>>
+>>> firstname == 'Rick' and lastname == 'Martinez'
+False
+>>>
 >>> True or False or False
 True
 
@@ -262,33 +284,43 @@ Built-in Functions
 
 >>> type(True)
 <class 'bool'>
+>>>
 >>> type(False)
 <class 'bool'>
 
 >>> isinstance(1, bool)
 False
+>>>
 >>> isinstance(1, int)
 True
+>>>
 >>> isinstance(1, float)
 False
 
 >>> isinstance(1.23, bool)
 False
+>>>
 >>> isinstance(1.23, int)
 False
+>>>
 >>> isinstance(1.23, float)
 True
 
 >>> isinstance(True, bool)
 True
+>>>
 >>> isinstance(True, int)
 True
+>>>
 >>> isinstance(True, float)
 False
+>>>
 >>> isinstance(False, bool)
 True
+>>>
 >>> isinstance(False, int)
 True
+>>>
 >>> isinstance(False, float)
 False
 

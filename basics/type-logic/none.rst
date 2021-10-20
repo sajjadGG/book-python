@@ -5,10 +5,7 @@ Logic None
 Rationale
 ---------
 * Empty (null) or unknown (unset) value
-
->>> firstname = 'Mark'
->>> lastname = 'Watney'
->>> age = None
+* It is not ``False`` value
 
 
 Definition
@@ -17,24 +14,36 @@ Definition
 
 >>> data = None
 
-It is not ``False`` value:
 
->>> None == False
-False
+None, Null, Nil
+---------------
+>>> data = none
+Traceback (most recent call last):
+NameError: name 'none' is not defined
 >>>
->>> None is False
-False
+>>> data = NONE
+Traceback (most recent call last):
+NameError: name 'NONE' is not defined
 
-
-Type Casting
-------------
-With ``if`` statements behaves like negative values
-
->>> bool(False)
-False
+>>> data = null
+Traceback (most recent call last):
+NameError: name 'null' is not defined
 >>>
->>> bool(None)
-False
+>>> data = Null
+Traceback (most recent call last):
+NameError: name 'Null' is not defined
+>>>
+>>> data = NULL
+Traceback (most recent call last):
+NameError: name 'NULL' is not defined
+
+>>> data = nil
+Traceback (most recent call last):
+NameError: name 'NIL' is not defined
+>>>
+>>> data = NIL
+Traceback (most recent call last):
+NameError: name 'NIL' is not defined
 
 
 Identity Check
@@ -42,13 +51,13 @@ Identity Check
 * ``x is None`` - ``x`` is the same object as ``y``
 * ``x is not None`` - ``x`` is not the same object as ``y``
 
->>> firstname = 'Mark'
->>> lastname = 'Watney'
->>> age = None
+>>> data = None
 >>>
->>> age is None
+>>>
+>>> data is None
 True
->>> age is not None
+>>>
+>>> data is not None
 False
 
 
@@ -57,28 +66,42 @@ Value Check
 * Do not use ``==`` or ``!=`` to check ``None`` values
 * It works, but it is a subject to change
 
->>> firstname = 'Mark'
->>> lastname = 'Watney'
->>> age = None
+
+>>> data = None
 >>>
->>> age == None
+>>>
+>>> data == None
 True
->>> age != None
+>>>
+>>> data != None
+False
+
+
+Type Casting
+------------
+With ``if`` statements behaves like negative values
+
+>>> bool(None)
+False
+
+>>> bool(False)
+False
+>>>
+>>> None == False
+False
+>>>
+>>> None is False
 False
 
 
 Use Case
 --------
->>> dane = [3, 1, 2]
->>> dane.append(4)
->>> dane.sort()
->>> dane
-[1, 2, 3, 4]
-
->>> dane = [3, 1, 2]
->>> dane.append(4).sort()
-Traceback (most recent call last):
-AttributeError: 'NoneType' object has no attribute 'sort'
+>>> firstname = 'Melissa'
+>>> lastname = 'Lewis'
+>>> age = None
+>>>
+>>> age is None
+True
 
 
 Assignments
