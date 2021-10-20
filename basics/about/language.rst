@@ -29,6 +29,7 @@ Which Version?
 
 .. csv-table:: Future Versions
     :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
+    :widths: 5, 15, 15, 15, 15, 35
 
     "3.12", "TBA",        "future",      "2023-10",    "2028-10",    "TBA"
     "3.11", ":pep:`664`", "features",    "2022-10-03", "2027-10",    "Pablo Galindo Salgado"
