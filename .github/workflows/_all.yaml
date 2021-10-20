@@ -7,6 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
       - run: find . -path "*assignments*" -name "*.py" -not -path "./advanced/*" -not -path "./django/*" -not -path "./machine-learning/*" -not -path "./matplotlib/*" -not -path "./network/*" -print -exec python -m doctest '{}' \;
@@ -16,6 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r about/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest about /tmp/
       - run: find about -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -25,6 +29,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r advanced/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
       # - run: find advanced -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -34,6 +40,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r basics/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest basics /tmp/
       - run: find basics -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -43,6 +51,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r data-science/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest data-science /tmp/
       - run: find data-science -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -52,6 +62,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r design-patterns/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest design-patterns /tmp/
       - run: find design-patterns -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -61,6 +73,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r devops/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest devops /tmp/
       - run: find devops -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -70,6 +84,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r django/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest django /tmp/
       # - run: find django -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -79,6 +95,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r dragon/requirements.txt
       - run: find dragon -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
 
@@ -87,6 +105,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r fastapi/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest fastapi /tmp/
       - run: find fastapi -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -96,6 +116,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r install/requirements.txt
       - run: find install -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
 
@@ -104,6 +126,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r stdlib/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest stdlib /tmp/
       - run: find stdlib -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -113,6 +137,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - uses: actions/cache@v2
         with:
           path: ~/.cache/pip
@@ -126,6 +152,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r matplotlib/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest matplotlib /tmp/
       # - run: find matplotlib -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -135,6 +163,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r network/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest network /tmp/
       # - run: find network -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -144,6 +174,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r numpy/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest numpy /tmp/
       - run: find numpy -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -153,6 +185,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r oop/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest oop /tmp/
       - run: find oop -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
@@ -162,6 +196,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0'
       - run: pip install -r pandas/requirements.txt
       - run: sphinx-build -a -E -j auto --color -b doctest pandas /tmp/
       - run: find pandas -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;

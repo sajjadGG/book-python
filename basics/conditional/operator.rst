@@ -150,11 +150,11 @@ Examples
 >>> print(sys.version_info)
 sys.version_info(major=3, minor=10, micro=0, releaselevel='final', serial=0)
 >>>
->>> sys.version_info > (3, 9)
+>>> sys.version_info >= (3, 9)
 True
->>> sys.version_info > (3, 10)
+>>> sys.version_info >= (3, 10)
 True
->>> sys.version_info > (3, 11)
+>>> sys.version_info >= (3, 11)
 False
 >>>
 >>> sys.version_info > (3, 10, 0)
