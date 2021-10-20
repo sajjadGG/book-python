@@ -147,20 +147,28 @@ Examples
 --------
 >>> import sys
 >>>
+>>>
 >>> print(sys.version_info)
-sys.version_info(major=3, minor=10, micro=0, releaselevel='final', serial=0)
+sys.version_info(major=3, minor=9, micro=7, releaselevel='final', serial=0)
+>>>
 >>>
 >>> sys.version_info >= (3, 9)
 True
+>>>
 >>> sys.version_info >= (3, 10)
-True
+False
+>>>
 >>> sys.version_info >= (3, 11)
 False
 >>>
->>> sys.version_info > (3, 10, 0)
-False
->>> sys.version_info >= (3, 10, 0)
+>>> sys.version_info >= (3, 9, 0)
 True
+>>>
+>>> sys.version_info >= (3, 10, 0)
+False
+>>>
+>>> sys.version_info >= (3, 11, 0)
+False
 
 >>> '3.8.0' > '3.9.0'
 False
@@ -169,13 +177,19 @@ True
 >>> '3.09.0' > '3.10.0'
 False
 
->>> myversion = '3.10.0'
+>>> myversion = '3.9.0'
 >>> required = '3.8.0'
 >>>
 >>> myversion >= required
 True
 
->>> myversion = '3.10.0'.split('.')
+>>> myversion = '3.10.0'
+>>> required = '3.8.0'
+>>>
+>>> myversion >= required
+False
+
+>>> myversion = '3.9.0'.split('.')
 >>> required = '3.8.0'.split('.')
 >>>
 >>> myversion >= required
