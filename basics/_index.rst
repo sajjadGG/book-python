@@ -38,7 +38,7 @@ Type String
     :caption: Type String
 
     type-string/define.rst
-    type-string/values.rst
+    type-string/immutable.rst
     type-string/literals.rst
     type-string/input.rst
     type-string/methods.rst

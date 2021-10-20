@@ -2,19 +2,20 @@ Str Define
 ==========
 
 
+Rationale
+---------
+* ``str`` is a sequence of characters
+
+
 Definition
 ----------
-* ``str`` is a sequence
-
 Empty string:
 
 >>> data = ''
->>> data = str()
 
 Define string:
 
 >>> data = 'Mark Watney'
->>> data = str('Mark Watney')
 
 Multiline string:
 
@@ -23,14 +24,6 @@ Multiline string:
 >>> data = """First line
 ... Second line
 ... Third line"""
-
->>> data = """We choose to go to the Moon!
-... We choose to go to the Moon in this decade and do the other things,
-... not because they are easy, but because they are hard;
-... because that goal will serve to organize and measure the best of our
-... energies and skills, because that challenge is one that we are willing
-... to accept, one we are unwilling to postpone, and one we intend to win,
-... and the others, too."""
 
 
 Quotes or Apostrophe
@@ -81,8 +74,10 @@ Builtin function  ``str()`` converts argument to ``str``
 
 >>> str('Moon')
 'Moon'
+>>>
 >>> str(1969)
 '1969'
+>>>
 >>> str(1.337)
 '1.337'
 
@@ -91,6 +86,33 @@ runs ``str()`` on its arguments:
 
 >>> print(1969)
 1969
+
+
+Docstring
+---------
+* :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three
+  double quote (``"""``) characters
+* More information in `Function Doctest`
+
+If assigned to variable, it serves as multiline ``str`` otherwise
+it's a docstring:
+
+>>> """We choose to go to the Moon!
+... We choose to go to the Moon in this decade and do the other things,
+... not because they are easy, but because they are hard;
+... because that goal will serve to organize and measure the best of our
+... energies and skills, because that challenge is one that we are willing
+... to accept, one we are unwilling to postpone, and one we intend to win,
+... and the others, too."""
+
+>>> data = """We choose to go to the Moon!
+... We choose to go to the Moon in this decade and do the other things,
+... not because they are easy, but because they are hard;
+... because that goal will serve to organize and measure the best of our
+... energies and skills, because that challenge is one that we are willing
+... to accept, one we are unwilling to postpone, and one we intend to win,
+... and the others, too."""
+
 
 
 Assignments

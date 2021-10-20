@@ -2,24 +2,6 @@ Str Literals
 ============
 
 
-Docstring
----------
-* :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three
-  double quote (``"""``) characters
-* More information in `Function Doctest`
-
-If assigned to variable, it serves as multiline ``str`` otherwise
-it's a docstring:
-
->>> TEXT = """We choose to go to the Moon!
-... We choose to go to the Moon in this decade and do the other things,
-... not because they are easy, but because they are hard;
-... because that goal will serve to organize and measure the best of our
-... energies and skills, because that challenge is one that we are willing
-... to accept, one we are unwilling to postpone, and one we intend to win,
-... and the others, too."""
-
-
 Escape Characters
 -----------------
 * ``\n`` - New line (ENTER)
@@ -106,6 +88,17 @@ In Regular Expressions:
 
 >>> r'[a-z0-9]\n'
 '[a-z0-9]\\n'
+
+>>> print('C:\Program Files\new-file.txt')
+C:\Program Files
+ew-file.txt
+>>>
+>>> print('C:\\Program Files\\new-file.txt')
+C:\Program Files\new-file.txt
+>>> print(r'C:\Program Files\new-file.txt')
+C:\Program Files\new-file.txt
+
+More serious problem represents other use case:
 
 >>> print(r'C:\Users\Admin\file.txt')
 C:\Users\Admin\file.txt

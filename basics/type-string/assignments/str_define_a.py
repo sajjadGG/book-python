@@ -1,16 +1,16 @@
 """
-* Assignment: Str Define Emoticon
+* Assignment: Str Define HelloWorld
 * Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min
 
 English:
-    1. Define `name` with value `Mark Watney`
+    1. Define `result` with value `Hello World`
     2. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj `name` z wartością `Mark Watney`
+    1. Zdefiniuj `result` z wartością `Hello World`
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -21,18 +21,12 @@ Tests:
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
 
-    >>> name in result
-    True
     >>> result
-    'Hello Mark Watney'
+    'Hello World'
 """
 
-# str: Mark Watney
-name = ...
-
-# str: Hello Mark Watney
+# str: Hello World
 result = ...
 
 # Solution
-name = 'Mark Watney'
-result = f'Hello {name}'
+result = 'Hello World'

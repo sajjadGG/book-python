@@ -147,8 +147,10 @@ Jupyter
 -------
 * Open Source web application REPL
 * Very popular in Machine Learning and Data Science world
-* Create and share documents that contain live code, equations, visualizations and narrative text
-* Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, etc
+* Create and share documents that contain live code, equations, visualizations
+  and narrative text
+* Uses include: data cleaning and transformation, numerical simulation,
+  statistical modeling, data visualization, machine learning, etc
 
 
 Python Developer Survey

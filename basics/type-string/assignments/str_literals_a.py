@@ -6,16 +6,15 @@
 * Time: 3 min
 
 English:
-    1. Define `name` with value `Mark Watney`
-    2. Print `Hello World EMOTICON`, where:
-    3. EMOTICON is Unicode Codepoint "\U0001F600"
-    4. Run doctests - all must succeed
+    1. Print `Hello 😀`
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj `name` z wartością `Mark Watney`
-    2. Wypisz `Hello World EMOTICON`
-    3. EMOTICON to Unicode Codepoint "\U0001F600"
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    1. Wypisz `Hello 😀`
+    2. Uruchom doctesty - wszystkie muszą się powieść
+
+Hint:
+    * 😀 unicode codepoint is `\U0001F600`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -25,16 +24,14 @@ Tests:
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
 
-    >>> '\U0001F600' in result
+    >>> '😀' in result
     True
     >>> result
-    'Hello World 😀'
+    'Hello 😀'
 """
 
-EMOTICON = '\U0001F600'
-
-# str: Hello World EMOTICON
+# str: Hello World 😀
 result = ...
 
 # Solution
-result = f'Hello World {EMOTICON}'
+result = 'Hello \U0001F600'
