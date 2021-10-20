@@ -80,7 +80,7 @@ pO2 = O2 * ata
 # float: 11.3 Pascals per meter
 gradient = ...
 
-# float: ata minus p02 all that divided by gradient
+# float: ata minus pO2 all that divided by gradient
 altitude = ...
 
 # Solution

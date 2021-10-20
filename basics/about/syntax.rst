@@ -82,8 +82,12 @@ Variables vs. Constants
 >>> NAME = 'Jan Twardowski'     # constant
 >>> Name = 'José Jiménez'       # class
 
-Definition of second, minute or hour does not change based on location or country (those values should be constants).
-Definition of workday, workweek and workmonth differs based on location - each country can have different work times (those values should be variables).
+Definition of second, minute or hour does not change based on location
+or country (those values should be constants).
+
+Definition of workday, workweek and workmonth differs based on location
+- each country can have different work times (those values should be
+variables).
 
 >>> SECOND = 1
 >>> MINUTE = 60 * SECOND
@@ -93,7 +97,9 @@ Definition of workday, workweek and workmonth differs based on location - each c
 >>> workweek = 5 * workday
 >>> workmonth = 4 * workweek
 
-For physical units it is ok to use proper cased names. It is better to be compliant with well known standard, than to enforce something which will mislead everyone.
+For physical units it is ok to use proper cased names. It is better to be
+compliant with well known standard, than to enforce something which will
+mislead everyone.
 
 >>> Pa = 1
 >>> hPa = 100 * Pa
