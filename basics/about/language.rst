@@ -127,9 +127,8 @@ Python Console (REPL)
 
 .. code-block:: console
 
-    $ python3
-    3.8.2 (default, Mar 11 2020, 00:29:50)
-    [Clang 11.0.0 (clang-1100.0.33.17)]
+    $ python3.10
+    Python 3.10.0 (default, Oct 13 2021, 06:45:00) [Clang 13.0.0 (clang-1300.0.29.3)] on darwin
     Type "help", "copyright", "credits" or "license" for more information.
 
     >>> print('Ehlo World!')

@@ -27,7 +27,7 @@ Example:
 .. code-block:: console
 
     $ cd PROJECT
-    $ python3.9 -m venv venv-3.9.5
+    $ python3.10 -m venv venv-3.10.0
 
 
 Activate
@@ -41,14 +41,14 @@ Windows:
 .. code-block:: console
 
     $ cd PROJECT
-    $ venv-3.9.5\Scripts\activate.bat
+    $ venv-3.10.0\Scripts\activate.bat
 
 macOS, Linux, BSD:
 
 .. code-block:: console
 
     $ cd PROJECT
-    $ venv-3.9.5/bin/activate
+    $ venv-3.10.0/bin/activate
 
 
 Directory Naming Convention
@@ -72,15 +72,15 @@ Directory Naming Convention
 
     py
     python
-    py-3.9
-    python-3.9
-    python-3.9.5
+    py-3.10
+    python-3.10
+    python-3.10.0
 
     .py
     .python
-    .py-3.9
-    .python-3.9
-    .python-3.9.5
+    .py-3.10
+    .python-3.10
+    .python-3.10.0
 
     venv-3.6/
     venv-3.7/
@@ -88,23 +88,18 @@ Directory Naming Convention
     venv-3.9/
     venv-3.10/
 
-    venv-3.8.0/
-    venv-3.8.1/
-    venv-3.8.2/
-    venv-3.8.3/
+    venv-3.10.0/
+    venv-3.10.1/
+    venv-3.10.2/
+    venv-3.10.3/
+    venv-3.10.5/
+    venv-3.10.5/
 
-    venv-3.9.0/
-    venv-3.9.1/
-    venv-3.9.2/
-    venv-3.9.3/
-    venv-3.9.5/
-    venv-3.9.5/
-
-    venv-3.10-alpha1/
-    venv-3.10-alpha2/
-    venv-3.10-beta1/
-    venv-3.10-beta2/
-    venv-3.10-rc1/
+    venv-3.11-alpha1/
+    venv-3.11-alpha2/
+    venv-3.11-beta1/
+    venv-3.11-beta2/
+    venv-3.11-rc1/
 
     venv-django-2.1
     venv-django-2.2
@@ -119,9 +114,9 @@ Directory Naming Convention
     venv-django-4.0rc1
     venv-django-4.0rc2
 
-    venv-py39-dj33
-    venv-python39-django33
-    venv-python310alpha1-django40a1
+    venv-py310-dj33
+    venv-python310-django33
+    venv-python310-django40a1
 
 This convention is from ``virtualenv-wrapper`` module (mostly used in Python 2):
 
@@ -132,10 +127,10 @@ This convention is from ``virtualenv-wrapper`` module (mostly used in Python 2):
 
 Good practices
 --------------
-* name as version ``venv-3.9.5``
+* name as version ``venv-3.10.0``
 * place in your project directory and add folder to ``.gitignore`` (important!)
 * otherwise place it in ``~/.virtualenv/``, but some meaningful name is required
-* Append at the end of ``venv-3.9.5/bin/activate``:
+* Append at the end of ``venv-3.10.0/bin/activate``:
 
     .. code-block:: bash
 

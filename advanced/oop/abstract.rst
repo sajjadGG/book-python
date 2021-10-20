@@ -267,14 +267,14 @@ Problem - Despite having defined property, the order of decorators (``abstractme
 >>> pprint(sys.path)  # doctest: +SKIP
 ['/Applications/PyCharm 2021.1 EAP.app/Contents/plugins/python/helpers/pydev',
  '/Users/watney/book-python',
- '/Applications/PyCharm 2021.1 EAP.app/Contents/plugins/python/helpers/pycharm_display',
- '/Applications/PyCharm 2021.1 EAP.app/Contents/plugins/python/helpers/third_party/thriftpy',
- '/Applications/PyCharm 2021.1 EAP.app/Contents/plugins/python/helpers/pydev',
- '/usr/local/Cellar/python@3.9/3.9.5/Frameworks/Python.framework/Versions/3.9/lib/python39.zip',
- '/usr/local/Cellar/python@3.9/3.9.5/Frameworks/Python.framework/Versions/3.9/lib/python3.9',
- '/usr/local/Cellar/python@3.9/3.9.5/Frameworks/Python.framework/Versions/3.9/lib/python3.9/lib-dynload',
- '/Users/watney/.virtualenvs/python-3.9/lib/python3.9/site-packages',
- '/Applications/PyCharm 2021.1 EAP.app/Contents/plugins/python/helpers/pycharm_matplotlib_backend',
+ '/Applications/PyCharm 2021.3 EAP.app/Contents/plugins/python/helpers/pycharm_display',
+ '/Applications/PyCharm 2021.3 EAP.app/Contents/plugins/python/helpers/third_party/thriftpy',
+ '/Applications/PyCharm 2021.3 EAP.app/Contents/plugins/python/helpers/pydev',
+ '/usr/local/Cellar/python@3.10/3.10.0/Frameworks/Python.framework/Versions/3.10/lib/python310.zip',
+ '/usr/local/Cellar/python@3.10/3.10.0/Frameworks/Python.framework/Versions/3.10/lib/python3.10',
+ '/usr/local/Cellar/python@3.10/3.10.0/Frameworks/Python.framework/Versions/3.10/lib/python3.10/lib-dynload',
+ '/Users/watney/.virtualenvs/python-3.10/lib/python3.10/site-packages',
+ '/Applications/PyCharm 2021.3 EAP.app/Contents/plugins/python/helpers/pycharm_matplotlib_backend',
  '/Users/watney/book-python',
  '/Users/watney/book-python/_tmp']
 
