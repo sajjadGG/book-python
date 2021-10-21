@@ -6,7 +6,7 @@
 * Time: 5 min
 
 English:
-    1. Insert at the begin of `a` letter 'x'
+    1. Insert at the beginning of `a` letter 'x'
     2. Append to the `b` last element popped from `a`
     3. For getting elements use `list.pop()`
     4. From list `c` using `del` delete last element
@@ -47,10 +47,15 @@ a = [4.7, 3.2, 1.3, 0.2, 'setosa']
 b = [7.0, 3.2, 4.7, 1.4, 'versicolor']
 c = [7.6, 3.0, 6.6, 2.1, 'virginica']
 
-# insert at the begin of `a` letter 'x'
+# insert at the beginning of `a` letter 'x'
+...
+
 # append to the `b` last element popped from `a`
 # for getting elements use `list.pop()`
+...
+
 # from list `c` using `del` delete last element
+...
 
 # Solution
 a.insert(0, 'x')

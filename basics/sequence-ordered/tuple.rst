@@ -9,7 +9,8 @@ Rationale
 
 Definition
 ----------
-Defining empty tuple with ``()`` is used more often, but ``tuple()`` is more explicit:
+Defining ``tuple()`` is more explicit, however empty tuple with ``()`` is used
+more often and it's also faster:
 
 >>> data = ()
 >>> data = tuple()
@@ -22,6 +23,30 @@ Can store elements of any type:
 >>> data = ('a', 'b', 'c')
 >>> data = ('a', 1, 2.2, True, None)
 
+
+Type Casting
+------------
+Builtin function ``tuple()`` converts argument to ``tuple``
+
+>>> data = 'abcd'
+>>> tuple(data)
+('a', 'b', 'c', 'd')
+
+>>> data = ['a', 'b', 'c', 'd']
+>>> tuple(data)
+('a', 'b', 'c', 'd')
+
+>>> data = ('a', 'b', 'c', 'd')
+>>> tuple(data)
+('a', 'b', 'c', 'd')
+
+>>> tuple('a', 'b', 'c', 'd')
+Traceback (most recent call last):
+TypeError: tuple expected at most 1 argument, got 4
+
+
+Optional Brackets
+-----------------
 Brackets are optional, but it's a good practice to always write them:
 
 >>> data = (1, 2, 3)
@@ -48,44 +73,6 @@ Comma after last element of multi value tuple is optional:
 <class 'tuple'>
 
 
-Type Casting
-------------
-Builtin function ``tuple()`` converts argument to ``tuple``
-
->>> data = 'abcd'
->>> tuple(data)
-('a', 'b', 'c', 'd')
-
->>> data = ['a', 'b', 'c', 'd']
->>> tuple(data)
-('a', 'b', 'c', 'd')
-
->>> data = ('a', 'b', 'c', 'd')
->>> tuple(data)
-('a', 'b', 'c', 'd')
-
->>> tuple('a', 'b', 'c', 'd')
-Traceback (most recent call last):
-TypeError: tuple expected at most 1 argument, got 4
-
-
-GetItem
--------
-* More information in `Sequence GetItem`
-* More information in `Sequence Slice`
-
->>> data = ('a', 'b', 'c', 'd')
-
->>> data[0]
-'a'
->>> data[1]
-'b'
->>> data[2]
-'c'
->>> data[3]
-'d'
-
-
 Tuple or Int, Float, Str
 ------------------------
 >>> x = 1           # int
@@ -110,50 +97,11 @@ SyntaxError: invalid syntax
 >>> x = .1,1.       # tuple
 
 
-Tuple or List
--------------
-Both:
-
-    * ordered
-    * possible to getitem and slice
-    * elements can be duplicated
-    * elements of any types
-
-Tuple:
-
-    * immutable
-    * one contingent block of data in memory
-
-List:
-
-    * mutable
-    * implemented in memory as list of references to objects
-    * objects are scattered in memory
-
-Memory Footprint:
-
->>> from sys import getsizeof
->>>
->>> a = [1, 2, 3]
->>> b = (1, 2, 3)
->>>
->>> getsizeof(a)
-120
->>>
->>> getsizeof(b)
-64
-
-.. figure:: img/memory-tuple.png
-
-    Define tuple
-
+Memory
+------
 .. figure:: img/memory-list.png
 
     Define list
-
-.. figure:: img/memory-all.png
-
-    Define str, tuple and list
 
 
 Assignments

@@ -45,20 +45,46 @@ Type String
     type-string/clean.rst
 
 
-Sequences
-*********
+Sequence Ordered
+****************
 .. toctree::
     :maxdepth: 1
-    :caption: Sequences
+    :caption: Sequence Ordered
 
-    sequence/list.rst
-    sequence/tuple.rst
-    sequence/set.rst
-    sequence/frozenset.rst
-    sequence/nested.rst
-    sequence/getitem.rst
-    sequence/slice.rst
-    sequence/unpack.rst
+    sequence-ordered/tuple.rst
+    sequence-ordered/list.rst
+    sequence-ordered/comparison.rst
+
+
+Sequence Unordered
+******************
+.. toctree::
+    :maxdepth: 1
+    :caption: Sequence Unordered
+
+    sequence-unordered/set.rst
+    sequence-unordered/frozenset.rst
+    sequence-unordered/comparison.rst
+
+
+Sequence Nested
+***************
+.. toctree::
+    :maxdepth: 1
+    :caption: Sequence Nested
+
+    sequence-nested/nested.rst
+
+
+Sequence Select
+***************
+.. toctree::
+    :maxdepth: 1
+    :caption: Sequence Select
+
+    sequence-select/getitem.rst
+    sequence-select/slice.rst
+    sequence-select/unpack.rst
 
 
 Mappings

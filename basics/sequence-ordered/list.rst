@@ -259,6 +259,13 @@ True
 False
 
 
+Memory
+------
+.. figure:: img/memory-tuple.png
+
+    Define tuple
+
+
 References
 ----------
 .. [#timsort] https://en.wikipedia.org/wiki/Timsort
