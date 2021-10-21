@@ -1,15 +1,15 @@
-Unpacking Assignment Star
-=========================
+Sequence Unpack Star
+====================
 
 
 Rationale
 ---------
-.. figure:: img/unpacking-assignment,args,params.png
+.. figure:: img/unpack-assignment,args,params.png
 
 
 Arbitrary Number of Arguments
 -----------------------------
-Unpacking values at the right side:
+Unpack values at the right side:
 
 >>> a, b, *c = [1, 2, 3, 4]
 >>>
@@ -20,7 +20,7 @@ Unpacking values at the right side:
 >>> c
 [3, 4]
 
-Unpacking values at the left side:
+Unpack values at the left side:
 
 >>> *a, b, c = [1, 2, 3, 4]
 >>>
@@ -31,7 +31,7 @@ Unpacking values at the left side:
 >>> c
 4
 
-Unpacking values from both sides at once:
+Unpack values from both sides at once:
 
 >>> a, *b, c = [1, 2, 3, 4]
 >>>
@@ -42,7 +42,7 @@ Unpacking values from both sides at once:
 >>> c
 4
 
-Unpacking from variable length:
+Unpack from variable length:
 
 >>> a, *b, c = [1, 2]
 >>>
@@ -59,7 +59,7 @@ Cannot unpack from both sides at once:
 Traceback (most recent call last):
 SyntaxError: two starred expressions in assignment
 
-Unpacking requires values for required arguments:
+Unpack requires values for required arguments:
 
 >>> a, *b, c = [1]
 Traceback (most recent call last):
@@ -195,14 +195,14 @@ versicolor 3.475
 
 Assignments
 -----------
-.. literalinclude:: assignments/unpacking_assignment_a.py
-    :caption: :download:`Solution <assignments/unpacking_assignment_a.py>`
+.. literalinclude:: assignments/unpack_assignment_a.py
+    :caption: :download:`Solution <assignments/unpack_assignment_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/unpacking_assignment_b.py
-    :caption: :download:`Solution <assignments/unpacking_assignment_b.py>`
+.. literalinclude:: assignments/unpack_assignment_b.py
+    :caption: :download:`Solution <assignments/unpack_assignment_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/unpacking_assignment_c.py
-    :caption: :download:`Solution <assignments/unpacking_assignment_c.py>`
+.. literalinclude:: assignments/unpack_assignment_c.py
+    :caption: :download:`Solution <assignments/unpack_assignment_c.py>`
     :end-before: # Solution

@@ -1,5 +1,5 @@
 """
-* Assignment: Unpacking ParameterSyntax Mixed
+* Assignment: Unpack ParameterSyntax Mixed
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

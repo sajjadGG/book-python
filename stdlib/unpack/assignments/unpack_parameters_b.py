@@ -1,5 +1,5 @@
 """
-* Assignment: Unpacking Parameters Args
+* Assignment: Unpack Parameters Args
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 8 min

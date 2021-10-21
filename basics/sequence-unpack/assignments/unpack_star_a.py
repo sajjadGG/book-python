@@ -1,5 +1,5 @@
 """
-* Assignment: Unpacking Assignment Func
+* Assignment: Unpack Assignment List
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
@@ -35,11 +35,11 @@ Tests:
     ['nasa.gov', 'esa.int', 'roscosmos.ru']
 """
 
-DATA = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
+DATA = ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
 
 ip: str
 hosts: list
 
 
 # Solution
-ip, *hosts = DATA.split()
+ip, *hosts = DATA

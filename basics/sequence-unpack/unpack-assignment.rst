@@ -1,5 +1,5 @@
-Unpacking Assignment
-====================
+Sequence Unpack Assignment
+==========================
 
 
 Rationale
@@ -10,6 +10,10 @@ Rationale
 >>> a = 1
 >>> a, b = 1, 2
 >>> a, b, c = 1, 2, 3
+
+>>> (a) = (1)
+>>> (a, b) = (1, 2)
+>>> (a, b, c) = (1, 2, 3)
 
 >>> a, b, c = (1, 2, 3)
 >>> a, b, c = [1, 2, 3]
@@ -124,14 +128,4 @@ Python understands this as:
 
 Assignments
 -----------
-.. literalinclude:: assignments/unpacking_assignment_a.py
-    :caption: :download:`Solution <assignments/unpacking_assignment_a.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/unpacking_assignment_b.py
-    :caption: :download:`Solution <assignments/unpacking_assignment_b.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/unpacking_assignment_c.py
-    :caption: :download:`Solution <assignments/unpacking_assignment_c.py>`
-    :end-before: # Solution
+.. todo:: Create assignments

@@ -1,5 +1,5 @@
 """
-* Assignment: Unpacking Assignment List
+* Assignment: Unpack Assignment List
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

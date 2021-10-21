@@ -1,5 +1,5 @@
-Unpacking Parameter Syntax
-==========================
+Unpack Parameter Syntax
+=======================
 
 
 Recap

@@ -9,18 +9,18 @@ About
     about/entrytest.rst
 
 
-Unpacking
-*********
+Unpack
+******
 .. toctree::
     :maxdepth: 1
-    :caption: Unpacking
+    :caption: Unpack
 
-    unpacking/assignment.rst
-    unpacking/assignment-star.rst
-    unpacking/parameters.rst
-    unpacking/arguments.rst
-    unpacking/parameter-syntax.rst
-    unpacking/assignment-expression.rst
+    unpack/unpack-assignment.rst
+    unpack/unpack-star.rst
+    unpack/parameters.rst
+    unpack/arguments.rst
+    unpack/parameter-syntax.rst
+    unpack/assignment-expression.rst
 
 
 Type Annotation

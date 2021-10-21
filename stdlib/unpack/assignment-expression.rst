@@ -1,5 +1,5 @@
-Unpacking Assignment Expression
-===============================
+Unpack Assignment Expression
+============================
 
 
 Rationale
@@ -75,7 +75,7 @@ SyntaxError: cannot use assignment expressions with subscript
 
 Guido van Rossum stepped down after accepting :pep:`572` -- Assignment Expressions:
 
-.. figure:: img/unpacking-assignmentexpr-bdfl.png
+.. figure:: img/unpack-assignmentexpr-bdfl.png
 
 
 Example
@@ -410,6 +410,6 @@ References
 
 Assignments
 -----------
-.. literalinclude:: assignments/unpacking_assignmentexpr_a.py
-    :caption: :download:`Solution <assignments/unpacking_assignmentexpr_a.py>`
+.. literalinclude:: assignments/unpack_assignmentexpr_a.py
+    :caption: :download:`Solution <assignments/unpack_assignmentexpr_a.py>`
     :end-before: # Solution

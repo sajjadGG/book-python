@@ -1,5 +1,5 @@
-Unpacking Arguments
-===================
+Unpack Arguments
+================
 
 .. testsetup::
 
@@ -30,9 +30,9 @@ SyntaxError: positional argument follows keyword argument
 
 Rationale
 ---------
-* Unpacking and Arbitrary Number of Parameters and Arguments
+* Unpack and Arbitrary Number of Parameters and Arguments
 
-.. figure:: img/unpacking-assignment,args,params.png
+.. figure:: img/unpack-assignment,args,params.png
 
 
 Positional Arguments
@@ -512,10 +512,10 @@ positional and keyword arguments:
 
 Assignments
 -----------
-.. literalinclude:: assignments/unpacking_arguments_a.py
-    :caption: :download:`Solution <assignments/unpacking_arguments_a.py>`
+.. literalinclude:: assignments/unpack_arguments_a.py
+    :caption: :download:`Solution <assignments/unpack_arguments_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/unpacking_arguments_b.py
-    :caption: :download:`Solution <assignments/unpacking_arguments_b.py>`
+.. literalinclude:: assignments/unpack_arguments_b.py
+    :caption: :download:`Solution <assignments/unpack_arguments_b.py>`
     :end-before: # Solution

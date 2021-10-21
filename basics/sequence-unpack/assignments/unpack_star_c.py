@@ -1,5 +1,5 @@
 """
-* Assignment: Unpacking Assignment Nested
+* Assignment: Unpack Assignment Nested
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

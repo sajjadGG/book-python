@@ -82,9 +82,10 @@ Sequence Select
     :maxdepth: 1
     :caption: Sequence Select
 
-    sequence-select/getitem.rst
-    sequence-select/slice.rst
-    sequence-select/unpack.rst
+    sequence-unpack/getitem.rst
+    sequence-unpack/slice.rst
+    sequence-unpack/unpack-assignment.rst
+    sequence-unpack/unpack-star.rst
 
 
 Mappings

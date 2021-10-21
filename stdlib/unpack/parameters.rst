@@ -1,5 +1,5 @@
-Unpacking Parameters
-====================
+Unpack Parameters
+=================
 
 
 Recap
@@ -15,11 +15,11 @@ Recap
 
 Rationale
 ---------
-* More information in `Unpacking Assignment`
-* More information in `Unpacking Parameters`
-* More information in `Unpacking Arguments`
+* More information in `Unpack Assignment`
+* More information in `Unpack Parameters`
+* More information in `Unpack Arguments`
 
-.. figure:: img/unpacking-assignment,args,params.png
+.. figure:: img/unpack-assignment,args,params.png
 
 
 Positional Parameters
@@ -210,14 +210,14 @@ Intuitive definition of ``print`` function:
 
 Assignments
 -----------
-.. literalinclude:: assignments/unpacking_parameters_a.py
-    :caption: :download:`Solution <assignments/unpacking_parameters_a.py>`
+.. literalinclude:: assignments/unpack_parameters_a.py
+    :caption: :download:`Solution <assignments/unpack_parameters_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/unpacking_parameters_b.py
-    :caption: :download:`Solution <assignments/unpacking_parameters_b.py>`
+.. literalinclude:: assignments/unpack_parameters_b.py
+    :caption: :download:`Solution <assignments/unpack_parameters_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/unpacking_parameters_c.py
-    :caption: :download:`Solution <assignments/unpacking_parameters_c.py>`
+.. literalinclude:: assignments/unpack_parameters_c.py
+    :caption: :download:`Solution <assignments/unpack_parameters_c.py>`
     :end-before: # Solution

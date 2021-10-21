@@ -1,5 +1,5 @@
 """
-* Assignment: Unpacking ParameterSyntax Kwargs
+* Assignment: Unpack ParameterSyntax Kwargs
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

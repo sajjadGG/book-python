@@ -1,5 +1,5 @@
-Sequence Slice
-==============
+Sequence Unpack Slice
+=====================
 
 
 Rationale
