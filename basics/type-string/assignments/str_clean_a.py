@@ -88,54 +88,54 @@ Tests:
     'Jana III Sobieskiego'
 """
 
-example = 'UL. jana \tTWArdoWskIEGO 3'
-a = 'ul Jana III SobIESkiego'
-b = '\tul. Jana trzeciego Sobieskiego'
-c = 'ulicaJana III Sobieskiego'
-d = 'JANA 3 \nSOBIESKIEGO'
-e = 'UL. jana III SOBiesKIEGO'
-f = 'ULICA JANA III SOBIESKIEGO  '
-g = 'ULICA. JANA III SOBIeskieGO'
-h = ' Jana 3 Sobieskiego  '
-i = 'Jana III\tSobieskiego '
+EXAMPLE = 'UL. jana \tTWArdoWskIEGO 3'
+A = 'ul Jana III SobIESkiego'
+B = '\tul. Jana trzeciego Sobieskiego'
+C = 'ulicaJana III Sobieskiego'
+D = 'JANA 3 \nSOBIESKIEGO'
+E = 'UL. jana III SOBiesKIEGO'
+F = 'ULICA JANA III SOBIESKIEGO  '
+G = 'ULICA. JANA III SOBIeskieGO'
+H = ' Jana 3 Sobieskiego  '
+I = 'Jana III\tSobieskiego '
 
-example = example.upper().replace('UL. ', '').replace('\t', '') \
+example = EXAMPLE.upper().replace('UL. ', '').replace('\t', '') \
     .strip().title().replace('3', 'III')
 
 # str: Jana III Sobieskiego
-a = a
+a = ...
 
 # str: Jana III Sobieskiego
-b = b
+b = ...
 
 # str: Jana III Sobieskiego
-c = c
+c = ...
 
 # str: Jana III Sobieskiego
-d = d
+d = ...
 
 # str: Jana III Sobieskiego
-e = e
+e = ...
 
 # str: Jana III Sobieskiego
-f = f
+f = ...
 
 # str: Jana III Sobieskiego
-g = g
+g = ...
 
 # str: Jana III Sobieskiego
-h = h
+h = ...
 
 # str: Jana III Sobieskiego
-i = i
+i = ...
 
 # Solution
-a = a.upper().replace('UL', '').strip().title().replace('Iii', 'III')
-b = b.upper().replace('UL.', '').strip().title().replace('Trzeciego', 'III')
-c = c.upper().replace('ULICA', '').strip().title().replace('Iii', 'III')
-d = d.upper().replace('\n', '').strip().title().replace('3', 'III')
-e = e.upper().replace('UL.', '').strip().title().replace('Iii', 'III')
-f = f.upper().replace('ULICA', '').strip().title().replace('Iii', 'III')
-g = g.upper().replace('ULICA.', '').strip().title().replace('Iii', 'III')
-h = h.upper().replace('3', 'III').strip().title().replace('Iii', 'III')
-i = i.upper().replace('\t', ' ').strip().title().replace('Iii', 'III')
+a = A.upper().replace('UL', '').strip().title().replace('Iii', 'III')
+b = B.upper().replace('UL.', '').strip().title().replace('Trzeciego', 'III')
+c = C.upper().replace('ULICA', '').strip().title().replace('Iii', 'III')
+d = D.upper().replace('\n', '').strip().title().replace('3', 'III')
+e = E.upper().replace('UL.', '').strip().title().replace('Iii', 'III')
+f = F.upper().replace('ULICA', '').strip().title().replace('Iii', 'III')
+g = G.upper().replace('ULICA.', '').strip().title().replace('Iii', 'III')
+h = H.upper().replace('3', 'III').strip().title().replace('Iii', 'III')
+i = I.upper().replace('\t', ' ').strip().title().replace('Iii', 'III')

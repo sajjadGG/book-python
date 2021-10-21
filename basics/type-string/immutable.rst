@@ -5,6 +5,7 @@ Str Immutable
 Rationale
 ---------
 * ``str`` is immutable
+* ``str`` methods create a new modified ``str``
 
 >>> a = 'Python'
 >>> a.replace('P', 'C')
