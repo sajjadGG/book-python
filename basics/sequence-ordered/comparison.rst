@@ -41,7 +41,7 @@ Memory
 ------
 .. figure:: img/memory-compare.png
 
-    List vs Memory
+    Memory representation for ``list`` and ``tuple``
 
 
 Assignments

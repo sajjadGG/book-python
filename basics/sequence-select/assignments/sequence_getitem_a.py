@@ -86,22 +86,22 @@ header = ...
 result = ...
 
 # append list from DATA at index 2
-result
+...
 
 # append tuple from DATA at index 4
-result
+...
 
 # append set from DATA at index -4
-result
+...
 
 # append empty list
-result
+...
 
 # append empty tuple
-result
+...
 
 # append empty set
-result
+...
 
 # Solution
 header = DATA[0]

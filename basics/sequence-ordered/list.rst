@@ -261,9 +261,9 @@ False
 
 Memory
 ------
-.. figure:: img/memory-tuple.png
+.. figure:: img/memory-list.png
 
-    Define tuple
+    Memory representation for ``list``
 
 
 References

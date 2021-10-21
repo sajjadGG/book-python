@@ -97,11 +97,32 @@ SyntaxError: invalid syntax
 >>> x = .1,1.       # tuple
 
 
+Length
+------
+>>> data = (1, 2, 3)
+>>> len(data)
+3
+
+
+Sort
+----
+>>> data = (3, 1, 2)
+>>> tuple(sorted(data))
+(1, 2, 3)
+
+
+Reversed
+--------
+>>> data = (1, 2, 3)
+>>> tuple(reversed(data))
+(3, 2, 1)
+
+
 Memory
 ------
-.. figure:: img/memory-list.png
+.. figure:: img/memory-tuple.png
 
-    Define list
+    Memory representation for ``tuple``
 
 
 Assignments
