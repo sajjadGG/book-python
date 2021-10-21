@@ -76,11 +76,11 @@ Sequence Nested
     sequence-nested/nested.rst
 
 
-Sequence Select
+Sequence Unpack
 ***************
 .. toctree::
     :maxdepth: 1
-    :caption: Sequence Select
+    :caption: Sequence Unpack
 
     sequence-unpack/getitem.rst
     sequence-unpack/slice.rst
