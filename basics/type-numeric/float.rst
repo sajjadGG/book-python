@@ -16,7 +16,7 @@ Without leading or trailing zero. Used by ``numpy``.
 >>> data = 69.
 >>> print(data)
 69.0
->>>
+
 >>> data = .44
 >>> print(data)
 0.44
@@ -44,31 +44,40 @@ Scientific notation:
 
 >>> 1e1
 10.0
+>>>
 >>> 1e2
 100.0
+>>>
 >>> 1e3
 1000.0
 
 >>> 1e-3
 0.001
+>>>
 >>> 1e-4
 0.0001
+>>>
 >>> 1e-5
 1e-05
+>>>
 >>> 1e-6
 1e-06
 
 >>> 1e3
 1000.0
+>>>
 >>> -1e3
 -1000.0
+>>>
 >>> 1e-3
 0.001
+>>>
 >>> -1e-3
 -0.001
 
 >>> 1.337 * 1e3
 1337.0
+>>>
 >>> 1.337 * 1e-3
 0.001337
 
@@ -79,22 +88,28 @@ Builtin function ``float()`` converts argument to ``float``
 
 >>> float(1)
 1.0
+>>>
 >>> float(+1)
 1.0
+>>>
 >>> float(-1)
 -1.0
 
 >>> float(1.337)
 1.337
+>>>
 >>> float(+1.337)
 1.337
+>>>
 >>> float(-1.337)
 -1.337
 
 >>> float('1.337')
 1.337
+>>>
 >>> float('+1.337')
 1.337
+>>>
 >>> float('-1.337')
 -1.337
 
@@ -117,12 +132,16 @@ Rounding a number
 
 >>> pi = 3.14159265359
 >>>
+>>>
 >>> round(pi, 4)
 3.1416
+>>>
 >>> round(pi, 2)
 3.14
+>>>
 >>> round(pi)
 3
+>>>
 >>> round(pi, 0)
 3.0
 
@@ -130,19 +149,25 @@ Rounding a number in string formatting
 
 >>> pi = 3.14159265359
 >>>
+>>>
 >>> print(f'Pi number is {pi}')
 Pi number is 3.14159265359
+>>>
 >>> print(f'Pi number is {pi:f}')
 Pi number is 3.141593
+>>>
 >>> print(f'Pi number is {pi:.4f}')
 Pi number is 3.1416
+>>>
 >>> print(f'Pi number is {pi:.2f}')
 Pi number is 3.14
+>>>
 >>> print(f'Pi number is {pi:.0f}')
 Pi number is 3
 
 >>> round(10.5)
 10
+>>>
 >>> round(10.51)
 11
 
@@ -154,13 +179,16 @@ Note, that arithmetic operator ``**`` also raises number to the power:
 
 >>> pow(10, 2)
 100
+>>>
 >>> pow(2, -1)
 0.5
 
 >>> pow(1.337, 3)
 2.389979753
+>>>
 >>> pow(4, 0.5)
 2.0
+>>>
 >>> pow(2, 0.5)
 1.4142135623730951
 
@@ -168,20 +196,25 @@ Builtin function ``pow()`` can be used to calculate roots of a number:
 
 >>> pow(4, 1/2)
 2.0
+>>>
 >>> pow(2, 1/2)
 1.4142135623730951
+>>>
 >>> pow(27, 1/3)
 3.0
 
 >>> pow(4, -1/2)
 0.5
+>>>
 >>> pow(2, -1/2)
 0.7071067811865476
+>>>
 >>> pow(27, -1/3)
 0.33333333333333337
 
 >>> pow(-2, -1)
 -0.5
+>>>
 >>> pow(-4, -1)
 -0.25
 
@@ -190,10 +223,13 @@ Note that Python has special ``complex()`` numeric type.
 
 >>> pow(-2, -1/2)
 (4.329780281177467e-17-0.7071067811865476j)
+>>>
 >>> pow(-2, 1/2)
 (8.659560562354934e-17+1.4142135623730951j)
+>>>
 >>> pow(-4, -1/2)
 (3.061616997868383e-17-0.5j)
+>>>
 >>> pow(-4, 1/2)
 (1.2246467991473532e-16+2j)
 
@@ -201,11 +237,13 @@ Absolute value
 
 >>> abs(1)
 1
+>>>
 >>> abs(1.337)
 1.337
 
 >>> abs(-1)
 1
+>>>
 >>> abs(-1.337)
 1.337
 

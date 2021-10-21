@@ -130,7 +130,7 @@ Python Console (REPL)
     $ python3.10
     Python 3.10.0 (default, Oct 13 2021, 06:45:00) [Clang 13.0.0 (clang-1300.0.29.3)] on darwin
     Type "help", "copyright", "credits" or "license" for more information.
-
+    >>>
     >>> print('Ehlo World!')
     Ehlo World!
 

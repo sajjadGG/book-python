@@ -30,22 +30,28 @@ Builtin function ``int()`` converts argument to ``int``:
 
 >>> int(1)
 1
+>>>
 >>> int(+1)
 1
+>>>
 >>> int(-1)
 -1
 
 >>> int(1.337)
 1
+>>>
 >>> int(+1.1337)
 1
+>>>
 >>> int(-1.337)
 -1
 
 >>> int('1')
 1
+>>>
 >>> int('+1')
 1
+>>>
 >>> int('-1')
 -1
 
@@ -53,6 +59,7 @@ Builtin function ``int()`` does not round numbers:
 
 >>> int(1.001)
 1
+>>>
 >>> int(1.999)
 1
 
@@ -183,8 +190,10 @@ Other examples:
 
 >>> int('100', base=16)
 256
+>>>
 >>> int('0x69', base=16)
 105
+>>>
 >>> int('0x3C', base=16)
 60
 
@@ -195,15 +204,19 @@ Type Checking
 
 >>> type(1)
 <class 'int'>
+>>>
 >>> type(+1)
 <class 'int'>
+>>>
 >>> type(-1)
 <class 'int'>
 
 >>> type(0)
 <class 'int'>
+>>>
 >>> type(+0)
 <class 'int'>
+>>>
 >>> type(-0)
 <class 'int'>
 

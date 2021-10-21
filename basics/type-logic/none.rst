@@ -87,6 +87,7 @@ False
 >>> bool(False)
 False
 >>>
+>>>
 >>> None == False
 False
 >>>
@@ -99,6 +100,7 @@ Use Case
 >>> firstname = 'Melissa'
 >>> lastname = 'Lewis'
 >>> age = None
+>>>
 >>>
 >>> age is None
 True

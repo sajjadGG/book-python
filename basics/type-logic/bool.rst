@@ -26,27 +26,37 @@ Type Casting
 
 >>> bool(True)
 True
+>>>
 >>> bool(False)
 False
+>>>
 >>> bool(1)
 True
+>>>
 >>> bool(0)
 False
 
 >>> bool(1)
 True
+>>>
 >>> bool(2)
 True
+>>>
 >>> bool(3)
 True
+>>>
 >>> bool(-1)
 True
+>>>
 >>> bool(-2)
 True
+>>>
 >>> bool(-3)
 True
+>>>
 >>> bool(1.0)
 True
+>>>
 >>> bool('Jan Twardowski')
 True
 
@@ -54,43 +64,61 @@ Negative values
 
 >>> bool(0)
 False
+>>>
 >>> bool(0.0)
 False
+>>>
 >>> bool(0+0j)
 False
+>>>
 >>> bool(0.0+0.0j)
 False
+>>>
 >>> bool(False)
 False
+>>>
 >>> bool(None)
 False
+>>>
 >>> bool('')
 False
+>>>
 >>> bool(())
 False
+>>>
 >>> bool([])
 False
+>>>
 >>> bool({})
 False
 
 >>> bool(int())
 False
+>>>
 >>> bool(float())
 False
+>>>
 >>> bool(complex())
 False
+>>>
 >>> bool(bool())
 False
+>>>
 >>> bool(str())
 False
+>>>
 >>> bool(tuple())
 False
+>>>
 >>> bool(list())
 False
+>>>
 >>> bool(dict())
 False
+>>>
 >>> bool(set())
 False
+>>>
 >>> bool(frozenset())
 False
 
@@ -106,26 +134,35 @@ Comparison
 
 >>> 10 < 2
 False
+>>>
 >>> 10 <= 2
 False
+>>>
 >>> 10 > 2
 True
+>>>
 >>> 10 >= 2
 True
+>>>
 >>> 10 == 2
 False
+>>>
 >>> 10 != 2
 True
 
 >>> x = 1
 >>> y = 2
 >>>
+>>>
 >>> x == 1
 True
+>>>
 >>> y == 2
 True
+>>>
 >>> x == y
 False
+>>>
 >>> x != y
 True
 
@@ -145,10 +182,13 @@ Example:
 
 >>> True and True
 True
+>>>
 >>> True and False
 False
+>>>
 >>> False and True
 False
+>>>
 >>> False and False
 False
 
@@ -202,10 +242,13 @@ Example:
 
 >>> True or True
 True
+>>>
 >>> True or False
 True
+>>>
 >>> False or True
 True
+>>>
 >>> False or False
 False
 
@@ -235,16 +278,19 @@ Example:
 
 >>> True and True or False
 True
+>>>
 >>> False and False or True
 True
 
 >>> (True and True) or False
 True
+>>>
 >>> True and (True or False)
 True
 
 >>> True and False or False
 False
+>>>
 >>> True and (False or False)
 False
 
