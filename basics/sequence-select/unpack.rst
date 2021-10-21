@@ -176,6 +176,14 @@ Twardowski
 setosa
 
 >>> line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
+>>> username, _, uid, *_ = line.split(':')
+>>>
+>>> print(username)
+'twardowski'
+>>> print(uid)
+'1001'
+
+>>> line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
 >>> username, _, _, _, fullname, *_ = line.split(':')
 >>>
 >>> print(username)
