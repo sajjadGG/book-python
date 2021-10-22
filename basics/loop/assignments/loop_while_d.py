@@ -1,6 +1,6 @@
 """
 * Assignment: Loop While GuessGame1
-* Required: yes
+* Required: no
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 5 min
@@ -19,7 +19,7 @@ Polish:
        a. Jeżeli jest większa, to wypisz `Above`
        b. Jeżeli jest mniejsza, to wypisz `Below`
        c. Jeżeli jest taka sama, to wypisz `Exactly` i zakończ grę
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `Stop` or `Ctrl+C` kills infinite loop
@@ -28,8 +28,14 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 """
 
-HIDDEN = 6
+# Simulate user input (for test automation)
+from unittest.mock import MagicMock
+input = MagicMock(side_effect=['0', '9', '1', '8', '2', '7', '3', '6', '4'])
 
+
+HIDDEN = 4
+
+# Solution
 while True:
     guess = input('\nType number: ')
 

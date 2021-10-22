@@ -257,8 +257,8 @@ Assignments
     :caption: :download:`Solution <assignments/loop_while_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_while_3.py
-    :caption: :download:`Solution <assignments/loop_while_3.py>`
+.. literalinclude:: assignments/loop_while_e.py
+    :caption: :download:`Solution <assignments/loop_while_e.py>`
     :end-before: # Solution
 
 .. literalinclude:: assignments/loop_while_f.py
