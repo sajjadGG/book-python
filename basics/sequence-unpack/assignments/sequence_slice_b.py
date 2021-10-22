@@ -8,12 +8,14 @@
 English:
     1. Use `str.find()` and slicing
     2. Print `TEXT` without text in `REMOVE`
-    3. Run doctests - all must succeed
+    3. Do not use `str.replace()`
+    4. Run doctests - all must succeed
 
 Polish:
     1. Użyj `str.find()` oraz wycinania
     2. Wypisz `TEXT` bez tekstu z `REMOVE`
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    3. Nie używaj `str.replace()`
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

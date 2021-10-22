@@ -15,7 +15,7 @@ Polish:
     2. Podziel linie i przekonwertuj wynik do frozenset
     3. Uruchom doctesty - wszystkie muszą się powieść
 
-Hint:
+Hints:
     * `str.splitlines()`
 
 Tests:

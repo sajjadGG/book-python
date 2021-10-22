@@ -27,7 +27,7 @@ Polish:
     5. Dict użytkownika powinien zawierać dane z wszystkich plików
     6. Uruchom doctesty - wszystkie muszą się powieść
 
-Hint:
+Hints:
     * `from datetime import date`
     * `date.fromtimestamp(timestamp: int)`
 

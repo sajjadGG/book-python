@@ -15,7 +15,7 @@ Polish:
     2. Użyj `str.join()` aby połączyć linie tekstu znakiem końca linii (`\n`)
     3. Uruchom doctesty - wszystkie muszą się powieść
 
-Hint:
+Hints:
     * `str.join()`
 
 Tests:

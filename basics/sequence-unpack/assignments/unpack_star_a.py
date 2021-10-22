@@ -5,13 +5,13 @@
 * Time: 3 min
 
 English:
-    1. Using `str.split()` split input data by white space
+    1. Split input data by white space
     2. Separate ip address and host names
     3. Use asterisk `*` notation
     4. Run doctests - all must succeed
 
 Polish:
-    1. Używając `str.split()` podziel dane wejściowe po białych znakach
+    1. Podziel dane wejściowe po białych znakach
     2. Odseparuj adres ip i nazw hostów
     3. Skorzystaj z notacji z gwiazdką `*`
     4. Uruchom doctesty - wszystkie muszą się powieść
@@ -37,9 +37,11 @@ Tests:
 
 DATA = ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
 
+# str: ip address: '10.13.37.1'
 ip: str
-hosts: list
 
+# list[str]: list of host names: ['nasa.gov', 'esa.int', 'roscosmos.ru']
+hosts: list
 
 # Solution
 ip, *hosts = DATA

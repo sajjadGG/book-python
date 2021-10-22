@@ -17,7 +17,7 @@ Polish:
     3. Dodaj literę do `result`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
-Hint:
+Hints:
     * use `str.join()`
 
 Tests:

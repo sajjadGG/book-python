@@ -19,7 +19,7 @@ Polish:
     3. Nie używaj wbudowanej funkcji `range()`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
-Hint:
+Hints:
     * `while`
 
 Tests:

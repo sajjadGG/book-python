@@ -16,7 +16,7 @@ Polish:
        gdzie "Mark Watney" jest wartością zmiennej `name`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
-Hint:
+Hints:
     * Either quotes (") or apostrophes (') will work
     * Use f-string
 

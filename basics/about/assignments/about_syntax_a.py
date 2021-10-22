@@ -12,7 +12,7 @@ Polish:
     1. Zdefiniuj zmienną `result` z tekstem 'Hello World'
     2. Uruchom doctesty - wszystkie muszą się powieść
 
-Hint:
+Hints:
     * Either quotes (") or apostrophes (') will work
 
 Tests:

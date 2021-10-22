@@ -13,7 +13,7 @@ Polish:
     1. Wypisz `Hello 😀`
     2. Uruchom doctesty - wszystkie muszą się powieść
 
-Hint:
+Hints:
     * 😀 unicode codepoint is `\U0001F600`
 
 Tests:

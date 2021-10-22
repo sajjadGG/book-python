@@ -37,9 +37,11 @@ Tests:
 
 DATA = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
 
+# str: ip address: '10.13.37.1'
 ip: str
-hosts: list
 
+# list[str]: list of host names: ['nasa.gov', 'esa.int', 'roscosmos.ru']
+hosts: list
 
 # Solution
 ip, *hosts = DATA.split()
