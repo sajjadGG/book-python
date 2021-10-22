@@ -2,7 +2,7 @@
 * Assignment: Loop While GuessGame1
 * Required: no
 * Complexity: medium
-* Lines of code: 5 lines
+* Lines of code: 9 lines
 * Time: 5 min
 
 English:

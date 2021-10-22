@@ -126,6 +126,18 @@ StopIteration
  'chemist': ('Rick', 'Martinez')}
 
 
+Use Case
+--------
+>>> months = ['January', 'February', 'March', 'April']
+>>>
+>>>
+>>> dict(enumerate(months))
+{0: 'January', 1: 'February', 2: 'March', 3: 'April'}
+>>>
+>>> dict(enumerate(months, start=1))
+{1: 'January', 2: 'February', 3: 'March', 4: 'April'}
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/mapping_generate_a.py
