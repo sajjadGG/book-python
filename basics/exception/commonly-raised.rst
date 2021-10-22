@@ -59,8 +59,9 @@ Module could not be located:
 Traceback (most recent call last):
 ModuleNotFoundError: No module named 'match'
 
-Note, that this exception is also raised when you don't have this module installed.
-Such as while importing ``pandas`` or ``numpy`` without installing it first.
+Note, that this exception is also raised when you don't have this module
+installed. Such as while importing ``pandas`` or ``numpy`` without installing
+it first.
 
 
 NameError

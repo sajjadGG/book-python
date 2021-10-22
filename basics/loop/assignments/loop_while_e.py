@@ -29,14 +29,22 @@ Tests:
 """
 
 HIDDEN = 6
+MAX_TRIES = 10
+current = 0
 
 while True:
+    if current > MAX_TRIES:
+        break
+
+    current += 1
     guess = input('\nType number: ')
 
     if int(guess) > HIDDEN:
         print('Above')
+        continue
     elif int(guess) < HIDDEN:
         print('Below')
+        continue
     else:
         print('Exactly')
         break

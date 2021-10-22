@@ -10,13 +10,13 @@ Rationale
 
 Example
 -------
-    >>> try:
-    ...     float('hello')
-    ... except ValueError:
-    ...     print('Cannot type cast to float')
-    ...     exit(1)
-    Traceback (most recent call last):
-    SystemExit: 1
+>>> try:
+...     float('hello')
+... except ValueError:
+...     print('Cannot type cast to float')
+...     exit(1)
+Traceback (most recent call last):
+SystemExit: 1
 
 
 Use Case

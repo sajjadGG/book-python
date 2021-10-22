@@ -101,8 +101,8 @@ Has stop conditions
 2
 
 
-Iterating Over Sequence
------------------------
+Sequence Iteration
+------------------
 Better idea for this is to use ``for`` loop. ``for`` loop supports Iterators. ``len()`` must write all ``numbers`` to memory, to calculate its length:
 
 >>> i = 0
@@ -158,8 +158,8 @@ Exit flag pattern is useful if you have for example multi-threaded application:
 Fuel leak detected. Abort, Abort, Abort!
 
 
-Force Exit the Loop
--------------------
+Exit the Loop
+-------------
 Force exit the loop using ``break`` keyword:
 
 >>> i = 10
@@ -189,8 +189,8 @@ Exiting the loop using ``break`` keyword:
 ...         break
 
 
-Force Skip Iteration
---------------------
+Skip Iteration
+--------------
 * if ``continue`` is encountered, it will jump to next loop iteration
 
 >>> TEXT = ['# "Moon Speech" by John F. Kennedy, Rice Stadium, Houston, TX, 1962-09-12',
@@ -255,4 +255,12 @@ Assignments
 
 .. literalinclude:: assignments/loop_while_d.py
     :caption: :download:`Solution <assignments/loop_while_d.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/loop_while_3.py
+    :caption: :download:`Solution <assignments/loop_while_3.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/loop_while_f.py
+    :caption: :download:`Solution <assignments/loop_while_f.py>`
     :end-before: # Solution
