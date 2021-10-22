@@ -51,8 +51,10 @@ Tests:
     >>> assert blood_pressure == '120/80' and result == 'Hypertension stage 1' or True
     >>> assert blood_pressure == '121/79' and result == 'Elevated' or True
     >>> assert blood_pressure == '120/81' and result == 'Hypertension stage 1' or True
+    >>> assert blood_pressure == '125/85' and result == 'Hypertension stage 1' or True
     >>> assert blood_pressure == '130/80' and result == 'Hypertension stage 1' or True
     >>> assert blood_pressure == '130/89' and result == 'Hypertension stage 1' or True
+    >>> assert blood_pressure == '130/100' and result == 'Hypertension stage 2' or True
     >>> assert blood_pressure == '140/85' and result == 'Hypertension stage 2' or True
     >>> assert blood_pressure == '140/89' and result == 'Hypertension stage 2' or True
     >>> assert blood_pressure == '141/90' and result == 'Hypertension stage 2' or True
@@ -85,18 +87,17 @@ systolic, diastolic = blood_pressure.strip().split('/')
 systolic = int(systolic)
 diastolic = int(diastolic)
 
+
+# | Blood Pressure Category | Systolic [mm Hg] | Operator | Diastolic [mm Hg] |
+# |-------------------------|------------------|----------|-------------------|
+# | Normal                  | Less than 120    | and      | Less than 80      |
+# | Elevated                | 120-129          | and      | Less than 80      |
+# | Hypertension stage 1    | 130-139          | or       | 80-89             |
+# | Hypertension stage 2    | 140 or higher    | or       | 90 or higher      |
+# | Hypertensive Crisis     | Higher than 180  | and/or   | Higher than 120   |
+
 # str: one of the STATUS_*
 result = ...
-
-"""
-| Blood Pressure Category | Systolic [mm Hg] | Operator | Diastolic [mm Hg] |
-|-------------------------|------------------|----------|-------------------|
-| Normal                  | Less than 120    | and      | Less than 80      |
-| Elevated                | 120-129          | and      | Less than 80      |
-| Hypertension stage 1    | 130-139          | or       | 80-89             |
-| Hypertension stage 2    | 140 or higher    | or       | 90 or higher      |
-| Hypertensive Crisis     | Higher than 180  | and/or   | Higher than 120   |
-"""
 
 # Solution
 if systolic < 120 and diastolic < 80:
@@ -108,7 +109,7 @@ elif 130 <= systolic <= 139 or 80 <= diastolic <= 89:
 elif 140 <= systolic or 90 <= diastolic:
     result = STATUS_HYPERTENSION_STAGE_2
 
-if 180 <= systolic or 120 <= diastolic:
+if 180 < systolic or 120 < diastolic:
     result = STATUS_HYPERTENSIVE_CRISIS
 
 # Alternative Solution

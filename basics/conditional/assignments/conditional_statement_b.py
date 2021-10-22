@@ -22,6 +22,7 @@ Tests:
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
+
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
 

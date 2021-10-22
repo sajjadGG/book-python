@@ -7,12 +7,12 @@
 
 English:
     1. Ask user to input age
-    2. Check whether user is adult (age above 18)
+    2. Check whether user is adult (age equals or above 18)
     3. Run doctests - all must succeed
 
 Polish:
     1. Poproś użytkownika o wprowadzenie wieku
-    2. Sprawdź czy użytkownik jest pełnoletni (wiek powyżej 18)
+    2. Sprawdź czy użytkownik jest pełnoletni (wiek równy lub powyżej 18)
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -20,6 +20,7 @@ Tests:
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
+
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
 
