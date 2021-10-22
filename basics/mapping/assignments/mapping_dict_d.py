@@ -34,12 +34,20 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> import string
 
-    >>> type(result)
-    <class 'str'>
-    >>> result not in PL.keys()
-    True
-    >>> result in string.ascii_letters
-    True
+    >>> assert letter is not Ellipsis, \
+    'Ask user to input letter and assign it to: `letter`'
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
+    >>> assert result not in PL.keys(), \
+    'Result should not be in PL dict'
+
+    >>> assert result in string.ascii_letters, \
+    'Result should be an ASCII letter'
 """
 
 from unittest.mock import MagicMock

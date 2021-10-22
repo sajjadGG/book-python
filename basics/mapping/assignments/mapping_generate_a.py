@@ -24,17 +24,17 @@ Tests:
     >>> assert all(type(x) is str for x in result.keys()), \
     'All dict keys should be str'
 
-    >>> assert ('Sepal length' in result.keys()
-    ...     and 'Sepal width' in result.keys()
-    ...     and 'Petal length' in result.keys()
-    ...     and 'Petal width' in result.keys()
-    ...     and 'Species' in result.keys())
+    >>> assert 'Sepal length' in result.keys()
+    >>> assert 'Sepal width' in result.keys()
+    >>> assert 'Petal length' in result.keys()
+    >>> assert 'Petal width' in result.keys()
+    >>> assert 'Species' in result.keys()
 
-    >>> assert (5.8 in result.values()
-    ...     and 2.7 in result.values()
-    ...     and 5.1 in result.values()
-    ...     and 1.9 in result.values()
-    ...     and 'virginica' in result.values())
+    >>> assert 5.8 in result.values()
+    >>> assert 2.7 in result.values()
+    >>> assert 5.1 in result.values()
+    >>> assert 1.9 in result.values()
+    >>> assert 'virginica' in result.values()
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     {'Sepal length': 5.8,
@@ -50,7 +50,7 @@ DATA = [('Sepal length', 5.8),
         ('Petal width', 1.9),
         ('Species', 'virginica')]
 
-# dict[str,float|str]: converted DATA
+# dict[str,float|str]: converted DATA to dict
 result = ...
 
 # Solution

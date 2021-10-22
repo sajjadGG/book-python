@@ -29,15 +29,13 @@ Tests:
     >>> assert all(type(x) is str for x in result.values()), \
     'All dict values should be str'
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-    {0: 'setosa',
-     1: 'versicolor',
-     2: 'virginica'}
+    >>> result
+    {0: 'setosa', 1: 'versicolor', 2: 'virginica'}
 """
 
 DATA = ['setosa', 'versicolor', 'virginica']
 
-# dict[int,str]: converted enumeration of DATA
+# dict[int,str]: enumerated DATA to dict
 result = ...
 
 # Solution
