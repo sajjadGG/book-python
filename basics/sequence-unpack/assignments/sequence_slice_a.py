@@ -67,7 +67,7 @@ Tests:
     'Jan Twardowski'
 """
 
-example = 'lt. Mark Watney, PhD'
+EXAMPLE = 'lt. Mark Watney, PhD'
 A = 'dr hab. inż. Jan Twardowski, prof. AATC'
 B = 'gen. pil. Jan Twardowski'
 C = 'Mark Watney, PhD'
@@ -76,7 +76,7 @@ E = 'dr n. med. Ryan Stone'
 F = 'Ryan Stone, MD-PhD'
 G = 'lt. col. Jan Twardowski\t'
 
-example: str = example[4:-5]
+example = EXAMPLE[4:-5]
 
 # str: Jan Twardowski
 a = ...

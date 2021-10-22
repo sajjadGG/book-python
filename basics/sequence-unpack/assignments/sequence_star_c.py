@@ -1,17 +1,18 @@
 """
-* Assignment: Unpack Assignment Nested
+* Assignment: Sequence UnpackStar Nested
+* Required: yes
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
-    1. Separate header and records
+    1. Separate header from records
     2. Use asterisk `*` notation
     3. Run doctests - all must succeed
 
 Polish:
     1. Odseparuj nagłówek od danych
-    2. Skorzystaj z konstrukcji z gwiazdką `*`
+    2. Skorzystaj z notacji z gwiazdką `*`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -53,12 +54,11 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
         (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
-# tuple[str,...]: header line DATA[0] - ('Sepal length', 'Sepal width' ,...)
-header: tuple
+# tuple[str]: with row with index 0: ('Sepal length', 'Sepal width', ...)
+header = ...
 
-# list[tuple]: all other rows: [(5.8, 2.7, 5.1, 1.9, 'virginica'), ...]
-data: list
-
+# list[tuple]: with all other rows: (5.8, 2.7, 5.1, 1.9, 'virginica'),  ...
+data = ...
 
 # Solution
 header, *data = DATA

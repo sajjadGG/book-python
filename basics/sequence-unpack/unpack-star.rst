@@ -195,14 +195,14 @@ versicolor 3.475
 
 Assignments
 -----------
-.. literalinclude:: assignments/unpack_assignment_a.py
-    :caption: :download:`Solution <assignments/unpack_assignment_a.py>`
+.. literalinclude:: assignments/sequence_star_a.py
+    :caption: :download:`Solution <assignments/sequence_star_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/unpack_assignment_b.py
-    :caption: :download:`Solution <assignments/unpack_assignment_b.py>`
+.. literalinclude:: assignments/sequence_star_b.py
+    :caption: :download:`Solution <assignments/sequence_star_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/unpack_assignment_c.py
-    :caption: :download:`Solution <assignments/unpack_assignment_c.py>`
+.. literalinclude:: assignments/sequence_star_c.py
+    :caption: :download:`Solution <assignments/sequence_star_c.py>`
     :end-before: # Solution

@@ -128,4 +128,10 @@ Python understands this as:
 
 Assignments
 -----------
-.. todo:: Create assignments
+.. literalinclude:: assignments/sequence_unpack_a.py
+    :caption: :download:`Solution <assignments/sequence_unpack_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/sequence_unpack_b.py
+    :caption: :download:`Solution <assignments/sequence_unpack_b.py>`
+    :end-before: # Solution

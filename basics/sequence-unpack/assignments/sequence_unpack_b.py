@@ -1,51 +1,48 @@
 """
-* Assignment: Sequence Unpack Split
+* Assignment: Sequence UnpackAssignment Split
 * Required: yes
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
-    1. Using `str.split()` split input data by white space
-    2. Separate ip address and host names
-    3. Use asterisk `*` notation
-    4. Run doctests - all must succeed
+    1. Split input data
+    2. Separate ip address and host name
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Używając `str.split()` podziel dane wejściowe po białych znakach
-    2. Odseparuj adres ip i nazw hostów
-    3. Skorzystaj z notacji z gwiazdką `*`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    1. Podziel dane wejściowe
+    2. Odseparuj adres ip i nazwę hosta
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * Use `str.split()` without any argument
+    * `str.split()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert ip is not Ellipsis, \
     'Assign result to variable: `ip`'
-    >>> assert hosts is not Ellipsis, \
+    >>> assert host is not Ellipsis, \
     'Assign result to variable: `hosts`'
     >>> assert type(ip) is str, \
     'Variable `ip` has invalid type, should be str'
-    >>> assert type(hosts) is list, \
-    'Variable `hosts` has invalid type, should be list'
-    >>> assert all(type(host) is str for host in hosts)
+    >>> assert type(host) is str, \
+    'Variable `hosts` has invalid type, should be str'
 
     >>> ip
     '10.13.37.1'
-    >>> hosts
-    ['nasa.gov', 'esa.int', 'roscosmos.ru']
+    >>> host
+    'nasa.gov'
 """
 
-DATA = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
+DATA = '10.13.37.1 nasa.gov'
 
-# str: first str: 10.13.37.1
+# str: first string: 10.13.37.1
 ip = ...
 
-# list[str]: list with other strings: ['nasa.gov', 'esa.int', 'roscosmos.ru']
-hosts = ...
+# list[str]: second string: nasa.gov
+host = ...
 
 # Solution
-ip, *hosts = DATA.split()
+ip, host = DATA.split()
