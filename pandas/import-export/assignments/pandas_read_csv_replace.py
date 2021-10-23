@@ -56,6 +56,9 @@ COLUMNS = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
            'worst symmetry', 'worst fractal dimension', 'label']
 
 
+# pd.DataFrame: read DATA, substitute column names, and labels, select 20 rows
+result = ...
+
 # Solution
 header = pd.read_csv(DATA, nrows=0).columns
 cancer_types = dict(enumerate(header[2:]))

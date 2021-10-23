@@ -46,6 +46,8 @@ DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/htm
 FILE = r'_temporary.csv'
 
 
+
+
 # Solution
 result = pd.read_html(DATA, header=0)[0]
 result = result.head(146).tail(11)

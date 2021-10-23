@@ -31,5 +31,8 @@ import pandas as pd
 DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/iris.json'
 
 
+# pd.DataFrame: read DATA from JSON
+result = ...
+
 # Solution
 result = pd.read_json(DATA)

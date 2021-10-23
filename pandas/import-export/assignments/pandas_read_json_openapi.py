@@ -42,8 +42,13 @@ import requests
 DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/openapi.json'
 
 
+# requests.models.Response: result of `requests.get()` for `DATA`
 resp = ...
+
+# dict: conversion of `resp` by calling `.json()` on `resp`
 data = ...
+
+# pd.DataFrame: read DATA
 result = ...
 
 # Solution

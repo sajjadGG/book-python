@@ -50,6 +50,8 @@ import pandas as pd
 DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/html/apollo11.html'
 FILE = r'_temporary.pkl'
 
+# pd.DataFrame: dump DATA to FILE in Pickle format
+result = ...
 
 # Solution
 result = pd.read_html(DATA, header=0)[0]

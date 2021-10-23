@@ -44,6 +44,9 @@ DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/htm
 FILE = r'_temporary.sqlite3'
 
 
+# pd.DataFrame: dump DATA to FILE in SQLite3 format
+result = ...
+
 # Solution
 result = pd.read_html(DATA, header=0)[0]
 result = result.head(146).tail(11)

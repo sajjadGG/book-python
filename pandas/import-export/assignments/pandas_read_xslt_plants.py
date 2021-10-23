@@ -101,6 +101,9 @@ TEMPLATE = """
 """
 
 
+# pd.DataFrame: XSLT transformed DATA
+result = ...
+
 # Solution
 transform = XSLT(XML(TEMPLATE))
 data = parse(StringIO(DATA))

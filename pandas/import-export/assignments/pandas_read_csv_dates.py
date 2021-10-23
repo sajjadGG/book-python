@@ -39,5 +39,9 @@ import pandas as pd
 DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/martian-en.csv'
 
 
+# pd.DataFrame: read DATA and parse dates in "Mission Date" column
+result = ...
+
+
 # Solution
 result = pd.read_csv(DATA, parse_dates=['Mission Date'])
