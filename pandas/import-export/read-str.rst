@@ -42,7 +42,7 @@ Example
     from io import StringIO
 
 
-    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/astro-order.csv'
+    DATA = 'https://python.astrotech.io/_static/astro-order.csv'
 
     resp = requests.get(DATA)
     data = StringIO(resp.text)

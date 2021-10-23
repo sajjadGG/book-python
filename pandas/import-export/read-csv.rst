@@ -14,7 +14,7 @@ Header
     import pandas as pd
 
 
-    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-clean.csv'
+    DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
     header = pd.read_csv(DATA, nrows=0).columns
 
 
@@ -25,7 +25,7 @@ Content
     import pandas as pd
 
 
-    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-clean.csv'
+    DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
     df = pd.read_csv(DATA)
 
     df.head(3)
@@ -42,7 +42,7 @@ Rename Columns
     import pandas as pd
 
 
-    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-dirty.csv'
+    DATA = 'https://python.astrotech.io/_static/iris-dirty.csv'
     COLUMNS =  ['sepal_length', 'sepal_width',
                 'petal_length', 'petal_width', 'species']
 
@@ -85,7 +85,7 @@ Use Case
 --------
 .. code-block:: python
 
-    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-dirty.csv'
+    DATA = 'https://python.astrotech.io/_static/iris-dirty.csv'
 
     COLUMNS =  ['sepal_length', 'sepal_width',
                 'petal_length', 'petal_width', 'species']

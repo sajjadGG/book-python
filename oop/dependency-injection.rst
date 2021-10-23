@@ -186,7 +186,7 @@ Dependency injection:
         cache = CacheFilesystem(location="/tmp/cache/", expiration=timedelta(seconds=1))
         http = HTTPGateway(cache)
 
-        URL = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-clean.csv'
+        URL = 'https://python.astrotech.io/_static/iris-clean.csv'
         data = http.get(URL)
         print(data)
 

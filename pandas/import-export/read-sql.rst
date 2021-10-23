@@ -26,7 +26,7 @@ Read SQL
     import requests
 
 
-    DATA = r'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/sqlite3/astro-timeline.sqlite3'
+    DATA = r'https://python.astrotech.io/_static/astro-timeline.sqlite3'
     DATABASE = r'/tmp/astro-timeline.sqlite3'
 
     SQL = """

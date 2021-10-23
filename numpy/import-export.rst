@@ -9,7 +9,7 @@ np.loadtxt()
     import numpy as np
 
 
-    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris.csv'
+    url = 'https://python.astrotech.io/_static/iris.csv'
 
     a = np.loadtxt(url)
     # Traceback (most recent call last):

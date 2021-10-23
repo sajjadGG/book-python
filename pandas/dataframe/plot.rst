@@ -210,7 +210,7 @@ Prepare Data
     import pandas as pd
 
 
-    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-clean.csv'
+    DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
 
     df = pd.read_csv(DATA)
     df.columns = [
@@ -345,7 +345,7 @@ Hist
     import pandas as pd
 
 
-    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-clean.csv'
+    DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
 
     df = pd.read_csv(DATA)
     df.hist()
@@ -363,7 +363,7 @@ Density
     import pandas as pd
 
 
-    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-clean.csv'
+    DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
 
     df = pd.read_csv(DATA)
     df.plot(kind='density', subplots=True, layout=(2,2), sharex=False)
@@ -381,7 +381,7 @@ Box
     import pandas as pd
 
 
-    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-clean.csv'
+    DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
 
     df = pd.read_csv(DATA)
     df.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
@@ -403,7 +403,7 @@ Scatter matrix
     from pandas.plotting import scatter_matrix
 
 
-    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-clean.csv'
+    DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
 
     df = pd.read_csv(DATA)
     scatter_matrix(df)
