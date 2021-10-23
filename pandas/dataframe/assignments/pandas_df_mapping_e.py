@@ -42,7 +42,7 @@ import pandas as pd
 import requests
 
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/openapi.json'
+DATA = 'https://python.astrotech.io/_static/openapi.json'
 
 result = ...
 

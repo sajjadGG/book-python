@@ -54,7 +54,7 @@ Tests:
 import pandas as pd
 
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/phones-pl.csv'
+DATA = 'https://python.astrotech.io/_static/phones-pl.csv'
 MONTHS_EN = ['January', 'February', 'March', 'April',
              'May', 'June', 'July', 'August', 'September',
              'October', 'November', 'December']

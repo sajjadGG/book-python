@@ -3,7 +3,7 @@ html_baseurl = 'https://python.astrotech.io'
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
 
-needs_sphinx = '3.5'
+needs_sphinx = '4.0'
 project_language = 'en'
 html_theme = 'sphinx_rtd_theme'
 pygments_style = 'stata-dark'
@@ -16,6 +16,7 @@ html_static_path = [
     '_static',
     '_data/csv',
     '_data/json',
+    '_data/html',
     '_data/sas',
     '_data/sqlite3',
     '_data/xml',

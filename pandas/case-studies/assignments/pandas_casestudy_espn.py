@@ -43,7 +43,7 @@ Tests:
 
 import pandas as pd
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/html/espn-standing.html'
+DATA = 'https://python.astrotech.io/_static/espn-standing.html'
 # DATA = 'https://www.espn.com/nba/standings/_/group/league'
 
 

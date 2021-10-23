@@ -19,7 +19,7 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/github-django-repos.json'
+DATA = 'https://python.astrotech.io/_static/github-django-repos.json'
 # DATA = 'https://api.github.com/orgs/django/repos'
 
 

@@ -42,7 +42,7 @@ import numpy as np
 np.random.seed(0)
 
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/astro-database.csv'
+DATA = 'https://python.astrotech.io/_static/astro-database.csv'
 
 result = ...
 

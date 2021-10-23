@@ -42,7 +42,7 @@ Tests:
 import pandas as pd
 
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/breast-cancer.csv'
+DATA = 'https://python.astrotech.io/_static/breast-cancer.csv'
 
 COLUMNS = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
            'mean smoothness', 'mean compactness', 'mean concavity',

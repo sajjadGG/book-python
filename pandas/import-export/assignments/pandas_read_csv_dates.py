@@ -36,7 +36,7 @@ Tests:
 import pandas as pd
 
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/martian-en.csv'
+DATA = 'https://python.astrotech.io/_static/martian-en.csv'
 
 
 # pd.DataFrame: read DATA and parse dates in "Mission Date" column

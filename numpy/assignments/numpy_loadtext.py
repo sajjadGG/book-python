@@ -54,7 +54,7 @@ Tests:
 import numpy as np
 
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-dirty.csv'
+DATA = 'https://python.astrotech.io/_static/iris-dirty.csv'
 
 species = ...
 features = ...

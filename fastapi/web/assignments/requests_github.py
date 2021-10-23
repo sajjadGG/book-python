@@ -13,9 +13,9 @@ USERNAME = '...'
 TOKEN = '...'
 
 
-DATA_REPOS = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/github-python-repos.json'
+DATA_REPOS = 'https://python.astrotech.io/_static/github-python-repos.json'
 # DATA_REPOS = 'https://api.github.com/orgs/python/repos?per_page=10000'
-DATA_COMMITS = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/github-python-commits.json'
+DATA_COMMITS = 'https://python.astrotech.io/_static/github-python-commits.json'
 # DATA_COMMITS = 'https://api.github.com/repos/python/cpython/commits'
 
 PATTERN = r'bpo-[0-9]+'

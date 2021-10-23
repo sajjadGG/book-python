@@ -49,7 +49,7 @@ Tests:
 import pandas as pd
 
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/xlsx/astro-trl.xlsx'
+DATA = 'https://python.astrotech.io/_static/astro-trl.xlsx'
 LETTERS_PLEN = {'ą': 'a', 'ć': 'c', 'ę': 'e',
                 'ł': 'l', 'ń': 'n', 'ó': 'o',
                 'ś': 's', 'ż': 'z', 'ź': 'z'}

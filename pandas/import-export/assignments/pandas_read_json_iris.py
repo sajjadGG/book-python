@@ -28,7 +28,7 @@ Tests:
 
 import pandas as pd
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/iris.json'
+DATA = 'https://python.astrotech.io/_static/iris.json'
 
 
 # pd.DataFrame: read DATA from JSON

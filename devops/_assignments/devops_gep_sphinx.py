@@ -24,7 +24,7 @@ Polish:
     10. Uruchom doctesty - wszystkie muszą się powieść
 """
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris.csv'
+DATA = 'https://python.astrotech.io/_static/iris.csv'
 
 
 # Solution

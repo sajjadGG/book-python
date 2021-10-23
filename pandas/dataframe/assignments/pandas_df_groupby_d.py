@@ -49,7 +49,7 @@ Tests:
 import pandas as pd
 
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/astro-eva.csv'
+DATA = 'https://python.astrotech.io/_static/astro-eva.csv'
 
 result = ...
 

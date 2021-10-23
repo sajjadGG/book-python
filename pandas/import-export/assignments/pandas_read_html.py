@@ -39,7 +39,7 @@ Tests:
 import pandas as pd
 
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/html/european-astronaut-corps.html'
+DATA = 'https://python.astrotech.io/_static/european-astronaut-corps.html'
 
 
 # pd.DataFrame: read DATA, select active ESA astronauts

@@ -42,10 +42,8 @@ Tests:
 
 import pandas as pd
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/html/apollo11.html'
+DATA = 'https://python.astrotech.io/_static/apollo11.html'
 FILE = r'_temporary.csv'
-
-
 
 
 # Solution

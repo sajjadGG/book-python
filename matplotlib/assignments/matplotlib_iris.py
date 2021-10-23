@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris.csv'
+DATA = 'https://python.astrotech.io/_static/iris.csv'
 
 
 # Solution

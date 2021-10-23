@@ -58,7 +58,7 @@ import numpy as np
 import pandas as pd
 
 
-DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/xlsx/sensors-optima.xlsx'
+DATA = 'https://python.astrotech.io/_static/sensors-optima.xlsx'
 WHERE = 'Sleeping Quarters upper'
 WHEN = '2019-09-28'
 
