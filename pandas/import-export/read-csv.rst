@@ -100,10 +100,10 @@ Use Case
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_read_csv_dates.py
-    :caption: :download:`Solution <assignments/pandas_read_csv_dates.py>`
+.. literalinclude:: assignments/pandas_readcsv_a.py
+    :caption: :download:`Solution <assignments/pandas_readcsv_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_read_csv_replace.py
-    :caption: :download:`Solution <assignments/pandas_read_csv_replace.py>`
+.. literalinclude:: assignments/pandas_readcsv_b.py
+    :caption: :download:`Solution <assignments/pandas_readcsv_b.py>`
     :end-before: # Solution

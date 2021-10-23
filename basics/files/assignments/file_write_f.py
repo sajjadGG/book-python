@@ -32,6 +32,7 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
 
     >>> result = open(FILE).read()
     >>> print(result)
@@ -43,7 +44,8 @@ Tests:
     6.4,3.2,4.5,1.5,versicolor
     4.7,3.2,1.3,0.2,setosa
     <BLANKLINE>
-    >>> from os import remove; remove(FILE)
+
+    >>> remove(FILE)
 """
 
 FILE = '_temporary.csv'

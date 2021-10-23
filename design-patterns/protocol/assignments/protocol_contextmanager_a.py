@@ -33,6 +33,7 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
     >>> from inspect import isclass, ismethod
 
     >>> assert isclass(File)
@@ -49,7 +50,7 @@ Tests:
 
     >>> open('_temporary.txt').read()
     'One\\nTwo\\n'
-    >>> from os import remove
+
     >>> remove('_temporary.txt')
 """
 

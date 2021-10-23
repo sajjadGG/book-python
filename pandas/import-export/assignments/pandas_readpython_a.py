@@ -1,24 +1,37 @@
 """
 * Assignment: Pandas Read PythonDict
-* Complexity: easy
+* Complexity: medium
 * Lines of code: 8 lines
 * Time: 13 min
 
 English:
-    1. Read data from `DATA` as `result: pd.DataFrame`
-    2. Run doctests - all must succeed
+    1. Convert `DATA` to format with one column per each attrbute for example:
+       a. `mission1_year`, `mission2_year`,
+       b. `mission1_name`, `mission2_name`
+    2. Note, that enumeration starts with one
+    3. Convert data to `result: pd.DataFrame`
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Wczytaj dane z DATA jako result: pd.DataFrame
-    2. Uruchom doctesty - wszystkie muszą się powieść
+    1. Przekonweruj `DATA` do formatu z jedną kolumną dla każdego atrybutu, np:
+       a. `mission1_year`, `mission2_year`,
+       b. `mission1_name`, `mission2_name`
+    2. Zwróć uwagę, że enumeracja zaczyna się od jeden
+    3. Przekonwertuj dane do `result: pd.DataFrame`
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.DataFrame
-    True
-    >>> len(result) > 0
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+
+    >>> assert type(result) is pd.DataFrame, \
+    'Variable `result` has invalid type, should be `pd.DataFrame`'
+
+    >>> assert len(result) > 0, \
+    'Variable `result` should not be empty'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
       firstname  lastname mission1_year mission1_name mission2_year mission2_name
     0      Mark    Watney          2035         Ares3           NaN           NaN

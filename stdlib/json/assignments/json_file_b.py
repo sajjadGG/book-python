@@ -18,6 +18,7 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+     >>> from os import remove
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
@@ -42,7 +43,6 @@ Tests:
      (7.6, 3.0, 6.6, 2.1, 'virginica'),
      (4.9, 3.0, 1.4, 0.2, 'setosa')]
 
-     >>> from os import remove
      >>> remove(FILE)
 """
 

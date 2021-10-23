@@ -41,6 +41,6 @@ Read HTML
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_read_html.py
-    :caption: :download:`Solution <assignments/pandas_read_html.py>`
+.. literalinclude:: assignments/pandas_readhtml_a.py
+    :caption: :download:`Solution <assignments/pandas_readhtml_a.py>`
     :end-before: # Solution

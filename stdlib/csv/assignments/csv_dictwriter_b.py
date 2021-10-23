@@ -31,6 +31,7 @@ Hint:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
 
     >>> result = open(FILE).read()
     >>> print(result)
@@ -42,7 +43,7 @@ Tests:
     "4.1","","","2.8","versicolor"
     "","1.8","","2.9","virginica"
     <BLANKLINE>
-    >>> from os import remove
+
     >>> remove(FILE)
 """
 import csv

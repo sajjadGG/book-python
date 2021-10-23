@@ -19,6 +19,7 @@ Hint:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
 
     >>> result = open(FILE).read()
     >>> print(result)
@@ -33,7 +34,7 @@ Tests:
     7.6,3.0,6.6,2.1,virginica
     4.9,3.0,1.4,0.2,setosa
     <BLANKLINE>
-    >>> from os import remove
+
     >>> remove(FILE)
 """
 

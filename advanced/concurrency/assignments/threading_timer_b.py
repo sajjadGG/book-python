@@ -28,6 +28,7 @@ Hint:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isclass, ismethod
+    >>> from os import remove
 
     >>> assert isclass(File)
     >>> assert hasattr(File, 'append')
@@ -49,7 +50,7 @@ Tests:
 
     >>> open('_temporary.txt').read()
     'One\\nTwo\\nThree\\nFour\\nFive\\nSix\\n'
-    >>> from os import remove
+
     >>> remove('_temporary.txt')
 """
 

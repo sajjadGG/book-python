@@ -28,6 +28,7 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
     >>> from dataclasses import dataclass
 
     >>> @dataclass
@@ -60,7 +61,7 @@ Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [Astronaut(firstname='Mark', lastname='Watney'),
      Cosmonaut(firstname='Jan', lastname='Twardowski')]
-    >>> from os import remove
+
     >>> remove('_temporary.txt')
 """
 

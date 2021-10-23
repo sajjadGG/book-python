@@ -16,12 +16,13 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [Astronaut(name='Jan Twardowski', missions=[Mission(year=1969, name='Apollo 18'), Mission(year=2024, name='Artemis 3')]),
      Astronaut(name='Mark Watney', missions=[Mission(year=2035, name='Ares 3')]),
      Astronaut(name='Melissa Lewis', missions=[])]
-    >>> from os import remove
+
     >>> remove(FILE)
 """
 

@@ -20,6 +20,7 @@ Import & Export
     import-export/read-str.rst
     import-export/read-html.rst
     import-export/read-clipboard.rst
+    import-export/read-python.rst
     import-export/read-sql.rst
     import-export/read-xml.rst
     import-export/to.rst

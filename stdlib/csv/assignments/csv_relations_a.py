@@ -10,7 +10,7 @@ English:
        b. `mission1_name`, `mission2_name`
     2. Note, that enumeration starts with one
     3. Sort `fieldnames`
-    3. Run doctests - all must succeed
+    4. Run doctests - all must succeed
 
 Polish:
     1. Przekonweruj `DATA` do formatu z jedną kolumną dla każdego atrybutu, np:

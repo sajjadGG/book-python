@@ -38,9 +38,11 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
 
     >>> header
     ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+
     >>> features  # doctest: +NORMALIZE_WHITESPACE
     [(5.4, 3.9, 1.3, 0.4),
      (5.9, 3.0, 5.1, 1.8),
@@ -48,9 +50,11 @@ Tests:
      (7.3, 2.9, 6.3, 1.8),
      (5.6, 2.5, 3.9, 1.1),
      (5.4, 3.9, 1.3, 0.4)]
+
     >>> labels
     ['setosa', 'virginica', 'versicolor', 'virginica', 'versicolor', 'setosa']
-    >>> from os import remove; remove(FILE)
+
+    >>> remove(FILE)
 """
 
 FILE = '_temporary.csv'

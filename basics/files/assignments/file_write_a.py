@@ -20,10 +20,12 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
 
     >>> open(FILE).read()
     'hello world\\n'
-    >>> from os import remove; remove(FILE)
+
+    >>> remove(FILE)
 """
 
 FILE = '_temporary.txt'

@@ -44,18 +44,18 @@ Export data
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_to_csv.py
-    :caption: :download:`Solution <assignments/pandas_to_csv.py>`
+.. literalinclude:: assignments/pandas_tocsv_a.py
+    :caption: :download:`Solution <assignments/pandas_tocsv_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_to_json.py
-    :caption: :download:`Solution <assignments/pandas_to_json.py>`
+.. literalinclude:: assignments/pandas_tojson_a.py
+    :caption: :download:`Solution <assignments/pandas_tojson_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_to_pickle.py
-    :caption: :download:`Solution <assignments/pandas_to_pickle.py>`
+.. literalinclude:: assignments/pandas_topickle_a.py
+    :caption: :download:`Solution <assignments/pandas_topickle_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_to_sql.py
-    :caption: :download:`Solution <assignments/pandas_to_sql.py>`
+.. literalinclude:: assignments/pandas_tosql_a.py
+    :caption: :download:`Solution <assignments/pandas_tosql_a.py>`
     :end-before: # Solution

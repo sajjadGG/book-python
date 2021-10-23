@@ -19,6 +19,7 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
 
     >>> assert type(result) is str
     >>> assert result == DATA
@@ -26,7 +27,7 @@ Tests:
     >>> result
     'hello'
 
-    >>> from os import remove; remove(FILE)
+    >>> remove(FILE)
 """
 
 FILE = '_temporary.txt'

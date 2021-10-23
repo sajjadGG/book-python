@@ -16,6 +16,7 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
 
     >>> with open(FILE, mode='rb') as file:
     ...     result = pickle.load(file)
@@ -25,7 +26,6 @@ Tests:
      Astronaut(name='Mark Watney', missions=[Mission(year=2035, name='Ares 3')]),
      Astronaut(name='Melissa Lewis', missions=[])]
 
-    >>> from os import remove
     >>> remove(FILE)
 """
 

@@ -18,10 +18,10 @@ Compressed
 
 Assignments
 -----------
-.. literalinclude:: assignments/pandas_read_json_iris.py
-    :caption: :download:`Solution <assignments/pandas_read_json_iris.py>`
+.. literalinclude:: assignments/pandas_readjson_a.py
+    :caption: :download:`Solution <assignments/pandas_readjson_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_read_json_openapi.py
-    :caption: :download:`Solution <assignments/pandas_read_json_openapi.py>`
+.. literalinclude:: assignments/pandas_readjson_b.py
+    :caption: :download:`Solution <assignments/pandas_readjson_b.py>`
     :end-before: # Solution

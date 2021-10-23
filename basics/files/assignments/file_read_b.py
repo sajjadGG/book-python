@@ -19,6 +19,7 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
 
     >>> assert type(result) is list
     >>> assert all(type(x) is str for x in result)
@@ -26,7 +27,7 @@ Tests:
     >>> result
     ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 
-    >>> from os import remove; remove(FILE)
+    >>> remove(FILE)
 """
 
 FILE = '_temporary.txt'

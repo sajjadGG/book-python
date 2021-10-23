@@ -33,6 +33,7 @@ Hint:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
 
     >>> result = open(FILE).read()
     >>> print(result)   # doctest: +NORMALIZE_WHITESPACE
@@ -42,7 +43,7 @@ Tests:
     "Mark","Watney"
     "Ivan","Ivanovic"
     "Melissa","Lewis"
-    >>> from os import remove
+
     >>> remove(FILE)
 """
 import csv

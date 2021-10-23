@@ -22,6 +22,8 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
+
     >>> result = open(FILE).read()
 
     >>> assert result is not Ellipsis, \
@@ -33,7 +35,6 @@ Tests:
     >>> assert len(result) > 0, \
     'Variable `result` should not be empty'
 
-    >>> from os import remove
     >>> remove(FILE)
 
     >>> print(result)  # doctest: +NORMALIZE_WHITESPACE

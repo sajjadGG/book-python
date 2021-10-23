@@ -25,6 +25,7 @@ Hint:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
 
     >>> type(result)
     <class 'list'>
@@ -35,7 +36,7 @@ Tests:
       'Petal Width': '0.2', 'Species': 'setosa'},
      {'Sepal Length': '5.7', 'Sepal Width': '2.8', 'Petal Length': '4.1',
       'Petal Width': '1.3', 'Species': 'versicolor'}]
-    >>> from os import remove
+
     >>> remove(FILE)
 """
 
