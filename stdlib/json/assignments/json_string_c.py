@@ -1,7 +1,7 @@
 """
-* Assignment: JSON ToString ListDict
+* Assignment: JSON String ListDict
 * Complexity: easy
-* Lines of code: 4 lines
+* Lines of code: 3 lines
 * Time: 8 min
 
 English:
@@ -23,8 +23,14 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert type(result) is str
-    >>> assert len(result) > 0
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
+    >>> assert len(result) > 0, \
+    'Variable `result` should not be empty'
 
     >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
     [{"Sepal length": 5.8, "Sepal width": 2.7, "Petal length": 5.1, "Petal width": 1.9, "Species": "virginica"},
@@ -35,6 +41,9 @@ Tests:
      {"Sepal length": 4.7, "Sepal width": 3.2, "Petal length": 1.3, "Petal width": 0.2, "Species": "setosa"}]
 """
 
+import json
+
+
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -44,9 +53,12 @@ DATA = [
     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
     (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
-# Solution
-import json
 
+# str: convert DATA to as list[dict] and convert to JSON format
+result = ...
+
+
+# Solution
 header, *data = DATA
 data = [dict(zip(header, row)) for row in data]
 

@@ -1,5 +1,5 @@
 """
-* Assignment: JSON ToString ListTuple
+* Assignment: JSON String ListTuple
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 8 min
@@ -19,9 +19,17 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert type(result) is list
-    >>> assert len(result) > 0
-    >>> assert all(type(row) is tuple for row in result)
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, should be list'
+
+    >>> assert len(result) > 0, \
+    'Variable `result` should not be empty'
+
+    >>> assert all(type(row) is tuple for row in result), \
+    'Variable `result` should be a list[tuple]'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [(5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -43,7 +51,8 @@ DATA = """[{"Sepal length": 5.8, "Sepal width": 2.7, "Petal length": 5.1, "Petal
      {"Sepal length": 4.7, "Sepal width": 3.2, "Petal length": 1.3, "Petal width": 0.2, "Species": "setosa"}]"""
 
 
-result: list = []
+# list[tuple]: load DATA from JSON and convert to list[tuple]
+result = ...
 
 # Solution
 result = [tuple(row.values()) for row in json.loads(DATA)]

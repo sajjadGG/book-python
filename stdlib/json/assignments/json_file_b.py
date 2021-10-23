@@ -1,5 +1,5 @@
 """
-* Assignment: JSON ToFile Load
+* Assignment: JSON File Load
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 8 min
@@ -19,9 +19,17 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert type(result) is list
-    >>> assert len(result) > 0
-    >>> assert all(type(row) is tuple for row in result)
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, should be list'
+
+    >>> assert len(result) > 0, \
+    'Variable `result` should not be empty'
+
+    >>> assert all(type(row) is tuple for row in result), \
+    'Variable `result` should be a list[tuple]'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [(5.8, 2.7, 5.1, 1.9, 'virginica'),

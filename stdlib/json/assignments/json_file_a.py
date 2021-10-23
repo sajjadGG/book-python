@@ -1,5 +1,5 @@
 """
-* Assignment: JSON ToFile Dump
+* Assignment: JSON File Dump
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 8 min
@@ -24,8 +24,14 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> result = open(FILE).read()
 
-    >>> assert type(result) is str
-    >>> assert len(result) > 0
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
+    >>> assert len(result) > 0, \
+    'Variable `result` should not be empty'
 
     >>> from os import remove
     >>> remove(FILE)

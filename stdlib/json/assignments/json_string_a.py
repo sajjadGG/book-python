@@ -15,8 +15,14 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert type(result) is str
-    >>> assert len(result) > 0
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
+    >>> assert len(result) > 0, \
+    'Variable `result` should not be empty'
 
     >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
     [["Sepal length", "Sepal width", "Petal length", "Petal width", "Species"],
