@@ -9,7 +9,7 @@ English:
     2. Use provided column names in `COLUMNS`
     3. Read labels from the first row
     4. Replace data in `label` column with values extracted above
-    5. Define `result: pd.DataFrame` with 20 first rows
+    5. Define `result: pd.DataFrame` with 25 first rows
     6. Run doctests - all must succeed
 
 Polish:
@@ -17,7 +17,7 @@ Polish:
     2. Użyj podanych w `COLUMNS` nazw kolumn
     3. Wczytaj nazwy labeli z pierwszego wiersza
     4. Podmień dane w kolumnie `label` na wartości wyciągnięte powyżej
-    5. Zdefiniuj `result: pd.DataFrame` z 20stoma pierwszymi wierszami
+    5. Zdefiniuj `result: pd.DataFrame` z 25 pierwszymi wierszami
     6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
@@ -30,13 +30,22 @@ Tests:
 
     >>> type(result) is pd.DataFrame
     True
-    >>> len(result) == 20
+    >>> len(result) == 25
     True
-    >>> result.loc[[0,9,19], ['mean radius', 'mean texture', 'label']]
-        mean radius  mean texture      label
-    0         17.99         10.38  malignant
-    9         12.46         24.04  malignant
-    19        13.54         14.36     benign
+
+    >>> result.loc[[0,1,2,3,4,5], ['mean radius', 'mean texture', 'label']]
+       mean radius  mean texture      label
+    0        17.99         10.38  malignant
+    1        20.57         17.77  malignant
+    2        19.69         21.25  malignant
+    3        11.42         20.38  malignant
+    4        20.29         14.34  malignant
+    5        12.45         15.70  malignant
+
+    >>> result['label'].value_counts()
+    malignant    22
+    benign        3
+    Name: label, dtype: int64
 """
 
 import pandas as pd
@@ -65,4 +74,4 @@ cancer_types = dict(enumerate(header[2:]))
 
 df = pd.read_csv(DATA, skiprows=1, names=COLUMNS)
 df['label'].replace(to_replace=cancer_types, inplace=True)
-result = df.head(20)
+result = df.head(25)
