@@ -1,0 +1,73 @@
+"""
+* Assignment: Pandas Read PythonObj
+* Complexity: easy
+* Lines of code: 7 lines
+* Time: 13 min
+
+English:
+    1. Read data from `DATA` as `result: pd.DataFrame`
+    2. Run doctests - all must succeed
+
+Polish:
+    1. Wczytaj dane z DATA jako result: pd.DataFrame
+    2. Uruchom doctesty - wszystkie muszą się powieść
+
+Tests:
+    >>> import sys; sys.tracebacklimit = 0
+
+    >>> type(result) is pd.DataFrame
+    True
+    >>> len(result) > 0
+    True
+    >>> result  # doctest: +NORMALIZE_WHITESPACE
+      firstname  lastname                 missions
+    0      Mark    Watney              2035,Ares 3
+    1   Melissa     Lewis  2030,Ares 1;2035,Ares 3
+    2      Rick  Martinez
+"""
+
+import pandas as pd
+
+
+class Astronaut:
+    def __init__(self, firstname, lastname, missions=None):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.missions = list(missions) if missions else []
+
+
+class Mission:
+    def __init__(self, year, name):
+        self.year = year
+        self.name = name
+
+
+DATA = [
+    Astronaut('Mark', 'Watney', missions=[
+        Mission(2035, 'Ares 3')]),
+
+    Astronaut('Melissa', 'Lewis', missions=[
+        Mission(2030, 'Ares 1'),
+        Mission(2035, 'Ares 3')]),
+
+    Astronaut('Rick', 'Martinez', missions=[]),
+]
+
+
+# list[dict]: convert DATA to list[dict], then flatten
+data = ...
+
+# pd.DataFrame: DATA as pd.DataFrame
+result = ...
+
+# Solution
+data = []
+
+for astronaut in DATA:
+    astronaut = vars(astronaut)
+    missions = [','.join(str(x) for x in vars(mission).values())
+                for mission in astronaut.pop('missions')]
+    astronaut['missions'] = ';'.join(missions)
+    data.append(astronaut)
+
+result = pd.DataFrame(data)
