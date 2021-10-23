@@ -1,7 +1,7 @@
 """
-* Assignment: JSON Read/Write Load
+* Assignment: JSON ToFile Load
 * Complexity: easy
-* Lines of code: 4 lines
+* Lines of code: 3 lines
 * Time: 8 min
 
 English:
@@ -19,13 +19,10 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'list'>
-    >>> len(result) > 0
-    True
-    >>> all(type(row) is tuple
-    ...     for row in result)
-    True
+    >>> assert type(result) is list
+    >>> assert len(result) > 0
+    >>> assert all(type(row) is tuple for row in result)
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [(5.8, 2.7, 5.1, 1.9, 'virginica'),
      (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -36,6 +33,7 @@ Tests:
      (7.0, 3.2, 4.7, 1.4, 'versicolor'),
      (7.6, 3.0, 6.6, 2.1, 'virginica'),
      (4.9, 3.0, 1.4, 0.2, 'setosa')]
+
      >>> from os import remove
      >>> remove(FILE)
 """
@@ -63,5 +61,4 @@ import json
 with open(FILE) as file:
     data = json.load(file)
 
-result = [tuple(row.values())
-          for row in data]
+result = [tuple(row.values()) for row in data]
