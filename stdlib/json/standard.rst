@@ -2,8 +2,8 @@ JSON Standard
 =============
 
 
-JSON Syntax
------------
+Rationale
+---------
 * JavaScript Object Notation
 * JSON format is similar to ``dict`` notation in Python
 * Differences:
@@ -15,14 +15,29 @@ JSON Syntax
     * In JSON there is not ``tuple``
     * ``camelCase`` is convention, although ``snake_case`` is also valid
 
-Example JSON file:
+Example 1:
+
+.. code-block:: python
+
+    {'firstname': 'Mark', 'lastname': 'Watney'}
 
 .. code-block:: json
 
-    [{"sepalLength": 5.1, "sepalWidth": 3.5, "petalLength": 1.4, "petalWidth": 0.2, "species": "setosa"},
-     {"sepalLength": 4.9, "sepalWidth": 3.0, "petalLength": 1.4, "petalWidth": 0.2, "species": "setosa"},
-     {"sepalLength": false, "sepalWidth": true, "petalLength": null, "petalWidth": 0.2, "species": null}]
+    {"firstname": "Mark", "lastname": "Watney"}
 
+Example 2:
+
+.. code-block:: python
+
+    {'name': 'Mark Watney', 'age': 42, 'is_astronaut': True, 'died': None}
+
+.. code-block:: json
+
+    {"name": "Mark Watney", "age": 42, "is_astronaut": true, "died": null}
+
+
+Compare
+-------
 JSON or Python ``list[dict]``?:
 
 .. code-block:: python
@@ -56,29 +71,6 @@ JSON or Python ``list[dict]``?:
               {"name": "Mark Watney", "born": "1994-10-12"}]}
 
 JSON or Python ``list[dict]``?:
-
-.. code-block:: json
-
-    [{"firstname": "Jan", "lastname": "Twardowski", "addresses": [
-        {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Małopolskie", "country": "Poland"}]},
-
-     {"firstname": "José", "lastname": "Jiménez", "addresses": [
-        {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058, "region": "Texas", "country": "USA"},
-        {"street": "", "city": "Kennedy Space Center", "post_code": 32899, "region": "Florida", "country": "USA"}]},
-
-     {"firstname": "Mark", "lastname": "Watney", "addresses": [
-        {"street": "4800 Oak Grove Dr", "city": "Pasadena", "post_code": 91109, "region": "California", "country": "USA"},
-        {"street": "2825 E Ave P", "city": "Palmdale", "post_code": 93550, "region": "California", "country": "USA"}]},
-
-     {"firstname": "Иван", "lastname": "Иванович", "addresses": [
-        {"street": "", "city": "Космодро́м Байкону́р", "post_code": "", "region": "Кызылординская область", "country": "Қазақстан"},
-        {"street": "", "city": "Звёздный городо́к", "post_code": 141160, "region": "Московская область", "country": "Россия"}]},
-
-     {"firstname": "Melissa", "lastname": "Lewis", "addresses": []},
-
-     {"firstname": "Alex", "lastname": "Vogel", "addresses": [
-        {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}]
-
 
 
 Pretty Printing JSON
@@ -123,4 +115,29 @@ Pretty Printing JSON:
 
     $ echo '{"sepalLength":5.1,"sepalWidth":3.5,}' | python -m json.tool
     Expecting property name enclosed in double quotes: line 1 column 37 (char 36)
+
+
+Use Case
+--------
+.. code-block:: json
+
+    [{"firstname": "Jan", "lastname": "Twardowski", "addresses": [
+        {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Małopolskie", "country": "Poland"}]},
+
+     {"firstname": "José", "lastname": "Jiménez", "addresses": [
+        {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058, "region": "Texas", "country": "USA"},
+        {"street": "", "city": "Kennedy Space Center", "post_code": 32899, "region": "Florida", "country": "USA"}]},
+
+     {"firstname": "Mark", "lastname": "Watney", "addresses": [
+        {"street": "4800 Oak Grove Dr", "city": "Pasadena", "post_code": 91109, "region": "California", "country": "USA"},
+        {"street": "2825 E Ave P", "city": "Palmdale", "post_code": 93550, "region": "California", "country": "USA"}]},
+
+     {"firstname": "Иван", "lastname": "Иванович", "addresses": [
+        {"street": "", "city": "Космодро́м Байкону́р", "post_code": "", "region": "Кызылординская область", "country": "Қазақстан"},
+        {"street": "", "city": "Звёздный городо́к", "post_code": 141160, "region": "Московская область", "country": "Россия"}]},
+
+     {"firstname": "Melissa", "lastname": "Lewis", "addresses": []},
+
+     {"firstname": "Alex", "lastname": "Vogel", "addresses": [
+        {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}]
 

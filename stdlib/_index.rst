@@ -76,8 +76,8 @@ JSON
     :caption: Serialization
 
     json/standard.rst
-    json/to-string.rst
-    json/to-file.rst
+    json/string.rst
+    json/file.rst
     json/encoder.rst
     json/decoder.rst
     json/object.rst

@@ -1,5 +1,5 @@
-JSON To String
-==============
+JSON String
+===========
 
 
 Mapping
@@ -131,4 +131,12 @@ Assignments
 
 .. literalinclude:: assignments/json_tostring_b.py
     :caption: :download:`Solution <assignments/json_tostring_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/json_tostring_c.py
+    :caption: :download:`Solution <assignments/json_tostring_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/json_tostring_d.py
+    :caption: :download:`Solution <assignments/json_tostring_d.py>`
     :end-before: # Solution

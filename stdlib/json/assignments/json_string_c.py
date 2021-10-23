@@ -1,5 +1,5 @@
 """
-* Assignment: JSON ToString Dump
+* Assignment: JSON ToString ListDict
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 8 min
