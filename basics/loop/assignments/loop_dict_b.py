@@ -51,6 +51,6 @@ result = ...
 header, *data = DATA
 result = []
 
-for values in data:
-    pair = zip(header, values)
+for row in data:
+    pair = zip(header, row)
     result.append(dict(pair))
