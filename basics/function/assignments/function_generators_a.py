@@ -56,7 +56,7 @@ def cube(x):
 
 
 # float: generator expr with numbers from 1 to 33 (inclusive) divisible by 3
-#        filter out even numbers; cube result; calculate mean
+#        filter out even numbers (leave even); cube result; calculate mean
 result: float
 
 

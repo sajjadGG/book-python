@@ -146,6 +146,24 @@ Comprehensions
     :maxdepth: 1
     :caption: Comprehensions
 
+    comprehensions/about.rst
+    comprehensions/list-comprehension.rst
+    comprehensions/set-comprehension.rst
+    comprehensions/dict-comprehension.rst
+    comprehensions/map.rst
+    comprehensions/filter.rst
+    comprehensions/generator-expression.rst
+    comprehensions/nested.rst
+    comprehensions/all-any.rst
+    comprehensions/conditional-expression.rst
+
+
+Comprehensions
+**************
+.. toctree::
+    :maxdepth: 1
+    :caption: Comprehensions
+
     comprehensions/index.rst
 
 
