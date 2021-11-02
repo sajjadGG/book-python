@@ -15,59 +15,30 @@ Rationale
 >>> _ = {x:x for x in range(0,5)}        # dict comprehension
 
 
-Comprehensions and Generator Expression
----------------------------------------
-* Comprehensions executes instantly
-* Generator expression executes lazily
-
-List Comprehension:
-
->>> list(x for x in range(0,5))
-[0, 1, 2, 3, 4]
->>>
->>> [x for x in range(0,5)]
-[0, 1, 2, 3, 4]
-
-Set Comprehension:
-
->>> set(x for x in range(0,5))
-{0, 1, 2, 3, 4}
->>>
->>> {x for x in range(0,5)}
-{0, 1, 2, 3, 4}
-
-Dict Comprehension:
-
->>> dict((x,x) for x in range(0,5))
-{0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
->>>
->>> {x:x for x in range(0,5)}
-{0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
-
-Tuple Comprehension:
-
->>> tuple(x for x in range(0,5))
-(0, 1, 2, 3, 4)
-
-Generator Expression:
-
+Syntax
+------
 >>> (x for x in range(0,5))  # doctest: +ELLIPSIS
 <generator object <genexpr> at 0x...>
 
 
-
-Comprehensions or Generator Expression
---------------------------------------
-Comprehensions vs Generator Expression:
+Lazy vs Greedy
+--------------
+* Comprehensions executes instantly
+* Generator expression executes lazily
 
 >>> data = [x for x in range(0,10)]
+>>>
 >>> print(data)
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 >>> data = (x for x in range(0,10))
+>>>
 >>> print(data)  # doctest: +ELLIPSIS
 <generator object <genexpr> at 0x...>
 
+
+Comparison
+----------
 Comprehension:
 
 >>> data = [x for x in range(0,10)]
@@ -111,7 +82,6 @@ Generator Expressions:
 >>>
 >>> print(list(data))
 []
-
 
 
 Assignments

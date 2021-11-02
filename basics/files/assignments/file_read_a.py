@@ -6,16 +6,12 @@
 * Time: 3 min
 
 English:
-    1. Write `DATA` to file `FILE`
-    2. Read `FILE` to `result: str`
-    3. Print `result`
-    4. Run doctests - all must succeed
+    1. Read `FILE` to `result: str`
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Zapisz `DATA` do pliku `FILE`
-    2. Wczytaj `FILE` do `result: str`
-    3. Wypisz `result`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    1. Wczytaj `FILE` do `result: str`
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

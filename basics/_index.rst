@@ -159,15 +159,6 @@ Comprehensions
     comprehensions/conditional-expression.rst
 
 
-Comprehensions
-**************
-.. toctree::
-    :maxdepth: 1
-    :caption: Comprehensions
-
-    comprehensions/index.rst
-
-
 Files
 *****
 .. toctree::

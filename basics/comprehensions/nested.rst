@@ -76,10 +76,8 @@ Traceback (most recent call last):
 NameError: name 'titles' is not defined
 
 
-Indent and Whitespaces
-----------------------
-
-
+Code Readability
+----------------
 >>> DATA = [{'a':1, 'b':2, 'c': 3},
 ...         {'a':1, 'b':2, 'c': 3},
 ...         {'a':1, 'b':2, 'c': 3}]
@@ -106,7 +104,6 @@ Indent and Whitespaces
 ...           for i, address in enumerate(astronaut.pop('addresses'), start=1)
 ...           if (columns := [f'{key}{i}' for key in address.keys()])
 ...           and (addresses := zip(columns, address.values()))]
-
 
 
 Assignments

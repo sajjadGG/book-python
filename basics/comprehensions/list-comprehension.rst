@@ -98,3 +98,7 @@ Assignments
 .. literalinclude:: assignments/comprehension_list_a.py
     :caption: :download:`Solution <assignments/comprehension_list_a.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/comprehension_list_b.py
+    :caption: :download:`Solution <assignments/comprehension_list_b.py>`
+    :end-before: # Solution
