@@ -1,5 +1,5 @@
 """
-* Assignment: Loop Comprehension ZeroPadded
+* Assignment: Comprehension Dict ZeroPadded
 * Required: yes
 * Complexity: easy
 * Lines of code: 1 lines

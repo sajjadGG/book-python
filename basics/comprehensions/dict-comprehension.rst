@@ -29,24 +29,31 @@ Syntax
 {10: 10, 11: 11, 12: 12, 13: 13, 14: 14}
 
 
-Use Case - Reverse Dict
------------------------
+Reverse Dict
+------------
 Reversing ``dict`` keys with values:
 
 >>> DATA = {'a': 1, 'b': 2}
 >>>
+>>>
 >>> list(DATA.items())  # doctest: +NORMALIZE_WHITESPACE
 [('a', 1),
  ('b', 2)]
+>>>
 >>> [(k,v) for k,v in DATA.items()]  # doctest: +NORMALIZE_WHITESPACE
 [('a', 1),
  ('b', 2)]
+>>>
 >>> [(v,k) for k,v in DATA.items()]  # doctest: +NORMALIZE_WHITESPACE
 [(1, 'a'),
  (2, 'b')]
+
+>>> DATA = {'a': 1, 'b': 2}
+>>>
 >>>
 >>> {v:k for k,v in DATA.items()}
 {1: 'a', 2: 'b'}
+
 
 Value collision while reversing ``dict``:
 
@@ -64,4 +71,8 @@ Assignments
 
 .. literalinclude:: assignments/comprehension_dict_b.py
     :caption: :download:`Solution <assignments/comprehension_dict_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/comprehension_dict_c.py
+    :caption: :download:`Solution <assignments/comprehension_dict_c.py>`
     :end-before: # Solution

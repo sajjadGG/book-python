@@ -35,9 +35,10 @@ A3 B3 C3
 
 List of Pairs
 -------------
->>> DATA = [('commander', 'Melissa Lewis'),
-...         ('botanist', 'Mark Watney'),
-...         ('chemist', 'Alex Vogel')]
+>>> DATA = [
+...     ('commander', 'Melissa Lewis'),
+...     ('botanist', 'Mark Watney'),
+...     ('chemist', 'Alex Vogel')]
 >>>
 >>> for pair in DATA:
 ...     role = pair[0]

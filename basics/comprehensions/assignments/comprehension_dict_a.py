@@ -1,5 +1,5 @@
 """
-* Assignment: Loop Comprehension Months
+* Assignment: Comprehension Dict Months
 * Required: yes
 * Complexity: easy
 * Lines of code: 1 lines

@@ -2,6 +2,19 @@ Generator Expression
 ====================
 
 
+Rationale
+---------
+>>> _ = list(x for x in range(0,5))      # list comprehension
+>>> _ = tuple(x for x in range(0,5))     # tuple comprehension
+>>> _ = set(x for x in range(0,5))       # set comprehension
+>>> _ = dict((x,x) for x in range(0,5))  # dict comprehension
+
+>>> _ = [x for x in range(0,5)]          # list comprehension
+>>> _ = (x for x in range(0,5))          # generator expression
+>>> _ = {x for x in range(0,5)}          # set comprehension
+>>> _ = {x:x for x in range(0,5)}        # dict comprehension
+
+
 Comprehensions and Generator Expression
 ---------------------------------------
 * Comprehensions executes instantly
@@ -40,17 +53,6 @@ Generator Expression:
 
 >>> (x for x in range(0,5))  # doctest: +ELLIPSIS
 <generator object <genexpr> at 0x...>
-
-
->>> _ = list(x for x in range(0,5))      # list comprehension
->>> _ = tuple(x for x in range(0,5))     # tuple comprehension
->>> _ = set(x for x in range(0,5))       # set comprehension
->>> _ = dict((x,x) for x in range(0,5))  # dict comprehension
->>>
->>> _ = [x for x in range(0,5)]          # list comprehension
->>> _ = (x for x in range(0,5))          # generator expression
->>> _ = {x for x in range(0,5)}          # set comprehension
->>> _ = {x:x for x in range(0,5)}        # dict comprehension
 
 
 
@@ -110,21 +112,6 @@ Generator Expressions:
 >>> print(list(data))
 []
 
-
-Tuple Comprehension?!
----------------------
-* Tuple Comprehension vs. Generator Expression
-* More information in `Generators`
-
-Tuple Comprehension:
-
->>> tuple(x+10 for x in range(0,5))
-(10, 11, 12, 13, 14)
-
-Generator Expression:
-
->>> (x+10 for x in range(0,5))  # doctest: +ELLIPSIS
-<generator object <genexpr> at 0x...>
 
 
 Assignments

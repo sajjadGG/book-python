@@ -1,5 +1,5 @@
 """
-* Assignment: Loop Comprehension Translate
+* Assignment: Comprehension List Translate
 * Required: yes
 * Complexity: easy
 * Lines of code: 1 lines

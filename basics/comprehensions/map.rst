@@ -22,14 +22,15 @@ Applying function to each output element:
 
 Using ``list`` comprehension for filtering:
 
->>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
-...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
-...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
-...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-...         (4.7, 3.2, 1.3, 0.2, 'setosa'),
-...         (7.0, 3.2, 4.7, 1.4, 'versicolor')]
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...     (7.0, 3.2, 4.7, 1.4, 'versicolor')]
 >>>
 >>> [tuple(features) for *features,label in DATA if label == 'setosa']  # doctest: +NORMALIZE_WHITESPACE
 [(5.1, 3.5, 1.4, 0.2),
@@ -39,6 +40,45 @@ Using ``list`` comprehension for filtering:
 [(5.1, 3.5, 1.4, 0.2),
  (4.7, 3.2, 1.3, 0.2)]
 
+
+Use Case - Join Numbers
+-----------------------
+>>> DATA = [1, 2, 3]
+>>>
+>>>
+>>> ','.join(DATA)
+Traceback (most recent call last):
+TypeError: sequence item 0: expected str instance, int found
+
+>>> DATA = [1, 2, 3]
+>>>
+>>>
+>>> ','.join(str(x) for x in DATA)
+'1,2,3'
+
+
+Use Case - CSV
+--------------
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...     (7.0, 3.2, 4.7, 1.4, 'versicolor')]
+>>>
+>>>
+>>> data = [','.join(str(x) for x in row) for row in DATA]  # doctest: +NORMALIZE_WHITESPACE
+['Sepal length,Sepal width,Petal length,Petal width,Species',
+ '5.8,2.7,5.1,1.9,virginica',
+ '5.1,3.5,1.4,0.2,setosa',
+ '5.7,2.8,4.1,1.3,versicolor',
+ '6.3,2.9,5.6,1.8,virginica',
+ '6.4,3.2,4.5,1.5,versicolor',
+ '4.7,3.2,1.3,0.2,setosa',
+ '7.0,3.2,4.7,1.4,versicolor']
 
 Use Case - Power
 ----------------
@@ -128,14 +168,15 @@ More information in `Assignment Expression`
 
 Using ``list`` comprehension for filtering with more complex expression:
 
->>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
-...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
-...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
-...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-...         (4.7, 3.2, 1.3, 0.2, 'setosa'),
-...         (7.0, 3.2, 4.7, 1.4, 'versicolor')]
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...     (7.0, 3.2, 4.7, 1.4, 'versicolor')]
 >>>
 >>>
 >>> def is_setosa(species):

@@ -150,6 +150,7 @@ Comprehensions
     comprehensions/list-comprehension.rst
     comprehensions/set-comprehension.rst
     comprehensions/dict-comprehension.rst
+    comprehensions/tuple-comprehension.rst
     comprehensions/map.rst
     comprehensions/filter.rst
     comprehensions/generator-expression.rst

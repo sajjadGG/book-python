@@ -5,7 +5,7 @@ Mapping Generate
 Pair
 ----
 >>> pair = [
-...    ('commander', 'Melissa Lewis')]
+...     ('commander', 'Melissa Lewis')]
 >>>
 >>> dict(pair)
 {'commander': 'Melissa Lewis'}
@@ -14,9 +14,9 @@ Pair
 List of Pairs
 -------------
 >>> pairs = [
-...    ('commander', 'Melissa Lewis'),
-...    ('botanist', 'Mark Watney'),
-...    ('chemist', 'Rick Martinez')]
+...     ('commander', 'Melissa Lewis'),
+...     ('botanist', 'Mark Watney'),
+...     ('chemist', 'Rick Martinez')]
 >>>
 >>> dict(pairs)  # doctest: +NORMALIZE_WHITESPACE
 {'commander': 'Melissa Lewis',
