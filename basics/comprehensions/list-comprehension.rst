@@ -50,22 +50,6 @@ Use Case - Sum
 
 Assignments
 -----------
-.. literalinclude:: assignments/loop_comprehension_a.py
-    :caption: :download:`Solution <assignments/loop_comprehension_a.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/loop_comprehension_b.py
-    :caption: :download:`Solution <assignments/loop_comprehension_b.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/loop_comprehension_c.py
-    :caption: :download:`Solution <assignments/loop_comprehension_c.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/loop_comprehension_d.py
-    :caption: :download:`Solution <assignments/loop_comprehension_d.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/loop_comprehension_e.py
-    :caption: :download:`Solution <assignments/loop_comprehension_e.py>`
+.. literalinclude:: assignments/comprehension_list_a.py
+    :caption: :download:`Solution <assignments/comprehension_list_a.py>`
     :end-before: # Solution
