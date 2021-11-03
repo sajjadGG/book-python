@@ -6,7 +6,7 @@
 * Time: 8 min
 
 English:
-    1. Model the data using classes Astronaut and SpaceAgency
+    1. Model the data using classes Astronaut and SpaceAgency:
        a. Watney, USA, 1969-07-21
        b. NASA, USA, 1958-07-29
     2. Create instances (watney, nasa) filling it with data
@@ -17,7 +17,7 @@ English:
     7. Run doctests - all must succeed
 
 Polish:
-    1. Zamodeluj dane za pomocą klas Astronaut i SpaceAgency
+    1. Zamodeluj dane za pomocą klas Astronaut i SpaceAgency:
        a. Watney, USA, 1969-07-21
        b. NASA, USA, 1958-07-29
     2. Stwórz instancje (watney, nasa) wypełniając je danymi

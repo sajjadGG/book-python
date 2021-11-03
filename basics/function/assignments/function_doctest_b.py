@@ -27,11 +27,11 @@ Tests:
     1. Valid arguments:
         a. `int`
         b. `float`
-    2. Invalid argument -> expect `TypeError`
-        a. `bool`
-        b. `str`
-        c. `list[int]`
-        d. `list[float]`
+    2. Invalid argument -> expect `TypeError`:
+        a. `str`
+        b. `list[int]`
+        c. `list[float]`
+        d. `bool`
         e. any other type
 """
 

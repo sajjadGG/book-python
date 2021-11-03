@@ -67,6 +67,47 @@ Syntax
 MyValue
 
 
+What are attributes?
+--------------------
+Identifiers and scalars creates values:
+
+>>> point1_x = 1
+>>> point1_y = 2
+>>> point1_z = 3
+>>>
+>>> point2_x = 4
+>>> point2_y = 5
+>>> point2_z = 6
+
+Values with relations creates data:
+
+>>> point1 = (1, 2, 3)
+>>> point2 = (4, 5, 6)
+
+Data with meaning creates information:
+
+>>> point1 = {'x': 1, 'y': 2, 'z': 3}
+>>> point2 = {'x': 4, 'y': 5, 'z': 6}
+
+Information with context and relations creates class:
+
+>>> class Point:
+...     x: int
+...     y: int
+...     z: int
+>>>
+>>>
+>>> point1 = Point()
+>>> point1.x = 1
+>>> point1.y = 2
+>>> point1.z = 3
+>>>
+>>> point2 = Point()
+>>> point2.x = 4
+>>> point2.y = 5
+>>> point2.z = 6
+
+
 Dynamic Attributes
 ------------------
 Dynamic attributes:
@@ -115,16 +156,13 @@ AttributeError: 'Astronaut' object has no attribute 'name'
 
 Namespace
 ---------
->>> point_x = 1
->>> point_y = 2
->>> point_z = 3
->>>
->>> print(point_x)
-1
->>> print(point_y)
-2
->>> print(point_z)
-3
+Unrelated values:
+
+>>> x = 1
+>>> y = 2
+>>> z = 3
+
+Class creates space, in which names has meaning:
 
 >>> class Point:
 ...     x: int
@@ -136,13 +174,6 @@ Namespace
 >>> point.x = 1
 >>> point.y = 2
 >>> point.z = 3
->>>
->>> print(point.x)
-1
->>> print(point.y)
-2
->>> print(point.z)
-3
 
 
 Different Types
@@ -164,6 +195,7 @@ setosa
 10.2
 
 >>> from typing import Union
+>>>
 >>>
 >>> class Astronaut:
 ...     age: Union[float,int]

@@ -11,7 +11,7 @@ English:
     3. Create empty `result: dict[int, int]`:
         a. key - digit
         b. value - number of occurrences
-    4. Iterating over numbers check if number is already in `result`
+    4. Iterating over numbers check if number is already in `result`:
         a. If first occurrence, then add it to `result` with value 1
         b. If exists, then increment the value by 1
     5. Run doctests - all must succeed
@@ -22,7 +22,7 @@ Polish:
     3. Stwórz pusty `result: dict[int, int]`:
         a. klucz - cyfra
         b. wartość - liczba wystąpień
-    4. Iterując po cyfrach sprawdź czy cyfra znajduje się już w `result`
+    4. Iterując po cyfrach sprawdź czy cyfra znajduje się już w `result`:
         a. Jeżeli pierwsze wystąpienie, to dodaj ją do `result` z wartością 1
         b. Jeżeli istnieje, to zwiększ w wartość o 1
     5. Uruchom doctesty - wszystkie muszą się powieść

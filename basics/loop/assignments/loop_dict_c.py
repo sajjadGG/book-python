@@ -14,8 +14,8 @@ English:
     2. Separate header from data
     3. To encode and decode `labels` (species) we need:
         a. Define `label_encoder: dict[int, str]`
-        a. key - id (incremented integer value)
-        b. value - species name
+        b. key - id (incremented integer value)
+        c. value - species name
     4. `label_encoder` must be generated from `DATA`
     5. For each row append to `features`, `labels` and `label_encoder`
     6. Run doctests - all must succeed
@@ -29,8 +29,8 @@ Polish:
     2. Odseparuj nagłówek od danych
     3. Aby móc zakodować i odkodować `labels` (gatunki) potrzebujesz:
         a. Zdefiniuj `label_encoder: dict[int, str]`:
-        a. key - identyfikator (kolejna liczba rzeczywista)
-        b. value - nazwa gatunku
+        b. key - identyfikator (kolejna liczba rzeczywista)
+        c. value - nazwa gatunku
     4. `label_encoder` musi być wygenerowany z `DATA`
     5. Dla każdego wiersza dodawaj do `feature`, `labels` i `label_encoder`
     6. Uruchom doctesty - wszystkie muszą się powieść

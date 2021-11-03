@@ -9,9 +9,9 @@ English:
     1. Validate value passed to a `result` function
     2. If `value` is:
         a. other type than `int` or `float` raise `TypeError`
-        a. less than zero, raise `ValueError`
-        a. below `ADULT`, raise `PermissionError`
-    3. Non-functional requirements
+        b. less than zero, raise `ValueError`
+        c. below `ADULT`, raise `PermissionError`
+    3. Non-functional requirements:
         a. Write solution inside `result` function
         b. Mind the indentation level
     4. Run doctests - all must succeed
@@ -19,10 +19,10 @@ English:
 Polish:
     1. Sprawdź poprawność wartości przekazanej do funckji `result`
     2. Jeżeli `age` jest:
-        b. innego typu niż `int` lub `float`, podnieś wyjątek `TypeError`
+        a. innego typu niż `int` lub `float`, podnieś wyjątek `TypeError`
         b. mniejsze niż zero, podnieś wyjątek `ValueError`
         c. mniejsze niż `ADULT`, podnieś wyjątek `PermissionError`
-    3. Wymagania niefunkcjonalne
+    3. Wymagania niefunkcjonalne:
         a. Rozwiązanie zapisz wewnątrz funkcji `result`
         b. Zwróć uwagę na poziom wcięć
     4. Uruchom doctesty - wszystkie muszą się powieść

@@ -6,17 +6,17 @@
 * Time: 3 min
 
 English:
-    1. Validate value passed to a `result` function
+    1. Validate value passed to a `result` function:
         a. If `value` is less than zero, raise `ValueError`
-    2. Non-functional requirements
+    2. Non-functional requirements:
         a. Write solution inside `result` function
         b. Mind the indentation level
     3. Run doctests - all must succeed
 
 Polish:
-    1. Sprawdź poprawność wartości przekazanej do funckji `result`
+    1. Sprawdź poprawność wartości przekazanej do funckji `result`:
         a. Jeżeli `value` jest mniejsze niż zero, podnieś wyjątek `ValueError`
-    2. Wymagania niefunkcjonalne
+    2. Wymagania niefunkcjonalne:
         a. Rozwiązanie zapisz wewnątrz funkcji `result`
         b. Zwróć uwagę na poziom wcięć
     3. Uruchom doctesty - wszystkie muszą się powieść
