@@ -26,7 +26,7 @@ Use Case - Unique
 ...     (7.0, 3.2, 4.7, 1.4, 'versicolor')]
 >>>
 >>>
->>> result = [row[-1] for row in DATA[1:]]
+>>> result = {row[-1] for row in DATA[1:]}
 >>>
 >>> sorted(result)
 ['setosa', 'versicolor', 'virginica']
