@@ -1,5 +1,5 @@
 """
-* Assignment: About Syntax Newline
+* Assignment: Syntax Print Newline
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 2 min

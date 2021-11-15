@@ -1,5 +1,5 @@
 """
-* Assignment: About Syntax Interpolation
+* Assignment: Syntax Print Interpolation
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 2 min
