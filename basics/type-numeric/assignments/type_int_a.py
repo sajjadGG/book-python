@@ -48,16 +48,23 @@ Tests:
     >>> assert type(mars_min) is int, \
     'Variable `mars_avg` has invalid type, should be int'
 
-    >>> mars_max
-    293
-    >>> mars_min
-    120
-    >>> mars_avg
-    210
+    >>> assert mars_max == 293, \
+    'Invalid value for `mars_max`, should be 293. Check you calculation'
+
+    >>> assert mars_min == 120, \
+    'Invalid value for `mars_min`, should be 120. Check you calculation'
+
+    >>> assert mars_avg == 210, \
+    'Invalid value for `mars_avg`, should be 210. Check you calculation'
+
 """
 
 Celsius = 1
 Kelvin = 273
+
+MARS_MAX = 20 * Celsius
+MARS_MIN = -153 * Celsius
+MARS_AVG = -63 * Celsius
 
 # int: 20 Celsius in Kelvin
 mars_max = ...
@@ -69,6 +76,6 @@ mars_min = ...
 mars_avg = ...
 
 # Solution
-mars_max = 20*Celsius + Kelvin
-mars_min = -153*Celsius + Kelvin
-mars_avg = -63*Celsius + Kelvin
+mars_max = MARS_MAX + Kelvin
+mars_min = MARS_MIN + Kelvin
+mars_avg = MARS_AVG + Kelvin

@@ -110,13 +110,18 @@ mislead everyone.
 
 String
 ------
+Either quotes (") or apostrophes (') will work. This topic will be covered
+in depth while talking about string type.
+
 >>> name = 'Mark'
 >>> name = "Mark"
 
-name = "Mark'
+>>> name = "Mark'
+Traceback (most recent call last):
 SyntaxError: unterminated string literal (detected at line 1)
 
-name = 'Mark"
+>>> name = 'Mark"
+Traceback (most recent call last):
 SyntaxError: unterminated string literal (detected at line 1)
 
 

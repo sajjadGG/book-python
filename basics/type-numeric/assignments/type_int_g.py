@@ -27,14 +27,11 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert size is not Ellipsis, \
-    'Assign result to variable: `size`'
+
     >>> assert size_kB is not Ellipsis, \
     'Assign result to variable: `size_kB`'
     >>> assert size_Mb is not Ellipsis, \
     'Assign result to variable: `size_Mb`'
-    >>> assert type(size) is int, \
-    'Variable `size` has invalid type, should be int'
     >>> assert type(size_kB) is int, \
     'Variable `size_kB` has invalid type, should be int'
     >>> assert type(size_Mb) is int, \
@@ -54,16 +51,14 @@ B = 8 * b
 kB = 1024 * B
 MB = 1024 * kB
 
-# int: 100 Megabytes
-size = ...
+SIZE = 100 * MB
 
-# int: size in kilobytes
+# int: SIZE in kilobytes
 size_kB = ...
 
-# int: size in megabits
+# int: SIZE in megabits
 size_Mb = ...
 
 # Solution
-size = 100 * MB
-size_kB = size // kB
-size_Mb = size // Mb
+size_kB = SIZE // kB
+size_Mb = SIZE // Mb

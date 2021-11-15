@@ -51,20 +51,18 @@ b = 1
 kb = 1024 * b
 Mb = 1024 * kb
 
-# int: 1337 megabits
-size = ...
+SIZE = 1337 * Mb
 
-# int: size in bits
+# int: SIZE in bits
 size_b = ...
 
-# int: size in kilobits
+# int: SIZE in kilobits
 size_kb = ...
 
-# int: size in megabits
+# int: SIZE in megabits
 size_Mb = ...
 
 # Solution
-size = 1337 * Mb
-size_b = size // b
-size_kb = size // kb
-size_Mb = size // Mb
+size_b = SIZE // b
+size_kb = SIZE // kb
+size_Mb = SIZE // Mb

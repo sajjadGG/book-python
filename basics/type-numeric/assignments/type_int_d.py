@@ -1,5 +1,5 @@
 """
-* Assignment: Type Int Bits
+* Assignment: Type Int Truediv
 * Required: yes
 * Complexity: easy
 * Lines of code: 3 lines

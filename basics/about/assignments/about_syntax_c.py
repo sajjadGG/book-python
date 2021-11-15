@@ -5,16 +5,16 @@
 * Time: 2 min
 
 English:
-    1. Define variable `name` and set its value to 'Mark Watney'
-    2. Define `result` with text 'Hello World {name}',
-       where "Mark Watney" is the value of `name` variable
-    3. Run doctests - all must succeed
+    1. Define `result` with text 'Hello XXX'
+    2. Insted `NAME` substitute "Mark Watney"
+    3. To substitute use f-string notation and `{variable}`
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniiuj zmienną `name` i ustaw jej wartość na 'Mark Watney'
-    2. Zdefiniiuj `result` z tekstem 'Hello World {name}',
-       gdzie "Mark Watney" jest wartością zmiennej `name`
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniiuj `result` z tekstem 'Hello NAME'
+    2. W miejsce `NAME` podstaw "Mark Watney"
+    3. Do podstawienia użyj notacji f-string i `{variable}`
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * Either quotes (") or apostrophes (') will work
@@ -23,28 +23,22 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert type(name) is str, \
-    'Variable `name` has invalid type, should be str'
-
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
-
-    >>> 'Mark Watney' in result
-    True
-
-    >>> name
-    'Mark Watney'
+    >>> assert 'Mark Watney' in result, \
+    'Variable `result` does not contain string "Mark Watney"'
+    >>> assert '{NAME}' not in result, \
+    'You must use f-string'
 
     >>> result
-    'Hello World Mark Watney'
+    'Hello Mark Watney'
 """
 
 # str: with Mark Watney
-name = ...
+NAME = 'Mark Watney'
 
-# str: with Hello World {name}
+# str: with Hello NAME
 result = ...
 
 # Solution
-name = 'Mark Watney'
-result = f'Hello World {name}'
+result = f'Hello {NAME}'

@@ -8,6 +8,7 @@ About
     about/ide.rst
     about/language.rst
     about/syntax.rst
+    about/comments.rst
 
 
 Type Numeric

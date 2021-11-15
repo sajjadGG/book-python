@@ -33,30 +33,33 @@ References:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert moon_day is not Ellipsis, \
-    'Assign result to variable: `moon_day`'
-    >>> assert moon_night is not Ellipsis, \
-    'Assign result to variable: `moon_night`'
-    >>> assert type(moon_day) is int, \
-    'Variable `moon_day` has invalid type, should be int'
-    >>> assert type(moon_night) is int, \
-    'Variable `moon_night` has invalid type, should be int'
+    >>> assert lunar_day is not Ellipsis, \
+    'Assign result to variable: `lunar_day`'
+    >>> assert lunar_night is not Ellipsis, \
+    'Assign result to variable: `lunar_night`'
+    >>> assert type(lunar_day) is int, \
+    'Variable `lunar_day` has invalid type, should be int'
+    >>> assert type(lunar_night) is int, \
+    'Variable `lunar_night` has invalid type, should be int'
 
-    >>> moon_day
+    >>> lunar_day
     180
-    >>> moon_night
+    >>> lunar_night
     -180
 """
 
 Celsius = 273
 Kelvin = 1
 
+LUNAR_DAY = 453*Kelvin
+LUNAR_NIGHT = 93*Kelvin
+
 # int: 453 Kelvins in Celsius
-moon_day = ...
+lunar_day = ...
 
 # int: 93 Kelvins in Celsius
-moon_night = ...
+lunar_night = ...
 
 # Solution
-moon_day = 453*Kelvin - Celsius
-moon_night = 93*Kelvin - Celsius
+lunar_day = LUNAR_DAY - Celsius
+lunar_night = LUNAR_NIGHT - Celsius
