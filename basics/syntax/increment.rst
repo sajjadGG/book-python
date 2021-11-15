@@ -14,7 +14,7 @@ In Python for each operator there is also an increment version of it:
     * ``//=`` - Incremental floor division
     * ``%=`` - Incremental modulo division
 
-However, most of a time only ``+=`` and ``-=`` are used. Others are very rare.
+However, most of a time only ``+=`` and ``-=`` are used. Others uses are rare.
 
 
 Incremental Addition
@@ -32,7 +32,7 @@ Incremental Addition
 11
 
 
-Incremental subtraction
+Incremental Subtraction
 -----------------------
 >>> x = 10
 >>> x -= 1
