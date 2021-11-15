@@ -108,6 +108,18 @@ mislead everyone.
 >>> MPa = 1000000 * Pa
 
 
+String
+------
+>>> name = 'Mark'
+>>> name = "Mark"
+
+name = "Mark'
+SyntaxError: unterminated string literal (detected at line 1)
+
+name = 'Mark"
+SyntaxError: unterminated string literal (detected at line 1)
+
+
 Printing Values
 ---------------
 * Prints on the screen
