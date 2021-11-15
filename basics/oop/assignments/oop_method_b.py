@@ -10,7 +10,7 @@ English:
     2. Define method `mean()` in `Stats` class
     3. Method takes `data: list[float]` as an argument
     4. Method returns arithmetic mean of the `data`
-    5. Returned value must me rounded to one decimal places
+    5. Returned value must be rounded to one decimal places
     6. Run doctests - all must succeed
 
 Polish:

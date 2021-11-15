@@ -96,8 +96,7 @@ variables).
 >>> HOUR = 60 * MINUTE
 
 >>> workday = 8 * HOUR
->>> workweek = 5 * workday
->>> workmonth = 4 * workweek
+>>> workweek = 40 * HOUR
 
 For physical units it is ok to use proper cased names. It is better to be
 compliant with well known standard, than to enforce something which will
@@ -106,7 +105,7 @@ mislead everyone.
 >>> Pa = 1
 >>> hPa = 100 * Pa
 >>> kPa = 1000 * Pa
->>> MPa = 1000 * kPa
+>>> MPa = 1000000 * Pa
 
 
 Printing Values
@@ -136,9 +135,16 @@ End of Lines
 * No semicolon (``;``) at the end of lines
 * :pep:`8` -- Style Guide for Python Code: Use ``\n`` for newline
 
->>> print('Hello!\nHow are you?')
-Hello!
-How are you?
+>>> print('Hello World')
+Hello World
+
+>>> print('Hello\nWorld')
+Hello
+World
+
+>>> print('Hello\n World')
+Hello
+ World
 
 
 Line Length
