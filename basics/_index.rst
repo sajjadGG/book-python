@@ -7,8 +7,19 @@ About
     about/agenda.rst
     about/ide.rst
     about/language.rst
-    about/syntax.rst
-    about/comments.rst
+
+
+Syntax
+******
+.. toctree::
+    :maxdepth: 1
+    :caption: Syntax
+
+    syntax/variables.rst
+    syntax/print.rst
+    syntax/comments.rst
+    syntax/indentation.rst
+    syntax/style-guide.rst
 
 
 Type Numeric

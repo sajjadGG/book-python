@@ -9,7 +9,6 @@ Rationale
 * Inline Comments
 
 
-
 Line Comments
 -------------
 * :pep:`8` -- Style Guide for Python Code: for line comments: Hash (``#``), space and then comment
