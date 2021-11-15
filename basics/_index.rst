@@ -15,11 +15,14 @@ Syntax
     :maxdepth: 1
     :caption: Syntax
 
-    syntax/variables.rst
+    syntax/assignment.rst
     syntax/print.rst
     syntax/comments.rst
     syntax/indentation.rst
     syntax/style-guide.rst
+    syntax/comparison.rst
+    syntax/arithmetic.rst
+    syntax/increment.rst
 
 
 Type Numeric
@@ -28,7 +31,6 @@ Type Numeric
     :maxdepth: 1
     :caption: Type Numeric
 
-    type-numeric/operators.rst
     type-numeric/int.rst
     type-numeric/float.rst
 

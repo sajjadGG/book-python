@@ -1,42 +1,5 @@
-Operators
-=========
-
-
-Comparison Operators
---------------------
-* ``x < y`` - Less than
-* ``x <= y`` - Less or equal
-* ``x > y`` - Greater than
-* ``x >= y`` - Greater or equal
-* ``x == y`` - Equals
-* ``x != y`` - Not Equals
-
->>> 10 < 2
-False
->>>
->>> 10 <= 2
-False
->>>
->>> 10 > 2
-True
->>>
->>> 10 >= 2
-True
->>>
->>> 10 == 2
-False
->>>
->>> 10 != 2
-True
-
->>> x = 10
->>> y = 2
->>>
->>> x >= 2
-True
-
->>> 0 == -0
-True
+Syntax Arithmetic
+=================
 
 
 Arithmetic Operators
@@ -100,7 +63,8 @@ Power and Root
 
 Divisions
 ---------
-There are three (and even four if counting ``divmod``) ways of dividing numbers in Python:
+There are three (and even four if counting ``divmod``) ways of dividing numbers
+in Python:
 
     * ``/`` - True Division (changes type to float)
     * ``//`` - Floor division (preserving data type)
@@ -145,47 +109,3 @@ True
 >>> 11 % 2 == 0
 False
 
-
-Increment Operators
--------------------
-In Python for each operator there is also an increment version of it:
-
-    * ``+=`` - Incremental addition
-    * ``-=`` - Incremental subtraction
-    * ``*=`` - Incremental multiplication
-    * ``**=`` - Incremental power
-    * ``/=`` - Incremental true division
-    * ``//=`` - Incremental floor division
-    * ``%=`` - Incremental modulo division
-
-However, most of a time only ``+=`` and ``-=`` are used. Others are very rare.
-
->>> x = 10
->>> x = x + 1
->>>
->>> print(x)
-11
-
->>> x = 10
->>> x += 1
->>>
->>> print(x)
-11
-
->>> x = 10
->>> x -= 1
->>>
->>> print(x)
-9
-
-In other programming languages you may find postfix and prefix increment
-notation. There is no such thing in Python.
-
->>> x = 1
->>> x++
-Traceback (most recent call last):
-SyntaxError: invalid syntax
-
->>> x = 1
->>> ++x
-1

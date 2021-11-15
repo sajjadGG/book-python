@@ -1,14 +1,19 @@
-Python Syntax
-=============
+Syntax Assignment
+=================
+
+
+Rationale
+---------
+* Identifier is a formal name for variable
+* Variables can change it's value during the program
+* In Python there are no constants
+* ``NameError`` when using not declared variable
+* ``AttributeError`` when cannot assign to variables
 
 
 Variables
 ---------
-* ``NameError`` when using not declared variable
-* ``AttributeError`` when cannot assign to variables
-
-Identifiers (variable/constant names) are case sensitive
-Use lowercase letters for variable names:
+Identifiers are case sensitive. Use lowercase letters for variable names:
 
 >>> name = 'Mark Watney'
 
@@ -35,15 +40,18 @@ You should always use lowercase letters:
 >>> name = 'Mark Watney'
 >>> Name = 'Jan Twardowski'
 
-Capital letters by convention has different meaning.
-The code will run without errors or warnings, but you can mislead others.
-Remember code is read by 80% of a time, and written in 20%.
+Capital letters by convention has different meaning. The code will run without
+errors or warnings, but you can mislead others. Remember code is read by 80%
+of a time, and written in 20%.
 
 Not ok by convention :
 
->>> firstName = 'Mark'  # Camel Case - not used in Python (/C/C++/Java/JS convention)
+>>> firstName = 'Mark'  # Camel Case - not used in Python
 >>> Firstname = 'Mark'  # Pascal Case - reserved for class names
 >>> FirstName = 'Mark'  # Pascal Case - reserved for class names
+
+Camel Case convention is not used in Python. It is common in other programming
+language such as C / C++ / C# / Java / JavaScript.
 
 You can put numbers in variables:
 
@@ -110,10 +118,10 @@ mislead everyone.
 
 Assignments
 -----------
-.. literalinclude:: assignments/syntax_variables_a.py
-    :caption: :download:`assignments/syntax_variables_a.py`
+.. literalinclude:: assignments/syntax_assignment_a.py
+    :caption: :download:`assignments/syntax_assignment_a.py`
     :end-before: # Solution
 
-.. literalinclude:: assignments/syntax_variables_b.py
-    :caption: :download:`assignments/syntax_variables_b.py`
+.. literalinclude:: assignments/syntax_assignment_b.py
+    :caption: :download:`assignments/syntax_assignment_b.py`
     :end-before: # Solution

@@ -30,7 +30,7 @@ Tests:
     'Hello 😀'
 """
 
-# str: Hello World 😀
+# str: Hello 😀
 result = ...
 
 # Solution
