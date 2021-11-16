@@ -7,15 +7,17 @@
 
 English:
     1. Use `str.find()` and slicing
-    2. Print `TEXT` without text in `REMOVE`
-    3. Do not use `str.replace()`
-    4. Run doctests - all must succeed
+    2. Print `TEXT` without fragment from `REMOVE`
+    3. Output should be: 'We choose the Moon!'
+    4. Do not use `str.replace()`
+    5. Run doctests - all must succeed
 
 Polish:
     1. Użyj `str.find()` oraz wycinania
-    2. Wypisz `TEXT` bez tekstu z `REMOVE`
-    3. Nie używaj `str.replace()`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    2. Wypisz `TEXT` bez fragmentu znajdującego się w `REMOVE`
+    3. Wynik powinien być: 'We choose the Moon!'
+    4. Nie używaj `str.replace()`
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

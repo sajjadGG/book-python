@@ -10,6 +10,17 @@ Rationale
 * This is a dump of distinct records of a single address
 * Which one of the below is a true address?
 
+Comparing not normalized strings will yield invalid or at least
+unexpected results:
+
+>>> 'MacGyver' == 'Macgyver'
+False
+
+Normalize strings before comparing:
+
+>>> 'MacGyver'.upper() == 'Macgyver'.upper()
+True
+
 
 Numbers
 -------
@@ -24,16 +35,16 @@ exactly the same.
 >>> age = '21.0'
 >>> age = '21.00'
 
-However, when those values indicates for example a pattern to find in text
-their meaning will be different. Pattern 21 and '21.00' will be a completely
-different object, so it should not be treated exactly the same.
+However, when those values indicates for example a version of a program to find
+in text their meaning will be different. Version 21 and '21.00' will be a
+completely different object, so it should not be treated exactly the same.
 
->>> pattern = 21
->>> pattern = 21.0
->>> pattern = 21.00
->>> pattern = '21'
->>> pattern = '21.0'
->>> pattern = '21.00'
+>>> version = 21
+>>> version = 21.0
+>>> version = 21.00
+>>> version = '21'
+>>> version = '21.0'
+>>> version = '21.00'
 
 
 Addresses
@@ -44,26 +55,26 @@ The output is a result of a ``SELECT DISTINCT(address)`` result in SQL.
 
 Note to english speaking users:
 
-    * ``os.`` - stands for ``osiedle``, a projects of blocks of flats
-    * ``ul.`` - stands for ``ulica``, street
+    * ``os.`` - stands for ``osiedle``, which means projects or blocks of flats
+    * ``ul.`` - stands for ``ulica``, which means street
 
 Is this the same address?
 
->>> street = 'os. Jana III Sobieskiego'
->>> street = 'ul. Jana III Sobieskiego'
->>> street = 'ul Jana III Sobieskiego'
->>> street = 'ul.Jana III Sobieskiego'
->>> street = 'ulicaJana III Sobieskiego'
->>> street = 'Ul. Jana III Sobieskiego'
->>> street = 'UL. Jana III Sobieskiego'
->>> street = 'ulica Jana III Sobieskiego'
->>> street = 'Ulica. Jana III Sobieskiego'
->>> street = 'Jana 3 Sobieskiego'
->>> street = 'Jana 3ego Sobieskiego'
->>> street = 'Jana III Sobieskiego'
->>> street = 'Jana Iii Sobieskiego'
->>> street = 'Jana IIi Sobieskiego'
->>> street = 'Jana lll Sobieskiego'  # three small letters 'L'
+>>> street = 'os. Pana Twardowskiego III'
+>>> street = 'ul. Pana Twardowskiego III'
+>>> street = 'ul Pana Twardowskiego III'
+>>> street = 'ul.Pana Twardowskiego III'
+>>> street = 'ulicaPana Twardowskiego III'
+>>> street = 'Ul. Pana Twardowskiego III'
+>>> street = 'UL. Pana Twardowskiego III'
+>>> street = 'ulica Pana Twardowskiego III'
+>>> street = 'Ulica. Pana Twardowskiego III'
+>>> street = 'Pana Twardowskiego 3'
+>>> street = 'Pana Twardowskiego 3ego'
+>>> street = 'Pana Twardowskiego III'
+>>> street = 'Pana Twardowskiego Iii'
+>>> street = 'Pana Twardowskiego IIi'
+>>> street = 'Pana Twardowskiego lll'  # three small letters 'L'
 
 Yes, this is the same address. Despite having information about two different
 geographical entities (osiedle and ulica), this is the same address. Why?
@@ -72,16 +83,16 @@ It is just a simple mistake from people who entered data.
 ``SELECT DISTINCT(address)`` won't show you the number of occurrences for each
 result. What seems to be a high error rate at the first glance, in further
 analysis happens to be a superbly few mistakes. How come? Number of results for
-``os. Jana III Sobieskiego`` was around 50 thousands. The other results was
+``os. Pana Twardowskiego III`` was around 50 thousands. The other results was
 one or two at most. So, few mistakes from 50k results. That's really good
 result.
 
 Why we had those errors? Browser autocomplete. User error while imputing data.
-And simple shortcuts during conversation: 'Where do you live?',
-'at Sobieskiego the IIIrd'. There is only one place in Poznan, Poland with
-that name, so it was precise during the conversation. But, receiving party
-put that incorrectly to the database assuming that it was ``ulica`` which is
-far more common then ``osiedle`` addresses.
+And simple shortcuts during conversation: ``Where do you live?``, ``at Twardowski
+the IIIrd``. There is only one place in Poznan, Poland with that name, so it was
+precise during the conversation. But, receiving party put that incorrectly to
+the database assuming that it was ``ulica`` which is far more common then
+``osiedle`` addresses.
 
 Address prefix (street, road, court, place, etc.):
 
@@ -125,12 +136,12 @@ House and apartment number:
 >>> address = 'Brighton Beach 1st apt. 2'
 >>> address = 'Myśliwiecka 3/5/7'
 >>>
->>> address = 'Jana Twardowskiego 180f/8f'
->>> address = 'Jana Twardowskiego 180f/8'
->>> address = 'Jana Twardowskiego 180/8f'
+>>> address = 'Pana Twardowskiego 180f/8f'
+>>> address = 'Pana Twardowskiego 180f/8'
+>>> address = 'Pana Twardowskiego 180/8f'
 >>>
->>> address = 'Jana Twardowskiego III 3 m. 3'
->>> address = 'Jana Twardowskiego 13d bud. A piętro II sala 3'
+>>> address = 'Pana Twardowskiego III 3 m. 3'
+>>> address = 'Pana Twardowskiego 13d bud. A piętro II sala 3'
 
 Phone Numbers:
 --------------

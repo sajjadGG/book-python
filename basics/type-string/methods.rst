@@ -10,50 +10,102 @@ Rationale
 
 Strip Whitespace
 ----------------
+Strip is a very common method, which you should always call upon any text
+from user input, that is from ``input()`` function, but also from files,
+socket communication and from internet data transfer. You never know, if
+the user did not pasted text from other source, which will add whitespace
+at the end of at the beginning of a string.
+
+There are three strip methods: left strip, right strip and strip from both
+ends. Word whitespace refers to:
+
+    * ``\n`` - newline
+    * ``\t`` - tab
+    * `` `` - space
+    * ``\v`` - vertical space
+    * ``\f`` - form-feed
+
+Most common is plain strip, which will remove all whitespace characters from
+both sides at the same time:
+
 >>> name = '\tAngus MacGyver    \n'
->>>
->>>
 >>> name.strip()
 'Angus MacGyver'
->>>
+
+Right strip:
+
+>>> name = '\tAngus MacGyver    \n'
 >>> name.rstrip()
 '\tAngus MacGyver'
->>>
+
+Left strip:
+
+>>> name = '\tAngus MacGyver    \n'
 >>> name.lstrip()
 'Angus MacGyver    \n'
 
 
 Change Case
 -----------
-* Unify data format before analysis
+Comparing not normalized strings will yield invalid or at least
+unexpected results:
+
+>>> 'MacGyver' == 'Macgyver'
+False
+
+Normalize strings before comparing:
+
+>>> 'MacGyver'.upper() == 'Macgyver'.upper()
+True
+
+This is necessary to perform further data analysis.
+
+Upper:
 
 >>> name = 'Angus MacGyver III'
->>>
->>>
 >>> name.upper()
 'ANGUS MACGYVER III'
->>>
+
+Lower:
+
+>>> name = 'Angus MacGyver III'
 >>> name.lower()
 'angus macgyver iii'
->>>
+
+Title:
+
+>>> name = 'Angus MacGyver III'
 >>> name.title()
 'Angus Macgyver Iii'
->>>
+
+
+Capitalize:
+
+>>> name = 'Angus MacGyver III'
 >>> name.capitalize()
 'Angus macgyver iii'
 
 
 Replace
 -------
+Replace substring:
+
 >>> name = 'Angus MacGyver Iii'
->>>
->>>
 >>> name.replace('Iii', 'III')
 'Angus MacGyver III'
+
+Replace is case sensitive:
+
+>>> name = 'Angus MacGyver Iii'
+>>> name.replace('iii', 'III')
+'Angus MacGyver Iii'
 
 
 Starts With
 -----------
+``.startswith()`` method answers the question if string "starts with" other
+substring.
+
 >>> email = 'mark.watney@nasa.gov'
 >>>
 >>>
@@ -63,9 +115,10 @@ True
 >>> email.startswith('melissa.lewis')
 False
 
+It also works with tuple of strings to try:
+
 >>> email = 'mark.watney@nasa.gov'
 >>> vip = ('mark.watney', 'melissa.lewis')
->>>
 >>>
 >>> email.startswith(vip)
 True
@@ -326,15 +379,27 @@ True
 
 Find Sub-String Position
 ------------------------
+Finds position of a letter in text:
+
 >>> text = 'We choose to go to the Moon'
->>>
->>>
 >>> text.find('M')
 23
->>>
+
+Will find first occurrence:
+
+>>> text = 'We choose to go to the Moon'
+>>> text.find('o')
+5
+
+Also works on substrings:
+
+>>> text = 'We choose to go to the Moon'
 >>> text.find('Moo')
 23
->>>
+
+Will yield ``-1`` if substring is not found:
+
+>>> text = 'We choose to go to the Moon'
 >>> text.find('x')
 -1
 
@@ -426,6 +491,56 @@ Cython
 >>>
 >>> print(text)
 Cython
+
+
+Use Case
+--------
+>>> DATA = 'ul. pANA tWARdoWSKiego 3'
+>>>
+>>> result = (
+...     DATA
+...
+...     # Normalize
+...     .upper()
+...
+...     # Remove whitespace control chars
+...     .replace('\n', ' ')
+...     .replace('\t', ' ')
+...     .replace('\v', ' ')
+...     .replace('\f', ' ')
+...
+...     # Remove whitespaces
+...     .replace('    ', ' ')
+...     .replace('   ', ' ')
+...     .replace('  ', ' ')
+...
+...     # Remove special characters
+...     .replace('$', '')
+...     .replace('@', '')
+...     .replace('#', '')
+...     .replace('^', '')
+...     .replace('&', '')
+...     .replace('.', '')
+...     .replace(',', '')
+...     .replace('|', '')
+...
+...     # Remove prefixes
+...     .removeprefix('ULICA')
+...     .removeprefix('UL')
+...     .removeprefix('OSIEDLE')
+...     .removeprefix('OS')
+...
+...     # Substitute
+...     .replace('3', 'III')
+...     .replace('2', 'II')
+...     .replace('1', 'I')
+...
+...     # Format output
+...     .title()
+...     .replace('Iii', 'III')
+...     .replace('Ii', 'II')
+...     .strip()
+... )
 
 
 Assignments

@@ -22,10 +22,10 @@ Tests:
     'Variable `result` has invalid type, should be str'
 
     >>> result
-    'Jana Twardowskiego III'
+    'Pana Twardowskiego III'
 """
 
-DATA = 'UL. jana \tTWArdoWskIEGO 3'
+DATA = 'UL. pana \tTWArdoWskIEGO 3'
 
 # str: Jana Twardowskiego III
 result = ...

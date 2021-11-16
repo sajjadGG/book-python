@@ -6,7 +6,7 @@
 * Time: 13 min
 
 English:
-    1. Expected value is `Jana III Sobieskiego`
+    1. Expected value is `Pana Twardowskiego III`
     2. Use only `str` methods to clean each variable
     3. Discuss how to create generic solution which fit all cases
     4. Implementation of such generic function will be in
@@ -14,7 +14,7 @@ English:
     5. Run doctests - all must succeed
 
 Polish:
-    1. Oczekiwana wartość `Jana III Sobieskiego`
+    1. Oczekiwana wartość `Pana Twardowskiego III`
     2. Wykorzystaj tylko metody `str` do oczyszczenia każdej zmiennej
     3. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące
        do wszystkich przypadków
@@ -67,66 +67,66 @@ Tests:
     'Variable `i` has invalid type, should be str'
 
     >>> example
-    'Jana Twardowskiego III'
+    'Pana Twardowskiego III'
     >>> a
-    'Jana III Sobieskiego'
+    'Pana Twardowskiego III'
     >>> b
-    'Jana III Sobieskiego'
+    'Pana Twardowskiego III'
     >>> c
-    'Jana III Sobieskiego'
+    'Pana Twardowskiego III'
     >>> d
-    'Jana III Sobieskiego'
+    'Pana Twardowskiego III'
     >>> e
-    'Jana III Sobieskiego'
+    'Pana Twardowskiego III'
     >>> f
-    'Jana III Sobieskiego'
+    'Pana Twardowskiego III'
     >>> g
-    'Jana III Sobieskiego'
+    'Pana Twardowskiego III'
     >>> h
-    'Jana III Sobieskiego'
+    'Pana Twardowskiego III'
     >>> i
-    'Jana III Sobieskiego'
+    'Pana Twardowskiego III'
 """
 
-EXAMPLE = 'UL. jana \tTWArdoWskIEGO 3'
-A = 'ul Jana III SobIESkiego'
-B = '\tul. Jana trzeciego Sobieskiego'
-C = 'ulicaJana III Sobieskiego'
-D = 'JANA 3 \nSOBIESKIEGO'
-E = 'UL. jana III SOBiesKIEGO'
-F = 'ULICA JANA III SOBIESKIEGO  '
-G = 'ULICA. JANA III SOBIeskieGO'
-H = ' Jana 3 Sobieskiego  '
-I = 'Jana III\tSobieskiego '
+EXAMPLE = 'UL. Pana \tTWArdoWskIEGO 3'
+A = 'ul Pana TwaRDOWSkiego III'
+B = '\tul. Pana Twardowskiego trzeciego'
+C = 'ulicaPana Twardowskiego III'
+D = 'Pana \nTWARDOWSKIEGO 3'
+E = 'UL. Pana TWARDowsKIEGO III'
+F = 'ULICA Pana TWARDOWSKIEGO III '
+G = 'ULICA. Pana TWARDowsKIEGO III'
+H = ' Pana Twardowskiego 3 '
+I = 'Pana\tTwardowskiego III '
 
 example = EXAMPLE.upper().replace('UL. ', '').replace('\t', '') \
     .strip().title().replace('3', 'III')
 
-# str: Jana III Sobieskiego
+# str: Pana III Twardowskiego
 a = ...
 
-# str: Jana III Sobieskiego
+# str: Pana III Twardowskiego
 b = ...
 
-# str: Jana III Sobieskiego
+# str: Pana III Twardowskiego
 c = ...
 
-# str: Jana III Sobieskiego
+# str: Pana III Twardowskiego
 d = ...
 
-# str: Jana III Sobieskiego
+# str: Pana III Twardowskiego
 e = ...
 
-# str: Jana III Sobieskiego
+# str: Pana III Twardowskiego
 f = ...
 
-# str: Jana III Sobieskiego
+# str: Pana III Twardowskiego
 g = ...
 
-# str: Jana III Sobieskiego
+# str: Pana III Twardowskiego
 h = ...
 
-# str: Jana III Sobieskiego
+# str: Pana III Twardowskiego
 i = ...
 
 # Solution

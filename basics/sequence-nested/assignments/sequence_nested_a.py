@@ -7,16 +7,16 @@
 
 English:
     1. Create nested list `result` with elements:
-        a. tuple: `1`, `2`, `3`
-        b. list: `1.1`, `2.2`, `3.3`
-        c. set: `'Mark Watney'`, `'Melissa Lewis'`, `'Jan Twardowski'`
+        a. tuple: 1, 2, 3
+        b. list: 1.1, 2.2, 3.3
+        c. set: 'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'
     2. Run doctests - all must succeed
 
 Polish:
     1. Stwórz zagnieżdżoną listę `result` z elementami:
-        a. tuple: `1`, `2`, `3`
-        b. list: `1.1`, `2.2`, `3.3`
-        c. set: `'Mark Watney'`, `'Melissa Lewis'`, `'Jan Twardowski'`
+        a. tuple: 1, 2, 3
+        b. list: 1.1, 2.2, 3.3
+        c. set: 'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
