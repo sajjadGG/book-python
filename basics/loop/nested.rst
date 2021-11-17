@@ -2,21 +2,39 @@ Loop Nested Sequences
 =====================
 
 
-Convention
-----------
-* ``row`` - best for nested loops with sequence inside
-* Conventions for rows and columns:
 
-    * ``row`` - row (all elements)
-    * ``column`` - current column element from ``row`` sequence
-    * ``i`` - row number
-    * ``j`` - column number
-    * ``x`` - row number
-    * ``y`` - column number
-    * ``outer`` - for outer loop element
-    * ``inner`` - for inner loop element
+Matrix
+------
+* Suggested variable name: ``row``
 
-* Note that ``i`` may interfere with ``i`` used as loop counter
+>>> DATA = [[1, 2, 3],
+...         [4, 5, 6],
+...         [7, 8, 9]]
+>>>
+>>>
+>>> for row in DATA:  # doctest: +NORMALIZE_WHITESPACE
+...     print()
+...
+...     for value in row:
+...         print(f'{value}', end=' ')
+1 2 3
+4 5 6
+7 8 9
+
+
+>>> DATA = [[1, 2, 3],
+...         [4, 5, 6],
+...         [7, 8, 9]]
+>>>
+>>>
+>>> for row in DATA:
+...     a = row[0]
+...     b = row[1]
+...     c = row[2]
+...     print(f'{a=} {b=} {c=}')
+a=1 b=2 c=3
+a=4 b=5 c=6
+a=7 b=8 c=9
 
 
 Nested Loops
@@ -78,37 +96,6 @@ virginica -> 16.599999999999998
 setosa -> 10.2
 versicolor -> 13.9
 virginica -> 16.599999999999998
-
-
-Matrix
-------
-* Suggested variable name: ``row``
-
->>> DATA = [[1, 2, 3],
-...         [4, 5, 6],
-...         [7, 8, 9]]
->>>
->>> for row in DATA:
-...     a = row[0]
-...     b = row[1]
-...     c = row[2]
-...     print(f'{a=} {b=} {c=}')
-a=1 b=2 c=3
-a=4 b=5 c=6
-a=7 b=8 c=9
-
->>> DATA = [[1, 2, 3],
-...         [4, 5, 6],
-...         [7, 8, 9]]
->>>
->>> for row in DATA:  # doctest: +NORMALIZE_WHITESPACE
-...     print()
-...
-...     for value in row:
-...         print(f'{value}', end=' ')
-1 2 3
-4 5 6
-7 8 9
 
 
 Mixed
@@ -181,6 +168,24 @@ Lewis
 True
 None
 False
+
+
+Good Practices
+--------------
+* ``row`` - best for nested loops with sequence inside
+* Conventions for rows and columns:
+
+    * ``row`` - row (all elements)
+    * ``column`` - current column element from ``row`` sequence
+    * ``i`` - row number
+    * ``j`` - column number
+    * ``x`` - row number
+    * ``y`` - column number
+    * ``outer`` - for outer loop element
+    * ``inner`` - for inner loop element
+
+* Note that ``i`` may interfere with ``i`` used as loop counter
+
 
 
 Assignments

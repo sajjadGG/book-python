@@ -119,10 +119,20 @@ Conditional
     :maxdepth: 1
     :caption: Conditional
 
-    conditional/operator.rst
-    conditional/membership.rst
-    conditional/statement.rst
-    conditional/expression.rst
+    conditional/boolean-logic.rst
+    conditional/boolean-conjunction.rst
+    conditional/boolean-disjunction.rst
+    conditional/boolean-algebra.rst
+    conditional/boolean-negation.rst
+    conditional/boolean-identity.rst
+    conditional/boolean-operators.rst
+    conditional/boolean-membership.rst
+    conditional/syntax-if.rst
+    conditional/syntax-else.rst
+    conditional/syntax-elif.rst
+    conditional/syntax-switch.rst
+    conditional/syntax-match.rst
+    conditional/syntax-expression.rst
 
 
 Exception

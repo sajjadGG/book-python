@@ -3,7 +3,7 @@
 * Required: yes
 * Complexity: easy
 * Lines of code: 6 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
     1. Validate value passed to a `result` function

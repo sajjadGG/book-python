@@ -1,6 +1,7 @@
 Exception Catching
 ==================
 
+
 .. testsetup::
 
     # Simulate user input (for test automation)
@@ -22,7 +23,6 @@ Exception Catching
             print(avg)
         finally:
             ...
-
 
 
 Catching Exceptions
@@ -187,6 +187,32 @@ One can kill program with ``Ctrl-C``:
 ...         number = float(input('Type number: '))
 ...     except Exception:
 ...         continue
+
+
+Use Case
+--------
+>>> def database_connect():
+...     print('Connecting...')
+>>>
+>>>
+>>> try:
+...     db = database_connect()
+... except ConnectionError:
+...     print('Sorry, no internet connection')
+... except PermissionError:
+...     print('Sorry, permission denied')
+... except Exception:
+...     print('Sorry, unknown error')
+... else:
+...     print('Connection established')
+...     print('Executing query...')
+... finally:
+...     print('Disconnect from database')
+Connecting...
+Connection established
+Executing query...
+Disconnect from database
+
 
 
 Assignments
