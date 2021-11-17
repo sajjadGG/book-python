@@ -3,9 +3,9 @@ Block Elif
 
 .. testsetup::
 
-    def input(__prompt):
-        """Stub user input, for testing purpose only"""
-        return 'French'
+    # Simulate user input (for test automation)
+    from unittest.mock import MagicMock
+    input = MagicMock(side_effect=['Polish', '10'])
 
 
 Conditional Alternative
@@ -100,10 +100,11 @@ cosmonaut
 
 Type Str Methods is Numeric:
 
->>> age = input('What is your age?: ')
->>> age = float(age) if age.isnumeric() else None
+>>> age = input('What is your age?: ')  # User input: 10
+>>> age = int(age) if age.isnumeric() else None
+>>>
 >>> print(age)
-10.0
+10
 
 
 Assignments

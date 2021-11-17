@@ -5,7 +5,7 @@ Block Match
 
     # Simulate user input (for test automation)
     from unittest.mock import MagicMock
-    input = MagicMock(return_value=['French'])
+    input = MagicMock(side_effect=['French'])
 
     def handle_get(): pass
     def handle_post(): pass
