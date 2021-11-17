@@ -1,5 +1,5 @@
-Conditional Operator
-====================
+Boolean Operator
+================
 
 
 Equals
@@ -17,8 +17,6 @@ False
 
 Comparing ``tuple``:
 
->>> (1, 2, 3) == (1, 2)
-False
 >>> (1, 2) == (1, 2)
 True
 >>> (1, 2) == (2, 1)
@@ -26,8 +24,6 @@ False
 
 Comparing ``list``:
 
->>> [1, 2, 3] == [1, 2]
-False
 >>> [1, 2] == [1, 2]
 True
 >>> [1, 2] == [2, 1]
@@ -35,12 +31,12 @@ False
 
 Comparing ``set``:
 
->>> {1, 2, 3} == {1, 2}
-False
 >>> {1, 2} == {1, 2}
 True
 >>> {1, 2} == {2, 1}
 True
+
+Comparing types and values:
 
 >>> (1,2) == [1,2]
 False

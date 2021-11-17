@@ -1,5 +1,5 @@
 """
-* Assignment: Conditional Statement Adult
+* Assignment: Conditional If Underage/Adult
 * Required: yes
 * Complexity: easy
 * Lines of code: 4 lines
@@ -28,19 +28,18 @@ Tests:
     True
 """
 
-from unittest.mock import MagicMock
-
-
 # Simulate user input (for test automation)
+from unittest.mock import MagicMock
 input = MagicMock(side_effect=['21'])
+
+
 age = input('What is your age?: ')
+ADULT = 18
 
 # str: Whether 'Adult' or 'Young'
 result = ...
 
 # Solution
-ADULT = 18
-
 if int(age) >= ADULT:
     result = 'Adult'
 else:

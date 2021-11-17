@@ -1,5 +1,5 @@
-Conditional Membership
-======================
+Boolean Membership
+==================
 
 
 Rationale
@@ -221,6 +221,34 @@ True
 False
 >>> 'pilot' not in crew
 True
+
+
+
+Control Flow
+------------
+>>> text = 'Monty Python'
+>>>
+>>> if 'Python' in text:
+...     print('Yes')
+... else:
+...     print('No')
+Yes
+
+>>> crew = ['Lewis', 'Watney', 'Twardowski']
+>>>
+>>> if 'Jiménez' in crew:
+...     print('Yes')
+... else:
+...     print('No')
+No
+
+>>> crew = {'Lewis', 'Watney', 'Twardowski'}
+>>>
+>>> if 'Jiménez' in crew:
+...     print('Yes')
+... else:
+...     print('No')
+No
 
 
 Assignments
