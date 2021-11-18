@@ -4,56 +4,93 @@ Comprehension Dict
 
 Syntax
 ------
-``dict`` comprehension approach to applying function to elements:
+Short syntax:
+
+>>> {x:None for x in range(0,5)}
+{0: None, 1: None, 2: None, 3: None, 4: None}
+
+Long syntax:
+
+>>> dict((x,None) for x in range(0,5))
+{0: None, 1: None, 2: None, 3: None, 4: None}
+
+
+Example
+-------
+>>> {x:x for x in range(0,5)}
+{0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+
+>>> {x:None for x in range(0,5)}
+{0: None, 1: None, 2: None, 3: None, 4: None}
+
+>>> {None:x for x in range(0,5)}
+{None: 4}
+
+
+Modify Key/Values
+-----------------
+Modify keys:
 
 >>> {x+10:x for x in range(0,5)}
 {10: 0, 11: 1, 12: 2, 13: 3, 14: 4}
 
->>> dict((x+10,x) for x in range(0,5))
-{10: 0, 11: 1, 12: 2, 13: 3, 14: 4}
-
-``dict`` comprehension approach to applying function to elements:
+Modify values:
 
 >>> {x:x+10 for x in range(0,5)}
 {0: 10, 1: 11, 2: 12, 3: 13, 4: 14}
 
->>> dict((x,x+10) for x in range(0,5))
-{0: 10, 1: 11, 2: 12, 3: 13, 4: 14}
-
-``dict`` Comprehension approach to applying function to elements:
+Modify keys and values:
 
 >>> {x+10:x+10 for x in range(0,5)}
 {10: 10, 11: 11, 12: 12, 13: 13, 14: 14}
 
->>> dict((x+10,x+10) for x in range(0,5))
-{10: 10, 11: 11, 12: 12, 13: 13, 14: 14}
 
+Dict Reversal
+-------------
+Swap ``dict`` keys with values.
 
-Reverse Dict
-------------
-Reversing ``dict`` keys with values:
+Algorithm:
 
->>> DATA = {'a': 1, 'b': 2}
+>>> DATA = {
+...     'commander': 'Melissa Lewis',
+...     'botanist': 'Mark Watney',
+...     'pilot': 'Rick Martinez'}
 >>>
 >>>
->>> list(DATA.items())  # doctest: +NORMALIZE_WHITESPACE
-[('a', 1),
- ('b', 2)]
+>>> result = {}
 >>>
->>> [(k,v) for k,v in DATA.items()]  # doctest: +NORMALIZE_WHITESPACE
-[('a', 1),
- ('b', 2)]
+>>> for role, astronaut in DATA.items():
+...     result[astronaut] = role
 >>>
->>> [(v,k) for k,v in DATA.items()]  # doctest: +NORMALIZE_WHITESPACE
-[(1, 'a'),
- (2, 'b')]
+>>> result  # doctest: +NORMALIZE_WHITESPACE
+{'Melissa Lewis': 'commander',
+ 'Mark Watney': 'botanist',
+ 'Rick Martinez': 'pilot'}
 
+Dict comprehension:
+
+>>> DATA = {
+...     'commander': 'Melissa Lewis',
+...     'botanist': 'Mark Watney',
+...     'pilot': 'Rick Martinez'}
+>>>
+>>>
+>>> result = {astronaut:role for role,astronaut in DATA.items()}
+>>> result = {v:k for k,v in DATA.items()}
+>>>
+>>> result  # doctest: +NORMALIZE_WHITESPACE
+{'Melissa Lewis': 'commander',
+ 'Mark Watney': 'botanist',
+ 'Rick Martinez': 'pilot'}
+
+
+Dict Reversal Collision
+-----------------------
 >>> DATA = {'a': 1, 'b': 2}
 >>>
 >>>
 >>> {v:k for k,v in DATA.items()}
 {1: 'a', 2: 'b'}
-
 
 Value collision while reversing ``dict``:
 
@@ -61,6 +98,21 @@ Value collision while reversing ``dict``:
 >>>
 >>> {v:k for k,v in DATA.items()}
 {1: 'a', 2: 'c'}
+
+
+Use Case - Even or Odd
+----------------------
+>>> result = {}
+>>>
+>>> for x in range(0,5):
+...     is_even = (x % 2 == 0)
+...     result.update({x: is_even})
+>>>
+>>> print(result)
+{0: True, 1: False, 2: True, 3: False, 4: True}
+
+>>> {x: (x%2==0) for x in range(0,5)}
+{0: True, 1: False, 2: True, 3: False, 4: True}
 
 
 Assignments

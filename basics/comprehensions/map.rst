@@ -2,26 +2,26 @@ Comprehension Map
 =================
 
 
-Syntax
-------
-Applying function to each output element:
-
+Example
+-------
 >>> [float(x) for x in range(0,5)]
 [0.0, 1.0, 2.0, 3.0, 4.0]
 
->>> [float(x) for x in range(0,5) if x%2==0]
-[0.0, 2.0, 4.0]
 
-Applying function to each output element:
+Apply Function
+--------------
+>>> [pow(2,x) for x in range(0,5)]
+[1, 2, 4, 8, 16]
 
 >>> [pow(2,x) for x in range(0,5)]
 [1, 2, 4, 8, 16]
 
->>> [pow(2,x) for x in range(0,5) if x%2==0]
-[1, 4, 16]
+>>> [pow(x,x) for x in range(0,5)]
+[1, 1, 4, 27, 256]
 
-Using ``list`` comprehension for filtering:
 
+Convert Data
+------------
 >>> DATA = [
 ...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
 ...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -29,20 +29,44 @@ Using ``list`` comprehension for filtering:
 ...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
 ...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
 ...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
-...     (7.0, 3.2, 4.7, 1.4, 'versicolor')]
+...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
 >>>
->>> [tuple(features) for *features,label in DATA if label == 'setosa']  # doctest: +NORMALIZE_WHITESPACE
-[(5.1, 3.5, 1.4, 0.2),
+>>> [tuple(features) for *features,label in DATA[1:]]  # doctest: +NORMALIZE_WHITESPACE
+[(5.8, 2.7, 5.1, 1.9),
+ (5.1, 3.5, 1.4, 0.2),
+ (5.7, 2.8, 4.1, 1.3),
+ (6.3, 2.9, 5.6, 1.8),
+ (6.4, 3.2, 4.5, 1.5),
  (4.7, 3.2, 1.3, 0.2)]
 >>>
->>> [tuple(X) for *X,y in DATA if y=='setosa']  # doctest: +NORMALIZE_WHITESPACE
-[(5.1, 3.5, 1.4, 0.2),
+>>> [tuple(X) for *X,y in DATA[1:]]  # doctest: +NORMALIZE_WHITESPACE
+[(5.8, 2.7, 5.1, 1.9),
+ (5.1, 3.5, 1.4, 0.2),
+ (5.7, 2.8, 4.1, 1.3),
+ (6.3, 2.9, 5.6, 1.8),
+ (6.4, 3.2, 4.5, 1.5),
  (4.7, 3.2, 1.3, 0.2)]
 
 
-Use Case - Join Numbers
------------------------
+Map to String
+-------------
+>>> DATA = [1, 2, 3]
+>>> str(DATA)
+'[1, 2, 3]'
+
+>>> [str(x) for x in DATA]
+['1', '2', '3']
+
+>>> data = [str(x) for x in DATA]
+>>> ','.join(data)
+'1,2,3'
+
+>>> ','.join(str(x) for x in DATA)
+'1,2,3'
+
+
+Generate CSV
+------------
 >>> DATA = [1, 2, 3]
 >>>
 >>>
@@ -57,8 +81,8 @@ TypeError: sequence item 0: expected str instance, int found
 '1,2,3'
 
 
-Use Case - CSV
---------------
+Generate CSV Data
+-----------------
 >>> DATA = [
 ...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
 ...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -70,17 +94,61 @@ Use Case - CSV
 ...     (7.0, 3.2, 4.7, 1.4, 'versicolor')]
 >>>
 >>>
->>> data = [','.join(str(x) for x in row) for row in DATA]
+>>> result = [','.join(str(x) for x in row) for row in DATA]
+>>> result = '\n'.join(result)
 >>>
->>> print(data)  # doctest: +NORMALIZE_WHITESPACE
-['Sepal length,Sepal width,Petal length,Petal width,Species',
- '5.8,2.7,5.1,1.9,virginica',
- '5.1,3.5,1.4,0.2,setosa',
- '5.7,2.8,4.1,1.3,versicolor',
- '6.3,2.9,5.6,1.8,virginica',
- '6.4,3.2,4.5,1.5,versicolor',
- '4.7,3.2,1.3,0.2,setosa',
- '7.0,3.2,4.7,1.4,versicolor']
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+Sepal length,Sepal width,Petal length,Petal width,Species
+5.8,2.7,5.1,1.9,virginica
+5.1,3.5,1.4,0.2,setosa
+5.7,2.8,4.1,1.3,versicolor
+6.3,2.9,5.6,1.8,virginica
+6.4,3.2,4.5,1.5,versicolor
+4.7,3.2,1.3,0.2,setosa
+7.0,3.2,4.7,1.4,versicolor
+
+
+Parse CSV
+---------
+>>> DATA = '5.8,2.7,5.1,1.9\n5.1,3.5,1.4,0.2\n5.7,2.8,4.1,1.3'
+>>>
+>>> result = []
+>>>
+>>> for row in DATA.splitlines():
+...     row = row.split(',')
+...     result.append(row)
+>>>
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[['5.8', '2.7', '5.1', '1.9'],
+ ['5.1', '3.5', '1.4', '0.2'],
+ ['5.7', '2.8', '4.1', '1.3']]
+
+>>> DATA = '5.8,2.7,5.1,1.9\n5.1,3.5,1.4,0.2\n5.7,2.8,4.1,1.3'
+>>>
+>>> [row.split(',') for row in DATA.splitlines()]  # doctest: +NORMALIZE_WHITESPACE
+[['5.8', '2.7', '5.1', '1.9'],
+ ['5.1', '3.5', '1.4', '0.2'],
+ ['5.7', '2.8', '4.1', '1.3']]
+
+>>> DATA = '5.8,2.7,5.1,1.9\n5.1,3.5,1.4,0.2\n5.7,2.8,4.1,1.3'
+>>>
+>>> [[float(x) for x in row.split(',')] for row in DATA.splitlines()]  # doctest: +NORMALIZE_WHITESPACE
+[[5.8, 2.7, 5.1, 1.9],
+ [5.1, 3.5, 1.4, 0.2],
+ [5.7, 2.8, 4.1, 1.3]]
+
+>>> DATA = '5.8,2.7,5.1,1.9,virginica\n5.1,3.5,1.4,0.2,setosa\n5.7,2.8,4.1,1.3,versicolor'
+>>>
+>>> def convert(x):
+...     try:
+...         return float(x)
+...     except ValueError:
+...         return x
+>>>
+>>> [[convert(x) for x in row.split(',')] for row in DATA.splitlines()]  # doctest: +NORMALIZE_WHITESPACE
+[[5.8, 2.7, 5.1, 1.9, 'virginica'],
+ [5.1, 3.5, 1.4, 0.2, 'setosa'],
+ [5.7, 2.8, 4.1, 1.3, 'versicolor']]
 
 
 Use Case - Power
@@ -168,52 +236,6 @@ Use Case - Map list[dict]
 ['Jan T.', 'Mark W.', 'Melissa L.']
 
 More information in `Assignment Expression`
-
-Using ``list`` comprehension for filtering with more complex expression:
-
->>> DATA = [
-...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
-...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
-...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
-...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
-...     (7.0, 3.2, 4.7, 1.4, 'versicolor')]
->>>
->>>
->>> def is_setosa(species):
-...     if species == 'setosa':
-...         return True
-...     else:
-...         return False
->>>
->>>
->>> [tuple(X) for *X,y in DATA if is_setosa(y)]  # doctest: +NORMALIZE_WHITESPACE
-[(5.1, 3.5, 1.4, 0.2),
- (4.7, 3.2, 1.3, 0.2)]
-
-Quick parsing lines:
-
->>> DATA = ['5.8,2.7,5.1,1.9,virginica',
-...         '5.1,3.5,1.4,0.2,setosa',
-...         '5.7,2.8,4.1,1.3,versicolor']
->>>
->>> result = []
->>>
->>> for row in DATA:
-...     row = row.split(',')
-...     result.append(row)
->>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[['5.8', '2.7', '5.1', '1.9', 'virginica'],
- ['5.1', '3.5', '1.4', '0.2', 'setosa'],
- ['5.7', '2.8', '4.1', '1.3', 'versicolor']]
->>>
->>> [row.split(',') for row in DATA]  # doctest: +NORMALIZE_WHITESPACE
-[['5.8', '2.7', '5.1', '1.9', 'virginica'],
- ['5.1', '3.5', '1.4', '0.2', 'setosa'],
- ['5.7', '2.8', '4.1', '1.3', 'versicolor']]
 
 
 Assignments

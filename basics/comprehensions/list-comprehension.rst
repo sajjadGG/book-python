@@ -52,14 +52,17 @@ ZeroDivisionError: division by zero
 Manipulate Strings
 ------------------
 >>> DATA = ['a', 'b', 'c']
+>>>
 >>> ','.join(DATA)
 'a,b,c'
 
 >>> DATA = ['a', 'b', 'c']
+>>>
 >>> ','.join(x for x in DATA)
 'a,b,c'
 
 >>> DATA = ['a', 'b', 'c']
+>>>
 >>> ','.join(x.upper() for x in DATA)
 'A,B,C'
 
@@ -84,7 +87,6 @@ Slice Sequences
  (6.3, 2.9, 5.6, 1.8, 'virginica'),
  (6.4, 3.2, 4.5, 1.5, 'versicolor'),
  (4.7, 3.2, 1.3, 0.2, 'setosa')]
->>>
 >>>
 >>> [row for row in DATA[1:]]  # doctest: +NORMALIZE_WHITESPACE
 [(5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -180,6 +182,15 @@ Use Case - Sum
 --------------
 >>> sum(x for x in range(0,5))
 10
+
+
+Use Case - Even or Odd
+----------------------
+>>> [x for x in range(0,5)]
+[0, 1, 2, 3, 4]
+
+>>> [x%2==0 for x in range(0,5)]
+[True, False, True, False, True]
 
 
 Assignments

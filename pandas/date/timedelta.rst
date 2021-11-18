@@ -2,6 +2,11 @@ Date and Time Shifts
 ====================
 
 
+Between Time
+------------
+* https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.between_time.html
+
+
 Timedelta
 ---------
 * Represents a duration, the difference between two dates or times
