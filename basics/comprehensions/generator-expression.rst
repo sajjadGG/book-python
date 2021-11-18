@@ -151,8 +151,8 @@ Use Case - Comparison
  61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
  81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
 
->>> (x for x in range(0,100))  # doctest: +NORMALIZE_WHITESPACE
-<generator object <genexpr> at 0x10b943ca0>
+>>> (x for x in range(0,100))  # doctest: +ELLIPSIS
+<generator object <genexpr> at 0x...>
 
 >>> result = (x for x in range(0,100))
 >>>

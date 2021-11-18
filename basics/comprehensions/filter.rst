@@ -62,7 +62,8 @@ Filter list[dict]
 >>>
 >>>
 >>> astronauts = []
-... for person in PEOPLE:
+>>>
+>>> for person in PEOPLE:
 ...     if person['is_astronaut']:
 ...         astronauts.append(person['name'])
 >>>
