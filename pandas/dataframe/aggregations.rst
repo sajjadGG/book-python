@@ -164,10 +164,12 @@ Named Aggregations:
         duration_min=('duration', 'min'),
         duration_max=('duration', 'max'),
         duration_mean=('duration', 'mean'),
+        duration_mean_round=('duration', lambda column: column.mean().astype(int)),
         duration_median=('duration', 'median'),
         first=('date', 'first'),
         last=('date', 'last'),
     )
+
 
 Renaming index
 --------------
