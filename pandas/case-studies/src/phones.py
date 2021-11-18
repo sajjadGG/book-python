@@ -37,7 +37,6 @@ result = df.groupby(['period', 'item', 'network']).agg(
     duration_std=('duration', 'std'),
     first=('datetime', 'first'),
     last=('datetime', 'last'),
-    between=('datetime', lambda column: column.last() - column.first(),
 )
 
 result['duration_sum'].plot(kind='line', figsize=(16,10))
