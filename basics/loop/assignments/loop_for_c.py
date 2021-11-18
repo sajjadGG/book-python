@@ -68,6 +68,7 @@ for digit in DATA:
 #     elif 7 <= digit < 10:
 #         result['large'] += 1
 #
+#
 # %%timeit -r 10 -n 10000
 # result = {'small': 0,'medium': 0,'large': 0}
 # for digit in DATA:

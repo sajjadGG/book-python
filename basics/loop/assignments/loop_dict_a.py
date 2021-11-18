@@ -46,6 +46,6 @@ result = ...
 # Solution
 result = {}
 
-for idx, titles in DATA.items():
+for lvl, titles in DATA.items():
     for title in titles:
-        result[title] = str(idx)
+        result[title] = str(lvl)
