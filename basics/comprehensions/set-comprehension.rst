@@ -33,8 +33,8 @@ Use Case - Unique
 >>> sorted(result)
 ['setosa', 'versicolor', 'virginica']
 >>>
->>> dict(enumerate({row[-1] for row in DATA[1:]}))
-{0: 'virginica', 1: 'versicolor', 2: 'setosa'}
+>>> dict(enumerate(sorted(result)))
+{0: 'setosa', 1: 'versicolor', 2: 'virginica'}
 
 
 Assignments
