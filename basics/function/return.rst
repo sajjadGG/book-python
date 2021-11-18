@@ -21,7 +21,6 @@ Syntax
 Return Keyword
 --------------
 * ``return`` keyword indicates outcome of the function
-* Code after ``return`` will not execute
 
 >>> def hello():
 ...     return 'hello world'
@@ -29,6 +28,8 @@ Return Keyword
 >>>
 >>> hello()
 'hello world'
+
+Code after ``return`` will not execute:
 
 >>> def hello():
 ...     return 'hello world'
@@ -37,6 +38,15 @@ Return Keyword
 >>>
 >>> hello()
 'hello world'
+
+You can have more than one ``return`` keyword in a function, although function
+will close after hitting any of them, and will not proceed any further.
+
+>>> def add():
+...     if True:
+...         return 'yes'
+...     else:
+...         return 'no'
 
 
 Return Basic Type

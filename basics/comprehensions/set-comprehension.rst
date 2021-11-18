@@ -4,10 +4,12 @@ Comprehension Set
 
 Syntax
 ------
-``set`` comprehension approach to applying function to elements:
+Short Syntax:
 
 >>> {x+10 for x in range(0, 5)}
 {10, 11, 12, 13, 14}
+
+Long Syntax:
 
 >>> set(x+10 for x in range(0, 5))
 {10, 11, 12, 13, 14}
@@ -30,6 +32,9 @@ Use Case - Unique
 >>>
 >>> sorted(result)
 ['setosa', 'versicolor', 'virginica']
+>>>
+>>> dict(enumerate({row[-1] for row in DATA[1:]}))
+{0: 'virginica', 1: 'versicolor', 2: 'setosa'}
 
 
 Assignments

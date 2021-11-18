@@ -1,5 +1,5 @@
 """
-* Assignment: Comprehension Dict ZeroPadded
+* Assignment: Comprehension Dict Reverse
 * Required: yes
 * Complexity: easy
 * Lines of code: 1 lines

@@ -4,6 +4,19 @@ Comprehension Nested
 
 Syntax
 ------
+.. code-block:: python
+
+    result = [<RETURN> for <VARIABLE> in <ITERABLE> for <VARIABLE> in <ITERABLE>]
+
+.. code-block:: python
+
+    result = [<RETURN>
+              for <VARIABLE> in <ITERABLE>
+              for <VARIABLE> in <ITERABLE>]
+
+
+Example
+-------
 >>> DATA = {
 ...     6: ['Doctorate', 'Prof-school'],
 ...     5: ['Masters', 'Bachelor', 'Engineer'],
@@ -27,15 +40,7 @@ Syntax
  'Junior High': '3',
  'Primary School': '2',
  'Kindergarten': '1'}
->>>
->>> print(i)
-1
->>>
->>> print(title)
-Kindergarten
->>>
->>> print(titles)
-['Kindergarten']
+
 
 >>> DATA = {
 ...     6: ['Doctorate', 'Prof-school'],
@@ -59,45 +64,71 @@ Kindergarten
  'Junior High': '3',
  'Primary School': '2',
  'Kindergarten': '1'}
+
+
+Nested
+------
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
 >>>
->>> # doctest: +SKIP
-... print(i)
-Traceback (most recent call last):
-NameError: name 'i' is not defined
 >>>
->>> # doctest: +SKIP
-... print(title)
-Traceback (most recent call last):
-NameError: name 'title' is not defined
+>>> result = '\n'.join(','.join(str(x) for x in row) for row in DATA)
 >>>
->>> # doctest: +SKIP
-... print(titles)
-Traceback (most recent call last):
-NameError: name 'titles' is not defined
+>>> print(result)
+Sepal length,Sepal width,Petal length,Petal width,Species
+5.8,2.7,5.1,1.9,virginica
+5.1,3.5,1.4,0.2,setosa
+5.7,2.8,4.1,1.3,versicolor
+6.3,2.9,5.6,1.8,virginica
+6.4,3.2,4.5,1.5,versicolor
+4.7,3.2,1.3,0.2,setosa
+
+
+Hybrid Solution
+---------------
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>>
+>>>
+>>> data = []
+>>>
+>>> for row in DATA:
+...     line = ','.join(str(x) for x in row)
+...     data.append(line)
+>>>
+>>> result = '\n'.join(data)
+>>>
+>>> print(result)
+Sepal length,Sepal width,Petal length,Petal width,Species
+5.8,2.7,5.1,1.9,virginica
+5.1,3.5,1.4,0.2,setosa
+5.7,2.8,4.1,1.3,versicolor
+6.3,2.9,5.6,1.8,virginica
+6.4,3.2,4.5,1.5,versicolor
+4.7,3.2,1.3,0.2,setosa
 
 
 Code Readability
 ----------------
->>> DATA = [{'a':1, 'b':2, 'c': 3},
-...         {'a':1, 'b':2, 'c': 3},
-...         {'a':1, 'b':2, 'c': 3}]
->>>
->>> result = [value
-...           for row in DATA
-...             for key, value in row.items()]
->>>
->>> result = [value
-...           for row in DATA
-...           for key, value in row.items()]
->>>
-
 >>> # doctest: +SKIP
 ... result = [astronaut | dict(addresses)
 ...           for astronaut in json.loads(DATA)
 ...             for i, address in enumerate(astronaut.pop('addresses'), start=1)
 ...                 if (columns := [f'{key}{i}' for key in address.keys()])
 ...                     and (addresses := zip(columns, address.values()))]
->>>
+
 >>> # doctest: +SKIP
 ... result = [astronaut | dict(addresses)
 ...           for astronaut in json.loads(DATA)

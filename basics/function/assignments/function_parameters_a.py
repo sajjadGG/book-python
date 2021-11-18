@@ -17,6 +17,9 @@ Polish:
     3. Funkcja zwraca sumę wszystkich wartości z sekwencji
     4. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `sum()`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
