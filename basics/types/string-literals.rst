@@ -1,5 +1,5 @@
-Str Literals
-============
+String Literals
+===============
 
 
 Escape Characters

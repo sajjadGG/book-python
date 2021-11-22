@@ -2,8 +2,8 @@ Numeric Float
 =============
 
 
-Definition
-----------
+Syntax
+------
 >>> data = 1.337
 >>> data = +1.337
 >>> data = -1.337

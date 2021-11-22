@@ -1,5 +1,5 @@
-Str Methods
-===========
+String Methods
+==============
 
 
 Rationale

@@ -2,10 +2,14 @@ Logic Bool
 ==========
 
 
-Definition
-----------
+Rationale
+---------
 * ``True`` - Positive value
 * ``False`` - Negative value
+
+
+Syntax
+------
 * First letter capitalized, other are lower cased
 
 >>> data = True
@@ -14,7 +18,7 @@ Definition
 >>> data = true
 Traceback (most recent call last):
 NameError: name 'true' is not defined
->>>
+
 >>> data = TRUE
 Traceback (most recent call last):
 NameError: name 'TRUE' is not defined
@@ -60,8 +64,9 @@ True
 >>> bool('Jan Twardowski')
 True
 
-Negative values
 
+Negative values
+---------------
 >>> bool(0)
 False
 >>>

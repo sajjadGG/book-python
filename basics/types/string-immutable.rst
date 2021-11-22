@@ -1,5 +1,5 @@
-Str Immutable
-=============
+String Immutable
+================
 
 
 Rationale

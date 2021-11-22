@@ -1,5 +1,5 @@
-Str Clean
-=========
+String Clean
+============
 
 
 Rationale

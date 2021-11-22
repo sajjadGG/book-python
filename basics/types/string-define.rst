@@ -1,5 +1,5 @@
-Str Define
-==========
+String Define
+=============
 
 
 Rationale

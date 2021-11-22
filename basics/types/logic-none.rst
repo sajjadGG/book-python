@@ -8,8 +8,8 @@ Rationale
 * It is not ``False`` value
 
 
-Definition
-----------
+Syntax
+------
 * First letter capitalized, other are lower cased
 
 >>> data = None

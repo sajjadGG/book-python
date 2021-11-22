@@ -1,5 +1,5 @@
-Str Input
-=========
+String Input
+============
 
 .. testsetup::
 
