@@ -247,19 +247,19 @@ Select Attributes
 >>> astro.weight = 75.5
 >>>
 >>> vars(astro)
-{'firstname': 'Mark', 'lastname': 'Watney', 'age': 44, 'height': 175.5, 'weight': 75.5}
+{'firstname': 'Mark', 'lastname': 'Watney', 'age': 44, 'height': 185.5, 'weight': 75.5}
 >>>
 >>> list(vars(mark).values())
-['Mark', 'Watney', 44, 175.5, 75.5]
+['Mark', 'Watney', 44, 185.5, 75.5]
 >>>
 >>> [x for x in vars(mark).values() if type(x) is str]
 ['Mark', 'Watney']
 >>>
 >>> [x for x in vars(mark).values() if type(x) in (float, int)]
-[44, 175.5, 75.5]
+[44, 185.5, 75.5]
 >>>
 >>> {k:v for k,v in vars(mark).items()}
-{'firstname': 'Mark', 'lastname': 'Watney', 'age': 44, 'height': 175.5, 'weight': 75.5}
+{'firstname': 'Mark', 'lastname': 'Watney', 'age': 44, 'height': 185.5, 'weight': 75.5}
 >>>
 >>> {k:v for k,v in vars(mark).items() if k in ['firstname', 'lastname']}
 {'firstname': 'Mark', 'lastname': 'Watney'}

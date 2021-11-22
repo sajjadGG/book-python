@@ -119,6 +119,6 @@ SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in positio
 
 Assignments
 -----------
-.. literalinclude:: assignments/str_literals_a.py
-    :caption: :download:`Solution <assignments/str_literals_a.py>`
+.. literalinclude:: assignments/type_strliterals_a.py
+    :caption: :download:`Solution <assignments/type_strliterals_a.py>`
     :end-before: # Solution

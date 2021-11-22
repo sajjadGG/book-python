@@ -545,6 +545,6 @@ Use Case
 
 Assignments
 -----------
-.. literalinclude:: assignments/str_methods_a.py
-    :caption: :download:`Solution <assignments/str_methods_a.py>`
+.. literalinclude:: assignments/type_strmethods_a.py
+    :caption: :download:`Solution <assignments/type_strmethods_a.py>`
     :end-before: # Solution

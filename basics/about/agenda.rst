@@ -17,8 +17,8 @@ Day 1
     "60 min", "Type Int"
     "60 min", "Type Float"
     "45 min", "Type Bool"
-    "30 min", "Type None"
-    "60 min", "Type Str"
+    "15 min", "Type None"
+    "75 min", "Type Str"
     "60 min", "Type Str Methods"
 
 
@@ -66,15 +66,21 @@ Day 4
     :widths: 15, 85
     :header: "Estimated Time", "Topic"
 
-    "60 min", "Function Definition"
-    "60 min", "Function Return"
-    "75 min", "Function Parameters"
-    "75 min", "Function Arguments"
+    "20m", "File Path"
+    "15m", "File Access Modes"
+    "45m", "File Write"
+    "45m", "File Read"
+    "5m", "File Append"
+    "10m", "File Encoding"
+    "10m", "File Binary"
+    "30 min", "Function Definition"
+    "30 min", "Function Return"
+    "60 min", "Function Parameters"
+    "60 min", "Function Arguments"
     "30 min", "Function Scope"
-    "30 min", "Function Recurrence"
-    "30 min", "Function Doctest"
+    "15 min", "Function Recurrence"
+    "30 min", "Function Generator"
     "15 min", "Function Lambda"
-    "45 min", "Function Generator"
 
 
 Day 5

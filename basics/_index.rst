@@ -25,81 +25,41 @@ Syntax
     syntax/increment.rst
 
 
-Type Numeric
-************
+Types
+*****
 .. toctree::
     :maxdepth: 1
-    :caption: Type Numeric
+    :caption: Types
 
-    type-numeric/int.rst
-    type-numeric/float.rst
+    types/numeric-int.rst
+    types/numeric-float.rst
+    types/logic-bool.rst
+    types/logic-none.rst
+    types/string-define.rst
+    types/string-immutable.rst
+    types/string-literals.rst
+    types/string-input.rst
+    types/string-methods.rst
+    types/string-clean.rst
 
 
-Type Logic
-**********
+Sequences
+*********
 .. toctree::
     :maxdepth: 1
-    :caption: Type Logic
+    :caption: Sequences
 
-    type-logic/bool.rst
-    type-logic/none.rst
-
-
-Type String
-***********
-.. toctree::
-    :maxdepth: 1
-    :caption: Type String
-
-    type-string/define.rst
-    type-string/immutable.rst
-    type-string/literals.rst
-    type-string/input.rst
-    type-string/methods.rst
-    type-string/clean.rst
-
-
-Sequence Ordered
-****************
-.. toctree::
-    :maxdepth: 1
-    :caption: Sequence Ordered
-
-    sequence-ordered/tuple.rst
-    sequence-ordered/list.rst
-    sequence-ordered/comparison.rst
-
-
-Sequence Unordered
-******************
-.. toctree::
-    :maxdepth: 1
-    :caption: Sequence Unordered
-
-    sequence-unordered/set.rst
-    sequence-unordered/frozenset.rst
-    sequence-unordered/comparison.rst
-
-
-Sequence Nested
-***************
-.. toctree::
-    :maxdepth: 1
-    :caption: Sequence Nested
-
-    sequence-nested/nested.rst
-
-
-Sequence Unpack
-***************
-.. toctree::
-    :maxdepth: 1
-    :caption: Sequence Unpack
-
-    sequence-unpack/getitem.rst
-    sequence-unpack/slice.rst
-    sequence-unpack/unpack-assignment.rst
-    sequence-unpack/unpack-star.rst
+    sequences/ordered-tuple.rst
+    sequences/ordered-list.rst
+    sequences/ordered-comparison.rst
+    sequences/unordered-set.rst
+    sequences/unordered-frozenset.rst
+    sequences/unordered-comparison.rst
+    sequences/nested-nested.rst
+    sequences/unpack-getitem.rst
+    sequences/unpack-slice.rst
+    sequences/unpack-unpack-assignment.rst
+    sequences/unpack-unpack-star.rst
 
 
 Mappings
@@ -108,9 +68,9 @@ Mappings
     :maxdepth: 1
     :caption: Mappings
 
-    mapping/dict.rst
-    mapping/generate.rst
-    mapping/nested.rst
+    mappings/dict.rst
+    mappings/generate.rst
+    mappings/nested.rst
 
 
 Conditional

@@ -108,7 +108,7 @@ Global
 >>>
 >>>
 >>> def echo():
-...     global
+...     global data
 ...     data = [10, 20, 30]
 ...     return data
 >>>

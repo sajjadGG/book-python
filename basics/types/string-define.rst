@@ -117,10 +117,10 @@ it's a docstring:
 
 Assignments
 -----------
-.. literalinclude:: assignments/str_define_a.py
-    :caption: :download:`Solution <assignments/str_define_a.py>`
+.. literalinclude:: assignments/type_strdefine_a.py
+    :caption: :download:`Solution <assignments/type_strdefine_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/str_define_b.py
-    :caption: :download:`Solution <assignments/str_define_b.py>`
+.. literalinclude:: assignments/type_strdefine_b.py
+    :caption: :download:`Solution <assignments/type_strdefine_b.py>`
     :end-before: # Solution

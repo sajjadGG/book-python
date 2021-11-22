@@ -26,6 +26,7 @@ range(0, 3)
 >>> list(range(4,11,2))
 [4, 6, 8, 10]
 
+
 Enumerate
 ---------
 * ``enumerate(*iterables)``
@@ -196,7 +197,7 @@ Generator Chain
 * Function composition
 
 >>> def even(x):
->>>     return x % 2 == 0
+...     return x % 2 == 0
 >>>
 >>>
 >>> data = (x for x in range(0,5))

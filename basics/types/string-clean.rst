@@ -192,6 +192,6 @@ Date and Time
 
 Assignments
 -----------
-.. literalinclude:: assignments/str_clean_a.py
-    :caption: :download:`Solution <assignments/str_clean_a.py>`
+.. literalinclude:: assignments/type_strclean_a.py
+    :caption: :download:`Solution <assignments/type_strclean_a.py>`
     :end-before: # Solution

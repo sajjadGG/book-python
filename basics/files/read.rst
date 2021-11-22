@@ -86,7 +86,7 @@ Read selected (1-30) lines from file:
 >>>
 >>> with open(FILE) as file:
 ...     for line in file.readlines()[1:30]:
-...         print(line)
+...         line = line.strip()
 
 Read whole file and split by lines, separate header from content:
 
@@ -97,7 +97,7 @@ Read whole file and split by lines, separate header from content:
 ...     header, *content = file.readlines()
 ...
 ...     for line in content:
-...         print(line)
+...         line = line.strip()
 
 
 Reading File as Generator
@@ -109,7 +109,7 @@ Reading File as Generator
 >>>
 >>> with open(FILE) as file:
 ...     for line in file:
-...         print(line)
+...         line = line.strip()
 
 >>> FILE = r'/tmp/myfile.txt'
 >>>
@@ -117,7 +117,7 @@ Reading File as Generator
 ...     header = file.readline()
 ...
 ...     for line in file:
-...         print(line)
+...         line = line.strip()
 
 
 Examples
