@@ -63,8 +63,6 @@ Syntax
 >>>
 >>> myobj = MyClass()
 >>> myobj.myattribute = 'MyValue'
->>> print(myobj.myattribute)
-MyValue
 
 
 What are attributes?
@@ -128,12 +126,6 @@ Dynamic attributes:
 >>> mark = Astronaut()
 >>> jose = Astronaut()
 >>> jose.name = 'José Jiménez'
->>>
->>> print(f'My name... {jose.name}')
-My name... José Jiménez
->>> print(f'My name... {mark.name}')
-Traceback (most recent call last):
-AttributeError: 'Astronaut' object has no attribute 'name'
 
 
 Namespace
@@ -168,13 +160,6 @@ Different Types
 >>> setosa = Iris()
 >>> setosa.features = [5.1, 3.5, 1.4, 0.2]
 >>> setosa.label = 'setosa'
->>>
->>> print(setosa.label)
-setosa
->>> print(setosa.features)
-[5.1, 3.5, 1.4, 0.2]
->>> sum(setosa.features)
-10.2
 
 >>> from typing import Union
 >>>
@@ -220,13 +205,6 @@ Getting dynamic fields and values:
 >>> flower.petal_length = 1.4
 >>> flower.petal_width = 0.2
 >>> flower.species = 'setosa'
->>>
->>> vars(flower)  # doctest: +NORMALIZE_WHITESPACE
-{'sepal_length': 5.1,
- 'sepal_width': 3.5,
- 'petal_length': 1.4,
- 'petal_width': 0.2,
- 'species': 'setosa'}
 
 
 Select Attributes
@@ -245,27 +223,6 @@ Select Attributes
 >>> astro.age = 44
 >>> astro.height = 185.5
 >>> astro.weight = 75.5
->>>
->>> vars(astro)
-{'firstname': 'Mark', 'lastname': 'Watney', 'age': 44, 'height': 185.5, 'weight': 75.5}
->>>
->>> list(vars(mark).values())
-['Mark', 'Watney', 44, 185.5, 75.5]
->>>
->>> [x for x in vars(mark).values() if type(x) is str]
-['Mark', 'Watney']
->>>
->>> [x for x in vars(mark).values() if type(x) in (float, int)]
-[44, 185.5, 75.5]
->>>
->>> {k:v for k,v in vars(mark).items()}
-{'firstname': 'Mark', 'lastname': 'Watney', 'age': 44, 'height': 185.5, 'weight': 75.5}
->>>
->>> {k:v for k,v in vars(mark).items() if k in ['firstname', 'lastname']}
-{'firstname': 'Mark', 'lastname': 'Watney'}
->>>
->>> {k:v for k,v in vars(mark).items() if type(v) is str}
-{'firstname': 'Mark', 'lastname': 'Watney'}
 
 
 Use Cases

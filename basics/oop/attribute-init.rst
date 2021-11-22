@@ -174,7 +174,7 @@ Validate
 >>>
 >>> mark = Astronaut('Mark', 'Watney', age=60)
 Traceback (most recent call last):
-Astronauts are selected between age of 30-50 years
+ValueError: Astronauts are selected between age of 30-50 years
 
 
 Validate
@@ -205,7 +205,7 @@ Validate
 >>>
 >>> mark = Astronaut('Mark', 'Watney', age=60)
 Traceback (most recent call last):
-Astronauts are selected between age of 30-50 years
+ValueError: Astronauts are selected between age of 30-50 years
 
 
 Example

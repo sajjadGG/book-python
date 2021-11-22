@@ -55,11 +55,11 @@ Sequences
     sequences/unordered-set.rst
     sequences/unordered-frozenset.rst
     sequences/unordered-comparison.rst
-    sequences/nested-nested.rst
+    sequences/nested.rst
     sequences/unpack-getitem.rst
     sequences/unpack-slice.rst
-    sequences/unpack-unpack-assignment.rst
-    sequences/unpack-unpack-star.rst
+    sequences/unpack-assignment.rst
+    sequences/unpack-star.rst
 
 
 Mappings
@@ -188,13 +188,15 @@ Object Oriented Programming
     oop/attribute-init.rst
     oop/method-about.rst
     oop/method-attributes.rst
-    oop/method-methods.rst
+    oop/method-method.rst
     oop/inheritance-about.rst
     oop/inheritance-overload.rst
     oop/inheritance-patterns.rst
     oop/inheritance-problems.rst
+    oop/stringify-about.rst
     oop/stringify-str.rst
     oop/stringify-repr.rst
+    oop/stringify-nested.rst
     oop/architecture-rationale.rst
     oop/architecture-classdiagram.rst
 

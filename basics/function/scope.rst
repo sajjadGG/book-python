@@ -240,7 +240,7 @@ stay until the end of a program.
 'Mark Watney'
 
 >>> from unittest.mock import MagicMock
->>> input = MagicMock(side_effect=['Mark Watney'])
+>>> input = MagicMock(side_effect=['Mark Watney', '44'])
 >>>
 >>>
 >>> name = input('Type your name: ')
@@ -249,7 +249,7 @@ stay until the end of a program.
 >>>
 >>> age = input('Type your age: ')
 >>> age
-'Mark Watney'
+'44'
 
 
 To restore default behavior of ``input()`` function use:

@@ -267,22 +267,22 @@ Select Attributes
 >>> vars(astro)
 {'firstname': 'Mark', 'lastname': 'Watney', 'age': 44, 'height': 185.5, 'weight': 75.5}
 >>>
->>> list(vars(mark).values())
+>>> list(vars(astro).values())
 ['Mark', 'Watney', 44, 185.5, 75.5]
 >>>
->>> [x for x in vars(mark).values() if type(x) is str]
+>>> [x for x in vars(astro).values() if type(x) is str]
 ['Mark', 'Watney']
 >>>
->>> [x for x in vars(mark).values() if type(x) in (float, int)]
+>>> [x for x in vars(astro).values() if type(x) in (float, int)]
 [44, 185.5, 75.5]
 >>>
->>> {k:v for k,v in vars(mark).items()}
+>>> {k:v for k,v in vars(astro).items()}
 {'firstname': 'Mark', 'lastname': 'Watney', 'age': 44, 'height': 185.5, 'weight': 75.5}
 >>>
->>> {k:v for k,v in vars(mark).items() if k in ['firstname', 'lastname']}
+>>> {k:v for k,v in vars(astro).items() if k in ['firstname', 'lastname']}
 {'firstname': 'Mark', 'lastname': 'Watney'}
 >>>
->>> {k:v for k,v in vars(mark).items() if type(v) is str}
+>>> {k:v for k,v in vars(astro).items() if type(v) is str}
 {'firstname': 'Mark', 'lastname': 'Watney'}
 
 
