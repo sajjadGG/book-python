@@ -115,6 +115,17 @@ mislead everyone.
 >>> kPa = 1000 * Pa
 >>> MPa = 1000000 * Pa
 
+The code above is far more readable, than the following snippet:
+
+>>> PA = 1
+>>> HPA = 100 * PA
+>>> KPA = 1000 * PA
+>>> MPA = 1000000 * PA
+
+Note, that the only change was in variable names. As you can see, this could
+have a huge impact on describing the intent of what you want to achieve with
+the code.
+
 
 Assignments
 -----------
@@ -124,4 +135,16 @@ Assignments
 
 .. literalinclude:: assignments/syntax_assignment_b.py
     :caption: :download:`assignments/syntax_assignment_b.py`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/syntax_assignment_c.py
+    :caption: :download:`assignments/syntax_assignment_c.py`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/syntax_assignment_d.py
+    :caption: :download:`assignments/syntax_assignment_d.py`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/syntax_assignment_e.py
+    :caption: :download:`assignments/syntax_assignment_e.py`
     :end-before: # Solution

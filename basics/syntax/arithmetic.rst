@@ -98,14 +98,46 @@ think. Modulo division is the reminder from true division:
 >>> 12 % 5
 2
 
+
+Parity Check
+------------
 Modulo division is most frequently used to test if value is even or odd.
 In such case, you need to modulo divide number by 2 and check the reminder.
 If the reminder is 0, than the original number was even, if the reminder
 is false, the original number was odd:
 
->>> 12 % 2 == 0
+>>> 10 % 2
+0
+>>>
+>>> 11 % 2
+1
+>>>
+>>> 12 % 2
+0
+>>>
+>>> 13 % 2
+1
+
+>>> 10 % 2 == 0
 True
 >>>
 >>> 11 % 2 == 0
 False
+>>>
+>>> 12 % 2 == 0
+True
+>>>
+>>> 13 % 2 == 0
+False
 
+
+Operator Precedence
+-------------------
+* Python uses mathematical operator precedence
+* More information in `Boolean Operators`.
+
+>>> 1+2 * 3
+7
+
+>>> (1+2) * 3
+9

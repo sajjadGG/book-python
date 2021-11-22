@@ -1,5 +1,5 @@
-OOP Methods
-===========
+OOP Methods About
+=================
 
 
 Rationale
@@ -36,15 +36,17 @@ Method Parameters
 * At definition - ``self`` should always be a first parameter
 * Later you will learn more advanced things like static methods etc.
 * Parameter - Receiving variable used within the function
-* Required parameter:
+* Parameters could be required or optional (with default value)
+
+Required parameter:
 
     * Necessary to call that function
     * Specified at leftmost side
 
-* Default parameter:
+Optional parameter:
 
-    * Optional to call that function
     * Has default value
+    * Optional to call that function
     * Default value will be overridden if specified at a call time
     * Specified at rightmost side
 

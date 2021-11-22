@@ -1,5 +1,5 @@
-OOP Inheritance
-===============
+OOP Inheritance About
+=====================
 
 
 Rationale
@@ -23,11 +23,22 @@ Rationale
         Class takes attributes and methods from parent.
 
 
+Inheritance
+-----------
+>>> class Parent:
+...     pass
+>>>
+>>>
+>>> class Child(Parent):
+...     pass
+
+
 Methods
 -------
 >>> class Parent:
 ...     def say_hello(self):
 ...         return 'Hello'
+>>>
 >>>
 >>> class Child(Parent):
 ...     pass
@@ -40,13 +51,25 @@ Methods
 
 Attributes
 ----------
+>>> class Parent:
+...     def __init__(self):
+...         self.firstname = 'Mark'
+...         self.lastname = 'Watney'
+>>>
+>>>
+>>> class Child(Parent):
+...     pass
+>>>
+>>>
+>>> obj = Child()
+>>> vars(obj)
+{'firstname': 'Mark', 'lastname': 'Watney'}
+
+
+Use Case - 0x01
+---------------
 >>> class Person:
-...     firstname: str
-...     lastname: str
-...
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
+...     pass
 >>>
 >>>
 >>> class Astronaut(Person):
@@ -54,13 +77,27 @@ Attributes
 >>>
 >>> class Cosmonaut(Person):
 ...     pass
->>>
->>>
->>> mark = Astronaut('Mark', 'Watney')
->>> ivan = Cosmonaut('Ivan', 'Ivanovic')
 
 
-Use Case - Iris
+Use Case - 0x02
+---------------
+>>> class Person:
+...     def __init__(self):
+...         self.firstname = 'Mark'
+...         self.lastname = 'Watney'
+...
+...     def say_hello(self):
+...         return 'hello'
+>>>
+>>>
+>>> class Astronaut(Person):
+...     pass
+>>>
+>>> class Cosmonaut(Person):
+...     pass
+
+
+Use Case - 0x03
 ---------------
 >>> class Iris:
 ...     sepal_length: float

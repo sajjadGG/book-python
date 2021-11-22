@@ -60,18 +60,10 @@ Hello
 
 Assignments
 -----------
-.. literalinclude:: assignments/about_syntax_a.py
-    :caption: :download:`assignments/about_syntax_a.py`
+.. literalinclude:: assignments/syntax_print_a.py
+    :caption: :download:`assignments/syntax_print_a.py`
     :end-before: # Solution
 
-.. literalinclude:: assignments/about_syntax_b.py
-    :caption: :download:`assignments/about_syntax_b.py`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/about_syntax_c.py
-    :caption: :download:`assignments/about_syntax_c.py`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/about_syntax_d.py
-    :caption: :download:`assignments/about_syntax_d.py`
+.. literalinclude:: assignments/syntax_print_b.py
+    :caption: :download:`assignments/syntax_print_b.py`
     :end-before: # Solution

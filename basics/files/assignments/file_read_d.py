@@ -1,5 +1,5 @@
 """
-* Assignment: File Read Dict
+* Assignment: File Read CleanFile
 * Required: no
 * Complexity: medium
 * Lines of code: 10 lines
@@ -53,14 +53,17 @@ DATA = """127.0.0.1       localhost
 with open(FILE, mode='w') as file:
     file.write(DATA)
 
-result = {}
+# dict[str,list[str]]: example {'10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'], ...}
+result = ...
 
 # Solution
+result = {}
+
 with open(FILE) as file:
     for line in file:
-        ip, *hosts = line.strip().split()
+        ip, *hostnames = line.strip().split()
 
         if ip in result:
-            result[ip] += hosts
+            result[ip] += hostnames
         else:
-            result[ip] = hosts
+            result[ip] = hostnames

@@ -6,12 +6,12 @@
 
 English:
     1. Add inline comment to `alone_on_mars` variable definition
-       with content: 'Space Pirate'
+       with content: Space Pirate
     2. Run doctests - all must succeed
 
 Polish:
     1. Dodaj komentarz na końcu linii do definicji zmiennej `alone_on_mars`
-       treść: 'Space Pirate'
+       treść: Space Pirate
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:

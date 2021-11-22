@@ -5,11 +5,11 @@
 * Time: 2 min
 
 English:
-    1. Add line comment: 'This is my first Python script'
+    1. Add line comment: This is my first Python script
     2. Run doctests - all must succeed
 
 Polish:
-    1. Dodaj komentarz liniowy: 'This is my first Python script'
+    1. Dodaj komentarz liniowy: This is my first Python script
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:

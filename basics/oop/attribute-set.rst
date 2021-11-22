@@ -1,5 +1,5 @@
-OOP Attributes
-==============
+OOP Attribute Set
+=================
 
 
 Rationale
@@ -120,24 +120,6 @@ Dynamic attributes:
 >>> astro = Astronaut()
 >>> astro.firstname = 'Mark'
 >>> astro.lastname = 'Watney'
->>>
->>> print(f'Hello {astro.firstname} {astro.lastname}')
-Hello Mark Watney
-
-Accessing not existing attributes:
-
->>> class Astronaut:
-...     firstname: str
-...     lastname: str
->>>
->>>
->>> astro = Astronaut()
->>> astro.firstname = 'Mark'
->>> astro.lastname = 'Watney'
->>>
->>> print(astro.missions)
-Traceback (most recent call last):
-AttributeError: 'Astronaut' object has no attribute 'missions'
 
 >>> class Astronaut:
 ...     name: str
@@ -247,6 +229,45 @@ Getting dynamic fields and values:
  'species': 'setosa'}
 
 
+Select Attributes
+-----------------
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
+...     height: float
+...     weight: float
+>>>
+>>>
+>>> astro = Astronaut()
+>>> astro.firstname = 'Mark'
+>>> astro.lastname = 'Watney'
+>>> astro.age = 44
+>>> astro.height = 185.5
+>>> astro.weight = 75.5
+>>>
+>>> vars(astro)
+{'firstname': 'Mark', 'lastname': 'Watney', 'age': 44, 'height': 175.5, 'weight': 75.5}
+>>>
+>>> list(vars(mark).values())
+['Mark', 'Watney', 44, 175.5, 75.5]
+>>>
+>>> [x for x in vars(mark).values() if type(x) is str]
+['Mark', 'Watney']
+>>>
+>>> [x for x in vars(mark).values() if type(x) in (float, int)]
+[44, 175.5, 75.5]
+>>>
+>>> {k:v for k,v in vars(mark).items()}
+{'firstname': 'Mark', 'lastname': 'Watney', 'age': 44, 'height': 175.5, 'weight': 75.5}
+>>>
+>>> {k:v for k,v in vars(mark).items() if k in ['firstname', 'lastname']}
+{'firstname': 'Mark', 'lastname': 'Watney'}
+>>>
+>>> {k:v for k,v in vars(mark).items() if type(v) is str}
+{'firstname': 'Mark', 'lastname': 'Watney'}
+
+
 Use Cases
 ---------
 >>> class Laptop:
@@ -289,36 +310,9 @@ Use Cases
 ...     height: float
 ...     weight: float
 
->>> class Astronaut:
-...     firstname: str
-...     lastname: str
->>>
->>>
->>> watney = Astronaut()
->>> watney.firstname = 'Mark'
->>> watney.lastname = 'Watney'
->>>
->>> lewis = Astronaut()
->>> lewis.firstname = 'Melissa'
->>> lewis.lastname = 'Lewis'
->>> lewis.address = 'Ćwiartki 3/4'
->>>
->>> print(watney.address)
-Traceback (most recent call last):
-AttributeError: 'Astronaut' object has no attribute 'address'
->>> print(lewis.address)
-Ćwiartki 3/4
 
->>> watney_firstname = 'Mark'
->>> watney_lastname = 'Watney'
->>> watney_mission = 'Ares 3'
->>> watney_agency = 'NASA'
->>>
->>> lewis_firstname = 'Melissa'
->>> lewis_lastname = 'Lewis'
->>> lewis_mission = 'Ares 3'
->>> lewis_agency = 'NASA'
-
+Use Case - Astronaut
+--------------------
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
@@ -337,18 +331,6 @@ AttributeError: 'Astronaut' object has no attribute 'address'
 >>> lewis.lastname = 'Lewis'
 >>> lewis.mission = 'Ares 3'
 >>> lewis.agency = 'NASA'
->>>
->>> vars(watney)  # doctest: +NORMALIZE_WHITESPACE
-{'firstname': 'Mark',
- 'lastname': 'Watney',
- 'mission': 'Ares 3',
- 'agency': 'NASA'}
->>>
->>> vars(lewis)  # doctest: +NORMALIZE_WHITESPACE
-{'firstname': 'Melissa',
- 'lastname': 'Lewis',
- 'mission': 'Ares 3',
- 'agency': 'NASA'}
 
 
 References

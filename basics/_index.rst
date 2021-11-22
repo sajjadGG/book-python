@@ -222,16 +222,21 @@ Object Oriented Programming
     :caption: Object Oriented Programming
 
     oop/class.rst
-    oop/attribute.rst
-    oop/init.rst
-    oop/method.rst
-    oop/methods-attributes.rst
-    oop/inheritance.rst
+    oop/attribute-about.rst
+    oop/attribute-set.rst
+    oop/attribute-get.rst
+    oop/attribute-init.rst
+    oop/method-about.rst
+    oop/method-attributes.rst
+    oop/method-methods.rst
+    oop/inheritance-about.rst
+    oop/inheritance-overload.rst
     oop/inheritance-patterns.rst
-    oop/inheritance-problem.rst
-    oop/super.rst
-    oop/stringify.rst
-    oop/architecture.rst
+    oop/inheritance-problems.rst
+    oop/stringify-str.rst
+    oop/stringify-repr.rst
+    oop/architecture-rationale.rst
+    oop/architecture-classdiagram.rst
 
 
 Recap

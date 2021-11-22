@@ -152,6 +152,7 @@ chemist -> Alex Vogel
 
 Map
 ---
+* Apply function to all elements of data
 * ``map(callable, *iterables)``
 
 >>> data = [1, 2, 3]
@@ -167,44 +168,6 @@ Map
 Traceback (most recent call last):
 StopIteration
 
->>> data = [1, 2, 3]
->>> result = map(float, data)
->>>
->>> list(result)
-[1.0, 2.0, 3.0]
-
->>> data = [1, 2, 3]
->>> result = map(float, data)
->>>
->>> tuple(map(float, data))
-(1.0, 2.0, 3.0)
-
->>> data = [1, 2, 3]
->>> result = map(float, data)
->>>
->>> set(map(float, data))
-{1.0, 2.0, 3.0}
-
->>> DATA = [1, 2, 3]
->>>
->>> result = (float(x) for x in DATA)
->>> list(result)
-[1.0, 2.0, 3.0]
-
->>> DATA = [1.1, 2.2, 3.3]
->>> result = map(round, DATA)
->>> list(result)
-[1, 2, 3]
-
->>> def square(x):
-...     return x ** 2
-...
->>> data = [1, 2, 3]
->>> result = map(square, data)
->>>
->>> list(result)
-[1, 4, 9]
-
 
 Filter
 ------
@@ -214,51 +177,41 @@ Filter
 ...     return x % 2 == 0
 >>>
 >>>
->>> data = [1, 2, 3, 4, 5, 6]
+>>> data = [0, 1, 2, 3, 4]
 >>> result = filter(even, data)
 >>>
+>>> next(result)
+0
 >>> next(result)
 2
 >>> next(result)
 4
 >>> next(result)
-6
->>> next(result)
 Traceback (most recent call last):
 StopIteration
 
+
+Generator Chain
+---------------
+* Function composition
+
 >>> def even(x):
-...     return x % 2 == 0
+>>>     return x % 2 == 0
 >>>
 >>>
->>> data = [1, 2, 3, 4, 5, 6]
->>> result = filter(even, data)
+>>> data = (x for x in range(0,5))
+>>> data = map(float, data)
+>>> data = filter(even, data)
 >>>
->>> list(result)
-[2, 4, 6]
-
-
-Functools
----------
-* https://docs.python.org/3/library/functools.html
-* ``functools.reduce(callable, iterable[, initializer])``
-
->>> 1 + 2
-3
->>> 1 + 2 + 3 + 4
-10
-
->>> from functools import reduce
->>>
->>>
->>> def add(x, y):
-...     return x + y
->>>
->>>
->>> reduce(add, [1, 2])
-3
->>> reduce(add, [1, 2, 3, 4])
-10
+>>> next(data)
+0.0
+>>> next(data)
+2.0
+>>> next(data)
+4.0
+>>> next(data)
+Traceback (most recent call last):
+StopIteration
 
 
 Itertools
@@ -280,8 +233,8 @@ Itertools
 * ``itertools.groupby(iterable, key=None)``
 
 
-Use Cases
----------
+Use Case - Increment
+--------------------
 >>> def increment(x):
 ...     return x + 1
 >>>
@@ -292,6 +245,21 @@ Use Cases
 >>> list(result)
 [2, 3, 4, 5]
 
+
+Use Case - Square
+-----------------
+>>> def square(x):
+...     return x ** 2
+...
+>>> data = [1, 2, 3]
+>>> result = map(square, data)
+>>>
+>>> list(result)
+[1, 4, 9]
+
+
+Use Case - Translate
+--------------------
 >>> PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
 ...       'ł': 'l', 'ń': 'n', 'ó': 'o',
 ...       'ś': 's', 'ż': 'z', 'ź': 'z'}
@@ -305,6 +273,9 @@ Use Cases
 >>> ''.join(result)
 'zazolc gesla jazn'
 
+
+Use Case - Adults
+-----------------
 >>> people = [
 ...     {'age': 21, 'name': 'Jan Twardowski'},
 ...     {'age': 25, 'name': 'Mark Watney'},
@@ -320,6 +291,9 @@ Use Cases
 [{'age': 21, 'name': 'Jan Twardowski'},
  {'age': 25, 'name': 'Mark Watney'}]
 
+
+Use Case - Astronauts
+---------------------
 >>> people = [
 ...     {'is_astronaut': False, 'name': 'Jan Twardowski'},
 ...     {'is_astronaut': True, 'name': 'Mark Watney'},
@@ -335,20 +309,9 @@ Use Cases
 [{'is_astronaut': True, 'name': 'Mark Watney'},
  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
->>> astronauts = ['Mark Watney', 'Melissa Lewis']
->>>
->>> people = ['Jan Twardowski', 'Mark Watney',
-...           'Melissa Lewis', 'Jimenez']
->>>
->>>
->>> def is_astronaut(person):
-...     return person in astronauts
->>>
->>>
->>> result = filter(is_astronaut, people)
->>> list(result)
-['Mark Watney', 'Melissa Lewis']
 
+Use Case - Sum Stdin
+--------------------
 >>> import sys
 >>>
 >>> # doctest: +SKIP

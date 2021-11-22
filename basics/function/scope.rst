@@ -1,6 +1,12 @@
 Function Scope
 ==============
 
+.. testsetup::
+
+    # Simulate user input (for test automation)
+    from unittest.mock import MagicMock
+    input = MagicMock(side_effect=['lastname'])
+
 
 Rationale
 ---------
@@ -19,7 +25,7 @@ Values Leaking
 --------------
 Values defined in function does not leak out:
 
->>> def add(a, b=1):
+>>> def echo(a, b=1):
 ...     c = 0
 >>>
 >>>
@@ -33,7 +39,7 @@ NameError: name 'b' is not defined
 Traceback (most recent call last):
 NameError: name 'c' is not defined
 >>>
->>> add(1)
+>>> echo(1)
 >>>
 >>> print(a)
 Traceback (most recent call last):
@@ -53,12 +59,16 @@ Outer Scope
 >>> data = [1, 2, 3]
 >>>
 >>>
->>> def add():
-...     return sum(data)
+>>> def echo():
+...     return data
 >>>
 >>>
->>> add()
-6
+>>> print(data)
+[1, 2, 3]
+>>>
+>>> echo()
+[1, 2, 3]
+>>>
 >>> print(data)
 [1, 2, 3]
 
@@ -74,13 +84,17 @@ Shadowing
 >>> data = [1, 2, 3]
 >>>
 >>>
->>> def add():
+>>> def echo():
 ...     data = [10, 20, 30]  # Shadows name 'data' from outer scope
-...     return sum(data)
+...     return data
 >>>
 >>>
->>> add()
-60
+>>> print(data)
+[1, 2, 3]
+>>>
+>>> echo()
+[10, 20, 30]
+>>>
 >>> print(data)
 [1, 2, 3]
 
@@ -93,14 +107,18 @@ Global
 >>> data = [1, 2, 3]
 >>>
 >>>
->>> def add():
-...     global data
+>>> def echo():
+...     global
 ...     data = [10, 20, 30]
-...     return sum(data)
+...     return data
 >>>
 >>>
->>> add()
-60
+>>> print(data)
+[1, 2, 3]
+>>>
+>>> echo()
+[10, 20, 30]
+>>>
 >>> print(data)
 [10, 20, 30]
 
@@ -161,6 +179,15 @@ Global Scope
  'firstname': 'Mark',
  'lastname': 'Watney'}
 
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
+>>>
+>>>
+>>> what = input('Type variable name: ')   # User input: 'lastname'
+>>>
+>>> globals()[what]
+'Watney'
+
 
 Local Scope
 -----------
@@ -211,6 +238,19 @@ stay until the end of a program.
 >>> age = input('Type your age: ')
 >>> age
 'Mark Watney'
+
+>>> from unittest.mock import MagicMock
+>>> input = MagicMock(side_effect=['Mark Watney'])
+>>>
+>>>
+>>> name = input('Type your name: ')
+>>> name
+'Mark Watney'
+>>>
+>>> age = input('Type your age: ')
+>>> age
+'Mark Watney'
+
 
 To restore default behavior of ``input()`` function use:
 

@@ -47,6 +47,10 @@ Recap information about factorial (``n!``):
     1! = 1 * 0!
     0! = 1
 
+.. code-block:: text
+
+    n! = n * (n-1)!  # 0! = 1
+
 >>> def factorial(n):
 ...     if n == 0:
 ...         return 1

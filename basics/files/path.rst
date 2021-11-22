@@ -140,6 +140,31 @@ Exception Handling
 ...     print('Sorry, not permitted')
 Sorry, file not found
 
+open('/tmp')
+IsADirectoryError: [Errno 21] Is a directory: '/tmp'
+open('/tmp/myfile.txt')
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/myfile.txt'
+try:
+    file = open('/tmp/myfile.txt')
+except FileNotFoundError:
+    print('Sorry, file not found')
+
+Sorry, file not found
+try:
+    file = open('/tmp/myfile.txt')
+except PermissionError:
+    print('Sorry, permission denied')
+
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/myfile.txt'
+try:
+    file = open('/tmp/myfile.txt')
+except FileNotFoundError:
+    print('Sorry, file not found')
+except PermissionError:
+    print('Sorry, permission denied')
+Sorry, file not found
+
+
 
 Create Directories
 ------------------
@@ -256,6 +281,34 @@ Script Path
 >>>
 >>> print(file.name)  # doctest: +SKIP
 myfile.py
+
+
+
+FILE = 'myfile.txt'
+FILE = './myfile.txt'
+FILE = '../myfile.txt'
+FILE = 'docs/myfile.txt'
+FILE = './docs/myfile.txt'
+FILE = '../docs/myfile.txt'
+FILE = '../../../docs/myfile.txt'
+# *nix (Linux, FreeBSD, Unix, macOS, zgodne ze standardem POSIX)
+FILE = '/home/mwatney/myfile.txt'
+FILE = '/Users/mwatney/myfile.txt'
+FILE = '/tmp/myfile.txt'
+# Windows
+FILE = 'C:/Users/mwatney/myfile.txt'
+FILE = r'C:\Users\mwatney\myfile.txt'
+FILE = 'C:\Users\mwatney\myfile.txt'
+  File "<input>", line 1
+    FILE = 'C:\Users\mwatney\myfile.txt'
+                                        ^
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+print('\U0001F680')
+🚀
+FILE = 'C:\natalia\mwatney\myfile.txt'
+print(FILE)
+C:
+atalia\mwatney\myfile.txt
 
 
 Assignments

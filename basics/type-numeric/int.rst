@@ -2,8 +2,8 @@ Numeric Int
 ===========
 
 
-Definition
-----------
+Syntax
+------
 Python 3 dynamically extends ``int`` when it's too big, hence there is no
 maximal or minimal ``int`` value:
 
@@ -55,17 +55,12 @@ Builtin function ``int()`` converts argument to ``int``:
 >>> int('-1')
 -1
 
-Builtin function ``int()`` does not round numbers:
-
->>> int(1.001)
-1
->>>
->>> int(1.999)
-1
-
 >>> int('1_000_000')
 1000000
 
+
+Type Casting Errors
+-------------------
 Builtin function ``int()`` fails when in argument there are parameters
 other than a digit, ``+`` or ``-`` sign and ``_``
 
@@ -92,6 +87,25 @@ ValueError: invalid literal for int() with base 10: '+13,37'
 >>> int('-1,337')
 Traceback (most recent call last):
 ValueError: invalid literal for int() with base 10: '-13,37'
+
+
+Rounding
+--------
+Builtin function ``int()`` does not round numbers:
+
+>>> int(1.11111)
+1
+>>>
+>>> int(1.9999)
+1
+
+Builtin function ``round()`` does that:
+
+>>> round(1.11111)
+1
+>>>
+>>> round(1.9999)
+2
 
 
 Binary
@@ -219,6 +233,26 @@ Type Checking
 >>>
 >>> type(-0)
 <class 'int'>
+
+
+Use Case - 0x01
+---------------
+>>> SECOND = 1
+>>> MINUTE = 60 * SECOND
+>>> HOUR = 60 * MINUTE
+>>> DAY = 24 * HOUR
+>>>
+>>>
+>>> duration = 123456 * SECOND
+>>>
+>>> duration // DAY
+1
+>>> duration // HOUR
+34
+>>> duration // MINUTE
+2057
+>>> duration // SECOND
+123456
 
 
 Assignments

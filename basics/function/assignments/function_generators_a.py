@@ -3,7 +3,7 @@
 * Required: yes
 * Complexity: easy
 * Lines of code: 9 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
     1. Use generator expression to create `numbers`

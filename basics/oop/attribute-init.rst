@@ -1,5 +1,5 @@
-OOP Init Method
-===============
+OOP Attribute Initialize
+========================
 
 
 Rationale
@@ -151,6 +151,61 @@ AttributeError: 'Astronaut' object has no attribute 'firstname'
 >>> print(mark.lastname)
 Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute 'lastname'
+
+
+Validate
+--------
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
+...
+...     def __init__(self, firstname, lastname='asd', age=0):
+...         if not 30 <= age < 50:
+...             raise ValueError('Astronauts are selected between age of 30-50 years')
+...         self.firstname = firstname
+...         self.lastname = lastname
+...         self.age = age
+>>>
+>>>
+>>> mark = Astronaut('Mark', 'Watney', age=40)
+>>> vars(mark)
+{'firstname': 'Mark', 'lastname': 'Watney', 'age': 40}
+>>>
+>>> mark = Astronaut('Mark', 'Watney', age=60)
+Traceback (most recent call last):
+Astronauts are selected between age of 30-50 years
+
+
+Validate
+--------
+* Those are static attributes
+* Usefully for string configuration values
+* Do not modify those values later in a code (keep them constant / final)
+* More information in `OOP Static Attributes`.
+
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
+...     AGE_MIN: int = 30  # const / final
+...     AGE_MAX: int = 50  # const / final
+...
+...     def __init__(self, firstname, lastname='asd', age=0):
+...         if not self.AGE_MIN <= age < self.AGE_MAX:
+...             raise ValueError('Astronauts are selected between age of 30-50 years')
+...         self.firstname = firstname
+...         self.lastname = lastname
+...         self.age = age
+>>>
+>>>
+>>> mark = Astronaut('Mark', 'Watney', age=40)
+>>> vars(mark)
+{'firstname': 'Mark', 'lastname': 'Watney', 'age': 40}
+>>>
+>>> mark = Astronaut('Mark', 'Watney', age=60)
+Traceback (most recent call last):
+Astronauts are selected between age of 30-50 years
 
 
 Example
