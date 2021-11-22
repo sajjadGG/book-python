@@ -48,6 +48,7 @@ Data
 >>> point = {'x':1, 'y':2, 'z':3}
 >>>
 >>> print(f'Point: x={point["x"]}, y={point["y"]}, z={point["z"]}')
+Point: x=1, y=2, z=3
 
 
 Information
@@ -73,3 +74,4 @@ Information
 >>> point.set(x=1, y=2, z=3)
 >>>
 >>> print(f'Point: {point.show()}')
+Point: x=1, y=2, z=3
