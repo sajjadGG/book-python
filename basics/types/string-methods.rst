@@ -215,14 +215,30 @@ Join by Character
 >>> '\n'.join(crew)
 'First line\nSecond line\nThird line'
 
+
+Join Numbers
+------------
+Method ``str.join()`` expects, that all arguments are strings. Therefore it raises
+and error if sequence of numbers is passed:
+
 >>> data = [1, 2, 3]
-','.join(data)
+>>> ','.join(data)
 Traceback (most recent call last):
 TypeError: sequence item 0: expected str instance, int found
 
+In order to avoid errors, you have to manually convert all the values to strings
+before passing them to ``str.join()``. In the following example the generator
+expression syntax is used. It will apply ``str()`` to all elements in ``data``.
+More information in `Generator Expression`:
+
+>>> data = [1, 2, 3]
 >>> ','.join(str(x) for x in data)
 '1,2,3'
 
+You can also use ``map()`` function. Map will apply ``str()`` to all elements
+in ``data``. More information in `Generator Mapping`:
+
+>>> data = [1, 2, 3]
 >>> ','.join(map(str,data))
 '1,2,3'
 

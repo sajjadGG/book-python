@@ -205,7 +205,7 @@ Use Case - 0x01
 >>> colors = dict(enumerate(colors))
 >>> result = []
 >>>
->>> for row in dane:
+>>> for row in data:
 ...     row = row.strip().split(',')
 ...     *numbers, color = map(int, row)
 ...     row = numbers + [colors.get(color)]

@@ -155,7 +155,7 @@ True
 >>> input.call_count
 3
 
->>> input.mock_calls
+>>> input.mock_calls  # doctest: +NORMALIZE_WHITESPACE
 [call('Type color: '),
  call('Type color: '),
  call('Type color: ')]

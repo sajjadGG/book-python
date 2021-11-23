@@ -21,7 +21,7 @@ Syntax
 >>> data[1]
 'b'
 >>> data[-1]
-'d'
+'c'
 
 
 Positive Index
@@ -94,9 +94,9 @@ Get Item from ``str``:
 >>> data[-0]
 'a'
 >>> data[-1]
-'d'
->>> data[-2]
 'c'
+>>> data[-2]
+'b'
 
 
 Getitem from list
@@ -114,9 +114,9 @@ GetItem from ``list``:
 >>> data[-0]
 'a'
 >>> data[-1]
-'d'
->>> data[-2]
 'c'
+>>> data[-2]
+'b'
 
 
 Getitem from tuple
@@ -132,9 +132,9 @@ Getitem from tuple
 >>> data[-0]
 'a'
 >>> data[-1]
-'d'
->>> data[-2]
 'c'
+>>> data[-2]
+'b'
 
 
 Getitem from set

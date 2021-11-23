@@ -163,4 +163,4 @@ References
 
 Assignments
 -----------
-.. tood:: Create assignment
+.. todo:: Create assignment

@@ -23,7 +23,7 @@ Slice Forwards
 
 
 Slice Defaults
--------------
+--------------
 * ``sequence[start:stop]``
 * ``start`` defaults to ``0``
 * ``stop`` defaults to ``len(sequence)``
@@ -76,15 +76,15 @@ Step Forward
 
 
 >>> data = 'abcde'
-data[::1]
+>>> data[::1]
 'abcde'
 
 >>> data = 'abcde'
-data[::2]
+>>> data[::2]
 'ace'
 
 >>> data = 'abcde'
-data[::3]
+>>> data[::3]
 'ad'
 
 >>> data = 'abcde'
