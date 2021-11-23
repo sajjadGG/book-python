@@ -168,7 +168,7 @@ Use Case - 0x01
 [1, 2, 4, 8, 16]
 
 
-Use Case - 0x01
+Use Case - 0x02
 ---------------
 * Map list[dict]
 
@@ -188,6 +188,9 @@ Use Case - 0x01
  {'firstname': 'Mark', 'lastname': 'Watney'},
  {'firstname': 'Melissa', 'lastname': 'Lewis'}]
 
+
+Use Case - 0x03
+---------------
 >>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
 ...         {'is_astronaut': True,  'name': 'Mark Watney'},
 ...         {'is_astronaut': False, 'name': 'José Jiménez'},
@@ -204,6 +207,11 @@ Use Case - 0x01
  {'firstname': 'Mark', 'lastname': 'W.'},
  {'firstname': 'Melissa', 'lastname': 'L.'}]
 
+
+Use Case - 0x04
+---------------
+* Assignment expression
+* More information in `Assignment Expression`
 
 >>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
 ...         {'is_astronaut': True,  'name': 'Mark Watney'},
@@ -223,6 +231,12 @@ Use Case - 0x01
  {'firstname': 'Mark', 'lastname': 'W.'},
  {'firstname': 'Melissa', 'lastname': 'L.'}]
 
+
+Use Case - 0x05
+---------------
+* Assignment expression
+* More information in `Assignment Expression`
+
 >>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
 ...         {'is_astronaut': True,  'name': 'Mark Watney'},
 ...         {'is_astronaut': False, 'name': 'José Jiménez'},
@@ -238,8 +252,6 @@ Use Case - 0x01
 >>>
 >>> print(astronauts)
 ['Jan T.', 'Mark W.', 'Melissa L.']
-
-More information in `Assignment Expression`
 
 
 Assignments

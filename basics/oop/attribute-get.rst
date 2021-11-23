@@ -358,6 +358,8 @@ AttributeError: 'Astronaut' object has no attribute 'address'
 Ćwiartki 3/4
 
 
+Use Case - 0x05
+---------------
 >>> watney_firstname = 'Mark'
 >>> watney_lastname = 'Watney'
 >>> watney_mission = 'Ares 3'
@@ -368,6 +370,9 @@ AttributeError: 'Astronaut' object has no attribute 'address'
 >>> lewis_mission = 'Ares 3'
 >>> lewis_agency = 'NASA'
 
+
+Use Case - 0x06
+---------------
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
