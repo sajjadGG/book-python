@@ -78,25 +78,25 @@ G = 'lt. col. Jan Twardowski\t'
 
 example = EXAMPLE[4:-5]
 
-# str: Jan Twardowski
+# str: expected result: 'Jan Twardowski'
 a = ...
 
-# str: Jan Twardowski
+# str: expected result: 'Jan Twardowski'
 b = ...
 
-# str: Mark Watney
+# str: expected result: 'Mark Watney'
 c = ...
 
-# str: Melissa Lewis
+# str: expected result: 'Melissa Lewis'
 d = ...
 
-# str: Ryan Stone
+# str: expected result: 'Ryan Stone'
 e = ...
 
-# str: Ryan Stone
+# str: expected result: 'Ryan Stone'
 f = ...
 
-# str: Jan Twardowski
+# str: expected result: 'Jan Twardowski'
 g = ...
 
 # Solution

@@ -13,87 +13,138 @@ Slice Forwards
 --------------
 * ``sequence[start:stop]``
 
->>> text = 'We choose to go to the Moon!'
->>>
->>> text[0:2]
-'We'
->>> text[:2]
-'We'
->>> text[0:9]
-'We choose'
->>> text[:9]
-'We choose'
->>> text[23:28]
-'Moon!'
->>> text[23:]
-'Moon!'
+>>> data = 'abcde'
+>>> data[0:3]
+'abc'
+
+>>> data = 'abcde'
+>>> data[2:5]
+'cde'
+
+
+Slice Defaults
+-------------
+* ``sequence[start:stop]``
+* ``start`` defaults to ``0``
+* ``stop`` defaults to ``len(sequence)``
+
+>>> data = 'abcde'
+>>> data[:3]
+'abc'
+
+>>> data = 'abcde'
+>>> data[3:]
+'de'
+
+>>> data = 'abcde'
+>>> data[:]
+'abcde'
 
 
 Slice Backwards
 ---------------
 * Negative index starts from the end and go right to left
 
->>> text = 'We choose to go to the Moon!'
->>>
->>> text[:-13]
-'We choose to go'
->>> text[:-19]
-'We choose'
->>> text[-12:]
-'to the Moon!'
->>> text[-5:]
-'Moon!'
->>> text[-5:-1]
-'Moon'
->>> text[23:-2]
-'Moo'
->>>
->>> text[-1:0]
-''
->>> text[-2:0]
-''
->>> text[-2:2]
-''
->>> text[-5:5]
+>>> data = 'abcde'
+>>> data[-3:-1]
+'cd'
+
+>>> data = 'abcde'
+>>> data[-3:]
+'cde'
+
+>>> data = 'abcde'
+>>> data[0:-3]
+'ab'
+
+>>> data = 'abcde'
+>>> data[:-3]
+'ab'
+
+>>> data = 'abcde'
+>>> data[-3:0]
 ''
 
 
-Step
-----
+Step Forward
+------------
 * Every ``n``-th element
 * ``sequence[start:stop:step]``
 * ``start`` defaults to ``0``
 * ``stop`` defaults to ``len(sequence)``
 * ``step`` defaults to ``1``
 
->>> text = 'We choose to go to the Moon!'
->>>
->>> text[::1]
-'We choose to go to the Moon!'
->>> text[::2]
-'W hoet ot h on'
->>> text[::-1]
-'!nooM eht ot og ot esoohc eW'
->>> text[::-2]
-'!oMeto go soce'
+
+>>> data = 'abcde'
+data[::1]
+'abcde'
+
+>>> data = 'abcde'
+data[::2]
+'ace'
+
+>>> data = 'abcde'
+data[::3]
+'ad'
+
+>>> data = 'abcde'
+>>> data[1:4:2]
+'bd'
+
+
+Step Backward
+-------------
+* Every ``n``-th element
+* ``sequence[start:stop:step]``
+* ``start`` defaults to ``0``
+* ``stop`` defaults to ``len(sequence)``
+* ``step`` defaults to ``1``
+
+>>> data = 'abcde'
+>>> data[::-1]
+'edcba'
+
+>>> data = 'abcde'
+>>> data[::-2]
+'eca'
+
+>>> data = 'abcde'
+>>> data[::-3]
+'eb'
+
+>>> data = 'abcde'
+>>> data[4:1:-2]
+'ec'
+
+
+Slice Errors
+------------
+>>> data = 'abcde'
+>>> data[::0]
+Traceback (most recent call last):
+ValueError: slice step cannot be zero
+
+>>> data = 'abcde'
+>>> data[::1.0]
+Traceback (most recent call last):
+TypeError: slice indices must be integers or None or have an __index__ method
 
 
 Out of Range
 ------------
->>> text = 'We choose to go to the Moon!'
->>>
->>> text[:100]
-'We choose to go to the Moon!'
->>>
->>> text[100:]
+>>> data = 'abcde'
+>>> data[:100]
+'abcde'
+
+>>> data = 'abcde'
+>>> data[100:]
 ''
 
 
-Ordered Sequences
------------------
-Slicing ``str``:
-
+Slice str
+---------
 >>> data = 'abcde'
+>>>
 >>>
 >>> data[0:3]
 'abc'
@@ -116,9 +167,11 @@ Slicing ``str``:
 >>> data[1:4:2]
 'bd'
 
-Slicing ``tuple``:
 
+Slice tuple
+-----------
 >>> data = ('a', 'b', 'c', 'd', 'e')
+>>>
 >>>
 >>> data[0:3]
 ('a', 'b', 'c')
@@ -137,9 +190,10 @@ Slicing ``tuple``:
 >>> data[1:4:2]
 ('b', 'd')
 
-Slicing ``list``:
-
+Slice list
+----------
 >>> data = ['a', 'b', 'c', 'd', 'e']
+>>>
 >>>
 >>> data[0:3]
 ['a', 'b', 'c']
@@ -159,8 +213,8 @@ Slicing ``list``:
 ['b', 'd']
 
 
-Unordered Sequences
--------------------
+Slice set
+---------
 Slicing ``set`` is not possible:
 
 >>> data = {'a', 'b', 'c', 'd', 'e'}
@@ -180,7 +234,8 @@ Nested Sequences
 ...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
 ...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
 ...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
-...
+>>>
+>>>
 >>> DATA[1:]  # doctest: +NORMALIZE_WHITESPACE
 [(5.8, 2.7, 5.1, 1.9, 'virginica'),
  (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -194,31 +249,9 @@ Nested Sequences
  (6.4, 3.2, 4.5, 1.5, 'versicolor'),
  (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
->>> data = [[1, 2, 3],
-...         [4, 5, 6],
-...         [7, 8, 9]]
-...
->>> data[::2]  # doctest: +NORMALIZE_WHITESPACE
-[[1, 2, 3],
- [7, 8, 9]]
->>>
->>> data[::2][1]
-[7, 8, 9]
->>>
->>> data[::2][:1]
-[[1, 2, 3]]
->>>
->>> data[::2][1][1:]
-[8, 9]
 
-
-Slice All
----------
->>> text = 'We choose to go to the Moon!'
->>>
->>> text[:]
-'We choose to go to the Moon!'
-
+Column Selection
+----------------
 Column selection unfortunately does not work on ``list``:
 
 >>> data = [[1, 2, 3],
@@ -286,9 +319,10 @@ Slice Function
 'W hoet ot h on'
 
 
-Example
--------
+Use Case - 0x01
+---------------
 >>> from pprint import pprint
+>>>
 >>>
 >>> DATA = [
 ...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -298,7 +332,8 @@ Example
 ...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
 ...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
 ...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
-...
+>>>
+>>>
 >>> pprint(DATA[1:])
 [(5.8, 2.7, 5.1, 1.9, 'virginica'),
  (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -327,6 +362,48 @@ Example
 []
 
 
+Use Case - 0x02
+---------------
+>>> data = [[1, 2, 3],
+...         [4, 5, 6],
+...         [7, 8, 9]]
+...
+>>> data[::2]  # doctest: +NORMALIZE_WHITESPACE
+[[1, 2, 3],
+ [7, 8, 9]]
+>>>
+>>> data[::2][1]
+[7, 8, 9]
+>>>
+>>> data[::2][:1]
+[[1, 2, 3]]
+>>>
+>>> data[::2][1][1:]
+[8, 9]
+
+
+Use Case - 0x03
+---------------
+>>> text = 'We choose to go to the Moon!'
+>>> word = 'Moon'
+>>>
+>>>
+>>> start = text.find(word)
+>>> stop = start + len(word)
+>>>
+>>> text[start:stop]
+'Moon'
+>>>
+>>> text[:start]
+'We choose to go to the '
+>>>
+>>> text[stop:]
+'!'
+>>>
+>>> text[:start] + text[stop:]
+'We choose to go to the !'
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/sequence_slice_a.py
@@ -343,4 +420,8 @@ Assignments
 
 .. literalinclude:: assignments/sequence_slice_d.py
     :caption: :download:`Solution <assignments/sequence_slice_d.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/sequence_slice_e.py
+    :caption: :download:`Solution <assignments/sequence_slice_e.py>`
     :end-before: # Solution

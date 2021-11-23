@@ -4,12 +4,17 @@ Sequence Unpack GetItem
 
 Rationale
 ---------
+* Allows to get element from ordered sequence
 * Works with ordered sequences: ``str``, ``list``, ``tuple``
+
+
+Syntax
+------
 * Index must ``int`` (positive, negative or zero)
 * Positive Index starts with ``0``
 * Negative index starts with ``-1``
 
->>> data = 'abcd'
+>>> data = ['a', 'b', 'c']
 >>>
 >>> data[0]
 'a'
@@ -17,9 +22,6 @@ Rationale
 'b'
 >>> data[-1]
 'd'
->>> data[1.1]
-Traceback (most recent call last):
-TypeError: list indices must be integers or slices, not float
 
 
 Positive Index
@@ -28,7 +30,7 @@ Positive Index
 * Index must be less than length of an object
 * Ascending
 
->>> data = ['a', 'b', 'c', 'd']
+>>> data = ['a', 'b', 'c']
 >>>
 >>> data[0]
 'a'
@@ -36,10 +38,8 @@ Positive Index
 'b'
 >>> data[2]
 'c'
->>> data[3]
-'d'
 >>>
->>> data[4]
+>>> data[3]
 Traceback (most recent call last):
 IndexError: string index out of range
 
@@ -51,29 +51,39 @@ Negative Index
 * Descending
 * Negative index starts from the end and go right to left
 
->>> data = ['a', 'b', 'c', 'd']
+>>> data = ['a', 'b', 'c']
 >>>
 >>> data[-0]
 'a'
 >>> data[-1]
-'d'
->>> data[-2]
 'c'
->>> data[-3]
+>>> data[-2]
 'b'
->>> data[-4]
+>>> data[-3]
 'a'
 >>>
->>> data[-5]
+>>> data[-4]
 Traceback (most recent call last):
 IndexError: string index out of range
 
+>>> -0 == 0
+True
 
-Ordered Sequence
+
+Index Type
+----------
+Index must ``int`` (positive, negative or zero)
+
+>>> data[1.1]
+Traceback (most recent call last):
+TypeError: list indices must be integers or slices, not float
+
+
+Getitem from str
 ----------------
 Get Item from ``str``:
 
->>> data = 'abcd'
+>>> data = 'abc'
 >>>
 >>> data[0]
 'a'
@@ -88,26 +98,12 @@ Get Item from ``str``:
 >>> data[-2]
 'c'
 
+
+Getitem from list
+-----------------
 GetItem from ``list``:
 
->>> data = ['a', 'b', 'c', 'd']
->>>
->>> data[0]
-'a'
->>> data[1]
-'b'
->>> data[2]
-'c'
->>> data[-0]
-'a'
->>> data[-1]
-'d'
->>> data[-2]
-'c'
-
-GetItem from ``tuple``:
-
->>> data = ('a', 'b', 'c', 'd')
+>>> data = ['a', 'b', 'c']
 >>>
 >>> data[0]
 'a'
@@ -123,8 +119,26 @@ GetItem from ``tuple``:
 'c'
 
 
-Unordered Sequence
+Getitem from tuple
 ------------------
+>>> data = ('a', 'b', 'c')
+>>>
+>>> data[0]
+'a'
+>>> data[1]
+'b'
+>>> data[2]
+'c'
+>>> data[-0]
+'a'
+>>> data[-1]
+'d'
+>>> data[-2]
+'c'
+
+
+Getitem from set
+----------------
 GetItem from ``set`` is impossible. ``set`` is unordered data structure:
 
 >>> data = {'a', 'b', 'c', 'd'}
@@ -149,8 +163,8 @@ Traceback (most recent call last):
 TypeError: 'set' object is not subscriptable
 
 
-Nested Sequence
----------------
+Getitem from list[list]
+-----------------------
 Get elements from ``list`` of ``list``:
 
 >>> data = [[1, 2, 3],
@@ -176,6 +190,9 @@ Get elements from ``list`` of ``list``:
 >>> data[2][2]
 9
 
+
+Getitem from list[tuple]
+------------------------
 Get elements from ``list`` of ``tuple``:
 
 >>> data = [(4.7, 3.2, 1.3, 0.2, 'setosa'),
@@ -201,6 +218,9 @@ Get elements from ``list`` of ``tuple``:
 >>> data[2][4]
 'virginica'
 
+
+Getitem from list[Sequence]
+---------------------------
 Get elements from list of sequences:
 
 >>> data = [[1, 2, 3],
@@ -234,4 +254,20 @@ Assignments
 -----------
 .. literalinclude:: assignments/sequence_getitem_a.py
     :caption: :download:`Solution <assignments/sequence_getitem_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/sequence_getitem_b.py
+    :caption: :download:`Solution <assignments/sequence_getitem_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/sequence_getitem_c.py
+    :caption: :download:`Solution <assignments/sequence_getitem_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/sequence_getitem_d.py
+    :caption: :download:`Solution <assignments/sequence_getitem_d.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/sequence_getitem_e.py
+    :caption: :download:`Solution <assignments/sequence_getitem_e.py>`
     :end-before: # Solution
