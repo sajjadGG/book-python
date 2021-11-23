@@ -20,7 +20,7 @@ Hello\World
 Hello
 World
 
->>> print('Hello\tWorld')
+>>> print('Hello\tWorld')  # doctest: +NORMALIZE_WHITESPACE
 Hello	World
 
 
