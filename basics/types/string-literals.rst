@@ -133,7 +133,7 @@ Use Case - 0x02
 ---------------
 Raw-string in escaping tab character:
 
->>> print('C:\watney\temporary.txt')
+>>> print('C:\watney\temporary.txt')  # doctest: +NORMALIZE_WHITESPACE
 C:\watney	emporary.txt
 >>>
 >>> print(r'C:\watney\temporary.txt')
@@ -141,7 +141,7 @@ C:\watney\temporary.txt
 
 Raw-string in escaping newline character:
 
->>> print('C:\nasa\myfile.txt')
+>>> print('C:\nasa\myfile.txt')  # doctest: +NORMALIZE_WHITESPACE
 C:
 asa\myfile.txt
 >>>
@@ -150,12 +150,12 @@ C:\nasa\myfile.txt
 
 Raw-string in escaping newline and tab character:
 
->>> print('C:\nasa\temporary.txt')
+>>> print('C:\nasa\temporary.txt')  # doctest: +NORMALIZE_WHITESPACE
 C:
 asa	emporary.txt
 >>>
 >>> print(r'C:\nasa\temporary.txt')
-C:\nasa\myfile.txt
+C:\nasa\temporary.txt
 
 
 Use Case - 0x03
