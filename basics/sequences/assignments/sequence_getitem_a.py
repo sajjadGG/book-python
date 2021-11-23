@@ -33,6 +33,10 @@ Polish:
     8. Dodaj na koniec `result`: pustą `list`, pustą `tuple` i pusty `set`
     9. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `list.append()`
+    * `list()`, `tuple()`, `set()`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
@@ -82,7 +86,7 @@ DATA = [
 # tuple[str]: from row at index 0
 header = ...
 
-# list[list|tuple|set|frozenset]: empty list
+# list[list|tuple|set]: empty list
 result = ...
 
 # append list from DATA at index 2

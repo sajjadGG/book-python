@@ -101,7 +101,6 @@ Iterating Sequences
     * ``list``
     * ``tuple``
     * ``set``
-    * ``frozenset``
     * ``dict``
 
 >>> DATA = 'NASA'

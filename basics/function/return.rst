@@ -87,9 +87,6 @@ Return Sequence
 >>> def myfunction():
 ...     return {42, 13.37, 'Mark Watney'}
 
->>> def myfunction():
-...     return frozenset({42, 13.37, 'Mark Watney'})
-
 
 Return Mapping
 --------------

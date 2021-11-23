@@ -123,10 +123,6 @@ False
 >>>
 >>> bool(set())
 False
->>>
->>> bool(frozenset())
-False
-
 
 Comparison
 ----------

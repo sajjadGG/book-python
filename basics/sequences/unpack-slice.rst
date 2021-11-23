@@ -169,14 +169,6 @@ Slicing ``set`` is not possible:
 Traceback (most recent call last):
 TypeError: 'set' object is not subscriptable
 
-Slicing ``frozenset`` is not possible:
-
->>> data = frozenset({'a', 'b', 'c', 'd', 'e'})
->>>
->>> data[:3]
-Traceback (most recent call last):
-TypeError: 'frozenset' object is not subscriptable
-
 
 Nested Sequences
 ----------------

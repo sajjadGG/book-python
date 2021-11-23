@@ -22,7 +22,7 @@ Tests:
 
     >>> result is not Ellipsis
     True
-    >>> type(result) in (set, list, tuple, frozenset)
+    >>> type(result) in (set, list, tuple)
     True
     >>> sorted(result)
     ['Petal length', 'Petal width', 'Sepal length', 'Sepal width', 'Species']

@@ -251,6 +251,15 @@ Mathematics
     math/complex.rst
 
 
+Tests
+*****
+.. toctree::
+    :maxdepth: 1
+    :caption: Tests
+
+    tests/doctest.rst
+
+
 Operating System
 ****************
 .. toctree::

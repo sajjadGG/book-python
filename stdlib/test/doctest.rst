@@ -1,5 +1,5 @@
-Function Doctest
-================
+Tests Doctest
+=============
 
 
 Rationale
@@ -664,10 +664,10 @@ Celsius to Kelvin temperature conversion:
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_doctest_a.py
-    :caption: :download:`Solution <assignments/function_doctest_a.py>`
+.. literalinclude:: assignments/test_doctest_a.py
+    :caption: :download:`Solution <assignments/test_doctest_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_doctest_b.py
-    :caption: :download:`Solution <assignments/function_doctest_b.py>`
+.. literalinclude:: assignments/test_doctest_b.py
+    :caption: :download:`Solution <assignments/test_doctest_b.py>`
     :end-before: # Solution

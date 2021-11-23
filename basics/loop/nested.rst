@@ -155,7 +155,7 @@ Iterating over ``list`` with scalar and vector values - smart loop:
 >>> DATA = [('Mark', 'Watney'), 'Lewis', 69, 13.37, [True, None, False]]
 >>>
 >>> for obj in DATA:
-...     if type(obj) in (list, tuple, set, frozenset):
+...     if type(obj) in (list, tuple, set):
 ...         for element in obj:
 ...             print(element)
 ...     else:

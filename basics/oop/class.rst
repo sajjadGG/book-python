@@ -140,8 +140,7 @@ Use Cases
 >>> e = list()
 >>> f = tuple()
 >>> g = set()
->>> h = frozenset()
->>> i = dict()
+>>> h = dict()
 
 
 References

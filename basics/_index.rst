@@ -53,8 +53,6 @@ Sequences
     sequences/ordered-list.rst
     sequences/ordered-comparison.rst
     sequences/unordered-set.rst
-    sequences/unordered-frozenset.rst
-    sequences/unordered-comparison.rst
     sequences/nested.rst
     sequences/unpack-getitem.rst
     sequences/unpack-slice.rst

@@ -148,29 +148,6 @@ TypeError: 'set' object is not subscriptable
 Traceback (most recent call last):
 TypeError: 'set' object is not subscriptable
 
-GetItem from ``frozenset`` is impossible. ``frozenset`` is unordered data structure:
-
->>> data = frozenset({'a', 'b', 'c', 'd'})
->>>
->>> data[0]
-Traceback (most recent call last):
-TypeError: 'frozenset' object is not subscriptable
->>> data[1]
-Traceback (most recent call last):
-TypeError: 'frozenset' object is not subscriptable
->>> data[2]
-Traceback (most recent call last):
-TypeError: 'frozenset' object is not subscriptable
->>> data[-0]
-Traceback (most recent call last):
-TypeError: 'frozenset' object is not subscriptable
->>> data[-1]
-Traceback (most recent call last):
-TypeError: 'frozenset' object is not subscriptable
->>> data[-2]
-Traceback (most recent call last):
-TypeError: 'frozenset' object is not subscriptable
-
 
 Nested Sequence
 ---------------

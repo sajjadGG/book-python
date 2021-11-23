@@ -18,7 +18,6 @@ Hashable (Immutable):
     * ``NoneType``
     * ``str``
     * ``tuple``
-    * ``frozenset``
 
 Non-hashable (Mutable):
 
@@ -99,14 +98,10 @@ True
 >>> set(data) == {'a', 'b', 'c', 'd'}
 True
 
->>> data = frozenset({'a', 'b', 'c', 'd'})
->>> set(data) == {'a', 'b', 'c', 'd'}
-True
-
 
 Deduplicate
 -----------
-Works with ``str``, ``list``, ``tuple``, ``frozenset``
+Works with ``str``, ``list``, ``tuple``
 
 >>> data = [1, 2, 3, 1, 1, 2, 4]
 >>> set(data)
@@ -153,11 +148,6 @@ True
 >>> data.add({3, 4})
 Traceback (most recent call last):
 TypeError: unhashable type: 'set'
-
->>> data = {1, 2}
->>> data.add(frozenset({3,4}))
->>> data
-{frozenset({3, 4}), 1, 2}
 
 
 Update
