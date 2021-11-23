@@ -102,31 +102,31 @@ I = 'Pana\tTwardowskiego III '
 example = EXAMPLE.upper().replace('UL. ', '').replace('\t', '') \
     .strip().title().replace('3', 'III')
 
-# str: Pana III Twardowskiego
+# str: expected string is 'Pana Twardowskiego III'
 a = ...
 
-# str: Pana III Twardowskiego
+# str: expected string is 'Pana Twardowskiego III'
 b = ...
 
-# str: Pana III Twardowskiego
+# str: expected string is 'Pana Twardowskiego III'
 c = ...
 
-# str: Pana III Twardowskiego
+# str: expected string is 'Pana Twardowskiego III'
 d = ...
 
-# str: Pana III Twardowskiego
+# str: expected string is 'Pana Twardowskiego III'
 e = ...
 
-# str: Pana III Twardowskiego
+# str: expected string is 'Pana Twardowskiego III'
 f = ...
 
-# str: Pana III Twardowskiego
+# str: expected string is 'Pana Twardowskiego III'
 g = ...
 
-# str: Pana III Twardowskiego
+# str: expected string is 'Pana Twardowskiego III'
 h = ...
 
-# str: Pana III Twardowskiego
+# str: expected string is 'Pana Twardowskiego III'
 i = ...
 
 # Solution

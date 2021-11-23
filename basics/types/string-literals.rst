@@ -12,6 +12,24 @@ Escape Characters
 * More information in `Builtin Printing`
 * https://en.wikipedia.org/wiki/List_of_Unicode_characters
 
+
+>>> print('Hello\World')
+Hello\World
+
+>>> print('Hello\tWorld')
+Hello	World
+
+>>> print('Hello \new World')
+Hello
+ew World
+
+>>> print('Hello \\new World')
+Hello \new World
+
+
+
+Unicode
+-------
 >>> print('\U0001F680')
 🚀
 
@@ -30,17 +48,13 @@ Format String
 * Since Python 3.6
 * Used for ``str`` concatenation
 
->>> name = 'José Jiménez'
->>>
->>> print(f'My name... {name}')
-My name... José Jiménez
+>>> name = 'Mark'
+>>> 'Witaj {name}'
+'Witaj {name}'
 
->>> firstname = 'José'
->>> lastname = 'Jiménez'
->>>
->>> result = f'My name... {firstname} {lastname}'
->>> print(result)
-My name... José Jiménez
+>>> name = 'Mark'
+>>> f'Witaj {name}'
+'Witaj Mark'
 
 
 Unicode Literal
@@ -65,48 +79,59 @@ Bytes Literal
 >>> data = u'Moon'  # Unicode Literal
 >>> data = b'Moon'  # Bytes Literal
 
->>> data = 'Moon'
->>>
->>> type(data)
-<class 'str'>
->>> data.encode()
-b'Moon'
+>>> text = 'cześć'
+>>> text.encode()
+b'cze\xc5\x9b\xc4\x87'
 
->>> data = b'Moon'
+>>> data = b'cze\xc5\x9b\xc4\x87'
+data.decode()
+'cześć'
+
+>>> text.encode()
+b'cze\xc5\x9b\xc4\x87'
 >>>
->>> type(data)
-<class 'bytes'>
->>> data.decode()
-'Moon'
+>>> text.encode('utf-8')
+b'cze\xc5\x9b\xc4\x87'
+>>>
+>>> text.encode('iso-8859-2')
+b'cze\xb6\xe6'
+>>>
+>>> text.encode('windows-1250')
+b'cze\x9c\xe6'
+>>>
+>>> text.encode('cp1250')
+b'cze\x9c\xe6'
 
 
 Raw String
 ----------
 * Escapes does not matters
 
+>>> print('hello\nworld')
+hello
+world
+
+>>> print(r'hello\nworld')
+hello\nworld
+
+
 In Regular Expressions:
 
->>> r'[a-z0-9]\n'
-'[a-z0-9]\\n'
+>>> '\\b[a-z]+\\b'
+'\\b[a-z]+\\b'
 
->>> print('C:\Program Files\new-file.txt')
-C:\Program Files
-ew-file.txt
->>>
->>> print('C:\\Program Files\\new-file.txt')
-C:\Program Files\new-file.txt
->>> print(r'C:\Program Files\new-file.txt')
-C:\Program Files\new-file.txt
+>>> r'\b[a-z]+\b'
+'\\b[a-z]+\\b'
 
-More serious problem represents other use case:
+Escape character in paths:
 
->>> print(r'C:\Users\Admin\file.txt')
-C:\Users\Admin\file.txt
->>>
->>> print('C:\\Users\\Admin\\file.txt')
-C:\Users\Admin\file.txt
->>>
->>> print('C:\Users\Admin\file.txt')
+>>> path = '/home/mwatney/myfile.txt'  # Linux
+>>> path = '/User/mwatney/myfile.txt'  # macOS
+>>> path = 'c:/Users/mwatney/myfile.txt'  # Windows (with slashes instead of backslashes)
+>>> path = 'c:\\Users\\mwatney\\myfile.txt'  # Windows
+>>> path = r'c:\Users\mwatney\myfile.txt'  # Windows
+
+path = 'c:\Users\mwatney\myfile.txt'  # Windows
 Traceback (most recent call last):
 SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
 

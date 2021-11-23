@@ -31,8 +31,8 @@ DATA = 'UL. pana \tTWArdoWskIEGO 3'
 result = ...
 
 # Solution
-result = DATA.replace('UL. ', '').replace('\t', '').title().replace('3', 'III')
-
+result = DATA.removeprefix('UL.').replace('\t', '').title().replace('3', 'III').strip()
+#
 # Alternative Solution
 result = (DATA
           # Convert to common format

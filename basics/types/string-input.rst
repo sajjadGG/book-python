@@ -27,6 +27,7 @@ glued to your question.
 >>>
 >>> print(name)
 Mark Watney
+>>>
 >>> type(name)
 <class 'str'>
 
@@ -46,6 +47,7 @@ To get numeric value type casting to ``int`` is needed.
 >>> age = int(age)
 >>> print(age)
 42
+>>>
 >>> type(age)
 <class 'int'>
 
@@ -63,6 +65,7 @@ ValueError: invalid literal for int() with base 10: '42.5'
 >>> age = float(age)
 >>> print(age)
 42.5
+>>>
 >>> type(age)
 <class 'float'>
 
@@ -82,7 +85,7 @@ ValueError: could not convert string to float: '42,5'
 42.5
 
 
-Mocks and Stubs
+Automated Input
 ---------------
 * Stub - simple object which always returns the same result
 * Mock - an object which has more advanced capabilities than Stub, such as:
@@ -92,6 +95,32 @@ Note, that usage of Stubs and Mocks is only for testing purposes. You should
 not do that in your programs at the production level! Mocks and Stubs
 assumes, that user will input particular values.
 
+
+Stub
+----
+You can also use Stub (a function with fixed value) to simulate ``input()``:
+
+>>> def input(_):
+...     return 'Mark Watney'
+>>>
+>>>
+>>> input('What is your name?: ')
+'Mark Watney'
+
+At the end of the chapter about Functions, there is a mention about ``lambda``
+expression. This could be also used here to make the code more compact.
+
+>>> input = lambda _: 'Mark Watney'
+>>>
+>>>
+>>> input('What is your name?: ')
+'Mark Watney'
+
+Both methods: Function Stub and Lambda Stub works the same.
+
+
+Mock
+----
 In following example we simulate ``input()`` built-in function with MagicMock.
 Then, usage of ``input()`` is as normal.
 
@@ -117,26 +146,19 @@ Using MagicMock you can simulate more than one future input values from user:
 >>> input('Type color: ')
 'blue'
 
+Mocks has advantage over stubs, because they collect some diagnostic
+information.
 
-You can also use Stub (a function with fixed value) to simulate ``input()``:
+>>> input.called
+True
 
->>> def input(_):
-...     return 'Mark Watney'
->>>
->>>
->>> input('What is your name?: ')
-'Mark Watney'
+>>> input.call_count
+3
 
-At the end of the chapter about Functions, there is a mention about ``lambda``
-expression. This could be also used here to make the code more compact.
-
->>> input = lambda _: 'Mark Watney'
->>>
->>>
->>> input('What is your name?: ')
-'Mark Watney'
-
-All three methods: MagickMock, Function Stub and Lambda Stub works the same.
+>>> input.mock_calls
+[call('Type color: '),
+ call('Type color: '),
+ call('Type color: ')]
 
 
 Assignments

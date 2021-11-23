@@ -36,9 +36,9 @@ Types
     types/logic-bool.rst
     types/logic-none.rst
     types/string-define.rst
-    types/string-immutable.rst
     types/string-literals.rst
     types/string-input.rst
+    types/string-immutable.rst
     types/string-methods.rst
     types/string-clean.rst
 

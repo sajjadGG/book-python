@@ -172,61 +172,59 @@ Split by Character
 ------------------
 * No argument - any number of whitespaces
 
+>>> text = '1,2,3,4'
+>>> text.split(',')
+['1', '2', '3', '4']
+
 >>> setosa = '5.1,3.5,1.4,0.2,setosa'
->>>
 >>> setosa.split(',')
 ['5.1', '3.5', '1.4', '0.2', 'setosa']
 
 >>> text = 'We choose to go to the Moon'
->>>
->>>
 >>> text.split(' ')
 ['We', 'choose', 'to', 'go', 'to', 'the', 'Moon']
->>>
+
+>>> text = 'We choose to go to the Moon'
 >>> text.split()
 ['We', 'choose', 'to', 'go', 'to', 'the', 'Moon']
 
 >>> text = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
->>>
->>>
 >>> text.split(' ')
 ['10.13.37.1', '', '', '', '', '', 'nasa.gov', 'esa.int', 'roscosmos.ru']
->>>
+
+>>> text = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
 >>> text.split()
 ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
 
 
 Join by Character
 -----------------
->>> text = ['We', 'choose', 'to', 'go', 'to', 'the', 'Moon']
->>>
->>> ' '.join(text)
+>>> letters = ['a', 'b', 'c']
+>>> ''.join(letters)
+'abc'
+
+>>> words = ['We', 'choose', 'to', 'go', 'to', 'the', 'Moon']
+>>> ' '.join(words)
 'We choose to go to the Moon'
 
 >>> setosa = ['5.1', '3.5', '1.4', '0.2', 'setosa']
->>>
 >>> ','.join(setosa)
 '5.1,3.5,1.4,0.2,setosa'
 
->>> crew = ['Mark Watney', 'Jan Twardowski', 'Melissa Lewis']
->>>
+>>> crew = ['First line', 'Second line', 'Third line']
 >>> '\n'.join(crew)
-'Mark Watney\nJan Twardowski\nMelissa Lewis'
+'First line\nSecond line\nThird line'
 
->>> TEXT = ['We choose to go to the Moon!',
-...         'We choose to go to the Moon in this decade and do the other things,',
-...         'not because they are easy, but because they are hard;',
-...         'because that goal will serve to organize and measure the best of our energies and skills,',
-...         'because that challenge is one that we are willing to accept, one we are unwilling to postpone,',
-...         'and one we intend to win, and the others, too.']
->>>
->>> print('\n'.join(TEXT))
-We choose to go to the Moon!
-We choose to go to the Moon in this decade and do the other things,
-not because they are easy, but because they are hard;
-because that goal will serve to organize and measure the best of our energies and skills,
-because that challenge is one that we are willing to accept, one we are unwilling to postpone,
-and one we intend to win, and the others, too.
+>>> data = [1, 2, 3]
+','.join(data)
+Traceback (most recent call last):
+TypeError: sequence item 0: expected str instance, int found
+
+>>> ','.join(str(x) for x in data)
+'1,2,3'
+
+>>> ','.join(map(str,data))
+'1,2,3'
 
 
 Is Whitespace
@@ -423,17 +421,13 @@ Remove Prefix or Suffix
 -----------------------
 Since Python 3.9: :pep:`616` -- String methods to remove prefixes and suffixes
 
->>> filename = '1969-apollo11.txt'
->>>
->>>
->>> filename.removeprefix('1969-')
-'apollo11.txt'
->>>
+>>> filename = 'myfile.txt'
+>>> filename.removeprefix('my')
+'file.txt'
+
+>>> filename = 'myfile.txt'
 >>> filename.removesuffix('.txt')
-'1969-apollo11'
->>>
->>> filename.removeprefix('1969-').removesuffix('.txt')
-'apollo11'
+'myfile'
 
 
 Method Chaining

@@ -17,6 +17,9 @@ SSHd Config
     X11Forwarding no
     X11UseLocalhost yes
 
+>>> delimiter = ' '
+>>> result = [row.split(delimiter) for row in DATA.splitlines()]  # doctest: +SKIP
+
 
 Config
 ------
@@ -31,6 +34,9 @@ Config
     password_encryption = on
     db_user_namespace = off
 
+>>> delimiter = ' = '
+>>> result = [row.split(delimiter) for row in DATA.splitlines()]  # doctest: +SKIP
+
 
 Properties
 ----------
@@ -43,6 +49,9 @@ Properties
     sonar.language=py
     sonar.sourceEncoding=UTF-8
     sonar.verbose=true
+
+>>> delimiter = '='
+>>> result = [row.split(delimiter) for row in DATA.splitlines()]  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -78,6 +87,9 @@ Passwd
     watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
     lewis:x:1001:1001:José Jiménez:/home/lewis:/bin/bash
     twardowski:x:1002:1002:Jan Twardowski:/home/twardowski:/bin/bash
+
+>>> delimiter = ':'
+>>> result = [row.split(delimiter) for row in DATA.splitlines()]  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -147,6 +159,15 @@ Key-Value
     FCODES="/var/db/locate.database"
     SEARCHPATHS="/"
     PRUNEPATHS="/tmp /var/tmp"
+
+.. code-block:: docker
+
+    DATABASE_ENGINE=postgresql
+    DATABASE_SERVER=localhost
+    DATABASE_PORT=5432
+    DATABASE_NAME=mydatabase
+    DATABASE_USERNAME=myusername
+    DATABASE_PASSWORD=mypassword
 
 .. code-block:: text
 
