@@ -151,8 +151,10 @@ Parse CSV
  [5.7, 2.8, 4.1, 1.3, 'versicolor']]
 
 
-Use Case - Power
-----------------
+Use Case - 0x01
+---------------
+* Raise number to the n-th power
+
 >>> [pow(x,2) for x in range(0,5)]
 [0, 1, 4, 9, 16]
 
@@ -166,8 +168,10 @@ Use Case - Power
 [1, 2, 4, 8, 16]
 
 
-Use Case - Map list[dict]
--------------------------
+Use Case - 0x01
+---------------
+* Map list[dict]
+
 >>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
 ...         {'is_astronaut': True,  'name': 'Mark Watney'},
 ...         {'is_astronaut': False, 'name': 'José Jiménez'},

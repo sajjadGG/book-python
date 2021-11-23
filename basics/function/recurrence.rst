@@ -68,13 +68,6 @@ Recap information about factorial (``n!``):
                             return 1                # 1
 
 
-Use Case
---------
-.. figure:: img/function-recurrence-hanoi.jpg
-
-    Hanoi Tower as a standard example of a recurrence. Source: [#hanoi]_
-
-
 Recursion Depth Limit
 ---------------------
 * Default recursion depth limit is 1000
@@ -83,6 +76,13 @@ Recursion Depth Limit
 >>> import sys
 >>>
 >>> sys.setrecursionlimit(3000)
+
+
+Use Case - 0x01
+---------------
+.. figure:: img/function-recurrence-hanoi.jpg
+
+    Hanoi Tower as a standard example of a recurrence. Source: [#hanoi]_
 
 
 References

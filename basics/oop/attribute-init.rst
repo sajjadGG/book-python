@@ -246,7 +246,7 @@ Traceback (most recent call last):
 ValueError: Coordinate cannot be negative
 
 
-Use Case - Iris
+Use Case - 0x01
 ---------------
 >>> class Iris:
 ...     def __init__(self, sepal_length, sepal_width,
@@ -267,6 +267,9 @@ Use Case - Iris
  'petal_width': 0.2,
  'species': 'setosa'}
 
+
+Use Case - 0x02
+---------------
 >>> class Iris:
 ...     def __init__(self, sepal_length, sepal_width,
 ...                  petal_length, petal_width, species):
@@ -292,8 +295,10 @@ Use Case - Iris
  'species': 'virginica'}
 
 
-Use Case - Dataclasses
-----------------------
+Use Case - 0x03
+---------------
+* Dataclasses
+
 Since Python 3.7: there is a ``@dataclass`` decorator, which automatically
 generates ``__init__()`` arguments and fields. More information in
 `OOP Dataclass`.
@@ -325,8 +330,8 @@ generates ``__init__()`` arguments and fields. More information in
  'species': 'virginica'}
 
 
-Use Case - Kelvin
------------------
+Use Case - 0x04
+---------------
 >>> class Kelvin:
 ...     value: float
 ...     MINIMAL_VALUE = 0.0
@@ -346,8 +351,10 @@ Traceback (most recent call last):
 ValueError: Temperature must be greater than 0
 
 
-Use Case - Boundaries
----------------------
+Use Case - 0x05
+---------------
+* Boundaries
+
 >>> class Point:
 ...     x: int
 ...     y: int
@@ -371,8 +378,10 @@ Traceback (most recent call last):
 ValueError: x=-10 is out of boundary 0, 1024
 
 
-Use Case - Parametrized Boundaries
-----------------------------------
+Use Case - 0x06
+---------------
+* Parametrized Boundaries
+
 >>> class Point:
 ...     x: int
 ...     y: int

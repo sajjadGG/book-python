@@ -286,8 +286,8 @@ Select Attributes
 {'firstname': 'Mark', 'lastname': 'Watney'}
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 >>> class Laptop:
 ...     cpu: float
 ...     ram: int
@@ -299,6 +299,9 @@ Use Cases
 >>> hp = Laptop()
 >>> asus = Laptop()
 
+
+Use Case - 0x02
+---------------
 >>> class Date:
 ...     year: int
 ...     month: int
@@ -315,6 +318,9 @@ Use Cases
 >>> armstrong_first_moon_step.month = 7
 >>> armstrong_first_moon_step.day = 21
 
+
+Use Case - 0x03
+---------------
 >>> class Date:
 ...     year: int
 ...     month: int
@@ -328,6 +334,9 @@ Use Cases
 ...     height: float
 ...     weight: float
 
+
+Use Case - 0x04
+---------------
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
@@ -347,6 +356,7 @@ Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute 'address'
 >>> print(lewis.address)
 Ćwiartki 3/4
+
 
 >>> watney_firstname = 'Mark'
 >>> watney_lastname = 'Watney'

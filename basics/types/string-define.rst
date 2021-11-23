@@ -7,8 +7,8 @@ Rationale
 * ``str`` is a sequence of characters
 
 
-Definition
-----------
+Syntax
+------
 Empty string:
 
 >>> data = ''
@@ -68,26 +68,6 @@ double quote (``"""``) characters
 >>> data = '''My name\'s "José Jiménez"'''
 
 
-Type Casting
-------------
-Builtin function  ``str()`` converts argument to ``str``
-
->>> str('Moon')
-'Moon'
->>>
->>> str(1969)
-'1969'
->>>
->>> str(1.337)
-'1.337'
-
-Builtin function ``print()`` before printing on the screen
-runs ``str()`` on its arguments:
-
->>> print(1969)
-1969
-
-
 Docstring
 ---------
 * :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three
@@ -112,6 +92,26 @@ it's a docstring:
 ... energies and skills, because that challenge is one that we are willing
 ... to accept, one we are unwilling to postpone, and one we intend to win,
 ... and the others, too."""
+
+
+Type Casting
+------------
+Builtin function  ``str()`` converts argument to ``str``
+
+>>> str('Moon')
+'Moon'
+>>>
+>>> str(1969)
+'1969'
+>>>
+>>> str(1.337)
+'1.337'
+
+Builtin function ``print()`` before printing on the screen
+runs ``str()`` on its arguments:
+
+>>> print(1969)
+1969
 
 
 

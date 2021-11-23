@@ -100,8 +100,10 @@ Mark
 Watney
 
 
-Use Case - Skip
+Use Case - 0x01
 ---------------
+* Skip
+
 >>> a, b, _ = 1, 2, 3
 >>> a, _, _ = 1, 2, 3
 >>> a, _, c = 1, 2, 3
@@ -109,8 +111,10 @@ Use Case - Skip
 >>> _, _, c = 1, 2, 3
 
 
-Use Case - Passwd
------------------
+Use Case - 0x02
+---------------
+* Passwd
+
 >>> line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
 >>> line = line.split(':')
 >>>
@@ -131,8 +135,10 @@ twardowski
 Jan Twardowski
 
 
-Use Case - Important
---------------------
+Use Case - 0x03
+---------------
+* Important
+
 >>> _, important, _ = 1, 2, 3
 >>>
 >>> print(important)

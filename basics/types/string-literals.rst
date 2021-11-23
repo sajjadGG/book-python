@@ -45,12 +45,13 @@ Format String
 * Used for ``str`` concatenation
 
 >>> name = 'Mark'
->>> 'Witaj {name}'
-'Witaj {name}'
+>>>
+>>> print('Hello {name}')
+Hello {name}
 
 >>> name = 'Mark'
->>> f'Witaj {name}'
-'Witaj Mark'
+>>> print(f'Hello {name}')
+Hello Mark
 
 
 Unicode Literal
@@ -78,12 +79,14 @@ Bytes Literal
 Encode string from unicode (UTF-8) string to bytes:
 
 >>> data = 'cześć'
+>>>
 >>> data.encode()
 b'cze\xc5\x9b\xc4\x87'
 
 Decode string from bytes to unicode (UTF-8):
 
 >>> data = b'cze\xc5\x9b\xc4\x87'
+>>>
 >>> data.decode()
 'cześć'
 
@@ -141,7 +144,7 @@ C:\watney\temporary.txt
 
 Raw-string in escaping newline character:
 
->>> print('C:\nasa\myfile.txt')  # doctest: +NORMALIZE_WHITESPACE
+>>> print('C:\nasa\myfile.txt')
 C:
 asa\myfile.txt
 >>>

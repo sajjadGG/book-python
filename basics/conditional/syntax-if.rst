@@ -93,8 +93,10 @@ Checking If Empty
 My name is... Mark Watney
 
 
-Use Case - Even
+Use Case - 0x01
 ---------------
+* Even
+
 >>> number = 4
 >>>
 >>> if number % 2 == 0:

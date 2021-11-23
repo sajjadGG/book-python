@@ -119,8 +119,8 @@ twardowski
 /home/twardowski
 
 
-Use Case - Mission
-------------------
+Use Case - 0x01
+---------------
 >>> line = 'ares3,watney,lewis,vogel,johanssen'
 >>> mission, *crew = line.split(',')
 >>>
@@ -130,8 +130,10 @@ Use Case - Mission
 ['watney', 'lewis', 'vogel', 'johanssen']
 
 
-Use Case - Range
-----------------
+Use Case - 0x02
+---------------
+* Range
+
 >>> first, second, *others = range(0,10)
 >>>
 >>> first
@@ -149,8 +151,10 @@ Use Case - Range
 1
 
 
-Use Case - Python Version
--------------------------
+Use Case - 0x03
+---------------
+* Python Version
+
 >>> import sys
 >>>
 >>>
@@ -162,8 +166,10 @@ sys.version_info(major=3, minor=9, micro=7, releaselevel='final', serial=0)
 3.9
 
 
-Use Case - Iris 1D
-------------------
+Use Case - 0x04
+---------------
+* Iris 1D
+
 >>> *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
 >>>
 >>> features
@@ -171,6 +177,9 @@ Use Case - Iris 1D
 >>> label
 'virginica'
 
+
+Use Case - 0x05
+---------------
 >>> *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
 >>> avg = sum(features) / len(features)
 >>>
@@ -178,8 +187,10 @@ Use Case - Iris 1D
 virginica 3.875
 
 
-Use Case - Iris 2D
-------------------
+Use Case - 0x06
+---------------
+* Iris 2D
+
 >>> DATA = [
 ...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
 ...     (5.1, 3.5, 1.4, 0.2, 'setosa'),

@@ -95,8 +95,8 @@ False
 False
 
 
-Use Case
---------
+Use Case - 0x01
+---------------
 >>> firstname = 'Melissa'
 >>> lastname = 'Lewis'
 >>> age = None

@@ -34,8 +34,8 @@ Traceback (most recent call last):
 AstronautsOnlyError
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 Django Framework Use-case of Custom Exceptions:
 
 >>> # doctest: +SKIP
@@ -51,7 +51,10 @@ Django Framework Use-case of Custom Exceptions:
 ...     except User.DoesNotExist:
 ...         print('Sorry, no such user in database')
 
-Dragon:
+
+Use Case - 0x02
+---------------
+* Dragon
 
 >>> class Dragon:
 ...     def take_damage(self, damage):

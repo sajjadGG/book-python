@@ -45,8 +45,10 @@ Shorthand Expressions
 True
 
 
-Use Case - Is Numeric
----------------------
+Use Case - 0x01
+---------------
+* Is Numeric
+
 >>> age = input('What is your age?: ')   # Use input: '10'
 >>> age = float(age) if age.isnumeric() else None
 >>>
@@ -54,8 +56,10 @@ Use Case - Is Numeric
 10.0
 
 
-Use Case - Even/Odd
--------------------
+Use Case - 0x02
+---------------
+* Even/Odd
+
 >>> number = 3
 >>> is_even = (number % 2 == 0 )
 >>>
@@ -63,8 +67,10 @@ Use Case - Even/Odd
 False
 
 
-Use Case - Astronaut/Cosmonaut
-------------------------------
+Use Case - 0x03
+---------------
+* Astronaut/Cosmonaut
+
 >>> country = 'Russia'
 >>> job = 'astronaut' if country == 'USA' else 'cosmonaut'
 >>>
@@ -72,8 +78,10 @@ Use Case - Astronaut/Cosmonaut
 cosmonaut
 
 
-Use Case - IPv4/IPv6
---------------------
+Use Case - 0x04
+---------------
+* IPv4/IPv6
+
 >>> ip = '127.0.0.1'
 >>> protocol = 'IPv4' if '.' in ip else 'IPv6'
 >>>

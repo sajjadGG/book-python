@@ -15,8 +15,10 @@ Long Syntax:
 {10, 11, 12, 13, 14}
 
 
-Use Case - Unique
------------------
+Use Case - 0x01
+---------------
+* Unique
+
 >>> DATA = [
 ...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
 ...     (5.8, 2.7, 5.1, 1.9, 'virginica'),

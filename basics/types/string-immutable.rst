@@ -120,8 +120,8 @@ Concat Problem
 'Jan Twardowski'
 
 
-Use Case - Concat
------------------
+Use Case - 0x01
+---------------
 >>> firstname = 'Jan'
 >>> lastname = 'Twardowski'
 >>>
@@ -141,8 +141,8 @@ Use Case - Concat
 'Jan Twardowski'
 
 
-Use Case - Concat Many
-----------------------
+Use Case - 0x02
+---------------
 >>> firstname = 'Jan'
 >>> lastname = 'Twardowski'
 >>>

@@ -98,8 +98,8 @@ Class creates space, in which names has meaning:
 >>> point.z = 3
 
 
-Use Case - Laptop
------------------
+Use Case - 0x01
+---------------
 >>> class Laptop:
 ...     cpu: float
 ...     ram: int
@@ -112,7 +112,7 @@ Use Case - Laptop
 >>> asus = Laptop()
 
 
-Use Case - Date
+Use Case - 0x02
 ---------------
 >>> class Date:
 ...     year: int
@@ -133,8 +133,10 @@ Use Case - Date
 >>> armstrong.day = 21
 
 
-Use Case - Relation
--------------------
+Use Case - 0x03
+---------------
+* Relation
+
 >>> class Date:
 ...     year: int
 ...     month: int

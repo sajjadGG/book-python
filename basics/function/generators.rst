@@ -234,8 +234,8 @@ Itertools
 * ``itertools.groupby(iterable, key=None)``
 
 
-Use Case - Increment
---------------------
+Use Case - 0x01
+---------------
 >>> def increment(x):
 ...     return x + 1
 >>>
@@ -247,8 +247,8 @@ Use Case - Increment
 [2, 3, 4, 5]
 
 
-Use Case - Square
------------------
+Use Case - 0x02
+---------------
 >>> def square(x):
 ...     return x ** 2
 ...
@@ -259,8 +259,8 @@ Use Case - Square
 [1, 4, 9]
 
 
-Use Case - Translate
---------------------
+Use Case - 0x03
+---------------
 >>> PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
 ...       'ł': 'l', 'ń': 'n', 'ó': 'o',
 ...       'ś': 's', 'ż': 'z', 'ź': 'z'}
@@ -275,8 +275,8 @@ Use Case - Translate
 'zazolc gesla jazn'
 
 
-Use Case - Adults
------------------
+Use Case - 0x04
+---------------
 >>> people = [
 ...     {'age': 21, 'name': 'Jan Twardowski'},
 ...     {'age': 25, 'name': 'Mark Watney'},
@@ -293,8 +293,8 @@ Use Case - Adults
  {'age': 25, 'name': 'Mark Watney'}]
 
 
-Use Case - Astronauts
----------------------
+Use Case - 0x05
+---------------
 >>> people = [
 ...     {'is_astronaut': False, 'name': 'Jan Twardowski'},
 ...     {'is_astronaut': True, 'name': 'Mark Watney'},
@@ -311,8 +311,10 @@ Use Case - Astronauts
  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
 
-Use Case - Sum Stdin
---------------------
+Use Case - 0x06
+---------------
+Sum stdin (standard input):
+
 >>> import sys
 >>>
 >>> # doctest: +SKIP

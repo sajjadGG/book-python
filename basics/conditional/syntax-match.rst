@@ -97,9 +97,10 @@ The patterns listed here are described in more detail below, but summarized toge
       object.
 
 
+Use Case - 0x01
+---------------
+* HTTP Status
 
-Use Case - HTTP Status
-----------------------
 >>> status = 404
 >>>
 >>> # doctest: +SKIP
@@ -121,8 +122,10 @@ Use Case - HTTP Status
 Not found
 
 
-Use Case - HTTP Request
------------------------
+Use Case - 0x02
+---------------
+* HTTP Request
+
 >>> request = 'GET /index.html HTTP/2.0'
 >>>
 >>> # doctest: +SKIP
@@ -137,8 +140,10 @@ Use Case - HTTP Request
 ...         handle_delete(uri)
 
 
-Use Case - Game Controller
---------------------------
+Use Case - 0x03
+---------------
+* Game Controller
+
 >>> action = ['move', 'left', 10]
 >>>
 >>> # doctest: +SKIP
@@ -151,8 +156,10 @@ Use Case - Game Controller
 ...         hero.take_damage(value)
 
 
-Use Case - Enum
+Use Case - 0x04
 ---------------
+* Enum
+
 >>> from enum import Enum
 >>>
 >>>

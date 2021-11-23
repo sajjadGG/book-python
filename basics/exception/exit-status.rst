@@ -19,8 +19,8 @@ Traceback (most recent call last):
 SystemExit: 1
 
 
-Use Case
---------
+Use Case - 0x01
+---------------
 * Tests
 * CI/CD - Continuous Integration / Continuous Delivery
 

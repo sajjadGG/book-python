@@ -126,8 +126,8 @@ StopIteration
  'chemist': ('Rick', 'Martinez')}
 
 
-Use Case
---------
+Use Case - 0x01
+---------------
 >>> months = ['January', 'February', 'March', 'April']
 >>>
 >>>

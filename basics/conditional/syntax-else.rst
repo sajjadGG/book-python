@@ -103,8 +103,10 @@ Checking If Empty
 Did you forget to type your name?
 
 
-Use Case - Cosmonaut
---------------------
+Use Case - 0x01
+---------------
+* Cosmonaut
+
 >>> country = 'Russia'
 >>>
 >>> if country == 'USA':
@@ -116,8 +118,10 @@ Use Case - Cosmonaut
 cosmonaut
 
 
-Use Case - Any
---------------
+Use Case - 0x02
+---------------
+* Any
+
 >>> data = [True, False, True]
 >>>
 >>> if any(data):
@@ -127,8 +131,10 @@ Use Case - Any
 Yes
 
 
-Use Case - All
---------------
+Use Case - 0x03
+---------------
+* All
+
 >>> data = [True, False, True]
 >>>
 >>> if all(data):

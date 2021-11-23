@@ -193,8 +193,9 @@ False
 >>> False and False
 False
 
-Use Cases:
 
+Use Case - 0x01
+---------------
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
@@ -211,6 +212,9 @@ True
 >>> True and True
 True
 
+
+Use Case - 0x02
+---------------
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
@@ -253,13 +257,17 @@ True
 >>> False or False
 False
 
-Use Case:
 
+Use Case - 0x01
+---------------
 >>> name = 'Mark Watney'
 >>>
 >>> name == 'Mark Watney' or name == 'Melissa Lewis'
 True
 
+
+Use Case - 0x02
+---------------
 >>> name = 'Mark Watney'
 >>>
 >>>
@@ -295,8 +303,9 @@ False
 >>> True and (False or False)
 False
 
-Use Case:
 
+Use Case - 0x01
+---------------
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
@@ -306,6 +315,9 @@ Use Case:
 ...     or (firstname == 'Rick' and lastname == 'Martinez')
 True
 
+
+Use Case - 0x02
+---------------
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>

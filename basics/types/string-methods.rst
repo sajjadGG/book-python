@@ -503,8 +503,8 @@ Cython
 Cython
 
 
-Use Case
---------
+Use Case - 0x01
+---------------
 >>> DATA = 'ul. pANA tWARdoWSKiego 3'
 >>>
 >>> result = (

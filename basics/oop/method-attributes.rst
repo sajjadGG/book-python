@@ -189,8 +189,8 @@ Examples
 'Point(x=1, y=2, z=3)'
 
 
-Use Cases - Counter
--------------------
+Use Case - 0x01
+---------------
 >>> class Counter:
 ...     current_value: int
 ...
@@ -226,8 +226,8 @@ Traceback (most recent call last):
 ValueError: Cannot decrement below zero
 
 
-Use Case - Car
---------------
+Use Case - 0x02
+---------------
 >>> from typing import Literal
 >>>
 >>>

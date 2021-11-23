@@ -131,8 +131,8 @@ Classes and Objects:
 >>> jose = Astronaut()
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 >>> a = int()
 >>> b = float()
 >>> c = bool()

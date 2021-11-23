@@ -166,26 +166,34 @@ Unpack Sequences
 ['virginica', 'setosa', 'versicolor', 'virginica', 'versicolor', 'setosa']
 
 
-Use Case - Increment
---------------------
+Use Case - 0x01
+---------------
+* Increment
+
 >>> [x+1 for x in range(0,5)]
 [1, 2, 3, 4, 5]
 
 
-Use Case - Decrement
---------------------
+Use Case - 0x02
+---------------
+* Decrement
+
 >>> [x-1 for x in range(0,5)]
 [-1, 0, 1, 2, 3]
 
 
-Use Case - Sum
---------------
+Use Case - 0x03
+---------------
+* Sum
+
 >>> sum(x for x in range(0,5))
 10
 
 
-Use Case - Even or Odd
-----------------------
+Use Case - 0x04
+---------------
+* Even or Odd
+
 >>> [x for x in range(0,5)]
 [0, 1, 2, 3, 4]
 

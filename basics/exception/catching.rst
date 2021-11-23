@@ -189,8 +189,8 @@ One can kill program with ``Ctrl-C``:
 ...         continue
 
 
-Use Case
---------
+Use Case - 0x01
+---------------
 >>> def database_connect():
 ...     print('Connecting...')
 >>>
@@ -212,7 +212,6 @@ Connecting...
 Connection established
 Executing query...
 Disconnect from database
-
 
 
 Assignments

@@ -100,8 +100,10 @@ Value collision while reversing ``dict``:
 {1: 'a', 2: 'c'}
 
 
-Use Case - Even or Odd
-----------------------
+Use Case - 0x01
+---------------
+*  Even or Odd
+
 >>> result = {}
 >>>
 >>> for x in range(0,5):
