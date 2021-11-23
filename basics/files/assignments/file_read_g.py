@@ -89,7 +89,8 @@ ALGORITHMS = {
     '6': 'SHA-512',
 }
 
-result: list
+# list[dict]: joined data from all files for users with `UID` greater than 1000
+result = ...
 
 # Solution
 result_group = {}

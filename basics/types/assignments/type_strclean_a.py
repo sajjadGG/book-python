@@ -1,5 +1,5 @@
 """
-* Assignment: Str Clean Strings
+* Assignment: String Clean Strings
 * Required: yes
 * Complexity: easy
 * Lines of code: 8 lines

@@ -160,6 +160,58 @@ Length:
 5
 
 
+Use Case - 0x01
+---------------
+One dimensional (1D) structure - vector:
+
+>>> from pprint import pprint
+>>>
+>>>
+>>> obj1 = 1
+>>> obj2 = 2
+>>> obj3 = 3
+>>> data = [obj1, obj2, obj3]
+>>>
+>>> pprint(data, width=20)
+[1, 2, 3]
+
+Two dimensional (2D) structure - matrix:
+
+>>> from pprint import pprint
+>>>
+>>>
+>>> obj1 = [1, 2, 3]
+>>> obj2 = [4, 5, 6]
+>>> obj3 = [7, 8, 9]
+>>> data = [obj1, obj2, obj3]
+>>>
+>>> pprint(data, width=20)
+[[1, 2, 3],
+ [4, 5, 6],
+ [7, 8, 9]]
+
+Three dimensional (3D) structure - tensor:
+
+>>> from pprint import pprint
+>>>
+>>>
+>>> obj1 = [[1,2,3], [4,5,6], [7,8,9]]
+>>> obj2 = [[10,20,30], [40,50,60], [70,80,90]]
+>>> obj3 = [[100,200,300], [400,500,600], [700,800,900]]
+>>> data = [obj1, obj2, obj3]
+>>>
+>>> pprint(data, width=20)
+[[[1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]],
+ [[10, 20, 30],
+  [40, 50, 60],
+  [70, 80, 90]],
+ [[100, 200, 300],
+  [400, 500, 600],
+  [700, 800, 900]]]
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/sequence_nested_a.py

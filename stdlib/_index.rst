@@ -242,6 +242,7 @@ Mathematics
     :maxdepth: 1
     :caption: Mathematics
 
+    math/int.rst
     math/math.rst
     math/statistics.rst
     math/random.rst
@@ -261,6 +262,19 @@ Operating System
     operating-system/argparse.rst
     operating-system/os.rst
     operating-system/pathlib.rst
+
+
+Builtin
+*******
+.. toctree::
+    :maxdepth: 1
+    :caption: Builtin
+
+    builtin/keyword.rst
+    builtin/operator.rst
+    builtin/print.rst
+    builtin/unordered-frozenset.rst
+    builtin/unordered-comparison.rst
 
 
 References

@@ -542,3 +542,11 @@ Assignments
 .. literalinclude:: assignments/type_strmethods_a.py
     :caption: :download:`Solution <assignments/type_strmethods_a.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/type_strmethods_b.py
+    :caption: :download:`Solution <assignments/type_strmethods_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/type_strmethods_c.py
+    :caption: :download:`Solution <assignments/type_strmethods_c.py>`
+    :end-before: # Solution

@@ -1,5 +1,5 @@
 """
-* Assignment: Str Define HelloWorld
+* Assignment: String Define HelloWorld
 * Required: yes
 * Complexity: easy
 * Lines of code: 2 lines

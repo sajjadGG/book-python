@@ -1,5 +1,5 @@
 """
-* Assignment: Str Literals Emoticon
+* Assignment: String Literals Emoticon
 * Required: yes
 * Complexity: easy
 * Lines of code: 2 lines

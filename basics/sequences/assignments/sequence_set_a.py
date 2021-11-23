@@ -60,19 +60,19 @@ Tests:
     'Variable `result_e` has invalid value, should be {1, 2.2, True, "a"}'
 """
 
-# set{int}: with elements: 1, 2, 3
+# set[int]: with elements: 1, 2, 3
 result_a = ...
 
-# set{float}: with elements: 1.1, 2.2, 3.3
+# set[float]: with elements: 1.1, 2.2, 3.3
 result_b = ...
 
-# set{str}: with elements: 'a', 'b', 'c'
+# set[str]: with elements: 'a', 'b', 'c'
 result_c = ...
 
-# set{bool}: with elements: True, False
+# set[bool]: with elements: True, False
 result_d = ...
 
-# set{int|float|bool|str}: with elements: 1, 2.2, True, 'a'
+# set[int|float|bool|str]: with elements: 1, 2.2, True, 'a'
 result_e = ...
 
 # Solution

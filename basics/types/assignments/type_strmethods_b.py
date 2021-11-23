@@ -1,19 +1,17 @@
 """
-* Assignment: Sequence Frozenset Join
+* Assignment: String Methods Join
 * Required: no
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min
 
 English:
-    1. Define `result: str`
-    2. Use `str.join()` to join lines of text with newline (`\n`) character
-    3. Run doctests - all must succeed
+    1. Join lines of text with newline (`\n`) character
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj `result: str`
-    2. Użyj `str.join()` aby połączyć linie tekstu znakiem końca linii (`\n`)
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Połącz linie tekstu znakiem końca linii (`\n`)
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `str.join()`
@@ -40,10 +38,9 @@ Tests:
     >>> assert line in result, f'Line "{line}" is not in the result'
 """
 
-DATA = frozenset({
-    'We choose to go to the Moon',
-    'in this decade and do the other things.',
-    'Not because they are easy, but because they are hard.'})
+DATA = ['We choose to go to the Moon',
+        'in this decade and do the other things.',
+        'Not because they are easy, but because they are hard.']
 
 # str: with lines from DATA joined with newline (`\n`) character
 result = ...
