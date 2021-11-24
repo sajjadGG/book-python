@@ -139,6 +139,8 @@ Traceback (most recent call last):
 KeyError: -1
 >>>
 >>> crew[-2]
+Traceback (most recent call last):
+KeyError: -2
 
 
 Assignments
