@@ -54,32 +54,37 @@ Dict vs Set
 * Despite similar syntax, they are different types
 
 >>> data = {1, 2}
+>>>
 >>> type(data)
 <class 'set'>
-
+>>>
 >>> data = {1: 2}
+>>>
 >>> type(data)
 <class 'dict'>
 
 >>> data = {1, 2, 3, 4}
+>>>
 >>> type(data)
 <class 'set'>
 >>>
+>>>
 >>> data = {1: 2, 3: 4}
+>>>
 >>> type(data)
 <class 'dict'>
 
 Empty ``dict`` and empty ``set``:
 
 >>> data = {1: None}
->>> data.pop(1)
-1
+>>> _ = data.pop(1)
+>>>
 >>> data
 {}
 
 >>> data = {1}
->>> data.pop()
-1
+>>> _ = data.pop()
+>>>
 >>> data
 set()
 
@@ -94,10 +99,13 @@ Length
 >>>
 >>> len(crew)
 3
+>>>
 >>> len(crew.keys())
 3
+>>>
 >>> len(crew.values())
 3
+>>>
 >>> len(crew.items())
 3
 

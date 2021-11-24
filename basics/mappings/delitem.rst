@@ -51,7 +51,7 @@ Del Keyword
 ...    'pilot': 'Rick Martinez'}
 >>>
 >>>
->>> del crew['chemist']
+>>> del crew['pilot']
 >>>
 >>> print(crew)
 {'commander': 'Melissa Lewis', 'botanist': 'Mark Watney'}

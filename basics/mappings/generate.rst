@@ -36,19 +36,20 @@ Enumerate
 Function ``enumerate`` will create a list of pairs:
 
 >>> crew = ['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
+>>>
 >>> result = enumerate(crew)
 >>>
 >>>
->>> next(crew)
+>>> next(result)
 (0, 'Melissa Lewis')
 >>>
->>> next(crew)
+>>> next(result)
 (1, 'Mark Watney')
 >>>
->>> next(crew)
+>>> next(result)
 (2, 'Rick Martinez')
 >>>
->>> next(crew)
+>>> next(result)
 Traceback (most recent call last):
 StopIteration
 
@@ -78,14 +79,19 @@ Function ``zip`` will create a list of pairs:
 >>> roles = ['commander', 'botanist', 'pilot']
 >>> crew = ['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
 >>>
->>> astronaut = zip(roles, crew)
->>> next(astronaut)
+>>> result = zip(roles, crew)
+>>>
+>>>
+>>> next(result)
 ('commander', 'Melissa Lewis')
->>> next(astronaut)
+>>>
+>>> next(result)
 ('botanist', 'Mark Watney')
->>> next(astronaut)
+>>>
+>>> next(result)
 ('pilot', 'Rick Martinez')
->>> next(astronaut)
+>>>
+>>> next(result)
 Traceback (most recent call last):
 StopIteration
 
@@ -96,6 +102,9 @@ StopIteration
 [('commander', 'Melissa Lewis'),
  ('botanist', 'Mark Watney'),
  ('pilot', 'Rick Martinez')]
+
+>>> roles = ['commander', 'botanist', 'pilot']
+>>> crew = ['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
 >>>
 >>> dict(zip(roles, crew))  # doctest: +NORMALIZE_WHITESPACE
 {'commander': 'Melissa Lewis',
@@ -106,11 +115,13 @@ StopIteration
 >>> firstnames = ['Melissa', 'Mark', 'Rick']
 >>> lastnames = ['Lewis', 'Watney', 'Martinez']
 >>>
->>> data = zip(roles, firstnames, lastnames)
->>> next(data)
+>>> result = zip(roles, firstnames, lastnames)
+>>>
+>>>
+>>> next(result)
 ('commander', 'Melissa', 'Lewis')
 >>>
->>> role, fname, lname = next(data)
+>>> role, fname, lname = next(result)
 >>> role
 'botanist'
 >>> fname
@@ -121,14 +132,19 @@ StopIteration
 >>> roles = ['commander', 'botanist', 'pilot']
 >>> crew = [('Melissa', 'Lewis'), ('Mark', 'Watney'), ('Rick', 'Martinez')]
 >>>
->>> astronauts = zip(roles, crew)
->>> next(astronauts)
+>>> result = zip(roles, crew)
+>>>
+>>>
+>>> next(result)
 ('commander', ('Melissa', 'Lewis'))
->>> next(astronauts)
+>>>
+>>> next(result)
 ('botanist', ('Mark', 'Watney'))
->>> next(astronauts)
+>>>
+>>> next(result)
 ('pilot', ('Rick', 'Martinez'))
->>> next(astronauts)
+>>>
+>>> next(result)
 Traceback (most recent call last):
 StopIteration
 
@@ -139,6 +155,10 @@ StopIteration
 [('commander', ('Melissa', 'Lewis')),
  ('botanist', ('Mark', 'Watney')),
  ('pilot', ('Rick', 'Martinez'))]
+
+>>> roles = ['commander', 'botanist', 'pilot']
+>>> crew = [('Melissa', 'Lewis'), ('Mark', 'Watney'), ('Rick', 'Martinez')]
+>>>
 >>> dict(zip(roles, crew))  # doctest: +NORMALIZE_WHITESPACE
 {'commander': ('Melissa', 'Lewis'),
  'botanist': ('Mark', 'Watney'),

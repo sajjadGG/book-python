@@ -51,7 +51,7 @@ Dict Switch
 >>> result = hello.get(language, hello['default'])
 >>>
 >>> print(result)
-"I don't speak this language"
+I don't speak this language
 
 
 Function Switch

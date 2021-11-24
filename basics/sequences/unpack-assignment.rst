@@ -126,13 +126,13 @@ Unpacking
 >>>
 >>>
 >>> print(firstname)
-'Mark'
+Mark
 >>>
 >>> print(lastname)
-'Watney'
+Watney
 >>>
 >>> print(age)
-'44'
+44
 
 
 Nested

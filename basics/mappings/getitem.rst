@@ -104,12 +104,12 @@ Slice
 >>> crew[1:2]
 Traceback (most recent call last):
 TypeError: unhashable type: 'slice'
->>> crew[:2]
 >>>
+>>> crew[:2]
 Traceback (most recent call last):
 TypeError: unhashable type: 'slice'
->>> crew[::2]
 >>>
+>>> crew[::2]
 Traceback (most recent call last):
 TypeError: unhashable type: 'slice'
 
