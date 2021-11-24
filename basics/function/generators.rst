@@ -109,26 +109,26 @@ StopIteration
 >>> dict(result)
 {'Mark': 'Watney', 'Melissa': 'Lewis', 'Alex': 'Vogel'}
 
->>> roles = ['botanist', 'commander', 'chemist']
->>> names = ['Mark Watney', 'Melissa Lewis', 'Alex Vogel']
+>>> roles = ['botanist', 'commander', 'pilot']
+>>> names = ['Mark Watney', 'Melissa Lewis', 'Rick Martinez']
 
 >>> dict(zip(roles, names))  # doctest: +NORMALIZE_WHITESPACE
 {'botanist': 'Mark Watney',
  'commander': 'Melissa Lewis',
- 'chemist': 'Alex Vogel'}
+ 'pilot': 'Rick Martinez'}
 
 ``zip()`` adjusts to the shortest:
 
 >>> firstnames = ['Mark', 'Melissa']
->>> lastnames = ['Watney', 'Lewis', 'Vogel']
+>>> lastnames = ['Watney', 'Lewis', 'Martinez']
 >>> result = zip(firstnames, lastnames)
 >>>
 >>> list(result)
 [('Mark', 'Watney'), ('Melissa', 'Lewis')]
 
->>> roles = ['botanist', 'commander', 'chemist']
->>> firstnames = ['Mark', 'Melissa', 'Alex']
->>> lastnames = ['Watney', 'Lewis', 'Vogel']
+>>> roles = ['botanist', 'commander', 'pilot']
+>>> firstnames = ['Mark', 'Melissa', 'Rick']
+>>> lastnames = ['Watney', 'Lewis', 'Martinez']
 >>> result = zip(roles, firstnames, lastnames)
 >>>
 >>> next(result)
@@ -136,19 +136,19 @@ StopIteration
 >>> next(result)
 ('commander', 'Melissa', 'Lewis')
 >>> next(result)
-('chemist', 'Alex', 'Vogel')
+('pilot', 'Rick', 'Martinez')
 >>> next(result)
 Traceback (most recent call last):
 StopIteration
 
->>> roles = ['botanist', 'commander', 'chemist']
->>> names = ['Mark Watney', 'Melissa Lewis', 'Alex Vogel']
+>>> roles = ['botanist', 'commander', 'pilot']
+>>> names = ['Mark Watney', 'Melissa Lewis', 'Rick Martinez']
 >>>
 >>> for role, name in zip(roles, names):
 ...     print(f'{role} -> {name}')
 botanist -> Mark Watney
 commander -> Melissa Lewis
-chemist -> Alex Vogel
+pilot -> Rick Martinez
 
 
 Map

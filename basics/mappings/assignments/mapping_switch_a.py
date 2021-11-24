@@ -1,5 +1,5 @@
 """
-* Assignment: Mapping Dict Get
+* Assignment: Mapping Switch Value
 * Required: no
 * Complexity: easy
 * Lines of code: 2 lines
@@ -28,6 +28,9 @@ Polish:
     8. `MagicMock` zasymuluje wpisanie litery przez użytkownika
     9. Skorzytaj z funkcji `input()` tak jak normalnie
     10. Uruchom doctesty - wszystkie muszą się powieść
+
+Hints:
+    * `input()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

@@ -37,7 +37,7 @@ Tests:
 ADULT = 18
 AGE = 12
 
-# str: Whether 'Adult' or 'Young'
+# str: Whether 'adult' or 'underage'
 result = ...
 
 # Solution

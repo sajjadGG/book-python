@@ -7,8 +7,8 @@ Rationale
 * Immutable - cannot add, modify or remove items
 
 
-Definition
-----------
+Syntax
+------
 Defining ``tuple()`` is more explicit, however empty tuple with ``()`` is used
 more often and it's also faster:
 

@@ -32,8 +32,8 @@ universal truth.
 * More information in `OOP Object Identity`.
 
 
-Definition
-----------
+Syntax
+------
 Defining only with ``set()`` - no short syntax:
 
 >>> data = set()

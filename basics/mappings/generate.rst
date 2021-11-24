@@ -2,42 +2,57 @@ Mapping Generate
 ================
 
 
-Pair
-----
->>> pair = [
-...     ('commander', 'Melissa Lewis')]
->>>
->>> dict(pair)
-{'commander': 'Melissa Lewis'}
+Recap
+-----
+Pair:
+
+>>> data = ('commander', 'Melissa Lewis')
+
+List of pairs:
+
+>>> data = [
+...     ('commander', 'Melissa Lewis'),
+...     ('botanist', 'Mark Watney'),
+...     ('pilot', 'Rick Martinez'),
+... ]
 
 
 List of Pairs
 -------------
->>> pairs = [
+>>> data = [
 ...     ('commander', 'Melissa Lewis'),
 ...     ('botanist', 'Mark Watney'),
-...     ('chemist', 'Rick Martinez')]
+...     ('pilot', 'Rick Martinez')
+... ]
 >>>
->>> dict(pairs)  # doctest: +NORMALIZE_WHITESPACE
+>>> dict(data)  # doctest: +NORMALIZE_WHITESPACE
 {'commander': 'Melissa Lewis',
   'botanist': 'Mark Watney',
-  'chemist': 'Rick Martinez'}
+  'pilot': 'Rick Martinez'}
 
 
 Enumerate
 ---------
+Function ``enumerate`` will create a list of pairs:
+
 >>> crew = ['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
->>> astronaut = enumerate(crew)
+>>> result = enumerate(crew)
 >>>
->>> next(astronaut)
+>>>
+>>> next(crew)
 (0, 'Melissa Lewis')
->>> next(astronaut)
+>>>
+>>> next(crew)
 (1, 'Mark Watney')
->>> next(astronaut)
+>>>
+>>> next(crew)
 (2, 'Rick Martinez')
->>> next(astronaut)
+>>>
+>>> next(crew)
 Traceback (most recent call last):
 StopIteration
+
+Evaluate enumerate object to list instantly:
 
 >>> crew = ['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
 >>>
@@ -45,6 +60,11 @@ StopIteration
 [(0, 'Melissa Lewis'),
  (1, 'Mark Watney'),
  (2, 'Rick Martinez')]
+
+Evaluate enumerate object to dict instantly:
+
+>>> crew = ['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
+>>>
 >>> dict(enumerate(crew))  # doctest: +NORMALIZE_WHITESPACE
 {0: 'Melissa Lewis',
  1: 'Mark Watney',
@@ -53,10 +73,9 @@ StopIteration
 
 Zip
 ---
-* ``zip`` is a generator
-* ``zip`` will create a list of pairs (like ``dict.items()``)
+Function ``zip`` will create a list of pairs:
 
->>> roles = ['commander', 'botanist', 'chemist']
+>>> roles = ['commander', 'botanist', 'pilot']
 >>> crew = ['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
 >>>
 >>> astronaut = zip(roles, crew)
@@ -65,25 +84,25 @@ Zip
 >>> next(astronaut)
 ('botanist', 'Mark Watney')
 >>> next(astronaut)
-('chemist', 'Rick Martinez')
+('pilot', 'Rick Martinez')
 >>> next(astronaut)
 Traceback (most recent call last):
 StopIteration
 
->>> roles = ['commander', 'botanist', 'chemist']
+>>> roles = ['commander', 'botanist', 'pilot']
 >>> crew = ['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
 >>>
 >>> list(zip(roles, crew))  # doctest: +NORMALIZE_WHITESPACE
 [('commander', 'Melissa Lewis'),
  ('botanist', 'Mark Watney'),
- ('chemist', 'Rick Martinez')]
+ ('pilot', 'Rick Martinez')]
 >>>
 >>> dict(zip(roles, crew))  # doctest: +NORMALIZE_WHITESPACE
 {'commander': 'Melissa Lewis',
  'botanist': 'Mark Watney',
- 'chemist': 'Rick Martinez'}
+ 'pilot': 'Rick Martinez'}
 
->>> roles = ['commander', 'botanist', 'chemist']
+>>> roles = ['commander', 'botanist', 'pilot']
 >>> firstnames = ['Melissa', 'Mark', 'Rick']
 >>> lastnames = ['Lewis', 'Watney', 'Martinez']
 >>>
@@ -99,7 +118,7 @@ StopIteration
 >>> lname
 'Watney'
 
->>> roles = ['commander', 'botanist', 'chemist']
+>>> roles = ['commander', 'botanist', 'pilot']
 >>> crew = [('Melissa', 'Lewis'), ('Mark', 'Watney'), ('Rick', 'Martinez')]
 >>>
 >>> astronauts = zip(roles, crew)
@@ -108,22 +127,22 @@ StopIteration
 >>> next(astronauts)
 ('botanist', ('Mark', 'Watney'))
 >>> next(astronauts)
-('chemist', ('Rick', 'Martinez'))
+('pilot', ('Rick', 'Martinez'))
 >>> next(astronauts)
 Traceback (most recent call last):
 StopIteration
 
->>> roles = ['commander', 'botanist', 'chemist']
+>>> roles = ['commander', 'botanist', 'pilot']
 >>> crew = [('Melissa', 'Lewis'), ('Mark', 'Watney'), ('Rick', 'Martinez')]
 >>>
 >>> list(zip(roles, crew))  # doctest: +NORMALIZE_WHITESPACE
 [('commander', ('Melissa', 'Lewis')),
  ('botanist', ('Mark', 'Watney')),
- ('chemist', ('Rick', 'Martinez'))]
+ ('pilot', ('Rick', 'Martinez'))]
 >>> dict(zip(roles, crew))  # doctest: +NORMALIZE_WHITESPACE
 {'commander': ('Melissa', 'Lewis'),
  'botanist': ('Mark', 'Watney'),
- 'chemist': ('Rick', 'Martinez')}
+ 'pilot': ('Rick', 'Martinez')}
 
 
 Use Case - 0x01

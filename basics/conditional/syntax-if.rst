@@ -38,12 +38,40 @@ Nested Blocks
 >>> if True:
 ...     print('First line of the true statement')
 ...     print('Second line of the true statement')
-...
 ...     if True:
 ...         print('First line of inner true statement')
 First line of the true statement
 Second line of the true statement
 First line of inner true statement
+
+
+Deeply Nested Blocks
+--------------------
+>>> if True:
+...     print('a')
+...     print('b')
+...     if True:
+...         print('c')
+...         print('d')
+...         if True:
+...             print('e')
+...             if True:
+...                 print('f')
+...     if True:
+...         print('g')
+...         print('h')
+...     print('i')
+...     print('j')
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
 
 
 Value Check
@@ -55,17 +83,6 @@ Value Check
 adult
 
 
-Conditional Assignment
-----------------------
->>> country = 'USA'
->>>
->>> if country == 'USA':
-...     job = 'astronaut'
->>>
->>> print(job)
-astronaut
-
-
 Boundary Check
 --------------
 >>> age = 7
@@ -74,6 +91,17 @@ Boundary Check
 ...     print('Age is between 0 and 18')
 Age is between 0 and 18
 
+Is equivalent to:
+
+>>> age = 7
+>>>
+>>> if 0 <= age and age < 18:
+...     print('Age is between 0 and 18')
+Age is between 0 and 18
+
+
+Nested Boundary Check
+---------------------
 Checking if value is in range:
 
 >>> a = 10
@@ -93,6 +121,19 @@ Checking If Empty
 My name is... Mark Watney
 
 
+Conditional Assignment
+----------------------
+* Define variable based on evaluation
+
+>>> country = 'USA'
+>>>
+>>> if country == 'USA':
+...     job = 'astronaut'
+>>>
+>>> print(job)
+astronaut
+
+
 Use Case - 0x01
 ---------------
 * Even
@@ -106,6 +147,4 @@ even
 
 Assignments
 -----------
-.. literalinclude:: assignments/conditional_if_a.py
-    :caption: :download:`Solution <assignments/conditional_if_a.py>`
-    :end-before: # Solution
+.. todo:: Create assignments

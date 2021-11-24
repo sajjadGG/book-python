@@ -15,6 +15,9 @@ Polish:
     2. Przekonwertuj `DATA` do `dict` i przypisz do `result`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `dict()`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

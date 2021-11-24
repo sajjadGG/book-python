@@ -1,5 +1,5 @@
 """
-* Assignment: Mapping Dict Translate
+* Assignment: Mapping Switch Default
 * Required: no
 * Complexity: easy
 * Lines of code: 2 lines
@@ -20,6 +20,10 @@ Polish:
     4. `MagicMock` zasymuluje wpisanie litery przez użytkownika
     5. Skorzytaj z funkcji `input()` tak jak normalnie
     6. Uruchom doctesty - wszystkie muszą się powieść
+
+Hints:
+    * `input()`
+    * `str.lower()`
 
 Example:
     | Input | Output |
@@ -67,5 +71,5 @@ letter = ...
 result = ...
 
 # Solution
-letter = input('Type letter: ').strip().lower()
+letter = input('Type letter: ').lower()
 result = PL.get(letter, letter)

@@ -7,35 +7,75 @@ Rationale
 * Scalar assignment
 * Vector assignment
 
+
+Syntax
+------
+Scalar assignment:
+
 >>> a = 1
+
+Vector assignment:
+
 >>> a, b = 1, 2
+
+Multi assignment:
+
+>>> a = b = 1, 2
 
 
 Scalar Assignment
 -----------------
 >>> a = 1
->>> (a) = (1)
+>>>
+>>> print(a)
+1
+
+
+
+Vector Assignment
+-----------------
+>>> a, b = 1, 2
+>>>
+>>> print(a)
+1
+>>> print(b)
+2
+
+>>> a, b = 1, 2
+>>> a, b, c = 1, 2, 3
+>>> a, b, c, d = 1, 2, 3, 4
+>>> a, b, c, d, e = 1, 2, 3, 4, 5
+
+
+Right-Side Brackets
+-------------------
+Scalar assignments:
 
 >>> a = 1, 2
 >>> a = (1, 2)
 >>> a = [1, 2]
 >>> a = {1, 2}
 
+Vector assignments:
 
-Vector Assignment
------------------
 >>> a, b = 1, 2
 >>> a, b = (1, 2)
 >>> a, b = [1, 2]
 >>> a, b = {1, 2}
 
->>> a, b, c = 1, 2, 3
->>> a, b, c = (1, 2, 3)
->>> a, b, c = [1, 2, 3]
->>> a, b, c = {1, 2, 3}
+Rationale:
 
 >>> a, b = 1, 2
 >>> a, b = (1, 2)
+
+
+Left-Side Brackets
+------------------
+>>> (a) = (1)
+>>>
+>>> print(a)
+1
+
 >>> (a, b) = 1, 2
 >>> (a, b) = (1, 2)
 
@@ -49,17 +89,50 @@ Vector Assignment
 
 Errors
 ------
->>> a, b, c = [1, 2, 3, 4]
+>>> a, b, c = 1, 2, 3, 4
 Traceback (most recent call last):
 ValueError: too many values to unpack (expected 3)
 
->>> a, b, c, d = [1, 2, 3]
+>>> a, b, c = 1, 2
 Traceback (most recent call last):
 ValueError: not enough values to unpack (expected 4, got 3)
 
 >>> {a, b, c} = {1, 2, 3}
 Traceback (most recent call last):
 SyntaxError: can't assign to literal
+
+>>> {a, b, c} = 1, 2, 3  # doctest: +SKIP
+Traceback (most recent call last):
+SyntaxError: cannot assign to set display here. Maybe you meant '==' instead of '='?
+
+
+Unpacking
+---------
+>>> data = [1,2,3]
+>>> a, b, c = data
+>>>
+>>>
+>>> print(a)
+1
+>>>
+>>> print(b)
+2
+>>>
+>>> print(c)
+3
+
+>>> line = 'Mark,Watney,44'
+>>> firstname, lastname, age = line.split(',')
+>>>
+>>>
+>>> print(firstname)
+'Mark'
+>>>
+>>> print(lastname)
+'Watney'
+>>>
+>>> print(age)
+'44'
 
 
 Nested

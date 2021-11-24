@@ -1,5 +1,5 @@
 """
-* Assignment: Mapping Dict Items
+* Assignment: Mapping Items List
 * Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
@@ -16,6 +16,12 @@ Polish:
     2. Zdefiniuj `values: list[str]` z listą wartości z `DATA`
     3. Zdefiniuj `items: list[tuple]` z listą par klucz-wartość z `DATA`
     4. Uruchom doctesty - wszystkie muszą się powieść
+
+Hints:
+    * `list()`
+    * `dict.keys()`
+    * `dict.values()`
+    * `dict.items()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

@@ -66,9 +66,18 @@ Mappings
     :maxdepth: 1
     :caption: Mappings
 
-    mappings/dict.rst
-    mappings/generate.rst
+    mappings/about.rst
+    mappings/define.rst
+    mappings/keys.rst
+    mappings/values.rst
+    mappings/items.rst
     mappings/nested.rst
+    mappings/getitem.rst
+    mappings/switch.rst
+    mappings/setitem.rst
+    mappings/delitem.rst
+    mappings/merge.rst
+    mappings/generate.rst
 
 
 Conditional
@@ -85,10 +94,10 @@ Conditional
     conditional/boolean-identity.rst
     conditional/boolean-operators.rst
     conditional/boolean-membership.rst
+    conditional/boolean-switch.rst
     conditional/syntax-if.rst
     conditional/syntax-else.rst
     conditional/syntax-elif.rst
-    conditional/syntax-switch.rst
     conditional/syntax-match.rst
     conditional/syntax-expression.rst
 

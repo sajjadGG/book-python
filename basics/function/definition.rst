@@ -18,8 +18,8 @@ Syntax
         <do something>
 
 
-Definition
-----------
+Example
+-------
 >>> def say_hello():
 ...     print('My name... José Jiménez')
 >>>

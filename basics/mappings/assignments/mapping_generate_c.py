@@ -17,6 +17,10 @@ Polish:
     3. Użyj `zip()`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `dict()`
+    * `zip()`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

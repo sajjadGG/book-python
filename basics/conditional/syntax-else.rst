@@ -146,4 +146,10 @@ No
 
 Assignments
 -----------
-.. todo:: Create assignments
+.. literalinclude:: assignments/conditional_else_a.py
+    :caption: :download:`Solution <assignments/conditional_else_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/conditional_else_b.py
+    :caption: :download:`Solution <assignments/conditional_else_b.py>`
+    :end-before: # Solution

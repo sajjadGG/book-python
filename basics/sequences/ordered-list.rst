@@ -7,8 +7,8 @@ Rationale
 * Mutable - can add, remove, and modify items
 
 
-Definition
-----------
+Syntax
+------
 Defining empty list with ``[]`` is used more often, but ``list()`` is more
 explicit:
 

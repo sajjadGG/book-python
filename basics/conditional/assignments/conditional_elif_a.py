@@ -143,9 +143,9 @@ if CRISIS_SYSTOLIC or CRISIS_DIASTOLIC:
 # Alternative Solution
 NORMAL_SYSTOLIC = systolic < 120
 NORMAL_DIASTOLIC = diastolic < 80
-ELEVATED_SYSTOLIC = systolic < 130
+ELEVATED_SYSTOLIC = systolic < 130  # note value 140, not 139
 ELEVATED_DIASTOLIC = diastolic < 80
-STAGE1_SYSTOLIC = systolic < 140
+STAGE1_SYSTOLIC = systolic < 140  # note value 140, not 139
 STAGE1_DIASTOLIC = diastolic < 90
 STAGE2_SYSTOLIC = diastolic >= 90
 STAGE2_DIASTOLIC = systolic >= 140

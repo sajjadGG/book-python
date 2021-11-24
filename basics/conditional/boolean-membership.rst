@@ -140,11 +140,11 @@ TypeError: unhashable type: 'set'
 >>> crew = {
 ...    'commander': 'Melissa Lewis',
 ...    'botanist': 'Mark Watney',
-...    'chemist': 'Alex Vogel'}
+...    'pilot': 'Rick Martinez'}
 >>>
 >>> 'commander' in crew
 True
->>> 'pilot' in crew
+>>> 'chemist' in crew
 False
 >>> 'Melissa Lewis' in crew
 False
@@ -152,7 +152,7 @@ False
 >>> crew = {
 ...    'commander': 'Melissa Lewis',
 ...    'botanist': 'Mark Watney',
-...    'chemist': 'Alex Vogel'}
+...    'pilot': 'Rick Martinez'}
 >>>
 >>> 'commander' in crew.keys()
 True
@@ -170,6 +170,7 @@ Missing
 False
 >>> 'p' not in 'Python'
 True
+
 >>> 'py' not in 'Python'
 True
 >>> 'Py' not in 'Python'
@@ -214,13 +215,17 @@ True
 >>> crew = {
 ...    'commander': 'Melissa Lewis',
 ...    'botanist': 'Mark Watney',
-...    'chemist': 'Alex Vogel'}
+...    'pilot': 'Rick Martinez'}
 >>>
->>> 'commander' not in crew
-False
->>> 'pilot' not in crew
+>>> 'commander' in crew
 True
-
+>>> 'Melissa Lewis' in crew
+False
+>>>
+>>> 'Melissa Lewis' in crew.keys()
+False
+>>> 'Melissa Lewis' in crew.values()
+True
 
 
 Control Flow

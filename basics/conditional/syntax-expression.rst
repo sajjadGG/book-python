@@ -83,10 +83,36 @@ Use Case - 0x04
 * IPv4/IPv6
 
 >>> ip = '127.0.0.1'
+>>>
+>>> if '.' in ip:
+...     protocol = 'IPv4'
+... else:
+...     protocol = 'IPv6'
+>>>
+>>> print(protocol)
+IPv4
+
+>>> ip = '127.0.0.1'
 >>> protocol = 'IPv4' if '.' in ip else 'IPv6'
 >>>
 >>> print(protocol)
 IPv4
+
+
+Use Case - 0x05
+---------------
+>>> if age >= 18:
+...     result = 'adult'
+>>> else:
+...     result = 'kiddo'
+>>>
+>>> print(result)
+'kiddo'
+
+>>> result = 'adult' if age >= 18 else 'kiddo'
+>>> result
+'kiddo'
+
 
 
 Assignments

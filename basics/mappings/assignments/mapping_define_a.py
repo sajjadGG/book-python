@@ -1,5 +1,5 @@
 """
-* Assignment: Mapping Dict Define
+* Assignment: Mapping Define Dict
 * Required: yes
 * Complexity: easy
 * Lines of code: 3 lines

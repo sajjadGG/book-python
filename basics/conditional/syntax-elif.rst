@@ -5,26 +5,88 @@ Block Elif
 
     # Simulate user input (for test automation)
     from unittest.mock import MagicMock
-    input = MagicMock(side_effect=['Polish', '10'])
+    input = MagicMock(side_effect=['5', '5', '10', 'Polish'])
 
 
-Conditional Alternative
------------------------
+Rationale
+---------
 * Used to check for additional condition if first is not met
 * In other languages is known as ``else if``
+* Conditional Alternative
 
-``elif`` generic syntax:
 
-.. code-block:: python
+Syntax
+------
+* Optional else
 
-    if <condition>:
-        <do something>
-    elif <condition>:
-        <do something>
-    else:
-        <do something>
+>>> # doctest: +SKIP
+... if <condition>:
+...     <do something>
+... elif <condition>:
+...     <do something>
 
+>>> # doctest: +SKIP
+... if <condition>:
+...     <do something>
+... elif <condition>:
+...     <do something>
+... else:
+...     <do something>
+
+
+Example
+-------
+>>> number = int(input('Type digit: '))  # User input: '5'
+>>>
+>>>
+>>> if 0 <= number < 3:
+...     print('small')
+... elif 3 <= number < 7:
+...     print('medium')
+... elif 7 <= number < 10:
+...     print('large')
+medium
+
+
+Why not many ifs?
+-----------------
+* With many ifs, Python will evaluate all of them
+* With elifs Python will stop, after first ``True`` evaluation
+
+>>> number = int(input('Type digit: '))  # User input: '5'
+>>>
+>>>
+>>> if 0 <= number < 3:
+...     print('small')
+>>>
+>>> if 3 <= number < 7:
+...     print('medium')
+medium
+>>>
+>>> if 7 <= number < 10:
+...     print('large')
+
+
+Else
+----
+>>> number = int(input('Type digit: '))  # User input: '10'
+>>>
+>>>
+>>> if 0 <= number < 3:
+...     print('small')
+... elif 3 <= number < 7:
+...     print('medium')
+... elif 7 <= number < 10:
+...     print('large')
+... else:
+...     print('Not a digit')
+Not a digit
+
+
+Use Case - 0x01
+---------------
 >>> language = input('What is your language?: ')  # User input 'Polish'
+>>>
 >>>
 >>> if language == 'English':
 ...     print('Hello')
@@ -38,73 +100,6 @@ Conditional Alternative
 ...     print("I don't speak this language")
 Witaj
 
-
-Shorthand Expressions
----------------------
->>> number = 3
->>> is_even = (number % 2 == 0 )
->>>
->>> print(is_even)
-False
-
->>> number = 3
->>> is_digit = (number in range(0,10))
->>>
->>> print(is_digit)
-True
-
-
-Conditional Expression
-----------------------
->>> number = 3
->>>
->>> if number in range(0,10):
-...     is_digit = True
-... else:
-...     is_digit = False
->>>
->>> print(is_digit)
-True
-
->>> number = 3
->>> is_digit = True if number in range(0,10) else False
->>>
->>> print(is_digit)
-True
-
->>> ip = '127.0.0.1'
->>> protocol = 'IPv4' if '.' in ip else 'IPv6'
->>>
->>> print(protocol)
-IPv4
-
-Normal ``if``:
-
->>> country = 'Russia'
->>>
->>> if country == 'USA':
-...     job = 'astronaut'
-... else:
-...     job = 'cosmonaut'
->>>
->>> print(job)
-cosmonaut
-
-Inline ``if``:
-
->>> country = 'Russia'
->>> job = 'astronaut' if country == 'USA' else 'cosmonaut'
->>>
->>> print(job)
-cosmonaut
-
-Type Str Methods is Numeric:
-
->>> age = input('What is your age?: ')  # User input: 10
->>> age = int(age) if age.isnumeric() else None
->>>
->>> print(age)
-10
 
 
 Assignments
