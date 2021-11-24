@@ -107,11 +107,12 @@ Use Case - 0x05
 ...     result = 'kiddo'
 >>>
 >>> print(result)
-'kiddo'
+kiddo
 
 >>> result = 'adult' if age >= 18 else 'kiddo'
->>> result
-'kiddo'
+>>>
+>>> print(result)
+kiddo
 
 
 
