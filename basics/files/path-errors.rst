@@ -71,11 +71,12 @@ Sorry, file not found
 
 PermissionError
 ---------------
->>> open('/etc/shadow')
+>>> open('/etc/shadow')  # doctest: +SKIP
 Traceback (most recent call last):
 PermissionError: [Errno 13] Permission denied: '/etc/sudoers'
 
->>> try:
+>>> # doctest: +SKIP
+... try:
 ...     file = open('/etc/shadow')
 ... except PermissionError:
 ...     print('Sorry, permission denied')
