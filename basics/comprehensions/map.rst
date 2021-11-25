@@ -31,6 +31,7 @@ Convert Data
 ...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
 ...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
 >>>
+>>>
 >>> [tuple(features) for *features,label in DATA[1:]]  # doctest: +NORMALIZE_WHITESPACE
 [(5.8, 2.7, 5.1, 1.9),
  (5.1, 3.5, 1.4, 0.2),
@@ -177,6 +178,7 @@ Use Case - 0x02
 ...           {'is_astronaut': False, 'name': 'Rick Martinez'},
 ...           {'is_astronaut': True,  'name': 'Alex Vogel'}]
 >>>
+>>>
 >>> astronauts = [{'firstname': person['name'].split()[0],
 ...                'lastname': person['name'].split()[1]}
 ...                for person in PEOPLE
@@ -219,7 +221,7 @@ Use Case - 0x04
 >>>
 >>>
 >>> astronauts = [{'firstname': fname, 'lastname': lname}
-...                for person in DATA
+...                for person in PEOPLE
 ...                if person['is_astronaut']
 ...                and (name := person['name'].split())
 ...                and (fname := name[0].capitalize())
@@ -243,7 +245,7 @@ Use Case - 0x05
 >>>
 >>>
 >>> astronauts = [f'{fname} {lname[0]}.'
-...               for person in DATA
+...               for person in PEOPLE
 ...               if person['is_astronaut']
 ...               and (fullname := person['name'].split())
 ...               and (fname := fullname[0].capitalize())

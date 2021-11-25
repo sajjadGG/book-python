@@ -59,6 +59,7 @@ C:\Users\Admin\myfile.txt
 FileNotFoundError
 -----------------
 >>> open('/tmp/myfile.txt')
+Traceback (most recent call last):
 FileNotFoundError: [Errno 2] No such file or directory: '/tmp/myfile.txt'
 
 >>> try:
@@ -71,18 +72,20 @@ Sorry, file not found
 PermissionError
 ---------------
 >>> open('/etc/sudoers')
+Traceback (most recent call last):
 PermissionError: [Errno 13] Permission denied: '/etc/sudoers'
 
 >>> try:
 ...     file = open('/etc/sudoers')
 ... except PermissionError:
 ...     print('Sorry, permission denied')
-FileNotFoundError: [Errno 2] No such file or directory: '/tmp/myfile.txt'
+Sorry, permission denied
 
 
 IsADirectoryError
 -----------------
 >>> open('/tmp')
+Traceback (most recent call last):
 IsADirectoryError: [Errno 21] Is a directory: '/tmp'
 
 >>> try:

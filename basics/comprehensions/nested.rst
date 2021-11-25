@@ -25,6 +25,7 @@ Example
 ...     2: ['Primary School'],
 ...     1: ['Kindergarten']}
 >>>
+>>>
 >>> result = {}
 >>> for i, titles in DATA.items():
 ...     for title in titles:
@@ -48,6 +49,7 @@ Example
 ...     3: ['Junior High'],
 ...     2: ['Primary School'],
 ...     1: ['Kindergarten']}
+>>>
 >>>
 >>> result = {title: str(i)
 ...           for i, titles in DATA.items()
@@ -88,7 +90,7 @@ Microbenchmark
 
 >>> # %%timeit -r 1000 -n 1000
 >>> result = {}
-... for i, titles in DATA.items():
+>>> for i, titles in DATA.items():
 ...     for title in titles:
 ...         result[title] = str(i)
 >>> # 2.24 µs ± 152 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)

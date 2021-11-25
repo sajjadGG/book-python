@@ -25,9 +25,13 @@ Rationale
 
     Windows 10 Notepad "Save As" window with possibility to select encoding. Since Windows 10.1903 (May 2019) notepad writes files in UTF-8 by default! Source: [#Windows10]_ [#Microsoft]_
 
-.. figure:: img/files-encoding-ascii2.jpg
+.. figure:: img/files-encoding-ascii.png
 
-    ASCII table. Source: [#Spinall2015]_
+    Source: [#computersciencewiki]_
+
+.. figure:: img/files-encoding-ascii-iso.gif
+
+    Source: [#dataloid]_
 
 .. figure:: img/files-encoding-unicode2.png
 
@@ -197,6 +201,10 @@ Escape Characters
 
     Why we have '\\r\\n' on Windows?
 
+.. figure:: img/type-machine.gif
+
+    Source: [#typewriter]_
+
 Frequently used escape characters:
 
     * ``\n`` - New line (ENTER)
@@ -232,6 +240,8 @@ Emoticons:
 
 References
 ----------
+.. [#computersciencewiki] https://computersciencewiki.org/images/3/3d/Ascii_table.png
+.. [#dataloid] Lee, Nurah. Apa itu ASCII (American Standard Code for Information Interchange)? Year: 2016. Retrieved: 2021-11-25. http://dataloid.blogspot.com/2016/02/apa-itu-ascii-american-standard-code.html
 .. [#Windows2000] redhotwords.com. Windows 2000 Notepad. http://redhotwords.com/assets/Uninotepadunicode.png
 .. [#Windows10] digitalcitizen.life. Windows 10 Notepad. https://www.digitalcitizen.life/sites/default/files/gdrive/windows_notepad/notepad_10.png
 .. [#Microsoft] https://docs.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1903
@@ -240,3 +250,4 @@ References
 .. [#ilovefreesoftware] http://cdn.ilovefreesoftware.com/wp-content/uploads/2016/10/unicode-Character-list-1.png
 .. [#unicode1] https://camo.githubusercontent.com/7806142e30089cac76da9fe9fb1c5bbd0521cde6/68747470733a2f2f692e696d6775722e636f6d2f7a414d74436a622e706e67
 .. [#unicode2] https://i.pinimg.com/736x/12/e2/37/12e237271c063313762fcafa1cf58e39--web-development-tools.jpg
+.. [#typewriter] US National Archives. Vintage Type. Publisher: Giphy. Retrieved: 2021-11-25. https://giphy.com/gifs/usnationalarchives-vintage-throwback-l0HlLWj5e25b5Ky76
