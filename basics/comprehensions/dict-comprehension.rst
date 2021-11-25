@@ -29,13 +29,16 @@ Example
 
 Dict Collision
 --------------
-Recap information about dict keys collision:
+Recap information about dict keys collision. Duplicating items are overridden
+by the latter:
 
 >>> data = {
 ...     'commander': 'Melissa Lewis',
-...     'commander': 'Jan Twardowski',
+...     'commander': 'Jan Twardowski'
 ... }
-{'commander': 'Melissa Lewis'}
+>>>
+>>> data
+{'commander': 'Jan Twardowski'}
 
 While generating ``dict`` with unique keys, there are no collisions:
 
