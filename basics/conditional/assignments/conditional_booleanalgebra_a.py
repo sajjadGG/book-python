@@ -1,5 +1,5 @@
 """
-* Assignment: Conditional Elif BloodPressure
+* Assignment: Conditional BooleanAlgebra BloodPressure
 * Required: yes
 * Complexity: medium
 * Lines of code: 10 lines
@@ -26,6 +26,10 @@ Polish:
     5. Wypisz status wprowadzonego ciśnienia krwi
     6. Gdy wartości ciśnienia skurczowego i rozkurczowego należą do różnych kategorii, przyjmij gorszy przypadek
     7. Uruchom doctesty - wszystkie muszą się powieść
+
+Hints:
+    * `and`
+    * `or`
 
 References:
     [1] Whelton, Paul K. and et al.

@@ -31,10 +31,13 @@ Polish:
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
+    * `with`
+    * `open()`
+    * `str.strip()`
     * `str.split()` - without an argument
-    * `len(line) == 0`
-    * `line.startswith('#')`
-    * `ip = 'IPv4' if '.' in ip else 'IPv6'`
+    * `len()`
+    * `str.startswith()`
+    * `result = True if ... else False`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

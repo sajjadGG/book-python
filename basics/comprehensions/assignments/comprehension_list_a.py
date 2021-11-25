@@ -18,7 +18,8 @@ Polish:
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * use `str.join()`
+    * `str.join()`
+    * `dict.get()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

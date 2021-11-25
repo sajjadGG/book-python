@@ -19,6 +19,9 @@ Polish:
         b. wartość: nazwa miesiąca
     3. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `enumerate()`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

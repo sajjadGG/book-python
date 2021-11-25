@@ -15,6 +15,10 @@ Polish:
     2. Sprawdź czy użytkownik jest pełnoletni (wiek równy lub powyżej 18)
     3. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `int()`
+    * `>=`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

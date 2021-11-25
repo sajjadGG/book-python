@@ -1,26 +1,52 @@
-Loop Nested Sequences
-=====================
+Loop For Nested
+===============
 
 
-
-Matrix
-------
-* Suggested variable name: ``row``
+Recap
+-----
+>>> DATA = [1, 2, 3]
+>>>
+>>> for obj in DATA:
+...     print(f'{obj=}')
+obj=1
+obj=2
+obj=3
 
 >>> DATA = [[1, 2, 3],
 ...         [4, 5, 6],
 ...         [7, 8, 9]]
 >>>
 >>>
->>> for row in DATA:  # doctest: +NORMALIZE_WHITESPACE
-...     print()
-...
-...     for value in row:
-...         print(f'{value}', end=' ')
-1 2 3
-4 5 6
-7 8 9
+>>> for obj in DATA:
+...     print(f'{obj=}')
+obj=[1, 2, 3]
+obj=[4, 5, 6]
+obj=[7, 8, 9]
 
+>>> DATA = [[1, 2, 3],
+...         [4, 5, 6],
+...         [7, 8, 9]]
+>>>
+>>>
+>>> DATA[0]
+[1, 2, 3]
+>>>
+>>> DATA[1]
+[4, 5, 6]
+>>>
+>>> DATA[2]
+[7, 8, 9]
+
+
+Rationale
+---------
+* Loop inside a loop
+* Used to iterate over nested data
+
+
+Matrix
+------
+* Suggested variable name: ``row``
 
 >>> DATA = [[1, 2, 3],
 ...         [4, 5, 6],
@@ -50,21 +76,54 @@ A1 B1 C1
 A2 B2 C2
 A3 B3 C3
 
+>>> DATA = [[1, 2, 3],
+...         [4, 5, 6],
+...         [7, 8, 9]]
+>>>
+>>>
+>>> for row in DATA:  # doctest: +NORMALIZE_WHITESPACE
+...     print()
+...     for value in row:
+...         print(f'{value}', end=' ')
+1 2 3
+4 5 6
+7 8 9
+
 
 List of Pairs
 -------------
->>> DATA = [
+>>> CREW = [
 ...     ('commander', 'Melissa Lewis'),
 ...     ('botanist', 'Mark Watney'),
-...     ('chemist', 'Alex Vogel')]
+...     ('pilot', 'Rick Martinez')]
 >>>
->>> for pair in DATA:
-...     role = pair[0]
-...     name = pair[1]
-...     print(f'{role} -> {name}')
-commander -> Melissa Lewis
-botanist -> Mark Watney
-chemist -> Alex Vogel
+>>>
+>>> for member in CREW:
+...     role = member[0]
+...     name = member[1]
+...     print (f'{role=}, {name=}')
+role='commander', name='Melissa Lewis'
+role='botanist', name='Mark Watney'
+role='pilot', name='Rick Martinez'
+
+
+List of Threes
+--------------
+>>> CREW = [
+...     ('commander', 'Melissa', 'Lewis'),
+...     ('botanist', 'Mark', 'Watney'),
+...     ('pilot', 'Rick', 'Martinez')]
+>>>
+>>>
+>>> for member in CREW:
+...     role = member[0]
+...     firstname = member[1]
+...     lastname = member[2]
+...     print (f'{role=}, {firstname=}, {lastname=}')
+role='commander', firstname='Melissa', lastname='Lewis'
+role='botanist', firstname='Mark', lastname='Watney'
+role='pilot', firstname='Rick', lastname='Martinez'
+
 
 
 List of Sequence
@@ -72,6 +131,7 @@ List of Sequence
 >>> DATA = [(5.1, 3.5, 1.4, 0.2, 'setosa'),
 ...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
 ...         (6.3, 2.9, 5.6, 1.8, 'virginica')]
+>>>
 >>>
 >>> for row in DATA:
 ...     sepal_length = row[0]
@@ -89,13 +149,14 @@ virginica -> 16.599999999999998
 ...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
 ...         (6.3, 2.9, 5.6, 1.8, 'virginica')]
 >>>
+>>>
 >>> for row in DATA:
-...     features = row[0:4]
-...     label = row[4]
-...     print(f'{label} -> {sum(features)}')
-setosa -> 10.2
-versicolor -> 13.9
-virginica -> 16.599999999999998
+...     values = row[0:4]
+...     species = row[4]
+...     print(f'{species=}, {values=}')
+species='setosa', values=(5.1, 3.5, 1.4, 0.2)
+species='versicolor', values=(5.7, 2.8, 4.1, 1.3)
+species='virginica', values=(6.3, 2.9, 5.6, 1.8)
 
 
 Mixed
@@ -123,8 +184,8 @@ Iterating over ``list`` with scalar and vector values - simple loop:
 
 >>> DATA = [('Mark', 'Watney'), 'Lewis', 69, 13.37, [True, None, False]]
 >>>
->>> for obj in DATA:
-...     print(obj)
+>>> for current in DATA:
+...     print(current)
 ('Mark', 'Watney')
 Lewis
 69
@@ -136,8 +197,8 @@ Iterating over ``list`` with scalar and vector values - nested loop:
 >>> DATA = [('Mark', 'Watney'), 'Lewis', 69, 13.37, [True, None, False]]
 >>>
 >>> # doctest: +SKIP
-... for obj in DATA:
-...     for element in obj:
+... for current in DATA:
+...     for element in current:
 ...         print(element)
 Mark
 Watney
@@ -154,12 +215,12 @@ Iterating over ``list`` with scalar and vector values - smart loop:
 
 >>> DATA = [('Mark', 'Watney'), 'Lewis', 69, 13.37, [True, None, False]]
 >>>
->>> for obj in DATA:
-...     if type(obj) in (list, tuple, set):
-...         for element in obj:
-...             print(element)
+>>> for current in DATA:
+...     if type(current) in (list, tuple, set):
+...         for inside in current:
+...             print(inside)
 ...     else:
-...         print(obj)
+...         print(current)
 Mark
 Watney
 Lewis

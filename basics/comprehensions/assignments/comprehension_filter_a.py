@@ -17,6 +17,11 @@ Polish:
        parzystych liczb z przedziału 5 do 20 (bez 20)
     3. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `range()`
+    * `%`
+    * `==`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

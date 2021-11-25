@@ -86,6 +86,11 @@ Conditional
     :maxdepth: 1
     :caption: Conditional
 
+    conditional/syntax-if.rst
+    conditional/syntax-else.rst
+    conditional/syntax-elif.rst
+    conditional/syntax-match.rst
+    conditional/syntax-expression.rst
     conditional/boolean-logic.rst
     conditional/boolean-conjunction.rst
     conditional/boolean-disjunction.rst
@@ -95,11 +100,6 @@ Conditional
     conditional/boolean-operators.rst
     conditional/boolean-membership.rst
     conditional/boolean-switch.rst
-    conditional/syntax-if.rst
-    conditional/syntax-else.rst
-    conditional/syntax-elif.rst
-    conditional/syntax-match.rst
-    conditional/syntax-expression.rst
 
 
 Exception
@@ -124,11 +124,15 @@ Loops
     :maxdepth: 1
     :caption: Loops
 
-    loop/while.rst
-    loop/for.rst
-    loop/nested.rst
-    loop/unpacking.rst
-    loop/dict.rst
+    loop/while-about.rst
+    loop/while-break.rst
+    loop/while-continue.rst
+    loop/while-else.rst
+    loop/for-about.rst
+    loop/for-nested.rst
+    loop/for-unpacking.rst
+    loop/for-generator.rst
+    loop/for-dict.rst
 
 
 Comprehensions
@@ -156,7 +160,10 @@ Files
     :maxdepth: 1
     :caption: Files
 
-    files/path.rst
+    files/path-relative.rst
+    files/path-absolute.rst
+    files/path-errors.rst
+    files/path-modify.rst
     files/modes.rst
     files/write.rst
     files/append.rst

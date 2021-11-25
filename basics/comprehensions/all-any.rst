@@ -7,13 +7,13 @@ Any
 >>> any(x for x in range(0,5))
 True
 
->>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
-...         {'is_astronaut': True,  'name': 'Mark Watney'},
-...         {'is_astronaut': False, 'name': 'José Jiménez'},
-...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
-...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>> PEOPLE = [{'is_astronaut': True,  'name': 'Melissa Lewis'},
+...           {'is_astronaut': True,  'name': 'Mark Watney'},
+...           {'is_astronaut': False, 'name': 'Rick Martinez'},
+...           {'is_astronaut': True,  'name': 'Alex Vogel'}]
 >>>
->>> if any(person['is_astronaut'] for person in DATA):
+>>>
+>>> if any(person['is_astronaut'] for person in PEOPLE):
 ...     print('At least one person is astronaut')
 ... else:
 ...     print('There are no astronauts')
@@ -25,13 +25,13 @@ All
 >>> all(x for x in range(0,5))
 False
 
->>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
-...         {'is_astronaut': True,  'name': 'Mark Watney'},
-...         {'is_astronaut': False, 'name': 'José Jiménez'},
-...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
-...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>> PEOPLE = [{'is_astronaut': True,  'name': 'Melissa Lewis'},
+...           {'is_astronaut': True,  'name': 'Mark Watney'},
+...           {'is_astronaut': False, 'name': 'Rick Martinez'},
+...           {'is_astronaut': True,  'name': 'Alex Vogel'}]
 >>>
->>> if all(person['is_astronaut'] for person in DATA):
+>>>
+>>> if all(person['is_astronaut'] for person in PEOPLE):
 ...     print('Everyone is astronaut')
 ... else:
 ...     print('Not everyone is astronaut')
@@ -47,17 +47,13 @@ Not everyone is astronaut
 ...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...     (7.0, 3.2, 4.7, 1.4, 'versicolor')]
 >>>
+>>>
 >>> all(observation > 1.0
 ...     for *features, label in DATA[1:]
 ...     for observation in features
 ...     if isinstance(observation, float))
 False
->>>
->>> all(x > 1.0
-...     for *X,y in DATA[1:]
-...     for x in X
-...     if isinstance(x, float))
-False
+
 
 
 Assignments

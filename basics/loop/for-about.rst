@@ -1,5 +1,5 @@
-Loop For
-========
+Loop For About
+==============
 
 .. testsetup::
 
@@ -43,53 +43,6 @@ For loop syntax:
 
 >>> for digit in [1, 2, 3]:
 ...     pass
-
-
-Convention
-----------
-* The longer the loop scope, the longer the variable name should be
-* Avoid one letters if scope is longer than one line
-* Prefer locally meaningful name over generic names
-* Generic names:
-
-    * ``obj`` - generic name (in Python everything is an object)
-    * ``element`` - generic name
-    * ``item`` - generic name
-    * ``x`` - ok for oneliners, bad for more than one line
-    * ``e`` - ok for oneliners, bad for more than one line
-    * ``l`` - bad
-    * ``o`` - bad
-    * ``d`` - bad (for digit)
-
-* Locally meaningful name:
-
-    * ``letter``
-    * ``feature``
-    * ``digit``
-    * ``person``
-    * ``color``
-    * ``username``
-    * etc.
-
-* Special meaning (by convention):
-
-    * ``i`` - for loop counter
-    * ``_`` - if value is not used
-
->>> for x in [1, 2, 3]:
-...     print(x)
-1
-2
-3
-
->>> for i in range(0,3):
-...     print(i)
-0
-1
-2
-
->>> for _ in range(3):
-...     spawn_thread()
 
 
 Iterating Sequences
@@ -146,45 +99,11 @@ Rick Martinez
 0.2
 setosa
 
-
-Range
------
-* ``range(start, stop, step)``
-* ``start`` is inclusive, default: ``0``
-* ``stop`` is exclusive, required
-* ``step`` default: ``1``
-
->>> range(0, 5)
-range(0, 5)
-
->>> list(range(5))
-[0, 1, 2, 3, 4]
-
->>> list(range(0, 5))
-[0, 1, 2, 3, 4]
-
->>> list(range(0, 5, 1))
-[0, 1, 2, 3, 4]
-
->>> list(range(0, 5, 2))
-[0, 2, 4]
-
-Loops with ``range``:
-
->>> for i in range(0, 3):
-...     print(i)
-0
+>>> for current in [1,2,3]:
+...     print(current)
 1
 2
-
-Loops with ``range``:
-
->>> for number in range(4, 11, 2):
-...     print(number)
-4
-6
-8
-10
+3
 
 
 Note to the Programmers of Other Languages
@@ -273,6 +192,54 @@ Please remember:
 
     * Python ``for`` is more like ``foreach`` in other languages.
     * Python ``while`` is more like ``for`` in other languages.
+
+
+Good Practices
+--------------
+* The longer the loop scope, the longer the variable name should be
+* Avoid one letters if scope is longer than one line
+* Prefer locally meaningful name over generic names
+* Generic names:
+
+    * ``obj`` - generic name (in Python everything is an object)
+    * ``element`` - generic name
+    * ``item`` - generic name
+    * ``x`` - ok for oneliners, bad for more than one line
+    * ``e`` - ok for oneliners, bad for more than one line
+    * ``l`` - bad
+    * ``o`` - bad
+    * ``d`` - bad (for digit)
+
+* Locally meaningful name:
+
+    * ``letter``
+    * ``feature``
+    * ``digit``
+    * ``person``
+    * ``color``
+    * ``username``
+    * etc.
+
+* Special meaning (by convention):
+
+    * ``i`` - for loop counter
+    * ``_`` - if value is not used
+
+>>> for x in [1, 2, 3]:
+...     print(x)
+1
+2
+3
+
+>>> for i in range(0,3):
+...     print(i)
+0
+1
+2
+
+>>> for _ in range(3):
+...     spawn_thread()
+
 
 
 Assignments

@@ -104,7 +104,7 @@ Return Nested Sequence
 ...             {'Jan Twardowski', 'Melissa Lewis'},
 ...             {'astro': 'Иван Иванович', 'agency': {'name': 'Roscosmos'}},
 ...             {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini')},
-...             {'astro': 'Vogel', 'missions': (list(), tuple(), set())}]
+...             {'astro': 'Martinez', 'missions': (list(), tuple(), set())}]
 
 
 Return None

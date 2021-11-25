@@ -31,6 +31,10 @@ Polish:
         do treningu, a 4 do testów
     3. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `sequence[:split]`
+    * `sequence[split:]`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

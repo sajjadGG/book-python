@@ -21,6 +21,9 @@ Polish:
        a. Wykorzystaj jednolinikowego `if`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `in`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

@@ -31,6 +31,10 @@ Polish:
 
 Hints:
     * `tuple(float(x) for x in X)`
+    * `str.split()`
+    * `str.strip()`
+    * `with`
+    * `open()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

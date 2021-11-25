@@ -17,6 +17,12 @@ Polish:
     3. Jeżeli `filename` nie istnieje, wypisz 'File not found'
     4. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `try`
+    * `except`
+    * `else`
+    * `open()`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction

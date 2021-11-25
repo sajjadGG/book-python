@@ -41,7 +41,6 @@ Example
  'Primary School': '2',
  'Kindergarten': '1'}
 
-
 >>> DATA = {
 ...     6: ['Doctorate', 'Prof-school'],
 ...     5: ['Masters', 'Bachelor', 'Engineer'],
@@ -64,6 +63,35 @@ Example
  'Junior High': '3',
  'Primary School': '2',
  'Kindergarten': '1'}
+
+
+Microbenchmark
+--------------
+>>> DATA = {
+...     6: ['Doctorate', 'Prof-school'],
+...     5: ['Masters', 'Bachelor', 'Engineer'],
+...     4: ['HS-grad'],
+...     3: ['Junior High'],
+...     2: ['Primary School'],
+...     1: ['Kindergarten'],
+... }
+
+>>> # %%timeit -r 1000 -n 1000
+>>> result = {title: str(number)
+...           for number, titles in DATA.items()
+...           for title in titles}
+>>> # 2.22 µs ± 138 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
+
+>>> # %%timeit -r 1000 -n 1000
+>>> result = {t:str(i) for i,ts in DATA.items() for t in ts}
+>>> # 2.22 µs ± 181 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
+
+>>> # %%timeit -r 1000 -n 1000
+>>> result = {}
+... for i, titles in DATA.items():
+...     for title in titles:
+...         result[title] = str(i)
+>>> # 2.24 µs ± 152 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
 
 
 Nested

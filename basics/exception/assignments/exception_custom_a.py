@@ -23,6 +23,12 @@ Polish:
         b. Zwróć uwagę na poziom wcięć
     5. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `class`
+    * `pass`
+    * `raise`
+    * `if`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isclass

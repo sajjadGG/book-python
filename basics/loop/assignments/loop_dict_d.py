@@ -1,7 +1,7 @@
 """
-* Assignment: Loop Dict Reverse
+* Assignment: Loop Dict Label Encoder
 * Required: no
-* Complexity: easy
+* Complexity: hard
 * Lines of code: 9 lines
 * Time: 13 min
 

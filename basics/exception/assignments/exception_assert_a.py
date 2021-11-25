@@ -25,6 +25,10 @@ Polish:
         c. Użyj słowa kluczowego `assert`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `assert`
+    * `>=`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

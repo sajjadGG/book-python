@@ -15,6 +15,11 @@ Polish:
     2. Użyj zagnieżdżonego rozwinięcia słownikowego
     3. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * nested `for`
+    * `dict.items()`
+    * `str()`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

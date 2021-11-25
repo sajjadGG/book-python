@@ -27,6 +27,28 @@ Example
 {None: 4}
 
 
+Dict Collision
+--------------
+Recap information about dict keys collision:
+
+>>> data = {
+...     'commander': 'Melissa Lewis',
+...     'commander': 'Jan Twardowski',
+... }
+{'commander': 'Melissa Lewis'}
+
+While generating ``dict`` with unique keys, there are no collisions:
+
+>>> {x:None for x in range(0,5)}
+{0: None, 1: None, 2: None, 3: None, 4: None}
+
+Although when generating ``dict`` with constant key, it will be overridden
+by the last one:
+
+>>> {None:x for x in range(0,5)}
+{None: 4}
+
+
 Modify Key/Values
 -----------------
 Modify keys:

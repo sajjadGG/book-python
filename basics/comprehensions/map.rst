@@ -172,40 +172,39 @@ Use Case - 0x02
 ---------------
 * Map list[dict]
 
->>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
-...         {'is_astronaut': True,  'name': 'Mark Watney'},
-...         {'is_astronaut': False, 'name': 'José Jiménez'},
-...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
-...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>> PEOPLE = [{'is_astronaut': True,  'name': 'Melissa Lewis'},
+...           {'is_astronaut': True,  'name': 'Mark Watney'},
+...           {'is_astronaut': False, 'name': 'Rick Martinez'},
+...           {'is_astronaut': True,  'name': 'Alex Vogel'}]
 >>>
 >>> astronauts = [{'firstname': person['name'].split()[0],
 ...                'lastname': person['name'].split()[1]}
-...                for person in DATA
+...                for person in PEOPLE
 ...                if person['is_astronaut']]
 >>>
 >>> print(astronauts)  # doctest: +NORMALIZE_WHITESPACE
-[{'firstname': 'Jan', 'lastname': 'Twardowski'},
+[{'firstname': 'Melissa', 'lastname': 'Lewis'},
  {'firstname': 'Mark', 'lastname': 'Watney'},
- {'firstname': 'Melissa', 'lastname': 'Lewis'}]
+ {'firstname': 'Alex', 'lastname': 'Vogel'}]
 
 
 Use Case - 0x03
 ---------------
->>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
-...         {'is_astronaut': True,  'name': 'Mark Watney'},
-...         {'is_astronaut': False, 'name': 'José Jiménez'},
-...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
-...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>> PEOPLE = [{'is_astronaut': True,  'name': 'Melissa Lewis'},
+...           {'is_astronaut': True,  'name': 'Mark Watney'},
+...           {'is_astronaut': False, 'name': 'Rick Martinez'},
+...           {'is_astronaut': True,  'name': 'Alex Vogel'}]
+>>>
 >>>
 >>> astronauts = [{'firstname': person['name'].split()[0].capitalize(),
 ...                'lastname': person['name'].split()[1][0]+'.'}
-...                for person in DATA
+...                for person in PEOPLE
 ...                if person['is_astronaut']]
 >>>
 >>> print(astronauts)  # doctest: +NORMALIZE_WHITESPACE
-[{'firstname': 'Jan', 'lastname': 'T.'},
+[{'firstname': 'Melissa', 'lastname': 'L.'},
  {'firstname': 'Mark', 'lastname': 'W.'},
- {'firstname': 'Melissa', 'lastname': 'L.'}]
+ {'firstname': 'Alex', 'lastname': 'V.'}]
 
 
 Use Case - 0x04
@@ -213,11 +212,11 @@ Use Case - 0x04
 * Assignment expression
 * More information in `Assignment Expression`
 
->>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
-...         {'is_astronaut': True,  'name': 'Mark Watney'},
-...         {'is_astronaut': False, 'name': 'José Jiménez'},
-...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
-...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>> PEOPLE = [{'is_astronaut': True,  'name': 'Melissa Lewis'},
+...           {'is_astronaut': True,  'name': 'Mark Watney'},
+...           {'is_astronaut': False, 'name': 'Rick Martinez'},
+...           {'is_astronaut': True,  'name': 'Alex Vogel'}]
+>>>
 >>>
 >>> astronauts = [{'firstname': fname, 'lastname': lname}
 ...                for person in DATA
@@ -227,9 +226,9 @@ Use Case - 0x04
 ...                and (lname := f'{name[1][0]}.')]
 >>>
 >>> print(astronauts)  # doctest: +NORMALIZE_WHITESPACE
-[{'firstname': 'Jan', 'lastname': 'T.'},
+[{'firstname': 'Melissa', 'lastname': 'L.'},
  {'firstname': 'Mark', 'lastname': 'W.'},
- {'firstname': 'Melissa', 'lastname': 'L.'}]
+ {'firstname': 'Alex', 'lastname': 'V.'}]
 
 
 Use Case - 0x05
@@ -237,11 +236,11 @@ Use Case - 0x05
 * Assignment expression
 * More information in `Assignment Expression`
 
->>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
-...         {'is_astronaut': True,  'name': 'Mark Watney'},
-...         {'is_astronaut': False, 'name': 'José Jiménez'},
-...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
-...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>> PEOPLE = [{'is_astronaut': True,  'name': 'Melissa Lewis'},
+...           {'is_astronaut': True,  'name': 'Mark Watney'},
+...           {'is_astronaut': False, 'name': 'Rick Martinez'},
+...           {'is_astronaut': True,  'name': 'Alex Vogel'}]
+>>>
 >>>
 >>> astronauts = [f'{fname} {lname[0]}.'
 ...               for person in DATA
@@ -251,7 +250,7 @@ Use Case - 0x05
 ...               and (lname := fullname[1].upper())]
 >>>
 >>> print(astronauts)
-['Jan T.', 'Mark W.', 'Melissa L.']
+['Melissa L.', 'Mark W.', 'Alex V.']
 
 
 Assignments

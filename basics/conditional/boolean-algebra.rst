@@ -93,4 +93,6 @@ Good Practices
 
 Assignments
 -----------
-.. todo:: Create assignments
+.. literalinclude:: assignments/conditional_booleanalgebra_a.py
+    :caption: :download:`Solution <assignments/conditional_booleanalgebra_a.py>`
+    :end-before: # Solution

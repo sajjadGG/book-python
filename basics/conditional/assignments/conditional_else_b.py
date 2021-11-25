@@ -17,6 +17,9 @@ Polish:
        b. `IPv6` jeżeli kropki nie ma
     2. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `in`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

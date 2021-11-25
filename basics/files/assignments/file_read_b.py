@@ -13,6 +13,12 @@ Polish:
     1. Wczytaj `FILE` do `result: list[str]`
     2. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `with`
+    * `open()`
+    * `[x for x in data]`
+    * `str.strip()`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove

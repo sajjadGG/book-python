@@ -28,6 +28,9 @@ Polish:
 Hints:
     * `str.isspace()`
     * `str.split()`
+    * `str.strip()`
+    * `with`
+    * `open()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

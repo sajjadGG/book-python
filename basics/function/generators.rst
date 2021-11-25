@@ -81,37 +81,44 @@ Zip
 ---
 * ``zip(*iterables)``
 
->>> firstnames = ['Mark', 'Melissa', 'Alex']
->>> lastnames = ['Watney', 'Lewis', 'Vogel']
+>>> firstnames = ['Mark', 'Melissa', 'Rick']
+>>> lastnames = ['Watney', 'Lewis', 'Martinez']
+>>>
 >>> result = zip(firstnames, lastnames)
+>>>
 >>>
 >>> next(result)
 ('Mark', 'Watney')
+>>>
 >>> next(result)
 ('Melissa', 'Lewis')
+>>>
 >>> next(result)
-('Alex', 'Vogel')
+('Rick', 'Martinez')
+>>>
 >>> next(result)
 Traceback (most recent call last):
 StopIteration
 
->>> firstnames = ['Mark', 'Melissa', 'Alex']
->>> lastnames = ['Watney', 'Lewis', 'Vogel']
+>>> firstnames = ['Mark', 'Melissa', 'Rick']
+>>> lastnames = ['Watney', 'Lewis', 'Martinez']
+>>>
 >>> result = zip(firstnames, lastnames)
 >>>
 >>> list(result)
-[('Mark', 'Watney'), ('Melissa', 'Lewis'), ('Alex', 'Vogel')]
+[('Mark', 'Watney'), ('Melissa', 'Lewis'), ('Rick', 'Martinez')]
 
->>> firstnames = ['Mark', 'Melissa', 'Alex']
->>> lastnames = ['Watney', 'Lewis', 'Vogel']
+>>> firstnames = ['Mark', 'Melissa', 'Rick']
+>>> lastnames = ['Watney', 'Lewis', 'Martinez']
+>>>
 >>> result = zip(firstnames, lastnames)
 >>>
 >>> dict(result)
-{'Mark': 'Watney', 'Melissa': 'Lewis', 'Alex': 'Vogel'}
+{'Mark': 'Watney', 'Melissa': 'Lewis', 'Rick': 'Martinez'}
 
 >>> roles = ['botanist', 'commander', 'pilot']
 >>> names = ['Mark Watney', 'Melissa Lewis', 'Rick Martinez']
-
+>>>
 >>> dict(zip(roles, names))  # doctest: +NORMALIZE_WHITESPACE
 {'botanist': 'Mark Watney',
  'commander': 'Melissa Lewis',
@@ -121,6 +128,7 @@ StopIteration
 
 >>> firstnames = ['Mark', 'Melissa']
 >>> lastnames = ['Watney', 'Lewis', 'Martinez']
+>>>
 >>> result = zip(firstnames, lastnames)
 >>>
 >>> list(result)
@@ -129,20 +137,26 @@ StopIteration
 >>> roles = ['botanist', 'commander', 'pilot']
 >>> firstnames = ['Mark', 'Melissa', 'Rick']
 >>> lastnames = ['Watney', 'Lewis', 'Martinez']
+>>>
 >>> result = zip(roles, firstnames, lastnames)
+>>>
 >>>
 >>> next(result)
 ('botanist', 'Mark', 'Watney')
+>>>
 >>> next(result)
 ('commander', 'Melissa', 'Lewis')
+>>>
 >>> next(result)
 ('pilot', 'Rick', 'Martinez')
+>>>
 >>> next(result)
 Traceback (most recent call last):
 StopIteration
 
 >>> roles = ['botanist', 'commander', 'pilot']
 >>> names = ['Mark Watney', 'Melissa Lewis', 'Rick Martinez']
+>>>
 >>>
 >>> for role, name in zip(roles, names):
 ...     print(f'{role} -> {name}')
@@ -159,10 +173,13 @@ Map
 >>> data = [1, 2, 3]
 >>> result = map(float, data)
 >>>
+>>>
 >>> next(result)
 1.0
+>>>
 >>> next(result)
 2.0
+>>>
 >>> next(result)
 3.0
 >>> next(result)
@@ -181,10 +198,13 @@ Filter
 >>> data = [0, 1, 2, 3, 4]
 >>> result = filter(even, data)
 >>>
+>>>
 >>> next(result)
 0
+>>>
 >>> next(result)
 2
+>>>
 >>> next(result)
 4
 >>> next(result)
@@ -204,10 +224,13 @@ Generator Chain
 >>> data = map(float, data)
 >>> data = filter(even, data)
 >>>
+>>>
 >>> next(data)
 0.0
+>>>
 >>> next(data)
 2.0
+>>>
 >>> next(data)
 4.0
 >>> next(data)
@@ -251,7 +274,8 @@ Use Case - 0x02
 ---------------
 >>> def square(x):
 ...     return x ** 2
-...
+>>>
+>>>
 >>> data = [1, 2, 3]
 >>> result = map(square, data)
 >>>
@@ -265,12 +289,14 @@ Use Case - 0x03
 ...       'ł': 'l', 'ń': 'n', 'ó': 'o',
 ...       'ś': 's', 'ż': 'z', 'ź': 'z'}
 >>>
+>>>
 >>> def translate(letter):
 ...     return PL.get(letter, letter)
 >>>
 >>>
 >>> text = 'zażółć gęślą jaźń'
 >>> result = map(translate, text)
+>>>
 >>> ''.join(result)
 'zazolc gesla jazn'
 
@@ -288,6 +314,7 @@ Use Case - 0x04
 >>>
 >>>
 >>> result = filter(adult, people)
+>>>
 >>> list(result)  # doctest: +NORMALIZE_WHITESPACE
 [{'age': 21, 'name': 'Jan Twardowski'},
  {'age': 25, 'name': 'Mark Watney'}]
@@ -306,6 +333,7 @@ Use Case - 0x05
 >>>
 >>>
 >>> result = filter(astronaut, people)
+>>>
 >>> list(result)  # doctest: +NORMALIZE_WHITESPACE
 [{'is_astronaut': True, 'name': 'Mark Watney'},
  {'is_astronaut': True, 'name': 'Melissa Lewis'}]

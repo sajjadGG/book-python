@@ -22,6 +22,9 @@ Polish:
     6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
+    * `int()`
+    * `%`
+    * `==`
     * `%` has different meaning for `int` and `str`
     * `%` on `str` is overloaded as a string formatting
     * `%` on `int` is overloaded as a modulo division
@@ -51,4 +54,4 @@ number = input('What is your number?: ')
 result = ...
 
 # Solution
-result = float(number) % 2 == 0
+result = int(number) % 2 == 0

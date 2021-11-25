@@ -13,6 +13,10 @@ Polish:
     1. Wczytaj `FILE` do `result: str`
     2. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `with`
+    * `open()`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove

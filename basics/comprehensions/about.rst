@@ -81,12 +81,6 @@ Microbenchmark
 ...
 411 ns ± 76.6 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
 
->>> # doctest: +SKIP
-... %%timeit -r 1000 -n 1000
-... result = list(x for x in range(0,5))
-...
-636 ns ± 111 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
-
 
 Good Practices
 --------------

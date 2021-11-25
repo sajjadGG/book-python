@@ -21,6 +21,14 @@ Polish:
         c. `missing` jeżeli ścieżka nie istnieje
     3. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `from pathlib import Path`
+    * `Path.cwd()`
+    * `Path()`
+    * `Path.is_dir()`
+    * `Path.is_file()`
+    * `Path.exists()`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

@@ -53,12 +53,10 @@ Filter list[tuple]
 
 Filter list[dict]
 -----------------
->>> PEOPLE = [
-...     {'is_astronaut': True,  'name': 'Jan Twardowski'},
-...     {'is_astronaut': True,  'name': 'Mark Watney'},
-...     {'is_astronaut': False, 'name': 'José Jiménez'},
-...     {'is_astronaut': True,  'name': 'Melissa Lewis'},
-...     {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>> PEOPLE = [{'is_astronaut': True,  'name': 'Melissa Lewis'},
+...           {'is_astronaut': True,  'name': 'Mark Watney'},
+...           {'is_astronaut': False, 'name': 'Rick Martinez'},
+...           {'is_astronaut': True,  'name': 'Alex Vogel'}]
 >>>
 >>>
 >>> astronauts = []
@@ -68,21 +66,20 @@ Filter list[dict]
 ...         astronauts.append(person['name'])
 >>>
 >>> print(astronauts)
-['Jan Twardowski', 'Mark Watney', 'Melissa Lewis']
+['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
 
->>> PEOPLE = [
-...     {'is_astronaut': True,  'name': 'Jan Twardowski'},
-...     {'is_astronaut': True,  'name': 'Mark Watney'},
-...     {'is_astronaut': False, 'name': 'José Jiménez'},
-...     {'is_astronaut': True,  'name': 'Melissa Lewis'},
-...     {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>> PEOPLE = [{'is_astronaut': True,  'name': 'Melissa Lewis'},
+...           {'is_astronaut': True,  'name': 'Mark Watney'},
+...           {'is_astronaut': False, 'name': 'Rick Martinez'},
+...           {'is_astronaut': True,  'name': 'Alex Vogel'}]
+>>>
 >>>
 >>> astronauts = [person['name']
 ...               for person in PEOPLE
 ...               if person['is_astronaut']]
 >>>
 >>> print(astronauts)
-['Jan Twardowski', 'Mark Watney', 'Melissa Lewis']
+['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
 
 
 Good Practices

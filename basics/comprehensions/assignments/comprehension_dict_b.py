@@ -23,6 +23,10 @@ Polish:
        (wypełnij zerem) - `f'{number:02}'`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `enumerate()`
+    * `f'{number:02}'`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

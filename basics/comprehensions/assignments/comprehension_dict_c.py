@@ -15,6 +15,9 @@ Polish:
        to jest: zamień klucze z wartościami i wartości z kluczami
     2. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `dict.items()`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

@@ -104,6 +104,4 @@ Witaj
 
 Assignments
 -----------
-.. literalinclude:: assignments/conditional_elif_a.py
-    :caption: :download:`Solution <assignments/conditional_elif_a.py>`
-    :end-before: # Solution
+.. todo:: Create assignments

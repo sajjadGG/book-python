@@ -1,4 +1,4 @@
-Boolean Switch
+Mapping Switch
 ==============
 
 .. testsetup::
