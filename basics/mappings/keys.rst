@@ -81,28 +81,31 @@ Python 3 to "take a snapshot" of the view object contents. [#Hamidi2017]_
 >>> crew = {
 ...    'commander': 'Melissa Lewis',
 ...    'botanist': 'Mark Watney',
-...    'chemist': 'Alex Vogel'}
+...    'pilot': 'Rick Martinez',
+... }
 >>>
 >>>
 >>> crew.keys()
-dict_keys(['commander', 'botanist', 'chemist'])
+dict_keys(['commander', 'botanist', 'pilot'])
 >>>
 >>> list(crew.keys())
-['commander', 'botanist', 'chemist']
+['commander', 'botanist', 'pilot']
 
 
 Use Case - 0x01
 ---------------
 >>> calendarium = {
 ...    1961: 'First Human Space Flight',
-...    1969: 'First Step on the Moon'}
+...    1969: 'First Step on the Moon',
+... }
 
 
 Use Case - 0x02
 ---------------
 >>> calendarium = {
 ...    1961: ['First Russian Space Flight', 'First US Space Flight'],
-...    1969: ['First Step on the Moon']}
+...    1969: ['First Step on the Moon'],
+... }
 
 
 References

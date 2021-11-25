@@ -4,12 +4,10 @@ Mapping Define
 
 Rationale
 ---------
-* ``dict`` are key-value storage
-* Key lookup is very efficient ``O(1)``
+* ``dict`` are key-value storage (HashMap)
 * Mutable - can add, remove, and modify items
 * Since Python 3.7: ``dict`` keeps order of elements
 * Before Python 3.7: ``dict`` order is not ensured!!
-* HashMap
 
 
 Syntax
@@ -54,23 +52,20 @@ Dict vs Set
 * Despite similar syntax, they are different types
 
 >>> data = {1, 2}
->>>
 >>> type(data)
 <class 'set'>
 >>>
->>> data = {1: 2}
 >>>
+>>> data = {1: 2}
 >>> type(data)
 <class 'dict'>
 
 >>> data = {1, 2, 3, 4}
->>>
 >>> type(data)
 <class 'set'>
 >>>
 >>>
 >>> data = {1: 2, 3: 4}
->>>
 >>> type(data)
 <class 'dict'>
 

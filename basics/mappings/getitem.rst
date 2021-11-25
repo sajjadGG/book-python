@@ -4,6 +4,7 @@ Mapping Getitem
 
 Rationale
 ---------
+* Key lookup is very efficient ``O(1)``
 * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
 * ``.get()`` returns ``None`` if key not found
 * ``.get()`` can have default value, if key not found
@@ -15,6 +16,7 @@ Getitem Method
 ...    'commander': 'Melissa Lewis',
 ...    'botanist': 'Mark Watney',
 ...    'pilot': 'Rick Martinez'}
+>>>
 >>>
 >>> crew['commander']
 'Melissa Lewis'
@@ -30,6 +32,7 @@ Get Method
 ...    'commander': 'Melissa Lewis',
 ...    'botanist': 'Mark Watney',
 ...    'pilot': 'Rick Martinez'}
+>>>
 >>>
 >>> crew.get('commander')
 'Melissa Lewis'

@@ -9,36 +9,48 @@ Rationale
 
 Basic Types
 -----------
->>> data = {'Sepal length': 5.8,
-...         'Sepal width': 2.7,
-...         'Petal length': 5.1,
-...         'Petal width': 1.9}
+>>> data = {
+...     'Sepal length': 5.8,
+...     'Sepal width': 2.7,
+...     'Petal length': 5.1,
+...     'Petal width': 1.9,
+... }
 
 
 Sequence
 --------
->>> data = {'virginica': (5.8, 2.7, 5.1, 1.9),
-...         'setosa': (5.1, 3.5, 1.4, 0.2),
-...         'versicolor': (5.7, 2.8, 4.1, 1.3)}
+>>> data = {
+...     'virginica': (5.8, 2.7, 5.1, 1.9),
+...     'setosa': (5.1, 3.5, 1.4, 0.2),
+...     'versicolor': (5.7, 2.8, 4.1, 1.3),
+... }
 
->>> data = {'virginica': [5.8, 2.7, 5.1, 1.9],
-...         'setosa': [5.1, 3.5, 1.4, 0.2],
-...         'versicolor': [5.7, 2.8, 4.1, 1.3]}
+>>> data = {
+...     'virginica': [5.8, 2.7, 5.1, 1.9],
+...     'setosa': [5.1, 3.5, 1.4, 0.2],
+...     'versicolor': [5.7, 2.8, 4.1, 1.3],
+... }
 
->>> data = {'virginica': {5.8, 2.7, 5.1, 1.9},
-...         'setosa': {5.1, 3.5, 1.4, 0.2},
-...         'versicolor': {5.7, 2.8, 4.1, 1.3}}
+>>> data = {
+...     'virginica': {5.8, 2.7, 5.1, 1.9},
+...     'setosa': {5.1, 3.5, 1.4, 0.2},
+...     'versicolor': {5.7, 2.8, 4.1, 1.3},
+... }
 
->>> data = {'virginica': [5.8, 2.7, 5.1, 1.9],
-...         'setosa': (5.1, 3.5, 1.4, 0.2),
-...         'versicolor': {5.7, 2.8, 4.1, 1.3}}
+>>> data = {
+...     'virginica': [5.8, 2.7, 5.1, 1.9],
+...     'setosa': (5.1, 3.5, 1.4, 0.2),
+...     'versicolor': {5.7, 2.8, 4.1, 1.3},
+... }
 
 
 Mapping
 -------
->>> data = {'commander': {'firstname': 'Jan', 'lastname': 'Twardowski'},
-...         'medical_officer': {'firstname': 'José', 'lastname': 'Jiménez'},
-...         'flight_engineer': {'firstname': 'Иван', 'lastname': 'Иванович'}}
+>>> data = {
+...     'commander': {'firstname': 'Melissa', 'lastname': 'Lewis'},
+...     'botanist': {'firstname': 'Mark', 'lastname': 'Watney'},
+...     'pilot': {'firstname': 'Rick', 'lastname': 'Martinez'},
+... }
 
 
 Get Values
@@ -55,16 +67,14 @@ Python 3 to "take a snapshot" of the view object contents. [#Hamidi2017]_
 >>> crew = {
 ...    'commander': 'Melissa Lewis',
 ...    'botanist': 'Mark Watney',
-...    'chemist': 'Alex Vogel'}
+...    'pilot': 'Rick Martinez'}
 >>>
 >>>
 >>> crew.values()
-dict_values(['Melissa Lewis', 'Mark Watney', 'Alex Vogel'])
+dict_values(['Melissa Lewis', 'Mark Watney', 'Rick Martinez'])
 >>>
->>> list(crew.items())  # doctest: +NORMALIZE_WHITESPACE
-[('commander', 'Melissa Lewis'),
- ('botanist', 'Mark Watney'),
- ('chemist', 'Alex Vogel')]
+>>> list(crew.values())
+['Melissa Lewis', 'Mark Watney', 'Rick Martinez']
 
 
 References

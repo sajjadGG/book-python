@@ -35,6 +35,10 @@ Information
 
 Use Case - 0x01
 ---------------
+>>> commander = 'Melissa Lewis'
+>>> botanist = 'Mark Watney'
+>>> pilot = 'Rick Martinez'
+
 >>> crew = ('Melissa Lewis', 'Mark Watney', 'Rick Martinez')
 
 >>> crew = {

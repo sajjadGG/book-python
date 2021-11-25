@@ -22,16 +22,17 @@ Python 3 to "take a snapshot" of the view object contents. [#Hamidi2017]_
 >>> crew = {
 ...    'commander': 'Melissa Lewis',
 ...    'botanist': 'Mark Watney',
-...    'chemist': 'Alex Vogel'}
+...    'pilot': 'Rick Martinez',
+... }
 >>>
 >>>
 >>> crew.items()
-dict_items([('commander', 'Melissa Lewis'), ('botanist', 'Mark Watney'), ('chemist', 'Alex Vogel')])
+dict_items([('commander', 'Melissa Lewis'), ('botanist', 'Mark Watney'), ('pilot', 'Rick Martinez')])
 >>>
 >>> list(crew.items())  # doctest: +NORMALIZE_WHITESPACE
 [('commander', 'Melissa Lewis'),
  ('botanist', 'Mark Watney'),
- ('chemist', 'Alex Vogel')]
+ ('pilot', 'Rick Martinez')]
 
 
 References
