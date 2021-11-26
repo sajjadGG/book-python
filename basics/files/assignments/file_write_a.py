@@ -15,6 +15,8 @@ Polish:
 
 Hints:
     * Add newline `\n` at the end of line and file
+    * `with`
+    * `open`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

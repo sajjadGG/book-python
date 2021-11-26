@@ -23,30 +23,65 @@ Return Keyword
 * ``return`` keyword indicates outcome of the function
 
 >>> def hello():
-...     return 'hello world'
+...     return 'hello'
 >>>
 >>>
 >>> hello()
-'hello world'
+'hello'
 
 Code after ``return`` will not execute:
 
 >>> def hello():
-...     return 'hello world'
-...     print('This will not be executed')
->>>
+...     print('before')
+...     return 'hello'
+...     print('after')
 >>>
 >>> hello()
-'hello world'
+>>> before
+'hello'
 
 You can have more than one ``return`` keyword in a function, although function
 will close after hitting any of them, and will not proceed any further.
 
->>> def add():
+>>> def hello():
+...     print('before')
+...     return 'hello'
+...     return 'world'
+...     print('after')
+>>>
+>>> hello()
+>>> before
+'hello'
+
+>>> def hello():
+...     print('before')
+...     return 'hello'
+...     print('between')
+...     return 'world'
+...     print('after')
+>>>
+>>> hello()
+>>> before
+'hello'
+
+>>> def hello():
 ...     if True:
-...         return 'yes'
+...         return 'hello'
 ...     else:
-...         return 'no'
+...         return 'world'
+>>>
+>>> hello()
+'hello'
+
+>>> def hello():
+...     if True:
+...         return 'hello'
+...     else:
+...         return 'world'
+...     print('after if')
+>>>
+>>> hello()
+'hello'
 
 
 Return Basic Type

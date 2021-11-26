@@ -4,10 +4,20 @@ Function Definition
 
 Rationale
 ---------
-* Reuse code
-* Improves code readability
+* Automate repetitive tasks
+* Allow code reuse
+* Improve code readability
 * Clean-up code
-* Allows for easier refactoring
+* Allow easier refactoring
+
+.. glossary::
+
+    function
+        A set of instructions which has common name. Function will execute all of
+        those instructions each time it is called.
+
+    call
+        Run function.
 
 
 Syntax
@@ -21,22 +31,32 @@ Syntax
 Example
 -------
 >>> def say_hello():
-...     print('My name... José Jiménez')
+...     print('hello')
+
+If the function is short, you can also write it in the one line. This is not
+recommended and degrades code readability:
+
+>>> def say_hello(): print('hello')
+
+
+Calling
+-------
+>>> def say_hello():
+...     print('hello')
 >>>
 >>>
 >>> say_hello()
-My name... José Jiménez
+hello
+>>>
 >>> say_hello()
-My name... José Jiménez
+hello
+>>>
 >>> say_hello()
-My name... José Jiménez
+hello
 
 
-Convention
-----------
-* Add underscore (``_``) at the end of name when name collide
-* System functions names starts and ends with 'dunder' - double underscore: ``__``
-
+Function Name Case
+------------------
 Do not use ``camelCase`` or ``PascalCase`` names.
 
 The ``camelCase`` name is c/c++/Java/JavaScript convention. It is not good
@@ -56,33 +76,60 @@ used for classes. Using such name convention will mistake others.
 Use ``snake_case`` names in Python. It is easy to remember. Python looks like
 a snake, and sounds like a snake ;) This is double internal joke, because
 Python name came from Monty Python, of which Guido van Rossum was a big fun.
-The other reference is to duck typing (dynamic typing) - "If it walks like a duck and it quacks like a duck, then it must be a duck":
+The other reference is to duck typing (dynamic typing) - "If it walks like a duck
+and it quacks like a duck, then it must be a duck":
 
 This is ``snake_case()`` name. It is Pythonic way:
 
 >>> def say_hello():
 ...     pass
 
-Use better names, rather than comments:
 
->>> def cal_var(data, m):
-...     # Calculate variance
+Choosing Good Name
+------------------
+People, especially those who uses simple IDEs or notepads without sophisticated
+autocompletion will tend to create function with shorter names in order to save
+couple of characters each time when it is called. This at the beginning could be
+a good idea, but in the long run will lead to disaster. Coming back to your code
+after a year or two will require you to rediscover the code and read it once
+again.
+
+>>> def var(data, m):
 ...     return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
->>> def calculate_variance(data, m):
+Function name ``var()`` is very similar to built-in function ``vars()`` which does
+something completely different. It shows all the attributes of an object passed
+to it. A single misspell, such as forgetting about letter ``s`` at the end of a
+name may lead to printing all the internal information about object publicly.
+This is very dangerous for publicly accessed systems.
+
+More verbose names, such as ``variance()`` will distinguish this function from
+built-in ``vars()`` far better:
+
+>>> def variance(data, m):
 ...     return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
-Add underscore (``_``) at the end of name when name collide. Although prefer naming it differently:
+This way a probability for mistake is far lower and even if, then will be better
+discoverable.
+
+
+Name Collisions
+---------------
+Add underscore (``_``) at the end of name when name collide.
 
 >>> def print_(text):
-...     # Add underscore (``_``) at the end of name when name collide.
 ...     print(f'<strong>{text}</strong>')
+
+Although prefer naming it differently:
 
 >>> def print_html(text):
-...     # Although prefer naming it differently.
 ...     print(f'<strong>{text}</strong>')
 
-System functions names starts and ends with 'dunder' - double underscore: ``__``:
+
+Special Function Names
+----------------------
+System functions names starts and ends with 'dunder'. The word 'dunder' stands
+for double underscores: ``__``:
 
 >>> def __import__(module_name):
 ...     pass

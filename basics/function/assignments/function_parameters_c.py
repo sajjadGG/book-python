@@ -10,7 +10,7 @@ English:
     2. Parameter `a` is required
     3. Parameter `b` is optional and has default value `None`
     4. If only one argument was passed, consider second equal to the first one
-    5. Return `a` and `b` as a `dict`
+    5. Return `a` and `b` as a `dict`, i.e. {'a': 1, 'b': 1}
     6. Run doctests - all must succeed
 
 Polish:
@@ -18,7 +18,7 @@ Polish:
     2. Parametr `a` jest wymagany
     3. Parametr `b` jest opcjonalny i ma domyślną wartość `None`
     4. Jeżeli tylko jeden argument był podany, przyjmij drugi równy pierwszemu
-    5. Zwróć `a` i `b` jako `dict`
+    5. Zwróć `a` i `b` jako `dict`, np. {'a': 1, 'b': 1}
     6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:

@@ -14,8 +14,10 @@ Polish:
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * `','.join(...)`
     * Add newline `\n` at the end of line and file
+    * `str.join()`
+    * `with`
+    * `open`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

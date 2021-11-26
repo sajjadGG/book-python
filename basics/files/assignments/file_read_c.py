@@ -80,7 +80,7 @@ with open(FILE) as file:
     header = file.readline().strip().split(',')
 
     for line in file:
-        *X, y = line.strip().split(',')
-        X = tuple(float(x) for x in X)
-        features.append(X)
-        labels.append(y)
+        *values, species = line.strip().split(',')
+        values = tuple(float(x) for x in values)
+        features.append(values)
+        labels.append(species)

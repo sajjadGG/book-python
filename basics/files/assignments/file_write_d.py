@@ -14,9 +14,11 @@ Polish:
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * `[str(x) for x in ...]`
-    * `','.join(...)`
     * Add newline `\n` at the end of line and file
+    * `[str(x) for x in data]`
+    * `str.join()`
+    * `with`
+    * `open`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

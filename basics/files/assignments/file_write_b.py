@@ -13,6 +13,11 @@ Polish:
     1. Zapisz `DATA` do pliku `FILE`
     2. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * There is already a newline `\n` at the end of file
+    * `with`
+    * `open`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
