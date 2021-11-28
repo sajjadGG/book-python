@@ -195,12 +195,18 @@ Object Oriented Programming
     :maxdepth: 1
     :caption: Object Oriented Programming
 
-    oop/class.rst
+    oop/class-define.rst
+    oop/class-instance.rst
     oop/attribute-about.rst
+    oop/attribute-define.rst
     oop/attribute-set.rst
     oop/attribute-get.rst
-    oop/attribute-init.rst
+    oop/init-method.rst
+    oop/init-attribute.rst
+    oop/init-validation.rst
     oop/method-about.rst
+    oop/method-parameters.rst
+    oop/method-arguments.rst
     oop/method-attributes.rst
     oop/method-method.rst
     oop/inheritance-about.rst

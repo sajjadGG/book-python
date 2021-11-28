@@ -54,17 +54,46 @@ Leading Zero
 * Works only with formatting
 * raises ValueError while parsing [#pydocdtformat]_
 
+On macOS, Linux and \*nix systems:
+
 >>> from datetime import datetime
 >>>
 >>>
->>> d = datetime(1961, 4, 12, 6, 7)
+>>> dt = datetime(1961, 4, 12, 6, 7)
 >>>
->>> format(d, '%H:%M')
+>>> format(dt, '%H:%M')
 '06:07'
->>> format(d, '%_H:%M')
-' 6:07'
->>> format(d, '%-H:%M')
+>>>
+>>> format(dt, '%-H:%M')
 '6:07'
+>>>
+>>> format(dt, '%_H:%M')
+' 6:07'
+>>>
+>>> format(dt, '%#H:%M')
+'#H:07'
+
+On Windows 10:
+
+>>> from datetime import datetime
+>>>
+>>>
+>>> dt = datetime(1961, 4, 12, 6, 7)
+>>>
+>>> format(dt, '%H:%M')
+'06:07'
+>>>
+>>> format(dt, '%-H:%M')  # doctest: +SKIP
+Traceback (most recent call last):
+ValueError: Invalid format string
+>>>
+>>> format(dt, '%_H:%M')  # doctest: +SKIP
+Traceback (most recent call last):
+ValueError: Invalid format string
+>>>
+>>> format(dt, '%#H:%M')  # doctest: +SKIP
+'6:07'
+
 
 .. csv-table:: Leading Zero
     :header: "Meaning", "With", "Without (macOS, Linux)", "Without (Windows)"

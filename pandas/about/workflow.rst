@@ -51,8 +51,8 @@ Working with dirty CSV
 
     DATA = 'https://python.astrotech.io/_static/iris-dirty.csv'
 
-    nrows, nfeatures, *species = pd.read_csv(DATA, nrows=0).columns
-    species = dict(enumerate(species))
+    nrows, ncols, *class_labels = pd.read_csv(DATA, nrows=0).columns
+    label_encoder = dict(enumerate(class_labels))
 
     df = pd.read_csv(url, skiprows=1, names=['sepal_length', 'sepal_width',
                                              'petal_length', 'petal_width', 'species'])

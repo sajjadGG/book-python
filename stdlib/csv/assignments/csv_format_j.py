@@ -1,8 +1,8 @@
 """
-* Assignment: CSV DictReader Iris
+* Assignment: CSV Format Iris
 * Complexity: easy
 * Lines of code: 5 lines
-* Time: 5 min
+* Time: 8 min
 
 English:
     1. Using `csv.DictReader` read the `FILE` content
@@ -19,9 +19,6 @@ Polish:
     4. Pomiń pierwszą linię (nagłówek)
     5. Dodaj wiersze do `result: list[dict]`
     6. Uruchom doctesty - wszystkie muszą się powieść
-
-Hint:
-    * For Python before 3.8: `dict(OrderedDict)`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -58,11 +55,10 @@ with open(FILE, mode='w') as file:
 
 result: list = []
 
-# Solution
+
 with open(FILE) as file:
     header = file.readline()
-    data = csv.DictReader(file, fieldnames=FIELDNAMES,
-                          delimiter=',', quoting=csv.QUOTE_NONE)
-
-    for row in data:
+    for line in file:
+        row = line.strip().split(',')
+        row = dict(zip(FIELDNAMES, row))
         result.append(row)

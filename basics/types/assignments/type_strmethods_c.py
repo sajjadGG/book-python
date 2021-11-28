@@ -32,7 +32,7 @@ result = ...
 
 # Solution
 result = DATA.removeprefix('UL.').replace('\t', '').title().replace('3', 'III').strip()
-#
+
 # Alternative Solution
 result = (DATA
           # Convert to common format

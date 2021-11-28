@@ -6,26 +6,18 @@
 * Time: 8 min
 
 English:
-    1. Model the data using classes Astronaut and SpaceAgency:
-       a. Watney, USA, 1969-07-21
-       b. NASA, USA, 1958-07-29
-    2. Create instances (watney, nasa) filling it with data
-    3. Values must be passed at the initialization
-    4. Create instances of a first class using positional arguments
-    5. Create instances of a second class using keyword arguments
-    6. Do not use `@dataclass`
-    7. Run doctests - all must succeed
+    1. Modify code below
+    2. Values must be passed at the initialization
+    3. Create instances of a first class using positional arguments
+    4. Create instances of a second class using keyword arguments
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Zamodeluj dane za pomocą klas Astronaut i SpaceAgency:
-       a. Watney, USA, 1969-07-21
-       b. NASA, USA, 1958-07-29
-    2. Stwórz instancje (watney, nasa) wypełniając je danymi
-    3. Wartości mają być podawane przy inicjalizacji
-    4. Twórz instancje pierwszej klasy używając argumentów pozycyjnych
-    5. Twórz instancje drugiej klasy używając argumentów nazwanych
-    6. Nie używaj `@dataclass`
-    7. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zmodyfikuj kod poniżej
+    2. Wartości mają być podawane przy inicjalizacji
+    3. Twórz instancje pierwszej klasy używając argumentów pozycyjnych
+    4. Twórz instancje drugiej klasy używając argumentów nazwanych
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -43,6 +35,24 @@ Tests:
 
 # Watney, USA, 1969-07-21
 # NASA, USA, 1958-07-29
+
+class Astronaut:
+    pass
+
+
+class SpaceAgency:
+    pass
+
+
+watney = Astronaut()
+watney.name = 'Watney'
+watney.country = 'USA'
+watney.date = '1969-07-21'
+
+nasa = SpaceAgency()
+nasa.name = 'NASA'
+nasa.country = 'USA'
+nasa.date = '1958-07-29'
 
 
 # Solution

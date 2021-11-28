@@ -13,11 +13,23 @@ Rationale
 .. glossary::
 
     function
+    func
+    fn
         A set of instructions which has common name. Function will execute all of
         those instructions each time it is called.
 
     call
-        Run function.
+    function call
+    call a function
+        Run a function.
+
+    procedure
+        The same as function. Way back in history there was a distinction that
+        the procedures don't take an arguments and functions does. Now this
+        blurred completely. Hardly anyone is talking about procedures now, so the
+        same stuck, but it is very rarely used. Most common old-school programmers
+        whill use that word. You may find this also in documentation of aged
+        projects.
 
 
 Syntax
@@ -41,18 +53,23 @@ recommended and degrades code readability:
 
 Calling
 -------
+Let's define a function:
+
 >>> def say_hello():
 ...     print('hello')
->>>
->>>
+
+Call a function for a first time:
+
 >>> say_hello()
 hello
->>>
+
+Call a function for a second time:
+
 >>> say_hello()
 hello
->>>
->>> say_hello()
-hello
+
+Each time it will give the same result. That's right. This function is very
+simple and all what it does is just print word 'hello' on the standard output.
 
 
 Function Name Case

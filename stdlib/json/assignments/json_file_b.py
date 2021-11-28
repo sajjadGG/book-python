@@ -2,7 +2,7 @@
 * Assignment: JSON File Load
 * Complexity: easy
 * Lines of code: 3 lines
-* Time: 8 min
+* Time: 53 min
 
 English:
     1. Read data from `FILE`
@@ -46,6 +46,9 @@ Tests:
      >>> remove(FILE)
 """
 
+import json
+
+
 FILE = r'_temporary.json'
 
 DATA = """[{"Sepal length": 5.8, "Sepal width": 2.7, "Petal length": 5.1, "Petal width": 1.9, "Species": "virginica"},
@@ -64,8 +67,6 @@ with open(FILE, mode='w') as file:
 result: list = []
 
 # Solution
-import json
-
 with open(FILE) as file:
     data = json.load(file)
 

@@ -2,6 +2,14 @@ Function Return
 ===============
 
 
+Rationale
+---------
+.. glossary::
+
+    return
+        Python keyword for specifying value outcome from a function.
+
+
 Syntax
 ------
 .. code-block:: python
@@ -159,7 +167,7 @@ Return None
 ...     """My function"""
 
 
-Intercept returned value
+Intercept Returned Value
 ------------------------
 >>> def myfunction():
 ...     return 1

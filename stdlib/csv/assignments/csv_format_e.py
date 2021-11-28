@@ -1,34 +1,28 @@
 """
-* Assignment: CSV DictReader Iris
+* Assignment: CSV Format ListDict
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
 
 English:
-    1. Using `csv.DictReader` read the `FILE` content
-    2. Use explicit `encoding`, `delimiter` and `quotechar`
-    3. Replace column names with `FIELDNAMES`
-    4. Skip the first line (header)
-    5. Add rows to `result: list[dict]`
-    6. Run doctests - all must succeed
+    1. Convert data in `FILE` to `result: list[dict]`
+    2. Replace column names with `FIELDNAMES`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Korzystając z `csv.DictReader` wczytaj zawartość pliku `FILE`
-    2. Podaj jawnie `encoding`, `delimiter` oraz `quotechar`
-    3. Podmień nazwy kolumn na `FIELDNAMES`
-    4. Pomiń pierwszą linię (nagłówek)
-    5. Dodaj wiersze do `result: list[dict]`
-    6. Uruchom doctesty - wszystkie muszą się powieść
-
-Hint:
-    * For Python before 3.8: `dict(OrderedDict)`
+    1. Przekonwertuj dane w `FILE` do `result: list[dict]`
+    2. Podmień nazwy kolumn na `FIELDNAMES`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from os import remove
 
-    >>> type(result)
-    <class 'list'>
+    >>> assert type(result) is list, \
+    'Variable `result` must be a list'
+
+    >>> assert all(type(row) is dict for row in result), \
+    'All rows in `result` must be a dict'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [{'Sepal Length': '5.8', 'Sepal Width': '2.7', 'Petal Length': '5.1',
       'Petal Width': '1.9', 'Species': 'virginica'},
@@ -36,8 +30,6 @@ Tests:
       'Petal Width': '0.2', 'Species': 'setosa'},
      {'Sepal Length': '5.7', 'Sepal Width': '2.8', 'Petal Length': '4.1',
       'Petal Width': '1.3', 'Species': 'versicolor'}]
-
-    >>> remove(FILE)
 """
 
 import csv
@@ -61,8 +53,7 @@ result: list = []
 # Solution
 with open(FILE) as file:
     header = file.readline()
-    data = csv.DictReader(file, fieldnames=FIELDNAMES,
-                          delimiter=',', quoting=csv.QUOTE_NONE)
-
-    for row in data:
-        result.append(row)
+    for line in file:
+        line = line.strip().split(',')
+        line = zip(FIELDNAMES, line)
+        result.append(dict(line))

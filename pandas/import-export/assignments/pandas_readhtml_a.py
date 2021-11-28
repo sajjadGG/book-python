@@ -16,7 +16,6 @@ Polish:
 
 Hints:
     * `pip install --upgrade lxml`
-    * 3rd table
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

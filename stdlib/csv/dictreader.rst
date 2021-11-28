@@ -1,6 +1,7 @@
 CSV DictReader
 ==============
 
+
 Rationale
 ---------
 * csv.DictReader: list[dict]

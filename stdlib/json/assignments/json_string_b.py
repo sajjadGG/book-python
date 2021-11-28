@@ -1,8 +1,8 @@
 """
 * Assignment: JSON String Load
 * Complexity: easy
-* Lines of code: 4 lines
-* Time: 8 min
+* Lines of code: 1 lines
+* Time: 3 min
 
 English:
     1. Load `DATA` from JSON format

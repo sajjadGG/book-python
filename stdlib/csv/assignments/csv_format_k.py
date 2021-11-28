@@ -1,8 +1,8 @@
 """
-* Assignment: CSV DictWriter Fixed
+* Assignment: CSV Format Fixed
 * Complexity: easy
 * Lines of code: 4 lines
-* Time: 5 min
+* Time: 8 min
 
 English:
     1. Using `csv.DictWriter()` save `DATA` to file
@@ -27,9 +27,6 @@ Polish:
         b. Użyj `,` do oddzielenia kolumn
         d. Użyj zakończenia linii Unix `\n`
     5. Uruchom doctesty - wszystkie muszą się powieść
-
-Hint:
-    * For Python before 3.8: `dict(OrderedDict)`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -57,11 +54,14 @@ DATA = [{'firstname': 'Jan', 'lastname': 'Twardowski'},
 
 FILE = r'_temporary.csv'
 
-# Solution
-with open(FILE, mode='w') as file:
-    data = csv.DictWriter(file, fieldnames=['firstname', 'lastname'],
-                          delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL,
-                          lineterminator='\n')
+data = ''
+firstname, lastname = DATA[0].keys()
+data += f'"{firstname}","{lastname}"\n'
 
-    data.writeheader()
-    data.writerows(DATA)
+for row in DATA:
+    firstname, lastname = row.values()
+    data += f'"{firstname}","{lastname}"\n'
+
+
+with open(FILE, mode='w') as file:
+    file.write(data)

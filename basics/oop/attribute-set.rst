@@ -2,112 +2,30 @@ OOP Attribute Set
 =================
 
 
-Rationale
----------
-* Attributes are also known as "Properties" or "Fields"
-* ``snake_case`` name convention
-* Attributes store information (state) for instances
-* Access field values using dot (``.``) notation
-* Attributes should be defined only in ``__init__()`` method
-* More information in `OOP Init Method`
-
-.. glossary::
-
-    attribute
-        Variable inside the class.
-        In Python, methods also can be described as attributes,
-        but justification for that is a bit more complex which will
-        be introduced later in a book.
-
-    field
-        Variable inside the class.
-        Can be used as a synonym of :term:`property` or :term:`state`.
-
-    property
-        Variable inside the class.
-        Should not change during lifetime of an object.
-
-    state
-        Variable inside the class.
-        Changes during lifetime of an object.
-        Represents current state of an object.
-
-    namespace
-        Container for storing related data
-
-Class example with distinction of properties and state attributes.
-
-An example "Glass with Water" can illustrate the distinction of properties
-and state attributes:
-
-Properties:
-    - color
-    - width
-    - height
-    - radius
-    - capacity
-    - net mass (without water)
-
-State:
-    - volume  (how much water is currently in the glass)
-    - gross mass = net mass + water mass (water mass depends on its volume used))
-
-.. figure:: img/oop-classes-glass.jpg
-
-
 Syntax
 ------
->>> class MyClass:
-...     myattribute: str
+>>> class <classname>:
+...     <attrname>: <attrtype>
 >>>
 >>>
 >>> myobj = MyClass()
 >>> myobj.myattribute = 'MyValue'
 
 
-What are attributes?
---------------------
-Identifiers and scalars creates values:
-
->>> point1_x = 1
->>> point1_y = 2
->>> point1_z = 3
->>>
->>> point2_x = 4
->>> point2_y = 5
->>> point2_z = 6
-
-Values with relations creates data:
-
->>> point1 = (1, 2, 3)
->>> point2 = (4, 5, 6)
-
-Data with meaning creates information:
-
->>> point1 = {'x': 1, 'y': 2, 'z': 3}
->>> point2 = {'x': 4, 'y': 5, 'z': 6}
-
-Information with context and relations creates class:
-
->>> class Point:
-...     x: int
-...     y: int
-...     z: int
+Example
+-------
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
 >>>
 >>>
->>> point1 = Point()
->>> point1.x = 1
->>> point1.y = 2
->>> point1.z = 3
->>>
->>> point2 = Point()
->>> point2.x = 4
->>> point2.y = 5
->>> point2.z = 6
+>>> mark = Astronaut()
+>>> mark.firstname = 'Mark'
+>>> mark.lastname = 'Watney'
 
 
-Dynamic Attributes
-------------------
+Attributes and Instances
+------------------------
 Dynamic attributes:
 
 >>> class Astronaut:
@@ -115,39 +33,17 @@ Dynamic attributes:
 ...     lastname: str
 >>>
 >>>
->>> astro = Astronaut()
->>> astro.firstname = 'Mark'
->>> astro.lastname = 'Watney'
-
->>> class Astronaut:
-...     name: str
->>>
->>>
 >>> mark = Astronaut()
->>> jose = Astronaut()
->>> jose.name = 'José Jiménez'
-
-
-Namespace
----------
-Unrelated values:
-
->>> x = 1
->>> y = 2
->>> z = 3
-
-Class creates space, in which names has meaning:
-
->>> class Point:
-...     x: int
-...     y: int
-...     z: int
+>>> mark.firstname = 'Mark'
+>>> mark.lastname = 'Watney'
 >>>
+>>> melissa = Astronaut()
+>>> melissa.firstname = 'Melissa'
+>>> melissa.lastname = 'Lewis'
 >>>
->>> point = Point()
->>> point.x = 1
->>> point.y = 2
->>> point.z = 3
+>>> rick = Astronaut()
+>>> rick.firstname = 'Rick'
+>>> rick.lastname = 'Martinez'
 
 
 Different Types
@@ -161,11 +57,10 @@ Different Types
 >>> setosa.features = [5.1, 3.5, 1.4, 0.2]
 >>> setosa.label = 'setosa'
 
->>> from typing import Union
->>>
->>>
 >>> class Astronaut:
-...     age: Union[float,int]
+...     firstname: str
+...     lastname: str
+...     age: float|int
 >>>
 >>>
 >>> jose = Astronaut()

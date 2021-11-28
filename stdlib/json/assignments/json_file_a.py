@@ -2,7 +2,7 @@
 * Assignment: JSON File Dump
 * Complexity: easy
 * Lines of code: 4 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Extract from input a header and data
@@ -49,6 +49,8 @@ Tests:
      {"Sepal length": 4.9, "Sepal width": 3.0, "Petal length": 1.4, "Petal width": 0.2, "Species": "setosa"}]
 """
 
+import json
+
 FILE = '_temporary.json'
 
 DATA = [
@@ -64,8 +66,6 @@ DATA = [
     (4.9, 3.0, 1.4, 0.2, 'setosa')]
 
 # Solution
-import json
-
 header, *data = DATA
 data = [dict(zip(header, row)) for row in data]
 

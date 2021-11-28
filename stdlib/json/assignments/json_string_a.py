@@ -1,5 +1,5 @@
 """
-* Assignment: JSON ToString Dump
+* Assignment: JSON String Dump
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

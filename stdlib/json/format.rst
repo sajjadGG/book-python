@@ -1,5 +1,5 @@
-JSON Standard
-=============
+JSON Format
+===========
 
 
 Rationale

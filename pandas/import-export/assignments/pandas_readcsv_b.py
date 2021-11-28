@@ -21,8 +21,8 @@ Polish:
     6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * `hader = pd.read_csv(url, nrows=0).columns`
-    * `cancer_types = dict(enumerate(header[2:]))`
+    * `class_labels = pd.read_csv(DATA, nrows=0).columns[2:]`
+    * `label_encoder = dict(enumerate(class_labels))`
     * `df['label'].replace({'from': 'to'}, inplace=True)`
 
 Tests:
@@ -69,9 +69,10 @@ COLUMNS = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
 result = ...
 
 # Solution
-header = pd.read_csv(DATA, nrows=0).columns
-cancer_types = dict(enumerate(header[2:]))
+header = pd.read_csv(DATA, nrows=0)
+class_labels = header.columns[2:]
+label_encoder = dict(enumerate(class_labels))
 
 df = pd.read_csv(DATA, skiprows=1, names=COLUMNS)
-df['label'].replace(to_replace=cancer_types, inplace=True)
+df['label'].replace(to_replace=label_encoder, inplace=True)
 result = df.head(25)

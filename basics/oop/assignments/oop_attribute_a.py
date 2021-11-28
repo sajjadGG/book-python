@@ -6,22 +6,20 @@
 * Time: 8 min
 
 English:
-    1. Model the data using classes Astronaut and SpaceAgency:
+    1. Modify code below
+    2. Add attibutes to model the data:
        a. Watney, USA, 1969-07-21
        b. NASA, USA, 1958-07-29
-    2. Create instances (watney, nasa) filling it with data
-    3. How many classes are there?
-    4. How many instances are there?
-    5. Run doctests - all must succeed
+    3. Create instances (watney, nasa) filling it with data
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Zamodeluj dane za pomocą klas Astronaut i SpaceAgency:
+    1. Zmodyfikuj kod poniżej
+    2. Dodaj atrybuty by zamodelować dane:
        a. Watney, USA, 1969-07-21
        b. NASA, USA, 1958-07-29
-    2. Stwórz instancje (watney, nasa) wypełniając je danymi
-    3. Ile jest klas?
-    4. Ile jest instancji?
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    3. Stwórz instancje (watney, nasa) wypełniając je danymi
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -39,6 +37,17 @@ Tests:
 
 # Watney, USA, 1969-07-21
 # NASA, USA, 1958-07-29
+
+class Astronaut:
+    pass
+
+
+class SpaceAgency:
+    pass
+
+
+watney = Astronaut()
+nasa = SpaceAgency()
 
 
 # Solution

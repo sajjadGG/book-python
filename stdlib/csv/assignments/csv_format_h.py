@@ -1,8 +1,8 @@
 """
-* Assignment: CSV DictWriter Schemaless
+* Assignment: CSV Format Schemaless
 * Complexity: medium
 * Lines of code: 7 lines
-* Time: 5 min
+* Time: 8 min
 
 English:
     1. Using `csv.DictWriter()` write variable schema data
@@ -58,14 +58,24 @@ DATA = [{'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
 
 FILE = r'_temporary.csv'
 
-# Solution
-fieldnames = set()
-for row in DATA:
-    fieldnames.update(row.keys())
 
-with open(FILE, mode='w', encoding='utf-8') as file:
-    data = csv.DictWriter(f=file, fieldnames=sorted(fieldnames), delimiter=',',
-                          quotechar='"', quoting=csv.QUOTE_ALL,
-                          lineterminator='\n')
-    data.writeheader()
-    data.writerows(DATA)
+data = ''
+
+header = set()
+for row in DATA:
+    header.update(row.keys())
+
+pl, pw, sl, sw, s = sorted(header)
+data += f'"{pl}","{pw}","{sl}","{sw}","{s}"\n'
+
+for row in DATA:
+    pl = row.get('Petal length', '')
+    pw = row.get('Petal width', '')
+    sl = row.get('Sepal length', '')
+    sw = row.get('Sepal width', '')
+    s = row.get('Species', '')
+    data += f'"{pl}","{pw}","{sl}","{sw}","{s}"\n'
+
+
+with open(FILE, mode='w') as file:
+    file.write(data)

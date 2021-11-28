@@ -75,10 +75,10 @@ Compressed
 ----------
 * If the extension is ``.gz``, ``.bz2``, ``.zip``, and ``.xz``, the corresponding compression method is automatically selected
 
-.. code-block:: python
 
-    df = pd.read_csv('myfile.gz', compression='infer')
+>>> df = pd.read_json('sample_file.zip', compression='zip')  # doctest: +SKIP
 
+>>> df = pd.read_json('sample_file.gz', compression='infer')  # doctest: +SKIP
 
 
 Use Case
@@ -91,11 +91,12 @@ Use Case
                 'petal_length', 'petal_width', 'species']
 
 
-    species = pd.read_csv(DATA, nrows=0)
-    species = dict(enumerate(species.columns[2:]))
+    header = pd.read_csv(DATA, nrows=0)
+    class_labels = header.columns[2:]
+    label_encoder = dict(enumerate(class_labels))
 
     df = pd.read_csv(DATA, names=COLUMNS, skiprows=1)
-    df['species'].replace(species, inplace=True)
+    df['species'].replace(label_encoder, inplace=True)
 
 
 Assignments

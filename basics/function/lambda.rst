@@ -61,6 +61,18 @@ Good:
 :pep:`8` -- Style Guide for Python Code: "Always use a def statement instead of an assignment statement that binds a lambda expression directly to an identifier":
 
 
+Note to Programmers of Different Languages
+------------------------------------------
+.. code-block:: java
+
+    query = 'SELECT * FROM users'
+
+    result = database(query).stream()
+                            .filter(user -> user.age > 5)
+                            .filter(user -> user.firstname == 'Mark')
+                            .filter((x,y) -> x + y)
+                            .collect(Collectors.toList());
+
 Lambda with Map
 ---------------
 Increment:

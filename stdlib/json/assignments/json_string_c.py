@@ -2,7 +2,7 @@
 * Assignment: JSON String ListDict
 * Complexity: easy
 * Lines of code: 3 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Extract from input a header and data

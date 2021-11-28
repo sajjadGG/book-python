@@ -2,7 +2,7 @@
 * Assignment: CSV Reader Enumerate
 * Complexity: medium
 * Lines of code: 8 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
     1. Using `csv.reader()` read data from file

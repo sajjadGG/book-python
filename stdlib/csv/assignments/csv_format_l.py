@@ -1,5 +1,5 @@
 """
-* Assignment: CSV DictWriter Objects
+* Assignment: CSV Format Objects
 * Complexity: medium
 * Lines of code: 6 lines
 * Time: 8 min
@@ -21,7 +21,7 @@ Polish:
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * `vars()`
+    * `vars(obj)`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -63,12 +63,14 @@ DATA = [Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
 
 FILE = r'_temporary.txt'
 
+result = ''
+data = [vars(x) for x in DATA]
+header = data[0].keys()
+result += ','.join(header) + '\n'
 
-# Solution
-data = [vars(iris) for iris in DATA]
-header = list(data[0].keys())
+for row in data:
+    row = map(str, row.values())
+    result += ','.join(row) + '\n'
 
-with open(FILE, mode='w', encoding='utf-8') as file:
-    writer = csv.DictWriter(file, fieldnames=header)
-    writer.writeheader()
-    writer.writerows(data)
+with open(FILE, mode='w') as file:
+    file.write(result)

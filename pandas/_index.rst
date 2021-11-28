@@ -106,6 +106,7 @@ Case Studies
 
     case-studies/covid19.rst
     case-studies/esa-astronauts.rst
+    case-studies/apollo11.rst
     case-studies/espn-standings.rst
     case-studies/livescores.rst
     case-studies/phones.rst
