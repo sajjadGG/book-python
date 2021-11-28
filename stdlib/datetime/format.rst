@@ -15,21 +15,27 @@ Formats
 >>> from datetime import datetime
 >>>
 >>>
->>> d = datetime(1961, 4, 12, 6, 7)
+>>> dt = datetime(1961, 4, 12, 6, 7)
 >>>
->>> format(d, '%Y')
+>>> format(dt, '%Y')
 '1961'
->>> format(d, '%Y-%m-%d')
+>>>
+>>> format(dt, '%Y-%m-%d')
 '1961-04-12'
->>> format(d, '%d.%m.%Y')
+>>>
+>>> format(dt, '%d.%m.%Y')
 '12.04.1961'
->>> format(d, '%H:%M')
+>>>
+>>> format(dt, '%H:%M')
 '06:07'
->>> format(d, '%Y-%m-%d %H:%M')
+>>>
+>>> format(dt, '%Y-%m-%d %H:%M')
 '1961-04-12 06:07'
->>> format(d, '%Y-%m-%d %H:%M:%S')
+>>>
+>>> format(dt, '%Y-%m-%d %H:%M:%S')
 '1961-04-12 06:07:00'
->>> format(d, '%B %d, %Y')
+>>>
+>>> format(dt, '%B %d, %Y')
 'April 12, 1961'
 
 
@@ -54,7 +60,7 @@ Leading Zero
 * Works only with formatting
 * raises ValueError while parsing [#pydocdtformat]_
 
-On macOS, Linux and \*nix systems:
+On Linux and \*nix systems:
 
 >>> from datetime import datetime
 >>>
@@ -69,6 +75,22 @@ On macOS, Linux and \*nix systems:
 >>>
 >>> format(dt, '%_H:%M')
 ' 6:07'
+>>>
+>>> format(dt, '%#H:%M')
+'06:07'
+
+On macOS:
+
+>>> from datetime import datetime
+>>>
+>>>
+>>> dt = datetime(1961, 4, 12, 6, 7)
+>>>
+>>> format(dt, '%H:%M')
+'06:07'
+>>>
+>>> format(dt, '%-H:%M')
+'6:07'
 >>>
 >>> format(dt, '%#H:%M')
 '#H:07'

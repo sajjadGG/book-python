@@ -1,61 +1,78 @@
 """
-* Assignment: CSV Format Iris
-* Complexity: easy
-* Lines of code: 3 lines
-* Time: 5 min
+* Assignment: CSV Format WriteSchemaless
+* Complexity: medium
+* Lines of code: 13 lines
+* Time: 13 min
 
 English:
-    1. Using `csv.writer()` save `DATA` to file
-    2. Use Unix `\n` line terminator
-    3. Run doctests - all must succeed
+    1. Define `header: str` with sorted list of unique keys from `DATA`
+    2. `header` must be automatically generated from `DATA`
+    3. Iterate over `DATA` and extract values for each header column
+    4. Define `result: str` with header and matching values
+    5. Non-functional requirements:
+       a. Do not use `import` and any module
+       b. Quotechar: `"`
+       c. Quoting: always
+       d. Delimiter: `,`
+       e. Lineseparator: `\n`
+    6. Run doctests - all must succeed
 
 Polish:
-    1. Za pomocą `csv.writer()` zapisz `DATA` do pliku
-    2. Użyj zakończenia linii Unix `\n`
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniuj `header: str` z posortowaną listą unikalnych kluczy z `DATA`
+    2. `header` musi być generowany automatycznie z `DATA`
+    3. Iteruj po `DATA` i wyciągnij wartości dla każdej kolumny z nagłówka
+    4. Zdefiniuj `result: str` z nagłówkiem i pasującymi wartościami
+    5. Wymagania niefunkcjonalne:
+       a. Nie używaj `import` ani żadnych modułów
+       b. Quotechar: `"`
+       c. Quoting: zawsze
+       d. Delimiter: `,`
+       e. Lineseparator: `\n`
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from os import remove
 
-    >>> result = open(FILE).read()
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
     >>> print(result)
-    Sepal length,Sepal width,Petal length,Petal width,Species
-    5.8,2.7,5.1,1.9,virginica
-    5.1,3.5,1.4,0.2,setosa
-    5.7,2.8,4.1,1.3,versicolor
-    6.3,2.9,5.6,1.8,virginica
-    6.4,3.2,4.5,1.5,versicolor
-    4.7,3.2,1.3,0.2,setosa
-    7.0,3.2,4.7,1.4,versicolor
-    7.6,3.0,6.6,2.1,virginica
-    4.9,3.0,1.4,0.2,setosa
+    "Petal length","Petal width","Sepal length","Sepal width","Species"
+    "","","5.1","3.5","setosa"
+    "4.1","1.3","","","versicolor"
+    "","1.8","6.3","","virginica"
+    "","0.2","5.0","","setosa"
+    "4.1","","","2.8","versicolor"
+    "","1.8","","2.9","virginica"
     <BLANKLINE>
-
-    >>> remove(FILE)
 """
 
-import csv
+DATA = [{'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
+        {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
+        {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},
+        {'Sepal length': 5.0, 'Petal width': 0.2, 'Species': 'setosa'},
+        {'Sepal width': 2.8, 'Petal length': 4.1, 'Species': 'versicolor'},
+        {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'}]
 
+# str: header has unique keys from DATA, row values match header columns
+result = ...
 
-DATA = [
-    ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-    (5.8, 2.7, 5.1, 1.9, 'virginica'),
-    (5.1, 3.5, 1.4, 0.2, 'setosa'),
-    (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-    (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-    (4.7, 3.2, 1.3, 0.2, 'setosa'),
-    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-    (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    (4.9, 3.0, 1.4, 0.2, 'setosa')]
+# Solution
+result = ''
+header = set()
 
-FILE = r'_temporary.csv'
+for row in DATA:
+    header.update(row.keys())
 
-data = ''
-for line in DATA:
-    data += ','.join(str(x) for x in line) + '\n'
+pl, pw, sl, sw, s = sorted(header)
+result += f'"{pl}","{pw}","{sl}","{sw}","{s}"\n'
 
-
-with open(FILE, mode='w') as file:
-    file.write(data)
+for row in DATA:
+    pl = row.get('Petal length', '')
+    pw = row.get('Petal width', '')
+    sl = row.get('Sepal length', '')
+    sw = row.get('Sepal width', '')
+    s = row.get('Species', '')
+    result += f'"{pl}","{pw}","{sl}","{sw}","{s}"\n'

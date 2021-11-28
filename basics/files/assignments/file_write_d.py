@@ -23,11 +23,11 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
-
-    >>> open(FILE).read()
-    '5.1,3.5,1.4,0.2,setosa\\n'
-
+    >>> result = open(FILE).read()
     >>> remove(FILE)
+
+    >>> result
+    '5.1,3.5,1.4,0.2,setosa\\n'
 """
 
 FILE = '_temporary.txt'

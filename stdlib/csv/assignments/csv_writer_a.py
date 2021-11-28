@@ -20,8 +20,14 @@ Hint:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
-
     >>> result = open(FILE).read()
+    >>> remove(FILE)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
     >>> print(result)
     Sepal length,Sepal width,Petal length,Petal width,Species
     5.8,2.7,5.1,1.9,virginica
@@ -34,8 +40,6 @@ Tests:
     7.6,3.0,6.6,2.1,virginica
     4.9,3.0,1.4,0.2,setosa
     <BLANKLINE>
-
-    >>> remove(FILE)
 """
 
 import csv

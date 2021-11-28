@@ -22,33 +22,21 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
+    >>> result = open(FILE).read()
+    >>> remove(FILE)
 
-    >>> assert type(result) is list
-    >>> assert len(result) > 0
-    >>> assert all(type(x) is dict for x in result)
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'firstname': 'Mark',
-      'lastname': 'Watney',
-      'mission1_year': '2035',
-      'mission1_name': 'Ares3'},
-     {'firstname': 'Melissa',
-      'lastname': 'Lewis',
-      'mission1_year': '2030',
-      'mission1_name': 'Ares1',
-      'mission2_year': '2035',
-      'mission2_name': 'Ares3'},
-     {'firstname': 'Rick',
-      'lastname': 'Martinez'}]
-
-      >>> result = open(FILE).read()
-      >>> print(result)
-      "firstname","lastname","mission1_name","mission1_year","mission2_name","mission2_year"
-      "Mark","Watney","Ares3","2035","",""
-      "Melissa","Lewis","Ares1","2030","Ares3","2035"
-      "Rick","Martinez","","","",""
-      <BLANKLINE>
-      >>> import os; os.remove(FILE)
+    >>> print(result)
+    "firstname","lastname","mission1_name","mission1_year","mission2_name","mission2_year"
+    "Mark","Watney","Ares3","2035","",""
+    "Melissa","Lewis","Ares1","2030","Ares3","2035"
+    "Rick","Martinez","","","",""
+    <BLANKLINE>
 """
 
 import csv

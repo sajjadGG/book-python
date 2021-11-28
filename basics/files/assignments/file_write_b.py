@@ -21,11 +21,15 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
-
-    >>> open(FILE).read()
-    '127.0.0.1       localhost\\n10.13.37.1      nasa.gov esa.int roscosmos.ru\\n255.255.255.255 broadcasthost\\n::1             localhost\\n'
-
+    >>> result = open(FILE).read()
     >>> remove(FILE)
+
+    >>> print(result)
+    127.0.0.1       localhost
+    10.13.37.1      nasa.gov esa.int roscosmos.ru
+    255.255.255.255 broadcasthost
+    ::1             localhost
+    <BLANKLINE>
 """
 
 FILE = '_temporary.txt'

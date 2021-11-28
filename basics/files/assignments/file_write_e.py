@@ -20,11 +20,14 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
-
-    >>> open(FILE).read()
-    '5.8,2.7,5.1,1.9\\n5.1,3.5,1.4,0.2\\n5.7,2.8,4.1,1.3\\n'
-
+    >>> result = open(FILE).read()
     >>> remove(FILE)
+
+    >>> print(result)
+    5.8,2.7,5.1,1.9
+    5.1,3.5,1.4,0.2
+    5.7,2.8,4.1,1.3
+    <BLANKLINE>
 """
 
 FILE = '_temporary.txt'

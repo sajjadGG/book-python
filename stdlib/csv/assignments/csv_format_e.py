@@ -1,59 +1,67 @@
 """
-* Assignment: CSV Format ListDict
+* Assignment: CSV Format ReadFixedHeader
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
 
 English:
-    1. Convert data in `FILE` to `result: list[dict]`
-    2. Replace column names with `FIELDNAMES`
-    3. Run doctests - all must succeed
+    1. Convert `DATA` to `result: list[dict]`
+    2. Use `HEADER` as dict keys
+    3. Do not convert numeric values to `float`, leave them as `str`
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Przekonwertuj dane w `FILE` do `result: list[dict]`
-    2. Podmień nazwy kolumn na `FIELDNAMES`
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Przekonwertuj `DATA` to `result: list[dict]`
+    2. Użyj `HEADER` jako kluczy dictów
+    3. Nie konwertuj wartości numeryczne do `float`, pozostaw je jako `str`
+    4. Uruchom doctesty - wszystkie muszą się powieść
+
+Hints:
+    * `str.splitlines()`
+    * `str.strip()`
+    * `str.split()`
+    * `dict(zip())`
+    * `list.append()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
     >>> assert type(result) is list, \
-    'Variable `result` must be a list'
-
-    >>> assert all(type(row) is dict for row in result), \
-    'All rows in `result` must be a dict'
+    'Variable `result` has invalid type, should be list'
+    >>> assert all(type(x) is dict for x in result), \
+    'All rows in `result` should be dict'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'Sepal Length': '5.8', 'Sepal Width': '2.7', 'Petal Length': '5.1',
-      'Petal Width': '1.9', 'Species': 'virginica'},
-     {'Sepal Length': '5.1', 'Sepal Width': '3.5', 'Petal Length': '1.4',
-      'Petal Width': '0.2', 'Species': 'setosa'},
-     {'Sepal Length': '5.7', 'Sepal Width': '2.8', 'Petal Length': '4.1',
-      'Petal Width': '1.3', 'Species': 'versicolor'}]
+    [{'sepal_length': '5.8', 'sepal_width': '2.7', 'petal_length': '5.1',
+     'petal_width': '1.9', 'species': 'virginica'},
+     {'sepal_length': '5.1', 'sepal_width': '3.5', 'petal_length': '1.4',
+      'petal_width': '0.2', 'species': 'setosa'},
+     {'sepal_length': '5.7', 'sepal_width': '2.8', 'petal_length': '4.1',
+      'petal_width': '1.3', 'species': 'versicolor'}]
 """
 
-import csv
-
-
-DATA = """sepal_length,sepal_width,petal_length,petal_width,species
-5.8,2.7,5.1,1.9,virginica
+DATA = """5.8,2.7,5.1,1.9,virginica
 5.1,3.5,1.4,0.2,setosa
 5.7,2.8,4.1,1.3,versicolor"""
 
-FIELDNAMES = ['Sepal Length', 'Sepal Width',
-              'Petal Length', 'Petal Width', 'Species']
+HEADER = [
+    'sepal_length',
+    'sepal_width',
+    'petal_length',
+    'petal_width',
+    'species',
+]
 
-FILE = r'_temporary.csv'
 
-with open(FILE, mode='w') as file:
-    file.write(DATA)
-
-result: list = []
+# list[dict[str,str]]: replace keys with `HEADER`
+result = ...
 
 # Solution
-with open(FILE) as file:
-    header = file.readline()
-    for line in file:
-        line = line.strip().split(',')
-        line = zip(FIELDNAMES, line)
-        result.append(dict(line))
+result = []
+
+for line in DATA.splitlines():
+    line = line.strip().split(',')
+    line = dict(zip(HEADER, line))
+    result.append(line)

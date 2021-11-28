@@ -26,9 +26,16 @@ Hint:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
+    >>> result = open(FILE).read()
+    >>> remove(FILE)
 
-    >>> type(result)
-    <class 'list'>
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, should be list'
+    >>> assert all(type(x) is dict for x in result), \
+    'All rows in `result` should be dict'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [{'Sepal Length': '5.8', 'Sepal Width': '2.7', 'Petal Length': '5.1',
       'Petal Width': '1.9', 'Species': 'virginica'},
@@ -36,8 +43,6 @@ Tests:
       'Petal Width': '0.2', 'Species': 'setosa'},
      {'Sepal Length': '5.7', 'Sepal Width': '2.8', 'Petal Length': '4.1',
       'Petal Width': '1.3', 'Species': 'versicolor'}]
-
-    >>> remove(FILE)
 """
 
 import csv

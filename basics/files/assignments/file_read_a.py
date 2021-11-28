@@ -20,14 +20,16 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
+    >>> result = open(FILE).read()
+    >>> remove(FILE)
 
-    >>> assert type(result) is str
-    >>> assert result == DATA
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
 
     >>> result
     'hello'
-
-    >>> remove(FILE)
 """
 
 FILE = '_temporary.txt'

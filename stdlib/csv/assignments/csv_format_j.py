@@ -1,64 +1,67 @@
 """
-* Assignment: CSV Format Iris
+* Assignment: CSV Format WriteListTuple
 * Complexity: easy
-* Lines of code: 5 lines
-* Time: 8 min
+* Lines of code: 3 lines
+* Time: 5 min
 
 English:
-    1. Using `csv.DictReader` read the `FILE` content
-    2. Use explicit `encoding`, `delimiter` and `quotechar`
-    3. Replace column names with `FIELDNAMES`
-    4. Skip the first line (header)
-    5. Add rows to `result: list[dict]`
-    6. Run doctests - all must succeed
+    1. Define `result: str` with `DATA` converted to CSV format
+    2. Non-functional requirements:
+       a. Do not use `import` and any module
+       b. Quotechar: None
+       c. Quoting: never
+       d. Delimiter: `,`
+       e. Lineseparator: `\n`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Korzystając z `csv.DictReader` wczytaj zawartość pliku `FILE`
-    2. Podaj jawnie `encoding`, `delimiter` oraz `quotechar`
-    3. Podmień nazwy kolumn na `FIELDNAMES`
-    4. Pomiń pierwszą linię (nagłówek)
-    5. Dodaj wiersze do `result: list[dict]`
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniuj `result: str` z `DATA` przekonwertowaną do formatu CSV
+    2. Wymagania niefunkcjonalne:
+       a. Nie używaj `import` ani żadnych modułów
+       b. Quotechar: None
+       c. Quoting: nigdy
+       d. Delimiter: `,`
+       e. Lineseparator: `\n`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from os import remove
 
-    >>> type(result)
-    <class 'list'>
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'Sepal Length': '5.8', 'Sepal Width': '2.7', 'Petal Length': '5.1',
-      'Petal Width': '1.9', 'Species': 'virginica'},
-     {'Sepal Length': '5.1', 'Sepal Width': '3.5', 'Petal Length': '1.4',
-      'Petal Width': '0.2', 'Species': 'setosa'},
-     {'Sepal Length': '5.7', 'Sepal Width': '2.8', 'Petal Length': '4.1',
-      'Petal Width': '1.3', 'Species': 'versicolor'}]
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
 
-    >>> remove(FILE)
+    >>> print(result)
+    SepalLength,SepalWidth,PetalLength,PetalWidth,Species
+    5.8,2.7,5.1,1.9,virginica
+    5.1,3.5,1.4,0.2,setosa
+    5.7,2.8,4.1,1.3,versicolor
+    6.3,2.9,5.6,1.8,virginica
+    6.4,3.2,4.5,1.5,versicolor
+    4.7,3.2,1.3,0.2,setosa
+    7.0,3.2,4.7,1.4,versicolor
+    7.6,3.0,6.6,2.1,virginica
+    4.9,3.0,1.4,0.2,setosa
+    <BLANKLINE>
 """
 
-import csv
+DATA = [
+    ('SepalLength', 'SepalWidth', 'PetalLength', 'PetalWidth', 'Species'),
+    (5.8, 2.7, 5.1, 1.9, 'virginica'),
+    (5.1, 3.5, 1.4, 0.2, 'setosa'),
+    (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+    (4.7, 3.2, 1.3, 0.2, 'setosa'),
+    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+    (7.6, 3.0, 6.6, 2.1, 'virginica'),
+    (4.9, 3.0, 1.4, 0.2, 'setosa')]
 
+# str: DATA converted to CSV format
+result = ...
 
-DATA = """sepal_length,sepal_width,petal_length,petal_width,species
-5.8,2.7,5.1,1.9,virginica
-5.1,3.5,1.4,0.2,setosa
-5.7,2.8,4.1,1.3,versicolor"""
-
-FIELDNAMES = ['Sepal Length', 'Sepal Width',
-              'Petal Length', 'Petal Width', 'Species']
-
-FILE = r'_temporary.csv'
-
-with open(FILE, mode='w') as file:
-    file.write(DATA)
-
-result: list = []
-
-
-with open(FILE) as file:
-    header = file.readline()
-    for line in file:
-        row = line.strip().split(',')
-        row = dict(zip(FIELDNAMES, row))
-        result.append(row)
+# Solution
+result = ''
+for line in DATA:
+    result += ','.join(str(x) for x in line) + '\n'

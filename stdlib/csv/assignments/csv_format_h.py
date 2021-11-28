@@ -1,81 +1,68 @@
 """
-* Assignment: CSV Format Schemaless
-* Complexity: medium
-* Lines of code: 7 lines
-* Time: 8 min
+* Assignment: CSV Format WriteFixed
+* Complexity: easy
+* Lines of code: 5 lines
+* Time: 5 min
 
 English:
-    1. Using `csv.DictWriter()` write variable schema data
-    2. `fieldnames` must be automatically generated from `DATA`
-    3. Non functional requirements:
-        a. All fields must be enclosed by double quote `"` character
-        b. Use `;` to separate columns
-        c. Use `utf-8` encoding
-        d. Use Unix `\n` line terminator
-        e. Sort `fieldnames` using `sorted()`
-    4. Run doctests - all must succeed
+    1. Convert `DATA` to CSV as `result: str`:
+       a. add header
+       a. firstname - first field
+       c. lastname - second field
+    2. Non-functional requirements:
+       a. Do not use `import` and any module
+       b. Quotechar: `"`
+       c. Quoting: always
+       d. Delimiter: `,`
+       e. Lineseparator: `\n`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Za pomocą `csv.DictWriter()` zapisz dane o zmiennej strukturze
-    2. `fieldnames` musi być generowane automatycznie na podstawie `DATA`
-    3. Wymagania niefunkcjonalne:
-        a. Wszystkie pola muszą być otoczone znakiem cudzysłowu `"`
-        b. Użyj `,` do oddzielenia kolumn
-        c. Użyj kodowania `utf-8`
-        d. Użyj zakończenia linii Unix `\n`
-        e. Posortuj `fieldnames` używając `sorted()`
-    4. Uruchom doctesty - wszystkie muszą się powieść
-
-Hint:
-    * For Python before 3.8: `dict(OrderedDict)`
+    1. Przekonwertuj `DATA` do CSV jako `result: str`:
+       a. dodaj nagłówek
+       b. imię - pierwsze pole
+       c. nazwisko - drugie pole
+    2. Wymagania niefunkcjonalne:
+       a. Nie używaj `import` ani żadnych modułów
+       b. Quotechar: `"`
+       c. Quoting: zawsze
+       d. Delimiter: `,`
+       e. Lineseparator: `\n`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from os import remove
 
-    >>> result = open(FILE).read()
-    >>> print(result)
-    "Petal length","Petal width","Sepal length","Sepal width","Species"
-    "","","5.1","3.5","setosa"
-    "4.1","1.3","","","versicolor"
-    "","1.8","6.3","","virginica"
-    "","0.2","5.0","","setosa"
-    "4.1","","","2.8","versicolor"
-    "","1.8","","2.9","virginica"
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
+    >>> print(result)   # doctest: +NORMALIZE_WHITESPACE
+    "firstname","lastname"
+    "Jan","Twardowski"
+    "Rick","Martinez"
+    "Mark","Watney"
+    "Ivan","Ivanovic"
+    "Melissa","Lewis"
     <BLANKLINE>
-
-    >>> remove(FILE)
 """
-import csv
+
+DATA = [{'firstname': 'Jan', 'lastname': 'Twardowski'},
+        {'firstname': 'Rick', 'lastname': 'Martinez'},
+        {'firstname': 'Mark', 'lastname': 'Watney'},
+        {'firstname': 'Ivan', 'lastname': 'Ivanovic'},
+        {'firstname': 'Melissa', 'lastname': 'Lewis'}]
 
 
-DATA = [{'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
-        {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
-        {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},
-        {'Sepal length': 5.0, 'Petal width': 0.2, 'Species': 'setosa'},
-        {'Sepal width': 2.8, 'Petal length': 4.1, 'Species': 'versicolor'},
-        {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'}]
+# str: multiline string with header and `"firstname","lastname"` pairs
+result = ...
 
-FILE = r'_temporary.csv'
-
-
-data = ''
-
-header = set()
-for row in DATA:
-    header.update(row.keys())
-
-pl, pw, sl, sw, s = sorted(header)
-data += f'"{pl}","{pw}","{sl}","{sw}","{s}"\n'
+# Solution
+result = ''
+firstname, lastname = DATA[0].keys()
+result += f'"{firstname}","{lastname}"\n'
 
 for row in DATA:
-    pl = row.get('Petal length', '')
-    pw = row.get('Petal width', '')
-    sl = row.get('Sepal length', '')
-    sw = row.get('Sepal width', '')
-    s = row.get('Species', '')
-    data += f'"{pl}","{pw}","{sl}","{sw}","{s}"\n'
-
-
-with open(FILE, mode='w') as file:
-    file.write(data)
+    firstname, lastname = row.values()
+    result += f'"{firstname}","{lastname}"\n'

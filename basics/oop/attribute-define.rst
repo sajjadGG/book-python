@@ -43,8 +43,8 @@ Different Types
 ...     features: list[float]
 ...     label: str
 
-
->>> class Astronaut:
+>>> # doctest: +SKIP
+... class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     age: float|int

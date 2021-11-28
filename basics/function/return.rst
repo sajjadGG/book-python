@@ -45,7 +45,7 @@ Code after ``return`` will not execute:
 ...     print('after')
 >>>
 >>> hello()
->>> before
+before
 'hello'
 
 You can have more than one ``return`` keyword in a function, although function
@@ -58,7 +58,7 @@ will close after hitting any of them, and will not proceed any further.
 ...     print('after')
 >>>
 >>> hello()
->>> before
+before
 'hello'
 
 >>> def hello():
@@ -69,7 +69,7 @@ will close after hitting any of them, and will not proceed any further.
 ...     print('after')
 >>>
 >>> hello()
->>> before
+before
 'hello'
 
 >>> def hello():

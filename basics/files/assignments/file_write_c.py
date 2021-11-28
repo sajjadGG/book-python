@@ -22,11 +22,11 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
-
-    >>> open(FILE).read()
-    'hello\\nworld\\n'
-
+    >>> result = open(FILE).read()
     >>> remove(FILE)
+
+    >>> result
+    'hello\\nworld\\n'
 """
 
 FILE = '_temporary.txt'

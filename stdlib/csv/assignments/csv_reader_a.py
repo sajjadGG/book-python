@@ -23,6 +23,13 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
 
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, should be list'
+    >>> assert all(type(x) is tuple for x in result), \
+    'All rows in `result` should be tuple'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [('sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'),
      ('5.8', '2.7', '5.1', '1.9', 'virginica'),
@@ -47,10 +54,12 @@ with open(FILE, mode='w') as file:
     file.write(DATA)
 
 # list[tuple]: data from file (note the list[tuple] format!)
-result = []
+result = ...
 
 
 # Solution
+result = []
+
 with open(FILE, mode='r') as file:
     reader = csv.reader(file, lineterminator='\n')
 

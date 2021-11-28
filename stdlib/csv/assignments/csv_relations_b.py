@@ -26,7 +26,6 @@ Polish:
 
 Hints:
     * `vars(obj)`
-    * For Python before 3.8: `dict(OrderedDict)`
     * Nested `for`
     * `str.join(';', sequence)`
     * `str.join(',', sequence)`
@@ -34,16 +33,20 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
-
     >>> result = open(FILE).read()
+    >>> remove(FILE)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
     >>> print(result)
     "firstname","lastname","missions"
     "Mark","Watney","2035,Ares 3"
     "Melissa","Lewis","2030,Ares 1;2035,Ares 3"
     "Rick","Martinez",""
     <BLANKLINE>
-
-    >>> remove(FILE)
 """
 
 import csv

@@ -34,15 +34,22 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from os import remove
+    >>> from os import remove; remove(FILE)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is dict, \
+    'Variable `result` has invalid type, should be dict'
+    >>> assert all(type(x) is str for x in result.keys()), \
+    'All keys in `result` should be str'
+    >>> assert all(type(x) is list for x in result.values()), \
+    'All values in `result` should be list'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     {'127.0.0.1': ['localhost'],
      '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
      '255.255.255.255': ['broadcasthost'],
      '::1': ['localhost']}
-
-    >>> remove(FILE)
 """
 
 FILE = '_temporary.txt'

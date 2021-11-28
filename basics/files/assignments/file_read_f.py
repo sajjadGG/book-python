@@ -41,15 +41,22 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from os import remove
+    >>> from os import remove; remove(FILE)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, should be list'
+    >>> assert all(type(x) is dict for x in result), \
+    'All keys in `result` should be dict'
+    >>> assert [x['ip'] for x in result].count('127.0.0.1') == 1, \
+    'You did not merge hostnames for the same ip (127.0.0.1)'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [{'ip': '127.0.0.1', 'hostnames': ['localhost', 'astromatt'], 'protocol': 'IPv4'},
      {'ip': '10.13.37.1', 'hostnames': ['nasa.gov', 'esa.int', 'roscosmos.ru'], 'protocol': 'IPv4'},
      {'ip': '255.255.255.255', 'hostnames': ['broadcasthost'], 'protocol': 'IPv4'},
      {'ip': '::1', 'hostnames': ['localhost'], 'protocol': 'IPv6'}]
-
-    >>> remove(FILE)
 """
 
 FILE = '_temporary.txt'

@@ -34,8 +34,14 @@ Hint:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
-
     >>> result = open(FILE).read()
+    >>> remove(FILE)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
+
     >>> print(result)   # doctest: +NORMALIZE_WHITESPACE
     "firstname","lastname"
     "Jan","Twardowski"
@@ -43,8 +49,6 @@ Tests:
     "Mark","Watney"
     "Ivan","Ivanovic"
     "Melissa","Lewis"
-
-    >>> remove(FILE)
 """
 import csv
 

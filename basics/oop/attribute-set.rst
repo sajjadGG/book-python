@@ -4,7 +4,8 @@ OOP Attribute Set
 
 Syntax
 ------
->>> class <classname>:
+>>> # doctest: +SKIP
+... class <classname>:
 ...     <attrname>: <attrtype>
 >>>
 >>>
@@ -57,7 +58,8 @@ Different Types
 >>> setosa.features = [5.1, 3.5, 1.4, 0.2]
 >>> setosa.label = 'setosa'
 
->>> class Astronaut:
+>>> # doctest: +SKIP
+... class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     age: float|int

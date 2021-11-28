@@ -1,67 +1,78 @@
 """
-* Assignment: CSV Format Fixed
-* Complexity: easy
-* Lines of code: 4 lines
+* Assignment: CSV Format WriteObjects
+* Complexity: medium
+* Lines of code: 7 lines
 * Time: 8 min
 
 English:
-    1. Using `csv.DictWriter()` save `DATA` to file
-    2. Open file in your spreadsheet program like:
-       Microsoft Excel, Libre Office or Numbers etc.
-    3. Open file in simple in your IDE and simple text editor like:
-       Notepad, vim, gedit
-    4. Non functional requirements:
-        a. All fields must be enclosed by double quote `"` character
-        b. Use `,` to separate columns
-        d. Use Unix `\n` line terminator
-    5. Run doctests - all must succeed
+    1. Define `result: str` with `DATA` converted to CSV format
+    2. Non-functional requirements:
+       a. Do not use `import` and any module
+       b. Quotechar: None
+       c. Quoting: never
+       d. Delimiter: `,`
+       e. Lineseparator: `\n`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Za pomocą `csv.DictWriter()` zapisz `DATA` do pliku
-    2. Spróbuj otworzyć plik w arkuszu kalkulacyjnym tj.
-       Microsoft Excel, Libre Office lub Numbers itp
-    3. Spróbuj otworzyć plik w IDE i prostym edytorze tekstu tj.
-       Notepad, vim lub gedit
-    4. Wymagania niefunkcjonalne:
-        a. Wszystkie pola muszą być otoczone znakiem cudzysłowu `"`
-        b. Użyj `,` do oddzielenia kolumn
-        d. Użyj zakończenia linii Unix `\n`
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniuj `result: str` z `DATA` przekonwertowaną do formatu CSV
+    2. Wymagania niefunkcjonalne:
+       a. Nie używaj `import` ani żadnych modułów
+       b. Quotechar: None
+       c. Quoting: nigdy
+       d. Delimiter: `,`
+       e. Lineseparator: `\n`
+    3. Uruchom doctesty - wszystkie muszą się powieść
+
+Hints:
+    * `vars(obj)`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from os import remove
 
-    >>> result = open(FILE).read()
-    >>> print(result)   # doctest: +NORMALIZE_WHITESPACE
-    "firstname","lastname"
-    "Jan","Twardowski"
-    "Rick","Martinez"
-    "Mark","Watney"
-    "Ivan","Ivanovic"
-    "Melissa","Lewis"
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
 
-    >>> remove(FILE)
+    >>> print(result)
+    sepal_length,sepal_width,petal_length,petal_width,species
+    5.1,3.5,1.4,0.2,setosa
+    5.8,2.7,5.1,1.9,virginica
+    5.1,3.5,1.4,0.2,setosa
+    5.7,2.8,4.1,1.3,versicolor
+    6.3,2.9,5.6,1.8,virginica
+    6.4,3.2,4.5,1.5,versicolor
+    <BLANKLINE>
 """
-import csv
 
 
-DATA = [{'firstname': 'Jan', 'lastname': 'Twardowski'},
-        {'firstname': 'Rick', 'lastname': 'Martinez'},
-        {'firstname': 'Mark', 'lastname': 'Watney'},
-        {'firstname': 'Ivan', 'lastname': 'Ivanovic'},
-        {'firstname': 'Melissa', 'lastname': 'Lewis'}]
-
-FILE = r'_temporary.csv'
-
-data = ''
-firstname, lastname = DATA[0].keys()
-data += f'"{firstname}","{lastname}"\n'
-
-for row in DATA:
-    firstname, lastname = row.values()
-    data += f'"{firstname}","{lastname}"\n'
+class Iris:
+    def __init__(self, sepal_length, sepal_width,
+                 petal_length, petal_width, species):
+        self.sepal_length = sepal_length
+        self.sepal_width = sepal_width
+        self.petal_length = petal_length
+        self.petal_width = petal_width
+        self.species = species
 
 
-with open(FILE, mode='w') as file:
-    file.write(data)
+DATA = [Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
+        Iris(5.8, 2.7, 5.1, 1.9, 'virginica'),
+        Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
+        Iris(5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        Iris(6.3, 2.9, 5.6, 1.8, 'virginica'),
+        Iris(6.4, 3.2, 4.5, 1.5, 'versicolor')]
+
+# str: DATA converted to CSV format
+result = ...
+
+# Solution
+result = ''
+data = [vars(x) for x in DATA]
+header = data[0].keys()
+result += ','.join(header) + '\n'
+
+for row in data:
+    row = map(str, row.values())
+    result += ','.join(row) + '\n'

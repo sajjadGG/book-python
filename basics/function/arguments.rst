@@ -143,17 +143,17 @@ TypeError: echo() got multiple values for argument 'c'
 
 Use Case - 0x01
 ---------------
->>> def echo(text='say what?'):
+>>> def say_hello(text='say what?'):
 ...      return text
 >>>
 >>>
->>> echo('hello')
+>>> say_hello('hello')
 'hello'
 >>>
->>> echo(text='hello world')
+>>> say_hello(text='hello world')
 'hello world'
 >>>
->>> hello()
+>>> say_hello()
 'say what?'
 
 

@@ -38,7 +38,26 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from os import remove
+    >>> from os import remove; remove(FILE)
+
+    >>> assert header is not Ellipsis, \
+    'Assign result to variable: `header`'
+    >>> assert features is not Ellipsis, \
+    'Assign result to variable: `features`'
+    >>> assert labels is not Ellipsis, \
+    'Assign result to variable: `labels`'
+    >>> assert type(header) is list, \
+    'Variable `header` has invalid type, should be list'
+    >>> assert type(features) is list, \
+    'Variable `features` has invalid type, should be list'
+    >>> assert type(labels) is list, \
+    'Variable `labels` has invalid type, should be list'
+    >>> assert all(type(x) is str for x in header), \
+    'All rows in `header` should be str'
+    >>> assert all(type(x) is tuple for x in features), \
+    'All rows in `features` should be tuple'
+    >>> assert all(type(x) is str for x in labels), \
+    'All rows in `labels` should be str'
 
     >>> header
     ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
@@ -53,8 +72,6 @@ Tests:
 
     >>> labels
     ['setosa', 'virginica', 'versicolor', 'virginica', 'versicolor', 'setosa']
-
-    >>> remove(FILE)
 """
 
 FILE = '_temporary.csv'
