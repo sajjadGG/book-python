@@ -4,7 +4,7 @@ on: push
 jobs:
   all:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r requirements.txt
@@ -13,7 +13,7 @@ jobs:
 
   about:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r about/requirements.txt
@@ -22,7 +22,7 @@ jobs:
 
   advanced:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r advanced/requirements.txt
@@ -31,7 +31,7 @@ jobs:
 
   basics:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r basics/requirements.txt
@@ -40,7 +40,7 @@ jobs:
 
   data-science:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r data-science/requirements.txt
@@ -49,7 +49,7 @@ jobs:
 
   design-patterns:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r design-patterns/requirements.txt
@@ -58,7 +58,7 @@ jobs:
 
   devops:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r devops/requirements.txt
@@ -67,7 +67,7 @@ jobs:
 
   django:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r django/requirements.txt
@@ -76,7 +76,7 @@ jobs:
 
   dragon:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r dragon/requirements.txt
@@ -84,7 +84,7 @@ jobs:
 
   fastapi:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r fastapi/requirements.txt
@@ -93,7 +93,7 @@ jobs:
 
   install:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r install/requirements.txt
@@ -101,16 +101,16 @@ jobs:
 
   intermediate:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
-      - run: pip install -r stdlib/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest stdlib /tmp/
-      - run: find stdlib -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
+      - run: pip install -r intermediate/requirements.txt
+      - run: sphinx-build -a -E -j auto --color -b doctest intermediate /tmp/
+      - run: find intermediate -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
 
   machine-learning:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
@@ -123,7 +123,7 @@ jobs:
 
   matplotlib:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r matplotlib/requirements.txt
@@ -132,7 +132,7 @@ jobs:
 
   network:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r network/requirements.txt
@@ -141,7 +141,7 @@ jobs:
 
   numpy:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r numpy/requirements.txt
@@ -150,7 +150,7 @@ jobs:
 
   oop:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r oop/requirements.txt
@@ -159,7 +159,7 @@ jobs:
 
   pandas:
     runs-on: ubuntu-20.04
-    container: python:3.9.7
+    container: python:3.9.9
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r pandas/requirements.txt
