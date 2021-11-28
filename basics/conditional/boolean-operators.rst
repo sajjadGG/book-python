@@ -145,7 +145,7 @@ Examples
 >>>
 >>>
 >>> print(sys.version_info)
-sys.version_info(major=3, minor=9, micro=7, releaselevel='final', serial=0)
+sys.version_info(major=3, minor=9, micro=9, releaselevel='final', serial=0)
 >>>
 >>>
 >>> sys.version_info >= (3, 9)

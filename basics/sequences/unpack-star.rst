@@ -158,9 +158,6 @@ Use Case - 0x03
 >>> import sys
 >>>
 >>>
->>> sys.version_info
-sys.version_info(major=3, minor=9, micro=7, releaselevel='final', serial=0)
->>>
 >>> major, minor, *_ = sys.version_info
 >>> print(major, minor, sep='.')
 3.9
