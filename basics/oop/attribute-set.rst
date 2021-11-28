@@ -4,9 +4,8 @@ OOP Attribute Set
 
 Syntax
 ------
->>> # doctest: +SKIP
-... class <classname>:
-...     <attrname>: <attrtype>
+>>> class MyClass:
+...     myattribute: str
 >>>
 >>>
 >>> myobj = MyClass()

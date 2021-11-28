@@ -27,7 +27,7 @@ Python Intermediate
     :numbered:
     :caption: Python Intermediate
 
-    stdlib/_index.rst
+    intermediate/_index.rst
 
 
 Python Advanced

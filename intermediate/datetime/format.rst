@@ -92,7 +92,7 @@ On macOS:
 >>> format(dt, '%-H:%M')
 '6:07'
 >>>
->>> format(dt, '%#H:%M')
+>>> format(dt, '%#H:%M')  # doctest: +SKIP
 '#H:07'
 
 On Windows 10:
