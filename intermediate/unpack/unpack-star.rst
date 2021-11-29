@@ -72,8 +72,10 @@ Convention
 >>>
 >>> first
 1
+>>>
 >>> middle
 [2, 3]
+>>>
 >>> last
 4
 
@@ -81,8 +83,10 @@ Convention
 >>>
 >>> first
 1
+>>>
 >>> second
 2
+>>>
 >>> others
 [3, 4]
 
@@ -101,6 +105,7 @@ Jan Twardowski
 >>>
 >>> print(firstname)
 Jan
+>>>
 >>> print(lastname)
 Twardowski
 
@@ -115,6 +120,7 @@ setosa
 >>>
 >>> print(username)
 twardowski
+>>>
 >>> print(home)
 /home/twardowski
 
@@ -126,6 +132,7 @@ Use Case - Mission
 >>>
 >>> mission
 'ares3'
+>>>
 >>> crew
 ['watney', 'lewis', 'vogel', 'johanssen']
 
@@ -136,8 +143,10 @@ Use Case - Range
 >>>
 >>> first
 0
+>>>
 >>> second
 1
+>>>
 >>> others
 [2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -145,6 +154,7 @@ Use Case - Range
 >>>
 >>> first
 0
+>>>
 >>> second
 1
 
@@ -165,6 +175,7 @@ Use Case - Iris 1D
 >>>
 >>> features
 [5.8, 2.7, 5.1, 1.9]
+>>>
 >>> label
 'virginica'
 
@@ -177,17 +188,19 @@ virginica 3.875
 
 Use Case - Iris 2D
 ------------------
->>> DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
-...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
-...         (5.7, 2.8, 4.1, 1.3, 'versicolor')]
+>>> DATA = [
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+... ]
 >>>
 >>>
->>> for *features, label in DATA:
+>>> for *features, species in DATA:
 ...     avg = sum(features) / len(features)
-...     print(label, avg)
-virginica 3.875
-setosa 2.55
-versicolor 3.475
+...     print(f'{avg=:.2f} {species=}')
+avg=3.88 species='virginica'
+avg=2.55 species='setosa'
+avg=3.48 species='versicolor'
 
 
 Assignments
