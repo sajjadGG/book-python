@@ -69,7 +69,7 @@ Tests:
 
 
 # Solution
-def isnumeric(*args, **kwargs) -> bool:
+def isnumeric(*args, **kwargs):
     arguments = args + tuple(kwargs.values())
 
     if len(arguments) == 0:

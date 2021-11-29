@@ -41,25 +41,25 @@ Positional Arguments
 * there is no convention, but you can use any name
 * ``*`` unpacks from ``tuple``, ``list`` or ``set``
 
->>> def echo(a, b, c=0):
+>>> def echo(a, b, c):
 ...     print(f'{a=}, {b=}, {c=}')
 >>>
 >>>
->>> echo(1, 2)
-a=1, b=2, c=0
+>>> echo(1, 2, 3)
+a=1, b=2, c=3
 >>>
->>> data = (1, 2)
+>>> data = (1, 2, 3)
 >>> echo(data)
 Traceback (most recent call last):
-TypeError: echo() missing 1 required positional argument: 'b'
+TypeError: echo() missing 2 required positional arguments: 'b' and 'c'
 >>>
->>> data = (1, 2)
->>> echo(data[0], data[1])
-a=1, b=2, c=0
+>>> data = (1, 2, 3)
+>>> echo(data[0], data[1], data[2])
+a=1, b=2, c=3
 >>>
->>> data = (1, 2)
+>>> data = (1, 2, 3)
 >>> echo(*data)
-a=1, b=2, c=0
+a=1, b=2, c=3
 
 
 Keyword Arguments
@@ -70,46 +70,51 @@ Keyword Arguments
 
 Keyword arguments passed directly:
 
->>> def echo(a, b, c=0):
+>>> def echo(a, b, c):
 ...     print(f'{a=}, {b=}, {c=}')
 >>>
 >>>
->>> echo(a=1, b=2)
-a=1, b=2, c=0
+>>> echo(a=1, b=2, c=3)
+a=1, b=2, c=3
 >>>
->>> data = {'a': 1, 'b': 2}
->>> echo(a=data['a'], b=data['b'])
-a=1, b=2, c=0
+>>> data = {'a': 1, 'b': 2, 'c': 3}
+>>> echo(a=data['a'], b=data['b'], c=data['c'])
+a=1, b=2, c=3
 >>>
->>> data = {'a': 1, 'b': 2}
+>>> data = {'a': 1, 'b': 2, 'c': 3}
 >>> echo(**data)
-a=1, b=2, c=0
+a=1, b=2, c=3
 
 
 Positional and Keyword Arguments
 --------------------------------
->>> def echo(a, b, c=0):
-...     print(f'{a=}, {b=}, {c=}')
->>>
->>>
->>> echo(1, b=2)
-a=1, b=2, c=0
->>>
->>> data1 = (1,)
->>> data2 = {'b': 2}
->>> echo(data1[0], b=data2['b'])
-a=1, b=2, c=0
->>>
->>> data1 = (1,)
->>> data2 = {'b': 2}
->>> echo(*data1, **data2)
-a=1, b=2, c=0
->>>
+>>> def echo(a, b, c, d):
+...     print(f'{a=}, {b=}, {c=}, {d=}')
+
+>>> echo(1, 2, c=3, d=4)
+a=1, b=2, c=3, d=4
+
 >>> data1 = (1, 2)
->>> data2 = {'b': 2}
+>>> data2 = {'c': 3, 'd': 4}
+>>> echo(data1[0], data1[1], c=data2['c'], d=data2['d'])
+a=1, b=2, c=3, d=4
+
+>>> data1 = (1, 2)
+>>> data2 = {'c': 3, 'd': 4}
+>>> echo(*data1, **data2)
+a=1, b=2, c=3, d=4
+
+>>> data1 = (1, 2)
+>>> data2 = {'c': 3}
 >>> echo(*data1, **data2)
 Traceback (most recent call last):
-TypeError: echo() got multiple values for argument 'b'
+TypeError: echo() missing 1 required positional argument: 'd'
+
+>>> data1 = (1, 2)
+>>> data2 = {'c': 3, 'd': 4, 'a': 1}
+>>> echo(*data1, **data2)
+Traceback (most recent call last):
+TypeError: echo() got multiple values for argument 'a'
 
 
 Objects From Sequence
@@ -126,6 +131,7 @@ Objects From Sequence
 >>> DATA = (6.0, 3.4, 4.5, 1.6, 'versicolor')
 >>>
 >>> result = Iris(*DATA)
+>>>
 >>> vars(result)  # doctest: +NORMALIZE_WHITESPACE
 {'sepal_length': 6.0,
  'sepal_width': 3.4,
@@ -154,6 +160,7 @@ Objects From Sequence
 >>>
 >>>
 >>> result = [Iris(*row) for row in DATA]
+>>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 [{'sepal_length': 5.8, 'sepal_width': 2.7, 'petal_length': 5.1, 'petal_width': 1.9, 'species': 'virginica'},
  {'sepal_length': 5.1, 'sepal_width': 3.5, 'petal_length': 1.4, 'petal_width': 0.2, 'species': 'setosa'},
@@ -177,6 +184,7 @@ Objects From Mappings
 >>> DATA = {"sepal_length":5.8,"sepal_width":2.7,"petal_length":5.1,"petal_width":1.9,"species":"virginica"}
 >>>
 >>> iris = Iris(**DATA)
+>>>
 >>> vars(iris)  # doctest: +NORMALIZE_WHITESPACE
 {'sepal_length': 5.8,
  'sepal_width': 2.7,
@@ -204,6 +212,7 @@ Objects From Mappings
 ...         {"sepal_length":4.7,"sepal_width":3.2,"petal_length":1.3,"petal_width":0.2,"species":"setosa"}]
 >>>
 >>> result = [Iris(**row) for row in DATA]
+>>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 [{'sepal_length': 5.8, 'sepal_width': 2.7, 'petal_length': 5.1, 'petal_width': 1.9, 'species': 'virginica'},
  {'sepal_length': 5.1, 'sepal_width': 3.5, 'petal_length': 1.4, 'petal_width': 0.2, 'species': 'setosa'},
@@ -213,8 +222,76 @@ Objects From Mappings
  {'sepal_length': 4.7, 'sepal_width': 3.2, 'petal_length': 1.3, 'petal_width': 0.2, 'species': 'setosa'}]
 
 
-Use Case - Movement
--------------------
+Use Case - 0x01
+---------------
+Calling a function which has similar parameters. Passing configuration to the
+function, which sets parameters from the config:
+
+>>> def draw_line(x, y, color, type, width, markers):
+...     pass
+
+>>> draw_line(x=1, y=2, color='red', type='dashed', width='2px', markers='disc')
+>>> draw_line(x=3, y=4, color='red', type='dashed', width='2px', markers='disc')
+>>> draw_line(x=5, y=6, color='red', type='dashed', width='2px', markers='disc')
+
+>>> style = {'color': 'red',
+...          'type': 'dashed',
+...          'width': '2px',
+...          'markers': 'disc'}
+>>>
+>>> draw_line(x=1, y=2, **style)
+>>> draw_line(x=3, y=4, **style)
+>>> draw_line(x=5, y=6, **style)
+
+
+Use Case - 0x02
+---------------
+>>> def print_coordinates(x, y, z):
+...     print(f'{x=} {y=} {z=}')
+
+Passing vector to the function:
+
+>>> vector = (1, 0, 1)
+>>> print_coordinates(*vector)
+x=1 y=0 z=1
+
+Passing point to the function:
+
+>>> point = {'x': 1, 'y': 0, 'z': 1}
+>>> print_coordinates(**point)
+x=1 y=0 z=1
+
+
+Use Case - 0x03
+---------------
+
+>>> def database_connect(host, port, username, password, database):
+...     pass
+>>>
+>>>
+>>> CONFIG = {
+...     'host': 'example.com',
+...     'port': 5432,
+...     'username': 'myusername',
+...     'password': 'mypassword',
+...     'database': 'mydatabase'}
+
+Database connection configuration read from config file:
+
+>>> connection = database_connect(
+...     host=CONFIG['host'],
+...     port=CONFIG['port'],
+...     username=CONFIG['username'],
+...     password=CONFIG['password'],
+...     database=CONFIG['database'])
+
+Or:
+
+>>> connection = database_connect(**CONFIG)
+
+
+Use Case - 0x04
+---------------
 >>> from dataclasses import dataclass
 >>>
 >>>
@@ -231,12 +308,15 @@ Use Case - Movement
 ...             (3, 2),
 ...             (3, 3, -1),
 ...             (2, 3)]
->>>
+
+
 >>> movement = [Point(x,y) for x,y in MOVEMENT]
 Traceback (most recent call last):
 ValueError: too many values to unpack (expected 2)
->>>
+
+
 >>> movement = [Point(*coordinates) for coordinates in MOVEMENT]
+>>>
 >>> movement  # doctest: +NORMALIZE_WHITESPACE
 [Point(x=0, y=0, z=0),
  Point(x=1, y=0, z=0),
@@ -246,8 +326,8 @@ ValueError: too many values to unpack (expected 2)
  Point(x=2, y=3, z=0)]
 
 
-Use Case - Dataclass Args
--------------------------
+Use Case - 0x04
+---------------
 >>> from dataclasses import dataclass
 >>>
 >>>
@@ -269,6 +349,7 @@ Use Case - Dataclass Args
 >>>
 >>>
 >>> result = [Iris(*row) for row in DATA]
+>>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 [Iris(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9, species='virginica'),
  Iris(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2, species='setosa'),
@@ -278,8 +359,8 @@ Use Case - Dataclass Args
  Iris(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2, species='setosa')]
 
 
-Use Case - Dataclass KWArgs
----------------------------
+Use Case - 0x05
+---------------
 >>> from dataclasses import dataclass
 >>>
 >>>
@@ -301,6 +382,7 @@ Use Case - Dataclass KWArgs
 >>>
 >>>
 >>> result = [Iris(**row) for row in DATA]
+>>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 [Iris(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9, species='virginica'),
  Iris(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2, species='setosa'),
@@ -310,121 +392,8 @@ Use Case - Dataclass KWArgs
  Iris(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2, species='setosa')]
 
 
-Use Case - Complex
-------------------
-Defining complex number by passing keyword arguments directly:
-
->>> complex(real=3, imag=5)
-(3+5j)
-
->>> number = {'real': 3, 'imag': 5}
->>> complex(**number)
-(3+5j)
-
-
-Use Case - Vector
------------------
-Passing vector to the function:
-
->>> def cartesian_coordinates(x, y, z):
-...     print(f'{x=} {y=} {z=}')
->>>
->>>
->>> vector = (1, 0, 1)
->>> cartesian_coordinates(*vector)
-x=1 y=0 z=1
-
-Passing point to the function:
-
->>> def cartesian_coordinates(x, y, z):
-...     print(f'{x=} {y=} {z=}')
->>>
->>>
->>> point = {'x': 1, 'y': 0, 'z': 1}
->>> cartesian_coordinates(**point)
-x=1 y=0 z=1
-
-
-Use Case - Format
------------------
-``str.format()`` expects keyword arguments, which keys are used in string.
-It is cumbersome to pass ``format(name=name, agency=agency)`` for every
-variable in the code. Since Python 3.6 f-string formatting are preferred:
-
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
->>> location = 'Moon'
->>>
->>> result = 'Astronaut {firstname} {lastname} on the {location}'.format(**locals())
->>> print(result)
-Astronaut Jan Twardowski on the Moon
-
-
-Use Case - Draw Line
---------------------
-Calling a function which has similar parameters. Passing configuration to the
-function, which sets parameters from the config:
-
->>> def draw_line(x, y, color, type, width, markers):
-...     pass
->>>
->>>
->>> draw_line(x=1, y=2, color='red', type='dashed', width='2px', markers='disc')
->>> draw_line(x=3, y=4, color='red', type='dashed', width='2px', markers='disc')
->>> draw_line(x=5, y=6, color='red', type='dashed', width='2px', markers='disc')
-
->>> def draw_line(x, y, color, type, width, markers):
-...     pass
->>>
->>>
->>> style = {'color': 'red',
-...          'type': 'dashed',
-...          'width': '2px',
-...          'markers': 'disc'}
->>>
->>> draw_line(x=1, y=2, **style)
->>> draw_line(x=3, y=4, **style)
->>> draw_line(x=5, y=6, **style)
-
-
-Use Case - Connection
----------------------
-Database connection configuration read from config file:
-
->>> def database_connect(host, port, username, password, database):
-...     pass
->>>
->>>
->>> CONFIG = {
-...     'host': 'example.com',
-...     'port': 5432,
-...     'username': 'myusername',
-...     'password': 'mypassword',
-...     'database': 'mydatabase'}
->>>
->>> connection = database_connect(
-...     host=CONFIG['host'],
-...     port=CONFIG['port'],
-...     username=CONFIG['username'],
-...     password=CONFIG['password'],
-...     database=CONFIG['database'])
-
->>> def database_connect(host, port, username, password, database):
-...     pass
->>>
->>>
->>> CONFIG = {
-...     'host': 'example.com',
-...     'port': 5432,
-...     'username': 'myusername',
-...     'password': 'mypassword',
-...     'database': 'mydatabase'}
->>>
->>> connection = database_connect(**CONFIG)
-
-
-Use Case - View-Template
-------------------------
+Use Case - 0x06
+---------------
 Calling function with all variables from higher order function. ``locals()``
 will return a ``dict`` with all the variables in local scope of the function:
 
@@ -455,8 +424,8 @@ Data: {'firstname': 'Jan',
        'permission': ['all', 'everywhere']}
 
 
-Use Case - Proxy Function
--------------------------
+Use Case - 0x07
+---------------
 Definition of pandas.read_csv() function
 https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
 
@@ -474,14 +443,12 @@ Proxy functions. One of the most common use of ``*args``, ``**kwargs``:
 ...              quoting=0, escapechar=None, comment=None, encoding=None, dialect=None,
 ...              tupleize_cols=None, error_bad_lines=True, warn_bad_lines=True,
 ...              skipfooter=0, doublequote=True, delim_whitespace=False, low_memory=True,
-...              memory_map=False, float_precision=None):
-...     pass
+...              memory_map=False, float_precision=None): ...
 >>>
 >>>
->>> def mycsv(file, encoding='utf-8', decimal=b',',
+>>> def mycsv(file, encoding='utf-8', delimiter=';', decimal=b',',
 ...           lineterminator='\n', *args, **kwargs):
-...
-...     return read_csv(file, encoding=encoding, decimal=decimal,
+...     return read_csv(file, encoding=encoding, delimiter=delimiter, decimal=decimal,
 ...                     lineterminator=lineterminator, *args, **kwargs)
 >>>
 >>>
@@ -491,8 +458,8 @@ Proxy functions. One of the most common use of ``*args``, ``**kwargs``:
 >>> mycsv('iris4.csv', verbose=True, usecols=['Sepal Length', 'Species'])
 
 
-Use Case - Decorators
----------------------
+Use Case - 0x08
+---------------
 Decorators are functions, which get reference to the decorated function as
 it's argument, and has closure which gets original function arguments as
 positional and keyword arguments:

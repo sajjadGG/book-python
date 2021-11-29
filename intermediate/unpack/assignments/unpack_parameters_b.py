@@ -59,7 +59,7 @@ Tests:
 
 
 # Solution
-def isnumeric(*args) -> bool:
+def isnumeric(*args):
     if not args:
         return False
 

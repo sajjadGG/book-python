@@ -8,27 +8,25 @@ Recap
 * required parameters - Parameter which is necessary to call function
 * optional parameters (with default value) - Parameter which is optional and has default value (if not specified at call time)
 
->>> def echo(a, b=0):
-...     print(f'{a=}, {b=}')
+Required parameters:
 
->>> echo(1, 2)
-a=1, b=2
->>>
->>> echo(2, 1)
-a=2, b=1
+>>> def echo(a, b):
+...     pass
 
->>> echo(a=1, b=2)
-a=1, b=2
->>>
->>> echo(b=2, a=1)
-a=1, b=2
+Optional parameters:
 
->>> echo(1, b=2)
-a=1, b=2
->>>
->>> echo(b=2, 1)
+>>> def echo(a=1, b=2):
+...     pass
+
+Required and optional parameters:
+
+>>> def echo(a, b=2):
+...     pass
+
+>>> def echo(a=1, b):
+...     pass
 Traceback (most recent call last):
-SyntaxError: positional argument follows keyword argument
+SyntaxError: non-default argument follows default argument
 
 
 Rationale

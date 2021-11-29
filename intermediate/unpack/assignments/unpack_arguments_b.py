@@ -2,7 +2,7 @@
 * Assignment: Unpack Arguments Range
 * Complexity: medium
 * Lines of code: 25 lines
-* Time: 21 min
+* Time: 13 min
 
 English:
     1. Write own implementation of a built-in `myrange(start, stop, step)` function
