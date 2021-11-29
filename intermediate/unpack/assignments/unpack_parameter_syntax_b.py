@@ -2,7 +2,7 @@
 * Assignment: Unpack ParameterSyntax Args
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 3 min
+* Time: 2 min
 * Warning: This assignment will work only in Python 3.8+
 
 English:

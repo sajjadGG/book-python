@@ -2,7 +2,7 @@
 * Assignment: Unpack ParameterSyntax Mixed
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 3 min
+* Time: 2 min
 * Warning: This assignment will work only in Python 3.8+
 
 English:
@@ -47,7 +47,7 @@ Tests:
 """
 
 
-# callable: Argument must be passed only as positional
+# callable: Argument a,b,c must be passed only as positional, func as keyword
 def compute(a, b, c, func=lambda:...):
     pass
 

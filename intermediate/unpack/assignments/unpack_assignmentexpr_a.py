@@ -24,14 +24,20 @@ Hint:
     * `str.splitlines()`
     * `str.strip()`
     * `str.split()`
+    * `int()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'list'>
-    >>> all(type(x) is str for x in result)
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert len(result) > 0, \
+    'Variable `result` cannot be empty'
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, should be list'
+    >>> assert all(type(x) is str for x in result), \
+    'All rows in `result` should be str'
+
     >>> result
     ['root', 'bin', 'daemon', 'adm', 'shutdown', 'halt', 'nobody', 'sshd']
 """
@@ -50,7 +56,8 @@ ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
 lewis:x:1003:1002:Melissa Lewis:/home/ivanovic:/bin/bash"""
 
 
-result: list
+# list[str]: system account usernames (UID [third field] is less than 1000)
+result = ...
 
 # Solution
 result = [username
