@@ -31,6 +31,11 @@ a=1 b=2 c=3
 a=1 b=2 c=3
 
 
+Rationale
+---------
+* Define API for you functions
+* Require particular way of passing positional and optional parameters
+
 
 Keyword-only Parameters
 -----------------------
@@ -194,10 +199,14 @@ Use Case - Split
 
 Assignments
 -----------
-.. literalinclude:: assignments/function_parameter_syntax_a.py
-    :caption: :download:`Solution <assignments/function_parameter_syntax_a.py>`
+.. literalinclude:: assignments/unpack_parameter_syntax_a.py
+    :caption: :download:`Solution <assignments/unpack_parameter_syntax_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_parameter_syntax_b.py
-    :caption: :download:`Solution <assignments/function_parameter_syntax_b.py>`
+.. literalinclude:: assignments/unpack_parameter_syntax_b.py
+    :caption: :download:`Solution <assignments/unpack_parameter_syntax_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/unpack_parameter_syntax_c.py
+    :caption: :download:`Solution <assignments/unpack_parameter_syntax_c.py>`
     :end-before: # Solution
