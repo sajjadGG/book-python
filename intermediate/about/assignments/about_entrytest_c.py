@@ -1,83 +1,57 @@
 """
-* Assignment: Entry Test File
-* Complexity: hard
-* Lines of code: 16 lines
-* Time: 13 min
+* Assignment: About EntryTest Endswith
+* Complexity: medium
+* Lines of code: 4 lines
+* Time: 8 min
 
 English:
-    1. Skip comments (`#`) and empty lines
-    2. Extract from each line: ip, host and protocol and add to `result: list[dict]`
-    3. Each line must be a separate dict
-    4. Merge host names with the same IP
-    5. IPv4 protocol address is when dot (`.`) is in ip address
-    6. `result` must be `list[dict]`
-    7. Run doctests - all must succeed
+    1. Define `result: set[str]`
+    2. Iterate over `DATA`
+    3. Append to `result` species with endings in `SUFFIXES`
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Pomiń komentarze (`#`) i puste linie
-    2. Wyciągnij z każdej linii: ip, host i protokół i dodaj do `result: list[dict]`
-    3. Każda linia ma być osobnym słownikiem
-    4. Scal nazwy hostów dla tego samego IP
-    5. Protokół IPv4 jest gdy kropka (`.`) znajduje się w adresie
-    6. `result` musi być `list[dict]`
-    7. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniuj `result: set[str]`
+    2. Iterując po `DATA`
+    3. Dodaj do `result` nazwy gatunków z końcówkami w `SUFFIXES`
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
     >>> assert len(result) > 0, \
     'Result cannot be empty'
+    >>> assert type(result) is set, \
+    'Result must be a set'
+    >>> assert all(type(element) is str for element in result), \
+    'All elements in result must be a str'
 
-    >>> assert type(result) is list, \
-    'Result must be a list'
-
-    >>> assert all(type(row) is dict for row in result), \
-    'All elements in result must be a dict'
-
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'ip': '127.0.0.1', 'hosts': ['localhost', 'astromatt'], 'protocol': 'ipv4'},
-     {'ip': '10.13.37.1', 'hosts': ['nasa.gov', 'esa.int', 'roscosmos.ru'], 'protocol': 'ipv4'},
-     {'ip': '255.255.255.255', 'hosts': ['broadcasthost'], 'protocol': 'ipv4'},
-     {'ip': '::1', 'hosts': ['localhost'], 'protocol': 'ipv6'}]
+    >>> sorted(result)
+    ['setosa', 'virginica']
 """
 
-DATA = """
-##
-# `/etc/hosts` structure:
-#   - IPv4 or IPv6
-#   - Hostnames
- ##
+DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, {'virginica'}),
+        (5.1, 3.5, 1.4, 0.2, {'setosa'}),
+        (5.7, 2.8, 4.1, 1.3, {'versicolor'}),
+        (6.3, 2.9, 5.6, 1.8, {'virginica'}),
+        (6.4, 3.2, 4.5, 1.5, {'versicolor'}),
+        (4.7, 3.2, 1.3, 0.2, {'setosa'}),
+        (7.0, 3.2, 4.7, 1.4, {'versicolor'}),
+        (7.6, 3.0, 6.6, 2.1, {'virginica'}),
+        (4.6, 3.1, 1.5, 0.2, {'setosa'})]
 
-127.0.0.1       localhost
-127.0.0.1       astromatt
-10.13.37.1      nasa.gov esa.int roscosmos.ru
-255.255.255.255 broadcasthost
-::1             localhost
-"""
+SUFFIXES = ('ca', 'osa')
 
-# list[dict]: keys: ip, hosts, protocol; merge hosts for the same ip address
-#             protocol is "ipv4" when '.' is in address; use conditional expr.
-result = []
+# set[str]: species names with word endings in `SUFFIXES`
+result = set()
 
 
 # Solution
-for line in DATA.splitlines():
-    line = line.strip()
+for *features, label in DATA[1:]:
+    species = label.pop()
 
-    if len(line) == 0:
-        continue
-    elif line.startswith('#'):
-        continue
-
-    ip, *hosts = line.split()
-
-    for row in result:
-        if row['ip'] == ip:
-            row['hosts'] += hosts
-            break
-    else:
-        result.append({
-            'ip': ip,
-            'hosts': hosts,
-            'protocol': 'ipv4' if '.' in ip else 'ipv6'
-        })
+    if species.endswith(SUFFIXES):
+        result.add(species)
