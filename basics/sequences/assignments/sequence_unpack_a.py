@@ -29,6 +29,7 @@ Tests:
 
     >>> ip
     '10.13.37.1'
+
     >>> host
     'nasa.gov'
 """

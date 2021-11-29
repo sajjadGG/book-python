@@ -9,8 +9,26 @@ Recap
 * optional parameters (with default value) - Parameter which is optional and has default value (if not specified at call time)
 
 >>> def echo(a, b=0):
-...     print(a)
-...     print(b)
+...     print(f'{a=}, {b=}')
+
+>>> echo(1, 2)
+a=1, b=2
+>>>
+>>> echo(2, 1)
+a=2, b=1
+
+>>> echo(a=1, b=2)
+a=1, b=2
+>>>
+>>> echo(b=2, a=1)
+a=1, b=2
+
+>>> echo(1, b=2)
+a=1, b=2
+>>>
+>>> echo(b=2, 1)
+Traceback (most recent call last):
+SyntaxError: positional argument follows keyword argument
 
 
 Rationale
@@ -20,6 +38,18 @@ Rationale
 * More information in `Unpack Arguments`
 
 .. figure:: img/unpack-assignment,args,params.png
+
+
+Syntax
+------
+>>> def myfunction(*args):
+...     pass
+
+>>> def myfunction(**kwargs):
+...     pass
+
+>>> def myfunction(*args, **kwargs):
+...     pass
 
 
 Positional Parameters
@@ -77,11 +107,8 @@ Keyword Parameters
 >>> echo(a=1)
 {'a': 1}
 >>>
->>> echo(color='red')
-{'color': 'red'}
->>>
->>> echo(firstname='Jan', lastname='Twardowski')
-{'firstname': 'Jan', 'lastname': 'Twardowski'}
+>>> echo(a=1, b=2)
+{'a': 1, 'b': 2}
 
 >>> def echo(a, b, c=0, **kwargs):
 ...     print(f'{a=}, {b=}, {c=}, {kwargs=}')
@@ -93,8 +120,8 @@ a=1, b=2, c=0, kwargs={}
 >>> echo(1, 2, 3)
 a=1, b=2, c=3, kwargs={}
 >>>
->>> echo(1, 2, 3, d=7, e=8)
-a=1, b=2, c=3, kwargs={'d': 7, 'e': 8}
+>>> echo(1, 2, 3, d=7, e=8, f=9)
+a=1, b=2, c=3, kwargs={'d': 7, 'e': 8, 'f': 9}
 >>>
 >>> echo(1, 2, a=7)
 Traceback (most recent call last):
@@ -113,15 +140,15 @@ a=1, b=2, c=0, args=(), kwargs={}
 >>> echo(1, 2, 3, 4, 5, 6)
 a=1, b=2, c=3, args=(4, 5, 6), kwargs={}
 >>>
->>> echo(1, 2, 3, d=7, e=8)
-a=1, b=2, c=3, args=(), kwargs={'d': 7, 'e': 8}
+>>> echo(1, 2, 3, d=7, e=8, f=9)
+a=1, b=2, c=3, args=(), kwargs={'d': 7, 'e': 8, 'f': 9}
 >>>
->>> echo(1, 2, 3, 4, 5, 6, d=7, e=8)
-a=1, b=2, c=3, args=(4, 5, 6), kwargs={'d': 7, 'e': 8}
+>>> echo(1, 2, 3, 4, 5, 6, d=7, e=8, f=9)
+a=1, b=2, c=3, args=(4, 5, 6), kwargs={'d': 7, 'e': 8, 'f': 9}
 
 
-Use Case - Range
-----------------
+Use Case - 0x01
+---------------
 >>> def echo(a, b, c=0, *args):
 ...     print(locals())
 >>>
@@ -129,8 +156,8 @@ Use Case - Range
 {'a': 0, 'b': 1, 'c': 2, 'args': (3, 4, 5, 6, 7, 8, 9)}
 
 
-Use Case - Sum
---------------
+Use Case - 0x02
+---------------
 >>> def sum(*values):
 ...     total = 0
 ...     for value in values:
@@ -154,21 +181,32 @@ Use Case - Sum
 10
 
 
-Use Case - Kelvin to Celsius
-----------------------------
->>> def kelvin_to_celsius(*degrees):
+Use Case - 0x03
+---------------
+>>> def celsius_to_kelvin(degree):
+...     return degree + 273.15
+>>>
+>>>
+>>> celsius_to_kelvin(1)
+274.15
+>>>
+>>> kelvin_to_celsius([1,2,3])
+Traceback (most recent call last):
+TypeError: can only concatenate list (not "float") to list
+
+>>> def celsius_to_kelvin(*degrees):
 ...     return [x+273.15 for x in degrees]
 >>>
 >>>
->>> kelvin_to_celsius(1)
+>>> celsius_to_kelvin(1)
 [274.15]
 >>>
->>> kelvin_to_celsius(1, 2, 3, 4, 5)
+>>> celsius_to_kelvin(1, 2, 3, 4, 5)
 [274.15, 275.15, 276.15, 277.15, 278.15]
 
 
-Use Case - HTML list
---------------------
+Use Case - 0x04
+---------------
 >>> def html_list(*fruits):
 ...     print('<ul>')
 ...     for fruit in fruits:
@@ -184,8 +222,8 @@ Use Case - HTML list
 </ul>
 
 
-Use Case - Print
-----------------
+Use Case - 0x05
+---------------
 Intuitive definition of ``print`` function:
 
 >>> def print(*values, sep=' ', end='\n'):

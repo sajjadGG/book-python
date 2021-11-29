@@ -1,5 +1,5 @@
 """
-* Assignment: Sequence UnpackAssignment Split
+* Assignment: Unpack Assignment List
 * Required: yes
 * Complexity: easy
 * Lines of code: 1 lines
@@ -14,9 +14,6 @@ Polish:
     1. Podziel dane wejściowe
     2. Odseparuj adres ip i nazwę hosta
     3. Uruchom doctesty - wszystkie muszą się powieść
-
-Hints:
-    * `str.split()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -37,7 +34,7 @@ Tests:
     'nasa.gov'
 """
 
-DATA = '10.13.37.1 nasa.gov'
+DATA = ['10.13.37.1', 'nasa.gov']
 
 # str: first string: 10.13.37.1
 ip = ...
@@ -46,4 +43,4 @@ ip = ...
 host = ...
 
 # Solution
-ip, host = DATA.split()
+ip, host = DATA
