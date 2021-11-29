@@ -366,7 +366,3 @@ Assignments
 .. literalinclude:: assignments/csv_format_k.py
     :caption: :download:`Solution <assignments/csv_format_k.py>`
     :end-before: # Solution
-
-.. literalinclude:: assignments/csv_format_l.py
-    :caption: :download:`Solution <assignments/csv_format_l.py>`
-    :end-before: # Solution
