@@ -188,7 +188,7 @@ Use Case - 0x03
 >>> celsius_to_kelvin(1)
 274.15
 >>>
->>> kelvin_to_celsius([1,2,3])
+>>> celsius_to_kelvin([1,2,3])
 Traceback (most recent call last):
 TypeError: can only concatenate list (not "float") to list
 
