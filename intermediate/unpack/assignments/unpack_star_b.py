@@ -22,24 +22,33 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(ip)
-    <class 'str'>
-    >>> type(hosts)
-    <class 'list'>
-    >>> assert all(type(host) is str for host in hosts)
-    >>> '' not in hosts
-    True
+    >>> assert ip is not Ellipsis, \
+    'Assign result to variable: `ip`'
+    >>> assert hosts is not Ellipsis, \
+    'Assign result to variable: `hosts`'
+    >>> assert type(ip) is str, \
+    'Variable `ip` has invalid type, should be str'
+    >>> assert type(hosts) is list, \
+    'Variable `hosts` has invalid type, should be list'
+    >>> assert all(type(x) is str for x in hosts), \
+    'All rows in `hosts` should be str'
+    >>> assert '' not in hosts, \
+    'Do not pass any arguments to str.split() method'
+
     >>> ip
     '10.13.37.1'
+
     >>> hosts
     ['nasa.gov', 'esa.int', 'roscosmos.ru']
 """
 
 DATA = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
 
-ip: str
-hosts: list
+# str: IP address
+ip = ...
 
+# list[str]: list of hostnames
+hosts = ...
 
 # Solution
 ip, *hosts = DATA.split()

@@ -20,11 +20,15 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'list'>
-    >>> len(result) > 0
-    True
-    >>> assert all(type(x) is str for x in result)
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert len(result) > 0, \
+    'Variable `result` cannot be empty'
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, should be list'
+    >>> assert all(type(x) is str for x in result), \
+    'All rows in `result` should be str'
+
     >>> result
     ['virginica', 'setosa', 'virginica', 'setosa']
 """
@@ -39,7 +43,8 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
 
 SUFFIXES = ('ca', 'osa')
 
-result: list
+# list[str]: species names ending with "ca" or "osa"
+result = ...
 
 
 # Solution

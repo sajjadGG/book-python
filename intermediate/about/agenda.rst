@@ -1,8 +1,8 @@
 Agenda
 ======
-* Szkolenie 9:00 - 17:00
-* Przerwa obiadowa 12:30 - 13:15
-* 5-10 min przerwy co godzinę/półtora
+* Working hours 9:00 - 17:00
+* Lunch break 13:15 - 14:00
+* 10 min break every 1.5 hour
 
 
 Day 1

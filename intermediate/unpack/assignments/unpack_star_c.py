@@ -17,18 +17,26 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(header)
-    <class 'tuple'>
-    >>> type(data)
-    <class 'list'>
-    >>> len(header) > 0
-    True
-    >>> len(data) > 0
-    True
-    >>> assert all(type(x) is str for x in header)
-    >>> assert all(type(row) is tuple for row in data)
+    >>> assert header is not Ellipsis, \
+    'Assign result to variable: `header`'
+    >>> assert data is not Ellipsis, \
+    'Assign result to variable: `data`'
+    >>> assert len(header) > 0, \
+    'Variable `header` cannot be empty'
+    >>> assert len(data) > 0, \
+    'Variable `data` cannot be empty'
+    >>> assert type(header) is tuple, \
+    'Variable `header` has invalid type, should be tuple'
+    >>> assert type(data) is list, \
+    'Variable `hosts` has invalid type, should be list'
+    >>> assert all(type(x) is str for x in header), \
+    'All rows in `header` should be str'
+    >>> assert all(type(x) is tuple for x in data), \
+    'All rows in `data` should be tuple'
+
     >>> header
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
+
     >>> data  # doctest: +NORMALIZE_WHITESPACE
     [(5.8, 2.7, 5.1, 1.9, 'virginica'),
      (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -47,8 +55,11 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
         (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
-header: tuple
-data: list
+# tuple[str]: first line from DATA
+header = ...
+
+# list[tuple]: all the other lines from DATA, beside first line
+data = ...
 
 
 # Solution
