@@ -202,8 +202,8 @@ Use Case - 0x05
 >>> *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
 >>> avg = sum(features) / len(features)
 >>>
->>> print(f'{avg=:.2f} {label=}')
-avg=3.88, label=virginica
+>>> print(f'{avg=:.2f}, {label=}')
+avg=3.88, label='virginica'
 
 
 Use Case - 0x06
