@@ -34,8 +34,8 @@ String Fitting
 If there are any other characters in the string, such as commas, brackets
 spaces, colons, dashes etc, they should be reflected in the format string.
 
->>> x = 'Apr 12th, 61 6:07 am'
->>> datetime.strptime(x, '%b %dth, %y %I:%M %p')
+>>> x = 'Apr 12th, 1961 6:07 am'
+>>> datetime.strptime(x, '%b %dth, %Y %I:%M %p')
 datetime.datetime(1961, 4, 12, 6, 7)
 
 >>> x = '12 April 1961 at 6:07 am'
