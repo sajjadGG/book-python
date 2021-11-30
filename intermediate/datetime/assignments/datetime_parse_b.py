@@ -13,11 +13,14 @@ Polish:
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
+    * 12-hour clock
     * `%dst`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
     >>> assert type(result) is datetime, \
     'Variable `result` has invalid type, must be a datetime'
 

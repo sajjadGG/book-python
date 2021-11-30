@@ -15,26 +15,30 @@ Polish:
 Hints:
     * `for ... in`
     * `try ... except`
+    * 24-hour clock
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
     >>> assert type(result) is list, \
     'Variable `result` has invalid type, must be a list'
-
     >>> assert all(type(element) is datetime for element in result), \
     'All elements in `result` must be a datetime'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [datetime.datetime(1961, 4, 12, 6, 7),
-     datetime.datetime(1961, 4, 12, 6, 7)]
+    [datetime.datetime(1957, 10, 4, 19, 28, 34),
+    datetime.datetime(1961, 4, 12, 6, 7)]
 """
 
 from datetime import datetime
 
 
-DATA = ['1961-04-12 06:07',
-        '1961-04-12 06:07:00']
+DATA = [
+    'Oct 4, 1957 19:28:34',  # Sputnik launch (first satellite in space)
+    'April 12, 1961 6:07',  # Gagarin launch (first human in space)
+]
 
 # list[datetime]: parsed DATA
 result = ...
@@ -44,8 +48,7 @@ result = []
 
 for line in DATA:
     try:
-        date = datetime.strptime(line, '%Y-%m-%d %H:%M:%S')
-        result.append(date)
+        dt = datetime.strptime(line, '%b %d, %Y %H:%M:%S')
     except ValueError:
-        date = datetime.strptime(line, '%Y-%m-%d %H:%M')
-        result.append(date)
+        dt = datetime.strptime(line, '%B %d, %Y %H:%M')
+    result.append(dt)

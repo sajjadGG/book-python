@@ -2,7 +2,7 @@
 * Assignment: Datetime ISO Parse
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
     1. Define `result: datetime` with converted `DATA` from ISO-8601

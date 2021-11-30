@@ -9,26 +9,82 @@ Rationale
 
 Parsing dates
 -------------
+>>> from datetime import datetime
+
 Datetime parsing from string:
 
->>> from datetime import datetime
->>>
->>>
->>> sputnik = '4 October 1957, 19:28:34 [UTC]'
->>> datetime.strptime(sputnik, '%d %B %Y, %H:%M:%S [%Z]')
-datetime.datetime(1957, 10, 4, 19, 28, 34)
->>>
->>> gagarin = '1961-04-12 06:07'
->>> datetime.strptime(gagarin, '%Y-%m-%d %H:%M')
+>>> x = '1961-04-12 06:07'
+>>> datetime.strptime(x, '%Y-%m-%d %H:%M')
 datetime.datetime(1961, 4, 12, 6, 7)
->>>
->>> armstrong = 'Jul 21, 69 2:56:15'
->>> datetime.strptime(armstrong, '%b %d, %y %I:%M:%S')
-datetime.datetime(1969, 7, 21, 2, 56, 15)
 
 
-Use Case
---------
+Leading Zero
+------------
+Mind that while parsing dates without leading zero, you do not use ``%#H``
+or ``%-H`` as it was for formatting. One should simply use ``%H`` to capture
+hour:
+
+>>> x = '1961-04-12 6:07'
+>>> datetime.strptime(x, '%Y-%m-%d %H:%M')
+datetime.datetime(1961, 4, 12, 6, 7)
+
+
+String Fitting
+--------------
+If there are any other characters in the string, such as commas, brackets
+spaces, colons, dashes etc, they should be reflected in the format string.
+
+>>> x = 'Apr 21st, 61 6:07 am'
+>>> datetime.strptime(x, '%b %dst, %y %I:%M %p')
+datetime.datetime(1961, 4, 12, 6, 7)
+
+>>> x = '12 April 1961, at 6:07 am'
+>>> datetime.strptime(x, '%d %B %Y, at %I:%M %p %Z')
+datetime.datetime(1961, 4, 12, 6, 7)
+
+Omitting any of those values will result with an error:
+
+>>> x = '12 April 1961, at 6:07 am'
+>>> datetime.strptime(x, '%d %B %Y, %I:%M %p')
+Traceback (most recent call last):
+ValueError: time data '12 April 1961, at 6:07 am' does not match format '%d %B %Y, %I:%M %p'
+
+
+Time Zone
+---------
+* More information in `Datetime Timezone`
+
+>>> x = '12 April 1961, at 6:07 am UTC'
+>>> datetime.strptime(x, '%d %B %Y, at %I:%M %p %Z')
+datetime.datetime(1961, 4, 12, 6, 7)
+
+>>> x = '1961-04-12 06:07 local'
+>>> datetime.strptime(x, '%Y-%m-%d %H:%M')
+Traceback (most recent call last):
+ValueError: unconverted data remains:  local
+
+>>> x = '1961-04-12 06:07 local'
+>>> datetime.strptime(x, '%Y-%m-%d %H:%M %Z')
+Traceback (most recent call last):
+ValueError: time data '1961-04-12 06:07 local' does not match format '%Y-%m-%d %H:%M %Z'
+
+>>> x = '1961-04-12 06:07 local'
+>>> datetime.strptime(x, '%Y-%m-%d %H:%M local')
+datetime.datetime(1961, 4, 12, 6, 7)
+
+
+Parsing Parameters
+------------------
+.. csv-table:: Date and time parsing parameters
+    :header-rows: 1
+    :widths: 5,35,60
+    :file: data/datetime-formatting.csv
+
+.. todo:: Convert table into smaller parts, based on categories: months, day, hour etc.
+
+
+Use Case - 0x01
+---------------
 >>> from datetime import datetime
 >>>
 >>>
@@ -48,16 +104,6 @@ WARNING
 First step on the Moon
 
 
-Parsing Parameters
-------------------
-.. csv-table:: Date and time parsing parameters
-    :header-rows: 1
-    :widths: 5,35,60
-    :file: data/datetime-formatting.csv
-
-.. todo:: Convert table into smaller parts, based on categories: months, day, hour etc.
-
-
 
 Assignments
 -----------
@@ -75,8 +121,4 @@ Assignments
 
 .. literalinclude:: assignments/datetime_parse_d.py
     :caption: :download:`Solution <assignments/datetime_parse_d.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/datetime_parse_e.py
-    :caption: :download:`Solution <assignments/datetime_parse_e.py>`
     :end-before: # Solution

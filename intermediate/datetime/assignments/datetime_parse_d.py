@@ -15,13 +15,15 @@ Polish:
 Hints:
     * `for ... in`
     * nested `try ... except`
+    * 24-hour clock
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
     >>> assert type(result) is list, \
     'Variable `result` has invalid type, must be a list'
-
     >>> assert all(type(element) is datetime for element in result), \
     'All elements in `result` must be a datetime'
 
@@ -35,9 +37,9 @@ from datetime import datetime
 
 
 DATA = [
-    '1957-10-04 19:28:34',  # Sputnik launch (first satellite in space)
-    '1961-04-12 06:07',  # Gagarin launch (first human in space)
-    '1969-07-21T02:56:15',  # Armstrong first step on the Moon
+    'Oct 4, 1957 19:28:34',  # Sputnik launch (first satellite in space)
+    'April 12, 1961 6:07',  # Gagarin launch (first human in space)
+    'July 21, 1969 2:56:15',  # Armstrong first step on the Moon
 ]
 
 # list[datetime]: DATA elements in datetime format
@@ -48,12 +50,10 @@ result = []
 
 for line in DATA:
     try:
-        date = datetime.strptime(line, '%Y-%m-%d %H:%M:%S')
-        result.append(date)
+        dt = datetime.strptime(line, '%b %d, %Y %H:%M:%S')
     except ValueError:
         try:
-            date = datetime.strptime(line, '%Y-%m-%d %H:%M')
-            result.append(date)
+            dt = datetime.strptime(line, '%B %d, %Y %H:%M')
         except ValueError:
-            date = datetime.strptime(line, '%Y-%m-%dT%H:%M:%S')
-            result.append(date)
+            dt = datetime.strptime(line, '%B %d, %Y %H:%M:%S')
+    result.append(dt)

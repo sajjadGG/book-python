@@ -144,11 +144,11 @@ Duration
 >>> YEAR = 365.2425 * DAY  # Solar calendar
 >>>
 >>>
->>> def duration(dt):
-...     years, seconds = divmod(dt.total_seconds(), YEAR)
+>>> def duration(td):
+...     years, seconds = divmod(td.total_seconds(), YEAR)
 ...     months, seconds = divmod(seconds, MONTH)
 ...     days, seconds = divmod(seconds, DAY)
-...     hours, seconds = divmod(dt.seconds, HOUR)
+...     hours, seconds = divmod(td.seconds, HOUR)
 ...     minutes, seconds = divmod(seconds, MINUTE)
 ...     return {
 ...         'years': int(years),
@@ -162,11 +162,11 @@ Duration
 >>> gagarin = datetime(1961, 4, 12, 6, 7)
 >>> armstrong = datetime(1969, 7, 21, 2, 56, 15)
 >>>
->>> dt = armstrong - gagarin
->>> dt
+>>> td = armstrong - gagarin
+>>> td
 datetime.timedelta(days=3021, seconds=74955)
 >>>
->>> duration(dt)
+>>> duration(td)
 {'years': 8, 'months': 3, 'days': 8, 'hours': 20, 'minutes': 49, 'seconds': 15}
 
 

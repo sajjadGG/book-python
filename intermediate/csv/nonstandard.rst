@@ -5,6 +5,7 @@ CSV Non-Standard
 SSHd Config
 -----------
 * ``/etc/ssh/sshd_config``
+* ``delimiter=' '``
 
 .. code-block:: text
 
@@ -24,6 +25,7 @@ SSHd Config
 Config
 ------
 * ``/etc/postgresql/12/main/postgresql.conf``
+* ``delimiter=' = '``
 
 .. code-block:: text
 
@@ -41,6 +43,7 @@ Config
 Properties
 ----------
 * Java properties
+* ``delimiter='='``
 
 .. code-block:: text
 
@@ -53,33 +56,11 @@ Properties
 >>> delimiter = '='
 >>> result = [row.split(delimiter) for row in DATA.splitlines()]  # doctest: +SKIP
 
-.. code-block:: python
-
-    import csv
-
-    FILE = r'_temporary.properties'
-
-    with open(FILE) as file:
-        result = csv.DictReader(
-            file,
-            fieldnames=['property', 'value'],
-            delimiter='=',
-            lineterminator='\n',
-            quoting=csv.QUOTE_NONE)
-
-        for line in result:
-            print(line)
-
-    # {'property': 'sonar.projectKey', 'value': 'MP'}
-    # {'property': 'sonar.projectName', 'value': 'MyProject'}
-    # {'property': 'sonar.language', 'value': 'py'}
-    # {'property': 'sonar.sourceEncoding', 'value': 'UTF-8'}
-    # {'property': 'sonar.verbose', 'value': 'true'}
-
 
 Passwd
 ------
 * ``/etc/passwd``
+* ``delimiter=':'``
 
 .. code-block:: text
 
@@ -91,32 +72,10 @@ Passwd
 >>> delimiter = ':'
 >>> result = [row.split(delimiter) for row in DATA.splitlines()]  # doctest: +SKIP
 
-.. code-block:: python
-
-    import csv
-
-
-    FILE = r'_temporary.txt'
-
-    with open(FILE) as file:
-        result = csv.DictReader(
-            file,
-            fieldnames=['username', 'password', 'uid', 'gid', 'fullname', 'home', 'shell'],
-            delimiter=':',
-            lineterminator='\n',
-            quoting=csv.QUOTE_NONE)
-
-        for line in result:
-            print(line)
-
-    # {'username': 'root', 'password': 'x', 'uid': '0',...}
-    # {'username': 'watney', 'password': 'x', 'uid': '1000',...}
-    # {'username': 'lewis', 'password': 'x', 'uid': '1001',...}
-    # {'username': 'twardowski', 'password': 'x', 'uid': '1002',...}
-
-
 Hosts
 -----
+* ``delimiter='\s+'``
+
 .. code-block:: text
 
     ##
@@ -135,6 +94,7 @@ Hosts
 Crontab
 -------
 * /etc/crontab
+* ``delimiter=' '``
 
 .. code-block:: text
 
@@ -152,6 +112,7 @@ Key-Value
 ---------
 * /etc/locate.rc
 * ``.env`` from Docker
+* ``delimiter='='``
 
 .. code-block:: text
 
@@ -186,6 +147,8 @@ Key-Value
 
 Sensors
 -------
+* ``delimiter=';'``
+
 .. code-block:: text
 
     Name;Long;Lat;ModuleName;ModuleType
@@ -199,3 +162,41 @@ Sensors
     1622500214;"2021/06/01 00:30:14";22.5;46;877;31;1019
     1622500517;"2021/06/01 00:35:17";22.4;46;873;32;1019
 
+
+>>> DATA= """Name;Long;Lat;ModuleName;ModuleType
+... "European Astronaut Centre (EAC) - ESA";50.8524881,7.1315254;;Indoor
+... Timestamp;"Timezone : Europe/Berlin";Temperature;Humidity;CO2;Noise;Pressure
+... 1622498702;"2021/06/01 00:05:02";22.6;46;981;32;1019.1
+... 1622499004;"2021/06/01 00:10:04";22.6;46;981;31;1019.1
+... 1622499306;"2021/06/01 00:15:06";22.6;46;968;32;1019.1
+... 1622499608;"2021/06/01 00:20:08";22.5;46;940;31;1019.1
+... 1622499912;"2021/06/01 00:25:12";22.5;46;907;32;1019
+... 1622500214;"2021/06/01 00:30:14";22.5;46;877;31;1019
+... 1622500517;"2021/06/01 00:35:17";22.4;46;873;32;1019"""
+>>>
+>>>
+>>> metadata_header, metadata_values, data_header, *data_values = DATA.splitlines()
+>>>
+>>> metadata_header = metadata_header.split(';')
+>>> metadata_values = metadata_values.split(';')
+>>> data_header = data_header.split(';')
+>>> data_values = [line.split(';') for line in data_values]
+>>>
+>>>
+>>> metadata_header
+['Name', 'Long', 'Lat', 'ModuleName', 'ModuleType']
+>>>
+>>> metadata_values
+['"European Astronaut Centre (EAC) - ESA"', '50.8524881,7.1315254', '', 'Indoor']
+>>>
+>>> data_header
+['Timestamp', '"Timezone : Europe/Berlin"', 'Temperature', 'Humidity', 'CO2', 'Noise', 'Pressure']
+>>>
+>>> data_values  # doctest: +NORMALIZE_WHITESPACE
+[['1622498702', '"2021/06/01 00:05:02"', '22.6', '46', '981', '32', '1019.1'],
+ ['1622499004', '"2021/06/01 00:10:04"', '22.6', '46', '981', '31', '1019.1'],
+ ['1622499306', '"2021/06/01 00:15:06"', '22.6', '46', '968', '32', '1019.1'],
+ ['1622499608', '"2021/06/01 00:20:08"', '22.5', '46', '940', '31', '1019.1'],
+ ['1622499912', '"2021/06/01 00:25:12"', '22.5', '46', '907', '32', '1019'],
+ ['1622500214', '"2021/06/01 00:30:14"', '22.5', '46', '877', '31', '1019'],
+ ['1622500517', '"2021/06/01 00:35:17"', '22.4', '46', '873', '32', '1019']]

@@ -1,11 +1,11 @@
 """
-* Assignment: Datetime Timezone Define
+* Assignment: Datetime Timezone Pytz
 * Complexity: easy
-* Lines of code: 5 lines
+* Lines of code: 13 lines
 * Time: 13 min
 
 English:
-    1. Create `timezone` object of:
+    1. Create `pytz.timezone` object of:
         a. UTC
         b. London, United Kingdom
         c. Moscow, Russian Federation
@@ -18,7 +18,7 @@ English:
     3. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz obiekt `timezone` z:
+    1. Stwórz obiekt `pytz.timezone` z:
         a. UCT
         b. London, Wielka Brytania
         c. Moscow, Rosja
@@ -49,42 +49,57 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from pytz.tzinfo import DstTzInfo, BaseTzInfo
 
+    >>> assert utc is not Ellipsis, \
+    'Assign value to variable `utc` has instead of Ellipsis (...)'
+    >>> assert london is not Ellipsis, \
+    'Assign value to variable `london` instead of Ellipsis (...)'
+    >>> assert moscow is not Ellipsis, \
+    'Assign value to variable `moscow` instead of Ellipsis (...)'
+    >>> assert warsaw is not Ellipsis, \
+    'Assign value to variable `warsaw` instead of Ellipsis (...)'
+    >>> assert tokyo is not Ellipsis, \
+    'Assign value to variable `tokyo` instead of Ellipsis (...)'
+    >>> assert sydney is not Ellipsis, \
+    'Assign value to variable `sydney` instead of Ellipsis (...)'
+    >>> assert auckland is not Ellipsis, \
+    'Assign value to variable `auckland` instead of Ellipsis (...)'
+    >>> assert new_york is not Ellipsis, \
+    'Assign value to variable `new_york` instead of Ellipsis (...)'
+    >>> assert cape_canaveral is not Ellipsis, \
+    'Assign value to variable `cape_canaveral` instead of Ellipsis (...)'
+    >>> assert houston is not Ellipsis, \
+    'Assign value to variable `houston` instead of Ellipsis (...)'
+    >>> assert bajkonur is not Ellipsis, \
+    'Assign value to variable `bajkonur` instead of Ellipsis (...)'
+    >>> assert north_pole is not Ellipsis, \
+    'Assign value to variable `north_pole` instead of Ellipsis (...)'
+    >>> assert south_pole is not Ellipsis, \
+    'Assign value to variable `south_pole` instead of Ellipsis (...)'
+
     >>> assert isinstance(utc, BaseTzInfo), \
     'Variable `utc` has invalid type, must be a BaseTzInfo'
-
     >>> assert isinstance(london, DstTzInfo), \
     'Variable `london` has invalid type, must be a DstTzInfo'
-
     >>> assert isinstance(moscow, DstTzInfo), \
     'Variable `moscow` has invalid type, must be a DstTzInfo'
-
     >>> assert isinstance(warsaw, DstTzInfo), \
     'Variable `warsaw` has invalid type, must be a DstTzInfo'
-
     >>> assert isinstance(tokyo, DstTzInfo), \
     'Variable `tokyo` has invalid type, must be a DstTzInfo'
-
     >>> assert isinstance(sydney, DstTzInfo), \
     'Variable `sydney` has invalid type, must be a DstTzInfo'
-
     >>> assert isinstance(auckland, DstTzInfo), \
     'Variable `auckland` has invalid type, must be a DstTzInfo'
-
     >>> assert isinstance(new_york, DstTzInfo), \
     'Variable `new_york` has invalid type, must be a DstTzInfo'
-
     >>> assert isinstance(cape_canaveral, DstTzInfo), \
     'Variable `cape_canaveral` has invalid type, must be a DstTzInfo'
-
     >>> assert isinstance(houston, DstTzInfo), \
     'Variable `houston` has invalid type, must be a DstTzInfo'
-
     >>> assert isinstance(bajkonur, DstTzInfo), \
     'Variable `bajkonur` has invalid type, must be a DstTzInfo'
-
     >>> assert isinstance(north_pole, DstTzInfo), \
     'Variable `north_pole` has invalid type, must be a DstTzInfo'
-
     >>> assert isinstance(south_pole, DstTzInfo), \
     'Variable `south_pole` has invalid type, must be a DstTzInfo'
 
@@ -120,43 +135,43 @@ from pytz import timezone
 
 
 # timezone in UTC
-utc: timezone = ...
+utc = ...
 
 # timezone in London, United Kingdom
-london: timezone = ...
+london = ...
 
 # timezone in Moscow, Russian Federation
-moscow: timezone = ...
+moscow = ...
 
 # timezone in Warsaw, Poland
-warsaw: timezone = ...
+warsaw = ...
 
 # timezone in Tokyo, Japan
-tokyo: timezone = ...
+tokyo = ...
 
 # timezone in Sydney, Australia
-sydney: timezone = ...
+sydney = ...
 
 # timezone in Auckland, New Zealand
-auckland: timezone = ...
+auckland = ...
 
 # timezone in New York, USA
-new_york: timezone = ...
+new_york = ...
 
 # timezone in Cape Canaveral, FL, USA
-cape_canaveral: timezone = ...
+cape_canaveral = ...
 
 # timezone in Houston, TX, USA= ...
-houston: timezone = ...
+houston = ...
 
 # timezone in Bajkonur Cosmodrome, Kazachstan
-bajkonur: timezone = ...
+bajkonur = ...
 
 # timezone in North Pole
-north_pole: timezone = ...
+north_pole = ...
 
 # timezone in South Pole
-south_pole: timezone = ...
+south_pole = ...
 
 # Solution
 utc = timezone('UTC')

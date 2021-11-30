@@ -12,9 +12,14 @@ Polish:
     1. Zdefiniuj `result: datetime` ze sparsowaną datą `DATA`
     2. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * 12-hour clock
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
     >>> assert type(result) is datetime, \
     'Variable `result` has invalid type, must be a datetime'
 
@@ -31,4 +36,4 @@ DATA = 'July 21, 1969 2:56:15 AM'
 result = ...
 
 # Solution
-result = datetime.strptime(DATA, '%B %d, %Y %H:%M:%S %p')
+result = datetime.strptime(DATA, '%B %d, %Y %I:%M:%S %p')

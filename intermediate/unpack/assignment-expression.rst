@@ -14,13 +14,112 @@ known as "the walrus operator". The construct's formal name is
 also be referred to as "Named Expressions". The CPython reference
 implementation uses that name internally). [#pep572]_
 
+Guido van Rossum stepped down after accepting :pep:`572` -- Assignment Expressions:
+
+.. figure:: img/unpack-assignmentexpr-bdfl.png
+
 
 Syntax
 ------
+Scalar:
+
 .. code-block:: python
 
     (x := <VALUE>)
 
+Comprehension:
+
+.. code-block:: python
+
+    result = [<RETURN>
+              for <VARIABLE1> in <ITERABLE>
+              if (<VARIABLE2> := <EXPR>)]
+
+.. code-block:: python
+
+    result = [<RETURN>
+              for <VARIABLE1> in <ITERABLE>
+              if (<VARIABLE2> := <EXPR>)
+              and (<VARIABLE3> := <EXPR>)]
+
+.. code-block:: python
+
+    result = [<RETURN>
+              for <VARIABLE1> in <ITERABLE>
+              if (<VARIABLE2> := <EXPR>)
+              and (<VARIABLE3> := <EXPR>)
+              or (<VARIABLE4> := <EXPR>)]
+
+
+Processing Streams
+------------------
+* Processing steams in chunks:
+
+>>> # doctest: +SKIP
+... file = open('myfile.txt')
+... chunk = file.read(100)
+...
+... while chunk:
+...     print(chunk)
+...     chunk = file.read(100)
+
+>>> # doctest: +SKIP
+... file = open('myfile.txt')
+...
+... while chunk := file.read(100):
+...     print(chunk)
+
+
+Checking Match
+--------------
+>>> import re
+>>>
+>>>
+>>> DATA = 'mark.watney@nasa.gov'
+>>>
+>>> result = re.search(r'@nasa.gov', DATA)
+>>> if result:
+...     print(result)
+<re.Match object; span=(11, 20), match='@nasa.gov'>
+
+>>> import re
+>>>
+>>>
+>>> DATA = 'mark.watney@nasa.gov'
+>>>
+>>> if result := re.search(r'@nasa.gov', DATA):
+...     print(result)
+<re.Match object; span=(11, 20), match='@nasa.gov'>
+
+
+Comprehensions
+--------------
+>>> DATA = ['Jan Twardowski',
+...         'Melissa Lewis',
+...         'Mark Watney']
+>>>
+>>>
+>>> result = [{'firstname': fullname.split()[0],
+...            'lastname': fullname.split()[1]}
+...           for fullname in DATA]
+>>>
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[{'firstname': 'Jan', 'lastname': 'Twardowski'},
+ {'firstname': 'Melissa', 'lastname': 'Lewis'},
+ {'firstname': 'Mark', 'lastname': 'Watney'}]
+>>>
+>>> result = [{'firstname': name[0], 'lastname': name[1]}
+...           for fullname in DATA
+...           if (name := fullname.split())]
+>>>
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[{'firstname': 'Jan', 'lastname': 'Twardowski'},
+ {'firstname': 'Melissa', 'lastname': 'Lewis'},
+ {'firstname': 'Mark', 'lastname': 'Watney'}]
+
+
+What is not
+-----------
 It's not substitution for equals:
 
 >>> x = 1
@@ -73,14 +172,10 @@ SyntaxError: invalid syntax
 Traceback (most recent call last):
 SyntaxError: cannot use assignment expressions with subscript
 
-Guido van Rossum stepped down after accepting :pep:`572` -- Assignment Expressions:
 
-.. figure:: img/unpack-assignmentexpr-bdfl.png
-
-
-Example
--------
-Reusing Results:
+Use Case - 0x01
+---------------
+* Reusing Results
 
 >>> def f(x):
 ...     return 1
@@ -90,186 +185,9 @@ Reusing Results:
 >>>
 >>> result = [res := f(x), res+1, res+2]
 
-Processing Steams in Chunks:
 
->>> # doctest: +SKIP
-...
-... file = open('_temporary.txt')
-... chunk = file.read(8192)
-...
-... while chunk:
-...     print(chunk)
-...     chunk = file.read(8192)
-
->>> # doctest: +SKIP
-...
-... file = open('_temporary.txt')
-...
-... while chunk := file.read(8192):
-...     print(chunk)
-
-
-Checking Match
---------------
->>> import re
->>>
->>>
->>> DATA = 'mark.watney@nasa.gov'
->>> result = re.search(r'@nasa.gov', DATA)
->>>
->>> if result:
-...     print(result)
-<re.Match object; span=(11, 20), match='@nasa.gov'>
-
->>> import re
->>>
->>>
->>> DATA = 'mark.watney@nasa.gov'
->>>
->>> if result := re.search(r'@nasa.gov', DATA):
-...     print(result)
-<re.Match object; span=(11, 20), match='@nasa.gov'>
-
-
-Patterns
---------
->>> import re
->>>
->>>
->>> data = 'mark.watney@nasa.gov'
->>> pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
->>>
->>> match = re.match(pattern, data)
->>> result = match.groups() if match else None
->>>
->>> print(result)
-('mark', 'watney')
-
->>> import re
->>>
->>>
->>> data = 'mark.watney@nasa.gov'
->>> pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
->>>
->>> result = re.match(pattern, data).groups() if re.match(pattern, data) else None
->>>
->>> print(result)
-('mark', 'watney')
-
->>> import re
->>>
->>>
->>> data = 'mark.watney@nasa.gov'
->>> pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
->>>
->>> result = x.groups() if (x := re.match(pattern, data)) else None
->>>
->>> print(result)
-('mark', 'watney')
-
-
-Comprehensions
---------------
->>> result = [x for x in range(0,10)]
->>> result = [x for x in range(0,10) if x%2 == 0]
-
->>> DATA = ['Jan Twardowski',
-...         'Melissa Lewis',
-...         'Mark Watney']
->>>
->>>
->>> result = [{'firstname': fullname.split()[0],
-...            'lastname': fullname.split()[1]}
-...           for fullname in DATA]
->>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[{'firstname': 'Jan', 'lastname': 'Twardowski'},
- {'firstname': 'Melissa', 'lastname': 'Lewis'},
- {'firstname': 'Mark', 'lastname': 'Watney'}]
->>>
->>> result = [{'firstname': name[0], 'lastname': name[1]}
-...           for fullname in DATA
-...           if (name := fullname.split())]
->>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[{'firstname': 'Jan', 'lastname': 'Twardowski'},
- {'firstname': 'Melissa', 'lastname': 'Lewis'},
- {'firstname': 'Mark', 'lastname': 'Watney'}]
-
-Syntax:
-
-.. code-block:: python
-
-    result = [<RETURN>
-              for <VARIABLE1> in <ITERABLE>
-              if (<VARIABLE2> := <EXPR>)]
-
-.. code-block:: python
-
-    result = [<RETURN>
-              for <VARIABLE1> in <ITERABLE>
-              if (<VARIABLE2> := <EXPR>)
-              and (<VARIABLE3> := <EXPR>)]
-
-.. code-block:: python
-
-    result = [<RETURN>
-              for <VARIABLE1> in <ITERABLE>
-              if (<VARIABLE2> := <EXPR>)
-              and (<VARIABLE3> := <EXPR>)
-              or (<VARIABLE4> := <EXPR>)]
-
->>> DATA = ['5.8,2.7,5.1,1.9,virginica',
-...         '5.1,3.5,1.4,0.2,setosa',
-...         '5.7,2.8,4.1,1.3,versicolor']
->>>
->>> result = []
->>>
->>> for line in DATA:
-...     line = line.split(',')
-...     result.append(line[0:4])
->>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[['5.8', '2.7', '5.1', '1.9'],
- ['5.1', '3.5', '1.4', '0.2'],
- ['5.7', '2.8', '4.1', '1.3']]
->>>
->>> result = [line.split(',')[0:4] for line in DATA]
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[['5.8', '2.7', '5.1', '1.9'],
- ['5.1', '3.5', '1.4', '0.2'],
- ['5.7', '2.8', '4.1', '1.3']]
-
->>> DATA = ['5.8,2.7,5.1,1.9,virginica',
-...         '5.1,3.5,1.4,0.2,setosa',
-...         '5.7,2.8,4.1,1.3,versicolor']
->>>
->>> result = []
->>>
->>> for line in DATA:
-...     X = [float(x) for x in line.split(',')[0:4]]
-...     result.append(X)
->>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[[5.8, 2.7, 5.1, 1.9],
- [5.1, 3.5, 1.4, 0.2],
- [5.7, 2.8, 4.1, 1.3]]
->>>
->>> result = [[float(x) for x in line.split(',')[0:4]]
-...           for line in DATA]
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[[5.8, 2.7, 5.1, 1.9],
- [5.1, 3.5, 1.4, 0.2],
- [5.7, 2.8, 4.1, 1.3]]
->>>
->>> result = [[float(x) for x in X]
-...           for line in DATA
-...           if (X := line.split(',')[0:4])]
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[[5.8, 2.7, 5.1, 1.9],
- [5.1, 3.5, 1.4, 0.2],
- [5.7, 2.8, 4.1, 1.3]]
-
+Use Case - 0x02
+---------------
 >>> DATA = ['5.8,2.7,5.1,1.9,virginica',
 ...         '5.1,3.5,1.4,0.2,setosa',
 ...         '5.7,2.8,4.1,1.3,versicolor']
@@ -286,8 +204,8 @@ Syntax:
  [5.7, 2.8, 4.1, 1.3, 'versicolor']]
 
 
-Use Case
---------
+Use Case - 0x03
+---------------
 >>> DATA = [{'is_astronaut': True,  'name': 'JaN TwarDOwski'},
 ...         {'is_astronaut': True,  'name': 'Mark Jim WaTNey'},
 ...         {'is_astronaut': False, 'name': 'José Maria Jiménez'},
@@ -306,19 +224,14 @@ Use Case
 ...           if person['is_astronaut']
 ...           and (name := person['name'].title().split())]
 >>>
->>> result = [{'firstname': fname,
-...            'lastname': lname}
-...           for person in DATA
-...           if person['is_astronaut']
-...           and (name := person['name'].title().split())
-...           and (fname := name[0])
-...           and (lname := name[-1])]
->>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 [{'firstname': 'Jan', 'lastname': 'Twardowski'},
  {'firstname': 'Mark', 'lastname': 'Watney'},
  {'firstname': 'Melissa', 'lastname': 'Lewis'}]
 
+
+Use Case - 0x04
+---------------
 >>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
 ...         {'is_astronaut': True,  'name': 'Mark Watney'},
 ...         {'is_astronaut': False, 'name': 'José Jiménez'},
@@ -338,6 +251,9 @@ Use Case
  {'firstname': 'Mark', 'lastname': 'W.'},
  {'firstname': 'Melissa', 'lastname': 'L.'}]
 
+
+Use Case - 0x05
+---------------
 >>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
 ...         {'is_astronaut': True,  'name': 'Mark Watney'},
 ...         {'is_astronaut': False, 'name': 'José Jiménez'},
@@ -356,6 +272,9 @@ Use Case
 >>> print(astronauts)
 ['Jan T.', 'Mark W.', 'Melissa L.']
 
+
+Use Case - 0x06
+---------------
 >>> from dataclasses import dataclass
 >>>
 >>>
@@ -403,9 +322,47 @@ Use Case
  Versicolor(sepal_length=7.0, sepal_width=3.2, petal_length=4.7, petal_width=1.4)]
 
 
+Use Case - 0x07
+---------------
+>>> import re
+>>>
+>>>
+>>> data = 'mark.watney@nasa.gov'
+>>> pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
+>>>
+>>> match = re.match(pattern, data)
+>>> result = match.groups() if match else None
+>>>
+>>> print(result)
+('mark', 'watney')
+
+>>> import re
+>>>
+>>>
+>>> data = 'mark.watney@nasa.gov'
+>>> pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
+>>>
+>>> result = re.match(pattern, data).groups() if re.match(pattern, data) else None
+>>>
+>>> print(result)
+('mark', 'watney')
+
+>>> import re
+>>>
+>>>
+>>> data = 'mark.watney@nasa.gov'
+>>> pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
+>>>
+>>> result = x.groups() if (x := re.match(pattern, data)) else None
+>>>
+>>> print(result)
+('mark', 'watney')
+
+
+
 References
 ----------
-.. [#pep572] Angelico, C. and Peters T. and van Rossum, G. PEP 572 -- Assignment Expressions. Python Software Foundation. Year: 2018. Retrieved: 2020-12-04. Url: https://www.python.org/dev/peps/pep-0572/#abstract
+.. [#pep572] Angelico, C. and Peters, T. and van Rossum, G. PEP 572 -- Assignment Expressions. Python Software Foundation. Year: 2018. Retrieved: 2020-12-04. Url: https://www.python.org/dev/peps/pep-0572/#abstract
 
 
 Assignments

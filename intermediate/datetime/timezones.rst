@@ -169,6 +169,36 @@ Between timezones:
 datetime.datetime(1961, 4, 12, 1, 59, tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
 
 
+Use Case - 0x01
+---------------
+>>> from datetime import datetime
+>>> from zoneinfo import ZoneInfo
+>>>
+>>>
+>>> UTC = ZoneInfo('UTC')
+>>> BAJKONUR = ZoneInfo('Asia/Almaty')
+>>> MOSCOW = ZoneInfo('Europe/Moscow')
+>>> WAW = ZoneInfo('Europe/Warsaw')
+>>> LOS_ANGELES = ZoneInfo('America/Los_Angeles')
+>>>
+>>>
+>>> dt = datetime(1961, 4, 12, 6, 7, tzinfo=UTC)
+>>> dt
+datetime.datetime(1961, 4, 12, 6, 7, tzinfo=zoneinfo.ZoneInfo(key='UTC'))
+>>>
+>>> dt.astimezone(BAJKONUR)
+datetime.datetime(1961, 4, 12, 12, 7, tzinfo=zoneinfo.ZoneInfo(key='Asia/Almaty'))
+>>>
+>>> dt.astimezone(MOSCOW)
+datetime.datetime(1961, 4, 12, 9, 7, tzinfo=zoneinfo.ZoneInfo(key='Europe/Moscow'))
+>>>
+>>> dt.astimezone(WAW)
+datetime.datetime(1961, 4, 12, 7, 7, tzinfo=zoneinfo.ZoneInfo(key='Europe/Warsaw'))
+>>>
+>>> dt.astimezone(LOS_ANGELES)
+datetime.datetime(1961, 4, 11, 22, 7, tzinfo=zoneinfo.ZoneInfo(key='America/Los_Angeles'))
+
+
 Use Case
 --------
 Descriptor Timezone Converter:
@@ -239,4 +269,8 @@ Assignments
 -----------
 .. literalinclude:: assignments/datetime_timezone_a.py
     :caption: :download:`Solution <assignments/datetime_timezone_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/datetime_timezone_b.py
+    :caption: :download:`Solution <assignments/datetime_timezone_b.py>`
     :end-before: # Solution

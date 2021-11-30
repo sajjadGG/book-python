@@ -66,13 +66,9 @@ header = set()
 for row in DATA:
     header.update(row.keys())
 
-pl, pw, sl, sw, s = sorted(header)
-result += f'"{pl}","{pw}","{sl}","{sw}","{s}"\n'
+header = sorted(header)
+result += ','.join(f'"{x}"' for x in header) + '\n'
 
 for row in DATA:
-    pl = row.get('Petal length', '')
-    pw = row.get('Petal width', '')
-    sl = row.get('Sepal length', '')
-    sw = row.get('Sepal width', '')
-    s = row.get('Species', '')
-    result += f'"{pl}","{pw}","{sl}","{sw}","{s}"\n'
+    row = {h:row.get(h, '') for h in header}
+    result += ','.join(f'"{x}"' for x in row.values()) + '\n'

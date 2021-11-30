@@ -1,5 +1,5 @@
 """
-* Assignment: Datetime Parse Logs
+* Assignment: Datetime ISO Logs
 * Complexity: medium
 * Lines of code: 13 lines
 * Time: 8 min
@@ -28,15 +28,19 @@ References:
 
 Hints:
     * `str.splitlines()`
+    * `str.split()`
     * `str.split(', ', maxsplit=3)`
-    * `try ... except`
+    * `date.fromisoformat()`
+    * `time.fromisoformat()`
+    * `datetime.combine()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
     >>> assert type(result) is list, \
     'Variable `result` has invalid type, must be a list'
-
     >>> assert all(type(row) is dict for row in result), \
     'All elements in result must be dict'
 

@@ -25,25 +25,34 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert dt is not Ellipsis, \
+    'Assign result to variable: `dt`'
+    >>> assert d is not Ellipsis, \
+    'Assign result to variable: `d`'
+    >>> assert t is not Ellipsis, \
+    'Assign result to variable: `t`'
+    >>> assert type(dt) is datetime, \
+    'Variable `dt` has invalid type, must be a datetime'
     >>> assert type(d) is date, \
-    'Variable `dt` has invalid type, must be a date'
-
+    'Variable `d` has invalid type, must be a date'
     >>> assert type(t) is time, \
     'Variable `t` has invalid type, must be a time'
 
-    >>> assert type(dt) is datetime, \
-    'Variable `dt` has invalid type, must be a datetime'
+    >>> print(d)
+    1961-04-12
 
-    >>> str(d)
-    '1961-04-12'
-    >>> str(t)
-    '06:07:00'
-    >>> str(dt)
-    '1961-04-12 06:07:00'
+    >>> print(t)
+    06:07:00
+
+    >>> print(dt)
+    1961-04-12 06:07:00
 """
 
 from datetime import date, datetime, time
 
+
+# datetime: representing April 12th, 1961 6:07 a.m.
+dt = ...
 
 # date: representing April 12th, 1961 6:07 a.m.
 d = ...
@@ -51,10 +60,7 @@ d = ...
 # time: representing April 12th, 1961 6:07 a.m.
 t = ...
 
-# datetime: representing April 12th, 1961 6:07 a.m.
-dt = ...
-
 # Solution
+dt = datetime(1961, 4, 12, 6, 7)
 d = date(1961, 4, 12)
 t = time(6, 7)
-dt = datetime.combine(d, t)

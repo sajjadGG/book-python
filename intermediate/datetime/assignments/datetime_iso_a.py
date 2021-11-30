@@ -2,7 +2,7 @@
 * Assignment: Datetime ISO Format
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
     1. Define `result: str` with `DATA` converted to ISO-8601 format

@@ -203,3 +203,11 @@ Assignments
 .. literalinclude:: assignments/datetime_iso_b.py
     :caption: :download:`Solution <assignments/datetime_iso_b.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/datetime_iso_c.py
+    :caption: :download:`Solution <assignments/datetime_iso_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/datetime_iso_d.py
+    :caption: :download:`Solution <assignments/datetime_iso_d.py>`
+    :end-before: # Solution

@@ -21,12 +21,16 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert d is not Ellipsis, \
+    'Assign result to variable: `d`'
+    >>> assert t is not Ellipsis, \
+    'Assign result to variable: `t`'
+    >>> assert dt is not Ellipsis, \
+    'Assign result to variable: `dt`'
     >>> assert type(dt) is datetime, \
     'Variable `dt` has invalid type, must be a datetime'
-
     >>> assert type(d) is date, \
     'Variable `dt` has invalid type, must be a date'
-
     >>> assert type(t) is time, \
     'Variable `t` has invalid type, must be a time'
 """
