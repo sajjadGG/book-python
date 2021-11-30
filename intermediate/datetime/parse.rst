@@ -34,18 +34,18 @@ String Fitting
 If there are any other characters in the string, such as commas, brackets
 spaces, colons, dashes etc, they should be reflected in the format string.
 
->>> x = 'Apr 21st, 61 6:07 am'
->>> datetime.strptime(x, '%b %dst, %y %I:%M %p')
+>>> x = 'Apr 12th, 61 6:07 am'
+>>> datetime.strptime(x, '%b %dth, %y %I:%M %p')
 datetime.datetime(1961, 4, 12, 6, 7)
 
->>> x = '12 April 1961, at 6:07 am'
->>> datetime.strptime(x, '%d %B %Y, at %I:%M %p %Z')
+>>> x = '12 April 1961 at 6:07 am'
+>>> datetime.strptime(x, '%d %B %Y at %I:%M %p')
 datetime.datetime(1961, 4, 12, 6, 7)
 
 Omitting any of those values will result with an error:
 
->>> x = '12 April 1961, at 6:07 am'
->>> datetime.strptime(x, '%d %B %Y, %I:%M %p')
+>>> x = '12 April 1961 at 6:07 am'
+>>> datetime.strptime(x, '%d %B %Y %I:%M %p')
 Traceback (most recent call last):
 ValueError: time data '12 April 1961, at 6:07 am' does not match format '%d %B %Y, %I:%M %p'
 
@@ -54,21 +54,21 @@ Time Zone
 ---------
 * More information in `Datetime Timezone`
 
->>> x = '12 April 1961, at 6:07 am UTC'
->>> datetime.strptime(x, '%d %B %Y, at %I:%M %p %Z')
+>>> x = '12 April 1961 6:07 UTC'
+>>> datetime.strptime(x, '%d %B %Y %H:%M %Z')
 datetime.datetime(1961, 4, 12, 6, 7)
 
->>> x = '1961-04-12 06:07 local'
+>>> x = '1961-04-12 6:07 local'
 >>> datetime.strptime(x, '%Y-%m-%d %H:%M')
 Traceback (most recent call last):
 ValueError: unconverted data remains:  local
 
->>> x = '1961-04-12 06:07 local'
+>>> x = '1961-04-12 6:07 local'
 >>> datetime.strptime(x, '%Y-%m-%d %H:%M %Z')
 Traceback (most recent call last):
 ValueError: time data '1961-04-12 06:07 local' does not match format '%Y-%m-%d %H:%M %Z'
 
->>> x = '1961-04-12 06:07 local'
+>>> x = '1961-04-12 6:07 local'
 >>> datetime.strptime(x, '%Y-%m-%d %H:%M local')
 datetime.datetime(1961, 4, 12, 6, 7)
 
