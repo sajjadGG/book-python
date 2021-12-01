@@ -44,9 +44,9 @@ Compiles at every loop iteration, and then matches:
 >>>
 >>> for email in DATA:
 ...     if re.match(valid_email, email):
-...         print('valid   ', email)
+...         print('valid  ', email)
 ...     else:
-...         print('invalid ', email)
+...         print('invalid', email)
 valid   mark.watney@nasa.gov
 valid   Mark.Watney@nasa.gov
 invalid +mark.watney@nasa.gov
@@ -80,9 +80,9 @@ Compiling before loop, hence matching only inside:
 >>>
 >>> for email in DATA:
 ...     if valid_email.match(email):
-...         print('valid   ', email)
+...         print('valid  ', email)
 ...     else:
-...         print('invalid ', email)
+...         print('invalid', email)
 valid   mark.watney@nasa.gov
 valid   Mark.Watney@nasa.gov
 invalid +mark.watney@nasa.gov

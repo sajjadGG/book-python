@@ -255,8 +255,8 @@ Use Case - 0x05
 Drawing line from (0, 0) to (3, 5) with color #FF0000
 >>>
 >>> draw_line(A=(0,0), B=(3,5), color='red')
+Traceback (most recent call last):
 TypeError: Invalid color, possible choices: ['Color.RED', 'Color.GREEN', 'Color.BLUE']
-
 
 
 Use Case - 0x06
