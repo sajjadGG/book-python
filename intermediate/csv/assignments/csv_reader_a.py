@@ -62,6 +62,4 @@ result = []
 
 with open(FILE, mode='r') as file:
     reader = csv.reader(file, lineterminator='\n')
-
-    for row in reader:
-        result.append(tuple(row))
+    result = [tuple(x) for x in reader]

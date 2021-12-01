@@ -125,18 +125,18 @@ Deserialize JSON to list of sequences:
 
 Assignments
 -----------
-.. literalinclude:: assignments/json_tostring_a.py
-    :caption: :download:`Solution <assignments/json_tostring_a.py>`
+.. literalinclude:: assignments/json_string_a.py
+    :caption: :download:`Solution <assignments/json_string_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/json_tostring_b.py
-    :caption: :download:`Solution <assignments/json_tostring_b.py>`
+.. literalinclude:: assignments/json_string_b.py
+    :caption: :download:`Solution <assignments/json_string_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/json_tostring_c.py
-    :caption: :download:`Solution <assignments/json_tostring_c.py>`
+.. literalinclude:: assignments/json_string_c.py
+    :caption: :download:`Solution <assignments/json_string_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/json_tostring_d.py
-    :caption: :download:`Solution <assignments/json_tostring_d.py>`
+.. literalinclude:: assignments/json_string_d.py
+    :caption: :download:`Solution <assignments/json_string_d.py>`
     :end-before: # Solution

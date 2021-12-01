@@ -1,45 +1,54 @@
-RE Non-Greedy
-=============
+RE Lazy
+=======
 
 
 Rationale
 ---------
 * Adding ``?`` after the qualifier makes it non-greedy
-* Non-greedy - as few as possible
-* Greedy - as many as possible
 
-.. csv-table:: Regular Expression Greedy and Non-Greedy Qualifiers
-    :widths: 15, 85
-    :header: "Syntax", "Description"
+Greedy - as many as possible
 
-    "``?``", "zero or one (greedy)"
-    "``*``", "zero or more (greedy)"
-    "``+``", "one or more (greedy)"
-    "``??``", "zero or one (non greedy)"
-    "``*?``", "zero or more (non greedy)"
-    "``+?``", "one or more (non greedy)"
+    * ``?`` - zero or one (greedy)
+    * ``*`` - zero or more (greedy)
+    * ``+`` - one or more (greedy)
+
+Lazy - as few as possible:
+
+    * ``??`` - zero or one (lazy)
+    * ``*?`` - zero or more (lazy)
+    * ``+?`` - one or more (lazy)
+
 
 
 Example
 -------
 Usage of greedy and non-greedy search in ``re.findall()``:
 
-.. code-block:: python
+>>> import re
+>>>
+>>>
+>>> TEXT = '<p>First Paragraph</p>'
 
-    import re
+Greedy:
 
-    TEXT = '<strong>Ehlo World</strong>'
+>>> re.findall(r'<.*>', TEXT)
+['<p>First Paragraph</p>']
 
-    re.findall(r'<.*>', TEXT)         # ['<strong>Ehlo World</strong>']
-    re.findall(r'<.*?>', TEXT)        # ['<strong>', '</strong>']
+Lazy:
 
-Usage of greedy and non-greedy search with groups:
+>>> re.findall(r'<.*?>', TEXT)
+['<p>', '</p>']
 
-.. code-block:: python
+Usage of greedy and lazy search with groups:
 
-    re.findall(r'<(.*)>', TEXT)       # ['strong>Ehlo World</strong']
-    re.findall(r'<(.*?)>', TEXT)      # ['strong', '/strong']
-    re.findall(r'</?(.*?)>', TEXT)    # ['strong', 'strong']
+>>> re.findall(r'<(.*)>', TEXT)
+['p>First Paragraph</p']
+
+>>> re.findall(r'<(.*?)>', TEXT)
+['p', '/p']
+
+>>> re.findall(r'</?(.*?)>', TEXT)
+['p', 'p']
 
 
 Assignments

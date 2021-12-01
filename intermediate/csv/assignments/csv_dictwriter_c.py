@@ -35,13 +35,13 @@ Tests:
     'Variable `result` has invalid type, should be str'
 
     >>> print(result)
-    sepal_length,sepal_width,petal_length,petal_width,species
-    5.1,3.5,1.4,0.2,setosa
-    5.8,2.7,5.1,1.9,virginica
-    5.1,3.5,1.4,0.2,setosa
-    5.7,2.8,4.1,1.3,versicolor
-    6.3,2.9,5.6,1.8,virginica
-    6.4,3.2,4.5,1.5,versicolor
+    petal_length,petal_width,sepal_length,sepal_width,species
+    1.4,0.2,5.1,3.5,setosa
+    5.1,1.9,5.8,2.7,virginica
+    1.4,0.2,5.1,3.5,setosa
+    4.1,1.3,5.7,2.8,versicolor
+    5.6,1.8,6.3,2.9,virginica
+    4.5,1.5,6.4,3.2,versicolor
     <BLANKLINE>
 """
 
@@ -70,9 +70,9 @@ FILE = r'_temporary.txt'
 
 # Solution
 data = [vars(iris) for iris in DATA]
-header = list(data[0].keys())
+header = data[0].keys()
 
 with open(FILE, mode='w', encoding='utf-8') as file:
-    writer = csv.DictWriter(file, fieldnames=header)
+    writer = csv.DictWriter(file, fieldnames=sorted(header))
     writer.writeheader()
     writer.writerows(data)

@@ -83,8 +83,8 @@ Context Dependency Injection
  'born': datetime.date(1994, 10, 12)}
 
 
-Use Case 1
-----------
+Use Case - 0x01
+---------------
 >>> from datetime import datetime, date, time, timedelta
 >>> import json
 >>>
@@ -123,8 +123,8 @@ Use Case 1
  'duration': datetime.timedelta(days=13)}
 
 
-Use Case 2
-----------
+Use Case - 0x02
+---------------
 >>> from datetime import date, time, datetime, timedelta
 >>> import json
 >>>

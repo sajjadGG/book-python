@@ -6,24 +6,15 @@ Rationale
 ---------
 * JavaScript Object Notation
 * JSON format is similar to ``dict`` notation in Python
-* Differences:
+
+Differences:
 
     * Coma ``,`` is not allowed after the last element in list or object
     * Fields are enclosed only by double quote ``"`` character
-    * ``true`` and ``false`` is always lower-cased
+    * ``True`` and ``False`` is always lower-cased (``true``, ``false``)
     * Instead of ``None`` there is ``null``
-    * In JSON there is not ``tuple``
+    * In JSON there is not ``tuple``, it will be converted to ``list``
     * ``camelCase`` is convention, although ``snake_case`` is also valid
-
-Example 1:
-
-.. code-block:: python
-
-    {'firstname': 'Mark', 'lastname': 'Watney'}
-
-.. code-block:: json
-
-    {"firstname": "Mark", "lastname": "Watney"}
 
 Example 2:
 
@@ -36,9 +27,9 @@ Example 2:
     {"name": "Mark Watney", "age": 42, "is_astronaut": true, "died": null}
 
 
-Compare
--------
-JSON or Python ``list[dict]``?:
+JSON or Python?
+---------------
+* JSON or Python ``list[dict]``?
 
 .. code-block:: python
 
@@ -54,8 +45,6 @@ JSON or Python ``list[dict]``?:
               {'name': 'Beth Johansen', 'born': date(2006, 5, 9)},
               {'name': 'Mark Watney', 'born': date(1994, 10, 12)}]}
 
-JSON or Python ``list[dict]``?:
-
 .. code-block:: json
 
     {"mission": "Ares 3",
@@ -69,8 +58,6 @@ JSON or Python ``list[dict]``?:
               {"name": "Chris Beck", "born": "1999-08-02"},
               {"name": "Beth Johansen", "born": "2006-05-09"},
               {"name": "Mark Watney", "born": "1994-10-12"}]}
-
-JSON or Python ``list[dict]``?:
 
 
 Pretty Printing JSON

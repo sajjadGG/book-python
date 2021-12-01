@@ -32,9 +32,9 @@ Day 2
 
     "60m", "Type Annotation"
     "120m", "Daty, czas i strefy czasowe"
-    "120m", "Praca z plikami CSV: (dane nierelacyjne i relacyjne)"
-    "105m", "Praca z plikami JSON (dane nierelacyjne i relacyjne, daty i czas, zagnieżdżone dane relacyjne)"
     "15m", "Serializacja i deserializacja danych z Pickle"
+    "120m", "Praca z plikami CSV (konwersja formatów danych)"
+    "105m", "Praca z plikami JSON (dane nierelacyjne i relacyjne, daty i czas, zagnieżdżone dane relacyjne)"
 
 
 Day 3
@@ -44,8 +44,8 @@ Day 3
     :widths: 15, 85
     :header: "Estimated Time", "Topic"
 
-    "180m", "Wyrażenia regularne (re)"
-    "120m", "Bazy danych: (zapis, odczyt, kursory, relacje, indeksy)"
+    "180m", "Wyrażenia regularne (Identifier, Qualifiers, Quantifiers, Grouping, Flags)"
+    "120m", "Bazy danych: (SQL, zapis, odczyt, kursory, relacje, indeksy)"
     "30m", "Enumeracja (enum)"
     "90m", "Dataclasses (dataclasses)"
 

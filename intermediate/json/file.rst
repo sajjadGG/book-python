@@ -79,10 +79,10 @@ Serialize to JSON:
 
 Assignments
 -----------
-.. literalinclude:: assignments/json_tofile_a.py
-    :caption: :download:`Solution <assignments/json_tofile_a.py>`
+.. literalinclude:: assignments/json_file_a.py
+    :caption: :download:`Solution <assignments/json_file_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/json_tofile_b.py
-    :caption: :download:`Solution <assignments/json_tofile_b.py>`
+.. literalinclude:: assignments/json_file_b.py
+    :caption: :download:`Solution <assignments/json_file_b.py>`
     :end-before: # Solution

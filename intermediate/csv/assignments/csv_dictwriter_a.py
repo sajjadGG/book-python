@@ -63,9 +63,9 @@ FILE = r'_temporary.csv'
 
 # Solution
 with open(FILE, mode='w') as file:
-    data = csv.DictWriter(file, fieldnames=['firstname', 'lastname'],
+    writer = csv.DictWriter(file, fieldnames=['firstname', 'lastname'],
                           delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL,
                           lineterminator='\n')
 
-    data.writeheader()
-    data.writerows(DATA)
+    writer.writeheader()
+    writer.writerows(DATA)

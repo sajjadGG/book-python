@@ -12,25 +12,24 @@ Example
 -------
 * Usage of ``re.search()``
 
-.. code-block:: python
-
-    import re
-
-
-    def contains(pattern, text)
-        if re.search(pattern, text):
-            return True
-        else:
-            return False
-
-
-    COMMIT_MESSAGE = 'MYPROJ-1337, MYPROJ-997 removed obsolete comments'
-    JIRA_ISSUEKEY = r'[A-Z]{2,10}-[0-9]{1,6}'
-    REDMINE_NUMBER = r'#[0-9]+'
-
-    contains(JIRA_ISSUEKEY, COMMIT_MESSAGE)      # True
-    contains(REDMINE_NUMBER, COMMIT_MESSAGE)     # False
-
+>>> import re
+>>>
+>>>
+>>> def contains(pattern, text)
+...     if re.search(pattern, text):
+...         return True
+...     else:
+...         return False
+>>>
+>>>
+>>> COMMIT_MESSAGE = 'MYPROJ-1337, MYPROJ-997 removed obsolete comments'
+>>> jira_issuekey = r'[A-Z]{2,10}-[0-9]{1,6}'
+>>> redmine_number = r'#[0-9]+'
+>>>
+>>> contains(jira_issuekey, COMMIT_MESSAGE)
+True
+>>> contains(redmine_number, COMMIT_MESSAGE)
+False
 
 >>> import re
 >>>

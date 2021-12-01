@@ -68,8 +68,11 @@ for row in DATA:
     fieldnames.update(row.keys())
 
 with open(FILE, mode='w', encoding='utf-8') as file:
-    data = csv.DictWriter(f=file, fieldnames=sorted(fieldnames), delimiter=',',
-                          quotechar='"', quoting=csv.QUOTE_ALL,
-                          lineterminator='\n')
-    data.writeheader()
-    data.writerows(DATA)
+    writer = csv.DictWriter(f=file,
+                            fieldnames=sorted(fieldnames),
+                            delimiter=',',
+                            quotechar='"',
+                            quoting=csv.QUOTE_ALL,
+                            lineterminator='\n')
+    writer.writeheader()
+    writer.writerows(DATA)

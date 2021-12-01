@@ -48,9 +48,9 @@ DATA = """5.8,2.7,5.1,1.9,1
 5.7,2.8,4.1,1.3,2"""
 
 SPECIES = {
-    '0': 'setosa',
-    '1': 'virginica',
-    '2': 'versicolor'}
+    0: 'setosa',
+    1: 'virginica',
+    2: 'versicolor'}
 
 with open(FILE, mode='w') as file:
     file.write(DATA)
@@ -64,6 +64,6 @@ with open(FILE, mode='r') as file:
     reader = csv.reader(file, lineterminator='\n')
 
     for *features, label in reader:
-        label = SPECIES[label]
-        row = features + [label]
-        result.append(tuple(row))
+        label = SPECIES[int(label)]
+        row = tuple(features) + (label,)
+        result.append(row)

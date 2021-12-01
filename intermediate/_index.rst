@@ -54,6 +54,18 @@ Datetime and Timezones
     datetime/timezones.rst
 
 
+Pickle
+******
+.. toctree::
+    :maxdepth: 1
+    :caption: Pickle
+
+    pickle/dump.rst
+    pickle/load.rst
+    pickle/objects.rst
+    pickle/file.rst
+
+
 CSV
 ***
 .. toctree::
@@ -66,7 +78,6 @@ CSV
     csv/dictreader.rst
     csv/dictwriter.rst
     csv/nonstandard.rst
-    csv/relations.rst
 
 
 JSON
@@ -81,18 +92,6 @@ JSON
     json/encoder.rst
     json/decoder.rst
     json/object.rst
-
-
-Pickle
-******
-.. toctree::
-    :maxdepth: 1
-    :caption: Pickle
-
-    pickle/dump.rst
-    pickle/load.rst
-    pickle/objects.rst
-    pickle/file.rst
 
 
 Database

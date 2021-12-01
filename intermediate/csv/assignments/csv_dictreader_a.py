@@ -25,9 +25,6 @@ Hint:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from os import remove
-    >>> result = open(FILE).read()
-    >>> remove(FILE)
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
@@ -66,8 +63,8 @@ result: list = []
 # Solution
 with open(FILE) as file:
     header = file.readline()
-    data = csv.DictReader(file, fieldnames=FIELDNAMES,
-                          delimiter=',', quoting=csv.QUOTE_NONE)
-
-    for row in data:
-        result.append(row)
+    reader = csv.DictReader(file,
+                            fieldnames=FIELDNAMES,
+                            delimiter=',',
+                            quoting=csv.QUOTE_NONE)
+    result = list(reader)

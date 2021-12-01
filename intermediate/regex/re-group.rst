@@ -4,18 +4,23 @@ RE Group
 
 Rationale
 ---------
-* ``(?P<name>...)``- Define named group
-* ``(?P=name)``- Backreferencing by group name
-* ``\number`` - Backreferencing by group number
+* Match particular parts of a string
+* Possible to name matches
 
-.. csv-table:: Regular Expression Groups
-    :widths: 15, 85
-    :header: "Syntax", "Description"
 
-    "``(...)``", "Matches whatever regular expression is inside the parentheses, and indicates the start and end of a group"
-    "``(?P<name>...)``", "substring matched by the group is accessible via the symbolic group name name"
-    "``(?P=name)``", "A backreference to a named group"
-    "``\number``", "Matches the contents of the group of the same number"
+Syntax
+------
+Define:
+
+    * ``(...)`` - Positional group
+    * ``(?P<name>...)`` - Named group
+    * ``(?:...)`` - Non-matching group
+    * ``(?#...)`` - Comment
+
+Backreference:
+
+    * ``(?P=name)``- Backreferencing by group name
+    * ``\number`` - Backreferencing by group number
 
 Example:
 
@@ -25,22 +30,58 @@ Example:
     * ``(.+) \1`` not matches ``thethe`` (note the space after the group)
 
 
-Example
--------
+Positional Groups
+-----------------
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> pattern = r'(\w+) (\w+)'
+>>> result = re.match(pattern, TEXT)
+>>>
+>>> result
+<re.Match object; span=(0, 12), match='Yuri Gagarin'>
+>>>
+>>> result.group()
+'Yuri Gagarin'
+>>>
+>>> result.group(1)
+'Yuri'
+>>>
+>>> result.group(2)
+'Gagarin'
+>>>
+>>> result.groups()
+('Yuri', 'Gagarin')
+
+
+Named Groups
+------------
 * Usage of group in ``re.match()``
 
-.. code-block:: python
-
-    import re
-
-    PATTERN = r'(?P<firstname>\w+) (?P<lastname>\w+)'
-    TEXT = 'Jan Twardowski'
-
-    matches = re.match(PATTERN, TEXT)
-
-    matches.group('firstname')     # 'Jan'
-    matches.group('lastname')      # 'Twardowski'
-    matches.group(1)                # 'Jan'
-    matches.group(2)                # 'Twardowski'
-    matches.groups()                # ('Jan', 'Twardowski')
-    matches.groupdict()             # {'firstname': 'Jan', 'lastname': 'Twardowski'}
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> pattern = r'(?P<firstname>\w+) (?P<lastname>\w+)'
+>>> result = re.match(pattern, TEXT)
+>>>
+>>> result.group('firstname')
+'Yuri'
+>>>
+>>> result.group('lastname')
+'Gagarin'
+>>>
+>>> result.group(1)
+'Yuri'
+>>>
+>>> result.group(2)
+'Gagarin'
+>>>
+>>> result.groups()
+('Yuri', 'Gagarin')
+>>>
+>>> result.groupdict()
+{'firstname': 'Yuri', 'lastname': 'Gagarin'}

@@ -12,6 +12,16 @@ Rationale
 * ``IntFlag``
 
 
+Syntax
+------
+>>> from enum import Enum
+>>>
+>>>
+>>> class Select(Enum):
+...     OPTION1 = 1
+...     OPTION2 = 2
+
+
 Example
 -------
 >>> from enum import Enum
@@ -31,13 +41,6 @@ Example
 ...     BAD_REQUEST = 400
 ...     NOT_FOUND = 404
 ...     INTERNAL_ERROR = 500
-
->>> from enum import Enum
->>>
->>>
->>> class Status(Enum):
-...     ALIVE = 'alive'
-...     DEAD = 'dead'
 
 
 Switch
@@ -127,21 +130,7 @@ language used [mskeycodes]_, [jskeycodes]_.
 ...     ARROW_RIGHT = 39    # 0x27
 ...     ARROW_DOWN = 40     # 0x28
 >>>
->>> # doctest: +SKIP
-... match keyboard.on_key_press():
-...     case Key.ESC:
-...         game.quit()
-...     case Key.ARROW_LEFT:
-...         game.move_left()
-...     case Key.ARROW_UP:
-...         game.move_up()
-...     case Key.ARROW_RIGHT:
-...         game.move_right()
-...     case Key.ARROW_DOWN:
-...         game.move_down()
-...     case _:
-...         raise ValueError(f'Unrecognized key')
-
+>>>
 >>> # doctest: +SKIP
 ... match keyboard.on_key_press():
 ...     case Key.ESC:          game.quit()
@@ -152,41 +141,38 @@ language used [mskeycodes]_, [jskeycodes]_.
 ...     case _: raise ValueError(f'Unrecognized key')
 
 
-Use Case - HTTP Status
-----------------------
+Built-in Enum
+-------------
 >>> from http import HTTPStatus
 >>>
 >>>
->>> response = 418
+>>> HTTPStatus(200).name
+'OK'
 >>>
->>> status = HTTPStatus(response)
->>> print(status.name)
-IM_A_TEAPOT
+>>> HTTPStatus(404).name
+'NOT_FOUND'
+>>>
+>>> HTTPStatus(500).name
+'INTERNAL_SERVER_ERROR'
+>>>
+>>> HTTPStatus(418).name
+'IM_A_TEAPOT'
 
 
-Use Case - Colors
------------------
+Use Case - 0x01
+---------------
+* Dead or Alive
+
 >>> from enum import Enum
 >>>
 >>>
->>> class Color(Enum):
-...     RED = '#FF0000'
-...     GREEN = '#00FF00'
-...     BLUE = '#0000FF'
->>>
->>>
->>> Point = tuple[int,int]
->>>
->>> def draw_line(A: Point, B: Point, color: Color):
-...     print(f'Drawing line from {A} to {B} with color {color.value}')
->>>
->>>
->>> draw_line(A=(0,0), B=(3,5), color=Color.RED)
-Drawing line from (0, 0) to (3, 5) with color #FF0000
+>>> class Status(Enum):
+...     ALIVE = 'alive'
+...     DEAD = 'dead'
 
 
-Use Case - Health
------------------
+Use Case - 0x02
+---------------
 >>> from enum import Enum
 >>>
 >>>
@@ -205,8 +191,76 @@ Use Case - Health
 <Status.DEAD: 0>
 
 
-Use Case - Permission
----------------------
+Use Case - 0x03
+---------------
+* Issue Status
+
+>>> from enum import Enum
+>>>
+>>>
+>>> class IssueStatus(Enum):
+...     TODO = 'todo'
+...     IN_PROGRESS = 'in progress'
+...     IN_REVIEW = 'in review'
+...     IN_TEST = 'in test'
+...     DONE = 'done'
+...     REJECTED = 'rejected'
+
+
+Use Case - 0x04
+---------------
+* HTML Colors
+
+>>> class Color(Enum):
+...     AQUA = '#00FFFF'
+...     BLACK = '#000000'
+...     BLUE = '#0000ff'
+...     FUCHSIA = '#FF00FF'
+...     GRAY = '#808080'
+...     GREEN = '#008000'
+...     LIME = '#00ff00'
+...     MAROON = '#800000'
+...     NAVY = '#000080'
+...     OLIVE = '#808000'
+...     PINK = '#ff1a8c'
+...     PURPLE = '#800080'
+...     RED = '#ff0000'
+...     SILVER = '#C0C0C0'
+...     TEAL = '#008080'
+...     WHITE = '#ffffff'
+...     YELLOW = '#FFFF00'
+
+
+Use Case - 0x05
+---------------
+>>> from enum import Enum
+>>>
+>>>
+>>> class Color(Enum):
+...     RED = '#FF0000'
+...     GREEN = '#00FF00'
+...     BLUE = '#0000FF'
+>>>
+>>>
+>>> Point = tuple[int,int]
+>>>
+>>> def draw_line(A: Point, B: Point, color: Color):
+...     if type(color) is not Color:
+...         possible = [str(c) for c in Color]
+...         raise TypeError(f'Invalid color, possible choices: {possible}')
+...     print(f'Drawing line from {A} to {B} with color {color.value}')
+>>>
+>>>
+>>> draw_line(A=(0,0), B=(3,5), color=Color.RED)
+Drawing line from (0, 0) to (3, 5) with color #FF0000
+>>>
+>>> draw_line(A=(0,0), B=(3,5), color='red')
+TypeError: Invalid color, possible choices: ['Color.RED', 'Color.GREEN', 'Color.BLUE']
+
+
+
+Use Case - 0x06
+---------------
 * ``r`` - read
 * ``w`` - write
 * ``x`` - execute
@@ -264,7 +318,7 @@ user='6' group='4' others='4'
 >>> file.unlink()
 
 
-Use Case - Drivers
+Use Case - 0x07
 ------------------
 >>> from enum import IntEnum
 >>>
