@@ -12,6 +12,9 @@ Example
 -------
 Usage of ``re.findall()`` and ``re.finditer()``:
 
+>>> import re
+>>>
+>>>
 >>> HTML = """
 ...     <h1>Header</h1>
 ...     <p>First Paragraph</p>

@@ -46,9 +46,8 @@ W3C standard for URL understanding
 >>>
 >>> pattern = f'^(?=[^&]){scheme}{authority}{path}{query}{fragment}'
 >>>
->>> print(pattern)  # doctest: +NORMALIZE_WHITESPACE
-^(?=[^&])(?:(?<scheme>[^:/?#]+):)?(?://(?<authority>[^/?#]*))?
-(?<path>[^?#]*)(?:\?(?<query>[^#]*))?(?:#(?<fragment>.*))?
+>>> print(pattern)
+^(?=[^&])(?:(?<scheme>[^:/?#]+):)?(?://(?<authority>[^/?#]*))?(?<path>[^?#]*)(?:\?(?<query>[^#]*))?(?:#(?<fragment>.*))?
 
 W3C standard for URL parsing
 

@@ -15,7 +15,7 @@ Example
 >>> import re
 >>>
 >>>
->>> def contains(pattern, text)
+>>> def contains(pattern, text):
 ...     if re.search(pattern, text):
 ...         return True
 ...     else:

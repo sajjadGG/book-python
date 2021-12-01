@@ -16,6 +16,8 @@ Syntax
 
 Example
 -------
+>>> import re
+>>>
 >>> fullname = re.compile('(?P<firstname>\w+) (?P<lastname>\w+)')
 
 
@@ -24,6 +26,7 @@ No Compile
 Compiles at every loop iteration, and then matches:
 
 >>> import re
+>>>
 >>>
 >>> DATA = [
 ...     'mark.watney@nasa.gov',
@@ -41,17 +44,17 @@ Compiles at every loop iteration, and then matches:
 >>>
 >>> for email in DATA:
 ...     if re.match(valid_email, email):
-...         print('valid\t', email)
+...         print('valid   ', email)
 ...     else:
-...         print('invalid\t', email)
-valid	 mark.watney@nasa.gov
-valid	 Mark.Watney@nasa.gov
-invalid	 +mark.watney@nasa.gov
-valid	 mark.watney+@nasa.gov
-valid	 mark.watney+newsletter@nasa.gov
-invalid	 mark.watney@.gov
-invalid	 @nasa.gov
-invalid	 mark.watney@nasa.g
+...         print('invalid ', email)
+valid   mark.watney@nasa.gov
+valid   Mark.Watney@nasa.gov
+invalid +mark.watney@nasa.gov
+valid   mark.watney+@nasa.gov
+valid   mark.watney+newsletter@nasa.gov
+invalid mark.watney@.gov
+invalid @nasa.gov
+invalid mark.watney@nasa.g
 
 
 Compile
@@ -59,6 +62,7 @@ Compile
 Compiling before loop, hence matching only inside:
 
 >>> import re
+>>>
 >>>
 >>> DATA = [
 ...     'mark.watney@nasa.gov',
@@ -76,14 +80,14 @@ Compiling before loop, hence matching only inside:
 >>>
 >>> for email in DATA:
 ...     if valid_email.match(email):
-...         print('valid\t', email)
+...         print('valid   ', email)
 ...     else:
-...         print('invalid\t', email)
-valid	 mark.watney@nasa.gov
-valid	 Mark.Watney@nasa.gov
-invalid	 +mark.watney@nasa.gov
-valid	 mark.watney+@nasa.gov
-valid	 mark.watney+newsletter@nasa.gov
-invalid	 mark.watney@.gov
-invalid	 @nasa.gov
-invalid	 mark.watney@nasa.g
+...         print('invalid ', email)
+valid   mark.watney@nasa.gov
+valid   Mark.Watney@nasa.gov
+invalid +mark.watney@nasa.gov
+valid   mark.watney+@nasa.gov
+valid   mark.watney+newsletter@nasa.gov
+invalid mark.watney@.gov
+invalid @nasa.gov
+invalid mark.watney@nasa.g
