@@ -1,10 +1,10 @@
-Operators Boolean
-=================
+Operator Boolean
+================
 
 
 Rationale
 ---------
-.. csv-table:: Boolean Operators Overload
+.. csv-table:: Boolean Operator Overload
     :header: "Operator", "Method"
 
     "``obj & other``",     "``obj.__and__(other)``"

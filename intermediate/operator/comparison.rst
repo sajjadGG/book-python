@@ -1,10 +1,10 @@
-Operators Comparison
-====================
+Operator Comparison
+===================
 
 
 Rationale
 ---------
-.. csv-table:: Comparison Operators Overload
+.. csv-table:: Comparison Operator Overload
     :header: "Operator", "Method"
 
     "``obj == other``",   "``obj.__eq__(other)``"
@@ -177,6 +177,6 @@ Use Case - 0x01
 
 Assignments
 -----------
-.. literalinclude:: assignments/operators_comparison_a.py
-    :caption: :download:`Solution <assignments/operators_comparison_a.py>`
+.. literalinclude:: assignments/operator_comparison_a.py
+    :caption: :download:`Solution <assignments/operator_comparison_a.py>`
     :end-before: # Solution

@@ -1,5 +1,5 @@
 """
-* Assignment: Operators Numerical Matmul
+* Assignment: Operator Numerical Matmul
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

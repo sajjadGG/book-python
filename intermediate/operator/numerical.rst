@@ -1,5 +1,5 @@
-Operators Numerical
-===================
+Operator Numerical
+==================
 
 
 Rationale
@@ -90,10 +90,10 @@ Use Case - 0x01
 
 Assignments
 -----------
-.. literalinclude:: assignments/operators_numerical_a.py
-    :caption: :download:`Solution <assignments/operators_numerical_a.py>`
+.. literalinclude:: assignments/operator_numerical_a.py
+    :caption: :download:`Solution <assignments/operator_numerical_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/operators_numerical_b.py
-    :caption: :download:`Solution <assignments/operators_numerical_b.py>`
+.. literalinclude:: assignments/operator_numerical_b.py
+    :caption: :download:`Solution <assignments/operator_numerical_b.py>`
     :end-before: # Solution

@@ -1,5 +1,5 @@
-Operators Accessors
-===================
+Operator Accessors
+==================
 
 
 Rationale
@@ -157,6 +157,6 @@ Use Case - 0x02
 
 Assignments
 -----------
-.. literalinclude:: assignments/operators_accessors_a.py
-    :caption: :download:`Solution <assignments/operators_accessors_a.py>`
+.. literalinclude:: assignments/operator_accessors_a.py
+    :caption: :download:`Solution <assignments/operator_accessors_a.py>`
     :end-before: # Solution

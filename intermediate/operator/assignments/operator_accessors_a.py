@@ -1,5 +1,5 @@
 """
-* Assignment: Operators Accessors Contains
+* Assignment: Operator Accessors Contains
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min
@@ -13,6 +13,10 @@ Polish:
     1. Nadpisz operatory aby poniższy kod zadziałał poprawnie
     2. Nie używaj `dataclasses`
     3. Uruchom doctesty - wszystkie muszą się powieść
+
+Hints:
+    * `object.__contains__()`
+    * `object.__eq__()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

@@ -1,5 +1,5 @@
 """
-* Assignment: Operators Numerical IAdd
+* Assignment: Operator Numerical IAdd
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min

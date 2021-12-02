@@ -1,5 +1,5 @@
 """
-* Assignment: Operators String Nested
+* Assignment: Operator String Nested
 * Required: yes
 * Complexity: medium
 * Lines of code: 9 lines

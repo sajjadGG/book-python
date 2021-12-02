@@ -1,5 +1,5 @@
 """
-* Assignment: Operators String Repr
+* Assignment: Operator String Repr
 * Required: yes
 * Complexity: easy
 * Lines of code: 3 lines

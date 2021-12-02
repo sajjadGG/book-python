@@ -188,19 +188,19 @@ Dataclass
     dataclass/inheritance.rst
 
 
-Operators
-*********
+Operator
+********
 .. toctree::
     :maxdepth: 1
-    :caption: Operators
+    :caption: Operator
 
-    operators/about.rst
-    operators/numerical.rst
-    operators/string.rst
-    operators/comparison.rst
-    operators/boolean.rst
-    operators/builtin.rst
-    operators/accessors.rst
+    operator/about.rst
+    operator/numerical.rst
+    operator/string.rst
+    operator/comparison.rst
+    operator/boolean.rst
+    operator/builtin.rst
+    operator/accessors.rst
 
 
 Modules and Packages

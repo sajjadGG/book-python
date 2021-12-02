@@ -1,5 +1,5 @@
 """
-* Assignment: Operators String Str
+* Assignment: Operator String Str
 * Required: yes
 * Complexity: easy
 * Lines of code: 3 lines

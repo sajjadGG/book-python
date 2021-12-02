@@ -1,5 +1,5 @@
 """
-* Assignment: Operators String Format
+* Assignment: Operator String Format
 * Required: yes
 * Complexity: easy
 * Lines of code: 8 lines

@@ -1,5 +1,5 @@
-Operators Stringify
-===================
+Operator Stringify
+==================
 
 
 Rationale
@@ -429,18 +429,18 @@ Point(x=1, y=2, z=0)
 
 Assignments
 -----------
-.. literalinclude:: assignments/operators_string_a.py
-    :caption: :download:`Solution <assignments/operators_string_a.py>`
+.. literalinclude:: assignments/operator_string_a.py
+    :caption: :download:`Solution <assignments/operator_string_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/operators_string_b.py
-    :caption: :download:`Solution <assignments/operators_string_b.py>`
+.. literalinclude:: assignments/operator_string_b.py
+    :caption: :download:`Solution <assignments/operator_string_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/operators_string_c.py
-    :caption: :download:`Solution <assignments/operators_string_c.py>`
+.. literalinclude:: assignments/operator_string_c.py
+    :caption: :download:`Solution <assignments/operator_string_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/operators_string_d.py
-    :caption: :download:`Solution <assignments/operators_string_d.py>`
+.. literalinclude:: assignments/operator_string_d.py
+    :caption: :download:`Solution <assignments/operator_string_d.py>`
     :end-before: # Solution
