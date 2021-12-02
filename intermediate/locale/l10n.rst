@@ -16,6 +16,190 @@ Numbers
 -------
 * https://github.com/arthurdejong/python-stdnum/tree/master/stdnum
 
+Locale
+------
+.. glossary::
+
+    LC_CTYPE
+        Locale category for the character type functions. Depending on the
+        settings of this category, the functions of module string dealing
+        with case change their behaviour.
+
+    LC_COLLATE
+        Locale category for sorting strings. The functions strcoll() and
+        strxfrm() of the locale module are affected.
+
+    LC_TIME
+        Locale category for the formatting of time. The function time
+        .strftime() follows these conventions.
+
+    LC_MONETARY
+        Locale category for formatting of monetary values. The available
+        options are available from the localeconv() function.
+
+    LC_MESSAGES
+        Locale category for message display. Python currently does not
+        support application specific locale-aware messages. Messages
+        displayed by the operating system, like those returned by os
+        .strerror() might be affected by this category.
+
+    LC_NUMERIC
+        Locale category for formatting numbers. The functions format(),
+        atoi(), atof() and str() of the locale module are affected by that
+        category. All other numeric formatting operations are not affected.
+
+    LC_ALL
+        Combination of all locale settings. If this flag is used when the
+        locale is changed, setting the locale for all categories is
+        attempted. If that fails for any category, no category is changed at
+        all. When the locale is retrieved using this flag, a string
+        indicating the setting for all categories is returned. This string
+        can be later used to restore the settings.
+
+Import module:
+
+>>> import locale
+
+Get current locale:
+
+Returns the current setting for the given locale category as sequence
+containing language code, encoding. category may be one of the LC_*
+values except LC_ALL. It defaults to LC_CTYPE.
+
+Except for the code 'C', the language code corresponds to RFC 1766.
+language code and encoding may be None if their values cannot be determined.
+
+>>> locale.getlocale()
+(None, 'UTF-8')
+
+Tries to determine the default locale settings and returns them as a tuple of
+the form (language code, encoding):
+
+>>> locale.getdefaultlocale()
+(None, 'UTF-8')
+
+According to POSIX, a program which has not called setlocale(LC_ALL, '') runs
+using the portable 'C' locale. Calling setlocale(LC_ALL, '') lets it use the
+default locale as defined by the LANG variable. Since we do not want to
+interfere with the current locale setting we thus emulate the behavior in the
+way described above.
+
+Except for the code 'C', the language code corresponds to RFC 1766. language
+code and encoding may be None if their values cannot be determined.
+
+Setting locale:
+
+>>> locale.setlocale(locale.LC_ALL, '')
+
+If locale is omitted or None, the current setting for category is returned:
+
+Using locale:
+
+>>> locale.currency(100)
+Traceback (most recent call last):
+ValueError: Currency formatting is not possible using the 'C' locale.
+
+>>> locale.setlocale(locale.LC_ALL, 'pl_PL.UTF-8')
+'pl_PL.UTF-8'
+
+>>> locale.currency(100)
+'zł 100,00'
+
+>>> locale.localeconv()   # doctest: +NORMALIZE_WHITESPACE
+{'int_curr_symbol': '', 'currency_symbol': '', 'mon_decimal_point': '',
+ 'mon_thousands_sep': '', 'mon_grouping': [], 'positive_sign': '',
+ 'negative_sign': '', 'int_frac_digits': 127, 'frac_digits': 127,
+ 'p_cs_precedes': 127, 'p_sep_by_space': 127, 'n_cs_precedes': 127,
+ 'n_sep_by_space': 127, 'p_sign_posn': 127, 'n_sign_posn': 127,
+ 'decimal_point': '.', 'thousands_sep': '', 'grouping': []}
+   All numeric values can be set to :const:`CHAR_MAX` to indicate that there is no
+   value specified in this locale.
+
+The possible values for ``'p_sign_posn'`` and ``'n_sign_posn'`` are given below.
+
+   +--------------+-----------------------------------------+
+   | Value        | Explanation                             |
+   +==============+=========================================+
+   | ``0``        | Currency and value are surrounded by    |
+   |              | parentheses.                            |
+   +--------------+-----------------------------------------+
+   | ``1``        | The sign should precede the value and   |
+   |              | currency symbol.                        |
+   +--------------+-----------------------------------------+
+   | ``2``        | The sign should follow the value and    |
+   |              | currency symbol.                        |
+   +--------------+-----------------------------------------+
+   | ``3``        | The sign should immediately precede the |
+   |              | value.                                  |
+   +--------------+-----------------------------------------+
+   | ``4``        | The sign should immediately follow the  |
+   |              | value.                                  |
+   +--------------+-----------------------------------------+
+   | ``CHAR_MAX`` | Nothing is specified in this locale.    |
+   +--------------+-----------------------------------------+
+
+
+
++----------------------+-------------------------------------+--------------------------------+
+| Category             | Key                                 | Meaning                        |
++======================+=====================================+================================+
+| :const:`LC_NUMERIC`  | ``'decimal_point'``                 | Decimal point character.       |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'grouping'``                      | Sequence of numbers specifying |
+|                      |                                     | which relative positions the   |
+|                      |                                     | ``'thousands_sep'`` is         |
+|                      |                                     | expected.  If the sequence is  |
+|                      |                                     | terminated with                |
+|                      |                                     | :const:`CHAR_MAX`, no further  |
+|                      |                                     | grouping is performed. If the  |
+|                      |                                     | sequence terminates with a     |
+|                      |                                     | ``0``,  the last group size is |
+|                      |                                     | repeatedly used.               |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'thousands_sep'``                 | Character used between groups. |
++----------------------+-------------------------------------+--------------------------------+
+| :const:`LC_MONETARY` | ``'int_curr_symbol'``               | International currency symbol. |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'currency_symbol'``               | Local currency symbol.         |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'p_cs_precedes/n_cs_precedes'``   | Whether the currency symbol    |
+|                      |                                     | precedes the value (for        |
+|                      |                                     | positive resp. negative        |
+|                      |                                     | values).                       |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'p_sep_by_space/n_sep_by_space'`` | Whether the currency symbol is |
+|                      |                                     | separated from the value  by a |
+|                      |                                     | space (for positive resp.      |
+|                      |                                     | negative values).              |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'mon_decimal_point'``             | Decimal point used for         |
+|                      |                                     | monetary values.               |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'frac_digits'``                   | Number of fractional digits    |
+|                      |                                     | used in local formatting of    |
+|                      |                                     | monetary values.               |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'int_frac_digits'``               | Number of fractional digits    |
+|                      |                                     | used in international          |
+|                      |                                     | formatting of monetary values. |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'mon_thousands_sep'``             | Group separator used for       |
+|                      |                                     | monetary values.               |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'mon_grouping'``                  | Equivalent to ``'grouping'``,  |
+|                      |                                     | used for monetary values.      |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'positive_sign'``                 | Symbol used to annotate a      |
+|                      |                                     | positive monetary value.       |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'negative_sign'``                 | Symbol used to annotate a      |
+|                      |                                     | negative monetary value.       |
++----------------------+-------------------------------------+--------------------------------+
+|                      | ``'p_sign_posn/n_sign_posn'``       | The position of the sign (for  |
+|                      |                                     | positive resp. negative        |
+|                      |                                     | values), see below.            |
++----------------------+-------------------------------------+--------------------------------+
+
 
 Examples
 --------

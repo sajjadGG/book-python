@@ -17,6 +17,12 @@ Rationale
 * ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
 * ``ASCII`` - ASCII characters only
 
+Encodings:
+
+    * https://github.com/python/cpython/blob/main/Lib/encodings/iso8859_2.py
+    * https://github.com/python/cpython/blob/main/Lib/encodings/cp1250.py
+    * https://github.com/python/cpython/blob/main/Lib/encodings/utf_8.py
+
 
 ASCII Table
 -----------

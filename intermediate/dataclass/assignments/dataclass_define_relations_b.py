@@ -1,8 +1,8 @@
 """
-* Assignment: Dataclass PostInit DatabaseDump
+* Assignment: Dataclass Define DatabaseDump
 * Complexity: medium
-* Lines of code: 23 lines
-* Time: 21 min
+* Lines of code: 13 lines
+* Time: 13 min
 
 English:
     1. You received input data in JSON format from the API

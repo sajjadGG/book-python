@@ -176,7 +176,10 @@ Dataclass
     :caption: Dataclass
 
     dataclass/about.rst
-    dataclass/define.rst
+    dataclass/define-basic.rst
+    dataclass/define-special.rst
+    dataclass/define-relations.rst
+    dataclass/mechanism.rst
     dataclass/postinit.rst
     dataclass/field.rst
     dataclass/mutable-args.rst
