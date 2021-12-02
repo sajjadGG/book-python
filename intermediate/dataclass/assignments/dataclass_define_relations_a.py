@@ -1,5 +1,5 @@
 """
-* Assignment: Dataclass Define Relations
+* Assignment: Dataclass DefineRelations Syntax
 * Complexity: easy
 * Lines of code: 16 lines
 * Time: 13 min

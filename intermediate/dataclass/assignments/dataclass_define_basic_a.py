@@ -1,5 +1,5 @@
 """
-* Assignment: Dataclass Define Syntax
+* Assignment: Dataclass DefineBasic Syntax
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 5 min

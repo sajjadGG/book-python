@@ -1,5 +1,5 @@
 """
-* Assignment: Dataclass Define DatabaseDump
+* Assignment: Dataclass DefineBasic DatabaseDump
 * Complexity: medium
 * Lines of code: 13 lines
 * Time: 13 min
