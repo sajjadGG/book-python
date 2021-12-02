@@ -29,6 +29,8 @@ Rationale
 Example
 -------
 >>> import datetime
+>>>
+>>>
 >>> date = datetime.date(1961, 4, 12)
 >>>
 >>>
@@ -55,7 +57,9 @@ String
 >>> class Astronaut:
 ...     pass
 >>>
+>>>
 >>> astro = Astronaut()
+>>>
 >>> str(astro)  # doctest: +ELLIPSIS
 '<Astronaut object at 0x...>'
 
@@ -70,8 +74,10 @@ Object without ``__str__()`` method overloaded prints their memory address:
 >>>
 >>> print(astro)  # doctest: +ELLIPSIS
 <Astronaut object at 0x...>
+>>>
 >>> str(astro)  # doctest: +ELLIPSIS
 '<Astronaut object at 0x...>'
+>>>
 >>> astro.__str__()  # doctest: +ELLIPSIS
 '<Astronaut object at 0x...>'
 
@@ -89,8 +95,10 @@ Objects can verbose print if ``__str__()`` method is present:
 >>>
 >>> print(astro)
 My name... José Jiménez
+>>>
 >>> str(astro)
 'My name... José Jiménez'
+>>>
 >>> astro.__str__()
 'My name... José Jiménez'
 
@@ -108,7 +116,9 @@ Representation
 >>> class Astronaut:
 ...     pass
 >>>
+>>>
 >>> astro = Astronaut()
+>>>
 >>> repr(astro)  # doctest: +ELLIPSIS
 '<Astronaut object at 0x...>'
 
@@ -126,6 +136,7 @@ Using ``__repr__()`` on a class:
 >>>
 >>> repr(astro)
 'Astronaut(name="José Jiménez")'
+>>>
 >>> astro
 Astronaut(name="José Jiménez")
 
@@ -134,6 +145,7 @@ Printing ``list`` will call ``__repr__()`` method on each element:
 >>> class Astronaut:
 ...     def __init__(self, name):
 ...         self.name = name
+>>>
 >>>
 >>> crew = [Astronaut('Jan Twardowski'),
 ...         Astronaut('Mark Watney'),
@@ -180,6 +192,7 @@ Format
 >>>
 >>> print(f'{jose:happy}')
 Yuppi, we're going to space!
+>>>
 >>> print(f'{jose:scared}')
 I hope we don't crash
 
@@ -262,12 +275,16 @@ Use Case - Duration
 ...             result = self.seconds / DAY
 ...         return str(round(result, 2))
 >>>
+>>>
 >>> duration = Duration(seconds=3600)
+>>>
 >>>
 >>> print(f'Duration was {duration:minutes} min')
 Duration was 60.0 min
+>>>
 >>> print(f'Duration was {duration:hours} hour')
 Duration was 1.0 hour
+>>>
 >>> print(f'Duration was {duration:days} day')
 Duration was 0.04 day
 
@@ -278,6 +295,8 @@ Use Case - Duration Many Units
 >>> MINUTE = 60 * SECOND
 >>> HOUR = 60 * MINUTE
 >>> DAY = 24 * HOUR
+>>> MONTH = 30.436875 * DAY
+>>> YEAR = 365.2425 * DAY
 >>>
 >>>
 >>> class Duration:
@@ -288,28 +307,40 @@ Use Case - Duration Many Units
 ...
 ...     def __format__(self, unit):
 ...         duration = self.seconds
-...         unit = 'seconds' if unit == '' else unit
-...
-...         if unit in ('s', 'sec', 'second', 'seconds'):
-...              duration /= SECOND
-...         elif unit in ('m', 'min', 'minute', 'minutes'):
+...         if unit in ('seconds', 'second', 'sec', 's'):
+...             duration /= SECOND
+...         elif unit in ('minutes', 'minute', 'min', 'm'):
 ...             duration /= MINUTE
-...         elif unit in ('h', 'hour', 'hours'):
+...         elif unit in ('hours', 'hour', 'hr', 'h'):
 ...             duration /= HOUR
-...         elif unit in ('d', 'day', 'days'):
+...         elif unit in ('days', 'day', 'd'):
 ...             duration /= DAY
+...         elif unit in ('months', 'month', 'mth'):
+...             duration /= MONTH
+...         elif unit in ('years', 'year', 'yr', 'y'):
+...             duration /= YEAR
+...         else:
+...             raise ValueError('Invalid unit')
 ...         return f'{duration:.2f} {unit}'
-...
->>> duration = Duration(seconds=3600)
 >>>
->>> print(f'Duration: {duration:s}')
-Duration: 3600.00 s
->>> print(f'Duration: {duration:min}')
-Duration: 60.00 min
->>> print(f'Duration: {duration:h}')
-Duration: 1.00 h
->>> print(f'Duration: {duration:days}')
-Duration: 0.04 days
+>>>
+>>> ares3 = Duration(seconds=187368216)
+>>>
+>>>
+>>> print(f'Ares3 mission length was {ares3:seconds}')
+Ares3 mission length was 187368216.00 seconds
+>>>
+>>> print(f'Ares3 mission length was {ares3:min}')
+Ares3 mission length was 3122803.60 min
+>>>
+>>> print(f'Ares3 mission length was {ares3:h}')
+Ares3 mission length was 52046.73 h
+>>>
+>>> print(f'Ares3 mission length was {ares3:days}')
+Ares3 mission length was 2168.61 days
+>>>
+>>> print(f'Ares3 mission length was {ares3:years}')
+Ares3 mission length was 5.94 years
 
 
 Use Case - Temperature
@@ -335,12 +366,15 @@ Use Case - Temperature
 ...         return f'{value:.2f} {unit}'
 >>>
 >>>
->>> temp = Temperature(309.75)
+>>> temp = Temperature(kelvin=309.75)
+>>>
 >>>
 >>> print(f'Temperature is {temp:kelvin}')
 Temperature is 309.75 K
+>>>
 >>> print(f'Temperature is {temp:celsius}')
 Temperature is 36.60 C
+>>>
 >>> print(f'Temperature is {temp:fahrenheit}')
 Temperature is 97.88 F
 
@@ -355,9 +389,9 @@ Use Case - Point
 ...
 ...     def __format__(self, name):
 ...
-...         if name == 'in_2D':
+...         if name == '2D':
 ...             result = f"Point(x={self.x}, y={self.y})"
-...         elif name == 'in_3D':
+...         elif name == '3D':
 ...             result = f"Point(x={self.x}, y={self.y}, z={self.z})"
 ...         elif name == 'as_dict':
 ...             result = vars(self)
@@ -371,14 +405,19 @@ Use Case - Point
 >>>
 >>> point = Point(x=1, y=2)
 >>>
->>> print(f'{point:in_2D}')
+>>>
+>>> print(f'{point:2D}')
 Point(x=1, y=2)
->>> print(f'{point:in_3D}')
+>>>
+>>> print(f'{point:3D}')
 Point(x=1, y=2, z=0)
+>>>
 >>> print(f'{point:as_tuple}')
 (1, 2, 0)
+>>>
 >>> print(f'{point:as_dict}')
 {'x': 1, 'y': 2, 'z': 0}
+>>>
 >>> print(f'{point:as_json}')
 {"x": 1, "y": 2, "z": 0}
 

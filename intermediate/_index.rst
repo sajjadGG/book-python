@@ -259,7 +259,7 @@ Tests
     :maxdepth: 1
     :caption: Tests
 
-    tests/doctest.rst
+    test/doctest.rst
 
 
 Operating System
