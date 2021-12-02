@@ -70,13 +70,13 @@ Except for the code 'C', the language code corresponds to RFC 1766.
 language code and encoding may be None if their values cannot be determined.
 
 >>> locale.getlocale()
-(None, 'UTF-8')
+('en_US', 'UTF-8')
 
 Tries to determine the default locale settings and returns them as a tuple of
 the form (language code, encoding):
 
 >>> locale.getdefaultlocale()
-(None, 'UTF-8')
+('en_US', 'UTF-8')
 
 According to POSIX, a program which has not called setlocale(LC_ALL, '') runs
 using the portable 'C' locale. Calling setlocale(LC_ALL, '') lets it use the
@@ -90,6 +90,7 @@ code and encoding may be None if their values cannot be determined.
 Setting locale:
 
 >>> locale.setlocale(locale.LC_ALL, '')
+'C.UTF-8'
 
 If locale is omitted or None, the current setting for category is returned:
 
@@ -99,44 +100,48 @@ Using locale:
 Traceback (most recent call last):
 ValueError: Currency formatting is not possible using the 'C' locale.
 
->>> locale.setlocale(locale.LC_ALL, 'pl_PL.UTF-8')
+>>> locale.setlocale(locale.LC_ALL, 'pl_PL.UTF-8')  # doctest: +SKIP
 'pl_PL.UTF-8'
 
->>> locale.currency(100)
+>>> locale.currency(100)  # doctest: +SKIP
 'zł 100,00'
 
 >>> locale.localeconv()   # doctest: +NORMALIZE_WHITESPACE
-{'int_curr_symbol': '', 'currency_symbol': '', 'mon_decimal_point': '',
+{'int_curr_symbol': '', 'currency_symbol': '', 'mon_decimal_point': '.',
  'mon_thousands_sep': '', 'mon_grouping': [], 'positive_sign': '',
  'negative_sign': '', 'int_frac_digits': 127, 'frac_digits': 127,
  'p_cs_precedes': 127, 'p_sep_by_space': 127, 'n_cs_precedes': 127,
  'n_sep_by_space': 127, 'p_sign_posn': 127, 'n_sign_posn': 127,
  'decimal_point': '.', 'thousands_sep': '', 'grouping': []}
-   All numeric values can be set to :const:`CHAR_MAX` to indicate that there is no
-   value specified in this locale.
 
-The possible values for ``'p_sign_posn'`` and ``'n_sign_posn'`` are given below.
+All numeric values can be set to :const:`CHAR_MAX` to indicate that there is
+no value specified in this locale.
 
-   +--------------+-----------------------------------------+
-   | Value        | Explanation                             |
-   +==============+=========================================+
-   | ``0``        | Currency and value are surrounded by    |
-   |              | parentheses.                            |
-   +--------------+-----------------------------------------+
-   | ``1``        | The sign should precede the value and   |
-   |              | currency symbol.                        |
-   +--------------+-----------------------------------------+
-   | ``2``        | The sign should follow the value and    |
-   |              | currency symbol.                        |
-   +--------------+-----------------------------------------+
-   | ``3``        | The sign should immediately precede the |
-   |              | value.                                  |
-   +--------------+-----------------------------------------+
-   | ``4``        | The sign should immediately follow the  |
-   |              | value.                                  |
-   +--------------+-----------------------------------------+
-   | ``CHAR_MAX`` | Nothing is specified in this locale.    |
-   +--------------+-----------------------------------------+
+The possible values for ``'p_sign_posn'`` and ``'n_sign_posn'`` are given
+below:
+
+.. todo:: Convert table to CSV
+
++--------------+-----------------------------------------+
+| Value        | Explanation                             |
++==============+=========================================+
+| ``0``        | Currency and value are surrounded by    |
+|              | parentheses.                            |
++--------------+-----------------------------------------+
+| ``1``        | The sign should precede the value and   |
+|              | currency symbol.                        |
++--------------+-----------------------------------------+
+| ``2``        | The sign should follow the value and    |
+|              | currency symbol.                        |
++--------------+-----------------------------------------+
+| ``3``        | The sign should immediately precede the |
+|              | value.                                  |
++--------------+-----------------------------------------+
+| ``4``        | The sign should immediately follow the  |
+|              | value.                                  |
++--------------+-----------------------------------------+
+| ``CHAR_MAX`` | Nothing is specified in this locale.    |
++--------------+-----------------------------------------+
 
 
 
