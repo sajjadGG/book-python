@@ -87,8 +87,9 @@ True
 False
 
 
-Use Case - XOR as pow
----------------------
+Use Case - 0x01
+---------------
+* XOR as pow
 * Excel uses ``^`` to rise number to the power of a second number
 
 >>> from dataclasses import dataclass
@@ -109,8 +110,10 @@ Use Case - XOR as pow
 Number(value=16)
 
 
-Use Case - Numpy
-----------------
+Use Case - 0x02
+---------------
+* Numpy
+
 >>> import numpy as np  # doctest: +SKIP
 >>>
 >>>
@@ -138,7 +141,17 @@ array([[ True,  True,  True],
        [False, False, False],
        [False, False, False]])
 
+Python understands this:
 
-Use Case - Game
+>>> ~((a>5) & (a%2==0))  # doctest: +SKIP
+
+As as chained calls of the following methods:
+
+>>> obj.__neg__(a.__gt__(5).__and__(a.__mod__(2).__eq__(0)))  # doctest: +SKIP
+
+
+Use Case - 0x03
 ---------------
+* Game
+
 >>> hero >> Direction(left=10, up=20)  # doctest: +SKIP

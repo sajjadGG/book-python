@@ -127,9 +127,17 @@ SQL_SELECT = """
     JOIN address
     ON astronaut.id=address.astronaut_id;"""
 
-result: list = []
+
+# list[tuple]: select all results from database in list[dict] format, example:
+#              [{'id': 1, 'firstname': 'José', 'lastname': 'Jiménez',
+#                'astronaut_id': 1, 'street': '2101 E NASA Pkwy', 'city':
+#                'Houston', 'state': 'Texas', 'code': 77058, 'country': 'USA'},
+#               ...]
+result = ...
 
 # Solution
+result = []
+
 with sqlite3.connect(DATABASE) as connection:
     db = connection.cursor()
     db.row_factory = sqlite3.Row

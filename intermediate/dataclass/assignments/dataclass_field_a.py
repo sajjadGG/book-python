@@ -6,13 +6,17 @@
 
 English:
     1. Model `DATA` using `dataclasses`
-    2. Create class definition, fields and their types
+    2. Create class definition, fields and their types:
+       a. Do not use Python 3.10 syntax for Optionals, ie: `str | None`
+       b. Use old style `Optional[str]` instead
     3. Do not write code converting `DATA` to your classes
     4. Run doctests - all must succeed
 
 Polish:
     1. Zamodeluj `DATA` wykorzystując `dataclass`
     2. Stwórz definicję klas, pól i ich typów
+       a. Nie używaj składni Optionali z Python 3.10, np.: `str | None`
+       b. Użyj starego sposobu, tj. `Optional[str]`
     3. Nie pisz kodu konwertującego `DATA` do Twoich klas
     4. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -76,6 +80,8 @@ Tests:
 
     >>> assert address['country'].type is str, \
     'Address.country has invalid type annotation, expected: str'
+
+TODO: Add support for Python 3.10 Optional and Union syntax
 """
 from dataclasses import dataclass, field
 from typing import Optional

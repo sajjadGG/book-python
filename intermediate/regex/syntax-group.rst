@@ -268,8 +268,11 @@ Examples
 ['Apr 12th, 1961']
 
 
-Use Case - Dates
-----------------
+
+Use Case - 0x01
+---------------
+* Dates
+
 >>> import re
 >>>
 >>>

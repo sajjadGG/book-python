@@ -28,8 +28,8 @@ Having
     HAVING COUNT(headcount) > 5;
 
 
-Use Case
---------
+Use Case - 0x01
+---------------
 .. code-block:: sql
 
     SELECT

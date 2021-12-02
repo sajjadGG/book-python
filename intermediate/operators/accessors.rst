@@ -29,9 +29,8 @@ Example
 'Mark Watney'
 
 
-
-Use Case
---------
+Use Case - 0x01
+---------------
 >>> data = slice(1, 2, 3)
 >>>
 >>>
@@ -123,8 +122,10 @@ array([[4, 5, 6]])
 array([3, 6])
 
 
-Use Case - Cache
-----------------
+Use Case - 0x02
+---------------
+* Cache
+
 >>> class Cache(dict):
 ...     def __init__(self, func):
 ...         self.func = func

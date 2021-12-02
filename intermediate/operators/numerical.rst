@@ -79,8 +79,10 @@ Vector(x=9, y=12)
 Vector(x=11, y=22)
 
 
-Use Case - Game
+Use Case - 0x01
 ---------------
+* Game
+
 >>> hero @ Position(x=50, y=120)  # doctest: +SKIP
 >>>
 >>> hero['gold'] += dragon['gold']  # doctest: +SKIP

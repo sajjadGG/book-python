@@ -199,8 +199,8 @@ datetime.datetime(1961, 4, 12, 7, 7, tzinfo=zoneinfo.ZoneInfo(key='Europe/Warsaw
 datetime.datetime(1961, 4, 11, 22, 7, tzinfo=zoneinfo.ZoneInfo(key='America/Los_Angeles'))
 
 
-Use Case
---------
+Use Case - 0x02
+---------------
 Descriptor Timezone Converter:
 
 >>> from dataclasses import dataclass

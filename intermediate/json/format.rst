@@ -104,8 +104,8 @@ Pretty Printing JSON:
     Expecting property name enclosed in double quotes: line 1 column 37 (char 36)
 
 
-Use Case
---------
+Use Case - 0x01
+---------------
 .. code-block:: json
 
     [{"firstname": "Jan", "lastname": "Twardowski", "addresses": [

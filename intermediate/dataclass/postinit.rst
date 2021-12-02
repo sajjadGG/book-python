@@ -182,8 +182,10 @@ returned by the module-level fields() function.
 ...     AGE_MAX: ClassVar[int] = 50
 
 
-Use Case - Boundary check
--------------------------
+Use Case - 0x01
+---------------
+* Boundary check
+
 >>> class Point:
 ...     def __init__(self, x, y):
 ...         if x < 0:
@@ -209,8 +211,10 @@ Use Case - Boundary check
 ...             raise ValueError('Coordinate cannot be negative')
 
 
-Use Case - Var Range
---------------------
+Use Case - 0x02
+---------------
+* Var Range
+
 >>> from dataclasses import dataclass, field
 >>> from typing import Final
 >>>
@@ -247,8 +251,10 @@ Traceback (most recent call last):
 ValueError: x value (0) is not between 10 and 100
 
 
-Use Case - Const Range
-----------------------
+Use Case - 0x03
+---------------
+* Const Range
+
 >>> from dataclasses import dataclass, field
 >>> from typing import Final
 >>>
@@ -277,8 +283,10 @@ Traceback (most recent call last):
 TypeError: __init__() got an unexpected keyword argument 'X_MIN'
 
 
-Use Case - Init, Repr
----------------------
+Use Case - 0x04
+---------------
+* Init, Repr
+
 >>> from dataclasses import dataclass, field
 >>> from typing import Final
 >>>

@@ -5,14 +5,19 @@
 * Time: 3 min
 
 English:
-    1. Overload `@` operator
-    2. Set position based on argument `tuple[int, int]`
+    1. Make object understand following call: `position @ (1, 2)`
+    1. Overload `@` operator, to take `tuple[int, int]` as argument
+    2. Set `x` and `y` coordinates based on passed values
     3. Run doctests - all must succeed
 
 Polish:
-    1. Przeciąż operator `@`
-    2. Ustaw pozycję na podstawie argumentu `tuple[int, int]`
+    1. Spraw aby obiekt obsługiwał to wywołanie: `position @ (1, 2)`
+    1. Przeciąż operator `@`, aby przyjmował `tuple[int, int]` jako argument
+    2. Zmień koordynaty `x` i `y` na podstawie przekazanych wartości
     3. Uruchom doctesty - wszystkie muszą się powieść
+
+Hints:
+    * `object.__matmul__()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

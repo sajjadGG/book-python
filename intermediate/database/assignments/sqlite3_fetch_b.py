@@ -95,9 +95,18 @@ SQL_SELECT = """
 with open(FILE, mode='w') as file:
     file.write(DATA)
 
-result: list = []
+
+# list[tuple]: select all results from database in list[dict] format, example:
+#              [{'id': 4,
+#                'species': 'virginica',
+#                'sepal_length': 5.4,
+#                'sepal_width': 3.9,
+#                'petal_length': 1.3,
+#                'petal_width': 0.4}, ...]
+result = ...
 
 # Solution
+result = []
 data = []
 
 with open(FILE) as file:

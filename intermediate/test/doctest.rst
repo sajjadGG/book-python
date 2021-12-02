@@ -9,7 +9,8 @@ Rationale
 * Checks if function output is exactly as expected
 * Useful for regex modifications
 * Can add text (i.e. explanations) between tests
-* Use Cases:
+
+Use Cases:
 
     * https://github.com/scikit-learn/scikit-learn/blob/3bca0412c10b89bb474bcf2f38442e2b1f36e6f4/sklearn/linear_model/_base.py#L465
     * https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L434

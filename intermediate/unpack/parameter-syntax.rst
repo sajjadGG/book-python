@@ -135,22 +135,26 @@ Traceback (most recent call last):
 TypeError: echo() got some positional-only arguments passed as keyword arguments: 'a'
 
 
-Use Case - Add
---------------
+Use Case - 0x01
+---------------
+* Add
 * https://docs.python.org/3/library/operator.html#operator.add
 
 >>> def add(a, b, /):
 ...     return a + b
 
 
-Use Case - Divmod
------------------
+Use Case - 0x02
+---------------
+* Divmod
+
 >>> def divmod(a, b, /):
 ...     return a//b, a%b
 
 
-Use Case - Sorted
------------------
+Use Case - 0x03
+---------------
+* Sorted
 * https://docs.python.org/3/library/functions.html#sorted:
 * `sorted(iterable, /, *, key=None, reverse=False)`
 
@@ -161,8 +165,9 @@ Use Case - Sorted
 <Signature (iterable, /, *, key=None, reverse=False)>
 
 
-Use Case - Sum
---------------
+Use Case - 0x04
+---------------
+* Sum
 * https://docs.python.org/3/library/functions.html#sum:
 * `sum(iterable, /, start=0)`
 
@@ -173,8 +178,9 @@ Use Case - Sum
 <Signature (iterable, /, start=0)>
 
 
-Use Case - Strip
-----------------
+Use Case - 0x05
+---------------
+* Strip
 * https://docs.python.org/3/library/stdtypes.html#str.strip
 * `str.strip(self, chars=None, /)`
 
@@ -185,8 +191,9 @@ Use Case - Strip
 <Signature (self, chars=None, /)>
 
 
-Use Case - Split
-----------------
+Use Case - 0x06
+---------------
+* Split
 * https://docs.python.org/3/library/stdtypes.html#str.split
 * `str.split(self, /, sep=None, maxsplit=-1)`
 

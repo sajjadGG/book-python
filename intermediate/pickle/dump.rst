@@ -80,8 +80,10 @@ Serialize Mapping
 b'\x80\x04\x95\x17\x00\x00\x00\x00\x00\x00\x00}\x94(\x8c\x01a\x94K\x01\x8c\x01b\x94K\x02\x8c\x01c\x94K\x03u.'
 
 
-Use Case - Astronaut
---------------------
+Use Case - 0x01
+---------------
+* Astronaut
+
 >>> import pickle
 >>> from dataclasses import dataclass, field, asdict
 >>> from typing import Optional, Union

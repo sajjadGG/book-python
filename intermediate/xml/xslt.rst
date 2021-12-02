@@ -6,8 +6,8 @@ Rationale
 * Using ``lxml`` module
 
 
-Use Case 1
-----------
+Use Case - 0x01
+---------------
 .. code-block:: python
 
     from io import StringIO
@@ -41,8 +41,8 @@ Use Case 1
     # <my_tag>Hello World</my_tag>
 
 
-Use Case 2
-----------
+Use Case - 0x02
+---------------
 .. code-block:: python
 
     from io import StringIO
@@ -108,8 +108,8 @@ Use Case 2
     # </table></html>
 
 
-Use Case 3
-----------
+Use Case - 0x03
+---------------
 .. code-block:: python
 
     from io import StringIO

@@ -22,8 +22,8 @@ Usage of ``re.split()``:
 ['Baked Beans', 'Spam']
 
 
-Use Case
---------
+Use Case - 0x01
+---------------
 * Making a Phonebook
 
 >>> import re

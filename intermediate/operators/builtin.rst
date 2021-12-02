@@ -48,8 +48,8 @@ Example
 5.0
 
 
-Use Case
---------
+Use Case - 0x01
+---------------
 >>> class Astronaut:
 ...     def __float__(self) -> float:
 ...         return 1961.0

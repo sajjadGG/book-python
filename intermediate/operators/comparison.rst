@@ -167,8 +167,10 @@ True
 True
 
 
-Use Case - Game
+Use Case - 0x01
 ---------------
+* Game
+
 >>> hero < Damage(20)  # doctest: +SKIP
 >>> hero > Damage(20)  # doctest: +SKIP
 

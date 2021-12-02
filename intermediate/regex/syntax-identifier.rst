@@ -119,8 +119,10 @@ Examples:
 []
 
 
-Use Case - Phone
-----------------
+Use Case - 0x01
+---------------
+* Phone
+
 >>> import re
 >>>
 >>>
@@ -133,8 +135,10 @@ Use Case - Phone
 ['4', '8', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 
-Use Case - Compare Phones
--------------------------
+Use Case - 0x02
+---------------
+* Compare Phones
+
 >>> import re
 >>>
 >>>
@@ -148,8 +152,10 @@ Use Case - Compare Phones
 True
 
 
-Use Case - EU VAT Tax ID
-------------------------
+Use Case - 0x03
+---------------
+* EU VAT Tax ID
+
 >>> import re
 >>>
 >>>
@@ -166,8 +172,10 @@ Use Case - EU VAT Tax ID
 ['7', '7', '7', '2', '8', '6', '1', '8', '2', '3']
 
 
-Use Case - Number and Spaces
-----------------------------
+Use Case - 0x04
+---------------
+* Number and Spaces
+
 >>> import re
 >>>
 >>>

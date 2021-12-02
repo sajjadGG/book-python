@@ -160,8 +160,10 @@ Traceback (most recent call last):
 ValueError: Invalid age
 
 
-Use Case - Validation
----------------------
+Use Case - 0x01
+---------------
+* Validation
+
 >>> from dataclasses import dataclass, field
 >>> from typing import Optional, Union
 >>> from datetime import date, time, datetime, timezone, timedelta
@@ -224,8 +226,10 @@ Astronaut(firstname='Mark', lastname='Watney', born=datetime.date(1961, 4, 12),
           account_created=datetime.datetime(1969, 7, 21, 2, 56, 15, 123456, tzinfo=datetime.timezone.utc))
 
 
-Use Case - Setattr
-------------------
+Use Case - 0x02
+---------------
+* Setattr
+
 >>> from dataclasses import dataclass, field
 >>>
 >>>

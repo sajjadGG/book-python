@@ -47,21 +47,24 @@ Tests:
     62
 """
 
-from random import seed, randint
+from random import randint, seed;
+
+
 seed(0)
-
-
-matrix: list
-result: int
 ROWS = range(16)
 COLS = range(16)
+
+# list[list[int]]: generated 16x16 random digits (0-9 inclusive)
+matrix: list
+
+# int: sum of inner 4x4 elements
+result: int
 
 # Solution
 result = 0
 
-matrix = [[randint(0,9) for y in ROWS]
+matrix = [[randint(0, 9) for y in ROWS]
           for x in COLS]
 
 for row in matrix[6:-6]:
     result += sum(row[6:-6])
-

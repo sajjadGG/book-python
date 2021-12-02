@@ -5,15 +5,23 @@
 * Time: 5 min
 
 English:
-    1. Override operator `+=` for code to work correctly
-    2. Run doctests - all must succeed
+    1. Overload operator `+=`
+    2. Make `Astronaut` objects able to add `Missions`, for example:
+       a. `mark = Astronaut(firstname='Mark', lastname='Watney')`
+       b. `mark += Mission(2035, 'Ares3')`
+       c. `mark += Mission(2040, 'Ares5')`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Nadpisz operatory `+=` aby poniższy kod zadziałał poprawnie
-    2. Uruchom doctesty - wszystkie muszą się powieść
+    1. Przeciąż operator `+=`
+    2. Spraw aby do obiektów klasy `Astronaut` można dodać `Mission`, przykład:
+       a. `mark = Astronaut(firstname='Mark', lastname='Watney')`
+       b. `mark += Mission(2035, 'Ares3')`
+       c. `mark += Mission(2040, 'Ares5')`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * `obj.__iadd__(other) -> self`
+    * `object.__iadd__() -> self`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

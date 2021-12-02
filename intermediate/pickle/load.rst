@@ -66,11 +66,10 @@ Deserialize Mapping
 {'a': 1, 'b': 2, 'c': 3}
 
 
+Use Case - 0x01
+---------------
+* Astronaut
 
-
-
-Use Case - Astronaut
---------------------
 >>> import pickle
 >>> from dataclasses import dataclass, field
 >>> from typing import Optional, Union

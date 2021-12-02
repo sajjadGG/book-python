@@ -223,8 +223,10 @@ Get Logger
 >>> log.debug('Debug, show detailed debugging information')
 
 
-Use Case - CSV log format
--------------------------
+Use Case - 0x01
+---------------
+* CSV log format
+
 >>> import logging
 >>>
 >>>

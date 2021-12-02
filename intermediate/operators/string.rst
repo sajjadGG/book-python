@@ -4,9 +4,6 @@ Operators Stringify
 
 Rationale
 ---------
-
-Rationale
----------
 .. csv-table:: String Operator Overload
     :header: "Operator", "Method"
 
@@ -197,8 +194,8 @@ Yuppi, we're going to space!
 I hope we don't crash
 
 
-Use Case - Mod
---------------
+Use Case - 0x01
+---------------
 * ``%`` (``__mod__``) operator behavior for ``int`` and ``str``:
 
 >>> 13 % 4
@@ -254,8 +251,10 @@ Note, that using ``%s``, ``%d``, ``%f`` is currently deprecated in favor
 of ``f'...'`` string formatting. More information in `Builtin Printing`
 
 
-Use Case - Duration
--------------------
+Use Case - 0x02
+---------------
+* Self formatting duration
+
 >>> SECOND = 1
 >>> MINUTE = 60 * SECOND
 >>> HOUR = 60 * MINUTE
@@ -289,8 +288,10 @@ Duration was 1.0 hour
 Duration was 0.04 day
 
 
-Use Case - Duration Many Units
-------------------------------
+Use Case - 0x03
+---------------
+* Duration Many Units
+
 >>> SECOND = 1
 >>> MINUTE = 60 * SECOND
 >>> HOUR = 60 * MINUTE
@@ -343,8 +344,10 @@ Ares3 mission length was 2168.61 days
 Ares3 mission length was 5.94 years
 
 
-Use Case - Temperature
-----------------------
+Use Case - 0x04
+---------------
+* Temperature conversion
+
 >>> class Temperature:
 ...     def __init__(self, kelvin):
 ...         self.kelvin = kelvin
@@ -379,8 +382,10 @@ Temperature is 36.60 C
 Temperature is 97.88 F
 
 
-Use Case - Point
-----------------
+Use Case - 0x05
+---------------
+* Format output
+
 >>> class Point:
 ...     def __init__(self, x, y, z=0):
 ...         self.x = x
@@ -389,9 +394,9 @@ Use Case - Point
 ...
 ...     def __format__(self, name):
 ...
-...         if name == '2D':
+...         if name in ('2D', '2d', '2dimensions'):
 ...             result = f"Point(x={self.x}, y={self.y})"
-...         elif name == '3D':
+...         elif name in ('3D', '3d', '3dimensions'):
 ...             result = f"Point(x={self.x}, y={self.y}, z={self.z})"
 ...         elif name == 'as_dict':
 ...             result = vars(self)
@@ -406,10 +411,10 @@ Use Case - Point
 >>> point = Point(x=1, y=2)
 >>>
 >>>
->>> print(f'{point:2D}')
+>>> print(f'{point:2d}')
 Point(x=1, y=2)
 >>>
->>> print(f'{point:3D}')
+>>> print(f'{point:3d}')
 Point(x=1, y=2, z=0)
 >>>
 >>> print(f'{point:as_tuple}')

@@ -66,8 +66,8 @@ Read data from CSV file using ``csv.DictReader()``. While giving custom names no
 {'Sepal Length': '6.0', 'Sepal Width': '3.4', 'Petal Length': '4.5', 'Petal Width': '1.6', 'Species': 'versicolor'}
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 .. code-block:: text
 
     'sepal_length';'sepal_width';'petal_length';'petal_width';'species'

@@ -5,12 +5,13 @@
 * Time: 5 min
 
 English:
-    1. Print 6 random integers without repetition in range from 1 to 49
+    1. Define `result: list[int]` with 6 random integers without repetition
+       in range from 1 to 49
     2. Run doctests - all must succeed
 
 Polish:
-    1. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z
-       zakresu od 1 do 49.
+    1. Zdefiniuj `result: list[int]` z 6-oma losowymi i nie powtarzającymi się
+       liczb całkowitych z zakresu od 1 do 49
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -21,9 +22,12 @@ Tests:
 """
 
 from random import sample, seed
+
+
 seed(0)
 
-result: list
+# list[int]:
+result = ...
 
 # Solution
 result = sample(range(1, 50), k=6)
