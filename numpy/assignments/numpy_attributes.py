@@ -27,8 +27,10 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is dict
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is dict, \
+    'Variable `result` has invalid type, expected: dict'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     {'number of dimensions': 2,

@@ -21,14 +21,16 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(ab)
-    <class 'numpy.ndarray'>
-    >>> type(ba)
-    <class 'numpy.ndarray'>
-    >>> ab
+    >>> assert type(result_ab) is np.ndarray, \
+    'Variable `result_ab` has invalid type, expected: np.ndarray'
+    >>> assert type(result_ba) is np.ndarray, \
+    'Variable `result_ba` has invalid type, expected: np.ndarray'
+
+    >>> result_ab
     array([[5, 1],
            [2, 3]])
-    >>> ba
+
+    >>> result_ba
     array([[5, 1],
            [2, 3]])
 """
@@ -40,6 +42,9 @@ a = np.array([[1, 0], [0, 1]])
 b = [[4, 1], [2, 2]]
 
 
+result_ab = ...
+result_ba = ...
+
 # Solution
-ab = a + b
-ba = b + a
+result_ab = a + b
+result_ba = b + a

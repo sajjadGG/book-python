@@ -20,8 +20,13 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is list
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, expected: list'
+    >>> assert all(type(x) is np.int64 for x in result), \
+    'All values in `result` must be type int'
+
     >>> result
     [2, 4, 6, 8]
 """
@@ -34,7 +39,7 @@ DATA = np.array([[1, 2, 3],
                  [7, 8, 9]])
 
 
-result: list
+result = ...
 
 
 # Solution

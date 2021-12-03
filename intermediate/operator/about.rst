@@ -11,6 +11,51 @@ Rationale
   on the important code, not boilerplate code just to make it works
 
 
+Recap
+-----
+>>> a = int(1)
+>>> b = int(2)
+>>> a + b
+3
+
+>>> a = float(1.0)
+>>> b = float(2.0)
+>>> a + b
+3.0
+
+>>> a = str('1')
+>>> b = str('2')
+>>> a + b
+'12'
+
+>>> a = list([1])
+>>> b = list([2])
+>>> a + b
+[1, 2]
+
+>>> class Vector:
+...     def __init__(self, x, y):
+...         self.x = x
+...         self.y = y
+>>>
+>>> a = Vector(1,2)
+>>> b = Vector(2,3)
+>>> a + b
+Traceback (most recent call last):
+TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
+
+>>> @dataclass
+>>> class Vector:
+...     x: int
+...     b: int
+>>>
+>>> a = Vector(1,2)
+>>> b = Vector(2,3)
+>>> a + b
+Traceback (most recent call last):
+TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
+
+
 Example
 -------
 >>> from dataclasses import dataclass

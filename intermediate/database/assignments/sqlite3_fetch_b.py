@@ -1,25 +1,49 @@
 """
-* Assignment: SQLite3 Fetch CSV
+* Assignment: SQLite3 Fetch Logs
 * Complexity: easy
-* Lines of code: 30 lines
+* Lines of code: 17 lines
 * Time: 21 min
 
 English:
-    1. Read data from `FILE` (don't use `csv` or `pandas` library)
-    2. Replace species from `int` to `str` according to `SPECIES`
-       conversion table
-    3. Connect to the `sqlite3` using context manager (`with`)
-    4. Create table `iris` and write data to it
-    5. Select data and add them to `result: list[dict]`
-    6. Run doctests - all must succeed
+    1. Split `DATA` by lines:
+        a. Strip line from whitespace at the begining and at the end
+        b. Extract date, time, log level and message from each line
+        c. Parse date and time as date and time objects
+        d. Combine date and time into datetime object
+        e. Define datetime, level and message as tuple
+        f. Add that tuple to `data: list[tuple]`
+    2. Connect to database:
+        a. Execute `SQL_CREATE_TABLE` to create database table
+        b. Execute `SQL_INSERT` to insert logs to in `list[tuple]` format
+        c. Execute `SQL_SELECT` to select data
+        d. Iterate over rows and append each to `result: list[tuple]`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Wczytaj dane z `FILE` (nie używaj biblioteki `csv` lub `pandas`)
-    2. Podmień gatunki z `int` na `str` zgodnie z tabelą podstawień `SPECIES`
-    3. Połącz się do bazy danych `sqlite3` używając context managera (`with`)
-    4. Stwórz tabelę `iris` i zapisz do niej dane
-    5. Wybierz dane i dodaj je do `result: list[dict]`
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    1. Podziel `DATA` po liniach:
+        a. Oczyść linię z białych znaków na początku i na końcu
+        b. Wyciągnij datę, czas, poziom logowania i teść z każdej linii
+        c. Rozczytaj datę i czas jako obiekty date and time
+        d. Połącz datę i czas w obiekt datetime
+        e. Zdefiniuj datetime, level i message jako tuplę
+        f. Dodaj tą tuplę do `data: list[tuple]`
+    2. Połącz się do bazy danych:
+        a. Wykonaj `SQL_CREATE_TABLE` aby stworzyć tabelę w bazie danych
+        b. Wykonaj `SQL_INSERT` aby wstawić logi w formacie `list[tuple]`
+        c. Wykonaj `SQL_SELECT` aby wybrać dane
+        d. Iterując po wierszach dopisuj je do `result: list[tuple]`
+    3. Uruchom doctesty - wszystkie muszą się powieść
+
+References:
+    [1] National Aeronautics and Space Administration.
+        Apollo 11 timeline.
+        Year: 1969. Retrieved: 2021-03-25.
+        URL: https://history.nasa.gov/SP-4029/Apollo_11i_Timeline.htm
+
+Hints:
+    * `datetime.fromisoformat(str)`
+    * `datetime.combine(date, time)`
+    * `datetime.strptime(str, format)`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -28,101 +52,101 @@ Tests:
     <class 'list'>
     >>> len(result) > 0
     True
-    >>> all(type(row) is dict
+    >>> all(type(row) is tuple
     ...     for row in result)
     True
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'id': 4, 'species': 'virginica', 'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4},
-     {'id': 3, 'species': 'versicolor', 'sepal_length': 5.7, 'sepal_width': 4.4, 'petal_length': 1.5, 'petal_width': 0.4},
-     {'id': 5, 'species': 'versicolor', 'sepal_length': 5.1, 'sepal_width': 3.5, 'petal_length': 1.4, 'petal_width': 0.3},
-     {'id': 8, 'species': 'versicolor', 'sepal_length': 5.4, 'sepal_width': 3.4, 'petal_length': 1.7, 'petal_width': 0.2},
-     {'id': 1, 'species': 'setosa', 'sepal_length': 4.3, 'sepal_width': 3.0, 'petal_length': 1.1, 'petal_width': 0.1},
-     {'id': 2, 'species': 'setosa', 'sepal_length': 5.8, 'sepal_width': 4.0, 'petal_length': 1.2, 'petal_width': 0.2},
-     {'id': 6, 'species': 'setosa', 'sepal_length': 5.7, 'sepal_width': 3.8, 'petal_length': 1.7, 'petal_width': 0.3},
-     {'id': 7, 'species': 'setosa', 'sepal_length': 5.1, 'sepal_width': 3.8, 'petal_length': 1.5, 'petal_width': 0.3},
-     {'id': 9, 'species': 'setosa', 'sepal_length': 5.1, 'sepal_width': 3.7, 'petal_length': 1.5, 'petal_width': 0.4},
-     {'id': 10, 'species': 'setosa', 'sepal_length': 4.6, 'sepal_width': 3.6, 'petal_length': 1.0, 'petal_width': 0.2}]
-
-    >>> from pathlib import Path
-    >>> Path(FILE).unlink(missing_ok=True)
+    [(28, '1969-07-24 17:29:00', 'INFO', 'Crew egress'),
+     (27, '1969-07-24 16:50:35', 'WARNING', 'Splashdown (went to apex-down)'),
+     (26, '1969-07-24 16:35:05', 'WARNING', 'Entry'),
+     (25, '1969-07-24 16:21:12', 'INFO', 'CM/SM separation'),
+     (24, '1969-07-22 04:55:42', 'WARNING', 'Transearth injection ignition (SPS)'),
+     (23, '1969-07-21 21:35:00', 'INFO', 'CSM/LM docked'),
+     (22, '1969-07-21 17:54:00', 'WARNING', 'LM lunar liftoff ignition (LM APS)'),
+     (21, '1969-07-21 05:11:13', 'DEBUG', 'EVA ended (hatch closed)'),
+     (20, '1969-07-21 03:15:16', 'INFO', 'LMP on lunar surface'),
+     (19, '1969-07-21 03:05:58', 'DEBUG', 'Contingency sample collection started (CDR)'),
+     (18, '1969-07-21 02:56:16', 'WARNING', 'Neil Armstrong first words on the Moon'),
+     (17, '1969-07-21 02:56:15', 'WARNING', '1st step taken lunar surface (CDR)'),
+     (16, '1969-07-21 02:39:33', 'DEBUG', 'EVA started (hatch open)'),
+     (15, '1969-07-20 20:17:39', 'WARNING', 'LM lunar landing'),
+     (14, '1969-07-20 20:14:18', 'ERROR', 'LM 1201 alarm'),
+     (13, '1969-07-20 20:10:22', 'ERROR', 'LM 1202 alarm'),
+     (12, '1969-07-20 20:05:05', 'WARNING', 'LM powered descent engine ignition'),
+     (11, '1969-07-20 17:44:00', 'INFO', 'CSM/LM undocked'),
+     (10, '1969-07-16 21:43:36', 'INFO', 'Lunar orbit circularization ignition'),
+     (9, '1969-07-16 17:21:50', 'INFO', 'Lunar orbit insertion ignition'),
+     (8, '1969-07-16 16:56:03', 'INFO', 'CSM docked with LM/S-IVB'),
+     (7, '1969-07-16 16:22:13', 'INFO', 'Translunar injection'),
+     (6, '1969-07-16 13:39:40', 'DEBUG', 'S-II center engine cutoff'),
+     (5, '1969-07-16 13:35:17', 'DEBUG', 'Launch escape tower jettisoned'),
+     (4, '1969-07-16 13:34:44', 'WARNING', 'S-II ignition'),
+     (3, '1969-07-16 13:33:23', 'DEBUG', 'Maximum dynamic pressure (735.17 lb/ft^2)'),
+     (2, '1969-07-16 13:31:53', 'WARNING', 'S-IC engine ignition (#5)'),
+     (1, '1969-07-14 21:00:00', 'INFO', 'Terminal countdown started')]
 """
 
 import sqlite3
+from datetime import date, datetime, time
 
 DATABASE = ':memory:'
-FILE = '_temporary.csv'
 
-SPECIES = {
-    0: 'setosa',
-    1: 'versicolor',
-    2: 'virginica'}
+DATA = """1969-07-14, 21:00:00, INFO, Terminal countdown started
+1969-07-16, 13:31:53, WARNING, S-IC engine ignition (#5)
+1969-07-16, 13:33:23, DEBUG, Maximum dynamic pressure (735.17 lb/ft^2)
+1969-07-16, 13:34:44, WARNING, S-II ignition
+1969-07-16, 13:35:17, DEBUG, Launch escape tower jettisoned
+1969-07-16, 13:39:40, DEBUG, S-II center engine cutoff
+1969-07-16, 16:22:13, INFO, Translunar injection
+1969-07-16, 16:56:03, INFO, CSM docked with LM/S-IVB
+1969-07-16, 17:21:50, INFO, Lunar orbit insertion ignition
+1969-07-16, 21:43:36, INFO, Lunar orbit circularization ignition
+1969-07-20, 17:44:00, INFO, CSM/LM undocked
+1969-07-20, 20:05:05, WARNING, LM powered descent engine ignition
+1969-07-20, 20:10:22, ERROR, LM 1202 alarm
+1969-07-20, 20:14:18, ERROR, LM 1201 alarm
+1969-07-20, 20:17:39, WARNING, LM lunar landing
+1969-07-21, 02:39:33, DEBUG, EVA started (hatch open)
+1969-07-21, 02:56:15, WARNING, 1st step taken lunar surface (CDR)
+1969-07-21, 02:56:16, WARNING, Neil Armstrong first words on the Moon
+1969-07-21, 03:05:58, DEBUG, Contingency sample collection started (CDR)
+1969-07-21, 03:15:16, INFO, LMP on lunar surface
+1969-07-21, 05:11:13, DEBUG, EVA ended (hatch closed)
+1969-07-21, 17:54:00, WARNING, LM lunar liftoff ignition (LM APS)
+1969-07-21, 21:35:00, INFO, CSM/LM docked
+1969-07-22, 04:55:42, WARNING, Transearth injection ignition (SPS)
+1969-07-24, 16:21:12, INFO, CM/SM separation
+1969-07-24, 16:35:05, WARNING, Entry
+1969-07-24, 16:50:35, WARNING, Splashdown (went to apex-down)
+1969-07-24, 17:29, INFO, Crew egress"""
 
-DATA = """4.3,3.0,1.1,0.1,0
-5.8,4.0,1.2,0.2,0
-5.7,4.4,1.5,0.4,1
-5.4,3.9,1.3,0.4,2
-5.1,3.5,1.4,0.3,1
-5.7,3.8,1.7,0.3,0
-5.1,3.8,1.5,0.3,0
-5.4,3.4,1.7,0.2,1
-5.1,3.7,1.5,0.4,0
-4.6,3.6,1.0,0.2,0"""
 
 SQL_CREATE_TABLE = """
-    CREATE TABLE IF NOT EXISTS iris (
+    CREATE TABLE IF NOT EXISTS logs (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        species TEXT,
-        sepal_length REAL,
-        sepal_width REAL,
-        petal_length REAL,
-        petal_width REAL);"""
+        datetime DATETIME,
+        level TEXT,
+        message TEXT);"""
 
-SQL_INSERT = """
-    INSERT INTO iris VALUES (
-        NULL,
-        :species,
-        :sepal_length,
-        :sepal_width,
-        :petal_length,
-        :petal_width);"""
+SQL_INSERT = 'INSERT INTO logs VALUES (NULL, ?, ?, ?);'
+SQL_SELECT = 'SELECT * FROM logs ORDER BY datetime DESC;'
 
-SQL_SELECT = """
-    SELECT *
-    FROM iris
-    ORDER BY species DESC, id ASC;"""
-
-with open(FILE, mode='w') as file:
-    file.write(DATA)
-
-
-# list[tuple]: select all results from database in list[dict] format, example:
-#              [{'id': 4,
-#                'species': 'virginica',
-#                'sepal_length': 5.4,
-#                'sepal_width': 3.9,
-#                'petal_length': 1.3,
-#                'petal_width': 0.4}, ...]
+# list[tuple]: select all results from database in list[tuple] format, example:
+#     [(28, '1969-07-24 17:29:00', 'INFO', 'Crew egress'), ...]
 result = ...
 
 # Solution
-result = []
 data = []
+for line in DATA.splitlines():
+    d,t,lvl,msg = line.strip().split(', ', maxsplit=3)
+    d = date.fromisoformat(d)
+    t = time.fromisoformat(t)
+    dt = datetime.combine(d,t)
+    data.append((dt, lvl, msg))
 
-with open(FILE) as file:
-    for line in file:
-        line = line.strip().split(',')
-        data.append({
-            'sepal_length': float(line[0]),
-            'sepal_width': float(line[1]),
-            'petal_length': float(line[2]),
-            'petal_width': float(line[3]),
-            'species': SPECIES[int(line[4])],
-        })
 
 with sqlite3.connect(DATABASE) as db:
     db.execute(SQL_CREATE_TABLE)
     db.executemany(SQL_INSERT, data)
-    db.row_factory = sqlite3.Row
-    for row in db.execute(SQL_SELECT):
-        result.append(dict(row))
+    result = list(db.execute(SQL_SELECT))

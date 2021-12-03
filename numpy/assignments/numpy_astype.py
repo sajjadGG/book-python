@@ -21,13 +21,19 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result_int) is np.ndarray
-    True
-    >>> type(result_bool) is np.ndarray
-    True
+    >>> assert result_int is not Ellipsis, \
+    'Assign result to variable: `result_int`'
+    >>> assert result_bool is not Ellipsis, \
+    'Assign result to variable: `result_bool`'
+    >>> assert type(result_int) is np.ndarray, \
+    'Variable `result_int` has invalid type, expected: np.ndarray'
+    >>> assert type(result_bool) is np.ndarray, \
+    'Variable `result_bool` has invalid type, expected: np.ndarray'
+
     >>> result_int
     array([[-1,  0,  1],
            [ 2,  3,  4]])
+
     >>> result_bool
     array([[ True, False,  True],
            [ True,  True,  True]])
@@ -40,7 +46,10 @@ DATA = np.array([[-1.1, 0.0, 1.1],
                  [2.2, 3.3, 4.4]])
 
 
+# np.ndarray: DATA converted to ints
 result_int = ...
+
+# np.ndarray: DATA converted to floats
 result_bool = ...
 
 # Solution

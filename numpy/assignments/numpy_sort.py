@@ -20,14 +20,21 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result_sort) is np.ndarray
-    True
-    >>> type(result_flip) is np.ndarray
-    True
+    >>> assert result_sort is not Ellipsis, \
+    'Assign result to variable: `result_sort`'
+    >>> assert type(result_sort) is np.ndarray, \
+    'Variable `result_sort` has invalid type, expected: np.ndarray'
+
+    >>> assert result_flip is not Ellipsis, \
+    'Assign result to variable: `result_flip`'
+    >>> assert type(result_flip) is np.ndarray, \
+    'Variable `result_flip` has invalid type, expected: np.ndarray'
+
     >>> result_sort
     array([[44, 47, 64, 67],
            [ 9, 21, 67, 83],
            [36, 70, 87, 88]])
+
     >>> result_flip
     array([[36, 70, 87, 88],
            [ 9, 21, 67, 83],

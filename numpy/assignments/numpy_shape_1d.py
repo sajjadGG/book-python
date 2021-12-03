@@ -19,16 +19,27 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result_ravel) is np.ndarray
-    True
-    >>> type(result_flatten) is np.ndarray
-    True
-    >>> type(result_reshape) is np.ndarray
-    True
+    >>> assert result_ravel is not Ellipsis, \
+    'Assign result to variable: `result_ravel`'
+    >>> assert type(result_ravel) is np.ndarray, \
+    'Variable `result_ravel` has invalid type, expected: np.ndarray'
+
+    >>> assert result_flatten is not Ellipsis, \
+    'Assign result to variable: `result_flatten`'
+    >>> assert type(result_flatten) is np.ndarray, \
+    'Variable `result_flatten` has invalid type, expected: np.ndarray'
+
+    >>> assert result_reshape is not Ellipsis, \
+    'Assign result to variable: `result_reshape`'
+    >>> assert type(result_reshape) is np.ndarray, \
+    'Variable `result_reshape` has invalid type, expected: np.ndarray'
+
     >>> result_flatten
     array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
     >>> result_ravel
     array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
     >>> result_reshape
     array([[1, 2, 3, 4, 5, 6, 7, 8, 9]])
 """

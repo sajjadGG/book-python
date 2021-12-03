@@ -18,12 +18,20 @@ Polish:
     5. Sprawdź czy jakakolwiek `result` spełnia ten warunek, wynik zapisz do `result_any`
     6. Uruchom doctesty - wszystkie muszą się powieść
 
-    >>> type(result) is np.ndarray
-    True
+Tests:
+    >>> import sys; sys.tracebacklimit = 0
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is np.ndarray, \
+    'Variable `result` has invalid type, expected: np.ndarray'
+
     >>> result
     array([ True, False, False, False, False, False, False, False,  True])
+
     >>> result_all
     False
+
     >>> result_any
     True
 """

@@ -19,12 +19,21 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result_ceil) is np.ndarray
-    True
-    >>> type(result_floor) is np.ndarray
-    True
-    >>> type(result_round) is np.ndarray
-    True
+    >>> assert result_ceil is not Ellipsis, \
+    'Assign result to variable: `result_ceil`'
+    >>> assert type(result_ceil) is np.ndarray, \
+    'Variable `result_ceil` has invalid type, expected: np.ndarray'
+
+    >>> assert result_floor is not Ellipsis, \
+    'Assign result to variable: `result_floor`'
+    >>> assert type(result_floor) is np.ndarray, \
+    'Variable `result_floor` has invalid type, expected: np.ndarray'
+
+    >>> assert result_round is not Ellipsis, \
+    'Assign result to variable: `result_round`'
+    >>> assert type(result_round) is np.ndarray, \
+    'Variable `result_round` has invalid type, expected: np.ndarray'
+
     >>> result_ceil
     array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
            1., 1., 1., 1.])

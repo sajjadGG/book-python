@@ -23,24 +23,37 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(species) is np.ndarray
-    True
-    >>> type(features) is np.ndarray
-    True
-    >>> type(labels) is np.ndarray
-    True
+    >>> assert species is not Ellipsis, \
+    'Assign result to variable: `species`'
+    >>> assert type(species) is np.ndarray, \
+    'Variable `species` has invalid type, expected: np.ndarray'
+
+    >>> assert features is not Ellipsis, \
+    'Assign result to variable: `features`'
+    >>> assert type(features) is np.ndarray, \
+    'Variable `features` has invalid type, expected: np.ndarray'
+
+    >>> assert labels is not Ellipsis, \
+    'Assign result to variable: `labels`'
+    >>> assert type(labels) is np.ndarray, \
+    'Variable `labels` has invalid type, expected: np.ndarray'
+
     >>> species
     array(['setosa', 'versicolor', 'virginica'], dtype='<U10')
+
     >>> len(features)
     151
+
     >>> features[:3]
     array([[5.4, 3.9, 1.3, 0.4],
            [5.9, 3. , 5.1, 1.8],
            [6. , 3.4, 4.5, 1.6]])
+
     >>> features[-3:]
     array([[4.9, 2.5, 4.5, 1.7],
            [6.3, 2.8, 5.1, 1.5],
            [6.8, 3.2, 5.9, 2.3]])
+
     >>> labels
     array([0, 2, 1, 2, 1, 0, 1, 1, 0, 2, 2, 0, 0, 2, 2, 1, 2, 2, 2, 1, 0, 1,
            1, 0, 0, 0, 2, 2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2, 1, 1, 1, 2, 2,

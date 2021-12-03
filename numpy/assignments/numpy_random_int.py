@@ -17,8 +17,11 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is np.ndarray
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is np.ndarray, \
+    'Variable `result` has invalid type, expected: np.ndarray'
+
     >>> result
     array([[5, 0, 3, 3, 7, 9, 3, 5, 2, 4, 7, 6, 8, 8, 1, 6],
            [7, 7, 8, 1, 5, 9, 8, 9, 4, 3, 0, 3, 5, 0, 2, 3],

@@ -21,6 +21,9 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert euclidean_distance((0,0), (0,0)) is not Ellipsis, \
+    'Assign result to function: `euclidean_distance`'
+
     >>> a = (1, 0)
     >>> b = (0, 1)
     >>> euclidean_distance(a, b)
@@ -42,8 +45,9 @@ Tests:
 from math import sqrt
 
 
+# callable: Calculate distance between points using Euclidean algorithm
 def euclidean_distance(a, b):
-    pass
+    ...
 
 
 # Solution

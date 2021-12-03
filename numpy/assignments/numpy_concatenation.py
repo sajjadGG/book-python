@@ -19,8 +19,11 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is np.ndarray
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is np.ndarray, \
+    'Variable `result` has invalid type, expected: np.ndarray'
+
     >>> result
     array([[1, 2, 3],
            [4, 5, 6]])
@@ -31,6 +34,7 @@ import numpy as np
 a = np.array([1, 2, 3])
 b = np.array([4, 5, 6])
 
+# np.ndarray: Concatenate `a` and `b` and reshape as 2 by 3
 result = ...
 
 
