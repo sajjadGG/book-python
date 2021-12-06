@@ -191,12 +191,13 @@ Use Case - 0x02
 >>> DATA = ['5.8,2.7,5.1,1.9,virginica',
 ...         '5.1,3.5,1.4,0.2,setosa',
 ...         '5.7,2.8,4.1,1.3,versicolor']
-...
->>> result = [[float(x) for x in X] + [y]
-...           for line in DATA
-...           if (row := line.split(','))
-...           and (X := row[0:4])
-...           and (y := row[4])]
+>>>
+>>>
+>>> result = [tuple(features + [species])
+...           for row in DATA
+...           if (line := row.split(','))
+...           and (features := [float(x) for x in line[0:4]])
+...           and (species := line[4])]
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 [[5.8, 2.7, 5.1, 1.9, 'virginica'],
