@@ -426,32 +426,43 @@ Data: {'firstname': 'Jan',
 
 Use Case - 0x07
 ---------------
-Definition of pandas.read_csv() function
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
-
-Proxy functions. One of the most common use of ``*args``, ``**kwargs``:
+* Definition of pandas.read_csv() function [#pandasreadcsv]_
+* Proxy functions. One of the most common use of ``*args``, ``**kwargs``:
 
 >>> def read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer',
-...              names=None, index_col=None, usecols=None, squeeze=False, prefix=None,
-...              mangle_dupe_cols=True, dtype=None, engine=None, converters=None,
-...              true_values=None, false_values=None, skipinitialspace=False,
-...              skiprows=None, nrows=None, na_values=None, keep_default_na=True,
-...              na_filter=True, verbose=False, skip_blank_lines=True, parse_dates=False,
-...              infer_datetime_format=False, keep_date_col=False, date_parser=None,
-...              dayfirst=False, iterator=False, chunksize=None, compression='infer',
-...              thousands=None, decimal=b'.', lineterminator=None, quotechar='"',
-...              quoting=0, escapechar=None, comment=None, encoding=None, dialect=None,
+...              names=None, index_col=None, usecols=None, squeeze=False,
+...              prefix=None, mangle_dupe_cols=True, dtype=None, engine=None,
+...              converters=None, true_values=None, false_values=None,
+...              skipinitialspace=False, skiprows=None, nrows=None,
+...              na_values=None, keep_default_na=True, na_filter=True,
+...              verbose=False, skip_blank_lines=True, parse_dates=False,
+...              infer_datetime_format=False, keep_date_col=False,
+...              date_parser=None, dayfirst=False, iterator=False,
+...              chunksize=None, compression='infer', thousands=None,
+...              decimal=b'.', lineterminator=None, quotechar='"', quoting=0,
+...              escapechar=None, comment=None, encoding=None, dialect=None,
 ...              tupleize_cols=None, error_bad_lines=True, warn_bad_lines=True,
-...              skipfooter=0, doublequote=True, delim_whitespace=False, low_memory=True,
-...              memory_map=False, float_precision=None): ...
->>>
->>>
+...              skipfooter=0, doublequote=True, delim_whitespace=False,
+...              low_memory=True, memory_map=False, float_precision=None): ...
+
+Proxy functions allows for changing defaults to the original function. One
+simply define a function which has sensible defaults and call the original
+function setting default values automatically. Thanks to using ``**kwargs``
+there is no need to specify all the values from the original function. The
+uncovered arguments will simply be put in ``kwargs`` dictionary and passed
+to the original function:
+
 >>> def mycsv(file, encoding='utf-8', delimiter=';', decimal=b',',
-...           lineterminator='\n', *args, **kwargs):
-...     return read_csv(file, encoding=encoding, delimiter=delimiter, decimal=decimal,
-...                     lineterminator=lineterminator, *args, **kwargs)
->>>
->>>
+...           lineterminator='\n', **kwargs):
+...     return read_csv(file, encoding=encoding, delimiter=delimiter,
+...                     decimal=decimal, lineterminator=lineterminator,
+...                     **kwargs)
+
+This allows for cleaner code. Each parameter will be passed to ``mycsv``
+function. Then it will be checked if there is a different default value
+already defined. If not, then parameter will be stored in ``kwargs`` and
+passed to the original function:
+
 >>> mycsv('iris1.csv')
 >>> mycsv('iris2.csv', encoding='iso-8859-2')
 >>> mycsv('iris3.csv', encoding='cp1250', verbose=True)
@@ -464,17 +475,38 @@ Decorators are functions, which get reference to the decorated function as
 it's argument, and has closure which gets original function arguments as
 positional and keyword arguments:
 
->>> def login_required(func):
-...     def wrapper(request, *args, **kwargs):
-...         if not request.user.is_authenticated():
-...             raise PermissionError
+>>> def mydecorator(func):
+...     def wrapper(*args, **kwargs):
 ...         return func(*args, **kwargs)
 ...     return wrapper
->>>
->>>
->>> @login_required
-... def edit_profile(request):
-...     pass
+
+Decorators could be used on any function, therefore we could not predict what
+would be the name of the parameter passed to it:
+
+>>> @mydecorator
+... def add(a, b):
+...     return a + b
+
+>>> @mydecorator
+... def echo(text):
+...     return text
+
+Moreover it depends on a user whether he/she chooses to run function
+positionally, using keyword arguments or even both at the same time:
+
+>>> add(1, 2)
+3
+
+>>> add(a=1, b=2)
+3
+
+>>> add(1, b=2)
+3
+
+
+References
+----------
+.. [#pandasreadcsv] The pandas development team. API Reference Pandas.read_csv(). Retrieved: 2021-12-05. Year: 2021. URL: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
 
 
 Assignments
