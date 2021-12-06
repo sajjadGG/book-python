@@ -20,11 +20,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result`'
-    >>> assert len(result) > 0, \
-    'Result cannot be empty'
+    'Assign result to variable: `result` instead of Ellipsis `...`'
     >>> assert type(result) is set, \
     'Result must be a set'
+    >>> assert len(result) > 0, \
+    'Result cannot be empty'
     >>> assert all(type(element) is str for element in result), \
     'All elements in result must be a str'
 
@@ -46,10 +46,12 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
 SUFFIXES = ('ca', 'osa')
 
 # set[str]: species names with word endings in `SUFFIXES`
-result = set()
+result = ...
 
 
 # Solution
+result = set()
+
 for *features, label in DATA[1:]:
     species = label.pop()
 

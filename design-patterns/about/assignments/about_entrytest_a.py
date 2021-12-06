@@ -1,5 +1,5 @@
 """
-* Assignment: About EntryTest Variable
+* Assignment: About EntryTest Warmup
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 2 min
@@ -15,11 +15,18 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result` instead of Ellipsis `...`'
     >>> assert type(result) is int, \
     'Variable `result` has invalid type, should be int'
-    >>> assert result == 1, \
-    'Variable `result` has invalid value, should be 1'
+
+    >>> result
+    1
 """
 
 # int: with value 1
 result = ...
+
+
+# Solution
+result = 1

@@ -175,6 +175,81 @@ Use Case - 0x02
  'duration': datetime.timedelta(days=13)}
 
 
+Use Case - 0x03
+---------------
+>>> import json
+>>> from dataclasses import dataclass, field
+>>> from pprint import pprint
+>>>
+>>>
+>>> @dataclass
+... class Mission:
+...     year: int
+...     name: str
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     lastname: str
+...     firstname: str
+...     missions: list[Mission] = field(default_factory=list)
+>>>
+>>>
+>>> CREW = [
+...     Astronaut('Mark', 'Watney', missions=[
+...         Mission(1973, 'Apollo18'),
+...         Mission(2035, 'Ares3'),
+...     ]),
+...
+...     Astronaut('Melissa', 'Lewis', missions=[
+...         Mission(2035, 'Ares3'),
+...     ]),
+...
+...     Astronaut('Rick', 'Martinez'),
+... ]
+>>>
+>>>
+>>> class MyEncoder(json.JSONEncoder):
+...     def default(self, obj):
+...         data = vars(obj)
+...         data['__clsname__'] = obj.__class__.__name__
+...         return data
+>>>
+>>>
+>>> class MyDecoder(json.JSONDecoder):
+...     def __init__(self):
+...         super().__init__(object_hook=self.default)
+...
+...     def default(self, data: dict) -> dict:
+...         clsname = data.pop('__clsname__')
+...         cls = globals()[clsname]
+...         return cls(**data)
+
+>>> result = json.dumps(CREW, cls=MyEncoder)
+>>>
+>>> pprint(result, width=72)
+('[{"lastname": "Mark", "firstname": "Watney", "missions": [{"year": '
+ '1973, "name": "Apollo18", "__clsname__": "Mission"}, {"year": 2035, '
+ '"name": "Ares3", "__clsname__": "Mission"}], "__clsname__": '
+ '"Astronaut"}, {"lastname": "Melissa", "firstname": "Lewis", '
+ '"missions": [{"year": 2035, "name": "Ares3", "__clsname__": '
+ '"Mission"}], "__clsname__": "Astronaut"}, {"lastname": "Rick", '
+ '"firstname": "Martinez", "missions": [], "__clsname__": '
+ '"Astronaut"}]')
+
+>>> result = json.loads(result, cls=MyDecoder)
+>>>
+>>> pprint(result)
+[Astronaut(lastname='Mark',
+           firstname='Watney',
+           missions=[Mission(year=1973, name='Apollo18'),
+                     Mission(year=2035, name='Ares3')]),
+ Astronaut(lastname='Melissa',
+           firstname='Lewis',
+           missions=[Mission(year=2035, name='Ares3')]),
+ Astronaut(lastname='Rick', firstname='Martinez', missions=[])]
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/json_decoder_a.py

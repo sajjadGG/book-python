@@ -25,11 +25,10 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result` instead of Ellipsis `...`'
     >>> assert len(result) > 0, \
     'Result cannot be empty'
-
-    >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result`'
     >>> assert type(result) is list, \
     'Variable `result` has invalid type, should be list'
     >>> assert all(type(x) is dict for x in result), \
@@ -60,10 +59,11 @@ DATA = """
 
 # list[dict]: keys: ip, hosts, protocol; merge hosts for the same ip address
 #             protocol is "ipv4" when '.' is in address; use conditional expr.
-result = []
+result = ...
 
 
 # Solution
+result = []
 for line in DATA.splitlines():
     line = line.strip()
 

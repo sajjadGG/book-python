@@ -106,3 +106,7 @@ Assignments
 .. literalinclude:: assignments/sqlite3_fetch_b.py
     :caption: :download:`Solution <assignments/sqlite3_fetch_b.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/sqlite3_fetch_c.py
+    :caption: :download:`Solution <assignments/sqlite3_fetch_c.py>`
+    :end-before: # Solution

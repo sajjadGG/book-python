@@ -22,11 +22,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result`'
-    >>> assert len(result) > 0, \
-    'Result cannot be empty'
+    'Assign result to variable: `result` instead of Ellipsis `...`'
     >>> assert type(result) is list, \
     'Result must be a list'
+    >>> assert len(result) > 0, \
+    'Result cannot be empty'
     >>> assert all(type(element) is dict for element in result), \
     'All elements in result must be a dict'
 
@@ -49,10 +49,11 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
 
 
 # list[dict]: converted DATA from list[tuple] to list[dict]
-result = []
+result = ...
 
 
 # Solution
+result = []
 header, *data = DATA
 
 for row in data:

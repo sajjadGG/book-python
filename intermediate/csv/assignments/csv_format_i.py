@@ -61,14 +61,14 @@ result = ...
 
 # Solution
 result = ''
-header = set()
+keys = set()
 
 for row in DATA:
-    header.update(row.keys())
+    keys.update(row.keys())
 
-header = sorted(header)
+header = sorted(keys)
 result += ','.join(f'"{x}"' for x in header) + '\n'
 
 for row in DATA:
-    row = {h:row.get(h, '') for h in header}
-    result += ','.join(f'"{x}"' for x in row.values()) + '\n'
+    row = [row.get(x, '') for x in header]
+    result += ','.join(f'"{x}"' for x in row) + '\n'
