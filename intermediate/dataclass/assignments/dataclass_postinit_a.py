@@ -8,7 +8,8 @@ English:
     1. Use Dataclass to define class `Point` with attributes:
         a. `x: int` with default value `0`
         b. `y: int` with default value `0`
-    2. When `x` or `y` has negative value raise en exception `ValueError('Coordinate cannot be negative')`
+    2. When `x` or `y` has negative value raise en exception
+       `ValueError('Coordinate cannot be negative')`
     3. Use `datalass` and validation in `__post_init__()`
     4. Run doctests - all must succeed
 
@@ -16,7 +17,8 @@ Polish:
     1. Użyj Dataclass do zdefiniowania klasy `Point` z atrybutami:
         a. `x: int` z domyślną wartością `0`
         b. `y: int` z domyślną wartością `0`
-    2. Gdy `x` lub `y` mają wartość ujemną podnieś wyjątek `ValueError('Coordinate cannot be negative')`
+    2. Gdy `x` lub `y` mają wartość ujemną podnieś wyjątek
+       `ValueError('Coordinate cannot be negative')`
     3. Użyj `datalass` i walidacji w `__post_init__()`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -51,8 +53,10 @@ Tests:
 from dataclasses import dataclass
 
 
+# class: Use Dataclass to define class `Point` with attributes: `x` and `y`
 class Point:
-    pass
+    ...
+
 
 # Solution
 @dataclass

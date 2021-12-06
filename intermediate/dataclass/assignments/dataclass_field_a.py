@@ -35,49 +35,34 @@ Tests:
 
     >>> assert 'firstname' in astronaut, \
     'Class Astronaut is missing field: firstname'
-
     >>> assert 'lastname' in astronaut, \
     'Class Astronaut is missing field: lastname'
-
     >>> assert 'addresses' in astronaut, \
     'Class Astronaut is missing field: addresses'
-
     >>> assert 'street' in address, \
     'Class Address is missing field: street'
-
     >>> assert 'city' in address, \
     'Class Address is missing field: city'
-
     >>> assert 'post_code' in address, \
     'Class Address is missing field: post_code'
-
     >>> assert 'region' in address, \
     'Class Address is missing field: region'
-
     >>> assert 'country' in address, \
     'Class Address is missing field: country'
-
     >>> assert astronaut['firstname'].type is str, \
     'Astronaut.firstname has invalid type annotation, expected: str'
-
     >>> assert astronaut['lastname'].type is str, \
     'Astronaut.lastname has invalid type annotation, expected: str'
-
     >>> assert astronaut['addresses'].type.__name__ == 'list', \
     'Astronaut.addresses has invalid type annotation, expected: list[Address]'
-
     >>> assert address['street'].type is Optional[str], \
     'Address.street has invalid type annotation, expected: Optional[str]'
-
     >>> assert address['city'].type is str, \
     'Address.city has invalid type annotation, expected: str'
-
     >>> assert address['post_code'].type is Optional[int], \
     'Address.post_code has invalid type annotation, expected: Optional[int]'
-
     >>> assert address['region'].type is str, \
     'Address.region has invalid type annotation, expected: str'
-
     >>> assert address['country'].type is str, \
     'Address.country has invalid type annotation, expected: str'
 
@@ -118,10 +103,11 @@ DATA = [
 ]
 
 
+# class: Model `DATA` using `dataclasses`, do not use: `str | None` syntax
 class Address:
     ...
 
-
+# class: Model `DATA` using `dataclasses`, do not use: `str | None` syntax
 class Astronaut:
     ...
 

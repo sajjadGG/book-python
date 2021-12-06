@@ -51,8 +51,9 @@ DATA = """
 }
 """
 
+# class: Using `dataclass` model data to create class `Pet`
 class Pet:
-    pass
+    ...
 
 
 # Solution

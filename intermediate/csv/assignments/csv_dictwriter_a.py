@@ -5,7 +5,7 @@
 * Time: 5 min
 
 English:
-    1. Using `csv.DictWriter()` save `DATA` to file
+    1. Using `csv.DictWriter()` save `DATA` to `FILE`
     2. Open file in your spreadsheet program like:
        Microsoft Excel, Libre Office or Numbers etc.
     3. Open file in simple in your IDE and simple text editor like:
@@ -17,7 +17,7 @@ English:
     5. Run doctests - all must succeed
 
 Polish:
-    1. Za pomocą `csv.DictWriter()` zapisz `DATA` do pliku
+    1. Za pomocą `csv.DictWriter()` zapisz `DATA` do `FILE`
     2. Spróbuj otworzyć plik w arkuszu kalkulacyjnym tj.
        Microsoft Excel, Libre Office lub Numbers itp
     3. Spróbuj otworzyć plik w IDE i prostym edytorze tekstu tj.
@@ -60,6 +60,11 @@ DATA = [{'firstname': 'Jan', 'lastname': 'Twardowski'},
         {'firstname': 'Melissa', 'lastname': 'Lewis'}]
 
 FILE = r'_temporary.csv'
+
+# ContextManager: Write DATA to FILE, generate header from DATA
+with open(FILE, mode='w') as file:
+    ...
+
 
 # Solution
 with open(FILE, mode='w') as file:

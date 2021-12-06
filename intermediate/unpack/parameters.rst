@@ -2,33 +2,6 @@ Unpack Parameters
 =================
 
 
-Recap
------
-* parameter - Receiving variable used within the function/block
-* required parameters - Parameter which is necessary to call function
-* optional parameters (with default value) - Parameter which is optional and has default value (if not specified at call time)
-
-Required parameters:
-
->>> def echo(a, b):
-...     pass
-
-Optional parameters:
-
->>> def echo(a=1, b=2):
-...     pass
-
-Required and optional parameters:
-
->>> def echo(a, b=2):
-...     pass
-
->>> def echo(a=1, b):
-...     pass
-Traceback (most recent call last):
-SyntaxError: non-default argument follows default argument
-
-
 Rationale
 ---------
 * More information in `Unpack Assignment`
@@ -50,6 +23,35 @@ Syntax
 ...     pass
 
 
+Recap
+-----
+* parameter - Receiving variable used within the function/block
+* required parameters - Parameter which is necessary to call function
+* optional parameters (with default value) - Parameter which is optional and has default value (if not specified at call time)
+
+Required parameters:
+
+>>> def echo(a, b):
+...     pass
+
+Optional parameters:
+
+>>> def echo(a=1, b=2):
+...     pass
+
+Required and optional parameters:
+
+>>> def echo(a, b=2):
+...     pass
+
+Required parameters must be the leftmost:
+
+>>> def echo(a=1, b):
+...     pass
+Traceback (most recent call last):
+SyntaxError: non-default argument follows default argument
+
+
 Positional Parameters
 ---------------------
 * ``*`` is used for positional parameters
@@ -69,12 +71,59 @@ Positional Parameters
 >>> echo(2, 3)
 (2, 3)
 >>>
->>> echo('a', 'b')
-('a', 'b')
->>>
->>> echo('a', 2, 3.3)
-('a', 2, 3.3)
+>>> echo(1, 2, 3, 4, 5)
+(1, 2, 3, 4, 5)
 
+
+Keyword Parameters
+------------------
+* ``**`` is used for keyword parameters
+* ``kwargs`` is a convention, but you can use any name
+* ``**kwargs`` unpacks to ``dict``
+
+>>> def echo(**kwargs):
+...     print(kwargs)
+>>>
+>>>
+>>> echo()
+{}
+>>>
+>>> echo(a=1)
+{'a': 1}
+>>>
+>>> echo(a=1, b=2)
+{'a': 1, 'b': 2}
+>>>
+>>> echo(a=1, b=2, c=3, d=4, e=5)
+{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+
+
+Positional and Keyword Parameters
+---------------------------------
+* ``*`` is used for positional parameters
+* ``**`` is used for keyword parameters
+* ``*args`` unpacks to ``tuple``
+* ``**kwargs`` unpacks to ``dict``
+
+>>> def echo(*args, **kwargs):
+...     print(f'{args=}, {kwargs=}')
+>>>
+>>>
+>>> echo()
+args=(), kwargs={}
+>>>
+>>> echo(1, 2, 3)
+args=(1, 2, 3), kwargs={}
+>>>
+>>> echo(d=4, e=5, f=6)
+args=(), kwargs={'d': 4, 'e': 5, 'f': 6}
+>>>
+>>> echo(1, 2, 3, d=4, e=5, f=6)
+args=(1, 2, 3), kwargs={'d': 4, 'e': 5, 'f': 6}
+
+
+Parameters with Args, Kwargs
+----------------------------
 >>> def echo(a, b, c=0, *args):
 ...     print(f'{a=}, {b=}, {c=}, {args=}')
 >>>
@@ -90,23 +139,6 @@ a=1, b=2, c=3, args=(4,)
 >>>
 >>> echo(1, 2, 3, 4, 5, 6)
 a=1, b=2, c=3, args=(4, 5, 6)
-
-
-Keyword Parameters
-------------------
-* ``**`` is used for keyword parameters
-* ``kwargs`` is a convention, but you can use any name
-* ``**kwargs`` unpacks to ``dict``
-
->>> def echo(**kwargs):
-...     print(kwargs)
->>>
->>>
->>> echo(a=1)
-{'a': 1}
->>>
->>> echo(a=1, b=2)
-{'a': 1, 'b': 2}
 
 >>> def echo(a, b, c=0, **kwargs):
 ...     print(f'{a=}, {b=}, {c=}, {kwargs=}')
@@ -125,9 +157,6 @@ a=1, b=2, c=3, kwargs={'d': 7, 'e': 8, 'f': 9}
 Traceback (most recent call last):
 TypeError: echo() got multiple values for argument 'a'
 
-
-Positional and Keyword Parameters
----------------------------------
 >>> def echo(a, b, c=0, *args, **kwargs):
 ...     print(f'{a=}, {b=}, {c=}, {args=}, {kwargs=}')
 >>>
@@ -150,32 +179,33 @@ Use Case - 0x01
 >>> def echo(a, b, c=0, *args):
 ...     print(locals())
 >>>
+>>>
 >>> echo(*range(0,10))
 {'a': 0, 'b': 1, 'c': 2, 'args': (3, 4, 5, 6, 7, 8, 9)}
 
 
 Use Case - 0x02
 ---------------
->>> def sum(*values):
+>>> def add(*values):
 ...     total = 0
 ...     for value in values:
 ...         total += value
 ...     return total
 >>>
 >>>
->>> sum()
+>>> add()
 0
 >>>
->>> sum(1)
+>>> add(1)
 1
 >>>
->>> sum(1, 4)
+>>> add(1, 4)
 5
 >>>
->>> sum(3, 1)
+>>> add(3, 1)
 4
 >>>
->>> sum(1, 2, 3, 4)
+>>> add(1, 2, 3, 4)
 10
 
 

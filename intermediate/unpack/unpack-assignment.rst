@@ -6,6 +6,7 @@ Rationale
 ---------
 * Scalar assignment
 * Vector assignment
+* Multi assignment
 
 
 Syntax
@@ -20,7 +21,7 @@ Vector assignment:
 
 Multi assignment:
 
->>> a = b = 1, 2
+>>> a = b = 1
 
 
 Scalar Assignment
@@ -31,13 +32,13 @@ Scalar Assignment
 1
 
 
-
 Vector Assignment
 -----------------
 >>> a, b = 1, 2
 >>>
 >>> print(a)
 1
+>>>
 >>> print(b)
 2
 
@@ -108,7 +109,7 @@ SyntaxError: cannot assign to set display here. Maybe you meant '==' instead of 
 
 Unpacking
 ---------
->>> data = [1,2,3]
+>>> data = [1, 2, 3]
 >>> a, b, c = data
 >>>
 >>>
@@ -139,11 +140,14 @@ Nested
 ------
 >>> a, (b, c) = [1, (2, 3)]
 >>>
->>> a
+>>>
+>>> print(a)
 1
->>> b
+>>>
+>>> print(b)
 2
->>> c
+>>>
+>>> print(c)
 3
 
 
@@ -153,22 +157,27 @@ Skipping Values
 * ``_`` by convention is used for data we don't want to access in future
 
 >>> _ = 'Mark Watney'
+>>>
 >>> print(_)
 Mark Watney
 
 >>> line = 'Mark,Watney,1'
 >>> firstname, lastname, _ = line.split(',')
 >>>
+>>>
 >>> print(firstname)
 Mark
+>>>
 >>> print(lastname)
 Watney
 
 >>> line = 'Mark,Watney,1,2,3'
 >>> firstname, lastname, _, _, _ = line.split(',')
 >>>
+>>>
 >>> print(firstname)
 Mark
+>>>
 >>> print(lastname)
 Watney
 
@@ -194,16 +203,20 @@ Use Case - 0x02
 >>> username = line[0]
 >>> fullname = line[4]
 >>>
+>>>
 >>> print(username)
 twardowski
+>>>
 >>> print(fullname)
 Jan Twardowski
 
 >>> line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
 >>> username, _, _, _, fullname, _, _ = line.split(':')
 >>>
+>>>
 >>> print(username)
 twardowski
+>>>
 >>> print(fullname)
 Jan Twardowski
 
@@ -223,15 +236,18 @@ Use Case - 0x03
 2
 
 >>> _, _, important = (True, [1, 2, 3, 4], 5)
->>> important
+>>>
+>>> print(important)
 5
 
 >>> _, _,  important = (True, [1, 2, 3, 4], (5, True))
->>> important
+>>>
+>>> print(important)
 (5, True)
 >>>
 >>> _, _, (important, _) = (True, [1, 2, 3, 4], (5, True))
->>> important
+>>>
+>>> print(important)
 5
 
 Python understands this as:

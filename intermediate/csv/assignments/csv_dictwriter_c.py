@@ -5,7 +5,7 @@
 * Time: 8 min
 
 English:
-    1. Using `csv.DictWriter()` save data to CSV file
+    1. Using `csv.DictWriter()` save data to `FILE`
     2. Non-functional requirements:
         a. Use `,` to separate columns
         b. Use `utf-8` encoding
@@ -13,7 +13,7 @@ English:
     3. Run doctests - all must succeed
 
 Polish:
-    1. Za pomocą `csv.DictWriter()` zapisz dane do pliku CSV
+    1. Za pomocą `csv.DictWriter()` zapisz dane do `FILE`
     2. Wymagania niefunkcjonalne:
         a. Użyj `,` do oddzielenia kolumn
         b. Użyj kodowania `utf-8`
@@ -66,6 +66,11 @@ DATA = [Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
         Iris(6.4, 3.2, 4.5, 1.5, 'versicolor')]
 
 FILE = r'_temporary.txt'
+
+
+# ContextManager: Write DATA to FILE, generate header from DATA
+with open(FILE, mode='w', encoding='utf-8') as file:
+    ...
 
 
 # Solution

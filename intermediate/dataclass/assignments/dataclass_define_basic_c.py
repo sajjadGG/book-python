@@ -6,14 +6,14 @@
 
 English:
     1. You received input data in JSON format from the API
-    2. Using `dataclass` model data to create class `Pet`
+    2. Using `dataclass` model `DATA` to create class `Pet`
        a. Leave `category` as `dict`
        b. Leave `tags` as `list[dicts]`
     3. Run doctests - all must succeed
 
 Polish:
     1. Otrzymałeś z API dane wejściowe w formacie JSON
-    2. Wykorzystując `dataclass` zamodeluj dane aby stwórzyć klasę `Pet`
+    2. Wykorzystując `dataclass` zamodeluj `DATA` aby stwórzyć klasę `Pet`
        a. Pozostaw `category` jako `dict`
        b. Pozostaw `tags` jako `list[dicts]`
     3. Uruchom doctesty - wszystkie muszą się powieść
@@ -72,8 +72,9 @@ DATA = """
 }
 """
 
+# class: Using `dataclass` model data to create class `Pet`
 class Pet:
-    pass
+    ...
 
 # Solution
 @dataclass

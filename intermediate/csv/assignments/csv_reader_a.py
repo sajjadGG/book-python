@@ -5,13 +5,13 @@
 * Time: 5 min
 
 English:
-    1. Using `csv.reader()` read data from file
+    1. Using `csv.reader()` read data from `FILE`
     2. Define `result: list[tuple]` with converted data
     3. Use Unix `\n` line terminator
     4. Run doctests - all must succeed
 
 Polish:
-    1. Za pomocą `csv.reader()` wczytaj dane z pliku
+    1. Za pomocą `csv.reader()` wczytaj dane z `FILE`
     2. Zdefiniuj `result: list[tuple]` z przekonwerowanymi danymi
     3. Użyj zakończenia linii Unix `\n`
     4. Uruchom doctesty - wszystkie muszą się powieść

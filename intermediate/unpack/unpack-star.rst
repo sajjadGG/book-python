@@ -14,13 +14,13 @@ Unpack values at the right side:
 >>> a, b, *c = [1, 2, 3, 4]
 >>>
 >>>
->>> a
+>>> print(a)
 1
 >>>
->>> b
+>>> print(b)
 2
 >>>
->>> c
+>>> print(c)
 [3, 4]
 
 Unpack values at the left side:
@@ -28,13 +28,13 @@ Unpack values at the left side:
 >>> *a, b, c = [1, 2, 3, 4]
 >>>
 >>>
->>> a
+>>> print(a)
 [1, 2]
 >>>
->>> b
+>>> print(b)
 3
 >>>
->>> c
+>>> print(c)
 4
 
 Unpack values from both sides at once:
@@ -42,13 +42,13 @@ Unpack values from both sides at once:
 >>> a, *b, c = [1, 2, 3, 4]
 >>>
 >>>
->>> a
+>>> print(a)
 1
 >>>
->>> b
+>>> print(b)
 [2, 3]
 >>>
->>> c
+>>> print(c)
 4
 
 Unpack from variable length:
@@ -56,11 +56,11 @@ Unpack from variable length:
 >>> a, *b, c = [1, 2]
 >>>
 >>>
->>> a
+>>> print(a)
 1
->>> b
+>>> print(b)
 []
->>> c
+>>> print(c)
 2
 
 Cannot unpack from both sides at once:
@@ -76,33 +76,6 @@ Traceback (most recent call last):
 ValueError: not enough values to unpack (expected at least 2, got 1)
 
 
-Convention
-----------
->>> first, *middle, last = [1, 2, 3, 4]
->>>
->>>
->>> first
-1
->>>
->>> middle
-[2, 3]
->>>
->>> last
-4
-
->>> first, second, *others = [1, 2, 3, 4]
->>>
->>>
->>> first
-1
->>>
->>> second
-2
->>>
->>> others
-[3, 4]
-
-
 Skipping Values
 ---------------
 * ``_`` is regular variable name, not a special Python syntax
@@ -115,6 +88,7 @@ Jan Twardowski
 
 >>> line = 'Jan,Twardowski,1,2,3,4,5'
 >>> firstname, lastname, *_ = line.split(',')
+>>>
 >>>
 >>> print(firstname)
 Jan
@@ -143,36 +117,66 @@ Use Case - 0x01
 >>> line = 'ares3,watney,lewis,vogel,johanssen'
 >>> mission, *crew = line.split(',')
 >>>
->>> mission
-'ares3'
 >>>
->>> crew
+>>> print(mission)
+ares3
+>>>
+>>> print(crew)
 ['watney', 'lewis', 'vogel', 'johanssen']
 
 
 Use Case - 0x02
 ---------------
->>> first, second, *others = range(0,10)
+>>> first, *middle, last = [1, 2, 3, 4]
 >>>
->>> first
-0
 >>>
->>> second
+>>> print(first)
 1
 >>>
->>> others
+>>> print(middle)
+[2, 3]
+>>>
+>>> print(last)
+4
+
+>>> first, second, *others = [1, 2, 3, 4]
+>>>
+>>>
+>>> print(first)
+1
+>>>
+>>> print(second)
+2
+>>>
+>>> print(others)
+[3, 4]
+
+
+Use Case - 0x03
+---------------
+>>> first, second, *others = range(0,10)
+>>>
+>>>
+>>> print(first)
+0
+>>>
+>>> print(second)
+1
+>>>
+>>> print(others)
 [2, 3, 4, 5, 6, 7, 8, 9]
 
 >>> first, second, *_ = range(0,10)
 >>>
->>> first
+>>>
+>>> print(first)
 0
 >>>
->>> second
+>>> print(second)
 1
 
 
-Use Case - 0x03
+Use Case - 0x04
 ---------------
 * Python Version
 
@@ -180,33 +184,36 @@ Use Case - 0x03
 >>>
 >>>
 >>> major, minor, *_ = sys.version_info
+>>>
 >>> print(major, minor, sep='.')
 3.9
 
 
-Use Case - 0x04
+Use Case - 0x05
 ---------------
 * Iris 1D
 
 >>> *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
 >>>
->>> features
+>>>
+>>> print(features)
 [5.8, 2.7, 5.1, 1.9]
 >>>
->>> label
-'virginica'
+>>> print(label)
+virginica
 
 
-Use Case - 0x05
+Use Case - 0x06
 ---------------
 >>> *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
 >>> avg = sum(features) / len(features)
+>>>
 >>>
 >>> print(f'{avg=:.2f}, {label=}')
 avg=3.88, label='virginica'
 
 
-Use Case - 0x06
+Use Case - 0x07
 ---------------
 * Iris 2D
 

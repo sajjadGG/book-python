@@ -39,7 +39,7 @@ DATA = ['10.13.37.1', 'nasa.gov']
 # str: first string: 10.13.37.1
 ip = ...
 
-# list[str]: second string: nasa.gov
+# str: second string: nasa.gov
 host = ...
 
 # Solution

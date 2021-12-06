@@ -5,7 +5,7 @@
 * Time: 21 min
 
 English:
-    1. Using `csv.DictWriter()` save contacts from addressbook to CSV file
+    1. Using `csv.DictWriter()` save `CREW` to `FILE`
     2. Non-functional requirements:
         a. All fields must be enclosed by double quote `"` character
         b. Use `,` to separate mission fields
@@ -15,7 +15,7 @@ English:
     3. Run doctests - all must succeed
 
 Polish:
-    1. Za pomocą `csv.DictWriter()` zapisz kontakty z książki adresowej w pliku
+    1. Za pomocą `csv.DictWriter()` zapisz `CREW` do `FILE`
     2. Wymagania niefunkcjonalne:
         a. Wszystkie pola muszą być otoczone znakiem cudzysłowu `"`
         b. Użyj `,` do oddzielania pól mission
@@ -78,9 +78,13 @@ CREW = [
 
 FILE = r'_temporary.csv'
 
-result: list = []
+
+# list[dict]: Using `csv.DictWriter()` save CREW to CSV file
+result = ...
 
 # Solution
+result = []
+
 for astronaut in CREW:
     astronaut = vars(astronaut)
     missions = [','.join(str(x) for x in vars(mission).values())

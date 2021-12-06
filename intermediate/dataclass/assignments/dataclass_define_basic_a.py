@@ -38,6 +38,10 @@ Tests:
 
 from dataclasses import dataclass
 
+# class: Use Dataclass to define class `Point` with attributes `x` and `y`
+class Point:
+    ...
+
 
 # Solution
 @dataclass

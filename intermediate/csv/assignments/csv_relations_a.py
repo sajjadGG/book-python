@@ -10,7 +10,8 @@ English:
        b. `mission1_name`, `mission2_name`
     2. Note, that enumeration starts with one
     3. Sort `fieldnames`
-    4. Run doctests - all must succeed
+    4. Save data to `FILE`
+    5. Run doctests - all must succeed
 
 Polish:
     1. Przekonweruj `DATA` do formatu z jedną kolumną dla każdego atrybutu, np:
@@ -18,7 +19,8 @@ Polish:
        b. `mission1_name`, `mission2_name`
     2. Zwróć uwagę, że enumeracja zaczyna się od jeden
     3. Posortuj `fieldnames`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    4. Zapisz dane do `FILE`
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -60,6 +62,7 @@ result = ...
 
 # Solution
 result = []
+
 for astronaut in DATA:
     for i, mission in enumerate(astronaut.pop('missions'), start=1):
         for field,value in mission.items():

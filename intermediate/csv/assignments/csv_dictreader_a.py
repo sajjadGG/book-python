@@ -58,9 +58,12 @@ FILE = r'_temporary.csv'
 with open(FILE, mode='w') as file:
     file.write(DATA)
 
-result: list = []
+# list[dict]: Using `csv.DictReader` read the `FILE` content
+result = ...
 
 # Solution
+result = []
+
 with open(FILE) as file:
     header = file.readline()
     reader = csv.DictReader(file,

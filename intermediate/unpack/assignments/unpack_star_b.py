@@ -1,8 +1,8 @@
 """
-* Assignment: Unpack Assignment Func
+* Assignment: Unpack Star Func
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
     1. Using `str.split()` split input data by white space

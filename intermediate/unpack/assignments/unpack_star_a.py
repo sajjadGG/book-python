@@ -1,8 +1,8 @@
 """
-* Assignment: Unpack Assignment List
+* Assignment: Unpack Star List
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
     1. Separate ip address and host names

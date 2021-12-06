@@ -1,5 +1,5 @@
 """
-* Assignment: Unpack Assignment Loop
+* Assignment: Unpack Star Loop
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

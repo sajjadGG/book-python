@@ -59,7 +59,12 @@ DATA = [
 
 FILE = r'_temporary.csv'
 
+
+# ContextManager: Write DATA to FILE, generate header from DATA
+with open(FILE, mode='w') as file:
+    ...
+
 # Solution
 with open(FILE, mode='w') as file:
-    data = csv.writer(file, lineterminator='\n')
-    data.writerows(DATA)
+    writer = csv.writer(file, lineterminator='\n')
+    writer.writerows(DATA)

@@ -6,7 +6,7 @@
 
 English:
     1. You received input data in JSON format from the API
-    2. Using `dataclass` model data:
+    2. Using `dataclass` model `DATA`:
        a. Create class `Pet`
        b. Create class `Category`
        c. Create class `Tags`
@@ -15,7 +15,7 @@ English:
 
 Polish:
     1. Otrzymałeś z API dane wejściowe w formacie JSON
-    2. Wykorzystując `dataclass` zamodeluj dane:
+    2. Wykorzystując `dataclass` zamodeluj `DATA`:
        a. Stwórz klasę `Pet`
        b. Stwórz klasę `Category`
        c. Stwórz klasę `Tags`
@@ -82,14 +82,17 @@ DATA = """
 }
 """
 
+# class: Using `dataclass` model `DATA`, create class `Category`
 class Category:
-    pass
+    ...
 
+# class: Using `dataclass` model `DATA`, create class `Tag`
 class Tag:
-    pass
+    ...
 
+# class: Using `dataclass` model `DATA`, create class `Pet`
 class Pet:
-    pass
+    ...
 
 
 # Solution
