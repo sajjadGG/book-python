@@ -240,13 +240,8 @@ Use Case - 0x03
 >>> result = json.loads(result, cls=MyDecoder)
 >>>
 >>> pprint(result)
-[Astronaut(lastname='Mark',
-           firstname='Watney',
-           missions=[Mission(year=1973, name='Apollo18'),
-                     Mission(year=2035, name='Ares3')]),
- Astronaut(lastname='Melissa',
-           firstname='Lewis',
-           missions=[Mission(year=2035, name='Ares3')]),
+[Astronaut(lastname='Mark', firstname='Watney', missions=[Mission(year=1973, name='Apollo18'), Mission(year=2035, name='Ares3')]),
+ Astronaut(lastname='Melissa', firstname='Lewis', missions=[Mission(year=2035, name='Ares3')]),
  Astronaut(lastname='Rick', firstname='Martinez', missions=[])]
 
 

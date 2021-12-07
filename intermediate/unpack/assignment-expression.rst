@@ -200,9 +200,9 @@ Use Case - 0x02
 ...           and (species := line[4])]
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[[5.8, 2.7, 5.1, 1.9, 'virginica'],
- [5.1, 3.5, 1.4, 0.2, 'setosa'],
- [5.7, 2.8, 4.1, 1.3, 'versicolor']]
+[(5.8, 2.7, 5.1, 1.9, 'virginica'),
+ (5.1, 3.5, 1.4, 0.2, 'setosa'),
+ (5.7, 2.8, 4.1, 1.3, 'versicolor')]
 
 
 Use Case - 0x03

@@ -44,8 +44,11 @@ Recap
 Traceback (most recent call last):
 TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
 
+>>> from dataclasses import dataclass
+>>>
+>>>
 >>> @dataclass
->>> class Vector:
+... class Vector:
 ...     x: int
 ...     b: int
 >>>
