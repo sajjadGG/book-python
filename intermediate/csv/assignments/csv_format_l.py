@@ -1,5 +1,5 @@
 """
-* Assignment: CSV Format WriteListDict
+* Assignment: CSV Format WriteObjects
 * Complexity: medium
 * Lines of code: 7 lines
 * Time: 8 min
@@ -46,27 +46,33 @@ Tests:
     <BLANKLINE>
 """
 
-DATA = [{'sepal_length': 5.1, 'sepal_width': 3.5, 'petal_length': 1.4,
-         'petal_width': 0.2, 'species': 'setosa'},
-        {'sepal_length': 5.8, 'sepal_width': 2.7, 'petal_length': 5.1,
-         'petal_width': 1.9, 'species': 'virginica'},
-        {'sepal_length': 5.1, 'sepal_width': 3.5, 'petal_length': 1.4,
-         'petal_width': 0.2, 'species': 'setosa'},
-        {'sepal_length': 5.7, 'sepal_width': 2.8, 'petal_length': 4.1,
-         'petal_width': 1.3, 'species': 'versicolor'},
-        {'sepal_length': 6.3, 'sepal_width': 2.9, 'petal_length': 5.6,
-         'petal_width': 1.8, 'species': 'virginica'},
-        {'sepal_length': 6.4, 'sepal_width': 3.2, 'petal_length': 4.5,
-         'petal_width': 1.5, 'species': 'versicolor'}]
+
+class Iris:
+    def __init__(self, sepal_length, sepal_width,
+                 petal_length, petal_width, species):
+        self.sepal_length = sepal_length
+        self.sepal_width = sepal_width
+        self.petal_length = petal_length
+        self.petal_width = petal_width
+        self.species = species
+
+
+DATA = [Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
+        Iris(5.8, 2.7, 5.1, 1.9, 'virginica'),
+        Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
+        Iris(5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        Iris(6.3, 2.9, 5.6, 1.8, 'virginica'),
+        Iris(6.4, 3.2, 4.5, 1.5, 'versicolor')]
 
 # str: DATA converted to CSV format
 result = ...
 
 # Solution
 result = ''
-header = DATA[0].keys()
+data = [vars(x) for x in DATA]
+header = data[0].keys()
 result += ','.join(header) + '\n'
 
-for row in DATA:
+for row in data:
     row = map(str, row.values())
     result += ','.join(row) + '\n'

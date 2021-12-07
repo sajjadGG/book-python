@@ -42,13 +42,10 @@ CSV file with text values. First line is a header:
 
 .. code-block:: text
 
-    6,4,setosa,versicolor,virginica
-    5.8,2.7,5.1,1.9,2
-    5.1,3.5,1.4,0.2,0
-    5.7,2.8,4.1,1.3,1
-    7.3,2.9,6.3,1.8,2
-    5.6,2.5,3.9,1.1,1
-    5.4,3.9,1.3,0.4,0
+    3, 4, setosa, versicolor, virginica
+    5.8, 2.7, 5.1, 1.9, 2
+    5.1, 3.5, 1.4, 0.2, 0
+    5.7, 2.8, 4.1, 1.3, 1
 
 
 Delimiter
@@ -57,19 +54,19 @@ Delimiter
 
 .. code-block:: text
 
-    SepalLength,SepalWidth,PetalLength,PetalWidth,Species
-    5.8,2.7,5.1,1.9,virginica
-    5.1,3.5,1.4,0.2,setosa
-    5.7,2.8,4.1,1.3,versicolor
+    SepalLength, SepalWidth, PetalLength, PetalWidth, Species
+    5.8, 2.7, 5.1, 1.9, virginica
+    5.1, 3.5, 1.4, 0.2, setosa
+    5.7, 2.8, 4.1, 1.3, versicolor
 
 ``delimiter=';'``:
 
 .. code-block:: text
 
-    SepalLength;SepalWidth;PetalLength;PetalWidth;Species
-    5,8;2,7;5,1;1,9;virginica
-    5,1;3,5;1,4;0,2;setosa
-    5,7;2,8;4,1;1,3;versicolor
+    SepalLength; SepalWidth; PetalLength; PetalWidth; Species
+    5,8; 2,7; 5,1; 1,9; virginica
+    5,1; 3,5; 1,4; 0,2; setosa
+    5,7; 2,8; 4,1; 1,3; versicolor
 
 ``delimiter=':'``:
 
@@ -82,14 +79,6 @@ Delimiter
     lewis:x:1003:1002:Melissa Lewis:/home/ivanovic:/bin/bash
 
 ``delimiter='|'``:
-
-.. code-block:: text
-
-    Firstname | Lastname | Role
-    ----------|----------|----------
-    Mark      | Watney   | Botanist
-    Melissa   | Lewis    | Commander
-    Rick      | Martinez | Pilot
 
 .. code-block:: text
 
@@ -118,37 +107,37 @@ Quotechar
 
 .. code-block:: text
 
-    "SepalLength","SepalWidth","PetalLength","PetalWidth","Species"
-    "5.8","2.7","5.1","1.9","virginica"
-    "5.1","3.5","1.4","0.2","setosa"
-    "5.7","2.8","4.1","1.3","versicolor"
+    "SepalLength", "SepalWidth", "PetalLength", "PetalWidth", "Species"
+    "5.8", "2.7", "5.1", "1.9", "virginica"
+    "5.1", "3.5", "1.4", "0.2", "setosa"
+    "5.7", "2.8", "4.1", "1.3", "versicolor"
 
 ``quotechar="'"``:
 
 .. code-block:: text
 
-    'SepalLength','SepalWidth','PetalLength','PetalWidth','Species'
-    '5.8','2.7','5.1','1.9','virginica'
-    '5.1','3.5','1.4','0.2','setosa'
-    '5.7','2.8','4.1','1.3','versicolor'
+    'SepalLength', 'SepalWidth', 'PetalLength', 'PetalWidth', 'Species'
+    '5.8', '2.7', '5.1', '1.9', 'virginica'
+    '5.1', '3.5', '1.4', '0.2', 'setosa'
+    '5.7', '2.8', '4.1', '1.3', 'versicolor'
 
 ``quotechar='|'``:
 
 .. code-block:: text
 
-    |SepalLength|,|SepalWidth|,|PetalLength|,|PetalWidth|,|Species|
-    |5.8|,|2.7|,|5.1|,|1.9|,|virginica|
-    |5.1|,|3.5|,|1.4|,|0.2|,|setosa|
-    |5.7|,|2.8|,|4.1|,|1.3|,|versicolor|
+    |SepalLength|, |SepalWidth|, |PetalLength|, |PetalWidth|, |Species|
+    |5.8|, |2.7|, |5.1|, |1.9|, |virginica|
+    |5.1|, |3.5|, |1.4|, |0.2|, |setosa|
+    |5.7|, |2.8|, |4.1|, |1.3|, |versicolor|
 
 ``quotechar='/'``:
 
 .. code-block:: text
 
-    /SepalLength/,/SepalWidth/,/PetalLength/,/PetalWidth/,/Species/
-    /5.8/,/2.7/,/5.1/,/1.9/,/virginica/
-    /5.1/,/3.5/,/1.4/,/0.2/,/setosa/
-    /5.7/,/2.8/,/4.1/,/1.3/,/versicolor/
+    /SepalLength/, /SepalWidth/, /PetalLength/, /PetalWidth/, /Species/
+    /5.8/, /2.7/, /5.1/, /1.9/, /virginica/
+    /5.1/, /3.5/, /1.4/, /0.2/, /setosa/
+    /5.7/, /2.8/, /4.1/, /1.3/, /versicolor/
 
 
 Quoting
@@ -162,37 +151,37 @@ Quoting
 
 .. code-block:: text
 
-    "SepalLength","SepalWidth","PetalLength","PetalWidth","Species"
-    "5.8","2.7","5.1","1.9","virginica"
-    "5.1","3.5","1.4","0.2","setosa"
-    "5.7","2.8","4.1","1.3","versicolor"
+    "SepalLength", "SepalWidth", "PetalLength", "PetalWidth", "Species"
+    "5.8", "2.7", "5.1", "1.9", "virginica"
+    "5.1", "3.5", "1.4", "0.2", "setosa"
+    "5.7", "2.8", "4.1", "1.3", "versicolor"
 
 ``quoting=csv.QUOTE_MINIMAL``:
 
 .. code-block:: text
 
-    SepalLength,SepalWidth,PetalLength,PetalWidth,Species
-    5.8,2.7,5.1,1.9,virginica
-    5.1,3.5,1.4,0.2,setosa
-    5.7,2.8,4.1,1.3,versicolor
+    SepalLength, SepalWidth, PetalLength, PetalWidth, Species
+    5.8, 2.7, 5.1, 1.9, virginica
+    5.1, 3.5, 1.4, 0.2, setosa
+    5.7, 2.8, 4.1, 1.3, versicolor
 
 ``quoting=csv.QUOTE_NONE``:
 
 .. code-block:: text
 
-    SepalLength,SepalWidth,PetalLength,PetalWidth,Species
-    5.8,2.7,5.1,1.9,virginica
-    5.1,3.5,1.4,0.2,setosa
-    5.7,2.8,4.1,1.3,versicolor
+    SepalLength, SepalWidth, PetalLength, PetalWidth, Species
+    5.8, 2.7, 5.1, 1.9, virginica
+    5.1, 3.5, 1.4, 0.2, setosa
+    5.7, 2.8, 4.1, 1.3, versicolor
 
 ``quoting=csv.QUOTE_NONNUMERIC``:
 
 .. code-block:: text
 
-    "SepalLength","SepalWidth","PetalLength","PetalWidth","Species"
-    5.8,2.7,5.1,1.9,"virginica"
-    5.1,3.5,1.4,0.2,"setosa"
-    5.7,2.8,4.1,1.3,"versicolor"
+    "SepalLength", "SepalWidth", "PetalLength", "PetalWidth", "Species"
+    5.8, 2.7, 5.1, 1.9, "virginica"
+    5.1, 3.5, 1.4, 0.2, "setosa"
+    5.7, 2.8, 4.1, 1.3, "versicolor"
 
 
 Lineterminator
@@ -344,4 +333,8 @@ Assignments
 
 .. literalinclude:: assignments/csv_format_k.py
     :caption: :download:`Solution <assignments/csv_format_k.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/csv_format_l.py
+    :caption: :download:`Solution <assignments/csv_format_l.py>`
     :end-before: # Solution

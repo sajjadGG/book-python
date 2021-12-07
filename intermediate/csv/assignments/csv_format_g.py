@@ -47,11 +47,13 @@ Tests:
     <BLANKLINE>
 """
 
-DATA = [{'firstname': 'Jan', 'lastname': 'Twardowski'},
-        {'firstname': 'Rick', 'lastname': 'Martinez'},
-        {'firstname': 'Mark', 'lastname': 'Watney'},
-        {'firstname': 'Ivan', 'lastname': 'Ivanovic'},
-        {'firstname': 'Melissa', 'lastname': 'Lewis'}]
+DATA = [
+    {'firstname': 'Jan', 'lastname': 'Twardowski'},
+    {'firstname': 'Rick', 'lastname': 'Martinez'},
+    {'firstname': 'Mark', 'lastname': 'Watney'},
+    {'firstname': 'Ivan', 'lastname': 'Ivanovic'},
+    {'firstname': 'Melissa', 'lastname': 'Lewis'},
+]
 
 # str: multiline string with `firstname,lastname` pairs
 result = ...

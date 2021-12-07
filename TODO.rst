@@ -66,14 +66,14 @@ Python PEP
 * str.isfloat()
 * str.isint()
 * Path.rmtree() # skasowanie katalogu z podkatalogami
-* datetime time.now()
+* datetime.time.now()
 * type_check decorator, sprawdzający ``function.__annotations__``
 * dict(keys=[...], values=[...])
-* time().now()
 * from pprint import pprint, print(pretty=True) (albo podawanie formatter)
 * JSON datetime encoder, decoder to isoformat (UTC)
+* json.to_string(), json.to_file(), json.from_file(), json.from_string()
+* pickle.to_string(), pickle.to_file(), pickle.from_file(), pickle.from_string()
 * from datetime import parse(str, format)
-* from datetime import format(str, format)
 * Simple interface for HTTP requests (similar to requests)
 * CTypes argtypes, restype from TypeAnnotation
 * Context manager ``with logging.DEBUG:``

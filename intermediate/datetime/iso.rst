@@ -80,17 +80,17 @@ Week
 * Format: ``YYYY-Www``
 * The ISO 8601 definition for week 01 is the week with the first Thursday of the Gregorian year (i.e. of January) in it. [#wikisoweekdate]_
 * ``2009-W01`` - First week of 2009
-* ``2009-W53`` - Sunday 3 January 2010
+* ``2009-W53`` - Last week of 2009
 
 
 Weekday
 -------
 * Format: ``YYYY-Www-dd``
+* Week starts on Monday
+* ISO defines Monday as one
 * Note year/month changes during the week
 * ``2009-W01-1`` - Monday 29 December 2008
 * ``2009-W53-7`` - Sunday 3 January 2010
-* Week starts on Monday
-* ISO defines Monday as one
 
 >>> from datetime import datetime
 >>>
@@ -186,6 +186,27 @@ ValueError: Invalid isoformat string: '2:56:15'
 >>> time.fromisoformat('2:56')
 Traceback (most recent call last):
 ValueError: Invalid isoformat string: '2:56'
+
+
+Use Case - 0x01
+---------------
+>>> from datetime import datetime
+>>>
+>>>
+>>> line = '1969-07-21T02:56:15.123 [WARNING] First step on the Moon'
+>>>
+>>> dt, lvl, msg = line.split(maxsplit=2)
+>>>
+>>> result = {
+...     'when': datetime.fromisoformat(dt),
+...     'level': lvl.strip('[]'),
+...     'message': msg.strip(),
+... }
+>>>
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+{'when': datetime.datetime(1969, 7, 21, 2, 56, 15, 123000),
+ 'level': 'WARNING',
+ 'message': 'First step on the Moon'}
 
 
 References
