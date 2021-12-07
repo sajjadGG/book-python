@@ -94,6 +94,35 @@ JSON
     json/object.rst
 
 
+Regular Expressions
+*******************
+.. toctree::
+    :maxdepth: 1
+    :caption: Regular Expressions
+
+    regex/syntax-about.rst
+    regex/syntax-qualifier.rst
+    regex/syntax-negation.rst
+    regex/syntax-identifier.rst
+    regex/syntax-quantifier.rst
+    regex/syntax-group.rst
+    regex/syntax-flag.rst
+    regex/syntax-look-ahead-behind.rst
+    regex/syntax-extension.rst
+    regex/syntax-usecases.rst
+    regex/re-match.rst
+    regex/re-search.rst
+    regex/re-find.rst
+    regex/re-compare.rst
+    regex/re-compile.rst
+    regex/re-group.rst
+    regex/re-multiline.rst
+    regex/re-sub.rst
+    regex/re-split.rst
+    regex/re-greedy.rst
+    regex/re-type-annotation.rst
+
+
 Database
 ********
 .. toctree::
@@ -129,35 +158,6 @@ Database
     database/sqlite3-cursor.rst
     database/sqlite3-join.rst
     database/sqlite3-usecase.rst
-
-
-Regular Expressions
-*******************
-.. toctree::
-    :maxdepth: 1
-    :caption: Regular Expressions
-
-    regex/syntax-about.rst
-    regex/syntax-qualifier.rst
-    regex/syntax-negation.rst
-    regex/syntax-identifier.rst
-    regex/syntax-quantifier.rst
-    regex/syntax-group.rst
-    regex/syntax-flag.rst
-    regex/syntax-look-ahead-behind.rst
-    regex/syntax-extension.rst
-    regex/syntax-usecases.rst
-    regex/re-match.rst
-    regex/re-search.rst
-    regex/re-find.rst
-    regex/re-compare.rst
-    regex/re-compile.rst
-    regex/re-group.rst
-    regex/re-multiline.rst
-    regex/re-sub.rst
-    regex/re-split.rst
-    regex/re-greedy.rst
-    regex/re-type-annotation.rst
 
 
 Enum
@@ -203,6 +203,15 @@ Operator
     operator/accessors.rst
 
 
+Logging
+*******
+.. toctree::
+    :maxdepth: 1
+    :caption: Logging
+
+    logging/logging.rst
+
+
 Modules and Packages
 ********************
 .. toctree::
@@ -215,15 +224,6 @@ Modules and Packages
     modules/tools.rst
     zipapp/about.rst
     modules/distributing.rst
-
-
-Logging
-*******
-.. toctree::
-    :maxdepth: 1
-    :caption: Logging
-
-    logging/logging.rst
 
 
 Locale
