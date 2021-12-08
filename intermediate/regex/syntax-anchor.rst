@@ -19,6 +19,11 @@ Any Character
 >>> import re
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
 
+Search for letters ``Ap`` followed by any character:
+
+>>> re.findall('Ap.', TEXT)
+['Apr']
+
 Search for uppercase letter followed by any two characters:
 
 >>> re.findall('[A-Z]..', TEXT)
