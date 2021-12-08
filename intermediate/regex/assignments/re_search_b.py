@@ -75,4 +75,5 @@ result = ...
 
 
 # Solution
-result = re.search('<p>(We choose [a-zA-Z,. ]+)</p>', TEXT).group(1)
+pattern = '<p>(We choose [a-zA-Z,. ]+)</p>'
+result = re.search(pattern, TEXT).group(1)

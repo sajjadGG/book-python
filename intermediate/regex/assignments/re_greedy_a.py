@@ -35,7 +35,7 @@ Test:
 
 import re
 
-DATA = ("<h1>TEXT OF PRESIDENT JOHN KENNEDY'S RICE STADIUM MOON SPEECH</h1>\n"
+TEXT = ("<h1>TEXT OF PRESIDENT JOHN KENNEDY'S RICE STADIUM MOON SPEECH</h1>\n"
         "<p>President Pitzer, Mr. Vice President, Governor, "
         "CongressmanThomas, Senator Wiley, and Congressman Miller, Mr. Webb, "
         "Mr.Bell, scientists, distinguished guests, and ladies and "
@@ -67,6 +67,7 @@ result = ...
 
 
 # Solution
-for p in re.findall(r'<p>(.*?)</p>', DATA):
+pattern = r'<p>(.*?)</p>'
+for p in re.findall(pattern, TEXT):
     if p.startswith('We choose'):
         result = p

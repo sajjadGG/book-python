@@ -2,7 +2,7 @@
 * Assignment: Dataclass DefineBasic Flat
 * Complexity: easy
 * Lines of code: 8 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
     1. You received input data in JSON format from the API

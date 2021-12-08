@@ -2,7 +2,7 @@
 * Assignment: Dataclass DefineBasic Syntax
 * Complexity: easy
 * Lines of code: 7 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
     1. Use Dataclass to define class `Point` with attributes:

@@ -2,7 +2,7 @@
 * Assignment: Dataclass DefineRelations Syntax
 * Complexity: easy
 * Lines of code: 16 lines
-* Time: 13 min
+* Time: 5 min
 
 English:
     1. You received input data in JSON format from the API

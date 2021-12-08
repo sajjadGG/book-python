@@ -74,7 +74,7 @@ Tests:
 import re
 
 
-DATA = ("Apollo 11 was the spaceflight that first landed humans on the Moon. "
+TEXT = ("Apollo 11 was the spaceflight that first landed humans on the Moon. "
         "Commander Neil Armstrong and lunar module pilot Buzz Aldrin formed "
         "the American crew that landed the Apollo Lunar Module Eagle on "
         "July 20, 1969, at 20:17 UTC. Armstrong became the first person to "
@@ -115,9 +115,9 @@ f = ...
 
 
 # Solution
-a = re.search('Neil Armstrong', DATA).span()
-b = re.search('Buzz Aldrin', DATA).span()
-c = re.search('Michael Collins', DATA).span()
-d = re.search('July 21 at 02:56 UTC', DATA).span()
-e = re.search('Tranquility Base', DATA).span()
-f = re.search('Mark Watney', DATA)
+a = re.search('Neil Armstrong', TEXT).span()
+b = re.search('Buzz Aldrin', TEXT).span()
+c = re.search('Michael Collins', TEXT).span()
+d = re.search('July 21 at 02:56 UTC', TEXT).span()
+e = re.search('Tranquility Base', TEXT).span()
+f = re.search('Mark Watney', TEXT)

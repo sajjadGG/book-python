@@ -39,7 +39,7 @@ Tests:
 import re
 
 
-DATA = ("<h1>TEXT OF PRESIDENT JOHN KENNEDY'S RICE STADIUM MOON SPEECH</h1>\n"
+TEXT = ("<h1>TEXT OF PRESIDENT JOHN KENNEDY'S RICE STADIUM MOON SPEECH</h1>\n"
         "<p>President Pitzer, Mr. Vice President, Governor, "
         "CongressmanThomas, Senator Wiley, and Congressman Miller, Mr. Webb, "
         "Mr.Bell, scientists, distinguished guests, and ladies and "
@@ -71,6 +71,8 @@ result = ...
 
 
 # Solution
-for p in re.split(r'</?p>', DATA):
+pattern = r'</?p>'
+
+for p in re.split(pattern, TEXT):
     if p.startswith('We choose to go to the moon'):
         result = p

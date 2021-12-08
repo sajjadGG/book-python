@@ -40,7 +40,7 @@ Tests:
 import re
 
 
-DATA = ("Apollo 11 was the spaceflight that first landed humans on the Moon. "
+TEXT = ("Apollo 11 was the spaceflight that first landed humans on the Moon. "
         "Commander Neil Armstrong and lunar module pilot Buzz Aldrin formed "
         "the American crew that landed the Apollo Lunar Module Eagle on July "
         "20, 1969, at 24:56 UTC. Armstrong became the first person to step "
@@ -66,5 +66,5 @@ result = ...
 hour = '([01][0-9]|2[0-3])'
 minute = '[0-5][0-9]'
 pattern = f'{hour}:{minute} UTC'
-result = re.search(pattern, DATA).group()
+result = re.search(pattern, TEXT).group()
 
