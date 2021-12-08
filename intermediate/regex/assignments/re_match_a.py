@@ -14,6 +14,11 @@ Polish:
     2. Poprawne format numeru: `+## ### ### ###` lub `+## ## ### ####`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * Use f-string formatting to combine both formats
+    * Use alternative `|` inside of round brackets `(...|...)`
+    * Use begining `^` and end `$` of a line
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

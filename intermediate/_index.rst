@@ -102,6 +102,7 @@ Regular Expressions
 
     regex/syntax-about.rst
     regex/syntax-qualifier.rst
+    regex/syntax-anchor.rst
     regex/syntax-negation.rst
     regex/syntax-identifier.rst
     regex/syntax-quantifier.rst

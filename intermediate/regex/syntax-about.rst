@@ -23,12 +23,11 @@ Syntax
 Escape characters
 -----------------
 * Escape characters
-* ``\n`` - newline
-* ``\r\n`` - windows newline
-* ``\r`` - carriage return
-* ``\b`` - backspace
-* ``\s`` - whitespace (space, tab, newline, non-breaking space)
 * ``\t`` - tab
+* ``\r`` - carriage return
+* ``\n`` - newline
+* ``\r\n`` - newline (on Windows)
+* ``\b`` - backspace
 * ``\v`` - vertical space
 * ``\f`` - form feed
 
