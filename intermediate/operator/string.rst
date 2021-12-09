@@ -346,6 +346,55 @@ Ares3 mission length was 5.94 years
 
 Use Case - 0x04
 ---------------
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> SECOND = 1
+>>> MINUTE = 60 * SECOND
+>>> HOUR = 60 * MINUTE
+>>> DAY = 24 * HOUR
+>>> MONTH = 30.436875 * DAY
+>>> YEAR = 365.2425 * DAY
+>>>
+>>>
+>>> # doctest: +SKIP
+... @dataclass
+... class Duration:
+...     seconds: int
+...
+...     def __format__(self, unit: str) -> str:
+...         duration = self.seconds
+...         match unit:
+...             case 'seconds': duration /= SECOND
+...             case 'minutes': duration /= MINUTE
+...             case 'hours':   duration /= HOUR
+...             case 'days':    duration /= DAY
+...             case 'months':  duration /= MONTH
+...             case 'years':   duration /= YEAR
+...             case _:         raise ValueError('Invalid unit')
+...         return f'{duration:.1f} {unit}'
+>>>
+>>>
+>>> ares3 = Duration(seconds=187368216)
+>>>
+>>> print(f'Ares3 mission length was {ares3:seconds}')
+Ares3 mission length was 187368216.00 seconds
+>>>
+>>> print(f'Ares3 mission length was {ares3:minutes}')
+Ares3 mission length was 3122803.60 min
+>>>
+>>> print(f'Ares3 mission length was {ares3:hours}')
+Ares3 mission length was 52046.73 h
+>>>
+>>> print(f'Ares3 mission length was {ares3:days}')
+Ares3 mission length was 2168.61 days
+>>>
+>>> print(f'Ares3 mission length was {ares3:years}')
+Ares3 mission length was 5.94 years
+
+
+Use Case - 0x04
+---------------
 * Temperature conversion
 
 >>> class Temperature:
