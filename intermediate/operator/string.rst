@@ -275,17 +275,16 @@ Use Case - 0x02
 ...         return str(round(result, 2))
 >>>
 >>>
->>> duration = Duration(seconds=3600)
+>>> duration = Duration(seconds=11318400)
 >>>
+>>> print(f'Ares3 flight to Mars took {ares3:minutes}')
+Ares3 flight to Mars took 188640.0 minutes
 >>>
->>> print(f'Duration was {duration:minutes} min')
-Duration was 60.0 min
+>>> print(f'Ares3 flight to Mars took {ares3:hours}')
+Ares3 flight to Mars took 3144.0 hours
 >>>
->>> print(f'Duration was {duration:hours} hour')
-Duration was 1.0 hour
->>>
->>> print(f'Duration was {duration:days} day')
-Duration was 0.04 day
+>>> print(f'Ares3 flight to Mars took {ares3:days}')
+Ares3 flight to Mars took 131.0 days
 
 
 Use Case - 0x03
@@ -325,28 +324,32 @@ Use Case - 0x03
 ...         return f'{duration:.2f} {unit}'
 >>>
 >>>
->>> ares3 = Duration(seconds=187368216)
+>>> ares3 = Duration(seconds=11318400)
 >>>
 >>>
->>> print(f'Ares3 mission length was {ares3:seconds}')
-Ares3 mission length was 187368216.00 seconds
+>>> print(f'Ares3 flight to Mars took {ares3:seconds}')
+Ares3 flight to Mars took 11318400.0 seconds
 >>>
->>> print(f'Ares3 mission length was {ares3:min}')
-Ares3 mission length was 3122803.60 min
+>>> print(f'Ares3 flight to Mars took {ares3:min}')
+Ares3 flight to Mars took 188640.0 min
 >>>
->>> print(f'Ares3 mission length was {ares3:h}')
-Ares3 mission length was 52046.73 h
+>>> print(f'Ares3 flight to Mars took {ares3:h}')
+Ares3 flight to Mars took 3144.0 h
 >>>
->>> print(f'Ares3 mission length was {ares3:days}')
-Ares3 mission length was 2168.61 days
+>>> print(f'Ares3 flight to Mars took {ares3:days}')
+Ares3 flight to Mars took 131.0 days
 >>>
->>> print(f'Ares3 mission length was {ares3:years}')
-Ares3 mission length was 5.94 years
+>>> print(f'Ares3 flight to Mars took {ares3:months}')
+Ares3 flight to Mars took 4.3 months
 
 
 Use Case - 0x04
 ---------------
+* ``ares3_landing = datetime(2035, 11, 7)``
+* ``ares3_start = datetime(2035, 6, 29)``
+
 >>> from dataclasses import dataclass
+>>> from datetime import datetime
 >>>
 >>>
 >>> SECOND = 1
@@ -375,22 +378,22 @@ Use Case - 0x04
 ...         return f'{duration:.1f} {unit}'
 >>>
 >>>
->>> ares3 = Duration(seconds=187368216)
+>>> ares3 = Duration(seconds=11318400)
 >>>
->>> print(f'Ares3 mission length was {ares3:seconds}')
-Ares3 mission length was 187368216.00 seconds
+>>> print(f'Ares3 flight to Mars took {ares3:seconds}')
+Ares3 flight to Mars took 11318400.0 seconds
 >>>
->>> print(f'Ares3 mission length was {ares3:minutes}')
-Ares3 mission length was 3122803.60 min
+>>> print(f'Ares3 flight to Mars took {ares3:minutes}')
+Ares3 flight to Mars took 188640.0 minutes
 >>>
->>> print(f'Ares3 mission length was {ares3:hours}')
-Ares3 mission length was 52046.73 h
+>>> print(f'Ares3 flight to Mars took {ares3:hours}')
+Ares3 flight to Mars took 3144.0 hours
 >>>
->>> print(f'Ares3 mission length was {ares3:days}')
-Ares3 mission length was 2168.61 days
+>>> print(f'Ares3 flight to Mars took {ares3:days}')
+Ares3 flight to Mars took 131.0 days
 >>>
->>> print(f'Ares3 mission length was {ares3:years}')
-Ares3 mission length was 5.94 years
+>>> print(f'Ares3 flight to Mars took {ares3:months}')
+Ares3 flight to Mars took 4.3 months
 
 
 Use Case - 0x04
