@@ -7,13 +7,15 @@
 
 English:
     1. Overload `str()`
-    2. While printing object show: species name and a sum of `self.features`
+    2. While printing object show: species name and a sum of `self.features`,
+       example: `label='setosa', total=9.4`
     3. Result of sum round to one decimal place
     4. Run doctests - all must succeed
 
 Polish:
     1. Przeciąż `str()`
-    2. Przy wypisywaniu obiektu pokaż: nazwę gatunku i sumę `self.features`
+    2. Przy wypisywaniu obiektu pokaż: nazwę gatunku i sumę `self.features`,
+       przykład: `label='setosa', total=9.4`
     3. Wynik sumowania zaokrąglij do jednego miejsca po przecinku
     4. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -23,9 +25,9 @@ Tests:
     >>> for *features, label in DATA:
     ...     iris = Iris(features, label)
     ...     print(iris)
-    setosa 9.4
-    versicolor 16.3
-    virginica 19.3
+    label='setosa', total=9.4
+    label='versicolor', total=16.3
+    label='virginica', total=19.3
 """
 
 DATA = [
@@ -54,5 +56,6 @@ class Iris:
         self.label = label
 
     def __str__(self):
+        label = self.label
         total = sum(self.features)
-        return f'{self.label} {total:.1f}'
+        return f'{label=}, {total=:.1f}'

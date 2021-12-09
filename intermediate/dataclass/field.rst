@@ -324,7 +324,8 @@ Use Case - 0x03
 ...         return super().__setattr__(attrname, attrvalue)
 >>>
 >>>
->>> mark = Astronaut(
+>>> # doctest: +SKIP
+... mark = Astronaut(
 ...         firstname='Mark',
 ...         lastname='Watney',
 ...         agency='NASA',
