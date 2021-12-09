@@ -112,7 +112,7 @@ Use Case - 0x02
 >>> ares3 += Astronaut('Mark', 'Watney')
 >>> ares3 += Astronaut('Melissa', 'Lewis')
 >>>
->>> print(crew)
+>>> print(ares3)
 Crew(members=[Astronaut(firstname='Mark', lastname='Watney'), Astronaut(firstname='Melissa', lastname='Lewis')])
 >>>
 >>> for member in ares3.members:

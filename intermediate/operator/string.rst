@@ -275,7 +275,7 @@ Use Case - 0x02
 ...         return f'{result:.1f}'
 >>>
 >>>
->>> duration = Duration(seconds=11318400)
+>>> ares3 = Duration(seconds=11318400)
 >>>
 >>> print(f'Ares3 flight to Mars took {ares3:minutes}')
 Ares3 flight to Mars took 188640.0 minutes
