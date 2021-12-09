@@ -1,7 +1,7 @@
 """
 * Assignment: Dataclass PostInit Syntax
 * Complexity: easy
-* Lines of code: 7 lines
+* Lines of code: 3 lines
 * Time: 5 min
 
 English:
@@ -54,8 +54,10 @@ from dataclasses import dataclass
 
 
 # class: Use Dataclass to define class `Point` with attributes: `x` and `y`
+@dataclass
 class Point:
-    ...
+    x: int = 0
+    y: int = 0
 
 
 # Solution

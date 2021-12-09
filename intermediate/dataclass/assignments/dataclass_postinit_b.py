@@ -1,8 +1,8 @@
 """
 * Assignment: Dataclass PostInit DatabaseDump
 * Complexity: medium
-* Lines of code: 23 lines
-* Time: 21 min
+* Lines of code: 3 lines
+* Time: 5 min
 
 English:
     1. You received input data in JSON format from the API
@@ -185,8 +185,21 @@ DATA = ('[{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa"'
         'iew"]}]}}]')
 
 # class: Using `dataclass` model data as class `User`
+@dataclass
 class User:
-    ...
+    firstname: str
+    lastname: str
+    role: str
+    username: str
+    password: str
+    email: str
+    born: date
+    last_login: Optional[datetime]
+    is_active: bool
+    is_staff: bool
+    is_superuser: bool
+    user_permissions: list[dict]
+
 
 
 # Solution

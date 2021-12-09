@@ -279,6 +279,72 @@ Traceback (most recent call last):
 AssertionError: height value 120 is not between 156 and 210
 
 
+Use Case - 0x03
+---------------
+>>> from dataclasses import dataclass, field
+>>> from datetime import date
+>>> from typing import Literal, Optional, Union
+>>>
+>>>
+>>> @dataclass
+... class Mission:
+...     year: int
+...     name: str
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     agency: Literal['NASA', 'ESA', 'Roscosmos'] = field(metadata={'choices': ['NASA', 'ESA', 'Roscosmos']})
+...     age: int = field(metadata={'min': 30, 'max': 50})
+...     height: int|float = field(metadata={'unit': 'cm'})
+...     weight: Union[int,float] = field(metadata={'unit': 'kg'})
+...     born: Optional[date]
+...     friends: list['Astronaut'] | None = None
+...     missions: list[Mission] | None = None
+...     medals: list[str] | None = None
+...
+...     def _validate_age(self, age):
+...         AGE_MIN = self.__dataclass_fields__['age'].metadata['min']
+...         AGE_MAX = self.__dataclass_fields__['age'].metadata['max']
+...         if not AGE_MIN <= age < AGE_MAX:
+...             raise ValueError(f'Invalid age, must be between {AGE_MIN} and {AGE_MAX}')
+...
+...     def _validate_agency(self, agency):
+...         AGENCY_CHOICES = self.__dataclass_fields__['agency'].metadata['choices']
+...         if agency not in AGENCY_CHOICES:
+...             raise ValueError(f'Invalid agency, must be one of {AGENCY_CHOICES}')
+...
+...     def __setattr__(self, attrname, attrvalue):
+...         match attrname:
+...             case 'age':    self._validate_age(attrvalue)
+...             case 'agency': self._validate_agency(attrvalue)
+...         return super().__setattr__(attrname, attrvalue)
+>>>
+>>>
+>>> mark = Astronaut(
+...         firstname='Mark',
+...         lastname='Watney',
+...         agency='NASA',
+...         age=35,
+...         height=185.5,
+...         weight=75.5,
+...         born=date(1969, 7, 21),
+...         missions=[Mission(1973, 'Apollo 18'),
+...                   Mission(2012, 'STS-136'),
+...                   Mission(2035, 'Ares 3')],
+... )
+>>>
+>>> mark.age = 10
+Traceback (most recent call last):
+ValueError: Invalid age, must be between 30 and 50
+>>>
+>>> mark.agency = 'CNSA'
+Traceback (most recent call last):
+ValueError: Invalid agency, must be one of ['NASA', 'ESA', 'Roscosmos']
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/dataclass_field_a.py
