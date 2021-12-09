@@ -272,7 +272,7 @@ Use Case - 0x02
 ...             result = self.seconds / HOUR
 ...         elif unit == 'days':
 ...             result = self.seconds / DAY
-...         return str(round(result, 2))
+...         return f'{result:.1f}'
 >>>
 >>>
 >>> duration = Duration(seconds=11318400)
@@ -321,7 +321,7 @@ Use Case - 0x03
 ...             duration /= YEAR
 ...         else:
 ...             raise ValueError('Invalid unit')
-...         return f'{duration:.2f} {unit}'
+...         return f'{duration:.1f} {unit}'
 >>>
 >>>
 >>> ares3 = Duration(seconds=11318400)
