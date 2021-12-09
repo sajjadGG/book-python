@@ -272,7 +272,7 @@ Use Case - 0x02
 ...             result = self.seconds / HOUR
 ...         elif unit == 'days':
 ...             result = self.seconds / DAY
-...         return f'{result:.1f}'
+...         return f'{result:.1f} {unit}'
 >>>
 >>>
 >>> ares3 = Duration(seconds=11318400)
