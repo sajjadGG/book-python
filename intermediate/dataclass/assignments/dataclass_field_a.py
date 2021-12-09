@@ -80,7 +80,7 @@ DATA = [
     {"firstname": "José", "lastname": "Jiménez", "addresses": [
         {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058,
          "region": "Texas", "country": "USA"},
-        {"street": "", "city": "Kennedy Space Center", "post_code": 32899,
+        {"street": None, "city": "Kennedy Space Center", "post_code": 32899,
          "region": "Florida", "country": "USA"}]},
 
     {"firstname": "Mark", "lastname": "Watney", "addresses": [
@@ -90,9 +90,9 @@ DATA = [
          "region": "California", "country": "USA"}]},
 
     {"firstname": "Иван", "lastname": "Иванович", "addresses": [
-        {"street": "", "city": "Космодро́м Байкону́р", "post_code": None,
+        {"street": None, "city": "Космодро́м Байкону́р", "post_code": None,
          "region": "Кызылординская область", "country": "Қазақстан"},
-        {"street": "", "city": "Звёздный городо́к", "post_code": 141160,
+        {"street": None, "city": "Звёздный городо́к", "post_code": 141160,
          "region": "Московская область", "country": "Россия"}]},
 
     {"firstname": "Melissa", "lastname": "Lewis"},

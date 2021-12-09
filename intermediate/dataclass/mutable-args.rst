@@ -128,17 +128,3 @@ Default Values
 >>> astro = Astronaut('Mark', 'Watney')
 >>> print(astro)
 Astronaut(firstname='Mark', lastname='Watney', groups=['astronauts', 'managers'])
-
->>> from dataclasses import dataclass, field
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     groups: list[str] = field(default_factory=lambda: ['astronauts', 'managers'])
->>>
->>>
->>> astro = Astronaut('Mark', 'Watney')
->>> print(astro)
-Astronaut(firstname='Mark', lastname='Watney', groups=['astronauts', 'managers'])

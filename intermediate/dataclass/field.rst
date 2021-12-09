@@ -292,7 +292,8 @@ Use Case - 0x03
 ...     name: str
 >>>
 >>>
->>> @dataclass
+>>> # doctest: +SKIP
+... @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
@@ -336,11 +337,11 @@ Use Case - 0x03
 ...                   Mission(2035, 'Ares 3')],
 ... )
 >>>
->>> mark.age = 10
+>>> mark.age = 10  # doctest: +SKIP
 Traceback (most recent call last):
 ValueError: Invalid age, must be between 30 and 50
 >>>
->>> mark.agency = 'CNSA'
+>>> mark.agency = 'CNSA'  # doctest: +SKIP
 Traceback (most recent call last):
 ValueError: Invalid agency, must be one of ['NASA', 'ESA', 'Roscosmos']
 

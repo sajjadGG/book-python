@@ -88,6 +88,39 @@ Use Case - 0x01
 >>> hero['gold'] += dragon['gold']  # doctest: +SKIP
 
 
+Use Case - 0x02
+---------------
+>>> from dataclasses import dataclass, field
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+>>>
+>>>
+>>> @dataclass
+... class Crew:
+...     members: list[Astronaut] = field(default_factory=list)
+...
+...     def __iadd__(self, other):
+...         self.members.append(other)
+...         return self
+>>>
+>>>
+>>> ares3 = Crew()
+>>> ares3 += Astronaut('Mark', 'Watney')
+>>> ares3 += Astronaut('Melissa', 'Lewis')
+>>>
+>>> print(crew)
+Crew(members=[Astronaut(firstname='Mark', lastname='Watney'), Astronaut(firstname='Melissa', lastname='Lewis')])
+>>>
+>>> for member in ares3.members:
+...     print(member)
+Astronaut(firstname='Mark', lastname='Watney')
+Astronaut(firstname='Melissa', lastname='Lewis')
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/operator_numerical_a.py
