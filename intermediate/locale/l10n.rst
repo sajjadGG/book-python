@@ -1,5 +1,5 @@
-Locale About
-============
+Locale l10n
+===========
 
 Rationale
 ---------
@@ -15,6 +15,7 @@ Django
 Numbers
 -------
 * https://github.com/arthurdejong/python-stdnum/tree/master/stdnum
+
 
 Locale
 ------

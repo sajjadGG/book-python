@@ -14,16 +14,15 @@ Numeric
 * ``\D`` - anything but digit
 
 >>> import re
->>>
->>>
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
+
+
 >>> re.findall('[0-9]', TEXT)
 ['1', '2', '1', '9', '6', '1', '6', '0', '7']
->>>
+
 >>> re.findall('\d', TEXT)
 ['1', '2', '1', '9', '6', '1', '6', '0', '7']
->>>
+
 >>> re.findall('\D', TEXT)
 ['Y', 'u', 'r', 'i', ' ', 'G', 'a', 'g', 'a', 'r', 'i', 'n', ' ', 'l', 'a', 'u', 'n', 'c', 'h', 'e', 'd', ' ', 't', 'o', ' ', 's', 'p', 'a', 'c', 'e', ' ', 'o', 'n', ' ', 'A', 'p', 'r', ' ', 't', 'h', ',', ' ', ' ', 'a', 't', ' ', ':', ' ', 'a', 'm', '.']
 
@@ -42,15 +41,27 @@ Valid characters are the same as allowed in variable/modules names in Python:
 >>> Imię_1 = 'Mark'
 
 >>> import re
->>>
->>>
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
->>> re.findall('\w', TEXT)
-['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n', 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p', 'r', '1', '2', 't', 'h', '1', '9', '6', '1', 'a', 't', '6', '0', '7', 'a', 'm']
->>>
+
+
+>>> re.findall('\w', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n',
+ 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p',
+ 'r', '1', '2', 't', 'h', '1', '9', '6', '1', 'a', 't', '6', '0', '7', 'a',
+ 'm']
+
 >>> re.findall('\W', TEXT)
 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ',', ' ', ' ', ' ', ':', ' ', '.']
+
+Mind, that following code gives similar output to ``\w`` but it is not
+completely true. ``\w`` would extract also unicode characters while this
+``[a-zA-Z0-9]`` will not.
+
+>>> re.findall('[a-zA-Z0-9]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n',
+ 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p',
+ 'r', '1', '2', 't', 'h', '1', '9', '6', '1', 'a', 't', '6', '0', '7', 'a',
+ 'm']
 
 
 Whitespaces
@@ -66,21 +77,17 @@ Whitespaces
 * ``\f`` - form feed
 
 >>> import re
->>>
->>>
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
+
 >>> re.findall('\s', TEXT)
 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
->>>
->>> re.findall('\S', TEXT)
-['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n', 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p', 'r', '1', '2', 't', 'h', ',', '1', '9', '6', '1', 'a', 't', '6', ':', '0', '7', 'a', 'm', '.']
 
->>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
+>>> re.findall('\S', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n',
+ 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p',
+ 'r', '1', '2', 't', 'h', ',', '1', '9', '6', '1', 'a', 't', '6', ':', '0',
+ '7', 'a', 'm', '.']
+
 >>> re.findall('\n', TEXT)
 []
 >>>
@@ -102,19 +109,16 @@ Examples:
     * ``\Babc\B`` - pattern is fully surrounded by word characters
 
 >>> import re
->>>
->>>
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
->>> re.findall('[a-z][a-z]', TEXT)
-['ur', 'ag', 'ar', 'in', 'la', 'un', 'ch', 'ed', 'to', 'sp', 'ac', 'on', 'pr', 'th', 'at', 'am']
->>>
->>> re.findall(r'\b[a-z][a-z]', TEXT)
-['la', 'to', 'sp', 'on', 'at', 'am']
->>>
+
+
+>>> re.findall('[a-z][a-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['ur', 'ag', 'ar', 'in', 'la', 'un', 'ch', 'ed', 'to', 'sp', 'ac', 'on', 'pr',
+ 'th', 'at', 'am']
+
 >>> re.findall(r'\b[a-z][a-z]\b', TEXT)
 ['to', 'on', 'at', 'am']
->>>
+
 >>> re.findall('\b[a-z][a-z]\b', TEXT)  # without raw-string
 []
 

@@ -6,6 +6,16 @@ Rationale
 ---------
 Quantifier specifies how many occurrences of preceding qualifier or identifier.
 
+>>> import re
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>>
+>>> re.findall(r'\d', TEXT)
+['1', '2', '1', '9', '6', '1', '6', '0', '7']
+>>>
+>>> re.findall(r'\d\d\d\d', TEXT)
+['1961']
+
 
 Exact
 -----
@@ -80,7 +90,7 @@ Greedy vs. Lazy
 >>> re.findall(r'\d{2,4}?', TEXT)  # Lazy
 ['12', '19', '61', '07']
 
-Greedy vs Lazy in exact match:
+Greedy vs Lazy in exact match has no difference:
 
 >>> import re
 >>>
@@ -117,6 +127,17 @@ True
 >>>
 >>> re.findall('\d*', TEXT)
 ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '12', '', '', '', '', '1961', '', '', '', '', '6', '', '07', '', '', '', '', '']
+
+
+Examples
+--------
+* ``[0-9]{2}`` - exactly two digits from `0` to `9`
+* ``\d{2}`` - exactly two digits from `0` to `9`
+* ``[A-Z]{2,10}`` - two to ten uppercase letters from `A` to `Z`
+* ``[A-Z]{2-10}-[0-9]{,5}`` - two to ten uppercase letters from `A` to `Z` followed by dash (`-`) and at least five numbers
+* ``[a-z]+`` - at least one lowercase letter from `a` to `z`, but try to fit the longest match
+* ``\d+`` - number
+* ``\d+\.\d+`` - float
 
 
 Use Case - 0x01
@@ -167,13 +188,62 @@ Use Case - 0x03
 datetime.date(1961, 4, 12)
 
 
-Examples
---------
-* ``[0-9]{2}`` - exactly two digits from `0` to `9`
-* ``\d{2}`` - exactly two digits from `0` to `9`
-* ``[A-Z]{2,10}`` - two to ten uppercase letters from `A` to `Z`
-* ``[A-Z]{2-10}-[0-9]{,5}`` - two to ten uppercase letters from `A` to `Z` followed by dash (`-`) and at least five numbers
-* ``[a-z]+`` - at least one lowercase letter from `a` to `z`, but try to fit the longest match
-* ``\d+`` - number
-* ``\d+\.\d+`` - float
+Use Case - 0x04
+---------------
+>>> import re
+>>>
+>>>
+>>> line = 'value=123'
+>>>
+>>> re.findall(r'(\w+)\s?=\s?(\d+)', line)
+[('value', '123')]
 
+>>> import re
+>>>
+>>>
+>>> line = 'value = 123'
+>>>
+>>> re.findall(r'(\w+)\s?=\s?(\d+)', line)
+[('value', '123')]
+
+
+Use Case 0x05
+-------------
+>>> import re
+>>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
+>>>
+>>>
+>>> re.findall('<p>.*</p>', HTML)
+['<p>Paragraph 1</p><p>Paragraph 2</p>']
+>>>
+>>> re.findall('<p>.*?</p>', HTML)
+['<p>Paragraph 1</p>', '<p>Paragraph 2</p>']
+
+
+Use Case 0x06
+-------------
+>>> import re
+>>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
+>>>
+>>>
+>>> re.findall('<p>', HTML)
+['<p>', '<p>']
+>>>
+>>> re.findall('</p>', HTML)
+['</p>', '</p>']
+>>>
+>>> re.findall('</?p>', HTML)
+['<p>', '</p>', '<p>', '</p>']
+
+
+Use Case 0x07
+-------------
+>>> import re
+>>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
+>>>
+>>>
+>>> re.findall('</?.*>', HTML)
+['<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>']
+>>>
+>>> re.findall('</?.*?>', HTML)
+['<h1>', '</h1>', '<p>', '</p>', '<p>', '</p>']

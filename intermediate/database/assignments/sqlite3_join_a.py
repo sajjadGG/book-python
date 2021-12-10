@@ -5,7 +5,7 @@
 * Time: 21 min
 
 English:
-    1. Connect to database
+    1. Connect to database:
         a. Set returned result type to `sqlite3.Row`
         b. Get cursor and next things execute on it
         c. Execute `SQL_CREATE_TABLE_ASTRONAUT` to create table `astronauts`
@@ -23,7 +23,7 @@ English:
     4. Run doctests - all must succeed
 
 Polish:
-    1. Połącz się do bazy danych
+    1. Połącz się do bazy danych:
         a. Ustaw typ zwracanych wyników na `sqlite3.Row`
         b. Pobierz kursor i następne polecenia wykonuj na nim
         c. Wykonując `SQL_CREATE_TABLE_ASTRONAUT` stwórz tabelę `astronauts`
@@ -153,5 +153,4 @@ with sqlite3.connect(DATABASE) as connection:
             address['astronaut_id'] = astronaut_id
             db.execute(SQL_INSERT_ADDRESS, address)
 
-    for row in db.execute(SQL_SELECT):
-        result.append(dict(row))
+    result = [dict(x) for x in db.execute(SQL_SELECT)]

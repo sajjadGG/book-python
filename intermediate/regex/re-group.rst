@@ -85,3 +85,22 @@ Named Groups
 >>>
 >>> result.groupdict()
 {'firstname': 'Yuri', 'lastname': 'Gagarin'}
+
+
+Use Case - 0x01
+---------------
+>>> import re
+>>>
+>>>
+>>> line = 'value=123'
+>>>
+>>> re.findall(r'(\w+)\s?=\s?(\d+)', line)
+[('value', '123')]
+
+>>> import re
+>>>
+>>>
+>>> line = 'value = 123'
+>>>
+>>> re.findall(r'(\w+)\s?=\s?(\d+)', line)
+[('value', '123')]

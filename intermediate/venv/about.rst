@@ -48,7 +48,7 @@ macOS, Linux, BSD:
 .. code-block:: console
 
     $ cd PROJECT
-    $ venv-3.10.0/bin/activate
+    $ source venv-3.10.0/bin/activate
 
 
 Directory Naming Convention
@@ -70,20 +70,17 @@ Directory Naming Convention
     .virtualenv/
     _virtualenv/
 
-    py
-    python
+    venv-py
+    .venv-py
+
     py-3.10
     python-3.10
     python-3.10.0
 
-    .py
-    .python
     .py-3.10
     .python-3.10
     .python-3.10.0
 
-    venv-3.6/
-    venv-3.7/
     venv-3.8/
     venv-3.9/
     venv-3.10/
@@ -101,18 +98,18 @@ Directory Naming Convention
     venv-3.11-beta2/
     venv-3.11-rc1/
 
-    venv-django-2.1
-    venv-django-2.2
-    venv-django-2.3
     venv-django-3.0
     venv-django-3.1
     venv-django-3.2
-    venv-django-4.0a1
-    venv-django-4.0a2
-    venv-django-4.0b1
-    venv-django-4.0b2
-    venv-django-4.0rc1
-    venv-django-4.0rc2
+    venv-django-4.0
+    venv-django-4.1
+    venv-django-4.2
+    venv-django-5.0a1
+    venv-django-5.0a2
+    venv-django-5.0b1
+    venv-django-5.0b2
+    venv-django-5.0rc1
+    venv-django-5.0rc2
 
     venv-py310-dj33
     venv-python310-django33

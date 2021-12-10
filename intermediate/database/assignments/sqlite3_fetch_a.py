@@ -5,34 +5,28 @@
 * Time: 5 min
 
 English:
-    1. Split `DATA` by lines:
-        a. Strip line from whitespace at the begining and at the end
-        b. Extract date, time, log level and message from each line
-        c. Parse date and time as date and time objects
-        d. Combine date and time into datetime object
-        e. Define datetime, level and message as tuple
-        f. Add that tuple to `data: list[tuple]`
-    2. Connect to database:
-        a. Execute `SQL_CREATE_TABLE` to create database table
-        b. Execute `SQL_INSERT` to insert logs to in `list[tuple]` format
-        c. Execute `SQL_SELECT` to select data
-        d. Iterate over rows and append each to `result: list[tuple]`
-    3. Run doctests - all must succeed
+    1. Extract date, time, log level and message from each line
+    2. Parse date and time as date and time objects
+    3. Combine date and time into datetime object
+    4. Define datetime, level and message as tuple
+    5. Connect to database:
+       a. Execute `SQL_CREATE_TABLE` to create database table
+       b. Execute `SQL_INSERT` to insert logs to in `list[tuple]` format
+       c. Execute `SQL_SELECT` to select data
+       d. Iterate over rows and append each to `result: list[tuple]`
+    6. Run doctests - all must succeed
 
 Polish:
-    1. Podziel `DATA` po liniach:
-        a. Oczyść linię z białych znaków na początku i na końcu
-        b. Wyciągnij datę, czas, poziom logowania i teść z każdej linii
-        c. Rozczytaj datę i czas jako obiekty date and time
-        d. Połącz datę i czas w obiekt datetime
-        e. Zdefiniuj datetime, level i message jako tuplę
-        f. Dodaj tą tuplę do `data: list[tuple]`
-    2. Połącz się do bazy danych:
-        a. Wykonaj `SQL_CREATE_TABLE` aby stworzyć tabelę w bazie danych
-        b. Wykonaj `SQL_INSERT` aby wstawić logi w formacie `list[tuple]`
-        c. Wykonaj `SQL_SELECT` aby wybrać dane
-        d. Iterując po wierszach dopisuj je do `result: list[tuple]`
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Wyciągnij datę, czas, poziom logowania i teść z każdej linii
+    2. Rozczytaj datę i czas jako obiekty date and time
+    3. Połącz datę i czas w obiekt datetime
+    4. Zdefiniuj datetime, level i message jako tuplę
+    5. Połącz się do bazy danych:
+       a. Wykonaj `SQL_CREATE_TABLE` aby stworzyć tabelę w bazie danych
+       b. Wykonaj `SQL_INSERT` aby wstawić logi w formacie `list[tuple]`
+       c. Wykonaj `SQL_SELECT` aby wybrać dane
+       d. Iterując po wierszach dopisuj je do `result: list[tuple]`
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 References:
     [1] National Aeronautics and Space Administration.

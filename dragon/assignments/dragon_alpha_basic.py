@@ -9,16 +9,15 @@ English:
     0. Create file `dragon_alpha.py`
     1. Dragon has (attributes):
         a. name
-        b. position `x` on the screen
-        c. position `y` on the screen
-        d. texture file name, default `img/dragon/alive.png`
-        e. health points, default random `int` in range from 50 to 100
+        b. position on the screen
+        c. texture file name, default `img/dragon/alive.png`
+        d. health points, default random `int` in range from 50 to 100
     2. Dragon can (methods):
         a. have position set to any place on the screen
         b. make damage in range from 5 to 20
         c. take damage
         d. move in any direction by specified value
-    3. Assume left-top screen corner as a initial coordinates position:
+    3. Assume left-top screen corner as an initial coordinates position:
         a. going right add to `x`
         b. going left subtract from `x`
         c. going up subtract from `y`
@@ -72,10 +71,9 @@ Polish:
     0. Stwórz plik `dragon_alpha.py`
     1. Smok ma (atrybuty):
         a. nazwę
-        b. pozycję `x` na ekranie
-        c. pozycję `y` na ekranie
-        d. nazwę pliku tekstury, domyślnie `img/dragon/alive.png`
-        e. punkty życia, domyślnie losowy `int` z zakresu od 50 do 100
+        b. pozycję na ekranie
+        c. nazwę pliku tekstury, domyślnie `img/dragon/alive.png`
+        d. punkty życia, domyślnie losowy `int` z zakresu od 50 do 100
     2. Smok może (metody):
         a. być ustawiony w dowolne miejsce ekranu
         b. zadawać komuś losowe obrażenia z przedziału od 5 do 20

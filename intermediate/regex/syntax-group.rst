@@ -154,17 +154,37 @@ Non-Capturing Group
 * ``(?:...)``
 
 >>> import re
->>>
->>>
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+
+>>> re.findall('[A-Z][a-z][a-z] \d{1,2}th, \d{4}', TEXT)
+['Apr 12th, 1961']
+>>>
+>>> re.findall('[A-Z][a-z][a-z] \d{1,2}st|nd|rd|th, \d{4}', TEXT)
+['th, 1961']
+>>>
+>>> re.findall('[A-Z][a-z][a-z] \d{1,2}(st|nd|rd|th), \d{4}', TEXT)
+['th']
+>>>
+>>> re.findall('[A-Z][a-z][a-z] \d{1,2}(?:st|nd|rd|th), \d{4}', TEXT)
+['Apr 12th, 1961']
+>>>
+>>> re.findall('([A-Z][a-z][a-z]) (\d{1,2})(?:st|nd|rd|th), (\d{4})', TEXT)
+[('Apr', '12', '1961')]
+>>>
+>>> re.findall('([A-Z][a-z][a-z]) (\d{1,2})(st|nd|rd|th), (\d{4})', TEXT)
+[('Apr', '12', 'th', '1961')]
+>>>
+
+>>> import re
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
 >>>
 >>> date = r'([A-Z][a-z]{2} \d{2}(?:st|nd|rd|th), \d{4})'
 >>> re.findall(date, TEXT)
 ['Apr 12th, 1961']
+>>>
 
 >>> import re
->>>
->>>
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
 >>>
 >>> year = '\d{4}'
@@ -237,8 +257,10 @@ Examples
 >>>
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
 >>>
->>> re.findall(r'\d{,2}(st|nd|rd|th)?', TEXT)
-['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'th', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+>>> re.findall(r'\d{,2}(st|nd|rd|th)?', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+ '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+ 'th', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 >>>
 >>> re.findall(r'\d{2}(st|nd|rd|th)?', TEXT)
 ['th', '', '', '']
@@ -268,7 +290,6 @@ Examples
 ['Apr 12th, 1961']
 
 
-
 Use Case - 0x01
 ---------------
 * Dates
@@ -286,3 +307,50 @@ Use Case - 0x01
 >>> re.search(date, TEXT).groupdict()
 {'month': 'Apr', 'day': '12th', 'year': '1961'}
 
+
+Use Case - 0x02
+---------------
+>>> import re
+>>>
+>>>
+>>> line = 'value=123'
+>>>
+>>> re.findall(r'(\w+)\s?=\s?(\d+)', line)
+[('value', '123')]
+
+>>> import re
+>>>
+>>>
+>>> line = 'value = 123'
+>>>
+>>> re.findall(r'(\w+)\s?=\s?(\d+)', line)
+[('value', '123')]
+
+
+Use Case - 0x03
+---------------
+>>> import re
+>>>
+>>>
+>>> variable = '(?P<variable>\w+)'
+>>> space = '\s?'  # optional space
+>>> value = '(?P<value>.+)'
+>>> assignment = f'^{variable}{space}={space}{value}$'
+>>>
+>>> line_of_code = 'myvar = 123'
+>>> re.findall(assignment, line_of_code)
+[('myvar', '123')]
+
+
+Use Case - 0x04
+---------------
+>>> import re
+>>>
+>>>
+>>> variable = '(?P<variable>\w+)'
+>>> space = '\s?(?#optional space)'
+>>> value = '(?P<value>.+)'
+>>> assignment = f'^{variable}{space}={space}{value}$'
+>>>
+>>> assignment
+'^(?P<variable>\\w+)\\s?(?#optional space)=\\s?(?#optional space)(?P<value>.+)$'
