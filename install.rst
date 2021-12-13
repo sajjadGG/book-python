@@ -2,82 +2,83 @@ Install
 =======
 
 
-Wymagania
----------
-* `[Zainstaluj] <https://www.python.org/downloads/>`_
-  Python w wersji 3.8 lub 3.9 (preferowany), lub 3.10 [#DownloadPython]_
+Wymagania szkolenia
+-------------------
+* Python w wersji 3.8, 3.9, 3.10 (preferowany: 3.10)
+* PyCharm 2021.3 lub nowszy (bez znaczenia czy Community czy Professional)
+* Git w wersji 2.33 lub nowszy
+* Darmowe konto na Github
 
-* `[Załóż] <https://github.com/join>`_
-  konto na Github (potwierdź konto mailem!) [#GithubJoin]_
+Odnośniki:
 
-* `[Zainstaluj] <https://www.jetbrains.com/pycharm/download/>`_
-  PyCharm w wersji 2021.1 lub nowszy
-  (bez znaczenia czy Community czy Professional) [#DownloadPyCharm]_
+    * `Python <https://www.python.org/downloads/>`_
+    * `Github <https://github.com/join>`_
+    * `PyCharm <https://www.jetbrains.com/pycharm/download/>`_
+    * `Git <https://git-scm.com/download/>`_
 
-* `[Zainstaluj] <https://git-scm.com/download/>`_
-  Git w wersji 2.33 lub nowszy [#DownloadGit]_
+Dla szkolenia:
 
+    * Python w Data Science,
+    * Python w Analizie Danych,
+    * Python w Analizie Numerycznej,
+    * Python Machine Learning,
 
-Dla szkolenia z Analizy Numerycznej lub Machine Learning dodatkowo trzeba:
+**dodatkowo** konieczna będzie instalacja następujących pakietów:
 
-    * Posiadać uprawnienia na komputerze do instalacji pakietów Python
-      za pomocą ``pip``
+    * ``jupyter``,
+    * ``jupyterlab``,
+    * ``numpy``,
+    * ``pandas``,
+    * ``matplotlib``,
+    * ``scikit-learn``,
+    * ``statsmodels``,
+    * ``seaborn``,
+    * ``bokeh``.
 
-    * Do instalacji pakietów konieczny jest dostęp do internetu
+Jeżeli korzystasz z Anakondy, to te pakiety masz już zainstalowane. Jeżeli
+masz czystego Pythona, to można je doinstalować wykonując polecenie w
+systemie operacyjnym:
 
-    * Konieczna będzie instalacja następujących pakietów:
-      ``numpy``, ``pandas``, ``matplotlib``, ``scikit-learn``,
-      ``statsmodels``, ``seaborn``, ``bokeh``. Jeżeli korzystasz z
-      Anakondy, to te pakiety masz już zainstalowane. Jeżeli masz
-      czystego Pythona, to można je doinstalować wykonując polecenie:
+.. code-block:: console
 
-      .. code-block:: console
+    pip3 install --upgrade jupyter numpy pandas matplotlib scikit-learn statsmodels seaborn bokeh
 
-          pip3 install --upgrade jupyter numpy pandas matplotlib scikit-learn statsmodels seaborn bokeh
-
-
-Najczęściej zadawane pytania
-----------------------------
-1. Można korzystać ze swojego komputera i dowolnego systemu operacyjnego.
-   Podczas szkolenia (na wyższych poziomach zaawansowania) mogą pojawić
-   się niewielkie różnice między systemami operacyjnymi i wersjami Pythona.
-   Zawsze będzie to wspomniane w zadaniu.
-
-2. Python może być zainstalowany albo za pomocą oficjalnej dystrybucji albo
-   z pakietu Anaconda, a wybór dystrybucji Python nie będzie miał wpływu
-   na przebieg szkolenia.
-
-3. Podczas szkolenia trener będzie korzystał z PyCharm jako środowisko
-   programistyczne (IDE). Można korzystać z innego IDE, ale proszę
-   zaznajomić się z nim przed szkoleniem. Podczas szkolenia nie będzie
-   czasu na rozwiązywanie problemów technicznych z innymi IDE!
-
-4. Podczas instalacji PyCharm zaznacz opcję: "powiąż z rozszerzeniem plików
-   ``.py``". Nie jest to konieczne ale ułatwia pracę.
-
-5. Proszę o zainstalowanie Git i założenie darmowego konta na Github oraz
-   potwierdzenie linka aktywacyjnego na mailu. Podczas szkolenia będziemy
-   pracowali na jednym repozytorium, a wszystkie zadania do wykonania
-   również tam będą umieszczane. Korzystanie z Github zaoszczędzi bardzo
-   dużo żmudnej i podatnej na błędy pracy.
+Do instalacji pakietów konieczny jest dostęp do internetu oraz uprawnienia
+na komputerze do instalacji pakietów za pomocą ``pip``.
 
 
-Setup
------
-.. toctree::
-    :maxdepth: 1
-
-    install/python.rst
-    install/github.rst
-    install/ide.rst
-    install/project.rst
-    install/doctest.rst
-    install/git.rst
+Czy można korzystać ze swojego komputera?
+-----------------------------------------
+Tak. Można korzystać ze swojego komputera i dowolnego systemu operacyjnego.
+Podczas szkolenia mogą pojawić się niewielkie różnice między systemami
+operacyjnymi i wersjami Pythona. Zawsze będzie to wspomniane w zadaniu.
 
 
-References
-----------
-.. [#DownloadPython] Python Software Foundation. Download Python. Year: 2021. Retrieved: 2021-04-19. URL: https://www.python.org/downloads/
-.. [#DownloadPyCharm] JetBrains. Download PyCharm. Year: 2021. Retrieved: 2021-04-19. URL: https://www.jetbrains.com/pycharm/download/
-.. [#DownloadGit] Download Git. Year: 2021. Retrieved: 2021-04-19. URL: https://git-scm.com/download
-.. [#GithubJoin] Github. Join Github. Year: 2021. Retrieved: 2021-04-19. URL: https://github.com/join
+Czy można korzystać z pakietu Anaconda?
+---------------------------------------
+Tak. Python może być zainstalowany albo za pomocą oficjalnej dystrybucji albo
+z pakietu Anaconda. Wybór dystrybucji Python nie będzie miał wpływu na
+przebieg szkolenia.
+
+
+Czy mogę korzystać z innego IDE niż PyCharm?
+--------------------------------------------
+Tak. Podczas szkolenia trener będzie korzystał z PyCharm Professional jako
+środowisko programistyczne (IDE). Można korzystać z innego IDE, ale
+proszę zaznajomić się z nim przed szkoleniem. Podczas szkolenia nie będzie
+czasu na rozwiązywanie problemów technicznych z innymi IDE! Jeżeli
+wybierzesz PyCharm, to nie będzie miało znaczenia czy jest to wersja
+Community (darmowa) czy Professional (płatna). Podczas szkolenia nie
+będziemy korzystali z funkcjonalności wersji Professional i wersja darmowa
+w zupełności wystarczy.
+
+
+Czy konieczne jest konto na Github?
+-----------------------------------
+Tak. Proszę o zainstalowanie Git i założenie darmowego konta na Github oraz
+potwierdzenie linka aktywacyjnego na mailu. Podczas szkolenia będziemy
+pracowali na jednym repozytorium, a wszystkie zadania do wykonania również
+tam będą umieszczane. Korzystanie z Github zaoszczędzi bardzo dużo żmudnej
+i podatnej na błędy pracy.
+
+
