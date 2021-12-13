@@ -10,8 +10,7 @@ English:
     3. Return list of system account logins
     4. Implement solution using function
     5. Implement solution using generator and `yield` keyword
-    6. Compare results of both using `sys.getsizeof()`
-    7. Run doctests - all must succeed
+    6. Run doctests - all must succeed
 
 Polish:
     1. Podziel `DATA` po liniach a następnie po dwukropku `:`
@@ -19,8 +18,7 @@ Polish:
     3. Zwróć listę loginów użytkowników systemowych
     4. Zaimplementuj rozwiązanie wykorzystując funkcję
     5. Zaimplementuj rozwiązanie wykorzystując generator i słowo kluczowe `yield`
-    6. Porównaj wyniki obu używając `sys.getsizeof()`
-    7. Uruchom doctesty - wszystkie muszą się powieść
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * ``str.splitlines()``
@@ -29,7 +27,6 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from sys import getsizeof
     >>> from inspect import isfunction, isgeneratorfunction
 
     >>> assert isfunction(function)

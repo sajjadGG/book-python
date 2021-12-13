@@ -40,12 +40,15 @@ Definition
 Generators can return (or yield) something:
 
 >>> def run():
+...     yield 1
+
+>>> def run():
 ...     yield 'something'
 
 Generators can be defined with required and optional parameters just like
 a regular function:
 
->>> def mygenerator(a, b, c=0):
+>>> def run(a, b, c=0):
 ...     yield a + b + c
 
 
@@ -53,20 +56,20 @@ Call Generator
 --------------
 Generators are called just like a regular function:
 
->>> def mygenerator():
-...     yield 'something'
+>>> def run():
+...     yield 1
 >>>
 >>>
->>> result = mygenerator()
+>>> result = run()
 
-The rule with positional and keyword arguments are identical tp regular
+The rule with positional and keyword arguments are identical to regular
 functions:
 
->>> def mygenerator(a, b, c=0):
+>>> def run(a, b, c=0):
 ...     yield a + b + c
 >>>
 >>>
->>> result = mygenerator(1, b=2)
+>>> result = run(1, b=2)
 
 
 Get Results
@@ -141,6 +144,8 @@ StopIteration
 ...     print('c')
 ...     print('cc')
 ...     yield 3
+...     print('d')
+...     print('dd')
 >>>
 >>>
 >>> result = run()
@@ -158,6 +163,8 @@ c
 cc
 3
 >>> next(result)
+d
+dd
 Traceback (most recent call last):
 StopIteration
 
@@ -215,23 +222,23 @@ StopIteration
 
 Yield in a Zip Loop
 -------------------
->>> def names():
-...     yield 'Mark Watney'
-...     yield 'Melissa Lewis'
-...     yield 'Rick Martinez'
+>>> def firstnames():
+...     yield 'Mark'
+...     yield 'Melissa'
+...     yield 'Rick'
 >>>
 >>>
->>> def roles():
-...     yield 'botanist'
-...     yield 'commander'
-...     yield 'pilot'
+>>> def lastnames():
+...     yield 'Watney'
+...     yield 'Lewis'
+...     yield 'Martinez'
 >>>
 >>>
->>> for n, r in zip(names(), roles()):
-...     print(r, n)
-botanist Mark Watney
-commander Melissa Lewis
-pilot Rick Martinez
+>>> for fname, lname in zip(firstnames(), lastnames()):
+...     print(f'{fname=}, {lname=}')
+fname='Mark', lname='Watney'
+fname='Melissa', lname='Lewis'
+fname='Rick', lname='Martinez'
 
 
 Example
@@ -246,12 +253,10 @@ Function:
 ...     return result
 >>>
 >>>
->>> DATA = [0, 1, 2, 3, 4, 5]
->>>
->>> result = even(DATA)
+>>> result = even(range(0,10))
 >>>
 >>> print(result)
-[0, 2, 4]
+[0, 2, 4, 6, 8]
 
 Generator:
 
@@ -261,14 +266,13 @@ Generator:
 ...             yield x
 >>>
 >>>
->>> DATA = [0, 1, 2, 3, 4, 5]
->>>
->>> result = even(DATA)
+>>> result = even(range(0,10))
 >>>
 >>> print(result)  # doctest: +ELLIPSIS
 <generator object even at 0x...>
+>>>
 >>> list(result)
-[0, 2, 4]
+[0, 2, 4, 6, 8]
 
 
 Assignments

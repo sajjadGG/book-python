@@ -213,29 +213,6 @@ StopIteration
 >>> list(result)
 [1.0, 2.0, 3.0]
 
->>> data = [1, 2, 3]
->>> result = map(float, data)
->>>
->>> tuple(map(float, data))
-(1.0, 2.0, 3.0)
-
->>> data = [1, 2, 3]
->>> result = map(float, data)
->>>
->>> set(map(float, data))
-{1.0, 2.0, 3.0}
-
->>> DATA = [1, 2, 3]
->>>
->>> result = (float(x) for x in DATA)
->>> list(result)
-[1.0, 2.0, 3.0]
-
->>> DATA = [1.1, 2.2, 3.3]
->>> result = map(round, DATA)
->>> list(result)
-[1, 2, 3]
-
 >>> def square(x):
 ...     return x ** 2
 ...

@@ -56,6 +56,9 @@ ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
 lewis:x:1002:1002:Melissa Lewis:/home/lewis:/bin/bash"""
 
 
+# list[Account]: parse DATA and convert to UserAccount or SystemAccount
+result = ...
+
 # Solution
 from dataclasses import dataclass
 
