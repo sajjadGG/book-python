@@ -1,8 +1,8 @@
 Agenda
 ======
 * Training course: 9:00 - 17:00
-* Lunch break: 12:30 - 13:15
-* 5-10 min break every one/one-and-half hour
+* Lunch break: 13:15 - 14:00
+* 10 min break every one/one-and-half hour
 
 
 Day 1
