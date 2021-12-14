@@ -20,16 +20,25 @@ NameError: name 'a' is not defined
 1
 
 
+Variables Inside Function
+-------------------------
+* Variables inside function
+
+>>> def run():
+...     a = 1
+...     b = 2
+
+
 Functions Inside Function
 -------------------------
 * Functions inside function
 
 >>> def run():
 ...     def a():
-...         print('A')
+...         pass
 ...
 ...     def b():
-...         print('B')
+...         pass
 
 
 Classes Inside Function
@@ -158,8 +167,8 @@ A
 B
 
 >>> def run():
-...     a = 10
-...     b = 20
+...     a = 1
+...     b = 2
 ...
 ...     def say_hello():
 ...         pass

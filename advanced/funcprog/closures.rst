@@ -27,7 +27,7 @@ Example
 
 Recap
 -----
-* Function can access data from outer scope
+Functions can define their own variables:
 
 >>> def run():
 ...     firstname = 'Mark'
@@ -37,6 +37,8 @@ Recap
 >>>
 >>> run()
 Hello Mark Watney
+
+Function can access data from outer scope:
 
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
@@ -69,23 +71,19 @@ Hello Mark Watney
 Traceback (most recent call last):
 NameError: name 'hello' is not defined
 
->>> def run(firstname, lastname):
-...     def hello():
-...         print(f'Hello {firstname} {lastname}')
-...     hello()
->>>
->>>
->>> run('Mark', 'Watney')
-Hello Mark Watney
-
 
 What is closure?
 ----------------
-* Function local variables are stored on the stack (function stack frame)
-* Inner functions have access to outer functions variables (access to
-  outer function stack)
-* In order to that work, you can call inner function only when outer
-  function is running [#ytclosures]_
+Closure is a technique by which the data is attached to some code even after end
+of those other original functions is called as closures. When the interpreter
+detects the dependency of inner nested function on the outer function, it stores
+or makes sure that the variables in which inner function depends on are
+available even if the outer function goes away.
+
+Function local variables are stored on the stack (function stack frame). Inner
+functions have access to outer functions variables (access to outer function
+stack). In order to that work, you can call inner function only when outer
+function is running [#ytclosures]_
 
 >>> def run():
 ...     firstname = 'Mark'
@@ -99,7 +97,7 @@ What is closure?
 >>> result()
 Hello Mark Watney
 
-Remove Outer Function:
+Remove outer function:
 
 >>> def run():
 ...     firstname = 'Mark'
@@ -113,6 +111,13 @@ Remove Outer Function:
 >>> del run
 >>> result()
 Hello Mark Watney
+
+
+Why?
+----
+* Closures provides some form of data hiding
+* Closures can avoid use of global variables
+* Useful for replacing hard-coded constants
 
 
 References

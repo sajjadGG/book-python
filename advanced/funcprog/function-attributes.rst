@@ -75,8 +75,8 @@ Function Code
  'replace']
 
 
-Use Case - Disabled
--------------------
+Use Case - 0x01
+---------------
 >>> def hello():
 ...     if not hello.disabled:
 ...         print('My name... José Jiménez')
@@ -93,8 +93,9 @@ My name... José Jiménez
 Traceback (most recent call last):
 PermissionError
 
-Use Case - Cache
-----------------
+
+Use Case - 0x02
+---------------
 >>> def add(a, b):
 ...     return a + b
 >>>
@@ -131,3 +132,29 @@ Found in cache; fetching...
 >>> add(1, 2)
 Found in cache; fetching...
 3
+
+
+Use Case - 0x03
+---------------
+>>> def add(a, b):
+...     cache = getattr(add, '__cache__', {})
+...     if (a,b) not in cache:
+...         cache[(a,b)] = a + b
+...         setattr(add, '__cache__', cache)
+...     return cache[(a,b)]
+>>>
+>>>
+>>> add(1,2)
+3
+>>>
+>>> add(3,2)
+5
+>>>
+>>> add(3,5)
+8
+>>>
+>>> add  # doctest: +ELLIPSIS
+<function add at 0x...>
+>>>
+>>> add.__cache__
+{(1, 2): 3, (3, 2): 5, (3, 5): 8}
