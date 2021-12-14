@@ -40,10 +40,10 @@ Day 2
     "30m", "Functional Programming: Namespace and function attributes"
     "45m", "Functional Programming: Callable and closures"
 
-    "120m", "Decorators: Function decorators"
-    "75m", "Decorators: Method decorators"
-    "90m", "Decorators: Class decorators"
-    "15m", "Decorators: Decorator arguments and functools.wraps"
+    "180m", "Decorators: Function decorators"
+    "45m", "Decorators: Method decorators"
+    "45m", "Decorators: Class decorators"
+    "30m", "Decorators: Decorator arguments and functools.wraps"
 
 
 Day 3
