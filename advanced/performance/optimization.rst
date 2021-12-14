@@ -110,15 +110,16 @@ Numba
 -----
 Numba gives you the power to speed up your applications with high performance functions written directly in Python. With a few annotations, array-oriented and math-heavy Python code can be just-in-time compiled to native machine instructions, similar in performance to C, C++ and Fortran, without having to switch languages or Python interpreters.
 
->>> from numba import jit, int32
->>>
->>>
->>> @jit(nogil=True)
+>>> # doctest: +SKIP
+... from numba import jit, int32
+...
+...
+... @jit(nogil=True)
 ... def do_something():
 ...     pass
->>>
->>>
->>> @jit(int32(int32, int32))
+...
+...
+... @jit(int32(int32, int32))
 ... def add(x, y):
 ...     return x + y
 
