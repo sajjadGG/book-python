@@ -47,6 +47,10 @@ Recap information about factorial (``n!``):
     1! = 1 * 0!
     0! = 1
 
+.. code-block:: text
+
+    n! = n * (n-1)!  # 0! = 1
+
 >>> def factorial(n):
 ...     if n == 0:
 ...         return 1
@@ -81,11 +85,16 @@ Recursion Depth Limit
 >>> sys.setrecursionlimit(3000)
 
 
+Use Case - 0x01
+---------------
+.. figure:: img/function-recurrence-hanoi.jpg
+
+    Hanoi Tower as a standard example of a recurrence. Source: [#hanoi]_
+
+
 References
 ----------
 .. [#hanoi] https://dyermath.files.wordpress.com/2015/06/hanoi-13.jpg
-
-.. [#WikipediaFunc] Functional programming. Retrieved: 2020-10-09. URL: https://en.wikipedia.org/wiki/Functional_programming
 
 
 Assignments

@@ -83,27 +83,6 @@ Increment:
 >>> list(result)
 [2, 3, 4, 5]
 
-Square:
-
-    >>> data = [1, 2, 3, 4]
-    >>>
-    >>> result = map(lambda x: x**2, data)
-    >>> list(result)
-    [1, 4, 9, 16]
-
-Translate:
-
-    >>> PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
-    ...      'ł': 'l', 'ń': 'n', 'ó': 'o',
-    ...      'ś': 's', 'ż': 'z', 'ź': 'z'}
-    >>>
-    >>> text = 'zażółć gęślą jaźń'
-    >>>
->>>
-    >>> result = map(lambda x: PL.get(x,x), text)
-    >>> ''.join(result)
-    'zazolc gesla jazn'
-
 
 Lambda with Filter
 ------------------
@@ -115,8 +94,57 @@ Even numbers:
 >>> list(result)
 [2, 4]
 
-Adult people:
 
+Performance
+-----------
+>>> %%timeit -r 1000 -n 10_000  # doctest: +SKIP
+... def increment(x):
+...     return x + 1
+... map(increment, range(0,100))
+271 ns ± 30.6 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
+>>>
+>>>
+>>> %%timeit -r 1000 -n 10_000  # doctest: +SKIP
+... map(lambda x: x+1, range(0,100))
+262 ns ± 29 ns per loop (mean ± std. dev. of 1000 runs, 10000 loops each)
+
+>>> %%timeit -r 1000 -n 1000  # doctest: +SKIP
+... def increment(x):
+...     return x + 1
+... list(map(increment, range(0,100)))
+7.48 µs ± 608 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
+>>>
+>>>
+>>> %%timeit -r 1000 -n 1000  # doctest: +SKIP
+... list(map(lambda x: x+1, range(0,100)))
+7.36 µs ± 545 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
+
+
+Use Case - 0x01
+---------------
+>>> data = [1, 2, 3, 4]
+>>>
+>>> result = map(lambda x: x**2, data)
+>>> list(result)
+[1, 4, 9, 16]
+
+
+Use Case - 0x02
+---------------
+>>> PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+...       'ł': 'l', 'ń': 'n', 'ó': 'o',
+...       'ś': 's', 'ż': 'z', 'ź': 'z'}
+>>>
+>>> text = 'zażółć gęślą jaźń'
+>>>
+>>>
+>>> result = map(lambda x: PL.get(x,x), text)
+>>> ''.join(result)
+'zazolc gesla jazn'
+
+
+Use Case - 0x03
+---------------
 >>> people = [
 ...     {'age': 21, 'name': 'Jan Twardowski'},
 ...     {'age': 25, 'name': 'Mark Watney'},
@@ -128,10 +156,9 @@ Adult people:
 [{'age': 21, 'name': 'Jan Twardowski'},
  {'age': 25, 'name': 'Mark Watney'}]
 
-Astronauts:
 
-Use Case - Astronaut
---------------------
+Use Case - 0x04
+---------------
 >>> people = [
 ...     {'is_astronaut': False, 'name': 'Jan Twardowski'},
 ...     {'is_astronaut': True, 'name': 'Mark Watney'},
@@ -143,6 +170,9 @@ Use Case - Astronaut
 [{'is_astronaut': True, 'name': 'Mark Watney'},
  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
+
+Use Case - 0x05
+---------------
 >>> astronauts = ['Mark Watney', 'Melissa Lewis']
 >>>
 >>> people = ['Jan Twardowski', 'Mark Watney',
