@@ -54,7 +54,7 @@ Outer Scope
 >>>
 >>>
 >>> def run():
-...     return print(data)
+...     print(data)
 >>>
 >>>
 >>> print(data)
@@ -80,7 +80,7 @@ Shadowing
 >>>
 >>> def run():
 ...     data = [10, 20, 30]  # Shadows name 'data' from outer scope
-...     return sum(data)
+...     print(data)
 >>>
 >>>
 >>> print(data)
@@ -104,7 +104,7 @@ Global
 >>> def run():
 ...     global data
 ...     data = [10, 20, 30]
-...     return sum(data)
+...     print(data)
 >>>
 >>>
 >>> print(data)

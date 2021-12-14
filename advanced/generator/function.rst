@@ -85,6 +85,7 @@ One does not simple get data from generator:
 >>>
 >>>
 >>> result = run()
+>>>
 >>> print(result)  # doctest: +ELLIPSIS
 <generator object run at 0x...>
 
@@ -95,6 +96,7 @@ In Order to do so, you need to generate next item using ``next()``
 >>>
 >>>
 >>> result = run()
+>>>
 >>> next(result)
 1
 >>> next(result)
@@ -144,8 +146,6 @@ StopIteration
 ...     print('c')
 ...     print('cc')
 ...     yield 3
-...     print('d')
-...     print('dd')
 >>>
 >>>
 >>> result = run()
@@ -163,8 +163,6 @@ c
 cc
 3
 >>> next(result)
-d
-dd
 Traceback (most recent call last):
 StopIteration
 
