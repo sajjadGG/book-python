@@ -5,35 +5,39 @@ Install
 Wymagania szkolenia
 -------------------
 * Python w wersji 3.8, 3.9, 3.10 (preferowany: 3.10)
+  [`download <https://www.python.org/downloads/>`_]
+
 * PyCharm 2021.3 lub nowszy (bez znaczenia czy Community czy Professional)
+  [`download <https://www.jetbrains.com/pycharm/download/>`_]
+
 * Git w wersji 2.33 lub nowszy
+  [`download <https://git-scm.com/download/>`_]
+
 * Darmowe konto na Github
+  [`załóż <https://github.com/join>`_]
 
-Odnośniki:
 
-    * `Python <https://www.python.org/downloads/>`_
-    * `Github <https://github.com/join>`_
-    * `PyCharm <https://www.jetbrains.com/pycharm/download/>`_
-    * `Git <https://git-scm.com/download/>`_
-
+Wymagania dodatkowe dla szkoleń Data Science
+--------------------------------------------
 Dla szkolenia:
 
     * Python w Data Science,
     * Python w Analizie Danych,
     * Python w Analizie Numerycznej,
-    * Python Machine Learning,
 
 **dodatkowo** konieczna będzie instalacja następujących pakietów:
 
-    * ``jupyter``,
-    * ``jupyterlab``,
-    * ``numpy``,
-    * ``pandas``,
-    * ``matplotlib``,
-    * ``scikit-learn``,
-    * ``statsmodels``,
-    * ``seaborn``,
-    * ``bokeh``.
+    * ``jupyter``
+    * ``jupyterlab``
+    * ``numpy``
+    * ``pandas``
+    * ``matplotlib``
+    * ``requests``
+    * ``lxml``
+    * ``html5lib``
+    * ``beautifulsoup4``
+    * ``xlrd``
+    * ``scipy``
 
 Jeżeli korzystasz z Anakondy, to te pakiety masz już zainstalowane. Jeżeli
 masz czystego Pythona, to można je doinstalować wykonując polecenie w
@@ -41,7 +45,36 @@ systemie operacyjnym:
 
 .. code-block:: console
 
-    pip3 install --upgrade jupyter numpy pandas matplotlib scikit-learn statsmodels seaborn bokeh
+    pip3 install --upgrade jupyter jupyterlab numpy pandas matplotlib requests lxml html5lib beautifulsoup4 xlrd scipy
+
+Do instalacji pakietów konieczny jest dostęp do internetu oraz uprawnienia
+na komputerze do instalacji pakietów za pomocą ``pip``.
+
+
+Wymagania dodatkowe dla szkoleń Machine Learning
+------------------------------------------------
+Dla szkolenia:
+
+    * Python Machine Learning
+
+**dodatkowo** (łącznie z tymi z używanymi w Data Science) konieczna będzie
+instalacja następujących pakietów:
+
+    * ``scikit-learn``
+    * ``statsmodels``
+    * ``seaborn``
+    * ``bokeh``
+    * ``tensorflow``
+    * ``pytorch``
+    * ``keras``
+
+Jeżeli korzystasz z Anakondy, to te pakiety masz już zainstalowane. Jeżeli
+masz czystego Pythona, to można je doinstalować wykonując polecenie w
+systemie operacyjnym:
+
+.. code-block:: console
+
+    pip3 install --upgrade scikit-learn statsmodels seaborn bokeh tensorflow pytorch keras
 
 Do instalacji pakietów konieczny jest dostęp do internetu oraz uprawnienia
 na komputerze do instalacji pakietów za pomocą ``pip``.
