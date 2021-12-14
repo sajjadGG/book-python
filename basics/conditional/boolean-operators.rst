@@ -145,25 +145,31 @@ Examples
 >>>
 >>>
 >>> print(sys.version_info)
-sys.version_info(major=3, minor=9, micro=9, releaselevel='final', serial=0)
+sys.version_info(major=3, minor=10, micro=1, releaselevel='final', serial=0)
 >>>
 >>>
 >>> sys.version_info >= (3, 9)
 True
 >>>
 >>> sys.version_info >= (3, 10)
-False
+True
 >>>
 >>> sys.version_info >= (3, 11)
+False
+>>>
+>>> sys.version_info >= (3, 12)
 False
 >>>
 >>> sys.version_info >= (3, 9, 0)
 True
 >>>
 >>> sys.version_info >= (3, 10, 0)
-False
+True
 >>>
 >>> sys.version_info >= (3, 11, 0)
+False
+>>>
+>>> sys.version_info >= (3, 12, 0)
 False
 
 >>> '3.8.0' > '3.9.0'
