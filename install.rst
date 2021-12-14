@@ -5,13 +5,13 @@ Install
 Wymagania szkolenia
 -------------------
 * Python w wersji 3.8, 3.9, 3.10 (preferowany: 3.10)
-  [`download <https://www.python.org/downloads/>`_]
+  [`pobierz <https://www.python.org/downloads/>`_]
 
-* PyCharm 2021.3 lub nowszy (bez znaczenia czy Community czy Professional)
-  [`download <https://www.jetbrains.com/pycharm/download/>`_]
+* PyCharm 2021.3 lub nowszy (dowolnie Community lub Professional)
+  [`pobierz <https://www.jetbrains.com/pycharm/download/>`_]
 
 * Git w wersji 2.33 lub nowszy
-  [`download <https://git-scm.com/download/>`_]
+  [`pobierz <https://git-scm.com/download/>`_]
 
 * Darmowe konto na Github
   [`załóż <https://github.com/join>`_]
@@ -25,7 +25,8 @@ Dla szkolenia:
     * Python w Analizie Danych,
     * Python w Analizie Numerycznej,
 
-**dodatkowo** konieczna będzie instalacja następujących pakietów:
+Preferowaną wersją Python jest 3.9. **Dodatkowo** konieczna będzie
+instalacja następujących pakietów:
 
     * ``jupyter``
     * ``jupyterlab``
@@ -57,8 +58,8 @@ Dla szkolenia:
 
     * Python Machine Learning
 
-**dodatkowo** (łącznie z tymi z używanymi w Data Science) konieczna będzie
-instalacja następujących pakietów:
+Preferowaną wersją Python jest 3.9. **Dodatkowo** (łącznie z tymi z używanymi w
+Data Science) konieczna będzie instalacja następujących pakietów:
 
     * ``scikit-learn``
     * ``statsmodels``
