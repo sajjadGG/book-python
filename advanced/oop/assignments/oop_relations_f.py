@@ -5,7 +5,7 @@
 * Time: 13 min
 
 English:
-    1. Convert `DATA` to format with one column per each attrbute for example:
+    1. Convert `DATA` to format with one column per each attribute for example:
        a. `address1_street`, `address2_street`,
        b. `address1_city`, `address2_city`
        c. `address1_city`, `address2_city`
@@ -13,7 +13,7 @@ English:
     3. Run doctests - all must succeed
 
 Polish:
-    1. Przekonweruj `DATA` do formatu z jedną kolumną dla każdego atrybutu, np:
+    1. Przekonwertuj `DATA` do formatu z jedną kolumną dla każdego atrybutu, np:
        a. `address1_street`, `address2_street`,
        b. `address1_city`, `address2_city`
        c. `address1_city`, `address2_city`

@@ -59,6 +59,9 @@ DATA = [
     Astronaut('Melissa', 'Lewis')]
 
 
+# list[dict]: Convert DATA.
+#             Use `,` to separate fields.
+#             Use `;` to separate columns.
 result = ...
 
 
