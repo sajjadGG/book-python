@@ -51,7 +51,7 @@ False
 1
 >>>
 >>> data.gi_frame.f_lasti
-8
+10
 >>>
 >>> data.gi_yieldfrom
 

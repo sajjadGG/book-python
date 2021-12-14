@@ -65,6 +65,8 @@ Function Code
  'co_flags',
  'co_freevars',
  'co_kwonlyargcount',
+ 'co_lines',
+ 'co_linetable',
  'co_lnotab',
  'co_name',
  'co_names',
