@@ -32,21 +32,6 @@ Class methods:
 ...         pass
 
 
-Example
--------
->>> class Astronaut:
-...     def my_dynamic_method(self):
-...         return 'Hello'
-...
-...     @staticmethod
-...     def my_static_method():
-...         return 'Hello'
-...
-...     @classmethod
-...     def my_class_method(cls):
-...         return 'Hello'
-
-
 Manifestation
 -------------
 >>> import json
@@ -58,42 +43,13 @@ Manifestation
 ...     firstname: str
 ...     lastname: str
 ...
-...     def from_json(self, data):
-...         data = json.loads(data)
-...         return User(**data)
->>>
->>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
->>>
->>> User.from_json(DATA)
-Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
->>>
->>> User().from_json(DATA)
-Traceback (most recent call last):
-TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
->>>
->>> User(None, None).from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
-
->>> import json
->>> from dataclasses import dataclass
->>>
->>>
->>> @dataclass
-... class User:
-...     firstname: str
-...     lastname: str
-...
 ...     @staticmethod
 ...     def from_json(data):
 ...         data = json.loads(data)
 ...         return User(**data)
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
->>>
->>> User.from_json(DATA)
+>>> User.from_json('{"firstname": "Jan", "lastname": "Twardowski"}')
 User(firstname='Jan', lastname='Twardowski')
 
 >>> import json
@@ -113,119 +69,10 @@ User(firstname='Jan', lastname='Twardowski')
 ...     lastname: str
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> data = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> result = User.from_json(data)
 >>>
->>> print(User.from_json(DATA))
-User(firstname='Jan', lastname='Twardowski')
-
->>> import json
->>> from dataclasses import dataclass
->>>
->>>
->>> class JSONMixin:
-...     def from_json(self, data):
-...         data = json.loads(data)
-...         return User(**data)
->>>
->>>
->>> @dataclass
-... class User(JSONMixin):
-...     firstname: str = None
-...     lastname: str = None
->>>
->>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
->>>
->>> User.from_json(DATA)
-Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
->>>
->>> User().from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
-
-Trying to use method with ``self``:
-
->>> import json
->>> from dataclasses import dataclass
->>>
->>>
->>> class JSONMixin:
-...     def from_json(self, data):
-...         data = json.loads(data)
-...         return self(**data)
->>>
->>>
->>> @dataclass
-... class User(JSONMixin):
-...     firstname: str = None
-...     lastname: str = None
->>>
->>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
->>>
->>> User.from_json(DATA)
-Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
->>>
->>> User().from_json(DATA)
-Traceback (most recent call last):
-TypeError: 'User' object is not callable
-
-Trying to use method with ``self.__init__()``:
-
->>> import json
->>> from dataclasses import dataclass
->>>
->>>
->>> class JSONMixin:
-...     def from_json(self, data):
-...         data = json.loads(data)
-...         self.__init__(**data)
-...         return self
->>>
->>>
->>> @dataclass
-... class User(JSONMixin):
-...     firstname: str = None
-...     lastname: str = None
->>>
->>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
->>>
->>> User.from_json(DATA)
-Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
->>>
->>> User().from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
-
-Trying to use methods ``self.__new__()`` and ``self.__init__()``:
-
->>> import json
->>> from dataclasses import dataclass
->>>
->>>
->>> class JSONMixin:
-...     def from_json(self, data):
-...         data = json.loads(data)
-...         instance = object.__new__(type(self))
-...         instance.__init__(**data)
-...         return instance
->>>
->>>
->>> @dataclass
-... class User(JSONMixin):
-...     firstname: str = None
-...     lastname: str = None
->>>
->>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
->>>
->>> User.from_json(DATA)
-Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
->>>
->>> User().from_json(DATA)
+>>> print(result)
 User(firstname='Jan', lastname='Twardowski')
 
 >>> import json
@@ -244,14 +91,49 @@ User(firstname='Jan', lastname='Twardowski')
 ...     lastname: str
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> data = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> result = User.from_json(data)
 >>>
->>> User.from_json(DATA)
+>>> print(result)
 User(firstname='Jan', lastname='Twardowski')
 
 
-Use Cases - JSONMixin
----------------------
+Use Cases - 0x01
+----------------
+* Singleton
+
+>>> class Singleton:
+...     _instance: object
+...
+...     @classmethod
+...     def get_instance(cls):
+...         if not hasattr(cls, '_instance'):
+...             cls._instance = object.__new__(cls)
+...         return cls._instance
+>>>
+>>>
+>>> class Astronaut(Singleton):
+...     pass
+>>>
+>>> class Cosmonaut(Singleton):
+...     pass
+>>>
+>>>
+>>> astro = Astronaut.get_instance()
+>>> cosmo = Cosmonaut.get_instance()
+>>>
+>>>
+>>> print(astro)  # doctest: +SKIP
+<__main__.Astronaut object at 0x102453ee0>
+>>>
+>>> print(cosmo)  # doctest: +SKIP
+<__main__.Cosmonaut object at 0x102453ee0>
+
+
+Use Cases - 0x02
+----------------
+* JSONMixin
+
 >>> import json
 >>> from dataclasses import dataclass
 >>>
@@ -282,8 +164,10 @@ Guest(firstname='Jan', lastname='Twardowski')
 Admin(firstname='Jan', lastname='Twardowski')
 
 
-Use Case - Interplanetary time
-------------------------------
+Use Case - 0x03
+---------------
+* Interplanetary time
+
 >>> # myapp/time.py
 >>> class AbstractTime:
 ...     tzname: str
@@ -321,6 +205,54 @@ Use Case - Interplanetary time
 >>>
 >>> dt = time.parse(UTC)
 >>> print(dt.tzname)
+Coordinated Mars Time
+
+
+Use Case - 0x04
+---------------
+* Interplanetary time
+
+>>> # myapp/time.py
+>>> class AbstractTime:
+...     tzname: str
+...     tzcode: str
+...
+...     def __init__(self, date, time):
+...         ...
+...
+...     @classmethod
+...     def parse(cls, text):
+...         result = {'date': ..., 'time': ...}
+...         return cls(**result)
+>>>
+>>> class MartianTime(AbstractTime):
+...     tzname = 'Coordinated Mars Time'
+...     tzcode = 'MTC'
+>>>
+>>> class LunarTime(AbstractTime):
+...     tzname = 'Lunar Standard Time'
+...     tzcode = 'LST'
+>>>
+>>> class EarthTime(AbstractTime):
+...     tzname = 'Universal Time Coordinated'
+...     tzcode = 'UTC'
+
+>>> # myapp/settings.py
+>>> # doctest: +SKIP
+... import myapp.time
+... from myapp.time import *
+... from os import getenv
+...
+... time = getattr(myapp.time, getenv('MISSION_TIME'))  # doctest: +SKIP
+
+>>> # myapp/usage.py
+>>> # doctest: +SKIP
+... from myapp.settings import time
+...
+... UTC = '1969-07-21T02:53:07Z'
+...
+... dt = time.parse(UTC)
+... print(dt.tzname)
 Coordinated Mars Time
 
 

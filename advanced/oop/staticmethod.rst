@@ -116,8 +116,33 @@ Class ``Calculator`` is a namespace for functions. ``@staticmethod`` remove inst
 4
 
 
-Use Case - Http Client
-----------------------
+Use Case - 0x01
+---------------
+* Singleton
+
+>>> class MyClass:
+...     _instance: 'MyClass'
+...
+...     @staticmethod
+...     def get_instance():
+...         if not hasattr(MyClass, '_instance'):
+...             MyClass._instance = object.__new__(MyClass)
+...         return MyClass._instance
+>>>
+>>>
+>>> my1 = MyClass.get_instance()
+>>> my2 = MyClass.get_instance()
+>>>
+>>> my1  # doctest: +ELLIPSIS
+<__main__.MyClass object at 0x...>
+>>> my2  # doctest: +ELLIPSIS
+<__main__.MyClass object at 0x...>
+
+
+Use Case - 0x02
+---------------
+* Http Client
+
 >>> class http:
 ...     @staticmethod
 ...     def get(url):
@@ -131,8 +156,10 @@ Use Case - Http Client
 >>> http.post('https://python.astrotech.io', data={'astronaut': 'Mark Watney'})
 
 
-Use Case - Hello
-----------------
+Use Case - 0x03
+---------------
+* Hello
+
 >>> def astronaut_say_hello():
 ...     print('hello')
 >>>
