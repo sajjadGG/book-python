@@ -58,8 +58,10 @@ Example
 'Cześć'
 
 
-Use Case - Deprecated
----------------------
+Use Case - 0x01
+---------------
+* Deprecated
+
 >>> import warnings
 >>>
 >>>
@@ -87,8 +89,10 @@ Use Case - Deprecated
 It will be removed in 2.0
 
 
-Use Case - Timeout (SIGALRM)
-----------------------------
+Use Case - 0x02
+---------------
+* Timeout (SIGALRM)
+
 >>> from signal import signal, alarm, SIGALRM
 >>> from time import sleep
 >>>
@@ -125,9 +129,30 @@ Use Case - Timeout (SIGALRM)
 2
 Timeout
 
+.. note:: Note to Windows users.
+    Implementation of ``subprocess.Popen._wait()``
 
-Use Case - Timeout (Timer)
---------------------------
+    >>> # doctest: +SKIP
+    ... def _wait(self, timeout):
+    ...     """Internal implementation of wait() on Windows."""
+    ...     if timeout is None:
+    ...         timeout_millis = _winapi.INFINITE
+    ...     else:
+    ...         timeout_millis = int(timeout * 1000)
+    ...     if self.returncode is None:
+    ...         # API note: Returns immediately if timeout_millis == 0.
+    ...         result = _winapi.WaitForSingleObject(self._handle,
+    ...                                              timeout_millis)
+    ...         if result == _winapi.WAIT_TIMEOUT:
+    ...             raise TimeoutExpired(self.args, timeout)
+    ...         self.returncode = _winapi.GetExitCodeProcess(self._handle)
+    ...     return self.returncode
+
+
+Use Case - 0x03
+---------------
+* Timeout (Timer)
+
 >>> from _thread import interrupt_main
 >>> from threading import Timer
 >>> from time import sleep

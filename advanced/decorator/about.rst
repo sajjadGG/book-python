@@ -60,4 +60,3 @@ Names
 
 >>> def mydecorator(fn):
 ...     return lambda *a, **kw: fn(*a, **kw)
-

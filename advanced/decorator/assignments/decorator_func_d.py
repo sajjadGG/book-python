@@ -1,74 +1,63 @@
-"""
-* Assignment: Decorator Function Astronauts
+""""
+* Assignment: Decorator Function Abspath
 * Complexity: easy
-* Lines of code: 3 lines
-* Time: 8 min
+* Lines of code: 5 lines
+* Time: 5 min
 
 English:
-    1. Modify decorator `check_astronauts`
-    2. To answer if person is an astronaut check field:
-       a. `is_astronaut` in `crew: list[dict]`
-    3. Decorator will call function, only if all crew members are astronauts
-    4. If any member is not an astronaut raise `PermissionError` and print
-       his first name and last name
-    5. Run doctests - all must succeed
+    1. Absolute path is when `path` starts with `current_directory`
+    2. Create function decorator `abspath`
+    3. If `path` is relative, then `abspath` will convert it to absolute
+    4. If `path` is absolute, then `abspath` will not modify it
+    5. Note: if you are using Windows operating system,
+       then one doctest (with absolute path) can fail
+    6. Run doctests - all must succeed
 
 Polish:
-    1. Zmodufikuj dekorator `check_astronauts`
-    2. Aby odpowiedzieć czy osoba jest astronautą sprawdź pole:
-       a. `is_astronaut` in `crew: list[dict]`
-    3. Dekorator wywoła funkcję, tylko gdy wszyscy załoganci są astronautami
-    4. Jeżeli, jakikolwiek członek nie jest astronautą, podnieś wyjątek
-       `PermissionError` i wypisz jego imię i nazwisko
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    1. Ścieżka bezwzględna jest gdy `path` zaczyna się od `current_directory`
+    2. Stwórz funkcję dekorator `abspath`
+    3. Jeżeli `path` jest względne, to `abspath` zamieni ją na bezwzględną
+    4. Jeżeli `path` jest bezwzględna, to `abspath` nie będzie jej modyfikował
+    5. Uwaga: jeżeli korzystasz z systemu operacyjnego Windows,
+       to jeden z doctestów (ścieżki bezwzględnej) może nie przejść pomyślnie
+    6. Uruchom doctesty - wszystkie muszą się powieść
+
+Hints:
+    * `Path(filename).absolute()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(check_astronauts), \
-    'Create check_astronauts() function'
+    >>> assert isfunction(abspath), \
+    'Create abspath() function'
 
-    >>> assert isfunction(check_astronauts(lambda: ...)), \
-    'check_astronauts() should take function as an argument'
+    >>> assert isfunction(abspath(lambda: ...)), \
+    'abspath() should take function as an argument'
 
-    >>> @check_astronauts
-    ... def launch(crew):
-    ...     crew = ', '.join(astro['name'] for astro in crew)
-    ...     return f'Launching: {crew}'
+    >>> @abspath
+    ... def display(path):
+    ...     return str(path)
 
-    >>> launch(CREW_PRIMARY)
-    'Launching: Jan Twardowski, Mark Watney, Melissa Lewis'
+    >>> current_dir = str(Path().cwd())
+    >>> display('iris.csv').startswith(current_dir)
+    True
+    >>> display('iris.csv').endswith('iris.csv')
+    True
+    >>> display('/home/python/iris.csv')
+    '/home/python/iris.csv'
 
-    >>> launch(CREW_BACKUP)
-    Traceback (most recent call last):
-    PermissionError: Alex Vogel is not an astronaut
+TODO: Windows Path().absolute()
+TODO: Test if function was called
 """
 
-CREW_PRIMARY = [
-    {'is_astronaut': True, 'name': 'Jan Twardowski'},
-    {'is_astronaut': True, 'name': 'Mark Watney'},
-    {'is_astronaut': True, 'name': 'Melissa Lewis'}]
-
-CREW_BACKUP = [
-    {'is_astronaut': True, 'name': 'Melissa Lewis'},
-    {'is_astronaut': True, 'name': 'Mark Watney'},
-    {'is_astronaut': False, 'name': 'Alex Vogel'}]
-
-
-def check_astronauts(func):
-    def wrapper(crew):
-        return func(crew)
-
-    return wrapper
+from pathlib import Path
 
 
 # Solution
-def check_astronauts(func):
-    def wrapper(crew):
-        for member in crew:
-            if not member['is_astronaut']:
-                raise PermissionError(f'{member["name"]} is not an astronaut')
-        return func(crew)
+def abspath(func):
+    def wrapper(path):
+        path = Path(path).absolute()
+        return func(path)
 
     return wrapper

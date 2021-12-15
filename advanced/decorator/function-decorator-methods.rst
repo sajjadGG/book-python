@@ -81,8 +81,10 @@ Example
 'My name... José Jiménez'
 
 
-Use Case - Is Allowed
----------------------
+Use Case - 0x01
+---------------
+* Is Allowed
+
 >>> def if_allowed(method):
 ...     def wrapper(self, *args, **kwargs):
 ...         if self._is_allowed:
@@ -121,8 +123,10 @@ Sorry, Permission Denied
 Sorry, Permission Denied
 
 
-Use Case - Paragraph
---------------------
+Use Case - 0x02
+---------------
+* Paragraph
+
 >>> def paragraph(method):
 ...     def wrapper(self, *args, **kwargs):
 ...         result = method(self, *args, **kwargs)

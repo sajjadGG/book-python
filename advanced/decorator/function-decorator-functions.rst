@@ -60,9 +60,9 @@ Example
 'My name... José Jiménez'
 
 
-Use Cases - If Exists
----------------------
-File exists:
+Use Case - 0x01
+---------------
+* Check if file exists, before executing function:
 
 >>> import os
 >>>
@@ -88,8 +88,10 @@ Printing file /etc/passwd
 File /tmp/passwd does not exist
 
 
-Use Case - Timeit
------------------
+Use Case - 0x02
+---------------
+* Timeit
+
 >>> from datetime import datetime
 >>>
 >>>
@@ -120,8 +122,11 @@ Duration: 0:00:00.000007
 Duration: 0:00:00.000008
 3
 
-Use Case - Debug
-----------------
+
+Use Case - 0x03
+---------------
+* Debug
+
 >>> def debug(func):
 ...     def wrapper(*args, **kwargs):
 ...         function = func.__name__
@@ -152,8 +157,38 @@ Calling: function='add', args=(), kwargs={'a': 1, 'b': 2}
 Result: 3
 3
 
-Use Case - Stacked Decorators
------------------------------
+
+Use Case - 0x04
+---------------
+* Deprecated
+
+>>> import warnings
+>>>
+>>>
+>>> def deprecated(func):
+...     def wrapper(*args, **kwargs):
+...         name = func.__name__
+...         file = func.__code__.co_filename
+...         line = func.__code__.co_firstlineno + 1
+...         message = f'Call to deprecated function `{name}` in {file} at line {line}'
+...         warnings.warn(message, DeprecationWarning)
+...         return func(*args, **kwargs)
+...     return wrapper
+>>>
+>>>
+>>> @deprecated
+... def add(a, b):
+...     return a + b
+>>>
+>>>
+>>> myfunction()  # doctest: +SKIP
+/home/python/myscript.py:11: DeprecationWarning: Call to deprecated function `add` in /home/python/myscript.py at line 19
+
+
+Use Case - 0x05
+---------------
+* Stacked Decorators
+
 >>> from datetime import datetime
 >>> import logging
 >>>
@@ -208,10 +243,11 @@ Use Case - Stacked Decorators
 "1969-07-21", "02:56:15", "INFO", "Duration: 0:00:00.000083"
 
 
-Use Case - Global Scope Cache
------------------------------
-Recap information about factorial (``n!``):
+Use Case - 0x06
+---------------
+* Global Scope Cache
 
+Recap information about factorial (``n!``):
 
 .. code-block:: text
 
@@ -222,15 +258,9 @@ Recap information about factorial (``n!``):
     1! = 1 * 0!
     0! = 1
 
-.. code-block:: python
+.. code-block:: text
 
-    factorial(5)                                    # = 120
-        return 5 * factorial(4)                     # 5 * 24 = 120
-            return 4 * factorial(3)                 # 4 * 6 = 24
-                return 3 * factorial(2)             # 3 * 2 = 6
-                    return 2 * factorial(1)         # 2 * 1 = 2
-                        return 1 * factorial(0)     # 1 * 1 = 1
-                            return 1                # 1
+    n! = n * (n-1)!  # 1 for n=0
 
 >>> def factorial(n):
 ...     if n == 0:
@@ -238,6 +268,9 @@ Recap information about factorial (``n!``):
 ...     else:
 ...         return n * factorial(n-1)
 
+
+Use Case - 0x07
+---------------
 Cache with global scope:
 
 >>> _cache = {}
@@ -265,8 +298,10 @@ Cache with global scope:
 {0: 1, 1: 1, 2: 2, 3: 6, 4: 24, 5: 120}
 
 
-Use Case - Local Scope Cache
-----------------------------
+Use Case - 0x08
+---------------
+* Local Scope Cache
+
 Cache with local scope:
 
 >>> def cache(func):
@@ -289,6 +324,9 @@ Cache with local scope:
 >>> factorial(5)
 120
 
+
+Use Case - 0x09
+---------------
 Cache with embedded scope:
 
 >>> def cache(func):
@@ -331,8 +369,10 @@ Cache with embedded scope:
 {0: 1, 1: 1, 2: 2, 3: 6, 4: 24, 5: 120, 6: 720}
 
 
-Use Case - Database Cache
--------------------------
+Use Case - 0x0A
+---------------
+* Database Cache
+
 >>> DATABASE = {
 ...     'mlewis':       {'name': 'Melissa Lewis',   'email': 'melissa.lewis@nasa.gov'},
 ...     'mwatney':      {'name': 'Mark Watney',     'email': 'mark.watney@nasa.gov'},
@@ -368,8 +408,10 @@ Use Case - Database Cache
 {'mwatney': 'Mark Watney'}
 
 
-Use Case - FastAPI URL Routing
-------------------------------
+Use Case - 0x0B
+---------------
+* FastAPI URL Routing
+
 >>> # doctest: +SKIP
 ... from typing import Optional
 ... from fastapi import FastAPI
@@ -392,8 +434,10 @@ Use Case - FastAPI URL Routing
 ...     return {'q': q}
 
 
-Use Case - Django Login Required
---------------------------------
+Use Case - 0x0C
+---------------
+* Django Login Required
+
 Decorator checks whether user is_authenticated.
 If not, user will be redirected to login page:
 

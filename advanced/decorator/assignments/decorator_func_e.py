@@ -1,89 +1,74 @@
 """
-* Assignment: Decorator Function Memoization
+* Assignment: Decorator Function Numeric
 * Complexity: easy
-* Lines of code: 3 lines
-* Time: 8 min
+* Lines of code: 4 lines
+* Time: 5 min
 
 English:
-    1. Create decorator `@cache`
-    2. Decorator must check before running function, if for given argument
-       the computation was already done:
-       a. if yes, return from `_cache`
-       b. if not, calculate new result, update cache and return value
-    3. Using `timeit` compare execution time (it might take around 30 seconds)
-    4. Last three tests (prints) are only infomation about execution time
-    5. Run doctests - all must succeed (beside three prints)
+    1. Modify decorator `numeric`
+    2. Decorator must check arguments `a` and `b` types
+    3. If type `a` or `b` are not `int` or `float`
+       raise exception `TypeError`
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz dekorator `@cache`
-    2. Decorator ma sprawdzać przed uruchomieniem funkcji, czy dla danego
-       argumentu wynik został już wcześniej obliczony:
-       a. jeżeli tak, zwróć dane z `_cache`
-       b. jeżeli nie, oblicz, zaktualizuj `_cache` i zwróć wartość
-    3. Używając `timeit` porównaj czas wykonywania (może trwać około 30 sekund)
-    4. Ostatnie trzy testy (printy) to tylko informacja o czasie wykonywania
-    5. Uruchom doctesty - wszystkie muszą się powieść (poza trzema printami)
+    1. Zmodyfikuj dekorator `numeric`
+    2. Dekorator ma sprawdzać typy argumentów `a` oraz `b`
+    3. Jeżeli typ `a` lub `b` nie jest `int` lub `float`
+       to podnieś wyjątek `TypeError`
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from timeit import timeit
     >>> from inspect import isfunction
-    >>> sys.setrecursionlimit(5000)
 
-    >>> assert type(_cache) is dict, \
-    'Cache storage should be a dict'
+    >>> assert isfunction(numeric), \
+    'Create numeric() function'
 
-    >>> assert len(_cache) == 0, \
-    'Cache storage should be empty'
+    >>> assert isfunction(numeric(lambda: ...)), \
+    'numeric() should take function as an argument'
 
-    >>> assert isfunction(cache), \
-    'Create cache() function'
+    >>> @numeric
+    ... def add(a, b):
+    ...     return a + b
 
-    >>> assert isfunction(cache(lambda: ...)), \
-    'cache() should take function as an argument'
+    >>> add(1, 1)
+    2
+    >>> add(1.5, 2.5)
+    4.0
+    >>> add(-1, 1.5)
+    0.5
 
-    >>> @cache
-    ... def fn1(n):
-    ...     if n == 0:
-    ...         return 1
-    ...     else:
-    ...         return n * fn1(n - 1)
+    >>> add('one', 1)
+    Traceback (most recent call last):
+    TypeError: Argument "a" must be int or float
+    >>> add(1, 'two')
+    Traceback (most recent call last):
+    TypeError: Argument "b" must be int or float
 
-    >>> def fn2(n):
-    ...     if n == 0:
-    ...         return 1
-    ...     else:
-    ...         return n * fn2(n - 1)
-
-    >>> duration_cache = timeit('fn1(500); fn1(400); fn1(450); fn1(350)',
-    ...                         globals=globals(), number=10_000)
-
-    >>> duration_nocache = timeit('fn2(500); fn2(400); fn2(450); fn2(350)',
-    ...                           globals=globals(), number=10_000)
-
-    >>> duration_ratio = duration_nocache / duration_cache
-    >>> print(f'With Cache time: {duration_cache:.4f} seconds')
-    >>> print(f'Without Cache time: {duration_nocache:.3f} seconds')
-    >>> print(f'Cached solution is {duration_ratio:.1f} times faster')
-
-    TODO: Make tests faster
+    >>> add(True, 0)
+    Traceback (most recent call last):
+    TypeError: Argument "a" must be int or float
+    >>> add(0, True)
+    Traceback (most recent call last):
+    TypeError: Argument "b" must be int or float
 """
 
-_cache = {}
 
-
-def cache(func):
-    def wrapper(n):
-        return func(n)
+def numeric(func):
+    def wrapper(a, b):
+        return func(a, b)
 
     return wrapper
 
 
 # Solution
-def cache(func):
-    def wrapper(n):
-        if n not in _cache:
-            _cache[n] = func(n)
-        return _cache[n]
+def numeric(func):
+    def wrapper(a, b):
+        if type(a) not in (int, float):
+            raise TypeError('Argument "a" must be int or float')
+        if type(b) not in (int, float):
+            raise TypeError('Argument "b" must be int or float')
+        return func(a, b)
 
     return wrapper

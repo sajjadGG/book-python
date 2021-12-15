@@ -53,7 +53,7 @@ Decorators
     :caption: Decorators
 
     decorator/about.rst
-    decorator/types.rst
+    decorator/syntax.rst
     decorator/function-decorator-functions.rst
     decorator/function-decorator-classes.rst
     decorator/function-decorator-methods.rst

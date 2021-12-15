@@ -65,8 +65,10 @@ Example
 'My name... José Jiménez'
 
 
-Use Case - Logger
------------------
+Use Case - 0x01
+---------------
+* Logger
+
 >>> import logging
 >>>
 >>>
@@ -85,8 +87,10 @@ Use Case - Logger
 <Logger Astronaut (WARNING)>
 
 
-Use Case - Since
-----------------
+Use Case - 0x02
+---------------
+* Since
+
 >>> from datetime import datetime
 >>>
 >>>
@@ -105,8 +109,10 @@ Use Case - Since
 datetime.datetime(1969, 7, 21, 2, 56, 15)
 
 
-Use Case - Singleton Func
--------------------------
+Use Case - 0x03
+---------------
+* Singleton Func
+
 >>> def singleton(cls):
 ...     def wrapper(*args, **kwargs):
 ...         if not hasattr(cls, '_instance'):
@@ -131,8 +137,10 @@ Connecting...
 Connecting...
 
 
-Use Case - Singleton Cls
-------------------------
+Use Case - 0x04
+---------------
+* Singleton Cls
+
 >>> def singleton(cls):
 ...     class Wrapper(cls):
 ...         def __new__(cls, *args, **kwargs):

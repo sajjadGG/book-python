@@ -1,5 +1,6 @@
-Decorator Types
-===============
+Decorator Syntax
+================
+
 
 Rationale
 ---------
@@ -151,3 +152,14 @@ Arguments
 >>> @MyClass('arg1', 'arg2')  # doctest: +SKIP
 ... def myfunction(*args, **kwargs):
 ...     ...
+
+
+Assignments
+-----------
+.. literalinclude:: assignments/decorator_syntax_a.py
+    :caption: :download:`Solution <assignments/decorator_syntax_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/decorator_syntax_b.py
+    :caption: :download:`Solution <assignments/decorator_syntax_b.py>`
+    :end-before: # Solution
