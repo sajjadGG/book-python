@@ -63,7 +63,7 @@ suppress_warnings = [
 sys.path.insert(0, os.path.abspath('_extensions'))
 extensions = [
     # 'sphinx.ext.autosectionlabel',
-    'sphinx.ext.duration',
+    # 'sphinx.ext.duration',
     'sphinx.ext.doctest',
     'sphinx.ext.extlinks',
     # 'sphinx.ext.graphviz',
