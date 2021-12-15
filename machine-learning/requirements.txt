@@ -1,13 +1,13 @@
 sphinx==4.3.*
 sphinx_rtd_theme
 
-matplotlib
-numpy
-scikit-learn
-scipy
-jupyter
-pandas
+# matplotlib
+# numpy
+# scikit-learn
+# scipy
+# jupyter
+# pandas
 # tensorflow
-keras
-torch
-plotly
+# keras
+# torch
+# plotly

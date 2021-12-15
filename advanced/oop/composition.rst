@@ -11,16 +11,16 @@ Instead writing:
 
 >>> class Car:
 ...     def engine_start(self):
-...         pass
+...         ...
 ...
 ...     def engine_stop(self):
-...         pass
+...         ...
 
 I will write:
 
 >>> class Car:
-...     def engine_start(self): pass
-...     def engine_stop(self): pass
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 
 This way the code is more dense and idea is much clearer to present.
 There won't be any method implementations in examples.
@@ -31,27 +31,27 @@ Problem
 * Code duplication
 
 >>> class Car:
-...     def engine_start(self): pass
-...     def engine_stop(self): pass
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 >>>
 >>>
 >>> class Truck:
-...     def engine_start(self): pass
-...     def engine_stop(self): pass
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 
 
 Inheritance
 -----------
 >>> class Vehicle:
-...     def engine_start(self): pass
-...     def engine_stop(self): pass
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 >>>
 >>>
 >>> class Car(Vehicle):
-...     pass
+...     ...
 >>>
 >>> class Truck(Vehicle):
-...     pass
+...     ...
 
 
 Inheritance Problem
@@ -59,10 +59,10 @@ Inheritance Problem
 * Motorcycle is a vehicle, but doesn't have windows.
 
 >>> class Vehicle:
-...     def engine_start(self): pass
-...     def engine_stop(self): pass
-...     def window_open(self): pass
-...     def window_close(self): pass
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
+...     def window_open(self): ...
+...     def window_close(self): ...
 >>>
 >>>
 >>> class Car(Vehicle):
@@ -79,12 +79,12 @@ Inheritance Problem
 Multilevel Inheritance
 ----------------------
 >>> class Vehicle:
-...     def engine_start(self): pass
-...     def engine_stop(self): pass
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 >>>
 >>> class VehicleWithWindows(Vehicle):
-...     def window_open(self): pass
-...     def window_close(self): pass
+...     def window_open(self): ...
+...     def window_close(self): ...
 >>>
 >>>
 >>> class Car(VehicleWithWindows):
@@ -99,45 +99,44 @@ Multilevel Inheritance
 
 Composition
 -----------
->>> class Vehicle:
-...     pass
->>>
 >>> class Engine:
-...     def engine_start(self): pass
-...     def engine_stop(self): pass
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 >>>
 >>> class Windows:
-...     def window_open(self): pass
-...     def window_close(self): pass
+...     def window_open(self): ...
+...     def window_close(self): ...
+>>>
+>>> class Vehicle:
+...     engine: Engine
+...     window: Windows
 >>>
 >>>
 >>> class Car(Vehicle):
-...     engine: Engine
-...     window: Windows
+...     pass
 >>>
 >>> class Truck(Vehicle):
-...     engine: Engine
-...     window: Windows
+...     pass
 >>>
 >>> class Motorcycle(Vehicle):
-...     engine: Engine
+...     window = None
 
 
 Aggregation
 -----------
->>> class Vehicle:
-...     pass
->>>
 >>> class Part:
 ...     pass
 >>>
 >>> class Engine(Part):
-...     def engine_start(self): pass
-...     def engine_stop(self): pass
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 >>>
 >>> class Windows(Part):
-...     def window_open(self): pass
-...     def window_close(self): pass
+...     def window_open(self): ...
+...     def window_close(self): ...
+>>>
+>>> class Vehicle:
+...     parts: list[Part]
 >>>
 >>>
 >>> class Car(Vehicle):
@@ -158,12 +157,12 @@ Mixin Classes
 ...     pass
 >>>
 >>> class HasEngine:
-...     def engine_start(self): pass
-...     def engine_stop(self): pass
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
 >>>
 >>> class HasWindows:
-...     def window_open(self): pass
-...     def window_close(self): pass
+...     def window_open(self): ...
+...     def window_close(self): ...
 >>>
 >>>
 >>> class Car(Vehicle, HasEngine, HasWindows):
