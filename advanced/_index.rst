@@ -74,8 +74,10 @@ Object Oriented Programming
     oop/staticmethod.rst
     oop/classmethod.rst
     oop/access-modifiers.rst
-    oop/inheritance-patterns.rst
+    oop/inheritance-overload.rst
     oop/inheritance-super.rst
+    oop/inheritance-patterns.rst
+    oop/inheritance-problems.rst
     oop/inheritance-mro.rst
     oop/polymorphism.rst
     oop/relations.rst
