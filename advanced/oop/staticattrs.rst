@@ -269,7 +269,7 @@ POLSA
 
 Lets delete field from an instance and print ``agency`` field:
 
->>> del ivanovich.agency
+>>> del ivanovic.agency
 >>>
 >>>
 >>> print(watney.agency)
@@ -303,15 +303,15 @@ Mechanism
 >>> vars(astro)
 {'firstname': 'Melissa', 'lastname': 'Lewis'}
 >>>
->>> vars(Astronaut)  # doctest: +NORMALIZE_WHITESPACE
+>>> vars(Astronaut)  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
 mappingproxy({
-    '__module__': '__main__',
+    '__module__': 'builtins',
     'firstname': 'Mark',
     'lastname': 'Watney',
+    '__init__': <function Astronaut.__init__ at 0x...>,
     '__dict__': <attribute '__dict__' of 'Astronaut' objects>,
     '__weakref__': <attribute '__weakref__' of 'Astronaut' objects>,
-    '__doc__': None, '__annotations__': {}
-})
+    '__doc__': None})
 
 
 Assignments

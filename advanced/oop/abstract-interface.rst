@@ -1,5 +1,5 @@
-OOP Interface
-=============
+OOP Abstract Interface
+======================
 
 
 Rationale

@@ -1,69 +1,15 @@
-OOP Method Resolution Order
-===========================
+OOP Inheritance MRO
+===================
 
 
-Recap
------
->>> class Person:
-...     def __init__(self):
-...         print('Person init')
->>>
->>>
->>> class Astronaut(Person):
-...     pass
->>>
->>>
->>> astro = Astronaut()
-Person init
-
->>> class Person:
-...     def __init__(self):
-...         print('Person init')
->>>
->>>
->>> class Astronaut(Person):
-...     def __init__(self):
-...         print('Astronaut init')
->>>
->>>
->>> astro = Astronaut()
-Astronaut init
-
->>> class Person:
-...     def __init__(self):
-...         print('Person init')
->>>
->>>
->>> class Astronaut(Person):
-...     def __init__(self):
-...         super().__init__()
-...         print('Astronaut init')
->>>
->>>
->>> astro = Astronaut()
-Person init
-Astronaut init
-
->>> class Person:
-...     def __init__(self):
-...         print('Person init')
->>>
->>>
->>> class Astronaut(Person):
-...     def __init__(self):
-...         print('Astronaut init')
-...         super().__init__()
->>>
->>>
->>> a = Astronaut()
-Astronaut init
-Person init
+Rationale
+---------
+* MRO - Method Resolution Order
+* Inheritance Diamond
 
 
-Inheritance Diamond
--------------------
-.. figure:: img/oop-mro-diamond-both-empty.png
-
+Problem
+-------
 >>> class Person:
 ...     def __init__(self):
 ...         print('Person init')

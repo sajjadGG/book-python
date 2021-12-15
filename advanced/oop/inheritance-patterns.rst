@@ -1,5 +1,5 @@
-OOP Inheritance vs. Composition
-===============================
+OOP Inheritance Patterns
+========================
 
 
 Rationale

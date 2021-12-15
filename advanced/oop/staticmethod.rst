@@ -134,9 +134,9 @@ Use Case - 0x01
 >>> my2 = MyClass.get_instance()
 >>>
 >>> my1  # doctest: +ELLIPSIS
-<__main__.MyClass object at 0x...>
+<MyClass object at 0x...>
 >>> my2  # doctest: +ELLIPSIS
-<__main__.MyClass object at 0x...>
+<MyClass object at 0x...>
 
 
 Use Case - 0x02

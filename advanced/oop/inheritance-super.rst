@@ -1,5 +1,5 @@
-OOP Inheritance
-===============
+OOP Inheritance Super
+=====================
 
 
 Inheritance Static Fields
@@ -83,6 +83,65 @@ Super
 >>> astro = Astronaut()
 >>> print(vars(astro))
 {'firstname': 'Mark', 'lastname': 'Watney', 'job': 'astronaut'}
+
+
+Super Init
+----------
+>>> class Person:
+...     def __init__(self):
+...         print('Person init')
+>>>
+>>>
+>>> class Astronaut(Person):
+...     pass
+>>>
+>>>
+>>> astro = Astronaut()
+Person init
+
+>>> class Person:
+...     def __init__(self):
+...         print('Person init')
+>>>
+>>>
+>>> class Astronaut(Person):
+...     def __init__(self):
+...         print('Astronaut init')
+>>>
+>>>
+>>> astro = Astronaut()
+Astronaut init
+
+>>> class Person:
+...     def __init__(self):
+...         print('Person init')
+>>>
+>>>
+>>> class Astronaut(Person):
+...     def __init__(self):
+...         super().__init__()
+...         print('Astronaut init')
+>>>
+>>>
+>>> astro = Astronaut()
+Person init
+Astronaut init
+
+>>> class Person:
+...     def __init__(self):
+...         print('Person init')
+>>>
+>>>
+>>> class Astronaut(Person):
+...     def __init__(self):
+...         print('Astronaut init')
+...         super().__init__()
+>>>
+>>>
+>>> a = Astronaut()
+Astronaut init
+Person init
+
 
 
 References
