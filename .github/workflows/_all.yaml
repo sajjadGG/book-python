@@ -4,7 +4,7 @@ on: push
 jobs:
   all:
     runs-on: ubuntu-20.04
-    container: python:3.9.9
+    container: python:3.10.1
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r requirements.txt
@@ -40,7 +40,7 @@ jobs:
 
   data-science:
     runs-on: ubuntu-20.04
-    container: python:3.9.9
+    container: python:3.10.1
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r data-science/requirements.txt
@@ -110,7 +110,7 @@ jobs:
 
   machine-learning:
     runs-on: ubuntu-20.04
-    container: python:3.9.9
+    container: python:3.10.1
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
@@ -123,7 +123,7 @@ jobs:
 
   matplotlib:
     runs-on: ubuntu-20.04
-    container: python:3.9.9
+    container: python:3.10.1
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r matplotlib/requirements.txt
@@ -141,7 +141,7 @@ jobs:
 
   numpy:
     runs-on: ubuntu-20.04
-    container: python:3.9.9
+    container: python:3.10.1
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r numpy/requirements.txt
@@ -159,7 +159,7 @@ jobs:
 
   pandas:
     runs-on: ubuntu-20.04
-    container: python:3.9.9
+    container: python:3.10.1
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r pandas/requirements.txt
