@@ -1,5 +1,4 @@
 """
-
 * Assignment: OOP Relations Model
 * Complexity: easy
 * Lines of code: 10 lines

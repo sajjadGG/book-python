@@ -26,28 +26,6 @@ Glossary
         database relation is often described as "normalized" if it meets
         third normal form. [#WikipediaDatabaseNormalization]_ [#Codd1972]_
 
-    SQL
-    Structured Query Language
-        Domain-specific language used in programming and designed for
-        managing data held in a relational database management system
-        (RDBMS), or for stream processing in a relational data stream
-        management system (RDSMS). It is particularly useful in handling
-        structured data, i.e. data incorporating relations among entities
-        and variables. [#WikipediaSQL]_ [#RFC6922]_
-
-    SELECT
-        SQL language operation to retrieve data from the database
-
-    INSERT
-        SQL language operation to put data to the database
-
-    UPDATE
-        SQL language operation to modify data in the database
-
-    JOIN
-        SQL language operation to retrieve data from the database from
-        multiple tables and merge them
-
     big-data
         Big data is a field that treats ways to analyze, systematically
         extract information from, or otherwise deal with data sets that are
@@ -122,23 +100,38 @@ Glossary
         of protecting data from unauthorized parties. [#Boritz2011]_
         [#WikipediaDataIntegrity]_
 
+    SQL
+    Structured Query Language
+        Domain-specific language used in programming and designed for
+        managing data held in a relational database management system
+        (RDBMS), or for stream processing in a relational data stream
+        management system (RDSMS). It is particularly useful in handling
+        structured data, i.e. data incorporating relations among entities
+        and variables. [#WikipediaSQL]_ [#RFC6922]_
+
+    RDBMS
+        Relational Database Management System
+        https://en.wikipedia.org/wiki/Relational_database#RDBMS
+
+    RDSMS
+        Relational Data Stream Management System
+        https://en.wikipedia.org/wiki/Relational_data_stream_management_system
+
+    SELECT
+        SQL language operation to retrieve data from the database
+
+    INSERT
+        SQL language operation to put data to the database
+
+    UPDATE
+        SQL language operation to modify data in the database
+
+    JOIN
+        SQL language operation to retrieve data from the database from
+        multiple tables and merge them
+
     DBA
         DataBase Administrator
-
-
-Normal forms
-------------
-* UNF: Unnormalized form
-* 1NF: First normal form
-* 2NF: Second normal form
-* 3NF: Third normal form
-* EKNF: Elementary key normal form
-* BCNF: Boyce–Codd normal form
-* 4NF: Fourth normal form
-* ETNF: Essential tuple normal form
-* 5NF: Fifth normal form
-* DKNF: Domain-key normal form
-* 6NF: Sixth normal form
 
 
 Base
@@ -328,6 +321,21 @@ Serialization
 .. figure:: img/oop-relations-serialize-clsattr.png
 
 
+Normal forms
+------------
+* UNF: Unnormalized form
+* 1NF: First normal form
+* 2NF: Second normal form
+* 3NF: Third normal form
+* EKNF: Elementary key normal form
+* BCNF: Boyce–Codd normal form
+* 4NF: Fourth normal form
+* ETNF: Essential tuple normal form
+* 5NF: Fifth normal form
+* DKNF: Domain-key normal form
+* 6NF: Sixth normal form
+
+
 Recap
 -----
 * DBA and Programmers use different data format than Data Scientists
@@ -358,6 +366,7 @@ References
 .. [#WikipediaDataIntegrity] Data Integrity.  Wikipedia. Retrieved: 2021-12-16. Year: 2021. URL: https://en.wikipedia.org/wiki/Data_integrity
 .. [#Boritz2011] Boritz, J. "IS Practitioners' Views on Core Concepts of Information Integrity". International Journal of Accounting Information Systems. Elsevier. Archived from the original on 5 October 2011. Retrieved 12 August 2011.
 .. [#Date2012] Date, C. J. "SQL and Relational Theory: How to Write Accurate SQL Code 2nd edition", O'reilly Media, Inc., 2012, pg. 180.
+
 
 Assignments
 -----------

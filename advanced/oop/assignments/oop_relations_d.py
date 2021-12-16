@@ -40,10 +40,6 @@ Tests:
       'lastname': 'Martinez'}]
 """
 
-import csv
-
-FILE = r'_temporary.csv'
-
 DATA = [
     {"firstname": "Mark", "lastname": "Watney", "missions": [
         {"year": "2035", "name": "Ares3"}]},

@@ -60,6 +60,12 @@ Pandas
 
 Python PEP
 ----------
+* słowo kluczowe interface Cache
+* dekorator interface
+* metaklasa interface
+* dataclass interface
+* classlib interface
+* classlib abstract
 * monthlen
 * input(default=...)
 * dict.get(default=...)
