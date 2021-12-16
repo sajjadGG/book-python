@@ -144,7 +144,7 @@ Unions
 ------
 Generic type annotation:
 
->>> data: list[list|tuple|set]] = [
+>>> data: list[list|tuple|set] = [
 ...    [1, 2, 3],
 ...    (4, 5, 6),
 ...    {7, 8, 9}]

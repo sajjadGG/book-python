@@ -17,12 +17,10 @@ Literal Field
 
 Union Fields
 ------------
-Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
-
 >>> from dataclasses import dataclass
 >>>
 >>>
->>> @dataclass  # doctest: +SKIP
+>>> @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
@@ -31,12 +29,10 @@ Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
 Optional Fields
 ---------------
-Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
-
 >>> from dataclasses import dataclass
 >>>
 >>>
->>> @dataclass  # doctest: +SKIP
+>>> @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
@@ -71,13 +67,13 @@ name of _ is used for a KW_ONLY field.
 >>>
 >>>
 >>> @dataclass
-... class Point:
-...     x: float
+... class Astronaut:
+...     firstname: str
+...     lastname: str
 ...     _: KW_ONLY
-...     y: float
-...     z: float
-...
-... pt = Point(0, y=1.5, z=2.0)
+...     age: int
+...     height: float
+...     weight: float
 
 
 Assignments

@@ -64,9 +64,11 @@ Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 >>> data: int | float = 1337
 >>> data: int | float = 1.337
 
-Result of this expression would then be valid in ``isinstance()`` and ``issubclass()``
+Result of this expression would then be valid in ``isinstance()`` and
+``issubclass()``:
 
 >>> isinstance(1337, int|float)
+True
 
 
 Optional
@@ -74,7 +76,12 @@ Optional
 >>> number: int | None = 1337
 >>> number: int | None = None
 
+Result of this expression would then be valid in ``isinstance()`` and
+``issubclass()``:
 >>> isinstance(1337, int|None)
+True
+
+Example:
 
 >>> firstname: str = 'Melissa'
 >>> lastname: str = 'Lewis'

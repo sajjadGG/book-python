@@ -38,8 +38,7 @@ Optional
 --------
 Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
->>> # doctest: +SKIP
-... def find(text: str, what: str) -> int | None:
+>>> def find(text: str, what: str) -> int | None:
 ...     position = text.find(what)
 ...     if position == -1:
 ...         return None

@@ -335,7 +335,11 @@ Use Case - Overload
 * Could be implemented through ``from functools import singledispatchmethod``
 * More information: https://python.astrotech.io/advanced/funcprog/functools.html#singledispatchmethod
 
->>> class Astronaut:
+>>> # doctest: +SKIP
+... from functools import singledispatchmethod
+...
+...
+... class Astronaut:
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
@@ -345,27 +349,27 @@ Use Case - Overload
 ...         return False
 ...
 ...     @__eq__.register
-...     def _(self, other: Astronaut):
+...     def _(self, other: 'Astronaut'):
 ...         return self.firstname == other.firstname \
 ...            and self.lastname == other.lastname
 ...
 ...     @__eq__.register
-...     def _(self, other: Cosmonaut):
+...     def _(self, other: 'Cosmonaut'):
 ...         return False
->>>
->>>
->>> class Cosmonaut:
+...
+...
+... class Cosmonaut:
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
->>>
->>>
->>> a = Astronaut('Jan', 'Twardowski')
->>> c = Cosmonaut('Jan', 'Twardowski')
->>>
->>> a == c
+...
+...
+... a = Astronaut('Jan', 'Twardowski')
+... c = Cosmonaut('Jan', 'Twardowski')
+...
+... a == c
 False
->>> a is c
+>>> a is c  # doctest: +SKIP
 False
 
 

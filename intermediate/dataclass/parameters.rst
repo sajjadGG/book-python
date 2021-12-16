@@ -33,7 +33,7 @@ Flags
 >>>
 >>>
 >>> @dataclass(init=True, repr=True, eq=True, order=False, unsafe_hash=False,
-...            frozen=False, match_args=True, kw_only=True, slots=True)
+...            frozen=False, match_args=True, kw_only=False, slots=False)
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
