@@ -1,4 +1,4 @@
-Type Annotation Function
+Type Annotation Callable
 ========================
 
 
@@ -117,38 +117,6 @@ Callable
 ...                 on_error: Callable[[int, Exception], None]) -> None:
 ...     pass
 
-Since Python 3.11 :pep:`677` -- Callable Type Syntax
-
->>> # doctest: +SKIP
-... from typing import Awaitable, Callable, Concatenate, ParamSpec, TypeVarTuple
-...
-... P = ParamSpec("P")
-... Ts = TypeVarTuple('Ts')
-...
-... f0: () -> bool
-... f0: Callable[[], bool]
-...
-... f1: (int, str) -> bool
-... f1: Callable[[int, str], bool]
-...
-... f2: (...) -> bool
-... f2: Callable[..., bool]
-...
-... f3: async (str) -> str
-... f3: Callable[[str], Awaitable[str]]
-...
-... f4: (**P) -> bool
-... f4: Callable[P, bool]
-...
-... f5: (int, **P) -> bool
-... f5: Callable[Concatenate[int, P], bool]
-...
-... f6: (*Ts) -> bool
-... f6: Callable[[*Ts], bool]
-...
-... f7: (int, *Ts, str) -> bool
-... f7: Callable[[int, *Ts, str], bool]
-
 
 Iterator
 --------
@@ -239,3 +207,38 @@ Further Reading
 * Example: https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L505
 * More information in `Type Annotations`
 * More information in `CI/CD Type Checking`
+
+
+Future
+------
+Since Python 3.11 :pep:`677` -- Callable Type Syntax
+
+>>> # doctest: +SKIP
+... from typing import Awaitable, Callable, Concatenate, ParamSpec, TypeVarTuple
+...
+... P = ParamSpec("P")
+... Ts = TypeVarTuple('Ts')
+...
+... f0: () -> bool
+... f0: Callable[[], bool]
+...
+... f1: (int, str) -> bool
+... f1: Callable[[int, str], bool]
+...
+... f2: (...) -> bool
+... f2: Callable[..., bool]
+...
+... f3: async (str) -> str
+... f3: Callable[[str], Awaitable[str]]
+...
+... f4: (**P) -> bool
+... f4: Callable[P, bool]
+...
+... f5: (int, **P) -> bool
+... f5: Callable[Concatenate[int, P], bool]
+...
+... f6: (*Ts) -> bool
+... f6: Callable[[*Ts], bool]
+...
+... f7: (int, *Ts, str) -> bool
+... f7: Callable[[int, *Ts, str], bool]

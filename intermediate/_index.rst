@@ -32,7 +32,7 @@ Type Annotation
     type-annotation/scalar.rst
     type-annotation/sequence.rst
     type-annotation/mapping.rst
-    type-annotation/function.rst
+    type-annotation/callable.rst
     type-annotation/oop.rst
     type-annotation/static-analysis.rst
 
