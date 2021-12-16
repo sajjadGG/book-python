@@ -1,13 +1,12 @@
 import unittest
-from typing import Union
 
 
 class Rectangle:
-    def __init__(self, bok_a: Union[float, int], bok_b: [float, int]) -> None:
-        if not isinstance(bok_a, (float, int)) or bok_a <= 0:
+    def __init__(self, bok_a: float | int, bok_b: float | int) -> None:
+        if not isinstance(bok_a, float|int) or bok_a <= 0:
             raise ValueError('Side A cannot be negative')
 
-        if not isinstance(bok_b, (float, int)) or bok_b <= 0:
+        if not isinstance(bok_b, float|int) or bok_b <= 0:
             raise ValueError('Side B cannot be negative')
 
         self.side_a = float(bok_a)

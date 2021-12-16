@@ -19,15 +19,14 @@ Tests:
     <BLANKLINE>
 """
 
-from typing import Union
-
 STEP = 5
 MAX = 41
 MIN = -20
 
 result = ''
 
-def celsius_to_fahrenheit(degree: Union[int, float]) -> float:
+
+def celsius_to_fahrenheit(degree: int | float) -> float:
     return degree * 1.8 + 32
 
 

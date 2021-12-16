@@ -26,7 +26,6 @@ Problem
 .. code-block:: python
 
     from dataclasses import dataclass, field
-    from typing import Union
 
 
     class Shape:
@@ -36,9 +35,9 @@ Problem
 
     @dataclass
     class Group:
-        __objects: list[Union[Shape,'Group']] = field(default_factory=list)
+        __objects: list[Shape|'Group'] = field(default_factory=list)
 
-        def add(self, obj: Union[Shape,'Group']) -> None:
+        def add(self, obj: Shape|'Group') -> None:
             self.__objects.append(obj)
 
         def render(self) -> None:

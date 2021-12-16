@@ -11,14 +11,13 @@ Rationale
 
 Example
 -------
->>> from typing import Optional
 >>> from pydantic import BaseModel
 >>>
 >>>
 >>> class Astronaut(BaseModel):
 ...     firstname: str
 ...     lastname: str
-...     active: Optional[bool] = True
+...     active: bool | None = True
 
 
 Validation
@@ -29,14 +28,13 @@ Validation
 * Validation is done in the order fields are defined
 
 >>> from string import ascii_uppercase
->>> from typing import Optional, Union
 >>> from pydantic import BaseModel, root_validator, validator
 >>>
 >>>
 >>> class Astronaut(BaseModel):
 ...     firstname: str
 ...     lastname: str
-...     age: Optional[float] = None
+...     age: float | None = None
 ...
 ...     @validator('firstname', 'lastname', allow_reuse=True)
 ...     def is_capitalize(cls, value: str):
@@ -53,7 +51,7 @@ Validation
 ...             raise ValueError('Age must be in range from 0 to 130')
 ...
 ...     @validator('*', allow_reuse=True)
-...     def not_empty(cls, value: Union[str, Optional[float]]):
+...     def not_empty(cls, value: str | float | None):
 ...         if type(value) is str and value == '':
 ...             raise ValueError('Invalid field value')
 ...         return value
@@ -131,7 +129,6 @@ Use Case
 
     $ pip install 'pydantic[email]'
 
->>> from typing import Optional
 >>> from pydantic import BaseModel, EmailStr, Field
 >>>
 >>>
@@ -155,11 +152,11 @@ Use Case
 >>>
 >>>
 >>> class UpdateStudentModel(BaseModel):
-...     fullname: Optional[str]
-...     email: Optional[EmailStr]
-...     course_of_study: Optional[str]
-...     year: Optional[int]
-...     gpa: Optional[float]
+...     fullname: str | None
+...     email: EmailStr | None
+...     course_of_study: str | None
+...     year: int | None
+...     gpa: float | None
 ...
 ...     class Config:
 ...         schema_extra = {

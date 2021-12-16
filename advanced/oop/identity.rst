@@ -8,12 +8,9 @@ Rationale
 * ``==`` checks for object equality
 * ``is`` checks for object identity
 
->>> from typing import Optional
->>>
->>>
 >>> firstname: str = 'Melissa'
 >>> lastname: str = 'Lewis'
->>> age: Optional[int] = None
+>>> age: int | None = None
 >>>
 >>> age is None
 True
@@ -82,6 +79,45 @@ False
 >>> 'Mark Watney' is 'Mark Watney'  # doctest: +SKIP
 <...>:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
 True
+
+
+String Interning
+----------------
+* Caching mechanism
+* String intern pool
+* String is immutable
+
+Each time an instance of a string is created Python will create a new object
+with completely new identity:
+
+>>> id('Watney')  # doctest: +SKIP
+4354445296
+>>>
+>>> id('Watney')  # doctest: +SKIP
+4354447728
+
+However if we create an identifier, then each time a string is created it will
+result with the same interned string. Value of an identifier will add to the
+string interning pool, from which Python returns a new objects:
+
+>>> name = 'Watney'
+>>>
+>>> id('Watney')  # doctest: +SKIP
+4354447984
+>>>
+>>> id('Watney')  # doctest: +SKIP
+4354447984
+
+However if we delete entry from string interning pool, Python will now create
+a new instance of a string each time:
+
+>>> del name
+>>>
+>>> id('Watney')  # doctest: +SKIP
+4354449136
+>>>
+>>> id('Watney')  # doctest: +SKIP
+4354449328
 
 
 Type Identity
@@ -304,11 +340,17 @@ Use Case - Overload
 ...         self.firstname = firstname
 ...         self.lastname = lastname
 ...
-...     def __eq__(self, other: Astronaut):
+...     @singledispatchmethod
+...     def __eq__(self, other):
+...         return False
+...
+...     @__eq__.register
+...     def _(self, other: Astronaut):
 ...         return self.firstname == other.firstname \
 ...            and self.lastname == other.lastname
 ...
-...     def __eq__(self, other: Cosmonaut):
+...     @__eq__.register
+...     def _(self, other: Cosmonaut):
 ...         return False
 >>>
 >>>

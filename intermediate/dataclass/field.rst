@@ -119,7 +119,7 @@ Astronaut(firstname='Mark', lastname='Watney', age=44)
 
 Metadata
 --------
-* ``Optional[dict]``
+* ``dict | None``
 * ``None`` is treated as an empty ``dict``
 * Metadata is not used at all by Data Classes
 * Metadata is provided as a third-party extension mechanism
@@ -159,13 +159,19 @@ Using Metadata for validation:
 Traceback (most recent call last):
 ValueError: Invalid age
 
+kw_only
+-------
+* Since Python 3.10
+
+If true, this field will be marked as keyword-only. This is used when the
+generated __init__() method's parameters are computed. Default: dataclasses.MISSING
+
 
 Use Case - 0x01
 ---------------
 * Validation
 
->>> from dataclasses import dataclass, field
->>> from typing import Optional, Union
+>>> from dataclasses import dataclass, field, KW_ONLY
 >>> from datetime import date, time, datetime, timezone, timedelta
 >>>
 >>>
@@ -179,18 +185,19 @@ Use Case - 0x01
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
+...     _: KW_ONLY
 ...     born: date
 ...     job: str = 'astronaut'
 ...     agency: str = field(default='NASA', metadata={'choices': ['NASA', 'ESA']})
-...     age: Optional[int] = None
-...     height: Optional[Union[float,int]] = field(default=None, metadata={'unit': 'cm', 'min': 156, 'max': 210})
-...     weight: Optional[Union[float,int]] = field(default=None, metadata={'unit': 'kg', 'min': 50, 'max': 90})
+...     age: int | None = None
+...     height: float | int | None = field(default=None, metadata={'unit': 'cm', 'min': 156, 'max': 210})
+...     weight: float | int | None = field(default=None, metadata={'unit': 'kg', 'min': 50, 'max': 90})
 ...     groups: list[str] = field(default_factory=lambda: ['astronauts', 'managers'])
 ...     friends: dict[str,str] = field(default_factory=dict)
-...     assignments: Optional[list[str]] = field(default=None, metadata={'choices': ['Apollo18', 'Ares3', 'STS-136']})
+...     assignments: list[str] | None = field(default=None, metadata={'choices': ['Apollo18', 'Ares3', 'STS-136']})
 ...     missions: list[Mission] = field(default_factory=list)
 ...     experience: timedelta = timedelta(hours=0)
-...     account_last_login: Optional[datetime] = None
+...     account_last_login: datetime | None = None
 ...     account_created: datetime = datetime.now(tz=timezone.utc)
 ...     AGE_MIN: int = field(default=30, init=False, repr=False)
 ...     AGE_MAX: int = field(default=50, init=False, repr=False)
@@ -283,7 +290,7 @@ Use Case - 0x03
 ---------------
 >>> from dataclasses import dataclass, field
 >>> from datetime import date
->>> from typing import Literal, Optional, Union
+>>> from typing import Literal
 >>>
 >>>
 >>> @dataclass
@@ -299,9 +306,9 @@ Use Case - 0x03
 ...     lastname: str
 ...     agency: Literal['NASA', 'ESA', 'Roscosmos'] = field(metadata={'choices': ['NASA', 'ESA', 'Roscosmos']})
 ...     age: int = field(metadata={'min': 30, 'max': 50})
-...     height: int|float = field(metadata={'unit': 'cm'})
-...     weight: Union[int,float] = field(metadata={'unit': 'kg'})
-...     born: Optional[date]
+...     height: int | float = field(metadata={'unit': 'cm'})
+...     weight: int | float = field(metadata={'unit': 'kg'})
+...     born: date | None
 ...     friends: list['Astronaut'] | None = None
 ...     missions: list[Mission] | None = None
 ...     medals: list[str] | None = None

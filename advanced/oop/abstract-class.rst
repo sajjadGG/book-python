@@ -279,7 +279,7 @@ Problem - Despite having defined property, the order of decorators (``abstractme
  '/Users/watney/book-python/_tmp']
 
 
-Use Cases
+Use Case - 0x01
 ---------
 Abstract Class:
 
@@ -312,6 +312,47 @@ Abstract Class:
 >>> file2 = Document('myfile.txt')
 Traceback (most recent call last):
 TypeError: Can't instantiate abstract class Document with abstract method display
+
+
+Use Case - 0x02
+---------------
+>>> from abc import ABCMeta, abstractmethod
+>>>
+>>>
+>>> class UIElement(metaclass=ABCMeta):
+...     def __init__(self, name):
+...         self.name = name
+...
+...     @abstractmethod
+...     def render(self):
+...         pass
+>>>
+>>>
+>>> class TextInput(UIElement):
+...     def render(self):
+...         print(f'Rendering {self.name} TextInput')
+>>>
+>>>
+>>> class Button(UIElement):
+...     def render(self):
+...         print(f'Rendering {self.name} Button')
+>>>
+>>>
+>>> def render(component: list[UIElement]):
+...     for element in component:
+...         element.render()
+>>>
+>>>
+>>> login_window = [
+...     TextInput(name='Username'),
+...     TextInput(name='Password'),
+...     Button(name='Submit'),
+... ]
+>>>
+>>> render(login_window)
+Rendering Username TextInput
+Rendering Password TextInput
+Rendering Submit Button
 
 
 Further Reading

@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import Tuple
 from unittest import TestCase
 
 
@@ -30,7 +29,7 @@ class Movable:
         del self.x
         del self.y
 
-    def get_position(self) -> Tuple[int, int]:
+    def get_position(self) -> tuple[int, int]:
         return self.point.as_tuple()
 
     def set_position(self, x: int, y: int) -> None:

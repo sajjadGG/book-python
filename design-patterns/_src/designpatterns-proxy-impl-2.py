@@ -1,6 +1,5 @@
 from abc import ABCMeta, abstractmethod
 from dataclasses import dataclass, field
-from typing import Optional
 
 
 class Proxy:
@@ -37,7 +36,7 @@ class RealEbook(Ebook):
 @dataclass
 class EbookProxy(Ebook):
     __filename: str
-    __ebook: Optional[RealEbook] = None
+    __ebook: RealEbook | None = None
 
     def show(self) -> None:
         if self.__ebook is None:
@@ -51,7 +50,7 @@ class EbookProxy(Ebook):
 @dataclass()
 class LoggingEbookProxy(Ebook):
     __filename: str
-    __ebook: Optional[RealEbook] = None
+    __ebook: RealEbook | None = None
 
     def show(self) -> None:
         if self.__ebook is None:

@@ -413,7 +413,6 @@ FastAPI URL routing:
 
 .. code-block:: python
 
-    from typing import Optional
     from fastapi import FastAPI
 
     app = FastAPI()
@@ -430,7 +429,7 @@ FastAPI URL routing:
 
 
     @app.get('/search')
-    async def items(q: Optional[str] = None):
+    async def items(q: str | None = None):
         return {'q': q}
 
 Django Login Required. Decorator checks whether user is_authenticated. If not, user will be redirected to login page:

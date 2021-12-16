@@ -194,11 +194,8 @@ setosa
 >>> sum(setosa.features)
 10.2
 
->>> from typing import Union
->>>
->>>
 >>> class Astronaut:
-...     age: Union[float,int]
+...     age: int | float
 >>>
 >>>
 >>> jose = Astronaut()

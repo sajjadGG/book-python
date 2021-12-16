@@ -141,6 +141,7 @@ from dataclasses import dataclass
 from datetime import date, datetime
 from typing import Optional
 
+
 DATA = ('[{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa"'
         ',"lastname":"Lewis","role":"commander","username":"mlewis","password"'
         ':"pbkdf2_sha256$120000$gvEBNiCeTrYa0$5C+NiCeTrYsha1PHogqvXNiCeTrY0CRS'

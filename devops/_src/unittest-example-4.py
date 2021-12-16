@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from datetime import date, datetime, timezone
-from typing import Optional
 from unittest import TestCase
 
 
@@ -8,8 +7,8 @@ from unittest import TestCase
 class Astronaut:
     name: str
     agency: str = 'NASA'
-    date_of_birth: Optional[date] = None
-    first_step: Optional[datetime] = None
+    date_of_birth: date | None = None
+    first_step: datetime | None = None
 
     def __str__(self):
         return f'My name... {self.name}'

@@ -22,62 +22,24 @@ Parameters
 
 Union
 -----
->>> from typing import Union
->>>
->>>
->>> def add_numbers(a: Union[int,float], b: Union[int,float]) -> Union[int,float]:
-...     return a + b
-
->>> from typing import Union
->>>
->>> Number = Union[int, float]
->>>
->>> def add_numbers(a: Number, b: Number) -> Number:
-...     return a + b
-
 Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
 >>> # doctest: +SKIP
-... def add_numbers(a: int|float, b: int|float) -> int|float:
+... def add_numbers(a: int | float, b: int | float) -> int | float:
+...     return a + b
+
+>>> number = int | float
+>>>
+>>> def add_numbers(a: number, b: number) -> number:
 ...     return a + b
 
 
 Optional
 --------
->>> from typing import Union
->>>
->>>
->>> def find(text: str, what: str) -> Union[int, None]:
-...     position = text.find(what)
-...     if position == -1:
-...         return None
-...     else:
-...         return position
->>>
->>>
->>> find('Python', 'x')
->>> find('Python', 'o')
-4
-
->>> from typing import Optional
->>>
->>>
->>> def find(text: str, what: str) -> Optional[int]:
-...     position = text.find(what)
-...     if position == -1:
-...         return None
-...     else:
-...         return position
->>>
->>>
->>> find('Python', 'x')
->>> find('Python', 'o')
-4
-
 Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
 >>> # doctest: +SKIP
-... def find(text: str, what: str) -> int|None:
+... def find(text: str, what: str) -> int | None:
 ...     position = text.find(what)
 ...     if position == -1:
 ...         return None
@@ -98,10 +60,10 @@ Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
 ...         return None
 ...     else:
 ...         return position
->>>
->>>
->>> find('Python', 'x')
->>> find('Python', 'o')
+...
+...
+... find('Python', 'x')
+... find('Python', 'o')
 4
 
 
@@ -110,10 +72,7 @@ Exception
 >>> def stop() -> Exception:
 ...     raise RuntimeError
 
->>> from typing import Union
->>>
->>>
->>> def valid_email(email: str) -> Union[str,Exception]:
+>>> def valid_email(email: str) -> str | Exception:
 ...     if '@' in email:
 ...         return email
 ...     else:
@@ -158,6 +117,38 @@ Callable
 >>> def async_query(on_success: Callable[[int], None],
 ...                 on_error: Callable[[int, Exception], None]) -> None:
 ...     pass
+
+Since Python 3.11 :pep:`677` -- Callable Type Syntax
+
+>>> # doctest: +SKIP
+... from typing import Awaitable, Callable, Concatenate, ParamSpec, TypeVarTuple
+...
+... P = ParamSpec("P")
+... Ts = TypeVarTuple('Ts')
+...
+... f0: () -> bool
+... f0: Callable[[], bool]
+...
+... f1: (int, str) -> bool
+... f1: Callable[[int, str], bool]
+...
+... f2: (...) -> bool
+... f2: Callable[..., bool]
+...
+... f3: async (str) -> str
+... f3: Callable[[str], Awaitable[str]]
+...
+... f4: (**P) -> bool
+... f4: Callable[P, bool]
+...
+... f5: (int, **P) -> bool
+... f5: Callable[Concatenate[int, P], bool]
+...
+... f6: (*Ts) -> bool
+... f6: Callable[[*Ts], bool]
+...
+... f7: (int, *Ts, str) -> bool
+... f7: Callable[[int, *Ts, str], bool]
 
 
 Iterator
@@ -206,12 +197,9 @@ Errors
 
 Good Engineering Practices
 --------------------------
->>> from typing import Union
->>>
->>>
->>> def add_numbers(a: Union[int,float],
-...                 b: Union[int,float]
-...                 ) -> Union[int,float]:
+>>> def add_numbers(a: int | float,
+...                 b: int | float
+...                 ) -> int | float:
 ...     return a + b
 >>>
 >>>
@@ -221,6 +209,30 @@ Good Engineering Practices
 3.5
 >>> add_numbers(1.5, 2.5)   # mypy: OK
 4.0
+
+
+Before Python 3.10
+------------------
+>>> from typing import Union
+>>>
+>>>
+>>> def add_numbers(a: Union[int,float], b: Union[int,float]) -> Union[int,float]:
+...     return a + b
+
+>>> from typing import Optional
+>>>
+>>>
+>>> def find(text: str, what: str) -> Optional[int]:
+...     position = text.find(what)
+...     if position == -1:
+...         return None
+...     else:
+...         return position
+>>>
+>>>
+>>> find('Python', 'x')
+>>> find('Python', 'o')
+4
 
 
 Further Reading

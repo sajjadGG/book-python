@@ -334,9 +334,6 @@ Inheritance
 -----------
 .. code-block:: python
 
-    from typing import Union
-
-
     class Validator:
         attribute_name: str
 
@@ -351,8 +348,8 @@ Inheritance
 
 
     class RangeValidator(Validator):
-        min: Union[int, float]
-        max: Union[int, float]
+        min: int | float
+        max: int | float
 
         def __init__(self, min: float, max: float):
             self.min = min

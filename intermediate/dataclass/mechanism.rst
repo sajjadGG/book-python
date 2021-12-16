@@ -82,7 +82,7 @@ Use Case - 0x01
 ``class``:
 
 >>> from datetime import date
->>> from typing import Final, Optional
+>>> from typing import Final
 >>>
 >>>
 >>> class Mission:
@@ -99,14 +99,14 @@ Use Case - 0x01
 ...    lastname: str
 ...    born: date
 ...    agency: str = 'NASA'
-...    age: Optional[int] = None
-...    height: Optional[float] = None
-...    weight: Optional[float] = None
-...    friends: Optional[list['Astronaut']] = None
-...    missions: Optional[list[Mission]] = None
-...    rank: Optional[str] = None
-...    previous_job: Optional[str] = None
-...    experience: Optional[list[str]] = None
+...    age: int | None = None
+...    height: float | None = None
+...    weight: float | None = None
+...    friends: list['Astronaut'] | None = None
+...    missions: list[Mission] | None = None
+...    rank: str | None = None
+...    previous_job: str | None = None
+...    experience: list[str] | None = None
 ...    AGE_MIN: Final[int] = 27
 ...    AGE_MAX: Final[int] = 50
 ...    WEIGHT_MIN: Final[int] = 50
@@ -120,14 +120,14 @@ Use Case - 0x01
 ...                 lastname: str,
 ...                 born: date,
 ...                 agency: str = 'NASA',
-...                 age: Optional[int] = None,
-...                 height: Optional[float] = None,
-...                 weight: Optional[float] = None,
-...                 friends: Optional[list['Astronaut']] = None,
-...                 missions: Optional[list[Mission]] = None,
-...                 rank: Optional[str] = None,
-...                 previous_job: Optional[str] = None,
-...                 experience: Optional[list[str]] = None):
+...                 age: int | None = None,
+...                 height: float | None = None,
+...                 weight: float | None = None,
+...                 friends: list['Astronaut'] | None = None,
+...                 missions: list[Mission] | None = None,
+...                 rank: str | None = None,
+...                 previous_job: str | None = None,
+...                 experience: list[str] | None = None):
 ...
 ...        self.born = born
 ...        self.rank = rank
@@ -146,7 +146,7 @@ Use Case - 0x01
 
 >>> from dataclasses import dataclass
 >>> from datetime import date
->>> from typing import Final, Optional
+>>> from typing import Final
 >>>
 >>>
 >>> @dataclass
@@ -161,14 +161,14 @@ Use Case - 0x01
 ...     lastname: str
 ...     born: date
 ...     agency: str = 'NASA'
-...     age: Optional[int] = None
-...     height: Optional[float] = None
-...     weight: Optional[float] = None
-...     friends: Optional[list['Astronaut']] = None
-...     missions: Optional[list[Mission]] = None
-...     rank: Optional[str] = None
-...     previous_job: Optional[str] = None
-...     experience: Optional[list[str]] = None
+...     age: int | None = None
+...     height: float | None = None
+...     weight: float | None = None
+...     friends: list['Astronaut'] | None = None
+...     missions: list[Mission] | None = None
+...     rank: str | None = None
+...     previous_job: str | None = None
+...     experience: list[str] | None = None
 ...     AGE_MIN: Final[int] = 27
 ...     AGE_MAX: Final[int] = 50
 ...     WEIGHT_MIN: Final[int] = 50

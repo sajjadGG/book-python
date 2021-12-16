@@ -7,7 +7,7 @@
 English:
     1. To class `CSVMixin` add methods:
         a. `to_csv(self) -> str`
-        b. `from_csv(self, text: str) -> Union['Astronaut', 'Cosmonaut']`
+        b. `from_csv(self, text: str) -> 'Astronaut' | 'Cosmonaut'`
     2. `CSVMixin.to_csv()` should return attribute values separated with coma
     3. `CSVMixin.from_csv()` should return instance of a class on which it was called
     4. Use `@classmethod` decorator in proper place
@@ -16,7 +16,7 @@ English:
 Polish:
     1. Do klasy `CSVMixin` dodaj metody:
         a. `to_csv(self) -> str`
-        b. `from_csv(self, text: str) -> Union['Astronaut', 'Cosmonaut']`
+        b. `from_csv(self, text: str) -> 'Astronaut' | 'Cosmonaut'`
     2. `CSVMixin.to_csv()` powinna zwracać wartości atrybutów klasy rozdzielone po przecinku
     3. `CSVMixin.from_csv()` powinna zwracać instancje klasy na której została wywołana
     4. Użyj dekoratora `@classmethod` w odpowiednim miejscu
@@ -65,14 +65,11 @@ Tests:
     >>> remove('_temporary.txt')
 """
 
-from typing import Union
-
-
 class CSVMixin:
     def to_csv(self) -> str:
         ...
 
-    def from_csv(cls, line: str) -> Union['Astronaut', 'Cosmonaut']:
+    def from_csv(cls, line: str):
         ...
 
 
@@ -83,6 +80,6 @@ class CSVMixin:
         return ','.join(data) + '\n'
 
     @classmethod
-    def from_csv(cls, line: str) -> Union['Astronaut', 'Cosmonaut']:
+    def from_csv(cls, line: str):
         data = line.strip().split(',')
         return cls(*data)

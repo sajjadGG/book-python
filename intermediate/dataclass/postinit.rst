@@ -111,14 +111,13 @@ Astronaut(firstname='Mark', lastname='Watney',
 
 >>> from dataclasses import dataclass
 >>> from datetime import datetime
->>> from typing import Optional
 >>>
 >>>
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     launch: Optional[datetime] = None
+...     launch: datetime | None = None
 ...
 ...     def __post_init__(self):
 ...         if self.launch is not None:

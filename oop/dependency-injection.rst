@@ -18,13 +18,13 @@ Dependency injection:
 
     from dataclasses import dataclass
     from datetime import timedelta
-    from typing import Optional, Any
+    from typing import Any
 
 
     @dataclass
     class CacheInterface:
         expiration: timedelta = timedelta(days=30)
-        location: Optional[str] = None
+        location: str | None = None
 
         def get(self, key: str) -> Any:
             raise NotImplementedError
@@ -86,7 +86,6 @@ Dependency injection:
     from hashlib import sha1
     from datetime import timedelta, datetime
     from http import HTTPStatus
-    from typing import Dict
     import requests
 
 
@@ -110,7 +109,7 @@ Dependency injection:
     @dataclass
     class CacheMemory(CacheInterface):
         expiration: timedelta = timedelta(seconds=30)
-        _data: Dict[str, str] = field(default_factory=dict)
+        _data: dict[str, str] = field(default_factory=dict)
 
         def is_valid(self, key: str) -> bool:
             return key in self._data

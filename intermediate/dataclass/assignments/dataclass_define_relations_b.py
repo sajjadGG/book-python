@@ -133,7 +133,7 @@ Tests:
 import json
 from dataclasses import dataclass
 from datetime import date, datetime
-from typing import Optional
+
 
 DATA = ('[{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa"'
         ',"lastname":"Lewis","role":"commander","username":"mlewis","password"'
@@ -193,7 +193,7 @@ class User:
     password: str
     email: str
     born: date
-    last_login: Optional[datetime]
+    last_login: datetime | None
     is_active: bool
     is_staff: bool
     is_superuser: bool

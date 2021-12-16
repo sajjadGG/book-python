@@ -144,26 +144,17 @@ Unions
 ------
 Generic type annotation:
 
->>> from typing import Union
->>>
->>>
->>> data: list[Union[list, tuple, set]] = [
+>>> data: list[list|tuple|set]] = [
 ...    [1, 2, 3],
 ...    (4, 5, 6),
 ...    {7, 8, 9}]
 
->>> from typing import Union
->>>
->>>
->>> data: list[Union[list[int], tuple[int, ...], set[int]]] = [
+>>> data: list[list[int] | tuple[int, ...] | set[int]] = [
 ...    [1, 2, 3],
 ...    (4, 5, 6),
 ...    {7, 8, 9}]
 
->>> from typing import Union
->>>
->>>
->>> row = Union[list[int], tuple[int, ...], set[int]]
+>>> row = list[int] | tuple[int, ...] | set[int]
 >>> data: list[row] = [
 ...    [1, 2, 3],
 ...    (4, 5, 6),

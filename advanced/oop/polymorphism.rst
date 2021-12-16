@@ -322,27 +322,39 @@ UIElement:
 >>>
 >>>
 >>> class UIElement(metaclass=ABCMeta):
+...     def __init__(self, name):
+...         self.name = name
+...
 ...     @abstractmethod
 ...     def render(self):
 ...         pass
 >>>
->>> class Textarea(UIElement):
+>>>
+>>> class TextInput(UIElement):
 ...     def render(self):
-...         print('Rendering Textarea')
+...         print(f'Rendering {self.name} TextInput')
+>>>
 >>>
 >>> class Button(UIElement):
 ...     def render(self):
-...         print('Rendering Button')
+...         print(f'Rendering {self.name} Button')
 >>>
 >>>
->>> def render(element: UIElement):
-...     element.render()
+>>> def render(component: list[UIElement]):
+...     for element in component:
+...         element.render()
 >>>
 >>>
->>> render(Textarea())
-Rendering Textarea
->>> render(Button())
-Rendering Button
+>>> login_window = [
+...     TextInput(name='Username'),
+...     TextInput(name='Password'),
+...     Button(name='Submit'),
+... ]
+>>>
+>>> render(login_window)
+Rendering Username TextInput
+Rendering Password TextInput
+Rendering Submit Button
 
 Factory:
 
@@ -455,7 +467,6 @@ Dynamic factory:
 Use Case - Login Window
 -----------------------
 >>> import re
->>> from typing import Optional
 >>>
 >>>
 >>> class UIElement:
@@ -481,7 +492,7 @@ Use Case - Login Window
 >>> class Button(UIElement):
 ...     action: str
 ...
-...     def __init__(self, *args, action: Optional[str] = None, **kwargs):
+...     def __init__(self, *args, action: str | None = None, **kwargs):
 ...         self.action = action
 ...         super().__init__(*args, **kwargs)
 ...
@@ -505,7 +516,7 @@ Use Case - Login Window
 >>> class Input(UIElement):
 ...     regex: re.Pattern
 ...
-...     def __init__(self, *args, regex: Optional[str] = None, **kwargs):
+...     def __init__(self, *args, regex: str | None = None, **kwargs):
 ...         self.regex = re.compile(regex)
 ...         super().__init__(*args, **kwargs)
 ...

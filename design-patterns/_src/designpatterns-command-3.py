@@ -1,6 +1,5 @@
 from abc import ABCMeta, abstractmethod
 from dataclasses import dataclass, field
-from typing import Optional
 
 
 class Command(metaclass=ABCMeta):
@@ -43,7 +42,7 @@ class HtmlDocument:
 class BoldCommand(UndoableCommand):
     __document: HtmlDocument
     __history: History = History()
-    __previous_content: Optional[str] = None
+    __previous_content: str | None = None
 
     def unexecute(self) -> None:
         self.__document.set_content(self.__previous_content)

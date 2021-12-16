@@ -35,13 +35,13 @@ from dataclasses import dataclass
 from enum import Enum
 from functools import wraps
 from random import randint
-from typing import Callable, NoReturn, Optional, TypedDict, overload
+from typing import Callable, TypedDict
 from unittest import TestCase
 
 
 def if_alive(method: Callable) -> Callable:
     @wraps(method)
-    def wrapper(instance: 'HasHealth', *args, **kwargs) -> Optional[Callable]:
+    def wrapper(instance: 'HasHealth', *args, **kwargs) -> Callable | None:
         if instance.is_alive():
             return method(instance, *args, **kwargs)
         else:
@@ -52,7 +52,7 @@ def if_alive(method: Callable) -> Callable:
 
 def if_dead(method: Callable) -> Callable:
     @wraps(method)
-    def wrapper(instance: 'HasHealth', *args, **kwargs) -> Optional[Callable]:
+    def wrapper(instance: 'HasHealth', *args, **kwargs) -> Callable | None:
         if instance.is_dead():
             return method(instance, *args, **kwargs)
 
@@ -126,7 +126,7 @@ class HasHealth(metaclass=ABCMeta):
         return self._status is not Status.DEAD
 
     @if_alive
-    def take_damage(self, damage) -> Optional[NoReturn]:
+    def take_damage(self, damage) -> Exception | None:
         self._health -= damage
         self._update_status()
         if self.is_dead():

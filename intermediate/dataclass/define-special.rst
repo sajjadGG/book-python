@@ -17,16 +17,6 @@ Literal Field
 
 Union Fields
 ------------
->>> from dataclasses import dataclass
->>> from typing import Union
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     age: Union[int,float]
-
 Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
 >>> from dataclasses import dataclass
@@ -41,20 +31,9 @@ Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
 Optional Fields
 ---------------
->>> from dataclasses import dataclass
->>> from typing import Optional
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     agency: Optional[str] = None
-
 Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
 >>> from dataclasses import dataclass
->>> from typing import Optional
 >>>
 >>>
 >>> @dataclass  # doctest: +SKIP
@@ -79,6 +58,26 @@ Final Fields
 ...     age: int
 ...     AGE_MIN: Final[int] = 30
 ...     AGE_MAX: Final[int] = 50
+
+
+KWargs Only
+-----------
+Any fields after a pseudo-field with the type of KW_ONLY are marked as
+keyword-only fields. Note that a pseudo-field of type KW_ONLY is otherwise
+completely ignored. This includes the name of such a field. By convention, a
+name of _ is used for a KW_ONLY field.
+
+>>> from dataclasses import dataclass, KW_ONLY
+>>>
+>>>
+>>> @dataclass
+... class Point:
+...     x: float
+...     _: KW_ONLY
+...     y: float
+...     z: float
+...
+... pt = Point(0, y=1.5, z=2.0)
 
 
 Assignments

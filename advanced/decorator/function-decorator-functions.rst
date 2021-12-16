@@ -413,7 +413,6 @@ Use Case - 0x0B
 * FastAPI URL Routing
 
 >>> # doctest: +SKIP
-... from typing import Optional
 ... from fastapi import FastAPI
 ...
 ... app = FastAPI()
@@ -430,7 +429,7 @@ Use Case - 0x0B
 ...
 ...
 ... @app.get('/search')
-... async def items(q: Optional[str] = None):
+... async def items(q: str | None = None):
 ...     return {'q': q}
 
 

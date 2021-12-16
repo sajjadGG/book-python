@@ -18,7 +18,7 @@ Apply
     * ``args: tuple``
     * ``**kwds: dict``
 
-* Returns: ``Union[Series, DataFrame]``
+* Returns: ``Series | DataFrame``
 
 * Invoke function on values of Series
 * Can be ufunc (a NumPy function that applies to the entire Series) or a Python function that only works on single values.
@@ -121,8 +121,8 @@ Map
 * Signature: ``Series.map(arg, na_action=None)``
 * Parameters:
 
-    * arg: ``Union[Callable, collections.abc.Mapping, Series]``
-    * na_action: ``Optional[Literal['ignore']]``; default ``None``
+    * arg: ``Callable | collections.abc.Mapping | Series``
+    * na_action: ``Literal['ignore']  | None``; default ``None``
 
 * Returns: ``Series``
 

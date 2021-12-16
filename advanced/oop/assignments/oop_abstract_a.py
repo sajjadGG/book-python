@@ -33,8 +33,6 @@ Tests:
     >>> assert not hasattr(Setosa.get_name, '__isabstractmethod__')
     >>> assert hasattr(IrisAbstract.get_name, '__isabstractmethod__')
     >>> assert IrisAbstract.get_name.__isabstractmethod__ == True
-    >>> assert not hasattr(IrisAbstract, '__annotations__')
-    >>> assert not hasattr(Setosa, '__annotations__')
 
     >>> iris = IrisAbstract()
     Traceback (most recent call last):

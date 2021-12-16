@@ -94,8 +94,6 @@ Tests:
     Traceback (most recent call last):
     TypeError: "return" is <class 'str'>, but <class 'bool'> was expected
 """
-from typing import Optional
-
 
 def typecheck(func):
     def validate(argname, argval):
@@ -138,7 +136,7 @@ class TypeCheck:
     def check_result(self, result):
         self.validate('return', result)
 
-    def validate(self, argname, argval) -> Optional[Exception]:
+    def validate(self, argname, argval) -> Exception | None:
         argtype = type(argval)
         expected = self._func.__annotations__[argname]
         if argtype is not expected:

@@ -7,13 +7,13 @@
 English:
     1. Define class `Setosa` implementing `IrisAbstract`
     2. All method signatures must be identical to `IrisAbstract`
-    2. Don't implement methods, leave `...` as content
+    2. Don't implement methods, leave `...` or `pass` as content
     4. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj klasę `Setosa` implementującą `IrisAbstract`
     2. Sygnatury wszystkich metod muszą być identyczne do `IrisAbstract`
-    2. Nie implementuj metod, pozostaw `...` jako zawartość
+    2. Nie implementuj metod, pozostaw `...` or `pass` jako zawartość
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:

@@ -4,13 +4,12 @@ Headers
 
 Rationale
 ---------
->>> from typing import Optional
 >>> from fastapi import FastAPI, Header
 >>> app = FastAPI()
 >>>
 >>>
 >>> @app.get('/')
-... async def index(user_agent: Optional[str] = Header(None)):
+... async def index(user_agent: str | None = Header(None)):
 ...     return {'User-Agent': user_agent}
 
 

@@ -1,7 +1,6 @@
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Optional
 from unittest import TestCase
 
 
@@ -9,7 +8,7 @@ from unittest import TestCase
 class User:
     firstname: str
     lastname: str
-    date_of_birth: Optional[datetime] = None
+    date_of_birth: datetime | None = None
     permission: list = ()
 
     def __post_init__(self):

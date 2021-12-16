@@ -1,6 +1,5 @@
 from dataclasses import dataclass, FrozenInstanceError
-from typing import NoReturn, Optional
-from unittest import TestCase, skip
+from unittest import TestCase
 from datetime import timezone, datetime
 
 
@@ -34,7 +33,7 @@ class PointTest(TestCase):
 
 
 class Movable:
-    def set_position(self, position: Point) -> Optional[NoReturn]:
+    def set_position(self, position: Point) -> Exception:
         if not isinstance(position, Point):
             raise TypeError
 

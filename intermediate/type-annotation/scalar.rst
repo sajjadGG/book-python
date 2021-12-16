@@ -59,54 +59,34 @@ Bool
 
 Union
 -----
->>> from typing import Union
->>>
->>> number: Union[int, float] = 1337
->>> number: Union[int, float] = 1.337
-
 Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
->>> number: int|float = 1337        # doctest: +SKIP
->>> number: int|float = 1.337       # doctest: +SKIP
->>> number: int|None = 1337         # doctest: +SKIP
->>> number: int|None = None         # doctest: +SKIP
+>>> data: int | float = 1337
+>>> data: int | float = 1.337
 
 Result of this expression would then be valid in ``isinstance()`` and ``issubclass()``
 
->>> isinstance(1337, int|float)     # doctest: +SKIP
->>> isinstance(1337, int|None)      # doctest: +SKIP
+>>> isinstance(1337, int|float)
 
 
 Optional
 --------
->>> from typing import Optional
->>>
->>> data: Optional[int] = 1337
->>> data: Optional[int] = None
+>>> number: int | None = 1337
+>>> number: int | None = None
 
->>> from typing import Optional
->>>
+>>> isinstance(1337, int|None)
+
 >>> firstname: str = 'Melissa'
 >>> lastname: str = 'Lewis'
->>> age: Optional[float] = None
-
-Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
-
->>> age: int? = 1337                # doctest: +SKIP
->>> age: int? = None                # doctest: +SKIP
-
-Result of this expression would then be valid in ``isinstance()`` and ``issubclass()``
-
->>> isinstance(1337, int?)          # doctest: +SKIP
+>>> age: float | None = None
 
 
 Aliases
 -------
->>> from typing import Union
+>>> number = float | int
 >>>
->>> Number = Union[float, int]
->>> age: Number = 10
->>> age: Number = 10.5
+>>> age: number = 10
+>>> age: number = 10.5
 
 Since Python 3.10 :pep:`613` -- TypeAlias Annotation
 
@@ -175,3 +155,28 @@ Types are not Enforced
 >>> name: int = 'Jan Twardowski'
 >>> age: float = 30
 >>> is_adult: int = True
+
+
+Before Python 3.10
+------------------
+>>> from typing import Union
+>>>
+>>> number: Union[int, float] = 1337
+>>> number: Union[int, float] = 1.337
+
+>>> from typing import Optional
+>>>
+>>> data: Optional[int] = 1337
+>>> data: Optional[int] = None
+
+
+Future
+------
+Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
+
+>>> age: int? = 1337                # doctest: +SKIP
+>>> age: int? = None                # doctest: +SKIP
+
+Result of this expression would then be valid in ``isinstance()`` and ``issubclass()``
+
+>>> isinstance(1337, int?)          # doctest: +SKIP
