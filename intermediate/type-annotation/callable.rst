@@ -50,21 +50,6 @@ Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 >>> find('Python', 'o')
 4
 
-Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
-
->>> # doctest: +SKIP
-... def find(text: str, what: str) -> int?:
-...     position = text.find(what)
-...     if position == -1:
-...         return None
-...     else:
-...         return position
-...
-...
-... find('Python', 'x')
-... find('Python', 'o')
-4
-
 
 Exception
 ---------
@@ -139,15 +124,6 @@ Annotations
 >>> add.__annotations__
 {'a': <class 'int'>, 'b': <class 'int'>, 'return': <class 'int'>}
 
-Since Python 3.11: :pep:`563` -- Postponed Evaluation of Annotations
-
->>> def add(a: int, b: int) -> int:
-...     return a + b
->>>
->>> # doctest: +SKIP
-... add.__annotations__
-{'a': 'int', 'b': 'int', 'return': 'int'}
-
 
 Errors
 ------
@@ -211,6 +187,30 @@ Further Reading
 
 Future
 ------
+Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
+
+>>> # doctest: +SKIP
+... def find(text: str, what: str) -> int?:
+...     position = text.find(what)
+...     if position == -1:
+...         return None
+...     else:
+...         return position
+...
+...
+... find('Python', 'x')
+... find('Python', 'o')
+4
+
+Since Python 3.11: :pep:`563` -- Postponed Evaluation of Annotations
+
+>>> def add(a: int, b: int) -> int:
+...     return a + b
+>>>
+>>> # doctest: +SKIP
+... add.__annotations__
+{'a': 'int', 'b': 'int', 'return': 'int'}
+
 Since Python 3.11 :pep:`677` -- Callable Type Syntax
 
 >>> # doctest: +SKIP
