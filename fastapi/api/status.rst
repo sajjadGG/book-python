@@ -25,6 +25,7 @@ Rationale
 
 201 - Created
 -------------
+>>> from typing import Optional
 >>> from pydantic import BaseModel
 >>> from fastapi import FastAPI, status
 >>> app = FastAPI()
@@ -33,7 +34,7 @@ Rationale
 >>> class Astronaut(BaseModel):
 ...     firstname: str
 ...     lastname: str
-...     active: bool | None = True
+...     active: Optional[bool] = True
 >>>
 >>>
 >>> @app.post('/astronaut/', status_code=status.HTTP_201_CREATED)
@@ -44,6 +45,7 @@ Rationale
 
 202 - Accepted
 --------------
+>>> from typing import Optional
 >>> from pydantic import BaseModel
 >>> from fastapi import FastAPI, status
 >>> app = FastAPI()
@@ -52,7 +54,7 @@ Rationale
 >>> class Astronaut(BaseModel):
 ...     firstname: str
 ...     lastname: str
-...     active: bool | None = True
+...     active: Optional[bool] = True
 >>>
 >>>
 >>> @app.put('/astronaut/{id}', status_code=status.HTTP_202_ACCEPTED)

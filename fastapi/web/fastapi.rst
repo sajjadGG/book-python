@@ -31,6 +31,7 @@ Example
 -------
 .. code-block:: python
 
+    from typing import Optional
     from fastapi import FastAPI
     api = FastAPI()
 
@@ -41,25 +42,27 @@ Example
 
 
     @api.get("/items/{item_id}")
-    async def read_item(item_id: int, q: str | None = None):
+    async def read_item(item_id: int, q: Optional[str] = None):
         return {"item_id": item_id, "q": q}
 
 User Agent:
 
 .. code-block:: python
 
+    from typing import Optional
     from fastapi import FastAPI, Header
     api = FastAPI()
 
 
     @api.get("/")
-    async def info(user_agent: str | None = Header(None)):
+    async def info(user_agent: Optional[str] = Header(None)):
         return [{"User-Agent": user_agent}]
 
 Pydantic:
 
 .. code-block:: python
 
+    from typing import Optional
     from fastapi import FastAPI
     from pydantic import BaseModel
     api = FastAPI()
@@ -68,7 +71,7 @@ Pydantic:
     class Item(BaseModel):
         name: str
         price: float
-        is_offer: bool | None = None
+        is_offer: Optional[bool] = None
 
 
     @api.get("/")
@@ -77,7 +80,7 @@ Pydantic:
 
 
     @api.get("/items/{item_id}")
-    def read_item(item_id: int, q: str | None = None):
+    def read_item(item_id: int, q: Optional[str] = None):
         return {"item_id": item_id, "q": q}
 
 

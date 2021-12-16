@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel as Schema
 
 
@@ -26,4 +27,4 @@ class Token(Schema):
 
 
 class TokenData(Schema):
-    username: str | None = None
+    username: Optional[str] = None

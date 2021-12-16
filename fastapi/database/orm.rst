@@ -62,13 +62,14 @@ Schema
 ------
 * Represents JSON request/response data
 
+>>> from typing import Optional
 >>> from pydantic import BaseModel
 >>>
 >>>
 >>> class AstronautSchema(BaseModel):
 ...     firstname: str
 ...     lastname: str
-...     active: bool | None = True
+...     active: Optional[bool] = True
 
 ``Config.orm_mode = True`` is required to have model as a ``response_model`` (a decorator parameter).
 Note, that if you set ``orm_mode = True``, then not all fields need to be specified.
@@ -87,6 +88,7 @@ Listed fields will be in response, and not listed will be hidden in response.
 
 Example
 -------
+>>> from typing import Optional
 >>> import uvicorn
 >>> from pydantic import BaseModel
 >>> from sqlalchemy import create_engine, Column, Integer, String, Boolean
@@ -122,7 +124,7 @@ Example
 >>> class AstronautSchema(BaseModel):
 ...     firstname: str
 ...     lastname: str
-...     active: bool | None = True
+...     active: Optional[bool] = True
 ...
 ...     class Config:
 ...         orm_mode = True

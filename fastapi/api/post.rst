@@ -12,6 +12,7 @@ Rationale
 
 POST Method
 -----------
+>>> from typing import Optional
 >>> from pydantic import BaseModel
 >>> from fastapi import FastAPI
 >>> app = FastAPI()
@@ -20,7 +21,7 @@ POST Method
 >>> class Astronaut(BaseModel):
 ...     firstname: str
 ...     lastname: str
-...     active: bool | None = True
+...     active: Optional[bool] = True
 >>>
 >>>
 >>> @app.post('/astronaut/')

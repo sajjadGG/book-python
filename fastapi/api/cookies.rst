@@ -4,12 +4,13 @@ Cookies
 
 Rationale
 ---------
+>>> from typing import Optional
 >>> from fastapi import FastAPI, Cookie
 >>> app = FastAPI()
 >>>
 >>>
 >>> @app.get('/')
-... def index(ads_id: str | None = Cookie(None)):
+... def index(ads_id: Optional[str] = Cookie(None)):
 ...     return {'ads_id': ads_id}
 
 
