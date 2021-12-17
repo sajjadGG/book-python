@@ -170,6 +170,12 @@ dragon.move(down=5)
 
 
 #%% Dragon makes damage
+# dragon ---> enemy
+# dragon -> enemy
+# dragon <-> enemy
+# dragon <- enemy
+# dragon <--- enemy
+
 dragon.take_damage()
 dragon.hit()
 dragon.wound()
@@ -184,6 +190,7 @@ dragon.hurt()
 dragon.damage()
 dragon.hurt_someone()
 dragon.deal_damage()
+
 
 
 #%% Make 10 points damage to the dragon
