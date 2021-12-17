@@ -17,7 +17,9 @@ Polish:
     4. Jeżeli UID jest:
        a. poniżej 1000, to konto jest systemowe (`SystemAccount`)
        b. 1000 lub więcej, to konto użytkownika (`UserAccount`)
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    5. Stwórz repr wyświetlający informacje o klasie w formacie:
+       `SystemAccount(username='root', uid=0)`
+    6. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `str.splitlines()`
@@ -28,18 +30,18 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [SystemAccount(username='root'),
-     SystemAccount(username='bin'),
-     SystemAccount(username='daemon'),
-     SystemAccount(username='adm'),
-     SystemAccount(username='shutdown'),
-     SystemAccount(username='halt'),
-     SystemAccount(username='nobody'),
-     SystemAccount(username='sshd'),
-     UserAccount(username='twardowski'),
-     UserAccount(username='jimenez'),
-     UserAccount(username='ivanovic'),
-     UserAccount(username='lewis')]
+    [SystemAccount(username='root', uid=0),
+     SystemAccount(username='bin', uid=1),
+     SystemAccount(username='daemon', uid=2),
+     SystemAccount(username='adm', uid=3),
+     SystemAccount(username='shutdown', uid=6),
+     SystemAccount(username='halt', uid=7),
+     SystemAccount(username='nobody', uid=99),
+     SystemAccount(username='sshd', uid=74),
+     UserAccount(username='twardowski', uid=1000),
+     UserAccount(username='jimenez', uid=1001),
+     UserAccount(username='ivanovic', uid=1002),
+     UserAccount(username='lewis', uid=1002)]
 """
 
 DATA = """root:x:0:0:root:/root:/bin/bash
@@ -63,26 +65,27 @@ result = ...
 from dataclasses import dataclass
 
 
+@dataclass
 class Account:
-    def __new__(cls, *record):
-        username = record[0]
-        uid = int(record[2])
+    username: str
+    uid: int
+
+    def __new__(cls, username: str, uid: int):
         if uid < 1000:
-            return SystemAccount(username)
+            return object.__new__(SystemAccount)
         else:
-            return UserAccount(username)
+            return object.__new__(UserAccount)
 
 
-@dataclass
-class UserAccount:
-    username: str
+class UserAccount(Account):
+    pass
+
+class SystemAccount(Account):
+    pass
 
 
-@dataclass
-class SystemAccount:
-    username: str
-
-
-result = [Account(*record)
+result = [Account(username, int(uid))
           for line in DATA.splitlines()
-          if (record := line.strip().split(':'))]
+          if (record := line.strip().split(':'))
+          if (username := record[0])
+          and (uid := record[2])]
