@@ -2,33 +2,25 @@ Dataclass Parameters
 ====================
 
 
-Flags
------
-* ``init``
-* ``repr``
-* ``eq``
-* ``order``
-* ``unsafe_hash``
-* ``frozen``
-* ``match_args``
-* ``kw_only``
-* ``slots``
-
+Rationale
+---------
 .. csv-table:: Dataclass options
     :header: "Option", "Default", "Description (if True)"
     :widths: 10, 10, 80
 
-    "``init``",         "``True``",  "Generate ``__init__()`` method"
-    "``repr``",         "``True``",  "Generate ``__repr__()`` method"
-    "``eq``",           "``True``",  "Generate ``__eq__()`` and ``__ne__()`` methods"
-    "``order``",        "``False``", "Generate ``__lt__()``, ``__le__()``, ``__gt__()``, and ``__ge__()`` methods"
-    "``unsafe_hash``",  "``False``", "If False: the ``__hash__()`` method is generated according to how eq and frozen are set"
-    "``frozen``",       "``False``", "If ``True``: assigning to fields will generate an exception"
-    "``match_args``",   "``True``",  "Generate ``__match_args__()`` method"
-    "``kw_only``",      "``False``", "Mark all fields as keyword-only"
-    "``slots``",        "``False``", "Create class with ``__slots__``"
+    ``init``,         ``True``,   "Generate ``__init__()`` method"
+    ``repr``,         ``True``,   "Generate ``__repr__()`` method"
+    ``eq``,           ``True``,   "Generate ``__eq__()`` and ``__ne__()`` methods"
+    ``order``,        ``False``,  "Generate ``__lt__()``, ``__le__()``, ``__gt__()``, and ``__ge__()`` methods"
+    ``unsafe_hash``,  ``False``,  "If False: the ``__hash__()`` method is generated according to how eq and frozen are set"
+    ``frozen``,       ``False``,  "If ``True``: assigning to fields will generate an exception"
+    ``match_args``,   ``True``,   "Generate ``__match_args__()`` method"
+    ``kw_only``,      ``False``,  "Mark all fields as keyword-only"
+    ``slots``,        ``False``,  "Create class with ``__slots__``"
 
 
+Example
+-------
 >>> from dataclasses import dataclass
 >>>
 >>>

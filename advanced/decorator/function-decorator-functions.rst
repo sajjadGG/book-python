@@ -497,12 +497,3 @@ Assignments
 .. literalinclude:: assignments/decorator_func_f.py
     :caption: :download:`Solution <assignments/decorator_func_f.py>`
     :end-before: # Solution
-
-.. literalinclude:: assignments/decorator_func_g.py
-    :caption: :download:`Solution <assignments/decorator_func_g.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/decorator_func_h.py
-    :caption: :download:`Solution <assignments/decorator_func_h.py>`
-    :end-before: # Solution
-

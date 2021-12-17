@@ -7,11 +7,24 @@ Block Match
     from unittest.mock import MagicMock
     input = MagicMock(side_effect=['French'])
 
-    def handle_get(): pass
-    def handle_post(): pass
-    def handle_put(): pass
-    def handle_delete(): pass
+    def handle_get(): ...
+    def handle_post(): ...
+    def handle_put(): ...
+    def handle_delete(): ...
 
+    class Hero:
+        def move(): ...
+        def make_damage(): ...
+        def take_damage(_): ...
+    hero = Hero()
+
+    class Game:
+        def quit(): ...
+        def move_left(): ...
+        def move_up(): ...
+        def move_right(): ...
+        def move_down(): ...
+    game = Game()
 
 Rationale
 ---------
@@ -32,8 +45,7 @@ Example
 -------
 >>> language = input('What is your language?: ')  # User input: 'French'
 >>>
->>> # doctest: +SKIP
-... match language:
+>>> match language:
 ...     case 'English': response = 'Hello'
 ...     case 'Russian': response = 'Здравствуйте'
 ...     case 'German':  response = 'Guten Tag'
@@ -41,8 +53,7 @@ Example
 ...     case _:         response = "I don't speak this language"
 >>>
 >>>
->>> # doctest: +SKIP
-... print(response)
+>>> print(response)
 "I don't speak this language"
 
 
@@ -50,46 +61,50 @@ Patterns
 --------
 The patterns listed here are described in more detail below, but summarized together in this section for simplicity:
 
-    * A `literal pattern` is useful to filter constant values in a structure. It
-      looks like a Python literal (including some values like ``True``, ``False``
-      and ``None``). It only matches objects equal to the literal, and never
-      binds.
+    * A `literal pattern` is useful to filter constant values in a
+      structure. It looks like a Python literal (including some values like
+      ``True``, ``False`` and ``None``). It only matches objects equal to
+      the literal, and never binds.
 
     * A `capture pattern` looks like x and is equivalent to an identical
-      assignment target: it always matches and binds the variable with the given
-      (simple) name.
+      assignment target: it always matches and binds the variable with the
+      given (simple) name.
 
-    * The `wildcard pattern` is a single underscore: ``_``.  It always matches,
-      but does not capture any variable (which prevents interference with other
-      uses for ``_`` and allows for some optimizations).
+    * The `wildcard pattern` is a single underscore: ``_``.  It always
+      matches, but does not capture any variable (which prevents
+      interference with other uses for ``_`` and allows for some
+      optimizations).
 
     * A `constant value pattern` works like the literal but for certain named
       constants. Note that it must be a qualified (dotted) name, given the
-      possible ambiguity with a capture pattern. It looks like ``Color.RED`` and
-      only matches values equal to the corresponding value. It never binds.
+      possible ambiguity with a capture pattern. It looks like ``Color.RED``
+      and only matches values equal to the corresponding value. It never
+      binds.
 
-    * A `sequence pattern` looks like ``[a, *rest, b]`` and is similar to a list
-      unpacking. An important difference is that the elements nested within it
-      can be any kind of patterns, not just names or sequences. It matches only
-      sequences of appropriate length, as long as all the sub-patterns also
-      match. It makes all the bindings of its sub-patterns.
+    * A `sequence pattern` looks like ``[a, *rest, b]`` and is similar to a
+      list unpacking. An important difference is that the elements nested
+      within it can be any kind of patterns, not just names or sequences. It
+      matches only sequences of appropriate length, as long as all the
+      sub-patterns also match. It makes all the bindings of its sub-patterns.
 
-    * A `mapping pattern` looks like ``{"user": u, "emails": [*es]}``. It matches
-      mappings with at least the set of provided keys, and if all the
+    * A `mapping pattern` looks like ``{"user": u, "emails": [*es]}``. It
+      matches mappings with at least the set of provided keys, and if all the
       sub-patterns match their corresponding values. It binds whatever the
-      sub-patterns bind while matching with the values corresponding to the keys.
-      Adding **rest at the end of the pattern to capture extra items is allowed.
+      sub-patterns bind while matching with the values corresponding to the
+      keys. Adding **rest at the end of the pattern to capture extra items
+      is allowed.
 
-    * A `class pattern` is similar to the above but matches attributes instead of
-      keys. It looks like ``datetime.date(year=y, day=d)``. It matches instances
-      of the given type, having at least the specified attributes, as long as the
-      attributes match with the corresponding sub-patterns. It binds whatever the
-      sub-patterns bind when matching with the values of the given attributes. An
-      optional protocol also allows matching positional arguments.
+    * A `class pattern` is similar to the above but matches attributes
+      instead of keys. It looks like ``datetime.date(year=y, day=d)``. It
+      matches instances of the given type, having at least the specified
+      attributes, as long as the attributes match with the corresponding
+      sub-patterns. It binds whatever the sub-patterns bind when matching
+      with the values of the given attributes. An optional protocol also
+      allows matching positional arguments.
 
-    * An `OR pattern` looks like ``[*x] | {"elems": [*x]}``. It matches if any of
-      its sub-patterns match. It uses the binding for the leftmost pattern that
-      matched.
+    * An `OR pattern` looks like ``[*x] | {"elems": [*x]}``. It matches if
+      any of its sub-patterns match. It uses the binding for the leftmost
+      pattern that matched.
 
     * A `walrus pattern` looks like ``d := datetime(year=2020, month=m)``. It
       matches only if its sub-pattern also matches. It binds whatever the
@@ -103,22 +118,15 @@ Use Case - 0x01
 
 >>> status = 404
 >>>
->>> # doctest: +SKIP
-... match status:
-...     case 400:
-...         reason = 'Bad request'
-...     case 401 | 403 | 405:
-...         reason = 'Not allowed'
-...     case 404:
-...         reason = 'Not found'
-...     case 418:
-...         reason = "I'm a teapot"
-...     case _:
-...         reason = 'Unexpected status'
+>>> match status:
+...     case 400:             reason = 'Bad request'
+...     case 401 | 403 | 405: reason = 'Not allowed'
+...     case 404:             reason = 'Not found'
+...     case 418:             reason = "I'm a teapot"
+...     case _:               reason = 'Unexpected status'
 >>>
 >>>
->>> # doctest: +SKIP
-... print(reason)
+>>> print(reason)
 Not found
 
 
@@ -128,16 +136,11 @@ Use Case - 0x02
 
 >>> request = 'GET /index.html HTTP/2.0'
 >>>
->>> # doctest: +SKIP
-... match request.split():
-...     case ['GET', uri, version]:
-...         handle_get(uri)
-...     case ['POST', uri, version]:
-...         handle_post(uri)
-...     case ['PUT', uri, version]:
-...         handle_put(uri)
-...     case ['DELETE', uri, version]:
-...         handle_delete(uri)
+>>> match request.split():
+...     case ['GET', uri, version]:     handle_get(uri)
+...     case ['POST', uri, version]:    handle_post(uri)
+...     case ['PUT', uri, version]:     handle_put(uri)
+...     case ['DELETE', uri, version]:  handle_delete(uri)
 
 
 Use Case - 0x03
@@ -146,12 +149,11 @@ Use Case - 0x03
 
 >>> action = ['move', 'left', 10]
 >>>
->>> # doctest: +SKIP
-... match action:
+>>> match action:
 ...     case ['move', ('up'|'down'|'left'|'right') as direction, value]:
 ...         hero.move(direction, value)
 ...     case ['make_damage', value]:
-...         hero.make_damage(value)
+...         hero.make_damage()
 ...     case ['take_damage', value]:
 ...         hero.take_damage(value)
 
@@ -170,26 +172,19 @@ Use Case - 0x04
 ...     ARROW_RIGHT = 39
 ...     ARROW_DOWN = 40
 >>>
->>> # doctest: +SKIP
-... match keyboard.on_key_press():
-...     case Key.ESC:
-...         game.quit()
-...     case Key.ARROW_LEFT:
-...         game.move_left()
-...     case Key.ARROW_UP:
-...         game.move_up()
-...     case Key.ARROW_RIGHT:
-...         game.move_right()
-...     case Key.ARROW_DOWN:
-...         game.move_down()
+>>> match keyboard.on_key_press():
+...     case Key.ESC:          game.quit()
+...     case Key.ARROW_LEFT:   game.move_left()
+...     case Key.ARROW_UP:     game.move_up()
+...     case Key.ARROW_RIGHT:  game.move_right()
+...     case Key.ARROW_DOWN:   game.move_down()
 ...     case _:
 ...         raise ValueError(f'Unrecognized key')
 
 
 Use Case - 0x05
 ---------------
->>> # doctest: +SKIP
-... def myrange(*args, **kwargs):
+>>> def myrange(*args, **kwargs):
 ...     if kwargs:
 ...         raise TypeError('myrange() takes no keyword arguments')
 ...

@@ -99,7 +99,6 @@ Conditional
     conditional/boolean-identity.rst
     conditional/boolean-operators.rst
     conditional/boolean-membership.rst
-    conditional/boolean-switch.rst
 
 
 Exception
@@ -186,7 +185,6 @@ Functions
     function/recurrence.rst
     function/generators.rst
     function/lambda.rst
-    function/doctest.rst
 
 
 Object Oriented Programming

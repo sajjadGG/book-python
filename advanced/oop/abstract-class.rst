@@ -280,7 +280,7 @@ Problem - Despite having defined property, the order of decorators (``abstractme
 
 
 Use Case - 0x01
----------
+---------------
 Abstract Class:
 
 >>> from abc import ABC, abstractmethod
@@ -383,4 +383,3 @@ Assignments
 .. literalinclude:: assignments/oop_abstract_d.py
     :caption: :download:`Solution <assignments/oop_abstract_d.py>`
     :end-before: # Solution
-
