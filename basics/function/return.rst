@@ -144,10 +144,10 @@ Return Nested Sequence
 ----------------------
 >>> def myfunction():
 ...     return [('Mark', 'Watney'),
-...             {'Jan Twardowski', 'Melissa Lewis'},
-...             {'astro': 'Иван Иванович', 'agency': {'name': 'Roscosmos'}},
-...             {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini')},
-...             {'astro': 'Martinez', 'missions': (list(), tuple(), set())}]
+...             {'Mark Watney', 'Melissa Lewis', 'Rick Martinez'},
+...             {'astro': 'Mark Watney', 'agency': {'name': 'NASA'}},
+...             {'astro': 'Mark Watney', 'missions': ['Ares1', 'Ares3']},
+...             {'astro': 'Mark Watney', 'medals': (list(), tuple(), set())}]
 
 
 Return None

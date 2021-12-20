@@ -110,50 +110,50 @@ Hello world
 
 Concat Problem
 --------------
->>> 'Jan' + 'Twardowski'
-'JanTwardowski'
+>>> 'Mark' + 'Watney'
+'MarkWatney'
 
->>> 'Jan' + ' ' + 'Twardowski'
-'Jan Twardowski'
+>>> 'Mark' + ' ' + 'Watney'
+'Mark Watney'
 
->>> 'Jan Twardowski'
-'Jan Twardowski'
+>>> 'Mark Watney'
+'Mark Watney'
 
 
 Use Case - 0x01
 ---------------
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
 >>>
 >>> firstname + lastname
-'JanTwardowski'
+'MarkWatney'
 
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
 >>>
 >>> firstname + ' ' + lastname
-'Jan Twardowski'
+'Mark Watney'
 
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
 >>>
 >>> f'{firstname} {lastname}'
-'Jan Twardowski'
+'Mark Watney'
 
 
 Use Case - 0x02
 ---------------
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
 >>>
 >>> 'Hello ' + firstname + ' ' + lastname + '!'
-'Hello Jan Twardowski!'
+'Hello Mark Watney!'
 
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
 >>>
 >>> f'Hello {firstname} {lastname}!'
-'Hello Jan Twardowski!'
+'Hello Mark Watney!'
 
 
 Assignments

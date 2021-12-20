@@ -38,23 +38,23 @@ Tests:
     >>> assert 'Missions' in result.keys(), \
     'Value `Missions` is not in the result keys'
 
-    >>> assert 'Jan' in result['First Name'], \
-    'Value `Jan` is not in the result values'
+    >>> assert 'Mark' in result['First Name'], \
+    'Value `Mark` is not in the result values'
 
-    >>> assert 'Twardowski' in result['Last Name'], \
-    'Value `Twardowski` is not in the result values'
+    >>> assert 'Watney' in result['Last Name'], \
+    'Value `Watney` is not in the result values'
 
-    >>> assert 'Apollo' in result['Missions'], \
-    'Value `Apollo` is not in the result values'
+    >>> assert 'Ares1' in result['Missions'], \
+    'Value `Ares1` is not in the result values'
 
-    >>> assert 'Artemis' in result['Missions'], \
-    'Value `Artemis` is not in the result values'
+    >>> assert 'Ares3' in result['Missions'], \
+    'Value `Ares3` is not in the result values'
 """
 
 DATA = """
-    First Name: Jan
-    Last Name: Twardowski
-    Missions: Apollo, Artemis
+    First Name: Mark
+    Last Name: Watney
+    Missions: Ares1, Ares3
 """
 
 # dict[str,str|list]: with First Name, Last Name and Missions as keys
@@ -62,7 +62,7 @@ result = ...
 
 # Solution
 result = {
-    'First Name': 'Jan',
-    'Last Name': 'Twardowski',
-    'Missions': ['Apollo', 'Artemis'],
+    'First Name': 'Mark',
+    'Last Name': 'Watney',
+    'Missions': ['Ares1', 'Ares3'],
 }

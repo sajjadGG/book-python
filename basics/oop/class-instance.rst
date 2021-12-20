@@ -72,7 +72,7 @@ and two of a ``Cosmonaut`` class):
 >>> mark_watney = SeniorAstronaut()
 >>> melissa_lewis = SeniorAstronaut()
 >>> ivan_ivanovich = SeniorCosmonaut()
->>> jan_twardowski = SeniorCosmonaut()
+>>> pan_twardowski = SeniorCosmonaut()
 
 >>> class AstronautEngineer:
 ...     pass
@@ -86,8 +86,8 @@ and two of a ``Cosmonaut`` class):
 >>>
 >>> mark_watney = AstronautScientist()
 >>> melissa_lewis = AstronautScientist()
->>> jose_jimenez = AstronautEngineer()
->>> jan_twardowski = AstronautPilot()
+>>> rick_martinez = AstronautPilot()
+>>> alex_vogel = AstronautEngineer()
 
 
 Use Case - 0x01

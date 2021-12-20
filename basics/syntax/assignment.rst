@@ -38,7 +38,7 @@ Although it works for two words, it could be hard to read for three or more:
 You should always use lowercase letters:
 
 >>> name = 'Mark Watney'
->>> Name = 'Jan Twardowski'
+>>> Name = 'Mark Watney'
 
 Capital letters by convention has different meaning. The code will run without
 errors or warnings, but you can mislead others. Remember code is read by 80%
@@ -81,16 +81,16 @@ Python allows you to change "constants" but it's a bad practice (good IDE will
 tell you):
 
 >>> NAME = 'Mark Watney'
->>> NAME = 'Jan Twardowski'
+>>> NAME = 'Melissa Lewis'
 
 
 Variables vs. Constants
 -----------------------
 * Variables vs. constants - Names are case sensitive
 
->>> name = 'Mark Watney'        # variable
->>> NAME = 'Jan Twardowski'     # constant
->>> Name = 'José Jiménez'       # class
+>>> name = 'Mark Watney'  # variable
+>>> NAME = 'Mark Watney'  # constant
+>>> Name = 'Mark Watney'  # class
 
 Definition of second, minute or hour does not change based on location
 or country (those values should be constants).

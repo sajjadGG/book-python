@@ -27,7 +27,7 @@ Tests:
 
 DATA = 'UL. pana \tTWArdoWskIEGO 3'
 
-# str: Jana Twardowskiego III
+# str: Pana Twardowskiego III
 result = ...
 
 # Solution

@@ -61,7 +61,7 @@ True
 >>> bool(1.0)
 True
 >>>
->>> bool('Jan Twardowski')
+>>> bool('Mark Watney')
 True
 
 

@@ -34,24 +34,24 @@ Tests:
           2035: Ares 3]
 
     >>> crew = Crew([
-    ...     Astronaut('Jan Twardowski', experience=[
-    ...         Mission(1969, 'Apollo 11'),
-    ...         Mission(2024, 'Artemis 3'),
+    ...     Astronaut('Mellisa Lewis', experience=[
+    ...         Mission(2031, 'Ares 1'),
+    ...         Mission(2035, 'Ares 3'),
     ...     ]),
-    ...     Astronaut('José Jiménez'),
     ...     Astronaut('Mark Watney', experience=[
     ...         Mission(2035, 'Ares 3'),
     ...     ]),
+    ...     Astronaut('Rick Martinez'),
     ... ])
 
     >>> print(f'Crew: \\n{crew}')  # doctest: +NORMALIZE_WHITESPACE
     Crew:
-    Jan Twardowski veteran of [
-          1969: Apollo 11,
-          2024: Artemis 3]
-    José Jiménez
+    Mellisa Lewis veteran of [
+          2031: Ares 1,
+          2035: Ares 3]
     Mark Watney veteran of [
           2035: Ares 3]
+    Rick Martinez
 """
 
 

@@ -188,24 +188,24 @@ Use Case - 0x02
 ---------------
 * Passwd
 
->>> line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
+>>> line = 'watney:x:1001:1001:Mark Watney:/home/watney:/bin/bash'
 >>> line = line.split(':')
 >>>
 >>> username = line[0]
 >>> fullname = line[4]
 >>>
 >>> print(username)
-twardowski
+watney
 >>> print(fullname)
-Jan Twardowski
+Mark Watney
 
->>> line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
+>>> line = 'watney:x:1001:1001:Mark Watney:/home/watney:/bin/bash'
 >>> username, _, _, _, fullname, _, _ = line.split(':')
 >>>
 >>> print(username)
-twardowski
+watney
 >>> print(fullname)
-Jan Twardowski
+Mark Watney
 
 
 Use Case - 0x03

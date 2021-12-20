@@ -108,19 +108,19 @@ Skipping Values
 * ``_`` is regular variable name, not a special Python syntax
 * ``_`` by convention is used for data we don't want to access in future
 
->>> _ = 'Jan Twardowski'
+>>> _ = 'Mark Watney'
 >>>
 >>> print(_)
-Jan Twardowski
+Mark Watney
 
->>> line = 'Jan,Twardowski,1,2,3,4,5'
+>>> line = 'Mark,Watney,1,2,3,4,5'
 >>> firstname, lastname, *_ = line.split(',')
 >>>
 >>> print(firstname)
-Jan
+Mark
 >>>
 >>> print(lastname)
-Twardowski
+Watney
 
 >>> line = '4.9,3.1,1.5,0.1,setosa'
 >>> *_, label = line.split(',')
@@ -128,7 +128,7 @@ Twardowski
 >>> print(label)
 setosa
 
->>> line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
+>>> line = 'watney:x:1001:1001:Mark Watney:/home/watney:/bin/bash'
 >>> username, *_, home, _ = line.split(':')
 >>>
 >>> print(username)

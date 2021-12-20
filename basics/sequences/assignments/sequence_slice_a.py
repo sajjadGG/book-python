@@ -52,9 +52,9 @@ Tests:
     >>> example
     'Mark Watney'
     >>> a
-    'Jan Twardowski'
+    'Pan Twardowski'
     >>> b
-    'Jan Twardowski'
+    'Pan Twardowski'
     >>> c
     'Mark Watney'
     >>> d
@@ -64,24 +64,24 @@ Tests:
     >>> f
     'Ryan Stone'
     >>> g
-    'Jan Twardowski'
+    'Pan Twardowski'
 """
 
 EXAMPLE = 'lt. Mark Watney, PhD'
-A = 'dr hab. inż. Jan Twardowski, prof. AATC'
-B = 'gen. pil. Jan Twardowski'
+A = 'dr hab. inż. Pan Twardowski, prof. AATC'
+B = 'gen. pil. Pan Twardowski'
 C = 'Mark Watney, PhD'
 D = 'lt. col. ret. Melissa Lewis'
 E = 'dr n. med. Ryan Stone'
 F = 'Ryan Stone, MD-PhD'
-G = 'lt. col. Jan Twardowski\t'
+G = 'lt. col. Pan Twardowski\t'
 
 example = EXAMPLE[4:-5]
 
-# str: expected result: 'Jan Twardowski'
+# str: expected result: 'Pan Twardowski'
 a = ...
 
-# str: expected result: 'Jan Twardowski'
+# str: expected result: 'Pan Twardowski'
 b = ...
 
 # str: expected result: 'Mark Watney'
@@ -96,7 +96,7 @@ e = ...
 # str: expected result: 'Ryan Stone'
 f = ...
 
-# str: expected result: 'Jan Twardowski'
+# str: expected result: 'Pan Twardowski'
 g = ...
 
 # Solution

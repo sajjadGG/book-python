@@ -37,12 +37,12 @@ Duplicates
 Duplicating items are overridden by latter:
 
 >>> data = {
+...     'commander': 'Mark Watney',
 ...     'commander': 'Melissa Lewis',
-...     'commander': 'Jan Twardowski'
 ... }
 >>>
 >>> data
-{'commander': 'Jan Twardowski'}
+{'commander': 'Mark Watney'}
 
 
 Dict vs Set

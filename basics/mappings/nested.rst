@@ -31,8 +31,8 @@ Mixed
 >>> data = {
 ...     'date': '1969-07-21',
 ...     'age': 42,
-...     'astronaut': {'name': 'Jan Twardowski', 'medals': {'Medal of Honor', 'Purple Heart'}},
-...     'agency': ['POLSA', 'Roscosmos', 'ESA'],
+...     'astronaut': {'name': 'Mark Watney', 'medals': {'Medal of Honor', 'Purple Heart'}},
+...     'agency': ['NASA', 'ESA', 'POLSA', 'Roscosmos'],
 ...     'location': ('Baikonur', 'Johnson Space Center'),
 ... }
 

@@ -33,12 +33,12 @@ Recap information about dict keys collision. Duplicating items are overridden
 by the latter:
 
 >>> data = {
+...     'commander': 'Mark Watney',
 ...     'commander': 'Melissa Lewis',
-...     'commander': 'Jan Twardowski'
 ... }
 >>>
 >>> data
-{'commander': 'Jan Twardowski'}
+{'commander': 'Melissa Lewis'}
 
 While generating ``dict`` with unique keys, there are no collisions:
 

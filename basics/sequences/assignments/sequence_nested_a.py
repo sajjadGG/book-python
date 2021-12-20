@@ -9,14 +9,14 @@ English:
     1. Create nested list `result` with elements:
         a. tuple: 1, 2, 3
         b. list: 1.1, 2.2, 3.3
-        c. set: 'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'
+        c. set: 'Mark Watney', 'Melissa Lewis', 'Rick Martinez'
     2. Run doctests - all must succeed
 
 Polish:
     1. Stwórz zagnieżdżoną listę `result` z elementami:
         a. tuple: 1, 2, 3
         b. list: 1.1, 2.2, 3.3
-        c. set: 'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'
+        c. set: 'Mark Watney', 'Melissa Lewis', 'Rick Martinez'
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -33,16 +33,16 @@ Tests:
 
     >>> assert (1, 2, 3) in result
     >>> assert [1.1, 2.2, 3.3] in result
-    >>> assert {'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'} in result
+    >>> assert {'Mark Watney', 'Melissa Lewis', 'Rick Martinez'} in result
 """
 
 # list[tuple|list|set]: with tuple 1, 2, 3 and list 1.1, 2.2, 3.3
-# and set 'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'
+# and set 'Mark Watney', 'Melissa Lewis', 'Rick Martinez'
 result = ...
 
 # Solution
 result = [
     (1, 2, 3),
     [1.1, 2.2, 3.3],
-    {'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'},
+    {'Mark Watney', 'Melissa Lewis', 'Rick Martinez'},
 ]

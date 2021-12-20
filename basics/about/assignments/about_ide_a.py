@@ -25,6 +25,17 @@ Polish:
     5. Czym się różni `Distraction Free Mode` od `Full Screen`
     6. Ustaw Scope tak, aby ukryć katalog z Virtualenv
     7. Uruchom doctesty - wszystkie muszą się powieść
+
+Tests:
+    >>> sys.tracebacklimit = 0
+    >>> assert sys.version_info > (3, 8, 0), \
+    'Python 3.8+ is required'
 """
+
+
+import sys
+
+print('Your Python version:', sys.version[:6])
+
 
 # Solution

@@ -6,8 +6,8 @@ AttributeError
 --------------
 Attribute reference or assignment fails:
 
->>> name = 'Jan'
->>> name.append('Twardowski')
+>>> name = 'Mark'
+>>> name.append('Watney')
 Traceback (most recent call last):
 AttributeError: 'str' object has no attribute 'append'
 
@@ -136,4 +136,3 @@ ValueError: could not convert string to float: 'one'
 >>> int('one')
 Traceback (most recent call last):
 ValueError: invalid literal for int() with base 10: 'one'
-

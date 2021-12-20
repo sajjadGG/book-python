@@ -59,12 +59,12 @@ Control Flow
 ------------
 * Use parenthesis for explicit order
 
->>> firstname = 'José'
->>> lastname = 'Jiménez'
+>>> firstname = 'Pan'
+>>> lastname = 'Twardowski'
 >>>
 >>> if (firstname == 'Mark' and lastname == 'Watney') \
-...         or (firstname == 'Jan' and lastname == 'Twardowski') \
-...         or (firstname == 'Melissa' and lastname == 'Lewis'):
+...         or (firstname == 'Melissa' and lastname == 'Lewis') \
+...         or (firstname == 'Rick' and lastname == 'Martinez'):
 ...
 ...     print('Hello astronaut')
 ... else:

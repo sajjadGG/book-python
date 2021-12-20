@@ -46,8 +46,8 @@ Traceback (most recent call last):
 NameError: name 'NIL' is not defined
 
 
-Identity Check
---------------
+Check If None
+-------------
 * ``x is None`` - ``x`` is the same object as ``y``
 * ``x is not None`` - ``x`` is not the same object as ``y``
 
@@ -60,12 +60,8 @@ True
 >>> data is not None
 False
 
-
-Value Check
------------
 * Do not use ``==`` or ``!=`` to check ``None`` values
 * It works, but it is a subject to change
-
 
 >>> data = None
 >>>
@@ -86,8 +82,7 @@ False
 
 >>> bool(False)
 False
->>>
->>>
+
 >>> None == False
 False
 >>>
@@ -95,7 +90,20 @@ False
 False
 
 
+
 Use Case - 0x01
+---------------
+>>> adult = False  # Person is not adult
+>>> adult = None   # We don't know is person is adult
+
+
+Use Case - 0x02
+---------------
+>>> age = False  # False is invalid in this context
+>>> age = None   # Age is unknown
+
+
+Use Case - 0x03
 ---------------
 >>> firstname = 'Melissa'
 >>> lastname = 'Lewis'

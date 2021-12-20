@@ -105,18 +105,18 @@ versicolor -> 5.7
 Mixed
 -----
 >>> DATA = [(1, 2),
-...         ('name', 'Jan Twardowski'),
-...         ('species', ['setosa', 'versicolor', 'virginica']),
-...         ((1, 2), ['Johnson Space Center', 'Kennedy Space Center']),
-...         (['NASA', 'ESA', 'Roscosmos'], 1)]
+...         ('name', 'Mark Watney'),
+...         ('agency', ['NASA', 'ESA', 'Roscosmos']),
+...         ((1, 2), ['botanist', 'commander', 'pilot']),
+...         (['Ares1', 'Are2', 'Ares3'], 1)]
 >>>
 >>> for first, second in DATA:
 ...     print(f'{first} -> {second}')
 1 -> 2
-name -> Jan Twardowski
-species -> ['setosa', 'versicolor', 'virginica']
-(1, 2) -> ['Johnson Space Center', 'Kennedy Space Center']
-['NASA', 'ESA', 'Roscosmos'] -> 1
+name -> Mark Watney
+agency -> ['NASA', 'ESA', 'Roscosmos']
+(1, 2) -> ['botanist', 'commander', 'pilot']
+['Ares1', 'Are2', 'Ares3'] -> 1
 
 
 Assignments
