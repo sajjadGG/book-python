@@ -16,20 +16,25 @@ Polish:
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * `str.split()` without any argument
+    * `str.split()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(ip)
-    <class 'str'>
-    >>> type(hosts)
-    <class 'list'>
+    >>> assert ip is not Ellipsis, \
+    'Assign result to variable: `ip`'
+    >>> assert hosts is not Ellipsis, \
+    'Assign result to variable: `hosts`'
+
+    >>> assert type(ip) is str
+    >>> assert type(hosts) is list
     >>> assert all(type(host) is str for host in hosts)
     >>> '' not in hosts
     True
+
     >>> ip
     '10.13.37.1'
+
     >>> hosts
     ['nasa.gov', 'esa.int', 'roscosmos.ru']
 """

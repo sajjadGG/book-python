@@ -24,7 +24,7 @@ Tests:
     >>> assert ip is not Ellipsis, \
     'Assign result to variable: `ip`'
     >>> assert host is not Ellipsis, \
-    'Assign result to variable: `hosts`'
+    'Assign result to variable: `host`'
     >>> assert type(ip) is str, \
     'Variable `ip` has invalid type, should be str'
     >>> assert type(host) is str, \

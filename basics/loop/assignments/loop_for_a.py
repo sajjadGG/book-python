@@ -7,11 +7,13 @@
 
 English:
     1. Count occurrences of each color
-    2. Run doctests - all must succeed
+    2.
+    3. Run doctests - all must succeed
 
 Polish:
     1. Zlicz wystąpienia każdego z kolorów
-    2. Uruchom doctesty - wszystkie muszą się powieść
+    2. Nie używaj `list.count()`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

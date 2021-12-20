@@ -18,6 +18,11 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert header is not Ellipsis, \
+    'Assign result to variable: `header`'
+    >>> assert data is not Ellipsis, \
+    'Assign result to variable: `data`'
+
     >>> assert len(header) > 0
     >>> assert len(data) > 0
 
@@ -43,7 +48,6 @@ Tests:
      (6.3, 2.9, 5.6, 1.8, 'virginica'),
      (6.4, 3.2, 4.5, 1.5, 'versicolor'),
      (4.7, 3.2, 1.3, 0.2, 'setosa')]
-
 """
 
 DATA = [
