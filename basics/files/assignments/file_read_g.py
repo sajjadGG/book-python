@@ -105,6 +105,7 @@ nobody::60001:
 noaccess::60002:
 nogroup::65534:"""
 
+
 CONTENT_PASSWD = """##
 # `/etc/passwd` structure:
 #   - Username
