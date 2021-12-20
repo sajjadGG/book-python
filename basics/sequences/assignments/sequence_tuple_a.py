@@ -10,7 +10,7 @@ English:
         a. `result_a` with elements: 1, 2, 3
         b. `result_b` with elements: 1.1, 2.2, 3.3
         c. `result_c` with elements: 'a', 'b', 'c'
-        d. `result_d` with elements: True, False
+        d. `result_d` with elements: True, False, True
         e. `result_e` with elements: 1, 2.2, True, 'a'
     2. Run doctests - all must succeed
 
@@ -54,8 +54,8 @@ Tests:
     'Variable `result_b` has invalid value, should be (1.1, 2.2, 3.3)'
     >>> assert result_c == ('a', 'b', 'c'), \
     'Variable `result_c` has invalid value, should be ("a", "b", "c")'
-    >>> assert result_d == (True, False), \
-    'Variable `result_d` has invalid value, should be (True, False)'
+    >>> assert result_d == (True, False, True), \
+    'Variable `result_d` has invalid value, should be (True, False, True)'
     >>> assert result_e == (1, 2.2, True, 'a'), \
     'Variable `result_e` has invalid value, should be (1, 2.2, True, "a")'
 """
@@ -69,7 +69,7 @@ result_b = ...
 # tuple[str]: with elements: 'a', 'b', 'c'
 result_c = ...
 
-# tuple[bool]: with elements: True, False
+# tuple[bool]: with elements: True, False, True
 result_d = ...
 
 # tuple[int|float|bool|str]: with elements: 1, 2.2, True, 'a'
@@ -79,5 +79,5 @@ result_e = ...
 result_a = (1, 2, 3)
 result_b = (1.1, 2.2, 3.3)
 result_c = ('a', 'b', 'c')
-result_d = (True, False)
+result_d = (True, False, True)
 result_e = (1, 2.2, True, 'a')

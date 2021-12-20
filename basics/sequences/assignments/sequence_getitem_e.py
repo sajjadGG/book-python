@@ -13,7 +13,7 @@ English:
        a. Use only indexes (`getitem`)
        b. Do not use `str.split()`, `slice`, `for`, `while` or any other
           control-flow statement
-       c. You can use copy and paste and/or vertical select (`alt`)
+       c. You can use copy and paste and/or vertical select `alt`
     3. Run doctests - all must succeed
 
 Polish:
@@ -24,7 +24,7 @@ Polish:
        a. Korzystaj tylko z indeksów (`getitem`)
        b. Nie używaj `str.split()`, `slice`, `for`, `while` lub
           jakiejkolwiek innej instrukcji sterującej
-       c. Możesz użyć kopiowania i wklejania lub/i zaznaczania pioniwego (`alt`)
+       c. Możesz użyć kopiowania i wklejania lub/i zaznaczania pioniwego `alt`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
@@ -90,4 +90,3 @@ data.append(DATA[6])
 data.append(DATA[7])
 data.append(DATA[8])
 data.append(DATA[9])
-
