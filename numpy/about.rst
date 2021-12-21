@@ -40,7 +40,7 @@ Check version:
     import numpy as np
 
     np.__version__
-    # '1.19.1'
+    # '1.21.1'
 
 
 Further Reading

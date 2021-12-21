@@ -79,28 +79,53 @@ Bits and Bytes
 
 Calculates a two's complement integer from the given input value's bits:
 
-.. code-block:: python
+>>> def twos_complement(value: int, num_bits: int) -> int:
+...     mask = 2 ** (num_bits - 1)
+...     return -(value & mask) + (value & ~mask)
 
-    def twos_complement(value: int, num_bits: int) -> int:
-        mask = 2 ** (num_bits - 1)
-        return -(value & mask) + (value & ~mask)
+>>> import numpy as np
+>>>
+>>>
+>>> np.binary_repr(0, 8)  # number 0 using 8-bit integer representation
+'00000000'
+>>>
+>>> np.binary_repr(1, 8)  # number 1 using 8-bit integer representation
+'00000001'
+>>>
+>>> np.binary_repr(2, 8)  # number 2 using 8-bit integer representation
+'00000010'
+>>>
+>>> np.binary_repr(3, 8)  # number 3 using 8-bit integer representation
+'00000011'
+>>>
+>>> np.binary_repr(-1, 8)  # number -1 using 8-bit integer representation
+'11111111'
+>>>
+>>> np.binary_repr(-2, 8)  # number -2 using 8-bit integer representation
+'11111110'
+>>>
+>>> np.binary_repr(-3, 8)  # number -3 using 8-bit integer representation
+'11111101'
 
-.. code-block:: python
 
-    # decimal
-    69
-
-    # np.int8
-    01000101
-
-    # np.int16
-    00000000 01000101
-
-    # np.int32
-    00000000 00000000 00000000 01000101
-
-    # np.int64
-    00000000 00000000 00000000 00000000 00000000 00000000 00000000 01000101
+Comparison
+----------
+>>> import numpy as np
+>>>
+>>>
+>>> data = 69
+>>>
+>>> np.binary_repr(data, 8)  # np.int8
+'01000101'
+>>>
+>>> np.binary_repr(data, 16)  # np.int16
+'0000000001000101'
+>>>
+>>> np.binary_repr(data, 32)  # np.int32
+'00000000000000000000000001000101'
+>>>
+>>> np.binary_repr(data, 64)  # np.int64
+'0000000000000000000000000000000000000000000000000000000001000101'
 
 
 Signed int
@@ -121,38 +146,34 @@ Signed int
     "``np.int32``", "32", "4,294,967,296", "-2,147,483,648", "2,147,483,646"
     "``np.int64``", "64", "18,446,744,073,709,551,616", "-9,223,372,036,854,775,808", "9,223,372,036,854,775,807"
 
-.. code-block:: python
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([1, 2, 3])
+>>>
+>>> type(a)
+<class 'numpy.np.ndarray'>
+>>>
+>>> a.dtype
+dtype('int64')
 
-    import numpy as np
-
-
-    a = np.array([1, 2, 3])
-
-    type(a)
-    # <class 'numpy.np.ndarray'>
-
-    a.dtype
-    # dtype('int64')
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1., 2., 3.],
-                  [4., 5., 6.]])
-
-    a.astype(int)
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
-
-    a.astype(np.int8)
-    # array([[1, 2, 3],
-    #        [4, 5, 6]], dtype=int8)
-
-    a.astype(np.int64)
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1., 2., 3.],
+>>>               [4., 5., 6.]])
+>>>
+>>> a.astype(int)
+array([[1, 2, 3],
+       [4, 5, 6]])
+>>>
+>>> a.astype(np.int8)
+array([[1, 2, 3],
+       [4, 5, 6]], dtype=int8)
+>>>
+>>> a.astype(np.int64)
+array([[1, 2, 3],
+       [4, 5, 6]])
 
 
 Unsigned int
@@ -172,34 +193,30 @@ Unsigned int
     "``np.uint32``", "32", "4,294,967,296", "0", "4,294,967,295"
     "``np.uint64``", "64", "18,446,744,073,709,551,616", "0", "18,446,744,073,709,551,615"
 
-.. code-block:: python
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([-1, 0, 1])
+>>>
+>>> type(a)
+<class 'numpy.np.ndarray'>
+>>>
+>>> a.dtype
+dtype('int64')
 
-    import numpy as np
-
-
-    a = np.array([-1, 0, 1])
-
-    type(a)
-    # <class 'numpy.np.ndarray'>
-
-    a.dtype
-    # dtype('int64')
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([-1, 0, 1])
-
-    a.astype(int)
-    # array([-1, 0, 1])
-
-    a.astype(np.uint8)
-    # array([255, 0, 1], dtype=uint8)
-
-    a.astype(np.uint64)
-    # array([18446744073709551615, 0, 1], dtype=uint64)
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([-1, 0, 1])
+>>>
+>>> a.astype(int)
+array([-1, 0, 1])
+>>>
+>>> a.astype(np.uint8)
+array([255, 0, 1], dtype=uint8)
+>>>
+>>> a.astype(np.uint64)
+array([18446744073709551615, 0, 1], dtype=uint64)
 
 
 float
@@ -218,46 +235,42 @@ float
     "``np.float64``", "64", "±0.000000000000000×10−383", "±9.999999999999999×10384"
     "``np.float128``", "64", "±0.000000000000000000000000000000000×10−6143", "±9.999999999999999999999999999999999×106144"
 
-.. code-block:: python
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([1., 2., 3.])
+>>>
+>>> type(a)
+<class 'numpy.np.ndarray'>
+>>>
+>>> a.dtype
+dtype('float64')
 
-    import numpy as np
-
-
-    a = np.array([1., 2., 3.])
-
-    type(a)
-    # <class 'numpy.np.ndarray'>
-
-    a.dtype
-    # dtype('float64')
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
-
-    a.astype(float)
-    # array([[1., 2., 3.],
-    #        [4., 5., 6.]])
-
-    a.astype(np.float16)
-    # array([[1., 2., 3.],
-    #        [4., 5., 6.]], dtype=float16)
-
-    a.astype(np.float32)
-    # array([[1., 2., 3.],
-    #        [4., 5., 6.]], dtype=float32)
-
-    a.astype(np.float64)
-    # array([[1., 2., 3.],
-    #        [4., 5., 6.]])
-
-    a.astype(np.float128)
-    # array([[1., 2., 3.],
-    #        [4., 5., 6.]], dtype=float128)
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 2, 3],
+>>>               [4, 5, 6]])
+>>>
+>>> a.astype(float)
+array([[1., 2., 3.],
+       [4., 5., 6.]])
+>>>
+>>> a.astype(np.float16)
+array([[1., 2., 3.],
+       [4., 5., 6.]], dtype=float16)
+>>>
+>>> a.astype(np.float32)
+array([[1., 2., 3.],
+       [4., 5., 6.]], dtype=float32)
+>>>
+>>> a.astype(np.float64)
+array([[1., 2., 3.],
+       [4., 5., 6.]])
+>>>
+>>> a.astype(np.float128)
+array([[1., 2., 3.],
+       [4., 5., 6.]], dtype=float128)
 
 
 complex
@@ -267,66 +280,56 @@ complex
 * ``np.complex128``
 * ``np.complex256``
 
-.. code-block:: python
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([1+2j])
+>>>
+>>> a.dtype
+dtype('complex128')
 
-    import numpy as np
-
-
-    a = np.array([1+2j])
-
-    a.dtype
-    # dtype('complex128')
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1.1+2.2j])
-    # array([1.1+2.2j])
-
-    a.dtype
-    # dtype('complex128')
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([1.1+2.2j])
+array([1.1+2.2j])
+>>>
+>>> a.dtype
+dtype('complex128')
 
 
 bool
 ----
-.. code-block:: python
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([True, False, True])
+>>>
+>>> a.dtype
+dtype('bool')
 
-    import numpy as np
-
-
-    a = np.array([True, False, True])
-
-    a.dtype
-    # dtype('bool')
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 0, 1], bool)
-
-    a.dtype
-    # dtype('bool')
-
-    repr(a)
-    # array([ True, False,  True])
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([1, 0, 1], bool)
+>>>
+>>> a.dtype
+dtype('bool')
+>>>
+>>> repr(a)
+array([ True, False,  True])
 
 
 str
 ---
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.array(['a', 'b', 'c'])
-    # array(['a', 'b', 'c'], dtype='<U1')
-
-    np.array(['one', 'two', 'three'])
-    # array(['one', 'two', 'three'], dtype='<U5')
+>>> import numpy as np
+>>>
+>>>
+>>> np.array(['a', 'b', 'c'])
+array(['a', 'b', 'c'], dtype='<U1')
+>>>
+>>> np.array(['one', 'two', 'three'])
+array(['one', 'two', 'three'], dtype='<U5')
 
 
 Assignments

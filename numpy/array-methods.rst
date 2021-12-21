@@ -4,26 +4,23 @@ Array Methods
 
 Copy
 ----
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3])
-    b = a
-    c = a.copy()
-
-    a[0] = 99
-
-    a
-    # array([99, 2, 3])
-
-    b
-    # array([99, 2, 3])
-
-    c
-    # array([1, 2, 3])
-
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([1, 2, 3])
+>>> b = a
+>>> c = a.copy()
+>>>
+>>> a[0] = 99
+>>>
+>>> a
+array([99, 2, 3])
+>>>
+>>> b
+array([99, 2, 3])
+>>>
+>>> c
+array([1, 2, 3])
 
 .. figure:: img/array-methods-deepcopy-vs-reference-1.png
 .. figure:: img/array-methods-deepcopy-vs-reference-2.png
@@ -31,52 +28,38 @@ Copy
 
 Put
 ---
+>>> import numpy as np
 
 One dimensional:
 
-.. code-block:: python
+>>> a = np.array([1, 2, 3, 4, 5, 6])
+>>>
+>>> a.put([0, 2, 5], 99)
+>>> a
+array([99,  2, 99,  4,  5, 99])
 
-    import numpy as np
-
-
-    a = np.array([1, 2, 3, 4, 5, 6])
-
-    a.put([0, 2, 5], 99)
-    a
-    # array([99,  2, 99,  4,  5, 99])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3, 4, 5, 6])
-    b = np.array([99, 88, 77, 66, 55, 44, 33, 22])
-
-    a.put([0, 2, 5], b)
-    a
-    # array([99,  2, 88,  4,  5, 77])
+>>> a = np.array([1, 2, 3, 4, 5, 6])
+>>> b = np.array([99, 88, 77, 66, 55, 44, 33, 22])
+>>>
+>>> a.put([0, 2, 5], b)
+>>> a
+array([99,  2, 88,  4,  5, 77])
 
 Two dimensional:
 
 * Equivalent to ``a.flat[indexes] = value``
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    b = np.array([99, 88, 77, 66, 55, 44, 33, 22])
-
-    a.put([0, 2, 5], b)
-    a
-    # array([[99,  2, 88],
-    #        [ 4,  5, 77],
-    #        [ 7,  8,  9]])
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]])
+>>>
+>>> b = np.array([99, 88, 77, 66, 55, 44, 33, 22])
+>>>
+>>> a.put([0, 2, 5], b)
+>>> a
+array([[99,  2, 88],
+       [ 4,  5, 77],
+       [ 7,  8,  9]])
 
 
 Fill

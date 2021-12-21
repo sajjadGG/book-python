@@ -346,13 +346,14 @@ Recap
 >>> b = np.arange(0, 10, 2)
 >>> c = np.linspace(0, 10, 100)
 >>> d = np.zeros(shape=(2,3))
->>> e = np.ones(shape=(2,3))
->>> f = np.empty(shape=(2,3))
->>> g = np.full((2, 2), np.nan)
->>> h = np.zeros_like(b)
->>> i = np.ones_like(b)
->>> j = np.empty_like(b)
->>> k = np.identity(4)
+>>> e = np.zeros_like(a)
+>>> f = np.ones(shape=(2,3))
+>>> g = np.ones_like(a)
+>>> h = np.empty(shape=(2,3))
+>>> i = np.empty_like(a)
+>>> j = np.full((2, 2), np.nan)
+>>> k = np.full_like(a, np.nan)
+>>> l = np.identity(4)
 
 
 Performance
