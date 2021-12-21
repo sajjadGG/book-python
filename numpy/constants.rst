@@ -4,115 +4,101 @@ Built-ins
 
 Pi number
 ---------
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.pi
-    # 3.1415926535897931
+>>> import numpy as np
+>>>
+>>>
+>>> np.pi
+3.1415926535897931
 
 
 Euler number
 ------------
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.e
-    # 2.7182818284590451
+>>> import numpy as np
+>>>
+>>>
+>>> np.e
+2.7182818284590451
 
 
 Infinite
 --------
-.. code-block:: python
+>>> import numpy as np
 
-    import numpy as np
+Numpy built-in:
 
-    np.inf
-    # inf
+>>> np.inf
+inf
+>>>
+>>> np.Infinity
+inf
+>>>
+>>> np.Inf
+inf
+>>>
+>>> np.PINF
+inf
+>>>
+>>> np.NINF
+-inf
+>>>
+>>> -np.inf
+-inf
+>>>
+>>> -np.Inf
+-inf
+>>>
+>>> -np.Infinity
+-inf
 
-    np.Infinity
-    # inf
+Python built-in:
 
-    np.Inf
-    # inf
+>>> float('Inf')
+inf
+>>>
+>>> float('Infinity')
+inf
+>>>
+>>> float('inf')
+inf
+>>>
+>>> np.inf == float('inf')
+True
+>>>
+>>> np.inf is float('inf')
+False
 
-    np.PINF
-    # inf
+Mathematical operations:
 
-    np.NINF
-    # -inf
+>>> np.inf + 1
+inf
+>>> np.inf + np.inf
+inf
+>>> np.inf - np.inf
+nan
+>>> np.inf - np.nan
+nan
+>>>
+>>> np.inf * np.inf
+inf
+>>> np.inf / np.inf
+nan
+>>>
+>>> 0 / np.inf
+0.0
+>>> np.inf / 0
+Traceback (most recent call last):
+ZeroDivisionError: float division by zero
 
-    -np.inf
-    # -inf
+Check for infinite values:
 
-    -np.Inf
-    # -inf
-
-    -np.Infinity
-    # -inf
-
-.. code-block:: python
-
-    import numpy as np
-
-    float('Inf')
-    # inf
-
-    float('Infinity')
-    # inf
-
-    float('inf')
-    # inf
-
-    np.inf == float('inf')
-    # True
-
-    np.inf is float('inf')
-    # False
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.inf + 1          # inf
-    np.inf + np.inf     # inf
-    np.inf - np.inf     # nan
-    np.inf - np.nan     # nan
-
-    np.inf * np.inf     # inf
-    np.inf / np.inf     # nan
-
-    0 / np.inf          # 0.0
-    np.inf / 0          # ZeroDivisionError: float division by zero
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, np.inf])
-    # array([ 1.,  2., inf])
-
-    np.isfinite(a)
-    # array([ True,  True, False])
-
-    np.isinf(a)
-    # array([False, False,  True])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, np.inf])
-    # array([ 1.,  2., inf])
-
-    np.isnan(a)
-    # array([False, False, False])
+>>> a = np.array([1, 2, np.inf])
+array([ 1.,  2., inf])
+>>>
+>>> np.isfinite(a)
+array([ True,  True, False])
+>>>
+>>> np.isinf(a)
+array([False, False,  True])
 
 
 Not-a-Number
@@ -120,88 +106,91 @@ Not-a-Number
 * Special ``float`` value
 * Propagates in calculations
 
-.. code-block:: python
+>>> import numpy as np
 
-    import numpy as np
+Numpy built-in:
 
+>>> np.NaN
+nan
+>>>
+>>> np.NAN
+nan
+>>>
+>>> np.nan
+nan
 
-    np.NaN
-    # nan
+Python built-in:
 
-    np.NAN
-    # nan
+>>> float('nan')
+nan
+>>>
+>>> np.nan is float('nan')
+False
+>>>
+>>> np.nan == float('nan')
+False
+>>>
+>>> np.nan is None
+False
+>>>
+>>> np.nan == None
+False
 
-    np.nan
-    # nan
+Boolean value of NaN:
 
-.. code-block:: python
+>>> bool(None)
+False
+>>>
+>>> bool(np.nan)
+True
 
-    import numpy as np
+Mathematical operations:
 
+>>> np.nan + 1
+nan
+>>> np.nan + np.nan
+nan
+>>> np.nan - np.nan
+nan
+>>> np.nan - np.inf
+nan
+>>>
+>>> np.nan / np.nan
+nan
+>>> 0 / np.nan
+nan
+>>> np.nan / 0
+Traceback (most recent call last):
+ZeroDivisionError: float division by zero
 
-    float('nan')
-    # nan
+Check for NaN values:
 
-    np.nan is float('nan')
-    # False
-
-    np.nan == float('nan')
-    # False
-
-    np.nan is None
-    # False
-
-    np.nan == None
-    # False
-
-.. code-block:: python
-
-    import numpy as np
-
-    bool(None)
-    # False
-
-    bool(np.nan)
-    # True
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.nan + 1          # nan
-    np.nan + np.nan     # nan
-    np.nan - np.nan     # nan
-    np.nan - np.inf     # nan
-
-    np.nan / np.nan     # nan
-    0 / np.nan          # nan
-    np.nan / 0          # ZeroDivisionError: float division by zero
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, np.nan])
-    # array([ 1.,  2., nan])
-
-    np.isnan(a)
-    # array([False, False,  True])
-
-.. code-block:: python
-
-    import numpy as np
+>>> a = np.array([1, 2, np.nan])
+array([ 1.,  2., nan])
+>>>
+>>> np.isnan(a)
+array([False, False,  True])
 
 
-    a = np.array([1, 2, np.nan])
-    # array([ 1.,  2., nan])
+Isinf vs Isnan
+--------------
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([1, 2, np.inf])
+array([ 1.,  2., inf])
+>>>
+>>> np.isnan(a)
+array([False, False, False])
 
-    np.isfinite(a)
-    # array([ True,  True, False])
-
-    np.isinf(a)
-    # array([False, False, False])
+>>> a = np.array([1, 2, np.nan])
+array([ 1.,  2., nan])
+>>>
+>>> np.isfinite(a)
+array([ True,  True, False])
+>>>
+>>> np.isinf(a)
+array([False, False, False])
 
 
 Assignments
