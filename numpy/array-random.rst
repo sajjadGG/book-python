@@ -2,242 +2,248 @@ Array Random
 ============
 
 
+Rationale
+---------
 * Since ``numpy v1.17``: BitGenerator for the PCG-64 (Parallel Congruent Generator 64 bit) pseudo-random number generator
 * Before ``numpy v1.17``: Mersenne Twister algorithm for pseudorandom number generation
+
+
+Pseudorandom Generator
+----------------------
+>>> from time import time
+>>>
+>>>
+>>> def randint(maximum=10):
+...     return int(time()) % maximum
+>>>
+>>>
+>>> randint()  # doctest: +SKIP
+3
+>>> randint()  # doctest: +SKIP
+4
+>>> randint()  # doctest: +SKIP
+5
+>>> randint()  # doctest: +SKIP
+6
+
+>>> from time import time
+>>>
+>>>
+>>> def randint(maximum=10):
+...     cpu_temperature = 52.4123123
+...     return int(time() * cpu_temperature) % maximum
+>>>
+>>>
+>>> randint()  # doctest: +SKIP
+7
+>>> randint()  # doctest: +SKIP
+2
+>>> randint()  # doctest: +SKIP
+5
+>>> randint()  # doctest: +SKIP
+1
+
+>>> from time import time
+>>>
+>>>
+>>> def randint(maximum=10):
+...     cpu_temperature = 52.4123123
+...     fan_speed = 1200
+...     ram_voltage = 1.42321321
+...     network_crc = 9876
+...     return int(time() * cpu_temperature * fan_speed * ram_voltage * network_crc) % maximum
+>>>
+>>>
+>>> randint()  # doctest: +SKIP
+3
+>>> randint()  # doctest: +SKIP
+0
+>>> randint()  # doctest: +SKIP
+2
+>>> randint()  # doctest: +SKIP
+8
 
 
 Seed
 ----
 * Seed the generator
+* Using setting seed to the same value will always generate the same
+  pseudorandom values
 
-.. code-block:: python
-
-    from datetime import datetime
-
-    def seed():
-        timestamp = datetime.now().timestamp()
-        return int(timestamp)
-
-    seed() % 10     # 3
-    seed() % 10     # 4
-    seed() % 10     # 5
-    seed() % 10     # 6
-
-.. code-block:: python
-
-    from datetime import datetime
-
-    def seed():
-        timestamp = datetime.now().timestamp()
-        cpu_temperature = 52.4
-        return int(timestamp + cpu_temperature)
-
-    seed() % 10     # 7
-    seed() % 10     # 2
-    seed() % 10     # 5
-    seed() % 10     # 1
-
-.. code-block:: python
-
-    from datetime import datetime
-
-    def seed():
-        timestamp = datetime.now().timestamp()
-        cpu_temperature = 52.4
-        ram_voltage = 68.8
-        network_card_crc = 9876
-        return int(timestamp + cpu_temperature + ram_voltage + network_card_crc)
-
-    seed() % 10     # 3
-    seed() % 10     # 0
-    seed() % 10     # 2
-    seed() % 10     # 8
-
-.. code-block:: python
-
-    import numpy as np
+>>> import numpy as np
+>>>
+>>>
+>>> np.random.seed(0)
 
 
-    np.random.seed(0)
-
-
-Generate
---------
+Generate Integer
+----------------
 * Random ``int`` from low (inclusive) to high (exclusive)
-* Random ``float`` in the half-open interval ``[0.0, 1.0)``
+
+>>> import numpy as np
+>>> np.random.seed(0)
 
 Generate pseudorandom ``int``:
 
-.. code-block:: python
+>>> np.random.randint(0, 10)
+5
 
-    import numpy as np
+>>> np.random.randint(0, 10, size=5)
+array([0, 3, 3, 7, 9])
+
+>>> np.random.randint(0, 10, size=(2,3))
+array([[3, 5, 2],
+       [4, 7, 6]])
 
 
-    np.random.randint(0, 10)
-    # 5
+Generate Float
+--------------
+* Random ``float`` in the half-open interval ``[0.0, 1.0)``
 
-    np.random.randint(0, 10, size=5)
-    # array([4, 3, 0, 4, 3])
-
-    np.random.randint(0, 10, size=(2,3))
-    # array([[8, 8, 3],
-    #        [8, 2, 8]])
+>>> import numpy as np
+>>> np.random.seed(0)
 
 Generate pseudorandom ``float``:
 
-.. code-block:: python
+>>> np.random.random()
+0.5488135039273248
 
-    import numpy as np
+>>> np.random.random(size=5)
+array([0.71518937, 0.60276338, 0.54488318, 0.4236548 , 0.64589411])
 
-
-    np.random.random()
-    # 0.8472517387841254
-
-    np.random.random(size=5)
-    # array([0.88173536, 0.69253159, 0.72525428, 0.50132438, 0.95608363])
-
-    np.random.random(size=(2,3))
-    # array([[0.69947928, 0.29743695, 0.81379782],
-    #        [0.39650574, 0.8811032 , 0.58127287]])
+>>> np.random.random(size=(2,3))
+array([[0.43758721, 0.891773  , 0.96366276],
+       [0.38344152, 0.79172504, 0.52889492]])
 
 
-Uniform Distribution
---------------------
+Continuous Uniform Distribution
+-------------------------------
 * Results are from the "continuous uniform" distribution over the stated interval
-* Random ``float`` in the half-open interval ``[0.0, 1.0)``
 
 .. figure:: img/random-distribution-uniform.png
 
     Continuous Uniform Distribution :cite:`NumpyUniformDistribution`
 
-.. code-block:: python
+>>> import numpy as np
+>>> np.random.seed(0)
 
-    import numpy as np
+Random ``float`` in the half-open interval ``[0.0, 1.0)``:
 
+>>> np.random.rand(5)
+array([0.5488135 , 0.71518937, 0.60276338, 0.54488318, 0.4236548 ])
 
-    np.random.rand(5)
-    # array([0.5488135 , 0.71518937, 0.60276338, 0.54488318, 0.4236548 ])
+>>> np.random.rand(2,3)
+array([[0.64589411, 0.43758721, 0.891773  ],
+       [0.96366276, 0.38344152, 0.79172504]])
 
-    np.random.rand(2,3)
-    # array([[0.5488135 , 0.71518937, 0.60276338],
-    #        [0.54488318, 0.4236548 , 0.64589411]])
-
-    np.random.rand(3,2)
-    # array([[0.5488135 , 0.71518937],
-    #        [0.60276338, 0.54488318],
-    #        [0.4236548 , 0.64589411]])
+>>> np.random.rand(3,2)
+array([[0.52889492, 0.56804456],
+       [0.92559664, 0.07103606],
+       [0.0871293 , 0.0202184 ]])
 
 
 Normal (Gaussian) Distribution
 ------------------------------
 * Draw pseudorandom samples from a normal (Gaussian) distribution
-* Default:
-
-    * μ - ``loc=0.0``
-    * σ - ``scale=1.0``
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.random.normal()
-    # 0.9500884175255894
-
-    np.random.normal(0.0, 1.0)
-    # 0.4001572083672233
-
-    np.random.normal(loc=0.0, scale=1.0)
-    # -0.977277879876411
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.random.normal(size=5)
-    # array([-1.67215088, 0.65813053, -0.70150614, 0.91452499, 0.71440557])
-
-    np.random.normal(loc=0.0, scale=1.0, size=(2,3))
-    # array([[-0.99090328,  1.01788005,  0.3415874 ],
-    #        [-1.25088622,  0.92525075, -0.90478616]])
 
 .. figure:: img/random-distribution-normal.png
 
     Normal (Gaussian) distribution :cite:`NumpyNormalDistribution`
+
+Defaults:
+
+    * μ - ``loc=0.0``
+    * σ - ``scale=1.0``
+
+>>> import numpy as np
+>>> np.random.seed(0)
+
+Draw pseudorandom samples from a normal (Gaussian) distribution:
+
+>>> np.random.normal()
+1.764052345967664
+
+>>> np.random.normal(0.0, 1.0)
+0.4001572083672233
+
+>>> np.random.normal(loc=0.0, scale=1.0)
+0.9787379841057392
+
+>>> np.random.normal(size=5)
+array([ 2.2408932 ,  1.86755799, -0.97727788,  0.95008842, -0.15135721])
+
+>>> np.random.normal(loc=0.0, scale=1.0, size=(2,3))
+array([[-0.10321885,  0.4105985 ,  0.14404357],
+       [ 1.45427351,  0.76103773,  0.12167502]])
 
 
 Poisson Distribution
 --------------------
 * Draw samples from a Poisson distribution
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.random.poisson(6.0)
-    # 5
-
-    np.random.poisson(lam=6.0)
-    # 5
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.random.poisson(lam=6.0, size=5)
-    # array([5, 7, 3, 5, 6])
-
-    np.random.poisson(lam=6.0, size=(2,3))
-    # array([[4, 9, 7],
-    #        [8, 5, 5]])
-
 .. figure:: img/random-distribution-poisson.png
 
     Poisson distribution :cite:`NumpyPoissonDistribution`
 
+>>> import numpy as np
+>>> np.random.seed(0)
 
-Drawing and Sampling
+Draw samples from a Poisson distribution:
+
+>>> np.random.poisson(6.0)
+11
+
+>>> np.random.poisson(lam=6.0)
+4
+
+>>> np.random.poisson(lam=6.0, size=5)
+array([9, 7, 8, 5, 5])
+
+>>> np.random.poisson(lam=6.0, size=(2,3))
+array([[5, 5, 7],
+       [3, 5, 6]])
+
+
+Random Choice (Draw)
 --------------------
+>>> import numpy as np
+>>> np.random.seed(0)
+
 Choice:
 
-.. code-block:: python
+>>> np.random.choice([1, 2, 3])
+2
 
-    import numpy as np
+>>> np.random.choice([1, 2, 3], size=2)
+array([3, 1])
+
+>>> np.random.choice([1, 2, 3], size=2)
+array([3, 3])
+
+>>> np.random.choice([1, 2, 3], 2, replace=False)
+array([1, 3])
 
 
-    np.random.choice([1, 2, 3])
-    # 2
+Random Sample
+-------------
+* Compatible with Python built-in ``random.random``
 
-    np.random.choice([1, 2, 3], size=2)
-    # array([3, 1])
-
-    np.random.choice([1, 2, 3], size=2)
-    # array([3, 3])
-
-    np.random.choice([1, 2, 3], 2, replace=False)
-    # array([1, 3])
+>>> import numpy as np
+>>> np.random.seed(0)
 
 Sample:
 
-.. code-block:: python
+>>> np.random.sample(size=5)
+array([0.5488135 , 0.71518937, 0.60276338, 0.54488318, 0.4236548 ])
 
-    import numpy as np
+>>> np.random.sample(size=(2,3))
+array([[0.64589411, 0.43758721, 0.891773  ],
+       [0.96366276, 0.38344152, 0.79172504]])
 
-
-    np.random.sample(size=5)
-    # array([0.44792617, 0.09956909, 0.35231166, 0.46924917, 0.84114013])
-
-    np.random.sample(size=(2,3))
-    # array([[0.90464774, 0.03755938, 0.50831545],
-    #        [0.16684751, 0.77905102, 0.8649333 ]])
-
-    np.random.sample(size=(3,2))
-    # array([[0.41139672, 0.13997259],
-    #        [0.03322239, 0.98257496],
-    #        [0.37329075, 0.42007537]])
+>>> np.random.sample(size=(3,2))
+array([[0.52889492, 0.56804456],
+       [0.92559664, 0.07103606],
+       [0.0871293 , 0.0202184 ]])
 
 
 Shuffle
@@ -245,33 +251,28 @@ Shuffle
 * Modify sequence in-place (!!)
 * Multi-dimensional arrays are only shuffled along the first axis
 
+>>> import numpy as np
+>>> np.random.seed(0)
+
 1-dimensional Array:
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3])
-
-    np.random.shuffle(a)
-    # array([3, 1, 2])
+>>> a = np.array([1, 2, 3])
+>>>
+>>> np.random.shuffle(a)
+>>> a
+array([3, 2, 1])
 
 2-dimensional Array:
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    np.random.shuffle(a)
-    # array([[7, 8, 9],
-    #        [1, 2, 3],
-    #        [4, 5, 6]])
+>>> a = np.array([[1, 2, 3],
+>>>               [4, 5, 6],
+>>>               [7, 8, 9]])
+>>>
+>>> np.random.shuffle(a)
+>>> a
+array([[7, 8, 9],
+       [1, 2, 3],
+       [4, 5, 6]])
 
 
 Assignments

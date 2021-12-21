@@ -40,53 +40,37 @@ Rationale
 
 Shape
 -----
-.. code-block:: python
+>>> import numpy as np
 
-    import numpy as np
+1-dimensional:
 
+>>> a = np.array([1, 2, 3])
+>>> a.shape
+(3,)
 
-    a = np.array([1, 2, 3])
+2-dimensional:
 
-    a.shape
-    # (3,)
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6]])
+>>> a.shape
+(2, 3)
 
-.. code-block:: python
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]])
+>>> a.shape
+(3, 3)
 
-    import numpy as np
+3-dimensional:
 
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
-
-    a.shape
-    # (2, 3)
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    a.shape
-    # (3, 3)
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[[ 1,  2,  3],
-                   [ 4,  5,  6],
-                   [ 5,  6,  7]],
-                  [[11, 22, 33],
-                   [44, 55, 66],
-                   [77, 88, 99]]])
-
-    a.shape
-    # (2, 3, 3)
+>>> a = np.array([[[ 1,  2,  3],
+...                [ 4,  5,  6],
+...                [ 5,  6,  7]],
+...               [[11, 22, 33],
+...                [44, 55, 66],
+...                [77, 88, 99]]])
+>>> a.shape
+(2, 3, 3)
 
 
 Reshape
@@ -95,104 +79,90 @@ Reshape
 * Does not modify inplace
 * ``a.reshape(1, 2)`` is equivalent to ``a.reshape((1, 2))``
 
+>>> import numpy as np
 
-.. code-block:: python
+>>> a = np.array([1, 2, 3])
+>>>
+>>> a.reshape(1, 3)
+array([[1, 2, 3]])
+>>>
+>>> a.reshape(3, 1)
+array([[1],
+       [2],
+       [3]])
 
-    import numpy as np
+>>> a = np.array([[1, 2, 3],
+>>>               [4, 5, 6]])
+>>>
+>>> a.reshape(3, 2)
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+>>>
+>>> a.reshape(1, 6)
+array([[1, 2, 3, 4, 5, 6]])
+>>>
+>>> a.reshape(6, 1)
+array([[1],
+       [2],
+       [3],
+       [4],
+       [5],
+       [6]])
+>>>
+>>> a.reshape(5, 2)
+Traceback (most recent call last):
+ValueError: cannot reshape array of size 6 into shape (5,2)
 
-
-    a = np.array([1, 2, 3])
-
-    a.reshape(1, 3)
-    # array([[1, 2, 3]])
-
-    a.reshape(3, 1)
-    # array([[1],
-    #        [2],
-    #        [3]])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
-
-    a.reshape(3, 2)
-    # array([[1, 2],
-    #        [3, 4],
-    #        [5, 6]])
-
-    a.reshape(1, 6)
-    # array([[1, 2, 3, 4, 5, 6]])
-
-    a.reshape(6, 1)
-    # array([[1],
-    #        [2],
-    #        [3],
-    #        [4],
-    #        [5],
-    #        [6]])
-
-    a.reshape(5, 2)
-    # Traceback (most recent call last):
-    # ValueError: cannot reshape array of size 6 into shape (5,2)
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3, 4, 5, 6, 7, 8])
-
-    a.reshape(2, 4)
-    # array([[1, 2, 3, 4],
-    #        [5, 6, 7, 8]])
-
-    a.reshape(2, 4, 1)
-    # array([[[1],
-    #         [2],
-    #         [3],
-    #         [4]],
-    #        [[5],
-    #         [6],
-    #         [7],
-    #         [8]]])
-
-    a.reshape(2, 2, 2)
-    # array([[[1, 2],
-    #         [3, 4]],
-    #        [[5, 6],
-    #         [7, 8]]])
-
-    a.reshape(1, 2, 4)
-    # array([[[1, 2, 3, 4],
-    #         [5, 6, 7, 8]]])
-
-    a.reshape(4, 2, 1)
-    #array([[[1],
-    #        [2]],
-    #       [[3],
-    #        [4]],
-    #       [[5],
-    #        [6]],
-    #       [[7],
-    #        [8]]])
-
-    a.reshape(1, 8, 1)
-    # array([[[1],
-    #         [2],
-    #         [3],
-    #         [4],
-    #         [5],
-    #         [6],
-    #         [7],
-    #         [8]]])
-
-    a.reshape(2, 3, 1)
-    # Traceback (most recent call last):
-    # ValueError: cannot reshape array of size 8 into shape (2,3,1)
+>>> a = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+>>>
+>>> a.reshape(2, 4)
+array([[1, 2, 3, 4],
+       [5, 6, 7, 8]])
+>>>
+>>> a.reshape(2, 4, 1)
+array([[[1],
+        [2],
+        [3],
+        [4]],
+       [[5],
+        [6],
+        [7],
+        [8]]])
+>>>
+>>> a.reshape(2, 2, 2)
+array([[[1, 2],
+        [3, 4]],
+       [[5, 6],
+        [7, 8]]])
+>>>
+>>> a.reshape(1, 2, 4)
+array([[[1, 2, 3, 4],
+        [5, 6, 7, 8]]])
+>>>
+>>> a.reshape(4, 2, 1)
+array([[[1],
+        [2]],
+       [[3],
+        [4]],
+       [[5],
+        [6]],
+       [[7],
+        [8]]])
+>>>
+>>> a.reshape(1, 8, 1)
+array([[[1],
+        [2],
+        [3],
+        [4],
+        [5],
+        [6],
+        [7],
+        [8]]])
+>>>
+>>> a.reshape(2, 3, 1)
+Traceback (most recent call last):
+ValueError: cannot reshape array of size 8 into shape (2,3,1)
 
 
 Flatten
@@ -200,42 +170,30 @@ Flatten
 * Returns new array (makes memory copy - expensive)
 * Does not modify inplace
 
-.. code-block:: python
+>>> import numpy as np
 
-    import numpy as np
+>>> a = np.array([1, 2, 3])
+>>>
+>>> a.flatten()
+array([1, 2, 3])
 
+>>> a = np.array([[1, 2, 3],
+>>>               [4, 5, 6],
+>>>               [7, 8, 9]])
+>>>
+>>> a.flatten()
+array([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
-    a = np.array([1, 2, 3])
-
-    a.flatten()
-    # array([1, 2, 3])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    a.flatten()
-    # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
-
-.. code-block:: python
-
-    import numpy as np
-
-    a = np.array([[[ 1,  2,  3],
-                   [ 4,  5,  6],
-                   [ 5,  6,  7]],
-
-                  [[11, 22, 33],
-                   [44, 55, 66],
-                   [77, 88, 99]]])
-
-    a.flatten()
-    # array([ 1,  2,  3,  4,  5,  6,  5,  6,  7, 11, 22, 33, 44, 55, 66, 77, 88, 99])
+>>> a = np.array([[[ 1,  2,  3],
+>>>                [ 4,  5,  6],
+>>>                [ 5,  6,  7]],
+>>>
+>>>               [[11, 22, 33],
+>>>                [44, 55, 66],
+>>>                [77, 88, 99]]])
+>>>
+>>> a.flatten()
+array([ 1,  2,  3,  4,  5,  6,  5,  6,  7, 11, 22, 33, 44, 55, 66, 77, 88, 99])
 
 
 Ravel
@@ -243,48 +201,57 @@ Ravel
 * Ravel is the same as Flatten but returns a reference (or view) of the array if possible (i.e. memory is contiguous)
 * Otherwise returns new array (makes memory copy)
 
-.. code-block:: python
+>>> import numpy as np
 
-    import numpy as np
+>>> a = np.array([1, 2, 3])
+>>>
+>>> a.ravel()
+array([1, 2, 3])
 
+>>> a = np.array([[1, 2, 3],
+>>>               [4, 5, 6],
+>>>               [7, 8, 9]])
+>>>
+>>> a.ravel()
+array([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
-    a = np.array([1, 2, 3])
-
-    a.ravel()
-    # array([1, 2, 3])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    a.ravel()
-    # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
-
-.. code-block:: python
-
-    import numpy as np
-
-    a = np.array([[[ 1,  2,  3],
-                   [ 4,  5,  6],
-                   [ 5,  6,  7]],
-
-                  [[11, 22, 33],
-                   [44, 55, 66],
-                   [77, 88, 99]]])
+>>> a = np.array([[[ 1,  2,  3],
+>>>                [ 4,  5,  6],
+>>>                [ 5,  6,  7]],
+>>>
+>>>               [[11, 22, 33],
+>>>                [44, 55, 66],
+>>>                [77, 88, 99]]])
+>>>
+>>>
+>>> a.ravel()
+array([ 1,  2,  3,  4,  5,  6,  5,  6,  7, 11, 22, 33, 44, 55, 66, 77, 88, 99])
 
 
-    a.ravel()
-    # array([ 1,  2,  3,  4,  5,  6,  5,  6,  7, 11, 22, 33, 44, 55, 66, 77, 88, 99])
+Flatten vs Ravel
+----------------
+>>> import numpy as np
+
+>>> a = np.array([1, 2, 3])
+>>> b = a.ravel()
+>>> c = a.flatten()
+
+>>> a[0] = 99
+
+>>> a  # original
+array([99,  2,  3])
+>>>
+>>> b  # flatten
+array([99,  2,  3])
+>>>
+>>> c  # ravel
+array([1, 2, 3])
 
 
 Recap
 -----
 .. figure:: img/array-shape-ravel-vs-flatten.png
+
 
 Assignments
 -----------

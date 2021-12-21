@@ -4,61 +4,53 @@ Array Select
 
 Unique
 ------
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3, 1],
-                  [1, 4, 5, 6]])
-
-    np.unique(a)
-    # array([1, 2, 3, 4, 5, 6])
-
-    np.unique(a, axis=0)
-    # array([[1, 2, 3, 1],
-    #        [1, 4, 5, 6]])
-
-    np.unique(a, axis=1)
-    # array([[1, 1, 2, 3],
-    #        [1, 6, 4, 5]])
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 2, 3, 1],
+>>>               [1, 4, 5, 6]])
+>>>
+>>> np.unique(a)
+array([1, 2, 3, 4, 5, 6])
+>>>
+>>> np.unique(a, axis=0)
+array([[1, 2, 3, 1],
+       [1, 4, 5, 6]])
+>>>
+>>> np.unique(a, axis=1)
+array([[1, 1, 2, 3],
+       [1, 6, 4, 5]])
 
 
 Diagonal
 --------
-.. code-block:: python
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 2],
+>>>               [3, 4]])
+>>>
+>>> a.diagonal()
+array([1, 4])
 
-    import numpy as np
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 2, 3],
+>>>               [4, 5, 6]])
+>>>
+>>> a.diagonal()
+array([1, 5])
 
-
-    a = np.array([[1, 2],
-                  [3, 4]])
-
-    a.diagonal()
-    # array([1, 4])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
-
-    a.diagonal()
-    # array([1, 5])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    a.diagonal()
-    # array([1, 5, 9])
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 2, 3],
+>>>               [4, 5, 6],
+>>>               [7, 8, 9]])
+>>>
+>>> a.diagonal()
+array([1, 5, 9])
 
 
 Nonzero
@@ -74,143 +66,105 @@ Nonzero
     * ``1, 0``
     * ``1, 2``
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 0, 2],
-                  [3, 0, 4]])
-
-    a.nonzero()
-    # (array([0, 0, 1, 1]),
-    #  array([0, 2, 0, 2]))
-
-    a[a.nonzero()]
-    # array([1, 2, 3, 4])
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 0, 2],
+>>>               [3, 0, 4]])
+>>>
+>>> a.nonzero()  # doctest: +NORMALIZE_WHITESPACE
+(array([0, 0, 1, 1]),
+ array([0, 2, 0, 2]))
+>>>
+>>> a[a.nonzero()]
+array([1, 2, 3, 4])
 
 
 Where
 -----
-
-Single argument
----------------
 * ``where(boolarray)``
 * indexes of elements
 
-.. code-block:: python
+>>> import numpy as np
 
-    import numpy as np
+Single argument:
 
+>>> a = np.array([1, 2, 3, 4, 5, 6])
+>>>
+>>> np.where(a != 2)
+(array([0, 2, 3, 4, 5]),)
+>>>
+>>> np.where(a % 2 == 0)
+(array([1, 3, 5]),)
+>>>
+>>> np.where( (a>2) & (a<5) )
+(array([2, 3]),)
 
-    a = np.array([1, 2, 3, 4, 5, 6])
+>>> a = np.array([[1, 2, 3],
+>>>               [4, 5, 6],
+>>>               [7, 8, 9]])
+>>>
+>>> np.where(a % 2 == 0)  # doctest: +NORMALIZE_WHITESPACE
+(array([0, 0, 1]),
+ array([0, 2, 1]))
+>>>
+>>> np.where( (a>2) & (a<5) )  # doctest: +NORMALIZE_WHITESPACE
+(array([0, 1]),
+ array([2, 0]))
 
-    np.where(a != 2)
-    # (array([0, 2, 3, 4, 5]),)
-
-    np.where(a % 2 == 0)
-    # (array([1, 3, 5]),)
-
-    np.where( (a>2) & (a<5) )
-    # (array([2, 3]),)
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    np.where(a % 2 == 0)
-    # (array([0, 0, 1]),
-    #  array([0, 2, 1]))
-
-    np.where( (a>2) & (a<5) )
-    # (array([0, 1]),
-    #  array([2, 0]))
 
 Multiple argument
 -----------------
 * ``where(boolarray, truearray, falsearray)``:
 
-.. code-block:: python
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]])
 
-    import numpy as np
+>>> np.where(a < 5, 'small', 'large')
+array([['small', 'small', 'small'],
+       ['small', 'large', 'large'],
+       ['large', 'large', 'large']], dtype='<U5')
 
+>>> np.where(a % 2 == 0, 'even', 'odd')
+array([['odd', 'even', 'odd'],
+       ['even', 'odd', 'even'],
+       ['odd', 'even', 'odd']], dtype='<U4')
 
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    np.where(a < 5, 'small', 'large')
-    # array([['small', 'small', 'small'],
-    #        ['small', 'large', 'large'],
-    #        ['large', 'large', 'large']], dtype='<U5')
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    np.where(a % 2 == 0, 'even', 'odd')
-    # array([['odd', 'even', 'odd'],
-    #        ['even', 'odd', 'even'],
-    #        ['odd', 'even', 'odd']], dtype='<U4')
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    np.where(a % 2 == 0, np.nan, a)
-    # array([[ 1., nan,  3.],
-    #        [nan,  5., nan],
-    #        [ 7., nan,  9.]])
+>>> np.where(a % 2 == 0, np.nan, a)
+array([[ 1., nan,  3.],
+       [nan,  5., nan],
+       [ 7., nan,  9.]])
 
 
 Take
 ----
-.. code-block:: python
+>>> import numpy as np
 
-    import numpy as np
+>>> a = np.array([1, 2, 3])
+>>> at_index = np.array([0, 0, 1, 2, 2, 1])
+>>>
+>>> a.take(at_index)
+array([1, 1, 2, 3, 3, 2])
 
-
-    a = np.array([1, 2, 3])
-    at_index = np.array([0, 0, 1, 2, 2, 1])
-
-    a.take(at_index)
-    # array([1, 1, 2, 3, 3, 2])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    at_index = np.array([0, 0, 1])
-
-    a.take(at_index, axis=0)
-    # array([[1, 2, 3],
-    #        [1, 2, 3],
-    #        [4, 5, 6]])
-
-    a.take(at_index, axis=1)
-    # array([[1, 1, 2],
-    #        [4, 4, 5],
-    #        [7, 7, 8]])
+>>> a = np.array([[1, 2, 3],
+>>>               [4, 5, 6],
+>>>               [7, 8, 9]])
+>>>
+>>> at_index = np.array([0, 0, 1])
+>>>
+>>> a.take(at_index, axis=0)
+array([[1, 2, 3],
+       [1, 2, 3],
+       [4, 5, 6]])
+>>>
+>>> a.take(at_index, axis=1)
+array([[1, 1, 2],
+       [4, 4, 5],
+       [7, 7, 8]])
 
 
 Assignments

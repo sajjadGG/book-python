@@ -68,72 +68,63 @@ Fill
 
 Fill all:
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    a.fill(0)
-    a
-    # array([[0, 0, 0],
-    #        [0, 0, 0],
-    #        [0, 0, 0]])
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]])
+>>>
+>>> a.fill(0)
+>>> a
+array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0]])
 
 Fill slice:
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    a[:, 0].fill(0)
-    a
-    # array([[0, 2, 3],
-    #        [0, 5, 6],
-    #        [0, 8, 9]])
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]])
+>>>
+>>> a[:, 0].fill(0)
+>>> a
+array([[0, 2, 3],
+       [0, 5, 6],
+       [0, 8, 9]])
 
 Fill NaN (dtype=np.int):
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]], dtype=np.int)
-
-    a[:, 0].fill(np.nan)
-    a
-    # array([[-9223372036854775808, 2, 3],
-    #        [-9223372036854775808, 5, 6],
-    #        [-9223372036854775808, 8, 9]])
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]], dtype=np.int)
+>>>
+>>> a[:, 0].fill(np.nan)
+>>> a
+array([[-9223372036854775808, 2, 3],
+       [-9223372036854775808, 5, 6],
+       [-9223372036854775808, 8, 9]])
 
 Fill NaN (dtype=np.float):
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]], dtype=np.float)
-
-    a[:, 0].fill(np.nan)
-
-    a
-    # array([[nan,  2.,  3.],
-    #        [nan,  5.,  6.],
-    #        [nan,  8.,  9.]])
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]], dtype=np.float)
+>>>
+>>> a[:, 0].fill(np.nan)
+>>> a
+array([[nan,  2.,  3.],
+       [nan,  5.,  6.],
+       [nan,  8.,  9.]])
 
 
 Transpose
@@ -141,75 +132,71 @@ Transpose
 * ``a.transpose()`` or ``a.T``
 * ``a.transpose()`` is preferred
 
-.. code-block:: python
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6]])
+>>>
+>>> a.transpose()
+array([[1, 4],
+       [2, 5],
+       [3, 6]])
+>>>
+>>> a.T
+array([[1, 4],
+       [2, 5],
+       [3, 6]])
 
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
-
-    a.transpose()
-    # array([[1, 4],
-    #        [2, 5],
-    #        [3, 6]])
-
-    a.T
-    # array([[1, 4],
-    #        [2, 5],
-    #        [3, 6]])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    a.transpose()
-    # array([[1, 4, 7],
-    #        [2, 5, 8],
-    #        [3, 6, 9]])
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[1, 2, 3],
+>>>               [4, 5, 6],
+>>>               [7, 8, 9]])
+>>>
+>>> a.transpose()
+array([[1, 4, 7],
+       [2, 5, 8],
+       [3, 6, 9]])
 
 
 Signum
 ------
 .. figure:: img/array-methods-signum.png
 
-.. code-block:: python
+>>> import numpy as np
+>>>
+>>>
+>>> a = np.array([[-2, -1, 0],
+>>>               [0, 1, 2]])
+>>>
+>>> np.sign(a)
+array([[-1, -1,  0],
+       [ 0,  1,  1]])
 
-    import numpy as np
 
+Use Case - 0x01
+---------------
+* t1 = 230 lux
+* t2 = 218 lux
+* t3 = 230 lux
+* t4 = 2 lux
+* t5 = 0 lux
+* t6 = 0 lux
+* t7 = 10 lux
+* t8 = 0 lux
 
-    a = np.array([[-2, -1, 0],
-                  [0, 1, 2]])
-
-    np.sign(a)
-    # array([[-1, -1,  0],
-    #        [ 0,  1,  1]])
-
-.. code-block:: python
-
-    import numpy as np
-
-    # t1 = 230 lux
-    # t2 = 218 lux
-    # t3 = 230 lux
-    # t4 = 2 lux
-    # t5 = 0 lux
-    # t6 = 0 lux
-    # t7 = 10 lux
-    # t8 = 0 lux
-
-    data = np.array([230, 218, 230, 2, 0, 0, 10, 0])
-    np.sign(data)
-    # array([1, 1, 1, 1, 0, 0, 1, 0])
-
-    data[data<50] = 0
-    np.sign(data)
-    # array([1, 1, 1, 0, 0, 0, 0, 0])
+>>> import numpy as np
+>>>
+>>>
+>>> data = np.array([230, 218, 230, 2, 0, 0, 10, 0])
+>>> np.sign(data)
+array([1, 1, 1, 1, 0, 0, 1, 0])
+>>>
+>>> data[data<50] = 0
+>>> np.sign(data)
+array([1, 1, 1, 0, 0, 0, 0, 0])
 
 
 Assignments
