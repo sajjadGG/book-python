@@ -6,33 +6,39 @@ Rationale
 ---------
 >>> 0.1
 0.1
-
+>>>
 >>> 0.2
 0.2
-
+>>>
 >>> 0.3
 0.3
-
+>>>
 >>> 0.1 + 0.2 == 0.3
+False
+
+>>> round(0.1+0.2, 16) == 0.3
+True
+>>>
+>>> round(0.1+0.2, 17) == 0.3
 False
 
 >>> 0.1 + 0.2
 0.30000000000000004
 
->>> round(0.1+0.2, 16) == 0.3
-True
 
->>> round(0.1+0.2, 17) == 0.3
-False
-
-
-IEEE 754 standard
+IEEE 754 Standard
 -----------------
->>> 1.234 == 1234 * 10e-4
+>>> a = 1.234
+>>> b = 1234 * 10e-4
+>>>
+>>> a == b
 True
 
 >>> 1234 * 10e-4
 1.234
+
+>>> 1.234 == 1234 * 10e-4
+True
 
 .. figure:: img/numpy-precision-float-anatomy.png
 
@@ -65,47 +71,39 @@ Solutions
 
 Problem:
 
-.. code-block:: python
-
-    candy = 0.10      # price in dollars
-    cookie = 0.20     # price in dollars
-
-    result = candy + cookie
-    print(result)
-    # 0.30000000000000004
+>>> candy = 0.10      # price in dollars
+>>> cookie = 0.20     # price in dollars
+>>>
+>>> result = candy + cookie
+>>> print(result)
+0.30000000000000004
 
 Round values to 4 decimal places (generally acceptable):
 
-.. code-block:: python
-
-    candy = 0.10      # price in dollars
-    cookie = 0.20     # price in dollars
-
-    result = round(candy + cookie, 4)
-    print(result)
-    # 0.3
+>>> candy = 0.10      # price in dollars
+>>> cookie = 0.20     # price in dollars
+>>>
+>>> result = round(candy + cookie, 4)
+>>> print(result)
+0.3
 
 Store values as ``int``, do operation and then divide:
 
-.. code-block:: python
-
-    candy = 10        # price in cents
-    cookie = 20       # price in cents
-
-    result = (candy + cookie) / 100   # divide by 100 (number of cents in dollar)
-    print(result)
-    # 0.30
+>>> candy = 10        # price in cents
+>>> cookie = 20       # price in cents
+>>>
+>>> result = (candy + cookie) / 100   # divide by 100 (number of cents in dollar)
+>>> print(result)
+0.30
 
 Use ``Decimal`` type:
 
-.. code-block:: python
-
-    from decimal import Decimal
-
-
-    candy = Decimal('0.10')     # price in dollars
-    cookie = Decimal('0.20')    # price in dollars
-
-    result = candy + cookie
-    print(result)
-    # 0.30
+>>> from decimal import Decimal
+>>>
+>>>
+>>> candy = Decimal('0.10')     # price in dollars
+>>> cookie = Decimal('0.20')    # price in dollars
+>>>
+>>> result = candy + cookie
+>>> print(result)
+0.30
