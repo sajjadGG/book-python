@@ -265,8 +265,8 @@ array([3, 2, 1])
 2-dimensional Array:
 
 >>> a = np.array([[1, 2, 3],
->>>               [4, 5, 6],
->>>               [7, 8, 9]])
+...               [4, 5, 6],
+...               [7, 8, 9]])
 >>>
 >>> np.random.shuffle(a)
 >>> a

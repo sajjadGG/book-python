@@ -32,7 +32,7 @@ Is In
 >>>
 >>>
 >>> a = np.array([[1, 2, 3],
->>>               [4, 5, 6]])
+...               [4, 5, 6]])
 >>>
 >>> b = np.array([1, 5, 9])
 >>>
@@ -47,7 +47,7 @@ Scalar Comparison
 >>>
 >>>
 >>> a = np.array([[1, 2, 3],
->>>               [4, 5, 6]])
+...               [4, 5, 6]])
 >>>
 >>> a == 2
 array([[False,  True, False],
@@ -116,7 +116,7 @@ True
 >>>
 >>>
 >>> a = np.array([[True, False, False],
->>>               [True, True, True]])
+...               [True, True, True]])
 >>>
 >>> a.any()
 True
@@ -142,7 +142,7 @@ False
 >>>
 >>>
 >>> a = np.array([[True, False, False],
->>>               [True, True, True]])
+...               [True, True, True]])
 >>>
 >>> a.all()
 False
@@ -163,7 +163,7 @@ Logical NOT
 >>>
 >>>
 >>> a = np.array([[True, False, False],
->>>               [True, True, True]])
+...               [True, True, True]])
 >>>
 >>> np.logical_not(a)
 array([[False,  True,  True],
@@ -177,7 +177,7 @@ array([[False,  True,  True],
 >>>
 >>>
 >>> a = np.array([[1, 2, 3],
->>>               [4, 5, 6]])
+...               [4, 5, 6]])
 >>>
 >>> np.logical_not(a > 2)
 array([[ True,  True, False],
@@ -210,7 +210,7 @@ array([ True, False, False])
 >>>
 >>>
 >>> a = np.array([[1, 2, 3],
->>>               [4, 5, 6]])
+...               [4, 5, 6]])
 >>>
 >>> np.logical_and(a > 2, a < 5)
 array([[False, False,  True],
@@ -243,7 +243,7 @@ array([ True,  True, False])
 >>>
 >>>
 >>> a = np.array([[1, 2, 3],
->>>               [4, 5, 6]])
+...               [4, 5, 6]])
 >>>
 >>> np.logical_or(a < 2, a > 4)
 array([[ True, False, False],
@@ -264,7 +264,7 @@ Logical XOR
 >>>
 >>>
 >>> a = np.array([[1, 2, 3],
->>>               [4, 5, 6]])
+...               [4, 5, 6]])
 >>>
 >>> np.logical_xor(a < 2, a > 4)
 array([[ True, False, False],
@@ -281,7 +281,7 @@ Good Practices
 >>>
 >>>
 >>> a = np.array([[1, 2, 3],
->>>               [4, 5, 6]])
+...               [4, 5, 6]])
 >>>
 >>>
 >>> (a < 2) & (a > 4) | (a == 3)
@@ -292,8 +292,8 @@ array([[False, False,  True],
 >>>
 >>>
 >>> a = np.array([[1, 2, 3],
->>>               [4, 5, 6],
->>>               [7, 8, 9]])
+...               [4, 5, 6],
+...               [7, 8, 9]])
 >>>
 >>> lower = (a > 2)
 >>> upper = (a < 6)

@@ -116,8 +116,8 @@ i=2, value=[7 8 9]
 >>>
 >>>
 >>> data = np.array([[1, 2, 3],
->>>                  [4, 5, 6],
->>>                  [7, 8, 9]])
+...                  [4, 5, 6],
+...                  [7, 8, 9]])
 >>>
 >>> for i, value in enumerate(data.ravel()):
 ...     print(f'{i=}, {value=}')
@@ -135,8 +135,8 @@ i=8, value=9
 >>>
 >>>
 >>> data = np.array([[1, 2, 3],
->>>                  [4, 5, 6],
->>>                  [7, 8, 9]])
+...                  [4, 5, 6],
+...                  [7, 8, 9]])
 >>>
 >>> for i, row in enumerate(data):
 ...     for j, value in enumerate(row):

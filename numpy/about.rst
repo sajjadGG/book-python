@@ -35,12 +35,10 @@ Upgrade:
 
 Check version:
 
-.. code-block:: python
-
-    import numpy as np
-
-    np.__version__
-    # '1.21.1'
+>>> import numpy as np
+>>>
+>>> np.__version__  # dooctest: +SKIP
+'1.21.1'
 
 
 Further Reading
