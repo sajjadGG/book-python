@@ -18,11 +18,15 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.DataFrame
-    True
     >>> pd.set_option('display.width', 500)
     >>> pd.set_option('display.max_columns', 10)
     >>> pd.set_option('display.max_rows', 10)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.DataFrame, \
+    'Variable `result` must be a `pd.DataFrame` type'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
                            Name        Country Gender                                            Flights  Total Flights Total Flight Time (ddd:hh:mm)
     557  Thomas Marshburn, M.D.  United States    Man               STS-127 (2009), Soyuz TMA-07M (2012)              2                     161:07:03

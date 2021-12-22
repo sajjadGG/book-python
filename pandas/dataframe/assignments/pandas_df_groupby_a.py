@@ -17,11 +17,15 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.Series
-    True
     >>> pd.set_option('display.width', 500)
     >>> pd.set_option('display.max_columns', 10)
     >>> pd.set_option('display.max_rows', 10)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.Series, \
+    'Variable `result` must be a `pd.Series` type'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     year  month
     1999  10       16309.0

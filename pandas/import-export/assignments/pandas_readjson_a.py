@@ -15,10 +15,11 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.DataFrame
-    True
-    >>> len(result) > 0
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.DataFrame, \
+    'Variable `result` must be a `pd.DataFrame` type'
+
     >>> result.loc[[0,10,20]]
         sepalLength  sepalWidth  petalLength  petalWidth     species
     0           5.1         3.5          1.4         0.2      setosa

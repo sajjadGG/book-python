@@ -17,8 +17,11 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.Series
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.Series, \
+    'Variable `result` has invalid type, should be `pd.Series`'
+
     >>> result
     0    1.1
     1    2.2
@@ -37,4 +40,3 @@ result = ...
 # Solution
 data = [1.1, 2.2, None, 4.4, 5.5]
 result = pd.Series(data)
-

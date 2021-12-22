@@ -17,11 +17,15 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.DataFrame
-    True
     >>> pd.set_option('display.width', 500)
     >>> pd.set_option('display.max_columns', 10)
     >>> pd.set_option('display.max_rows', 10)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.DataFrame, \
+    'Variable `result` must be a `pd.DataFrame` type'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
        sepal_length  sepal_width  petal_length  petal_width     species
     1           5.9          3.0           5.1          1.8   virginica
@@ -48,5 +52,3 @@ result = df.head(5)
 # result = pd.read_csv(DATA, encoding='utf-8')
 # result.where(result['petal_length'] > 2.0, inplace=True)
 # result.head(5)
-
-

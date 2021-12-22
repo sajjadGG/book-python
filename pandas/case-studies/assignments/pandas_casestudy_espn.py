@@ -18,11 +18,15 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.DataFrame
-    True
     >>> pd.set_option('display.width', 500)
     >>> pd.set_option('display.max_columns', 10)
     >>> pd.set_option('display.max_rows', 10)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.DataFrame, \
+    'Variable `result` must be a `pd.DataFrame` type'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
                           Team   W   L    PCT   GB  ...    PPG OPP PPG  DIFF STRK  L10
     0       Los Angeles Lakers  11   4  0.733    -  ...  115.3   105.1  10.2   L1  8-2

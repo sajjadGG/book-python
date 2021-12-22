@@ -25,8 +25,11 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.Series
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.Series, \
+    'Variable `result` has invalid type, should be `pd.Series`'
+
     >>> result
     a    2500
     b       0

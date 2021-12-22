@@ -31,11 +31,15 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.DataFrame
-    True
     >>> pd.set_option('display.width', 500)
     >>> pd.set_option('display.max_columns', 10)
     >>> pd.set_option('display.max_rows', 10)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.DataFrame, \
+    'Variable `result` must be a `pd.DataFrame` type'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
        Sepal length  Sepal width  Petal length  Petal width     Species
     1           5.9          3.0           5.1          1.8   virginica

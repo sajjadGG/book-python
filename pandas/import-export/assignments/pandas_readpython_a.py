@@ -25,12 +25,8 @@ Tests:
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
-
     >>> assert type(result) is pd.DataFrame, \
     'Variable `result` has invalid type, should be `pd.DataFrame`'
-
-    >>> assert len(result) > 0, \
-    'Variable `result` should not be empty'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
       firstname  lastname mission1_year mission1_name mission2_year mission2_name

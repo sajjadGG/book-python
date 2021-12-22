@@ -24,10 +24,11 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.DataFrame
-    True
-    >>> len(result) > 0
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.DataFrame, \
+    'Variable `result` has invalid type, should be `pd.DataFrame`'
+
     >>> result
          English Name              Latin Name   Cost
     0       Bloodroot  Sanguinaria canadensis  $2.44

@@ -23,15 +23,18 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.DataFrame
-    True
     >>> pd.set_option('display.width', 500)
     >>> pd.set_option('display.max_columns', 10)
     >>> pd.set_option('display.max_rows', 10)
-    >>> len(result) > 0
-    True
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.DataFrame, \
+    'Variable `result` must be a `pd.DataFrame` type'
+
     >>> list(result.columns)
     ['put', 'post', 'get', 'delete']
+
     >>> list(result.index)  # doctest: +NORMALIZE_WHITESPACE
     ['/pet', '/pet/findByStatus', '/pet/findByTags', '/pet/{petId}', '/pet/{petId}/uploadImage',
      '/store/inventory', '/store/order', '/store/order/{orderId}',

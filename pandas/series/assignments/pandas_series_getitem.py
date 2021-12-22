@@ -33,8 +33,13 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is dict
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert all(type(x) is not Ellipsis for x in result.values()), \
+    'Assign result to dict values in `result`'
+    >>> assert type(result) is dict, \
+    'Variable `result` has invalid type, should be `dict`'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     {'2000-02-29': -0.3627411659871381,
      'first': 1.764052345967664,

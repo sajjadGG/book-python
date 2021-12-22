@@ -23,11 +23,15 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.DataFrame
-    True
     >>> pd.set_option('display.width', 500)
     >>> pd.set_option('display.max_columns', 10)
     >>> pd.set_option('display.max_rows', 10)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.DataFrame, \
+    'Variable `result` must be a `pd.DataFrame` type'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
           id   period            datetime   network  item           type  duration        date      time
     0      0  1999-11 1999-10-15 06:58:00  T-Mobile  data           data      34.5  1999-10-15  06:58:00
@@ -69,4 +73,3 @@ result = df
 # ## Solution 3
 # result = pd.read_csv(DATA, parse_dates=['datetime'])
 # result[['date', 'time']] = result['date'].map(str).str.split(expand=True)
-

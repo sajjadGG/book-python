@@ -24,6 +24,10 @@ Tests:
 
     >>> db = sqlite3.connect(FILE)
     >>> result = db.execute('SELECT * FROM apollo11')
+    >>> remove(FILE)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
 
     >>> list(result)  # doctest: +NORMALIZE_WHITESPACE
     [(135, 'LM lunar landing.'),
@@ -38,7 +42,6 @@ Tests:
      (144, 'CDR at foot of ladder  and described surface as “almost like a powder.”'),
      (145, '1st step  taken lunar surface (CDR). “That’s one small step for a man…one giant leap  for mankind.”')]
 
-    >>> remove(FILE)
 """
 
 import sqlite3

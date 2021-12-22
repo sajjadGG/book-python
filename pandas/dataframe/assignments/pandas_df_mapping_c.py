@@ -28,11 +28,15 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.DataFrame
-    True
     >>> pd.set_option('display.width', 500)
     >>> pd.set_option('display.max_columns', 10)
     >>> pd.set_option('display.max_rows', 10)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.DataFrame, \
+    'Variable `result` must be a `pd.DataFrame` type'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
           period            datetime   network  item           type  duration  year     month
     id
@@ -81,4 +85,3 @@ result = df
 # result['year'] = result['period'].str[:4]
 # result['month'] = result['period'].str[-2:]
 # result['month'].astype(int).replace(MONTHS, inplace=True)
-

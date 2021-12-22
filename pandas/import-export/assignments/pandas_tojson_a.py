@@ -26,6 +26,12 @@ Tests:
     >>> import json
 
     >>> result = open(FILE).read()
+    >>> remove(FILE)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be `str`'
 
     >>> json.loads(result)  # doctest: +NORMALIZE_WHITESPACE
     {'135': 'LM lunar landing.',
@@ -40,7 +46,6 @@ Tests:
      '144': 'CDR at foot of ladder  and described surface as “almost like a powder.”',
      '145': '1st step  taken lunar surface (CDR). “That’s one small step for a man…one giant leap  for mankind.”'}
 
-    >>> remove(FILE)
 """
 
 import pandas as pd
@@ -56,4 +61,3 @@ result = ...
 result = pd.read_html(DATA, header=0)[0]
 result = result.head(146).tail(11)
 result['Event'].to_json(FILE)
-

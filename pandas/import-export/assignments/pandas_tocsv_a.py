@@ -25,6 +25,12 @@ Tests:
     >>> from os import remove
 
     >>> result = open(FILE).read()
+    >>> remove(FILE)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be `str`'
 
     >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
     ,Event
@@ -41,7 +47,6 @@ Tests:
     145,1st step  taken lunar surface (CDR). “That’s one small step for a man…one giant leap  for mankind.”
     <BLANKLINE>
 
-    >>> remove(FILE)
 """
 
 import pandas as pd
@@ -54,4 +59,3 @@ FILE = r'_temporary.csv'
 result = pd.read_html(DATA, header=0)[0]
 result = result.head(146).tail(11)
 result['Event'].to_csv(FILE)
-

@@ -24,11 +24,15 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.Series
-    True
     >>> pd.set_option('display.width', 500)
     >>> pd.set_option('display.max_columns', 10)
     >>> pd.set_option('display.max_rows', 10)
+
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.Series, \
+    'Variable `result` has invalid type, should be `pd.Series`'
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     2000-02-14   -0.509652
     2000-02-15   -0.438074
@@ -58,4 +62,3 @@ s = pd.Series(
     index=pd.date_range('2000-01-01', freq='D', periods=NUMBER))
 
 result = s['2000-02-14':'2000-02']
-

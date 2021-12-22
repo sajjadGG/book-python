@@ -16,19 +16,20 @@ Polish:
         c. Wypełnij brakujące indeksy stosując `df.ffill()`
     3. Ustaw wszystkie wiersze w losowej kolejności
     4. Zresetuj index nie pozostawiając kopii zapasowej starego
-    5. Wypisz
-        a. Pierwsze trzy wiersze
-        b. Ostatnie 10% wierszy
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.DataFrame
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.DataFrame, \
+    'Variable `result` must be a `pd.DataFrame` type'
+
     >>> pd.set_option('display.width', 500)
     >>> pd.set_option('display.max_columns', 10)
     >>> pd.set_option('display.max_rows', 10)
+
     >>> result  # doctest: +NORMALIZE_WHITESPACE
          Order            Astronaut     Type              Date   Spacecraft
     0      244     Donald McMonagle  Orbital     28 April 1991       STS-39

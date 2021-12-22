@@ -28,10 +28,12 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result) is pd.DataFrame
-    True
-    >>> len(result) == 25
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.DataFrame, \
+    'Variable `result` must be a `pd.DataFrame` type'
+    >>> assert len(result) == 25, \
+    'Select only 25 first rows'
 
     >>> result.loc[[0,1,2,3,4,5], ['mean radius', 'mean texture', 'label']]
        mean radius  mean texture      label

@@ -23,14 +23,19 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
-
-    >>> assert type(result) is pd.DataFrame
+    >>> result = pd.read_pickle(FILE)
+    >>> remove(FILE)
 
     >>> pd.set_option('display.width', 500)
     >>> pd.set_option('display.max_columns', 10)
     >>> pd.set_option('display.max_rows', 20)
 
-    >>> pd.read_pickle(FILE)
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is pd.Series, \
+    'Variable `result` has invalid type, should be `pd.Series`'
+
+    >>> result
     135                                    LM lunar landing.
     136                   LM powered descent  engine cutoff.
     137    Decision made to  proceed with EVA prior to fi...
@@ -44,7 +49,6 @@ Tests:
     145    1st step  taken lunar surface (CDR). “That’s o...
     Name: Event, dtype: object
 
-    >>> remove(FILE)
 """
 
 import pandas as pd
@@ -59,4 +63,3 @@ result = ...
 result = pd.read_html(DATA, header=0)[0]
 result = result.head(146).tail(11)
 result['Event'].to_pickle(FILE)
-
