@@ -40,10 +40,12 @@ DATA = [1, None, 5, None, 1, 2, 1]
 result = ...
 
 # Solution
-result = (pd.Series(DATA)
-            .fillna(0, limit=1)
-            .dropna()
-            .reset_index(drop=True))
+result = (
+    pd.Series(DATA)
+      .fillna(0, limit=1)
+      .dropna()
+      .reset_index(drop=True)
+)
 
 
 # Alternative Solution

@@ -38,10 +38,12 @@ result = ...
 
 
 # Solution
-result = (pd.Series(DATA)
-          .drop([2, 4, 6])
-          .drop_duplicates()
-          .reset_index(drop=True))
+result = (
+    pd.Series(DATA)
+      .drop([2, 4, 6])
+      .drop_duplicates()
+      .reset_index(drop=True)
+)
 
 
 # ## Solution 1
