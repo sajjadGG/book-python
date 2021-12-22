@@ -1,5 +1,5 @@
-Pandas Read Clipboard
-=====================
+Pandas Read Python
+==================
 
 
 Rationale

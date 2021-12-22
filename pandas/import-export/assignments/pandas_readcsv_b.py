@@ -23,7 +23,7 @@ Polish:
 Hints:
     * `class_labels = pd.read_csv(DATA, nrows=0).columns[2:]`
     * `label_encoder = dict(enumerate(class_labels))`
-    * `df['label'].replace({'from': 'to'}, inplace=True)`
+    * `pd.Series.replace()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -65,7 +65,7 @@ COLUMNS = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
            'worst symmetry', 'worst fractal dimension', 'label']
 
 
-# pd.DataFrame: read DATA, substitute column names, and labels, select 20 rows
+# pd.DataFrame: read DATA, substitute column names, and labels, select 25 rows
 result = ...
 
 # Solution
@@ -73,6 +73,10 @@ header = pd.read_csv(DATA, nrows=0)
 class_labels = header.columns[2:]
 label_encoder = dict(enumerate(class_labels))
 
-df = pd.read_csv(DATA, skiprows=1, names=COLUMNS)
-df['label'].replace(to_replace=label_encoder, inplace=True)
-result = df.head(25)
+# result = pd.read_csv(DATA, names=COLUMNS, skiprows=1, nrows=25)
+# result.replace(label_encoder, inplace=True)
+
+result = (
+    pd.read_csv(DATA, names=COLUMNS, skiprows=1, nrows=25)
+    .replace(label_encoder)
+)
