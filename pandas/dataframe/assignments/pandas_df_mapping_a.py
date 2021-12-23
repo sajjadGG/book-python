@@ -2,7 +2,7 @@
 * Assignment: DataFrame Mapping Split
 * Complexity: easy
 * Lines of code: 5 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Read data from `DATA` as `df: pd.DataFrame`
