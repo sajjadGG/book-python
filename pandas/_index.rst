@@ -67,6 +67,7 @@ DataFrame
     dataframe/na.rst
     dataframe/sort.rst
     dataframe/statistics.rst
+    dataframe/rolling.rst
     dataframe/mapping.rst
     dataframe/pivot.rst
     dataframe/groupby.rst
