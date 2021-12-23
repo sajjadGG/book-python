@@ -75,23 +75,23 @@ df['type'] = pd.cut(df['consumption'],
                     labels=['electric', 'car', 'tir'],
                     include_lowest=True)
 
+old = df['mileage'] > 100_000
+young = df['mileage'].between(10_000, 100_000)
+new = df['mileage'].between(0, 10_000)
 
-df['status'] = None
-
-q = df['mileage'] > 100_000
-df.loc[q, 'status'] = 'old'
-
-q1 = df['mileage'] >= 10_000
-q2 = df['mileage'] <= 100_000
-df.loc[q1 & q2, 'status'] = 'young'
-
-q = df['status'].isin(range(0, 10_000))
-df.loc[q, 'status'] = 'new'
+df['status'] = np.nan
+df.loc[old, 'status'] = 'old'
+df.loc[young, 'status'] = 'young'
+df.loc[new, 'status'] = 'new'
 
 result = df.describe()
 
-
 # Extra Task
-_ = df.hist(rwidth=0.8, figsize=(17, 5))
+plot = df.hist(rwidth=0.8, figsize=(17, 5))
 df.groupby(['type', 'status']).describe()
 df.groupby(['type', 'status']).describe().transpose()
+
+
+# Alternative Solution
+# young = df['mileage'] >= 10_000 & df['milage'] <= 100_000
+# young = df['mileage'].isin(np.arange(10_000, 100_000))

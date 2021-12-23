@@ -84,6 +84,7 @@ result = (df
     .resample('H')
     .sum())
 
-ax = result.plot(color='red', figsize=(16,5))
-_ = ax.set_yticks([0, 1])
-_ = ax.set_yticklabels(['sleep', 'awake'])
+plot = (result
+     .plot(color='red', figsize=(10,10), yticks=[0,1])
+     .set_yticklabels(['seep', 'awake'])
+)
