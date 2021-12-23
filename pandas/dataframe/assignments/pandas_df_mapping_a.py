@@ -6,14 +6,14 @@
 
 English:
     1. Read data from `DATA` as `df: pd.DataFrame`
-    2. Parse data in `date` column as `datetime` object
-    3. Split column `date` with into two separate: date and time columns
+    2. Parse data in `datetime` column as `datetime` object
+    3. Split column `datetime` with into two separate: date and time columns
     4. Run doctests - all must succeed
 
 Polish:
     1. Wczytaj dane z `DATA` jako `df: pd.DataFrame`
-    2. Sparsuj dane w kolumnie `date` jako obiekty `datetime`
-    3. Podziel kolumnę z `date` na dwie osobne: datę i czas
+    2. Sparsuj dane w kolumnie `datetime` jako obiekty `datetime`
+    3. Podziel kolumnę z `datetime` na dwie osobne: datę i czas
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:

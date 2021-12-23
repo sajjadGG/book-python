@@ -35,12 +35,13 @@ Tests:
     'Variable `result` must be a `pd.DataFrame` type'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-       id First Name   Last Name Mission Date
-    0   1        Jan  Twardowski   1988-01-05
-    1   2       Mark      Watney   1969-07-21
-    2   3       Ivan   Ivanovich   1961-04-12
-    3   4    Melissa       Lewis   1970-01-01
-    4   5       Alex       Vogel   1968-12-25
+       First Name   Last Name Mission Date
+    id
+     1        Jan  Twardowski   1988-01-05
+     2       Mark      Watney   1969-07-21
+     3       Ivan   Ivanovich   1961-04-12
+     4    Melissa       Lewis   1970-01-01
+     5       Alex       Vogel   1968-12-25
 """
 
 import pandas as pd
@@ -64,7 +65,7 @@ result = ...
 
 
 # Solution
-df = pd.read_csv(DATA)
+df = pd.read_csv(DATA, index_col=0)
 df['Mission Date'] = df['Mission Date'] \
      .replace(MONTHS_PLEN, regex=True) \
      .apply(pd.to_datetime)
