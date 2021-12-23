@@ -68,6 +68,7 @@ DataFrame
     dataframe/sort.rst
     dataframe/statistics.rst
     dataframe/mapping.rst
+    dataframe/pivot.rst
     dataframe/groupby.rst
     dataframe/aggregations.rst
     dataframe/join.rst
