@@ -134,11 +134,21 @@ array([0. , 0.3, 0.6, 0.9])
 
 Linspace
 --------
-* ``np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)``
-* Return evenly spaced numbers over a specified interval.
+>>> # doctest: +SKIP
+... def linspace(self,
+...              start=...,
+...              stop=...,
+...              num=50,
+...              endpoint=True,
+...              retstep=False,
+...              dtype=None
+...              axis=0
+... ) -> np.ndarray: ...
+
+Return evenly spaced numbers over a specified interval.
 
 >>> np.linspace(2.0, 3.0, num=5)
-array([2. , 2.2, 2.4, 2.6, 2.8])
+array([2.  , 2.25, 2.5 , 2.75, 3.  ])
 >>>
 >>> np.linspace(2.0, 3.0, num=5, endpoint=False)
 array([2. , 2.2, 2.4, 2.6, 2.8])

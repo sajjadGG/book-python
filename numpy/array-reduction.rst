@@ -29,8 +29,8 @@ array([ 6.6, 16.5])
 >>> import numpy as np
 >>>
 >>>
->>>  a = np.array([[1.1, 2.2, 3.3],
-...                [4.4, np.nan, 6.6]])
+>>> a = np.array([[1.1, 2.2, 3.3],
+...               [4.4, np.nan, 6.6]])
 >>>
 >>> a.sum()
 nan

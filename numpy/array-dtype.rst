@@ -201,7 +201,6 @@ array([255,   0,   1], dtype=uint8)
 >>>
 >>> a.astype(np.uint64)
 array([18446744073709551615,                    0,                    1],
-481
           dtype=uint64)
 
 

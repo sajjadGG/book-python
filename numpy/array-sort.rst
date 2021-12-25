@@ -2,40 +2,54 @@ Array Sort
 ==========
 
 
+Rationale
+---------
+>>> import numpy as np
+
+
 Sort
 ----
->>> import numpy as np
->>>
->>>
+Sort vector:
+
 >>> a = np.array([2, 3, 1])
 >>> a.sort()
 >>>
 >>> a
 array([1, 2, 3])
 
->>> import numpy as np
->>>
->>>
+Sort matrix:
+
 >>> a = np.array([[9, 7, 8],
 ...               [2, 3, 1],
 ...               [5, 6, 4]])
->>> b = a.copy()
->>> c = a.copy()
->>>
 >>> a.sort()
 >>> a
 array([[7, 8, 9],
        [1, 2, 3],
        [4, 5, 6]])
+
+
+Sort matrix rows:
+
+>>> a = np.array([[9, 7, 8],
+...               [2, 3, 1],
+...               [5, 6, 4]])
 >>>
->>> b.sort(axis=0)
->>> b
+>>> a.sort(axis=0)
+>>> a
 array([[2, 3, 1],
        [5, 6, 4],
        [9, 7, 8]])
+
+
+Sort matrix columns:
+
+>>> a = np.array([[9, 7, 8],
+...               [2, 3, 1],
+...               [5, 6, 4]])
 >>>
->>> c.sort(axis=1)
->>> c
+>>> a.sort(axis=1)
+>>> a
 array([[7, 8, 9],
        [1, 2, 3],
        [4, 5, 6]])
@@ -47,29 +61,34 @@ Flip
 * Returns new ``np.ndarray``
 * Reverse the order of elements in an array along the given axis
 
->>> import numpy as np
->>>
->>>
+Flip vector:
+
 >>> a = np.array([1, 2, 3])
 array([1, 2, 3])
 >>>
 >>> np.flip(a)
 array([3, 2, 1])
 
->>> import numpy as np
->>>
->>>
+Flip matrix:
+
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
->>>
->>> a.flip()
+
+Flip matrix by crossline from top-left to bottom-right:
+
+>>> np.flip(a)
 array([[6, 5, 4],
        [3, 2, 1]])
->>>
+
+Flip matrix by rows (bottom rows goes up, upper rows goes down):
+
 >>> np.flip(a, axis=0)
 array([[4, 5, 6],
        [1, 2, 3]])
->>>
+
+Flip matrix by column (left columns from center goes right, right columns
+go left):
+
 >>> np.flip(a, axis=1)
 array([[3, 2, 1],
        [6, 5, 4]])

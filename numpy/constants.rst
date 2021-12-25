@@ -8,7 +8,7 @@ Pi number
 >>>
 >>>
 >>> np.pi
-3.1415926535897931
+3.141592653589793
 
 
 Euler number
@@ -17,7 +17,7 @@ Euler number
 >>>
 >>>
 >>> np.e
-2.7182818284590451
+2.718281828459045
 
 
 Infinite
@@ -92,7 +92,6 @@ ZeroDivisionError: float division by zero
 Check for infinite values:
 
 >>> a = np.array([1, 2, np.inf])
-array([ 1.,  2., inf])
 >>>
 >>> np.isfinite(a)
 array([ True,  True, False])
@@ -166,7 +165,6 @@ ZeroDivisionError: float division by zero
 Check for NaN values:
 
 >>> a = np.array([1, 2, np.nan])
-array([ 1.,  2., nan])
 >>>
 >>> np.isnan(a)
 array([False, False,  True])
@@ -174,17 +172,12 @@ array([False, False,  True])
 
 Isinf vs Isnan
 --------------
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 2, np.inf])
-array([ 1.,  2., inf])
 >>>
 >>> np.isnan(a)
 array([False, False, False])
 
 >>> a = np.array([1, 2, np.nan])
-array([ 1.,  2., nan])
 >>>
 >>> np.isfinite(a)
 array([ True,  True, False])

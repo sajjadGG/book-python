@@ -105,8 +105,8 @@ Single argument:
 ...               [7, 8, 9]])
 >>>
 >>> np.where(a % 2 == 0)  # doctest: +NORMALIZE_WHITESPACE
-(array([0, 0, 1]),
- array([0, 2, 1]))
+(array([0, 1, 1, 2]),
+ array([1, 0, 2, 1]))
 >>>
 >>> np.where( (a>2) & (a<5) )  # doctest: +NORMALIZE_WHITESPACE
 (array([0, 1]),

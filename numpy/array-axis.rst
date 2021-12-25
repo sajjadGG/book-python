@@ -93,10 +93,10 @@ Four Dimensions:
 ...                 [44, 55, 66]]]])
 >>>
 >>> a.shape
-(2, 2, 3)
+(2, 2, 2, 3)
 >>>
 >>> a.ndim
-3
+4
 
 .. code-block:: text
 

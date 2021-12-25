@@ -212,16 +212,16 @@ Random Choice (Draw)
 Choice:
 
 >>> np.random.choice([1, 2, 3])
-2
+1
 
 >>> np.random.choice([1, 2, 3], size=2)
-array([3, 1])
+array([2, 1])
 
 >>> np.random.choice([1, 2, 3], size=2)
-array([3, 3])
+array([2, 2])
 
 >>> np.random.choice([1, 2, 3], 2, replace=False)
-array([1, 3])
+array([2, 1])
 
 
 Random Sample

@@ -108,7 +108,6 @@ Selecting items
 1-dimensional Array:
 
 >>> a = np.array([1, 2, 3])
-array([1, 2, 3])
 >>>
 >>> a[0]
 1
@@ -162,8 +161,7 @@ array([1, 2, 3])
 >>> a[1]
 array([4, 5, 6])
 >>> a[2]
-Traceback (most recent call last):
-IndexError: index 2 is out of bounds for axis 0 with size 2
+array([7, 8, 9])
 >>>
 >>> a[0,0]
 1
@@ -231,17 +229,21 @@ array([99,  2,  11])
 >>> a = np.array([1, 2, 3], float)
 >>>
 >>> a[0] = 99.9
+>>> a
 array([99.9,  2.,  3.])
 >>>
 >>> a[-1] = 11.1
+>>> a
 array([99.9,  2.,  11.1])
 
 >>> a = np.array([1, 2, 3], int)
 >>>
 >>> a[0] = 99.9
+>>> a
 array([99,  2,  3])
 >>>
 >>> a[-1] = 11.1
+>>> a
 array([99,  2,  11])
 
 2-dimensional Array:
@@ -250,10 +252,12 @@ array([99,  2,  11])
 ...               [4, 5, 6]])
 >>>
 >>> a[0,0] = 99
+>>> a
 array([[99,  2,  3],
        [ 4,  5,  6]])
 >>>
 >>> a[1,2] = 11
+>>> a
 array([[99,  2,  3],
        [ 4,  5, 11]])
 
@@ -263,12 +267,15 @@ Multi-indexing
 >>> a = np.array([1, 2, 3])
 >>>
 >>> a[0], a[2], a[-1]
+>>> a
 (1, 3, 3)
 >>>
->>> a[[0,2,-1]]
+>>> a[[0, 2, -1]]
+>>> a
 array([1, 3, 3])
 >>>
 >>> a[[True, False, True]]
+>>> a
 array([1, 3])
 
 >>> a = np.array([[1, 2, 3],
@@ -276,15 +283,18 @@ array([1, 3])
 ...               [7, 8, 9]])
 >>>
 >>> a[[0,1]]
+>>> a
 array([[1, 2, 3],
        [4, 5, 6]])
 >>>
 >>> a[[0,2,-1]]
+>>> a
 array([[1, 2, 3],
        [7, 8, 9],
        [7, 8, 9]])
 >>>
 >>> a[[True, False, True]]
+>>> a
 array([[1, 2, 3],
        [7, 8, 9]])
 

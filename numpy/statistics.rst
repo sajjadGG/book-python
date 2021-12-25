@@ -16,11 +16,11 @@ Mean
 2.0
 >>>
 >>> np.mean(a, axis=0)
-array([2., 3.])
+2.0
 >>>
 >>> np.mean(a, axis=1)
 Traceback (most recent call last):
-IndexError: tuple index out of range
+numpy.AxisError: axis 1 is out of bounds for array of dimension 1
 
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
@@ -64,7 +64,7 @@ Average
 >>>
 >>> np.average(a, axis=1)
 Traceback (most recent call last):
-IndexError: tuple index out of range
+numpy.AxisError: axis 1 is out of bounds for array of dimension 1
 >>>
 >>> np.average(a, weights=[1, 1, 2])
 2.25
@@ -73,7 +73,7 @@ IndexError: tuple index out of range
 ...               [4, 5, 6]])
 >>>
 >>> np.average(a)
-... 3.5
+3.5
 >>>
 >>> np.average(a, axis=0)
 ... array([2.5, 3.5, 4.5])
@@ -83,7 +83,7 @@ IndexError: tuple index out of range
 >>>
 >>> np.average(a, weights=[[1, 0, 2],
 ...                        [2, 0, 1]])
-... 3.5
+3.5
 
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6],
@@ -99,8 +99,8 @@ array([4., 5., 6.])
 array([2., 5., 8.])
 >>>
 >>> np.average(a, weights=[[1, 0, 2],
->>>                        [2, 0, 1],
->>>                        [1./4, 1./2, 1./3]])
+...                        [2, 0, 1],
+...                        [1./4, 1./2, 1./3]])
 4.2
 
 
@@ -172,7 +172,7 @@ Variance
 >>>
 >>> np.var(a, axis=1)
 Traceback (most recent call last):
-IndexError: tuple index out of range
+numpy.AxisError: axis 1 is out of bounds for array of dimension 1
 
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
@@ -219,7 +219,7 @@ Standard Deviation
 >>>
 >>> np.std(a, axis=1)
 Traceback (most recent call last):
-IndexError: tuple index out of range
+numpy.AxisError: axis 1 is out of bounds for array of dimension 1
 
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
@@ -328,7 +328,7 @@ array([[1., 1.],
 
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6],
->>>               [7, 8, 9]])
+...               [7, 8, 9]])
 >>>
 >>> np.corrcoef(a)
 array([[1., 1., 1.],

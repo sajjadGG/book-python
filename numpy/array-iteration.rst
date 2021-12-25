@@ -27,9 +27,9 @@ value=3
 >>>
 >>> for value in data:
 ...     print(f'{value=}')
-value=[1 2 3]
-value=[4 5 6]
-value=[7 8 9]
+value=array([1, 2, 3])
+value=array([4, 5, 6])
+value=array([7, 8, 9])
 
 >>> import numpy as np
 >>>
@@ -40,7 +40,7 @@ value=[7 8 9]
 >>>
 >>> for row in data:
 ...     for value in row:
-...     print(f'{value=}')
+...         print(f'{value=}')
 value=1
 value=2
 value=3
@@ -108,9 +108,9 @@ Enumerate
 >>>
 >>> for i, value in enumerate(data):
 ...     print(f'{i=}, {value=}')
-i=0, value=[1 2 3]
-i=1, value=[4 5 6]
-i=2, value=[7 8 9]
+i=0, value=array([1, 2, 3])
+i=1, value=array([4, 5, 6])
+i=2, value=array([7, 8, 9])
 
 >>> import numpy as np
 >>>

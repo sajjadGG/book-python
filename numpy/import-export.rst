@@ -5,23 +5,22 @@ Data Import and Export
 np.loadtxt()
 ------------
 >>> import numpy as np
->>>
->>>
 >>> DATA = 'https://python.astrotech.io/_static/iris.csv'
->>>
+
 >>> a = np.loadtxt(DATA)
 Traceback (most recent call last):
 ValueError: could not convert string to float: 'sepal_length,sepal_width,petal_length,petal_width,species'
->>>
+
 >>> a = np.loadtxt(DATA, skiprows=1)
 Traceback (most recent call last):
 ValueError: could not convert string to float: '5.4,3.9,1.3,0.4,setosa'
->>>
+
 >>> a = np.loadtxt(DATA, skiprows=1, delimiter=',')
 Traceback (most recent call last):
 ValueError: could not convert string to float: 'setosa'
->>>
+
 >>> a = np.loadtxt(DATA, skiprows=1, delimiter=',', usecols=(0,1,2,3))  # doctest: +ELLIPSIS
+>>> a
 array([[5.4, 3.9, 1.3, 0.4],
        [5.9, 3. , 5.1, 1.8],
        [6. , 3.4, 4.5, 1.6],
@@ -29,14 +28,14 @@ array([[5.4, 3.9, 1.3, 0.4],
        [5.6, 2.5, 3.9, 1.1],
        ...,
 ])
->>>
->>> a = np.loadtxt(DATA, skiprows=1, max_rows=3, delimiter=',', usecols=(0,1,2,3))
+
+>>> header = np.loadtxt(DATA, max_rows=1, delimiter=',', dtype=str, usecols=(0,1,2,3))
+array(['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], dtype='<U12')
+>>> data = np.loadtxt(DATA, skiprows=1, max_rows=3, delimiter=',', usecols=(0,1,2,3))
+>>> data
 array([[5.4, 3.9, 1.3, 0.4],
        [5.9, 3. , 5.1, 1.8],
        [6. , 3.4, 4.5, 1.6]])
->>>
->>> a = np.loadtxt(DATA, max_rows=1, delimiter=',', dtype=str, usecols=(0,1,2,3))
-array(['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], dtype='<U12')
 
 
 np.savetxt()

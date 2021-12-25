@@ -2,6 +2,11 @@ Array Logic
 ===========
 
 
+Rationale
+---------
+>>> import numpy as np
+
+
 Contains
 --------
 >>> import numpy as np
@@ -83,7 +88,7 @@ Broadcasting Comparison
 >>> b = np.array([3, 2, 1])
 >>>
 >>> a == b
-array([False, True, False])
+array([False,  True, False])
 >>>
 >>> a != b
 array([ True, False,  True])
@@ -98,7 +103,7 @@ array([False,  True,  True])
 array([ True, False, False])
 >>>
 >>> a <= b
-array([True, True, False])
+array([ True,  True, False])
 
 
 Any
@@ -107,7 +112,6 @@ Any
 >>>
 >>>
 >>> a = np.array([True, False, False])
-array([True, False, False])
 >>>
 >>> a.any()
 True

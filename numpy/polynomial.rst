@@ -67,11 +67,12 @@ array([-2.])
 array([-3.])
 
 >>> np.roots([1, 4, -2, 3])
-array([-4.57974010+0.j , 0.28987005+0.75566815j, 0.28987005-0.75566815j])
+array([-4.5797401 +0.j        ,  0.28987005+0.75566815j,
+        0.28987005-0.75566815j])
 
 >>> np.roots([ 1, -11, 9, 11, -10])
-array([10.+0.0000000e+00j, -1.+0.0000000e+00j,
-       1.+9.6357437e-09j, 1.-9.6357437e-09j])
+    array([10.+0.0000000e+00j, -1.+0.0000000e+00j,  1.+9.6357437e-09j,
+            1.-9.6357437e-09j])
 
 
 Derivative of a Polynomial
@@ -82,7 +83,7 @@ Derivative of a Polynomial
 array([1., 1., 1., 1.])
 
 >>> np.polyder([0.25, 0.33333333, 0.5, 1, 0])
-array([1., 0.99999999, 1., 1.])
+array([1.        , 0.99999999, 1.        , 1.        ])
 
 >>> np.polyder([1, 2, 3, 4])
 array([3, 4, 3])
@@ -95,7 +96,7 @@ Antiderivative (indefinite integral) of a polynomial
 >>> import numpy as np
 
 >>> np.polyint([1, 1, 1, 1])
-array([0.25, 0.33333333, 0.5, 1., 0.])
+array([0.25      , 0.33333333, 0.5       , 1.        , 0.        ])
 
 >>> np.polyint([16, 9, 4, 2])
 array([4., 3., 2., 2., 0.])
@@ -122,7 +123,7 @@ Least Squares Polynomial Fit
 >>> y = [0, 2, 1, 3, 7, 10, 11, 19]
 >>>
 >>> np.polyfit(x, y, 2)
-array([ 0.375 , -0.88690476, 1.05357143])
+array([ 0.375     , -0.88690476,  1.05357143])
 
 
 Polynomial Arithmetic
