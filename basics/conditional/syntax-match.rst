@@ -183,8 +183,9 @@ Use Case - 0x04
 ...     case Key.ARROW_UP:     game.move_up()
 ...     case Key.ARROW_RIGHT:  game.move_right()
 ...     case Key.ARROW_DOWN:   game.move_down()
-...     case _:
-...         raise ValueError(f'Unrecognized key')
+...     case _: raise ValueError(f'Unrecognized key')
+Traceback (most recent call last):
+ValueError: Unrecognized key
 
 
 Use Case - 0x05
