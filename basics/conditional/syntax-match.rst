@@ -27,7 +27,7 @@ Block Match
     game = Game()
 
     class Keyboard:
-        def on_key_press(self, key): ...
+        def on_key_press(self): ...
     keyboard = Keyboard()
 
 

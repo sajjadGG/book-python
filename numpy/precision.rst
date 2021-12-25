@@ -85,7 +85,7 @@ Round values to 4 decimal places (generally acceptable):
 >>>
 >>> result = round(candy + cookie, 4)
 >>> print(result)
-0.30
+0.3
 
 Store values as ``int``, do operation and then divide:
 
@@ -94,7 +94,7 @@ Store values as ``int``, do operation and then divide:
 >>>
 >>> result = (candy + cookie) / 100   # divide by 100 (number of cents in dollar)
 >>> print(result)
-0.30
+0.3
 
 Use ``Decimal`` type:
 
