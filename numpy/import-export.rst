@@ -19,18 +19,18 @@ ValueError: could not convert string to float: '5.4,3.9,1.3,0.4,setosa'
 Traceback (most recent call last):
 ValueError: could not convert string to float: 'setosa'
 
->>> a = np.loadtxt(DATA, skiprows=1, delimiter=',', usecols=(0,1,2,3))  # doctest: +ELLIPSIS
+>>> a = np.loadtxt(DATA, skiprows=1, delimiter=',', max_rows=5, usecols=(0,1,2,3))
 >>> a
 array([[5.4, 3.9, 1.3, 0.4],
        [5.9, 3. , 5.1, 1.8],
        [6. , 3.4, 4.5, 1.6],
        [7.3, 2.9, 6.3, 1.8],
-       [5.6, 2.5, 3.9, 1.1], ...])
+       [5.6, 2.5, 3.9, 1.1]])
 
 >>> header = np.loadtxt(DATA, max_rows=1, delimiter=',', dtype=str, usecols=(0,1,2,3))
 >>> data = np.loadtxt(DATA, skiprows=1, max_rows=3, delimiter=',', usecols=(0,1,2,3))
 >>>
->>> header
+>>> header  # doctest: +NORMALIZE_WHITESPACE
 array(['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], dtype='<U12')
 >>>
 >>> data

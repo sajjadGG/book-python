@@ -246,7 +246,7 @@ array([99,  2,  3])
 >>>
 >>> a[-1] = 11.1
 >>> a
-array([99,  2,  11])
+array([99,  2, 11])
 
 2-dimensional Array:
 

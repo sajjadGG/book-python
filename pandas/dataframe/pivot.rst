@@ -105,8 +105,13 @@ Examples
 
 This first example aggregates values by taking the sum.
 
->>> pd.pivot_table(df, values='D', index=['A', 'B'],
-...                columns=['C'], aggfunc=np.sum)
+>>> result = pd.pivot_table(data=df,
+...                         values='D',
+...                         index=['A', 'B'],
+...                         columns=['C'],
+...                         aggfunc=np.sum)
+>>>
+>>> result  # doctest: +NORMALIZE_WHITESPACE
 C        large  small
 A   B
 bar one    4.0    5.0
@@ -116,8 +121,14 @@ foo one    4.0    1.0
 
 We can also fill missing values using the `fill_value` parameter.
 
->>> pd.pivot_table(df, values='D', index=['A', 'B'],
-...                columns=['C'], aggfunc=np.sum, fill_value=0)
+>>> result = pd.pivot_table(data=df,
+...                         values='D',
+...                         index=['A', 'B'],
+...                         columns=['C'],
+...                         aggfunc=np.sum,
+...                         fill_value=0)
+>>>
+>>> result  # doctest: +NORMALIZE_WHITESPACE
 C        large  small
 A   B
 bar one      4      5
@@ -127,8 +138,12 @@ foo one      4      1
 
 The next example aggregates by taking the mean across multiple columns.
 
->>> pd.pivot_table(df, values=['D', 'E'], index=['A', 'C'],
-...                     aggfunc={'D': np.mean, 'E': np.mean})
+>>> result = pd.pivot_table(data=df,
+...                         values=['D', 'E'],
+...                         index=['A', 'C'],
+...                         aggfunc={'D': np.mean, 'E': np.mean})
+>>>
+>>> result  # doctest: +NORMALIZE_WHITESPACE
                   D         E
 A   C
 bar large  5.500000  7.500000
@@ -139,8 +154,12 @@ foo large  2.000000  4.500000
 We can also calculate multiple types of aggregations for any given
 value column.
 
->>> pd.pivot_table(df, values=['D', 'E'], index=['A', 'C'],
-...                aggfunc={'D': np.mean, 'E': [min, max, np.mean]})
+>>> result = pd.pivot_table(data=df,
+...                         values=['D', 'E'],
+...                         index=['A', 'C'],
+...                         aggfunc={'D': np.mean, 'E': [min, max, np.mean]})
+>>>
+>>> result  # doctest: +NORMALIZE_WHITESPACE
                   D    E
                mean  max      mean  min
 A   C
