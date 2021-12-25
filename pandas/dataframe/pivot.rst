@@ -129,7 +129,7 @@ The next example aggregates by taking the mean across multiple columns.
 
 >>> pd.pivot_table(df, values=['D', 'E'], index=['A', 'C'],
 ...                     aggfunc={'D': np.mean, 'E': np.mean})
-                D         E
+                  D         E
 A   C
 bar large  5.500000  7.500000
     small  5.500000  8.500000
@@ -141,8 +141,8 @@ value column.
 
 >>> pd.pivot_table(df, values=['D', 'E'], index=['A', 'C'],
 ...                aggfunc={'D': np.mean, 'E': [min, max, np.mean]})
-                D    E
-            mean  max      mean  min
+                  D    E
+               mean  max      mean  min
 A   C
 bar large  5.500000  9.0  7.500000  6.0
     small  5.500000  9.0  8.500000  8.0
