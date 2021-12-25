@@ -76,10 +76,10 @@ numpy.AxisError: axis 1 is out of bounds for array of dimension 1
 3.5
 >>>
 >>> np.average(a, axis=0)
-... array([2.5, 3.5, 4.5])
+array([2.5, 3.5, 4.5])
 >>>
 >>> np.average(a, axis=1)
-... array([2., 5.])
+array([2., 5.])
 >>>
 >>> np.average(a, weights=[[1, 0, 2],
 ...                        [2, 0, 1]])

@@ -199,9 +199,8 @@ array([-1,  0,  1])
 >>> a.astype(np.uint8)
 array([255,   0,   1], dtype=uint8)
 >>>
->>> a.astype(np.uint64)
-array([18446744073709551615,                    0,                    1],
-          dtype=uint64)
+>>> a.astype(np.uint64)  # doctest: +NORMALIZE_WHITESPACE
+array([18446744073709551615, 0, 1], dtype=uint64)
 
 
 float

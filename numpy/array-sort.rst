@@ -64,7 +64,6 @@ Flip
 Flip vector:
 
 >>> a = np.array([1, 2, 3])
-array([1, 2, 3])
 >>>
 >>> np.flip(a)
 array([3, 2, 1])
