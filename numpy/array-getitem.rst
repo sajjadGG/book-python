@@ -12,29 +12,25 @@ Rationale
 * ``list[bool]``
 
 >>> import numpy as np
->>>
->>>
+
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6],
 ...               [7, 8, 9]])
 >>>
->>> a[ 0 ]              # int
+>>> a[ 0 ]  # int
 array([1, 2, 3])
 >>>
->>> a[ [0,2] ]          # list[int]
+>>> a[ [0,2] ]  # list[int]
 array([[1, 2, 3],
        [7, 8, 9]])
 >>>
->>> a[ [True,False,True] ]   # list[bool]
+>>> a[ [True,False,True] ]  # list[bool]
 array([[1, 2, 3],
        [7, 8, 9]])
 
 
 Index
 -----
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 2, 3])
 >>>
 >>>
@@ -50,9 +46,6 @@ IndexError: index 4 is out of bounds for axis 0 with size 3
 
 Flat:
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
@@ -71,9 +64,6 @@ Flat:
 
 Multidimensional:
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
@@ -117,9 +107,6 @@ Selecting items
 ---------------
 1-dimensional Array:
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 2, 3])
 array([1, 2, 3])
 >>>
@@ -137,9 +124,6 @@ IndexError: index 3 is out of bounds for axis 0 with size 3
 
 2-dimensional Array:
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
@@ -169,9 +153,6 @@ IndexError: index 2 is out of bounds for axis 0 with size 2
 Traceback (most recent call last):
 IndexError: index 2 is out of bounds for axis 0 with size 2
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6],
 ...               [7, 8, 9]])
@@ -207,9 +188,6 @@ IndexError: index 2 is out of bounds for axis 0 with size 2
 
 3-dimensional Array:
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[[ 1,  2,  3],
 ...                [ 4,  5,  6],
 ...                [ 5,  6,  7]],
@@ -238,8 +216,6 @@ IndexError: index 2 is out of bounds for axis 0 with size 2
 
 Substituting items
 ------------------
->>> import numpy as np
-
 1-dimensional Array:
 
 * Will type cast values to ``np.ndarray.dtype``
@@ -284,9 +260,6 @@ array([[99,  2,  3],
 
 Multi-indexing
 --------------
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 2, 3])
 >>>
 >>> a[0], a[2], a[-1]
@@ -298,9 +271,6 @@ array([1, 3, 3])
 >>> a[[True, False, True]]
 array([1, 3])
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6],
 ...               [7, 8, 9]])

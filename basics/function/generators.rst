@@ -317,7 +317,7 @@ Use Case - 0x04
 >>>
 >>> list(result)  # doctest: +NORMALIZE_WHITESPACE
 [{'age': 21, 'name': 'Mark Watney'},
- {'age': 25, 'name': 'Rick Martinez'}]
+ {'age': 25, 'name': 'Melissa Lewis'}]
 
 
 Use Case - 0x05

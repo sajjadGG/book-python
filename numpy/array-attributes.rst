@@ -2,22 +2,32 @@ Array Attributes
 ================
 
 
+Rationale
+---------
+>>> import numpy as np
+
 Size
 ----
 * Number of elements
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 2, 3])
 >>>
+>>> a.size
+3
+
 >>> b = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
+>>> b.size
+6
+
 >>> c = np.array([[1, 2, 3],
 ...               [4, 5, 6],
 ...               [7, 8, 9]])
 >>>
+>>> c.size
+9
+
 >>> d = np.array([[[ 1,  2,  3],
 ...                [ 4,  5,  6],
 ...                [ 5,  6,  7]],
@@ -25,15 +35,6 @@ Size
 ...               [[11, 22, 33],
 ...                [44, 55, 66],
 ...                [77, 88, 99]]])
->>>
->>> a.size
-3
->>>
->>> b.size
-6
->>>
->>> c.size
-9
 >>>
 >>> d.size
 18
@@ -41,18 +42,24 @@ Size
 
 Shape
 -----
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 2, 3])
 >>>
+>>> a.shape
+(3,)
+
 >>> b = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
+>>> b.shape
+(2, 3)
+
 >>> c = np.array([[1, 2, 3],
 ...               [4, 5, 6],
 ...               [7, 8, 9]])
 >>>
+>>> c.shape
+(3, 3)
+
 >>> d = np.array([[[ 1,  2,  3],
 ...                [ 4,  5,  6],
 ...                [ 5,  6,  7]],
@@ -61,18 +68,8 @@ Shape
 ...                [44, 55, 66],
 ...                [77, 88, 99]]])
 >>>
->>> a.shape
-(3,)
->>>
->>> b.shape
-(2, 3)
->>>
->>> c.shape
-(3, 3)
->>>
 >>> d.shape
 (2, 3, 3)
->>>
 
 
 NDim
@@ -80,18 +77,24 @@ NDim
 * Number of Dimensions
 * ``len(ndarray.shape)``
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 2, 3])
 >>>
+>>> a.ndim
+1
+
 >>> b = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
+>>> b.ndim
+2
+
 >>> c = np.array([[1, 2, 3],
 ...               [4, 5, 6],
 ...               [7, 8, 9]])
 >>>
+>>> c.ndim
+2
+
 >>> d = np.array([[[ 1,  2,  3],
 ...                [ 4,  5,  6],
 ...                [ 5,  6,  7]],
@@ -99,15 +102,6 @@ NDim
 ...               [[11, 22, 33],
 ...                [44, 55, 66],
 ...                [77, 88, 99]]])
->>>
->>> a.ndim
-1
->>>
->>> b.ndim
-2
->>>
->>> c.ndim
-2
 >>>
 >>> d.ndim
 3
@@ -123,13 +117,22 @@ Length
 >>>
 >>> a = np.array([1, 2, 3])
 >>>
+>>> len(a)
+3
+
 >>> b = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
+>>> len(b)
+2
+
 >>> c = np.array([[1, 2, 3],
 ...               [4, 5, 6],
 ...               [7, 8, 9]])
 >>>
+>>> len(c)
+3
+
 >>> d = np.array([[[ 1,  2,  3],
 ...                [ 4,  5,  6],
 ...                [ 5,  6,  7]],
@@ -138,55 +141,53 @@ Length
 ...                [44, 55, 66],
 ...                [77, 88, 99]]])
 >>>
->>> len(a)
-3
->>>
->>> len(b)
-2
->>>
->>> len(c)
-3
->>>
 >>> len(d)
 2
->>>
 
 
 Itemsize
 --------
 * ``int64`` takes 64 bits (8 bytes of memory)
 
->>> import numpy as np
->>>
->>> a = np.array([1, 2, 3], dtype=np.int16)
->>> b = np.array([1, 2, 3], dtype=np.int32)
->>> c = np.array([1, 2, 3], dtype=np.int64)
->>>
+>>> a = np.array([1, 2, 3], dtype=int)
 >>> a.itemsize
-2
->>>
->>> b.itemsize
-4
->>>
->>> c.itemsize
 8
 >>>
+>>> b = np.array([1, 2, 3], dtype=np.int0)
+>>> b.itemsize
+8
+>>>
+>>> c = np.array([1, 2, 3], dtype=np.int8)
+>>> c.itemsize
+1
+>>>
+>>> d = np.array([1, 2, 3], dtype=np.int16)
+>>> d.itemsize
+2
+>>>
+>>> e = np.array([1, 2, 3], dtype=np.int32)
+>>> e.itemsize
+4
+>>>
+>>> f = np.array([1, 2, 3], dtype=np.int64)
+>>> f.itemsize
+8
 
->>> import numpy as np
->>>
->>> a = np.array([1, 2, 3], dtype=np.float16)
->>> b = np.array([1, 2, 3], dtype=np.float32)
->>> c = np.array([1, 2, 3], dtype=np.float64)
->>>
+>>> a = np.array([1, 2, 3], dtype=float)
 >>> a.itemsize
-2
->>>
->>> b.itemsize
-4
->>>
->>> c.itemsize
 8
 >>>
+>>> b = np.array([1, 2, 3], dtype=np.float16)
+>>> b.itemsize
+2
+>>>
+>>> c = np.array([1, 2, 3], dtype=np.float32)
+>>> c.itemsize
+4
+>>>
+>>> d = np.array([1, 2, 3], dtype=np.float64)
+>>> d.itemsize
+8
 
 
 Strides
@@ -194,18 +195,24 @@ Strides
 * ``int64`` takes 64 bits (8 bytes of memory)
 * Strides inform how many bytes numpy has to jump to access values in each dimensions
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 2, 3])
 >>>
+>>> a.strides
+(8,)
+
 >>> b = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
+>>> b.strides
+(24, 8)
+
 >>> c = np.array([[1, 2, 3],
 ...               [4, 5, 6],
 ...               [7, 8, 9]])
 >>>
+>>> c.strides
+(24, 8)
+
 >>> d = np.array([[[ 1,  2,  3],
 ...                [ 4,  5,  6],
 ...                [ 5,  6,  7]],
@@ -214,61 +221,24 @@ Strides
 ...                [44, 55, 66],
 ...                [77, 88, 99]]])
 >>>
->>> a.strides
-(8,)
->>>
->>> b.strides
-(24, 8)
->>>
->>> c.strides
-(24, 8)
->>>
 >>> d.strides
 (72, 24, 8)
->>>
 
 
 Data
 ----
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 2, 3])
 >>>
->>> a.shape
-(3,)
->>>
->>> a.itemsize
-8
->>>
->>> a.strides
-(8,)
->>>
->>> a.data
-<memory at 0x10cdfaa10>
+>>> a.data  # doctest: +ELLIPSIS
+<memory at 0x...>
 
->>> import numpy as np
->>>
->>>
->>> a = np.array([[1, 2, 3],
+>>> b = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
->>> a.shape
-(2, 3)
->>>
->>> a.itemsize
-8
->>>
->>> a.strides
-(24, 8)
->>>
->>> a.data
-<memory at 0x10caefbb0>
+>>> b.data  # doctest: +ELLIPSIS
+<memory at 0x...>
 
->>> import numpy as np
->>>
->>>
->>> a = np.array([[[ 1,  2,  3],
+>>> c = np.array([[[ 1,  2,  3],
 ...                [ 4,  5,  6],
 ...                [ 5,  6,  7]],
 ...
@@ -276,18 +246,8 @@ Data
 ...                [44, 55, 66],
 ...                [77, 88, 99]]])
 >>>
->>> a.shape
-(2, 3, 3)
->>>
->>> a.itemsize
-8
->>>
->>> a.strides
-(72, 24, 8)
->>>
->>> a.data
-<memory at 0x107933c70>
->>>
+>>> c.data  # doctest: +ELLIPSIS
+<memory at 0x...>
 
 .. figure:: img/array-attributes-data.png
 

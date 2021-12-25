@@ -2,19 +2,22 @@ Linear Algebra
 ==============
 
 
+Rationale
+---------
+>>> import numpy as np
 
-Linear Algebra
---------------
-* ``np.sign()``
-* ``np.abs()``
-* ``np.sqrt()``
-* ``np.power()``
+Linear Algebra:
 
-Logarithms
-----------
-* ``np.log()``
-* ``np.log10()``
-* ``np.exp()``
+    * ``np.sign()``
+    * ``np.abs()``
+    * ``np.sqrt()``
+    * ``np.power()``
+
+Logarithms:
+
+    * ``np.log()``
+    * ``np.log10()``
+    * ``np.exp()``
 
 
 Vector and matrix mathematics
@@ -23,16 +26,19 @@ Vector and matrix mathematics
 
 Determinant of a square matrix
 ------------------------------
->>> import numpy as np
->>>
->>>
->>> a = np.array([[4, 2, 0], [9, 3, 7], [1, 2, 1]], float)
-array([[ 4., 2., 0.],
-       [ 9., 3., 7.],
-       [ 1., 2., 1.]])
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]])
 >>>
 >>> np.linalg.det(a)
--53.999999999999993
+0.0
+
+>>> a = np.array([[4, 2, 0],
+...               [9, 3, 7],
+...               [1, 2, 1]])
+>>>
+>>> np.linalg.det(a)
+-48.00000000000003
 
 
 Inner product
@@ -45,9 +51,6 @@ Inner product
 
 Ordinary inner product for vectors:
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 2, 3])
 >>> b = np.array([0, 1, 0])
 >>>
@@ -56,9 +59,6 @@ Ordinary inner product for vectors:
 
 Multidimensional example:
 
->>> import numpy as np
->>>
->>>
 >>> a = np.arange(24).reshape((2,3,4))
 >>> b = np.arange(4)
 >>>
@@ -69,25 +69,26 @@ array([[ 14,  38,  62],
 
 Outer product
 -------------
-* Compute the outer product of two vectors
 * ``np.outer()``
 
->>> import numpy as np
->>>
->>>
->>> a = np.array([1, 4, 0], float)
->>> b = np.array([2, 2, 1], float)
+Compute the outer product of two vectors
+
+>>> a = np.array([1, 2, 3])
+>>> b = np.array([4, 5, 6])
 >>>
 >>> np.outer(a, b)
-array([[ 2., 2., 1.],
-       [ 8., 8., 4.],
-       [ 0., 0., 0.]])
+array([[ 4,  5,  6],
+       [ 8, 10, 12],
+       [12, 15, 18]])
 
 An example using a "vector" of letters:
 
->>> import numpy as np
+>>> a = np.array(['a', 'b', 'c'])
 >>>
->>>
+>>> np.outer(a, [1, 2, 3])
+Traceback (most recent call last):
+numpy.core._exceptions._UFuncNoLoopError: ufunc 'multiply' did not contain a loop with signature matching types (dtype('<U1'), dtype('int64')) -> None
+
 >>> a = np.array(['a', 'b', 'c'], dtype=object)
 >>>
 >>> np.outer(a, [1, 2, 3])
@@ -95,105 +96,98 @@ array([['a', 'aa', 'aaa'],
        ['b', 'bb', 'bbb'],
        ['c', 'cc', 'ccc']], dtype=object)
 
+
 Cross product
 -------------
-* The cross product of a and b in R^3 is a vector perpendicular to both a and b
 * ``np.cross()``
+
+The cross product of a and b in R^3 is a vector perpendicular to both a and b
 
 Vector cross-product:
 
->>> import numpy as np
+>>> a = [1, 2, 3]
+>>> b = [4, 5, 6]
 >>>
->>>
->>> x = [1, 2, 3]
->>> y = [4, 5, 6]
->>>
->>> np.cross(x, y)
+>>> np.cross(a, b)
 array([-3,  6, -3])
 
 One vector with dimension 2:
 
->>> import numpy as np
+>>> a = [1, 2]
+>>> b = [4, 5, 6]
 >>>
->>>
->>> x = [1, 2]
->>> y = [4, 5, 6]
->>>
->>> np.cross(x, y)
+>>> np.cross(a, b)
 array([12, -6, -3])
 
 
 Eigenvalues and vectors of a square matrix
 ------------------------------------------
-* Each of a set of values of a parameter for which a differential equation has a nonzero solution (an eigenfunction) under given conditions
-* Any number such that a given matrix minus that number times the identity matrix has a zero determinant
+Each of a set of values of a parameter for which a differential equation has
+a nonzero solution (an eigenfunction) under given conditions. Any number such
+that a given matrix minus that number times the identity matrix has a zero
+determinant.
 
->>> import numpy as np
->>>
->>>
->>> a = np.array([[4, 2, 0], [9, 3, 7], [1, 2, 1]], float)
-array([[ 4., 2., 0.],
-       [ 9., 3., 7.],
-       [ 1., 2., 1.]])
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]])
 >>>
 >>> vals, vecs = np.linalg.eig(a)
 >>>
 >>> vals
-array([ 9. , 2.44948974, -2.44948974])
+array([ 1.61168440e+01, -1.11684397e+00, -1.30367773e-15])
 >>>
 >>> vecs
-array([[-0.3538921 , -0.56786837, 0.27843404],
-       [-0.88473024, 0.44024287, -0.89787873],
-       [-0.30333608, 0.69549388, 0.34101066]])
+array([[-0.23197069, -0.78583024,  0.40824829],
+       [-0.52532209, -0.08675134, -0.81649658],
+       [-0.8186735 ,  0.61232756,  0.40824829]])
 
 
 Inverse of a square matrix
 --------------------------
->>> import numpy as np
->>>
->>>
->>> a = np.array([[4, 2, 0], [9, 3, 7], [1, 2, 1]], float)
-array([[ 4., 2., 0.],
-       [ 9., 3., 7.],
-       [ 1., 2., 1.]])
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]])
 >>>
 >>> np.linalg.inv(a)
-array([[ 0.14814815, 0.07407407, -0.25925926],
-       [ 0.2037037 , -0.14814815, 0.51851852],
-       [-0.27777778, 0.11111111, 0.11111111]])
+Traceback (most recent call last):
+numpy.linalg.LinAlgError: Singular matrix
 
->>> import numpy as np
+>>> a = np.array([[4, 2, 0],
+...               [9, 3, 7],
+...               [1, 2, 1]])
 >>>
->>>
->>> a = np.array([[4, 2, 0], [9, 3, 7], [1, 2, 1]], float)
 >>> b = np.linalg.inv(a)
+>>> b
+array([[ 0.22916667,  0.04166667, -0.29166667],
+       [ 0.04166667, -0.08333333,  0.58333333],
+       [-0.3125    ,  0.125     ,  0.125     ]])
 >>>
 >>> np.dot(a, b)
-array([[ 1.00000000e+00, 5.55111512e-17, 2.22044605e-16],
-       [ 0.00000000e+00, 1.00000000e+00, 5.55111512e-16],
-       [ 1.11022302e-16, 0.00000000e+00, 1.00000000e+00]])
+array([[1.00000000e+00, 5.55111512e-17, 0.00000000e+00],
+       [0.00000000e+00, 1.00000000e+00, 2.22044605e-16],
+       [0.00000000e+00, 1.38777878e-17, 1.00000000e+00]])
 
 
 Singular value decomposition of a matrix
 ----------------------------------------
->>> import numpy as np
->>>
->>>
->>> a = np.array([[1, 3, 4], [5, 2, 3]], float)
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]])
 >>>
 >>> U, s, Vh = np.linalg.svd(a)
 >>>
 >>> U
-array([[-0.6113829 , -0.79133492],
-       [-0.79133492, 0.6113829 ]])
+array([[-0.21483724,  0.88723069,  0.40824829],
+       [-0.52058739,  0.24964395, -0.81649658],
+       [-0.82633754, -0.38794278,  0.40824829]])
 >>>
 >>> s
-array([ 7.46791327, 2.86884495])
+array([1.68481034e+01, 1.06836951e+00, 4.41842475e-16])
 >>>
 >>> Vh
-array([[-0.61169129, -0.45753324, -0.64536587],
-       [ 0.78971838, -0.40129005, -0.46401635],
-       [-0.046676 , -0.79349205, 0.60678804]])
+array([[-0.47967118, -0.57236779, -0.66506441],
+       [-0.77669099, -0.07568647,  0.62531805],
+       [-0.40824829,  0.81649658, -0.40824829]])
 
 
 Linear Algebra

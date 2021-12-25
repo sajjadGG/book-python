@@ -132,10 +132,10 @@ setosa
 >>> username, *_, home, _ = line.split(':')
 >>>
 >>> print(username)
-twardowski
+watney
 >>>
 >>> print(home)
-/home/twardowski
+/home/watney
 
 
 Use Case - 0x01

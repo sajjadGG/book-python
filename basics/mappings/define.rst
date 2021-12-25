@@ -42,7 +42,7 @@ Duplicating items are overridden by latter:
 ... }
 >>>
 >>> data
-{'commander': 'Mark Watney'}
+{'commander': 'Melissa Lewis'}
 
 
 Dict vs Set

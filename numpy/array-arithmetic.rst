@@ -4,6 +4,8 @@ Array Arithmetic
 
 Rationale
 ---------
+>>> import numpy as np
+
 .. glossary::
 
     Scalar
@@ -13,9 +15,6 @@ Rationale
         Single statement without a loop that explains a looping concept.
         Applies operation to each element.
 
-        >>> import numpy as np
-        >>>
-        >>>
         >>> a = np.array([1, 2, 3])
         >>>
         >>> a + 1
@@ -24,9 +23,6 @@ Rationale
 
 Addition
 --------
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
@@ -37,9 +33,6 @@ array([[3, 4, 5],
 
 Subtraction
 -----------
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
@@ -50,9 +43,6 @@ array([[-1,  0,  1],
 
 Division
 --------
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 
@@ -79,9 +69,6 @@ Multiplication
 --------------
 * Scalar multiplication
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
@@ -92,36 +79,54 @@ array([[ 2,  4,  6],
 
 Power
 -----
-* ``np.power()``
-
-.. todo:: Performance testing np.power(a) vs a ** 2
-
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
 >>> a ** 2
->>> # array([[ 1,  4,  9],
->>> #        [16, 25, 36]])
+array([[ 1,  4,  9],
+       [16, 25, 36]])
+>>>
+>>> np.power(a, 2)
+array([[ 1,  4,  9],
+       [16, 25, 36]])
+
+Performance:
+
+>>> # doctest: +SKIP
+... %%timeit -r 1000 -n 1000
+... a ** 2
+522 ns ± 78.6 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
+
+>>> # doctest: +SKIP
+... %%timeit -r 1000 -n 1000
+... np.power(a, 2)
+684 ns ± 83.4 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
 
 
 Roots
 -----
-* ``np.sqrt()``
-
-.. todo:: Performance testing np.sqrt(a) vs a ** (1/2)
-
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
 >>> a ** (1/2)
 array([[1.        , 1.41421356, 1.73205081],
        [2.        , 2.23606798, 2.44948974]])
+>>>
+>>> np.sqrt(a)
+array([[1.        , 1.41421356, 1.73205081],
+       [2.        , 2.23606798, 2.44948974]])
+
+Performance:
+
+>>> # doctest: +SKIP
+... %%timeit -r 1000 -n 1000
+... a ** (1/2)
+1.79 µs ± 217 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
+
+>>> # doctest: +SKIP
+... %%timeit -r 1000 -n 1000
+... np.sqrt(a)
+855 ns ± 89.3 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
 
 
 Assignments

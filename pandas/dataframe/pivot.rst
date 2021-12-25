@@ -73,6 +73,9 @@ wide_to_long : Wide panel to long format. Less flexible but more
 
 Examples
 --------
+>>> import pandas as pd
+>>>
+>>>
 >>> df = pd.DataFrame({"A": ["foo", "foo", "foo", "foo", "foo",
 ...                          "bar", "bar", "bar", "bar"],
 ...                    "B": ["one", "one", "one", "two", "two",

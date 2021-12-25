@@ -10,22 +10,28 @@ Rationale
     Broadcasting
     Matrix Multiplication
 
+>>> import numpy as np
+
 
 Broadcasting Rules
 ------------------
 * Source :cite:`NumpyBroadcastingRules`
 
-#. Operations between multiple array objects are first checked for proper shape match
-#. Mathematical operators (``+``, ``-``, ``*``, ``/``, ``exp``, ``log``, ...) apply element by element, on values
-#. Reduction operations (``mean``, ``std``, ``skew``, ``kurt``, ``sum``, ``prod``, ...) apply to whole array, unless an axis is specified
-#. Missing values propagate, unless explicitly ignored (``nanmean``, ``nansum``, ...)
+#. Operations between multiple array objects are first checked for proper
+   shape match
+
+#. Mathematical operators (``+``, ``-``, ``*``, ``/``, ``exp``, ``log``, ...)
+   apply element by element, on values
+
+#. Reduction operations (``mean``, ``std``, ``skew``, ``kurt``, ``sum``,
+   ``prod``, ...) apply to whole array, unless an axis is specified
+
+#. Missing values propagate, unless explicitly ignored (``nanmean``,
+   ``nansum``, ...)
 
 
 Addition
 --------
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
 >>> b = np.array([[4, 5, 6], [7, 8, 9]])
 >>> c = np.array([1, 2, 3])
@@ -50,9 +56,6 @@ ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
 Subtraction
 -----------
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
 >>> b = np.array([[4, 5, 6], [7, 8, 9]])
 >>> c = np.array([1, 2, 3])
@@ -77,9 +80,6 @@ ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
 True Division
 -------------
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
 >>> b = np.array([[4, 5, 6], [7, 8, 9]])
 >>> c = np.array([1, 2, 3])
@@ -104,9 +104,6 @@ ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
 Floor Division
 --------------
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
 >>> b = np.array([[4, 5, 6], [7, 8, 9]])
 >>> c = np.array([1, 2, 3])
@@ -131,9 +128,6 @@ ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
 Modulo
 ------
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
 >>> b = np.array([[4, 5, 6], [7, 8, 9]])
 >>> c = np.array([1, 2, 3])
@@ -158,9 +152,6 @@ ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
 Power
 -----
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
 >>> b = np.array([[4, 5, 6], [7, 8, 9]])
 >>> c = np.array([1, 2, 3])
@@ -185,9 +176,6 @@ ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
 Root
 ----
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
 >>> b = np.array([[4, 5, 6], [7, 8, 9]])
 >>> c = np.array([1, 2, 3])
@@ -212,11 +200,9 @@ ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
 Array Multiplication
 --------------------
-* Multiplication ``*`` remains elementwise and does not correspond to matrix multiplication.
+* Multiplication ``*`` remains elementwise
+* Does not correspond to matrix multiplication
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3], [4, 5, 6]])
 >>> b = np.array([[4, 5, 6], [7, 8, 9]])
 >>> c = np.array([1, 2, 3])
@@ -245,14 +231,12 @@ Matrix Multiplication
 
 .. figure:: img/arithmetic-matmul.jpg
 
->>> import numpy as np
-
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
 >>> b = np.array([[1, 2],
 ...               [3, 4],
->>>               [5, 6]])
+...               [5, 6]])
 >>>
 >>> a @ b
 array([[22, 28],
@@ -278,18 +262,12 @@ Dot
 * If a is an N-D array and b is a 1-D array, it is a sum product over the last axis of a and b.
 * If a is an N-D array and b is an M-D array (where ``M>=2``), it is a sum product over the last axis of a and the second-to-last axis of b: ``dot(a, b)[i,j,k,m] = sum(a[i,j,:] * b[k,:,m])``
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 2, 3], float)
 >>> b = np.array([0, 1, 1], float)
 >>>
 >>> np.dot(a, b)
 5.0
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[0, 1], [2, 3]], float)
 >>> b = np.array([2, 3], float)
 >>> c = np.array([[1, 1], [4, 0]], float)
@@ -302,11 +280,11 @@ array([ 3., 13.])
 >>>
 >>> np.dot(a, c)
 array([[ 4., 0.],
-       [ 14., 2.]])
+       [14., 2.]])
 >>>
 >>> np.dot(c, a)
-array([[ 2., 4.],
-       [ 0., 4.]])
+array([[2., 4.],
+       [0., 4.]])
 
 
 Assignments

@@ -9,6 +9,8 @@ Rationale
 
 .. figure:: img/array-dtype-sizes.png
 
+>>> import numpy as np
+
 
 Bits and Bytes
 --------------
@@ -83,9 +85,6 @@ Calculates a two's complement integer from the given input value's bits:
 ...     mask = 2 ** (num_bits - 1)
 ...     return -(value & mask) + (value & ~mask)
 
->>> import numpy as np
->>>
->>>
 >>> np.binary_repr(0, 8)  # number 0 using 8-bit integer representation
 '00000000'
 >>>
@@ -110,9 +109,6 @@ Calculates a two's complement integer from the given input value's bits:
 
 Comparison
 ----------
->>> import numpy as np
->>>
->>>
 >>> data = 69
 >>>
 >>> np.binary_repr(data, 8)  # np.int8
@@ -146,20 +142,14 @@ Signed int
     "``np.int32``", "32", "4,294,967,296", "-2,147,483,648", "2,147,483,646"
     "``np.int64``", "64", "18,446,744,073,709,551,616", "-9,223,372,036,854,775,808", "9,223,372,036,854,775,807"
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 2, 3])
 >>>
 >>> type(a)
-<class 'numpy.np.ndarray'>
+<class 'numpy.ndarray'>
 >>>
 >>> a.dtype
 dtype('int64')
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1., 2., 3.],
 ...               [4., 5., 6.]])
 >>>
@@ -193,30 +183,26 @@ Unsigned int
     "``np.uint32``", "32", "4,294,967,296", "0", "4,294,967,295"
     "``np.uint64``", "64", "18,446,744,073,709,551,616", "0", "18,446,744,073,709,551,615"
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([-1, 0, 1])
 >>>
 >>> type(a)
-<class 'numpy.np.ndarray'>
+<class 'numpy.ndarray'>
 >>>
 >>> a.dtype
 dtype('int64')
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([-1, 0, 1])
 >>>
 >>> a.astype(int)
-array([-1, 0, 1])
+array([-1,  0,  1])
 >>>
 >>> a.astype(np.uint8)
-array([255, 0, 1], dtype=uint8)
+array([255,   0,   1], dtype=uint8)
 >>>
 >>> a.astype(np.uint64)
-array([18446744073709551615, 0, 1], dtype=uint64)
+array([18446744073709551615,                    0,                    1],
+481
+          dtype=uint64)
 
 
 float
@@ -235,20 +221,14 @@ float
     "``np.float64``", "64", "±0.000000000000000×10−383", "±9.999999999999999×10384"
     "``np.float128``", "64", "±0.000000000000000000000000000000000×10−6143", "±9.999999999999999999999999999999999×106144"
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1., 2., 3.])
 >>>
 >>> type(a)
-<class 'numpy.np.ndarray'>
+<class 'numpy.ndarray'>
 >>>
 >>> a.dtype
 dtype('float64')
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
@@ -280,19 +260,12 @@ complex
 * ``np.complex128``
 * ``np.complex256``
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1+2j])
 >>>
 >>> a.dtype
 dtype('complex128')
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1.1+2.2j])
-array([1.1+2.2j])
 >>>
 >>> a.dtype
 dtype('complex128')
@@ -300,31 +273,22 @@ dtype('complex128')
 
 bool
 ----
->>> import numpy as np
->>>
->>>
 >>> a = np.array([True, False, True])
 >>>
 >>> a.dtype
 dtype('bool')
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([1, 0, 1], bool)
 >>>
 >>> a.dtype
 dtype('bool')
 >>>
->>> repr(a)
+>>> a
 array([ True, False,  True])
 
 
 str
 ---
->>> import numpy as np
->>>
->>>
 >>> np.array(['a', 'b', 'c'])
 array(['a', 'b', 'c'], dtype='<U1')
 >>>

@@ -12,17 +12,17 @@ Rationale
 
     Visualizing Multi-Dimensional Arrays :cite:`NumpyMultidimArrays`
 
+>>> import numpy as np
+
 
 Axis
 ----
 * New dimensions are added at the beginning of ``shape``
 * Old axes numbers are pushed to the right
 
->>> import numpy as np
-
 One Dimensions:
 
->>> a = np.array([1,2,3])
+>>> a = np.array([1, 2, 3])
 >>>
 >>> a.shape
 (3,)
@@ -37,11 +37,11 @@ One Dimensions:
 
 Two Dimensions:
 
->>> a = np.array([[1,2,3],
-...               [4,5,6]])
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6]])
 >>>
 >>> a.shape
-(2,3)
+(2, 3)
 >>>
 >>> a.ndim
 2
@@ -56,15 +56,15 @@ Two Dimensions:
 
 Three Dimensions:
 
->>> a = np.array([[[1,2,3],
-...                [4,5,6]],
+>>> a = np.array([[[1, 2, 3],
+...                [4, 5, 6]],
 ...
-...               [[11,22,33],
-...                [44,55,66]]])
+...               [[11, 22, 33],
+...                [44, 55, 66]]])
 >>>
 >>> a.shape
-(2,2,3)
-...
+(2, 2, 3)
+>>>
 >>> a.ndim
 3
 
@@ -80,20 +80,23 @@ Three Dimensions:
 
 Four Dimensions:
 
->>> a = np.array([[[[1,2,3],
-...                [4,5,6]],
+>>> a = np.array([[[[1, 2, 3],
+...                 [4, 5, 6]],
 ...
-...               [[11,22,33],
-...                [44,55,66]]],
+...                [[11, 22, 33],
+...                 [44, 55, 66]]],
 ...
-...               [[[1,2,3],
-...                [4,5,6]],
+...                [[[1, 2, 3],
+...                  [4, 5, 6]],
 ...
-...               [[11,22,33],
-...                [44,55,66]]]])
+...                [[11, 22, 33],
+...                 [44, 55, 66]]]])
 >>>
->>> a.shape  # (2,2,3)
->>> a.ndim   # 3
+>>> a.shape
+(2, 2, 3)
+>>>
+>>> a.ndim
+3
 
 .. code-block:: text
 
@@ -110,8 +113,6 @@ Take
 ----
 One Dimensional:
 
->>> import numpy
->>>
 >>> a = np.array([1, 2, 3])
 >>>
 >>> a.shape
@@ -148,9 +149,6 @@ AxisError: axis 1 is out of bounds for array of dimension 1
 
 Two Dimensional - Rows:
 
->>> import numpy
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6],
 ...               [7, 8, 9]])
@@ -174,9 +172,6 @@ array([7, 8, 9])
 
 Two Dimensional - Columns:
 
->>> import numpy
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6],
 ...               [7, 8, 9]])
@@ -207,9 +202,6 @@ array([3, 6, 9])
 
 Three Dimensional - Depth:
 
->>> import numpy
->>>
->>>
 >>> a = np.array([[[ 1,  2,  3],
 ...                [ 4,  5,  6],
 ...                [ 5,  6,  7]],
@@ -221,17 +213,17 @@ Three Dimensional - Depth:
 >>> a.shape
 (2, 3, 3)
 
->>> a[0,:,:]
+>>> a[0, :, :]
 array([[1, 2, 3],
        [4, 5, 6],
        [5, 6, 7]])
 >>>
->>> a[1,:,:]
+>>> a[1, :, :]
 array([[11, 22, 33],
        [44, 55, 66],
        [77, 88, 99]])
 >>>
->>> a[2,:,:]
+>>> a[2, :, :]
 Traceback (most recent call last):
 IndexError: index 2 is out of bounds for axis 0 with size 2
 
@@ -251,9 +243,6 @@ IndexError: index 2 is out of bounds for size 2
 
 Three Dimensional - Rows:
 
->>> import numpy
->>>
->>>
 >>> a = np.array([[[ 1,  2,  3],
 ...                [ 4,  5,  6],
 ...                [ 5,  6,  7]],
@@ -265,15 +254,15 @@ Three Dimensional - Rows:
 >>> a.shape
 (2, 3, 3)
 >>>
->>> a[:,0,:]
+>>> a[:, 0, :]
 array([[ 1,  2,  3],
        [11, 22, 33]])
 >>>
->>> a[:,1,:]
+>>> a[:, 1, :]
 array([[ 4,  5,  6],
        [44, 55, 66]])
 >>>
->>> a[:,2,:]
+>>> a[:, 2, :]
 array([[ 5,  6,  7],
        [77, 88, 99]])
 >>>
@@ -291,8 +280,6 @@ array([[ 5,  6,  7],
 
 Three Dimensional - Columns:
 
->>> import numpy
->>>
 >>> a = np.array([[[ 1,  2,  3],
 ...                [ 4,  5,  6],
 ...                [ 5,  6,  7]],
@@ -304,15 +291,15 @@ Three Dimensional - Columns:
 >>> a.shape
 (2, 3, 3)
 >>>
->>> a[:,:,0]
+>>> a[:, :, 0]
 array([[ 1,  4,  5],
        [11, 44, 77]])
 >>>
->>> a[:,:,1]
+>>> a[:, :, 1]
 array([[ 2,  5,  6],
        [22, 55, 88]])
 >>>
->>> a[:,:,2]
+>>> a[:, :, 2]
 array([[ 3,  6,  7],
        [33, 66, 99]])
 >>>
