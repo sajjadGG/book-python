@@ -28,7 +28,7 @@ SetUp
 ...     columns = ['Morning', 'Noon', 'Evening', 'Midnight'],
 ...     index = pd.date_range('1999-12-30', periods=7),
 ...     data = np.random.randn(7, 4))
-...
+>>>
 >>> df
              Morning      Noon   Evening  Midnight
 1999-12-30  1.764052  0.400157  0.978738  2.240893

@@ -1,6 +1,13 @@
 Date and Time Frequency
 =======================
 
+
+Rationale
+---------
+
+
+Offset Aliases
+--------------
 .. csv-table:: Offset aliases
     :header: "Alias", "Description"
     :widths: 15, 85
@@ -33,6 +40,9 @@ Date and Time Frequency
     "``U``, ``us``",    "microseconds"
     "``N``",            "nanoseconds"
 
+
+Date Frequency Units
+--------------------
 .. csv-table:: Date frequency units
     :header: "Frequency", "Letter", "Long name", "Short name"
     :widths: 15, 5, 40, 40
