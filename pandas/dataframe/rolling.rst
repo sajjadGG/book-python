@@ -39,6 +39,23 @@ Resample
 
 Rolling
 -------
+.. figure:: img/pandas-dataframe-stats-rolling.png
+
+    Rolling Average
+
+>>> df.rolling(window=30)
+Rolling [window=30,center=False,axis=0,method=single]
+
+>>> df.rolling(window=3).mean()
+             Morning      Noon   Evening  Midnight
+1999-12-30       NaN       NaN       NaN       NaN
+1999-12-31       NaN       NaN       NaN       NaN
+2000-01-01  1.176130 -0.055507  0.690957  1.181270
+2000-01-02  0.841792 -0.148335  0.512665  0.545530
+2000-01-03  0.717299  0.109038  0.300325  0.311284
+2000-01-04 -0.099291  0.190045  0.540456 -0.420862
+2000-01-05  0.403615 -0.335302  0.407754 -0.594482
+
 >>> df.rolling(window=3).median()
              Morning      Noon   Evening  Midnight
 1999-12-30       NaN       NaN       NaN       NaN
