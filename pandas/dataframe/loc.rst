@@ -17,8 +17,8 @@ Rationale
     Pandas Select Cell
 
 
-Data
-----
+SetUp
+-----
 >>> import pandas as pd
 >>> import numpy as np
 >>> np.random.seed(0)
@@ -38,7 +38,6 @@ Data
 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
-
 
 
 Single row

@@ -4,6 +4,10 @@ DataFrame Group By
 
 Rationale
 ---------
+
+
+SetUp
+-----
 >>> import pandas as pd
 >>>
 >>>
@@ -470,8 +474,8 @@ month    network_type
 Name: date, dtype: int64
 
 
-References
-----------
+Datasets
+--------
 * https://finance.yahoo.com/quote/SPCE/history
 * https://www.kaggle.com/jessemostipak/astronaut-database
 * https://www.kaggle.com/nasa/astronaut-yearbook
@@ -480,6 +484,11 @@ References
 * https://www.kaggle.com/rosetabares/spacemissionsflightstatus
 * https://www.kaggle.com/rohanrao/rspacex-data
 * https://www.kaggle.com/agirlcoding/all-space-missions-from-1957
+
+
+References
+----------
+.. [#PandasAggregations] Lynn, Shane. Summarising, Aggregating, and Grouping data in Python Pandas. https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/ Access date: 2019-12-03. 2019.
 
 
 Assignments

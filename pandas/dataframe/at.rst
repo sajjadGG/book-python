@@ -12,6 +12,9 @@ Pandas Select Cell:
 
 .. figure:: img/pandas-dataframe-select-cell.png
 
+
+SetUp
+-----
 >>> import pandas as pd
 >>> import numpy as np
 >>> np.random.seed(0)

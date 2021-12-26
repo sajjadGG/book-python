@@ -2,6 +2,8 @@ DataFrame Plotting
 ==================
 
 
+Rationale
+---------
 * https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html
 
 .. figure:: img/matplotlib-figure-anatomy.png
@@ -80,12 +82,14 @@ Parameters
     * - ``y``
       - label, position or list of label, positions
       - None
-      - Allows plotting of one column versus another. Only used if data is a DataFrame.
+      - Allows plotting of one column versus another. Only used if data is
+        a DataFrame.
 
     * - ``kind``
       - str
       - ``line``
-      - ``line``, ``bar``, ``barh``, ``hist``, ``box``, ``kde``, ``density``, ``area``, ``pie``, ``scatter``, ``hexbin``
+      - ``line``, ``bar``, ``barh``, ``hist``, ``box``, ``kde``, ``density``,
+        ``area``, ``pie``, ``scatter``, ``hexbin``
 
     * - ``figsize``
       - tuple
@@ -100,7 +104,9 @@ Parameters
     * - ``title``
       - str or list
       - None
-      - Title to use for the plot. If a string is passed, print the string at the top of the figure. If a list is passed and `subplots` is True, print each item in the list above the corresponding subplot.
+      - Title to use for the plot. If a string is passed, print the string at
+        the top of the figure. If a list is passed and `subplots` is True,
+        print each item in the list above the corresponding subplot.
 
     * - ``grid``
       - bool
@@ -165,7 +171,8 @@ Parameters
     * - ``colormap``
       - str or matplotlib colormap object
       - default None
-      - Colormap to select colors from. If string, load colormap with that name from matplotlib.
+      - Colormap to select colors from. If string, load colormap with that
+        name from matplotlib.
 
     * - ``colorbar``
       - bool
@@ -175,12 +182,15 @@ Parameters
     * - ``position``
       - float
       - 0.5 (center)
-      - Specify relative alignments for bar plot layout. From 0 (left/bottom-end) to 1 (right/top-end).
+      - Specify relative alignments for bar plot layout. From 0
+        (left/bottom-end) to 1 (right/top-end).
 
     * - ``table``
       - bool, Series or DataFrame
       - False
-      - If True, draw a table using the data in the DataFrame and the data will be transposed to meet matplotlib's default layout. If a Series or DataFrame is passed, use passed data to draw a table.
+      - If True, draw a table using the data in the DataFrame and the data
+        will be transposed to meet matplotlib's default layout. If a Series
+        or DataFrame is passed, use passed data to draw a table.
 
     * - ``yerr``
       - DataFrame, Series, array-like, dict or str
@@ -195,7 +205,8 @@ Parameters
     * - ``mark_right``
       - bool
       - True
-      - When using a secondary_y axis, automatically mark the column labels with "(right)" in the legend.
+      - When using a secondary_y axis, automatically mark the column labels
+        with "(right)" in the legend.
 
     * - ``**kwds``
       - keywords
@@ -203,100 +214,120 @@ Parameters
       - Options to pass to matplotlib plotting method.
 
 
-Prepare Data
-------------
-.. code-block:: python
-
-    import pandas as pd
-
-
-    DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
-
-    df = pd.read_csv(DATA)
-    df.columns = [
-        'Sepal length',
-        'Sepal width',
-        'Petal length',
-        'Petal width',
-        'Species'
-    ]
+SetUp
+-----
+>>> import pandas as pd
+>>>
+>>>
+>>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
+>>>
+>>> df = pd.read_csv(DATA, names=[
+...     'Sepal length',
+...     'Sepal width',
+...     'Petal length',
+...     'Petal width',
+...     'Species'
+... ])
 
 
 Line Plot
 ---------
 * default
 
-.. code-block:: python
-
-    df.plot()
-
-.. code-block:: python
-
-    df.plot(kind='line')
+>>> plot = df.plot()
+>>> plot = df.plot(kind='line')
 
 .. figure:: img/pandas-dataframe-plot-line.png
 
     Line Plot
 
+
 Vertical Bar Plot
 -----------------
-.. code-block:: python
-
-    df.plot(kind='bar')
+>>> plot = df.plot(kind='bar')
 
 .. figure:: img/pandas-dataframe-plot-bar.png
 
     Vertical Bar Plot
 
+
 Horizontal Bar Plot
 -------------------
-.. code-block:: python
-
-    df.plot(kind='barh')
+>>> plot = df.plot(kind='barh')
 
 .. figure:: img/pandas-dataframe-plot-barh.png
 
     Horizontal Bar Plot
 
+
 Histogram
 ---------
-.. code-block:: python
-
-    df.plot(kind='hist')
+>>> plot = df.plot(kind='hist')
 
 .. figure:: img/pandas-dataframe-plot-hist.png
 
     Histogram
 
+
 Boxplot
 -------
-.. code-block:: python
-
-    df.plot(kind='box')
+>>> plot = df.plot(kind='box')
 
 .. figure:: img/pandas-dataframe-plot-box.png
 
     Boxplot
 
+>>> import matplotlib.pyplot as plt
+>>> import pandas as pd
+>>>
+>>>
+>>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
+>>>
+>>> df = pd.read_csv(DATA)
+>>> plot = df.plot(kind='box',
+...                subplots=True,
+...                layout=(2,2),
+...                sharex=False,
+...                sharey=False)
+>>>
+>>> plt.show()
+
+.. figure:: img/pandas-dataframe-plot-box2.png
+
+    Visualization using density
+
+
 Kernel Density Estimation Plot
 ------------------------------
-.. code-block:: python
-
-    df.plot(kind='density')
-
-.. code-block:: python
-
-    df.plot(kind='kde')
+>>> plot = df.plot(kind='density')
+>>> plot = df.plot(kind='kde')
 
 .. figure:: img/pandas-dataframe-plot-density.png
 
     Kernel Density Estimation Plot
 
+>>> import matplotlib.pyplot as plt
+>>> import pandas as pd
+>>>
+>>>
+>>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
+>>>
+>>> df = pd.read_csv(DATA)
+>>> plot = df.plot(kind='density',
+...                subplots=True,
+...                layout=(2,2),
+...                sharex=False)
+>>>
+>>> plt.show()
+
+.. figure:: img/pandas-dataframe-plot-density2.png
+
+    Visualization using density
+
+
 Area Plot
 ---------
-.. code-block:: python
-
-    df.plot(kind='area')
+>>> plot = df.plot(kind='area')
 
 .. figure:: img/pandas-dataframe-plot-area.png
 
@@ -306,31 +337,28 @@ Area Plot
 
     Cumulative Flow Diagram in Atlassian Jira
 
+
 Pie Plot
 --------
-.. code-block:: python
-
-    df.plot(kind='pie')
+>>> plot = df.plot(kind='pie')
 
 .. figure:: img/pandas-dataframe-plot-pie.png
 
     Pie Plot
 
+
 Scatter Plot
 ------------
-.. code-block:: python
-
-    df.plot(kind='scatter')
+>>> plot = df.plot(kind='scatter')
 
 .. figure:: img/pandas-dataframe-plot-scatter.png
 
     Scatter Plot
 
+
 Hexbin Plot
 -----------
-.. code-block:: python
-
-    df.plot(kind='hexbin')
+>>> plot = df.plot(kind='hexbin')
 
 .. figure:: img/pandas-dataframe-plot-hexbin.png
 
@@ -339,75 +367,36 @@ Hexbin Plot
 
 Hist
 ----
-.. code-block:: python
-
-    import matplotlib.pyplot as plt
-    import pandas as pd
-
-
-    DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
-
-    df = pd.read_csv(DATA)
-    df.hist()
-    plt.show()
+>>> import matplotlib.pyplot as plt
+>>> import pandas as pd
+>>>
+>>>
+>>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
+>>>
+>>> df = pd.read_csv(DATA)
+>>> plot = df.hist()
+>>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-hist.png
 
     Visualization using hist
 
-Density
--------
-.. code-block:: python
-
-    import matplotlib.pyplot as plt
-    import pandas as pd
-
-
-    DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
-
-    df = pd.read_csv(DATA)
-    df.plot(kind='density', subplots=True, layout=(2,2), sharex=False)
-    plt.show()
-
-.. figure:: img/pandas-dataframe-plot-density2.png
-
-    Visualization using density
-
-Box
----
-.. code-block:: python
-
-    import matplotlib.pyplot as plt
-    import pandas as pd
-
-
-    DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
-
-    df = pd.read_csv(DATA)
-    df.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
-    plt.show()
-
-.. figure:: img/pandas-dataframe-plot-box2.png
-
-    Visualization using density
 
 Scatter matrix
 --------------
 * The in ``pandas`` version ``0.22`` plotting module has been moved from ``pandas.tools.plotting`` to ``pandas.plotting``
 * As of version ``0.19``, the ``pandas.plotting`` library did not exist
 
-.. code-block:: python
-
-    import matplotlib.pyplot as plt
-    import pandas as pd
-    from pandas.plotting import scatter_matrix
-
-
-    DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
-
-    df = pd.read_csv(DATA)
-    scatter_matrix(df)
-    plt.show()
+>>> import matplotlib.pyplot as plt
+>>> import pandas as pd
+>>> from pandas.plotting import scatter_matrix
+>>>
+>>>
+>>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
+>>>
+>>> df = pd.read_csv(DATA)
+>>> plot = scatter_matrix(df)
+>>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-scatter-matrix.png
 
@@ -417,7 +406,6 @@ Scatter matrix
 Actinograms
 -----------
 .. figure:: img/pandas-dataframe-actinogram-1.png
-
 .. figure:: img/pandas-dataframe-actinogram-2.png
 
 

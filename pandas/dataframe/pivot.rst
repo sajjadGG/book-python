@@ -76,8 +76,8 @@ wide_to_long
     user-friendly than melt.
 
 
-Examples
---------
+SetUp
+-----
 >>> import pandas as pd
 >>> import numpy as np
 
@@ -103,6 +103,9 @@ Examples
 7  bar  two  small  6  9
 8  bar  two  large  7  9
 
+
+Use Case - 0x01
+---------------
 This first example aggregates values by taking the sum.
 
 >>> result = pd.pivot_table(data=df,
@@ -119,6 +122,9 @@ bar one    4.0    5.0
 foo one    4.0    1.0
     two    NaN    6.0
 
+
+Use Case - 0x02
+---------------
 We can also fill missing values using the `fill_value` parameter.
 
 >>> result = pd.pivot_table(data=df,
@@ -136,6 +142,9 @@ bar one      4      5
 foo one      4      1
     two      0      6
 
+
+Use Case - 0x03
+---------------
 The next example aggregates by taking the mean across multiple columns.
 
 >>> result = pd.pivot_table(data=df,
@@ -151,6 +160,9 @@ bar large  5.500000  7.500000
 foo large  2.000000  4.500000
     small  2.333333  4.333333
 
+
+Use Case - 0x04
+---------------
 We can also calculate multiple types of aggregations for any given
 value column.
 

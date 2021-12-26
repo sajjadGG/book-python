@@ -2,6 +2,9 @@ DataFrame Update
 ================
 
 
+Rationale
+---------
+
 Update Column
 -------------
 .. code-block:: python

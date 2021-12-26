@@ -4,6 +4,10 @@ DataFrame Create
 
 Rationale
 ---------
+
+
+SetUp
+-----
 >>> import pandas as pd
 >>> import numpy as np
 

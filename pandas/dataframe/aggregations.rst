@@ -4,6 +4,10 @@ DataFrame Aggregations
 
 Rationale
 ---------
+
+
+SetUp
+-----
 >>> import pandas as pd
 >>>
 >>>
