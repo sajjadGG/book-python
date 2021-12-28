@@ -44,12 +44,12 @@ Grouping
 --------
 Group by one item:
 
->>> df.groupby('item')  # doctype: +ELLIPSIS
+>>> df.groupby('item')  # doctest: +ELLIPSIS
 <pandas.core.groupby.generic.DataFrameGroupBy object at 0x...>
 
 Group by multiple items:
 
->>> df.groupby(['month', 'item'])  # doctype: +ELLIPSIS
+>>> df.groupby(['month', 'item'])  # doctest: +ELLIPSIS
 <pandas.core.groupby.generic.DataFrameGroupBy object at 0x...>
 
 
@@ -75,23 +75,23 @@ sms     292
 dtype: int64
 
 >>> df.groupby(['month', 'item']).size()
-# month    item
-# 2014-11  call    107
-#          data     29
-#          sms      94
-# 2014-12  call     79
-#          data     30
-#          sms      48
-# 2015-01  call     88
-#          data     31
-#          sms      86
-# 2015-02  call     67
-#          data     31
-#          sms      39
-# 2015-03  call     47
-#          data     29
-#          sms      25
-# dtype: int64
+month    item
+2014-11  call    107
+         data     29
+         sms      94
+2014-12  call     79
+         data     30
+         sms      48
+2015-01  call     88
+         data     31
+         sms      86
+2015-02  call     67
+         data     31
+         sms      39
+2015-03  call     47
+         data     29
+         sms      25
+dtype: int64
 
 
 Mean

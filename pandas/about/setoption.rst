@@ -2,49 +2,44 @@ Pandas Set Option
 =================
 
 
+Rationale
+---------
+
+
+SetUp
+-----
+>>> import pandas as pd
+>>> df = pd.DataFrame()
+
+
 Display Output
 --------------
-
 Limited:
 
-.. code-block:: python
-
-    import pandas as pd
-
-    pd.set_option('display.max_rows', 10)
-
-.. code-block:: python
-
-    import pandas as pd
-
-    pd.set_option('display.height', 1000)
-    pd.set_option('display.max_columns', 500)
-    pd.set_option('display.width', 1000)
+>>> pd.set_option('display.max_rows', 50)
+>>> pd.set_option('display.max_columns', 20)
+>>> pd.set_option('display.width', 1000)
 
 Unlimited:
 
-.. code-block:: python
+>>> pd.set_option('display.max_rows', None)
+>>> pd.set_option('display.max_columns', None)
+>>> pd.set_option('display.width', None)
 
-    import pandas as pd
-
-    pd.set_option('display.max_rows', None)
-    pd.set_option('display.max_columns', None)
 
 Using in context
 ----------------
-.. code-block:: python
+>>> with pd.option_context('display.max_rows', 100):
+...     print(df)
+Empty DataFrame
+Columns: []
+Index: []
 
-    import pandas as pd
-
-    with pd.option_context('display.max_rows', 100):
-        print(df)
-
-.. code-block:: python
-
-    import pandas as pd
-
-    with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
-        print(df)
+>>> with pd.option_context('display.max_rows', 50, 'display.max_columns', 10):
+...     print(df)
+Empty DataFrame
+Columns: []
+Index: []
 
 
 Assignments

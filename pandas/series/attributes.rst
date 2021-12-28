@@ -2,75 +2,51 @@ Series Attributes
 =================
 
 
+SetUp
+-----
+>>> import pandas as pd
+>>>
+>>> data = pd.Series(['a', 'b', 'c'])
+
+
 Size
 ----
-.. code-block:: python
-
-    import pandas as pd
-
-    s = pd.Series(['a', 'b', 'c'])
-
-    s.size
-    # 3
+>>> data.size
+3
 
 
 NDim
 ----
 * Number of Dimensions
 
-.. code-block:: python
-
-    import pandas as pd
-
-    s = pd.Series(['a', 'b', 'c'])
-
-    s.ndim
-    # 1
+>>> data.ndim
+1
 
 
 Shape
 -----
-.. code-block:: python
-
-    import pandas as pd
-
-    s = pd.Series(['a', 'b', 'c'])
-
-    s.shape
-    # (3,)
-
+>>> data.shape
+(3,)
 
 
 Index
 -----
 * More information in `Pandas Series Index`
 
-.. code-block:: python
+>>> data
+0    a
+1    b
+2    c
+dtype: object
 
-    import pandas as pd
-
-    s = pd.Series(['a', 'b', 'c'])
-
-    s
-    # 0    a
-    # 1    b
-    # 2    c
-    # dtype: object
-
-    s.index
-    # RangeIndex(start=0, stop=3, step=1)
+>>> data.index
+RangeIndex(start=0, stop=3, step=1)
 
 
 Values
 ------
-.. code-block:: python
-
-    import pandas as pd
-
-    s = pd.Series(['a', 'b', 'c'])
-
-    s.values
-    # array(['a', 'b', 'c'], dtype=object)
+>>> data.values
+array(['a', 'b', 'c'], dtype=object)
 
 
 Assignments

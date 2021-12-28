@@ -36,6 +36,7 @@ Tests:
           3        14647.0
     Name: duration, dtype: float64
 """
+
 import pandas as pd
 
 
