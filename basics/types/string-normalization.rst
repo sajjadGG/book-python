@@ -1,5 +1,5 @@
-String Clean
-============
+String Normalization
+====================
 
 
 Rationale
@@ -197,6 +197,6 @@ far more common then ``osiedle`` addresses.
 
 Assignments
 -----------
-.. literalinclude:: assignments/type_strclean_a.py
-    :caption: :download:`Solution <assignments/type_strclean_a.py>`
+.. literalinclude:: assignments/type_strnormalization_a.py
+    :caption: :download:`Solution <assignments/type_strnormalization_a.py>`
     :end-before: # Solution

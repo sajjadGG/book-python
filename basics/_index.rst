@@ -40,7 +40,7 @@ Types
     types/string-input.rst
     types/string-immutable.rst
     types/string-methods.rst
-    types/string-clean.rst
+    types/string-normalization.rst
 
 
 Sequences
