@@ -9,12 +9,14 @@ Rationale
 SetUp
 -----
 >>> import pandas as pd
+>>> import numpy as np
+>>>
+>>>
+>>> DATA = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
 
 
 Inplace
 -------
->>> DATA = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
->>>
 >>> s = pd.Series(DATA)
 >>> s.fillna(0, inplace=True)
 >>> s.drop([2,4,6], inplace=True)
@@ -30,8 +32,6 @@ dtype: float64
 
 Endl
 ----
->>> DATA = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
->>>
 >>> s = pd.Series(DATA) \
 ...         .fillna(0) \
 ...         .drop([2,4,6]) \
@@ -48,8 +48,6 @@ dtype: float64
 
 Chain
 -----
->>> DATA = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
->>>
 >>> s = (pd.Series(DATA)
 ...         .fillna(0)
 ...         .drop([2,4,6])
