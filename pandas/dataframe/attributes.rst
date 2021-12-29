@@ -39,10 +39,6 @@ Index(['Morning', 'Noon', 'Evening', 'Midnight'], dtype='object')
 Set column names:
 
 >>> df.columns = ['A', 'B', 'C', 'D']
->>>
->>> df.columns
-Index(['A', 'B', 'C', 'D'], dtype='object')
->>>
 >>> df
                    A         B         C         D
 1999-12-30  1.764052  0.400157  0.978738  2.240893
@@ -52,6 +48,9 @@ Index(['A', 'B', 'C', 'D'], dtype='object')
 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
+>>>
+>>> df.columns
+Index(['A', 'B', 'C', 'D'], dtype='object')
 
 
 Indexes
@@ -61,15 +60,11 @@ Get index:
 >>> df.index
 DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01', '2000-01-02',
                '2000-01-03', '2000-01-04', '2000-01-05'],
-               dtype='datetime64[ns]', freq='D')
+              dtype='datetime64[ns]', freq='D')
 
 Set index:
 
 >>> df.index = [0, 1, 2, 3, 4, 5, 6]
->>>
->>> df.index
-Int64Index([0, 1, 2, 3, 4, 5, 6], dtype='int64')
->>>
 >>> df
           A         B         C         D
 0  1.764052  0.400157  0.978738  2.240893
@@ -79,6 +74,9 @@ Int64Index([0, 1, 2, 3, 4, 5, 6], dtype='int64')
 4  1.494079 -0.205158  0.313068 -0.854096
 5 -2.552990  0.653619  0.864436 -0.742165
 6  2.269755 -1.454366  0.045759 -0.187184
+>>>
+>>> df.index
+Int64Index([0, 1, 2, 3, 4, 5, 6], dtype='int64')
 
 
 Values
@@ -97,6 +95,7 @@ array([[ 1.76405235,  0.40015721,  0.97873798,  2.2408932 ],
 You cannot modify values:
 
 >>> values = np.zeros_like(df.values)
+>>> values
 array([[0., 0., 0., 0.],
        [0., 0., 0., 0.],
        [0., 0., 0., 0.],

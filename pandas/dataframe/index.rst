@@ -109,25 +109,25 @@ Set Index
 >>>
 >>> df = pd.DataFrame([
 ...     {'id': 1, 'firstname': 'Mark', 'lastname': 'Watney'},
-...     {'id': 2, 'firstname': 'Jan', 'lastname': 'Twardowski'},
-...     {'id': 3, 'firstname': 'Ivan', 'lastname': 'Ivanovic'},
-...     {'id': 4, 'firstname': 'Melissa', 'lastname': 'Lewis'},
+...     {'id': 2, 'firstname': 'Melissa', 'lastname': 'Lewis'},
+...     {'id': 3, 'firstname': 'Rick', 'lastname': 'Martinez'},
+...     {'id': 4, 'firstname': 'Alex', 'lastname': 'Vogel'},
 ... ])
 >>>
 >>> df
    id  firstname    lastname
 0   1       Mark      Watney
-1   2        Jan  Twardowski
-2   3       Ivan    Ivanovic
-3   4    Melissa       Lewis
+1   2    Melissa       Lewis
+2   3       Rick    Martinez
+3   4       Alex       Vogel
 >>>
 >>> df.set_index('id')
     firstname    lastname
 id
-1        Mark      Watney
-2         Jan  Twardowski
-3        Ivan    Ivanovic
-4     Melissa       Lewis
+1       Mark      Watney
+2    Melissa       Lewis
+3       Rick    Martinez
+4       Alex       Vogel
 
 
 Assignments

@@ -32,15 +32,15 @@ Create from List of Dicts
 
 >>> pd.DataFrame([
 ...     {'firstname': 'Mark', 'lastname': 'Watney'},
-...     {'firstname': 'Jan', 'lastname': 'Twardowski'},
-...     {'firstname': 'Ivan', 'lastname': 'Ivanovic'},
 ...     {'firstname': 'Melissa', 'lastname': 'Lewis'},
+...     {'firstname': 'Rick', 'lastname': 'Martinez'},
+...     {'firstname': 'Alex', 'lastname': 'Vogel'},
 ... ])
-   firstname    lastname
-0       Mark      Watney
-1        Jan  Twardowski
-2       Ivan    Ivanovic
-3    Melissa       Lewis
+  firstname  lastname
+0      Mark    Watney
+1   Melissa     Lewis
+2      Rick  Martinez
+3      Alex     Vogel
 
 
 Create from Dict
@@ -56,14 +56,14 @@ Create from Dict
 2  c  3.0  3
 
 >>> pd.DataFrame({
-...     'firstname': ['Mark', 'Jan', 'Ivan', 'Melissa'],
-...     'lastname': ['Watney', 'Twardowski', 'Ivanovic', 'Lewis'],
+...     'firstname': ['Mark', 'Melissa', 'Rick', 'Alex'],
+...     'lastname': ['Watney', 'Lewis', 'Martinez', 'Vogel'],
 ... })
-   firstname    lastname
-0       Mark      Watney
-1        Jan  Twardowski
-2       Ivan    Ivanovic
-3    Melissa       Lewis
+  firstname  lastname
+0      Mark    Watney
+1   Melissa     Lewis
+2      Rick  Martinez
+3      Alex     Vogel
 
 
 Create from NDArray
@@ -101,11 +101,11 @@ Use Case - 0x01
 ...     'F': 'foo',
 ...     'G': [1,2,3,4],
 ... })
-     A           B    C  D      E    F  G
-0  1.0  1961-04-12  1.0  3   test  foo  1
-1  1.0  1961-04-12  1.0  3  train  foo  2
-2  1.0  1961-04-12  1.0  3   test  foo  3
-3  1.0  1961-04-12  1.0  3  train  foo  4
+     A          B    C  D      E    F  G
+0  1.0 1961-04-12  1.0  3   test  foo  1
+1  1.0 1961-04-12  1.0  3  train  foo  2
+2  1.0 1961-04-12  1.0  3   test  foo  3
+3  1.0 1961-04-12  1.0  3  train  foo  4
 
 
 Use Case - 0x02

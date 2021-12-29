@@ -105,6 +105,18 @@ Use Case - 0x01
 >>>
 >>> s = pd.Series(DATA)
 >>> s.apply(clean)
+0               Mieszka II
+1        Zygmunta III Wazy
+2      Bolesława Chrobrego
+3     Jana III Sobieskiego
+4     Jana III Sobieskiego
+5     Jana III Sobieskiego
+6     Jana III Sobieskiego
+7     Jana III Sobieskiego
+8     Jana III Sobieskiego
+9     Jana III Sobieskiego
+10    Jana III Sobieskiego
+dtype: object
 
 >>> DATA = ['ul.Mieszka II',
 ...         'UL. Zygmunta III WaZY',
@@ -142,6 +154,18 @@ Use Case - 0x01
 >>>
 >>> s = pd.Series(DATA)
 >>> s.apply(clean)
+0               Mieszka II
+1        Zygmunta III Wazy
+2      Bolesława Chrobrego
+3     Jana III Sobieskiego
+4     Jana III Sobieskiego
+5     Jana III Sobieskiego
+6     Jana III Sobieskiego
+7     Jana III Sobieskiego
+8     Jana III Sobieskiego
+9     Jana III Sobieskiego
+10    Jana III Sobieskiego
+dtype: object
 
 
 Assignments

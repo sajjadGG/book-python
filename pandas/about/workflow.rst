@@ -14,35 +14,35 @@ SetUp
 
 Working with Excel file
 -----------------------
->>> df = pd.read_excel(
+>>> # doctest: +SKIP
+... df = pd.read_excel(
 ...     io='filename.xls',
 ...     sheet_name=['Sheet 1'],
-...     encoding='utf-8',
 ...     skiprows=1,
 ...     skip_blank_lines=True,
 ...     parse_dates=['from', 'to'],
 ... )
->>>
->>> # Rename Columns to match database columns
->>> df.rename(columns={
+...
+... # Rename Columns to match database columns
+... df.rename(columns={
 ...     'from': 'date_start',
 ...     'to': 'date_end',
 ... }, inplace=True)
->>>
->>> # Drop all records where "Name" is empty (NaN)
->>> df.dropna(subset=['name'], how='all', inplace=True)
->>>
->>> # Add column ``blacklist`` with data
->>> df['blacklist'] = [True, False, True, False]
->>>
->>> # Change NaN to 0
->>> df.fillna(0, inplace=True)
->>>
->>> # Select columns
->>> columns = ['name', 'date_start', 'date_end', 'blacklist']
->>>
->>> # Print results
->>> print( df[columns] )
+...
+... # Drop all records where "Name" is empty (NaN)
+... df.dropna(subset=['name'], how='all', inplace=True)
+...
+... # Add column ``blacklist`` with data
+... df['blacklist'] = [True, False, True, False]
+...
+... # Change NaN to 0
+... df.fillna(0, inplace=True)
+...
+... # Select columns
+... columns = ['name', 'date_start', 'date_end', 'blacklist']
+...
+... # Print results
+... print( df[columns] )
 
 
 Working with dirty CSV
@@ -54,9 +54,8 @@ Working with dirty CSV
 >>> nrows, ncols, *class_labels = pd.read_csv(DATA, nrows=0).columns
 >>> label_encoder = dict(enumerate(class_labels))
 >>>
->>> df = pd.read_csv(url, skiprows=1, names=COLUMNS)
->>>
->>> df['species'].replace(species, inplace=True)
+>>> df = pd.read_csv(DATA, skiprows=1, names=COLUMNS)
+>>> df['species'].replace(label_encoder, inplace=True)
 >>> df.plot(kind='density')
 
 
@@ -76,28 +75,20 @@ Rename columns:
 Get first ``n`` records:
 
 >>> df.head(5)
-   Sepal length  Sepal width  Petal length  Petal width  Species
-0           5.1          3.5           1.4          0.2        0
-1           4.9          3.0           1.4          0.2        0
-2           4.7          3.2           1.3          0.2        0
-3           4.6          3.1           1.5          0.2        0
-4           5.0          3.6           1.4          0.2        0
+   Sepal length  Sepal width  Petal length  Petal width     Species
+0           5.4          3.9           1.3          0.4      setosa
+1           5.9          3.0           5.1          1.8   virginica
+2           6.0          3.4           4.5          1.6  versicolor
+3           7.3          2.9           6.3          1.8   virginica
+4           5.6          2.5           3.9          1.1  versicolor
 
 Get last ``n`` records:
 
 >>> df.tail(3)
-     Sepal length  Sepal width  Petal length  Petal width  Species
-147           6.5          3.0           5.2          2.0        2
-148           6.2          3.4           5.4          2.3        2
-149           5.9          3.0           5.1          1.8        2
-
-Change column Species values:
-
->>> df['Species'].replace({
-...     0: 'setosa',
-...     1: 'versicolor',
-...     2: 'virginica'
-... }, inplace=True)
+     Sepal length  Sepal width  Petal length  Petal width    Species
+148           4.9          2.5           4.5          1.7  virginica
+149           6.3          2.8           5.1          1.5  virginica
+150           6.8          3.2           5.9          2.3  virginica
 
 Shuffle columns and reset indexes (drop column with old index):
 
@@ -115,13 +106,13 @@ Calculate descriptive statistics:
 
 >>> df.describe()
        Sepal length  Sepal width  Petal length  Petal width
-count    150.000000   150.000000    150.000000   150.000000
-mean       5.843333     3.057333      3.758000     1.199333
-std        0.828066     0.435866      1.765298     0.762238
+count    151.000000   151.000000    151.000000   151.000000
+mean       5.840397     3.062914      3.741722     1.194040
+std        0.826089     0.439790      1.770738     0.762472
 min        4.300000     2.000000      1.000000     0.100000
-25%        5.100000     2.800000      1.600000     0.300000
-50%        5.800000     3.000000      4.350000     1.300000
-75%        6.400000     3.300000      5.100000     1.800000
+25%        5.100000     2.800000      1.550000     0.300000
+50%        5.800000     3.000000      4.300000     1.300000
+75%        6.400000     3.350000      5.100000     1.800000
 max        7.900000     4.400000      6.900000     2.500000
 
 .. csv-table:: Descriptive statistics
@@ -159,7 +150,7 @@ Hist Plot
 >>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
 >>>
 >>> df = pd.read_csv(DATA)
->>> df.hist()
+>>> plot = df.hist()
 >>> plt.show()
 
 .. figure:: img/pandas-about-workflow-plot-hist.png
@@ -176,7 +167,7 @@ Density Plot
 >>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
 >>>
 >>> df = pd.read_csv(DATA)
->>> df.plot(kind='density', subplots=True, layout=(2,2), sharex=False)
+>>> plot = df.plot(kind='density', subplots=True, layout=(2,2), sharex=False)
 >>> plt.show()
 
 .. figure:: img/pandas-about-workflow-plot-density.png
@@ -193,7 +184,7 @@ Box Plot
 >>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
 >>>
 >>> df = pd.read_csv(DATA)
->>> df.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+>>> plot = df.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
 >>> plt.show()
 
 .. figure:: img/pandas-about-workflow-plot-box.png
@@ -211,7 +202,7 @@ Scatter matrix
 >>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
 >>>
 >>> df = pd.read_csv(DATA)
->>> scatter_matrix(df)
+>>> plot = scatter_matrix(df)
 >>> plt.show()
 
 .. figure:: img/pandas-about-workflow-plot-scatter-matrix.png

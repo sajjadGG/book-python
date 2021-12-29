@@ -42,7 +42,8 @@ DataFrame
 
 SparseArray
 -----------
-* Data where a single value is repeated many times (e.g. ``0`` or ``NaN``) may be stored efficiently as a ``SparseArray``
+* Data where a single value is repeated many times (e.g. ``0`` or ``NaN``)
+  may be stored efficiently as a ``SparseArray``
 
 Sparse data with Series:
 
@@ -51,17 +52,20 @@ Sparse data with Series:
 Fill: nan
 IntIndex
 Indices: array([0, 4], dtype=int32)
+<BLANKLINE>
 
 Sparse data with DataFrame:
 
 >>> df = pd.DataFrame({
 ...     'A': [1, 2, 3],
 ...     'B': pd.arrays.SparseArray([None, None, None])})
+>>>
+>>> df
    A   B
 0  1 NaN
 1  2 NaN
 2  3 NaN
-
+>>>
 >>> df.dtypes
 A                  int64
 B    Sparse[object, nan]
@@ -123,10 +127,14 @@ Timedelta('365 days 00:00:00')
 >>> event1 = pd.Timestamp('2020-04-12')
 >>> event2 = pd.Timestamp('2021-07-21')
 >>>
->>> event1 in fiscalyear2020    # True
->>> event1 in fiscalyear2021    # False
->>> event2 in fiscalyear2020    # False
->>> event2 in fiscalyear2021    # True
+>>> event1 in fiscalyear2020
+True
+>>> event1 in fiscalyear2021
+False
+>>> event2 in fiscalyear2020
+False
+>>> event2 in fiscalyear2021
+True
 
 
 Categorical
@@ -134,6 +142,8 @@ Categorical
 * Limited, fixed set of values
 
 >>> iris = pd.Categorical(['setosa', 'virginica', 'versicolor'])
+>>>
+>>> iris
 [setosa, virginica, versicolor]
 Categories (3, object): [setosa, versicolor, virginica]
 >>>
@@ -141,6 +151,8 @@ Categories (3, object): [setosa, versicolor, virginica]
 False
 
 >>> status = pd.Categorical(['todo', 'done', 'todo', 'done'])
+>>>
+>>> status
 [todo, done, todo, done]
 Categories (2, object): [done, todo]
 >>>
@@ -153,7 +165,10 @@ True
 >>> status.categories
 Index(['done', 'todo'], dtype='object')
 
->>> moon_landings = pd.Categorical(['apollo11', 'apollo12', 'apollo14', 'apollo15', 'apollo16', 'apollo17'])
+>>> moon_landings = pd.Categorical(['apollo11', 'apollo12', 'apollo14',
+...                                 'apollo15', 'apollo16', 'apollo17'])
+>>>
+>>> moon_landings
 [apollo11, apollo12, apollo14, apollo15, apollo16, apollo17]
 Categories (6, object): [apollo11, apollo12, apollo14, apollo15, apollo16, apollo17]
 >>>
