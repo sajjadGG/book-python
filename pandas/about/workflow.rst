@@ -10,6 +10,7 @@ Rationale
 SetUp
 -----
 >>> import pandas as pd
+>>> import numpy as np
 
 
 Working with Excel file
@@ -56,7 +57,7 @@ Working with dirty CSV
 >>>
 >>> df = pd.read_csv(DATA, skiprows=1, names=COLUMNS)
 >>> df['species'].replace(label_encoder, inplace=True)
->>> df.plot(kind='density')
+>>> plot = df.plot(kind='density')
 
 
 Working with CSV
@@ -74,7 +75,7 @@ Rename columns:
 
 Get first ``n`` records:
 
->>> df.head(5)
+>>> df.head(n=5)
    Sepal length  Sepal width  Petal length  Petal width     Species
 0           5.4          3.9           1.3          0.4      setosa
 1           5.9          3.0           5.1          1.8   virginica
@@ -84,7 +85,7 @@ Get first ``n`` records:
 
 Get last ``n`` records:
 
->>> df.tail(3)
+>>> df.tail(n=3)
      Sepal length  Sepal width  Petal length  Petal width    Species
 148           4.9          2.5           4.5          1.7  virginica
 149           6.3          2.8           5.1          1.5  virginica
@@ -92,15 +93,19 @@ Get last ``n`` records:
 
 Shuffle columns and reset indexes (drop column with old index):
 
->>> df = df.sample(frac=1.0).reset_index(drop=True)
-     Sepal length  Sepal width     ...      Petal width     Species
-0             5.0          2.0     ...              1.0  versicolor
-1             6.4          2.7     ...              1.9   virginica
-2             5.6          3.0     ...              1.5  versicolor
-3             5.7          2.6     ...              1.0  versicolor
-4             6.4          3.1     ...              1.8   virginica
-5             4.6          3.6     ...              0.2      setosa
-6             5.9          3.0     ...              1.5  versicolor
+>>> np.random.seed(0)
+>>> df.sample(n=10).reset_index(drop=True)
+   Sepal length  Sepal width  Petal length  Petal width     Species
+0           6.7          3.3           5.7          2.1   virginica
+1           6.5          2.8           4.6          1.5  versicolor
+2           6.3          2.3           4.4          1.3  versicolor
+3           6.8          2.8           4.8          1.4  versicolor
+4           5.7          2.9           4.2          1.3  versicolor
+5           6.3          3.4           5.6          2.4   virginica
+6           5.5          2.4           3.8          1.1  versicolor
+7           6.9          3.1           5.4          2.1   virginica
+8           6.3          2.5           4.9          1.5  versicolor
+9           4.9          3.1           1.5          0.2      setosa
 
 Calculate descriptive statistics:
 

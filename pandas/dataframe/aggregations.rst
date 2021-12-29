@@ -201,7 +201,8 @@ month
 
 >>> grouped.columns = grouped.columns.droplevel(level=0)
 >>> grouped
-  month  min      max        mean
+         min      max        mean
+month
 2014-11  1.0   1940.0  115.823657
 2014-12  1.0   2120.0   93.260318
 2015-01  1.0   1859.0   88.894141
@@ -213,6 +214,7 @@ month
 ...     'max': 'max_duration',
 ...     'mean': 'mean_duration'
 ... }, inplace=True)
+>>> grouped
   month  min_duration  max_duration  mean_duration
 2014-11           1.0        1940.0     115.823657
 2014-12           1.0        2120.0      93.260318
@@ -227,19 +229,21 @@ achieved using the ravel() function:
 ...     'duration': ['min', 'max', 'mean']
 ... })  # doctest: +NORMALIZE_WHITESPACE
 >>> grouped
-duration
-  month  min      max        mean
-2014-11  1.0   1940.0  115.823657
-2014-12  1.0   2120.0   93.260318
-2015-01  1.0   1859.0   88.894141
-2015-02  1.0   1863.0  113.301453
-2015-03  1.0  10528.0  225.251891
+        duration
+             min      max        mean
+month
+2014-11      1.0   1940.0  115.823657
+2014-12      1.0   2120.0   93.260318
+2015-01      1.0   1859.0   88.894141
+2015-02      1.0   1863.0  113.301453
+2015-03      1.0  10528.0  225.251891
 
 Using ravel, and a string join, we can create better names for the columns:
 
 >>> grouped.columns = ['_'.join(x) for x in grouped.columns.ravel()]
 >>> grouped
-  month  min_duration  max_duration  mean_duration
+         duration_min  duration_max  duration_mean
+month
 2014-11           1.0        1940.0     115.823657
 2014-12           1.0        2120.0      93.260318
 2015-01           1.0        1859.0      88.894141

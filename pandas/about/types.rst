@@ -61,10 +61,10 @@ Sparse data with DataFrame:
 ...     'B': pd.arrays.SparseArray([None, None, None])})
 >>>
 >>> df
-   A   B
-0  1 NaN
-1  2 NaN
-2  3 NaN
+   A    B
+0  1  NaN
+1  2  NaN
+2  3  NaN
 >>>
 >>> df.dtypes
 A                  int64
@@ -144,8 +144,8 @@ Categorical
 >>> iris = pd.Categorical(['setosa', 'virginica', 'versicolor'])
 >>>
 >>> iris
-[setosa, virginica, versicolor]
-Categories (3, object): [setosa, versicolor, virginica]
+['setosa', 'virginica', 'versicolor']
+Categories (3, object): ['setosa', 'versicolor', 'virginica']
 >>>
 >>> 'arctica' in iris
 False
@@ -153,8 +153,8 @@ False
 >>> status = pd.Categorical(['todo', 'done', 'todo', 'done'])
 >>>
 >>> status
-[todo, done, todo, done]
-Categories (2, object): [done, todo]
+['todo', 'done', 'todo', 'done']
+Categories (2, object): ['done', 'todo']
 >>>
 >>> 'in progress' in status
 False
@@ -169,8 +169,8 @@ Index(['done', 'todo'], dtype='object')
 ...                                 'apollo15', 'apollo16', 'apollo17'])
 >>>
 >>> moon_landings
-[apollo11, apollo12, apollo14, apollo15, apollo16, apollo17]
-Categories (6, object): [apollo11, apollo12, apollo14, apollo15, apollo16, apollo17]
+['apollo11', 'apollo12', 'apollo14', 'apollo15', 'apollo16', 'apollo17']
+Categories (6, object): ['apollo11', 'apollo12', 'apollo14', 'apollo15', 'apollo16', 'apollo17']
 >>>
 >>> 'apollo11' in moon_landings
 True

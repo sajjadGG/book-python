@@ -37,10 +37,10 @@ ValueError: Length of values does not match length of index
 
 >>> df['Z'] = np.arange(3.0)
 >>> df
-    A   B   C    Z
-0  10  20  30  0.0
-1  11  21  31  1.0
-2  12  22  32  2.0
+    A   B   C  X    Z
+0  10  20  30  a  0.0
+1  11  21  31  b  1.0
+2  12  22  32  c  2.0
 
 
 Drop Rows and Columns
