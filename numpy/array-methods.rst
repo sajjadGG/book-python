@@ -197,6 +197,6 @@ array([1, 1, 1, 0, 0, 0, 0, 0])
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_methods.py
-    :caption: :download:`Solution <assignments/numpy_methods.py>`
+.. literalinclude:: assignments/numpy_methods_a.py
+    :caption: :download:`Solution <assignments/numpy_methods_a.py>`
     :end-before: # Solution

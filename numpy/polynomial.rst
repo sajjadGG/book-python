@@ -147,6 +147,6 @@ array([9, 6, 6])
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_polyfit.py
-    :caption: :download:`Solution <assignments/numpy_polyfit.py>`
+.. literalinclude:: assignments/numpy_polynomial_a.py
+    :caption: :download:`Solution <assignments/numpy_polynomial_a.py>`
     :end-before: # Solution

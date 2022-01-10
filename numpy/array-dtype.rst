@@ -299,6 +299,6 @@ array(['one', 'two', 'three'], dtype='<U5')
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_astype.py
-    :caption: :download:`Solution <assignments/numpy_astype.py>`
+.. literalinclude:: assignments/numpy_dtype_a.py
+    :caption: :download:`Solution <assignments/numpy_dtype_a.py>`
     :end-before: # Solution

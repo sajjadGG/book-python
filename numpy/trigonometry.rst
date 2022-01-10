@@ -66,6 +66,6 @@ Arcus hyperbolic functions:
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_trigonometry.py
-    :caption: :download:`Solution <assignments/numpy_trigonometry.py>`
+.. literalinclude:: assignments/numpy_trigonometry_a.py
+    :caption: :download:`Solution <assignments/numpy_trigonometry_a.py>`
     :end-before: # Solution

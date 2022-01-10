@@ -326,10 +326,10 @@ array([[False, False,  True],
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_logic_even.py
-    :caption: :download:`Solution <assignments/numpy_logic_even.py>`
+.. literalinclude:: assignments/numpy_logic_a.py
+    :caption: :download:`Solution <assignments/numpy_logic_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/numpy_logic_isin.py
-    :caption: :download:`Solution <assignments/numpy_logic_isin.py>`
+.. literalinclude:: assignments/numpy_logic_b.py
+    :caption: :download:`Solution <assignments/numpy_logic_b.py>`
     :end-before: # Solution

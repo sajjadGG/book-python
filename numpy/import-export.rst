@@ -126,6 +126,6 @@ Other
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_loadtext.py
-    :caption: :download:`Solution <assignments/numpy_loadtext.py>`
+.. literalinclude:: assignments/numpy_importexport_a.py
+    :caption: :download:`Solution <assignments/numpy_importexport_a.py>`
     :end-before: # Solution

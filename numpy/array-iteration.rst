@@ -154,6 +154,6 @@ i=2, j=2, value=9
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_iteration.py
-    :caption: :download:`Solution <assignments/numpy_iteration.py>`
+.. literalinclude:: assignments/numpy_iteration_a.py
+    :caption: :download:`Solution <assignments/numpy_iteration_a.py>`
     :end-before: # Solution

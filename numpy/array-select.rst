@@ -169,6 +169,6 @@ array([[1, 1, 2],
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_select_isin.py
-    :caption: :download:`Solution <assignments/numpy_select_isin.py>`
+.. literalinclude:: assignments/numpy_select_a.py
+    :caption: :download:`Solution <assignments/numpy_select_a.py>`
     :end-before: # Solution

@@ -64,6 +64,6 @@ array([[1, 2, 5, 6],
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_concatenation.py
-    :caption: :download:`Solution <assignments/numpy_concatenation.py>`
+.. literalinclude:: assignments/numpy_concatenation_a.py
+    :caption: :download:`Solution <assignments/numpy_concatenation_a.py>`
     :end-before: # Solution

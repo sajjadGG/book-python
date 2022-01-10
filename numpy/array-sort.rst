@@ -99,6 +99,6 @@ array([[3, 2, 1],
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_sort.py
-    :caption: :download:`Solution <assignments/numpy_sort.py>`
+.. literalinclude:: assignments/numpy_sort_a.py
+    :caption: :download:`Solution <assignments/numpy_sort_a.py>`
     :end-before: # Solution

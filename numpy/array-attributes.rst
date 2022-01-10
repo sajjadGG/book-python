@@ -274,6 +274,6 @@ Recap
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_attributes.py
-    :caption: :download:`Solution <assignments/numpy_attributes.py>`
+.. literalinclude:: assignments/numpy_attributes_a.py
+    :caption: :download:`Solution <assignments/numpy_attributes_a.py>`
     :end-before: # Solution
