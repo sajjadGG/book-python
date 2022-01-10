@@ -36,8 +36,8 @@ Tests:
            [36, 70, 87, 88]])
 
     >>> result_flip
-    array([[36, 70, 87, 88],
-           [ 9, 21, 67, 83],
+    array([[36, 87, 70, 88],
+           [67,  9, 83, 21],
            [44, 47, 64, 67]])
 """
 
@@ -53,6 +53,5 @@ result_flip = ...
 
 
 # Solution
-DATA.sort(axis=-1)
-result_sort = DATA
+result_sort = np.sort(DATA, axis=-1)
 result_flip = np.flip(DATA, axis=0)

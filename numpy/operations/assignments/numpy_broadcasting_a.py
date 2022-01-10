@@ -40,13 +40,23 @@ A = np.array([[0, 1], [2, 3]], float)
 B = np.array([2, 3], float)
 C = np.array([[1, 1], [4, 0]], float)
 
+# np.ndarray: square root of each element in `A` use np.pow()
+a = ...
+
+# np.ndarray: square root of each element in `B` use `**` operator
+b = ...
+
+# np.ndarray: second power (square) of each element in `C` use `**` operator
+c = ...
+
 # np.ndarray: Add elements from `a` to `b` and then multiply by `c`
+#             Remember about the operator precedence
 result = ...
 
 
 # Solution
 a = np.sqrt(A)
-b = np.sqrt(B)
+b = B ** (1/2)
 c = C ** 2
 
 result = (a + b) * c
