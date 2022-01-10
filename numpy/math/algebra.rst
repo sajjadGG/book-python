@@ -237,10 +237,10 @@ Assignments
 * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}`
 * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + ... + (n_2 - n_1)^2}`
 
-.. literalinclude:: assignments/numpy_algebra_euclidean_2d.py
+.. literalinclude:: assignments/numpy_algebra_a.py
     :caption: :download:`Solution <assignments/numpy_algebra_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/numpy_algebra_euclidean_ndim.py
+.. literalinclude:: assignments/numpy_algebra_b.py
     :caption: :download:`Solution <assignments/numpy_algebra_b.py>`
     :end-before: # Solution

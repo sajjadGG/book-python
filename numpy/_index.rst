@@ -58,7 +58,7 @@ Methods
     methods/round.rst
     methods/sort.rst
     methods/methods.rst
-    methods/concatenation.rst
+    methods/concat.rst
 
 
 Random

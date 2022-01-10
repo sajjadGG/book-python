@@ -2,6 +2,11 @@ Array Create Recap
 ==================
 
 
+SetUp
+-----
+>>> import numpy as np
+
+
 Recap
 -----
 >>> a = np.array([1, 2, 3])
