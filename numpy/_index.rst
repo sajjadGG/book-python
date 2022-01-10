@@ -4,55 +4,94 @@ About
     :maxdepth: 1
     :caption: About
 
-    about.rst
-    precision.rst
-    constants.rst
+    about/about.rst
+    about/precision.rst
+    about/constants.rst
+    about/performance.rst
 
 
-Array
-*****
+Array Create
+************
 .. toctree::
     :maxdepth: 1
-    :caption: Array
+    :caption: Array Create
 
-    array-create.rst
-    array-dtype.rst
-    array-shape.rst
-    array-attributes.rst
-    array-getitem.rst
-    array-slice.rst
-    array-axis.rst
-    array-newaxis.rst
-    array-random.rst
-    array-rounding.rst
-    array-sort.rst
-    array-methods.rst
-    array-concatenation.rst
+    create/declare.rst
+    create/range.rst
+    create/generate.rst
+    create/recap.rst
 
 
-Select
+Array Attributes
+****************
+.. toctree::
+    :maxdepth: 1
+    :caption: Array Attributes
+
+    attributes/dtype.rst
+    attributes/shape.rst
+    attributes/values.rst
+    attributes/data.rst
+
+
+Indexing
+********
+.. toctree::
+    :maxdepth: 1
+    :caption: Indexing
+
+    indexing/getitem.rst
+    indexing/slice.rst
+    indexing/axis.rst
+    indexing/newaxis.rst
+    indexing/logic.rst
+    indexing/select.rst
+    indexing/advancedindexing.rst
+
+
+Methods
+*******
+.. toctree::
+    :maxdepth: 1
+    :caption: Methods
+
+    methods/round.rst
+    methods/sort.rst
+    methods/methods.rst
+    methods/concatenation.rst
+
+
+Random
 ******
 .. toctree::
     :maxdepth: 1
-    :caption: Select
+    :caption: Array Random
 
-    array-iteration.rst
-    array-arithmetic.rst
-    array-broadcasting.rst
-    array-reduction.rst
-    array-logic.rst
-    array-select.rst
-    array-advancedindexing.rst
+    random/generation.rst
+    random/values.rst
+    random/distributions.rst
+    random/methods.rst
 
 
-Import & Export
-***************
+Operations
+**********
 .. toctree::
     :maxdepth: 1
-    :caption: Import & Export
+    :caption: Operations
 
-    array-serialize.rst
-    import-export.rst
+    operations/iteration.rst
+    operations/arithmetic.rst
+    operations/broadcasting.rst
+
+
+Statistics
+**********
+.. toctree::
+    :maxdepth: 1
+    :caption: Statistics
+
+    statistics/reduction.rst
+    statistics/statistics.rst
 
 
 Math
@@ -61,11 +100,28 @@ Math
     :maxdepth: 1
     :caption: Math
 
-    statistics.rst
-    trigonometry.rst
-    polynomial.rst
-    algebra.rst
-    performance.rst
+    math/trigonometry.rst
+    math/algebra.rst
+
+
+Import & Export
+***************
+.. toctree::
+    :maxdepth: 1
+    :caption: Import & Export
+
+    import-export/serialization.rst
+    import-export/import.rst
+    import-export/export.rst
+
+
+Polynomial
+**********
+.. toctree::
+    :maxdepth: 1
+    :caption: Polynomial
+
+    polynomial/polynomial.rst
 
 
 References
