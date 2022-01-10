@@ -2,10 +2,17 @@ Array Serialize
 ===============
 
 
-To List
--------
+Rationale
+---------
+
+
+SetUp
+-----
 >>> import numpy as np
 
+
+To List
+-------
 >>> a = np.array([1, 2, 3])
 >>>
 >>> a.tolist()
@@ -21,8 +28,6 @@ To List
 
 To String
 ---------
->>> import numpy as np
-
 Integers:
 
 >>> a = np.array([1, 2, 3])

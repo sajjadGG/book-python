@@ -139,14 +139,14 @@ array([[False, False, False],
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_round_rint.py
-    :caption: :download:`Solution <assignments/numpy_round_rint.py>`
+.. literalinclude:: assignments/numpy_round_a.py
+    :caption: :download:`Solution <assignments/numpy_round_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/numpy_round_ceilfloor.py
-    :caption: :download:`Solution <assignments/numpy_round_ceilfloor.py>`
+.. literalinclude:: assignments/numpy_round_b.py
+    :caption: :download:`Solution <assignments/numpy_round_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/numpy_round_clip.py
-    :caption: :download:`Solution <assignments/numpy_round_clip.py>`
+.. literalinclude:: assignments/numpy_round_c.py
+    :caption: :download:`Solution <assignments/numpy_round_c.py>`
     :end-before: # Solution

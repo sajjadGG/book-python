@@ -2,9 +2,14 @@ Data Import and Export
 ======================
 
 
+
+SetUp
+-----
+>>> import numpy as np
+
+
 np.loadtxt()
 ------------
->>> import numpy as np
 >>> DATA = 'https://python.astrotech.io/_static/iris.csv'
 
 >>> a = np.loadtxt(DATA)
@@ -43,9 +48,6 @@ np.savetxt()
 ------------
 Save integers:
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6]])
 >>>
@@ -59,9 +61,6 @@ Save integers:
 
 Save floats:
 
->>> import numpy as np
->>>
->>>
 >>> a = np.array([[5.4, 3.9, 1.3, 0.4],
 ...               [5.9, 3. , 5.1, 1.8],
 ...               [6. , 3.4, 4.5, 1.6],
@@ -114,8 +113,6 @@ Other
     ``scipy.io.loadmat()``, "Binary", "reads MATLAB data files"
 
 >>> # doctest: +SKIP
->>> import numpy as np
-...
 ... data = np.loadtxt('myfile.csv', delimiter=',', usecols=1, skiprows=1, dtype=np.float16)
 ...
 ... small = (data < 1)

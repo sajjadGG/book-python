@@ -2,15 +2,20 @@ Trigonometry
 ============
 
 
+
+SetUp
+-----
+>>> import numpy as np
+
+
+Rationale
+---------
 .. glossary::
 
     Universal Functions
     ufunc
         Mathematical operations optimized to work on ``np.array()``:
 
-        >>> import numpy as np
-        >>>
-        >>>
         >>> a = np.array([1, 2, 3])
         >>>
         >>> np.sin(a)
@@ -20,13 +25,13 @@ Trigonometry
 Unit conversion
 ---------------
 
-Degrees
--------
+Degrees:
+
 * ``np.deg2rad()``
 * ``np.degrees()``
 
-Radians
--------
+Radians:
+
 * ``np.rad2deg()``
 * ``np.radians()``
 
@@ -34,26 +39,26 @@ Radians
 Trigonometric functions
 -----------------------
 
-Basic functions
----------------
+Basic functions:
+
 * ``np.sin()``
 * ``np.cos()``
 * ``np.tan()``
 
-Arcus functions
----------------
+Arcus functions:
+
 * ``np.arcsin()``
 * ``np.arccos()``
 * ``np.arctan()``
 
-Hyperbolic functions
---------------------
+Hyperbolic functions:
+
 * ``np.sinh()``
 * ``np.cosh()``
 * ``np.tanh()``
 
-Arcus hyperbolic functions
---------------------------
+Arcus hyperbolic functions:
+
 * ``np.arcsinh()``
 * ``np.arccosh()``
 * ``np.arctanh()``

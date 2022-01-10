@@ -5,13 +5,16 @@ Array Getitem
 .. todo:: Split chapters GetItem and Slice by __getitem__ argument type.
 
 
+SetUp
+-----
+>>> import numpy as np
+
+
 Rationale
 ---------
 * ``int``
 * ``list[int]``
 * ``list[bool]``
-
->>> import numpy as np
 
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6],
@@ -297,6 +300,6 @@ array([[1, 2, 3],
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_indexing.py
-    :caption: :download:`Solution <assignments/numpy_indexing.py>`
+.. literalinclude:: assignments/numpy_getitem_a.py
+    :caption: :download:`Solution <assignments/numpy_getitem_a.py>`
     :end-before: # Solution

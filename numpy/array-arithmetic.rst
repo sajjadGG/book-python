@@ -2,10 +2,13 @@ Array Arithmetic
 ================
 
 
-Rationale
----------
+SetUp
+-----
 >>> import numpy as np
 
+
+Rationale
+---------
 .. glossary::
 
     Scalar

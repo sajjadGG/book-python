@@ -1,8 +1,13 @@
 Array Create
 ============
 
+
 Rationale
 ---------
+
+
+SetUp
+-----
 >>> import numpy as np
 
 
@@ -353,6 +358,6 @@ References
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_create_arange.py
-    :caption: :download:`Solution <assignments/numpy_create_arange.py>`
+.. literalinclude:: assignments/numpy_create_a.py
+    :caption: :download:`Solution <assignments/numpy_create_a.py>`
     :end-before: # Solution

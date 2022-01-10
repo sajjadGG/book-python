@@ -277,14 +277,14 @@ array([[7, 8, 9],
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_random_float.py
-    :caption: :download:`Solution <assignments/numpy_random_float.py>`
+.. literalinclude:: assignments/numpy_random_a.py
+    :caption: :download:`Solution <assignments/numpy_random_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/numpy_random_int.py
-    :caption: :download:`Solution <assignments/numpy_random_int.py>`
+.. literalinclude:: assignments/numpy_random_b.py
+    :caption: :download:`Solution <assignments/numpy_random_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/numpy_random_sample.py
-    :caption: :download:`Solution <assignments/numpy_random_sample.py>`
+.. literalinclude:: assignments/numpy_random_c.py
+    :caption: :download:`Solution <assignments/numpy_random_c.py>`
     :end-before: # Solution

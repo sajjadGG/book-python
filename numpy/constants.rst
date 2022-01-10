@@ -2,28 +2,25 @@ Built-ins
 =========
 
 
+SetUp
+-----
+>>> import numpy as np
+
+
 Pi number
 ---------
->>> import numpy as np
->>>
->>>
 >>> np.pi
 3.141592653589793
 
 
 Euler number
 ------------
->>> import numpy as np
->>>
->>>
 >>> np.e
 2.718281828459045
 
 
 Infinite
 --------
->>> import numpy as np
-
 Numpy built-in:
 
 >>> np.inf
@@ -104,8 +101,6 @@ Not-a-Number
 ------------
 * Special ``float`` value
 * Propagates in calculations
-
->>> import numpy as np
 
 Numpy built-in:
 

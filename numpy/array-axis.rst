@@ -12,6 +12,9 @@ Rationale
 
     Visualizing Multi-Dimensional Arrays :cite:`NumpyMultidimArrays`
 
+
+SetUp
+-----
 >>> import numpy as np
 
 

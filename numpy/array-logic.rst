@@ -4,6 +4,10 @@ Array Logic
 
 Rationale
 ---------
+
+
+SetUp
+-----
 >>> import numpy as np
 
 

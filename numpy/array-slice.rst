@@ -5,6 +5,11 @@ Array Slice
 .. todo:: Split chapters GetItem and Slice by __getitem__ argument type.
 
 
+SetUp
+-----
+>>> import numpy as np
+
+
 Recap
 -----
 * ``slice(start:stop:step)``
@@ -13,9 +18,6 @@ Recap
 * By default ``stop=len(data)``
 * By default ``step=1``
 
->>> import numpy as np
->>>
->>>
 >>> data = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 >>> data[1:5:2]  # slice(start=1, stop=5, step=2)
@@ -233,12 +235,12 @@ array([[7, 9],
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_slice_1.py
-    :caption: :download:`Solution <assignments/numpy_slice_1.py>`
+.. literalinclude:: assignments/numpy_slice_a.py
+    :caption: :download:`Solution <assignments/numpy_slice_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/numpy_slice_2.py
-    :caption: :download:`Solution <assignments/numpy_slice_2.py>`
+.. literalinclude:: assignments/numpy_slice_b.py
+    :caption: :download:`Solution <assignments/numpy_slice_b.py>`
     :end-before: # Solution
 
 .. figure:: img/random-inner-sum.png

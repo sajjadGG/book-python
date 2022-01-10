@@ -2,6 +2,12 @@ Array Shape
 ===========
 
 
+
+SetUp
+-----
+>>> import numpy as np
+
+
 Recap
 -----
 >>> obj = [1, 2, 3]
@@ -37,11 +43,8 @@ Rationale
 * Any shape operation changes only ``np.ndarray.shape`` and ``np.ndarray.strides`` and does not touch data
 
 
-
 Shape
 -----
->>> import numpy as np
-
 1-dimensional:
 
 >>> a = np.array([1, 2, 3])
@@ -78,8 +81,6 @@ Reshape
 * Returns new array
 * Does not modify inplace
 * ``a.reshape(1, 2)`` is equivalent to ``a.reshape((1, 2))``
-
->>> import numpy as np
 
 >>> a = np.array([1, 2, 3])
 >>>
@@ -175,8 +176,6 @@ Flatten
 * Returns new array (makes memory copy - expensive)
 * Does not modify inplace
 
->>> import numpy as np
-
 >>> a = np.array([1, 2, 3])
 >>>
 >>> a.flatten()
@@ -206,8 +205,6 @@ Ravel
 * Ravel is the same as Flatten but returns a reference (or view) of the array if possible (i.e. memory is contiguous)
 * Otherwise returns new array (makes memory copy)
 
->>> import numpy as np
-
 >>> a = np.array([1, 2, 3])
 >>>
 >>> a.ravel()
@@ -235,8 +232,6 @@ array([ 1,  2,  3,  4,  5,  6,  5,  6,  7, 11, 22, 33, 44, 55, 66, 77, 88, 99])
 
 Flatten vs Ravel
 ----------------
->>> import numpy as np
-
 >>> a = np.array([1, 2, 3])
 >>> b = a.ravel()
 >>> c = a.flatten()

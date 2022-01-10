@@ -4,6 +4,10 @@ Array Sort
 
 Rationale
 ---------
+
+
+SetUp
+-----
 >>> import numpy as np
 
 

@@ -10,6 +10,10 @@ Rationale
     Broadcasting
     Matrix Multiplication
 
+
+
+SetUp
+-----
 >>> import numpy as np
 
 
@@ -289,14 +293,14 @@ array([[2., 4.],
 
 Assignments
 -----------
-.. literalinclude:: assignments/numpy_broadcasting_arithmetic.py
-    :caption: :download:`Solution <assignments/numpy_broadcasting_arithmetic.py>`
+.. literalinclude:: assignments/numpy_broadcasting_a.py
+    :caption: :download:`Solution <assignments/numpy_broadcasting_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/numpy_broadcasting_typecast.py
-    :caption: :download:`Solution <assignments/numpy_broadcasting_typecast.py>`
+.. literalinclude:: assignments/numpy_broadcasting_b.py
+    :caption: :download:`Solution <assignments/numpy_broadcasting_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/numpy_broadcasting_matmul.py
-    :caption: :download:`Solution <assignments/numpy_broadcasting_matmul.py>`
+.. literalinclude:: assignments/numpy_broadcasting_c.py
+    :caption: :download:`Solution <assignments/numpy_broadcasting_c.py>`
     :end-before: # Solution

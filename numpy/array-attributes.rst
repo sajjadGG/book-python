@@ -4,11 +4,18 @@ Array Attributes
 
 Rationale
 ---------
+
+
+SetUp
+-----
 >>> import numpy as np
+
 
 Size
 ----
 * Number of elements
+
+.. figure:: img/array-attributes-size.png
 
 >>> a = np.array([1, 2, 3])
 >>>
@@ -42,6 +49,8 @@ Size
 
 Shape
 -----
+.. figure:: img/array-attributes-shape.png
+
 >>> a = np.array([1, 2, 3])
 >>>
 >>> a.shape
@@ -76,6 +85,8 @@ NDim
 ----
 * Number of Dimensions
 * ``len(ndarray.shape)``
+
+.. figure:: img/array-attributes-ndim.png
 
 >>> a = np.array([1, 2, 3])
 >>>
@@ -149,6 +160,8 @@ Itemsize
 --------
 * ``int64`` takes 64 bits (8 bytes of memory)
 
+.. figure:: img/array-attributes-itemsize.png
+
 >>> a = np.array([1, 2, 3], dtype=int)
 >>> a.itemsize
 8
@@ -194,6 +207,8 @@ Strides
 -------
 * ``int64`` takes 64 bits (8 bytes of memory)
 * Strides inform how many bytes numpy has to jump to access values in each dimensions
+
+.. figure:: img/array-attributes-strides.png
 
 >>> a = np.array([1, 2, 3])
 >>>

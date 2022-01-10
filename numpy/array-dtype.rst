@@ -9,6 +9,9 @@ Rationale
 
 .. figure:: img/array-dtype-sizes.png
 
+
+SetUp
+-----
 >>> import numpy as np
 
 
