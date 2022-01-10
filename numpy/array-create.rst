@@ -299,17 +299,18 @@ array([[1, 2, 3],
 Recap
 -----
 >>> a = np.array([1, 2, 3])
->>> b = np.arange(0, 10, 2)
->>> c = np.linspace(0, 10, 100)
->>> d = np.zeros(shape=(2,3))
->>> e = np.zeros_like(a)
->>> f = np.ones(shape=(2,3))
->>> g = np.ones_like(a)
->>> h = np.empty(shape=(2,3))
->>> i = np.empty_like(a)
->>> j = np.full((2, 2), np.nan)
->>> k = np.full_like(a, np.nan)
->>> l = np.identity(4)
+>>> b = np.array(range(0, 10))
+>>> c = np.arange(0, 10, 2)
+>>> d = np.linspace(0, 10, 100)
+>>> e = np.zeros(shape=(2,3))
+>>> f = np.zeros_like(a)
+>>> g = np.ones(shape=(2,3))
+>>> h = np.ones_like(a)
+>>> i = np.empty(shape=(2,3))
+>>> j = np.empty_like(a)
+>>> k = np.full(shape=(2, 2), fill_value=np.nan)
+>>> l = np.full_like(a, np.nan)
+>>> m = np.identity(4)
 
 
 Performance
