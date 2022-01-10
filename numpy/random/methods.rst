@@ -1,10 +1,14 @@
-Array Random
-============
+Random Draw
+===========
+
+
+SetUp
+-----
+>>> import numpy as np
 
 
 Random Choice (Draw)
 --------------------
->>> import numpy as np
 >>> np.random.seed(0)
 
 Choice:
@@ -26,7 +30,6 @@ Random Sample
 -------------
 * Compatible with Python built-in ``random.random``
 
->>> import numpy as np
 >>> np.random.seed(0)
 
 Sample:
@@ -49,7 +52,6 @@ Shuffle
 * Modify sequence in-place (!!)
 * Multi-dimensional arrays are only shuffled along the first axis
 
->>> import numpy as np
 >>> np.random.seed(0)
 
 1-dimensional Array:

@@ -38,7 +38,7 @@ Check version:
 >>> import numpy as np
 >>>
 >>> np.__version__  # doctest: +SKIP
-'1.21.5'
+'1.22.0'
 
 
 Further Reading

@@ -1,5 +1,5 @@
-Array Random
-============
+Random Generator
+================
 
 
 Rationale

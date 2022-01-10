@@ -10,11 +10,11 @@ About
     about/performance.rst
 
 
-Array Create
-************
+Create
+******
 .. toctree::
     :maxdepth: 1
-    :caption: Array Create
+    :caption: Create
 
     create/declare.rst
     create/range.rst
@@ -22,11 +22,11 @@ Array Create
     create/recap.rst
 
 
-Array Attributes
-****************
+Attributes
+**********
 .. toctree::
     :maxdepth: 1
-    :caption: Array Attributes
+    :caption: Attributes
 
     attributes/dtype.rst
     attributes/shape.rst
@@ -65,9 +65,9 @@ Random
 ******
 .. toctree::
     :maxdepth: 1
-    :caption: Array Random
+    :caption: Random
 
-    random/generation.rst
+    random/generator.rst
     random/values.rst
     random/distributions.rst
     random/methods.rst

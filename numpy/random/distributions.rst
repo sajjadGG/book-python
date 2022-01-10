@@ -1,5 +1,5 @@
-Array Random
-============
+Random Distributions
+====================
 
 
 Continuous Uniform Distribution
