@@ -54,6 +54,8 @@ Append
 ------
 * jak robi append, to nie zmienia indeksów (uwaga na indeksy powtórzone)
 * Resulting ``DataFrame`` will have auto-incremented indexes
+* DataFrame.append() and Series.append() have been deprecated and will be
+  removed in Pandas 2.0. Use pandas.concat() instead [#pd14releasenotes]_
 
 >>> df1999.append(df2000)
              Morning      Noon   Evening  Midnight
@@ -323,6 +325,11 @@ This method preserves the original DataFrame's index in the result:
 2000-01-02           NaN        NaN  ...      0.313068      -0.854096
 2000-01-03           NaN        NaN  ...      0.864436      -0.742165
 [6 rows x 8 columns]
+
+
+References
+----------
+.. [#pd14releasenotes] https://pandas.pydata.org/pandas-docs/dev/whatsnew/v1.4.0.html#deprecated-frame-append-and-series-append
 
 
 Assignments

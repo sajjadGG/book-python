@@ -404,6 +404,12 @@ Number of non-null unique network entries:
 >>> df['network'].nunique()
 9
 
+Other
+-----
+* .nsmallest()
+* .values()
+* .rank()
+
 
 References
 ----------

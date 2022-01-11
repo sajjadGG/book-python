@@ -6,6 +6,7 @@ Rationale
 ---------
 * File paths works also with URLs
 * `io.StringIO` Converts ``str`` to File-like object
+* pd.read_xml()
 
 
 XML and XSLT

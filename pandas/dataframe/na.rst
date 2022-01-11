@@ -269,6 +269,33 @@ Traceback (most recent call last):
 ValueError: No axis named -1 for object type <class 'pandas.core.frame.DataFrame'>
 
 
+Recap
+-----
+>>> data = pd.DataFrame({
+...     'A': [1,2,3,4,5,6,7,8,9],
+...     'B': [1,2,np.nan,np.nan,5,6,7,8,9]
+... })
+>>>
+>>> a = data['A'].isnull()
+>>> b = data['B'].isnull()
+>>> c = data['B'].isnull().any()
+>>> d = data['B'].isnull().all()
+>>>
+>>> e = data.fillna(0)
+>>>
+>>> f = data.dropna()
+>>> g = data.dropna(how='any')
+>>> h = data.dropna(how='any', axis='rows')
+>>> i = data.dropna(how='all', axis='columns')
+>>>
+>>> j = data.ffill()
+>>> k = data.bfill()
+>>> l = data.interpolate('linear')
+>>> m = data.interpolate('quadratic')
+>>> n = data.interpolate('polynomial', order=3)
+
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/pandas_df_na_a.py

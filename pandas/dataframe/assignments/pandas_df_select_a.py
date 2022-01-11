@@ -43,12 +43,8 @@ result = ...
 
 
 # Solution
-df = pd.read_csv(DATA, encoding='utf-8')
-df = df[df['petal_length'] > 2.0]
-result = df.head(5)
-
-
-# Alternative Solution
-# result = pd.read_csv(DATA, encoding='utf-8')
-# result.where(result['petal_length'] > 2.0, inplace=True)
-# result.head(5)
+result = (
+    pd.read_csv(DATA)
+      .query('petal_length > 2.0')
+      .head(n=5)
+)

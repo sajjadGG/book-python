@@ -9,6 +9,17 @@ Rationale
 * String Index
 * Datetime Index
 
+* Int64Index, UInt64Index and Float64Index have been deprecated in favor of
+  the base Index class and will be removed in Pandas 2.0 [#pd14releasenotes]_
+
+Replace:
+
+>>> pd.Int64Index([1, 2, 3])
+
+With:
+
+>>> pd.Index([1, 2, 3], dtype='int64')
+
 
 Range Index
 -----------
@@ -32,6 +43,9 @@ RangeIndex(start=0, stop=3, step=1)
 
 Integer Index
 -------------
+* Int64Index, UInt64Index and Float64Index have been deprecated in favor of
+  the base Index class and will be removed in Pandas 2.0 [#pd14releasenotes]_
+
 >>> import pandas as pd
 >>> import numpy as np
 >>>
@@ -128,6 +142,11 @@ id
 2    Melissa       Lewis
 3       Rick    Martinez
 4       Alex       Vogel
+
+
+References
+----------
+.. [#pd14releasenotes] https://pandas.pydata.org/pandas-docs/dev/whatsnew/v1.4.0.html#deprecated-int64index-uint64index-float64index
 
 
 Assignments

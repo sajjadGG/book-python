@@ -41,3 +41,4 @@ Others
 ... pd.read_sql_table()  # Read SQL database table into a DataFrame
 ... pd.read_stata()
 ... pd.read_table()
+... pd.read_xml()
