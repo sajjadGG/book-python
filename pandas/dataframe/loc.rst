@@ -171,7 +171,7 @@ Callable
 Filtering with callable:
 
 >>> def morning_below_zero(df):
->>>     return df['Morning'] < 0
+...     return df['Morning'] < 0
 >>>
 >>> df.loc[morning_below_zero]
                  Morning      Noon   Evening  Midnight

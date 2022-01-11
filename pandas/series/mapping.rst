@@ -443,7 +443,7 @@ Remove Polish diacritics:
 >>>
 >>>
 >>> s = pd.Series(['Poznań', 'Swarzędz', 'Kraków',
->>>                'Łódź', 'Gdańsk', 'Koło', 'Dęblin'])
+...                'Łódź', 'Gdańsk', 'Koło', 'Dęblin'])
 >>>
 >>> s
 0      Poznań
