@@ -113,8 +113,8 @@ d    4.0
 dtype: float64
 
 >>> s = pd.Series(
->>>     data = [1.0, 2.0, 3.0, 4.0, 5.0],
->>>     index = ['aaa', 'bbb', 'ccc', 'ddd', 'eee'])
+...     data = [1.0, 2.0, 3.0, 4.0, 5.0],
+...     index = ['aaa', 'bbb', 'ccc', 'ddd', 'eee'])
 >>>
 >>> s
 aaa    1.0
