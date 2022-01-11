@@ -4,6 +4,7 @@ Pandas Set Option
 
 Rationale
 ---------
+* https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.set_option.html
 
 
 SetUp
@@ -40,6 +41,17 @@ Index: []
 Empty DataFrame
 Columns: []
 Index: []
+
+
+Memory Usage
+------------
+display.memory_usage : bool, string or None
+    This specifies if the memory usage of a DataFrame should be displayed when df.info() is called. Valid values True,False,’deep’ [default: True] [currently: True]
+
+Precision
+---------
+display.precision : int
+    Floating point output precision in terms of number of places after the decimal, for regular formatting as well as scientific notation. Similar to precision in numpy.set_printoptions(). [default: 6] [currently: 6]
 
 
 Assignments
