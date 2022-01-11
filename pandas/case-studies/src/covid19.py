@@ -71,7 +71,7 @@ def trend(df, since='2020-06-01', until='2021'):
     2.54786618630983
     """
     df = df.loc[since:until]
-    return (df['Confirmed'] / df['Recovered'])
+    return df['Confirmed'] / df['Recovered']
 
 
 poland = covid19('Poland')
@@ -86,3 +86,31 @@ trend(india, since='2021-01-01', until='2021').plot()
 trend(us, since='2021-01-01', until='2021').plot()
 trend(china, since='2021-01-01', until='2021').plot()
 trend(world, since='2021-01-01', until='2021').plot()
+
+
+# Numer of new cases in last two weeks
+new_cases = poland.last('2W').diff().plot()
+
+# Average number of confirmed cases each month
+average_cases = poland.resample('M').sum().plot()
+
+# Select timeframe
+since_december = poland.loc['2021-12':, ['Confirmed', 'Deaths']].plot(subplots=True, layout=(1,2))
+
+# Ratio of deaths vs new cases in last two weeks
+timeframe = poland.last('2W')
+ratio = timeframe['Deaths'] / timeframe['Confirmed']
+ratio.plot()
+
+# Percent of deaths vs new cases in last two weeks
+timeframe = poland.last('2W')
+ratio = timeframe['Deaths'] / timeframe['Confirmed']
+percent = ratio * 100
+percent.round(decimals=3).plot(
+    kind='line',
+    title='Percent of deaths vs new cases in last two weeks',
+    xlabel='Day',
+    ylabel='Percent',
+    ylim=(2.1, 2.5),
+    figsize=(10,10),
+    grid=True)
