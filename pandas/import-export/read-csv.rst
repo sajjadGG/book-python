@@ -23,7 +23,7 @@ Label Encoder:
 >>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
 >>>
 >>> header = pd.read_csv(DATA, nrows=0)
->>> class_labels = header.columns[2:]
+>>> nrows, ncols, *class_labels = header.columns
 >>> label_encoder = dict(enumerate(class_labels))
 
 
@@ -87,7 +87,7 @@ Use Case - 0x01
 ...             'petal_length', 'petal_width', 'species']
 
 >>> header = pd.read_csv(DATA, nrows=0)
->>> class_labels = header.columns[2:]
+>>> nrows, ncols, *class_labels = header.columns
 >>> label_encoder = dict(enumerate(class_labels))
 >>>
 >>> label_encoder
