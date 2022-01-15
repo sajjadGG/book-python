@@ -8,6 +8,24 @@ Rationale
 * Integer Index
 * String Index
 * Datetime Index
+* Timedelta Index
+* Period Index
+* Interval Index
+* Categorical Index
+* Multi Index
+
+.. note:: Non-monotonic indexes require exact matches. If the index of a Series
+          or DataFrame is monotonically increasing or decreasing, then the
+          bounds of a label-based slice can be outside the range of the index,
+          much like slice indexing a normal Python list. Monotonicity of an
+          index can be tested with the is_monotonic_increasing() and
+          is_monotonic_decreasing() attributes. [#pdDocAdvanced]_
+
+.. note:: Compared with standard Python sequence slicing in which the slice
+          endpoint is not inclusive, label-based slicing in pandas is
+          inclusive. The primary reason for this is that it is often not
+          possible to easily determine the "successor" or next element after
+          a particular label in an index. [#pdDocAdvanced]_
 
 * Int64Index, UInt64Index and Float64Index have been deprecated in favor of
   the base Index class and will be removed in Pandas 2.0 [#pd14releasenotes]_
@@ -20,6 +38,7 @@ With:
 
 >>> pd.Index([1, 2, 3], dtype='int64')
 
+More Information: https://pandas.pydata.org/pandas-docs/dev/user_guide/advanced.html#index-types
 
 Range Index
 -----------
@@ -144,9 +163,151 @@ id
 4       Alex       Vogel
 
 
+Use Case - 0x01
+---------------
+>>> import pandas as pd
+>>>
+>>>
+>>> def quantile25(column):
+...     return column.quantile(.25)
+>>>
+>>> def quantile50(column):
+...     return column.quantile(.50)
+>>>
+>>> def quantile75(column):
+...     return column.quantile(.75)
+>>>
+>>>
+>>> DATA = 'https://python.astrotech.io/_static/phones-en.csv'
+>>> df = pd.read_csv(DATA, parse_dates=['date'])
+>>> df.drop(columns='index', inplace=True)
+>>>
+>>> result = df.groupby(['month','item']).agg(
+...     duration_count=('duration', 'count'),
+...     duration_sum=('duration', 'sum'),
+...     duration_nunique=('duration', 'nunique'),
+...
+...     duration_mean=('duration', 'mean'),
+...     duration_median=('duration', 'median'),
+...     duration_std=('duration', 'std'),
+...     duration_std2=('duration', lambda column: column.std().astype(int)),
+...
+...     duration_min=('duration', 'min'),
+...     duration_q25=('duration', quantile25),
+...     duration_q50=('duration', quantile50),
+...     duration_q75=('duration', quantile75),
+...     duration_max=('duration', 'max'),
+..
+...     when_first=('date', 'first'),
+...     when_last=('date', 'last')
+... )
+>>>
+>>> result  # doctest: +NORMALIZE_WHITESPACE
+              duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
+month   item                                                                                  ...
+2014-11 call             107     25547.000                76     238.757009           48.000  ...        48.000       328.000      1940.000 2014-10-15 06:58:00 2014-12-11 19:01:00
+        data              29       998.441                 1      34.429000           34.429  ...        34.429        34.429        34.429 2014-10-15 06:58:00 2014-12-11 06:58:00
+        sms               94        94.000                 1       1.000000            1.000  ...         1.000         1.000         1.000 2014-10-16 22:18:00 2014-11-13 22:31:00
+2014-12 call              79     13561.000                61     171.658228           55.000  ...        55.000       152.000      2120.000 2014-11-14 17:24:00 2014-12-14 19:54:00
+        data              30      1032.870                 1      34.429000           34.429  ...        34.429        34.429        34.429 2014-11-13 06:58:00 2014-12-12 06:58:00
+        sms               48        48.000                 1       1.000000            1.000  ...         1.000         1.000         1.000 2014-11-14 17:28:00 2014-07-12 23:22:00
+2015-01 call              88     17070.000                70     193.977273           55.500  ...        55.500       273.500      1859.000 2014-12-15 20:03:00 2015-01-14 20:47:00
+        data              31      1067.299                 1      34.429000           34.429  ...        34.429        34.429        34.429 2014-12-13 06:58:00 2015-12-01 06:58:00
+        sms               86        86.000                 1       1.000000            1.000  ...         1.000         1.000         1.000 2014-12-15 19:56:00 2015-01-14 23:36:00
+2015-02 call              67     14416.000                63     215.164179           89.000  ...        89.000       241.000      1863.000 2015-01-15 10:36:00 2015-09-02 17:54:00
+        data              31      1067.299                 1      34.429000           34.429  ...        34.429        34.429        34.429 2015-01-13 06:58:00 2015-12-02 06:58:00
+        sms               39        39.000                 1       1.000000            1.000  ...         1.000         1.000         1.000 2015-01-15 12:23:00 2015-10-02 21:40:00
+2015-03 call              47     21727.000                46     462.276596          107.000  ...       107.000       320.000     10528.000 2015-12-02 20:15:00 2015-04-03 12:29:00
+        data              29       998.441                 1      34.429000           34.429  ...        34.429        34.429        34.429 2015-02-13 06:58:00 2015-03-13 06:58:00
+        sms               25        25.000                 1       1.000000            1.000  ...         1.000         1.000         1.000 2015-02-19 18:46:00 2015-03-14 00:16:00
+[15 rows x 14 columns]
+
+>>> result.loc[('2015-01','call')]
+duration_count                       88
+duration_sum                    17070.0
+duration_nunique                     70
+duration_mean                193.977273
+duration_median                    55.5
+duration_std                 300.671661
+duration_std2                       300
+duration_min                        2.0
+duration_q25                       15.5
+duration_q50                       55.5
+duration_q75                      273.5
+duration_max                     1859.0
+when_first          2014-12-15 20:03:00
+when_last           2015-01-14 20:47:00
+Name: (2015-01, call), dtype: object
+
+>>> result.loc['2015-01']
+      duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
+item                                                                                  ...
+call              88     17070.000                70     193.977273           55.500  ...        55.500       273.500      1859.000 2014-12-15 20:03:00 2015-01-14 20:47:00
+data              31      1067.299                 1      34.429000           34.429  ...        34.429        34.429        34.429 2014-12-13 06:58:00 2015-12-01 06:58:00
+sms               86        86.000                 1       1.000000            1.000  ...         1.000         1.000         1.000 2014-12-15 19:56:00 2015-01-14 23:36:00
+[3 rows x 14 columns]
+
+>>> result.loc['2015-01'].transpose()
+item                             call                 data                  sms
+duration_count                     88                   31                   86
+duration_sum                  17070.0             1067.299                 86.0
+duration_nunique                   70                    1                    1
+duration_mean              193.977273               34.429                  1.0
+duration_median                  55.5               34.429                  1.0
+duration_std               300.671661                  0.0                  0.0
+duration_std2                     300                    0                    0
+duration_min                      2.0               34.429                  1.0
+duration_q25                     15.5               34.429                  1.0
+duration_q50                     55.5               34.429                  1.0
+duration_q75                    273.5               34.429                  1.0
+duration_max                   1859.0               34.429                  1.0
+when_first        2014-12-15 20:03:00  2014-12-13 06:58:00  2014-12-15 19:56:00
+when_last         2015-01-14 20:47:00  2015-12-01 06:58:00  2015-01-14 23:36:00
+
+>>> sms = result.index.get_level_values("item") == "sms"
+>>> sms
+array([False, False,  True, False, False,  True, False, False,  True,
+       False, False,  True, False, False,  True])
+>>>
+>>> result[sms]
+              duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
+month   item                                                                                  ...
+2014-11 sms               94          94.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-10-16 22:18:00 2014-11-13 22:31:00
+2014-12 sms               48          48.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-11-14 17:28:00 2014-07-12 23:22:00
+2015-01 sms               86          86.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-12-15 19:56:00 2015-01-14 23:36:00
+2015-02 sms               39          39.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2015-01-15 12:23:00 2015-10-02 21:40:00
+2015-03 sms               25          25.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2015-02-19 18:46:00 2015-03-14 00:16:00
+[5 rows x 14 columns]
+
+Cross-section:
+
+>>> result.xs('sms', level='item')
+         duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
+month                                                                                    ...
+2014-11              94          94.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-10-16 22:18:00 2014-11-13 22:31:00
+2014-12              48          48.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-11-14 17:28:00 2014-07-12 23:22:00
+2015-01              86          86.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-12-15 19:56:00 2015-01-14 23:36:00
+2015-02              39          39.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2015-01-15 12:23:00 2015-10-02 21:40:00
+2015-03              25          25.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2015-02-19 18:46:00 2015-03-14 00:16:00
+[5 rows x 14 columns]
+
+Slicer Object:
+
+>>> result.loc[(slice(None), 'sms'), :]
+              duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
+month   item                                                                                  ...
+2014-11 sms               94          94.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-10-16 22:18:00 2014-11-13 22:31:00
+2014-12 sms               48          48.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-11-14 17:28:00 2014-07-12 23:22:00
+2015-01 sms               86          86.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-12-15 19:56:00 2015-01-14 23:36:00
+2015-02 sms               39          39.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2015-01-15 12:23:00 2015-10-02 21:40:00
+2015-03 sms               25          25.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2015-02-19 18:46:00 2015-03-14 00:16:00
+[5 rows x 14 columns]
+
+
 References
 ----------
 .. [#pd14releasenotes] https://pandas.pydata.org/pandas-docs/dev/whatsnew/v1.4.0.html#deprecated-int64index-uint64index-float64index
+.. [#pdDocAdvanced] https://pandas.pydata.org/pandas-docs/dev/user_guide/advanced.html#non-monotonic-indexes-require-exact-matches
 
 
 Assignments

@@ -74,6 +74,8 @@ Sort Rows by Index
 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
+.. todo:: Sorting MultiIndex https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#sorting-a-multiindex
+
 
 Sort Columns by Index
 ---------------------
