@@ -48,12 +48,12 @@ Rename Columns
 >>>
 >>> df = pd.read_csv(DATA)
 >>> df.head(3)
-     150    4  setosa  versicolor  virginica
-0    5.4  3.9     1.3         0.4          0
-1    5.9  3.0     5.1         1.8          2
-2    6.0  3.4     4.5         1.6          1
+   150    4  setosa  versicolor  virginica
+0  5.4  3.9     1.3         0.4          0
+1  5.9  3.0     5.1         1.8          2
+2  6.0  3.4     4.5         1.6          1
 >>>
->>> df = pd.read_csv(url, skiprows=1, names=COLUMNS)
+>>> df = pd.read_csv(DATA, skiprows=1, names=COLUMNS)
 >>> df.head(3)
    sepal_length  sepal_width  petal_length  petal_width  species
 0           5.4          3.9           1.3          0.4        0

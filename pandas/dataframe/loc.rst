@@ -174,7 +174,7 @@ Filtering with callable:
 ...     return df['Morning'] < 0
 >>>
 >>> df.loc[morning_below_zero]
-                 Morning      Noon   Evening  Midnight
+             Morning      Noon   Evening  Midnight
 2000-01-01 -0.103219  0.410599  0.144044  1.454274
 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
 
@@ -189,6 +189,7 @@ Setting Values
 Set value for all items matching the list of labels:
 
 >>> df.loc[df['Morning'] < 0, 'Evening'] = np.inf
+>>> df
              Morning      Noon   Evening  Midnight
 1999-12-30  1.764052  0.400157  0.978738  2.240893
 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
@@ -201,6 +202,7 @@ Set value for all items matching the list of labels:
 Set value for an entire row:
 
 >>> df.loc['2000-01-01'] = np.nan
+>>> df
              Morning      Noon   Evening  Midnight
 1999-12-30  1.764052  0.400157  0.978738  2.240893
 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
@@ -213,6 +215,7 @@ Set value for an entire row:
 Set value for an entire column:
 
 >>> df.loc[:, 'Evening'] = 0.0
+>>> df
              Morning      Noon  Evening  Midnight
 1999-12-30  1.764052  0.400157      0.0  2.240893
 1999-12-31  1.867558 -0.977278      0.0 -0.151357

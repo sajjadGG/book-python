@@ -2,12 +2,15 @@ DataFrame Alter
 ===============
 
 
+SetUp
+-----
+>>> import pandas as pd
+>>> import numpy as np
+
+
 Add Rows and Columns
 --------------------
 Add Column:
-
->>> import pandas as pd
->>> import numpy as np
 
 >>> df = pd.DataFrame({
 ...     'A': [10, 11, 12],
@@ -49,9 +52,6 @@ Drop Rows and Columns
 
 Drop Column:
 
->>> import pandas as pd
->>>
->>>
 >>> df = pd.DataFrame({
 ...     'A': [10, 11, 12],
 ...     'B': [20, 21, 22],
@@ -83,9 +83,6 @@ Drop Column:
 
 Drop Row:
 
->>> import pandas as pd
->>>
->>>
 >>> df = pd.DataFrame({
 ...     'A': [10, 11, 12],
 ...     'B': [20, 21, 22],
@@ -106,17 +103,14 @@ Drop Row:
     A   B   C
 1  11  21  31
 
->>> rows = df1[:2].index
+>>> rows = df[:2].index
 >>> df.drop(rows)
     A   B   C
 2  12  22  32
 
 Drop from Timeseries:
 
->>> import pandas as pd
->>> import numpy as np
 >>> np.random.seed(0)
->>>
 >>>
 >>> df = pd.DataFrame(
 ...     columns = ['Morning', 'Noon', 'Evening', 'Midnight'],
@@ -148,9 +142,6 @@ Transpose
 * ``df.transpose()`` or ``df.T``
 * ``df.transpose()`` is preferred
 
->>> import pandas as pd
->>>
->>>
 >>> df = pd.DataFrame({
 ...     'A': [10, 11, 12],
 ...     'B': [20, 21, 22],
@@ -174,9 +165,6 @@ A  10  11  12
 B  20  21  22
 C  30  31  32
 
->>> import pandas as pd
->>>
->>>
 >>> df = pd.DataFrame({
 ...     'A': [10, 11, 12],
 ...     'B': [20, 21, 22],
@@ -193,9 +181,6 @@ C  30  31  32
 >>> x = df.T            # will transpose data
 >>> x = df.transpose()  # will transpose data
 
->>> import pandas as pd
->>>
->>>
 >>> df = pd.DataFrame({
 ...     'R': [10, 11, 12],
 ...     'S': [20, 21, 22],

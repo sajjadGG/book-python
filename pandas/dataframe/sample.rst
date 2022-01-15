@@ -113,50 +113,50 @@ Sample
 * 0.5 is 50%
 * 1.0 is 100%
 
+>>> np.random.seed(0)
+
 `n` number or fraction random rows with and without repetition:
 
 >>> df.sample()
-                 Morning      Noon   Evening  Midnight
-2000-01-01 -0.103219  0.410599  0.144044  1.454274
+             Morning      Noon   Evening  Midnight
+2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
 >>> df.sample(2)
              Morning      Noon   Evening  Midnight
-2000-01-03  1.494079 -0.205158  0.313068 -0.854096
-2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+1999-12-30  1.764052  0.400157  0.978738  2.240893
 
 >>> df.sample(n=2, replace=True)
              Morning      Noon   Evening  Midnight
-1999-12-31  1.867558 -0.977278  0.950088 -0.151357
-1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+1999-12-30  1.764052  0.400157  0.978738  2.240893
+2000-01-03  1.494079 -0.205158  0.313068 -0.854096
 
 >>> df.sample(frac=1/4)
              Morning      Noon   Evening  Midnight
-2000-01-02  0.761038  0.121675  0.443863  0.333674
-1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
 >>> df.sample(frac=0.5)
              Morning      Noon   Evening  Midnight
-2000-01-05  2.269755 -1.454366  0.045759 -0.187184
-1999-12-30  1.764052  0.400157  0.978738  2.240893
 2000-01-01 -0.103219  0.410599  0.144044  1.454274
-1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+2000-01-02  0.761038  0.121675  0.443863  0.333674
+2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
 
 Reset Index
 -----------
+>>> np.random.seed(0)
 >>> df.sample(frac=1.0).reset_index()
        index   Morning      Noon   Evening  Midnight
-0 2000-01-02  0.761038  0.121675  0.443863  0.333674
-1 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
-2 2000-01-01 -0.103219  0.410599  0.144044  1.454274
-3 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
-4 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
+0 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
+1 2000-01-01 -0.103219  0.410599  0.144044  1.454274
+2 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+3 2000-01-02  0.761038  0.121675  0.443863  0.333674
+4 1999-12-30  1.764052  0.400157  0.978738  2.240893
 5 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
-6 1999-12-30  1.764052  0.400157  0.978738  2.240893
+6 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
 
->>> import pandas as pd
->>>
->>>
 >>> DATA = [{'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'},
 ...         {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8, 'species': 'virginica'},
 ...         {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6, 'species': 'versicolor'},
@@ -167,23 +167,24 @@ Reset Index
 >>>
 >>> df = pd.DataFrame(DATA)
 >>>
->>> selected = df.sample(frac=0.02)
-     sepal_length  sepal_width  petal_length  petal_width     species
-98            5.0          3.0           1.6          0.2      setosa
-64            5.0          3.5           1.6          0.6      setosa
-105           6.1          2.8           4.0          1.3  versicolor
+>>> np.random.seed(0)
+>>> selected = df.sample(frac=1/2)
+   sepal_length  sepal_width  petal_length  petal_width    species
+3           7.3          2.9           6.3          1.8  virginica
+5           5.4          3.9           1.3          0.4     setosa
+1           5.9          3.0           5.1          1.8  virginica
 >>>
 >>> selected.reset_index()
-   index  sepal_length  sepal_width  petal_length  petal_width     species
-0     98           5.0          3.0           1.6          0.2      setosa
-1     64           5.0          3.5           1.6          0.6      setosa
-2    105           6.1          2.8           4.0          1.3  versicolor
+   index  sepal_length  sepal_width  petal_length  petal_width    species
+0      3           7.3          2.9           6.3          1.8  virginica
+1      5           5.4          3.9           1.3          0.4     setosa
+2      1           5.9          3.0           5.1          1.8  virginica
 >>>
 >>> selected.reset_index(drop=True)
-   sepal_length  sepal_width  petal_length  petal_width     species
-0           5.0          3.0           1.6          0.2      setosa
-1           5.0          3.5           1.6          0.6      setosa
-2           6.1          2.8           4.0          1.3  versicolor
+   sepal_length  sepal_width  petal_length  petal_width    species
+0           7.3          2.9           6.3          1.8  virginica
+1           5.4          3.9           1.3          0.4     setosa
+2           5.9          3.0           5.1          1.8  virginica
 
 
 Assignments

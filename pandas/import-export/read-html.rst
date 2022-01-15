@@ -6,6 +6,10 @@ Rationale
 ---------
 * File paths works also with URLs
 
+SetUp
+-----
+>>> import pandas as pd
+
 
 Read HTML
 ---------

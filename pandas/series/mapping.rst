@@ -189,18 +189,18 @@ dtype: object
 3     NaN
 dtype: object
 >>>
->>> s.map('I am a {}'.format)
-0        My name... Watney
-1    My name... Twardowski
-2          My name... <NA>
-3         My name... Lewis
+>>> s.map('I am {}'.format)
+0        I am Watney
+1    I am Twardowski
+2          I am <NA>
+3         I am Lewis
 dtype: object
 >>>
->>> s.map('I am a {}'.format, na_action='ignore')
-0        My name... Watney
-1    My name... Twardowski
-2                     <NA>
-3         My name... Lewis
+>>> s.map('I am {}'.format, na_action='ignore')
+0        I am a Watney
+1    I am a Twardowski
+2                 <NA>
+3         I am a Lewis
 dtype: object
 
 

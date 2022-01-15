@@ -2,11 +2,17 @@ DataFrame Index
 ===============
 
 
+SetUp
+-----
+>>> import pandas as pd
+>>> import numpy as np
+
+
 Rationale
 ---------
 * Range Index
-* Integer Index
-* String Index
+* Index
+* Object Index
 * Datetime Index
 * Timedelta Index
 * Period Index
@@ -44,9 +50,6 @@ More Information: https://pandas.pydata.org/pandas-docs/dev/user_guide/advanced.
 
 Range Index
 -----------
->>> import pandas as pd
->>>
->>>
 >>> df = pd.DataFrame({
 ...     'A': [10, 11, 12],
 ...     'B': [20, 21, 22],
@@ -67,10 +70,6 @@ Integer Index
 * Int64Index, UInt64Index and Float64Index have been deprecated in favor of
   the base Index class and will be removed in Pandas 2.0 [#pd14releasenotes]_
 
->>> import pandas as pd
->>> import numpy as np
->>>
->>>
 >>> df = pd.DataFrame(
 ...     data = np.arange(16).reshape(4,4),
 ...     index = [99, 88, 77, 66],
@@ -89,10 +88,6 @@ Int64Index([99, 88, 77, 66], dtype='int64')
 
 Object Index
 ------------
->>> import pandas as pd
->>> import numpy as np
->>>
->>>
 >>> df = pd.DataFrame(
 ...     data = np.arange(16).reshape(4,4),
 ...     index = ['a', 'b', 'c', 'd'],
@@ -111,8 +106,6 @@ Index(['a', 'b', 'c', 'd'], dtype='object')
 
 Datetime Index
 --------------
->>> import pandas as pd
->>> import numpy as np
 >>> np.random.seed(0)
 >>>
 >>>
@@ -139,9 +132,6 @@ DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01', '2000-01-02',
 
 Set Index
 ---------
->>> import pandas as pd
->>>
->>>
 >>> df = pd.DataFrame([
 ...     {'id': 1, 'firstname': 'Mark', 'lastname': 'Watney'},
 ...     {'id': 2, 'firstname': 'Melissa', 'lastname': 'Lewis'},
@@ -149,20 +139,20 @@ Set Index
 ...     {'id': 4, 'firstname': 'Alex', 'lastname': 'Vogel'},
 ... ])
 >>>
->>> df
-   id  firstname    lastname
-0   1       Mark      Watney
-1   2    Melissa       Lewis
-2   3       Rick    Martinez
-3   4       Alex       Vogel
+>>> df  # doctest: +NORMALIZE_WHITESPACE
+   id firstname  lastname
+0   1      Mark    Watney
+1   2   Melissa     Lewis
+2   3      Rick  Martinez
+3   4      Alex     Vogel
 >>>
->>> df.set_index('id')
-    firstname    lastname
+>>> df.set_index('id')  # doctest: +NORMALIZE_WHITESPACE
+   firstname  lastname
 id
-1       Mark      Watney
-2    Melissa       Lewis
-3       Rick    Martinez
-4       Alex       Vogel
+1       Mark    Watney
+2    Melissa     Lewis
+3       Rick  Martinez
+4       Alex     Vogel
 
 
 Use Case - 0x01
@@ -241,7 +231,7 @@ when_first          2014-12-15 20:03:00
 when_last           2015-01-14 20:47:00
 Name: (2015-01, call), dtype: object
 
->>> result.loc['2015-01']
+>>> result.loc['2015-01']  # doctest: +NORMALIZE_WHITESPACE
       duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
 item                                                                                  ...
 call              88     17070.000                70     193.977273           55.500  ...        55.500       273.500      1859.000 2014-12-15 20:03:00 2015-01-14 20:47:00
@@ -271,7 +261,7 @@ when_last         2015-01-14 20:47:00  2015-12-01 06:58:00  2015-01-14 23:36:00
 array([False, False,  True, False, False,  True, False, False,  True,
        False, False,  True, False, False,  True])
 >>>
->>> result[sms]
+>>> result[sms]  # doctest: +NORMALIZE_WHITESPACE
               duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
 month   item                                                                                  ...
 2014-11 sms               94          94.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-10-16 22:18:00 2014-11-13 22:31:00
@@ -283,7 +273,7 @@ month   item                                                                    
 
 Cross-section:
 
->>> result.xs('sms', level='item')
+>>> result.xs('sms', level='item')  # doctest: +NORMALIZE_WHITESPACE
          duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
 month                                                                                    ...
 2014-11              94          94.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-10-16 22:18:00 2014-11-13 22:31:00
@@ -295,7 +285,7 @@ month                                                                           
 
 Slicer Object:
 
->>> result.loc[(slice(None), 'sms'), :]
+>>> result.loc[(slice(None), 'sms'), :]  # doctest: +NORMALIZE_WHITESPACE
               duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
 month   item                                                                                  ...
 2014-11 sms               94          94.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-10-16 22:18:00 2014-11-13 22:31:00

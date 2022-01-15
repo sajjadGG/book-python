@@ -2,23 +2,56 @@ Series Index
 ============
 
 
-Rationale
----------
-* Range Index
-* Int64 Index
-* Float64 Index
-* String Index
-* Datetime Index
-
-
 SetUp
 -----
 >>> import pandas as pd
 >>> import numpy as np
 
 
+Rationale
+---------
+* Range Index
+* Index
+* Object Index
+* Datetime Index
+* Timedelta Index
+* Period Index
+* Interval Index
+* Categorical Index
+* Multi Index
+
+.. note:: Non-monotonic indexes require exact matches. If the index of a Series
+          or DataFrame is monotonically increasing or decreasing, then the
+          bounds of a label-based slice can be outside the range of the index,
+          much like slice indexing a normal Python list. Monotonicity of an
+          index can be tested with the is_monotonic_increasing() and
+          is_monotonic_decreasing() attributes. [#pdDocAdvanced]_
+
+.. note:: Compared with standard Python sequence slicing in which the slice
+          endpoint is not inclusive, label-based slicing in pandas is
+          inclusive. The primary reason for this is that it is often not
+          possible to easily determine the "successor" or next element after
+          a particular label in an index. [#pdDocAdvanced]_
+
+.. warning:: Int64Index, UInt64Index and Float64Index have been deprecated in
+             favor of the base Index class and will be removed in Pandas 2.0
+             [#pd14releasenotes]_
+
+Replace:
+
+>>> pd.Int64Index([1, 2, 3])
+
+With:
+
+>>> pd.Index([1, 2, 3], dtype='int64')
+
+More Information: https://pandas.pydata.org/pandas-docs/dev/user_guide/advanced.html#index-types
+
+
 Definition
 ----------
+>>> from pandas import RangeIndex, Int64Index, Float64Index, Index, DatetimeIndex
+
 >>> index = RangeIndex(start=0, stop=5, step=1)
 >>> index = Int64Index([0, 1, 2, 3, 4], dtype='int64')
 >>> index = Float64Index([0.0, 1.1, 2.2, 3.3, 4.4], dtype='float64')
@@ -48,7 +81,7 @@ Integer index:
 Float index:
 
 >>> f1 = pd.Series(DATA, index=[0.0, 1.1, 2.2, 3.3, 4.4])
->>> f2 = pd.Series(DATA, index=np.arange(0.0, 5.5, 1.1)
+>>> f2 = pd.Series(DATA, index=np.arange(0.0, 5.5, 1.1))
 >>> f3 = pd.Series(DATA, index=[99.9, 3.14, -5.99, 0.0, 77.1])
 
 Object index:
@@ -242,8 +275,8 @@ dtype: float64
 Index(['a', 'b', 'c', 'd'], dtype='object')
 
 
-Date Index
-----------
+Datetime Index
+--------------
 * Also has ``RangeIndex``
 * Default is "Daily"
 * Works also with ISO time format ``1970-01-01T00:00:00``
@@ -261,7 +294,9 @@ Date Index
 Freq: D, dtype: float64
 >>>
 >>> s.index
-DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01', '2000-01-02'], dtype='datetime64[ns]', freq='D')
+DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 01:00:00',
+               '1999-12-30 02:00:00', '1999-12-30 03:00:00'],
+              dtype='datetime64[ns]', freq='H')
 
 Every year:
 
@@ -357,7 +392,9 @@ Every hour:
 Freq: H, dtype: float64
 >>>
 >>> s.index
-DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 01:00:00', '1999-12-30 02:00:00', '1999-12-30 03:00:00'], dtype='datetime64[ns]', freq='H')
+DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 01:00:00',
+               '1999-12-30 02:00:00', '1999-12-30 03:00:00'],
+              dtype='datetime64[ns]', freq='H')
 
 Every minute:
 
@@ -373,7 +410,9 @@ Every minute:
 Freq: T, dtype: float64
 >>>
 >>> s.index
-DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 00:01:00', '1999-12-30 00:02:00', '1999-12-30 00:03:00'], dtype='datetime64[ns]', freq='T')
+DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 00:01:00',
+               '1999-12-30 00:02:00', '1999-12-30 00:03:00'],
+              dtype='datetime64[ns]', freq='T')
 
 Every second:
 
@@ -389,7 +428,9 @@ Every second:
 Freq: S, dtype: float64
 >>>
 >>> s.index
-DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 00:00:01', '1999-12-30 00:00:02', '1999-12-30 00:00:03'], dtype='datetime64[ns]', freq='S')
+DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 00:00:01',
+               '1999-12-30 00:00:02', '1999-12-30 00:00:03'],
+              dtype='datetime64[ns]', freq='S')
 
 Every business day.
 

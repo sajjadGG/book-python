@@ -38,6 +38,7 @@ Example
 
 >>> from io import StringIO
 >>> import pandas as pd
+>>> import requests
 >>>
 >>>
 >>> DATA = 'https://python.astrotech.io/_static/astro-order.csv'

@@ -14,14 +14,13 @@ SetUp
 Range Index
 -----------
 >>> s = pd.Series([1.1, 2.2, 3.3, None, 5.5])
->>>
 >>> s
-# 0    1.1
-# 1    2.2
-# 2    3.3
-# 3    NaN
-# 4    5.5
-# dtype: float64
+0    1.1
+1    2.2
+2    3.3
+3    NaN
+4    5.5
+dtype: float64
 
 >>> s.index
 RangeIndex(start=0, stop=5, step=1)
@@ -156,7 +155,8 @@ Date Index
 Freq: D, dtype: float64
 
 >>> s.index
-DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01', '2000-01-02', '2000-01-03'],
+DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01', '2000-01-02',
+               '2000-01-03'],
               dtype='datetime64[ns]', freq='D')
 
 >>> s['2000-01-03']

@@ -217,17 +217,12 @@ Parameters
 SetUp
 -----
 >>> import pandas as pd
+>>> import matplotlib.pyplot as plt
 >>>
 >>>
 >>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
 >>>
->>> df = pd.read_csv(DATA, names=[
-...     'Sepal length',
-...     'Sepal width',
-...     'Petal length',
-...     'Petal width',
-...     'Species'
-... ])
+>>> df = pd.read_csv(DATA)
 
 
 Line Plot
@@ -235,7 +230,10 @@ Line Plot
 * default
 
 >>> plot = df.plot()
+>>> plt.show()
+
 >>> plot = df.plot(kind='line')
+>>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-line.png
 
@@ -245,6 +243,7 @@ Line Plot
 Vertical Bar Plot
 -----------------
 >>> plot = df.plot(kind='bar')
+>>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-bar.png
 
@@ -254,6 +253,7 @@ Vertical Bar Plot
 Horizontal Bar Plot
 -------------------
 >>> plot = df.plot(kind='barh')
+>>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-barh.png
 
@@ -263,6 +263,7 @@ Horizontal Bar Plot
 Histogram
 ---------
 >>> plot = df.plot(kind='hist')
+>>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-hist.png
 
@@ -272,18 +273,12 @@ Histogram
 Boxplot
 -------
 >>> plot = df.plot(kind='box')
+>>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-box.png
 
     Boxplot
 
->>> import matplotlib.pyplot as plt
->>> import pandas as pd
->>>
->>>
->>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
->>>
->>> df = pd.read_csv(DATA)
 >>> plot = df.plot(kind='box',
 ...                subplots=True,
 ...                layout=(2,2),
@@ -300,19 +295,15 @@ Boxplot
 Kernel Density Estimation Plot
 ------------------------------
 >>> plot = df.plot(kind='density')
+>>> plt.show()
+
 >>> plot = df.plot(kind='kde')
+>>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-density.png
 
     Kernel Density Estimation Plot
 
->>> import matplotlib.pyplot as plt
->>> import pandas as pd
->>>
->>>
->>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
->>>
->>> df = pd.read_csv(DATA)
 >>> plot = df.plot(kind='density',
 ...                subplots=True,
 ...                layout=(2,2),
@@ -328,6 +319,7 @@ Kernel Density Estimation Plot
 Area Plot
 ---------
 >>> plot = df.plot(kind='area')
+>>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-area.png
 
@@ -341,6 +333,7 @@ Area Plot
 Pie Plot
 --------
 >>> plot = df.plot(kind='pie')
+>>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-pie.png
 
@@ -350,6 +343,7 @@ Pie Plot
 Scatter Plot
 ------------
 >>> plot = df.plot(kind='scatter')
+>>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-scatter.png
 
@@ -359,6 +353,7 @@ Scatter Plot
 Hexbin Plot
 -----------
 >>> plot = df.plot(kind='hexbin')
+>>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-hexbin.png
 
@@ -367,13 +362,6 @@ Hexbin Plot
 
 Hist
 ----
->>> import matplotlib.pyplot as plt
->>> import pandas as pd
->>>
->>>
->>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
->>>
->>> df = pd.read_csv(DATA)
 >>> plot = df.hist()
 >>> plt.show()
 
@@ -387,14 +375,8 @@ Scatter matrix
 * The in ``pandas`` version ``0.22`` plotting module has been moved from ``pandas.tools.plotting`` to ``pandas.plotting``
 * As of version ``0.19``, the ``pandas.plotting`` library did not exist
 
->>> import matplotlib.pyplot as plt
->>> import pandas as pd
 >>> from pandas.plotting import scatter_matrix
 >>>
->>>
->>> DATA = 'https://python.astrotech.io/_static/iris-clean.csv'
->>>
->>> df = pd.read_csv(DATA)
 >>> plot = scatter_matrix(df)
 >>> plt.show()
 

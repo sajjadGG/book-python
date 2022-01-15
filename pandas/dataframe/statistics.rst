@@ -392,12 +392,12 @@ How many seconds of phone calls are recorded in total?:
 How many entries are there for each month?:
 
 >>> df['month'].value_counts()
-2014-11  230
-2015-01  205
-2014-12  157
-2015-02  137
-2015-03  101
-dtype: int64
+2014-11    230
+2015-01    205
+2014-12    157
+2015-02    137
+2015-03    101
+Name: month, dtype: int64
 
 Number of non-null unique network entries:
 

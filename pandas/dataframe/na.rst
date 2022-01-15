@@ -24,14 +24,14 @@ SetUp
 ... })
 >>>
 >>> df
-     A    B    C    D
-0  1.0  1.1    a  NaN
-1  2.0  2.2    b  NaN
-2  NaN  NaN  NaN  NaN
-3  NaN  NaN  NaN  NaN
-4  3.0  3.3    c  NaN
-5  NaN  NaN  NaN  NaN
-6  4.0  4.4    d  NaN
+     A    B    C   D
+0  1.0  1.1    a NaN
+1  2.0  2.2    b NaN
+2  NaN  NaN  NaN NaN
+3  NaN  NaN  NaN NaN
+4  3.0  3.3    c NaN
+5  NaN  NaN  NaN NaN
+6  4.0  4.4    d NaN
 
 
 Check if Any
@@ -84,14 +84,14 @@ Check if NA
 Fill With Scalar Value
 ----------------------
 >>> df.fillna(0.0)
-     A    B  C    D
-0  1.0  1.1  a  0.0
-1  2.0  2.2  b  0.0
-2  0.0  0.0  0  0.0
-3  0.0  0.0  0  0.0
-4  3.0  3.3  c  0.0
-5  0.0  0.0  0  0.0
-6  4.0  4.4  d  0.0
+     A    B    C    D
+0  1.0  1.1    a  0.0
+1  2.0  2.2    b  0.0
+2  0.0  0.0  0.0  0.0
+3  0.0  0.0  0.0  0.0
+4  3.0  3.3    c  0.0
+5  0.0  0.0  0.0  0.0
+6  4.0  4.4    d  0.0
 
 
 Fill With Dict Values
@@ -101,14 +101,14 @@ Fill With Dict Values
 ...     'B': 88,
 ...     'C': 77
 ... })
-      A     B   C    D
-0   1.0   1.1   a  NaN
-1   2.0   2.2   b  NaN
-2  99.0  88.0  77  NaN
-3  99.0  88.0  77  NaN
-4   3.0   3.3   c  NaN
-5  99.0  88.0  77  NaN
-6   4.0   4.4   d  NaN
+      A     B   C   D
+0   1.0   1.1   a NaN
+1   2.0   2.2   b NaN
+2  99.0  88.0  77 NaN
+3  99.0  88.0  77 NaN
+4   3.0   3.3   c NaN
+5  99.0  88.0  77 NaN
+6   4.0   4.4   d NaN
 
 
 Fill Forwards
@@ -116,14 +116,14 @@ Fill Forwards
 ``ffill``: propagate last valid observation forward:
 
 >>> df.fillna(method='ffill')
-     A    B  C    D
-0  1.0  1.1  a  NaN
-1  2.0  2.2  b  NaN
-2  2.0  2.2  b  NaN
-3  2.0  2.2  b  NaN
-4  3.0  3.3  c  NaN
-5  3.0  3.3  c  NaN
-6  4.0  4.4  d  NaN
+     A    B  C   D
+0  1.0  1.1  a NaN
+1  2.0  2.2  b NaN
+2  2.0  2.2  b NaN
+3  2.0  2.2  b NaN
+4  3.0  3.3  c NaN
+5  3.0  3.3  c NaN
+6  4.0  4.4  d NaN
 
 
 Fill Backwards
@@ -131,27 +131,27 @@ Fill Backwards
 ``bfill``: use NEXT valid observation to fill gap:
 
 >>> df.fillna(method='bfill')
-     A    B  C    D
-0  1.0  1.1  a  NaN
-1  2.0  2.2  b  NaN
-2  3.0  3.3  c  NaN
-3  3.0  3.3  c  NaN
-4  3.0  3.3  c  NaN
-5  4.0  4.4  d  NaN
-6  4.0  4.4  d  NaN
+     A    B  C   D
+0  1.0  1.1  a NaN
+1  2.0  2.2  b NaN
+2  3.0  3.3  c NaN
+3  3.0  3.3  c NaN
+4  3.0  3.3  c NaN
+5  4.0  4.4  d NaN
+6  4.0  4.4  d NaN
 
 
 Interpolate
 -----------
 >>> df.interpolate()
-          A         B    C    D
-0  1.000000  1.100000    a  NaN
-1  2.000000  2.200000    b  NaN
-2  2.333333  2.566667  NaN  NaN
-3  2.666667  2.933333  NaN  NaN
-4  3.000000  3.300000    c  NaN
-5  3.500000  3.850000  NaN  NaN
-6  4.000000  4.400000    d  NaN
+          A         B    C   D
+0  1.000000  1.100000    a NaN
+1  2.000000  2.200000    b NaN
+2  2.333333  2.566667  NaN NaN
+3  2.666667  2.933333  NaN NaN
+4  3.000000  3.300000    c NaN
+5  3.500000  3.850000  NaN NaN
+6  4.000000  4.400000    d NaN
 
 .. list-table:: Interpolation techniques
     :widths: 25, 75
@@ -192,25 +192,25 @@ Interpolate
 Drop Rows with NA
 -----------------
 >>> df.dropna(how='all')
-     A    B  C    D
-0  1.0  1.1  a  NaN
-1  2.0  2.2  b  NaN
-4  3.0  3.3  c  NaN
-6  4.0  4.4  d  NaN
+     A    B  C   D
+0  1.0  1.1  a NaN
+1  2.0  2.2  b NaN
+4  3.0  3.3  c NaN
+6  4.0  4.4  d NaN
 
 >>> df.dropna(how='all', axis='rows')
-     A    B  C    D
-0  1.0  1.1  a  NaN
-1  2.0  2.2  b  NaN
-4  3.0  3.3  c  NaN
-6  4.0  4.4  d  NaN
+     A    B  C   D
+0  1.0  1.1  a NaN
+1  2.0  2.2  b NaN
+4  3.0  3.3  c NaN
+6  4.0  4.4  d NaN
 
 >>> df.dropna(how='all', axis=0)
-     A    B  C    D
-0  1.0  1.1  a  NaN
-1  2.0  2.2  b  NaN
-4  3.0  3.3  c  NaN
-6  4.0  4.4  d  NaN
+     A    B  C   D
+0  1.0  1.1  a NaN
+1  2.0  2.2  b NaN
+4  3.0  3.3  c NaN
+6  4.0  4.4  d NaN
 
 >>> df.dropna(how='any')
 Empty DataFrame

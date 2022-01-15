@@ -17,7 +17,7 @@ SetUp
 
 Most Frequently Used
 --------------------
->>> # doctests: +SKIP
+>>> # doctest: +SKIP
 ... df.to_csv()
 ... df.to_dict()
 ... df.to_excel()
@@ -27,7 +27,7 @@ Most Frequently Used
 
 Other
 -----
->>> # doctests: +SKIP
+>>> # doctest: +SKIP
 ... df.to_clipboard()
 ... df.to_dense()
 ... df.to_feather()

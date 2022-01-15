@@ -200,7 +200,7 @@ month
 2015-03      1.0  10528.0  225.251891
 
 >>> grouped.columns = grouped.columns.droplevel(level=0)
->>> grouped
+>>> grouped  # doctest: +NORMALIZE_WHITESPACE
          min      max        mean
 month
 2014-11  1.0   1940.0  115.823657
@@ -214,8 +214,9 @@ month
 ...     'max': 'max_duration',
 ...     'mean': 'mean_duration'
 ... }, inplace=True)
->>> grouped
-  month  min_duration  max_duration  mean_duration
+>>> grouped  # doctest: +NORMALIZE_WHITESPACE
+         min_duration  max_duration  mean_duration
+month
 2014-11           1.0        1940.0     115.823657
 2014-12           1.0        2120.0      93.260318
 2015-01           1.0        1859.0      88.894141
@@ -227,8 +228,8 @@ achieved using the ravel() function:
 
 >>> grouped = df.groupby('month').agg({
 ...     'duration': ['min', 'max', 'mean']
-... })  # doctest: +NORMALIZE_WHITESPACE
->>> grouped
+... })
+>>> grouped  # doctest: +NORMALIZE_WHITESPACE
         duration
              min      max        mean
 month
@@ -241,7 +242,7 @@ month
 Using ravel, and a string join, we can create better names for the columns:
 
 >>> grouped.columns = ['_'.join(x) for x in grouped.columns.ravel()]
->>> grouped
+>>> grouped  # doctest: +NORMALIZE_WHITESPACE
          duration_min  duration_max  duration_mean
 month
 2014-11           1.0        1940.0     115.823657
@@ -285,9 +286,9 @@ Use Case - 0x01
 ...     duration_q50=('duration', quantile50),
 ...     duration_q75=('duration', quantile75),
 ...     duration_max=('duration', 'max'),
-..
+...
 ...     when_first=('date', 'first'),
-...     when_last=('date', 'last')
+...     when_last=('date', 'last'),
 ... )
 >>>
 >>> result  # doctest: +NORMALIZE_WHITESPACE
@@ -327,7 +328,7 @@ when_first          2014-12-15 20:03:00
 when_last           2015-01-14 20:47:00
 Name: (2015-01, call), dtype: object
 
->>> result.loc['2015-01']
+>>> result.loc['2015-01']  # doctest: +NORMALIZE_WHITESPACE
       duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
 item                                                                                  ...
 call              88     17070.000                70     193.977273           55.500  ...        55.500       273.500      1859.000 2014-12-15 20:03:00 2015-01-14 20:47:00
@@ -357,7 +358,7 @@ when_last         2015-01-14 20:47:00  2015-12-01 06:58:00  2015-01-14 23:36:00
 array([False, False,  True, False, False,  True, False, False,  True,
        False, False,  True, False, False,  True])
 >>>
->>> result[sms]
+>>> result[sms]  # doctest: +NORMALIZE_WHITESPACE
               duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
 month   item                                                                                  ...
 2014-11 sms               94          94.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-10-16 22:18:00 2014-11-13 22:31:00
@@ -369,7 +370,7 @@ month   item                                                                    
 
 Cross-section:
 
->>> result.xs('sms', level='item')
+>>> result.xs('sms', level='item')  # doctest: +NORMALIZE_WHITESPACE
          duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
 month                                                                                    ...
 2014-11              94          94.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-10-16 22:18:00 2014-11-13 22:31:00
@@ -381,7 +382,7 @@ month                                                                           
 
 Slicer Object:
 
->>> result.loc[(slice(None), 'sms'), :]
+>>> result.loc[(slice(None), 'sms'), :]  # doctest: +NORMALIZE_WHITESPACE
               duration_count  duration_sum  duration_nunique  duration_mean  duration_median  ...  duration_q50  duration_q75  duration_max          when_first           when_last
 month   item                                                                                  ...
 2014-11 sms               94          94.0                 1            1.0              1.0  ...           1.0           1.0           1.0 2014-10-16 22:18:00 2014-11-13 22:31:00

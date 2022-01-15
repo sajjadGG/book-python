@@ -26,13 +26,13 @@ Timestamp('1961-04-12 06:07:00')
 >>> pd.Timestamp('1961-04-12 6:07')
 Timestamp('1961-04-12 06:07:00')
 
->>> pd.Timestamp('12/4/69')
+>>> pd.Timestamp('12/4/1969')
 Timestamp('1969-12-04 00:00:00')
 
->>> pd.Timestamp('12/4/69, 6:07')
+>>> pd.Timestamp('12/4/1969, 6:07')
 Timestamp('1969-12-04 06:07:00')
 
->>> pd.Timestamp('12/4/69, 6:07 pm')
+>>> pd.Timestamp('12/4/1969, 6:07 pm')
 Timestamp('1969-12-04 18:07:00')
 
 2016-12-31 23:59:60 is a valid date (UTC leap second):
@@ -71,7 +71,7 @@ DatetimeIndex(['1970-12-31', '1971-12-31', '1972-12-31'], dtype='datetime64[ns]'
 
 Days between
 ------------
->>> pd.date_range(start='1961-04-12', end='1969-07-21', freq='D')
+>>> pd.date_range(start='1969-07-16', end='1969-07-21', freq='D')
 DatetimeIndex(['1969-07-16', '1969-07-17', '1969-07-18',
                '1969-07-19', '1969-07-20', '1969-07-21'],
                dtype='datetime64[ns]', freq='D')

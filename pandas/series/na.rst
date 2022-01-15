@@ -375,9 +375,8 @@ dtype: float64
 >>>
 >>> s.dropna()
 0    1.0
-1    2.0
-2    2.0
-4    5.0
+3    4.0
+5    6.0
 dtype: float64
 
 

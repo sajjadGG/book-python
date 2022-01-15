@@ -55,10 +55,10 @@ Sum
 11.0
 
 >>> s.cumsum()
-a    1.0
-b    3.0
-c    6.0
-d    NaN
+a     1.0
+b     3.0
+c     6.0
+d     NaN
 e    11.0
 dtype: float64
 
@@ -72,10 +72,10 @@ Product
 30.0
 
 >>> s.cumprod()
-a    1.0
-b    2.0
-c    6.0
-d    NaN
+a     1.0
+b     2.0
+c     6.0
+d     NaN
 e    30.0
 dtype: float64
 
@@ -204,6 +204,7 @@ Standard Error of the Mean (SEM):
 Skewness (3rd moment):
 
 >>> s.skew()
+0.7528371991317256
 
 .. figure:: img/pandas-series-stats-skew.png
 
@@ -212,6 +213,7 @@ Skewness (3rd moment):
 Kurtosis (4th moment):
 
 >>> s.kurt()
+0.3428571428571434
 
 .. figure:: img/pandas-series-stats-kurt.png
 

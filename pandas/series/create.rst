@@ -103,7 +103,7 @@ Length
 >>> s = pd.Series([1, 2, 3, 4])
 >>>
 >>> len(s)
-9
+4
 
 
 Assignments

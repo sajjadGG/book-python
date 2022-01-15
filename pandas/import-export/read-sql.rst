@@ -29,8 +29,8 @@ Read SQL
 >>> import requests
 >>>
 >>>
->>> DATA = r'https://python.astrotech.io/_static/astro-timeline.sqlite3'
->>> DATABASE = r'/tmp/astro-timeline.sqlite3'
+>>> DATA = 'https://python.astrotech.io/_static/astro-timeline.sqlite3'
+>>> DATABASE = '/tmp/astro-timeline.sqlite3'
 >>>
 >>> SQL = """
 ...     SELECT *
@@ -42,6 +42,7 @@ Read SQL
 >>> with open(DATABASE, mode='wb') as db:
 ...     resp = requests.get(DATA)
 ...     db.write(resp.content)
+12145
 >>>
 >>>
 >>> # Read data from database

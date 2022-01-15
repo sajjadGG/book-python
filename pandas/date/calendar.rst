@@ -4,6 +4,7 @@ Date and Time Calendar
 
 Business Days
 -------------
+>>> import pandas as pd
 >>> from pandas.tseries.holiday import USFederalHolidayCalendar
 >>> from pandas.tseries.offsets import CustomBusinessDay
 >>>
@@ -74,6 +75,8 @@ DatetimeIndex(['2019-01-01', '2019-01-06', '2019-04-21', '2019-04-22',
 
 Custom mask
 -----------
+>>> import pandas as pd
+>>>
 >>> jan2000 = pd.bdate_range(start='2000-01-01',
 ...                          end='2000-01-31',
 ...                          freq='C',
@@ -86,7 +89,7 @@ DatetimeIndex(['2000-01-03', '2000-01-04', '2000-01-05', '2000-01-07',
                '2000-01-14', '2000-01-17', '2000-01-18', '2000-01-19',
                '2000-01-20', '2000-01-21', '2000-01-24', '2000-01-25',
                '2000-01-26', '2000-01-27', '2000-01-28', '2000-01-31'],
-               dtype='datetime64[ns]', freq='C')
+              dtype='datetime64[ns]', freq='C')
 
 
 Use Case - 0x01
@@ -149,10 +152,10 @@ Timestamp('2000-01-10 00:00:00')
 Timestamp('2000-01-05 15:00:00')
 >>>
 >>> now + 24*BUSINESS_HOURS
-Timestamp('2000-01-06 08:00:00')
+Timestamp('2000-01-07 08:00:00')
 >>>
 >>> now + 25*BUSINESS_HOURS
-Timestamp('2000-01-11 09:00:00')
+Timestamp('2000-01-07 09:00:00')
 >>>
 >>> now + 26*BUSINESS_HOURS
-Timestamp('2000-01-11 10:00:00')
+Timestamp('2000-01-07 10:00:00')

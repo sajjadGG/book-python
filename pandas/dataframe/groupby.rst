@@ -343,7 +343,7 @@ Name: duration, dtype: float64
 
 Produces Pandas DataFrame:
 
->>> df.groupby('month')[['duration']].sum()
+>>> df.groupby('month')[['duration']].sum()  # doctest: +NORMALIZE_WHITESPACE
           duration
 month
 2014-11  26639.441
@@ -366,7 +366,7 @@ Use Case - 0x02
 ---------------
 Get the first entry for each month:
 
->>> df.groupby('month').first()
+>>> df.groupby('month').first()  # doctest: +NORMALIZE_WHITESPACE
                        date  duration  item   network network_type
 month
 2014-11 2014-10-15 06:58:00    34.429  data      data         data

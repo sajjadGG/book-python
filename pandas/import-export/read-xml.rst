@@ -8,11 +8,8 @@ Rationale
 * `io.StringIO` Converts ``str`` to File-like object
 * pd.read_xml()
 
-
-XML and XSLT
-------------
->>> from io import StringIO
->>> from lxml.etree import XML, XSLT, parse
+SetUp
+-----
 >>> import pandas as pd
 >>>
 >>> DATA = """<?xml version="1.0"?>
@@ -48,6 +45,23 @@ XML and XSLT
 ...    </book>
 ... </catalog>
 ... """
+>>>
+
+
+Read XML
+--------
+>>> pd.read_xml(DATA)
+      id                author                  title     genre  price publish_date                                        description
+0  bk101  Gambardella, Matthew  XML Developer's Guide  Computer  44.95   2000-10-01  An in-depth look at creating applications\n   ...
+1  bk102            Ralls, Kim          Midnight Rain   Fantasy   5.95   2000-12-16  A former architect battles corporate zombies,\...
+2  bk103           Corets, Eva        Maeve Ascendant   Fantasy   5.95   2000-11-17  After the collapse of a nanotechnology\n      ...
+
+
+XML and XSLT
+------------
+>>> from io import StringIO
+>>> from lxml.etree import XML, XSLT, parse
+>>>
 >>>
 >>> TEMPLATE = """
 ...     <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
