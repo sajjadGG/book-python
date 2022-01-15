@@ -27,8 +27,9 @@ Rationale
           possible to easily determine the "successor" or next element after
           a particular label in an index. [#pdDocAdvanced]_
 
-* Int64Index, UInt64Index and Float64Index have been deprecated in favor of
-  the base Index class and will be removed in Pandas 2.0 [#pd14releasenotes]_
+.. warning:: Int64Index, UInt64Index and Float64Index have been deprecated in
+             favor of the base Index class and will be removed in Pandas 2.0
+             [#pd14releasenotes]_
 
 Replace:
 
@@ -39,6 +40,7 @@ With:
 >>> pd.Index([1, 2, 3], dtype='int64')
 
 More Information: https://pandas.pydata.org/pandas-docs/dev/user_guide/advanced.html#index-types
+
 
 Range Index
 -----------
@@ -85,7 +87,7 @@ Integer Index
 Int64Index([99, 88, 77, 66], dtype='int64')
 
 
-String Index
+Object Index
 ------------
 >>> import pandas as pd
 >>> import numpy as np

@@ -352,7 +352,7 @@ duration_max                   1859.0               34.429                  1.0
 when_first        2014-12-15 20:03:00  2014-12-13 06:58:00  2014-12-15 19:56:00
 when_last         2015-01-14 20:47:00  2015-12-01 06:58:00  2015-01-14 23:36:00
 
->>> sms = result.index.get_level_values("item") == "sms"
+>>> sms = result.index.get_level_values('item') == 'sms'
 >>> sms
 array([False, False,  True, False, False,  True, False, False,  True,
        False, False,  True, False, False,  True])
