@@ -33,10 +33,10 @@ dtype: float64
 Endl
 ----
 >>> s = pd.Series(DATA) \
-...         .fillna(0) \
-...         .drop([2,4,6]) \
-...         .drop_duplicates() \
-...         .reset_index(drop=True)
+...       .fillna(0) \
+...       .drop([2,4,6]) \
+...       .drop_duplicates() \
+...       .reset_index(drop=True)
 >>>
 >>> s
 0    1.0
@@ -49,10 +49,10 @@ dtype: float64
 Chain
 -----
 >>> s = (pd.Series(DATA)
-...         .fillna(0)
-...         .drop([2,4,6])
-...         .drop_duplicates()
-...         .reset_index(drop=True))
+...        .fillna(0)
+...        .drop([2,4,6])
+...        .drop_duplicates()
+...        .reset_index(drop=True))
 >>>
 >>> s
 0    1.0
