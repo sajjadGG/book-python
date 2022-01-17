@@ -296,9 +296,8 @@ Datetime Index
 Freq: D, dtype: float64
 >>>
 >>> s.index  # doctest: +NORMALIZE_WHITESPACE
-DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 01:00:00',
-               '1999-12-30 02:00:00', '1999-12-30 03:00:00'],
-              dtype='datetime64[ns]', freq='H')
+DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01', '2000-01-02'],
+              dtype='datetime64[ns]', freq='D')
 
 Every year:
 

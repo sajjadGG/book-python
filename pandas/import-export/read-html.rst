@@ -13,16 +13,26 @@ SetUp
 
 Read HTML
 ---------
->>> DATA = 'https://python.astrotech.io/numerical-analysis/pandas/df-create.html'
+>>> DATA = 'https://python.astrotech.io/_static/apollo11.html'
 >>>
->>> pd.read_html(DATA)
-Traceback (most recent call last):
-urllib.error.HTTPError: HTTP Error 403: Forbidden
+>>> tables = pd.read_html(DATA)
+>>> df = tables[0]
+>>>
+>>> df.head(n=5)
+                                                   0                 1          2            3
+0                                              Event  GET  (hhh:mm:ss)  GMT  Time    GMT  Date
+1                       Terminal countdown  started.        -028:00:00   21:00:00  14 Jul 1969
+2              Scheduled 11-hour hold  at T-9 hours.        -009:00:00   16:00:00  15 Jul 1969
+3                   Countdown resumed at  T-9 hours.        -009:00:00   03:00:00  16 Jul 1969
+4  Scheduled 1-hour  32-minute hold at T-3 hours ...        -003:30:00   08:30:00  16 Jul 1969
 
+
+User Agent
+----------
 >>> import requests
 >>>
 >>>
->>> DATA = 'https://python.astrotech.io/numerical-analysis/pandas/df-create.html'
+>>> DATA = 'https://python.astrotech.io/_static/apollo11.html'
 >>> USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ' \
 ...              '(KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'
 >>>
@@ -30,14 +40,13 @@ urllib.error.HTTPError: HTTP Error 403: Forbidden
 >>> tables = pd.read_html(resp.content)
 >>> df = tables[0]
 >>>
->>> df
-     Crew Role        Astronaut
-0   Prime  CDR   Neil Armstrong
-1   Prime  LMP      Buzz Aldrin
-2   Prime  CMP  Michael Collins
-3  Backup  CDR     James Lovell
-4  Backup  LMP   William Anders
-5  Backup  CMP       Fred Haise
+>>> df.head(n=5)
+                                                   0                 1          2            3
+0                                              Event  GET  (hhh:mm:ss)  GMT  Time    GMT  Date
+1                       Terminal countdown  started.        -028:00:00   21:00:00  14 Jul 1969
+2              Scheduled 11-hour hold  at T-9 hours.        -009:00:00   16:00:00  15 Jul 1969
+3                   Countdown resumed at  T-9 hours.        -009:00:00   03:00:00  16 Jul 1969
+4  Scheduled 1-hour  32-minute hold at T-3 hours ...        -003:30:00   08:30:00  16 Jul 1969
 
 
 Assignments
