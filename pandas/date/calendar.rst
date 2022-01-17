@@ -9,11 +9,12 @@ Business Days
 >>> from pandas.tseries.offsets import CustomBusinessDay
 >>>
 >>>
->>> business_days = CustomBusinessDay(calendar=USFederalHolidayCalendar())
->>>
->>> pd.date_range(start='2019-12-24',end='2019-12-31', freq=business_days)
-DatetimeIndex(['2019-12-24', '2019-12-26', '2019-12-27',
-               '2019-12-30', '2019-12-31'],
+>>> pd.date_range(
+...     start='2000-12-20',
+...     end='2000-12-31',
+...     freq= CustomBusinessDay(calendar=USFederalHolidayCalendar()))  # doctest: +NORMALIZE_WHITESPACE
+DatetimeIndex(['2000-12-20', '2000-12-21', '2000-12-22', '2000-12-26',
+               '2000-12-27', '2000-12-28', '2000-12-29'],
                dtype='datetime64[ns]', freq='C')
 
 
@@ -65,12 +66,12 @@ Custom Calendar
 ...         Holiday('Second Day of Christmastide', month=12, day=26),
 ...     ]
 
->>> pl_holidays_2019 = PLHolidayCalendar().holidays(start='2019-01-01', end='2019-12-31')
-DatetimeIndex(['2019-01-01', '2019-01-06', '2019-04-21', '2019-04-22',
-               '2019-05-01', '2019-05-03', '2019-06-09', '2019-06-20',
-               '2019-08-15', '2019-11-01', '2019-11-11', '2019-12-25',
-               '2019-12-26'],
-              dtype='datetime64[ns]', freq=None)
+>>> pl_holidays_2000 = PLHolidayCalendar().holidays(start='2000-01-01', end='2000-12-31')
+>>> pl_holidays_2000  # doctest: +NORMALIZE_WHITESPACE
+DatetimeIndex(['2000-01-01', '2000-01-06', '2000-04-23', '2000-04-24',
+               '2000-05-01', '2000-05-03', '2000-06-11', '2000-06-22',
+               '2000-08-15', '2000-11-01', '2000-11-11', '2000-12-25',
+               '2000-12-26'], dtype='datetime64[ns]', freq=None)
 
 
 Custom mask

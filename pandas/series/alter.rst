@@ -62,7 +62,7 @@ dtype: float64
 2      4  5.0
 
 >>> s.reset_index(drop=True)
-0    3.0
+0    2.0
 1    NaN
 2    5.0
 dtype: float64

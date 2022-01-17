@@ -197,10 +197,10 @@ dtype: object
 dtype: object
 >>>
 >>> s.map('I am {}'.format, na_action='ignore')
-0        I am a Watney
-1    I am a Twardowski
+0        I am Watney
+1    I am Twardowski
 2                 <NA>
-3         I am a Lewis
+3         I am Lewis
 dtype: object
 
 

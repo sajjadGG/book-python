@@ -40,10 +40,12 @@ Rationale
 Replace:
 
 >>> pd.Int64Index([1, 2, 3])
+Int64Index([1, 2, 3], dtype='int64')
 
 With:
 
 >>> pd.Index([1, 2, 3], dtype='int64')
+Int64Index([1, 2, 3], dtype='int64')
 
 More Information: https://pandas.pydata.org/pandas-docs/dev/user_guide/advanced.html#index-types
 
@@ -293,7 +295,7 @@ Datetime Index
 2000-01-02    4.4
 Freq: D, dtype: float64
 >>>
->>> s.index
+>>> s.index  # doctest: +NORMALIZE_WHITESPACE
 DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 01:00:00',
                '1999-12-30 02:00:00', '1999-12-30 03:00:00'],
               dtype='datetime64[ns]', freq='H')
@@ -311,8 +313,9 @@ Every year:
 2002-12-31    4.4
 Freq: A-DEC, dtype: float64
 >>>
->>> s.index
-DatetimeIndex(['1999-12-31', '2000-12-31', '2001-12-31', '2002-12-31'], dtype='datetime64[ns]', freq='A-DEC')
+>>> s.index  # doctest: +NORMALIZE_WHITESPACE
+DatetimeIndex(['1999-12-31', '2000-12-31', '2001-12-31', '2002-12-31'],
+              dtype='datetime64[ns]', freq='A-DEC')
 
 Every quarter:
 
@@ -327,8 +330,9 @@ Every quarter:
 2000-09-30    4.4
 Freq: Q-DEC, dtype: float64
 >>>
->>> s.index
-DatetimeIndex(['1999-12-31', '2000-03-31', '2000-06-30', '2000-09-30'], dtype='datetime64[ns]', freq='Q-DEC')
+>>> s.index  # doctest: +NORMALIZE_WHITESPACE
+DatetimeIndex(['1999-12-31', '2000-03-31', '2000-06-30', '2000-09-30'],
+              dtype='datetime64[ns]', freq='Q-DEC')
 
 Every month:
 
@@ -343,8 +347,9 @@ Every month:
 2000-03-31    4.4
 Freq: M, dtype: float64
 >>>
->>> s.index
-DatetimeIndex(['1999-12-31', '2000-01-31', '2000-02-29', '2000-03-31'], dtype='datetime64[ns]', freq='M')
+>>> s.index  # doctest: +NORMALIZE_WHITESPACE
+DatetimeIndex(['1999-12-31', '2000-01-31', '2000-02-29', '2000-03-31'],
+              dtype='datetime64[ns]', freq='M')
 
 Every day:
 
@@ -359,8 +364,9 @@ Every day:
 2000-01-02    4.4
 Freq: D, dtype: float64
 >>>
->>> s.index
-DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01', '2000-01-02'], dtype='datetime64[ns]', freq='D')
+>>> s.index  # doctest: +NORMALIZE_WHITESPACE
+DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01', '2000-01-02'],
+              dtype='datetime64[ns]', freq='D')
 
 Every two days:
 
@@ -375,8 +381,9 @@ Every two days:
 2000-01-05    4.4
 Freq: 2D, dtype: float64
 >>>
->>> s.index
-DatetimeIndex(['1999-12-30', '2000-01-01', '2000-01-03', '2000-01-05'], dtype='datetime64[ns]', freq='2D')
+>>> s.index  # doctest: +NORMALIZE_WHITESPACE
+DatetimeIndex(['1999-12-30', '2000-01-01', '2000-01-03', '2000-01-05'],
+              dtype='datetime64[ns]', freq='2D')
 
 Every hour:
 
@@ -391,7 +398,7 @@ Every hour:
 1999-12-30 03:00:00    4.4
 Freq: H, dtype: float64
 >>>
->>> s.index
+>>> s.index  # doctest: +NORMALIZE_WHITESPACE
 DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 01:00:00',
                '1999-12-30 02:00:00', '1999-12-30 03:00:00'],
               dtype='datetime64[ns]', freq='H')
@@ -445,8 +452,9 @@ Every business day.
 2000-01-04    4.4
 Freq: B, dtype: float64
 >>>
->>> s.index
-DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-03', '2000-01-04'], dtype='datetime64[ns]', freq='B')
+>>> s.index  # doctest: +NORMALIZE_WHITESPACE
+DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-03', '2000-01-04'],
+              dtype='datetime64[ns]', freq='B')
 
 
 Further Reading

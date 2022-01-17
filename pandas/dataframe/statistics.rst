@@ -40,7 +40,7 @@ Evening     7
 Midnight    7
 dtype: int64
 
->>> df.value_counts()
+>>> df.value_counts()  # doctest: +NORMALIZE_WHITESPACE
 Morning    Noon       Evening   Midnight
 -2.552990   0.653619  0.864436  -0.742165    1
 -0.103219   0.410599  0.144044   1.454274    1

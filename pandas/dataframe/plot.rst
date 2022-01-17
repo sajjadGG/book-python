@@ -217,6 +217,7 @@ Parameters
 SetUp
 -----
 >>> import pandas as pd
+>>> import numpy as np
 >>> import matplotlib.pyplot as plt
 >>>
 >>>
@@ -310,6 +311,21 @@ Histogram
 .. figure:: img/pandas-dataframe-plot-hist-layout.png
 
     Histogram
+
+>>> plot = df.hist()
+>>> plt.show()
+
+.. figure:: img/pandas-dataframe-plot-hist.png
+
+    Visualization using hist
+
+>>> plot = df['sepal_length'].hist(bins=3, rwidth=0.8, legend=None, grid=False)
+>>> plot.xaxis.set_ticks(ticks=[4.9, 6.1, 7.3], labels=['small', 'medium', 'large'])
+>>> plt.show()
+
+.. figure:: img/pandas-dataframe-plot-hist-categories.png
+
+    Visualization using hist
 
 
 Boxplot
@@ -437,22 +453,12 @@ Scatter Plot
 
 Hexbin Plot
 -----------
->>> plot = df.plot(kind='hexbin')
+>>> df.plot(kind='hexbin', x='petal_length', y='petal_width')
 >>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-hexbin.png
 
     Hexbin Plot
-
-
-Hist
-----
->>> plot = df.hist()
->>> plt.show()
-
-.. figure:: img/pandas-dataframe-plot-hist.png
-
-    Visualization using hist
 
 
 Scatter matrix
@@ -465,9 +471,19 @@ Scatter matrix
 >>> plot = scatter_matrix(df)
 >>> plt.show()
 
-.. figure:: img/pandas-dataframe-plot-scatter-matrix.png
+.. figure:: img/pandas-dataframe-plot-scattermatrix.png
 
-    Visualization using density
+    Scatter Matrix
+
+>>> data = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
+>>> colors = df['species'].replace({'setosa': 0, 'virginica': 1, 'versicolor': 2})  # colors must be numerical
+>>>
+>>> plot = scatter_matrix(data, c=colors)
+>>> plt.show()
+
+.. figure:: img/pandas-dataframe-plot-scattermatrix-colors.png
+
+    Scatter Matrix with colors
 
 
 Actinograms

@@ -47,17 +47,10 @@ Example
 >>> data = StringIO(resp.text)
 >>> df = pd.read_csv(data)
 >>>
->>> df
-     Order           Astronaut         Date       Mission
-0      1.0        Yuri Gagarin   1961-04-12        Vostok
-1      2.0       Gherman Titov   1961-08-06      Vostok 2
-2      3.0   Andrian Nikolayev   1962-08-11      Vostok 3
-3      4.0      Pavel Popovich   1962-08-12      Vostok 4
-4      5.0     Valeri Bykovsky   1963-06-14      Vostok 5
-..     ...                 ...          ...           ...
-530  531.0      Thomas Pesquet   2016-11-17   Soyuz MS-03
-531  532.0        Jack Fischer   2017-04-20   Soyuz MS-04
-532  533.0      Mark Vande Hei   2017-09-12   Soyuz MS-06
-533  534.0     Norishige Kanai   2017-12-17   Soyuz MS-07
-534    NaN        Scott Tingle   2017-12-17   Soyuz MS-07
-[535 rows x 4 columns]
+>>> df.head(n=5)
+   Order       Astronaut     Type              Date      Spacecraft
+0    1.0    Yuri Gagarin  Orbital     12 April 1961          Vostok
+1    2.0    Alan Shepard  Orbital        5 May 1961       Freedom 7
+2    3.0  Virgil Grissom  Orbital      21 July 1961  Liberty Bell 7
+3    4.0   Gherman Titov  Orbital     6 August 1961        Vostok 2
+4    5.0      John Glenn  Orbital  20 February 1962    Friendship 7

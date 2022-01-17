@@ -38,11 +38,11 @@ Count
 >>> s.nunique()
 4
 
->>> s.values_count()
-5.0    1
-3.0    1
-2.0    1
+>>> s.value_counts()
 1.0    1
+2.0    1
+3.0    1
+5.0    1
 dtype: int64
 
 

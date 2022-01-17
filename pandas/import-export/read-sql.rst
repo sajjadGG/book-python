@@ -29,12 +29,12 @@ Read SQL
 >>> import requests
 >>>
 >>>
->>> DATA = 'https://python.astrotech.io/_static/astro-timeline.sqlite3'
->>> DATABASE = '/tmp/astro-timeline.sqlite3'
+>>> DATA = 'https://python.astrotech.io/_static/apollo11.db'
+>>> DATABASE = '/tmp/apollo11.db'
 >>>
 >>> SQL = """
 ...     SELECT *
-...     FROM logs
+...     FROM apollo11
 ... """
 >>>
 >>>
@@ -42,45 +42,35 @@ Read SQL
 >>> with open(DATABASE, mode='wb') as db:
 ...     resp = requests.get(DATA)
 ...     db.write(resp.content)
-12145
+49152
 >>>
 >>>
 >>> # Read data from database
 >>> with sqlite3.connect(DATABASE) as db:
-...     astro_timeline = pd.read_sql(SQL, db, parse_dates=['datetime'])
->>>
->>>
->>> astro_timeline
-    id  ...                                            message
-0    1  ...                         Terminal countdown started
-1    2  ...                          S-IC engine ignition (#5)
-2    3  ...          Maximum dynamic pressure (735.17 lb/ft^2)
-3    4  ...                                      S-II ignition
-4    5  ...                     Launch escape tower jettisoned
-5    6  ...                          S-II center engine cutoff
-6    7  ...                               Translunar injection
-7    8  ...                           CSM docked with LM/S-IVB
-8    9  ...                     Lunar orbit insertion ignition
-9   10  ...               Lunar orbit circularization ignition
-10  11  ...                                    CSM/LM undocked
-11  12  ...                 LM powered descent engine ignition
-12  13  ...                                      LM 1202 alarm
-13  14  ...                                      LM 1201 alarm
-14  15  ...                                   LM lunar landing
-15  16  ...                           EVA started (hatch open)
-16  17  ...                 1st step taken lunar surface (CDR)
-17  18  ...  That's one small step for [a] man... one giant...
-18  19  ...        Contingency sample collection started (CDR)
-19  20  ...                               LMP on lunar surface
-20  21  ...                           EVA ended (hatch closed)
-21  22  ...                 LM lunar liftoff ignition (LM APS)
-22  23  ...                                      CSM/LM docked
-23  24  ...                Transearth injection ignition (SPS)
-24  25  ...                                   CM/SM separation
-25  26  ...                                              Entry
-26  27  ...                     Splashdown (went to apex-down)
-27  28  ...                                        Crew egress
-[28 rows x 4 columns]
+...     df = pd.read_sql(SQL, db, parse_dates=['datetime', 'date'], index_col='datetime')
+
+>>> df.info(memory_usage='deep')
+<class 'pandas.core.frame.DataFrame'>
+DatetimeIndex: 250 entries, 1969-07-14 21:00:00 to 1969-08-27 00:00:00
+Data columns (total 5 columns):
+ #   Column    Non-Null Count  Dtype
+---  ------    --------------  -----
+ 0   date      250 non-null    datetime64[ns]
+ 1   time      250 non-null    object
+ 2   met       250 non-null    int64
+ 3   category  250 non-null    object
+ 4   event     250 non-null    object
+dtypes: datetime64[ns](1), int64(1), object(3)
+memory usage: 61.9 KB
+
+>>> df['event'].head(n=5)  # doctest: +NORMALIZE_WHITESPACE
+datetime
+1969-07-14 21:00:00                          Terminal countdown started.
+1969-07-15 16:00:00                 Scheduled 11-hour hold at T-9 hours.
+1969-07-16 03:00:00                      Countdown resumed at T-9 hours.
+1969-07-16 08:30:00    Scheduled 1-hour 32-minute hold at T-3 hours 3...
+1969-07-16 10:02:00           Countdown resumed at T-3 hours 30 minutes.
+Name: event, dtype: object
 
 
 Assignments

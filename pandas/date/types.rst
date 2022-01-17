@@ -72,9 +72,9 @@ DatetimeIndex(['1970-12-31', '1971-12-31', '1972-12-31'], dtype='datetime64[ns]'
 Days between
 ------------
 >>> pd.date_range(start='1969-07-16', end='1969-07-21', freq='D')
-DatetimeIndex(['1969-07-16', '1969-07-17', '1969-07-18',
-               '1969-07-19', '1969-07-20', '1969-07-21'],
-               dtype='datetime64[ns]', freq='D')
+DatetimeIndex(['1969-07-16', '1969-07-17', '1969-07-18', '1969-07-19',
+               '1969-07-20', '1969-07-21'],
+              dtype='datetime64[ns]', freq='D')
 
 
 Attributes

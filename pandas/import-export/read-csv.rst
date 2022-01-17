@@ -65,6 +65,8 @@ Rename Columns
 ...     1: 'versicolor',
 ...     2: 'virginica',
 ... }, inplace=True)
+>>>
+>>> df
    sepal_length  sepal_width  petal_length  petal_width  species
 0           5.4          3.9           1.3          0.4        setosa
 1           5.9          3.0           5.1          1.8        virginica
