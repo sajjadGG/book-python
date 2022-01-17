@@ -50,7 +50,7 @@ Reset Index
 
 >>> s.drop([0,1], inplace=True)
 >>> s
-2    3.0
+2    2.0
 3    NaN
 4    5.0
 dtype: float64

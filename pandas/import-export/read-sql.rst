@@ -49,7 +49,7 @@ Read SQL
 >>> with sqlite3.connect(DATABASE) as db:
 ...     df = pd.read_sql(SQL, db, parse_dates=['datetime', 'date'], index_col='datetime')
 
->>> df.info(memory_usage='deep')
+>>> df.info(memory_usage='deep')  # doctest: +NORMALIZE_WHITESPACE
 <class 'pandas.core.frame.DataFrame'>
 DatetimeIndex: 250 entries, 1969-07-14 21:00:00 to 1969-08-27 00:00:00
 Data columns (total 5 columns):

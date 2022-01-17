@@ -66,7 +66,7 @@ Rename Columns
 ...     2: 'virginica',
 ... }, inplace=True)
 >>>
->>> df
+>>> df.head(n=3)
    sepal_length  sepal_width  petal_length  petal_width  species
 0           5.4          3.9           1.3          0.4        setosa
 1           5.9          3.0           5.1          1.8        virginica
@@ -98,7 +98,7 @@ Use Case - 0x01
 
 >>> df = pd.read_csv(DATA, names=COLUMNS, skiprows=1)
 >>> df['species'].replace(label_encoder, inplace=True)
->>> df.head(5)
+>>> df.head(n=5)
    sepal_length  sepal_width  petal_length  petal_width     species
 0           5.4          3.9           1.3          0.4      setosa
 1           5.9          3.0           5.1          1.8   virginica

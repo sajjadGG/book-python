@@ -319,8 +319,13 @@ Histogram
 
     Visualization using hist
 
->>> plot = df['sepal_length'].hist(bins=3, rwidth=0.8, legend=None, grid=False)
->>> plot.xaxis.set_ticks(ticks=[4.9, 6.1, 7.3], labels=['small', 'medium', 'large'])
+>>> plot = df['sepal_length'].hist(bins=3,
+...                                rwidth=0.8,
+...                                legend=None,
+...                                grid=False)
+>>>
+>>> _ = plot.xaxis.set_ticks(ticks=[4.9, 6.1, 7.3],
+...                          labels=['small', 'medium', 'large'])
 >>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-hist-categories.png
@@ -396,20 +401,20 @@ Pie Plot
     List of Matplotlib color names [#matplotlibColors]_
 
 >>> data = pd.cut(df['sepal_length'],
-...          bins=[3, 5, 7, np.inf],
-...          labels=['small', 'medium', 'large'],
-...          include_lowest=True).value_counts()
+...               bins=[3, 5, 7, np.inf],
+...               labels=['small', 'medium', 'large'],
+...               include_lowest=True).value_counts()
 >>>
->>> data.plot(kind='pie',
-...           autopct='%1.0f%%',
-...           colors=['plum', 'violet', 'magenta'],
-...           explode=[0.1, 0, 0],
-...           shadow=True,
-...           startangle=-215,
-...           xlabel=None,
-...           ylabel=None,
-...           title='Sepal Length\nsmall: 0.0 to 3.0\nmedium: 3.0 to 5.0\nlarge: 7.0 to inf',
-...           figsize=(10,10))
+>>> plot = data.plot(kind='pie',
+...                  autopct='%1.0f%%',
+...                  colors=['plum', 'violet', 'magenta'],
+...                  explode=[0.1, 0, 0],
+...                  shadow=True,
+...                  startangle=-215,
+...                  xlabel=None,
+...                  ylabel=None,
+...                  title='Sepal Length\nsmall: 0.0 to 3.0\nmedium: 3.0 to 5.0\nlarge: 7.0 to inf',
+...                  figsize=(10,10))
 >>>
 >>> plt.show()
 
@@ -434,10 +439,9 @@ Scatter Plot
 
     Scatter plot: Petal Length vs Petal Width
 
->>> data = df.replace({
-...     'setosa': 0,
-...     'virginica': 1,
-...     'versicolor': 2})
+>>> data = df.replace({'setosa': 0,
+...                    'virginica': 1,
+...                    'versicolor': 2})
 >>>
 >>> plot = data.plot(kind='scatter',
 ...                  x='sepal_length',
@@ -453,7 +457,7 @@ Scatter Plot
 
 Hexbin Plot
 -----------
->>> df.plot(kind='hexbin', x='petal_length', y='petal_width')
+>>> plot = df.plot(kind='hexbin', x='petal_length', y='petal_width')
 >>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-hexbin.png

@@ -170,10 +170,10 @@ Reset Index
 >>> np.random.seed(0)
 >>> selected = df.sample(frac=1/2)
 >>> selected
-   sepal_length  sepal_width  petal_length  petal_width    species
-3           7.3          2.9           6.3          1.8  virginica
-5           5.4          3.9           1.3          0.4     setosa
-1           5.9          3.0           5.1          1.8  virginica
+   sepal_length  sepal_width  petal_length  petal_width     species
+5           5.4          3.9           1.3          0.4      setosa
+2           6.0          3.4           4.5          1.6  versicolor
+1           5.9          3.0           5.1          1.8   virginica
 >>>
 >>> selected.reset_index()
    index  sepal_length  sepal_width  petal_length  petal_width     species

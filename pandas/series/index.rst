@@ -416,7 +416,7 @@ Every minute:
 1999-12-30 00:03:00    4.4
 Freq: T, dtype: float64
 >>>
->>> s.index
+>>> s.index  # doctest: +NORMALIZE_WHITESPACE
 DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 00:01:00',
                '1999-12-30 00:02:00', '1999-12-30 00:03:00'],
               dtype='datetime64[ns]', freq='T')
@@ -434,7 +434,7 @@ Every second:
 1999-12-30 00:00:03    4.4
 Freq: S, dtype: float64
 >>>
->>> s.index
+>>> s.index  # doctest: +NORMALIZE_WHITESPACE
 DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 00:00:01',
                '1999-12-30 00:00:02', '1999-12-30 00:00:03'],
               dtype='datetime64[ns]', freq='S')
