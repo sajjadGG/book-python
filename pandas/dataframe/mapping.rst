@@ -93,6 +93,7 @@ Freq: D, Name: Morning, dtype: int64
 2000-01-03    1.49
 2000-01-04   -2.55
 2000-01-05    2.27
+Freq: D, Name: Morning, dtype: float64
 
 
 Applymap

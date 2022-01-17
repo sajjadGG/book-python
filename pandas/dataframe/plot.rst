@@ -229,9 +229,6 @@ Line Plot
 ---------
 * default
 
->>> plot = df.plot()
->>> plt.show()
-
 >>> plot = df.plot(kind='line')
 >>> plt.show()
 
@@ -239,10 +236,28 @@ Line Plot
 
     Line Plot
 
+>>> plot = df.plot(kind='line', subplots=True)
+>>> plt.show()
+
+.. figure:: img/pandas-dataframe-plot-line-subplots.png
+
+    Line Plot with Subplots
+
+>>> plot = df.plot(kind='line',
+...                subplots=True,
+...                layout=(2,2),
+...                sharex=True,
+...                sharey=True)
+>>> plt.show()
+
+.. figure:: img/pandas-dataframe-plot-line-layout.png
+
+    Line Plot with Subplots and Layout
+
 
 Vertical Bar Plot
 -----------------
->>> plot = df.plot(kind='bar')
+>>> plot = df.plot(kind='bar', subplots=True, layout=(2,2))
 >>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-bar.png
@@ -252,7 +267,17 @@ Vertical Bar Plot
 
 Horizontal Bar Plot
 -------------------
->>> plot = df.plot(kind='barh')
+>>> plot = df.plot(kind='barh',
+...                title='Iris',
+...                ylabel='centimeters',
+...                xlabel='iris',
+...                subplots=True,
+...                layout=(2,2),
+...                sharex=True,
+...                sharey=True,
+...                legend='upper right',
+...                grid=True,
+...                figsize=(10,10))
 >>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-barh.png
@@ -262,10 +287,27 @@ Horizontal Bar Plot
 
 Histogram
 ---------
->>> plot = df.plot(kind='hist')
+>>> plot = df.plot(kind='hist',
+...                rwidth=0.8,
+...                xlabel='centimeters',
+...                title='Iris Dimensions Frequency')
 >>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-hist.png
+
+    Histogram
+
+>>> plot = df.plot(kind='hist',
+...                rwidth=0.8,
+...                xlabel='centimeters',
+...                title='Iris Dimensions Frequency',
+...                subplots=True,
+...                layout=(2,2),
+...                sharex=True,
+...                sharey=True)
+>>> plt.show()
+
+.. figure:: img/pandas-dataframe-plot-hist-layout.png
 
     Histogram
 
@@ -287,17 +329,16 @@ Boxplot
 >>>
 >>> plt.show()
 
-.. figure:: img/pandas-dataframe-plot-box2.png
+.. figure:: img/pandas-dataframe-plot-box-layout.png
 
-    Visualization using density
+    Boxplot with layout
 
 
 Kernel Density Estimation Plot
 ------------------------------
->>> plot = df.plot(kind='density')
->>> plt.show()
+* Also known as ``kind='kde'`` - Kernel Density Estimation
 
->>> plot = df.plot(kind='kde')
+>>> plot = df.plot(kind='density')
 >>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-density.png
@@ -308,12 +349,12 @@ Kernel Density Estimation Plot
 ...                subplots=True,
 ...                layout=(2,2),
 ...                sharex=False)
->>>
+>>> plt.subplots_adjust(hspace=0.5, wspace=0.5)  # margins between charts
 >>> plt.show()
 
-.. figure:: img/pandas-dataframe-plot-density2.png
+.. figure:: img/pandas-dataframe-plot-density-margin.png
 
-    Visualization using density
+    Density plot with margins
 
 
 Area Plot
@@ -332,7 +373,28 @@ Area Plot
 
 Pie Plot
 --------
->>> plot = df.plot(kind='pie')
+* List of Matplotlib color names [#matplotlibColors]_
+
+.. figure:: img/matplotlib-colors.png
+
+    List of Matplotlib color names [#matplotlibColors]_
+
+>>> data = pd.cut(df['sepal_length'],
+...          bins=[3, 5, 7, np.inf],
+...          labels=['small', 'medium', 'large'],
+...          include_lowest=True).value_counts()
+>>>
+>>> data.plot(kind='pie',
+...           autopct='%1.0f%%',
+...           colors=['plum', 'violet', 'magenta'],
+...           explode=[0.1, 0, 0],
+...           shadow=True,
+...           startangle=-215,
+...           xlabel=None,
+...           ylabel=None,
+...           title='Sepal Length\nsmall: 0.0 to 3.0\nmedium: 3.0 to 5.0\nlarge: 7.0 to inf',
+...           figsize=(10,10))
+>>>
 >>> plt.show()
 
 .. figure:: img/pandas-dataframe-plot-pie.png
@@ -342,12 +404,35 @@ Pie Plot
 
 Scatter Plot
 ------------
->>> plot = df.plot(kind='scatter')
+>>> plot = df.plot(kind='scatter', x='sepal_length', y='sepal_width')
 >>> plt.show()
 
-.. figure:: img/pandas-dataframe-plot-scatter.png
+.. figure:: img/pandas-dataframe-plot-scatter-sepal.png
 
-    Scatter Plot
+    Scatter plot: Sepal Length vs Sepal Width
+
+>>> plot = df.plot(kind='scatter', x='petal_length', y='petal_width')
+>>> plt.show()
+
+.. figure:: img/pandas-dataframe-plot-scatter-petal.png
+
+    Scatter plot: Petal Length vs Petal Width
+
+>>> data = df.replace({
+...     'setosa': 0,
+...     'virginica': 1,
+...     'versicolor': 2})
+>>>
+>>> plot = data.plot(kind='scatter',
+...                  x='sepal_length',
+...                  y='sepal_width',
+...                  colormap='viridis',
+...                  c='species')
+>>> plt.show()
+
+.. figure:: img/pandas-dataframe-plot-scatter-viridis.png
+
+    Scatter plot using viridis colormap
 
 
 Hexbin Plot
@@ -396,6 +481,10 @@ Further Reading
 * https://www.data-to-viz.com/#explore
 * https://www.data-to-viz.com/img/poster/poster_big.png
 
+
+References
+----------
+.. [#matplotlibColors] https://matplotlib.org/stable/gallery/color/named_colors.html
 
 Assignments
 -----------
