@@ -21,9 +21,9 @@ True
 ... except dragon.IsDead:
 ...     drop = dragon.get_drop()
 ...     print(f'{dragon:name} is dead at position {dragon:position}')
-...     print(f'Gold dropped {drop["gold"]}')
-Wawelski is dead at position x=20, y=40
-Gold dropped 50
+...     print(f'Gold dropped {drop["gold"]}')  # doctest: +ELLIPSIS
+Wawelski is dead at position Point(x=20, y=40)
+Gold dropped ...
 
 TODO: dragon < Damage(...)
 TODO: dragon > Damage(...)

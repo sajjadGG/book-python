@@ -26,7 +26,7 @@ html_static_path = [
 bibtex_bibfiles = [
     'network/references.bib',
     'numpy/references.bib',
-    'stdlib/references.bib',]
+    'intermediate/references.bib',]
 
 # -- Standard book config -----------------------------------------------------
 import os
@@ -278,4 +278,3 @@ man_pages = [
 
 texinfo_documents = [
     (master_doc, project_slug, project, author, project, '', 'Miscellaneous')]
-

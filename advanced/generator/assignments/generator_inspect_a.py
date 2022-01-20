@@ -52,11 +52,11 @@ Tests:
     >>> getsizeof(function(DATA*100, 'setosa'))
     1656
     >>> getsizeof(generator(DATA, 'setosa'))
-    112
+    104
     >>> getsizeof(generator(DATA*10, 'setosa'))
-    112
+    104
     >>> getsizeof(generator(DATA*100, 'setosa'))
-    112
+    104
 """
 
 DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),

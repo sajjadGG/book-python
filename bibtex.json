@@ -37,14 +37,14 @@
         "numpy/statistics": [
             "NumpyPearsonCorrelationCoefficient"
         ],
-        "stdlib/datetime/parse-and-format": [
+        "intermediate/datetime/parse-and-format": [
             "DateFormatUS",
             "DateFormatJapan"
         ],
-        "stdlib/datetime/timezones": [
+        "intermediate/datetime/timezones": [
             "VideoComputerphileTimeZones"
         ],
-        "stdlib/regular-expressions/standards": [
+        "intermediate/regular-expressions/standards": [
             "W3CParsingURLs"
         ]
     }
