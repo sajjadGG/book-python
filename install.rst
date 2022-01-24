@@ -20,8 +20,8 @@ PyCharm, oraz GIT, a także serwis Github i arkusz kalkulacyjny Google Sheet.
   [`załóż <https://github.com/join>`_]
 
 
-Checklista przygotowania do szkolenia
--------------------------------------
+Przed szkoleniem
+----------------
 Poniżej znajduje się krótka checklista, która pozwoli sprawdzić czy
 uczestnik jest odpowiednio przygotowany do szkolenia. Przygotowanie środowiska
 przed szkoleniem zaoszczędzi dużo czasu.
@@ -47,8 +47,7 @@ Dla szkolenia:
     * Python w Analizie Danych,
     * Python w Analizie Numerycznej,
 
-Preferowaną wersją Python jest 3.9. **Dodatkowo** konieczna będzie
-instalacja następujących pakietów:
+Konieczna będzie instalacja następujących pakietów:
 
     * ``jupyter``
     * ``jupyterlab``
@@ -63,26 +62,24 @@ instalacja następujących pakietów:
     * ``scipy``
 
 Jeżeli korzystasz z Anakondy, to te pakiety masz już zainstalowane. Jeżeli
-masz czystego Pythona, to można je doinstalować wykonując polecenie w
-systemie operacyjnym:
+masz czystego Pythona, to można je doinstalować wykonując poniższe polecenie w
+systemie operacyjnym. Do instalacji pakietów konieczny jest dostęp do
+internetu.
 
 .. code-block:: console
 
     pip3 install --upgrade \
-    jupyter \
-    jupyterlab \
-    numpy \
-    pandas \
-    matplotlib \
-    requests \
-    lxml \
-    html5lib \
-    beautifulsoup4 \
-    xlrd \
-    scipy
-
-Do instalacji pakietów konieczny jest dostęp do internetu oraz uprawnienia
-na komputerze do instalacji pakietów za pomocą ``pip``.
+                 jupyter \
+                 jupyterlab \
+                 numpy \
+                 pandas \
+                 matplotlib \
+                 requests \
+                 lxml \
+                 html5lib \
+                 beautifulsoup4 \
+                 xlrd \
+                 scipy
 
 
 Wymagania dodatkowe dla szkoleń Machine Learning
@@ -91,9 +88,19 @@ Dla szkolenia:
 
     * Python Machine Learning
 
-Preferowaną wersją Python jest 3.9. **Dodatkowo** (łącznie z tymi z używanymi w
-Data Science) konieczna będzie instalacja następujących pakietów:
+Konieczna będzie instalacja następujących pakietów:
 
+    * ``jupyter``
+    * ``jupyterlab``
+    * ``numpy``
+    * ``pandas``
+    * ``matplotlib``
+    * ``requests``
+    * ``lxml``
+    * ``html5lib``
+    * ``beautifulsoup4``
+    * ``xlrd``
+    * ``scipy``
     * ``scikit-learn``
     * ``statsmodels``
     * ``seaborn``
@@ -103,43 +110,31 @@ Data Science) konieczna będzie instalacja następujących pakietów:
     * ``keras``
 
 Jeżeli korzystasz z Anakondy, to te pakiety masz już zainstalowane. Jeżeli
-masz czystego Pythona, to można je doinstalować wykonując polecenie w
-systemie operacyjnym:
+masz czystego Pythona, to można je doinstalować wykonując poniższe polecenie w
+systemie operacyjnym. Do instalacji pakietów konieczny jest dostęp do
+internetu.
 
 .. code-block:: console
 
-    pip3 install --upgrade
-    scikit-learn \
-    statsmodels \
-    seaborn \
-    bokeh \
-    tensorflow \
-    pytorch \
-    keras
-
-Do instalacji pakietów konieczny jest dostęp do internetu oraz uprawnienia
-na komputerze do instalacji pakietów za pomocą ``pip``.
-
-
-Dostępność i punktualność podczas szkolenia
--------------------------------------------
-Każdy dzień zaczyna się i kończy punktualnie. Proszę o przybycie minutę
-lub dwie wcześniej. Nie planowane są także krótsze zajęcia. Z tego powodu
-proszę o takie zagospodarowanie czasu, aby nie rozłączać się przed końcem
-szkolenia.
-
-Proszę o zapewnienie 100% dostępności podczas szkolenia. Bardzo często podczas
-szkolenia uczestnicy są rozpraszani przez komunikatory, e-maile z pracy, pilne
-spotkania czy rozmowy. Bardzo negatywnie wpływa to na efektywność szkolenia.
-Powoduje to rosnące zaległości uczestników, która czasami ciągną się
-już do samego końca szkolenia.
-
-
-Czy można korzystać ze swojego komputera?
------------------------------------------
-Tak. Można korzystać ze swojego komputera i dowolnego systemu operacyjnego.
-Podczas szkolenia mogą pojawić się niewielkie różnice między systemami
-operacyjnymi i wersjami Pythona. Zawsze będzie to wspomniane w zadaniu.
+    pip3 install --upgrade \
+                 jupyter \
+                 jupyterlab \
+                 numpy \
+                 pandas \
+                 matplotlib \
+                 requests \
+                 lxml \
+                 html5lib \
+                 beautifulsoup4 \
+                 xlrd \
+                 scipy \
+                 scikit-learn \
+                 statsmodels \
+                 seaborn \
+                 bokeh \
+                 tensorflow \
+                 pytorch \
+                 keras
 
 
 Czy można korzystać z pakietu Anaconda?
@@ -149,8 +144,47 @@ z pakietu Anaconda. Wybór dystrybucji Python nie będzie miał wpływu na
 przebieg szkolenia.
 
 
-Monitorowanie postępu
----------------------
+Czy można korzystać ze swojego komputera?
+-----------------------------------------
+Tak. Można korzystać ze swojego komputera i dowolnego systemu operacyjnego.
+Podczas szkolenia mogą pojawić się niewielkie różnice między systemami
+operacyjnymi i wersjami Pythona. Zawsze będzie to wspomniane w zadaniu.
+
+
+Czy szkolenie zacznie lub skończy się wcześniej?
+------------------------------------------------
+Nie. Każdy dzień zaczyna się i kończy punktualnie. Z tego też powodu proszę
+o przybycie minutę lub dwie przed czasem.
+
+Nie planowane są także krótsze zajęcia. Proszę o takie zagospodarowanie czasu,
+aby nie rozłączać się przed końcem szkolenia. Niestety ze względu na bardzo
+ilość materiału i krótki czas szkolenia, nie będzie możliwe powtarzanie
+rozdziałów dla osób, które w ten sposób coś ominęły.
+
+
+Czy szkolenie będzie nagrywane?
+-------------------------------
+Zazwyczaj nie. W większości przypadków nagrywanie szkolenia nie jest możliwe
+ze względu na prawa własności intelektualnej, a także na zachowanie prywatności
+uczestników szkolenia.
+
+W przypadku zajęć dedykowanych dla firm lub zorganizowanych bootcampów może
+pojawić się taka możliwość, natomiast wymaga to wcześniejszego uzgodnienia
+z organizatorami szkolenia oraz podpisania stosownych zgód z uczestnikami
+i prowadzącym.
+
+
+Jaka jest wymagana dostępność?
+------------------------------
+Proszę o zapewnienie 100% dostępności podczas szkolenia. Bardzo często podczas
+szkolenia uczestnicy są rozpraszani przez komunikatory, e-maile z pracy, pilne
+spotkania czy rozmowy. Bardzo negatywnie wpływa to na efektywność szkolenia.
+Powoduje to rosnące zaległości uczestników, która czasami są już nie
+do nadrobienia do końca szkolenia.
+
+
+Jak będzie wyglądało monitorowanie postępu?
+-------------------------------------------
 W arkuszu kalkulacyjnym (link poda prowadzący) w pierwszym wierszu
 proszę każdego uczestnika o wpisanie swojego imienia i pierwszej
 litery nazwiska (zamiast Uczestnik 1, 2 itd). Każda osoba powinna mieć
@@ -166,53 +200,64 @@ sprawdzili czy mają dostęp i czy mogą go edytować. Jest to konieczne dla
 przeprowadzenia szkolenia.
 
 
-Środowisko programistyczne
---------------------------
-Podczas szkolenia trener będzie korzystał z PyCharm jako środowisko
-programistyczne (IDE). Podczas szkolenia NIE będziemy korzystali
-z funkcjonalności wersji Professional i wersja darmowa w zupełności
-wystarczy.
+Jakie środowisko programistyczne?
+---------------------------------
+PyCharm. Podczas szkolenia trener będzie korzystał z PyCharm jako środowisko
+programistyczne (IDE).
 
-Jeżeli wybierzesz aby podczas szkolenia również korzystać z PyCharm,
-to nie będzie miało znaczenia czy jest to wersja Community (darmowa)
-czy Professional (płatna). Proszę tylko aby upewnić się, że jest aktualna,
-gdyż projekt szybko ewoluuje i dużo opcji się zmienia.
-
-Można korzystać z innego IDE, ale proszę zaznajomić się z nim przed
-szkoleniem. Podczas szkolenia nie będzie czasu na rozwiązywanie
-problemów z innymi IDE! Proszę również zaznajomić się z obsługą rebase
-dla operacji git push i git pull (zwróć uwagę, że jest to rebase a nie
-merge!) oraz uruchamianiem i analizą wyników dla doctestów (wszystkie
-zadania będą je miały) jak również opcjami refactoringu, który
-będziemy wykonywali w każdym zadaniu.
-
-
-Materiały do szkolenia
-----------------------
-Materiały do szkolenia są dostępne przed szkoleniem, a także po jego
-zakończeniu. Ze względu na niemalże codzienne aktualizacje oraz
-objętość (około 4700 stron przy eksporcie do PDF) materiały są
-dostępne wyłącznie online.
-
-Wszystkie listingi w materiałach mają testy (ponad 13 tys.). Również
-wszystkie zadania, których jest ponad 500 są w pełni otestowane, a ich
-rozwiązania są dostępne przez cały czas dla uczestników. Uczestnicy będą
-mieli do rozwiązania tylko określoną liczbę zadań, a część z nich będzie
-przeznaczona do wykonania samodzielnie w domu (dla chętnych, wieczorami
-lub po szkoleniu). Podczas szkolenia nie będzie wymaganych zadań domowych.
-Od uczestników nie wymagana jest dostępność poza godzinami szkolenia.
+Jeżeli wybierzesz aby podczas szkolenia również korzystać z PyCharm, to nie
+będzie miało znaczenia czy jest to wersja Community (darmowa) czy Professional
+(płatna). Podczas szkolenia NIE będziemy korzystali z funkcjonalności wersji
+Professional i wersja darmowa w zupełności wystarczy. Proszę tylko aby upewnić
+się, że jest aktualna, gdyż projekt szybko ewoluuje i dużo opcji się zmienia.
 
 
 Czy mogę korzystać z innego IDE niż PyCharm?
 --------------------------------------------
-Tak. Podczas szkolenia trener będzie korzystał z PyCharm Professional jako
-środowisko programistyczne (IDE). Można korzystać z innego IDE, ale
-proszę zaznajomić się z nim przed szkoleniem. Podczas szkolenia nie będzie
-czasu na rozwiązywanie problemów technicznych z innymi IDE! Jeżeli
-wybierzesz PyCharm, to nie będzie miało znaczenia czy jest to wersja
-Community (darmowa) czy Professional (płatna). Podczas szkolenia nie
-będziemy korzystali z funkcjonalności wersji Professional i wersja darmowa
-w zupełności wystarczy.
+Tak. Można korzystać z innego IDE, ale proszę zaznajomić się z nim przed
+szkoleniem. Podczas szkolenia nie będzie czasu na rozwiązywanie problemów
+z innymi IDE!
+
+Konieczne jest aby zaznajomić się z obsługą rebase dla operacji git push
+i git pull, które będą wykonywane po każdym rozdziale. Proszę zwrócić uwagę,
+że jest to rebase a nie merge!
+
+Wymagana będzie również umiejętność uruchamiania i analizy wyników dla
+doctestów, gdyż wszystkie zadania będą je miały i jest to warunek ich
+zaliczenia.
+
+Istotne będzie zaznajomienie się z zaawansowanymi opcjami refactoringu,
+który będziemy wykonywali w każdym zadaniu. Jako część szkolenia umiejętności
+praktycznych.
+
+
+Czy dostanę materiały do szkolenia?
+-----------------------------------
+Tak. Materiały do szkolenia są dostępne przed szkoleniem, a także po jego
+zakończeniu. Ze względu na niemalże codzienne aktualizacje oraz objętość
+(około 4700 stron przy eksporcie do PDF) materiały są dostępne wyłącznie
+online na stronie https://python.astrotech.io
+
+
+Jaką jakość mają materiały?
+---------------------------
+Bardzo wysoką. Wszystkie listingi w materiałach mają testy. Na chwilę obecną
+jest ich ponad 13 tys. Ponadto wszystkie zadania, których jest ponad 500 są w
+pełni otestowane, a ich rozwiązania będą dostępne przez cały czas dla
+uczestników.
+
+
+Czy będą zadania praktyczne?
+----------------------------
+Tak. Uczestnicy podczas szkolenia będą mieli do rozwiązania określoną liczbę
+zadań, a część z nich będzie przeznaczona do wykonania samodzielnie w domu.
+Od uczestników nie wymagana jest dostępność poza godzinami szkolenia. Wszystkie
+zadania domowe są wyłącznie dla chętnych.
+
+Wszystkie zadania mają testy do samodzielnej weryfikacji oraz dostępne
+rozwiązania. Zadania sprawdzają przyswojenie tematu i w znakomitej większości
+nie wymagają dodatkowej wiedzy (np. algorytmiki). Sporadycznie zdarzają się
+wyjątki od tej reguły.
 
 
 Czy konieczne jest konto na Github?
