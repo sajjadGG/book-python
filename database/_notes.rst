@@ -38,92 +38,11 @@ Funkcje i analiza:
 - Wykorzystanie przypisanych funkcji pythona zdeterminowanych przez użytkownika
 
 
-Instalacja
-----------
-* Jakie bazy danych obsługuje
-* Do czego służy
-* Procentowy udział w rynku
-
-.. code-block:: console
-
-    $ pip install sqlalchemy
 
 
-UML
----
-* ERD Diagram
 
-
-Struktura plików w projekcie
-----------------------------
-* Jak dzielić na pliki
-* Stałe do konfiguracji
-
-
-Korzystanie
------------
-* Gdzie konfiguracja
-* Stringi JSBC do połączenia
-
->>> from sqlalchemy import create_engine
->>> from sqlalchemy import Column, String, Integer
->>> from sqlalchemy.ext.declarative import declarative_base
->>> from sqlalchemy.orm import sessionmaker
-
-Create engine:
-
->>> create_engine('sqlite:///myfile.db') # echo=True
-
-Create session:
-
->>> sessionmaker(bind=engine).__call__()
-
-Create model base:
-
->>> Base = declarative_base()
-
-
-Modele
-------
-* modele dziedziczą po Base
-* modele specyfikują atrybut __tablename__
-* Można używać legacy bazy danych
-* Preferowane jest stworzenie nowej bazy za pomocą SQLAlchemy
-* Wtedy modele dokładnie odwzorowują to co jest w bazie danych
-* Domyślny __init__, ale można użyć własnego
-* Base pozwala na przechowywanie definicji tablic i zarządzanie nimi
-* Pamiętać aby dodać __str__() bo się kiepsko wyświetla
-
->>> class User(Base):
-...     __tablename__ = 'user'
-...
-...     username = Column(String, primary_key=True)
-...     password = Column(String)
-...
-...     def __init__(self, username, password):
-...         self.username = username
-...         self.password = password
-
-Create all tables in database:
-
->>> Base.metadata.create_all(engine)
-
-
-Dodawanie obiektów
-------------------
-* Samo stworzenie instancji modelu nie wykonuje zapytania na bazie
-* Dopiero commit to robi
-* IntegrityError jest podnoszony, gdy naruszana jest np. unikalność pola
-
->>> user = User('myusername', 'mypassword')
->>> session.add(user)
->>> session.commit()
-
->>> user1 = User('Mark', 'Watney')
->>> user2 = User('Melissa', 'Lewis')
->>> session.add(user1)
->>> session.add(user2)
->>> session.commit()
+NOTES
+=====
 
 
 Relacje
@@ -247,3 +166,8 @@ Lazy loading
 Problemy
 --------
 * Problem z Unexpected Query Generation
+
+
+References
+----------
+* https://www.youtube.com/watch?v=1Va493SMTcY

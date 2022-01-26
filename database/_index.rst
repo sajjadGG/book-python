@@ -9,6 +9,18 @@ About
     about/entrytest.rst
 
 
+Theory
+******
+.. toctree::
+    :maxdepth: 1
+    :caption: Theory
+
+    theory/about.rst
+    theory/uml-erd.rst
+    theory/normalization.rst
+    theory/rdbms.rst
+
+
 SQL
 ***
 .. toctree::
@@ -60,7 +72,7 @@ SQLAlchemy
     :caption: SQLAlchemy
 
     sqlalchemy/about.rst
-    sqlalchemy/connect.rst
+    sqlalchemy/connection.rst
     sqlalchemy/auth.rst
     sqlalchemy/orm.rst
     sqlalchemy/relations.rst
