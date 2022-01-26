@@ -1,5 +1,5 @@
 Entry Test
-----------
+==========
 
 
 Assignments
@@ -14,4 +14,8 @@ Assignments
 
 .. literalinclude:: assignments/about_entrytest_c.py
     :caption: Entry Test Assignment C
+    :end-before: # Solution
+
+.. literalinclude:: assignments/about_entrytest_d.py
+    :caption: Entry Test Assignment D
     :end-before: # Solution
