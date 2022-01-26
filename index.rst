@@ -40,6 +40,16 @@ Python Advanced
     advanced/_index.rst
 
 
+Database
+********
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Database
+
+    databases/_index.rst
+
+
 Design Patterns
 ***************
 .. toctree::

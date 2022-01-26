@@ -9,12 +9,12 @@ About
     ../install.rst
 
 
-Intermediate
-************
+Database
+********
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Intermediate
+    :caption: Database
 
     _index.rst
 
