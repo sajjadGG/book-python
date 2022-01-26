@@ -49,6 +49,11 @@ Instalacja
     $ pip install sqlalchemy
 
 
+UML
+---
+* ERD Diagram
+
+
 Struktura plików w projekcie
 ----------------------------
 * Jak dzielić na pliki

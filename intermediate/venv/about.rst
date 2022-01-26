@@ -86,10 +86,10 @@ Directory Naming Convention
     venv-3.10/
 
     venv-3.10.0/
-    venv-3.10.1/
+    venv-3.10.2/
     venv-3.10.2/
     venv-3.10.3/
-    venv-3.10.5/
+    venv-3.10.4/
     venv-3.10.5/
 
     venv-3.11-alpha1/
