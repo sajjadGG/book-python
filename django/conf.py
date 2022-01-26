@@ -155,7 +155,7 @@ numfig_format = {
 master_doc = 'index'
 templates_path = ['_templates']
 highlight_language = 'python3'
-autodoc_typehints = "description"
+autodoc_typehints = 'description'
 autosectionlabel_maxdepth = 4
 autosectionlabel_prefix_document = True
 
@@ -258,4 +258,3 @@ man_pages = [
     (master_doc, project_slug, project, [author], 1)]
 texinfo_documents = [
     (master_doc, project_slug, project, author, project, '', 'Miscellaneous')]
-

@@ -47,7 +47,7 @@ Database
     :numbered:
     :caption: Database
 
-    databases/_index.rst
+    database/_index.rst
 
 
 Design Patterns

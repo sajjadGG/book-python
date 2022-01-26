@@ -168,7 +168,7 @@ numfig_format = {
 master_doc = 'index'
 templates_path = ['_templates']
 highlight_language = 'python3'
-autodoc_typehints = "description"
+autodoc_typehints = 'description'
 autosectionlabel_maxdepth = 4
 autosectionlabel_prefix_document = True
 
