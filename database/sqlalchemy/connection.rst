@@ -25,6 +25,7 @@ from its actual call. Therefore you can place configuration in separate file
 which can be imported.
 
 >>> DATABASE = 'sqlite:///tmp/myfile.db'
+>>>
 >>> engine = create_engine(DATABASE)
 
 
@@ -50,7 +51,7 @@ Or you can simplify the expression by calling class right away:
 
 >>> session = sessionmaker(bind=engine)()
 
-Or using a bit more verbose syntax:
+Or using a bit more verbose, but explicit syntax:
 
 >>> session = sessionmaker(bind=engine).__call__()
 
