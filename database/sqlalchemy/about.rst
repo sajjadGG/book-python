@@ -58,3 +58,8 @@ Project Structure
 
 Good Practices
 --------------
+
+
+References
+----------
+.. [#yt] Bayer, Mike. SQLAlchemy 2.0 - The One-Point-Four-Ening 2021. Year: 2022. Retrieved: 2022-01-26. URL: https://www.youtube.com/watch?v=1Va493SMTcY

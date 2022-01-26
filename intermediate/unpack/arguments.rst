@@ -506,7 +506,7 @@ positionally, using keyword arguments or even both at the same time:
 
 References
 ----------
-.. [#pandasreadcsv] The pandas development team. API Reference Pandas.read_csv(). Retrieved: 2021-12-05. Year: 2021. URL: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
+.. [#pandasreadcsv] The pandas development team. API Reference Pandas.read_csv(). Year: 2021. Retrieved: 2021-12-05. URL: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
 
 
 Assignments

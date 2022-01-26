@@ -10,8 +10,7 @@ Rationale
 
 Mermaid
 -------
-* ``mermaid`` - Markdown extension
-* https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram
+* ``mermaid`` - Markdown extension [#mermaidAbout]_
 
 Theming [#mermaidTheme]_:
 
@@ -19,7 +18,6 @@ Theming [#mermaidTheme]_:
 
     %%{init: { 'theme': 'dark' } }%%
     %%{init: { 'theme': 'forest' } }%%
-
 
 Config [#mermaidConfig]_:
 
@@ -31,8 +29,7 @@ Config [#mermaidConfig]_:
 
 Entity Relationship Diagram
 ---------------------------
-* Entity Relationship
-* Database
+* ERD - Entity Relationship Diagram [#mermaidERD]_
 
 .. code-block:: md
 
@@ -54,5 +51,7 @@ Entity Relationship Diagram
 
 References
 ----------
-.. [#mermaidTheme] Sveidqvist, Knut et al. Mermaid Documentation. Retrieved: 2022-01-26. Year: 2022. URL: https://mermaid-js.github.io/mermaid/#/theming
-.. [#mermaidConfig] Sveidqvist, Knut et al. Mermaid Documentation. Retrieved: 2022-01-26. Year: 2022. URL: https://mermaid-js.github.io/mermaid/#/n00b-syntaxReference
+.. [#mermaidAbout] Sveidqvist, Knut et al. Mermaid Documentation: About. Year: 2022. Retrieved: 2022-01-26. URL: https://mermaid-js.github.io/mermaid/#/README
+.. [#mermaidTheme] Sveidqvist, Knut et al. Mermaid Documentation: Theming. Year: 2022. Retrieved: 2022-01-26. URL: https://mermaid-js.github.io/mermaid/#/theming
+.. [#mermaidConfig] Sveidqvist, Knut et al. Mermaid Documentation: SyntaxReference. Year: 2022. Retrieved: 2022-01-26. URL: https://mermaid-js.github.io/mermaid/#/n00b-syntaxReference
+.. [#mermaidERD] Sveidqvist, Knut et al. Mermaid Documentation: Entity Relationship Diagrams. Year: 2022. Retrieved: 2022-01-26. URL: https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram

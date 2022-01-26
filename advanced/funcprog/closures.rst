@@ -122,7 +122,7 @@ Why?
 
 References
 ----------
-.. [#ytclosures] Martin, Robert C. The S.O.L.I.D. Principles of OO & Agile Design. Year: 2015. Retrieved: 2021-09-22. https://youtu.be/t86v3N4OshQ?t=954
+.. [#ytclosures] Martin, Robert C. The S.O.L.I.D. Principles of OO & Agile Design. Year: 2015. Retrieved: 2021-09-22. URL: https://youtu.be/t86v3N4OshQ?t=954
 
 
 Assignments
@@ -134,4 +134,3 @@ Assignments
 .. literalinclude:: assignments/funcprog_closure_b.py
     :caption: :download:`Solution <assignments/funcprog_closure_b.py>`
     :end-before: # Solution
-

@@ -250,4 +250,4 @@ References
 .. [#ilovefreesoftware] http://cdn.ilovefreesoftware.com/wp-content/uploads/2016/10/unicode-Character-list-1.png
 .. [#unicode1] https://camo.githubusercontent.com/7806142e30089cac76da9fe9fb1c5bbd0521cde6/68747470733a2f2f692e696d6775722e636f6d2f7a414d74436a622e706e67
 .. [#unicode2] https://i.pinimg.com/736x/12/e2/37/12e237271c063313762fcafa1cf58e39--web-development-tools.jpg
-.. [#typewriter] US National Archives. Vintage Type. Publisher: Giphy. Retrieved: 2021-11-25. https://giphy.com/gifs/usnationalarchives-vintage-throwback-l0HlLWj5e25b5Ky76
+.. [#typewriter] US National Archives. Vintage Type. Publisher: Giphy. Retrieved: 2021-11-25. URL: https://giphy.com/gifs/usnationalarchives-vintage-throwback-l0HlLWj5e25b5Ky76
