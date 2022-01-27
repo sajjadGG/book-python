@@ -1,5 +1,5 @@
-Auth
-====
+Case Study Auth
+===============
 
 
 Rationale

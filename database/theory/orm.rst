@@ -1,5 +1,5 @@
-Object-Relational Mapping
-=========================
+Theory Object-Relational Mapping
+================================
 
 
 Rationale

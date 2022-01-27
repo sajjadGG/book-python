@@ -1,5 +1,5 @@
-Query Optimization
-==================
+Query Profile
+=============
 
 
 Rationale

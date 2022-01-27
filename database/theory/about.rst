@@ -1,5 +1,5 @@
-About
-=====
+Theory About
+============
 
 
 Rationale

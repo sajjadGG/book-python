@@ -1,6 +1,11 @@
 Func Count
 ==========
 
+
+Rationale
+---------
+
+
 Use Case - 0x01
 ---------------
 Count User records, without sing a subquery

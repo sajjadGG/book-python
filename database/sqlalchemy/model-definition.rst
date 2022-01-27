@@ -1,4 +1,4 @@
-SQLAlchemy Model
+Model Definition
 ================
 
 

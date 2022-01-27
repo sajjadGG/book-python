@@ -1,5 +1,5 @@
-SQLAlchemy Types
-================
+Model Types
+===========
 
 
 >>> from sqlalchemy.sql import sqltypes

@@ -74,14 +74,14 @@ SQLAlchemy
 
     sqlalchemy/connection-uri.rst
     sqlalchemy/connection-engine.rst
-    sqlalchemy/connection-pooling.rst
+    sqlalchemy/connection-pool.rst
 
     sqlalchemy/model-definition.rst
     sqlalchemy/model-column.rst
     sqlalchemy/model-types.rst
     sqlalchemy/model-indexes.rst
-    sqlalchemy/model-migrations.rst
-    sqlalchemy/model-relations.rst
+    sqlalchemy/model-migration.rst
+    sqlalchemy/model-relation.rst
 
     sqlalchemy/query.rst
     sqlalchemy/query-get.rst
@@ -101,18 +101,18 @@ SQLAlchemy
     sqlalchemy/query-update.rst
     sqlalchemy/query-delete.rst
 
-    sqlalchemy/query-debugging.rst
-    sqlalchemy/query-optimization.rst
+    sqlalchemy/query-debug.rst
+    sqlalchemy/query-profile.rst
 
     sqlalchemy/func-count.rst
 
 
-Use Cases
-*********
+Case Study
+**********
 .. toctree::
     :maxdepth: 1
-    :caption: Use Cases
+    :caption: Case Study
 
-    use-case/orm.rst
-    use-case/relationship.rst
-    use-case/auth.rst
+    case-study/orm.rst
+    case-study/relationship.rst
+    case-study/auth.rst

@@ -1,5 +1,6 @@
-SQLAlchemy Migrations
-=====================
+Model Migration
+===============
+
 
 Rationale
 ---------
@@ -15,6 +16,7 @@ Migration Software
 * SQL Migration Runner
 * Liquid Base
 * FlywayDB
+
 
 Lifecycle
 ---------

@@ -1,5 +1,5 @@
-Query Debugging
-===============
+Query Debug
+===========
 
 
 Rationale

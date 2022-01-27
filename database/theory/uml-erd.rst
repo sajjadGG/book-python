@@ -1,5 +1,5 @@
-UML ERD
-=======
+Theory UML ERD
+==============
 
 
 Rationale

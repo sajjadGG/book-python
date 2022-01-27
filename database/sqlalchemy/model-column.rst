@@ -1,6 +1,7 @@
 Model Column
 ============
 
+
 Rationale
 ---------
 * Documentation [#sqlalchemyColumn]_

@@ -1,5 +1,5 @@
-OOP Object Relations
-====================
+Theory Relations
+================
 
 
 Rationale
