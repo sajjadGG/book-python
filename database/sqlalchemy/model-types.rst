@@ -2,41 +2,60 @@ Model Types
 ===========
 
 
+Rationale
+---------
+
+
+SetUp
+-----
 >>> from sqlalchemy.sql import sqltypes
 
->>> sqltypes.__all__
+
+String Types
+------------
+* String
+* Text
+* Unicode
+* UnicodeText
 
 
-Column
-String
-Unicode
-UnicodeText
+Numeric Types
+-------------
+* Numeric
+* Integer
+* SmallInteger
+* BigInteger
+* Float
+* Boolean
 
 
-Numeric
-Integer
-SmallInteger
-BigInteger
-
-Float
-Boolean
-BOOLEAN
-CLOB
-
-Enum
-
-LargeBinary
-
-BINARY
-LARGEBINARY
+Enum Types
+----------
+* Enum
 
 
-DateTime
-Date
-Time
-Interval
+Blob Types
+----------
+* LargeBinary
 
-DATE
-TIME
-TIMESTAMP
-DATETIME
+
+Date Types
+----------
+* DateTime
+* Date
+* Time
+* Interval
+
+
+Other
+-----
+* DATE
+* TIME
+* TIMESTAMP
+* DATETIME
+* BOOLEAN
+* CLOB
+* BLOB
+* BINARY
+* VARBINARY
+* LARGEBINARY

@@ -4,6 +4,7 @@ Func Count
 
 Rationale
 ---------
+* https://docs.sqlalchemy.org/en/stable/core/functions.html#sqlalchemy.sql.functions.count
 
 
 Use Case - 0x01
@@ -18,7 +19,7 @@ Count User records, without sing a subquery
 
 Use Case - 0x02
 ---------------
-Return count of user "id" grouped by "name"
+Return count of user 'id' grouped by 'name'
 
 >>> from sqlalchemy import func
 >>>
@@ -29,7 +30,7 @@ Return count of user "id" grouped by "name"
 
 Use Case - 0x02
 ---------------
-Count distinct "name" values
+Count distinct 'name' values
 
 >>> from sqlalchemy import func
 >>> from sqlalchemy import distinct

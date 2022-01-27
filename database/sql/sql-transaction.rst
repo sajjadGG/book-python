@@ -29,7 +29,7 @@ successfully; otherwise, the transaction is aborted at the point of
 failure and previous operations are rolled back to their former state.
 
 Transactions are often composed of multiple statements. Atomicity
-guarantees that each transaction is treated as a single "unit", which
+guarantees that each transaction is treated as a single 'unit', which
 either succeeds completely, or fails completely: if any of the statements
 constituting a transaction fails to complete, the entire transaction fails
 and the database is left unchanged. An atomic system must guarantee

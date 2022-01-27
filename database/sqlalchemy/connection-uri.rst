@@ -48,8 +48,8 @@ File connection using absolute path (note 4 slashes for unix, backslash for Wind
 
 Modern versions of SQLite support an alternative system of connecting using a
 driver level URI, which has the advantage that additional driver-level
-arguments can be passed including options such as "read only". The SQLite-level
-"URI" is kept as the "database" portion of the SQLAlchemy url (that is,
+arguments can be passed including options such as 'read only'. The SQLite-level
+'URI' is kept as the 'database' portion of the SQLAlchemy url (that is,
 following a slash):
 
 >>> DATABASE = 'sqlite:///file:path/to/myfile.db?uri=true&mode=ro'
@@ -113,7 +113,7 @@ PostgreSQL async [#sqlalchemyPostgresql]_, [#githubAsyncpg]_:
 .. note:: Async connections require async engine:
 
           >>> from sqlalchemy.ext.asyncio import create_async_engine
-          >>> engine = create_async_engine("postgresql+asyncpg://myusername:mypassword@myhost:5432/mydatabase")
+          >>> engine = create_async_engine('postgresql+asyncpg://myusername:mypassword@myhost:5432/mydatabase')
 
 Psycopg2cffi (implemented with cffi layer for portability):
 
@@ -130,7 +130,7 @@ Drivers:
 
     * `mysqlclient <https://pypi.org/project/mysqlclient/>`_ (recommended)
     * `PyMySQL <https://pymysql.readthedocs.io/>`_ (recommended)
-    * `mysqlconnector <https://pypi.org/project/mysql-connector-python/>` (not tested in CI/CD)
+    * `mysqlconnector <https://pypi.org/project/mysql-connector-python/>`_ (not tested in CI/CD)
     * `asyncmy <https://github.com/long2ice/asyncmy>`_ (new)
     * `aiomysql <https://github.com/aio-libs/aiomysql>`_ (unmaintained, not tested in CI/CD)
     * `CyMySQL <https://github.com/nakagami/CyMySQL>`_ (not tested in CI/CD)
@@ -145,7 +145,7 @@ MySQL connection using PyMSQL driver:
 
 >>> DATABASE = 'mysql+pymysql://myusername:mypassword@myhost/mydatabase:3306?charset=utf8mb4'
 
-The MariaDB variant of MySQL retains fundamental compatibility with MySQL’s
+The MariaDB variant of MySQL retains fundamental compatibility with MySQL's
 protocols however the development of these two products continues to diverge
 To connect to a MariaDB database, no changes to the database URL are required:
 
@@ -165,18 +165,18 @@ MySQL connection using mysqldb driver:
 >>> DATABASE = 'mysql+mysqldb://myusername:mypassword@myhost/mydatabase:3306?charset=utf8mb4&binary_prefix=true'
 
 >>> DATABASE = (
-...     "mysql+mysqldb://myusername:mypassword@myhost:3306/mydatabase"
-...     "?ssl_ca=/home/myusername/client-ssl/ca.pem"
-...     "&ssl_cert=/home/myusername/client-ssl/client-cert.pem"
-...     "&ssl_key=/home/myusername/client-ssl/client-key.pem"
+...     'mysql+mysqldb://myusername:mypassword@myhost:3306/mydatabase'
+...     '?ssl_ca=/home/myusername/client-ssl/ca.pem'
+...     '&ssl_cert=/home/myusername/client-ssl/client-cert.pem'
+...     '&ssl_key=/home/myusername/client-ssl/client-key.pem'
 ... )
 
 >>> DATABASE = (
-...     "mysql+pymysql://myusername:mypassword@myhost:3306/mydatabase"
-...     "?ssl_ca=/home/myusername/client-ssl/ca.pem"
-...     "&ssl_cert=/home/myusername/client-ssl/client-cert.pem"
-...     "&ssl_key=/home/myusername/client-ssl/client-key.pem"
-...     "&ssl_check_hostname=false"
+...     'mysql+pymysql://myusername:mypassword@myhost:3306/mydatabase'
+...     '?ssl_ca=/home/myusername/client-ssl/ca.pem'
+...     '&ssl_cert=/home/myusername/client-ssl/client-cert.pem'
+...     '&ssl_key=/home/myusername/client-ssl/client-key.pem'
+...     '&ssl_check_hostname=false'
 ... )
 
 With Google Cloud SQL:
@@ -190,7 +190,7 @@ Asyncmy:
 .. note:: Async connections require async engine:
 
           >>> from sqlalchemy.ext.asyncio import create_async_engine
-          >>> engine = create_async_engine("mysql+asyncmy://myusername:mypassword@myhost:3306/mydatabase?charset=utf8mb4")
+          >>> engine = create_async_engine('mysql+asyncmy://myusername:mypassword@myhost:3306/mydatabase?charset=utf8mb4')
 
 Oracle
 ------
@@ -219,7 +219,7 @@ MSSQL
 ----
 * https://docs.sqlalchemy.org/en/stable/dialects/mssql.html
 * Supported versions 2012+
-* pymssql is currently not included in SQLAlchemy’s continuous integration (CI) testing.
+* pymssql is currently not included in SQLAlchemy's continuous integration (CI) testing.
 
 Drivers:
 
@@ -264,5 +264,5 @@ Will generate:
 
 References
 ----------
-.. [#sqlalchemyPostgresql] https://docs.sqlalchemy.org/en/14/dialects/postgresql.html
+.. [#sqlalchemyPostgresql] https://docs.sqlalchemy.org/en/stable/dialects/postgresql.html
 .. [#githubAsyncpg] https://magicstack.github.io/asyncpg/

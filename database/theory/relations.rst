@@ -23,7 +23,7 @@ Glossary
         constraints. It is accomplished by applying some formal rules either
         by a process of synthesis (creating a new database design) or
         decomposition (improving an existing database design). A relational
-        database relation is often described as "normalized" if it meets
+        database relation is often described as 'normalized' if it meets
         third normal form. [#WikipediaDatabaseNormalization]_ [#Codd1972]_
 
     big-data
@@ -358,14 +358,14 @@ References
 .. [#WikipediaDatabaseNormalization] Database normalization. https://en.wikipedia.org/wiki/Database_normalization
 .. [#WikipediaSQL] SQL. Wikipedia. Year: 2021. Retrieved: 2021-12-16. URL: https://en.wikipedia.org/wiki/SQL
 .. [#RFC6922] Shafranovich, Y. The application/sql Media Type. Internet Engineering Task Force (IETF). Retrieved: 2021-12-16. Year: 2013. URL: https://datatracker.ietf.org/doc/html/rfc6922
-.. [#Codd1972] Codd, E. F. "Further Normalization of the Data Base Relational Model". (Presented at Courant Computer Science Symposia Series 6, "Data Base Systems", New York City, May 24–25, 1971.) IBM Research Report RJ909 (August 31, 1971). Republished in Randall J. Rustin (ed.), Data Base Systems: Courant Computer Science Symposia Series 6. Prentice-Hall, 1972.
+.. [#Codd1972] Codd, E. F. Further Normalization of the Data Base Relational Model. (Presented at Courant Computer Science Symposia Series 6, Data Base Systems, New York City, May 24–25, 1971.) IBM Research Report RJ909 (August 31, 1971). Republished in Randall J. Rustin (ed.), Data Base Systems: Courant Computer Science Symposia Series 6. Prentice-Hall, 1972.
 .. [#WikipediaBigData] Big data. Wikipedia. Year: 2021. Retrieved: 2021-12-16. URL: https://en.wikipedia.org/wiki/Big_data
 .. [#WikipediaDataRetention] Data retention. Wikipedia. Year: 2021. Retrieved: 2021-12-16. URL: https://en.wikipedia.org/wiki/Data_retention
 .. [#WikipediaRelation] Relation (database). Wikipedia. Year: 2021. Retrieved: 2021-12-16. URL: https://en.wikipedia.org/wiki/Relation_(database)
 .. [#WikipediaConsistency] Consistency. Wikipedia. Year: 2021. Retrieved: 2021-12-16. URL: https://en.wikipedia.org/wiki/Consistency_(database_systems)
 .. [#WikipediaDataIntegrity] Data Integrity.  Wikipedia. Year: 2021. Retrieved: 2021-12-16. URL: https://en.wikipedia.org/wiki/Data_integrity
-.. [#Boritz2011] Boritz, J. "IS Practitioners' Views on Core Concepts of Information Integrity". International Journal of Accounting Information Systems. Elsevier. Year: 2011. Retrieved: 2011-08-12.
-.. [#Date2012] Date, C. J. "SQL and Relational Theory: How to Write Accurate SQL Code 2nd edition", O'reilly Media, Inc., 2012, pg. 180.
+.. [#Boritz2011] Boritz, J. IS Practitioners' Views on Core Concepts of Information Integrity. International Journal of Accounting Information Systems. Elsevier. Year: 2011. Retrieved: 2011-08-12.
+.. [#Date2012] Date, C. J. SQL and Relational Theory: How to Write Accurate SQL Code 2nd edition, O'reilly Media, Inc., 2012, pg. 180.
 
 
 Assignments

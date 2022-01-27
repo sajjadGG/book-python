@@ -4,8 +4,8 @@ Query Profile
 
 Rationale
 ---------
-* https://docs.sqlalchemy.org/en/20/orm/examples.html#module-examples.performance
-* https://docs.sqlalchemy.org/en/20/faq/performance.html#faq-how-to-profile
+* https://docs.sqlalchemy.org/en/stable/orm/examples.html#module-examples.performance
+* https://docs.sqlalchemy.org/en/stable/faq/performance.html#faq-how-to-profile
 
 
 Populate Existing

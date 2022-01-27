@@ -35,3 +35,8 @@ One
 One or None
 -----------
 * https://docs.sqlalchemy.org/en/stable/orm/query.html#sqlalchemy.orm.Query.one_or_None
+
+
+All
+---
+* https://docs.sqlalchemy.org/en/stable/orm/query.html#sqlalchemy.orm.Query.all

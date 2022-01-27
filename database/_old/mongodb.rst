@@ -19,10 +19,10 @@ Insert data
     from pymongo import MongoClient
 
     DATA = {
-        "name": "José Jiménez",
-        "catchphrase": "My name... José Jiménez",
-        "tags": ["astronaut", "nasa", "space"],
-        "date": datetime.now(tz=timezone.utc)
+        'name': 'José Jiménez',
+        'catchphrase': 'My name... José Jiménez',
+        'tags': ['astronaut', 'nasa', 'space'],
+        'date': datetime.now(tz=timezone.utc)
     }
 
 
@@ -47,5 +47,5 @@ Filter records
 --------------
 .. code-block:: python
 
-    for astro in astronauts.find({"name": "José Jiménez"}):
+    for astro in astronauts.find({'name': 'José Jiménez'}):
         print(astro)

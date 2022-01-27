@@ -105,7 +105,7 @@ if 'nbsphinx' in extensions:
 
 
 if 'sphinxcontrib.bibtex' in extensions:
-    bibtex_bibliography_header = ".. rubric:: References"
+    bibtex_bibliography_header = '.. rubric:: References'
     bibtex_footbibliography_header = bibtex_bibliography_header
     bibtex_default_style = 'alpha'
 

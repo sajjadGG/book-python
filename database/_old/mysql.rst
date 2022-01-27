@@ -31,7 +31,7 @@ Execute
     try:
         with connection.cursor() as cursor:
             # Create a new record
-            sql = "INSERT INTO `users` (`email`, `password`) VALUES (%s, %s)"
+            sql = 'INSERT INTO `users` (`email`, `password`) VALUES (%s, %s)'
             cursor.execute(sql, ('myusername@example.com', 'MyVoiceIsMyPassword'))
 
         # connection is not autocommit by default. So you must commit to save
@@ -40,10 +40,9 @@ Execute
 
         with connection.cursor() as cursor:
             # Read a single record
-            sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
+            sql = 'SELECT `id`, `password` FROM `users` WHERE `email`=%s'
             cursor.execute(sql, ('myusername@example.com',))
             result = cursor.fetchone()
             print(result)
     finally:
         connection.close()
-

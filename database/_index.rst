@@ -83,27 +83,24 @@ SQLAlchemy
     sqlalchemy/model-migration.rst
     sqlalchemy/model-relation.rst
 
-    sqlalchemy/query.rst
-    sqlalchemy/query-get.rst
-    sqlalchemy/query-all.rst
+    sqlalchemy/query-about.rst
+    sqlalchemy/query-fetch.rst
     sqlalchemy/query-filter.rst
-    sqlalchemy/query-first.rst
     sqlalchemy/query-limit.rst
     sqlalchemy/query-orderby.rst
     sqlalchemy/query-groupby.rst
     sqlalchemy/query-subquery.rst
-    sqlalchemy/query-join.rst
     sqlalchemy/query-union.rst
-
+    sqlalchemy/query-join.rst
     sqlalchemy/query-count.rst
     sqlalchemy/query-distinct.rst
     sqlalchemy/query-exists.rst
     sqlalchemy/query-update.rst
     sqlalchemy/query-delete.rst
-
     sqlalchemy/query-debug.rst
     sqlalchemy/query-profile.rst
 
+    sqlalchemy/func-about.rst
     sqlalchemy/func-count.rst
 
 

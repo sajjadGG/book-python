@@ -18,15 +18,15 @@ With Session
 
 Select Columns
 --------------
-* https://docs.sqlalchemy.org/en/20/orm/loading_columns.html#sqlalchemy.orm.defer
-* https://docs.sqlalchemy.org/en/20/orm/loading_columns.html#sqlalchemy.orm.deferred
-* https://docs.sqlalchemy.org/en/20/orm/loading_columns.html#sqlalchemy.orm.load_only
+* https://docs.sqlalchemy.org/en/stable/orm/loading_columns.html#sqlalchemy.orm.defer
+* https://docs.sqlalchemy.org/en/stable/orm/loading_columns.html#sqlalchemy.orm.deferred
+* https://docs.sqlalchemy.org/en/stable/orm/loading_columns.html#sqlalchemy.orm.load_only
 
 >>> from sqlalchemy.orm import defer
 >>> from sqlalchemy.orm import undefer
 >>>
 >>> session.query(Book).options(
-...     defer('*'), undefer("summary"), undefer("excerpt"))
+...     defer('*'), undefer('summary'), undefer('excerpt'))
 
 A similar function is available with less verbosity by using the load_only()
 option. This is a so-called exclusionary option which will apply deferred

@@ -11,7 +11,7 @@ Engine
 * Engine component provides a facade over the Python DBAPI
 * ``create_engine()`` builds a factory for database connections
 * Debugging
-* Parameters: https://docs.sqlalchemy.org/en/14/core/engines.html#sqlalchemy.create_engine.params.connect_args
+* Parameters: https://docs.sqlalchemy.org/en/stable/core/engines.html#sqlalchemy.create_engine.params.connect_args
 * Parameter ``echo=True`` if True, the Engine will log all statements to stdout
 * Parameter ``future=True`` - v2.0 compatibility mode
 * Engine is lazily connected (does not connect on creating engine right away)
