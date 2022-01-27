@@ -7,7 +7,7 @@ Rationale
 * ORM - Object-relational mapping
 * ORM has tools to convert (`map`) between objects in code and database tables (`relations`)
 * Declarative - First define model, which then maps to the database tables
-
+* https://docs.sqlalchemy.org/en/20/orm/examples.html#module-examples.performance
 
 Install
 -------
@@ -18,7 +18,7 @@ Install
 >>> import sqlalchemy
 >>>
 >>>
->>> sqlalchemy.__version__.startswith('1.4')
+>>> sqlalchemy.__version__ > '1.4'
 True
 
 

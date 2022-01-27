@@ -28,6 +28,12 @@ Installation
 
     $ pip install sqlalchemy
 
+>>> import sqlalchemy
+>>>
+>>>
+>>> sqlalchemy.__version__ > '1.4'
+True
+
 
 Nomenclature
 ------------

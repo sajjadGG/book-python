@@ -74,6 +74,40 @@ Use Case - 0x01
 >>> SQLmetadata_obj.create_all(engine)
 
 
+Use Case - 0x02
+---------------
+>>> from sqlalchemy.orm import deferred
+>>> from sqlalchemy import Integer, String, Text, Binary, Column
+>>>
+>>>
+>>> class Book(Base):
+>>>     __tablename__ = 'book'
+>>>
+>>>     book_id = Column(Integer, primary_key=True)
+>>>     title = Column(String(200), nullable=False)
+>>>     summary = Column(String(2000))
+>>>     excerpt = deferred(Column(Text))
+>>>     photo = deferred(Column(Binary))
+
+
+Use Case - 0x03
+---------------
+>>> from sqlalchemy.orm import deferred
+>>> from sqlalchemy import Integer, String, Text, Binary, Column
+>>>
+>>>
+>>> class Book(Base):
+>>>     __tablename__ = 'book'
+>>>
+>>>     book_id = Column(Integer, primary_key=True)
+>>>     title = Column(String(200), nullable=False)
+>>>     summary = Column(String(2000))
+>>>     excerpt = deferred(Column(Text))
+>>>     photo1 = deferred(Column(Binary), group='photos')
+>>>     photo2 = deferred(Column(Binary), group='photos')
+>>>     photo3 = deferred(Column(Binary), group='photos')
+
+
 References
 ----------
 .. [#sqlalchemyColumn] https://docs.sqlalchemy.org/en/stable/core/metadata.html#sqlalchemy.schema.Column.__init__

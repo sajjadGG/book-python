@@ -16,9 +16,10 @@ Theory
     :caption: Theory
 
     theory/about.rst
+    theory/rdbms.rst
     theory/uml-erd.rst
     theory/normalization.rst
-    theory/rdbms.rst
+    theory/relations.rst
 
 
 SQL
@@ -82,20 +83,28 @@ SQLAlchemy
     sqlalchemy/model-migrations.rst
     sqlalchemy/model-relations.rst
 
-    sqlalchemy/query-one.rst
+    sqlalchemy/query.rst
+    sqlalchemy/query-get.rst
     sqlalchemy/query-all.rst
     sqlalchemy/query-filter.rst
     sqlalchemy/query-first.rst
     sqlalchemy/query-limit.rst
-
+    sqlalchemy/query-orderby.rst
+    sqlalchemy/query-groupby.rst
+    sqlalchemy/query-subquery.rst
     sqlalchemy/query-join.rst
     sqlalchemy/query-union.rst
 
     sqlalchemy/query-count.rst
     sqlalchemy/query-distinct.rst
     sqlalchemy/query-exists.rst
+    sqlalchemy/query-update.rst
     sqlalchemy/query-delete.rst
+
     sqlalchemy/query-debugging.rst
+    sqlalchemy/query-optimization.rst
+
+    sqlalchemy/func-count.rst
 
 
 Use Cases
