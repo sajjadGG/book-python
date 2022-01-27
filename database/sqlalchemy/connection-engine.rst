@@ -4,29 +4,43 @@ SQLAlchemy Connection
 
 Rationale
 ---------
-* JDBC connection strings
 
 
 Engine
 ------
+* Engine component provides a facade over the Python DBAPI
+* ``create_engine()`` builds a factory for database connections
 * Debugging
-* Parameter ``echo=True``
+* Parameters: https://docs.sqlalchemy.org/en/14/core/engines.html#sqlalchemy.create_engine.params.connect_args
+* Parameter ``echo=True`` if True, the Engine will log all statements to stdout
+* Parameter ``future=True`` - v2.0 compatibility mode
+* Engine is lazily connected (does not connect on creating engine right away)
 
-First import required dependencies:
+First import required dependencies and set database connection URL:
 
 >>> from sqlalchemy import create_engine
 
 Then create an engine:
 
->>> engine = create_engine('sqlite:///tmp/myfile.db')
-
-Note, that the good practice will suggest to split configuration parameter
-from its actual call. Therefore you can place configuration in separate file
-which can be imported.
-
->>> DATABASE = 'sqlite:///tmp/myfile.db'
->>>
 >>> engine = create_engine(DATABASE)
+
+Although this will create a SQLAlchemy engine in legacy mode:
+
+>>> type(engine)
+<class 'sqlalchemy.engine.base.Engine'>
+
+You can also turn on the future compatibility mode:
+
+>>> engine = create_engine(DATABASE, future=True)
+>>>
+>>> type(engine)
+<class 'sqlalchemy.future.engine.Engine'>
+
+
+Connection
+----------
+>>> connection = engine.connect()
+>>> connection
 
 
 Session

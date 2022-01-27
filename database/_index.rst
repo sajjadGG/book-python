@@ -71,9 +71,39 @@ SQLAlchemy
     :maxdepth: 1
     :caption: SQLAlchemy
 
-    sqlalchemy/about.rst
-    sqlalchemy/connection.rst
-    sqlalchemy/auth.rst
-    sqlalchemy/orm.rst
-    sqlalchemy/relations.rst
-    sqlalchemy/relationship.rst
+    sqlalchemy/connection-uri.rst
+    sqlalchemy/connection-engine.rst
+    sqlalchemy/connection-pooling.rst
+
+    sqlalchemy/model-definition.rst
+    sqlalchemy/model-column.rst
+    sqlalchemy/model-types.rst
+    sqlalchemy/model-indexes.rst
+    sqlalchemy/model-migrations.rst
+    sqlalchemy/model-relations.rst
+
+    sqlalchemy/query-one.rst
+    sqlalchemy/query-all.rst
+    sqlalchemy/query-filter.rst
+    sqlalchemy/query-first.rst
+    sqlalchemy/query-limit.rst
+
+    sqlalchemy/query-join.rst
+    sqlalchemy/query-union.rst
+
+    sqlalchemy/query-count.rst
+    sqlalchemy/query-distinct.rst
+    sqlalchemy/query-exists.rst
+    sqlalchemy/query-delete.rst
+    sqlalchemy/query-debugging.rst
+
+
+Use Cases
+*********
+.. toctree::
+    :maxdepth: 1
+    :caption: Use Cases
+
+    use-case/orm.rst
+    use-case/relationship.rst
+    use-case/auth.rst

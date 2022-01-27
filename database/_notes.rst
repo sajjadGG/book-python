@@ -2,6 +2,9 @@ SQLAlchemy
 ==========
 
 
+
+
+
 Program szkolenia
 -----------------
 Wprowadzenie do systemów ORM
