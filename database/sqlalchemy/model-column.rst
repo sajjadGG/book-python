@@ -55,24 +55,23 @@ Examples:
 Use Case - 0x01
 ---------------
 >>> engine = create_engine('sqlite:///:memory:')
+>>> model = MetaData()
 >>>
->>> metadata_obj = MetaData()
->>>
->>> user = Table('user', metadata_obj,
+>>> user = Table('user', model,
 ...     Column('user_id', Integer, primary_key=True),
 ...     Column('user_name', String(16), nullable=False),
 ...     Column('email_address', String(60), key='email'),
 ...     Column('nickname', String(50), nullable=False)
 ... )
 >>>
->>> user_prefs = Table('user_prefs', metadata_obj,
+>>> user_prefs = Table('user_prefs', model,
 ...     Column('pref_id', Integer, primary_key=True),
 ...     Column('user_id', Integer, ForeignKey('user.user_id'), nullable=False),
 ...     Column('pref_name', String(40), nullable=False),
 ...     Column('pref_value', String(100))
 ... )
 >>>
->>> SQLmetadata_obj.create_all(engine)
+>>> model.create_all(engine)
 
 
 Use Case - 0x02

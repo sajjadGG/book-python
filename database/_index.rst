@@ -80,8 +80,15 @@ SQLAlchemy
     sqlalchemy/model-column.rst
     sqlalchemy/model-types.rst
     sqlalchemy/model-indexes.rst
-    sqlalchemy/model-migration.rst
     sqlalchemy/model-relation.rst
+
+    sqlalchemy/schema-metadata.rst
+    sqlalchemy/schema-reflection.rst
+
+    sqlalchemy/migration-about.rst
+    sqlalchemy/migration-create.rst
+    sqlalchemy/migration-apply.rst
+    sqlalchemy/migration-rollback.rst
 
     sqlalchemy/query-about.rst
     sqlalchemy/query-fetch.rst
@@ -97,6 +104,7 @@ SQLAlchemy
     sqlalchemy/query-exists.rst
     sqlalchemy/query-update.rst
     sqlalchemy/query-delete.rst
+    sqlalchemy/query-execute.rst
     sqlalchemy/query-debug.rst
     sqlalchemy/query-profile.rst
 

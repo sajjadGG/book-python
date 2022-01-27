@@ -16,7 +16,7 @@ SetUp
 >>> from sqlalchemy.orm import sessionmaker
 >>>
 >>>
->>> DATABASE = 'sqlite://'
+>>> DATABASE = 'sqlite:///:memory:'
 >>>
 >>> engine = create_engine(DATABASE)
 >>> session = sessionmaker(bind=engine).__call__()
@@ -123,7 +123,7 @@ Use Case - 0x01
 >>> from sqlalchemy.orm import sessionmaker
 >>>
 >>>
->>> DATABASE = 'sqlite://'
+>>> DATABASE = 'sqlite:///:memory:'
 >>>
 >>> engine = create_engine(DATABASE)
 >>> session = sessionmaker(bind=engine).__call__()

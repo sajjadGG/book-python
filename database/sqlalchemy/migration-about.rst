@@ -1,4 +1,4 @@
-Model Migration
+Migration About
 ===============
 
 
@@ -27,6 +27,8 @@ Lifecycle
 
 Alembic
 -------
+* Heavily relays on reflection
+
 [alembic]
 # path to migration scripts
 script_location = h:migrations

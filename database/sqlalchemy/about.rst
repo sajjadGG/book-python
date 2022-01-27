@@ -56,6 +56,15 @@ Architecture
 * Plugin structure with injection points
 
 
+.. figure:: sqlalchemy-architecture.png
+
+    SQLAlchemy architecture. Source: [#ytSQLAlchemy20]_
+
+.. figure:: img/sqlalchemy-onion.png
+
+    SQLAlchemy onion chart depicts layers. Source: [#ytSQLAlchemy20]_
+
+
 Project Structure
 -----------------
 * What is the SQLAlchemy project layout
@@ -68,4 +77,4 @@ Good Practices
 
 References
 ----------
-.. [#yt] Bayer, Mike. SQLAlchemy 2.0 - The One-Point-Four-Ening 2021. Year: 2022. Retrieved: 2022-01-26. URL: https://www.youtube.com/watch?v=1Va493SMTcY
+.. [#ytSQLAlchemy20] Bayer, Mike. SQLAlchemy 2.0 - The One-Point-Four-Ening 2021. Year: 2022. Retrieved: 2022-01-26. URL: https://www.youtube.com/watch?v=1Va493SMTcY
