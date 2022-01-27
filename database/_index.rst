@@ -72,15 +72,20 @@ SQLAlchemy
     :maxdepth: 1
     :caption: SQLAlchemy
 
+    sqlalchemy/about.rst
+
     sqlalchemy/connection-uri.rst
     sqlalchemy/connection-engine.rst
+    sqlalchemy/connection-session.rst
     sqlalchemy/connection-pool.rst
 
-    sqlalchemy/model-definition.rst
+    sqlalchemy/model-base.rst
+    sqlalchemy/model-define.rst
     sqlalchemy/model-column.rst
     sqlalchemy/model-types.rst
     sqlalchemy/model-indexes.rst
-    sqlalchemy/model-relation.rst
+    sqlalchemy/model-relations.rst
+    sqlalchemy/model-dataclass.rst
 
     sqlalchemy/schema-metadata.rst
     sqlalchemy/schema-reflection.rst

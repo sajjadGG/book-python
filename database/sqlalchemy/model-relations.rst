@@ -1,14 +1,38 @@
-Model Relation
-==============
+Model Relations
+===============
 
 
 Rationale
 ---------
-* Foreign Key
-* Primary Key
-* Relation 1 do 1
-* Relation 1 do ∞
-* Relation ∞ do ∞
+* ForeignKey vs PrimaryKey
+* ForeignKey vs CompositeForeignKey
+* Relation 1 to 1
+* Relation 1 to Many
+* Relation Many to Many
+
+
+PrimaryKey
+----------
+
+
+ForeignKey
+----------
+
+
+Composite ForeignKey
+--------------------
+
+
+One To One Relation
+-------------------
+
+
+One to Many Relation
+--------------------
+
+
+Many to Many Relation
+---------------------
 
 
 Use Case - 0x01
