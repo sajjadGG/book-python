@@ -74,7 +74,7 @@ SQLAlchemy
 
     sqlalchemy/about.rst
 
-    sqlalchemy/connection-uri.rst
+    sqlalchemy/connection-dsn.rst
     sqlalchemy/connection-engine.rst
     sqlalchemy/connection-session.rst
     sqlalchemy/connection-pool.rst
@@ -115,6 +115,7 @@ SQLAlchemy
 
     sqlalchemy/func-about.rst
     sqlalchemy/func-count.rst
+    sqlalchemy/func-max.rst
 
 
 Case Study

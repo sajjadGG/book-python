@@ -53,7 +53,6 @@ Column Specification
 ...
 ...     username = Column(String)
 ...     password = Column(String)
-...
 
 
 Initializer
@@ -71,6 +70,12 @@ Initializer
 ...     def __init__(self, username, password):
 ...         self.username = username
 ...         self.password = password
+
+SQLAlchemy applies a default initializer (``__init__``) method, to all mapped
+classes that don’t explicitly have their own ``__init__`` method. The behavior
+of this method is such that it provides a convenient keyword constructor that
+will accept as optional keyword arguments all the attributes that are named.
+The constructor also applies to imperative mappings [#sqlalchemyConstructor]_.
 
 
 Stringification
@@ -151,3 +156,8 @@ Use Case - 0x01
 >>> session.add(melissa)
 >>>
 >>> session.commit()
+
+
+References
+----------
+.. [#sqlalchemyConstructor] https://docs.sqlalchemy.org/en/14/orm/mapping_styles.html#default-constructor

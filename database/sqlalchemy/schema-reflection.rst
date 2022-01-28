@@ -69,6 +69,12 @@ Or constraints:
 >>> inspector.get_foreign_keys('astronaut')
 []
 
+Currently supported constraints:
+
+    * ForeignKey
+    * Unique
+    * Check
+
 
 Reflecting an Entire Schema
 ---------------------------

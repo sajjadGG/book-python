@@ -1,0 +1,6 @@
+Func Count
+==========
+
+
+Rationale
+---------

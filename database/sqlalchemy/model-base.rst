@@ -1,92 +1,89 @@
-Connection Engine
-=================
+Model Base
+==========
 
 
 Rationale
 ---------
+* Used for reflecting database tables in our program
+* Allows to manage and alter database tables
+* Declarative base (recommended)
+* Imperative (a.k.a. Classical) Mappings
+
 .. glossary::
 
     base
         Model responsible for mapping objects with database
 
-
-Session
--------
-* 1.0 style
-* 2.0 style with context managers
-* ``Session`` manages persistence operations for ORM-mapped objects
-
-First import required dependencies:
-
->>> from sqlalchemy.orm import sessionmaker
-
-``sessionmaker`` acts as a factory for ``Session`` objects in the same way as
-an ``Engine`` acts as a factory for ``Connection`` objects. In this way it also
-includes a ``sessionmaker.begin()`` method, that provides a context manager
-which both begins and commits a transaction, as well as closes out the
-``Session`` when complete, rolling back the transaction if any errors occur.
-
-Factory function ``sessionmaker()`` will return a **class**. In order to create
-a session this class has to be called. There are several ways how to do that.
-You can either capture the class from session maker, instantiate it and then
-assign to identifier (variable) or you can do it step by step having
-intermediate objects.
-
->>> Session = sessionmaker(bind=engine)
->>> session = Session()
-
-Or you can simplify the expression by calling class right away:
-
->>> session = sessionmaker(bind=engine)()
-
-Or using a bit more verbose, but explicit syntax:
-
->>> session = sessionmaker(bind=engine).__call__()
-
-Usage:
-
->>> Session = sessionmaker(engine)
->>>
->>> with Session() as session:
-...     session.add(object1)
-...     session.add(object2)
-...     session.commit()
-
-Context manager on ``with`` block exit will commit transaction and close the
-session automatically:
-
->>> Session = sessionmaker(engine)
->>>
->>> with Session.begin() as session:
-...     session.add(object1)
-...     session.add(object2)
+SQLAlchemy historically features two distinct styles of mapper configuration.
+The original mapping API is commonly referred to as “classical” style, whereas
+the more automated style of mapping is known as “declarative” style. SQLAlchemy
+now refers to these two mapping styles as imperative mapping and declarative
+mapping. Both styles may be used interchangeably, as the end result of each is
+exactly the same. [#sqlalchemyMappings]_
 
 
-Base
-----
-* Used for reflecting database tables in our program
-* Allows to manage and alter database tables
-* Declarative base (recommended)
-* Imperative base (legacy)
+Declarative Base
+----------------
+The Declarative Mapping is the typical way that mappings are constructed in
+modern SQLAlchemy. The most common pattern is to first construct a base class
+using the ``declarative_base()`` function, which will apply the declarative
+mapping process to all subclasses that derive from it. Below features a
+declarative base which is then used in a declarative table mapping
+[#sqlalchemyMappings]_:
 
-First import required dependencies:
-
+>>> from sqlalchemy import Column
+>>> from sqlalchemy import Integer, String
 >>> from sqlalchemy.ext.declarative import declarative_base
-
-Then create an engine:
-
+>>>
+>>>
 >>> Base = declarative_base()
+>>>
+>>> class User(Base):
+...     __tablename__ = 'user'
+...
+...     id = Column(Integer, primary_key=True),
+...     username = Column(String)
+...     password = Column(String)
+
+Above, the ``declarative_base()`` callable returns a new base class from which
+new classes to be mapped may inherit from, as above a new mapped class ``User``
+is constructed.
 
 
-Use Case - 0x01
+Imperative Base
 ---------------
->>> from sqlalchemy import create_engine
->>> from sqlalchemy.ext.declarative import declarative_base
->>> from sqlalchemy.orm import sessionmaker
+* Imperative (a.k.a. Classical) Mappings
+* Could be used to map pre-existing classes (od dataclasses) with Table
+
+An imperative or classical mapping refers to the configuration of a mapped
+class using the ``registry.map_imperatively()`` method, where the target class
+does not include any declarative class attributes. The “map imperative” style
+has historically been achieved using the ``mapper() ``function directly,
+however this function now expects that a ``sqlalchemy.orm.registry()`` is
+present [#sqlalchemyMappings]_.
+
+>>> from sqlalchemy import Table, Column
+>>> from sqlalchemy import Integer, String
+>>> from sqlalchemy.orm import registry
 >>>
 >>>
->>> DATABASE = 'sqlite:///tmp/myfile.db'
+>>> mapper_registry = registry()
 >>>
->>> engine = create_engine()
->>> session = sessionmaker(bind=engine).__call__()
->>> Base = declarative_base()
+>>> user_table = Table('user', mapper_registry.metadata,
+...     Column('id', Integer, primary_key=True),
+...     Column('firstname', String(50)),
+...     Column('lastname', String(50)),
+... )
+>>>
+>>> class User:
+>>>     pass
+>>>
+>>> mapper_registry.map_imperatively(User, user_table)
+
+Information about mapped attributes, such as relationships to other classes,
+are provided via the properties dictionary.
+
+
+Referemces
+----------
+.. [#sqlalchemyMappings] https://docs.sqlalchemy.org/en/14/orm/mapping_styles.html#orm-declarative-mapping

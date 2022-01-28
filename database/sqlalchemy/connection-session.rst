@@ -1,5 +1,5 @@
-Connection Engine
-=================
+Connection Session
+==================
 
 
 Rationale
