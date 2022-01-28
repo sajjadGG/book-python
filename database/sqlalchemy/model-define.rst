@@ -160,4 +160,4 @@ Use Case - 0x01
 
 References
 ----------
-.. [#sqlalchemyConstructor] https://docs.sqlalchemy.org/en/14/orm/mapping_styles.html#default-constructor
+.. [#sqlalchemyConstructor] https://docs.sqlalchemy.org/en/stable/orm/mapping_styles.html#default-constructor

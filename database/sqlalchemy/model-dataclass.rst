@@ -21,7 +21,7 @@ Use Case - 0x01
 ... class User:
 ...     __tablename__ = "user"
 ...     __sa_dataclass_metadata_key__ = "sa"
-
+...
 ...     id: int = field(init=False, metadata={"sa": Column(Integer, primary_key=True)})
 ...     name: str = field(default=None, metadata={"sa": Column(String(50))})
 ...     fullname: str = field(default=None, metadata={"sa": Column(String(50))})

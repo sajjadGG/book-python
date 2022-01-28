@@ -58,7 +58,7 @@ Imperative Base
 An imperative or classical mapping refers to the configuration of a mapped
 class using the ``registry.map_imperatively()`` method, where the target class
 does not include any declarative class attributes. The “map imperative” style
-has historically been achieved using the ``mapper() ``function directly,
+has historically been achieved using the ``mapper()`` function directly,
 however this function now expects that a ``sqlalchemy.orm.registry()`` is
 present [#sqlalchemyMappings]_.
 
@@ -84,6 +84,6 @@ Information about mapped attributes, such as relationships to other classes,
 are provided via the properties dictionary.
 
 
-Referemces
+References
 ----------
-.. [#sqlalchemyMappings] https://docs.sqlalchemy.org/en/14/orm/mapping_styles.html#orm-declarative-mapping
+.. [#sqlalchemyMappings] https://docs.sqlalchemy.org/en/stable/orm/mapping_styles.html#orm-declarative-mapping

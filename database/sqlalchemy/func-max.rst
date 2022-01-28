@@ -1,5 +1,5 @@
-Func Count
-==========
+Func Max
+========
 
 
 Rationale
