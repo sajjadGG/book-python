@@ -1,17 +1,27 @@
-Schema Metadata
-===============
+Schema Reflection
+=================
 
 
 Rationale
 ---------
+* SQLAlchemy allows for database reflection
+
+.. glossary::
+
+    Reflection
+        Loading Table objects based on reading from an existing database.
+
+SQLAlchemy tool ``Automap`` does the reflection of database and figures out
+how to do the mapping dynamically.
+
+There is third-party tool ``SQLAutoC ode`` that generates the files (Python
+code) for you based on introspected tables. This is more robust solution.
 
 
 Reflection
 ----------
 "Reflection" refers to loading Table objects based on reading from an existing
-database.
-
-In order to create a reflection, first create empty metadata object:
+database. In order to create a reflection, first create empty metadata object:
 
 >>> metadata2 = MetaData()
 
@@ -71,9 +81,14 @@ Or constraints:
 
 Currently supported constraints:
 
-    * ForeignKey
-    * Unique
-    * Check
+    * FOREIGNKEY
+    * UNIQUE
+    * CHECK
+
+Currently not supported:
+
+    * Functional Indexes (PostgreSQL)
+    * EXCLUDE (PostgreSQL)
 
 
 Reflecting an Entire Schema
@@ -90,16 +105,38 @@ Note, that this will produce a lot of database queries. The Tables objects
 are then in the metadata.tables collection:
 
 >>> metadata3.tables  # doctest: +NORMALIZE_WHITESPACE
-FacadeDict({'published': Table('published', MetaData(), Column('pub_id', INTEGER(), table=<published>, primary_key=True, nullable=False), Column('pub_timestamp', DATETIME(), table=<published>), Column('story_id', INTEGER(), ForeignKey('story.story_id'), table=<published>), Column('version_id', INTEGER(), ForeignKey('story.version_id'), table=<published>), schema=None), 'story': Table('story', MetaData(), Column('story_id', INTEGER(), table=<story>, primary_key=True, nullable=False), Column('version_id', INTEGER(), table=<story>, primary_key=True, nullable=False), Column('headline', VARCHAR(length=100), table=<story>, nullable=False), Column('body', TEXT(), table=<story>), schema=None), 'users': Table('users', MetaData(), Column('uid', INTEGER(), table=<users>, primary_key=True, nullable=False), Column('firstname', VARCHAR(), table=<users>, nullable=False), Column('lastname', VARCHAR(), table=<users>, nullable=False), schema=None)})
+FacadeDict({
+    'published': Table('published', MetaData(),
+                    Column('pub_id', INTEGER(), table=<published>, primary_key=True, nullable=False),
+                    Column('pub_timestamp', DATETIME(), table=<published>),
+                    Column('story_id', INTEGER(), ForeignKey('story.story_id'), table=<published>),
+                    Column('version_id', INTEGER(), ForeignKey('story.version_id'), table=<published>), schema=None),
+    'story': Table('story', MetaData(),
+                    Column('story_id', INTEGER(), table=<story>, primary_key=True, nullable=False),
+                    Column('version_id', INTEGER(), table=<story>, primary_key=True, nullable=False),
+                    Column('headline', VARCHAR(length=100), table=<story>, nullable=False),
+                    Column('body', TEXT(), table=<story>), schema=None),
+    'users': Table('users', MetaData(),
+                    Column('uid', INTEGER(), table=<users>, primary_key=True, nullable=False),
+                    Column('firstname', VARCHAR(), table=<users>, nullable=False),
+                    Column('lastname', VARCHAR(), table=<users>, nullable=False), schema=None)})
 
 >>> story = metadata3.tables['story']
 >>> published = metadata3.tables['published']
 
 >>> story  # doctest: +NORMALIZE_WHITESPACE
-Table('story', MetaData(), Column('story_id', INTEGER(), table=<story>, primary_key=True, nullable=False), Column('version_id', INTEGER(), table=<story>, primary_key=True, nullable=False), Column('headline', VARCHAR(length=100), table=<story>, nullable=False), Column('body', TEXT(), table=<story>), schema=None)
+Table('story', MetaData(),
+      Column('story_id', INTEGER(), table=<story>, primary_key=True, nullable=False),
+      Column('version_id', INTEGER(), table=<story>, primary_key=True, nullable=False),
+      Column('headline', VARCHAR(length=100), table=<story>, nullable=False),
+      Column('body', TEXT(), table=<story>), schema=None)
 
 >>> published  # doctest: +NORMALIZE_WHITESPACE
-Table('published', MetaData(), Column('pub_id', INTEGER(), table=<published>, primary_key=True, nullable=False), Column('pub_timestamp', DATETIME(), table=<published>), Column('story_id', INTEGER(), ForeignKey('story.story_id'), table=<published>), Column('version_id', INTEGER(), ForeignKey('story.version_id'), table=<published>), schema=None)
+Table('published', MetaData(),
+      Column('pub_id', INTEGER(), table=<published>, primary_key=True, nullable=False),
+      Column('pub_timestamp', DATETIME(), table=<published>),
+      Column('story_id', INTEGER(), ForeignKey('story.story_id'), table=<published>),
+      Column('version_id', INTEGER(), ForeignKey('story.version_id'), table=<published>), schema=None)
 
 This is useful if you have an existing database and you want to write queries
 against it.

@@ -16,14 +16,12 @@ does not need the connection it releases it back to the pool.
 A connection pool is a standard technique used to maintain long running
 connections in memory for efficient re-use, as well as to provide management
 for the total number of connections an application might use simultaneously.
-[#sqlalchemyDocPooling]_
-
 Particularly for server-side web applications, a connection pool is the
 standard way to maintain a 'pool' of active database connections in memory
 which are reused across requests. [#sqlalchemyDocPooling]_
 
 SQLAlchemy includes several connection pool implementations which integrate
-with the Engine. They can also be used directly for applications that want
+with the ``Engine``. They can also be used directly for applications that want
 to add pooling to an otherwise plain DBAPI approach. [#sqlalchemyDocPooling]_
 
 
@@ -164,19 +162,18 @@ Usage:
 
 >>> from sqlalchemy.pool import QueuePool
 >>>
+>>>
 >>> engine = create_engine(DATABASE, poolclass=QueuePool)
 
 
 Keep Alive
 ----------
-* Source: [#sqlalchemyDocPooling]_
-
 The connection pool has the ability to refresh individual connections as
 well as its entire set of connections, setting the previously pooled
 connections as 'invalid'. A common use case is allow the connection pool to
 gracefully recover when the database server has been restarted, and all
 previously established connections are no longer functional. There are two
-approaches to this: pessimistic and optimistic.
+approaches to this: pessimistic and optimistic [#sqlalchemyDocPooling]_.
 
 The pessimistic approach refers to emitting a test statement on the SQL
 connection at the start of each connection pool checkout, to test that the
@@ -191,7 +188,7 @@ checked out from the pool. It is critical to note that the pre-ping approach
 does not accommodate for connections dropped in the middle of transactions
 or other SQL operations. If the database becomes unavailable while a
 transaction is in progress, the transaction will be lost and the database
-error will be raised.
+error will be raised [#sqlalchemyDocPooling]_.
 
 >>> engine = create_engine(DATABASE, pool_pre_ping=True)
 
@@ -201,7 +198,7 @@ is detected as a 'disconnect' situation, the connection will be immediately
 recycled, and all other pooled connections older than the current time are
 invalidated, so that the next time they are checked out, they will also be
 recycled before use. This statement is not logged in the SQL echo output,
-and will not show up in SQLAlchemy's engine logging.
+and will not show up in SQLAlchemy's engine logging [#sqlalchemyDocPooling]_.
 
 When pessimistic handling is not employed, as well as when the database is
 shutdown and/or restarted in the middle of a connection's period of use
@@ -215,19 +212,19 @@ Connection attempts to use a DBAPI connection, and an exception is raised
 that corresponds to a 'disconnect' event, the connection is invalidated. The
 Connection then calls the ``Pool.recreate()`` method, effectively invalidating
 all connections not currently checked out so that they are replaced with new
-ones upon next checkout.
+ones upon next checkout [#sqlalchemyDocPooling]_.
 
 An additional setting that can augment the 'optimistic' approach is to set
 the pool recycle parameter. This parameter prevents the pool from using a
 particular connection that has passed a certain age, and is appropriate for
 database backends such as MySQL that automatically close connections that
-have been stale after a particular period of time:
+have been stale after a particular period of time [#sqlalchemyDocPooling]_:
 
 >>> engine = create_engine(DATABASE, pool_recycle=3600)
 
 Above, any DBAPI connection that has been open for more than one hour will
 be invalidated and replaced, upon next checkout. Note that the invalidation
-only occurs during checkout.
+only occurs during checkout [#sqlalchemyDocPooling]_.
 
 
 Further Reading
