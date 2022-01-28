@@ -114,8 +114,11 @@ SQLAlchemy
     sqlalchemy/query-profile.rst
 
     sqlalchemy/func-about.rst
-    sqlalchemy/func-count.rst
-    sqlalchemy/func-max.rst
+    sqlalchemy/func-date.rst
+    sqlalchemy/func-group.rst
+    sqlalchemy/func-numeric.rst
+    sqlalchemy/func-string.rst
+    sqlalchemy/func-system.rst
 
 
 Case Study

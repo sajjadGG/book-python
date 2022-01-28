@@ -1,6 +1,0 @@
-Func Max
-========
-
-
-Rationale
----------
