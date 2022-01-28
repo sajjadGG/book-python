@@ -4,6 +4,10 @@ Connection Engine
 
 Rationale
 ---------
+.. glossary::
+
+    base
+        Model responsible for mapping objects with database
 
 
 Session

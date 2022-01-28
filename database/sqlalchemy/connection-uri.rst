@@ -4,13 +4,35 @@ Connection URI
 
 Rationale
 ---------
-Good practice will suggest to split configuration parameter from its actual
-call. Therefore you can place configuration in separate file which can be
-imported.
-
 Different database drivers use different connection parameters (arguments to
 the ``.connect()`` method. SQLAlchemy uses consistent URL format (DSN) known
-from Java JDBC connections.
+from JDBC or ODBC connections.
+
+
+Data Source Name
+----------------
+.. glossary::
+
+    DSN
+    Data Source Name
+    Database Source Name
+        A string that has an associated data structure used to describe a
+        connection to a data source [#wikipediaDataSourceName]_
+
+Most commonly used in connection with ODBC, DSNs also exist for JDBC and for
+other data access mechanisms. The term often overlaps with "connection string".
+Most systems do not make a distinction between DSNs or connection strings and
+the term can often be used interchangeably [#wikipediaDataSourceName]_.
+
+DSN attributes may include, but are not limited to:
+
+    * the name of the data source
+    * the location of the data source
+    * the name of a database driver which can access the data source
+    * a user ID for data access (if required)
+    * a user password for data access (if required)
+
+The system administrator of a client machine generally creates a separate DSN for each relevant data source.
 
 Example:
 
@@ -62,7 +84,9 @@ Aiosqlite:
 .. note:: Async connections require async engine:
 
           >>> from sqlalchemy.ext.asyncio import create_async_engine
-          >>> engine = create_async_engine('sqlite+aiosqlite:///myfile.db')
+          >>>
+          >>> DATABASE = 'sqlite+aiosqlite:///myfile.db'
+          >>> engine = create_async_engine(DATABASE)
 
 SQLite does not have built-in DATE, TIME, or DATETIME types, and pysqlite does
 not provide out of the box functionality for translating values between Python
@@ -113,7 +137,9 @@ PostgreSQL async [#sqlalchemyPostgresql]_, [#githubAsyncpg]_:
 .. note:: Async connections require async engine:
 
           >>> from sqlalchemy.ext.asyncio import create_async_engine
-          >>> engine = create_async_engine('postgresql+asyncpg://myusername:mypassword@myhost:5432/mydatabase')
+          >>>
+          >>> DATABASE = 'postgresql+asyncpg://myusername:mypassword@myhost:5432/mydatabase'
+          >>> engine = create_async_engine(DATABASE)
 
 Psycopg2cffi (implemented with cffi layer for portability):
 
@@ -190,7 +216,9 @@ Asyncmy:
 .. note:: Async connections require async engine:
 
           >>> from sqlalchemy.ext.asyncio import create_async_engine
-          >>> engine = create_async_engine('mysql+asyncmy://myusername:mypassword@myhost:3306/mydatabase?charset=utf8mb4')
+          >>>
+          >>> DATABASE = 'mysql+asyncmy://myusername:mypassword@myhost:3306/mydatabase?charset=utf8mb4'
+          >>> engine = create_async_engine(DATABASE)
 
 Oracle
 ------
@@ -262,7 +290,14 @@ Will generate:
 >>> DATABASE = 'mssql+pyodbc://myusername:mypassword@myhost:49242/mydatabase?driver=ODBC+Driver+17+for+SQL+Server&authentication=ActiveDirectoryIntegrated'
 
 
+Good Practice
+-------------
+* Split configuration parameter from its call
+* Place configuration in separate file which can be imported
+
+
 References
 ----------
 .. [#sqlalchemyPostgresql] https://docs.sqlalchemy.org/en/stable/dialects/postgresql.html
 .. [#githubAsyncpg] https://magicstack.github.io/asyncpg/
+.. [#wikipediaDataSourceName] https://en.wikipedia.org/wiki/Data_source_name

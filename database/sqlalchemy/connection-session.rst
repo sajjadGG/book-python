@@ -4,17 +4,27 @@ Connection Engine
 
 Rationale
 ---------
+* 1.0 style (legacy)
+* 2.0 style (with context managers)
+
+.. glossary::
+
+    session
+        Manages persistence operations for ORM-mapped objects
 
 
-Session
--------
-* 1.0 style
-* 2.0 style with context managers
+SetUp
+-----
+>>> from sqlalchemy import create_engine
+>>>
+>>>
+>>> DATABASE = 'sqlite:///:memory:'
+>>> engine = create_engine(DATABASE)
+
+
+Sessionmaker
+------------
 * ``Session`` manages persistence operations for ORM-mapped objects
-
-First import required dependencies:
-
->>> from sqlalchemy.orm import sessionmaker
 
 ``sessionmaker`` acts as a factory for ``Session`` objects in the same way as
 an ``Engine`` acts as a factory for ``Connection`` objects. In this way it also
@@ -28,6 +38,16 @@ You can either capture the class from session maker, instantiate it and then
 assign to identifier (variable) or you can do it step by step having
 intermediate objects.
 
+In order to use ``sessionmaker()`` you have to import it:
+
+>>> from sqlalchemy.orm import sessionmaker
+
+
+1.x Style
+---------
+To crate a session object simply use the ``sessionmaker()`` factory passing
+(binding) an engine instance:
+
 >>> Session = sessionmaker(bind=engine)
 >>> session = Session()
 
@@ -39,14 +59,13 @@ Or using a bit more verbose, but explicit syntax:
 
 >>> session = sessionmaker(bind=engine).__call__()
 
-Usage:
 
+2.x Style
+---------
 >>> Session = sessionmaker(engine)
 >>>
 >>> with Session() as session:
-...     session.add(object1)
-...     session.add(object2)
-...     session.commit()
+...     # do something
 
 Context manager on ``with`` block exit will commit transaction and close the
 session automatically:
@@ -54,20 +73,19 @@ session automatically:
 >>> Session = sessionmaker(engine)
 >>>
 >>> with Session.begin() as session:
-...     session.add(object1)
-...     session.add(object2)
+...     # do something
 
 
-Use Case - 0x01
----------------
+Example
+-------
 >>> from sqlalchemy import create_engine
 >>> from sqlalchemy.orm import sessionmaker
 >>>
 >>>
 >>> DATABASE = 'sqlite:///:memory:'
 >>>
->>> engine = create_engine()
+>>> engine = create_engine(DATABASE)
 >>> session = sessionmaker(bind=engine).__call__()
 >>>
 >>> with session.begin() as db:
-...     # do something
+...     db.execute('SELECT * FROM users')

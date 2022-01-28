@@ -35,20 +35,6 @@ Installation
 True
 
 
-Nomenclature
-------------
-.. glossary::
-
-    engine
-        Database connection
-
-    session
-        Allows for transactions
-
-    base
-        Model responsible for mapping objects with database
-
-
 Architecture
 ------------
 * Core
@@ -56,23 +42,20 @@ Architecture
 * Plugin structure with injection points
 
 
-.. figure:: sqlalchemy-architecture.png
+.. figure:: img/sqlalchemy-architecture.png
 
-    SQLAlchemy architecture. Source: [#ytSQLAlchemy20]_
+    SQLAlchemy architecture [#ytSQLAlchemy20]_
 
 .. figure:: img/sqlalchemy-onion.png
 
-    SQLAlchemy onion chart depicts layers. Source: [#ytSQLAlchemy20]_
-
-
-Project Structure
------------------
-* What is the SQLAlchemy project layout
-* Where to store configuration (host, port, schema, username, password)
+    SQLAlchemy onion chart depicts layers [#ytSQLAlchemy20]_
 
 
 Good Practices
 --------------
+* Project Structure
+* What is the SQLAlchemy project layout
+* Where to store configuration (host, port, schema, username, password)
 
 
 References
