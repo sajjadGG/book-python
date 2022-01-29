@@ -1,4 +1,4 @@
-ESPN Standings
+Standings ESPN
 ==============
 
 
@@ -9,7 +9,7 @@ Rationale
 
 Code
 ----
-.. literalinclude:: src/espn-standings.py
+.. literalinclude:: src/standings-espn.py
     :language: python
 
 

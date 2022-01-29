@@ -109,6 +109,8 @@ Case Studies
     case-studies/covid19.rst
     case-studies/esa-astronauts.rst
     case-studies/apollo11.rst
-    case-studies/espn-standings.rst
-    case-studies/livescores.rst
+    case-studies/aatc-sensors.rst
+    case-studies/standings-nba.rst
+    case-studies/standings-espn.rst
+    case-studies/standings-livescores.rst
     case-studies/phones.rst
