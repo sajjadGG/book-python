@@ -254,7 +254,10 @@
     nav #cite label {color: var(--menu-text); font-weight: bold; margin-top: 1rem}
     nav #cite blockquote {margin-top: 1rem}
 
-    /* left navigation menu */
+    /* left navigation menu hide 3rd level toc-tree entries */
+    ul li.toctree-l3 {display: none}
+
+    /* left navigation menu donate button */
     nav #donate {position: absolute; left: 5rem; bottom: 0; text-align: center}
     nav #donate input[type="image"] {height: 50px}
 }
