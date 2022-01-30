@@ -91,6 +91,7 @@ only when an environment variable ``SQLALCHEMY_WARN_20`` is set to either of
 
     SQLALCHEMY_WARN_20=1 python -W always::DeprecationWarning myfile.py
 
+
 Good Practices
 --------------
 * Project Structure
@@ -116,6 +117,22 @@ Alternatives
 .. figure:: img/sqlalchemy-about-databases.png
 
     Database popularity in Python community [#PythonDeveloperSurvey2020]_
+
+
+Extensions
+----------
+Schema Migration:
+
+    * https://alembic.sqlalchemy.org
+
+Database rows versioning:
+
+    * https://sqlalchemy-continuum.readthedocs.io/
+
+
+Further Reading
+---------------
+* https://github.com/dahlia/awesome-sqlalchemy
 
 
 References

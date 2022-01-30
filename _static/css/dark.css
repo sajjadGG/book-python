@@ -34,6 +34,9 @@
     --tip: #45C587;
     --note: #6371AC;
 
+
+    --menu-width: 300px;
+    --content-width: 800px;
 }
 
 @media screen {
@@ -49,7 +52,7 @@
     ::selection {color: var(--selection-text); background: var(--selection-background)}
 
     /* RTD theme's default is 800px as max width for the content */
-    .wy-nav-content {max-width: 800px; background: var(--body-background)}
+    .wy-nav-content {max-width:var(--content-width); background: var(--body-background)}
     .wy-nav-content-wrap {background: var(--body-background)}
     .wy-nav-content li {list-style: disc; !important; margin-left: 20px}
     .wy-nav-content li p {margin: 0}
@@ -84,7 +87,7 @@
     .wy-side-nav-search input[type=text] {border: none !important; border-radius: 0}
 
     /* left vertical menu */
-    .wy-nav-side {background: var(--menu-background); width: 300px}
+    .wy-nav-side {background: var(--menu-background); width: var(--menu-width)}
     .wy-nav-side a {color: var(--menu-header) !important}
     .wy-nav-side a:before {content: none !important}
 
@@ -246,10 +249,19 @@
     .nboutput .prompt {display: none}
     .nboutput .output_area {color: var(--code-output); }
 
-    nav #cite {position: absolute; bottom: 0; padding: 1rem; background: var(--menu-background)}
+    /* left navigation menu citation */
+    nav #cite {position: absolute; bottom: 3rem; padding: 1rem; background: var(--menu-background)}
     nav #cite label {color: var(--menu-text); font-weight: bold; margin-top: 1rem}
     nav #cite blockquote {margin-top: 1rem}
 
-    nav #donate {text-align: center}
+    /* left navigation menu */
+    nav #donate {position: absolute; left: 5rem; bottom: 0; text-align: center}
     nav #donate input[type="image"] {height: 50px}
+}
+
+/* mobile devices */
+@media screen and (max-width: 1100px) {
+    nav #cite {display: none}
+    nav #donate input[type="image"] {height: 40px;}
+    .rst-versions  {display: none !important;}
 }
