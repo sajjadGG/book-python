@@ -246,5 +246,8 @@
     .nboutput .prompt {display: none}
     .nboutput .output_area {color: var(--code-output); }
 
-    nav#cite {position: absolute; bottom: 5rem; padding: 1rem;}
+    nav #cite label {color: var(--menu-text); margin-bottom: 1rem}
+    nav #cite blockquote {position: absolute; bottom: 5rem; padding: 1rem}
+    nav#donate {text-align: center}
+    nav#donate img {height: 75px}
 }
