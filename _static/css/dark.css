@@ -245,4 +245,6 @@
     .nbinput .prompt pre {display: none}
     .nboutput .prompt {display: none}
     .nboutput .output_area {color: var(--code-output); }
+
+    nav#cite {position: absolute; bottom: 5rem; padding: 1rem;}
 }

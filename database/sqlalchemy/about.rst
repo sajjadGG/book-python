@@ -70,7 +70,11 @@ Architecture
 
     SQLAlchemy onion chart depicts layers [#ytSQLAlchemy20]_
 
-.. figure:: img/sqlalchemy-unit-of-work.png
+.. figure:: img/sqlalchemy-architecture-unitofwork-1.png
+
+    Unit of Work design pattern [#Laskar2021]_
+
+.. figure:: img/sqlalchemy-architecture-unitofwork-2.png
 
     Unit of Work design pattern [#Phan2019]_
 
@@ -110,3 +114,4 @@ References
 .. [#SQLModel] https://sqlmodel.tiangolo.com
 .. [#DjangoORM] https://docs.djangoproject.com/en/stable/topics/db/
 .. [#Phan2019] Phan, Manh. Unit of Work Pattern. Year: 2019. Retrieved: 2022-01-30. URL: https://ducmanhphan.github.io/
+.. [#Laskar2021] Ashif Iqbal Laskar. Unit-of-Work-Design-Pattern. Year: 2021. Retrieved: 2022-01-30. URL: http://www.ashifiqbal.com/technology/entity-framework/unit-of-work-design-pattern/
