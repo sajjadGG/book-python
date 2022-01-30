@@ -4,7 +4,8 @@ Micro-benchmarking
 
 .. epigraph::
 
-    We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil
+    We should forget about small efficiencies, say about 97% of the time:
+    premature optimization is the root of all evil
     -- Donald Knuth
 
 .. figure:: img/performance-optimization-knuth.jpg

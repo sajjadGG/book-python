@@ -81,6 +81,7 @@ The constructor also applies to imperative mappings [#sqlalchemyConstructor]_.
 Stringification
 ---------------
 * ``__str__()`` method
+* ``__repr__()`` method
 
 
 Create Schema
