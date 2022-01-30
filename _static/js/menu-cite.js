@@ -39,10 +39,10 @@ const CITATION = `<div id="cite" itemscope itemtype="http://schema.org/Scholarly
         
         <!-- url -->
         Retrived: <time itemprop="dateModified" datetime="${datetime}">${date}</time>.
-        URL: <a itemprop="url" href="${url}">${url}</a>
+        URL: <link itemprop="url" href="${url}">${url}</link>
         
         <!-- license -->
-        License: <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">License CC-BY-SA-4.0</a>
+        License: <link itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">License CC-BY-SA-4.0</link>
     </blockquote>`;
 
 
