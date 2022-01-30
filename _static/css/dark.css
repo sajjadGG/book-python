@@ -246,9 +246,11 @@
     .nboutput .prompt {display: none}
     .nboutput .output_area {color: var(--code-output); }
 
-    nav #cite {padding: 1rem}
+    nav #cite {padding: 1rem; background: var(--menu-background)}
     nav #cite label {color: var(--menu-text); font-weight: bold; margin-bottom: 1rem}
     nav #cite blockquote {position: absolute; bottom: 5rem}
+    nav #cite a {color: var(--menu-text)}
+    nav #cite a:hover {text-decoration: none}
 
     nav #donate {margin-top: 2rem; text-align: center}
     nav #donate img {height: 75px}

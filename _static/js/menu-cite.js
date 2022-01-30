@@ -3,7 +3,7 @@ let year = today.getFullYear()
 let datetime = today.toISOString()
 let date = datetime.split('T')[0]
 let url = window.location.href
-let version = $('footer span.commit code').text()
+let revision = $('footer span.commit code').text()
 let chapter = $('div[itemprop="articleBody"] h1').text()
 
 const CITATION = `<div id="cite" itemscope itemtype="http://schema.org/ScholarlyArticle">
@@ -30,15 +30,15 @@ const CITATION = `<div id="cite" itemscope itemtype="http://schema.org/Scholarly
         
         <!-- publisher -->
         <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-            <span itemprop="name">Analog Astronaut Training Center</span>
+            <span itemprop="name">Analog Astronaut Training Center</span>.
         </span>
         
         <!-- version -->
-        ISBN: <span itemprop="isbn">978-83-957186-2-5</span>
-        Revision: <span itemprop="version">${version}</span>
+        ISBN: <span itemprop="isbn">978-83-957186-2-5</span>.
+        Revision: <span itemprop="version">${revision}</span>.
         
         <!-- url -->
-        Retrived: <time itemprop="dateModified" datetime="${datetime}">${datetime}</time>
+        Retrived: <time itemprop="dateModified" datetime="${datetime}">${date}</time>.
         URL: <a itemprop="url" href="${url}">${url}</a>
         
         <!-- license -->
