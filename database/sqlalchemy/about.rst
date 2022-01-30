@@ -79,6 +79,18 @@ Architecture
     Unit of Work design pattern [#Phan2019]_
 
 
+1.x vs 2.x
+----------
+* ``future=True`` flag to ``create_engine()``
+
+For SQLAlchemy 1.4, the ``RemovedIn20Warning`` deprecation class is emitted
+only when an environment variable ``SQLALCHEMY_WARN_20`` is set to either of
+``true`` or ``1``.
+
+.. code-block:: console
+
+    SQLALCHEMY_WARN_20=1 python -W always::DeprecationWarning myfile.py
+
 Good Practices
 --------------
 * Project Structure

@@ -23,11 +23,11 @@ Rationale
 
 Which Version?
 --------------
-* You should use newest official Python version
+* You should use newest official Python version [#pyDevGuideVersions]_
 * Source: https://devguide.python.org/#status-of-python-branches
 * Source: https://www.python.org/downloads/
 
-.. csv-table:: Python Versions
+.. csv-table:: Python Versions [#pyDevGuideVersions]_
     :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
     :widths: 5, 15, 10, 20, 20, 30
 
@@ -37,7 +37,7 @@ Which Version?
     "3.9",  ":pep:`596`", "bugfix",      "2020-10-05", "2025-10",    "Łukasz Langa"
     "3.8",  ":pep:`569`", "security",    "2019-10-20", "2024-10",    "Łukasz Langa"
     "3.7",  ":pep:`537`", "security",    "2018-06-27", "2023-06-27", "Ned Deily"
-    "3.6",  ":pep:`494`", "security",    "2016-12-23", "2021-12-23", "Ned Deily"
+    "3.6",  ":pep:`494`", "end-of-life", "2016-12-23", "2021-12-23", "Ned Deily"
     "3.5",  ":pep:`478`", "end-of-life", "2015-09-13", "2020-09-13", "Larry Hastings"
     "3.4",  ":pep:`429`", "end-of-life", "2014-03-16", "2019-03-16", "Larry Hastings"
     "3.3",  ":pep:`398`", "end-of-life", "2012-09-29", "2017-09-29", "Georg Brandl"
@@ -165,6 +165,10 @@ Python Developer Survey
 * https://insights.stackoverflow.com/survey/2019
 * https://insights.stackoverflow.com/survey/2018
 
+
+References
+----------
+.. [#pyDevGuideVersions] https://devguide.python.org/#status-of-python-branches
 
 Assignments
 -----------
