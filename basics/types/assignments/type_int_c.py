@@ -64,11 +64,6 @@ Tests:
 m = 1
 km = 1000 * m
 
-ARMSTRONG_LIMIT = 19 * km
-STRATOSPHERE = 20 * km
-USAF_SPACE = 80 * km
-IAF_SPACE = 100 * km
-
 # int: 19 kilometers in meters
 armstrong_limit = ...
 
@@ -82,7 +77,7 @@ usaf_space = ...
 iaf_space = ...
 
 # Solution
-armstrong_limit = ARMSTRONG_LIMIT // m
-stratosphere = STRATOSPHERE // m
-usaf_space = USAF_SPACE // m
-iaf_space = IAF_SPACE // m
+armstrong_limit = 19*km // m
+stratosphere = 20*km // m
+usaf_space = 80*km // m
+iaf_space = 100*km // m

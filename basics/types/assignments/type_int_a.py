@@ -62,10 +62,6 @@ Tests:
 Celsius = 1
 Kelvin = 273
 
-MARS_MAX = 20 * Celsius
-MARS_MIN = -153 * Celsius
-MARS_AVG = -63 * Celsius
-
 # int: 20 Celsius in Kelvin
 mars_max = ...
 
@@ -76,6 +72,6 @@ mars_min = ...
 mars_avg = ...
 
 # Solution
-mars_max = MARS_MAX + Kelvin
-mars_min = MARS_MIN + Kelvin
-mars_avg = MARS_AVG + Kelvin
+mars_max = 20*Celsius + Kelvin
+mars_min = -153*Celsius + Kelvin
+mars_avg = -63*Celsius + Kelvin
