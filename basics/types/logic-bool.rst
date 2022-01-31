@@ -124,6 +124,7 @@ False
 >>> bool(set())
 False
 
+
 Comparison
 ----------
 * ``x < y`` - Less than
@@ -165,6 +166,20 @@ True
 False
 >>>
 >>> x != y
+True
+
+
+Negation
+--------
+.. code-block:: text
+
+    ~1 -> 0
+    ~0 -> 1
+
+>>> not True
+False
+
+>>> not False
 True
 
 
