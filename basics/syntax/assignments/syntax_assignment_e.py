@@ -12,6 +12,9 @@ Polish:
     1. Zdefiniuj zmienną `result` z wartością None
     2. Uruchom doctesty - wszystkie muszą się powieść
 
+Hint:
+    * Note that None is capitalized
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

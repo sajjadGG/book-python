@@ -127,6 +127,28 @@ have a huge impact on describing the intent of what you want to achieve with
 the code.
 
 
+Types
+-----
+This concept is only briefly described here. More information will be in
+upcoming chapters:
+
+Basic types:
+
+>>> data = 1                 # int
+>>> data = 1.2               # float
+>>> data = True              # bool
+>>> data = False             # bool
+>>> data = None              # NoneType
+>>> data = 'abc'             # str
+
+Sequences:
+
+>>> data = [1, 2, 3]         # list
+>>> data = (1, 2, 3)         # tuple
+>>> data = {1, 2, 3}         # set
+>>> data = {'a': 1, 'b': 2}  # dict
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/syntax_assignment_a.py

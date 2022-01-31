@@ -10,9 +10,9 @@ or minimal ``int`` value.
 
 Syntax
 ------
->>> data = 1337
->>> data = +1337
->>> data = -1337
+>>> data = 1
+>>> data = +1
+>>> data = -1
 
 You can use ``_`` for easier read especially with big numbers:
 
@@ -88,46 +88,59 @@ Traceback (most recent call last):
 ValueError: invalid literal for int() with base 10: '-13,37'
 
 
-Rounding
---------
-Builtin function ``int()`` does not round numbers:
-
->>> int(1.11111)
-1
->>>
->>> int(1.9999)
-1
-
-Builtin function ``round()`` does that:
-
->>> round(1.11111)
-1
->>>
->>> round(1.9999)
-2
-
-
 Type Checking
 -------------
 * ``type()`` - Returns type of an argument
 
->>> type(1)
+>>> x = 1
+>>>
+>>> type(x)
 <class 'int'>
 >>>
->>> type(+1)
-<class 'int'>
->>>
->>> type(-1)
-<class 'int'>
+>>> type(x) is int
+True
 
->>> type(0)
-<class 'int'>
+>>> x = 1
 >>>
->>> type(+0)
-<class 'int'>
+>>> isinstance(x, int)
+
+
+Rounding
+--------
+Builtin function ``int()`` does not round numbers:
+
+>>> int(1.111)
+1
 >>>
->>> type(-0)
-<class 'int'>
+>>> int(1.999)
+1
+
+Builtin function ``round()`` does that:
+
+>>> round(1.111)
+1
+>>>
+>>> round(1.999)
+2
+
+
+Built-in Functions
+------------------
+Absolute value:
+
+>>> abs(1)
+1
+>>>
+>>> abs(-1)
+1
+
+Power (the same as ``**``):
+
+>>> pow(2, 4)
+16
+>>>
+>>> pow(16, 1/2)
+4.0
 
 
 Use Case - 0x01
@@ -172,6 +185,9 @@ Assignments
     :caption: :download:`Solution <assignments/type_int_e.py>`
     :end-before: # Solution
 
+
+Homework
+--------
 .. literalinclude:: assignments/type_int_f.py
     :caption: :download:`Solution <assignments/type_int_f.py>`
     :end-before: # Solution

@@ -9,38 +9,80 @@ Syntax
 >>> data = -1.337
 
 
-Notation
---------
-Without leading or trailing zero. Used by ``numpy``.
+Without Zero Notation
+---------------------
+* Without leading or trailing zero. Used by ``numpy``.
 
->>> data = 69.
->>> print(data)
-69.0
+Leading zero:
 
 >>> data = .44
 >>> print(data)
 0.44
 
-Engineering notation:
+Trailing zero:
 
->>> million = 1e6
->>> print(million)
+>>> data = 69.
+>>> print(data)
+69.0
+
+
+Engineering Notation
+--------------------
+* The exponential is a number divisible by 3
+* Allows the numbers to explicitly match their corresponding SI prefixes
+* The E (or e) should not be confused with the exponential ``e`` which holds
+  a completely different significance
+
+.. csv-table:: Engineering notation
+    :header: "Name", "Symbol", "Base", "Value"
+
+    "yotta", "Y", "1e24",  "1000000000000000000000000.0"
+    "zetta", "Z", "1e21",  "1000000000000000000000.0"
+    "exa",   "E", "1e18",  "1000000000000000000.0"
+    "peta",  "P", "1e15",  "1000000000000000.0"
+    "tera",  "T", "1e12",  "1000000000000.0"
+    "giga",  "G", "1e9",   "1000000000.0"
+    "mega",  "M", "1e6",   "1000000.0"
+    "kilo",  "k", "1e3",   "1000.0"
+    "",      "" , "1e0",   "1.0"
+    "milli", "m", "1e−3",  "0.001.0"
+    "micro", "μ", "1e−6",  "0.000001.0"
+    "nano",  "n", "1e−9",  "0.000000001.0"
+    "pico",  "p", "1e−12", "0.000000000001.0"
+    "femto", "f", "1e−15", "0.000000000000001.0"
+    "atto",  "a", "1e−18", "0.000000000000000001.0"
+    "zepto", "z", "1e−21", "0.000000000000000000001.0"
+    "yocto", "y", "1e−24", "0.000000000000000000000001.0"
+
+>>> x = 1e6
+>>> print(x)
 1000000.0
 >>>
->>> million = 1E6
->>> print(million)
+>>> x = 1E6
+print(x)
 1000000.0
 
->>> 1e6
+>>> x = +1e6
+>>> print(x)
 1000000.0
 >>>
->>> +1e6
-1000000.0
->>>
->>> -1e6
+>>> x = -1e6
+>>> print(x)
 -1000000.0
 
-Scientific notation:
+>>> x = 1e-3
+>>> print(x)
+0.001
+>>>
+>>> x = 1e-6
+>>> print(x)
+1e-06
+
+
+Scientific notation
+-------------------
+* The E (or e) should not be confused with the exponential ``e`` which holds
+  a completely different significance
 
 >>> 1e1
 10.0
@@ -172,6 +214,32 @@ Pi number is 3
 11
 
 
+Type Checking
+-------------
+>>> x = 1.2
+>>>
+>>> type(x)
+<class 'float'>
+>>>
+>>> x = 1.2
+>>> type(x) is float
+True
+>>>
+>>> type(x) in (int, float)
+True
+
+>>> x = 1.2
+>>>
+>>> isinstance(x, float)
+True
+>>>
+>>> isinstance(x, (int,float))
+True
+>>>
+>>> isinstance(x, int|float)  # since 3.10
+True
+
+
 Built-in Functions
 ------------------
 Builtin function ``pow()`` raises number to the ``n-th`` power.
@@ -270,6 +338,9 @@ Assignments
     :caption: :download:`Solution <assignments/type_float_e.py>`
     :end-before: # Solution
 
+
+Homework
+--------
 .. literalinclude:: assignments/type_float_f.py
     :caption: :download:`Solution <assignments/type_float_f.py>`
     :end-before: # Solution

@@ -19,26 +19,79 @@ Traceback (most recent call last):
 SyntaxError: unterminated string literal (detected at line 1)
 
 
-Printing Values
----------------
+String Interpolation
+--------------------
+* String interpolation will find and substitute variable
+* F-string (since Python 3.6)
+* ``str.format()`` (since Python 3.0)
+* %-string (legacy)
+* More information in `String Literals`
+
+>>> name = 'Mark'
+>>> result = 'Hello {name}'
+>>> result
+'Hello {name}'
+
+F-string (preferred):
+
+>>> name = 'Mark'
+>>> result = f'Hello {name}'
+>>> result
+'Hello Mark'
+
+String format (legacy):
+
+>>> name = 'Mark'
+>>> result = 'Hello {}'.format(name)
+>>> result
+'Hello Mark'
+
+>>> name = 'Mark'
+>>> result = 'Hello {0}'.format(name)
+>>> result
+'Hello Mark'
+
+>>> name = 'Mark'
+>>> result = 'Hello {x}'.format(x=name)
+>>> result
+'Hello Mark'
+
+%-format (legacy):
+
+>>> name = 'Mark'
+>>> result = 'Hello %s' % name
+>>> result
+'Hello Mark'
+
+
+Print
+-----
 * Prints on the screen
-* f-string formatting for variable substitution
+* Print string
+* Print variable
+* Print interpolated string
 * More information in `Builtin Printing`
 
->>> print('My name... José Jiménez')
-My name... José Jiménez
+Print string:
 
->>> name = 'José Jiménez'
->>> print(name)
-José Jiménez
+>>> print('Hello World')
+Hello World
 
->>> name = 'José Jiménez'
->>> print('My name... {name}')
-My name... {name}
+Print variable:
 
->>> name = 'José Jiménez'
->>> print(f'My name... {name}')
-My name... José Jiménez
+>>> text = 'Hello World'
+>>> print(text)
+Hello World
+
+Print interpolated string:
+
+>>> name = 'Mark'
+>>> print('Hello {name}')
+Hello {name}
+
+>>> name = 'Mark'
+>>> print(f'Hello {name}')
+Hello Mark
 
 
 End of Lines

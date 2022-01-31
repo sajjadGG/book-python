@@ -5,7 +5,7 @@
 * Time: 2 min
 
 English:
-    1. Define `result` with text 'Hello XXX'
+    1. Define `result` with text 'Hello NAME'
     2. Insted `NAME` substitute "Mark Watney"
     3. To substitute use f-string notation and `{variable}`
     4. Run doctests - all must succeed

@@ -12,6 +12,9 @@ Polish:
     1. Zdefiniuj zmienną `result` z wartością True
     2. Uruchom doctesty - wszystkie muszą się powieść
 
+Hint:
+    * Note that True is capitalized
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

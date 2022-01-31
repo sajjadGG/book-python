@@ -7,7 +7,7 @@ let revision = $('footer span.commit code').text()
 let chapter = $('div[itemprop="articleBody"] h1').text()
 
 const CITATION = `<div id="cite" itemscope itemtype="http://schema.org/ScholarlyArticle">
-    <label for="citation">Cite this page:</label>
+    <label for="citation">Cite current page:</label>
     <blockquote itemprop="citation" id="citation">
     
         <!-- author -->
@@ -42,7 +42,7 @@ const CITATION = `<div id="cite" itemscope itemtype="http://schema.org/Scholarly
         URL: <link itemprop="url" href="${url}">${url}</link>
         
         <!-- license -->
-        License: <link itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">License CC-BY-SA-4.0</link>
+        License: <link itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</link>
     </blockquote>`;
 
 
