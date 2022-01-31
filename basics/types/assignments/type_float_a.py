@@ -11,8 +11,9 @@ English:
     3. Calculate tax and gross values
     4. To calculate tax, multiply net times VAT
     5. To calculate gross multiply net times VAT plus 1
-    6. Mind the operator precedence
-    7. Run doctests - all must succeed
+    6. Result must be in PLN
+    7. Mind the operator precedence
+    8. Run doctests - all must succeed
 
 Polish:
     1. Cena usługi wynosi 100.00 PLN netto
@@ -20,8 +21,9 @@ Polish:
     3. Oblicz wartości podatku oraz cenę brutto
     4. Aby obliczyć podatek, pomnóż cenę netto razy stawkę VAT
     5. Aby obliczyć cenę brutto pomnóż cenę netto razy stawka VAT plus 1
-    6. Zwróć uwagę na kolejność wykonywania działań
-    7. Uruchom doctesty - wszystkie muszą się powieść
+    6. Wynik musi być w PLN
+    7. Zwróć uwagę na kolejność wykonywania działań
+    8. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -51,15 +53,10 @@ PLN = 1
 VAT = 23 / 100
 
 # float: 100.0 PLN, without tax
-net = ...
+net = 100.0 * PLN
 
 # float: 23% of net
-tax = ...
-
-# float: net plus tax
-gross = ...
-
-# Solution
-net = 100.0 * PLN
 tax = net * VAT
-gross = net + tax
+
+# float: net plus tax in PLN
+gross = net + tax / PLN

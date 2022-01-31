@@ -1,91 +1,58 @@
 """
-* Assignment: Type Float Distance
+* Assignment: Type Float Euler
 * Required: yes
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
 
 English:
-    1. Convert units
-    2. Instead `...` substitute calculated and converted values
-    3. Note the number of decimal places
-    4. Run doctests - all must succeed
+    1. Euler's number is 2.71828
+    2. Round number using f-string formatting
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Przekonwertuj jednostki
-    2. Zamiast `...` podstaw wyliczone i przekonwertowane wartości
-    3. Zwróć uwagę na ilość miejsc po przecinku
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    1. Liczba Eulra to 2.71828
+    2. Zaokrąglij liczbę wykorzystując formatowanie f-string
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert meters is not Ellipsis, \
-    'Assign result to variable: `meters`'
-    >>> assert kilometers is not Ellipsis, \
-    'Assign result to variable: `kilometers`'
-    >>> assert miles is not Ellipsis, \
-    'Assign result to variable: `miles`'
-    >>> assert nautical_miles is not Ellipsis, \
-    'Assign result to variable: `nautical_miles`'
-    >>> assert all_units is not Ellipsis, \
-    'Assign result to variable: `all_units`'
-    >>> assert type(meters) is str, \
-    'Variable `volume` has invalid type, should be str'
-    >>> assert type(kilometers) is str, \
-    'Variable `volume` has invalid type, should be str'
-    >>> assert type(miles) is str, \
-    'Variable `volume` has invalid type, should be str'
-    >>> assert type(nautical_miles) is str, \
-    'Variable `volume` has invalid type, should be str'
-    >>> assert type(all_units) is str, \
-    'Variable `volume` has invalid type, should be str'
+    >>> assert a is not Ellipsis, 'Assign result to variable: `a`'
+    >>> assert b is not Ellipsis, 'Assign result to variable: `b`'
+    >>> assert c is not Ellipsis, 'Assign result to variable: `c`'
+    >>> assert d is not Ellipsis, 'Assign result to variable: `d`'
+    >>> assert type(a) is str, 'Variable `a` has invalid type, should be str'
+    >>> assert type(b) is str, 'Variable `b` has invalid type, should be str'
+    >>> assert type(c) is str, 'Variable `c` has invalid type, should be str'
+    >>> assert type(d) is str, 'Variable `d` has invalid type, should be str'
 
-    >>> meters
-    'Meters: 1337'
-    >>> kilometers
-    'Kilometers: 1'
-    >>> miles
-    'Miles: 0.83'
-    >>> nautical_miles
-    'Nautical Miles: 0.722'
-    >>> all_units
-    'km: 1, mi: 0.8, NM: 0.72'
+    >>> a
+    "Euler's number with 0 decimal places: 3"
+    >>> b
+    "Euler's number with 1 decimal places: 2.7"
+    >>> c
+    "Euler's number with 2 decimal places: 2.72"
+    >>> d
+    "Euler's number with 3 decimal places: 2.718"
 """
 
-m = 1
-km = 1000 * m
-mi = 1609.344 * m
-NM = 1852 * m
+EULER = 2.71828
 
-distance = 1337 * m
-distance_m = distance / m
-distance_km = distance / km
-distance_mi = distance / mi
-distance_NM = distance / NM
+# str: Euler's number with 0 decimal places
+a = f"Euler's number with 0 decimal places: {EULER}"
 
-# str: distance in meters 0 decimal places
-meters = f'Meters: {...}'
+# str:  Euler's number with 1 decimal places
+b = f"Euler's number with 1 decimal places: {EULER}"
 
-# str: distance in kilometers with 0 decimal places
-kilometers = f'Kilometers: {...}'
+# str:  Euler's number with 2 decimal places
+c = f"Euler's number with 2 decimal places: {EULER}"
 
-# str: distance in miles with 2 decimal places
-miles = f'Miles: {...}'
-
-# str: distance in nautical miles with 3 decimal places
-nautical_miles = f'Nautical Miles: {...}'
-
-# str: distance in km, mi, NM with 0, 1, 2 decimal places
-all_units = (f'km: {...}, '
-             f'mi: {...}, '
-             f'NM: {...}')
+# str:  Euler's number with 3 decimal places
+d = f"Euler's number with 3 decimal places: {EULER}"
 
 # Solution
-meters = f'Meters: {distance_m:.0f}'
-kilometers = f'Kilometers: {distance_km:.0f}'
-miles = f'Miles: {distance_mi:.2f}'
-nautical_miles = f'Nautical Miles: {distance_NM:.3f}'
-all_units = (f'km: {distance_km:.0f}, '
-             f'mi: {distance_mi:.1f}, '
-             f'NM: {distance_NM:.2f}')
+a = f"Euler's number with 0 decimal places: {EULER:.0f}"
+b = f"Euler's number with 1 decimal places: {EULER:.1f}"
+c = f"Euler's number with 2 decimal places: {EULER:.2f}"
+d = f"Euler's number with 3 decimal places: {EULER:.3f}"

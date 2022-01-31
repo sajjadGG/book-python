@@ -16,65 +16,36 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert result_a is not Ellipsis, \
-    'Assign result to variable: `result_a`'
+    >>> assert a is not Ellipsis, 'Assign result to variable: `a`'
+    >>> assert b is not Ellipsis, 'Assign result to variable: `b`'
+    >>> assert c is not Ellipsis, 'Assign result to variable: `c`'
 
-    >>> assert result_b is not Ellipsis, \
-    'Assign result to variable: `result_b`'
+    >>> assert type(a) is type(None), \
+    'Variable `a` has invalid type, should be NoneType'
+    >>> assert type(b) is type(None), \
+    'Variable `b` has invalid type, should be NoneType'
+    >>> assert type(c) is type(None), \
+    'Variable `c` has invalid type, should be NoneType'
 
-    >>> assert result_c is not Ellipsis, \
-    'Assign result to variable: `result_c`'
-
-    >>> assert result_d is not Ellipsis, \
-    'Assign result to variable: `result_d`'
-
-    >>> assert type(result_a) is bool, \
-    'Variable `result_a` has invalid type, should be bool'
-
-    >>> assert type(result_b) is bool, \
-    'Variable `result_b` has invalid type, should be bool'
-
-    >>> assert type(result_c) is bool, \
-    'Variable `result_c` has invalid type, should be bool'
-
-    >>> assert type(result_d) is bool, \
-    'Variable `result_d` has invalid type, should be bool'
-
-    >>> bool(result_a)
+    >>> a is None
     True
-    >>> bool(result_b)
+    >>> b is not None
     False
-    >>> bool(result_c)
-    True
-    >>> bool(result_d)
+    >>> bool(c) is not bool(c) == False
     False
 """
 
-# bool: result must be logic True
+# bool: result of `... is None` must be True
 a = ...
 
-# bool: result must be logic False
+# bool: result of `... is not None` must be False
 b = ...
 
-# bool: result must be logic True
+# bool: result of `bool(...) is not bool(...) == False` must be True
 c = ...
 
-# bool: result must be logic False
-d = ...
-
-# Do not modify following lines
-result_a = a is None
-result_b = b is not None
-result_c = bool(bool(c) is not bool(c)) == False
-result_d = bool(bool(d) is not bool(d)) == False and bool(d)
 
 # Solution
 a = None
 b = None
 c = None
-d = None
-
-result_a = a is None
-result_b = b is not None
-result_c = bool(bool(c) is not bool(c)) == False
-result_d = bool(bool(d) is not bool(d)) == False and bool(d)

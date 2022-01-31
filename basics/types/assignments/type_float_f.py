@@ -10,16 +10,14 @@ English:
     2. Operational pressure of ORLAN spacesuit: 40 kPa
     3. Calculate operational pressure in hPa for EMU
     4. Calculate operational pressure in hPa for Orlan
-    5. Results round to one decimal place
-    6. Run doctests - all must succeed
+    5. Run doctests - all must succeed
 
 Polish:
     1. Ciśnienie operacyjne skafandra kosmicznego EMU (NASA): 4.3 PSI
     2. Ciśnienie operacyjne skafandra kosmicznego ORLAN (Roscosmos): 40 kPa
     3. Oblicz ciśnienie operacyjne skafandra EMU w hPa
     4. Oblicz ciśnienie operacyjne skafandra Orlan w hPa
-    5. Wynik zaokrąglij do jednego miejsca po przecinku
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -33,9 +31,9 @@ Tests:
     >>> assert type(orlan) is float, \
     'Variable `orlan` has invalid type, should be float'
 
-    >>> orlan
+    >>> round(orlan, 1)
     400.0
-    >>> emu
+    >>> round(emu, 1)
     296.5
 """
 
@@ -51,5 +49,5 @@ emu = ...
 orlan = ...
 
 # Solution
-emu = round(4.3*psi/hPa, 1)
-orlan = round(40*kPa/hPa, 1)
+emu = 4.3 * psi / hPa
+orlan = 40 * kPa / hPa

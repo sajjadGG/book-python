@@ -9,19 +9,17 @@ English:
     1. International Standard Atmosphere (ISA) at sea level is
        1 ata = 1013.25 hPa
     2. Calculate `pO2` - partial pressure of Oxygen at sea level in hPa
-    3. Round result to one decimal place
-    4. To calculate partial pressure use ratio
+    3. To calculate partial pressure use ratio
        (100% is 1013.25 hPa, 20.946% is how many hPa?)
-    5. Run doctests - all must succeed
+    4. Run doctests - all must succeed
 
 Polish:
     1. Międzynarodowa standardowa atmosfera (ISA) na poziomie morza wynosi
        1 ata = 1013.25 hPa
     2. Oblicz `pO2` - ciśnienie parcjalne tlenu na poziomie morza w hPa
-    3. Wynik zaokrąglij do jednego miejsca po przecinku
-    4. Aby policzyć ciśnienie parcjalne skorzystaj z proporcji
+    3. Aby policzyć ciśnienie parcjalne skorzystaj z proporcji
        (100% to 1013.25 hPa, 20.946% to ile hPa?)
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * 1 hPa = 100 Pa
@@ -43,7 +41,9 @@ Tests:
     >>> assert type(pO2) is float, \
     'Variable `pO2` has invalid type, should be float'
 
-    >>> pO2
+    >>> ata
+    101325.0
+    >>> round(pO2, 1)
     212.2
 """
 
@@ -66,4 +66,4 @@ pO2 = ...
 
 # Solution
 ata = 1013.25 * hPa
-pO2 = round(ata*O2 / hPa, 1)
+pO2 = O2 * ata / hPa

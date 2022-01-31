@@ -10,16 +10,14 @@ English:
     2. Data uses imperial (US) system
     3. Convert to metric (SI) system
     4. Speed limit print in KPH (km/h)
-    5. Round speed limit to one decimal place
-    6. Run doctests - all must succeed
+    5. Run doctests - all must succeed
 
 Polish:
     1. Ograniczenie prędkości wynosi 75 MPH
     2. Dane używają systemu imperialnego (US)
     3. Przelicz je na system metryczny (układ SI)
     4. Ograniczenie prędkości wypisz w KPH (km/h)
-    5. Zaokrąglij ograniczenie prędkości do jednego miejsca po przecinku
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -45,9 +43,9 @@ Tests:
     0.278
     >>> round(mph, 3)
     0.447
-    >>> speed_limit_mph
+    >>> round(speed_limit_mph, 1)
     75.0
-    >>> speed_limit_kph
+    >>> round(speed_limit_kph, 1)
     120.7
 """
 
@@ -80,5 +78,5 @@ mph = mi / HOUR
 
 speed_limit = 75 * mph
 
-speed_limit_mph = round(speed_limit/mph, 1)
-speed_limit_kph = round(speed_limit/kph, 1)
+speed_limit_mph = speed_limit / mph
+speed_limit_kph = speed_limit / kph

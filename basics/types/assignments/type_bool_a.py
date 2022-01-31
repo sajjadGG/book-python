@@ -2,17 +2,17 @@
 * Assignment: Type Bool True or False
 * Required: yes
 * Complexity: easy
-* Lines of code: 16 lines
-* Time: 5 min
+* Lines of code: 14 lines
+* Time: 8 min
 
 English:
-    1. Which variables are `True`?
-    2. Which variables are `False`?
+    1. What you need to put in expressions to get the expected outcome?
+    2. In place of ellipsis (`...`) insert only `True` or `False`
     3. Run doctests - all must succeed
 
 Polish:
-    1. Które zmienne są `True`?
-    2. Które zmienne są `False`?
+    1. Co należy podstawić w wyrażeniach aby otrzymać wartość oczekiwaną?
+    2. W miejsce trzech kropek (`...`) wstawiaj tylko `True` lub `False`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -32,10 +32,6 @@ Tests:
     >>> assert l is not Ellipsis, 'Assign result to variable: `l`'
     >>> assert m is not Ellipsis, 'Assign result to variable: `m`'
     >>> assert n is not Ellipsis, 'Assign result to variable: `n`'
-    >>> assert o is not Ellipsis, 'Assign result to variable: `o`'
-    >>> assert n is not Ellipsis, 'Assign result to variable: `n`'
-    >>> assert p is not Ellipsis, 'Assign result to variable: `p`'
-    >>> assert q is not Ellipsis, 'Assign result to variable: `q`'
     >>> assert type(a) is bool, 'Variable `a` has invalid type, should be bool'
     >>> assert type(b) is bool, 'Variable `b` has invalid type, should be bool'
     >>> assert type(c) is bool, 'Variable `c` has invalid type, should be bool'
@@ -50,26 +46,23 @@ Tests:
     >>> assert type(l) is bool, 'Variable `l` has invalid type, should be bool'
     >>> assert type(m) is bool, 'Variable `m` has invalid type, should be bool'
     >>> assert type(n) is bool, 'Variable `n` has invalid type, should be bool'
-    >>> assert type(o) is bool, 'Variable `o` has invalid type, should be bool'
-    >>> assert type(p) is bool, 'Variable `p` has invalid type, should be bool'
-    >>> assert type(q) is bool, 'Variable `q` has invalid type, should be bool'
 
     >>> a
-    False
-    >>> b
     True
-    >>> c
+    >>> b
     False
+    >>> c
+    True
     >>> d
     False
     >>> e
-    False
+    True
     >>> f
     False
     >>> g
     True
     >>> h
-    True
+    False
     >>> i
     True
     >>> j
@@ -77,56 +70,70 @@ Tests:
     >>> k
     False
     >>> l
-    True
+    False
     >>> m
-    False
-    >>> n
-    False
-    >>> o
-    False
-    >>> p
     True
-    >>> q
+    >>> n
     False
 """
 
-a = bool(False)
-b = bool(True)
+# bool: result of bool(True)
+example = True
 
-c = bool(0)
-d = bool(0.0)
-e = bool(-0)
-f = bool(-0.0)
+# bool: result of bool(True)
+a = ...
 
-g = bool('a')
-h = bool('.')
-i = bool('0')
-j = bool('0.0')
-k = bool('')
-l = bool(' ')
+# bool: result of bool(False)
+b = ...
 
-m = bool(int('0'))
-n = bool(float(str(-0)))
+# bool: result of bool(1)
+c = ...
 
-o = bool(-0.0 + 0.0j)
-p = bool('-0.0+0.0j')
-q = bool(complex('-0.0+0.0j'))
+# bool: result of bool(0)
+d = ...
+
+# bool: result of bool(-1)
+e = ...
+
+# bool: result of bool(0.0)
+f = ...
+
+# bool: result of bool('a')
+g = ...
+
+# bool: result of bool('')
+h = ...
+
+# bool: result of bool(' ')
+i = ...
+
+# bool: result of bool('0')
+j = ...
+
+# bool: result of bool(int('0'))
+k = ...
+
+# bool: result of bool(-0.0+0.0j)
+l = ...
+
+# bool: result of bool('-0.0+0.0j')
+m = ...
+
+# bool: result of bool(complex('-0.0+0.0j'))
+n = ...
 
 # Solution
-a == False
-b == True
-c == False
-d == False
-e == False
-f == False
-g == True
-h == True
-i == True
-j == True
-k == False
-l == True
-m == False
-n == False
-o == False
-p == True
-q == False
+a = True
+b = False
+c = True
+d = False
+e = True
+f = False
+g = True
+h = False
+i = True
+j = True
+k = False
+l = False
+m = True
+n = False

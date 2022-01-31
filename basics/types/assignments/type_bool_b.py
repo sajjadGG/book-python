@@ -3,7 +3,7 @@
 * Required: yes
 * Complexity: easy
 * Lines of code: 9 lines
-* Time: 5 min
+* Time: 8 min
 
 English:
     1. What you need to put in expressions to get the expected outcome?
@@ -37,60 +37,63 @@ Tests:
     >>> assert type(h) is bool, 'Variable `h` has invalid type, should be bool'
     >>> assert type(i) is bool, 'Variable `i` has invalid type, should be bool'
 
-    >>> bool(a)
+    >>> a
     True
-    >>> bool(b)
+    >>> b
     True
-    >>> bool(c)
+    >>> c
     False
-    >>> bool(d)
+    >>> d
     True
-    >>> bool(e)
+    >>> e
     True
-    >>> bool(f)
+    >>> f
     False
-    >>> bool(g)
+    >>> g
     True
-    >>> bool(h)
+    >>> h
     True
-    >>> bool(i)
+    >>> i
     False
 """
 
-# bool: the expression result must be True
-a = True == ...
+# bool: result of `not ...` must be True
+example = False
 
-# bool: the expression result must be True
-b = True != ...
+# bool: result of `True == ...` must be True
+a = ...
 
-# bool: the expression result must be False
-c = not ...
+# bool: result of `True != ...` must be True
+b = ...
 
-# bool: the expression result must be True
-d = bool(...) == True
+# bool: result of `not ...` must be False
+c = ...
 
-# bool: the expression result must be True
-e = bool(...) == False
+# bool: result of `bool(...) == True` must be True
+d = ...
 
-# bool: the expression result must be False
-f = ... or ...
+# bool: result of `bool(...) == False` must be True
+e = ...
 
-# bool: the expression result must be True
-g = ... and ...
+# bool: result of `... or False` must be False
+f = ...
 
-# bool: the expression result must be True
-h = bool(bool(...) == ...) or False
+# bool: result of `True and ...` must be True
+g = ...
 
-# bool: the expression result must be False
-i = bool(...) is not bool(False)
+# bool: result of `bool(bool(...) == ...) or False` must be True
+h = ...
+
+# bool: result of `bool(...) is not bool(False)` must be False
+i = ...
 
 # Solution
-a = True == True
-b = True != False
-c = not True
-d = bool(True) == True
-e = bool(False) == False
-f = False or False
-g = True and True
-h = bool(bool(False) == False) or False
-i = bool(False) is not bool(False)
+a = True
+b = True
+c = False
+d = True
+e = True
+f = False
+g = True
+h = True
+i = False
