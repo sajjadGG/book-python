@@ -33,7 +33,7 @@ Tests:
     >>> assert type(result) is tuple, \
     'Variable `result` has invalid type, should be tuple'
     >>> assert len(result) == 5, \
-    'Variable `result` length should be 6'
+    'Variable `result` length should be 5'
 
     >>> result
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')

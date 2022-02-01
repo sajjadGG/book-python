@@ -9,6 +9,7 @@ Rationale
 * Can store elements of any **hashable** types
 * Set is unordered data structure and do not record element position or insertion
 * Do not support getitem and slice
+* Contains in ``set`` has ``O(1)`` average case complexity [#pywikiTimeComplexity]_
 
 Hashable (Immutable):
 
@@ -360,6 +361,11 @@ Cardinality
 3
 
 
+References
+----------
+.. [#pywikiTimeComplexity] https://wiki.python.org/moin/TimeComplexity
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/sequence_set_a.py
@@ -369,4 +375,3 @@ Assignments
 .. literalinclude:: assignments/sequence_set_b.py
     :caption: :download:`Solution <assignments/sequence_set_b.py>`
     :end-before: # Solution
-

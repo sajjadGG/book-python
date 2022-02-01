@@ -464,24 +464,6 @@ Cython
 >>> print(text)
 Cython
 
->>> text = 'Python'
->>>
->>> text.upper().replace('P', 'C').title()
-'Cython'
-
-How it works:
-
-    #. ``text -> 'Python'``
-    #. ``'Python'.upper() -> 'PYTHON'``
-    #. ``'PYTHON'.replace('P', 'C') -> 'CYTHON'``
-    #. ``'CYTHON'.title() -> 'Cython'``
-
->>> text = 'Python'
->>>
->>> text = text.upper().startswith('P').replace('P', 'C')
-Traceback (most recent call last):
-AttributeError: 'bool' object has no attribute 'replace'
-
 Note, that there cannot be any char, not even space after ``\`` character:
 
 >>> text = 'Python'
@@ -495,12 +477,28 @@ Cython
 
 >>> text = 'Python'
 >>>
->>> text = (text.upper()
-...             .replace('P', 'C')
-...             .title())
+>>> text = (
+...     text
+...     .upper()
+...     .replace('P', 'C')
+...     .title()
+... )
 >>>
 >>> print(text)
 Cython
+
+How it works:
+
+    #. ``text -> 'Python'``
+    #. ``'Python'.upper() -> 'PYTHON'``
+    #. ``'PYTHON'.replace('P', 'C') -> 'CYTHON'``
+    #. ``'CYTHON'.title() -> 'Cython'``
+
+>>> text = 'Python'
+>>>
+>>> text = text.upper().startswith('P').replace('P', 'C')
+Traceback (most recent call last):
+AttributeError: 'bool' object has no attribute 'replace'
 
 
 Use Case - 0x01
@@ -551,6 +549,9 @@ Use Case - 0x01
 ...     .replace('Ii', 'II')
 ...     .strip()
 ... )
+>>>
+>>> print(result)
+Pana Twardowskiego III
 
 
 Assignments

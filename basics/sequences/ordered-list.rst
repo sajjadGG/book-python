@@ -54,8 +54,8 @@ Traceback (most recent call last):
 TypeError: list expected at most 1 argument, got 4
 
 
-GetItem
--------
+Get Item
+--------
 * More information in `Sequence GetItem`
 * More information in `Sequence Slice`
 
@@ -200,6 +200,11 @@ GNU Octave, on V8, Swift, and Rust. [#timsort]_
 >>> sorted(data)
 ['a', 'b', 'c']
 
+Reverse
+-------
+* ``reversed()``
+* ``list.reverse()``
+
 
 Method Chaining
 ---------------
@@ -217,26 +222,48 @@ Traceback (most recent call last):
 AttributeError: 'NoneType' object has no attribute 'append'
 
 
+Index
+-----
+>>> colors = ('red', 'green', 'blue')
+>>> colors.index('red')
+0
+
+
+Count
+-----
+>>> colors = ('red', 'green', 'blue', 'red', 'blue')
+>>> colors.count('red')
+2
+
+
 Built-in Functions
 ------------------
 * ``min()`` - Minimal value
 * ``max()`` - Maximal value
 * ``sum()`` - Sum of elements
 * ``len()`` - Length of a list
+* ``all()`` - All values are ``True``
+* ``any()`` - Any values is ``True``
 
->>> data = [2, 0, 1]
+List with numeric values:
+
+>>> data = [3, 1, 2]
 >>>
->>> min(data)
-0
->>> max(data)
-2
->>> sum(data)
-3
 >>> len(data)
 3
+>>> min(data)
+1
+>>> max(data)
+3
+>>> sum(data)
+6
+
+List with string values:
 
 >>> data = ['a', 'c', 'b']
 >>>
+>>> len(data)
+3
 >>> min(data)
 'a'
 >>> max(data)
@@ -245,11 +272,7 @@ Built-in Functions
 Traceback (most recent call last):
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
-
-Any, All
---------
-* ``all()`` - All values are ``True``
-* ``any()`` - Any values is ``True``
+List with boolean values:
 
 >>> data = [True, False, True]
 >>>
@@ -264,6 +287,33 @@ Memory
 .. figure:: img/memory-list.png
 
     Memory representation for ``list``
+
+
+Shallow Copy vs Deep Copy
+-------------------------
+Shallow Copy:
+
+>>> first = ['a', 'b', 'c']
+>>> second = first
+>>>
+>>> first.append('d')
+>>>
+>>> first
+['a', 'b', 'c', 'd']
+>>> second
+['a', 'b', 'c', 'd']
+
+Deep Copy:
+
+>>> first = ['a', 'b', 'c']
+>>> second = first.copy()
+>>>
+>>> first.append('d')
+>>>
+>>> first
+['a', 'b', 'c', 'd']
+>>> second
+['a', 'b', 'c']
 
 
 References

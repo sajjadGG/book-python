@@ -97,11 +97,18 @@ SyntaxError: invalid syntax
 >>> x = .1,1.       # tuple
 
 
-Length
-------
->>> data = (1, 2, 3)
->>> len(data)
-3
+Index
+-----
+>>> colors = ('red', 'green', 'blue')
+>>> colors.index('red')
+0
+
+
+Count
+-----
+>>> colors = ('red', 'green', 'blue', 'red', 'blue')
+>>> colors.count('red')
+2
 
 
 Sort
@@ -116,6 +123,60 @@ Reversed
 >>> data = (1, 2, 3)
 >>> tuple(reversed(data))
 (3, 2, 1)
+
+
+Length
+------
+>>> data = (1, 2, 3)
+>>> len(data)
+3
+
+
+Built-in Functions
+------------------
+* ``min()`` - Minimal value
+* ``max()`` - Maximal value
+* ``sum()`` - Sum of elements
+* ``len()`` - Length of a list
+* ``all()`` - All values are ``True``
+* ``any()`` - Any values is ``True``
+
+List with numeric values:
+
+>>> data = (3, 1, 2)
+>>>
+>>> len(data)
+3
+>>> min(data)
+1
+>>> max(data)
+3
+>>> sum(data)
+6
+
+List with string values:
+
+>>> data = ('a', 'c', 'b')
+>>>
+>>> len(data)
+3
+>>> min(data)
+'a'
+>>> max(data)
+'c'
+>>> sum(data)
+Traceback (most recent call last):
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+
+List with boolean values:
+
+>>> data = (True, False, True)
+>>>
+>>> any(data)
+True
+>>> all(data)
+False
 
 
 Memory
