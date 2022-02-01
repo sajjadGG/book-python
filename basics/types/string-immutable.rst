@@ -76,38 +76,6 @@ Concatenation
 'onetwothree'
 
 
-Concat "Numbers"
-----------------
->>> 1 + 2
-3
-
->>> '1' + '2'
-'12'
-
-
-Concat Multiply
----------------
->>> '*' * 10
-'**********'
-
->>> text = 'Hello world'
->>> print(text + '\n' + '!'*len(text))
-Hello world
-!!!!!!!!!!!
-
->>> 'Beetlejuice' * 3
-'BeetlejuiceBeetlejuiceBeetlejuice'
-
->>> 'Mua' + 'Ha' * 2
-'MuaHaHa'
->>>
->>> 'Mua' + ('Ha'*2)
-'MuaHaHa'
->>>
->>> ('Mua'+'Ha') * 2
-'MuaHaMuaHa'
-
-
 Concat Problem
 --------------
 >>> 'Mark' + 'Watney'
@@ -119,29 +87,61 @@ Concat Problem
 >>> 'Mark Watney'
 'Mark Watney'
 
-
-Use Case - 0x01
----------------
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
 >>> firstname + lastname
 'MarkWatney'
-
->>> firstname = 'Mark'
->>> lastname = 'Watney'
 >>>
 >>> firstname + ' ' + lastname
 'Mark Watney'
-
->>> firstname = 'Mark'
->>> lastname = 'Watney'
 >>>
 >>> f'{firstname} {lastname}'
 'Mark Watney'
 
 
-Use Case - 0x02
+Concat Numbers
+--------------
+>>> 1 + 2
+3
+>>>
+>>> '1' + '2'
+'12'
+>>>
+>>> '1' + 2
+Traceback (most recent call last):
+TypeError: can only concatenate str (not "int") to str
+>>>
+>>> 1 + '2'
+Traceback (most recent call last):
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+>>> name = 'Mark Watney'
+>>> age = 44
+>>>
+>>> 'Astronaut ' + name + ' is ' + age + ' years old.'
+Traceback (most recent call last):
+TypeError: can only concatenate str (not "int") to str
+>>>
+>>> 'Astronaut ' + name + ' is ' + str(age) + ' years old.'
+'Astronaut Mark Watney is 44 years old.'
+>>>
+>>> f'Astronaut {name} is {age} years old.'
+'Astronaut Mark Watney is 44 years old.'
+
+
+Concat Multiply
+---------------
+>>> '*' * 10
+'**********'
+
+>>> text = 'Hello world'
+>>> print(text + '\n' + '-'*len(text))
+Hello world
+\-----------
+
+
+Use Case - 0x01
 ---------------
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'

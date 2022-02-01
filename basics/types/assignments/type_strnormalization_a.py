@@ -1,5 +1,5 @@
 """
-* Assignment: String Clean Strings
+* Assignment: String Normalization Address
 * Required: yes
 * Complexity: easy
 * Lines of code: 8 lines
