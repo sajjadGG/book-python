@@ -7,7 +7,7 @@
     --body-header: #bdc7d0;
     --body-text: #bdc7d0;
 
-    --selection-background: #12141A;
+    --selection-background: #6371AC;
     --selection-text: #eee;
 
     --code-background: #12141A;
@@ -33,7 +33,6 @@
     --warning: #CF6679;
     --tip: #45C587;
     --note: #6371AC;
-
 
     --menu-width: 300px;
     --content-width: 800px;

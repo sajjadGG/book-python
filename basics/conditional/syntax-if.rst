@@ -123,8 +123,8 @@ My name is... Mark Watney
 >>> name = input('What is your name?: ')  #input:
 >>>
 >>> if name is None:
-...     print('Your name is empty')
-Your name is empty
+...     print('Name is empty')
+Name is empty
 
 
 Conditional Assignment

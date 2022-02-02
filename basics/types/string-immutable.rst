@@ -136,9 +136,9 @@ Concat Multiply
 '**********'
 
 >>> text = 'Hello world'
->>> print(text + '\n' + '-'*len(text))
+>>> print(text + '\n' + '!'*len(text))
 Hello world
-\-----------
+!!!!!!!!!!!
 
 
 Use Case - 0x01

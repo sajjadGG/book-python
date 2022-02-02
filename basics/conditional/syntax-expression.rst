@@ -5,7 +5,7 @@ Boolean Expression
 
     # Simulate user input (for test automation)
     from unittest.mock import MagicMock
-    input = MagicMock(side_effect=['10'])
+    input = MagicMock(side_effect=['10', '10'])
 
 
 Rationale
@@ -49,6 +49,7 @@ Use Case - 0x01
 ---------------
 * Is adult
 
+>>> age = input('What is your age?: ')   #input: '10'
 >>> adult = 'Yes' if age >= 18 else 'No'
 >>>
 >>> print(adult)
@@ -59,7 +60,7 @@ Use Case - 0x02
 ---------------
 * Is numeric
 
->>> age = input('What is your age?: ')   # Use input: '10'
+>>> age = input('What is your age?: ')   #input: '10'
 >>> age = float(age) if age.isnumeric() else None
 >>>
 >>> print(age)
