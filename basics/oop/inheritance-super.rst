@@ -105,6 +105,11 @@ same name. Than while calling ``super()`` it will overload field value.
 {'job': 'unemployed', 'firstname': 'Mark', 'lastname': 'Watney'}
 
 
+References
+----------
+.. [#Hettinger2015] https://www.youtube.com/watch?v=EiOglTERPEo
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/oop_inheritancesuper_a.py

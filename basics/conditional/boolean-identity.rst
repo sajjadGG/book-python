@@ -29,21 +29,33 @@ True
 >>> data is not None
 False
 
-Example:
+Is empty:
 
 >>> data = None
 >>>
->>> if data:
-...     print('Not empty')
-Not empty
+>>> if not data:
+...     print('Empty')
+Empty
+
+>>> data = None
 >>>
 >>> if data is None:
 ...     print('Empty')
 Empty
+
+Has value:
+
+>>> data = 1
+>>>
+>>> if data:
+...     print('Has value')
+Has value
+
+>>> data = 1
 >>>
 >>> if data is not None:
-...     print('Not empty')
-Not empty
+...     print('Has value')
+Has value
 
 
 Bool Identity
@@ -72,7 +84,7 @@ Example:
 >>>
 >>>
 >>> if adult:
-...     print('Tak')
+...     print('Yes')
 Yes
 >>>
 >>> if adult is True:
@@ -121,7 +133,8 @@ Numeric
 >>>
 >>>
 >>> if type(name) is str:
->>>     print('String')
+...     print('String')
+String
 
 >>> data = []
 >>>
@@ -132,13 +145,14 @@ List
 >>>
 >>> if type(data) in (list, tuple, set):
 ...     print('Sequence')
+Sequence
 
 >>> data = {}
 >>>
 >>>
 >>> if type(age) is dict:
 ...     print('Dict')
-List
+Dict
 
 
 Assignments

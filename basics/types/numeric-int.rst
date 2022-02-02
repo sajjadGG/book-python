@@ -103,7 +103,7 @@ True
 >>> x = 1
 >>>
 >>> isinstance(x, int)
-
+True
 
 Rounding
 --------

@@ -59,7 +59,7 @@ Engineering Notation
 1000000.0
 >>>
 >>> x = 1E6
-print(x)
+>>> print(x)
 1000000.0
 
 >>> x = +1e6

@@ -53,10 +53,16 @@ PLN = 1
 VAT_23 = 23 / 100
 
 # float: 100.0 PLN, without tax
-net = 100.0 * PLN
+net = ...
 
 # float: 23% of net
-tax = net * VAT_23
+tax = ...
 
 # float: net plus tax in PLN
+gross = ...
+
+
+# Solution
+net = 100.0 * PLN
+tax = net * VAT_23
 gross = net + tax / PLN

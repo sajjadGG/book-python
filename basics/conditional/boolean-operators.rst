@@ -236,7 +236,7 @@ To If or not to If
 >>>
 >>> if number % 2 == 0:
 ...     is_even = True
->>> else:
+... else:
 ...     is_even = False
 >>>
 >>> print(is_even)

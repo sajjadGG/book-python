@@ -47,15 +47,17 @@ True
 
 Use Case - 0x01
 ---------------
->>> result = 'adult' if age >= 18 else 'boyo'
+* Is adult
+
+>>> adult = 'Yes' if age >= 18 else 'No'
 >>>
->>> print(result)
-boyo
+>>> print(adult)
+Yes
 
 
 Use Case - 0x02
 ---------------
-* Is Numeric
+* Is numeric
 
 >>> age = input('What is your age?: ')   # Use input: '10'
 >>> age = float(age) if age.isnumeric() else None
@@ -66,7 +68,7 @@ Use Case - 0x02
 
 Use Case - 0x03
 ---------------
-* Even/Odd
+* Even/odd
 
 >>> number = 3
 >>> is_even = (number % 2 == 0 )
@@ -100,7 +102,7 @@ IPv4
 >>> protocol = 'IPv4' if '.' in ip else 'IPv6'
 >>>
 >>> print(protocol)
-'IPv6'
+IPv6
 
 
 

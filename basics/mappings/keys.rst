@@ -116,5 +116,5 @@ References
 Assignments
 -----------
 .. literalinclude:: assignments/mapping_define_a.py
-    :caption: :download:`Solution <assignments/mapping_dict_a.py>`
+    :caption: :download:`Solution <assignments/mapping_define_a.py>`
     :end-before: # Solution

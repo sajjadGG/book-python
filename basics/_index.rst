@@ -210,6 +210,7 @@ Object Oriented Programming
     oop/method-method.rst
     oop/inheritance-about.rst
     oop/inheritance-overload.rst
+    oop/inheritance-super.rst
     oop/inheritance-patterns.rst
     oop/inheritance-problems.rst
     oop/stringify-about.rst
