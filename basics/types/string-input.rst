@@ -23,7 +23,7 @@ specific information. Note colon-space (": ") at the end. Space is needed
 to separate user input from prompt. Without it, user inputted text will be
 glued to your question.
 
->>> name = input('What is your name: ')  # User input: 'Mark Watney'
+>>> name = input('What is your name: ')  #input: 'Mark Watney'
 >>>
 >>> print(name)
 Mark Watney
@@ -37,7 +37,7 @@ Input Int
 ``input()`` always returns a ``str``.
 To get numeric value type casting to ``int`` is needed.
 
->>> age = input('What is your age: ')  # User input: 42
+>>> age = input('What is your age: ')  #input: 42
 >>>
 >>> print(age)
 42
@@ -56,7 +56,7 @@ Input Float
 -----------
 Conversion to ``float`` handles decimals, which ``int`` does not support:
 
->>> age = input('What is your age: ')  # User input: 42.5
+>>> age = input('What is your age: ')  #input: 42.5
 >>>
 >>> age = int(age)
 Traceback (most recent call last):
@@ -71,7 +71,7 @@ ValueError: invalid literal for int() with base 10: '42.5'
 
 Conversion to ``float`` cannot handle comma (',') as a decimal separator:
 
->>> age = input('What is your age: ')  # User input: 42,5
+>>> age = input('What is your age: ')  #input: 42,5
 >>>
 >>> age = int(age)
 Traceback (most recent call last):

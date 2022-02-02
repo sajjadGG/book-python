@@ -36,7 +36,7 @@ Syntax
 
 Example
 -------
->>> number = int(input('Type digit: '))  # User input: '5'
+>>> number = int(input('Type digit: '))  #input: '5'
 >>>
 >>>
 >>> if 0 <= number < 3:
@@ -53,7 +53,7 @@ Why not many ifs?
 * With many ifs, Python will evaluate all of them
 * With elifs Python will stop, after first ``True`` evaluation
 
->>> number = int(input('Type digit: '))  # User input: '5'
+>>> number = int(input('Type digit: '))  #input: '5'
 >>>
 >>>
 >>> if 0 <= number < 3:
@@ -69,7 +69,7 @@ medium
 
 Else
 ----
->>> number = int(input('Type digit: '))  # User input: '10'
+>>> number = int(input('Type digit: '))  #input: '10'
 >>>
 >>>
 >>> if 0 <= number < 3:

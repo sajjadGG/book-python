@@ -183,7 +183,7 @@ Global Scope
 >>> lastname = 'Watney'
 >>>
 >>>
->>> what = input('Type variable name: ')   # User input: 'lastname'
+>>> what = input('Type variable name: ')   #input: 'lastname'
 >>>
 >>> globals()[what]
 'Watney'

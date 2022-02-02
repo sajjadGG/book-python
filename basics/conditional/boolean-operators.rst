@@ -230,6 +230,37 @@ Operator Precedence
     ``{key: value...}``, ``{expressions...}``", "Binding or tuple display, list display, dictionary display, set display"
 
 
+To If or not to If
+------------------
+>>> number = 10
+>>>
+>>> if number % 2 == 0:
+...     is_even = True
+>>> else:
+...     is_even = False
+>>>
+>>> print(is_even)
+True
+
+>>> number = 10
+>>> is_even = True if number % 2 == 0 else False
+>>>
+>>> print(is_even)
+True
+
+>>> number = 10
+>>> is_even = number % 2 == 0
+>>>
+>>> print(is_even)
+True
+
+>>> number = 10
+>>> is_even = (number % 2 == 0)
+>>>
+>>> print(is_even)
+True
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/conditional_operator_a.py

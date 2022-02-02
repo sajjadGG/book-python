@@ -48,7 +48,7 @@ Syntax
 
 Example
 -------
->>> language = input('What is your language?: ')  # User input: 'French'
+>>> language = input('What is your language?: ')  #input: 'French'
 >>>
 >>> match language:
 ...     case 'English': response = 'Hello'

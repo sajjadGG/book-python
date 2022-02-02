@@ -47,6 +47,14 @@ True
 
 Use Case - 0x01
 ---------------
+>>> result = 'adult' if age >= 18 else 'boyo'
+>>>
+>>> print(result)
+boyo
+
+
+Use Case - 0x02
+---------------
 * Is Numeric
 
 >>> age = input('What is your age?: ')   # Use input: '10'
@@ -56,7 +64,7 @@ Use Case - 0x01
 10.0
 
 
-Use Case - 0x02
+Use Case - 0x03
 ---------------
 * Even/Odd
 
@@ -67,7 +75,7 @@ Use Case - 0x02
 False
 
 
-Use Case - 0x03
+Use Case - 0x04
 ---------------
 * Astronaut/Cosmonaut
 
@@ -78,19 +86,9 @@ Use Case - 0x03
 cosmonaut
 
 
-Use Case - 0x04
+Use Case - 0x05
 ---------------
 * IPv4/IPv6
-
->>> ip = '127.0.0.1'
->>>
->>> if '.' in ip:
-...     protocol = 'IPv4'
-... else:
-...     protocol = 'IPv6'
->>>
->>> print(protocol)
-IPv4
 
 >>> ip = '127.0.0.1'
 >>> protocol = 'IPv4' if '.' in ip else 'IPv6'
@@ -98,21 +96,11 @@ IPv4
 >>> print(protocol)
 IPv4
 
-
-Use Case - 0x05
----------------
->>> if age >= 18:
-...     result = 'adult'
-... else:
-...     result = 'kiddo'
+>>> ip = 'fe80::aede:48ff:fe01:1133'
+>>> protocol = 'IPv4' if '.' in ip else 'IPv6'
 >>>
->>> print(result)
-kiddo
-
->>> result = 'adult' if age >= 18 else 'kiddo'
->>>
->>> print(result)
-kiddo
+>>> print(protocol)
+'IPv6'
 
 
 

@@ -22,16 +22,36 @@ Since Python 3.8 - Compiler produces a ``SyntaxWarning`` when identity checks
 by the language spec. The warning advises users to use equality tests
 (``==`` and ``!=``) instead.
 
->>> name = None
+>>> data = None
 >>>
->>> name is None
+>>> data is None
 True
->>> name is not None
+>>> data is not None
 False
+
+Example:
+
+>>> data = None
+>>>
+>>> if data:
+...     print('Not empty')
+Not empty
+>>>
+>>> if data is None:
+...     print('Empty')
+Empty
+>>>
+>>> if data is not None:
+...     print('Not empty')
+Not empty
 
 
 Bool Identity
 -------------
+* `True` and `False` are singletons
+* Comparing identity is faster
+* Comparing values will yield the same result
+
 >>> name = None
 >>>
 >>> name is None
@@ -46,9 +66,31 @@ True
 >>> found is True
 True
 
+Example:
+
+>>> adult = True
+>>>
+>>>
+>>> if adult:
+...     print('Tak')
+Yes
+>>>
+>>> if adult is True:
+...     print('Yes')
+Yes
+>>>
+>>> if adult == True:
+...     print('Yes')
+Yes
+
 
 String Identity
 ---------------
+* String instances differs
+* You cannot compare their identity
+* There is a caching mechanism in Python, which sometimes yield the same result
+* In order to compare strings, you should compare their values, not identities
+
 >>> a = 'Mark Watney'
 >>> b = 'Mark Watney'
 >>>
@@ -62,15 +104,41 @@ False
 True
 
 
-
-Control Flow
-------------
->>> name = None
+Type Checking
+-------------
+>>> age = 30
 >>>
->>> if name is None:
-...     print('Name is empty')
-Name is empty
+>>>
+>>> if type(age) is int:
+...     print('Integer')
+Integer
+>>>
+>>> if type(age) in (int, float):
+...     print('Numeric')
+Numeric
 
+>>> name = 'Mark'
+>>>
+>>>
+>>> if type(name) is str:
+>>>     print('String')
+
+>>> data = []
+>>>
+>>>
+>>> if type(age) is list:
+...     print('List')
+List
+>>>
+>>> if type(data) in (list, tuple, set):
+...     print('Sequence')
+
+>>> data = {}
+>>>
+>>>
+>>> if type(age) is dict:
+...     print('Dict')
+List
 
 
 Assignments

@@ -238,17 +238,17 @@ Control Flow
 ...     print('No')
 Yes
 
->>> crew = ['Lewis', 'Watney', 'Twardowski']
+>>> crew = ['Watney', 'Lewis', 'Martinez']
 >>>
->>> if 'Jiménez' in crew:
+>>> if 'Twardowski' in crew:
 ...     print('Yes')
 ... else:
 ...     print('No')
 No
 
->>> crew = {'Lewis', 'Watney', 'Twardowski'}
+>>> crew = {'Watney', 'Lewis', 'Martinez'}
 >>>
->>> if 'Jiménez' in crew:
+>>> if 'Twardowski' in crew:
 ...     print('Yes')
 ... else:
 ...     print('No')

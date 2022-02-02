@@ -114,11 +114,17 @@ Yes
 
 Checking If Empty
 -----------------
->>> name = input('What is your name?: ')  # User input: Mark Watney
+>>> name = input('What is your name?: ')  #input: Mark Watney
 >>>
 >>> if name:
 ...     print(f'My name is... {name}')
 My name is... Mark Watney
+
+>>> name = input('What is your name?: ')  #input:
+>>>
+>>> if name is None:
+...     print('Your name is empty')
+Your name is empty
 
 
 Conditional Assignment

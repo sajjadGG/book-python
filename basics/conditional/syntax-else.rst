@@ -94,7 +94,7 @@ odd
 
 Checking If Empty
 -----------------
->>> name = input('What is your name?: ')  # User input: '' (nothing)
+>>> name = input('What is your name?: ')  #input: '' (nothing)
 >>>
 >>> if name:
 ...     print(f'My name is... {name}')

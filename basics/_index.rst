@@ -96,6 +96,7 @@ Conditional
     conditional/boolean-disjunction.rst
     conditional/boolean-algebra.rst
     conditional/boolean-negation.rst
+    conditional/boolean-empty.rst
     conditional/boolean-identity.rst
     conditional/boolean-operators.rst
     conditional/boolean-membership.rst

@@ -47,7 +47,7 @@ Dict Switch
 ... }
 >>>
 >>>
->>> language = input('What is your language?: ')  # User input: 'French'
+>>> language = input('What is your language?: ')  #input: 'French'
 >>> result = hello.get(language, hello['default'])
 >>>
 >>> print(result)
