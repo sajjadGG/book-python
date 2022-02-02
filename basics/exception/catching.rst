@@ -47,7 +47,7 @@ Catch Exception with Details
 >>> try:
 ...     database_connect()
 ... except ConnectionError as error:
-...     print('Connection Error: error')
+...     print(f'Connection Error: {error}')
 Connection Error: Cannot connect to database
 
 
@@ -96,7 +96,7 @@ Else
 >>>
 >>>
 >>> try:
-...     database_connect()
+...     db = database_connect()
 ... except ConnectionError:
 ...     print('Connection Error')
 ... else:
@@ -125,7 +125,6 @@ used to close file, connection or transaction to database:
 ...     db.query('SELECT * FROM users')
 ... finally:
 ...     print('Connection Closed')
-...     db.close()
 Connection Error
 Connection Closed
 
