@@ -73,6 +73,54 @@ Use Case - 0x02
 Dragon is dead
 
 
+Use Case - 0x03
+---------------
+>>> from datetime import datetime
+>>> from uuid import uuid1
+>>> import logging
+>>>
+>>>
+>>> logging.basicConfig(
+...     level='WARNING',
+...     datefmt='%Y-%m-%d %H:%M:%S',
+...     format='[{levelname}] {message}',
+...     style='{'
+... )
+>>>
+>>>
+>>> class MyError(Exception):
+...     def __init__(self, *args, **kwargs):
+...         self.name = self.__class__.__name__
+...         self.reason = self.args[0]
+...
+...         # make a UUID based on the host ID and current time
+...         self.uuid = str(uuid1())
+...
+...         # save when exception occurred
+...         self.when = datetime.now()
+...
+...         # run normal processing of the exception
+...         super().__init__(*args, **kwargs)
+>>>
+>>>
+>>> def run():
+...     raise MyError('Error, because it is not working')
+>>>
+>>>
+>>> try:
+...     run()
+... except Exception as error:
+...     name = self.name
+...     reason = self.reason
+...     when = error.when.strftime('%Y-%m-%d %H:%M:%S')
+...     identifier = error.uuid
+...
+...     # you can write this error to the database
+...     # or print it on the stderr
+...     logging.error(f'Error happened: {name=}, {reason=}, {when=}, {identifier=}')  # doctest: +SKIP
+[ERROR] Error happened: name='MyError', reason='Error, because it is not working', when='1969-07-21 02:56:15', identifier='886a59c4-8431-11ec-95bc-acde48001122'
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/exception_custom_a.py

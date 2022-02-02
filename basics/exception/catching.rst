@@ -214,6 +214,28 @@ Executing query...
 Disconnect from database
 
 
+Exception Chaining
+------------------
+>>> def database_connect():
+...     raise ConnectionError
+...
+>>> try:
+...     database_connect()
+... except ConnectionError as error:
+...     raise RuntimeError('Failed to open database') from error
+...
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+  File "<stdin>", line 2, in database_connect
+ConnectionError
+<BLANKLINE>
+The above exception was the direct cause of the following exception:
+<BLANKLINE>
+Traceback (most recent call last):
+  File "<stdin>", line 4, in <module>
+RuntimeError: Failed to open database
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/exception_catch_a.py
