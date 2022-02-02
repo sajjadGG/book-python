@@ -186,6 +186,20 @@ Use Case - 0x01
 
 Use Case - 0x02
 ---------------
+>>> date = '1961-04-12'
+>>>
+>>> year, month, day = date.split('-')
+>>>
+>>> print(year)
+1961
+>>> print(month)
+04
+>>> print(day)
+12
+
+
+Use Case - 0x03
+---------------
 * Passwd
 
 >>> line = 'watney:x:1001:1001:Mark Watney:/home/watney:/bin/bash'
@@ -208,7 +222,7 @@ watney
 Mark Watney
 
 
-Use Case - 0x03
+Use Case - 0x04
 ---------------
 * Important
 

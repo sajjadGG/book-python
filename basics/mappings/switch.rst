@@ -73,6 +73,79 @@ Function Switch
 "I don't speak this language"
 
 
+Use Case - 0x01
+---------------
+>>> MONTHS = {
+...     1: 'January',
+...     2: 'February',
+...     3: 'March',
+... }
+>>>
+>>> MONTHS[1]
+'January'
+>>>
+>>> MONTHS['1']
+Traceback (most recent call last):
+KeyError: '1'
+>>>
+>>> MONTHS['01']
+Traceback (most recent call last):
+KeyError: '01'
+
+
+Use Case - 0x02
+---------------
+>>> MONTHS = {
+...     1: 'January',
+...     2: 'February',
+...     3: 'March',
+... }
+>>>
+>>> MONTHS.get(1)
+'January'
+>>>
+>>> MONTHS.get(13)
+>>>
+>>> MONTHS.get(13, 'invalid month')
+'invalid month'
+
+
+Use Case - 0x03
+---------------
+>>> MONTHS = {
+...     1: 'January',
+...     2: 'February',
+...     3: 'March',
+...     4: 'April',
+...     5: 'May',
+...     6: 'June',
+...     7: 'July',
+...     8: 'August',
+...     9: 'September',
+...     10: 'October',
+...     11: 'November',
+...     12: 'December'
+... }
+>>>
+>>> DATE = '1961-04-12'
+>>>
+>>> year, month, day = DATE.split('-')
+>>>
+>>> year
+'1961'
+>>> month
+'04'
+>>> day
+'12'
+>>>
+>>> MONTHS[month]
+Traceback (most recent call last):
+KeyError: '04'
+>>>
+>>> MONTHS[int(month)]
+'April'
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/mapping_switch_a.py

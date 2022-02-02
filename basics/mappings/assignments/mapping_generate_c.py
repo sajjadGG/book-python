@@ -30,10 +30,10 @@ Tests:
     >>> assert all(type(x) is str for x in result.keys()), \
     'All dict keys should be str'
 
-    >>> assert 'Sepal length' in result.keys()
-    >>> assert 'Sepal width' in result.keys()
-    >>> assert 'Petal length' in result.keys()
-    >>> assert 'Petal width' in result.keys()
+    >>> assert 'SepalLength' in result.keys()
+    >>> assert 'SepalWidth' in result.keys()
+    >>> assert 'PetalLength' in result.keys()
+    >>> assert 'PetalWidth' in result.keys()
     >>> assert 'Species' in result.keys()
 
     >>> assert 5.8 in result.values()
@@ -43,15 +43,14 @@ Tests:
     >>> assert 'virginica' in result.values()
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    {'Sepal length': 5.8,
-     'Sepal width': 2.7,
-     'Petal length': 5.1,
-     'Petal width': 1.9,
+    {'SepalLength': 5.8,
+     'SepalWidth': 2.7,
+     'PetalLength': 5.1,
+     'PetalWidth': 1.9,
      'Species': 'virginica'}
 """
 
-KEYS = ['Sepal length', 'Sepal width', 'Petal length',
-        'Petal width', 'Species']
+KEYS = ['SepalLength', 'SepalWidth', 'PetalLength', 'PetalWidth', 'Species']
 VALUES = [5.8, 2.7, 5.1, 1.9, 'virginica']
 
 # dict[str,float|str]: zipped KEYS and VALUES to dict
