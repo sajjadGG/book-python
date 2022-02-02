@@ -120,11 +120,19 @@ Checking If Empty
 ...     print(f'My name is... {name}')
 My name is... Mark Watney
 
+Note, that following code is very error prone:
+
 >>> name = input('What is your name?: ')  #input:
 >>>
 >>> if name is None:
 ...     print('Name is empty')
-Name is empty
+
+This will never print "Name is empty" because if user will not type any data
+just only hit the return key, variable name will hold an empty string not
+a ``None`` value!
+
+>>> name
+''
 
 
 Conditional Assignment

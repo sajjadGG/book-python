@@ -50,7 +50,7 @@ Use Case - 0x01
 * Is adult
 
 >>> age = input('What is your age?: ')   #input: '10'
->>> adult = 'Yes' if age >= 18 else 'No'
+>>> adult = 'Yes' if int(age) >= 18 else 'No'
 >>>
 >>> print(adult)
 Yes

@@ -223,13 +223,15 @@ Exception Chaining
 >>> try:
 ...     database_connect()
 ... except ConnectionError as error:
-...     raise RuntimeError('Failed to open database') from error
+...     raise RuntimeError('Failed to open database') from error  # doctest: +ELLIPSIS
 Traceback (most recent call last):
+...
 ConnectionError
 <BLANKLINE>
 The above exception was the direct cause of the following exception:
 <BLANKLINE>
 Traceback (most recent call last):
+...
 RuntimeError: Failed to open database
 
 

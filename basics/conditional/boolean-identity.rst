@@ -118,28 +118,25 @@ True
 
 Type Checking
 -------------
->>> age = 30
+>>> data = 1337
 >>>
->>>
->>> if type(age) is int:
+>>> if type(data) is int:
 ...     print('Integer')
 Integer
 >>>
->>> if type(age) in (int, float):
+>>> if type(data) in (int, float):
 ...     print('Numeric')
 Numeric
 
->>> name = 'Mark'
+>>> data = 'Mark'
 >>>
->>>
->>> if type(name) is str:
+>>> if type(data) is str:
 ...     print('String')
 String
 
 >>> data = []
 >>>
->>>
->>> if type(age) is list:
+>>> if type(data) is list:
 ...     print('List')
 List
 >>>
@@ -149,8 +146,7 @@ Sequence
 
 >>> data = {}
 >>>
->>>
->>> if type(age) is dict:
+>>> if type(data) is dict:
 ...     print('Dict')
 Dict
 
