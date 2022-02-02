@@ -36,6 +36,21 @@ Catch Exception
 Connection Error
 
 
+Catch Exception with Details
+----------------------------
+* Catch single exception
+
+>>> def database_connect():
+...     raise ConnectionError('Cannot connect to database')
+>>>
+>>>
+>>> try:
+...     database_connect()
+... except ConnectionError as error:
+...     print('Connection Error: error')
+Connection Error: Cannot connect to database
+
+
 Catch Different Exceptions
 --------------------------
 * Catch exceptions with different handling
