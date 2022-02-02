@@ -53,7 +53,7 @@ Use Case - 0x01
 >>> adult = 'Yes' if int(age) >= 18 else 'No'
 >>>
 >>> print(adult)
-Yes
+No
 
 
 Use Case - 0x02
