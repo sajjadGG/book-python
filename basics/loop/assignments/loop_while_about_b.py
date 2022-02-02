@@ -1,5 +1,5 @@
 """
-* Assignment: Loop While to Str
+* Assignment: Loop While toStr
 * Required: yes
 * Complexity: easy
 * Lines of code: 4 lines

@@ -1,51 +1,11 @@
 Loop While About
 ================
 
-.. testsetup::
-
-    # Simulate user input (for test automation)
-    from unittest.mock import MagicMock
-    input = MagicMock(side_effect=['1'])
-
 
 Rationale
 ---------
->>> data = ['a', 'b', 'c']
->>>
->>> data[0]
-'a'
->>> data[1]
-'b'
->>> data[2]
-'c'
-
->>> data = ['a', 'b', 'c']
->>> i = 0
->>>
->>> if i < 3:
-...     print(data[i])
-...     i += 1
-a
->>>
->>> if i < 3:
-...     print(data[i])
-...     i += 1
-b
->>>
->>> if i < 3:
-...     print(data[i])
-...     i += 1
-c
-
->>> data = ['a', 'b', 'c']
->>> i = 0
->>>
->>> while i < 3:
-...     print(data[i])
-...     i += 1
-a
-b
-c
+* Iterate over sequences (iterables)
+* Repeat `if` until result is `False`
 
 
 Syntax
@@ -53,27 +13,97 @@ Syntax
 * Continue execution when argument is ``True``
 * Stops if argument is ``False``
 
-``while`` loop generic syntax:
+Generic syntax:
 
 .. code-block:: python
 
     while <condition>:
         <do something>
 
+Example:
+
 >>> # doctest: +SKIP
 ... while True:
 ...     pass
 
 
-Infinite Loop
--------------
-Never ending loop.
-Used in servers to wait forever for incoming connections.
-Used in games for game logic.
+Getitem with Const
+------------------
+>>> data = ['a', 'b', 'c']
+>>>
+>>> print(data[0])
+a
+>>> print(data[1])
+b
+>>> print(data[2])
+c
+>>> print(data[3])
+Traceback (most recent call last):
+IndexError: list index out of range
 
->>> # doctest: +SKIP
-... while True:
-...     print('hello')
+
+Getitem with Variable
+---------------------
+>>> data = ['a', 'b', 'c']
+>>>
+>>> i = 0               # i = 0
+>>> print(data[i])      # data[0]
+a
+>>>
+>>> i += 1              # i = 1
+>>> print(data[i])      # data[1]
+b
+>>>
+>>> i += 1              # i = 2
+>>> print(data[i])      # data[2]
+c
+>>>
+>>> i += 1              # i = 3
+>>> print(data[i])      # data[3]
+Traceback (most recent call last):
+IndexError: list index out of range
+
+
+Getitem with Boundary Checking
+------------------------------
+>>> data = ['a', 'b', 'c']
+>>> len(data)
+3
+
+>>> data = ['a', 'b', 'c']
+>>> i = 0
+>>>
+>>> if i < len(data):
+...     print(data[i])  # data[0]
+...     i += 1          # i = 1
+a
+>>>
+>>> if i < len(data):   # True
+...     print(data[i])  # data[1]
+...     i += 1          # i = 2
+b
+>>>
+>>> if i < len(data):   # True
+...     print(data[i])  # data[2]
+...     i += 1          # i = 3
+c
+>>>
+>>> if i < len(data):   # False
+...     print(data[i])  # will not execute
+...     i += 1          # will not execute
+
+
+While Loop
+----------
+>>> data = ['a', 'b', 'c']
+>>> i = 0
+>>>
+>>> while i < len(data):
+...     print(data[i])
+...     i += 1
+a
+b
+c
 
 
 Until
@@ -126,15 +156,22 @@ Better idea for this is to use ``for`` loop. ``for`` loop supports Iterators. ``
 2 c
 
 
+Infinite Loop
+-------------
+Never ending loop.
+Used in servers to wait forever for incoming connections.
+Used in games for game logic.
+
+>>> # doctest: +SKIP
+... while True:
+...     print('hello')
+
+
 Good Practices
 --------------
 * The longer the loop scope, the longer the variable name should be
 * Avoid one letters if scope is longer than one line
-* Generic names:
-
-    * ``i`` - for loop counter
-    * ``abort`` - for abort flags
-    * ``abort_flag`` - for abort flags
+* Use ``i`` for loop counter (it is traditional name in almost all languages)
 
 
 Assignments

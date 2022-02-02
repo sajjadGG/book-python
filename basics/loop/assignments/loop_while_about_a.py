@@ -1,5 +1,5 @@
 """
-* Assignment: Loop While to Float
+* Assignment: Loop While toFloat
 * Required: yes
 * Complexity: easy
 * Lines of code: 5 lines
