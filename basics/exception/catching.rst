@@ -12,163 +12,114 @@ Exception Catching
     Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 
-    def mean(data):
-        try:
-            avg = sum(data) / len(data)
-        except TypeError:
-            print(f'Invalid type of an argument: {data}')
-        except ZeroDivisionError:
-            print('Empty data')
-        else:
-            print(avg)
-        finally:
-            ...
-
-
-Catching Exceptions
--------------------
+Rationale
+---------
 * ``try``
 * ``except``
 * ``else``
 * ``finally``
 * ``try`` is required and then one of the others blocks
 
->>> try:
-...     'Try to execute'
-... except Exception:
-...     'What to do if exception occurs'
-... else:
-...     'What to do if no exception occurs'
-... finally:
-...     'What to do either if exception occurs or not'
-'Try to execute'
-'What to do if no exception occurs'
-'What to do either if exception occurs or not'
 
-Catch single exception:
+Catch Exception
+---------------
+* Catch single exception
 
->>> def apollo13():
-...     raise RuntimeError('Oxygen tank explosion')
+>>> def database_connect():
+...     raise ConnectionError('Cannot connect to database')
 >>>
 >>>
 >>> try:
-...     apollo13()
-... except RuntimeError:
-...     print('Houston we have a problem')
-Houston we have a problem
+...     database_connect()
+... except ConnectionError:
+...     print('Connection Error')
+Connection Error
 
-Catch many exceptions with the same handling:
 
->>> def apollo13():
-...     raise RuntimeError('Oxygen tank explosion')
+Catch Different Exceptions
+--------------------------
+* Catch exceptions with different handling
+
+>>> def database_connect():
+...     raise ConnectionError('Cannot connect to database')
 >>>
 >>>
 >>> try:
-...     apollo13()
-... except (RuntimeError, TypeError, NameError):
-...     print('Houston we have a problem')
-Houston we have a problem
+...     database_connect()
+... except ConnectionRefusedError:
+...     print('Connection Refused')
+... except ConnectionAbortedError:
+...     print('Connection Aborted')
+... except ConnectionError:
+...     print('Connection Error')
+Connection Error
 
-Catch many exceptions with different handling:
 
->>> try:
-...     with open(r'/tmp/my-file.txt') as file:
-...         print(file.read())
-... except FileNotFoundError:
-...     print('File does not exist')
-... except PermissionError:
-...     print('Permission denied')
-File does not exist
+Catch Multiple Exception
+------------------------
+* Catch exceptions with the same handling
 
-Exceptions logging:
-
->>> import logging
->>>
->>>
->>> def apollo13():
-...     raise RuntimeError('Oxygen tank explosion')
+>>> def database_connect():
+...     raise ConnectionError('Cannot connect to database')
 >>>
 >>>
 >>> try:
-...     apollo13()
-... except RuntimeError as err:
-...     logging.error(err)
-... #stderr: ERROR:root:Oxygen tank explosion
+...     database_connect()
+... except (ConnectionRefusedError, ConnectionAbortedError):
+...     print('Cannot establish connection')
+... except ConnectionError:
+...     print('Connection Error')
+Connection Error
 
 
-Else and Finally
-----------------
+Else
+----
 * ``else`` is executed when no exception occurred
+
+>>> def database_connect():
+...     raise ConnectionError('Cannot connect to database')
+>>>
+>>>
+>>> try:
+...     database_connect()
+... except ConnectionError:
+...     print('Connection Error')
+... else:
+...     print('Connection Established')
+...     db.query('SELECT * FROM users')
+Connection Error
+
+
+Finally
+-------
 * ``finally`` is executed always (even if there was exception)
 
-``else`` is executed when no exception occurred:
+``finally`` is executed always (even if there was exception). Typically it is
+used to close file, connection or transaction to database:
 
->>> def apollo11():
-...     print('Try landing on the Moon')
+>>> def database_connect():
+...     raise ConnectionError('Cannot connect to database')
 >>>
 >>>
 >>> try:
-...     apollo11()
-... except Exception:
-...     print('Abort')
+...     db = database_connect()
+... except ConnectionError:
+...     print('Connection Error')
 ... else:
-...     print('Landing a man on the Moon')
-Try landing on the Moon
-Landing a man on the Moon
-
-``finally`` is executed always (even if there was exception):
-Used to close file, connection or transaction to database:
-
->>> try:
-...     file = open('/tmp/myfile.txt')
-... except Exception:
-...     print('Error, file cannot be open')
+...     print('Connection Established')
+...     db.query('SELECT * FROM users')
 ... finally:
-...     print('Close file')
-Error, file cannot be open
-Close file
-
->>> def apollo11():
-...     print('Try landing on the Moon')
->>>
->>>
->>> try:
-...     apollo11()
-... except Exception:
-...     print('Abort')
-... finally:
-...     print('Returning safely to the Earth')
-Try landing on the Moon
-Returning safely to the Earth
-
->>> def apollo11():
-...     print('Program P63 - Landing Manoeuvre Approach Phase')
-...     raise RuntimeError('1201 Alarm')
-...     raise RuntimeError('1202 Alarm')
-...     print('Contact lights')
-...     print('The Eagle has landed!')
-...     print("That's one small step for [a] man, one giant leap for mankind.")
->>>
->>>
->>> try:
-...     apollo11()
-... except RuntimeError:
-...     print("You're GO for landing")
-... except Exception:
-...     print('Abort')
-... else:
-...     print('Landing a man on the Moon')
-... finally:
-...     print('Returning safely to the Earth')
-Program P63 - Landing Manoeuvre Approach Phase
-You're GO for landing
-Returning safely to the Earth
+...     print('Connection Closed')
+...     db.close()
+Connection Error
+Connection Closed
 
 
 Pokemon Exception Handling
 --------------------------
 * "Gotta catch 'em all"
 * ``Ctrl-C`` raises ``KeyboardInterrupt``
+* Operating system shutdown raises ``SystemExit``
 
 One cannot simply kill program with ``Ctrl-C``:
 
@@ -187,6 +138,48 @@ One can kill program with ``Ctrl-C``:
 ...         number = float(input('Type number: '))
 ...     except Exception:
 ...         continue
+
+
+Exception Chaining
+------------------
+>>> def database_connect():
+...     raise ConnectionError
+>>>
+>>>
+>>> try:
+...     database_connect()
+... except ConnectionError as error:
+...     raise RuntimeError('Failed to open database') from error  # doctest: +SKIP
+Traceback (most recent call last):
+...
+ConnectionError
+<BLANKLINE>
+The above exception was the direct cause of the following exception:
+<BLANKLINE>
+Traceback (most recent call last):
+...
+RuntimeError: Failed to open database
+
+
+Recap
+-----
+>>> try:
+...     'Expression to evaluate'
+... except TypeError:
+...     'Catch single exception'
+... except ValueError as error:
+...     'Catch single exception and use it as "error" variable'
+... except (IndexError, KeyError):
+...     'Catch multiple exceptions'
+... except Exception:
+...     'Catch any other exceptions'
+... else:
+...     'What to do if no exception occurs'
+... finally:
+...     'What to do either if exception occurs or not'
+'Expression to evaluate'
+'What to do if no exception occurs'
+'What to do either if exception occurs or not'
 
 
 Use Case - 0x01
@@ -214,25 +207,83 @@ Executing query...
 Disconnect from database
 
 
-Exception Chaining
-------------------
->>> def database_connect():
-...     raise ConnectionError
+Use Case - 0x02
+---------------
+>>> try:
+...     with open(r'/tmp/my-file.txt') as file:
+...         print(file.read())
+... except FileNotFoundError:
+...     print('File does not exist')
+... except PermissionError:
+...     print('Permission denied')
+File does not exist
+
+
+Use Case - 0x03
+---------------
+>>> try:
+...     file = open('/tmp/myfile.txt')
+... except Exception:
+...     print('Error, file cannot be open')
+... finally:
+...     print('Close file')
+Error, file cannot be open
+Close file
+
+
+Use Case - 0x03
+---------------
+>>> def apollo13():
+...     raise RuntimeError('Oxygen tank explosion')
 >>>
 >>>
 >>> try:
-...     database_connect()
-... except ConnectionError as error:
-...     raise RuntimeError('Failed to open database') from error  # doctest: +ELLIPSIS
-Traceback (most recent call last):
-...
-ConnectionError
-<BLANKLINE>
-The above exception was the direct cause of the following exception:
-<BLANKLINE>
-Traceback (most recent call last):
-...
-RuntimeError: Failed to open database
+...     apollo13()
+... except RuntimeError:
+...     print('Houston we have a problem')
+Houston we have a problem
+
+
+Use Case - 0x04
+---------------
+>>> def apollo11():
+...     print('Try landing on the Moon')
+>>>
+>>>
+>>> try:
+...     apollo11()
+... except Exception:
+...     print('Abort')
+... finally:
+...     print('Returning safely to the Earth')
+Try landing on the Moon
+Returning safely to the Earth
+
+
+Use Case - 0x05
+---------------
+>>> def apollo11():
+...     print('Program P63 - Landing Manoeuvre Approach Phase')
+...     raise RuntimeError('1201 Alarm')
+...     raise RuntimeError('1202 Alarm')
+...     print('Contact lights')
+...     print('The Eagle has landed!')
+...     print("That's one small step for [a] man, one giant leap for mankind.")
+>>>
+>>>
+>>> try:
+...     apollo11()
+... except RuntimeError:
+...     print("You're GO for landing")
+... except Exception:
+...     print('Abort')
+... else:
+...     print('Landing a man on the Moon')
+... finally:
+...     print('Returning safely to the Earth')
+Program P63 - Landing Manoeuvre Approach Phase
+You're GO for landing
+Returning safely to the Earth
 
 
 Assignments
