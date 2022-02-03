@@ -125,6 +125,7 @@ Loops
     :caption: Loops
 
     loop/while-about.rst
+    loop/while-patterns.rst
     loop/while-break.rst
     loop/while-continue.rst
     loop/while-else.rst

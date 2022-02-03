@@ -13,6 +13,10 @@ Rationale
 
 Example
 -------
+* 3, 2, 1, 0, Launching rocket to outer space
+* 3, 2, Fuel leak detected. Abort, Abort, Abort!
+* Note, this will print the value first, decrement and then check for leak
+
 >>> i = 3
 >>>
 >>> while i >= 0:
@@ -45,17 +49,17 @@ Fuel leak detected. Abort, Abort, Abort!
 * Is the rocket already launched to outer space?
 
 
-Exit Flag
----------
+Flag
+----
 In order to answer those questions we need to introduce a variable to hold
-the status if the countdown was aborted or successful. Let's name it ``abort``.
-If the flag is set to ``True``, then there was an abort procedure called
-during the countdown and we cannot launch a rocket to outer space.
+the status if the countdown was aborted or successful. Let's name it
+``abort``. If the flag is set to ``True``, then there was an abort procedure
+called during the countdown and we cannot launch a rocket to outer space.
 
 >>> abort = False
 >>> i = 3
 >>>
->>> while not abort:
+>>> while i >= 0:
 ...     print(i)
 ...     i -= 1
 ...
@@ -72,17 +76,12 @@ Fuel leak detected. Abort, Abort, Abort!
 But the problem here is that the follow-up code is split from the ``while``
 loop. This can cause problems if the codebase will grow.
 
-In real life the exit flag pattern is useful if you have for example
-multi-threaded application. You can kill all the threads if any thread changes
-the flag. Multi-threaded apps will share this value and kill the loop as soon
-as the condition will be evaluated.
-
 
 Else
 ----
-The ``else`` clause to ``while`` loop will be executed if a loop does not exit
-with ``break`` statement. In the other words: if there was no problem detected
-during the countdown, launch the rocket to outer space.
+The ``else`` clause to ``while`` loop will be executed if a loop does not
+exit with ``break`` statement. In the other words: if there was no problem
+detected during the countdown, launch the rocket to outer space.
 
 >>> i = 3
 >>>

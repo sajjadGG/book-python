@@ -106,20 +106,6 @@ b
 c
 
 
-Until
------
-Has stop conditions
-
->>> i = 0
->>>
->>> while i < 3:
-...     print(i)
-...     i += 1
-0
-1
-2
-
-
 Sequence Iteration
 ------------------
 Better idea for this is to use ``for`` loop. ``for`` loop supports Iterators. ``len()`` must write all ``numbers`` to memory, to calculate its length:
@@ -155,16 +141,6 @@ Better idea for this is to use ``for`` loop. ``for`` loop supports Iterators. ``
 1 b
 2 c
 
-
-Infinite Loop
--------------
-Never ending loop.
-Used in servers to wait forever for incoming connections.
-Used in games for game logic.
-
->>> # doctest: +SKIP
-... while True:
-...     print('hello')
 
 
 Good Practices
