@@ -23,20 +23,6 @@ obj=[1, 2, 3]
 obj=[4, 5, 6]
 obj=[7, 8, 9]
 
->>> DATA = [[1, 2, 3],
-...         [4, 5, 6],
-...         [7, 8, 9]]
->>>
->>>
->>> DATA[0]
-[1, 2, 3]
->>>
->>> DATA[1]
-[4, 5, 6]
->>>
->>> DATA[2]
-[7, 8, 9]
-
 
 Rationale
 ---------
@@ -44,8 +30,27 @@ Rationale
 * Used to iterate over nested data
 
 
-Matrix
-------
+Nested Loops
+------------
+You can have loop inside a loop:
+
+>>> DATA = [[1, 2, 3],
+...         [4, 5, 6],
+...         [7, 8, 9]]
+>>>
+>>>
+>>> for row in DATA:  # doctest: +NORMALIZE_WHITESPACE
+...     for value in row:
+...         print(f'{value}', end=' ')
+...     print()
+1 2 3
+4 5 6
+7 8 9
+
+
+List of List
+------------
+* Matrix
 * Suggested variable name: ``row``
 
 >>> DATA = [[1, 2, 3],
@@ -63,33 +68,6 @@ a=4 b=5 c=6
 a=7 b=8 c=9
 
 
-Nested Loops
-------------
-You can have loop inside a loop:
-
->>> for row in [1, 2, 3]:  # doctest: +NORMALIZE_WHITESPACE
-...     print()
-...
-...     for column in ['A', 'B', 'C']:
-...         print(f'{column}{row}', end=' ')
-A1 B1 C1
-A2 B2 C2
-A3 B3 C3
-
->>> DATA = [[1, 2, 3],
-...         [4, 5, 6],
-...         [7, 8, 9]]
->>>
->>>
->>> for row in DATA:  # doctest: +NORMALIZE_WHITESPACE
-...     print()
-...     for value in row:
-...         print(f'{value}', end=' ')
-1 2 3
-4 5 6
-7 8 9
-
-
 List of Pairs
 -------------
 >>> CREW = [
@@ -98,9 +76,9 @@ List of Pairs
 ...     ('pilot', 'Rick Martinez')]
 >>>
 >>>
->>> for member in CREW:
-...     role = member[0]
-...     name = member[1]
+>>> for astronaut in CREW:
+...     role = astronaut[0]
+...     name = astronaut[1]
 ...     print (f'{role=}, {name=}')
 role='commander', name='Melissa Lewis'
 role='botanist', name='Mark Watney'
@@ -115,15 +93,14 @@ List of Threes
 ...     ('pilot', 'Rick', 'Martinez')]
 >>>
 >>>
->>> for member in CREW:
-...     role = member[0]
-...     firstname = member[1]
-...     lastname = member[2]
+>>> for astronaut in CREW:
+...     role = astronaut[0]
+...     firstname = astronaut[1]
+...     lastname = astronaut[2]
 ...     print (f'{role=}, {firstname=}, {lastname=}')
 role='commander', firstname='Melissa', lastname='Lewis'
 role='botanist', firstname='Mark', lastname='Watney'
 role='pilot', firstname='Rick', lastname='Martinez'
-
 
 
 List of Sequence
@@ -246,6 +223,18 @@ Good Practices
     * ``inner`` - for inner loop element
 
 * Note that ``i`` may interfere with ``i`` used as loop counter
+
+
+Use Case - 0x01
+---------------
+>>> for row in [1, 2, 3]:  # doctest: +NORMALIZE_WHITESPACE
+...     print()
+...
+...     for column in ['A', 'B', 'C']:
+...         print(f'{column}{row}', end=' ')
+A1 B1 C1
+A2 B2 C2
+A3 B3 C3
 
 
 
