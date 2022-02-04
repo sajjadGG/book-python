@@ -1,5 +1,5 @@
-OOP Rationale
-=============
+OOP Architecture Rationale
+==========================
 
 
 Glossary

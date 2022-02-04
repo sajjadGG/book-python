@@ -1,5 +1,5 @@
-OOP Attribute Initialize
-========================
+OOP Init Validation
+===================
 
 
 Rationale

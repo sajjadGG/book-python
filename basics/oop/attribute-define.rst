@@ -1,5 +1,5 @@
-OOP Attribute Set
-=================
+OOP Attribute Define
+====================
 
 
 Syntax

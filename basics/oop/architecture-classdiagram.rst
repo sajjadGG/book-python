@@ -1,5 +1,5 @@
-OOP Architecture
-================
+OOP Architecture Class Diagram
+==============================
 
 
 Boxes and Arrows

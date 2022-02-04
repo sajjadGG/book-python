@@ -1,5 +1,5 @@
-OOP Methods About
-=================
+OOP Method About
+================
 
 
 Rationale
