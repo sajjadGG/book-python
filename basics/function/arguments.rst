@@ -180,7 +180,7 @@ Use Case - 0x03
 
 >>> read_csv('iris.csv', encoding='utf-8')
 
->>> read_csv('iris.csv', encoding='utf-8', parse_dates=['date_of_birth'])
+>>> read_csv('iris.csv', encoding='utf-8', parse_dates=['born'])
 
 >>> read_csv('iris.csv', skiprows=3, delimiter=';')
 
@@ -189,7 +189,7 @@ Use Case - 0x03
 ...     skiprows=3,
 ...     delimiter=';',
 ...     usecols=['Sepal Length', 'Species'],
-...     parse_dates=['date_of_birth'])
+...     parse_dates=['born'])
 
 
 Assignments

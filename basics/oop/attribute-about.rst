@@ -78,11 +78,11 @@ Information with context and relations creates information:
 
 Namespace
 ---------
-Unrelated values:
+Unrelated variables:
 
->>> x = 1
->>> y = 2
->>> z = 3
+>>> x: int
+>>> y: int
+>>> z: int
 
 Class creates space, in which names has meaning:
 
@@ -90,72 +90,7 @@ Class creates space, in which names has meaning:
 ...     x: int
 ...     y: int
 ...     z: int
->>>
->>>
->>> point = Point()
->>> point.x = 1
->>> point.y = 2
->>> point.z = 3
 
-
-Use Case - 0x01
----------------
->>> class Laptop:
-...     cpu: float
-...     ram: int
-...     ssd: int
->>>
->>>
->>> macbook = Laptop()
->>> lenovo = Laptop()
->>> hp = Laptop()
->>> asus = Laptop()
-
-
-Use Case - 0x02
----------------
->>> class Date:
-...     year: int
-...     month: int
-...     day: int
->>>
->>>
->>> # Gagarin - first man to leave Earth
->>> gagarin = Date()
->>> gagarin.year = 1961
->>> gagarin.month = 4
->>> gagarin.day = 12
->>>
->>> # Armstrong - first man to walk on the Moon
->>> armstrong = Date()
->>> armstrong.year = 1969
->>> armstrong.month = 7
->>> armstrong.day = 21
-
-
-Use Case - 0x03
----------------
-* Relation
-
->>> class Date:
-...     year: int
-...     month: int
-...     day: int
->>>
->>>
->>> class Person:
-...     firstname: str
-...     lastname: str
-...     date_of_birth: Date
-...     height: float
-...     weight: float
-
-
-Good Practices
---------------
-* ``snake_case`` name convention
-* Attributes should be defined only in ``__init__()`` method
-* More information in `OOP Init Method`
 
 
 References

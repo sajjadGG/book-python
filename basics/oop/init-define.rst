@@ -1,4 +1,4 @@
-OOP Init Method
+OOP Init Define
 ===============
 
 
@@ -81,10 +81,6 @@ Hello Mark Unknown
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_init_a.py
-    :caption: :download:`Solution <assignments/oop_init_a.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/oop_init_b.py
-    :caption: :download:`Solution <assignments/oop_init_b.py>`
+.. literalinclude:: assignments/oop_init_define_a.py
+    :caption: :download:`Solution <assignments/oop_init_define_a.py>`
     :end-before: # Solution

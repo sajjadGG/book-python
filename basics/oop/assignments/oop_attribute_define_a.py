@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Attribute Model
+* Assignment: OOP Attribute Define
 * Required: yes
 * Complexity: easy
 * Lines of code: 12 lines

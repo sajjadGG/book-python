@@ -2,56 +2,43 @@ OOP Attribute Define
 ====================
 
 
-Syntax
-------
-* Optional attribute annotation
-
->>> class MyClass:
-...     myattribute: str
-
-
-
-Example
--------
+No Attribute Definition
+-----------------------
 >>> class Astronaut:
 ...     pass
 
+
+Attribute Annotation
+--------------------
+* Optional
+* Good practice
+
+Basic Types:
+
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
 
+Sequences:
 
-Namespace
----------
-Unrelated values:
-
->>> x: int
->>> y: int
->>> z: int
-
-Class creates space, in which names has meaning:
-
->>> class Point:
-...     x: int
-...     y: int
-...     z: int
-
-
-Different Types
----------------
->>> class Iris:
-...     features: list[float]
-...     label: str
-
->>> # doctest: +SKIP
-... class Astronaut:
+>>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     age: float|int
-...     height: float
-...     weight: float
-...     missions: list
-...     experience: list|None
+...     missions: list[str]
+
+Union:
+
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int | float
+
+Optionals:
+
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     missions: list | None
 
 
 Relation One to One
@@ -65,7 +52,7 @@ Relation One to One
 >>> class Person:
 ...     firstname: str
 ...     lastname: str
-...     date_of_birth: Date
+...     born: Date
 
 
 Relation One to Many
@@ -79,6 +66,34 @@ Relation One to Many
 ...     firstname: str
 ...     lastname: str
 ...     missions: list[Mission]
+
+
+Good Practices
+--------------
+* ``snake_case`` name convention
+* Attributes should be defined only in ``__init__()`` method
+* More information in `OOP Init Method`
+
+
+
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int | float
+...     height: float
+...     weight: float
+...     missions: list
+...     experience: list | None
+
+>>> class Iris:
+...     features: list[float]
+...     label: str
+
+
+>>> class Point:
+...     x: int
+...     y: int
+...     z: int
 
 
 Use Case - 0x01
@@ -97,13 +112,26 @@ Use Case - 0x02
 ...     day: int
 
 
-References
-----------
-.. [glassimg] https://media.istockphoto.com/vectors/glasses-set-for-water-glasses-full-empty-halffilled-with-water-vector-vector-id905957960?k=6&m=905957960&s=612x612&w=0&h=DE0uCDCehEA_eDHzHW38jvhl3pYjNuoqXZ_6ZzHbz0M=
+Use Case - 0x03
+---------------
+* Relation
+
+>>> class Date:
+...     year: int
+...     month: int
+...     day: int
+>>>
+>>>
+>>> class Person:
+...     firstname: str
+...     lastname: str
+...     born: Date
+...     height: float
+...     weight: float
 
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_attribute_a.py
-    :caption: :download:`Solution <assignments/oop_attribute_a.py>`
+.. literalinclude:: assignments/oop_attribute_define_a.py
+    :caption: :download:`Solution <assignments/oop_attribute_define_a.py>`
     :end-before: # Solution

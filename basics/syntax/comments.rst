@@ -55,7 +55,6 @@ Docstring and Doctests
 * :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
 
 >>> # doctest: +SKIP
-...
 ... """
 ... This is my first Python script
 ...

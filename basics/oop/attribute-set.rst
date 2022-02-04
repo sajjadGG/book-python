@@ -57,11 +57,10 @@ Different Types
 >>> setosa.features = [5.1, 3.5, 1.4, 0.2]
 >>> setosa.label = 'setosa'
 
->>> # doctest: +SKIP
-... class Astronaut:
+>>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     age: float|int
+...     age: int | float
 >>>
 >>>
 >>> jose = Astronaut()
@@ -165,7 +164,7 @@ Use Case - 0x03
 >>> class Person:
 ...     firstname: str
 ...     lastname: str
-...     date_of_birth: Date
+...     born: Date
 ...     height: float
 ...     weight: float
 
@@ -199,6 +198,6 @@ References
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_attribute_a.py
-    :caption: :download:`Solution <assignments/oop_attribute_a.py>`
+.. literalinclude:: assignments/oop_attribute_set_a.py
+    :caption: :download:`Solution <assignments/oop_attribute_set_a.py>`
     :end-before: # Solution

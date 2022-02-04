@@ -327,7 +327,7 @@ Use Case - 0x03
 >>> class Person:
 ...     firstname: str
 ...     lastname: str
-...     date_of_birth: Date
+...     born: Date
 ...     height: float
 ...     weight: float
 

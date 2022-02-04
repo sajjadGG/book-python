@@ -44,8 +44,8 @@ One class and three instances:
 >>>
 >>>
 >>> watney = Astronaut()
->>> twardowski = Astronaut()
->>> jimenez = Astronaut()
+>>> lewis = Astronaut()
+>>> martinez = Astronaut()
 
 Two classes and two instances:
 

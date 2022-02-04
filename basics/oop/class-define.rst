@@ -16,13 +16,16 @@ Rationale
 Classes
 -------
 * Classes are templates for objects
-* ``PascalCase`` name convention
 
 Classes should have capitalized name:
 
 >>> class Astronaut:
 ...     pass
 
+
+Class Names
+-----------
+* ``PascalCase`` name convention
 Multi-word class names should use ``PascalCase``:
 
 >>> class SeniorAstronaut:
