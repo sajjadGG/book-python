@@ -187,23 +187,72 @@ GNU Octave, on V8, Swift, and Rust. [#timsort]_
 * ``sorted()`` - Returns sorted list, do not modify the original
 * ``list.sort()`` - Changes object permanently, returns ``None``
 
->>> data = [3, 1, 2]
->>> sorted(data)
-[1, 2, 3]
+Return sorted values without modifying a list:
 
 >>> data = [3, 1, 2]
+>>>
+>>> sorted(data)
+[1, 2, 3]
+>>>
+>>> sorted(data, reverse=True)
+[3, 2, 1]
+
+Permanent sorting with list modification (note that ``list.sort()`` modifies
+data, and returns ``None``, not values):
+
+>>> data = [3, 1, 2]
+>>>
 >>> data.sort()
 >>> data
 [1, 2, 3]
+>>>
+>>> data.sort(reverse=True)
+>>> data
+[3, 2, 1]
+
+You can also use ``list.sort()`` and/or ``sorted()`` with ``str``. It will
+sort strings according to Unicode (UTF-8) value, that is ASCII table for
+latin alphabet and Unicode for extended encoding. This kind of sorting is
+called lexicographic order.
 
 >>> data = ['a', 'c', 'b']
+>>>
 >>> sorted(data)
 ['a', 'b', 'c']
+
 
 Reverse
 -------
 * ``reversed()``
 * ``list.reverse()``
+
+>>> data = [1, 2, 3]
+>>> data.reverse()
+>>> data
+[3, 2, 1]
+
+>>> data = [1, 2, 3]
+>>>
+>>> list(reversed(data))
+[3, 2, 1]
+
+Why?:
+
+>>> data = [1, 2, 3]
+>>> result = reversed(data)
+>>>
+>>> result  # doctest: +ELLIPSIS
+<list_reverseiterator object at 0x...>
+>>>
+>>> next(result)
+3
+>>> next(result)
+2
+>>> next(result)
+1
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
 
 
 Method Chaining

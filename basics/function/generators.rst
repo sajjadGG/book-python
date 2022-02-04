@@ -1,28 +1,33 @@
-Function Generators
-===================
+Function Generator-Like
+=======================
+
+Rationale
+---------
+* It is not a generator
+* Generator-like objects
 
 
 Range
 -----
-* It is not a generator
+* ``range([start], <stop>, [step])``
 * optional ``start``, inclusive, default: ``0``
-* required ``stop``, exclusive,
+* required ``stop``, exclusive
 * optional ``step``, default: ``1``
 
 ``range()`` syntax:
 
-.. code-block:: python
-
-    range([start], <stop>, [step])
-
 >>> range(0,3)
 range(0, 3)
+
 >>> list(range(0,3))
 [0, 1, 2]
+>>>
 >>> tuple(range(0,3))
 (0, 1, 2)
+>>>
 >>> set(range(0,3))
 {0, 1, 2}
+>>>
 >>> list(range(4,11,2))
 [4, 6, 8, 10]
 
@@ -30,19 +35,6 @@ range(0, 3)
 Enumerate
 ---------
 * ``enumerate(*iterables)``
-
->>> months = ['January', 'February', 'March']
->>> result = enumerate(months)
->>>
->>> next(result)
-(0, 'January')
->>> next(result)
-(1, 'February')
->>> next(result)
-(2, 'March')
->>> next(result)
-Traceback (most recent call last):
-StopIteration
 
 >>> months = ['January', 'February', 'March']
 >>> result = enumerate(months)
@@ -68,14 +60,6 @@ StopIteration
 >>> print(result)
 {'01': 'January', '02': 'February', '03': 'March'}
 
->>> months = ['January', 'February', 'March']
->>>
->>> for i, month in enumerate(months, start=1):
-...     print(f'{i} -> {month}')
-1 -> January
-2 -> February
-3 -> March
-
 
 Zip
 ---
@@ -84,36 +68,13 @@ Zip
 >>> firstnames = ['Mark', 'Melissa', 'Rick']
 >>> lastnames = ['Watney', 'Lewis', 'Martinez']
 >>>
->>> result = zip(firstnames, lastnames)
->>>
->>>
->>> next(result)
-('Mark', 'Watney')
->>>
->>> next(result)
-('Melissa', 'Lewis')
->>>
->>> next(result)
-('Rick', 'Martinez')
->>>
->>> next(result)
-Traceback (most recent call last):
-StopIteration
-
->>> firstnames = ['Mark', 'Melissa', 'Rick']
->>> lastnames = ['Watney', 'Lewis', 'Martinez']
->>>
->>> result = zip(firstnames, lastnames)
->>>
->>> list(result)
+>>> list(zip(firstnames, lastnames))
 [('Mark', 'Watney'), ('Melissa', 'Lewis'), ('Rick', 'Martinez')]
 
 >>> firstnames = ['Mark', 'Melissa', 'Rick']
 >>> lastnames = ['Watney', 'Lewis', 'Martinez']
 >>>
->>> result = zip(firstnames, lastnames)
->>>
->>> dict(result)
+>>> dict(zip(firstnames, lastnames))
 {'Mark': 'Watney', 'Melissa': 'Lewis', 'Rick': 'Martinez'}
 
 >>> roles = ['botanist', 'commander', 'pilot']
@@ -129,10 +90,10 @@ StopIteration
 >>> firstnames = ['Mark', 'Melissa']
 >>> lastnames = ['Watney', 'Lewis', 'Martinez']
 >>>
->>> result = zip(firstnames, lastnames)
->>>
->>> list(result)
+>>> list(zip(firstnames, lastnames))
 [('Mark', 'Watney'), ('Melissa', 'Lewis')]
+
+Three-way:
 
 >>> roles = ['botanist', 'commander', 'pilot']
 >>> firstnames = ['Mark', 'Melissa', 'Rick']
@@ -154,37 +115,19 @@ StopIteration
 Traceback (most recent call last):
 StopIteration
 
->>> roles = ['botanist', 'commander', 'pilot']
->>> names = ['Mark Watney', 'Melissa Lewis', 'Rick Martinez']
->>>
->>>
->>> for role, name in zip(roles, names):
-...     print(f'{role} -> {name}')
-botanist -> Mark Watney
-commander -> Melissa Lewis
-pilot -> Rick Martinez
-
 
 Map
 ---
 * Apply function to all elements of data
 * ``map(callable, *iterables)``
 
+>>> def square(x):
+...     return x ** 2
+
 >>> data = [1, 2, 3]
->>> result = map(float, data)
->>>
->>>
->>> next(result)
-1.0
->>>
->>> next(result)
-2.0
->>>
->>> next(result)
-3.0
->>> next(result)
-Traceback (most recent call last):
-StopIteration
+>>> result = map(square, data)
+>>> list(result)
+[1, 4, 9]
 
 
 Filter
@@ -193,7 +136,107 @@ Filter
 
 >>> def even(x):
 ...     return x % 2 == 0
+
+>>> data = [0, 1, 2, 3, 4]
+>>> result = filter(even, data)
+>>> list (result)
+
+
+Next
+----
+Range:
+
+>>> result = range(0,5)
 >>>
+>>> next(result)
+TypeError: 'range' object is not an iterator
+
+Zip two-way:
+
+>>> firstnames = ['Mark', 'Melissa', 'Rick']
+>>> lastnames = ['Watney', 'Lewis', 'Martinez']
+>>>
+>>> result = zip(firstnames, lastnames)
+>>>
+>>>
+>>> next(result)
+('Mark', 'Watney')
+>>>
+>>> next(result)
+('Melissa', 'Lewis')
+>>>
+>>> next(result)
+('Rick', 'Martinez')
+>>>
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
+
+Enumerate:
+
+>>> months = ['January', 'February', 'March']
+>>> result = enumerate(months)
+>>>
+>>> next(result)
+(0, 'January')
+>>>
+>>> next(result)
+(1, 'February')
+>>>
+>>> next(result)
+(2, 'March')
+>>>
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
+
+Zip n-way:
+
+>>> roles = ['botanist', 'commander', 'pilot']
+>>> firstnames = ['Mark', 'Melissa', 'Rick']
+>>> lastnames = ['Watney', 'Lewis', 'Martinez']
+>>>
+>>> result = zip(roles, firstnames, lastnames)
+>>>
+>>>
+>>> next(result)
+('botanist', 'Mark', 'Watney')
+>>>
+>>> next(result)
+('commander', 'Melissa', 'Lewis')
+>>>
+>>> next(result)
+('pilot', 'Rick', 'Martinez')
+>>>
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
+
+Map:
+
+>>> def square(x):
+...     return x ** 2
+>>>
+>>> data = [1, 2, 3]
+>>> result = map(square, data)
+>>>
+>>>
+>>> next(result)
+1
+>>>
+>>> next(result)
+4
+>>>
+>>> next(result)
+9
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
+
+Filter:
+
+>>> def even(x):
+...     return x % 2 == 0
 >>>
 >>> data = [0, 1, 2, 3, 4]
 >>> result = filter(even, data)
@@ -212,30 +255,65 @@ Traceback (most recent call last):
 StopIteration
 
 
+Iter
+----
+Range:
+
+>>> for i in range(0,3):
+>>>     print(i)
+0
+1
+2
+
+Enumerate:
+
+>>> months = ['January', 'February', 'March']
+>>>
+>>> for i, month in enumerate(months, start=1):
+...     print(f'{i} -> {month}')
+1 -> January
+2 -> February
+3 -> March
+
+Zip:
+
+>>> roles = ['botanist', 'commander', 'pilot']
+>>> names = ['Mark Watney', 'Melissa Lewis', 'Rick Martinez']
+>>>
+>>> for role, name in zip(roles, names):
+...     print(f'{role=}, {name=}')
+role='botanist', name='Mark Watney'
+role='commander', name='Melissa Lewis'
+role='pilot', name='Rick Martinez'
+
+
 Generator Chain
 ---------------
 * Function composition
 
+>>> def square(x):
+...     return x ** 2
+>>>
 >>> def even(x):
 ...     return x % 2 == 0
 >>>
 >>>
->>> data = (x for x in range(0,5))
->>> data = map(float, data)
->>> data = filter(even, data)
+>>> result = range(0,10)
+>>> result = map(square, data)
+>>> result = filter(even, data)
 >>>
+>>> for value in result:
+...     print(value)
+...     if value > 5:
+...         break
+0
+4
 >>>
->>> next(data)
-0.0
+>>> next(result)
+16
 >>>
->>> next(data)
-2.0
->>>
->>> next(data)
-4.0
->>> next(data)
-Traceback (most recent call last):
-StopIteration
+>>> list(result)
+[36, 64]
 
 
 Itertools

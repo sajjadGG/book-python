@@ -143,6 +143,19 @@ SyntaxError: non-default argument follows default argument
 ...     return a + b
 
 
+Signature
+---------
+>>> from inspect import signature
+>>>
+>>>
+>>> def add(a, b=20):
+...     return a + b
+>>>
+>>>
+>>> signature(add)
+<Signature (a, b=2)>
+
+
 Use Case - 0x01
 ---------------
 >>> def echo(text):

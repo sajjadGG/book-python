@@ -106,10 +106,10 @@ Choosing Good Name
 ------------------
 People, especially those who uses simple IDEs or notepads without sophisticated
 autocompletion will tend to create function with shorter names in order to save
-couple of characters each time when it is called. This at the beginning could be
-a good idea, but in the long run will lead to disaster. Coming back to your code
-after a year or two will require you to rediscover the code and read it once
-again.
+couple of characters each time when it is called. This at the beginning could
+be a good idea, but in the long run will lead to disaster. Coming back to your
+code after a year or two will require you to rediscover the code and read it
+once again.
 
 >>> def var(data, m):
 ...     return sum((Xi-m) ** 2 for Xi in data) / len(data)
@@ -126,8 +126,8 @@ built-in ``vars()`` far better:
 >>> def variance(data, m):
 ...     return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
-This way a probability for mistake is far lower and even if, then will be better
-discoverable.
+This way a probability for mistake is far lower and even if, then will be
+better discoverable.
 
 
 Name Collisions
