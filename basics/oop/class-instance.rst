@@ -1,5 +1,5 @@
-OOP Classes Instance
-====================
+OOP Class Instance
+==================
 
 
 Rationale

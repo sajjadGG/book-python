@@ -112,6 +112,6 @@ References
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_inheritancesuper_a.py
-    :caption: :download:`Solution <assignments/oop_inheritancesuper_a.py>`
+.. literalinclude:: assignments/oop_inheritance_super_a.py
+    :caption: :download:`Solution <assignments/oop_inheritance_super_a.py>`
     :end-before: # Solution

@@ -68,10 +68,10 @@ Multiple Inheritance
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_inheritancepatterns_a.py
-    :caption: :download:`Solution <assignments/oop_inheritancepatterns_a.py>`
+.. literalinclude:: assignments/oop_inheritance_patterns_a.py
+    :caption: :download:`Solution <assignments/oop_inheritance_patterns_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_inheritancepatterns_b.py
-    :caption: :download:`Solution <assignments/oop_inheritancepatterns_b.py>`
+.. literalinclude:: assignments/oop_inheritance_patterns_b.py
+    :caption: :download:`Solution <assignments/oop_inheritance_patterns_b.py>`
     :end-before: # Solution

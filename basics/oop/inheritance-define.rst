@@ -1,26 +1,5 @@
-OOP Inheritance About
-=====================
-
-
-Rationale
----------
-* Child inherits all fields and methods from parent
-* Used to avoid code duplication
-
-.. glossary::
-
-    parent
-    superclass
-    base class
-        Class from other classes inherits
-
-    child
-    subclass
-        Class which inherits from :term:`parent`
-
-    inherit
-    derive
-        Class takes attributes and methods from parent.
+OOP Inheritance Define
+======================
 
 
 Inheritance
@@ -136,3 +115,10 @@ Use Case - 0x03
 References
 ----------
 .. [#Hettinger2015] https://www.youtube.com/watch?v=EiOglTERPEo
+
+
+Assignments
+-----------
+.. literalinclude:: assignments/oop_inheritance_define_a.py
+    :caption: :download:`Solution <assignments/oop_inheritance_define_a.py>`
+    :end-before: # Solution

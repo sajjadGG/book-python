@@ -1,5 +1,5 @@
-OOP Classes Define
-==================
+OOP Class Define
+================
 
 
 Rationale
