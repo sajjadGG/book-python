@@ -8,8 +8,8 @@ English:
     1. Connect to database:
         a. Set returned result type to `sqlite3.Row`
         b. Get cursor and next things execute on it
-        c. Execute `SQL_CREATE_TABLE_ASTRONAUT` to create table `astronauts`
-        d. Execute `SQL_CREATE_TABLE_ADDRESS` to create table `addresses`
+        c. Execute `SQL_CREATE_TABLE_ASTRONAUTS` to create table `astronauts`
+        d. Execute `SQL_CREATE_TABLE_ADDRESSES` to create table `addresses`
         e. Execute `SQL_CREATE_INDEX_ASTRONAUT_LASTNAME` to create index
     2. Iterate over `DATA`:
         a. Seprate `addresses` from other values
@@ -26,8 +26,8 @@ Polish:
     1. Połącz się do bazy danych:
         a. Ustaw typ zwracanych wyników na `sqlite3.Row`
         b. Pobierz kursor i następne polecenia wykonuj na nim
-        c. Wykonując `SQL_CREATE_TABLE_ASTRONAUT` stwórz tabelę `astronauts`
-        d. Wykonując `SQL_CREATE_TABLE_ADDRESS` stwórz tabelę `addresses`
+        c. Wykonując `SQL_CREATE_TABLE_ASTRONAUTS` stwórz tabelę `astronauts`
+        d. Wykonując `SQL_CREATE_TABLE_ADDRESSES` stwórz tabelę `addresses`
         e. Wykonując `SQL_CREATE_INDEX_ASTRONAUT_LASTNAME` stwórz indeks
     2. Iteruj po `DATA`:
         a. Oddziel `addresses` od pozostałych wartości
@@ -86,14 +86,14 @@ DATA = [
         {"street": "Linder Hoehe", "city": "Köln", "code": 51147, "state": None, "country": "Germany"}]}
 ]
 
-SQL_CREATE_TABLE_ASTRONAUT = """
-    CREATE TABLE IF NOT EXISTS astronaut (
+SQL_CREATE_TABLE_ASTRONAUTS = """
+    CREATE TABLE IF NOT EXISTS astronauts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         firstname TEXT,
         lastname TEXT);"""
 
-SQL_CREATE_TABLE_ADDRESS = """
-    CREATE TABLE IF NOT EXISTS address (
+SQL_CREATE_TABLE_ADDRESSES = """
+    CREATE TABLE IF NOT EXISTS addresses (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         astronaut_id INTEGER,
         street TEXT,
@@ -103,16 +103,16 @@ SQL_CREATE_TABLE_ADDRESS = """
         country TEXT);"""
 
 SQL_CREATE_INDEX_ASTRONAUT_LASTNAME = """
-    CREATE INDEX IF NOT EXISTS lastname_index ON astronaut (lastname);"""
+    CREATE INDEX IF NOT EXISTS lastname_index ON astronauts (lastname);"""
 
 SQL_INSERT_ASTRONAUT = """
-    INSERT INTO astronaut VALUES (
+    INSERT INTO astronauts VALUES (
         NULL,
         :firstname,
         :lastname);"""
 
 SQL_INSERT_ADDRESS = """
-    INSERT INTO address VALUES (
+    INSERT INTO addresses VALUES (
         NULL,
         :astronaut_id,
         :street,
@@ -123,9 +123,9 @@ SQL_INSERT_ADDRESS = """
 
 SQL_SELECT = """
     SELECT *
-    FROM astronaut
-    JOIN address
-    ON astronaut.id=address.astronaut_id;"""
+    FROM astronauts
+    JOIN addresses
+    ON astronauts.id=addresses.astronaut_id;"""
 
 
 # list[tuple]: select all results from database in list[dict] format, example:
@@ -141,8 +141,8 @@ result = []
 with sqlite3.connect(DATABASE) as connection:
     db = connection.cursor()
     db.row_factory = sqlite3.Row
-    db.execute(SQL_CREATE_TABLE_ADDRESS)
-    db.execute(SQL_CREATE_TABLE_ASTRONAUT)
+    db.execute(SQL_CREATE_TABLE_ADDRESSES)
+    db.execute(SQL_CREATE_TABLE_ASTRONAUTS)
     db.execute(SQL_CREATE_INDEX_ASTRONAUT_LASTNAME)
 
     for astronaut in DATA:

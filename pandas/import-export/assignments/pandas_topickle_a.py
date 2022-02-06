@@ -9,7 +9,7 @@ English:
     2. While reading use `header=0` parameter
     3. Select 146 head rows, and last 11 from it
     4. Export data from column `Event` to file the `FILE`
-    5. Data has to be in JSON format
+    5. Data has to be in Pickle format
     6. Run doctests - all must succeed
 
 Polish:
@@ -17,7 +17,7 @@ Polish:
     2. Przy wczytywaniu użyj parametru `header=0`
     3. Wybierz pierwszych 146 wierszy, a z nich ostatnie 11
     4. Wyeksportuj dane z kolumny `Event` do pliku `FILE`
-    5. Dane mają być w formacie JSON
+    5. Dane mają być w formacie Pickle
     6. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:

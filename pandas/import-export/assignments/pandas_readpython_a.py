@@ -20,6 +20,11 @@ Polish:
     3. Przekonwertuj dane do `result: pd.DataFrame`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
+Hint:
+    * dict.pop()
+    * enumerate(..., start=1)
+    * column_name = f'mission{i}_{field}'
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

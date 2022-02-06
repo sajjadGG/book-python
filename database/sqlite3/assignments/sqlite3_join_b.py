@@ -8,8 +8,8 @@ English:
     1. Connect to database:
         a. Set returned result type to `sqlite3.Row`
         b. Get cursor and next things execute on it
-        c. Execute `SQL_CREATE_TABLE_ASTRONAUT` to create table `astronauts`
-        d. Execute `SQL_CREATE_TABLE_ADDRESS` to create table `addresses`
+        c. Execute `SQL_CREATE_TABLE_ASTRONAUTS` to create table `astronauts`
+        d. Execute `SQL_CREATE_TABLE_ADDRESSES` to create table `addresses`
         e. Execute `SQL_CREATE_INDEX_ASTRONAUT_LASTNAME` to create index
     2. Iterate over `DATA`:
         a. Seprate `crew` from other values
@@ -26,8 +26,8 @@ Polish:
     1. Połącz się do bazy danych:
         a. Ustaw typ zwracanych wyników na `sqlite3.Row`
         b. Pobierz kursor i następne polecenia wykonuj na nim
-        c. Wykonując `SQL_CREATE_TABLE_ASTRONAUT` stwórz tabelę `astronauts`
-        d. Wykonując `SQL_CREATE_TABLE_ADDRESS` stwórz tabelę `addresses`
+        c. Wykonując `SQL_CREATE_TABLE_ASTRONAUTS` stwórz tabelę `astronauts`
+        d. Wykonując `SQL_CREATE_TABLE_ADDRESSES` stwórz tabelę `addresses`
         e. Wykonując `SQL_CREATE_INDEX_ASTRONAUT_LASTNAME` stwórz indeks
     2. Iteruj po `DATA`:
         a. Oddziel `crew` od pozostałych wartości

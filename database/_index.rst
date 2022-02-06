@@ -46,6 +46,7 @@ SQL
     sql/sql-transaction.rst
     sql/sql-join.rst
     sql/sql-injection.rst
+    sql/use-cases.rst
 
 
 SQLite3
@@ -63,7 +64,7 @@ SQLite3
     sqlite3/sqlite3-fetch.rst
     sqlite3/sqlite3-cursor.rst
     sqlite3/sqlite3-join.rst
-    sqlite3/sqlite3-usecase.rst
+    sqlite3/use-cases.rst
 
 
 SQLAlchemy
@@ -119,6 +120,8 @@ SQLAlchemy
     sqlalchemy/func-numeric.rst
     sqlalchemy/func-string.rst
     sqlalchemy/func-system.rst
+
+    sqlite3/use-cases.rst
 
 
 Case Study

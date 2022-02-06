@@ -16,10 +16,11 @@ Import & Export
 
     import-export/read.rst
     import-export/read-csv.rst
+    import-export/read-excel.rst
     import-export/read-json.rst
+    import-export/read-clipboard.rst
     import-export/read-str.rst
     import-export/read-html.rst
-    import-export/read-clipboard.rst
     import-export/read-python.rst
     import-export/read-sql.rst
     import-export/read-xml.rst

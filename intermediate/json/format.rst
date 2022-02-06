@@ -31,6 +31,19 @@ JSON or Python?
 ---------------
 * JSON or Python ``list[dict]``?
 
+.. code-block:: text
+
+    DATA = [
+        {"firstname": "Mark", "lastname": "Watney", "missions": [
+            {"year": "2035", "name": "Ares3"}]},
+
+        {"firstname": "Melissa", "lastname": "Lewis", "missions": [
+             {"year": "2030", "name": "Ares1"},
+             {"year": "2035", "name": "Ares3"}]},
+
+        {"firstname": "Rick", "lastname": "Martinez", "missions": []}
+    ]
+
 .. code-block:: python
 
     {'mission': 'Ares 3',
@@ -127,4 +140,3 @@ Use Case - 0x01
 
      {"firstname": "Alex", "lastname": "Vogel", "addresses": [
         {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}]
-

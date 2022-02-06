@@ -2,6 +2,30 @@ SQLite3 Use Cases
 =================
 
 
+Pandas
+------
+.. code-block:: python
+
+    import sqlite3
+    import pandas as pd
+
+
+    DATABASE = 'myfile.db'
+
+    SQL = """
+
+        SELECT *
+        FROM astronauts;
+
+    """
+
+
+    with sqlite3.connect(DATABASE) as db:
+        df = pd.read_sql(SQL, db)
+
+    print(df)
+
+
 Sensors
 -------
 .. code-block:: python

@@ -221,7 +221,7 @@ Dialects
     * ``quoting=csv.QUOTE_MINIMAL``
     * ``quotechar='"'``
     * ``delimiter=','`` or ``delimiter=';'`` depending on Windows locale decimal separator
-    * ``lineterminator='\n\n'``
+    * ``lineterminator='\r\n'``
     * ``encoding='...'`` - depends on Windows locale typically ``windows-*``
 
 * Microsoft Excel macOS:
