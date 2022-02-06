@@ -255,6 +255,7 @@ Python:
 Useful libs
 -----------
 * https://fastapi.tiangolo.com
+* https://sqlmodel.tiangolo.com
 * https://pydantic-docs.helpmanual.io
 
 
