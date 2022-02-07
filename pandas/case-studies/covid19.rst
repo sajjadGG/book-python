@@ -16,3 +16,34 @@ Code
 ----
 .. literalinclude:: src/covid19.py
     :language: python
+
+
+Plots
+-----
+.. figure:: img/covid19-poland-confirmed-daily.png
+
+    Confirmed daily plot for COVID19 pandemy in Poland.
+
+.. figure:: img/covid19-poland-confirmed-holidays.png
+
+    Confirmed holidays plot for COVID19 pandemy in Poland.
+
+.. figure:: img/covid19-poland-confirmed-last.png
+
+    Confirmed last plot for COVID19 pandemy in Poland.
+
+.. figure:: img/covid19-poland-confirmed-monthly.png
+
+    Confirmed monthly plot for COVID19 pandemy in Poland.
+
+.. figure:: img/covid19-poland-confirmed-waves.png
+
+    Confirmed waves plot for COVID19 pandemy in Poland.
+
+.. figure:: img/covid19-poland-fatalities.png
+
+    Fatalities plot for COVID19 pandemy in Poland.
+
+.. figure:: img/covid19-poland-trendline.png
+
+    Trendline plot for COVID19 pandemy in Poland.

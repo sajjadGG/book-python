@@ -1,166 +1,217 @@
+#%% Imports
+from datetime import date
 import pandas as pd
-
-from matplotlib import pyplot as plt
-
-
-CONFIRMED = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19' \
-            '/master/csse_covid_19_data/csse_covid_19_time_series' \
-            '/time_series_covid19_confirmed_global.csv'
-DEATHS = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master' \
-         '/csse_covid_19_data/csse_covid_19_time_series' \
-         '/time_series_covid19_deaths_global.csv'
-RECOVERED = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19' \
-            '/master/csse_covid_19_data/csse_covid_19_time_series' \
-            '/time_series_covid19_recovered_global.csv'
+from pandas.tseries.holiday import AbstractHolidayCalendar, Holiday
+from pandas.tseries.holiday import EasterMonday, Easter
+from pandas.tseries.offsets import Day
+import matplotlib.pyplot as plt
+import matplotlib.axes
 
 
+#%% Settings
+pd.set_option('display.width', 200)
+pd.set_option('display.max_columns', 15)
+pd.set_option('display.max_rows', 100)
+
+
+#%% Data Sources
+CONFIRMED = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'
+DEATHS = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv'
+RECOVERED = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv'
+
+
+#%% Data Frames
 confirmed = pd.read_csv(CONFIRMED)
 deaths = pd.read_csv(DEATHS)
 recovered = pd.read_csv(RECOVERED)
 
 
-def _get(column_name, df, country=None):
+#%% Get Country from DataFrame
+def covid19(country: str = None) -> pd.DataFrame:
     """
-    >>> _get('Confirmed', confirmed, 'Poland').loc['2020-11-11']
-    Confirmed    618813
-    Name: 2020-11-11 00:00:00, dtype: int64
+    Get Confirmed, Deaths, Recovered for given country
 
-    >>> _get('Confirmed', confirmed, 'US').loc['2020-11-11']
-    Confirmed    10495075
-    Name: 2020-11-11 00:00:00, dtype: int64
+    >>> covid19('Poland').loc['2022-01-01']
+    Confirmed    4120248
+    Deaths         97559
+    Recovered          0
+    Name: 2022-01-01 00:00:00, dtype: int64
 
-    >>> _get('Deaths', confirmed, 'Poland').loc['2020-11-11']
-    Deaths    618813
-    Name: 2020-11-11 00:00:00, dtype: int64
+    >>> covid19('US').loc['2022-01-01']
+    Confirmed    54963778
+    Deaths         828124
+    Recovered           0
+    Name: 2022-01-01 00:00:00, dtype: int64
+
+    >>> covid19('France').loc['2022-01-01']
+    Confirmed    10296909
+    Deaths         124839
+    Recovered           0
+    Name: 2022-01-01 00:00:00, dtype: int64
+
+    >>> covid19().loc['2022-01-01']
+    Confirmed    289514753
+    Deaths         5444013
+    Recovered            0
+    Name: 2022-01-01 00:00:00, dtype: int64
     """
-    if country is not None:
-        query = df['Country/Region'] == country
-        df = df[query]
+    def _get(data: pd.DataFrame, country: str = None) -> pd.Series:
+        """
+        Get Country from DataFrame
 
-    df = df.transpose()[4:].sum(axis='columns').astype(int)
-    df = pd.DataFrame(df)
-    df.columns = [column_name]
-    df.index = pd.to_datetime(df.index)
-    return df
+        >>> _get(confirmed, 'Poland').loc['2022-01-01']
+        4120248
+        >>> _get(deaths, 'Poland').loc['2022-01-01']
+        97559
+        >>> _get(recovered, 'Poland').loc['2022-01-01']
+        0
+        """
+        if country is not None:
+            data = data.query('`Country/Region` == @country')
+        return (data
+                .transpose()
+                .iloc[4:]
+                .sum(axis='columns')
+                .astype('int64')
+                .rename(pd.to_datetime))
+
+    return pd.DataFrame({
+        'Confirmed': _get(confirmed, country),
+        'Deaths': _get(deaths, country),
+        'Recovered': _get(recovered, country)})
 
 
-def covid19(country=None):
+#%% Calendars
+class PLHolidayCalendar(AbstractHolidayCalendar):
     """
-    >>> covid19('Poland').loc['2020-11-11']
-    Confirmed    618813
-    Deaths         8805
-    Recovered    242875
-    Name: 2020-11-11 00:00:00, dtype: int64
-
-    >>> covid19('US').loc['2020-11-11']
-    Confirmed    10495075
-    Deaths         243077
-    Recovered     3997175
-    Name: 2020-11-11 00:00:00, dtype: int64
+    Custom Holiday calendar for Poland based on
+    https://en.wikipedia.org/wiki/Public_holidays_in_Poland
     """
-    return pd.concat((
-            _get('Confirmed', confirmed, country),
-            _get('Deaths', deaths, country),
-            _get('Recovered', recovered, country),
-    ), axis=1)
+    rules = [
+        Holiday('New Years Day', month=1, day=1),
+        Holiday('Epiphany', month=1, day=6),
+        Holiday('Easter', month=1, day=1, offset=[Easter()]),
+        EasterMonday,
+        Holiday('May Day', month=5, day=1),
+        Holiday('Constitution Day', month=5, day=3),
+        Holiday('Pentecost Sunday', month=1, day=1, offset=[Easter(), Day(49)]),
+        Holiday('Corpus Christi', month=1, day=1, offset=[Easter(), Day(60)]),
+        Holiday('Assumption of the Blessed Virgin Mary', month=8, day=15),
+        Holiday('All Saints Day', month=11, day=1),
+        Holiday('Independence Day', month=11, day=11),
+        Holiday('Christmas Day', month=12, day=25),
+        Holiday('Second Day of Christmastide', month=12, day=26)]
 
 
-def trend(df, since='2020-06-01', until='2021'):
+#%% Show trendline
+def plot_trendline(data: pd.DataFrame) -> matplotlib.axes.Axes:
+    return (data
+            .loc[:, ['Confirmed','Deaths']]
+            .plot(kind='line',
+                  subplots=True,
+                  layout=(2, 1),
+                  figsize=(10, 10)))
+
+
+#%% Show fatalities
+def plot_fatalities(data: pd.DataFrame) -> matplotlib.axes.Axes:
+    return ((data['Deaths'] / data['Confirmed'])
+            .mul(100)  # convert to percent
+            .round(2)
+            .plot(kind='line',
+                  title='Percent of deaths vs new cases in last two weeks',
+                  xlabel='Day',
+                  ylabel='Percent',
+                  ylim=(0.0, 6.0),
+                  figsize=(10, 10),
+                  grid=True))
+
+
+#%% Confirmed cases day-by-day difference
+def plot_confirmed_daily(data: pd.DataFrame) -> matplotlib.axes.Axes:
+    return data['Confirmed'].diff().plot()
+
+
+#%% Covid infection waves
+def plot_confirmed_waves(data:pd.DataFrame) -> matplotlib.axes.Axes:
+    return data['Confirmed'].diff().resample('W').median().plot()
+
+
+#%% Confirmed cases in last two weeks
+def plot_confirmed_last(data: pd.DataFrame, freq='2W') -> matplotlib.axes.Axes:
+    return data['Confirmed'].last(freq).diff().plot()
+
+
+#%% Confirmed cases every month
+def plot_confirmed_monthly(data: pd.DataFrame) -> matplotlib.axes.Axes:
+    return data['Confirmed'].resample('M').sum().plot()
+
+
+#%%
+def plot_confirmed_after_holidays(
+        data: pd.DataFrame,
+        since: date | str | None = '2021-01-01',
+        until: date | str | None = '2022-02-07',
+        days: int = 14,
+        calendar: AbstractHolidayCalendar = PLHolidayCalendar(),
+    ) -> matplotlib.axes.Axes:
     """
-    >>> poland = covid19('Poland')
-    >>> trend(poland).loc['2020-11-11']
-    2.54786618630983
+    Confirmed cases in period of 14 days after holidays
     """
-    df = df.loc[since:until]
-    return df['Confirmed'] / df['Recovered']
+    def _get(since, days):
+        return (data
+                .loc[since:, 'Confirmed']
+                .iloc[:days]
+                .reset_index(drop=True))
+
+    data = {column: _get(since=holiday, days=days)
+            for holiday in calendar.holidays(since, until)
+            if (column := holiday.strftime('%Y-%m-%d'))}
+
+    return pd.DataFrame(data).diff().plot(
+        kind='line',
+        subplots=True,
+        layout=(15,1),
+        sharex=True,
+        figsize=(5, 15),
+        grid=True)
 
 
-poland = covid19('Poland')
-us = covid19('US')
-india = covid19('India')
-france = covid19('France')
-china = covid19('China')
-world = covid19()
-
-trend(poland, since='2021-01-01', until='2021').plot()
-trend(india, since='2021-01-01', until='2021').plot()
-trend(us, since='2021-01-01', until='2021').plot()
-trend(china, since='2021-01-01', until='2021').plot()
-trend(world, since='2021-01-01', until='2021').plot()
+#%% Run
+if __name__ == '__main__':
+    poland = covid19('Poland')
+    usa = covid19('US')
+    france = covid19('France')
+    china = covid19('China')
+    world = covid19()
 
 
-# Numer of new cases in last two weeks
-new_cases = poland.last('2W').diff().plot()
+    data = poland.loc['2020-01-01':'2022-02-01']
 
-# Average number of confirmed cases each month
-average_cases = poland.resample('M').sum().plot()
+    plot_trendline(data)
+    # plt.show()
 
-# Select timeframe
-since_december = poland.loc['2021-12':, ['Confirmed', 'Deaths']].plot(subplots=True, layout=(1,2))
+    plot_fatalities(data)
+    # plt.show()
 
-# Ratio of deaths vs new cases in last two weeks
-timeframe = poland.last('2W')
-ratio = timeframe['Deaths'] / timeframe['Confirmed']
-ratio.plot()
+    plot_confirmed_daily(data)
+    # plt.show()
 
-# Percent of deaths vs new cases in last two weeks
-timeframe = poland.last('2W')
-ratio = timeframe['Deaths'] / timeframe['Confirmed']
-percent = ratio * 100
-percent.round(decimals=3).plot(
-    kind='line',
-    title='Percent of deaths vs new cases in last two weeks',
-    xlabel='Day',
-    ylabel='Percent',
-    ylim=(2.1, 2.5),
-    figsize=(10,10),
-    grid=True)
+    plot_confirmed_waves(data)
+    # plt.show()
+
+    plot_confirmed_last(data)
+    # plt.show()
+
+    plot_confirmed_monthly(data)
+    # plt.show()
+
+    plot_confirmed_after_holidays(data)
+    # plt.show()
 
 
 
-poland = covid19('Poland')
-usa = covid19('US')
-france = covid19('France')
-china = covid19('China')
-world = covid19()
-
-# Zwykły wykres
-def plot(df, title):
-    plot = df.plot(kind='line', subplots=True, layout=(3,1), title=title)
-    plt.show()
-
-plot(poland, 'Poland')
-plot(usa, 'USA')
-
-
-# Bardziej fancy
-plot = (
-    poland
-    .loc['2021-01-01':, ['Confirmed','Deaths']]
-    .plot(kind='line',
-          subplots=True,
-          layout=(3,1),
-          sharex=True,
-          figsize=(16,10),
-          grid=True))
-plt.show()
-
-# Ratio
-ratio = poland['Deaths'] / poland['Confirmed']
-plot = (
-    ratio
-    .plot(kind='line',
-          title='Ratio',
-          xlabel='Time',
-          ylabel='Percent',
-          # yticks=['0%', '1%', '2%', '3%', '4%', '5%'],
-          figsize=(10,10),
-          color='red'))
-plt.show()
-
-
-# przyrost Confirmed (n do n-1)
-poland['Confirmed'].diff().plot(kind='line')
+"""TODO:
 
 # Resample
 poland['Confirmed'].shift(periods=1, freq='D').plot(kind='line')
@@ -195,41 +246,4 @@ plt.show()
 
 poland['Confirmed'].diff().resample('Q').median().plot()
 plt.show()
-
-
-
-# Jak po świętach wzrasta liczba zakażonych COVID-19
-import pandas as pd
-from pandas.tseries.holiday import AbstractHolidayCalendar, Holiday, EasterMonday, Easter
-from pandas.tseries.offsets import Day
-
-
-class PLHolidayCalendar(AbstractHolidayCalendar):
-    """
-    Custom Holiday calendar for Poland based on
-    https://en.wikipedia.org/wiki/Public_holidays_in_Poland
-    """
-    rules = [
-        Holiday('New Years Day', month=1, day=1),
-        Holiday('Epiphany', month=1, day=6),
-        Holiday('Easter', month=1, day=1, offset=[Easter()]),
-        EasterMonday,
-        Holiday('May Day', month=5, day=1),
-        Holiday('Constitution Day', month=5, day=3),
-        Holiday('Pentecost Sunday', month=1, day=1, offset=[Easter(), Day(49)]),
-        Holiday('Corpus Christi', month=1, day=1, offset=[Easter(), Day(60)]),
-        Holiday('Assumption of the Blessed Virgin Mary', month=8, day=15),
-        Holiday('All Saints Day', month=11, day=1),
-        Holiday('Independence Day', month=11, day=11),
-        Holiday('Christmas Day', month=12, day=25),
-        Holiday('Second Day of Christmastide', month=12, day=26),
-    ]
-
-
-pl_holidays = PLHolidayCalendar().holidays(start='2021-01-01', end='2022-01-29')
-for holiday in pl_holidays:
-    start = holiday
-    end = holiday + pd.Timedelta('10D')
-    data = poland.loc[start:end, 'Confirmed'].diff()
-    data.plot(kind='line', title=holiday)
-    plt.show()
+"""
