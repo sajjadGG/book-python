@@ -66,8 +66,8 @@ Passwd
 
     root:x:0:0:root:/root:/bin/bash
     watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
-    lewis:x:1001:1001:José Jiménez:/home/lewis:/bin/bash
-    twardowski:x:1002:1002:Jan Twardowski:/home/twardowski:/bin/bash
+    lewis:x:1001:1001:Melissa Lewis:/home/lewis:/bin/bash
+    martinez:x:1002:1002:Rick Martinez:/home/martinez:/bin/bash
 
 >>> delimiter = ':'
 >>> result = [row.split(delimiter) for row in DATA.splitlines()]  # doctest: +SKIP
@@ -93,8 +93,8 @@ Hosts
 
 Crontab
 -------
-* /etc/crontab
-* ``delimiter=' '``
+* ``/etc/crontab``
+* ``delimiter='\s+'``
 
 .. code-block:: text
 
@@ -110,8 +110,7 @@ Crontab
 
 Key-Value
 ---------
-* /etc/locate.rc
-* ``.env`` from Docker
+* ``/etc/locate.rc``
 * ``delimiter='='``
 
 .. code-block:: text
@@ -120,15 +119,6 @@ Key-Value
     FCODES="/var/db/locate.database"
     SEARCHPATHS="/"
     PRUNEPATHS="/tmp /var/tmp"
-
-.. code-block:: docker
-
-    DATABASE_ENGINE=postgresql
-    DATABASE_SERVER=localhost
-    DATABASE_PORT=5432
-    DATABASE_NAME=mydatabase
-    DATABASE_USERNAME=myusername
-    DATABASE_PASSWORD=mypassword
 
 .. code-block:: text
 
@@ -145,9 +135,34 @@ Key-Value
     #PRUNEPATHS="/tmp /var/tmp"
 
 
+Docker
+------
+* ``.env`` from Docker
+* ``delimiter='='``
+
+.. code-block:: docker
+
+    DATABASE_ENGINE=postgresql
+    DATABASE_SERVER=localhost
+    DATABASE_PORT=5432
+    DATABASE_NAME=mydatabase
+    DATABASE_USERNAME=myusername
+    DATABASE_PASSWORD=mypassword
+
+
 Sensors
 -------
 * ``delimiter=';'``
+
+.. code-block:: text
+
+    Name,         Long,       Lat,        ModuleType
+    "ESA EAC",    50.8524881, 7.1315254,  Indoor
+
+    Date,         Time,       Temperature, Humidity, CO2, Noise, Pressure
+    "2000-01-01", "00:00:00", 22.6,        46,       981, 32,    1019.1
+    "2000-01-01", "00:05:00", 22.6,        46,       981, 31,    1019.1
+    "2000-01-01", "00:10:00", 22.6,        46,       968, 32,    1019.1
 
 .. code-block:: text
 

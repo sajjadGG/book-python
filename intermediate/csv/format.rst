@@ -2,12 +2,25 @@ CSV Format
 ==========
 
 
+TL;DR
+-----
+* CSV - Comma/Character Separated Values
+* No CSV formal standard, just a good practice
+* Flat file (2D) without relations
+* Relations has to be flatten (serialization, additional columns, etc...)
+* Typically first line (header) represents column names
+* Rarely first line can also have a structure (nrows, ncols)
+* Internationalization: encoding
+* Localization: decimal separator, thousands separator, date format
+* Parameters: delimiter, quotechar, quoting, lineterminator, dialect
+
+
 Rationale
 ---------
 * CSV - Comma Separated Values
 * CSV - Character Separated Values
 
-CSV file with mixed values (numeric and strings). First line is a header:
+Example CSV file:
 
 .. code-block:: text
 
@@ -20,6 +33,35 @@ CSV file with mixed values (numeric and strings). First line is a header:
     5.4, 3.9, 1.3, 0.4, setosa
 
 
+Header
+------
+File without header:
+
+.. code-block:: text
+
+    5.8, 2.7, 5.1, 1.9, virginica
+    5.1, 3.5, 1.4, 0.2, setosa
+    5.7, 2.8, 4.1, 1.3, versicolor
+
+First line is a header:
+
+.. code-block:: text
+
+    SepalLength, SepalWidth, PetalLength, PetalWidth, Species
+    5.8, 2.7, 5.1, 1.9, virginica
+    5.1, 3.5, 1.4, 0.2, setosa
+    5.7, 2.8, 4.1, 1.3, versicolor
+
+First line is a structure: number of rows (nrows) and columns (ncols):
+
+.. code-block:: text
+
+    3, 5
+    5.8, 2.7, 5.1, 1.9, virginica
+    5.1, 3.5, 1.4, 0.2, setosa
+    5.7, 2.8, 4.1, 1.3, versicolor
+
+
 Variants
 --------
 CSV file with numeric values:
@@ -30,22 +72,24 @@ CSV file with numeric values:
     5.1, 3.5, 1.4, 0.2, 0
     5.7, 2.8, 4.1, 1.3, 1
 
-CSV file with text values. First line is a header:
-
-.. code-block:: text
-
-    Firstname, Lastname
-    Mark, Watney
-    Jan, Twardowski
-    Melissa, Lewis
-    Alex, Vogel
-
 .. code-block:: text
 
     3, 4, setosa, versicolor, virginica
     5.8, 2.7, 5.1, 1.9, 2
     5.1, 3.5, 1.4, 0.2, 0
     5.7, 2.8, 4.1, 1.3, 1
+
+CSV file with text values. First line is a header:
+
+.. code-block:: text
+
+    Firstname, Lastname, Born
+    Melissa, Lewis, 1995-07-15
+    Rick, Martinez, 1996-01-21
+    Alex, Vogel, 1994-11-15
+    Chris, Beck, 1999-08-02
+    Beth, Johanssen, 2006-05-09
+    Mark, Watney, 1994-10-12
 
 
 Delimiter
@@ -64,9 +108,9 @@ Delimiter
 .. code-block:: text
 
     SepalLength; SepalWidth; PetalLength; PetalWidth; Species
-    5,8; 2,7; 5,1; 1,9; virginica
-    5,1; 3,5; 1,4; 0,2; setosa
-    5,7; 2,8; 4,1; 1,3; versicolor
+    5.8; 2.7; 5.1; 1.9; virginica
+    5.1; 3.5; 1.4; 0.2; setosa
+    5.7; 2.8; 4.1; 1.3; versicolor
 
 ``delimiter=':'``:
 
@@ -74,9 +118,8 @@ Delimiter
 
     root:x:0:0:root:/root:/bin/bash
     watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
-    jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
-    ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
-    lewis:x:1003:1002:Melissa Lewis:/home/ivanovic:/bin/bash
+    lewis:x:1001:1001:Melissa Lewis:/home/lewis:/bin/bash
+    martinez:x:1002:1002:Rick Martinez:/home/martinez:/bin/bash
 
 ``delimiter='|'``:
 
@@ -189,6 +232,56 @@ Lineterminator
 * ``\r\n`` - New line on Windows
 * ``\n`` - New line on ``*nix``
 * ``*nix`` operating systems: Linux, macOS, BSD and other POSIX compliant OSes (excluding Windows)
+
+
+Decimal Separator
+-----------------
+* ``0.1`` - Decimal point
+* ``0,1`` - Decimal comma
+
+.. figure:: img/l10n-decimal-separator.png
+
+.. code-block:: text
+
+    SepalLength, SepalWidth, PetalLength, PetalWidth, Species
+    5.8; 2.7; 5.1; 1.9; virginica
+    5.1; 3.5; 1.4; 0.2; setosa
+    5.7; 2.8; 4.1; 1.3; versicolor
+
+.. code-block:: text
+
+    SepalLength, SepalWidth, PetalLength, PetalWidth, Species
+    5,8; 2,7; 5,1; 1,9; virginica
+    5,1; 3,5; 1,4; 0,2; setosa
+    5,7; 2,8; 4,1; 1,3; versicolor
+
+
+Thousands Separator
+-------------------
+``10 000,00`` - Space, the internationally recommended thousands separator
+``10.000,00`` - Period, used in many non-English speaking countries
+``10,000.00`` - Comma, used in most English-speaking countries
+
+
+Date and Time
+-------------
+>>> date = '1961-04-12'
+>>> date = '12.4.1961'
+>>> date = '12.04.1961'
+>>> date = '12-04-1961'
+>>> date = '12/04/1961'
+>>> date = '4/12/61'
+>>> date = '4.12.1961'
+>>> date = 'Apr 12, 1961'
+>>> date = 'Apr 12th, 1961'
+
+>>> time = '12:00:00'
+>>> time = '12:00'
+>>> time = '12:00 pm'
+
+>>> duration = '04:30:00'
+>>> duration = '4h 30m'
+>>> duration = '4 hours 30 minutes'
 
 
 Encoding
