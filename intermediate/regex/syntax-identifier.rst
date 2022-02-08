@@ -100,6 +100,7 @@ Whitespaces
 
 Anchors
 -------
+* Matches the empty string, but only at the beginning or end of a word
 * ``\b`` - word boundary
 * ``\B`` - anything but word boundary
 

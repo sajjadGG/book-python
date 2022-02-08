@@ -240,6 +240,22 @@ Backreference
 * ``(?P=name)`` - backreferencing by group name
 * ``\number`` - backreferencing by group number
 
+>>> import re
+>>>
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>>
+>>> year = '(?P<year>\d{4})'
+>>> month = '(?P<month>[A-Z][a-z][a-z])'
+>>> day = '(?P<day>\d+)'
+>>>
+>>> re.sub(f'{month} {day}th, {year}', '\g<day> \g<month> \g<year>', TEXT)
+'Yuri Gagarin launched to space on 12 Apr 1961 at 6:07 am.'
+
+Although this is not working in Python:
+
+>>> re.sub(f'{month} {day}th, {year}', '(?P=day) (?P=month) (?P=year)', TEXT)
+'Yuri Gagarin launched to space on (?P=day) (?P=month) (?P=year) at 6:07 am.'
 
 Examples
 --------
@@ -354,3 +370,31 @@ Use Case - 0x04
 >>>
 >>> assignment
 '^(?P<variable>\\w+)\\s?(?#optional space)=\\s?(?#optional space)(?P<value>.+)$'
+
+
+Use Case - 0x05
+---------------
+>>> import re
+>>>
+>>>
+>>> HTML = '<p>Hello World</p>'
+>>>
+>>> search = '<p>(.+)</p>'
+>>> replace = '<strong>\g<1></strong>'
+>>>
+>>> re.sub(search, replace, HTML)
+'<strong>Hello World</strong>'
+
+
+Use Case - 0x06
+---------------
+>>> import re
+>>>
+>>>
+>>> HTML = '<p>Hello World</p>'
+>>>
+>>> search = '<p>(?P<text>.+)</p>'
+>>> replace = '<strong>\g<text></strong>'
+>>>
+>>> re.sub(search, replace, HTML)
+'<strong>Hello World</strong>'

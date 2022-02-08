@@ -55,6 +55,8 @@ LOCALE
 ------
 * Short: ``L``
 * Long: ``re.LOCALE``
+* Use of this flag is discouraged as the locale mechanism is very unreliable
+* It only works with 8-bit locales
 
 make ``\w``, ``\W``, ``\b``, ``\B`` and case-insensitive matching dependent on the current locale
 

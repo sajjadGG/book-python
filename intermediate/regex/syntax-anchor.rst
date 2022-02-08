@@ -107,11 +107,6 @@ when ``re.MULTILINE`` flag is present.
 ['am.']
 
 
-Match Boundary
---------------
-* ``\G`` - forces the pattern to only return matches that are part of a continuous chain of matches. From the first match each subsequent match must be preceded by a match. If you break the chain the matches end.
-
-
 Use Case - 0x01
 ---------------
 * ``abc.e`` - text `abc` then any character followed by letter `e`
