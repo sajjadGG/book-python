@@ -20,7 +20,7 @@ Example 2:
 
 .. code-block:: python
 
-    {'name': 'Mark Watney', 'age': 42, 'is_astronaut': True, 'died': None}
+    {"name": "Mark Watney", "age": 42, "is_astronaut": True, "died": None}
 
 .. code-block:: json
 
@@ -30,19 +30,6 @@ Example 2:
 JSON or Python?
 ---------------
 * JSON or Python ``list[dict]``?
-
-.. code-block:: text
-
-    DATA = [
-        {"firstname": "Mark", "lastname": "Watney", "missions": [
-            {"year": "2035", "name": "Ares3"}]},
-
-        {"firstname": "Melissa", "lastname": "Lewis", "missions": [
-             {"year": "2030", "name": "Ares1"},
-             {"year": "2035", "name": "Ares3"}]},
-
-        {"firstname": "Rick", "lastname": "Martinez", "missions": []}
-    ]
 
 .. code-block:: python
 
@@ -71,6 +58,19 @@ JSON or Python?
               {"name": "Chris Beck", "born": "1999-08-02"},
               {"name": "Beth Johansen", "born": "2006-05-09"},
               {"name": "Mark Watney", "born": "1994-10-12"}]}
+
+.. code-block:: text
+
+    [
+        {"firstname": "Mark", "lastname": "Watney", "missions": [
+            {"year": "2035", "name": "Ares3"}]},
+
+        {"firstname": "Melissa", "lastname": "Lewis", "missions": [
+             {"year": "2030", "name": "Ares1"},
+             {"year": "2035", "name": "Ares3"}]},
+
+        {"firstname": "Rick", "lastname": "Martinez", "missions": []}
+    ]
 
 
 Pretty Printing JSON
