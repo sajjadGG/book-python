@@ -156,8 +156,8 @@ latex_documentclass = 'report'
 # 0 - sequence number of image in whole document
 # 1 - sequence number of image in header level 1 (only if :numbered: option is present at toctree directive)
 # 2 - sequence number of image in header level 2
-#       will use x.1, x.2, … if located directly under a header level 1,
-#       will use 1, 2, … if at the document level
+#       will use x.1, x.2, ... if located directly under a header level 1,
+#       will use 1, 2, ... if at the document level
 # etc...
 numfig_secnum_depth = 1
 numfig = True

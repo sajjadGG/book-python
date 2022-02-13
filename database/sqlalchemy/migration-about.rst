@@ -41,7 +41,7 @@ Create:
 .. code-block:: console
 
     $ alembic revision -m "create organization table"
-    Generating h/migrations/versions/1975ea83b712_create_organization_table.py…done
+    Generating h/migrations/versions/1975ea83b712_create_organization_table.py...done
 
 Run forward:
 

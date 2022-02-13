@@ -40,7 +40,7 @@ Tests:
      (142, 'First clear TV picture  received.'),
      (143, 'CDR at foot of ladder  (starts to report, then pauses to listen).'),
      (144, 'CDR at foot of ladder  and described surface as "almost like a powder."'),
-     (145, '1st step  taken lunar surface (CDR). "That's one small step for a man…one giant leap  for mankind."')]
+     (145, '1st step  taken lunar surface (CDR). "That's one small step for a man...one giant leap  for mankind."')]
 
 """
 

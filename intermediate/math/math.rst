@@ -30,9 +30,9 @@ Constants
 
     import math
 
-    math.pi         # The mathematical constant π = 3.141592…, to available precision.
-    math.e          # The mathematical constant e = 2.718281…, to available precision.
-    math.tau        # The mathematical constant τ = 6.283185…, to available precision.
+    math.pi         # The mathematical constant π = 3.141592..., to available precision.
+    math.e          # The mathematical constant e = 2.718281..., to available precision.
+    math.tau        # The mathematical constant τ = 6.283185..., to available precision.
 
 Degree/Radians Conversion
 -------------------------
