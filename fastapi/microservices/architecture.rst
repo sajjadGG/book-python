@@ -394,7 +394,7 @@ API gateway
 *  Rather than provide a one-size-fits-all style API, the API gateway
    can expose a different API for each client. For example, the Netflix
    API gateway runs client-specific adapter code that provides each
-   client with an API that’s best suited to it’s requirements.
+   client with an API that's best suited to it's requirements.
 *  The API gateway might also implement security, e.g. verify that the
    client is authorized to perform the request
 *  Netflix API gateway, Zuur
@@ -448,7 +448,7 @@ Self registration
    service registry. On startup the service instance registers itself
    (host and IP address) with the service registry and makes itself
    available for discovery. The client must typically periodically renew
-   it’s registration so that the registry knows it is still alive. On
+   it's registration so that the registry knows it is still alive. On
    shutdown, the service instance unregisters itself from the service
    registry.
 *  Apache Zookeeper, Netflix Eureka
@@ -461,11 +461,11 @@ Self registration
    instance with the service registry. When the service instance shuts
    downs, the registrar unregisters the service instance from the
    service registry.
-*  Netflix Prana - a “side car” application that runs along side a
+*  Netflix Prana - a "side car" application that runs along side a
    non-JVM application and registers the application with Eureka.
 *  AWS Autoscaling Groups automatically (un)registers EC2 instances with
    Elastic Load Balancer
-*  Joyent’s Container buddy runs in a Docker container as the parent
+*  Joyent's Container buddy runs in a Docker container as the parent
    process for the service and registers it with the registry
 *  Registrator - registers and unregisters Docker containers with
    various service registries
@@ -489,7 +489,7 @@ Multiple service instances per host
 
 Single service instance per host
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*  Deploy each single service instance on it’s own host
+*  Deploy each single service instance on it's own host
 
 Service instance per VM
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -508,7 +508,7 @@ Serverless deployment
 ---------------------
 *  Use a deployment infrastructure that hides any concept of servers
    (i.e. reserved or preallocated resources)- physical or virtual hosts,
-   or containers. The infrastructure takes your service’s code and runs
+   or containers. The infrastructure takes your service's code and runs
    it. You are charged for each request based on the resources consumed.
 *  To deploy your service using this approach, you package the code
    (e.g. as a ZIP file), upload it to the deployment infrastructure and
@@ -527,7 +527,7 @@ Baza danych
 
 Database per Service
 ^^^^^^^^^^^^^^^^^^^^
-*  Keep each microservice’s persistent data private to that service and
+*  Keep each microservice's persistent data private to that service and
    accessible only via its API.
 
 Database per Service:
@@ -570,9 +570,9 @@ Zdarzenia
 Event-driven architecture
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 *  Use an event-driven, eventually consistent approach. Each service
-   publishes an event whenever it update it’s data. Other service
+   publishes an event whenever it update it's data. Other service
    subscribe to events. When an event is received, a service updates
-   it’s data.
+   it's data.
 
 Event sourcing
 ^^^^^^^^^^^^^^
@@ -597,7 +597,7 @@ CQRS - Command Query Responsibility Segregation
 -----------------------------------------------
 *  Split the system into two parts. The command side handles create,
    update and delete requests. The query side handles queries using one
-   or more materialized views of the application’s data.
+   or more materialized views of the application's data.
 
 
 Transaction log tailing
@@ -621,4 +621,3 @@ References
 ----------
 * https://www.youtube.com/watch?v=X0tjziAQfNQ
 * https://www.youtube.com/watch?v=gfh-VCTwMw8
-

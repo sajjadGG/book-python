@@ -244,7 +244,7 @@ StopIteration
 Conclusion
 ----------
 * Python yield keyword creates a generator function.
-* It’s useful when the function returns a large amount of data by
+* It's useful when the function returns a large amount of data by
   splitting it into multiple chunks.
 * We can also send values to the generator using its ``send()`` function.
 * The ``yield from`` statement is used to create a sub-iterator from the

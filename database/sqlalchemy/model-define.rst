@@ -72,7 +72,7 @@ Initializer
 ...         self.password = password
 
 SQLAlchemy applies a default initializer (``__init__``) method, to all mapped
-classes that don’t explicitly have their own ``__init__`` method. The behavior
+classes that don't explicitly have their own ``__init__`` method. The behavior
 of this method is such that it provides a convenient keyword constructor that
 will accept as optional keyword arguments all the attributes that are named.
 The constructor also applies to imperative mappings [#sqlalchemyConstructor]_.

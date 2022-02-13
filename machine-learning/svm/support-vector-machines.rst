@@ -62,13 +62,13 @@ Zalety algorytmu
 
 * Conformity with Semi-Supervised Learning: It may be used in a dataset where some of the data are labeled and some are not. You only add an additional condition to the minimization problem and it is called Transductive SVM.
 
-* Feature Mapping might have been a burden on the computational complexity of the overall training performance; however, thanks to the ‘Kernel Trick’ the feature mapping is implicitly carried out via simple dot products.
+* Feature Mapping might have been a burden on the computational complexity of the overall training performance; however, thanks to the 'Kernel Trick' the feature mapping is implicitly carried out via simple dot products.
 
 Wady algorytmu
 --------------
 * In Natural Language Processing, structured representations of text yield better performances. Sadly, SVMs can not accommodate such structures(word embeddings) and are used through Bag-of-Words representation which loses sequentially information and leads to worse performance.
 
-* SVM in its vanilla form cannot return a probabilistic confidence value like logistic regression does, in some sense it’s not ‘explanatory’ enough.
+* SVM in its vanilla form cannot return a probabilistic confidence value like logistic regression does, in some sense it's not 'explanatory' enough.
 
 
 Opis algorytmu
@@ -432,4 +432,3 @@ Given:
         DATA = 'https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/'
 
 .. todo:: Własna implementacja
-

@@ -43,7 +43,7 @@ google_pubsub and google_storage are separate packages but they share the same n
 
 It's crucial that there are no __init__py files in the google and google/cloud directories so that both directories can be interpreted as namespace packages. In Python 3.3+ any directory on the sys.path with a name that matches the package name being looked for will be recognized as contributing modules and subpackages to that package. As a result, when you import both from google_pubsub and google_storage, the Python interpreter will be able to find them.
 
-This is different from regular packages which are self-contained meaning all parts live in the same directory hierarchy. When importing a package and the Python interpreter encounters a subdirectory on the sys.path with an __init__.py file, then it will create a single directory package containing only modules from that directory, rather than finding all appropriately named subdirectories outside that directory. This is perfectly fine for packages that don't want to share a namespace. I highly recommend taking a look at Traps for the Unwary in Python’s Import System to get a better understanding of how Python importing behaves with regular and namespace package and what __init__.py traps to watch out for.
+This is different from regular packages which are self-contained meaning all parts live in the same directory hierarchy. When importing a package and the Python interpreter encounters a subdirectory on the sys.path with an __init__.py file, then it will create a single directory package containing only modules from that directory, rather than finding all appropriately named subdirectories outside that directory. This is perfectly fine for packages that don't want to share a namespace. I highly recommend taking a look at Traps for the Unwary in Python's Import System to get a better understanding of how Python importing behaves with regular and namespace package and what __init__.py traps to watch out for.
 
 Summary:
 
@@ -192,7 +192,7 @@ TOML
 
     #. support for declaring project dependencies
     #. additional mechanisms for configuring which files to include in source releases (including plugins for integration with version control systems)
-    #. the ability to declare project “entry points”, which can be used as the basis for application plugin systems
+    #. the ability to declare project "entry points", which can be used as the basis for application plugin systems
     #. the ability to automatically generate Windows command line executables at installation time rather than needing to prebuild them
     #. consistent behaviour across all supported Python versions
 

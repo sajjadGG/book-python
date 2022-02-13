@@ -3,8 +3,8 @@
     :caption: Django
 
     about/certificate.rst
-    about/protocol.rst
-    about/identifiers.rst
+    about/http-protocol.rst
+    about/http-identifiers.rst
     about/introduction.rst
     about/architecture.rst
 

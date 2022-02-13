@@ -1,7 +1,7 @@
 K-Means Clustering
 ==================
 
-A loose definition of clustering could be "the process of organizing objects into groups whose members are similar in some way". A cluster is therefore a collection of objects which are “similar” between them and are "dissimilar" to the objects belonging to other clusters.
+A loose definition of clustering could be "the process of organizing objects into groups whose members are similar in some way". A cluster is therefore a collection of objects which are "similar" between them and are "dissimilar" to the objects belonging to other clusters.
 
 * Clustering algorithms are usually unsupervised.
 * How many groups (clusters) you want your data to be in?

@@ -46,7 +46,7 @@ Index: []
 Memory Usage
 ------------
 display.memory_usage : bool, string or None
-    This specifies if the memory usage of a DataFrame should be displayed when df.info() is called. Valid values True,False,’deep’ [default: True] [currently: True]
+    This specifies if the memory usage of a DataFrame should be displayed when df.info() is called. Valid values True,False,'deep' [default: True] [currently: True]
 
 Precision
 ---------

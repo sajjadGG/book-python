@@ -8,7 +8,7 @@ More in Design Patterns -> UML -> Mermaid
 
 PyDotPlus
 ---------
-PyDotPlus is an improved version of the old pydot project that provides a Python Interface to Graphviz’s Dot language.
+PyDotPlus is an improved version of the old pydot project that provides a Python Interface to Graphviz's Dot language.
 
 
 Graphviz

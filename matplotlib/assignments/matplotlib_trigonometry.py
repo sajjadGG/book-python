@@ -69,4 +69,4 @@ label = ax2.set_xlabel('cos()')
 label.set_color('green')
 label.set_fontsize('large')
 
-plt.show()
+# plt.show()

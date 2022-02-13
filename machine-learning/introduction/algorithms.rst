@@ -15,13 +15,13 @@ I think this is the most useful way to group algorithms and it is the approach w
 
 This is a useful grouping method, but it is not perfect. There are still algorithms that could just as easily fit into multiple categories like Learning Vector Quantization that is both a neural network inspired method and an instance-based method. There are also categories that have the same name that describe the problem and the class of algorithm such as Regression and Clustering.
 
-We could handle these cases by listing algorithms twice or by selecting the group that subjectively is the “best” fit. I like this latter approach of not duplicating algorithms to keep things simple.
+We could handle these cases by listing algorithms twice or by selecting the group that subjectively is the "best" fit. I like this latter approach of not duplicating algorithms to keep things simple.
 
 In this section, I list many of the popular machine learning algorithms grouped the way I think is the most intuitive. The list is not exhaustive in either the groups or the algorithms, but I think it is representative and will be useful to you to get an idea of the lay of the land.
 
 Please Note: There is a strong bias towards algorithms used for classification and regression, the two most prevalent supervised machine learning problems you will encounter.
 
-If you know of an algorithm or a group of algorithms not listed, put it in the comments and share it with us. Let’s dive in.
+If you know of an algorithm or a group of algorithms not listed, put it in the comments and share it with us. Let's dive in.
 
 Regression Algorithms
 ---------------------

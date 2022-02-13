@@ -47,7 +47,7 @@ Timeit - Console use
 .. code-block:: text
 
     -n N, --number=N
-    how many times to execute ‘statement’
+    how many times to execute 'statement'
 
     -r N, --repeat=N
     how many times to repeat the timer (default 5)

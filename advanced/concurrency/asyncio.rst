@@ -375,7 +375,7 @@ Wait
     done, pending = await asyncio.wait(aws)
 
 * Does not raise ``asyncio.TimeoutError``
-* ``Futures`` or ``Tasks`` that aren’t done when the timeout occurs are simply returned in the second set (``pending``).
+* ``Futures`` or ``Tasks`` that aren't done when the timeout occurs are simply returned in the second set (``pending``).
 
 .. code-block:: python
 
@@ -489,7 +489,7 @@ Running in Threads
     # Finished main at 02:42:47
 
 
-Due to the GIL, ``asyncio.to_thread()`` can typically only be used to make IO-bound functions non-blocking. However, for extension modules that release the GIL or alternative Python implementations that don’t have one, ``asyncio.to_thread()`` can also be used for CPU-bound functions.
+Due to the GIL, ``asyncio.to_thread()`` can typically only be used to make IO-bound functions non-blocking. However, for extension modules that release the GIL or alternative Python implementations that don't have one, ``asyncio.to_thread()`` can also be used for CPU-bound functions.
 
 
 Introspection
@@ -504,7 +504,7 @@ Event loops
 Async code can only run inside an event loop.
 The event loop is the driver code that manages the cooperative multitasking.
 You can create multiple threads and run different event loops in each of them.
-For example, Django uses the main thread to wait for incoming requests, so we can’t run an asyncio event loop there, but we can start a separate worker thread for our event loop.
+For example, Django uses the main thread to wait for incoming requests, so we can't run an asyncio event loop there, but we can start a separate worker thread for our event loop.
 [#cheat]_
 
 An event loop runs in a thread (typically the main thread) and executes all callbacks and Tasks in its thread. While a Task is running in the event loop, no other Tasks can run in the same thread. When a Task executes an await expression, the running Task gets suspended, and the event loop executes the next Task. [#pydocmultithreading]_
@@ -569,7 +569,7 @@ Queue
 -----
 * ``asyncio`` queues are designed to be similar to classes of the ``queue`` module.
 * Although ``asyncio`` queues are not thread-safe, they are designed to be used specifically in async/await code.
-* Note that methods of asyncio queues don’t have a timeout parameter; use`` asyncio.wait_for()`` function to do queue operations with a timeout.
+* Note that methods of asyncio queues don't have a timeout parameter; use`` asyncio.wait_for()`` function to do queue operations with a timeout.
 
 FIFO Queue (first in, first out):
 

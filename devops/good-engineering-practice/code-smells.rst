@@ -8,12 +8,12 @@ Source [#CodeSmells]_
 #. Using globals - but that is a code smell in any language.
 #. Using ``eval`` and ``exec`` unless the input is tightly controlled.
 #. Using ``range`` over the ``length`` of a container to iterate over the container, or get the index.
-#. Creating a ``list`` of values, when you don’t need to keep the ``list`` - a generator is often better.
+#. Creating a ``list`` of values, when you don't need to keep the ``list`` - a generator is often better.
 #. Having getter and setter methods rather than using properties.
 #. Having named methods with similar semantics to existing operators, instead of overriding the magic methods those operators use (eg. having an add method rather than overriding ``__add__()`` and ``__iadd__()`` ) .
 #. Using nested loops to combine two iterables rather than using something out of ``itertools``.
 #. Having lots of code and classes in a single module rather than having a sensible split of code into well named modules.
-#. Unit tests that don’t use mock (or similar).
+#. Unit tests that don't use mock (or similar).
 #. Modules, classes, methods and functions with no ``docstring``
 #. Methods and functions which return a value to signify an error rather raising an exception.
 #. Using open and similar without using ``with``.
@@ -301,4 +301,3 @@ Pythonic way:
 References
 ----------
 .. [#CodeSmells] Flury, Tony. What are some major code smells in Python? Year: 2019. Retrieved: 2019-03-28. URL: https://www.quora.com/What-are-some-major-code-smells-in-Python
-

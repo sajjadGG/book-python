@@ -26,7 +26,7 @@ Tests
 
 .. code-block:: console
 
-    # By default, this will discover tests in any file named “test*.py” under the current working directory.
+    # By default, this will discover tests in any file named "test*.py" under the current working directory.
     $ python manage.py test --parallel
 
     # Run all the tests in the animals.tests module

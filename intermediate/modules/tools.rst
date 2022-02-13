@@ -168,7 +168,7 @@ Example 2
 
 pip-sync
 --------
-pip-sync to update your virtual environment to reflect exactly what’s in there. This will install/upgrade/uninstall everything necessary to match the requirements.txt contents.
+pip-sync to update your virtual environment to reflect exactly what's in there. This will install/upgrade/uninstall everything necessary to match the requirements.txt contents.
 
 .. code-block:: console
 
@@ -186,5 +186,3 @@ pip-sync to update your virtual environment to reflect exactly what’s in there
 
 Conda
 -----
-
-

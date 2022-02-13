@@ -36,7 +36,7 @@ W rezultacie klasyfikujemy X jako czerwone, gdyż większe jest prawdopodobieńs
 
 Gaussian Naive Bayes
 --------------------
-A Gaussian Naive Bayes algorithm is a special type of NB algorithm. It’s specifically used when the features have continuous values. It’s also assumed that all the features are following a gaussian distribution i.e, normal distribution.
+A Gaussian Naive Bayes algorithm is a special type of NB algorithm. It's specifically used when the features have continuous values. It's also assumed that all the features are following a gaussian distribution i.e, normal distribution.
 
 
 Przykłady praktyczne
@@ -52,7 +52,7 @@ Przykład: Spam
 * P(spam|words) - prawdopodobieństwo, że wiadomość jest spamem, gdy słowo należy do czarnej listy
 
 
-Spam filtering based on a blacklist is flawed — it’s too restrictive and false positives are too great. But Bayesian filtering gives us a middle ground — we use probabilities. As we analyze the words in a message, we can compute the chance it is spam (rather than making a yes/no decision). If a message has a 99.9% chance of being spam, it probably is. As the filter gets trained with more and more messages, it updates the probabilities that certain words lead to spam messages. Advanced Bayesian filters can examine multiple words in a row, as another data point.
+Spam filtering based on a blacklist is flawed — it's too restrictive and false positives are too great. But Bayesian filtering gives us a middle ground — we use probabilities. As we analyze the words in a message, we can compute the chance it is spam (rather than making a yes/no decision). If a message has a 99.9% chance of being spam, it probably is. As the filter gets trained with more and more messages, it updates the probabilities that certain words lead to spam messages. Advanced Bayesian filters can examine multiple words in a row, as another data point.
 
 Przykład: Apple
 ---------------
@@ -75,7 +75,7 @@ Plusy
 
 Minusy
 ------
-* Jeżeli zmienna kategorialna ma kategorię (w testowanym zestawie danych), która nie została zaobserwowana w treningowym zestawie danych, wtedy model ustali zerowe prawdopodobieństwo i nie będzie w stanie niczego przewidzieć. Taką sytuację nazywa się często „Zerową Frekwencją”. By to rozwiązać, możemy użyć techniki wygładzającej. Jedną z najprostszych technik wygładzających jest tzw. oszacowanie Laplace’a.
+* Jeżeli zmienna kategorialna ma kategorię (w testowanym zestawie danych), która nie została zaobserwowana w treningowym zestawie danych, wtedy model ustali zerowe prawdopodobieństwo i nie będzie w stanie niczego przewidzieć. Taką sytuację nazywa się często "Zerową Frekwencją". By to rozwiązać, możemy użyć techniki wygładzającej. Jedną z najprostszych technik wygładzających jest tzw. oszacowanie Laplace'a.
 
 * Z drugiej strony Naiwny Bayes jest także znany jako kiepski klasyfikator, więc nie zawsze należy na jego podstawie wnioskować ze 100% pewnością.
 
@@ -94,7 +94,7 @@ Klasyfikacja tekstu / filtrowanie spamu / analiza opinii
     Naiwny Bayes klasyfikuje głównie użyte w tekście klasyfikacje (z uwagi na lepsze wyniki w problemach z wieloma kategoriami i zasadą niezależności), ma większe wskaźniki sukcesu w porównaniu z innymi algorytmami. W wyniku tego, ma szerokie zastosowanie w filtrowaniu spamu (rozpoznawanie maili ze spamem) i w analizie opinii (w analizach statystycznych dla mediów społecznościowych, by zidentyfikować pozytywne i negatywne odczucia konsumentów).
 
 System rekomendacyjny
-    Naiwny klasyfikator Bayesa razem z ‘Collaborative Filtering’ tworzą system rekomendacyjny, który używa uczenia się maszyn i technik eksploracji danych by filtrować niewidziane wcześniej informacje i przewidzieć czy użytkownik chciałby mieć podane źródło czy nie.
+    Naiwny klasyfikator Bayesa razem z 'Collaborative Filtering' tworzą system rekomendacyjny, który używa uczenia się maszyn i technik eksploracji danych by filtrować niewidziane wcześniej informacje i przewidzieć czy użytkownik chciałby mieć podane źródło czy nie.
 
 
 Przykłady praktyczne
@@ -197,4 +197,3 @@ Spam Classifier
     * - Hey can I call you?
 
 #. Skorzystaj treningowej bazy danych wiadomości spam: https://archive.ics.uci.edu/ml/machine-learning-databases/spambase/
-

@@ -88,12 +88,12 @@ result = pd.DataFrame(data)
 
 
 # Alternative Solution
-data = []
-for astronaut in DATA:
-    astronaut = vars(astronaut)
-    missions = astronaut.pop('missions')
-    missions = [vars(x) for x in missions]
-    missions = [','.join(map(str,m.values())) for m in missions]
-    astronaut['missions'] = ';'.join(missions)
-    data.append(astronaut)
-result = pd.DataFrame(data)
+# data = []
+# for astronaut in DATA:
+#     astronaut = vars(astronaut)
+#     missions = astronaut.pop('missions')
+#     missions = [vars(x) for x in missions]
+#     missions = [','.join(map(str,m.values())) for m in missions]
+#     astronaut['missions'] = ';'.join(missions)
+#     data.append(astronaut)
+# result = pd.DataFrame(data)

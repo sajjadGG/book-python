@@ -20,7 +20,7 @@ timestamp,company,level,title,totalyearlycompensation,location,yearsofexperience
 7/2/2017 14:16:51,Microsoft,Sde 2,Software Engineer,155,"Bellevue, WA",5,3,,126,,,,,11470,819,19
 7/3/2017 19:28:09,Microsoft,63,Product Manager,150,"Redmond, WA",10,10,,,,,,,11521,819,20
 7/7/2017 22:29:34,Microsoft,63,Software Engineer,191,"Seattle, WA",7,7,,152,17,22,,,11527,819,21
-7/8/2017 14:41:38,Microsoft,61,Product Manager,115,"Seattle, WA",4,4,,115000,6000,8000,,I’m a .92 comp ratio,11527,819,22
+7/8/2017 14:41:38,Microsoft,61,Product Manager,115,"Seattle, WA",4,4,,115000,6000,8000,,I'm a .92 comp ratio,11527,819,22
 7/14/2017 21:36:15,Amazon,L6,Software Engineering Manager,287,"Seattle, WA",12,1,,160,,,,,11527,819,23
 7/16/2017 16:50:46,Amazon,L5,Software Engineer,218,"Seattle, WA",10,0,,150,7,61,,,11527,819,25
 7/17/2017 21:50:52,Facebook,34,Software Engineer,220,"San Francisco, CA",2,0,,155,200,15,,30k signing bonus,7419,807,26
@@ -914,7 +914,7 @@ E1 new grad, E2 new grad or 1, E3 is 2-3 years, SE1 3-5 years. rest are subject 
 6/25/2018 13:45:04,IBM,Band 8,Software Engineer,110,"Austin, TX",8,3,Web Development (Front-End),108,,2,,,10965,635,985
 6/25/2018 16:44:45,Apple,ICT3,Software Engineer,255,"Cupertino, CA",3,3,Distributed Systems (Back-End),130,100,25,Female,,7158,807,986
 6/25/2018 17:28:00,Intuit,2,Software Engineer,130,"San Francisco, CA",3,2,Web Development (Front-End),118000,9365,11000,Female,,7419,807,987
-6/25/2018 18:22:27,Amazon,7,Product Manager,460,"Seattle, WA",20,4,Full Stack,160,300,,Male,"I’m a senior manager, product management tech",11527,819,988
+6/25/2018 18:22:27,Amazon,7,Product Manager,460,"Seattle, WA",20,4,Full Stack,160,300,,Male,"I'm a senior manager, product management tech",11527,819,988
 6/25/2018 18:36:52,Microsoft,L64,Software Engineering Manager,208,"Redmond, WA",16,0,,160000,50000,30000,Male,,11521,819,989
 6/25/2018 19:55:34,Amazon,L6,Software Engineering Manager,220,"Seattle, WA",12,6,Distributed Systems (Back-End),150,70,5,Male,,11527,819,990
 6/26/2018 1:09:55,LinkedIn,Sr Staff,Software Engineer,620,"Sunnyvale, CA",8,5,Networking,,,,Male,,7472,807,991
@@ -1344,7 +1344,7 @@ E1 new grad, E2 new grad or 1, E3 is 2-3 years, SE1 3-5 years. rest are subject 
 8/15/2018 17:05:46,Microsoft,61,Software Engineer,213,"Seattle, WA",4,4,Security,133,9,21,,,11527,819,1456
 8/15/2018 17:08:15,Microsoft,61,Product Manager,167,"Seattle, WA",4,1,Web Development (Front-End),127,15,15,,,11527,819,1457
 8/15/2018 17:50:26,Microsoft,59,Product Manager,253,"Seattle, WA",0,0,ML / AI,108000,120000,25000,,,11527,819,1458
-8/15/2018 17:51:05,Google,L6,Solution Architect,249,"Dallas, TX",20,0,Cloud,170,180,34,,“Staff Solutions Consultant”,11039,623,1459
+8/15/2018 17:51:05,Google,L6,Solution Architect,249,"Dallas, TX",20,0,Cloud,170,180,34,,"Staff Solutions Consultant",11039,623,1459
 8/15/2018 18:08:19,Microsoft,61,Software Engineer,199,"Redmond, WA",3,3,Full Stack,128,40,16,,,11521,819,1460
 8/15/2018 18:18:21,Microsoft,59,Product Manager,119,"Redmond, WA",1,1,Mobile (iOS + Android),119,,10,,,11521,819,1461
 8/15/2018 18:41:42,Microsoft,60,Software Engineer,139,"Redmond, WA",1,1,DevOps,120,5,14,,,11521,819,1462
@@ -1884,7 +1884,7 @@ E1 new grad, E2 new grad or 1, E3 is 2-3 years, SE1 3-5 years. rest are subject 
 9/16/2018 9:56:05,Amazon,L7,Software Engineering Manager,402,"Seattle, WA",19,7,Full Stack,160000,242,,,,11527,819,2089
 9/16/2018 10:01:54,Box,Staff,Software Engineer,410,"Redwood City, CA",12,1,Full Stack,220,190,,,,7392,807,2090
 9/16/2018 10:35:55,IBM,10,Solution Architect,295,"Boston, MA",25,25,Full Stack,195,25,75,,,8816,506,2091
-9/16/2018 11:39:16,Microsoft,69,Software Engineering Manager,1650,"Seattle, WA",27,25,Distributed Systems (Back-End),300,1300,150,,"1,650,000 your comp field ain’t big enough",11527,819,2092
+9/16/2018 11:39:16,Microsoft,69,Software Engineering Manager,1650,"Seattle, WA",27,25,Distributed Systems (Back-End),300,1300,150,,"1,650,000 your comp field ain't big enough",11527,819,2092
 9/16/2018 12:01:03,Amazon,L4,Software Engineer,170,"Bellevue, WA",0,0,ML / AI,112,22,36,,,11470,819,2093
 9/16/2018 13:07:48,Google,T3,Software Engineer,143,"Seattle, WA",0,0,API Development (Back-End),105,23,15,,,11527,819,2094
 9/16/2018 14:00:08,Amazon,L5,Data Scientist,260,"Palo Alto, CA",3,1,ML / AI,160,100,,,,7351,807,2095
@@ -8712,7 +8712,7 @@ E1 new grad, E2 new grad or 1, E3 is 2-3 years, SE1 3-5 years. rest are subject 
 6/15/2019 14:51:43,Amazon,L6,Software Engineer,400,"New York, NY",15,3,Distributed Systems (Back-End),176,224,,Male,,10182,501,9976
 6/15/2019 14:51:53,Dell,Principal Engineer,Product Designer,165,"San Francisco, CA",16,4,iOS,134,15,16,Male,,7419,807,9977
 6/15/2019 14:56:51,Amazon,SDE II,Software Engineer,275,"San Francisco, CA",5,2,DevOps,166,108,,Male,,7419,807,9978
-6/15/2019 14:58:01,Dell,i7,Product Designer,165,"San Francisco, CA",16,4,Web Development (Front-End),134,15,16,Male,"I’m badly under-level, long story. Dell isn’t all that price competitive in SF though, could move to Austin and make much more as an i9",7419,807,9979
+6/15/2019 14:58:01,Dell,i7,Product Designer,165,"San Francisco, CA",16,4,Web Development (Front-End),134,15,16,Male,"I'm badly under-level, long story. Dell isn't all that price competitive in SF though, could move to Austin and make much more as an i9",7419,807,9979
 6/15/2019 14:59:45,VMware,Senior manager of engineering,Software Engineering Manager,321,"Palo Alto, CA",14,1,Networking,226,50,45,Male,,7351,807,9980
 6/15/2019 15:00:30,Amazon,L6,Solution Architect,235,"Sunnyvale, CA",9,2,Android,185,50,,Male,,7472,807,9981
 6/15/2019 15:05:01,Apple,ICT4,Software Engineer,250,"Cupertino, CA",20,1,Full Stack,180,40,30,,,7158,807,9982
@@ -10648,7 +10648,7 @@ E1 new grad, E2 new grad or 1, E3 is 2-3 years, SE1 3-5 years. rest are subject 
 7/26/2019 19:20:52,Google,L4,Analytical Lead,130,"Toronto, ON, Canada",8,1,Data analytics,,,,Female,,,,12454
 7/26/2019 19:37:20,nvidia,4,Software Engineer,228,Santa Clara,11,6,DevOps,178,50,,,,,,12455
 7/26/2019 19:41:38,Capital One,Senior Associate,Software Engineer,118,"Vienna, VA",1,0,Distributed Systems (Back-End),110,2,6,Male,Data Engineering,,,12456
-7/26/2019 19:41:58,Capital One,Senior Software Eng,Software Engineer,157,"Tyson’s Corner, VA",9,1,Full Stack,140,,17,Male,,,,12457
+7/26/2019 19:41:58,Capital One,Senior Software Eng,Software Engineer,157,"Tyson's Corner, VA",9,1,Full Stack,140,,17,Male,,,,12457
 7/26/2019 19:56:41,Amazon,L6,Software Engineer,310,"Sunnyvale, CA",10,5,Distributed Systems (Back-End),,,,,,,,12458
 7/26/2019 20:04:59,Capital One,Software Eng,Software Engineer,140,"New York, NY",1,0,ML / AI,,,,,,,,12459
 7/26/2019 20:07:33,JCPenney,"Sr Manager, Site Reliability",Software Engineering Manager,204,"Plano, TX",15,0,DevOps,170,,34,Male,,,,12460
@@ -12517,7 +12517,7 @@ E1 new grad, E2 new grad or 1, E3 is 2-3 years, SE1 3-5 years. rest are subject 
 9/15/2019 1:23:53,Uber,L5A,Software Engineer,195,"Amsterdam, NH, Netherlands",10,2,Distributed Systems (Back-End),120,50,25,Female,,6580,0,14786
 9/15/2019 1:28:05,Microsoft,60,Software Engineer,104,"Tokyo, TY, Japan",1,1,ML / AI,90,5,9,Male,,4364,0,14787
 9/15/2019 1:28:30,Uber,L3,Software Engineer,89,"Amsterdam, NH, Netherlands",1,0,iOS,75,5,9,Female,"This is the standard 2019 offer in Amsterdam at Uber: EUR 67,000 base, EUR 7.5K target bonus & 1,500 RSUs for 4 years.",6580,0,14788
-9/15/2019 1:34:10,Uber,L4,Software Engineer,120,"Amsterdam, NH, Netherlands",4,0,Full Stack,95,6,15,Male,"This is the standard L4 offer in Amsterdam at Uber I’m 2019: EUR 85K vase, EUR 13.5K target bonus & 2,300 RSUs (for 4 years).",6580,0,14789
+9/15/2019 1:34:10,Uber,L4,Software Engineer,120,"Amsterdam, NH, Netherlands",4,0,Full Stack,95,6,15,Male,"This is the standard L4 offer in Amsterdam at Uber I'm 2019: EUR 85K vase, EUR 13.5K target bonus & 2,300 RSUs (for 4 years).",6580,0,14789
 9/15/2019 1:37:31,Uber,L5B,Software Engineer,215,"Amsterdam, NH, Netherlands",10,0,Full Stack,135,52,28,Male,"This is the standard L5B offer in Amsterdam at Uber: EUR 120K base, EUR 25K cash target & $52K in stock targets.",6580,0,14790
 9/15/2019 1:52:20,Cisco,Grade 8,Software Engineer,82,"London, EN, United Kingdom",4,1,Back-end,64,11,7,Male,,12008,0,14791
 9/15/2019 2:26:48,Adobe,Senior Software Engineer (4),Software Engineer,85,"Bucharest, BU, Romania",6,6,API Development (Back-End),40,43,2,Male,,4701,0,14792
@@ -16412,7 +16412,7 @@ E1 new grad, E2 new grad or 1, E3 is 2-3 years, SE1 3-5 years. rest are subject 
 1/4/2020 0:59:52,Flipkart,12,Product Manager,100,"Bangalore, KA, India",8,1,API Development (Back-End),60,20,20,Male,Masters,4058,0,19649
 1/4/2020 1:14:45,Microsoft,60,Software Engineer,185,"Bellevue, WA",2,2,Full Stack,125,42,18,Female,,11470,819,19650
 1/4/2020 1:31:34,Bloomberg,Software Engineer,Software Engineer,155,"New York, NY",0,0,API Development (Back-End),140,,15,,,10182,501,19651
-1/4/2020 1:39:34,Arista Networks,L3 (New Grad),Software Engineer,70,"Dublin, DN, Ireland",0,0,API Development (Back-End),55,15,0,Male,Bachelor’s degree,4015,0,19652
+1/4/2020 1:39:34,Arista Networks,L3 (New Grad),Software Engineer,70,"Dublin, DN, Ireland",0,0,API Development (Back-End),55,15,0,Male,Bachelor's degree,4015,0,19652
 1/4/2020 2:34:38,Amazon,L4,Software Engineer,142,"Seattle, WA",0,0,API Development (Back-End),112,4,26,Male,Relocation - 6800 USD - Masters,11527,819,19653
 1/4/2020 3:54:35,Google,L5,Software Engineer,500,"San Francisco, CA",14,14,Distributed Systems (Back-End),125,350,25,Male,Masters,7419,807,19654
 1/4/2020 6:00:04,Microsoft,59,Software Engineer,27,"Hyderabad, TS, India",0,0,Distributed Systems (Back-End),18,7,2,Male,,47926,0,19655

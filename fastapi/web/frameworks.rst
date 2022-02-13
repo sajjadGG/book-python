@@ -53,11 +53,11 @@ Where WSGI provided a standard for synchronous Python apps, ASGI provides one fo
 * https://www.djangoproject.com/
 * https://github.com/django/django
 
-Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
+Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It's free and open source.
 
 * **Ridiculously fast** - Django was designed to help developers take applications from concept to completion as quickly as possible.
 * **Reassuringly secure** - Django takes security seriously and helps developers avoid many common security mistakes.
-* **Exceedingly scalable** - Some of the busiest sites on the Web leverage Django’s ability to quickly and flexibly scale.
+* **Exceedingly scalable** - Some of the busiest sites on the Web leverage Django's ability to quickly and flexibly scale.
 
 .. code-block:: console
 
@@ -164,7 +164,7 @@ Flask using templates and data from user:
 * https://webapp2.readthedocs.io/en/latest/
 * https://github.com/GoogleCloudPlatform/webapp2
 
-webapp2 is a lightweight Python web framework compatible with Google App Engine’s webapp.
+webapp2 is a lightweight Python web framework compatible with Google App Engine's webapp.
 
 * **webapp2 is a simple** - it follows the simplicity of webapp, but improves it in some ways: it adds better URI routing and exception handling, a full featured response object and a more flexible dispatching mechanism.
 * **webapp2 also offers the package webapp2_extras** - with several optional utilities: sessions, localization, internationalization, domain and subdomain routing, secure cookies and others.

@@ -49,13 +49,13 @@ Pandas
 * ``pd.to_datetime()``
 * ``df.index = pd.to_datetime(df['timestamp'])``
 * ``ax = df.plot()``
-* ``ax.axhline(df['temperature'].median(), color='r', linestyle=“-“)``
+* ``ax.axhline(df['temperature'].median(), color='r', linestyle="-")``
 * ``df.index.viewDf.groupby(df.index.date).count()``
 * ``df.groupby(df.index.week).count()``
 * ``series.isin()``
-* ``df[(df.index.hour > 12) & (df.index.hour <= 12)][„temperature”].plot()``
+* ``df[(df.index.hour > 12) & (df.index.hour <= 12)]["temperature"].plot()``
 * data report by day "D" or "5T" - 5 minute intervals;
-* ``df.resample("D").max().head()dr[„temperature”].resample(“D”).agg([“min”, “max”]).plot()``
+* ``df.resample("D").max().head()dr["temperature"].resample("D").agg(["min", "max"]).plot()``
 
 
 Python PEP

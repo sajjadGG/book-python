@@ -42,4 +42,4 @@ labels = ax.get_xticklabels()
 plt.setp(labels, rotation=45, horizontalalignment='right')
 ax.axvline(group_mean, ls='--', color='red')
 
-plt.show()
+# plt.show()

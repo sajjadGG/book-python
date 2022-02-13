@@ -15,8 +15,8 @@ Rationale
         Model responsible for mapping objects with database
 
 SQLAlchemy historically features two distinct styles of mapper configuration.
-The original mapping API is commonly referred to as “classical” style, whereas
-the more automated style of mapping is known as “declarative” style. SQLAlchemy
+The original mapping API is commonly referred to as "classical" style, whereas
+the more automated style of mapping is known as "declarative" style. SQLAlchemy
 now refers to these two mapping styles as imperative mapping and declarative
 mapping. Both styles may be used interchangeably, as the end result of each is
 exactly the same. [#sqlalchemyMappings]_
@@ -57,7 +57,7 @@ Imperative Base
 
 An imperative or classical mapping refers to the configuration of a mapped
 class using the ``registry.map_imperatively()`` method, where the target class
-does not include any declarative class attributes. The “map imperative” style
+does not include any declarative class attributes. The "map imperative" style
 has historically been achieved using the ``mapper()`` function directly,
 however this function now expects that a ``sqlalchemy.orm.registry()`` is
 present [#sqlalchemyMappings]_.

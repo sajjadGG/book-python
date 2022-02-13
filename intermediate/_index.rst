@@ -124,43 +124,6 @@ Regular Expressions
     regex/re-type-annotation.rst
 
 
-Database
-********
-.. toctree::
-    :maxdepth: 1
-    :caption: Database
-
-    database/sql-datatypes.rst
-    database/sql-constraints.rst
-    database/sql-table.rst
-    database/sql-index.rst
-    database/sql-insert.rst
-    database/sql-select-from.rst
-    database/sql-select-limit.rst
-    database/sql-select-orderby.rst
-    database/sql-select-where.rst
-    database/sql-select-groupby.rst
-    database/sql-select-subquery.rst
-    database/sql-select-distinct.rst
-    database/sql-select-functions.rst
-    database/sql-update.rst
-    database/sql-delete.rst
-    database/sql-transaction.rst
-    database/sql-join.rst
-    database/sql-injection.rst
-
-    database/sqlite3-about.rst
-    database/sqlite3-connect.rst
-    database/sqlite3-execute.rst
-    database/sqlite3-insert-sequence.rst
-    database/sqlite3-insert-mapping.rst
-    database/sqlite3-insert-constraints.rst
-    database/sqlite3-fetch.rst
-    database/sqlite3-cursor.rst
-    database/sqlite3-join.rst
-    database/sqlite3-usecase.rst
-
-
 Enum
 ****
 .. toctree::

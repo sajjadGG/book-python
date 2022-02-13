@@ -491,7 +491,7 @@ StopIteration
 Traceback (most recent call last):
 StopIteration
 
-``itertools.groupby(iterable, key=None)``. Make an iterator that returns consecutive keys and groups from the iterable. Generally, the iterable needs to already be sorted on the same key function. The operation of groupby() is similar to the uniq filter in Unix. It generates a break or new group every time the value of the key function changes. That behavior differs from SQL’s GROUP BY which aggregates common elements regardless of their input order:
+``itertools.groupby(iterable, key=None)``. Make an iterator that returns consecutive keys and groups from the iterable. Generally, the iterable needs to already be sorted on the same key function. The operation of groupby() is similar to the uniq filter in Unix. It generates a break or new group every time the value of the key function changes. That behavior differs from SQL's GROUP BY which aggregates common elements regardless of their input order:
 
 >>> from itertools import groupby
 >>>

@@ -75,7 +75,7 @@ Parameters
     logging module.
 
 ``max_overflow=10``
-    The number of connections to allow in connection pool “overflow”, that is
+    The number of connections to allow in connection pool "overflow", that is
     connections that can be opened above and beyond the pool_size setting,
     which defaults to five. this is only used with ``QueuePool``.
 
@@ -89,16 +89,16 @@ Parameters
 ``poolclass=None``
     A ``Pool`` subclass, which will be used to create a connection pool
     instance using the connection parameters given in the URL. Note this
-    differs from pool in that you don’t actually instantiate the pool in this
+    differs from pool in that you don't actually instantiate the pool in this
     case, you just indicate what type of pool to be used.
 
 ``pool_logging_name``
-    String identifier which will be used within the “name” field of logging
+    String identifier which will be used within the "name" field of logging
     records generated within the ``sqlalchemy.pool`` logger. Defaults to a
-    hexstring of the object’s id.
+    hexstring of the object's id.
 
 ``pool_pre_ping=True``
-    Boolean, if ``True`` will enable the connection pool “pre-ping” feature
+    Boolean, if ``True`` will enable the connection pool "pre-ping" feature
     that tests connections for liveness upon each checkout.
 
 ``pool_recycle=-1``
@@ -126,8 +126,8 @@ Parameters
     reliable in the tens of milliseconds.
 
 ``pool_use_lifo=False``
-    if ``True`` causes the pool's “queue” behavior to instead be
-    that of a “stack”, e.g. the last connection to be returned to the pool is
+    if ``True`` causes the pool's "queue" behavior to instead be
+    that of a "stack", e.g. the last connection to be returned to the pool is
     the first one to be used on the next request. In contrast to the pool's
     long- standing behavior of first-in-first-out, which produces a round-robin
     effect of using each connection in the pool in series, lifo mode allows

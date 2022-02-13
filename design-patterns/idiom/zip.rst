@@ -177,7 +177,7 @@ Future
 [('Mark', 'Watney'), ('Melissa', 'Lewis')]
 
 ``zip()`` is often used in cases where the iterables are assumed to be of equal length.
-In such cases, it’s recommended to use the ``strict=True`` option.
+In such cases, it's recommended to use the ``strict=True`` option.
 Its output is the same as regular ``zip()``
 
 >>> firstnames = ['Mark', 'Melissa', 'Alex']
@@ -187,7 +187,7 @@ Its output is the same as regular ``zip()``
 >>> list(result)  # doctest: +SKIP
 [('Mark', 'Watney'), ('Melissa', 'Lewis'), ('Alex', 'Vogel')]
 
-Unlike the default behavior, it checks that the lengths of iterables are identical, raising a ``ValueError`` if they aren’t:
+Unlike the default behavior, it checks that the lengths of iterables are identical, raising a ``ValueError`` if they aren't:
 
 >>> firstnames = ['Mark', 'Melissa']
 >>> lastnames = ['Watney', 'Lewis', 'Vogel']

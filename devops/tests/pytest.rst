@@ -85,7 +85,7 @@ Skipif
 Fixtures
 --------
 * Fixtures are requested by test functions or other fixtures by declaring them as argument names.
-* It’s to think of fixtures as a set of resources that need to be set up before a test starts, and cleaned up after.
+* It's to think of fixtures as a set of resources that need to be set up before a test starts, and cleaned up after.
 * ``@pytest.fixture(scope='module')``
 
 .. code-block:: python
@@ -127,4 +127,3 @@ Fixtures
     # PASSED
     #
     # ======================================= 3 passed in 0.01s =======================================
-

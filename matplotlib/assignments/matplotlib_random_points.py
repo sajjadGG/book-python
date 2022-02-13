@@ -35,17 +35,19 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> import numpy as np
+    >>> np.random.seed(0)
 
-    >>> random.seed(1); random_point((0,0), std=0.2)
+    >>> random_point((0,0), std=0.2)
     (0.2576369506310926, 0.2898891217399542)
 
-    >>> random.seed(1); random_point((0,0))
+    >>> random_point((0,0))
     (0.2576369506310926, 0.2898891217399542)
 
-    >>> random.seed(1); random_point((2,5), std=10)
+    >>> random_point((2,5), std=10)
     (14.881847531554628, 19.494456086997708)
 
-    >>> random.seed(1); random_point((2,5), std=(0.1, 12))
+    >>> random_point((2,5), std=(0.1, 12))
     (2.1288184753155464, 22.393347304397253)
 """
 

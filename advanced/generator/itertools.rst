@@ -345,7 +345,7 @@ Itertools GroupBy
   iterable. Generally, the iterable needs to already be sorted on the same
   key function. The operation of groupby() is similar to the uniq filter
   in Unix. It generates a break or new group every time the value of the
-  key function changes. That behavior differs from SQL’s GROUP BY which
+  key function changes. That behavior differs from SQL's GROUP BY which
   aggregates common elements regardless of their input order:
 
 >>> from itertools import groupby

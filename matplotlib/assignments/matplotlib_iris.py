@@ -35,4 +35,4 @@ for name, group in iris.groupby("species"):
     plt.scatter(group.index, ratio[group.index], label=name)
 
 plt.legend()
-plt.show()
+#plt.show()
