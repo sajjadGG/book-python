@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 from typing import Iterator
 from _config import BOOKS, SRC_DIR, OUT_DIR, log
@@ -9,10 +10,14 @@ def get_files(book: str) -> Iterator[Path]:
 
 
 def split_assignment_solutions(file: Path) -> tuple[str, str]:
-    content = file.read_text()
+    content = re.sub(
+        pattern='^TODO: .+?$',
+        repl='',
+        string=file.read_text(),
+        flags=re.MULTILINE)
 
     if '"""' not in content:
-        log.error(f'Todo not found: {file}')
+        log.error(f'Docstring not found: {file}')
         return content, ''
 
     if '# Solution' not in content:
