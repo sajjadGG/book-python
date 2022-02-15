@@ -24,13 +24,10 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'list'>
-    >>> len(result) > 0
-    True
-    >>> all(type(row) is dict
-    ...     for row in result)
-    True
+    >>> assert type(result) is not Ellipsis
+    >>> assert type(result) is list
+    >>> assert len(result) > 0
+    >>> assert all(type(row) is dict for row in result)
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [{'id': 4, 'species': 'virginica', 'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4},

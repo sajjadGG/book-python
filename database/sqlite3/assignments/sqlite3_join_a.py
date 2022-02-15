@@ -47,13 +47,10 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'list'>
-    >>> len(result) > 0
-    True
-    >>> all(type(row) is dict
-    ...     for row in result)
-    True
+    >>> assert type(result) is not Ellipsis
+    >>> assert type(result) is list
+    >>> assert len(result) > 0
+    >>> assert all(type(row) is dict for row in result)
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [{'id': 1, 'firstname': 'José', 'lastname': 'Jiménez', 'astronaut_id': 1, 'street': '2101 E NASA Pkwy', 'city': 'Houston', 'state': 'Texas', 'code': 77058, 'country': 'USA'},
