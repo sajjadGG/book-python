@@ -32,6 +32,9 @@ Rationale
 
 Int
 ---
+.. highlights::
+    * Used to inform static type checker that the variable should be int
+
 >>> data: int = 0
 >>> data: int = 1
 >>> data: int = -1
@@ -39,6 +42,8 @@ Int
 
 Float
 -----
+* Used to inform static type checker that the variable should be float
+
 >>> data: float = 0.0
 >>> data: float = 1.23
 >>> data: float = -1.23
@@ -46,23 +51,30 @@ Float
 
 Str
 ---
+* Used to inform static type checker that the variable should be str
+
 >>> data: str = ''
 >>> data: str = 'Mark Watney'
 
 
 Bool
 ----
+* Used to inform static type checker that the variable should be bool
+
 >>> data: bool = True
 >>> data: bool = False
 
 
 None
 ----
+* Used to inform static type checker that the variable should be None
+
 >>> data: None = None
 
 
 Union
 -----
+* Used to inform static type checker that the variable should either X or Y
 * Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 * ``int | str == str | int``
 
@@ -78,6 +90,7 @@ True
 
 Optional
 --------
+* Used to inform static type checker that the variable should be X or None
 * ``int | None == None | int``
 
 >>> number: int | None = 1337
@@ -89,15 +102,11 @@ Result of this expression would then be valid in ``isinstance()`` and
 >>> isinstance(1337, int|None)
 True
 
-Example:
-
->>> firstname: str = 'Melissa'
->>> lastname: str = 'Lewis'
->>> age: int | None = None
-
 
 Aliases
 -------
+* Used to make types more readable
+
 >>> number = int | float
 >>>
 >>> age: number = 10
@@ -106,6 +115,8 @@ Aliases
 
 Final
 -----
+* Used to inform static type checker the value should not change
+* Used to define constants
 * Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
 
 >>> from typing import Final
@@ -123,28 +134,29 @@ Final
 >>> day: Final[int] = 24 * hour
 
 
-Types are not Enforced
-----------------------
+Errors
+------
+* Types are not Enforced
 * This code will run without any problems
 * Types are not required, and never will be
 * Although ``mypy`` or ``pyre-check`` will throw error
 
 >>> name: int = 'Mark Watney'
->>> age: float = 30
->>> is_adult: int = True
 
 
 Future
 ------
-Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
+* Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
 
 >>> age: int? = 1337                # doctest: +SKIP
 >>> age: int? = None                # doctest: +SKIP
 
-Result of this expression would then be valid in ``isinstance()`` and
-``issubclass()``
 
->>> isinstance(1337, int?)          # doctest: +SKIP
+Use Case - 0x01
+---------------
+>>> firstname: str = 'Melissa'
+>>> lastname: str = 'Lewis'
+>>> age: int | None = None
 
 
 Further Reading
