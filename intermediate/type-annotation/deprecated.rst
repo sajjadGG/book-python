@@ -25,6 +25,21 @@ Optional
 >>> data: Optional[int] = 1337
 >>> data: Optional[int] = None
 
+>>> from typing import Optional
+>>>
+>>>
+>>> def find(text: str, substr: str) -> Optional[int]:
+...     position = text.find(substr)
+...     if position == -1:
+...         return None
+...     else:
+...         return position
+>>>
+>>>
+>>> find('Python', 'x')
+>>> find('Python', 'o')
+4
+
 
 Union
 -----
@@ -35,6 +50,12 @@ Union
 >>>
 >>> number: Union[int, float] = 1337
 >>> number: Union[int, float] = 1.337
+
+>>> from typing import Union
+>>>
+>>>
+>>> def add(a: Union[int,float], b: Union[int,float]) -> Union[int,float]:
+...     return a + b
 
 
 List
