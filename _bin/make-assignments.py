@@ -35,22 +35,23 @@ def write_file(path: Path, content: str) -> None:
     path.write_text(content)
 
 
-for book in BOOKS:
-    log.info(f'Processing book: {book}')
+if __name__ == '__main__':
+    for book in BOOKS:
+        log.info(f'Processing book: {book}')
 
-    for file in get_files(book):
-        log.info(f'Processing file: {file}')
-        assignment, solutions = split_assignment_solutions(file)
+        for file in get_files(book):
+            log.info(f'Processing file: {file}')
+            assignment, solutions = split_assignment_solutions(file)
 
-        filename = (str(file.relative_to(SRC_DIR))
-                    .replace('assignments/', '')
-                    .replace(book, '')
-                    .removeprefix('/'))
+            filename = (str(file.relative_to(SRC_DIR))
+                        .replace('assignments/', '')
+                        .replace(book, '')
+                        .removeprefix('/'))
 
-        write_file(
-            path=Path(OUT_DIR / book / '_assignments' / filename),
-            content=assignment)
+            write_file(
+                path=Path(OUT_DIR / book / '_assignments' / filename),
+                content=assignment)
 
-        write_file(
-            path=Path(OUT_DIR / book / '_solutions' / filename),
-            content=solutions)
+            write_file(
+                path=Path(OUT_DIR / book / '_solutions' / filename),
+                content=solutions)

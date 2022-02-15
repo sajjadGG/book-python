@@ -80,14 +80,15 @@ def run_doctest(file: Path) -> TestResults:
         return result
 
 
-log.warning(f'Excluded: {EXCLUDE}')
+if __name__ == '__main__':
+    log.warning(f'Excluded: {EXCLUDE}')
 
-for file in SRC_DIR.rglob('assignments/*.py'):
-    path = str(file.relative_to(SRC_DIR)).replace('assignments/', '')
-    log.info(f'Processing: {file}')
+    for file in SRC_DIR.rglob('assignments/*.py'):
+        path = str(file.relative_to(SRC_DIR)).replace('assignments/', '')
+        log.info(f'Processing: {file}')
 
-    if path.startswith(EXCLUDE):
-        log.warning('Skipping - path is excluded')
-        continue
+        if path.startswith(EXCLUDE):
+            log.warning('Skipping - path is excluded')
+            continue
 
-    run_doctest(file)
+        run_doctest(file)
