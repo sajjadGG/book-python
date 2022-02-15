@@ -2,7 +2,7 @@
 * Assignment: Datetime Parse List
 * Complexity: medium
 * Lines of code: 8 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
     1. Define `result: list[datetime]` with parsed `DATA` dates

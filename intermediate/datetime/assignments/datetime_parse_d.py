@@ -100,4 +100,23 @@ for line in DATA:
         else:
             result.append(x)
             break
-    
+
+
+# Alternative solution
+formats = [
+    '%b %d, %Y %H:%M:%S',
+    '%B %d, %Y %H:%M',
+    '%B %d, %Y %H:%M:%S',
+]
+
+
+def parse(x: str) -> datetime:
+    for fmt in formats:
+        try:
+            return datetime.strptime(x, fmt)
+        except ValueError:
+            continue
+    raise NotImplementedError('No format matching string found')
+
+
+result = [parse(line) for line in DATA]

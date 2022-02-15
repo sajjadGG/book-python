@@ -53,27 +53,16 @@ Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
 Exception
 ---------
->>> def stop() -> Exception:
-...     raise RuntimeError
-
->>> def valid_email(email: str) -> str | Exception:
-...     if '@' in email:
-...         return email
-...     else:
-...         raise ValueError('Invalid Email')
->>>
->>>
->>> valid_email('mark.watney@nasa.gov')
-'mark.watney@nasa.gov'
->>>
->>> valid_email('mark.watney_at_nasa.gov')
-Traceback (most recent call last):
-ValueError: Invalid Email
+>>> def on_timeout() -> Exception:
+...     raise TimeoutError
 
 
 Literal
 -------
 * Since Python 3.8: :pep:`586` -- Literal Types
+* Literal de-duplicates parameters
+* Equality comparisons of Literal objects are not order dependent
+* https://docs.python.org/3/library/typing.html#typing.Literal
 
 >>> from typing import Literal
 >>>
@@ -89,18 +78,21 @@ Literal
 
 Callable
 --------
->>> from typing import Callable
->>>
->>>
->>> def feeder(get_next_item: Callable[[], str]) -> None:
-...     pass
+* Callable type
+* ``Callable[[int, int], float]`` is a function of ``(int, int) -> float``
+* There is no syntax to indicate optional or keyword arguments
+* https://docs.python.org/3/library/typing.html#typing.Callable
 
->>> from typing import Callable
->>>
->>>
->>> def async_query(on_success: Callable[[int], None],
-...                 on_error: Callable[[int, Exception], None]) -> None:
-...     pass
+>>> from typing impsaort Callable
+
+>>> def run(func: Callable[[int, int], float]) -> None:
+...     ...
+
+>>> def request(url: str,
+...             on_success: Callable[[str], None],
+...             on_error: Callable[[str, Exception], None],
+...             ) -> None:
+...     ...
 
 
 Iterator
@@ -242,3 +234,20 @@ Since Python 3.11 :pep:`677` -- Callable Type Syntax
 ...
 ... f7: (int, *Ts, str) -> bool
 ... f7: Callable[[int, *Ts, str], bool]
+
+
+Use Case - 0x01
+---------------
+>>> def valid_email(email: str) -> str | Exception:
+...     if '@' in email:
+...         return email
+...     else:
+...         raise ValueError('Invalid Email')
+>>>
+>>>
+>>> valid_email('mark.watney@nasa.gov')
+'mark.watney@nasa.gov'
+>>>
+>>> valid_email('mark.watney_at_nasa.gov')
+Traceback (most recent call last):
+ValueError: Invalid Email

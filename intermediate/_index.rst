@@ -34,6 +34,8 @@ Type Annotation
     type-annotation/mapping.rst
     type-annotation/callable.rst
     type-annotation/oop.rst
+    type-annotation/extra.rst
+    type-annotation/deprecated.rst
     type-annotation/static-analysis.rst
 
 

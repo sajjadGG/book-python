@@ -24,8 +24,16 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> result
-    {'sin': 0.02, 'cos': 1.0, 'tg': 0.02, 'ctg': 57.29, 'PI': 3.14}
+    >>> result_sin
+    0.02
+    >>> result_cos
+    1.0
+    >>> result_tg
+    0.02
+    >>> result_ctg
+    57.29
+    >>> result_pi
+    3.14
 """
 
 import math
@@ -39,21 +47,18 @@ input = MagicMock(side_effect=['1'])
 degrees = input('What is the angle [deg]?: ')
 
 
-result = {
-    'sin': ...,
-    'cos': ...,
-    'tg': ...,
-    'ctg': ...,
-    'PI': ...,
-}
+result_sin = ...
+result_cos = ...
+result_tg = ...
+result_ctg = ...
+result_pi = ...
+
 
 # Solution
 radians = math.radians(float(degrees))
 
-result = {
-    'sin': round(math.sin(radians), PRECISION),
-    'cos': round(math.cos(radians), PRECISION),
-    'tg': round(math.tan(radians), PRECISION),
-    'ctg': round(1/math.tan(radians), PRECISION),
-    'PI': round(math.pi, PRECISION),
-}
+result_sin = round(math.sin(radians), PRECISION)
+result_cos = round(math.cos(radians), PRECISION)
+result_tg = round(math.tan(radians), PRECISION)
+result_ctg = round(1/math.tan(radians), PRECISION)
+result_pi = round(math.pi, PRECISION)

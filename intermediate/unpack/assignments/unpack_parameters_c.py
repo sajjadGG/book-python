@@ -67,6 +67,9 @@ Tests:
     False
 """
 
+# callable: Return True if all arguments are int or float, otherwise False
+def isnumeric():
+    ...
 
 # Solution
 def isnumeric(*args, **kwargs):

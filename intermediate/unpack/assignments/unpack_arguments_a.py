@@ -36,7 +36,6 @@ Tests:
      {'label': 'virginica', 'mean': 6.0},
      {'label': 'versicolor', 'mean': 3.95},
      {'label': 'setosa', 'mean': 4.7}]
-
 """
 
 DATA = [

@@ -20,7 +20,11 @@ Formal date format in Japan [#wikiDateFormatJapan]_:
 
 .. code-block:: text
 
+    61/04/12
+    1961年04月12日
+
     20/12/31
+    平成20年12月31日
 
 Formal date format in Germany:
 
@@ -43,6 +47,8 @@ Date format in Poland:
 
     12 kwietnia 1961
     12 kwiecień 1961
+
+    1961-04-12
 
 Which format is a formal standard in Poland? [#wikiISO8601]_
 

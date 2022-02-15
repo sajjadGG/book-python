@@ -185,104 +185,12 @@ Astronaut(firstname='Mark', lastname='Watney')
 56
 
 
-Before Python 3.9
------------------
->>> from typing import Tuple
->>>
->>>
->>> data: Tuple[int, int, int] = (1, 2, 3)
->>> data: Tuple[str, str, str] = ('setosa', 'virginica', 'versicolor')
->>> data: Tuple[str, int, float] = ('a', 2, 3.3)
->>> data: Tuple[int, ...] = (1, 2, 3)
->>> data: Tuple[str, ...] = ('setosa', 'virginica', 'versicolor')
-
->>> from typing import List
->>>
->>>
->>> data: List[int] = [1, 2, 3, 4]
->>> data: List[float] = [5.8, 2.7, 5.1, 1.9]
->>> data: List[str] = ['a', 'b', 'c', 'd']
-
->>> from typing import Set
->>>
->>>
->>> data: Set[int] = {1, 2, 3}
->>> data: Set[float] = {0.0, 1.1, 2.2}
->>> data: Set[str] = {'a', 'b', 'c'}
-
->>> from typing import FrozenSet
->>>
->>>
->>> data: FrozenSet[int] = {1, 2, 3}
->>> data: FrozenSet[float] = {0.0, 1.1, 2.2}
->>> data: FrozenSet[str] = {'a', 'b', 'c'}
-
->>> from typing import List, Tuple
->>>
->>>
->>> data: List[tuple] = [
-...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
-...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
->>>
->>> data: List[Tuple[float, float, float, float, str]] = [
-...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
-...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
-
->>> from typing import List
->>>
->>>
->>> data: List[list] = [
-...    [1, 2, 3],
-...    [4, 5, 6],
-...    [7, 8, 9]]
->>>
->>> data: List[List[int]] = [
-...    [1, 2, 3],
-...    [4, 5, 6],
-...    [7, 8, 9]]
-
->>> from typing import List, Tuple
->>>
->>>
->>> GeographicCoordinate = Tuple[float, float]
->>> locations: List[GeographicCoordinate] = [
-...    (25.91375, -60.15503),
-...    (-11.01983, -166.48477),
-...    (-11.01983, -166.48477)]
->>>
->>> Iris = Tuple[float, float, float, float, str]
->>> data: List[Iris] = [
-...    (4.7, 3.2, 1.3, 0.2, 'setosa'),
-...    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-...    (7.6, 3.0, 6.6, 2.1, 'virginica')]
-
->>> from typing import Union, List, Tuple, Set
->>>
->>>
->>> data: List[Union[list, tuple, set]] = [
-...    [1, 2, 3],
-...    (4, 5, 6),
-...    {7, 8, 9}]
->>>
->>> data: List[Union[List[int], Tuple[int, int, int], Set[int]]] = [
-...    [1, 2, 3],
-...    (4, 5, 6),
-...    {7, 8, 9}]
->>>
->>> Row = Union[List[int],
-...             Tuple[int, int, int],
-...             Set[int]]
-...
->>> data: List[Row] = [
-...    [1, 2, 3],
-...    (4, 5, 6),
-...    {7, 8, 9}]
-
-
 Further Reading
 ---------------
 * Example: https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L505
 * More information in `Type Annotations`
 * More information in `CI/CD Type Checking`
+
+References
+----------
+.. [#pyDocTyping] https://docs.python.org/3/library/typing.html#module-contents

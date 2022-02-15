@@ -5,14 +5,254 @@ Type Annotation OOP
 Rationale
 ---------
 * All classes are types
-* Always depend upon abstraction not an implementation (SOLID Dependency Inversion Principle)
-* More information in `OOP SOLID`
 
+>>> class Point:
+...     x: int
+...     y: int
+...
+...     def set_coordinates(self, x: int, y: int) -> None:
+...         self.x = x
+...         self.y = y
+...
+...     def get_coordinates(self) -> tuple[int,int]:
+...         return self.x, self.y
+>>>
+>>>
+>>> pt: Point = Point()
+>>> pt.set_coordinates(1, 2)
+>>> pt.get_coordinates()
+(1, 2)
+
+
+Dynamic Attributes
+------------------
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+
+
+Static Attributes
+-----------------
+* ClassVar indicates that a given attribute is intended to be used as a class variable and should not be set on instances of that class.
+* https://docs.python.org/3/library/typing.html#typing.ClassVar
+
+>>> from typing import ClassVar
+>>>
+>>>
+>>> class Astronaut:
+...     AGE_MIN: ClassVar[int] = 30
+...     AGE_MAX: ClassVar[int] = 50
+
+
+Method Return Type
+------------------
+>>> class Astronaut:
+...     def say_hello(self) -> str:
+...         return 'My name... José Jiménez'
+
+
+Required Method Arguments
+-------------------------
+>>> class Astronaut:
+...     def say_hello(self, name: str) -> str:
+...         return f'My name... {name}'
+
+
+Optional Method Arguments
+-------------------------
+>>> class Astronaut:
+...     def say_hello(self, name: str = 'Mark Watney') -> str:
+...         return f'My name... {name}'
+
+
+Init Method
+-----------
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...
+...     def __init__(self, firstname: str, lastname: str) -> None:
+...         self.firstname = firstname
+...         self.lastname = lastname
+
+
+Composition
+-----------
+>>> class Person:
+...     firstname: str
+...     lastname: str
+>>>
+>>>
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     friends: list[Person]
+
+
+Circular Dependency
+-------------------
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     friends: list[Astronaut]
+...
+Traceback (most recent call last):
+NameError: name 'Astronaut' is not defined
+
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     friends: list['Astronaut']
+
+Since Python 3.7:
+
+>>> from __future__ import annotations
+>>>
+>>>
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     friends: list[Astronaut]
+
+
+Instance
+--------
 >>> class Astronaut:
 ...     pass
 >>>
 >>>
 >>> mark: Astronaut = Astronaut()
+>>> melissa: Astronaut = Astronaut()
+
+
+Dependency Inversion Principle
+------------------------------
+* Always depend upon abstraction not an implementation
+* More information in `OOP SOLID`
+
+>>> class Person:
+...     pass
+>>>
+>>>
+>>> class Astronaut(Person):
+...     pass
+>>>
+>>>
+>>> mark: Person = Astronaut()
+>>> melissa: Person = Astronaut()
+
+
+Final Class
+-----------
+* Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
+
+>>> from typing import final
+
+The following code demonstrates how to use ``@final`` decorator to mark
+class as final:
+
+>>> @final
+... class Astronaut:
+...     pass
+
+The following code will yield with an error: 'Astronaut' is marked as
+'@final' and should not be subclassed:
+
+>>> @final
+... class Person:
+...     pass
+>>>
+>>> class Astronaut(Person):
+...     pass
+
+
+Final Method
+------------
+* Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
+
+>>> from typing import final
+
+The following code demonstrates how to use ``@final`` decorator to mark
+method as final:
+
+>>> class Astronaut:
+...     @final
+...     def say_hello(self) -> None:
+...         pass
+
+The following code will yield with an error: 'Person.say_hello' is marked
+as '@final' and should not be overridden:
+
+>>> class Person:
+...     @final
+...     def say_hello(self) -> None:
+...         pass
+>>>
+>>> class Astronaut(Person):
+...     def say_hello(self) -> None:
+...         pass
+
+
+Final Attribute
+---------------
+* A special typing construct to indicate to type checkers that a name cannot be re-assigned or overridden in a subclass
+* https://docs.python.org/3/library/typing.html#typing.Final
+
+>>> from typing import Final
+
+The following code demonstrates how to use ``Final`` class to mark
+attribute as final:
+
+>>> class Astronaut:
+...     firstname: Final[str]
+...     lastname: Final[str]
+...
+...     def __init__(self) -> None:
+...         self.firstname = 'Mark'
+...         self.lastname = 'Watney'
+
+The following code will yield with an error: final attribute (``y``) without
+an initializer:
+
+>>> class Astronaut:
+...     firstname: Final[str]
+...     lastname: Final[str]  # error: not initialized
+...
+...     def __init__(self) -> None:
+...         self.firstname = 'Mark'
+
+The following code will yield with an error: can't override a final
+attribute:
+
+>>> class Astronaut:
+...     AGE_MIN: Final[int] = 30
+...     AGE_MAX: Final[int] = 50
+>>>
+>>>
+>>> Astronaut.AGE_MAX = 65 # error: can't override
+
+The following code will yield with an error: can't override a final
+attribute:
+
+>>> class Astronaut:
+...     AGE_MIN: Final[int] = 30
+...     AGE_MAX: Final[int] = 50
+>>>
+>>>
+>>> class VeteranAstronaut(Astronaut):
+...     AGE_MAX = 65  # error: can't override
+
+
+Use Case - 0x01
+---------------
+>>> class Astronaut:
+...     def get_name(self) -> tuple[str, str]:
+...         return 'Mark', 'Watney'
+
+
+Use Case - 0x02
+---------------
+* SOLID Dependency Inversion Principle
 
 >>> class Cache:
 ...     pass
@@ -32,68 +272,17 @@ Rationale
 >>> fs: Cache = FilesystemCache()
 
 
-Attributes
-----------
+Use Case - 0x03
+---------------
 >>> class Point:
 ...     x: int
 ...     y: int
-...
-...     def __init__(self, x, y):
-...         self.x = x
-...         self.y = y
-
->>> class Point:
-...     def __init__(self, x, y):
-...         self.x: int = x
-...         self.y: int = y
-
-
-Method Return Types
--------------------
->>> class Astronaut:
-...     def say_hello(self) -> str:
-...         return 'My name... José Jiménez'
->>>
->>>
->>> mark: Astronaut = Astronaut()
->>> mark.say_hello()
-'My name... José Jiménez'
-
->>> class Point:
-...     def get_coordinates(self) -> tuple[int, int]:
-...         return 1, 2
->>>
->>>
->>> pt: Point = Point()
->>> pt.get_coordinates()
-(1, 2)
-
-
-Required Method Arguments
--------------------------
->>> class Point:
-...     def __init__(self, x: int, y: int) -> None:
-...         self.x = x
-...         self.y = y
->>>
->>> class Astronaut:
-...     def __init__(self, firstname: str, lastname: str) -> None:
-...         self.firstname: str = firstname
-...         self.lastname: str = lastname
-
-
-Optional Method Arguments
--------------------------
->>> class Point:
-...     def __init__(self, x: int = 0, y: int = 0) -> None:
-...         self.x = x
-...         self.y = y
 ...
 ...     def set_coordinates(self, x: int, y: int) -> None:
 ...         self.x = x
 ...         self.y = y
 ...
-...     def get_coordinates(self) -> tuple[int, int]:
+...     def get_coordinates(self) -> tuple[int,int]:
 ...         return self.x, self.y
 >>>
 >>>
@@ -103,8 +292,8 @@ Optional Method Arguments
 (1, 2)
 
 
-Classes
--------
+Use Case - 0x04
+---------------
 >>> class Point:
 ...     def __init__(self, x: int = 0, y: int = 0) -> None:
 ...         self.x = x
@@ -131,8 +320,8 @@ Classes
 Point(x=0, y=0)
 
 
-Nested
-------
+Use Case - 0x05
+---------------
 >>> class Iris:
 ...     def __init__(self, features: list[float], label: str) -> None:
 ...         self.features: list[float] = features
@@ -143,64 +332,6 @@ Nested
 ...     Iris([7.0, 3.2, 4.7, 1.4], 'versicolor'),
 ...     Iris([7.6, 3.0, 6.6, 2.1], 'virginica')]
 
-
-Final Class
------------
-* Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
-
->>> from typing import final
->>>
->>>
->>> @final
-... class Astronaut:
-...     pass
-
-Error: Cannot inherit from final class "Base":
-
->>> from typing import final
->>>
->>>
->>> @final
-... class Astronaut:
-...     pass
->>>
->>> class Pilot(Astronaut):
-...     pass
-
-
-Final Method
-------------
-* Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
-
->>> from typing import final
->>>
->>>
->>> class Astronaut:
-...     @final
-...     def say_hello(self) -> None:
-...         pass
-
-
-Error: Cannot override final attribute "foo" (previously declared in base class "Base"):
-
->>> from typing import final
->>>
->>>
->>> class Astronaut:
-...     @final
-...     def say_hello(self) -> None:
-...         pass
->>>
->>> class Pilot(Astronaut):
-...     def say_hello(self) -> None:    # Error: Cannot override final attribute
-...         pass
-
-
-Final Attribute
----------------
->>> from typing import Final
->>>
->>>
 >>> class Position:
 ...     x: Final[int]
 ...     y: Final[int]
@@ -209,20 +340,25 @@ Final Attribute
 ...         self.x = 1
 ...         self.y = 2
 
-Error: final attribute (``y``) without an initializer:
+
+Use Case - 0x06
+---------------
+* Immutable attributes (set only on init)
 
 >>> from typing import Final
 >>>
 >>>
 >>> class Position:
 ...     x: Final[int]
-...     y: Final[int]       # Error: final attribute 'y' without an initializer
+...     y: Final[int]
 ...
-...     def __init__(self) -> None:
-...         self.x = 1
+...     def __init__(self, x: int, y: int) -> None:
+...         self.x = x
+...         self.y = y
 
-Error: can't override a final attribute:
 
+Use Case - 0x07
+---------------
 >>> from typing import Final
 >>>
 >>>
@@ -231,22 +367,16 @@ Error: can't override a final attribute:
 ...     RESOLUTION_X_MAX: Final[int] = 1024
 ...     RESOLUTION_Y_MIN: Final[int] = 0
 ...     RESOLUTION_Y_MAX: Final[int] = 768
->>>
->>>
->>> class Game(Settings):
-...     RESOLUTION_X_MIN = 3        # Error: can't override a final attribute
 
-Error: can't override a final attribute:
 
+Use Case - 0x08
+---------------
 >>> from typing import Final
 >>>
 >>>
 >>> class Hero:
 ...     DAMAGE_MIN: Final[int] = 10
 ...     DAMAGE_MAX: Final[int] = 20
->>>
->>>
->>> Hero.DAMAGE_MIN = 1             # Error: can't override a final attribute
 
 
 Further Reading
