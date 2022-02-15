@@ -172,16 +172,19 @@ NamedTuple
 ...     lastname: str
 >>>
 >>>
->>> astro = Astronaut('Mark', 'Watney')
->>> astro
+>>> mark = Astronaut('Mark', 'Watney')
+>>> mark
 Astronaut(firstname='Mark', lastname='Watney')
->>>
->>> getsizeof(astro)
-56
->>>
 
->>> astro = ('Mark', 'Watney')
->>> getsizeof(astro)
+>>> a = ('Mark', 'Watney')
+>>> b = Astronaut('Mark', 'Watney')
+>>>
+>>> a == b
+True
+>>>
+>>> getsizeof(a)
+56
+>>> getsizeof(b)
 56
 
 

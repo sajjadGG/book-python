@@ -16,18 +16,18 @@ Type Annotation Scalar
 
 Rationale
 ---------
+* Also known as: "type annotations", "type hints", "gradual typing"
+* Types are not required, and never will be
+* Good IDE will give you hints
+* Types are used extensively in system libraries
+* More and more books and documentations use types
 * Introduced in Python 3.5
 * Since Python 3.5: :pep:`484` -- Type Hints
 * Since Python 3.6: :pep:`526` -- Syntax for Variable Annotations
 * Since Python 3.8: :pep:`544` -- Protocols: Structural subtyping (static duck typing)
-* Also known as: "type annotations", "type hints", "gradual typing"
-* Good IDE will give you hints
-* Types are used extensively in system libraries
-* More and more books and documentations use types
+* Since Python 3.9: :pep:`585` -- Type Hinting Generics In Standard Collections
+* Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 * To type check use: ``mypy``, ``pyre-check``, ``pytypes``
-* More information in `cicd-tools`
-* https://www.infoq.com/presentations/dynamic-static-typing/
-* Example: https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L505
 
 
 Int
@@ -54,6 +54,11 @@ Bool
 ----
 >>> data: bool = True
 >>> data: bool = False
+
+
+None
+----
+>>> data: None = None
 
 
 Union
@@ -121,6 +126,7 @@ Final
 Types are not Enforced
 ----------------------
 * This code will run without any problems
+* Types are not required, and never will be
 * Although ``mypy`` or ``pyre-check`` will throw error
 
 >>> name: int = 'Mark Watney'
@@ -139,3 +145,10 @@ Result of this expression would then be valid in ``isinstance()`` and
 ``issubclass()``
 
 >>> isinstance(1337, int?)          # doctest: +SKIP
+
+
+Further Reading
+---------------
+* More information in `cicd-tools`
+* https://www.infoq.com/presentations/dynamic-static-typing/
+* https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L505

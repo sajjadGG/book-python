@@ -145,19 +145,64 @@ Dependency Inversion Principle
 Final Class
 -----------
 * Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
-
->>> from typing import final
+* There is no runtime checking of these properties
 
 The following code demonstrates how to use ``@final`` decorator to mark
 class as final:
 
+>>> from typing import final
+>>>
+>>>
 >>> @final
 ... class Astronaut:
 ...     pass
 
-The following code will yield with an error: 'Astronaut' is marked as
-'@final' and should not be subclassed:
 
+Final Method
+------------
+* Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
+* There is no runtime checking of these properties
+
+The following code demonstrates how to use ``@final`` decorator to mark
+method as final:
+
+>>> from typing import final
+>>>
+>>>
+>>> class Astronaut:
+...     @final
+...     def say_hello(self) -> None:
+...         pass
+
+
+Final Attribute
+---------------
+* A special typing construct to indicate to type checkers that a name cannot be re-assigned or overridden in a subclass
+* There is no runtime checking of these properties
+* https://docs.python.org/3/library/typing.html#typing.Final
+
+The following code demonstrates how to use ``Final`` class to mark
+attribute as final:
+
+>>> from typing import Final
+>>>
+>>>
+>>> class Astronaut:
+...     firstname: Final[str]
+...     lastname: Final[str]
+...
+...     def __init__(self) -> None:
+...         self.firstname = 'Mark'
+...         self.lastname = 'Watney'
+
+
+Errors
+------
+Error: 'Astronaut' is marked as ``@final`` and should not be subclassed:
+
+>>> from typing import final
+>>>
+>>>
 >>> @final
 ... class Person:
 ...     pass
@@ -165,24 +210,12 @@ The following code will yield with an error: 'Astronaut' is marked as
 >>> class Astronaut(Person):
 ...     pass
 
-
-Final Method
-------------
-* Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
+The following code will yield with an error: 'Person.say_hello' is marked
+as ``@final`` and should not be overridden:
 
 >>> from typing import final
-
-The following code demonstrates how to use ``@final`` decorator to mark
-method as final:
-
->>> class Astronaut:
-...     @final
-...     def say_hello(self) -> None:
-...         pass
-
-The following code will yield with an error: 'Person.say_hello' is marked
-as '@final' and should not be overridden:
-
+>>>
+>>>
 >>> class Person:
 ...     @final
 ...     def say_hello(self) -> None:
@@ -192,28 +225,12 @@ as '@final' and should not be overridden:
 ...     def say_hello(self) -> None:
 ...         pass
 
-
-Final Attribute
----------------
-* A special typing construct to indicate to type checkers that a name cannot be re-assigned or overridden in a subclass
-* https://docs.python.org/3/library/typing.html#typing.Final
-
->>> from typing import Final
-
-The following code demonstrates how to use ``Final`` class to mark
-attribute as final:
-
->>> class Astronaut:
-...     firstname: Final[str]
-...     lastname: Final[str]
-...
-...     def __init__(self) -> None:
-...         self.firstname = 'Mark'
-...         self.lastname = 'Watney'
-
 The following code will yield with an error: final attribute (``y``) without
 an initializer:
 
+>>> from typing import Final
+>>>
+>>>
 >>> class Astronaut:
 ...     firstname: Final[str]
 ...     lastname: Final[str]  # error: not initialized
@@ -224,6 +241,9 @@ an initializer:
 The following code will yield with an error: can't override a final
 attribute:
 
+>>> from typing import Final
+>>>
+>>>
 >>> class Astronaut:
 ...     AGE_MIN: Final[int] = 30
 ...     AGE_MAX: Final[int] = 50
@@ -234,6 +254,9 @@ attribute:
 The following code will yield with an error: can't override a final
 attribute:
 
+>>> from typing import Final
+>>>
+>>>
 >>> class Astronaut:
 ...     AGE_MIN: Final[int] = 30
 ...     AGE_MAX: Final[int] = 50
