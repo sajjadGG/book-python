@@ -5,7 +5,7 @@ Unpack Assignment
 Rationale
 ---------
 * Scalar assignment
-* Vector assignment
+* Unpacking assignment
 * Multi assignment
 
 
@@ -15,7 +15,7 @@ Scalar assignment:
 
 >>> a = 1
 
-Vector assignment:
+Unpacking assignment:
 
 >>> a, b = 1, 2
 
@@ -32,8 +32,8 @@ Scalar Assignment
 1
 
 
-Vector Assignment
------------------
+Unpacking Assignment
+--------------------
 >>> a, b = 1, 2
 >>>
 >>> print(a)
@@ -57,7 +57,7 @@ Scalar assignments:
 >>> a = [1, 2]
 >>> a = {1, 2}
 
-Vector assignments:
+Unpacking assignments:
 
 >>> a, b = 1, 2
 >>> a, b = (1, 2)
@@ -256,6 +256,34 @@ Python understands this as:
 >>>
 >>> a,b,c = (object, object, object)
 >>> a,b,(c,d) = (object, object, (object,object))
+
+
+Recap
+-----
+* Scalar, Vector, Multi assignment
+* Both left and right expression side brackets are optional
+* Unpacking nested sequences
+* Skipping values is done by using ``_``
+
+Scalar assignment:
+
+>>> a = 1
+
+Vector assignment:
+
+>>> a, b = 1, 2
+
+Multi assignment:
+
+>>> a = b = 1
+
+Unpacking nested:
+
+>>> a, (b, c) = 1, (2, 3)
+
+Skipping:
+
+>>> _, (important, _) = 1, (2, 3)
 
 
 Assignments

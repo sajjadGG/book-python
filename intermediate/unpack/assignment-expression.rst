@@ -74,19 +74,20 @@ Checking Match
 --------------
 >>> import re
 >>>
->>>
 >>> DATA = 'mark.watney@nasa.gov'
->>>
+
+Typically regular expressions requires to check if the value ``is not None``
+before using it further:
+
 >>> result = re.search(r'@nasa.gov', DATA)
+>>>
 >>> if result:
 ...     print(result)
 <re.Match object; span=(11, 20), match='@nasa.gov'>
 
->>> import re
->>>
->>>
->>> DATA = 'mark.watney@nasa.gov'
->>>
+Assignment expressions allows to merge two independent lines into one coherent
+statement:
+
 >>> if result := re.search(r'@nasa.gov', DATA):
 ...     print(result)
 <re.Match object; span=(11, 20), match='@nasa.gov'>
@@ -94,11 +95,14 @@ Checking Match
 
 Comprehensions
 --------------
+Let's define data:
+
 >>> DATA = ['Jan Twardowski',
 ...         'Melissa Lewis',
 ...         'Mark Watney']
->>>
->>>
+
+Typical comprehension would require calling ``str.split()`` multiple times:
+
 >>> result = [{'firstname': fullname.split()[0],
 ...            'lastname': fullname.split()[1]}
 ...           for fullname in DATA]
@@ -107,7 +111,11 @@ Comprehensions
 [{'firstname': 'Jan', 'lastname': 'Twardowski'},
  {'firstname': 'Melissa', 'lastname': 'Lewis'},
  {'firstname': 'Mark', 'lastname': 'Watney'}]
->>>
+
+Assignment expressions allows definition of a variable which can be used in
+the comprehension. It is not only more clear and readable, but also saves time
+and memory, especially if the function call would take a lot of resources:
+
 >>> result = [{'firstname': name[0], 'lastname': name[1]}
 ...           for fullname in DATA
 ...           if (name := fullname.split())]
@@ -212,19 +220,24 @@ Use Case - 0x03
 ...         {'is_astronaut': False, 'name': 'José Maria Jiménez'},
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
->>>
->>>
+
+Comprehension:
+
 >>> result = [{'firstname': person['name'].title().split()[0],
 ...            'lastname': person['name'].title().split()[-1]}
 ...           for person in DATA
 ...           if person['is_astronaut']]
->>>
+
+Assignment expressions:
+
 >>> result = [{'firstname': name[0],
 ...            'lastname': name[-1]}
 ...           for person in DATA
 ...           if person['is_astronaut']
 ...           and (name := person['name'].title().split())]
->>>
+
+In both cases result is the same:
+
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 [{'firstname': 'Jan', 'lastname': 'Twardowski'},
  {'firstname': 'Mark', 'lastname': 'Watney'},
@@ -276,6 +289,9 @@ Use Case - 0x05
 
 Use Case - 0x06
 ---------------
+In the following example dataclasses are used to automatically
+generate ``__init__()`` method based on the attributes:
+
 >>> from dataclasses import dataclass
 >>>
 >>>
@@ -308,10 +324,10 @@ Use Case - 0x06
 ...    (7.0, 3.2, 4.7, 1.4, 'versicolor')]
 >>>
 >>>
->>> result = [cls(*features)
-...           for *features, species in DATA[1:]
+>>> result = [iris(*values)
+...           for *values, species in DATA[1:]
 ...           if (clsname := species.capitalize())
-...           and (cls := globals()[clsname])]
+...           and (iris := globals()[clsname])]
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 [Virginica(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9),
@@ -330,35 +346,24 @@ Use Case - 0x07
 >>>
 >>> data = 'mark.watney@nasa.gov'
 >>> pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
->>>
+
+Procedural approach:
+
 >>> match = re.match(pattern, data)
 >>> result = match.groups() if match else None
->>>
->>> print(result)
-('mark', 'watney')
 
->>> import re
->>>
->>>
->>> data = 'mark.watney@nasa.gov'
->>> pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
->>>
+Conditional statement requires to perform match twice in order to get results:
+
 >>> result = re.match(pattern, data).groups() if re.match(pattern, data) else None
->>>
->>> print(result)
-('mark', 'watney')
 
->>> import re
->>>
->>>
->>> data = 'mark.watney@nasa.gov'
->>> pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
->>>
+Assignment expressions allows to defile a variable and reuse it:
+
 >>> result = x.groups() if (x := re.match(pattern, data)) else None
->>>
+
+In all cases result is the same:
+
 >>> print(result)
 ('mark', 'watney')
-
 
 
 References

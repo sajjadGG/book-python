@@ -1,5 +1,5 @@
-Unpack Assignment Star
-======================
+Unpack Star
+===========
 
 
 Rationale

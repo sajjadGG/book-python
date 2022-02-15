@@ -25,6 +25,8 @@ Hint:
     * `str.strip()`
     * `str.split()`
     * `int()`
+    * `bool(0) == False`
+    * `bool('0') == True`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
