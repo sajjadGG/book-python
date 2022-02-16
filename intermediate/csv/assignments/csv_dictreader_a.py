@@ -20,11 +20,10 @@ Polish:
     5. Dodaj wiersze do `result: list[dict]`
     6. Uruchom doctesty - wszystkie muszą się powieść
 
-Hint:
-    * For Python before 3.8: `dict(OrderedDict)`
-
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from os import remove
+    >>> remove(FILE)
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
