@@ -5,12 +5,15 @@ Module VENV
 
 Rationale
 ---------
-* Bundled with Python since 3.3
 * Isolated Python environment
 * Allows to have multiple versions of Python for one project
-* For testing on different versions: ``py37``, ``py38``, ``py39``, ``py310a1``
+* For testing on different versions: ``py38``, ``py39``, ``py310``
 * Test libraries and frameworks before upgrading (create venv, install requirements, run tests, delete if fails)
 * Allows to have different versions of libraries and frameworks for each project
+* Difference between ``venv`` and ``virtualenv``
+* ``venv`` is bundled with Python since 3.3 (no installation required)
+* ``virtualenv`` is independent package installed via ``pip``
+* ``virtualenvwrapper`` is additionally installed command line tools
 
 
 Create
@@ -20,14 +23,14 @@ Create
 .. code-block:: console
 
     $ cd PROJECT
-    $ python3.9 -m venv DIRECTORY
+    $ python3.10 -m venv DIRECTORY
 
 Example:
 
 .. code-block:: console
 
     $ cd PROJECT
-    $ python3.10 -m venv venv-3.10.0
+    $ python3.10 -m venv venv-py310
 
 
 Activate
@@ -41,14 +44,14 @@ Windows:
 .. code-block:: console
 
     $ cd PROJECT
-    $ venv-3.10.0\Scripts\activate.bat
+    $ venv-py310\Scripts\activate.bat
 
 macOS, Linux, BSD:
 
 .. code-block:: console
 
     $ cd PROJECT
-    $ source venv-3.10.0/bin/activate
+    $ source venv-py310/bin/activate
 
 
 Directory Naming Convention
@@ -124,6 +127,8 @@ This convention is from ``virtualenv-wrapper`` module (mostly used in Python 2):
 
 Good practices
 --------------
+* ``python3.10 -m venv -h``
+* ``python3.10 -m venv --upgrade-deps venv-py310``
 * name as version ``venv-3.10.0``
 * place in your project directory and add folder to ``.gitignore`` (important!)
 * otherwise place it in ``~/.virtualenv/``, but some meaningful name is required

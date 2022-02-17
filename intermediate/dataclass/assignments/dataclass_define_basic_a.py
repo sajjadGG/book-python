@@ -21,8 +21,8 @@ Tests:
     >>> from inspect import isclass
     >>> from dataclasses import is_dataclass
 
-    >>> assert isclass(Point)
-    >>> assert is_dataclass(Point)
+    >>> assert isclass(Point), 'Point is not a class'
+    >>> assert is_dataclass(Point), 'Point is not a dataclass, add decorator'
     >>> assert hasattr(Point, 'x')
     >>> assert hasattr(Point, 'y')
 

@@ -13,12 +13,33 @@ Regular Expressions are also known as:
     * ``re``
 
 
+SetUp
+-----
+* ``TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'``
+* TEXT is short
+* TEXT has firstname and lastname
+* TEXT has date
+* TEXT has time
+* TEXT has punctuation (``,` and ``.``)
+* TEXT has digits and numbers
+* TEXT has ordinals (th) - from st, nd, rd, th
+* TEXT has lowercase and uppercase letters
+
+>>> import re
+>>>
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+
+
 Syntax
 ------
-* Identifiers - what to find (single character)
 * Qualifiers - range to find (range)
+* Identifiers - what to find (single character)
+* Negation
 * Quantifiers - how many occurrences of preceding qualifier or identifier
-
+* Groups
+* Look Ahead and Look Behind
+* Flags
+* Extensions
 
 Escape characters
 -----------------
@@ -30,6 +51,10 @@ Escape characters
 * ``\b`` - backspace
 * ``\v`` - vertical space
 * ``\f`` - form feed
+* ``\x`` - hexadecimal
+* ``\o`` - octal
+* ``\u`` - Unicode entity 16-bit
+* ``\U`` - Unicode entity 32-bit
 
 >>> import string
 >>>
@@ -134,9 +159,21 @@ hello\nworld
 >>> print(r'hello\nworld')
 hello\nworld
 
+Example:
+
+>>> print('\btodo\b')
+tod
+>>>
+>>> print(r'\btodo\b')
+\btodo\b
 
 ASCII vs Unicode
 ----------------
+* ``re.UNICODE``
+* ``re.ASCII``
+* ASCII for letters in latin alphabet
+* UNICODE includes diacritics and accent characters (ąśćłóźć, etc.)
+
 >>> import string
 >>>
 >>>
@@ -235,6 +272,7 @@ Visualization
 
 Further Reading
 ---------------
+* https://www.youtube.com/watch?v=BmF-gEYXWVM&list=PLv4THqSPE6meFeo_jNLgUVKkP40UstIQv&index=3
 * Kinsley, Harrison "Sentdex". Python 3 Programming Tutorial - Regular Expressions / Regex with re. Year: 2014. Retrieved: 2021-04-11. URL: https://www.youtube.com/watch?v=sZyAn2TW7GY
 * https://www.rexegg.com/regex-trick-conditional-replacement.html
 * https://www.rexegg.com/regex-lookarounds.html

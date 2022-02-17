@@ -19,6 +19,9 @@ Polish:
     3. Wynik sumowania zaokrąglij do jednego miejsca po przecinku
     4. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * f'{var=:.1f}'
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

@@ -147,8 +147,9 @@ Dataclass
     dataclass/define-relations.rst
     dataclass/mechanism.rst
     dataclass/postinit.rst
-    dataclass/field.rst
     dataclass/mutable-args.rst
+    dataclass/field.rst
+    dataclass/metadata.rst
     dataclass/parameters.rst
     dataclass/helpers.rst
     dataclass/inheritance.rst

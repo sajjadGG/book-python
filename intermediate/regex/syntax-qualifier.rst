@@ -4,14 +4,11 @@ Syntax Qualifier
 
 Rationale
 ---------
-Qualifier specifies what to find.
-
+* Qualifier specifies what to find.
 * ``a`` - Exact
-* ``a|b`` - Exact Alternate
+* ``a|b`` - Alternative
 * ``[abc]`` - Enumeration
-* ``[abc]|[123]`` - Enumeration Alternate
 * ``[a-z]`` - Range
-* ``[a-z]|[0-9]`` - Range Alternate
 
 
 Exact
@@ -68,6 +65,14 @@ It will work for both numbers, characters or any other object:
 >>> re.findall('a|b|c|1|2|3', TEXT)
 ['a', 'a', 'a', 'c', 'a', 'c', '1', '2', '1', '1', 'a', 'a']
 
+Examples:
+
+>>> re.findall('a|e', TEXT)
+['a', 'a', 'a', 'e', 'a', 'e', 'a', 'a']
+>>>
+>>> re.findall('a|e|i|o|u|y', TEXT)
+['u', 'i', 'a', 'a', 'i', 'a', 'u', 'e', 'o', 'a', 'e', 'o', 'a', 'a']
+
 
 Enumeration
 -----------
@@ -88,6 +93,33 @@ It will work for both numbers, characters or any other object:
 
 >>> re.findall('[abc123]', TEXT)
 ['a', 'a', 'a', 'c', 'a', 'c', '1', '2', '1', '1', 'a', 'a']
+
+Examples:
+
+>>> re.findall('[a-z]', TEXT)  # letters from a to z
+['u', 'r', 'i', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n', 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'p', 'r', 't', 'h', 'a', 't', 'a', 'm']
+>>>
+>>> re.findall('[az-]', TEXT)  # letters a, z or -
+['a', 'a', 'a', 'a', 'a', 'a']
+
+>>> re.findall('[A-z]', TEXT)
+['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n', 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p', 'r', 't', 'h', 'a', 't', 'a', 'm']
+>>>
+>>> re.findall('[a-Z]', TEXT)
+Traceback (most recent call last):
+re.error: bad character range a-Z at position 1
+>>>
+>>> re.findall('[z-a]', TEXT)
+Traceback (most recent call last):
+re.error: bad character range z-a at position 1
+
+Use Cases:
+
+>>> re.findall('[aeiouy]', TEXT)
+['u', 'i', 'a', 'a', 'i', 'a', 'u', 'e', 'o', 'a', 'e', 'o', 'a', 'a']
+>>>
+>>> re.findall('a|e|i|o|u|y', TEXT)
+['u', 'i', 'a', 'a', 'i', 'a', 'u', 'e', 'o', 'a', 'e', 'o', 'a', 'a']
 
 
 Enumeration Alternate

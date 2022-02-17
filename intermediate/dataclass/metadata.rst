@@ -1,9 +1,15 @@
-Dataclass Field
-===============
+Dataclass Metadata
+==================
 
 
 Rationale
 ---------
+* ``metadata`` - For storing extra information about field
+* ``dict | None``
+* ``None`` is treated as an empty ``dict``
+* Metadata is not used at all by Data Classes
+* Metadata is provided as a third-party extension mechanism
+
 .. code-block:: text
 
     def field(*,
@@ -15,18 +21,9 @@ Rationale
               compare: Any = True,
               metadata: Any = None) -> None
 
-* ``default`` - Default value for the field
-* ``default_factory`` - Field factory
-* ``init`` - Use this field in ``__init__()``
-* ``repr`` - Use this field in ``__repr__()``
-* ``hash`` - Use this field in ``__hash__()``
-* ``compare`` - Use this field in comparison functions
-  (le, lt, gt, ge, eq, ne)
-* ``metadata`` - For storing extra information about field
 
-
-Default
--------
+Syntax
+------
 >>> from dataclasses import dataclass, field
 >>>
 >>>
@@ -34,8 +31,14 @@ Default
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     mission: str = 'Ares3'
+...     age: int = field(default=None, metadata={'min': 27, 'max': 50})
+...     agency: str = field(default='NASA', metadata={'choices': ['NASA', 'ESA']})
+...     height: float = field(default=None, metadata={'unit': 'cm'})
+...     weight: float = field(default=None, metadata={'unit': 'kg'})
 
+
+Documentation
+-------------
 >>> from dataclasses import dataclass, field
 >>>
 >>>
@@ -43,13 +46,12 @@ Default
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     mission: str = field(default='Ares3')
+...     height: float = field(default=None, metadata={'unit': 'cm'})
+...     weight: float = field(default=None, metadata={'unit': 'kg'})
 
 
-Default Factory
----------------
-The following code will not work:
-
+Validation
+----------
 >>> from dataclasses import dataclass, field
 >>>
 >>>
@@ -57,71 +59,19 @@ The following code will not work:
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     missions: list[str] = ['Ares3', 'Apollo18']
+...     age: int = field(default=None, metadata={'min': 27, 'max': 50})
+...
+...     def __post_init__(self):
+...         AGE_MIN = self.__dataclass_fields__['age'].metadata['min']
+...         AGE_MAX = self.__dataclass_fields__['age'].metadata['max']
+...
+...         if self.age not in range(AGE_MIN, AGE_MAX):
+...             raise ValueError('Invalid age')
+>>>
+>>>
+>>> astro = Astronaut('Mark', 'Watney', age=99)
 Traceback (most recent call last):
-ValueError: mutable default <class 'list'> for field missions is not allowed: use default_factory
-
-If you want to create a list with default values, you have to create a field
-with ``default_factory=lambda: ['Ares3', 'Apollo18']``. Lambda expression
-will be evaluated on field initialization.
-
->>> from dataclasses import dataclass, field
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     missions: list[str] = field(default_factory=lambda: ['Ares3', 'Apollo18'])
->>>
->>>
->>> Astronaut('Mark', 'Watney')
-Astronaut(firstname='Mark', lastname='Watney', missions=['Ares3', 'Apollo18'])
-
-
-Init
-----
->>> from dataclasses import dataclass, field
->>> from typing import Final
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     age: int
-...     AGE_MIN: Final[int] = field(default=27, init=False)
-...     AGE_MAX: Final[int] = field(default=50, init=False)
->>>
->>>
->>> Astronaut('Mark', 'Watney', age=44)
-Astronaut(firstname='Mark', lastname='Watney', age=44, AGE_MIN=27, AGE_MAX=50)
-
-
-Repr
-----
->>> from dataclasses import dataclass, field
->>> from typing import Final
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     age: int
-...     AGE_MIN: Final[int] = field(default=27, init=False, repr=False)
-...     AGE_MAX: Final[int] = field(default=50, init=False, repr=False)
->>>
->>>
->>> Astronaut('Mark', 'Watney', age=44)
-Astronaut(firstname='Mark', lastname='Watney', age=44)
-
-kw_only
--------
-* Since Python 3.10
-
-If true, this field will be marked as keyword-only. This is used when the
-generated __init__() method's parameters are computed. Default: dataclasses.MISSING
+ValueError: Invalid age
 
 
 Use Case - 0x01
@@ -241,6 +191,108 @@ AssertionError: weight value 200 is not between 50 and 90
 >>> Astronaut('Mark', 'Watney', age=44, height=120)
 Traceback (most recent call last):
 AssertionError: height value 120 is not between 156 and 210
+
+
+Use Case - 0x03
+---------------
+>>> from dataclasses import dataclass, field
+>>> from datetime import date
+>>> from typing import Literal
+>>>
+>>>
+>>> @dataclass
+... class Mission:
+...     year: int
+...     name: str
+>>>
+>>>
+>>> # doctest: +SKIP
+... @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     agency: Literal['NASA', 'ESA', 'Roscosmos'] = field(metadata={'choices': ['NASA', 'ESA', 'Roscosmos']})
+...     age: int = field(metadata={'min': 30, 'max': 50})
+...     height: int | float = field(metadata={'unit': 'cm'})
+...     weight: int | float = field(metadata={'unit': 'kg'})
+...     born: date | None
+...     friends: list['Astronaut'] | None = None
+...     missions: list[Mission] | None = None
+...     medals: list[str] | None = None
+...
+...     def _validate_age(self, age):
+...         AGE_MIN = self.__dataclass_fields__['age'].metadata['min']
+...         AGE_MAX = self.__dataclass_fields__['age'].metadata['max']
+...         if not AGE_MIN <= age < AGE_MAX:
+...             raise ValueError(f'Invalid age, must be between {AGE_MIN} and {AGE_MAX}')
+...
+...     def _validate_agency(self, agency):
+...         AGENCY_CHOICES = self.__dataclass_fields__['agency'].metadata['choices']
+...         if agency not in AGENCY_CHOICES:
+...             raise ValueError(f'Invalid agency, must be one of {AGENCY_CHOICES}')
+...
+...     def __setattr__(self, attrname, attrvalue):
+...         match attrname:
+...             case 'age':    self._validate_age(attrvalue)
+...             case 'agency': self._validate_agency(attrvalue)
+...         return super().__setattr__(attrname, attrvalue)
+>>>
+>>>
+>>> # doctest: +SKIP
+... mark = Astronaut(
+...         firstname='Mark',
+...         lastname='Watney',
+...         agency='NASA',
+...         age=35,
+...         height=185.5,
+...         weight=75.5,
+...         born=date(1969, 7, 21),
+...         missions=[Mission(1973, 'Apollo 18'),
+...                   Mission(2012, 'STS-136'),
+...                   Mission(2035, 'Ares 3')],
+... )
+>>>
+>>> mark.age = 10  # doctest: +SKIP
+Traceback (most recent call last):
+ValueError: Invalid age, must be between 30 and 50
+>>>
+>>> mark.agency = 'CNSA'  # doctest: +SKIP
+Traceback (most recent call last):
+ValueError: Invalid agency, must be one of ['NASA', 'ESA', 'Roscosmos']
+
+
+Use Case - 0x04
+---------------
+>>> from dataclasses import KW_ONLY, dataclass, field
+>>> from typing import Literal
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     _: KW_ONLY
+...     age: int | float | None = field(default=None, metadata={'unit': 'years', 'min': 30, 'max': 50})
+...     weight: int | float | None = field(default=None, metadata={'unit': 'kg'})
+...     height: int | float | None = field(default=None, metadata={'unit': 'cm'})
+...     agency: Literal['NASA','ESA','Roscosmos'] | None = field(default=None, metadata={'choices': ['NASA','ESA','Roscosmos']})
+...
+...     def _validate_age(self):
+...         metadata = self.__dataclass_fields__['age'].metadata
+...         if not metadata['min'] <= self.age < metadata['max']:
+...             raise ValueError(f'Age "{self.age}" is invalid, '
+...                              f'should be between {metadata["min"]} and {metadata["max"]}')
+...
+...     def _validate_agency(self):
+...         metadata = self.__dataclass_fields__['agency'].metadata
+...         if self.agency not in metadata['choices']:
+...             raise ValueError(f'Agency "{self.agency}" is invalid, '
+...                              f'should be one of: {metadata["choices"]}')
+...
+...     def __post_init__(self):
+...         self._validate_age()
+...         self._validate_agency()
+
 
 
 Assignments

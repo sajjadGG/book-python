@@ -9,7 +9,6 @@ Rationale
 * ``$`` - end of a string (changes meaning with ``re.MULTILINE``)
 * ``\A`` - start of a string (doesn't change meaning with ``re.MULTILINE``)
 * ``\Z`` - end of a string (doesn't change meaning with ``re.MULTILINE``)
-* ``\G`` - beginning of string or end of previous match
 
 
 Any Character
