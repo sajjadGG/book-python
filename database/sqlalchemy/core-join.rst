@@ -103,12 +103,63 @@ and a pre-production tests.
 
 Join From
 ---------
+* New in SQLAlchemy 1.4
+* Have some additional features than ``join()``
+* More explicitly
+* Is better to start chain of joins
+
 When we have more than one table mentioned, we want to relate them together,
 which is most easily achieved using ``join_from()`` [#ytSQLAlchemy20]_.
 
 >>> query = (
 ...     select(astronaut.c.firstname, mission.c.name).
 ...     join_from(astronaut, mission)
+... )
+>>>
+>>> with engine.begin() as db:
+...     result = db.execute(query)
+>>>
+>>> result.all()  # doctest: +NORMALIZE_WHITESPACE
+[('Mark', 'Ares3'),
+ ('Melissa', 'Ares1'),
+ ('Melissa', 'Ares3'),
+ ('Rick', 'Ares3')]
+
+
+Join
+----
+* ``join()`` will infer the left hand side automatically
+* Is better for continuing chain of joins
+
+>>> query = (
+...     select(astronaut.c.firstname, mission.c.name).
+...     join(mission)
+... )
+>>>
+>>> with engine.begin() as db:
+...     result = db.execute(query)
+>>>
+>>> result.all()  # doctest: +NORMALIZE_WHITESPACE
+[('Mark', 'Ares3'),
+ ('Melissa', 'Ares1'),
+ ('Melissa', 'Ares3'),
+ ('Rick', 'Ares3')]
+
+
+Join On
+-------
+* You can specify the column on which to perform a join
+* Useful when there is several ``ForeignKey`` columns
+* If SQLAlchemy cannot find join column automatically it throws an error
+
+The ``ON`` clause of the ``JOIN`` is also inferred automatically from the
+foreign key relationship of the involved tables. We may chose to express
+this join condition explicitly, as would be needed if the join condition
+were otherwise ambiguous [#ytSQLAlchemy20]_.
+
+>>> query = (
+...     select(astronaut.c.firstname, mission.c.name).
+...     join(mission, astronaut.c.id == mission.c.astronaut_id)
 ... )
 >>>
 >>> with engine.begin() as db:
