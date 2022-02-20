@@ -57,7 +57,7 @@ Insert Object
 -------------
 The ``insert()`` statement, when not given ``values()`` will generate the
 ``VALUES`` clause based on the list of parameters that are passed to
-``execute()``.
+``execute()`` [#ytSQLAlchemy20]_.
 
 Prepare data for insert and execute the query writing it to database:
 
@@ -72,7 +72,8 @@ Insert List of Objects
 * Since 1.4/2.0 execute many is greatly improved for PostgreSQL
 
 This format also accepts an 'executemany' style that DBAPI can optimize.
-Prepare data for insert and execute the query writing it to database:
+Prepare data for insert and execute the query writing it to database
+[#ytSQLAlchemy20]_:
 
 >>> data = [
 ...     {'firstname': 'Mark', 'lastname': 'Watney'},
