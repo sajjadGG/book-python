@@ -16,7 +16,7 @@ SetUp
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
 >>>
 >>>
->>> engine = create_engine('sqlite:///:memory:')
+>>> engine = create_engine('sqlite:///:memory:', future=True)
 >>> metadata = MetaData()
 >>>
 >>> astronaut = Table('astronaut', metadata,
@@ -38,6 +38,34 @@ SetUp
 >>> with engine.begin() as db:
 ...     astronaut.create(db)
 ...     db.execute(astronaut.insert(), data)
+
+
+List[tuple]
+-----------
+>>> query = select(astronaut)
+>>>
+>>> with engine.begin() as db:
+...     result = db.execute(query)
+>>>
+list(result)
+[(1, 'Mark', 'Watney', None, None, None, None),
+ (2, 'Melissa', 'Lewis', None, None, None, None),
+ (3, 'Rick', 'Martinez', None, None, None, None)]
+
+
+List[dict]
+----------
+>>> query = select(astronaut)
+>>>
+>>> with engine.begin() as db:
+...     result = db.execute(query)
+>>>
+list(result.mappings())
+[{'id': 1, 'firstname': 'Mark', 'lastname': 'Watney', 'born': None, 'height': None, 'weight': None, 'agency': None},
+ {'id': 2, 'firstname': 'Melissa', 'lastname': 'Lewis', 'born': None, 'height': None, 'weight': None, 'agency': None},
+ {'id': 3, 'firstname': 'Rick', 'lastname': 'Martinez', 'born': None, 'height': None, 'weight': None, 'agency': None}]
+
+
 
 
 All

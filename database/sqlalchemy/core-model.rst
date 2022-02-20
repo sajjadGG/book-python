@@ -13,7 +13,9 @@ Prepare connection:
 
 >>> from sqlalchemy import create_engine
 >>>
->>> engine = create_engine('sqlite:///:memory:')
+>>> engine = create_engine('sqlite:///:memory:', future=True)
+
+Note, that we will use future flag to turn on the 2.0 compatibility mode.
 
 
 Metadata
@@ -81,7 +83,7 @@ Recap
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
 >>>
 >>>
->>> engine = create_engine('sqlite:///:memory:')
+>>> engine = create_engine('sqlite:///:memory:', future=True)
 >>> metadata = MetaData()
 >>>
 >>> astronaut = Table('astronaut', metadata,

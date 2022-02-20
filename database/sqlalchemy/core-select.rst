@@ -16,7 +16,7 @@ SetUp
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
 >>>
 >>>
->>> engine = create_engine('sqlite:///:memory:')
+>>> engine = create_engine('sqlite:///:memory:', future=True)
 >>> metadata = MetaData()
 >>>
 >>> astronaut = Table('astronaut', metadata,
@@ -40,6 +40,19 @@ SetUp
 ...     db.execute(astronaut.insert(), data)
 
 
+Select All Columns
+------------------
+Define the database query:
+
+>>> query = select(astronaut)
+
+Generated statement:
+
+>>> print(query)
+SELECT astronaut.id, astronaut.firstname, astronaut.lastname, astronaut.born, astronaut.height, astronaut.weight, astronaut.agency
+FROM astronaut
+
+
 Select Specified Columns
 ------------------------
 Define the database query:
@@ -49,39 +62,12 @@ Define the database query:
 ...     where(astronaut.c.firstname == 'Mark')
 ... )
 
-Inspect statement:
+Generated statement:
 
 >>> print(query)
 SELECT astronaut.firstname, astronaut.lastname
 FROM astronaut
 WHERE astronaut.firstname = :firstname_1
-
-Execute statement to the database:
-
->>> with engine.begin() as db:
-...     result = db.execute(query)
-...
-...     for row in result:
-...         print(row)
-
-
-
-Select All Columns
-------------------
-Define the database query:
-
->>> query = select(astronaut)
-
-Inspect statement:
-
->>> print(query)
-SELECT astronaut.id, astronaut.firstname, astronaut.lastname, astronaut.born, astronaut.height, astronaut.weight, astronaut.agency
-FROM astronaut
-
-Execute statement to the database:
-
->>> with engine.begin() as db:
-...     db.execute(query).all()
 
 
 Order By
@@ -95,17 +81,12 @@ Define the database query:
 ...     order_by(astronaut.c.firstname)
 ... )
 
-Inspect statement:
+Generated statement:
 
 >>> print(query)
 SELECT astronaut.id, astronaut.firstname, astronaut.lastname, astronaut.born, astronaut.height, astronaut.weight, astronaut.agency
 FROM astronaut
 WHERE astronaut.firstname = :firstname_1 OR astronaut.firstname = :firstname_2 ORDER BY astronaut.firstname
-
-Execute statement to the database:
-
->>> with engine.begin() as db:
-...     db.execute(query).all()
 
 
 Multiple Where
@@ -121,17 +102,12 @@ Define the database query:
 ...     order_by(astronaut.c.firstname)
 ... )
 
-Inspect statement:
+Generated statement:
 
 >>> print(query)
 SELECT astronaut.id, astronaut.firstname, astronaut.lastname, astronaut.born, astronaut.height, astronaut.weight, astronaut.agency
 FROM astronaut
 WHERE astronaut.firstname = :firstname_1 AND astronaut.lastname = :lastname_1 ORDER BY astronaut.firstname
-
-Execute statement to the database:
-
->>> with engine.begin() as db:
-...     db.execute(query).all()
 
 
 References

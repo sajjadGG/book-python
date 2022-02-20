@@ -13,7 +13,7 @@ SetUp
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
 >>>
 >>>
->>> engine = create_engine('sqlite:///:memory:')
+>>> engine = create_engine('sqlite:///:memory:', future=True)
 >>> metadata = MetaData()
 >>>
 >>> astronaut = Table('astronaut', metadata,

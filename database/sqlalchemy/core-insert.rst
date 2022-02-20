@@ -13,7 +13,7 @@ SetUp
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
 >>>
 >>>
->>> engine = create_engine('sqlite:///:memory:')
+>>> engine = create_engine('sqlite:///:memory:', future=True)
 >>> metadata = MetaData()
 >>>
 >>> astronaut = Table('astronaut', metadata,
@@ -39,16 +39,14 @@ We can insert data using the ``insert()`` construct:
 ...     values(firstname='Mark',
 ...            lastname='Watney')
 ... )
+>>>
+>>> with engine.begin() as db:
+...     db.execute(query)
 
 We can inspect the query object simply by printing it:
 
 >>> print(query)
 INSERT INTO astronaut (firstname, lastname) VALUES (:firstname, :lastname)
-
-Execute the query and write to database:
-
->>> with engine.begin() as db:
-...     db.execute(query)
 
 
 Execute
@@ -57,30 +55,27 @@ The ``insert()`` statement, when not given ``values()`` will generate the
 ``VALUES`` clause based on the list of parameters that are passed to
 ``execute()``.
 
-Prepare data for insert:
+Prepare data for insert and execute the query writing it to database:
 
 >>> data = {'firstname': 'Mark', 'lastname': 'Watney'}
-
-Execute the query and write to database:
-
+>>>
 >>> with engine.begin() as db:
 ...     db.execute(astronaut.insert(), data)
 
 
 Executemany
 -----------
-This format also accepts an 'executemany' style that DBAPI can optimize
+* Since 1.4/2.0 execute many is greatly improved for PostgreSQL
 
-Prepare data for insert:
+This format also accepts an 'executemany' style that DBAPI can optimize.
+Prepare data for insert and execute the query writing it to database:
 
 >>> data = [
 ...     {'firstname': 'Mark', 'lastname': 'Watney'},
 ...     {'firstname': 'Melissa', 'lastname': 'Lewis'},
 ...     {'firstname': 'Rick', 'lastname': 'Martinez'},
 ... ]
-
-Execute the query and write to database:
-
+>>>
 >>> with engine.begin() as db:
 ...     db.execute(astronaut.insert(), data)
 
