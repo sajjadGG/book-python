@@ -4,55 +4,11 @@ Theory Relations
 
 Rationale
 ---------
-* ``pickle`` - has relations
-* ``json`` - has relations
-* ``csv`` - non-relational format
 
 
 Glossary
 --------
 .. glossary::
-
-    normalization
-        Database normalization is the process of structuring a database,
-        usually a relational database, in accordance with a series of
-        so-called normal forms in order to reduce data redundancy and
-        improve data integrity. Normalization entails organizing the columns
-        (attributes) and tables (relations) of a database to ensure that
-        their dependencies are properly enforced by database integrity
-        constraints. It is accomplished by applying some formal rules either
-        by a process of synthesis (creating a new database design) or
-        decomposition (improving an existing database design). A relational
-        database relation is often described as 'normalized' if it meets
-        third normal form. [#WikipediaDatabaseNormalization]_ [#Codd1972]_
-
-    big-data
-        Big data is a field that treats ways to analyze, systematically
-        extract information from, or otherwise deal with data sets that are
-        too large or complex to be dealt with by traditional data-processing
-        application software. Data with many fields (columns) offer greater
-        statistical power, while data with higher complexity (more
-        attributes or columns) may lead to a higher false discovery rate.
-        Big data analysis challenges include capturing data, data storage,
-        data analysis, search, sharing, transfer, visualization, querying,
-        updating, information privacy, and data source. Big data was
-        originally associated with three key concepts: volume, variety, and
-        velocity. The analysis of big data presents challenges in sampling,
-        and thus previously allowing for only observations and sampling.
-        Therefore, big data often includes data with sizes that exceed the
-        capacity of traditional software to process within an acceptable
-        time and value. [#WikipediaBigData]_
-
-    retention
-        Data retention defines the policies of persistent data and records
-        management for meeting legal and business data archival requirements.
-        In the field of telecommunications, data retention generally refers
-        to the storage of call detail records (CDRs) of telephony and
-        internet traffic and transaction data (IPDRs) by governments and
-        commercial organisations. In the case of government data retention,
-        the data that is stored is usually of telephone calls made and
-        received, emails sent and received, and websites visited. Location
-        data is also collected. [#WikipediaDataRetention]_
 
     relation
         In relational database theory, a relation, as originally defined by
@@ -68,6 +24,17 @@ Glossary
         elements have the same name. Thus, in some accounts, a tuple is
         described as a function, mapping names to values.
         [#WikipediaRelation]_
+
+    retention
+        Data retention defines the policies of persistent data and records
+        management for meeting legal and business data archival requirements.
+        In the field of telecommunications, data retention generally refers
+        to the storage of call detail records (CDRs) of telephony and
+        internet traffic and transaction data (IPDRs) by governments and
+        commercial organisations. In the case of government data retention,
+        the data that is stored is usually of telephone calls made and
+        received, emails sent and received, and websites visited. Location
+        data is also collected. [#WikipediaDataRetention]_
 
     consistency
         Consistency (or Correctness) in database systems refers to the
@@ -99,36 +66,6 @@ Glossary
         integrity is not to be confused with data security, the discipline
         of protecting data from unauthorized parties. [#Boritz2011]_
         [#WikipediaDataIntegrity]_
-
-    SQL
-    Structured Query Language
-        Domain-specific language used in programming and designed for
-        managing data held in a relational database management system
-        (RDBMS), or for stream processing in a relational data stream
-        management system (RDSMS). It is particularly useful in handling
-        structured data, i.e. data incorporating relations among entities
-        and variables. [#WikipediaSQL]_ [#RFC6922]_
-
-    RDBMS
-        Relational Database Management System
-        https://en.wikipedia.org/wiki/Relational_database#RDBMS
-
-    RDSMS
-        Relational Data Stream Management System
-        https://en.wikipedia.org/wiki/Relational_data_stream_management_system
-
-    SELECT
-        SQL language operation to retrieve data from the database
-
-    INSERT
-        SQL language operation to put data to the database
-
-    UPDATE
-        SQL language operation to modify data in the database
-
-    JOIN
-        SQL language operation to retrieve data from the database from
-        multiple tables and merge them
 
     DBA
         DataBase Administrator
@@ -359,7 +296,6 @@ References
 .. [#WikipediaSQL] SQL. Wikipedia. Year: 2021. Retrieved: 2021-12-16. URL: https://en.wikipedia.org/wiki/SQL
 .. [#RFC6922] Shafranovich, Y. The application/sql Media Type. Internet Engineering Task Force (IETF). Retrieved: 2021-12-16. Year: 2013. URL: https://datatracker.ietf.org/doc/html/rfc6922
 .. [#Codd1972] Codd, E. F. Further Normalization of the Data Base Relational Model. (Presented at Courant Computer Science Symposia Series 6, Data Base Systems, New York City, May 24–25, 1971.) IBM Research Report RJ909 (August 31, 1971). Republished in Randall J. Rustin (ed.), Data Base Systems: Courant Computer Science Symposia Series 6. Prentice-Hall, 1972.
-.. [#WikipediaBigData] Big data. Wikipedia. Year: 2021. Retrieved: 2021-12-16. URL: https://en.wikipedia.org/wiki/Big_data
 .. [#WikipediaDataRetention] Data retention. Wikipedia. Year: 2021. Retrieved: 2021-12-16. URL: https://en.wikipedia.org/wiki/Data_retention
 .. [#WikipediaRelation] Relation (database). Wikipedia. Year: 2021. Retrieved: 2021-12-16. URL: https://en.wikipedia.org/wiki/Relation_(database)
 .. [#WikipediaConsistency] Consistency. Wikipedia. Year: 2021. Retrieved: 2021-12-16. URL: https://en.wikipedia.org/wiki/Consistency_(database_systems)

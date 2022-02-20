@@ -98,11 +98,10 @@ Good Practices
 * What is the SQLAlchemy project layout
 * Where to store configuration (host, port, schema, username, password)
 
-
-Alternatives
-------------
+Alternative ORMs
+----------------
+* Django ORM + Django Migrations [#DjangoORM]_
 * SQLModel [#SQLModel]_
-* Django ORM [#DjangoORM]_
 * Raw SQL
 * SQLObject
 * Peewee
@@ -119,28 +118,15 @@ Alternatives
     Database popularity in Python community [#PythonDeveloperSurvey2020]_
 
 
-Extensions
+References
 ----------
-Schema Migration:
-
-    * https://alembic.sqlalchemy.org
-
-Database rows versioning:
-
-    * https://sqlalchemy-continuum.readthedocs.io/
-
-
-Further Reading
----------------
-* https://github.com/dahlia/awesome-sqlalchemy
-
+.. [#SQLModel] https://sqlmodel.tiangolo.com
+.. [#DjangoORM] https://docs.djangoproject.com/en/stable/topics/db/
 
 References
 ----------
 .. [#ytSQLAlchemy20] Bayer, Mike. SQLAlchemy 2.0 - The One-Point-Four-Ening 2021. Year: 2022. Retrieved: 2022-01-26. URL: https://www.youtube.com/watch?v=1Va493SMTcY
 .. [#ytSQLAlchemy20TalkPython] Kennedy, Michael and Bayer, Mike. Year: 2021. Retrieved: 2022-01-30. URL: https://www.youtube.com/watch?v=q5Iv6RUxKC8
 .. [#PythonDeveloperSurvey2020] JetBrains s.r.o. https://www.jetbrains.com/lp/python-developers-survey-2020/#FrameworksLibraries
-.. [#SQLModel] https://sqlmodel.tiangolo.com
-.. [#DjangoORM] https://docs.djangoproject.com/en/stable/topics/db/
 .. [#Phan2019] Phan, Manh. Unit of Work Pattern. Year: 2019. Retrieved: 2022-01-30. URL: https://ducmanhphan.github.io/
 .. [#Laskar2021] Ashif Iqbal Laskar. Unit-of-Work-Design-Pattern. Year: 2021. Retrieved: 2022-01-30. URL: http://www.ashifiqbal.com/technology/entity-framework/unit-of-work-design-pattern/

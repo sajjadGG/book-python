@@ -10,6 +10,15 @@ Rationale
 .. figure:: img/sql-index-notebookcalendar.png
 
 
+Index Types
+-----------
+* Column Index
+* Multi Column Index
+* Partial Index
+* Functional Index
+* Binary Index
+
+
 SQL Syntax
 ----------
 .. code-block:: sql

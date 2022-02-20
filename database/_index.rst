@@ -28,6 +28,7 @@ SQL
     :maxdepth: 1
     :caption: SQL
 
+    sql/about.rst
     sql/sql-datatypes.rst
     sql/sql-constraints.rst
     sql/sql-table.rst
@@ -79,6 +80,8 @@ SQLAlchemy
     sqlalchemy/connection-engine.rst
     sqlalchemy/connection-session.rst
     sqlalchemy/connection-pool.rst
+
+    sqlalchemy/core.rst
 
     sqlalchemy/model-base.rst
     sqlalchemy/model-define.rst

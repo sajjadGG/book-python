@@ -54,24 +54,31 @@ Examples:
 
 Use Case - 0x01
 ---------------
->>> engine = create_engine('sqlite:///:memory:')
->>> model = MetaData()
+>>> from sqlalchemy import MetaData, Table, Column, String, Integer
+>>> from sqlalchemy import create_engine
 >>>
->>> user = Table('user', model,
+>>>
+>>> metadata = MetaData()
+>>>
+>>> user = Table('user', metadata,
 ...     Column('user_id', Integer, primary_key=True),
 ...     Column('user_name', String(16), nullable=False),
 ...     Column('email_address', String(60), key='email'),
 ...     Column('nickname', String(50), nullable=False)
 ... )
 >>>
->>> user_prefs = Table('user_prefs', model,
+>>> user_prefs = Table('user_prefs', metadata,
 ...     Column('pref_id', Integer, primary_key=True),
 ...     Column('user_id', Integer, ForeignKey('user.user_id'), nullable=False),
 ...     Column('pref_name', String(40), nullable=False),
 ...     Column('pref_value', String(100))
 ... )
 >>>
->>> model.create_all(engine)
+>>>
+>>> engine = create_engine('sqlite:///:memory:')
+>>>
+>>> with engine.begin() as conn:
+...     metadata.create_all(engine)
 
 
 Use Case - 0x02
