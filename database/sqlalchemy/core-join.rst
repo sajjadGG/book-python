@@ -73,7 +73,7 @@ FROM astronaut, mission
 
 Selecting from multiple tables without relating them to each other produces
 an effect known as 'cartesian product'. SQLAlchemy will usually warn when this
-is detected during statement execution.
+is detected during statement execution [#ytSQLAlchemy20]_.
 
 >>> query = select(astronaut.c.firstname, mission.c.name)
 >>>
@@ -96,6 +96,30 @@ is detected during statement execution.
  ('Rick', 'Ares1'),
  ('Rick', 'Ares3'),
  ('Rick', 'Ares3')]
+
+Using warnings filter can turn Warning to Error. This is useful for a CI/CD
+and a pre-production tests.
+
+
+Join From
+---------
+When we have more than one table mentioned, we want to relate them together,
+which is most easily achieved using ``join_from()`` [#ytSQLAlchemy20]_.
+
+>>> query = (
+...     select(astronaut.c.firstname, mission.c.name).
+...     join_from(astronaut, mission)
+... )
+>>>
+>>> with engine.begin() as db:
+...     result = db.execute(query)
+>>>
+>>> result.all()  # doctest: +NORMALIZE_WHITESPACE
+[('Mark', 'Ares3'),
+ ('Melissa', 'Ares1'),
+ ('Melissa', 'Ares3'),
+ ('Rick', 'Ares3')]
+
 
 References
 ----------
