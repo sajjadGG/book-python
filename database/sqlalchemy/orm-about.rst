@@ -358,8 +358,8 @@ loading' pattern.
 >>> astro.firstname
 
 
-Rollin Back Changes
--------------------
+Rolling Back Changes
+--------------------
 Make another 'dirty' change, and another 'pending' change, that we might
 change or minds about.
 
@@ -389,9 +389,115 @@ But we're inside of a transaction. Roll it back:
 
 All updates and inserts are gone, and all pending objects are evicted. Again,
 the transaction is over, objects are expired. Accessing an attribute refreshes
-the object and the ``astro`` firstname is gone.
+the object and the ``astro`` firstname is gone [#ytSQLAlchemy20]_.
 
->>> astro.firstname
+>>> astro in session
+False
+
+And the data is gone from database too.
+
+>>> query = (
+...     select(Astronaut).
+...     where(Astronaut.firstname.in_(['Beth', 'Chris'])))
+>>>
+>>> result = session.execute(query)
+>>> result.all()
+[]
+
+
+ORM Querying
+------------
+The attributes on our mapped classes act like ``Column`` objects, and produce
+SQL expressions [#ytSQLAlchemy20]_.
+
+>>> expression = (Astronaut.firstname == 'Mark')
+>>>
+>>> print(expression)
+astronaut.firstname = :firstname_1
+
+>>> expression = Astronaut.__table__.c.firstname == 'Mark'
+>>>
+>>> print(expression)
+astronaut.firstname = :firstname_1
+
+Fot the above example, although output is similar, they produce a different
+objects.
+
+When ORM-specific expressions are used with ``select()``, the ``Select``
+construct itself takes an ORM-enabled features, the most basic of which is
+that it can discern between selecting from 'columns' vs 'entities'. Below
+the ``SELECT`` is to return rows that contain a single element, which would
+be an instance of ``Astronaut``. This is translated from the actual ``SELECT``
+sent to the database that ``SELECTs`` for the individual columns of the
+``Astronaut`` entity [#ytSQLAlchemy20]_.
+
+>>> query = (
+...     select(Astronaut).
+...     where(Astronaut.firstname == 'Mark').
+...     order_by(Astronaut.id))
+
+Introspection:
+
+>>> query._raw_columns[0]
+Table('astronaut', MetaData(), Column('id', Integer(), table=<astronaut>, primary_key=True, nullable=False), Column('firstname', String(length=100), table=<astronaut>), Column('lastname', String(length=100), table=<astronaut>), schema=None)
+>>>
+>>> query._raw_columns[0]._annotations  # doctest: +ELLIPSIS
+immutabledict({'entity_namespace': <Mapper at 0x11bc942b0; Astronaut>, 'parententity': <Mapper at 0x...; Astronaut>, 'parentmapper': <Mapper at 0x...; Astronaut>})
+
+The rows we get back from ``Session.execute()`` then contain ``Astronaut``
+objects as the first element in each row [#ytSQLAlchemy20]_.
+
+>>> result = session.execute(query)
+>>>
+>>> for row in result:
+...     print(row)
+...
+(Astronaut(firstname='Mark', lastname='Watney'),)
+
+As it is typically convenient for rows that only have a single element to be
+delivered as the element alone, we can use the ``.scalars()`` method of
+``Result`` as we did earlier to return just the first column of each row
+[#ytSQLAlchemy20]_.
+
+>>> result = session.execute(query)
+>>>
+>>> for row in result.scalars():
+...     print(row)
+...
+Astronaut(firstname='Mark', lastname='Watney')
+
+We can also qualify the rows we want to get back with methods like ``.one()``
+[#ytSQLAlchemy20]_:
+
+>>> result = session.execute(query)
+>>> astro = result.scalars().one()
+>>>
+>>> print(astro)
+Astronaut(firstname='Mark', lastname='Watney')
+
+An ORM query can make use of any combination of columns and entities. To
+request the fields of ``Astronaut`` separately, we name them separately in the
+columns clause.
+
+>>> query = select(Astronaut.firstname, Astronaut.lastname)
+>>> result = session.execute(query)
+>>>
+>>> for row in result:
+...     print(f'{row.firstname} {row.lastname}')
+...
+Mark Watney
+Melissa Lewis
+Rick Martinez
+
+>>> query = select(Astronaut.firstname, Astronaut.lastname)
+>>> result = session.execute(query)
+>>>
+>>> for firstname, lastname in result:
+...     print(f'{firstname=} {lastname=}')
+...
+firstname='Mark' lastname='Watney'
+firstname='Melissa' lastname='Lewis'
+firstname='Rick' lastname='Martinez'
 
 
 References
