@@ -88,6 +88,7 @@ SQLAlchemy
     sqlalchemy/core-result.rst
     sqlalchemy/core-update.rst
     sqlalchemy/core-delete.rst
+    sqlalchemy/core-join.rst
     sqlalchemy/core-introspect.rst
 
     sqlalchemy/model-base.rst
