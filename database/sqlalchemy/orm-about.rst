@@ -677,6 +677,56 @@ Adding ``alex`` will 'cascade' each ``Astronaut`` into the Session as well.
 >>> session.new
 IdentitySet([Astronaut(firstname='Alex', lastname='Vogel'), Mission(year=2030, name='Ares1'), Mission(year=2035, name='Ares3')])
 
+Now we commit the changes to the database.
+
+>>> session.commit()
+
+ORM must know which object goes first, and then it uses its ``id`` to fill
+the ``ForeignKey`` fields of related objects. SQLAlchemy does that
+automatically.
+
+After expiration, ``alex.missions`` emits a 'lazy load' when first accessed:
+
+>>> alex.missions
+[Mission(year=2030, name='Ares1'), Mission(year=2035, name='Ares3')]
+
+The collection stays in memory until the transaction ends.
+
+>>> alex.missions
+[Mission(year=2030, name='Ares1'), Mission(year=2035, name='Ares3')]
+
+Collections and references are updated by manipulating objects themselves;
+setting up of foreign key column values is handled automatically.
+
+>>> from sqlalchemy import select
+>>>
+>>>
+>>> query = (
+...     select(Astronaut).
+...     filter_by(firstname='Mark'))
+>>>
+>>> mark = session.execute(query).scalar_one()
+
+>>> alex.missions
+[Mission(year=2030, name='Ares1'), Mission(year=2035, name='Ares3')]
+>>>
+>>> mark.missions
+[]
+
+>>> alex.missions[1].astronaut = mark
+>>>
+>>>alex.missions
+[Mission(year=2030, name='Ares1')]
+>>>
+>>> mark.missions
+[Mission(year=2035, name='Ares3')]
+
+By assigning ``.astronaut`` on one of the ``alex`` missions, the object moved
+from one ``missions`` collection to the other. This is the back populates
+feature at work.
+
+
+
 References
 ----------
 .. [#ytSQLAlchemy20] Bayer, Mike. SQLAlchemy 2.0 - The One-Point-Four-Ening 2021. Year: 2022. Retrieved: 2022-01-26. URL: https://www.youtube.com/watch?v=1Va493SMTcY
