@@ -1,5 +1,5 @@
-SQLAlchemy Core Introspect
-==========================
+Core Introspect
+===============
 
 
 Rationale
@@ -13,8 +13,7 @@ SetUp
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
 >>>
 >>>
->>> DATABASE = 'sqlite:///:memory:'
->>> engine = create_engine(DATABASE)
+>>> engine = create_engine('sqlite:///:memory:')
 >>> metadata = MetaData()
 >>>
 >>> astronaut = Table('astronaut', metadata,

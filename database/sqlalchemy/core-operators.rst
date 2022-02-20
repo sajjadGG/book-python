@@ -1,5 +1,5 @@
-SQLAlchemy Core Operators
-=========================
+Core Operators
+==============
 
 
 SetUp
@@ -8,8 +8,7 @@ SetUp
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
 >>>
 >>>
->>> DATABASE = 'sqlite:///:memory:'
->>> engine = create_engine(DATABASE)
+>>> engine = create_engine('sqlite:///:memory:')
 >>> metadata = MetaData()
 >>>
 >>> astronaut = Table('astronaut', metadata,
@@ -56,6 +55,7 @@ SQL injection attacks. Bound parameter sanitization and escaping is typically
 done by the database driver. Bounds parameters allows also for caching.
 
 >>> x = (astronaut.c.firstname == 'Mark')
+>>>
 >>> compiled = x.compile()
 >>>
 >>> compiled.string
@@ -84,7 +84,7 @@ astronaut.firstname = :firstname_1 OR astronaut.firstname = :firstname_2
 >>> criteria = and_(
 ...     astronaut.c.lastname == 'Watney',
 ...     or_(astronaut.c.firstname == 'Mark',
-...         astronaut.c.firstname == 'Melissa')
+...         astronaut.c.firstname == 'Melissa'),
 ... )
 >>>
 >>> print(criteria)

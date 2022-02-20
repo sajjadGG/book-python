@@ -1,5 +1,5 @@
-SQLAlchemy Core Model
-=====================
+Core Model
+==========
 
 
 Rationale
@@ -13,9 +13,7 @@ Prepare connection:
 
 >>> from sqlalchemy import create_engine
 >>>
->>>
->>> DATABASE = 'sqlite:///:memory:'
->>> engine = create_engine(DATABASE)
+>>> engine = create_engine('sqlite:///:memory:')
 
 
 Metadata
@@ -83,8 +81,7 @@ Recap
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
 >>>
 >>>
->>> DATABASE = 'sqlite:///:memory:'
->>> engine = create_engine(DATABASE)
+>>> engine = create_engine('sqlite:///:memory:')
 >>> metadata = MetaData()
 >>>
 >>> astronaut = Table('astronaut', metadata,

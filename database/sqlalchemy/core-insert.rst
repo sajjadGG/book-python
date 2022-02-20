@@ -1,5 +1,5 @@
-SQLAlchemy Core Insert
-======================
+Core Insert
+===========
 
 
 Rationale
@@ -13,8 +13,7 @@ SetUp
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
 >>>
 >>>
->>> DATABASE = 'sqlite:///:memory:'
->>> engine = create_engine(DATABASE)
+>>> engine = create_engine('sqlite:///:memory:')
 >>> metadata = MetaData()
 >>>
 >>> astronaut = Table('astronaut', metadata,
@@ -36,8 +35,7 @@ Insert Statement
 We can insert data using the ``insert()`` construct:
 
 >>> query = (
-...     astronaut.
-...     insert().
+...     insert(astronaut).
 ...     values(firstname='Mark',
 ...            lastname='Watney')
 ... )
@@ -93,7 +91,7 @@ database.
 
 Recap
 -----
-* ``insert().values()``
+* ``insert(table).values()``
 * ``db.execute(table.insert(), data)``
 * data can be a ``dict`` or ``list[dict]``
 

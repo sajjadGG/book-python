@@ -1,5 +1,5 @@
-SQL Alchemy Core
-================
+Core Select
+===========
 
 
 Rationale
@@ -16,8 +16,7 @@ SetUp
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
 >>>
 >>>
->>> DATABASE = 'sqlite:///:memory:'
->>> engine = create_engine(DATABASE)
+>>> engine = create_engine('sqlite:///:memory:')
 >>> metadata = MetaData()
 >>>
 >>> astronaut = Table('astronaut', metadata,
@@ -30,8 +29,15 @@ SetUp
 ...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
 ... )
 >>>
+>>> data = [
+...     {'firstname': 'Mark', 'lastname': 'Watney'},
+...     {'firstname': 'Melissa', 'lastname': 'Lewis'},
+...     {'firstname': 'Rick', 'lastname': 'Martinez'},
+... ]
+>>>
 >>> with engine.begin() as db:
 ...     astronaut.create(db)
+...     db.execute(astronaut.insert(), data)
 
 
 Select Specified Columns

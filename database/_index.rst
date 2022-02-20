@@ -85,7 +85,7 @@ SQLAlchemy
     sqlalchemy/core-operators.rst
     sqlalchemy/core-insert.rst
     sqlalchemy/core-select.rst
-    sqlalchemy/core-results.rst
+    sqlalchemy/core-result.rst
     sqlalchemy/core-introspect.rst
 
     sqlalchemy/model-base.rst
