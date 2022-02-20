@@ -100,6 +100,12 @@ is detected during statement execution [#ytSQLAlchemy20]_.
 Using warnings filter can turn Warning to Error. This is useful for a CI/CD
 and a pre-production tests.
 
+Generated SQL statement:
+
+>>> print(query)
+SELECT astronaut.firstname, mission.name
+FROM astronaut, mission
+
 
 Join From
 ---------
@@ -125,6 +131,12 @@ which is most easily achieved using ``join_from()`` [#ytSQLAlchemy20]_.
  ('Melissa', 'Ares3'),
  ('Rick', 'Ares3')]
 
+Generated SQL statement:
+
+>>> print(query)
+SELECT astronaut.firstname, mission.name
+FROM astronaut JOIN mission ON astronaut.id = mission.astronaut_id
+
 
 Join
 ----
@@ -144,6 +156,12 @@ Join
  ('Melissa', 'Ares1'),
  ('Melissa', 'Ares3'),
  ('Rick', 'Ares3')]
+
+Generated SQL statement:
+
+>>> print(query)
+SELECT astronaut.firstname, mission.name
+FROM astronaut JOIN mission ON astronaut.id = mission.astronaut_id
 
 
 Join On
@@ -171,9 +189,17 @@ were otherwise ambiguous [#ytSQLAlchemy20]_.
  ('Melissa', 'Ares3'),
  ('Rick', 'Ares3')]
 
+Generated SQL statement:
+
+>>> print(query)
+SELECT astronaut.firstname, mission.name
+FROM astronaut JOIN mission ON astronaut.id = mission.astronaut_id
+
 
 Table Aliases
 -------------
+* Python will use object identity to distinguish objects
+
 When a ``SELECT`` wants to refer to the same table more than once, a SQL alias
 is used. This is available using the ``.alias()`` method, which returns a
 unique Alias object representing that table with a particular SQL alias.
@@ -196,6 +222,79 @@ unique Alias object representing that table with a particular SQL alias.
 [('Melissa', 'Ares1', 'Ares3')]
 
 Note, using ``.join_from()``.
+
+Use Case: When you want to get rows in two different context.
+
+Generated SQL statement:
+
+>>> print(query)
+SELECT astronaut.firstname, mission_1.name, mission_2.name AS name_1
+FROM astronaut JOIN mission AS mission_1 ON astronaut.id = mission_1.astronaut_id JOIN mission AS mission_2 ON astronaut.id = mission_2.astronaut_id
+WHERE mission_1.name = :name_2 AND mission_2.name = :name_3
+
+
+Subqueries
+----------
+A subquery is used much like a table alias, except we start with a ``SELECT``
+statement. We call the ``.subquery`` method of ``select()``.
+
+The subquery object itself has .c attribute, and is used just like a table.
+
+>>> subquery = (
+...     select(astronaut.c.firstname, mission.c.name).
+...     join(mission).
+...     subquery()
+... )
+>>>
+>>> query = (
+...     select(subquery.c.firstname).
+...     where(subquery.c.firstname == 'Mark')
+... )
+
+Generated SQL statement:
+
+>>> print(subquery)
+SELECT astronaut.firstname, mission.name
+FROM astronaut JOIN mission ON astronaut.id = mission.astronaut_id
+>>>
+>>> print(query)
+SELECT anon_1.firstname
+FROM (SELECT astronaut.firstname AS firstname, mission.name AS name
+FROM astronaut JOIN mission ON astronaut.id = mission.astronaut_id) AS anon_1
+WHERE anon_1.firstname = :firstname_1
+
+
+Subqueries Group By
+-------------------
+With subqueries and coins we can compose more elaborate statements. This
+subquery introduces the ``func`` and ``group_by`` connects:
+
+We use ``join()`` to link the ``subquery()`` with another ``select()``:
+
+>>> from sqlalchemy import func
+>>>
+>>>
+>>> subquery = (
+...     select(mission.c.astronaut_id,
+...            func.count(mission.c.id).label('count')).
+...     group_by(mission.c.astronaut_id)
+... ).subquery()
+>>>
+>>> query = (
+...     select(astronaut.c.firstname, subquery.c.count).
+...     join(subquery).
+...     order_by(astronaut.c.firstname)
+... )
+
+Note, that while using function from a ``func`` namespace, you should add a
+label to it, because the function results doesn't have meaningful names.
+
+Generated SQL statement:
+
+>>> print(query)
+SELECT astronaut.firstname, anon_1.count
+FROM astronaut JOIN (SELECT mission.astronaut_id AS astronaut_id, count(mission.id) AS count
+FROM mission GROUP BY mission.astronaut_id) AS anon_1 ON astronaut.id = anon_1.astronaut_id ORDER BY astronaut.firstname
 
 
 References
