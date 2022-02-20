@@ -36,27 +36,26 @@ Operators
 >>> astronaut.c.firstname == 'Mark'
 <sqlalchemy.sql.elements.BinaryExpression object at 0x123664490>
 
->>> x = (astronaut.c.firstname == 'Mark')
+>>> expression = (astronaut.c.firstname == 'Mark')
 >>>
->>> x.left
-Column('firstname', String(length=50), table=<astronaut>, nullable=False)
->>>
->>> x.right
-BindParameter('%(4889219648 firstname)s', 'Mark', type_=String(length=50))
->>>
->>> x.operator
+>>> expression.operator
 <built-in function eq>
 >>>
->>> str(x)
-'astronaut.firstname = :firstname_1'
+>>> expression.left
+Column('firstname', String(length=50), table=<astronaut>, nullable=False)
+>>>
+>>> expression.right
+BindParameter('%(4889219648 firstname)s', 'Mark', type_=String(length=50))
+>>>
+>>> print(expression)
+astronaut.firstname = :firstname_1
 
 Bound Parameters are generated from the Python expression. It prevents from
 SQL injection attacks. Bound parameter sanitization and escaping is typically
 done by the database driver. Bounds parameters allows also for caching.
 
->>> x = (astronaut.c.firstname == 'Mark')
->>>
->>> compiled = x.compile()
+>>> expression = (astronaut.c.firstname == 'Mark')
+>>> compiled = expression.compile()
 >>>
 >>> compiled.string
 'astronaut.firstname = :firstname_1'

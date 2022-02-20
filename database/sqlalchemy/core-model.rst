@@ -31,13 +31,10 @@ Create Metadata object:
 
 Database Model
 --------------
-Imports:
-
 >>> from sqlalchemy import  Table, Column
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
-
-Astronaut table specification:
-
+>>>
+>>>
 >>> astronaut = Table('astronaut', metadata,
 ...     Column('id', Integer, primary_key=True),
 ...     Column('firstname', String(50), nullable=False),

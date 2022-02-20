@@ -14,6 +14,7 @@ SetUp
 -----
 >>> from sqlalchemy import create_engine, MetaData, Table, Column
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
+>>> from sqlalchemy import select
 >>>
 >>>
 >>> engine = create_engine('sqlite:///:memory:', future=True)
@@ -42,49 +43,55 @@ SetUp
 
 List[tuple]
 -----------
->>> query = select(astronaut)
+* It will download all the data from database
+* This technique is not particularly efficient for large databases
+
+>>> query = select(astronaut.c.firstname, astronaut.c.lastname)
 >>>
 >>> with engine.begin() as db:
 ...     result = db.execute(query)
 >>>
-list(result)
-[(1, 'Mark', 'Watney', None, None, None, None),
- (2, 'Melissa', 'Lewis', None, None, None, None),
- (3, 'Rick', 'Martinez', None, None, None, None)]
+>>> list(result)  # doctest: +NORMALIZE_WHITESPACE
+[('Mark', 'Watney'),
+ ('Melissa', 'Lewis'),
+ ('Rick', 'Martinez')]
 
 
 List[dict]
 ----------
->>> query = select(astronaut)
+* It will download all the data from database
+* This technique is not particularly efficient for large databases
+
+>>> query = select(astronaut.c.firstname, astronaut.c.lastname)
 >>>
 >>> with engine.begin() as db:
 ...     result = db.execute(query)
 >>>
-list(result.mappings())
-[{'id': 1, 'firstname': 'Mark', 'lastname': 'Watney', 'born': None, 'height': None, 'weight': None, 'agency': None},
- {'id': 2, 'firstname': 'Melissa', 'lastname': 'Lewis', 'born': None, 'height': None, 'weight': None, 'agency': None},
- {'id': 3, 'firstname': 'Rick', 'lastname': 'Martinez', 'born': None, 'height': None, 'weight': None, 'agency': None}]
-
-
+>>> list(result.mappings())  # doctest: +NORMALIZE_WHITESPACE
+[{'firstname': 'Mark', 'lastname': 'Watney'},
+ {'firstname': 'Melissa', 'lastname': 'Lewis'},
+ {'firstname': 'Rick', 'lastname': 'Martinez'}]
 
 
 All
 ---
->>> query = (
-...     select(astronaut.c.firstname).
-...     where(astronaut.c.lastname == 'Watney')
-... )
+>>> query = select(astronaut.c.firstname, astronaut.c.lastname)
 >>>
 >>> with engine.begin() as db:
-...     db.execute(query).all()
-
+...     result = db.execute(query).all()
+>>>
+>>> result  # doctest: +NORMALIZE_WHITESPACE
+[('Mark', 'Watney'),
+ ('Melissa', 'Lewis'),
+ ('Rick', 'Martinez')]
 
 One
 ---
 * Must be exactly one result, otherwise the exception is raised
+* Exception ``MultipleResultsFound``
 
 >>> query = (
-...     select(astronaut.c.firstname).
+...     select(astronaut.c.firstname, astronaut.c.lastname).
 ...     where(astronaut.c.lastname == 'Watney')
 ... )
 >>>
