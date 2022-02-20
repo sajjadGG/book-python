@@ -42,12 +42,8 @@ SetUp
 
 Select All Columns
 ------------------
-Define the database query:
-
 >>> query = select(astronaut)
-
-Generated statement:
-
+>>>
 >>> print(query)
 SELECT astronaut.id, astronaut.firstname, astronaut.lastname, astronaut.born, astronaut.height, astronaut.weight, astronaut.agency
 FROM astronaut
@@ -55,59 +51,67 @@ FROM astronaut
 
 Select Specified Columns
 ------------------------
-Define the database query:
+>>> query = select(astronaut.c.firstname, astronaut.c.lastname)
+>>>
+>>> print(query)
+SELECT astronaut.firstname, astronaut.lastname
+FROM astronaut
 
+
+Where Clause
+------------
 >>> query = (
 ...     select(astronaut.c.firstname, astronaut.c.lastname).
 ...     where(astronaut.c.firstname == 'Mark')
 ... )
-
-Generated statement:
-
+>>>
 >>> print(query)
 SELECT astronaut.firstname, astronaut.lastname
 FROM astronaut
 WHERE astronaut.firstname = :firstname_1
 
 
-Order By
+Where OR
 --------
-Define the database query:
-
 >>> query = (
-...     select(astronaut).
+...     select(astronaut.c.firstname, astronaut.c.lastname).
 ...     where(or_(astronaut.c.firstname == 'Mark',
 ...               astronaut.c.firstname == 'Melissa')).
-...     order_by(astronaut.c.firstname)
 ... )
-
-Generated statement:
-
+>>>
 >>> print(query)
-SELECT astronaut.id, astronaut.firstname, astronaut.lastname, astronaut.born, astronaut.height, astronaut.weight, astronaut.agency
+SELECT astronaut.firstname, astronaut.lastname
 FROM astronaut
-WHERE astronaut.firstname = :firstname_1 OR astronaut.firstname = :firstname_2 ORDER BY astronaut.firstname
+WHERE astronaut.firstname = :firstname_1 OR astronaut.firstname = :firstname_2
 
 
-Multiple Where
---------------
+Where AND
+---------
 * Multiple ``where()`` clauses are automatically joined by ``AND``
 
-Define the database query:
-
 >>> query = (
-...     select(astronaut).
+...     select(astronaut.c.firstname, astronaut.c.lastname).
 ...     where(astronaut.c.firstname == 'Mark').
 ...     where(astronaut.c.lastname == 'Watney').
-...     order_by(astronaut.c.firstname)
 ... )
-
-Generated statement:
-
+>>>
 >>> print(query)
-SELECT astronaut.id, astronaut.firstname, astronaut.lastname, astronaut.born, astronaut.height, astronaut.weight, astronaut.agency
+SELECT astronaut.firstname, astronaut.lastname
 FROM astronaut
-WHERE astronaut.firstname = :firstname_1 AND astronaut.lastname = :lastname_1 ORDER BY astronaut.firstname
+WHERE astronaut.firstname = :firstname_1 AND astronaut.lastname = :lastname_1
+
+
+Order By
+--------
+>>> query = (
+...     select(astronaut.c.firstname, astronaut.c.lastname).
+...     order_by(astronaut.c.lastname)
+... )
+>>>
+>>> print(query)
+SELECT astronaut.firstname, astronaut.lastname
+FROM astronaut
+ORDER BY astronaut.lastname
 
 
 References

@@ -78,12 +78,14 @@ All
 >>> query = select(astronaut.c.firstname, astronaut.c.lastname)
 >>>
 >>> with engine.begin() as db:
-...     result = db.execute(query).all()
+...     result = db.execute(query)
 >>>
->>> result  # doctest: +NORMALIZE_WHITESPACE
+>>> result.all()  # doctest: +NORMALIZE_WHITESPACE
 [('Mark', 'Watney'),
  ('Melissa', 'Lewis'),
  ('Rick', 'Martinez')]
+
+
 
 One
 ---
@@ -96,7 +98,73 @@ One
 ... )
 >>>
 >>> with engine.begin() as db:
-...     db.execute(query).one()
+...     result = db.execute(query)
+>>>
+>>> result.one()
+('Mark', 'Watney')
+
+
+One or None
+-----------
+>>> query = (
+...     select(astronaut.c.firstname, astronaut.c.lastname).
+...     where(astronaut.c.lastname == 'Watney')
+... )
+>>>
+>>> with engine.begin() as db:
+...     result = db.execute(query)
+>>>
+>>> result.one_or_none()
+('Mark', 'Watney')
+
+
+Slice
+-----
+Result objects now supports slicing at the result level. We can ``SELECT``
+some rows, and change the ordering and/or presence of columns after the fact
+using ``.columns()`` method [#ytSQLAlchemy20]_:
+
+>>> query = (
+...     select(astronaut).
+...     order_by(astronaut.c.lastname)
+... )
+>>>
+>>> with engine.begin() as db:
+...     result = db.execute(query)
+>>>
+>>> for lastname, firstname in result.columns('lastname', 'firstname'):
+...     print(f'{lastname=}, {firstname=}')
+...
+lastname='Lewis', firstname='Melissa'
+lastname='Martinez', firstname='Rick'
+lastname='Watney', firstname='Mark'
+
+Note, that the ``.columns()`` method defines the order for unpacked object.
+It overwrites the default ordering from ``SELECT`` clause.
+
+
+Scalars
+-------
+* When you have a row, but there is only one column that you care about
+* We don't want the rows back, we want a list of values
+
+A single column from the results can be delivered without using rows by
+applying the ``.scalars()`` modifier. This accepts and optional column name,
+or otherwise assumes the first column:
+
+>>> query = (
+...     select(astronaut.c.firstname).
+...     order_by(astronaut.c.lastname)
+... )
+>>>
+>>> with engine.begin() as db:
+...     result = db.execute(query)
+>>>
+>>> result.scalars('firstname').all()
+['Melissa', 'Rick', 'Mark']
+
+Note, that for performance reasons we narrowed down the ``SELECT`` clause
+only to those values we want to receive.
 
 
 References
