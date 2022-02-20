@@ -24,21 +24,22 @@ SetUp
 ...     Column('id', Integer, primary_key=True),
 ...     Column('firstname', String(50), nullable=False),
 ...     Column('lastname', String(50), nullable=False),
-...     Column('born', DateTime),
-...     Column('height', Integer),
-...     Column('weight', Numeric(3,2)),
 ...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
+...     Column('born', DateTime),
+...     Column('age', Integer),
+...     Column('height', Numeric(3,2)),
+...     Column('weight', Numeric(3,2)),
 ... )
 >>>
->>> data = [
+>>> ASTRONAUTS = [
 ...     {'firstname': 'Mark', 'lastname': 'Watney'},
 ...     {'firstname': 'Melissa', 'lastname': 'Lewis'},
 ...     {'firstname': 'Rick', 'lastname': 'Martinez'},
 ... ]
 >>>
 >>> with engine.begin() as db:
-...     astronaut.create(db)
-...     db.execute(astronaut.insert(), data)
+...     metadata.create_all(db)
+...     db.execute(astronaut.insert(), ASTRONAUTS)
 
 
 List[tuple]
@@ -73,20 +74,6 @@ List[dict]
  {'firstname': 'Rick', 'lastname': 'Martinez'}]
 
 
-All
----
->>> query = select(astronaut.c.firstname, astronaut.c.lastname)
->>>
->>> with engine.begin() as db:
-...     result = db.execute(query)
->>>
->>> result.all()  # doctest: +NORMALIZE_WHITESPACE
-[('Mark', 'Watney'),
- ('Melissa', 'Lewis'),
- ('Rick', 'Martinez')]
-
-
-
 One
 ---
 * Must be exactly one result, otherwise the exception is raised
@@ -118,8 +105,35 @@ One or None
 ('Mark', 'Watney')
 
 
-Slice
+All
+---
+>>> query = select(astronaut.c.firstname, astronaut.c.lastname)
+>>>
+>>> with engine.begin() as db:
+...     result = db.execute(query)
+>>>
+>>> result.all()  # doctest: +NORMALIZE_WHITESPACE
+[('Mark', 'Watney'),
+ ('Melissa', 'Lewis'),
+ ('Rick', 'Martinez')]
+
+
+First
 -----
+* Fetches the first result from a cursor object
+* ``CursorResult`` object has no attribute 'last'
+
+>>> query = select(astronaut.c.firstname, astronaut.c.lastname)
+>>>
+>>> with engine.begin() as db:
+...     result = db.execute(query)
+>>>
+>>> result.first()
+('Mark', 'Watney')
+
+
+Columns
+-------
 Result objects now supports slicing at the result level. We can ``SELECT``
 some rows, and change the ordering and/or presence of columns after the fact
 using ``.columns()`` method [#ytSQLAlchemy20]_:

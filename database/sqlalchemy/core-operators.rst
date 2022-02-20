@@ -15,14 +15,15 @@ SetUp
 ...     Column('id', Integer, primary_key=True),
 ...     Column('firstname', String(50), nullable=False),
 ...     Column('lastname', String(50), nullable=False),
-...     Column('born', DateTime),
-...     Column('height', Integer),
-...     Column('weight', Numeric(3,2)),
 ...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
+...     Column('born', DateTime),
+...     Column('age', Integer),
+...     Column('height', Numeric(3,2)),
+...     Column('weight', Numeric(3,2)),
 ... )
 >>>
 >>> with engine.begin() as db:
-...     astronaut.create(db)
+...     metadata.create_all(db)
 
 
 Attributes

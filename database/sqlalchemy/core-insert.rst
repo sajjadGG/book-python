@@ -5,12 +5,16 @@ Core Insert
 Rationale
 ---------
 * ``insert()`` is a method of a Table object
+* It could be also used as a object factory
+
+>>> from sqlalchemy import insert
 
 
 SetUp
 -----
 >>> from sqlalchemy import create_engine, MetaData, Table, Column
 >>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
+>>> from sqlalchemy import insert
 >>>
 >>>
 >>> engine = create_engine('sqlite:///:memory:', future=True)
@@ -20,14 +24,15 @@ SetUp
 ...     Column('id', Integer, primary_key=True),
 ...     Column('firstname', String(50), nullable=False),
 ...     Column('lastname', String(50), nullable=False),
-...     Column('born', DateTime),
-...     Column('height', Integer),
-...     Column('weight', Numeric(3,2)),
 ...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
+...     Column('born', DateTime),
+...     Column('age', Integer),
+...     Column('height', Numeric(3,2)),
+...     Column('weight', Numeric(3,2)),
 ... )
 >>>
 >>> with engine.begin() as db:
-...     astronaut.create(db)
+...     metadata.create_all(db)
 
 
 Insert Statement
@@ -36,8 +41,7 @@ We can insert data using the ``insert()`` construct:
 
 >>> query = (
 ...     insert(astronaut).
-...     values(firstname='Mark',
-...            lastname='Watney')
+...     values(firstname='Mark', lastname='Watney')
 ... )
 >>>
 >>> with engine.begin() as db:
@@ -49,8 +53,8 @@ We can inspect the query object simply by printing it:
 INSERT INTO astronaut (firstname, lastname) VALUES (:firstname, :lastname)
 
 
-Execute
--------
+Insert Object
+-------------
 The ``insert()`` statement, when not given ``values()`` will generate the
 ``VALUES`` clause based on the list of parameters that are passed to
 ``execute()``.
@@ -63,8 +67,8 @@ Prepare data for insert and execute the query writing it to database:
 ...     db.execute(astronaut.insert(), data)
 
 
-Executemany
------------
+Insert List of Objects
+----------------------
 * Since 1.4/2.0 execute many is greatly improved for PostgreSQL
 
 This format also accepts an 'executemany' style that DBAPI can optimize.
