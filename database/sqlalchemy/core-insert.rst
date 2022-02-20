@@ -1,0 +1,103 @@
+SQLAlchemy Core Insert
+======================
+
+
+Rationale
+---------
+* ``insert()`` is a method of a Table object
+
+
+SetUp
+-----
+>>> from sqlalchemy import create_engine, MetaData, Table, Column
+>>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
+>>>
+>>>
+>>> DATABASE = 'sqlite:///:memory:'
+>>> engine = create_engine(DATABASE)
+>>> metadata = MetaData()
+>>>
+>>> astronaut = Table('astronaut', metadata,
+...     Column('id', Integer, primary_key=True),
+...     Column('firstname', String(50), nullable=False),
+...     Column('lastname', String(50), nullable=False),
+...     Column('born', DateTime),
+...     Column('height', Integer),
+...     Column('weight', Numeric(3,2)),
+...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
+... )
+>>>
+>>> with engine.begin() as db:
+...     astronaut.create(db)
+
+
+Insert Statement
+----------------
+We can insert data using the ``insert()`` construct:
+
+>>> query = (
+...     astronaut.
+...     insert().
+...     values(firstname='Mark',
+...            lastname='Watney')
+... )
+
+We can inspect the query object simply by printing it:
+
+>>> print(query)
+INSERT INTO astronaut (firstname, lastname) VALUES (:firstname, :lastname)
+
+Execute the query and write to database:
+
+>>> with engine.begin() as db:
+...     db.execute(query)
+
+
+Execute
+-------
+The ``insert()`` statement, when not given ``values()`` will generate the
+``VALUES`` clause based on the list of parameters that are passed to
+``execute()``.
+
+Prepare data for insert:
+
+>>> data = {'firstname': 'Mark', 'lastname': 'Watney'}
+
+Execute the query and write to database:
+
+>>> with engine.begin() as db:
+...     db.execute(astronaut.insert(), data)
+
+
+Executemany
+-----------
+This format also accepts an 'executemany' style that DBAPI can optimize
+
+Prepare data for insert:
+
+>>> data = [
+...     {'firstname': 'Mark', 'lastname': 'Watney'},
+...     {'firstname': 'Melissa', 'lastname': 'Lewis'},
+...     {'firstname': 'Rick', 'lastname': 'Martinez'},
+... ]
+
+Execute the query and write to database:
+
+>>> with engine.begin() as db:
+...     db.execute(astronaut.insert(), data)
+
+Note, that this is the same ``.execute()`` method. SQLAlchemy will recognize
+that the data is a ``list[dict]`` and will execute proper statements to the
+database.
+
+
+Recap
+-----
+* ``insert().values()``
+* ``db.execute(table.insert(), data)``
+* data can be a ``dict`` or ``list[dict]``
+
+
+References
+----------
+.. [#ytSQLAlchemy20] Bayer, Mike. SQLAlchemy 2.0 - The One-Point-Four-Ening 2021. Year: 2022. Retrieved: 2022-01-26. URL: https://www.youtube.com/watch?v=1Va493SMTcY

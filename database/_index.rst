@@ -81,7 +81,12 @@ SQLAlchemy
     sqlalchemy/connection-session.rst
     sqlalchemy/connection-pool.rst
 
-    sqlalchemy/core.rst
+    sqlalchemy/core-model.rst
+    sqlalchemy/core-operators.rst
+    sqlalchemy/core-insert.rst
+    sqlalchemy/core-select.rst
+    sqlalchemy/core-results.rst
+    sqlalchemy/core-introspect.rst
 
     sqlalchemy/model-base.rst
     sqlalchemy/model-define.rst
