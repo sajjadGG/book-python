@@ -171,8 +171,8 @@ object. This mapper is generally behind the scence and accessible.
 
 Then specify the class using mapper registry decorator:
 
->>> from sqlalchemy.orm import registry
 >>> from sqlalchemy import Column, Integer, String
+>>> from sqlalchemy.orm import registry
 >>>
 >>>
 >>> Models = registry()
@@ -477,28 +477,205 @@ Astronaut(firstname='Mark', lastname='Watney')
 
 An ORM query can make use of any combination of columns and entities. To
 request the fields of ``Astronaut`` separately, we name them separately in the
-columns clause.
+columns clause [#ytSQLAlchemy20]_.
 
 >>> query = select(Astronaut.firstname, Astronaut.lastname)
 >>> result = session.execute(query)
 >>>
 >>> for row in result:
-...     print(f'{row.firstname} {row.lastname}')
+...     print(f'{row.firstname}, {row.lastname}')
 ...
-Mark Watney
-Melissa Lewis
-Rick Martinez
+Mark, Watney
+Melissa, Lewis
+Rick, Martinez
 
 >>> query = select(Astronaut.firstname, Astronaut.lastname)
 >>> result = session.execute(query)
 >>>
 >>> for firstname, lastname in result:
-...     print(f'{firstname=} {lastname=}')
+...     print(f'{firstname=}, {lastname=}')
 ...
-firstname='Mark' lastname='Watney'
-firstname='Melissa' lastname='Lewis'
-firstname='Rick' lastname='Martinez'
+firstname='Mark', lastname='Watney'
+firstname='Melissa', lastname='Lewis'
+firstname='Rick', lastname='Martinez'
 
+You can combine 'entities' and columns together:
+
+>>> query = select(Astronaut, Astronaut.firstname)
+>>> result = session.execute(query)
+>>>
+>>> for row in result:
+...     print(f'{row.Astronaut.id}, {row.firstname}, {row.Astronaut.lastname}')
+...
+1, Mark, Watney
+2, Melissa, Lewis
+3, Rick, Martinez
+
+The ``WHERE`` clause is either by ``.filter_by()``, which is convenient:
+
+>>> query = (
+...     select(Astronaut.firstname, Astronaut.lastname).
+...     filter_by(firstname='Mark'))
+>>>
+>>> result = session.execute(query)
+>>>
+>>> for firstname, lastname in result:
+...     print(f'{firstname=}, {lastname=}')
+...
+firstname='Mark', lastname='Watney'
+
+Or ``where()`` for more explicitness:
+
+>>> query = (
+...     select(Astronaut).
+...     where(Astronaut.firstname == 'Mark').
+...     where(Astronaut.lastname == 'Watney'))
+>>>
+>>> result = session.execute(query)
+>>>
+>>> for row in result.scalars():
+...     print(f'{firstname=}, {lastname=}')
+firstname='Mark', lastname='Watney'
+
+
+Relationships, Joins
+--------------------
+Start with the same mapping as before. Except we will also give it a
+*one-to-many* relationship to a second entity.
+
+>>> from sqlalchemy import ForeignKey, Column, Integer, String
+>>> from sqlalchemy.orm import registry, relationship
+>>>
+>>>
+>>> Models = registry()
+>>>
+>>> @Models.mapped
+... class Astronaut:
+...     __tablename__ = 'astronaut'
+...     id = Column(Integer, primary_key=True)
+...     firstname = Column(String(length=100))
+...     lastname = Column(String(length=100))
+...     missions = relationship('Mission', back_populates='astronaut')
+...
+...     def __repr__(self):
+...         firstname = self.firstname
+...         lastname = self.lastname
+...         return f'Astronaut({firstname=}, {lastname=})'
+>>>
+>>>
+>>> @Models.mapped
+... class Mission:
+...     __tablename__ = 'mission'
+...     id = Column(Integer, primary_key=True)
+...     astronaut_id = Column(ForeignKey('astronaut.id'))
+...     year = Column(Integer, nullable=False)
+...     name = Column(String(length=50), nullable=False)
+...     astronaut = relationship('Astronaut', back_populates='missions')
+...
+...     def __repr__(self):
+...         year = self.year
+...         name = self.name
+...         return f'Mission({year=}, {name=})'
+
+For the other end of one-to-many, create another mapped class with a
+``ForeignKey`` referring back to ``Astronaut``. ``ForeignKey`` field is a
+SQLAlchemy core's thing and ``relationship`` field is for ORM's. Note, that
+it is not needed to specify type of the relationship (one-to-many, many-to-one,
+or many-to-many) as of ``relationship()`` will infer this by the column type
+(``ForeignKey`` -> one-to-many) [#ytSQLAlchemy20]_.
+
+Create tables
+
+>>> from sqlalchemy import create_engine
+>>>
+>>>
+>>> engine = create_engine('sqlite:///:memory:')
+>>>
+>>> with engine.begin() as db:
+...     Models.metadata.create_all(db)
+
+Will produce:
+
+.. code-block:: sql
+
+    BEGIN
+    PRAGMA main.table_info("astronaut")
+    PRAGMA temp.table_info("astronaut")
+    PRAGMA main.table_info("mission")
+    PRAGMA temp.table_info("mission")
+
+    CREATE TABLE astronaut (
+        id INTEGER NOT NULL,
+        firstname VARCHAR(100),
+        lastname VARCHAR(100),
+        PRIMARY KEY (id)
+    )
+
+    CREATE TABLE mission (
+        id INTEGER NOT NULL,
+        astronaut_id INTEGER,
+        year INTEGER NOT NULL,
+        name VARCHAR(50) NOT NULL,
+        PRIMARY KEY (id),
+        FOREIGN KEY(astronaut_id) REFERENCES astronaut (id)
+    )
+    COMMIT
+
+Insert data in the ``Astronaut`` table. Here we illustrate the ``sessionmaker``
+factory as a transactional context manager [#ytSQLAlchemy20]_:
+
+>>> from sqlalchemy.orm import sessionmaker
+>>>
+>>>
+>>> Session = sessionmaker(bind=engine, future=True)
+>>>
+>>> with Session.begin() as  session:
+...     session.add_all([
+...         Astronaut(firstname='Mark', lastname='Watney'),
+...         Astronaut(firstname='Melissa', lastname='Lewis'),
+...         Astronaut(firstname='Rick', lastname='Martinez'),
+...     ])
+
+1.4/2.0 tries to make more consistent. ``Session.begin()`` is analogous to
+``Engine.begin()``. Sessionmaker is analogous to core engine. And the session
+itself is analogous to core connection.
+
+A new ``Astronaut`` object also gains an empty ``missions`` collection now.
+
+>>> alex = Astronaut(firstname='Alex', lastname='Vogel')
+>>> alex.missions
+[]
+
+Populate this collection with new Address objects.
+
+>>> alex.missions = [
+...     Mission(year=2030, name='Ares1'),
+...     Mission(year=2035, name='Ares3'),
+... ]
+
+'Back populates' sets up ``Mission.astronaut`` for each ``Astronaut.mission``
+
+>>> alex
+Astronaut(firstname='Alex', lastname='Vogel')
+>>>
+>>> alex.missions
+[Mission(year=2030, name='Ares1'), Mission(year=2035, name='Ares3')]
+>>>
+>>> alex.missions[0]
+Mission(year=2030, name='Ares1')
+>>>
+>>> alex.missions[0].astronaut
+Astronaut(firstname='Alex', lastname='Vogel')
+
+You can specify the relation only in one way, but usually people will do it
+both-ways for easy of use.
+
+Adding ``alex`` will 'cascade' each ``Astronaut`` into the Session as well.
+
+>>> session = Session()
+>>> session.add(alex)
+>>> session.new
+IdentitySet([Astronaut(firstname='Alex', lastname='Vogel'), Mission(year=2030, name='Ares1'), Mission(year=2035, name='Ares3')])
 
 References
 ----------
