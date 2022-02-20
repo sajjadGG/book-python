@@ -92,6 +92,8 @@ SQLAlchemy
     sqlalchemy/core-text.rst
     sqlalchemy/core-introspect.rst
 
+    sqlalchemy/orm-about.rst
+
     sqlalchemy/model-base.rst
     sqlalchemy/model-define.rst
     sqlalchemy/model-column.rst

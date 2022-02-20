@@ -1,0 +1,399 @@
+ORM About
+=========
+
+
+Rationale
+---------
+* ORM - Object Relational Mapping
+* Process of associating object oriented classes with database tables
+* Set of object oriented classes is a domain model (business model)
+* The most basic task is to translate between domain object and a table row
+* Any tool which takes database row and converts this to an object is an ORM
+* ORM represents basic compositions: one-to-many, many-to-one using foreign key
+* ORM allows to querying the database in terms of the domain model structure
+* Some ORM can represent class inheritance hierarchies using variety of schemes
+* Some ORMs can handle 'sharding' of data, i.e. storing a domain model across multiple schemas or databases
+* Provide various patterns for concurrency, including row versioning
+* Provide patterns for data validation and coercion
+
+Source: [#ytSQLAlchemy20]_
+
+.. figure:: img/sqlalchemy-onion.png
+.. figure:: img/orm-schematics.png
+.. figure:: img/orm-roles.png
+
+
+Flavors
+-------
+* Active Record or Data Mapper
+* Declarative or Imperative style configuration
+
+
+Active Record
+-------------
+* Active Record has domain objects handle their own persistence
+* Every object is a row in a table
+* Notion of objects working in a transaction is a secondary notion
+
+Create an object:
+
+>>> # doctest: +SKIP
+... astro = Astronaut(firstname='Mark', lastname='Watney')
+... astro.save()
+
+Usage:
+
+>>> # doctest: +SKIP
+... astro = User.query(firstname='Mark', lastname='Watney').fetch()
+... astro.firstname = 'Melissa'
+... astro.lastname = 'Lewis'
+... astro.save()
+
+
+Data Mapper
+-----------
+* Tries to keep the details of persistence separate from the object being persisted
+* It is more explicit
+* Does not use globals and threaded locals
+* Always create connection, transaction and explicitly say when to commit
+
+Create an object:
+
+>>> # doctest: +SKIP
+... with Session.begin() as session:
+...     astro = Astronaut(firstname='Mark', lastname='Watney')
+...     session.add(astro)
+
+Usage:
+
+>>> # doctest: +SKIP
+... query = (
+...     select(Astronaut).
+...     where(Astronaut.firstname == 'Mark').
+...     where(Astronaut.lastname == 'Watney').
+...     scalars().
+...     first())
+...
+... with Session.begin() as session:
+...     astro = session.execute()
+...     astro.firstname = 'Melissa'
+...     astro.lastname = 'Lewis'
+
+
+Declarative Style Configuration
+-------------------------------
+* Classes and attributes
+* Attributes names columns in a database
+
+ORMs may also provide different configuration patterns. Most use an
+'all-at-once' style where class and table information is together. SQLAlchemy
+calls this *declarative style* [#ytSQLAlchemy20]_.
+
+>>> # doctest: +SKIP
+... class Astronaut(Base):
+...     __tablename__ = 'astronaut'
+...     id = Column(Integer, primary_key=True)
+...     firstname = Column(String(length=100))
+...     lastname = Column(String(length=100))
+...
+...
+... class Mission(Base):
+...     __tablename__ = 'mission'
+...     id = Column(Integer, primary_key=True)
+...     astronaut_id = Column(ForeignKey('astronaut.id'))
+...     year = Column(Integer, nullable=False)
+...     name = Column(String(length=50), nullable=False)
+
+
+Imperative Style Configuration
+------------------------------
+* There was a plan to remove Imperative Style from SQLAlchemy 2.0, but stayed
+* The class is not completely agnostic, because mapper heavily influence design
+
+This other way is to keep the declaration of domain model and table metadata
+separate. SQLAlchemy calls this *imperative style* [#ytSQLAlchemy20]_.
+
+Class is declared without any awareness of database:
+
+>>> # doctest: +SKIP
+... class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+
+Then it is associated with a database table:
+
+>>> # doctest: +SKIP
+... registry.mapper(
+...     Astronaut,
+...     Table('astronaut', metadata,
+...         Column('id', Integer, primary_key=True),
+...         Column('firstname', String(50)),
+...         Column('lastname', String(50)),
+...     )
+... )
+
+
+SQLAlchemy ORM
+--------------
+* SQLAlchemy ORM is essentially a data mapper style ORM
+* Most users use declarative configuration style
+* Imperative style and a range of variants in between are supported as well
+* Extends SQLAlchemy Core, in particular extending the SQL Expression language
+* Designed to work with domain classes as well as table constructs
+* Key features: Unit of Work, Identity Map, Lazy / Eager loading
+* Unit of Work - accumulates INSERT/UPDATE/DELETE statements and transparently sends it to the database in batch
+* Identity Map - objects are kept unique in memory based on their primary key identity
+* Lazy / Eager loading - related attributes and collections can be loaded either on-demand (lazy) or upfront (eager)
+* Source: [#ytSQLAlchemy20]_
+
+ORM
+---
+* SQLAlchemy mappings in 1.4/2.0 start with a central object known as 'registry'
+* Has a collection of metadata inside it
+* Traditional Declarative Base uses Python metaclass
+* This gets in a way, when you want to uses metaclass on your own
+* In such case you can use mapper registry decorator
+
+Using the registry, we can map classes in various ways, below illustrated
+using its 'mapped' decorator. In this form, we arrange class attributes in
+terms of ``Column`` objects to be mapped to a ``Table``, which is named based
+on attribute ``__tablename__`` [#ytSQLAlchemy20]_.
+
+First create an instance of a Mapper Registry object:
+
+>>> from sqlalchemy.orm import registry
+>>>
+>>> mapper_registry = registry()
+
+The Mapper object mediates the relationship between model and a ``Table``
+object. This mapper is generally behind the scence and accessible.
+
+Then specify the class using mapper registry decorator:
+
+>>> from sqlalchemy.orm import registry
+>>> from sqlalchemy import Column, Integer, String
+>>>
+>>>
+>>> Models = registry()
+>>>
+>>> @Models.mapped
+... class Astronaut:
+...     __tablename__ = 'astronaut'
+...     id = Column(Integer, primary_key=True)
+...     firstname = Column(String(length=100))
+...     lastname = Column(String(length=100))
+...
+...     def __repr__(self):
+...         firstname = self.firstname
+...         lastname = self.lastname
+...         return f'Astronaut({firstname=}, {lastname=})'
+
+The ``Astronaut`` class has now a ``Table`` object associated with it.
+
+>>> Astronaut.__table__
+Table('astronaut', MetaData(), Column('id', Integer(), table=<astronaut>, primary_key=True, nullable=False), Column('firstname', String(length=100), table=<astronaut>), Column('lastname', String(length=100), table=<astronaut>), schema=None)
+
+
+>>> from sqlalchemy import select
+>>>
+>>>
+>>> query = select(Astronaut)
+>>>
+>>> print(query)
+SELECT astronaut.id, astronaut.firstname, astronaut.lastname
+FROM astronaut
+
+If you do not specify the constructor, it will be automatically generated
+for you based on the attributes (id, firstname, lastname) making them
+an optional keyword parameters. All parameters are optional, because some of
+them can be autogenerated, for example: ``id`` [#ytSQLAlchemy20]_.
+
+>>> astro = Astronaut(firstname='Mark', lastname='Watney')
+>>> astro
+Astronaut(firstname='Mark', lastname='Watney')
+
+Using our registry (``Models``), we can create a database schema for this
+class using a ``MetaData`` object that is path of the registry:
+
+>>> from sqlalchemy import create_engine
+>>>
+>>>
+>>> engine = create_engine('sqlite:///:memory:')
+>>>
+>>> with engine.begin() as db:
+...     Models.metadata.create_all(db)
+
+To persists and load ``Astronaut`` objects from the database, we use a
+``Session`` object, illustrated here from a factory called ``sessionmaker``.
+The ``Session`` objects makes use of a connection factory (i.e. an ``Engine``)
+and will handle the job of connecting, committing and releasing connections
+to this engine. Flag ``future=True`` in SQLAlchemy 1.4 will turn on 2.0
+compatibility mode. This behavior will be default in 2.0 and flag will be
+deprecated.
+
+>>> from sqlalchemy.orm import sessionmaker
+>>>
+>>>
+>>> Session = sessionmaker(bind=engine, future=True)
+>>> session = Session()
+
+Creating a session does not implies connection. This is done lazily and
+will simply create an object and do nothing. Sessions will always delay
+database connection to the last possible moment, but it will also ensure
+that this will eventually happen.
+
+
+Object Statuses
+---------------
+* Transient - object created, but not yet added to the session
+* Pending - object added to a session but not yet stored in database
+* Persistent - represent an active row in a database (object is stored)
+* Detached
+* Pending Delete
+
+
+Adding Objects
+--------------
+Let's create an transient object (object not yet added to the session):
+
+>>> astro = Astronaut(firstname='Mark', lastname='Watney')
+
+New objects are placed into the Session using ``add()``
+
+>>> session.add(astro)
+
+This did not modify the database, however the object is now known as 'pending'.
+We can see the 'pending' objects by looking at the ``session.new`` attribute.
+
+>>> session.new
+IdentitySet([Astronaut(firstname='Mark', lastname='Watney')])
+
+We can now query for this 'pending' row, by emitting a ``SELECT`` statement
+that will refer to ``Astronaut`` entities. This will first ``autoflush`` the
+pending changes, then ``SELECT`` the row we requested.
+
+>>> from sqlalchemy import select
+>>>
+>>>
+>>> query = (
+...     select(Astronaut).
+...     where(firstname=='Mark'))
+>>>
+>>> result = session.execute(query)
+
+Session will autoflush before making queries, that is it will store all the
+pending objects before querying it. Session will delay this to the last
+possible moment. You can turn this behavior off by specifying a keyword
+argument ``autoflush=False`` to the ``sessionmaker`` factory.
+
+We can get the data back from the result, in this case using the ``.scalar()``
+method which will return the first column of the first row.
+
+>>> mark = result.scalar()
+>>> mark
+Astronaut(firstname='Mark', lastname='Watney')
+
+The ``Astronaut`` object we've inserted now has a value for ``.id`` attribute.
+
+>>> mark.id
+1
+
+The ``Session`` maintains a 'unique' object per identity. So ``astro`` and
+``mark`` are the same object.
+
+>>> mark is astro
+True
+
+Identity Map - if you query the database table for the object with for example
+``id==1`` you will get the same object every time, as long as this object is
+in the memory. We can look at it on the ``Session``.
+
+>>> session.identity_map.items()
+[((__main__.Astronaut, (1,), None), Astronaut(firstname='Mark', lastname='Watney'))]
+
+
+Making Changes
+--------------
+* Add more objects to be pending for flush
+* ``.add_all()`` is the same as ``.add()``, but adds a list of objects
+
+>>> session.add_all([
+...     Astronaut(firstname='Melissa', lastname='Lewis'),
+...     Astronaut(firstname='Rick', lastname='Martinez'),
+... ])
+
+Modify ``astro`` - the object is now marked as 'dirty'
+
+>>> astro.firstname = 'Alex'
+>>> astro.lastname = 'Vogel'
+
+Nothing changed and no actions were performed to the database yet. If you
+inspect database current transactions you will have an open transaction
+process currently in progress.
+
+The ``Session`` can us which objects are dirty:
+
+>>> session.dirty
+IdentitySet([Astronaut(firstname='Alex', lastname='Vogel')])
+
+And can also tell us which objects are pending:
+
+>>> session.new
+IdentitySet([Astronaut(firstname='Melissa', lastname='Lewis'), Astronaut(firstname='Rick', lastname='Martinez')])
+
+The whole transaction is committed. Commit always triggers a final flush of
+remaining changes. Commit will expire objects. This is due to the fact, that
+as soon as data is out there (in database), some other transactions could
+have already change the data. You can change this behavior by setting the
+``expire_on_commit=False`` parameter to the ``sessionmaker`` factory.
+
+>>> session.commit()
+
+After a commit, there's no transaction. The ``Session`` 'invalidates' all
+data, so that accessing them will automatically start a 'new' transaction
+and re-load from the database. This is our first example of the ORM 'lazy
+loading' pattern.
+
+>>> astro.firstname
+
+
+Rollin Back Changes
+-------------------
+Make another 'dirty' change, and another 'pending' change, that we might
+change or minds about.
+
+>>> astro.firstname = 'Beth'
+>>> astro.lastname = 'Johanssen'
+>>>
+>>> chris = Astronaut(firstname='Chris', lastname='Beck')
+>>> session.add(chris)
+
+Run a query, our changes are flushed; results come back.
+
+>>> query = (
+...     select(Astronaut).
+...     where(Astronaut.firstname.in_(['Beth', 'Chris'])))
+>>>
+>>> result = session.execute(query)
+>>> result.all()
+
+Those changes are not yet in the database. The transaction was not committed
+yet. Therefore if your database will be restarted you will loose those
+information, unless non-default transaction durability options are set in
+the database configuration.
+
+But we're inside of a transaction. Roll it back:
+
+>>> session.rollback()
+
+All updates and inserts are gone, and all pending objects are evicted. Again,
+the transaction is over, objects are expired. Accessing an attribute refreshes
+the object and the ``astro`` firstname is gone.
+
+>>> astro.firstname
+
+
+References
+----------
+.. [#ytSQLAlchemy20] Bayer, Mike. SQLAlchemy 2.0 - The One-Point-Four-Ening 2021. Year: 2022. Retrieved: 2022-01-26. URL: https://www.youtube.com/watch?v=1Va493SMTcY
