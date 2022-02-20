@@ -1,5 +1,5 @@
-Core Update
-===========
+Core Join
+=========
 
 
 Rationale
@@ -170,6 +170,32 @@ were otherwise ambiguous [#ytSQLAlchemy20]_.
  ('Melissa', 'Ares1'),
  ('Melissa', 'Ares3'),
  ('Rick', 'Ares3')]
+
+
+Table Aliases
+-------------
+When a ``SELECT`` wants to refer to the same table more than once, a SQL alias
+is used. This is available using the ``.alias()`` method, which returns a
+unique Alias object representing that table with a particular SQL alias.
+
+>>> m1 = mission.alias()
+>>> m2 = mission.alias()
+>>>
+>>> query = (
+...     select(astronaut.c.firstname, m1.c.name, m2.c.name).
+...     join_from(astronaut, m1).
+...     join_from(astronaut, m2).
+...     where(m1.c.name == 'Ares1').
+...     where(m2.c.name == 'Ares3')
+... )
+>>>
+>>> with engine.begin() as db:
+...     result = db.execute(query)
+>>>
+>>> result.all()
+[('Melissa', 'Ares1', 'Ares3')]
+
+Note, using ``.join_from()``.
 
 
 References
