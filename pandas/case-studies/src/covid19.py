@@ -38,8 +38,8 @@ def covid19(country: str = None) -> pd.DataFrame:
     Name: 2022-01-01 00:00:00, dtype: int64
 
     >>> covid19('US').loc['2022-01-01']
-    Confirmed    54963778
-    Deaths         828124
+    Confirmed    54955848
+    Deaths         828216
     Recovered           0
     Name: 2022-01-01 00:00:00, dtype: int64
 
@@ -50,8 +50,8 @@ def covid19(country: str = None) -> pd.DataFrame:
     Name: 2022-01-01 00:00:00, dtype: int64
 
     >>> covid19().loc['2022-01-01']
-    Confirmed    289514753
-    Deaths         5444013
+    Confirmed    289812281
+    Deaths         5444106
     Recovered            0
     Name: 2022-01-01 00:00:00, dtype: int64
     """
@@ -73,7 +73,7 @@ def covid19(country: str = None) -> pd.DataFrame:
                 .iloc[4:]
                 .sum(axis='columns')
                 .astype('int64')
-                .rename(pd.to_datetime))
+                .rename(pd.to_datetime, axis='index'))
 
     return pd.DataFrame({
         'Confirmed': _get(confirmed, country),
