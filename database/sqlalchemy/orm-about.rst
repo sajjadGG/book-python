@@ -535,6 +535,7 @@ Or ``where()`` for more explicitness:
 >>>
 >>> for row in result.scalars():
 ...     print(f'{firstname=}, {lastname=}')
+...
 firstname='Mark', lastname='Watney'
 
 
@@ -724,6 +725,207 @@ setting up of foreign key column values is handled automatically.
 By assigning ``.astronaut`` on one of the ``alex`` missions, the object moved
 from one ``missions`` collection to the other. This is the back populates
 feature at work.
+
+
+Querying with Multiple Tables
+-----------------------------
+A ``SELECT`` statement can select from multiple entities simultaneously.
+
+>>> query = (
+...     select(Astronaut, Mission).
+...     where(Astronaut.id == Mission.astronaut_id))
+>>>
+>>> result = session.execute(query)
+>>>
+>>> for row in result:
+...     print(row)
+...
+(Astronaut(firstname='Alex', lastname='Vogel'), Mission(year=2030, name='Ares1'))
+(Astronaut(firstname='Mark', lastname='Watney'), Mission(year=2035, name='Ares3'))
+
+Or unpack the results. We know that there will be two objects in a tuple
+because we did ``select(Astronaut, Mission)``.
+
+>>> query = (
+...     select(Astronaut, Mission).
+...     where(Astronaut.id == Mission.astronaut_id))
+>>>
+>>> result = session.execute(query)
+>>>
+>>> for astronaut, mission in result:
+...     print(f'{astronaut=}, {mission=}')
+...
+astronaut=Astronaut(firstname='Alex', lastname='Vogel'), mission=Mission(year=2030, name='Ares1')
+astronaut=Astronaut(firstname='Mark', lastname='Watney'), mission=Mission(year=2035, name='Ares3')
+
+As is the same case in ``Core``, we use the ``select().join()`` method
+to create joins. An entity can be given as the target which will join along
+foreign keys.
+
+>>> query = (
+...     select(Astronaut, Mission).
+...     join(Mission))
+>>>
+>>> result = session.execute(query)
+>>>
+>>> result.all()  # doctest: +NORMALIZE_WHITESPACE
+[(Astronaut(firstname='Alex', lastname='Vogel'), Mission(year=2030, name='Ares1')),
+ (Astronaut(firstname='Mark', lastname='Watney'), Mission(year=2035, name='Ares3'))]
+
+Or you can give it an explicit SQL expression for the ``ON`` clause.
+
+>>> query = (
+...     select(Astronaut, Mission).
+...     join(Mission, Astronaut.id == Mission.astronaut_id))
+>>>
+>>> result = session.execute(query)
+>>>
+>>> result.all()  # doctest: +NORMALIZE_WHITESPACE
+[(Astronaut(firstname='Alex', lastname='Vogel'), Mission(year=2030, name='Ares1')),
+ (Astronaut(firstname='Mark', lastname='Watney'), Mission(year=2035, name='Ares3'))]
+
+However the most accurate and succinct way is to use the relationship-bound
+attribute.
+
+>>> query = (
+...     select(Astronaut, Mission).
+...     join(Astronaut.missions))
+>>>
+>>> result = session.execute(query)
+>>>
+>>> result.all()  # doctest: +NORMALIZE_WHITESPACE
+[(Astronaut(firstname='Alex', lastname='Vogel'), Mission(year=2030, name='Ares1')),
+ (Astronaut(firstname='Mark', lastname='Watney'), Mission(year=2035, name='Ares3'))]
+
+All three methods should result the same data.
+
+Note, that ``join(Astronaut.missions)`` is only available in ORM, because
+``missions`` attributes is an ORM ``relationship``.
+
+>>> print(query)
+SELECT astronaut.id, astronaut.firstname, astronaut.lastname, mission.id AS id_1, mission.astronaut_id, mission.year, mission.name
+FROM astronaut JOIN mission ON astronaut.id = mission.astronaut_id
+
+The ORM version of ``table.alias()`` is to use the ``aliased()`` function on
+mapped entity.
+
+>>> from sqlalchemy.orm import aliased
+>>>
+>>>
+>>> m1 = aliased(Mission)
+>>> m2 = aliased(Mission)
+>>>
+>>> query = (
+...     select(Astronaut).
+...     join_from(Astronaut, m1).
+...     join_from(Astronaut, m2).
+...     where(m1.name == 'Ares1').
+...     where(m2.name == 'Ares3'))
+>>>
+>>> result = session.execute(query)
+>>> result.all()
+[]
+
+.. todo:: Empty result?
+
+>>> print(query)
+SELECT astronaut.id, astronaut.firstname, astronaut.lastname
+FROM astronaut JOIN mission AS mission_1 ON astronaut.id = mission_1.astronaut_id JOIN mission AS mission_2 ON astronaut.id = mission_2.astronaut_id
+WHERE mission_1.name = :name_1 AND mission_2.name = :name_2
+
+To ``join()`` to an ``aliased()`` object with more specificity, a form such
+``Class.relationship.of_type(aliased)`` may be used:
+
+>>> from sqlalchemy.orm import aliased
+>>>
+>>>
+>>> m1 = aliased(Mission)
+>>> m2 = aliased(Mission)
+>>>
+>>> query = (
+...     select(Astronaut).
+...     join(Astronaut.missions.of_type(m1)).
+...     join(Astronaut.missions.of_type(m2)).
+...     where(m1.name == 'Ares1').
+...     where(m2.name == 'Ares3'))
+>>>
+>>> result = session.execute(query)
+>>> result.all()
+[]
+
+.. todo:: Empty result?
+
+Useful for querying objects which has special conditions, such as:
+``is_deleted=False`` flag, or newer than particular date.
+
+As was the case with ``Core``, we can use subqueries and joins with ORM
+mapped classes as well.
+
+>>> from sqlalchemy import func
+>>>
+>>>
+>>> subquery = (
+...     select(func.count(Mission.id).label('count'), Mission.astronaut_id).
+...     group_by(Mission.astronaut_id)
+...     subquery())
+>>>
+>>> query = (
+...     select(Astronaut.firstname, func.coalesce(subquery.c.count, 0)).
+...     outerjoin(subquery, Astronaut.id == subquery.c.astronaut_id))
+>>>
+>>> result = session.execute(query)
+>>> result.all()
+[('Mark', 1), ('Melissa', 0), ('Rick', 0), ('Alex', 1)]
+
+CTEs works the same way too.
+
+Eager Loading
+-------------
+The *N plus one* problem is an ORM issue which refers to the many ``SELECT``
+statements emitted when loading collections against a parent result. As
+SQLAlchemy is a full featured ORM it has the same problem. This is the biggest
+and the most famous problem of the ORM.
+
+Lazy loaded N+one prone code:
+
+>>> query = select(Astronaut)
+>>>
+>>> with Session() as session:
+...     result = session.execute(query)
+>>>
+>>> for astronaut in result.scalars():
+...     print(astronaut, astronaut.missions)
+
+.. todo:: Not working
+          sqlalchemy.exc.InvalidRequestError: Object <Astronaut at 0x11f66a890>
+          cannot be converted to 'persistent' state, as this identity map is no
+          longer valid.  Has the owning Session been closed? (Background on
+          this error at: https://sqlalche.me/e/14/lkrp)
+
+
+However, SQLAlchemy was designed from the start to tame the 'N plus one'
+problem by implementing 'eager loading'. Eager loading is now very mature,
+and the most effective strategy for collections is currently the
+``selectinload`` option:
+
+>>> from sqlalchemy.orm import selectinload
+>>>
+>>>
+>>> query = (
+...     select(Astronaut).
+...     options(selectinload(Astronaut.missions)))
+>>>
+>>> with Session() as session:
+...     result = session.execute(query)
+>>>
+>>> for astronaut in result.scalars():
+...     print(astronaut, astronaut.missions)
+
+.. todo:: Not working
+          sqlalchemy.exc.InvalidRequestError: Object <Astronaut at 0x11f66a890>
+          cannot be converted to 'persistent' state, as this identity map is no
+          longer valid.  Has the owning Session been closed? (Background on
+          this error at: https://sqlalche.me/e/14/lkrp)
 
 
 
