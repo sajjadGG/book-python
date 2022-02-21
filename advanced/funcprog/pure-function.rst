@@ -83,18 +83,24 @@ Impure to Pure Function
 >>> add(1, 2, c)
 4
 
+
 Side Effects
 ------------
-* I/O
+* I/O - Input Output
 * Looks like a pure function
 * File content can change by other process
 
 >>> def read(filename):
 ...     with open(filename) as file:
 ...         return file.read()
-...
-...
->>> read('myfile.txt')  # doctest: +SKIP
+
+Each of those variables can have different value as of the ``read()`` function
+depends on file content, which can be modified by other process in the
+meantime between reading ``a`` and reading ``b``.
+
+>>> a = read('myfile.txt')  # doctest: +SKIP
+>>> b = read('myfile.txt')  # doctest: +SKIP
+
 
 
 Use Case - Math Functions
