@@ -939,6 +939,45 @@ many-to-one relationships, particularly those where the foreign key is
 Mission(year=2030, name='Ares1') Alex
 Mission(year=2035, name='Ares3') Alex
 
+Note, Eager loading 'does not' change the result of the ``Query``. Only how
+related collections are loaded. An explicit ``join()`` can be mixed with the
+``joinedload()`` and they are kept separate.
+
+>>> from sqlalchemy.orm import joinedload
+>>>
+>>>
+>>> query = (
+...     select(Mission).
+...     join(Mission.astronaut).
+...     where(Astronaut.firstname == 'Alex').
+...     options(joinedload(Mission.astronaut)))
+>>>
+>>> with Session() as session:
+...     result = session.execute(query)
+...     for mission in result.scalars():
+...         print(mission, mission.astronaut)
+Mission(year=2030, name='Ares1') Astronaut(firstname='Alex', lastname='Vogel')
+Mission(year=2035, name='Ares3') Astronaut(firstname='Alex', lastname='Vogel')
+
+To optimize the common case of 'join to many-to-one and also load it on the
+object', the ``contains_eager()`` option is used
+
+>>> from sqlalchemy.orm import contains_eager
+>>>
+>>>
+>>> query = (
+...     select(Mission).
+...     join(Mission.astronaut).
+...     where(Astronaut.firstname == 'Alex').
+...     options(contains_eager(Mission.astronaut)))
+>>>
+>>> with Session() as session:
+...     result = session.execute(query)
+...     for mission in result.scalars():
+...         print(mission, mission.astronaut)
+Mission(year=2030, name='Ares1') Astronaut(firstname='Alex', lastname='Vogel')
+Mission(year=2035, name='Ares3') Astronaut(firstname='Alex', lastname='Vogel')
+
 
 References
 ----------
