@@ -824,9 +824,7 @@ mapped entity.
 >>>
 >>> result = session.execute(query)
 >>> result.all()
-[]
-
-.. todo:: Empty result?
+[(Astronaut(firstname='Alex', lastname='Vogel'),)]
 
 >>> print(query)
 SELECT astronaut.id, astronaut.firstname, astronaut.lastname
@@ -851,9 +849,7 @@ To ``join()`` to an ``aliased()`` object with more specificity, a form such
 >>>
 >>> result = session.execute(query)
 >>> result.all()
-[]
-
-.. todo:: Empty result?
+[(Astronaut(firstname='Alex', lastname='Vogel'),)]
 
 Useful for querying objects which has special conditions, such as:
 ``is_deleted=False`` flag, or newer than particular date.
@@ -892,16 +888,13 @@ Lazy loaded N+one prone code:
 >>>
 >>> with Session() as session:
 ...     result = session.execute(query)
->>>
->>> for astronaut in result.scalars():
-...     print(astronaut, astronaut.missions)
-
-.. todo:: Not working
-          sqlalchemy.exc.InvalidRequestError: Object <Astronaut at 0x11f66a890>
-          cannot be converted to 'persistent' state, as this identity map is no
-          longer valid.  Has the owning Session been closed? (Background on
-          this error at: https://sqlalche.me/e/14/lkrp)
-
+...     for astronaut in result.scalars():
+...         print(astronaut, astronaut.missions)
+...
+Astronaut(firstname='Mark', lastname='Watney') []
+Astronaut(firstname='Melissa', lastname='Lewis') []
+Astronaut(firstname='Rick', lastname='Martinez') []
+Astronaut(firstname='Alex', lastname='Vogel') [Mission(year=2030, name='Ares1'), Mission(year=2035, name='Ares3')]
 
 However, SQLAlchemy was designed from the start to tame the 'N plus one'
 problem by implementing 'eager loading'. Eager loading is now very mature,
@@ -917,16 +910,34 @@ and the most effective strategy for collections is currently the
 >>>
 >>> with Session() as session:
 ...     result = session.execute(query)
+...     for astronaut in result.scalars():
+...         print(astronaut, astronaut.missions)
+...
+Astronaut(firstname='Mark', lastname='Watney') []
+Astronaut(firstname='Melissa', lastname='Lewis') []
+Astronaut(firstname='Rick', lastname='Martinez') []
+Astronaut(firstname='Alex', lastname='Vogel') [Mission(year=2030, name='Ares1'), Mission(year=2035, name='Ares3')]
+
+The oldest eager loading strategy is ``joinedload()``. This uses ``LEFT OUTER
+JOIN`` or ``INNER JOIN`` to load parent + child on one query. ``joinedload()``
+can work for collections as well, however it is best tailored towards
+many-to-one relationships, particularly those where the foreign key is
+``NOT NULL``.
+
+>>> from sqlalchemy.orm import joinedload
 >>>
->>> for astronaut in result.scalars():
-...     print(astronaut, astronaut.missions)
-
-.. todo:: Not working
-          sqlalchemy.exc.InvalidRequestError: Object <Astronaut at 0x11f66a890>
-          cannot be converted to 'persistent' state, as this identity map is no
-          longer valid.  Has the owning Session been closed? (Background on
-          this error at: https://sqlalche.me/e/14/lkrp)
-
+>>>
+>>> query = (
+...     select(Mission).
+...     options(joinedload(Mission.astronaut, innerjoin=True)))
+>>>
+>>> with Session() as session:
+...     result = session.execute(query)
+...     for mission in result.scalars():
+...         print(mission, mission.astronaut.firstname)
+...
+Mission(year=2030, name='Ares1') Alex
+Mission(year=2035, name='Ares3') Alex
 
 
 References
