@@ -1,7 +1,8 @@
 Connection Engine
 =================
 
-.. topic:: Connection Engine
+.. important::
+
     * ``create_engine()`` builds a factory for database connections
     * ``create_engine()`` uses Database Source Name (DSN) for configuration
     * ``echo=True`` - if True, the Engine will log all statements to stdout
