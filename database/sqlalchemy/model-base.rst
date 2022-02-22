@@ -14,22 +14,23 @@ Rationale
     base
         Model responsible for mapping objects with database
 
-SQLAlchemy historically features two distinct styles of mapper configuration.
-The original mapping API is commonly referred to as "classical" style, whereas
-the more automated style of mapping is known as "declarative" style. SQLAlchemy
-now refers to these two mapping styles as imperative mapping and declarative
-mapping. Both styles may be used interchangeably, as the end result of each is
-exactly the same. [#sqlalchemyMappings]_
+SQLAlchemy historically features two distinct styles of mapper
+configuration. The original mapping API is commonly referred to as
+"classical" style, whereas the more automated style of mapping is known as
+"declarative" style. SQLAlchemy now refers to these two mapping styles as
+imperative mapping and declarative mapping. Both styles may be used
+interchangeably, as the end result of each is exactly the same.
+[#sqlalchemyMappings]_
 
 
 Declarative Base
 ----------------
 The Declarative Mapping is the typical way that mappings are constructed in
-modern SQLAlchemy. The most common pattern is to first construct a base class
-using the ``declarative_base()`` function, which will apply the declarative
-mapping process to all subclasses that derive from it. Below features a
-declarative base which is then used in a declarative table mapping
-[#sqlalchemyMappings]_:
+modern SQLAlchemy. The most common pattern is to first construct a base
+class using the ``declarative_base()`` function, which will apply the
+declarative mapping process to all subclasses that derive from it. Below
+features a declarative base which is then used in a declarative table
+mapping [#sqlalchemyMappings]_:
 
 >>> from sqlalchemy import Column
 >>> from sqlalchemy import Integer, String

@@ -84,7 +84,7 @@ Use Case - 0x01
 >>> from sqlalchemy import MetaData
 >>> from sqlalchemy import create_engine
 >>> from sqlalchemy import Table, Column
->>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
+>>> from sqlalchemy import Integer, String, Date, Numeric, Enum
 >>>
 >>>
 >>> DATABASE = 'sqlite:///:memory:'
@@ -95,7 +95,7 @@ Use Case - 0x01
 ...     Column('id', Integer, primary_key=True),
 ...     Column('firstname', String(50), nullable=False),
 ...     Column('lastname', String(50), nullable=False),
-...     Column('born', DateTime),
+...     Column('born', Date),
 ...     Column('height', Integer),
 ...     Column('weight', Numeric(3,2)),
 ...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
@@ -114,7 +114,7 @@ Table('astronaut', MetaData(),
       Column('id', Integer(), table=<astronaut>, primary_key=True, nullable=False),
       Column('firstname', String(length=50), table=<astronaut>, nullable=False),
       Column('lastname', String(length=50), table=<astronaut>, nullable=False),
-      Column('born', DateTime(), table=<astronaut>),
+      Column('born', Date(), table=<astronaut>),
       Column('height', Integer(), table=<astronaut>),
       Column('weight', Numeric(precision=3, scale=2), table=<astronaut>),
       Column('agency', Enum('NASA', 'ESA', 'Roscosmos'), table=<astronaut>), schema=None)
@@ -122,14 +122,14 @@ Table('astronaut', MetaData(),
 
 Use Case - 0x02
 ---------------
-Table metadata also allows for constraints and indexes. ``ForeignKey`` is used
-to link one column to a remote primary key. Note we can omit the datatype for
-a ``ForeignKey`` column. [#ytSQLAlchemy20]_
+Table metadata also allows for constraints and indexes. ``ForeignKey``
+is used to link one column to a remote primary key. Note we can omit
+the datatype for a ``ForeignKey`` column [#ytSQLAlchemy20]_.
 
 >>> from sqlalchemy import MetaData
 >>> from sqlalchemy import create_engine
 >>> from sqlalchemy import Table, Column
->>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum, ForeignKey
+>>> from sqlalchemy import Integer, String, Date, Numeric, Enum, ForeignKey
 >>>
 >>>
 >>> DATABASE = 'sqlite:///:memory:'
@@ -140,7 +140,7 @@ a ``ForeignKey`` column. [#ytSQLAlchemy20]_
 ...     Column('id', Integer, primary_key=True),
 ...     Column('firstname', String(50), nullable=False),
 ...     Column('lastname', String(50), nullable=False),
-...     Column('born', DateTime),
+...     Column('born', Date),
 ...     Column('height', Integer),
 ...     Column('weight', Numeric(3,2)),
 ...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
@@ -161,12 +161,12 @@ a ``ForeignKey`` column. [#ytSQLAlchemy20]_
 
 Use Case - 0x03
 ---------------
-``ForeignKey`` is a shortcut for ``ForeignKeyConstraint`` which should be used
-for composite references. [#ytSQLAlchemy20]_
+``ForeignKey`` is a shortcut for ``ForeignKeyConstraint`` which should be
+used for composite references. [#ytSQLAlchemy20]_
 
 >>> from sqlalchemy import ForeignKeyConstraint
 >>> from sqlalchemy import Table, Column
->>> from sqlalchemy import Text, Integer, String
+>>> from sqlalchemy import Text, Integer, String, Date
 >>>
 >>>
 >>> DATABASE = 'sqlite:///:memory:'
@@ -182,7 +182,7 @@ for composite references. [#ytSQLAlchemy20]_
 >>>
 >>> published_table = Table('published', metadata,
 ...     Column('pub_id', Integer, primary_key=True),
-...     Column('pub_timestamp', DateTime, nullable=True),
+...     Column('pub_timestamp', Date, nullable=True),
 ...     Column('story_id', Integer),
 ...     Column('version_id', Integer),
 ...     ForeignKeyConstraint(

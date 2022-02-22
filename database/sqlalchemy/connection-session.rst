@@ -1,9 +1,11 @@
 Connection Session
 ==================
 
-* Session manages persistence operations for ORM-mapped objects
-* 1.0 style (legacy)
-* 2.0 style (with context managers)
+.. important::
+
+    * Session manages persistence operations for ORM-mapped objects
+    * 1.0 style (legacy)
+    * 2.0 style (with context managers)
 
 
 Rationale
@@ -64,17 +66,12 @@ Or using a bit more verbose, but explicit syntax:
 
 2.x Style
 ---------
->>> Session = sessionmaker(engine)
->>>
->>> with Session() as session:
-...     # do something
-
 Context manager on ``with`` block exit will commit transaction and close the
 session automatically:
 
 >>> Session = sessionmaker(engine)
 >>>
->>> with Session.begin() as session:
+>>> with Session().begin() as session:
 ...     # do something
 
 
@@ -87,7 +84,7 @@ Example
 >>> DATABASE = 'sqlite:///:memory:'
 >>>
 >>> engine = create_engine(DATABASE)
->>> session = sessionmaker(bind=engine).__call__()
+>>> Session = sessionmaker(bind=engine)
 >>>
->>> with session.begin() as db:
+>>> with Session().begin() as db:
 ...     db.execute('SELECT * FROM users')

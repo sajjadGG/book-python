@@ -2,9 +2,14 @@ Core Model
 ==========
 
 
+.. important::
+
+    * Models represents database entities (tables)
+    * Metadata represents connection between Python object and a database
+
+
 Rationale
 ---------
-* Models represents database entities (tables)
 
 
 SetUp
@@ -20,9 +25,8 @@ Note, that we will use future flag to turn on the 2.0 compatibility mode.
 
 Metadata
 --------
-* Metadata represents connection between Python object and a database
-
-Create Metadata object:
+Metadata represents connection between Python object and a database. In
+order to create a Metadata object import it from sqlalchemy:
 
 >>> from sqlalchemy import MetaData
 >>>
@@ -32,14 +36,14 @@ Create Metadata object:
 Database Model
 --------------
 >>> from sqlalchemy import  Table, Column
->>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
+>>> from sqlalchemy import Integer, String, Date, Numeric, Enum
 >>>
 >>>
 >>> astronaut = Table('astronaut', metadata,
 ...     Column('id', Integer, primary_key=True),
 ...     Column('firstname', String(50), nullable=False),
 ...     Column('lastname', String(50), nullable=False),
-...     Column('born', DateTime),
+...     Column('born', Date),
 ...     Column('height', Integer),
 ...     Column('weight', Numeric(3,2)),
 ...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
@@ -65,8 +69,8 @@ database table with the same name already exists):
         id INTEGER NOT NULL,
         firstname VARCHAR(50) NOT NULL,
         lastname VARCHAR(50) NOT NULL,
-        born DATETIME,
-        height INTEGER,
+        born DATE,
+        height NUMERIC(3, 2),
         weight NUMERIC(3, 2),
         agency VARCHAR(9),
         PRIMARY KEY (id)
@@ -77,7 +81,7 @@ database table with the same name already exists):
 Recap
 -----
 >>> from sqlalchemy import create_engine, MetaData, Table, Column
->>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
+>>> from sqlalchemy import Integer, String, Date, Numeric, Enum, Float
 >>>
 >>>
 >>> engine = create_engine('sqlite:///:memory:', future=True)
@@ -88,10 +92,10 @@ Recap
 ...     Column('firstname', String(50), nullable=False),
 ...     Column('lastname', String(50), nullable=False),
 ...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
-...     Column('born', DateTime),
+...     Column('born', Date),
 ...     Column('age', Integer),
-...     Column('height', Numeric(3,2)),
-...     Column('weight', Numeric(3,2)),
+...     Column('height', Float(3,2)),
+...     Column('weight', Float(3,2)),
 ... )
 >>>
 >>> with engine.begin() as db:

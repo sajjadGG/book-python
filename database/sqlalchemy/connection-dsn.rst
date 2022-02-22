@@ -3,7 +3,8 @@ Connection DSN
 
 .. important::
 
-    * Database Source Name
+    * DSN - Database Source Name
+    * Format: ``db://user:password@host:port/database?opt1=val1&opt2=val2``
     * :rfc:`1738` -- Uniform Resource Locators (URL) [#RFC1738]_
 
 

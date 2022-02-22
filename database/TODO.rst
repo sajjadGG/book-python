@@ -129,12 +129,10 @@ Problemy
     from sqlalchemy.ext.declarative import declarative_base
     from sqlalchemy.orm import sessionmaker
 
-
     DATABASE = 'sqlite:///:memory:'
-
     engine = create_engine(DATABASE, future=True)
+    Session = sessionmaker(engine)
     Model = declarative_base()
-
 
     class User(Model):
         __tablename__ = 'users'
@@ -142,25 +140,25 @@ Problemy
         firstname = Column(String, nullable=False)
         lastname = Column(String, nullable=False)
 
-        def __init__(self, firstname, lastname):
-            self.firstname = firstname
-            self.lastname = lastname
-
-
-    Model.metadata.create_all(engine)
-
-
-    with sessionmaker(engine).begin() as session:
-        session.add_all([
-            User('Mark', 'Watney'),
-            User('Melissa', 'Lewis'),
-            User('Rick', 'Martinez'),
-            User('Alex', 'Vogel'),
-            User('Beth', 'Johanssen'),
-            User('Chris', 'Beck'),
+    with Session.begin() as db:
+        Model.metadata.create_all(engine)
+        db.add_all([
+            User(firstname='Mark', lastname='Watney'),
+            User(firstname='Melissa', lastname='Lewis'),
+            User(firstname='Rick', lastname='Martinez'),
+            User(firstname='Alex', lastname='Vogel'),
+            User(firstname='Beth', lastname='Johanssen'),
+            User(firstname='Chris', lastname='Beck'),
         ])
 
-    with engine.begin() as db:
+    with Session.begin() as db:
         result = db.execute(text('SELECT * FROM users'))
         for row in result.all():
             print(row)
+
+    # (1, 'Mark', 'Watney')
+    # (2, 'Melissa', 'Lewis')
+    # (3, 'Rick', 'Martinez')
+    # (4, 'Alex', 'Vogel')
+    # (5, 'Beth', 'Johanssen')
+    # (6, 'Chris', 'Beck')

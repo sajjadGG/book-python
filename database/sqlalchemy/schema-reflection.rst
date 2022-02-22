@@ -1,11 +1,13 @@
 Schema Reflection
 =================
 
+.. important::
+
+    * SQLAlchemy allows for database reflection
+
 
 Rationale
 ---------
-* SQLAlchemy allows for database reflection
-
 .. glossary::
 
     Reflection
@@ -20,8 +22,9 @@ code) for you based on introspected tables. This is more robust solution.
 
 Reflection
 ----------
-"Reflection" refers to loading Table objects based on reading from an existing
-database. In order to create a reflection, first create empty metadata object:
+"Reflection" refers to loading Table objects based on reading from an
+existing database. In order to create a reflection, first create empty
+metadata object:
 
 >>> metadata2 = MetaData()
 
@@ -69,7 +72,7 @@ Or get information about columns:
 [{'name': 'id', 'type': INTEGER(), 'nullable': False, 'default': None, 'autoincrement': 'auto', 'primary_key': 1},
  {'name': 'firstname', 'type': VARCHAR(length=50), 'nullable': False, 'default': None, 'autoincrement': 'auto', 'primary_key': 0},
  {'name': 'lastname', 'type': VARCHAR(length=50), 'nullable': False, 'default': None, 'autoincrement': 'auto', 'primary_key': 0},
- {'name': 'born', 'type': DATETIME(), 'nullable': True, 'default': None, 'autoincrement': 'auto', 'primary_key': 0},
+ {'name': 'born', 'type': DATE(), 'nullable': True, 'default': None, 'autoincrement': 'auto', 'primary_key': 0},
  {'name': 'height', 'type': INTEGER(), 'nullable': True, 'default': None, 'autoincrement': 'auto', 'primary_key': 0},
  {'name': 'weight', 'type': NUMERIC(precision=3, scale=2), 'nullable': True, 'default': None, 'autoincrement': 'auto', 'primary_key': 0},
  {'name': 'agency', 'type': VARCHAR(length=9), 'nullable': True, 'default': None, 'autoincrement': 'auto', 'primary_key': 0}]
@@ -108,7 +111,7 @@ are then in the metadata.tables collection:
 FacadeDict({
     'published': Table('published', MetaData(),
                     Column('pub_id', INTEGER(), table=<published>, primary_key=True, nullable=False),
-                    Column('pub_timestamp', DATETIME(), table=<published>),
+                    Column('pub_timestamp', Date(), table=<published>),
                     Column('story_id', INTEGER(), ForeignKey('story.story_id'), table=<published>),
                     Column('version_id', INTEGER(), ForeignKey('story.version_id'), table=<published>), schema=None),
     'story': Table('story', MetaData(),
@@ -134,12 +137,12 @@ Table('story', MetaData(),
 >>> published  # doctest: +NORMALIZE_WHITESPACE
 Table('published', MetaData(),
       Column('pub_id', INTEGER(), table=<published>, primary_key=True, nullable=False),
-      Column('pub_timestamp', DATETIME(), table=<published>),
+      Column('pub_timestamp', DATE(), table=<published>),
       Column('story_id', INTEGER(), ForeignKey('story.story_id'), table=<published>),
       Column('version_id', INTEGER(), ForeignKey('story.version_id'), table=<published>), schema=None)
 
-This is useful if you have an existing database and you want to write queries
-against it.
+This is useful if you have an existing database and you want to write
+queries against it.
 
 >>> query = select(story).join(published)
 >>> print(query)

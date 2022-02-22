@@ -1,39 +1,24 @@
 """
-* Assignment: Database Model FlowerShop
+* Assignment: Database Model Iris
 * Complexity: medium
-* Lines of code: 50 lines
+* Lines of code: 20 lines
 * Time: 21 min
 
 English:
-    1. Create project `flowershop`
-    2. Create app `flower`
-    3. Create model `Iris` with fields:
-        a. sepal_length
-        b. sepal_width
-        c. petal_length
-        d. petal_width
-        e. species (with choices)
-        f. image
-    4. Generate admin panel
-    5. Add search by species
-    6. Add filter by species
-    7. Run doctests - all must succeed
+    1. Create model `Iris` based on `DATA`
 
 Polish:
-    1. Stwórz projekt `flowershop`
-    2. Stwórz apkę `flower`
-    3. Stwórz model `Iris` z polami:
-        a. sepal_length
-        b. sepal_width
-        c. petal_length
-        d. petal_width
-        e. species (z choices)
-        f. image
-    4. Wygeneruj panel administracyjny
-    5. Dodaj wyszukiwarkę po gatunku
-    6. Dodaj filtrowanie po nazwie gatunku
-    7. Uruchom doctesty - wszystkie muszą się powieść
+    1. Stwórz model `Iris` bazujący na `DATA`
+
+TODO: Automated tests
 """
 
+DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
 # Solution

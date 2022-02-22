@@ -13,7 +13,7 @@ Rationale
 SetUp
 -----
 >>> from sqlalchemy import create_engine, MetaData, Table, Column
->>> from sqlalchemy import Integer, String, DateTime, Numeric, Enum
+>>> from sqlalchemy import Integer, String, Date, Numeric, Enum
 >>> from sqlalchemy import select
 >>>
 >>>
@@ -25,7 +25,7 @@ SetUp
 ...     Column('firstname', String(50), nullable=False),
 ...     Column('lastname', String(50), nullable=False),
 ...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
-...     Column('born', DateTime),
+...     Column('born', Date),
 ...     Column('age', Integer),
 ...     Column('height', Numeric(3,2)),
 ...     Column('weight', Numeric(3,2)),
