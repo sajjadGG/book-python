@@ -20,9 +20,10 @@ Data Source Name
         connection to a data source [#wikipediaDataSourceName]_
 
 Most commonly used in connection with ODBC, DSNs also exist for JDBC and for
-other data access mechanisms. The term often overlaps with "connection string".
-Most systems do not make a distinction between DSNs or connection strings and
-the term can often be used interchangeably [#wikipediaDataSourceName]_.
+other data access mechanisms. The term often overlaps with "connection
+string". Most systems do not make a distinction between DSNs or connection
+strings and the term can often be used interchangeably
+[#wikipediaDataSourceName]_.
 
 DSN attributes may include, but are not limited to:
 
@@ -32,7 +33,8 @@ DSN attributes may include, but are not limited to:
     * a user ID for data access (if required)
     * a user password for data access (if required)
 
-The system administrator of a client machine generally creates a separate DSN for each relevant data source.
+The system administrator of a client machine generally creates a separate
+DSN for each relevant data source.
 
 Example:
 
@@ -88,9 +90,9 @@ Aiosqlite:
           >>> DATABASE = 'sqlite+aiosqlite:///myfile.db'
           >>> engine = create_async_engine(DATABASE)
 
-SQLite does not have built-in DATE, TIME, or DATETIME types, and pysqlite does
-not provide out of the box functionality for translating values between Python
-datetime objects and a SQLite-supported format.
+SQLite does not have built-in DATE, TIME, or DATETIME types, and pysqlite
+does not provide out of the box functionality for translating values
+between Python datetime objects and a SQLite-supported format.
 
 
 PostgreSQL
@@ -173,14 +175,15 @@ MySQL connection using PyMSQL driver:
 
 The MariaDB variant of MySQL retains fundamental compatibility with MySQL's
 protocols however the development of these two products continues to diverge
-To connect to a MariaDB database, no changes to the database URL are required:
+To connect to a MariaDB database, no changes to the database URL are
+required:
 
 >>> DATABASE = 'mysql+pymysql://myusername:mypassword@myhost/mydatabase:3306?charset=utf8mb4'
 
-Upon first connect, the SQLAlchemy dialect employs a server version detection
-scheme that determines if the backing database reports as MariaDB. Based on
-this flag, the dialect can make different choices in those of areas where its
-behavior must be different.
+Upon first connect, the SQLAlchemy dialect employs a server version
+detection scheme that determines if the backing database reports as
+MariaDB. Based on this flag, the dialect can make different choices in
+those of areas where its behavior must be different.
 
 MariaDB-Only Mode:
 
