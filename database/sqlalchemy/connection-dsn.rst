@@ -2,7 +2,7 @@ Connection DSN
 ==============
 
 * Database Source Name
-* :rfc:`1738` -- Uniform Resource Locators (URL) [RFC1738]_
+* :rfc:`1738` -- Uniform Resource Locators (URL) [#RFC1738]_
 
 
 Rationale
