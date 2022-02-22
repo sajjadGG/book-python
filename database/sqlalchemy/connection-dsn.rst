@@ -1,6 +1,9 @@
 Connection DSN
 ==============
 
+* Database Source Name
+* :rfc:`1738` -- Uniform Resource Locators (URL) [RFC1738]_
+
 
 Rationale
 ---------
@@ -275,6 +278,7 @@ URL Create
 ----------
 >>> from sqlalchemy.engine import URL
 >>>
+>>>
 >>> DATABASE = URL.create(
 ...     drivername='mssql+pyodbc',
 ...     username='myusername',
@@ -287,10 +291,9 @@ URL Create
 ...         'authentication': 'ActiveDirectoryIntegrated',
 ...     },
 ... )
-
-Will generate:
-
->>> DATABASE = 'mssql+pyodbc://myusername:mypassword@myhost:49242/mydatabase?driver=ODBC+Driver+17+for+SQL+Server&authentication=ActiveDirectoryIntegrated'
+>>>
+>>> print(DATABASE)
+mssql+pyodbc://myusername:mypassword@myhost:49242/mydatabase?driver=ODBC+Driver+17+for+SQL+Server&authentication=ActiveDirectoryIntegrated
 
 
 Good Practice
@@ -304,3 +307,4 @@ References
 .. [#sqlalchemyPostgresql] https://docs.sqlalchemy.org/en/stable/dialects/postgresql.html
 .. [#githubAsyncpg] https://magicstack.github.io/asyncpg/
 .. [#wikipediaDataSourceName] https://en.wikipedia.org/wiki/Data_source_name
+.. [#RFC1738] Berners-Lee, T. Uniform Resource Locators (URL). Year: 1994. Retrieved: 2022-02-22. URL: https://datatracker.ietf.org/doc/html/rfc1738

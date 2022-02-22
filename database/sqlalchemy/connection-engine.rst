@@ -103,6 +103,27 @@ Example
 ...     db.execute('SELECT * FROM users')
 
 
+Show Parameters
+---------------
+>>> from sqlalchemy import create_engine
+>>>
+>>>
+>>> DATABASE = 'postgresql+psycopg2://mwatney:nasa@localhost:5432/ares3?charset=utf8'
+>>>
+>>> engine = create_engine(DATABASE)
+>>>
+>>> args, kwargs = engine.dialect.create_connect_args(engine.url)
+>>> args
+[]
+>>> kwargs  # doctest: +NORMALIZE_WHITESPACE
+{'host': 'localhost',
+ 'database': 'ares3',
+ 'user': 'mwatney',
+ 'password': 'nasa',
+ 'port': 5432,
+ 'charset': 'utf8'}
+
+
 Further Reading
 ---------------
 * https://docs.sqlalchemy.org/en/stable/core/engines.html#sqlalchemy.create_engine.params.connect_args

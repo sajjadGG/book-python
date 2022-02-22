@@ -12,6 +12,7 @@
 
     --code-background: #12141A;
     --code-border: none;
+    --code-literal: #51cc99;
     --code-text: #bdc7d0;
     --code-highlight: #12141A;
     --code-output: #b92424;
@@ -223,7 +224,7 @@
     .highlight .il { color: #4FB8CC } /* Literal.Number.Integer.Long */
 
     /* code listings */
-    code.literal {color: var(--code-text) !important; background: var(--code-background) !important; border: 1px solid var(--code-border); padding-left: 0.5rem; padding-right: 0.5rem; font-family: monospace}
+    code.literal {color: var(--code-literal) !important; background: none !important; border: none; font-weight: normal !important; font-size: 90%; padding: 0; margin: 0}
     .highlight {background: var(--code-background); border: var(--code-border)}
     .highlight .hll {background-color: var(--code-highlight)}
     .rst-content div[class^=highlight], .rst-content pre.literal-block {border: var(--code-border)}

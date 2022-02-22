@@ -1,12 +1,13 @@
 Connection Session
 ==================
 
-
-Rationale
----------
+* Session manages persistence operations for ORM-mapped objects
 * 1.0 style (legacy)
 * 2.0 style (with context managers)
 
+
+Rationale
+---------
 .. glossary::
 
     session
@@ -26,17 +27,18 @@ Sessionmaker
 ------------
 * ``Session`` manages persistence operations for ORM-mapped objects
 
-``sessionmaker`` acts as a factory for ``Session`` objects in the same way as
-an ``Engine`` acts as a factory for ``Connection`` objects. In this way it also
-includes a ``sessionmaker.begin()`` method, that provides a context manager
-which both begins and commits a transaction, as well as closes out the
-``Session`` when complete, rolling back the transaction if any errors occur.
+``sessionmaker`` acts as a factory for ``Session`` objects in the same way
+as an ``Engine`` acts as a factory for ``Connection`` objects. In this way
+it also includes a ``sessionmaker.begin()`` method, that provides a context
+manager which both begins and commits a transaction, as well as closes out
+the ``Session`` when complete, rolling back the transaction if any errors
+occur.
 
-Factory function ``sessionmaker()`` will return a **class**. In order to create
-a session this class has to be called. There are several ways how to do that.
-You can either capture the class from session maker, instantiate it and then
-assign to identifier (variable) or you can do it step by step having
-intermediate objects.
+Factory function ``sessionmaker()`` will return a **class**. In order to
+create a session this class has to be called. There are several ways how to
+do that. You can either capture the class from session maker, instantiate
+it and then assign to identifier (variable) or you can do it step by step
+having intermediate objects.
 
 In order to use ``sessionmaker()`` you have to import it:
 
