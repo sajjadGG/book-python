@@ -3,12 +3,12 @@ Connection Engine
 
 
 * ``create_engine()`` builds a factory for database connections
+* ``create_engine()`` uses Database Source Name (DSN) for configuration
 * ``echo=True`` - if True, the Engine will log all statements to stdout
 * ``future=True`` - v2.0 compatibility mode (works only in v1.4)
-* Uses Database Source Name (DSN) for connection
 * Engine is lazily connected
-* Supports context managers ``with`` block
-* ``.connect()`` method explicitly connects to database
+* Engine object supports context managers ``with`` block
+* ``engine.connect()`` method explicitly connects to the database
 
 
 Rationale
@@ -40,7 +40,7 @@ Parameters
 ----------
 * ``echo=True`` - if True, the Engine will log all statements to stdout
 * ``future=True`` - v2.0 compatibility mode (works only in v1.4)
-* Full List: https://docs.sqlalchemy.org/en/stable/core/engines.html#sqlalchemy.create_engine.params.connect_args
+* Full List [#saDocsCreateEngine]_
 
 
 1.x Style
@@ -52,6 +52,7 @@ the previous versions:
 >>> from sqlalchemy import create_engine
 >>>
 >>>
+>>> DATABASE = 'sqlite:///:memory:'
 >>> engine = create_engine(DATABASE)
 >>>
 >>> type(engine)
@@ -67,6 +68,7 @@ object to the ``future.engine``:
 >>> from sqlalchemy import create_engine
 >>>
 >>>
+>>> DATABASE = 'sqlite:///:memory:'
 >>> engine = create_engine(DATABASE, future=True)
 >>>
 >>> type(engine)
@@ -81,6 +83,9 @@ on explicit ``.connect()`` method call.
 
 >>> from sqlalchemy import create_engine
 >>>
+>>>
+>>> DATABASE = 'sqlite:///:memory:'
+>>> engine = create_engine(DATABASE, future=True)
 >>>
 >>> with engine.connect() as db:
 ...     # do something
@@ -101,3 +106,13 @@ Example
 Further Reading
 ---------------
 * https://docs.sqlalchemy.org/en/stable/core/engines.html#sqlalchemy.create_engine.params.connect_args
+
+
+References
+----------
+.. [#saDocsCreateEngine]
+   Author: SQLAlchemy authors and contributors.
+   Title: Engine Creation API.
+   Year: 2022.
+   Retrieved: 2022-02-22.
+   URL: https://docs.sqlalchemy.org/en/stable/core/engines.html#sqlalchemy.create_engine.params.connect_args
