@@ -1,5 +1,5 @@
-OOP Class Creation
-==================
+OOP Class Factory
+=================
 
 
 Class Definition
@@ -235,3 +235,10 @@ Use Case - Dynamic Classes 2
  'petal_length': None,
  'petal_width': None,
  'species': None}
+
+
+Assignments
+-----------
+.. literalinclude:: assignments/oop_classfactory_a.py
+    :caption: :download:`Solution <assignments/oop_classfactory_a.py>`
+    :end-before: # Solution

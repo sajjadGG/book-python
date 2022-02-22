@@ -351,18 +351,18 @@ b'\x94\x8c\x08lastname\x94\x8c\x06Watney\x94ub.'
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_composition_a.py
-    :caption: :download:`Solution <assignments/oop_composition_a.py>`
+.. literalinclude:: assignments/oop_inheritance_a.py
+    :caption: :download:`Solution <assignments/oop_inheritance_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_composition_b.py
-    :caption: :download:`Solution <assignments/oop_composition_b.py>`
+.. literalinclude:: assignments/oop_inheritance_b.py
+    :caption: :download:`Solution <assignments/oop_inheritance_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_composition_c.py
-    :caption: :download:`Solution <assignments/oop_composition_c.py>`
+.. literalinclude:: assignments/oop_inheritance_c.py
+    :caption: :download:`Solution <assignments/oop_inheritance_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_composition_d.py
-    :caption: :download:`Solution <assignments/oop_composition_d.py>`
+.. literalinclude:: assignments/oop_inheritance_d.py
+    :caption: :download:`Solution <assignments/oop_inheritance_d.py>`
     :end-before: # Solution

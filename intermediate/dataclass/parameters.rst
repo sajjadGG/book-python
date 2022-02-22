@@ -243,3 +243,51 @@ Slots
 If true, __slots__ attribute will be generated and new class will be returned
 instead of the original one. If __slots__ is already defined in the class,
 then TypeError is raised.
+
+>>> @dataclass(slots=True)
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     __slots__ = ('firstname', 'lastname')
+...
+...     def say_hello(self):
+...         return f'Hello {self.firstname} {self.lastname}'
+...
+TypeError: Astronaut already specifies __slots__
+
+@dataclass(slots=True)
+class Astronaut:
+    firstname: str
+    lastname: str
+
+    def say_hello(self):
+        return f'Hello {self.firstname} {self.lastname}'
+
+vars(Astronaut)
+mappingproxy({'__module__': '__main__',
+              '__annotations__': {'firstname': str, 'lastname': str},
+              'say_hello': <function __main__.Astronaut.sey_hello(self)>,
+              '__weakref__': <attribute '__weakref__' of 'Astronaut' objects>,
+              '__doc__': 'Astronaut(firstname: str, lastname: str)',
+              '__dataclass_params__': _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False),
+              '__dataclass_fields__': {'firstname': Field(name='firstname',type=<class 'str'>,default=<dataclasses._MISSING_TYPE object at 0x10f788820>,default_factory=<dataclasses._MISSING_TYPE object at 0x10f788820>,init=True,repr=True,hash=None,compare=True,metadata=mappingproxy({}),kw_only=False,_field_type=_FIELD),
+               'lastname': Field(name='lastname',type=<class 'str'>,default=<dataclasses._MISSING_TYPE object at 0x10f788820>,default_factory=<dataclasses._MISSING_TYPE object at 0x10f788820>,init=True,repr=True,hash=None,compare=True,metadata=mappingproxy({}),kw_only=False,_field_type=_FIELD)},
+              '__init__': <function __main__.Astronaut.__init__(self, firstname: str, lastname: str) -> None>,
+              '__repr__': <function __main__.Astronaut.__repr__(self)>,
+              '__eq__': <function __main__.Astronaut.__eq__(self, other)>,
+              '__hash__': None,
+              '__match_args__': ('firstname', 'lastname'),
+              '__slots__': ('firstname', 'lastname'),
+              'firstname': <member 'firstname' of 'Astronaut' objects>,
+              'lastname': <member 'lastname' of 'Astronaut' objects>})
+a = Astronaut()
+TypeError: Astronaut.__init__() missing 2 required positional arguments: 'firstname' and 'lastname'
+a = Astronaut('Mark', 'Watney')
+a
+Astronaut(firstname='Mark', lastname='Watney')
+vars(a)
+TypeError: vars() argument must have __dict__ attribute
+a.__slots__
+('firstname', 'lastname')
+{attrname: getattr(a, attrname) for attrname in a.__slots__}
+{'firstname': 'Mark', 'lastname': 'Watney'}

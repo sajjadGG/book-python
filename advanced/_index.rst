@@ -86,7 +86,7 @@ Object Oriented Programming
     oop/identity.rst
     oop/slots.rst
     oop/constructor.rst
-    oop/class-creation.rst
+    oop/class-factory.rst
     oop/metaclass.rst
 
 

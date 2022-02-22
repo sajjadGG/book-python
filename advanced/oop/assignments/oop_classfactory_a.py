@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Access Dict
+* Assignment: OOP ClassFactory Iris
 * Complexity: medium
 * Lines of code: 8 lines
 * Time: 8 min
@@ -91,7 +91,7 @@ result = [iris(*features)
           and (iris := globals()[classname])]
 
 
-# Solution 2
+# Alternative Solution
 result = []
 for *features, label in DATA[1:]:
     if label == 'setosa':
@@ -100,4 +100,14 @@ for *features, label in DATA[1:]:
         iris = Virginica(*features)
     elif label == 'versicolor':
         iris = Versicolor(*features)
+    result.append(iris)
+
+# Alternative Solution
+result = []
+for *values, species in DATA[1:]:
+    match species:
+        case 'virginica':   iris = Virginica(*values)
+        case 'setosa':      iris = Setosa(*values)
+        case 'versicolor':  iris = Versicolor(*values)
+        case _:             raise NotImplementedError
     result.append(iris)

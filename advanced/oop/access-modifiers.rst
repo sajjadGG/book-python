@@ -151,6 +151,64 @@ Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute '__lastname'
 
 
+
+Name Mangling
+-------------
+>>> class Person:
+...     def hello(self):
+...         return 'hello Person'
+>>>
+>>>
+>>> class Astronaut(Person):
+...     def hello(self):
+...         return 'hello Astronaut'
+>>>
+>>>
+>>> astro = Astronaut()
+>>> astro.hello()
+'hello Astronaut'
+
+>>> class Person:
+...     def __hello(self):
+...         return 'hello Person'
+>>>
+>>>
+>>> class Astronaut(Person):
+...     def __hello(self):
+...         return 'hello Astronaut'
+>>>
+>>>
+>>> astro = Astronaut()
+>>> astro._Astronaut__hello()
+'hello Astronaut'
+>>> astro._Person__hello()
+'hello Person'
+
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Person:
+...     __firstname: str
+...     __lastname: str
+>>>
+>>> @dataclass
+... class Astronaut(Person):
+...     __firstname: str
+...     __lastname: str
+>>>
+>>> astro = Astronaut('Mark', 'Watney')
+>>> TypeError: Astronaut.__init__() missing 2 required positional arguments: '_Astronaut__firstname' and '_Astronaut__lastname'
+>>>
+>>> astro = Astronaut('Mark', 'Watney', 'Melissa', 'Lewis')
+>>>
+>>> vars(astro)
+{'_Person__firstname': 'Mark',
+ '_Person__lastname': 'Watney',
+ '_Astronaut__firstname': 'Melissa',
+ '_Astronaut__lastname': 'Lewis'}
+
+
 Show Attributes
 ---------------
 * ``vars()`` display ``obj.__dict__``
@@ -346,8 +404,4 @@ Assignments
 
 .. literalinclude:: assignments/oop_accessmodifiers_c.py
     :caption: :download:`Solution <assignments/oop_accessmodifiers_c.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/oop_accessmodifiers_d.py
-    :caption: :download:`Solution <assignments/oop_accessmodifiers_d.py>`
     :end-before: # Solution
