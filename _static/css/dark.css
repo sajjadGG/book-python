@@ -34,6 +34,7 @@
     --warning: #CF6679;
     --tip: #45C587;
     --note: #6371AC;
+    --important: #12141A;
 
     --menu-width: 300px;
     --content-width: 800px;
@@ -156,6 +157,10 @@
     /* infobox - todo */
     .admonition-todo {background: none !important; border: 1px solid var(--todo)}
     .admonition-todo .admonition-title {background: var(--todo) !important}
+
+    /* infobox - important */
+    .admonition-important {background: none !important; border: 1px solid var(--important)}
+    .admonition-important .admonition-title {background: var(--important) !important}
 
     /* buttons on bottom (next, prev)*/
     .btn-neutral {color: var(--links) !important;background: none !important;border: 0; box-shadow: none}

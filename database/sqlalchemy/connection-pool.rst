@@ -1,6 +1,15 @@
 Connection Pool
 ===============
 
+.. important::
+
+    * Establishing a new database connection is time consuming
+    * Connection Pool - a collection of connections, which lives longer than requests
+    * Establish several connections at the beginning
+    * Add them to the so called 'connection pool'
+    * Use them for request processing
+    * After request is process the connection is returned to the pool
+
 
 Rationale
 ---------

@@ -112,10 +112,11 @@ Show Parameters
 >>> DATABASE = 'postgresql+psycopg2://mwatney:nasa@localhost:5432/ares3?charset=utf8'
 >>>
 >>> engine = create_engine(DATABASE)
->>>
 >>> args, kwargs = engine.dialect.create_connect_args(engine.url)
+>>>
 >>> args
 []
+>>>
 >>> kwargs  # doctest: +NORMALIZE_WHITESPACE
 {'host': 'localhost',
  'database': 'ares3',
