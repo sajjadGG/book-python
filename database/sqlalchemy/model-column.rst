@@ -1,6 +1,26 @@
 Model Column
 ============
 
+.. important::
+
+    * ``name=None``
+    * ``type_=None``
+    * ``autoincrement='auto'``
+    * ``default=None``
+    * ``doc=None``
+    * ``key=name``
+    * ``index=None``
+    * ``info=None``
+    * ``nullable=True``
+    * ``onupdate=None``
+    * ``primary_key=False``
+    * ``server_default=None``
+    * ``server_onupdate=None``
+    * ``quote=None``
+    * ``unique=None``
+    * ``system=False``
+    * ``comment=None``
+
 
 Rationale
 ---------

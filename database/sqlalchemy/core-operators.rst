@@ -1,6 +1,18 @@
 Core Operators
 ==============
 
+.. important::
+
+    * ``=`` - equals
+    * ``!=`` - not equals
+    * ``>`` - greater then
+    * ``>=`` - greater or equal to
+    * ``<`` - less then
+    * ``<=`` - less or equal to
+    * ``between()`` - in between two values or dates
+    * Use ``!=`` and ``==`` instead ``is`` and ``is not``
+    * There is no ``in`` and ``not in`` operator overload
+
 
 SetUp
 -----
@@ -113,6 +125,9 @@ astronaut.id >= :id_1 AND astronaut.firstname != :firstname_1 AND astronaut.born
 
 Null Checking
 -------------
+* Note ``!=`` and ``==`` instead ``is`` and ``is not``
+* You can easily overload ``!=`` and ``==`` operators
+
 Compare to None produce ``IS NULL`` / ``IS NOT NULL``
 
 >>> criteria = and_(
@@ -147,6 +162,8 @@ astronaut.firstname || :firstname_1
 
 Membership Operators
 --------------------
+* Note, there is no ``in`` and ``not in`` operator overload
+
 The ``IN`` operator generates a special placeholder that will be filled in
 when the statement is executed.
 

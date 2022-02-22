@@ -1,10 +1,17 @@
 Func About
 ==========
 
+.. important::
+
+    * Date Functions
+    * Group Functions
+    * Numeric Functions
+    * String Functions
+    * System Functions
+
 
 Rationale
 ---------
-* https://docs.sqlalchemy.org/en/stable/core/functions.html
 
 
 Date Functions
@@ -89,3 +96,8 @@ System Functions
     "``register_function``",     "Associate a callable with a particular func. name"
     "``ReturnTypeFromArgs``",    "Define a function whose return type is the same as its arguments"
     "``ScalarFunctionColumn``",  ""
+
+
+Further Reading
+---------------
+* https://docs.sqlalchemy.org/en/stable/core/functions.html

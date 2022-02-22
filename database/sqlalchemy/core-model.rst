@@ -100,3 +100,22 @@ Recap
 >>>
 >>> with engine.begin() as db:
 ...     metadata.create_all(db)
+
+
+Assignments
+-----------
+.. literalinclude:: assignments/database_model_a.py
+    :caption: :download:`Solution <assignments/database_model_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/database_model_b.py
+    :caption: :download:`Solution <assignments/database_model_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/database_model_c.py
+    :caption: :download:`Solution <assignments/database_model_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/database_model_d.py
+    :caption: :download:`Solution <assignments/database_model_d.py>`
+    :end-before: # Solution

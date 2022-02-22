@@ -4,15 +4,6 @@ Query Join
 
 Rationale
 ---------
-* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html
-* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#lazy-loading
-* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#joined-eager-loading
-* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#subquery-eager-loading
-* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#select-in-loading
-* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#what-kind-of-loading-to-use
-* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#wildcard-loading-strategies
-* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#relationship-loader-api
-
 >>> q = session.query(User).\
 ...         join(User.addresses).\
 ...         filter(Address.email_address.like('%@aol.com')).\
@@ -101,3 +92,15 @@ Use Case - 0x05
 >>> q = session.query(User).join(
 ...     subq, User.id == subq.c.user_id
 ... )
+
+
+Further Reading
+---------------
+* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html
+* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#lazy-loading
+* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#joined-eager-loading
+* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#subquery-eager-loading
+* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#select-in-loading
+* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#what-kind-of-loading-to-use
+* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#wildcard-loading-strategies
+* https://docs.sqlalchemy.org/en/stable/orm/loading_relationships.html#relationship-loader-api

@@ -1,19 +1,16 @@
 Model Base
 ==========
 
+.. important::
+
+    * Used for reflecting database tables in our program
+    * Allows to manage and alter database tables
+    * Declarative base (recommended)
+    * Imperative (a.k.a. Classical) Mappings
+
 
 Rationale
 ---------
-* Used for reflecting database tables in our program
-* Allows to manage and alter database tables
-* Declarative base (recommended)
-* Imperative (a.k.a. Classical) Mappings
-
-.. glossary::
-
-    base
-        Model responsible for mapping objects with database
-
 SQLAlchemy historically features two distinct styles of mapper
 configuration. The original mapping API is commonly referred to as
 "classical" style, whereas the more automated style of mapping is known as
@@ -21,6 +18,11 @@ configuration. The original mapping API is commonly referred to as
 imperative mapping and declarative mapping. Both styles may be used
 interchangeably, as the end result of each is exactly the same.
 [#sqlalchemyMappings]_
+
+.. glossary::
+
+    base
+        Model responsible for mapping objects with database
 
 
 Declarative Base
