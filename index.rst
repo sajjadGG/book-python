@@ -179,6 +179,7 @@ Dragon
     dragon/alpha.rst
     dragon/beta.rst
     dragon/rc.rst
+    dragon/architecture-decision-records.rst
 
 
 Appendixes

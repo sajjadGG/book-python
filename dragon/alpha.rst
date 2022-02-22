@@ -154,7 +154,7 @@ Solution
 --------
 * EN: Note, that this will spoil your fun and learning
 * PL: Zwróć uwagę, że to zepsuje Twoją zabawę i naukę
-* :download:`Architecture Decision Records <assignments/dragon_api_adr.py>`
+* :ref:`Architecture Decision Records`
 * :download:`Basic <assignments/dragon_alpha_basic.py>`
 * :download:`Intermediate <assignments/dragon_alpha_intermediate.py>`
 * :download:`Advanced <assignments/dragon_alpha_advanced.py>`
