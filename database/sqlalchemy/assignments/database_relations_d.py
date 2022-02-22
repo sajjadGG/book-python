@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Relations Nested
+* Assignment: Detabase Relations Nested
 * Complexity: medium
 * Lines of code: 7 lines
 * Time: 13 min

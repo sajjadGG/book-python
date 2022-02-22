@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Relations Flatten
+* Assignment: Detabase Relations Flatten
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 13 min

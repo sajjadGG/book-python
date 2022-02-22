@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Relations Model
+* Assignment: Detabase Relations Model
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 8 min
