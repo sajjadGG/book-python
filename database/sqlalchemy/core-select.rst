@@ -88,6 +88,17 @@ SELECT astronaut.firstname, astronaut.lastname
 FROM astronaut
 WHERE astronaut.firstname = :firstname_1 OR astronaut.firstname = :firstname_2
 
+>>> query = (
+...     select(astronaut.c.firstname, astronaut.c.lastname).
+...     where((astronaut.c.firstname == 'Mark')
+...         | (astronaut.c.firstname == 'Melissa'))
+... )
+>>>
+>>> print(query)
+SELECT astronaut.firstname, astronaut.lastname
+FROM astronaut
+WHERE astronaut.firstname = :firstname_1 OR astronaut.firstname = :firstname_2
+
 
 Where AND
 ---------
@@ -96,7 +107,18 @@ Where AND
 >>> query = (
 ...     select(astronaut.c.firstname, astronaut.c.lastname).
 ...     where(astronaut.c.firstname == 'Mark').
-...     where(astronaut.c.lastname == 'Watney').
+...     where(astronaut.c.lastname == 'Watney')
+... )
+>>>
+>>> print(query)
+SELECT astronaut.firstname, astronaut.lastname
+FROM astronaut
+WHERE astronaut.firstname = :firstname_1 AND astronaut.lastname = :lastname_1
+
+>>> query = (
+...     select(astronaut.c.firstname, astronaut.c.lastname).
+...     where((astronaut.c.firstname == 'Mark')
+...         & (astronaut.c.lastname == 'Watney'))
 ... )
 >>>
 >>> print(query)
