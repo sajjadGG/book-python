@@ -38,7 +38,7 @@ Tests:
               {"name": "Rick Martinez", "born": "1996-01-21"},
               {"name": "Alex Vogel", "born": "1994-11-15"},
               {"name": "Chris Beck", "born": "1999-08-02"},
-              {"name": "Beth Johansen", "born": "2006-05-09"},
+              {"name": "Beth Johanssen", "born": "2006-05-09"},
               {"name": "Mark Watney", "born": "1994-10-12"}]}
 """
 
@@ -56,7 +56,7 @@ DATA = {'mission': 'Ares 3',
             {'name': 'Rick Martinez', 'born': date(1996, 1, 21)},
             {'name': 'Alex Vogel', 'born': date(1994, 11, 15)},
             {'name': 'Chris Beck', 'born': date(1999, 8, 2)},
-            {'name': 'Beth Johansen', 'born': date(2006, 5, 9)},
+            {'name': 'Beth Johanssen', 'born': date(2006, 5, 9)},
             {'name': 'Mark Watney', 'born': date(1994, 10, 12)}]}
 
 

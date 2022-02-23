@@ -71,6 +71,89 @@ Iris features distribution:
 .. figure:: img/about-references-iris-grid.png
 
 
+CSV
+---
+>>> USERS = """firstname,lastname,gender,born,ssn,email,phone
+... Mark,Watney,male,1994-10-12,94101212345,mwatney@nasa.gov,+1 (234) 555-0000
+... Melissa,Lewis,female,1995-07-15,95071512345,mlewis@nasa.gov,+1 (234) 555-0001
+... Rick,Martinez,male,1996-01-21,96012112345,rmartinez@nasa.gov,+1 (234) 555-0010
+... Alex,Vogel,male,1994-11-15,94111512345,avogel@esa.int,+49 (234) 555-0011
+... Beth,Johanssen,female,2006-05-09,06250912345,bjohanssen@nasa.gov,+1 (234) 555-0100
+... Chris,Beck,male,1999-08-02,99080212345,cbeck@nasa.gov,+1 (234) 555-0101"""
+
+>>> ADDRESSES = """user,type,street,city,postcode,region,country
+... mwatney@nasa.gov,billing,2101 E NASA Pkwy,Houston,77058,Texas,USA
+... mwatney@nasa.gov,shipment,,Kennedy Space Center,32899,Florida,USA
+... mlewis@nasa.gov,shipment,Kamienica Pod św. Janem Kapistranem,Kraków,31008,Małopolskie,Poland
+... rmartinez@nasa.gov,billing,,Звёздный городо́к,141160,Московская область,Россия
+... rmartinez@nasa.gov,shipment,,Космодро́м Байкону́р,,Кызылординская область,Қазақстан
+... avogel@esa.int,shipment,Linder Hoehe,Köln,51147,North Rhine-Westphalia,Germany
+... bjohanssen@nasa.gov,shipment,2825 E Ave P,Palmdale,93550,California,USA
+... cbeck@nasa.gov,shipment,4800 Oak Grove Dr,Pasadena,91109,California,USA"""
+
+>>> PRODUCTS = """ean13,name,price
+... 5039271113244,Alfa,123.00
+... 5202038482222,Bravo,312.22
+... 5308443764554,Charlie,812.00
+... 5439667086587,Delta,332.18
+... 5527865721147,Echo,114.00
+... 5535686226512,Foxtrot,99.12
+... 5721668602638,Golf,123.00
+... 5776136485596,Hotel,444.40
+... 5863969679442,India,674.21
+... 5908105406923,Juliet,324.00
+... 5957751061635,Kilo,932.20
+... 6190780033092,Lima,128.00
+... 6512625994397,Mike,91.00
+... 6518235371269,November,12.00
+... 6565923118590,Oscar,43.10
+... 6650630136545,Papa,112.00
+... 6692669560199,Quebec,997.10
+... 6711341590108,Romeo,1337.00
+... 6816011714454,Sierra,998.10
+... 7050114819954,Tango,123.00
+... 7251625012784,Uniform,564.99
+... 7251925199277,Victor,990.50
+... 7283004100423,Whisky,881.89
+... 7309682004683,X-Ray,123.63
+... 7324670042560,Zulu,311.00"""
+
+>>> ORDERS = """user,product
+... mwatney@nasa.gov,Sierra
+... mwatney@nasa.gov,Victor
+... bjohanssen@nasa.gov,Delta
+... mlewis@nasa.gov,November
+... rmartinez@nasa.gov,Mike
+... mwatney@nasa.gov,Bravo
+... mwatney@nasa.gov,Kilo
+... avogel@esa.int,Victor
+... bjohanssen@nasa.gov,Romeo
+... bjohanssen@nasa.gov,Whisky
+... cbeck@nasa.gov,Zulu
+... mwatney@nasa.gov,Romeo
+... avogel@esa.int,Romeo
+... bjohanssen@nasa.gov,Victor
+... bjohanssen@nasa.gov,Whisky
+... mlewis@nasa.gov,Whisky
+... rmartinez@nasa.gov,Mike
+... mwatney@nasa.gov,November
+... mwatney@nasa.gov,Kilo
+... avogel@esa.int,Bravo
+... bjohanssen@nasa.gov,X-Ray
+... avogel@esa.int,Romeo
+... bjohanssen@nasa.gov,Victor
+... bjohanssen@nasa.gov,India
+... mlewis@nasa.gov,Juliet
+... rmartinez@nasa.gov,Foxtrot
+... avogel@esa.int,Victor
+... bjohanssen@nasa.gov,Romeo
+... bjohanssen@nasa.gov,Whisky
+... cbeck@nasa.gov,Zulu
+... mwatney@nasa.gov,Alfa
+... avogel@esa.int,Romeo
+... bjohanssen@nasa.gov,Quebec"""
+
+
 Addresses
 ---------
 * POLSA - Polish Space Agency
@@ -129,7 +212,7 @@ Dates and Timezones
 ...                  {'name': 'Rick Martinez', 'born': date(1996, 1, 21)},
 ...                  {'name': 'Alex Vogel', 'born': date(1994, 11, 15)},
 ...                  {'name': 'Chris Beck', 'born': date(1999, 8, 2)},
-...                  {'name': 'Beth Johansen', 'born': date(2006, 5, 9)},
+...                  {'name': 'Beth Johanssen', 'born': date(2006, 5, 9)},
 ...                  {'name': 'Mark Watney', 'born': date(1994, 10, 12)}]}
 
 .. code-block:: json
@@ -143,12 +226,12 @@ Dates and Timezones
               {"name": "Rick Martinez", "born": "1996-01-21"},
               {"name": "Alex Vogel", "born": "1994-11-15"},
               {"name": "Chris Beck", "born": "1999-08-02"},
-              {"name": "Beth Johansen", "born": "2006-05-09"},
+              {"name": "Beth Johanssen", "born": "2006-05-09"},
               {"name": "Mark Watney", "born": "1994-10-12"}]}
 
 .. code-block:: json
 
-    [{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa","lastname":"Lewis","role":"commander","username":"mlewis","password":"pbkdf2_sha256$120000$gvEBNiCeTrYa0$5C+NiCeTrYsha1PHogqvXNiCeTrY0CRSLYYAA90=","email":"melissa.lewis@nasa.gov","date_of_birth":"1995-07-15","last_login":"1970-01-01T00:00:00.000Z","is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"eclss":["add","modify","view"]},{"communication":["add","modify","view"]},{"medical":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":2,"fields":{"firstname":"Rick","lastname":"Martinez","role":"pilot","username":"rmartinez","password":"pbkdf2_sha256$120000$aXNiCeTrY$UfCJrBh/qhXohNiCeTrYH8nsdANiCeTrYnShs9M/c=","date_of_birth":"1996-01-21","last_login":null,"email":"rick.martinez@ansa.gov","is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"communication":["add","view"]},{"eclss":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":3,"fields":{"firstname":"Alex","lastname":"Vogel","role":"chemist","username":"avogel","password":"pbkdf2_sha256$120000$eUNiCeTrYHoh$X32NiCeTrYZOWFdBcVT1l3NiCeTrY4WJVhr+cKg=","email":"alex.vogel@esa.int","date_of_birth":"1994-11-15","last_login":null,"is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"eclss":["add","modify","view"]},{"communication":["add","modify","view"]},{"medical":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":4,"fields":{"firstname":"Chris","lastname":"Beck","role":"crew-medical-officer","username":"cbeck","password":"pbkdf2_sha256$120000$3G0RNiCeTrYlaV1$mVb62WNiCeTrYQ9aYzTsSh74NiCeTrY2+c9/M=","email":"chris.beck@nasa.gov","date_of_birth":"1999-08-02","last_login":"1970-01-01T00:00:00.000Z","is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"communication":["add","view"]},{"medical":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":5,"fields":{"firstname":"Beth","lastname":"Johansen","role":"sysop","username":"bjohansen","password":"pbkdf2_sha256$120000$QmSNiCeTrYBv$Nt1jhVyacNiCeTrYSuKzJ//WdyjlNiCeTrYYZ3sB1r0g=","email":"","date_of_birth":"2006-05-09","last_login":null,"is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"communication":["add","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":6,"fields":{"firstname":"Mark","lastname":"Watney","role":"botanist","username":"mwatney","password":"pbkdf2_sha256$120000$bxS4dNiCeTrY1n$Y8NiCeTrYRMa5bNJhTFjNiCeTrYp5swZni2RQbs=","email":"","date_of_birth":"1994-10-12","last_login":null,"is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"communication":["add","modify","view"]},{"science":["add","modify","view"]}]}}]
+    [{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa","lastname":"Lewis","role":"commander","username":"mlewis","password":"pbkdf2_sha256$120000$gvEBNiCeTrYa0$5C+NiCeTrYsha1PHogqvXNiCeTrY0CRSLYYAA90=","email":"melissa.lewis@nasa.gov","date_of_birth":"1995-07-15","last_login":"1970-01-01T00:00:00.000Z","is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"eclss":["add","modify","view"]},{"communication":["add","modify","view"]},{"medical":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":2,"fields":{"firstname":"Rick","lastname":"Martinez","role":"pilot","username":"rmartinez","password":"pbkdf2_sha256$120000$aXNiCeTrY$UfCJrBh/qhXohNiCeTrYH8nsdANiCeTrYnShs9M/c=","date_of_birth":"1996-01-21","last_login":null,"email":"rick.martinez@ansa.gov","is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"communication":["add","view"]},{"eclss":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":3,"fields":{"firstname":"Alex","lastname":"Vogel","role":"chemist","username":"avogel","password":"pbkdf2_sha256$120000$eUNiCeTrYHoh$X32NiCeTrYZOWFdBcVT1l3NiCeTrY4WJVhr+cKg=","email":"alex.vogel@esa.int","date_of_birth":"1994-11-15","last_login":null,"is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"eclss":["add","modify","view"]},{"communication":["add","modify","view"]},{"medical":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":4,"fields":{"firstname":"Chris","lastname":"Beck","role":"crew-medical-officer","username":"cbeck","password":"pbkdf2_sha256$120000$3G0RNiCeTrYlaV1$mVb62WNiCeTrYQ9aYzTsSh74NiCeTrY2+c9/M=","email":"chris.beck@nasa.gov","date_of_birth":"1999-08-02","last_login":"1970-01-01T00:00:00.000Z","is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"communication":["add","view"]},{"medical":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":5,"fields":{"firstname":"Beth","lastname":"Johanssen","role":"sysop","username":"bjohanssen","password":"pbkdf2_sha256$120000$QmSNiCeTrYBv$Nt1jhVyacNiCeTrYSuKzJ//WdyjlNiCeTrYYZ3sB1r0g=","email":"","date_of_birth":"2006-05-09","last_login":null,"is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"communication":["add","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":6,"fields":{"firstname":"Mark","lastname":"Watney","role":"botanist","username":"mwatney","password":"pbkdf2_sha256$120000$bxS4dNiCeTrY1n$Y8NiCeTrYRMa5bNJhTFjNiCeTrYp5swZni2RQbs=","email":"","date_of_birth":"1994-10-12","last_login":null,"is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"communication":["add","modify","view"]},{"science":["add","modify","view"]}]}}]
 
 
 Characters
@@ -241,4 +324,3 @@ Martian Movie Crew Members:
     * Rick Martinez (bottom right)
 
     .. figure:: img/about-references-crew-martian.jpg
-

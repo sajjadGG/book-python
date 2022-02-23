@@ -2,7 +2,7 @@
 * Assignment: Database Convert ReadLabelEncoder
 * Complexity: medium
 * Lines of code: 10 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
     1. Convert `DATA` to `result: list[tuple[str]]`

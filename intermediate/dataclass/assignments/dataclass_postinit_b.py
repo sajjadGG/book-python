@@ -109,9 +109,9 @@ Tests:
                             {'medical': ['add', 'modify', 'view']},
                             {'science': ['add', 'modify', 'view']}]),
      User(firstname='Beth',
-          lastname='Johansen',
+          lastname='Johanssen',
           role='sysop',
-          username='bjohansen',
+          username='bjohanssen',
           password='pbkdf2_sha256$120000$QmSNiCeTrYBv$Nt1jhVyacNiCeTrYSuK...=',
           email='',
           born=datetime.date(2006, 5, 9),
@@ -172,18 +172,18 @@ DATA = ('[{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa"'
         'peruser":false,"user_permissions":[{"communication":["add","view"]},{'
         '"medical":["add","modify","view"]},{"science":["add","modify","view"]'
         '}]}},{"model":"authorization.user","pk":5,"fields":{"firstname":"Beth'
-        '","lastname":"Johansen","role":"sysop","username":"bjohansen","passwo'
-        'rd":"pbkdf2_sha256$120000$QmSNiCeTrYBv$Nt1jhVyacNiCeTrYSuKzJ//WdyjlNi'
-        'CeTrYYZ3sB1r0g=","email":"","born":"2006-05-09","last_login":null,"is'
-        '_active":true,"is_staff":true,"is_superuser":false,"user_permissions"'
-        ':[{"communication":["add","view"]},{"science":["add","modify","view"]'
-        '}]}},{"model":"authorization.user","pk":6,"fields":{"firstname":"Mark'
-        '","lastname":"Watney","role":"botanist","username":"mwatney","passwor'
-        'd":"pbkdf2_sha256$120000$bxS4dNiCeTrY1n$Y8NiCeTrYRMa5bNJhTFjNiCeTrYp5'
-        'swZni2RQbs=","email":"","born":"1994-10-12","last_login":null,"is_act'
-        'ive":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"'
-        'communication":["add","modify","view"]},{"science":["add","modify","v'
-        'iew"]}]}}]')
+        '","lastname":"Johanssen","role":"sysop","username":"bjohanssen","pass'
+        'word":"pbkdf2_sha256$120000$QmSNiCeTrYBv$Nt1jhVyacNiCeTrYSuKzJ//Wdyjl'
+        'NiCeTrYYZ3sB1r0g=","email":"","born":"2006-05-09","last_login":null,"'
+        'is_active":true,"is_staff":true,"is_superuser":false,"user_permission'
+        's":[{"communication":["add","view"]},{"science":["add","modify","view'
+        '"]}]}},{"model":"authorization.user","pk":6,"fields":{"firstname":"Ma'
+        'rk","lastname":"Watney","role":"botanist","username":"mwatney","passw'
+        'ord":"pbkdf2_sha256$120000$bxS4dNiCeTrY1n$Y8NiCeTrYRMa5bNJhTFjNiCeTrY'
+        'p5swZni2RQbs=","email":"","born":"1994-10-12","last_login":null,"is_a'
+        'ctive":true,"is_staff":true,"is_superuser":false,"user_permissions":['
+        '{"communication":["add","modify","view"]},{"science":["add","modify",'
+        '"view"]}]}}]')
 
 # class: Using `dataclass` model data as class `User`
 @dataclass

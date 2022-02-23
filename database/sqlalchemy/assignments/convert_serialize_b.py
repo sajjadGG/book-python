@@ -1,5 +1,5 @@
 """
-* Assignment: Detabase Relations Nested
+* Assignment: Convert Serialize Columns
 * Complexity: medium
 * Lines of code: 6 lines
 * Time: 13 min

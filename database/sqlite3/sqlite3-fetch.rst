@@ -37,7 +37,7 @@ Fetch Sequences
 ...         {'firstname': 'Melissa', 'lastname': 'Lewis'},
 ...         {'firstname': 'Rick', 'lastname': 'Martinez'},
 ...         {'firstname': 'Alex', 'lastname': 'Vogel'},
-...         {'firstname': 'Beth', 'lastname': 'Johansen'},
+...         {'firstname': 'Beth', 'lastname': 'Johanssen'},
 ...         {'firstname': 'Chris', 'lastname': 'Beck'}]
 >>>
 >>>
@@ -50,7 +50,7 @@ Fetch Sequences
 (2, 'Melissa', 'Lewis')
 (3, 'Rick', 'Martinez')
 (4, 'Alex', 'Vogel')
-(5, 'Beth', 'Johansen')
+(5, 'Beth', 'Johanssen')
 (6, 'Chris', 'Beck')
 
 
@@ -79,7 +79,7 @@ Fetch Mappings
 ...         {'firstname': 'Melissa', 'lastname': 'Lewis'},
 ...         {'firstname': 'Rick', 'lastname': 'Martinez'},
 ...         {'firstname': 'Alex', 'lastname': 'Vogel'},
-...         {'firstname': 'Beth', 'lastname': 'Johansen'},
+...         {'firstname': 'Beth', 'lastname': 'Johanssen'},
 ...         {'firstname': 'Chris', 'lastname': 'Beck'}]
 >>>
 >>>
@@ -93,7 +93,7 @@ Fetch Mappings
 {'id': 2, 'firstname': 'Melissa', 'lastname': 'Lewis'}
 {'id': 3, 'firstname': 'Rick', 'lastname': 'Martinez'}
 {'id': 4, 'firstname': 'Alex', 'lastname': 'Vogel'}
-{'id': 5, 'firstname': 'Beth', 'lastname': 'Johansen'}
+{'id': 5, 'firstname': 'Beth', 'lastname': 'Johanssen'}
 {'id': 6, 'firstname': 'Chris', 'lastname': 'Beck'}
 
 

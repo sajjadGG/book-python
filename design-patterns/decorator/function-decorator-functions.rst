@@ -380,7 +380,7 @@ Example
         'mwatney':      {'name': 'Mark Watney',     'email': 'mark.watney@nasa.gov'},
         'avogel':       {'name': 'Alex Vogel',      'email': 'alex.vogel@nasa.gov'},
         'rmartinez':    {'name': 'Rick Martinez',   'email': 'rick.martinez@nasa.gov'},
-        'bjohansen':    {'name': 'Beth Johanssen',  'email': 'beth.johanssen@nasa.gov'},
+        'bjohanssen':    {'name': 'Beth Johanssen',  'email': 'beth.johanssen@nasa.gov'},
         'cbeck':        {'name': 'Chris Beck',      'email': 'chris.beck@nasa.gov'},
     }
 
@@ -501,4 +501,3 @@ Assignments
 .. literalinclude:: assignments/decorator_func_h.py
     :caption: :download:`Solution <assignments/decorator_func_h.py>`
     :end-before: # Solution
-

@@ -17,6 +17,12 @@ from JDBC or ODBC connections.
 
 Data Source Name
 ----------------
+* the name of the data source
+* the location of the data source
+* the name of a database driver which can access the data source
+* a user ID for data access (if required)
+* a user password for data access (if required)
+
 .. glossary::
 
     DSN

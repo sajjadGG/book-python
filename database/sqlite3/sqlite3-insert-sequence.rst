@@ -48,7 +48,7 @@ Insert Many
 ...         ('Melissa', 'Lewis'),
 ...         ('Rick', 'Martinez'),
 ...         ('Alex', 'Vogel'),
-...         ('Beth', 'Johansen'),
+...         ('Beth', 'Johanssen'),
 ...         ('Chris', 'Beck')]
 >>>
 >>>

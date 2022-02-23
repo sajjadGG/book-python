@@ -11,27 +11,30 @@ SQLAlchemy About
     -- Mike Bayer, SQLAlchemy creator [#ytSQLAlchemy20TalkPython]_
 
 
+.. important::
+
+    * ORM converts Python objects to database rows
+    * ORM converts database rows to Python objects
+    * ORM provides abstraction over database layer
+    * ORM allows for object like interaction with database
+    * ORM provides ability to migrate database schema
+    * SQAlchemy is the most frequently used database ORM in Python [#PythonDeveloperSurvey2020]_
+
+
 Rationale
 ---------
-* Converts Python objects to database rows
-* Converts database rows to Python objects
-* Provides abstraction over database layer
-* Allows for object like interaction with database
-* Provides ability to migrate database schema
-* Most frequently used database ORM in Python [#PythonDeveloperSurvey2020]_
+ORM Pros:
 
-
-ORM Pros
---------
 * Support for database switching with minimal effort
 * Refactoring support (embedded SQL is not easily refactorable)
 * 1-to-1 relation of Python class to database table
 * Historical migration and change history
 
+ORM Cons:
 
-ORM Cons
---------
-* Some queries could be
+* Some queries could be not well optimized
+* Another layer of abstraction
+* Another dependency
 
 
 Database Support
@@ -39,7 +42,7 @@ Database Support
 * SQLite3
 * PostgreSQL
 * Oracle
-* MySQL
+* MySQL / MariaDB
 * MSSQL
 
 

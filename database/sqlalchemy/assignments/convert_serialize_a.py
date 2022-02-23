@@ -1,5 +1,5 @@
 """
-* Assignment: Detabase Relations Flatten
+* Assignment: Convert Serialize NestedCSV
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 13 min

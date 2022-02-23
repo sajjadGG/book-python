@@ -33,7 +33,7 @@ Create Cursor
 ...         {'firstname': 'Melissa', 'lastname': 'Lewis'},
 ...         {'firstname': 'Rick', 'lastname': 'Martinez'},
 ...         {'firstname': 'Alex', 'lastname': 'Vogel'},
-...         {'firstname': 'Beth', 'lastname': 'Johansen'},
+...         {'firstname': 'Beth', 'lastname': 'Johanssen'},
 ...         {'firstname': 'Chris', 'lastname': 'Beck'}]
 >>>
 >>>
@@ -47,7 +47,7 @@ Create Cursor
 (2, 'Melissa', 'Lewis')
 (3, 'Rick', 'Martinez')
 (4, 'Alex', 'Vogel')
-(5, 'Beth', 'Johansen')
+(5, 'Beth', 'Johanssen')
 (6, 'Chris', 'Beck')
 
 
@@ -81,4 +81,3 @@ Last Row ID
 ...     _ = cursor.execute(SQL_INSERT, data)
 ...     print(cursor.lastrowid)
 1
-

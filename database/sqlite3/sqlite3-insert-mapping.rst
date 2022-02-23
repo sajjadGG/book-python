@@ -51,7 +51,7 @@ Insert Many
 ...         {'firstname': 'Melissa', 'lastname': 'Lewis'},
 ...         {'firstname': 'Rick', 'lastname': 'Martinez'},
 ...         {'firstname': 'Alex', 'lastname': 'Vogel'},
-...         {'firstname': 'Beth', 'lastname': 'Johansen'},
+...         {'firstname': 'Beth', 'lastname': 'Johanssen'},
 ...         {'firstname': 'Chris', 'lastname': 'Beck'}]
 >>>
 >>>

@@ -51,7 +51,7 @@ Relation to Self
 >>> astro = Astronaut('Mark', 'Watney', friends=[
 ...     Astronaut('Melissa', 'Lewis'),
 ...     Astronaut('Rick', 'Martinez'),
-...     Astronaut('Beth', 'Johansen'),
+...     Astronaut('Beth', 'Johanssen'),
 ...     Astronaut('Chris', 'Beck'),
 ...     Astronaut('Alex', 'Vogel')])
 >>>
@@ -59,7 +59,7 @@ Relation to Self
 Astronaut(firstname='Mark', lastname='Watney',
           friends=[Astronaut(firstname='Melissa', lastname='Lewis', friends=None),
                    Astronaut(firstname='Rick', lastname='Martinez', friends=None),
-                   Astronaut(firstname='Beth', lastname='Johansen', friends=None),
+                   Astronaut(firstname='Beth', lastname='Johanssen', friends=None),
                    Astronaut(firstname='Chris', lastname='Beck', friends=None),
                    Astronaut(firstname='Alex', lastname='Vogel', friends=None)])
 

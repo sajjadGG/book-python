@@ -1,5 +1,5 @@
 """
-* Assignment: Dataclass DefineBasic DatabaseDump
+* Assignment: Model Data DatabaseDump
 * Complexity: medium
 * Lines of code: 13 lines
 * Time: 13 min
@@ -14,7 +14,12 @@ English:
        a. Note, that fields order is important for tests to pass
     3. Do not create additional classes to represent `permission` filed,
        leave it as `list[dict]`
-    4. Run doctests - all must succeed
+    4. Non-functional requirements:
+        a. Do not convert data, just model it
+        b. You can use any Python standard library module
+        c. You can use SQLAlchemy and Alembic
+        d. Do not install or use 3rd party modules
+    5. Run doctests - all must succeed
 
 Polish:
     1. Otrzymałeś z API dane wejściowe w formacie JSON
@@ -26,7 +31,12 @@ Polish:
        a. Zwróć uwagę, że kolejność pól ma znaczenie aby testy przechodziły
     3. Nie twórz dodatkowych klas do reprezentacji pola `permission`,
        niech zostanie jako `list[dict]`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    4. Wymagania niefunkcjonalne:
+        a. Nie konwertuj danych, tylko je zamodeluj
+        b. Możesz użyć dowolnego modułu z biblioteki standardowej
+        c. Możesz użyć SQLAlchemy i Alembic
+        d. Nie instaluj ani nie używaj dodatkowych pakietów
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
