@@ -16,13 +16,14 @@ Polish:
         d. ssn - PESEL
         e. email - adres email
         f. phone - telefon z numerem kierunkowym kraju
-    2. Wymagania niefunkcjonalne:
-        a. Dodaj pola `id` jeżeli są potrzebne
-        b. Możesz użyć dowolnego modułu z biblioteki standardowej
-        c. Możesz użyć SQLAlchemy i Alembic
-        d. Nie instaluj ani nie używaj dodatkowych pakietów
-    3. Wymagania funkcjonalne:
+    2. Wymagania funkcjonalne:
         a. Użytkownik ma tylko jeden email i jeden telefon
+    3. Wymagania niefunkcjonalne:
+        a. Użyj SQLAlchemy ORM do stworzenia modeli
+        b. Dodaj pola `id` jeżeli są potrzebne
+        c. Możesz użyć dowolnego modułu z biblioteki standardowej
+        d. Możesz użyć SQLAlchemy i Alembic
+        e. Nie instaluj ani nie używaj dodatkowych pakietów
 """
 
 

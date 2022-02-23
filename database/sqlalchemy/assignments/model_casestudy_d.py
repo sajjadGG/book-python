@@ -180,19 +180,6 @@ mwatney@nasa.gov,Alfa
 avogel@esa.int,Romeo
 bjohanssen@nasa.gov,Quebec"""
 
-# Solution
-def parse(data):
-    header, *rows = data.splitlines()
-    header = header.split(',')
-    return [dict(zip(header,values))
-            for row in rows
-            if (values := row.split(','))]
-
-users = parse(USERS)
-addresses = parse(ADDRESSES)
-products = parse(PRODUCTS)
-orders = parse(ORDERS)
-
 
 # Imię i nazwisko osoby, która dokonała najwięcej zakupów.
 # result_a: tuple[str,str]
@@ -217,3 +204,16 @@ result_e = ...
 # Kwota i nazwa kraju, którego obywatele dokonali zakupów za największą kwotę.
 # result_f: tuple[float,str]
 result_f = ...
+
+# Solution
+def parse(data):
+    header, *rows = data.splitlines()
+    header = header.split(',')
+    return [dict(zip(header,values))
+            for row in rows
+            if (values := row.split(','))]
+
+users = parse(USERS)
+addresses = parse(ADDRESSES)
+products = parse(PRODUCTS)
+orders = parse(ORDERS)

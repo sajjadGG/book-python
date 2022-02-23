@@ -14,10 +14,11 @@ Polish:
         c. Jakie typy mają pola?
     2. Użyj type annotation do opisania typów pól
     3. Wymagania niefunkcjonalne:
-        a. Nie konwertuj danych, tylko je zamodeluj
-        b. Możesz użyć dowolnego modułu z biblioteki standardowej
-        c. Możesz użyć SQLAlchemy i Alembic
-        d. Nie instaluj ani nie używaj dodatkowych pakietów
+        a. Użyj SQLAlchemy ORM do stworzenia modeli
+        b. Nie konwertuj danych, tylko je zamodeluj
+        c. Możesz użyć dowolnego modułu z biblioteki standardowej
+        d. Możesz użyć SQLAlchemy i Alembic
+        e. Nie instaluj ani nie używaj dodatkowych pakietów
 
 TODO: Automated tests
 """

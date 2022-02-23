@@ -1,5 +1,5 @@
 """
-* Assignment: Detabase Relations Model
+* Assignment: Model Data AddresBook
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 8 min
@@ -8,13 +8,25 @@ English:
     1. In `DATA` we have two classes
     2. Model data using classes and relations
     3. Create instances dynamically based on `DATA`
-    4. Run doctests - all must succeed
+    4. Non-functional requirements:
+        a. Use SQLAlchemy ORM to create models
+        b. Do not convert data, just model it
+        c. You can use any Python standard library module
+        d. You can use SQLAlchemy and Alembic
+        e. Do not install or use 3rd party modules
+    5. Run doctests - all must succeed
 
 Polish:
     1. W `DATA` mamy dwie klasy
     2. Zamodeluj problem wykorzystując klasy i relacje między nimi
     3. Twórz instancje dynamicznie na podstawie `DATA`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    4. Wymagania niefunkcjonalne:
+        a. Użyj SQLAlchemy ORM do stworzenia modeli
+        b. Nie konwertuj danych, tylko je zamodeluj
+        c. Możesz użyć dowolnego modułu z biblioteki standardowej
+        d. Możesz użyć SQLAlchemy i Alembic
+        e. Nie instaluj ani nie używaj dodatkowych pakietów
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

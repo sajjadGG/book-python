@@ -10,10 +10,11 @@ English:
        b. NASA, USA, 1958-07-29
     2. Create instances (watney, nasa) filling it with data
     3. Non-functional requirements:
-        a. Do not convert data, just model it
-        b. You can use any Python standard library module
-        c. You can use SQLAlchemy and Alembic
-        d. Do not install or use 3rd party modules
+        a. Use SQLAlchemy ORM to create models
+        b. Do not convert data, just model it
+        c. You can use any Python standard library module
+        d. You can use SQLAlchemy and Alembic
+        e. Do not install or use 3rd party modules
     4. Run doctests - all must succeed
 
 Polish:
@@ -22,10 +23,11 @@ Polish:
        b. NASA, USA, 1958-07-29
     2. Stwórz instancje (watney, nasa) wypełniając je danymi
     3. Wymagania niefunkcjonalne:
-        a. Nie konwertuj danych, tylko je zamodeluj
-        b. Możesz użyć dowolnego modułu z biblioteki standardowej
-        c. Możesz użyć SQLAlchemy i Alembic
-        d. Nie instaluj ani nie używaj dodatkowych pakietów
+        a. Użyj SQLAlchemy ORM do stworzenia modeli
+        b. Nie konwertuj danych, tylko je zamodeluj
+        c. Możesz użyć dowolnego modułu z biblioteki standardowej
+        d. Możesz użyć SQLAlchemy i Alembic
+        e. Nie instaluj ani nie używaj dodatkowych pakietów
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:

@@ -30,17 +30,18 @@ Polish:
     4. Stwórz model `Orders`:
         a. user - Użytkownik
         b. product - Produkt
-    5. Wymagania niefunkcjonalne:
-        a. Dodaj pola `id` jeżeli są potrzebne
-        b. Możesz użyć dowolnego modułu z biblioteki standardowej
-        c. Możesz użyć SQLAlchemy i Alembic
-        d. Nie instaluj ani nie używaj dodatkowych pakietów
-    6. Wymagania funkcjonalne:
+    5. Wymagania funkcjonalne:
         a. Użytkownik ma tylko jeden email i jeden telefon
         b. Użytkownik może mieć jeden adres rozliczeniowy i jeden do wysyłki
         c. Adres może nie mieć ulicy lub kodu pocztowego
         d. Użytkownik może zakupić wiele produktów
         e. Produkt mógł nie zostać kupiony
+    6. Wymagania niefunkcjonalne:
+        a. Użyj SQLAlchemy ORM do stworzenia modeli
+        b. Dodaj pola `id` jeżeli są potrzebne
+        c. Możesz użyć dowolnego modułu z biblioteki standardowej
+        d. Możesz użyć SQLAlchemy i Alembic
+        e. Nie instaluj ani nie używaj dodatkowych pakietów
 """
 
 
