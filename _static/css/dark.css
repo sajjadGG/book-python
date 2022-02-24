@@ -31,9 +31,9 @@
     --active: #12141A; /* also for left menu*/
 
     --todo: #12141A;
-    --warning: #CF6679;
-    --tip: #45C587;
-    --note: #6371AC;
+    --warning: #12141A;
+    --tip: #12141A;
+    --note: #12141A;
     --important: #12141A;
 
     --menu-width: 300px;
@@ -143,19 +143,19 @@
     table caption {color: var(--body-header) !important; text-align: center !important; font-weight: bold !important; font-style: normal !important; margin-top: 1rem; margin-bottom: 1rem}
 
     /* infobox - tip */
-    .tip {background: none !important; border: 1px solid var(--tip)}
+    .tip {background: var(--tip) !important; border: 1px solid var(--tip)}
     .tip .admonition-title {background: var(--tip) !important}
 
     /* infobox - warning */
-    .warning {background: none !important; border: 1px solid var(--warning)}
+    .warning {background: var(--warning) !important; border: 1px solid var(--warning)}
     .warning .admonition-title {background: var(--warning) !important}
 
     /* infobox - note */
-    .note {background: none !important; border: 1px solid var(--note)}
+    .note {background: var(--note) !important; border: 1px solid var(--note)}
     .note .admonition-title {background: var(--note) !important}
 
     /* infobox - todo */
-    .admonition-todo {background: none !important; border: 1px solid var(--todo)}
+    .admonition-todo {background: var(--todo) !important; border: 1px solid var(--todo)}
     .admonition-todo .admonition-title {background: var(--todo) !important}
 
     /* infobox - important */
