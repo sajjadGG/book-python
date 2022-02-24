@@ -66,19 +66,17 @@ Initializer
 
 >>> class User(Base):
 ...     __tablename__ = 'user'
-...
 ...     username = Column(String, primary_key=True)
 ...     password = Column(String)
-...
-...     def __init__(self, username, password):
-...         self.username = username
-...         self.password = password
 
-SQLAlchemy applies a default initializer (``__init__``) method, to all mapped
-classes that don't explicitly have their own ``__init__`` method. The behavior
-of this method is such that it provides a convenient keyword constructor that
-will accept as optional keyword arguments all the attributes that are named.
-The constructor also applies to imperative mappings [#sqlalchemyConstructor]_.
+SQLAlchemy applies a default initializer (``__init__``) method, to all
+mapped classes that don't explicitly have their own ``__init__`` method.
+The behavior of this method is such that it provides a convenient keyword
+constructor that will accept as optional keyword arguments all the
+attributes that are named. The constructor also applies to imperative
+mappings [#sqlalchemyConstructor]_.
+
+Note, that this must be keyword arguments. Positional argument won't work.
 
 
 Stringification
@@ -141,20 +139,15 @@ Use Case - 0x01
 >>>
 >>> class User(Base):
 ...     __tablename__ = 'user'
-...
 ...     username = Column(String, primary_key=True)
 ...     password = Column(String)
-...
-...     def __init__(self, username, password):
-...         self.username = username
-...         self.password = password
 >>>
 >>>
 >>> Base.metadata.create_all(engine)
 >>>
 >>>
->>> mark = User('Mark', 'Watney')
->>> melissa = User('Melissa', 'Lewis')
+>>> mark = User(firstname='Mark', lastname='Watney')
+>>> melissa = User(firstname='Melissa', lastname='Lewis')
 >>>
 >>> session.add(mark)
 >>> session.add(melissa)
