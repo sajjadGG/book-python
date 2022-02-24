@@ -69,10 +69,35 @@ Or using a bit more verbose, but explicit syntax:
 Context manager on ``with`` block exit will commit transaction and close the
 session automatically:
 
->>> Session = sessionmaker(engine)
+>>> from sqlalchemy.orm import Session
 >>>
->>> with Session().begin() as session:
-...     # do something
+>>> with Session(engine) as session:
+...     session.add(object1)
+...     session.add(object2)
+...     session.commit()
+
+
+Transaction
+-----------
+>>> with Session(engine) as session:
+...     session.begin()
+...     try:
+...         session.add(some_object)
+...         session.add(some_other_object)
+...     except:
+...         session.rollback()
+...         raise
+...     else:
+...         session.commit()
+
+>>> with Session(engine) as session:
+...     with session.begin():
+...       session.add(some_object)
+...       session.add(some_other_object)
+
+>>> with Session(engine) as session, session.begin():
+...     session.add(some_object)
+...     session.add(some_other_object)
 
 
 Example
@@ -84,7 +109,14 @@ Example
 >>> DATABASE = 'sqlite:///:memory:'
 >>>
 >>> engine = create_engine(DATABASE)
->>> Session = sessionmaker(bind=engine)
+>>> session = sessionmaker(bind=engine)
 >>>
->>> with Session().begin() as db:
-...     db.execute('SELECT * FROM users')
+>>> with session.begin() as db:
+...     result = db.execute('SELECT * FROM astronauts').all()
+...
+[(1, 'Melissa', 'Lewis', 805766400000),
+ (2, 'Rick', 'Martinez', 822182400000),
+ (3, 'Alex', 'Vogel', 784857600000),
+ (4, 'Chris', 'Beck', 933552000000),
+ (5, 'Beth', 'Johansen', 822182400000),
+ (6, 'Mark', 'Watney', 781920000000)]
