@@ -32,10 +32,11 @@ Multiple Joins
 --------------
 * the order in which each call to the join() method occurs is important.
 
-q = session.query(User).\
-        join(User.orders).\
-        join(Order.items).\
-        join(Item.keywords)
+>>> q = (
+...     select(User).
+...     join(User.orders).
+...     join(Order.items).
+...     join(Item.keywords))
 
 
 Outer Join
@@ -58,6 +59,7 @@ Use Case - 0x02
 ---------------
 >>> a1 = aliased(Address)
 >>> a2 = aliased(Address)
+>>>
 >>> q = session.query(User).\
 ...         join(a1, User.addresses).\
 ...         join(a2, User.addresses).\
@@ -69,6 +71,7 @@ Use Case - 0x03
 ---------------
 >>> a1 = aliased(Address)
 >>> a2 = aliased(Address)
+>>>
 >>> q = session.query(User).\
 ...         join(User.addresses.of_type(a1)).\
 ...         join(User.addresses.of_type(a2)).\
@@ -78,9 +81,9 @@ Use Case - 0x03
 
 Use Case - 0x04
 ---------------
-q = session.query(User).join(
-    User.addresses.and_(Address.email_address != 'foo@bar.com')
-)
+>>> q = session.query(User).join(
+...     User.addresses.and_(Address.email_address != 'foo@bar.com')
+... )
 
 
 Use Case - 0x05
