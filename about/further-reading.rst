@@ -66,74 +66,74 @@ Conferences
 
 Python:
 
-    * PyCon US 2021: https://us.pycon.org/2021/speaking/
-    * PyCon US: https://pyvideo.org/events/pycon-us-2020.html
-    * EuroPython: https://pyvideo.org/events/europython-2019.html
-    * PyGotham: https://pyvideo.org/events/pygotham-2019.html
-    * PyCon AU: https://www.youtube.com/user/PyConAU
-    * PyCon PL: https://pyvideo.org/events/pycon-pl-2016.html
+* PyCon US 2021: https://us.pycon.org/2021/speaking/
+* PyCon US: https://pyvideo.org/events/pycon-us-2020.html
+* EuroPython: https://pyvideo.org/events/europython-2019.html
+* PyGotham: https://pyvideo.org/events/pygotham-2019.html
+* PyCon AU: https://www.youtube.com/user/PyConAU
+* PyCon PL: https://pyvideo.org/events/pycon-pl-2016.html
 
 Data Science / Machine Learning:
 
-    * SciPy: https://pyvideo.org/events/scipy-2020.html
-    * EuroSciPy: https://pyvideo.org/events/euroscipy-2019.html
-    * PyData Warsaw: https://pyvideo.org/events/pydata-warsaw-2019.html
+* SciPy: https://pyvideo.org/events/scipy-2020.html
+* EuroSciPy: https://pyvideo.org/events/euroscipy-2019.html
+* PyData Warsaw: https://pyvideo.org/events/pydata-warsaw-2019.html
 
 Django:
 
-    * DjangoCon US: https://pyvideo.org/events/djangocon-us-2019.html
-    * DjangoCon EU: https://pyvideo.org/events/djangocon-europe-2019.html
+* DjangoCon US: https://pyvideo.org/events/djangocon-us-2019.html
+* DjangoCon EU: https://pyvideo.org/events/djangocon-europe-2019.html
 
 Old:
 
-    * PyCon 2017: https://www.youtube.com/channel/UCrJhliKNQ8g0qoE_zvL8eVg
-    * Kiwi PyCon 2014: https://www.youtube.com/playlist?list=PLBGl1tVyiWQSVwxne3yOH79uaSqgbnCqL
-    * DjangoCon 2014: https://www.youtube.com/playlist?list=PLE7tQUdRKcybbNiuhLcc3h6WzmZGVBMr3
-    * PyGotham 2014: https://www.youtube.com/channel/UC45KSayx_kwQAnhpaPAuVkw/videos
-    * PyCon AU: http://pyvideo.org/category/56/pycon-australia-2014
-    * PyData Berlin: http://pyvideo.org/category/55/pydata-berlin-2014
-    * EuroPython: http://pyvideo.org/category/54/europython-2014
-    * PyOhio: http://pyvideo.org/category/52/pyohio-2014
-    * SciPy: http://pyvideo.org/category/51/scipy-2014
+* PyCon 2017: https://www.youtube.com/channel/UCrJhliKNQ8g0qoE_zvL8eVg
+* Kiwi PyCon 2014: https://www.youtube.com/playlist?list=PLBGl1tVyiWQSVwxne3yOH79uaSqgbnCqL
+* DjangoCon 2014: https://www.youtube.com/playlist?list=PLE7tQUdRKcybbNiuhLcc3h6WzmZGVBMr3
+* PyGotham 2014: https://www.youtube.com/channel/UC45KSayx_kwQAnhpaPAuVkw/videos
+* PyCon AU: http://pyvideo.org/category/56/pycon-australia-2014
+* PyData Berlin: http://pyvideo.org/category/55/pydata-berlin-2014
+* EuroPython: http://pyvideo.org/category/54/europython-2014
+* PyOhio: http://pyvideo.org/category/52/pyohio-2014
+* SciPy: http://pyvideo.org/category/51/scipy-2014
 
 
 Speakers
 --------
 Python:
 
-    * Łukasz Langa
+* Łukasz Langa
 
-        * https://pyvideo.org/speaker/lukasz-langa.html
-        * https://www.youtube.com/results?search_query=Łukasz+Langa
-        * https://www.youtube.com/watch?v=fOdCxum-qLA
+    * https://pyvideo.org/speaker/lukasz-langa.html
+    * https://www.youtube.com/results?search_query=Łukasz+Langa
+    * https://www.youtube.com/watch?v=fOdCxum-qLA
 
-    * Raymond Hettinger:
+* Raymond Hettinger:
 
-        * https://pyvideo.org/speaker/raymond-hettinger.html
-        * https://www.youtube.com/results?search_query=Raymond+Hettinger
+    * https://pyvideo.org/speaker/raymond-hettinger.html
+    * https://www.youtube.com/results?search_query=Raymond+Hettinger
 
-    * Dustin Ingram:
+* Dustin Ingram:
 
-        * https://pyvideo.org/speaker/dustin-ingram.html
+    * https://pyvideo.org/speaker/dustin-ingram.html
 
-    * Guido van Rossum:
+* Guido van Rossum:
 
-        * https://pyvideo.org/speaker/guido-van-rossum.html
+    * https://pyvideo.org/speaker/guido-van-rossum.html
 
-    * Larry Hastings:
+* Larry Hastings:
 
-        * https://pyvideo.org/speaker/larry-hastings.html
+    * https://pyvideo.org/speaker/larry-hastings.html
 
 Django:
 
-    * Russell Keith-Magee:
+* Russell Keith-Magee:
 
-        * https://pyvideo.org/speaker/russell-keith-magee.html
-        * https://www.youtube.com/results?search_query=Russel+Keith-Magee
+    * https://pyvideo.org/speaker/russell-keith-magee.html
+    * https://www.youtube.com/results?search_query=Russel+Keith-Magee
 
-    * Andrew Godwin:
+* Andrew Godwin:
 
-        * https://pyvideo.org/speaker/andrew-godwin.html
+    * https://pyvideo.org/speaker/andrew-godwin.html
 
 
 Talks
@@ -151,32 +151,32 @@ Online Courses
 --------------
 Python:
 
-    * Codecademy: http://www.codecademy.com/en/tracks/python
-    * University of Michigan: https://www.coursera.org/learn/python
-    * University of Toronto: https://www.coursera.org/learn/learn-to-program
-    * University of Michigan: https://www.coursera.org/learn/python-databases
-    * Rice University: https://www.coursera.org/learn/python-programming
-    * OReilly: http://shop.oreilly.com/product/110000448.do
+* Codecademy: http://www.codecademy.com/en/tracks/python
+* University of Michigan: https://www.coursera.org/learn/python
+* University of Toronto: https://www.coursera.org/learn/learn-to-program
+* University of Michigan: https://www.coursera.org/learn/python-databases
+* Rice University: https://www.coursera.org/learn/python-programming
+* OReilly: http://shop.oreilly.com/product/110000448.do
 
 Machine Learning and Data Science:
 
-    * https://www.youtube.com/user/sentdex
-    * https://www.youtube.com/watch?v=OGxgnH8y2NM&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v
-    * https://www.youtube.com/watch?v=wQ8BIBpya2k&list=PLQVvvaa0QuDfhTox0AjmQ6tvTgMBZBEXN
-    * https://www.youtube.com/watch?v=nLw1RNvfElg&list=PLQVvvaa0QuDfSfqQuee6K8opKtZsh7sA9
-    * https://www.youtube.com/watch?v=Wo5dMEP_BbI&list=PLQVvvaa0QuDcjD5BAw2DxE6OF2tius3V3
-    * https://www.youtube.com/watch?v=mA5nwGoRAOo (+ cała playlista)
-    * (UC San Diego) https://www.edx.org/course/python-for-data-science
-    * (UC San Diego) https://www.edx.org/course/statistics-and-probability-in-data-science-using-python
-    * (MIT) https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11
-    * (University of Michigan) https://www.coursera.org/learn/python-data
-    * (University of Michigan) https://www.coursera.org/learn/python-data-analysis
-    * (deeplearning.ai) https://www.coursera.org/learn/neural-networks-deep-learning
-    * (deeplearning.ai) https://www.coursera.org/specializations/deep-learning
-    * (University of Michigan) https://www.coursera.org/learn/python-machine-learning
-    * (University of Michigan) https://www.coursera.org/learn/python-text-mining
-    * (IBM) https://www.coursera.org/learn/python-for-applied-data-science
-    * (IBM) https://www.coursera.org/learn/data-analysis-with-python
+* https://www.youtube.com/user/sentdex
+* https://www.youtube.com/watch?v=OGxgnH8y2NM&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v
+* https://www.youtube.com/watch?v=wQ8BIBpya2k&list=PLQVvvaa0QuDfhTox0AjmQ6tvTgMBZBEXN
+* https://www.youtube.com/watch?v=nLw1RNvfElg&list=PLQVvvaa0QuDfSfqQuee6K8opKtZsh7sA9
+* https://www.youtube.com/watch?v=Wo5dMEP_BbI&list=PLQVvvaa0QuDcjD5BAw2DxE6OF2tius3V3
+* https://www.youtube.com/watch?v=mA5nwGoRAOo (+ cała playlista)
+* (UC San Diego) https://www.edx.org/course/python-for-data-science
+* (UC San Diego) https://www.edx.org/course/statistics-and-probability-in-data-science-using-python
+* (MIT) https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11
+* (University of Michigan) https://www.coursera.org/learn/python-data
+* (University of Michigan) https://www.coursera.org/learn/python-data-analysis
+* (deeplearning.ai) https://www.coursera.org/learn/neural-networks-deep-learning
+* (deeplearning.ai) https://www.coursera.org/specializations/deep-learning
+* (University of Michigan) https://www.coursera.org/learn/python-machine-learning
+* (University of Michigan) https://www.coursera.org/learn/python-text-mining
+* (IBM) https://www.coursera.org/learn/python-for-applied-data-science
+* (IBM) https://www.coursera.org/learn/data-analysis-with-python
 
 
 Community
@@ -214,50 +214,50 @@ Books
 -----
 Algorithms:
 
-    * http://www.amazon.com/Introduction-Algorithms-Edition-Thomas-Cormen/dp/0262033844/
-    * http://www.amazon.com/Algorithms-4th-Edition-Robert-Sedgewick/dp/032157351X/
+* http://www.amazon.com/Introduction-Algorithms-Edition-Thomas-Cormen/dp/0262033844/
+* http://www.amazon.com/Algorithms-4th-Edition-Robert-Sedgewick/dp/032157351X/
 
 Databases:
 
-    * http://www.amazon.com/Database-Design-Mere-Mortals-Hands-/dp/0321884493/
-    * http://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557/
-    * http://www.amazon.com/C.-J.-Date/e/B000AQ6OJA/
+* http://www.amazon.com/Database-Design-Mere-Mortals-Hands-/dp/0321884493/
+* http://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557/
+* http://www.amazon.com/C.-J.-Date/e/B000AQ6OJA/
 
 
 Software Engineering Practises:
 
-    * http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/
-    * http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/
-    * http://www.amazon.com/The-Mythical-Man-Month-Engineering-Anniversary/dp/0201835959/
+* http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/
+* http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/
+* http://www.amazon.com/The-Mythical-Man-Month-Engineering-Anniversary/dp/0201835959/
 
 Design pattern:
 
-    * Design Patterns: Elements of Reusable Object-Oriented Software
-    * http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/
-    * https://helion.pl/ksiazki/wzorce-projektowe-elementy-oprogramowania-obiektowego-wielokrotnego-uzytku-erich-gamma-richard-helm-ralph-johnson-john-vli,wzoelv.htm
+* Design Patterns: Elements of Reusable Object-Oriented Software
+* http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/
+* https://helion.pl/ksiazki/wzorce-projektowe-elementy-oprogramowania-obiektowego-wielokrotnego-uzytku-erich-gamma-richard-helm-ralph-johnson-john-vli,wzoelv.htm
 
 Refactoring:
 
-    * Working effectively with legacy code - Michael Feathers
-    * https://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052
+* Working effectively with legacy code - Michael Feathers
+* https://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052
 
 Clean Code by Uncle Bob:
 
-    * https://helion.pl/ksiazki/czysty-kod-podrecznik-dobrego-programisty-robert-c-martin,czykov.htm
-    * http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/
+* https://helion.pl/ksiazki/czysty-kod-podrecznik-dobrego-programisty-robert-c-martin,czykov.htm
+* http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/
 
 Python:
 
-    * http://www.amazon.com/Learning-Python-Edition-Mark-Lutz/dp/1449355730/
-    * http://www.amazon.com/Python-Programming-Introduction-Computer-Science/dp/1590282418/
-    * http://inventwithpython.com/
-    * http://www.amazon.com/Python-Cookbook-David-Beazley/dp/1449340377/
-    * https://www.jeffknupp.com/writing-idiomatic-python-ebook/
-    * http://www.amazon.com/Python-Practice-Concurrency-Libraries-Developers/dp/0321905636/
-    * http://learnpythonthehardway.org/book/
-    * http://anandology.com/python-practice-book/index.html
-    * http://www.amazon.com/Python-3-Object-Oriented-Programming/dp/1849511268/
-    * http://shop.oreilly.com/product/0636920032519.do
+* http://www.amazon.com/Learning-Python-Edition-Mark-Lutz/dp/1449355730/
+* http://www.amazon.com/Python-Programming-Introduction-Computer-Science/dp/1590282418/
+* http://inventwithpython.com/
+* http://www.amazon.com/Python-Cookbook-David-Beazley/dp/1449340377/
+* https://www.jeffknupp.com/writing-idiomatic-python-ebook/
+* http://www.amazon.com/Python-Practice-Concurrency-Libraries-Developers/dp/0321905636/
+* http://learnpythonthehardway.org/book/
+* http://anandology.com/python-practice-book/index.html
+* http://www.amazon.com/Python-3-Object-Oriented-Programming/dp/1849511268/
+* http://shop.oreilly.com/product/0636920032519.do
 
 
 Useful libs

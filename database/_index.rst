@@ -16,10 +16,23 @@ Theory
     :caption: Theory
 
     theory/about.rst
-    theory/rdbms.rst
     theory/uml-erd.rst
-    theory/normalization.rst
-    theory/relations.rst
+
+
+Normalization
+*************
+.. toctree::
+    :maxdepth: 1
+    :caption: Theory
+
+    normalization/about.rst
+    normalization/normal-form-1st.rst
+    normalization/normal-form-2nd.rst
+    normalization/normal-form-3rd.rst
+    normalization/normal-form-4th.rst
+    normalization/normal-form-5th.rst
+    normalization/normal-form-6th.rst
+    normalization/use-cases.rst
 
 
 SQL
@@ -34,6 +47,9 @@ SQL
     sql/sql-table.rst
     sql/sql-index.rst
     sql/sql-insert.rst
+    sql/sql-update.rst
+    sql/sql-delete.rst
+    sql/sql-transaction.rst
     sql/sql-select-from.rst
     sql/sql-select-limit.rst
     sql/sql-select-orderby.rst
@@ -42,9 +58,6 @@ SQL
     sql/sql-select-subquery.rst
     sql/sql-select-distinct.rst
     sql/sql-select-functions.rst
-    sql/sql-update.rst
-    sql/sql-delete.rst
-    sql/sql-transaction.rst
     sql/sql-join.rst
     sql/sql-injection.rst
     sql/use-cases.rst

@@ -27,6 +27,7 @@ Cardinality:
 
 .. csv-table:: Cardinality
     :header: left, right, description
+    :widths: 10, 10, 80
 
     ``|o``, ``o|``, zero or one
     ``||``, ``||``, exactly one
@@ -37,6 +38,7 @@ Relationship:
 
 .. csv-table:: Cardinality
     :header: cardinality, relationship
+    :widths: 10, 90
 
     ``||..||``, one to one
     ``||..|{``, one to many
@@ -48,8 +50,8 @@ Entity Relationship Diagram
 ---------------------------
 * ERD - Entity Relationship Diagram [#mermaidERD]_
 * By drawing a line between tables we show, that there is a connection between them in some way
-* Polish: "notacja kurzych stóp"
 * English: "crows foot notation"
+* Polish: "notacja kurzych stóp"
 
 .. figure:: img/uml-erd-astronaut,assignment,mission,role.png
 
@@ -121,6 +123,7 @@ Config [#mermaidConfig]_:
 
 .. csv-table:: CSS classes
     :header: "Selector", "Description"
+    :widths: 33, 67
 
     ".er.attributeBoxEven",      "The box containing attributes on even-numbered rows"
     ".er.attributeBoxOdd",       "The box containing attributes on odd-numbered rows"
