@@ -12,8 +12,7 @@ Polish:
         a. Jak nazywa się model?
         b. Jak nazywają się pola?
         c. Jakie typy mają pola?
-    2. Użyj type annotation do opisania typów pól
-    3. Wymagania niefunkcjonalne:
+    2. Wymagania niefunkcjonalne:
         a. Użyj SQLAlchemy ORM do stworzenia modeli
         b. Nie konwertuj danych, tylko je zamodeluj
         c. Możesz użyć dowolnego modułu z biblioteki standardowej
