@@ -49,6 +49,7 @@ astronauts.
 .. figure:: img/normalform-3rd-primarykeydefinesnonkeycolumns.png
 
     The Primary Key must fully define all Non-Key columns
+    Image credit: [#Lowgren2021]_
 
 
 Recap
@@ -57,3 +58,14 @@ Recap
 
     If Primary Key fully defines all Non-Key columns and Non-Key columns
     does not depend on any other Key, the database achieved 3rd Normal Form.
+    Image credit: [#Lowgren2021]_
+
+
+References
+----------
+.. [#Lowgren2021]
+   Lowgren, Jesper.
+   Database Normalization 1NF 2NF 3NF.
+   Year: 2021.
+   Retrieved: 2022-02-05.
+   URL: https://www.youtube.com/watch?v=SK4H5tTT6-M

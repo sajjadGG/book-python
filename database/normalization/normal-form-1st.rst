@@ -49,6 +49,7 @@ same column (name).
 
     A cell must never contain more than one value
     (each value needs to be in its own column)
+    Image credits: [#Lowgren2021]_
 
 
 Unique Rows
@@ -79,9 +80,9 @@ identifier (id).
 
 .. figure:: img/normalform-1st-primarykey.png
 
-    Each row must be unique
-    (one column, or combination of columns must uniquely identify a row
-    also known as ``PRIMARY KEY``)
+    Each row must be unique (one column, or combination of columns must
+    uniquely identify a row also known as ``PRIMARY KEY``).
+    Image credits: [#Lowgren2021]_
 
 
 Unique Column Names
@@ -108,7 +109,7 @@ Each column should have unique name.
 
 .. figure:: img/normalform-1st-uniquecolumnnames.png
 
-    Each column name must be unique
+    Each column name must be unique. Image credits: [#Lowgren2021]_
 
 
 No Repeating Groups
@@ -124,7 +125,7 @@ No Repeating Groups
 
 .. figure:: img/normalform-1st-norepeatinggroups.png
 
-    There must be no repeating groups
+    There must be no repeating groups. Image credits: [#Lowgren2021]_
 
 
 Recap
@@ -132,4 +133,14 @@ Recap
 .. figure:: img/normalform-1st-summary.png
 
     If both Atomic Values and Unique Identifiers rules are applied
-    the database achieved 1st Normal Form
+    the database achieved 1st Normal Form. Image credits: [#Lowgren2021]_
+
+
+References
+----------
+.. [#Lowgren2021]
+   Lowgren, Jesper.
+   Database Normalization 1NF 2NF 3NF.
+   Year: 2021.
+   Retrieved: 2022-02-05.
+   URL: https://www.youtube.com/watch?v=SK4H5tTT6-M

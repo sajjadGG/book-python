@@ -50,3 +50,18 @@ Rationale
 Recap
 -----
 .. figure:: img/normalform-1st,2nd,3rd.png
+
+    Image credit: [#Lowgren2021]_
+
+References
+----------
+.. [#WikipediaDatabaseNormalization] Database normalization. https://en.wikipedia.org/wiki/Database_normalization
+
+.. [#Lowgren2021]
+   Lowgren, Jesper.
+   Database Normalization 1NF 2NF 3NF.
+   Year: 2021.
+   Retrieved: 2022-02-05.
+   URL: https://www.youtube.com/watch?v=SK4H5tTT6-M
+
+.. [#Codd1972] Codd, E. F. Further Normalization of the Data Base Relational Model. (Presented at Courant Computer Science Symposia Series 6, Data Base Systems, New York City, May 24–25, 1971.) IBM Research Report RJ909 (August 31, 1971). Republished in Randall J. Rustin (ed.), Data Base Systems: Courant Computer Science Symposia Series 6. Prentice-Hall, 1972.
