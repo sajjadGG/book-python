@@ -13,6 +13,26 @@ Video
 * https://www.infoq.com/python/
 
 
+Python Survey
+-------------
+Python Developer Survey:
+
+* https://www.jetbrains.com/lp/python-developers-survey-2020/
+* https://www.jetbrains.com/lp/python-developers-survey-2019/
+* https://www.jetbrains.com/research/python-developers-survey-2018/
+* https://www.jetbrains.com/research/python-developers-survey-2017/
+
+StackOverflow Survey:
+
+* https://insights.stackoverflow.com/survey/2020
+* https://insights.stackoverflow.com/survey/2019
+* https://insights.stackoverflow.com/survey/2018
+
+Development Ecosystem Survey:
+
+* https://www.jetbrains.com/lp/devecosystem-2020/python/
+
+
 Documentation
 -------------
 * Python Module Index - https://docs.python.org/py-modindex.html
@@ -171,18 +191,6 @@ Programming Language Trends
 ---------------------------
 * https://www.tiobe.com/tiobe-index/
 * https://pypl.github.io/PYPL.html
-
-
-Python Developer Survey
------------------------
-* https://www.jetbrains.com/lp/python-developers-survey-2020/
-* https://www.jetbrains.com/lp/devecosystem-2020/python/
-* https://www.jetbrains.com/lp/python-developers-survey-2019/
-* https://www.jetbrains.com/research/python-developers-survey-2018/
-* https://www.jetbrains.com/research/python-developers-survey-2017/
-* https://insights.stackoverflow.com/survey/2020
-* https://insights.stackoverflow.com/survey/2019
-* https://insights.stackoverflow.com/survey/2018
 
 
 Experiments

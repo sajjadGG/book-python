@@ -163,6 +163,7 @@ Psycopg2cffi (implemented with cffi layer for portability):
 MySQL and MariaDB
 -----------------
 * https://docs.sqlalchemy.org/en/stable/dialects/mysql.html
+* MariaDB is an open-source fork of MySQL (after it was bought by Oracle)
 * SQLAlchemy supports MySQL and all modern versions of MariaDB
 * Minimum MySQL version supported is now 5.0.2
 
@@ -259,7 +260,7 @@ Cx-Oracle driver connection:
 
 
 MSSQL
-----
+-----
 * https://docs.sqlalchemy.org/en/stable/dialects/mssql.html
 * Supported versions 2012+
 * pymssql is currently not included in SQLAlchemy's continuous integration (CI) testing.

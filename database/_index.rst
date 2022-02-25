@@ -78,7 +78,6 @@ SQLAlchemy
 
     sqlalchemy/connection-dsn.rst
     sqlalchemy/connection-engine.rst
-    sqlalchemy/connection-session.rst
     sqlalchemy/connection-pool.rst
 
     sqlalchemy/core-model.rst
@@ -93,6 +92,7 @@ SQLAlchemy
     sqlalchemy/core-introspect.rst
 
     sqlalchemy/orm-about.rst
+    sqlalchemy/orm-session.rst
 
     sqlalchemy/model-base.rst
     sqlalchemy/model-define.rst
