@@ -15,7 +15,7 @@ Problem
 
     1, Melissa, Lewis, 2035, Ares3
     2, Mark, Watney, 2035, Ares3
-    3, Rick Martinez, 2035, Ares3
+    3, Rick, Martinez, 2035, Ares3
 
 
 Solution
@@ -25,7 +25,7 @@ Solution
 
     1, Melissa, Lewis
     2, Mark, Watney
-    3, Rick Martinez
+    3, Rick, Martinez
 
 .. csv-table:: missions
     :header: id (PK), year, mission
