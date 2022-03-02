@@ -2,6 +2,16 @@ TODO
 ====
 
 
+Case Study
+----------
+* Dane z Jiry (atlassian-python-api)
+* Dane z Github API
+* OAuth2
+* Dane z Gmail (Google App Script)
+* Dane z Facebook (QraphQL)
+* Dane z Apki do nurkowania
+
+
 Book TODO
 ---------
 * Machine Learning rewrite

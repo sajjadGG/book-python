@@ -30,11 +30,16 @@ StackOverflow Survey:
 
 Development Ecosystem Survey:
 
+* https://www.jetbrains.com/lp/devecosystem-2021/
 * https://www.jetbrains.com/lp/devecosystem-2020/python/
 
 Django Survey:
 
 * https://lp.jetbrains.com/django-developer-survey-2021-486/
+
+Web Frameworks:
+
+* https://insights.stackoverflow.com/survey/2021#section-most-loved-dreaded-and-wanted-web-frameworks
 
 
 Documentation
