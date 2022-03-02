@@ -32,6 +32,10 @@ Development Ecosystem Survey:
 
 * https://www.jetbrains.com/lp/devecosystem-2020/python/
 
+Django Survey:
+
+* https://lp.jetbrains.com/django-developer-survey-2021-486/
+
 
 Documentation
 -------------
