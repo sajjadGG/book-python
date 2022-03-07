@@ -2,15 +2,26 @@ Further reading
 ===============
 
 
-Matt Harasymczuk's Webinars
----------------------------
-* https://www.youtube.com/playlist?list=PLv4THqSPE6meFeo_jNLgUVKkP40UstIQv
-
 
 Video
 -----
-* https://pyvideo.org/
-* https://www.infoq.com/python/
+* `Matt Harasymczuk's Webinars <https://www.youtube.com/playlist?list=PLv4THqSPE6meFeo_jNLgUVKkP40UstIQv>`_
+* `PyVideo <https://pyvideo.org/>`_
+* `InfoQ <https://www.infoq.com/python/>`_
+
+
+Trends
+------
+Programming Language:
+
+* `Tiobe Index <https://www.tiobe.com/tiobe-index/>`_
+* `PYPL <https://pypl.github.io/PYPL.html>`_
+
+Technology:
+
+* `Technology Radar <https://www.thoughtworks.com/radar>`_
+* `PatoArchitekci <https://www.youtube.com/c/PatoArchitekci/videos>`_
+* `InfoQ AI/ML/DS <https://www.infoq.com/ai-ml-data-eng/>`_
 
 
 Python Survey
@@ -42,68 +53,63 @@ Web Frameworks:
 * https://insights.stackoverflow.com/survey/2021#section-most-loved-dreaded-and-wanted-web-frameworks
 
 
+Experiments
+-----------
+* https://blog.jetbrains.com/datalore/2020/12/17/we-downloaded-10-000-000-jupyter-notebooks-from-github-this-is-what-we-learned/
+
+
 Documentation
 -------------
-* Python Module Index - https://docs.python.org/py-modindex.html
-* Python string formatting - https://pyformat.info
-* TimeComplexity - https://wiki.python.org/moin/TimeComplexity
-* Multiple APIs documentation - http://devdocs.io
+* `Python Module Index <https://docs.python.org/py-modindex.html>`_
+* `Python string formatting <https://pyformat.info>`_
+* `TimeComplexity <https://wiki.python.org/moin/TimeComplexity>`_
+* `Multiple APIs documentation <http://devdocs.io>`_
 
 
 Python Development
 ------------------
-* Python Insider: https://blog.python.org
-* Newest PEPs RSS: http://www.python.org/dev/peps/peps.rss
-* Python Releases: https://github.com/python/cpython/releases
-* CPython compiler - https://github.com/python/cpython
-* Python core development - https://discuss.python.org
-* Index of Python Enhancement Proposals (PEPs) - https://www.python.org/dev/peps/
-* Python Enhancement Proposals repository- https://github.com/python/peps
-* News from the Python Software Foundation - https://pyfound.blogspot.com
-* Future of Python: https://www.youtube.com/watch?v=fOdCxum-qLA
-
-
-Django
-------
-* Class-Based Views http://ccbv.co.uk
+* `Python Insider <https://blog.python.org>`_
+* `Newest PEPs RSS <http://www.python.org/dev/peps/peps.rss>`_
+* `Python Releases <https://github.com/python/cpython/releases>`_
+* `CPython compiler <https://github.com/python/cpython>`_
+* `Python core development <https://discuss.python.org>`_
+* `Index of Python Enhancement Proposals (PEPs) <https://www.python.org/dev/peps/>`_
+* `Python Enhancement Proposals repository <https://github.com/python/peps>`_
+* `News from the Python Software Foundation <https://pyfound.blogspot.com>`_
+* `Future of Python <https://www.youtube.com/watch?v=fOdCxum-qLA>`_
 
 
 Conferences
 -----------
-* Python Events Calendar - https://www.python.org/events/python-events/
-* Upcoming events in Python - http://crossweb.pl/wydarzenia/python/
+* `Python Events Calendar <https://www.python.org/events/python-events/>`_
+* `Upcoming events in Python <http://crossweb.pl/wydarzenia/python/>`_
 
 Python:
 
-* PyCon US 2021: https://us.pycon.org/2021/speaking/
-* PyCon US: https://pyvideo.org/events/pycon-us-2020.html
-* EuroPython: https://pyvideo.org/events/europython-2019.html
-* PyGotham: https://pyvideo.org/events/pygotham-2019.html
-* PyCon AU: https://www.youtube.com/user/PyConAU
-* PyCon PL: https://pyvideo.org/events/pycon-pl-2016.html
+* `PyCon US 2021 <https://us.pycon.org/2021/speaking/>`_
+* `PyCon US <https://pyvideo.org/events/pycon-us-2020.html>`_
+* `EuroPython <https://pyvideo.org/events/europython-2019.html>`_
+* `PyGotham <https://pyvideo.org/events/pygotham-2019.html>`_
+* `PyCon AU <https://www.youtube.com/user/PyConAU>`_
+* `PyCon PL <https://pyvideo.org/events/pycon-pl-2016.html>`_
 
 Data Science / Machine Learning:
 
-* SciPy: https://pyvideo.org/events/scipy-2020.html
-* EuroSciPy: https://pyvideo.org/events/euroscipy-2019.html
-* PyData Warsaw: https://pyvideo.org/events/pydata-warsaw-2019.html
-
-Django:
-
-* DjangoCon US: https://pyvideo.org/events/djangocon-us-2019.html
-* DjangoCon EU: https://pyvideo.org/events/djangocon-europe-2019.html
+* `SciPy <https://pyvideo.org/events/scipy-2020.html>`_
+* `EuroSciPy <https://pyvideo.org/events/euroscipy-2019.html>`_
+* `PyData Warsaw <https://pyvideo.org/events/pydata-warsaw-2019.html>`_
 
 Old:
 
-* PyCon 2017: https://www.youtube.com/channel/UCrJhliKNQ8g0qoE_zvL8eVg
-* Kiwi PyCon 2014: https://www.youtube.com/playlist?list=PLBGl1tVyiWQSVwxne3yOH79uaSqgbnCqL
-* DjangoCon 2014: https://www.youtube.com/playlist?list=PLE7tQUdRKcybbNiuhLcc3h6WzmZGVBMr3
-* PyGotham 2014: https://www.youtube.com/channel/UC45KSayx_kwQAnhpaPAuVkw/videos
-* PyCon AU: http://pyvideo.org/category/56/pycon-australia-2014
-* PyData Berlin: http://pyvideo.org/category/55/pydata-berlin-2014
-* EuroPython: http://pyvideo.org/category/54/europython-2014
-* PyOhio: http://pyvideo.org/category/52/pyohio-2014
-* SciPy: http://pyvideo.org/category/51/scipy-2014
+* `PyCon 2017 <https://www.youtube.com/channel/UCrJhliKNQ8g0qoE_zvL8eVg>`_
+* `Kiwi PyCon 2014 <https://www.youtube.com/playlist?list=PLBGl1tVyiWQSVwxne3yOH79uaSqgbnCqL>`_
+* `DjangoCon 2014 <https://www.youtube.com/playlist?list=PLE7tQUdRKcybbNiuhLcc3h6WzmZGVBMr3>`_
+* `PyGotham 2014 <https://www.youtube.com/channel/UC45KSayx_kwQAnhpaPAuVkw/videos>`_
+* `PyCon AU <http://pyvideo.org/category/56/pycon-australia-2014>`_
+* `PyData Berlin <http://pyvideo.org/category/55/pydata-berlin-2014>`_
+* `EuroPython <http://pyvideo.org/category/54/europython-2014>`_
+* `PyOhio <http://pyvideo.org/category/52/pyohio-2014>`_
+* `SciPy <http://pyvideo.org/category/51/scipy-2014>`_
 
 
 Speakers
@@ -133,17 +139,6 @@ Python:
 
     * https://pyvideo.org/speaker/larry-hastings.html
 
-Django:
-
-* Russell Keith-Magee:
-
-    * https://pyvideo.org/speaker/russell-keith-magee.html
-    * https://www.youtube.com/results?search_query=Russel+Keith-Magee
-
-* Andrew Godwin:
-
-    * https://pyvideo.org/speaker/andrew-godwin.html
-
 
 Talks
 -----
@@ -154,6 +149,29 @@ Talks
 * `Raymond Hettinger - Modern Dictionaries <https://www.youtube.com/watch?v=p33CVV29OG8>`_
 * `Raymond Hettinger - Keynote on Concurrency <https://www.youtube.com/watch?v=9zinZmE3Ogk>`_
 * `Raymond Hettinger - Thinking about Concurrency <https://www.youtube.com/watch?v=Bv25Dwe84g0>`_
+
+
+Django
+------
+Class-Based Views:
+
+* http://ccbv.co.uk
+
+Conferences:
+
+* DjangoCon US: https://pyvideo.org/events/djangocon-us-2019.html
+* DjangoCon EU: https://pyvideo.org/events/djangocon-europe-2019.html
+
+Speakers:
+
+* Russell Keith-Magee:
+
+    * https://pyvideo.org/speaker/russell-keith-magee.html
+    * https://www.youtube.com/results?search_query=Russel+Keith-Magee
+
+* Andrew Godwin:
+
+    * https://pyvideo.org/speaker/andrew-godwin.html
 
 
 Online Courses
@@ -194,24 +212,6 @@ Community
 * https://www.reddit.com/r/python
 * https://www.reddit.com/r/learnprogramming
 * https://www.reddit.com/r/programming
-
-
-Programming Language Trends
----------------------------
-* https://www.tiobe.com/tiobe-index/
-* https://pypl.github.io/PYPL.html
-
-
-Experiments
------------
-* https://blog.jetbrains.com/datalore/2020/12/17/we-downloaded-10-000-000-jupyter-notebooks-from-github-this-is-what-we-learned/
-
-
-Technology Trends
------------------
-* https://www.thoughtworks.com/radar
-* https://www.youtube.com/c/PatoArchitekci/videos
-* https://www.infoq.com/ai-ml-data-eng/
 
 
 Testing
