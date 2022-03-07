@@ -249,3 +249,10 @@ Conclusion
 * We can also send values to the generator using its ``send()`` function.
 * The ``yield from`` statement is used to create a sub-iterator from the
   generator function.
+
+
+Assignments
+-----------
+.. literalinclude:: assignments/generator_yieldfrom_a.py
+    :caption: :download:`Solution <assignments/generator_yieldfrom_a.py>`
+    :end-before: # Solution

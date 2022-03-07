@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 SRC_DIR = Path('/Users/matt/Developer/book-python')
-OUT_DIR = Path('/Users/matt/Developer/_pybook-template')
+OUT_DIR = Path('/Users/matt/Developer/_template')
 
 BOOKS = [
     'advanced',

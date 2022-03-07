@@ -37,14 +37,17 @@ def write_file(path: Path, content: str) -> None:
 
 def process_file(book, file):
     assignment, solutions = split_assignment_solutions(file)
+
     filename = (str(file.relative_to(SRC_DIR))
                 .replace('assignments/', '')
                 .replace(book, '')
                 .removeprefix('/'))
-    write_file(path=Path(OUT_DIR / book / '_assignments' / filename),
-               content=assignment)
-    write_file(path=Path(OUT_DIR / book / '_solutions' / filename),
-               content=solutions)
+
+    path = Path(OUT_DIR / book / '_assignments' / filename)
+    write_file(path, content=assignment)
+
+    path = Path(OUT_DIR / book / '_solutions' / filename)
+    write_file(path, content=solutions)
 
 
 if __name__ == '__main__':

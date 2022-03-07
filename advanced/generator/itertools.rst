@@ -372,3 +372,10 @@ StopIteration
 ['A', 'B', 'C', 'D', 'A', 'B']
 >>> [list(g) for k, g in groupby('AAAABBBCCD')]
 [['A', 'A', 'A', 'A'], ['B', 'B', 'B'], ['C', 'C'], ['D']]
+
+
+Assignments
+-----------
+.. literalinclude:: assignments/generator_itertools_a.py
+    :caption: :download:`Solution <assignments/generator_itertools_a.py>`
+    :end-before: # Solution

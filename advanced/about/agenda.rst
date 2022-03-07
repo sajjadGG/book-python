@@ -76,7 +76,7 @@ Day 4
 
     "60m", "Performance: Optimization, Micro-benchmarking and Profiling"
     "30m", "Performance: Alternative compilers, interpreters and modules"
-    "15m", "Performance: C Types and C Modules"
+    "15m", "Performance: Cython, Numba, C Types and C Modules"
 
 
 Day 5
@@ -85,9 +85,9 @@ Day 5
     :widths: 15, 85
     :header: "Estimated Time", "Topic"
 
+    "180m", "Dragon"
+
     "45m", "Concurrency: Concurrency models and their specificity"
     "45m", "Concurrency: Multiprocessing"
     "60m", "Concurrency: Threading and queues"
     "90m", "Concurrency: Asynchronous programming"
-
-    "180m", "Dragon"
