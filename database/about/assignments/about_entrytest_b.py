@@ -1,8 +1,8 @@
 """
 * Assignment: About EntryTest ToListDict
 * Complexity: easy
-* Lines of code: 4 lines
-* Time: 8 min
+* Lines of code: 5 lines
+* Time: 5 min
 
 English:
     1. Define `result: list[dict]`:
