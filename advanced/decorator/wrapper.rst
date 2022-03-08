@@ -1,5 +1,5 @@
-Wrapper
-=======
+Decorator Wrapper
+=================
 
 
 Rationale

@@ -1,5 +1,5 @@
-Decorator Syntax
-================
+Decorator Types
+===============
 
 
 Rationale

@@ -1,5 +1,5 @@
-Decorator Class with Func
-=========================
+Decorator Class
+===============
 
 
 Rationale
