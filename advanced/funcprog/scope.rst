@@ -1,6 +1,12 @@
 FuncProg Scope
 ==============
 
+.. testsetup::
+
+    # Simulate user input (for test automation)
+    from unittest.mock import MagicMock
+    input = MagicMock(side_effect=['lastname'])
+
 
 Rationale
 ---------
@@ -69,9 +75,9 @@ Outer Scope
 
 Shadowing
 ---------
-* Shadowing is when you define variable or identifier with name identical to
-  the one from outer scope
+* When variable in function has the same name as in outer scope
 * Shadowing in a function is valid only in a function
+* Shadowed variable will be deleted upon function return
 * After function return, the original value of a shadowed variable
   is restored
 
@@ -142,6 +148,15 @@ Global Scope
  'firstname': 'Mark',
  'lastname': 'Watney'}
 
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
+>>>
+>>>
+>>> what = input('Type variable name: ')   #input: 'lastname'
+>>>
+>>> globals()[what]
+'Watney'
+
 
 Local Scope
 -----------
@@ -174,9 +189,17 @@ Local Scope
 >>> echo(1)
 {'a': 1, 'b': 2, 'c': 3}
 
+If outside the function, will return the same as ``globals()``:
+
+>>> locals() == globals()
+True
+
 
 Shadowing Global Scope
 ----------------------
+* Defining variable with the same name as in outer scope
+* Shadowed variable will be deleted upon function return
+
 Shadowing of a global scope is used frequently in Mocks and Stubs.
 This way, we can simulate user input. Note that Mocks and Stubs will
 stay until the end of a program.
@@ -193,9 +216,21 @@ stay until the end of a program.
 >>> age
 'Mark Watney'
 
+>>> from unittest.mock import MagicMock
+>>> input = MagicMock(side_effect=['Mark Watney', '44'])
+>>>
+>>>
+>>> name = input('Type your name: ')
+>>> name
+'Mark Watney'
+>>>
+>>> age = input('Type your age: ')
+>>> age
+'44'
+
 To restore default behavior of ``input()`` function use:
 
->>> input = __builtins__['input']
+>>> input = __builtins__.input
 
 
 Builtins

@@ -1,5 +1,5 @@
-Decorator Function with Func
-============================
+Decorate Function
+=================
 
 
 Rationale
@@ -10,37 +10,24 @@ Rationale
 * ``wrapper`` gets arguments passed to ``function``
 
 
-Definition
-----------
+Syntax
+------
+Definition:
+
 >>> def mydecorator(func):
 ...     def wrapper(*args, **kwargs):
 ...         return func(*args, **kwargs)
 ...     return wrapper
 
+Decoration:
 
-Decoration
-----------
 >>> @mydecorator
 ... def myfunction():
 ...     ...
 
+Usage:
 
-Usage
------
 >>> myfunction()
-
-
-Syntax
-------
-Syntax:
-
->>> @mydecorator
-... def myfunction(*args, **kwargs):
-...     ...
-
-Is equivalent to:
-
->>> myfunction = mydecorator(myfunction)
 
 
 Example
@@ -92,15 +79,16 @@ Use Case - 0x02
 ---------------
 * Timeit
 
->>> from datetime import datetime
+>>> from time import time
 >>>
 >>>
 >>> def timeit(func):
 ...     def wrapper(*args, **kwargs):
-...         start = datetime.now()
+...         start = time()
 ...         result = func(*args, **kwargs)
-...         end = datetime.now()
-...         print(f'Duration: {end-start}')
+...         end = time()
+...         duration = end - start
+...         print(f'Duration: {duration}')
 ...         return result
 ...     return wrapper
 >>>

@@ -5,6 +5,7 @@ About
     :caption: About
 
     about/introduction.rst
+    about/entrytest.rst
     about/install.rst
     about/architecture.rst
 

@@ -1,5 +1,5 @@
-Decorator Function with Mth
-===========================
+Decorate Method
+===============
 
 
 .. testsetup::

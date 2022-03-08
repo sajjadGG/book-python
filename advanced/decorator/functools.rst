@@ -7,6 +7,8 @@ Wraps
 * ``from functools import wraps``
 * ``@wraps(func)``
 
+Without Wraps:
+
 >>> def mydecorator(func):
 ...     def wrapper(*args, **kwargs):
 ...         """wrapper docstring"""
@@ -25,6 +27,8 @@ wrapper
 >>>
 >>> print(myfunction.__doc__)
 wrapper docstring
+
+With Wraps:
 
 >>> from functools import wraps
 >>>

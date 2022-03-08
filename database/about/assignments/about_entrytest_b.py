@@ -1,5 +1,5 @@
 """
-* Assignment: About EntryTest ListDict
+* Assignment: About EntryTest ToListDict
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 8 min

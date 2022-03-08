@@ -7,13 +7,13 @@
 
 English:
     1. Define `result: set[str]`
-    2. Iterating over data unpack row to `*features` and `label`
+    2. Iterating over `DATA` unpack row to `*features` and `label`
     3. Append to `result` species with endings in `SUFFIXES`
     4. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj `result: set[str]`
-    2. Iterując po danych rozpakuj wiersz do `*features` oraz `label`
+    2. Iterując po `DATA` rozpakuj wiersz do `*features` oraz `label`
     3. Dodaj do `result` nazwy gatunków z końcówkami w `SUFFIXES`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -24,8 +24,14 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'set'>
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result` instead of Ellipsis `...`'
+    >>> assert type(result) is set, \
+    'Result must be a set'
+    >>> assert len(result) > 0, \
+    'Result cannot be empty'
+    >>> assert all(type(element) is str for element in result), \
+    'All elements in result must be a str'
 
     >>> 'virginica' in result
     True
@@ -54,7 +60,7 @@ features: tuple
 label: set
 species: str
 
-# set[str]: species names ending with 'ca' or 'osa'
+# set[str]: species names with word endings in `SUFFIXES`
 result = ...
 
 # Solution

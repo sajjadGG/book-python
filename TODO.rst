@@ -12,6 +12,43 @@ Case Study
 * Dane z Apki do nurkowania
 
 
+PyCharm
+-------
+* Code: Auto-formatowanie kodu, optymalizacja importów
+* Code: Indent i unindent wielu linii
+* Code: Komentowanie wielu linii
+* Code: PEP-8 + SonarLint
+* Code: Profiling, concurrency diagram, coverage
+* Code: Quick Documentation
+* Code: ReST i Markdown + Mermaid
+* Code: Refactoring, rename, extract, introduce
+* Debugger: breakpoint
+* GIT: clone, pull, push, rebase, diff, zmiany branchy, rozwiązywanie konfliktów
+* IDE: Diff, różnice, scalanie plików
+* IDE: Edit Scopes
+* IDE: Konsola iPython
+* IDE: Live templates
+* IDE: Local history
+* IDE: Pionowy podział okna i zamykanie
+* IDE: Pliki Scratch
+* IDE: Python console automatyczny import i settingsy Pandas
+* IDE: Sprawdzanie pisowni i gramatyki
+* IDE: Zgłaszanie feedbacku do Jetbrains
+* IDE: tryb Zen, pełny ekran, distraction free mode
+* Jupyter: edycja notebook, scientific mode, code cells, dataframe debugger
+* Project: Setup interpretera
+* Share: Code with Me
+* Sortowanie linii, odwracanie kolejności linii
+* Testy: TDD, doctest, unittest
+* Text: Edit as Table
+* Text: Toggle Case tekstu
+* Text: Zaznaczanie pionowe i wielozaznaczanie, karetka na końcu linii
+
+pd.set_option('display.width', 200)
+pd.set_option('display.max_columns', 15)
+pd.set_option('display.max_rows', 100)
+
+
 Book TODO
 ---------
 * Machine Learning rewrite

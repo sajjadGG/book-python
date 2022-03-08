@@ -2,6 +2,31 @@ Decorator Recap
 ===============
 
 
+Rationale
+---------
+By type:
+
+    * Function decorators
+    * Class decorators
+
+By decorated object:
+
+    * Decorating function
+    * Decorating class
+    * Decorating method
+
+By wrapper type:
+
+    * Wrapper function
+    * Wrapper class
+    * Wrapper method
+
+By number of arguments:
+
+    * Without arguments
+    * With arguments
+
+
 Function Decorators with Function Wrappers
 ------------------------------------------
 >>> def mydecorator(func):
@@ -60,4 +85,3 @@ Class Decorators
 ...
 ...     def __call__(self, *args, **kwargs):
 ...         ...
-

@@ -53,12 +53,13 @@ Decorators
     :caption: Decorators
 
     decorator/about.rst
-    decorator/syntax.rst
-    decorator/function-decorator-functions.rst
-    decorator/function-decorator-classes.rst
-    decorator/function-decorator-methods.rst
-    decorator/class-decorator-functions.rst
-    decorator/decorator-arguments.rst
+    decorator/wrapper.rst
+    decorator/types.rst
+    decorator/decorate-function.rst
+    decorator/decorate-method.rst
+    decorator/decorate-class.rst
+    decorator/class-decorator.rst
+    decorator/arguments.rst
     decorator/functools.rst
     decorator/recap.rst
 

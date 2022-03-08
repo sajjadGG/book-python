@@ -190,6 +190,45 @@ Traceback (most recent call last):
 TimeoutError: Timeout
 
 
+Use Case - 0x04
+---------------
+File ``settings.py``:
+
+>>> BASE_URL = 'https://python.astrotech.io'
+
+File ``utils.py``:
+
+>>> from http import HTTPStatus
+>>> import requests
+>>>
+>>>
+>>> def _request(url, method='GET'):
+...     url = BASE_URL + path
+...     resp = requests.request(url, method)
+...     if resp.staus_code != HTTPStatus.OK:
+...         raise ConnectionError
+...     return resp
+>>>
+>>>
+>>> def get(url):
+...     def decorator(func):
+...         def wrapper():
+...             resp = _request(path)
+...             return func(resp.json())
+...         return wrapper
+...     return decorator
+
+File ``main.py``:
+
+>>> @get('/users/')
+>>> def get_users(data: list[dict]) -> list[User]:
+...     ...
+>>>
+>>>
+>>> users = get_users()
+
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/decorator_arguments_a.py

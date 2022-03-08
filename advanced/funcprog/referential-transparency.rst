@@ -21,6 +21,44 @@ Good:
 
 Example
 -------
+>>> a = 1
+>>> print(a)
+>>> a += 2
+1
+
+>>> a = 1
+>>> print(a)
+>>> a += 2
+>>> print(a)
+1
+3
+
+>>> a = 1
+>>> print(1)
+>>> a += 2
+>>> print(1)
+1
+1
+
+>>> a = 1
+>>> print(a)
+>>> b = a + 2
+>>> print(a)
+>>> print(b)
+1
+1
+3
+
+>>> print(1)
+>>> b = 1 + 2
+>>> print(1)
+>>> print(b)
+1
+1
+3
+
+Use Case - 0x01
+---------------
 >>> def add(a,b):
 ...     return a + b
 >>>

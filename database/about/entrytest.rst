@@ -19,3 +19,7 @@ Assignments
 .. literalinclude:: assignments/about_entrytest_d.py
     :caption: Entry Test Assignment D
     :end-before: # Solution
+
+.. literalinclude:: assignments/about_entrytest_e.py
+    :caption: Entry Test Assignment E
+    :end-before: # Solution

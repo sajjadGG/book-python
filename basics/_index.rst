@@ -184,7 +184,6 @@ Functions
     function/parameters.rst
     function/arguments.rst
     function/scope.rst
-    function/recurrence.rst
     function/generators.rst
     function/lambda.rst
 

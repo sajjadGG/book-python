@@ -1,5 +1,5 @@
-Decorator Function with Cls
-===========================
+Decorate Class
+==============
 
 
 Rationale
@@ -169,4 +169,3 @@ Connecting...
 Assignments
 -----------
 .. todo:: Create assignments
-

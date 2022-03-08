@@ -1,59 +1,56 @@
 """
-* Assignment: About EntryTest Endswith
-* Complexity: medium
-* Lines of code: 4 lines
-* Time: 8 min
+* Assignment: About EntryTest ToListTuple
+* Complexity: easy
+* Lines of code: 1 lines
+* Time: 3 min
 
 English:
-    1. Define `result: set[str]`
-    2. Iterate over `DATA`
-    3. Append to `result` species with endings in `SUFFIXES`
+    1. Load `DATA` from JSON format
+    2. Convert data to `result: list[tuple]`
+    3. Do not add header as a first line
     4. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj `result: set[str]`
-    2. Iterując po `DATA`
-    3. Dodaj do `result` nazwy gatunków z końcówkami w `SUFFIXES`
+    1. Wczytaj `DATA` z formatu JSON
+    2. Przekonwertuj dane do `result: list[tuple]`
+    3. Nie dodawaj nagłówka jako pierwsza linia
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result` instead of Ellipsis `...`'
-    >>> assert type(result) is set, \
-    'Result must be a set'
-    >>> assert len(result) > 0, \
-    'Result cannot be empty'
-    >>> assert all(type(element) is str for element in result), \
-    'All elements in result must be a str'
+    'Assign result to variable: `result`'
 
-    >>> sorted(result)
-    ['setosa', 'virginica']
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, should be list'
+
+    >>> assert len(result) > 0, \
+    'Variable `result` should not be empty'
+
+    >>> assert all(type(row) is tuple for row in result), \
+    'Variable `result` should be a list[tuple]'
+
+    >>> result  # doctest: +NORMALIZE_WHITESPACE
+    [(5.8, 2.7, 5.1, 1.9, 'virginica'),
+     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+     (4.7, 3.2, 1.3, 0.2, 'setosa')]
 """
 
-DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-        (5.8, 2.7, 5.1, 1.9, {'virginica'}),
-        (5.1, 3.5, 1.4, 0.2, {'setosa'}),
-        (5.7, 2.8, 4.1, 1.3, {'versicolor'}),
-        (6.3, 2.9, 5.6, 1.8, {'virginica'}),
-        (6.4, 3.2, 4.5, 1.5, {'versicolor'}),
-        (4.7, 3.2, 1.3, 0.2, {'setosa'}),
-        (7.0, 3.2, 4.7, 1.4, {'versicolor'}),
-        (7.6, 3.0, 6.6, 2.1, {'virginica'}),
-        (4.6, 3.1, 1.5, 0.2, {'setosa'})]
+DATA = [
+    {"Sepal length": 5.8, "Sepal width": 2.7, "Petal length": 5.1, "Petal width": 1.9, "Species": "virginica"},
+    {"Sepal length": 5.1, "Sepal width": 3.5, "Petal length": 1.4, "Petal width": 0.2, "Species": "setosa"},
+    {"Sepal length": 5.7, "Sepal width": 2.8, "Petal length": 4.1, "Petal width": 1.3, "Species": "versicolor"},
+    {"Sepal length": 6.3, "Sepal width": 2.9, "Petal length": 5.6, "Petal width": 1.8, "Species": "virginica"},
+    {"Sepal length": 6.4, "Sepal width": 3.2, "Petal length": 4.5, "Petal width": 1.5, "Species": "versicolor"},
+    {"Sepal length": 4.7, "Sepal width": 3.2, "Petal length": 1.3, "Petal width": 0.2, "Species": "setosa"}]
 
-SUFFIXES = ('ca', 'osa')
 
-# set[str]: species names with word endings in `SUFFIXES`
+# list[tuple]: load DATA from JSON and convert to list[tuple]
 result = ...
 
-
 # Solution
-result = set()
-
-for *features, label in DATA[1:]:
-    species = label.pop()
-
-    if species.endswith(SUFFIXES):
-        result.add(species)
+result = [tuple(row.values()) for row in DATA]

@@ -25,8 +25,8 @@ Values Leaking
 --------------
 Values defined in function does not leak out:
 
->>> def echo(a, b=1):
-...     c = 0
+>>> def run(a, b=1):
+...     c = 2
 >>>
 >>>
 >>> print(a)
@@ -39,7 +39,7 @@ NameError: name 'b' is not defined
 Traceback (most recent call last):
 NameError: name 'c' is not defined
 >>>
->>> echo(1)
+>>> run(0)
 >>>
 >>> print(a)
 Traceback (most recent call last):
@@ -59,14 +59,14 @@ Outer Scope
 >>> data = [1, 2, 3]
 >>>
 >>>
->>> def echo():
-...     return data
+>>> def run():
+...     print(data)
 >>>
 >>>
 >>> print(data)
 [1, 2, 3]
 >>>
->>> echo()
+>>> run()
 [1, 2, 3]
 >>>
 >>> print(data)
@@ -75,24 +75,24 @@ Outer Scope
 
 Shadowing
 ---------
-* Shadowing is when you define variable with name identical to the one
-  from outer scope
+* When variable in function has the same name as in outer scope
 * Shadowing in a function is valid only in a function
+* Shadowed variable will be deleted upon function return
 * After function return, the original value of a shadowed variable
   is restored
 
 >>> data = [1, 2, 3]
 >>>
 >>>
->>> def echo():
+>>> def run():
 ...     data = [10, 20, 30]  # Shadows name 'data' from outer scope
-...     return data
+...     print(data)
 >>>
 >>>
 >>> print(data)
 [1, 2, 3]
 >>>
->>> echo()
+>>> run()
 [10, 20, 30]
 >>>
 >>> print(data)
@@ -107,16 +107,16 @@ Global
 >>> data = [1, 2, 3]
 >>>
 >>>
->>> def echo():
+>>> def run():
 ...     global data
 ...     data = [10, 20, 30]
-...     return data
+...     print(data)
 >>>
 >>>
 >>> print(data)
 [1, 2, 3]
 >>>
->>> echo()
+>>> run()
 [10, 20, 30]
 >>>
 >>> print(data)
@@ -133,37 +133,6 @@ Global Scope
  '__spec__': None,
  '__annotations__': {},
  '__builtins__': <module 'builtins' (built-in)>}
-
->>> dir(globals()['__builtins__'])   # doctest: +SKIP
-['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException',
- 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning',
- 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError',
- 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning',
- 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False',
- 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning',
- 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning',
- 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError',
- 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError',
- 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError',
- 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError',
- 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError',
- 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError',
- 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError',
- 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError',
- 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError',
- 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError',
- 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'ZeroDivisionError',
- '_', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__',
- '__name__', '__package__', '__spec__', 'abs', 'all', 'any', 'ascii', 'bin',
- 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod',
- 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir',
- 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format',
- 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id',
- 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list',
- 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open',
- 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed',
- 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum',
- 'super', 'tuple', 'type', 'vars', 'zip']
 
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
@@ -220,9 +189,17 @@ Local Scope
 >>> echo(1)
 {'a': 1, 'b': 2, 'c': 3}
 
+If outside the function, will return the same as ``globals()``:
+
+>>> locals() == globals()
+True
+
 
 Shadowing Global Scope
 ----------------------
+* Defining variable with the same name as in outer scope
+* Shadowed variable will be deleted upon function return
+
 Shadowing of a global scope is used frequently in Mocks and Stubs.
 This way, we can simulate user input. Note that Mocks and Stubs will
 stay until the end of a program.
@@ -251,10 +228,44 @@ stay until the end of a program.
 >>> age
 '44'
 
-
 To restore default behavior of ``input()`` function use:
 
->>> input = __builtins__['input']
+>>> input = __builtins__.input
+
+
+Builtins
+--------
+>>> dir(__builtins__)   # doctest: +SKIP
+['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException',
+ 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning',
+ 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError',
+ 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning',
+ 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False',
+ 'FileExistsError', 'FileNotFoundError', 'FloatingPointError',
+ 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning',
+ 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError',
+ 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError',
+ 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError',
+ 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError',
+ 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError',
+ 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError',
+ 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError',
+ 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError',
+ 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError',
+ 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError',
+ 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning',
+ 'ZeroDivisionError', '_', '__build_class__', '__debug__', '__doc__',
+ '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs',
+ 'all', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes',
+ 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright',
+ 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec',
+ 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals',
+ 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance',
+ 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max',
+ 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow',
+ 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set',
+ 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super',
+ 'tuple', 'type', 'vars', 'zip']
 
 
 Assignments

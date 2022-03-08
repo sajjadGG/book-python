@@ -68,13 +68,6 @@ Recap information about factorial (``n!``):
                             return 1                # 1
 
 
-Use Case
---------
-.. figure:: img/funcprog-recurrence-hanoi.jpg
-
-    Hanoi Tower as a standard example of a recurrence. Source: [#hanoi]_
-
-
 Recursion Depth Limit
 ---------------------
 * Default recursion depth limit is 1000
@@ -87,13 +80,14 @@ Recursion Depth Limit
 
 Use Case - 0x01
 ---------------
-.. figure:: img/function-recurrence-hanoi.jpg
+.. figure:: img/funcprog-recurrence-hanoi.jpg
 
     Hanoi Tower as a standard example of a recurrence. Source: [#hanoi]_
 
 
 References
 ----------
+.. [#WikipediaFunc] Functional programming. Retrieved: 2020-10-09. URL: https://en.wikipedia.org/wiki/Functional_programming
 .. [#hanoi] https://dyermath.files.wordpress.com/2015/06/hanoi-13.jpg
 
 

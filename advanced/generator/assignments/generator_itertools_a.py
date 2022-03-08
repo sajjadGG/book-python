@@ -1,38 +1,37 @@
 """
 * Assignment: Generator Itertools Count
 * Complexity: medium
-* Lines of code: 13 lines
-* Time: 13 min
+* Lines of code: 3 lines
+* Time: 5 min
 
 English:
     1. `Label encoder` algorithm encodes labels (str) to numbers (int).
        Each unique label will assign autoincremented numbers.
        example: {'virginica': 0, 'setosa': 1, 'versicolor': 2}
-    2. Create two implementations of this algorighm:
-       a. labelencoder_i() - using variable `i` and `i += 1`
-       b. labelencoder_count() - using `itertools.count`
+    2. Modify code below and use `itertools.count()` instead of `i`
     3. Function resut must be `dict[str,int]`
 
 Polish:
     1. Algorytm `label_encoder` koduje etykiety (str) do liczb (int).
        Kolejnym wystąpieniom unikalnych etykiet przyporządkowuje liczby.
        przykład: {'virginica': 0, 'setosa': 1, 'versicolor': 2}
-    2. Stwórz dwie implementacje algorytmu:
-       a. labelencoder_i() - z wykorzystaniem zmiennej `i` oraz `i += 1`
-       b. labelencoder_count() - z wykorzystaniem `itertools.count`
+    2. Zmodyfikuj kod poniżej i użyj `itertools.count()` zamiast `i`
     3. Wynik funkcji ma być `dict[str,int]`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction, isgeneratorfunction
 
-    >>> assert isfunction(labelencoder_i)
-    >>> assert isfunction(labelencoder_count)
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result` instead of Ellipsis `...`'
+    >>> assert type(result) is dict, \
+    'Result must be a dict'
+    >>> assert len(result) > 0, \
+    'Result cannot be empty'
+    >>> assert all(type(element) is str for element in result), \
+    'All elements in result must be a str'
 
-    >>> labelencoder_i(DATA)
-    {'virginica': 0, 'setosa': 1, 'versicolor': 2}
-
-    >>> labelencoder_count(DATA)
+    >>> result
     {'virginica': 0, 'setosa': 1, 'versicolor': 2}
 """
 from itertools import count
@@ -49,29 +48,19 @@ DATA = [
 ]
 
 
-def labelencoder_i(data):
-    ...
+result = {}
+i = 0
 
-
-def labelencoder_count(data):
-    ...
+for *_, species in DATA[1:]:
+    if species not in result:
+        result[species] = i
+        i += 1
 
 
 # Solution
-def labelencoder_i(data):
-    result = {}
-    i = 0
-    for *_, species in data[1:]:
-        if species not in result:
-            result[species] = i
-            i += 1
-    return result
+result = {}
+i = count()
 
-
-def labelencoder_count(data):
-    result = {}
-    i = count()
-    for *_, species in data[1:]:
-        if species not in result:
-            result[species] = next(i)
-    return result
+for *_, species in DATA[1:]:
+    if species not in result:
+        result[species] = next(i)
