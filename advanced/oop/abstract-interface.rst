@@ -195,14 +195,14 @@ Use Case - 0x02
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_interface_a.py
-    :caption: :download:`Solution <assignments/oop_interface_a.py>`
+.. literalinclude:: assignments/oop_abstract_interface_a.py
+    :caption: :download:`Solution <assignments/oop_abstract_interface_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_interface_b.py
-    :caption: :download:`Solution <assignments/oop_interface_b.py>`
+.. literalinclude:: assignments/oop_abstract_interface_b.py
+    :caption: :download:`Solution <assignments/oop_abstract_interface_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_interface_c.py
-    :caption: :download:`Solution <assignments/oop_interface_c.py>`
+.. literalinclude:: assignments/oop_abstract_interface_c.py
+    :caption: :download:`Solution <assignments/oop_abstract_interface_c.py>`
     :end-before: # Solution

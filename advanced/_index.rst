@@ -70,25 +70,28 @@ Object Oriented Programming
     :maxdepth: 1
     :caption: Object Oriented Programming
 
-    oop/mutability.rst
-    oop/staticattrs.rst
-    oop/staticmethod.rst
-    oop/classmethod.rst
-    oop/access-modifiers.rst
+    oop/attribute-mutable.rst
+    oop/attribute-static.rst
+    oop/attribute-accessmodifiers.rst
+    oop/method-about.rst
+    oop/method-accessmodifiers.rst
+    oop/method-staticmethod.rst
+    oop/method-classmethod.rst
     oop/inheritance-overload.rst
     oop/inheritance-super.rst
     oop/inheritance-patterns.rst
     oop/inheritance-problems.rst
     oop/inheritance-mro.rst
-    oop/polymorphism.rst
-    oop/relations.rst
     oop/abstract-interface.rst
     oop/abstract-class.rst
-    oop/identity.rst
-    oop/slots.rst
-    oop/constructor.rst
+    oop/abstract-protocol.rst
+    oop/polymorphism.rst
+    oop/relations.rst
+    oop/attribute-slots.rst
+    oop/class-identity.rst
+    oop/class-constructor.rst
     oop/class-factory.rst
-    oop/metaclass.rst
+    oop/class-metaclass.rst
 
 
 Performance

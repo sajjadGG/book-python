@@ -387,8 +387,10 @@ Inheritance
     astro = Astronaut()
 
 
-Use Case - Timezone Converter Descriptor (pytz)
------------------------------------------------
+Use Case - 0x01
+---------------
+* Timezone Converter Descriptor (pytz)
+
 .. figure:: img/protocol-descriptor-timezone.png
 
     Comparing datetime works only when all has the same timezone (UTC).
@@ -451,8 +453,10 @@ Descriptor Timezone Converter:
 1969-07-20 19:56:15-07:00
 
 
-Use Case - Timezone Converter Descriptor (zoneinfo)
----------------------------------------------------
+Use Case - 0x02
+---------------
+* Timezone Converter Descriptor (zoneinfo)
+
 .. figure:: img/protocol-descriptor-timezone.png
 
     Comparing datetime works only when all has the same timezone (UTC).

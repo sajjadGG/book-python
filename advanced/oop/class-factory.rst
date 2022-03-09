@@ -245,6 +245,6 @@ Use Case - 0x03
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_classfactory_a.py
-    :caption: :download:`Solution <assignments/oop_classfactory_a.py>`
+.. literalinclude:: assignments/oop_class_factory_a.py
+    :caption: :download:`Solution <assignments/oop_class_factory_a.py>`
     :end-before: # Solution

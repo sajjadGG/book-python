@@ -59,13 +59,13 @@ Super
 >>>
 >>> class Astronaut(Person):
 ...     def __init__(self):
-...         self.job = 'astronaut'
 ...         super().__init__()
+...         self.job = 'astronaut'
 >>>
 >>>
 >>> astro = Astronaut()
 >>> print(vars(astro))
-{'job': 'unemployed', 'firstname': 'Mark', 'lastname': 'Watney'}
+{'firstname': 'Mark', 'lastname': 'Watney', 'job': 'astronaut'}
 
 >>> class Person:
 ...     def __init__(self):
@@ -76,13 +76,13 @@ Super
 >>>
 >>> class Astronaut(Person):
 ...     def __init__(self):
-...         super().__init__()
 ...         self.job = 'astronaut'
+...         super().__init__()
 >>>
 >>>
 >>> astro = Astronaut()
 >>> print(vars(astro))
-{'firstname': 'Mark', 'lastname': 'Watney', 'job': 'astronaut'}
+{'job': 'unemployed', 'firstname': 'Mark', 'lastname': 'Watney'}
 
 
 Super Init

@@ -2,8 +2,10 @@ Model Use Case
 ==============
 
 
-Use Case - Contact
-------------------
+Use Case - 0x01
+---------------
+* Contact
+
 .. code-block:: python
 
     import datetime
@@ -98,4 +100,3 @@ References
 .. [#irisversicolor] Blue flag flower (Iris versicolor). Photo taken by Danielle Langlois in July 2005 at the Forillon National Park of Canada, Quebec, Canada. https://commons.wikimedia.org/wiki/File:Iris_versicolor_2.jpg
 
 .. [#irisvirginica] https://commons.wikimedia.org/wiki/File:Iris_virginica.jpg
-

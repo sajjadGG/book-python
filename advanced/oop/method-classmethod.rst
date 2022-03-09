@@ -1,5 +1,5 @@
-OOP Classmethod
-===============
+OOP Method Classmethod
+======================
 
 
 Rationale
@@ -258,10 +258,10 @@ Coordinated Mars Time
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_classmethod_a.py
-    :caption: :download:`Solution <assignments/oop_classmethod_a.py>`
+.. literalinclude:: assignments/oop_method_classmethod_a.py
+    :caption: :download:`Solution <assignments/oop_method_classmethod_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_classmethod_b.py
-    :caption: :download:`Solution <assignments/oop_classmethod_b.py>`
+.. literalinclude:: assignments/oop_method_classmethod_b.py
+    :caption: :download:`Solution <assignments/oop_method_classmethod_b.py>`
     :end-before: # Solution

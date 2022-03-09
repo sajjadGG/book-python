@@ -368,18 +368,18 @@ References
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_abstract_a.py
-    :caption: :download:`Solution <assignments/oop_abstract_a.py>`
+.. literalinclude:: assignments/oop_abstract_class_a.py
+    :caption: :download:`Solution <assignments/oop_abstract_class_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_abstract_b.py
-    :caption: :download:`Solution <assignments/oop_abstract_b.py>`
+.. literalinclude:: assignments/oop_abstract_class_b.py
+    :caption: :download:`Solution <assignments/oop_abstract_class_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_abstract_c.py
-    :caption: :download:`Solution <assignments/oop_abstract_c.py>`
+.. literalinclude:: assignments/oop_abstract_class_c.py
+    :caption: :download:`Solution <assignments/oop_abstract_class_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_abstract_d.py
-    :caption: :download:`Solution <assignments/oop_abstract_d.py>`
+.. literalinclude:: assignments/oop_abstract_class_d.py
+    :caption: :download:`Solution <assignments/oop_abstract_class_d.py>`
     :end-before: # Solution

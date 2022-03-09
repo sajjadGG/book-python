@@ -4,6 +4,11 @@ OOP Constructor
 
 Rationale
 ---------
+``__new__`` will always get called when an object has to be created. There
+are some situations where ``__init__`` will not get called. One example is
+when you unpickle objects from a pickle file, they will get allocated
+(``__new__``) but not initialised (``__init__``) [#Noufal2011]_.
+
 In Object Oriented Programming constructor is:
 
     a. Special method
@@ -490,13 +495,16 @@ Use Case - 0x06
 >>> Document('myfile.docx')  # doctest: +ELLIPSIS
 <DOCX object at 0x...>
 
+References
+----------
+.. [#Noufal2011] Noufal Ibrahim. Python (and Python C API): __new__ versus __init__. Year: 2011. Retrieved: 2022-03-09. URL: https://stackoverflow.com/a/5143108
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_constructor_a.py
-    :caption: :download:`Solution <assignments/oop_constructor_a.py>`
+.. literalinclude:: assignments/oop_class_constructor_a.py
+    :caption: :download:`Solution <assignments/oop_class_constructor_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_constructor_b.py
-    :caption: :download:`Solution <assignments/oop_constructor_b.py>`
+.. literalinclude:: assignments/oop_class_constructor_b.py
+    :caption: :download:`Solution <assignments/oop_class_constructor_b.py>`
     :end-before: # Solution

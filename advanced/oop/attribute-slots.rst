@@ -1,5 +1,5 @@
-OOP Slots
-=========
+OOP Attribute Slots
+===================
 
 
 Rationale
@@ -454,6 +454,6 @@ Cosmonaut 375
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_slots_define.py
-    :caption: :download:`Solution <assignments/oop_slots_define.py>`
+.. literalinclude:: assignments/oop_attribute_slots_a.py
+    :caption: :download:`Solution <assignments/oop_attribute_slots_a.py>`
     :end-before: # Solution

@@ -118,8 +118,10 @@ Call
 
 
 
-Use Case - Cleaning data in database
-------------------------------------
+Use Case - 0x01
+---------------
+* Cleaning data in database
+
 .. code-block:: python
 
     from django.core.management.base import BaseCommand
@@ -136,8 +138,10 @@ Use Case - Cleaning data in database
                 p.save()
 
 
-Use Case - Parse file line by line
-----------------------------------
+Use Case - 0x01
+---------------
+* Parse file line by line
+
 .. code-block:: python
 
     from django.core.management.base import BaseCommand

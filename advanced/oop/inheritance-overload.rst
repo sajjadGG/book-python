@@ -19,35 +19,37 @@ Overload Method
 ---------------
 >>> class Parent:
 ...     def say_hello(self):
-...         print('hello')
+...         print('Parent says good morning')
 >>>
 >>>
 >>> class Child(Parent):
 ...     def say_hello(self):
-...         print('yo')
+...         print('Child says wassup')
 >>>
 >>>
 >>> obj = Child()
 >>> obj.say_hello()
-yo
+Child says wassup
 
 
 Overload Attribute
 ------------------
 >>> class Parent:
 ...     def __init__(self):
-...         self.firstname = 'Mark'
-...         self.lastname = 'Watney'
+...         self.firstname = 'Melissa'
+...         self.lastname = 'Lewis'
 >>>
 >>>
 >>> class Child(Parent):
 ...     def __init__(self):
+...         self.firstname = 'Mark'
+...         self.lastname = 'Watney'
 ...         self.job = 'astronaut'
 >>>
 >>>
 >>> obj = Child()
 >>> vars(obj)
-{'job': 'astronaut'}
+{'firstname': 'Mark', 'lastname': 'Watney', 'job': 'astronaut'}
 
 
 .. todo:: Assignments

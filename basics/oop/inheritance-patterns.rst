@@ -40,11 +40,11 @@ Single Inheritance
 
 Multilevel Inheritance
 ----------------------
->>> class Person:
+>>> class Grandparent:
 ...     pass
 >>>
 >>>
->>> class Parent(Person):
+>>> class Parent(Grandparent):
 ...     pass
 >>>
 >>>
@@ -54,6 +54,8 @@ Multilevel Inheritance
 
 Multiple Inheritance
 --------------------
+* Mixin Classes
+
 >>> class Mother:
 ...     pass
 >>>

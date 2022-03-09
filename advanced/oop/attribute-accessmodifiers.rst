@@ -14,15 +14,7 @@ Attributes:
     * ``_name`` - protected attribute (non-public by convention)
     * ``__name`` - private attribute (name mangling)
     * ``__name__`` - system attribute
-    * ``name_`` - avoid name collision
-
-Methods:
-
-    * ``name(self)`` - public method
-    * ``_name(self)`` - protected method (non-public by convention)
-    * ``__name(self)`` - private method (name mangling)
-    * ``__name__(self)`` - system method
-    * ``name_(self)`` - avoid name collision
+    * ``name_`` - avoid name collision with built-ins
 
 
 Example
@@ -268,125 +260,6 @@ System Attributes
 {'firstname': 'Mark', 'lastname': 'Watney'}
 
 
-Protected Method
-----------------
->>> from dataclasses import dataclass
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     _firstname: str
-...     _lastname: str
-...
-...     def _get_fullname(self):
-...         return f'{self._firstname} {self._lastname}'
-...
-...     def get_publicname(self):
-...         return f'{self._firstname} {self._lastname[0]}.'
->>>
->>>
->>> astro = Astronaut('Mark', 'Watney')
->>> astro._get_fullname()  # IDE should warn: "Access to a protected member _get_fullname of a class"
-'Mark Watney'
-
-
-Private Method
---------------
->>> class Astronaut:
-...     def __init__(self, firstname, lastname):
-...         self._firstname = firstname
-...         self._lastname = lastname
-...
-...     def __get_fullname(self):
-...         return f'{self._firstname} {self._lastname}'
-...
-...     def get_publicname(self):
-...         return f'{self._firstname} {self._lastname[0]}.'
->>>
->>>
->>> astro = Astronaut('Mark', 'Watney')
->>>
->>> astro.__get_fullname()
-Traceback (most recent call last):
-AttributeError: 'Astronaut' object has no attribute '__get_fullname'
->>>
->>> astro._Astronaut__get_fullname()  # IDE should warn: "Access to a protected member _Astronaut__get_fullname of a class"
-'Mark Watney'
-
-
-System Method
--------------
->>> class Astronaut:
-...     def __init__(self, firstname, lastname):
-...         self._firstname = firstname
-...         self._lastname = lastname
-...
-...     def __str__(self):
-...         return 'stringification'
-...
-...     def __repr__(self):
-...         return 'representation'
->>>
->>>
->>> astro = Astronaut('Mark', 'Watney')
->>>
->>> print(str(astro))
-stringification
->>>
->>> print(repr(astro))
-representation
-
-
-Show Methods
-------------
-* ``dir()``
-
->>> class Astronaut:
-...     def __init__(self, firstname, lastname):
-...         self._firstname = firstname
-...         self._lastname = lastname
-...
-...     def __get_fullname(self):
-...         return f'{self._firstname} {self._lastname}'
-...
-...     def get_publicname(self):
-...         return f'{self._firstname} {self._lastname[0]}.'
->>>
->>>
->>> astro = Astronaut('Mark', 'Watney')
->>>
->>> print(dir(astro))  # doctest: +NORMALIZE_WHITESPACE
-['_Astronaut__get_fullname', '__class__', '__delattr__', '__dict__',
- '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
- '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__',
- '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
- '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__',
- '__weakref__', '_firstname', '_lastname', 'get_publicname']
->>>
->>> [method for method in dir(astro) if callable(getattr(astro, method))]  # doctest: +NORMALIZE_WHITESPACE
-['_Astronaut__get_fullname', '__class__', '__delattr__', '__dir__', '__eq__',
- '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__',
- '__init_subclass__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__',
- '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__',
- '__subclasshook__', 'get_publicname']
->>>
->>> public_methods = [method
-...                   for method in dir(astro)
-...                   if callable(getattr(astro, method))
-...                   and not method.startswith('_')]
->>>
->>> protected_methods = [method
-...                      for method in dir(astro)
-...                      if callable(getattr(astro, method))
-...                      and method.startswith('_')]
->>>
->>> private_methods = [method
-...                    for method in dir(astro)
-...                    if callable(getattr(astro, method))
-...                    and method.startswith(f'_{astro.__class__.__name__}')]
-
-
-
 References
 ----------
 .. [#pydocprivatevar] https://docs.python.org/3/tutorial/classes.html#private-variables
@@ -394,14 +267,14 @@ References
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_accessmodifiers_a.py
-    :caption: :download:`Solution <assignments/oop_accessmodifiers_a.py>`
+.. literalinclude:: assignments/oop_attribute_accessmodifiers_a.py
+    :caption: :download:`Solution <assignments/oop_attribute_accessmodifiers_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_accessmodifiers_b.py
-    :caption: :download:`Solution <assignments/oop_accessmodifiers_b.py>`
+.. literalinclude:: assignments/oop_attribute_accessmodifiers_b.py
+    :caption: :download:`Solution <assignments/oop_attribute_accessmodifiers_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_accessmodifiers_c.py
-    :caption: :download:`Solution <assignments/oop_accessmodifiers_c.py>`
+.. literalinclude:: assignments/oop_attribute_accessmodifiers_c.py
+    :caption: :download:`Solution <assignments/oop_attribute_accessmodifiers_c.py>`
     :end-before: # Solution

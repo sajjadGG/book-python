@@ -20,8 +20,10 @@ Example
     :caption: Django Settings Example
 
 
-Use Case - HabitatOS
---------------------
+Use Case - 0x01
+---------------
+* HabitatOS
+
 .. literalinclude:: src/django-settings-habitatos.py
     :language: python
     :caption: HabitatOS settings

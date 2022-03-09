@@ -12,26 +12,26 @@ Problem
 -------
 >>> class Person:
 ...     def __init__(self):
-...         print('Person init')
+...         print('Person')
 >>>
 >>>
 >>> class Astronaut(Person):
 ...     def __init__(self):
-...         print('Astronaut init')
+...         print('Astronaut')
 >>>
 >>>
 >>> class Cosmonaut(Person):
 ...     def __init__(self):
-...         print('Cosmonaut init')
+...         print('Cosmonaut')
 >>>
 >>>
 >>> class Crew(Astronaut, Cosmonaut):
 ...     def __init__(self):
-...         print('Crew init')
+...         print('Crew')
 >>>
 >>>
 >>> crew = Crew()
-Crew init
+Crew
 
 
 Small Diamond
@@ -40,17 +40,17 @@ Small Diamond
 
 >>> class Person:
 ...     def __init__(self):
-...         print('Person init')
+...         print('Person')
 >>>
 >>>
 >>> class Astronaut(Person):
 ...     def __init__(self):
-...         print('Astronaut init')
+...         print('Astronaut')
 >>>
 >>>
 >>> class Cosmonaut(Person):
 ...     def __init__(self):
-...         print('Cosmonaut init')
+...         print('Cosmonaut')
 >>>
 >>>
 >>> class Crew(Astronaut, Cosmonaut):
@@ -58,21 +58,21 @@ Small Diamond
 >>>
 >>>
 >>> crew = Crew()
-Astronaut init
+Astronaut
 
 >>> class Person:
 ...     def __init__(self):
-...         print('Person init')
+...         print('Person')
 >>>
 >>>
 >>> class Astronaut(Person):
 ...     def __init__(self):
-...         print('Astronaut init')
+...         print('Astronaut')
 >>>
 >>>
 >>> class Cosmonaut(Person):
 ...     def __init__(self):
-...         print('Cosmonaut init')
+...         print('Cosmonaut')
 >>>
 >>>
 >>> class Crew(Astronaut, Cosmonaut):
@@ -81,7 +81,7 @@ Astronaut init
 >>>
 >>>
 >>> crew = Crew()
-Astronaut init
+Astronaut
 
 .. figure:: img/oop-mro-diamond-small-path.png
 
@@ -106,25 +106,25 @@ Large Diamond
 
 >>> class Person:
 ...     def __init__(self):
-...         print('Person init')
+...         print('Person')
 >>>
 >>>
 >>> class Astronaut(Person):
 ...     def __init__(self):
-...         print('Astronaut init')
+...         print('Astronaut')
 >>>
 >>> class VeteranAstronaut(Astronaut):
 ...     def __init__(self):
-...         print('VeteranAstronaut init')
+...         print('VeteranAstronaut')
 >>>
 >>>
 >>> class Cosmonaut(Person):
 ...     def __init__(self):
-...         print('Cosmonaut init')
+...         print('Cosmonaut')
 >>>
 >>> class VeteranCosmonaut(Cosmonaut):
 ...     def __init__(self):
-...         print('VeteranCosmonaut init')
+...         print('VeteranCosmonaut')
 >>>
 >>>
 >>> class Crew(VeteranAstronaut, VeteranCosmonaut):
@@ -133,31 +133,31 @@ Large Diamond
 >>>
 >>>
 >>> crew = Crew()
-VeteranAstronaut init
+VeteranAstronaut
 
 >>> class Person:
 ...     def __init__(self):
-...         print('Person init')
+...         print('Person')
 >>>
 >>>
 >>> class Astronaut(Person):
 ...     def __init__(self):
-...         print('Astronaut init')
+...         print('Astronaut')
 >>>
 >>> class VeteranAstronaut(Astronaut):
 ...     def __init__(self):
 ...         super().__init__()
-...         print('VeteranAstronaut init')
+...         print('VeteranAstronaut')
 >>>
 >>>
 >>> class Cosmonaut(Person):
 ...     def __init__(self):
-...         print('Cosmonaut init')
+...         print('Cosmonaut')
 >>>
 >>> class VeteranCosmonaut(Cosmonaut):
 ...     def __init__(self):
 ...         super().__init__()
-...         print('VeteranCosmonaut init')
+...         print('VeteranCosmonaut')
 >>>
 >>>
 >>> class Crew(VeteranAstronaut, VeteranCosmonaut):
@@ -165,74 +165,36 @@ VeteranAstronaut init
 >>>
 >>>
 >>> crew = Crew()
-Astronaut init
-VeteranAstronaut init
+Astronaut
+VeteranAstronaut
 
 
 Problematic super()
 -------------------
 >>> class Person:
 ...     def __init__(self):
-...         print('Person init')
+...         print('Person')
 >>>
 >>>
 >>> class Astronaut(Person):
 ...     def __init__(self):
-...         super().__init__()
-...         print('Astronaut init')
->>>
->>> class VeteranAstronaut(Astronaut):
-...     def __init__(self):
-...         super().__init__()
-...         print('VeteranAstronaut init')
->>>
->>>
->>> class Cosmonaut(Person):
-...     def __init__(self):
-...         super().__init__()
-...         print('Cosmonaut init')
->>>
->>> class VeteranCosmonaut(Cosmonaut):
-...     def __init__(self):
-...         super().__init__()
-...         print('VeteranCosmonaut init')
->>>
->>>
->>> class Crew(VeteranAstronaut, VeteranCosmonaut):
-...     pass
->>>
->>>
->>> crew = Crew()
-Person init
-Cosmonaut init
-VeteranCosmonaut init
-Astronaut init
-VeteranAstronaut init
-
->>> class Person:
-...     def __init__(self):
-...         print('Person init')
->>>
->>>
->>> class Astronaut(Person):
-...     def __init__(self):
-...         print('Astronaut init')
+...         print('Astronaut')
 ...         super().__init__()
 >>>
 >>> class VeteranAstronaut(Astronaut):
 ...     def __init__(self):
-...         print('VeteranAstronaut init')
+...         print('VeteranAstronaut')
 ...         super().__init__()
 >>>
 >>>
 >>> class Cosmonaut(Person):
 ...     def __init__(self):
-...         print('Cosmonaut init')
+...         print('Cosmonaut')
 ...         super().__init__()
 >>>
 >>> class VeteranCosmonaut(Cosmonaut):
 ...     def __init__(self):
-...         print('VeteranCosmonaut init')
+...         print('VeteranCosmonaut')
 ...         super().__init__()
 >>>
 >>>
@@ -241,11 +203,11 @@ VeteranAstronaut init
 >>>
 >>>
 >>> crew = Crew()
-VeteranAstronaut init
-Astronaut init
-VeteranCosmonaut init
-Cosmonaut init
-Person init
+VeteranAstronaut
+Astronaut
+VeteranCosmonaut
+Cosmonaut
+Person
 
 
 Why?!
