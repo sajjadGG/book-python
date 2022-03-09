@@ -151,6 +151,4 @@ Sequence
 Dict
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

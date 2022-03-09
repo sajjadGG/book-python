@@ -369,6 +369,4 @@ Percentile
 * ``np.nanpercentile()``
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

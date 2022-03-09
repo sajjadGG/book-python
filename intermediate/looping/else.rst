@@ -66,6 +66,4 @@ Loop ``else``
     # ]
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

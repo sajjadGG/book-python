@@ -54,6 +54,4 @@ display.precision : int
     Floating point output precision in terms of number of places after the decimal, for regular formatting as well as scientific notation. Similar to precision in numpy.set_printoptions(). [default: 6] [currently: 6]
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

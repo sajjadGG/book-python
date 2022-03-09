@@ -91,6 +91,4 @@ Increment Merge Operator
  'engineer': 'Beth Johanssen'}
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

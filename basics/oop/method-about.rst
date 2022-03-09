@@ -56,6 +56,4 @@ Return
 ------
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

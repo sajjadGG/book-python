@@ -45,6 +45,9 @@ PyCharm
 * Text: Edit as Table
 * Text: Toggle Case tekstu i liter
 * Text: Zaznaczanie pionowe i wielozaznaczanie, karetka na końcu linii
+* Alt+Enter: dodawanie annotation
+* Alt+Enter: dodawanie pól do klasy + annotation
+* Alt+Enter: klasy abstrakcyjne i interfejsy
 
 pd.set_option('display.width', 200)
 pd.set_option('display.max_columns', 15)

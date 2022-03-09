@@ -58,6 +58,4 @@ Nowe Słownictwo
 .. glossary::
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

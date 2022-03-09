@@ -282,6 +282,4 @@ Example
     #  Container('Alex', 'Vogel', [{'street': 'Linder Hoehe', 'city': 'Köln', 'postcode': 51147, 'region': 'North Rhine-Westphalia', 'country': 'Germany'}])]
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

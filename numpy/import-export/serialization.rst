@@ -63,6 +63,4 @@ b'\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00
 array([1., 2., 3., 4., 5., 6.])
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

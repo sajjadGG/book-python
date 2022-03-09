@@ -174,6 +174,4 @@ José 42
 José (10, 20)
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

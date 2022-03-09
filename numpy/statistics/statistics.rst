@@ -357,6 +357,4 @@ array([[ 1.        , -0.99587059],
        [-0.99587059,  1.        ]])
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

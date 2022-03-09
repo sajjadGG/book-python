@@ -87,6 +87,4 @@ Using in a loop
 3 -> March
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

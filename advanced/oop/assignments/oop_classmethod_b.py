@@ -63,6 +63,8 @@ Tests:
      Cosmonaut(firstname='Jan', lastname='Twardowski')]
 
     >>> remove('_temporary.txt')
+
+TODO: dodać test sprawdzający czy linia kończy się newline
 """
 
 class CSVMixin:

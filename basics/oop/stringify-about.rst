@@ -44,6 +44,4 @@ datetime.date(1961, 4, 12)
 
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

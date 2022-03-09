@@ -39,9 +39,7 @@ Implementation
     :language: python
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments
 
 * Clean datetime
 * Split name into firstname and lastname

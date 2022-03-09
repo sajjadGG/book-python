@@ -160,6 +160,4 @@ Static Fields:
 >>> Taikonaut.lastname = ...
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

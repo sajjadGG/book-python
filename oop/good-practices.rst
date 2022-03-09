@@ -345,6 +345,4 @@ ABC                        Inherits from          Abstract Methods        Mixin 
 .. todo:: Make this table more readable
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

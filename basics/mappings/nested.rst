@@ -106,6 +106,4 @@ Length
 4
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

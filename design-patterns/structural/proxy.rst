@@ -48,6 +48,4 @@ Proxy with Authorization and Logging:
     :language: python
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

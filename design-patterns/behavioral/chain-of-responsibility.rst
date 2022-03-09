@@ -35,9 +35,7 @@ Implementation
     :language: python
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments
 
 * Add Encryptor handler
 * Make pipeline: authenticator -> logger -> compressor -> encryptor

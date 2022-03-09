@@ -181,6 +181,4 @@ Use Case - 0x01
 10
 
 
-Assignments
------------
-.. todo:: Create Assignments
+.. todo:: Assignments

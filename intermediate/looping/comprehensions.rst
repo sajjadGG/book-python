@@ -73,6 +73,4 @@ Generator comprehensions
     # {<generator object <genexpr> at 0x1179a0a50>}
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

@@ -255,6 +255,4 @@ No
 No
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

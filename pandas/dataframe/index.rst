@@ -299,6 +299,4 @@ References
 .. [#pdDocAdvanced] https://pandas.pydata.org/pandas-docs/dev/user_guide/advanced.html#non-monotonic-indexes-require-exact-matches
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

@@ -462,6 +462,4 @@ Further Reading
 * More information in `Date and Time Calendar`
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

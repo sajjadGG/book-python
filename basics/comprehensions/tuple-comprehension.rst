@@ -23,6 +23,4 @@ Short Syntax
 <generator object <genexpr> at 0x...>
 
 
-Assignments
------------
-.. todo:: Create Assignments
+.. todo:: Assignments

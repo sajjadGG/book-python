@@ -118,6 +118,4 @@ array(['1961-04-12T00:00:00.000000000', '1961-04-13T00:00:00.000000000',
        '1969-07-21T00:00:00.000000000'], dtype='datetime64[ns]')
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

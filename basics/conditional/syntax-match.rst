@@ -227,6 +227,4 @@ Further Reading
 * https://www.python.org/dev/peps/pep-0636/
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

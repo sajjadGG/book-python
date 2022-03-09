@@ -165,6 +165,4 @@ References
 .. [#ROHIT2020] Rohit. Python file modes | Open, Write, append (r, r+, w, w+, x, etc). Year: 2020. URL: https://tutorial.eyehunts.com/python/python-file-modes-open-write-append-r-r-w-w-x-etc/
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

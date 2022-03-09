@@ -81,6 +81,4 @@ Control Flow
 Hello Space Pirate
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

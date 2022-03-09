@@ -156,6 +156,4 @@ Use Case - 0x01
 'Hello Mark Watney!'
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

@@ -158,7 +158,4 @@ Connecting...
 Connecting...
 
 
-Assignments
------------
-.. todo:: Create assignments
-
+.. todo:: Assignments

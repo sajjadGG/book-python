@@ -53,6 +53,4 @@ You are not assigned to the crew
 
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

@@ -197,6 +197,4 @@ C  30  31  32
 >>> x = df.transpose()  # will transpose data
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

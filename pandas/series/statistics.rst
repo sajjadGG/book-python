@@ -258,6 +258,4 @@ max      5.000000
 dtype: float64
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

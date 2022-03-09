@@ -109,6 +109,4 @@ Traceback (most recent call last):
 AttributeError: can't set attribute
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

@@ -331,6 +331,4 @@ array([[ 3,  6,  7],
        [33, 66, 99]])
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

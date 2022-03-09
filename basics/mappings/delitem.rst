@@ -57,6 +57,4 @@ Del Keyword
 {'commander': 'Melissa Lewis', 'botanist': 'Mark Watney'}
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

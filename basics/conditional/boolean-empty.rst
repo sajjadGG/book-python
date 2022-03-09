@@ -103,6 +103,4 @@ Mapping
 Empty
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

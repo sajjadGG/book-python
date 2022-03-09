@@ -599,6 +599,4 @@ References
 .. [#Hettinger2012] Raymond Hettinger. The Art of Subclassing. 2012. https://www.youtube.com/watch?v=miGolgp9xq8
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

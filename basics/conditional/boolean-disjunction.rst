@@ -60,6 +60,4 @@ Control Flow
 Hello astronaut
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

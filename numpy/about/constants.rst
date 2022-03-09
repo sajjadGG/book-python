@@ -181,6 +181,4 @@ array([ True,  True, False])
 array([False, False, False])
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

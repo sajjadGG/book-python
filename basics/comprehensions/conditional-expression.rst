@@ -16,6 +16,4 @@ Syntax
 ['even', 'odd', 'even', 'odd']
 
 
-Assignments
------------
-.. todo:: Create Assignments
+.. todo:: Assignments

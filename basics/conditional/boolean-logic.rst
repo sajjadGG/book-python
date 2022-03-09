@@ -23,6 +23,4 @@ Positive values:
     * any other
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

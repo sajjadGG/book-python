@@ -35,13 +35,7 @@ Static Fields
 * Must have default values
 * Share state
 
-Static fields defined in class:
-
->>> class Astronaut:
-...     firstname = 'Mark'
-...     lastname = 'Watney'
-
-Static fields defined in code:
+Static fields are defined on a class:
 
 >>> class Astronaut:
 ...     pass
@@ -50,6 +44,12 @@ Static fields defined in code:
 >>> Astronaut.firstname = 'Mark'
 >>> Astronaut.lastname = 'Watney'
 
+Static fields are defined in a class:
+
+>>> class Astronaut:
+...     firstname = 'Mark'
+...     lastname = 'Watney'
+
 
 Dynamic Fields
 --------------
@@ -57,14 +57,7 @@ Dynamic Fields
 * Do not share state (unless mutable argument)
 * By convention initialized in ``__init__()``
 
-Dynamic fields with constant values:
-
->>> class Astronaut:
-...     def __init__(self):
-...         self.firstname = 'Mark'
-...         self.lastname = 'Watney'
-
-Dynamic fields initialized outside init:
+Dynamic fields are defined on an instance:
 
 >>> class Astronaut:
 ...     pass
@@ -74,6 +67,13 @@ Dynamic fields initialized outside init:
 >>> astro.firstname = 'Mark'
 >>> astro.lastname = 'Watney'
 
+Dynamic fields are defined in init:
+
+>>> class Astronaut:
+...     def __init__(self):
+...         self.firstname = 'Mark'
+...         self.lastname = 'Watney'
+
 Dynamic fields with variable values:
 
 >>> class Astronaut:
@@ -82,19 +82,8 @@ Dynamic fields with variable values:
 ...         self.lastname = lastname
 
 
-
 Static and Dynamic Fields
 -------------------------
-Static and dynamic fields defined in class:
-
->>> class Astronaut:
-...     firstname = 'Mark'
-...     lastname = 'Watney'
-...
-...     def __init__(self):
-...         self.firstname = 'Mark'
-...         self.lastname = 'Watney'
-
 Static and dynamic fields defined in code:
 
 >>> class Astronaut:
@@ -108,10 +97,23 @@ Static and dynamic fields defined in code:
 >>> astro.firstname = 'Melissa'
 >>> astro.lastname = 'Lewis'
 
+Static and dynamic fields defined in class:
+
+>>> class Astronaut:
+...     firstname = 'Mark'
+...     lastname = 'Watney'
+...
+...     def __init__(self):
+...         self.firstname = 'Mark'
+...         self.lastname = 'Watney'
+
+Note, the last example makes not meaningful sense. Dynamic fields will shadow
+static fields.
+
 
 Type Annotations
 ----------------
-No fields at all, type annotations only:
+No fields at all (sic!), type annotations only:
 
 >>> class Astronaut:
 ...     firstname: str
@@ -142,6 +144,17 @@ Both static and dynamic fields with type annotations:
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
+
+Note, that that static field which does not change you can use Final:
+
+Static fields with type annotations:
+
+>>> from typing import Final
+>>>
+>>>
+>>> class Astronaut:
+...     firstname: Final[str] = 'Mark'
+...     lastname: Final[str] = 'Watney'
 
 
 Dataclasses
@@ -330,6 +343,16 @@ Use Case - 0x02
 ...     firstname: str
 ...     lastname: str
 ...     age: int
+...     AGE_MIN: Final[int] = 30
+...     AGE_MAX: Final[int] = 50
+
+
+Use Case - 0x03
+---------------
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
 ...     AGE_MIN: int = 30
 ...     AGE_MAX: int = 50
 ...
@@ -342,7 +365,7 @@ Use Case - 0x02
 ...             raise ValueError('age is invalid')
 
 
-Use Case - 0x03
+Use Case - 0x04
 ---------------
 >>> from typing import Final
 >>>
@@ -363,7 +386,7 @@ Use Case - 0x03
 ...             raise ValueError('age is invalid')
 
 
-Use Case - 0x04
+Use Case - 0x05
 ---------------
 >>> from dataclasses import dataclass
 >>>
@@ -381,7 +404,7 @@ Use Case - 0x04
 ...             raise ValueError('age is invalid')
 
 
-Use Case - 0x05
+Use Case - 0x06
 ---------------
 >>> from dataclasses import dataclass
 >>> from typing import Final
@@ -400,6 +423,4 @@ Use Case - 0x05
 ...             raise ValueError('age is invalid')
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

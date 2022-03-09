@@ -146,6 +146,4 @@ Traceback (most recent call last):
 KeyError: -2
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

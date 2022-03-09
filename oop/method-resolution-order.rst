@@ -156,6 +156,4 @@ Inheritance Diamond:
 
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

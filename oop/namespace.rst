@@ -111,6 +111,4 @@ Inner Classes
             ordering = ['lastname']
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

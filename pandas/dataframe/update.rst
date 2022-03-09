@@ -79,6 +79,4 @@ Use Case - 0x02
 ... }, inplace=True)
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

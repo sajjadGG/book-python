@@ -141,6 +141,4 @@ False
 False
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

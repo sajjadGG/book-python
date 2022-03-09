@@ -168,6 +168,4 @@ dtype: object
 dtype: object
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

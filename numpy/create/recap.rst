@@ -57,6 +57,4 @@ Rationale
 4.38 µs ± 349 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
 
 
-Assignments
------------
-.. todo:: Create Assignments
+.. todo:: Assignments

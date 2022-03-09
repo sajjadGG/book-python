@@ -152,6 +152,4 @@ Sorting whole DataFrame, according to values by in row (change column order):
 2000-01-05  2.269755  0.045759 -0.187184 -1.454366
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

@@ -35,6 +35,4 @@ Memory Footprint
 216
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

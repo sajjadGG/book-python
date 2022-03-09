@@ -379,6 +379,4 @@ User Cases
     # {"gagarin": "1961-04-12"}
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

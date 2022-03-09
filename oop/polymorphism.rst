@@ -231,6 +231,4 @@ Factory
     #  Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2)]
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

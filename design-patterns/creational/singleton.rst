@@ -34,7 +34,4 @@ Implementation
     :language: python
 
 
-Assignments
------------
-.. todo:: Create assignments
-
+.. todo:: Assignments

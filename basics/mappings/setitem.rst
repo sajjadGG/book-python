@@ -64,6 +64,4 @@ Update Method
  'pilot': 'Rick Martinez'}
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

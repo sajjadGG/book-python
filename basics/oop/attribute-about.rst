@@ -98,6 +98,4 @@ References
 .. [glassimg] https://media.istockphoto.com/vectors/glasses-set-for-water-glasses-full-empty-halffilled-with-water-vector-vector-id905957960?k=6&m=905957960&s=612x612&w=0&h=DE0uCDCehEA_eDHzHW38jvhl3pYjNuoqXZ_6ZzHbz0M=
 
 
-Assignments
------------
-.. todo:: Create assignment
+.. todo:: Assignments

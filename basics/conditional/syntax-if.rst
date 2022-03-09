@@ -159,6 +159,4 @@ Use Case - 0x01
 even
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

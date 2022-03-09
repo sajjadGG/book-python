@@ -83,6 +83,4 @@ array([[[1],
         [8]]])
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

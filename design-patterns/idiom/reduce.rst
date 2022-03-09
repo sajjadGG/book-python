@@ -84,6 +84,4 @@ Map Reduce
 .. figure:: img/idiom-reduce-mapreduce.gif
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

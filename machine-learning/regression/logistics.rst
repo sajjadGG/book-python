@@ -71,7 +71,4 @@ Przykład zastosowania
 * Weather forecasters use it to predict the "chance of rain" you see every morning.
 
 
-Assignments
------------
-.. todo:: Create assignments
-
+.. todo:: Assignments

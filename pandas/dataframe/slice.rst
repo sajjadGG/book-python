@@ -50,6 +50,4 @@ Column range
 2000-01-05  2.269755 -1.454366  0.045759
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

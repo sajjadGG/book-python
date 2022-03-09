@@ -73,6 +73,4 @@ Use Cases
 [10, 12, 14, 16, 18]
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

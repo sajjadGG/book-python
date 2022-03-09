@@ -35,6 +35,4 @@ One we are unwilling to postpone.
 And one we intend to win
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

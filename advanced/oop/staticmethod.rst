@@ -15,47 +15,109 @@ Rationale
 Syntax
 ------
 >>> class MyClass:
-...
 ...     @staticmethod
 ...     def mymethod():
 ...         pass
->>>
->>>
->>> MyClass.mymethod()
 
 
-Example
+Problem
 -------
->>> class Astronaut:
-...     def __init__(self):
-...         self.name = 'José Jiménez'
+Assume we received ``DATA`` from the REST API endpoint:
+
+>>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+
+Let's define a ``User`` class:
+
+>>> class User:
+...    def __init__(self, firstname, lastname):
+...        self.firstname = firstname
+...        self.lastname = lastname
 ...
-...     def say_hello(self):
-...         print(f'My name... {self.name}')
+...     def from_json(self, data):
+...         import json
+...         data = json.loads(data)
+...         return User(**data)
+
+Let's use ``.from_json()`` to create an instance:
+
+>>> User.from_json(DATA)
+Traceback (most recent call last):
+TypeError: from_json() missing 1 required positional argument: 'data'
+
+The data is unfilled. This is due to the fact, that we are running a method
+on a class, not on an instance. Typically while running on an instance,
+Python will pass it as ``self`` argument and we will fill the other one.
+Running this on a class, turns off this behavior, and therefore this is why
+the second parameter is unfilled.
+
+We can create an instance and then run ``.from_json()`` method.
+
+>>> User().from_json(DATA)
+Traceback (most recent call last):
+TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
+
+Nope, we cannot. In order to create an instance we need to pass firstname
+and lastname. We can pass ``None`` objects instead. We can also make a class
+to always assume a default value for firstname and lastname as ``None``, but
+this will remove those arguments from required list and allow to create a
+User object without passing those values. In both cases this will work,
+but it is not good:
+
+>>> User(None, None).from_json(DATA)
+User(firstname='Jan', lastname='Twardowski')
+
+
+Solution
+--------
+With the same ``DATA`` as before:
+
+>>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+
+We can define a static method ``.from_json()`` which will not require
+creating instance in order to use it:
+
+>>> class User:
+...    def __init__(self, firstname, lastname):
+...        self.firstname = firstname
+...        self.lastname = lastname
 ...
 ...     @staticmethod
-...     def say_goodbye():
-...         print('Goodbye')
+...     def from_json(data):
+...         import json
+...         data = json.loads(data)
+...         return User(**data)
+
+Now, we can use this without creating an instance first:
+
+>>> user = User.from_json(DATA)
+>>> vars(user)
+{'firstname': 'Mark', 'lastname': 'Watney'}
 
 
-Instances
+Dataclass
 ---------
->>> class MyClass:
-...     def say_hello(self):
-...         print('Hello')
->>>
->>>
->>> my = MyClass()
->>> my.say_hello()
-Hello
+The same implementation as before, but this time using ``dataclasses``
+in order to get some more readability:
 
->>> class MyClass:
-...     @staticmethod
-...     def say_hello():
-...         print('Hello')
+>>> import json
+>>> from dataclasses import dataclass
 >>>
->>> MyClass.say_hello()
-Hello
+>>>
+>>> @dataclass
+... class User:
+...     firstname: str
+...     lastname: str
+...
+...     @staticmethod
+...     def from_json(data):
+...         data = json.loads(data)
+...         return User(**data)
+>>>
+>>>
+>>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>>
+>>> User.from_json(DATA)
+User(firstname='Jan', lastname='Twardowski')
 
 
 Namespace
@@ -71,10 +133,12 @@ Functions on a high level of a module lack namespace:
 >>>
 >>> add(1, 2)
 3
->>> sub(8, 4)
-4
+>>> sub(2, 1)
+1
 
-When ``add`` and ``sub`` are in ``Calculator`` class (namespace) they get instance (``self``) as a first argument. Instantiating Calculator is not needed, as of functions do not read or write to instance variables:
+When ``add`` and ``sub`` are in ``Calculator`` class (namespace) they get
+instance (``self``) as a first argument. Instantiating Calculator is not
+needed, as of functions do not read or write to instance variables:
 
 >>> class Calculator:
 ...     def add(self, a, b):
@@ -84,21 +148,22 @@ When ``add`` and ``sub`` are in ``Calculator`` class (namespace) they get instan
 ...         return a - b
 >>>
 >>>
->>> Calculator.add(10, 20)
+>>> Calculator.add(1, 2)
 Traceback (most recent call last):
 TypeError: add() missing 1 required positional argument: 'b'
 >>>
->>> Calculator.sub(8, 4)
+>>> Calculator.sub(2, 1)
 Traceback (most recent call last):
 TypeError: add() missing 1 required positional argument: 'b'
 >>>
 >>> calc = Calculator()
 >>> calc.add(1, 2)
 3
->>> calc.sub(8, 4)
-4
+>>> calc.sub(2, 1)
+1
 
-Class ``Calculator`` is a namespace for functions. ``@staticmethod`` remove instance (``self``) argument to method:
+Class ``Calculator`` is a namespace for functions. ``@staticmethod`` remove
+instance (``self``) argument to method:
 
 >>> class Calculator:
 ...     @staticmethod
@@ -112,8 +177,8 @@ Class ``Calculator`` is a namespace for functions. ``@staticmethod`` remove inst
 >>>
 >>> Calculator.add(1, 2)
 3
->>> Calculator.sub(8, 4)
-4
+>>> Calculator.sub(2, 1)
+1
 
 
 Use Case - 0x01
@@ -121,11 +186,11 @@ Use Case - 0x01
 * Singleton
 
 >>> class MyClass:
-...     _instance: 'MyClass'
+...     _instance = None
 ...
 ...     @staticmethod
 ...     def get_instance():
-...         if not hasattr(MyClass, '_instance'):
+...         if not MyClass._instance:
 ...             MyClass._instance = object.__new__(MyClass)
 ...         return MyClass._instance
 >>>
@@ -135,6 +200,7 @@ Use Case - 0x01
 >>>
 >>> my1  # doctest: +ELLIPSIS
 <MyClass object at 0x...>
+>>>
 >>> my2  # doctest: +ELLIPSIS
 <MyClass object at 0x...>
 
@@ -171,7 +237,7 @@ Use Case - 0x03
 ...     pass
 >>>
 >>>
->>> a = Astronaut()
+>>> mark = Astronaut()
 >>> astronaut_say_hello()
 hello
 >>> astronaut_say_goodbye()
@@ -185,10 +251,10 @@ goodbye
 ...         print('goodbye')
 >>>
 >>>
->>> a = Astronaut()
->>> a.say_hello()
+>>> mark = Astronaut()
+>>> mark.say_hello()
 hello
->>> a.say_goodbye()
+>>> mark.say_goodbye()
 goodbye
 >>>
 >>> Astronaut.say_hello()
@@ -215,10 +281,10 @@ hello
 >>> Astronaut.say_goodbye()
 goodbye
 >>>
->>> astro = Astronaut()
->>> astro.say_hello()
+>>> mark = Astronaut()
+>>> mark.say_hello()
 hello
->>> astro.say_goodbye()
+>>> mark.say_goodbye()
 goodbye
 
 
@@ -457,6 +523,4 @@ Instead I can use:
 >>> obj = ZWaveSensor.add(datetime, device, type, value, unit)  # doctest: +SKIP
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

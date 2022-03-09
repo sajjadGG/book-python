@@ -174,6 +174,4 @@ Partial
 [1.1, 2.2, 3.3]
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

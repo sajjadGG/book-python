@@ -73,6 +73,4 @@ Set value at a position
 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

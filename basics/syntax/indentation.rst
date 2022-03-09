@@ -73,6 +73,4 @@ Inner block, true statement, second line
 Inner block, true statement, third line
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

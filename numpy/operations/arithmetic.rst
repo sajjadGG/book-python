@@ -132,6 +132,4 @@ Performance:
 855 ns ± 89.3 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

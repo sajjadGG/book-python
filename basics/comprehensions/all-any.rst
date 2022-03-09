@@ -56,6 +56,4 @@ False
 
 
 
-Assignments
------------
-.. todo:: Create Assignments
+.. todo:: Assignments

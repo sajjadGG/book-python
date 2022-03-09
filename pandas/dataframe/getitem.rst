@@ -149,6 +149,4 @@ Freq: D, Name: Noon, dtype: float64
 2000-01-05 -1.454366  0.045759
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

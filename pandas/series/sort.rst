@@ -62,6 +62,4 @@ dtype: float64
 dtype: float64
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

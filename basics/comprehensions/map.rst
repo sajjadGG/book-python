@@ -255,6 +255,4 @@ Use Case - 0x05
 ['Melissa L.', 'Mark W.', 'Alex V.']
 
 
-Assignments
------------
-.. todo:: Create Assignments
+.. todo:: Assignments

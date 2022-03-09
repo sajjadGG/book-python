@@ -239,6 +239,4 @@ Set value for rows matching callable condition:
 2000-01-05  2.269755      -inf      0.0      -inf
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

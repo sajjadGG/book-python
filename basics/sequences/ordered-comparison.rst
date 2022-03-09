@@ -44,6 +44,4 @@ Memory
     Memory representation for ``list`` and ``tuple``
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

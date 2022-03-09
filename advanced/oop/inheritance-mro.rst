@@ -274,6 +274,4 @@ References
 .. [#Hettinger2015] https://www.youtube.com/watch?v=EiOglTERPEo
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

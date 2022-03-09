@@ -193,6 +193,4 @@ Traceback (most recent call last):
 NotImplementedError: Argument must be int or list
 
 
-Assignments
------------
 .. todo:: Assignments

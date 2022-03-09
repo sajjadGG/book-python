@@ -231,6 +231,4 @@ Hashable
     # {[1, 2, 3]: 'whatever'}
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments

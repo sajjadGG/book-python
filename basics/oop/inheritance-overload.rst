@@ -50,6 +50,4 @@ Overload Attribute
 {'job': 'astronaut'}
 
 
-Assignments
------------
-.. todo:: Create assignments
+.. todo:: Assignments
