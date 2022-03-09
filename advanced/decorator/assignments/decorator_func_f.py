@@ -105,18 +105,23 @@ def typecheck(func):
 
 # Solution
 def typecheck(func):
-    def validate(argname, argval):
-        argtype = type(argval)
-        expected = func.__annotations__[argname]
+    annotations = func.__annotations__
+
+    def merge(args, kwargs) -> dict:
+        return kwargs | dict(zip(annotations, args))
+
+    def check(argname, argvalue):
+        argtype = type(argvalue)
+        expected = annotations[argname]
         if argtype is not expected:
             raise TypeError(f'"{argname}" is {argtype}, '
                             f'but {expected} was expected')
 
     def wrapper(*args, **kwargs):
-        arguments = kwargs | dict(zip(func.__annotations__.keys(), args))
-        [validate(k, v) for k, v in arguments.items()]
+        for argname, argvalue in merge(args, kwargs).items():
+            check(argname, argvalue)
         result = func(*args, **kwargs)
-        validate('return', result)
+        check('return', result)
         return result
 
     return wrapper

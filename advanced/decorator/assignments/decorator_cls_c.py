@@ -96,18 +96,23 @@ Tests:
 """
 
 def typecheck(func):
-    def validate(argname, argval):
-        argtype = type(argval)
-        expected = func.__annotations__[argname]
+    annotations = func.__annotations__
+
+    def merge(args, kwargs) -> dict:
+        return kwargs | dict(zip(annotations, args))
+
+    def check(argname, argvalue):
+        argtype = type(argvalue)
+        expected = annotations[argname]
         if argtype is not expected:
             raise TypeError(f'"{argname}" is {argtype}, '
                             f'but {expected} was expected')
 
     def wrapper(*args, **kwargs):
-        arguments = kwargs | dict(zip(func.__annotations__.keys(), args))
-        [validate(k, v) for k, v in arguments.items()]
+        for argname, argvalue in merge(args, kwargs).items():
+            check(argname, argvalue)
         result = func(*args, **kwargs)
-        validate('return', result)
+        check('return', result)
         return result
 
     return wrapper
@@ -120,25 +125,23 @@ class TypeCheck:
 
 # Solution
 class TypeCheck:
-    def __init__(self, func) -> None:
-        self._func = func
+    def __init__(self, func):
+        self.func = func
+        self.annotations = func.__annotations__
 
-    def __call__(self, *args, **kwargs):
-        self.check_arguments(*args, **kwargs)
-        result = self._func(*args, **kwargs)
-        self.check_result(result)
-        return result
+    def merge(self, args, kwargs):
+        return kwargs | dict(zip(self.annotations, args))
 
-    def check_arguments(self, *args, **kwargs):
-        arguments = kwargs | dict(zip(self._func.__annotations__.keys(), args))
-        [self.validate(k, v) for k, v in arguments.items()]
-
-    def check_result(self, result):
-        self.validate('return', result)
-
-    def validate(self, argname, argval) -> Exception | None:
-        argtype = type(argval)
-        expected = self._func.__annotations__[argname]
+    def check(self, argname, argvalue):
+        argtype = type(argvalue)
+        expected = self.annotations[argname]
         if argtype is not expected:
             raise TypeError(f'"{argname}" is {argtype}, '
                             f'but {expected} was expected')
+
+    def __call__(self, *args, **kwargs):
+        for argname, argvalue in self.merge(args, kwargs).items():
+            self.check(argname, argvalue)
+        result = self.func(*args, **kwargs)
+        self.check('return', result)
+        return result
