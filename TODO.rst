@@ -34,6 +34,8 @@ PyCharm
 * IDE: Python console automatyczny import i settingsy Pandas
 * IDE: Sprawdzanie pisowni i gramatyki
 * IDE: Zgłaszanie feedbacku do Jetbrains
+* IDE: Rename plików, przenoszenie
+* IDE: Kopiowanie ścieżki do pliku
 * IDE: tryb Zen, pełny ekran, distraction free mode
 * Jupyter: edycja notebook, scientific mode, code cells, dataframe debugger
 * Project: Setup interpretera
@@ -41,7 +43,7 @@ PyCharm
 * Sortowanie linii, odwracanie kolejności linii
 * Testy: TDD, doctest, unittest
 * Text: Edit as Table
-* Text: Toggle Case tekstu
+* Text: Toggle Case tekstu i liter
 * Text: Zaznaczanie pionowe i wielozaznaczanie, karetka na końcu linii
 
 pd.set_option('display.width', 200)

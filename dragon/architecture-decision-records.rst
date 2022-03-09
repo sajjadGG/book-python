@@ -8,7 +8,15 @@ Create Dragon
 
 >>> dragon = Dragon('Wawelski')
 
+* Pros: it is easy to use
+* Cons: does not allow to set initial position
+
 >>> dragon = Dragon(name='Wawelski')
+
+* Pros: it is easy to use
+* Pros: more verbose than positional arguments
+* Cons: it is too verbose for such simple example
+* Cons: does not allow to set initial position
 
 >>> dragon = Dragon('Wawelski', 'img/dragon/alive.png', 50, 120)
 

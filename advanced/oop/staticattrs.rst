@@ -57,14 +57,6 @@ Dynamic Fields
 * Do not share state (unless mutable argument)
 * By convention initialized in ``__init__()``
 
-Dynamic fields with variable values:
-
->>> class Astronaut:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
-
-
 Dynamic fields with constant values:
 
 >>> class Astronaut:
@@ -81,6 +73,14 @@ Dynamic fields initialized outside init:
 >>> astro = Astronaut()
 >>> astro.firstname = 'Mark'
 >>> astro.lastname = 'Watney'
+
+Dynamic fields with variable values:
+
+>>> class Astronaut:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+
 
 
 Static and Dynamic Fields
@@ -304,7 +304,100 @@ Mechanism
 {'firstname': 'Melissa', 'lastname': 'Lewis'}
 >>>
 >>> vars(Astronaut)  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
-mappingproxy({'__module__': 'builtins', 'firstname': 'Mark', 'lastname': 'Watney', '__init__': <function Astronaut.__init__ at 0x...>, '__dict__': <attribute '__dict__' of 'Astronaut' objects>, '__weakref__': <attribute '__weakref__' of 'Astronaut' objects>, '__doc__': None})
+mappingproxy({
+    '__module__': 'builtins',
+    'firstname': 'Mark',
+    'lastname': 'Watney',
+    '__init__': <function Astronaut.__init__ at 0x...>,
+    '__dict__': <attribute '__dict__' of 'Astronaut' objects>,
+    '__weakref__': <attribute '__weakref__' of 'Astronaut' objects>,
+    '__doc__': None})
+
+
+Use Case - 0x01
+---------------
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
+...     AGE_MIN: int = 30
+...     AGE_MAX: int = 50
+
+
+Use Case - 0x02
+---------------
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
+...     AGE_MIN: int = 30
+...     AGE_MAX: int = 50
+...
+...     def __init__(self, firstname, lastname, age):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...         self.age = age
+...
+...         if not self.AGE_MIN <= self.age < self.AGE_MAX:
+...             raise ValueError('age is invalid')
+
+
+Use Case - 0x03
+---------------
+>>> from typing import Final
+>>>
+>>>
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
+...     AGE_MIN: Final[int] = 30
+...     AGE_MAX: Final[int] = 50
+...
+...     def __init__(self, firstname, lastname, age):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...         self.age = age
+...
+...         if not self.AGE_MIN <= self.age < self.AGE_MAX:
+...             raise ValueError('age is invalid')
+
+
+Use Case - 0x04
+---------------
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
+...     AGE_MIN: ClassVar[int] = 30
+...     AGE_MAX: ClassVar[int] = 50
+...
+...     def __post_init__(self):
+...         if not self.AGE_MIN <= self.age < self.AGE_MAX:
+...             raise ValueError('age is invalid')
+
+
+Use Case - 0x05
+---------------
+>>> from dataclasses import dataclass
+>>> from typing import Final
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
+...     AGE_MIN: ClassVar[Final[int]] = 30
+...     AGE_MAX: ClassVar[Final[int]] = 50
+...
+...     def __post_init__(self):
+...         if not self.AGE_MIN <= self.age < self.AGE_MAX:
+...             raise ValueError('age is invalid')
 
 
 Assignments
