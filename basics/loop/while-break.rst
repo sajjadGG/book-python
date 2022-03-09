@@ -47,8 +47,8 @@ No Input
 ...         break
 
 
-Use Case 0x01
--------------
+Use Case - 0x01
+---------------
 >>> i = 10
 >>>
 >>> while True:

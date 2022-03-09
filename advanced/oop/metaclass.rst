@@ -200,8 +200,10 @@ mapping. [#pydocsprepare]_
 ...         pass
 
 
-Use Case - Logging
-------------------
+Use Case - 0x01
+---------------
+* Logging
+
 >>> import logging
 >>>
 >>>
@@ -408,8 +410,8 @@ Traceback (most recent call last):
 TypeError: can't set attributes of built-in/extension type 'type'
 
 
-Use Case - Logger
------------------
+Use Case - 0x01
+---------------
 Injecting logger instance:
 
 >>> import logging
@@ -433,8 +435,8 @@ Injecting logger instance:
 <Logger Cosmonaut (DEBUG)>
 
 
-Use Case - Abstract Class
--------------------------
+Use Case - 0x02
+---------------
 Abstract Base Class:
 
 >>> from abc import ABCMeta, abstractmethod
@@ -451,8 +453,10 @@ Traceback (most recent call last):
 TypeError: Can't instantiate abstract class Astronaut with abstract methods say_hello
 
 
-Use Case - Event Listener
--------------------------
+Use Case - 0x03
+---------------
+* Event Listener
+
 >>> class EventListener(type):
 ...     listeners: dict[str, list[callable]] = {}
 ...
@@ -501,8 +505,10 @@ Bases: (<class 'Person'>,)
 Attrs: {'__module__': 'builtins', '__qualname__': 'Astronaut'}
 
 
-Use Case - Singleton
---------------------
+Use Case - 0x04
+---------------
+* Singleton
+
 >>> class Singleton(type):
 ...     _instances = {}
 ...     def __call__(cls, *args, **kwargs):
@@ -515,8 +521,10 @@ Use Case - Singleton
 ...     pass
 
 
-Use Case - Final
-----------------
+Use Case - 0x05
+---------------
+* Final
+
 >>> class Final(type):
 ...     def __new__(mcs, classname, base, attrs):
 ...         for cls in base:
@@ -534,8 +542,10 @@ Traceback (most recent call last):
 TypeError: MyClass is final and cannot inherit from it
 
 
-Use Case Django
+Use Case - 0x06
 ---------------
+* Django
+
 Access static fields of a class, before creating instance:
 
 >>> # doctest: +SKIP

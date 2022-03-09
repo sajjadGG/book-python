@@ -98,8 +98,8 @@ User(firstname='Jan', lastname='Twardowski')
 User(firstname='Jan', lastname='Twardowski')
 
 
-Use Cases - 0x01
-----------------
+Use Case - 0x01
+---------------
 * Singleton
 
 >>> class Singleton:
@@ -130,8 +130,8 @@ Use Cases - 0x01
 <__main__.Cosmonaut object at 0x102453ee0>
 
 
-Use Cases - 0x02
-----------------
+Use Case - 0x02
+---------------
 * JSONMixin
 
 >>> import json

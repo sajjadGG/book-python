@@ -58,8 +58,10 @@ Example
 'Cześć'
 
 
-Use Case - Deprecated
----------------------
+Use Case - 0x01
+---------------
+* Deprecated
+
 >>> import warnings
 >>>
 >>>
@@ -87,8 +89,10 @@ Use Case - Deprecated
 It will be removed in 2.0
 
 
-Use Case - Timeout (SIGALRM)
-----------------------------
+Use Case - 0x02
+---------------
+* Timeout (SIGALRM)
+
 >>> from signal import signal, alarm, SIGALRM
 >>> from time import sleep
 >>>
@@ -126,8 +130,10 @@ Use Case - Timeout (SIGALRM)
 Timeout
 
 
-Use Case - Timeout (Timer)
---------------------------
+Use Case - 0x03
+---------------
+* Timeout (Timer)
+
 >>> from _thread import interrupt_main
 >>> from threading import Timer
 >>> from time import sleep

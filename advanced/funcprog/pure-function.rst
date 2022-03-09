@@ -103,9 +103,10 @@ meantime between reading ``a`` and reading ``b``.
 
 
 
-Use Case - Math Functions
--------------------------
-Mathematical functions are pure in general
+Use Case - 0x01
+---------------
+* Math Functions
+* Mathematical functions are pure in general
 
 >>> def add(a, b):
 ...     return a + b
@@ -117,8 +118,10 @@ Mathematical functions are pure in general
 ...     return x ** 3
 
 
-Use Case - Select
------------------
+Use Case - 0x01
+---------------
+* Select
+
 Pure:
 
 >>> DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),

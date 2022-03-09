@@ -246,8 +246,8 @@ Example
 ...         self._value = newvalue
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname):
 ...         self._firstname = firstname
@@ -262,6 +262,9 @@ Use Cases
 >>> print(astro.name)
 Mark W.
 
+
+Use Case - 0x02
+---------------
 >>> class Astronaut:
 ...     name = property()
 ...
@@ -278,6 +281,9 @@ Mark W.
 >>> print(astro.name)
 Mark W.
 
+
+Use Case - 0x03
+---------------
 >>> class Temperature:
 ...     kelvin = property()
 ...     __value: float
@@ -401,8 +407,8 @@ Property Decorator
 ...         del self._name
 
 
-Use Case 1
-----------
+Use Case - 0x01
+---------------
 >>> class Astronaut:
 ...     def __init__(self):
 ...         self._name = None
@@ -461,8 +467,8 @@ Jan T.
 None
 
 
-Use Case 2
-----------
+Use Case - 0x02
+---------------
 * Calculate age
 
 >>> from dataclasses import dataclass
@@ -490,8 +496,8 @@ Use Case 2
 30.4
 
 
-Use Case 3
-----------
+Use Case - 0x03
+---------------
 * Cached Property
 
 >>> from dataclasses import dataclass, field
@@ -521,8 +527,8 @@ Use Case 3
 30.4
 
 
-Use Case 4
-----------
+Use Case - 0x04
+---------------
 >>> class Temperature:
 ...     def __init__(self, initial_temperature):
 ...         self._protected = initial_temperature

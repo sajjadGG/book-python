@@ -145,8 +145,10 @@ foo
 </p>
 
 
-Use Case - Files
-----------------
+Use Case - 0x01
+---------------
+* Files
+
 .. testsetup::
 
     open('/tmp/myfile.txt', 'w')
@@ -174,8 +176,10 @@ Use Case - Files
     file[4_294_967_296] -> KernelPanic
 
 
-Use Case - Database
--------------------
+Use Case - 0x02
+---------------
+* Database
+
 >>> import sqlite3
 >>>
 >>>
@@ -217,8 +221,10 @@ Use Case - Database
 {'id': 3, 'firstname': 'Melissa', 'lastname': 'Lewis', 'age': 36}
 
 
-Use Case - Lock
+Use Case - 0x03
 ---------------
+* Lock
+
 >>> from threading import Lock
 >>>
 >>>
@@ -246,8 +252,10 @@ Critical section 1
 Critical section 2
 
 
-Use Case - Microbenchmark
--------------------------
+Use Case - 0x04
+---------------
+* Microbenchmark
+
 >>> # doctest: +SKIP
 ... from time import time
 ...

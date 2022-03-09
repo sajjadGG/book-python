@@ -132,8 +132,8 @@ Set Definition
     # {<__main__.Astronaut object at 0x105bc7700>}
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 .. code-block:: python
 
     class Astronaut:
@@ -152,6 +152,9 @@ Use Cases
     print(data)
     # {<__main__.Astronaut object at 0x105bde070>}
 
+
+Use Case - 0x02
+---------------
 .. code-block:: python
 
     class Astronaut:
@@ -170,6 +173,9 @@ Use Cases
     # {<__main__.Astronaut object at 0x105bc7d00>,
     #  <__main__.Astronaut object at 0x105bc7e20>}
 
+
+Use Case - 0x03
+---------------
 .. code-block:: python
 
     class Astronaut:

@@ -238,8 +238,10 @@ will be a condition boundary checking (for example for negative values):
 ...         self.position_y = min(1024, max(0, y))
 
 
-Use Case - Iris Factory
------------------------
+Use Case - 0x01
+---------------
+* Iris Factory
+
 >>> from dataclasses import dataclass, field
 >>>
 >>>
@@ -286,8 +288,10 @@ Use Case - Iris Factory
  Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2)]
 
 
-Use Case - Path
+Use Case - 0x02
 ---------------
+* Path
+
 Note, that this unfortunately does not work this way. ``Path()`` always returns ``PosixPath``:
 
 >>> from pathlib import Path
@@ -306,8 +310,9 @@ WindowsPath('C:\\Users\\Admin\\myfile.txt')
 WindowsPath('C:/Users/Admin/myfile.txt')
 
 
-Use Case - Document Factory 1
------------------------------
+Use Case - 0x03
+---------------
+* Document Factory 1
 * Factory method
 * Could be used to implement Singleton
 
@@ -336,8 +341,10 @@ Use Case - Document Factory 1
 <Docx object at 0x...>
 
 
-Use Case - Document Factory 2
------------------------------
+Use Case - 0x04
+---------------
+* Document Factory 2
+
 >>> from abc import ABC, abstractmethod
 >>>
 >>>
@@ -378,8 +385,10 @@ Use Case - Document Factory 2
 <DOCX object at 0x...>
 
 
-Use Case - Document Factory 3
------------------------------
+Use Case - 0x05
+---------------
+* Document Factory 3
+
 >>> from abc import ABC, abstractmethod, abstractproperty
 >>>
 >>>
@@ -429,8 +438,10 @@ Use Case - Document Factory 3
 <DOCX object at 0x...>
 
 
-Use Case - Document Factory 4
------------------------------
+Use Case - 0x06
+---------------
+* Document Factory 4
+
 >>> from abc import ABC, abstractmethod, abstractproperty
 >>>
 >>>

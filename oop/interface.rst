@@ -41,8 +41,8 @@ Interfaces:
             raise NotImplementedError
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 Interfaces:
 
 .. code-block:: python

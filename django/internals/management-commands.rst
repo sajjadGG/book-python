@@ -179,8 +179,8 @@ Use Case - Parse file line by line
             print('\n'.join(content))
 
 
-Use cases
----------
+Use Case - 0x01
+---------------
 .. code-block:: python
 
     from django.core.management.base import BaseCommand, CommandError

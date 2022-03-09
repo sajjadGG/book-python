@@ -254,8 +254,10 @@ True
 True
 
 
-Use Case - Make Equal
----------------------
+Use Case - 0x01
+---------------
+* Make Equal
+
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
@@ -275,8 +277,10 @@ True
 False
 
 
-Use Case - Equal Problem
-------------------------
+Use Case - 0x02
+---------------
+* Equal Problem
+
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
@@ -302,8 +306,10 @@ True
 False
 
 
-Use Case - Make Unequal
------------------------
+Use Case - 0x03
+---------------
+* Make Unequal
+
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
@@ -330,8 +336,9 @@ False
 False
 
 
-Use Case - Overload
--------------------
+Use Case - 0x04
+---------------
+* Overload
 * Could be implemented through ``from functools import singledispatchmethod``
 * More information: https://python.astrotech.io/advanced/funcprog/functools.html#singledispatchmethod
 

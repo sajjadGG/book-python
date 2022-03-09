@@ -207,8 +207,8 @@ Use Case - 0x04
 [('value', '123')]
 
 
-Use Case 0x05
--------------
+Use Case - 0x05
+---------------
 >>> import re
 >>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
 >>>
@@ -220,8 +220,8 @@ Use Case 0x05
 ['<p>Paragraph 1</p>', '<p>Paragraph 2</p>']
 
 
-Use Case 0x06
--------------
+Use Case - 0x06
+---------------
 >>> import re
 >>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
 >>>
@@ -236,8 +236,8 @@ Use Case 0x06
 ['<p>', '</p>', '<p>', '</p>']
 
 
-Use Case 0x07
--------------
+Use Case - 0x07
+---------------
 >>> import re
 >>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
 >>>

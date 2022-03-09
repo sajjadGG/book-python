@@ -113,8 +113,8 @@ array([[ 1.,  4.],
 array([ 1.,  4.,  9., 16.,  4.])
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 >>> import numpy as np
 >>>
 >>> # '2000-01-01' -> [1, 2, 3]
@@ -145,6 +145,9 @@ array([[1, 2, 3],
 array([[1, 2, 3],
        [7, 8, 9]])
 
+
+Use Case - 0x02
+---------------
 >>> import numpy as np
 >>>
 >>>
@@ -177,6 +180,9 @@ array([[0, 0, 3],
        [4, 5, 6],
        [0, 0, 9]])
 
+
+Use Case - 0x03
+---------------
 >>> import numpy as np
 >>>
 >>> #                Morning         Noon      Evening

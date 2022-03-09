@@ -193,8 +193,8 @@ Inheritance
     # AttributeError: 'Astronaut' object has no attribute 'rank'
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 .. code-block:: python
 
     class Astronaut:

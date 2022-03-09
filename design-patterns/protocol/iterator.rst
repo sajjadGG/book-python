@@ -168,8 +168,8 @@ b -> 2
 c -> 3
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 Iterator implementation:
 
 >>> class Parking:

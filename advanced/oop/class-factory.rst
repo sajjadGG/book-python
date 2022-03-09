@@ -110,8 +110,10 @@ NameError: name 'Taikonaut' is not defined
 <Taikonaut object at 0x...>
 
 
-Use Case - Init
+Use Case - 0x01
 ---------------
+* Init
+
 >>> Astronaut = type('Astronaut', (), {
 ...     'firstname': 'Mark',
 ...     'lastname': 'Watney',
@@ -129,8 +131,10 @@ mappingproxy({'firstname': 'Mark',
               '__doc__': None})
 
 
-Use Case - Dynamic Classes 1
-----------------------------
+Use Case - 0x02
+---------------
+* Dynamic Classes 1
+
 >>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
 ...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
 ...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -183,8 +187,10 @@ Use Case - Dynamic Classes 1
  'petal_width': 1.9}
 
 
-Use Case - Dynamic Classes 2
-----------------------------
+Use Case - 0x03
+---------------
+* Dynamic Classes 2
+
 >>> from dataclasses import dataclass
 >>> from itertools import zip_longest
 >>>

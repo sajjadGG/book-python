@@ -96,7 +96,7 @@ Implementation
             return getattr(EventManager, name).register
 
 
-Use Case:
+Usage:
 
 .. code-block:: python
 

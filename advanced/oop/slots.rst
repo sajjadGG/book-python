@@ -358,8 +358,9 @@ Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute 'myslot2'
 
 
-Use Case - Deep Size
---------------------
+Use Case - 0x01
+---------------
+* Deep Size
 * Source: https://code.activestate.com/recipes/577504/
 
 >>> from sys import getsizeof

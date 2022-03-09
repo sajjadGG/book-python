@@ -109,8 +109,10 @@ Getter
 Deleter
 
 
-Use Case - Kelvin Temperature Validator
----------------------------------------
+Use Case - 0x01
+---------------
+* Kelvin Temperature Validator
+
 >>> class KelvinValidator:
 ...     def __set__(self, parent, value):
 ...         if value < 0.0:
@@ -131,8 +133,10 @@ Traceback (most recent call last):
 ValueError: Cannot set negative Kelvin
 
 
-Use Case - Temperature Conversion
----------------------------------
+Use Case - 0x02
+---------------
+* Temperature Conversion
+
 >>> class Kelvin:
 ...     def __get__(self, parent, *args):
 ...         return round(parent._value, 2)
@@ -194,8 +198,10 @@ Use Case - Temperature Conversion
 >>> print(t.fahrenheit)
 212.0
 
-Use Case - Value Range Descriptor
----------------------------------
+Use Case - 0x03
+---------------
+* Value Range Descriptor
+
 >>> class Value:
 ...     MIN: int
 ...     MAX: int

@@ -113,8 +113,10 @@ Class ``Calculator`` is a namespace for functions. ``@staticmethod`` remove inst
 4
 
 
-Use Case - Http Client
-----------------------
+Use Case - 0x01
+---------------
+* Http Client
+
 >>> class http:
 ...     @staticmethod
 ...     def get(url):
@@ -128,8 +130,10 @@ Use Case - Http Client
 >>> http.post('https://python.astrotech.io', data={'astronaut': 'Mark Watney'})
 
 
-Use Case - Hello
-----------------
+Use Case - 0x02
+---------------
+* Hello
+
 >>> def astronaut_say_hello():
 ...     print('hello')
 >>>
@@ -192,8 +196,10 @@ hello
 goodbye
 
 
-Use Case - Measurement
-----------------------
+Use Case - 0x03
+---------------
+* Measurement
+
 >>> from dataclasses import dataclass
 >>> from datetime import datetime, timezone
 >>> from typing import Literal
@@ -219,8 +225,10 @@ Use Case - Measurement
 ...         unit='Celsius')
 
 
-Use Case - ZWave Sensor
------------------------
+Use Case - 0x04
+---------------
+* ZWave Sensor
+
 Helper `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor model:
 
 >>> from datetime import datetime, timezone

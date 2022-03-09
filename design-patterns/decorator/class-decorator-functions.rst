@@ -51,8 +51,10 @@ Example
 'My name... José Jiménez'
 
 
-Use Case - Login Check
-----------------------
+Use Case - 0x01
+---------------
+* Login Check
+
 >>> class User:
 ...     def __init__(self):
 ...         self.is_authenticated = False
@@ -87,8 +89,10 @@ Permission Denied
 Editing profile...
 
 
-Use Case - Cache Args
----------------------
+Use Case - 0x02
+---------------
+* Cache Args
+
 >>> class Cache(dict):
 ...     def __init__(self, func):
 ...         self._func = func
@@ -130,8 +134,10 @@ Use Case - Cache Args
  (4, 2): 8}
 
 
-Use Case - Cache Kwargs
------------------------
+Use Case - 0x03
+---------------
+* Cache Kwargs
+
 >>> class Cache(dict):
 ...     _func: callable
 ...     _args: tuple

@@ -109,8 +109,10 @@ Example
 >>> c.get('firstname')
 
 
-Use Cases - Cache
------------------
+Use Case - 0x01
+---------------
+* Cache
+
 >>> class Cache:
 ...     def get(self, key: str) -> str: raise NotImplementedError
 ...     def set(self, key: str, value: str) -> None: raise NotImplementedError
@@ -156,8 +158,10 @@ Use Cases - Cache
 >>> fs.get('name')
 
 
-Use Case - Settings
--------------------
+Use Case - 0x02
+---------------
+* Settings
+
 >>> # myapp/cache.py
 >>> class CacheInterface:
 ...     def set(self, key: str, value: str) -> None: ...

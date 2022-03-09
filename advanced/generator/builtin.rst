@@ -269,8 +269,10 @@ StopIteration
 [2, 4, 6]
 
 
-Use Case - Increment
---------------------
+Use Case - 0x01
+---------------
+* Increment
+
 >>> def increment(x):
 ...     return x + 1
 >>>
@@ -282,8 +284,10 @@ Use Case - Increment
 [2, 3, 4, 5]
 
 
-Use Case - Translate
---------------------
+Use Case - 0x02
+---------------
+* Translate
+
 >>> PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
 ...       'ł': 'l', 'ń': 'n', 'ó': 'o',
 ...       'ś': 's', 'ż': 'z', 'ź': 'z'}
@@ -298,8 +302,10 @@ Use Case - Translate
 'zazolc gesla jazn'
 
 
-Use Case - Compare
-------------------
+Use Case - 0x03
+---------------
+* Compare
+
 >>> people = [
 ...     {'age': 21, 'name': 'Jan Twardowski'},
 ...     {'age': 25, 'name': 'Mark Watney'},
@@ -316,8 +322,10 @@ Use Case - Compare
  {'age': 25, 'name': 'Mark Watney'}]
 
 
-Use Case - Bool
+Use Case - 0x04
 ---------------
+* Bool
+
 >>> people = [
 ...     {'is_astronaut': False, 'name': 'Jan Twardowski'},
 ...     {'is_astronaut': True, 'name': 'Mark Watney'},
@@ -334,8 +342,10 @@ Use Case - Bool
  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
 
-Use Case - Contains
--------------------
+Use Case - 0x05
+---------------
+* Contains
+
 >>> astronauts = ['Mark Watney', 'Melissa Lewis']
 >>>
 >>> people = ['Jan Twardowski', 'Mark Watney',
@@ -351,8 +361,10 @@ Use Case - Contains
 ['Mark Watney', 'Melissa Lewis']
 
 
-Use Case - Stdin
-----------------
+Use Case - 0x06
+---------------
+* Stdin
+
 >>> import sys
 >>>
 >>> # doctest: +SKIP

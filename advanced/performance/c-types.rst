@@ -109,8 +109,8 @@ Overflow
     # ctypes.ArgumentError: argument 1: <class 'OverflowError'>: int too long to convert
 
 
-Use Case - 1
-------------
+Use Case - 0x01
+---------------
 .. code-block:: C
 
     #include <stdio.h>
@@ -128,8 +128,8 @@ Use Case - 1
     lib.ehlo()
 
 
-Use Case - 2
-------------
+Use Case - 0x02
+---------------
 .. code-block:: C
 
     #include <stdio.h>
@@ -150,8 +150,8 @@ Use Case - 2
     lib.greeting(name)
 
 
-Use Case - 3
-------------
+Use Case - 0x03
+---------------
 .. code-block:: C
 
     #include <stdio.h>
@@ -169,8 +169,8 @@ Use Case - 3
     lib.number(10)
 
 
-Use Case - 4
-------------
+Use Case - 0x04
+---------------
 .. code-block:: C
 
     int return_int(int num) {

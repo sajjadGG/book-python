@@ -54,8 +54,8 @@ Composition:
         :language: python
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 >>> def otherrange(a, b, c):  # function with bad API
 ...     current = a
 ...     result = []

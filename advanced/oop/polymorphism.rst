@@ -314,8 +314,8 @@ Hello Melissa Lewis
 Привет Jan Twardowski
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 UIElement:
 
 >>> from abc import ABCMeta, abstractmethod
@@ -356,7 +356,10 @@ Rendering Username TextInput
 Rendering Password TextInput
 Rendering Submit Button
 
-Factory:
+
+Use Case - 0x02
+---------------
+* Factory
 
 >>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
 ...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -414,7 +417,10 @@ Factory:
  Versicolor(6.4, 3.2, 4.5, 1.5),
  Setosa(4.7, 3.2, 1.3, 0.2)]
 
-Dynamic factory:
+
+Use Case - 0x03
+---------------
+* Dynamic factory
 
 >>> from dataclasses import dataclass
 >>>
@@ -464,8 +470,11 @@ Dynamic factory:
  Versicolor(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5),
  Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2)]
 
-Use Case - Login Window
------------------------
+
+Use Case - 0x04
+---------------
+* Login Window
+
 >>> import re
 >>>
 >>>

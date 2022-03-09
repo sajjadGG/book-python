@@ -235,111 +235,20 @@ Use Case - 0x03
 >>>
 >>> class Astronaut:
 ...     pass
->>>
->>>
->>> mark = Astronaut()
->>> astronaut_say_hello()
-hello
->>> astronaut_say_goodbye()
-goodbye
 
 >>> class Astronaut:
+...
+...     @staticmethod
 ...     def say_hello(self):
 ...         print('hello')
 ...
+...     @staticmethod
 ...     def say_goodbye(self):
 ...         print('goodbye')
->>>
->>>
->>> mark = Astronaut()
->>> mark.say_hello()
-hello
->>> mark.say_goodbye()
-goodbye
->>>
->>> Astronaut.say_hello()
-Traceback (most recent call last):
-TypeError: say_hello() missing 1 required positional argument: 'self'
->>>
->>> Astronaut.say_goodbye()
-Traceback (most recent call last):
-TypeError: say_goodbye() missing 1 required positional argument: 'self'
-
->>> class Astronaut:
-...     @staticmethod
-...     def say_hello():
-...         print('hello')
-...
-...     @staticmethod
-...     def say_goodbye():
-...         print('goodbye')
->>>
->>>
->>> Astronaut.say_hello()
-hello
->>>
->>> Astronaut.say_goodbye()
-goodbye
->>>
->>> mark = Astronaut()
->>> mark.say_hello()
-hello
->>> mark.say_goodbye()
-goodbye
 
 
-Use Case - User
+Use Case - 0x04
 ---------------
->>> import json
->>> from dataclasses import dataclass
->>>
->>>
->>> @dataclass
-... class User:
-...     firstname: str
-...     lastname: str
-...
-...     def from_json(self, data):
-...         data = json.loads(data)
-...         return User(**data)
->>>
->>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
->>>
->>> User.from_json(DATA)
-Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
->>>
->>> User().from_json(DATA)
-Traceback (most recent call last):
-TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
->>>
->>> User(None, None).from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
-
->>> import json
->>> from dataclasses import dataclass
->>>
->>>
->>> @dataclass
-... class User:
-...     firstname: str
-...     lastname: str
-...
-...     @staticmethod
-...     def from_json(data):
-...         data = json.loads(data)
-...         return User(**data)
->>>
->>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
->>>
->>> User.from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
-
-
-Use Case - Measurement
-----------------------
 >>> from dataclasses import dataclass
 >>> from datetime import datetime, timezone
 >>> from typing import Literal
@@ -365,8 +274,8 @@ Use Case - Measurement
 ...         unit='Celsius')
 
 
-Use Case - ZWave Sensor
------------------------
+Use Case - 0x05
+---------------
 Helper `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor model:
 
 >>> from datetime import datetime, timezone

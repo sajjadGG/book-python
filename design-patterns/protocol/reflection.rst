@@ -260,8 +260,8 @@ False
 True
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 >>> class Astronaut:
 ...     def __getattribute__(self, attrname):
 ...         if attrname.startswith('_'):
@@ -290,6 +290,9 @@ PermissionError: Field is protected
 Traceback (most recent call last):
 PermissionError: Field is protected
 
+
+Use Case - 0x02
+---------------
 >>> class Temperature:
 ...     kelvin: float
 ...
@@ -313,6 +316,9 @@ PermissionError: Field is protected
 Traceback (most recent call last):
 ValueError: Kelvin temperature cannot be negative
 
+
+Use Case - 0x03
+---------------
 >>> class Temperature:
 ...     kelvin: float
 ...     celsius: float
@@ -337,6 +343,9 @@ ValueError: Kelvin temperature cannot be negative
 >>> print(t.fahrenheit)
 212.0
 
+
+Use Case - 0x04
+---------------
 >>> class Container:
 ...     def __init__(self, **kwargs: dict) -> None:
 ...         for key, value in kwargs.items():
