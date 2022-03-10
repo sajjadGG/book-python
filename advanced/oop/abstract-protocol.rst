@@ -83,11 +83,11 @@ subclass of the protocol.
 ...     ...
 >>>
 >>>
->>> email = Email(
-...     sender='mwatney@nasa.gov',
-...     recipient='mlewis@nasa.gov',
-...     subject='I am alive!'
-...     body='I survived the storm. I am alone on Mars.')
+>>> email = Email()
+>>> email.sender = 'mwatney@nasa.gov',
+>>> email.recipient = 'mlewis@nasa.gov',
+>>> email.subject = 'I am alive!'
+>>> email.body = 'I survived the storm. I am alone on Mars.')
 >>>
 >>> send(email)  # will pass the checker
 
@@ -128,11 +128,11 @@ None in the subclass, see Python data-model for details.) [#PEP544]_
 ...     ...
 >>>
 >>>
->>> email = Email(
-...     sender='mwatney@nasa.gov',
-...     recipient='mlewis@nasa.gov',
-...     subject='I am alive!'
-...     body='I survived the storm. I am alone on Mars.')
+>>> email = Email()
+>>> email.sender = 'mwatney@nasa.gov',
+>>> email.recipient = 'mlewis@nasa.gov',
+>>> email.subject = 'I am alive!'
+>>> email.body = 'I survived the storm. I am alone on Mars.')
 >>>
 >>> send(email)  # will pass the checker
 
@@ -168,8 +168,8 @@ generic types [#MicrosoftGenericsCovContra]_
 In general, a covariant type parameter can be used as the return type of a
 delegate, and contravariant type parameters can be used as parameter types.
 
->>> def check(value: int):
-...     # do something with value
+>>> def echo(what: int):
+...     print(what)
 
 .. glossary::
 
@@ -213,14 +213,14 @@ Merging and extending protocols
 ...     def close(self) -> None:
 >>>         ...
 >>>
->>> class SizableAndClosable(Sized, SupportsClose, Protocol):
+>>> class SizableAndClosable(Sized, Closable, Protocol):
 ...     pass
 
 
 Generic Protocols
 -----------------
 >>> from abc import abstractmethod
->>> from typing import Sized, Protocol
+>>> from typing import Protocol
 >>>
 >>>
 >>> class Iterable(Protocol[T]):
@@ -231,14 +231,22 @@ Generic Protocols
 
 Recursive Protocols
 -------------------
-* :pep:`563` -- Postponed Evaluation of Annotations
-* ``from __future__ import annotations``
+* Since 3.11 :pep:`673` –- Self Type
+* Since 3.7 ``from __future__ import annotations``
+* Future :pep:`563` -- Postponed Evaluation of Annotations
 
 >>> from typing import Protocol
 >>>
 >>>
->>> class Traversable(Protocol):
-...     def walk(self) -> Iterable['Traversable']:
+>>> class Tree(Protocol):
+...     def get_node(self) -> Iterable['Tree']:
+...         ...
+
+>>> from typing import Protocol
+>>>
+>>>
+>>> class Graph(Protocol):
+...     def get_node(self) -> Iterable['Graph']:
 ...         ...
 
 
@@ -256,8 +264,9 @@ Unions
 ...         ...
 >>>
 >>>
->>> def finish(task: Exitable | Quittable) -> int:
-...     ...
+>>> def finish(task: Exitable | Quittable) -> None:
+...     task.exit()
+...     task.quit()
 
 
 >>> from typing import Any, Protocol
@@ -285,27 +294,29 @@ A module object is accepted where a protocol is expected if the public
 interface of the given module is compatible with the expected protocol. For
 example:
 
-File ``default_config.py``:
+File ``config.py``:
 
 >>> timeout = 100
->>> one_flag = True
+>>> debug = True
 >>> other_flag = False
 
 File ``main.py``:
->>> import default_config
+
+>>> import config
 >>> from typing import Protocol
 >>>
 >>>
->>> class Options(Protocol):
+>>> class Config(Protocol):
 ...     timeout: int
-...     one_flag: bool
+...     debug: bool
 ...     other_flag: bool
 >>>
 >>>
->>> def setup(options: Options) -> None:
+>>> def setup(conf: Config) -> None:
 ...     ...
 >>>
->>> setup(default_config)  # Passes type check
+>>>
+>>> setup(config)  # Passes type check
 
 
 Callbacks
@@ -368,6 +379,47 @@ that provides the same semantics for class and instance checks as for
 >>> isinstance(Astronaut, Person)
 True
 
+
+
+>>> from typing import Protocol
+>>>
+>>>
+>>> class Message(Protocol):
+...     recipient: str
+...     body: str
+>>>
+>>>
+>>> class Email(Message):
+...     sender: str
+...     recipient: str
+...     subject: str
+...     body: str
+>>>
+>>> email = Email()
+>>> isinstance(email, Message)
+Traceback (most recent call last):
+TypeError: Instance and class checks can only be used with @runtime_checkable protocols
+
+>>> from typing import Protocol, runtime_checkable
+>>>
+>>>
+>>> @runtime_checkable
+... class Message(Protocol):
+...     recipient: str
+...     body: str
+>>>
+>>>
+>>> class Email(Message):
+...     sender: str
+...     recipient: str
+...     subject: str
+...     body: str
+>>>
+>>> email = Email()
+>>> isinstance(email, Message)
+True
+
+
 >>> from typing import Protocol, runtime_checkable
 >>>
 >>>
@@ -394,6 +446,7 @@ Use Case - 0x01
 
 Use Case - 0x02
 ---------------
+>>> from abc import abstractmethod
 >>> from typing import Protocol
 >>>
 >>>
@@ -406,10 +459,42 @@ Use Case - 0x02
 >>>
 >>>
 >>> class Point(RGB):
-...     def __init__(self, red: int, green: int, blue: str) -> None:
+...     def __init__(self, red: int, green: int, blue: float) -> None:
 ...         self.rgb = red, green, blue  # Error, 'blue' must be 'int'
 ...
 ...     # Type checker might warn that 'intensity' is not defined
+
+
+Use Case - 0x03
+---------------
+File ``myview.py``
+
+>>> def get(request):
+...     ...
+>>>
+>>> def post(request):
+...     ...
+>>>
+>>> def put(request):
+...     ...
+>>>
+>>> def delete(request):
+...     ...
+
+File ``main.py``
+
+>>> from typing import Protocol
+>>> import myview
+>>>
+>>>
+>>> class HttpView(Protocol):
+...     def get(request): ...
+...     def post(request): ...
+...     def put(request): ...
+...     def delete(request): ...
+>>>
+>>>
+>>> view: HttpView = myview
 
 
 References

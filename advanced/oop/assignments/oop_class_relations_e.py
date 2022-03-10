@@ -20,6 +20,9 @@ Polish:
         b. Użyj `;` do oddzielenia kolumn
     4. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * vars(obj) -> dict
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

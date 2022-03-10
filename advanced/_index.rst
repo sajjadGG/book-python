@@ -73,6 +73,7 @@ Object Oriented Programming
     oop/attribute-mutable.rst
     oop/attribute-static.rst
     oop/attribute-accessmodifiers.rst
+    oop/attribute-slots.rst
     oop/method-about.rst
     oop/method-accessmodifiers.rst
     oop/method-staticmethod.rst
@@ -86,8 +87,7 @@ Object Oriented Programming
     oop/abstract-protocol.rst
     oop/abstract-class.rst
     oop/abstract-polymorphism.rst
-    oop/relations.rst
-    oop/attribute-slots.rst
+    oop/class-relations.rst
     oop/class-identity.rst
     oop/class-constructor.rst
     oop/class-factory.rst
