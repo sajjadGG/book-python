@@ -1,5 +1,5 @@
-Concurrency About
-=================
+About
+=====
 
 
 Rationale
@@ -8,12 +8,12 @@ Rationale
 * General rule for frontend frameworks - don't block the foreground, let the long running operations to run in background, and leave the user interface interactive
 * Concurrency and Parallelism
 
-* CPU-bound Concurrency:
+CPU-bound Concurrency:
 
     * Using Queues and Multiprocessing
     * Using Futures and Multiprocessing
 
-* I/O-bound Concurrency:
+I/O-bound Concurrency:
 
     * Using Queues and Threading
     * Using Futures and Threading

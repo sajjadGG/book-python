@@ -121,8 +121,8 @@
     .rst-content table.docutils caption {text-align: left; font-size: 100%}
 
     /* hide the permalink symbol as long as link is not hovered */
-    caption a.headerlink {opacity: 0}
-    caption a.headerlink:hover {opacity: 1}
+    a.headerlink {opacity: 0}
+    a.headerlink:hover {opacity: 1}
 
     /* glossary entries */
     dt {color: var(--body-header) !important; background: none !important; border: none !important}
