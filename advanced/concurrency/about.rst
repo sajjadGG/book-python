@@ -4,7 +4,8 @@ Concurrency About
 
 Rationale
 ---------
-* Latency problem
+* Latency problem - time from the user action to the appearance of the first UI element user can interact with
+* General rule for frontend frameworks - don't block the foreground, let the long running operations to run in background, and leave the user interface interactive
 * Concurrency and Parallelism
 
 * CPU-bound Concurrency:
