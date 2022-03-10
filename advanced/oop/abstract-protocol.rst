@@ -82,6 +82,7 @@ subclass of the protocol.
 >>> def send(message: Message):
 ...     ...
 >>>
+>>>
 >>> email = Email(
 ...     sender='mwatney@nasa.gov',
 ...     recipient='mlewis@nasa.gov',
@@ -126,6 +127,7 @@ None in the subclass, see Python data-model for details.) [#PEP544]_
 >>> def send(message: Message):
 ...     ...
 >>>
+>>>
 >>> email = Email(
 ...     sender='mwatney@nasa.gov',
 ...     recipient='mlewis@nasa.gov',
@@ -144,8 +146,8 @@ What Protocols are Not?
 At runtime, protocol classes will be simple ABCs. There is no intent to
 provide sophisticated runtime instance and class checks against protocol
 classes. This would be difficult and error-prone and will contradict the
-logic of PEP 484. As well, following PEP 484 and PEP 526 we state that
-protocols are completely optional: [#PEP544]_
+logic of :pep:`484`. As well, following :pep:`484` and :pep:`526` Python
+steering committee states that protocols are completely optional [#PEP544]_:
 
 * No runtime semantics will be imposed for variables or parameters
   annotated with a protocol class.
@@ -166,20 +168,29 @@ generic types [#MicrosoftGenericsCovContra]_
 In general, a covariant type parameter can be used as the return type of a
 delegate, and contravariant type parameters can be used as parameter types.
 
+>>> def check(value: int):
+...     # do something with value
+
 .. glossary::
 
     Covariance
         Enables you to use a more derived type than originally specified
         [#MicrosoftGenericsCovContra]_
 
+        >>> check(True)  # True derives from int
+
     Contravariance
         Enables you to use a more generic (less derived) type than
         originally specified [#MicrosoftGenericsCovContra]_
+
+        >>> check(object)  # int inherits from object
 
     Invariance
         Means that you can use only the type originally specified. An
         invariant generic type parameter is neither covariant nor
         contravariant [#MicrosoftGenericsCovContra]_
+
+        >>> check(1)  # 1 is int
 
 
 Default Value

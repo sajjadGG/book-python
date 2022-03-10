@@ -83,9 +83,9 @@ Object Oriented Programming
     oop/inheritance-problems.rst
     oop/inheritance-mro.rst
     oop/abstract-interface.rst
-    oop/abstract-class.rst
     oop/abstract-protocol.rst
-    oop/polymorphism.rst
+    oop/abstract-class.rst
+    oop/abstract-polymorphism.rst
     oop/relations.rst
     oop/attribute-slots.rst
     oop/class-identity.rst

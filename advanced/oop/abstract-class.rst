@@ -55,19 +55,6 @@ Abstract Method
 Traceback (most recent call last):
 TypeError: Can't instantiate abstract class Astronaut with abstract method say_hello
 
->>> from abc import ABCMeta, abstractmethod
->>>
->>>
->>> class Astronaut(metaclass=ABCMeta):
-...     @abstractmethod
-...     def say_hello(self):
-...         pass
->>>
->>>
->>> astro = Astronaut()
-Traceback (most recent call last):
-TypeError: Can't instantiate abstract class Astronaut with abstract method say_hello
-
 
 Abstract Property
 -----------------
@@ -265,18 +252,16 @@ Problem - Despite having defined property, the order of decorators (``abstractme
 <module 'abc' from '...'>
 >>>
 >>> pprint(sys.path)  # doctest: +SKIP
-['/Applications/PyCharm 2021.1 EAP.app/Contents/plugins/python/helpers/pydev',
- '/Users/watney/book-python',
- '/Applications/PyCharm 2021.3 EAP.app/Contents/plugins/python/helpers/pycharm_display',
- '/Applications/PyCharm 2021.3 EAP.app/Contents/plugins/python/helpers/third_party/thriftpy',
- '/Applications/PyCharm 2021.3 EAP.app/Contents/plugins/python/helpers/pydev',
- '/usr/local/Cellar/python@3.10/3.10.0/Frameworks/Python.framework/Versions/3.10/lib/python310.zip',
- '/usr/local/Cellar/python@3.10/3.10.0/Frameworks/Python.framework/Versions/3.10/lib/python3.10',
- '/usr/local/Cellar/python@3.10/3.10.0/Frameworks/Python.framework/Versions/3.10/lib/python3.10/lib-dynload',
- '/Users/watney/.virtualenvs/python-3.10/lib/python3.10/site-packages',
- '/Applications/PyCharm 2021.3 EAP.app/Contents/plugins/python/helpers/pycharm_matplotlib_backend',
- '/Users/watney/book-python',
- '/Users/watney/book-python/_tmp']
+['/Users/watney/myproject',
+ '/Applications/PyCharm 2022.1.app/Contents/plugins/python/helpers/pydev',
+ '/Applications/PyCharm 2022.1.app/Contents/plugins/python/helpers/pycharm_display',
+ '/Applications/PyCharm 2022.1.app/Contents/plugins/python/helpers/third_party/thriftpy',
+ '/Applications/PyCharm 2022.1.app/Contents/plugins/python/helpers/pydev',
+ '/Applications/PyCharm 2022.1.app/Contents/plugins/python/helpers/pycharm_matplotlib_backend',
+ '/usr/local/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python310.zip',
+ '/usr/local/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10',
+ '/usr/local/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/lib-dynload',
+ '/Users/watney/myproject/venv-3.10/lib/python3.10/site-packages']
 
 
 Use Case - 0x01
@@ -289,8 +274,6 @@ Abstract Class:
 >>> class Document(ABC):
 ...     def __init__(self, filename):
 ...         self.filename = filename
-...         # with open(filename, mode='rb') as file:
-...         #     self.content = file.read()
 ...
 ...     @abstractmethod
 ...     def display(self):
@@ -299,11 +282,11 @@ Abstract Class:
 >>>
 >>> class PDFDocument(Document):
 ...     def display(self):
-...         """display self.content as PDF Document"""
+...         """display file content as PDF Document"""
 >>>
 >>> class WordDocument(Document):
 ...     def display(self):
-...         """display self.content as Word Document"""
+...         """display file content as Word Document"""
 >>>
 >>>
 >>> file1 = PDFDocument('myfile.pdf')

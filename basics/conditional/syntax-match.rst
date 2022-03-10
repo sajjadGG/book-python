@@ -34,6 +34,13 @@ Block Match
 Rationale
 ---------
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
+* x ⟼ assign x = subject
+* 'x' ⟼ test subject == 'x'
+* x.y ⟼ test subject == x.y
+* x() ⟼ test isinstance(subject, x)
+* {'x': 'y'} ⟼ test isinstance(subject, Mapping) and subject.get('x') == 'y'
+* ['x'] ⟼ test isinstance(subject, Sequence) and len(subject) == 1 and subject[0] == 'x'
+* Source: [#patternmatching]_
 
 
 Syntax
@@ -225,6 +232,11 @@ Use Case - 0x05
 Further Reading
 ---------------
 * https://www.python.org/dev/peps/pep-0636/
+
+
+Rationale
+---------
+.. [#patternmatching] Raymond Hettinger. Retrieved: 2021-03-07. URL: https://twitter.com/raymondh/status/1361780586570948609?s=20
 
 
 .. todo:: Assignments
