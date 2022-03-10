@@ -1,5 +1,5 @@
-OOP Metaclass
-=============
+OOP Class Metaclass
+===================
 
 
 .. epigraph::

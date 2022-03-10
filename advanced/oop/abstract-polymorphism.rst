@@ -1,5 +1,5 @@
-OOP Polymorphism
-================
+OOP Abstract Polymorphism
+=========================
 
 
 Procedural Polymorphism

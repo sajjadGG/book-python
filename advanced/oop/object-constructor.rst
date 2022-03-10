@@ -1,5 +1,5 @@
-OOP Constructor
-===============
+OOP Object Constructor
+======================
 
 
 Rationale
@@ -346,6 +346,41 @@ Use Case - 0x03
 <Docx object at 0x...>
 
 
+Use Case
+--------
+.. todo:: Cleanup
+
+class Docx:
+    pass
+class PDF:
+    pass
+class Document:
+    def __new__(cls, filename):
+        basename, extension = filename.split('.')
+        match extension:
+
+            case 'pdf':
+                return PDF()
+
+            case 'doc' | 'docx':
+                return Docx()
+
+file1 = Document('myfile.pdf')
+type(file)
+NameError: name 'file' is not defined
+type(file1)
+__main__.PDF
+file2 = Document('myfile.docx')
+type(file2)
+__main__.Docx
+file3 = Document('myfile.doc')
+type(file3)
+__main__.Docx
+
+
+
+
+
 Use Case - 0x04
 ---------------
 * Document Factory 2
@@ -495,16 +530,133 @@ Use Case - 0x06
 >>> Document('myfile.docx')  # doctest: +ELLIPSIS
 <DOCX object at 0x...>
 
+
+Use Case - 0x07
+---------------
+.. todo:: Cleanup
+
+from datetime import datetime
+import logging
+from uuid import uuid4
+
+
+class Astronaut:
+    def __new__(cls, *args, **kwargs):
+        print(f'New {args=}, {kwargs=}')
+        obj = object.__new__(cls)
+        obj._since = datetime.now()
+        obj._uuid = str(uuid4())
+        obj._log = logging.getLogger('Astronaut')
+        return obj
+
+    def __init__(self, *args, **kwargs):
+        print(f'Init {args=}, {kwargs=}')
+
+a = Astronaut()
+New args=(), kwargs={}
+Init args=(), kwargs={}
+a
+<__main__.Astronaut at 0x11b654fd0>
+vars(a)
+{'_since': datetime.datetime(2022, 3, 10, 16, 34, 21, 191291),
+ '_uuid': '06e3ff39-e6b5-4177-861b-783dbd4b47cb',
+ '_log': <Logger Astronaut (WARNING)>}
+
+Use Case - 0x08
+---------------
+.. todo:: Cleanup
+
+from datetime import datetime
+import logging
+from uuid import uuid4
+from abc import ABC, abstractmethod
+class BaseClass(ABC):
+    def __new__(cls, *args, **kwargs):
+        obj = object.__new__(cls)
+        obj._since = datetime.now()
+        obj._uuid = str(uuid4())
+        obj._log = logging.getLogger('Astronaut')
+        return obj
+
+    @abstractmethod
+    def __init__(self):
+        pass
+class Astronaut(BaseClass):
+    def __init__(self, *args, **kwargs):
+        ...
+
+astro = Astronaut()
+vars(astro)
+{'_since': datetime.datetime(2022, 3, 10, 16, 39, 18, 703024),
+ '_uuid': '83cefe23-3491-4661-b1f4-3ca570feab0a',
+ '_log': <Logger Astronaut (WARNING)>}
+
+
+
+Use Case - 0x08
+---------------
+.. todo:: Cleanup
+from abc import ABC, abstractmethod, abstractproperty
+
+
+class Document(ABC):
+    filename: str
+
+    @abstractproperty
+    def EXTENSIONS(self) -> list[str]: ...
+
+    def __new__(cls, filename):
+        basename, extension = filename.split('.')
+        plugins = cls.__subclasses__()
+        for plugin in plugins:
+            if extension in plugin.EXTENSIONS:
+                instance = object.__new__(plugin)
+                instance.__init__(filename)
+                return instance
+        else:
+            raise NotImplementedError
+
+    def __init__(self, filename):
+        self.filename = filename
+
+    @abstractmethod
+    def show(self):
+        ...
+
+
+class PDF(Document):
+    EXTENSIONS = ['pdf']
+    def show(self): ...
+
+
+class Word(Document):
+    EXTENSIONS = ['doc', 'docx']
+    def show(self): ...
+
+
+class Text(Document):
+    EXTENSIONS = ['txt']
+    def show(self): ...
+
+
+class Excel(Document):
+    EXTENSIONS = ['xls', 'xlsx']
+    def show(self): ...
+
+
+file1 = Document('myfile.pdf')
+
+
 References
 ----------
 .. [#Noufal2011] Noufal Ibrahim. Python (and Python C API): __new__ versus __init__. Year: 2011. Retrieved: 2022-03-09. URL: https://stackoverflow.com/a/5143108
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_class_constructor_a.py
-    :caption: :download:`Solution <assignments/oop_class_constructor_a.py>`
+.. literalinclude:: assignments/oop_object_constructor_a.py
+    :caption: :download:`Solution <assignments/oop_object_constructor_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_class_constructor_b.py
-    :caption: :download:`Solution <assignments/oop_class_constructor_b.py>`
+.. literalinclude:: assignments/oop_object_constructor_b.py
+    :caption: :download:`Solution <assignments/oop_object_constructor_b.py>`
     :end-before: # Solution

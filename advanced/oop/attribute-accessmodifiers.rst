@@ -1,5 +1,5 @@
-OOP Access Modifiers
-====================
+OOP Attribute Access Modifiers
+==============================
 
 
 Rationale

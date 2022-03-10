@@ -87,9 +87,9 @@ Object Oriented Programming
     oop/abstract-protocol.rst
     oop/abstract-class.rst
     oop/abstract-polymorphism.rst
-    oop/class-relations.rst
-    oop/class-identity.rst
-    oop/class-constructor.rst
+    oop/object-relations.rst
+    oop/object-identity.rst
+    oop/object-constructor.rst
     oop/class-factory.rst
     oop/class-metaclass.rst
 

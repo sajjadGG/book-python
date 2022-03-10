@@ -1,4 +1,4 @@
-OOP Static and Dynamic Attrs
+OOP Attribute Static/Dynamic
 ============================
 
 

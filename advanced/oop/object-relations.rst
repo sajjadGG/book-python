@@ -370,26 +370,26 @@ References
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_class_relations_a.py
-    :caption: :download:`Solution <assignments/oop_class_relations_a.py>`
+.. literalinclude:: assignments/oop_object_relations_a.py
+    :caption: :download:`Solution <assignments/oop_object_relations_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_class_relations_b.py
-    :caption: :download:`Solution <assignments/oop_class_relations_b.py>`
+.. literalinclude:: assignments/oop_object_relations_b.py
+    :caption: :download:`Solution <assignments/oop_object_relations_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_class_relations_c.py
-    :caption: :download:`Solution <assignments/oop_class_relations_c.py>`
+.. literalinclude:: assignments/oop_object_relations_c.py
+    :caption: :download:`Solution <assignments/oop_object_relations_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_class_relations_d.py
-    :caption: :download:`Solution <assignments/oop_class_relations_d.py>`
+.. literalinclude:: assignments/oop_object_relations_d.py
+    :caption: :download:`Solution <assignments/oop_object_relations_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_class_relations_e.py
-    :caption: :download:`Solution <assignments/oop_class_relations_e.py>`
+.. literalinclude:: assignments/oop_object_relations_e.py
+    :caption: :download:`Solution <assignments/oop_object_relations_e.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_class_relations_f.py
-    :caption: :download:`Solution <assignments/oop_class_relations_f.py>`
+.. literalinclude:: assignments/oop_object_relations_f.py
+    :caption: :download:`Solution <assignments/oop_object_relations_f.py>`
     :end-before: # Solution

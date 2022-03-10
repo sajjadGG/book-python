@@ -1,5 +1,5 @@
-OOP Attribute Mutable
-=====================
+OOP Attribute Mutable/Immutable
+===============================
 
 
 Rationale

@@ -174,6 +174,11 @@ Speakers:
     * https://pyvideo.org/speaker/andrew-godwin.html
 
 
+Http
+----
+* https://httpbin.org
+
+
 Online Courses
 --------------
 Python:
