@@ -1,5 +1,25 @@
-Concurrency Models
-==================
+Concurrency About
+=================
+
+
+Rationale
+---------
+* Latency problem
+* Concurrency and Parallelism
+
+* CPU-bound Concurrency:
+
+    * Using Queues and Multiprocessing
+    * Using Futures and Multiprocessing
+
+* I/O-bound Concurrency:
+
+    * Using Queues and Threading
+    * Using Futures and Threading
+
+.. figure:: img/concurrency-about-techniques.png
+
+    Source: Michael Kennedy [#Kennedy2019]_
 
 
 Classification of concurrency problems
@@ -26,6 +46,10 @@ GIL
 * Accordingly, that drives us to multiprocessing to gain more CPU cycles
 
 Source: [#Hettinger2017]_
+
+.. figure:: img/threading-gil.png
+
+    Source: Michael Kennedy [#Kennedy2019]_
 
 
 Process
@@ -74,23 +98,37 @@ Source: [#Hettinger2017]_
 
 Async
 -----
-* Disadvantage: Async switches cooperatively, so you do need to add explicit code ``yield`` or ``await`` to cause a task to switch.
-* Now you control when tasks switches occur, so locks and other synchronization are no longer needed.
-* Also, cost task switches is incredibly low. Calling a pure Python function has more overhead than restarting a generator or awaitable.
-* Function builds stack each time it's called, whereas async uses generators underneath, which already has stack created
-* This is the cheapest way to task switch
-* In terms of speed async servers blows threaded servers in means of thousands
-* This means that ``async`` is very cheap
-* Disadvantage: Everything you will do need a non-blocking version of just about everything you do (for example ``open()``)
-* Accordingly, the async world has a huge ecosystem of support tools.
-* Disadvantage: this increases the learning curve
-* Coding is easier to get right, than threads
-* Disadvantage: create event loop, acquire, crate non-blocking versions of your code
-* Disadvantage: You think you know Python, there is a second half to learn (async).
+* Running asynchronously: 3s + 1s + 1s = bit over 3s [execution time]
 * Async is the future of programming
 
+* Advantage: You control when tasks switches occur, so locks and other synchronization are no longer needed
+* Advantage: Cost task switches is incredibly low. Calling a pure Python function has more overhead than restarting a generator or awaitable
+* Advantage: Function builds stack each time it's called, whereas async uses generators underneath, which already has stack created
+* Advantage: Async is the cheapest way to task switch
+* Advantage: In terms of speed async servers blows threaded servers in means of thousands
+* Advantage: Async is very cheap in means of resources
+* Advantage: Async world has a huge ecosystem of support tools
+* Advantage: Coding is easier to get right, than threads
 
-Threads vs processes
+* Disadvantage: Async switches cooperatively, so you do need to add explicit code ``yield`` or ``await`` to cause a task to switch
+* Disadvantage: Everything you do need a non-blocking version (for example ``open()``)
+* Disadvantage: Increased learning curve
+* Disadvantage: Create event loop, acquire, crate non-blocking versions of your code
+* Disadvantage: You think you know Python, there is a second half to learn (async)
+
+
+Sync vs Async
+-------------
+.. figure:: img/asyncio-sequence-sync.png
+
+    Source: Michael Kennedy [#Kennedy2019]_
+
+.. figure:: img/asyncio-sequence-async.png
+
+    Source: Michael Kennedy [#Kennedy2019]_
+
+
+Threads vs Processes
 --------------------
 #. Czym się różnią wątki od procesów?
 #. Ile może być wątków przetwarzanych równolegle na procesorze czterordzeniowym (z i bez Hyper Threading)?
@@ -143,32 +181,8 @@ Rules
 Source: [#Hettinger2017]_
 
 
-Locks
------
-* Locks don't lock anything. They are just flags and can be ignored. It is a cooperative tool, not an enforced tool
-* IIn general, locks should be considered a low level primitive that is difficult to reason about nontrivial examples. For more complex applications, you're almost always better of with using atomic message queues.
-* The more locks you acquire at one time, the more you loose the advantages of concurrency
-
-Source: [#Hettinger2017]_
-
-
-Multiprocessing Problems
-------------------------
-* Deadlock (Zakleszczania)
-* Race Condition
-* Starvation (Głodzenie)
-* Problem 5 filozofów:
-
-    * 5 filozofów (albo rozmyśla, albo je)
-    * 5 misek ze spaghetti,
-    * 5 widelców,
-    * 2 widelce potrzebne aby zjeść,
-    * problem zakleszczania
-
-* Problem producenta i konsumenta
-* Problem czytelników i pisarzy
-
-
 References
 ----------
 .. [#Hettinger2017] Hettinger, Raymond. Keynote on Concurrency. PyBay 2017. https://youtu.be/9zinZmE3Ogk?t=1243
+
+.. [#Kennedy2019] Kennedy, M. Demystifying Python's Async and Await Keywords. Publisher: JetBrainsTV. Year: 2019. Retrieved: 2022-03-10. URL: https://www.youtube.com/watch?v=F19R_M4Nay4
