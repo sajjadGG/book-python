@@ -37,11 +37,11 @@ Rationale
 
 Source: [#Hettinger2017]_
 
+.. figure:: img/threading-parallelism.png
+
+    Green: actual data transfer; blue: waiting; orange: domain name resolution, TLS handshake, etc. Source: Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_
+
 .. figure:: img/threading-join.png
-
-    Source: Michael Kennedy [#Kennedy2019]_
-
-.. figure:: img/threading-gil.png
 
     Source: Michael Kennedy [#Kennedy2019]_
 
@@ -64,8 +64,13 @@ GIL
 * For I/O bound applications, GIL doesn't present much of an issue
 * For CPU bound applications, using threads makes the application speed worse
 * Accordingly, that drives us to multiprocessing to gain more CPU cycles
+* Larry Hastings, Gilectomy project - removed GIL, but Python slowed down
 
 Source: [#Hettinger2017]_
+
+.. figure:: img/threading-gil.png
+
+    Source: Michael Kennedy [#Kennedy2019]_
 
 
 References

@@ -16,9 +16,16 @@ AsyncIO About
 
 Rationale
 ---------
+* ``asyncio`` in stdlib
+* ``async`` and ``await`` keyword
 * Running asynchronously: 3s + 1s + 1s = bit over 3s [execution time]
 * Async is the future of programming
 
+* Objective: Maximize the usage of a single thread
+* Objective: handling I/O asynchronously
+* Objective: enabling concurrent code using coroutines
+
+* Advantage: Async will fill the gaps, otherwise wasted on waiting for I/O
 * Advantage: You control when tasks switches occur, so locks and other synchronization are no longer needed
 * Advantage: Cost task switches is incredibly low. Calling a pure Python function has more overhead than restarting a generator or awaitable
 * Advantage: Function builds stack each time it's called, whereas async uses generators underneath, which already has stack created
@@ -45,6 +52,14 @@ Sync vs Async
 
     Source: Michael Kennedy [#Kennedy2019]_
 
+.. figure:: img/concurrency-sync-vs-async-1.png
+
+    Source: Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_
+
+.. figure:: img/concurrency-sync-vs-async-2.png
+
+    Source: Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_
+
 
 Execution
 ---------
@@ -57,26 +72,21 @@ Execution
     Source: Michael Kennedy [#Kennedy2019]_
 
 
-Coroutine
----------
-* ``asyncio`` in stdlib
-* ``async`` keyword
-* ``await`` keyword
-
-.. figure:: img/asyncio-async-anatomy.png
-
-    Source: Michael Kennedy [#Kennedy2019]_
-
-
 Awaitables
 ----------
 * Object is an awaitable if it can be used in an ``await`` expression
-* ``__await__``
-* There are three main types of awaitable objects:
+* Awaitable objects: Coroutines, Tasks, Futures
+* ``__await__`` and ``await`` keyword
+
+There are three main types of awaitable objects:
 
     * Coroutines,
     * Tasks,
     * Futures.
+
+.. figure:: img/asyncio-async-anatomy.png
+
+    Coroutine (async function) anatomy. Source: Michael Kennedy [#Kennedy2019]_
 
 
 Example

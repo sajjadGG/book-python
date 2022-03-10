@@ -45,6 +45,7 @@ GIL
 * For I/O bound applications, GIL doesn't present much of an issue
 * For CPU bound applications, using threads makes the application speed worse
 * Accordingly, that drives us to multiprocessing to gain more CPU cycles
+* Larry Hastings, Gilectomy project - removed GIL, but Python slowed down
 
 Source: [#Hettinger2017]_
 
@@ -102,6 +103,11 @@ Async
 * Running asynchronously: 3s + 1s + 1s = bit over 3s [execution time]
 * Async is the future of programming
 
+* Objective: Maximize the usage of a single thread
+* Objective: handling I/O asynchronously
+* Objective: enabling concurrent code using coroutines
+
+* Advantage: Async will fill the gaps, otherwise wasted on waiting for I/O
 * Advantage: You control when tasks switches occur, so locks and other synchronization are no longer needed
 * Advantage: Cost task switches is incredibly low. Calling a pure Python function has more overhead than restarting a generator or awaitable
 * Advantage: Function builds stack each time it's called, whereas async uses generators underneath, which already has stack created
