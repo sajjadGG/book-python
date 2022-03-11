@@ -7,6 +7,9 @@ Rationale
 * ADR - Architecture Design Records
 * Dragon makes damage
 
+
+Problem
+-------
 .. code-block:: text
 
     dragon ---> enemy
@@ -16,32 +19,68 @@ Rationale
     dragon <--- enemy
 
 
-Possibilities
--------------
->>> dragon.take_damage()
-
+Option 1
+--------
+>>> dragon.attack()
 >>> dragon.hit()
-
+>>> dragon.hurt()
+>>> dragon.damage()
 >>> dragon.wound()
 
+* Bad: dragon <-> enemy
+
+
+Option 2
+--------
+>>> dragon.damage(dragon)
+>>> dragon.damage(enemy)
+
+
+Option 2
+--------
+>>> dragon.deal_damage()
+>>> dragon.hurt_someone()
 >>> dragon.make_damage()  # good
 
->>> dragon.attack()
+* Good: dragon ---> enemy
 
->>> dragon.take_damage(enemy)
 
->>> dragon.hit(enemy)
+Option 3
+--------
+>>> dragon.take_damage()
 
+* Bad: dragon <--- enemy
+
+
+Option 4
+--------
 >>> dragon.attack(enemy)
-
+>>> dragon.hit(enemy)
+>>> dragon.make_damage(enemy)
+>>> dragon.take_damage(enemy)
 >>> dragon.wound(enemy)
 
->>> dragon.make_damage(enemy)
+* Bad: MVC
 
->>> dragon.hurt()
 
->>> dragon.damage()
+Option 5
+--------
+>>> hero.health -= dragon.damage()
 
->>> dragon.hurt_someone()
+* Bad: enkapsulacja
 
->>> dragon.deal_damage()
+
+Option 6
+--------
+>>> hero.wound(dragon.hit())
+
+
+Option 7
+--------
+>>> dragon.get_damage()
+
+* Bad: ``get`` is used as a getter of a field ``damage``
+
+
+Decision
+--------

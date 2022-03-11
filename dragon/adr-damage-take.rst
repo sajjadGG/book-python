@@ -24,8 +24,20 @@ Possibilities
 
 >>> dragon.hurt_self(DMG)
 
+>>> dragon.receive_damage(DMG)
+
 >>> dragon - DMG
+>>> dragon -= DMG
+
+>>> dragon.health - DMG
+>>> dragon.health -= DMG
 
 >>> dragon.__sub__(DMG)
+>>> dragon.__isub__(DMG)
 
->>> dragon.receive_damage(DMG)
+
+Option 7
+--------
+>>> dragon.set_damage()
+
+* Bad: ``set`` is used as a setter of a field ``damage``
