@@ -1,7 +1,6 @@
-Create Dragon ADR
+Dragon ADR Create
 =================
 
-* ADR - Architecture Design Records
 
 .. testsetup::
 
@@ -12,6 +11,7 @@ Create Dragon ADR
 
 Rationale
 ---------
+* ADR - Architecture Design Records
 * Create dragon at x=50, y=120 position and name it "Wawelski"
 
 
