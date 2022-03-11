@@ -8,8 +8,7 @@
 >>> dragon >> Direction(left=10, right=15)
 >>> dragon >> Direction(right=15, up=5)
 >>> dragon >> Direction(down=5)
->>> dragon.make_damage() in range(5, 21)
-True
+>>> dmg = dragon.make_damage()
 >>> try:
 ...     dragon.take_damage(10)
 ...     dragon.take_damage(5)
@@ -20,10 +19,12 @@ True
 ...     dragon.take_damage(75)
 ... except dragon.IsDead:
 ...     drop = dragon.get_drop()
-...     print(f'{dragon:name} is dead at position {dragon:position}')
-...     print(f'Gold dropped {drop["gold"]}')  # doctest: +ELLIPSIS
-Wawelski is dead at position Point(x=20, y=40)
-Gold dropped ...
+...     print(f'{dragon:name} is dead'
+...     print(f'Position: {dragon:position}')
+...     print(f'Gold: {drop["gold"]}')  # doctest: +ELLIPSIS
+Wawelski is dead
+Position: Point(x=20, y=40)
+Gold: ...
 
 TODO: dragon < Damage(...)
 TODO: dragon > Damage(...)
