@@ -39,20 +39,32 @@ Source: [#Hettinger2017]_
 
 .. figure:: img/threading-parallelism.png
 
-    Green: actual data transfer; blue: waiting; orange: domain name resolution, TLS handshake, etc. Source: Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_
+    Green: actual data transfer; blue: waiting; orange: domain name
+    resolution, TLS handshake, etc. Source: Langa, Ł. import asyncio: Learn
+    Python's AsyncIO [#Langa2020]_
 
 .. figure:: img/threading-join.png
 
     Source: Michael Kennedy [#Kennedy2019]_
+
+Every real operating system thread allocates full sized callstack. It's
+overhead. So you cannot run hundreds of threads without without sacrificing
+resources.
 
 
 Daemon
 ------
 * https://stackoverflow.com/a/190017/228517
 
-Some threads do background tasks, like sending keepalive packets, or performing periodic garbage collection, or whatever. These are only useful when the main program is running, and it's okay to kill them off once the other, non-daemon, threads have exited.
+Some threads do background tasks, like sending keepalive packets, or
+performing periodic garbage collection, or whatever. These are only useful
+when the main program is running, and it's okay to kill them off once the
+other, non-daemon, threads have exited.
 
-Without daemon threads, you'd have to keep track of them, and tell them to exit, before your program can completely quit. By setting them as daemon threads, you can let them run and forget about them, and when your program quits, any daemon threads are killed automatically.
+Without daemon threads, you'd have to keep track of them, and tell them to
+exit, before your program can completely quit. By setting them as daemon
+threads, you can let them run and forget about them, and when your program
+quits, any daemon threads are killed automatically.
 
 
 GIL
@@ -78,3 +90,5 @@ References
 .. [#Hettinger2017] Hettinger, Raymond. Keynote on Concurrency. PyBay 2017. https://youtu.be/9zinZmE3Ogk?t=1243
 
 .. [#Kennedy2019] Kennedy, M. Demystifying Python's Async and Await Keywords. Publisher: JetBrainsTV. Year: 2019. Retrieved: 2022-03-10. URL: https://www.youtube.com/watch?v=F19R_M4Nay4
+
+.. [#Langa2020] Langa, Ł. import asyncio: Learn Python's AsyncIO. Year: 2020. Retrieved: 2022-03-10. URL: https://www.youtube.com/playlist?list=PLhNSoGM2ik6SIkVGXWBwerucXjgP1rHmB

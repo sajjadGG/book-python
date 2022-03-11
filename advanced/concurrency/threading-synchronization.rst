@@ -58,6 +58,13 @@ Source: [#Hettinger2017]_
     Source: Michael Kennedy [#Kennedy2019]_
 
 
+Thread Local Storage
+--------------------
+* Operating system mechanism
+* Limits global variables to be seen only by current thread
+* You can keep data around, which are specifically not shared with other threads
+
+
 Example
 -------
 .. code-block:: python
