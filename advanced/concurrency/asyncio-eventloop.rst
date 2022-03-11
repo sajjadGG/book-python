@@ -14,9 +14,22 @@ For example, Django uses the main thread to wait for incoming requests, so we ca
 An event loop runs in a thread (typically the main thread) and executes all callbacks and Tasks in its thread. While a Task is running in the event loop, no other Tasks can run in the same thread. When a Task executes an await expression, the running Task gets suspended, and the event loop executes the next Task. [#pydocmultithreading]_
 
 .. figure:: img/asyncio-eventloop-sync.png
+
+    Source: Michael Kennedy [#Kennedy2019]_
+
 .. figure:: img/asyncio-eventloop-async.png
+
+    Source: Michael Kennedy [#Kennedy2019]_
+
 .. figure:: img/asyncio-eventloop-uvloop-doc.png
+
+    Source: Michael Kennedy [#Kennedy2019]_
+
 .. figure:: img/asyncio-eventloop-uvloop-using.png
+
+    Source: Michael Kennedy [#Kennedy2019]_
+
+
 
 Example
 -------
@@ -75,3 +88,8 @@ Since Python 3.7 there is ``asyncio.run()``. Before you had to ``get_event_loop(
     # B: finished
     # A: finished
     # C: finished
+
+
+References
+----------
+.. [#Kennedy2019] Kennedy, M. Demystifying Python's Async and Await Keywords. Publisher: JetBrainsTV. Year: 2019. Retrieved: 2022-03-10. URL: https://www.youtube.com/watch?v=F19R_M4Nay4
