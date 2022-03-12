@@ -46,7 +46,7 @@ Tests:
     >>> d
     True
     >>> e
-    True
+    False
     >>> f
     False
     >>> g
@@ -66,7 +66,7 @@ a = ...
 # bool: result of `True != ...` must be True
 b = ...
 
-# bool: result of `not ...` must be False
+# bool: result of `not ...` must be True
 c = ...
 
 # bool: result of `bool(...) == True` must be True
@@ -92,7 +92,7 @@ a = True
 b = True
 c = False
 d = True
-e = True
+e = False
 f = False
 g = True
 h = True

@@ -40,7 +40,7 @@ def process_file(book, file):
 
     filename = (str(file.relative_to(SRC_DIR))
                 .replace('assignments/', '')
-                .replace(book, '')
+                .replace(book, '')  # TODO: kasuje pandas i numpy z nazw zadań
                 .removeprefix('/'))
 
     path = Path(OUT_DIR / book / '_assignments' / filename)
