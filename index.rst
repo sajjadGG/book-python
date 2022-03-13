@@ -180,8 +180,8 @@ Dragon
     dragon/beta.rst
     dragon/rc.rst
     dragon/architecture-decision-records.rst
-    dragon/adr-create-name.rst
-    dragon/adr-create-position.rst
+    dragon/adr-init-name.rst
+    dragon/adr-init-position.rst
     dragon/adr-position-set.rst
     dragon/adr-position-change.rst
     dragon/adr-damage-make.rst

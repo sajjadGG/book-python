@@ -6,81 +6,101 @@ Rationale
 ---------
 * ADR - Architecture Design Records
 * Move dragon left by 10 and down by 20
+* Move by setting absolute position or list of absolute positions
+* Move by setting position
+* Move by relative shifting (left, right, up, down)
 
 
-Possibilities
--------------
->>> dragon.move(left=10, down=20)  # good
-
->>> dragon.change_position(left=10, down=20)  # good
-
->>> dragon.move_left(10)
->>> dragon.move_right(10)
->>> dragon.move_upright(10)
->>> dragon.move_downright(10)
->>> dragon.move_downleft(10)
->>> dragon.move_upleft(10)
->>> dragon.move_left_down(10, 20)
+Names
+-----
+* dragon.change_position()
+* dragon.position_change()
+* dragon.move()
+* dragon.shift()
+* dragon.fly_to()
 
 
-game.bind_key(Key.LEFT_ARROW, dragon.move_left)
-game.bind_key(Key.RIGHT_ARROW, dragon.move_right)
+Option 1
+--------
+>>> dragon.move(left=10, down=20)
+>>> dragon.change_position(left=10, down=20)
+>>> dragon.position_change(left=10, down=20)
 
 
-db.execute(SQL)
-
-db.execute_insert(...)
-db.execute_select()
-db.execute_create()
-db.execute_alter()
-db.execute_alter_table()
-db.execute_create_table()
-db.execute_create_database()
-
-read_csv('iris.csv', encoding='utf-8', delimiter=';', verbose=True)
-
-read_csv('iris.csv',
-         encoding='utf-8',
-         delimiter=';',
-         verbose=True,
-         parse_dates=['...'])
+Option 2
+--------
+>>> dragon.move(x=10, y=-20)
+>>> dragon.move_to(x=10, y=20)
 
 
-read_csv('iris.csv', 'utf-8', ';', True)
-
-read_csv('iris.csv')
-    .withEncoding('utf-8')
-    .withDelimiter(';')
-    .withVerbose(True);
+Option 3
+--------
+>>> dragon.move_x(10)
+>>> dragon.move_y(20)
 
 
-file = CSV()
-file.set_file('iris.csv')  # błąd enkapsulacji
-file.set_encoding('utf-8')
-file.set_delimiter(';')
+Option 4
+--------
+>>> dragon.move(10, 20)
+>>> dragon.move_xy(10, 20)
 
 
+Option 5
+--------
+>>> dragon.move((-10, 20))
+>>> dragon.move_xy((-10, 20))
 
+
+Option 6
+--------
+>>> dragon.move(dx=10, dy=-20)
+>>> dragon.move(vertical=10, horizontal=-20)
+
+
+Option 7
+--------
+* move(left, right, up, down)
 
 >>> dragon.move(0, 10, 0, 20)
+>>> dragon.move((0, 10, 0, 20))
 
 >>> dragon.move([
 ...     (0, 10, 0, 20),
 ...     (0, 10, 0, 20)])
 
->>> dragon.move(dx=10, dy=-20)
->>> dragon.move(vertical=10, horizontal=-20)
 
->>> dragon.move(x=10, y=-20)
+Option 8
+--------
+* move(horizontal, vertical)
+* move by relative offset
 
->>> dragon.move_x(10)
->>> dragon.move_y(20)
+>>> dragon.move([
+...     (10, 20),
+...     (10, 15)])
 
->>> dragon.move_to(x=10, y=20)
->>> dragon.move_xy(10, 20)
 
+Option 9
+--------
+* move(x, y)
+* move by setting absolute position
+
+>>> dragon.move([
+...     (10, 20),
+...     (50, 120),
+...     (5)])
+
+
+Option 10
+---------
 >>> dragon.move({'x':50, 'y':120})
 
+>>> dragon.move([
+...     {'x':10, 'y':20},
+...     {'x':10, 'y':15}])
+
+
+Option 11
+---------
 >>> dragon.move({'left':50, 'down':120})
 
 >>> dragon.move([
@@ -88,32 +108,47 @@ file.set_delimiter(';')
 ...     {'left':50, 'right':120},
 ...     {'down':50}])
 
->>> dragon.move([
-...     (10, 20),
-...     (50, 120),
-...     (5)])
+
+
+Option 12
+---------
+>>> dragon.move({'dx': 10, 'dy': 20})
 
 >>> dragon.move([
-...     (10, 20),
-...     (10, 15)])
+...     {'dx': -10, 'dy': 20},
+...     {'dx': -10, 'dy': 0}])
 
 >>> dragon.move([
-...     {'x':10, 'y':20},
-...     {'x':10, 'y':15}])
+...     {'dx': -10, 'dy': 20},
+...     {'dx': -10, 'dy': 20},
+...     {'dx': -10, 'dy': 20}])
+
+
+Option 13
+---------
+* move by setting absolute position
 
 >>> dragon.move([
 ...     Point(x=10, y=20),
 ...     Point(x=10, y=15)])
 
+
+Option 14
+---------
+>>> dragon.move([
+...     {'direction': 'left', 'distance': 20},
+...     {'direction': 'left', 'distance': 10},
+...     {'direction': 'right', 'distance': 20}])
+
+
+Option 15
+---------
 >>> x = dragon.x
 >>> y = dragon.y
 >>> dragon.move(x=x-10, y=y+20)
 
-
-
 >>> current = dragon.position
 >>> dragon.set_position(x=current.x-10, y=current.y+20)
-
 
 >>> x = dragon.x - 10
 >>> y = dragon.y + 20
@@ -125,43 +160,36 @@ file.set_delimiter(';')
 >>> dragon.position_x -= 10
 >>> dragon.position_y += 20
 
+
+Option 16
+---------
 >>> dragon.move(x=-10, y=+20)
-
 >>> dragon.move(dx=-10, dy=+20)
-
 >>> dragon.change_position(left=-10, down=20)
->>> dragon.change_position((-10, 20))
 
->>> dragon.move([
-...     (-10, 20),
-...     (-10, 20),
-...     (-10, 20)])
 
->>> dragon.move([
-...     {'dx': -10, 'dy': 20},
-...     {'dx': -10, 'dy': 20},
-...     {'dx': -10, 'dy': 20},])
-
->>> dragon.move([
-...     {'left': -10, 'down': 20},
-...     {'left': -10, 'right': 20},])
-
+Option 17
+---------
 >>> dragon.move(direction='left', distance=20)
-
 >>> dragon.move(direction='right', distance=5)
 
->>> LEFT = 61
+
+Option 18
+---------
+>>> LEFT = 61  # keyboard key code
 >>> dragon.move(direction=LEFT, distance=20)
 
+
+Option 19
+---------
 >>> class Direction(Enum):
 ...     LEFT = 61
 >>>
 >>> dragon.move(direction=Direction.LEFT, distance=5)
 
->>> dragon.move([
-...     {'direction': 'left', 'distance': 20},
-...     {'left': -10, 'right': 20},])
 
+Option 20
+---------
 >>> KEY_BINDING = {
 ...     'ARROW_UP': dragon.move_up,
 ...     'ARROW_DOWN': dragon.move_down,
@@ -172,3 +200,60 @@ file.set_delimiter(';')
 ...     return KEY_BINDING.get(key)(time)
 >>>
 >>> action('ARROW_UP', 5)
+
+
+Option 21
+---------
+>>> dragon.move_left(10)
+>>> dragon.move_right(10)
+>>> dragon.move_upright(10)
+>>> dragon.move_downright(10)
+>>> dragon.move_downleft(10)
+>>> dragon.move_upleft(10)
+>>> dragon.move_left_down(10, 20)
+
+Good, because:
+
+>>> game.bind_key(Key.LEFT_ARROW, dragon.move_left)
+>>> game.bind_key(Key.RIGHT_ARROW, dragon.move_right)
+
+Bad, because:
+
+>>> db.execute_insert(...)
+>>> db.execute_select()
+>>> db.execute_create()
+>>> db.execute_alter()
+>>> db.execute_alter_table()
+>>> db.execute_create_table()
+>>> db.execute_create_database()
+
+Use Case:
+
+>>> read_csv('iris.csv', 'utf-8', ';', True)
+
+>>> read_csv('iris.csv', encoding='utf-8', delimiter=';', verbose=True)
+
+>>> read_csv('iris.csv',
+...          encoding='utf-8',
+...          delimiter=';',
+...          verbose=True)
+
+>>> read_csv('iris.csv')
+>>>     .withEncoding('utf-8')
+>>>     .withDelimiter(';')
+>>>     .withVerbose(True);
+
+>>> file = CSV()
+>>> file.set_file('iris.csv')  # encapsulation?!
+>>> file.set_encoding('utf-8')
+>>> file.set_delimiter(';')
+
+
+Decision
+--------
+>>> dragon.move(left=10, down=20)
+
+Alternative:
+
+>>> dragon.change_position(left=10, down=20)
+>>> dragon.position_change(left=10, down=20)
