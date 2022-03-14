@@ -29,8 +29,8 @@ Tests:
     'All elements in result must be a str'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    ['mlewis@nasa.gov', 'rmartinez@nasa.gov', 'avogel@esa.int',
-     'cbeck@nasa.gov', 'bjohanssen@nasa.gov', 'mwatney@nasa.gov']
+    ['mlewis@nasa.gov', 'rmartinez@nasa.gov', 'cbeck@nasa.gov',
+    'bjohanssen@nasa.gov', 'mwatney@nasa.gov', 'ptwardowski@polsa.gov.pl']
 """
 
 DATA = {
@@ -48,7 +48,7 @@ DATA = {
              {'name': 'Pan Twardowski', 'email': 'ptwardowski@polsa.gov.pl'},
              {'name': 'Ivan Ivanovich', 'email': 'iivanovich@roscosmos.ru'}]}
 
-DOMAINS = ('.gov', '.int')
+DOMAINS = ('.gov', '.gov.pl')
 
 # list[str]: emails with top-level domain in DOMAINS
 result = ...
@@ -57,5 +57,6 @@ result = ...
 # Solution
 result = []
 for astronaut in DATA['crew']:
-    if astronaut['email'].endswith(DOMAINS):
-        result.append(astronaut['email'])
+    email = astronaut['email']
+    if email.endswith(DOMAINS):
+        result.append(email)

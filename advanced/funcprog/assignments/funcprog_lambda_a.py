@@ -23,7 +23,7 @@ Tests:
     >>> type(result) is float
     True
     >>> result
-    11502.0
+    245.0
 """
 
 
@@ -36,14 +36,14 @@ def cube(x):
 
 
 # float: Inline lambda expressions
-result = (x for x in range(1, 34) if x % 3 == 0)
+result = range(0,10)
 result = filter(odd, result)
 result = map(cube, result)
 result = list(result)
 result = sum(result) / len(result)
 
 # Solution
-result = (x for x in range(1, 34) if x % 3 == 0)
+result = range(0,10)
 result = filter(lambda x: x % 2, result)
 result = map(lambda x: x ** 3, result)
 result = list(result)

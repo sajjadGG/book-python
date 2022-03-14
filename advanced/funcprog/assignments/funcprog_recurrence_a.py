@@ -3,7 +3,7 @@
 * Required: yes
 * Complexity: easy
 * Lines of code: 5 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Fibonacci series is created by adding two previous numbers, i.e.:
