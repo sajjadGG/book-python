@@ -43,6 +43,8 @@ Specialized data structures
 
 Cython
 ------
+* https://numba.pydata.org/
+* https://cython.readthedocs.io/en/latest/
 * https://en.wikipedia.org/wiki/Cython
 * https://youtu.be/zQeYx87mfyw?t=747
 * types
