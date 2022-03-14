@@ -35,6 +35,35 @@ Recap
 (1, 2)
 
 
+Example
+-------
+* ``range()`` implementation using function and generator
+
+>>> def myrange(start, stop, step):
+...     result = []
+...     current = start
+...     while current < stop:
+...         result.append(current)
+...         current += step
+...     return result
+>>>
+>>> result = myrange(0, 10, 2)
+>>> result
+[0, 2, 4, 6, 8]
+
+>>> def myrange(start, stop, step):
+...     current = start
+...     while current < stop:
+...         yield current
+...         current += step
+>>>
+>>> result = myrange(0, 10, 2)
+>>> list(result)
+[0, 2, 4, 6, 8]
+
+
+
+
 Definition
 ----------
 Generators can return (or yield) something:

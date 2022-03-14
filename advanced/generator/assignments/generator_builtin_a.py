@@ -6,10 +6,9 @@
 
 English:
     1. Use generator expression to create `result`
-    2. In generator use `range()` to get numbers:
-       a. from 1 (inclusive)
-       b. to 34 (exclusive)
-       c. divisible by 3
+    2. Use `range()` to get numbers:
+       a. from 0 (inclusive)
+       b. to 10 (exclusive)
     3. Use `filter()` to get odd numbers from `result`
        (and assign to `result`)
     4. Use `map()` to cube all numbers in `result`
@@ -20,10 +19,9 @@ English:
 
 Polish:
     1. Użyj wyrażenia generatorowego do stworzenia `result`
-    2. W generatorze użyj `range()` aby otrzymać liczby:
-       a. od 1 (włącznie)
-       b. do 34 (rozłącznie)
-       c. podzielne przez 3
+    2. Użyj `range()` aby otrzymać liczby:
+       a. od 0 (włącznie)
+       b. do 10 (rozłącznie)
     3. Użyj `filter()` aby otrzymać liczby nieparzyste z `result`
        (i przypisz je do `result`)
     4. Użyj `map()` aby podnieść wszystkie liczby w `result` do sześcianu
@@ -49,7 +47,7 @@ Tests:
     >>> type(result) is float
     True
     >>> result
-    11502.0
+    245.0
 """
 
 def odd(x):
@@ -66,7 +64,7 @@ result = ...
 
 
 # Solution
-result = (x for x in range(1, 34) if x % 3 == 0)
+result = range(0, 10)
 result = filter(odd, result)
 result = map(cube, result)
 result = list(result)
