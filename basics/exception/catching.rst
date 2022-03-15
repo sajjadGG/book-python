@@ -175,6 +175,21 @@ Traceback (most recent call last):
 RuntimeError: Failed to open database
 
 
+Exception Silencing
+-------------------
+>>> def database_connect():
+...     raise ConnectionError
+>>>
+>>>
+>>> try:
+...     database_connect()
+... except ConnectionError:
+...     raise RuntimeError('Failed to open database') from None
+Traceback (most recent call last):
+RuntimeError: Failed to open database
+
+
+
 Recap
 -----
 >>> try:
