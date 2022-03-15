@@ -62,9 +62,9 @@ Tests:
     ...                           globals=globals(), number=10_000)
 
     >>> duration_ratio = duration_nocache / duration_cache
-    >>> print(f'With Cache time: {duration_cache:.4f} seconds')
-    >>> print(f'Without Cache time: {duration_nocache:.3f} seconds')
-    >>> print(f'Cached solution is {duration_ratio:.1f} times faster')
+    >>> print(f'With Cache time: {duration_cache:.4f} seconds')  # this will fail (see point 4)
+    >>> print(f'Without Cache time: {duration_nocache:.3f} seconds')  # this will fail (see point 4)
+    >>> print(f'Cached solution is {duration_ratio:.1f} times faster')  # this will fail (see point 4)
 
     TODO: Make tests faster
 """
