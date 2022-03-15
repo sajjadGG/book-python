@@ -160,3 +160,29 @@ Use Case - 0x03
 >>>
 >>> add.__cache__
 {(1, 2): 3, (3, 2): 5, (3, 5): 8}
+
+
+Use Case - 0x04
+---------------
+def silnia(n):
+    if not hasattr(silnia, '_cache'):
+        silnia._cache = {0: 1}
+    if n not in silnia._cache:
+        silnia._cache[n] = n * silnia(n-1)
+    return silnia._cache[n]
+
+silnia(10)
+3628800
+
+silnia._cache
+{0: 1,
+ 1: 1,
+ 2: 2,
+ 3: 6,
+ 4: 24,
+ 5: 120,
+ 6: 720,
+ 7: 5040,
+ 8: 40320,
+ 9: 362880,
+ 10: 3628800}
