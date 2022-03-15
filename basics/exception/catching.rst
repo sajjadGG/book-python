@@ -154,8 +154,8 @@ One can kill program with ``Ctrl-C``:
 ...         continue
 
 
-Exception Chaining
-------------------
+Exception Chain
+---------------
 >>> def database_connect():
 ...     raise ConnectionError
 >>>
@@ -165,18 +165,16 @@ Exception Chaining
 ... except ConnectionError as error:
 ...     raise RuntimeError('Failed to open database') from error  # doctest: +SKIP
 Traceback (most recent call last):
-...
 ConnectionError
 <BLANKLINE>
 The above exception was the direct cause of the following exception:
 <BLANKLINE>
 Traceback (most recent call last):
-...
 RuntimeError: Failed to open database
 
 
-Exception Silencing
--------------------
+Exception Chain Silencing
+-------------------------
 >>> def database_connect():
 ...     raise ConnectionError
 >>>
@@ -187,7 +185,6 @@ Exception Silencing
 ...     raise RuntimeError('Failed to open database') from None
 Traceback (most recent call last):
 RuntimeError: Failed to open database
-
 
 
 Recap
