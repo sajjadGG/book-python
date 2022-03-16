@@ -234,22 +234,21 @@ elif os.path.isdir('../_static'):
     html_static_path += ['../_static']
 
 if html_theme == 'sphinx_rtd_theme':
-    html_context.update(
-        {
-            'css_files': ['_static/css/dark.css', '_static/css/print.css'],
-            'script_files': [
-                '_static/js/jquery.min.js',
-                '_static/js/assignment-numbers.js',
-                '_static/js/menu-search.js',
-                '_static/js/menu-autonumber.js',
-                '_static/js/menu-cite.js',
-                '_static/js/menu-donatebutton.js',
-                '_static/js/menu-futherreading.js',
-                '_static/js/copybutton.js',
-                mathjax_path,
-            ],
-        }
-    )
+    html_context.update({
+        'css_files': [
+            '_static/css/dark.css',
+            '_static/css/print.css'],
+        'script_files': [
+            '_static/js/jquery.min.js',
+            '_static/js/assignment-numbers.js',
+            '_static/js/menu-search.js',
+            '_static/js/menu-autonumber.js',
+            '_static/js/menu-cite.js',
+            '_static/js/menu-donatebutton.js',
+            '_static/js/menu-futherreading.js',
+            '_static/js/copybutton.js',
+            '_static/js/code-editable.js',
+            mathjax_path]})
 
 if 'html_menu_autohide' in globals() and html_menu_autohide is True:
     html_context['script_files'].append('_static/js/menu-autohide.js')

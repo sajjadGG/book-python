@@ -133,7 +133,12 @@ Show Methods
 ...                    for method in dir(astro)
 ...                    if callable(getattr(astro, method))
 ...                    and method.startswith(f'_{astro.__class__.__name__}')]
-
+>>>
+>>> system_methods = [method
+...                   for method in dir(astro)
+...                   if callable(getattr(astro, method))
+...                   and method.startswith(f'__')
+...                   and method.endswith(f'__')]
 
 References
 ----------

@@ -72,6 +72,7 @@ How nice it would be to write:
 ...     def get(self, key: str) -> str
 ...     def is_valid(self, key: str) -> bool
 
+
 Example
 -------
 >>> class Cache:
@@ -179,18 +180,88 @@ Use Case - 0x02
 ...      pass
 
 >>> # myapp/settings.py
->>> from myapp.cache import CacheInterface  # doctest: +SKIP
+>>> from myapp.cache import DatabaseCache  # doctest: +SKIP
+>>> from myapp.cache import InMemoryCache  # doctest: +SKIP
+>>> from myapp.cache import FilesystemCache  # doctest: +SKIP
 >>>
->>> cache = DatabaseCache
+>>>
+>>> Cache = DatabaseCache
 
 >>> # myapp/usage.py
+>>> from myapp.cache import CacheInterface
 >>> from myapp.settings import cache  # doctest: +SKIP
 >>>
->>> c: CacheInterface = cache()
+>>>
+>>> c: CacheInterface = Cache()
 >>> c.set('firstname', 'Mark')
 >>> c.is_valid('firstname')
 >>> c.is_valid('lastname')
 >>> c.get('firstname')
+
+
+Use Case - 0x03
+---------------
+>>> class Tool:
+...     def on_mouse_over(self): raise NotImplementedError
+...     def on_mouse_out(self): raise NotImplementedError
+...     def on_mouse_click_leftbutton(self): raise NotImplementedError
+...     def on_mouse_unclick_leftbutton(self): raise NotImplementedError
+...     def on_mouse_click_rightbutton(self): raise NotImplementedError
+...     def on_mouse_unclick_rightbutton(self): raise NotImplementedError
+...     def on_key_press(self): raise NotImplementedError
+...     def on_key_unpress(self): raise NotImplementedError
+>>>
+>>>
+>>> class Pencil(Tool):
+...     def on_mouse_over(self):
+...         ...
+...
+...     def on_mouse_out(self):
+...         ...
+...
+...     def on_mouse_click_leftbutton(self):
+...         ...
+...
+...     def on_mouse_unclick_leftbutton(self):
+...         ...
+...
+...     def on_mouse_click_rightbutton(self):
+...         ...
+...
+...     def on_mouse_unclick_rightbutton(self):
+...         ...
+...
+...     def on_key_press(self):
+...         ...
+...
+...     def on_key_unpress(self):
+...         ...
+>>>
+>>>
+>>> class Pen(Tool):
+...     def on_mouse_over(self):
+...         ...
+...
+...     def on_mouse_out(self):
+...         ...
+...
+...     def on_mouse_click_leftbutton(self):
+...         ...
+...
+...     def on_mouse_unclick_leftbutton(self):
+...         ...
+...
+...     def on_mouse_click_rightbutton(self):
+...         ...
+...
+...     def on_mouse_unclick_rightbutton(self):
+...         ...
+...
+...     def on_key_press(self):
+...         ...
+...
+...    def on_key_unpress(self):
+...        ...
 
 
 Assignments

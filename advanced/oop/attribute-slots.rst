@@ -452,6 +452,11 @@ Astronaut 156
 Cosmonaut 375
 
 
+Further Reading
+---------------
+* https://docs.python.org/3/reference/datamodel.html#slots
+* https://stackoverflow.com/questions/472000/usage-of-slots
+
 Assignments
 -----------
 .. literalinclude:: assignments/oop_attribute_slots_a.py
