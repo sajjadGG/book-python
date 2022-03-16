@@ -25,19 +25,17 @@ Rationale
 
 Example
 -------
-.. code-block:: python
-
-    import asyncio
-
-
-    async def work():
-        return 'done'
-
-
-    async def main():
-        result = await work()
-        print(result)
-
-
-    asyncio.run(main())
-    # done
+>>> import asyncio
+>>>
+>>>
+>>> async def work():
+...     return 'done'
+>>>
+>>>
+>>> async def main():
+...     result = await work()
+...     print(result)
+>>>
+>>>
+>>> asyncio.run(main())
+done

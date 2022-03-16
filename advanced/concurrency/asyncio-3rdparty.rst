@@ -55,3 +55,21 @@ Trio
 * Python library for async concurrency and I/O
 * Focussed on usability and correctness
 * Introduced nursery (task groups)
+
+
+UVLoop
+------
+* The ultimate loop implementation for UNIXes (run this on production)
+
+.. code-block:: console
+
+    $ pip install uvloop
+
+>>> # doctest: +SKIP
+... import uvloop
+...
+... uvloop.install()
+...
+... loop = asyncio.new_event_loop()
+... loop
+<uvloop.Loop running=False closed=False debug=False>

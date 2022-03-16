@@ -22,23 +22,22 @@ Rationale
 * Does not raise ``asyncio.TimeoutError``
 * ``Futures`` or ``Tasks`` that aren't done when the timeout occurs are simply returned in the second set (``pending``).
 
+
 Example
 -------
-.. code-block:: python
-
-    import asyncio
-
-
-    async def work():
-        return 'done'
-
-
-    async def main():
-        task = asyncio.create_task(work())
-        done, pending = await asyncio.wait({task})
-
-        if task in done:
-            print('work is done')
-
-    asyncio.run(main())
-    # work is done
+>>> import asyncio
+>>>
+>>>
+>>> async def work():
+...     return 'done'
+>>>
+>>>
+>>> async def main():
+...     task = asyncio.create_task(work())
+...     done, pending = await asyncio.wait({task})
+...
+...     if task in done:
+...         print('work is done')
+>>>
+>>> asyncio.run(main())
+work is done

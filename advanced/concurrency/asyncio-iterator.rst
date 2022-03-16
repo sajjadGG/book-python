@@ -18,10 +18,10 @@ Example
 ...         return self
 ...
 ...     async def __anext__(self):
-...         val = await self.readline()
-...         if val == b'':
+...         line = await self.readline()
+...         if line == b'':
 ...             raise StopAsyncIteration
-...         return val
+...         return line
 
 
 Type Annotation

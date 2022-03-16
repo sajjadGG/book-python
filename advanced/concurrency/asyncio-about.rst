@@ -2,18 +2,6 @@ AsyncIO About
 =============
 
 
-.. glossary::
-
-    promise
-    future
-    coroutine
-    queue
-    awaitable
-
-    aws
-        awaitables
-
-
 Rationale
 ---------
 * ``asyncio`` in stdlib
@@ -21,25 +9,34 @@ Rationale
 * Running asynchronously: 3s + 1s + 1s = bit over 3s [execution time]
 * Async is the future of programming
 
-* Objective: Maximize the usage of a single thread
-* Objective: handling I/O asynchronously
-* Objective: enabling concurrent code using coroutines
 
-* Advantage: Async will fill the gaps, otherwise wasted on waiting for I/O
-* Advantage: You control when tasks switches occur, so locks and other synchronization are no longer needed
-* Advantage: Cost task switches is incredibly low. Calling a pure Python function has more overhead than restarting a generator or awaitable
-* Advantage: Function builds stack each time it's called, whereas async uses generators underneath, which already has stack created
-* Advantage: Async is the cheapest way to task switch
-* Advantage: In terms of speed async servers blows threaded servers in means of thousands
-* Advantage: Async is very cheap in means of resources
-* Advantage: Async world has a huge ecosystem of support tools
-* Advantage: Coding is easier to get right, than threads
+Objectives
+----------
+* Maximize the usage of a single thread
+* Handling I/O asynchronously
+* Enabling concurrent code using coroutines
 
-* Disadvantage: Async switches cooperatively, so you do need to add explicit code ``yield`` or ``await`` to cause a task to switch
-* Disadvantage: Everything you do need a non-blocking version (for example ``open()``)
-* Disadvantage: Increased learning curve
-* Disadvantage: Create event loop, acquire, crate non-blocking versions of your code
-* Disadvantage: You think you know Python, there is a second half to learn (async)
+
+Advantages
+----------
+* Async will fill the gaps, otherwise wasted on waiting for I/O
+* You control when tasks switches occur, so locks and other synchronization are no longer needed
+* Cost task switches is incredibly low. Calling a pure Python function has more overhead than restarting a generator or awaitable
+* Function builds stack each time it's called, whereas async uses generators underneath, which already has stack created
+* Async is the cheapest way to task switch
+* In terms of speed async servers blows threaded servers in means of thousands
+* Async is very cheap in means of resources
+* Async world has a huge ecosystem of support tools
+* Coding is easier to get right, than threads
+
+
+Disadvantages
+-------------
+* Async switches cooperatively, so you do need to add explicit code ``yield`` or ``await`` to cause a task to switch
+* Everything you do need a non-blocking version (for example ``open()``)
+* Increased learning curve
+* Create event loop, acquire, crate non-blocking versions of your code
+* You think you know Python, there is a second half to learn (async)
 
 
 Sync vs Async
@@ -88,52 +85,67 @@ There are three main types of awaitable objects:
 
     Coroutine (async function) anatomy. Source: Michael Kennedy [#Kennedy2019]_
 
+.. glossary::
+
+    promise
+    future
+    queue
+
+    tasks
+        Runs thing in the "background". Can be awaited and cancelled.
+
+    coroutine
+        Coroutine - a function which can run concurrently.
+        The I/O bound parts can ``await``.
+
+    awaitable
+        Object is an awaitable if it can be used in an ``await`` expression
+
+    aws
+        Awaitables
+
 
 Example
 -------
-.. code-block:: python
-
-    import asyncio
-
-
-    async def a():
-        print('A: started')
-        await asyncio.sleep(2)
-        print('A: finished')
-        return 'a'
-
-    async def b():
-        print('B: started')
-        await asyncio.sleep(1)
-        print('B: finished')
-        return 'b'
-
-    async def c():
-        print('C: started')
-        await asyncio.sleep(3)
-        print('C: finished')
-        return 'c'
-
-
-    async def main():
-        result = await asyncio.gather(
-            a(),
-            b(),
-            c(),
-        )
-        print(f'Result: {result}')
-
-
-    if __name__ ==  '__main__':
-        asyncio.run(main())
-
-    # A: started
-    # B: started
-    # C: started
-    # B: finished
-    # A: finished
-    # C: finished
-    # Result: ['a', 'b', 'c']
+>>> import asyncio
+>>>
+>>>
+>>> async def a():
+...     print('a: started')
+...     await asyncio.sleep(2)
+...     print('a: finished')
+...     return 'a'
+>>>
+>>> async def b():
+...     print('b: started')
+...     await asyncio.sleep(1)
+...     print('b: finished')
+...     return 'b'
+>>>
+>>> async def c():
+...     print('c: started')
+...     await asyncio.sleep(3)
+...     print('c: finished')
+...     return 'c'
+>>>
+>>> async def main():
+...     result = await asyncio.gather(
+...         a(),
+...         b(),
+...         c(),
+...     )
+...     print(f'Result: {result}')
+>>>
+>>> if __name__ == '__main__':
+...     asyncio.run(main())
+...
+a: started
+b: started
+c: started
+b: finished
+a: finished
+c: finished
+Result: ['a', 'b', 'c']
 
 
 Further Reading

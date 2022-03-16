@@ -14,23 +14,21 @@ Rationale
 
 Example
 -------
-.. code-block:: python
-
-    import asyncio
-
-    HOUR = 3600
-
-
-    async def work():
-        await asyncio.sleep(HOUR)
-        return 'done'
-
-
-    async def main():
-        try:
-            await asyncio.wait_for(work(), timeout=1.0)
-        except asyncio.TimeoutError:
-            print('timeout!')
-
-    asyncio.run(main())
-    # timeout!
+>>> import asyncio
+>>>
+>>> HOUR = 3600
+>>>
+>>>
+>>> async def work():
+...     await asyncio.sleep(HOUR)
+...     return 'done'
+>>>
+>>>
+>>> async def main():
+...     try:
+...         await asyncio.wait_for(work(), timeout=1.0)
+...     except asyncio.TimeoutError:
+...         print('timeout!')
+>>>
+>>> asyncio.run(main())
+timeout!

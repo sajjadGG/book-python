@@ -7,6 +7,12 @@ Rationale
 * Async code can only run inside an event loop.
 * The event loop is the driver code that manages the cooperative multitasking.
 * You can create multiple threads and run different event loops in each of them.
+* Python will create a default event loop only in Main Thread
+* Python will not create an event loop automatically for you on any other than main thread by default, this is to prevent from having multiple event lops created explicitly
+* Event loop can execute only one callback (coroutine) at a time
+* Some callbacks (coroutines) can schedule themselves once again (trampoline)
+* Reactors
+* Proactors
 
 For example, Django uses the main thread to wait for incoming requests, so we can't run an asyncio event loop there, but we can start a separate worker thread for our event loop.
 [#cheat]_
@@ -30,66 +36,95 @@ An event loop runs in a thread (typically the main thread) and executes all call
     Source: Michael Kennedy [#Kennedy2019]_
 
 
-
-Example
--------
-.. code-block:: python
-
-    import asyncio
-
-
-    async def work(*args, **kwargs):
-        # do stuff...
-        return result
-
-
-    result = asyncio.run(work(1, 2, 3))
-
-Since Python 3.7 there is ``asyncio.run()``. Before you had to ``get_event_loop()`` and then ``run_until_complete()``:
-
-.. code-block:: python
-
-    import asyncio
+Run
+---
+>>> import asyncio
+>>>
+>>>
+>>> async def myfunc(*args, **kwargs):
+...     # do stuff...
+...     return result
+>>>
+>>>
+>>> result = asyncio.run(myfunc())
 
 
-    async def a():
-        print(f'A: started')
-        await asyncio.sleep(2)
-        print(f'A: finished')
+Gather
+------
+* Run multiple coroutines and gather results
+
+>>> import asyncio
+>>>
+>>>
+>>> async def a():
+...     print('a: started')
+...     await asyncio.sleep(2)
+...     print('a: finished')
+...     return 'a'
+>>>
+>>> async def b():
+...     print('b: started')
+...     await asyncio.sleep(1)
+...     print('b: finished')
+...     return 'b'
+>>>
+>>> async def c():
+...     print('c: started')
+...     await asyncio.sleep(3)
+...     print('c: finished')
+...     return 'c'
+>>>
+>>> async def main():
+...     result = await asyncio.gather(
+...         a(),
+...         b(),
+...         c(),
+...     )
+...     print(f'Result: {result}')
+>>>
+>>> if __name__ == '__main__':
+...     asyncio.run(main())
+...
+a: started
+b: started
+c: started
+b: finished
+a: finished
+c: finished
+Result: ['a', 'b', 'c']
 
 
-    async def b():
-        print(f'B: started')
-        await asyncio.sleep(1)
-        print(f'B: finished')
+Selectors
+---------
+.. figure:: img/asyncio-eventloop-selectors.png
+
+    Source: Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_
+
+.. figure:: img/asyncio-eventloop-selectors-unix.png
+
+    Source: Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_
 
 
-    async def c():
-        print(f'C: started')
-        await asyncio.sleep(3)
-        print(f'C: finished')
+UVLoop
+------
+* The ultimate loop implementation for UNIXes (run this on production)
 
+.. code-block:: console
 
-    async def main():
-        await asyncio.gather(
-            a(),
-            b(),
-            c(),
-        )
+    $ pip install uvloop
 
-
-    if __name__ == '__main__':
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(main())
-
-    # A: started
-    # B: started
-    # C: started
-    # B: finished
-    # A: finished
-    # C: finished
+>>> # doctest: +SKIP
+... import uvloop
+...
+... uvloop.install()
+...
+... loop = asyncio.new_event_loop()
+... loop
+<uvloop.Loop running=False closed=False debug=False>
 
 
 References
 ----------
 .. [#Kennedy2019] Kennedy, M. Demystifying Python's Async and Await Keywords. Publisher: JetBrainsTV. Year: 2019. Retrieved: 2022-03-10. URL: https://www.youtube.com/watch?v=F19R_M4Nay4
+
+.. [#Langa2020] Langa, Ł. import asyncio: Learn Python's AsyncIO. Year: 2020. Retrieved: 2022-03-10. URL: https://www.youtube.com/playlist?list=PLhNSoGM2ik6SIkVGXWBwerucXjgP1rHmB

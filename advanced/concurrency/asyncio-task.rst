@@ -24,65 +24,64 @@ Rationale
 
 Example
 -------
-.. code-block:: python
-
-    import asyncio
-
-
-    async def work():
-        return 'done'
-
-
-    async def main():
-        task = asyncio.create_task(work())
-        result = await task
-        print(result)
-
-
-    asyncio.run(main())
-    # done
+>>> import asyncio
+>>>
+>>>
+>>> async def work():
+...     return 'done'
+>>>
+>>>
+>>> async def main():
+...     task = asyncio.create_task(work())
+...     result = await task
+...     print(result)
+>>>
+>>>
+>>> asyncio.run(main())
+done
 
 .. code-block:: python
 
-    import asyncio
-
-
-    async def a():
-        print(f'A: started')
-        await asyncio.sleep(2)
-        print(f'A: finished')
-
-
-    async def b():
-        print(f'B: started')
-        await asyncio.sleep(1)
-        print(f'B: finished')
-
-
-    async def c():
-        print(f'C: started')
-        await asyncio.sleep(3)
-        print(f'C: finished')
-
-
-    async def main():
-        t1 = asyncio.create_task(a())
-        t2 = asyncio.create_task(b())
-        t3 = asyncio.create_task(c())
-        await t1
-        await t2
-        await t3
-
-
-    if __name__ == '__main__':
-        asyncio.run(main())
-
-    # A: started
-    # B: started
-    # C: started
-    # B: finished
-    # A: finished
-    # C: finished
+>>> import asyncio
+>>>
+>>>
+>>> async def a():
+...     print('a: started')
+...     await asyncio.sleep(2)
+...     print('a: finished')
+...     return 'a'
+>>>
+>>> async def b():
+...     print('b: started')
+...     await asyncio.sleep(1)
+...     print('b: finished')
+...     return 'b'
+>>>
+>>> async def c():
+...     print('c: started')
+...     await asyncio.sleep(3)
+...     print('c: finished')
+...     return 'c'
+>>>
+>>>
+>>> async def main():
+...     t1 = asyncio.create_task(a())
+...     t2 = asyncio.create_task(b())
+...     t3 = asyncio.create_task(c())
+...     await t1
+...     await t2
+...     await t3
+>>>
+>>>
+>>> if __name__ == '__main__':
+...     asyncio.run(main())
+...
+a: started
+b: started
+c: started
+b: finished
+a: finished
+c: finished
 
 
 Selected Task Methods
