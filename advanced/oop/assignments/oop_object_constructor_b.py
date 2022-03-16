@@ -38,10 +38,9 @@ Tests:
      SystemAccount(username='halt', uid=7),
      SystemAccount(username='nobody', uid=99),
      SystemAccount(username='sshd', uid=74),
-     UserAccount(username='twardowski', uid=1000),
-     UserAccount(username='jimenez', uid=1001),
-     UserAccount(username='ivanovic', uid=1002),
-     UserAccount(username='lewis', uid=1002)]
+     UserAccount(username='watney', uid=1000),
+     UserAccount(username='lewis', uid=1001),
+     UserAccount(username='martinez', uid=1002)]
 """
 
 DATA = """root:x:0:0:root:/root:/bin/bash
@@ -52,10 +51,9 @@ shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
 halt:x:7:0:halt:/sbin:/sbin/halt
 nobody:x:99:99:Nobody:/:/sbin/nologin
 sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
-twardowski:x:1000:1000:Jan Twardowski:/home/twardowski:/bin/bash
-jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
-ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
-lewis:x:1002:1002:Melissa Lewis:/home/lewis:/bin/bash"""
+watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
+lewis:x:1001:1001:Melissa Lewis:/home/lewis:/bin/bash
+martinez:x:1002:1002:Rick Martinez:/home/martinez:/bin/bash"""
 
 
 # list[Account]: parse DATA and convert to UserAccount or SystemAccount

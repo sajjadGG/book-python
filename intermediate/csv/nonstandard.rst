@@ -65,6 +65,13 @@ Passwd
 .. code-block:: text
 
     root:x:0:0:root:/root:/bin/bash
+    bin:x:1:1:bin:/bin:/sbin/nologin
+    daemon:x:2:2:daemon:/sbin:/sbin/nologin
+    adm:x:3:4:adm:/var/adm:/sbin/nologin
+    shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+    halt:x:7:0:halt:/sbin:/sbin/halt
+    nobody:x:99:99:Nobody:/:/sbin/nologin
+    sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
     watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
     lewis:x:1001:1001:Melissa Lewis:/home/lewis:/bin/bash
     martinez:x:1002:1002:Rick Martinez:/home/martinez:/bin/bash
