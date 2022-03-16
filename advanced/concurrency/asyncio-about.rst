@@ -81,6 +81,15 @@ There are three main types of awaitable objects:
     * Tasks,
     * Futures.
 
+>>> from collections.abc import Awaitable
+>>> from collections.abc import Coroutine
+>>> from asyncio import Future
+>>> from asyncio import Task
+
+.. figure:: img/asyncio-awaitables.png
+
+    Source: Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_
+
 .. figure:: img/asyncio-async-anatomy.png
 
     Coroutine (async function) anatomy. Source: Michael Kennedy [#Kennedy2019]_
