@@ -19,3 +19,9 @@ Rationale
 * Qizx
 * RethinkDB
 * eXist-db
+
+
+Model
+-----
+.. figure:: img/nosql-document-01.png
+.. figure:: img/nosql-document-02.jpg

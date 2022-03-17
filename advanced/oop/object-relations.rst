@@ -319,7 +319,7 @@ Serialization
 .. figure:: img/oop-relations-serialize-obj.png
 .. figure:: img/oop-relations-serialize-objattr.png
 .. figure:: img/oop-relations-serialize-clsattr.png
-
+.. figure:: img/oop-relations-data-01.png
 
 Normal forms
 ------------

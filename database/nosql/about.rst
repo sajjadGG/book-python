@@ -39,6 +39,8 @@ database depends on the problem it must solve. Sometimes the data
 structures used by NoSQL databases are also viewed as "more flexible" than
 relational database tables [#wikiNoSQL]_.
 
+.. figure:: img/nosql-vs-sql.png
+
 
 Performance
 -----------

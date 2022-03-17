@@ -14,3 +14,11 @@ Rationale
 * HBase
 * Hypertable
 * ScyllaDB
+
+
+Model
+-----
+.. figure:: img/nosql-column-cassandra-01.jpg
+.. figure:: img/nosql-column-cassandra-02.png
+.. figure:: img/nosql-column-cassandra-03.png
+.. figure:: img/nosql-column-cassandra-04.jpg

@@ -8,6 +8,11 @@ Rationale
 * Key-Value Cache
 
 
+Model
+-----
+.. figure:: img/nosql-keyvalue-01.png
+
+
 Key–Value Store
 ---------------
 * Aerospike
