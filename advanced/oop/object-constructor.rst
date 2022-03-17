@@ -317,7 +317,7 @@ WindowsPath('C:/Users/Admin/myfile.txt')
 
 Use Case - 0x03
 ---------------
-* Document Factory 1
+* Document Factory
 * Factory method
 * Could be used to implement Singleton
 
@@ -346,310 +346,132 @@ Use Case - 0x03
 <Docx object at 0x...>
 
 
-Use Case
---------
-.. todo:: Cleanup
-
-class Docx:
-    pass
-class PDF:
-    pass
-class Document:
-    def __new__(cls, filename):
-        basename, extension = filename.split('.')
-        match extension:
-
-            case 'pdf':
-                return PDF()
-
-            case 'doc' | 'docx':
-                return Docx()
-
-file1 = Document('myfile.pdf')
-type(file)
-NameError: name 'file' is not defined
-type(file1)
-__main__.PDF
-file2 = Document('myfile.docx')
-type(file2)
-__main__.Docx
-file3 = Document('myfile.doc')
-type(file3)
-__main__.Docx
-
-
-
-
-
 Use Case - 0x04
 ---------------
-* Document Factory 2
+* Document Factory
 
->>> from abc import ABC, abstractmethod
+>>> class Docx:
+...     pass
 >>>
->>>
->>> class Filetype(ABC):
-...     @abstractmethod
-...     def display(self):
-...         raise NotImplementedError
-...
-...     def __init__(self, filename):
-...         self.filename = filename
->>>
->>>
->>> class PDF(Filetype):
-...     def display(self):
-...         pass
->>>
->>>
->>> class DOCX(Filetype):
-...     def display(self):
-...         pass
->>>
+>>> class PDF:
+...     pass
 >>>
 >>> class Document:
 ...     def __new__(cls, filename):
-...         filetypes = Filetype.__subclasses__()
-...         _, extension = filename.split('.')
-...
-...         for typ in filetypes:
-...             if typ.__name__ == extension.upper():
-...                 return typ(filename)
-...         else:
-...             raise NotImplementedError('Filetype is not recognized')
+...         basename, extension = filename.split('.')
+...         match extension:
+...             case 'pdf':             return PDF()
+...             case 'doc' | 'docx':    return Docx()
 >>>
 >>>
->>> Document('myfile.pdf')  # doctest: +ELLIPSIS
+>>> file1 = Document('myfile.pdf')
+>>> file2 = Document('myfile.docx')
+>>> file3 = Document('myfile.doc')
+>>>
+>>> print(file1)  # doctest: +ELLIPSIS
 <PDF object at 0x...>
->>> Document('myfile.docx')  # doctest: +ELLIPSIS
-<DOCX object at 0x...>
+>>>
+>>> print(file2)  # doctest: +ELLIPSIS
+<Docx object at 0x...>
+>>>
+>>> print(file3)  # doctest: +ELLIPSIS
+<Docx object at 0x...>
 
 
 Use Case - 0x05
 ---------------
-* Document Factory 3
+* Document Factory
 
->>> from abc import ABC, abstractmethod, abstractproperty
->>>
->>>
->>> class Filetype(ABC):
-...     @abstractproperty
-...     def EXTENSIONS(self) -> str: ...
-...
-...     @abstractmethod
-...     def display(self):
-...         raise NotImplementedError
-...
-...     def __init__(self, filename):
-...         self.filename = filename
->>>
->>>
->>> class PDF(Filetype):
-...     EXTENSIONS = ['pdf']
-...
-...     def display(self):
-...         pass
->>>
->>>
->>> class DOCX(Filetype):
-...     EXTENSIONS = ['docx', 'doc']
-...
-...     def display(self):
-...         pass
->>>
->>>
->>> class Document:
-...     def __new__(cls, filename):
-...         filetypes = Filetype.__subclasses__()
-...         _, extension = filename.split('.')
-...
-...         for typ in filetypes:
-...             if extension in typ.EXTENSIONS:
-...                 return typ(filename)
-...         else:
-...             raise NotImplementedError('Filetype is not recognized')
->>>
->>>
->>> Document('myfile.pdf')  # doctest: +ELLIPSIS
-<PDF object at 0x...>
->>> Document('myfile.doc')  # doctest: +ELLIPSIS
-<DOCX object at 0x...>
->>> Document('myfile.docx')  # doctest: +ELLIPSIS
-<DOCX object at 0x...>
-
-
-Use Case - 0x06
----------------
-* Document Factory 4
-
->>> from abc import ABC, abstractmethod, abstractproperty
+>>> from abc import ABC, abstractproperty
 >>>
 >>>
 >>> class Document(ABC):
 ...     @abstractproperty
-...     def EXTENSIONS(self) -> list[str]: ...
-...
-...     def __new__(cls, filename):
-...         filetypes = cls.__subclasses__()
-...         _, extension = filename.split('.')
-...
-...         for typ in filetypes:
-...             if extension in typ.EXTENSIONS:
-...                 instance = object.__new__(typ)
-...                 instance.__init__(filename)
-...                 return instance
-...         else:
-...             raise NotImplementedError('Filetype is not recognized')
+...     def EXTENSIONS(self) -> list[str]:
+...         raise NotImplementedError
 ...
 ...     def __init__(self, filename):
 ...         self.filename = filename
 ...
-...     @abstractmethod
-...     def display(self):
-...         raise NotImplementedError
+...     def __new__(cls, filename):
+...         basename, extension = filename.split('.')
+...         plugins = cls.__subclasses__()
+...         for plugin in plugins:
+...             if extension in plugin.EXTENSIONS:
+...                 instance = object.__new__(plugin)
+...                 instance.__init__(filename)
+...                 return instance
+...         raise NotImplementedError('There is no plugin for this filetype')
 >>>
 >>>
 >>> class PDF(Document):
 ...     EXTENSIONS = ['pdf']
-...
-...     def display(self):
-...         pass
 >>>
->>>
->>> class DOCX(Document):
-...     EXTENSIONS = ['docx', 'doc']
-...
-...     def display(self):
-...         pass
+>>> class Docx(Document):
+...     EXTENSIONS = ['doc', 'docx']
 >>>
 >>>
 >>> Document('myfile.pdf')  # doctest: +ELLIPSIS
 <PDF object at 0x...>
+>>>
 >>> Document('myfile.doc')  # doctest: +ELLIPSIS
 <DOCX object at 0x...>
+>>>
 >>> Document('myfile.docx')  # doctest: +ELLIPSIS
 <DOCX object at 0x...>
+>>>
+>>> Document('myfile.csv')  # doctest: +ELLIPSIS
+Traceback (most recent call last):
+NotImplementedError: There is no plugin for this filetype
 
 
-Use Case - 0x07
+Use Case - 0x06
 ---------------
-.. todo:: Cleanup
-
-from datetime import datetime
-import logging
-from uuid import uuid4
-
-
-class Astronaut:
-    def __new__(cls, *args, **kwargs):
-        print(f'New {args=}, {kwargs=}')
-        obj = object.__new__(cls)
-        obj._since = datetime.now()
-        obj._uuid = str(uuid4())
-        obj._log = logging.getLogger('Astronaut')
-        return obj
-
-    def __init__(self, *args, **kwargs):
-        print(f'Init {args=}, {kwargs=}')
-
-a = Astronaut()
-New args=(), kwargs={}
-Init args=(), kwargs={}
-a
-<__main__.Astronaut at 0x11b654fd0>
-vars(a)
-{'_since': datetime.datetime(2022, 3, 10, 16, 34, 21, 191291),
- '_uuid': '06e3ff39-e6b5-4177-861b-783dbd4b47cb',
- '_log': <Logger Astronaut (WARNING)>}
-
-Use Case - 0x08
----------------
-.. todo:: Cleanup
-
-from datetime import datetime
-import logging
-from uuid import uuid4
-from abc import ABC, abstractmethod
-class BaseClass(ABC):
-    def __new__(cls, *args, **kwargs):
-        obj = object.__new__(cls)
-        obj._since = datetime.now()
-        obj._uuid = str(uuid4())
-        obj._log = logging.getLogger('Astronaut')
-        return obj
-
-    @abstractmethod
-    def __init__(self):
-        pass
-class Astronaut(BaseClass):
-    def __init__(self, *args, **kwargs):
-        ...
-
-astro = Astronaut()
-vars(astro)
+>>> from datetime import datetime
+>>> import logging
+>>> from uuid import uuid4
+>>> from abc import ABC, abstractmethod
+>>>
+>>>
+>>> class BaseClass(ABC):
+...     def __new__(cls, *args, **kwargs):
+...         obj = object.__new__(cls)
+...         obj._since = datetime.now()
+...         obj._uuid = str(uuid4())
+...         obj._log = logging.getLogger(cls.__name__)
+...         return obj
+...
+...     def _debug(self, id, msg):    self._log.debug(f'[DEBUG:{id}] {msg}')
+...     def _info(self, id, msg):     self._log.info(f'[INFO:{id}] {msg}')
+...     def _warning(self, id, msg):  self._log.warning(f'[WARNING:{id}] {msg}')
+...     def _error(self, id, msg):    self._log.error(f'[ERROR:{id}] {msg}')
+...     def _critical(self, id, msg): self._log.critical(f'[CRITICAL:{id}] {msg}')
+...
+...     @abstractmethod
+...     def __init__(self):
+...         pass
+>>>
+>>>
+>>> class Astronaut(BaseClass):
+...     def __init__(self, *args, **kwargs):
+...         ...
+>>>
+>>>
+>>> astro = Astronaut()
+>>>
+>>> vars(astro)  # doctest: +NORMALIZE_WHITESPACE
 {'_since': datetime.datetime(2022, 3, 10, 16, 39, 18, 703024),
  '_uuid': '83cefe23-3491-4661-b1f4-3ca570feab0a',
  '_log': <Logger Astronaut (WARNING)>}
-
-
-
-Use Case - 0x08
----------------
-.. todo:: Cleanup
-from abc import ABC, abstractmethod, abstractproperty
-
-
-class Document(ABC):
-    filename: str
-
-    @abstractproperty
-    def EXTENSIONS(self) -> list[str]: ...
-
-    def __new__(cls, filename):
-        basename, extension = filename.split('.')
-        plugins = cls.__subclasses__()
-        for plugin in plugins:
-            if extension in plugin.EXTENSIONS:
-                instance = object.__new__(plugin)
-                instance.__init__(filename)
-                return instance
-        else:
-            raise NotImplementedError
-
-    def __init__(self, filename):
-        self.filename = filename
-
-    @abstractmethod
-    def show(self):
-        ...
-
-
-class PDF(Document):
-    EXTENSIONS = ['pdf']
-    def show(self): ...
-
-
-class Word(Document):
-    EXTENSIONS = ['doc', 'docx']
-    def show(self): ...
-
-
-class Text(Document):
-    EXTENSIONS = ['txt']
-    def show(self): ...
-
-
-class Excel(Document):
-    EXTENSIONS = ['xls', 'xlsx']
-    def show(self): ...
-
-
-file1 = Document('myfile.pdf')
+>>>
+>>> astro._error('An error occurred')
+<67354f76-c78d-46fe-b00b-52d0064e2743> An error occurred
 
 
 References
 ----------
 .. [#Noufal2011] Noufal Ibrahim. Python (and Python C API): __new__ versus __init__. Year: 2011. Retrieved: 2022-03-09. URL: https://stackoverflow.com/a/5143108
+
 
 Assignments
 -----------

@@ -4,6 +4,7 @@ NoSQL About
 
 Rationale
 ---------
+* List of NoSQL databases [#Stevens2022]_
 * Key–value Store (Redis)
 * Key-Value Cache (Redis, Memcached)
 * Column-Oriented Store (Cassandra)
@@ -37,6 +38,7 @@ operations faster in NoSQL. The particular suitability of a given NoSQL
 database depends on the problem it must solve. Sometimes the data
 structures used by NoSQL databases are also viewed as "more flexible" than
 relational database tables [#wikiNoSQL]_.
+
 
 Performance
 -----------
@@ -208,6 +210,13 @@ Multi Value
 * mvEnterprise Rocket Software
 
 
+Further Reading
+---------------
+* `List of NoSQL database management systems <https://hostingdata.co.uk/nosql-database/>`_
+
+
 References
 ----------
 .. [#wikiNoSQL] Wikipedia. NoSQL. Year: 2022. Retrieved: 2022-03-17. URL: https://en.wikipedia.org/wiki/NoSQL
+
+.. [#Stevens2022] Stevens, G. List of NoSQL database management systems. Year: 2022. Retrieved: 2022-03-17. URL: https://hostingdata.co.uk/nosql-database/
