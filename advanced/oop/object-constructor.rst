@@ -441,11 +441,11 @@ Use Case - 0x06
 ...         obj._log = logging.getLogger(cls.__name__)
 ...         return obj
 ...
-...     def _debug(self, id, msg):    self._log.debug(f'[DEBUG:{id}] {msg}')
-...     def _info(self, id, msg):     self._log.info(f'[INFO:{id}] {msg}')
-...     def _warning(self, id, msg):  self._log.warning(f'[WARNING:{id}] {msg}')
-...     def _error(self, id, msg):    self._log.error(f'[ERROR:{id}] {msg}')
-...     def _critical(self, id, msg): self._log.critical(f'[CRITICAL:{id}] {msg}')
+...     def _debug(self, id:int, msg:str):    self._log.debug(f'[DEBUG:{id}] {msg}')
+...     def _info(self, id:int, msg:str):     self._log.info(f'[INFO:{id}] {msg}')
+...     def _warning(self, id:int, msg:str):  self._log.warning(f'[WARNING:{id}] {msg}')
+...     def _error(self, id:int, msg:str):    self._log.error(f'[ERROR:{id}] {msg}')
+...     def _critical(self, id:int, msg:str): self._log.critical(f'[CRITICAL:{id}] {msg}')
 ...
 ...     @abstractmethod
 ...     def __init__(self):
@@ -464,8 +464,8 @@ Use Case - 0x06
  '_uuid': '83cefe23-3491-4661-b1f4-3ca570feab0a',
  '_log': <Logger Astronaut (WARNING)>}
 >>>
->>> astro._error('An error occurred')
-<67354f76-c78d-46fe-b00b-52d0064e2743> An error occurred
+>>> astro._error(1234, 'An error occurred')
+[ERROR:1234] An error occurred
 
 
 References
