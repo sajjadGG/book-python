@@ -25,49 +25,74 @@ Performance
 
 Document Database
 -----------------
-* Mongodb
-* CouchDB
-* Elasticsearch
 * ArangoDB
+* Azure Cosmos DB
+* BaseX
+* Clusterpoint
+* CouchDB
+* Couchbase
+* DocumentDB
+* Elasticsearch
+* IBM Domino
+* MarkLogic
+* MongoDB
+* OrientDB
+* Qizx
+* RethinkDB
+* eXist-db
 
-Azure Cosmos DB, ArangoDB, BaseX, Clusterpoint, Couchbase, CouchDB, DocumentDB, eXist-db, IBM Domino, MarkLogic, MongoDB, Qizx, RethinkDB, Elasticsearch, OrientDB
 
 Key-Value Storage
 -----------------
-* Redis
 * Aerospike
-* Project Voldemort
-* Riak
-* Couchbase Server
-* BigTable
-* Memcached
-* SessionStorage (web browser + JS)
-* LocalStorage (web browser + JS)
+* Amazon DynamoDB
 * ArangoDB
-
-Azure Cosmos DB, ArangoDB, Amazon DynamoDB, Aerospike, Couchbase
-Azure Cosmos DB, Oracle NoSQL Database, Riak, Voldemort
-FoundationDB, InfinityDB, LMDB, MemcacheDB
+* Azure Cosmos DB
+* BigTable
+* Couchbase
+* FoundationDB
+* InfinityDB
+* LMDB
+* LocalStorage (web browser + JS)
+* MemcacheDB
+* Oracle NoSQL Database
+* Project Voldemort
+* Redis
+* Riak
+* SessionStorage (web browser + JS)
+* Voldemort
 
 
 Triple Store
 ------------
-* AllegroGraph, MarkLogic, Ontotext-OWLIM, Oracle NoSQL database, Profium Sense, Virtuoso Universal Server
+* AllegroGraph
+* MarkLogic
+* Ontotext-OWLIM
+* Oracle NoSQL database
+* Profium Sense
+* Virtuoso Universal Server
 
 Tuple Store
 -----------
-Apache River, GigaSpaces, Tarantool, TIBCO ActiveSpaces, OpenLink Virtuoso
+* Apache River
+* GigaSpaces
+* OpenLink Virtuoso
+* TIBCO ActiveSpaces
+* Tarantool
 
 
 Key-Value Cache
 ---------------
-* Redis
+* Apache Ignite
+* Coherence
+* Couchbase
+* Hazelcast
+* Infinispan
 * Memcached
 * Oracle Coherence
-* Infinispan
-* Hazelcast
-
-Apache Ignite, Couchbase, Coherence, eXtreme Scale, Hazelcast, Infinispan, Memcached, Redis, Velocity
+* Redis
+* Velocity
+* eXtreme Scale
 
 Graph Database
 --------------
@@ -78,6 +103,7 @@ Graph Database
 * ArangoDB
 
 Azure Cosmos DB, AllegroGraph, ArangoDB, InfiniteGraph, Apache Giraph, MarkLogic, Neo4J, OrientDB, Virtuoso
+
 
 Time Series Database
 --------------------
