@@ -89,16 +89,11 @@ Example
 ...     return 'c'
 >>>
 >>> async def main():
-...     result = await asyncio.gather(
-...         a(),
-...         b(),
-...         c(),
-...     )
+...     result = await asyncio.gather(a(), b(), c())
 ...     print(f'Result: {result}')
 >>>
->>> if __name__ == '__main__':
-...     asyncio.run(main())
-...
+>>>
+>>> asyncio.run(main())
 a: started
 b: started
 c: started

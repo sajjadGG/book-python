@@ -87,8 +87,7 @@ Run Concurrently
 ...     print(f'Result: {result}')
 >>>
 >>>
->>> if __name__ == '__main__':
-...     asyncio.run(main())
+>>> asyncio.run(main())
 a: started
 b: started
 c: started
@@ -132,9 +131,7 @@ Run as Completed
 ...         print(result)
 >>>
 >>>
->>> if __name__ == '__main__':
-...     asyncio.run(main())
-...
+>>> asyncio.run(main())
 a: started
 c: started
 b: started

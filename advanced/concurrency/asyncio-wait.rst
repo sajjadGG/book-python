@@ -11,13 +11,6 @@ Rationale
 * If aw is a coroutine it is automatically scheduled as a Task
 * ``wait()`` schedules coroutines as Tasks automatically and later returns those implicitly created Task objects in (done, pending) sets.
 
-.. code-block:: python
-
-    done, pending = await asyncio.wait(aws)
-
-* Does not raise ``asyncio.TimeoutError``
-* ``Futures`` or ``Tasks`` that aren't done when the timeout occurs are simply returned in the second set (``pending``).
-
 
 SetUp
 -----
@@ -37,7 +30,14 @@ Wait
 * ``return_when`` must be one of ``FIRST_COMPLETED``, ``FIRST_EXCEPTION``, ``ALL_COMPLETED``
 * ``return_when=FIRST_COMPLETED`` - The function will return when any future finishes or is cancelled;
 * ``return_when=FIRST_EXCEPTION`` - The function will return when any future finishes by raising an exception. If no future raises an exception then it is equivalent to ALL_COMPLETED;
-* ``return_when=ALL_COMPLETED`` - The function will return when all futures finish or are cancelled.
+* ``return_when=ALL_COMPLETED`` - The function will return when all futures finish or are cancelled
+* Does not raise ``asyncio.TimeoutError``
+* ``Futures`` or ``Tasks`` that aren't done when the timeout occurs are simply returned in the second set (``pending``).
+
+.. code-block:: python
+
+    done, pending = await asyncio.wait(aws)
+
 
 >>> async def work():
 ...     return 'done'
@@ -56,8 +56,9 @@ work is done
 
 Wait For
 --------
-* The function will wait until the future is actually cancelled, so the total wait time may exceed the timeout. If an exception happens during cancellation, it is propagated.
-* This will try to run function for 0.3 seconds
+* The function will wait until the future is actually cancelled
+* Therefore the total wait time may exceed the timeout
+* If an exception happens during cancellation, it is propagated
 * If coroutine does not finish by then, rises ``TimeoutError``
 
 >>> async def hello():
@@ -115,10 +116,7 @@ Handling Timeouts Concurrently
 >>>
 >>>
 >>> async def main():
-...     todo = asyncio.gather(
-...                 hello(),
-...                 hello(),
-...                 hello())
+...     todo = asyncio.gather(hello(), hello(), hello())
 ...     try:
 ...         await asyncio.wait_for(todo, timeout=0.1)
 ...     except asyncio.TimeoutError:
@@ -144,10 +142,7 @@ Handling Cancellation
 >>>
 >>>
 >>> async def main():
-...     todo = asyncio.gather(
-...                 hello(),
-...                 hello(),
-...                 hello())
+...     todo = asyncio.gather(hello(), hello(), hello())
 ...     try:
 ...         await asyncio.wait_for(todo, timeout=1)
 ...     except asyncio.TimeoutError:

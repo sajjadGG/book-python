@@ -124,9 +124,9 @@ Concurrency
     concurrency/asyncio-about.rst
     concurrency/asyncio-awaitable.rst
     concurrency/asyncio-coroutine.rst
+    concurrency/asyncio-sleep.rst
     concurrency/asyncio-run.rst
     concurrency/asyncio-wait.rst
-    concurrency/asyncio-sleep.rst
     concurrency/asyncio-task.rst
     concurrency/asyncio-future.rst
     concurrency/asyncio-shield.rst

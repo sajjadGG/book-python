@@ -7,19 +7,16 @@ Rationale
 ---------
 * ``asyncio.create_task(coro, *, name=None)``
 * Tasks are used to schedule coroutines concurrently
-* Wrap the ``coro`` coroutine into a ``Task`` and schedule its execution.
-* Return the ``Task`` object:
-
-    * can be used to cancel execution
-    * can be awaited until it is complete
-
+* Wrap the ``coro`` coroutine into a ``Task`` and schedule its execution
+* ``Task`` can be used to cancel execution
+* ``Task`` can be awaited until it is complete
 * The task is executed in the loop returned by ``get_running_loop()``
-* ``RuntimeError`` is raised if there is no running loop in current thread.
-* Tasks are used to run coroutines in event loops.
-* If a coroutine awaits on a Future, the Task suspends the execution of the coroutine and waits for the completion of the Future.
-* When the Future is done, the execution of the wrapped coroutine resumes.
-* Use the high-level asyncio.create_task() function to create Tasks.
-* Manual instantiation of Tasks is discouraged.
+* ``RuntimeError`` is raised if there is no running loop in current thread
+* Tasks are used to run coroutines in event loops
+* If a coroutine awaits on a Future, the Task suspends the execution of the coroutine and waits for the completion of the Future
+* When the Future is done, the execution of the wrapped coroutine resumes
+* Manual instantiation of ``Tasks`` is discouraged
+* Use the high-level ``asyncio.create_task()`` function to create Tasks
 
 
 Example
@@ -73,9 +70,7 @@ done
 ...     await t3
 >>>
 >>>
->>> if __name__ == '__main__':
-...     asyncio.run(main())
-...
+>>> asyncio.run(main())
 a: started
 b: started
 c: started
