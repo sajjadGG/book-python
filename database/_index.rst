@@ -35,6 +35,15 @@ Normalization
     normalization/use-cases.rst
 
 
+NoSQL
+*****
+.. toctree::
+    :maxdepth: 1
+    :caption: NoSQL
+
+    nosql/about.rst
+
+
 SQL
 ***
 .. toctree::
