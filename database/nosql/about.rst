@@ -7,31 +7,51 @@ Rationale
 * Key–value Store (Redis)
 * Key-Value Cache (Redis, Memcached)
 * Column-Oriented Store (Cassandra)
-* Document-Oriented Store (MongoDB)
+* Document Store (MongoDB)
 * Graph Database (Neo4j)
 * Time Series Database (InfluxDB, Prometheus)
 * Object Database
-* Triple Store
 * Tuple Store
+* Triplestore (RDF store)
 * Relational Database
 * Multi Model
 * Multi Value
 
+A NoSQL (originally referring to "non-SQL" or "non-relational") database
+provides a mechanism for storage and retrieval of data that is modeled in
+means other than the tabular relations used in relational databases. Such
+databases have existed since the late 1960s, but the name "NoSQL" was only
+coined in the early 21st century, triggered by the needs of Web 2.0
+companies. NoSQL databases are increasingly used in big data and real-time
+web applications. NoSQL systems are also sometimes called Not only SQL to
+emphasize that they may support SQL-like query languages or sit alongside
+SQL databases in polyglot-persistent architectures [#wikiNoSQL]_.
+
+Motivations for this approach include simplicity of design, simpler
+"horizontal" scaling to clusters of machines (which is a problem for
+relational databases), finer control over availability and limiting the
+object-relational impedance mismatch. The data structures used by NoSQL
+databases (e.g. key–value pair, wide column, graph, or document) are
+different from those used by default in relational databases, making some
+operations faster in NoSQL. The particular suitability of a given NoSQL
+database depends on the problem it must solve. Sometimes the data
+structures used by NoSQL databases are also viewed as "more flexible" than
+relational database tables [#wikiNoSQL]_.
 
 Performance
 -----------
-.. csv-table:: Performance
+.. csv-table:: Performance. Source [#wikiNoSQL]_
     :header: Data model, Performance, Scalability, Flexibility, Complexity, Functionality
 
-    Key–value store,         high,     high,     high,     none,     none
-    Column-oriented store,   high,     high,     moderate, low,      minimal
-    Document-oriented store, high,     high,     high,     low,      low
-    Graph database,          variable, variable, high,     high,     graph theory
-    Relational database,     variable, variable, low,      moderate, relational algebra
+    Key–value,         high,     high,     high,     none,     none
+    Column-oriented,   high,     high,     moderate, low,      minimal
+    Document-oriented, high,     high,     high,     low,      low
+    Graph,             variable, variable, high,     high,     graph theory
+    Relational,        variable, variable, low,      moderate, relational algebra
 
 
-Document-Oriented Store
------------------------
+Document Store
+--------------
 * ArangoDB
 * Azure Cosmos DB
 * BaseX
@@ -84,16 +104,6 @@ Key-Value Cache
 * eXtreme Scale
 
 
-Triple Store
-------------
-* AllegroGraph
-* MarkLogic
-* Ontotext-OWLIM
-* Oracle NoSQL database
-* Profium Sense
-* Virtuoso Universal Server
-
-
 Tuple Store
 -----------
 * Apache River
@@ -101,6 +111,16 @@ Tuple Store
 * OpenLink Virtuoso
 * TIBCO ActiveSpaces
 * Tarantool
+
+
+Triplestore (RDF)
+-----------------
+* AllegroGraph
+* MarkLogic
+* Ontotext-OWLIM
+* Oracle NoSQL database
+* Profium Sense
+* Virtuoso Universal Server
 
 
 Graph Database
@@ -186,3 +206,8 @@ Multi Value
 * jBASE Pick database
 * mvBase Rocket Software
 * mvEnterprise Rocket Software
+
+
+References
+----------
+.. [#wikiNoSQL] Wikipedia. NoSQL. Year: 2022. Retrieved: 2022-03-17. URL: https://en.wikipedia.org/wiki/NoSQL

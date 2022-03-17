@@ -1,5 +1,5 @@
-NoSQL Document-Oriented Store
-=============================
+NoSQL Document Store
+====================
 
 
 Rationale

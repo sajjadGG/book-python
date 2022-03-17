@@ -4,21 +4,11 @@ NoSQL Others
 
 Rationale
 ---------
-* Triple Store
 * Tuple Store
+* Triplestore (RDF store)
 * Object Database
 * Multi Model
 * Multi Value
-
-
-Triple Store
-------------
-* AllegroGraph
-* MarkLogic
-* Ontotext-OWLIM
-* Oracle NoSQL database
-* Profium Sense
-* Virtuoso Universal Server
 
 
 Tuple Store
@@ -28,6 +18,16 @@ Tuple Store
 * OpenLink Virtuoso
 * TIBCO ActiveSpaces
 * Tarantool
+
+
+Triplestore (RDF)
+-----------------
+* AllegroGraph
+* MarkLogic
+* Ontotext-OWLIM
+* Oracle NoSQL database
+* Profium Sense
+* Virtuoso Universal Server
 
 
 Object Database
