@@ -3,6 +3,7 @@ sphinx_rtd_theme
 sphinxcontrib-bibtex
 recommonmark
 nbsphinx
+ipython
 
 # pydata-sphinx-theme
 # sphinxcontrib-book
