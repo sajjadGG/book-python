@@ -10,7 +10,7 @@ Rationale
 * This is similar to generator object and generator function
 * Coroutine functions are not awaitables
 * Coroutine objects are awaitables
-* Coroutines declared with the ``async``/``await`` syntax is the preferred way of writing asyncio applications. [#AsyncioTask]_
+* Coroutines declared with the ``async``/``await`` syntax is the preferred way of writing asyncio applications. [#pydocAsyncioTask]_
 
 >>> async def hello():
 ...     return 'hello'
@@ -220,3 +220,5 @@ True
 References
 ----------
 .. [#imgHammertime] Orboloops3. Forever Hammer Time. Year: 2014. Retrieved: 2022-03-17. URL: https://imgur.com/gallery/pIDs2ff
+
+.. [#pydocAsyncioTask] Python3 Documentation. Coroutines and Tasks. Year: 2022. Retrieved: 2022-03-17. URL: https://docs.python.org/3/library/asyncio-task.html

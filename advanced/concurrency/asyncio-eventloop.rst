@@ -14,10 +14,11 @@ Rationale
 * Reactors
 * Proactors
 
-For example, Django uses the main thread to wait for incoming requests, so we can't run an asyncio event loop there, but we can start a separate worker thread for our event loop.
-[#cheat]_
+For example, Django uses the main thread to wait for incoming requests, so
+we can't run an asyncio event loop there, but we can start a separate
+worker thread for our event loop [#Poirier2021]_.
 
-An event loop runs in a thread (typically the main thread) and executes all callbacks and Tasks in its thread. While a Task is running in the event loop, no other Tasks can run in the same thread. When a Task executes an await expression, the running Task gets suspended, and the event loop executes the next Task. [#pydocmultithreading]_
+An event loop runs in a thread (typically the main thread) and executes all callbacks and Tasks in its thread. While a Task is running in the event loop, no other Tasks can run in the same thread. When a Task executes an await expression, the running Task gets suspended, and the event loop executes the next Task. [#pydocMultithreading]_
 
 .. figure:: img/asyncio-eventloop-sync.png
 
@@ -128,3 +129,7 @@ References
 .. [#Kennedy2019] Kennedy, M. Demystifying Python's Async and Await Keywords. Publisher: JetBrainsTV. Year: 2019. Retrieved: 2022-03-10. URL: https://www.youtube.com/watch?v=F19R_M4Nay4
 
 .. [#Langa2020] Langa, Ł. import asyncio: Learn Python's AsyncIO. Year: 2020. Retrieved: 2022-03-10. URL: https://www.youtube.com/playlist?list=PLhNSoGM2ik6SIkVGXWBwerucXjgP1rHmB
+
+.. [#Poirier2021] Poirier, D. Asyncio (superseded by async page). Year: 2021. Retrieved: 2022-03-17. URL: https://cheat.readthedocs.io/en/latest/python/asyncio.html
+
+.. [#pydocMultithreading] Python documentation. Developing with asyncio. Concurrency and Multithreading. Year: 2022. Retrieved: 2022-03-17. URL: https://docs.python.org/3/library/asyncio-dev.html#concurrency-and-multithreading

@@ -124,7 +124,3 @@ References
 .. [#Abdalla2017] Abdalla, A. Creating a Bittorrent Client using Asyncio. Year: 2017. Retrieved: 2022-03-10. URL: https://www.youtube.com/watch?v=Pe3b9bdRtiE
 
 .. [#Langa2020] Langa, Ł. import asyncio: Learn Python's AsyncIO. Year: 2020. Retrieved: 2022-03-10. URL: https://www.youtube.com/playlist?list=PLhNSoGM2ik6SIkVGXWBwerucXjgP1rHmB
-
-.. [#AsyncioTask] https://docs.python.org/3/library/asyncio-task.html
-.. [#cheat] https://cheat.readthedocs.io/en/latest/python/asyncio.html
-.. [#pydocmultithreading] https://docs.python.org/3/library/asyncio-dev.html#concurrency-and-multithreading

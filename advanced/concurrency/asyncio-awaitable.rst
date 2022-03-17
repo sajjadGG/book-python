@@ -34,14 +34,30 @@ There are three main types of awaitable objects:
     * Tasks,
     * Futures.
 
+Coroutines are a low level concept and doesn't know about asyncio concepts
+such as EventLoop and Cancellations.
+
+Tasks wraps around a coroutine object and allows for handling exceptions,
+gathering results etc.
+
+
+Objects
+-------
+Features of Python:
+
+>>> from collections.abc import Awaitable
+>>> from collections.abc import Coroutine
+
+Features of AsyncIO library:
+
+>>> from asyncio import Future
+>>> from asyncio import Task
+
 .. figure:: img/asyncio-awaitables.png
 
     Source: Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_
 
 
-Objects
--------
->>> from collections.abc import Awaitable
->>> from collections.abc import Coroutine
->>> from asyncio import Future
->>> from asyncio import Task
+References
+----------
+.. [#Langa2020] Langa, Ł. import asyncio: Learn Python's AsyncIO. Year: 2020. Retrieved: 2022-03-10. URL: https://www.youtube.com/playlist?list=PLhNSoGM2ik6SIkVGXWBwerucXjgP1rHmB
