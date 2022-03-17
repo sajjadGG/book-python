@@ -37,8 +37,6 @@ Example
 >>> asyncio.run(main())
 done
 
-.. code-block:: python
-
 >>> import asyncio
 >>>
 >>>
