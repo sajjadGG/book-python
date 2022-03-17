@@ -1,6 +1,17 @@
 AsyncIO Debug
 =============
 
+Rationale
+---------
+* More verbose message you can achieve by using ``PYTHONASYNCIODEBUG=1`` and
+``PYTHONTRACEMALLOC=1`` environment variables
+* Also ``python3 -X dev -X tracemalloc=5 myfile.py``
+* More information: https://docs.python.org/3/library/devmode.html
+
+.. code-block:: console
+
+    $ PYTHONMALLOC=debug PYTHONASYNCIODEBUG=1 -X dev -X tracemalloc=5 myfile.py
+
 
 Debug
 -----

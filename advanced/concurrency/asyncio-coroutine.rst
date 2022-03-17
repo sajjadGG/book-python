@@ -68,8 +68,8 @@ To execute a coroutine object, either:
 'hello'
 
 
-Awaiting Sequentially
----------------------
+Run Sequentially
+----------------
 * All lines inside of coroutine function will be executed sequentially
 * When ``await`` happen, other coroutine is run
 * When other coroutine finishes, it returns to our function
@@ -94,8 +94,8 @@ All lines inside of coroutine function will be executed sequentially:
 >>> asyncio.run(hello())
 
 
-Awaiting Concurrently
----------------------
+Run Concurrently
+----------------
 * To run coroutine objects use ``asyncio.gather()``
 * This won't execute in parallel (won't use multiple threads)
 * It will run concurrently (in a single thread)
@@ -120,6 +120,12 @@ Awaiting Concurrently
     however the work continues to be done concurrently.
     This is faster than one worker with one hammer.
     Source [#imgHammertime]_
+
+
+Error: Created but not awaited
+------------------------------
+* Created but not awaited objects will raise an exception
+* This prevents from creating coroutines and forgetting to "await" on it
 
 
 Error: Running Coroutine Functions

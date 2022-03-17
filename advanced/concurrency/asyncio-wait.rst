@@ -4,16 +4,12 @@ AsyncIO Wait
 
 Rationale
 ---------
-* coroutine ``asyncio.wait(aws, *, timeout=None, return_when=ALL_COMPLETED)``
-* Run awaitable objects in the ``aws`` iterable concurrently and block until the condition specified by return_when.
-* The ``aws`` iterable must not be empty.
-* ``timeout: float|int`` if specified, maximum number of seconds to wait before returning.
-* ``wait()`` does not cancel the futures when a timeout occurs.
-* ``return_when`` indicates when this function should return. It must be one of the following constants:
-
-    * ``FIRST_COMPLETED`` - The function will return when any future finishes or is cancelled.
-    * ``FIRST_EXCEPTION`` - The function will return when any future finishes by raising an exception. If no future raises an exception then it is equivalent to ALL_COMPLETED.
-    * ``ALL_COMPLETED`` - The function will return when all futures finish or are cancelled.
+* ``asyncio.wait(aws, timeout)``
+* ``asyncio.wait_for(aw, timeout)``
+* ``wait()`` - when a timeout occurs: does not cancel the futures
+* ``wait_for()`` - when a timeout occurs: cancels the task and raises ``asyncio.TimeoutError``
+* If aw is a coroutine it is automatically scheduled as a Task
+* ``wait()`` schedules coroutines as Tasks automatically and later returns those implicitly created Task objects in (done, pending) sets.
 
 .. code-block:: python
 
@@ -23,11 +19,26 @@ Rationale
 * ``Futures`` or ``Tasks`` that aren't done when the timeout occurs are simply returned in the second set (``pending``).
 
 
-Example
--------
+SetUp
+-----
 >>> import asyncio
->>>
->>>
+
+
+Wait
+----
+* Coroutine ``asyncio.wait(aws, *, timeout=None, return_when=ALL_COMPLETED)``
+* ``aws`` must be iterable (list, tuple, set)
+* ``aws`` iterable must not be empty
+* Run awaitable objects in the ``aws`` concurrently and block until the condition specified by ``return_when``
+* ``timeout: float|int`` if specified, maximum number of seconds to wait before returning
+* ``wait()`` does not cancel the futures when a timeout occurs
+* If ``gather()`` is cancelled (ie. on timeout), all submitted awaitables (that have not completed yet) are also cancelled
+* ``return_when`` indicates when this function should return
+* ``return_when`` must be one of ``FIRST_COMPLETED``, ``FIRST_EXCEPTION``, ``ALL_COMPLETED``
+* ``return_when=FIRST_COMPLETED`` - The function will return when any future finishes or is cancelled;
+* ``return_when=FIRST_EXCEPTION`` - The function will return when any future finishes by raising an exception. If no future raises an exception then it is equivalent to ALL_COMPLETED;
+* ``return_when=ALL_COMPLETED`` - The function will return when all futures finish or are cancelled.
+
 >>> async def work():
 ...     return 'done'
 >>>
@@ -43,23 +54,23 @@ Example
 work is done
 
 
-Waiting For
------------
-* This will try to run function for 5.0 seconds
-* If function does not finish by then, rises ``TimeoutError``
+Wait For
+--------
+* The function will wait until the future is actually cancelled, so the total wait time may exceed the timeout. If an exception happens during cancellation, it is propagated.
+* This will try to run function for 0.3 seconds
+* If coroutine does not finish by then, rises ``TimeoutError``
 
->>> import asyncio
->>>
->>>
->>> async def myfunc():
+>>> async def hello():
 ...     while True:
-...         print('waiting')
-...         await asyncio.sleep(1.0)
+...         print('hello')
+...         await asyncio.sleep(0.1)
 >>>
 >>>
->>> asyncio.run(asyncio.wait_for(myfunc(), 5.0))
-waiting
-waiting
+>>> async def main():
+...     await asyncio.wait_for(hello(), 0.3)
+>>>
+>>>
+>>> asyncio.run(main())
 waiting
 waiting
 waiting
@@ -73,54 +84,80 @@ The above exception was the direct cause of the following exception:
 <BLANKLINE>
 asyncio.exceptions.TimeoutError
 
->>> import asyncio
->>>
->>>
->>> async def myfunc():
+
+Handling Timeouts
+-----------------
+>>> async def hello():
 ...     while True:
-...         print('waiting')
-...         await asyncio.sleep(1.0)
+...         print('hello')
+...         await asyncio.sleep(0.1)
 >>>
 >>>
 >>> async def main():
 ...     try:
-...         await asyncio.wait_for(myfunc(), 3.0)
+...         await asyncio.wait_for(hello(), 0.3)
 ...     except asyncio.TimeoutError:
 ...         print('Timeout')
 >>>
 >>>
 >>> asyncio.run(main())
-waiting
-waiting
-waiting
+hello
+hello
+hello
 Timeout
 
->>> import asyncio
->>>
->>>
->>> async def myfunc():
-...     while True:
-...         print('waiting')
-...         await asyncio.sleep(1.0)
+
+Handling Timeouts Concurrently
+------------------------------
+>>> async def hello():
+...     print('hello')
+...     await asyncio.sleep(0.2)
 >>>
 >>>
 >>> async def main():
-...     mycoro = myfunc()
-...     waiter = asyncio.wait_for(mycoro, 3.0)
+...     todo = asyncio.gather(
+...                 hello(),
+...                 hello(),
+...                 hello())
 ...     try:
-...         await waiter
+...         await asyncio.wait_for(todo, timeout=0.1)
 ...     except asyncio.TimeoutError:
 ...         print('Timeout')
 >>>
->>>
 >>> asyncio.run(main())
-waiting
-waiting
-waiting
+hello
+hello
+hello
 Timeout
 
-Created but not awaited objects will raise an exception. This prevents
-from creating coroutines and forgetting to "await" on it.
 
-More verbose message you can achieve by using ``PYTHONASYNCIODEBUG=1`` and
-``PYTHONTRACEMALLOC=1`` environment variables.
+Handling Cancellation
+---------------------
+* If ``gather()`` is cancelled (ie. on timeout), all submitted awaitables (that have not completed yet) are also cancelled
+
+>>> async def hello():
+...     print('hello')
+...     try:
+...         await asyncio.sleep(2)
+...     except asyncio.CancelledError:
+...         print('Cancelled')
+>>>
+>>>
+>>> async def main():
+...     todo = asyncio.gather(
+...                 hello(),
+...                 hello(),
+...                 hello())
+...     try:
+...         await asyncio.wait_for(todo, timeout=1)
+...     except asyncio.TimeoutError:
+...         print('Timeout')
+>>>
+>>> asyncio.run(main())
+hello
+hello
+hello
+Cancelled
+Cancelled
+Cancelled
+Timeout

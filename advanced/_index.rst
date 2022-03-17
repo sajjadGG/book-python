@@ -122,14 +122,15 @@ Concurrency
     concurrency/about.rst
 
     concurrency/asyncio-about.rst
-    concurrency/asyncio-run.rst
-    concurrency/asyncio-sleep.rst
+    concurrency/asyncio-awaitable.rst
     concurrency/asyncio-coroutine.rst
+    concurrency/asyncio-run.rst
+    concurrency/asyncio-wait.rst
+    concurrency/asyncio-sleep.rst
     concurrency/asyncio-task.rst
     concurrency/asyncio-future.rst
     concurrency/asyncio-shield.rst
     concurrency/asyncio-timeout.rst
-    concurrency/asyncio-wait.rst
     concurrency/asyncio-debug.rst
     concurrency/asyncio-eventloop.rst
     concurrency/asyncio-queue.rst

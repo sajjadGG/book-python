@@ -4,26 +4,22 @@ AsyncIO About
 
 Rationale
 ---------
-* ``asyncio`` in stdlib
-* ``async`` and ``await`` keyword
+* ``asyncio`` in Python standard library
+* ``async`` and ``await`` builtin keywords
 * Running asynchronously: 3s + 1s + 1s = bit over 3s [execution time]
 * Async is the future of programming
 
 
-Objectives
+Advantages
 ----------
 * Maximize the usage of a single thread
 * Handling I/O asynchronously
 * Enabling concurrent code using coroutines
-
-
-Advantages
-----------
 * Async will fill the gaps, otherwise wasted on waiting for I/O
 * You control when tasks switches occur, so locks and other synchronization are no longer needed
-* Cost task switches is incredibly low. Calling a pure Python function has more overhead than restarting a generator or awaitable
-* Function builds stack each time it's called, whereas async uses generators underneath, which already has stack created
 * Async is the cheapest way to task switch
+* Cost task switches is incredibly low; calling a pure Python function has more overhead than restarting a generator or awaitable
+* Function builds stack each time it's called, whereas async uses generators underneath, which already has stack created
 * In terms of speed async servers blows threaded servers in means of thousands
 * Async is very cheap in means of resources
 * Async world has a huge ecosystem of support tools
@@ -69,51 +65,6 @@ Execution
     Source: Michael Kennedy [#Kennedy2019]_
 
 
-Awaitables
-----------
-* Object is an awaitable if it can be used in an ``await`` expression
-* Awaitable objects: Coroutines, Tasks, Futures
-* ``__await__`` and ``await`` keyword
-
-There are three main types of awaitable objects:
-
-    * Coroutines,
-    * Tasks,
-    * Futures.
-
->>> from collections.abc import Awaitable
->>> from collections.abc import Coroutine
->>> from asyncio import Future
->>> from asyncio import Task
-
-.. figure:: img/asyncio-awaitables.png
-
-    Source: Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_
-
-.. figure:: img/asyncio-async-anatomy.png
-
-    Coroutine (async function) anatomy. Source: Michael Kennedy [#Kennedy2019]_
-
-.. glossary::
-
-    promise
-    future
-    queue
-
-    tasks
-        Runs thing in the "background". Can be awaited and cancelled.
-
-    coroutine
-        Coroutine - a function which can run concurrently.
-        The I/O bound parts can ``await``.
-
-    awaitable
-        Object is an awaitable if it can be used in an ``await`` expression
-
-    aws
-        Awaitables
-
-
 Example
 -------
 >>> import asyncio
@@ -121,19 +72,19 @@ Example
 >>>
 >>> async def a():
 ...     print('a: started')
-...     await asyncio.sleep(2)
+...     await asyncio.sleep(0.2)
 ...     print('a: finished')
 ...     return 'a'
 >>>
 >>> async def b():
 ...     print('b: started')
-...     await asyncio.sleep(1)
+...     await asyncio.sleep(0.1)
 ...     print('b: finished')
 ...     return 'b'
 >>>
 >>> async def c():
 ...     print('c: started')
-...     await asyncio.sleep(3)
+...     await asyncio.sleep(0.3)
 ...     print('c: finished')
 ...     return 'c'
 >>>
