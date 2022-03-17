@@ -51,13 +51,13 @@ Coroutine Object
 * Coroutine function will create coroutine when called
 * Coroutine objects are awaitables
 * To execute coroutine object you can ``await`` it
-* To execute coroutine object you can ``asyncio.run(...)``
+* To execute coroutine object you can ``asyncio.run()``
 * To schedule coroutine object: ``ensure_future()`` or ``create_task()``
 
 To execute a coroutine object, either:
 
 * use it in an expression with ``await`` in front of it, or
-* use ``asyncio.run(coroutine_object())``, or
+* use ``asyncio.run()``, or
 * schedule it with ``ensure_future()`` or ``create_task()``.
 
 >>> async def hello():
@@ -71,9 +71,6 @@ To execute a coroutine object, either:
 Run Sequentially
 ----------------
 * All lines inside of coroutine function will be executed sequentially
-* When ``await`` happen, other coroutine is run
-* When other coroutine finishes, it returns to our function
-* Then next line is executed (which could also be an ``await`` statement
 
 >>> async def hello():
 ...     await asyncio.sleep(0.1)
@@ -82,7 +79,10 @@ Run Sequentially
 >>>
 >>> asyncio.run(hello())
 
-All lines inside of coroutine function will be executed sequentially:
+All lines inside of coroutine function will be executed sequentially. When
+``await`` happen, other coroutine will start running. When other coroutine
+finishes, it returns to our function. Then next line is executed (which
+could also be an ``await`` statement:
 
 >>> async def hello():
 ...     await asyncio.sleep(0.1)
@@ -137,9 +137,9 @@ Error: Running Coroutine Functions
 ...     return 'hello'
 >>>
 >>>
->>> asyncio.run(hello)
+>>> asyncio.run(hello)  # doctest: +ELLIPSIS
 Traceback (most recent call last):
-ValueError: a coroutine was expected, got <function hello at 0x117a363b0>
+ValueError: a coroutine was expected, got <function hello at 0x...>
 
 
 Error: Multiple Awaiting
@@ -165,9 +165,6 @@ Error: Await Outside Coroutine Function
 * Only a coroutine function (``async def``) can use ``await``
 * Non-coroutine functions (``def``) cannot use ``await``
 
-Only a coroutine function (``async def``) can use ``await``. Non-coroutine
-functions (``def``) cannot use ``await``:
-
 >>> def hello():
 ...     await asyncio.sleep(0.1)
 ...     return 'hello'
@@ -178,9 +175,6 @@ SyntaxError: 'await' outside async function
 
 Getting Results
 ---------------
->>> import asyncio
->>>
->>>
 >>> async def hello():
 ...     return 'hello'
 >>>

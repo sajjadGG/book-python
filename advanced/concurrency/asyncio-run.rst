@@ -8,6 +8,13 @@ Rationale
 * ``asyncio.gather()`` can run concurrently and gather result (in order of its arguments)
 
 
+SetUp
+-----
+>>> import asyncio
+>>>
+>>>
+
+
 Run Coroutine
 -------------
 * ``asyncio.run(coro, *, debug=False)``
@@ -56,9 +63,6 @@ Run Concurrently
 * If any ``Task`` or ``Future`` from the ``aws`` sequence is cancelled, it is treated as if it raised ``CancelledError`` – the ``gather()`` call is not cancelled in this case
 * This is to prevent the cancellation of one submitted Task/Future to cause other Tasks/Futures to be cancelled
 
->>> import asyncio
->>>
->>>
 >>> async def a():
 ...     print('a: started')
 ...     await asyncio.sleep(0.2)
@@ -77,17 +81,14 @@ Run Concurrently
 ...     print('c: finished')
 ...     return 'c'
 >>>
+>>>
 >>> async def main():
-...     result = await asyncio.gather(
-...         a(),
-...         b(),
-...         c(),
-...     )
+...     result = await asyncio.gather(a(), b(), c())
 ...     print(f'Result: {result}')
+>>>
 >>>
 >>> if __name__ == '__main__':
 ...     asyncio.run(main())
-...
 a: started
 b: started
 c: started
@@ -105,9 +106,6 @@ Run as Completed
 * Each coroutine returned can be awaited to get the earliest next result from the iterable of the remaining awaitables
 * Raises ``asyncio.TimeoutError`` if the timeout occurs before all Futures are done
 
->>> import asyncio
->>>
->>>
 >>> async def a():
 ...     print('a: started')
 ...     await asyncio.sleep(0.2)
@@ -128,8 +126,8 @@ Run as Completed
 >>>
 >>>
 >>> async def main():
-...     work = [a(), b(), c()]
-...     for coro in asyncio.as_completed(work):
+...     todo = [a(), b(), c()]
+...     for coro in asyncio.as_completed(todo):
 ...         result = await coro
 ...         print(result)
 >>>
@@ -179,7 +177,6 @@ Started main at 22:53:40
 Work started 22:53:40
 Work done at 22:53:42
 Finished main at 22:53:42
-
 
 Due to the GIL, ``asyncio.to_thread()`` can typically only be used to make
 IO-bound functions non-blocking. However, for extension modules that
