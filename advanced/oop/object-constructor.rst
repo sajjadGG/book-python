@@ -441,6 +441,8 @@ Use Case - 0x06
 ...         obj._log = logging.getLogger(cls.__name__)
 ...         return obj
 ...
+...     def _log(self, level: int, id: int, msg: str):
+...         self._log.log(level, f'[{level}:{id}] {msg}')
 ...     def _debug(self, id:int, msg:str):    self._log.debug(f'[DEBUG:{id}] {msg}')
 ...     def _info(self, id:int, msg:str):     self._log.info(f'[INFO:{id}] {msg}')
 ...     def _warning(self, id:int, msg:str):  self._log.warning(f'[WARNING:{id}] {msg}')
