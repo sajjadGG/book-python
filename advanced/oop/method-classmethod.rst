@@ -256,6 +256,39 @@ Use Case - 0x04
 Coordinated Mars Time
 
 
+Use Case - 0x05
+---------------
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class User:
+...     firstname: str = None
+...     lastname: str = None
+...
+...     @classmethod
+...     def from_json(cls, data):
+...         import json
+...         data = json.loads(data)
+...         return cls(**data)
+>>>
+>>> class Admin(User):
+...     pass
+>>>
+>>> class Guest(User):
+...     pass
+>>>
+>>>
+>>> Admin.from_json(DATA)
+Admin(firstname='Mark', lastname='Watney')
+>>>
+>>> Guest.from_json(DATA)
+Guest(firstname='Mark', lastname='Watney')
+>>>
+>>> User.from_json(DATA)
+User(firstname='Mark', lastname='Watney')
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/oop_method_classmethod_a.py

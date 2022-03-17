@@ -338,6 +338,32 @@ Rendering Password TextInput
 Rendering Submit Button
 
 
+Use Case - 0x03
+---------------
+>>> class Person(ABC):
+...     age: int
+...
+...     @property
+...     @abstractmethod
+...     def AGE_MAX(self) -> int: ...
+...
+...     @abstractproperty
+...     def AGE_MIN(self) -> int: ...
+...
+...     def __init__(self, age):
+...         if not self.AGE_MIN <= age < self.AGE_MAX:
+...             raise ValueError('Age is out of bounds')
+...         self.age = age
+>>>
+>>>
+>>> class Astronaut(Person):
+...     AGE_MIN = 30
+...     AGE_MAX = 50
+>>>
+>>>
+>>> mark = Astronaut(age=40)
+
+
 Further Reading
 ---------------
 * https://docs.python.org/dev/library/collections.abc.html#collections-abstract-base-classes
