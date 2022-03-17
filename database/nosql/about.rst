@@ -1,30 +1,37 @@
 NoSQL About
 ===========
 
+
 Rationale
 ---------
-* Document databases (MongoDB, CouchDB, Elasticsearch)
-* Key-Value storage (Redis, Riak
-* Graph database (Neo4j)
-* Time Series database (InfluxDB, Prometheus)
-* Column Databases (Cassandra, Druid)
-* Cache System (Redis, Memcached)
+* Key–value Store (Redis)
+* Key-Value Cache (Redis, Memcached)
+* Column-Oriented Store (Cassandra)
+* Document-Oriented Store (MongoDB)
+* Graph Database (Neo4j)
+* Time Series Database (InfluxDB, Prometheus)
+* Object Database
+* Triple Store
+* Tuple Store
+* Relational Database
+* Multi Model
+* Multi Value
 
 
 Performance
 -----------
-.. csv-table::
+.. csv-table:: Performance
+    :header: Data model, Performance, Scalability, Flexibility, Complexity, Functionality
 
-    Data model,              Performance, Scalability,     Flexibility,     Complexity,  Functionality
-    Key–value store,         high,        high,            high,            none,        variable (none)
-    Column-oriented store,   high,        high,            moderate,        low,         minimal
-    Document-oriented store, high,        variable (high), high,            low,         variable (low)
-    Graph database,          variable,    variable,        high,            high,        graph theory
-    Relational database,     variable,    variable,        low,             moderate,    relational algebra
+    Key–value store,         high,     high,     high,     none,     none
+    Column-oriented store,   high,     high,     moderate, low,      minimal
+    Document-oriented store, high,     high,     high,     low,      low
+    Graph database,          variable, variable, high,     high,     graph theory
+    Relational database,     variable, variable, low,      moderate, relational algebra
 
 
-Document Database
------------------
+Document-Oriented Store
+-----------------------
 * ArangoDB
 * Azure Cosmos DB
 * BaseX
@@ -42,8 +49,8 @@ Document Database
 * eXist-db
 
 
-Key-Value Storage
------------------
+Key–Value Store
+---------------
 * Aerospike
 * Amazon DynamoDB
 * ArangoDB
@@ -63,24 +70,6 @@ Key-Value Storage
 * Voldemort
 
 
-Triple Store
-------------
-* AllegroGraph
-* MarkLogic
-* Ontotext-OWLIM
-* Oracle NoSQL database
-* Profium Sense
-* Virtuoso Universal Server
-
-Tuple Store
------------
-* Apache River
-* GigaSpaces
-* OpenLink Virtuoso
-* TIBCO ActiveSpaces
-* Tarantool
-
-
 Key-Value Cache
 ---------------
 * Apache Ignite
@@ -94,54 +83,106 @@ Key-Value Cache
 * Velocity
 * eXtreme Scale
 
+
+Triple Store
+------------
+* AllegroGraph
+* MarkLogic
+* Ontotext-OWLIM
+* Oracle NoSQL database
+* Profium Sense
+* Virtuoso Universal Server
+
+
+Tuple Store
+-----------
+* Apache River
+* GigaSpaces
+* OpenLink Virtuoso
+* TIBCO ActiveSpaces
+* Tarantool
+
+
 Graph Database
 --------------
+* AllegroGraph
+* Apache Giraph
+* ArangoDB
+* Azure Cosmos DB
+* InfiniteGraph
+* MarkLogic
 * Neo4j
 * OrientDB
 * RedisGraph
-* InfiniteGraph
-* ArangoDB
-
-Azure Cosmos DB, AllegroGraph, ArangoDB, InfiniteGraph, Apache Giraph, MarkLogic, Neo4J, OrientDB, Virtuoso
+* Virtuoso
 
 
 Time Series Database
 --------------------
-* Prometheus
 * InfluxDB
+* Prometheus
 * TSDB
 
 
-Wide Column Store
------------------
+Column-Oriented Store
+---------------------
+* Amazon DynamoDB
+* Apache Accumulo
+* Azure Cosmos DB
+* Bigtable
 * Cassandra
 * Druid
-* Azure Cosmos DB
+* Google Cloud Datastore
 * HBase
-* Apache Accumulo
-
-Azure Cosmos DB, Amazon DynamoDB, Bigtable, Cassandra, Google Cloud Datastore, HBase, Hypertable, ScyllaDB
-
-Other
------
-* DynamoDB
+* Hypertable
+* ScyllaDB
 
 
 Object Database
 ---------------
-* ObjectDB
-* Ninja Database Pro
+* GemStone/S
+* InterSystems Caché
+* JADE
 * NeoDB
+* Ninja Database Pro
+* ODABA
+* ObjectDB
+* ObjectDatabase++
+* ObjectStore
 * Objectivity/DB
-
-Objectivity/DB, Perst, ZopeDB, db4o, GemStone/S, InterSystems Caché, JADE, ObjectDatabase++, ObjectDB, ObjectStore, ODABA, Realm, OpenLink Virtuoso, Versant Object Database, ZODB
+* OpenLink Virtuoso
+* Perst
+* Realm
+* Versant Object Database
+* ZODB
+* ZopeDB
+* db4o
 
 
 Multi Model
 -----------
-ArangoDB, Azure Cosmos DB, OrientDB, MarkLogic, Apache Ignite,[22][23] Couchbase, FoundationDB, MarkLogic, Oracle Database
+* Apache Ignite
+* ArangoDB
+* Azure Cosmos DB
+* Couchbase
+* FoundationDB
+* MarkLogic
+* MarkLogic
+* Oracle Database
+* OrientDB
 
 
 Multi Value
 -----------
-D3 Pick database, Extensible Storage Engine (ESE/NT), InfinityDB, InterSystems Caché, jBASE Pick database, mvBase Rocket Software, mvEnterprise Rocket Software, Northgate Information Solutions Reality (the original Pick/MV Database), OpenQM, Revelation Software's OpenInsight (Windows) and Advanced Revelation (DOS), UniData Rocket U2, UniVerse Rocket U2
+* D3 Pick database
+* Extensible Storage Engine (ESE/NT)
+* InfinityDB
+* InterSystems Caché
+* Northgate Information Solutions Reality (the original Pick/MV Database)
+* OpenQM
+* Revelation Software's OpenInsight (Windows) and Advanced Revelation (DOS)
+* UniData Rocket U2
+* UniVerse Rocket U2
+* jBASE Pick database
+* mvBase Rocket Software
+* mvEnterprise Rocket Software

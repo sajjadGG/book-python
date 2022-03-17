@@ -42,6 +42,12 @@ NoSQL
     :caption: NoSQL
 
     nosql/about.rst
+    nosql/key-value.rst
+    nosql/document.rst
+    nosql/time-series.rst
+    nosql/column.rst
+    nosql/graph.rst
+    nosql/other.rst
 
 
 SQL
