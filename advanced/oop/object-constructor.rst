@@ -438,16 +438,17 @@ Use Case - 0x06
 ...         obj = object.__new__(cls)
 ...         obj._since = datetime.now()
 ...         obj._uuid = str(uuid4())
-...         obj._log = logging.getLogger(cls.__name__)
+...         obj._logger = logging.getLogger(cls.__name__)
 ...         return obj
 ...
 ...     def _log(self, level: int, id: int, msg: str):
-...         self._log.log(level, f'[{level}:{id}] {msg}')
-...     def _debug(self, id:int, msg:str):    self._log.debug(f'[DEBUG:{id}] {msg}')
-...     def _info(self, id:int, msg:str):     self._log.info(f'[INFO:{id}] {msg}')
-...     def _warning(self, id:int, msg:str):  self._log.warning(f'[WARNING:{id}] {msg}')
-...     def _error(self, id:int, msg:str):    self._log.error(f'[ERROR:{id}] {msg}')
-...     def _critical(self, id:int, msg:str): self._log.critical(f'[CRITICAL:{id}] {msg}')
+...         self._logger.log(level, f'[{level}:{id}] {msg}')
+...
+...     def _debug(self, id:int, msg:str):    self._log(logging.DEBUG, id, msg)
+...     def _info(self, id:int, msg:str):     self._log(logging.INFO, id, msg)
+...     def _warning(self, id:int, msg:str):  self._log(logging.WARNING, id, msg)
+...     def _error(self, id:int, msg:str):    self._log(logging.ERROR, id, msg)
+...     def _critical(self, id:int, msg:str): self._log(logging.CRITICAL, id, msg)
 ...
 ...     @abstractmethod
 ...     def __init__(self):
