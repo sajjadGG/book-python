@@ -68,6 +68,60 @@ To execute a coroutine object, either:
 'hello'
 
 
+Awaiting Sequentially
+---------------------
+* All lines inside of coroutine function will be executed sequentially
+* When ``await`` happen, other coroutine is run
+* When other coroutine finishes, it returns to our function
+* Then next line is executed (which could also be an ``await`` statement
+
+>>> async def hello():
+...     await asyncio.sleep(0.1)
+...     return 'hello'
+>>>
+>>>
+>>> asyncio.run(hello())
+
+All lines inside of coroutine function will be executed sequentially:
+
+>>> async def hello():
+...     await asyncio.sleep(0.1)
+...     await asyncio.sleep(0.1)
+...     await asyncio.sleep(0.1)
+...     return 'hello'
+>>>
+>>>
+>>> asyncio.run(hello())
+
+
+Awaiting Concurrently
+---------------------
+* To run coroutine objects use ``asyncio.gather()``
+* This won't execute in parallel (won't use multiple threads)
+* It will run concurrently (in a single thread)
+
+>>> async def hello():
+...     await asyncio.sleep(0.1)
+...     return 'hello'
+>>>
+>>> async def main():
+...     await asyncio.gather(
+...         hello(),
+...         hello(),
+...         hello(),
+...     )
+>>>
+>>> asyncio.run(hello())
+'hello'
+
+.. figure:: img/asyncio-coroutine-concurrency.gif
+
+    Only one hammer is hitting the pole in the same time,
+    however the work continues to be done concurrently.
+    This is faster than one worker with one hammer.
+    Source [#imgHammertime]_
+
+
 Error: Running Coroutine Functions
 ----------------------------------
 * Only coroutine objects can be run
@@ -155,3 +209,8 @@ True
 >>>
 >>> type(hello())
 <class 'coroutine'>
+
+
+References
+----------
+.. [#imgHammertime] Orboloops3. Forever Hammer Time. Year: 2014. Retrieved: 2022-03-17. URL: https://imgur.com/gallery/pIDs2ff
