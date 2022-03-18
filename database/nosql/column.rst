@@ -1,5 +1,5 @@
-NoSQL Column-Oriented Store
-===========================
+NoSQL Column-Oriented
+=====================
 
 
 Rationale

@@ -105,9 +105,10 @@ Result: ['a', 'b', 'c']
 
 Further Reading
 ---------------
+* Kennedy, M. Demystifying Python's Async and Await Keywords [#Kennedy2019]_
 * Kennedy, M. Async Techniques and Examples in Python [#Kennedy2022]_
-* Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_
 * Abdalla, A. Creating a Bittorrent Client using Asyncio [#Abdalla2017]_
+* Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_
 
 
 References

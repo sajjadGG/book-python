@@ -1,5 +1,5 @@
-NoSQL Graph Database
-====================
+NoSQL Graph
+===========
 
 
 Rationale
@@ -28,3 +28,4 @@ Model
 .. figure:: img/nosql-graph-08.jpg
 .. figure:: img/nosql-graph-09.jpg
 .. figure:: img/nosql-graph-10.webp
+.. figure:: img/nosql-graph-11.jpg

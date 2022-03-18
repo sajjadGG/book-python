@@ -1,5 +1,5 @@
-NoSQL Document Store
-====================
+NoSQL Document
+==============
 
 
 Rationale

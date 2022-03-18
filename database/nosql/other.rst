@@ -1,5 +1,5 @@
-NoSQL Others
-============
+NoSQL Other
+===========
 
 
 Rationale

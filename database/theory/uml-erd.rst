@@ -102,6 +102,8 @@ Left:
     }
     ```
 
+.. figure:: img/uml-erd-export.png
+
 
 Mermaid
 -------
@@ -154,6 +156,12 @@ Use Case - 0x01
 .. figure:: img/uml-erd-mermaid-usecase1.png
 
 
+Use Case - 0x02
+---------------
+.. figure:: img/uml-erd-3.png
+.. figure:: img/uml-erd-4.jpg
+.. figure:: img/uml-erd-5.png
+.. figure:: img/uml-erd-6.jpg
 
 
 References
