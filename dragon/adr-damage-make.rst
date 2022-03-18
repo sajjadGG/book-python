@@ -32,15 +32,9 @@ Option 1
 
 Option 2
 --------
->>> dragon.damage(dragon)
->>> dragon.damage(enemy)
-
-
-Option 2
---------
 >>> dragon.deal_damage()
 >>> dragon.hurt_someone()
->>> dragon.make_damage()  # good
+>>> dragon.make_damage()
 
 * Good: dragon ---> enemy
 
@@ -54,13 +48,26 @@ Option 3
 
 Option 4
 --------
+>>> dragon.damage(enemy)
 >>> dragon.attack(enemy)
 >>> dragon.hit(enemy)
+>>> dragon.wound(enemy)
 >>> dragon.make_damage(enemy)
 >>> dragon.take_damage(enemy)
->>> dragon.wound(enemy)
 
+* Good: dragon ---> enemy
 * Bad: MVC
+
+.. figure:: img/firkraag.jpeg
+
+Problem:
+
+>>> class BankAccount:
+...     def transfer(destination_account):
+...         amount = 1000
+...         destination_account.deposit(1000)
+
+* Bad: inny bank nie udostępni Ci swojego kodu źródłowego, tylko po to aby móc zrobić przelew
 
 
 Option 5
@@ -74,13 +81,17 @@ Option 6
 --------
 >>> hero.wound(dragon.hit())
 
+* Bad: readibility
 
 Option 7
 --------
 >>> dragon.get_damage()
 
-* Bad: ``get`` is used as a getter of a field ``damage``
+* Bad: name ``get_damage()`` indicate a getter of ``damage`` field
 
 
 Decision
 --------
+>>> dmg = dragon.make_damage()
+
+* Good: dragon ---> enemy

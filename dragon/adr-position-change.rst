@@ -231,22 +231,27 @@ Use Case:
 
 >>> read_csv('iris.csv', 'utf-8', ';', True)
 
+>>> read_csv_with_encoding('iris.csv', 'utf-8')
+>>> read_csv_with_delimiter('iris.csv', ';')
+>>> read_csv_with_delimiter_and_encoding('iris.csv', ';', 'utf-8')
+
+>>> read_csv('iris.csv')
+...     .withEncoding('utf-8')
+...     .withDelimiter(';')
+...     .withVerbose(True)
+
+>>> file = CSV()
+>>> file.set_file('iris.csv')  # encapsulation?!
+>>> file.set_encoding('utf-8')
+>>> file.set_delimiter(';')
+
+
 >>> read_csv('iris.csv', encoding='utf-8', delimiter=';', verbose=True)
 
 >>> read_csv('iris.csv',
 ...          encoding='utf-8',
 ...          delimiter=';',
 ...          verbose=True)
-
->>> read_csv('iris.csv')
->>>     .withEncoding('utf-8')
->>>     .withDelimiter(';')
->>>     .withVerbose(True);
-
->>> file = CSV()
->>> file.set_file('iris.csv')  # encapsulation?!
->>> file.set_encoding('utf-8')
->>> file.set_delimiter(';')
 
 
 Decision
@@ -257,3 +262,7 @@ Alternative:
 
 >>> dragon.change_position(left=10, down=20)
 >>> dragon.position_change(left=10, down=20)
+
+* Good: easy
+* Good: verbose
+* Good: extensible

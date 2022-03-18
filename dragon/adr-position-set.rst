@@ -2,6 +2,16 @@ Dragon ADR Position Set
 =======================
 
 
+.. testsetup::
+
+    from dataclasses import dataclass
+
+    @dataclass
+    class Point:
+        x: int
+        y: int
+
+
 Rationale
 ---------
 * ADR - Architecture Design Records
@@ -44,13 +54,14 @@ Option 3
 * Good: arguments are explicit
 * Good: encapsulation
 * Good: easy to add validation if needed
-* Bad: general purpose function
+* Bad: set() is to generic
 
 
 Option 4
 --------
 >>> dragon.x = 10
 >>> dragon.y = 20
+
 >>> dragon.x, dragon.y = 10, 20
 
 * Good: easy to use
@@ -64,6 +75,7 @@ Option 5
 --------
 >>> dragon.position_x = 10
 >>> dragon.position_y = 20
+
 >>> dragon.position_x, dragon.position_y = 10, 20
 
 * Good: easy to use
@@ -79,26 +91,30 @@ Option 6
 
 * Good: easy to use
 * Good: can use ``@property`` for validation if needed
+* Good: using ``@`` (matmul) it is easy to validation
 * Bad: arguments are implicit
 * Bad: require knowledge of an API
+* Bad: 2D (not extensible)
 
 
 Option 7
 --------
->>> dragon.position = Point(10, 20)
->>> dragon.position @ Point(10, 20)
+>>> dragon.position = Point(x=10, y=20)
+>>> dragon.position @ Point(x=10, y=20)
 
 * Good: easy to use
 * Good: can use ``@property`` for validation if needed
 * Good: arguments are explicit
 * Good: readability
-* Bad: require knowledge of an API
+* Good: require knowledge of an API
+* Bad: is extensible (3D)
 
 
 Option 8
 --------
 >>> dragon.position.x = 10
 >>> dragon.position.y = 20
+
 >>> dragon.position.x, dragon.position.y = 10, 20
 
 * Good: more or less easy to use
@@ -106,6 +122,7 @@ Option 8
 * Good: can use ``@property`` for validation if needed
 * Good: encapsulation
 * Good: more or less readable
+* Good: is extensible (3D)
 * Bad: nested
 * Bad: require knowledge of an API
 
