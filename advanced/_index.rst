@@ -127,10 +127,10 @@ Concurrency
     concurrency/asyncio-sleep.rst
     concurrency/asyncio-run.rst
     concurrency/asyncio-wait.rst
+    concurrency/asyncio-wait-for.rst
     concurrency/asyncio-task.rst
     concurrency/asyncio-future.rst
     concurrency/asyncio-shield.rst
-    concurrency/asyncio-timeout.rst
     concurrency/asyncio-debug.rst
     concurrency/asyncio-eventloop.rst
     concurrency/asyncio-queue.rst
@@ -138,7 +138,6 @@ Concurrency
     concurrency/asyncio-synchronization.rst
     concurrency/asyncio-iterator.rst
     concurrency/asyncio-contextmanager.rst
-    concurrency/asyncio-typeannotation.rst
     concurrency/asyncio-3rdparty.rst
 
     concurrency/multiprocessing-about.rst

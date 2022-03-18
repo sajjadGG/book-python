@@ -85,6 +85,25 @@ Source: [#Hettinger2017]_
     Source: Michael Kennedy [#Kennedy2019]_
 
 
+Thread-safety
+-------------
+* Thread-safe code is code that will work even if many Threads are executing it simultaneously.
+
+Thread-safe code is code that will work even if many Threads are executing
+it simultaneously. Writing it is a black art. It is extremely difficult to
+debug since you can’t reproduce all possible interactions between Threads.
+You have to do it by logic. In a computer, something that happens only one
+in a billion times must be dealt with because on average it will happen
+once a second. To write code that will run stably for weeks takes extreme
+paranoia [#Green2017]_.
+
+A class is thread-safe if it behaves correctly when accessed from multiple
+threads, regardless of the scheduling or interleaving of the execution of
+those threads by the runtime environment, and with no additional
+synchronization or other coordination on the part of the calling code
+[#Goetz2006]_.
+
+
 References
 ----------
 .. [#Hettinger2017] Hettinger, Raymond. Keynote on Concurrency. PyBay 2017. https://youtu.be/9zinZmE3Ogk?t=1243
@@ -92,3 +111,7 @@ References
 .. [#Kennedy2019] Kennedy, M. Demystifying Python's Async and Await Keywords. Publisher: JetBrainsTV. Year: 2019. Retrieved: 2022-03-10. URL: https://www.youtube.com/watch?v=F19R_M4Nay4
 
 .. [#Langa2020] Langa, Ł. import asyncio: Learn Python's AsyncIO. Year: 2020. Retrieved: 2022-03-10. URL: https://www.youtube.com/playlist?list=PLhNSoGM2ik6SIkVGXWBwerucXjgP1rHmB
+
+.. [#Green2017] Green, R. Thread safe code. Publisher: Canadian Mind Products. Year: 2017. Retrieved: 2022-03-18. URL: https://www.mindprod.com/jgloss/threadsafe.html
+
+.. [#Goetz2006] Goetz, B. and Peierls, T. and Bloch. J. and Bowbeer, J. and Holmes D. and Lea, D. Java Concurrency in Practice. Publisher: Addison-Wesley Professional; 1st edition. Year: 2006. ISBN: 978-0321349606.

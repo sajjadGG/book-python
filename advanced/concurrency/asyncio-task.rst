@@ -19,11 +19,13 @@ Rationale
 * Use the high-level ``asyncio.create_task()`` function to create Tasks
 
 
+SetUp
+-----
+>>> import asyncio
+
+
 Example
 -------
->>> import asyncio
->>>
->>>
 >>> async def work():
 ...     return 'done'
 >>>
@@ -37,9 +39,9 @@ Example
 >>> asyncio.run(main())
 done
 
->>> import asyncio
->>>
->>>
+
+Example
+-------
 >>> async def a():
 ...     print('a: started')
 ...     await asyncio.sleep(2)

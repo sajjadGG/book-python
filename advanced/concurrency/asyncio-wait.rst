@@ -5,11 +5,9 @@ AsyncIO Wait
 Rationale
 ---------
 * ``asyncio.wait(aws, timeout)``
-* ``asyncio.wait_for(aw, timeout)``
 * ``wait()`` - when a timeout occurs: does not cancel the futures
-* ``wait_for()`` - when a timeout occurs: cancels the task and raises ``asyncio.TimeoutError``
 * If aw is a coroutine it is automatically scheduled as a Task
-* ``wait()`` schedules coroutines as Tasks automatically and later returns those implicitly created Task objects in (done, pending) sets.
+* Returns those implicitly created Task objects in (done, pending) sets
 
 
 SetUp
@@ -50,109 +48,6 @@ Wait
 ...     if task in done:
 ...         print('work is done')
 >>>
+>>>
 >>> asyncio.run(main())
 work is done
-
-
-Wait For
---------
-* The function will wait until the future is actually cancelled
-* Therefore the total wait time may exceed the timeout
-* If an exception happens during cancellation, it is propagated
-* If coroutine does not finish by then, rises ``TimeoutError``
-
->>> async def hello():
-...     while True:
-...         print('hello')
-...         await asyncio.sleep(0.1)
->>>
->>>
->>> async def main():
-...     await asyncio.wait_for(hello(), 0.3)
->>>
->>>
->>> asyncio.run(main())
-waiting
-waiting
-waiting
-asyncio.exceptions.CancelledError
-<BLANKLINE>
-During handling of the above exception, another exception occurred:
-<BLANKLINE>
-asyncio.exceptions.CancelledError
-<BLANKLINE>
-The above exception was the direct cause of the following exception:
-<BLANKLINE>
-asyncio.exceptions.TimeoutError
-
-
-Handling Timeouts
------------------
->>> async def hello():
-...     while True:
-...         print('hello')
-...         await asyncio.sleep(0.1)
->>>
->>>
->>> async def main():
-...     try:
-...         await asyncio.wait_for(hello(), 0.3)
-...     except asyncio.TimeoutError:
-...         print('Timeout')
->>>
->>>
->>> asyncio.run(main())
-hello
-hello
-hello
-Timeout
-
-
-Handling Timeouts Concurrently
-------------------------------
->>> async def hello():
-...     print('hello')
-...     await asyncio.sleep(0.2)
->>>
->>>
->>> async def main():
-...     todo = asyncio.gather(hello(), hello(), hello())
-...     try:
-...         await asyncio.wait_for(todo, timeout=0.1)
-...     except asyncio.TimeoutError:
-...         print('Timeout')
->>>
->>> asyncio.run(main())
-hello
-hello
-hello
-Timeout
-
-
-Handling Cancellation
----------------------
-* If ``gather()`` is cancelled (ie. on timeout), all submitted awaitables (that have not completed yet) are also cancelled
-
->>> async def hello():
-...     print('hello')
-...     try:
-...         await asyncio.sleep(2)
-...     except asyncio.CancelledError:
-...         print('Cancelled')
->>>
->>>
->>> async def main():
-...     todo = asyncio.gather(hello(), hello(), hello())
-...     try:
-...         await asyncio.wait_for(todo, timeout=1)
-...     except asyncio.TimeoutError:
-...         print('Timeout')
->>>
->>> asyncio.run(main())
-hello
-hello
-hello
-Cancelled
-Cancelled
-Cancelled
-Timeout

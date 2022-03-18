@@ -58,6 +58,15 @@ Features of AsyncIO library:
     Source: Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_
 
 
+Type Annotations
+----------------
+>>> from collections.abc import Awaitable
+>>> from collections.abc import Coroutine
+>>> from collections.abc import AsyncIterable
+>>> from collections.abc import AsyncIterator
+>>> from collections.abc import AsyncGenerator
+
+
 References
 ----------
 .. [#Langa2020] Langa, Ł. import asyncio: Learn Python's AsyncIO. Year: 2020. Retrieved: 2022-03-10. URL: https://www.youtube.com/playlist?list=PLhNSoGM2ik6SIkVGXWBwerucXjgP1rHmB
