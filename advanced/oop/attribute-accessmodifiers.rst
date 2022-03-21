@@ -180,11 +180,12 @@ Name Mangling
 ...     __lastname: str
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
->>> TypeError: Astronaut.__init__() missing 2 required positional arguments: '_Astronaut__firstname' and '_Astronaut__lastname'
+Traceback (most recent call last):
+TypeError: Astronaut.__init__() missing 2 required positional arguments: '_Astronaut__firstname' and '_Astronaut__lastname'
 >>>
 >>> astro = Astronaut('Mark', 'Watney', 'Melissa', 'Lewis')
 >>>
->>> vars(astro)
+>>> vars(astro)  # doctest: +NORMALIZE_WHITESPACE
 {'_Person__firstname': 'Mark',
  '_Person__lastname': 'Watney',
  '_Astronaut__firstname': 'Melissa',

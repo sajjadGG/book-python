@@ -683,7 +683,7 @@ by the Logger for that level of call. You can write code like this:
 >>> import logging
 >>>
 >>>
->>> log = logging.getLogger(__name__)
+>>> logger = logging.getLogger(__name__)
 >>>
 >>> if logger.isEnabledFor(logging.DEBUG):
 ...     logger.debug('Message with %s, %s', expensive_func1(),

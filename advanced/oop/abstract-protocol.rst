@@ -166,7 +166,7 @@ In general, a covariant type parameter can be used as the return type of a
 delegate, and contravariant type parameters can be used as parameter types.
 
 >>> def check(what: int):
-...     print(what)
+...     pass
 
 .. glossary::
 
@@ -423,7 +423,7 @@ True
 ...     def close(self): ...
 >>>
 >>>
->>> file = open('/tmp/myfile.txt')
+>>> file = open('/tmp/myfile.txt', mode='w')
 >>> isinstance(file, SupportsClose)
 True
 >>> file.close()
@@ -446,7 +446,7 @@ Use Case - 0x02
 >>>
 >>>
 >>> class RGB(Protocol):
-...     rgb: Tuple[int, int, int]
+...     rgb: tuple[int, int, int]
 ...
 ...     @abstractmethod
 ...     def intensity(self) -> int:
@@ -462,7 +462,7 @@ Use Case - 0x02
 
 Use Case - 0x03
 ---------------
-File ``myview.py``
+File ``myapp/view.py``
 
 >>> def get(request):
 ...     ...
@@ -479,7 +479,7 @@ File ``myview.py``
 File ``main.py``
 
 >>> from typing import Protocol
->>> import myview
+>>> import myapp.view  # doctest: +SKIP
 >>>
 >>>
 >>> class HttpView(Protocol):
@@ -489,7 +489,7 @@ File ``main.py``
 ...     def delete(request): ...
 >>>
 >>>
->>> view: HttpView = myview
+>>> view: HttpView = myapp.view  # doctest: +SKIP
 
 
 References

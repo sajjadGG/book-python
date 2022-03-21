@@ -317,14 +317,13 @@ Mechanism
 {'firstname': 'Melissa', 'lastname': 'Lewis'}
 >>>
 >>> vars(Astronaut)  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
-mappingproxy({
-    '__module__': 'builtins',
-    'firstname': 'Mark',
-    'lastname': 'Watney',
-    '__init__': <function Astronaut.__init__ at 0x...>,
-    '__dict__': <attribute '__dict__' of 'Astronaut' objects>,
-    '__weakref__': <attribute '__weakref__' of 'Astronaut' objects>,
-    '__doc__': None})
+mappingproxy({'__module__': 'builtins',
+              'firstname': 'Mark',
+              'lastname': 'Watney',
+              '__init__': <function Astronaut.__init__ at 0x...>,
+              '__dict__': <attribute '__dict__' of 'Astronaut' objects>,
+              '__weakref__': <attribute '__weakref__' of 'Astronaut' objects>,
+              '__doc__': None})
 
 
 Use Case - 0x01
@@ -415,8 +414,8 @@ Use Case - 0x06
 ...     firstname: str
 ...     lastname: str
 ...     age: int
-...     AGE_MIN: ClassVar[Final[int]] = 30
-...     AGE_MAX: ClassVar[Final[int]] = 50
+...     AGE_MIN: ClassVar[int] = 30
+...     AGE_MAX: ClassVar[int] = 50
 ...
 ...     def __post_init__(self):
 ...         if not self.AGE_MIN <= self.age < self.AGE_MAX:

@@ -26,10 +26,10 @@ Let's define a ``User`` class:
 ...        self.firstname = firstname
 ...        self.lastname = lastname
 ...
-...     def from_json(self, data):
-...         import json
-...         data = json.loads(data)
-...         return User(**data)
+...    def from_json(self, data):
+...        import json
+...        data = json.loads(data)
+...        return User(**data)
 
 Let's use ``.from_json()`` to create an instance:
 

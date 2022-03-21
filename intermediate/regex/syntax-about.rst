@@ -162,7 +162,7 @@ hello\nworld
 Example:
 
 >>> print('\btodo\b')
-tod
+todo
 >>>
 >>> print(r'\btodo\b')
 \btodo\b

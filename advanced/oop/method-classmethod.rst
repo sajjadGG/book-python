@@ -41,9 +41,11 @@ Manifestation
 ...         data = json.loads(data)
 ...         return User(**data)
 >>>
+>>> data = '{"firstname": "Mark", "lastname": "Watney"}'
+>>> result = User.from_json(data)
 >>>
->>> User.from_json('{"firstname": "Jan", "lastname": "Twardowski"}')
-User(firstname='Jan', lastname='Twardowski')
+>>> print(result)
+User(firstname='Mark', lastname='Watney')
 
 >>> import json
 >>> from dataclasses import dataclass
@@ -62,11 +64,11 @@ User(firstname='Jan', lastname='Twardowski')
 ...     lastname: str
 >>>
 >>>
->>> data = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> data = '{"firstname": "Mark", "lastname": "Watney"}'
 >>> result = User.from_json(data)
 >>>
 >>> print(result)
-User(firstname='Jan', lastname='Twardowski')
+User(firstname='Mark', lastname='Watney')
 
 >>> import json
 >>> from dataclasses import dataclass
@@ -84,11 +86,11 @@ User(firstname='Jan', lastname='Twardowski')
 ...     lastname: str
 >>>
 >>>
->>> data = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> data = '{"firstname": "Mark", "lastname": "Watney"}'
 >>> result = User.from_json(data)
 >>>
 >>> print(result)
-User(firstname='Jan', lastname='Twardowski')
+User(firstname='Mark', lastname='Watney')
 
 
 Use Case - 0x01
@@ -148,13 +150,13 @@ Use Case - 0x02
 ...     lastname: str
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> data = '{"firstname": "Mark", "lastname": "Watney"}'
 >>>
->>> Guest.from_json(DATA)
-Guest(firstname='Jan', lastname='Twardowski')
+>>> Guest.from_json(data)
+Guest(firstname='Mark', lastname='Watney')
 >>>
->>> Admin.from_json(DATA)
-Admin(firstname='Jan', lastname='Twardowski')
+>>> Admin.from_json(data)
+Admin(firstname='Mark', lastname='Watney')
 
 
 Use Case - 0x03
@@ -272,13 +274,15 @@ Use Case - 0x05
 ...     pass
 >>>
 >>>
->>> Admin.from_json(DATA)
+>>> data = '{"firstname": "Mark", "lastname": "Watney"}'
+>>>
+>>> Admin.from_json(data)
 Admin(firstname='Mark', lastname='Watney')
 >>>
->>> Guest.from_json(DATA)
+>>> Guest.from_json(data)
 Guest(firstname='Mark', lastname='Watney')
 >>>
->>> User.from_json(DATA)
+>>> User.from_json(data)
 User(firstname='Mark', lastname='Watney')
 
 

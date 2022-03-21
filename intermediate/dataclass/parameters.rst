@@ -264,18 +264,18 @@ TypeError: Astronaut already specifies __slots__
 ...     def say_hello(self):
 ...         return f'Hello {self.firstname} {self.lastname}'
 >>>
->>> vars(Astronaut)
-mappingproxy({'__module__': '__main__',
-              '__annotations__': {'firstname': str, 'lastname': str},
-              'say_hello': <function __main__.Astronaut.sey_hello(self)>,
+>>> vars(Astronaut)  # doctest: +ELLIPSIS
+mappingproxy({'__module__': 'builtins',
+              '__annotations__': {'firstname': <class 'str'>, 'lastname': <class 'str'>},
+              'say_hello': <function Astronaut.say_hello at 0x...>,
               '__weakref__': <attribute '__weakref__' of 'Astronaut' objects>,
               '__doc__': 'Astronaut(firstname: str, lastname: str)',
               '__dataclass_params__': _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False),
-              '__dataclass_fields__': {'firstname': Field(name='firstname',type=<class 'str'>,default=<dataclasses._MISSING_TYPE object at 0x10f788820>,default_factory=<dataclasses._MISSING_TYPE object at 0x10f788820>,init=True,repr=True,hash=None,compare=True,metadata=mappingproxy({}),kw_only=False,_field_type=_FIELD),
-               'lastname': Field(name='lastname',type=<class 'str'>,default=<dataclasses._MISSING_TYPE object at 0x10f788820>,default_factory=<dataclasses._MISSING_TYPE object at 0x10f788820>,init=True,repr=True,hash=None,compare=True,metadata=mappingproxy({}),kw_only=False,_field_type=_FIELD)},
-              '__init__': <function __main__.Astronaut.__init__(self, firstname: str, lastname: str) -> None>,
-              '__repr__': <function __main__.Astronaut.__repr__(self)>,
-              '__eq__': <function __main__.Astronaut.__eq__(self, other)>,
+              '__dataclass_fields__': {'firstname': Field(name='firstname',type=<class 'str'>,default=<dataclasses._MISSING_TYPE object at 0x...>,default_factory=<dataclasses._MISSING_TYPE object at 0x...>,init=True,repr=True,hash=None,compare=True,metadata=mappingproxy({}),kw_only=False,_field_type=_FIELD),
+               'lastname': Field(name='lastname',type=<class 'str'>,default=<dataclasses._MISSING_TYPE object at 0x...>,default_factory=<dataclasses._MISSING_TYPE object at 0x...>,init=True,repr=True,hash=None,compare=True,metadata=mappingproxy({}),kw_only=False,_field_type=_FIELD)},
+              '__init__': <function Astronaut.__init__ at 0x...>,
+              '__repr__': <function Astronaut.__repr__ at 0x...>,
+              '__eq__': <function Astronaut.__eq__ at 0x...>,
               '__hash__': None,
               '__match_args__': ('firstname', 'lastname'),
               '__slots__': ('firstname', 'lastname'),

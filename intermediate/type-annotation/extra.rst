@@ -12,11 +12,15 @@ Annotated
 >>> from typing import Annotated
 >>>
 >>>
->>> digit = Annotated[int, ValueRange(0,9)]
->>> int8 = Annotated[int, ValueRange(0, 255), ctype("int8")]
->>> issuekey = Annotated[str, MatchesRegex('[A-Z]{2,10}-[0-9]{1,6}')
->>> vector = Annotated[list[int], MaxLen(10)]
->>> kelvin = Annotated[float, ValueRange(0.0, float('inf'))
+>>> digit = Annotated[int, ValueRange(0,9)]  # doctest: +SKIP
+>>> int8 = Annotated[int, ValueRange(0, 255), ctype('int8')]  # doctest: +SKIP
+>>> issuekey = Annotated[str, MatchesRegex('[A-Z]{2,10}-[0-9]{1,6}')  # doctest: +SKIP
+>>> vector = Annotated[list[int], MaxLen(10)]  # doctest: +SKIP
+>>> kelvin = Annotated[float, ValueRange(0.0, float('inf'))  # doctest: +SKIP
+
+.. note:: ``ValueRange``, ``ctype``, ``MatchesRegex``, ``MaxLen``
+          does not exist in Python. It is used only as an example
+          both here and in :pep:`593`.
 
 
 TypeGuard
@@ -84,7 +88,6 @@ properties as the original type.
 >>>
 >>> def fly_to_space(who: Astronaut):
 ... 	...
-
 
 
 Use Case - 0x01

@@ -3,9 +3,6 @@ Decorator Arguments
 * Used for passing extra configuration to decorators
 * Use more one level of nesting
 
-
-Syntax
-------
 >>> def mydecorator(a=1, b=2):
 ...     def decorator(func):
 ...         def wrapper(*args, **kwargs):
@@ -199,7 +196,7 @@ File ``utils.py``:
 >>>
 >>>
 >>> def _request(url, method='GET'):
-...     url = BASE_URL + path
+...     url = BASE_URL + url
 ...     resp = requests.request(url, method)
 ...     if resp.staus_code != HTTPStatus.OK:
 ...         raise ConnectionError
@@ -209,7 +206,7 @@ File ``utils.py``:
 >>> def get(url):
 ...     def decorator(func):
 ...         def wrapper():
-...             resp = _request(path)
+...             resp = _request(url)
 ...             return func(resp.json())
 ...         return wrapper
 ...     return decorator
