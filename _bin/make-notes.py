@@ -20,11 +20,11 @@ def get_headers(file: Path) -> list[str]:
         pattern=f'{margin}{title}{underline}{highlights}',
         string=file.read_text(),
         flags=re.MULTILINE)
-    exclude = ('Use Case', 'Case Study', 'Example', 'SetUp', 'References')
-    return [header.replace('Assignments\n-----------',
-                           'Assignments\n-----------\n\n ')
+    exclude = ('Use Case', 'Case Study', 'Example',
+               'SetUp', 'References', 'Assignments')
+    return [header
             for header in headers
-            if not header.startswith(exclude)]
+            if not header.lstrip().startswith(exclude)]
 
 
 if __name__ == '__main__':
