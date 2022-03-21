@@ -1,14 +1,13 @@
 AsyncIO Synchronization
 =======================
 
+.. important::
 
-Important
----------
-* Synchronization Primitives
-* Mutex Lock
-* Condition Object
-* Semaphore
-* Event
+    * Synchronization Primitives
+    * Mutex Lock
+    * Condition Object
+    * Semaphore
+    * Event
 
 
 Mutex Lock

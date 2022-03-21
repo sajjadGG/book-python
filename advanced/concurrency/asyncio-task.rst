@@ -1,22 +1,20 @@
 AsyncIO Task
 ============
 
+.. important::
 
-
-Important
----------
-* ``asyncio.create_task(coro, *, name=None)``
-* Tasks are used to schedule coroutines concurrently
-* Wrap the ``coro`` coroutine into a ``Task`` and schedule its execution
-* ``Task`` can be used to cancel execution
-* ``Task`` can be awaited until it is complete
-* The task is executed in the loop returned by ``get_running_loop()``
-* ``RuntimeError`` is raised if there is no running loop in current thread
-* Tasks are used to run coroutines in event loops
-* If a coroutine awaits on a Future, the Task suspends the execution of the coroutine and waits for the completion of the Future
-* When the Future is done, the execution of the wrapped coroutine resumes
-* Manual instantiation of ``Tasks`` is discouraged
-* Use the high-level ``asyncio.create_task()`` function to create Tasks
+    * ``asyncio.create_task(coro, *, name=None)``
+    * Tasks are used to schedule coroutines concurrently
+    * Wrap the ``coro`` coroutine into a ``Task`` and schedule its execution
+    * ``Task`` can be used to cancel execution
+    * ``Task`` can be awaited until it is complete
+    * The task is executed in the loop returned by ``get_running_loop()``
+    * ``RuntimeError`` is raised if there is no running loop in current thread
+    * Tasks are used to run coroutines in event loops
+    * If a coroutine awaits on a Future, the Task suspends the execution of the coroutine and waits for the completion of the Future
+    * When the Future is done, the execution of the wrapped coroutine resumes
+    * Manual instantiation of ``Tasks`` is discouraged
+    * Use the high-level ``asyncio.create_task()`` function to create Tasks
 
 
 Tasks are used to run coroutines in event loops. If a coroutine awaits on a Future, the Task suspends the execution of the coroutine and waits for the completion of the Future. When the Future is done, the execution of the wrapped coroutine resumes.

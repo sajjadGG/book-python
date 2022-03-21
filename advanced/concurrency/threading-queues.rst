@@ -1,19 +1,15 @@
 Threading Queues
 ================
 
+.. important::
 
-Important
----------
-* Queue
-* FIFO
-* LIFO (stack)
-* Priority Queue
-
+    * Queue
+    * FIFO
+    * LIFO (stack)
+    * Priority Queue
     * Priorytetyzacja
     * Wywłaszczenie
-
-* Network Queue
-
+    * Network Queue
     * Synchronizacja
     * Routing
 

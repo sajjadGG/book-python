@@ -1,15 +1,13 @@
 Unpack Parameter Syntax
 =======================
 
-.. important::
-
-    * Define API for you functions
-    * Require particular way of passing positional and optional parameters
-    * All parameters after ``*`` must be keyword-only
-    * All parameters before ``/`` must be positional-only
-    * ``*`` could be anywhere, not only at the beginning
-    * ``/`` could be anywhere, not only at the end
-    * Since Python 3.8: :pep:`570` -- Python Positional-Only Parameters
+* Define API for you functions
+* Require particular way of passing positional and optional parameters
+* All parameters after ``*`` must be keyword-only
+* All parameters before ``/`` must be positional-only
+* ``*`` could be anywhere, not only at the beginning
+* ``/`` could be anywhere, not only at the end
+* Since Python 3.8: :pep:`570` -- Python Positional-Only Parameters
 
 
 Recap
@@ -25,11 +23,21 @@ Recap
 >>> def set_point(x, y, z=None):
 ...      print(f'{x=}, {y=}, {z=}')
 
+Valid:
+
 >>> set_point(1, 2, 3)
 x=1, y=2, z=3
-
+>>>
 >>> set_point(x=1, y=2, z=3)
 x=1, y=2, z=3
+>>>
+>>> set_point(1, 2, z=3)
+x=1, y=2, z=3
+>>>
+>>> set_point(1, y=2, z=3)
+x=1, y=2, z=3
+
+Errors:
 
 >>> set_point(1, 2)
 x=1, y=2, z=None
@@ -40,12 +48,6 @@ x=1, y=2, z=None
 >>> set_point(1, z=3)
 Traceback (most recent call last):
 TypeError: set_point() missing 1 required positional argument: 'y'
-
->>> set_point(1, 2, z=3)
-x=1, y=2, z=3
->>>
->>> set_point(1, y=2, z=3)
-x=1, y=2, z=3
 
 
 Keyword-only Parameters

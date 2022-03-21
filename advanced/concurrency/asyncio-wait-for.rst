@@ -1,15 +1,14 @@
 AsyncIO Wait For
 ================
 
+.. important::
 
-Important
----------
-* ``asyncio.wait_for(aw, timeout: int|float|None)``
-* Timeout - number of seconds to wait for
-* If ``timeout=None``, block until the future completes
-* ``wait_for()`` - when a timeout occurs: cancels the task and raises ``asyncio.TimeoutError``
-* If aw is a coroutine it is automatically scheduled as a Task
-* If the wait is cancelled, the future ``aw`` is also cancelled.
+    * ``asyncio.wait_for(aw, timeout: int|float|None)``
+    * Timeout - number of seconds to wait for
+    * If ``timeout=None``, block until the future completes
+    * ``wait_for()`` - when a timeout occurs: cancels the task and raises ``asyncio.TimeoutError``
+    * If aw is a coroutine it is automatically scheduled as a Task
+    * If the wait is cancelled, the future ``aw`` is also cancelled.
 
 
 SetUp

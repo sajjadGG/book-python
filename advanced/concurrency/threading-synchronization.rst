@@ -1,11 +1,13 @@
 Threading Synchronization
 =========================
 
+.. important::
 
-Important
----------
-* Thread Synchronisation
+    * Thread Synchronisation
 
+
+About
+-----
 .. figure:: img/threading-synchronization-lock-1.png
 
     Source: Langa, Ł. import asyncio: Learn Python's AsyncIO [#Langa2020]_

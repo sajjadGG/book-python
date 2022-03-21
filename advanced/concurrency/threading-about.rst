@@ -1,6 +1,21 @@
 Threading About
 ===============
 
+.. important::
+
+    * Zaletą wątków jest to, że mają współdzielony stan
+    * Jeden wątek może zapisać kod do pamięci a drugi odczytać bez narzutu komunikacyjnego
+    * Wadą jest również współdzielony stan i race condition
+    * Ideą wątków jest tani dostęp do współdzielonej pamięci, tylko trzeba wszędzie wstawiać locki
+    * Run very fast, but hard to get correct
+    * It's insanely difficult to create large multi-threaded programs with multiple locks
+    * Even if you lock resource, there is no protection if other parts of the system do not even try to acquire the lock
+    * Threads switch preemptively
+    * Preemptively means that the thread manager decides to switch tasks for you (you don't have to explicitly say to do so). Programmer has to do very little.
+    * This is convenient because you dont need to add explicit code to cause a task switch
+    * The cost of this convenience is that you have to assume a switch can happen at any time
+    * Accordingly, critical sections have to be a guarded with locks
+    * The limit on threads is total CPU power minus the cost of tasks switches and synchronization overhead
 
 .. glossary::
 
@@ -11,8 +26,8 @@ Threading About
     timer
 
 
-Important
----------
+About
+-----
 #. Co to jest wątek?
 #. Ile czasu trwa tworzenie wątków?
 #. Kto zarządza wątkami?
@@ -21,21 +36,6 @@ Important
 #. Jak komunikować się między wątkami?
 #. Czy współdzielenie pamięci przez wątki jest dobre czy złe?
 
-* Zaletą wątków jest to, że mają współdzielony stan
-* Jeden wątek może zapisać kod do pamięci a drugi odczytać bez narzutu komunikacyjnego
-* Wadą jest również współdzielony stan i race condition
-* Ideą wątków jest tani dostęp do współdzielonej pamięci, tylko trzeba wszędzie wstawiać locki
-* Run very fast, but hard to get correct
-* It's insanely difficult to create large multi-threaded programs with multiple locks
-* Even if you lock resource, there is no protection if other parts of the system do not even try to acquire the lock
-* Threads switch preemptively
-* Preemptively means that the thread manager decides to switch tasks for you (you don't have to explicitly say to do so). Programmer has to do very little.
-* This is convenient because you dont need to add explicit code to cause a task switch
-* The cost of this convenience is that you have to assume a switch can happen at any time
-* Accordingly, critical sections have to be a guarded with locks
-* The limit on threads is total CPU power minus the cost of tasks switches and synchronization overhead
-
-Source: [#Hettinger2017]_
 
 .. figure:: img/threading-parallelism.png
 
@@ -49,7 +49,7 @@ Source: [#Hettinger2017]_
 
 Every real operating system thread allocates full sized callstack. It's
 overhead. So you cannot run hundreds of threads without without sacrificing
-resources.
+resources [#Hettinger2017]_.
 
 
 Daemon

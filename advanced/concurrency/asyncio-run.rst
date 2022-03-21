@@ -1,11 +1,10 @@
 AsyncIO Run
 ===========
 
+.. important::
 
-Important
----------
-* ``asyncio.run()`` is a main entrypoint
-* ``asyncio.gather()`` can run concurrently and gather result (in order of its arguments)
+    * ``asyncio.run()`` is a main entrypoint
+    * ``asyncio.gather()`` can run concurrently and gather result (in order of its arguments)
 
 
 SetUp

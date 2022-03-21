@@ -2,11 +2,11 @@ AsyncIO Shield
 ==============
 
 
-Important
----------
-* Shielding from Cancellation
-* Awaitable ``asyncio.shield(aw)``
-* Protect an awaitable object from being cancelled.
+.. important::
+
+    * Shielding from Cancellation
+    * Awaitable ``asyncio.shield(aw)``
+    * Protect an awaitable object from being cancelled.
 
 
 Example
