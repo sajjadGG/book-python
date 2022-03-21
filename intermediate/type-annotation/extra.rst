@@ -81,7 +81,7 @@ properties as the original type.
 >>>
 >>>
 >>> class Person:
->>> 	...
+... 	...
 >>>
 >>> Astronaut = NewType('Astronaut', Person)
 >>> Cosmonaut = NewType('Cosmonaut', Person)

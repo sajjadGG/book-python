@@ -1,8 +1,3 @@
-.. testsetup::
-
-    from __future__ import annotations
-
-
 Type Annotation OOP
 ===================
 * All classes are types

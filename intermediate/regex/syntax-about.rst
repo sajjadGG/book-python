@@ -161,11 +161,12 @@ hello\nworld
 
 Example:
 
->>> print('\btodo\b')
+>>> print('\btodo\b')  # doctest: +SKIP
 todo
 >>>
 >>> print(r'\btodo\b')
 \btodo\b
+
 
 ASCII vs Unicode
 ----------------

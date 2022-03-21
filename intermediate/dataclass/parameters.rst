@@ -264,7 +264,7 @@ TypeError: Astronaut already specifies __slots__
 ...     def say_hello(self):
 ...         return f'Hello {self.firstname} {self.lastname}'
 >>>
->>> vars(Astronaut)  # doctest: +ELLIPSIS
+>>> vars(Astronaut)  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
 mappingproxy({'__module__': 'builtins',
               '__annotations__': {'firstname': <class 'str'>, 'lastname': <class 'str'>},
               'say_hello': <function Astronaut.say_hello at 0x...>,
