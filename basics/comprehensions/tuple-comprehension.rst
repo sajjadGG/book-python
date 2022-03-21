@@ -1,9 +1,5 @@
 Comprehension Tuple
 ===================
-
-
-Important
----------
 * Tuple Comprehension vs. Generator Expression
 * More information in `Generators`
 

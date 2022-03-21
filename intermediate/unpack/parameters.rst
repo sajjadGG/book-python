@@ -1,11 +1,9 @@
 Unpack Parameters
 =================
+* More information in `Unpack Assignment`
+* More information in `Unpack Parameters`
+* More information in `Unpack Arguments`
 
-.. important::
-
-    * More information in `Unpack Assignment`
-    * More information in `Unpack Parameters`
-    * More information in `Unpack Arguments`
 
 .. figure:: img/unpack-assignment,args,params.png
 

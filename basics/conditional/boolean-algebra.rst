@@ -2,8 +2,8 @@ Boolean Algebra
 ===============
 
 
-Important
----------
+Syntax
+------
 >>> True and True or False
 True
 >>>

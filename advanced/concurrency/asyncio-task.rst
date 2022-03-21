@@ -1,27 +1,30 @@
 AsyncIO Task
 ============
+* ``asyncio.create_task(coro, *, name=None)``
+* Tasks are used to schedule coroutines concurrently
+* Wrap the ``coro`` coroutine into a ``Task`` and schedule its execution
+* ``Task`` can be used to cancel execution
+* ``Task`` can be awaited until it is complete
+* The task is executed in the loop returned by ``get_running_loop()``
+* ``RuntimeError`` is raised if there is no running loop in current thread
+* Tasks are used to run coroutines in event loops
+* If a coroutine awaits on a Future, the Task suspends the execution of the coroutine and waits for the completion of the Future
+* When the Future is done, the execution of the wrapped coroutine resumes
+* Manual instantiation of ``Tasks`` is discouraged
+* Use the high-level ``asyncio.create_task()`` function to create Tasks
 
-.. important::
+Tasks are used to run coroutines in event loops. If a coroutine awaits on a
+Future, the Task suspends the execution of the coroutine and waits for the
+completion of the Future. When the Future is done, the execution of the
+wrapped coroutine resumes.
 
-    * ``asyncio.create_task(coro, *, name=None)``
-    * Tasks are used to schedule coroutines concurrently
-    * Wrap the ``coro`` coroutine into a ``Task`` and schedule its execution
-    * ``Task`` can be used to cancel execution
-    * ``Task`` can be awaited until it is complete
-    * The task is executed in the loop returned by ``get_running_loop()``
-    * ``RuntimeError`` is raised if there is no running loop in current thread
-    * Tasks are used to run coroutines in event loops
-    * If a coroutine awaits on a Future, the Task suspends the execution of the coroutine and waits for the completion of the Future
-    * When the Future is done, the execution of the wrapped coroutine resumes
-    * Manual instantiation of ``Tasks`` is discouraged
-    * Use the high-level ``asyncio.create_task()`` function to create Tasks
+Event loops use cooperative scheduling: an event loop runs one Task at a
+time. While a Task awaits for the completion of a Future, the event loop
+runs other Tasks, callbacks, or performs IO operations.
 
-
-Tasks are used to run coroutines in event loops. If a coroutine awaits on a Future, the Task suspends the execution of the coroutine and waits for the completion of the Future. When the Future is done, the execution of the wrapped coroutine resumes.
-
-Event loops use cooperative scheduling: an event loop runs one Task at a time. While a Task awaits for the completion of a Future, the event loop runs other Tasks, callbacks, or performs IO operations.
-
-Use the high-level asyncio.create_task() function to create Tasks, or the low-level loop.create_task() or ensure_future() functions. Manual instantiation of Tasks is discouraged.
+Use the high-level asyncio.create_task() function to create Tasks, or the
+low-level loop.create_task() or ensure_future() functions. Manual
+instantiation of Tasks is discouraged.
 
 
 SetUp

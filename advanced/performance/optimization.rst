@@ -1,9 +1,5 @@
 Performance Optimization
 ========================
-
-
-Important
----------
 * https://wiki.python.org/moin/TimeComplexity
 
 

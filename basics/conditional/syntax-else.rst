@@ -1,7 +1,3 @@
-Block Else
-==========
-
-
 .. testsetup::
 
     # Simulate user input (for test automation)
@@ -9,8 +5,8 @@ Block Else
     input = MagicMock(side_effect=[''])
 
 
-Important
----------
+Block Else
+==========
 * Unconditional Alternative
 * Optional
 * Executed when condition is not met

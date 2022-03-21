@@ -1,21 +1,15 @@
 OOP Object Identity
 ===================
-
-
-Important
----------
 * ``=`` assignment
 * ``==`` checks for object equality
 * ``is`` checks for object identity
 
->>> firstname: str = 'Melissa'
->>> lastname: str = 'Lewis'
->>> age: int | None = None
+>>> valid = True
 >>>
->>> age is None
+>>> valid == True
 True
->>> age is not None
-False
+>>> valid is True
+True
 
 
 Identity

@@ -1,9 +1,5 @@
 Dragon (version beta)
 =====================
-
-
-About
------
 * Assignment: Dragon (version beta)
 * Complexity: medium
 * Lines of code: 120 lines

@@ -1,14 +1,5 @@
 FuncProg Recurrence
 ===================
-
-
-.. epigraph::
-
-    Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekurencję.
-
-
-Important
----------
 * Also known as recursion
 * Iteration in functional languages is usually accomplished via recursion
 * Recursive functions invoke themselves
@@ -23,6 +14,10 @@ Important
 * Tail recursion optimization can be implemented by transforming the
   program into continuation passing style during compiling, among other
   approaches. [#WikipediaFunc]_
+
+.. epigraph::
+
+    Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekurencję.
 
 
 Recurrence in Python

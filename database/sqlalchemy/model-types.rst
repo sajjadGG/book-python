@@ -1,13 +1,10 @@
 Model Types
 ===========
-
-.. important::
-
-    * Strings: String, Text, Unicode, UnicodeText
-    * Numerics: Numeric, Integer, SmallInteger, BigInteger, Float, Boolean
-    * Enumerations: Enum
-    * Blobs: LargeBinary
-    * Dates: DateTime, Date, Time, Interval
+* Strings: String, Text, Unicode, UnicodeText
+* Numerics: Numeric, Integer, SmallInteger, BigInteger, Float, Boolean
+* Enumerations: Enum
+* Blobs: LargeBinary
+* Dates: DateTime, Date, Time, Interval
 
 
 SetUp

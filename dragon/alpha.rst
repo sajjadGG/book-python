@@ -1,9 +1,5 @@
 Dragon (version alpha)
 ======================
-
-
-About
------
 * Assignment: Dragon (version alpha)
 * Complexity: medium
 * Lines of code: 100 lines

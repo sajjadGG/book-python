@@ -1,9 +1,5 @@
 Boolean Empty
 =============
-
-
-Important
----------
 * empty ``bool()`` or ``False``
 * empty ``int()`` or ``0``
 * empty ``float()`` or ``0.0``

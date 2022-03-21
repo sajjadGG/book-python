@@ -1,9 +1,6 @@
 Core Introspect
 ===============
-
-.. important::
-
-    * Introspection - getting information about the object internals
+* Introspection - getting information about the object internals
 
 
 SetUp

@@ -2,8 +2,6 @@ OOP Object Constructor
 ======================
 
 
-Important
----------
 ``__new__`` will always get called when an object has to be created. There
 are some situations where ``__init__`` will not get called. One example is
 when you unpickle objects from a pickle file, they will get allocated

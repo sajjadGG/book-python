@@ -1,16 +1,9 @@
 OOP Object Relations
 ====================
-
-
-Important
----------
 * ``pickle`` - has relations
 * ``json`` - has relations
 * ``csv`` - non-relational format
 
-
-Glossary
---------
 .. glossary::
 
     normalization

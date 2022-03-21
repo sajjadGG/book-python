@@ -1,9 +1,6 @@
 Pandas Read Python
 ==================
-
-.. important::
-
-    * ``pd.DataFrame()``
+* ``pd.DataFrame()``
 
 
 Example

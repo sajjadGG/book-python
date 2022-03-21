@@ -1,11 +1,7 @@
 AsyncIO Iterator
 ================
-
-
-.. important::
-
-    * ``__aiter__``
-    * ``__anext__``
+* ``__aiter__``
+* ``__anext__``
 
 
 Example

@@ -1,6 +1,3 @@
-Block Elif
-==========
-
 .. testsetup::
 
     # Simulate user input (for test automation)
@@ -8,8 +5,8 @@ Block Elif
     input = MagicMock(side_effect=['5', '5', '10', 'Polish'])
 
 
-Important
----------
+Block Elif
+==========
 * Used to check for additional condition if first is not met
 * In other languages is known as ``else if``
 * Conditional Alternative

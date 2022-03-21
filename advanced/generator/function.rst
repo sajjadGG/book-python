@@ -1,9 +1,5 @@
 Generator Function
 ==================
-
-
-Important
----------
 * ``yield`` keyword turns function into generator function
 
 

@@ -1,11 +1,8 @@
 1st Normal Form
 ===============
-
-.. important::
-
-    * Atomic Values
-    * Unique Identifiers (rows uniquely identified by ``PRIMARY KEY``)
-    * Entries in a column are same type
+* Atomic Values
+* Unique Identifiers (rows uniquely identified by ``PRIMARY KEY``)
+* Entries in a column are same type
 
 
 1st Normal Form

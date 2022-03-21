@@ -1,23 +1,17 @@
 ORM About
 =========
+* ORM - Object Relational Mapping
+* Process of associating object oriented classes with database tables
+* Set of object oriented classes is a domain model (business model)
+* The most basic task is to translate between domain object and a table row
+* Any tool which takes database row and converts this to an object is an ORM
+* ORM represents basic compositions: one-to-many, many-to-one using foreign key
+* ORM allows to querying the database in terms of the domain model structure
+* Some ORM can represent class inheritance hierarchies using variety of schemes
+* Some ORMs can handle 'sharding' of data, i.e. storing a domain model across multiple schemas or databases
+* Provide various patterns for concurrency, including row versioning
+* Provide patterns for data validation and coercion
 
-.. important::
-
-    * ORM - Object Relational Mapping
-    * Process of associating object oriented classes with database tables
-    * Set of object oriented classes is a domain model (business model)
-    * The most basic task is to translate between domain object and a table row
-    * Any tool which takes database row and converts this to an object is an ORM
-    * ORM represents basic compositions: one-to-many, many-to-one using foreign key
-    * ORM allows to querying the database in terms of the domain model structure
-    * Some ORM can represent class inheritance hierarchies using variety of schemes
-    * Some ORMs can handle 'sharding' of data, i.e. storing a domain model across multiple schemas or databases
-    * Provide various patterns for concurrency, including row versioning
-    * Provide patterns for data validation and coercion
-
-
-About
------
 Source: [#ytSQLAlchemy20]_
 
 .. figure:: img/sqlalchemy-onion.png

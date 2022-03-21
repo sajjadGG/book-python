@@ -1,15 +1,8 @@
 FuncProg Higher-Order
 =====================
-
-
-Important
----------
 * Function can take other function as arguments
 * Function can return function
 
-
-Example
--------
 >>> def lower():
 ...     ...
 >>>

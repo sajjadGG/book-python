@@ -1,29 +1,20 @@
 Model Relations
 ===============
-
-.. important::
-
-    * ForeignKey vs PrimaryKey
-    * ForeignKey vs CompositeForeignKey
-    * Relation 1 to 1
-    * Relation 1 to Many
-    * Relation Many to Many
-    * ``lazy loading``
-    * ``joined loading``
-    * ``subquery loading``
-    * ``select IN loading``
-    * ``raise loading``
-    * ``no loading``
-
-
-About
------
 * ForeignKey vs PrimaryKey
 * ForeignKey vs CompositeForeignKey
 * Relation 1 to 1
 * Relation 1 to Many
 * Relation Many to Many
+* ``lazy loading``
+* ``joined loading``
+* ``subquery loading``
+* ``select IN loading``
+* ``raise loading``
+* ``no loading``
 
+
+About
+-----
 The primary forms of relationship loading are [#saDocsLoadingRelationships]_:
 
 ``lazy loading`` - Lazy Loading

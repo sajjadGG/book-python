@@ -2,8 +2,6 @@ Good Practices
 ==============
 
 
-Important
----------
 .. figure:: img/goodpractices-programmer-exp.png
 
     Code Complexity vs. Programmer Experience

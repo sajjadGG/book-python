@@ -1,11 +1,8 @@
 Machine Learning Introduction
 =============================
-
-.. important::
-
-    * Teaching computer how to do operations without explicitly hard-coding it.
-    * With huge amounts of data we are dealing currently and ever increasing
-      computation power the analysis requires a new approach
+* Teaching computer how to do operations without explicitly hard-coding it.
+* With huge amounts of data we are dealing currently and ever increasing
+  computation power the analysis requires a new approach
 
 .. epigraph::
     Machine Learning is a field of study that gives computers the ability to

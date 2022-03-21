@@ -1,10 +1,7 @@
 Multiprocessing About
 =====================
-
-.. important::
-
-    * IPC - Inter-Process Communication
-    * Aby ``pickle`` mógł odtworzyć obiekt, musi posiadać jego definicję - klasę
+* IPC - Inter-Process Communication
+* Aby ``pickle`` mógł odtworzyć obiekt, musi posiadać jego definicję - klasę
 
 .. glossary::
 

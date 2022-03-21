@@ -1,17 +1,14 @@
 Core Operators
 ==============
-
-.. important::
-
-    * ``=`` - equals
-    * ``!=`` - not equals
-    * ``>`` - greater then
-    * ``>=`` - greater or equal to
-    * ``<`` - less then
-    * ``<=`` - less or equal to
-    * ``between()`` - in between two values or dates
-    * Use ``!=`` and ``==`` instead ``is`` and ``is not``
-    * There is no ``in`` and ``not in`` operator overload
+* ``=`` - equals
+* ``!=`` - not equals
+* ``>`` - greater then
+* ``>=`` - greater or equal to
+* ``<`` - less then
+* ``<=`` - less or equal to
+* ``between()`` - in between two values or dates
+* Use ``!=`` and ``==`` instead ``is`` and ``is not``
+* There is no ``in`` and ``not in`` operator overload
 
 
 SetUp

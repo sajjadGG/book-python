@@ -1,11 +1,8 @@
 Model Define
 ============
-
-.. important::
-
-    * Models inherits from ``Base``
-    * Models represents objects in a database
-    * They are the most important entity in the project
+* Models inherits from ``Base``
+* Models represents objects in a database
+* They are the most important entity in the project
 
 
 SetUp

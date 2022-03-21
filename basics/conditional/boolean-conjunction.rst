@@ -2,8 +2,6 @@ Boolean Conjunction
 ===================
 
 
-Important
----------
 .. code-block:: text
 
     1 & 1 -> 1

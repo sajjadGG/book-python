@@ -1,11 +1,8 @@
 Func Group
 ==========
-
-.. important::
-
-    * ``grouping_sets`` - Implement the GROUPING SETS grouping operation
-    * ``next_value`` - Represent the 'next value', given a Sequence as its single argument
-    * ``rollup`` - Implement the ROLLUP grouping operation
+* ``grouping_sets`` - Implement the GROUPING SETS grouping operation
+* ``next_value`` - Represent the 'next value', given a Sequence as its single argument
+* ``rollup`` - Implement the ROLLUP grouping operation
 
 
 About

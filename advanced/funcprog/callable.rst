@@ -1,9 +1,6 @@
 FuncProg Callable
 =================
 
-
-Important
----------
 >>> def hello():
 ...     return 'Hello World'
 >>>

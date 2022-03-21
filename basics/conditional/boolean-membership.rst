@@ -1,19 +1,12 @@
 Boolean Membership
 ==================
-
-
-Important
----------
 * ``in`` checks whether value is in sequence
 * works with ``str``, ``list``, ``tuple``, ``set``, ``dict``
-* Computational complexity for checking if sequence "contains":
-
-    * O(n) - ``in str``
-    * O(n) - ``in list``
-    * O(n) - ``in tuple``
-    * O(1) - ``in set``
-    * O(1) - ``in dict``
-
+* O(n) - ``in str``
+* O(n) - ``in list``
+* O(n) - ``in tuple``
+* O(1) - ``in set``
+* O(1) - ``in dict``
 * More information in `Performance Optimization Contains`
 
 

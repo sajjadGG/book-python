@@ -1,9 +1,6 @@
 Decorator Wrapper
 =================
-
-
-Important
----------
+* ``func`` is a reference to function which is being decorated
 * Name ``wrapper`` is just a convention
 * Wrapper can be: function, method, lambda or class
 * If you know names of the arguments you can use it in wrapper

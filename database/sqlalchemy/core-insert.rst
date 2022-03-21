@@ -1,14 +1,8 @@
 Core Insert
 ===========
+* ``insert()`` is a method of a Table object
+* It could be also used as a object factory
 
-.. important::
-
-    * ``insert()`` is a method of a Table object
-    * It could be also used as a object factory
-
-
-About
------
 >>> from sqlalchemy import insert
 
 

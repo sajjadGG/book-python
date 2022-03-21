@@ -1,9 +1,5 @@
 FuncProg First-class Functions
 ==============================
-
-
-Important
----------
 * Function can be assigned to variable
 * Function can be stored in data structures such as hash tables, lists, ...
 * Function can be returned

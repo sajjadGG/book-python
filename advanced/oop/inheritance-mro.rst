@@ -1,9 +1,5 @@
 OOP Inheritance MRO
 ===================
-
-
-Important
----------
 * MRO - Method Resolution Order
 * Inheritance Diamond
 

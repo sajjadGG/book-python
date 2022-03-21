@@ -1,6 +1,7 @@
 OOP Class Metaclass
 ===================
-
+* Object is an instance of a class
+* Class is an instance of a Metaclass
 
 .. epigraph::
 
@@ -11,19 +12,12 @@ OOP Class Metaclass
 
     -- Tim Peters
 
-
-Important
----------
-* Object is an instance of a class
-* Class is an instance of a Metaclass
-
 .. figure:: img/oop-metaclass-inheritance.png
 
     Object is an instance of a Class.
     Class is an instance of a Metaclass.
     Metaclass is an instance of a type.
     Type is an instance of a type.
-
 
 When a class definition is executed, the following steps occur:
 
@@ -33,11 +27,18 @@ When a class definition is executed, the following steps occur:
     #. the class body is executed;
     #. the class object is created.
 
-When using the default metaclass type, or any metaclass that ultimately calls ``type.__new__``, the following additional customisation steps are invoked after creating the class object:
+When using the default metaclass type, or any metaclass that ultimately
+calls ``type.__new__``, the following additional customisation steps are
+invoked after creating the class object:
 
-    #. ``type.__new__`` collects all of the descriptors in the class namespace that define a ``__set_name__()`` method;
-    #. all of these ``__set_name__`` methods are called with the class being defined and the assigned name of that particular descriptor;
-    #. the ``__init_subclass__()`` hook is called on the immediate parent of the new class in its method resolution order. [#pydocclassobject]_
+    #. ``type.__new__`` collects all of the descriptors in the class
+       namespace that define a ``__set_name__()`` method;
+
+    #. all of these ``__set_name__`` methods are called with the class
+       being defined and the assigned name of that particular descriptor;
+
+    #. the ``__init_subclass__()`` hook is called on the immediate parent
+       of the new class in its method resolution order. [#pydocclassobject]_
 
 
 Syntax

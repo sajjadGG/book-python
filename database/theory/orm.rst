@@ -1,16 +1,9 @@
 Theory Object-Relational Mapping
 ================================
-
-
-Important
----------
 * ORM - Object-relational mapping
 * Converts (`map`) between objects in code and database tables (`relations`)
 * Declarative - First define model, which then maps to the database tables
 
-
-About
------
 Object–relational mapping (ORM, O/RM, and O/R mapping tool) in computer
 science is a programming technique for converting data between incompatible
 type systems using object-oriented programming languages. This creates, in

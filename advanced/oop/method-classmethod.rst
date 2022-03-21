@@ -1,16 +1,9 @@
 OOP Method Classmethod
 ======================
-
-
-Important
----------
 * Using class as namespace
 * Will pass class as a first argument
 * ``self`` is not required
 
-
-Syntax
-------
 Dynamic methods:
 
 >>> class MyClass:

@@ -1,9 +1,5 @@
 Generator Yield From
 ====================
-
-
-Important
----------
 * Since Python 3.3: :pep:`380` -- Syntax for Delegating to a Subgenerator
 * Helps with refactoring generators
 * Useful for large generators which can be split into smaller ones
@@ -11,6 +7,10 @@ Important
 * ``yield from`` terminates on ``GeneratorExit`` from other function
 * The value of the ``yield from`` expression is the first argument to the ``StopIteration`` exception raised by the iterator when it terminates
 * Return expr in a generator causes ``StopIteration(expr)`` to be raised upon exit from the generator
+
+>>> def run():
+...     yield from generator1()
+...     yield from generator2()
 
 
 Example

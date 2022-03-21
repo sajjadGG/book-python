@@ -1,10 +1,11 @@
 FuncProg Functools
 ==================
-
-
-Important
----------
 * ``import functools``
+* ``functools.partial()``
+* ``functools.partialmethod()``
+* ``functools.reduce()``
+* ``functools.singledispatch()``
+* ``functools.singledispatchmethod()``
 
 >>> import functools
 >>>

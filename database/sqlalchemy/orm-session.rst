@@ -1,11 +1,8 @@
 Connection Session
 ==================
-
-.. important::
-
-    * Session manages persistence operations for ORM-mapped objects
-    * 1.0 style (legacy)
-    * 2.0 style (with context managers)
+* Session manages persistence operations for ORM-mapped objects
+* 1.0 style (legacy)
+* 2.0 style (with context managers)
 
 .. glossary::
 

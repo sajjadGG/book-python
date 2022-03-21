@@ -1,18 +1,12 @@
 Connection Pool
 ===============
+* Establishing a new database connection is time consuming
+* Connection Pool - a collection of connections, which lives longer than requests
+* Establish several connections at the beginning
+* Add them to the so called 'connection pool'
+* Use them for request processing
+* After request is process the connection is returned to the pool
 
-.. important::
-
-    * Establishing a new database connection is time consuming
-    * Connection Pool - a collection of connections, which lives longer than requests
-    * Establish several connections at the beginning
-    * Add them to the so called 'connection pool'
-    * Use them for request processing
-    * After request is process the connection is returned to the pool
-
-
-About
------
 Normally the database connection would be established as soon as the request
 comes in and would thrive until disconnection on request processing end.
 Establishing a new database connection involves in three-way handshake (for

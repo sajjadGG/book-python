@@ -1,12 +1,9 @@
 Core Result
 ===========
-
-.. important::
-
-    * ``.all()``
-    * ``.first()``
-    * ``.one()`` - returns exactly one row
-    * ``.one_or_none()``
+* ``.all()``
+* ``.first()``
+* ``.one()`` - returns exactly one row
+* ``.one_or_none()``
 
 
 SetUp

@@ -1,26 +1,24 @@
 AsyncIO Event Loop
 ==================
+* Async code can only run inside an event loop.
+* The event loop is the driver code that manages the cooperative multitasking.
+* You can create multiple threads and run different event loops in each of them.
+* Python will create a default event loop only in Main Thread
+* Python will not create an event loop automatically for you on any other than main thread by default, this is to prevent from having multiple event lops created explicitly
+* Event loop can execute only one callback (coroutine) at a time
+* Some callbacks (coroutines) can schedule themselves once again (trampoline)
+* Reactors
+* Proactors
 
-.. important::
-
-    * Async code can only run inside an event loop.
-    * The event loop is the driver code that manages the cooperative multitasking.
-    * You can create multiple threads and run different event loops in each of them.
-    * Python will create a default event loop only in Main Thread
-    * Python will not create an event loop automatically for you on any other than main thread by default, this is to prevent from having multiple event lops created explicitly
-    * Event loop can execute only one callback (coroutine) at a time
-    * Some callbacks (coroutines) can schedule themselves once again (trampoline)
-    * Reactors
-    * Proactors
-
-
-About
------
 For example, Django uses the main thread to wait for incoming requests, so
 we can't run an asyncio event loop there, but we can start a separate
 worker thread for our event loop [#Poirier2021]_.
 
-An event loop runs in a thread (typically the main thread) and executes all callbacks and Tasks in its thread. While a Task is running in the event loop, no other Tasks can run in the same thread. When a Task executes an await expression, the running Task gets suspended, and the event loop executes the next Task. [#pydocMultithreading]_
+An event loop runs in a thread (typically the main thread) and executes all
+callbacks and Tasks in its thread. While a Task is running in the event loop,
+no other Tasks can run in the same thread. When a Task executes an await
+expression, the running Task gets suspended, and the event loop executes
+the next Task. [#pydocMultithreading]_
 
 .. figure:: img/asyncio-eventloop-sync.png
 

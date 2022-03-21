@@ -1,9 +1,5 @@
 Dragon (version release candidate)
 ==================================
-
-
-About
------
 * Assignment: Dragon (version release candidate)
 * Complexity: hard
 * Lines of code: 50 lines

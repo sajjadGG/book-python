@@ -1,15 +1,11 @@
-Decorate Method
-===============
-
-
 .. testsetup::
 
     def mydecorator(method):
         return method
 
 
-Important
----------
+Decorate Method
+===============
 * ``mydecorator`` is a decorator name
 * ``method`` is a method name
 * ``self`` is an instance

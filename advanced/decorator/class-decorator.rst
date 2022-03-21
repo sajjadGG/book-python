@@ -1,9 +1,5 @@
 Decorator Class
 ===============
-
-
-Important
----------
 * ``MyDecorator`` is a decorator name
 * ``myfunction`` is a function name
 

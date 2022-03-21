@@ -1,9 +1,5 @@
 Decorator Types
 ===============
-
-
-Important
----------
 By type:
 
     * Function decorators

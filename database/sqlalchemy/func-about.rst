@@ -1,13 +1,10 @@
 Func About
 ==========
-
-.. important::
-
-    * Date Functions
-    * Group Functions
-    * Numeric Functions
-    * String Functions
-    * System Functions
+* Date Functions
+* Group Functions
+* Numeric Functions
+* String Functions
+* System Functions
 
 
 Date Functions

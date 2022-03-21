@@ -1,23 +1,17 @@
 Schema Reflection
 =================
+* SQLAlchemy allows for database reflection
 
-.. important::
-
-    * SQLAlchemy allows for database reflection
-
-.. glossary::
-
-    Reflection
-        Loading Table objects based on reading from an existing database.
-
-
-About
------
 SQLAlchemy tool ``Automap`` does the reflection of database and figures out
 how to do the mapping dynamically.
 
 There is third-party tool ``SQLAutoC ode`` that generates the files (Python
 code) for you based on introspected tables. This is more robust solution.
+
+.. glossary::
+
+    Reflection
+        Loading Table objects based on reading from an existing database.
 
 
 Reflection

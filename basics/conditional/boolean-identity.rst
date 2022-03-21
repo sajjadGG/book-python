@@ -1,11 +1,8 @@
 Boolean Identity
 ================
-
-.. important::
-
-    * ``=`` assignment
-    * ``==`` checks for object equality
-    * ``is`` checks for object identity
+* ``=`` assignment
+* ``==`` checks for object equality
+* ``is`` checks for object identity
 
 
 Identity Check

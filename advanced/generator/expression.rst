@@ -1,20 +1,11 @@
 Generator Expression
 ====================
-
-
-Important
----------
-Comprehensions:
-
-    * Executes instantly
-    * Stored in the memory until end of a program
-    * When using values more than one
-
-Generator Expressions:
-
-    * Lazy evaluated
-    * Cleared once they are executed
-    * When using value once (for example in the loop iterator)
+* Comprehensions executes instantly
+* Comprehensions are stored in the memory until end of a program
+* Comprehensions should be used when accessing values more than one
+* Generator Expressions are lazy evaluated
+* Generator Expressions are cleared once they are executed
+* Generator Expressions should be used when accessing value once (for example in the loop)
 
 
 List Comprehension

@@ -1,13 +1,5 @@
 OOP Method About
 ================
-
-
-Important
----------
-
-
-Method Names
-------------
 * ``name(self)`` - public method
 * ``_name(self)`` - protected method (non-public by convention)
 * ``__name(self)`` - private method (name mangling)

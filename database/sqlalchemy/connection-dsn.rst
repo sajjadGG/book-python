@@ -1,15 +1,9 @@
 Connection DSN
 ==============
+* DSN - Database Source Name
+* Format: ``db://user:password@host:port/database?opt1=val1&opt2=val2``
+* :rfc:`1738` -- Uniform Resource Locators (URL) [#RFC1738]_
 
-.. important::
-
-    * DSN - Database Source Name
-    * Format: ``db://user:password@host:port/database?opt1=val1&opt2=val2``
-    * :rfc:`1738` -- Uniform Resource Locators (URL) [#RFC1738]_
-
-
-About
------
 Different database drivers use different connection parameters (arguments to
 the ``.connect()`` method. SQLAlchemy uses consistent URL format (DSN) known
 from JDBC or ODBC connections.

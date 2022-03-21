@@ -1,6 +1,3 @@
-Boolean Negation
-================
-
 .. testsetup::
 
     # Simulate user input (for test automation)
@@ -8,13 +5,10 @@ Boolean Negation
     input = MagicMock(side_effect=['', 'Mark Watney'])
 
 
-Important
----------
+Boolean Negation
+================
 * ``not`` logically inverts
 
-
-Example
--------
 >>> not True
 False
 

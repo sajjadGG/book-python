@@ -1,9 +1,5 @@
 FuncProg Lambda
 ===============
-
-
-Important
----------
 * Lambda - Anonymous functions
 * When function is used once
 * When function is short
@@ -13,13 +9,6 @@ Important
 
     lambda
         Anonymous function
-
-
-Syntax
-------
-.. code-block:: python
-
-    lambda <arguments>: <expression>
 
 Lambda Expressions:
 
@@ -33,6 +22,13 @@ Equivalent functions:
 
 >>> def f(x,y):
 ...     return x+y
+
+
+Syntax
+------
+.. code-block:: python
+
+    lambda <arguments>: <expression>
 
 
 Convention

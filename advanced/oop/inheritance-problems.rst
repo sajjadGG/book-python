@@ -2,8 +2,8 @@ OOP Inheritance Problems
 ========================
 
 
-Important
----------
+About
+-----
 Please excuse me, for code style in this chapter.
 Instead writing:
 

@@ -1,15 +1,19 @@
 Compilers and Interpreters
 ==========================
 
-
-Important
----------
-Sam Python jest tak naprawdę tylko specyfikacją składni oraz wyglądu biblioteki standardowej. Python ma obecnie kilka interpreterów z których najbardziej popularny jest cPython, który jest wydawany razem z nową wersją specyfikacji języka.
+Sam Python jest tak naprawdę tylko specyfikacją składni oraz wyglądu
+biblioteki standardowej. Python ma obecnie kilka interpreterów z których
+najbardziej popularny jest cPython, który jest wydawany razem z nową
+wersją specyfikacji języka.
 
 
 cPython
 -------
-Domyślną wersją Pythona jest cPython. Jest to tzw. implementacja wzorcowa i to jej kompilator jest wydawany wraz ze specyfikacją nowych funkcjonalności przy każdym wydaniu Python. Sam kompilator jest rozwijany w języku C. cPython jest najbardziej popularną dystrybucją z wszystkich wydań. W poniższych materiałach to właśnie z tej wersji będziemy korzystać.
+Domyślną wersją Pythona jest cPython. Jest to tzw. implementacja wzorcowa
+i to jej kompilator jest wydawany wraz ze specyfikacją nowych funkcjonalności
+przy każdym wydaniu Python. Sam kompilator jest rozwijany w języku C.
+cPython jest najbardziej popularną dystrybucją z wszystkich wydań.
+W poniższych materiałach to właśnie z tej wersji będziemy korzystać.
 
 
 Cython

@@ -1,16 +1,13 @@
 OOP Abstract Protocol
 =====================
-
-
-Important
----------
 * :pep:`544` -- Protocols: Structural subtyping (static duck typing)
 * Since Python 3.8
 * Protocol describe an interface, not an implementation
 * Protocol classes should not have method implementations
 * Protocol can describe both methods and attributes
 
-A class object is considered an implementation of a protocol if accessing all members on it results in types compatible with the protocol members.
+A class object is considered an implementation of a protocol if accessing
+all members on it results in types compatible with the protocol members.
 
 
 Syntax

@@ -1,24 +1,15 @@
 FuncProg About
 ==============
-
-
-Important
----------
 * Programming paradigm
 * Programs are constructed by applying and composing functions
 * Functions are treated as first-class citizens
+* Functional programming avoids side effects
+* Functional programming provides referential transparency
+* Instead of loop use ``map`` and recurrence
 
 * Functions can be bound to names (including local identifiers), passed
   as arguments, and returned from other functions, just as any other data
   type can [#WikipediaFunc]_
-
-* Functional programming avoids side effects, which are used in imperative
-  programming to implement state and I/O
-
-* Pure functional programming completely prevents side-effects and
-  provides referential transparency
-
-* Higher-order functions are rarely used in older imperative programming.
 
 * Imperative program will use a loop to traverse and modify a list, while
   a functional program, would prefer using a higher-order ``map`` function
@@ -28,13 +19,6 @@ Important
 * Restricting side effects, can decrease number of bugs, be easier to
   debug and test, and be more suited to formal verification [#Hughes1984]_
   [#Hudak1989]_
-
-* Functional programming languages are typically less efficient in their
-  use of CPU and memory than imperative languages such as C, Java, Python
-  [#Paulson1996]_
-
-* This is due that some mutable data structures like arrays have a very
-  straightforward implementation using present hardware
 
 
 References

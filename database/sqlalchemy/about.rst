@@ -1,14 +1,11 @@
 SQLAlchemy About
 ================
-
-.. important::
-
-    * ORM converts Python objects to database rows
-    * ORM converts database rows to Python objects
-    * ORM provides abstraction over database layer
-    * ORM allows for object like interaction with database
-    * ORM provides ability to migrate database schema
-    * SQAlchemy is the most frequently used database ORM in Python [#PythonDeveloperSurvey2020]_
+* ORM converts Python objects to database rows
+* ORM converts database rows to Python objects
+* ORM provides abstraction over database layer
+* ORM allows for object like interaction with database
+* ORM provides ability to migrate database schema
+* SQAlchemy is the most frequently used database ORM in Python [#PythonDeveloperSurvey2020]_
 
 .. epigraph::
 

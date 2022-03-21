@@ -1,9 +1,7 @@
 Decorator Arguments
 ===================
-.. important::
-
-    * Used for passing extra configuration to decorators
-    * Use more one level of nesting
+* Used for passing extra configuration to decorators
+* Use more one level of nesting
 
 
 Syntax

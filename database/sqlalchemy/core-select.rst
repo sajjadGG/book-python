@@ -1,14 +1,8 @@
 Core Select
 ===========
+* Method chaining
+* Note the dot ``.`` at the end of the select line
 
-.. important::
-
-    * Method chaining
-    * Note the dot ``.`` at the end of the select line
-
-
-About
------
 >>> from sqlalchemy import select
 
 

@@ -1,9 +1,5 @@
 Complexity
 ==========
-
-
-Important
----------
 * Computational Complexity
 * Memory Complexity
 * Cognitive Complexity

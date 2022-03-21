@@ -1,9 +1,6 @@
 FuncProg Function Attributes
 ============================
 
-
-Important
----------
 >>> def hello():
 ...     return 'Hello World'
 >>>

@@ -1,9 +1,7 @@
 Boolean Disjunction
 ===================
+* ``or``
 
-
-Important
----------
 .. code-block:: text
 
     1 | 1 -> 1

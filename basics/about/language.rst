@@ -1,14 +1,5 @@
 Python Language
 ===============
-
-
-.. figure:: img/python-logo.png
-
-    Python Logo
-
-
-Important
----------
 * Turing complete, general purpose language
 * Multi platform
 * Dynamic typing with automatic memory allocation and GC
@@ -19,6 +10,10 @@ Important
 * Very good standard system library
 * Huge ecosystem of external open source libraries
 * Open Source created by non-profit Python Software Foundation
+
+.. figure:: img/python-logo.png
+
+    Python Logo
 
 
 Which Version?

@@ -239,6 +239,7 @@ if html_theme == 'sphinx_rtd_theme':
             '_static/css/print.css'],
         'script_files': [
             '_static/js/jquery.min.js',
+            '_static/js/admonition-important.js',
             '_static/js/assignment-numbers.js',
             '_static/js/menu-search.js',
             '_static/js/menu-autonumber.js',

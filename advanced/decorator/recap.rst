@@ -1,9 +1,5 @@
 Decorator Recap
 ===============
-
-
-Important
----------
 By type:
 
     * Function decorators

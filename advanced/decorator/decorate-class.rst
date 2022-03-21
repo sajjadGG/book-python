@@ -1,9 +1,5 @@
 Decorate Class
 ==============
-
-
-Important
----------
 * ``mydecorator`` is a decorator name
 * ``MyClass`` is a class name
 

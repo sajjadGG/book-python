@@ -1,11 +1,8 @@
 AsyncIO Queue
 =============
-
-.. important::
-
-    * ``asyncio`` queues are designed to be similar to classes of the ``queue`` module.
-    * Although ``asyncio`` queues are not thread-safe, they are designed to be used specifically in async/await code.
-    * Note that methods of asyncio queues don't have a timeout parameter; use`` asyncio.wait_for()`` function to do queue operations with a timeout.
+* ``asyncio`` queues are designed to be similar to classes of the ``queue`` module.
+* Although ``asyncio`` queues are not thread-safe, they are designed to be used specifically in async/await code.
+* Note that methods of asyncio queues don't have a timeout parameter; use`` asyncio.wait_for()`` function to do queue operations with a timeout.
 
 
 FIFO Queue

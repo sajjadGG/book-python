@@ -1,12 +1,13 @@
 Generator Builtin
 =================
-
-
-Important
----------
-* Generator like objects
+* Generator-like objects
 * Behaves similar, but is not generator
-
+* ``range()``
+* ``enumerate()``
+* ``zip()``
+* ``map()``
+* ``filter()``
+* ``import itertools``
 
 Range
 -----

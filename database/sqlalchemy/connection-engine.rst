@@ -1,15 +1,12 @@
 Connection Engine
 =================
-
-.. important::
-
-    * ``create_engine()`` builds a factory for database connections
-    * ``create_engine()`` uses Database Source Name (DSN) for configuration
-    * ``echo=True`` - if True, the Engine will log all statements to stdout
-    * ``future=True`` - v2.0 compatibility mode (works only in v1.4)
-    * Engine is lazily connected
-    * Engine object supports context managers ``with`` block
-    * ``engine.connect()`` method explicitly connects to the database
+* ``create_engine()`` builds a factory for database connections
+* ``create_engine()`` uses Database Source Name (DSN) for configuration
+* ``echo=True`` - if True, the Engine will log all statements to stdout
+* ``future=True`` - v2.0 compatibility mode (works only in v1.4)
+* Engine is lazily connected
+* Engine object supports context managers ``with`` block
+* ``engine.connect()`` method explicitly connects to the database
 
 
 Glossary

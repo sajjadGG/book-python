@@ -1,9 +1,14 @@
 Generator Expression
 ====================
+* ``(x for x in range(0,5))``
+* Used only once
+
+>>> (x for x in range(0,5))  # doctest: +ELLIPSIS
+<generator object <genexpr> at 0x...>
 
 
-Important
----------
+Examples
+--------
 >>> _ = list(x for x in range(0,5))      # list comprehension
 >>> _ = tuple(x for x in range(0,5))     # tuple comprehension
 >>> _ = set(x for x in range(0,5))       # set comprehension
@@ -13,12 +18,6 @@ Important
 >>> _ = (x for x in range(0,5))          # generator expression
 >>> _ = {x for x in range(0,5)}          # set comprehension
 >>> _ = {x:x for x in range(0,5)}        # dict comprehension
-
-
-Syntax
-------
->>> (x for x in range(0,5))  # doctest: +ELLIPSIS
-<generator object <genexpr> at 0x...>
 
 
 Why Round Brackets?

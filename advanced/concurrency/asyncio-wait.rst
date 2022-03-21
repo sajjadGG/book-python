@@ -1,12 +1,9 @@
 AsyncIO Wait
 ============
-
-.. important::
-
-    * ``asyncio.wait(aws, timeout)``
-    * ``wait()`` - when a timeout occurs: does not cancel the futures
-    * If aw is a coroutine it is automatically scheduled as a Task
-    * Returns those implicitly created Task objects in (done, pending) sets
+* ``asyncio.wait(aws, timeout)``
+* ``wait()`` - when a timeout occurs: does not cancel the futures
+* If aw is a coroutine it is automatically scheduled as a Task
+* Returns those implicitly created Task objects in (done, pending) sets
 
 
 SetUp
