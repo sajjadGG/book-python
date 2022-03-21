@@ -2,7 +2,7 @@ NoSQL Other
 ===========
 
 
-Rationale
+Important
 ---------
 * Tuple Store
 * Triplestore (RDF store)

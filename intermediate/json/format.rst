@@ -2,7 +2,7 @@ JSON Format
 ===========
 
 
-Rationale
+Important
 ---------
 * JavaScript Object Notation
 * JSON format is similar to ``dict`` notation in Python

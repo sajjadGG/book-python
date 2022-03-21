@@ -2,7 +2,7 @@ SQL Constraints
 ===============
 
 
-Rationale
+Important
 ---------
 * Does something automatically
 * Prevents from duplicating information

@@ -2,7 +2,7 @@ OOP Inheritance Problems
 ========================
 
 
-Rationale
+Important
 ---------
 >>> class Car:
 ...     def engine_start(self): ...

@@ -2,7 +2,7 @@ UML Sequence Diagram
 ====================
 
 
-Rationale
+Important
 ---------
 * https://mermaid-js.github.io/mermaid/#/sequenceDiagram
 

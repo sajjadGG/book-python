@@ -2,7 +2,7 @@ Function Parameters
 ===================
 
 
-Rationale
+Important
 ---------
 * Parameter - Receiving variable used within the function
 * Required parameter:

@@ -8,7 +8,7 @@
     * Entries in a column are same type
 
 
-Rationale
+Important
 ---------
 * Atomic Values
 * Unique Identifiers (rows uniquely identified by ``PRIMARY KEY``)

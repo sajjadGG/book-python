@@ -2,7 +2,7 @@ Map
 ===
 
 
-Rationale
+Important
 ---------
 * Map (convert) elements in sequence
 * Generator (lazy evaluated)

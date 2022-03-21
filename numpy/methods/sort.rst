@@ -2,7 +2,7 @@ Array Sort
 ==========
 
 
-Rationale
+Important
 ---------
 
 

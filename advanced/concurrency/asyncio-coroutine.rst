@@ -2,7 +2,7 @@ AsyncIO Coroutine
 =================
 
 
-Rationale
+Important
 ---------
 * Coroutine function and coroutine object are two different things
 * Coroutine function is the definition (``async def``)

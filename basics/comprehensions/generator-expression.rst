@@ -2,7 +2,7 @@ Generator Expression
 ====================
 
 
-Rationale
+Important
 ---------
 >>> _ = list(x for x in range(0,5))      # list comprehension
 >>> _ = tuple(x for x in range(0,5))     # tuple comprehension

@@ -2,7 +2,7 @@ Unpack Assignment Expression
 ============================
 
 
-Rationale
+Important
 ---------
 * Since Python 3.8: :pep:`572` -- Assignment Expressions
 * Also known as "Walrus operator"

@@ -2,7 +2,7 @@ OOP Inheritance vs. Composition
 ===============================
 
 
-Rationale
+Important
 ---------
 * Composition over Inheritance
 

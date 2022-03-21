@@ -2,7 +2,7 @@ Decorator Types
 ===============
 
 
-Rationale
+Important
 ---------
 By type:
 

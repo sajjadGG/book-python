@@ -2,7 +2,7 @@ Gateway
 =======
 
 
-Rationale
+Important
 ---------
 * EN: Gateway
 * PL: Bramka

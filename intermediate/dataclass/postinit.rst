@@ -2,7 +2,7 @@ Dataclass Postinit
 ==================
 
 
-Rationale
+Important
 ---------
 * Dataclasses generate ``__init__()``
 * Overloading ``__init__()`` manually will destroy it

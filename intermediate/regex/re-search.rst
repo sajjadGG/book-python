@@ -2,7 +2,7 @@ RE Search
 =========
 
 
-Rationale
+Important
 ---------
 * ``re.search()``
 * Searches if pattern contains a string

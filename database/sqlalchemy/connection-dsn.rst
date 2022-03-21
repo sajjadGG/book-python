@@ -8,7 +8,7 @@ Connection DSN
     * :rfc:`1738` -- Uniform Resource Locators (URL) [#RFC1738]_
 
 
-Rationale
+Important
 ---------
 Different database drivers use different connection parameters (arguments to
 the ``.connect()`` method. SQLAlchemy uses consistent URL format (DSN) known

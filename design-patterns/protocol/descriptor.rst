@@ -2,7 +2,7 @@ Protocol Descriptor
 ===================
 
 
-Rationale
+Important
 ---------
 * Add managed attributes to objects
 * Outsource functionality into specialized classes

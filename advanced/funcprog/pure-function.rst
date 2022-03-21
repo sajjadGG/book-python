@@ -2,7 +2,7 @@ FuncProg Pure Functions
 =======================
 
 
-Rationale
+Important
 ---------
 * Pure functions have no side effects (i.e. memory, state, I/O)
 

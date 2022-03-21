@@ -2,7 +2,7 @@ Operator Boolean
 ================
 
 
-Rationale
+Important
 ---------
 .. csv-table:: Boolean Operator Overload
     :header: "Operator", "Method"

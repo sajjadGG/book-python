@@ -2,7 +2,7 @@ Introduction
 ============
 
 
-Rationale
+Important
 ---------
 * Structural - Relationships between objects
 * Behavioral - Communication and interaction between objects

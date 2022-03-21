@@ -2,7 +2,7 @@ Theory Object-Relational Mapping
 ================================
 
 
-Rationale
+Important
 ---------
 * ORM - Object-relational mapping
 * Converts (`map`) between objects in code and database tables (`relations`)

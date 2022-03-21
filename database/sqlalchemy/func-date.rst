@@ -12,7 +12,7 @@ Func Count
 
 
 
-Rationale
+Important
 ---------
 .. csv-table:: SQL and Generic Functions
     :widths: 20,80

@@ -2,7 +2,7 @@ Pandas Read Python
 ==================
 
 
-Rationale
+Important
 ---------
 * ``pd.DataFrame()``
 

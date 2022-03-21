@@ -2,7 +2,7 @@ Dataclass Metadata
 ==================
 
 
-Rationale
+Important
 ---------
 * ``metadata`` - For storing extra information about field
 * ``dict | None``

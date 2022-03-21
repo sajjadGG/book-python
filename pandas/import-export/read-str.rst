@@ -2,7 +2,7 @@ Pandas Read String
 ==================
 
 
-Rationale
+Important
 ---------
 * File paths works also with URLs
 * `io.StringIO` Converts ``str`` to File-like object

@@ -2,7 +2,7 @@ DataFrame NA
 ============
 
 
-Rationale
+Important
 ---------
 * ``axis=0`` - rows
 * ``axis=1`` - columns

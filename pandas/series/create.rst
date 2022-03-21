@@ -2,7 +2,7 @@ Series Create
 =============
 
 
-Rationale
+Important
 ---------
 
 

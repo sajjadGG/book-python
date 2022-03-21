@@ -2,7 +2,7 @@ Sequence Unpack Slice
 =====================
 
 
-Rationale
+Important
 ---------
 * Slice argument must be ``int`` (positive, negative or zero)
 * Positive Index starts with ``0``

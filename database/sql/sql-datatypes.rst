@@ -2,7 +2,7 @@ SQL Data Types
 ==============
 
 
-Rationale
+Important
 ---------
 .. csv-table:: Data Types: Python vs SQLite3
     :header:  "Python Type", "SQLite Type"

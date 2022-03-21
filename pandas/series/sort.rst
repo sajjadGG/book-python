@@ -2,7 +2,7 @@ Series Sort
 ===========
 
 
-Rationale
+Important
 ---------
 
 

@@ -15,7 +15,7 @@ Model Relations
     * ``raise loading``
     * ``no loading``
 
-Rationale
+Important
 ---------
 * ForeignKey vs PrimaryKey
 * ForeignKey vs CompositeForeignKey

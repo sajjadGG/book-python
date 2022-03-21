@@ -2,7 +2,7 @@ Good Practices
 ==============
 
 
-Rationale
+Important
 ---------
 .. figure:: img/goodpractices-programmer-exp.png
 

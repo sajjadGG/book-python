@@ -6,7 +6,7 @@ Schema Reflection
     * SQLAlchemy allows for database reflection
 
 
-Rationale
+Important
 ---------
 .. glossary::
 

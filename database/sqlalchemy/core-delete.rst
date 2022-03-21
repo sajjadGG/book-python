@@ -2,7 +2,7 @@ Core Delete
 ===========
 
 
-Rationale
+Important
 ---------
 >>> from sqlalchemy import delete
 

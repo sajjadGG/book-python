@@ -2,7 +2,7 @@ Dataclass Inheritance
 =====================
 
 
-Rationale
+Important
 ---------
 * Dataclasses can inherit from other classes
 * Superclass not necessarily has to be dataclass

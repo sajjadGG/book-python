@@ -1,7 +1,7 @@
 Database API
 ============
 
-Rationale
+Important
 ---------
 * :pep:`249` -- Python Database API
 * DB API v2

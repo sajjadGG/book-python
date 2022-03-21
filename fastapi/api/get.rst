@@ -2,7 +2,7 @@ GET
 ===
 
 
-Rationale
+Important
 ---------
 * Resources
 * Query Parameters

@@ -2,7 +2,7 @@ Case Study ORM
 ==============
 
 
-Rationale
+Important
 ---------
 * ORM - Object-relational mapping
 * ORM has tools to convert (`map`) between objects in code and database tables (`relations`)

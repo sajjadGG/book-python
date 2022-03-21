@@ -2,7 +2,7 @@ Pytest
 ======
 
 
-Rationale
+Important
 ---------
 * Detailed info on failing assert statements (no need to remember self.assert* names);
 * Auto-discovery of test modules and functions;

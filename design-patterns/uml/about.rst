@@ -2,7 +2,7 @@ UML About
 =========
 
 
-Rationale
+Important
 ---------
 * Unified Modeling Language
 

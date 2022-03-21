@@ -27,7 +27,7 @@ Example
 [0, 1, 2, 3, 4]
 
 
-Rationale
+Important
 ---------
 * Loop leaks out values
 

@@ -2,7 +2,7 @@ Observer
 ========
 
 
-Rationale
+Important
 ---------
 * EN: Observer
 * PL: Obserwator

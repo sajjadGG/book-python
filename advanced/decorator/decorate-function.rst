@@ -2,7 +2,7 @@ Decorate Function
 =================
 
 
-Rationale
+Important
 ---------
 * Decorator must return reference to ``wrapper``
 * ``wrapper`` is a closure function

@@ -2,7 +2,7 @@ Protocol Reflection
 ===================
 
 
-Rationale
+Important
 ---------
 * When accessing an attribute
 * Built-in Functions:

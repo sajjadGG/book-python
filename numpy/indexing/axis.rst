@@ -2,7 +2,7 @@ Array Axis
 ==========
 
 
-Rationale
+Important
 ---------
 * ``axis`` is an index in ``a.shape``
 * Columns are always last

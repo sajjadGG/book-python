@@ -18,7 +18,7 @@ Func Count
     * ``ScalarFunctionColumn`` -
 
 
-Rationale
+Important
 ---------
 .. csv-table:: System Functions
     :widths: 20,80

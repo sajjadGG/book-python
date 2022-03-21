@@ -2,7 +2,7 @@ Query Join
 ==========
 
 
-Rationale
+Important
 ---------
 >>> q = session.query(User).\
 ...         join(User.addresses).\

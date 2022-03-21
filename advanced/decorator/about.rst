@@ -2,7 +2,7 @@ Decorator About
 ===============
 
 
-Rationale
+Important
 ---------
 * Decorator is an object, which takes another object as it's argument
 * Since Python 2.4: :pep:`318` -- Decorators for Functions and Methods

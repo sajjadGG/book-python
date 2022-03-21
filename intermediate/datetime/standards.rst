@@ -2,7 +2,7 @@ Datetime Standards
 ==================
 
 
-Rationale
+Important
 ---------
 * Date and time formats varies from country to country [#wikiDateTimeFormats]_
 

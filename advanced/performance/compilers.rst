@@ -2,7 +2,7 @@ Compilers and Interpreters
 ==========================
 
 
-Rationale
+Important
 ---------
 Sam Python jest tak naprawdę tylko specyfikacją składni oraz wyglądu biblioteki standardowej. Python ma obecnie kilka interpreterów z których najbardziej popularny jest cPython, który jest wydawany razem z nową wersją specyfikacji języka.
 

@@ -2,7 +2,7 @@ Tests Doctest
 =============
 
 
-Rationale
+Important
 ---------
 * Tests are always the most up-to-date code documentation
 * Tests cannot get out of sync from code

@@ -2,7 +2,7 @@ Scatter Plot
 ============
 
 
-Rationale
+Important
 ---------
 * Used to show correlation
 

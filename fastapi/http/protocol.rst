@@ -2,7 +2,7 @@ HTTP Protocol
 =============
 
 
-Rationale
+Important
 ---------
 * Request vs Response
 * URI vs URL vs URN

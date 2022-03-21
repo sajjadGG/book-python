@@ -2,7 +2,7 @@ AsyncIO Context Manager
 =======================
 
 
-Rationale
+Important
 ---------
 * ``__aenter__``
 * ``__aexit__``

@@ -2,7 +2,7 @@ DataFrame Join
 ==============
 
 
-Rationale
+Important
 ---------
 * pd.concat
 * pd.DataFrame.merge()

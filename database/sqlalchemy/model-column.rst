@@ -22,7 +22,7 @@ Model Column
     * ``comment=None``
 
 
-Rationale
+Important
 ---------
 * Documentation [#sqlalchemyColumn]_
 

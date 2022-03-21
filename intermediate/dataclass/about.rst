@@ -2,7 +2,7 @@ Dataclass About
 ===============
 
 
-Rationale
+Important
 ---------
 * Used for easier class definition
 * Since Python 3.7: :pep:`557` -- Data Classes
@@ -62,4 +62,3 @@ Use Case - 0x01
  Iris(sepal_length=6.3, sepal_width=2.9, petal_length=5.6, petal_width=1.8, species='virginica'),
  Iris(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5, species='versicolor'),
  Iris(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2, species='setosa')]
-

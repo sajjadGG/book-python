@@ -2,7 +2,7 @@ Abstract Factory
 ================
 
 
-Rationale
+Important
 ---------
 * EN: Abstract Factory
 * PL: Fabryka Abstrakcyjna

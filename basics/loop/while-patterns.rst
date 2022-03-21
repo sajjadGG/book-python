@@ -2,7 +2,7 @@ Loop While Patterns
 ===================
 
 
-Rationale
+Important
 ---------
 * Until
 * Infinite Loop

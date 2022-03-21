@@ -13,7 +13,7 @@ Multiprocessing About
     Starvation
 
 
-Rationale
+Important
 ---------
 * IPC - Inter-Process Communication
 * Aby ``pickle`` mógł odtworzyć obiekt, musi posiadać jego definicję - klasę

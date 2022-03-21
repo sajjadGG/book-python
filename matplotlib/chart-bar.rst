@@ -2,7 +2,7 @@ Bar Chart
 =========
 
 
-Rationale
+Important
 ---------
 * used to display single values
 

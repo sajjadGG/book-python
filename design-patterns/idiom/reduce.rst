@@ -2,7 +2,7 @@ Reduce
 ======
 
 
-Rationale
+Important
 ---------
 * Reduce sequence using function
 * Built-in

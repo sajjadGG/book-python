@@ -2,7 +2,7 @@ Matplotlib Scales
 =================
 
 
-Rationale
+Important
 ---------
 * Liniowa
 * Logarytmiczna

@@ -2,7 +2,7 @@ Loop While About
 ================
 
 
-Rationale
+Important
 ---------
 * Iterate over sequences (iterables)
 * Repeat `if` until result is `False`

@@ -14,7 +14,7 @@ Type Annotation Scalar
     -- Python Software Foundation
 
 
-Rationale
+Important
 ---------
 * Also known as: "type annotations", "type hints", "gradual typing"
 * Types are not required, and never will be

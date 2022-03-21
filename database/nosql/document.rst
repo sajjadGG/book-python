@@ -2,7 +2,7 @@ NoSQL Document
 ==============
 
 
-Rationale
+Important
 ---------
 * ArangoDB
 * Azure Cosmos DB

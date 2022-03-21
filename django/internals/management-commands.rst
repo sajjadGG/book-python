@@ -2,7 +2,7 @@ Management Commands
 ===================
 
 
-Rationale
+Important
 ---------
 Custom management commands are especially useful for running standalone scripts or for scripts that are periodically executed from the UNIX crontab or from Windows scheduled tasks control panel.
 

@@ -2,7 +2,7 @@ Syntax Group
 ============
 
 
-Rationale
+Important
 ---------
 * Catch expression results
 * Can be named or positional

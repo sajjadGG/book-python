@@ -2,7 +2,7 @@ Syntax Quantifier
 =================
 
 
-Rationale
+Important
 ---------
 Quantifier specifies how many occurrences of preceding qualifier or identifier.
 

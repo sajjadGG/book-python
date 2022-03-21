@@ -2,7 +2,7 @@ All
 ===
 
 
-Rationale
+Important
 ---------
 Return True if all elements of the iterable are true (or if the iterable is empty).
 

@@ -2,7 +2,7 @@ SQLAlchemy ORM
 ==============
 
 
-Rationale
+Important
 ---------
 * ORM - Object-relational mapping
 * ORM has tools to convert (`map`) between objects in code and database tables (`relations`)
@@ -182,4 +182,3 @@ Further Reading
 ---------------
 * https://fastapi.tiangolo.com/tutorial/sql-databases/
 * https://www.sqlalchemy.org
-

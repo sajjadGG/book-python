@@ -1,7 +1,7 @@
 XSLT
 ====
 
-Rationale
+Important
 ---------
 * Using ``lxml`` module
 

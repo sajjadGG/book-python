@@ -2,7 +2,7 @@ UML Relationship
 ================
 
 
-Rationale
+Important
 ---------
 * Arrow with empty triangle (but on picture is filled)
 * ``<|--`` - Inheritance

@@ -2,7 +2,7 @@ OOP Inheritance Problems
 ========================
 
 
-Rationale
+Important
 ---------
 Please excuse me, for code style in this chapter.
 Instead writing:

@@ -2,7 +2,7 @@ OOP Method Parameters
 =====================
 
 
-Rationale
+Important
 ---------
 * Methods are functions in the class
 * Prevents copy-paste code

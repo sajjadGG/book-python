@@ -2,7 +2,7 @@ Pandas Read CSV
 ===============
 
 
-Rationale
+Important
 ---------
 * File paths works also with URLs
 

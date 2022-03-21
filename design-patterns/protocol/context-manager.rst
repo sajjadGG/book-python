@@ -2,7 +2,7 @@ Protocol Context Manager
 ========================
 
 
-Rationale
+Important
 ---------
 * Files
 * Buffering data

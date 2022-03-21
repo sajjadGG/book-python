@@ -2,7 +2,7 @@ DataFrame Getitem
 =================
 
 
-Rationale
+Important
 ---------
 
 
@@ -29,7 +29,7 @@ SetUp
 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
 
-Rationale
+Important
 ---------
 * ``df.at[]``
 * ``df.loc[]``

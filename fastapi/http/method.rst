@@ -2,7 +2,7 @@ HTTP Methods
 ============
 
 
-Rationale
+Important
 ---------
 * ``GET`` - Read
 * ``POST`` - Create

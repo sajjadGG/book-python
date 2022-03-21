@@ -1,7 +1,7 @@
 Template Method
 ===============
 
-Rationale
+Important
 ---------
 * EN: Template Method
 * PL: Metoda szablonowa

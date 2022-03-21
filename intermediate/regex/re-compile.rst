@@ -2,7 +2,7 @@ RE Compile
 ==========
 
 
-Rationale
+Important
 ---------
 * ``re.compile()``
 * Used when pattern is reused (especially in the loop)

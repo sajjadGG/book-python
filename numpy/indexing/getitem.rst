@@ -10,7 +10,7 @@ SetUp
 >>> import numpy as np
 
 
-Rationale
+Important
 ---------
 * ``int``
 * ``list[int]``

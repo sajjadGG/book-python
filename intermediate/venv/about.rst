@@ -3,7 +3,7 @@ Module VENV
 
 
 
-Rationale
+Important
 ---------
 * Isolated Python environment
 * Allows to have multiple versions of Python for one project

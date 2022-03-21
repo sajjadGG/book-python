@@ -2,7 +2,7 @@ Generator About
 ===============
 
 
-Rationale
+Important
 ---------
 .. important::
 

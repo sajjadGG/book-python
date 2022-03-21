@@ -2,7 +2,7 @@ Schema
 ======
 
 
-Rationale
+Important
 ---------
 * Schema - also known as Model
 * Represents data in your system

@@ -12,7 +12,7 @@ Connection Engine
     * ``engine.connect()`` method explicitly connects to the database
 
 
-Rationale
+Important
 ---------
 .. glossary::
 

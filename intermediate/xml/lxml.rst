@@ -2,7 +2,7 @@ XML Module lxml
 ===============
 
 
-Rationale
+Important
 ---------
 * ``pip install lxml``
 

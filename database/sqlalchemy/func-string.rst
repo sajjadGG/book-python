@@ -8,7 +8,7 @@ Func Count
     * ``concat`` - The SQL CONCAT() function, which concatenates strings
 
 
-Rationale
+Important
 ---------
 .. csv-table:: SQL and Generic Functions
     :widths: 20,80

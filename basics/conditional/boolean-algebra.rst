@@ -2,7 +2,7 @@ Boolean Algebra
 ===============
 
 
-Rationale
+Important
 ---------
 >>> True and True or False
 True

@@ -2,7 +2,7 @@ Syntax Identifier
 =================
 
 
-Rationale
+Important
 ---------
 Identifiers specifies what to find.
 They are also called Character Classes.

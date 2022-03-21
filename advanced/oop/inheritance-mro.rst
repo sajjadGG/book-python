@@ -2,7 +2,7 @@ OOP Inheritance MRO
 ===================
 
 
-Rationale
+Important
 ---------
 * MRO - Method Resolution Order
 * Inheritance Diamond

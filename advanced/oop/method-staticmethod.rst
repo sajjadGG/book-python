@@ -2,7 +2,7 @@ OOP Method Staticmethod
 =======================
 
 
-Rationale
+Important
 ---------
 * Should **not** be in a class: method which don't use ``self`` in its body
 * Should be in class: if method takes ``self`` and use it (it requires instances to work)

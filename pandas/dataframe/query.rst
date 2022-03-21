@@ -2,7 +2,7 @@ DataFrame Query
 ===============
 
 
-Rationale
+Important
 ---------
 >>> # doctest: +SKIP
 ... df[df['sales'] > 50000]

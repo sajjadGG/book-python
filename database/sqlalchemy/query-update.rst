@@ -2,7 +2,7 @@ Query Update
 ============
 
 
-Rationale
+Important
 ---------
 
 

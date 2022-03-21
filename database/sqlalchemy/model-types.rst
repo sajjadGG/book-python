@@ -10,7 +10,7 @@ Model Types
     * Dates: DateTime, Date, Time, Interval
 
 
-Rationale
+Important
 ---------
 
 

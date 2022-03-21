@@ -2,7 +2,7 @@ Operator About
 ==============
 
 
-Rationale
+Important
 ---------
 * Operator Overload
 * Readable syntax

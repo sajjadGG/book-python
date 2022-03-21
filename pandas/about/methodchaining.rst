@@ -2,7 +2,7 @@ Method Chaining
 ===============
 
 
-Rationale
+Important
 ---------
 
 

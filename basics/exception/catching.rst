@@ -12,7 +12,7 @@ Exception Catching
     Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 
-Rationale
+Important
 ---------
 * ``try``
 * ``except``

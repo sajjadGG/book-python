@@ -2,7 +2,7 @@ Dragon ADR Position Change
 ==========================
 
 
-Rationale
+Important
 ---------
 * ADR - Architecture Design Records
 * Move dragon left by 10 and down by 20

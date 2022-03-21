@@ -2,7 +2,7 @@ Composite
 =========
 
 
-Rationale
+Important
 ---------
 * EN: Composite
 * PL: Kompozyt

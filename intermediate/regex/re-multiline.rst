@@ -2,7 +2,7 @@ RE Multiline
 ============
 
 
-Rationale
+Important
 ---------
 * ``re.MULTILINE`` - Flag turns on Multiline search
 * ``^`` - Matches the start of the string, and immediately after each newline

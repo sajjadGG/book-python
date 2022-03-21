@@ -2,7 +2,7 @@ OOP Stringify Nested
 ====================
 
 
-Rationale
+Important
 ---------
 * Printing ``list`` will call ``__repr__()`` method on each element
 

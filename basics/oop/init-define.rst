@@ -2,7 +2,7 @@ OOP Init Define
 ===============
 
 
-Rationale
+Important
 ---------
 * It's a first method run after object is initiated
 * All classes has default ``__init__()``

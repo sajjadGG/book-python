@@ -1,7 +1,7 @@
 Exit Status Code
 ================
 
-Rationale
+Important
 ---------
 * exit status ``0`` - no error
 * any other exit status - error

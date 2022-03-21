@@ -2,7 +2,7 @@ Protocol Iterator
 =================
 
 
-Rationale
+Important
 ---------
 * Used for iterating in a ``for`` loop
 

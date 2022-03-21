@@ -11,7 +11,7 @@ Connection Pool
     * After request is process the connection is returned to the pool
 
 
-Rationale
+Important
 ---------
 Normally the database connection would be established as soon as the request
 comes in and would thrive until disconnection on request processing end.

@@ -2,7 +2,7 @@ Settings
 ========
 
 
-Rationale
+Important
 ---------
 * ``local_settings.py``
 * settings dir

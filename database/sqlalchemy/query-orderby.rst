@@ -2,7 +2,7 @@ Query Order By
 ==============
 
 
-Rationale
+Important
 ---------
 * Ascending
 * Descending

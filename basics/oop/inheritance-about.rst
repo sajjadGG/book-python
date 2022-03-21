@@ -2,7 +2,7 @@ OOP Inheritance About
 =====================
 
 
-Rationale
+Important
 ---------
 * Child inherits all fields and methods from parent
 * Used to avoid code duplication

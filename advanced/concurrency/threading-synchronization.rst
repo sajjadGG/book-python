@@ -2,7 +2,7 @@ Threading Synchronization
 =========================
 
 
-Rationale
+Important
 ---------
 * Thread Synchronisation
 

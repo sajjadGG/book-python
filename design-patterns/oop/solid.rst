@@ -25,7 +25,7 @@ Patterns:
     * D.R.Y. - Do not Repeat Yourself
 
 
-Rationale
+Important
 ---------
 * SRP: The Single Responsibility Principle
 * OCP: The Open / Closed Principle

@@ -2,7 +2,7 @@ Generator Send
 ==============
 
 
-Rationale
+Important
 ---------
 * ``.send()`` method allows to pass value to the generator
 * ``data = yield`` will receive this "sent" value

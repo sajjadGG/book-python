@@ -8,7 +8,7 @@ Boolean Negation
     input = MagicMock(side_effect=['', 'Mark Watney'])
 
 
-Rationale
+Important
 ---------
 * ``not`` logically inverts
 

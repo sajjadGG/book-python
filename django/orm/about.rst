@@ -2,7 +2,7 @@ ORM
 ===
 
 
-Rationale
+Important
 ---------
 # .create()
 # .save()
@@ -711,4 +711,3 @@ Functions
 ...     .annotate(fullname=Concat('firstname', Value(' '), 'lastname'))
 ...     .values('fullname')
 <QuerySet [{'fullname': 'Melissa Lewis'}, {'fullname': 'Rick Martinez'}, {'fullname': 'Alex Vogel'}, {'fullname': 'Beth Johnssen'}, {'fullname': 'Jan Twardowski'}, {'fullname': 'Jan Twardowski'}]>
-

@@ -2,7 +2,7 @@ Syntax Qualifier
 ================
 
 
-Rationale
+Important
 ---------
 * Qualifier specifies what to find.
 * ``a`` - Exact

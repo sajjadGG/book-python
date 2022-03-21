@@ -2,7 +2,7 @@ Callback
 ========
 
 
-Rationale
+Important
 ---------
 * EN: Callback Design
 * PL:

@@ -2,7 +2,7 @@ Schema Metadata
 ===============
 
 
-Rationale
+Important
 ---------
 
 

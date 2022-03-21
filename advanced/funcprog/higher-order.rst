@@ -2,7 +2,7 @@ FuncProg Higher-Order
 =====================
 
 
-Rationale
+Important
 ---------
 * Function can take other function as arguments
 * Function can return function

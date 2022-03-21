@@ -2,7 +2,7 @@ NoSQL Column-Oriented
 =====================
 
 
-Rationale
+Important
 ---------
 * Amazon DynamoDB
 * Apache Accumulo

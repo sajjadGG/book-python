@@ -2,7 +2,7 @@ Decorator Class with Func
 =========================
 
 
-Rationale
+Important
 ---------
 * ``MyDecorator`` is a decorator name
 * ``myfunction`` is a function name

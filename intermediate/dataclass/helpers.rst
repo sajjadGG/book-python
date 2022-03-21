@@ -2,7 +2,7 @@ Dataclass Helpers
 =================
 
 
-Rationale
+Important
 ---------
 * ``fields()`` - Returns a tuple of Field objects
 * ``asdict()`` - converts the dataclass to a dict

@@ -2,7 +2,7 @@ Query Exists
 ============
 
 
-Rationale
+Important
 ---------
 
 

@@ -2,7 +2,7 @@ Query Count
 ===========
 
 
-Rationale
+Important
 ---------
 * https://docs.sqlalchemy.org/en/stable/faq/sessions.html#faq-query-deduplicating
 

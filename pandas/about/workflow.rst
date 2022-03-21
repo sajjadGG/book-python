@@ -2,7 +2,7 @@ Pandas Workflow
 ===============
 
 
-Rationale
+Important
 ---------
 .. figure:: img/pandas-about-workflow.png
 

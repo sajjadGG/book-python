@@ -2,7 +2,7 @@ HTTP URL
 ========
 
 
-Rationale
+Important
 ---------
 * URN - name (i.e. book title)
 * URI - resource (i.e. one particular unit of book with that title)
@@ -84,4 +84,3 @@ References
 .. [#WikipediaURN] https://en.wikipedia.org/wiki/Uniform_Resource_Name
 .. [#WikipediaURI] https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
 .. [#Pate2019] Pate, Roger. What is the difference between a URI, a URL and a URN? Year: 2019. Retrieved: 2019-05-22. URL: https://stackoverflow.com/questions/176264/what-is-the-difference-between-a-uri-a-url-and-a-urn
-

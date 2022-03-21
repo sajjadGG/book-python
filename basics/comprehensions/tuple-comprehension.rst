@@ -2,7 +2,7 @@ Comprehension Tuple
 ===================
 
 
-Rationale
+Important
 ---------
 * Tuple Comprehension vs. Generator Expression
 * More information in `Generators`

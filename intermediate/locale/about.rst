@@ -2,7 +2,7 @@ Locale About
 ============
 
 
-Rationale
+Important
 ---------
 * i18n = internationalization
 * l10n = localization
@@ -63,4 +63,3 @@ Further Reading
 * https://github.com/django/django/blob/master/django/utils/formats.py
 * https://github.com/django/django/blob/master/django/conf/locale/pl/formats.py
 * https://github.com/django/django/blob/master/django/conf/locale/en/formats.py
-

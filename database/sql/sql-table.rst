@@ -2,7 +2,7 @@ SQL Table
 =========
 
 
-Rationale
+Important
 ---------
 * Constraint ``UNIQUE``
 * Constraint ``PRIMARY KEY``

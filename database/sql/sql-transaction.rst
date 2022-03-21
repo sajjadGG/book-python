@@ -2,7 +2,7 @@ SQL Transaction
 ===============
 
 
-Rationale
+Important
 ---------
 Any command that accesses the database (basically, any SQL command, except
 a few PRAGMA statements) will automatically start a transaction if one is
@@ -78,7 +78,7 @@ effects) are recorded in non-volatile memory.
 Source: [#sqlitetranaction]_ [#tutorialspoint]_
 
 
-Rationale
+Important
 ---------
 * Also know as ACID
 * Atomicity

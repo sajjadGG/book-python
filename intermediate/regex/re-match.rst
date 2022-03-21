@@ -2,7 +2,7 @@ RE Match
 ========
 
 
-Rationale
+Important
 ---------
 * ``re.match()``
 * Checks exact match

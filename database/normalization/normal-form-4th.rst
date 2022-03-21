@@ -2,7 +2,7 @@
 ===============
 
 
-Rationale
+Important
 ---------
 * No multi-valued dependencies
 

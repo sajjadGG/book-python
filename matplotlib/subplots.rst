@@ -2,7 +2,7 @@ Matplotlib Subplots
 ===================
 
 
-Rationale
+Important
 ---------
 * `plt.subplot()`
 * `plt.subplots()`

@@ -2,7 +2,7 @@ Syntax Flag
 ===========
 
 
-Rationale
+Important
 ---------
 * ``re.ASCII``
 * ``re.IGNORECASE``

@@ -2,7 +2,7 @@ Array Round
 ===========
 
 
-Rationale
+Important
 ---------
 * ``np.ceil(n)`` - rounds `n` up to nearest ``int``
 * ``np.floor(n)`` - rounds `n` down to nearest ``int``

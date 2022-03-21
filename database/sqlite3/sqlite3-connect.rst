@@ -2,7 +2,7 @@ SQLite3 Connect
 ===============
 
 
-Rationale
+Important
 ---------
 * File database - persistent storage
 * In-memory - very fast, but volatile

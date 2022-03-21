@@ -2,7 +2,7 @@ Boolean Membership
 ==================
 
 
-Rationale
+Important
 ---------
 * ``in`` checks whether value is in sequence
 * works with ``str``, ``list``, ``tuple``, ``set``, ``dict``

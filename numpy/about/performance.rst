@@ -2,7 +2,7 @@ Performance
 ===========
 
 
-Rationale
+Important
 ---------
 .. glossary::
     CPU

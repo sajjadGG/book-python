@@ -7,7 +7,7 @@ File Encoding
     Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 
-Rationale
+Important
 ---------
 * ``utf-8`` - a.k.a. Unicode - international standard (should be always used!)
 * ``iso-8859-1`` - ISO standard for Western Europe and USA

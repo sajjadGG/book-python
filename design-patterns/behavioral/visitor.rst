@@ -2,7 +2,7 @@ Visitor
 =======
 
 
-Rationale
+Important
 ---------
 * EN: Visitor
 * PL: Odwiedzający

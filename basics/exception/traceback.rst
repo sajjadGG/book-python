@@ -2,7 +2,7 @@ Exception Traceback
 ===================
 
 
-Rationale
+Important
 ---------
 Traceback will help you track down the bug.
 

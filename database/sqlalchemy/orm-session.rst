@@ -8,7 +8,7 @@ Connection Session
     * 2.0 style (with context managers)
 
 
-Rationale
+Important
 ---------
 .. glossary::
 

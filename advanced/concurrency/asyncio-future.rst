@@ -3,7 +3,7 @@ AsyncIO Future
 
 
 
-Rationale
+Important
 ---------
 * Low-level awaitable object
 * Represents an eventual result of an asynchronous operation

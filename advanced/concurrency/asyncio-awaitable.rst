@@ -2,7 +2,7 @@ AsyncIO Awaitable
 =================
 
 
-Rationale
+Important
 ---------
 * Object is an awaitable if it can be used in an ``await`` expression
 * Awaitable objects: Coroutines, Tasks, Futures

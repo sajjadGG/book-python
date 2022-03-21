@@ -2,7 +2,7 @@ Syntax Comments
 ===============
 
 
-Rationale
+Important
 ---------
 * Line Comments
 * Multiline Comments

@@ -8,7 +8,7 @@ String Input
     input = MagicMock(side_effect=['Mark Watney', '42', '42.5', '42,5'])
 
 
-Rationale
+Important
 ---------
 * ``input()`` always returns ``str``
 * Good practice: add space at the end of prompt

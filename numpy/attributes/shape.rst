@@ -38,7 +38,7 @@ Recap
 2
 
 
-Rationale
+Important
 ---------
 * Any shape operation changes only ``np.ndarray.shape`` and ``np.ndarray.strides`` and does not touch data
 

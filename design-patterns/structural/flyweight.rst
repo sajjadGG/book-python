@@ -2,7 +2,7 @@ Flyweight
 =========
 
 
-Rationale
+Important
 ---------
 * EN: Flyweight
 * PL: Pyłek

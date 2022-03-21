@@ -2,7 +2,7 @@ Math Complex Numbers
 ====================
 
 
-Rationale
+Important
 ---------
 * Complex number with real and imaginary parts
 * Engineering notation ``j`` not mathematical ``i``

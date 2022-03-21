@@ -2,7 +2,7 @@ XML Stdlib
 ==========
 
 
-Rationale
+Important
 ---------
 ``xml`` module from standard library:
 

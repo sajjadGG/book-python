@@ -2,7 +2,7 @@ SQL Select Where
 ================
 
 
-Rationale
+Important
 ---------
 * Order clauses to filter out the most data first!
 

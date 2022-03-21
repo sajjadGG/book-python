@@ -2,7 +2,7 @@ Case Study Auth
 ===============
 
 
-Rationale
+Important
 ---------
 
 Install

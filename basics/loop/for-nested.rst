@@ -24,7 +24,7 @@ obj=[4, 5, 6]
 obj=[7, 8, 9]
 
 
-Rationale
+Important
 ---------
 * Loop inside a loop
 * Used to iterate over nested data

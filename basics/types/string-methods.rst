@@ -2,7 +2,7 @@ String Methods
 ==============
 
 
-Rationale
+Important
 ---------
 * ``str`` is immutable
 * ``str`` methods create a new modified ``str``

@@ -8,7 +8,7 @@ Block Elif
     input = MagicMock(side_effect=['5', '5', '10', 'Polish'])
 
 
-Rationale
+Important
 ---------
 * Used to check for additional condition if first is not met
 * In other languages is known as ``else if``

@@ -2,7 +2,7 @@ CSV Reader
 ==========
 
 
-Rationale
+Important
 ---------
 * csv.reader: list[tuple]
 

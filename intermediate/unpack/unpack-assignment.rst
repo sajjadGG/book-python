@@ -2,7 +2,7 @@ Unpack Assignment
 =================
 
 
-Rationale
+Important
 ---------
 * Scalar assignment
 * Unpacking assignment

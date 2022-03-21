@@ -2,7 +2,7 @@ File Path Relative
 ==================
 
 
-Rationale
+Important
 ---------
 * Python works with both relative and absolute path
 * Path is relative to currently running script

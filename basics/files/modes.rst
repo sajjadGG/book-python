@@ -8,7 +8,7 @@ File Modes
     Path('/tmp/myfile.txt').touch()
 
 
-Rationale
+Important
 ---------
 By type:
 

@@ -8,7 +8,7 @@ Logging
     def expensive_func2(): ...
 
 
-Rationale
+Important
 ---------
 * Do not print
 * Always use logger

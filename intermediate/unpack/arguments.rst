@@ -10,10 +10,11 @@ Unpack Arguments
 Recap
 -----
 * argument - Value/variable/reference being passed to the function
-* positional argument - Value passed to function - order is important
-* keyword arguments - Value passed to function resolved by name - order is not important
-* keyword arguments must be on the right side
-* order of keyword arguments doesn't matter
+* positional arguments - value passed to function
+* positional arguments - order is important
+* keyword arguments - value passed to function resolved by name
+* keyword arguments - order is not important
+* keyword arguments - must be on the right side
 
 >>> echo(1)          # positional argument
 >>> echo(a=1)        # keyword argument
@@ -28,7 +29,7 @@ Traceback (most recent call last):
 SyntaxError: positional argument follows keyword argument
 
 
-Rationale
+Important
 ---------
 * Unpack and Arbitrary Number of Parameters and Arguments
 

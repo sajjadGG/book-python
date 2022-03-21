@@ -2,7 +2,7 @@ Singleton
 =========
 
 
-Rationale
+Important
 ---------
 * EN: Singleton
 * PL: Singleton

@@ -2,7 +2,7 @@ Mapping Values
 ==============
 
 
-Rationale
+Important
 ---------
 * Value can be any object
 

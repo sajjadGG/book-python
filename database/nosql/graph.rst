@@ -2,7 +2,7 @@ NoSQL Graph
 ===========
 
 
-Rationale
+Important
 ---------
 * AllegroGraph
 * Apache Giraph

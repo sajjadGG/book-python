@@ -2,7 +2,7 @@ Command
 =======
 
 
-Rationale
+Important
 ---------
 * EN: Command
 * PL: Polecenie

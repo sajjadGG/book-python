@@ -7,7 +7,7 @@ Python Language
     Python Logo
 
 
-Rationale
+Important
 ---------
 * Turing complete, general purpose language
 * Multi platform

@@ -2,7 +2,7 @@ Syntax Negation
 ===============
 
 
-Rationale
+Important
 ---------
 Negation logically inverts qualifier.
 

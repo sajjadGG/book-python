@@ -2,7 +2,7 @@ New and Old Style Class
 =======================
 
 
-Rationale
+Important
 ---------
 * https://docs.python.org/dev/tutorial/classes.html
 * The major motivation for introducing new-style classes is to provide a unified object model with a full meta-model

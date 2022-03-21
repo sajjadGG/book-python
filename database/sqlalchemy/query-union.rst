@@ -2,7 +2,7 @@ Query Union
 ===========
 
 
-Rationale
+Important
 ---------
 
 

@@ -12,7 +12,7 @@ Dragon ADR Position Set
         y: int
 
 
-Rationale
+Important
 ---------
 * ADR - Architecture Design Records
 * Set new position to x=10, y=20

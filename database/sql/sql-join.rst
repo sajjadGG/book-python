@@ -2,7 +2,7 @@ SQL Join
 ========
 
 
-Rationale
+Important
 ---------
 The SQL Joins clause is used to combine records from two or more tables
 in a database. A JOIN is a means for combining fields from two tables

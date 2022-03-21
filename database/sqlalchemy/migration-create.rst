@@ -2,7 +2,7 @@ Migration Create
 ================
 
 
-Rationale
+Important
 ---------
 .. code-block:: console
 

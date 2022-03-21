@@ -2,7 +2,7 @@ XML Parsing HTML
 ================
 
 
-Rationale
+Important
 ---------
 * Using ``lxml`` module
 

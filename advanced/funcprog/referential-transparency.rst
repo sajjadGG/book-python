@@ -2,7 +2,7 @@ FuncProg Referential Transparency
 =================================
 
 
-Rationale
+Important
 ---------
 * Value of a variable in a functional program never changes once defined
 * This eliminates any chances of side effects

@@ -2,7 +2,7 @@ Iterator
 ========
 
 
-Rationale
+Important
 ---------
 * EN: Iterator
 * PL: Iterator

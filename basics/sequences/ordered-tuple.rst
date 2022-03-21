@@ -2,7 +2,7 @@ Sequence Tuple
 ==============
 
 
-Rationale
+Important
 ---------
 * Immutable - cannot add, modify or remove items
 

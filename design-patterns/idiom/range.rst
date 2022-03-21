@@ -2,7 +2,7 @@ Range
 =====
 
 
-Rationale
+Important
 ---------
 * Return sequence of numbers
 * It is not a generator
@@ -72,4 +72,3 @@ Assignments
 .. literalinclude:: assignments/idioms_range_a.py
     :caption: :download:`Solution <assignments/idioms_range_a.py>`
     :end-before: # Solution
-

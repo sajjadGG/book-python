@@ -2,7 +2,7 @@ JSON File
 =========
 
 
-Rationale
+Important
 ---------
 * file extension ``.json``
 * ``json.load(file) -> dict``

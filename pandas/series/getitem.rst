@@ -2,7 +2,7 @@ Series Getitem
 ==============
 
 
-Rationale
+Important
 ---------
 
 

@@ -2,7 +2,7 @@ Decorator Wrapper
 =================
 
 
-Rationale
+Important
 ---------
 * Name ``wrapper`` is just a convention
 * Wrapper can be: function, method, lambda or class

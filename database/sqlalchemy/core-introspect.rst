@@ -6,7 +6,7 @@ Core Introspect
     * Introspection - getting information about the object internals
 
 
-Rationale
+Important
 ---------
 
 SetUp

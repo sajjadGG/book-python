@@ -2,7 +2,7 @@ Datetime ISO Standard
 =====================
 
 
-Rationale
+Important
 ---------
 * ISO 8601 is an International Standard [#wikiISO8601]_
 

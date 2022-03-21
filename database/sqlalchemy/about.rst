@@ -21,7 +21,7 @@ SQLAlchemy About
     * SQAlchemy is the most frequently used database ORM in Python [#PythonDeveloperSurvey2020]_
 
 
-Rationale
+Important
 ---------
 ORM Pros:
 

@@ -2,7 +2,7 @@ SQL Select From
 ===============
 
 
-Rationale
+Important
 ---------
 .. figure:: img/sql-select.png
 

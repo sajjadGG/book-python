@@ -2,7 +2,7 @@ Proxy
 =====
 
 
-Rationale
+Important
 ---------
 * EN: Proxy
 * PL: Pełnomocnik

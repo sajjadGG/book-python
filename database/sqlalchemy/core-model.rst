@@ -8,7 +8,7 @@ Core Model
     * Metadata represents connection between Python object and a database
 
 
-Rationale
+Important
 ---------
 
 

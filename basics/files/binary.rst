@@ -8,7 +8,7 @@ Files Binary
     Path('/tmp/myfile.pkl').unlink(missing_ok=True)
 
 
-Rationale
+Important
 ---------
 * Text I/O over a binary storage (such as a file) is significantly slower
   than binary I/O over the same storage

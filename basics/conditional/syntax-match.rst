@@ -31,7 +31,7 @@ Block Match
     keyboard = Keyboard()
 
 
-Rationale
+Important
 ---------
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
 * x ⟼ assign x = subject
@@ -234,7 +234,7 @@ Further Reading
 * https://www.python.org/dev/peps/pep-0636/
 
 
-Rationale
+Important
 ---------
 .. [#patternmatching] Raymond Hettinger. Retrieved: 2021-03-07. URL: https://twitter.com/raymondh/status/1361780586570948609?s=20
 

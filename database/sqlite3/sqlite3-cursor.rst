@@ -2,7 +2,7 @@ SQLite3 Cursor
 ==============
 
 
-Rationale
+Important
 ---------
 * ``db.cursor() -> cursor``
 * ``cursor.lastrowid``

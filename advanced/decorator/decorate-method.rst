@@ -8,7 +8,7 @@ Decorate Method
         return method
 
 
-Rationale
+Important
 ---------
 * ``mydecorator`` is a decorator name
 * ``method`` is a method name

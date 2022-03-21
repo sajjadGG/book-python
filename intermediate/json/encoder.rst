@@ -2,7 +2,7 @@ JSON Encoder
 ============
 
 
-Rationale
+Important
 ---------
 * Problem with ``date``, ``datetime``, ``time``, ``timedelta``
 * Exception during encoding datetime

@@ -2,7 +2,7 @@ API Versioning
 ==============
 
 
-Rationale
+Important
 ---------
 * Always version API
 * Have stable API!

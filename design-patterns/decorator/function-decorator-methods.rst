@@ -2,7 +2,7 @@ Decorator Function with Mth
 ===========================
 
 
-Rationale
+Important
 ---------
 * ``mydecorator`` is a decorator name
 * ``method`` is a method name

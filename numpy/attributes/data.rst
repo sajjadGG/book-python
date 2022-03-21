@@ -2,7 +2,7 @@ Array Attributes
 ================
 
 
-Rationale
+Important
 ---------
 
 

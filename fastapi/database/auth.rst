@@ -2,7 +2,7 @@ Auth
 ====
 
 
-Rationale
+Important
 ---------
 
 Install

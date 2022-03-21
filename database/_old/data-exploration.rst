@@ -2,7 +2,7 @@ Database Exploration
 ====================
 
 
-Rationale
+Important
 ---------
 * Apache Superset
 

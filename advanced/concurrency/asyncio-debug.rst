@@ -1,7 +1,7 @@
 AsyncIO Debug
 =============
 
-Rationale
+Important
 ---------
 * More verbose message you can achieve by using ``PYTHONASYNCIODEBUG=1`` and ``PYTHONTRACEMALLOC=1`` environment variables
 * Also ``python3 -X dev -X tracemalloc=5 myfile.py``

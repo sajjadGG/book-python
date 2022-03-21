@@ -2,7 +2,7 @@ CI/CD Tools
 ===========
 
 
-Rationale
+Important
 ---------
 * https://pre-commit.com/
 

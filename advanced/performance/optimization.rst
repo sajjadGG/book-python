@@ -2,7 +2,7 @@ Performance Optimization
 ========================
 
 
-Rationale
+Important
 ---------
 * https://wiki.python.org/moin/TimeComplexity
 

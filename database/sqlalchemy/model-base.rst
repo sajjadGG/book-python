@@ -9,7 +9,7 @@ Model Base
     * Imperative (a.k.a. Classical) Mappings
 
 
-Rationale
+Important
 ---------
 SQLAlchemy historically features two distinct styles of mapper
 configuration. The original mapping API is commonly referred to as

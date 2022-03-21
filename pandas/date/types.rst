@@ -2,7 +2,7 @@ Date and Time Types
 ===================
 
 
-Rationale
+Important
 ---------
 
 

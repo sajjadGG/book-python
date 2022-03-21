@@ -2,7 +2,7 @@ Cookies
 =======
 
 
-Rationale
+Important
 ---------
 >>> from typing import Optional
 >>> from fastapi import FastAPI, Cookie

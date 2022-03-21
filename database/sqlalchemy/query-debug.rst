@@ -9,7 +9,7 @@ Query Debug
     * ``create_engine(echo=True)``
 
 
-Rationale
+Important
 ---------
 * Verbose Queries
 * Logging to stdout

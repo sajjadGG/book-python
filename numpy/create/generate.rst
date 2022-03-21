@@ -2,7 +2,7 @@ Array Generate
 ==============
 
 
-Rationale
+Important
 ---------
 
 

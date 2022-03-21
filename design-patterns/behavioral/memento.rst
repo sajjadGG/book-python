@@ -2,7 +2,7 @@ Memento
 =======
 
 
-Rationale
+Important
 ---------
 * EN: Memento
 * PL: Pamiątka

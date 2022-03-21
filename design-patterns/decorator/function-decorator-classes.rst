@@ -2,7 +2,7 @@ Decorator Function with Cls
 ===========================
 
 
-Rationale
+Important
 ---------
 * ``mydecorator`` is a decorator name
 * ``MyClass`` is a class name

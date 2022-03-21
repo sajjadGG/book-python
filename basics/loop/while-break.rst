@@ -8,7 +8,7 @@ Loop While Break
     input = MagicMock(side_effect=['1'])
 
 
-Rationale
+Important
 ---------
 * Force exit the loop
 

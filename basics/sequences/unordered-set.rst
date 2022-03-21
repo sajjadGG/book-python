@@ -2,7 +2,7 @@ Sequence Set
 ============
 
 
-Rationale
+Important
 ---------
 * Only unique values
 * Mutable - can add, remove, and modify items

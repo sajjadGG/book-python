@@ -2,7 +2,7 @@ Operator Accessors
 ==================
 
 
-Rationale
+Important
 ---------
 .. csv-table:: Operator Overload
     :header: "Operator", "Method", "Remarks"

@@ -2,7 +2,7 @@ Histogram
 =========
 
 
-Rationale
+Important
 ---------
 * used to display number of elements in specific groups
 

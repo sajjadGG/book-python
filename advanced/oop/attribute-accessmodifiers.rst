@@ -2,7 +2,7 @@ OOP Attribute Access Modifiers
 ==============================
 
 
-Rationale
+Important
 ---------
 * Attributes and methods are always public
 * No protected and private keywords

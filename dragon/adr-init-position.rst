@@ -9,7 +9,7 @@ Dragon ADR Init Position
             pass
 
 
-Rationale
+Important
 ---------
 * ADR - Architecture Design Records
 * Create dragon at x=50, y=120 position and name it "Wawelski"

@@ -15,7 +15,7 @@ TL;DR
 * Parameters: delimiter, quotechar, quoting, lineterminator, dialect
 
 
-Rationale
+Important
 ---------
 * CSV - Comma Separated Values
 * CSV - Character Separated Values

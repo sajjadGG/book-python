@@ -11,7 +11,7 @@ SQL Injection
     input = MagicMock(side_effect=[IN1, IN2])
 
 
-Rationale
+Important
 ---------
 .. warning:: This is to demonstrate a serious problem.
              Do not that statements in your code!
@@ -56,4 +56,3 @@ whatever
              Do not that statements in your code!
 
 .. figure:: img/sql-injection.jpg
-

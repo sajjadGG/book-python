@@ -2,7 +2,7 @@ Complexity
 ==========
 
 
-Rationale
+Important
 ---------
 * Computational Complexity
 * Memory Complexity

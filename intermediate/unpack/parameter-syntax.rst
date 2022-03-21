@@ -31,7 +31,7 @@ a=1 b=2 c=3
 a=1 b=2 c=3
 
 
-Rationale
+Important
 ---------
 * Define API for you functions
 * Require particular way of passing positional and optional parameters

@@ -2,7 +2,7 @@ Threading Queues
 ================
 
 
-Rationale
+Important
 ---------
 * Queue
 * FIFO

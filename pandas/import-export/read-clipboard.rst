@@ -2,7 +2,7 @@ Pandas Read Clipboard
 =====================
 
 
-Rationale
+Important
 ---------
 * ``pd.read_clipboard()``
 

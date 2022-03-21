@@ -2,7 +2,7 @@ Pandas Read JSON
 ================
 
 
-Rationale
+Important
 ---------
 * File paths works also with URLs
 

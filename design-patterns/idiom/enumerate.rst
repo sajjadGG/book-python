@@ -2,7 +2,7 @@ Enumerate
 =========
 
 
-Rationale
+Important
 ---------
 * Enumerate sequences
 * Generator (lazy evaluated)

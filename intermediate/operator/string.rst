@@ -2,7 +2,7 @@ Operator Stringify
 ==================
 
 
-Rationale
+Important
 ---------
 .. csv-table:: String Operator Overload
     :header: "Operator", "Method"

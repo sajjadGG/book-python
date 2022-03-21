@@ -2,7 +2,7 @@ Sequence List
 =============
 
 
-Rationale
+Important
 ---------
 * Mutable - can add, remove, and modify items
 

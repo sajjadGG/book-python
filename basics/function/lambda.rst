@@ -2,7 +2,7 @@ Function Lambda
 ===============
 
 
-Rationale
+Important
 ---------
 * Lambda - Anonymous functions
 * When function is used once

@@ -2,7 +2,7 @@ OOP Stringify Repr
 ==================
 
 
-Rationale
+Important
 ---------
 * Calling function ``repr(obj)`` calls ``obj.__repr__()``
 * Method ``obj.__repr__()`` must return ``str``

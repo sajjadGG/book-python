@@ -2,7 +2,7 @@ Filter
 ======
 
 
-Rationale
+Important
 ---------
 * Select elements from sequence
 * Generator (lazy evaluated)

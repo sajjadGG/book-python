@@ -2,7 +2,7 @@ Series Sample
 =============
 
 
-Rationale
+Important
 ---------
 
 

@@ -2,7 +2,7 @@ Syntax Increment Operators
 ==========================
 
 
-Rationale
+Important
 ---------
 In Python for each operator there is also an increment version of it:
 

@@ -9,7 +9,7 @@ Block Else
     input = MagicMock(side_effect=[''])
 
 
-Rationale
+Important
 ---------
 * Unconditional Alternative
 * Optional

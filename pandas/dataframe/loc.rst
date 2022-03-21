@@ -1,7 +1,7 @@
 DataFrame Loc
 =============
 
-Rationale
+Important
 ---------
 * ``loc`` - uses fancy indexing
 * ``iloc`` - only index numbers

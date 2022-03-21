@@ -2,7 +2,7 @@ AsyncIO Wait For
 ================
 
 
-Rationale
+Important
 ---------
 * ``asyncio.wait_for(aw, timeout: int|float|None)``
 * Timeout - number of seconds to wait for

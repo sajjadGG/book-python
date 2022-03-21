@@ -2,7 +2,7 @@ Mediator
 ========
 
 
-Rationale
+Important
 ---------
 * EN: Mediator
 * PL: Mediator

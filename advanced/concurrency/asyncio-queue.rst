@@ -2,7 +2,7 @@ AsyncIO Queue
 =============
 
 
-Rationale
+Important
 ---------
 * ``asyncio`` queues are designed to be similar to classes of the ``queue`` module.
 * Although ``asyncio`` queues are not thread-safe, they are designed to be used specifically in async/await code.

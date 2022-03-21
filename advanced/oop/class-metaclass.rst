@@ -12,7 +12,7 @@ OOP Class Metaclass
     -- Tim Peters
 
 
-Rationale
+Important
 ---------
 * Object is an instance of a class
 * Class is an instance of a Metaclass

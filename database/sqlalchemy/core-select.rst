@@ -7,7 +7,7 @@ Core Select
     * Note the dot ``.`` at the end of the select line
 
 
-Rationale
+Important
 ---------
 >>> from sqlalchemy import select
 

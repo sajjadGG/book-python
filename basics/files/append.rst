@@ -7,7 +7,7 @@ File Append
     Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 
-Rationale
+Important
 ---------
 * Appends data at the end of file
 * Creates file if not exists

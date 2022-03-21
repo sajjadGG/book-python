@@ -2,7 +2,7 @@ Core Join
 =========
 
 
-Rationale
+Important
 ---------
 >>> from sqlalchemy import update
 

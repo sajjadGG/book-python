@@ -2,7 +2,7 @@ POST
 ====
 
 
-Rationale
+Important
 ---------
 * HTTP Request and Response
 * POST Method

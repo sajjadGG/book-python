@@ -2,7 +2,7 @@ Boolean Identity
 ================
 
 
-Rationale
+Important
 ---------
 * ``=`` assignment
 * ``==`` checks for object equality

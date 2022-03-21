@@ -2,7 +2,7 @@ Protocol Property
 =================
 
 
-Rationale
+Important
 ---------
 * Disable attribute modification
 * Logging value access

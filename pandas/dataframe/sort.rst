@@ -2,7 +2,7 @@ DataFrame Sort
 ==============
 
 
-Rationale
+Important
 ---------
 * Works with ``inplace=True``
 * ``axis=0`` - Rows

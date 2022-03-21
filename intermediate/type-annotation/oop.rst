@@ -2,7 +2,7 @@ Type Annotation OOP
 ===================
 
 
-Rationale
+Important
 ---------
 * All classes are types
 

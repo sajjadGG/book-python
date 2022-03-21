@@ -2,7 +2,7 @@ OOP Abstract Protocol
 =====================
 
 
-Rationale
+Important
 ---------
 * :pep:`544` -- Protocols: Structural subtyping (static duck typing)
 * Since Python 3.8

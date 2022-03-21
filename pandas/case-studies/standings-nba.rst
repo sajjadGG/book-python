@@ -2,7 +2,7 @@ Standings NBA
 =============
 
 
-Rationale
+Important
 ---------
 
 

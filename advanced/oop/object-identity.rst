@@ -2,7 +2,7 @@ OOP Object Identity
 ===================
 
 
-Rationale
+Important
 ---------
 * ``=`` assignment
 * ``==`` checks for object equality

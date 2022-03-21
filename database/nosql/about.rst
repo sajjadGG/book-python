@@ -2,7 +2,7 @@ NoSQL About
 ===========
 
 
-Rationale
+Important
 ---------
 * List of NoSQL databases [#Stevens2022]_
 * Key–value Store (Redis)

@@ -2,7 +2,7 @@ Zip
 ===
 
 
-Rationale
+Important
 ---------
 * Combine two sequences
 * Generator (lazy evaluated)

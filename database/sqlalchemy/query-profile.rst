@@ -2,7 +2,7 @@ Query Profile
 =============
 
 
-Rationale
+Important
 ---------
 * https://docs.sqlalchemy.org/en/stable/orm/examples.html#module-examples.performance
 * https://docs.sqlalchemy.org/en/stable/faq/performance.html#faq-how-to-profile

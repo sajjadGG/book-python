@@ -2,7 +2,7 @@ AsyncIO Synchronization
 =======================
 
 
-Rationale
+Important
 ---------
 * Synchronization Primitives
 * Mutex Lock

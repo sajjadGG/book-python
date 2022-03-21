@@ -2,7 +2,7 @@ AATC Sensors
 ============
 
 
-Rationale
+Important
 ---------
 * Working with Excel (file, spreadsheet)
 * Selecting data

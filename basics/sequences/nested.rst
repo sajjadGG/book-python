@@ -1,7 +1,7 @@
 Sequence Nested
 ===============
 
-Rationale
+Important
 ---------
 >>> obj = 1
 >>> data = [obj, obj, obj]

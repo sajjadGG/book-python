@@ -2,7 +2,7 @@ About
 =====
 
 
-Rationale
+Important
 ---------
 * `Path`
 * `Operation`

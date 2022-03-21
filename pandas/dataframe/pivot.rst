@@ -2,7 +2,7 @@ DataFrame Pivot
 ===============
 
 
-Rationale
+Important
 ---------
 Create a spreadsheet-style pivot table as a DataFrame.
 The levels in the pivot table will be stored in MultiIndex objects

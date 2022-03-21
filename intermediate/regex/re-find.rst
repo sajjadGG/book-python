@@ -2,7 +2,7 @@ RE Findall, Finditer
 ====================
 
 
-Rationale
+Important
 ---------
 * ``re.findall()``
 * ``re.finditer()``

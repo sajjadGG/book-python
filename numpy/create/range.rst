@@ -2,7 +2,7 @@ Array Range
 ===========
 
 
-Rationale
+Important
 ---------
 
 

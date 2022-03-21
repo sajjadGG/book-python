@@ -2,7 +2,7 @@ Introduction
 ============
 
 
-Rationale
+Important
 ---------
 * Automatic documentation (Swagger, Redoc)
 * Uses Python type annotation

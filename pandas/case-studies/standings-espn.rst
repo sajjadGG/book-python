@@ -2,7 +2,7 @@ Standings ESPN
 ==============
 
 
-Rationale
+Important
 ---------
 .. figure:: img/espn-standing.png
 

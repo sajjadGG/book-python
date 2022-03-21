@@ -2,7 +2,7 @@ Pandas Set Option
 =================
 
 
-Rationale
+Important
 ---------
 * https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.set_option.html
 

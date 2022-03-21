@@ -2,7 +2,7 @@ OOP Inheritance Super
 =====================
 
 
-Rationale
+Important
 ---------
 * ``super()`` Calls a method from superclass
 * Order/location is important

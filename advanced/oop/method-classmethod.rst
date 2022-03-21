@@ -2,7 +2,7 @@ OOP Method Classmethod
 ======================
 
 
-Rationale
+Important
 ---------
 * Using class as namespace
 * Will pass class as a first argument

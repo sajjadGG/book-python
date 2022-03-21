@@ -2,7 +2,7 @@ Unpack Star
 ===========
 
 
-Rationale
+Important
 ---------
 .. figure:: img/unpack-assignment,args,params.png
 

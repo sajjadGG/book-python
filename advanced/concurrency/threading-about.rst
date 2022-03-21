@@ -11,7 +11,7 @@ Threading About
     timer
 
 
-Rationale
+Important
 ---------
 #. Co to jest wątek?
 #. Ile czasu trwa tworzenie wątków?

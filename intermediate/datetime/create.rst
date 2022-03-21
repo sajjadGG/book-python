@@ -1,7 +1,7 @@
 Datetime Create
 ===============
 
-Rationale
+Important
 ---------
 * Date
 * Time

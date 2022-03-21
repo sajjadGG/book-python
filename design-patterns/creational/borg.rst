@@ -2,7 +2,7 @@ Borg
 ====
 
 
-Rationale
+Important
 ---------
 * EN: Borg
 * PL: Borg

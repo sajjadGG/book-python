@@ -2,7 +2,7 @@ FuncProg Callable
 =================
 
 
-Rationale
+Important
 ---------
 >>> def hello():
 ...     return 'Hello World'

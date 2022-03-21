@@ -2,7 +2,7 @@ Mapping Define
 ==============
 
 
-Rationale
+Important
 ---------
 * ``dict`` are key-value storage (HashMap)
 * Mutable - can add, remove, and modify items

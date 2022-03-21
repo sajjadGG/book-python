@@ -2,7 +2,7 @@ Headers
 =======
 
 
-Rationale
+Important
 ---------
 >>> from typing import Optional
 >>> from fastapi import FastAPI, Header

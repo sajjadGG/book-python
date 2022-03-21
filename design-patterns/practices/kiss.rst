@@ -2,6 +2,6 @@ KISS
 ====
 
 
-Rationale
+Important
 ---------
 * Keep it Simple Stupid

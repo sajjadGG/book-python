@@ -2,7 +2,7 @@ Principal Component Analysis
 ============================
 
 
-Rationale
+Important
 ---------
 * Principal component analysis (PCA)
 * Technique used to emphasize variation and bring out strong patterns in a dataset.

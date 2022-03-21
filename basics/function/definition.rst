@@ -2,7 +2,7 @@ Function Definition
 ===================
 
 
-Rationale
+Important
 ---------
 * Automate repetitive tasks
 * Allow code reuse

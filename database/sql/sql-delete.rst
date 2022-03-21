@@ -2,7 +2,7 @@ SQL Delete
 ==========
 
 
-Rationale
+Important
 ---------
 * Write your statement starting with ``--`` after you're done, make sure
   there is no mistake, then remove comment and execute

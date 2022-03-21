@@ -2,7 +2,7 @@ Read Excel
 ==========
 
 
-Rationale
+Important
 ---------
 * File paths works also with URLs
 

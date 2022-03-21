@@ -2,7 +2,7 @@ Database PostgreSQL
 ===================
 
 
-Rationale
+Important
 ---------
 * ``psycopg2``
 

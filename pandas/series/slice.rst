@@ -2,7 +2,7 @@ Series Slicing
 ==============
 
 
-Rationale
+Important
 ---------
 
 

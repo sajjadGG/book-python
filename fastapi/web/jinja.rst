@@ -2,7 +2,7 @@ Templates with ``Jinja2``
 =========================
 
 
-Rationale
+Important
 ---------
 * A Jinja template is simply a text file.
 * Jinja can generate any text-based format (HTML, XML, CSV, LaTeX, etc.)

@@ -2,7 +2,7 @@ Status
 ======
 
 
-Rationale
+Important
 ---------
 * 200 - OK (GET)
 * 201 - Created (POST)

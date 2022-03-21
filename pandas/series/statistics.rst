@@ -1,7 +1,7 @@
 Series Statistics
 =================
 
-Rationale
+Important
 ---------
 
 

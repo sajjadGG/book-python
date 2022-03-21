@@ -2,7 +2,7 @@ RE Substitute
 =============
 
 
-Rationale
+Important
 ---------
 * ``re.sub()``
 * Replace matched substring with text
@@ -20,4 +20,3 @@ Usage of ``re.sub()``:
 >>>
 >>> re.sub(pattern, ' & ', DATA, flags=re.IGNORECASE)
 'Baked Beans & Spam'
-

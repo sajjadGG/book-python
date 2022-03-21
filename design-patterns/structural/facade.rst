@@ -2,7 +2,7 @@ Façade
 ======
 
 
-Rationale
+Important
 ---------
 * EN: Façade
 * PL: Fasada

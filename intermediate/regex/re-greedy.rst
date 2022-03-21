@@ -2,7 +2,7 @@ RE Lazy
 =======
 
 
-Rationale
+Important
 ---------
 * Adding ``?`` after the qualifier makes it non-greedy
 

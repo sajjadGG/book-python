@@ -2,7 +2,7 @@ Generator Expression
 ====================
 
 
-Rationale
+Important
 ---------
 Comprehensions:
 

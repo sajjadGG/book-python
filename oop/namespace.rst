@@ -1,7 +1,7 @@
 Namespace
 =========
 
-Rationale
+Important
 ---------
 * Functions and Classes can be namespaces
 * Functions can be nested in functions

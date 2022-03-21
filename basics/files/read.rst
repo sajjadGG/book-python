@@ -21,7 +21,7 @@ File Read
         file.write(DATA)
 
 
-Rationale
+Important
 ---------
 * Works with both relative and absolute path
 * Fails when directory with file cannot be accessed

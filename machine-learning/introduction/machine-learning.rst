@@ -8,7 +8,7 @@ Machine Learning Introduction
     -- Arthur Samuel, 1959
 
 
-Rationale
+Important
 ---------
 * Teaching computer how to do operations without explicitly hard-coding it.
 * With huge amounts of data we are dealing currently and ever increasing

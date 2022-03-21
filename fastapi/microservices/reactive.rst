@@ -1,7 +1,7 @@
 Reactive
 ========
 
-Rationale
+Important
 ---------
 * Reactive System Traits
 * Reactive Systems

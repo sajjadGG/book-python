@@ -2,7 +2,7 @@ SQL Select Distinct
 ===================
 
 
-Rationale
+Important
 ---------
 * Unique values
 
@@ -30,4 +30,3 @@ With Query
     SELECT DISTINCT agency
     FROM astronauts
     WHERE location = 'Europe';
-

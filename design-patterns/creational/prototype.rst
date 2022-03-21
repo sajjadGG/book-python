@@ -2,7 +2,7 @@ Prototype
 =========
 
 
-Rationale
+Important
 ---------
 * EN: Prototype
 * PL: Prototyp

@@ -2,7 +2,7 @@ OOP Inheritance Patterns
 ========================
 
 
-Rationale
+Important
 ---------
 .. glossary::
 

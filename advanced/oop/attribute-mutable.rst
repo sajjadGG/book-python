@@ -2,7 +2,7 @@ OOP Attribute Mutable/Immutable
 ===============================
 
 
-Rationale
+Important
 ---------
 * Function and method arguments should not be mutable
 

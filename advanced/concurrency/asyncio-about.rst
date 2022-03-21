@@ -2,7 +2,7 @@ AsyncIO About
 =============
 
 
-Rationale
+Important
 ---------
 * ``asyncio`` in Python standard library
 * ``async`` and ``await`` builtin keywords

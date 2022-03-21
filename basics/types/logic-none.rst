@@ -2,7 +2,7 @@ Logic None
 ==========
 
 
-Rationale
+Important
 ---------
 * Empty (null) or unknown (unset) value
 * It is not ``False`` value

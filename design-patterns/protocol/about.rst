@@ -2,7 +2,7 @@ Protocol About
 ==============
 
 
-Rationale
+Important
 ---------
 .. csv-table:: Protocols
     :header: "Abstract Base Class", "Inherits from", "Methods"

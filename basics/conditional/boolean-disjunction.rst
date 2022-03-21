@@ -2,7 +2,7 @@ Boolean Disjunction
 ===================
 
 
-Rationale
+Important
 ---------
 .. code-block:: text
 

@@ -7,7 +7,7 @@ FuncProg Recurrence
     Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekurencję.
 
 
-Rationale
+Important
 ---------
 * Also known as recursion
 * Iteration in functional languages is usually accomplished via recursion

@@ -2,7 +2,7 @@ CSV DictReader
 ==============
 
 
-Rationale
+Important
 ---------
 * csv.DictReader: list[dict]
 

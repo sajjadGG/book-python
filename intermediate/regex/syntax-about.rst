@@ -2,7 +2,7 @@ Syntax About
 ============
 
 
-Rationale
+Important
 ---------
 Regular Expressions are also known as:
 

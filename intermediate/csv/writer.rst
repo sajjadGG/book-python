@@ -2,7 +2,7 @@ CSV Writer
 ==========
 
 
-Rationale
+Important
 ---------
 * csv.writer: list[tuple]
 

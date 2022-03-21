@@ -2,7 +2,7 @@ Operator Builtin
 ================
 
 
-Rationale
+Important
 ---------
 .. csv-table:: Builtin Functions Overload
     :header: "Function", "Method"

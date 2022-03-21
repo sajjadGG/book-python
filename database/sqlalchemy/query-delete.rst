@@ -2,7 +2,7 @@ Query Delete
 ============
 
 
-Rationale
+Important
 ---------
 
 

@@ -2,7 +2,7 @@ Dataclass Parameters
 ====================
 
 
-Rationale
+Important
 ---------
 .. csv-table:: Dataclass options
     :header: "Option", "Default", "Description (if True)"

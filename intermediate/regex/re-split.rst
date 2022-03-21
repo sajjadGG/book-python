@@ -2,7 +2,7 @@ RE Split
 ========
 
 
-Rationale
+Important
 ---------
 * ``re.split()``
 * Split text by pattern

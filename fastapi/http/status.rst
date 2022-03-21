@@ -1,7 +1,7 @@
 HTTP Statuses
 =============
 
-Rationale
+Important
 ---------
 * ``1XX`` - Informational
 * ``2XX`` - Successful

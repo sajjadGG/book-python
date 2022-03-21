@@ -2,7 +2,7 @@
 ===============
 
 
-Rationale
+Important
 ---------
 * The Primary Key must fully define all Non-Key columns
 * Non-Key columns must not depend on any other Key

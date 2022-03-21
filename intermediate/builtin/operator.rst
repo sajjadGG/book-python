@@ -2,7 +2,7 @@ Operator Library
 ================
 
 
-Rationale
+Important
 ---------
 * https://docs.python.org/library/operator.html
 * The operator module exports a set of efficient functions corresponding to the intrinsic operators of Python.

@@ -2,7 +2,7 @@ Line Chart
 ==========
 
 
-Rationale
+Important
 ---------
 * Show linear relation of two variables
 

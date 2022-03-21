@@ -2,7 +2,7 @@ CSV DictWriter
 ==============
 
 
-Rationale
+Important
 ---------
 * csv.DictWriter: list[dict]
 

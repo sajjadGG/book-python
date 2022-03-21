@@ -2,7 +2,7 @@ Exception Assertion
 ===================
 
 
-Rationale
+Important
 ---------
 * Raises ``AssertionError`` if argument is ``False``
 * Can have optional message

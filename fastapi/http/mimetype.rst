@@ -2,7 +2,7 @@ MIME types
 ==========
 
 
-Rationale
+Important
 ---------
 * type/subtype
 * ``text`` - Represents any document that contains text and is theoretically human readable

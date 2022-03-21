@@ -7,7 +7,7 @@ SetUp
 >>> import numpy as np
 
 
-Rationale
+Important
 ---------
 .. glossary::
 

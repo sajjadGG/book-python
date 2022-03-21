@@ -1,7 +1,7 @@
 Locale l10n
 ===========
 
-Rationale
+Important
 ---------
 * l10n = localization
 

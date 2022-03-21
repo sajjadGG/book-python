@@ -2,7 +2,7 @@ Chain of Responsibility
 =======================
 
 
-Rationale
+Important
 ---------
 * EN: Chain of Responsibility
 * PL: Łańcuch zobowiązań

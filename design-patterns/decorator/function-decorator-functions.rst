@@ -2,7 +2,7 @@ Decorator Function with Func
 ============================
 
 
-Rationale
+Important
 ---------
 Syntax:
     .. code-block:: python

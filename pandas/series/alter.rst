@@ -2,7 +2,7 @@ Series Alter
 ============
 
 
-Rationale
+Important
 ---------
 
 SetUp

@@ -8,7 +8,7 @@ Mapping Switch
     input = MagicMock(side_effect=['French'])
 
 
-Rationale
+Important
 ---------
 * No ``switch`` statement in Python!
 * ``switch`` in Object Oriented Programming is considered a bad practise

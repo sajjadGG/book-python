@@ -2,7 +2,7 @@ FuncProg About
 ==============
 
 
-Rationale
+Important
 ---------
 * Programming paradigm
 * Programs are constructed by applying and composing functions

@@ -5,7 +5,7 @@ Numpy
 NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
 
 
-Rationale
+Important
 ---------
 NumPy is the fundamental package for scientific computing with Python. It contains among other things:
 

@@ -7,7 +7,7 @@ File Write
     Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 
-Rationale
+Important
 ---------
 * Creates file if not exists
 * Truncate the file before writing

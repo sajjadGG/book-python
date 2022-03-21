@@ -19,7 +19,7 @@ Func Numeric
     * ``sum`` - The SQL SUM() aggregate function
 
 
-Rationale
+Important
 ---------
 .. csv-table:: SQL and Generic Functions
     :widths: 20,80

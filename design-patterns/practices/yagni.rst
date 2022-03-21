@@ -2,6 +2,6 @@ YAGNI
 =====
 
 
-Rationale
+Important
 ---------
 * You ain't gonna need it

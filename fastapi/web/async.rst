@@ -18,7 +18,7 @@ Where WSGI provided a standard for synchronous Python apps, ASGI provides one fo
     Celery
         A task queue implementation for *Python* web applications used to asynchronously execute work outside the *HTTP* request-response cycle. *Celery* can be used to run batch jobs in the background on a regular schedule.
 
-Rationale
+Important
 ---------
 * You want your *WSGI* server to respond to incoming requests as quickly as possible.
 * Each request ties up a worker process until the response is finished.

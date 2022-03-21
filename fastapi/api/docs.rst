@@ -2,7 +2,7 @@ Documentation
 =============
 
 
-Rationale
+Important
 ---------
 >>> from fastapi import FastAPI
 >>> app = FastAPI()

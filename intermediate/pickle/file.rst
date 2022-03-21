@@ -2,7 +2,7 @@ Pickle File
 ===========
 
 
-Rationale
+Important
 ---------
 * File extension ``pkl``
 

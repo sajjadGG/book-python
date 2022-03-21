@@ -2,7 +2,7 @@ Introduction to Django
 ======================
 
 
-Rationale
+Important
 ---------
 * Why use Django?
 * What problems Django solves?

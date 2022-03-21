@@ -2,7 +2,7 @@ Seaborn
 =======
 
 
-Rationale
+Important
 ---------
 statistical data visualization
 

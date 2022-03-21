@@ -2,7 +2,7 @@ Theory UML ERD
 ==============
 
 
-Rationale
+Important
 ---------
 * UML - Unified Modeling Language
 * ERD - Entity Relationship Diagram

@@ -2,7 +2,7 @@ RE Type Annotation
 ==================
 
 
-Rationale
+Important
 ---------
 * ``typing.Pattern``
 * ``typing.Match``

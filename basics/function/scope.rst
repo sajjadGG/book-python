@@ -8,7 +8,7 @@ Function Scope
     input = MagicMock(side_effect=['lastname'])
 
 
-Rationale
+Important
 ---------
 * Values defined in function does not leak out
 * Functions has access to global values

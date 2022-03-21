@@ -2,7 +2,7 @@ Builder
 =======
 
 
-Rationale
+Important
 ---------
 * EN: Builder
 * PL: Budowniczy

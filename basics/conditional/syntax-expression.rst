@@ -8,7 +8,7 @@ Boolean Expression
     input = MagicMock(side_effect=['10', '10'])
 
 
-Rationale
+Important
 ---------
 * Conditional Expression
 * Shorthand Expressions

@@ -2,7 +2,7 @@ RE Compare
 ==========
 
 
-Rationale
+Important
 ---------
 * ``re.match()``
 * ``re.search()``

@@ -2,7 +2,7 @@ OOP Methods and Attributes
 ==========================
 
 
-Rationale
+Important
 ---------
 * Methods are functions in the class
 * First argument is always instance (``self``)

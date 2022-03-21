@@ -8,7 +8,7 @@ Func Group
     * ``rollup`` - Implement the ROLLUP grouping operation
 
 
-Rationale
+Important
 ---------
 .. csv-table:: SQL and Generic Functions
     :widths: 20,80

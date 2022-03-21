@@ -2,7 +2,7 @@ RE Group
 ========
 
 
-Rationale
+Important
 ---------
 * Match particular parts of a string
 * Possible to name matches

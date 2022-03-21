@@ -9,7 +9,7 @@ Core Result
     * ``.one_or_none()``
 
 
-Rationale
+Important
 ---------
 
 

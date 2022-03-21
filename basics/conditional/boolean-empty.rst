@@ -2,7 +2,7 @@ Boolean Empty
 =============
 
 
-Rationale
+Important
 ---------
 * empty ``bool()`` or ``False``
 * empty ``int()`` or ``0``

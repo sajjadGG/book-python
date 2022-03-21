@@ -1,7 +1,7 @@
 Templatetags
 ============
 
-Rationale
+Important
 ---------
 * https://docs.djangoproject.com/en/dev/ref/templates/builtins/
 

@@ -2,7 +2,7 @@ OOP Attribute Get
 =================
 
 
-Rationale
+Important
 ---------
 * Attributes are also known as "Properties" or "Fields"
 * ``snake_case`` name convention

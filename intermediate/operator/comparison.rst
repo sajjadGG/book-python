@@ -2,7 +2,7 @@ Operator Comparison
 ===================
 
 
-Rationale
+Important
 ---------
 .. csv-table:: Comparison Operator Overload
     :header: "Operator", "Method"

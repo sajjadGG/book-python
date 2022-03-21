@@ -2,7 +2,7 @@ Mapping SetItem
 ===============
 
 
-Rationale
+Important
 ---------
 * Adds if value not exist
 * Updates if value exist

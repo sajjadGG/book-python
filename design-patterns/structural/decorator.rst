@@ -2,7 +2,7 @@ Decorator
 =========
 
 
-Rationale
+Important
 ---------
 * EN: Decorator
 * PL: Dekorator

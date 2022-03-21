@@ -2,7 +2,7 @@ Function Return
 ===============
 
 
-Rationale
+Important
 ---------
 .. glossary::
 

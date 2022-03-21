@@ -2,7 +2,7 @@ Generator Function
 ==================
 
 
-Rationale
+Important
 ---------
 * ``yield`` keyword turns function into generator function
 

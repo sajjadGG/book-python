@@ -2,7 +2,7 @@ AsyncIO Iterator
 ================
 
 
-Rationale
+Important
 ---------
 * ``__aiter__``
 * ``__anext__``

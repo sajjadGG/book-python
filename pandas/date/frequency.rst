@@ -2,7 +2,7 @@ Date and Time Frequency
 =======================
 
 
-Rationale
+Important
 ---------
 
 

@@ -2,7 +2,7 @@ Generator Builtin
 =================
 
 
-Rationale
+Important
 ---------
 * Generator like objects
 * Behaves similar, but is not generator

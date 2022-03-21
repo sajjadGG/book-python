@@ -2,7 +2,7 @@ Adapter
 =======
 
 
-Rationale
+Important
 ---------
 * EN: Adapter
 * PL: Adapter

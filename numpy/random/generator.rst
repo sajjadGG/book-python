@@ -2,7 +2,7 @@ Random Generator
 ================
 
 
-Rationale
+Important
 ---------
 * Since ``numpy v1.17``: BitGenerator for the PCG-64 (Parallel Congruent
   Generator 64 bit) pseudo-random number generator

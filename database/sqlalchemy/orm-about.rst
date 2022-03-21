@@ -16,7 +16,7 @@ ORM About
     * Provide patterns for data validation and coercion
 
 
-Rationale
+Important
 ---------
 Source: [#ytSQLAlchemy20]_
 

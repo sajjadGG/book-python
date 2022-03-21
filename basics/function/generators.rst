@@ -1,7 +1,7 @@
 Function Generator-Like
 =======================
 
-Rationale
+Important
 ---------
 * It is not a generator
 * Generator-like objects

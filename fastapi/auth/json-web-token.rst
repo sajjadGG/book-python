@@ -2,7 +2,7 @@ JSON Web Token
 ==============
 
 
-Rationale
+Important
 ---------
 * JWT tokens
 

@@ -2,7 +2,7 @@ SQLite3 About
 =============
 
 
-Rationale
+Important
 ---------
 * The most popular database in the world
 * File database with

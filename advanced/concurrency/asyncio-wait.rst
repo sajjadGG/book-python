@@ -2,7 +2,7 @@ AsyncIO Wait
 ============
 
 
-Rationale
+Important
 ---------
 * ``asyncio.wait(aws, timeout)``
 * ``wait()`` - when a timeout occurs: does not cancel the futures

@@ -2,7 +2,7 @@ Mapping Items
 =============
 
 
-Rationale
+Important
 ---------
 * Key-Value Pairs
 

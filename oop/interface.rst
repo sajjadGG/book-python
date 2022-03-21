@@ -2,7 +2,7 @@ Interface
 =========
 
 
-Rationale
+Important
 ---------
 * Python don't have interfaces
 * Cannot instantiate

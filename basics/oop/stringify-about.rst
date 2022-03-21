@@ -2,7 +2,7 @@ OOP Stringify About
 ===================
 
 
-Rationale
+Important
 ---------
 * ``str()``
 * ``repr()``

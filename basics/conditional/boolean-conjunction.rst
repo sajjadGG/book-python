@@ -2,7 +2,7 @@ Boolean Conjunction
 ===================
 
 
-Rationale
+Important
 ---------
 .. code-block:: text
 

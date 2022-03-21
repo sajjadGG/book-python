@@ -2,7 +2,7 @@ SQL About
 =========
 
 
-Rationale
+Important
 ---------
 .. glossary::
 

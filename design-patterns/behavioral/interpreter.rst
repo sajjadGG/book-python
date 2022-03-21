@@ -2,7 +2,7 @@ Interpreter
 ===========
 
 
-Rationale
+Important
 ---------
 * EN: Interpreter
 * PL: Interpreter

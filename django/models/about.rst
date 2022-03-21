@@ -2,7 +2,7 @@ Model About
 ===========
 
 
-Rationale
+Important
 ---------
 * What are model fields?
 * Model field arguments
@@ -61,4 +61,3 @@ Migrate:
       Apply all migrations: admin, auth, contenttypes, contact, sessions
     Running migrations:
       Applying contact.0001_initial... OK
-

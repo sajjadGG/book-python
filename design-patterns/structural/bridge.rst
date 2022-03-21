@@ -2,7 +2,7 @@ Bridge
 ======
 
 
-Rationale
+Important
 ---------
 * EN: Bridge
 * PL: Most

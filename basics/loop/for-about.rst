@@ -7,7 +7,7 @@ Loop For About
         pass
 
 
-Rationale
+Important
 ---------
 >>> data = ['a', 'b', 'c']
 >>> i = 0

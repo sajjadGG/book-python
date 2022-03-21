@@ -2,7 +2,7 @@ Date and Time Timezones
 =======================
 
 
-Rationale
+Important
 ---------
 
 SetUp

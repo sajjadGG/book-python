@@ -2,7 +2,7 @@ Dragon ADR Damage Take
 ======================
 
 
-Rationale
+Important
 ---------
 * ADR - Architecture Design Records
 * Make DMG points damage to the dragon

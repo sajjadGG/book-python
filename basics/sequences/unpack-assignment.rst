@@ -2,7 +2,7 @@ Sequence Unpack Assignment
 ==========================
 
 
-Rationale
+Important
 ---------
 * Scalar assignment
 * Vector assignment

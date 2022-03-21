@@ -2,7 +2,7 @@ FuncProg Closure
 ================
 
 
-Rationale
+Important
 ---------
 * Technique by which the data is attached to some code even after end of
   those other original functions is called as closures

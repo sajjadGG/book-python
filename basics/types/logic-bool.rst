@@ -2,7 +2,7 @@ Logic Bool
 ==========
 
 
-Rationale
+Important
 ---------
 * ``True`` - Positive value
 * ``False`` - Negative value

@@ -2,7 +2,7 @@ Query Group By
 ==============
 
 
-Rationale
+Important
 ---------
 
 

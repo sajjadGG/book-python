@@ -2,7 +2,7 @@ OOP Attribute About
 ===================
 
 
-Rationale
+Important
 ---------
 * Attributes are also known as "Properties" or "Fields"
 * Attributes store information for instances

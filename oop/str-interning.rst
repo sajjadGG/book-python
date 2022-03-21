@@ -2,7 +2,7 @@ String Interning
 ================
 
 
-Rationale
+Important
 ---------
 * https://en.wikipedia.org/wiki/String_interning
 * Method of storing only one copy of each distinct string value, which must be immutable

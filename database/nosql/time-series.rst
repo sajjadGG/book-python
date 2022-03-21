@@ -2,7 +2,7 @@ NoSQL Time Series
 =================
 
 
-Rationale
+Important
 ---------
 * InfluxDB
 * Prometheus

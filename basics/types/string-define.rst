@@ -2,7 +2,7 @@ String Define
 =============
 
 
-Rationale
+Important
 ---------
 * ``str`` is a sequence of characters
 

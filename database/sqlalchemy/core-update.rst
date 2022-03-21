@@ -2,7 +2,7 @@ Core Update
 ===========
 
 
-Rationale
+Important
 ---------
 >>> from sqlalchemy import update
 

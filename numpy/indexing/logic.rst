@@ -2,7 +2,7 @@ Array Logic
 ===========
 
 
-Rationale
+Important
 ---------
 
 

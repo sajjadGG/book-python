@@ -14,7 +14,7 @@ Function Arguments
         pass
 
 
-Rationale
+Important
 ---------
 .. glossary::
 

@@ -2,7 +2,7 @@ OOP Enum
 ========
 
 
-Rationale
+Important
 ---------
 * List of finite choices
 * Enumerations

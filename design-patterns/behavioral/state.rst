@@ -2,7 +2,7 @@ State
 =====
 
 
-Rationale
+Important
 ---------
 * EN: State
 * PL: Stan

@@ -2,7 +2,7 @@ OOP Abstract Class
 ==================
 
 
-Rationale
+Important
 ---------
 * Since Python 3.0: :pep:`3119` -- Introducing Abstract Base Classes
 * Cannot instantiate

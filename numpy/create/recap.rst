@@ -24,7 +24,7 @@ Recap
 >>> m = np.identity(4)
 
 
-Rationale
+Important
 ---------
 >>> # doctest: +SKIP
 ... %%timeit -r 1000 -n 1000

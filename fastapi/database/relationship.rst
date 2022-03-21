@@ -2,7 +2,7 @@ Relationship
 ============
 
 
-Rationale
+Important
 ---------
 * Foreign Key
 * One to One

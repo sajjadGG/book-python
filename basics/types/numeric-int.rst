@@ -2,7 +2,7 @@ Numeric Int
 ===========
 
 
-Rationale
+Important
 ---------
 Python 3 dynamically extends ``int`` when it's too big, hence there is no maximal
 or minimal ``int`` value.

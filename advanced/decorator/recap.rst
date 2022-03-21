@@ -2,7 +2,7 @@ Decorator Recap
 ===============
 
 
-Rationale
+Important
 ---------
 By type:
 

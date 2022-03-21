@@ -8,7 +8,7 @@ Exception Raise
     input = MagicMock(side_effect=['-1'])
 
 
-Rationale
+Important
 ---------
 * Used when error occurs
 * You can catch exception and handles erroneous situation

@@ -2,7 +2,7 @@ Datetime Format
 ===============
 
 
-Rationale
+Important
 ---------
 * ``format(dt, '%Y-%m-%d')``
 * ``dt.__format__('%Y-%m-%d')``

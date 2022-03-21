@@ -2,7 +2,7 @@ Dataclass Mutable Attrs
 =======================
 
 
-Rationale
+Important
 ---------
 * problem with ``dict``, ``list``, ``set``
 * You should not set mutable objects as a default function argument

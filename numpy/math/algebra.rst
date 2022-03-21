@@ -2,7 +2,7 @@ Linear Algebra
 ==============
 
 
-Rationale
+Important
 ---------
 >>> import numpy as np
 

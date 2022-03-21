@@ -2,7 +2,7 @@ Strategy
 ========
 
 
-Rationale
+Important
 ---------
 * EN: Strategy
 * PL: Strategia

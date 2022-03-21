@@ -2,7 +2,7 @@ OOP Class Define
 ================
 
 
-Rationale
+Important
 ---------
 * Object Oriented Paradigm
 * Model world as objects that interacts with each other

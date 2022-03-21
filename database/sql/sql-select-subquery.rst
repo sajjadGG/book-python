@@ -2,7 +2,7 @@ SQL Select Subquery
 ===================
 
 
-Rationale
+Important
 ---------
 * ``IN (SELECT ...)`` - subquery
 

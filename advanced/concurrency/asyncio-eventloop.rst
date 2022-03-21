@@ -2,7 +2,7 @@ AsyncIO Event Loop
 ==================
 
 
-Rationale
+Important
 ---------
 * Async code can only run inside an event loop.
 * The event loop is the driver code that manages the cooperative multitasking.

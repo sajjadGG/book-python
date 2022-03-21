@@ -2,7 +2,7 @@ Series NA
 =========
 
 
-Rationale
+Important
 ---------
 * https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html
 * https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#missing-data-na

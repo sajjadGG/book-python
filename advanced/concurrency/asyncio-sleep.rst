@@ -2,7 +2,7 @@ AsyncIO Sleep
 =============
 
 
-Rationale
+Important
 ---------
 * Coroutine ``asyncio.sleep(delay, result=None)``
 * Delay can be int or float

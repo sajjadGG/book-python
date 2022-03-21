@@ -2,7 +2,7 @@ Standings Livescores
 ====================
 
 
-Rationale
+Important
 ---------
 * https://www.livescores.com
 * No HTML Tables

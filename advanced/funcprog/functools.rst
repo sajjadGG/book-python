@@ -2,7 +2,7 @@ FuncProg Functools
 ==================
 
 
-Rationale
+Important
 ---------
 * ``import functools``
 

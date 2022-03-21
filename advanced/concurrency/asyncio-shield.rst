@@ -2,7 +2,7 @@ AsyncIO Shield
 ==============
 
 
-Rationale
+Important
 ---------
 * Shielding from Cancellation
 * Awaitable ``asyncio.shield(aw)``

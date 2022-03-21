@@ -1,7 +1,7 @@
 XPATH
 =====
 
-Rationale
+Important
 ---------
 * Using ``lxml`` module
 

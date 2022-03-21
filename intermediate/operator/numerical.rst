@@ -2,7 +2,7 @@ Operator Numerical
 ==================
 
 
-Rationale
+Important
 ---------
 .. csv-table:: Numerical Operator Overload
     :header: "Operator", "Method"

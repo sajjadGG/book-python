@@ -2,7 +2,7 @@ OOP Class Instance
 ==================
 
 
-Rationale
+Important
 ---------
 * Instances are also known as Objects
 * Two newlines between class and code

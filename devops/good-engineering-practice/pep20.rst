@@ -2,7 +2,7 @@ The Zen of Python
 =================
 
 
-Rationale
+Important
 ---------
 * :pep:`20` -- The Zen of Python
 

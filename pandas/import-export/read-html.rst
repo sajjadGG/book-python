@@ -2,7 +2,7 @@ Pandas Read HTML
 ================
 
 
-Rationale
+Important
 ---------
 * File paths works also with URLs
 

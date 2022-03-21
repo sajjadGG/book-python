@@ -2,7 +2,7 @@ State Machine
 =============
 
 
-Rationale
+Important
 ---------
 * EN: State Machine
 * PL: Maszyna Stanów

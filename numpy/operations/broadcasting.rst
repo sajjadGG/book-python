@@ -2,7 +2,7 @@ Array Broadcasting
 ==================
 
 
-Rationale
+Important
 ---------
 .. glossary::
 

@@ -2,7 +2,7 @@ FuncProg Function Attributes
 ============================
 
 
-Rationale
+Important
 ---------
 >>> def hello():
 ...     return 'Hello World'

@@ -2,7 +2,7 @@ Type Annotation Sequence
 ========================
 
 
-Rationale
+Important
 ---------
 * Before Python 3.9 you need ``from typing import List, Tuple, Set, Frozenset``
 * Since Python 3.9: :pep:`585` -- Type Hinting Generics In Standard Collections

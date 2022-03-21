@@ -2,7 +2,7 @@ Sequence Unpack GetItem
 =======================
 
 
-Rationale
+Important
 ---------
 * Allows to get element from ordered sequence
 * Works with ordered sequences: ``str``, ``list``, ``tuple``

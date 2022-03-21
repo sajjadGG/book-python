@@ -2,7 +2,7 @@ OOP Switch
 ==========
 
 
-Rationale
+Important
 ---------
 Let's take the following code and do the refactoring:
 

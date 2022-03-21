@@ -2,7 +2,7 @@ SQLite3 Fetch
 =============
 
 
-Rationale
+Important
 ---------
 * Fetch as `list[tuple]` / `list[list]`
 * Fetch as `list[Row]` / `list[dict]`

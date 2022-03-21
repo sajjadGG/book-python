@@ -2,7 +2,7 @@ Pickle Dump
 ===========
 
 
-Rationale
+Important
 ---------
 * Python object serialization format
 * ``pickle`` vs. ``cPickle``

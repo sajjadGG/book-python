@@ -2,7 +2,7 @@ Core Text
 =========
 
 
-Rationale
+Important
 ---------
 >>> from sqlalchemy import update
 
