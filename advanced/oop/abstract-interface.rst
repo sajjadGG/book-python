@@ -184,7 +184,7 @@ Use Case - 0x02
 >>> Cache = DatabaseCache
 
 >>> # myapp/usage.py
->>> from myapp.cache import CacheInterface
+>>> from myapp.cache import CacheInterface  # doctest: +SKIP
 >>> from myapp.settings import cache  # doctest: +SKIP
 >>>
 >>>
@@ -256,8 +256,8 @@ Use Case - 0x03
 ...     def on_key_press(self):
 ...         ...
 ...
-...    def on_key_unpress(self):
-...        ...
+...     def on_key_unpress(self):
+...         ...
 
 
 Assignments

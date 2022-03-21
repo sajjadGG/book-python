@@ -1,50 +1,69 @@
-Sequence Unpack Assignment
-==========================
+Unpack Assignment
+=================
+* ``a = 1`` - Assignment
+* ``a, b = 1, 2`` - Unpacking assignment
+* ``a = b = 1`` - Multi assignment
+* ``_`` is regular variable name, not a special Python syntax
+* ``_`` by convention is used for data we don't want to access in future
 
-
-Important
----------
-* Scalar assignment
-* Vector assignment
-
-
-Syntax
-------
-Scalar assignment:
+Assignment:
 
 >>> a = 1
 
-Vector assignment:
+Unpacking assignment:
 
 >>> a, b = 1, 2
 
 Multi assignment:
 
->>> a = b = 1, 2
+>>> a = b = 1
 
 
-Scalar Assignment
------------------
+Assignment
+----------
+* Scalar Assignment
+* ``identifier = value``
+* ``a = 1``
+
 >>> a = 1
 >>>
->>> print(a)
-1
+>>> print(f'{a=}')
+a=1
 
 
+Unpacking Assignment
+--------------------
+* ``iterable[identifier] = iterable[value]``
+* ``a, b = 1, 2``
+* Vector Assignment
+* Sequence Assignment
+* Iterable Assignment
 
-Vector Assignment
------------------
 >>> a, b = 1, 2
 >>>
->>> print(a)
-1
->>> print(b)
-2
+>>> print(f'{a=}, {b=}')
+a=1, b=2
 
 >>> a, b = 1, 2
 >>> a, b, c = 1, 2, 3
 >>> a, b, c, d = 1, 2, 3, 4
 >>> a, b, c, d, e = 1, 2, 3, 4, 5
+
+
+Multi Assignment
+----------------
+* ``a = b = 1``
+* ``identifier1 = identifier2 = value``
+
+>>> a = b = 1
+>>>
+>>> print(f'{a=}, {b=}')
+a=1, b=1
+
+>>> a = b = 1
+>>> a = b = c = 1
+>>> a = b = c = d = 1
+>>> a = b = c = d = e = 1
 
 
 Right-Side Brackets
@@ -56,7 +75,7 @@ Scalar assignments:
 >>> a = [1, 2]
 >>> a = {1, 2}
 
-Vector assignments:
+Unpacking assignments:
 
 >>> a, b = 1, 2
 >>> a, b = (1, 2)
@@ -108,43 +127,42 @@ SyntaxError: cannot assign to set display here. Maybe you meant '==' instead of 
 
 Unpacking
 ---------
->>> data = [1,2,3]
+>>> data = [1, 2, 3]
 >>> a, b, c = data
 >>>
->>>
->>> print(a)
-1
->>>
->>> print(b)
-2
->>>
->>> print(c)
-3
+>>> print(f'{a=}, {b=}, {c=}')
+a=1, b=2, c=3
 
 >>> line = 'Mark,Watney,40'
 >>> firstname, lastname, age = line.split(',')
 >>>
+>>> print(f'{firstname=}, {lastname=}, {age=}')
+firstname='Mark', lastname='Watney', age='40'
+
+>>> data = ['Mark', 'Watney', ('mwatney@nasa.gov', 'mwatney@gmail.com')]
+>>> firstname, lastname, emails = data
 >>>
->>> print(firstname)
-Mark
->>>
->>> print(lastname)
-Watney
->>>
->>> print(age)
-44
+>>> print(f'{firstname=}\n{lastname=}\n{emails=}')
+firstname='Mark'
+lastname='Watney'
+emails=['mwatney@nasa.gov', 'mwatney@gmail.com']
 
 
 Nested
 ------
 >>> a, (b, c) = [1, (2, 3)]
 >>>
->>> a
-1
->>> b
-2
->>> c
-3
+>>> print(f'{a=}, {b=}, {c=}')
+a=1, b=2, c=3
+
+>>> data = ['Mark', 'Watney', ('mwatney@nasa.gov', 'mwatney@gmail.com')]
+>>> firstname, lastname, email_work, email_home = data
+>>>
+>>> print(f'{firstname=}\n{lastname=}\n{email_work=}\n{email_home=}')
+firstname='Mark'
+lastname='Watney'
+email_work='mwatney@nasa.gov'
+email_home='mwatney@gmail.com'
 
 
 Skipping Values
@@ -153,24 +171,21 @@ Skipping Values
 * ``_`` by convention is used for data we don't want to access in future
 
 >>> _ = 'Mark Watney'
+>>>
 >>> print(_)
 Mark Watney
 
->>> line = 'Mark,Watney,1'
+>>> line = 'Mark,Watney,40'
 >>> firstname, lastname, _ = line.split(',')
 >>>
->>> print(firstname)
-Mark
->>> print(lastname)
-Watney
+>>> print(f'{firstname=}, {lastname=}')
+firstname='Mark', lastname='Watney'
 
->>> line = 'Mark,Watney,1,2,3'
+>>> line = 'Mark,Watney,40,185,75.5'
 >>> firstname, lastname, _, _, _ = line.split(',')
 >>>
->>> print(firstname)
-Mark
->>> print(lastname)
-Watney
+>>> print(f'{firstname=}, {lastname=}')
+firstname='Mark', lastname='Watney'
 
 
 Use Case - 0x01
@@ -186,43 +201,16 @@ Use Case - 0x01
 
 Use Case - 0x02
 ---------------
->>> date = '1961-04-12'
->>>
->>> year, month, day = date.split('-')
->>>
->>> print(year)
-1961
->>> print(month)
-04
->>> print(day)
-12
-
-
-Use Case - 0x03
----------------
 * Passwd
 
 >>> line = 'watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash'
->>> line = line.split(':')
+>>> username, _, uid, _, _, _, _ = line.split(':')
 >>>
->>> username = line[0]
->>> fullname = line[4]
->>>
->>> print(username)
-watney
->>> print(fullname)
-Mark Watney
-
->>> line = 'watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash'
->>> username, _, _, _, fullname, _, _ = line.split(':')
->>>
->>> print(username)
-watney
->>> print(fullname)
-Mark Watney
+>>> print(f'{username=}, {uid=}')
+username='watney', uid='1000'
 
 
-Use Case - 0x04
+Use Case - 0x03
 ---------------
 * Important
 
@@ -237,15 +225,18 @@ Use Case - 0x04
 2
 
 >>> _, _, important = (True, [1, 2, 3, 4], 5)
->>> important
+>>>
+>>> print(important)
 5
 
 >>> _, _,  important = (True, [1, 2, 3, 4], (5, True))
->>> important
+>>>
+>>> print(important)
 (5, True)
 >>>
 >>> _, _, (important, _) = (True, [1, 2, 3, 4], (5, True))
->>> important
+>>>
+>>> print(important)
 5
 
 Python understands this as:
@@ -254,6 +245,34 @@ Python understands this as:
 >>>
 >>> a,b,c = (object, object, object)
 >>> a,b,(c,d) = (object, object, (object,object))
+
+
+Recap
+-----
+* Scalar, Vector, Multi assignment
+* Both left and right expression side brackets are optional
+* Unpacking nested sequences
+* Skipping values is done by using ``_``
+
+Scalar assignment:
+
+>>> a = 1
+
+Vector assignment:
+
+>>> a, b = 1, 2
+
+Multi assignment:
+
+>>> a = b = 1
+
+Unpacking nested:
+
+>>> a, (b, c) = 1, (2, 3)
+
+Skipping:
+
+>>> _, (important, _) = 1, (2, 3)
 
 
 Assignments

@@ -66,6 +66,7 @@ called during the countdown and we cannot launch a rocket to outer space.
 ...     if i == 1:  # problem detected in the last second
 ...         print('Fuel leak detected. Abort, Abort, Abort!')
 ...         abort = True
+...         break
 3
 2
 Fuel leak detected. Abort, Abort, Abort!

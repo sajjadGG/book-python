@@ -1,9 +1,12 @@
-Sequence Unpack Star
-====================
+Unpack Star
+===========
+* ``a, b, *c = 1, 2, 3, 4, 5``
+* Used when there is arbitrary number of values to unpack
+* Could be used from start, middle, end
+* There can't be multiple star expressions in one assignment statement
+* ``_`` is regular variable name, not a special Python syntax
+* ``_`` by convention is used for data we don't want to access in future
 
-
-Important
----------
 .. figure:: img/unpack-assignment,args,params.png
 
 
@@ -11,61 +14,38 @@ Arbitrary Number of Arguments
 -----------------------------
 Unpack values at the right side:
 
->>> a, b, *c = [1, 2, 3, 4]
+>>> a, b, *c = [1, 2, 3, 4, 5]
 >>>
->>>
->>> a
-1
->>>
->>> b
-2
->>>
->>> c
-[3, 4]
+>>> print(f'{a=}, {b=}, {c=}')
+a=1, b=2, c=[3, 4, 5]
 
 Unpack values at the left side:
 
->>> *a, b, c = [1, 2, 3, 4]
+>>> *a, b, c = [1, 2, 3, 4, 5]
 >>>
->>>
->>> a
-[1, 2]
->>>
->>> b
-3
->>>
->>> c
-4
+>>> print(f'{a=}, {b=}, {c=}')
+a=[1, 2, 3], b=4, c=5
 
 Unpack values from both sides at once:
 
->>> a, *b, c = [1, 2, 3, 4]
+>>> a, *b, c = [1, 2, 3, 4, 5]
 >>>
->>>
->>> a
-1
->>>
->>> b
-[2, 3]
->>>
->>> c
-4
+>>> print(f'{a=}, {b=}, {c=}')
+a=1, b=[2, 3, 4], c=5
 
 Unpack from variable length:
 
 >>> a, *b, c = [1, 2]
 >>>
->>>
->>> a
-1
->>> b
-[]
->>> c
-2
+>>> print(f'{a=}, {b=}, {c=}')
+a=1, b=[], c=2
 
+
+Errors
+------
 Cannot unpack from both sides at once:
 
->>> *a, b, *c = [1, 2, 3, 4]
+>>> *a, b, *c = [1, 2, 3, 4, 5]
 Traceback (most recent call last):
 SyntaxError: two starred expressions in assignment
 
@@ -74,33 +54,6 @@ Unpack requires values for required arguments:
 >>> a, *b, c = [1]
 Traceback (most recent call last):
 ValueError: not enough values to unpack (expected at least 2, got 1)
-
-
-Convention
-----------
->>> first, *middle, last = [1, 2, 3, 4]
->>>
->>>
->>> first
-1
->>>
->>> middle
-[2, 3]
->>>
->>> last
-4
-
->>> first, second, *others = [1, 2, 3, 4]
->>>
->>>
->>> first
-1
->>>
->>> second
-2
->>>
->>> others
-[3, 4]
 
 
 Skipping Values
@@ -113,29 +66,23 @@ Skipping Values
 >>> print(_)
 Mark Watney
 
->>> line = 'Mark,Watney,1,2,3,4,5'
+>>> line = 'Mark,Watney,40,185,75.5'
 >>> firstname, lastname, *_ = line.split(',')
 >>>
->>> print(firstname)
-Mark
->>>
->>> print(lastname)
-Watney
+>>> print(f'{firstname=}, {lastname=}')
+firstname='Mark', lastname='Watney'
 
 >>> line = '4.9,3.1,1.5,0.1,setosa'
 >>> *_, label = line.split(',')
 >>>
->>> print(label)
-setosa
+>>> print(f'{label=}')
+label='setosa'
 
 >>> line = 'watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash'
->>> username, *_, home, _ = line.split(':')
+>>> username, _, uid, *_ = line.split(':')
 >>>
->>> print(username)
-watney
->>>
->>> print(home)
-/home/watney
+>>> print(f'{username=}, {uid=}')
+username='watney', uid='1000'
 
 
 Use Case - 0x01
@@ -143,36 +90,37 @@ Use Case - 0x01
 >>> line = 'ares3,watney,lewis,vogel,johanssen'
 >>> mission, *crew = line.split(',')
 >>>
->>> mission
-'ares3'
->>>
->>> crew
-['watney', 'lewis', 'vogel', 'johanssen']
+>>> print(f'{mission=}, {crew=}')
+mission='ares3', crew=['watney', 'lewis', 'vogel', 'johanssen']
 
 
 Use Case - 0x02
 ---------------
->>> first, second, *others = range(0,10)
+>>> first, *middle, last = [1, 2, 3, 4]
 >>>
->>> first
-0
->>>
->>> second
-1
->>>
->>> others
-[2, 3, 4, 5, 6, 7, 8, 9]
+>>> print(f'{first=}, {middle=}, {last=}')
+first=1, middle=[2, 3], last=4
 
->>> first, second, *_ = range(0,10)
+>>> first, second, *others = [1, 2, 3, 4]
 >>>
->>> first
-0
->>>
->>> second
-1
+>>> print(f'{first=}, {second=}, {others=}')
+first=1, second=2, others=[3, 4]
 
 
 Use Case - 0x03
+---------------
+>>> first, second, *others = range(0,10)
+>>>
+>>> print(f'{first=}, {second=}, {others=}')
+first=0, second=1, others=[2, 3, 4, 5, 6, 7, 8, 9]
+
+>>> first, second, *_ = range(0,10)
+>>>
+>>> print(f'{first=}, {second=}')
+first=0, second=1
+
+
+Use Case - 0x04
 ---------------
 * Python Version
 
@@ -180,49 +128,28 @@ Use Case - 0x03
 >>>
 >>>
 >>> major, minor, *_ = sys.version_info
+>>>
 >>> print(major, minor, sep='.')
 3.10
 
 
-Use Case - 0x04
+Use Case - 0x05
 ---------------
 * Iris 1D
 
->>> *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
+>>> *values, species = (5.8, 2.7, 5.1, 1.9, 'virginica')
 >>>
->>> features
-[5.8, 2.7, 5.1, 1.9]
->>>
->>> label
-'virginica'
-
-
-Use Case - 0x05
----------------
->>> *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
->>> avg = sum(features) / len(features)
->>>
->>> print(f'{avg=:.2f}, {label=}')
-avg=3.88, label='virginica'
+>>> print(f'{values=}, {species=}')
+values=[5.8, 2.7, 5.1, 1.9], species='virginica'
 
 
 Use Case - 0x06
 ---------------
-* Iris 2D
-
->>> DATA = [
-...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
-...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
-...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-... ]
+>>> *values, species = (5.8, 2.7, 5.1, 1.9, 'virginica')
+>>> avg = sum(values) / len(values)
 >>>
->>>
->>> for *features, label in DATA:
-...     avg = sum(features) / len(features)
-...     print(f'{avg=:.2f} {label=}')
-avg=3.88 label='virginica'
-avg=2.55 label='setosa'
-avg=3.48 label='versicolor'
+>>> print(f'{avg=:.2f}, {species=}')
+avg=3.88, species='virginica'
 
 
 Assignments

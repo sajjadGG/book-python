@@ -11,6 +11,8 @@ Generator Expression
 List Comprehension
 ------------------
 * Comprehensions executes instantly
+* Comprehensions will be in the memory until end of a program
+* Comprehensions - Using values more than one
 
 >>> data = [x for x in range(0,5)]
 >>>
@@ -23,6 +25,15 @@ List Comprehension
 Generator Expression
 --------------------
 * Generators are lazy evaluated
+* Creates generator object and assign reference
+* Code is not executed instantly
+* Sometimes code is not executed at all!
+* Are cleared once they are executed
+* Generator will calculate next number for every loop iteration
+* Generator forgets previous number
+* Generator doesn't know the next number
+* It is used for one-time access to values
+  (for example in the loop iterator)
 
 >>> data = (x for x in range(0,5))
 >>>
@@ -60,27 +71,7 @@ TypeError: object of type 'generator' has no len()
 
 Comprehensions or Generator Expression
 --------------------------------------
-Generator Expressions:
-
-    * Creates generator object and assign reference
-    * Code is not executed instantly
-    * Sometimes code is not executed at all!
-    * Are cleared once they are executed
-    * Generator will calculate next number for every loop iteration
-    * Generator forgets previous number
-    * Generator doesn't know the next number
-    * It is used for one-time access to values
-      (for example in the loop iterator)
-
-Comprehensions:
-
-    * Comprehensions will be in the memory until end of a program
-    * Comprehensions - Using values more than one
-
-Summary:
-
-    * If you need values evaluated instantly, there is no point in using
-      generators
+* If you need values evaluated instantly, there is no point in using generators
 
 Comprehensions vs Generator Expression:
 

@@ -217,7 +217,7 @@ File ``utils.py``:
 File ``main.py``:
 
 >>> @get('/users/')
->>> def get_users(data: list[dict]) -> list[User]:
+... def get_users(data: list[dict] = None) -> list['User']:
 ...     ...
 >>>
 >>>

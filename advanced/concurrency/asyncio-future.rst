@@ -58,7 +58,7 @@ Generator Based Coroutines
 * Support for generator-based coroutines is deprecated and is removed in Python 3.11
 
 >>> @asyncio.coroutine
->>> def work():
+... def work():
 ...     yield from asyncio.sleep(1)
 >>>
 >>> async def main():

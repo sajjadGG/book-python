@@ -20,7 +20,7 @@ Syntax
 ...     body: str
 ...
 ...     def send() -> None: ...
-...     def receive() -> Message: ...
+...     def receive() -> 'Message': ...
 
 
 Terminology
@@ -84,7 +84,7 @@ subclass of the protocol.
 >>> email.sender = 'mwatney@nasa.gov',
 >>> email.recipient = 'mlewis@nasa.gov',
 >>> email.subject = 'I am alive!'
->>> email.body = 'I survived the storm. I am alone on Mars.')
+>>> email.body = 'I survived the storm. I am alone on Mars.'
 >>>
 >>> send(email)  # will pass the checker
 
@@ -129,7 +129,7 @@ None in the subclass, see Python data-model for details.) [#PEP544]_
 >>> email.sender = 'mwatney@nasa.gov',
 >>> email.recipient = 'mlewis@nasa.gov',
 >>> email.subject = 'I am alive!'
->>> email.body = 'I survived the storm. I am alone on Mars.')
+>>> email.body = 'I survived the storm. I am alone on Mars.'
 >>>
 >>> send(email)  # will pass the checker
 
@@ -165,7 +165,7 @@ generic types [#MicrosoftGenericsCovContra]_
 In general, a covariant type parameter can be used as the return type of a
 delegate, and contravariant type parameters can be used as parameter types.
 
->>> def echo(what: int):
+>>> def check(what: int):
 ...     print(what)
 
 .. glossary::
@@ -208,7 +208,7 @@ Merging and extending protocols
 >>>
 >>> class Closable(Protocol):
 ...     def close(self) -> None:
->>>         ...
+...         ...
 >>>
 >>> class SizableAndClosable(Sized, Closable, Protocol):
 ...     pass
@@ -220,9 +220,9 @@ Generic Protocols
 >>> from typing import Protocol
 >>>
 >>>
->>> class Iterable(Protocol[T]):
+>>> class Iterable(Protocol['T']):
 ...     @abstractmethod
-...     def __iter__(self) -> Iterator[T]:
+...     def __iter__(self) -> Iterator['T']:
 ...         ...
 
 
@@ -232,14 +232,14 @@ Recursive Protocols
 * Since 3.7 ``from __future__ import annotations``
 * Future :pep:`563` -- Postponed Evaluation of Annotations
 
->>> from typing import Protocol
+>>> from typing import Protocol, Iterable
 >>>
 >>>
 >>> class Tree(Protocol):
 ...     def get_node(self) -> Iterable['Tree']:
 ...         ...
 
->>> from typing import Protocol
+>>> from typing import Protocol, Iterable
 >>>
 >>>
 >>> class Graph(Protocol):
@@ -299,7 +299,7 @@ File ``config.py``:
 
 File ``main.py``:
 
->>> import config
+>>> import config  # doctest: +SKIP
 >>> from typing import Protocol
 >>>
 >>>
@@ -313,7 +313,7 @@ File ``main.py``:
 ...     ...
 >>>
 >>>
->>> setup(config)  # Passes type check
+>>> setup(config)  # Passes type check  # doctest: +SKIP
 
 
 Callbacks
@@ -328,7 +328,7 @@ File ``callbacks.py``:
 
 File ``main.py``:
 
->>> import callbacks
+>>> import callbacks  # doctest: +SKIP
 >>> from typing import Protocol
 >>>
 >>>
@@ -337,7 +337,7 @@ File ``main.py``:
 ...     def on_success(self) -> None: ...
 >>>
 >>>
->>> result: Reporter = callbacks  # Passes type check
+>>> result: Reporter = callbacks  # Passes type check  # doctest: +SKIP
 
 
 Runtime Checkable
@@ -375,8 +375,6 @@ that provides the same semantics for class and instance checks as for
 >>>
 >>> isinstance(Astronaut, Person)
 True
-
-
 
 >>> from typing import Protocol
 >>>

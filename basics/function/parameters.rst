@@ -1,21 +1,12 @@
 Function Parameters
 ===================
-
-
-Important
----------
 * Parameter - Receiving variable used within the function
-* Required parameter:
-
-    * Necessary to call that function
-    * Specified at leftmost side
-
-* Default parameter:
-
-    * Optional to call that function
-    * Has default value
-    * Default value will be overridden if specified at a call time
-    * Specified at rightmost side
+* Required parameter - necessary to call that function
+* Required parameter - specified at leftmost side
+* Default parameter - optional to call that function
+* Default parameter - Has default value
+* Default parameter - Could be overridden
+* Default parameter - Specified at rightmost side
 
 .. glossary::
 
@@ -148,7 +139,7 @@ Signature
 >>> from inspect import signature
 >>>
 >>>
->>> def add(a, b=20):
+>>> def add(a, b=2):
 ...     return a + b
 >>>
 >>>

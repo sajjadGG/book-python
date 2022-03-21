@@ -91,6 +91,7 @@ could also be an ``await`` statement:
 >>>
 >>>
 >>> asyncio.run(hello())
+'hello'
 
 
 Run Concurrently
@@ -101,7 +102,6 @@ Run Concurrently
 
 >>> async def hello():
 ...     await asyncio.sleep(0.1)
-...     return 'hello'
 >>>
 >>> async def main():
 ...     await asyncio.gather(
@@ -110,8 +110,7 @@ Run Concurrently
 ...         hello(),
 ...     )
 >>>
->>> asyncio.run(hello())
-'hello'
+>>> asyncio.run(main())
 
 .. figure:: img/asyncio-coroutine-concurrency.gif
 
@@ -175,17 +174,30 @@ SyntaxError: 'await' outside async function
 Getting Results
 ---------------
 >>> async def hello():
+...     await asyncio.sleep(0.1)
 ...     return 'hello'
 >>>
 >>>
 >>> async def main():
-...     result = await hello()
-...     print(result)
+...     return await hello()
 >>>
 >>>
 >>> asyncio.run(main())
-done
+'hello'
 
+>>> async def hello():
+...     await asyncio.sleep(0.1)
+...     return 'hello'
+>>>
+>>> async def main():
+...     return await asyncio.gather(
+...         hello(),
+...         hello(),
+...         hello(),
+...     )
+>>>
+>>> asyncio.run(main())
+['hello', 'hello', 'hello']
 
 Inspect
 -------

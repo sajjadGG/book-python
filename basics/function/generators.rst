@@ -140,6 +140,7 @@ Filter
 >>> data = [0, 1, 2, 3, 4]
 >>> result = filter(even, data)
 >>> list (result)
+[0, 2, 4]
 
 
 Next
@@ -149,6 +150,7 @@ Range:
 >>> result = range(0,5)
 >>>
 >>> next(result)
+Traceback (most recent call last):
 TypeError: 'range' object is not an iterator
 
 Zip two-way:
@@ -260,7 +262,7 @@ Iter
 Range:
 
 >>> for i in range(0,3):
->>>     print(i)
+...     print(i)
 0
 1
 2
@@ -270,10 +272,10 @@ Enumerate:
 >>> months = ['January', 'February', 'March']
 >>>
 >>> for i, month in enumerate(months, start=1):
-...     print(f'{i} -> {month}')
-1 -> January
-2 -> February
-3 -> March
+...     print(f'{i=}, {month=}')
+i=1, month='January'
+i=2, month='February'
+i=3, month='March'
 
 Zip:
 
@@ -299,12 +301,12 @@ Generator Chain
 >>>
 >>>
 >>> result = range(0,10)
->>> result = map(square, data)
->>> result = filter(even, data)
+>>> result = map(square, result)
+>>> result = filter(even, result)
 >>>
 >>> for value in result:
 ...     print(value)
-...     if value > 5:
+...     if value > 3:
 ...         break
 0
 4
