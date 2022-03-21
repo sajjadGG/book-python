@@ -77,6 +77,7 @@ Traceback (most recent call last):
 TypeError: set_point() takes 1 positional argument but 2 positional arguments (and 1 keyword-only argument) were given
 >>>
 >>> set_point(1, y=2, z=3)
+Traceback (most recent call last):
 TypeError: set_point() takes 0 positional arguments but 1 positional argument (and 2 keyword-only arguments) were given
 
 
@@ -104,6 +105,7 @@ Traceback (most recent call last):
 TypeError: set_point() missing 1 required positional argument: 'y'
 >>>
 >>> set_point(1, y=2, z=3)
+Traceback (most recent call last):
 TypeError: set_point() got some positional-only arguments passed as keyword arguments: 'y, z'
 
 
@@ -240,6 +242,8 @@ Use Case - 0x06
 
 Use Case - 0x07
 ---------------
+* 49 parameters
+
 >>> def read_csv(filepath_or_buffer, /, *, sep=', ', delimiter=None,
 ...              header='infer', names=None, index_col=None, usecols=None,
 ...              squeeze=False, prefix=None, mangle_dupe_cols=True,
@@ -262,6 +266,8 @@ Use Case - 0x07
 ...          True, True, False, True, False, False, False, None, False,
 ...          False, None, 'infer', None, b'.', None, '"', 0, None, None,
 ...          None, None, None, True, True, 0, True, False, True, False, None)
+Traceback (most recent call last):
+TypeError: read_csv() takes 1 positional argument but 49 were given
 
 >>> read_csv('mydata.csv',
 ...          verbose=False,

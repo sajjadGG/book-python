@@ -57,7 +57,7 @@ Positional Parameters
 * ``*args`` unpacks to ``tuple``
 
 >>> def echo(*args):
-...     print(f'{args}')
+...     print(f'{args=}')
 >>>
 >>>
 >>> echo()
@@ -80,7 +80,7 @@ Keyword Parameters
 * ``**kwargs`` unpacks to ``dict``
 
 >>> def echo(**kwargs):
-...     print(f'{kwargs}')
+...     print(f'{kwargs=}')
 >>>
 >>>
 >>> echo()
@@ -122,12 +122,12 @@ args=(1, 2, 3), kwargs={'d': 4, 'e': 5, 'f': 6}
 
 Parameters with Args, Kwargs
 ----------------------------
->>> def echo(a, b, c=0, *args):
+>>> def echo(a, b, c=None, *args):
 ...     print(f'{a=}, {b=}, {c=}, {args=}')
 >>>
 >>>
 >>> echo(1, 2)
-a=1, b=2, c=0, args=()
+a=1, b=2, c=None, args=()
 >>>
 >>> echo(1, 2, 3)
 a=1, b=2, c=3, args=()
@@ -138,12 +138,12 @@ a=1, b=2, c=3, args=(4,)
 >>> echo(1, 2, 3, 4, 5, 6)
 a=1, b=2, c=3, args=(4, 5, 6)
 
->>> def echo(a, b, c=0, **kwargs):
+>>> def echo(a, b, c=None, **kwargs):
 ...     print(f'{a=}, {b=}, {c=}, {kwargs=}')
 >>>
 >>>
 >>> echo(1, 2)
-a=1, b=2, c=0, kwargs={}
+a=1, b=2, c=None, kwargs={}
 >>>
 >>> echo(1, 2, 3)
 a=1, b=2, c=3, kwargs={}
@@ -155,12 +155,12 @@ a=1, b=2, c=3, kwargs={'d': 7, 'e': 8, 'f': 9}
 Traceback (most recent call last):
 TypeError: echo() got multiple values for argument 'a'
 
->>> def echo(a, b, c=0, *args, **kwargs):
+>>> def echo(a, b, c=None, *args, **kwargs):
 ...     print(f'{a=}, {b=}, {c=}, {args=}, {kwargs=}')
 >>>
 >>>
 >>> echo(1, 2)
-a=1, b=2, c=0, args=(), kwargs={}
+a=1, b=2, c=None, args=(), kwargs={}
 >>>
 >>> echo(1, 2, 3, 4, 5, 6)
 a=1, b=2, c=3, args=(4, 5, 6), kwargs={}

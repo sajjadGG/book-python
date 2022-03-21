@@ -1,15 +1,11 @@
-Logging
-=======
-
-
 .. testsetup::
 
     def expensive_func1(): ...
     def expensive_func2(): ...
 
 
-Important
----------
+Logging
+=======
 * Do not print
 * Always use logger
 * Logs can be displayed on console
@@ -18,20 +14,6 @@ Important
 * Logs can be silenced (certain level)
 * Logs can be rotated
 * Logs can change format
-
->>> def run():
-...     print('Program start')
-...     for number in range(0,3):
-...         print(f'Current number: {number}')
-...     print('Program end')
->>>
->>>
->>> run()
-Program start
-Current number: 0
-Current number: 1
-Current number: 2
-Program end
 
 >>> import logging
 >>>
@@ -698,6 +680,11 @@ away your event. To decide what to do, you can call the isEnabledFor() method
 which takes a level argument and returns true if the event would be created
 by the Logger for that level of call. You can write code like this:
 
+>>> import logging
+>>>
+>>>
+>>> log = logging.getLogger(__name__)
+>>>
 >>> if logger.isEnabledFor(logging.DEBUG):
 ...     logger.debug('Message with %s, %s', expensive_func1(),
 ...                                         expensive_func2())

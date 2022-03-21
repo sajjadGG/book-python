@@ -145,7 +145,7 @@ firstname='Mark', lastname='Watney', age='40'
 >>> print(f'{firstname=}\n{lastname=}\n{emails=}')
 firstname='Mark'
 lastname='Watney'
-emails=['mwatney@nasa.gov', 'mwatney@gmail.com']
+emails=('mwatney@nasa.gov', 'mwatney@gmail.com')
 
 
 Nested
@@ -156,7 +156,7 @@ Nested
 a=1, b=2, c=3
 
 >>> data = ['Mark', 'Watney', ('mwatney@nasa.gov', 'mwatney@gmail.com')]
->>> firstname, lastname, email_work, email_home = data
+>>> firstname, lastname, (email_work, email_home) = data
 >>>
 >>> print(f'{firstname=}\n{lastname=}\n{email_work=}\n{email_home=}')
 firstname='Mark'

@@ -253,17 +253,18 @@ then TypeError is raised.
 ...     def say_hello(self):
 ...         return f'Hello {self.firstname} {self.lastname}'
 ...
+Traceback (most recent call last):
 TypeError: Astronaut already specifies __slots__
 
-@dataclass(slots=True)
-class Astronaut:
-    firstname: str
-    lastname: str
-
-    def say_hello(self):
-        return f'Hello {self.firstname} {self.lastname}'
-
-vars(Astronaut)
+>>> @dataclass(slots=True)
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...
+...     def say_hello(self):
+...         return f'Hello {self.firstname} {self.lastname}'
+>>>
+>>> vars(Astronaut)
 mappingproxy({'__module__': '__main__',
               '__annotations__': {'firstname': str, 'lastname': str},
               'say_hello': <function __main__.Astronaut.sey_hello(self)>,
@@ -280,14 +281,18 @@ mappingproxy({'__module__': '__main__',
               '__slots__': ('firstname', 'lastname'),
               'firstname': <member 'firstname' of 'Astronaut' objects>,
               'lastname': <member 'lastname' of 'Astronaut' objects>})
-a = Astronaut()
-TypeError: Astronaut.__init__() missing 2 required positional arguments: 'firstname' and 'lastname'
-a = Astronaut('Mark', 'Watney')
-a
+>>>
+>>> a = Astronaut('Mark', 'Watney')
+>>>
+>>> a
 Astronaut(firstname='Mark', lastname='Watney')
-vars(a)
+>>>
+>>> vars(a)
+Traceback (most recent call last):
 TypeError: vars() argument must have __dict__ attribute
-a.__slots__
+>>>
+>>> a.__slots__
 ('firstname', 'lastname')
-{attrname: getattr(a, attrname) for attrname in a.__slots__}
+>>>
+>>> {attrname: getattr(a, attrname) for attrname in a.__slots__}
 {'firstname': 'Mark', 'lastname': 'Watney'}

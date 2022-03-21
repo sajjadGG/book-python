@@ -1,10 +1,13 @@
+.. testsetup::
+
+    from __future__ import annotations
+
+
 Type Annotation OOP
 ===================
-
-
-Important
----------
 * All classes are types
+* Since 3.11: :pep:`673` - Self Type
+* Since 3.7: ``from __future__ import annotations``
 
 >>> class Point:
 ...     x: int
@@ -89,8 +92,8 @@ Composition
 ...     friends: list[Person]
 
 
-Circular Dependency
--------------------
+Self
+----
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
@@ -113,6 +116,14 @@ Since Python 3.7:
 ...     firstname: str
 ...     lastname: str
 ...     friends: list[Astronaut]
+
+* Since 3.11: :pep:`673` - Self Type
+
+>>> from typing import Self  # doctest: +SKIP
+>>>
+>>>
+>>> class Person:
+...     friends: list[Self]  # doctest: +SKIP
 
 
 Instance
