@@ -2,10 +2,10 @@ AsyncIO Context Manager
 =======================
 
 
-Important
----------
-* ``__aenter__``
-* ``__aexit__``
+.. important::
+
+    * ``__aenter__``
+    * ``__aexit__``
 
 
 Example

@@ -12,8 +12,8 @@ Connection Engine
     * ``engine.connect()`` method explicitly connects to the database
 
 
-Important
----------
+Glossary
+--------
 .. glossary::
 
     engine

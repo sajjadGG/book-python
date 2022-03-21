@@ -16,8 +16,8 @@ ORM About
     * Provide patterns for data validation and coercion
 
 
-Important
----------
+About
+-----
 Source: [#ytSQLAlchemy20]_
 
 .. figure:: img/sqlalchemy-onion.png

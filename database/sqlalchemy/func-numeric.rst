@@ -19,8 +19,8 @@ Func Numeric
     * ``sum`` - The SQL SUM() aggregate function
 
 
-Important
----------
+About
+-----
 .. csv-table:: SQL and Generic Functions
     :widths: 20,80
     :header: "Object", "Name Description"

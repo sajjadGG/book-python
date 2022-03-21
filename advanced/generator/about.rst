@@ -1,9 +1,6 @@
 Generator About
 ===============
 
-
-Important
----------
 .. important::
 
     * Processes one element at a time

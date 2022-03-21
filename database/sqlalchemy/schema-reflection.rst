@@ -5,14 +5,14 @@ Schema Reflection
 
     * SQLAlchemy allows for database reflection
 
-
-Important
----------
 .. glossary::
 
     Reflection
         Loading Table objects based on reading from an existing database.
 
+
+About
+-----
 SQLAlchemy tool ``Automap`` does the reflection of database and figures out
 how to do the mapping dynamically.
 

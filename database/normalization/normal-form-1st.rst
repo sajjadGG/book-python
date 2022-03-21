@@ -8,18 +8,12 @@
     * Entries in a column are same type
 
 
-Important
----------
-* Atomic Values
-* Unique Identifiers (rows uniquely identified by ``PRIMARY KEY``)
-* Entries in a column are same type
-
-1st Normal Form enforces the following actions on the data:
-
-    1. A cell must never contain more than one value
-    2. Each row must be unique
-    3. Each column name must be unique
-    4. There must be no repeating groups
+1st Normal Form
+---------------
+* A cell must never contain more than one value
+* Each row must be unique
+* Each column name must be unique
+* There must be no repeating groups
 
 
 Atomic Values

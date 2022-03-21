@@ -16,8 +16,8 @@ Normalization About
     * 4th: No multi-valued dependencies
 
 
-Important
----------
+Glossary
+--------
 .. glossary::
 
     normalization

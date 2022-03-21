@@ -2,16 +2,19 @@ AsyncIO Coroutine
 =================
 
 
-Important
----------
-* Coroutine function and coroutine object are two different things
-* Coroutine function is the definition (``async def``)
-* Coroutine function will create coroutine when called
-* This is similar to generator object and generator function
-* Coroutine functions are not awaitables
-* Coroutine objects are awaitables
-* Coroutines declared with the ``async``/``await`` syntax is the preferred way of writing asyncio applications. [#pydocAsyncioTask]_
+.. important::
 
+    * Coroutine function and coroutine object are two different things
+    * Coroutine function is the definition (``async def``)
+    * Coroutine function will create coroutine when called
+    * This is similar to generator object and generator function
+    * Coroutine functions are not awaitables
+    * Coroutine objects are awaitables
+    * Coroutines declared with the ``async``/``await`` syntax is the preferred way of writing asyncio applications. [#pydocAsyncioTask]_
+
+
+Syntax
+------
 >>> async def hello():
 ...     return 'hello'
 >>>

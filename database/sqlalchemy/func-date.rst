@@ -1,5 +1,5 @@
-Func Count
-==========
+Func Date
+=========
 
 .. important::
 
@@ -11,9 +11,8 @@ Func Count
     * ``now`` - The SQL now() datetime function
 
 
-
-Important
----------
+About
+-----
 .. csv-table:: SQL and Generic Functions
     :widths: 20,80
     :header: "Object", "Name Description"

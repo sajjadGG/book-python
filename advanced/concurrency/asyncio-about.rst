@@ -1,13 +1,12 @@
 AsyncIO About
 =============
 
+.. important::
 
-Important
----------
-* ``asyncio`` in Python standard library
-* ``async`` and ``await`` builtin keywords
-* Running asynchronously: 3s + 1s + 1s = bit over 3s [execution time]
-* Async is the future of programming
+    * ``asyncio`` in Python standard library
+    * ``async`` and ``await`` builtin keywords
+    * Running asynchronously: 3s + 1s + 1s = bit over 3s [execution time]
+    * Async is the future of programming
 
 
 Advantages

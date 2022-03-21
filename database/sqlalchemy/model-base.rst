@@ -8,9 +8,14 @@ Model Base
     * Declarative base (recommended)
     * Imperative (a.k.a. Classical) Mappings
 
+.. glossary::
 
-Important
----------
+    base
+        Model responsible for mapping objects with database
+
+
+About
+-----
 SQLAlchemy historically features two distinct styles of mapper
 configuration. The original mapping API is commonly referred to as
 "classical" style, whereas the more automated style of mapping is known as
@@ -18,11 +23,6 @@ configuration. The original mapping API is commonly referred to as
 imperative mapping and declarative mapping. Both styles may be used
 interchangeably, as the end result of each is exactly the same.
 [#sqlalchemyMappings]_
-
-.. glossary::
-
-    base
-        Model responsible for mapping objects with database
 
 
 Declarative Base

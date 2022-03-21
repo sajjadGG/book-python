@@ -6,9 +6,6 @@ Core Introspect
     * Introspection - getting information about the object internals
 
 
-Important
----------
-
 SetUp
 -----
 >>> from sqlalchemy import create_engine, MetaData, Table, Column

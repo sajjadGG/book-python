@@ -1,20 +1,22 @@
 AsyncIO Debug
 =============
 
-Important
----------
-* More verbose message you can achieve by using ``PYTHONASYNCIODEBUG=1`` and ``PYTHONTRACEMALLOC=1`` environment variables
-* Also ``python3 -X dev -X tracemalloc=5 myfile.py``
+.. important::
 
-.. code-block:: console
-
-    $ PYTHONMALLOC=debug PYTHONASYNCIODEBUG=1 python3 -X dev -X tracemalloc=5 myfile.py
+    * By default asyncio runs in production mode
+    * Asyncio has a debug mode which can be enabled
+    * More verbose message you can achieve by using ``PYTHONASYNCIODEBUG=1`` and ``PYTHONTRACEMALLOC=1`` environment variables
+    * Also ``python3 -X dev -X tracemalloc=5 myfile.py``
 
 
 Debug
 -----
 * By default asyncio runs in production mode
 * Asyncio has a debug mode which can be enabled
+
+.. code-block:: console
+
+    $ PYTHONMALLOC=debug PYTHONASYNCIODEBUG=1 python3 -X dev -X tracemalloc=5 myfile.py
 
 Asyncio has a debug mode which can be enabled by:
 

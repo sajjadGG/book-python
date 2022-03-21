@@ -1,15 +1,10 @@
 Core Model
 ==========
 
-
 .. important::
 
     * Models represents database entities (tables)
     * Metadata represents connection between Python object and a database
-
-
-Important
----------
 
 
 SetUp

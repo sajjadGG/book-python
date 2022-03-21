@@ -22,8 +22,8 @@ Model Column
     * ``comment=None``
 
 
-Important
----------
+About
+-----
 * Documentation [#sqlalchemyColumn]_
 
 

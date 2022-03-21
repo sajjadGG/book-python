@@ -9,8 +9,8 @@ Query Debug
     * ``create_engine(echo=True)``
 
 
-Important
----------
+About
+-----
 * Verbose Queries
 * Logging to stdout
 * DEBUG option in SQLAlchemy

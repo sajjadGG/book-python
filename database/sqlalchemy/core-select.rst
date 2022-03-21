@@ -7,8 +7,8 @@ Core Select
     * Note the dot ``.`` at the end of the select line
 
 
-Important
----------
+About
+-----
 >>> from sqlalchemy import select
 
 

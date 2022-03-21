@@ -10,10 +10,6 @@ Model Types
     * Dates: DateTime, Date, Time, Interval
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> from sqlalchemy.sql import sqltypes

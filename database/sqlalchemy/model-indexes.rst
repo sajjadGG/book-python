@@ -9,8 +9,8 @@ Model Indexes
     * Functional Indexes (Expression Indexes)
 
 
-Important
----------
+About
+-----
 * Simple Indexes
 * Multi-Column Indexes
 * Partial Indexes

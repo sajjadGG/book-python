@@ -8,10 +8,6 @@ Model Define
     * They are the most important entity in the project
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> from sqlalchemy import create_engine

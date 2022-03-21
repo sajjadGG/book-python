@@ -7,9 +7,6 @@ Connection Session
     * 1.0 style (legacy)
     * 2.0 style (with context managers)
 
-
-Important
----------
 .. glossary::
 
     session

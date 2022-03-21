@@ -10,10 +10,6 @@ Func About
     * System Functions
 
 
-Important
----------
-
-
 Date Functions
 --------------
 .. csv-table:: SQL and Generic Functions

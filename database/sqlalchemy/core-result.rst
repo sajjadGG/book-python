@@ -9,10 +9,6 @@ Core Result
     * ``.one_or_none()``
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> from sqlalchemy import create_engine, MetaData, Table, Column

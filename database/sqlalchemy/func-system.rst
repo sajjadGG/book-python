@@ -18,8 +18,8 @@ Func Count
     * ``ScalarFunctionColumn`` -
 
 
-Important
----------
+About
+-----
 .. csv-table:: System Functions
     :widths: 20,80
     :header: "Object", "Name Description"
