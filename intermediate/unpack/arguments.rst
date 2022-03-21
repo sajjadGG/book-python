@@ -9,12 +9,14 @@ Unpack Arguments
 
 Recap
 -----
-* argument - Value/variable/reference being passed to the function
-* positional arguments - value passed to function
-* positional arguments - order is important
-* keyword arguments - value passed to function resolved by name
-* keyword arguments - order is not important
-* keyword arguments - must be on the right side
+* Argument - Value or variable being passed to the function
+* Positional arguments - value passed to function
+* Positional arguments - order is important
+* Positional arguments - must be at the left side
+* Keyword arguments - value passed to function resolved by name
+* Keyword arguments - order is not important
+* Keyword arguments - must be on the right side
+* Positional argument cannot follow keyword arguments
 
 >>> echo(1)          # positional argument
 >>> echo(a=1)        # keyword argument

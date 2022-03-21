@@ -41,6 +41,15 @@ def mean(*args):
     return sum(args) / len(args)
 
 
+# %%timeit -r 1000 -n 1000
+# >>> def mean(*args):
+# ...     if not args:
+# ...         return 0
+# ...     return sum(args) / len(args)
+# ...
+# ... mean()
+# 165 ns ± 28.5 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
 # >>> %%timeit -r 1000 -n 1000
 # ... def mean(*args):
 # ...     if len(args) == 0:

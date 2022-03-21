@@ -1,12 +1,11 @@
 Unpack Parameters
 =================
 
+.. important::
 
-Important
----------
-* More information in `Unpack Assignment`
-* More information in `Unpack Parameters`
-* More information in `Unpack Arguments`
+    * More information in `Unpack Assignment`
+    * More information in `Unpack Parameters`
+    * More information in `Unpack Arguments`
 
 .. figure:: img/unpack-assignment,args,params.png
 
@@ -25,9 +24,10 @@ Syntax
 
 Recap
 -----
-* parameter - Receiving variable used within the function/block
-* required parameters - Parameter which is necessary to call function
-* optional parameters (with default value) - Parameter which is optional and has default value (if not specified at call time)
+* Parameter - Receiving variable used within the function
+* Required parameters - Parameter which is necessary to call function
+* Optional parameters - Parameter which is optional and has default value (if not specified at call time)
+* Optional parameter - also known as: parameter with default value
 
 Required parameters:
 

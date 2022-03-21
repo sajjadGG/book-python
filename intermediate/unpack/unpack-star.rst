@@ -1,9 +1,18 @@
 Unpack Star
 ===========
 
+.. important::
 
-Important
----------
+    * ``a, b, *c = 1, 2, 3, 4, 5``
+    * Used when there is arbitrary number of values to unpack
+    * Could be used from start, middle, end
+    * There can't be multiple star expressions in one assignment statement
+    * ``_`` is regular variable name, not a special Python syntax
+    * ``_`` by convention is used for data we don't want to access in future
+
+
+About
+-----
 .. figure:: img/unpack-assignment,args,params.png
 
 

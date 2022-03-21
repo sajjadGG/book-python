@@ -50,6 +50,34 @@ Comprehension:
               and (<VARIABLE3> := <EXPR>)
               or (<VARIABLE4> := <EXPR>)]
 
+Example
+-------
+* Defines and substitutes in one go
+
+>>> x = 1
+>>> print(x)
+1
+
+>>> print(x = 1)
+Traceback (most recent call last):
+TypeError: 'x' is an invalid keyword argument for print()
+
+>>> print(x := 1)
+1
+
+
+What is not
+-----------
+* It's not substitution for equals
+
+>>> x = 1
+>>> print(x)
+1
+
+>>> x := 1
+Traceback (most recent call last):
+SyntaxError: invalid syntax
+
 
 Processing Streams
 ------------------
@@ -85,8 +113,8 @@ before using it further:
 ...     print(result)
 <re.Match object; span=(11, 20), match='@nasa.gov'>
 
-Assignment expressions allows to merge two independent lines into one coherent
-statement:
+Assignment expressions allows to merge two independent lines into one
+coherent statement:
 
 >>> if result := re.search(r'@nasa.gov', DATA):
 ...     print(result)
@@ -113,8 +141,9 @@ Typical comprehension would require calling ``str.split()`` multiple times:
  {'firstname': 'Mark', 'lastname': 'Watney'}]
 
 Assignment expressions allows definition of a variable which can be used in
-the comprehension. It is not only more clear and readable, but also saves time
-and memory, especially if the function call would take a lot of resources:
+the comprehension. It is not only more clear and readable, but also saves
+time and memory, especially if the function call would take a lot of
+resources:
 
 >>> result = [{'firstname': name[0], 'lastname': name[1]}
 ...           for fullname in DATA
@@ -126,19 +155,8 @@ and memory, especially if the function call would take a lot of resources:
  {'firstname': 'Mark', 'lastname': 'Watney'}]
 
 
-What is not
------------
-It's not substitution for equals:
-
->>> x = 1
->>>
->>> print(x)
-1
-
->>> x := 1
-Traceback (most recent call last):
-SyntaxError: invalid syntax
-
+Assignment vs Assignment Expression
+-----------------------------------
 >>> (x := 1)
 1
 >>>
