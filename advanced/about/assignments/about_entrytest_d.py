@@ -30,7 +30,7 @@ Tests:
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     ['mlewis@nasa.gov', 'rmartinez@nasa.gov', 'cbeck@nasa.gov',
-    'bjohanssen@nasa.gov', 'mwatney@nasa.gov', 'ptwardowski@polsa.gov.pl']
+     'bjohanssen@nasa.gov', 'mwatney@nasa.gov', 'ptwardowski@polsa.gov.pl']
 """
 
 DATA = {

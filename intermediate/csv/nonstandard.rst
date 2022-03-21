@@ -93,7 +93,7 @@ Hosts
 
     127.0.0.1       localhost
     127.0.0.1       astromatt
-    10.13.37.1      nasa.gov esa.int roscosmos.ru
+    10.13.37.1      nasa.gov esa.int
     255.255.255.255 broadcasthost
     ::1             localhost
 

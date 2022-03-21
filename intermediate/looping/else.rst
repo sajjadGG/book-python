@@ -33,7 +33,7 @@ Loop ``else``
     DATA = """
     127.0.0.1       localhost
     127.0.0.1       astromatt
-    10.13.37.1      nasa.gov esa.int roscosmos.ru
+    10.13.37.1      nasa.gov esa.int
     255.255.255.255 broadcasthost
     ::1             localhost
     """
@@ -45,7 +45,7 @@ Loop ``else``
 
         ip, *hostnames = line.split()
         # ip == '10.13.37.1'
-        # hostnames == ['nasa.gov', 'esa.int', 'roscosmos.ru']
+        # hostnames == ['nasa.gov', 'esa.int']
 
         for record in DNS:
             if record['ip'] == ip:
@@ -60,7 +60,7 @@ Loop ``else``
     print(DNS)
     # [
     #   {'ip': '127.0.0.1', 'hostnames': {'astromatt', 'localhost'}},
-    #   {'ip': '10.13.37.1', 'hostnames': {'roscosmos.ru', 'esa.int', 'nasa.gov'}},
+    #   {'ip': '10.13.37.1', 'hostnames': {'esa.int', 'nasa.gov'}},
     #   {'ip': '255.255.255.255', 'hostnames': {'broadcasthost'}},
     #   {'ip': '::1', 'hostnames': {'localhost'}},
     # ]

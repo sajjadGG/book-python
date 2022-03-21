@@ -2,7 +2,7 @@
 * Assignment: Unpack Parameters Kwargs
 * Complexity: medium
 * Lines of code: 8 lines
-* Time: 5 min
+* Time: 8 min
 
 English:
     1. Create function `isnumeric`

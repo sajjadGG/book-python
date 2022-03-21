@@ -106,7 +106,7 @@ Mixed
 -----
 >>> DATA = [(1, 2),
 ...         ('name', 'Mark Watney'),
-...         ('agency', ['NASA', 'ESA', 'Roscosmos']),
+...         ('agency', ['NASA', 'ESA', 'POLSA']),
 ...         ((1, 2), ['botanist', 'commander', 'pilot']),
 ...         (['Ares1', 'Are2', 'Ares3'], 1)]
 >>>
@@ -114,7 +114,7 @@ Mixed
 ...     print(f'{first} -> {second}')
 1 -> 2
 name -> Mark Watney
-agency -> ['NASA', 'ESA', 'Roscosmos']
+agency -> ['NASA', 'ESA', 'POLSA']
 (1, 2) -> ['botanist', 'commander', 'pilot']
 ['Ares1', 'Are2', 'Ares3'] -> 1
 

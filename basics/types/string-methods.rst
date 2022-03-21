@@ -188,13 +188,13 @@ Split by Character
 >>> text.split()
 ['We', 'choose', 'to', 'go', 'to', 'the', 'Moon']
 
->>> text = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
+>>> text = '10.13.37.1      nasa.gov esa.int'
 >>> text.split(' ')
-['10.13.37.1', '', '', '', '', '', 'nasa.gov', 'esa.int', 'roscosmos.ru']
+['10.13.37.1', '', '', '', '', '', 'nasa.gov', 'esa.int']
 
->>> text = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
+>>> text = '10.13.37.1      nasa.gov esa.int'
 >>> text.split()
-['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
+['10.13.37.1', 'nasa.gov', 'esa.int']
 
 
 Join by Character

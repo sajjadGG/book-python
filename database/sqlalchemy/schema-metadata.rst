@@ -98,7 +98,7 @@ Use Case - 0x01
 ...     Column('born', Date),
 ...     Column('height', Integer),
 ...     Column('weight', Numeric(3,2)),
-...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
+...     Column('agency', Enum('NASA', 'ESA', 'POLSA')),
 ... )
 >>>
 >>>
@@ -117,7 +117,7 @@ Table('astronaut', MetaData(),
       Column('born', Date(), table=<astronaut>),
       Column('height', Integer(), table=<astronaut>),
       Column('weight', Numeric(precision=3, scale=2), table=<astronaut>),
-      Column('agency', Enum('NASA', 'ESA', 'Roscosmos'), table=<astronaut>), schema=None)
+      Column('agency', Enum('NASA', 'ESA', 'POLSA'), table=<astronaut>), schema=None)
 
 
 Use Case - 0x02
@@ -143,7 +143,7 @@ the datatype for a ``ForeignKey`` column [#ytSQLAlchemy20]_.
 ...     Column('born', Date),
 ...     Column('height', Integer),
 ...     Column('weight', Numeric(3,2)),
-...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
+...     Column('agency', Enum('NASA', 'ESA', 'POLSA')),
 ... )
 >>>
 >>> missions = Table('missions', metadata,

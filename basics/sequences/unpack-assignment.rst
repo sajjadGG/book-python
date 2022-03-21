@@ -121,7 +121,7 @@ Unpacking
 >>> print(c)
 3
 
->>> line = 'Mark,Watney,44'
+>>> line = 'Mark,Watney,40'
 >>> firstname, lastname, age = line.split(',')
 >>>
 >>>
@@ -202,7 +202,7 @@ Use Case - 0x03
 ---------------
 * Passwd
 
->>> line = 'watney:x:1001:1001:Mark Watney:/home/watney:/bin/bash'
+>>> line = 'watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash'
 >>> line = line.split(':')
 >>>
 >>> username = line[0]
@@ -213,7 +213,7 @@ watney
 >>> print(fullname)
 Mark Watney
 
->>> line = 'watney:x:1001:1001:Mark Watney:/home/watney:/bin/bash'
+>>> line = 'watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash'
 >>> username, _, _, _, fullname, _, _ = line.split(':')
 >>>
 >>> print(username)

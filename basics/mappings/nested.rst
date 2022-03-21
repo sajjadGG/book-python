@@ -32,7 +32,7 @@ Mixed
 ...     'date': '1969-07-21',
 ...     'age': 42,
 ...     'astronaut': {'name': 'Mark Watney', 'medals': {'Medal of Honor', 'Purple Heart'}},
-...     'agency': ['NASA', 'ESA', 'POLSA', 'Roscosmos'],
+...     'agency': ['NASA', 'ESA', 'POLSA'],
 ...     'location': ('Baikonur', 'Johnson Space Center'),
 ... }
 

@@ -11,61 +11,38 @@ Arbitrary Number of Arguments
 -----------------------------
 Unpack values at the right side:
 
->>> a, b, *c = [1, 2, 3, 4]
+>>> a, b, *c = [1, 2, 3, 4, 5]
 >>>
->>>
->>> print(a)
-1
->>>
->>> print(b)
-2
->>>
->>> print(c)
-[3, 4]
+>>> print(f'{a=}, {b=}, {c=}')
+a=1, b=2, c=[3, 4, 5]
 
 Unpack values at the left side:
 
->>> *a, b, c = [1, 2, 3, 4]
+>>> *a, b, c = [1, 2, 3, 4, 5]
 >>>
->>>
->>> print(a)
-[1, 2]
->>>
->>> print(b)
-3
->>>
->>> print(c)
-4
+>>> print(f'{a=}, {b=}, {c=}')
+a=[1, 2, 3], b=4, c=5
 
 Unpack values from both sides at once:
 
->>> a, *b, c = [1, 2, 3, 4]
+>>> a, *b, c = [1, 2, 3, 4, 5]
 >>>
->>>
->>> print(a)
-1
->>>
->>> print(b)
-[2, 3]
->>>
->>> print(c)
-4
+>>> print(f'{a=}, {b=}, {c=}')
+a=1, b=[2, 3, 4], c=5
 
 Unpack from variable length:
 
 >>> a, *b, c = [1, 2]
 >>>
->>>
->>> print(a)
-1
->>> print(b)
-[]
->>> print(c)
-2
+>>> print(f'{a=}, {b=}, {c=}')
+a=1, b=[], c=2
 
+
+Errors
+------
 Cannot unpack from both sides at once:
 
->>> *a, b, *c = [1, 2, 3, 4]
+>>> *a, b, *c = [1, 2, 3, 4, 5]
 Traceback (most recent call last):
 SyntaxError: two starred expressions in assignment
 
@@ -81,35 +58,59 @@ Skipping Values
 * ``_`` is regular variable name, not a special Python syntax
 * ``_`` by convention is used for data we don't want to access in future
 
->>> _ = 'Jan Twardowski'
+>>> _ = 'Mark Watney'
 >>>
 >>> print(_)
-Jan Twardowski
+Mark Watney
 
->>> line = 'Jan,Twardowski,1,2,3,4,5'
+>>> line = 'Mark,Watney,40,185,75.5'
 >>> firstname, lastname, *_ = line.split(',')
 >>>
->>>
->>> print(firstname)
-Jan
->>>
->>> print(lastname)
-Twardowski
+>>> print(f'{firstname=}, {lastname=}')
+firstname='Mark', lastname='Watney'
 
 >>> line = '4.9,3.1,1.5,0.1,setosa'
 >>> *_, label = line.split(',')
 >>>
->>> print(label)
-setosa
+>>> print(f'{label=}')
+label='setosa'
 
->>> line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
->>> username, *_, home, _ = line.split(':')
+>>> line = 'watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash'
+>>> username, _, uid, *_ = line.split(':')
 >>>
->>> print(username)
-twardowski
->>>
->>> print(home)
-/home/twardowski
+>>> print(f'{username=}, {uid=}')
+username='watney', uid='1000'
+
+
+For Loop Unpacking
+------------------
+>>> DATA = [
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+... ]
+
+>>> for row in DATA:
+...     print(f'{row=}')
+...
+row=(5.8, 2.7, 5.1, 1.9, 'virginica')
+row=(5.1, 3.5, 1.4, 0.2, 'setosa')
+row=(5.7, 2.8, 4.1, 1.3, 'versicolor')
+
+>>> for row in DATA:
+...     *values, species = row
+...     print(f'{values=}, {species=}')
+...
+values=[5.8, 2.7, 5.1, 1.9], species='virginica'
+values=[5.1, 3.5, 1.4, 0.2], species='setosa'
+values=[5.7, 2.8, 4.1, 1.3], species='versicolor'
+
+>>> for *values, species in DATA:
+...     print(f'{values=}, {species=}')
+...
+values=[5.8, 2.7, 5.1, 1.9], species='virginica'
+values=[5.1, 3.5, 1.4, 0.2], species='setosa'
+values=[5.7, 2.8, 4.1, 1.3], species='versicolor'
 
 
 Use Case - 0x01
@@ -117,63 +118,34 @@ Use Case - 0x01
 >>> line = 'ares3,watney,lewis,vogel,johanssen'
 >>> mission, *crew = line.split(',')
 >>>
->>>
->>> print(mission)
-ares3
->>>
->>> print(crew)
-['watney', 'lewis', 'vogel', 'johanssen']
+>>> print(f'{mission=}, {crew=}')
+mission='ares3', crew=['watney', 'lewis', 'vogel', 'johanssen']
 
 
 Use Case - 0x02
 ---------------
 >>> first, *middle, last = [1, 2, 3, 4]
 >>>
->>>
->>> print(first)
-1
->>>
->>> print(middle)
-[2, 3]
->>>
->>> print(last)
-4
+>>> print(f'{first=}, {middle=}, {last=}')
+first=1, middle=[2, 3], last=4
 
 >>> first, second, *others = [1, 2, 3, 4]
 >>>
->>>
->>> print(first)
-1
->>>
->>> print(second)
-2
->>>
->>> print(others)
-[3, 4]
+>>> print(f'{first=}, {second=}, {others=}')
+first=1, second=2, others=[3, 4]
 
 
 Use Case - 0x03
 ---------------
 >>> first, second, *others = range(0,10)
 >>>
->>>
->>> print(first)
-0
->>>
->>> print(second)
-1
->>>
->>> print(others)
-[2, 3, 4, 5, 6, 7, 8, 9]
+>>> print(f'{first=}, {second=}, {others=}')
+first=0, second=1, others=[2, 3, 4, 5, 6, 7, 8, 9]
 
 >>> first, second, *_ = range(0,10)
 >>>
->>>
->>> print(first)
-0
->>>
->>> print(second)
-1
+>>> print(f'{first=}, {second=}')
+first=0, second=1
 
 
 Use Case - 0x04
@@ -193,24 +165,19 @@ Use Case - 0x05
 ---------------
 * Iris 1D
 
->>> *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
+>>> *values, species = (5.8, 2.7, 5.1, 1.9, 'virginica')
 >>>
->>>
->>> print(features)
-[5.8, 2.7, 5.1, 1.9]
->>>
->>> print(label)
-virginica
+>>> print(f'{values=}, {species=}')
+values=[5.8, 2.7, 5.1, 1.9], species='virginica'
 
 
 Use Case - 0x06
 ---------------
->>> *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
->>> avg = sum(features) / len(features)
+>>> *values, species = (5.8, 2.7, 5.1, 1.9, 'virginica')
+>>> avg = sum(values) / len(values)
 >>>
->>>
->>> print(f'{avg=:.2f}, {label=}')
-avg=3.88, label='virginica'
+>>> print(f'{avg=:.2f}, {species=}')
+avg=3.88, species='virginica'
 
 
 Use Case - 0x07
@@ -224,12 +191,12 @@ Use Case - 0x07
 ... ]
 >>>
 >>>
->>> for *features, label in DATA:
-...     avg = sum(features) / len(features)
-...     print(f'{avg=:.2f} {label=}')
-avg=3.88 label='virginica'
-avg=2.55 label='setosa'
-avg=3.48 label='versicolor'
+>>> for *values, species in DATA:
+...     avg = sum(values) / len(values)
+...     print(f'{avg=:.2f} {species=}')
+avg=3.88 species='virginica'
+avg=2.55 species='setosa'
+avg=3.48 species='versicolor'
 
 
 Assignments

@@ -59,20 +59,20 @@ Positional Parameters
 * ``*args`` unpacks to ``tuple``
 
 >>> def echo(*args):
-...     print(args)
+...     print(f'{args}')
 >>>
 >>>
 >>> echo()
-()
+args=()
 >>>
 >>> echo(1)
-(1,)
+args=(1,)
 >>>
 >>> echo(2, 3)
-(2, 3)
+args=(2, 3)
 >>>
 >>> echo(1, 2, 3, 4, 5)
-(1, 2, 3, 4, 5)
+args=(1, 2, 3, 4, 5)
 
 
 Keyword Parameters
@@ -82,20 +82,20 @@ Keyword Parameters
 * ``**kwargs`` unpacks to ``dict``
 
 >>> def echo(**kwargs):
-...     print(kwargs)
+...     print(f'{kwargs}')
 >>>
 >>>
 >>> echo()
-{}
+kwargs={}
 >>>
 >>> echo(a=1)
-{'a': 1}
+kwargs={'a': 1}
 >>>
 >>> echo(a=1, b=2)
-{'a': 1, 'b': 2}
+kwargs={'a': 1, 'b': 2}
 >>>
 >>> echo(a=1, b=2, c=3, d=4, e=5)
-{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+kwargs={'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
 
 
 Positional and Keyword Parameters
@@ -176,16 +176,6 @@ a=1, b=2, c=3, args=(4, 5, 6), kwargs={'d': 7, 'e': 8, 'f': 9}
 
 Use Case - 0x01
 ---------------
->>> def echo(a, b, c=0, *args):
-...     print(locals())
->>>
->>>
->>> echo(*range(0,10))
-{'a': 0, 'b': 1, 'c': 2, 'args': (3, 4, 5, 6, 7, 8, 9)}
-
-
-Use Case - 0x02
----------------
 >>> def add(*values):
 ...     total = 0
 ...     for value in values:
@@ -209,19 +199,8 @@ Use Case - 0x02
 10
 
 
-Use Case - 0x03
+Use Case - 0x02
 ---------------
->>> def celsius_to_kelvin(degree):
-...     return degree + 273.15
->>>
->>>
->>> celsius_to_kelvin(1)
-274.15
->>>
->>> celsius_to_kelvin([1,2,3])
-Traceback (most recent call last):
-TypeError: can only concatenate list (not "float") to list
-
 >>> def celsius_to_kelvin(*degrees):
 ...     return [x+273.15 for x in degrees]
 >>>
@@ -233,7 +212,7 @@ TypeError: can only concatenate list (not "float") to list
 [274.15, 275.15, 276.15, 277.15, 278.15]
 
 
-Use Case - 0x04
+Use Case - 0x03
 ---------------
 >>> def html_list(*fruits):
 ...     print('<ul>')
@@ -250,28 +229,22 @@ Use Case - 0x04
 </ul>
 
 
-Use Case - 0x05
+Use Case - 0x04
 ---------------
 Intuitive definition of ``print`` function:
 
+>>> print('hello')
+hello
+>>>
+>>> print('hello', 'world')
+hello world
+>>>
+>>> print('hello', 'new', 'world')
+hello new world
+
 >>> def print(*values, sep=' ', end='\n'):
 ...     return sep.join(values) + end
->>>
->>>
->>> print('a')
-'a\n'
->>>
->>> print('a', 'b')
-'a b\n'
->>>
->>> print('a', 'b', 'c')
-'a b c\n'
->>>
->>> print('a', 'b', 'c', sep=',')
-'a,b,c\n'
->>>
->>> print('a', 'b', 'c', sep='|')
-'a|b|c\n'
+
 
 
 Assignments

@@ -30,7 +30,7 @@ Class Diagram
           + agency: str = 'NASA'
         }
 
-        class Cosmonaut{
+        class Cosmonaut {
           + agency: str = 'Roscosmos'
         }
     ```

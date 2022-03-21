@@ -45,7 +45,7 @@ Tests:
 
     >>> pprint(result, width=120)
     [{'address': '127.0.0.1', 'hosts': ['localhost', 'astromatt']},
-     {'address': '10.13.37.1', 'hosts': ['nasa.gov', 'esa.int', 'roscosmos.ru']},
+     {'address': '10.13.37.1', 'hosts': ['nasa.gov', 'esa.int']},
      {'address': '255.255.255.255', 'hosts': ['broadcasthost']},
      {'address': '::1', 'hosts': ['localhost']}]
 """
@@ -58,12 +58,11 @@ DATA = """##
 
 127.0.0.1       localhost
 127.0.0.1       astromatt
-10.13.37.1      nasa.gov esa.int roscosmos.ru
+10.13.37.1      nasa.gov esa.int
 255.255.255.255 broadcasthost
 ::1             localhost"""
 
 # list[dict]: keys: address, hosts, protocol; merge hosts for the same ip
-#             protocol is 'ipv4' when '.' is in address; use conditional expr.
 result = ...
 
 

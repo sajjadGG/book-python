@@ -12,7 +12,7 @@ Literal Field
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     agency: Literal['NASA', 'ESA', 'Roscosmos']
+...     agency: Literal['NASA', 'ESA', 'POLSA']
 
 
 Union Fields

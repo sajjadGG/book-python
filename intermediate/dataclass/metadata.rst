@@ -211,7 +211,7 @@ Use Case - 0x03
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     agency: Literal['NASA', 'ESA', 'Roscosmos'] = field(metadata={'choices': ['NASA', 'ESA', 'Roscosmos']})
+...     agency: Literal['NASA', 'ESA', 'POLSA'] = field(metadata={'choices': ['NASA', 'ESA', 'POLSA']})
 ...     age: int = field(metadata={'min': 30, 'max': 50})
 ...     height: int | float = field(metadata={'unit': 'cm'})
 ...     weight: int | float = field(metadata={'unit': 'kg'})
@@ -258,7 +258,7 @@ ValueError: Invalid age, must be between 30 and 50
 >>>
 >>> mark.agency = 'CNSA'  # doctest: +SKIP
 Traceback (most recent call last):
-ValueError: Invalid agency, must be one of ['NASA', 'ESA', 'Roscosmos']
+ValueError: Invalid agency, must be one of ['NASA', 'ESA', 'POLSA']
 
 
 Use Case - 0x04
@@ -275,7 +275,7 @@ Use Case - 0x04
 ...     age: int | float | None = field(default=None, metadata={'unit': 'years', 'min': 30, 'max': 50})
 ...     weight: int | float | None = field(default=None, metadata={'unit': 'kg'})
 ...     height: int | float | None = field(default=None, metadata={'unit': 'cm'})
-...     agency: Literal['NASA','ESA','Roscosmos'] | None = field(default=None, metadata={'choices': ['NASA','ESA','Roscosmos']})
+...     agency: Literal['NASA','ESA','POLSA'] | None = field(default=None, metadata={'choices': ['NASA','ESA','POLSA']})
 ...
 ...     def _validate_age(self):
 ...         metadata = self.__dataclass_fields__['age'].metadata

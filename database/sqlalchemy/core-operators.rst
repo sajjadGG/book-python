@@ -27,7 +27,7 @@ SetUp
 ...     Column('id', Integer, primary_key=True),
 ...     Column('firstname', String(50), nullable=False),
 ...     Column('lastname', String(50), nullable=False),
-...     Column('agency', Enum('NASA', 'ESA', 'Roscosmos')),
+...     Column('agency', Enum('NASA', 'ESA', 'POLSA')),
 ...     Column('born', Date),
 ...     Column('age', Integer),
 ...     Column('height', Numeric(3,2)),

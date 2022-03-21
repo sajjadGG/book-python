@@ -4,14 +4,14 @@ Unpack Assignment
 
 Important
 ---------
-* Scalar assignment
-* Unpacking assignment
-* Multi assignment
+* ``a = 1`` - Assignment
+* ``a, b = 1, 2`` - Unpacking assignment
+* ``a = b = 1`` - Multi assignment
 
 
 Syntax
 ------
-Scalar assignment:
+Assignment:
 
 >>> a = 1
 
@@ -24,28 +24,51 @@ Multi assignment:
 >>> a = b = 1
 
 
-Scalar Assignment
------------------
+Assignment
+----------
+* Scalar Assignment
+* ``identifier = value``
+* ``a = 1``
+
 >>> a = 1
 >>>
->>> print(a)
-1
+>>> print(f'{a=}')
+a=1
 
 
 Unpacking Assignment
 --------------------
+* ``iterable[identifier] = iterable[value]``
+* ``a, b = 1, 2``
+* Vector Assignment
+* Sequence Assignment
+* Iterable Assignment
+
 >>> a, b = 1, 2
 >>>
->>> print(a)
-1
->>>
->>> print(b)
-2
+>>> print(f'{a=}, {b=}')
+a=1, b=2
 
 >>> a, b = 1, 2
 >>> a, b, c = 1, 2, 3
 >>> a, b, c, d = 1, 2, 3, 4
 >>> a, b, c, d, e = 1, 2, 3, 4, 5
+
+
+Multi Assignment
+----------------
+* ``a = b = 1``
+* ``identifier1 = identifier2 = value``
+
+>>> a = b = 1
+>>>
+>>> print(f'{a=}, {b=}')
+a=1, b=1
+
+>>> a = b = 1
+>>> a = b = c = 1
+>>> a = b = c = d = 1
+>>> a = b = c = d = e = 1
 
 
 Right-Side Brackets
@@ -112,43 +135,39 @@ Unpacking
 >>> data = [1, 2, 3]
 >>> a, b, c = data
 >>>
->>>
->>> print(a)
-1
->>>
->>> print(b)
-2
->>>
->>> print(c)
-3
+>>> print(f'{a=}, {b=}, {c=}')
+a=1, b=2, c=3
 
->>> line = 'Mark,Watney,44'
+>>> line = 'Mark,Watney,40'
 >>> firstname, lastname, age = line.split(',')
 >>>
+>>> print(f'{firstname=}, {lastname=}, {age=}')
+firstname='Mark', lastname='Watney', age='40'
+
+>>> data = ['Mark', 'Watney', ('mwatney@nasa.gov', 'mwatney@gmail.com')]
+>>> firstname, lastname, emails = data
 >>>
->>> print(firstname)
-Mark
->>>
->>> print(lastname)
-Watney
->>>
->>> print(age)
-44
+>>> print(f'{firstname=}\n{lastname=}\n{emails=}')
+firstname='Mark'
+lastname='Watney'
+emails=['mwatney@nasa.gov', 'mwatney@gmail.com']
 
 
 Nested
 ------
 >>> a, (b, c) = [1, (2, 3)]
 >>>
+>>> print(f'{a=}, {b=}, {c=}')
+a=1, b=2, c=3
+
+>>> data = ['Mark', 'Watney', ('mwatney@nasa.gov', 'mwatney@gmail.com')]
+>>> firstname, lastname, email_work, email_home = data
 >>>
->>> print(a)
-1
->>>
->>> print(b)
-2
->>>
->>> print(c)
-3
+>>> print(f'{firstname=}\n{lastname=}\n{email_work=}\n{email_home=}')
+firstname='Mark'
+lastname='Watney'
+email_work='mwatney@nasa.gov'
+email_home='mwatney@gmail.com'
 
 
 Skipping Values
@@ -161,25 +180,17 @@ Skipping Values
 >>> print(_)
 Mark Watney
 
->>> line = 'Mark,Watney,1'
+>>> line = 'Mark,Watney,40'
 >>> firstname, lastname, _ = line.split(',')
 >>>
->>>
->>> print(firstname)
-Mark
->>>
->>> print(lastname)
-Watney
+>>> print(f'{firstname=}, {lastname=}')
+firstname='Mark', lastname='Watney'
 
->>> line = 'Mark,Watney,1,2,3'
+>>> line = 'Mark,Watney,40,185,75.5'
 >>> firstname, lastname, _, _, _ = line.split(',')
 >>>
->>>
->>> print(firstname)
-Mark
->>>
->>> print(lastname)
-Watney
+>>> print(f'{firstname=}, {lastname=}')
+firstname='Mark', lastname='Watney'
 
 
 Use Case - 0x01
@@ -197,28 +208,11 @@ Use Case - 0x02
 ---------------
 * Passwd
 
->>> line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
->>> line = line.split(':')
+>>> line = 'watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash'
+>>> username, _, uid, _, _, _, _ = line.split(':')
 >>>
->>> username = line[0]
->>> fullname = line[4]
->>>
->>>
->>> print(username)
-twardowski
->>>
->>> print(fullname)
-Jan Twardowski
-
->>> line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
->>> username, _, _, _, fullname, _, _ = line.split(':')
->>>
->>>
->>> print(username)
-twardowski
->>>
->>> print(fullname)
-Jan Twardowski
+>>> print(f'{username=}, {uid=}')
+username='watney', uid='1000'
 
 
 Use Case - 0x03
