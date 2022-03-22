@@ -8,18 +8,14 @@ jobs:
     steps:
       - name: Download GIT repository
         uses: actions/checkout@v2
-
       - name: Install requirements
         run: pip install -r requirements.txt
-
       - name: Test listings
         run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
-
 
   Assignments:
     runs-on: ubuntu-20.04
     container: python:3.10.3
-
     strategy:
       fail-fast: false
       matrix:
@@ -41,22 +37,17 @@ jobs:
           - numpy
           - oop
           - pandas
-
     steps:
       - name: Download GIT repository
         uses: actions/checkout@v2
-
       - name: Install requirements
         run: pip install -r ${{ matrix.directory }}/requirements.txt
-
       - name: Tests assignments
         run: find ${{ matrix.directory }} -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
 
   Listings:
     runs-on: ubuntu-20.04
     container: python:3.10.3
-
     strategy:
       fail-fast: false
       matrix:
@@ -78,13 +69,10 @@ jobs:
           - numpy
           - oop
           - pandas
-
     steps:
       - name: Download GIT repository
         uses: actions/checkout@v2
-
       - name: Install requirements
         run: pip install -r ${{ matrix.directory }}/requirements.txt
-
       - name: Test listings
         run: sphinx-build -a -E -j auto --color -b doctest ${{ matrix.directory }} /tmp/
