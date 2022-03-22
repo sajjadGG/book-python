@@ -2,8 +2,6 @@ Performance
 ===========
 
 
-Important
----------
 .. glossary::
     CPU
     Central Processing Unit

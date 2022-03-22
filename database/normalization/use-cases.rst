@@ -2,12 +2,6 @@ Theory Relations
 ================
 
 
-Important
----------
-
-
-Glossary
---------
 .. glossary::
 
     relation

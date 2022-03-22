@@ -2,8 +2,8 @@ Migration Create
 ================
 
 
-Important
----------
+Initialize
+----------
 .. code-block:: console
 
     $ alembic init migrations
@@ -14,17 +14,25 @@ Important
       Generating /tmp/project/migrations/alembic.ini ...  done
       Please edit configuration/connection/logging settings in '/tmp/project/migrations/alembic.ini' before proceeding.
 
+Configure
+---------
 .. code-block:: console
 
     $ vim alembic.ini +55
     $ grep 'sqlalchemy.url' alembic.ini
     sqlalchemy.url = sqlite:///tmp.db
 
+
+Initial Revision
+----------------
 .. code-block:: console
 
     $ alembic revision -m "Initial revision"
       Generating /tmp/project/migrations/versions/ad4de013e007_initial_revision.py ...  done
 
+
+Upgrade
+-------
 .. code-block:: console
 
     $ alembic upgrade heads
@@ -38,6 +46,9 @@ Important
     # Set proper value for ``target_metadata``
     $ vim env.py +18
 
+
+Autogenerate
+------------
 .. code-block:: console
 
     $ alembic revision --autogenerate -m "User Model"
@@ -46,6 +57,9 @@ Important
     INFO  [alembic.autogenerate.compare] Detected added table 'user'
       Generating /private/tmp/project/versions/21fa69deb961_user_model.py ...  done
 
+
+Upgrade
+-------
 .. code-block:: console
 
     $ alembic upgrade head
@@ -58,6 +72,8 @@ Important
     $ alembic upgrade 21fa69deb961  # you can also use shorter, but still unique hash
 
 
+Downgrade
+---------
 .. code-block:: console
 
     $ alembic downgrade <hash>

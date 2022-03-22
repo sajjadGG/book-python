@@ -2,10 +2,6 @@ Array Range
 ===========
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import numpy as np

@@ -1,9 +1,5 @@
 Math Complex Numbers
 ====================
-
-
-Important
----------
 * Complex number with real and imaginary parts
 * Engineering notation ``j`` not mathematical ``i``
 * No space inside the expression

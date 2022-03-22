@@ -1,9 +1,5 @@
 State Machine
 =============
-
-
-Important
----------
 * EN: State Machine
 * PL: Maszyna Stanów
 * Type: class

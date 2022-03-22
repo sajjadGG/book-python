@@ -2,10 +2,6 @@ Series Sample
 =============
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

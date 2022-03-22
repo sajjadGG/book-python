@@ -1,9 +1,6 @@
 Query Count
 ===========
-
-
-Important
----------
+* Count
 * https://docs.sqlalchemy.org/en/stable/faq/sessions.html#faq-query-deduplicating
 
 It is important to note that the value returned by count() is not the same

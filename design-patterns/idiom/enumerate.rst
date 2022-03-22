@@ -1,9 +1,5 @@
 Enumerate
 =========
-
-
-Important
----------
 * Enumerate sequences
 * Generator (lazy evaluated)
 * Built-in

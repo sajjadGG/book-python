@@ -1,14 +1,11 @@
-File Append
-===========
-
 .. testsetup::
 
     from pathlib import Path
     Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 
-Important
----------
+File Append
+===========
 * Appends data at the end of file
 * Creates file if not exists
 * Works with both relative and absolute path

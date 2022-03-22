@@ -1,9 +1,9 @@
 Query Union
 ===========
-
-
-Important
----------
+* Union
+* Union All
+* Intersect
+* Intersect All
 
 
 Union

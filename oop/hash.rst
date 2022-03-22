@@ -1,9 +1,5 @@
 Hash
 ====
-
-
-Important
----------
 * Used for quickly compare two objects
 * All objects compare unequal (except with themselves)
 * ``set()`` elements has to be hashable

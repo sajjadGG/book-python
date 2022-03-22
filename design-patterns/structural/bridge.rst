@@ -1,9 +1,5 @@
 Bridge
 ======
-
-
-Important
----------
 * EN: Bridge
 * PL: Most
 * Type: object

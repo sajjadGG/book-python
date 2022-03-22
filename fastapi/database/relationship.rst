@@ -1,9 +1,5 @@
 Relationship
 ============
-
-
-Important
----------
 * Foreign Key
 * One to One
 * Many to Many

@@ -1,9 +1,5 @@
 CI/CD Tools
 ===========
-
-
-Important
----------
 * https://pre-commit.com/
 
 .. figure:: ../_img/ecosystem-bigpicture.png

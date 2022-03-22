@@ -1,9 +1,5 @@
 SQL Select From
 ===============
-
-
-Important
----------
 .. figure:: img/sql-select.png
 
 

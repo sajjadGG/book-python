@@ -1,36 +1,11 @@
 Sequence Set
 ============
-
-
-Important
----------
 * Only unique values
 * Mutable - can add, remove, and modify items
 * Can store elements of any **hashable** types
 * Set is unordered data structure and do not record element position or insertion
 * Do not support getitem and slice
 * Contains in ``set`` has ``O(1)`` average case complexity [#pywikiTimeComplexity]_
-
-Hashable (Immutable):
-
-    * ``int``
-    * ``float``
-    * ``bool``
-    * ``NoneType``
-    * ``str``
-    * ``tuple``
-
-Non-hashable (Mutable):
-
-    * ``list``
-    * ``set``
-    * ``dict``
-
-"Hashable types are also immutable" is true for builtin types, but it's not a
-universal truth.
-
-* More information in `OOP Hash`.
-* More information in `OOP Object Identity`.
 
 
 Syntax
@@ -65,6 +40,9 @@ Compares by values, not types:
 >>> {1.0, 1}
 {1.0}
 
+
+Hashable
+--------
 Can store elements of any **hashable** types:
 
 >>> data = {1, 2, 'a'}
@@ -77,6 +55,27 @@ TypeError: unhashable type: 'list'
 >>> data = {1, 2, {3, 4}}
 Traceback (most recent call last):
 TypeError: unhashable type: 'set'
+
+Hashable (Immutable):
+
+    * ``int``
+    * ``float``
+    * ``bool``
+    * ``NoneType``
+    * ``str``
+    * ``tuple``
+
+Non-hashable (Mutable):
+
+    * ``list``
+    * ``set``
+    * ``dict``
+
+"Hashable types are also immutable" is true for builtin types, but it's not a
+universal truth.
+
+* More information in `OOP Hash`.
+* More information in `OOP Object Identity`.
 
 
 Type Casting

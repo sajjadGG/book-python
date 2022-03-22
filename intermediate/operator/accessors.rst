@@ -1,8 +1,14 @@
 Operator Accessors
 ==================
+* ``obj(x)`` - call
+* ``obj[x]`` - getitem
+* ``obj[x]`` - missing
+* ``obj[x] = 10`` - setitem
+* ``del obj[x]`` - delitem
+* ``x in obj`` - contains
 
 
-Important
+About
 ---------
 .. csv-table:: Operator Overload
     :header: "Operator", "Method", "Remarks"

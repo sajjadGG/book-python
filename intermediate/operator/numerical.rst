@@ -1,9 +1,28 @@
 Operator Numerical
 ==================
+* ``+`` - add
+* ``-`` - sub
+* ``*`` - mul
+* ``/`` - truediv
+* ``//`` - floordiv
+* ``**`` - pow
+* ``%`` - mod
+* ``@`` - matmul
+* ``+=`` - iadd
+* ``-=`` - isub
+* ``*=`` - imul
+* ``/=`` - idiv
+* ``//=`` - itruediv
+* ``**=`` - ipow
+* ``%=`` - imod
+* ``@=`` - imatmul
+* ``-obj`` - neg
+* ``+obj`` - pos
+* ``~obj`` - invert
 
 
-Important
----------
+About
+-----
 .. csv-table:: Numerical Operator Overload
     :header: "Operator", "Method"
 

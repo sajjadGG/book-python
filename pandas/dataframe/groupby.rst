@@ -2,10 +2,6 @@ DataFrame Group By
 ==================
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

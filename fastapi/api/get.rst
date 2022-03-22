@@ -1,9 +1,5 @@
 GET
 ===
-
-
-Important
----------
 * Resources
 * Query Parameters
 

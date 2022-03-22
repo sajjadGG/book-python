@@ -1,9 +1,5 @@
 Protocol Property
 =================
-
-
-Important
----------
 * Disable attribute modification
 * Logging value access
 * Check boundary

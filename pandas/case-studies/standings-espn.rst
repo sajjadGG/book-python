@@ -1,9 +1,6 @@
 Standings ESPN
 ==============
 
-
-Important
----------
 .. figure:: img/espn-standing.png
 
 

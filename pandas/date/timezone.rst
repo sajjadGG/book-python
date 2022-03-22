@@ -2,9 +2,6 @@ Date and Time Timezones
 =======================
 
 
-Important
----------
-
 SetUp
 -----
 >>> import pandas as pd

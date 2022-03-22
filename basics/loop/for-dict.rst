@@ -1,9 +1,5 @@
 Loop For Dict
 =============
-
-
-Important
----------
 * Since Python 3.7: ``dict`` keeps order
 * Before Python 3.7: ``dict`` order is not ensured!!
 

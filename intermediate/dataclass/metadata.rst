@@ -1,9 +1,5 @@
 Dataclass Metadata
 ==================
-
-
-Important
----------
 * ``metadata`` - For storing extra information about field
 * ``dict | None``
 * ``None`` is treated as an empty ``dict``

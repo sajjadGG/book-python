@@ -1,9 +1,5 @@
 Matplotlib Subplots
 ===================
-
-
-Important
----------
 * `plt.subplot()`
 * `plt.subplots()`
 

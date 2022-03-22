@@ -2,9 +2,6 @@ Case Study Auth
 ===============
 
 
-Important
----------
-
 Install
 -------
 .. code-block:: console

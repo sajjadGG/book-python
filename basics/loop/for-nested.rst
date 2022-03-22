@@ -1,5 +1,7 @@
 Loop For Nested
 ===============
+* Loop inside a loop
+* Used to iterate over nested data
 
 
 Recap
@@ -22,12 +24,6 @@ obj=3
 obj=[1, 2, 3]
 obj=[4, 5, 6]
 obj=[7, 8, 9]
-
-
-Important
----------
-* Loop inside a loop
-* Used to iterate over nested data
 
 
 Nested Loops

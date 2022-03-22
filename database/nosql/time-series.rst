@@ -1,9 +1,5 @@
 NoSQL Time Series
 =================
-
-
-Important
----------
 * InfluxDB
 * Prometheus
 * TSDB

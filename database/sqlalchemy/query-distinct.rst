@@ -1,9 +1,6 @@
 Query Distinct
 ==============
-
-
-Important
----------
+* Distinct
 
 
 Distinct

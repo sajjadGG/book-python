@@ -1,9 +1,5 @@
 Reduce
 ======
-
-
-Important
----------
 * Reduce sequence using function
 * Built-in
 

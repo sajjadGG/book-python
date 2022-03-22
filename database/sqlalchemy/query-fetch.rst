@@ -2,10 +2,6 @@ Query Fetch
 ===========
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> from sqlalchemy import create_engine, text

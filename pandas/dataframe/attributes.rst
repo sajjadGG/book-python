@@ -2,10 +2,6 @@ DataFrame Attributes
 ====================
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

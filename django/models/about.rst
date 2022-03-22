@@ -1,9 +1,5 @@
 Model About
 ===========
-
-
-Important
----------
 * What are model fields?
 * Model field arguments
 * Fat model architecture

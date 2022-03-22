@@ -1,9 +1,5 @@
 OOP Staticmethod
 ================
-
-
-Important
----------
 * Should **not** be in a class: method which don't use ``self`` in its body
 * Should be in class: if method takes ``self`` and use it (it requires instances to work)
 * If a method don't use ``self`` but uses class as a namespace use ``@staticmethod`` decorator

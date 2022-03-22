@@ -1,14 +1,11 @@
-File Write
-==========
-
 .. testsetup::
 
     from pathlib import Path
     Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 
-Important
----------
+File Write
+==========
 * Creates file if not exists
 * Truncate the file before writing
 * Works with both relative and absolute path
@@ -20,13 +17,15 @@ Important
 5
 >>> file.close()
 
+
 Line
 ----
 * File must end with a newline ``\n`` character
+* POSIX Definition: A sequence of zero or more non-<newline> characters plus a terminating <newline> character.
 
 Line Definition by POSIX [#POSIX]_:
 
-    A sequence of zero or more non- <newline> characters plus a terminating
+    A sequence of zero or more non-<newline> characters plus a terminating
     <newline> character.
 
 Line definition by ANSI C89 and ISO C99 standards [#C89]_, [#C99]_, [#GCC]_:

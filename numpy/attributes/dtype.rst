@@ -1,9 +1,5 @@
 Array Data Types
 ================
-
-
-Important
----------
 * Array can have only one data type (``dtype``)
 * Type can be "non-primitive" - any class
 

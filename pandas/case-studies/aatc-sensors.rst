@@ -1,9 +1,5 @@
 AATC Sensors
 ============
-
-
-Important
----------
 * Working with Excel (file, spreadsheet)
 * Selecting data
 * Binary classification

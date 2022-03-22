@@ -1,9 +1,5 @@
 Dataclass Mutable Attrs
 =======================
-
-
-Important
----------
 * problem with ``dict``, ``list``, ``set``
 * You should not set mutable objects as a default function argument
 * ``field()`` creates new empty ``list`` for each object

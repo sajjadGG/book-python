@@ -1,9 +1,5 @@
 UML About
 =========
-
-
-Important
----------
 * Unified Modeling Language
 
 

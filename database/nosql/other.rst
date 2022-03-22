@@ -1,9 +1,5 @@
 NoSQL Other
 ===========
-
-
-Important
----------
 * Tuple Store
 * Triplestore (RDF store)
 * Object Database

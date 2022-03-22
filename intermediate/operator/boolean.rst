@@ -1,9 +1,19 @@
 Operator Boolean
 ================
+* ``&`` - and
+* ``|`` - or
+* ``^`` - xor
+* ``&=`` - iand
+* ``|=`` - ior
+* ``^=`` - ixor
+* ``<<`` - lshift
+* ``>>`` - rshift
+* ``<<=`` - ilshift
+* ``>>=`` - irshift
 
 
-Important
----------
+About
+-----
 .. csv-table:: Boolean Operator Overload
     :header: "Operator", "Method"
 

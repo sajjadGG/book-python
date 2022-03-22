@@ -1,9 +1,6 @@
 SQL About
 =========
 
-
-Important
----------
 .. glossary::
 
     SQL

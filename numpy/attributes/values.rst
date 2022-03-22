@@ -2,10 +2,6 @@ Array Attributes
 ================
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import numpy as np

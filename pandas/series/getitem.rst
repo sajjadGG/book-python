@@ -2,10 +2,6 @@ Series Getitem
 ==============
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

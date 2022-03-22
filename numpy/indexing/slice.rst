@@ -1,6 +1,37 @@
 Array Slice
 ===========
 
+>>> # doctest: +SKIP
+... a[ 0 ]                              # int
+... a[ [0,1] ]                          # list[int]
+... a[ [True,False] ]                   # list[bool]
+... a[ [[True,False], [True,False]] ]   # list[list[bool]]
+... a[ 0:1 ]                            # slice(start,stop)
+... a[ 0:1:2 ]                          # slice(start,stop,step)
+...
+... a[ 0,1 ]                            # tuple[int]
+... a[ (0,1) ]                          # tuple[int]
+... a[ [0,1], [2,3] ]                   # tuple[list[int]]
+... a[ :,: ]                            # tuple[slice]
+... a[ [True,False], [False,True] ]     # tuple[list[bool]]
+
+1-dimensional Array:
+
+    * int
+    * list[int]
+    * list[bool]
+    * list[list[bool]]
+    * slice(start,stop)
+    * slice(start,stop,step)
+
+2-dimensional Array:
+
+    * tuple[int]
+    * tuple[list[int]]
+    * tuple[slice]
+    * tuple[list[bool]]
+
+
 
 .. todo:: Split chapters GetItem and Slice by __getitem__ argument type.
 
@@ -37,40 +68,6 @@ array([1, 3, 5, 7, 9])
 
 >>> data[:]  # slice(start=0, stop=len(data), step=1)
 array([1, 2, 3, 4, 5, 6, 7, 8, 9])
-
-
-Important
----------
->>> # doctest: +SKIP
-... a[ 0 ]                              # int
-... a[ [0,1] ]                          # list[int]
-... a[ [True,False] ]                   # list[bool]
-... a[ [[True,False], [True,False]] ]   # list[list[bool]]
-... a[ 0:1 ]                            # slice(start,stop)
-... a[ 0:1:2 ]                          # slice(start,stop,step)
-...
-... a[ 0,1 ]                            # tuple[int]
-... a[ (0,1) ]                          # tuple[int]
-... a[ [0,1], [2,3] ]                   # tuple[list[int]]
-... a[ :,: ]                            # tuple[slice]
-... a[ [True,False], [False,True] ]     # tuple[list[bool]]
-
-1-dimensional Array:
-
-    * int
-    * list[int]
-    * list[bool]
-    * list[list[bool]]
-    * slice(start,stop)
-    * slice(start,stop,step)
-
-2-dimensional Array:
-
-    * tuple[int]
-    * tuple[list[int]]
-    * tuple[slice]
-    * tuple[list[bool]]
-
 
 
 1-dimensional Array

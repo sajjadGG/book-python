@@ -1,9 +1,11 @@
 Query Join
 ==========
+* Join
+* Select From
+* Multiple Joins
+* Outer Join
+* Reset Join Point
 
-
-Important
----------
 >>> q = session.query(User).\
 ...         join(User.addresses).\
 ...         filter(Address.email_address.like('%@aol.com')).\

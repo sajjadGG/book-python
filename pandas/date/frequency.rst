@@ -2,10 +2,6 @@ Date and Time Frequency
 =======================
 
 
-Important
----------
-
-
 Offset Aliases
 --------------
 .. csv-table:: Offset aliases

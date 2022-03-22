@@ -1,6 +1,2 @@
 Migration Rollback
 ==================
-
-
-Important
----------

@@ -2,10 +2,6 @@ Method Chaining
 ===============
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

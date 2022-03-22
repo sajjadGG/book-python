@@ -1,10 +1,15 @@
-Unpack Arguments
-================
-
 .. testsetup::
 
     def echo(a=None, b=None):
         pass
+
+
+Unpack Arguments
+================
+* Unpack and Arbitrary Number of Parameters and Arguments
+
+.. figure:: img/unpack-assignment,args,params.png
+
 
 
 Recap
@@ -29,13 +34,6 @@ Recap
 >>> echo(a=1, 2)
 Traceback (most recent call last):
 SyntaxError: positional argument follows keyword argument
-
-
-Important
----------
-* Unpack and Arbitrary Number of Parameters and Arguments
-
-.. figure:: img/unpack-assignment,args,params.png
 
 
 Positional Arguments

@@ -1,9 +1,5 @@
 Façade
 ======
-
-
-Important
----------
 * EN: Façade
 * PL: Fasada
 * Type: object

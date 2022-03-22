@@ -1,9 +1,5 @@
 Syntax Anchor
 =============
-
-
-Important
----------
 * ``.`` - any character except a newline (changes meaning with ``re.DOTALL``)
 * ``^`` - start of a string (changes meaning with ``re.MULTILINE``)
 * ``$`` - end of a string (changes meaning with ``re.MULTILINE``)

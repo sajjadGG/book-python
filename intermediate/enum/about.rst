@@ -1,9 +1,5 @@
 OOP Enum
 ========
-
-
-Important
----------
 * List of finite choices
 * Enumerations
 * ``Enum``

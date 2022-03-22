@@ -1,9 +1,8 @@
 DataFrame Pivot
 ===============
+* Create a spreadsheet-style pivot table as a DataFrame
+* Levels in the pivot table will be stored in MultiIndex objects
 
-
-Important
----------
 Create a spreadsheet-style pivot table as a DataFrame.
 The levels in the pivot table will be stored in MultiIndex objects
 (hierarchical indexes) on the index and columns of the result DataFrame.

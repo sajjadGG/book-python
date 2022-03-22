@@ -1,9 +1,5 @@
 Syntax Qualifier
 ================
-
-
-Important
----------
 * Qualifier specifies what to find.
 * ``a`` - Exact
 * ``a|b`` - Alternative

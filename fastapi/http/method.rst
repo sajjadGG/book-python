@@ -1,9 +1,5 @@
 HTTP Methods
 ============
-
-
-Important
----------
 * ``GET`` - Read
 * ``POST`` - Create
 * ``PUT`` - Update/Replace

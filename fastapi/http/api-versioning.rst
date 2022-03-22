@@ -1,9 +1,5 @@
 API Versioning
 ==============
-
-
-Important
----------
 * Always version API
 * Have stable API!
 * Do not use plural in resources

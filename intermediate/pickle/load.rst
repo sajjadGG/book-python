@@ -1,6 +1,9 @@
 Pickle Load
 ===========
-
+* ``pickle.load()`` -> load from pliku
+* ``pickle.loads()`` -> load from string (bytes)
+* What if name was ``pickle.from_file()``?
+* What if name was ``pickle.from_text()``?
 
 Deserialize Str
 ---------------

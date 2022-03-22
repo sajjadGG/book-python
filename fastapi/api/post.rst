@@ -1,9 +1,5 @@
 POST
 ====
-
-
-Important
----------
 * HTTP Request and Response
 * POST Method
 * Request Body

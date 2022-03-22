@@ -1,9 +1,5 @@
 RE Substitute
 =============
-
-
-Important
----------
 * ``re.sub()``
 * Replace matched substring with text
 

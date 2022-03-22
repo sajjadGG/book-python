@@ -1,9 +1,5 @@
 SQL Select Distinct
 ===================
-
-
-Important
----------
 * Unique values
 
 

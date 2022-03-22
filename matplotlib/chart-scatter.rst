@@ -1,10 +1,7 @@
 Scatter Plot
 ============
-
-
-Important
----------
 * Used to show correlation
+
 
 Syntax
 ------

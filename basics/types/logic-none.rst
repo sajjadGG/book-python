@@ -1,11 +1,8 @@
 Logic None
 ==========
-
-
-Important
----------
 * Empty (null) or unknown (unset) value
 * It is not ``False`` value
+* First letter capitalized, other are lower cased
 
 
 Syntax

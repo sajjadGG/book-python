@@ -1,9 +1,5 @@
 OOP Inheritance Super
 =====================
-
-
-Important
----------
 * ``super()`` Calls a method from superclass
 * Order/location is important
 * Raymond Hettinger - Super considered super! - PyCon 2015 [#Hettinger2015]_

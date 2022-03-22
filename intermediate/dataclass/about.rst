@@ -1,9 +1,5 @@
 Dataclass About
 ===============
-
-
-Important
----------
 * Used for easier class definition
 * Since Python 3.7: :pep:`557` -- Data Classes
 

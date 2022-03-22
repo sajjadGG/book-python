@@ -2,10 +2,6 @@ Syntax Look Ahead/Behind
 ========================
 
 
-Important
----------
-
-
 Syntax
 ------
 * ``(?=)`` - Lookahead

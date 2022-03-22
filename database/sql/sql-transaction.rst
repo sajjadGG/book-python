@@ -1,9 +1,15 @@
 SQL Transaction
 ===============
+* Any command that accesses the database will automatically start a transaction
+* Automatically started transactions are committed when the last SQL statement finishes
+* Transactions can be started manually using the BEGIN command.
+* Transactions usually persist until the next COMMIT or ROLLBACK command.
+* ACID - four standard properties
+* Atomicity
+* Consistency
+* Isolation
+* Durability
 
-
-Important
----------
 Any command that accesses the database (basically, any SQL command, except
 a few PRAGMA statements) will automatically start a transaction if one is
 not already in effect. Automatically started transactions are committed
@@ -76,15 +82,6 @@ effects) are recorded in non-volatile memory.
 
 
 Source: [#sqlitetranaction]_ [#tutorialspoint]_
-
-
-Important
----------
-* Also know as ACID
-* Atomicity
-* Consistency
-* Isolation
-* Durability
 
 
 Begin

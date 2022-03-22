@@ -1,9 +1,5 @@
 Slots
 =====
-
-
-Important
----------
 * Faster attribute access
 * Space savings in memory (overhead of dict for every object)
 * Prevents from adding new attributes

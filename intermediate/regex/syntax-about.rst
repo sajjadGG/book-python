@@ -1,16 +1,10 @@
 Syntax About
 ============
-
-
-Important
----------
-Regular Expressions are also known as:
-
-    * ``Regular Expressions``
-    * ``Regular Expr``
-    * ``regexp``
-    * ``regex``
-    * ``re``
+* Also known as ``Regular Expressions``
+* Also known as ``Regular Expr``
+* Also known as ``regexp``
+* Also known as ``regex``
+* Also known as ``re``
 
 
 SetUp
@@ -40,6 +34,7 @@ Syntax
 * Look Ahead and Look Behind
 * Flags
 * Extensions
+
 
 Escape characters
 -----------------

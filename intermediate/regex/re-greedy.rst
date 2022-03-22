@@ -1,12 +1,16 @@
 RE Lazy
 =======
-
-
-Important
----------
 * Adding ``?`` after the qualifier makes it non-greedy
+* Greedy - as many as possible
+* Lazy - as few as possible:
+* ``?`` - zero or one (greedy)
+* ``*`` - zero or more (greedy)
+* ``+`` - one or more (greedy)
+* ``??`` - zero or one (lazy)
+* ``*?`` - zero or more (lazy)
+* ``+?`` - one or more (lazy)
 
-Greedy - as many as possible
+Greedy - as many as possible:
 
     * ``?`` - zero or one (greedy)
     * ``*`` - zero or more (greedy)

@@ -1,11 +1,9 @@
 New and Old Style Class
 =======================
-
-
-Important
----------
-* https://docs.python.org/dev/tutorial/classes.html
+* Old Style classes - Not existing in Python 3
+* In Python 3 class will always produce new style class
 * The major motivation for introducing new-style classes is to provide a unified object model with a full meta-model
+* https://docs.python.org/dev/tutorial/classes.html
 
 
 Old Style classes

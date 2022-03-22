@@ -1,9 +1,5 @@
 The Zen of Python
 =================
-
-
-Important
----------
 * :pep:`20` -- The Zen of Python
 
 .. code-block:: python

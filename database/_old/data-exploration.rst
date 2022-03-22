@@ -1,9 +1,5 @@
 Database Exploration
 ====================
-
-
-Important
----------
 * Apache Superset
 
 

@@ -1,19 +1,14 @@
 Syntax Increment Operators
 ==========================
+* ``+=`` - Incremental addition
+* ``-=`` - Incremental subtraction
+* ``*=`` - Incremental multiplication
+* ``**=`` - Incremental power
+* ``/=`` - Incremental true division
+* ``//=`` - Incremental floor division
+* ``%=`` - Incremental modulo division
 
-
-Important
----------
-In Python for each operator there is also an increment version of it:
-
-    * ``+=`` - Incremental addition
-    * ``-=`` - Incremental subtraction
-    * ``*=`` - Incremental multiplication
-    * ``**=`` - Incremental power
-    * ``/=`` - Incremental true division
-    * ``//=`` - Incremental floor division
-    * ``%=`` - Incremental modulo division
-
+In Python for each operator there is also an increment version of it.
 However, most of a time only ``+=`` and ``-=`` are used. Others uses are rare.
 
 

@@ -1,9 +1,5 @@
 DataFrame Plotting
 ==================
-
-
-Important
----------
 * https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html
 
 .. figure:: img/matplotlib-figure-anatomy.png

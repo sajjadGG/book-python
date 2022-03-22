@@ -1,9 +1,5 @@
 Pandas Read SQL
 ===============
-
-
-Important
----------
 * File paths works also with URLs
 * SQL functions uses SQLAlchemy, which supports many RDBMS
 

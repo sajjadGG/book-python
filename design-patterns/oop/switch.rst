@@ -2,8 +2,8 @@ OOP Switch
 ==========
 
 
-Important
----------
+SetUp
+-----
 Let's take the following code and do the refactoring:
 
 >>> print('Hello')

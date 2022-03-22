@@ -2,9 +2,6 @@ Auth
 ====
 
 
-Important
----------
-
 Install
 -------
 .. code-block:: console

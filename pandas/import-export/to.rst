@@ -1,9 +1,5 @@
 DataFrame Export
 ================
-
-
-Important
----------
 * File paths works also with DATAs
 * SQL functions uses SQLAlchemy, which supports many RDBMS
 

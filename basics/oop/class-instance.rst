@@ -1,9 +1,5 @@
 OOP Class Instance
 ==================
-
-
-Important
----------
 * Instances are also known as Objects
 * Two newlines between class and code
 * ``snake_case`` names

@@ -1,10 +1,5 @@
 Event Programming
 =================
-
-
-
-Important
----------
 * EN: Callback Design
 * PL:
 

@@ -1,11 +1,9 @@
 Logic Bool
 ==========
-
-
-Important
----------
 * ``True`` - Positive value
 * ``False`` - Negative value
+* First letter capitalized, other are lower cased
+* Builtin function ``bool()`` converts argument to ``bool``
 
 
 Syntax

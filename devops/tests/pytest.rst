@@ -1,9 +1,5 @@
 Pytest
 ======
-
-
-Important
----------
 * Detailed info on failing assert statements (no need to remember self.assert* names);
 * Auto-discovery of test modules and functions;
 * Modular fixtures for managing small or parametrized long-lived test resources;

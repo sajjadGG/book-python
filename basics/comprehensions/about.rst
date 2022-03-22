@@ -1,34 +1,5 @@
 Comprehension About
 ===================
-
-
-Recap
------
->>> result = []
->>>
->>> for x in range(0,5):
-...     result.append(x)
->>>
->>> print(result)
-[0, 1, 2, 3, 4]
-
-
-Syntax
-------
->>> # doctest: +SKIP
-... result = [<RETURN> for <VARIABLE> in <ITERABLE>]
-
-
-Example
--------
->>> result = [x for x in range(0,5)]
->>>
->>> print(result)
-[0, 1, 2, 3, 4]
-
-
-Important
----------
 * Loop leaks out values
 
 >>> result = []
@@ -54,6 +25,11 @@ NameError: name 'x' is not defined
 
 Syntax
 ------
+Abstract Syntax:
+
+>>> # doctest: +SKIP
+... result = [<RETURN> for <VARIABLE> in <ITERABLE>]
+
 Short syntax:
 
 >>> [x for x in range(0,5)]

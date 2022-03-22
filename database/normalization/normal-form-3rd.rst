@@ -1,9 +1,5 @@
 3rd Normal Form
 ===============
-
-
-Important
----------
 * The Primary Key must fully define all Non-Key columns
 * Non-Key columns must not depend on any other Key
 * All fields (columns) can be determined only by the key in the table and no other column

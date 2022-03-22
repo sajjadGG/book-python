@@ -1,9 +1,5 @@
 Protocol Descriptor
 ===================
-
-
-Important
----------
 * Add managed attributes to objects
 * Outsource functionality into specialized classes
 * Descriptors: ``classmethod``, ``staticmethod``, ``property``, functions in general

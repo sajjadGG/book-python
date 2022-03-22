@@ -1,14 +1,12 @@
-Loop For About
-==============
-
 .. testsetup::
 
     def spawn_thread():
         pass
 
 
-Important
----------
+Loop For About
+==============
+
 >>> data = ['a', 'b', 'c']
 >>> i = 0
 >>>

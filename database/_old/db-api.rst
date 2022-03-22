@@ -1,8 +1,5 @@
 Database API
 ============
-
-Important
----------
 * :pep:`249` -- Python Database API
 * DB API v2
 * System for providing Python database interfaces

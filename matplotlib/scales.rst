@@ -1,13 +1,9 @@
 Matplotlib Scales
 =================
-
-
-Important
----------
-* Liniowa
-* Logarytmiczna
-* Symmetrical log (można ustawić fragmentami liniowo ``linthreshx: int``)
-* Logit - odwrotność logistycznej
+* Linear
+* Logarithmic
+* Symmetrical log (partially linear ``linthreshx: int``)
+* Logit - reversed logarithmic
 
 * Subtracting ``x.mean()`` is used to better highlight the function
 

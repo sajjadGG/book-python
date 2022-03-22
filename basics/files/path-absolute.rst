@@ -1,9 +1,5 @@
 File Path Absolute
 ==================
-
-
-Important
----------
 * Python works with both relative and absolute path
 * Path separator ``\`` (backslash) is used on Windows
 * Path separator ``/`` (slash) is used on ``*nix`` operating systems: Linux,

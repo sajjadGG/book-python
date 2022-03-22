@@ -1,9 +1,5 @@
 OOP Stringify About
 ===================
-
-
-Important
----------
 * ``str()``
 * ``repr()``
 * ``format()``

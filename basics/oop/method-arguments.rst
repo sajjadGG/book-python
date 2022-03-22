@@ -1,9 +1,5 @@
 OOP Method Arguments
 ====================
-
-
-Important
----------
 * Methods are functions in the class
 * Prevents copy-paste code
 * Improves readability

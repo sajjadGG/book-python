@@ -1,8 +1,5 @@
 Locale l10n
 ===========
-
-Important
----------
 * l10n = localization
 
 

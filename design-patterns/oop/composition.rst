@@ -1,29 +1,26 @@
 OOP Inheritance vs. Composition
 ===============================
-
-
-Important
----------
 * Composition over Inheritance
 
-Please excuse me, for code style in this chapter.
-Instead writing:
 
->>> class Car:
-...     def engine_start(self):
-...         pass
-...
-...     def engine_stop(self):
-...         pass
+.. note:: Please excuse me, for code style in this chapter.
+          Instead writing:
 
-I will write:
+          >>> class Car:
+          ...     def engine_start(self):
+          ...         pass
+          ...
+          ...     def engine_stop(self):
+          ...         pass
 
->>> class Car:
-...     def engine_start(self): pass
-...     def engine_stop(self): pass
+          I will write:
 
-This way the code is more dense and idea is much clearer to present.
-There won't be any method implementations in examples.
+          >>> class Car:
+          ...     def engine_start(self): pass
+          ...     def engine_stop(self): pass
+
+          This way the code is more dense and idea is much clearer to present.
+          There won't be any method implementations in examples.
 
 
 Problem

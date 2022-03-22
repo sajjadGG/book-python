@@ -1,9 +1,5 @@
 Chain of Responsibility
 =======================
-
-
-Important
----------
 * EN: Chain of Responsibility
 * PL: Łańcuch zobowiązań
 * Type: object

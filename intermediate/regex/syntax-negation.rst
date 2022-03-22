@@ -1,10 +1,6 @@
 Syntax Negation
 ===============
-
-
-Important
----------
-Negation logically inverts qualifier.
+* Negation logically inverts qualifier
 
 
 Syntax

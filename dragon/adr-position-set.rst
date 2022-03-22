@@ -1,7 +1,3 @@
-Dragon ADR Position Set
-=======================
-
-
 .. testsetup::
 
     from dataclasses import dataclass
@@ -12,9 +8,13 @@ Dragon ADR Position Set
         y: int
 
 
-Important
----------
+Dragon ADR Position Set
+=======================
 * ADR - Architecture Design Records
+
+
+Problem
+-------
 * Set new position to x=10, y=20
 
 

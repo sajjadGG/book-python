@@ -1,6 +1,3 @@
-String Input
-============
-
 .. testsetup::
 
     # Simulate user input (for test automation)
@@ -8,8 +5,8 @@ String Input
     input = MagicMock(side_effect=['Mark Watney', '42', '42.5', '42,5'])
 
 
-Important
----------
+String Input
+============
 * ``input()`` always returns ``str``
 * Good practice: add space at the end of prompt
 * Good practice: always ``.strip()`` text from user input

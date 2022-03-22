@@ -1,9 +1,5 @@
 OOP Attribute Get
 =================
-
-
-Important
----------
 * Attributes are also known as "Properties" or "Fields"
 * ``snake_case`` name convention
 * Attributes store information (state) for instances
@@ -35,6 +31,9 @@ Important
     namespace
         Container for storing related data
 
+
+About
+-----
 Class example with distinction of properties and state attributes.
 
 An example "Glass with Water" can illustrate the distinction of properties

@@ -1,9 +1,18 @@
 Dataclass Parameters
 ====================
+``init`` - Generate ``__init__()`` method
+``repr`` - Generate ``__repr__()`` method
+``eq`` - Generate ``__eq__()`` and ``__ne__()`` methods
+``order`` - Generate ``__lt__()``, ``__le__()``, ``__gt__()``, and ``__ge__()`` methods
+``unsafe_hash`` - If False: the ``__hash__()`` method is generated according to how eq and frozen are set
+``frozen`` - If ``True``: assigning to fields will generate an exception
+``match_args`` - Generate ``__match_args__()`` method
+``kw_only`` - Mark all fields as keyword-only
+``slots`` - Create class with ``__slots__``
 
 
-Important
----------
+About
+-----
 .. csv-table:: Dataclass options
     :header: "Option", "Default", "Description (if True)"
     :widths: 10, 10, 80

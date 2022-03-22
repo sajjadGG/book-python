@@ -1,7 +1,3 @@
-Exception Catching
-==================
-
-
 .. testsetup::
 
     # Simulate user input (for test automation)
@@ -12,8 +8,8 @@ Exception Catching
     Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 
-Important
----------
+Exception Catching
+==================
 * ``try``
 * ``except``
 * ``else``

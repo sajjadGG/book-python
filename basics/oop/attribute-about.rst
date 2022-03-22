@@ -1,9 +1,5 @@
 OOP Attribute About
 ===================
-
-
-Important
----------
 * Attributes are also known as "Properties" or "Fields"
 * Attributes store information for instances
 * Access field values using dot (``.``) notation
@@ -32,6 +28,9 @@ Important
     namespace
         Container for storing related data
 
+
+About
+-----
 Class example with distinction of properties and state attributes.
 
 An example "Glass with Water" can illustrate the distinction of properties

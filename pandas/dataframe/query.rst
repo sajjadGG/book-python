@@ -1,9 +1,6 @@
 DataFrame Query
 ===============
 
-
-Important
----------
 >>> # doctest: +SKIP
 ... df[df['sales'] > 50000]
 ... df.query('sales > 50000')

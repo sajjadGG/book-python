@@ -1,9 +1,5 @@
 Pickle File
 ===========
-
-
-Important
----------
 * File extension ``pkl``
 
 

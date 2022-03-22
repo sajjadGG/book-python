@@ -1,9 +1,5 @@
 RE Compare
 ==========
-
-
-Important
----------
 * ``re.match()``
 * ``re.search()``
 * ``re.findall()``

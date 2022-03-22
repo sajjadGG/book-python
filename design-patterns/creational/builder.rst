@@ -1,9 +1,5 @@
 Builder
 =======
-
-
-Important
----------
 * EN: Builder
 * PL: Budowniczy
 * Type: object

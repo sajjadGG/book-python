@@ -1,9 +1,5 @@
 Datetime ISO Standard
 =====================
-
-
-Important
----------
 * ISO 8601 is an International Standard [#wikiISO8601]_
 
 

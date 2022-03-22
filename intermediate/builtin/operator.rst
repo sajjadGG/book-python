@@ -1,9 +1,5 @@
 Operator Library
 ================
-
-
-Important
----------
 * https://docs.python.org/library/operator.html
 * The operator module exports a set of efficient functions corresponding to the intrinsic operators of Python.
 * For example, ``operator.add(x, y)`` is equivalent to the expression ``x+y``.

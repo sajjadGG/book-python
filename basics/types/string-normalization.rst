@@ -1,9 +1,5 @@
 String Normalization
 ====================
-
-
-Important
----------
 * Using str methods for cleaning user input
 * 80% of machine learning and data science is cleaning data
 

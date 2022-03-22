@@ -1,9 +1,5 @@
 NoSQL Document
 ==============
-
-
-Important
----------
 * ArangoDB
 * Azure Cosmos DB
 * BaseX

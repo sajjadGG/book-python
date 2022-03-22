@@ -1,9 +1,5 @@
 Theory About
 ============
-
-
-Important
----------
 * Rodzaje baz danych (RDBMS, RDSMS, Non-rel)
 * Relacyjne bazy danych (SQLite3, PostgreSQL, Oracle, MSSQL, MySQL)
 * Nierelacyjne bazy danych (Timeseries, Graph, Document)

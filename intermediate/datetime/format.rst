@@ -1,9 +1,5 @@
 Datetime Format
 ===============
-
-
-Important
----------
 * ``format(dt, '%Y-%m-%d')``
 * ``dt.__format__('%Y-%m-%d')``
 * ``dt.strftime('%Y-%m-%d')``

@@ -2,10 +2,6 @@ DataFrame Rolling
 =================
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

@@ -1,9 +1,6 @@
 Query Exists
 ============
-
-
-Important
----------
+* Exist
 
 
 Exists

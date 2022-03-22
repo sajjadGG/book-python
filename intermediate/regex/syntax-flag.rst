@@ -1,9 +1,5 @@
 Syntax Flag
 ===========
-
-
-Important
----------
 * ``re.ASCII``
 * ``re.IGNORECASE``
 * ``re.LOCALE``

@@ -1,9 +1,5 @@
 XML Parsing HTML
 ================
-
-
-Important
----------
 * Using ``lxml`` module
 
 .. code-block:: html

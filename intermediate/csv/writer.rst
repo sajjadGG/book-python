@@ -1,9 +1,5 @@
 CSV Writer
 ==========
-
-
-Important
----------
 * csv.writer: list[tuple]
 
 

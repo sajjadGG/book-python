@@ -1,6 +1,3 @@
-File Path Modify
-================
-
 .. testsetup::
 
     from pathlib import Path
@@ -11,6 +8,9 @@ File Path Modify
     from shutil import rmtree
     rmtree('/tmp/a', ignore_errors=True)
 
+
+File Path Modify
+================
 
 Create Directories
 ------------------

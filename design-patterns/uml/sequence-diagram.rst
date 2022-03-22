@@ -1,9 +1,5 @@
 UML Sequence Diagram
 ====================
-
-
-Important
----------
 * https://mermaid-js.github.io/mermaid/#/sequenceDiagram
 
 

@@ -1,9 +1,5 @@
 DataFrame Sort
 ==============
-
-
-Important
----------
 * Works with ``inplace=True``
 * ``axis=0`` - Rows
 * ``axis=1`` - Columns

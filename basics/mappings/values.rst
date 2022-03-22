@@ -1,9 +1,5 @@
 Mapping Values
 ==============
-
-
-Important
----------
 * Value can be any object
 
 

@@ -1,15 +1,11 @@
 Array Broadcasting
 ==================
 
-
-Important
----------
 .. glossary::
 
     Vector
     Broadcasting
     Matrix Multiplication
-
 
 
 SetUp

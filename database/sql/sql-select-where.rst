@@ -1,9 +1,5 @@
 SQL Select Where
 ================
-
-
-Important
----------
 * Order clauses to filter out the most data first!
 
 

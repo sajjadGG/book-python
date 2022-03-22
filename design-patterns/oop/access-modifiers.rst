@@ -1,28 +1,18 @@
 OOP Access Modifiers
 ====================
-
-
-Important
----------
 * Attributes and methods are always public
 * No protected and private keywords
 * Protecting is only by convention [#pydocprivatevar]_
-
-Attributes:
-
-    * ``name`` - public attribute
-    * ``_name`` - protected attribute (non-public by convention)
-    * ``__name`` - private attribute (name mangling)
-    * ``__name__`` - system attribute
-    * ``name_`` - avoid name collision
-
-Methods:
-
-    * ``name(self)`` - public method
-    * ``_name(self)`` - protected method (non-public by convention)
-    * ``__name(self)`` - private method (name mangling)
-    * ``__name__(self)`` - system method
-    * ``name_(self)`` - avoid name collision
+* ``name`` - public attribute
+* ``_name`` - protected attribute (non-public by convention)
+* ``__name`` - private attribute (name mangling)
+* ``__name__`` - system attribute
+* ``name_`` - avoid name collision
+* ``name(self)`` - public method
+* ``_name(self)`` - protected method (non-public by convention)
+* ``__name(self)`` - private method (name mangling)
+* ``__name__(self)`` - system method
+* ``name_(self)`` - avoid name collision
 
 
 Example

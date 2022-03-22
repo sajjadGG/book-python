@@ -1,9 +1,5 @@
 SQL Constraints
 ===============
-
-
-Important
----------
 * Does something automatically
 * Prevents from duplicating information
 * Prevents from loss of integrity

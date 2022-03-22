@@ -1,10 +1,7 @@
 Query Subquery
 ==============
-
-
-Important
----------
-
+* Subquery
+* CTE - Common Table Expressions
 
 Subquery
 --------

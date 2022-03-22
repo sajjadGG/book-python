@@ -1,8 +1,5 @@
 Templatetags
 ============
-
-Important
----------
 * https://docs.djangoproject.com/en/dev/ref/templates/builtins/
 
 .. csv-table:: Templatetags

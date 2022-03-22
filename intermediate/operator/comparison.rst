@@ -1,9 +1,15 @@
 Operator Comparison
 ===================
+* ``==`` - eq
+* ``!=`` - ne
+* ``<`` - lt
+* ``<=`` - le
+* ``>`` - gt
+* ``>=`` - ge
 
 
-Important
----------
+About
+-----
 .. csv-table:: Comparison Operator Overload
     :header: "Operator", "Method"
 

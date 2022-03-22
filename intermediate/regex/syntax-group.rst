@@ -1,12 +1,9 @@
 Syntax Group
 ============
-
-
-Important
----------
 * Catch expression results
 * Can be named or positional
 * Note, that for backreference, must use raw-sting or double backslash
+
 
 Syntax
 ------

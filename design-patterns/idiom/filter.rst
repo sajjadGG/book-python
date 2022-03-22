@@ -1,9 +1,5 @@
 Filter
 ======
-
-
-Important
----------
 * Select elements from sequence
 * Generator (lazy evaluated)
 * Built-in

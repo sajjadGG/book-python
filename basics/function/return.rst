@@ -2,8 +2,6 @@ Function Return
 ===============
 
 
-Important
----------
 .. glossary::
 
     return

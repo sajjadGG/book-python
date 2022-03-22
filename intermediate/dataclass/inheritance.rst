@@ -1,9 +1,5 @@
 Dataclass Inheritance
 =====================
-
-
-Important
----------
 * Dataclasses can inherit from other classes
 * Superclass not necessarily has to be dataclass
 * If parent is dataclass the init will be joined

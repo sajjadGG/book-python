@@ -1,10 +1,10 @@
 Dragon ADR Damage Make
 ======================
-
-
-Important
----------
 * ADR - Architecture Design Records
+
+
+Problem
+-------
 * Dragon makes damage
 
 

@@ -1,9 +1,5 @@
 Flyweight
 =========
-
-
-Important
----------
 * EN: Flyweight
 * PL: Pyłek
 * Type: object

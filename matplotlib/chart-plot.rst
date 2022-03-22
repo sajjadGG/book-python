@@ -1,9 +1,5 @@
 Line Chart
 ==========
-
-
-Important
----------
 * Show linear relation of two variables
 
 

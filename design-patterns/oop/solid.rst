@@ -1,5 +1,14 @@
 OOP S.O.L.I.D.
 ==============
+* SRP: The Single Responsibility Principle
+* OCP: The Open / Closed Principle
+* LSP: The Liskov Substitution Principle
+* ISP: The Interface Segregation Principle
+* DIP: The Dependency Inversion Principle
+
+.. figure:: img/oop-solid.png
+
+    S.O.L.I.D. Principles
 
 
 Recap
@@ -23,19 +32,6 @@ Patterns:
     * K.I.S.S. - Keep It Simple Stupid
     * Y.A.G.N.I. - You Ain't Gonna Need It
     * D.R.Y. - Do not Repeat Yourself
-
-
-Important
----------
-* SRP: The Single Responsibility Principle
-* OCP: The Open / Closed Principle
-* LSP: The Liskov Substitution Principle
-* ISP: The Interface Segregation Principle
-* DIP: The Dependency Inversion Principle
-
-.. figure:: img/oop-solid.png
-
-    S.O.L.I.D. Principles
 
 
 Single Responsibility Principle

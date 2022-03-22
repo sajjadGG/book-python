@@ -1,21 +1,5 @@
 Type Annotation Scalar
 ======================
-
-.. epigraph::
-
-    Types are not required, and never will be.
-    -- Guido van Rossum, Python initiator, core developer, former BDFL
-
-.. epigraph::
-
-    It should be emphasized that Python will remain a dynamically typed
-    language, and the authors have no desire to ever make type hints
-    mandatory, even by convention.
-    -- Python Software Foundation
-
-
-Important
----------
 * Also known as: "type annotations", "type hints", "gradual typing"
 * Types are not required, and never will be
 * Good IDE will give you hints
@@ -29,6 +13,17 @@ Important
 * Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 * To type check use: ``mypy``, ``pyre-check``, ``pytypes``
 
+.. epigraph::
+
+    Types are not required, and never will be.
+    -- Guido van Rossum, Python initiator, core developer, former BDFL
+
+.. epigraph::
+
+    It should be emphasized that Python will remain a dynamically typed
+    language, and the authors have no desire to ever make type hints
+    mandatory, even by convention.
+    -- Python Software Foundation
 
 Int
 ---

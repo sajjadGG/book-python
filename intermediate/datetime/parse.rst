@@ -1,9 +1,5 @@
 Datetime Parse
 ==============
-
-
-Important
----------
 * Parsing - analyze (a sentence) into its parts and describe their syntactic roles.
 
 

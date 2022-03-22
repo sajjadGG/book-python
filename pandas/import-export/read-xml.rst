@@ -1,12 +1,9 @@
 Pandas Read XML
 ===============
-
-
-Important
----------
 * File paths works also with URLs
 * `io.StringIO` Converts ``str`` to File-like object
 * pd.read_xml()
+
 
 SetUp
 -----

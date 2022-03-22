@@ -1,9 +1,5 @@
 Interpreter
 ===========
-
-
-Important
----------
 * EN: Interpreter
 * PL: Interpreter
 * Type: class

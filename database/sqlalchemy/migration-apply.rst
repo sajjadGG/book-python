@@ -1,6 +1,2 @@
 Migration Apply
 ===============
-
-
-Important
----------

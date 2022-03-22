@@ -1,10 +1,7 @@
 Pandas Read JSON
 ================
-
-
-Important
----------
 * File paths works also with URLs
+* File can be compressed with ``.gz``, ``.bz2``, ``.zip``, ``.xz``
 
 
 Compressed

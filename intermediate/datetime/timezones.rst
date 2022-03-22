@@ -1,9 +1,5 @@
 Datetime Timezone
 =================
-
-
-Important
----------
 * Always keep dates and times only in UTC (**important!**)
 * Datetimes should be converted to local time only when displaying to user
 * Computerphile Time & Time Zones [#ytComputerphileTimeZones]_

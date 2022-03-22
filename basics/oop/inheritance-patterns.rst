@@ -1,9 +1,5 @@
 OOP Inheritance Patterns
 ========================
-
-
-Important
----------
 .. glossary::
 
     single inheritance

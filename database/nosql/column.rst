@@ -1,9 +1,5 @@
 NoSQL Column-Oriented
 =====================
-
-
-Important
----------
 * Amazon DynamoDB
 * Apache Accumulo
 * Azure Cosmos DB

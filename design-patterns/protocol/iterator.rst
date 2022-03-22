@@ -1,9 +1,5 @@
 Protocol Iterator
 =================
-
-
-Important
----------
 * Used for iterating in a ``for`` loop
 
 

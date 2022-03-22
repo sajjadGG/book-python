@@ -1,9 +1,5 @@
 Sequence Frozenset
 ==================
-
-
-Important
----------
 * Only unique values
 * Immutable - cannot add, modify or remove items
 * Can store elements of any **hashable** types

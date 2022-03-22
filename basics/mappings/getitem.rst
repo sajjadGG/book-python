@@ -1,9 +1,5 @@
 Mapping Getitem
 ===============
-
-
-Important
----------
 * Key lookup is very efficient ``O(1)``
 * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
 * ``.get()`` returns ``None`` if key not found

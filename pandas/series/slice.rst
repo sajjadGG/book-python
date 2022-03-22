@@ -2,10 +2,6 @@ Series Slicing
 ==============
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

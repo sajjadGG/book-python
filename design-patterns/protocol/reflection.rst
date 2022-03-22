@@ -1,16 +1,11 @@
 Protocol Reflection
 ===================
-
-
-Important
----------
 * When accessing an attribute
-* Built-in Functions:
+* ``setattr(obj, 'attrname', 'new_value') -> None``
+* ``delattr(obj, 'attrname') -> None``
+* ``getattr(obj, 'attrname', 'default_value') -> Any``
+* ``hasattr(obj, 'attrname') -> bool``
 
-    * ``setattr(obj, 'attrname', 'new_value') -> None``
-    * ``delattr(obj, 'attrname') -> None``
-    * ``getattr(obj, 'attrname', 'default_value') -> Any``
-    * ``hasattr(obj, 'attrname') -> bool``
 
 >>> class Astronaut:
 ...     def __init__(self, name):

@@ -1,9 +1,5 @@
 Proxy
 =====
-
-
-Important
----------
 * EN: Proxy
 * PL: Pełnomocnik
 * Type: object

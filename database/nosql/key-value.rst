@@ -1,9 +1,5 @@
 NoSQL Key-Value
 ===============
-
-
-Important
----------
 * Key–Value Store
 * Key-Value Cache
 

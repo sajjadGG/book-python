@@ -1,9 +1,5 @@
 Decorator
 =========
-
-
-Important
----------
 * EN: Decorator
 * PL: Dekorator
 * Type: object

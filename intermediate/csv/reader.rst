@@ -1,9 +1,5 @@
 CSV Reader
 ==========
-
-
-Important
----------
 * csv.reader: list[tuple]
 
 

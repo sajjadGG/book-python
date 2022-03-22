@@ -1,13 +1,8 @@
 DataFrame NA
 ============
-
-
-Important
----------
+* Represents missing values
 * ``axis=0`` - rows
 * ``axis=1`` - columns
-
-Represents missing values
 
 
 SetUp

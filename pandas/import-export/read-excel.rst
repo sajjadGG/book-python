@@ -1,9 +1,5 @@
 Read Excel
 ==========
-
-
-Important
----------
 * File paths works also with URLs
 
 

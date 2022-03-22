@@ -1,9 +1,5 @@
 SQLite3 Connect
 ===============
-
-
-Important
----------
 * File database - persistent storage
 * In-memory - very fast, but volatile
 * sqlite3.connect() -> connection

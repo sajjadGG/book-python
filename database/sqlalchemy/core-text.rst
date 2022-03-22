@@ -2,8 +2,6 @@ Core Text
 =========
 
 
-Important
----------
 >>> from sqlalchemy import update
 
 

@@ -1,9 +1,5 @@
 Adapter
 =======
-
-
-Important
----------
 * EN: Adapter
 * PL: Adapter
 * Type: class and object

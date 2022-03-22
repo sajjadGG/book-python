@@ -1,9 +1,5 @@
 Array Round
 ===========
-
-
-Important
----------
 * ``np.ceil(n)`` - rounds `n` up to nearest ``int``
 * ``np.floor(n)`` - rounds `n` down to nearest ``int``
 * ``np.rint(n)`` - rounds `n` to nearest ``int``

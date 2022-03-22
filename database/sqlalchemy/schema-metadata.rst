@@ -2,10 +2,6 @@ Schema Metadata
 ===============
 
 
-Important
----------
-
-
 Use Case - 0x01
 ---------------
 >>> from sqlalchemy import MetaData

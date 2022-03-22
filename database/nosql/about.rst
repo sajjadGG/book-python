@@ -1,9 +1,5 @@
 NoSQL About
 ===========
-
-
-Important
----------
 * List of NoSQL databases [#Stevens2022]_
 * Key–value Store (Redis)
 * Key-Value Cache (Redis, Memcached)
@@ -17,6 +13,8 @@ Important
 * Relational Database
 * Multi Model
 * Multi Value
+
+.. figure:: img/nosql-vs-sql.png
 
 A NoSQL (originally referring to "non-SQL" or "non-relational") database
 provides a mechanism for storage and retrieval of data that is modeled in
@@ -38,8 +36,6 @@ operations faster in NoSQL. The particular suitability of a given NoSQL
 database depends on the problem it must solve. Sometimes the data
 structures used by NoSQL databases are also viewed as "more flexible" than
 relational database tables [#wikiNoSQL]_.
-
-.. figure:: img/nosql-vs-sql.png
 
 
 Performance

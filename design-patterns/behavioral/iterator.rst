@@ -1,9 +1,5 @@
 Iterator
 ========
-
-
-Important
----------
 * EN: Iterator
 * PL: Iterator
 * Type: object

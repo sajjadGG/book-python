@@ -1,9 +1,11 @@
 DataFrame Getitem
 =================
-
-
-Important
----------
+* ``df.at[]``
+* ``df.loc[]``
+* ``df.iat[]``
+* ``df.iloc[]``
+* ``iat`` and ``iloc`` takes ``int`` as argument
+* ``at`` and ``loc`` takes ``str`` as argument
 
 
 SetUp
@@ -27,16 +29,6 @@ SetUp
 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
-
-
-Important
----------
-* ``df.at[]``
-* ``df.loc[]``
-* ``df.iat[]``
-* ``df.iloc[]``
-* ``iat`` and ``iloc`` takes ``int`` as argument
-* ``at`` and ``loc`` takes ``str`` as argument
 
 
 Columns

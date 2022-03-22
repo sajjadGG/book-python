@@ -2,10 +2,6 @@ Array Sort
 ==========
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import numpy as np

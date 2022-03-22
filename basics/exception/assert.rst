@@ -1,9 +1,5 @@
 Exception Assertion
 ===================
-
-
-Important
----------
 * Raises ``AssertionError`` if argument is ``False``
 * Can have optional message
 * Running Python with the ``-O`` optimization flag disables assert statements

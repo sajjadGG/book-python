@@ -1,7 +1,3 @@
-Function Arguments
-==================
-
-
 .. testsetup::
 
     def add(*args, **kwargs):
@@ -14,8 +10,22 @@ Function Arguments
         pass
 
 
-Important
----------
+Function Arguments
+==================
+* Argument - value/variable/reference being passed to the function
+* Positional argument - value passed to function - order is important
+* Keyword argument - value passed to function resolved by name - order is not important
+
+Function definition with parameters:
+
+.. code-block:: python
+
+    myfunction(<arguments>)
+
+>>> add(1, 2)
+>>> add(a=1, b=2)
+>>> add(1, b=2)
+
 .. glossary::
 
     argument
@@ -26,19 +36,6 @@ Important
 
     keyword argument
         Value passed to function resolved by name - order is not important
-
-
-Syntax
-------
-Function definition with parameters:
-
-.. code-block:: python
-
-    myfunction(<arguments>)
-
->>> add(1, 2)
->>> add(a=1, b=2)
->>> add(1, b=2)
 
 
 Positional Arguments

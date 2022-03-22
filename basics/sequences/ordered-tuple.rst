@@ -1,9 +1,5 @@
 Sequence Tuple
 ==============
-
-
-Important
----------
 * Immutable - cannot add, modify or remove items
 
 

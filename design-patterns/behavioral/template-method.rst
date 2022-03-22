@@ -1,8 +1,5 @@
 Template Method
 ===============
-
-Important
----------
 * EN: Template Method
 * PL: Metoda szablonowa
 * Type: class

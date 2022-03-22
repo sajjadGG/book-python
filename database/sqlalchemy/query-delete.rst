@@ -1,9 +1,6 @@
 Query Delete
 ============
-
-
-Important
----------
+* Delete
 
 
 Delete

@@ -1,5 +1,6 @@
 Array Shape
 ===========
+* Any shape operation changes only ``np.ndarray.shape`` and ``np.ndarray.strides`` and does not touch data
 
 
 
@@ -36,11 +37,6 @@ Recap
 >>> len([[obj1, obj2],
 ...      [obj3, obj4]])
 2
-
-
-Important
----------
-* Any shape operation changes only ``np.ndarray.shape`` and ``np.ndarray.strides`` and does not touch data
 
 
 Shape

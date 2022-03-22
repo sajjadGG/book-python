@@ -1,9 +1,5 @@
 OOP Abstract Class
 ==================
-
-
-Important
----------
 * Since Python 3.0: :pep:`3119` -- Introducing Abstract Base Classes
 * Cannot instantiate
 * Possible to indicate which method must be implemented by child

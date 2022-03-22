@@ -1,9 +1,6 @@
 Query Order By
 ==============
-
-
-Important
----------
+* Order By
 * Ascending
 * Descending
 * Nulls first

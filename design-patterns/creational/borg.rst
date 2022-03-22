@@ -1,9 +1,5 @@
 Borg
 ====
-
-
-Important
----------
 * EN: Borg
 * PL: Borg
 * Type: object

@@ -1,9 +1,5 @@
 Mediator
 ========
-
-
-Important
----------
 * EN: Mediator
 * PL: Mediator
 * Type: object

@@ -1,9 +1,5 @@
 Mapping Define
 ==============
-
-
-Important
----------
 * ``dict`` are key-value storage (HashMap)
 * Mutable - can add, remove, and modify items
 * Since Python 3.7: ``dict`` keeps order of elements

@@ -2,14 +2,6 @@ Trigonometry
 ============
 
 
-
-SetUp
------
->>> import numpy as np
-
-
-Important
----------
 .. glossary::
 
     Universal Functions
@@ -20,6 +12,11 @@ Important
         >>>
         >>> np.sin(a)
         array([0.84147098, 0.90929743, 0.14112001])
+
+
+SetUp
+-----
+>>> import numpy as np
 
 
 Unit conversion

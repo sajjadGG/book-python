@@ -1,6 +1,3 @@
-SQL Injection
-=============
-
 .. testsetup::
 
     # Simulate user input (for test automation)
@@ -11,8 +8,9 @@ SQL Injection
     input = MagicMock(side_effect=[IN1, IN2])
 
 
-Important
----------
+SQL Injection
+=============
+
 .. warning:: This is to demonstrate a serious problem.
              Do not that statements in your code!
 

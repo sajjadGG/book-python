@@ -1,9 +1,5 @@
 JSON File
 =========
-
-
-Important
----------
 * file extension ``.json``
 * ``json.load(file) -> dict``
 * ``json.dump(data, file) -> None``

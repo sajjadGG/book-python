@@ -1,11 +1,9 @@
 Pickle Dump
 ===========
-
-
-Important
----------
-* Python object serialization format
-* ``pickle`` vs. ``cPickle``
+* ``pickle.dump()`` -> dump to file
+* ``pickle.dumps()`` -> dump to string (bytes)
+* What if name was ``pickle.to_file()``?
+* What if name was ``pickle.to_text()``?
 
 
 Serialize Str

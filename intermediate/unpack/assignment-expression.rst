@@ -1,9 +1,5 @@
 Unpack Assignment Expression
 ============================
-
-
-Important
----------
 * Since Python 3.8: :pep:`572` -- Assignment Expressions
 * Also known as "Walrus operator"
 * Also known as "Named expression"

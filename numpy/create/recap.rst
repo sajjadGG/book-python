@@ -24,8 +24,8 @@ Recap
 >>> m = np.identity(4)
 
 
-Important
----------
+Microbenchmark
+--------------
 >>> # doctest: +SKIP
 ... %%timeit -r 1000 -n 1000
 ... result = np.arange(0, 100, step=2, dtype=float)

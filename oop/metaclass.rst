@@ -1,6 +1,14 @@
 Metaclass
 =========
+* Object is an instance of a class
+* Class is an instance of a Metaclass
 
+.. figure:: img/oop-metaclass-inheritance.png
+
+    Object is an instance of a Class.
+    Class is an instance of a Metaclass.
+    Metaclass is an instance of a type.
+    Type is an instance of a type.
 
 .. epigraph::
 
@@ -12,19 +20,8 @@ Metaclass
     -- Tim Peters
 
 
-Important
----------
-* Object is an instance of a class
-* Class is an instance of a Metaclass
-
-.. figure:: img/oop-metaclass-inheritance.png
-
-    Object is an instance of a Class.
-    Class is an instance of a Metaclass.
-    Metaclass is an instance of a type.
-    Type is an instance of a type.
-
-
+About
+-----
 When a class definition is executed, the following steps occur:
 
     #. MRO entries are resolved;

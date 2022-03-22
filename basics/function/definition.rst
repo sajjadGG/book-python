@@ -1,14 +1,13 @@
 Function Definition
 ===================
-
-
-Important
----------
 * Automate repetitive tasks
 * Allow code reuse
 * Improve code readability
 * Clean-up code
 * Allow easier refactoring
+
+>>> def say_hello():
+...     print('hello')
 
 .. glossary::
 

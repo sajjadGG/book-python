@@ -1,8 +1,5 @@
 XSLT
 ====
-
-Important
----------
 * Using ``lxml`` module
 
 

@@ -1,9 +1,5 @@
 CSV Format
 ==========
-
-
-TL;DR
------
 * CSV - Comma/Character Separated Values
 * No CSV formal standard, just a good practice
 * Flat file (2D) without relations
@@ -13,12 +9,6 @@ TL;DR
 * Internationalization: encoding
 * Localization: decimal separator, thousands separator, date format
 * Parameters: delimiter, quotechar, quoting, lineterminator, dialect
-
-
-Important
----------
-* CSV - Comma Separated Values
-* CSV - Character Separated Values
 
 Example CSV file:
 
@@ -265,9 +255,11 @@ Decimal Separator
 
 Thousands Separator
 -------------------
-``10 000,00`` - Space, the internationally recommended thousands separator
-``10.000,00`` - Period, used in many non-English speaking countries
-``10,000.00`` - Comma, used in most English-speaking countries
+* ``1000000`` - None
+* ``1'000'000`` - Apostrophe
+* ``1 000 000`` - Space, the internationally recommended thousands separator
+* ``1.000.000`` - Period, used in many non-English speaking countries
+* ``1,000,000`` - Comma, used in most English-speaking countries
 
 
 Date and Time

@@ -1,9 +1,7 @@
 Query Group By
 ==============
-
-
-Important
----------
+* Group By
+* Having
 
 
 Group By

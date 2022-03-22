@@ -1,9 +1,5 @@
 SQL Index
 =========
-
-
-Important
----------
 * Used to create and retrieve data from the database very quickly
 * Analog to notebook calendar tabs
 

@@ -1,15 +1,5 @@
 DataFrame Index
 ===============
-
-
-SetUp
------
->>> import pandas as pd
->>> import numpy as np
-
-
-Important
----------
 * Range Index
 * Index
 * Object Index
@@ -20,6 +10,15 @@ Important
 * Categorical Index
 * Multi Index
 
+
+SetUp
+-----
+>>> import pandas as pd
+>>> import numpy as np
+
+
+Deprecation
+-----------
 .. note:: Non-monotonic indexes require exact matches. If the index of a Series
           or DataFrame is monotonically increasing or decreasing, then the
           bounds of a label-based slice can be outside the range of the index,

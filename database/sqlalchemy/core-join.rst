@@ -2,8 +2,6 @@ Core Join
 =========
 
 
-Important
----------
 >>> from sqlalchemy import update
 
 

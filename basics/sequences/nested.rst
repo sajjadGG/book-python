@@ -1,8 +1,10 @@
 Sequence Nested
 ===============
+* Sequence is an object
+* Sequence element is an object too
+* Therefore an element of a sequence could be another sequence
+* There is no limit how nested it could be
 
-Important
----------
 >>> obj = 1
 >>> data = [obj, obj, obj]
 >>> data

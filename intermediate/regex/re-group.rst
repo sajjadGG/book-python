@@ -1,9 +1,5 @@
 RE Group
 ========
-
-
-Important
----------
 * Match particular parts of a string
 * Possible to name matches
 

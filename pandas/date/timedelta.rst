@@ -2,10 +2,6 @@ Date and Time Shifts
 ====================
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

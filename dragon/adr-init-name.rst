@@ -1,7 +1,3 @@
-Dragon ADR Init Name
-====================
-
-
 .. testsetup::
 
     class Dragon:
@@ -9,9 +5,13 @@ Dragon ADR Init Name
             pass
 
 
-Important
----------
+Dragon ADR Init Name
+====================
 * ADR - Architecture Design Records
+
+
+Problem
+-------
 * Create dragon at x=50, y=120 position and name it "Wawelski"
 
 

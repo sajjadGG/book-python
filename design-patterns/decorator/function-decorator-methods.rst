@@ -1,9 +1,5 @@
 Decorator Function with Mth
 ===========================
-
-
-Important
----------
 * ``mydecorator`` is a decorator name
 * ``method`` is a method name
 * ``self`` is an instance

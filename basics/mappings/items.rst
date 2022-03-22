@@ -1,9 +1,5 @@
 Mapping Items
 =============
-
-
-Important
----------
 * Key-Value Pairs
 
 

@@ -2,10 +2,6 @@ Array Serialize
 ===============
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import numpy as np

@@ -1,9 +1,5 @@
 SQL Table
 =========
-
-
-Important
----------
 * Constraint ``UNIQUE``
 * Constraint ``PRIMARY KEY``
 * Constraint ``DEFAULT``

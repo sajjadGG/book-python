@@ -1,9 +1,5 @@
 Command
 =======
-
-
-Important
----------
 * EN: Command
 * PL: Polecenie
 * Type: object

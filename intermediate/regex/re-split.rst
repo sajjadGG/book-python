@@ -1,9 +1,5 @@
 RE Split
 ========
-
-
-Important
----------
 * ``re.split()``
 * Split text by pattern
 

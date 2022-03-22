@@ -1,9 +1,5 @@
 Datetime Standards
 ==================
-
-
-Important
----------
 * Date and time formats varies from country to country [#wikiDateTimeFormats]_
 
 

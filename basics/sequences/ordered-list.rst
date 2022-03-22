@@ -1,9 +1,5 @@
 Sequence List
 =============
-
-
-Important
----------
 * Mutable - can add, remove, and modify items
 
 

@@ -2,9 +2,6 @@ Model Dataclass
 ===============
 
 
-Important
----------
-
 
 Use Case - 0x01
 ---------------

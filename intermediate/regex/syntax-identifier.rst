@@ -1,11 +1,7 @@
 Syntax Identifier
 =================
-
-
-Important
----------
-Identifiers specifies what to find.
-They are also called Character Classes.
+* Identifiers specifies what to find
+* They are also called Character Classes
 
 
 Numeric

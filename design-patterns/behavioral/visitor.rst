@@ -1,9 +1,5 @@
 Visitor
 =======
-
-
-Important
----------
 * EN: Visitor
 * PL: Odwiedzający
 * Type: object

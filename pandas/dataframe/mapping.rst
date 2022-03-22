@@ -2,10 +2,6 @@ DataFrame Mapping
 =================
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

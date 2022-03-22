@@ -1,9 +1,5 @@
 JSON Encoder
 ============
-
-
-Important
----------
 * Problem with ``date``, ``datetime``, ``time``, ``timedelta``
 * Exception during encoding datetime
 * Encoder will be used, when standard procedure fails

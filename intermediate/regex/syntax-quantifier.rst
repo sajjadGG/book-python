@@ -1,10 +1,6 @@
 Syntax Quantifier
 =================
-
-
-Important
----------
-Quantifier specifies how many occurrences of preceding qualifier or identifier.
+* Quantifier specifies how many occurrences of preceding qualifier or identifier
 
 >>> import re
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'

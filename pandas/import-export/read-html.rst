@@ -1,9 +1,5 @@
 Pandas Read HTML
 ================
-
-
-Important
----------
 * File paths works also with URLs
 
 

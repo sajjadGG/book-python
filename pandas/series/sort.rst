@@ -2,10 +2,6 @@ Series Sort
 ===========
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

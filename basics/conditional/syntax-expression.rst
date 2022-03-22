@@ -1,6 +1,3 @@
-Boolean Expression
-==================
-
 .. testsetup::
 
     # Simulate user input (for test automation)
@@ -8,8 +5,8 @@ Boolean Expression
     input = MagicMock(side_effect=['10', '10'])
 
 
-Important
----------
+Boolean Expression
+==================
 * Conditional Expression
 * Shorthand Expressions
 

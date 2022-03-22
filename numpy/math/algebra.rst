@@ -1,23 +1,17 @@
 Linear Algebra
 ==============
+* Linear Algebra
+* Logarithms
+* ``np.sign()``
+* ``np.abs()``
+* ``np.sqrt()``
+* ``np.power()``
+* ``np.log()``
+* ``np.log10()``
+* ``np.exp()``
 
 
-Important
----------
 >>> import numpy as np
-
-Linear Algebra:
-
-    * ``np.sign()``
-    * ``np.abs()``
-    * ``np.sqrt()``
-    * ``np.power()``
-
-Logarithms:
-
-    * ``np.log()``
-    * ``np.log10()``
-    * ``np.exp()``
 
 
 Vector and matrix mathematics

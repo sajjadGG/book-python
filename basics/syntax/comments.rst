@@ -1,9 +1,5 @@
 Syntax Comments
 ===============
-
-
-Important
----------
 * Line Comments
 * Multiline Comments
 * Inline Comments

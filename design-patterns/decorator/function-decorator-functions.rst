@@ -2,8 +2,6 @@ Decorator Function with Func
 ============================
 
 
-Important
----------
 Syntax:
     .. code-block:: python
 

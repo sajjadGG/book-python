@@ -1,9 +1,5 @@
 SQL Delete
 ==========
-
-
-Important
----------
 * Write your statement starting with ``--`` after you're done, make sure
   there is no mistake, then remove comment and execute
 * https://www.youtube.com/watch?v=1aEqd4bl6Bs

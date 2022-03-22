@@ -1,9 +1,5 @@
 Observer
 ========
-
-
-Important
----------
 * EN: Observer
 * PL: Obserwator
 * Type: object

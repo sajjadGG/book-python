@@ -1,9 +1,5 @@
 DataFrame Join
 ==============
-
-
-Important
----------
 * pd.concat
 * pd.DataFrame.merge()
 * pd.DataFrame.join()

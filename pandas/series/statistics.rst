@@ -1,9 +1,6 @@
 Series Statistics
 =================
 
-Important
----------
-
 
 SetUp
 -----

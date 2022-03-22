@@ -1,9 +1,5 @@
 Zip
 ===
-
-
-Important
----------
 * Combine two sequences
 * Generator (lazy evaluated)
 * Built-in

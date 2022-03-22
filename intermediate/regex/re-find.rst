@@ -1,9 +1,5 @@
 RE Findall, Finditer
 ====================
-
-
-Important
----------
 * ``re.findall()``
 * ``re.finditer()``
 

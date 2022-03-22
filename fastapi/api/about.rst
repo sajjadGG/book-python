@@ -1,9 +1,5 @@
 About
 =====
-
-
-Important
----------
 * `Path`
 * `Operation`
 * `Path Operation Function`

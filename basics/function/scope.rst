@@ -1,6 +1,3 @@
-Function Scope
-==============
-
 .. testsetup::
 
     # Simulate user input (for test automation)
@@ -8,8 +5,8 @@ Function Scope
     input = MagicMock(side_effect=['lastname'])
 
 
-Important
----------
+Function Scope
+==============
 * Values defined in function does not leak out
 * Functions has access to global values
 * Shadowing is when you define variable with name identical to the one
@@ -23,7 +20,7 @@ Important
 
 Values Leaking
 --------------
-Values defined in function does not leak out:
+* Values defined in function does not leak out
 
 >>> def run(a, b=1):
 ...     c = 2
@@ -32,9 +29,11 @@ Values defined in function does not leak out:
 >>> print(a)
 Traceback (most recent call last):
 NameError: name 'a' is not defined
+>>>
 >>> print(b)
 Traceback (most recent call last):
 NameError: name 'b' is not defined
+>>>
 >>> print(c)
 Traceback (most recent call last):
 NameError: name 'c' is not defined
@@ -44,9 +43,11 @@ NameError: name 'c' is not defined
 >>> print(a)
 Traceback (most recent call last):
 NameError: name 'a' is not defined
+>>>
 >>> print(b)
 Traceback (most recent call last):
 NameError: name 'b' is not defined
+>>>
 >>> print(c)
 Traceback (most recent call last):
 NameError: name 'c' is not defined

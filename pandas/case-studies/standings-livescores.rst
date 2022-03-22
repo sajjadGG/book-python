@@ -1,9 +1,5 @@
 Standings Livescores
 ====================
-
-
-Important
----------
 * https://www.livescores.com
 * No HTML Tables
 

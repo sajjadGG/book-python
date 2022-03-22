@@ -1,9 +1,5 @@
 Singleton
 =========
-
-
-Important
----------
 * EN: Singleton
 * PL: Singleton
 * Type: object

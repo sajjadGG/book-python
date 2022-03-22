@@ -1,9 +1,5 @@
 Loop While Else
 ===============
-
-
-Important
----------
 * Not only ``if`` statement has ``else`` clause
 * Conditionals: ``if ... elif ... else``
 * Exceptions: ``try ... except ... else``

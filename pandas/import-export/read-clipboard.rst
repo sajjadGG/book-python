@@ -1,9 +1,5 @@
 Pandas Read Clipboard
 =====================
-
-
-Important
----------
 * ``pd.read_clipboard()``
 
 

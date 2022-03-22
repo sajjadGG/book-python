@@ -1,9 +1,5 @@
 4th Normal Form
 ===============
-
-
-Important
----------
 * No multi-valued dependencies
 
 

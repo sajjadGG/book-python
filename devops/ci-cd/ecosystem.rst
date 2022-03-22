@@ -51,10 +51,6 @@ Version Control System
 * FluxCD: https://github.com/fluxcd/flux
 * Further Reading: https://dev.astrotech.io/git/index.html
 
-.. todo:: Further Reading: https://dev.astrotech.io/git/index.html
-.. todo:: Further Reading: https://vcs.astrotech.io
-.. todo:: Further Reading: https://git.astrotech.io
-
 .. figure:: ../_img/vcs-gitflow-01-feature.png
 .. figure:: ../_img/vcs-gitflow-02-feature-pr.png
 .. figure:: ../_img/vcs-gitflow-03-bugfix.png

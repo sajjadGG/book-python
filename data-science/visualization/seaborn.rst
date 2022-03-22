@@ -1,10 +1,6 @@
 Seaborn
 =======
-
-
-Important
----------
-statistical data visualization
+* Statistical data visualization
 
 
 Further Reading

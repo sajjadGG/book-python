@@ -1,9 +1,5 @@
 Dataclass Postinit
 ==================
-
-
-Important
----------
 * Dataclasses generate ``__init__()``
 * Overloading ``__init__()`` manually will destroy it
 * For init time validation there is ``__post_init__()``

@@ -1,9 +1,5 @@
 Settings
 ========
-
-
-Important
----------
 * ``local_settings.py``
 * settings dir
 * Environmental variables settings

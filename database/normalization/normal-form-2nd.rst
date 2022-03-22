@@ -1,9 +1,5 @@
 2nd Normal Form
 ===============
-
-
-Important
----------
 * All data must depend on the Primary Key
 * All attributes (non-key columns) dependent on the key (PK)
 

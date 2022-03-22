@@ -1,6 +1,3 @@
-File Read
-=========
-
 .. testsetup::
 
     from pathlib import Path
@@ -21,8 +18,8 @@ File Read
         file.write(DATA)
 
 
-Important
----------
+File Read
+=========
 * Works with both relative and absolute path
 * Fails when directory with file cannot be accessed
 * Fails when file cannot be accessed

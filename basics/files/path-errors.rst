@@ -1,11 +1,11 @@
-File Path Errors
-================
-
 .. testsetup::
 
     from pathlib import Path
     Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
+
+File Path Errors
+================
 
 Recap
 -----

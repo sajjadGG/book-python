@@ -1,9 +1,5 @@
 SQL Select Subquery
 ===================
-
-
-Important
----------
 * ``IN (SELECT ...)`` - subquery
 
 

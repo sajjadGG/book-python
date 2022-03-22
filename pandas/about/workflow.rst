@@ -1,9 +1,6 @@
 Pandas Workflow
 ===============
 
-
-Important
----------
 .. figure:: img/pandas-about-workflow.png
 
 

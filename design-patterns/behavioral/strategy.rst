@@ -1,9 +1,5 @@
 Strategy
 ========
-
-
-Important
----------
 * EN: Strategy
 * PL: Strategia
 * Type: object

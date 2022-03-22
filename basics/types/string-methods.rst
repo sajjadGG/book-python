@@ -1,9 +1,5 @@
 String Methods
 ==============
-
-
-Important
----------
 * ``str`` is immutable
 * ``str`` methods create a new modified ``str``
 

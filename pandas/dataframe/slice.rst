@@ -2,10 +2,6 @@ DataFrame Slice
 ===============
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

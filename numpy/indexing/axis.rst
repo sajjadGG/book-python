@@ -1,9 +1,5 @@
 Array Axis
 ==========
-
-
-Important
----------
 * ``axis`` is an index in ``a.shape``
 * Columns are always last
 * https://youtu.be/ZB7BZMhfPgk?t=4738

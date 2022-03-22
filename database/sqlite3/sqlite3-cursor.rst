@@ -1,9 +1,5 @@
 SQLite3 Cursor
 ==============
-
-
-Important
----------
 * ``db.cursor() -> cursor``
 * ``cursor.lastrowid``
 

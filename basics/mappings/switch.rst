@@ -1,6 +1,3 @@
-Mapping Switch
-==============
-
 .. testsetup::
 
     # Simulate user input (for test automation)
@@ -8,8 +5,8 @@ Mapping Switch
     input = MagicMock(side_effect=['French'])
 
 
-Important
----------
+Mapping Switch
+==============
 * No ``switch`` statement in Python!
 * ``switch`` in Object Oriented Programming is considered a bad practise
 * :pep:`275` -- Switching on Multiple Values [Rejected]

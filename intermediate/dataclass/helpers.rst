@@ -1,9 +1,5 @@
 Dataclass Helpers
 =================
-
-
-Important
----------
 * ``fields()`` - Returns a tuple of Field objects
 * ``asdict()`` - converts the dataclass to a dict
 * ``astuple()`` - converts the dataclass to a tuple

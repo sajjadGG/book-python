@@ -1,9 +1,5 @@
 Memento
 =======
-
-
-Important
----------
 * EN: Memento
 * PL: Pamiątka
 * Type: object

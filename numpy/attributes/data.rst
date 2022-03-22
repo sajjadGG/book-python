@@ -2,9 +2,6 @@ Array Attributes
 ================
 
 
-Important
----------
-
 
 SetUp
 -----

@@ -1,10 +1,10 @@
 Query Limit
 ===========
-
-
-Important
----------
-
+* First
+* Last
+* Limit
+* Offset
+* Slice
 
 First
 -----

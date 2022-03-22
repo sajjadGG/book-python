@@ -1,21 +1,13 @@
 Array Getitem
 =============
-
-
-.. todo:: Split chapters GetItem and Slice by __getitem__ argument type.
-
-
-SetUp
------
->>> import numpy as np
-
-
-Important
----------
 * ``int``
 * ``list[int]``
 * ``list[bool]``
 
+
+>>> import numpy as np
+>>>
+>>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6],
 ...               [7, 8, 9]])
@@ -30,6 +22,13 @@ array([[1, 2, 3],
 >>> a[ [True,False,True] ]  # list[bool]
 array([[1, 2, 3],
        [7, 8, 9]])
+
+.. todo:: Split chapters GetItem and Slice by __getitem__ argument type.
+
+
+SetUp
+-----
+>>> import numpy as np
 
 
 Index

@@ -1,9 +1,5 @@
 Bar Chart
 =========
-
-
-Important
----------
 * used to display single values
 
 

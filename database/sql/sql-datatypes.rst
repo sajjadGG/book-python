@@ -1,9 +1,11 @@
 SQL Data Types
 ==============
+* Python ``None``  -> SQLite3 ``NULL``
+* Python ``int``   -> SQLite3 ``INTEGER``
+* Python ``float`` -> SQLite3 ``REAL``
+* Python ``str``   -> SQLite3 ``TEXT``
+* Python ``bytes`` -> SQLite3 ``BLOB``
 
-
-Important
----------
 .. csv-table:: Data Types: Python vs SQLite3
     :header:  "Python Type", "SQLite Type"
 

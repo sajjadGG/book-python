@@ -1,9 +1,5 @@
 XML Module lxml
 ===============
-
-
-Important
----------
 * ``pip install lxml``
 
 

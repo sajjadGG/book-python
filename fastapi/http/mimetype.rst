@@ -1,9 +1,5 @@
 MIME types
 ==========
-
-
-Important
----------
 * type/subtype
 * ``text`` - Represents any document that contains text and is theoretically human readable
 * ``image`` - Represents any kind of images. Videos are not included, though animated images (like animated gif) are described with an image type
@@ -11,11 +7,25 @@ Important
 * ``video`` - Represents any kind of video files
 * ``application`` - Represents any kind of binary data
 
-Multipurpose Internet Mail Extensions (MIME) is an Internet standard that extends the format of email messages to support text in character sets other than ASCII, as well as attachments of audio, video, images, and application programs. Message bodies may consist of multiple parts, and header information may be specified in non-ASCII character sets. Email messages with MIME formatting are typically transmitted with standard protocols, such as the Simple Mail Transfer Protocol (SMTP), the Post Office Protocol (POP), and the Internet Message Access Protocol (IMAP).
+Multipurpose Internet Mail Extensions (MIME) is an Internet standard that
+extends the format of email messages to support text in character sets other
+than ASCII, as well as attachments of audio, video, images, and application
+programs. Message bodies may consist of multiple parts, and header
+information may be specified in non-ASCII character sets. Email messages
+with MIME formatting are typically transmitted with standard protocols,
+such as the Simple Mail Transfer Protocol (SMTP), the Post Office Protocol
+(POP), and the Internet Message Access Protocol (IMAP).
 
-The MIME standard is specified in a series of requests for comments: RFC 2045, RFC 2046, RFC 2047, RFC 4288, RFC 4289 and RFC 2049. The integration with SMTP email is specified in RFC 1521 and RFC 1522.
+The MIME standard is specified in a series of requests for comments:
+RFC 2045, RFC 2046, RFC 2047, RFC 4288, RFC 4289 and RFC 2049. The
+integration with SMTP email is specified in RFC 1521 and RFC 1522.
 
-Although the MIME formalism was designed mainly for SMTP, its content types are also important in other communication protocols. In the HyperText Transfer Protocol (HTTP) for the World Wide Web, servers insert a MIME header field at the beginning of any Web transmission. Clients use the content type or media type header to select an appropriate viewer application for the type of data indicated. [#WikipediaMIME]_
+Although the MIME formalism was designed mainly for SMTP, its content types
+are also important in other communication protocols. In the HyperText
+Transfer Protocol (HTTP) for the World Wide Web, servers insert a MIME
+header field at the beginning of any Web transmission. Clients use the
+content type or media type header to select an appropriate viewer
+application for the type of data indicated. [#WikipediaMIME]_
 
 .. code-block:: text
 

@@ -1,9 +1,5 @@
 RE Search
 =========
-
-
-Important
----------
 * ``re.search()``
 * Searches if pattern contains a string
 

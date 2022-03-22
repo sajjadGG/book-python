@@ -1,8 +1,5 @@
 Database MySQL
 ==============
-
-Important
----------
 * ``pyMySQL``
 
 

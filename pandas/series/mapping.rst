@@ -1,9 +1,5 @@
 Series Mapping
 ==============
-
-
-Important
----------
 * Using str methods for cleaning user input
 * 80% of machine learning and data science is cleaning data
 * ``Series.apply`` - apply function to data, function can have args and kwargs

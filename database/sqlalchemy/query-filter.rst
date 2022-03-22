@@ -1,9 +1,8 @@
 Query Filter
 ============
-
-
-Important
----------
+* Filter
+* Filter By
+* Where
 
 
 Filter

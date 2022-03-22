@@ -1,13 +1,12 @@
 Function Lambda
 ===============
-
-
-Important
----------
 * Lambda - Anonymous functions
 * When function is used once
 * When function is short
 * You don't need to name it (hence it is anonymous)
+
+>>> lambda x: x+1  # doctest: +ELLIPSIS
+<function <lambda> at 0x...>
 
 .. glossary::
 

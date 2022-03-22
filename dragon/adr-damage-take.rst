@@ -1,14 +1,12 @@
 Dragon ADR Damage Take
 ======================
-
-
-Important
----------
 * ADR - Architecture Design Records
-* Make DMG points damage to the dragon
+
 
 Problem
 -------
+* Make DMG points damage to the dragon
+
 .. code-block:: text
 
     dragon ---> enemy

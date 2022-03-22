@@ -2,10 +2,6 @@ Array Logic
 ===========
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import numpy as np

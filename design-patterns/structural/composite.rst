@@ -1,9 +1,5 @@
 Composite
 =========
-
-
-Important
----------
 * EN: Composite
 * PL: Kompozyt
 * Type: object

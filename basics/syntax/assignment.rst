@@ -1,9 +1,5 @@
 Syntax Assignment
 =================
-
-
-Important
----------
 * Identifier is a formal name for variable
 * Variables can change it's value during the program
 * In Python there are no constants

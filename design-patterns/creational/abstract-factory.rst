@@ -1,9 +1,5 @@
 Abstract Factory
 ================
-
-
-Important
----------
 * EN: Abstract Factory
 * PL: Fabryka Abstrakcyjna
 * Type: object

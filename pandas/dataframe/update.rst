@@ -2,10 +2,6 @@ DataFrame Update
 ================
 
 
-Important
----------
-
-
 Update Column
 -------------
 >>> import pandas as pd

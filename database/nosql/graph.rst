@@ -1,9 +1,5 @@
 NoSQL Graph
 ===========
-
-
-Important
----------
 * AllegroGraph
 * Apache Giraph
 * ArangoDB

@@ -1,10 +1,5 @@
 Module VENV
 ===========
-
-
-
-Important
----------
 * Isolated Python environment
 * Allows to have multiple versions of Python for one project
 * For testing on different versions: ``py38``, ``py39``, ``py310``

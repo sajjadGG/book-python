@@ -1,14 +1,9 @@
 Operator About
 ==============
-
-
-Important
----------
 * Operator Overload
 * Readable syntax
 * Simpler operations
-* All examples in this chapter uses ``dataclasses`` for you to focus
-  on the important code, not boilerplate code just to make it works
+* All examples in this chapter uses ``dataclasses`` for you to focus on the important code, not boilerplate code just to make it works
 
 
 Recap

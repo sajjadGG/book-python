@@ -1,9 +1,5 @@
 CSV DictWriter
 ==============
-
-
-Important
----------
 * csv.DictWriter: list[dict]
 
 

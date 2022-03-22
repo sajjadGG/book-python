@@ -1,9 +1,5 @@
 OOP Principles
 ==============
-
-
-Important
----------
 * Encapsulation
 * Abstraction
 * Inheritance

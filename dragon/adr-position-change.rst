@@ -1,10 +1,10 @@
 Dragon ADR Position Change
 ==========================
-
-
-Important
----------
 * ADR - Architecture Design Records
+
+
+Problem
+-------
 * Move dragon left by 10 and down by 20
 * Move by setting absolute position or list of absolute positions
 * Move by setting position

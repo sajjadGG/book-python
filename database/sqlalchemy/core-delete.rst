@@ -2,8 +2,6 @@ Core Delete
 ===========
 
 
-Important
----------
 >>> from sqlalchemy import delete
 
 

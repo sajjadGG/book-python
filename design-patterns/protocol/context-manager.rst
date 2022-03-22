@@ -1,9 +1,5 @@
 Protocol Context Manager
 ========================
-
-
-Important
----------
 * Files
 * Buffering data
 * Database connection

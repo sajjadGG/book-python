@@ -1,10 +1,6 @@
 Series Alter
 ============
 
-
-Important
----------
-
 SetUp
 -----
 >>> import pandas as pd

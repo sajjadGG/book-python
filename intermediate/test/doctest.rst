@@ -1,9 +1,5 @@
 Tests Doctest
 =============
-
-
-Important
----------
 * Tests are always the most up-to-date code documentation
 * Tests cannot get out of sync from code
 * Checks if function output is exactly as expected

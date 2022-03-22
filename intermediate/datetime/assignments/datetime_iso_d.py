@@ -192,3 +192,31 @@ result = [{'when': dt, 'level': lvl, 'message': msg}
 
 # Solution 2 (%%timeit -r 1000 -n 1000)
 # 28 µs ± 1.26 µs per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+
+
+
+# result = [
+#     {'when': datetime.fromisoformat('T'.join(row[0:2])),
+#      'level': row[-2],
+#      'message': row[-1]}
+#
+#      for line in DATA.splitlines()
+#      if (row := line.split(', ', maxsplit=3))
+# ]
+
+# Alternative solution
+# result = [{'when': dt, 'level': row[-2], 'message': row[-1]}
+#           for line in DATA.splitlines()
+#           if (row := line.split(', ', maxsplit=3))
+#           and (dt := datetime.fromisoformat('T'.join(row[0:2])))]
+#
+#
+
+# Alternative solution
+# result = [{'when': dt, 'level': row[2], 'message': row[3]}
+#           for line in DATA.splitlines()
+#           if (row := line.split(', ', maxsplit=3))
+#           and (d := date.fromisoformat(row[0]))
+#           and (t := time.fromisoformat(row[1]))
+#           and (dt := datetime.combine(d,t))]

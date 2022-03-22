@@ -1,9 +1,5 @@
 JSON Web Token
 ==============
-
-
-Important
----------
 * JWT tokens
 
 

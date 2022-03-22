@@ -2,13 +2,6 @@ Array Arithmetic
 ================
 
 
-SetUp
------
->>> import numpy as np
-
-
-Important
----------
 .. glossary::
 
     Scalar
@@ -22,6 +15,11 @@ Important
         >>>
         >>> a + 1
         array([2, 3, 4])
+
+
+SetUp
+-----
+>>> import numpy as np
 
 
 Addition

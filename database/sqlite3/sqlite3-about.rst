@@ -1,9 +1,5 @@
 SQLite3 About
 =============
-
-
-Important
----------
 * The most popular database in the world
 * File database with
 * Open Source (Public Domain license), written in C

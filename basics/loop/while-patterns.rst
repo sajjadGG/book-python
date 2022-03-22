@@ -1,9 +1,5 @@
 Loop While Patterns
 ===================
-
-
-Important
----------
 * Until
 * Infinite Loop
 * Exit Flag

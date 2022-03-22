@@ -1,9 +1,5 @@
 Principal Component Analysis
 ============================
-
-
-Important
----------
 * Principal component analysis (PCA)
 * Technique used to emphasize variation and bring out strong patterns in a dataset.
 * It's often used to make data easy to explore and visualize.

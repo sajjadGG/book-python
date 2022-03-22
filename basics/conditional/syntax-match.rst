@@ -1,5 +1,3 @@
-Block Match
-===========
 
 .. testsetup::
 
@@ -31,8 +29,8 @@ Block Match
     keyboard = Keyboard()
 
 
-Important
----------
+Block Match
+===========
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
 * x ⟼ assign x = subject
 * 'x' ⟼ test subject == 'x'
@@ -42,19 +40,6 @@ Important
 * ['x'] ⟼ test isinstance(subject, Sequence) and len(subject) == 1 and subject[0] == 'x'
 * Source: [#patternmatching]_
 
-
-Syntax
-------
->>> # doctest: +SKIP
-... match <object>:
-...     case <option>: <action>
-...     case <option>: <action>
-...     case <option>: <action>
-...     case _: <default action>
-
-
-Example
--------
 >>> language = input('What is your language?: ')  #input: 'French'
 >>>
 >>> match language:
@@ -67,6 +52,16 @@ Example
 >>>
 >>> print(response)
 I don't speak this language
+
+
+Syntax
+------
+>>> # doctest: +SKIP
+... match <object>:
+...     case <option>: <action>
+...     case <option>: <action>
+...     case <option>: <action>
+...     case _: <default action>
 
 
 Patterns
@@ -234,8 +229,8 @@ Further Reading
 * https://www.python.org/dev/peps/pep-0636/
 
 
-Important
----------
+References
+----------
 .. [#patternmatching] Raymond Hettinger. Retrieved: 2021-03-07. URL: https://twitter.com/raymondh/status/1361780586570948609?s=20
 
 

@@ -1,8 +1,5 @@
 DataFrame Loc
 =============
-
-Important
----------
 * ``loc`` - uses fancy indexing
 * ``iloc`` - only index numbers
 * ``df.loc`` - start and stop are included!!

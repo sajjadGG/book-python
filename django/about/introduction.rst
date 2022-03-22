@@ -1,9 +1,5 @@
 Introduction to Django
 ======================
-
-
-Important
----------
 * Why use Django?
 * What problems Django solves?
 * What is Django?

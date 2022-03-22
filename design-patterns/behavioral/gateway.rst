@@ -1,9 +1,5 @@
 Gateway
 =======
-
-
-Important
----------
 * EN: Gateway
 * PL: Bramka
 * Type: class

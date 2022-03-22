@@ -2,9 +2,6 @@ Query About
 ===========
 
 
-Important
----------
-
 
 Query
 -----

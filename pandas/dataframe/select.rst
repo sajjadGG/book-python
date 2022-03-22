@@ -2,10 +2,6 @@ DataFrame Select
 ================
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

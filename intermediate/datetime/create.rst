@@ -1,8 +1,5 @@
 Datetime Create
 ===============
-
-Important
----------
 * Date
 * Time
 * Datetime

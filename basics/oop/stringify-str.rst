@@ -1,9 +1,5 @@
 OOP Stringify Str
 =================
-
-
-Important
----------
 * Calling function ``print(obj)`` calls ``str(obj)``
 * Calling function ``str(obj)`` calls ``obj.__str__()``
 * Method ``obj.__str__()`` must return ``str``

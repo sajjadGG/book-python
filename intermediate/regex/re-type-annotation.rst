@@ -1,9 +1,5 @@
 RE Type Annotation
 ==================
-
-
-Important
----------
 * ``typing.Pattern``
 * ``typing.Match``
 

@@ -1,11 +1,10 @@
 XML Stdlib
 ==========
+* ``xml`` module from standard library
 
 
-Important
----------
-``xml`` module from standard library:
-
+Example
+-------
 .. code-block:: python
 
     from xml.etree.ElementTree import parse

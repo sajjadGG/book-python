@@ -1,9 +1,5 @@
 UML Mermaid
 ===========
-
-
-Important
----------
 * ``mermaid`` - Markdown extension
 * https://mermaid-js.github.io/mermaid/#/classDiagram
 

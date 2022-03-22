@@ -1,9 +1,5 @@
 SQLite3 Fetch
 =============
-
-
-Important
----------
 * Fetch as `list[tuple]` / `list[list]`
 * Fetch as `list[Row]` / `list[dict]`
 * `sqlite3.row_factory`

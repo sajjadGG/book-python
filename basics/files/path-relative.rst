@@ -1,17 +1,12 @@
 File Path Relative
 ==================
-
-
-Important
----------
 * Python works with both relative and absolute path
 * Path is relative to currently running script
 * Path separator ``\`` (backslash) is used on Windows
 * Path separator ``/`` (slash) is used on ``*nix`` operating systems: Linux,
   macOS, BSD and other POSIX compliant OSes (excluding older versions of Windows)
 * In newer Windows versions both ``\`` and ``/`` works the same
-
-Relative paths works the same on Windows and ``*nix`` (Linux, macOS, BSD, etc.).
+* Relative paths works the same on Windows and ``*nix`` (Linux, macOS, BSD, etc.)
 
 
 Current Directory

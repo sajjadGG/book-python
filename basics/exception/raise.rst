@@ -1,6 +1,3 @@
-Exception Raise
-===============
-
 .. testsetup::
 
     # Simulate user input (for test automation)
@@ -8,18 +5,15 @@ Exception Raise
     input = MagicMock(side_effect=['-1'])
 
 
-Important
----------
+Exception Raise
+===============
 * Used when error occurs
 * You can catch exception and handles erroneous situation
-
-Example abnormal situations:
-
-    * File does not exists
-    * No permissions to read file
-    * Function argument is invalid type (ie. ``int('one')``)
-    * Value is incorrect (ie. negative Kelvin temperature)
-    * Network or database connection could not be established
+* If file does not exists
+* If no permissions to read file
+* If function argument is invalid type (ie. ``int('one')``)
+* If value is incorrect (ie. negative Kelvin temperature)
+* If network or database connection could not be established
 
 
 Raising Exceptions

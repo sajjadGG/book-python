@@ -1,8 +1,5 @@
 Namespace
 =========
-
-Important
----------
 * Functions and Classes can be namespaces
 * Functions can be nested in functions
 * Functions can be nested in classes

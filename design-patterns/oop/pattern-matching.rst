@@ -2,11 +2,6 @@ OOP Pattern Matching
 ====================
 
 
-Important
----------
-Let's take the following code and do the refactoring:
-
-
 Problem
 -------
 >>> language = 'English'

@@ -1,9 +1,5 @@
 Prototype
 =========
-
-
-Important
----------
 * EN: Prototype
 * PL: Prototyp
 * Type: object

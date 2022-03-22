@@ -1,9 +1,5 @@
 UML Relationship
 ================
-
-
-Important
----------
 * Arrow with empty triangle (but on picture is filled)
 * ``<|--`` - Inheritance
 * ``*--`` - Composition

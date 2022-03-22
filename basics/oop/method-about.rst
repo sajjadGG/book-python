@@ -1,9 +1,5 @@
 OOP Method About
 ================
-
-
-Important
----------
 * Methods are functions in the class
 * Prevents copy-paste code
 * Improves readability
@@ -21,7 +17,6 @@ Important
 
 Syntax
 ------
-
 >>> class MyClass:
 ...     def mymethod(self):
 ...         pass

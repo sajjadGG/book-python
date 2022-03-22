@@ -2,8 +2,8 @@ OOP Inheritance Problems
 ========================
 
 
-Important
----------
+No Inheritance
+--------------
 >>> class Car:
 ...     def engine_start(self): ...
 ...     def engine_stop(self): ...

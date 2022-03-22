@@ -1,8 +1,5 @@
 HTTP Statuses
 =============
-
-Important
----------
 * ``1XX`` - Informational
 * ``2XX`` - Successful
 * ``3XX`` - Redirection

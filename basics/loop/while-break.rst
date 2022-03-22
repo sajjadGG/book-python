@@ -1,6 +1,3 @@
-Loop While Break
-================
-
 .. testsetup::
 
     # Simulate user input (for test automation)
@@ -8,8 +5,8 @@ Loop While Break
     input = MagicMock(side_effect=['1'])
 
 
-Important
----------
+Loop While Break
+================
 * Force exit the loop
 
 

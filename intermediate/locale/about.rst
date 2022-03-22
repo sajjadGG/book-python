@@ -1,9 +1,5 @@
 Locale About
 ============
-
-
-Important
----------
 * i18n = internationalization
 * l10n = localization
 

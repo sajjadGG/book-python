@@ -1,14 +1,11 @@
-File Encoding
-=============
-
 .. testsetup::
 
     from pathlib import Path
     Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 
-Important
----------
+File Encoding
+=============
 * ``utf-8`` - a.k.a. Unicode - international standard (should be always used!)
 * ``iso-8859-1`` - ISO standard for Western Europe and USA
 * ``iso-8859-2`` - ISO standard for Central Europe (including Poland)

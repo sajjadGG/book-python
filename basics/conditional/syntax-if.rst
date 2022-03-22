@@ -1,11 +1,12 @@
-Block If
-========
-
 .. testsetup::
 
     # Simulate user input (for test automation)
     from unittest.mock import MagicMock
     input = MagicMock(side_effect=['Mark Watney', ''])
+
+
+Block If
+========
 
 
 Syntax

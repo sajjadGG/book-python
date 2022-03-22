@@ -2,10 +2,6 @@ Array Create
 ============
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import numpy as np

@@ -1,9 +1,5 @@
 Factory Method
 ==============
-
-
-Important
----------
 * EN: Factory Method
 * PL: Metoda wytwórcza
 * Type: class

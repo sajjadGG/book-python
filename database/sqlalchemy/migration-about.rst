@@ -2,9 +2,6 @@ Migration About
 ===============
 
 
-Important
----------
-
 
 Migration Software
 ------------------

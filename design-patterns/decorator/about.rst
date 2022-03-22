@@ -1,20 +1,14 @@
 Decorator About
 ===============
-
-
-Important
----------
 * Since Python 2.4: :pep:`318` -- Decorators for Functions and Methods
 * Decorator is an object, which takes another object as it's argument
-* Decorators can:
-
-    * Do things before call
-    * Do things after call
-    * Modify arguments
-    * Modify returned value
-    * Avoid calling
-    * Modify globals
-    * Add or change metadata
+* Allows to do things before call
+* Allows to do things after call
+* Allows to modify arguments
+* Allows to modify returned value
+* Allows to avoid calling
+* Allows to modify globals
+* Allows to add or change metadata
 
 
 Syntax

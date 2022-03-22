@@ -1,9 +1,5 @@
 Locale i18n
 ===========
-
-
-Important
----------
 * i18n = internationalization
 
 

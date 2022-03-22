@@ -2,10 +2,6 @@ Query Execute
 =============
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> from sqlalchemy import create_engine

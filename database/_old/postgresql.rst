@@ -1,9 +1,5 @@
 Database PostgreSQL
 ===================
-
-
-Important
----------
 * ``psycopg2``
 
 

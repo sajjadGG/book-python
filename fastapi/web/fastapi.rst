@@ -1,9 +1,5 @@
 FastAPI
 =======
-
-
-Important
----------
 * https://fastapi.tiangolo.com
 
 

@@ -2,8 +2,6 @@ Cookies
 =======
 
 
-Important
----------
 >>> from typing import Optional
 >>> from fastapi import FastAPI, Cookie
 >>> app = FastAPI()

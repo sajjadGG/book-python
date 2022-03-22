@@ -2,10 +2,6 @@ Date and Time Types
 ===================
 
 
-Important
----------
-
-
 SetUp
 -----
 >>> import pandas as pd

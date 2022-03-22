@@ -1,10 +1,10 @@
 XPATH
 =====
-
-Important
----------
 * Using ``lxml`` module
 
+
+Example
+-------
 .. code-block:: python
 
     print(html.xpath("string()")) # lxml.etree only!

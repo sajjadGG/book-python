@@ -1,11 +1,10 @@
 OOP Class Define
 ================
-
-
-Important
----------
 * Object Oriented Paradigm
 * Model world as objects that interacts with each other
+* Classes are templates for objects
+* ``PascalCase`` name convention
+* Never print in a class
 
 .. glossary::
 
@@ -26,6 +25,7 @@ Classes should have capitalized name:
 Class Names
 -----------
 * ``PascalCase`` name convention
+
 Multi-word class names should use ``PascalCase``:
 
 >>> class SeniorAstronaut:

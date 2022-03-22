@@ -1,9 +1,5 @@
 Callback
 ========
-
-
-Important
----------
 * EN: Callback Design
 * PL:
 

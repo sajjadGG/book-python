@@ -1,9 +1,5 @@
 Theory UML ERD
 ==============
-
-
-Important
----------
 * UML - Unified Modeling Language
 * ERD - Entity Relationship Diagram
 

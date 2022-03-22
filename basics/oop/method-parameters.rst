@@ -1,19 +1,13 @@
 OOP Method Parameters
 =====================
-
-
-Important
----------
 * Methods are functions in the class
 * Prevents copy-paste code
 * Improves readability
 * Improves refactoring
 * Decomposes bigger problem into smaller chunks
-* At this moment:
-
-    * At definition - ``self`` should always be a first parameter
-    * At call - ``self`` is not passed as an argument (Python will do that)
-    * Later you will learn more advanced things like static methods etc.
+* At definition - ``self`` should always be a first parameter
+* At call - ``self`` is not passed as an argument (Python will do that)
+* Later you will learn more advanced things like static methods etc.
 
 .. glossary::
 

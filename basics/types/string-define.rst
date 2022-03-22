@@ -1,9 +1,5 @@
 String Define
 =============
-
-
-Important
----------
 * ``str`` is a sequence of characters
 
 

@@ -1,9 +1,5 @@
 Introduction
 ============
-
-
-Important
----------
 * Structural - Relationships between objects
 * Behavioral - Communication and interaction between objects
 * Creational - Creating new objects
@@ -13,52 +9,37 @@ Important
 
 Behavioral Design Patterns
 --------------------------
-Object patterns:
-
-    * Chain of Responsibility (polish: Łańcuch zobowiązań)
-    * Command (polish: Polecenie)
-    * Interactor (polish: Interactor)
-    * Mediator (polish: Mediator)
-    * Memento (polish: Pamiątka)
-    * Observer (polish: Obserwator)
-    * State (polish: Stan)
-    * Strategy (polish: Strategia)
-    * Visitor (polish: Odwiedzający)
-
-Class Patterns:
-
-    * Interpreter (polish: Interpreter)
-    * Template Method (polish: Metoda szablonowa)
+* Chain of Responsibility (polish: Łańcuch zobowiązań)
+* Command (polish: Polecenie)
+* Interactor (polish: Interactor)
+* Mediator (polish: Mediator)
+* Memento (polish: Pamiątka)
+* Observer (polish: Obserwator)
+* State (polish: Stan)
+* Strategy (polish: Strategia)
+* Visitor (polish: Odwiedzający)
+* Interpreter (polish: Interpreter)
+* Template Method (polish: Metoda szablonowa)
 
 
 Structural Design Patterns
 --------------------------
-Object:
-
-    * Bridge (polish: Most)
-    * Composite (polish: Kompozyt)
-    * Decorator (polish: Dekorator)
-    * Façade (polish: Fasada)
-    * Flyweight (polish: Pyłek)
-    * Proxy (polish: Pełnomocnik)
-
-Class and Object Patterns:
-
-    * Adapter (polish: Adapter)
+* Bridge (polish: Most)
+* Composite (polish: Kompozyt)
+* Decorator (polish: Dekorator)
+* Façade (polish: Fasada)
+* Flyweight (polish: Pyłek)
+* Proxy (polish: Pełnomocnik)
+* Adapter (polish: Adapter)
 
 
 Creational Design Patterns
 --------------------------
-Object Patterns:
-
-    * Abstract Factory (polish: Fabryka Abstrakcyjna)
-    * Builder (polish: Budowniczy)
-    * Prototype (polish: Prototyp)
-    * Singleton (polish: Singleton)
-
-Class Patterns:
-
-    * Factory Method (polish: Metoda wytwórcza)
+* Abstract Factory (polish: Fabryka Abstrakcyjna)
+* Builder (polish: Budowniczy)
+* Prototype (polish: Prototyp)
+* Singleton (polish: Singleton)
+* Factory Method (polish: Metoda wytwórcza)
 
 
 Paradigm

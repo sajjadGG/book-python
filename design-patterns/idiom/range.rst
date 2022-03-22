@@ -1,9 +1,5 @@
 Range
 =====
-
-
-Important
----------
 * Return sequence of numbers
 * It is not a generator
 * Generator (lazy evaluated)

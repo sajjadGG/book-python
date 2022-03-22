@@ -1,9 +1,21 @@
 Operator Stringify
 ==================
+* ``str()``
+* ``repr()``
+* ``format()``
+* ``print()``
+* ``+`` - add
+* ``-`` - sub
+* ``*`` - mul
+* ``%`` - mod
+* ``+=`` - iadd
+* ``-=`` - isub
+* ``*=`` - imul
+* ``%=`` - imod
 
 
-Important
----------
+About
+-----
 .. csv-table:: String Operator Overload
     :header: "Operator", "Method"
 

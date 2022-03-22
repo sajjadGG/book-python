@@ -1,9 +1,5 @@
 Patterns
 ========
-
-
-Important
----------
 * Python ``for`` loop is equivalent to ``forEach`` in other languages
 * Other languages ``for`` loop is Python's ``while`` (sic!)
 
