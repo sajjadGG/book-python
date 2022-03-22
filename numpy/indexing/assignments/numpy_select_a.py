@@ -56,7 +56,7 @@ result.sort()
 result = np.flip(result)
 
 
-# ## Alternative solution
+# # Alternative solution
 # np.random.seed(0)
 #
 # MIN = 0
@@ -71,5 +71,5 @@ result = np.flip(result)
 # np.flip(result)
 #
 #
-# ## Alternative solution
+# # Alternative solution
 # sorted(a[np.isin(a, SELECT)], reverse=True)

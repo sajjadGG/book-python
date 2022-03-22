@@ -118,7 +118,8 @@ def typecheck(func):
     return wrapper
 
 
-# class: Refactor typecheck into class
+# Refactor typecheck into class
+# type: Type[TypeCheck]
 class TypeCheck:
     ...
 

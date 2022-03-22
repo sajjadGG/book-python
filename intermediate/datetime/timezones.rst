@@ -4,6 +4,29 @@ Datetime Timezone
 * Datetimes should be converted to local time only when displaying to user
 * Computerphile Time & Time Zones [#ytComputerphileTimeZones]_
 
+
+Daylight Saving Time
+--------------------
+* Daylight Saving Time date is different for each country and even US state
+* Australia is 9h 30m shifted
+* India is 3h 30m shifted
+* Nepal is 3h 15m shifted
+* In southern hemisphere the Daylight Saving Time is opposite direction
+* They subtract hour in March and add in October
+* Samoa is on the international date line
+* Samoa changed from UTC-1200 to UTC+1200 for easier trades with Australia
+* During World War II England was GMT+0200
+* Libya in 2013 discontinued DST with couple of days notice
+* Israel is on a different timezone than Palestine (multiple timezones in one location, based on nationality)
+* Change from Julian to Gregorian calendar caused to skip few weeks
+* In 18th century World change from Julian to Gregorian calendar
+* In 20th century Russia change from Julian to Gregorian calendar (different days which was skipped than for worldwide change)
+* In britain until 16th century the year started on 25th of March
+* Mind leap seconds (add, subtract)
+* UTC includes leap seconds
+* Astronomical time does not include leap seconds
+* Google invented smear second (on the day of leap second) they add a small fraction of a second to each second that day until midnight
+
 Comparing datetime works only when all has the same timezone (UTC):
 
 .. figure:: img/datetime-compare.png

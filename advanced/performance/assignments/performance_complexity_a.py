@@ -62,7 +62,7 @@ for digit in DATA:
     elif digit in LARGE:
         result['large'] += 1
 
-## Alternative Solution
+# Alternative Solution
 """
 # 7.14 µs ± 765 ns per loop (mean ± std. dev. of 10 runs, 10000 loops each)
 # %%timeit -r 10 -n 10_000

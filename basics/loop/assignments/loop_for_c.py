@@ -56,7 +56,7 @@ for digit in DATA:
     elif digit in LARGE:
         result['large'] += 1
 
-## Alternative Solution
+# Alternative Solution
 #
 # %%timeit -r 10 -n 10000
 # result = {'small': 0,'medium': 0,'large': 0}

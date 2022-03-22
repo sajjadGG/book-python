@@ -55,11 +55,13 @@ Tests:
 def check():
     ...
 
-# Callable: prints `hello from function`
+# Prints `hello from function`
+# type: Callable
 def hello():
     ...
 
-# callable: call check(hello); delete check; call result
+# Call check(hello); delete check; call result
+# type: Callable
 result = ...
 
 

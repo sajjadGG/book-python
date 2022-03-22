@@ -5,10 +5,10 @@ Performance
 .. glossary::
     CPU
     Central Processing Unit
-        A central processing unit (CPU), also called a central processor, main
-        processor or just processor, is the electronic circuitry within a
-        computer that executes instructions that make up a computer program.
-        [#WikipediaCPU]_
+        A central processing unit (CPU), also called a central processor,
+        main processor or just processor, is the electronic circuitry within
+        a computer that executes instructions that make up a computer
+        program. [#WikipediaCPU]_
 
     GPU
     Graphics Processing Unit
@@ -25,9 +25,9 @@ Performance
 
     FPU
     Floating-Point Unit
-        A floating-point unit (FPU, colloquially a math coprocessor) is a part
-        of a computer system specially designed to carry out operations on
-        floating-point numbers. [#WikipediaFPU]_
+        A floating-point unit (FPU, colloquially a math coprocessor) is a
+        part of a computer system specially designed to carry out operations
+        on floating-point numbers. [#WikipediaFPU]_
 
     TPU
     Tensor Processing Unit

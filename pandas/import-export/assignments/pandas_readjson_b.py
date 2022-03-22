@@ -44,13 +44,16 @@ import requests
 DATA = 'https://python.astrotech.io/_static/openapi.json'
 
 
-# requests.models.Response: result of `requests.get()` for `DATA`
+# Define `resp` with result of `requests.get()` for `DATA`
+# type: requests.models.Response
 resp = ...
 
-# dict: conversion of `resp` by calling `.json()` on `resp`
+# Define `data` with result of calling `.json()` on `resp` object
+# type: dict
 data = ...
 
-# pd.DataFrame: read DATA
+# Convert `data` DataFrame object
+# type: pd.DataFrame
 result = ...
 
 # Solution

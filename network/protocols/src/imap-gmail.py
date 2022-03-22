@@ -51,8 +51,8 @@ def get_body(msg):
 
 
 status, result = imap.search(None, 'ALL')
-# status: OK
-# result: [b'1 2 3 4 ...']
+# Variable `status` is OK
+# Variable `result` is [b'1 2 3 4 ...']
 messages = result[1][0].split()
 
 for msgid in messages:

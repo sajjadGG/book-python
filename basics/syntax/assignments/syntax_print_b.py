@@ -34,10 +34,11 @@ Tests:
     'Hello Mark Watney'
 """
 
-# str: with Mark Watney
 NAME = 'Mark Watney'
 
-# str: with Hello NAME
+# Define result with text: `Hello NAME`
+# Variable NAME should be interpolated
+# type: str
 result = ...
 
 # Solution

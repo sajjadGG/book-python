@@ -40,9 +40,10 @@ Tests:
 """
 
 
-# int: use recursion to add two previous numbers;
-#      For `n` less or equal to 1, return 1;
-#      Else return sum `fib(n-1)` and `fib(n-2)`
+# Use recursion to add two previous numbers;
+# For `n` less or equal to 1, return 1;
+# Else return sum `fib(n-1)` and `fib(n-2)`
+# type: Callable[[int], int]
 def fib():
     ...
 

@@ -25,7 +25,8 @@ Tests:
     'Hello World'
 """
 
-# str: Hello World
+# Define variable `result` with text 'Hello World'
+# type: str
 result = ...
 
 # Solution

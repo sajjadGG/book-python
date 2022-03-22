@@ -35,7 +35,8 @@ def cube(x):
     return x ** 3
 
 
-# float: Inline lambda expressions
+# Inline lambda expressions
+# type: float
 result = range(0,10)
 result = filter(odd, result)
 result = map(cube, result)

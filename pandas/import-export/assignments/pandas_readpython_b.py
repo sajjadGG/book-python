@@ -68,10 +68,12 @@ DATA = [
 ]
 
 
-# list[dict]: convert DATA to list[dict], then flatten
+# Convert DATA to list[dict], then flatten
+# type: list[dict]
 data = ...
 
-# pd.DataFrame: DATA as pd.DataFrame
+# Convert `data` to DataFrame
+# type: pd.DataFrame
 result = ...
 
 # Solution

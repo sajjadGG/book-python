@@ -50,10 +50,8 @@ for value in DATA.ravel():
         result.append(value)
 
 
-# ## Alternative solution
+# # Alternative solution
 # for row in DATA:
 #     for value in row:
 #         if value % 2 == 0:
 #             result.append(value)
-
-

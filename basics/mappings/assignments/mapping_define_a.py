@@ -52,11 +52,12 @@ Tests:
 """
 
 
-# firstname: Mark
-# lastname: Watney
-# missions: Ares1, Ares3
+# firstname - Mark
+# lastname - Watney
+# missions - Ares1, Ares3
 
-# dict[str,str|list]: with First Name, Last Name and Missions as keys
+# Define dict with keys: firstname, lastname and missions
+# type: dict[str,str|list]
 result = ...
 
 # Solution

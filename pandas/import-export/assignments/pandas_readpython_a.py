@@ -54,10 +54,13 @@ DATA = [
 ]
 
 
-# list[dict]: flatten data, each mission field prefixed with mission and number
+# Define variable data with flatten ``DATA``
+# Each mission field prefixed with mission and number
+# type: list[dict]
 data = ...
 
-# pd.DataFrame: data as pd.DataFrame
+# Convert `data` to DataFrame
+# type: pd.DataFrame
 result = ...
 
 

@@ -24,7 +24,8 @@ Tests:
     1
 """
 
-# int: with value 1
+# Define variable `result` with value 1
+# type: int
 result = ...
 
 

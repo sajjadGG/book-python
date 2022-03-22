@@ -109,7 +109,7 @@ with open(FILE) as file:
                 'protocol': 'IPv4' if '.' in ip else 'IPv6'
             })
 
-## Alternative solution
+# # Alternative solution
 # for record in result:
 #     if record['ip'] == ip:
 #         record['hostnames'].update(hostnames)

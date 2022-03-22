@@ -6,13 +6,13 @@
 
 English:
     1. Use regular expressions to check `TEXT` [1] contains time in UTC (format: `%H:%M UTC`)
-    2. Use simplified checking: `##:## UTC`, where `#` is a digit
+    2. Use simplified checking: `xx:xx UTC`, where `x` is a digit
     3. Define `result: str` with matched time
     4. Run doctests - all must succeed
 
 Polish:
     1. Użyj wyrażeń regularnych do sprawdzenia czy `TEXT` [1] zawiera godzinę w UTC (format: `%H:%M UTC`)
-    2. Użyj uproszczonego sprawdzania: `##:## UTC`, gdzie `#` to dowolna cyfra
+    2. Użyj uproszczonego sprawdzania: `xx:xx UTC`, gdzie `x` to dowolna cyfra
     3. Zdefiniuj `result: str` ze znalezionym czasem
     4. Uruchom doctesty - wszystkie muszą się powieść
 
