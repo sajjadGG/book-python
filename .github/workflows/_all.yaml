@@ -20,7 +20,6 @@ jobs:
           - dragon
           - fastapi
           - gui
-          - install
           - intermediate
           #- machine-learning
           #- matplotlib
@@ -36,8 +35,8 @@ jobs:
       - name: Install requirements
         run: pip install -r ${{ matrix.directory }}/requirements.txt
 
-      - name: Test chapter listings
-        run: sphinx-build -a -E -j auto --color -b doctest ${{ matrix.directory }} /tmp/
-
-      - name: Run tests for assignments
+      - name: Tests assignments
         run: find ${{ matrix.directory }} -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
+
+      - name: Test listings
+        run: sphinx-build -a -E -j auto --color -b doctest ${{ matrix.directory }} /tmp/

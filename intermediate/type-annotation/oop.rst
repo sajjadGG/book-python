@@ -89,7 +89,7 @@ Composition
 
 Self
 ----
->>> class Astronaut:
+>>> class Astronaut:  # doctest: +SKIP
 ...     firstname: str
 ...     lastname: str
 ...     friends: list[Astronaut]

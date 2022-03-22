@@ -1,3 +1,8 @@
+.. testsetup::
+
+    import numpy as np
+
+
 Array Arithmetic
 ================
 
