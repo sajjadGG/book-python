@@ -2,9 +2,9 @@ name: Doctests
 on: push
 
 jobs:
-  assignments:
+  Chapter:
     runs-on: ubuntu-20.04
-    container: python:3.10.3
+    container: python:3.10.2
 
     strategy:
       fail-fast: false
