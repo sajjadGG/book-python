@@ -15,6 +15,9 @@ jobs:
       - name: Tests assignments
         run: find . -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
 
+      - name: Test listings
+        run: sphinx-build -a -E -j auto --color -b doctest ${{ matrix.directory }} /tmp/
+
 
   Assignments:
     runs-on: ubuntu-20.04
@@ -30,14 +33,14 @@ jobs:
           - database
           - design-patterns
           - devops
-          #- django
+          - django
           - dragon
           - fastapi
-          #- gui
+          - gui
           - intermediate
-          #- machine-learning
-          #- matplotlib
-          #- network
+          - machine-learning
+          - matplotlib
+          - network
           - numpy
           - oop
           - pandas
