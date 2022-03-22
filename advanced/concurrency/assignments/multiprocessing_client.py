@@ -2,6 +2,9 @@ import json
 from multiprocessing.connection import Client
 
 
+ADDRESS = ('localhost', 6000)
+PASSWORD = b'My voice is my password, verify me.'
+
 DATA = dict(
     sepal_length=5.1,
     sepal_width=3.5,
@@ -11,10 +14,8 @@ DATA = dict(
 
 data = json.dumps(DATA)
 
-ADDRESS = ('localhost', 6000)
-PASSWORD = b'My voice is my password, verify me.'
-
-connection = Client(ADDRESS, authkey=PASSWORD)
-connection.send(data)
-connection.send('close')
-connection.close()
+def run():
+    connection = Client(ADDRESS, authkey=PASSWORD)
+    connection.send(data)
+    connection.send('close')
+    connection.close()

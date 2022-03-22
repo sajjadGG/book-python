@@ -2,175 +2,42 @@ name: Doctests
 on: push
 
 jobs:
-  all:
+  assignments:
     runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
-      - run: find . -path "*assignments*" -name "*.py" -not -path "./advanced/*" -not -path "./django/*" -not -path "./machine-learning/*" -not -path "./matplotlib/*" -not -path "./network/*" -print -exec python -m doctest '{}' \;
+    container: python:3.10.3
 
-  about:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r about/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest about /tmp/
-      - run: find about -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
+    strategy:
+      fail-fast: false
+      matrix:
+        directory:
+          - advanced
+          - basics
+          - data-science
+          - database
+          - design-patterns
+          - devops
+          #- django
+          - dragon
+          - fastapi
+          - gui
+          - install
+          - intermediate
+          #- machine-learning
+          #- matplotlib
+          #- network
+          - numpy
+          - oop
+          - pandas
 
-  advanced:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
     steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r advanced/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest advanced /tmp/
-      # - run: find advanced -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
+      - name: Download GIT repository
+        uses: actions/checkout@v2
 
-  basics:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r basics/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest basics /tmp/
-      - run: find basics -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
+      - name: Install requirements
+        run: pip install -r requirements-cicd.txt
 
-  database:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r database/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest database /tmp/
-      - run: find database -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
+      - name: Test chapter listings
+        run: sphinx-build -a -E -j auto --color -b doctest ${{ matrix.directory }} /tmp/
 
-  data-science:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r data-science/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest data-science /tmp/
-      - run: find data-science -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  design-patterns:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r design-patterns/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest design-patterns /tmp/
-      - run: find design-patterns -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  devops:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r devops/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest devops /tmp/
-      - run: find devops -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  django:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r django/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest django /tmp/
-      # - run: find django -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  dragon:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r dragon/requirements.txt
-      - run: find dragon -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  fastapi:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r fastapi/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest fastapi /tmp/
-      - run: find fastapi -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  install:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r install/requirements.txt
-      - run: find install -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  intermediate:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r intermediate/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest intermediate /tmp/
-      - run: find intermediate -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  machine-learning:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-      - run: pip install -r machine-learning/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest machine-learning /tmp/
-      # - run: find machine-learning -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  matplotlib:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r matplotlib/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest matplotlib /tmp/
-      # - run: find matplotlib -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  network:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r network/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest network /tmp/
-      # - run: find network -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  numpy:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r numpy/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest numpy /tmp/
-      - run: find numpy -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  oop:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r oop/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest oop /tmp/
-      - run: find oop -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
-
-  pandas:
-    runs-on: ubuntu-20.04
-    container: python:3.10.2
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install -r pandas/requirements.txt
-      - run: sphinx-build -a -E -j auto --color -b doctest pandas /tmp/
-      - run: find pandas -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
+      - name: Run tests for assignments
+        run: find ${{ matrix.directory }} -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;

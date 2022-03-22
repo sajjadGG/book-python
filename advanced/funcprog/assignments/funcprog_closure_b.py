@@ -10,9 +10,9 @@ English:
     3. Function `wrapper` takes:
        - arbitrary number of positional arguments
        - arbitrary number of keyword arguments
-    4. Function `wrapper` prints `hello from wrapper` on the screen
+    4. Function `wrapper` returns 'hello from wrapper'
     5. Function `check` must return `wrapper: Callable`
-    6. Define function `hello()` which prints `hello from function`
+    6. Define function `hello()` which returns 'hello from function'
     7. Define `result` with result of calling `check(hello)`
     8. Delete `check` using `del` keyword
     9. Call `result`
@@ -24,9 +24,9 @@ Polish:
     3. Funkcja `wrapper` przyjmuje:
        - dowolną ilość argumentów pozycyjnych
        - dowolną ilość argumentów nazwanych
-    4. Funkcja `wrapper` wypisuje `hello from wrapper`
+    4. Funkcja `wrapper` zwraca 'hello from wrapper'
     5. Funkcja `check` ma zwracać `wrapper: Callable`
-    6. Zdefiniuj funkcję `hello()`, która wypisuje `hello from function`
+    6. Zdefiniuj funkcję `hello()`, która zwraca 'hello from function'
     7. Zdefiniuj zmienną `result`, która jest wynikiem wywołania `check(hello)`
     8. Skasuj `check` za pomocą słowa kluczowego `del`
     9. Wywołaj `result`
@@ -41,10 +41,10 @@ Tests:
     >>> assert not hasattr(__name__, 'check')
 
     >>> hello()
-    hello from function
+    'hello from function'
 
     >>> result()
-    hello from wrapper
+    'hello from wrapper'
 
     >>> check()
     Traceback (most recent call last):
@@ -71,12 +71,12 @@ result = ...
 # Solution
 def check(func):
     def wrapper(*args, **kwargs):
-        print('hello from wrapper')
+        return 'hello from wrapper'
     return wrapper
 
 
 def hello():
-    print('hello from function')
+    return 'hello from function'
 
 
 result = check(hello)
