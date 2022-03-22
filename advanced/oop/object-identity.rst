@@ -49,7 +49,7 @@ Caching
 >>> a == 256
 True
 >>>
->>> a is 256
+>>> a is 256  # doctest: +SKIP
 SyntaxWarning: "is" with a literal. Did you mean "=="?
 True
 
@@ -58,7 +58,7 @@ True
 >>> b == 257
 True
 >>>
->>> b is 257
+>>> b is 257  # doctest: +SKIP
 SyntaxWarning: "is" with a literal. Did you mean "=="?
 False
 
@@ -264,8 +264,8 @@ Object Identity
 ...         self.lastname = lastname
 >>>
 >>>
->>> astro1 = Astronaut('Jan', 'Twardowski')
->>> astro2 = Astronaut('Jan', 'Twardowski')
+>>> astro1 = Astronaut('Mark', 'Watney')
+>>> astro2 = Astronaut('Mark', 'Watney')
 >>>
 >>> astro1 is astro2
 False
@@ -287,10 +287,10 @@ False
 
 
 >>> class Astronaut:
->>>     pass
+...     pass
 >>>
 >>> class Cosmonaut:
->>>     pass
+...     pass
 >>>
 >>>
 >>> Astronaut is Astronaut
@@ -312,10 +312,10 @@ False
 Object Equality
 ---------------
 >>> class Astronaut:
->>>     pass
+...     pass
 >>>
 >>> class Cosmonaut:
->>>     pass
+...     pass
 >>>
 >>> a = Astronaut()
 >>> a.firstname = 'Pan'
@@ -332,28 +332,28 @@ False
 False
 >>>
 >>>
->>> id(a)
+>>> id(a)  # doctest: +SKIP
 4503461584
 >>>
->>> id(c)
+>>> id(c)  # doctest: +SKIP
 4503287120
 >>>
->>> id(a.firstname)
+>>> id(a.firstname)  # doctest: +SKIP
 4488983024
 >>>
->>> id(c.firstname)
+>>> id(c.firstname)  # doctest: +SKIP
 4488983024
 >>>
->>> id(a.lastname)
+>>> id(a.lastname)  # doctest: +SKIP
 4503976496
 >>>
->>> id(c.lastname)
+>>> id(c.lastname)  # doctest: +SKIP
 4503976496
 >>>
->>> id(a.__dict__)
+>>> id(a.__dict__)  # doctest: +SKIP
 4503717056
 >>>
->>> id(c.__dict__)
+>>> id(c.__dict__)  # doctest: +SKIP
 4503973504
 >>>
 >>> a.__dict__ is c.__dict__
@@ -382,8 +382,8 @@ True
 ...         self.lastname = lastname
 >>>
 >>>
->>> astro1 = Astronaut('Jan', 'Twardowski')
->>> astro2 = Astronaut('Jan', 'Twardowski')
+>>> astro1 = Astronaut('Mark', 'Watney')
+>>> astro2 = Astronaut('Mark', 'Watney')
 >>>
 >>> astro1 == astro2
 False
@@ -451,8 +451,8 @@ Use Case - 0x01
 ...            and self.lastname == other.lastname
 >>>
 >>>
->>> a1 = Astronaut('Jan', 'Twardowski')
->>> a2 = Astronaut('Jan', 'Twardowski')
+>>> a1 = Astronaut('Pan', 'Twardowski')
+>>> a2 = Astronaut('Pan', 'Twardowski')
 >>>
 >>> a1 == a2
 True
@@ -480,8 +480,8 @@ Use Case - 0x02
 ...         self.lastname = lastname
 >>>
 >>>
->>> a = Astronaut('Jan', 'Twardowski')
->>> c = Cosmonaut('Jan', 'Twardowski')
+>>> a = Astronaut('Pan', 'Twardowski')
+>>> c = Cosmonaut('Pan', 'Twardowski')
 >>>
 >>> a == c
 True
@@ -510,8 +510,8 @@ Use Case - 0x03
 ...         self.lastname = lastname
 >>>
 >>>
->>> a = Astronaut('Jan', 'Twardowski')
->>> c = Cosmonaut('Jan', 'Twardowski')
+>>> a = Astronaut('Pan', 'Twardowski')
+>>> c = Cosmonaut('Pan', 'Twardowski')
 >>>
 >>> a == c
 False

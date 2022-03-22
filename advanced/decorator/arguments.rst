@@ -218,7 +218,7 @@ File ``main.py``:
 ...     ...
 >>>
 >>>
->>> users = get_users()
+>>> users = get_users()  # doctest: +SKIP
 
 
 

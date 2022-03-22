@@ -19,7 +19,7 @@ jobs:
           #- django
           - dragon
           - fastapi
-          - gui
+          #- gui
           - intermediate
           #- machine-learning
           #- matplotlib
@@ -56,7 +56,7 @@ jobs:
           #- django
           #- dragon
           - fastapi
-          - gui
+          #- gui
           - intermediate
           #- machine-learning
           #- matplotlib

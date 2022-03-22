@@ -77,6 +77,7 @@ Run Sequentially
 >>>
 >>>
 >>> asyncio.run(hello())
+'hello'
 
 All lines inside of coroutine function will be executed sequentially. When
 ``await`` happen, other coroutine will start running. When other coroutine

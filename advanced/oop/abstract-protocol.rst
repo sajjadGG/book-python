@@ -217,12 +217,14 @@ Merging and extending protocols
 Generic Protocols
 -----------------
 >>> from abc import abstractmethod
->>> from typing import Protocol
+>>> from typing import Protocol, TypeVar
 >>>
 >>>
->>> class Iterable(Protocol['T']):
+>>> T = TypeVar('T')
+>>>
+>>> class Iterable(Protocol[T]):
 ...     @abstractmethod
-...     def __iter__(self) -> Iterator['T']:
+...     def __iter__(self) -> Iterator[T]:
 ...         ...
 
 
@@ -391,7 +393,7 @@ True
 ...     body: str
 >>>
 >>> email = Email()
->>> isinstance(email, Message)
+>>> isinstance(email, Message)  # doctest: +SKIP
 Traceback (most recent call last):
 TypeError: Instance and class checks can only be used with @runtime_checkable protocols
 

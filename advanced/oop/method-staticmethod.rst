@@ -26,6 +26,11 @@ Let's define a ``User`` class:
 ...        self.firstname = firstname
 ...        self.lastname = lastname
 ...
+...    def __repr__(self):
+...         firstname = self.firstname
+...         lastname = self.lastname
+...         return f'User({firstname=}, {lastname=})'
+...
 ...    def from_json(self, data):
 ...        import json
 ...        data = json.loads(data)
@@ -74,11 +79,16 @@ creating instance in order to use it:
 ...        self.firstname = firstname
 ...        self.lastname = lastname
 ...
-...     @staticmethod
-...     def from_json(data):
-...         import json
-...         data = json.loads(data)
-...         return User(**data)
+...    def __repr__(self):
+...         firstname = self.firstname
+...         lastname = self.lastname
+...         return f'User({firstname=}, {lastname=})'
+...
+...    @staticmethod
+...    def from_json(data):
+...        import json
+...        data = json.loads(data)
+...        return User(**data)
 
 Now, we can use this without creating an instance first:
 

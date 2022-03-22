@@ -413,10 +413,10 @@ Use Case - 0x05
 <PDF object at 0x...>
 >>>
 >>> Document('myfile.doc')  # doctest: +ELLIPSIS
-<DOCX object at 0x...>
+<Docx object at 0x...>
 >>>
 >>> Document('myfile.docx')  # doctest: +ELLIPSIS
-<DOCX object at 0x...>
+<Docx object at 0x...>
 >>>
 >>> Document('myfile.csv')  # doctest: +ELLIPSIS
 Traceback (most recent call last):
@@ -460,13 +460,12 @@ Use Case - 0x06
 >>>
 >>> astro = Astronaut()
 >>>
->>> vars(astro)  # doctest: +NORMALIZE_WHITESPACE
-{'_since': datetime.datetime(2022, 3, 10, 16, 39, 18, 703024),
+>>> vars(astro)  # doctest: +SKIP +NORMALIZE_WHITESPACE
+{'_since': datetime.datetime(1969, 7, 21, 2, 56, 15),
  '_uuid': '83cefe23-3491-4661-b1f4-3ca570feab0a',
  '_log': <Logger Astronaut (WARNING)>}
 >>>
 >>> astro._error(1234, 'An error occurred')
-[ERROR:1234] An error occurred
 
 
 References

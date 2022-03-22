@@ -35,7 +35,7 @@ Wait For
 ...     await asyncio.wait_for(hello(), SECOND)
 >>>
 >>>
->>> asyncio.run(main())
+>>> asyncio.run(main())  # doctest: +SKIP
 waiting
 waiting
 waiting
@@ -70,8 +70,6 @@ Handling Timeouts
 >>>
 >>>
 >>> asyncio.run(main())
-hello
-hello
 hello
 Timeout
 

@@ -127,7 +127,7 @@ Run as Completed
 ...         print(result)
 >>>
 >>>
->>> asyncio.run(main())
+>>> asyncio.run(main())  # doctest: +SKIP
 a: started
 c: started
 b: started
