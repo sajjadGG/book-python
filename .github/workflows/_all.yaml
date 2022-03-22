@@ -2,7 +2,7 @@ name: Doctests
 on: push
 
 jobs:
-  Chapter:
+  Assignments:
     runs-on: ubuntu-20.04
     container: python:3.10.3
 
@@ -37,6 +37,40 @@ jobs:
 
       - name: Tests assignments
         run: find ${{ matrix.directory }} -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
+
+
+  Listings:
+    runs-on: ubuntu-20.04
+    container: python:3.10.3
+
+    strategy:
+      fail-fast: false
+      matrix:
+        directory:
+          - advanced
+          - basics
+          - data-science
+          - database
+          - design-patterns
+          - devops
+          #- django
+          #- dragon
+          - fastapi
+          - gui
+          - intermediate
+          #- machine-learning
+          #- matplotlib
+          #- network
+          - numpy
+          - oop
+          - pandas
+
+    steps:
+      - name: Download GIT repository
+        uses: actions/checkout@v2
+
+      - name: Install requirements
+        run: pip install -r ${{ matrix.directory }}/requirements.txt
 
       - name: Test listings
         run: sphinx-build -a -E -j auto --color -b doctest ${{ matrix.directory }} /tmp/
