@@ -69,7 +69,7 @@ Solution
 --------
 With the same ``DATA`` as before:
 
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> DATA = '{"firstname": "Mark", "lastname": "Watney"}'
 
 We can define a static method ``.from_json()`` which will not require
 creating instance in order to use it:

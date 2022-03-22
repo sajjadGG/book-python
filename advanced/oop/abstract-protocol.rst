@@ -217,7 +217,7 @@ Merging and extending protocols
 Generic Protocols
 -----------------
 >>> from abc import abstractmethod
->>> from typing import Protocol, TypeVar
+>>> from typing import Protocol, TypeVar, Iterator
 >>>
 >>>
 >>> T = TypeVar('T')
