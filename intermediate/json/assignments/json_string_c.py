@@ -54,7 +54,8 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
 
-# str: convert DATA to as list[dict] and convert to JSON format
+# convert DATA to as list[dict] and convert to JSON format
+# type: str
 result = ...
 
 

@@ -58,8 +58,9 @@ Tests:
 """
 
 
-# callable: myrange(start=0, stop=???, step=1)
-#           note, function does not take keyword arguments
+# myrange(start=0, stop=???, step=1)
+# note, function does not take keyword arguments
+# type: Callable[[int,int,int], list[int]]
 def myrange():
     current = start
     result = []

@@ -57,7 +57,8 @@ lewis:x:1001:1001:Melissa Lewis:/home/lewis:/bin/bash
 martinez:x:1002:1002:Rick Martinez:/home/martinez:/bin/bash"""
 
 
-# list[str]: system account usernames (UID [third field] is less than 1000)
+# system account usernames (UID [third field] is less than 1000)
+# type: list[str]
 result = ...
 
 # Solution

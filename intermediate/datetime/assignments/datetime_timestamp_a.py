@@ -43,13 +43,16 @@ A = '1902-12-13T20:45:53+00:00'
 B = '1970-01-01T00:00:00+00:00'
 C = '2038-01-19T03:14:07+00:00'
 
-# float: timestamp of A
+# timestamp of A
+# type: float
 a = ...
 
-# float: timestamp of B
+# timestamp of B
+# type: float
 b = ...
 
-# float: timestamp of C
+# timestamp of C
+# type: float
 c = ...
 
 # Solution

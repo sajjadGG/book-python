@@ -162,7 +162,8 @@ DATA = """1969-07-14, 21:00:00, INFO, Terminal countdown started
 1969-07-24, 16:50:35, WARNING, Splashdown (went to apex-down)
 1969-07-24, 17:29, INFO, Crew egress"""
 
-# list[dict]: representation of DATA; dict keys: when, level, message
+# representation of DATA; dict keys: when, level, message
+# type: list[dict]
 result = ...
 
 # Solution

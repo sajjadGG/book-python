@@ -102,7 +102,8 @@ TEMPLATE = """
 """
 
 
-# pd.DataFrame: XSLT transformed DATA
+# XSLT transformed DATA
+# type: pd.DataFrame
 result = ...
 
 # Solution

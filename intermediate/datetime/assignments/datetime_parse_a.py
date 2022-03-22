@@ -32,7 +32,8 @@ from datetime import datetime
 
 DATA = 'July 21, 1969 2:56:15 AM'
 
-# datetime: DATA from US long format
+# DATA from US long format
+# type: datetime
 result = ...
 
 # Solution

@@ -55,10 +55,12 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
         (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
-# tuple[str]: first line from DATA
+# first line from DATA
+# type: tuple[str]
 header = ...
 
-# list[tuple]: all the other lines from DATA, beside first line
+# all the other lines from DATA, beside first line
+# type: list[tuple]
 data = ...
 
 

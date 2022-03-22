@@ -57,7 +57,8 @@ FILE = r'_temporary.csv'
 with open(FILE, mode='w') as file:
     file.write(DATA)
 
-# list[dict]: Using `csv.DictReader` read the `FILE` content
+# Using `csv.DictReader` read the `FILE` content
+# type: list[dict]
 result = ...
 
 # Solution

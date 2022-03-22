@@ -62,7 +62,8 @@ MONTHS = ['January', 'February', 'March', 'April',
           'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
 
-# dict[str,str]: with zero-padded number and month name
+# With zero-padded number and month name
+# type: dict[str,str]
 result = ...
 
 # Solution

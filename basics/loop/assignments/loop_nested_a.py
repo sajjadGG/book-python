@@ -38,7 +38,8 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-# float: arithmetic mean from `Sepal length` column
+# Arithmetic mean from `Sepal length` column
+# type: float
 result = ...
 
 # Solution

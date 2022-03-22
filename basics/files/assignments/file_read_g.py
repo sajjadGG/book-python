@@ -190,7 +190,8 @@ ALGORITHMS = {
     '6': 'SHA-512',
 }
 
-# list[dict]: joined data from all files for users with `UID` greater than 1000
+# Joined data from all files for users with `UID` greater than 1000
+# type: list[dict]
 result = ...
 
 # Solution

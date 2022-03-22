@@ -70,7 +70,8 @@ TEXT = ("<h1>TEXT OF PRESIDENT JOHN KENNEDY'S RICE STADIUM MOON SPEECH</h1>\n"
         "and as long as two lengths of this field.</p>")
 
 
-# str: use re.search() to get paragraph starting with "We choose..."
+# use re.search() to get paragraph starting with "We choose..."
+# type: str
 result = ...
 
 

@@ -52,7 +52,8 @@ def mean(*args):
     return sum(args) / len(args)
 
 
-# list[dict]: calculate mean and append dict with {'label': ..., 'mean': ...}
+# calculate mean and append dict with {'label': ..., 'mean': ...}
+# type: list[dict]
 result = ...
 
 # Solution

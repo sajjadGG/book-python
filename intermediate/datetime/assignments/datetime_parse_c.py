@@ -40,7 +40,8 @@ DATA = [
     'April 12, 1961 6:07',  # Gagarin launch (first human in space)
 ]
 
-# list[datetime]: parsed DATA
+# parsed DATA
+# type: list[datetime]
 result = ...
 
 # Solution

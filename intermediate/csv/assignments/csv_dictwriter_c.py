@@ -68,7 +68,8 @@ DATA = [Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
 FILE = r'_temporary.txt'
 
 
-# ContextManager: Write DATA to FILE, generate header from DATA
+# Write DATA to FILE, generate header from DATA
+# type: ContextManager
 with open(FILE, mode='w', encoding='utf-8') as file:
     ...
 

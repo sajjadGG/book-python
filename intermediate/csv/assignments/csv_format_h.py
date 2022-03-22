@@ -56,7 +56,8 @@ DATA = [
     {'firstname': 'Melissa', 'lastname': 'Lewis'},
 ]
 
-# str: multiline string with header and `"firstname","lastname"` pairs
+# multiline string with header and `"firstname","lastname"` pairs
+# type: str
 result = ...
 
 # Solution

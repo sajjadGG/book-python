@@ -40,7 +40,8 @@ input = MagicMock(side_effect=['21'])
 age = input('What is your age?: ')
 ADULT = 18
 
-# str: Whether 'Adult' or 'Young'
+# Whether 'Adult' or 'Young'
+# type: str
 result = ...
 
 # Solution

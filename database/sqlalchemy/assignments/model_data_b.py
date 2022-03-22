@@ -42,10 +42,12 @@ Tests:
 """
 
 
-# object: Model from data: 'Watney', 'USA', '1969-07-21'
+# Model from data: 'Watney', 'USA', '1969-07-21'
+# type: object
 watney = ...
 
-# object: Model from data: 'NASA', 'USA', '1958-07-29'
+# Model from data: 'NASA', 'USA', '1958-07-29'
+# type: object
 nasa = ...
 
 

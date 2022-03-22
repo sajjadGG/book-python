@@ -57,19 +57,24 @@ m = 1
 km = 1000 * m
 mi = 1609.344 * m
 
-# float: miles per hour
+# miles per hour
+# type: float
 mph = ...
 
-# float: kilometers per hour
+# kilometers per hour
+# type: float
 kph = ...
 
-# float: 75 miles per hour
+# 75 miles per hour
+# type: float
 speed_limit = ...
 
-# float: speed limit in miles per hour, round to one decimal place
+# speed limit in miles per hour, round to one decimal place
+# type: float
 speed_limit_mph = ...
 
-# float: speed limit in kilometers per hour, round to one decimal place
+# speed limit in kilometers per hour, round to one decimal place
+# type: float
 speed_limit_kph = ...
 
 # Solution

@@ -44,7 +44,8 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
 
-# list[dict]: with converted DATA
+# Define variable `result` with converted DATA
+# type: list[dict]
 result = ...
 
 # Solution

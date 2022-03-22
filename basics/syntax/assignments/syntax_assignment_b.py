@@ -21,7 +21,8 @@ Tests:
     'Variable `result` has invalid value, should be 1.2'
 """
 
-# float: with value 1.2
+# with value 1.2
+# type: float
 result = ...
 
 

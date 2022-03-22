@@ -133,43 +133,56 @@ Tests:
 from zoneinfo import ZoneInfo
 
 
-# ZoneInfo: timezone in UTC
+# Timezone in UTC
+# type: ZoneInfo
 utc = ...
 
-# ZoneInfo: timezone in London, United Kingdom
+# Timezone in London, United Kingdom
+# type: ZoneInfo
 london = ...
 
-# ZoneInfo: timezone in Moscow, Russian Federation
+# Timezone in Moscow, Russian Federation
+# type: ZoneInfo
 moscow = ...
 
-# ZoneInfo: timezone in Warsaw, Poland
+# Timezone in Warsaw, Poland
+# type: ZoneInfo
 warsaw = ...
 
-# ZoneInfo: timezone in Tokyo, Japan
+# Timezone in Tokyo, Japan
+# type: ZoneInfo
 tokyo = ...
 
-# ZoneInfo: timezone in Sydney, Australia
+# Timezone in Sydney, Australia
+# type: ZoneInfo
 sydney = ...
 
-# ZoneInfo: timezone in Auckland, New Zealand
+# Timezone in Auckland, New Zealand
+# type: ZoneInfo
 auckland = ...
 
-# ZoneInfo: timezone in New York, USA
+# Timezone in New York, USA
+# type: ZoneInfo
 new_york = ...
 
-# ZoneInfo: timezone in Cape Canaveral, FL, USA
+# Timezone in Cape Canaveral, FL, USA
+# type: ZoneInfo
 cape_canaveral = ...
 
-# ZoneInfo: timezone in Houston, TX, USA= ...
+# Timezone in Houston, TX, USA= ...
+# type: ZoneInfo
 houston = ...
 
-# ZoneInfo: timezone in Bajkonur Cosmodrome, Kazachstan
+# Timezone in Bajkonur Cosmodrome, Kazachstan
+# type: ZoneInfo
 bajkonur = ...
 
-# ZoneInfo: timezone in North Pole
+# Timezone in North Pole
+# type: ZoneInfo
 north_pole = ...
 
-# ZoneInfo: timezone in South Pole
+# Timezone in South Pole
+# type: ZoneInfo
 south_pole = ...
 
 # Solution

@@ -75,7 +75,8 @@ DATA = ['sepal_length,sepal_width,petal_length,petal_width,species',
         '6.3,2.9,5.6,1.8,virginica',
         '6.4,3.2,4.5,1.5,versicolor']
 
-# set[float|str]: with row at DATA[1] (manually converted to float and str)
+# With row at DATA[1] (manually converted to float and str)
+# type: set[float|str]
 result = ...
 
 # add to result float 5.1

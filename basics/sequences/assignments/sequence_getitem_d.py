@@ -56,7 +56,8 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
 
-# list[list|tuple|set]: empty list
+# Empty list
+# type: list[list|tuple|set]
 result = ...
 
 # append row from DATA at index 2

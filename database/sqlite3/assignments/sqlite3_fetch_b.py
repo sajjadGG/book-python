@@ -129,8 +129,9 @@ SQL_CREATE_TABLE = """
 SQL_INSERT = 'INSERT INTO logs VALUES (NULL, ?, ?, ?);'
 SQL_SELECT = 'SELECT * FROM logs ORDER BY datetime DESC;'
 
-# list[tuple]: select all results from database in list[tuple] format, example:
-#     [(28, '1969-07-24 17:29:00', 'INFO', 'Crew egress'), ...]
+# Select all results from database in list[tuple] format,
+# Example [(28, '1969-07-24 17:29:00', 'INFO', 'Crew egress'), ...]
+# type: list[tuple]
 result = ...
 
 # Solution

@@ -53,10 +53,12 @@ MB = 1024 * kB
 
 SIZE = 100 * MB
 
-# int: SIZE in kilobytes
+# SIZE in kilobytes
+# type: int
 size_kB = ...
 
-# int: SIZE in megabits
+# SIZE in megabits
+# type: int
 size_Mb = ...
 
 # Solution

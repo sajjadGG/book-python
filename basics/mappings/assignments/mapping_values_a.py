@@ -40,7 +40,8 @@ DATA = {'Sepal length': 5.8,
         'Petal length': 5.1,
         'Petal width': 1.9}
 
-# list[float]: with values from DATA
+# With values from DATA
+# type: list[float]
 result = ...
 
 # Solution

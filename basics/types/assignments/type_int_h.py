@@ -59,13 +59,16 @@ B = 8 * b
 kB = 1024 * B
 MB = 1024 * kB
 
-# int: 100 megabits per second
+# 100 megabits per second
+# type: int
 bandwidth = ...
 
-# int: 100 megabytes
+# 100 megabytes
+# type: int
 size = ...
 
-# int: size by bandwidth in seconds
+# size by bandwidth in seconds
+# type: int
 duration = ...
 
 # Solution

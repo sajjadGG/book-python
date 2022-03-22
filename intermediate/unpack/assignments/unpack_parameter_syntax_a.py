@@ -49,7 +49,8 @@ Tests:
 """
 
 
-# callable: Arguments must be passed only as keywords
+# Arguments must be passed only as keywords
+# type: Callable[[int,int],None]
 def set_position(x, y):
     pass
 

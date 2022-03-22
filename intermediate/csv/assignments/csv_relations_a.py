@@ -56,7 +56,8 @@ DATA = [
     {"firstname": "Rick", "lastname": "Martinez", "missions": []}
 ]
 
-# list[dict]: flatten data, each mission field prefixed with mission and number
+# flatten data, each mission field prefixed with mission and number
+# type: list[dict]
 result = ...
 
 

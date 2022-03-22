@@ -67,12 +67,14 @@ DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
         (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
 
-# Callable: get `features: list[float]` from `DATA` for given `species`
+# Function get `features: list[float]` from `DATA` for given `species`
+# type: Callable
 def function(data: list, species: str):
     ...
 
 
-# Generator: get `features: list[float]` from `DATA` for given `species`
+# Generator get `features: list[float]` from `DATA` for given `species`
+# type: Generator
 def generator(data: list, species: str):
     ...
 

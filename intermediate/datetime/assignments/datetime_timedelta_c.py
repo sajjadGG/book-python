@@ -62,7 +62,8 @@ YEAR = 365.2425 * DAY
 # 49 minutes
 # 15 seconds
 
-# timedelta: representing given period
+# representing given period
+# type: timedelta
 result = ...
 
 # Solution

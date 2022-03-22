@@ -58,10 +58,12 @@ Pa = 1
 hPa = 100 * Pa
 kPa = 1000 * Pa
 
-# float: pressure at sea level: 1013.25 hectopascals
+# pressure at sea level: 1013.25 hectopascals
+# type: float
 ata = ...
 
-# float: 20.946% of pressure at sea level in hPa, round to one decimal place
+# 20.946% of pressure at sea level in hPa, round to one decimal place
+# type: float
 pO2 = ...
 
 # Solution

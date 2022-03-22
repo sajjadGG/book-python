@@ -34,7 +34,8 @@ DATA = {'Sepal length': 5.8,
         'Petal length': 5.1,
         'Petal width': 1.9}
 
-# list[str]: with keys from DATA
+# With keys from DATA
+# type: list[str]
 result = ...
 
 # Solution

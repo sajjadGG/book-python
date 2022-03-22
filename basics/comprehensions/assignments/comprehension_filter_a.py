@@ -35,7 +35,8 @@ Tests:
     [6, 8, 10, 12, 14, 16, 18]
 """
 
-# list[int]: even numbers from 5 to 20 (without 20)
+# Even numbers from 5 to 20 (without 20)
+# type: list[int]
 result = ...
 
 # Solution

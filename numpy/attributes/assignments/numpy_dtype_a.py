@@ -46,10 +46,12 @@ DATA = np.array([[-1.1, 0.0, 1.1],
                  [2.2, 3.3, 4.4]])
 
 
-# np.ndarray: DATA converted to int
+# DATA converted to int
+# type: np.ndarray
 result_int = ...
 
-# np.ndarray: DATA converted to bool
+# DATA converted to bool
+# type: np.ndarray
 result_bool = ...
 
 # Solution

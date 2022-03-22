@@ -51,7 +51,8 @@ DATA = """[{"Sepal length": 5.8, "Sepal width": 2.7, "Petal length": 5.1, "Petal
      {"Sepal length": 4.7, "Sepal width": 3.2, "Petal length": 1.3, "Petal width": 0.2, "Species": "setosa"}]"""
 
 
-# list[dict]: Load `DATA` from JSON format
+# Load `DATA` from JSON format
+# type: list[dict]
 result = ...
 
 # Solution

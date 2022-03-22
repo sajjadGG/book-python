@@ -53,7 +53,8 @@ Tests:
 from dataclasses import dataclass
 
 
-# class: Use Dataclass to define class `Point` with attributes: `x` and `y`
+# Use Dataclass to define class `Point` with attributes: `x` and `y`
+# type: Type
 @dataclass
 class Point:
     x: int = 0

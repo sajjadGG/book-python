@@ -59,19 +59,23 @@ b = np.array([
     [2, 3]])
 
 
-# callable: Multiply `a` and `b` using scalar multiplication
+# Multiply `a` and `b` using scalar multiplication
+# type: callable
 def mul_ab(a, b):
     return ...
 
-# callable: Multiply `a` and `b` using matrix multiplication
+# Multiply `a` and `b` using matrix multiplication
+# type: callable
 def matmul_ab(a, b):
     return ...
 
-# callable: Multiply `b` and `a` using scalar multiplication
+# Multiply `b` and `a` using scalar multiplication
+# type: callable
 def mul_ba(b, a):
     return ...
 
-# callable: Multiply `b` and `a` using matrix multiplication
+# Multiply `b` and `a` using matrix multiplication
+# type: callable
 def matmul_ba(b, a):
     return ...
 
@@ -91,4 +95,3 @@ def mul_ba(b, a):
 
 def matmul_ba(b, a):
     return b @ a
-

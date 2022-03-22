@@ -39,7 +39,8 @@ DATA = """We choose to go to the Moon
 in this decade and do the other things.
 Not because they are easy, but because they are hard."""
 
-# list[str]: with DATA split by lines
+# with DATA split by lines
+# type: list[str]
 result = ...
 
 # Solution

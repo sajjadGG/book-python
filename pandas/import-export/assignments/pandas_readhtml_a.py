@@ -42,7 +42,8 @@ import pandas as pd
 DATA = 'https://python.astrotech.io/_static/european-astronaut-corps.html'
 
 
-# pd.DataFrame: read DATA, select active ESA astronauts
+# Read DATA, select active ESA astronauts
+# type: pd.DataFrame
 result = ...
 
 # Solution

@@ -97,7 +97,8 @@ TEXT = ("In the late 1950s and early 1960s, the United States was engaged in "
         "to postpone, and one we intend to win, and the others, too.")
 
 
-# re.Match: use re.findall() to get dates in US format, i.e. "April 12, 1961"
+# Use re.findall() to get dates in US format, i.e. "April 12, 1961"
+# type: re.Match
 result = ...
 
 

@@ -40,17 +40,21 @@ A = np.array([[0, 1], [2, 3]], float)
 B = np.array([2, 3], float)
 C = np.array([[1, 1], [4, 0]], float)
 
-# np.ndarray: square root of each element in `A` use np.pow()
+# Square root of each element in `A` use np.pow()
+# type: np.ndarray
 a = ...
 
-# np.ndarray: square root of each element in `B` use `**` operator
+# Square root of each element in `B` use `**` operator
+# type: np.ndarray
 b = ...
 
-# np.ndarray: second power (square) of each element in `C` use `**` operator
+# Second power (square) of each element in `C` use `**` operator
+# type: np.ndarray
 c = ...
 
-# np.ndarray: Add elements from `a` to `b` and then multiply by `c`
-#             Remember about the operator precedence
+# Add elements from `a` to `b` and then multiply by `c`
+# Remember about the operator precedence
+# type: np.ndarray
 result = ...
 
 

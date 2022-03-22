@@ -69,13 +69,16 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
 
-# tuple[float|str]: row from `DATA` at index 2
+# Row from `DATA` at index 2
+# type: tuple[float|str]
 result_a = ...
 
-# tuple[float|str]: row from `DATA` at index 4
+# Row from `DATA` at index 4
+# type: tuple[float|str]
 result_b = ...
 
-# tuple[float|str]: row from `DATA` at index 6
+# Row from `DATA` at index 6
+# type: tuple[float|str]
 result_c = ...
 
 # Solution

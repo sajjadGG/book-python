@@ -57,34 +57,44 @@ Tests:
     False
 """
 
-# bool: result of `not ...` must be True
+# result of `not ...` must be True
+# type: bool
 example = False
 
-# bool: result of `True == ...` must be True
+# result of `True == ...` must be True
+# type: bool
 a = ...
 
-# bool: result of `True != ...` must be True
+# result of `True != ...` must be True
+# type: bool
 b = ...
 
-# bool: result of `not ...` must be True
+# result of `not ...` must be True
+# type: bool
 c = ...
 
-# bool: result of `bool(...) == True` must be True
+# result of `bool(...) == True` must be True
+# type: bool
 d = ...
 
-# bool: result of `bool(...) == False` must be True
+# result of `bool(...) == False` must be True
+# type: bool
 e = ...
 
-# bool: result of `... or False` must be False
+# result of `... or False` must be False
+# type: bool
 f = ...
 
-# bool: result of `True and ...` must be True
+# result of `True and ...` must be True
+# type: bool
 g = ...
 
-# bool: result of `bool(bool(...) == ...) or False` must be True
+# result of `bool(bool(...) == ...) or False` must be True
+# type: bool
 h = ...
 
-# bool: result of `bool(...) is not bool(False)` must be False
+# result of `bool(...) is not bool(False)` must be False
+# type: bool
 i = ...
 
 # Solution

@@ -54,7 +54,8 @@ HEADER = [
     'species',
 ]
 
-# list[dict[str,str]]: replace keys with `HEADER`
+# Replace keys with `HEADER`
+# type: list[dict[str,str]]
 result = ...
 
 # Solution

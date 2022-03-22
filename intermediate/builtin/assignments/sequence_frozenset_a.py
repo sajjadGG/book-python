@@ -60,19 +60,24 @@ Tests:
     'Variable `result_e` has invalid value, should be frozenset({1, 2.2, True, "a"})'
 """
 
-# frozenset[int]: with elements: 1, 2, 3
+# with elements: 1, 2, 3
+# type: frozenset[int]
 result_a = ...
 
-# frozenset[float]: with elements: 1.1, 2.2, 3.3
+# with elements: 1.1, 2.2, 3.3
+# type: frozenset[float]
 result_b = ...
 
-# frozenset[str]: with elements: 'a', 'b', 'c'
+# with elements: 'a', 'b', 'c'
+# type: frozenset[str]
 result_c = ...
 
-# frozenset[bool]: with elements: True, False
+# with elements: True, False
+# type: frozenset[bool]
 result_d = ...
 
-# frozenset[int|float|bool|str]: with elements: 1, 2.2, True, 'a'
+# with elements: 1, 2.2, True, 'a'
+# type: frozenset[int|float|bool|str]
 result_e = ...
 
 # Solution

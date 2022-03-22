@@ -73,10 +73,12 @@ DATA = [
     (4.9, 3.0, 1.4, 0.2, 'setosa'),
     (4.9, 2.5, 4.5, 1.7, 'virginica')]
 
-# tuple[str]: with row at index 0 from DATA
+# With row at index 0 from DATA
+# type: tuple[str]
 header = ...
 
-# list[tuple]: with rows at all the other indexes from DATA (use only getitem)
+# With rows at all the other indexes from DATA (use only getitem)
+# type: list[tuple]
 data = ...
 
 # Solution

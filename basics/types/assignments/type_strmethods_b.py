@@ -42,7 +42,8 @@ DATA = ['We choose to go to the Moon',
         'in this decade and do the other things.',
         'Not because they are easy, but because they are hard.']
 
-# str: with lines from DATA joined with newline (`\n`) character
+# with lines from DATA joined with newline (`\n`) character
+# type: str
 result = ...
 
 # Solution

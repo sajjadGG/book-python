@@ -94,15 +94,18 @@ DATA = """
 }
 """
 
-# class: Using `dataclass` model `DATA`, create class `Category`
+# Using `dataclass` model `DATA`, create class `Category`
+# type: Type
 class Category:
     ...
 
-# class: Using `dataclass` model `DATA`, create class `Tag`
+# Using `dataclass` model `DATA`, create class `Tag`
+# type: Type
 class Tag:
     ...
 
-# class: Using `dataclass` model `DATA`, create class `Pet`
+# Using `dataclass` model `DATA`, create class `Pet`
+# type: Type
 class Pet:
     ...
 

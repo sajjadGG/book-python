@@ -46,13 +46,16 @@ Tests:
 m = 1
 ft = 0.3048 * m
 
-# float: 10_000 ft
+# 10_000 ft
+# type: float
 altitude = ...
 
-# float: altitude in meters
+# altitude in meters
+# type: float
 altitude_m = ...
 
-# float: altitude in feet
+# altitude in feet
+# type: float
 altitude_ft = ...
 
 # Solution

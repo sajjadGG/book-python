@@ -182,27 +182,27 @@ bjohanssen@nasa.gov,Quebec"""
 
 
 # Imię i nazwisko osoby, która dokonała najwięcej zakupów.
-# result_a: tuple[str,str]
+# type: tuple[str,str]
 result_a = ...
 
 # Imię i nazwisko osoby, która dokonała zakupów za największą kwotę.
-# result_b: tuple[str,str]
+# type: tuple[str,str]
 result_b = ...
 
 # Kwota, za jaką łącznie dokonały zamówień kobiety.
-# result_c: int
+# type: int
 result_c = ...
 
 # Nazwa produktu, który był najczęściej kupowany.
-# result_d: str
+# type: str
 result_d = ...
 
 # Kwota i nazwa kraju, którego obywatele dokonali najwięcej zakupów.
-# result_e: tuple[float,str]
+# type: tuple[float,str]
 result_e = ...
 
 # Kwota i nazwa kraju, którego obywatele dokonali zakupów za największą kwotę.
-# result_f: tuple[float,str]
+# type: tuple[float,str]
 result_f = ...
 
 # Solution

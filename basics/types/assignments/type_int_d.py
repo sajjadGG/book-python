@@ -54,13 +54,16 @@ Tests:
 m = 1
 km = 1000 * m
 
-# int: 100_000 meters in km
+# 100_000 meters in km
+# type: int
 karman_line_earth = ...
 
-# int: 80_000 meters in km
+# 80_000 meters in km
+# type: int
 karman_line_mars = ...
 
-# int: 250_000 meters in km
+# 250_000 meters in km
+# type: int
 karman_line_venus = ...
 
 # Solution

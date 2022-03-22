@@ -67,7 +67,8 @@ COLUMNS = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
            'worst symmetry', 'worst fractal dimension', 'label']
 
 
-# pd.DataFrame: read DATA, substitute column names, and labels, select 25 rows
+# Read DATA, substitute column names, and labels, select 25 rows
+# type: pd.DataFrame
 result = ...
 
 # Solution

@@ -93,13 +93,14 @@ with open(FILE, mode='w') as file:
     file.write(DATA)
 
 
-# list[tuple]: select all results from database in list[dict] format, example:
-#              [{'id': 4,
-#                'species': 'virginica',
-#                'sepal_length': 5.4,
-#                'sepal_width': 3.9,
-#                'petal_length': 1.3,
-#                'petal_width': 0.4}, ...]
+# Select all results from database in list[dict] format
+# Example [{'id': 4,
+#           'species': 'virginica',
+#           'sepal_length': 5.4,
+#           'sepal_width': 3.9,
+#           'petal_length': 1.3,
+#           'petal_width': 0.4}, ...]
+# type: list[tuple]
 result = ...
 
 # Solution

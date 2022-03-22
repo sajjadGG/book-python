@@ -36,7 +36,8 @@ PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
 
 DATA = 'zażółć gęślą jaźń'
 
-# str: DATA with substituted PL diacritic chars to ASCII letters
+# DATA with substituted PL diacritic chars to ASCII letters
+# type: str
 result = ...
 
 # Solution

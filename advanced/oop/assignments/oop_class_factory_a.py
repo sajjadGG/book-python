@@ -77,10 +77,11 @@ class Versicolor(Iris):
 class Virginica(Iris):
     pass
 
-# list[Iris]: Append to `result`:
-#     a. if `species` is "setosa" append instance of a class `Setosa`
-#     b. if `species` is "versicolor" append instance of a class  `Versicolor`
-#     c. if `species` is "virginica" append instance of a class `Virginica`
+# Append to `result`:
+# a. if `species` is "setosa" append instance of a class `Setosa`
+# b. if `species` is "versicolor" append instance of a class  `Versicolor`
+# c. if `species` is "virginica" append instance of a class `Virginica`
+# type: list[Iris]
 result = ...
 
 

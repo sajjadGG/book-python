@@ -50,7 +50,8 @@ DATA = [
     {'Sepal length': 4.7, 'Sepal width': 3.2, 'Petal length': 1.3, 'Petal width': 0.2, 'Species': 'setosa'}]
 
 
-# list[tuple]: load DATA from JSON and convert to list[tuple]
+# load DATA from JSON and convert to list[tuple]
+# type: list[tuple]
 result = ...
 
 # Solution

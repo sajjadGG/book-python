@@ -54,7 +54,7 @@ Tests:
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [{'ip': '127.0.0.1', 'hostnames': ['localhost', 'astromatt'], 'protocol': 'IPv4'},
-     {'ip': '10.13.37.1', 'hostnames': ['nasa.gov', 'esa.int', 'roscosmos.ru'], 'protocol': 'IPv4'},
+     {'ip': '10.13.37.1', 'hostnames': ['nasa.gov', 'esa.int'], 'protocol': 'IPv4'},
      {'ip': '255.255.255.255', 'hostnames': ['broadcasthost'], 'protocol': 'IPv4'},
      {'ip': '::1', 'hostnames': ['localhost'], 'protocol': 'IPv6'}]
 """
@@ -70,7 +70,7 @@ DATA = """
 
 127.0.0.1       localhost
 127.0.0.1       astromatt
-10.13.37.1      nasa.gov esa.int roscosmos.ru
+10.13.37.1      nasa.gov esa.int
 255.255.255.255 broadcasthost
 ::1             localhost
 """
@@ -78,7 +78,8 @@ DATA = """
 with open(FILE, mode='w') as file:
     file.write(DATA)
 
-# list[dict]: example [{'ip': '127.0.0.1', 'hostnames': ['localhost', 'astromatt'], 'protocol': 'IPv4'}, ...]
+# Example [{'ip': '127.0.0.1', 'hostnames': ['localhost', 'astromatt'], 'protocol': 'IPv4'}, ...]
+# type: list[dict]
 result = []
 
 # Solution

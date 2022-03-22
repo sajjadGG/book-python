@@ -112,7 +112,8 @@ class Address:
     ...
 
 
-# list[Astronaut]: Iterate over `DATA` and create instances
+# Iterate over `DATA` and create instances
+# type: list[Astronaut]
 result = ...
 
 

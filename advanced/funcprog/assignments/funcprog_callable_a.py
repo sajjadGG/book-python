@@ -34,13 +34,15 @@ Tests:
 """
 
 
-# Callable: takes arbitrary number of positional and keyword arguments
-#           prints `hello from wrapper`
+# Takes arbitrary number of positional and keyword arguments
+# Pints `hello from wrapper`
+# type: Callable
 def wrapper():
     ...
 
 
-# Callable: takes `func` as an argument, returns wrapper function
+# Takes `func` as an argument, returns wrapper function
+# type: Callable
 def check():
     ...
 

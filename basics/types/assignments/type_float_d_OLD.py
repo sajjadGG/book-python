@@ -64,19 +64,24 @@ distance_km = distance / km
 distance_mi = distance / mi
 distance_NM = distance / NM
 
-# str: distance in meters 0 decimal places
+# distance in meters 0 decimal places
+# type: str
 meters = f'Meters: {...}'
 
-# str: distance in kilometers with 0 decimal places
+# distance in kilometers with 0 decimal places
+# type: str
 kilometers = f'Kilometers: {...}'
 
-# str: distance in miles with 2 decimal places
+# distance in miles with 2 decimal places
+# type: str
 miles = f'Miles: {...}'
 
-# str: distance in nautical miles with 3 decimal places
+# distance in nautical miles with 3 decimal places
+# type: str
 nautical_miles = f'Nautical Miles: {...}'
 
-# str: distance in km, mi, NM with 0, 1, 2 decimal places
+# distance in km, mi, NM with 0, 1, 2 decimal places
+# type: str
 all_units = (f'km: {...}, '
              f'mi: {...}, '
              f'NM: {...}')

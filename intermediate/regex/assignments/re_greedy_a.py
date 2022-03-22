@@ -62,7 +62,8 @@ TEXT = ("<h1>TEXT OF PRESIDENT JOHN KENNEDY'S RICE STADIUM MOON SPEECH</h1>\n"
         "and as long as two lengths of this field.</p>")
 
 
-# str: use findall() and non-greedy qualifier to get paragraph "We choose..."
+# use findall() and non-greedy qualifier to get paragraph "We choose..."
+# type: str
 result = ...
 
 

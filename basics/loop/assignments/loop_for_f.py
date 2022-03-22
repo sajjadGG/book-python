@@ -54,7 +54,8 @@ MONTHS = ['January', 'February', 'March', 'April',
           'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
 
-# dict[int,str]: dict with month number and name. Start with 1
+# Dict with month number and name. Start with 1
+# type: dict[int,str]
 result = ...
 
 # Solution

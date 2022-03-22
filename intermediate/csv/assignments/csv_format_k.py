@@ -59,7 +59,8 @@ DATA = [{'sepal_length': 5.1, 'sepal_width': 3.5, 'petal_length': 1.4,
         {'sepal_length': 6.4, 'sepal_width': 3.2, 'petal_length': 4.5,
          'petal_width': 1.5, 'species': 'versicolor'}]
 
-# str: DATA converted to CSV format
+# DATA converted to CSV format
+# type: str
 result = ...
 
 # Solution

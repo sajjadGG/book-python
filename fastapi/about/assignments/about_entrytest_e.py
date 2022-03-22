@@ -62,7 +62,8 @@ DATA = """##
 255.255.255.255 broadcasthost
 ::1             localhost"""
 
-# list[dict]: keys: address, hosts, protocol; merge hosts for the same ip
+# Dict keys: address, hosts, protocol; merge hosts for the same ip
+# type: list[dict]
 result = ...
 
 

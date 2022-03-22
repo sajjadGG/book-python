@@ -42,13 +42,16 @@ Tests:
 liter = 1
 floz = 0.02957344 * liter
 
-# float: 20 Fl Oz
+# 20 Fl Oz
+# type: float
 volume = ...
 
-# float: volume in fluid ounces
+# volume in fluid ounces
+# type: float
 volume_floz = ...
 
-# float: volume in liters
+# volume in liters
+# type: float
 volume_l = ...
 
 # Solution

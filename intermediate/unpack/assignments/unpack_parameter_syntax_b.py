@@ -41,7 +41,8 @@ Tests:
 """
 
 
-# callable: Argument must be passed only as positional
+# Argument must be passed only as positional
+# type: Callable[[int],None]
 def take_damage(dmg):
     pass
 

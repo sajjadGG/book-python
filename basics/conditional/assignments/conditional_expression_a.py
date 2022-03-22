@@ -40,7 +40,8 @@ Tests:
 ADULT = 18
 AGE = 12
 
-# str: Whether 'adult' or 'underage'
+# Whether 'adult' or 'underage'
+# type: str
 result = ...
 
 # Solution

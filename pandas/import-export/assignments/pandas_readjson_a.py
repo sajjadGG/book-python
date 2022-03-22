@@ -33,7 +33,8 @@ import pandas as pd
 DATA = 'https://python.astrotech.io/_static/iris.json'
 
 
-# pd.DataFrame: read DATA from JSON
+# Read DATA from JSON
+# type: pd.DataFrame
 result = ...
 
 # Solution

@@ -51,7 +51,10 @@ Tests:
     NameError: name 'check' is not defined
 """
 
-# Callable: parameter: func; inside: wrapper with args, kwargs; return: wrapper
+# Takes func
+# Defines wrapper with args, kwargs
+# Returns wrapper
+# type: Callable[[Callable], Callable]
 def check():
     ...
 

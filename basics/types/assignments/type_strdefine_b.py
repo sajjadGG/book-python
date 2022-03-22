@@ -38,8 +38,8 @@ Tests:
 
 NAME = 'José Jiménez'
 
-# result: str
 # Add whitespace and quotes to: My name... José Jiménez. I'm an astronaut!
+# type: str
 result = ...
 
 # Solution

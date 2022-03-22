@@ -79,7 +79,8 @@ CREW = [
 FILE = r'_temporary.csv'
 
 
-# list[dict]: Using `csv.DictWriter()` save CREW to CSV file
+# Using `csv.DictWriter()` save CREW to CSV file
+# type: list[dict]
 result = ...
 
 # Solution

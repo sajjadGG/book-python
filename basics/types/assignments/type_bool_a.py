@@ -77,49 +77,64 @@ Tests:
     False
 """
 
-# bool: result of bool(True)
+# result of bool(True)
+# type: bool
 example = True
 
-# bool: result of bool(True)
+# result of bool(True)
+# type: bool
 a = ...
 
-# bool: result of bool(False)
+# result of bool(False)
+# type: bool
 b = ...
 
-# bool: result of bool(1)
+# result of bool(1)
+# type: bool
 c = ...
 
-# bool: result of bool(0)
+# result of bool(0)
+# type: bool
 d = ...
 
-# bool: result of bool(-1)
+# result of bool(-1)
+# type: bool
 e = ...
 
-# bool: result of bool(0.0)
+# result of bool(0.0)
+# type: bool
 f = ...
 
-# bool: result of bool('a')
+# result of bool('a')
+# type: bool
 g = ...
 
-# bool: result of bool('')
+# result of bool('')
+# type: bool
 h = ...
 
-# bool: result of bool(' ')
+# result of bool(' ')
+# type: bool
 i = ...
 
-# bool: result of bool('0')
+# result of bool('0')
+# type: bool
 j = ...
 
-# bool: result of bool(int('0'))
+# result of bool(int('0'))
+# type: bool
 k = ...
 
-# bool: result of bool(-0.0+0.0j)
+# result of bool(-0.0+0.0j)
+# type: bool
 l = ...
 
-# bool: result of bool('-0.0+0.0j')
+# result of bool('-0.0+0.0j')
+# type: bool
 m = ...
 
-# bool: result of bool(complex('-0.0+0.0j'))
+# result of bool(complex('-0.0+0.0j'))
+# type: bool
 n = ...
 
 # Solution

@@ -53,13 +53,16 @@ Mb = 1024 * kb
 
 SIZE = 1337 * Mb
 
-# int: SIZE in bits
+# SIZE in bits
+# type: int
 size_b = ...
 
-# int: SIZE in kilobits
+# SIZE in kilobits
+# type: int
 size_kb = ...
 
-# int: SIZE in megabits
+# SIZE in megabits
+# type: int
 size_Mb = ...
 
 # Solution

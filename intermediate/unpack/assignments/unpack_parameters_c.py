@@ -67,7 +67,8 @@ Tests:
     False
 """
 
-# callable: Return True if all arguments are int or float, otherwise False
+# Return True if all arguments are int or float, otherwise False
+# type: Callable[[int|float],bool]
 def isnumeric():
     ...
 

@@ -82,13 +82,16 @@ DATA = [
 header = DATA[0]
 data = DATA[1:]
 
-# int: `data` length multiplied by percent
+# `data` length multiplied by percent
+# type: int
 split = ...
 
-# list[tuple]: first 60% from data
+# first 60% from data
+# type: list[tuple]
 train = ...
 
-# list[tuple]: last 40% from data
+# last 40% from data
+# type: list[tuple]
 test = ...
 
 # Solution

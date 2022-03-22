@@ -58,8 +58,11 @@ def cube(x):
     return x ** 3
 
 
-# float: generator expr with numbers from 1 to 33 (inclusive) divisible by 3
-#        filter out even numbers; cube result; calculate mean
+# Generator expr with numbers from 1 to 10 (exclusive)
+# Filter odd numbers
+# Cube result
+# Calculate mean
+# type: float
 result = ...
 
 

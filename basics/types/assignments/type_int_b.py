@@ -51,10 +51,12 @@ Tests:
 Celsius = 273
 Kelvin = 1
 
-# int: 453 Kelvins in Celsius
+# 453 Kelvins in Celsius
+# type: int
 lunar_day = ...
 
-# int: 93 Kelvins in Celsius
+# 93 Kelvins in Celsius
+# type: int
 lunar_night = ...
 
 # Solution

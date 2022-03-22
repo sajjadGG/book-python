@@ -21,7 +21,8 @@ Tests:
     'Variable `result` has invalid value, should be 1'
 """
 
-# int: with value 1
+# with value 1
+# type: int
 result = ...
 
 

@@ -85,13 +85,16 @@ DATA = ['sepal_length,sepal_width,petal_length,petal_width,species',
         '6.3,2.9,5.6,1.8,virginica',
         '6.4,3.2,4.5,1.5,versicolor']
 
-# list[float|str]: with data from row[1]: 5.8, 2.7, 5.1, 1.9 and virginica
+# With data from row[1]: 5.8, 2.7, 5.1, 1.9 and virginica
+# type: list[float|str]
 a = ...
 
-# list[float|str]: with data from row[2]: 5.1, 3.5, 1.4, 0.2 and setosa
+# With data from row[2]: 5.1, 3.5, 1.4, 0.2 and setosa
+# type: list[float|str]
 b = ...
 
-# list[float|str]: with data from row[3]: 5.7, 2.8, 4.1, 1.3 and versicolor
+# With data from row[3]: 5.7, 2.8, 4.1, 1.3 and versicolor
+# type: list[float|str]
 c = ...
 
 # Solution

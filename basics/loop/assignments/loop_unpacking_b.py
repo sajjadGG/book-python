@@ -60,7 +60,8 @@ features: tuple
 label: set
 species: str
 
-# set[str]: species names with word endings in `SUFFIXES`
+# Species names with word endings in `SUFFIXES`
+# type: set[str]
 result = ...
 
 # Solution

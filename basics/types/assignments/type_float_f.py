@@ -42,10 +42,12 @@ hPa = 100 * Pa
 kPa = 1000 * Pa
 psi = 6894.757 * Pa
 
-# float: 4.3 pounds per square inch in hectopascals, round to one decimal place
+# 4.3 pounds per square inch in hectopascals, round to one decimal place
+# type: float
 emu = ...
 
-# float: 40 kilopascals in hectopascals, round to one decimal place
+# 40 kilopascals in hectopascals, round to one decimal place
+# type: float
 orlan = ...
 
 # Solution

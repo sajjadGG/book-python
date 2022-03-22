@@ -66,7 +66,8 @@ TEXT = ("<h1>TEXT OF PRESIDENT JOHN KENNEDY'S RICE STADIUM MOON SPEECH</h1>\n"
         "and as long as two lengths of this field.</p>")
 
 
-# str: use re.split() to get paragraph "We choose to go to the moon"
+# use re.split() to get paragraph "We choose to go to the moon"
+# type: str
 result = ...
 
 

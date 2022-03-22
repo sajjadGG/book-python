@@ -56,7 +56,8 @@ lewis:x:1001:1001:Melissa Lewis:/home/lewis:/bin/bash
 martinez:x:1002:1002:Rick Martinez:/home/martinez:/bin/bash"""
 
 
-# list[Account]: parse DATA and convert to UserAccount or SystemAccount
+# Parse DATA and convert to UserAccount or SystemAccount
+# type: list[Account]
 result = ...
 
 # Solution

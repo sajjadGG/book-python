@@ -52,13 +52,16 @@ Tests:
 PLN = 1
 VAT_23 = 23 / 100
 
-# float: 100.0 PLN, without tax
+# 100.0 PLN, without tax
+# type: float
 net = ...
 
-# float: 23% of net
+# 23% of net
+# type: float
 tax = ...
 
-# float: net plus tax in PLN
+# net plus tax in PLN
+# type: float
 gross = ...
 
 

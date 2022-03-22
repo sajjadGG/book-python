@@ -25,7 +25,8 @@ Tests:
     'Variable `result` has invalid value, should be "Hello World"'
 """
 
-# str: with Hello World
+# with Hello World
+# type: str
 result = ...
 
 # Solution

@@ -50,7 +50,8 @@ LABEL_ENCODER = {
     '1': 'setosa',
     '2': 'versicolor'}
 
-# list[tuple]: data from file (note the list[tuple] format!)
+# data from file (note the list[tuple] format!)
+# type: list[tuple]
 result = ...
 
 # Solution

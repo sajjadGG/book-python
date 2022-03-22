@@ -59,13 +59,16 @@ Tests:
 import re
 
 
-# str: pattern matching `+## ### ### ###`
+# pattern matching `+## ### ### ###`
+# type: str
 cell = ...
 
-# str: pattern matching `+## ## ### ####`
+# pattern matching `+## ## ### ####`
+# type: str
 work = ...
 
-# str: combination of `+## ### ### ###` and `+## ## ### ####`
+# combination of `+## ### ### ###` and `+## ## ### ####`
+# type: str
 result = ...
 
 

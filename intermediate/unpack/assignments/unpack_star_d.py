@@ -43,7 +43,8 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
 
 SUFFIXES = ('ca', 'osa')
 
-# list[str]: species names ending with "ca" or "osa"
+# species names ending with "ca" or "osa"
+# type: list[str]
 result = ...
 
 
@@ -51,4 +52,3 @@ result = ...
 result = [label
           for *features, label in DATA[1:]
           if label.endswith(SUFFIXES)]
-

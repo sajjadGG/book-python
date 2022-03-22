@@ -72,7 +72,8 @@ DATA = """
 }
 """
 
-# class: Using `dataclass` model data to create class `Pet`
+# Using `dataclass` model data to create class `Pet`
+# type: Type
 class Pet:
     ...
 

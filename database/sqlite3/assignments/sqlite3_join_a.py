@@ -125,11 +125,11 @@ SQL_SELECT = """
     ON astronauts.id=addresses.astronaut_id;"""
 
 
-# list[tuple]: select all results from database in list[dict] format, example:
-#              [{'id': 1, 'firstname': 'José', 'lastname': 'Jiménez',
-#                'astronaut_id': 1, 'street': '2101 E NASA Pkwy', 'city':
-#                'Houston', 'state': 'Texas', 'code': 77058, 'country': 'USA'},
-#               ...]
+# Select all results from database in list[dict] format
+# Example [{'id': 1, 'firstname': 'José', 'lastname': 'Jiménez',
+#           'astronaut_id': 1, 'street': '2101 E NASA Pkwy', 'city':
+#           'Houston', 'state': 'Texas', 'code': 77058, 'country': 'USA'}, ...]
+# type: list[tuple]
 result = ...
 
 # Solution

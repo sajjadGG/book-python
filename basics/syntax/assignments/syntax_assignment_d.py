@@ -24,7 +24,8 @@ Tests:
     'Variable `result` has invalid value, should be True'
 """
 
-# bool: with value True
+# with value True
+# type: bool
 result = ...
 
 

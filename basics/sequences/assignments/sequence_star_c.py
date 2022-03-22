@@ -59,10 +59,12 @@ DATA = [
     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
     (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
-# tuple[str]: with row with index 0: ('Sepal length', 'Sepal width', ...)
+# with row with index 0: ('Sepal length', 'Sepal width', ...)
+# type: tuple[str]
 header = ...
 
-# list[tuple]: with all other rows: (5.8, 2.7, 5.1, 1.9, 'virginica'),  ...
+# with all other rows: (5.8, 2.7, 5.1, 1.9, 'virginica'),  ...
+# type: list[tuple]
 data = ...
 
 # Solution

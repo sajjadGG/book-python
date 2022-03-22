@@ -62,13 +62,16 @@ Tests:
 Celsius = 1
 Kelvin = 273
 
-# int: 20 Celsius in Kelvin
+# 20 Celsius in Kelvin
+# type: int
 mars_max = ...
 
-# int: -153 Celsius in Kelvin
+# -153 Celsius in Kelvin
+# type: int
 mars_min = ...
 
-# int: -63 Celsius in Kelvin
+# -63 Celsius in Kelvin
+# type: int
 mars_avg = ...
 
 # Solution

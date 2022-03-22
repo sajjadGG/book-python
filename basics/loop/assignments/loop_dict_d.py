@@ -74,13 +74,16 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
 
-# list[tuple]: values from column 0-3 from DATA without header
+# Values from column 0-3 from DATA without header
+# type: list[tuple]
 features = ...
 
-# list[str]: species name from column 4 from DATA without header
+# Species name from column 4 from DATA without header
+# type: list[str]
 labels = ...
 
-# dict[int,str]: lookup dict generated from species names
+# Lookup dict generated from species names
+# type: dict[int,str]
 label_encoder = ...
 
 # Solution

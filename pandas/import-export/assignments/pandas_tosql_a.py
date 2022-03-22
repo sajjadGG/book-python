@@ -51,7 +51,8 @@ DATA = 'https://python.astrotech.io/_static/apollo11.html'
 FILE = r'_temporary.sqlite3'
 
 
-# pd.DataFrame: dump DATA to FILE in SQLite3 format
+# Dump DATA to FILE in SQLite3 format
+# type: pd.DataFrame
 result = ...
 
 # Solution

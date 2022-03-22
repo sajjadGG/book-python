@@ -77,10 +77,12 @@ hPa = 100 * Pa
 ata = 1013.25 * hPa
 pO2 = O2 * ata
 
-# float: 11.3 Pascals per meter
+# 11.3 Pascals per meter
+# type: float
 gradient = ...
 
-# float: ata minus pO2 all that divided by gradient
+# ata minus pO2 all that divided by gradient
+# type: float
 altitude = ...
 
 # Solution

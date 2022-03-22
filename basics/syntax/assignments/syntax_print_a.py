@@ -33,7 +33,8 @@ Tests:
     True
 """
 
-# str: with Hello and World in separate lines
+# with Hello and World in separate lines
+# type: str
 result = ...
 
 # Solution

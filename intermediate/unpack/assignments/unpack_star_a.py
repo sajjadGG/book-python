@@ -39,10 +39,12 @@ Tests:
 
 DATA = ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
 
-# str: IP address
+# IP address
+# type: str
 ip = ...
 
-# list[str]: list of hostnames
+# list of hostnames
+# type: list[str]
 hosts = ...
 
 # Solution

@@ -100,7 +100,8 @@ diastolic = int(diastolic)
 # | Hypertension stage 2    | 140 or higher    | or       | 90 or higher      |
 # | Hypertensive Crisis     | Higher than 180  | and/or   | Higher than 120   |
 
-# str: one of the STATUS_*
+# One of the STATUS_*
+# type: str
 result = ...
 
 # Solution

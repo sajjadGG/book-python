@@ -60,19 +60,24 @@ Tests:
     'Variable `result_e` has invalid value, should be [1, 2.2, True, "a"]'
 """
 
-# list[int]: with elements: 1, 2, 3
+# With elements: 1, 2, 3
+# type: list[int]
 result_a = ...
 
-# list[float]: with elements: 1.1, 2.2, 3.3
+# With elements: 1.1, 2.2, 3.3
+# type: list[float]
 result_b = ...
 
-# list[str]: with elements: 'a', 'b', 'c'
+# With elements: 'a', 'b', 'c'
+# type: list[str]
 result_c = ...
 
-# list[bool]: with elements: True, False
+# With elements: True, False
+# type: list[bool]
 result_d = ...
 
-# list[int|float|bool|str]: with elements: 1, 2.2, True, 'a'
+# With elements: 1, 2.2, True, 'a'
+# type: list[int|float|bool|str]
 result_e = ...
 
 # Solution

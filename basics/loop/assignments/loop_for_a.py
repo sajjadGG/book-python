@@ -34,13 +34,16 @@ Tests:
 
 DATA = ['red', 'green', 'blue', 'red', 'green', 'red', 'blue']
 
-# int: number of 'red' elements in DATA
+# Number of 'red' elements in DATA
+# type: int
 red = ...
 
-# int: number of 'green' elements in DATA
+# Number of 'green' elements in DATA
+# type: int
 green = ...
 
-# int: number of 'blue' elements in DATA
+# Number of 'blue' elements in DATA
+# type: int
 blue = ...
 
 # Solution

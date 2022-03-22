@@ -49,7 +49,8 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ]
 
-# tuple[str]: header from `DATA` (row with index 0)
+# Header from `DATA` (row with index 0)
+# type: tuple[str]
 result = ...
 
 # Solution

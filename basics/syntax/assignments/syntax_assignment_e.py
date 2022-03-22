@@ -24,7 +24,8 @@ Tests:
     'Variable `result` has invalid value, should be None'
 """
 
-# NoneType: with value None
+# With value None
+# type: None
 result = ...
 
 

@@ -36,8 +36,9 @@ Tests:
     >>> assert {'Mark Watney', 'Melissa Lewis', 'Rick Martinez'} in result
 """
 
-# list[tuple|list|set]: with tuple 1, 2, 3 and list 1.1, 2.2, 3.3
+# With tuple 1, 2, 3 and list 1.1, 2.2, 3.3
 # and set 'Mark Watney', 'Melissa Lewis', 'Rick Martinez'
+# type: list[tuple|list|set]
 result = ...
 
 # Solution

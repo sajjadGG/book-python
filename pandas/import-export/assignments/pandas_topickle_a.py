@@ -56,7 +56,8 @@ import pandas as pd
 DATA = 'https://python.astrotech.io/_static/apollo11.html'
 FILE = r'_temporary.pkl'
 
-# pd.DataFrame: dump DATA to FILE in Pickle format
+# Dump DATA to FILE in Pickle format
+# type: pd.DataFrame
 result = ...
 
 # Solution

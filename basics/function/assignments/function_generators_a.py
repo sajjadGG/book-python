@@ -6,24 +6,30 @@
 * Time: 8 min
 
 English:
-    1. Use generator expression to create `numbers`
-    2. In generator use `range()` to get numbers from 1 to 33
-       (inclusive) divisible by 3
-    3. Use `filter()` to get odd numbers from `numbers`
-    4. Use `map()` to cube all numbers in `numbers`
-    5. Create `result: float` with arithmetic mean of `numbers`
+    1. Use generator expression to create `result`
+    2. Use `range()` to get numbers:
+       a. from 0 (inclusive)
+       b. to 10 (exclusive)
+    3. Use `filter()` to get odd numbers from `result`
+       (and assign to `result`)
+    4. Use `map()` to cube all numbers in `result`
+    5. Create `result: float` with arithmetic mean of `result`
     6. Do not use `lambda` expressions
-    7. Run doctests - all must succeed
+    7. Note, that all the time you are working on one data stream
+    8. Run doctests - all must succeed
 
 Polish:
-    1. Użyj wyrażenia generatorowego do stworzenia `numbers`
-    2. W generatorze użyj `range()` aby otrzymać liczby od 1 do 33
-       (włącznie) podzielne przez 3
-    3. Użyj `filter()` aby otrzymać liczby nieparzyste z `numbers`
-    4. Użyj `map()` aby podnieść wszystkie liczby w `numbers` do sześcianu
-    5. Stwórz `result: float` ze średnią arytmetyczną z `numbers`
+    1. Użyj wyrażenia generatorowego do stworzenia `result`
+    2. Użyj `range()` aby otrzymać liczby:
+       a. od 0 (włącznie)
+       b. do 10 (rozłącznie)
+    3. Użyj `filter()` aby otrzymać liczby nieparzyste z `result`
+       (i przypisz je do `result`)
+    4. Użyj `map()` aby podnieść wszystkie liczby w `result` do sześcianu
+    5. Stwórz `result: float` ze średnią arytmetyczną z `result`
     6. Nie używaj wyrażeń lambda
-    7. Uruchom doctesty - wszystkie muszą się powieść
+    7. Zwróć uwagę, że cały czas pracujesz na jednym strumieniu danych
+    8. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * type cast to `list()` to expand generator before calculating mean
@@ -42,11 +48,9 @@ Tests:
     >>> type(result) is float
     True
     >>> result
-    11502.0
+    245.0
 """
 
-
-# Solution
 def odd(x):
     return x % 2
 
@@ -55,13 +59,17 @@ def cube(x):
     return x ** 3
 
 
-# float: generator expr with numbers from 1 to 33 (inclusive) divisible by 3
-#        filter out even numbers (leave even); cube result; calculate mean
-result: float
+# Generator expr with numbers from 1 to 10 (exclusive)
+# Filter odd numbers
+# Cube result
+# Calculate mean
+# type: float
+result = ...
 
 
-numbers = (x for x in range(1, 34) if x % 3 == 0)
-numbers = filter(odd, numbers)
-numbers = map(cube, numbers)
-numbers = list(numbers)
-result = sum(numbers) / len(numbers)
+# Solution
+result = range(0, 10)
+result = filter(odd, result)
+result = map(cube, result)
+result = list(result)
+result = sum(result) / len(result)

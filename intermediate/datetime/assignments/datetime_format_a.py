@@ -27,7 +27,8 @@ from datetime import datetime
 
 DATA = datetime(1969, 7, 21, 2, 56, 15)
 
-# str: DATA in long US format: 'July 21, 1969 02:56:15 AM'
+# DATA in long US format: 'July 21, 1969 02:56:15 AM'
+# type: str
 result = ...
 
 # Solution

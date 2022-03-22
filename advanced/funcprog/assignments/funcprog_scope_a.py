@@ -55,7 +55,8 @@ DATA = [
 ]
 
 
-# Callable: sums features, when label is in SELECT, else return 0 (zero)
+# Sums features, when label is in SELECT, else return 0 (zero)
+# type: Callable
 def sumif():
     ...
 

@@ -62,9 +62,10 @@ DATA = [
     Astronaut('Melissa', 'Lewis')]
 
 
-# list[dict]: Convert DATA.
-#             Use `,` to separate fields.
-#             Use `;` to separate columns.
+# Convert DATA
+# Use `,` to separate fields
+# Use `;` to separate columns
+# type: list[dict]
 result = ...
 
 

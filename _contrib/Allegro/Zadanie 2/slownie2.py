@@ -1,16 +1,15 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """
-    Mateusz Harasymczuk
-    http://www.matt.harasymczuk.pl
-    matt@harasymczuk.pl
-    
-    Napisz funkcję, która będzie konwertować liczbę na odpowiadającą
-    jej postać słowną. Przyjmij za ograniczenia liczby mniejsze
-    od miliarda i do dwóch miejsc po przecinku.
-    
-    Przykład Ciąg: Słownie:    1. 1234,56 tysiąc dwieście trzydzieści cztery i pięćdziesiąt sześć setnych    2. 900099000,9 dziewięćset milionów dziewięćdziesiąt dziewięć tysięcy i dziewięć dziesiątych
+Mateusz Harasymczuk
+http://www.matt.harasymczuk.pl
+matt@harasymczuk.pl
+
+Napisz funkcję, która będzie konwertować liczbę na odpowiadającą
+jej postać słowną. Przyjmij za ograniczenia liczby mniejsze
+od miliarda i do dwóch miejsc po przecinku.
+
+Przykład Ciąg: Słownie:
+1. 1234,56 tysiąc dwieście trzydzieści cztery i pięćdziesiąt sześć setnych
+2. 900099000,9 dziewięćset milionów dziewięćdziesiąt dziewięć tysięcy i dziewięć dziesiątych
 """
 
 # config
@@ -32,29 +31,29 @@ def boundaries(num):
     """check if it fits withing boundaries"""
     num = float(num)
     num = round(num, DECIMAL_PLACES)
-    
+
     if num > MAX:
         raise OverflowError
-        
+
     return num
 
 
 def triple2words(num, lsd):
     """ converts number triple to words
-    
+
     num = number to parse
     lsd = least significant digit, not psychedelic drug :}
     it is used to determine in which list we should search in order to get
     proper word
     """
-    
+
     if len(integer) >= 6:
         mega = int(integer[0:3])
         if mega == 1:
             output += "%s " % MORE_SINGULAR[2]
         else:
             output += "%s "% triple(mega)
-    
+
     if len(integer) >= 3:
         kilo = int(integer[3:6])
         if kilo == 1:
@@ -75,7 +74,7 @@ def decimal2words(decimal):
         return "i %s %s" % (UNITS[deci], DECIMAL[1])
     else:
         pass
-        
+
     print output
 
 
@@ -85,29 +84,29 @@ def words(num):
     following names are SI (International System of Units) prefixes
     http://en.wikipedia.org/wiki/SI_prefix#List_of_SI_prefixes
     """
-    
+
     logging.info("number to convert %s" % num)
     output = u""
-    
+
     num = str(num)
     integer = num.split(".")[0]
     decimal = num.split(".")[1]
-    
+
     mega = int(integer[0:3])
     kilo = int(integer[3:6])
     hecto = int(integer[:3])
-    
+
     output += triple2wods(mega, lvl=6)
     output += triple2wods(kilo, lvl=3)
     output += triple2wods(hecto, lvl=1)
     output += decimal2words(decimal)
-    
+
     return output
-    
-    
+
+
     import sys
     sys.exit()
-    
+
     """
     mega = int(num // 10**6)
     kilo = int(num // 10**3) % 10
@@ -131,9 +130,9 @@ def words(num):
     logging.debug("unit: %s" % unit)
     logging.debug("deci: %s" % deci)
     logging.debug("centi: %s" % centi)
-    """    
-    
-    
+    """
+
+
 if __name__ == "__main__":
     #num = raw_input("Type num: ")
     num = 900099000.96

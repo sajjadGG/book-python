@@ -60,19 +60,24 @@ Tests:
     'Variable `result_e` has invalid value, should be (1, 2.2, True, "a")'
 """
 
-# tuple[int]: with elements: 1, 2, 3
+# with elements: 1, 2, 3
+# type: tuple[int]
 result_a = ...
 
-# tuple[float]: with elements: 1.1, 2.2, 3.3
+# with elements: 1.1, 2.2, 3.3
+# type: tuple[float]
 result_b = ...
 
-# tuple[str]: with elements: 'a', 'b', 'c'
+# with elements: 'a', 'b', 'c'
+# type: tuple[str]
 result_c = ...
 
-# tuple[bool]: with elements: True, False, True
+# with elements: True, False, True
+# type: tuple[bool]
 result_d = ...
 
-# tuple[int|float|bool|str]: with elements: 1, 2.2, True, 'a'
+# With elements: 1, 2.2, True, 'a'
+# type: tuple[int|float|bool|str]
 result_e = ...
 
 # Solution

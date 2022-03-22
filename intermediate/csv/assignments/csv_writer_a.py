@@ -60,7 +60,8 @@ DATA = [
 FILE = r'_temporary.csv'
 
 
-# ContextManager: Write DATA to FILE, generate header from DATA
+# Write DATA to FILE, generate header from DATA
+# type: ContextManager
 with open(FILE, mode='w') as file:
     ...
 

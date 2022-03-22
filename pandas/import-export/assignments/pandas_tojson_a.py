@@ -53,7 +53,8 @@ import pandas as pd
 DATA = 'https://python.astrotech.io/_static/apollo11.html'
 FILE = r'_temporary.json'
 
-# pd.DataFrame: dump DATA to FILE in JSON format
+# Dump DATA to FILE in JSON format
+# type: pd.DataFrame
 result = ...
 
 

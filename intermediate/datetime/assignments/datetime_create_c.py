@@ -38,13 +38,16 @@ Tests:
 from datetime import date, datetime, time
 
 
-# datetime: representing current moment
+# representing current moment
+# type: datetime
 dt = ...
 
-# date: representing current moment
+# representing current moment
+# type: date
 d = ...
 
-# time: representing current moment
+# representing current moment
+# type: time
 t = ...
 
 # Solution

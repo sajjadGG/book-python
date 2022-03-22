@@ -33,7 +33,8 @@ Tests:
 
 DATA = ['h', 'e', 'l', 'l', 'o']
 
-# str: joined DATA values
+# Joined DATA values
+# type: str
 result = ...
 
 # Solution

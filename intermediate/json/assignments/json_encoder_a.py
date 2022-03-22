@@ -64,7 +64,8 @@ class Encoder:
     ...
 
 
-# str: JSON encoded DATA
+# JSON encoded DATA
+# type: str
 result = ...
 
 

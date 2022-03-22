@@ -37,7 +37,8 @@ DATA = {'Sepal length': 5.8,
         'Petal length': 5.1,
         'Petal width': 1.9}
 
-# list[tuple]: with key-value pairs from DATA
+# With key-value pairs from DATA
+# type: list[tuple]
 result = ...
 
 # Solution

@@ -54,10 +54,12 @@ seed(0)
 ROWS = range(16)
 COLS = range(16)
 
-# list[list[int]]: generated 16x16 random digits (0-9 inclusive)
+# generated 16x16 random digits (0-9 inclusive)
+# type: list[list[int]]
 matrix: list
 
-# int: sum of inner 4x4 elements
+# sum of inner 4x4 elements
+# type: int
 result: int
 
 # Solution

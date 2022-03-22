@@ -51,13 +51,16 @@ Tests:
 from datetime import date, datetime, time
 
 
-# datetime: representing April 12th, 1961 6:07 a.m.
+# representing April 12th, 1961 6:07 a.m.
+# type: datetime
 dt = ...
 
-# date: representing April 12th, 1961 6:07 a.m.
+# representing April 12th, 1961 6:07 a.m.
+# type: date
 d = ...
 
-# time: representing April 12th, 1961 6:07 a.m.
+# representing April 12th, 1961 6:07 a.m.
+# type: time
 t = ...
 
 # Solution

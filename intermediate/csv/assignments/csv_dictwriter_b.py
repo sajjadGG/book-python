@@ -63,7 +63,8 @@ DATA = [{'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
 FILE = r'_temporary.csv'
 
 
-# ContextManager: Write DATA to FILE, generate header from DATA
+# Write DATA to FILE, generate header from DATA
+# type: ContextManager
 with open(FILE, mode='w', encoding='utf-8') as file:
     ...
 

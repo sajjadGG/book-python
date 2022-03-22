@@ -53,7 +53,8 @@ DATA = """sepal_length,sepal_width,petal_length,petal_width,species
 with open(FILE, mode='w') as file:
     file.write(DATA)
 
-# list[tuple]: data from file (note the list[tuple] format!)
+# data from file (note the list[tuple] format!)
+# type: list[tuple]
 result = ...
 
 

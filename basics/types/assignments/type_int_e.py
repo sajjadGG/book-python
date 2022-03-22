@@ -72,22 +72,28 @@ MINUTE = 60 * SECOND
 HOUR = 60 * MINUTE
 DAY = 24 * HOUR
 
-# int: 1 day in seconds
+# 1 day in seconds
+# type: int
 day = ...
 
-# int: 7 days in minutes
+# 7 days in minutes
+# type: int
 week = ...
 
-# int: 31 days in hours
+# 31 days in hours
+# type: int
 month = ...
 
-# int: 8 hours in seconds
+# 8 hours in seconds
+# type: int
 workday = ...
 
-# int: 5 workdays in minutes
+# 5 workdays in minutes
+# type: int
 workweek = ...
 
-# int: 22 workdays in hours
+# 22 workdays in hours
+# type: int
 workmonth = ...
 
 # Solution

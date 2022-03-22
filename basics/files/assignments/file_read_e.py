@@ -48,7 +48,7 @@ Tests:
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     {'127.0.0.1': ['localhost'],
-     '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
+     '10.13.37.1': ['nasa.gov', 'esa.int'],
      '255.255.255.255': ['broadcasthost'],
      '::1': ['localhost']}
 """
@@ -63,7 +63,7 @@ DATA = """
  ##
 
 127.0.0.1       localhost
-10.13.37.1      nasa.gov esa.int roscosmos.ru
+10.13.37.1      nasa.gov esa.int
 255.255.255.255 broadcasthost
 ::1             localhost
 """
@@ -72,7 +72,8 @@ with open(FILE, mode='w') as file:
     file.write(DATA)
 
 
-# dict[str,list[str]]: example {'10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'], ...}
+# Example {'10.13.37.1': ['nasa.gov', 'esa.int'], ...}
+# type: dict[str,list[str]]
 result = {}
 
 with open(FILE) as file:

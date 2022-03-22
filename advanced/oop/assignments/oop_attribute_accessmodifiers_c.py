@@ -69,13 +69,16 @@ class Iris:
 DATA = Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
 
 
-# dict[str,float|str]: all public attributes and their values
+# All public attributes and their values
+# type: dict[str,float|str]
 public = ...
 
-# dict[str,float|str]: all protected attributes and their values
+# All protected attributes and their values
+# type: dict[str,float|str]
 protected = ...
 
-# dict[str,float|str]: all private attributes and their values
+# All private attributes and their values
+# type: dict[str,float|str]
 private = ...
 
 # Solution

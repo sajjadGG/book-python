@@ -47,10 +47,12 @@ ARMSTRONG_BIRTHDAY = date(1930, 8, 5)
 ARMSTRONG_STEP = datetime(1969, 7, 21, 2, 56, 15)
 
 
-# int: Gagarin's age when he was launched to space
+# Gagarin's age when he was launched to space
+# type: int
 gagarin_age = ...
 
-# int: Armstrong's age when he made a first step on the Moon
+# Armstrong's age when he made a first step on the Moon
+# type: int
 armstrong_age = ...
 
 

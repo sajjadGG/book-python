@@ -49,7 +49,8 @@ class Stats:
 
 stats = Stats()
 
-# list[float]: apply `mean()` to each feature
+# Apply `mean()` to each feature
+# type: list[float]
 result = ...
 
 # Solution

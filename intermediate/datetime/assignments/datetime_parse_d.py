@@ -42,7 +42,8 @@ DATA = [
     'July 21, 1969 2:56:15',  # Armstrong first step on the Moon
 ]
 
-# list[datetime]: DATA elements in datetime format
+# DATA elements in datetime format
+# type: list[datetime]
 result = ...
 
 # Solution

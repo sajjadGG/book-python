@@ -38,7 +38,8 @@ DATA = 'hello'
 with open(FILE, mode='wt') as file:
     file.write(DATA)
 
-# str: FILE content
+# Define `result` with FILE content
+# type: str
 result = ...
 
 # Solution

@@ -47,7 +47,8 @@ DATA = {
     1: ['Kindergarten'],
 }
 
-# dict[str,str]: converted DATA. Note values are str not int!
+# Converted DATA. Note values are str not int!
+# type: dict[str,str]
 result = ...
 
 # Solution

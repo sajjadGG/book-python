@@ -40,7 +40,8 @@ import pandas as pd
 DATA = 'https://python.astrotech.io/_static/martian-en.csv'
 
 
-# pd.DataFrame: read DATA and parse dates in "Mission Date" column
+# Read DATA and parse dates in "Mission Date" column
+# type: pd.DataFrame
 result = ...
 
 

@@ -51,10 +51,12 @@ from pathlib import Path
 
 FILENAME = 'myfile.txt'
 
-# Path: Absolute path to FILENAME
+# Absolute path to FILENAME
+# type: Path
 abspath = ...
 
-# str: file, directory or missing
+# File, directory or missing
+# type: str
 result = ...
 
 # Solution

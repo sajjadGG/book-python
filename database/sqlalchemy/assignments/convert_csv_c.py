@@ -47,7 +47,8 @@ DATA = """3,4,setosa,virginica,versicolor
 5.1,3.5,1.4,0.2,0
 5.7,2.8,4.1,1.3,2"""
 
-# list[tuple]: data from file (note the list[tuple] format!)
+# data from file (note the list[tuple] format!)
+# type: list[tuple]
 result = ...
 
 # Solution

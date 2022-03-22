@@ -64,16 +64,20 @@ Tests:
 m = 1
 km = 1000 * m
 
-# int: 19 kilometers in meters
+# 19 kilometers in meters
+# type: int
 armstrong_limit = ...
 
-# int: 20 kilometers in meters
+# 20 kilometers in meters
+# type: int
 stratosphere = ...
 
-# int: 80 kilometers in meters
+# 80 kilometers in meters
+# type: int
 usaf_space = ...
 
-# int: 100 kilometers in meters
+# 100 kilometers in meters
+# type: int
 iaf_space = ...
 
 # Solution

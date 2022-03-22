@@ -1,22 +1,26 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 """
     Mateusz Harasymczuk
     http://www.matt.harasymczuk.pl
     matt@harasymczuk.pl
-    
-    
+
+
     Napisz dwuargumentową funkcję, w której pierwszym parametrem będzie ciąg (string),
-    a drugim wartość przesunięcia, a zwracać będzie ciąg zaszyfrowany tzw. szyfrem Cezara.    Szyfr Cezara jest szyfrem przesuwającym, w którym każda litera tekstu szyfrowanego
+    a drugim wartość przesunięcia, a zwracać będzie ciąg zaszyfrowany tzw. szyfrem Cezara.
+    Szyfr Cezara jest szyfrem przesuwającym, w którym każda litera tekstu szyfrowanego
     zastępowana jest inną literą oddaloną od niej o stałą liczbę pozycji w alfabecie,
-    przy czym kierunek zamiany musi być zachowany.    
-    Przykład 1 (przesunięcie o 3)    Alfabet: AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ
-    Szyfr: CĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻAĄB    
-    Przykład 2 (przesuniecie o 3)    Tekst jawny: MĘŻNY BĄDŹ, CHROŃ PUŁK TWÓJ I SZEŚĆ FLAG
+    przy czym kierunek zamiany musi być zachowany.
+
+    Przykład 1 (przesunięcie o 3)
+    Alfabet: AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ
+    Szyfr: CĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻAĄB
+
+    Przykład 2 (przesuniecie o 3)
+    Tekst jawny: MĘŻNY BĄDŹ, CHROŃ PUŁK TWÓJ I SZEŚĆ FLAG
     Zaszyfrowany: OHBÓŻ DĆFĄ, EKTRP ŚZŃM YŹSŁ L UAGWĘ INCJ
-    
-    
+
+
     UWAGA:
         program dziala zgodnie z przykladami,
         tzn. uwzgledania polskie litery
@@ -36,22 +40,22 @@ ALPHABET = u'AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ'
 
 def encode(plaintext, shift):
     """encode plaintext message using Cesar's Cypher with given shift"""
-    
+
     length = len(ALPHABET)
     output = u''
     temp = {}
-    
+
     # generate temporary
     # substitution dict
-    for i in range(0, length):  
-        temp[ ALPHABET[i] ] = ALPHABET[(i + shift) % length]  
-    
+    for i in range(0, length):
+        temp[ ALPHABET[i] ] = ALPHABET[(i + shift) % length]
+
     # do the conversion
-    for char in plaintext:  
-        if char in temp:  
-            char = temp[char]  
-        output += char  
-  
+    for char in plaintext:
+        if char in temp:
+            char = temp[char]
+        output += char
+
     return output
 
 

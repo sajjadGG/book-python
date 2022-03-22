@@ -119,7 +119,7 @@ def typecheck(func):
 
 
 # Refactor typecheck into class
-# type: Type[TypeCheck]
+# type: Type
 class TypeCheck:
     ...
 

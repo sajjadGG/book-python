@@ -61,10 +61,12 @@ DATA = [
     (4.9, 2.5, 4.5, 1.7, 'virginica')]
 
 
-# tuple[str]: with row at index 0 from DATA
+# With row at index 0 from DATA
+# type: tuple[str]
 header = ...
 
-# list[tuple]: with rows at all the other indexes from DATA
+# With rows at all the other indexes from DATA
+# type: list[tuple]
 data = ...
 
 # Solution

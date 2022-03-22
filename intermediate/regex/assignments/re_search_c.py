@@ -53,10 +53,12 @@ TEXT = ("Apollo 11 was the spaceflight that first landed humans on the Moon. "
         "Columbia in lunar orbit.")
 
 
-# str: Pattern for searching time with timezone in 24 format, i.e. '23:59 UTC'
+# Pattern for searching time with timezone in 24 format, i.e. '23:59 UTC'
+# type: str
 pattern = ...
 
-# re.Match: use re.search() to find pattern in TEXT, get result text
+# use re.search() to find pattern in TEXT, get result text
+# type: re.Match
 result = ...
 
 

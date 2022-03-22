@@ -39,10 +39,12 @@ Tests:
 
 DATA = '10.13.37.1 nasa.gov'
 
-# str: first string: 10.13.37.1
+# first string: 10.13.37.1
+# type: str
 ip = ...
 
-# list[str]: second string: nasa.gov
+# second string: nasa.gov
+# type: list[str]
 host = ...
 
 # Solution

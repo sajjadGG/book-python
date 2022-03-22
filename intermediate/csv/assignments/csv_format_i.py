@@ -58,7 +58,8 @@ DATA = [
     {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
 ]
 
-# str: header has unique keys from DATA, row values match header columns
+# header has unique keys from DATA, row values match header columns
+# type: str
 result = ...
 
 # Solution

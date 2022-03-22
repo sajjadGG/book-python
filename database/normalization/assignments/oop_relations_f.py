@@ -106,7 +106,8 @@ DATA = """[
         {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
 ]"""
 
-# list[dict]: flatten data, each address field prefixed with address and number
+# flatten data, each address field prefixed with address and number
+# type: list[dict]
 result = ...
 
 

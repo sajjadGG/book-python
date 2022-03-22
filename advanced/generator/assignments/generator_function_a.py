@@ -52,12 +52,14 @@ lewis:x:1001:1001:Melissa Lewis:/home/lewis:/bin/bash
 martinez:x:1002:1002:Rick Martinez:/home/martinez:/bin/bash"""
 
 
-# Callable: list[str] with usernames when UID [third field] is less than 1000
+# list[str] with usernames when UID [third field] is less than 1000
+# type: Callable
 def function(data: str):
     ...
 
 
-# Generator: list[str] with usernames when UID [third field] is less than 1000
+# list[str] with usernames when UID [third field] is less than 1000
+# type: Generator
 def generator(data: str):
     ...
 
@@ -78,7 +80,7 @@ def generator(data):
         if int(uid) < 1000:
             yield username
 
-
+# Alternative Solution
 # def comprehension(data: str):
 #     return [username
 #             for row in data.splitlines()
