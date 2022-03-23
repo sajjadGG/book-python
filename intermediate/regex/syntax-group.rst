@@ -395,3 +395,15 @@ Use Case - 0x06
 >>>
 >>> re.sub(search, replace, HTML)
 '<strong>Hello World</strong>'
+
+
+Use Case - 0x07
+---------------
+>>> import re
+>>>
+>>>
+>>> HTML = '<p>Hello World</p>'
+>>> tag = re.findall('<(?P<tag>.+)>(?:.+)</(?P=tag)>', HTML)
+>>>
+>>> tag
+['p']
