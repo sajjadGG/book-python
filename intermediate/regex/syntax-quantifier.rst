@@ -1,6 +1,9 @@
 Syntax Quantifier
 =================
 * Quantifier specifies how many occurrences of preceding qualifier or identifier
+* Exact
+* Greedy
+* Lazy
 
 >>> import re
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
@@ -16,7 +19,6 @@ Syntax Quantifier
 Exact
 -----
 * Exact match
-
 * ``{n}`` - exactly `n` repetitions, prefer longer
 
 >>> import re
@@ -35,7 +37,6 @@ Greedy
 ------
 * Prefer longest matches
 * Default behavior
-
 * ``{,n}`` - maximum `n` repetitions, prefer longer
 * ``{n,}`` - minimum `n` repetitions, prefer longer
 * ``{n,m}`` - minimum `n` repetitions, maximum `m` times, prefer longer
@@ -56,7 +57,6 @@ Lazy
 ----
 * Prefer shortest matches
 * Non-greedy
-
 * ``{,n}?`` - maximum `n` repetitions, prefer shorter
 * ``{n,}?`` - minimum `n` repetitions, prefer shorter
 * ``{n,m}?`` - minimum `n` repetitions, maximum `m` times, prefer shorter

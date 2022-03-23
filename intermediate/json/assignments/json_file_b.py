@@ -64,7 +64,8 @@ DATA = """[{"Sepal length": 5.8, "Sepal width": 2.7, "Petal length": 5.1, "Petal
 with open(FILE, mode='w') as file:
     file.write(DATA)
 
-result: list = []
+# type: list[tuple]
+result = ...
 
 # Solution
 with open(FILE) as file:

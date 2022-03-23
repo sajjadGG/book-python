@@ -34,6 +34,9 @@ Syntax
 * Look Ahead and Look Behind
 * Flags
 * Extensions
+* ``[]`` - Qualifier
+* ``{}`` - Quantifier
+* ``()`` - Groups
 
 
 Escape characters

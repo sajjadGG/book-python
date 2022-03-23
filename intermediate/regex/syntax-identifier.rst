@@ -27,6 +27,10 @@ String
 ------
 * ``\w`` - any unicode alphabet character (lower or upper, also with diacritics (i.e. ąćęłńóśżź...), numbers and underscores
 * ``\W`` - anything but any unicode alphabet character (i.e. whitespace, dots, comas, dashes)
+* lowercase letters including diacritics (i.e. ąćęłńóśżź...) and accents
+* uppercase letters including diacritics (i.e. ąćęłńóśżź...) and accents
+* digits
+* underscores ``_``
 
 Valid characters are the same as allowed in variable/modules names in Python:
 

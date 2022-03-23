@@ -1,26 +1,29 @@
-JSON Format
-===========
+JSON About
+==========
 * JavaScript Object Notation
 * JSON format is similar to ``dict`` notation in Python
+* Fields are enclosed only by double quote ``"`` character
+* Instead of ``True`` there is ``true`` (lowercase)
+* Instead of ``False`` there is ``false`` (lowercase)
+* Instead of ``None`` there is ``null``
+* ``list`` is known as ``array`` (despite the same syntax)
+* ``dict`` is known as ``object`` (despite the same syntax)
+* There is no ``tuple`` or ``set``
+* Coma ``,`` is not allowed after the last element in list or object
+* ``camelCase`` is convention, although ``snake_case`` is also valid
+* Unicode characters are stored as unicode entities (``"cze\\u015b\\u0107"``)
 
-Differences:
-
-    * Coma ``,`` is not allowed after the last element in list or object
-    * Fields are enclosed only by double quote ``"`` character
-    * ``True`` and ``False`` is always lower-cased (``true``, ``false``)
-    * Instead of ``None`` there is ``null``
-    * In JSON there is not ``tuple``, it will be converted to ``list``
-    * ``camelCase`` is convention, although ``snake_case`` is also valid
-
-Example 2:
+Python ``dict``:
 
 .. code-block:: python
 
-    {"name": "Mark Watney", "age": 42, "is_astronaut": True, "died": None}
+    {"name": "Mark Watney", "age": 42, "is_astronaut": True, "friends": None}
+
+JSON ``object``:
 
 .. code-block:: json
 
-    {"name": "Mark Watney", "age": 42, "is_astronaut": true, "died": null}
+    {"name": "Mark Watney", "age": 42, "is_astronaut": true, "friends": null}
 
 
 JSON or Python?

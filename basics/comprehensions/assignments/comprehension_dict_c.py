@@ -43,7 +43,7 @@ DATA = {
     1: 'setosa',
     2: 'versicolor'}
 
-# dict[str,int]:
+# type: dict[str,int]:
 result = ...
 
 # Solution

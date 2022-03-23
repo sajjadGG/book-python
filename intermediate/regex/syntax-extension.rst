@@ -13,13 +13,11 @@ Named Ranges
 * ``[:blank:]`` - Space or tab
 * ``[:cntrl:]`` - Control character
 * ``[:digit:]`` - Digit
-* ``[:graph:]`` - Non-blank character (excludes spaces, control characters,
-                  and similar)
+* ``[:graph:]`` - Non-blank character (excludes spaces, control characters, and similar)
 * ``[:lower:]`` - Lowercase alphabetical character
 * ``[:print:]`` - Like [:graph:], but includes the space character
 * ``[:punct:]`` - Punctuation character
-* ``[:space:]`` - Whitespace character (``[:blank:]``, newline, carriage
-                  return, etc.)
+* ``[:space:]`` - Whitespace character (``[:blank:]``, newline, carriage return, etc.)
 * ``[:upper:]`` - Uppercase alphabetical
 * ``[:xdigit:]`` - Digit allowed in a hexadecimal number (i.e., 0-9a-fA-F)
 * ``[:word:]`` - A character in one of the following Unicode general categories Letter, Mark, Number, Connector_Punctuation
@@ -62,3 +60,6 @@ re.error: bad character range a-9 at position 1
 Group Backreference
 -------------------
 * ``$1`` == ``\1``
+
+
+re.findall('<(?P<tag>.+)>(?:.+)</(?P=tag)>', HTML)

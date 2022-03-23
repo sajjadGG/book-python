@@ -8,6 +8,26 @@ Syntax Flag
 * ``re.UNICODE``
 * ``re.VERBOSE``
 
+The final piece of regex syntax that Python's regular expression engine offers
+is a means of setting the flags. Usually the flags are set by passing them as
+additional parameters when calling the re.compile() function, but sometimes
+it's more convenient to set them as part of the regex itself. The syntax is
+simply (?flags) where flags is one or more of the following:
+
+* ``re.ASCII``
+* ``re.IGNORECASE``
+* ``re.LOCALE``
+* ``re.MULTILINE``
+* ``re.DOTALL``
+* ``re.UNICODE``
+* ``re.VERBOSE``
+
+If the flags are set this way, they should be put at the start of the regex;
+they match nothing, so their effect on the regex is only to set the flags.
+The letters used for the flags are the same as the ones used by Perl's regex
+engine, which is why s is used for re.DOTALL and x is used for re.VERBOSE
+[#Summerfield2008]_.
+
 
 ASCII
 -----
@@ -130,24 +150,15 @@ VERBOSE
 -------
 * Short: ``x``
 * Long: ``re.VERBOSE``
+* Ignores spaces (except ``\s``) and allows for comments in in ``re.compile()``
 
-ignores spaces (except ``\s``) and allows for comments in in ``re.compile()``
+>>> x = re.compile(r"\d+\.\d*")
 
->>> import re
->>>
->>> a = re.compile(r"""\d +  # the integral part
-...                    \.    # the decimal point
-...                    \d *  # some fractional digits""", re.VERBOSE)
->>>
->>> b = re.compile(r"\d+\.\d*")
+>>> x = re.compile(r"\d(?#integral part)+\.(?#separator)\d*(?#fractional part)")
 
-The final piece of regex syntax that Python's regular expression engine offers is a means of setting the flags. Usually the flags are set by passing them as additional parameters when calling the re.compile() function, but sometimes it's more convenient to set them as part of the regex itself. The syntax is simply (?flags) where flags is one or more of the following:
-
-If the flags are set this way, they should be put at the start of the regex; they match nothing, so their effect on the regex is only to set the flags.
-
-The letters used for the flags are the same as the ones used by Perl's regex engine, which is why s is used for re.DOTALL and x is used for re.VERBOSE.
-
-Source: [#Summerfield2008]_
+>>> x = re.compile(r"""\d +  # integral part
+...                    \.    # separator
+...                    \d *  # fractional part""", re.VERBOSE)
 
 
 DEBUG

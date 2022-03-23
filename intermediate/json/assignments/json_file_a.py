@@ -9,7 +9,7 @@ English:
     2. Create `result: list[dict]`
         a. key - name from the header
         b. value - measurement or species
-    3. Dump `DATA` to file `FILE` in JSON format
+    3. Dump `result` to file `FILE` in JSON format
     4. Run doctests - all must succeed
 
 Polish:
@@ -17,7 +17,7 @@ Polish:
     2. Wygeneruj `result: list[dict]`
         a. klucz - nazwa z nagłówka
         b. wartość - wyniki pomiarów lub gatunek
-    3. Zrzuć `DATA` do pliku `FILE` w formacie JSON
+    3. Zrzuć `result` do pliku `FILE` w formacie JSON
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -67,7 +67,7 @@ DATA = [
 
 # Solution
 header, *data = DATA
-data = [dict(zip(header, row)) for row in data]
+result = [dict(zip(header, row)) for row in data]
 
 with open(FILE, mode='w') as file:
-    json.dump(data, file)
+    json.dump(result, file)

@@ -60,7 +60,6 @@ result = ...
 
 
 # Solution
-header, *data = DATA
-data = [dict(zip(header, row)) for row in data]
-
+header, *rows = DATA
+data = [dict(zip(header, row)) for row in rows]
 result = json.dumps(data)

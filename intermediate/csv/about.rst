@@ -1,5 +1,5 @@
-CSV Format
-==========
+CSV About
+=========
 * CSV - Comma/Character Separated Values
 * No CSV formal standard, just a good practice
 * Flat file (2D) without relations

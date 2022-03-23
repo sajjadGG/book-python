@@ -23,7 +23,6 @@ Lazy - as few as possible:
     * ``+?`` - one or more (lazy)
 
 
-
 Example
 -------
 Usage of greedy and non-greedy search in ``re.findall()``:

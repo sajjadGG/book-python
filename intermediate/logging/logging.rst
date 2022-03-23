@@ -91,6 +91,27 @@ exists for other levels too.
 >>> logging.info('Information, inform about something')
 >>> logging.debug('Debug, show detailed debugging information')
 
+For example, if we have files:
+
+>>> TEMPERATURE_DATA_FILES = [
+...     '2000-01-01.csv',
+...     '2000-01-02.csv',
+...     '2000-01-03.csv',
+...     '2000-01-04.csv',
+...     '2000-01-05.csv',  # corrupted
+...     '2000-01-06.csv',
+...     '2000-01-07.csv',
+...     # ...
+...     '2000-01-30.csv',
+...     '2000-01-31.csv',
+... ]
+
+>>> def mean_temperature_for_jan05():
+...     logging.critical('File "2000-01-05.csv" is corrupted')
+
+>>> def mean_temperature_for_month():
+...     logging.error('File "2000-01-05.csv" is corrupted')
+
 
 Redirect to File
 ----------------

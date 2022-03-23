@@ -9,6 +9,8 @@ Syntax Qualifier
 
 Exact
 -----
+* ``a`` - Exact
+
 >>> import re
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
 
@@ -118,28 +120,13 @@ Use Cases:
 ['u', 'i', 'a', 'a', 'i', 'a', 'u', 'e', 'o', 'a', 'e', 'o', 'a', 'a']
 
 
-Enumeration Alternate
----------------------
->>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
-
-Alternative enumerations syntax is as follows:
-
->>> re.findall('[abc]|[123]', TEXT)
-['a', 'a', 'a', 'c', 'a', 'c', '1', '2', '1', '1', 'a', 'a']
-
-The effect is identical to:
-
->>> re.findall('[abc123]', TEXT)
-['a', 'a', 'a', 'c', 'a', 'c', '1', '2', '1', '1', 'a', 'a']
-
-
 Range
 -----
 * ``[a-z]`` - any lowercase ASCII letter from `a` to `z`
 * ``[A-Z]`` - any uppercase ASCII letter from `A` to `Z`
 * ``[0-9]`` - any digit from `0` to `9`
 * ``[a-zA-Z]`` - any ASCII letter from: `a` to `z` or from `A` to `Z`
+* ``[A-z]`` - any ASCII letter from: `a` to `z` or from `A` to `Z`
 * ``[a-zA-Z0-9]`` - any ASCII letter from `a` to `z` or from `A` to `Z` or digit from `0` to `9`
 
 >>> import re
@@ -204,12 +191,23 @@ alphabetic or numeric range:
 ['Y', 'G', '6', '6', '7']
 
 
-Range Alternate
----------------
-* ``[a-z]|[0-9]`` - any lowercase ASCII letter from `a` to `z` or digit from `0` to `9`
+Joining
+-------
+* ``[abc]|[123]`` - Enumeration alternative - letter `a`, `b` or `c` or digit `1`, `2` `3`
+* ``[a-z]|[0-9]`` - Range alternative - any lowercase ASCII letter from `a` to `z` or digit from `0` to `9`
 
 >>> import re
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+
+Alternative enumerations syntax is as follows:
+
+>>> re.findall('[abc]|[123]', TEXT)
+['a', 'a', 'a', 'c', 'a', 'c', '1', '2', '1', '1', 'a', 'a']
+
+The effect is identical to:
+
+>>> re.findall('[abc123]', TEXT)
+['a', 'a', 'a', 'c', 'a', 'c', '1', '2', '1', '1', 'a', 'a']
 
 You can define alternative ranges to find:
 

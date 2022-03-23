@@ -189,6 +189,11 @@ Use Case - 0x05
 ['Mark Watney', 'Melissa Lewis']
 
 
+Further Reading
+---------------
+* https://youtu.be/eis11j_iGMs
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/funcprog_lambda_a.py

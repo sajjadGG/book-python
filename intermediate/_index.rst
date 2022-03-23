@@ -74,7 +74,7 @@ CSV
     :maxdepth: 1
     :caption: CSV
 
-    csv/format.rst
+    csv/about.rst
     csv/reader.rst
     csv/writer.rst
     csv/dictreader.rst
@@ -88,7 +88,7 @@ JSON
     :maxdepth: 1
     :caption: Serialization
 
-    json/format.rst
+    json/about.rst
     json/string.rst
     json/file.rst
     json/encoder.rst
