@@ -1,8 +1,8 @@
 """
 * Assignment: Math Statistics Stats
 * Complexity: easy
-* Lines of code: 30 lines
-* Time: 21 min
+* Lines of code: 11 lines
+* Time: 13 min
 
 English:
     1. For columns:

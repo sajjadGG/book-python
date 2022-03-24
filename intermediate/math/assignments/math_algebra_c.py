@@ -25,7 +25,7 @@ Tests:
     >>> B = [[4, 1],
     ...      [2, 2]]
     >>>
-    >>> matmul(A, B)
+    >>> result(A, B)
     [[4, 1], [2, 2]]
 
     >>> A = [[1,0,1,0],
@@ -38,17 +38,18 @@ Tests:
     ...      [5,1],
     ...      [2,3]]
     >>>
-    >>> matmul(A, B)
+    >>> result(A, B)
     [[9, 2], [7, 3], [21, 8], [28, 8]]
 """
 
-
-def matmul(A, B):
+# type: matrix = list[list[int]]
+# type: Callable[[matrix, matrix], matrix]
+def result(A, B):
     ...
 
 
 # Solution
-def matmul(A, B):
+def result(A, B):
     result = []
     A_rows = range(len(A))
     B_rows = range(len(B))

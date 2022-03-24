@@ -85,6 +85,7 @@ Traceback (most recent call last):
 ValueError: Field age with value=60 is not in range from 30 to 50
 >>>
 >>> mark = Astronaut(firstname='Mark', lastname='Watney', age=40)
+>>> mark
 Astronaut(firstname='Mark', lastname='Watney', age=40)
 
 
@@ -136,7 +137,7 @@ Use Case - 0x02
 ...             raise ValueError('Age is not valid for an astronaut')
 >>>
 >>>
->>> astro = Astronaut(firstname='Mark',
+>>> mark = Astronaut(firstname='Mark',
 ...                   lastname='Watney',
 ...                   born=date(1961, 4, 12),
 ...                   age=44,
@@ -145,7 +146,7 @@ Use Case - 0x02
 ...                   assignments=['STS-136'],
 ...                   missions=[Mission(2035, 'Ares 3'), Mission(1973, 'Apollo 18')])
 >>>
->>> print(astro)  # doctest: +NORMALIZE_WHITESPACE +SKIP
+>>> print(mark)  # doctest: +NORMALIZE_WHITESPACE +SKIP
 Astronaut(firstname='Mark', lastname='Watney', born=datetime.date(1961, 4, 12),
           job='astronaut', agency='NASA', age=44, height=175.5, weight=75.5,
           groups=['astronauts', 'managers'], friends={}, assignments=['STS-136'],
@@ -310,15 +311,16 @@ Use Case - 0x05
 
 Use Case - 0x06
 ---------------
->>> from __future__ import annotations
->>> from dataclasses import dataclass, field
->>> from sqlalchemy import Column, ForeignKey, Integer, String
->>> from sqlalchemy.orm import registry, relationship
->>>
->>> mapper_registry = registry()
->>>
->>>
->>> @mapper_registry.mapped
+>>> # doctest: +SKIP
+... from __future__ import annotations
+... from dataclasses import dataclass, field
+... from sqlalchemy import Column, ForeignKey, Integer, String
+... from sqlalchemy.orm import registry, relationship
+...
+... mapper_registry = registry()
+...
+...
+... @mapper_registry.mapped
 ... @dataclass
 ... class User:
 ...     __tablename__ = "user"
@@ -329,9 +331,9 @@ Use Case - 0x06
 ...     fullname: str = field(default=None, metadata={"db": Column(String(50))})
 ...     nickname: str = field(default=None, metadata={"db": Column(String(12))})
 ...     addresses: list[Address] = field(default_factory=list, metadata={"db": relationship("Address")})
->>>
->>>
->>> @mapper_registry.mapped
+...
+...
+... @mapper_registry.mapped
 ... @dataclass
 ... class Address:
 ...     __tablename__ = "address"

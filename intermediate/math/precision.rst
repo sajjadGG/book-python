@@ -215,4 +215,13 @@ Use ``Decimal`` type:
 >>>
 >>> result = candy + cookie
 >>> print(result)
+
+
+
 0.30
+GROSZ = 1
+PLN = 100 * GROSZ
+cukierek = 10*GROSZ
+guma = 20*GROSZ
+(cukierek + guma) / PLN
+0.3

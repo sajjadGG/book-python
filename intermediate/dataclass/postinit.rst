@@ -183,7 +183,7 @@ Use Case - 0x01
 >>>
 >>>
 >>> @dataclass
->>> class Person:
+... class Person:
 ...     fullname: InitVar[str] = None
 ...     firstname: str | None = None
 ...     lastname: str | None = None
@@ -191,6 +191,7 @@ Use Case - 0x01
 ...     def __post_init__(self, fullname):
 ...         if name:
 >>>             self.firstname, self.lastname = fullname.split()
+>>>
 >>>
 >>> astro1 = Astronaut('Mark Watney')
 >>> astro2 = Person(firstname='Mark', lastname='Watney')
@@ -203,7 +204,7 @@ Use Case - 0x02
 >>>
 >>>
 >>> @dataclass
->>> class Astronaut:
+... class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     age: int
@@ -215,6 +216,7 @@ Use Case - 0x02
 ...         max = self.AGE_MAX
 ...         if self.age not in range(min, max):
 ...             raise ValueError(f'Age {self.age} not in range {min} to {max}')
+>>>
 >>>
 >>> melissa = Astronaut('Mark', 'Watney', 60)
 ValueError: Age 60 not in range 30 to 50

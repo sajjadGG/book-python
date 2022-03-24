@@ -24,19 +24,19 @@ Hints:
     * `for n1, n2 in zip(A, B)`
 
 Tests:
-    >>> distance((0,0,0), (0,0,0))
+    >>> result((0,0,0), (0,0,0))
     0.0
 
-    >>> distance((0,0,0), (1,1,1))
+    >>> result((0,0,0), (1,1,1))
     1.7320508075688772
 
-    >>> distance((0,1,0,1), (1,1,0,0))
+    >>> result((0,1,0,1), (1,1,0,0))
     1.4142135623730951
 
-    >>> distance((0,0,1,0,1), (1,1,0,0,1))
+    >>> result((0,0,1,0,1), (1,1,0,0,1))
     1.7320508075688772
 
-    >>> distance((0,0,1,0,1), (1,1))
+    >>> result((0,0,1,0,1), (1,1))
     Traceback (most recent call last):
     ValueError: Points must be in the same dimensions
 """
@@ -44,12 +44,14 @@ Tests:
 from math import sqrt
 
 
-def distance(A, B):
+# type: point = tuple[int,...]
+# type: Callable[[point, point], float]
+def result(A, B):
     ...
 
 
 # Solution
-def distance(A, B):
+def result(A, B):
     if len(A) != len(B):
         raise ValueError('Points must be in the same dimensions')
 

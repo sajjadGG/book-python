@@ -21,31 +21,33 @@ Polish:
 Tests:
     >>> A = (1, 0)
     >>> B = (0, 1)
-    >>> distance(A, B)
+    >>> result(A, B)
     1.4142135623730951
 
-    >>> distance((0,0), (1,0))
+    >>> result((0,0), (1,0))
     1.0
 
-    >>> distance((0,0), (1,1))
+    >>> result((0,0), (1,1))
     1.4142135623730951
 
-    >>> distance((0,1), (1,1))
+    >>> result((0,1), (1,1))
     1.0
 
-    >>> distance((0,10), (1,1))
+    >>> result((0,10), (1,1))
     9.055385138137417
 """
 
 from math import sqrt
 
 
-def distance(A, B):
+# type: point = tuple[int,...]
+# type: Callable[[point, point], float]
+def result(A, B):
     ...
 
 
 # Solution
-def distance(A, B):
+def result(A, B):
     x1 = A[0]
     y1 = A[1]
     x2 = B[0]

@@ -56,11 +56,11 @@ COLS = range(16)
 
 # generated 16x16 random digits (0-9 inclusive)
 # type: list[list[int]]
-matrix: list
+matrix = ...
 
 # sum of inner 4x4 elements
 # type: int
-result: int
+result = ...
 
 # Solution
 result = 0
