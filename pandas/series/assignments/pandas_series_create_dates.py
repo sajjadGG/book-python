@@ -48,6 +48,7 @@ Tests:
 import pandas as pd
 
 
+# type: pd.Series
 result = ...
 
 

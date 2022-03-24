@@ -56,6 +56,7 @@ CREW_BACKUP = [
     {'is_astronaut': False, 'name': 'Alex Vogel'}]
 
 
+# type: Callable[[Callable], Callable]
 def check_astronauts(func):
     def wrapper(crew):
         return func(crew)

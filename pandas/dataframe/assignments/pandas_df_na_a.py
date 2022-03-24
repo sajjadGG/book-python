@@ -58,6 +58,7 @@ COLUMNS = [
     'Petal width',
     'Species']
 
+# type: pd.DataFrame
 result = ...
 
 

@@ -64,7 +64,7 @@ def hello():
     ...
 
 # Call check(hello); delete check; call result
-# type: Callable
+# type: Callable[[], str]
 result = ...
 
 

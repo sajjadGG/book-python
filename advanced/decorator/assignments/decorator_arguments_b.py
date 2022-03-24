@@ -78,7 +78,7 @@ Tests:
     PermissionError: Mark Watney is not an astronaut
 """
 
-
+# type: Callable[[str,str], Callable]
 def check_astronauts(field, value):
     def decorator(func):
         def wrapper(crew):

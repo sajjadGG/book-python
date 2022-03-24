@@ -41,6 +41,7 @@ import pandas as pd
 np.random.seed(0)
 
 
+# type: pd.Series
 result = ...
 
 

@@ -65,6 +65,10 @@ def abspath(func):
     return wrapper
 
 
+# type: Type
+class Abspath:
+    ...
+
 # Solution
 class Abspath:
     def __init__(self, func):

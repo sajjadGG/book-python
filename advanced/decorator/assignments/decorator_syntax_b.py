@@ -34,6 +34,7 @@ Tests:
 """
 
 
+# type: Callable[[Callable], Callable]
 def disable(func):
     def wrapper(*args, **kwargs):
         return func(*args, **kwargs)

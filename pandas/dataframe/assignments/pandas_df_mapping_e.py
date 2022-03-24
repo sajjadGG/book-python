@@ -47,6 +47,7 @@ import requests
 
 DATA = 'https://python.astrotech.io/_static/openapi.json'
 
+# type: pd.DataFrame
 result = ...
 
 

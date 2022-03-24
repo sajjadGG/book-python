@@ -43,6 +43,7 @@ import pandas as pd
 DATA = 'https://python.astrotech.io/_static/phones-pl.csv'
 
 
+# type: pd.DataFrame
 result = ...
 
 

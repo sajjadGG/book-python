@@ -40,6 +40,7 @@ Tests:
 from functools import wraps
 
 
+# type: Callable[[bool], Callable]
 def mydecorator(happy=True):
     def decorator(func):
         def wrapper(*args, **kwargs):

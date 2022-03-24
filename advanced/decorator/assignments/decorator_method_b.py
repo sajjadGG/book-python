@@ -45,6 +45,7 @@ Tests:
 """
 
 
+# type: Callable[[Callable], Callable]
 def if_alive(method):
     def wrapper(hero, *args, **kwargs):
         return method(hero, *args, **kwargs)

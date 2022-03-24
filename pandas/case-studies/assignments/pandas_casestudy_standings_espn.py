@@ -51,6 +51,9 @@ DATA = 'https://python.astrotech.io/_static/espn-standing.html'
 # DATA = 'https://www.espn.com/nba/standings/_/group/league'
 
 
+# type: pd.DataFrame
+result = ...
+
 # Solution
 tables = pd.read_html(DATA)
 teams = tables[0]

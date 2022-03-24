@@ -72,6 +72,7 @@ Tests:
 _cache = {}
 
 
+# type: Callable[[Callable], Callable]
 def cache(func):
     def wrapper(n):
         return func(n)

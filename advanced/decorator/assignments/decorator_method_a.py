@@ -40,6 +40,9 @@ Tests:
     'hello'
 """
 
+# type: Callable[[Callable], Callable]
+def mydecorator():
+    ...
 
 # Solution
 def mydecorator(method):

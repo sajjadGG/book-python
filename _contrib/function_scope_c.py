@@ -16,17 +16,17 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(roman_to_int)
+    >>> isfunction(result)
     True
-    >>> roman_to_int('I')
+    >>> result('I')
     1
-    >>> roman_to_int('IX')
+    >>> result('IX')
     9
-    >>> roman_to_int('MDL')
+    >>> result('MDL')
     1550
-    >>> roman_to_int('MXDL')
+    >>> result('MXDL')
     1540
-    >>> roman_to_int('XIV')
+    >>> result('XIV')
     14
 """
 
@@ -57,12 +57,13 @@ ROMAN = {
 }
 
 
-def roman_to_int(roman: str) -> int:
+# type: Callable[[str], int]
+def result(roman: str) -> int:
     ...
 
 
 # Solution
-def roman_to_int(roman: str) -> int:
+def result(roman: str) -> int:
     arabic = []
 
     for letter in roman:

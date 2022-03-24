@@ -41,6 +41,7 @@ import pandas as pd
 
 DATA = pd.Series(['a', 'b', 'c'])
 
+# type: dict[str, int|dtype|tuple]
 result = {
     'number of dimensions': ...,
     'number of elements': ...,

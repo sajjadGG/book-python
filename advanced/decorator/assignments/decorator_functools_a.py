@@ -35,6 +35,7 @@ Tests:
 from functools import wraps
 
 
+# type: Callable[[Callable], Callable]
 def mydecorator(func):
     def wrapper(*args, **kwargs):
         return func(*args, **kwargs)

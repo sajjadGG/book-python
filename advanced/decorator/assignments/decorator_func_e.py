@@ -55,6 +55,7 @@ Tests:
 """
 
 
+# type: Callable[[Callable], Callable]
 def numeric(func):
     def wrapper(a, b):
         return func(a, b)

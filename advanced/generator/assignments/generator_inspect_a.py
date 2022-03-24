@@ -68,7 +68,7 @@ DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
 
 
 # Function get `features: list[float]` from `DATA` for given `species`
-# type: Callable
+# type: Callable[[list[float|str], str], list[float]]
 def function(data: list, species: str):
     ...
 

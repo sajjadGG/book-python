@@ -48,6 +48,7 @@ np.random.seed(0)
 
 ASCII_LOWERCASE = 'abcdefghijklmnopqrstuvwxyz'
 
+# type: pd.Series
 result = ...
 
 # Solution

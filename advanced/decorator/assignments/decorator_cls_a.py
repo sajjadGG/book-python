@@ -44,6 +44,9 @@ Tests:
     'hello'
 """
 
+# type: Type
+class MyDecorator:
+    ...
 
 # Solution
 class MyDecorator:

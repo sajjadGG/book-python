@@ -91,7 +91,7 @@ Tests:
     'one'
 """
 
-
+# type: Callable[[Callable], Callable]
 def decorator(func):
     def validate(argname, argval):
         argtype = type(argval)

@@ -71,6 +71,10 @@ class IrisInterface:
         raise NotImplementedError
 
 
+# type: Type
+class Setosa:
+    ...
+
 # Solution
 class Setosa(IrisInterface):
     sepal_length: float

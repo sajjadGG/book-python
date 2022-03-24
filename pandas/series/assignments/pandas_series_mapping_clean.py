@@ -70,6 +70,7 @@ def clean(text: str) -> str:
     pass
 
 
+# type: pd.Series
 result = ...
 
 

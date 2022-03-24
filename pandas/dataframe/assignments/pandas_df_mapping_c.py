@@ -64,6 +64,7 @@ MONTHS_EN = ['January', 'February', 'March', 'April',
              'October', 'November', 'December']
 MONTHS = dict(enumerate(MONTHS_EN, start=1))
 
+# type: pd.DataFrame
 result = ...
 
 

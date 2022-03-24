@@ -56,7 +56,7 @@ DATA = [
 
 
 # Sums features, when label is in SELECT, else return 0 (zero)
-# type: Callable
+# type: Callable[[list[float], str], float]
 def sumif():
     ...
 

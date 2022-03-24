@@ -50,6 +50,7 @@ Tests:
 """
 
 
+# type: Callable[[Callable], Callable]
 def check(func):
     def wrapper(*args, **kwargs):
         return func(*args, **kwargs)

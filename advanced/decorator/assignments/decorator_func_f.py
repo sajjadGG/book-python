@@ -96,6 +96,7 @@ Tests:
 """
 
 
+# type: Callable[[Callable], Callable]
 def typecheck(func):
     def wrapper(*args, **kwargs):
         return func(*args, **kwargs)

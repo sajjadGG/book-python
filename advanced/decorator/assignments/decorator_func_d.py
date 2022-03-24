@@ -54,6 +54,10 @@ TODO: Test if function was called
 from pathlib import Path
 
 
+# type: Callable[[Callable], Callable]
+def abspath():
+    ...
+
 # Solution
 def abspath(func):
     def wrapper(path):

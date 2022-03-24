@@ -37,6 +37,7 @@ import pandas as pd
 
 DATA = 'https://python.astrotech.io/_static/astro-gender.csv'
 
+# type: pd.DataFrame
 result = ...
 
 

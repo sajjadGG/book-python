@@ -53,7 +53,7 @@ martinez:x:1002:1002:Rick Martinez:/home/martinez:/bin/bash"""
 
 
 # list[str] with usernames when UID [third field] is less than 1000
-# type: Callable
+# type: Callable[[str], list[str]]
 def function(data: str):
     ...
 

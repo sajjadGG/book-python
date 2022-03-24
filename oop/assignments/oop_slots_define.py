@@ -63,6 +63,10 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
         (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
 
+# type: Type
+class Iris:
+    ...
+
 # Solution
 class Iris:
     __slots__ = ('sepal_length', 'sepal_width', 'petal_length',

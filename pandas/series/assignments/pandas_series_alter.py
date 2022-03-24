@@ -37,6 +37,7 @@ import pandas as pd
 
 DATA = [1, None, 5, None, 1, 2, 1]
 
+# type: pd.Series
 result = ...
 
 

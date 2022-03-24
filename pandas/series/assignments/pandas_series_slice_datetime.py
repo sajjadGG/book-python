@@ -54,6 +54,7 @@ np.random.seed(0)
 
 NUMBER = 100
 
+# type: pd.Series
 result = ...
 
 # Solution

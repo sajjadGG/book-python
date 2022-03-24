@@ -38,6 +38,9 @@ Tests:
     'hello'
 """
 
+# type: Callable[[Callable], Callable]
+def mydecorator():
+    pass
 
 # Solution
 def mydecorator(func):

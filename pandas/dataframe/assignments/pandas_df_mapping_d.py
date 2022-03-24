@@ -58,6 +58,7 @@ LETTERS_PLEN = {'ą': 'a', 'ć': 'c', 'ę': 'e',
                 'ł': 'l', 'ń': 'n', 'ó': 'o',
                 'ś': 's', 'ż': 'z', 'ź': 'z'}
 
+# type: pd.DataFrame
 result = ...
 
 

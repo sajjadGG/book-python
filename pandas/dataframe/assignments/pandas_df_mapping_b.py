@@ -61,6 +61,7 @@ MONTHS_PLEN = {'styczeń': 'January',
                'listopad': 'November',
                'grudzień': 'December'}
 
+# type: pd.DataFrame
 result = ...
 
 

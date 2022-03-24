@@ -5,7 +5,7 @@
 * Time: 5 min
 
 English:
-    1. Define decorator `mydecorator`
+    1. Define decorator `result`
     2. Decorator should take `a` and `b` as arguments
     2. Define `wrapper` with `*args` and `**kwargs` parameters
     3. Wrapper should call original function with its original parameters,
@@ -14,7 +14,7 @@ English:
     5. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj dekorator `mydecorator`
+    1. Zdefiniuj dekorator `result`
     2. Dekorator powinien przyjmować `a` i `b` jako argumenty
     2. Zdefiniuj `wrapper` z parametrami `*args` i `**kwargs`
     3. Wrapper powinien wywoływać oryginalną funkcję z jej oryginalnymi
@@ -26,19 +26,19 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(mydecorator), \
-    'Create mydecorator() function'
+    >>> assert isfunction(result), \
+    'Create result() function'
 
-    >>> assert isfunction(mydecorator(1, 2)), \
-    'mydecorator() should take two positional arguments'
+    >>> assert isfunction(result(1, 2)), \
+    'result() should take two positional arguments'
 
-    >>> assert isfunction(mydecorator(a=1, b=2)), \
-    'mydecorator() should take two keyword arguments: a and b'
+    >>> assert isfunction(result(a=1, b=2)), \
+    'result() should take two keyword arguments: a and b'
 
-    >>> assert isfunction(mydecorator(a=1, b=2)(lambda: ...)), \
-    'mydecorator() should return decorator which can take a function as arg'
+    >>> assert isfunction(result(a=1, b=2)(lambda: ...)), \
+    'result() should return decorator which can take a function as arg'
 
-    >>> @mydecorator(a=1, b=2)
+    >>> @result(a=1, b=2)
     ... def echo(text):
     ...     return text
 
@@ -46,13 +46,14 @@ Tests:
     'hello'
 """
 
+# type: Callable[[int,int], Callable]
+def result():
+    ...
 
 # Solution
-def mydecorator(a, b):
+def result(a, b):
     def decorator(func):
         def wrapper(*args, **kwargs):
             return func(*args, **kwargs)
-
         return wrapper
-
     return decorator

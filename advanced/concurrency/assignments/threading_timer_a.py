@@ -39,6 +39,11 @@ MAX = 3
 result = []
 
 
+# type: Callable[[int], None]
+def ping():
+    ...
+
+
 # Solution
 def ping(n: int = 1):
     result.append(n)

@@ -90,6 +90,7 @@ import pandas as pd
 import numpy as np
 np.random.seed(0)
 
+# type: dict[str, pd.Series]
 result = {
     'head': ...,
     'tail': ...,

@@ -66,6 +66,8 @@ df = pd.DataFrame({
     'consumption': np.random.randint(0, 21, size=50),
 })
 
+
+# type: pd.DataFrame
 result = ...
 
 

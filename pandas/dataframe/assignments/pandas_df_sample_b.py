@@ -54,6 +54,7 @@ np.random.seed(0)
 
 DATA = 'https://python.astrotech.io/_static/astro-order.csv'
 
+# type: pd.DataFrame
 result = ...
 
 

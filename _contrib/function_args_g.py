@@ -24,19 +24,19 @@ Tests:
 
     >>> isfunction(number_to_str)
     True
-    >>> number_to_str(1969)  # doctest: +SKIP
+    >>> result(1969)  # doctest: +SKIP
     'one thousand nine hundred sixty nine'
-    >>> number_to_str(31337)  # doctest: +SKIP
+    >>> result(31337)  # doctest: +SKIP
     'thirty one thousand three hundred thirty seven'
-    >>> number_to_str(13.37)  # doctest: +SKIP
+    >>> result(13.37)  # doctest: +SKIP
     'thirteen and thirty seven hundredths'
-    >>> number_to_str(31.337)  # doctest: +SKIP
+    >>> result(31.337)  # doctest: +SKIP
     'thirty one and three hundreds thirty seven thousands'
-    >>> number_to_str(-1969)  # doctest: +SKIP
+    >>> result(-1969)  # doctest: +SKIP
     'minus one thousand nine hundred sixty nine'
-    >>> number_to_str(-31.337)  # doctest: +SKIP
+    >>> result(-31.337)  # doctest: +SKIP
     'minus thirty one and three hundreds thirty seven thousands'
-    >>> number_to_str(-49.35)  # doctest: +SKIP
+    >>> result(-49.35)  # doctest: +SKIP
     'minus forty nine and thirty five hundreds'
 """
 
@@ -53,13 +53,12 @@ TEENS = {10: 'Ten', 11:'Eleven', 12:'Twelve', 13:'Thirteen', 14:'Fourteen',
 TENS = {20: 'Twenty', 30: 'Thirty', 40: 'Forty', 50: 'Fifty',
         60: 'Sixty', 70: 'Seventy', 80: 'Eighty', 90: 'Ninety'}
 
-
-def number_to_str(number):
+# type: Callable[[int], str]
+def result(number):
     return
 
 
 # Solution
-def number_to_str(number):
+def result(number):
     if MIN <= number < MAX:
         raise OverflowError
-

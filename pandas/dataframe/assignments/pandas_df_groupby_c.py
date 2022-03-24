@@ -35,6 +35,7 @@ TODO: Doctests
 import pandas as pd
 
 
+# type: pd.DataFrame
 result = ...
 
 

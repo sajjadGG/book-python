@@ -18,15 +18,15 @@ Tests:
 
     >>> isfunction(roman_to_int)
     True
-    >>> int_to_roman(1)
+    >>> result(1)
     'I'
-    >>> int_to_roman(9)
+    >>> result(9)
     'IX'
-    >>> int_to_roman(1550)
+    >>> result(1550)
     'MDL'
-    >>> int_to_roman(1540)
+    >>> result(1540)
     'MXDL'
-    >>> int_to_roman(14)
+    >>> result(14)
     'XIV'
 """
 
@@ -55,10 +55,11 @@ CONVERSION = {
 }
 
 
-def int_to_roman(number):
+# type: Callable[[int], str]
+def result(number):
     ...
 
 
 # Solution
-def int_to_roman(number):
+def result(number):
     ...

@@ -66,6 +66,7 @@ DATA = 'https://python.astrotech.io/_static/sensors-optima.xlsx'
 WHERE = 'Sleeping Quarters upper'
 WHEN = '2019-09-28'
 
+# type: pd.Series
 result = ...
 
 

@@ -52,6 +52,7 @@ import numpy as np
 np.random.seed(0)
 
 
+# type: dict[str,pd.Series]
 result = {
     '2000-02-29': ...,
     'first': ...,

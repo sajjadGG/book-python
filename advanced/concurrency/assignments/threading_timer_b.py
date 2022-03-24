@@ -57,6 +57,7 @@ Tests:
 from threading import Timer
 
 
+# type: Type
 class File:
     filename: str
     _content: list[str]

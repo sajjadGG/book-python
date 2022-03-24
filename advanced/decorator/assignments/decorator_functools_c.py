@@ -36,6 +36,7 @@ Tests:
 """
 
 
+# type: Callable[[Type], Type]
 def mydecorator(cls):
     class Wrapper(cls):
         pass
