@@ -183,7 +183,7 @@ Use Case - 0x01
 >>>
 >>>
 >>> @dataclass
-... class Person:
+... class Astronaut:
 ...     fullname: InitVar[str] = None
 ...     firstname: str | None = None
 ...     lastname: str | None = None
@@ -193,8 +193,11 @@ Use Case - 0x01
 ...             self.firstname, self.lastname = fullname.split()
 >>>
 >>>
->>> astro1 = Astronaut('Mark Watney')
->>> astro2 = Astronaut(firstname='Mark', lastname='Watney')
+>>> Astronaut('Mark Watney')
+Astronaut(firstname='Mark', lastname='Watney')
+>>>
+>>> Astronaut(firstname='Mark', lastname='Watney')
+Astronaut(firstname='Mark', lastname='Watney')
 
 
 Use Case - 0x02
@@ -218,11 +221,11 @@ Use Case - 0x02
 ...             raise ValueError(f'Age {self.age} not in range {min} to {max}')
 >>>
 >>>
->>> melissa = Astronaut('Mark', 'Watney', 60)
+>>> Astronaut('Mark', 'Watney', 60)
 Traceback (most recent call last):
 ValueError: Age 60 not in range 30 to 50
 >>>
->>> melissa = Astronaut('Mark', 'Watney', 60, AGE_MAX=70)
+>>> Astronaut('Mark', 'Watney', 60, AGE_MAX=70)
 Traceback (most recent call last):
 TypeError: Astronaut.__init__() got an unexpected keyword argument 'AGE_MAX'
 

@@ -204,7 +204,7 @@ Store values as ``int``, do operation and then divide:
 >>> candy = 10*CENT
 >>> cookie = 20*CENT
 >>>
->>> result = (cukierek + guma) / DOLLAR
+>>> result = (candy + cookie) / DOLLAR
 >>> print(result)
 0.3
 
