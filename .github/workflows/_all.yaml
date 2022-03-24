@@ -23,7 +23,7 @@ jobs:
           - advanced
           - basics
           - data-science
-          #- database
+          - database
           - design-patterns
           - devops
           - django
@@ -55,7 +55,7 @@ jobs:
           - advanced
           - basics
           - data-science
-          - database
+          #- database
           - design-patterns
           - devops
           #- django

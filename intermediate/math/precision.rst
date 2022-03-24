@@ -218,3 +218,4 @@ Use ``Decimal`` type:
 >>>
 >>> result = candy + cookie
 >>> print(result)
+0.30
