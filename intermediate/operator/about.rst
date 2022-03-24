@@ -1,8 +1,9 @@
 Operator About
 ==============
 * Operator Overload
-* Readable syntax
-* Simpler operations
+* Operator Overload is the Pythonic way
+* Operator Overload allows readable syntax
+* Operator Overload allows simpler operations
 * All examples in this chapter uses ``dataclasses`` for you to focus on the important code, not boilerplate code just to make it works
 
 

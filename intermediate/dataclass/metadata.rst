@@ -11,12 +11,12 @@ Dataclass Metadata
 
     def field(*,
               default: Any,
-              default_factory: Any,
-              init: Any = True,
-              repr: Any = True,
-              hash: Any = None,
-              compare: Any = True,
-              metadata: Any = None) -> None
+              default_factory: Callable,
+              init: bool = True,
+              repr: bool = True,
+              hash: bool|None = None,
+              compare: bool = True,
+              metadata: dict = None) -> None
 
 
 Syntax
@@ -307,6 +307,39 @@ Use Case - 0x05
 ...         self._validate_age()
 ...         self._validate_agency()
 
+
+Use Case - 0x06
+---------------
+>>> from __future__ import annotations
+>>> from dataclasses import dataclass, field
+>>> from sqlalchemy import Column, ForeignKey, Integer, String
+>>> from sqlalchemy.orm import registry, relationship
+>>>
+>>> mapper_registry = registry()
+>>>
+>>>
+>>> @mapper_registry.mapped
+... @dataclass
+... class User:
+...     __tablename__ = "user"
+...     __sa_dataclass_metadata_key__ = "db"
+...
+...     id: int = field(init=False, metadata={"db": Column(Integer, primary_key=True)})
+...     name: str = field(default=None, metadata={"db": Column(String(50))})
+...     fullname: str = field(default=None, metadata={"db": Column(String(50))})
+...     nickname: str = field(default=None, metadata={"db": Column(String(12))})
+...     addresses: list[Address] = field(default_factory=list, metadata={"db": relationship("Address")})
+>>>
+>>>
+>>> @mapper_registry.mapped
+... @dataclass
+... class Address:
+...     __tablename__ = "address"
+...     __sa_dataclass_metadata_key__ = "db"
+...
+...     id: int = field(init=False, metadata={"db": Column(Integer, primary_key=True)})
+...     user_id: int = field(init=False, metadata={"db": Column(ForeignKey("user.id"))})
+...     email_address: str = field(default=None, metadata={"db": Column(String(50))})
 
 
 Assignments
