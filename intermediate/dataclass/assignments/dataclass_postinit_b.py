@@ -1,7 +1,7 @@
 """
 * Assignment: Dataclass PostInit DatabaseDump
 * Complexity: medium
-* Lines of code: 3 lines
+* Lines of code: 5 lines
 * Time: 5 min
 
 English:
@@ -221,5 +221,8 @@ class User:
     user_permissions: list[dict]
 
     def __post_init__(self):
+        self.born = date.fromisoformat(self.born)
         self.last_login = datetime.fromisoformat(self.last_login) if self.last_login else None
-        self.born = date.fromisoformat(self.born) if self.born else None
+        self.is_active = bool(self.is_active)
+        self.is_staff = bool(self.is_staff)
+        self.is_superuser = bool(self.is_superuser)

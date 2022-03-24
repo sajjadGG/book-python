@@ -56,8 +56,11 @@ Final Fields
 ...     AGE_MAX: Final[int] = 50
 
 
-KWargs Only
------------
+Keyword Arguments Only
+----------------------
+* Since Python 3.10
+* ``from dataclasses import KW_ONLY``
+
 Any fields after a pseudo-field with the type of KW_ONLY are marked as
 keyword-only fields. Note that a pseudo-field of type KW_ONLY is otherwise
 completely ignored. This includes the name of such a field. By convention, a

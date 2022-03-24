@@ -5,6 +5,7 @@ Dataclass Metadata
 * ``None`` is treated as an empty ``dict``
 * Metadata is not used at all by Data Classes
 * Metadata is provided as a third-party extension mechanism
+* Use Case: SQLAlchemy https://python.astrotech.io/database/sqlalchemy/model-dataclass.html
 
 .. code-block:: text
 
@@ -27,23 +28,10 @@ Syntax
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     age: int = field(default=None, metadata={'min': 27, 'max': 50})
-...     agency: str = field(default='NASA', metadata={'choices': ['NASA', 'ESA']})
-...     height: float = field(default=None, metadata={'unit': 'cm'})
-...     weight: float = field(default=None, metadata={'unit': 'kg'})
-
-
-Documentation
--------------
->>> from dataclasses import dataclass, field
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     height: float = field(default=None, metadata={'unit': 'cm'})
-...     weight: float = field(default=None, metadata={'unit': 'kg'})
+...     age: int = field(metadata={'min': 27, 'max': 50})
+...     agency: str = field(metadata={'choices': ['NASA', 'ESA']})
+...     height: float = field(metadata={'unit': 'cm'})
+...     weight: float = field(metadata={'unit': 'kg'})
 
 
 Validation
@@ -72,6 +60,36 @@ ValueError: Invalid age
 
 Use Case - 0x01
 ---------------
+>>> from dataclasses import dataclass, field
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int = field(metadata={'min': 30, 'max': 50})
+...
+...     def _validate_range(self, field):
+...         value = getattr(self, field)
+...         MIN = self.__dataclass_fields__[field].metadata['min']
+...         MAX = self.__dataclass_fields__[field].metadata['max']
+...         if value not in range(MIN, MAX):
+...             raise ValueError(f'Field {field} with value={value} is not in range from {MIN} to {MAX}')
+...
+...     def __post_init__(self):
+...         self._validate_range('age')
+>>>
+>>>
+>>> mark = Astronaut(firstname='Mark', lastname='Watney', age=60)
+Traceback (most recent call last):
+ValueError: Field age with value=60 is not in range from 30 to 50
+>>>
+>>> mark = Astronaut(firstname='Mark', lastname='Watney', age=40)
+Astronaut(firstname='Mark', lastname='Watney', age=40)
+
+
+Use Case - 0x02
+---------------
 * Validation
 
 >>> from dataclasses import dataclass, field, KW_ONLY
@@ -93,8 +111,8 @@ Use Case - 0x01
 ...     job: str = 'astronaut'
 ...     agency: str = field(default='NASA', metadata={'choices': ['NASA', 'ESA']})
 ...     age: int | None = None
-...     height: float | int | None = field(default=None, metadata={'unit': 'cm', 'min': 156, 'max': 210})
-...     weight: float | int | None = field(default=None, metadata={'unit': 'kg', 'min': 50, 'max': 90})
+...     height: int | float | None = field(default=None, metadata={'unit': 'cm', 'min': 156, 'max': 210})
+...     weight: int | float | None = field(default=None, metadata={'unit': 'kg', 'min': 50, 'max': 90})
 ...     groups: list[str] = field(default_factory=lambda: ['astronauts', 'managers'])
 ...     friends: dict[str,str] = field(default_factory=dict)
 ...     assignments: list[str] | None = field(default=None, metadata={'choices': ['Apollo18', 'Ares3', 'STS-136']})
@@ -136,7 +154,7 @@ Astronaut(firstname='Mark', lastname='Watney', born=datetime.date(1961, 4, 12),
           account_created=datetime.datetime(1969, 7, 21, 2, 56, 15, 123456, tzinfo=datetime.timezone.utc))
 
 
-Use Case - 0x02
+Use Case - 0x03
 ---------------
 * Setattr
 
@@ -147,7 +165,7 @@ Use Case - 0x02
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     age: float = field(default=None, metadata={'unit': 'cm', 'min': 30, 'max': 50})
+...     age: float = field(default=None, metadata={'unit': 'years', 'min': 30, 'max': 50})
 ...     height: float = field(default=None, metadata={'unit': 'cm', 'min': 156, 'max': 210})
 ...     weight: float = field(default=None, metadata={'unit': 'kg', 'min': 50, 'max': 90})
 ...
@@ -189,7 +207,7 @@ Traceback (most recent call last):
 AssertionError: height value 120 is not between 156 and 210
 
 
-Use Case - 0x03
+Use Case - 0x04
 ---------------
 >>> from dataclasses import dataclass, field
 >>> from datetime import date
@@ -257,7 +275,7 @@ Traceback (most recent call last):
 ValueError: Invalid agency, must be one of ['NASA', 'ESA', 'POLSA']
 
 
-Use Case - 0x04
+Use Case - 0x05
 ---------------
 >>> from dataclasses import KW_ONLY, dataclass, field
 >>> from typing import Literal
