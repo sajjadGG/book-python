@@ -2,16 +2,16 @@ name: Doctests
 on: push
 
 jobs:
-  All:
-    runs-on: ubuntu-20.04
-    container: python:3.10.3
-    steps:
-      - name: Download GIT repository
-        uses: actions/checkout@v2
-      - name: Install requirements
-        run: pip install -r requirements.txt
-      - name: Test listings
-        run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
+  #All:
+  #  runs-on: ubuntu-20.04
+  #  container: python:3.10.3
+  #  steps:
+  #    - name: Download GIT repository
+  #      uses: actions/checkout@v2
+  #    - name: Install requirements
+  #      run: pip install -r requirements.txt
+  #    - name: Test listings
+  #      run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
 
   Assignments:
     runs-on: ubuntu-20.04
