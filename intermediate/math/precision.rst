@@ -198,10 +198,13 @@ Round values to 4 decimal places (generally acceptable):
 
 Store values as ``int``, do operation and then divide:
 
->>> candy = 10        # price in cents
->>> cookie = 20       # price in cents
+>>> CENT = 1
+>>> DOLLAR = 100 * CENT
 >>>
->>> result = (candy + cookie) / 100   # divide by 100 (number of cents in dollar)
+>>> candy = 10*CENT
+>>> cookie = 20*CENT
+>>>
+>>> result = (cukierek + guma) / DOLLAR
 >>> print(result)
 0.3
 
@@ -215,13 +218,3 @@ Use ``Decimal`` type:
 >>>
 >>> result = candy + cookie
 >>> print(result)
-
-
-
-0.30
-GROSZ = 1
-PLN = 100 * GROSZ
-cukierek = 10*GROSZ
-guma = 20*GROSZ
-(cukierek + guma) / PLN
-0.3

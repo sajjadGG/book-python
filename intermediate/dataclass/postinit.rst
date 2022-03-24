@@ -189,12 +189,12 @@ Use Case - 0x01
 ...     lastname: str | None = None
 ...
 ...     def __post_init__(self, fullname):
-...         if name:
->>>             self.firstname, self.lastname = fullname.split()
+...         if fullname:
+...             self.firstname, self.lastname = fullname.split()
 >>>
 >>>
 >>> astro1 = Astronaut('Mark Watney')
->>> astro2 = Person(firstname='Mark', lastname='Watney')
+>>> astro2 = Astronaut(firstname='Mark', lastname='Watney')
 
 
 Use Case - 0x02
@@ -219,9 +219,11 @@ Use Case - 0x02
 >>>
 >>>
 >>> melissa = Astronaut('Mark', 'Watney', 60)
+Traceback (most recent call last):
 ValueError: Age 60 not in range 30 to 50
 >>>
 >>> melissa = Astronaut('Mark', 'Watney', 60, AGE_MAX=70)
+Traceback (most recent call last):
 TypeError: Astronaut.__init__() got an unexpected keyword argument 'AGE_MAX'
 
 
