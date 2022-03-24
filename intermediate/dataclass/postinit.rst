@@ -9,25 +9,8 @@ Dataclass Postinit
 
 Initial Validation in Classes
 -----------------------------
->>> class Astronaut:
-...
-...     def __init__(self, firstname, lastname, age):
-...         self.firstname = firstname
-...         self.lastname = lastname
-...         if 30 <= age < 50:
-...             self.age = age
-...         else:
-...             raise ValueError('Age is out of range')
-...
->>>
->>>
->>> astro = Astronaut('Mark', 'Watney', age=44)
->>> vars(astro)
-{'firstname': 'Mark', 'lastname': 'Watney', 'age': 44}
->>>
->>> astro = Astronaut('Mark', 'Watney', age=60)
-Traceback (most recent call last):
-ValueError: Age is out of range
+* Init serves not only for fields initialization
+* It could be also used for value validation
 
 >>> from typing import Final
 >>>
@@ -42,7 +25,6 @@ ValueError: Age is out of range
 ...     def __init__(self, firstname, lastname, age):
 ...         self.firstname = firstname
 ...         self.lastname = lastname
-...
 ...         if not self.AGE_MIN <= age < self.AGE_MAX:
 ...             raise ValueError('Age is out of range')
 ...         else:
@@ -60,6 +42,13 @@ ValueError: Age is out of range
 
 Initial Validation in Dataclasses
 ---------------------------------
+* Creating own ``__init__()`` will overload init from dataclasses
+* Therefore in dataclasses there is ``__post_init__()`` method
+* It is run after init (as the name suggest)
+* It works on fields, which already saved (it was done in ``__init__``)
+* No need to assign it once again
+* You can focus only on bailing-out (checking only negative path - errors)
+
 >>> from dataclasses import dataclass
 >>> from typing import Final
 >>>
@@ -87,6 +76,9 @@ ValueError: Age is out of range
 
 Date and Time Conversion
 ------------------------
+* ``__post_init__()`` can also be used to convert data
+* Example str ``1969-07-21`` to date object ``date(1969, 7, 21)``
+
 >>> from dataclasses import dataclass
 >>> from datetime import date
 >>>
@@ -130,17 +122,24 @@ Astronaut(firstname='Mark', lastname='Watney',
 
 InitVar
 -------
-* Init-only fields are added as parameters to the generated ``__init__`` method, and are passed to the optional ``__post_init__`` method
+* Init-only fields
+* Added as parameters to the generated ``__init__``
+* Passed to the optional ``__post_init__`` method
 * They are not otherwise used by Data Classes
 
->>> from dataclasses import dataclass, InitVar, field
->>>
->>>
+>>> from dataclasses import dataclass, InitVar
+
 >>> @dataclass
 ... class Astronaut:
-...     fullname: InitVar[str] = None
-...     firstname: str = field(init=False, default=None)
-...     lastname: str = field(init=False, default=None)
+...     fullname: InitVar[str]
+...     firstname: str | None = None
+...     lastname: str | None = None
+
+>>> @dataclass
+... class Astronaut:
+...     fullname: InitVar[str]
+...     firstname: str | None = None
+...     lastname: str | None = None
 ...
 ...     def __post_init__(self, fullname: str):
 ...         self.firstname, self.lastname = fullname.split()
@@ -157,17 +156,18 @@ Astronaut(firstname='Mark', lastname='Watney')
 
 ClassVar
 --------
-One of two places where dataclass() actually inspects the type of a field
-is to determine if a field is a class variable as defined in PEP 526. It
-does this by checking if the type of the field is typing.ClassVar. If a
-field is a ClassVar, it is excluded from consideration as a field and is
-ignored by the dataclass mechanisms. Such ClassVar pseudo-fields are not
-returned by the module-level fields() function.
+* ``from typing import ClassVar``
+* Defines static field
+
+One of two places where ``dataclass()`` actually inspects the type of a
+field is to determine if a field is a class variable as defined in PEP 526.
+It does this by checking if the type of the field is ``typing.ClassVar``.
+If a field is a ``ClassVar``, it is excluded from consideration as a field
+and is ignored by the dataclass mechanisms. Such ``ClassVar`` pseudo-fields
+are not returned by the module-level ``fields()`` function.
 
 >>> from typing import ClassVar
->>> from dataclasses import dataclass
->>>
->>>
+
 >>> @dataclass
 ... class Astronaut:
 ...     fullname: str
@@ -178,6 +178,52 @@ returned by the module-level fields() function.
 
 
 Use Case - 0x01
+---------------
+>>> from dataclasses import dataclass, InitVar
+>>>
+>>>
+>>> @dataclass
+>>> class Person:
+...     fullname: InitVar[str] = None
+...     firstname: str | None = None
+...     lastname: str | None = None
+...
+...     def __post_init__(self, fullname):
+...         if name:
+>>>             self.firstname, self.lastname = fullname.split()
+>>>
+>>> astro1 = Astronaut('Mark Watney')
+>>> astro2 = Person(firstname='Mark', lastname='Watney')
+
+
+Use Case - 0x02
+---------------
+>>> from typing import ClassVar
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int
+...     AGE_MIN: ClassVar[int] = 30
+...     AGE_MAX: ClassVar[int] = 50
+...
+...     def __post_init__(self):
+...         min = self.AGE_MIN
+...         max = self.AGE_MAX
+...         if self.age not in range(min, max):
+...             raise ValueError(f'Age {self.age} not in range {min} to {max}')
+>>>
+>>> melissa = Astronaut('Mark', 'Watney', 60)
+ValueError: Age 60 not in range 30 to 50
+>>>
+>>> melissa = Astronaut('Mark', 'Watney', 60, AGE_MAX=70)
+TypeError: Astronaut.__init__() got an unexpected keyword argument 'AGE_MAX'
+
+
+Use Case - 0x03
 ---------------
 * Boundary check
 
@@ -206,7 +252,7 @@ Use Case - 0x01
 ...             raise ValueError('Coordinate cannot be negative')
 
 
-Use Case - 0x02
+Use Case - 0x04
 ---------------
 * Var Range
 
@@ -246,7 +292,7 @@ Traceback (most recent call last):
 ValueError: x value (0) is not between 10 and 100
 
 
-Use Case - 0x03
+Use Case - 0x05
 ---------------
 * Const Range
 
@@ -278,7 +324,7 @@ Traceback (most recent call last):
 TypeError: __init__() got an unexpected keyword argument 'X_MIN'
 
 
-Use Case - 0x04
+Use Case - 0x06
 ---------------
 * Init, Repr
 
