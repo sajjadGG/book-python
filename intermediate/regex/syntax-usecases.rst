@@ -38,6 +38,11 @@ URL
 ---
 W3C standard for URL understanding
 
+.. code-block:: text
+
+    ^(?=[^&])(?:(?<scheme>[^:/?#]+):)?(?://(?<authority>[^/?#]*))?
+    (?<path>[^?#]*)(?:\?(?<query>[^#]*))?(?:#(?<fragment>.*))?
+
 >>> scheme = r'(?:(?<scheme>[^:/?#]+):)?'
 >>> authority = r'(?://(?<authority>[^/?#]*))?'
 >>> path = r'(?<path>[^?#]*)'
@@ -212,4 +217,12 @@ Assignments
 -----------
 .. literalinclude:: assignments/re_standards_a.py
     :caption: :download:`Solution <assignments/re_standards_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/re_standards_b.py
+    :caption: :download:`Solution <assignments/re_standards_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/re_standards_c.py
+    :caption: :download:`Solution <assignments/re_standards_c.py>`
     :end-before: # Solution
