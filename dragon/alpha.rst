@@ -13,8 +13,9 @@ Dragon (version alpha)
 
 English
 -------
-1. Create file `dragon_alpha.py` and class representing Dragon
-2. Dragon has (attributes):
+1. In your directory create file `dragon_alpha.py`
+2. In this file define a class representing Dragon
+3. Dragon has (attributes):
     a. name
     b. position on the screen
     c. texture file name, default `img/dragon/alive.png`
@@ -77,33 +78,30 @@ English
 
 Polish
 ------
-1. W swoim katalogu stwórz plik `dragon_alpha.py`
-2. W pliku stwórz klasę reprezentującą Smoka
+1. W swoim katalogu stwórz plik ``dragon_alpha.py``
+2. W pliku zdefiniuj klasę reprezentującą Smoka
 3. Smok ma (atrybuty):
     a. nazwę
     b. pozycję na ekranie
-    c. nazwę pliku tekstury, domyślnie `img/dragon/alive.png`
-    d. punkty życia, domyślnie losowy `int` z zakresu od 50 do 100
+    c. nazwę pliku tekstury, domyślnie ``img/dragon/alive.png``
+    d. punkty życia, domyślnie losowy ``int`` z zakresu od 50 do 100
 4. Smok może (metody):
     a. być ustawiony w dowolne miejsce ekranu
     b. zadawać komuś losowe obrażenia z przedziału od 5 do 20
     c. otrzymywać obrażenia
     d. być przesuwany o zadaną liczbę punktów w którymś z kierunków
 5. Przyjmij górny lewy róg ekranu za punkt początkowy:
-    a. idąc w prawo dodajesz `x`
-    b. idąc w lewo odejmujesz `x`
-    c. idąc w górę odejmujesz `y`
-    d. idąc w dół dodajesz `y`
+    a. idąc w prawo dodajesz ``x``
+    b. idąc w lewo odejmujesz ``x``
+    c. idąc w górę odejmujesz ``y``
+    d. idąc w dół dodajesz ``y``
 6. Kiedy punkty życia Smoka spadną do lub poniżej zera:
     a. Smok jest martwy
     b. Ustaw status obiektu na dead
-    c. Wypisz napis `XXX is dead` gdzie XXX to nazwa smoka
-    d. Zmień nazwę pliku tekstury na `img/dragon/dead.png`
-    e. Wypisz, pozycję gdzie smok zginął
-    f. Wypisz, ile złota smok wyrzucił (losowa 1-100)
-    g. Nie można zadawać mu obrażeń
-    h. Smok nie może zadawać obrażeń
-    i. Smok nie może się poruszać
+    c. Zmień nazwę pliku tekstury na ``img/dragon/dead.png``
+    d. Wypisz ``XXX is dead``, gdzie ``XXX`` to nazwa smoka
+    e. Wypisz ile złota smok wyrzucił (losowa 1-100)
+    f. Wypisz pozycję gdzie smok zginął
 7. Przeprowadź grę:
     a. Stwórz smoka w pozycji x=50, y=120 i nazwij go "Wawelski"
     b. Ustaw nową pozycję na x=10, y=20
@@ -121,31 +119,37 @@ Polish
     n. Zadaj 75 obrażeń smokowi
 
 Wymagania niefunkcjonalne:
-    a. *Zadanie jest narracją procesu developmentu.*
+
+    a. **Zadanie jest narracją procesu developmentu.**
+
        Posłuży do demonstracji obiektowego paradygmatu programowania,
        i dobrych praktyk programistycznych. Nie piszemy gry i nie będziemy
        omawiali specyfiki game-dev. Siłą rzeczy poruszymy kilka kwestii
        z tym związanych, ale całość dyskusji znajdzie zastosowanie do
        dowolnego rodzaju projektów informatycznych i problemów inżynierii
-       oprogramowania w dowolnej branży
+       oprogramowania w dowolnej domenie biznesowej.
 
-    b. *Zadanie jest specyfikacją wymagań biznesowych.*
+    b. **Zadanie jest specyfikacją wymagań biznesowych.**
+
        Nie jest to dokumentacja techniczna. Zadanie opisuje "co Smok ma
        robić", a nie "jak to ma robić". To ważna różnica i zwróć na to uwagę.
        Z tego powodu nie musisz trzymać się kolejności punktów i podpunktów
        w zadaniu, a także rozwiązać problemy inaczej niż jest napisane.
 
-    c. *Funkcjonalność końcowa musi się zgadzać.*
+    c. **Funkcjonalność końcowa musi się zgadzać.**
+
        Pamiętaj, że jest to wersja `alpha` więc nie wprowadzaj dodatkowych
        niezamówionych funkcjonalności (np. dodatkowych postaci, sprawdzania
        wychodzenia poza planszę itp.)
 
-    d. *Sposób implementacji jest dowolny.*
-       Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stałe,
-       klasy, obiekty, unittest lub doctest - co tylko chcesz, ale
-       `nie korzystaj z modułów spoza biblioteki standardowej`.
+    d. **Sposób implementacji jest dowolny.**
 
-    e. *Ty - programista, Prowadzący - Product Owner.*
+       Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stałe,
+       klasy, obiekty, unittest lub doctest, type annotation - co tylko
+       chcesz, ale `nie korzystaj z modułów spoza biblioteki standardowej`.
+
+    e. **Ty - programista, Prowadzący - Product Owner.**
+
        Przy tym zadaniu wcielisz się w rolę inżyniera oprogramowania
        (programisty), a Prowadzący będzie zachowywał się jak Product Owner
        z niewielką wiedzą techniczną - 10 lat temu był programistą, a teraz
@@ -156,7 +160,8 @@ Wymagania niefunkcjonalne:
        jak dany problem rozwiązać. Musisz to odfiltrować z treści zadania.
        Niestety to bardzo częsty scenariusz w branży IT.
 
-    f. *Product Owner nie doradzi Ci w sprawie decyzji architektonicznych.*
+    f. **Product Owner nie doradzi Ci w sprawie decyzji architektonicznych.**
+
        Nie podpowie Ci czy lepiej będzie zrobić to w jakiś konkretny sposób,
        albo czy jak zastosujesz to pewne rozwiązanie to jaki będzie wpływ na
        przyszłość. Zadanie polega na tym, że to Ty musisz podejmować decyzje
@@ -167,15 +172,16 @@ Wymagania niefunkcjonalne:
        Pamiętaj o TDD, YAGNI, DRY, KISS, emerging architecture
        i over-engineering.
 
-    g. *Nie przeglądaj rozwiązań ani treści kolejnych części zadania.*
+    g. **Nie przeglądaj rozwiązań ani treści kolejnych części zadania.**
+
        Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i naukę.
 
 
 Hints
 -----
-* `from random import randint`
-* `randint(a, b)` - returns random integer between `a` and b
-* note, it will include both ends - `a` and `b`!
+* Shortest possible solution could have 24 lines of code
+* ``from random import randint``
+* ``randint(a, b)`` - random integer between ``a`` and ``b`` (inclusive!)
 
 
 Solution

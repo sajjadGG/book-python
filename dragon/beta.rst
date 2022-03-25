@@ -41,6 +41,13 @@ Polish
 
 7. Bohater przejmuje złoto smoka, jeżeli go zabije
 8. Przeprowadź walkę, tak długo aż ktoś pierwszy nie zginie
+
+6. Kiedy punkty życia dowolnej postaci (smok lub bohater) spadną do lub
+   poniżej zera:
+    g. Postaci nie można zadawać obrażeń
+    h. Postać nie może zadawać obrażeń
+    i. Postać nie może się poruszać
+
 9. Wymagania niefunkcjonalne:
     a. Zadanie jest symulacją procesu developmentu
     b. Trener zachowuje się jak Product Owner z niewielką techniczną wiedzą

@@ -8,15 +8,8 @@ Problem
 * Dragon makes damage
 
 
-Problem
--------
-.. code-block:: text
-
-    dragon ---> enemy
-    dragon -> enemy
-    dragon <-> enemy
-    dragon <- enemy
-    dragon <--- enemy
+Consider
+--------
 
 
 Option 1
@@ -28,6 +21,21 @@ Option 1
 >>> dragon.wound()
 
 * Bad: dragon <-> enemy
+* Bad: not directed, all methods could mean making damage or receiving damage
+
+Rationale:
+
+Some method names has stronger emphasis on who is making damage to whom.
+Consider this: ``dragon.hurt()`` - is that dragon who makes damage or takes
+damage?
+
+.. code-block:: text
+
+    dragon ---> enemy
+    dragon -> enemy
+    dragon <-> enemy
+    dragon <- enemy
+    dragon <--- enemy
 
 
 Option 2
@@ -67,7 +75,7 @@ Problem:
 ...         amount = 1000
 ...         destination_account.deposit(1000)
 
-* Bad: inny bank nie udostępni Ci swojego kodu źródłowego, tylko po to aby móc zrobić przelew
+* Bad: other bank of will not share their source code with you, to make a transfer
 
 
 Option 5
@@ -81,7 +89,7 @@ Option 6
 --------
 >>> hero.wound(dragon.hit())
 
-* Bad: readibility
+* Bad: readability
 
 Option 7
 --------
