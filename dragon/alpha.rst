@@ -77,23 +77,24 @@ English
 
 Polish
 ------
-1. Stwórz plik `dragon_alpha.py` a w nim klasę reprezentującą Smoka
-2. Smok ma (atrybuty):
+1. W swoim katalogu stwórz plik `dragon_alpha.py`
+2. W pliku stwórz klasę reprezentującą Smoka
+3. Smok ma (atrybuty):
     a. nazwę
     b. pozycję na ekranie
     c. nazwę pliku tekstury, domyślnie `img/dragon/alive.png`
     d. punkty życia, domyślnie losowy `int` z zakresu od 50 do 100
-3. Smok może (metody):
+4. Smok może (metody):
     a. być ustawiony w dowolne miejsce ekranu
     b. zadawać komuś losowe obrażenia z przedziału od 5 do 20
     c. otrzymywać obrażenia
     d. być przesuwany o zadaną liczbę punktów w którymś z kierunków
-4. Przyjmij górny lewy róg ekranu za punkt początkowy:
+5. Przyjmij górny lewy róg ekranu za punkt początkowy:
     a. idąc w prawo dodajesz `x`
     b. idąc w lewo odejmujesz `x`
     c. idąc w górę odejmujesz `y`
     d. idąc w dół dodajesz `y`
-5. Kiedy punkty życia Smoka spadną do lub poniżej zera:
+6. Kiedy punkty życia Smoka spadną do lub poniżej zera:
     a. Smok jest martwy
     b. Ustaw status obiektu na dead
     c. Wypisz napis `XXX is dead` gdzie XXX to nazwa smoka
@@ -103,7 +104,7 @@ Polish
     g. Nie można zadawać mu obrażeń
     h. Smok nie może zadawać obrażeń
     i. Smok nie może się poruszać
-6. Przeprowadź grę:
+7. Przeprowadź grę:
     a. Stwórz smoka w pozycji x=50, y=120 i nazwij go "Wawelski"
     b. Ustaw nową pozycję na x=10, y=20
     c. Przesuń smoka w lewo o 10 i w dół o 20
@@ -118,32 +119,63 @@ Polish
     l. Zadaj 15 obrażeń smokowi
     m. Zadaj 25 obrażeń smokowi
     n. Zadaj 75 obrażeń smokowi
-7. Wymagania niefunkcjonalne:
-    a. Zadanie jest symulacją procesu developmentu
-    b. Trener zachowuje się jak Product Owner z niewielką techniczną wiedzą
-    c. Ty jesteś inżynierem oprogramowania, który musi podejmować decyzje
-       i ponosić ich konsekwencje
-    d. Zadanie jest tylko narracją do demonstracji OOP i dobrych
-       praktyk programowania
-    e. Wyliczona pozycja Smoka na końcu gry powinna być x=20, y=40
-    f. Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stałe,
-       klasy, obiekty, co tylko chcesz
-    g. Nie korzystaj z modułów spoza standardowej biblioteki
-    h. Zadanie jest specyfikacją wymagań biznesowych, a nie dokumentacją
-       techniczną, tj. "co Smok ma robić, a nie jak to ma robić"
-    i. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
-    j. Jest to wersja `alpha` więc bez dodatkowych funkcjonalności
-       (np. sprawdzanie koordynatów, wychodzenia poza planszę itp.)
-    k. Możesz stworzyć testy, np. unittest lub doctest
-    l. Nie przeglądaj rozwiązań ani treści kolejnych części zadania;
-       jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i naukę
+
+Wymagania niefunkcjonalne:
+    a. *Zadanie jest narracją procesu developmentu.*
+       Posłuży do demonstracji obiektowego paradygmatu programowania,
+       i dobrych praktyk programistycznych. Nie piszemy gry i nie będziemy
+       omawiali specyfiki game-dev. Siłą rzeczy poruszymy kilka kwestii
+       z tym związanych, ale całość dyskusji znajdzie zastosowanie do
+       dowolnego rodzaju projektów informatycznych i problemów inżynierii
+       oprogramowania w dowolnej branży
+
+    b. *Zadanie jest specyfikacją wymagań biznesowych.*
+       Nie jest to dokumentacja techniczna. Zadanie opisuje "co Smok ma
+       robić", a nie "jak to ma robić". To ważna różnica i zwróć na to uwagę.
+       Z tego powodu nie musisz trzymać się kolejności punktów i podpunktów
+       w zadaniu, a także rozwiązać problemy inaczej niż jest napisane.
+
+    c. *Funkcjonalność końcowa musi się zgadzać.*
+       Pamiętaj, że jest to wersja `alpha` więc nie wprowadzaj dodatkowych
+       niezamówionych funkcjonalności (np. dodatkowych postaci, sprawdzania
+       wychodzenia poza planszę itp.)
+
+    d. *Sposób implementacji jest dowolny.*
+       Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stałe,
+       klasy, obiekty, unittest lub doctest - co tylko chcesz, ale
+       `nie korzystaj z modułów spoza biblioteki standardowej`.
+
+    e. *Ty - programista, Prowadzący - Product Owner.*
+       Przy tym zadaniu wcielisz się w rolę inżyniera oprogramowania
+       (programisty), a Prowadzący będzie zachowywał się jak Product Owner
+       z niewielką wiedzą techniczną - 10 lat temu był programistą, a teraz
+       większość czasu spędza w Excelu i na spotkaniach. Pamiętaj, że
+       doświadczenie Product Ownera rzutuje na sposób w jaki pisze kryteria
+       akceptacyjne. Jego kariera programisty może powodować,
+       że w specyfikacji wymagań pojawią się kwestie techniczne i sugestie
+       jak dany problem rozwiązać. Musisz to odfiltrować z treści zadania.
+       Niestety to bardzo częsty scenariusz w branży IT.
+
+    f. *Product Owner nie doradzi Ci w sprawie decyzji architektonicznych.*
+       Nie podpowie Ci czy lepiej będzie zrobić to w jakiś konkretny sposób,
+       albo czy jak zastosujesz to pewne rozwiązanie to jaki będzie wpływ na
+       przyszłość. Zadanie polega na tym, że to Ty musisz podejmować decyzje
+       i ponosić ich konsekwencje, tj. łatwa możliwość wprowadzania zmian w
+       przyszłych wersjach. Musisz znaleźć balans, między wdrożeniem szybkim
+       funkcjonalności, łatwością zrozumienia i utrzymywania kodu i nie
+       zablokowaniem sobie drogi na wprowadzanie zmian w przyszłości.
+       Pamiętaj o TDD, YAGNI, DRY, KISS, emerging architecture
+       i over-engineering.
+
+    g. *Nie przeglądaj rozwiązań ani treści kolejnych części zadania.*
+       Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i naukę.
 
 
 Hints
 -----
 * `from random import randint`
-* `randint(a, b)` returns random integer between a and b (inclusive)
-* note, that randint will include both ends, that is `a` and `b`!
+* `randint(a, b)` - returns random integer between `a` and b
+* note, it will include both ends - `a` and `b`!
 
 
 Solution
