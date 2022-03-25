@@ -28,9 +28,9 @@ Option 1
 * Good: easy to use
 * Good: encapsulation
 * Good: easy to add validation if needed
-* Bad: ``teleport`` and ``fly`` are bad names
-* Bad: arguments are implicit
-* Bad: require knowledge of an API
+* Good: easy to extend to 3D - add parameter with default value ``0``
+* Bad: ``teleport()`` and ``fly()`` are bad names
+* Bad: arguments are implicit, require knowledge of an API
 
 
 Option 2
@@ -43,7 +43,8 @@ Option 2
 * Good: arguments are explicit
 * Good: encapsulation
 * Good: easy to add validation if needed
-* Bad: ``teleport`` and ``fly`` are bad names
+* Good: easy to extend to 3D - add parameter with default value ``0``
+* Bad: ``teleport()`` and ``fly()`` are bad names
 
 
 Option 3
@@ -54,7 +55,7 @@ Option 3
 * Good: arguments are explicit
 * Good: encapsulation
 * Good: easy to add validation if needed
-* Bad: set() is to generic
+* Bad: ``set()`` is to generic
 
 
 Option 4
@@ -66,9 +67,13 @@ Option 4
 
 * Good: easy to use
 * Good: arguments are explicit
-* Bad: encapsulation
 * Good: can use ``@property`` for validation if needed
+* Bad: encapsulation
 * Bad: names ``x`` and ``y`` are weakly related to ``dragon``
+
+Example:
+
+>>> knn.w = [1,2,3]
 
 
 Option 5
@@ -83,6 +88,10 @@ Option 5
 * Good: can use ``@property`` for validation if needed
 * Bad: encapsulation
 
+Example:
+
+>>> knn.weights = [1,2,3]
+
 
 Option 6
 --------
@@ -94,7 +103,8 @@ Option 6
 * Good: using ``@`` (matmul) it is easy to validation
 * Bad: arguments are implicit
 * Bad: require knowledge of an API
-* Bad: 2D (not extensible)
+* Bad: always 2D
+* Bad: not extensible, hard to refactor to 3D
 
 
 Option 7
@@ -106,8 +116,8 @@ Option 7
 * Good: can use ``@property`` for validation if needed
 * Good: arguments are explicit
 * Good: readability
-* Good: require knowledge of an API
-* Bad: is extensible (3D)
+* Bad: require knowledge of an API
+* Bad: extensible, easy to refactor to 3D
 
 
 Option 8
@@ -122,7 +132,7 @@ Option 8
 * Good: can use ``@property`` for validation if needed
 * Good: encapsulation
 * Good: more or less readable
-* Good: is extensible (3D)
+* Bad: extensible, easy to refactor to 3D
 * Bad: nested
 * Bad: require knowledge of an API
 
@@ -135,3 +145,4 @@ Decision
 * Good: arguments are explicit
 * Good: encapsulation
 * Good: easy to add validation if needed
+* Bad: extensible, easy to refactor to 3D

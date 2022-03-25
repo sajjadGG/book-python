@@ -45,6 +45,7 @@ Option 2
 >>> dragon.make_damage()
 
 * Good: dragon ---> enemy
+* Bad: to specific ``.hurt_someone()``, ``.deal_damage()``
 
 
 Option 3
@@ -56,24 +57,25 @@ Option 3
 
 Option 4
 --------
->>> dragon.damage(enemy)
->>> dragon.attack(enemy)
->>> dragon.hit(enemy)
->>> dragon.wound(enemy)
->>> dragon.make_damage(enemy)
->>> dragon.take_damage(enemy)
+>>> dragon.damage(ENEMY)
+>>> dragon.attack(ENEMY)
+>>> dragon.hit(ENEMY)
+>>> dragon.wound(ENEMY)
+>>> dragon.make_damage(ENEMY)
+>>> dragon.take_damage(ENEMY)
 
 * Good: dragon ---> enemy
 * Bad: MVC
 
 .. figure:: img/firkraag.jpeg
+.. figure:: img/mvc.png
+.. figure:: img/mvc-bank.png
 
 Problem:
 
 >>> class BankAccount:
-...     def transfer(destination_account):
-...         amount = 1000
-...         destination_account.deposit(1000)
+...     def transfer(destination_account, amount):
+...         destination_account.deposit(amount)
 
 * Bad: other bank of will not share their source code with you, to make a transfer
 
@@ -82,7 +84,9 @@ Option 5
 --------
 >>> hero.health -= dragon.damage()
 
-* Bad: enkapsulacja
+* Good: simple
+* Good: can use ``@property`` for validation if needed
+* Bad: encapsulation
 
 
 Option 6
@@ -90,11 +94,16 @@ Option 6
 >>> hero.wound(dragon.hit())
 
 * Bad: readability
+* Bad: requires knowledge of API
+* Bad: this is responsibility of a controller
+
 
 Option 7
 --------
 >>> dragon.get_damage()
 
+* Good: readability
+* Good: easy to add validation if needed
 * Bad: name ``get_damage()`` indicate a getter of ``damage`` field
 
 

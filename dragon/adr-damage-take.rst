@@ -16,15 +16,13 @@ Problem
     dragon <--- enemy
 
 
-Possibilities
--------------
-
-
 Option 1
 --------
 >>> dragon.take_damage(DMG)
 >>> dragon.hurt_self(DMG)
 >>> dragon.receive_damage(DMG)
+
+* Good: dragon ---> enemy
 
 
 Option 2
@@ -34,11 +32,18 @@ Option 2
 >>> dragon.hit(DMG)
 >>> dragon.damage(DMG)
 
+* Good: dragon -> enemy
+* Bad: dragon -> enemy
+
 
 Option 3
 --------
 >>> dragon - DMG
 >>> dragon -= DMG
+
+* Good: simple
+* Good: can use ``.__sub__()`` for validation if needed
+* Bad: requires knowledge of API
 
 
 Option 4
@@ -46,11 +51,20 @@ Option 4
 >>> dragon - Damage(20)
 >>> dragon -= Damage(20)
 
+* Good: simple
+* Good: can use ``.__sub__()`` for validation if needed
+* Bad: requires knowledge of API
+
 
 Option 5
 --------
 >>> dragon.health - DMG
 >>> dragon.health -= DMG
+
+* Good: simple
+* Good: can use ``@property`` for validation if needed
+* Bad: requires knowledge of API
+* Bad: encapsulation
 
 
 Option 6
@@ -58,17 +72,29 @@ Option 6
 >>> dragon.health - Damage(20)
 >>> dragon.health -= Damage(20)
 
+* Good: simple
+* Good: can use ``@property`` for validation if needed
+* Bad: requires knowledge of API
+* Bad: encapsulation
+
 
 Option 7
 --------
 >>> dragon.__sub__(DMG)
 >>> dragon.__isub__(DMG)
 
+* Good: encapsulation
+* Bad: not Pythonic way
+* Bad: not simple
+* Bad: requires knowledge of API
+
 
 Option 8
 --------
->>> dragon.set_damage()
+>>> dragon.set_damage(DMG)
 
+* Good: encapsulation
+* Bad: not Pythonic way
 * Bad: ``set_damage()`` indicates setter of ``damage`` field
 
 

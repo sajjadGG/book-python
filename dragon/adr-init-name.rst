@@ -12,7 +12,7 @@ Dragon ADR Init Name
 
 Problem
 -------
-* Create dragon at x=50, y=120 position and name it "Wawelski"
+* Create and name it "Wawelski"
 
 
 Option 1
@@ -20,6 +20,7 @@ Option 1
 >>> dragon = Dragon('Wawelski')
 
 * Good: easy to use
+* Bad: less verbose than keyword arguments
 
 
 Option 2
@@ -36,3 +37,4 @@ Decision
 >>> dragon = Dragon('Wawelski')
 
 * Because: easy to use
+* Because: verbose enough
