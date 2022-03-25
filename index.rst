@@ -90,6 +90,16 @@ Matplotlib
     matplotlib/_index.rst
 
 
+Stdlib
+******
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: DevOps
+
+    stdlib/_index.rst
+
+
 DevOps
 *********
 .. toctree::

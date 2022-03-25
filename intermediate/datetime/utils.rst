@@ -17,12 +17,13 @@ Time sleep function:
 ...     # do something
 ...     sleep(1)
 
->>> from time import sleep
->>> from random import randint
->>> import requests
->>>
->>>
->>> for i in range(0, 2):
+>>> # doctest: +SKIP
+... from time import sleep
+... from random import randint
+... import requests
+...
+...
+... for i in range(0, 2):
 ...     resp = requests.get('https://python.astrotech.io')
 ...     delay = randint(0,3)
 ...     sleep(delay)

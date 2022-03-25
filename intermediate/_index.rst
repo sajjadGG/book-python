@@ -189,7 +189,6 @@ Modules and Packages
     pip/about.rst
     modules/import.rst
     modules/tools.rst
-    zipapp/about.rst
     modules/distributing.rst
 
 
@@ -211,13 +210,8 @@ Mathematics
     :maxdepth: 1
     :caption: Mathematics
 
-    math/int.rst
-    math/math.rst
-    math/statistics.rst
     math/random.rst
-    math/fractions.rst
     math/precision.rst
-    math/complex.rst
 
 
 Tests
@@ -227,32 +221,6 @@ Tests
     :caption: Tests
 
     test/doctest.rst
-
-
-Operating System
-****************
-.. toctree::
-    :maxdepth: 1
-    :caption: Operating System
-
-    operating-system/tempfile.rst
-    operating-system/about.rst
-    operating-system/argparse.rst
-    operating-system/os.rst
-    operating-system/pathlib.rst
-
-
-Builtin
-*******
-.. toctree::
-    :maxdepth: 1
-    :caption: Builtin
-
-    builtin/keyword.rst
-    builtin/operator.rst
-    builtin/print.rst
-    builtin/unordered-frozenset.rst
-    builtin/unordered-comparison.rst
 
 
 References
