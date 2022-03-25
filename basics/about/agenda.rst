@@ -7,94 +7,74 @@ Agenda
 
 Day 1
 -----
-.. csv-table::
-    :widths: 15, 85
-    :header: "Estimated Time", "Topic"
-
-    "10 min", "Welcome message, course introduction, agenda"
-    "50 min", "Python and IDE setup, features and debugging"
-    "45 min", "Python basic syntax, operators, builtins"
-    "60 min", "Type Int"
-    "60 min", "Type Float"
-    "45 min", "Type Bool"
-    "15 min", "Type None"
-    "75 min", "Type Str"
-    "60 min", "Type Str Methods"
+* 10m - Welcome message, course introduction, agenda
+* 50m - Python and IDE setup, features and debugging
+* 45m - Python basic syntax, operators, builtins
+* 60m - Type Int
+* 60m - Type Float
+* 45m - Type Bool
+* 15m - Type None
+* 75m - Type Str
+* 60m - Type Str Methods
 
 
 Day 2
 -----
-.. csv-table::
-    :widths: 15, 85
-    :header: "Estimated Time", "Topic"
-
-    "45 min", "Sequence List"
-    "45 min", "Sequence Tuple"
-    "30 min", "Sequence Set"
-    "30 min", "Sequence Nested"
-    "30 min", "Sequence GetItem"
-    "60 min", "Sequence Slice"
-    "30 min", "Sequence Unpack"
-    "50 min", "Mapping Dict"
-    "50 min", "Mapping Generate"
-    "50 min", "Mapping Nested"
+* 45m - Sequence List
+* 45m - Sequence Tuple
+* 30m - Sequence Set
+* 30m - Sequence Nested
+* 30m - Sequence GetItem
+* 60m - Sequence Slice
+* 30m - Sequence Unpack
+* 50m - Mapping Dict
+* 50m - Mapping Generate
+* 50m - Mapping Nested
 
 
 Day 3
 -----
-.. csv-table::
-    :widths: 15, 85
-    :header: "Estimated Time", "Topic"
-
-    "15 min", "Conditional Operators"
-    "15 min", "Conditional Membership"
-    "45 min", "Conditional Statements"
-    "45 min", "Conditional Expressions"
-    "45 min", "Exceptions"
-    "45 min", "Loop While"
-    "45 min", "Loop For"
-    "45 min", "Loop Nested"
-    "30 min", "Loop Unpack"
-    "45 min", "Loop Dict"
-    "45 min", "Comprehensions"
+* 15m - Conditional Operators
+* 15m - Conditional Membership
+* 45m - Conditional Statements
+* 45m - Conditional Expressions
+* 45m - Exceptions
+* 45m - Loop While
+* 45m - Loop For
+* 45m - Loop Nested
+* 30m - Loop Unpack
+* 45m - Loop Dict
+* 45m - Comprehensions
 
 
 Day 4
 -----
-.. csv-table::
-    :widths: 15, 85
-    :header: "Estimated Time", "Topic"
-
-    "20m", "File Path"
-    "15m", "File Access Modes"
-    "45m", "File Write"
-    "45m", "File Read"
-    "5m", "File Append"
-    "10m", "File Encoding"
-    "10m", "File Binary"
-    "30 min", "Function Definition"
-    "30 min", "Function Return"
-    "60 min", "Function Parameters"
-    "60 min", "Function Arguments"
-    "30 min", "Function Scope"
-    "15 min", "Function Recurrence"
-    "30 min", "Function Generator"
-    "15 min", "Function Lambda"
+* 20m - File Path
+* 15m - File Access Modes
+* 45m - File Write
+* 45m - File Read
+* 5m - File Append
+* 10m - File Encoding
+* 10m - File Binary
+* 30m - Function Definition
+* 30m - Function Return
+* 60m - Function Parameters
+* 60m - Function Arguments
+* 30m - Function Scope
+* 15m - Function Recurrence
+* 30m - Function Generator
+* 15m - Function Lambda
 
 
 Day 5
 -----
-.. csv-table::
-    :widths: 15, 85
-    :header: "Estimated Time", "Topic"
-
-    "45 min", "OOP Classes and Instances"
-    "45 min", "OOP Attributes"
-    "45 min", "OOP Initializer Method"
-    "45 min", "OOP Methods"
-    "45 min", "OOP Methods and Attributes"
-    "45 min", "OOP Inheritance"
-    "45 min", "OOP Overload"
-    "45 min", "OOP Stringify Objects"
-    "45 min", "OOP Architecture"
-    "15 min", "Recap, Certificates and Survey"
+* 45m - OOP Classes and Instances
+* 45m - OOP Attributes
+* 45m - OOP Initializer Method
+* 45m - OOP Methods
+* 45m - OOP Methods and Attributes
+* 45m - OOP Inheritance
+* 45m - OOP Overload
+* 45m - OOP Stringify Objects
+* 45m - OOP Architecture
+* 15m - Recap, Certificates and Survey
