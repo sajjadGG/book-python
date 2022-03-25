@@ -67,9 +67,9 @@ Option 4
 * Good: dragon ---> enemy
 * Bad: MVC
 
-.. figure:: img/firkraag.jpeg
-.. figure:: img/mvc.png
-.. figure:: img/mvc-bank.png
+.. figure:: img/dragon-firkraag-01.jpg
+.. figure:: img/oop-architecture-mvc.png
+.. figure:: img/oop-architecture-mvc-example.png
 
 Problem:
 
