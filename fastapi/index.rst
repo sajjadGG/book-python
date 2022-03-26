@@ -25,6 +25,7 @@ Appendixes
 .. toctree::
     :maxdepth: 1
 
+    further-reading.rst
     ../about/progress.rst
     ../about/references.rst
     ../about/survey.rst
