@@ -116,9 +116,20 @@ Microservices
     :maxdepth: 1
     :caption: Microservices
 
-    microservices/reactive.rst
-    microservices/architecture.rst
-    microservices/cloud.rst
+    microservices/about.rst
+    microservices/architecture-about.rst
+    microservices/architecture-distributed.rst
+    microservices/architecture-reactive.rst
+    microservices/architecture-cloud.rst
+    microservices/architecture-api.rst
+    microservices/architecture-problems.rst
+    microservices/architecture-events.rst
+    microservices/service-lifecycle.rst
+    microservices/service-choreography.rst
+    microservices/service-discovery.rst
+    microservices/service-runtime.rst
+    microservices/service-database.rst
+    microservices/good-practices.rst
 
 
 Appendix

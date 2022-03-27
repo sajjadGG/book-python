@@ -3,6 +3,8 @@ Schema
 * Schema - also known as Model
 * Represents data in your system
 * Pydantic class
+* ``schema_extra`` is used by Swagger to show examples
+* Ellipsis (``...``) in Pydantic indicates that a Field is required
 
 
 Example
@@ -118,8 +120,8 @@ timestamp
   Timestamp is not in the past (type=value_error)
 
 
-Use Case
---------
+Use Case - 0x01
+---------------
 * ``schema_extra`` is used by Swagger to show examples
 * Ellipsis (``...``) in Pydantic indicates that a Field is required
 

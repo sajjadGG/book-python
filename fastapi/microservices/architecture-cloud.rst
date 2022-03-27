@@ -28,6 +28,14 @@ Określenie potrzeb i wybór platformy
 
 Przykłady platform
 ------------------
+* Infrastructure as a Service - IaaS
+* Platform as a Service - PaaS
+* Service as a Service - SaaS
+* Data as a Service
+* Security as a Service
+* Logging as a Service
+* Payment as a Service
+
 IaaS:
 
     * Google Compute Engine
@@ -51,10 +59,10 @@ SaaS:
 
 Inne \*aaS:
 
-    * Data
-    * Security
-    * Logging
-    * Payment
+    * Data as a Service
+    * Security as a Service
+    * Logging as a Service
+    * Payment as a Service
 
 
 Ekosystem narzędziowy a cloud

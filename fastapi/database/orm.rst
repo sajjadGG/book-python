@@ -25,7 +25,7 @@ Connection
 >>> from sqlalchemy.orm import sessionmaker
 >>>
 >>>
->>> SQLALCHEMY_DATABASE_URL = 'sqlite:////tmp/mydatabase.sqlite3'
+>>> SQLALCHEMY_DATABASE_URL = 'sqlite:////tmp/mydatabase.db'
 >>>
 >>> engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={'check_same_thread': False})
 >>> SessionLocal = sessionmaker(bind= engine, autocommit=False, autoflush=False)
@@ -94,7 +94,7 @@ Example
 >>> app = FastAPI()
 >>>
 >>>
->>> SQLALCHEMY_DATABASE_URL = 'sqlite:////tmp/mydatabase.sqlite3'
+>>> SQLALCHEMY_DATABASE_URL = 'sqlite:////tmp/mydatabase.db'
 >>>
 >>> engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={'check_same_thread': False})
 >>> SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)

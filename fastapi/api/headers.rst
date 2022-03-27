@@ -1,5 +1,7 @@
 Headers
 =======
+* Request headers
+* Response headers
 
 >>> from typing import Optional
 >>> from fastapi import FastAPI, Header
@@ -13,6 +15,8 @@ Headers
 
 Request
 -------
+* Request headers will be strings
+
 >>> from fastapi import FastAPI, Request
 >>> app = FastAPI()
 >>>

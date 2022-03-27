@@ -1,5 +1,7 @@
 HTTP Headers
 ============
+* Request Headers
+* Response Headers
 
 
 Request Headers

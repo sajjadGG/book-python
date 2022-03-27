@@ -1,5 +1,9 @@
 Middleware
 ==========
+* Request processing
+* Reponse processing
+* What is middleware?
+
 
 References
 ----------

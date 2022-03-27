@@ -6,8 +6,8 @@ POST
 * Pydantic models
 
 
-POST Method
------------
+Example
+-------
 >>> from typing import Optional
 >>> from pydantic import BaseModel
 >>> from fastapi import FastAPI

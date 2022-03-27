@@ -87,3 +87,102 @@ HTTP Statuses
 * ``508`` - Loop Detected (WebDAV)
 * ``510`` - Not Extended
 * ``511`` - Network Authentication Required
+
+
+Built-in Match
+--------------
+* HTTP Status
+
+>>> status = 404
+>>>
+>>> match status:
+...     case 400:             reason = 'Bad request'
+...     case 401 | 403 | 405: reason = 'Not allowed'
+...     case 404:             reason = 'Not found'
+...     case 418:             reason = "I'm a teapot"
+...     case _:               reason = 'Unexpected status'
+>>>
+>>>
+>>> print(reason)
+Not found
+
+
+Custom Enum
+-----------
+* ``from enum import Enum``
+
+>>> from enum import Enum
+>>>
+>>>
+>>> class HTTPStatus(Enum):
+...     OK = 200
+...     CREATED = 201
+...     BAD_REQUEST = 400
+...     NOT_FOUND = 404
+...     INTERNAL_ERROR = 500
+>>>
+>>>
+>>> status = 404
+>>>
+>>> match HTTPStatus(status):
+...     case HTTPStatus.BAD_REQUEST:    response = 'Bad request'
+...     case HTTPStatus.NOT_FOUND:      response = 'Not found'
+...     case HTTPStatus.INTERNAL_ERROR: response = 'Internal Server Error'
+...     case _:                         response = 'Unexpected status'
+>>>
+>>>
+>>> print(response)
+Not found
+
+
+Built-in Enum
+-------------
+* ``from http import HTTPStatus``
+
+>>> from http import HTTPStatus
+>>>
+>>>
+>>> HTTPStatus(200).name
+'OK'
+>>>
+>>> HTTPStatus(404).name
+'NOT_FOUND'
+>>>
+>>> HTTPStatus(500).name
+'INTERNAL_SERVER_ERROR'
+>>>
+>>> HTTPStatus(418).name
+'IM_A_TEAPOT'
+
+Using statuses:
+
+.. code-block:: python
+
+    from http import HTTPStatus
+
+    HTTPStatus.OK
+    HTTPStatus.OK == 200
+
+    HTTPStatus.OK.value
+    HTTPStatus.OK.phrase
+    HTTPStatus.OK.description
+
+    list(HTTPStatus)
+
+Most common statuses:
+
+.. code-block:: python
+
+    from http import HTTPStatus
+
+
+    HTTPStatus.OK                       # 200
+    HTTPStatus.CREATED                  # 201
+    HTTPStatus.MOVED_PERMANENTLY        # 301
+    HTTPStatus.FOUND                    # 302
+    HTTPStatus.BAD_REQUEST              # 400
+    HTTPStatus.UNAUTHORIZED             # 401
+    HTTPStatus.FORBIDDEN                # 403
+    HTTPStatus.METHOD_NOT_ALLOWED       # 405
+    HTTPStatus.NOT_FOUND                # 404
+    HTTPStatus.INTERNAL_SERVER_ERROR    # 500

@@ -40,7 +40,7 @@ Use Case
 .. code-block:: text
 
     X-API-VERSION: 1.0
-    {"name": "Jan Twardowski"}
+    {"name": "Mark Watney"}
 
     X-API-VERSION: 2.0
-    {"firstname": "Jan", "lastname": "Twardowski"}
+    {"firstname": "Mark", "lastname": "Watney"}

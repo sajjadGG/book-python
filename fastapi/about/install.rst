@@ -1,5 +1,8 @@
 Install
 =======
+* ``pip install fastapi``
+* ``pip install uvicorn`` - minimal (pure Python) dependencies
+* ``pip install uvicorn[standard]`` - "Cython-based" dependencies and other "extras"
 
 
 Install
@@ -10,17 +13,8 @@ To install ``FastAPI`` execute:
 
     $ pip install fastapi
 
-To install ``Uvicorn`` you have two options: ``uvicorn`` or ``uvicorn[standard]``:
-
-.. code-block:: console
-
-    # Install uvicorn with minimal (pure Python) dependencies
-    $ pip install uvicorn
-
-.. code-block:: console
-
-    # Install uvicorn with "Cython-based" dependencies (where possible) and other "optional extras"
-    $ pip install 'uvicorn[standard]'
+To install ``uvicorn`` there are two options: ``uvicorn``
+or ``uvicorn[standard]``.
 
 ``uvicorn``:
 
@@ -37,6 +31,16 @@ To install ``Uvicorn`` you have two options: ``uvicorn`` or ``uvicorn[standard]`
     * Windows users will have ``colorama`` installed for the colored logs
     * ``python-dotenv`` will be installed should you want to use the ``--env-file`` option
     * ``PyYAML`` will be installed to allow you to provide a ``.yaml`` file to ``--log-config``, if desired
+
+.. code-block:: console
+
+    # Install uvicorn with minimal (pure Python) dependencies
+    $ pip install uvicorn
+
+.. code-block:: console
+
+    # Install uvicorn with "Cython-based" dependencies (where possible) and other "optional extras"
+    $ pip install 'uvicorn[standard]'
 
 
 App
@@ -109,4 +113,3 @@ Create file ``main.py``:
     INFO:     Started server process [68007]
     INFO:     Waiting for application startup.
     INFO:     Application startup complete.
-

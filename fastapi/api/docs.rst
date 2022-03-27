@@ -1,6 +1,12 @@
 Documentation
 =============
+* Generate Documentation
+* What is OpenAPI?
+* Swagger vs Redoc
 
+
+Example
+-------
 >>> from fastapi import FastAPI
 >>> app = FastAPI()
 >>>

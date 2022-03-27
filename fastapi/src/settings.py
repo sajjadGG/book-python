@@ -3,5 +3,5 @@ AUTH_SECRET_KEY = \
 AUTH_ALGORITHM = 'HS256'
 AUTH_ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-DATABASE_URL = 'sqlite:///' + '../_tmp/mydatabase.sqlite3'
+DATABASE_URL = 'sqlite:///' + '../_tmp/mydatabase.db'
 DEBUG_SQL = False

@@ -9,6 +9,7 @@ Install
 
     $ pip install 'python-jose[cryptography]' python-multipart
 
+
 Using
 -----
 .. code-block:: console
@@ -16,12 +17,18 @@ Using
     $ openssl rand -hex 32
     8dd0c72c203f1c63bd67d2089b9f3dd069873ef78688cf840c71a2237ec01d1f
 
-* And copy the output to the variable ``SECRET_KEY`` (don't use the one in the example).
-* Create a variable ``ALGORITHM`` ``with the algorithm used to sign the JWT token and set it to ``"HS256"``.
-* Create a variable for the expiration of the token.
+Copy the output to the variable ``SECRET_KEY`` (don't use the one in the
+example).
 
 >>> SECRET_KEY = '8dd0c72c203f1c63bd67d2089b9f3dd069873ef78688cf840c71a2237ec01d1f'
+
+Create a variable ``ALGORITHM`` with the algorithm used to sign the JWT
+token and set it to ``"HS256"``.
+
 >>> ALGORITHM = 'HS256'
+
+Create a variable for the expiration of the token.
+
 >>> ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 

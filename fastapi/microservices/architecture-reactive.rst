@@ -1,9 +1,14 @@
 Reactive
 ========
 * Reactive System Traits
-* Reactive Systems
+* Responsive
+* Resilient
+* Elastic
+* Message Driven
 
 .. figure:: img/microservices-reactive.png
+
+    Reactive System Traits
 
 
 Responsive
