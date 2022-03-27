@@ -3,7 +3,7 @@ let year = today.getFullYear()
 let datetime = today.toISOString()
 let date = datetime.split('T')[0]
 let url = window.location.href
-let revision = $('footer span.commit code').text()
+let revision = $('footer .commit code').text()
 let chapter = $('div[itemprop="articleBody"] h1').text()
 
 const CITATION = `<div id="cite" itemscope itemtype="http://schema.org/ScholarlyArticle">
