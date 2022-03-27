@@ -1,27 +1,44 @@
 Pydantic Types Custom
 =====================
+* ``FilePath`` - like ``Path``, but the path must exist and be a file
+* ``DirectoryPath`` - like ``Path``, but the path must exist and be a directory
+* ``PastDate`` - like ``date``, but the date should be in the past
+* ``FutureDate`` - like ``date``, but the date should be in the future
+* ``EmailStr`` - the input string must be a valid email address, and the output is a simple string
+* ``NameEmail`` - the input string must be either a valid email address or in the format ``Fred Bloggs <fred.bloggs@example.com>``, and the output is a ``NameEmail`` object which has two properties: ``name`` and ``email``.
+* ``PyObject`` - expects a string and loads the python object importable at that dotted path; e.g. if ``'math.cos'`` was provided, the resulting field value would be the function ``cos``
+* ``Color`` - for parsing HTML and CSS colors
+* ``Json`` - a special type wrapper which loads JSON before parsing
+* ``PaymentCardNumber`` - for parsing and validating payment cards
+* ``AnyUrl`` - any URL
+* ``AnyHttpUrl`` - an HTTP URL
+* ``HttpUrl`` - a stricter HTTP URL
+* ``FileUrl`` - a file path URL
+* ``PostgresDsn`` - a postgres DSN style URL
+* ``RabbitMqDsn`` - an ``AMQP`` DSN style URL as used by RabbitMQ, StormMQ, ActiveMQ etc.
+* ``RedisDsn`` - a redis DSN style URL
+* ``stricturl`` - a type method for arbitrary URL constraints
+* ``UUID1`` - requires a valid UUID of type 1
+* ``UUID3`` - requires a valid UUID of type 3
+* ``UUID4`` - requires a valid UUID of type 4
+* ``UUID5`` - requires a valid UUID of type 5
+* ``SecretBytes`` - bytes where the value is kept partially secret
+* ``SecretStr`` - string where the value is kept partially secret
+* ``IPvAnyAddress`` - allows either an ``IPv4Address`` or an ``IPv6Address``
+* ``IPvAnyInterface`` - allows either an ``IPv4Interface`` or an ``IPv6Interface``
+* ``IPvAnyNetwork`` - allows either an ``IPv4Network`` or an ``IPv6Network``
+* ``NegativeFloat`` - allows a float which is negative; uses standard ``float`` parsing then checks the value is less than 0
+* ``NegativeInt`` - allows an int which is negative; uses standard ``int`` parsing then checks the value is less than 0
+* ``PositiveFloat`` - allows a float which is positive; uses standard ``float`` parsing then checks the value is greater than 0
+* ``PositiveInt`` - allows an int which is positive; uses standard ``int`` parsing then checks the value is greater than 0
 
 If no existing type suits your purpose you can also implement your `own
 pydantic-compatible types <#custom-data-types>`_ with custom properties
 and validation.
 
 
-Pydantic Types
---------------
-*pydantic* also provides a variety of other useful types:
-
-``FilePath``
-    like ``Path``, but the path must exist and be a file
-
-``DirectoryPath``
-    like ``Path``, but the path must exist and be a directory
-
-``PastDate``
-    like ``date``, but the date should be in the past
-
-``FutureDate``
-    like ``date``, but the date should be in the future
-
+Email Types
+-----------
 ``EmailStr``
     requires `email-validator <https://github.com/JoshData/python-email-validator>`_ to be installed;
     the input string must be a valid email address, and the output is a simple string
@@ -33,87 +50,9 @@ Pydantic Types
     For ``Fred Bloggs <fred.bloggs@example.com>`` the name would be ``"Fred Bloggs"``;
     for ``fred.bloggs@example.com`` it would be ``"fred.bloggs"``.
 
-``PyObject``
-    expects a string and loads the python object importable at that dotted path;
-    e.g. if ``'math.cos'`` was provided, the resulting field value would be the function ``cos``
 
-``Color``
-    for parsing HTML and CSS colors; see `Color Type <#color-type>`_
-
-``Json``
-    a special type wrapper which loads JSON before parsing; see `JSON Type <#json-type>`_
-
-``PaymentCardNumber``
-    for parsing and validating payment cards; see `payment cards <#payment-card-numbers>`_
-
-``AnyUrl``
-    any URL; see `URLs <#urls>`_
-
-``AnyHttpUrl``
-    an HTTP URL; see `URLs <#urls>`_
-
-``HttpUrl``
-    a stricter HTTP URL; see `URLs <#urls>`_
-
-``FileUrl``
-    a file path URL; see `URLs <#urls>`_
-
-``PostgresDsn``
-    a postgres DSN style URL; see `URLs <#urls>`_
-
-``RabbitMqDsn``
-    an ``AMQP`` DSN style URL as used by RabbitMQ, StormMQ, ActiveMQ etc.; see `URLs <#urls>`_
-
-``RedisDsn``
-    a redis DSN style URL; see `URLs <#urls>`_
-
-``stricturl``
-    a type method for arbitrary URL constraints; see `URLs <#urls>`_
-
-``UUID1``
-    requires a valid UUID of type 1; see ``UUID`` `above <#standard-library-types>`_
-
-``UUID3``
-    requires a valid UUID of type 3; see ``UUID`` `above <#standard-library-types>`_
-
-``UUID4``
-    requires a valid UUID of type 4; see ``UUID`` `above <#standard-library-types>`_
-
-``UUID5``
-    requires a valid UUID of type 5; see ``UUID`` `above <#standard-library-types>`_
-
-``SecretBytes``
-    bytes where the value is kept partially secret; see `Secrets <#secret-types>`_
-
-``SecretStr``
-    string where the value is kept partially secret; see `Secrets <#secret-types>`_
-
-``IPvAnyAddress``
-    allows either an ``IPv4Address`` or an ``IPv6Address``
-
-``IPvAnyInterface``
-    allows either an ``IPv4Interface`` or an ``IPv6Interface``
-
-``IPvAnyNetwork``
-    allows either an ``IPv4Network`` or an ``IPv6Network``
-
-``NegativeFloat``
-    allows a float which is negative; uses standard ``float`` parsing then checks the value is less than 0;
-    see `Constrained Types <#constrained-types>`_
-
-``NegativeInt``
-    allows an int which is negative; uses standard ``int`` parsing then checks the value is less than 0;
-    see `Constrained Types <#constrained-types>`_
-
-``PositiveFloat``
-    allows a float which is positive; uses standard ``float`` parsing then checks the value is greater than 0;
-    see `Constrained Types <#constrained-types>`_
-
-``PositiveInt``
-    allows an int which is positive; uses standard ``int`` parsing then checks the value is greater than 0;
-    see `Constrained Types <#constrained-types>`_
-
-
+URL Fields
+----------
 For URI/URL validation the following types are available:
 
 * ``AnyUrl``: any scheme allowed, TLD not required, host required
@@ -156,10 +95,10 @@ the above types export the following properties:
 * ``host``: always set - the url host (``example.com`` above)
 * ``host_type``: always set - describes the type of host, either:
 
-  - ``domain``: e.g. ``example.com``,
-  - ``int_domain``: international domain, see `below <#international-domains>`_, e.g. ``exampl£e.org``,
-  - ``ipv4``: an IP V4 address, e.g. ``127.0.0.1``, or
-  - ``ipv6``: an IP V6 address, e.g. ``2001:db8:ff00:42``
+  * ``domain``: e.g. ``example.com``,
+  * ``int_domain``: international domain, see `international-domains>`_, e.g. ``exampl£e.org``,
+  * ``ipv4``: an IP V4 address, e.g. ``127.0.0.1``, or
+  * ``ipv6``: an IP V6 address, e.g. ``2001:db8:ff00:42``
 
 * ``user``: optional - the username if included (``samuel`` above)
 * ``password``: optional - the password if included (``pass`` above)
@@ -185,8 +124,8 @@ International Domains
 
              To explain this; consider the following two cases:
 
-             - ``exam_ple.co.uk``: the hostname is ``exam_ple``, which should not be allowed since it contains an underscore
-             - ``foo_bar.example.com`` the hostname is ``example``, which should be allowed since the underscore is in the subdomain
+             * ``exam_ple.co.uk``: the hostname is ``exam_ple``, which should not be allowed since it contains an underscore
+             * ``foo_bar.example.com`` the hostname is ``example``, which should be allowed since the underscore is in the subdomain
 
              Without having an exhaustive list of TLDs, it would be impossible to differentiate between these two. Therefore
              underscores are allowed, but you can always do further validation in a validator if desired.
@@ -211,31 +150,31 @@ You can use the ``Color`` data type for storing colors as per
 
 ``Color`` has the following methods:
 
-**``original``**
+``original``
     the original string or tuple passed to ``Color``
 
-**``as_named``**
+``as_named``
     returns a named CSS3 color; fails if the alpha channel is set or no such color exists unless
   ``fallback=True`` is supplied, in which case it falls back to ``as_hex``
 
-**``as_hex``**
+``as_hex``
     returns a string in the format ``#fff`` or ``#ffffff``; will contain 4 (or 8) hex values if the alpha channel is set,
   e.g. ``#7f33cc26``
 
-**``as_rgb``**
+``as_rgb``
     returns a string in the format ``rgb(<red>, <green>, <blue>)``, or ``rgba(<red>, <green>, <blue>, <alpha>)``
   if the alpha channel is set
 
-**``as_rgb_tuple``**
+``as_rgb_tuple``
     returns a 3- or 4-tuple in RGB(a) format. The ``alpha`` keyword argument can be used to define whether
     the alpha channel should be included;
     options: ``True`` - always include, ``False`` - never include, ``None`` (default) - include if set
 
-**``as_hsl``**
+``as_hsl``
     string in the format ``hsl(<hue deg>, <saturation %>, <lightness %>)``
   or ``hsl(<hue deg>, <saturation %>, <lightness %>, <alpha>)`` if the alpha channel is set
 
-**``as_hsl_tuple``**
+``as_hsl_tuple``
     returns a 3- or 4-tuple in HSL(a) format. The ``alpha`` keyword argument can be used to define whether
     the alpha channel should be included;
     options: ``True`` - always include, ``False`` - never include, ``None`` (the default)  - include if set
