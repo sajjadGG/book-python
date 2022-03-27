@@ -221,6 +221,7 @@ Tests
     :caption: Tests
 
     test/doctest.rst
+    test/unittest.rst
 
 
 References

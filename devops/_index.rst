@@ -28,7 +28,8 @@ Tests
     :maxdepth: 1
     :caption: Tests
 
-    tests/unittest.rst
+    ../intermediate/test/doctest.rst
+    ../intermediate/test/unittest.rst
     tests/pytest.rst
 
 

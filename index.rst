@@ -95,7 +95,7 @@ Stdlib
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: DevOps
+    :caption: Stdlib
 
     stdlib/_index.rst
 

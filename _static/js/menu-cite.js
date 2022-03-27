@@ -42,12 +42,11 @@ const CITATION = `<div id="cite" itemscope itemtype="http://schema.org/Scholarly
         URL: <link itemprop="url" href="${url}">${url}</link>
         
         <!-- license -->
-        License: <link itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</link>
+        <!-- License: <link itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</link>-->
     </blockquote>`;
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // let left_menu = document.querySelectorAll('nav[class="wy-nav-side"]')[0];
-    var left_menu = $('nav[class="wy-nav-side"]');
-    left_menu.append(CITATION);
+    let where = $('footer');
+    where.append(CITATION);
 });

@@ -1,7 +1,3 @@
-About
-*****
-
-
 Modules and Packages
 ********************
 .. toctree::
@@ -76,10 +72,3 @@ Looping
 
     looping/comprehensions.rst
     looping/else.rst
-
-
-References
-**********
-.. bibliography:: references.bib
-    :labelprefix: Stdlib
-    :cited:

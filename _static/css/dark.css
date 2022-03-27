@@ -255,9 +255,9 @@
     .nboutput .output_area {color: var(--code-output); }
 
     /* left navigation menu citation */
-    nav #cite {position: absolute; bottom: 3rem; padding: 1rem; background: var(--menu-background)}
-    nav #cite label {color: var(--menu-text); font-weight: bold; margin-top: 1rem}
-    nav #cite blockquote {margin-top: 1rem}
+    /* nav #cite {position: absolute; bottom: 3rem; padding: 1rem; background: var(--menu-background)} */
+    /* nav #cite label {color: var(--menu-text); font-weight: bold; margin-top: 1rem} */
+    /* nav #cite blockquote {margin-top: 1rem} */
 
     /* left navigation menu hide 3rd level toc-tree entries */
     ul li.toctree-l3 {display: none}

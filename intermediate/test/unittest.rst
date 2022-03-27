@@ -1,7 +1,7 @@
 Unit Testing
 ============
 
-.. figure:: ../_img/fun-geekandpoke-development-driven-tests.jpg
+.. figure:: img/fun-geekandpoke-development-driven-tests.jpg
 
     Development driven tests
 
@@ -161,10 +161,10 @@ Stub
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/devops_unittest_rectangle.py
-    :caption: :download:`Solution <../_assignments/devops_unittest_rectangle.py>`
+.. literalinclude:: assignments/test_unittest_rectangle.py
+    :caption: :download:`Solution <assignments/test_unittest_rectangle.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/devops_unittest_dragon.py
-    :caption: :download:`Solution <../_assignments/devops_unittest_dragon.py>`
+.. literalinclude:: assignments/test_unittest_dragon.py
+    :caption: :download:`Solution <assignments/test_unittest_dragon.py>`
     :end-before: # Solution

@@ -10,6 +10,22 @@ About
     about/architecture.rst
 
 
+Type Annotation
+***************
+.. toctree::
+    :maxdepth: 1
+    :caption: Type Annotation
+
+    ../intermediate/type-annotation/scalar.rst
+    ../intermediate/type-annotation/sequence.rst
+    ../intermediate/type-annotation/mapping.rst
+    ../intermediate/type-annotation/callable.rst
+    ../intermediate/type-annotation/oop.rst
+    ../intermediate/type-annotation/extra.rst
+    ../intermediate/type-annotation/deprecated.rst
+    ../intermediate/type-annotation/static-analysis.rst
+
+
 HTTP
 ****
 .. toctree::
@@ -91,6 +107,7 @@ DevOps
     :caption: DevOps
 
     devops/docker.rst
+    ../devops/ci-cd/ecosystem.rst
 
 
 Microservices
@@ -102,3 +119,12 @@ Microservices
     microservices/reactive.rst
     microservices/architecture.rst
     microservices/cloud.rst
+
+
+Appendix
+********
+.. toctree::
+    :maxdepth: 1
+    :caption: Appendix
+
+    further-reading.rst
