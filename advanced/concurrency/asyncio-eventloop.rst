@@ -132,7 +132,7 @@ Loop
     # int or a float), using the same time reference as loop.time().
     #
     # loop.time()
-    #   Return the current time, as a float value, according to the event loop’s
+    #   Return the current time, as a float value, according to the event loop's
     # internal monotonic clock.
 
 

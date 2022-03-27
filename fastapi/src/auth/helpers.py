@@ -43,8 +43,7 @@ def verify_token(token: str):
             headers={'WWW-Authenticate': 'Bearer'})
 
     try:
-        payload = jwt.decode(token, AUTH_SECRET_KEY,
-                             algorithms=[AUTH_ALGORITHM])
+        payload = jwt.decode(token, AUTH_SECRET_KEY, algorithms=[AUTH_ALGORITHM])
         username: str = payload.get('sub')
         if username is None:
             raise UnauthorizedException

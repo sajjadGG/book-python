@@ -17,8 +17,8 @@ api = APIRouter(tags=['Auth'])
 def login(request: OAuth2PasswordRequestForm = Depends()):
     try:
         user = User.login(request.username, request.password)
-        return {'access_token': create_access_token({'sub': user.username}),
-                'token_type': 'bearer'}
+        token = create_access_token({'sub': user.username})
+        return {'access_token': token, 'token_type': 'bearer'}
     except (User.DoesNotExist, PermissionError):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
                             detail='Invalid credentials')
@@ -28,8 +28,8 @@ def login(request: OAuth2PasswordRequestForm = Depends()):
 def login(request: LoginRequest):
     try:
         user = User.login(request.username, request.password)
-        return {'access_token': create_access_token({'sub': user.username}),
-                'token_type': 'bearer'}
+        token = create_access_token({'sub': user.username})
+        return {'access_token': token, 'token_type': 'bearer'}
     except (User.DoesNotExist, PermissionError):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
                             detail='Invalid credentials')
@@ -37,7 +37,8 @@ def login(request: LoginRequest):
 
 @api.post('/user', response_model=UserOut)
 def create_user(request: UserCreate):
-    return User.add(username=request.username, password=request.password,
+    return User.add(username=request.username,
+                    password=request.password,
                     email=request.email)
 
 

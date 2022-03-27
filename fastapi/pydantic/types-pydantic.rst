@@ -267,11 +267,11 @@ These validators have the same semantics as in
 ``field``, etc.
 
 Similar validation could be achieved using
-```constr(regex=...)`` <#constrained-types>`_ except the value won’t be
+```constr(regex=...)`` <#constrained-types>`_ except the value won't be
 formatted with a space, the schema would just include the full pattern
 and the returned value would be a vanilla string.
 
-See `schema`_ for more details on how the model’s schema is
+See `schema`_ for more details on how the model's schema is
 generated.
 
 

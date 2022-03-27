@@ -79,11 +79,14 @@ Pydantic
     :maxdepth: 1
     :caption: Pydantic
 
-    pydantic/settings.rst
+    pydantic/models.rst
+    pydantic/schema.rst
     pydantic/types-stdlib.rst
     pydantic/types-pydantic.rst
     pydantic/types-constrained.rst
     pydantic/validator.rst
+    pydantic/settings.rst
+
 
 Auth
 ****

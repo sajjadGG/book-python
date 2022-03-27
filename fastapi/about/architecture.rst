@@ -5,6 +5,8 @@ FastAPI Architecture
 * Pydantic
 * Type Annotations
 
+.. figure:: img/fastapi-architecture.png
+
 
 Standard WSGI
 -------------

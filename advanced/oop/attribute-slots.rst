@@ -22,7 +22,7 @@ The action of a __slots__ declaration is not limited to the class where it is de
 
 If a class defines a slot also defined in a base class, the instance variable defined by the base class slot is inaccessible (except by retrieving its descriptor directly from the base class). This renders the meaning of the program undefined. In the future, a check may be added to prevent this.
 
-Nonempty __slots__ does not work for classes derived from “variable-length” built-in types such as int, bytes and tuple.
+Nonempty __slots__ does not work for classes derived from 'variable-length' built-in types such as int, bytes and tuple.
 
 Any non-string iterable may be assigned to __slots__.
 
@@ -32,7 +32,7 @@ __class__ assignment works only if both classes have the same __slots__.
 
 Multiple inheritance with multiple slotted parent classes can be used, but only one parent is allowed to have attributes created by slots (the other bases must have empty slot layouts) - violations raise TypeError.
 
-If an iterator is used for __slots__ then a descriptor is created for each of the iterator’s values. However, the __slots__ attribute will be an empty iterator.
+If an iterator is used for __slots__ then a descriptor is created for each of the iterator's values. However, the __slots__ attribute will be an empty iterator.
 
 Source: [#pydocDataModel]_
 
@@ -41,7 +41,7 @@ Weakref
 -------
 A weak reference to an object is not enough to keep the object alive: when the only remaining references to a referent are weak references, garbage collection is free to destroy the referent and reuse its memory for something else. However, until the object is actually destroyed the weak reference may return the object even if there are no strong references to it.
 
-A primary use for weak references is to implement caches or mappings holding large objects, where it’s desired that a large object not be kept alive solely because it appears in a cache or mapping.
+A primary use for weak references is to implement caches or mappings holding large objects, where it's desired that a large object not be kept alive solely because it appears in a cache or mapping.
 
 Source: [#pydocWeakref]_
 

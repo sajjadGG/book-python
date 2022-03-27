@@ -87,7 +87,7 @@ Thread-safety
 
 Thread-safe code is code that will work even if many Threads are executing
 it simultaneously. Writing it is a black art. It is extremely difficult to
-debug since you can’t reproduce all possible interactions between Threads.
+debug since you can't reproduce all possible interactions between Threads.
 You have to do it by logic. In a computer, something that happens only one
 in a billion times must be dealt with because on average it will happen
 once a second. To write code that will run stably for weeks takes extreme

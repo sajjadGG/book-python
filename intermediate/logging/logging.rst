@@ -710,7 +710,7 @@ by the Logger for that level of call. You can write code like this:
 ...     logger.debug('Message with %s, %s', expensive_func1(),
 ...                                         expensive_func2())
 
-so that if the logger’s threshold is set above DEBUG, the calls to
+so that if the logger's threshold is set above DEBUG, the calls to
 ``expensive_func1()`` and ``expensive_func2()`` are never made.
 
 

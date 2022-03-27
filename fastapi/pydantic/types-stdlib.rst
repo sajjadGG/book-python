@@ -156,7 +156,7 @@ int) see `Constrained Types <#constrained-types>`_.
    parsing and validation
 
 ``typing.Iterable``
-   this is reserved for iterables that shouldn’t be consumed. See
+   this is reserved for iterables that shouldn't be consumed. See
    `Infinite Generators <#infinite-generators>`_ below for more detail
    on parsing and validation
 
@@ -356,12 +356,12 @@ that case, the generator will be consumed and stored on the model as a
 list and its values will be validated with the sub-type of ``Sequence``
 (e.g. ``int`` in ``Sequence[int]``).
 
-But if you have a generator that you don’t want to be consumed, e.g. an
+But if you have a generator that you don't want to be consumed, e.g. an
 infinite generator or a remote data loader, you can define its type with
 ``Iterable``:
 
 Warning ``Iterable`` fields only perform a simple check that the
-argument is iterable and won’t be consumed. No validation of their values is performed as it cannot be done without consuming the iterable.
+argument is iterable and won't be consumed. No validation of their values is performed as it cannot be done without consuming the iterable.
 
 If you want to validate the values of an infinite generator you
 can create a separate model and use it while consuming the generator,
@@ -385,10 +385,10 @@ You may get unexpected coercion with ``Union``; see below. Know
 that you can also make the check slower but stricter by using `Smart
 Union <model_config-smart-union>`_
 
-However, as can be seen above, *pydantic* will attempt to ‘match’ any of
+However, as can be seen above, *pydantic* will attempt to 'match' any of
 the types defined under ``Union`` and will use the first one that
 matches. In the above example the ``id`` of ``user_03`` was defined as a
-``uuid.UUID`` class (which is defined under the attribute’s ``Union``
+``uuid.UUID`` class (which is defined under the attribute's ``Union``
 annotation) but as the ``uuid.UUID`` can be marshalled into an ``int``
 it chose to match against the ``int`` type and disregarded the other
 types.
@@ -424,7 +424,7 @@ Discriminated Unions (a.k.a. Tagged Unions)
 -------------------------------------------
 When ``Union`` is used with multiple submodels, you sometimes know
 exactly which submodel needs to be checked and validated and want to
-enforce this. To do that you can set the same field - let’s call it
+enforce this. To do that you can set the same field - let's call it
 ``my_discriminator`` - in each of the submodels with a discriminated
 value, which is one (or many) ``Literal`` value(s). For your ``Union``,
 you can set the discriminator in its value:
@@ -452,7 +452,7 @@ combine multiple discriminators. In this case you can always create
 
 Enums and Choices
 -----------------
-*pydantic* uses python’s standard ``enum`` classes to define choices.
+*pydantic* uses python's standard ``enum`` classes to define choices.
 
 
 Generic Classes as Types
@@ -467,7 +467,7 @@ as field types and perform custom validation based on the "type
 parameters" (or sub-types) with ``_get_validators__``.
 
 If the Generic class that you are using as a sub-type has a classmethod
-``_get_validators__`` you don’t need to use ``arbitrary_types_allowed``
+``_get_validators__`` you don't need to use ``arbitrary_types_allowed``
 for it to work.
 
 Because you can declare validators that receive the current ``field``,

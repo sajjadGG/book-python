@@ -20,7 +20,8 @@ class User(Model):
 
     @staticmethod
     def add(username: str, email: str, password: str):
-        return User.insert(username=username, password=encrypt(password),
+        return User.insert(username=username,
+                           password=encrypt(password),
                            email=email)
 
     @staticmethod
