@@ -50,7 +50,7 @@ DATA = {
 
 DOMAINS = ('.gov', '.gov.pl')
 
-# emails with top-level domain in DOMAINS
+# Email addresses with top-level domain in DOMAINS
 # type: list[str]
 result = ...
 

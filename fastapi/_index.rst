@@ -4,8 +4,8 @@ About
     :maxdepth: 1
     :caption: About
 
-    about/introduction.rst
     about/entrytest.rst
+    about/introduction.rst
     about/install.rst
     about/architecture.rst
 

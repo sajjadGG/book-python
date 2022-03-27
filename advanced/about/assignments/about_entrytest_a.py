@@ -24,7 +24,7 @@ Tests:
     1
 """
 
-# Define `result` with value 1
+# Define variable `result` with value 1
 # type: int
 result = ...
 

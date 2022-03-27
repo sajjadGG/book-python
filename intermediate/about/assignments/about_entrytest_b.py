@@ -48,8 +48,8 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
         (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
 
-# converted DATA from list[tuple] to list[dict]
-# type: list[dict]
+# Convert DATA from list[tuple] to list[dict]
+# type: list[dict[str,float|str]]
 result = ...
 
 
