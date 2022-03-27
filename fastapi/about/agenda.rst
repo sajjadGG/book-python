@@ -23,6 +23,9 @@ Day 1
 * HTTP: Headers
 * HTTP: MIME types
 * HTTP: API Versioning
+* JSON: load, dump
+* JSON: encoder, decoder
+* JSON: object serialization
 
 
 Day 2

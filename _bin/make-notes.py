@@ -5,6 +5,7 @@ from _config import log, BOOKS, SRC_DIR, OUT_DIR
 from _config import get_toc, get_chapters
 
 
+# TODO: kopiować pliki requiremenents.txt dla każdego rozdziału do _template/chapter
 # TODO: linki do materiałów gdzie można znaleźć dany rozdział, wygenerować na podstawie ścieżki do pliku
 
 

@@ -86,7 +86,7 @@ JSON
 ****
 .. toctree::
     :maxdepth: 1
-    :caption: Serialization
+    :caption: JSON
 
     json/about.rst
     json/string.rst
