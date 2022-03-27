@@ -1,5 +1,5 @@
-API WebSockets
-==============
+FastAPI WebSockets
+==================
 
 References
 ----------

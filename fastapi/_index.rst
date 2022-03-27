@@ -5,9 +5,7 @@ About
     :caption: About
 
     about/entrytest.rst
-    about/about.rst
-    about/install.rst
-    about/architecture.rst
+    about/agenda.rst
 
 
 Type Annotation
@@ -41,36 +39,26 @@ HTTP
     http/api-versioning.rst
 
 
-API
-***
+FastAPI
+*******
 .. toctree::
     :maxdepth: 1
     :caption: API
 
-    api/about.rst
-    api/schema.rst
-    api/docs.rst
-    api/get.rst
-    api/post.rst
-    api/status.rst
-    api/cookies.rst
-    api/headers.rst
-    api/files.rst
-    api/middleware.rst
-    api/websockets.rst
-    api/test.rst
-    api/background-tasks.rst
-
-
-Database
-********
-.. toctree::
-    :maxdepth: 1
-    :caption: API
-
-    database/orm.rst
-    database/auth.rst
-    database/relationship.rst
+    fastapi/about-fastapi.rst
+    fastapi/about-install.rst
+    fastapi/about-architecture.rst
+    fastapi/docs-schema.rst
+    fastapi/docs-openapi.rst
+    fastapi/http-get.rst
+    fastapi/http-post.rst
+    fastapi/http-status.rst
+    fastapi/http-cookies.rst
+    fastapi/http-headers.rst
+    fastapi/http-files.rst
+    fastapi/http-websockets.rst
+    fastapi/framework-middleware.rst
+    fastapi/framework-backgroundtask.rst
 
 
 Pydantic
@@ -86,6 +74,17 @@ Pydantic
     pydantic/types-constrained.rst
     pydantic/validator.rst
     pydantic/settings.rst
+
+
+Database
+********
+.. toctree::
+    :maxdepth: 1
+    :caption: API
+
+    database/orm.rst
+    database/auth.rst
+    database/relationship.rst
 
 
 Auth
@@ -105,6 +104,7 @@ DevOps
     :maxdepth: 1
     :caption: DevOps
 
+    devops/fastapi-test.rst
     devops/docker.rst
     ../devops/ci-cd/ecosystem.rst
 

@@ -1,5 +1,5 @@
-Microservices Service Choreography
-==================================
+Microservices Choreography
+==========================
 * Choreografia: informujemy system o zdarzeniu
 * Choreografia: system subskrybuje się do eventów
 * Choreografia: system reaguje na zmiany stanów

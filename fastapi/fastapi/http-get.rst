@@ -1,5 +1,5 @@
-API GET
-=======
+FastAPI GET
+===========
 * Resources
 * Query Parameters
 

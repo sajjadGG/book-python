@@ -1,5 +1,5 @@
-Microservice Service Runtime
-============================
+Microservice Runtime
+====================
 * Multiple service instances per host
 * Single service instance per host
 * Service instance per VM

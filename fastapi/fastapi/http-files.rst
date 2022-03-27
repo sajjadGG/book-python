@@ -1,5 +1,5 @@
-API Files
-=========
+FastAPI Files
+=============
 * MIME Type ``multipart/form-data``
 * Single File
 * Multiple Files

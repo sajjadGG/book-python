@@ -1,5 +1,5 @@
-API Documentation
-=================
+FastAPI Documentation
+=====================
 * Generate Documentation
 * What is OpenAPI?
 * Swagger vs Redoc
