@@ -1,5 +1,5 @@
-HTTP Protocol
-=============
+HTTP About
+==========
 * Request vs Response
 * URI vs URL vs URN
 * HTTP vs HTTPS

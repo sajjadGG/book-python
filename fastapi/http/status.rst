@@ -1,5 +1,5 @@
-HTTP Statuses
-=============
+HTTP Status
+===========
 * ``1XX`` - Informational
 * ``2XX`` - Successful
 * ``3XX`` - Redirection

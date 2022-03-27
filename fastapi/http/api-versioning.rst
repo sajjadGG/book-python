@@ -1,5 +1,5 @@
-API Versioning
-==============
+HTTP API Versioning
+===================
 * Always version API
 * Have stable API!
 * Do not use plural in resources

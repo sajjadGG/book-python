@@ -1,5 +1,5 @@
-Install
-=======
+FastAPI Install
+===============
 * ``pip install fastapi``
 * ``pip install uvicorn`` - minimal (pure Python) dependencies
 * ``pip install uvicorn[standard]`` - "Cython-based" dependencies and other "extras"

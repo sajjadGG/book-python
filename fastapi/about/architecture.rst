@@ -1,9 +1,24 @@
-Architecture
-============
+FastAPI Architecture
+====================
 * Uvicorn
 * Starlette
 * Pydantic
-* Python type annotations (available since Python 3.5)
+* Type Annotations
+
+
+Standard WSGI
+-------------
+* WSGI - Web Server Gateway Interface
+
+
+Standard ASGI
+-------------
+* ASGI - Asynchronous Server Gateway Interface
+* https://asgi.readthedocs.io/en/latest/
+
+ASGI (Asynchronous Server Gateway Interface) is a spiritual successor to WSGI, intended to provide a standard interface between async-capable Python web servers, frameworks, and applications.
+
+Where WSGI provided a standard for synchronous Python apps, ASGI provides one for both asynchronous and synchronous apps, with a WSGI backwards-compatibility implementation and multiple servers and application frameworks.
 
 
 Uvicorn

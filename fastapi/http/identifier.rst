@@ -1,5 +1,5 @@
-HTTP URL
-========
+HTTP Identifier
+===============
 * URN - name (i.e. book title)
 * URI - resource (i.e. one particular unit of book with that title)
 * URL - location (i.e. where to get it)

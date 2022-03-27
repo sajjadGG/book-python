@@ -1,5 +1,5 @@
-GET
-===
+API GET
+=======
 * Resources
 * Query Parameters
 

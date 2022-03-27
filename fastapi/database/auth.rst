@@ -1,5 +1,5 @@
-Auth
-====
+Database Auth
+=============
 
 
 Install

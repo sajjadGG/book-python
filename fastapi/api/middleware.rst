@@ -1,7 +1,7 @@
-Middleware
-==========
+API Middleware
+==============
 * Request processing
-* Reponse processing
+* Response processing
 * What is middleware?
 
 

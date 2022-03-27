@@ -1,5 +1,5 @@
-MIME types
-==========
+HTTP MIME Types
+===============
 * type/subtype
 * ``text`` - Represents any document that contains text and is theoretically human readable
 * ``image`` - Represents any kind of images. Videos are not included, though animated images (like animated gif) are described with an image type

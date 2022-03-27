@@ -1,5 +1,5 @@
-JSON Web Token
-==============
+Auth JSON Web Token
+===================
 * JWT tokens
 
 

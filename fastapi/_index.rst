@@ -5,7 +5,7 @@ About
     :caption: About
 
     about/entrytest.rst
-    about/introduction.rst
+    about/about.rst
     about/install.rst
     about/architecture.rst
 
@@ -32,30 +32,13 @@ HTTP
     :maxdepth: 1
     :caption: HTTP
 
-    http/protocol.rst
-    http/identifiers.rst
+    http/about.rst
+    http/identifier.rst
     http/method.rst
-    http/headers.rst
+    http/header.rst
     http/mimetype.rst
     http/status.rst
     http/api-versioning.rst
-
-
-Web
-***
-.. toctree::
-    :maxdepth: 1
-    :caption: Web
-
-    web/stdlib.rst
-    web/requests.rst
-    web/scrapping.rst
-    web/frameworks.rst
-    web/fastapi.rst
-    web/jinja.rst
-    web/paas.rst
-    web/soap-wsdl.rst
-    web/async.rst
 
 
 API
@@ -78,6 +61,7 @@ API
     api/test.rst
     api/background-tasks.rst
 
+
 Database
 ********
 .. toctree::
@@ -87,6 +71,18 @@ Database
     database/orm.rst
     database/auth.rst
     database/relationship.rst
+
+
+Pydantic
+********
+.. toctree::
+    :maxdepth: 1
+    :caption: Pydantic
+
+    pydantic/types.rst
+    pydantic/constrained-types.rst
+    pydantic/settings.rst
+    pydantic/validator.rst
 
 
 Auth

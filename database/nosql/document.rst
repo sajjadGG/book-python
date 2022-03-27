@@ -21,3 +21,9 @@ Model
 -----
 .. figure:: img/nosql-document-01.png
 .. figure:: img/nosql-document-02.jpg
+
+
+MongoDB
+-------
+* https://motor.readthedocs.io/en/stable/
+* https://roman-right.github.io/beanie/tutorial/relations/

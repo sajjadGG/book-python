@@ -1,5 +1,5 @@
-Introduction
-============
+FastAPI About
+=============
 * Automatic documentation (Swagger, Redoc)
 * Uses Python type annotation
 * IDE autocomplete (through type annotation)

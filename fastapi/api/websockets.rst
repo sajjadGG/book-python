@@ -1,5 +1,5 @@
-WebSockets
-==========
+API WebSockets
+==============
 
 References
 ----------

@@ -24,6 +24,23 @@ Protocols
     protocols/dns.rst
 
 
+Web
+***
+.. toctree::
+    :maxdepth: 1
+    :caption: Web
+
+    web/stdlib.rst
+    web/requests.rst
+    web/scrapping.rst
+    web/frameworks.rst
+    web/fastapi.rst
+    web/jinja.rst
+    web/paas.rst
+    web/async.rst
+    web/soap-wsdl.rst
+
+
 Transport
 *********
 .. toctree::

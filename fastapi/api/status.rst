@@ -1,5 +1,5 @@
-Status
-======
+API Status
+==========
 * 200 - OK (GET)
 * 201 - Created (POST)
 * 202 - Accepted (PUT)

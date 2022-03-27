@@ -1,5 +1,5 @@
-Headers
-=======
+API Headers
+===========
 * Request headers
 * Response headers
 

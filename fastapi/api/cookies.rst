@@ -1,5 +1,5 @@
-Cookies
-=======
+API Cookies
+===========
 
 
 >>> from typing import Optional

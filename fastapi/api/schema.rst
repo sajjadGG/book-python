@@ -1,5 +1,5 @@
-Schema
-======
+API Schema
+==========
 * Schema - also known as Model
 * Represents data in your system
 * Pydantic class

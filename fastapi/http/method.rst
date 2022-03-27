@@ -1,5 +1,5 @@
-HTTP Methods
-============
+HTTP Method
+===========
 * ``GET`` - Read
 * ``POST`` - Create
 * ``PUT`` - Update/Replace
