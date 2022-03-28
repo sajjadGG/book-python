@@ -2,7 +2,7 @@
 * Assignment: JSON File Load
 * Complexity: easy
 * Lines of code: 3 lines
-* Time: 53 min
+* Time: 5 min
 
 English:
     1. Read data from `FILE`
