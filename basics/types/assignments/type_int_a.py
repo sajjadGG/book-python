@@ -25,6 +25,9 @@ Polish:
         c. Mars średnia: −63 °C
     5. Uruchom doctesty - wszystkie muszą się powieść
 
+Hint:
+    * Use only +273 and -273
+
 References:
     [1] Centro de Astrobiología (CSIC-INTA).
         Rover Environmental Monitoring Station, Mars Science Laboratory (NASA).

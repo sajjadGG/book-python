@@ -23,6 +23,9 @@ Polish:
         b. Księżyca w nocy: 93 K
     5. Uruchom doctesty - wszystkie muszą się powieść
 
+Hint:
+    * Use only +273 and -273
+
 References:
     [1] Centro de Astrobiología (CSIC-INTA).
         Rover Environmental Monitoring Station, Mars Science Laboratory (NASA).

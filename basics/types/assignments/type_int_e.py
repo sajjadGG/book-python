@@ -25,6 +25,9 @@ Polish:
     7. W obliczeniach użyj floordiv (`//`)
     8. Uruchom doctesty - wszystkie muszą się powieść
 
+Hint:
+    * Use // to get floor division as int
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 

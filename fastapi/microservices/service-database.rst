@@ -5,6 +5,10 @@ Microservice Database
 * Shared database
 * Database triggers
 
+.. figure:: img/microservices-database-compare.png
+
+    Difference b/w Monolith and MicroService Architectures [#Haq2018]_
+
 
 Polyglot Persistence
 --------------------
@@ -40,3 +44,8 @@ Database triggers
 * Reliably publish events whenever state changes by using database triggers. Each trigger inserts an event into an EVENTS table, which is polled by a separate process that publishes the events.
 * Czy są ok?
 * Czym się różni struct od Class
+
+
+References
+----------
+.. [#Haq2018] ul Haq, S. Introduction to Monolithic Architecture and MicroServices Architecture. Year: 2018. Retrieved: 2022-03-28. URL: https://medium.com/koderlabs/introduction-to-monolithic-architecture-and-microservices-architecture-b211a5955c63

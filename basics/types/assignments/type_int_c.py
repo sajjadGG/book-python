@@ -30,6 +30,7 @@ References:
 
 Hints:
     * 1 km = 1000 m
+    * Use // to get floor division as int
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

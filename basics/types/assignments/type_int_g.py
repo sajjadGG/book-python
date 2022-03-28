@@ -23,6 +23,7 @@ Hints:
     * 1 B = 8 b
     * 1 KB = 1024 B
     * 1 MB = 1024 KB
+    * Use // to get floor division as int
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

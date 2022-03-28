@@ -22,6 +22,7 @@ Polish:
 Hints:
     * 1 kb = 1024 b
     * 1 Mb = 1024 Kb
+    * Use // to get floor division as int
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

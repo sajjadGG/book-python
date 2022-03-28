@@ -69,11 +69,11 @@ kph = ...
 # type: float
 speed_limit = ...
 
-# speed limit in miles per hour, round to one decimal place
+# speed limit in miles per hour
 # type: float
 speed_limit_mph = ...
 
-# speed limit in kilometers per hour, round to one decimal place
+# speed limit in kilometers per hour
 # type: float
 speed_limit_kph = ...
 

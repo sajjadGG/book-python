@@ -8,6 +8,13 @@ Microservice API
 * GraphQL
 
 
+Direct
+------
+.. figure:: img/microservices-api-direct.png
+
+    Source: [#BFF2020]_
+
+
 API gateway
 -----------
 * Implement an API gateway that is the single entry point for all clients. The API gateway handles requests in one of two ways. Some requests are simply proxied/routed to the appropriate service. It handles other requests by fanning out to multiple services.
@@ -15,17 +22,16 @@ API gateway
 * The API gateway might also implement security, e.g. verify that the client is authorized to perform the request
 * Netflix API gateway, Zuur
 
-Microservices API gateway:
+.. figure:: img/microservices-api-gateway.png
 
-.. figure:: img/microservices-api-gateway.jpg
-
+    Source: [#BFF2020]_
 
 BFF Model
 ---------
 
+.. figure:: img/microservices-api-bff.png
 
-BFF + API Gateway
------------------
+    Source: [#BFF2020]_
 
 
 GraphQL
@@ -42,3 +48,8 @@ Historie
 Further Reading
 ---------------
 * http://allegro.tech/2015/01/Content-headers-or-how-to-version-api.html
+
+
+References
+----------
+.. [#BFF2020] TDA Corporation. BFF - Backend for frontend. Year: 2020. Retrieved: 2022-03-28. URL: https://blog.tda.company/bff-backend-for-frontend/

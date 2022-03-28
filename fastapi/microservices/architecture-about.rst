@@ -21,6 +21,10 @@ Monolithic architecture
 
     Monolithic architecture
 
+.. figure:: img/microservices-architecture-monolith.jpeg
+
+    Source: [#Haq2018]_
+
 
 Microservices architecture
 --------------------------
@@ -33,9 +37,22 @@ Microservices architecture
 
     Microservices Architecture
 
+.. figure:: img/microservices-architecture-microservices.jpeg
+
+    Source: [#Haq2018]_
 
 CQRS - Command Query Responsibility Segregation
 -----------------------------------------------
 * Split the system into two parts.
 * The command side handles create, update and delete requests.
 * The query side handles queries using one or more materialized views of the application's data.
+
+
+Further Reading
+---------------
+* https://medium.com/koderlabs/introduction-to-monolithic-architecture-and-microservices-architecture-b211a5955c63
+
+
+References
+----------
+.. [#Haq2018] ul Haq, S. Introduction to Monolithic Architecture and MicroServices Architecture. Year: 2018. Retrieved: 2022-03-28. URL: https://medium.com/koderlabs/introduction-to-monolithic-architecture-and-microservices-architecture-b211a5955c63
