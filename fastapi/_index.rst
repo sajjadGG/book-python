@@ -125,7 +125,6 @@ Auth
     :maxdepth: 1
     :caption: Auth
 
-    auth/oauth2.rst
     auth/basic.rst
     auth/json-web-token.rst
 

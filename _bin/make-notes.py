@@ -48,7 +48,11 @@ if __name__ == '__main__':
 
             i = chapters.index(chapter)
             notes = outdir / f'{i:02}-{chapter}.rst'
-            headers = get_headers(SRC_DIR / book / file)
+            filepath = SRC_DIR / book / file
+            if not filepath.exists():
+                log.error(f'Stalled entry in index file {book}/{file}')
+                exit(1)
+            headers = get_headers(filepath)
 
             with notes.open(mode='a') as fp:
                 fp.writelines(headers)
