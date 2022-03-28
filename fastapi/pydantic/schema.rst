@@ -3,7 +3,7 @@ Pydantic Schema
 * Source: https://pydantic-docs.helpmanual.io/usage/schema/
 
 
-*Pydantic* allows auto creation of JSON Schemas from models:
+``Pydantic`` allows auto creation of JSON Schemas from models:
 
 .. code-block:: python
 
@@ -107,10 +107,10 @@ Outputs:
 
 
 The generated schemas are compliant with the specifications: `JSON
-Schema Core <https://json-schema.org/latest/json-schema-core.html>`__,
+Schema Core <https://json-schema.org/latest/json-schema-core.html>`_,
 `JSON Schema
-Validation <https://json-schema.org/latest/json-schema-validation.html>`__
-and `OpenAPI <https://github.com/OAI/OpenAPI-Specification>`__.
+Validation <https://json-schema.org/latest/json-schema-validation.html>`_
+and `OpenAPI <https://github.com/OAI/OpenAPI-Specification>`_.
 
 ``BaseModel.schema`` will return a dict of the schema, while
 ``BaseModel.schema_json`` will return a JSON string representation of
@@ -143,9 +143,9 @@ e.g. ``ApplePie.schema(ref_template='/schemas/{model}.json#/')``, here
 
 Getting schema of a specified type
 ----------------------------------
-*Pydantic* includes two standalone utility functions ``schema_of`` and
+``Pydantic`` includes two standalone utility functions ``schema_of`` and
 ``schema_json_of`` that can be used to apply the schema generation logic
-used for *pydantic* models in a more ad-hoc way. These functions behave
+used for ``pydantic`` models in a more ad-hoc way. These functions behave
 similarly to ``BaseModel.schema`` and ``BaseModel.schema_json``, but
 work with arbitrary pydantic-compatible types.
 
@@ -260,12 +260,12 @@ arguments:
 * ``exclude``: exclude this field when dumping (``.dict`` and
    ``.json``) the instance. The exact syntax and configuration options
    are described in details in the `exporting models
-   section <exporting_models.md#advanced-include-and-exclude>`__.
+   section <exporting_models.md#advanced-include-and-exclude>`_.
 
 * ``include``: include (only) this field when dumping (``.dict`` and
    ``.json``) the instance. The exact syntax and configuration options
    are described in details in the `exporting models
-   section <exporting_models.md#advanced-include-and-exclude>`__.
+   section <exporting_models.md#advanced-include-and-exclude>`_.
 
 * ``const``: this argument *must* be the same as the field's default
    value if present.
@@ -318,7 +318,7 @@ arguments:
    validation generated from the passed string and an annotation of
    ``pattern`` to the JSON Schema
 
-   *pydantic* validates strings using ``re.match``, which
+   ``pydantic`` validates strings using ``re.match``, which
    treats regular expressions as implicitly anchored at the beginning.
    On the contrary, JSON Schema validators treat the ``pattern`` keyword
    as implicitly unanchored, more like what ``re.search`` does.
@@ -330,7 +330,7 @@ arguments:
   (e.g. `.*?foo` to match any string containing the substring `foo`).
 
   See [#1631](https://github.com/samuelcolvin/pydantic/issues/1631)
-  for a discussion of possible changes to *pydantic* behavior in **v2**.
+  for a discussion of possible changes to ``pydantic`` behavior in **v2**.
 
 * ``repr``: a boolean which defaults to ``True``. When False, the field
    shall be hidden from the object representation.
@@ -339,13 +339,13 @@ arguments:
    verbatim to the field's schema
 
 Instead of using ``Field``, the ``fields`` property of `the Config
-class <model_config.md>`__ can be used to set all of the arguments above
+class`_ can be used to set all of the arguments above
 except ``default``.
 
 
 Unenforced Field constraints
 ----------------------------
-If *pydantic* finds constraints which are not being enforced, an error
+If ``pydantic`` finds constraints which are not being enforced, an error
 will be raised. If you want to force the constraint to appear in the
 schema, even though it's not being checked upon parsing, you can use
 variadic arguments to ``Field()`` with the raw schema attribute name:
@@ -451,10 +451,10 @@ Modifying schema in custom fields
 ---------------------------------
 Custom field types can customise the schema generated for them using the
 ``__modify_schema__`` class method; see `Custom Data
-Types <types.md#custom-data-types>`__ for more details.
+Types <types.md#custom-data-types>`_ for more details.
 
 ``__modify_schema__`` can also take a ``field`` argument which will have
-type ``ModelField | None``. *pydantic* will inspect the signature of
+type ``ModelField | None``. ``pydantic`` will inspect the signature of
 ``__modify_schema__`` to determine whether the ``field`` argument should
 be included.
 
@@ -522,15 +522,15 @@ mapped to the corresponding spec formats in the following priority order
 (when there is an equivalent available):
 
 1. `JSON Schema
-   Core <http://json-schema.org/latest/json-schema-core.html#rfc.section.4.3.1>`__
+   Core <http://json-schema.org/latest/json-schema-core.html#rfc.section.4.3.1>`_
 2. `JSON Schema
-   Validation <http://json-schema.org/latest/json-schema-validation.html>`__
+   Validation <http://json-schema.org/latest/json-schema-validation.html>`_
 3. `OpenAPI Data
-   Types <https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#data-types>`__
-4. The standard ``format`` JSON field is used to define *pydantic*
+   Types <https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#data-types>`_
+4. The standard ``format`` JSON field is used to define ``pydantic``
    extensions for more complex ``string`` sub-types.
 
-The field schema mapping from Python / *pydantic* to JSON Schema is done
+The field schema mapping from Python / ``pydantic`` to JSON Schema is done
 as follows:
 
 `Schema mappings <https://pydantic-docs.helpmanual.io/usage/schema/#json-schema-types>`_

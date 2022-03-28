@@ -112,6 +112,7 @@ the above types export the following properties:
 
 If further validation is required, these properties can be used by validators to enforce specific behaviour:
 
+
 International Domains
 ---------------------
 "International domains" (e.g. a URL where the host or TLD includes non-ascii characters) will be encoded via
@@ -119,7 +120,7 @@ International Domains
 `this article <https://www.xudongz.com/blog/2017/idn-phishing/>`_ for a good description of why this is important):
 
 .. warning:: Underscores in Hostnames
-             In *pydantic* underscores are allowed in all parts of a domain except the tld.
+             In ``pydantic`` underscores are allowed in all parts of a domain except the tld.
              Technically this might be wrong - in theory the hostname cannot have underscores, but subdomains can.
 
              To explain this; consider the following two cases:
@@ -195,7 +196,7 @@ The ``SecretStr`` and ``SecretBytes`` will be formatted as either ``'**********'
 
 Json Type
 ---------
-You can use ``Json`` data type to make *pydantic* first load a raw JSON string.
+You can use ``Json`` data type to make ``pydantic`` first load a raw JSON string.
 It can also optionally be used to parse the loaded object into another type base on
 the type ``Json`` is parameterised with:
 

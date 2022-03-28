@@ -47,12 +47,14 @@ Response
 ...     response.set_cookie(key='mycookiename', value='mycookievalue')
 ...     return {'message': 'ok'}
 
-$ curl -D- http://127.0.0.1:8000/
-HTTP/1.1 200 OK
-date: Fri, 05 Mar 2021 11:22:46 GMT
-server: uvicorn
-content-length: 16
-content-type: application/json
-set-cookie: mycookiename=mycookievalue; Path=/; SameSite=lax
+.. code-block:: console
 
-{"message":"ok"}
+    $ curl -D- http://127.0.0.1:8000/
+    HTTP/1.1 200 OK
+    date: Fri, 05 Mar 2021 11:22:46 GMT
+    server: uvicorn
+    content-length: 16
+    content-type: application/json
+    set-cookie: mycookiename=mycookievalue; Path=/; SameSite=lax
+
+    {"message":"ok"}

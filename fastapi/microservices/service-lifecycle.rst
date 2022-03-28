@@ -62,10 +62,6 @@ Platforma uruchamiania
 * Możliwość definiowania wykorzystywanych zasobów przez usługę
 * Dynamiczne alokowanie zasobów
 
-.. figure:: img/microservices-platform-path.png
-
-    Ścieżka rozwoju platform uruchomieniowych w architekturze mikrousługowej
-
 
 Monitoring
 ----------

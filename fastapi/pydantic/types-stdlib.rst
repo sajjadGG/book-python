@@ -1,31 +1,26 @@
 Pydantic Types Stdlib
 =====================
 
-Where possible *pydantic* uses `standard library
-types <#standard-library-types>`_ to define fields, thus smoothing the
-learning curve. For many useful applications, however, no standard
-library type exists, so *pydantic* implements `many commonly used
-types <#pydantic-types>`_.
+Where possible ``pydantic`` uses standard library to define fields,
+thus smoothing the learning curve. For many useful applications,
+however, no standard library type exists, so ``pydantic`` implements
+many commonly used types.
 
 
 Standard Library Types
 ----------------------
-*pydantic* supports many common types from the python standard library.
-If you need stricter processing see `Strict Types <#strict-types>`_; if
+``pydantic`` supports many common types from the python standard library.
+If you need stricter processing see `Strict Types`; if
 you need to constrain the values allowed (e.g. to require a positive
-int) see `Constrained Types <#constrained-types>`_.
+int) see `Constrained Types`.
 
-``None``, ``type(None)`` or ``Literal[None]`` (equivalent according to `PEP 484 <https://www.python.org/dev/peps/pep-0484/#using-none>`_)
-   allows only ``None`` value
+``None`` - allows only ``None`` value
 
 ``bool``
-   see `Booleans <#booleans>`_ below for details on how bools are
-   validated and what values are permitted
+   see `Booleans`_ below for details on how bools are validated and what values are permitted
 
 ``int``
-   *pydantic* uses ``int(v)`` to coerce types to an ``int``; see
-   `models#data-conversion`_ warning on loss of information
-   during data conversion
+   ``*pydantic`` uses ``int(v)`` to coerce types to an ``int``; see `Data Conversion` warning on loss of information during data conversion
 
 ``float``
    similarly, ``float(v)`` is used to coerce values to floats
@@ -43,192 +38,136 @@ int) see `Constrained Types <#constrained-types>`_.
    ``str(v).encode()``
 
 ``list``
-   allows ``list``, ``tuple``, ``set``, ``frozenset``, ``deque``, or
-   generators and casts to a list; see ``typing.List`` below for
-   sub-type constraints
+   allows ``list``, ``tuple``, ``set``, ``frozenset``, ``deque``, or generators and casts to a list
 
 ``tuple``
-   allows ``list``, ``tuple``, ``set``, ``frozenset``, ``deque``, or
-   generators and casts to a tuple; see ``typing.Tuple`` below for
-   sub-type constraints
+   allows ``list``, ``tuple``, ``set``, ``frozenset``, ``deque``, or generators and casts to a tuple
 
 ``dict``
-   ``dict(v)`` is used to attempt to convert a dictionary; see
-   ``typing.Dict`` below for sub-type constraints
+   ``dict(v)`` is used to attempt to convert a dictionary
 
 ``set``
-   allows ``list``, ``tuple``, ``set``, ``frozenset``, ``deque``, or
-   generators and casts to a set; see ``typing.Set`` below for sub-type
-   constraints
+   allows ``list``, ``tuple``, ``set``, ``frozenset``, ``deque``, or generators and casts to a set
 
 ``frozenset``
-   allows ``list``, ``tuple``, ``set``, ``frozenset``, ``deque``, or
-   generators and casts to a frozen set; see ``typing.FrozenSet`` below
-   for sub-type constraints
+   allows ``list``, ``tuple``, ``set``, ``frozenset``, ``deque``, or generators and casts to a frozen set
 
 ``deque``
-   allows ``list``, ``tuple``, ``set``, ``frozenset``, ``deque``, or
-   generators and casts to a deque; see ``typing.Deque`` below for
-   sub-type constraints
+   allows ``list``, ``tuple``, ``set``, ``frozenset``, ``deque``, or generators and casts to a deque
 
 ``datetime.date``
-   see `Datetime Types <#datetime-types>`_ below for more detail on
-   parsing and validation
+   see `Datetime Types` for more detail on parsing and validation
 
 ``datetime.time``
-   see `Datetime Types <#datetime-types>`_ below for more detail on
-   parsing and validation
+   see `Datetime Types` for more detail on parsing and validation
 
 ``datetime.datetime``
-   see `Datetime Types <#datetime-types>`_ below for more detail on
-   parsing and validation
+   see `Datetime Types` for more detail on parsing and validation
 
 ``datetime.timedelta``
-   see `Datetime Types <#datetime-types>`_ below for more detail on
-   parsing and validation
+   see `Datetime Types` below for more detail on parsing and validation
 
 ``typing.Any``
-   allows any value including ``None``, thus an ``Any`` field is
-   optional
+   allows any value including ``None``, thus an ``Any`` field is optional
 
 ``typing.Annotated``
-   allows wrapping another type with arbitrary metadata, as per
-   `PEP-593 <https://www.python.org/dev/peps/pep-0593/>`_. The
-   ``Annotated`` hint may contain a single call to the ```Field``
-   function <schema-typingannotated-fields>`_, but otherwise the
-   additional metadata is ignored and the root type is used.
+   allows wrapping another type with arbitrary metadata, as per :pep:`593`.
+   The ``Annotated`` hint may contain a single call to the `Field function`,
+   but otherwise the additional metadata is ignored and the root type is used.
 
 ``typing.TypeVar``
-   constrains the values allowed based on ``constraints`` or ``bound``,
-   see `TypeVar <#typevar>`_
+   constrains the values allowed based on ``constraints`` or ``bound``
 
 ``typing.Union``
-   see `Unions <#unions>`_ below for more detail on parsing and
-   validation
+   see `Unions` for more detail on parsing and validation
 
 ``typing.Optional``
-   ``Optional[x]`` is simply short hand for ``Union[x, None]``; see
-   `Unions <#unions>`_ below for more detail on parsing and validation
-   and `Required Fields <models-required-fields>`_ for details about
-   required fields that can receive ``None`` as a value.
+   ``Optional[x]`` is simply short hand for ``Union[x, None]``
 
 ``typing.List``
-   see `Typing Iterables <#typing-iterables>`_ below for more detail on
-   parsing and validation
+   see `Typing Iterables>` below for more detail on parsing and validation
 
 ``typing.Tuple``
-   see `Typing Iterables <#typing-iterables>`_ below for more detail on
-   parsing and validation
+   see `Typing Iterables>` below for more detail on parsing and validation
 
 ``subclass of typing.NamedTuple``
    Same as ``tuple`` but instantiates with the given namedtuple and
-   validates fields since they are annotated. See `Annotated
-   Types <#annotated-types>`_ below for more detail on parsing and
-   validation
+   validates fields since they are annotated
 
 ``subclass of collections.namedtuple``
    Same as ``subclass of typing.NamedTuple`` but all fields will have
    type ``Any`` since they are not annotated
 
 ``typing.Dict``
-   see `Typing Iterables <#typing-iterables>`_ below for more detail on
-   parsing and validation
+   see `Typing Iterables` below for more detail on parsing and validation
 
 ``subclass of typing.TypedDict``
-   Same as ``dict`` but *pydantic* will validate the dictionary since
-   keys are annotated. See `Annotated Types <#annotated-types>`_ below
-   for more detail on parsing and validation
+   Same as ``dict`` but ``pydantic`` will validate the dictionary since
+   keys are annotated
 
 ``typing.Set``
-   see `Typing Iterables <#typing-iterables>`_ below for more detail on
-   parsing and validation
+   see `Typing Iterables` below for more detail on parsing and validation
 
 ``typing.FrozenSet``
-   see `Typing Iterables <#typing-iterables>`_ below for more detail on
-   parsing and validation
+   see `Typing Iterables` below for more detail on parsing and validation
 
 ``typing.Deque``
-   see `Typing Iterables <#typing-iterables>`_ below for more detail on
-   parsing and validation
+   see `Typing Iterables` below for more detail on parsing and validation
 
 ``typing.Sequence``
-   see `Typing Iterables <#typing-iterables>`_ below for more detail on
-   parsing and validation
+   see `Typing Iterables` below for more detail on parsing and validation
 
 ``typing.Iterable``
-   this is reserved for iterables that shouldn't be consumed. See
-   `Infinite Generators <#infinite-generators>`_ below for more detail
-   on parsing and validation
+   this is reserved for iterables that shouldn't be consumed
 
 ``typing.Type``
-   see `Type <#type>`_ below for more detail on parsing and validation
+   see `Type` for more detail on parsing and validation
 
 ``typing.Callable``
-   see `Callable <#callable>`_ below for more detail on parsing and
-   validation
+   see `Callable` for more detail on parsing and validation
 
 ``typing.Pattern``
-   will cause the input value to be passed to ``re.compile(v)`` to
-   create a regex pattern
+   will cause the input value to be passed to ``re.compile(v)`` to create a regex pattern
 
 ``ipaddress.IPv4Address``
-   simply uses the type itself for validation by passing the value to
-   ``IPv4Address(v)``; see `Pydantic Types <#pydantic-types>`_ for
-   other custom IP address types
+   simply uses the type itself for validation by passing the value to ``IPv4Address(v)``
 
 ``ipaddress.IPv4Interface``
-   simply uses the type itself for validation by passing the value to
-   ``IPv4Address(v)``; see `Pydantic Types <#pydantic-types>`_ for
-   other custom IP address types
+   simply uses the type itself for validation by passing the value to ``IPv4Address(v)``
 
 ``ipaddress.IPv4Network``
-   simply uses the type itself for validation by passing the value to
-   ``IPv4Network(v)``; see `Pydantic Types <#pydantic-types>`_ for
-   other custom IP address types
+   simply uses the type itself for validation by passing the value to ``IPv4Network(v)``
 
 ``ipaddress.IPv6Address``
-   simply uses the type itself for validation by passing the value to
-   ``IPv6Address(v)``; see `Pydantic Types <#pydantic-types>`_ for
-   other custom IP address types
+   simply uses the type itself for validation by passing the value to ``IPv6Address(v)``
 
 ``ipaddress.IPv6Interface``
-   simply uses the type itself for validation by passing the value to
-   ``IPv6Interface(v)``; see `Pydantic Types <#pydantic-types>`_ for
-   other custom IP address types
+   simply uses the type itself for validation by passing the value to ``IPv6Interface(v)``
 
 ``ipaddress.IPv6Network``
-   simply uses the type itself for validation by passing the value to
-   ``IPv6Network(v)``; see `Pydantic Types <#pydantic-types>`_ for
-   other custom IP address types
+   simply uses the type itself for validation by passing the value to ``IPv6Network(v)``
 
 ``enum.Enum``
    checks that the value is a valid Enum instance
 
 ``subclass of enum.Enum``
-   checks that the value is a valid member of the enum; see `Enums and
-   Choices <#enums-and-choices>`_ for more details
+   checks that the value is a valid member of the enum
 
 ``enum.IntEnum``
    checks that the value is a valid IntEnum instance
 
 ``subclass of enum.IntEnum``
-   checks that the value is a valid member of the integer enum; see
-   `Enums and Choices <#enums-and-choices>`_ for more details
+   checks that the value is a valid member of the integer enum
 
 ``decimal.Decimal``
-   *pydantic* attempts to convert the value to a string, then passes the
-   string to ``Decimal(v)``
+   ``pydantic`` attempts to convert the value to a string, then passes the string to ``Decimal(v)``
 
 ``pathlib.Path``
-   simply uses the type itself for validation by passing the value to
-   ``Path(v)``; see `Pydantic Types <#pydantic-types>`_ for other more
-   strict path types
+   simply uses the type itself for validation by passing the value to ``Path(v)``
 
 ``uuid.UUID``
    strings and bytes (converted to strings) are passed to ``UUID(v)``,
    with a fallback to ``UUID(bytes=v)`` for ``bytes`` and ``bytearray``;
-   see `Pydantic Types <#pydantic-types>`_ for other stricter UUID
-   types
 
 ``ByteSize``
    converts a bytes string with units to bytes
@@ -243,7 +182,7 @@ Datetime Types
 * ``timedelta`` fields
 * https://docs.python.org/library/datetime.html#available-types
 
-*Pydantic* supports the following datetime types
+``Pydantic`` supports the following datetime types
 
 * ``datetime`` fields can be:
 
@@ -308,7 +247,7 @@ type is performed.
 
 Type
 ----
-*pydantic* supports the use of ``Type[T]`` to specify that a field may only
+``pydantic`` supports the use of ``Type[T]`` to specify that a field may only
 accept classes (not instances) that are subclasses of ``T``.
 
 You may also use ``Type`` to specify that any class is allowed.
@@ -321,7 +260,7 @@ TypeVar
 
 Literal Type
 ------------
-*pydantic* supports the use of ``typing.Literal`` as a lightweight way to
+``pydantic`` supports the use of ``typing.Literal`` as a lightweight way to
 specify that a field may accept only specific literal values:
 
 One benefit of this field type is that it can be used to check for equality
@@ -345,7 +284,7 @@ TypedDict
 
 Typing Iterables
 ----------------
-*pydantic* uses standard library ``typing`` types as defined in PEP 484
+``pydantic`` uses standard library ``typing`` types as defined in PEP 484
 to define complex objects.
 
 
@@ -372,20 +311,17 @@ pydantic can't validate the values automatically for you because it would requir
 
 Validating the first value
 --------------------------
-You can create a `validator <validators>`_ to validate the first
-value in an infinite generator and still not consume it entirely.
+You can create a `Validator` to validate the first value in an infinite
+generator and still not consume it entirely.
 
 
 Unions
 ------
-The ``Union`` type allows a model attribute to accept different types,
-e.g.:
+* The ``Union`` type allows a model attribute to accept different types
 
 You may get unexpected coercion with ``Union``; see below. Know
-that you can also make the check slower but stricter by using `Smart
-Union <model_config-smart-union>`_
-
-However, as can be seen above, *pydantic* will attempt to 'match' any of
+that you can also make the check slower but stricter by using `Smart Union`.
+However, as can be seen above, ``pydantic`` will attempt to 'match' any of
 the types defined under ``Union`` and will use the first one that
 matches. In the above example the ``id`` of ``user_03`` was defined as a
 ``uuid.UUID`` class (which is defined under the attribute's ``Union``
@@ -402,22 +338,16 @@ types (because python treats these definitions as singletons). For
 example,
 ``Dict[str, Union[int, float]] == Dict[str, Union[float, int]]`` with
 the order based on the first time it was defined. Please note that this
-can also be `affected by third party
-libraries <https://github.com/samuelcolvin/pydantic/issues/2835>`_ and
-their internal type definitions and the import orders.
-
-As such, it is recommended that, when defining ``Union`` annotations,
-the most specific type is included first and followed by less specific
-types.
+can also be affected by third party libraries and their internal type
+definitions and the import orders. As such, it is recommended that, when
+defining ``Union`` annotations, the most specific type is included first
+and followed by less specific types.
 
 In the above example, the ``UUID`` class should precede the ``int`` and
-``str`` classes to preclude the unexpected representation as such:
-
+``str`` classes to preclude the unexpected representation as such.
 The type ``Optional[x]`` is a shorthand for ``Union[x, None]``.
-
-`Optional[x]` can also be used to specify a required field that can take `None` as a value.
-
-See more details in `Required Fields`
+`Optional[x]` can also be used to specify a required field that can
+take `None` as a value.
 
 
 Discriminated Unions (a.k.a. Tagged Unions)
@@ -434,13 +364,11 @@ Setting a discriminated union has many benefits:
 
 * validation is faster since it is only attempted against one model
 * only one explicit error is raised in case of failure
-* the generated JSON schema implements the `associated OpenAPI
-   specification <https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#discriminatorObject>`_
+* the generated JSON schema implements the
+  `associated OpenAPI specification <https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#discriminatorObject>`_
 
-Using the `Annotated Fields
-syntax <../schema/#typingannotated-fields>`_ can be handy to regroup
-the ``Union`` and ``discriminator`` information. See below for an
-example!
+Using the `Annotated Fields` syntax can be handy to regroup the ``Union``
+and ``discriminator`` information.
 
 
 Nested Discriminated Unions
@@ -452,14 +380,14 @@ combine multiple discriminators. In this case you can always create
 
 Enums and Choices
 -----------------
-*pydantic* uses python's standard ``enum`` classes to define choices.
+``pydantic`` uses python's standard ``enum`` classes to define choices.
 
 
 Generic Classes as Types
 -------------------------------
 This is an advanced technique that you might not need in the
 beginning. In most of the cases you will probably be fine with standard
-*pydantic* models.
+``pydantic`` models.
 
 You can use `Generic
 Classes <https://docs.python.org/3/library/typing.html#typing.Generic>`_
