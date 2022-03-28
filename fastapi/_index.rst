@@ -53,6 +53,24 @@ JSON
     ../intermediate/json/object.rst
 
 
+Async
+*****
+.. toctree::
+    :maxdepth: 1
+    :caption: Async
+
+    ../advanced/concurrency/about.rst
+    ../advanced/concurrency/asyncio-about.rst
+    ../advanced/concurrency/asyncio-awaitable.rst
+    ../advanced/concurrency/asyncio-coroutine.rst
+    ../advanced/concurrency/asyncio-sleep.rst
+    ../advanced/concurrency/asyncio-run.rst
+    ../advanced/concurrency/asyncio-wait.rst
+    ../advanced/concurrency/asyncio-wait-for.rst
+    ../advanced/concurrency/asyncio-task.rst
+    ../advanced/concurrency/asyncio-contextmanager.rst
+
+
 FastAPI
 *******
 .. toctree::

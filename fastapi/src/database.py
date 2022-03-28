@@ -6,10 +6,14 @@ from sqlalchemy.orm import sessionmaker
 from settings import DATABASE_URL
 from settings import DEBUG_SQL
 
+
 engine = create_engine(DATABASE_URL,
                        connect_args={'check_same_thread': False},
                        echo=DEBUG_SQL)
-SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
+
+SessionLocal = sessionmaker(bind=engine,
+                            autocommit=False,
+                            autoflush=False)
 
 
 class Database:
