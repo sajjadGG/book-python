@@ -1,6 +1,7 @@
 Auth JSON Web Token
 ===================
 * https://datatracker.ietf.org/doc/html/rfc7519
+* https://jwt.io/
 * JWT - JSON Web Token
 * ``sub`` - subject - identifies the principal that is the subject of the JWT
 * ``iss`` - issuer - claim identifies the principal that issued the JWT

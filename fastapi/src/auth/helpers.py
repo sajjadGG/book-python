@@ -20,7 +20,7 @@ from settings import AUTH_SECRET_KEY
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='login')
 
 
-def create_access_token(data: dict):
+def create_access_token(data: dict) -> str:
     now = datetime.now(tz=timezone.utc)
     expire = timedelta(minutes=AUTH_ACCESS_TOKEN_EXPIRE_MINUTES)
     token_expiration = now + expire

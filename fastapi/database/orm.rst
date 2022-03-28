@@ -3,6 +3,7 @@ Database ORM
 * ORM - Object-relational mapping
 * ORM has tools to convert (`map`) between objects in code and database tables (`relations`)
 * Declarative - First define model, which then maps to the database tables
+* If you want to generate
 
 
 Install
@@ -57,6 +58,9 @@ Models
 Schema
 ------
 * Represents JSON request/response data
+*``Config.orm_mode = True`` is required to have model as a ``response_model`` (a decorator parameter).
+* Note, that if you set ``orm_mode = True``, then not all fields need to be specified.
+* Listed fields will be in response, and not listed will be hidden in response.
 
 >>> from typing import Optional
 >>> from pydantic import BaseModel
@@ -67,9 +71,10 @@ Schema
 ...     lastname: str
 ...     active: Optional[bool] = True
 
-``Config.orm_mode = True`` is required to have model as a ``response_model`` (a decorator parameter).
-Note, that if you set ``orm_mode = True``, then not all fields need to be specified.
-Listed fields will be in response, and not listed will be hidden in response.
+``Config.orm_mode = True`` is required to have model as a ``response_model``
+(a decorator parameter). Note, that if you set ``orm_mode = True``, then
+not all fields need to be specified. Listed fields will be in response,
+and not listed will be hidden in response.
 
 >>> from pydantic import BaseModel
 >>>
