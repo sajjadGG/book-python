@@ -12,6 +12,7 @@
 
     class Hero:
         def move(self, direction, value): ...
+        def jump(self, direction): ...
         def make_damage(): ...
         def take_damage(_): ...
     hero = Hero()
@@ -118,6 +119,19 @@ The patterns listed here are described in more detail below, but summarized toge
       sub-pattern match does, and also binds the named variable to the entire
       object.
 
+But here's where the structural part comes in: the case patterns don't just
+have to be literals. The patterns can also:
+
+* Use variable names that are set if a ``case`` matches
+* Match sequences using list or tuple syntax (like Python’s existing ``iterable unpacking`` feature)
+* Match mappings using ``dict`` syntax
+* Use ``*`` to match the rest of a list
+* Use ``**`` to match other keys in a dict
+* Match objects and their attributes using class syntax
+* Include "or" patterns with ``|``
+* Capture sub-patterns with ``as``
+* Include an ``if`` "guard" clause
+
 
 Use Case - 0x01
 ---------------
@@ -155,11 +169,14 @@ Use Case - 0x03
 * Game Controller
 
 >>> action = ['move', 'left', 10]
+>>> directions = ['up', 'down', 'left', 'right']
 >>>
 >>> match action:
 ...     case ['move', ('up'|'down'|'left'|'right') as direction, value]:
 ...         hero.move(direction, value)
-...     case ['make_damage', value]:
+...     case ['jump', direction] if direction in directions:
+...         hero.jump(direction)
+...     case ['make_damage', value] if value > 0:
 ...         hero.make_damage()
 ...     case ['take_damage', value]:
 ...         hero.take_damage(value)
@@ -191,6 +208,23 @@ ValueError: Unrecognized key
 
 
 Use Case - 0x05
+---------------
+>>> import argparse
+>>>
+>>> parser = argparse.ArgumentParser()
+>>> parser.add_argument('command', choices=['push', 'pull', 'commit'])
+>>> args = parser.parse_args()
+>>>
+>>> match args.command:
+...     case 'push':
+...         print('pushing')
+...     case 'pull':
+...         print('pulling')
+...     case _:
+...         parser.error(f'{args.command!r} not yet implemented')
+
+
+Use Case - 0x06
 ---------------
 >>> def myrange(*args, **kwargs):
 ...     if kwargs:
@@ -224,8 +258,35 @@ Use Case - 0x05
 ...     return result
 
 
+Use Case - 0x07
+---------------
+>>> def exec(command, stdin=None, encoding='utf-8', ...):
+...     match command:
+...         case bytes() | str():
+...             raise TypeError('command must be a list of str, not {}'
+...                 .format(type(command).__name__))
+...         case []:
+...             raise ValueError('command must contain at least one item')
+...
+...     match stdin:
+...         case str():
+...             if encoding is None:
+...                 raise ValueError('encoding must be set if stdin is str')
+...             stdin = io.BytesIO(stdin.encode(encoding))
+...         case bytes():
+...             if encoding is not None:
+...                 raise ValueError('encoding must be None if stdin is bytes')
+...             stdin = io.BytesIO(stdin)
+...         case None:
+...             pass
+...         case _ if not hasattr(stdin, 'read'):
+...             raise TypeError('stdin must be str, bytes, or a readable file-like object')
+...     ...
+
+
 Further Reading
 ---------------
+* https://peps.python.org/pep-0622/
 * https://www.python.org/dev/peps/pep-0636/
 
 

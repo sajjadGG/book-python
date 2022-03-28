@@ -110,6 +110,54 @@ Use Case - 0x01
  "duration": 13}
 
 
+Use Case - 0x02
+---------------
+>>> from datetime import date, timedelta
+>>>
+>>>
+>>> DATA = {
+...     'firstname': 'Mark',
+...     'lastname': 'Watney',
+...     'born': date(1969, 7, 21),
+...     'flight_time': timedelta(days=180),
+... }
+>>>
+>>>
+>>> def encoder(x):
+...     match x:
+...         case date():      return x.isoformat()
+...         case timedelta(): return x.total_seconds()
+>>>
+>>>
+>>> json.dumps(data_python, default=encoder)
+'{"firstname": "Mark", "lastname": "Watney", "born": "1969-07-21", "flight_time": 15552000.0}'
+
+
+Use Case - 0x03
+---------------
+>>> from datetime import date, timedelta
+>>>
+>>>
+>>> DATA = {
+...     'firstname': 'Mark',
+...     'lastname': 'Watney',
+...     'born': date(1969, 7, 21),
+...     'flight_time': timedelta(days=180),
+... }
+>>>
+>>>
+>>> def encoder(x):
+...     match x:
+...         case date() | datetime() | time():
+...             return x.isoformat()
+...         case timedelta():
+...             return x.total_seconds()
+>>>
+>>>
+>>> json.dumps(data_python, default=encoder)
+'{"firstname": "Mark", "lastname": "Watney", "born": "1969-07-21", "flight_time": 15552000.0}'
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/json_encoder_a.py

@@ -175,6 +175,51 @@ Use Case - 0x02
  'duration': datetime.timedelta(days=13)}
 
 
+Use Case - 0x03
+---------------
+>>> from datetime import date, timedelta
+>>>
+>>>
+>>> def decoder(x):
+...     for key, value in x.items():
+...         match key:
+...             case 'born':
+...                 x[key] = date.fromisoformat(value)
+...             case 'flight_time':
+...                 x[key] = timedelta(seconds=float(value))
+...     return x
+>>>
+>>>
+>>> json.loads(data, object_hook=decoder)  # doctest: +NORMALIZE_WHITESPACE
+{'firstname': 'Mark',
+ 'lastname': 'Watney',
+ 'born': datetime.date(1969, 7, 21),
+ 'flight_time': datetime.timedelta(days=180)}
+
+
+Use Case - 0x04
+---------------
+>>> from datetime import date, timedelta
+>>>
+>>>
+>>> def decoder(x):
+...     for key,value in x.items():
+...         match key:
+...             case 'born':
+...                 value = date.fromisoformat(value)
+...             case 'flight_time':
+...                 value = timedelta(seconds=float(value))
+...         x[key] = value
+...     return x
+>>>
+>>>
+>>> json.loads(data, object_hook=decoder)  # doctest: +NORMALIZE_WHITESPACE
+{'firstname': 'Mark',
+ 'lastname': 'Watney',
+ 'born': datetime.date(1969, 7, 21),
+ 'flight_time': datetime.timedelta(days=180)}
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/json_decoder_a.py
