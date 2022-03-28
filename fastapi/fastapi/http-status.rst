@@ -21,7 +21,6 @@ FastAPI Status
 
 201 - Created
 -------------
->>> from typing import Optional
 >>> from pydantic import BaseModel
 >>> from fastapi import FastAPI, status
 >>> app = FastAPI()
@@ -30,7 +29,7 @@ FastAPI Status
 >>> class Astronaut(BaseModel):
 ...     firstname: str
 ...     lastname: str
-...     active: Optional[bool] = True
+...     active: bool | None = True
 >>>
 >>>
 >>> @app.post('/astronaut/', status_code=status.HTTP_201_CREATED)
@@ -41,7 +40,6 @@ FastAPI Status
 
 202 - Accepted
 --------------
->>> from typing import Optional
 >>> from pydantic import BaseModel
 >>> from fastapi import FastAPI, status
 >>> app = FastAPI()
@@ -50,7 +48,7 @@ FastAPI Status
 >>> class Astronaut(BaseModel):
 ...     firstname: str
 ...     lastname: str
-...     active: Optional[bool] = True
+...     active: bool | None = True
 >>>
 >>>
 >>> @app.put('/astronaut/{id}', status_code=status.HTTP_202_ACCEPTED)

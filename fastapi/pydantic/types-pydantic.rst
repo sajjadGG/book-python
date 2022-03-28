@@ -78,7 +78,7 @@ For URI/URL validation the following types are available:
     - ``max_length: int = 2 ** 16``
     - ``tld_required: bool = True``
     - ``host_required: bool = True``
-    - ``allowed_schemes: Optional[Set[str]] = None``
+    - ``allowed_schemes: Set[str] | None = None``
 
 The above types (which all inherit from ``AnyUrl``) will attempt to give descriptive errors when invalid URLs are
 provided:

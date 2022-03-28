@@ -8,7 +8,6 @@ Database Relationship
 
 Example
 -------
->>> from typing import Optional
 >>> import uvicorn
 >>> from passlib.context import CryptContext
 >>> from pydantic import BaseModel as Schema
@@ -64,7 +63,7 @@ Example
 >>> class AstronautIn(Schema):
 ...     firstname: str
 ...     lastname: str
-...     active: Optional[bool] = True
+...     active: bool | None = True
 ...
 ...     class Config:
 ...         orm_mode = True
@@ -82,7 +81,7 @@ Example
 >>> class AstronautOut(Schema):
 ...     firstname: str
 ...     lastname: str
-...     active: Optional[bool] = True
+...     active: bool | None = True
 ...     creator: UserOut
 ...
 ...     class Config:

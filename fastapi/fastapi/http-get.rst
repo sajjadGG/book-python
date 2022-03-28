@@ -100,15 +100,13 @@ Default Values
 
 Optional
 --------
->>> from typing import Optional
 >>> from fastapi import FastAPI
 >>> app = FastAPI()
 >>>
 >>>
 >>> @app.get('/hello/')
-... def hello(firstname: str, lastname: str, age: Optional[int] = None):
+... def hello(firstname: str, lastname: str, age: int | None = None):
 ...     return {'data': f'{firstname} {lastname} is {age} years old'}
-
 
 .. code-block:: console
 

@@ -151,10 +151,7 @@ work with arbitrary pydantic-compatible types.
 
 .. code-block:: python
 
-    from typing import Literal, Union
-
-    from typing_extensions import Annotated
-
+    from typing import Literal, Annotated
     from pydantic import BaseModel, Field, schema_json_of
 
 
@@ -168,7 +165,7 @@ work with arbitrary pydantic-compatible types.
         dog_name: str
 
 
-    Pet = Annotated[Union[Cat, Dog], Field(discriminator='pet_type')]
+    Pet = Annotated[Cat|Dog, Field(discriminator='pet_type')]
 
     print(schema_json_of(Pet, title='The Pet Schema', indent=2))
     """
@@ -457,13 +454,11 @@ Custom field types can customise the schema generated for them using the
 Types <types.md#custom-data-types>`__ for more details.
 
 ``__modify_schema__`` can also take a ``field`` argument which will have
-type ``Optional[ModelField]``. *pydantic* will inspect the signature of
+type ``ModelField | None``. *pydantic* will inspect the signature of
 ``__modify_schema__`` to determine whether the ``field`` argument should
 be included.
 
 .. code-block:: python
-
-    from typing import Optional
 
     from pydantic import BaseModel, Field
     from pydantic.fields import ModelField
@@ -482,7 +477,7 @@ be included.
             return cls(value)
 
         @classmethod
-        def __modify_schema__(cls, field_schema, field: Optional[ModelField]):
+        def __modify_schema__(cls, field_schema, field: ModelField | None):
             if field:
                 alphabet = field.field_info.extra['alphabet']
                 field_schema['examples'] = [c * 3 for c in alphabet]

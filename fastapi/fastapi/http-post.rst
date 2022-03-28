@@ -8,7 +8,6 @@ FastAPI POST
 
 Example
 -------
->>> from typing import Optional
 >>> from pydantic import BaseModel
 >>> from fastapi import FastAPI
 >>> app = FastAPI()
@@ -17,7 +16,7 @@ Example
 >>> class Astronaut(BaseModel):
 ...     firstname: str
 ...     lastname: str
-...     active: Optional[bool] = True
+...     active: bool | None = True
 >>>
 >>>
 >>> @app.post('/astronaut/')
