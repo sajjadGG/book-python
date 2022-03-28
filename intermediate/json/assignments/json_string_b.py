@@ -6,13 +6,13 @@
 
 English:
     1. Load `DATA` from JSON format
-    2. Convert data to `result: list[tuple]`
+    2. Convert data to `result: list[dict]`
     3. Do not add header as a first line
     4. Run doctests - all must succeed
 
 Polish:
     1. Wczytaj `DATA` z formatu JSON
-    2. Przekonwertuj dane do `result: list[tuple]`
+    2. Przekonwertuj dane do `result: list[dict]`
     3. Nie dodawaj nagłówka jako pierwsza linia
     4. Uruchom doctesty - wszystkie muszą się powieść
 
