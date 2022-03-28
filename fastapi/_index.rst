@@ -24,6 +24,20 @@ Type Annotation
     ../intermediate/type-annotation/static-analysis.rst
 
 
+JSON
+****
+.. toctree::
+    :maxdepth: 1
+    :caption: JSON
+
+    ../intermediate/json/about.rst
+    ../intermediate/json/string.rst
+    ../intermediate/json/file.rst
+    ../intermediate/json/encoder.rst
+    ../intermediate/json/decoder.rst
+    ../intermediate/json/object.rst
+
+
 HTTP
 ****
 .. toctree::
@@ -37,20 +51,6 @@ HTTP
     http/mimetype.rst
     http/status.rst
     http/api-versioning.rst
-
-
-JSON
-****
-.. toctree::
-    :maxdepth: 1
-    :caption: JSON
-
-    ../intermediate/json/about.rst
-    ../intermediate/json/string.rst
-    ../intermediate/json/file.rst
-    ../intermediate/json/encoder.rst
-    ../intermediate/json/decoder.rst
-    ../intermediate/json/object.rst
 
 
 Async
