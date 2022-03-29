@@ -100,7 +100,7 @@ Aggregation
 
 Multiple Inheritance
 --------------------
-* Mixin Classes
+* ``Mother`` and ``Father`` are Mixin Classes
 
 >>> class Mother:
 ...     pass

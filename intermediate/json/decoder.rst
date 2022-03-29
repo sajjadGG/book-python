@@ -7,34 +7,34 @@ Problem
 * Problem with ``date``, ``datetime``, ``time``, ``timedelta``
 * Python does not decode values automatically
 
+
+SetUp
+-----
+>>> from pprint import pprint
 >>> from datetime import date
 >>> import json
+
+
+Problem
+-------
+>>> DATA = """{
+...     "firstname": "Mark",
+...     "lastname": "Watney",
+...     "born": "1994-10-12"
+... }"""
 >>>
 >>>
->>> DATA = """
-...     {"firstname": "Mark",
-...      "lastname": "Watney",
-...      "born": "1994-10-12"}"""
->>>
->>>
->>> result = json.loads(DATA)
->>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-{'firstname': 'Mark',
- 'lastname': 'Watney',
- 'born': '1994-10-12'}
+>>> json.loads(DATA)
+{'firstname': 'Mark', 'lastname': 'Watney', 'born': '1994-10-12'}
 
 
 Function Decoder
 ----------------
->>> from datetime import date
->>> import json
->>>
->>>
->>> DATA = """
-...     {"firstname": "Mark",
-...      "lastname": "Watney",
-...      "born": "1994-10-12"}"""
+>>> DATA = """{
+...     "firstname": "Mark",
+...     "lastname": "Watney",
+...     "born": "1994-10-12"
+... }"""
 >>>
 >>>
 >>> def decoder(data: dict) -> dict:
