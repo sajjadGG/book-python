@@ -135,7 +135,8 @@ DevOps
     :maxdepth: 1
     :caption: DevOps
 
-    devops/fastapi-test.rst
+    devops/fastapi-test-sync.rst
+    devops/fastapi-test-async.rst
     devops/docker.rst
     ../devops/ci-cd/ecosystem.rst
 
