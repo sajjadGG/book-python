@@ -10,6 +10,12 @@ HTTP Method
 * ``OPTIONS`` - Show HTTP Methods
 * ``TRACE`` - Show Trace
 
+.. code-block:: console
+
+    $ nc localhost 8000
+    GET / HTTP/1.1
+    Host: localhost:8000
+
 
 GET
 ---
@@ -18,6 +24,10 @@ GET
 * No other effect
 
 Requests using GET should only retrieve data and should have no other effect.
+
+.. code-block:: console
+
+    $ curl -X GET http://localhost:8000/
 
 
 POST
@@ -30,6 +40,10 @@ POST
 The POST method requests that the server accept the entity enclosed in the
 request as a new subordinate of the web resource identified by the URI.
 
+.. code-block:: console
+
+    $ curl -X POST http://localhost:8000/
+
 
 PUT
 ---
@@ -41,6 +55,10 @@ PUT
 The PUT method requests that the enclosed entity be stored under the
 supplied URI.
 
+.. code-block:: console
+
+    $ curl -X PUT http://localhost:8000/
+
 
 PATCH
 -----
@@ -50,6 +68,10 @@ PATCH
 * Reuse URI
 
 The PATCH method applies partial modifications to a resource.
+
+.. code-block:: console
+
+    $ curl -X PATCH http://localhost:8000/
 
 
 DELETE
@@ -61,6 +83,10 @@ DELETE
 
 The DELETE method deletes the specified resource.
 
+.. code-block:: console
+
+    $ curl -X DELETE http://localhost:8000/
+
 
 HEAD
 ----
@@ -69,6 +95,10 @@ HEAD
 
 The HEAD method asks for a response identical to that of a GET request,
 but without the response body.
+
+.. code-block:: console
+
+    $ curl -X HEAD http://localhost:8000/
 
 
 CONNECT
@@ -81,6 +111,10 @@ The CONNECT method converts the request connection to a transparent TCP/IP
 tunnel, usually to facilitate SSL-encrypted communication (HTTPS) through
 an unencrypted HTTP proxy.
 
+.. code-block:: console
+
+    $ curl -X CONNECT http://localhost:8000/
+
 
 OPTIONS
 -------
@@ -89,6 +123,10 @@ OPTIONS
 
 The OPTIONS method returns HTTP methods that the server supports for
 the specified URL.
+
+.. code-block:: console
+
+    $ curl -X OPTIONS http://localhost:8000/
 
 
 TRACE
@@ -100,6 +138,9 @@ TRACE
 The TRACE method echoes the received request so that a client can see
 what (if any) changes or additions have been made by intermediate servers.
 
+.. code-block:: console
+
+    $ curl -X TRACE http://localhost:8000/
 
 
 Match Block
@@ -115,3 +156,17 @@ Match Block
 ...     case ['POST', uri, version]:    handle_post(uri)
 ...     case ['PUT', uri, version]:     handle_put(uri)
 ...     case ['DELETE', uri, version]:  handle_delete(uri)
+
+
+Use Case - 0x01
+---------------
+.. code-block:: console
+
+    $ curl -X GET http://localhost:8000/
+    $ curl -X POST http://localhost:8000/
+    $ curl -X PUT http://localhost:8000/
+    $ curl -X PATCH http://localhost:8000/
+    $ curl -X DELETE http://localhost:8000/
+    $ curl -X HEAD http://localhost:8000/
+    $ curl -X OPTIONS http://localhost:8000/
+    $ curl -X TRACE http://localhost:8000/

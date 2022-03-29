@@ -6,6 +6,7 @@ HTTP MIME Types
 * ``audio`` - Represents any kind of audio files
 * ``video`` - Represents any kind of video files
 * ``application`` - Represents any kind of binary data
+* ``multipart``
 
 Multipurpose Internet Mail Extensions (MIME) is an Internet standard that
 extends the format of email messages to support text in character sets other

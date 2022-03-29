@@ -41,11 +41,9 @@ Default Function with If
 
 Default Function with Match
 ---------------------------
->>> DATA = {
-...     'firstname': 'Mark',
-...     'lastname': 'Watney',
-...     'born': date(1994, 10, 12),
-... }
+>>> DATA = {'firstname': 'Mark',
+...         'lastname': 'Watney',
+...         'born': date(1994, 10, 12)}
 >>>
 >>>
 >>> def encoder(x):
