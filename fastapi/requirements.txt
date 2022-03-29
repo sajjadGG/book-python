@@ -1,14 +1,18 @@
-sphinx==4.3.*
-sphinx_rtd_theme
+ipython
 
+# FastAPI
 fastapi
-pydantic
-pydantic[email]
-sqlalchemy
 uvicorn[standard]
+pydantic
+pydantic[email]  # pip install 'pydantic[email]'
+sqlalchemy
+aiosqlite
+
+# Auth
 passlib[bcrypt]
 python-jose[cryptography]
 python-multipart
-beautifulsoup4
-lxml
-pandas
+
+# Test
+requests
+httpx
