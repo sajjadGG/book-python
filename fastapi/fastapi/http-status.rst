@@ -21,7 +21,7 @@ FastAPI Status
 
 .. code-block:: console
 
-    $ curl -I -X GET http://localhost:8000/user |head -n1
+    $ curl -I -X GET http://127.0.0.1:8000/user |head -n1
     HTTP/1.1 200 OK
 
 
@@ -45,7 +45,7 @@ FastAPI Status
 
 .. code-block:: console
 
-    $ curl -X GET http://localhost:8000/user -d '{"firstname":"Mark", "lastname": "Watney"}'
+    $ curl -X GET http://127.0.0.1:8000/user -d '{"firstname":"Mark", "lastname": "Watney"}'
     {"data":"Mark Watney age: None"}
 
 
@@ -97,5 +97,5 @@ FastAPI Status
 
 .. code-block:: console
 
-    $ curl -I -X GET http://localhost:8000/user/0 |head -n1
+    $ curl -I -X GET http://127.0.0.1:8000/user/0 |head -n1
     HTTP/1.1 404 Not Found

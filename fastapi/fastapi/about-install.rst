@@ -81,7 +81,7 @@ Optional configuration arguments:
     $ uvicorn main:app --reload --port 8000
     $ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
-Open browser at ``http://localhost:8000/``
+Open browser at ``http://127.0.0.1:8000/``
 
 
 Debug

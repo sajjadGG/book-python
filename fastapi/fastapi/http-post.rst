@@ -25,7 +25,7 @@ Example
 
 .. code-block:: console
 
-    $ curl -X POST http://localhost:8000/user -d '{"firstname":"Mark", "lastname": "Watney"}'
+    $ curl -X POST http://127.0.0.1:8000/user -d '{"firstname":"Mark", "lastname": "Watney"}'
     {"data":"Mark Watney age: None"}
 
-Check documentation http://localhost:8000/docs
+Check documentation http://127.0.0.1:8000/docs
