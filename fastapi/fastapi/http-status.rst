@@ -14,47 +14,58 @@ FastAPI Status
 >>> app = FastAPI()
 >>>
 >>>
->>> @app.get('/astronaut/{id}', status_code=status.HTTP_200_OK)
-... def details(id: int):
-...     return {'data': id}
+>>> @app.get('/user', status_code=status.HTTP_200_OK)
+... def user_list():
+...     users = ['user1', 'user2', 'user3']
+...     return {'detail': users}
+
+.. code-block:: console
+
+    $ curl -I -X GET http://localhost:8000/user |head -n1
+    HTTP/1.1 200 OK
 
 
 201 - Created
 -------------
->>> from pydantic import BaseModel
+>>> from pydantic import BaseModel as Schema
 >>> from fastapi import FastAPI, status
 >>> app = FastAPI()
 >>>
 >>>
->>> class Astronaut(BaseModel):
+>>> class User(Schema):
 ...     firstname: str
 ...     lastname: str
-...     active: bool | None = True
+...     age: int | None = None
 >>>
 >>>
->>> @app.post('/astronaut/', status_code=status.HTTP_201_CREATED)
-... def post(astronaut: Astronaut):
-...     # Creating Astronaut in database
-...     return {'data': astronaut}
+>>> @app.post('/user', status_code=status.HTTP_201_CREATED)
+... def user_post(user: User):
+...     # Creating User in database
+...     return {'detail': user}
+
+.. code-block:: console
+
+    $ curl -X GET http://localhost:8000/user -d '{"firstname":"Mark", "lastname": "Watney"}'
+    {"data":"Mark Watney age: None"}
 
 
 202 - Accepted
 --------------
->>> from pydantic import BaseModel
+>>> from pydantic import BaseModel as Schema
 >>> from fastapi import FastAPI, status
 >>> app = FastAPI()
 >>>
 >>>
->>> class Astronaut(BaseModel):
+>>> class User(Schema):
 ...     firstname: str
 ...     lastname: str
 ...     active: bool | None = True
 >>>
 >>>
->>> @app.put('/astronaut/{id}', status_code=status.HTTP_202_ACCEPTED)
-... def put(id: int, astronaut: Astronaut):
-...     # Update Astronaut in database
-...     return astronaut
+>>> @app.put('/user/{id}', status_code=status.HTTP_202_ACCEPTED)
+... def user_put(id: int, user: User):
+...     # Update User in database
+...     return user
 
 
 204 - No Content
@@ -63,9 +74,9 @@ FastAPI Status
 >>> app = FastAPI()
 >>>
 >>>
->>> @app.delete('/astronaut/{id}', status_code=status.HTTP_204_NO_CONTENT)
-... def delete(id: int):
-...     # Delete Astronaut in database
+>>> @app.delete('/user/{id}', status_code=status.HTTP_204_NO_CONTENT)
+... def user_delete(id: int):
+...     # Delete User in database
 ...     return None
 
 
@@ -75,9 +86,16 @@ FastAPI Status
 >>> app = FastAPI()
 >>>
 >>>
->>> @app.get('/astronaut/{id}', status_code=status.HTTP_200_OK)
-... def get(id: int):
+>>> @app.get('/user/{id}', status_code=status.HTTP_200_OK)
+... def user_get(id: int):
 ...     if id <= 0:
-...         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Blog with that id does not exists')
+...         raise HTTPException(
+...             status_code=status.HTTP_404_NOT_FOUND,
+...             detail='Blog with that id does not exist')
 ...     else:
 ...         return ...
+
+.. code-block:: console
+
+    $ curl -I -X GET http://localhost:8000/user/0 |head -n1
+    HTTP/1.1 404 Not Found

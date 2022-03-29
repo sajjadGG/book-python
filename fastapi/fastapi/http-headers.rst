@@ -2,7 +2,13 @@ FastAPI Headers
 ===============
 * Request headers
 * Response headers
+* Header object
+* Request object
+* Response object
 
+
+Header
+------
 >>> from fastapi import FastAPI, Header
 >>> app = FastAPI()
 >>>
@@ -49,7 +55,7 @@ Response
 >>>
 >>> @app.get('/')
 ... def index(response: Response):
-...     response.headers['X-API-VERSION'] = "1.0"
+...     response.headers['X-API-VERSION'] = '1.0'
 ...     return {'message': 'ok'}
 
 .. code-block:: console

@@ -86,6 +86,7 @@ Open browser at ``http://localhost:8000/``
 
 Debug
 -----
+* PyCharm Run Configuration
 * Set breakpoint
 * Run Debugger
 * Step Over

@@ -11,27 +11,22 @@ Example
 >>> app = FastAPI()
 >>>
 >>>
->>> @app.get('/')
-... def index():
-...     return {'data': 'list all astronauts'}
->>>
->>>
->>> @app.get('/astronauts/active')
+>>> @app.get('/user/active')
 ... def active():
-...     return {'data': 'list all active astronauts'}
+...     return {'data': 'list all active users'}
 >>>
 >>>
->>> @app.get('/astronaut/{id}')
+>>> @app.get('/user/{id}')
 ... def show_by_id(id: int):
 ...     return {'data': id}
 >>>
 >>>
->>> @app.get('/astronaut/{firstname}-{lastname}')
+>>> @app.get('/user/{firstname}-{lastname}')
 ... def show_by_name(firstname: str, lastname: str):
 ...     return {'data': f'{firstname} {lastname}'}
 >>>
 >>>
->>> @app.get('/astronaut/{id}/friends')
+>>> @app.get('/user/{id}/friends')
 ... def show_friends(id: int):
 ...     return {'data': 'comments'}
 

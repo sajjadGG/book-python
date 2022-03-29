@@ -4,71 +4,98 @@ FastAPI GET
 * Query Parameters
 
 
-Resources
----------
-* ``'/hello/{name}'`` - Does define resource (required)
+No Parameters
+-------------
+* Does define resource (required)
+* ``/hello``
 
 >>> from fastapi import FastAPI
 >>> app = FastAPI()
 >>>
 >>>
->>> @app.get('/hello/{name}')
-... def hello(name: str):
-...     return {'data': name}
+>>> @app.get('/hello')
+... def hello():
+...     return {'data': 'hello'}
 
 .. code-block:: console
 
-    $ uvicorn main:app --reload
-
-    $ curl http://localhost:8000/hello/Mark/
-    {"data":"Mark"}
+    $ curl http://localhost:8000/hello
+    {"data":"hello"}
 
 
-Single Parameter
-----------------
-* ``'/hello/'`` - Does not require a name in URL resource, but requires a parameter
+Single Path - One
+-----------------
+* Does define resource (required)
+* ``/hello/{firstname}``
 
 >>> from fastapi import FastAPI
 >>> app = FastAPI()
 >>>
 >>>
->>> @app.get('/hello/')
-... def hello(name: str):
-...     return {'data': name}
+>>> @app.get('/hello/{firstname}')
+... def hello(firstname: str):
+...     return {'data': firstname}
 
 .. code-block:: console
 
-    $ uvicorn main:app --reload
-    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-    INFO:     Started reloader process [68005] using watchgod
-    INFO:     Started server process [68007]
-    INFO:     Waiting for application startup.
-    INFO:     Application startup complete.
-
-    $ curl http://localhost:8000/hello/?name=Mark
+    $ curl http://localhost:8000/hello/Mark
     {"data":"Mark"}
 
 
-Multiple Parameters
--------------------
+Path Parameter - Many
+---------------------
+* Does define resource (required)
+* ``/hello/{firstname}-{lastname}``
+
 >>> from fastapi import FastAPI
 >>> app = FastAPI()
 >>>
 >>>
->>> @app.get('/hello/')
+>>> @app.get('/hello/{firstname}-{lastname}')
 ... def hello(firstname: str, lastname: str):
 ...     return {'data': f'{firstname} {lastname}'}
 
 .. code-block:: console
 
-    $ uvicorn main:app --reload
-    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-    INFO:     Started reloader process [68005] using watchgod
-    INFO:     Started server process [68007]
-    INFO:     Waiting for application startup.
-    INFO:     Application startup complete.
+    $ curl http://localhost:8000/hello/Mark-Watney
+    {"data":"Mark Watney"}
 
-    $ curl http://localhost:8000/hello/?firstname=Mark&lastname=Watney
+
+Query Parameter
+---------------
+* Does not require a name in URL resource, but requires a parameter
+* ``/hello``
+
+>>> from fastapi import FastAPI
+>>> app = FastAPI()
+>>>
+>>>
+>>> @app.get('/hello')
+... def hello(firstname: str):
+...     return {'data': firstname}
+
+.. code-block:: console
+
+    $ curl http://localhost:8000/hello?firstname=Mark
+    {"data":"Mark"}
+
+
+Multiple Parameters
+-------------------
+* Does not require a name in URL resource, but requires a parameter
+* ``/hello``
+
+>>> from fastapi import FastAPI
+>>> app = FastAPI()
+>>>
+>>>
+>>> @app.get('/hello')
+... def hello(firstname: str, lastname: str):
+...     return {'data': f'{firstname} {lastname}'}
+
+.. code-block:: console
+
+    $ curl http://localhost:8000/hello?firstname=Mark&lastname=Watney
     {"data":"Mark Watney"}
 
 
@@ -78,24 +105,19 @@ Default Values
 >>> app = FastAPI()
 >>>
 >>>
->>> @app.get('/hello/')
-... def hello(firstname: str, lastname: str, age: int = 69):
+>>> @app.get('/hello')
+... def hello(firstname: str, lastname: str, age: int = 40):
 ...     return {'data': f'{firstname} {lastname} is {age} years old'}
 
 .. code-block:: console
 
-    $ uvicorn main:app --reload
-    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-    INFO:     Started reloader process [68005] using watchgod
-    INFO:     Started server process [68007]
-    INFO:     Waiting for application startup.
-    INFO:     Application startup complete.
-
     $ curl http://localhost:8000/hello/?firstname=Mark&lastname=Watney
-    {"data":"Mark Watney is 69 years old"}
+    {"data":"Mark Watney is 40 years old"}
 
-    $ curl http://localhost:8000/hello/?firstname=Mark&lastname=Watney&age=1337
-    {"data":"Mark Watney is 1337 years old"}
+.. code-block:: console
+
+    $ curl http://localhost:8000/hello/?firstname=Mark&lastname=Watney&age=69
+    {"data":"Mark Watney is 69 years old"}
 
 
 Optional
@@ -110,15 +132,10 @@ Optional
 
 .. code-block:: console
 
-    $ uvicorn main:app --reload
-    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-    INFO:     Started reloader process [68005] using watchgod
-    INFO:     Started server process [68007]
-    INFO:     Waiting for application startup.
-    INFO:     Application startup complete.
-
     $ curl http://localhost:8000/hello/?firstname=Mark&lastname=Watney
     {"data":"Mark Watney is None years old"}
+
+.. code-block:: console
 
     $ curl http://localhost:8000/hello/?firstname=Mark&lastname=Watney&age=69
     {"data":"Mark Watney is 69 years old"}

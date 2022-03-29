@@ -8,31 +8,24 @@ FastAPI POST
 
 Example
 -------
->>> from pydantic import BaseModel
+>>> from pydantic import BaseModel as Schema
 >>> from fastapi import FastAPI
 >>> app = FastAPI()
 >>>
 >>>
->>> class Astronaut(BaseModel):
+>>> class User(Schema):
 ...     firstname: str
 ...     lastname: str
-...     active: bool | None = True
+...     age: int | None = None
 >>>
 >>>
->>> @app.post('/astronaut/')
-... def astronaut_selection(astronaut: Astronaut):
-...     return {'data': f'{astronaut.firstname} {astronaut.lastname} is active: {astronaut.active}'}
+>>> @app.post('/user')
+... def user_selection(user: User):
+...     return {'data': f'{user.firstname} {user.lastname} age: {user.age}'}
 
 .. code-block:: console
 
-    $ uvicorn main:app --reload
-    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-    INFO:     Started reloader process [68005] using watchgod
-    INFO:     Started server process [68007]
-    INFO:     Waiting for application startup.
-    INFO:     Application startup complete.
-
-    $ curl -X POST http://localhost:8000/astronaut/ -d '{"firstname":"Mark", "lastname": "Watney"}'
-    {"data":"Mark Watney is active: True"}
+    $ curl -X POST http://localhost:8000/user -d '{"firstname":"Mark", "lastname": "Watney"}'
+    {"data":"Mark Watney age: None"}
 
 Check documentation http://localhost:8000/docs
