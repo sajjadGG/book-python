@@ -9,6 +9,7 @@ sqlalchemy
 aiosqlite
 
 # Auth
+bcrypt
 passlib[bcrypt]
 python-jose[cryptography]
 python-multipart

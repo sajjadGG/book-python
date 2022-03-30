@@ -116,6 +116,7 @@ Database
 
     database/orm.rst
     database/auth.rst
+    database/async.rst
     database/relationship.rst
 
 

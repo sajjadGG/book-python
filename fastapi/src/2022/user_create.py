@@ -1,9 +1,10 @@
 from datetime import datetime, timezone
 from typing import AsyncGenerator
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException, status
+from passlib.context import CryptContext
 from pydantic import BaseModel as Schema, EmailStr
-from sqlalchemy import Boolean, Column, DateTime, Integer, String
+from sqlalchemy import Boolean, Column, DateTime, Integer, String, select
 from sqlalchemy.ext.asyncio import (AsyncSession, create_async_engine)
 from sqlalchemy.orm import declarative_base
 
@@ -40,6 +41,30 @@ class UserCreateResponse(Schema):
         orm_mode = True
 
 
+class UserDetailResponse(Schema):
+    id: int
+    is_active: bool
+    date_created: datetime
+    date_modified: datetime | None
+    username: str
+    email: EmailStr
+
+    class Config:
+        orm_mode = True
+
+
+class Password:
+    context = CryptContext(schemes=['bcrypt'], deprecated='auto')
+
+    @classmethod
+    def encrypt(cls, plaintext_password):
+        return cls.context.hash(plaintext_password)
+
+    @classmethod
+    def verify(cls, plaintext_password, hashed_password):
+        return cls.context.verify(plaintext_password, hashed_password)
+
+
 class User(Model):
     __tablename__ = 'users'
 
@@ -73,9 +98,20 @@ async def get_db() -> AsyncGenerator[AsyncSession, None]:
         await session.commit()
 
 
-@router.post('/user/create', response_model=UserCreateResponse)
+@router.post('/user', response_model=UserCreateResponse)
 async def user_create(payload: UserCreateRequest, db: AsyncSession = Depends(get_db)):
-    user = User(**payload.dict())
+    user = User(username=payload.username,
+                password=Password.encrypt(payload.password),
+                email=payload.email)
     db.add(user)
     await db.commit()
     return user
+
+@router.get('/user/{id}', response_model=UserDetailResponse)
+async def user_get(id: int, db: AsyncSession = Depends(get_db)):
+    query = select(User).where(User.id==id)
+    if user := await db.execute(query):
+        return user.scalar()
+    else:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail='User does not exist')
