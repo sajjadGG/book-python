@@ -5,8 +5,11 @@ fastapi
 uvicorn[standard]
 pydantic
 pydantic[email]  # pip install 'pydantic[email]'
+
+# Database
 sqlalchemy
 aiosqlite
+alembic
 
 # Auth
 bcrypt
