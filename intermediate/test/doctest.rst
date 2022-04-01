@@ -107,7 +107,7 @@ Running Tests from Python Code:
 
 >>> if __name__ == "__main__":
 ...     from doctest import testmod
-...     testmod()
+...     testmod()  # doctest: +SKIP
 
 Running tests from command line (displays errors only):
 

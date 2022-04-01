@@ -75,7 +75,7 @@ Str vs Bytes
 
 >>> text = b'Księżyc'
 Traceback (most recent call last):
-SyntaxError: bytes can only contain ASCII literal characters.
+SyntaxError: bytes can only contain ASCII literal characters
 
 Default encoding is ``UTF-8``. Encoding names are case insensitive.
 ``cp1250`` and ``windows-1250`` are aliases the same codec:

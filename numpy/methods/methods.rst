@@ -96,14 +96,14 @@ array([[0, 2, 3],
        [0, 5, 6],
        [0, 8, 9]])
 
-Fill NaN (dtype=np.int):
+Fill NaN (dtype=np.int64):
 
 >>> import numpy as np
 >>>
 >>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6],
-...               [7, 8, 9]], dtype=np.int)
+...               [7, 8, 9]], dtype=np.int64)
 >>>
 >>> a[:, 0].fill(np.nan)
 >>> a
@@ -118,7 +118,7 @@ Fill NaN (dtype=np.float):
 >>>
 >>> a = np.array([[1, 2, 3],
 ...               [4, 5, 6],
-...               [7, 8, 9]], dtype=np.float)
+...               [7, 8, 9]], dtype=np.float64)
 >>>
 >>> a[:, 0].fill(np.nan)
 >>> a

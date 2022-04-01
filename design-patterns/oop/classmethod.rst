@@ -39,11 +39,11 @@ Example
 >>>
 >>> User.from_json(DATA)
 Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
+TypeError: User.from_json() missing 1 required positional argument: 'data'
 >>>
 >>> User().from_json(DATA)
 Traceback (most recent call last):
-TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
+TypeError: User.__init__() missing 2 required positional arguments: 'firstname' and 'lastname'
 >>>
 >>> User(None, None).from_json(DATA)
 User(firstname='Jan', lastname='Twardowski')
@@ -110,7 +110,7 @@ User(firstname='Jan', lastname='Twardowski')
 >>>
 >>> User.from_json(DATA)
 Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
+TypeError: JSONMixin.from_json() missing 1 required positional argument: 'data'
 >>>
 >>> User().from_json(DATA)
 User(firstname='Jan', lastname='Twardowski')
@@ -137,7 +137,7 @@ Trying to use method with ``self``:
 >>>
 >>> User.from_json(DATA)
 Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
+TypeError: JSONMixin.from_json() missing 1 required positional argument: 'data'
 >>>
 >>> User().from_json(DATA)
 Traceback (most recent call last):
@@ -166,7 +166,7 @@ Trying to use method with ``self.__init__()``:
 >>>
 >>> User.from_json(DATA)
 Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
+TypeError: JSONMixin.from_json() missing 1 required positional argument: 'data'
 >>>
 >>> User().from_json(DATA)
 User(firstname='Jan', lastname='Twardowski')
@@ -195,7 +195,7 @@ Trying to use methods ``self.__new__()`` and ``self.__init__()``:
 >>>
 >>> User.from_json(DATA)
 Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
+TypeError: JSONMixin.from_json() missing 1 required positional argument: 'data'
 >>>
 >>> User().from_json(DATA)
 User(firstname='Jan', lastname='Twardowski')
@@ -222,8 +222,8 @@ User(firstname='Jan', lastname='Twardowski')
 User(firstname='Jan', lastname='Twardowski')
 
 
-Use Cases
----------
+Use Case - 0x01
+---------------
 >>> import json
 >>> from dataclasses import dataclass
 >>>
@@ -253,6 +253,9 @@ Guest(firstname='Jan', lastname='Twardowski')
 >>> Admin.from_json(DATA)
 Admin(firstname='Jan', lastname='Twardowski')
 
+
+Use Case - 0x02
+---------------
 >>> class AbstractTime:
 ...     tzname: str
 ...     tzcode: str

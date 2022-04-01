@@ -23,12 +23,6 @@ False
 >>>
 >>> [1, 2, 3] in a
 True
->>>
->>> [1, 2] in a
-False
->>>
->>> [3, 4] in a
-False
 
 
 Is In

@@ -117,7 +117,7 @@ My name... Jose Jimenez
 >>>
 >>> Astronaut.say_hello()
 Traceback (most recent call last):
-TypeError: say_hello() missing 1 required positional argument: 'self'
+TypeError: Astronaut.say_hello() missing 1 required positional argument: 'self'
 >>>
 >>> Astronaut.say_hello(astro)
 My name... Jose Jimenez

@@ -79,11 +79,11 @@ When ``add`` and ``sub`` are in ``Calculator`` class (namespace) they get instan
 >>>
 >>> Calculator.add(10, 20)
 Traceback (most recent call last):
-TypeError: add() missing 1 required positional argument: 'b'
+TypeError: Calculator.add() missing 1 required positional argument: 'b'
 >>>
 >>> Calculator.sub(8, 4)
 Traceback (most recent call last):
-TypeError: add() missing 1 required positional argument: 'b'
+TypeError: Calculator.sub() missing 1 required positional argument: 'b'
 >>>
 >>> calc = Calculator()
 >>> calc.add(1, 2)
@@ -163,11 +163,11 @@ goodbye
 >>>
 >>> Astronaut.say_hello()
 Traceback (most recent call last):
-TypeError: say_hello() missing 1 required positional argument: 'self'
+TypeError: Astronaut.say_hello() missing 1 required positional argument: 'self'
 >>>
 >>> Astronaut.say_goodbye()
 Traceback (most recent call last):
-TypeError: say_goodbye() missing 1 required positional argument: 'self'
+TypeError: Astronaut.say_goodbye() missing 1 required positional argument: 'self'
 
 >>> class Astronaut:
 ...     @staticmethod

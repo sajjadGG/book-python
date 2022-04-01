@@ -328,7 +328,7 @@ Point(x=0, y=0, X_MIN=0, X_MAX=1024, Y_MIN=0, Y_MAX=768)
 >>>
 >>> Point(0, 0, X_MIN=10, X_MAX=100)
 Traceback (most recent call last):
-TypeError: __init__() got an unexpected keyword argument 'X_MIN'
+TypeError: Point.__init__() got an unexpected keyword argument 'X_MIN'
 
 
 Use Case - 0x06

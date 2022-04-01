@@ -30,13 +30,13 @@ Default Function with If
 ...         'born': date(1994, 10, 12)}
 >>>
 >>>
->>> def encoder(self, x):
+>>> def encoder(x):
 ...     if type(x) is date:
 ...         return x.isoformat()
 >>>
 >>>
 >>> json.dumps(DATA, default=encoder)
-{"firstname": "Mark", "lastname": "Watney", "born": "1994-10-12"}
+'{"firstname": "Mark", "lastname": "Watney", "born": "1994-10-12"}'
 
 
 Default Function with Match
@@ -54,7 +54,7 @@ Default Function with Match
 ...             return x.total_seconds()
 >>>
 >>>
->>> json.dumps(data_python, default=encoder)
+>>> json.dumps(DATA, default=encoder)
 '{"firstname": "Mark", "lastname": "Watney", "born": "1994-10-12"}'
 
 
@@ -68,7 +68,7 @@ Monkey Patching with Lambda Expression
 >>> json.JSONEncoder.default = lambda self,x: x.isoformat()
 >>>
 >>> json.dumps(DATA)
-{"firstname": "Mark", "lastname": "Watney", "born": "1994-10-12"}
+'{"firstname": "Mark", "lastname": "Watney", "born": "1994-10-12"}'
 
 
 Dependency Injection
@@ -85,7 +85,7 @@ Dependency Injection
 >>>
 >>>
 >>> json.dumps(DATA, cls=MyEncoder)
-{"firstname": "Mark", "lastname": "Watney", "born": "1994-10-12"}
+'{"firstname": "Mark", "lastname": "Watney", "born": "1994-10-12"}'
 
 
 Use Case - 0x01

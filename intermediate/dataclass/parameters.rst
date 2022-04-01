@@ -108,7 +108,7 @@ Point(x=10, y=20)
 >>> p = Point(10, 20)
 >>>
 >>> print(p)  # doctest: +ELLIPSIS
-<Point object at 0x...>
+<__main__.Point object at 0x...>
 
 
 Frozen
@@ -274,7 +274,7 @@ TypeError: Astronaut already specifies __slots__
 ...         return f'Hello {self.firstname} {self.lastname}'
 >>>
 >>> vars(Astronaut)  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
-mappingproxy({'__module__': 'builtins',
+mappingproxy({'__module__': '__main__',
               '__annotations__': {'firstname': <class 'str'>, 'lastname': <class 'str'>},
               'say_hello': <function Astronaut.say_hello at 0x...>,
               '__weakref__': <attribute '__weakref__' of 'Astronaut' objects>,

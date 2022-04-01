@@ -210,10 +210,10 @@ Bad:
 >>> file2 = Document('myfile.txt')
 >>>
 >>> print(file1)  # doctest: +ELLIPSIS
-<PDF object at 0x...>
+<__main__.PDF object at 0x...>
 >>>
 >>> print(file2)  # doctest: +ELLIPSIS
-<Txt object at 0x...>
+<__main__.Txt object at 0x...>
 
 Good:
 
@@ -246,13 +246,13 @@ Good:
 >>> file3 = Document('myfile.docx')
 >>>
 >>> print(file1)  # doctest: +ELLIPSIS
-<PDF object at 0x...>
+<__main__.PDF object at 0x...>
 >>>
 >>> print(file2)  # doctest: +ELLIPSIS
-<Txt object at 0x...>
+<__main__.Txt object at 0x...>
 >>>
 >>> print(file3)  # doctest: +ELLIPSIS
-<Docx object at 0x...>
+<__main__.Docx object at 0x...>
 
 Good:
 
@@ -276,7 +276,7 @@ Good:
 >>>
 >>> iris = factory('setosa')
 >>> print(iris)
-<class 'Setosa'>
+<class '__main__.Setosa'>
 
 >>> from random import randint
 >>>

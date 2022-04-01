@@ -131,20 +131,18 @@ True
 
 Floats in Doctest
 -----------------
-.. code-block:: python
-
-    def add(a, b):
-        """
-        >>> add(1.0, 2.0)
-        3.0
-
-        >>> add(0.1, 0.2)
-        0.30000000000000004
-
-        >>> add(0.1, 0.2)   # doctest: +ELLIPSIS
-        0.3000...
-        """
-        return a + b
+>>> def add(a, b):
+...     """
+...     >>> add(1.0, 2.0)
+...     3.0
+...
+...     >>> add(0.1, 0.2)
+...     0.30000000000000004
+...
+...     >>> add(0.1, 0.2)   # doctest: +ELLIPSIS
+...     0.3000...
+...     """
+...     return a + b
 
 
 Decimal Type

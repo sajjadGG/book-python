@@ -180,6 +180,13 @@ Use Case - 0x03
 >>> from datetime import date, timedelta
 >>>
 >>>
+>>> DATA = """
+...     {"firstname": "Mark",
+...      "lastname": "Watney",
+...      "born": "1994-10-12",
+...      "flight_time": 15552000}"""
+>>>
+>>>
 >>> def decoder(x):
 ...     for key, value in x.items():
 ...         match key:
@@ -190,16 +197,23 @@ Use Case - 0x03
 ...     return x
 >>>
 >>>
->>> json.loads(data, object_hook=decoder)  # doctest: +NORMALIZE_WHITESPACE
+>>> json.loads(DATA, object_hook=decoder)  # doctest: +NORMALIZE_WHITESPACE
 {'firstname': 'Mark',
  'lastname': 'Watney',
- 'born': datetime.date(1969, 7, 21),
+ 'born': datetime.date(1994, 10, 12),
  'flight_time': datetime.timedelta(days=180)}
 
 
 Use Case - 0x04
 ---------------
 >>> from datetime import date, timedelta
+>>>
+>>>
+>>> DATA = """
+...     {"firstname": "Mark",
+...      "lastname": "Watney",
+...      "born": "1994-10-12",
+...      "flight_time": 15552000}"""
 >>>
 >>>
 >>> def decoder(x):
@@ -213,10 +227,10 @@ Use Case - 0x04
 ...     return x
 >>>
 >>>
->>> json.loads(data, object_hook=decoder)  # doctest: +NORMALIZE_WHITESPACE
+>>> json.loads(DATA, object_hook=decoder)  # doctest: +NORMALIZE_WHITESPACE
 {'firstname': 'Mark',
  'lastname': 'Watney',
- 'born': datetime.date(1969, 7, 21),
+ 'born': datetime.date(1994, 10, 12),
  'flight_time': datetime.timedelta(days=180)}
 
 

@@ -70,11 +70,11 @@ Errors:
 
 >>> set_point(1, 2, 3)
 Traceback (most recent call last):
-TypeError: set_point() takes 1 positional argument but 2 were given
+TypeError: set_point() takes 0 positional arguments but 3 were given
 >>>
 >>> set_point(1, 2, z=3)
 Traceback (most recent call last):
-TypeError: set_point() takes 1 positional argument but 2 positional arguments (and 1 keyword-only argument) were given
+TypeError: set_point() takes 0 positional arguments but 2 positional arguments (and 1 keyword-only argument) were given
 >>>
 >>> set_point(1, y=2, z=3)
 Traceback (most recent call last):
@@ -102,7 +102,7 @@ Errors:
 
 >>> set_point(1, 2, z=3)
 Traceback (most recent call last):
-TypeError: set_point() missing 1 required positional argument: 'y'
+TypeError: set_point() got some positional-only arguments passed as keyword arguments: 'z'
 >>>
 >>> set_point(1, y=2, z=3)
 Traceback (most recent call last):

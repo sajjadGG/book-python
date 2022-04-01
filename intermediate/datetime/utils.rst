@@ -8,14 +8,14 @@ Time sleep function:
 
 >>> from time import sleep
 >>>
->>> sleep(1)
+>>> sleep(0.1)
 
 >>> from time import sleep
 >>>
 >>>
 >>> for i in range(3):
 ...     # do something
-...     sleep(1)
+...     sleep(0.1)
 
 >>> # doctest: +SKIP
 ... from time import sleep

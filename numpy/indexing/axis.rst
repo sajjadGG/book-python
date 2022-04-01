@@ -140,11 +140,11 @@ One Dimensional:
 >>>
 >>> a[:, 1]
 Traceback (most recent call last):
-IndexError: too many indices for array
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
 >>>
 >>> a.take(0, axis=1)
 Traceback (most recent call last):
-AxisError: axis 1 is out of bounds for array of dimension 1
+numpy.AxisError: axis 1 is out of bounds for array of dimension 1
 
 Two Dimensional - Rows:
 
@@ -238,7 +238,7 @@ array([[11, 22, 33],
 >>>
 >>> a.take(2, axis=0)
 Traceback (most recent call last):
-IndexError: index 2 is out of bounds for size 2
+IndexError: index 2 is out of bounds for axis 0 with size 2
 
 Three Dimensional - Rows:
 

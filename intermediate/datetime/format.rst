@@ -72,7 +72,7 @@ On Linux and \*nix systems:
 >>> format(dt, '%_H:%M')
 ' 6:07'
 >>>
->>> format(dt, '%#H:%M')
+>>> format(dt, '%#H:%M')  # doctest: +SKIP
 '06:07'
 
 On macOS:

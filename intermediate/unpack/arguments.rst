@@ -1,9 +1,3 @@
-.. testsetup::
-
-    def echo(a=None, b=None):
-        pass
-
-
 Unpack Arguments
 ================
 * Unpack and Arbitrary Number of Parameters and Arguments
@@ -22,6 +16,9 @@ Recap
 * Keyword arguments - order is not important
 * Keyword arguments - must be on the right side
 * Positional argument cannot follow keyword arguments
+
+>>> def echo(a=None, b=None):
+...     ...
 
 >>> echo(1)          # positional argument
 >>> echo(a=1)        # keyword argument

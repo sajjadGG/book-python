@@ -10,7 +10,7 @@ Serialize to File
 >>>
 >>> DATA = [1, 2, 3]
 >>>
->>> with open('filename.pkl', mode='wb') as file:
+>>> with open('/tmp/myfile.pkl', mode='wb') as file:
 ...     pickle.dump(DATA, file)
 
 
@@ -21,7 +21,7 @@ Load from file:
 >>> import pickle
 >>>
 >>>
->>> with open('filename.pkl', mode='rb') as file:
+>>> with open('/tmp/myfile.pkl', mode='rb') as file:
 ...     result = pickle.load(file)
 >>>
 >>> print(result)

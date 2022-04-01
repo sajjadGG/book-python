@@ -1,8 +1,3 @@
-.. testsetup::
-
-    import numpy as np
-
-
 Array Arithmetic
 ================
 
@@ -16,6 +11,7 @@ Array Arithmetic
         Single statement without a loop that explains a looping concept.
         Applies operation to each element.
 
+        >>> import numpy as np
         >>> a = np.array([1, 2, 3])
         >>>
         >>> a + 1

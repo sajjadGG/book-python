@@ -38,7 +38,7 @@ b'\x80\x04\x95,\x00\x00\x00\x00\x00\x00\x00}\x94(\x8c\tfirstname\x94\x8c\x04Mark
 >>>
 >>> data = pickle.loads(result)
 >>> Astronaut(**data)  # doctest: +ELLIPSIS
-<Astronaut object at 0x...>
+<__main__.Astronaut object at 0x...>
 
 
 

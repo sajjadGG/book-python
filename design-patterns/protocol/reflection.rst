@@ -26,21 +26,19 @@ AttributeError: 'Astronaut' object has no attribute '_salary'
 >>> print(astro._salary)
 100
 
-.. testsetup::
-
-    def input(prompt):
-        return '_salary'
-
+>>> def input(prompt):
+...     return '_salary'
+>>>
+>>>
 >>> attrname = input('Type attribute name: ')   # _salary
 >>> value = getattr(astro, attrname, 'no such attribute')
 >>> print(value)  # doctest: +SKIP
 100
 
-.. testsetup::
-
-    def input(prompt):
-        return 'notexisting'
-
+>>> def input(prompt):
+...     return 'notexisting'
+>>>
+>>>
 >>> attrname = input('Type attribute name: ')  # notexisting
 >>> value = getattr(astro, attrname, 'no such attribute')
 >>> print(value)
@@ -216,17 +214,17 @@ Sorry, field does not exist
 >>> astro = Astronaut()
 >>> astro.name = 'Mark Watney'
 >>>
->>> astro.name
+>>> astro.name  # doctest: +NORMALIZE_WHITESPACE
 Getattribute called...
 Result was: "Mark Watney"
 'Mark Watney'
 >>>
->>> astro._salary
+>>> astro._salary  # doctest: +NORMALIZE_WHITESPACE
 Getattribute called...
 Not found. Getattr called...
 Creating attribute _salary with `None` value
 >>>
->>> astro._salary
+>>> astro._salary  # doctest: +NORMALIZE_WHITESPACE
 Getattribute called...
 Result was: "None"
 

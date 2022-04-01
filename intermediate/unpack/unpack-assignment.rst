@@ -114,13 +114,13 @@ ValueError: too many values to unpack (expected 3)
 
 >>> a, b, c = 1, 2
 Traceback (most recent call last):
-ValueError: not enough values to unpack (expected 4, got 3)
+ValueError: not enough values to unpack (expected 3, got 2)
 
 >>> {a, b, c} = {1, 2, 3}
 Traceback (most recent call last):
-SyntaxError: can't assign to literal
+SyntaxError: cannot assign to set display here. Maybe you meant '==' instead of '='?
 
->>> {a, b, c} = 1, 2, 3  # doctest: +SKIP
+>>> {a, b, c} = 1, 2, 3
 Traceback (most recent call last):
 SyntaxError: cannot assign to set display here. Maybe you meant '==' instead of '='?
 

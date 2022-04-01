@@ -43,7 +43,7 @@ Metaclass
 New class created
 Classname: Person
 Bases: ()
-Attrs: {'__module__': 'builtins', '__qualname__': 'Person'}
+Attrs: {'__module__': '__main__', '__qualname__': 'Person'}
 >>>
 >>> class Astronaut(Person, metaclass=EventListener):
 ...     pass
@@ -54,8 +54,8 @@ Hello new class Astronaut
 <BLANKLINE>
 New class created
 Classname: Astronaut
-Bases: (<class 'Person'>,)
-Attrs: {'__module__': 'builtins', '__qualname__': 'Astronaut'}
+Bases: (<class '__main__.Person'>,)
+Attrs: {'__module__': '__main__', '__qualname__': 'Astronaut'}
 
 
 Implementation

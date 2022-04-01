@@ -343,7 +343,7 @@ Use Case - 0x04
 >>> pos: Position = Position()
 >>>
 >>> pos.get_coordinates()  # doctest: +ELLIPSIS
-<Point object at 0x...>
+<__main__.Point object at 0x...>
 >>>
 >>> print(pos.get_coordinates())
 Point(x=0, y=0)

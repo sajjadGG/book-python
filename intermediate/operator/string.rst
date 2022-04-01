@@ -70,7 +70,7 @@ String
 >>> astro = Astronaut()
 >>>
 >>> str(astro)  # doctest: +ELLIPSIS
-'<Astronaut object at 0x...>'
+'<__main__.Astronaut object at 0x...>'
 
 Object without ``__str__()`` method overloaded prints their memory address:
 
@@ -82,13 +82,13 @@ Object without ``__str__()`` method overloaded prints their memory address:
 >>> astro = Astronaut('José Jiménez')
 >>>
 >>> print(astro)  # doctest: +ELLIPSIS
-<Astronaut object at 0x...>
+<__main__.Astronaut object at 0x...>
 >>>
 >>> str(astro)  # doctest: +ELLIPSIS
-'<Astronaut object at 0x...>'
+'<__main__.Astronaut object at 0x...>'
 >>>
 >>> astro.__str__()  # doctest: +ELLIPSIS
-'<Astronaut object at 0x...>'
+'<__main__.Astronaut object at 0x...>'
 
 Objects can verbose print if ``__str__()`` method is present:
 
@@ -129,7 +129,7 @@ Representation
 >>> astro = Astronaut()
 >>>
 >>> repr(astro)  # doctest: +ELLIPSIS
-'<Astronaut object at 0x...>'
+'<__main__.Astronaut object at 0x...>'
 
 Using ``__repr__()`` on a class:
 
@@ -161,7 +161,7 @@ Printing ``list`` will call ``__repr__()`` method on each element:
 ...         Astronaut('Melissa Lewis')]
 >>>
 >>> print(crew)  # doctest: +ELLIPSIS
-[<Astronaut object at 0x...>, <Astronaut object at 0x...>, <Astronaut object at 0x...>]
+[<__main__.Astronaut object at 0x...>, <__main__.Astronaut object at 0x...>, <__main__.Astronaut object at 0x...>]
 
 Printing ``list`` will call ``__repr__()`` method on each element:
 

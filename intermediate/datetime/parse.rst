@@ -48,7 +48,7 @@ Omitting any of those values will result with an error:
 >>>
 >>> datetime.strptime(x, '%d %B %Y %I:%M %p')
 Traceback (most recent call last):
-ValueError: time data '12 April 1961, at 6:07 am' does not match format '%d %B %Y, %I:%M %p'
+ValueError: time data '12 April 1961 at 6:07 am' does not match format '%d %B %Y %I:%M %p'
 
 
 Time Zone
@@ -70,7 +70,7 @@ ValueError: unconverted data remains:  local
 >>>
 >>> datetime.strptime(x, '%Y-%m-%d %H:%M %Z')
 Traceback (most recent call last):
-ValueError: time data '1961-04-12 06:07 local' does not match format '%Y-%m-%d %H:%M %Z'
+ValueError: time data '1961-04-12 6:07 local' does not match format '%Y-%m-%d %H:%M %Z'
 
 >>> x = '1961-04-12 6:07 local'
 >>>

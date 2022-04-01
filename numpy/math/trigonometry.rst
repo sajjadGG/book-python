@@ -1,8 +1,3 @@
-.. testsetup::
-
-    import numpy as np
-
-
 Trigonometry
 ============
 
@@ -13,6 +8,7 @@ Trigonometry
     ufunc
         Mathematical operations optimized to work on ``np.array()``:
 
+        >>> import numpy as np
         >>> a = np.array([1, 2, 3])
         >>>
         >>> np.sin(a)

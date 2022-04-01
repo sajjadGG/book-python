@@ -67,7 +67,7 @@ slice(1, 2, None)
 >>>
 >>> data['x']       # data.__getitem__('x') -> data.__missing__() -> KeyError: 'x'
 Traceback (most recent call last):
-KeyError: x
+KeyError: 'x'
 >>>
 >>> data()          # data.__call__() -> TypeError: 'dict' object is not callable
 Traceback (most recent call last):

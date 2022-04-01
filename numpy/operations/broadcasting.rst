@@ -49,7 +49,7 @@ array([[ 5,  7,  9],
 array([[2, 4, 6],
        [5, 7, 9]])
 >>>
->>> a + d
+>>> a + d  # doctest: +NORMALIZE_WHITESPACE
 Traceback (most recent call last):
 ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
@@ -73,7 +73,7 @@ array([[-3, -3, -3],
 array([[0, 0, 0],
        [3, 3, 3]])
 >>>
->>> a - d
+>>> a - d  # doctest: +NORMALIZE_WHITESPACE
 Traceback (most recent call last):
 ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
@@ -97,7 +97,7 @@ array([[0.25      , 0.4       , 0.5       ],
 array([[1. , 1. , 1. ],
        [4. , 2.5, 2. ]])
 >>>
->>> a / d
+>>> a / d  # doctest: +NORMALIZE_WHITESPACE
 Traceback (most recent call last):
 ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
@@ -121,7 +121,7 @@ array([[0, 0, 0],
 array([[1, 1, 1],
        [4, 2, 2]])
 >>>
->>> a // d
+>>> a // d  # doctest: +NORMALIZE_WHITESPACE
 Traceback (most recent call last):
 ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
@@ -145,7 +145,7 @@ array([[1, 2, 3],
 array([[0, 0, 0],
        [0, 1, 0]])
 >>>
->>> a % d
+>>> a % d  # doctest: +NORMALIZE_WHITESPACE
 Traceback (most recent call last):
 ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
@@ -169,7 +169,7 @@ array([[       1,       32,      729],
 array([[  1,   4,  27],
        [  4,  25, 216]])
 >>>
->>> a ** d
+>>> a ** d  # doctest: +NORMALIZE_WHITESPACE
 Traceback (most recent call last):
 ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
@@ -193,7 +193,7 @@ array([[1.        , 1.14869835, 1.20093696],
 array([[1.        , 1.41421356, 1.44224957],
        [4.        , 2.23606798, 1.81712059]])
 >>>
->>> a ** (1/d)
+>>> a ** (1/d)  # doctest: +NORMALIZE_WHITESPACE
 Traceback (most recent call last):
 ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
@@ -220,7 +220,7 @@ array([[ 4, 10, 18],
 array([[ 1,  4,  9],
        [ 4, 10, 18]])
 >>>
->>> a * d
+>>> a * d  # doctest: +NORMALIZE_WHITESPACE
 Traceback (most recent call last):
 ValueError: operands could not be broadcast together with shapes (2,3) (2,)
 
@@ -248,7 +248,7 @@ array([[22, 28],
 >>> b = np.array([[4, 5, 6],
 ...               [7, 8, 9]])
 >>>
->>> a @ b
+>>> a @ b  # doctest: +NORMALIZE_WHITESPACE
 Traceback (most recent call last):
 ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 3)
 
