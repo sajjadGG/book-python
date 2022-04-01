@@ -7,61 +7,117 @@ OOP Attribute Slots
 * Store value references in slots instead of ``__dict__``
 * Denying ``__dict__`` and ``__weakref__`` creation
 
+>>> class Astronaut:
+...     __slots__ = ('firstname', 'lastname')
+>>>
+>>>
+>>> astro = Astronaut()
+>>> astro.firstname = 'Mark'
+>>> astro.lastname = 'Watney'
+
 
 Notes
 -----
-When inheriting from a class without __slots__, the __dict__ and __weakref__ attribute of the instances will always be accessible.
+When inheriting from a class without ``__slots__``, the ``__dict__``
+and ``__weakref__`` attribute of the instances will always be accessible.
 
-Without a __dict__ variable, instances cannot be assigned new variables not listed in the __slots__ definition. Attempts to assign to an unlisted variable name raises AttributeError. If dynamic assignment of new variables is desired, then add '__dict__' to the sequence of strings in the __slots__ declaration.
+Without a ``__dict__`` variable, instances cannot be assigned new variables
+not listed in the ``__slots__`` definition. Attempts to assign to an
+unlisted variable name raises AttributeError. If dynamic assignment of new
+variables is desired, then add ``'__dict__'`` to the sequence of strings
+in the ``__slots__`` declaration.
 
-Without a __weakref__ variable for each instance, classes defining __slots__ do not support weak references to its instances. If weak reference support is needed, then add '__weakref__' to the sequence of strings in the __slots__ declaration.
+Without a ``__weakref__`` variable for each instance, classes defining
+``__slots__`` do not support weak references to its instances. If weak
+reference support is needed, then add ``'__weakref__'`` to the sequence
+of strings in the ``__slots__`` declaration.
 
-__slots__ are implemented at the class level by creating descriptors for each variable name. As a result, class attributes cannot be used to set default values for instance variables defined by __slots__; otherwise, the class attribute would overwrite the descriptor assignment.
+``__slots__`` are implemented at the class level by creating descriptors
+for each variable name. As a result, class attributes cannot be used to set
+default values for instance variables defined by ``__slots__``; otherwise,
+the class attribute would overwrite the descriptor assignment.
 
-The action of a __slots__ declaration is not limited to the class where it is defined. __slots__ declared in parents are available in child classes. However, child subclasses will get a __dict__ and __weakref__ unless they also define __slots__ (which should only contain names of any additional slots).
+The action of a ``__slots__`` declaration is not limited to the class
+where it is defined. ``__slots__`` declared in parents are available in
+child classes. However, child subclasses will get a ``__dict__`` and
+``__weakref__`` unless they also define __slots__ (which should only
+contain names of any additional slots).
 
-If a class defines a slot also defined in a base class, the instance variable defined by the base class slot is inaccessible (except by retrieving its descriptor directly from the base class). This renders the meaning of the program undefined. In the future, a check may be added to prevent this.
+If a class defines a slot also defined in a base class, the instance
+variable defined by the base class slot is inaccessible (except by
+retrieving its descriptor directly from the base class). This renders
+the meaning of the program undefined. In the future, a check may be added
+to prevent this.
 
-Nonempty __slots__ does not work for classes derived from 'variable-length' built-in types such as int, bytes and tuple.
+Nonempty ``__slots__`` does not work for classes derived from
+``'variable-length'`` built-in types such as ``int``, ``bytes`` and
+``tuple``.
 
-Any non-string iterable may be assigned to __slots__.
+Any non-string iterable may be assigned to ``__slots__``.
 
-If a dictionary is used to assign __slots__, the dictionary keys will be used as the slot names. The values of the dictionary can be used to provide per-attribute docstrings that will be recognised by inspect.getdoc() and displayed in the output of help().
+If a dictionary is used to assign ``__slots__``, the dictionary keys will
+be used as the slot names. The values of the dictionary can be used to
+provide per-attribute docstrings that will be recognised by
+``inspect.getdoc()`` and displayed in the output of ``help()``.
 
-__class__ assignment works only if both classes have the same __slots__.
+``__class__`` assignment works only if both classes have the same
+``__slots__``.
 
-Multiple inheritance with multiple slotted parent classes can be used, but only one parent is allowed to have attributes created by slots (the other bases must have empty slot layouts) - violations raise TypeError.
+Multiple inheritance with multiple slotted parent classes can be used, but
+only one parent is allowed to have attributes created by slots (the other
+bases must have empty slot layouts) - violations raise ``TypeError``.
 
-If an iterator is used for __slots__ then a descriptor is created for each of the iterator's values. However, the __slots__ attribute will be an empty iterator.
+If an iterator is used for ``__slots__`` then a descriptor is created for
+each of the iterator's values. However, the ``__slots__`` attribute will
+be an empty iterator.
 
-Source: [#pydocDataModel]_
+Source: [#pydocDataModelSlots]_
 
 
 Weakref
 -------
-A weak reference to an object is not enough to keep the object alive: when the only remaining references to a referent are weak references, garbage collection is free to destroy the referent and reuse its memory for something else. However, until the object is actually destroyed the weak reference may return the object even if there are no strong references to it.
+A weak reference to an object is not enough to keep the object alive: when
+the only remaining references to a referent are weak references, garbage
+collection is free to destroy the referent and reuse its memory for
+something else. However, until the object is actually destroyed the weak
+reference may return the object even if there are no strong references to it.
+A primary use for weak references is to implement caches or mappings holding
+large objects, where it's desired that a large object not be kept alive
+solely because it appears in a cache or mapping [#pydocWeakref]_.
 
-A primary use for weak references is to implement caches or mappings holding large objects, where it's desired that a large object not be kept alive solely because it appears in a cache or mapping.
+``__weakref__`` is just an opaque object that references all the weak
+references to the current object. It's just an implementation detail that
+allows the garbage collector to inform weak references that its referent
+has been collected, and to not allow access to its underlying pointer
+anymore. The weak reference can't rely on checking the reference count of
+the object it refers to. This is because that memory may have been reclaimed
+and is now being used by another object. Best case scenario the VM will
+crash, worst case the weak reference will allow access to an object it
+wasn't originally referring to. This is why the garbage collector must
+inform the weak reference its referent is no longer valid. Weak references
+form a stack. The top of that stack (the most recent weak reference to an
+object) is available via ``__weakref__``. Weakrefs are re-used whenever
+possible, so the stack is typically either empty or contains a single
+element. [#Dunes2016]_
 
-Source: [#pydocWeakref]_
+Garbage collection is simply the process of freeing memory when it is not
+used/reached by any reference/pointer anymore. Python performs garbage
+collection via a technique called reference counting (and a cyclic garbage
+collector that is used to detect and break reference cycles). Using
+reference counting, GC collects the objects as soon as they become
+unreachable which happens when the number of references to the object is 0.
+[#pydocDataModelObjectValues]_
 
-__weakref__ is just an opaque object that references all the weak references to the current object. It's just an implementation detail that allows the garbage collector to inform weak references that its referent has been collected, and to not allow access to its underlying pointer anymore.
-
-The weak reference can't rely on checking the reference count of the object it refers to. This is because that memory may have been reclaimed and is now being used by another object. Best case scenario the VM will crash, worst case the weak reference will allow access to an object it wasn't originally referring to. This is why the garbage collector must inform the weak reference its referent is no longer valid.
-
-Weak references form a stack. The top of that stack (the most recent weak reference to an object) is available via __weakref__. Weakrefs are re-used whenever possible, so the stack is typically either empty or contains a single element.
-
-Source: [#Dunes2016]_
-
-Garbage collection is simply the process of freeing memory when it is not used/reached by any reference/pointer anymore. Python performs garbage collection via a technique called reference counting (and a cyclic garbage collector that is used to detect and break reference cycles). Using reference counting, GC collects the objects as soon as they become unreachable which happens when the number of references to the object is 0. (for more info read https://docs.python.org/3/reference/datamodel.html#objects-values-and-types)
-
-Now, the way with which weak references perform the task of NOT protecting the object from being collected by GC, or better to say the way with which they cause an object to be collected by GC is that (in case of a GC that uses reference counting rather than tracing technique) they just don't get to be counted as a reference.Otherwise, if counted, they will be called strong references.
-
-Source: [#Mazdak2016]_
+The way with which weak references perform the task of NOT protecting the
+object from being collected by GC, or better to say the way with which they
+cause an object to be collected by GC is that (in case of a GC that uses
+reference counting rather than tracing technique) they just don't get to be
+counted as a reference. Otherwise, if counted, they will be called strong
+references [#Mazdak2016]_.
 
 
-Example
--------
+Empty Slots
+-----------
 >>> class Astronaut:
 ...     __slots__ = ()
 >>>
@@ -72,6 +128,9 @@ Example
 Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute 'fullname'
 
+
+One Slot
+--------
 >>> class Astronaut:
 ...     __slots__ = ('fullname',)
 >>>
@@ -83,6 +142,9 @@ AttributeError: 'Astronaut' object has no attribute 'fullname'
 Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute 'role'
 
+
+Many Slots
+----------
 >>> class Astronaut:
 ...     __slots__ = ('firstname', 'lastname')
 >>>
@@ -160,8 +222,8 @@ Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute 'role'
 
 
-Get Vars
---------
+Vars
+----
 * Using ``__slots__`` will prevent from creating ``__dict__``
 
 >>> class Astronaut:
@@ -180,19 +242,11 @@ TypeError: vars() argument must have __dict__ attribute
 Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute '__dict__'
 
->>> class Astronaut:
-...     __slots__ = ('firstname', 'lastname')
->>>
->>>
->>> astro = Astronaut()
->>> astro.firstname = 'Mark'
->>> astro.lastname = 'Watney'
->>>
->>> print(astro.__slots__)
-('firstname', 'lastname')
->>>
->>> {x: getattr(astro, x) for x in astro.__slots__}
-{'firstname': 'Mark', 'lastname': 'Watney'}
+
+Slots Internals
+---------------
+* Slots are descriptors
+
 
 >>> class Astronaut:
 ...     __slots__ = ('firstname', 'lastname')
@@ -210,6 +264,25 @@ mappingproxy({'__module__': 'builtins',
 >>>
 >>> type(Astronaut.firstname)
 <class 'member_descriptor'>
+
+
+Get Attributes and Values
+-------------------------
+* To get values iterate over ``self.__slots__`` and use ``getattr(self, x)``
+
+>>> class Astronaut:
+...     __slots__ = ('firstname', 'lastname')
+>>>
+>>>
+>>> astro = Astronaut()
+>>> astro.firstname = 'Mark'
+>>> astro.lastname = 'Watney'
+>>>
+>>> print(astro.__slots__)
+('firstname', 'lastname')
+>>>
+>>> {x: getattr(astro, x) for x in astro.__slots__}
+{'firstname': 'Mark', 'lastname': 'Watney'}
 
 
 Slots and Dict
@@ -508,7 +581,9 @@ Further Reading
 
 References
 ----------
-.. [#pydocDataModel] Python core developers. Data model. Customizing attribute access. Notes on using __slots__. Python documentation. Year: 2022. Retrieved: 2022-03-16. URL: https://docs.python.org/3/reference/datamodel.html#slots
+.. [#pydocDataModelSlots] Python core developers. Data model. Customizing attribute access. Notes on using __slots__. Python documentation. Year: 2022. Retrieved: 2022-03-16. URL: https://docs.python.org/3/reference/datamodel.html#slots
+
+.. [#pydocDataModelObjectValues] Python core developers. Data model. Objects, values and types. Python documentation. Year: 2022. Retrieved: 2022-04-01. URL: https://docs.python.org/3/reference/datamodel.html#objects-values-and-types
 
 .. [#pydocWeakref] Python core developers. Weak references. Python documentation. Year: 2022. Retrieved: 2022-03-16. URL: https://docs.python.org/3/library/weakref.html
 
