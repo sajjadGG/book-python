@@ -1,5 +1,6 @@
 AsyncIO Awaitable
 =================
+* Since Python 3.5 :pep:`492` -- Coroutines with async and await syntax
 * Object is an awaitable if it can be used in an ``await`` expression
 * Awaitable objects: Coroutines, Tasks, Futures
 * ``__await__`` and ``await`` keyword
@@ -20,6 +21,18 @@ AsyncIO Awaitable
         Runs thing in the "background". Can be awaited and cancelled.
 
     future
+
+
+An awaitable object generally implements an ``__await__()`` method.
+Coroutine objects returned from async def functions are awaitable. Note
+The generator iterator objects returned from generators decorated with
+``types.coroutine()`` or ``asyncio.coroutine()`` are also awaitable, but
+they do not implement ``__await__()``.
+
+``object.__await__(self)`` Must return an iterator. Should be used to
+implement awaitable objects. For instance, ``asyncio.Future`` implements
+this method to be compatible with the await expression.
+[#pydocDatamodelAwaitable]_
 
 
 Awaitables
@@ -66,3 +79,5 @@ Type Annotations
 References
 ----------
 .. [#Langa2020] Langa, Ł. import asyncio: Learn Python's AsyncIO. Year: 2020. Retrieved: 2022-03-10. URL: https://www.youtube.com/playlist?list=PLhNSoGM2ik6SIkVGXWBwerucXjgP1rHmB
+
+.. [#pydocDatamodelAwaitable] Python core developers. Data model. Coroutines. Awaitable Objects. Year: 2022. Retrieved: 2022-04-01. URL: https://docs.python.org/3/reference/datamodel.html#awaitable-objects
