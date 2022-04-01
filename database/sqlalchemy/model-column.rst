@@ -23,16 +23,17 @@ Model Column
 
 Define Column
 -------------
->>> from sqlalchemy import Column
+>>> from sqlalchemy import Column, String, Integer
 
 Use a type with arguments:
 
 >>> Column('username', String(50))
+Column('username', String(length=50), table=None)
 
 Use no arguments:
 
 >>> Column('age', Integer)
-
+Column('age', Integer(), table=None)
 
 Parameters
 ----------
@@ -60,15 +61,15 @@ Parameters
 
 Examples:
 
->>> Column('id', Integer, key='user_id', primary_key=True, autoincrement=True)
->>> Column('username', String(30), nullable=False, unique=True, index=True)
->>> Column('password', String(30), nullable=False)
->>> Column('email', String(60), unique=True),
+>>> field = Column('id', Integer, key='user_id', primary_key=True, autoincrement=True)
+>>> field = Column('username', String(30), nullable=False, unique=True, index=True)
+>>> field = Column('password', String(30), nullable=False)
+>>> field = Column('email', String(60), unique=True),
 
 
 Use Case - 0x01
 ---------------
->>> from sqlalchemy import MetaData, Table, Column, String, Integer
+>>> from sqlalchemy import MetaData, Table, Column, String, Integer, ForeignKey
 >>> from sqlalchemy import create_engine
 >>>
 >>>
@@ -98,35 +99,41 @@ Use Case - 0x01
 Use Case - 0x02
 ---------------
 >>> from sqlalchemy.orm import deferred
->>> from sqlalchemy import Integer, String, Text, Binary, Column
+>>> from sqlalchemy import Integer, String, Text, BLOB, Column
+>>> from sqlalchemy.ext.declarative import declarative_base
+>>>
+>>> Base = declarative_base()
 >>>
 >>>
 >>> class Book(Base):
->>>     __tablename__ = 'book'
->>>
->>>     book_id = Column(Integer, primary_key=True)
->>>     title = Column(String(200), nullable=False)
->>>     summary = Column(String(2000))
->>>     excerpt = deferred(Column(Text))
->>>     photo = deferred(Column(Binary))
+...     __tablename__ = 'book'
+...
+...     book_id = Column(Integer, primary_key=True)
+...     title = Column(String(200), nullable=False)
+...     summary = Column(String(2000))
+...     excerpt = deferred(Column(Text))
+...     photo = deferred(Column(BLOB))
 
 
 Use Case - 0x03
 ---------------
 >>> from sqlalchemy.orm import deferred
->>> from sqlalchemy import Integer, String, Text, Binary, Column
+>>> from sqlalchemy import Integer, String, Text, BLOB, Column
+>>> from sqlalchemy.ext.declarative import declarative_base
+>>>
+>>> Base = declarative_base()
 >>>
 >>>
 >>> class Book(Base):
->>>     __tablename__ = 'book'
->>>
->>>     book_id = Column(Integer, primary_key=True)
->>>     title = Column(String(200), nullable=False)
->>>     summary = Column(String(2000))
->>>     excerpt = deferred(Column(Text))
->>>     photo1 = deferred(Column(Binary), group='photos')
->>>     photo2 = deferred(Column(Binary), group='photos')
->>>     photo3 = deferred(Column(Binary), group='photos')
+...     __tablename__ = 'book'
+...
+...     book_id = Column(Integer, primary_key=True)
+...     title = Column(String(200), nullable=False)
+...     summary = Column(String(2000))
+...     excerpt = deferred(Column(Text))
+...     photo1 = deferred(Column(BLOB), group='photos')
+...     photo2 = deferred(Column(BLOB), group='photos')
+...     photo3 = deferred(Column(BLOB), group='photos')
 
 
 References

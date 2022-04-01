@@ -28,7 +28,7 @@ Serialize to JSON:
 >>> import json
 >>>
 >>>
->>> FILE = r'_temporary.json'
+>>> FILE = r'/tmp/myfile.json'
 >>>
 >>> DATA = {'firstname': 'Mark',
 ...         'lastname': 'Watney'}
@@ -61,7 +61,7 @@ Serialize to JSON:
 >>> import json
 >>>
 >>>
->>> FILE = r'_temporary.json'
+>>> FILE = r'/tmp/myfile.json'
 >>> DATA = '{"firstname": "Mark", "lastname": "Watney"}'
 >>> _ = open(FILE, mode='w').write(DATA)
 >>>

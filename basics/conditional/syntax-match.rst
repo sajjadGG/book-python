@@ -1,33 +1,32 @@
-
 .. testsetup::
 
-    # Simulate user input (for test automation)
-    from unittest.mock import MagicMock
-    input = MagicMock(side_effect=['French'])
-
-    def handle_get(uri): ...
-    def handle_post(uri): ...
-    def handle_put(uri): ...
-    def handle_delete(uri): ...
-
-    class Hero:
-        def move(self, direction, value): ...
-        def jump(self, direction): ...
-        def make_damage(): ...
-        def take_damage(_): ...
-    hero = Hero()
-
-    class Game:
-        def quit(): ...
-        def move_left(): ...
-        def move_up(): ...
-        def move_right(): ...
-        def move_down(): ...
-    game = Game()
-
-    class Keyboard:
-        def on_key_press(self): ...
-    keyboard = Keyboard()
+    >>> # Simulate user input (for test automation)
+    >>> from unittest.mock import MagicMock
+    >>> input = MagicMock(side_effect=['French'])
+    >>>
+    >>> def handle_get(uri): ...
+    >>> def handle_post(uri): ...
+    >>> def handle_put(uri): ...
+    >>> def handle_delete(uri): ...
+    >>>
+    >>> class Hero:
+    ...     def move(self, direction, value): ...
+    ...     def jump(self, direction): ...
+    ...     def make_damage(self): ...
+    ...     def take_damage(self, dmg): ...
+    >>> hero = Hero()
+    >>>
+    >>> class Game:
+    ...     def quit(self): ...
+    ...     def move_left(self): ...
+    ...     def move_up(self): ...
+    ...     def move_right(self): ...
+    ...     def move_down(self): ...
+    >>> game = Game()
+    >>>
+    >>> class Keyboard:
+    ...     def on_key_press(self): ...
+    >>> keyboard = Keyboard()
 
 
 Block Match
@@ -212,8 +211,8 @@ Use Case - 0x05
 >>> import argparse
 >>>
 >>> parser = argparse.ArgumentParser()
->>> parser.add_argument('command', choices=['push', 'pull', 'commit'])
->>> args = parser.parse_args()
+>>> _ = parser.add_argument('command', choices=['push', 'pull', 'commit'])
+>>> args = parser.parse_args(['push'])
 >>>
 >>> match args.command:
 ...     case 'push':
@@ -222,7 +221,8 @@ Use Case - 0x05
 ...         print('pulling')
 ...     case _:
 ...         parser.error(f'{args.command!r} not yet implemented')
-
+...
+pushing
 
 Use Case - 0x06
 ---------------
@@ -256,32 +256,6 @@ Use Case - 0x06
 ...         current += step
 ...
 ...     return result
-
-
-Use Case - 0x07
----------------
->>> def exec(command, stdin=None, encoding='utf-8', ...):
-...     match command:
-...         case bytes() | str():
-...             raise TypeError('command must be a list of str, not {}'
-...                 .format(type(command).__name__))
-...         case []:
-...             raise ValueError('command must contain at least one item')
-...
-...     match stdin:
-...         case str():
-...             if encoding is None:
-...                 raise ValueError('encoding must be set if stdin is str')
-...             stdin = io.BytesIO(stdin.encode(encoding))
-...         case bytes():
-...             if encoding is not None:
-...                 raise ValueError('encoding must be None if stdin is bytes')
-...             stdin = io.BytesIO(stdin)
-...         case None:
-...             pass
-...         case _ if not hasattr(stdin, 'read'):
-...             raise TypeError('stdin must be str, bytes, or a readable file-like object')
-...     ...
 
 
 Further Reading

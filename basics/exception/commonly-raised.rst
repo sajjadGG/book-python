@@ -80,7 +80,7 @@ Parser encounters a syntax error:
 >>> if True
 ...     print('Yes')
 Traceback (most recent call last):
-SyntaxError: invalid syntax
+SyntaxError: expected ':'
 
 
 IndentationError

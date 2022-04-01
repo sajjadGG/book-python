@@ -144,8 +144,8 @@ Examples
 >>> import sys
 >>>
 >>>
->>> print(sys.version_info)
-sys.version_info(major=3, minor=10, micro=3, releaselevel='final', serial=0)
+>>> print(sys.version_info)  # doctest: +SKIP
+sys.version_info(major=3, minor=10, micro=4, releaselevel='final', serial=0)
 >>>
 >>>
 >>> sys.version_info >= (3, 9)

@@ -90,7 +90,7 @@ Use Case - 0x02
 >>> from time import sleep
 >>>
 >>>
->>> def timeout(seconds=2.0, error_message='Timeout'):
+>>> def timeout(seconds=1, error_message='Timeout'):
 ...     def on_timeout(signum, frame):
 ...         raise TimeoutError
 ...
@@ -108,7 +108,7 @@ Use Case - 0x02
 ...     return decorator
 >>>
 >>>
->>> @timeout(seconds=3.0)
+>>> @timeout(seconds=3)
 ... def countdown(n):
 ...     for i in reversed(range(n)):
 ...         print(i)
@@ -116,10 +116,10 @@ Use Case - 0x02
 ...     print('countdown finished')
 >>>
 >>>
->>> countdown(5)
-4
-3
-2
+>>> countdown(10)  # doctest: +SKIP
+9
+8
+7
 Timeout
 
 .. note:: Note to Windows users.
@@ -151,7 +151,7 @@ Use Case - 0x03
 >>> from time import sleep
 >>>
 >>>
->>> def timeout(seconds=2.0, error_message='Timeout'):
+>>> def timeout(seconds=1.0, error_message='Timeout'):
 ...     def decorator(func):
 ...         def wrapper(*args, **kwargs):
 ...             timer = Timer(seconds, interrupt_main)
@@ -171,14 +171,14 @@ Use Case - 0x03
 ... def countdown(n):
 ...     for i in reversed(range(n)):
 ...         print(i)
-...         sleep(1)
+...         sleep(1.0)
 ...     print('countdown finished')
 >>>
 >>>
->>> countdown(5)  # doctest: +SKIP
-4
-3
-2
+>>> countdown(10)  # doctest: +SKIP
+9
+8
+7
 Traceback (most recent call last):
 TimeoutError: Timeout
 

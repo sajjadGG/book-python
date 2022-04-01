@@ -97,7 +97,7 @@ My name... José Jiménez
 >>>
 >>> jose.say_hello()
 Traceback (most recent call last):
-TypeError: say_hello() missing 1 required positional argument: 'name'
+TypeError: Astronaut.say_hello() missing 1 required positional argument: 'name'
 
 Method with keyword argument:
 
@@ -116,7 +116,7 @@ My name... José Jiménez
 >>>
 >>> jose.say_hello()
 Traceback (most recent call last):
-TypeError: say_hello() missing 1 required positional argument: 'name'
+TypeError: Astronaut.say_hello() missing 2 required positional arguments: 'firstname' and 'lastname'
 
 
 Assignments

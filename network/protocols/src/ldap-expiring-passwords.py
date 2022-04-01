@@ -22,8 +22,8 @@ def datetime_to_mstimestamp(dt):
     Active Directory has different approach to create timestamp than Unix.
     Here's a function to convert the Unix timestamp to the AD one.
 
-    >>> dt = datetime(2000, 1, 1, 0, 0)
-    >>> datetime_to_mstimestamp(dt)
+    > dt = datetime(2000, 1, 1, 0, 0)
+    > datetime_to_mstimestamp(dt)
     125911548000000000
     """
     timestamp = int(dt.timestamp())
@@ -37,8 +37,8 @@ def mstimestamp_to_datetime(mstimestamp):
     Active Directory has different approach to create timestamp than Unix.
     Here's a function to convert AD timestamp to the Unix one.
 
-    >>> ms_timestamp = 130567328471235643
-    >>> mstimestamp_to_datetime(ms_timestamp)
+    > ms_timestamp = 130567328471235643
+    > mstimestamp_to_datetime(ms_timestamp)
     datetime.datetime(2014, 10, 2, 16, 14, 7, 123563)
     """
     magic_number = 11_644_473_600
@@ -49,8 +49,8 @@ def mstimestamp_to_datetime(mstimestamp):
 
 def month_ago(date):
     """
-    >>> dt = datetime(2000, 1, 31, 0, 0)
-    >>> month_ago(dt)
+    > dt = datetime(2000, 1, 31, 0, 0)
+    > month_ago(dt)
     datetime.datetime(2000, 1, 1, 0, 0)
     """
     return date - timedelta(days=30)

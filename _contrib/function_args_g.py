@@ -22,7 +22,7 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(number_to_str)
+    >>> isfunction(result)
     True
     >>> result(1969)  # doctest: +SKIP
     'one thousand nine hundred sixty nine'

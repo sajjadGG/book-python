@@ -6,6 +6,7 @@ _temporary.*
 */_temporary.txt
 **/_temporary.txt
 raw.githubusercontent.com
+python.astrotech.io
 
 ## Compiled and environmental
 __pycache__/

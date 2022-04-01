@@ -10,7 +10,7 @@ SetUp
 -----
 >>> from sqlalchemy import create_engine, MetaData, Table, Column
 >>> from sqlalchemy import Integer, String, Date, Numeric, Enum
->>> from sqlalchemy import select
+>>> from sqlalchemy import select, or_
 >>>
 >>>
 >>> engine = create_engine('sqlite:///:memory:', future=True)
@@ -35,15 +35,15 @@ SetUp
 >>>
 >>> with engine.begin() as db:
 ...     astronaut.create(db)
-...     db.execute(astronaut.insert(), ASTRONAUTS)
+...     result = db.execute(astronaut.insert(), ASTRONAUTS)
 
 
 Select All Columns
 ------------------
 >>> query = select(astronaut)
 >>>
->>> print(query)
-SELECT astronaut.id, astronaut.firstname, astronaut.lastname
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
+SELECT astronaut.id, astronaut.firstname, astronaut.lastname, astronaut.agency, astronaut.born, astronaut.age, astronaut.height, astronaut.weight
 FROM astronaut
 
 
@@ -51,7 +51,7 @@ Select Specified Columns
 ------------------------
 >>> query = select(astronaut.c.firstname, astronaut.c.lastname)
 >>>
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, astronaut.lastname
 FROM astronaut
 
@@ -63,7 +63,7 @@ Where Clause
 ...     where(astronaut.c.firstname == 'Mark')
 ... )
 >>>
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, astronaut.lastname
 FROM astronaut
 WHERE astronaut.firstname = :firstname_1
@@ -74,10 +74,10 @@ Where OR
 >>> query = (
 ...     select(astronaut.c.firstname, astronaut.c.lastname).
 ...     where(or_(astronaut.c.firstname == 'Mark',
-...               astronaut.c.firstname == 'Melissa')).
+...               astronaut.c.firstname == 'Melissa'))
 ... )
 >>>
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, astronaut.lastname
 FROM astronaut
 WHERE astronaut.firstname = :firstname_1 OR astronaut.firstname = :firstname_2
@@ -88,7 +88,7 @@ WHERE astronaut.firstname = :firstname_1 OR astronaut.firstname = :firstname_2
 ...         | (astronaut.c.firstname == 'Melissa'))
 ... )
 >>>
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, astronaut.lastname
 FROM astronaut
 WHERE astronaut.firstname = :firstname_1 OR astronaut.firstname = :firstname_2
@@ -104,7 +104,7 @@ Where AND
 ...     where(astronaut.c.lastname == 'Watney')
 ... )
 >>>
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, astronaut.lastname
 FROM astronaut
 WHERE astronaut.firstname = :firstname_1 AND astronaut.lastname = :lastname_1
@@ -115,7 +115,7 @@ WHERE astronaut.firstname = :firstname_1 AND astronaut.lastname = :lastname_1
 ...         & (astronaut.c.lastname == 'Watney'))
 ... )
 >>>
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, astronaut.lastname
 FROM astronaut
 WHERE astronaut.firstname = :firstname_1 AND astronaut.lastname = :lastname_1
@@ -128,7 +128,7 @@ Order By
 ...     order_by(astronaut.c.lastname)
 ... )
 >>>
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, astronaut.lastname
 FROM astronaut
 ORDER BY astronaut.lastname

@@ -1,12 +1,5 @@
-.. testsetup::
-
-    def spawn_thread():
-        pass
-
-
 Loop For About
 ==============
-
 >>> data = ['a', 'b', 'c']
 >>> i = 0
 >>>
@@ -235,6 +228,13 @@ Good Practices
 1
 2
 
+
+Use Case - 0x01
+---------------
+>>> def spawn_thread():
+...     ...
+>>>
+>>>
 >>> for _ in range(3):
 ...     spawn_thread()
 

@@ -177,7 +177,7 @@ B
 >>>
 >>>
 >>> run()
-<class 'Astronaut'>
+<class '__main__.run.<locals>.Astronaut'>
 
 
 Locals
@@ -208,4 +208,4 @@ Locals
 {'firstname': 'Mark',
  'lastname': 'Watney',
  'say_hello': <function run.<locals>.say_hello at 0x...>,
- 'Astronaut': <class 'Astronaut'>}
+ 'Astronaut': <class '__main__.run.<locals>.Astronaut'>}

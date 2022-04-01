@@ -50,52 +50,52 @@ Polish:
         f. Kwota i nazwa kraju, którego obywatele dokonali zakupów za największą kwotę?
 
     Tests:
-        >>> import sys; sys.tracebacklimit = 0
+        TODO: import sys; sys.tracebacklimit = 0
 
-        >>> assert result_a is not Ellipsis, \
+        TODO: assert result_a is not Ellipsis, \
         'Assign result to variable: `result_a`'
-        >>> assert type(result_a) is tuple, \
+        TODO: assert type(result_a) is tuple, \
         'Variable `result_a` has invalid type, should be tuple[str,str]'
-        >>> assert type(result_a[0]) is str, \
+        TODO: assert type(result_a[0]) is str, \
         'Variable `result_a` has invalid type, should be tuple[str,str]'
-        >>> assert type(result_a[1]) is str, \
+        TODO: assert type(result_a[1]) is str, \
         'Variable `result_a` has invalid type, should be tuple[str,str]'
 
-        >>> assert result_b is not Ellipsis, \
+        TODO: assert result_b is not Ellipsis, \
         'Assign result to variable: `result_b`'
-        >>> assert type(result_b) is tuple, \
+        TODO: assert type(result_b) is tuple, \
         'Variable `result_b` has invalid type, should be tuple[str,str]'
-        >>> assert type(result_b[0]) is str, \
+        TODO: assert type(result_b[0]) is str, \
         'Variable `result_b` has invalid type, should be tuple[str,str]'
-        >>> assert type(result_b[1]) is str, \
+        TODO: assert type(result_b[1]) is str, \
         'Variable `result_b` has invalid type, should be tuple[str,str]'
 
-        >>> assert result_c is not Ellipsis, \
+        TODO: assert result_c is not Ellipsis, \
         'Assign result to variable: `result_c`'
-        >>> assert type(result_c) is float, \
+        TODO: assert type(result_c) is float, \
         'Variable `result_c` has invalid type, should be float'
 
-        >>> assert result_d is not Ellipsis, \
+        TODO: assert result_d is not Ellipsis, \
         'Assign result to variable: `result_d`'
-        >>> assert type(result_d) is str, \
+        TODO: assert type(result_d) is str, \
         'Variable `result_d` has invalid type, should be str'
 
-        >>> assert result_e is not Ellipsis, \
+        TODO: assert result_e is not Ellipsis, \
         'Assign result to variable: `result_e`'
-        >>> assert type(result_e) is tuple, \
+        TODO: assert type(result_e) is tuple, \
         'Variable `result_e` has invalid type, should be tuple[float,str]'
-        >>> assert type(result_e[0]) is float, \
+        TODO: assert type(result_e[0]) is float, \
         'Variable `result_e` has invalid type, should be tuple[float,str]'
-        >>> assert type(result_e[1]) is str, \
+        TODO: assert type(result_e[1]) is str, \
         'Variable `result_e` has invalid type, should be tuple[float,str]'
 
-        >>> assert result_f is not Ellipsis, \
+        TODO: assert result_f is not Ellipsis, \
         'Assign result to variable: `result_f`'
-        >>> assert type(result_f) is tuple, \
+        TODO: assert type(result_f) is tuple, \
         'Variable `result_f` has invalid type, should be tuple[float,str]'
-        >>> assert type(result_f[0]) is float, \
+        TODO: assert type(result_f[0]) is float, \
         'Variable `result_f` has invalid type, should be tuple[float,str]'
-        >>> assert type(result_f[1]) is str, \
+        TODO: assert type(result_f[1]) is str, \
         'Variable `result_f` has invalid type, should be tuple[float,str]'
 """
 

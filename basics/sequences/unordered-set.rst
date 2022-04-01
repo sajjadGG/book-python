@@ -305,7 +305,8 @@ set()
 >>> {1,2} - {1,2,3}
 set()
 
-Symmetric Difference (returns elements from ``data`` and ``x``, but without common):
+Symmetric Difference (returns elements from ``data`` and ``x``,
+but without common):
 
 >>> data = {1,2}
 >>>
@@ -317,7 +318,7 @@ set()
 {2, 4}
 >>> data.symmetric_difference({1,3}, {2,4})
 Traceback (most recent call last):
-TypeError: symmetric_difference() takes exactly one argument (2 given)
+TypeError: set.symmetric_difference() takes exactly one argument (2 given)
 >>> data.symmetric_difference({3,4})
 {1, 2, 3, 4}
 

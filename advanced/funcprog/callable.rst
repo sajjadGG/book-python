@@ -89,7 +89,7 @@ Downloading from https://python.astrotech.io
 ...         return on_error(result)
 >>>
 >>>
->>> http_request(
+>>> http_request(  # doctest: +SKIP
 ...     url='http://python.astrotech.io/',
 ...     on_success=lambda result: print(result),
 ...     on_error=lambda error: print(error))

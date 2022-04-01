@@ -12,6 +12,8 @@ English:
        b. if not, calculate new result, update cache and return value
     3. Using `timeit` compare execution time (it might take around 30 seconds)
     4. Last three tests (prints) are only infomation about execution time
+       to see it, remove comment '# doctest: +SKIP' this renders
+       test failures, but in return you'll get information about execution time
     5. Run doctests - all must succeed (beside three prints)
 
 Polish:
@@ -22,6 +24,8 @@ Polish:
        b. jeżeli nie, oblicz, zaktualizuj `_cache` i zwróć wartość
     3. Używając `timeit` porównaj czas wykonywania (może trwać około 30 sekund)
     4. Ostatnie trzy testy (printy) to tylko informacja o czasie wykonywania
+       aby ją zobaczyć, usuń komentarz '# doctest: +SKIP' to spowoduje,
+       że testy przestaną przechodzić, ale w zamian wyświetlą czas wykonywania
     5. Uruchom doctesty - wszystkie muszą się powieść (poza trzema printami)
 
 Tests:
@@ -55,16 +59,20 @@ Tests:
     ...     else:
     ...         return n * fn2(n - 1)
 
-    >>> duration_cache = timeit('fn1(500); fn1(400); fn1(450); fn1(350)',
-    ...                         globals=globals(), number=10_000)
+    >>> cached = timeit(  # doctest: +SKIP
+    ...     stmt='fn1(500); fn1(400); fn1(450); fn1(350)',
+    ...     globals=globals(),
+    ...     number=10_000)
 
-    >>> duration_nocache = timeit('fn2(500); fn2(400); fn2(450); fn2(350)',
-    ...                           globals=globals(), number=10_000)
+    >>> uncached = timeit(  # doctest: +SKIP
+    ...     stmt='fn2(500); fn2(400); fn2(450); fn2(350)',
+    ...     globals=globals(),
+    ...     number=10_000)
 
-    >>> duration_ratio = duration_nocache / duration_cache
-    >>> print(f'With Cache time: {duration_cache:.4f} seconds')  # this will fail (see point 4)
-    >>> print(f'Without Cache time: {duration_nocache:.3f} seconds')  # this will fail (see point 4)
-    >>> print(f'Cached solution is {duration_ratio:.1f} times faster')  # this will fail (see point 4)
+    >>> ratio = cached / uncached  # doctest: +SKIP
+    >>> print(f'With Cache: {cached:.4f} seconds')  # doctest: +SKIP
+    >>> print(f'No Cache time: {uncached:.3f} seconds')  # doctest: +SKIP
+    >>> print(f'Cached solution is {ratio:.1f} times faster')  # doctest: +SKIP
 
     TODO: Make tests faster
 """

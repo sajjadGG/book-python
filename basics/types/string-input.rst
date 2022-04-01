@@ -1,8 +1,5 @@
 .. testsetup::
 
-    # Simulate user input (for test automation)
-    from unittest.mock import MagicMock
-    input = MagicMock(side_effect=['Mark Watney', '42', '42.5', '42,5'])
 
 
 String Input
@@ -11,6 +8,14 @@ String Input
 * Good practice: add space at the end of prompt
 * Good practice: always ``.strip()`` text from user input
 * Good practice: always sanitize values from user prompt
+
+
+SetUp
+-----
+Simulate user input (for test automation):
+
+>>> from unittest.mock import MagicMock
+>>> input = MagicMock(side_effect=['Mark Watney', '42', '42.5', '42,5'])
 
 
 Input Str

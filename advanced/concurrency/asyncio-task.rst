@@ -52,19 +52,19 @@ Example
 -------
 >>> async def a():
 ...     print('a: started')
-...     await asyncio.sleep(2)
+...     await asyncio.sleep(1)
 ...     print('a: finished')
 ...     return 'a'
 >>>
 >>> async def b():
 ...     print('b: started')
-...     await asyncio.sleep(1)
+...     await asyncio.sleep(0.5)
 ...     print('b: finished')
 ...     return 'b'
 >>>
 >>> async def c():
 ...     print('c: started')
-...     await asyncio.sleep(3)
+...     await asyncio.sleep(1.5)
 ...     print('c: finished')
 ...     return 'c'
 >>>

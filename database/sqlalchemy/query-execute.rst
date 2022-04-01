@@ -73,7 +73,7 @@ Lets define a query with some data:
 No autocommit at the library level. Always have to do it manually:
 
 >>> with engine.connect() as db:
-...     db.execute(query, data)
+...     result = db.execute(query, data)
 ...     db.commit()
 
 In SQLAlchemy there is an option to use context manager ``engine.begin()``
@@ -85,7 +85,7 @@ as of context manager will do it for you:
 >>> data = {'firstname': 'Pan', 'lastname': 'Twardowski'}
 >>>
 >>> with engine.begin() as db:
-...     db.execute(query, data)
+...     result = db.execute(query, data)
 
 The above statement will commit transaction at the end of the ``with`` block
 then release connection back to the connection pool. Moreover it will roll-back
@@ -111,14 +111,14 @@ In order to create a savepoint, you have to use ``connection.begin_nested()``:
 >>> with engine.connect() as db:
 ...     with db.begin():
 ...         savepoint = db.begin_nested()
-...         db.execute(query, data)
+...         result = db.execute(query, data)
 ...         savepoint.rollback()
 
 You can use context manager syntax for savepoint:
 
 >>> with engine.connect() as db:
 ...     with db.begin_nested() as savepoint:
-...         db.execute(query, data)
+...         result = db.execute(query, data)
 
 This will commit transaction, or rollback if exception raises.
 

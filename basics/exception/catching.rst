@@ -1,13 +1,3 @@
-.. testsetup::
-
-    # Simulate user input (for test automation)
-    from unittest.mock import MagicMock
-    input = MagicMock(side_effect=[''])
-
-    from pathlib import Path
-    Path('/tmp/myfile.txt').unlink(missing_ok=True)
-
-
 Exception Catching
 ==================
 * ``try``
@@ -243,6 +233,13 @@ File does not exist
 
 Use Case - 0x03
 ---------------
+SetUp:
+
+>>> from pathlib import Path
+>>> Path('/tmp/myfile.txt').unlink(missing_ok=True)
+
+Execute
+
 >>> try:
 ...     file = open('/tmp/myfile.txt')
 ... except Exception:
@@ -326,6 +323,9 @@ Assignments
 
 
 .. todo::
+    # Simulate user input (for test automation)
+    from unittest.mock import MagicMock
+    input = MagicMock(side_effect=[''])
 
     try:
         db = database.connect()

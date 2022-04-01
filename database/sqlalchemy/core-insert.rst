@@ -41,7 +41,7 @@ We can insert data using the ``insert()`` construct:
 ... )
 >>>
 >>> with engine.begin() as db:
-...     db.execute(query)
+...     result = db.execute(query)
 
 We can inspect the query object simply by printing it:
 
@@ -60,7 +60,7 @@ Prepare data for insert and execute the query writing it to database:
 >>> data = {'firstname': 'Mark', 'lastname': 'Watney'}
 >>>
 >>> with engine.begin() as db:
-...     db.execute(astronaut.insert(), data)
+...     result = db.execute(astronaut.insert(), data)
 
 
 Insert List of Objects
@@ -78,7 +78,7 @@ Prepare data for insert and execute the query writing it to database
 ... ]
 >>>
 >>> with engine.begin() as db:
-...     db.execute(astronaut.insert(), data)
+...     result = db.execute(astronaut.insert(), data)
 
 Note, that this is the same ``.execute()`` method. SQLAlchemy will recognize
 that the data is a ``list[dict]`` and will execute proper statements to the

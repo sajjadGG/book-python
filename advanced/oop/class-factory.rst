@@ -21,7 +21,7 @@ Static Attributes
 Static Methods
 --------------
 >>> class MyClass:
-...     def mymethod():
+...     def mymethod():  # noqa
 ...         pass
 
 >>> def mymethod():
@@ -105,9 +105,9 @@ NameError: name 'Taikonaut' is not defined
 >>>
 >>>
 >>> Taikonaut
-<class 'Taikonaut'>
+<class '__main__.Taikonaut'>
 >>> Taikonaut()  # doctest: +ELLIPSIS
-<Taikonaut object at 0x...>
+<__main__.Taikonaut object at 0x...>
 
 
 Use Case - 0x01
@@ -126,6 +126,7 @@ hello
 mappingproxy({'firstname': 'Mark',
               'lastname': 'Watney',
               'hello': <function <lambda> at 0x...>,
+              '__module__': '__main__',
               '__dict__': <attribute '__dict__' of 'Astronaut' objects>,
               '__weakref__': <attribute '__weakref__' of 'Astronaut' objects>,
               '__doc__': None})

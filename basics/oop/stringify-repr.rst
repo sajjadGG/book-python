@@ -22,13 +22,13 @@ Object without ``__repr__()`` method overloaded prints their memory address:
 >>> astro = Astronaut('Mark', 'Watney')
 >>>
 >>> astro  # doctest: +ELLIPSIS
-<Astronaut object at 0x...>
+<__main__.Astronaut object at 0x...>
 >>>
 >>> repr(astro)  # doctest: +ELLIPSIS
-'<Astronaut object at 0x...>'
+'<__main__.Astronaut object at 0x...>'
 >>>
 >>> astro.__repr__()  # doctest: +ELLIPSIS
-'<Astronaut object at 0x...>'
+'<__main__.Astronaut object at 0x...>'
 
 
 Overloaded

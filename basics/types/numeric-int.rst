@@ -59,29 +59,29 @@ Type Casting Errors
 Builtin function ``int()`` fails when in argument there are parameters
 other than a digit, ``+`` or ``-`` sign and ``_``
 
->>> int('1.337')
+>>> int('3.1337')
 Traceback (most recent call last):
-ValueError: invalid literal for int() with base 10: '13.37'
+ValueError: invalid literal for int() with base 10: '3.1337'
 
->>> int('+1.337')
+>>> int('+3.1337')
 Traceback (most recent call last):
-ValueError: invalid literal for int() with base 10: '+13.37'
+ValueError: invalid literal for int() with base 10: '+3.1337'
 
->>> int('-1.337')
+>>> int('-3.1337')
 Traceback (most recent call last):
-ValueError: invalid literal for int() with base 10: '-13.37'
+ValueError: invalid literal for int() with base 10: '-3.1337'
 
->>> int('1,337')
+>>> int('3,1337')
 Traceback (most recent call last):
-ValueError: invalid literal for int() with base 10: '13,37'
+ValueError: invalid literal for int() with base 10: '3,1337'
 
->>> int('+1,337')
+>>> int('+3,1337')
 Traceback (most recent call last):
-ValueError: invalid literal for int() with base 10: '+13,37'
+ValueError: invalid literal for int() with base 10: '+3,1337'
 
->>> int('-1,337')
+>>> int('-3,1337')
 Traceback (most recent call last):
-ValueError: invalid literal for int() with base 10: '-13,37'
+ValueError: invalid literal for int() with base 10: '-3,1337'
 
 
 Type Checking

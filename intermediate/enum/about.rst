@@ -283,7 +283,7 @@ Use Case - 0x06
 ...     NONE = 0b000
 >>>
 >>>
->>> file = Path('_temporary.txt')
+>>> file = Path('/tmp/myfile.txt')
 >>> file.touch()
 >>> file.stat()  # doctest: +SKIP
 os.stat_result(st_mode=33188, st_ino=98480473, st_dev=16777220,

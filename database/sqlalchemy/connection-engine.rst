@@ -86,7 +86,7 @@ on explicit ``.connect()`` method call.
 >>> engine = create_engine(DATABASE, future=True)
 >>>
 >>> with engine.connect() as db:
-...     # do something
+...     pass
 
 
 Example
@@ -98,7 +98,7 @@ Example
 >>> engine = create_engine(DATABASE)
 >>>
 >>> with engine.connect() as db:
-...     db.execute('SELECT * FROM users')
+...     result = db.execute('SELECT * FROM users')  # doctest: +SKIP
 
 
 Show Parameters

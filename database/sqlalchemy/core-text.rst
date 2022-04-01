@@ -48,8 +48,8 @@ SetUp
 >>>
 >>> with engine.begin() as db:
 ...     metadata.create_all(db)
-...     db.execute(astronaut.insert(), ASTRONAUTS)
-...     db.execute(mission.insert(), MISSIONS)
+...     result = db.execute(astronaut.insert(), ASTRONAUTS)
+...     result = db.execute(mission.insert(), MISSIONS)
 
 
 Constructs
@@ -67,8 +67,10 @@ Constructs
 >>> with engine.begin() as db:
 ...     result = db.execute(query)
 >>>
->>> result.all()
-[(1, 'Mark', 'Watney'), (2, 'Melissa', 'Lewis'), (3, 'Rick', 'Martinez')]
+>>> result.all()  # doctest: +NORMALIZE_WHITESPACE
+[(1, 'Mark', 'Watney', None, None, None, None, None),
+ (2, 'Melissa', 'Lewis', None, None, None, None, None),
+ (3, 'Rick', 'Martinez', None, None, None, None, None)]
 
 
 Text
@@ -86,8 +88,10 @@ Text
 >>> with engine.begin() as db:
 ...     result = db.execute(query)
 >>>
->>> result.all()
-[(1, 'Mark', 'Watney'), (2, 'Melissa', 'Lewis'), (3, 'Rick', 'Martinez')]
+>>> result.all()  # doctest: +NORMALIZE_WHITESPACE
+[(1, 'Mark', 'Watney', None, None, None, None, None),
+ (2, 'Melissa', 'Lewis', None, None, None, None, None),
+ (3, 'Rick', 'Martinez', None, None, None, None, None)]
 
 Note, use bound parameters for variables that change (user input) in oder to
 avoid SQL injection. Do not ever concatenate user input to SQL queries!

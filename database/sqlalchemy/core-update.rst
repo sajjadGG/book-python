@@ -34,7 +34,7 @@ SetUp
 >>>
 >>> with engine.begin() as db:
 ...     metadata.create_all(db)
-...     db.execute(astronaut.insert(), ASTRONAUTS)
+...     result = db.execute(astronaut.insert(), ASTRONAUTS)
 
 
 Update Statement

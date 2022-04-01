@@ -1,6 +1,6 @@
 """
 >>> result
-Timedelta('1687 days 03:29:00')
+{'years': 8, 'months': 10, 'days': 9, 'hours': 23, 'minutes': 46, 'seconds': 0}
 """
 
 import pandas as pd
@@ -9,26 +9,19 @@ pd.set_option('display.width', 1000)
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 50)
 
+SECOND = 1
+MINUTE = 60 * SECOND
+HOUR = 60 * MINUTE
+DAY = 24 * HOUR
+MONTH = 30.436875 * DAY
+YEAR = 365.2425 * DAY
 
 DATA = 'https://en.wikipedia.org/wiki/European_Astronaut_Corps'
-
-tables = pd.read_html(DATA)
-current = tables[3]
-former = tables[4]
-
-c = pd.to_timedelta(current['Time in space'])
-f = pd.to_timedelta(former['Time in space'])
 
 
 def duration(between):
     if between is pd.NaT:
         return between
-    SECOND = 1
-    MINUTE = 60 * SECOND
-    HOUR = 60 * MINUTE
-    DAY = 24 * HOUR
-    MONTH = 30.436875 * DAY
-    YEAR = 365.2425 * DAY
     years, seconds = divmod(between.total_seconds(), YEAR)
     months, seconds = divmod(seconds, MONTH)
     days, seconds = divmod(seconds, DAY)
@@ -44,15 +37,10 @@ def duration(between):
     }
 
 
-result = []
+tables = pd.read_html(DATA)
+current = tables[0]
+former = tables[1]
 
-for i, row in current.iterrows():
-    if row['Time in space'] is not pd.NaT:
-        between = duration(row['Time in space'])
-        row['years'] = between['years']
-        row['months'] = between['months']
-        row['days'] = between['days']
-        row['hours'] = between['hours']
-        row['minutes'] = between['minutes']
-        row['seconds'] = between['seconds']
-    result.append(row)
+c = pd.to_timedelta(current['Time in space'], errors='coerce').sum()
+f = pd.to_timedelta(former['Time in space'], errors='coerce').sum()
+result = duration(c+f)

@@ -43,8 +43,8 @@ Column('firstname', String(length=50), table=<astronaut>, nullable=False)
 
 Operators
 ---------
->>> astronaut.c.firstname == 'Mark'
-<sqlalchemy.sql.elements.BinaryExpression object at 0x123664490>
+>>> astronaut.c.firstname == 'Mark'  # doctest: +ELLIPSIS
+<sqlalchemy.sql.elements.BinaryExpression object at 0x...>
 
 >>> expression = (astronaut.c.firstname == 'Mark')
 >>>
@@ -54,8 +54,8 @@ Operators
 >>> expression.left
 Column('firstname', String(length=50), table=<astronaut>, nullable=False)
 >>>
->>> expression.right
-BindParameter('%(4889219648 firstname)s', 'Mark', type_=String(length=50))
+>>> expression.right  # doctest: +ELLIPSIS
+BindParameter('%(... firstname)s', 'Mark', type_=String(length=50))
 >>>
 >>> print(expression)
 astronaut.firstname = :firstname_1

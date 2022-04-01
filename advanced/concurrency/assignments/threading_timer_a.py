@@ -34,7 +34,7 @@ Tests:
 from threading import Timer
 
 
-INTERVAL = 1.0
+INTERVAL = 0.1
 MAX = 3
 result = []
 

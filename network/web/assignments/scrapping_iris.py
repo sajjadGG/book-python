@@ -10,13 +10,13 @@ from bs4 import BeautifulSoup
 import requests
 
 
-URL = 'https://github.com/AstroMatt/book-python/blob/master/_data/csv/iris-dirty.csv'
+DATA = 'https://github.com/AstroMatt/book-python/blob/master/_data/csv/iris-dirty.csv'
 HEADER = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
-result = list()
+result = []
 
 
 with open('/tmp/iris-dirty.html', mode='w') as file:
-    response = requests.get(URL)
+    response = requests.get(DATA)
     file.write(response.text)
 
 with open('/tmp/iris-dirty.html', mode='r') as file:

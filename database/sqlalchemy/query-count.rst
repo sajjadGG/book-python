@@ -27,7 +27,7 @@ Count User records, without sing a subquery
 >>> query = select(func.count(User.id)
 >>>
 >>> with session.begin() as db:
-...     db.execute(query)
+...     result = db.execute(query)
 
 
 Use Case - 0x02
@@ -42,7 +42,7 @@ Return count of user 'id' grouped by 'name'
 ...     group_by(User.name))
 >>>
 >>> with session.begin() as db:
-...     db.execute(query)
+...     result = db.execute(query)
 
 
 Use Case - 0x02
@@ -58,4 +58,4 @@ Count distinct 'name' values
 ...     group_by(User.name))
 >>>
 >>> with session.begin() as db:
-...     db.execute(query)
+...     result = db.execute(query)

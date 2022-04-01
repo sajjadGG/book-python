@@ -1,9 +1,3 @@
-.. testsetup::
-
-    def mydecorator(method):
-        return method
-
-
 Decorate Method
 ===============
 * ``mydecorator`` is a decorator name
@@ -12,16 +6,17 @@ Decorate Method
 * ``args`` arbitrary number of positional arguments
 * ``kwargs`` arbitrary number of keyword arguments
 
+SetUp:
+
+>>> def mydecorator(method):
+...     ...
+
 Syntax:
 
 >>> class MyClass:
 ...     @mydecorator
 ...     def mymethod(self, *args, **kwargs):
 ...         ...
->>>
->>>
->>> obj = MyClass()
->>> obj.mymethod()
 
 Is equivalent to:
 

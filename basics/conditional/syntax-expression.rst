@@ -1,10 +1,3 @@
-.. testsetup::
-
-    # Simulate user input (for test automation)
-    from unittest.mock import MagicMock
-    input = MagicMock(side_effect=['10', '10'])
-
-
 Boolean Expression
 ==================
 * Conditional Expression
@@ -22,6 +15,14 @@ Recap
 >>>
 >>> print(is_digit)
 True
+
+
+SetUp
+-----
+Simulate user input (for test automation):
+
+>>> from unittest.mock import MagicMock
+>>> input = MagicMock(side_effect=['10', '10'])
 
 
 Conditional Expression

@@ -38,13 +38,13 @@ mapping [#sqlalchemyMappings]_:
 >>> class User(Base):
 ...     __tablename__ = 'user'
 ...
-...     id = Column(Integer, primary_key=True),
+...     id = Column(Integer, primary_key=True)
 ...     username = Column(String)
 ...     password = Column(String)
 
-Above, the ``declarative_base()`` callable returns a new base class from which
-new classes to be mapped may inherit from, as above a new mapped class ``User``
-is constructed.
+Above, the ``declarative_base()`` callable returns a new base class from
+which new classes to be mapped may inherit from, as above a new mapped
+class ``User`` is constructed.
 
 
 Imperative Base
@@ -53,11 +53,11 @@ Imperative Base
 * Could be used to map pre-existing classes (od dataclasses) with Table
 
 An imperative or classical mapping refers to the configuration of a mapped
-class using the ``registry.map_imperatively()`` method, where the target class
-does not include any declarative class attributes. The "map imperative" style
-has historically been achieved using the ``mapper()`` function directly,
-however this function now expects that a ``sqlalchemy.orm.registry()`` is
-present [#sqlalchemyMappings]_.
+class using the ``registry.map_imperatively()`` method, where the target
+class does not include any declarative class attributes. The "map
+imperative" style has historically been achieved using the ``mapper()``
+function directly, however this function now expects that a
+``sqlalchemy.orm.registry()`` is present [#sqlalchemyMappings]_.
 
 >>> from sqlalchemy import Table, Column
 >>> from sqlalchemy import Integer, String
@@ -73,9 +73,10 @@ present [#sqlalchemyMappings]_.
 ... )
 >>>
 >>> class User:
->>>     pass
+...     pass
 >>>
->>> mapper_registry.map_imperatively(User, user_table)
+>>> mapper_registry.map_imperatively(User, user_table)  # doctest: +ELLIPSIS
+<Mapper at 0x...; User>
 
 Information about mapped attributes, such as relationships to other classes,
 are provided via the properties dictionary.

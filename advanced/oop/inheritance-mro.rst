@@ -82,17 +82,17 @@ Astronaut
 .. figure:: img/oop-mro-diamond-small-path.png
 
 >>> Crew.mro()  # doctest: +NORMALIZE_WHITESPACE
-[<class 'Crew'>,
- <class 'Astronaut'>,
- <class 'Cosmonaut'>,
- <class 'Person'>,
+[<class '__main__.Crew'>,
+ <class '__main__.Astronaut'>,
+ <class '__main__.Cosmonaut'>,
+ <class '__main__.Person'>,
  <class 'object'>]
 
 >>> Crew.__mro__  # doctest: +NORMALIZE_WHITESPACE
-(<class 'Crew'>,
- <class 'Astronaut'>,
- <class 'Cosmonaut'>,
- <class 'Person'>,
+(<class '__main__.Crew'>,
+ <class '__main__.Astronaut'>,
+ <class '__main__.Cosmonaut'>,
+ <class '__main__.Person'>,
  <class 'object'>)
 
 
@@ -213,12 +213,12 @@ Why?!
 .. figure:: img/oop-mro-diamond-large-path.png
 
 >>> Crew.mro()  # doctest: +NORMALIZE_WHITESPACE
-[<class 'Crew'>,
- <class 'VeteranAstronaut'>,
- <class 'Astronaut'>,
- <class 'VeteranCosmonaut'>,
- <class 'Cosmonaut'>,
- <class 'Person'>,
+[<class '__main__.Crew'>,
+ <class '__main__.VeteranAstronaut'>,
+ <class '__main__.Astronaut'>,
+ <class '__main__.VeteranCosmonaut'>,
+ <class '__main__.Cosmonaut'>,
+ <class '__main__.Person'>,
  <class 'object'>]
 
 

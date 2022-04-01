@@ -37,7 +37,7 @@ Positive Index
 >>>
 >>> data[3]
 Traceback (most recent call last):
-IndexError: string index out of range
+IndexError: list index out of range
 
 
 Negative Index
@@ -60,7 +60,7 @@ Negative Index
 >>>
 >>> data[-4]
 Traceback (most recent call last):
-IndexError: string index out of range
+IndexError: list index out of range
 
 >>> -0 == 0
 True

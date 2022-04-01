@@ -38,18 +38,24 @@ Tests:
     >>> import numpy as np
     >>> np.random.seed(0)
 
-    >>> random_point((0,0), std=0.2)
+    >>> result((0,0), std=0.2)  # doctest: +SKIP
     (0.2576369506310926, 0.2898891217399542)
 
-    >>> random_point((0,0))
+    >>> result((0,0))  # doctest: +SKIP
     (0.2576369506310926, 0.2898891217399542)
 
-    >>> random_point((2,5), std=10)
+    >>> result((2,5), std=10)  # doctest: +SKIP
     (14.881847531554628, 19.494456086997708)
 
-    >>> random_point((2,5), std=(0.1, 12))
+    >>> result((2,5), std=(0.1, 12))  # doctest: +SKIP
     (2.1288184753155464, 22.393347304397253)
+
+    TODO: Doctests
 """
 
 
 # Solution
+
+# type: Callable[[tuple[int,int], int|float|tuple],tuple[int,int]
+def result(point):
+    return ...

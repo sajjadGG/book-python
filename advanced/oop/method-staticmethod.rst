@@ -40,7 +40,7 @@ Let's use ``.from_json()`` to create an instance:
 
 >>> User.from_json(DATA)
 Traceback (most recent call last):
-TypeError: from_json() missing 1 required positional argument: 'data'
+TypeError: User.from_json() missing 1 required positional argument: 'data'
 
 The data is unfilled. This is due to the fact, that we are running a method
 on a class, not on an instance. Typically while running on an instance,
@@ -52,7 +52,7 @@ We can create an instance and then run ``.from_json()`` method.
 
 >>> User().from_json(DATA)
 Traceback (most recent call last):
-TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
+TypeError: User.__init__() missing 2 required positional arguments: 'firstname' and 'lastname'
 
 Nope, we cannot. In order to create an instance we need to pass firstname
 and lastname. We can pass ``None`` objects instead. We can also make a class
@@ -153,11 +153,11 @@ needed, as of functions do not read or write to instance variables:
 >>>
 >>> Calculator.add(1, 2)
 Traceback (most recent call last):
-TypeError: add() missing 1 required positional argument: 'b'
+TypeError: Calculator.add() missing 1 required positional argument: 'b'
 >>>
 >>> Calculator.sub(2, 1)
 Traceback (most recent call last):
-TypeError: add() missing 1 required positional argument: 'b'
+TypeError: Calculator.sub() missing 1 required positional argument: 'b'
 >>>
 >>> calc = Calculator()
 >>> calc.add(1, 2)
@@ -202,10 +202,10 @@ Use Case - 0x01
 >>> my2 = MyClass.get_instance()
 >>>
 >>> my1  # doctest: +ELLIPSIS
-<MyClass object at 0x...>
+<__main__.MyClass object at 0x...>
 >>>
 >>> my2  # doctest: +ELLIPSIS
-<MyClass object at 0x...>
+<__main__.MyClass object at 0x...>
 
 
 Use Case - 0x02

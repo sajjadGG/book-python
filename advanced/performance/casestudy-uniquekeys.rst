@@ -20,7 +20,7 @@ List Append If
 Append if object not in the list:
 
 >>> #%%timeit -r 1000 -n 10_000
->>> result = list()
+>>> result = []
 >>> for row in DATA:
 ...     for key in row.keys():
 ...         if key not in result:
@@ -33,7 +33,7 @@ List Append
 Append to list and deduplicate at the end:
 
 >>> #%%timeit -r 1000 -n 10_000
->>> result = list()
+>>> result = []
 >>> for row in DATA:
 ...     for key in row.keys():
 ...         result.append(key)

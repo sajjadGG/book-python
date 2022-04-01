@@ -5,7 +5,7 @@ Core Introspect
 
 SetUp
 -----
->>> from sqlalchemy import create_engine, MetaData, Table, Column
+>>> from sqlalchemy import create_engine, MetaData, Table, Column, insert
 >>> from sqlalchemy import Integer, String, Date, Numeric, Enum
 >>>
 >>>
@@ -94,7 +94,7 @@ Compiled object will have attributes:
 INSERT INTO astronaut (firstname, lastname) VALUES (:firstname, :lastname)
 >>>
 >>> print(sql.params)
-{'firstname': 'Alex', 'lastname': 'Vogel'}
+{'firstname': 'Mark', 'lastname': 'Watney'}
 
 However if you want to get the final version
 
@@ -106,4 +106,4 @@ However if you want to get the final version
 >>> sql = query.compile(compile_kwargs={'literal_binds': True})
 >>>
 >>> print(sql)
-INSERT INTO astronaut (firstname, lastname) VALUES ('Alex', 'Vogel')
+INSERT INTO astronaut (firstname, lastname) VALUES ('Mark', 'Watney')

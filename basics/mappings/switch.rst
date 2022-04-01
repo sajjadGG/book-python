@@ -1,10 +1,3 @@
-.. testsetup::
-
-    # Simulate user input (for test automation)
-    from unittest.mock import MagicMock
-    input = MagicMock(side_effect=['French'])
-
-
 Mapping Switch
 ==============
 * No ``switch`` statement in Python!
@@ -35,6 +28,11 @@ Example
 
 Dict Switch
 -----------
+Simulate user input (for test automation):
+
+>>> from unittest.mock import MagicMock
+>>> input = MagicMock(side_effect=['French'])
+
 >>> hello = {
 ...     'English': 'Hello',
 ...     'Russian': 'Здравствуйте',

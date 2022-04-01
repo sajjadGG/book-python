@@ -55,7 +55,7 @@ Initializer Method With Arguments
 >>>
 >>> astro = Astronaut()
 Traceback (most recent call last):
-TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
+TypeError: Astronaut.__init__() missing 2 required positional arguments: 'firstname' and 'lastname'
 
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname):
@@ -371,7 +371,7 @@ Use Case - 0x05
 >>>
 >>> point1 = Point(x=-10, y=1, z=0)
 Traceback (most recent call last):
-ValueError: x=-10 is out of boundary 0, 1024
+ValueError: -10 is out of boundary
 
 
 Use Case - 0x06

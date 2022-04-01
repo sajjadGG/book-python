@@ -1,10 +1,3 @@
-.. testsetup::
-
-    # Simulate user input (for test automation)
-    from unittest.mock import MagicMock
-    input = MagicMock(side_effect=['-1'])
-
-
 Exception Raise
 ===============
 * Used when error occurs
@@ -34,12 +27,17 @@ RuntimeError: Some message
 Example
 -------
 We want to check if Kelvin temperature given by user is not negative.
-Note that Kelvin temperatures below zero doesn't exist, hence it's an absolute
-scale.
+Note that Kelvin temperatures below zero doesn't exist, hence it's an
+absolute scale.
 
-In order to do so, we need to ask user to input value. Let's assume user input
-``-1``. Remember, ``input()`` function always returns ``str`` and you have to
-convert it manually.
+Simulate user input (for test automation):
+
+>>> from unittest.mock import MagicMock
+>>> input = MagicMock(side_effect=['-1'])
+
+In order to do so, we need to ask user to input value. Let's assume user
+input ``-1``. Remember, ``input()`` function always returns ``str`` and
+you have to convert it manually.
 
 We need to check if the temperature is not negative. If temperature is 0 or
 above, it is ok, and we can proceed with program execution. However if the
@@ -57,8 +55,9 @@ in erroneous situations.
 Traceback (most recent call last):
 ValueError: Kelvin cannot be negative
 
-Good software communicates well with programmer. Exceptions are common language
-to talk about problems and not-nominal (abnormal) situations in your code.
+Good software communicates well with programmer. Exceptions are common
+language to talk about problems and not-nominal (abnormal) situations
+in your code.
 
 >>> def check(temperature):
 ...     if type(temperature) not in {float, int}:

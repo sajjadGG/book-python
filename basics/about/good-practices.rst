@@ -107,7 +107,7 @@ Zip
 List Comprehension
 ------------------
 >>> DATA = ['a', 'b', 'c']
->>> result = list()
+>>> result = []
 >>>
 >>> for x in DATA:
 ...     result.append(x)

@@ -47,7 +47,7 @@ Cannot unpack from both sides at once:
 
 >>> *a, b, *c = [1, 2, 3, 4, 5]
 Traceback (most recent call last):
-SyntaxError: two starred expressions in assignment
+SyntaxError: multiple starred expressions in assignment
 
 Unpack requires values for required arguments:
 

@@ -23,11 +23,14 @@ def clean_value(text):
     return float(text)
 
 
-URL = 'https://pl.wikipedia.org/wiki/Temperatura_odczuwalna'
-result = list()
+result = []
 
-response = requests.get(URL)
-html = BeautifulSoup(response.text, 'html.parser')
+
+DATA = 'https://pl.wikipedia.org/wiki/Temperatura_odczuwalna'
+# data = requests.get(DATA).text
+data = HTML
+
+html = BeautifulSoup(data, 'html.parser')
 table = html.find_all('table')[0]
 
 table_rows = table.find_all('tr')
@@ -57,4 +60,3 @@ import pandas as pd
 
 df = pd.DataFrame(result)
 df.set_index('wind speed', inplace=True)
-

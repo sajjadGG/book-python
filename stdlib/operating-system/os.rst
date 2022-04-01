@@ -227,7 +227,7 @@ Stats and permissions
 
     import os
 
-    file = os.stat(r'_temporary.txt')
+    file = os.stat(r'/tmp/myfile.txt')
 
     print(file)
     # os.stat_result(
@@ -732,4 +732,3 @@ Tests:
         ┃  ┗━test2
         ┣━folder_tree_maker.py
         ┗━tree.py
-

@@ -317,7 +317,7 @@ Mechanism
 {'firstname': 'Melissa', 'lastname': 'Lewis'}
 >>>
 >>> vars(Astronaut)  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
-mappingproxy({'__module__': 'builtins',
+mappingproxy({'__module__': '__main__',
               'firstname': 'Mark',
               'lastname': 'Watney',
               '__init__': <function Astronaut.__init__ at 0x...>,

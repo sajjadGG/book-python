@@ -1,4 +1,4 @@
-sphinx==4.3.*
+sphinx==4.5.*
 sphinx_rtd_theme
 
 pandas

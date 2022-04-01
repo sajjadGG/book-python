@@ -89,12 +89,7 @@ Aiosqlite:
 
 >>> DATABASE = 'sqlite+aiosqlite:///myfile.db'
 
-.. note:: Async connections require async engine:
-
-          >>> from sqlalchemy.ext.asyncio import create_async_engine
-          >>>
-          >>> DATABASE = 'sqlite+aiosqlite:///myfile.db'
-          >>> engine = create_async_engine(DATABASE)
+.. note:: Async connections require ``create_async_engine``
 
 SQLite does not have built-in DATE, TIME, or DATETIME types, and pysqlite
 does not provide out of the box functionality for translating values
@@ -142,12 +137,7 @@ PostgreSQL async [#sqlalchemyPostgresql]_, [#githubAsyncpg]_:
 >>> DATABASE = 'postgresql+asyncpg://myusername:mypassword@myhost:5432/mydatabase?prepared_statement_cache_size=500'
 >>> DATABASE = 'postgresql+asyncpg://myusername:mypassword@myhost:5432/mydatabase?prepared_statement_cache_size=0'
 
-.. note:: Async connections require async engine:
-
-          >>> from sqlalchemy.ext.asyncio import create_async_engine
-          >>>
-          >>> DATABASE = 'postgresql+asyncpg://myusername:mypassword@myhost:5432/mydatabase'
-          >>> engine = create_async_engine(DATABASE)
+.. note:: Async connections require ``create_async_engine``
 
 Psycopg2cffi (implemented with cffi layer for portability):
 
@@ -223,12 +213,8 @@ Asyncmy:
 
 >>> DATABASE = 'mysql+asyncmy://myusername:mypassword@myhost:3306/mydatabase?charset=utf8mb4'
 
-.. note:: Async connections require async engine:
+.. note:: Async connections require ``create_async_engine``
 
-          >>> from sqlalchemy.ext.asyncio import create_async_engine
-          >>>
-          >>> DATABASE = 'mysql+asyncmy://myusername:mypassword@myhost:3306/mydatabase?charset=utf8mb4'
-          >>> engine = create_async_engine(DATABASE)
 
 Oracle
 ------
@@ -297,7 +283,7 @@ URL Create
 ... )
 >>>
 >>> print(DATABASE)
-mssql+pyodbc://myusername:mypassword@myhost:49242/mydatabase?driver=ODBC+Driver+17+for+SQL+Server&authentication=ActiveDirectoryIntegrated
+mssql+pyodbc://myusername:mypassword@myhost:49242/mydatabase?authentication=ActiveDirectoryIntegrated&driver=ODBC+Driver+17+for+SQL+Server
 
 
 Good Practice

@@ -26,8 +26,6 @@ Hints:
     * Ustaw parametr `shell=True` dla `subprocess.run()`
 
 Tests:
-    >>> import sys; sys.tracebacklimit = 0
-
     TODO: Doctests
 """
 import logging

@@ -11,7 +11,7 @@ Read data from CSV file using ``csv.reader()``:
 
     import csv
 
-    FILE = r'_temporary.csv'
+    FILE = r'/tmp/myfile.csv'
     # sepal_length,sepal_width,petal_length,petal_width,species
     # 5.4,3.9,1.3,0.4,setosa
     # 5.9,3.0,5.1,1.8,virginica

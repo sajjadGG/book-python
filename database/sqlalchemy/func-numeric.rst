@@ -47,13 +47,13 @@ Count
 
 Count User records, without sing a subquery:
 
->>> session.query(func.count(User.id))
+>>> session.query(func.count(User.id))  # doctest: +SKIP
 
 Return count of user 'id' grouped by 'name':
 
 >>> session.query(func.count(User.id)).\
-...         group_by(User.name)
+...         group_by(User.name)  # doctest: +SKIP
 
 Count distinct 'name' values:
 
->>> session.query(func.count(distinct(User.name)))
+>>> session.query(func.count(distinct(User.name)))  # doctest: +SKIP

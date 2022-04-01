@@ -354,10 +354,10 @@ Use Case - 0x03
 >>> file2 = Document('myfile.docx')
 >>>
 >>> print(file1)  # doctest: +ELLIPSIS
-<PDF object at 0x...>
+<__main__.PDF object at 0x...>
 >>>
 >>> print(file2)  # doctest: +ELLIPSIS
-<Docx object at 0x...>
+<__main__.Docx object at 0x...>
 
 
 Use Case - 0x04
@@ -383,13 +383,13 @@ Use Case - 0x04
 >>> file3 = Document('myfile.doc')
 >>>
 >>> print(file1)  # doctest: +ELLIPSIS
-<PDF object at 0x...>
+<__main__.PDF object at 0x...>
 >>>
 >>> print(file2)  # doctest: +ELLIPSIS
-<Docx object at 0x...>
+<__main__.Docx object at 0x...>
 >>>
 >>> print(file3)  # doctest: +ELLIPSIS
-<Docx object at 0x...>
+<__main__.Docx object at 0x...>
 
 
 Use Case - 0x05
@@ -426,13 +426,13 @@ Use Case - 0x05
 >>>
 >>>
 >>> Document('myfile.pdf')  # doctest: +ELLIPSIS
-<PDF object at 0x...>
+<__main__.PDF object at 0x...>
 >>>
 >>> Document('myfile.doc')  # doctest: +ELLIPSIS
-<Docx object at 0x...>
+<__main__.Docx object at 0x...>
 >>>
 >>> Document('myfile.docx')  # doctest: +ELLIPSIS
-<Docx object at 0x...>
+<__main__.Docx object at 0x...>
 >>>
 >>> Document('myfile.csv')  # doctest: +ELLIPSIS
 Traceback (most recent call last):
@@ -481,7 +481,7 @@ Use Case - 0x06
  '_uuid': '83cefe23-3491-4661-b1f4-3ca570feab0a',
  '_log': <Logger Astronaut (WARNING)>}
 >>>
->>> astro._error(1234, 'An error occurred')
+>>> astro._error(1234, 'An error occurred')  # doctest: +SKIP
 
 
 References

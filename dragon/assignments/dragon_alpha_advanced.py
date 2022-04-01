@@ -19,7 +19,7 @@
 ...     dragon.take_damage(75)
 ... except dragon.IsDead:
 ...     drop = dragon.get_drop()
-...     print(f'{dragon:name} is dead'
+...     print(f'{dragon:name} is dead')
 ...     print(f'Position: {dragon:position}')
 ...     print(f'Gold: {drop["gold"]}')  # doctest: +ELLIPSIS
 Wawelski is dead

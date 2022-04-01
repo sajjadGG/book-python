@@ -60,13 +60,13 @@ Syntax
 <class 'type'>
 >>>
 >>> type(MyClass)
-<class 'MyMeta'>
+<class '__main__.MyMeta'>
 >>>
 >>> type(MySubclass)
-<class 'MyMeta'>
+<class '__main__.MyMeta'>
 >>>
 >>> type(myinstance)
-<class 'MySubclass'>
+<class '__main__.MySubclass'>
 
 
 Metaclasses
@@ -143,10 +143,10 @@ The potential uses for metaclasses are boundless. Some ideas that have been expl
 ...
 ...     def mymethod(self):
 ...         pass  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE
-{'mcs': <class 'MyMeta'>,
+{'mcs': <class '__main__.MyMeta'>,
  'classname': 'MyClass',
  'bases': (),
- 'attrs': {'__module__': 'builtins',
+ 'attrs': {'__module__': '__main__',
            '__qualname__': 'MyClass',
            'myattr': 1,
            'mymethod': <function MyClass.mymethod at 0x...>}}
@@ -223,10 +223,10 @@ Use Case - 0x01
 >>>
 >>>
 >>> print(Astronaut._logger)
-<Logger Astronaut (DEBUG)>
+<Logger Astronaut (WARNING)>
 >>>
 >>> print(Cosmonaut._logger)
-<Logger Cosmonaut (DEBUG)>
+<Logger Cosmonaut (WARNING)>
 
 
 Type Metaclass
@@ -332,7 +332,7 @@ True
 True
 >>>
 >>> Astronaut.__mro__
-(<class 'Astronaut'>, <class 'object'>)
+(<class '__main__.Astronaut'>, <class 'object'>)
 
 >>> class AstroMeta(type):
 ...     pass
@@ -357,7 +357,7 @@ False
 True
 >>>
 >>> Astronaut.__mro__
-(<class 'Astronaut'>, <class 'object'>)
+(<class '__main__.Astronaut'>, <class 'object'>)
 
 
 Example
@@ -381,10 +381,10 @@ Example
 >>> melissa = Astronaut()
 >>>
 >>> print(mark._logger)
-<Logger Astronaut (DEBUG)>
+<Logger Astronaut (WARNING)>
 >>>
 >>> print(melissa._logger)
-<Logger Astronaut (DEBUG)>
+<Logger Astronaut (WARNING)>
 
 >>> import logging
 >>>
@@ -396,7 +396,7 @@ Example
 >>>
 >>> str.__new__ = new
 Traceback (most recent call last):
-TypeError: can't set attributes of built-in/extension type 'str'
+TypeError: cannot set '__new__' attribute of immutable type 'str'
 
 >>> import logging
 >>>
@@ -408,7 +408,7 @@ TypeError: can't set attributes of built-in/extension type 'str'
 >>>
 >>> type.__new__ = new
 Traceback (most recent call last):
-TypeError: can't set attributes of built-in/extension type 'type'
+TypeError: cannot set '__new__' attribute of immutable type 'type'
 
 
 Use Case - 0x01
@@ -430,10 +430,10 @@ Injecting logger instance:
 >>>
 >>>
 >>> print(Astronaut._logger)
-<Logger Astronaut (DEBUG)>
+<Logger Astronaut (WARNING)>
 >>>
 >>> print(Cosmonaut._logger)
-<Logger Cosmonaut (DEBUG)>
+<Logger Cosmonaut (WARNING)>
 
 
 Use Case - 0x02
@@ -451,7 +451,7 @@ Abstract Base Class:
 >>>
 >>> astro = Astronaut()
 Traceback (most recent call last):
-TypeError: Can't instantiate abstract class Astronaut with abstract methods say_hello
+TypeError: Can't instantiate abstract class Astronaut with abstract method say_hello
 
 
 Use Case - 0x03
@@ -494,7 +494,7 @@ Use Case - 0x03
 New class created
 Classname: Person
 Bases: ()
-Attrs: {'__module__': 'builtins', '__qualname__': 'Person'}
+Attrs: {'__module__': '__main__', '__qualname__': 'Person'}
 >>>
 >>>
 >>> class Astronaut(Person, metaclass=EventListener):
@@ -502,8 +502,8 @@ Attrs: {'__module__': 'builtins', '__qualname__': 'Person'}
 Hello new class Astronaut
 New class created
 Classname: Astronaut
-Bases: (<class 'Person'>,)
-Attrs: {'__module__': 'builtins', '__qualname__': 'Astronaut'}
+Bases: (<class '__main__.Person'>,)
+Attrs: {'__module__': '__main__', '__qualname__': 'Astronaut'}
 
 
 Use Case - 0x04
@@ -580,7 +580,7 @@ Inheritance and ``__init__()`` method:
 >>>
 >>> astro = Astronaut()
 >>> print(astro._logger)
-<Logger Astronaut (DEBUG)>
+<Logger Astronaut (WARNING)>
 
 Inheritance and ``__new__()`` method:
 
@@ -599,7 +599,7 @@ Inheritance and ``__new__()`` method:
 >>>
 >>> astro = Astronaut()
 >>> print(astro._logger)
-<Logger Astronaut (DEBUG)>
+<Logger Astronaut (WARNING)>
 
 Inheritance for abstract base class validation:
 
@@ -614,7 +614,7 @@ Inheritance for abstract base class validation:
 >>>
 >>> astro = Astronaut()
 Traceback (most recent call last):
-TypeError: Can't instantiate abstract class Astronaut with abstract methods hello
+TypeError: Can't instantiate abstract class Astronaut with abstract method say_hello
 
 Class Decorator:
 
@@ -633,7 +633,7 @@ Class Decorator:
 >>>
 >>>
 >>> print(Astronaut._logger)
-<Logger Astronaut (DEBUG)>
+<Logger Astronaut (WARNING)>
 
 
 References

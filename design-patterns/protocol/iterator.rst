@@ -28,7 +28,7 @@ Example
 -------
 >>> class Crew:
 ...     def __init__(self):
-...         self.members = list()
+...         self.members = []
 ...
 ...     def __iadd__(self, other):
 ...         self.members.append(other)
@@ -170,7 +170,7 @@ Iterator implementation:
 
 >>> class Parking:
 ...     def __init__(self):
-...         self._parked_cars = list()
+...         self._parked_cars = []
 ...
 ...     def park(self, car):
 ...         self._parked_cars.append(car)

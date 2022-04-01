@@ -1,18 +1,18 @@
-.. testsetup::
-
-    # Simulate user input (for test automation)
-    from unittest.mock import MagicMock
-
-    IN1 = "' OR 1=1; DROP TABLE users --"
-    IN2 = "whatever"
-    input = MagicMock(side_effect=[IN1, IN2])
-
-
 SQL Injection
 =============
 
 .. warning:: This is to demonstrate a serious problem.
              Do not that statements in your code!
+
+SetUp
+-----
+Simulate user input (for test automation):
+
+>>> from unittest.mock import MagicMock
+>>>
+>>> IN1 = "' OR 1=1; DROP TABLE users --"
+>>> IN2 = "whatever"
+>>> input = MagicMock(side_effect=[IN1, IN2])
 
 
 Scenario

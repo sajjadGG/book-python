@@ -1,10 +1,3 @@
-.. testsetup::
-
-    # Simulate user input (for test automation)
-    from unittest.mock import MagicMock
-    input = MagicMock(side_effect=[''])
-
-
 Block Else
 ==========
 * Unconditional Alternative
@@ -19,6 +12,14 @@ Syntax
 ...     <do something>
 ... else:
 ...     <do something>
+
+
+SetUp
+-----
+Simulate user input (for test automation)
+
+>>> from unittest.mock import MagicMock
+>>> input = MagicMock(side_effect=[''])
 
 
 Oneline Block

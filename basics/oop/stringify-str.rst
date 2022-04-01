@@ -19,13 +19,13 @@ Object without ``__str__()`` method overloaded prints their memory address:
 >>> astro = Astronaut('Mark', 'Watney')
 >>>
 >>> print(astro)  # doctest: +ELLIPSIS
-<Astronaut object at 0x...>
+<__main__.Astronaut object at 0x...>
 >>>
 >>> str(astro)  # doctest: +ELLIPSIS
-'<Astronaut object at 0x...>'
+'<__main__.Astronaut object at 0x...>'
 >>>
 >>> astro.__str__()  # doctest: +ELLIPSIS
-'<Astronaut object at 0x...>'
+'<__main__.Astronaut object at 0x...>'
 
 
 Overloaded

@@ -1,10 +1,3 @@
-.. testsetup::
-
-    # Simulate user input (for test automation)
-    from unittest.mock import MagicMock
-    input = MagicMock(side_effect=['5', '5', '10', 'Polish'])
-
-
 Block Elif
 ==========
 * Used to check for additional condition if first is not met
@@ -29,6 +22,14 @@ Syntax
 ...     <do something>
 ... else:
 ...     <do something>
+
+
+SetUp
+-----
+Simulate user input (for test automation):
+
+>>> from unittest.mock import MagicMock
+>>> input = MagicMock(side_effect=['5', '5', '10', 'Polish'])
 
 
 Example

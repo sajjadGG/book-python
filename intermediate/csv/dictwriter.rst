@@ -33,7 +33,7 @@ DictWriter
 
 >>> import csv
 >>>
->>> FILE = r'_temporary.csv'
+>>> FILE = r'/tmp/myfile.csv'
 >>>
 >>> DATA = [{'Sepal Length': 5.4, 'Sepal Width': 3.9,
 ...          'Petal Length': 1.3, 'Petal Width': 0.4,
@@ -68,7 +68,7 @@ Write data to CSV file using ``csv.DictWriter()``:
 
 >>> import csv
 >>>
->>> FILE = r'_temporary.csv'
+>>> FILE = r'/tmp/myfile.csv'
 >>>
 >>> DATA = [{'Sepal Length': 5.4, 'Sepal Width': 3.9,
 ...          'Petal Length': 1.3, 'Petal Width': 0.4,

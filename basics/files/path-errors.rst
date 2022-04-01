@@ -1,11 +1,6 @@
-.. testsetup::
-
-    from pathlib import Path
-    Path('/tmp/myfile.txt').unlink(missing_ok=True)
-
-
 File Path Errors
 ================
+
 
 Recap
 -----
@@ -29,6 +24,12 @@ emoticon. In this example, Python finds letter ``s``, which is invalid
 hexadecimal character and therefore raises an ``SyntaxError`` telling user
 that there is an error with decoding bytes. The only valid hexadecimal
 numbers are ``0123456789abcdefABCDEF`` and ``s`` isn't one of them.
+
+
+Setup
+-----
+>>> from pathlib import Path
+>>> Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 
 Escaping Characters in Path

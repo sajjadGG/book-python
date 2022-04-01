@@ -1,10 +1,3 @@
-.. testsetup::
-
-    # Simulate user input (for test automation)
-    from unittest.mock import MagicMock
-    input = MagicMock(side_effect=['lastname'])
-
-
 Function Scope
 ==============
 * Values defined in function does not leak out
@@ -86,7 +79,7 @@ Shadowing
 >>>
 >>>
 >>> def run():
-...     data = [10, 20, 30]  # Shadows name 'data' from outer scope
+...     data = [10, 20, 30]  # Shadows name 'data' from outer scope # noqa
 ...     print(data)
 >>>
 >>>
@@ -149,15 +142,6 @@ Global Scope
  'firstname': 'Mark',
  'lastname': 'Watney'}
 
->>> firstname = 'Mark'
->>> lastname = 'Watney'
->>>
->>>
->>> what = input('Type variable name: ')   #input: 'lastname'
->>>
->>> globals()[what]
-'Watney'
-
 
 Local Scope
 -----------
@@ -205,7 +189,7 @@ Shadowing of a global scope is used frequently in Mocks and Stubs.
 This way, we can simulate user input. Note that Mocks and Stubs will
 stay until the end of a program.
 
->>> def input(__prompt):
+>>> def input(__prompt):  # noqa
 ...     return 'Mark Watney'
 >>>
 >>>
@@ -218,7 +202,7 @@ stay until the end of a program.
 'Mark Watney'
 
 >>> from unittest.mock import MagicMock
->>> input = MagicMock(side_effect=['Mark Watney', '44'])
+>>> input = MagicMock(side_effect=['Mark Watney', '44'])  # noqa
 >>>
 >>>
 >>> name = input('Type your name: ')
@@ -269,6 +253,24 @@ Builtins
  'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr',
  'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod',
  'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+
+
+Use Case - 0x01
+---------------
+>>> from unittest.mock import MagicMock
+>>>
+>>> # Simulate user input (for test automation)
+>>> input = MagicMock(side_effect=['lastname'])  # noqa
+>>>
+>>>
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
+>>>
+>>> what = input('Type variable name: ')   #input: 'lastname'
+>>>
+>>> globals()[what]
+'Watney'
+
 
 
 Assignments

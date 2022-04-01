@@ -1,15 +1,3 @@
-.. testsetup::
-
-    def add(*args, **kwargs):
-        pass
-
-    def connect(*args, **kwargs):
-        pass
-
-    def read_csv(*args, **kwargs):
-        pass
-
-
 Function Arguments
 ==================
 * Argument - value/variable/reference being passed to the function
@@ -22,9 +10,9 @@ Function definition with parameters:
 
     myfunction(<arguments>)
 
->>> add(1, 2)
->>> add(a=1, b=2)
->>> add(1, b=2)
+>>> add(1, 2)  # doctest: +SKIP
+>>> add(a=1, b=2)  # doctest: +SKIP
+>>> add(1, b=2)  # doctest: +SKIP
 
 .. glossary::
 
@@ -47,9 +35,9 @@ Let's define a function:
 >>> def echo(a, b):
 ...     return f'{a=}, {b=}'
 
-Positional arguments are resolved by order. This mean, that the first argument
-will be assigned to the first parameter, and the second argument to the second
-parameter and so on:
+Positional arguments are resolved by order. This mean, that the first
+argument will be assigned to the first parameter, and the second argument
+to the second parameter and so on:
 
 >>> echo(1, 2)
 'a=1, b=2'
@@ -156,6 +144,9 @@ Use Case - 0x01
 
 Use Case - 0x02
 ---------------
+>>> def connect(*args, **kwargs):
+...     ...
+
 >>> connect('myusername', 'mypassword')
 
 >>> connect('myusername', 'mypassword', 'example.com', 443, False, 1, True)
@@ -173,6 +164,9 @@ Use Case - 0x02
 
 Use Case - 0x03
 ---------------
+>>> def read_csv(*args, **kwargs):
+...     pass
+
 >>> read_csv('iris.csv')
 
 >>> read_csv('iris.csv', encoding='utf-8')

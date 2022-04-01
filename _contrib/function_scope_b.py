@@ -16,17 +16,17 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(roman_to_int)
+    >>> isfunction(result)
     True
-    >>> result(1)
+    >>> result(1)  # doctest: +SKIP
     'I'
-    >>> result(9)
+    >>> result(9)  # doctest: +SKIP
     'IX'
-    >>> result(1550)
+    >>> result(1550)  # doctest: +SKIP
     'MDL'
-    >>> result(1540)
+    >>> result(1540)  # doctest: +SKIP
     'MXDL'
-    >>> result(14)
+    >>> result(14)  # doctest: +SKIP
     'XIV'
 """
 

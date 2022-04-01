@@ -14,31 +14,31 @@ Syntax
 
 None, Null, Nil
 ---------------
->>> data = none
+>>> data = none  # doctest: +SKIP
 Traceback (most recent call last):
 NameError: name 'none' is not defined
 >>>
->>> data = NONE
+>>> data = NONE  # doctest: +SKIP
 Traceback (most recent call last):
 NameError: name 'NONE' is not defined
 
->>> data = null
+>>> data = null  # doctest: +SKIP
 Traceback (most recent call last):
 NameError: name 'null' is not defined
 >>>
->>> data = Null
+>>> data = Null  # doctest: +SKIP
 Traceback (most recent call last):
 NameError: name 'Null' is not defined
 >>>
->>> data = NULL
+>>> data = NULL  # doctest: +SKIP
 Traceback (most recent call last):
 NameError: name 'NULL' is not defined
 
->>> data = nil
+>>> data = nil  # doctest: +SKIP
 Traceback (most recent call last):
 NameError: name 'NIL' is not defined
 >>>
->>> data = NIL
+>>> data = NIL  # doctest: +SKIP
 Traceback (most recent call last):
 NameError: name 'NIL' is not defined
 

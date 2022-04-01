@@ -11,7 +11,7 @@ Writing data to CSV file using ``csv.writer()``:
 
     import csv
 
-    FILE = r'_temporary.csv'
+    FILE = r'/tmp/myfile.csv'
 
     DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),

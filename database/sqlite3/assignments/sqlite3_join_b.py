@@ -45,14 +45,14 @@ Hints:
     * `astronaut_id = cursor.lastrowid`
 
 Tests:
-    >>> import sys; sys.tracebacklimit = 0
+    TODO: import sys; sys.tracebacklimit = 0
 
-    >>> assert type(result) is not Ellipsis
-    >>> assert type(result) is list
-    >>> assert len(result) > 0
-    >>> assert all(type(row) is dict for row in result)
+    TODO: assert type(result) is not Ellipsis
+    TODO: assert type(result) is list
+    TODO: assert len(result) > 0
+    TODO: assert all(type(row) is dict for row in result)
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
+    TODO: result  # doctest: +NORMALIZE_WHITESPACE
 """
 
 import sqlite3

@@ -48,8 +48,8 @@ SetUp
 >>>
 >>> with engine.begin() as db:
 ...     metadata.create_all(db)
-...     db.execute(astronaut.insert(), ASTRONAUTS)
-...     db.execute(mission.insert(), MISSIONS)
+...     result = db.execute(astronaut.insert(), ASTRONAUTS)
+...     result = db.execute(mission.insert(), MISSIONS)
 
 
 Select Multiple Tables
@@ -65,13 +65,13 @@ they are separated by a coma [#ytSQLAlchemy20]_.
 
 >>> query = select(astronaut.c.firstname, mission.c.name)
 >>>
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, mission.name
 FROM astronaut, mission
 
 Selecting from multiple tables without relating them to each other produces
-an effect known as 'cartesian product'. SQLAlchemy will usually warn when this
-is detected during statement execution [#ytSQLAlchemy20]_.
+an effect known as 'cartesian product'. SQLAlchemy will usually warn when
+this is detected during statement execution [#ytSQLAlchemy20]_.
 
 >>> query = select(astronaut.c.firstname, mission.c.name)
 >>>
@@ -100,7 +100,7 @@ and a pre-production tests.
 
 Generated SQL statement:
 
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, mission.name
 FROM astronaut, mission
 
@@ -131,7 +131,7 @@ which is most easily achieved using ``join_from()`` [#ytSQLAlchemy20]_.
 
 Generated SQL statement:
 
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, mission.name
 FROM astronaut JOIN mission ON astronaut.id = mission.astronaut_id
 
@@ -157,7 +157,7 @@ Join
 
 Generated SQL statement:
 
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, mission.name
 FROM astronaut JOIN mission ON astronaut.id = mission.astronaut_id
 
@@ -189,7 +189,7 @@ were otherwise ambiguous [#ytSQLAlchemy20]_.
 
 Generated SQL statement:
 
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, mission.name
 FROM astronaut JOIN mission ON astronaut.id = mission.astronaut_id
 
@@ -226,7 +226,7 @@ Use Case: When you want to get rows in two different context.
 
 Generated SQL statement:
 
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, mission_1.name, mission_2.name AS name_1
 FROM astronaut JOIN mission AS mission_1 ON astronaut.id = mission_1.astronaut_id JOIN mission AS mission_2 ON astronaut.id = mission_2.astronaut_id
 WHERE mission_1.name = :name_2 AND mission_2.name = :name_3
@@ -258,11 +258,11 @@ The subquery object itself has .c attribute, and is used just like a table.
 
 Generated SQL statement:
 
->>> print(subquery)
+>>> print(subquery)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, mission.name
 FROM astronaut JOIN mission ON astronaut.id = mission.astronaut_id
 >>>
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT anon_1.firstname
 FROM (SELECT astronaut.firstname AS firstname, mission.name AS name
 FROM astronaut JOIN mission ON astronaut.id = mission.astronaut_id) AS anon_1
@@ -307,7 +307,7 @@ label to it, because the function results doesn't have meaningful names.
 
 Generated SQL statement:
 
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, anon_1.count
 FROM astronaut JOIN (SELECT mission.astronaut_id AS astronaut_id, count(mission.id) AS count
 FROM mission GROUP BY mission.astronaut_id) AS anon_1 ON astronaut.id = anon_1.astronaut_id ORDER BY astronaut.firstname
@@ -356,7 +356,7 @@ subquery:
 
 Generated SQL statement:
 
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 WITH anon_1 AS
 (SELECT mission.astronaut_id AS astronaut_id, count(mission.id) AS count
 FROM mission GROUP BY mission.astronaut_id)
@@ -383,7 +383,7 @@ intent using the ``scalar_subquery()`` method after construction
 ...     scalar_subquery()
 ... )
 >>>
->>> print(corr)
+>>> print(corr)  # doctest: +NORMALIZE_WHITESPACE
 (SELECT count(mission.id) AS count_1
 FROM mission, astronaut
 WHERE astronaut.id = mission.astronaut_id)
@@ -397,7 +397,7 @@ expression, omitting a ``FROM`` that is found in the immediate enclosing
 
 >>> query = select(astronaut.c.firstname, corr)
 >>>
->>> print(query)
+>>> print(query)  # doctest: +NORMALIZE_WHITESPACE
 SELECT astronaut.firstname, (SELECT count(mission.id) AS count_1
 FROM mission
 WHERE astronaut.id = mission.astronaut_id) AS anon_1

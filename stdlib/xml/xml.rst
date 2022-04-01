@@ -10,7 +10,7 @@ Example
     from xml.etree.ElementTree import parse
 
 
-    FILE = r'_temporary.xml'
+    FILE = r'/tmp/myfile.xml'
     # <execute>
     #     <command timeout="2">/bin/ls -la /etc/</command>
     #     <command>/bin/ls -l /home/ /tmp/</command>

@@ -1,10 +1,3 @@
-.. testsetup::
-
-    from pathlib import Path
-    Path('/tmp/myfile.txt').unlink(missing_ok=True)
-    Path('/tmp/myfile.txt').touch()
-
-
 File Modes
 ==========
 * Text - easy to read and write
@@ -27,6 +20,18 @@ By operation:
     * Update - Read and Write (rarely used)
 
 If mode is not specified it will read in text mode (``mode='rt'``)
+
+
+SetUp
+-----
+>>> from pathlib import Path
+>>> Path('/tmp/myfile.txt').unlink(missing_ok=True)
+>>> Path('/tmp/myfile.txt').touch()
+
+
+Example
+-------
+* If mode is not specified it will read in text mode (``mode='rt'``)
 
 >>> open('/tmp/myfile.txt')
 <_io.TextIOWrapper name='/tmp/myfile.txt' mode='r' encoding='UTF-8'>

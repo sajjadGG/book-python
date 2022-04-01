@@ -50,7 +50,7 @@ Initializer Method With Arguments
 >>>
 >>> astro = Astronaut()
 Traceback (most recent call last):
-TypeError: __init__() missing 2 required positional arguments: 'firstname' and 'lastname'
+TypeError: Astronaut.__init__() missing 2 required positional arguments: 'firstname' and 'lastname'
 
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname):

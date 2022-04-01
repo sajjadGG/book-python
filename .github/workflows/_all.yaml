@@ -2,20 +2,10 @@ name: Doctests
 on: push
 
 jobs:
-  #All:
-  #  runs-on: ubuntu-20.04
-  #  container: python:3.10.3
-  #  steps:
-  #    - name: Download GIT repository
-  #      uses: actions/checkout@v2
-  #    - name: Install requirements
-  #      run: pip install -r requirements.txt
-  #    - name: Test listings
-  #      run: sphinx-build -a -E -j auto --color -b doctest . /tmp/
 
   Assignments:
     runs-on: ubuntu-20.04
-    container: python:3.10.3
+    container: python:3.10.4
     strategy:
       fail-fast: false
       matrix:
@@ -43,11 +33,13 @@ jobs:
       - name: Install requirements
         run: pip install -r ${{ matrix.directory }}/requirements.txt
       - name: Tests assignments
-        run: find ${{ matrix.directory }} -path '*assignments*' -name '*.py' -print -exec python -m doctest '{}' \;
+        run: python make.py --test-py ${{ matrix.directory }}
+      - name: Count assignments tests
+        run: find . -not \( -path "./.venv-py310" -prune \) -name '*.py' |xargs grep '>>>' |wc -l
 
   Listings:
     runs-on: ubuntu-20.04
-    container: python:3.10.3
+    container: python:3.10.4
     strategy:
       fail-fast: false
       matrix:
@@ -60,7 +52,7 @@ jobs:
           - devops
           #- django
           #- dragon
-          - fastapi
+          #- fastapi
           #- gui
           - intermediate
           #- machine-learning
@@ -74,5 +66,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install requirements
         run: pip install -r ${{ matrix.directory }}/requirements.txt
+      - name: Count listing tests
+        run: find . -not \( -path "./.venv-py310" -prune \) -name '*.rst' |xargs grep '>>>' |wc -l
       - name: Test listings
-        run: sphinx-build -a -E -j auto --color -b doctest ${{ matrix.directory }} /tmp/
+        run: python make.py --test-rst ${{ matrix.directory }}

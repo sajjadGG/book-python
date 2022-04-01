@@ -34,7 +34,7 @@ SetUp
 >>>
 >>> with engine.begin() as db:
 ...     metadata.create_all(db)
-...     db.execute(astronaut.insert(), ASTRONAUTS)
+...     result = db.execute(astronaut.insert(), ASTRONAUTS)
 
 
 Delete Statement
@@ -45,7 +45,7 @@ Delete Statement
 ... )
 >>>
 >>> with engine.begin() as db:
-...     db.execute(query)
+...     result = db.execute(query)
 
 
 References
