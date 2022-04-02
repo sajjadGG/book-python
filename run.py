@@ -47,14 +47,14 @@ def run(cmd, timeout=None):
     return process.returncode
 
 
-class RequirementsGather(Action):
+class Gather(Action):
     def __call__(self, parser, namespace, chapter, *args, **kwargs):
         run('clear && printf "\e[3J"')  # noqa
         run(f'cat */requirements.txt |sort |uniq > requirements.txt')
         log.info('Requirements Gathered in requirements.txt')
 
 
-class RequirementsInstall(Action):
+class Install(Action):
     def __call__(self, parser, namespace, chapter, *args, **kwargs):
         if chapter is None:
             chapter = '.'
@@ -76,7 +76,7 @@ class Build(Action):
         run(f'sphinx-build -a -E -j auto --color -b html {src} {dst}')
 
 
-class TestDoctest(Action):
+class Doctest(Action):
     def __call__(self, parser, namespace, chapter, *args, **kwargs):
         run('clear && printf "\e[3J"')  # noqa
         all_tests = 0
@@ -142,17 +142,17 @@ if __name__ == '__main__':
                         nargs='?', metavar='CHAPTER', action=Build,
                         help='build documentation in html format')
 
-    parser.add_argument('-t', '--doctest',
-                        nargs='?', metavar='CHAPTER', action=TestDoctest,
-                        help='test ReST files')
+    parser.add_argument('-d', '--doctest',
+                        nargs='?', metavar='CHAPTER', action=Doctest,
+                        help='doctest *.rst and *.py files')
 
     parser.add_argument('-i', '--install',
-                        nargs='?', metavar='CHAPTER', action=RequirementsInstall,
+                        nargs='?', metavar='CHAPTER', action=Install,
                         help='install requirements')
 
     parser.add_argument('-g', '--gather',
-                        nargs=0, action=RequirementsGather,
-                        help='gather chapter requirements to main requirements')
+                        nargs=0, action=Gather,
+                        help='gather chapter requirements to one file')
 
     parser.parse_args()
 
