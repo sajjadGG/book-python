@@ -94,7 +94,7 @@ class TestDoctest(Action):
                 self.run_test(file)
                 all_tests += ntests
             else:
-                log.error(f'WITHOUT\t{file}')
+                log.error(f'NOTESTS\t{file}')
         logging.warning(f'\nAll tests {all_tests}')
 
 

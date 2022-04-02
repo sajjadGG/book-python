@@ -44,7 +44,7 @@ class HTTPGateway:
         connection = requests.get(url, auth=(self.username, self.password))
         if connection.status_code != 200:
             log.error(f'Cannot fetch from URL: {url}')
-            raise ConnectionError
+            raise ConnectionError(f'Cannot fetch from URL: {url}')
         else:
             log.debug(f'Fetched from {url}')
             return connection.text
