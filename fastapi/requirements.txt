@@ -2,6 +2,7 @@ ipython
 
 # FastAPI
 fastapi
+uvicorn
 uvicorn[standard]
 pydantic
 pydantic[email]  # pip install 'pydantic[email]'

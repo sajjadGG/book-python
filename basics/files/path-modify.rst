@@ -50,9 +50,9 @@ Works only with empty directories:
 >>>
 >>>
 >>> path = Path('/tmp/a')
->>> path.rmdir()
+>>> path.rmdir()  # doctest: +ELLIPSIS
 Traceback (most recent call last):
-OSError: [Errno 66] Directory not empty: '/tmp/a'
+OSError: [Errno ...] Directory not empty: '/tmp/a'
 
 Remove directories with files:
 

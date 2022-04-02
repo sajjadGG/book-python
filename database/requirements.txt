@@ -4,3 +4,5 @@ sphinx_rtd_theme
 sqlalchemy
 alembic
 psycopg2-binary
+uvicorn
+pydantic

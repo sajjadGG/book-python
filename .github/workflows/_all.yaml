@@ -3,6 +3,15 @@ on: push
 
 jobs:
 
+  Everything:
+    runs-on: ubuntu-20.04
+    container: python:3.10.4
+    steps:
+      - uses: actions/checkout@v2
+      - run: pip install -r ${{ matrix.directory }}/requirements.txt
+      - run: python run.py --doctest
+
+
   Chapter:
     runs-on: ubuntu-20.04
     container: python:3.10.4
@@ -31,11 +40,6 @@ jobs:
           - pandas
           - stdlib
     steps:
-      - name: Download GIT repository
-        uses: actions/checkout@v2
-
-      - name: Install requirements
-        run: pip install -r ${{ matrix.directory }}/requirements.txt
-
-      - name: Run Doctests
-        run: python make.py --doctest ${{ matrix.directory }}
+      - uses: actions/checkout@v2
+      - run: pip install -r ${{ matrix.directory }}/requirements.txt
+      - run: python run.py --doctest
