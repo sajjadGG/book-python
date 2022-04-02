@@ -234,7 +234,7 @@ Porównanie algorytmów klastrowania
                      horizontalalignment='right')
             plot_num += 1
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 Przykład praktyczny
 -------------------
@@ -311,7 +311,7 @@ K-means Clustering dla zbioru Iris
     ax.set_title('Ground Truth')
     ax.dist = 12
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 
 Assignments

@@ -9,6 +9,11 @@ SetUp
 -----
 >>> import pandas as pd
 >>>
+>>> pd.set_option('display.width', 250)
+>>> pd.set_option('display.max_columns', 20)
+>>> pd.set_option('display.max_rows', 30)
+>>>
+>>>
 >>> DATA = """<?xml version="1.0"?>
 ... <catalog>
 ...    <book id="bk101">
@@ -112,9 +117,7 @@ True
 True
 >>>
 >>> result.columns
-Index(['Id', 'Author', 'Title', 'Genre', 'Price', 'Publish Date',
-       'Description'],
-      dtype='object')
+Index(['Id', 'Author', 'Title', 'Genre', 'Price', 'Publish Date', 'Description'], dtype='object')
 >>>
 >>> result['Title']
 0    XML Developer's Guide

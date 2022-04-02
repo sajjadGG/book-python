@@ -1,3 +1,12 @@
 sphinx==4.5.*
 sphinx_rtd_theme
 sphinxcontrib-bibtex
+beautifulsoup4
+requests
+
+# dnspython
+# pysftp
+# paramiko
+# zeep
+# suds
+# atlassian-python-api

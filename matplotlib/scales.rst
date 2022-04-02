@@ -22,7 +22,7 @@ Linear Scale
     plt.yscale('linear')
 
     plt.plot(x, y)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 
 Logarithmic Scale
@@ -39,7 +39,7 @@ Logarithmic Scale
     plt.yscale('log')
 
     plt.plot(x, y)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 
 Symmetrical Logarithmic Scale
@@ -56,7 +56,7 @@ Symmetrical Logarithmic Scale
     plt.yscale('symlog', linthresh=0.01)
 
     plt.plot(x, y)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 
 Logit Scale
@@ -73,4 +73,4 @@ Logit Scale
     plt.yscale('logit')
 
     plt.plot(x, y)
-    plt.show()
+    plt.show()  # doctest: +SKIP

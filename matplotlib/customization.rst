@@ -48,7 +48,7 @@ Font
 
     plt.plot(x, y)
     plt.grid(True)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 Subplots
 --------

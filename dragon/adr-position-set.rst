@@ -1,16 +1,21 @@
 .. testsetup::
 
-    from dataclasses import dataclass
-
-    @dataclass
-    class Point:
-        x: int
-        y: int
+    # doctest: +SKIP_FILE
 
 
 Dragon ADR Position Set
 =======================
 * ADR - Architecture Design Records
+
+
+SetUp
+-----
+>>> from dataclasses import dataclass
+>>>
+>>> @dataclass
+... class Point:
+...     x: int
+...     y: int
 
 
 Problem

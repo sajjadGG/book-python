@@ -427,4 +427,4 @@ Styles
     plt.style.use('fivethirtyeight')
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
+    plt.show()  # doctest: +SKIP

@@ -247,7 +247,7 @@ Drop Columns with NA
 
 >>> df.dropna(how='all', axis=-1)
 Traceback (most recent call last):
-ValueError: No axis named -1 for object type <class 'pandas.core.frame.DataFrame'>
+ValueError: No axis named -1 for object type DataFrame
 
 >>> df.dropna(how='any', axis='columns')
 Empty DataFrame
@@ -261,7 +261,7 @@ Index: [0, 1, 2, 3, 4, 5, 6]
 
 >>> df.dropna(how='any', axis=-1)
 Traceback (most recent call last):
-ValueError: No axis named -1 for object type <class 'pandas.core.frame.DataFrame'>
+ValueError: No axis named -1 for object type DataFrame
 
 
 Recap

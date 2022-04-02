@@ -114,7 +114,7 @@ Wykorzystanie biblioteki ``sklearn``
     plt.xticks(())
     plt.yticks(())
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: text
 

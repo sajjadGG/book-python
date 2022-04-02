@@ -119,7 +119,7 @@ What Makes a Good Feature?
         color=['red', 'blue']
     )
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/features-distribution.png
 
@@ -236,4 +236,3 @@ Hints:
                     vector.append(0)
 
             print(vector)
-

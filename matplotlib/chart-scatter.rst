@@ -14,8 +14,7 @@ Syntax
     y = [1, 2, 3, 4]
 
     plt.scatter(x, y)
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Simple Points
 -------------
@@ -29,8 +28,7 @@ Simple Points
     y = np.sin(x)
 
     plt.scatter(x, y)
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Markers
 -------
@@ -50,7 +48,7 @@ Markers
     y = [5, 2, 4, 2, 1, 4, 5, 2]
 
     plt.scatter(x, y, marker='*', s=100)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -62,7 +60,7 @@ Markers
     y = [5, 2, 4, 2, 1, 4, 5, 2]
 
     plt.scatter(x, y, marker='x', s=100)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -76,4 +74,4 @@ Markers
     plt.scatter(x, y, marker='*', s=500)
     plt.scatter(y, x, marker='o', s=500)
 
-    plt.show()
+    plt.show()  # doctest: +SKIP

@@ -1,3 +1,8 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 Connection Session
 ==================
 * Session manages persistence operations for ORM-mapped objects

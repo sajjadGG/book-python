@@ -20,7 +20,7 @@ Multiple Plots on one Figure
     plt.plot(x1, y1)
     plt.plot(x2, y2, 'o-')
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/multi-sine.png
 
@@ -42,7 +42,7 @@ Multiple Figures with single Plots
     ax[1,0].plot(x, y, label='c')
     ax[1,1].plot(x, y, label='d')
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/matplotlib-subplots-a.png
 
@@ -72,7 +72,7 @@ Multiple Figures with single Plots
     plt.subplot(212)
     plt.plot(x2, y2, color='red', linestyle='--', label='signal')
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/matplotlib-plt-subplot.png
 

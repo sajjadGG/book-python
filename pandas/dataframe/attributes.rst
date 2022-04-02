@@ -102,7 +102,7 @@ array([[0., 0., 0., 0.],
 >>>
 >>> df.values = values
 Traceback (most recent call last):
-AttributeError: can't set attribute
+AttributeError: can't set attribute 'values'
 
 
 .. todo:: Assignments

@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 import logging
 import sys
-from doctest import DocTestFailure, testfile
 from pathlib import Path
 from argparse import ArgumentParser, Action
 from shutil import rmtree
 from subprocess import Popen, PIPE, TimeoutExpired
 
-sys.tracebacklimit = 0
+sys.tracebacklimit = 8
 logging.basicConfig(level='INFO', format='%(message)s')
 log = logging.getLogger(__name__)
 
@@ -46,49 +45,56 @@ class Html(Action):
         run(f'sphinx-build -a -E -j auto --color -b html {src} {dst}')
 
 
-class TestRST(Action):
+class TestDoctest(Action):
+    def is_ignored(self, file: Path):
+        doctestignore = Path(file.parts[0]) / '.doctestignore'
+        if doctestignore.exists():
+            log.warning(f'IGNORED\t{file}')
+            return True
+        else:
+            return False
+
+    def is_skipped(self, file: Path):
+        if '# doctest: +SKIP_FILE' in file.read_text():
+            log.warning(f'SKIPPED\t{file}')
+            return True
+        else:
+            return False
+
+    def is_venv(self, file: Path):
+        log.debug(f'VENV\t{file}')
+        return str(file).startswith('.venv-py')
+
+    def count_doctests(self, file: Path):
+        return file.read_text().count('>>>')
+
+    def get_files(self, directory: str):
+        if directory is None:
+            directory = ''
+        yield from Path(directory).rglob('*.rst')
+        yield from Path(directory).rglob('*.py')
+
+    def run_test(self, file: Path):
+        log.debug(f'RUN\t {file}')
+        exitcode = run(f'python -m doctest {file}', timeout=20)
+        if exitcode == 0:
+            log.info(f'PASSED\t{file}')
+        else:
+            log.critical(f'FAILED\t{file}')
+            exit(1)
+
     def __call__(self, parser, namespace, chapter, *args, **kwargs):
         run('clear && printf "\e[3J"')  # noqa
-        if chapter is None:
-            src = BASE_DIR
-        else:
-            src = BASE_DIR / chapter
         all_tests = 0
-        for file in sorted(src.rglob('*.rst')):
-            if 'venv' in str(file):
-                log.debug(f'File inside venv: {file}')
-                continue
-            all_tests += file.read_text().count('>>>')
-            log.warning(f'Testing: {file}')
-            exitcode = run(f'python -m doctest {file}', timeout=5)
-            if exitcode == 1:
-                log.error(f'Error: {file}')
-                exit(1)
-        logging.warning(f'\nAll tests {all_tests}')
-
-
-class TestPython(Action):
-    def __call__(self, parser, namespace, chapter, *args, **kwargs):
-        run('clear && printf "\e[3J"')  # noqa
-        if chapter is None:
-            src = BASE_DIR
-        else:
-            src = BASE_DIR / chapter
-        all_tests = 0
-        for file in sorted(src.rglob('*.py')):
-            if 'venv' in str(file):
-                log.debug(f'File inside venv: {file}')
-                continue
-            ntests = file.read_text().count('>>>')
-            if ntests == 0:
-                log.info(f'Tests not found: {file}')
-                continue
-            all_tests += ntests
-            log.warning(f'Testing: {file}')
-            exitcode = run(f'python -m doctest {file}', timeout=20)
-            if exitcode == 1:
-                log.error(f'Error: {file}')
-                exit(1)
+        for file in sorted(self.get_files(chapter)):
+            if self.is_ignored(file): continue
+            if self.is_venv(file): continue
+            if self.is_skipped(file): continue
+            if ntests := self.count_doctests(file):
+                self.run_test(file)
+                all_tests += ntests
+            else:
+                log.error(f'WITHOUT\t{file}')
         logging.warning(f'\nAll tests {all_tests}')
 
 
@@ -99,12 +105,8 @@ if __name__ == '__main__':
                         nargs='?', metavar='CHAPTER', action=Html,
                         help='Build documentation in html format')
 
-    parser.add_argument('--test-rst',
-                        nargs='?', metavar='CHAPTER', action=TestRST,
+    parser.add_argument('--doctest',
+                        nargs='?', metavar='CHAPTER', action=TestDoctest,
                         help='Test ReST files')
-
-    parser.add_argument('--test-py',
-                        nargs='?', metavar='CHAPTER', action=TestPython,
-                        help='Test Python files (Assignments)')
 
     args = parser.parse_args()

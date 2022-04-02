@@ -1,3 +1,8 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 Model Relations
 ===============
 * ForeignKey vs PrimaryKey

@@ -25,7 +25,7 @@ No labels
     plt.title('Stacked Plot')
     plt.legend()
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 With labels
 -----------
@@ -53,7 +53,7 @@ With labels
     plt.title('Stacked Plot')
     plt.legend(loc='upper left')
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 Stack plot
 ----------
@@ -75,7 +75,7 @@ Stack plot
     plt.stackplot(days, todo, in_progress, in_test, in_review, done, labels=labels)
     plt.legend(loc='upper left')
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/matplotlib-plt-stackplot.png
 

@@ -15,7 +15,7 @@ Examples
 
     # red dashes, blue squares and green triangles
     plt.plot(t, t, 'r--', t, t**2, 'bs', t, t**3, 'g^')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -31,7 +31,7 @@ Examples
     plt.plot(t, t**2, 'bs')
     plt.plot(t, t**3, 'g^')
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/matplotlib-multiple.png
 

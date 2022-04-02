@@ -114,7 +114,7 @@ dt=datetime.datetime(1969, 7, 21, 2, 56, 15)
 >>> print(PastDate(dt='2969-07-21T02:56:15'))
 Traceback (most recent call last):
 pydantic.error_wrappers.ValidationError: 1 validation error for PastDate
-timestamp
+dt
   Timestamp is not in the past (type=value_error)
 
 

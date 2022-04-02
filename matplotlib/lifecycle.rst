@@ -268,7 +268,7 @@ the plot methods on that axes object.
     ax.set_xticks([0, 25e3, 50e3, 75e3, 100e3, 125e3])
     fig.subplots_adjust(right=.1)
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/matplotlib-lifecycle-10.png
 

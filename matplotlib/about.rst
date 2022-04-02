@@ -51,7 +51,7 @@ Running matplotlib in standalone scripts
     y = [4,5,6]
 
     plt.plot(x, y)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 Exporting plot as an image
 --------------------------

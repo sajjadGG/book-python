@@ -119,7 +119,7 @@ Single Annotation
     )
 
     plt.ylim(-2,2)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/style-annotations-simple.png
 

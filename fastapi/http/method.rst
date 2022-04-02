@@ -1,3 +1,8 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 HTTP Method
 ===========
 * ``GET`` - Read

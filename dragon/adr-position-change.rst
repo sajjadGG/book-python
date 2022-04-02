@@ -1,3 +1,8 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 Dragon ADR Position Change
 ==========================
 * ADR - Architecture Design Records

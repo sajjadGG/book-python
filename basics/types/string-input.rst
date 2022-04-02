@@ -1,7 +1,3 @@
-.. testsetup::
-
-
-
 String Input
 ============
 * ``input()`` always returns ``str``

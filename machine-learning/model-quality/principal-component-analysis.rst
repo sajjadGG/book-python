@@ -85,12 +85,12 @@ PCA dla zbioru Iris
     pca.fit(features)
     features = pca.transform(features)
 
-    plt.clf()
+    plt.clf()  # doctest: +SKIP
 
     fig = plt.figure(1, figsize=(4, 3))
     ax = Axes3D(fig, rect=[0, 0, .95, 1], elev=48, azim=134)
 
-    plt.cla()
+    plt.cla()  # doctest: +SKIP
 
 
     for name, label in [('Setosa', 0), ('Versicolor', 1), ('Virginica', 2)]:
@@ -109,7 +109,7 @@ PCA dla zbioru Iris
     ax.w_yaxis.set_ticklabels([])
     ax.w_zaxis.set_ticklabels([])
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 PCA dla zbioru Iris:
 

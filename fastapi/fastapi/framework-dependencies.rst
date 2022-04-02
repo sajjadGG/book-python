@@ -1,3 +1,8 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 Dependencies
 ============
 * CDI - Content Dependency Injection

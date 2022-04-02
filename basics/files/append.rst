@@ -1,9 +1,3 @@
-.. testsetup::
-
-    from pathlib import Path
-    Path('/tmp/myfile.txt').unlink(missing_ok=True)
-
-
 File Append
 ===========
 * Appends data at the end of file

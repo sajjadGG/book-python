@@ -26,7 +26,7 @@ Connection
 >>> from sqlalchemy.orm import sessionmaker
 >>>
 >>>
->>> SQLALCHEMY_DATABASE_URL = 'sqlite:////tmp/mydatabase.db'
+>>> SQLALCHEMY_DATABASE_URL = 'sqlite:///:memory:'
 >>>
 >>> engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={'check_same_thread': False})
 >>> SessionLocal = sessionmaker(bind= engine, autocommit=False, autoflush=False)
@@ -97,7 +97,7 @@ Example
 >>> app = FastAPI()
 >>>
 >>>
->>> SQLALCHEMY_DATABASE_URL = 'sqlite:////tmp/mydatabase.db'
+>>> SQLALCHEMY_DATABASE_URL = 'sqlite:///:memory:'
 >>>
 >>> engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={'check_same_thread': False})
 >>> SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
@@ -174,7 +174,7 @@ Example
 >>>
 >>>
 >>> if __name__ == '__main__':
-...     uvicorn.run('test:app', host='127.0.0.1', port=8000, reload=True)
+...     uvicorn.run('test:app', host='127.0.0.1', port=8000, reload=True)  # doctest: +SKIP
 
 
 Further Reading

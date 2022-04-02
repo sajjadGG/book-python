@@ -16,8 +16,7 @@ Axis naming
     plt.ylabel('Y axis')
 
     plt.plot(x, y)
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Title
 -----
@@ -32,7 +31,7 @@ Title
     plt.title('This is my chart')
 
     plt.plot(x, y)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -45,8 +44,7 @@ Title
     plt.title('This is my chart\nSecond line')
 
     plt.plot(x, y)
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Legend
 ------
@@ -67,8 +65,7 @@ Legend
     plt.plot(x2, y2, label='second line')
 
     plt.legend()
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Colors
 ------

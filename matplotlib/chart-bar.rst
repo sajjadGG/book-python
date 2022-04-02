@@ -14,8 +14,7 @@ Syntax
     y = [1, 2, 3, 4]
 
     plt.bar(x, y)
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Single Plot
 -----------
@@ -28,7 +27,7 @@ Single Plot
     y = [6, 7, 8, 2, 4]
 
     plt.bar(x, y)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -41,8 +40,7 @@ Single Plot
     y = np.random.randint(0, 10, size=10)
 
     plt.bar(x, y)
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Multiple Plots
 --------------
@@ -59,7 +57,7 @@ Multiple Plots
 
     plt.bar(x1, y1)
     plt.bar(x2, y2)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -73,4 +71,4 @@ Multiple Plots
 
     plt.bar(x1, y1, color='blue')
     plt.bar(x2, y2, color='red')
-    plt.show()
+    plt.show()  # doctest: +SKIP

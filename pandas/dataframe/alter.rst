@@ -32,11 +32,11 @@ Add Column:
 
 >>> df['X'] = ['a', 'b']
 Traceback (most recent call last):
-ValueError: Length of values does not match length of index
+ValueError: Length of values (2) does not match length of index (3)
 
 >>> df['X'] = ['a', 'b', 'c', 'd']
 Traceback (most recent call last):
-ValueError: Length of values does not match length of index
+ValueError: Length of values (4) does not match length of index (3)
 
 >>> df['Z'] = np.arange(3.0)
 >>> df

@@ -145,9 +145,12 @@ Use Case - 0x01
 ---------------
 * Files
 
-.. testsetup::
+SetUp:
 
-    open('/tmp/myfile.txt', 'w')
+>>> from pathlib import Path
+>>> Path('/tmp/myfile.txt').touch()
+
+Open/Close:
 
 >>> f = open('/tmp/myfile.txt')
 >>>
@@ -155,6 +158,8 @@ Use Case - 0x01
 ...     content = f.read()
 ... finally:
 ...     f.close()
+
+Context Manager:
 
 >>> with open('/tmp/myfile.txt') as f:
 ...     content = f.read()

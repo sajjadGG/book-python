@@ -320,7 +320,7 @@ The first column of images shows true faces. The next columns illustrate how ext
                        cmap=plt.cm.gray,
                        interpolation="nearest")
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/visual-faces.png
 

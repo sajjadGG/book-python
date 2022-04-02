@@ -1,3 +1,8 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 FastAPI Routers
 ===============
 * You don't have to worry about performance when including routers.

@@ -231,7 +231,7 @@ Matplotlib charts
     y2 = [math.cos(x*0.5) for x in range(0,round(63/5))]
     plt.plot(x2, y2, 'o-')
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 
 HTML
@@ -335,4 +335,3 @@ Assignments
 .. literalinclude:: assignments/jupyter_b.py
     :caption: :download:`Solution <assignments/jupyter_b.py>`
     :end-before: # Solution
-

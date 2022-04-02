@@ -1,6 +1,10 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 Model Dataclass
 ===============
-
 
 
 Use Case - 0x01

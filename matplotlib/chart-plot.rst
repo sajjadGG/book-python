@@ -14,8 +14,7 @@ Syntax
     y = [1, 2, 3, 4]
 
     plt.plot(x, y)
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Line Styles
 -----------
@@ -38,7 +37,7 @@ Vectorized Operations:
     y = np.random.randint(0, 10, size=10)
 
     plt.plot(x, y)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 Universal Function:
 
@@ -52,8 +51,7 @@ Universal Function:
     y = np.sin(x)
 
     plt.plot(x, y)
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Multiple Plots
 --------------
@@ -70,7 +68,7 @@ Multiple Plots
 
     plt.plot(x1, y1)
     plt.plot(x2, y2)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 Universal Function:
 
@@ -86,7 +84,7 @@ Universal Function:
 
     plt.plot(x, y1)
     plt.plot(x, y2)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 Inlined Universal Function:
 
@@ -100,7 +98,7 @@ Inlined Universal Function:
 
     plt.plot(x, np.sin(x))
     plt.plot(x, np.cos(x))
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 Vectorized Operation:
 
@@ -115,7 +113,7 @@ Vectorized Operation:
     plt.plot(x, x)
     plt.plot(x, x**2)
     plt.plot(x, x**3)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 Universal Function and Vectorized Operation:
 
@@ -136,4 +134,4 @@ Universal Function and Vectorized Operation:
 
     plt.plot(x1, y1)
     plt.plot(x2, y2, linestyle='--')
-    plt.show()
+    plt.show()  # doctest: +SKIP

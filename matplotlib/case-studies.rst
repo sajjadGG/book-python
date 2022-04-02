@@ -99,8 +99,7 @@ Source: https://beyond.readthedocs.io/en/latest/examples.html:
     plt.tight_layout()
 
     if "no-display" not in sys.argv:
-        plt.show()
-
+        plt.show()  # doctest: +SKIP
 
 ISS Hohmann transfer
 --------------------
@@ -191,8 +190,7 @@ https://beyond.readthedocs.io/en/latest/examples.html:
     plt.plot([apogee[0]], [apogee[1]], [apogee[2]], 'ko')
 
     if "no-display" not in sys.argv:
-        plt.show()
-
+        plt.show()  # doctest: +SKIP
 
 COVID-19
 --------
@@ -266,8 +264,7 @@ COVID-19
         # Set general layout for figure (all axis)
         fig.tight_layout()
         plt.setp(ax[2].get_xticklabels(), rotation=45, horizontalalignment='right')
-        plt.show()
-
+        plt.show()  # doctest: +SKIP
 
     plot('Poland')
     plot('Germany')

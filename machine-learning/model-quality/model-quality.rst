@@ -264,7 +264,7 @@ Can we locate even better value for :math:`k`?:
     plt.plot(k_range, scores)
     plt.xlabel(f'Value of k for KNN (random_state={random_state})')
     plt.ylabel('Testing Accuracy')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 Downsides of train/test split:
 

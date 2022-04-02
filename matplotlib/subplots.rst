@@ -38,7 +38,7 @@ Subplot
     plt.plot(x, y, label='d')
     plt.legend()
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -66,8 +66,7 @@ Subplot
     plt.plot(x, y, label='d')
     plt.legend()
 
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Subplots
 --------
@@ -87,7 +86,7 @@ Subplots
     ax[1,0].plot(x, y, label='c')
     ax[1,1].plot(x, y, label='d')
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -113,7 +112,7 @@ Subplots
     ax[1,1].legend()
 
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -135,8 +134,7 @@ Subplots
         chart.legend()
 
 
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Adjustments
 -----------
@@ -169,4 +167,4 @@ Adjustments
                        # expressed as a fraction of the average axis height
     )
 
-    plt.show()
+    plt.show()  # doctest: +SKIP

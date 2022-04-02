@@ -1,10 +1,3 @@
-.. testsetup::
-
-    from pathlib import Path
-    Path('/tmp/myfile.bin').unlink(missing_ok=True)
-    Path('/tmp/myfile.pkl').unlink(missing_ok=True)
-
-
 Files Binary
 ============
 * Text I/O over a binary storage (such as a file) is significantly slower

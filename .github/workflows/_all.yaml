@@ -3,13 +3,14 @@ on: push
 
 jobs:
 
-  Assignments:
+  Chapter:
     runs-on: ubuntu-20.04
     container: python:3.10.4
     strategy:
       fail-fast: false
       matrix:
         directory:
+          - about
           - advanced
           - basics
           - data-science
@@ -20,6 +21,7 @@ jobs:
           - dragon
           - fastapi
           - gui
+          - install
           - intermediate
           - machine-learning
           - matplotlib
@@ -27,46 +29,13 @@ jobs:
           - numpy
           - oop
           - pandas
+          - stdlib
     steps:
       - name: Download GIT repository
         uses: actions/checkout@v2
-      - name: Install requirements
-        run: pip install -r ${{ matrix.directory }}/requirements.txt
-      - name: Tests assignments
-        run: python make.py --test-py ${{ matrix.directory }}
-      - name: Count assignments tests
-        run: find . -not \( -path "./.venv-py310" -prune \) -name '*.py' |xargs grep '>>>' |wc -l
 
-  Listings:
-    runs-on: ubuntu-20.04
-    container: python:3.10.4
-    strategy:
-      fail-fast: false
-      matrix:
-        directory:
-          - advanced
-          - basics
-          - data-science
-          #- database
-          - design-patterns
-          - devops
-          #- django
-          #- dragon
-          #- fastapi
-          #- gui
-          - intermediate
-          #- machine-learning
-          #- matplotlib
-          #- network
-          - numpy
-          - oop
-          - pandas
-    steps:
-      - name: Download GIT repository
-        uses: actions/checkout@v2
       - name: Install requirements
         run: pip install -r ${{ matrix.directory }}/requirements.txt
-      - name: Count listing tests
-        run: find . -not \( -path "./.venv-py310" -prune \) -name '*.rst' |xargs grep '>>>' |wc -l
-      - name: Test listings
-        run: python make.py --test-rst ${{ matrix.directory }}
+
+      - name: Run Doctests
+        run: python make.py --doctest ${{ matrix.directory }}

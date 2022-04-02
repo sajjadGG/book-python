@@ -1,9 +1,3 @@
-.. testsetup::
-
-    from pathlib import Path
-    Path('/tmp/myfile.txt').unlink(missing_ok=True)
-
-
 Locale Encoding
 ===============
 * ``utf-8`` - a.k.a. Unicode - international standard (should be always used!)
@@ -19,6 +13,12 @@ Encodings:
     * https://github.com/python/cpython/blob/main/Lib/encodings/iso8859_2.py
     * https://github.com/python/cpython/blob/main/Lib/encodings/cp1250.py
     * https://github.com/python/cpython/blob/main/Lib/encodings/utf_8.py
+
+
+SetUp
+-----
+>>> from pathlib import Path
+>>> Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 
 ASCII Table

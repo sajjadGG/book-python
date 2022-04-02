@@ -1,3 +1,8 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 ORM About
 =========
 * ORM - Object Relational Mapping
@@ -712,7 +717,7 @@ setting up of foreign key column values is handled automatically.
 
 >>> alex.missions[1].astronaut = mark
 >>>
->>>alex.missions
+>>> alex.missions
 [Mission(year=2030, name='Ares1')]
 >>>
 >>> mark.missions

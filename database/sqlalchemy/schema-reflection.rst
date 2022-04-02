@@ -1,3 +1,8 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 Schema Reflection
 =================
 * SQLAlchemy allows for database reflection

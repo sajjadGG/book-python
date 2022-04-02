@@ -13,8 +13,7 @@ Syntax
     x = [1, 2, 3, 4, 2, 3, 2]
 
     plt.hist(x)
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Histogram
 ---------
@@ -30,7 +29,7 @@ Histogram
            48, 58, 55, 23, 38, 54, 19, 31, 64, 91, 22, 1, 46, 19, 31]
 
     plt.hist(age, bins=4)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -41,7 +40,7 @@ Histogram
            48, 58, 55, 23, 38, 54, 19, 31, 64, 91, 22, 1, 46, 19, 31]
 
     plt.hist(age, bins=10, rwidth=0.8)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -54,7 +53,7 @@ Histogram
     bins = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
 
     plt.hist(age, bins, rwidth=0.8)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -67,7 +66,7 @@ Histogram
     bins=[0, 6, 18, 25, 65, max(age)]
 
     plt.hist(age, bins, rwidth=0.8)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -81,7 +80,7 @@ Histogram
     x = mu + sigma * np.random.randn(10000)
 
     plt.hist(x, bins=50, rwidth=0.9)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -93,7 +92,7 @@ Histogram
     x = np.random.normal(size=10000)
 
     plt.hist(x, bins=50)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 Histogram chart
 ---------------
@@ -119,8 +118,7 @@ Histogram chart
     plt.title('Histogram')
     plt.legend()
 
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Examples
 --------
@@ -165,7 +163,7 @@ Normal Distribution
     plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
     plt.axis([40, 160, 0, 0.03])
     plt.grid(True)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/matplotlib-plt-hist-text.png
 

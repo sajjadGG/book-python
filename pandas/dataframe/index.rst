@@ -160,6 +160,10 @@ Use Case - 0x01
 ---------------
 >>> import pandas as pd
 >>>
+>>> pd.set_option('display.width', 250)
+>>> pd.set_option('display.max_columns', 20)
+>>> pd.set_option('display.max_rows', 30)
+>>>
 >>>
 >>> def quantile25(column):
 ...     return column.quantile(.25)

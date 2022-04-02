@@ -1,9 +1,3 @@
-.. testsetup::
-
-    from pathlib import Path
-    Path('/tmp/myfile.txt').unlink(missing_ok=True)
-
-
 File Encoding
 =============
 * ``utf-8`` - a.k.a. Unicode - international standard (should be always used!)

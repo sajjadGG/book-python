@@ -1,3 +1,8 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 Query Count
 ===========
 * Count
@@ -24,7 +29,7 @@ Count User records, without sing a subquery
 >>> from sqlalchemy import func
 >>>
 >>>
->>> query = select(func.count(User.id)
+>>> query = select(func.count(User.id))
 >>>
 >>> with session.begin() as db:
 ...     result = db.execute(query)
@@ -55,7 +60,7 @@ Count distinct 'name' values
 >>>
 >>> query = (
 ...     select(func.count(distinct(User.id)).
-...     group_by(User.name))
+...     group_by(User.name)))
 >>>
 >>> with session.begin() as db:
 ...     result = db.execute(query)

@@ -125,8 +125,7 @@ Handwritten digits recognition (MNIST) with ``sklearn``
         ax.set_xticks(())
         ax.set_yticks(())
 
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Handwritten digits recognition (MNIST) with ``tensorflow``
 ----------------------------------------------------------

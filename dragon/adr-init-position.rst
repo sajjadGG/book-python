@@ -1,8 +1,6 @@
 .. testsetup::
 
-    class Dragon:
-        def __init__(*args, **kwargs):
-            pass
+    # doctest: +SKIP_FILE
 
 
 Dragon ADR Init Position
@@ -13,6 +11,13 @@ Dragon ADR Init Position
 Problem
 -------
 * Create dragon at x=50, y=120 position
+
+
+SetUp
+-----
+>>> class Dragon:
+...     def __init__(*args, **kwargs):
+...         pass
 
 
 Option 1

@@ -12,8 +12,7 @@ Matplotlib Style
     y = np.sin(x)
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Figure Anatomy
 --------------
@@ -46,7 +45,7 @@ Annotations
     plt.ylabel('Y axis')
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -60,7 +59,7 @@ Annotations
     plt.text(4.25, 0.5, r'$sin(x)$')
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -78,8 +77,7 @@ Annotations
         bbox={'boxstyle': 'round', 'facecolor': '#eeeeee'})  # Text box styling
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Axis Limits
 -----------
@@ -96,8 +94,7 @@ Axis Limits
     plt.ylim(-2.0, 2.0)
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Legend
 ------
@@ -114,7 +111,7 @@ Legend
 
     plt.plot(x, y, label='sin(x)')
     plt.legend(loc='upper right')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -127,8 +124,7 @@ Legend
 
     plt.plot(x, y, label='sin(x)')
     plt.legend(loc='best')
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Ticks
 -----
@@ -149,7 +145,7 @@ Ticks
     plt.xticks(rotation=45)
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -162,7 +158,7 @@ Ticks
 
     plt.xticks(x, labels, rotation='vertical')
     plt.plot(x, y, marker='o')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -179,7 +175,7 @@ Ticks
         color = 'red')
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -203,7 +199,7 @@ Ticks
         labelbottom=True)
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -229,7 +225,7 @@ Ticks
     ax.set_ylim(-2, 2)
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 Spines
 ------
@@ -249,7 +245,7 @@ Spines
     ax.spines['left'].set_visible(False)
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -275,8 +271,7 @@ Spines
         labelbottom=True)
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Grid
 ----
@@ -292,7 +287,7 @@ Grid
     plt.grid(True)
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -306,7 +301,7 @@ Grid
     plt.grid(alpha=0.2)
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -333,8 +328,7 @@ Grid
     ax.grid(which='major', alpha=0.8, color='red')
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Trend Line
 ----------
@@ -353,7 +347,7 @@ Trend Line
 
     plt.plot(x, y, label='data')
     plt.plot(x, trend(x), color='red', linestyle='--', label='trend')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -369,9 +363,7 @@ Trend Line
 
     plt.plot(x, y, label='sin(x)')
     plt.plot(x, trend(x), color='red', linestyle='--', label='trend')
-    plt.show()
-
-
+    plt.show()  # doctest: +SKIP
 
 Styles
 ------
@@ -398,4 +390,4 @@ Styles
     plt.style.use('fivethirtyeight')
 
     plt.plot(x, y, label='sin(x)')
-    plt.show()
+    plt.show()  # doctest: +SKIP

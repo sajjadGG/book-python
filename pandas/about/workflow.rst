@@ -54,7 +54,7 @@ Working with dirty CSV
 >>>
 >>> df = pd.read_csv(DATA, skiprows=1, names=COLUMNS)
 >>> df['species'].replace(label_encoder, inplace=True)
->>> plot = df.plot(kind='density')
+>>> plot = df.plot(kind='density')  # doctest: +SKIP
 
 
 Working with CSV
@@ -153,7 +153,7 @@ Hist Plot
 >>>
 >>> df = pd.read_csv(DATA)
 >>> plot = df.hist()
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-about-workflow-plot-hist.png
 
@@ -170,7 +170,7 @@ Density Plot
 >>>
 >>> df = pd.read_csv(DATA)
 >>> plot = df.plot(kind='density', subplots=True, layout=(2,2), sharex=False)
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-about-workflow-plot-density.png
 
@@ -187,7 +187,7 @@ Box Plot
 >>>
 >>> df = pd.read_csv(DATA)
 >>> plot = df.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-about-workflow-plot-box.png
 
@@ -205,7 +205,7 @@ Scatter matrix
 >>>
 >>> df = pd.read_csv(DATA)
 >>> plot = scatter_matrix(df)
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-about-workflow-plot-scatter-matrix.png
 

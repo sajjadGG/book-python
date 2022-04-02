@@ -1,9 +1,3 @@
-.. testsetup::
-
-    def expensive_func1(): ...
-    def expensive_func2(): ...
-
-
 Logging
 =======
 * Do not print
@@ -700,6 +694,9 @@ expensive, and you may want to avoid doing it if the logger will just throw
 away your event. To decide what to do, you can call the isEnabledFor() method
 which takes a level argument and returns true if the event would be created
 by the Logger for that level of call. You can write code like this:
+
+>>> def expensive_func1(): ...
+>>> def expensive_func2(): ...
 
 >>> import logging
 >>>

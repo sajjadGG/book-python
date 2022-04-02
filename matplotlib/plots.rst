@@ -24,8 +24,7 @@ Pie Chart
         radius=2,            # size of the chart
     )
 
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Donut Chart
 -----------
@@ -56,8 +55,7 @@ Donut Chart
            colors=inner_colors,
            wedgeprops={'width': size, 'edgecolor': 'white'})
 
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Stack Plot
 ----------
@@ -78,8 +76,7 @@ Stack Plot
 
     plt.stackplot(day, todo, in_progress, in_test, in_review, done, labels=labels, colors=colors)
     plt.legend(loc='upper left')
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Box Plot
 --------
@@ -93,7 +90,7 @@ Box Plot
                65, 54, 44, 43, 42, 48]
 
     plt.boxplot(age)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -105,7 +102,7 @@ Box Plot
     x = np.random.normal(size=1000)
 
     plt.boxplot(x)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -121,7 +118,7 @@ Box Plot
     data = [a, b, c, d]
 
     plt.boxplot(data)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -135,8 +132,7 @@ Box Plot
     data = spread + center + flier_high + flier_low
 
     plt.boxplot(data)
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Error
 -----
@@ -151,7 +147,7 @@ Error
     e = [0.5, 1.0, 1.5, 0.7]
 
     plt.errorbar(x, y, yerr=e, fmt='o')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
@@ -163,4 +159,4 @@ Error
     e = [0.5, 1.0, 1.5, 0.7]
 
     plt.errorbar(x, y, yerr=e, fmt='o-')
-    plt.show()
+    plt.show()  # doctest: +SKIP

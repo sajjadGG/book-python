@@ -1,3 +1,8 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 Dragon ADR Damage Take
 ======================
 * ADR - Architecture Design Records

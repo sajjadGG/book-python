@@ -1,16 +1,14 @@
-.. testsetup::
-
-    from pathlib import Path
-    Path('/tmp/myfile.txt').unlink(missing_ok=True)
-
-.. testsetup::
-
-    from shutil import rmtree
-    rmtree('/tmp/a', ignore_errors=True)
-
-
 File Path Modify
 ================
+
+SetUp
+-----
+>>> from pathlib import Path
+>>> from shutil import rmtree
+>>>
+>>> rmtree('/tmp/a', ignore_errors=True)
+>>> Path('/tmp/myfile.txt').unlink(missing_ok=True)
+
 
 Create Directories
 ------------------

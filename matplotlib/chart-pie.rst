@@ -44,8 +44,7 @@ Simple Chart
 
     plt.title('Pie Chart')
 
-    plt.show()
-
+    plt.show()  # doctest: +SKIP
 
 Donut Pie Chart
 ---------------
@@ -67,7 +66,7 @@ Donut Pie Chart
            wedgeprops=dict(width=size, edgecolor='w'))
 
     ax.set(aspect="equal", title='Pie plot with `ax.pie`')
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/matplotlib-plt-pie-nested.png
 

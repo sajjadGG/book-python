@@ -19,7 +19,7 @@ Simple Box Charts
     plt.boxplot(data)
     plt.title('Box Plot')
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/chart-box-simple.png
 
@@ -44,7 +44,7 @@ Hide Outliers
     plt.boxplot(data)
     plt.title('Box Plot')
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/chart-box-outliers.png
 
@@ -69,6 +69,6 @@ Multiple Box Charts
     plt.boxplot(data)
     plt.title('Box Plot')
 
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. figure:: img/chart-box-multiple.png

@@ -22,17 +22,17 @@ df['value'].describe()
 
 # Zobaczmy jak dane się rozkładają
 df['value'].plot(kind='density')
-plt.show()
+plt.show()  # doctest: +SKIP
 
 # Jakie wartości padają w naszych danych
 df['value'].hist(bins=3)
-plt.show()
+plt.show()  # doctest: +SKIP
 
 df['value'].hist(bins=10)
-plt.show()
+plt.show()  # doctest: +SKIP
 
 df.loc['2019-09-24', 'value'].hist(bins=10)
-plt.show()
+plt.show()  # doctest: +SKIP
 
 # próg szumu (poniżej to szum, powyżej sygnał)
 THRESHOLD = 20*LUX
@@ -69,7 +69,7 @@ plot = (active
      .set_yticklabels(['seep', 'awake'])
 )
 
-plt.show()
+plt.show()  # doctest: +SKIP
 
 # THRESHOLD = 20*LUX
 # data = pd.cut(

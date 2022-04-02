@@ -1,10 +1,3 @@
-.. testsetup::
-
-    # Simulate user input (for test automation)
-    from unittest.mock import MagicMock
-    input = MagicMock(side_effect=['1'])
-
-
 Loop While Break
 ================
 * Force exit the loop
@@ -34,8 +27,12 @@ No Input
 --------
 * if user hit enter, without typing a number
 
->>> # doctest: +SKIP
-... while True:
+Simulate user input (for test automation):
+
+>>> from unittest.mock import MagicMock
+>>> input = MagicMock(side_effect=['1', '2', '3', ''])
+
+>>> while True:
 ...     number = input('Type number: ')
 ...
 ...     if not number:

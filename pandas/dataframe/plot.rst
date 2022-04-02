@@ -227,14 +227,14 @@ Line Plot
 * default
 
 >>> plot = df.plot(kind='line')
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-line.png
 
     Line Plot
 
 >>> plot = df.plot(kind='line', subplots=True)
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-line-subplots.png
 
@@ -245,7 +245,7 @@ Line Plot
 ...                layout=(2,2),
 ...                sharex=True,
 ...                sharey=True)
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-line-layout.png
 
@@ -255,7 +255,7 @@ Line Plot
 Vertical Bar Plot
 -----------------
 >>> plot = df.plot(kind='bar', subplots=True, layout=(2,2))
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-bar.png
 
@@ -275,7 +275,7 @@ Horizontal Bar Plot
 ...                legend='upper right',
 ...                grid=True,
 ...                figsize=(10,10))
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-barh.png
 
@@ -288,7 +288,7 @@ Histogram
 ...                rwidth=0.8,
 ...                xlabel='centimeters',
 ...                title='Iris Dimensions Frequency')
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-hist.png
 
@@ -302,14 +302,14 @@ Histogram
 ...                layout=(2,2),
 ...                sharex=True,
 ...                sharey=True)
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-hist-layout.png
 
     Histogram
 
 >>> plot = df.hist()
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-hist.png
 
@@ -322,7 +322,7 @@ Histogram
 >>>
 >>> _ = plot.xaxis.set_ticks(ticks=[4.9, 6.1, 7.3],
 ...                          labels=['small', 'medium', 'large'])
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-hist-categories.png
 
@@ -332,7 +332,7 @@ Histogram
 Boxplot
 -------
 >>> plot = df.plot(kind='box')
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-box.png
 
@@ -344,7 +344,7 @@ Boxplot
 ...                sharex=False,
 ...                sharey=False)
 >>>
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-box-layout.png
 
@@ -356,7 +356,7 @@ Kernel Density Estimation Plot
 * Also known as ``kind='kde'`` - Kernel Density Estimation
 
 >>> plot = df.plot(kind='density')
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-density.png
 
@@ -367,7 +367,7 @@ Kernel Density Estimation Plot
 ...                layout=(2,2),
 ...                sharex=False)
 >>> plt.subplots_adjust(hspace=0.5, wspace=0.5)  # margins between charts
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-density-margin.png
 
@@ -377,7 +377,7 @@ Kernel Density Estimation Plot
 Area Plot
 ---------
 >>> plot = df.plot(kind='area')
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-area.png
 
@@ -412,7 +412,7 @@ Pie Plot
 ...                  title='Sepal Length\nsmall: 0.0 to 3.0\nmedium: 3.0 to 5.0\nlarge: 7.0 to inf',
 ...                  figsize=(10,10))
 >>>
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-pie.png
 
@@ -422,14 +422,14 @@ Pie Plot
 Scatter Plot
 ------------
 >>> plot = df.plot(kind='scatter', x='sepal_length', y='sepal_width')
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-scatter-sepal.png
 
     Scatter plot: Sepal Length vs Sepal Width
 
 >>> plot = df.plot(kind='scatter', x='petal_length', y='petal_width')
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-scatter-petal.png
 
@@ -444,7 +444,7 @@ Scatter Plot
 ...                  y='sepal_width',
 ...                  colormap='viridis',
 ...                  c='species')
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-scatter-viridis.png
 
@@ -454,7 +454,7 @@ Scatter Plot
 Hexbin Plot
 -----------
 >>> plot = df.plot(kind='hexbin', x='petal_length', y='petal_width')
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-hexbin.png
 
@@ -469,7 +469,7 @@ Scatter matrix
 >>> from pandas.plotting import scatter_matrix
 >>>
 >>> plot = scatter_matrix(df)
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-scattermatrix.png
 
@@ -479,7 +479,7 @@ Scatter matrix
 >>> colors = df['species'].replace({'setosa': 0, 'virginica': 1, 'versicolor': 2})  # colors must be numerical
 >>>
 >>> plot = scatter_matrix(data, c=colors)
->>> plt.show()
+>>> plt.show()  # doctest: +SKIP
 
 .. figure:: img/pandas-dataframe-plot-scattermatrix-colors.png
 

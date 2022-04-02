@@ -15,6 +15,10 @@ SetUp
 >>> import numpy as np
 >>> np.random.seed(0)
 >>>
+>>> pd.set_option('display.width', 250)
+>>> pd.set_option('display.max_columns', 20)
+>>> pd.set_option('display.max_rows', 30)
+>>>
 >>>
 >>> df1999 = pd.DataFrame(
 ...     columns = ['Morning', 'Noon', 'Evening', 'Midnight'],

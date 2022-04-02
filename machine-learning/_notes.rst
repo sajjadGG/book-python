@@ -1,3 +1,8 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 Notes
 =====
 
@@ -243,13 +248,13 @@ Regresja liniowa
 
     plt.scatter(diabetes_X_train, diabetes_y_train,  color='red')
     plt.plot(diabetes_X_test, diabetes_y_pred, color='blue', linewidth=3)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 .. code-block:: python
 
     plt.scatter(diabetes_X_test, diabetes_y_test,  color='black')
     plt.plot(diabetes_X_test, diabetes_y_pred, color='blue', linewidth=3)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 * Zmienne lepiej opisujące (BMI) - mocny współczynnik mówiący o modelu
 * Zmienne gorzej opisujące (sex) kiepsko determinuje czy ktoś ma cukrzycę
@@ -290,7 +295,7 @@ Zadanie:
     plt.scatter(diabetes_X_test, diabetes_y_test,  color='black')
     plt.scatter(diabetes_X_train, diabetes_y_train,  color='red')
     plt.plot(diabetes_X_test, diabetes_y_pred, color='blue', linewidth=3)
-    plt.show()
+    plt.show()  # doctest: +SKIP
 
 
 .. code-block:: python
@@ -323,7 +328,7 @@ Zadanie:
     plt.scatter(diabetes_X_test[:,2], diabetes_y_test,  color='black')
     plt.scatter(diabetes_X_train[:,2], diabetes_y_train,  color='red')
     plt.plot(diabetes_X_test[:,2], diabetes_y_pred, color='blue', linewidth=3)
-    plt.show()
+    plt.show()  # doctest: +SKIP
     # Wykres będzie chaotyczny,
 
 Ciąg dalszy:
