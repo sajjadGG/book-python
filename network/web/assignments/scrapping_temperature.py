@@ -56,7 +56,6 @@ for tr in table_rows:
 
 
 
-import pandas as pd
-
-df = pd.DataFrame(result)
-df.set_index('wind speed', inplace=True)
+# import pandas as pd
+# df = pd.DataFrame(result)
+# df.set_index('wind speed', inplace=True)
