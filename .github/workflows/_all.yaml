@@ -8,7 +8,7 @@ jobs:
     container: python:3.10.4
     steps:
       - uses: actions/checkout@v2
-      - run: pip install -r ${{ matrix.directory }}/requirements.txt
+      - run: pip install -r requirements.txt
       - run: python run.py --doctest
 
 
