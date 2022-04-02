@@ -42,4 +42,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: pip install -r ${{ matrix.directory }}/requirements.txt
-      - run: python run.py --doctest
+      - run: python run.py --doctest ${{ matrix.directory }}
