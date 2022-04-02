@@ -120,13 +120,13 @@ if __name__ == '__main__':
                         nargs='?', metavar='CHAPTER', action=TestDoctest,
                         help='Test ReST files')
 
-    parser.add_argument('-i', '--requirements-install',
+    parser.add_argument('-i', '--install',
                         nargs='?', metavar='CHAPTER', action=RequirementsInstall,
                         help='Install requirements')
 
-    parser.add_argument('-r', '--requirements-gather',
+    parser.add_argument('-r', '--gather',
                         nargs=0, action=RequirementsGather,
-                        help='Create main requirements')
+                        help='Gather chapter requirements to main requirements')
 
     parser.parse_args()
 
