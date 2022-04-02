@@ -17,7 +17,7 @@ Install
 -------
 .. code-block:: console
 
-    $ pip install beautifulsoup4
+    $ pip install BeautifulSoup4
 
 Parser
 ------
@@ -173,7 +173,7 @@ English:
     X. Run doctests - all must succeed
 
 Polish:
-    1. Za pomocą beautifulsoup4 ze strony https://github.com/AstroMatt/book-python/blob/master/numerical-analysis/data/iris-dirty.csv pobierz dane zbioru Irysów.
+    1. Za pomocą BeautifulSoup4 ze strony https://github.com/AstroMatt/book-python/blob/master/numerical-analysis/data/iris-dirty.csv pobierz dane zbioru Irysów.
     2. Parsując kod HTML oczyść dane.
     3. Skasuj pierwszy wiersz nagłówkowy.
     4. Kolumny nazwij: ``Sepal length``, ``Sepal width``, ``Petal length``, ``Petal width``, ``Species``
@@ -199,7 +199,7 @@ Polish:
         c. https://www.worldspaceflight.com/bios/eva/eva3.php
         d. https://www.worldspaceflight.com/bios/eva/eva4.php
 
-    2. Skrapuj stronę wykorzystując ``beautifulsoup4``
+    2. Skrapuj stronę wykorzystując ``BeautifulSoup4``
     3. Przygotuj plik CSV z danymi dotyczącymi spacerów kosmicznych
     4. Spróbuj to samo zrobić za pomocą ``pandas.read_html()``:
 
@@ -207,4 +207,3 @@ Polish:
         b. Dla częściowo sparsowanej strony, np. wyciągniętej tabelki
 
     5. Uruchom doctesty - wszystkie muszą się powieść
-

@@ -57,7 +57,7 @@ Konieczna będzie instalacja następujących pakietów:
     * ``requests``
     * ``lxml``
     * ``html5lib``
-    * ``beautifulsoup4``
+    * ``BeautifulSoup4``
     * ``xlrd``
     * ``scipy``
 
@@ -77,7 +77,7 @@ internetu.
                  requests \
                  lxml \
                  html5lib \
-                 beautifulsoup4 \
+                 BeautifulSoup4 \
                  xlrd \
                  scipy
 
@@ -98,7 +98,7 @@ Konieczna będzie instalacja następujących pakietów:
     * ``requests``
     * ``lxml``
     * ``html5lib``
-    * ``beautifulsoup4``
+    * ``BeautifulSoup4``
     * ``xlrd``
     * ``scipy``
     * ``scikit-learn``
@@ -125,7 +125,7 @@ internetu.
                  requests \
                  lxml \
                  html5lib \
-                 beautifulsoup4 \
+                 BeautifulSoup4 \
                  xlrd \
                  scipy \
                  scikit-learn \

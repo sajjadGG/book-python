@@ -1,23 +1,20 @@
 ipython
 
-# FastAPI
-FastAPI
-uvicorn
+fastapi
 uvicorn[standard]
-pydantic
 pydantic[email]  # pip install 'pydantic[email]'
 
-# Database
+## Database
 sqlalchemy
 aiosqlite
 alembic
 
-# Auth
+## Auth
 bcrypt
 passlib[bcrypt]
 python-jose[cryptography]
 python-multipart
 
-# Test
+## Test
 requests
 httpx

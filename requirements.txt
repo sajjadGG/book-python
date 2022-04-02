@@ -1,33 +1,52 @@
+
+# atlassian-python-api
+# django
+# django-debug-toolbar
+# dnspython
+# jupyter
+# keras
+# matplotlib
+# mypy
+# numpy
+# pandas
+# paramiko
+# pillow
+# plotly
+# pycodestyle
+# pysftp
+# scikit-learn
+# scipy
+# suds
+# tensorflow
+# torch
+# zeep
+## Auth
+## Database
+## Test
+## code examples in oop/operators.rst
+BeautifulSoup4
+aiosqlite
+alembic
+bcrypt
+fastapi
+html5lib
+httpx
+ipython
+lxml
+matplotlib
+numpy
+openpyxl
+pandas
+passlib[bcrypt]
+psycopg2-binary
+pydantic[email]  # pip install 'pydantic[email]'
+python-jose[cryptography]
+python-multipart
+requests
+scipy
 sphinx==4.5.*
 sphinx_rtd_theme
 sphinxcontrib-bibtex
-recommonmark
-nbsphinx
-ipython
-
-# pydata-sphinx-theme
-# sphinxcontrib-book
-# sphinxjp.themes.revealjs
-
-
-# Required by doctests for code listings
-numpy
-pandas
-matplotlib
-django
-lxml
-xlrd
-openpyxl
-sklearn
-
-# FastAPI
-fastapi
-pydantic
-pydantic[email]
 sqlalchemy
 uvicorn[standard]
-passlib[bcrypt]
-python-jose[cryptography]
-python-multipart
-beautifulsoup4
-psycopg2-binary
+xlrd

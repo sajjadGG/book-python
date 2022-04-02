@@ -26,13 +26,24 @@ def run(cmd, timeout=None):
             print(stdout.decode())
     return process.returncode
 
-    # for line in iter(process.stdout.readline, b''):
-    #     print(line.decode().strip())
-    # process.wait()
-    # return process.returncode
+
+class RequirementsGather(Action):
+    def __call__(self, parser, namespace, chapter, *args, **kwargs):
+        run('clear && printf "\e[3J"')  # noqa
+        run(f'cat */requirements.txt |sort |uniq > requirements.txt')
+        log.info('Requirements Gathered in requirements.txt')
 
 
-class Html(Action):
+class RequirementsInstall(Action):
+    def __call__(self, parser, namespace, chapter, *args, **kwargs):
+        if chapter is None:
+            chapter = '.'
+        run('clear && printf "\e[3J"')  # noqa
+        run(f'pip install -r {chapter}/requirements.txt')
+        log.info('Requirements installed')
+
+
+class Build(Action):
     def __call__(self, parser, namespace, chapter, *args, **kwargs):
         run('clear && printf "\e[3J"')  # noqa
         if chapter is None:
@@ -99,14 +110,26 @@ class TestDoctest(Action):
 
 
 if __name__ == '__main__':
-    parser = ArgumentParser(prog='Make')
+    parser = ArgumentParser()
 
-    parser.add_argument('--html',
-                        nargs='?', metavar='CHAPTER', action=Html,
+    parser.add_argument('-b', '--build',
+                        nargs='?', metavar='CHAPTER', action=Build,
                         help='Build documentation in html format')
 
-    parser.add_argument('--doctest',
+    parser.add_argument('-t', '--doctest',
                         nargs='?', metavar='CHAPTER', action=TestDoctest,
                         help='Test ReST files')
 
-    args = parser.parse_args()
+    parser.add_argument('-i', '--requirements-install',
+                        nargs='?', metavar='CHAPTER', action=RequirementsInstall,
+                        help='Install requirements')
+
+    parser.add_argument('-r', '--requirements-gather',
+                        nargs=0, action=RequirementsGather,
+                        help='Create main requirements')
+
+    parser.parse_args()
+
+    if len(sys.argv) == 1:
+        parser.print_help()
+        exit(1)

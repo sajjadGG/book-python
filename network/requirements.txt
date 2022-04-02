@@ -3,7 +3,7 @@ sphinx_rtd_theme
 sphinxcontrib-bibtex
 requests
 
-beautifulsoup4
+BeautifulSoup4
 lxml
 
 # dnspython

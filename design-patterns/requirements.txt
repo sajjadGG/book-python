@@ -2,5 +2,5 @@ sphinx==4.5.*
 sphinx_rtd_theme
 
 
-# code examples in oop/operators.rst
+## code examples in oop/operators.rst
 numpy
