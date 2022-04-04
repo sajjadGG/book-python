@@ -164,6 +164,11 @@ Check for NaN values:
 >>> np.isnan(a)
 array([False, False,  True])
 
+NaN Value:
+
+>>> np.array([np.nan]).astype(int)
+array([-9223372036854775808])
+
 
 Isinf vs Isnan
 --------------
