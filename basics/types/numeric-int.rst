@@ -1,8 +1,10 @@
 Numeric Int
 ===========
+* Represents integer
+* Could be both signed and unsigned
 * There is no maximal or minimal ``int`` value
 * Default ``int`` size is 64 bit
-* Python 3 automatically extends ``int`` when need bigger number
+* Python automatically extends ``int`` when need bigger number
 
 
 Syntax

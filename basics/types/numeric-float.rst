@@ -1,9 +1,10 @@
 Numeric Float
 =============
+* Represents floating point number (vide IEEE-754)
+* Could be both signed and unsigned
+* Default ``float`` size is 64 bit
+* Python automatically extends ``float`` when need bigger number
 
-
-Syntax
-------
 >>> data = 1.337
 >>> data = +1.337
 >>> data = -1.337
@@ -11,7 +12,9 @@ Syntax
 
 Without Zero Notation
 ---------------------
-* Without leading or trailing zero. Used by ``numpy``.
+* ``.44`` - notation without leading zero
+* ``69.`` - notation without trailing zero
+* Used by ``numpy``
 
 Leading zero:
 

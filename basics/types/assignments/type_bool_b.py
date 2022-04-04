@@ -40,7 +40,7 @@ Tests:
     >>> a
     True
     >>> b
-    True
+    False
     >>> c
     False
     >>> d
@@ -99,7 +99,7 @@ i = ...
 
 # Solution
 a = True
-b = True
+b = False
 c = False
 d = True
 e = False
