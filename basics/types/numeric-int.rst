@@ -1,11 +1,15 @@
 Numeric Int
 ===========
 * There is no maximal or minimal ``int`` value
-* Python 3 dynamically extends ``int`` when it's too big
+* Default ``int`` size is 64 bit
+* Python 3 automatically extends ``int`` when need bigger number
 
 
 Syntax
 ------
+* Signed and Unsigned
+* Use ``_`` for thousand separator
+
 >>> data = 1
 >>> data = +1
 >>> data = -1
@@ -21,6 +25,11 @@ You can use ``_`` for easier read especially with big numbers:
 
 Type Casting
 ------------
+* Builtin function ``int()`` converts argument to ``int``
+* It is not rounding
+* Works with strings, if all characters could be converted to ``int``
+* Supports only: ``+``, ``-`` and ``_`` (underscore)
+
 Builtin function ``int()`` converts argument to ``int``:
 
 >>> int(1)
@@ -56,6 +65,9 @@ Builtin function ``int()`` converts argument to ``int``:
 
 Type Casting Errors
 -------------------
+* Works with strings, if all characters could be converted to ``int``
+* It is not validator or parser to extract all numbers from ``str``
+
 Builtin function ``int()`` fails when in argument there are parameters
 other than a digit, ``+`` or ``-`` sign and ``_``
 
@@ -87,22 +99,28 @@ ValueError: invalid literal for int() with base 10: '-3,1337'
 Type Checking
 -------------
 * ``type()`` - Returns type of an argument
+* ``isinstance()`` - Allows for checking if value is expected type
+* To check if type is what you expected use ``type()`` or ``isinstance()``
+* Later you will learn the difference
 
 >>> x = 1
->>>
 >>> type(x)
 <class 'int'>
->>>
+
+
+>>> x = 1
 >>> type(x) is int
 True
 
 >>> x = 1
->>>
 >>> isinstance(x, int)
 True
 
 Rounding
 --------
+* Builtin function ``int()`` does not round numbers - only converts to ``int``
+* Use ``round()`` for numbers rounding
+
 Builtin function ``int()`` does not round numbers:
 
 >>> int(1.111)
@@ -122,6 +140,9 @@ Builtin function ``round()`` does that:
 
 Built-in Functions
 ------------------
+* ``abs()`` - Absolute value
+* ``pow()`` - Raise number to the power of exponential (the same as ``**``)
+
 Absolute value:
 
 >>> abs(1)
@@ -157,6 +178,36 @@ Use Case - 0x01
 2057
 >>> duration // SECOND
 123456
+
+
+Use Case - 0x02
+---------------
+>>> m = 1
+>>> km = 1000 * m
+>>> mi = 1652 * m
+>>>
+>>>
+>>> distance = 123*mi
+>>>
+>>> distance // m
+203196
+>>> distance // km
+203
+
+
+Use Case - 0x03
+---------------
+>>> PLN = 1
+>>> EUR = 4.63 * PLN
+>>> USD = 4.20 * PLN
+>>>
+>>>
+>>> cena = 100*PLN
+>>>
+>>> round(cena // EUR)
+21
+>>> round(cena // USD)
+23
 
 
 Assignments

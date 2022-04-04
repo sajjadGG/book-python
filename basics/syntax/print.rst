@@ -4,6 +4,10 @@ Syntax Print
 
 String
 ------
+* Either quotes (") or apostrophes (') will work
+* Pick one and be consistent
+* Do not mix - ``str`` opening and closing characters must be the same
+
 Either quotes (") or apostrophes (') will work. This topic will be covered
 in depth while talking about string type.
 
@@ -21,10 +25,10 @@ SyntaxError: unterminated string literal (detected at line 1)
 
 String Interpolation
 --------------------
-* String interpolation will find and substitute variable
-* F-string (since Python 3.6)
-* ``str.format()`` (since Python 3.0)
-* %-string (legacy)
+* String interpolation will substitute variable
+* F-string were introduced in Python 3.6
+* ``str.format()`` exists since Python 3.0
+* ``%-string`` is old (legacy) style from Python 1 and 2 era
 * More information in `String Literals`
 
 >>> name = 'Mark'
@@ -69,7 +73,7 @@ Print
 * Prints on the screen
 * Print string
 * Print variable
-* Print interpolated string
+* Print formatted (interpolated) string
 * More information in `Builtin Printing`
 
 Print string:
@@ -97,7 +101,8 @@ Hello Mark
 End of Lines
 ------------
 * No semicolon (``;``) at the end of lines
-* :pep:`8` -- Style Guide for Python Code: Use ``\n`` for newline
+* Use ``\n`` for newline
+* Do not add space after ``\n`` character
 
 >>> print('Hello World')
 Hello World

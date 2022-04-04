@@ -1,25 +1,20 @@
 Syntax Style Guide
 ==================
+* :pep:`8` -- Style Guide for Python Code
+* :pep:`20` -- The Zen of Python
 
 
 Line Length
 -----------
-* Most controversial rule
 * :pep:`8` -- Style Guide for Python Code: 79 for line with code
 * :pep:`8` -- Style Guide for Python Code: 72 for line with comment
-* ``black``: 90-ish
+* ``black``: 88
 * ``django``: 120 for code, 300 for models
-
-
-Good practices
---------------
-* :pep:`8` -- Style Guide for Python Code
-* :pep:`20` -- The Zen of Python
-* PEP8 song https://youtu.be/hgI0p1zf31k
 
 
 The Zen of Python
 -----------------
+* :pep:`20` -- The Zen of Python
 * Tim Peters
 * ``import this``
 
@@ -42,3 +37,8 @@ The Zen of Python
 17. **If the implementation is hard to explain, it's a bad idea.**
 18. If the implementation is easy to explain, it may be a good idea.
 19. Namespaces are one honking great idea -- let's do more of those!
+
+
+Further Reading
+---------------
+* PEP8 song https://youtu.be/hgI0p1zf31k

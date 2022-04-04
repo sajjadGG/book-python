@@ -1,13 +1,15 @@
 Syntax Indentation
 ==================
+* Python uses indentation instead of braces
+* Code indented on the same level belongs to block
+* :pep:`8` -- Style Guide for Python Code: 4 spaces indentation
+* Python throws ``IndentationError`` exception on problem
 
 
 Block Statement
 ---------------
-* Python uses indentation instead of braces
+* First line of block statement ends with semicolon ``:``
 * Code indented on the same level belongs to block
-* :pep:`8` -- Style Guide for Python Code: 4 spaces indentation, `no tabs <https://youtu.be/SsoOG6ZeyUI>`_
-* Python throws ``IndentationError`` exception on problem
 
 >>> if True:
 ...     print('True statement, first line')
@@ -71,6 +73,11 @@ Outer block, true statement, third line
 Inner block, true statement, first line
 Inner block, true statement, second line
 Inner block, true statement, third line
+
+
+Further Reading
+---------------
+* `Silicon Valley: Tabs vs Spaces <https://youtu.be/SsoOG6ZeyUI>`_
 
 
 .. todo:: Assignments
