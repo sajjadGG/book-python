@@ -115,7 +115,7 @@ class Doctest(Action):
 
     @staticmethod
     def count_doctests(file: Path):
-        return file.read_text().count('>>>')
+        return file.read_text().count('>>> ')
 
     @staticmethod
     def get_files(directory: str):
