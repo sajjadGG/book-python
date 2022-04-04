@@ -25,13 +25,13 @@
 ## Test
 ## code examples in oop/operators.rst
 BeautifulSoup4
+IPython
 aiosqlite
 alembic
 bcrypt
 fastapi
 html5lib
 httpx
-ipython
 lxml
 matplotlib
 numpy
