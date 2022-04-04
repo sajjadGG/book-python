@@ -23,11 +23,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert altitude is not Ellipsis, \
-    'Assign result to variable: `altitude`'
+    'Assign your result to variable `altitude`'
     >>> assert altitude_m is not Ellipsis, \
-    'Assign result to variable: `altitude_m`'
+    'Assign your result to variable `altitude_m`'
     >>> assert altitude_ft is not Ellipsis, \
-    'Assign result to variable: `altitude_ft`'
+    'Assign your result to variable `altitude_ft`'
     >>> assert type(altitude) is float, \
     'Variable `altitude` has invalid type, should be float'
     >>> assert type(altitude_m) is float, \

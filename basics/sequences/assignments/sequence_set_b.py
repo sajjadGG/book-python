@@ -47,11 +47,9 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result`'
-
+    'Assign your result to variable `result`'
     >>> assert type(result) is set, \
     'Variable `result` has invalid type, should be set'
-
     >>> assert len(result) == 22, \
     'Variable `result` length should be 22'
 

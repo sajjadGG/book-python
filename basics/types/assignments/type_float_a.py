@@ -29,11 +29,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert net is not Ellipsis, \
-    'Assign result to variable: `net`'
+    'Assign your result to variable `net`'
     >>> assert tax is not Ellipsis, \
-    'Assign result to variable: `tax`'
+    'Assign your result to variable `tax`'
     >>> assert gross is not Ellipsis, \
-    'Assign result to variable: `gross`'
+    'Assign your result to variable `gross`'
     >>> assert type(net) is float, \
     'Variable `net` has invalid type, should be float'
     >>> assert type(tax) is float, \

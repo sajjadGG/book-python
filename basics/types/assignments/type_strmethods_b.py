@@ -20,11 +20,9 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result`'
-
+    'Assign your result to variable `result`'
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
-
     >>> assert result.count('\\n') == 2, \
     'There should be only two newline characters in result'
 

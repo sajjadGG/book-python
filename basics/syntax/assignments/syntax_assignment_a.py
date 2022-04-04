@@ -15,6 +15,8 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
     >>> assert type(result) is int, \
     'Variable `result` has invalid type, should be int'
     >>> assert result == 1, \

@@ -23,6 +23,8 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
     >>> assert 'Mark Watney' in result, \

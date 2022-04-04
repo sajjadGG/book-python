@@ -21,15 +21,15 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert meters is not Ellipsis, \
-    'Assign result to variable: `meters`'
+    'Assign your result to variable `meters`'
     >>> assert kilometers is not Ellipsis, \
-    'Assign result to variable: `kilometers`'
+    'Assign your result to variable `kilometers`'
     >>> assert miles is not Ellipsis, \
-    'Assign result to variable: `miles`'
+    'Assign your result to variable `miles`'
     >>> assert nautical_miles is not Ellipsis, \
-    'Assign result to variable: `nautical_miles`'
+    'Assign your result to variable `nautical_miles`'
     >>> assert all_units is not Ellipsis, \
-    'Assign result to variable: `all_units`'
+    'Assign your result to variable `all_units`'
     >>> assert type(meters) is str, \
     'Variable `meters` has invalid type, should be str'
     >>> assert type(kilometers) is str, \

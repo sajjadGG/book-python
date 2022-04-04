@@ -28,7 +28,7 @@ Tests:
     >>> from inspect import isfunction
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result`'
+    'Assign your result to variable `result`'
 
     >>> assert isfunction(result), \
     'Variable `result` has invalid type, should be function'

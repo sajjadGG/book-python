@@ -44,11 +44,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert pO2 is not Ellipsis, \
-    'Assign result to variable: `pO2`'
+    'Assign your result to variable `pO2`'
     >>> assert gradient is not Ellipsis, \
-    'Assign result to variable: `gradient`'
+    'Assign your result to variable `gradient`'
     >>> assert altitude is not Ellipsis, \
-    'Assign result to variable: `altitude`'
+    'Assign your result to variable `altitude`'
     >>> assert type(pO2) is float, \
     'Variable `pO2` has invalid type, should be float'
     >>> assert type(gradient) is float, \

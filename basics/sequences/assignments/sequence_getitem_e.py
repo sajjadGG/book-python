@@ -34,9 +34,9 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert header is not Ellipsis, \
-    'Assign result to variable: `header`'
+    'Assign your result to variable `header`'
     >>> assert data is not Ellipsis, \
-    'Assign result to variable: `data`'
+    'Assign your result to variable `data`'
     >>> assert type(header) is tuple, \
     'Variable `header` has invalid type, should be tuple'
     >>> assert all(type(x) is tuple for x in data), \

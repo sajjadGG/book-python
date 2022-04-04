@@ -22,9 +22,9 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert ip is not Ellipsis, \
-    'Assign result to variable: `ip`'
+    'Assign your result to variable `ip`'
     >>> assert host is not Ellipsis, \
-    'Assign result to variable: `host`'
+    'Assign your result to variable `host`'
     >>> assert type(ip) is str, \
     'Variable `ip` has invalid type, should be str'
     >>> assert type(host) is str, \

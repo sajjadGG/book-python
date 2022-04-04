@@ -16,10 +16,12 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert a is not Ellipsis, 'Assign result to variable: `a`'
-    >>> assert b is not Ellipsis, 'Assign result to variable: `b`'
-    >>> assert c is not Ellipsis, 'Assign result to variable: `c`'
-
+    >>> assert a is not Ellipsis, \
+    'Assign your result to variable `a`'
+    >>> assert b is not Ellipsis, \
+    'Assign your result to variable `b`'
+    >>> assert c is not Ellipsis, \
+    'Assign your result to variable `c`'
     >>> assert type(a) is type(None), \
     'Variable `a` has invalid type, should be NoneType'
     >>> assert type(b) is type(None), \

@@ -32,17 +32,17 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert day is not Ellipsis, \
-    'Assign result to variable: `day`'
+    'Assign your result to variable `day`'
     >>> assert week is not Ellipsis, \
-    'Assign result to variable: `week`'
+    'Assign your result to variable `week`'
     >>> assert month is not Ellipsis, \
-    'Assign result to variable: `month`'
+    'Assign your result to variable `month`'
     >>> assert workday is not Ellipsis, \
-    'Assign result to variable: `workday`'
+    'Assign your result to variable `workday`'
     >>> assert workweek is not Ellipsis, \
-    'Assign result to variable: `workweek`'
+    'Assign your result to variable `workweek`'
     >>> assert workmonth is not Ellipsis, \
-    'Assign result to variable: `workmonth`'
+    'Assign your result to variable `workmonth`'
     >>> assert type(day) is int, \
     'Variable `day` has invalid type, should be int'
     >>> assert type(week) is int, \

@@ -37,26 +37,20 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert sepal_length is not Ellipsis, \
-    'Assign result to variable: `sepal_length`'
-
+    'Assign your result to variable `sepal_length`'
     >>> assert sepal_width is not Ellipsis, \
-    'Assign result to variable: `sepal_width`'
-
+    'Assign your result to variable `sepal_width`'
     >>> assert petal_length is not Ellipsis, \
-    'Assign result to variable: `petal_length`'
-
+    'Assign your result to variable `petal_length`'
     >>> assert petal_width is not Ellipsis, \
-    'Assign result to variable: `petal_width`'
+    'Assign your result to variable `petal_width`'
 
     >>> assert type(sepal_length) is float, \
     'Variable `sepal_length` has invalid type, should be float'
-
     >>> assert type(sepal_width) is float, \
     'Variable `sepal_width` has invalid type, should be float'
-
     >>> assert type(petal_length) is float, \
     'Variable `petal_length` has invalid type, should be float'
-
     >>> assert type(petal_width) is float, \
     'Variable `petal_width` has invalid type, should be float'
 

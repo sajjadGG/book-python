@@ -29,7 +29,7 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result`'
+    'Assign your result to variable `result`'
     >>> assert type(result) is tuple, \
     'Variable `result` has invalid type, should be tuple'
     >>> assert len(result) == 5, \

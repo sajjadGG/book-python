@@ -32,11 +32,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert karman_line_earth is not Ellipsis, \
-    'Assign result to variable: `karman_line_earth`'
+    'Assign your result to variable `karman_line_earth`'
     >>> assert karman_line_mars is not Ellipsis, \
-    'Assign result to variable: `karman_line_mars`'
+    'Assign your result to variable `karman_line_mars`'
     >>> assert karman_line_venus is not Ellipsis, \
-    'Assign result to variable: `karman_line_venus`'
+    'Assign your result to variable `karman_line_venus`'
     >>> assert type(karman_line_earth) is int, \
     'Variable `karman_line_earth` has invalid type, should be int'
     >>> assert type(karman_line_mars) is int, \

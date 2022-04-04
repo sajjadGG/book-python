@@ -16,7 +16,7 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result` instead of Ellipsis `...`'
+    'Assign result to variable: `result`'
     >>> assert type(result) is int, \
     'Variable `result` has invalid type, should be int'
 

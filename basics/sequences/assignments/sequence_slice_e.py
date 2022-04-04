@@ -29,11 +29,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert split is not Ellipsis, \
-    'Assign result to variable: `split`'
+    'Assign your result to variable `split`'
     >>> assert train is not Ellipsis, \
-    'Assign result to variable: `train`'
+    'Assign your result to variable `train`'
     >>> assert test is not Ellipsis, \
-    'Assign result to variable: `test`'
+    'Assign your result to variable `test`'
     >>> assert type(split) is int, \
     'Variable `split` has invalid type, should be int'
     >>> assert type(train) is list, \

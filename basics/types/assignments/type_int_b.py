@@ -37,9 +37,9 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert lunar_day is not Ellipsis, \
-    'Assign result to variable: `lunar_day`'
+    'Assign your result to variable `lunar_day`'
     >>> assert lunar_night is not Ellipsis, \
-    'Assign result to variable: `lunar_night`'
+    'Assign your result to variable `lunar_night`'
     >>> assert type(lunar_day) is int, \
     'Variable `lunar_day` has invalid type, should be int'
     >>> assert type(lunar_night) is int, \

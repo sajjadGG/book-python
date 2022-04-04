@@ -34,11 +34,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert bandwidth is not Ellipsis, \
-    'Assign result to variable: `bandwidth`'
+    'Assign your result to variable `bandwidth`'
     >>> assert size is not Ellipsis, \
-    'Assign result to variable: `size`'
+    'Assign your result to variable `size`'
     >>> assert duration is not Ellipsis, \
-    'Assign result to variable: `duration`'
+    'Assign your result to variable `duration`'
     >>> assert type(bandwidth) is int, \
     'Variable `bandwidth` has invalid type, should be int'
     >>> assert type(size) is int, \

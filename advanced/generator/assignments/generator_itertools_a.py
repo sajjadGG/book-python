@@ -23,7 +23,7 @@ Tests:
     >>> from inspect import isfunction, isgeneratorfunction
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result` instead of Ellipsis `...`'
+    'Assign result to variable: `result`'
     >>> assert type(result) is dict, \
     'Result must be a dict'
     >>> assert len(result) > 0, \

@@ -21,19 +21,19 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert a is not Ellipsis, \
-    'Assign result to variable: `a`'
+    'Assign your result to variable `a`'
     >>> assert b is not Ellipsis, \
-    'Assign result to variable: `b`'
+    'Assign your result to variable `b`'
     >>> assert c is not Ellipsis, \
-    'Assign result to variable: `c`'
+    'Assign your result to variable `c`'
     >>> assert d is not Ellipsis, \
-    'Assign result to variable: `d`'
+    'Assign your result to variable `d`'
     >>> assert e is not Ellipsis, \
-    'Assign result to variable: `e`'
+    'Assign your result to variable `e`'
     >>> assert f is not Ellipsis, \
-    'Assign result to variable: `f`'
+    'Assign your result to variable `f`'
     >>> assert g is not Ellipsis, \
-    'Assign result to variable: `g`'
+    'Assign your result to variable `g`'
     >>> assert type(a) is str, \
     'Variable `a` has invalid type, should be str'
     >>> assert type(b) is str, \

@@ -42,7 +42,7 @@ Tests:
     'Ask user to input letter and assign it to: `letter`'
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result`'
+    'Assign your result to variable `result`'
 
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'

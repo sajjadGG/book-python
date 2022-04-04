@@ -36,13 +36,13 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert armstrong_limit is not Ellipsis, \
-    'Assign result to variable: `armstrong_limit`'
+    'Assign your result to variable `armstrong_limit`'
     >>> assert stratosphere is not Ellipsis, \
-    'Assign result to variable: `stratosphere`'
+    'Assign your result to variable `stratosphere`'
     >>> assert usaf_space is not Ellipsis, \
-    'Assign result to variable: `usaf_space`'
+    'Assign your result to variable `usaf_space`'
     >>> assert iaf_space is not Ellipsis, \
-    'Assign result to variable: `iaf_space`'
+    'Assign your result to variable `iaf_space`'
     >>> assert type(armstrong_limit) is int, \
     'Variable `armstrong_limit` has invalid type, should be int'
     >>> assert type(stratosphere) is int, \

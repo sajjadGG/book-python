@@ -22,15 +22,16 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
-
-    >>> 'Hello' in result
-    True
-    >>> '\\n' in result
-    True
-    >>> 'World' in result
-    True
+    >>> assert 'Hello' in result, \
+    'Word `Hello` must be in the `result`'
+    >>> assert '\\n' in result, \
+    'Newline `\\n` must be in the `result`'
+    >>> assert 'World' in result, \
+    'Word `World` must be in the `result`'
 """
 
 # with Hello and World in separate lines

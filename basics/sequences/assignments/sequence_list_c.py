@@ -23,11 +23,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert a is not Ellipsis, \
-    'Assign result to variable: `a`'
+    'Assign your result to variable `a`'
     >>> assert b is not Ellipsis, \
-    'Assign result to variable: `b`'
+    'Assign your result to variable `b`'
     >>> assert c is not Ellipsis, \
-    'Assign result to variable: `c`'
+    'Assign your result to variable `c`'
     >>> assert type(a) is list, \
     'Variable `a` has invalid type, should be list'
     >>> assert type(b) is list, \

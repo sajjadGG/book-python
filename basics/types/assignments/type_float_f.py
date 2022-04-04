@@ -23,9 +23,9 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert emu is not Ellipsis, \
-    'Assign result to variable: `emu`'
+    'Assign your result to variable `emu`'
     >>> assert orlan is not Ellipsis, \
-    'Assign result to variable: `orlan`'
+    'Assign your result to variable `orlan`'
     >>> assert type(emu) is float, \
     'Variable `emu` has invalid type, should be float'
     >>> assert type(orlan) is float, \

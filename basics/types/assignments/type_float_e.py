@@ -23,13 +23,13 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert kph is not Ellipsis, \
-    'Assign result to variable: `kph`'
+    'Assign your result to variable `kph`'
     >>> assert mph is not Ellipsis, \
-    'Assign result to variable: `mph`'
+    'Assign your result to variable `mph`'
     >>> assert speed_limit_mph is not Ellipsis, \
-    'Assign result to variable: `speed_limit_mph`'
+    'Assign your result to variable `speed_limit_mph`'
     >>> assert speed_limit_kph is not Ellipsis, \
-    'Assign result to variable: `speed_limit_kph`'
+    'Assign your result to variable `speed_limit_kph`'
     >>> assert type(kph) is float, \
     'Variable `kph` has invalid type, should be float'
     >>> assert type(mph) is float, \

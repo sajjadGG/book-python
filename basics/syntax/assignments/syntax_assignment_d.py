@@ -18,6 +18,8 @@ Hint:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
     >>> assert type(result) is bool, \
     'Variable `result` has invalid type, should be bool'
     >>> assert result is True, \

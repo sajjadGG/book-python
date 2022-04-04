@@ -1,4 +1,4 @@
-name: Doctests
+name: Doctest
 on: push
 
 jobs:

@@ -28,11 +28,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert size_b is not Ellipsis, \
-    'Assign result to variable: `size_b`'
+    'Assign your result to variable `size_b`'
     >>> assert size_kb is not Ellipsis, \
-    'Assign result to variable: `size_kb`'
+    'Assign your result to variable `size_kb`'
     >>> assert size_Mb is not Ellipsis, \
-    'Assign result to variable: `size_Mb`'
+    'Assign your result to variable `size_Mb`'
     >>> assert type(size_b) is int, \
     'Variable `size_b` has invalid type, should be int'
     >>> assert type(size_kb) is int, \

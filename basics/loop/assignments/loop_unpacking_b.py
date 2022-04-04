@@ -25,7 +25,7 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result` instead of Ellipsis `...`'
+    'Assign your result to variable `result`'
     >>> assert type(result) is set, \
     'Result must be a set'
     >>> assert len(result) > 0, \

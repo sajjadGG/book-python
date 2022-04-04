@@ -33,7 +33,7 @@ Tests:
     >>> from pprint import pprint
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result` instead of Ellipsis `...`'
+    'Assign result to variable: `result`'
     >>> assert len(result) > 0, \
     'Result cannot be empty'
     >>> assert type(result) is list, \

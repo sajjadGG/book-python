@@ -41,11 +41,11 @@ Tests:
     >>> from os import remove; remove(FILE)
 
     >>> assert header is not Ellipsis, \
-    'Assign result to variable: `header`'
+    'Assign your result to variable `header`'
     >>> assert features is not Ellipsis, \
-    'Assign result to variable: `features`'
+    'Assign your result to variable `features`'
     >>> assert labels is not Ellipsis, \
-    'Assign result to variable: `labels`'
+    'Assign your result to variable `labels`'
     >>> assert type(header) is list, \
     'Variable `header` has invalid type, should be list'
     >>> assert type(features) is list, \

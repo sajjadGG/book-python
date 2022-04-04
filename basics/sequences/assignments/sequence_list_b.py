@@ -33,29 +33,22 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert a is not Ellipsis, \
-    'Assign result to variable: `a`'
-
+    'Assign your result to variable `a`'
     >>> assert b is not Ellipsis, \
-    'Assign result to variable: `b`'
-
+    'Assign your result to variable `b`'
     >>> assert c is not Ellipsis, \
-    'Assign result to variable: `c`'
-
+    'Assign your result to variable `c`'
     >>> assert type(a) is list, \
     'Variable `a` has invalid type, should be list'
 
     >>> assert type(b) is list, \
     'Variable `b` has invalid type, should be list'
-
     >>> assert type(c) is list, \
     'Variable `c` has invalid type, should be list'
-
     >>> assert len(a) == 5, \
     'Variable `a` length should be 5'
-
     >>> assert len(b) == 5, \
     'Variable `b` length should be 5'
-
     >>> assert len(c) == 5, \
     'Variable `c` length should be 5'
 

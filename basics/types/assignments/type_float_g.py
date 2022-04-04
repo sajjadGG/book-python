@@ -37,7 +37,7 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert pO2 is not Ellipsis, \
-    'Assign result to variable: `pO2`'
+    'Assign your result to variable `pO2`'
     >>> assert type(pO2) is float, \
     'Variable `pO2` has invalid type, should be float'
 

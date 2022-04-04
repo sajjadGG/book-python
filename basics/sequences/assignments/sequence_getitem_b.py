@@ -29,11 +29,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert result_a is not Ellipsis, \
-    'Assign result to variable: `result_a`'
+    'Assign your result to variable `result_a`'
     >>> assert result_b is not Ellipsis, \
-    'Assign result to variable: `result_b`'
+    'Assign your result to variable `result_b`'
     >>> assert result_c is not Ellipsis, \
-    'Assign result to variable: `result_c`'
+    'Assign your result to variable `result_c`'
 
     >>> assert type(result_a) is tuple, \
     'Variable `result_a` has invalid type, should be tuple'

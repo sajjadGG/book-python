@@ -30,9 +30,9 @@ Tests:
 
 
     >>> assert size_kB is not Ellipsis, \
-    'Assign result to variable: `size_kB`'
+    'Assign your result to variable `size_kB`'
     >>> assert size_Mb is not Ellipsis, \
-    'Assign result to variable: `size_Mb`'
+    'Assign your result to variable `size_Mb`'
     >>> assert type(size_kB) is int, \
     'Variable `size_kB` has invalid type, should be int'
     >>> assert type(size_Mb) is int, \

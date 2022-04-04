@@ -19,22 +19,21 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert header is not Ellipsis, \
-    'Assign result to variable: `header`'
+    'Assign your result to variable `header`'
     >>> assert data is not Ellipsis, \
-    'Assign result to variable: `data`'
+    'Assign your result to variable `data`'
 
-    >>> assert len(header) > 0
-    >>> assert len(data) > 0
+    >>> assert len(header) > 0, \
+    'Variable `header` cannot be empty'
+    >>> assert len(data) > 0, \
+    'Variable `data` cannot be empty'
 
     >>> assert type(header) is tuple, \
     'Variable header must be a tuple'
-
     >>> assert type(data) is list, \
     'Variable data must be a list'
-
     >>> assert all(type(x) is str for x in header), \
     'All header elements must be a str'
-
     >>> assert all(type(row) is tuple for row in data), \
     'All rows in data must be tuples'
 

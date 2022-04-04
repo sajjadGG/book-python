@@ -145,6 +145,15 @@ Sequences:
 >>> data = {'a': 1, 'b': 2}  # dict
 
 
+Use Case - 0x01
+---------------
+>>> name = 'Mark Watney'
+>>> age = 40
+>>> height = 185.5
+>>> is_astronaut = True
+>>> friends = None
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/syntax_assignment_a.py

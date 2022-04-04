@@ -19,9 +19,9 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert ip is not Ellipsis, \
-    'Assign result to variable: `ip`'
+    'Assign your result to variable `ip`'
     >>> assert hosts is not Ellipsis, \
-    'Assign result to variable: `hosts`'
+    'Assign your result to variable `hosts`'
 
     >>> assert type(ip) is str
     >>> assert type(hosts) is list

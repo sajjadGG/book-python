@@ -44,7 +44,7 @@ Tests:
     >>> from os import remove; remove(FILE)
 
     >>> assert result is not Ellipsis, \
-    'Assign result to variable: `result`'
+    'Assign your result to variable `result`'
     >>> assert type(result) is list, \
     'Variable `result` has invalid type, should be list'
     >>> assert all(type(x) is dict for x in result), \

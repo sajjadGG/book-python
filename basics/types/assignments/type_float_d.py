@@ -18,14 +18,22 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert a is not Ellipsis, 'Assign result to variable: `a`'
-    >>> assert b is not Ellipsis, 'Assign result to variable: `b`'
-    >>> assert c is not Ellipsis, 'Assign result to variable: `c`'
-    >>> assert d is not Ellipsis, 'Assign result to variable: `d`'
-    >>> assert type(a) is str, 'Variable `a` has invalid type, should be str'
-    >>> assert type(b) is str, 'Variable `b` has invalid type, should be str'
-    >>> assert type(c) is str, 'Variable `c` has invalid type, should be str'
-    >>> assert type(d) is str, 'Variable `d` has invalid type, should be str'
+    >>> assert a is not Ellipsis, \
+    'Assign your result to variable `a`'
+    >>> assert b is not Ellipsis, \
+    'Assign your result to variable `b`'
+    >>> assert c is not Ellipsis, \
+    'Assign your result to variable `c`'
+    >>> assert d is not Ellipsis, \
+    'Assign your result to variable `d`'
+    >>> assert type(a) is str, \
+    'Variable `a` has invalid type, should be str'
+    >>> assert type(b) is str, \
+    'Variable `b` has invalid type, should be str'
+    >>> assert type(c) is str, \
+    'Variable `c` has invalid type, should be str'
+    >>> assert type(d) is str, \
+    'Variable `d` has invalid type, should be str'
 
     >>> a
     "Euler's number with 0 decimal places: 3"

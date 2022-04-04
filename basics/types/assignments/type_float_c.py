@@ -21,11 +21,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert volume is not Ellipsis, \
-    'Assign result to variable: `volume`'
+    'Assign your result to variable `volume`'
     >>> assert volume_floz is not Ellipsis, \
-    'Assign result to variable: `volume_floz`'
+    'Assign your result to variable `volume_floz`'
     >>> assert volume_l is not Ellipsis, \
-    'Assign result to variable: `volume_l`'
+    'Assign your result to variable `volume_l`'
     >>> assert type(volume) is float, \
     'Variable `volume` has invalid type, should be float'
     >>> assert type(volume_floz) is float, \
