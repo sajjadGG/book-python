@@ -1,4 +1,4 @@
-"""
+""" # doctest: +SKIP_FILE
 >>> sys.tracebacklimit = 0
 
 >>> assert sys.version_info > (3, 8, 0), \
