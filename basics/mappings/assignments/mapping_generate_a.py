@@ -54,7 +54,7 @@ DATA = [
     ('Petal width', 1.9),
     ('Species', 'virginica')]
 
-# Converted DATA to dict
+# Dict with converted DATA
 # type: dict[str,float|str]
 result = ...
 

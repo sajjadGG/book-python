@@ -53,7 +53,7 @@ Tests:
 KEYS = ['SepalLength', 'SepalWidth', 'PetalLength', 'PetalWidth', 'Species']
 VALUES = [5.8, 2.7, 5.1, 1.9, 'virginica']
 
-# Zipped KEYS and VALUES to dict
+# Dict with Zipped KEYS and VALUES
 # type: dict[str,float|str]
 result = ...
 

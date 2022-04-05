@@ -64,11 +64,11 @@ PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
       'ł': 'l', 'ń': 'n', 'ó': 'o',
       'ś': 's', 'ż': 'z', 'ź': 'z'}
 
-# With letter from user
+# String with letter from user
 # type: str
 letter = ...
 
-# With converted letter without PL diacritic chars
+# String with converted letter without PL diacritic chars
 # type: str
 result = ...
 

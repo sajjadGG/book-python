@@ -28,25 +28,18 @@ Tests:
 
     >>> assert type(result) is dict, \
     'Variable `result` has invalid type, should be dict'
-
     >>> assert 'firstname' in result.keys(), \
     'Value `firstname` is not in the result keys'
-
     >>> assert 'lastname' in result.keys(), \
     'Value `lastname` is not in the result keys'
-
     >>> assert 'missions' in result.keys(), \
     'Value `missions` is not in the result keys'
-
     >>> assert 'Mark' in result['firstname'], \
     'Value `Mark` is not in the result values'
-
     >>> assert 'Watney' in result['lastname'], \
     'Value `Watney` is not in the result values'
-
     >>> assert 'Ares1' in result['missions'], \
     'Value `Ares1` is not in the result values'
-
     >>> assert 'Ares3' in result['missions'], \
     'Value `Ares3` is not in the result values'
 """

@@ -40,7 +40,7 @@ DATA = {'Sepal length': 5.8,
         'Petal length': 5.1,
         'Petal width': 1.9}
 
-# With values from DATA
+# String with values from DATA
 # type: list[float]
 result = ...
 

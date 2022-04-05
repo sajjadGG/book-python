@@ -83,11 +83,11 @@ ALPHABET = {
     'Z': 'Zulu',
 }
 
-# With letter from user
+# String with letter from user
 # type: str
 letter = ...
 
-# With converted letter to Pilot alphabet or 'Not found'
+# String with converted letter to Pilot alphabet or 'Not found'
 # type: str
 result = ...
 

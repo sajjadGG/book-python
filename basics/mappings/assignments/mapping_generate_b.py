@@ -39,7 +39,7 @@ Tests:
 
 DATA = ['setosa', 'versicolor', 'virginica']
 
-# Enumerated DATA to dict
+# Dict with enumerated DATA
 # type: dict[int,str]
 result = ...
 

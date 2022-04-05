@@ -8,16 +8,16 @@ Value
 
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
->>> age = 44
+>>> age = 40
 >>> height = 185.5
 >>> weight = 75.5
 
 
 Data
 ----
-value + relation = data
+* value + relation = data
 
->>> astronaut = ('Mark', 'Watney', 44, 185.5, 75.5)
+>>> astronaut = ('Mark', 'Watney', 40, 185.5, 75.5)
 
 
 Information
@@ -27,7 +27,7 @@ Information
 >>> astronaut = {
 ...     'firstname': 'Mark',
 ...     'lastname': 'Watney',
-...     'age': 44,
+...     'age': 40,
 ...     'height': 185.5,
 ...     'weight': 75.5,
 ... }
