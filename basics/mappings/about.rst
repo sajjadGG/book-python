@@ -2,6 +2,16 @@ Mapping About
 =============
 
 
+Scalar
+------
+* Scalar
+
+>>> 'Mark'
+>>> 'Watney'
+>>> 40
+>>> 185.5
+>>> 75.5
+
 Value
 -----
 * identifier + scalar = value

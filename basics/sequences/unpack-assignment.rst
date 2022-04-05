@@ -21,9 +21,9 @@ Multi assignment:
 
 Assignment
 ----------
-* Scalar Assignment
 * ``identifier = value``
 * ``a = 1``
+* Scalar Assignment
 
 >>> a = 1
 >>>
@@ -33,11 +33,10 @@ a=1
 
 Unpacking Assignment
 --------------------
-* ``iterable[identifier] = iterable[value]``
+* ``sequence[identifier] = sequence[value]``
 * ``a, b = 1, 2``
 * Vector Assignment
 * Sequence Assignment
-* Iterable Assignment
 
 >>> a, b = 1, 2
 >>>
@@ -192,11 +191,11 @@ Use Case - 0x01
 ---------------
 * Skip
 
->>> a, b, _ = 1, 2, 3
->>> a, _, _ = 1, 2, 3
->>> a, _, c = 1, 2, 3
->>> _, b, _ = 1, 2, 3
->>> _, _, c = 1, 2, 3
+>>> a, b, _ = 'red', 'green', 'blue'
+>>> a, _, _ = 'red', 'green', 'blue'
+>>> a, _, c = 'red', 'green', 'blue'
+>>> _, b, _ = 'red', 'green', 'blue'
+>>> _, _, c = 'red', 'green', 'blue'
 
 
 Use Case - 0x02
@@ -249,7 +248,7 @@ Python understands this as:
 
 Recap
 -----
-* Scalar, Vector, Multi assignment
+* Scalar, unpacking assignment, multi assignment
 * Both left and right expression side brackets are optional
 * Unpacking nested sequences
 * Skipping values is done by using ``_``
@@ -258,7 +257,7 @@ Scalar assignment:
 
 >>> a = 1
 
-Vector assignment:
+Unpacking assignment:
 
 >>> a, b = 1, 2
 
