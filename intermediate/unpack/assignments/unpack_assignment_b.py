@@ -22,9 +22,9 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert ip is not Ellipsis, \
-    'Assign result to variable: `ip`'
+    'Assign your result to variable `ip`'
     >>> assert host is not Ellipsis, \
-    'Assign result to variable: `hosts`'
+    'Assign your result to variable `host`'
     >>> assert type(ip) is str, \
     'Variable `ip` has invalid type, should be str'
     >>> assert type(host) is str, \
@@ -39,12 +39,12 @@ Tests:
 
 DATA = '10.13.37.1 nasa.gov'
 
-# first string: 10.13.37.1
+# String with IP address: 10.13.37.1
 # type: str
 ip = ...
 
-# second string: nasa.gov
-# type: str
+# String with host name: nasa.gov
+# type: list[str]
 host = ...
 
 # Solution

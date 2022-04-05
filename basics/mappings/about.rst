@@ -6,15 +6,16 @@ Scalar
 ------
 * Scalar
 
->>> 'Mark'
->>> 'Watney'
->>> 40
->>> 185.5
->>> 75.5
+>>> 'Mark'  # doctest: +SKIP
+>>> 'Watney'  # doctest: +SKIP
+>>> 40  # doctest: +SKIP
+>>> 185.5  # doctest: +SKIP
+>>> 75.5  # doctest: +SKIP
+
 
 Value
 -----
-* identifier + scalar = value
+* Identifier + scalar = value
 
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
@@ -25,14 +26,14 @@ Value
 
 Data
 ----
-* value + relation = data
+* Value + relation = data
 
 >>> astronaut = ('Mark', 'Watney', 40, 185.5, 75.5)
 
 
 Information
 -----------
-* data + context = information
+* Data + context = information
 
 >>> astronaut = {
 ...     'firstname': 'Mark',
@@ -40,19 +41,4 @@ Information
 ...     'age': 40,
 ...     'height': 185.5,
 ...     'weight': 75.5,
-... }
-
-
-Use Case - 0x01
----------------
->>> commander = 'Melissa Lewis'
->>> botanist = 'Mark Watney'
->>> pilot = 'Rick Martinez'
-
->>> crew = ('Melissa Lewis', 'Mark Watney', 'Rick Martinez')
-
->>> crew = {
-...     'commander': 'Melissa Lewis',
-...     'botanist': 'Mark Watney',
-...     'pilot': 'Rick Martinez',
 ... }

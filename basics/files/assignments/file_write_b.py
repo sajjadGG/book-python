@@ -26,7 +26,7 @@ Tests:
 
     >>> print(result)
     127.0.0.1       localhost
-    10.13.37.1      nasa.gov esa.int roscosmos.ru
+    10.13.37.1      nasa.gov esa.int polsa.gov.pl
     255.255.255.255 broadcasthost
     ::1             localhost
     <BLANKLINE>
@@ -34,7 +34,7 @@ Tests:
 
 FILE = '_temporary.txt'
 DATA = """127.0.0.1       localhost
-10.13.37.1      nasa.gov esa.int roscosmos.ru
+10.13.37.1      nasa.gov esa.int polsa.gov.pl
 255.255.255.255 broadcasthost
 ::1             localhost
 """

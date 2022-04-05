@@ -5,27 +5,25 @@
 * Time: 2 min
 
 English:
-    1. Using `str.split()` split input data by white space
-    2. Separate ip address and host names
-    3. Use asterisk `*` notation
-    4. Run doctests - all must succeed
+    1. Separate ip address from host names
+    2. Use asterisk `*` notation
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Używając `str.split()` podziel dane wejściowe po białych znakach
-    2. Odseparuj adres ip i nazw hostów
-    3. Skorzystaj z notacji z gwiazdką `*`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    1. Odseparuj adres ip od nazwy hostów
+    2. Skorzystaj z notacji z gwiazdką `*`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
-    * Use `str.split()` without any argument
+    * `str.split()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert ip is not Ellipsis, \
-    'Assign result to variable: `ip`'
+    'Assign your result to variable `ip`'
     >>> assert hosts is not Ellipsis, \
-    'Assign result to variable: `hosts`'
+    'Assign your result to variable: `hosts`'
     >>> assert type(ip) is str, \
     'Variable `ip` has invalid type, should be str'
     >>> assert type(hosts) is list, \
@@ -39,16 +37,16 @@ Tests:
     '10.13.37.1'
 
     >>> hosts
-    ['nasa.gov', 'esa.int', 'roscosmos.ru']
+    ['nasa.gov', 'esa.int', 'polsa.gov.pl']
 """
 
-DATA = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
+DATA = '10.13.37.1      nasa.gov esa.int polsa.gov.pl'
 
-# IP address
+# String with IP address: '10.13.37.1'
 # type: str
 ip = ...
 
-# list of hostnames
+# List of host names: ['nasa.gov', 'esa.int', 'polsa.gov.pl']
 # type: list[str]
 hosts = ...
 

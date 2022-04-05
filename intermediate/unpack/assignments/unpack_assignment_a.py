@@ -6,22 +6,20 @@
 * Time: 2 min
 
 English:
-    1. Split input data
-    2. Separate ip address and host name
-    3. Run doctests - all must succeed
+    1. Separate ip address and host name
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Podziel dane wejściowe
-    2. Odseparuj adres ip i nazwę hosta
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Odseparuj adres ip i nazwę hosta
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert ip is not Ellipsis, \
-    'Assign result to variable: `ip`'
+    'Assign your result to variable `ip`'
     >>> assert host is not Ellipsis, \
-    'Assign result to variable: `hosts`'
+    'Assign your result to variable `host`'
     >>> assert type(ip) is str, \
     'Variable `ip` has invalid type, should be str'
     >>> assert type(host) is str, \
@@ -36,12 +34,12 @@ Tests:
 
 DATA = ['10.13.37.1', 'nasa.gov']
 
-# first string: 10.13.37.1
+# String with IP address: 10.13.37.1
 # type: str
 ip = ...
 
-# second string: nasa.gov
-# type: str
+# String with host name: nasa.gov
+# type: list[str]
 host = ...
 
 # Solution

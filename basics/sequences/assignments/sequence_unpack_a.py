@@ -34,11 +34,11 @@ Tests:
 
 DATA = ['10.13.37.1', 'nasa.gov']
 
-# String with: 10.13.37.1
+# String with IP address: 10.13.37.1
 # type: str
 ip = ...
 
-# String with: nasa.gov
+# String with host name: nasa.gov
 # type: list[str]
 host = ...
 
