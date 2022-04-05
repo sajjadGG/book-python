@@ -50,11 +50,11 @@ ft = 0.3048 * m
 # type: float
 altitude = ...
 
-# altitude in meters
+# Altitude in meters
 # type: float
 altitude_m = ...
 
-# altitude in feet
+# Altitude in feet
 # type: float
 altitude_ft = ...
 

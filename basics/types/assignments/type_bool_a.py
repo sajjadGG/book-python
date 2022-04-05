@@ -77,63 +77,63 @@ Tests:
     False
 """
 
-# result of bool(True)
+# Result of bool(True)
 # type: bool
 example = True
 
-# result of bool(True)
+# Result of bool(True)
 # type: bool
 a = ...
 
-# result of bool(False)
+# Result of bool(False)
 # type: bool
 b = ...
 
-# result of bool(1)
+# Result of bool(1)
 # type: bool
 c = ...
 
-# result of bool(0)
+# Result of bool(0)
 # type: bool
 d = ...
 
-# result of bool(-1)
+# Result of bool(-1)
 # type: bool
 e = ...
 
-# result of bool(0.0)
+# Result of bool(0.0)
 # type: bool
 f = ...
 
-# result of bool('a')
+# Result of bool('a')
 # type: bool
 g = ...
 
-# result of bool('')
+# Result of bool('')
 # type: bool
 h = ...
 
-# result of bool(' ')
+# Result of bool(' ')
 # type: bool
 i = ...
 
-# result of bool('0')
+# Result of bool('0')
 # type: bool
 j = ...
 
-# result of bool(int('0'))
+# Result of bool(int('0'))
 # type: bool
 k = ...
 
-# result of bool(-0.0+0.0j)
+# Result of bool(-0.0+0.0j)
 # type: bool
 l = ...
 
-# result of bool('-0.0+0.0j')
+# Result of bool('-0.0+0.0j')
 # type: bool
 m = ...
 
-# result of bool(complex('-0.0+0.0j'))
+# Result of bool(complex('-0.0+0.0j'))
 # type: bool
 n = ...
 

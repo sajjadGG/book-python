@@ -27,7 +27,7 @@ Tests:
 
 DATA = 'UL. pana \tTWArdoWskIEGO 3'
 
-# Pana Twardowskiego III
+# Expected result: 'Pana Twardowskiego III'
 # type: str
 result = ...
 

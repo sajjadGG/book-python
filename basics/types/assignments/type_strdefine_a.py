@@ -3,7 +3,7 @@
 * Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
     1. Define `result` with value `Hello World`
@@ -25,7 +25,7 @@ Tests:
     'Hello World'
 """
 
-# Define variable `result` with text 'Hello World'
+# Expected result: 'Hello World'
 # type: str
 result = ...
 

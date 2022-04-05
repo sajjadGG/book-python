@@ -51,15 +51,15 @@ EULER = 2.71828
 # type: str
 a = f"Euler's number with 0 decimal places: {EULER}"
 
-#  Euler's number with 1 decimal places
+# Euler's number with 1 decimal places
 # type: str
 b = f"Euler's number with 1 decimal places: {EULER}"
 
-#  Euler's number with 2 decimal places
+# Euler's number with 2 decimal places
 # type: str
 c = f"Euler's number with 2 decimal places: {EULER}"
 
-#  Euler's number with 3 decimal places
+# Euler's number with 3 decimal places
 # type: str
 d = f"Euler's number with 3 decimal places: {EULER}"
 

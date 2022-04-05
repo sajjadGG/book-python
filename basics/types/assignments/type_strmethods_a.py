@@ -3,7 +3,7 @@
 * Required: no
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
     1. Split `DATA` by lines
@@ -37,7 +37,7 @@ DATA = """We choose to go to the Moon
 in this decade and do the other things.
 Not because they are easy, but because they are hard."""
 
-# with DATA split by lines
+# Split DATA by lines
 # type: list[str]
 result = ...
 

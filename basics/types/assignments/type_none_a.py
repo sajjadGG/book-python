@@ -37,15 +37,15 @@ Tests:
     False
 """
 
-# result of `... is None` must be True
+# Result of `... is None` must be True
 # type: bool
 a = ...
 
-# result of `... is not None` must be False
+# Result of `... is not None` must be False
 # type: bool
 b = ...
 
-# result of `bool(...) is not bool(...) == False` must be True
+# Result of `bool(...) is not bool(...) == False` must be True
 # type: bool
 c = ...
 

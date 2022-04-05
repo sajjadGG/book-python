@@ -6,6 +6,10 @@ String Methods
 
 Strip Whitespace
 ----------------
+* ``str.strip()`` - remove whitespaces from both ends
+* ``str.lstrip()`` - remove whitespaces from left side only
+* ``str.rstrip()`` - remove whitespaces from right side only
+
 Strip is a very common method, which you should always call upon any text
 from user input, that is from ``input()`` function, but also from files,
 socket communication and from internet data transfer. You never know, if
@@ -43,6 +47,12 @@ Left strip:
 
 Change Case
 -----------
+* ``str.upper()`` - all letters will be uppercase
+* ``str.lower()`` - all letters will be lowercase
+* ``str.capitalize()`` - will uppercase first letter of text, lowercase others
+* ``str.title()`` - will uppercase first letter of each word, lowercase others
+* ``str.swapcase()`` - make lowercase letters upper, and uppercase lower
+
 Comparing not normalized strings will yield invalid or at least
 unexpected results:
 
@@ -97,10 +107,13 @@ Replace is case sensitive:
 'Angus MacGyver Iii'
 
 
-Starts With
------------
-``.startswith()`` method answers the question if string "starts with" other
-substring.
+Starts or Ends With
+-------------------
+* ``str.startswith()`` - return ``True`` if ``str`` starts with the specified prefix, ``False`` otherwise
+* ``str.endswith()`` - return ``True`` if ``str`` ends with the specified suffix, ``False`` otherwise
+* optional ``start``, test ``str`` beginning at that position
+* optional ``end``, stop comparing ``str`` at that position
+* prefix/suffix can also be a tuple of strings to try
 
 >>> email = 'mark.watney@nasa.gov'
 >>>
@@ -119,9 +132,6 @@ It also works with tuple of strings to try:
 >>> email.startswith(vip)
 True
 
-
-Ends With
----------
 >>> email = 'mark.watney@nasa.gov'
 >>>
 >>>
@@ -140,6 +150,9 @@ True
 
 Split by Line
 -------------
+* ``str.splitlines()`` - split by newline character, don't leave empty lines at the end
+* ``str.split('\n')`` - will leave empty string if newline is a the end of str
+
 >>> text = 'Hello\nPython\nWorld'
 >>>
 >>> text.splitlines()
@@ -166,6 +179,7 @@ Split by Line
 
 Split by Character
 ------------------
+* ``str.split()`` - Split by given character
 * No argument - any number of whitespaces
 
 >>> text = '1,2,3,4'
@@ -195,6 +209,9 @@ Split by Character
 
 Join by Character
 -----------------
+* ``str.join(sep, sequence)`` - concatenate sequence using separator
+* Note, this is a method of a ``str``, not ``tuple.join()`` or ``list.join()``
+
 >>> letters = ['a', 'b', 'c']
 >>> ''.join(letters)
 'abc'
@@ -214,6 +231,10 @@ Join by Character
 
 Join Numbers
 ------------
+* ``(str(x) for x in data)`` - using comprehension or generator expression
+* ``map(str, data)`` - using map transformation
+* Type cast won't work ``str(data)`` - it will stringify whole list
+
 Method ``str.join()`` expects, that all arguments are strings. Therefore it raises
 and error if sequence of numbers is passed:
 
@@ -241,6 +262,11 @@ in ``data``. More information in `Generator Mapping`:
 
 Is Whitespace
 -------------
+* ``str.isspace()`` - Is whitespace (space, tab, newline)
+* `` `` - space
+* ``\t`` - tab
+* ``\n`` - newline
+
 >>> text = ''
 >>> text.isspace()
 False
@@ -265,6 +291,8 @@ True
 
 Is Alphabet Characters
 ----------------------
+* ``text in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'``
+
 >>> text = 'hello'
 >>> text.isalpha()
 True
@@ -276,6 +304,10 @@ False
 
 Is Numeric
 ----------
+* ``str.isdecimal()``
+* ``str.isdigit()``
+* ``str.isnumeric()``
+* ``str.isalnum()``
 * https://docs.python.org/library/stdtypes.html#str.isdecimal
 * https://docs.python.org/library/stdtypes.html#str.isdigit
 * https://docs.python.org/library/stdtypes.html#str.isnumeric
@@ -389,6 +421,9 @@ True
 
 Find Sub-String Position
 ------------------------
+* ``str.find()`` - Finds position of a letter in text
+* returns -1 if not found
+
 Finds position of a letter in text:
 
 >>> text = 'We choose to go to the Moon'
@@ -416,6 +451,9 @@ Will yield ``-1`` if substring is not found:
 
 Count Occurrences
 -----------------
+* ``str.count()``
+* returns 0 if not found
+
 >>> text = 'Moon'
 >>>
 >>>
@@ -431,7 +469,9 @@ Count Occurrences
 
 Remove Prefix or Suffix
 -----------------------
-Since Python 3.9: :pep:`616` -- String methods to remove prefixes and suffixes
+* ``str.removeprefix()``
+* ``str.removesuffix()``
+* Since Python 3.9: :pep:`616` -- String methods to remove prefixes and suffixes
 
 >>> filename = 'myfile.txt'
 >>> filename.removeprefix('my')
@@ -470,6 +510,9 @@ Note, that there cannot be any char, not even space after ``\`` character:
 >>>
 >>> print(text)
 Cython
+
+Backslash method is very error-prone, this is the reason why brackets are
+recommended:
 
 >>> text = 'Python'
 >>>

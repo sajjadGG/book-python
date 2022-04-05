@@ -30,7 +30,7 @@ Tests:
     'Hello 😀'
 """
 
-# Hello 😀
+# Expected result: 'Hello 😀'
 # type: str
 result = ...
 

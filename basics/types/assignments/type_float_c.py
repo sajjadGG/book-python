@@ -46,11 +46,11 @@ floz = 0.02957344 * liter
 # type: float
 volume = ...
 
-# volume in fluid ounces
+# Volume in fluid ounces
 # type: float
 volume_floz = ...
 
-# volume in liters
+# Volume in liters
 # type: float
 volume_l = ...
 

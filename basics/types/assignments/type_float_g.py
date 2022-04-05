@@ -58,7 +58,7 @@ Pa = 1
 hPa = 100 * Pa
 kPa = 1000 * Pa
 
-# pressure at sea level: 1013.25 hectopascals
+# Standard atmosphere (ATA) is pressure at sea level: 1013.25 hectopascals
 # type: float
 ata = ...
 

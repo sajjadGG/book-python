@@ -81,7 +81,7 @@ pO2 = O2 * ata
 # type: float
 gradient = ...
 
-# ata minus pO2 all that divided by gradient
+# Altitude is ata minus pO2 all that divided by gradient
 # type: float
 altitude = ...
 
