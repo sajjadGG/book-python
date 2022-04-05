@@ -3,11 +3,13 @@ Generator Builtin
 * Generator-like objects
 * Behaves similar, but is not generator
 * ``range()``
+* ``reversed()``
 * ``enumerate()``
 * ``zip()``
 * ``map()``
 * ``filter()``
 * ``import itertools``
+
 
 Range
 -----
@@ -36,6 +38,15 @@ range(0, 3)
 {0, 1, 2}
 >>> list(range(4,11,2))
 [4, 6, 8, 10]
+
+
+Reversed
+--------
+* ``reversed()`` - Return a reverse iterator over the values of the given sequence
+
+>>> data = (1, 2, 3)
+>>> list(reversed(data))
+[3, 2, 1]
 
 
 Enumerate

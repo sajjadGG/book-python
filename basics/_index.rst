@@ -49,10 +49,10 @@ Sequences
     :maxdepth: 1
     :caption: Sequences
 
-    sequences/ordered-tuple.rst
-    sequences/ordered-list.rst
-    sequences/ordered-comparison.rst
-    sequences/unordered-set.rst
+    sequences/tuple.rst
+    sequences/list.rst
+    sequences/set.rst
+    sequences/comparison.rst
     sequences/nested.rst
     sequences/unpack-getitem.rst
     sequences/unpack-slice.rst

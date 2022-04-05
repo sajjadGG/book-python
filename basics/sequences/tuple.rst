@@ -1,10 +1,15 @@
 Sequence Tuple
 ==============
 * Immutable - cannot add, modify or remove items
+* Stores elements of any type
 
 
 Syntax
 ------
+* ``data = ()`` - empty tuple
+* ``data = (1, 2.2, 'abc')`` - tuple with values
+* ``data = ()`` is faster than ``data = tuple()``
+
 Defining ``tuple()`` is more explicit, however empty tuple with ``()`` is used
 more often and it's also faster:
 
@@ -19,9 +24,25 @@ Can store elements of any type:
 >>> data = ('a', 'b', 'c')
 >>> data = ('a', 1, 2.2, True, None)
 
+Performance:
+
+>>> %%timeit -r 10_000 -n 1000  # doctest: +SKIP
+... data = ()
+...
+14.9 ns ± 3.28 ns per loop (mean ± std. dev. of 10000 runs, 1,000 loops each)
+
+>>> %%timeit -r 10_000 -n 1000  # doctest: +SKIP
+... data = tuple()
+...
+28.1 ns ± 8.17 ns per loop (mean ± std. dev. of 10000 runs, 1,000 loops each)
+
 
 Type Casting
 ------------
+* ``tuple()`` - will convert its argument to ``tuple``
+* Takes one iterable as an argument
+* Multiple arguments are not allowed
+
 Builtin function ``tuple()`` converts argument to ``tuple``
 
 >>> data = 'abcd'
@@ -43,6 +64,10 @@ TypeError: tuple expected at most 1 argument, got 4
 
 Optional Brackets
 -----------------
+* ``data = (1)`` - int
+* ``data = (1.)`` - float
+* ``data = (1,)`` - tuple
+
 Brackets are optional, but it's a good practice to always write them:
 
 >>> data = (1, 2, 3)
@@ -71,6 +96,9 @@ Comma after last element of multi value tuple is optional:
 
 Tuple or Int, Float, Str
 ------------------------
+* ``1.5`` - float
+* ``1,5`` - tuple
+
 >>> x = 1           # int
 >>> x = 1.          # float
 >>> x = 1,          # tuple
@@ -93,22 +121,50 @@ SyntaxError: invalid syntax
 >>> x = .1,1.       # tuple
 
 
+Get Item
+--------
+* Returns a value at given index
+* Note, that Python start counting at zero (zero based indexing)
+* Raises ``IndexError`` if the index is out of range
+* More information in `Sequence GetItem`
+* More information in `Sequence Slice`
+
+>>> colors = ('red', 'green', 'blue')
+>>>
+>>> colors[0]
+'red'
+>>> colors[1]
+'green'
+>>> colors[2]
+'blue'
+
+
 Index
 -----
+* ``tuple.index()`` - position at which something is in the tuple
+* Note, that Python start counting at zero (zero based indexing)
+* Raises ``ValueError`` if the value is not present
+
 >>> colors = ('red', 'green', 'blue')
->>> colors.index('red')
-0
+>>> colors.index('blue')
+2
 
 
 Count
 -----
+* ``tuple.count()`` - number of occurrences of value
+
 >>> colors = ('red', 'green', 'blue', 'red', 'blue')
->>> colors.count('red')
+>>> colors.count('blue')
 2
 
 
 Sort
 ----
+* ``sort()`` - return a new list containing all items from the iterable in ascending order
+* Note, that the result will be a ``list``, so we need to type cast
+* Reverse flag can be set to request the result in descending order
+
 >>> data = (3, 1, 2)
 >>> tuple(sorted(data))
 (1, 2, 3)
@@ -116,6 +172,8 @@ Sort
 
 Reversed
 --------
+* ``reversed()`` - Return a reverse iterator over the values of the given sequence
+
 >>> data = (1, 2, 3)
 >>> tuple(reversed(data))
 (3, 2, 1)
@@ -123,6 +181,8 @@ Reversed
 
 Length
 ------
+* ``len()`` - Return the number of items in a container
+
 >>> data = (1, 2, 3)
 >>> len(data)
 3
@@ -133,7 +193,7 @@ Built-in Functions
 * ``min()`` - Minimal value
 * ``max()`` - Maximal value
 * ``sum()`` - Sum of elements
-* ``len()`` - Length of a list
+* ``len()`` - Length of a tuple
 * ``all()`` - All values are ``True``
 * ``any()`` - Any values is ``True``
 
@@ -164,7 +224,6 @@ List with string values:
 Traceback (most recent call last):
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
-
 List with boolean values:
 
 >>> data = (True, False, True)
@@ -177,6 +236,17 @@ False
 
 Memory
 ------
+* Tuple is immutable (cannot be modified)
+* Whole tuple must be defined at once
+* Uses one consistent block of memory
+
+>>> import sys
+>>>
+>>>
+>>> data = (1, 2, 3)
+>>> sys.getsizeof(data)
+64
+
 .. figure:: img/memory-tuple.png
 
     Memory representation for ``tuple``

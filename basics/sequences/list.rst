@@ -1,10 +1,15 @@
 Sequence List
 =============
 * Mutable - can add, remove, and modify items
+* Stores elements of any type
 
 
 Syntax
 ------
+* ``data = []`` - empty list
+* ``data = [1, 2.2, 'abc']`` - list with values
+* ``data = []`` is faster than ``data = list()``
+
 Defining empty list with ``[]`` is used more often, but ``list()`` is more
 explicit:
 
@@ -31,71 +36,76 @@ Brackets are required
 
 Type Casting
 ------------
+* ``list()`` converts argument to ``list``
+* Takes one iterable as an argument
+* Multiple arguments are not allowed
+
 Builtin function ``list()`` converts argument to ``list``
 
->>> data = 'abcd'
->>> list(data)
-['a', 'b', 'c', 'd']
+>>> color = 'red'
+>>> list(color)
+['r', 'e', 'd']
 
->>> data = ['a', 'b', 'c', 'd']
->>> list(data)
-['a', 'b', 'c', 'd']
+>>> colors = ['red', 'green', 'blue']
+>>> list(colors)
+['red', 'green', 'blue']
 
->>> data = ('a', 'b', 'c', 'd')
->>> list(data)
-['a', 'b', 'c', 'd']
+>>> colors = ('red', 'green', 'blue')
+>>> list(colors)
+['red', 'green', 'blue']
 
->>> list(1, 2, 3, 4)
+>>> list('red', 'green', 'blue')
 Traceback (most recent call last):
 TypeError: list expected at most 1 argument, got 4
 
 
 Get Item
 --------
+* Returns a value at given index
+* Note, that Python start counting at zero (zero based indexing)
+* Raises ``IndexError`` if the index is out of range
 * More information in `Sequence GetItem`
 * More information in `Sequence Slice`
 
->>> data = ['a', 'b', 'c', 'd']
+>>> colors = ['red', 'green', 'blue']
 >>>
->>> data[0]
-'a'
->>> data[1]
-'b'
->>> data[2]
-'c'
->>> data[3]
-'d'
+>>> colors[0]
+'red'
+>>> colors[1]
+'green'
+>>> colors[2]
+'blue'
 
 
 Set Item
 --------
->>> data = ['a', 'b', 'c', 'd']
->>> data[0] = 'x'
+>>> colors = ['red', 'green', 'blue']
+>>> colors[0] = 'black'
 >>>
->>> print(data)
-['x', 'b', 'c', 'd']
+>>> print(colors)
+['black', 'green', 'blue']
 
->>> data = ['a', 'b', 'c', 'd']
->>> data[4] = 'x'
+>>> colors = ['red', 'green', 'blue']
+>>> colors[4] = 'black'
 Traceback (most recent call last):
 IndexError: list assignment index out of range
 
 
 Del Item
 --------
->>> data = ['a', 'b', 'c', 'd']
->>> del data[3]
+>>> colors = ['red', 'green', 'blue']
+>>> del colors[2]
 >>>
->>> print(data)
-['a', 'b', 'c']
+>>> print(colors)
+['red', 'green']
 
->>> data = ['a', 'b', 'c', 'd']
->>> value = data.pop()
+>>> colors = ['red', 'green', 'blue']
+>>> result = colors.pop()
 >>>
->>> data
-['a', 'b', 'c']
->>> value
-'d'
+>>> colors
+['red', 'green']
+>>> result
+'blue'
 
 
 Append
@@ -148,32 +158,36 @@ TypeError: can only concatenate list (not "int") to list
 
 Insert
 ------
-* Insert at specific position
+* ``list.insert(idx, object)``
+* Insert object at specific position
 
->>> data = ['a', 'b', 'c', 'd']
->>> data.insert(0, 'x')
+>>> data = ['red', 'green', 'blue']
+>>> data.insert(0, 'black')
 >>>
 >>> print(data)
-['x', 'a', 'b', 'c', 'd']
+['black', 'red', 'green', 'blue']
 
->>> data = ['a', 'b', 'c', 'd']
->>> data.insert(1, 'x')
+>>> data = ['red', 'green', 'blue']
+>>> data.insert(1, 'black')
 >>>
 >>> print(data)
-['a', 'x', 'b', 'c', 'd']
+['red', 'black', 'green', 'blue']
 
 
 Sort vs Sorted
 --------------
+* ``sorted()`` - returns new sorted list, but does not modify the original
+* ``list.sort()`` - sorts list and returns ``None``
+
 Timsort is a hybrid stable sorting algorithm, derived from merge sort and
-insertion sort, designed to perform well on many kinds of real-world data. It
-was implemented by Tim Peters in 2002 for use in the Python programming
+insertion sort, designed to perform well on many kinds of real-world data.
+It was implemented by Tim Peters in 2002 for use in the Python programming
 language. The algorithm finds subsequences of the data that are already
-ordered (runs) and uses them to sort the remainder more efficiently. This is
-done by merging runs until certain criteria are fulfilled. Timsort has been
-Python's standard sorting algorithm since version 2.3. It is also used to
-sort arrays of non-primitive type in Java SE 7, on the Android platform, in
-GNU Octave, on V8, Swift, and Rust. [#timsort]_
+ordered (runs) and uses them to sort the remainder more efficiently. This
+is done by merging runs until certain criteria are fulfilled. Timsort has
+been Python's standard sorting algorithm since version 2.3. It is also used
+to sort arrays of non-primitive type in Java SE 7, on the Android platform,
+in GNU Octave, on V8, Swift, and Rust. [#timsort]_
 
 * Worst-case performance: :math:`O(n\log{n})`
 * Best-case performance: :math:`O(n)`
@@ -269,15 +283,21 @@ AttributeError: 'NoneType' object has no attribute 'append'
 
 Index
 -----
->>> colors = ('red', 'green', 'blue')
->>> colors.index('red')
-0
+* ``list.index()`` - position at which something is in the list
+* Note, that Python start counting at zero (zero based indexing)
+* Raises ``ValueError`` if the value is not present
+
+>>> colors = ['red', 'green', 'blue']
+>>> colors.index('blue')
+2
 
 
 Count
 -----
->>> colors = ('red', 'green', 'blue', 'red', 'blue')
->>> colors.count('red')
+* ``list.count()`` - number of occurrences of value
+
+>>> colors = ['red', 'green', 'blue', 'red', 'blue']
+>>> colors.count('blue')
 2
 
 
@@ -336,6 +356,11 @@ Memory
 
 Shallow Copy vs Deep Copy
 -------------------------
+* Shallow Copy (by reference) - identifiers are pointing to the same object in memory
+* Deep Copy - identifiers are pointing to distinct objects
+* Shallow Copy is faster and requires less memory (no duplicated objects)
+* Deep Copy is slower and requires twice sa much memory, but is safe for modification
+
 Shallow Copy:
 
 >>> first = ['a', 'b', 'c']
@@ -347,6 +372,11 @@ Shallow Copy:
 ['a', 'b', 'c', 'd']
 >>> second
 ['a', 'b', 'c', 'd']
+>>>
+>>> id(first)  # doctest: +SKIP
+4417433984
+>>> id(second)  # doctest: +SKIP
+4417433984
 
 Deep Copy:
 
@@ -359,6 +389,11 @@ Deep Copy:
 ['a', 'b', 'c', 'd']
 >>> second
 ['a', 'b', 'c']
+>>>
+>>> id(first)  # doctest: +SKIP
+4391796976
+>>> id(second)  # doctest: +SKIP
+4391797008
 
 
 References

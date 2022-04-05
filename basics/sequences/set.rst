@@ -2,7 +2,7 @@ Sequence Set
 ============
 * Only unique values
 * Mutable - can add, remove, and modify items
-* Can store elements of any **hashable** types
+* Stores only **hashable** elements (int, float, bool, None, str, tuple)
 * Set is unordered data structure and do not record element position or insertion
 * Do not support getitem and slice
 * Contains in ``set`` has ``O(1)`` average case complexity [#pywikiTimeComplexity]_
@@ -10,6 +10,11 @@ Sequence Set
 
 Syntax
 ------
+* ``data = set()`` - empty set
+* no short syntax
+* Can store elements of any **hashable** types
+* Only unique values
+
 Defining only with ``set()`` - no short syntax:
 
 >>> data = set()
