@@ -33,6 +33,19 @@ Brackets are required
 
 >>> data = [1, 2, 3]
 
+Performance:
+
+>>> %%timeit -r 10_000 -n 10_000  # doctest: +SKIP
+... data = list()
+...
+53.8 ns ± 8.15 ns per loop (mean ± std. dev. of 10000 runs, 10,000 loops each)
+>>>
+>>>
+>>> %%timeit -r 10_000 -n 10_000  # doctest: +SKIP
+... data = []
+...
+23.9 ns ± 4.23 ns per loop (mean ± std. dev. of 10000 runs, 10,000 loops each)
+
 
 Type Casting
 ------------
@@ -42,9 +55,9 @@ Type Casting
 
 Builtin function ``list()`` converts argument to ``list``
 
->>> color = 'red'
->>> list(color)
-['r', 'e', 'd']
+>>> text = 'hello'
+>>> list(text)
+['h', 'e', 'l', 'l', 'o']
 
 >>> colors = ['red', 'green', 'blue']
 >>> list(colors)
@@ -56,7 +69,7 @@ Builtin function ``list()`` converts argument to ``list``
 
 >>> list('red', 'green', 'blue')
 Traceback (most recent call last):
-TypeError: list expected at most 1 argument, got 4
+TypeError: list expected at most 1 argument, got 3
 
 
 Get Item
@@ -110,67 +123,75 @@ Del Item
 
 Append
 ------
-* ``list + list``
-* ``list += list``
-* ``list.extend()``
-* ``list.append()``
+* ``list + list`` - add
+* ``list += list`` - increment add
+* ``list.extend()`` - extend
+* ``list.append()`` - append
+* ``O(1)`` complexity
 
->>> [1, 2, 3] + [4, 5, 6]
-[1, 2, 3, 4, 5, 6]
+Add:
 
->>> [1, 2, 3] + 4
+>>> colors = ['red', 'green', 'blue']
+>>> result = colors + ['black']
+>>>
+>>> print(colors)
+['red', 'green', 'blue']
+>>>
+>>> print(result)
+['red', 'green', 'blue', 'black']
+
+Increment Add:
+
+>>> colors = ['red', 'green', 'blue']
+>>> colors += ['black']
+>>>
+>>> print(colors)
+['red', 'green', 'blue', 'black']
+
+Extend:
+
+>>> colors = ['red', 'green', 'blue']
+>>> colors.extend(['black', 'white'])
+>>>
+>>> print(colors)
+['red', 'green', 'blue', 'black', 'white']
+
+Append:
+>>> colors = ['red', 'green', 'blue']
+>>> colors.append(['black', 'white'])
+>>>
+>>> print(colors)
+['red', 'green', 'blue', ['black', 'white']]
+
+Errors:
+
+>>> colors + 'black'
 Traceback (most recent call last):
-TypeError: can only concatenate list (not "int") to list
+TypeError: can only concatenate list (not "str") to list
 
->>> [1, 2, 3] + [4]
-[1, 2, 3, 4]
-
->>> data = [1, 2, 3]
->>> data = data + [4, 5, 6]
+>>> colors = ['red', 'green', 'blue']
+>>> colors += 'black'
 >>>
->>> print(data)
-[1, 2, 3, 4, 5, 6]
-
->>> data = [1, 2, 3]
->>> data += [4, 5, 6]
->>>
->>> print(data)
-[1, 2, 3, 4, 5, 6]
-
->>> data = [1, 2, 3]
->>> data.extend([4, 5, 6])
->>>
->>> print(data)
-[1, 2, 3, 4, 5, 6]
-
->>> data = [1, 2, 3]
->>> data.append(4)
->>>
->>> print(data)
-[1, 2, 3, 4]
-
->>> data = [1, 2, 3]
->>> data.append([4, 5, 6])
->>>
->>> print(data)
-[1, 2, 3, [4, 5, 6]]
+>>> print(colors)
+['red', 'green', 'blue', 'b', 'l', 'a', 'c', 'k']
 
 
 Insert
 ------
 * ``list.insert(idx, object)``
 * Insert object at specific position
+* ``O(n)`` complexity
 
->>> data = ['red', 'green', 'blue']
->>> data.insert(0, 'black')
+>>> colors = ['red', 'green', 'blue']
+>>> colors.insert(0, 'black')
 >>>
->>> print(data)
+>>> print(colors)
 ['black', 'red', 'green', 'blue']
 
->>> data = ['red', 'green', 'blue']
->>> data.insert(1, 'black')
+>>> colors = ['red', 'green', 'blue']
+>>> colors.insert(1, 'black')
 >>>
->>> print(data)
+>>> print(colors)
 ['red', 'black', 'green', 'blue']
 
 
@@ -199,25 +220,25 @@ in GNU Octave, on V8, Swift, and Rust. [#timsort]_
 
 Return sorted values without modifying a list:
 
->>> data = [3, 1, 2]
+>>> values = [3, 1, 2]
 >>>
->>> sorted(data)
+>>> sorted(values)
 [1, 2, 3]
 >>>
->>> sorted(data, reverse=True)
+>>> sorted(values, reverse=True)
 [3, 2, 1]
 
 Permanent sorting with list modification (note that ``list.sort()`` modifies
-data, and returns ``None``, not values):
+values, and returns ``None``, not values):
 
->>> data = [3, 1, 2]
+>>> values = [3, 1, 2]
 >>>
->>> data.sort()
->>> data
+>>> values.sort()
+>>> values
 [1, 2, 3]
 >>>
->>> data.sort(reverse=True)
->>> data
+>>> values.sort(reverse=True)
+>>> values
 [3, 2, 1]
 
 You can also use ``list.sort()`` and/or ``sorted()`` with ``str``. It will
@@ -225,10 +246,10 @@ sort strings according to Unicode (UTF-8) value, that is ASCII table for
 latin alphabet and Unicode for extended encoding. This kind of sorting is
 called lexicographic order.
 
->>> data = ['a', 'c', 'b']
+>>> colors = ['red', 'green', 'blue']
 >>>
->>> sorted(data)
-['a', 'b', 'c']
+>>> sorted(colors)
+['blue', 'green', 'red']
 
 
 Reverse
@@ -236,30 +257,31 @@ Reverse
 * ``reversed()``
 * ``list.reverse()``
 
->>> data = [1, 2, 3]
->>> data.reverse()
->>> data
-[3, 2, 1]
+>>> colors = ['red', 'green', 'blue']
+>>> colors.reverse()
+>>> colors
+['blue', 'green', 'red']
 
->>> data = [1, 2, 3]
+>>> colors = ['red', 'green', 'blue']
+>>> result = reversed(colors)
 >>>
->>> list(reversed(data))
-[3, 2, 1]
+>>> list(result)
+['blue', 'green', 'red']
 
 Why?:
 
->>> data = [1, 2, 3]
->>> result = reversed(data)
+>>> colors = ['red', 'green', 'blue']
+>>> result = reversed(colors)
 >>>
 >>> result  # doctest: +ELLIPSIS
 <list_reverseiterator object at 0x...>
 >>>
 >>> next(result)
-3
+'blue'
 >>> next(result)
-2
+'green'
 >>> next(result)
-1
+'red'
 >>> next(result)
 Traceback (most recent call last):
 StopIteration
@@ -267,16 +289,16 @@ StopIteration
 
 Method Chaining
 ---------------
->>> data = [3, 1, 2]
->>> data.sort()
->>> data.append(4)
+>>> colors = ['red', 'green', 'blue']
+>>> colors.sort()
+>>> colors.append('black')
 >>>
->>> print(data)
-[1, 2, 3, 4]
+>>> print(colors)
+['blue', 'green', 'red', 'black']
 
->>> data = [3, 1, 2]
+>>> colors = ['red', 'green', 'blue']
 >>>
->>> data.sort().append(4)
+>>> colors.sort().append('black')
 Traceback (most recent call last):
 AttributeError: 'NoneType' object has no attribute 'append'
 
@@ -288,7 +310,9 @@ Index
 * Raises ``ValueError`` if the value is not present
 
 >>> colors = ['red', 'green', 'blue']
->>> colors.index('blue')
+>>> result = colors.index('blue')
+>>>
+>>> print(result)
 2
 
 
@@ -296,9 +320,11 @@ Count
 -----
 * ``list.count()`` - number of occurrences of value
 
->>> colors = ['red', 'green', 'blue', 'red', 'blue']
->>> colors.count('blue')
-2
+>>> colors = ['red', 'green', 'blue', 'red', 'blue', 'red']
+>>> result = colors.count('red')
+>>>
+>>> print(result)
+3
 
 
 Built-in Functions
@@ -363,37 +389,44 @@ Shallow Copy vs Deep Copy
 
 Shallow Copy:
 
->>> first = ['a', 'b', 'c']
->>> second = first
+>>> a = ['red', 'green', 'blue']
+>>> b = a
 >>>
->>> first.append('d')
+>>> a.append('black')
 >>>
->>> first
-['a', 'b', 'c', 'd']
->>> second
-['a', 'b', 'c', 'd']
+>>> a
+['red', 'green', 'blue', 'black']
+>>> b
+['red', 'green', 'blue', 'black']
 >>>
->>> id(first)  # doctest: +SKIP
+>>> id(a)  # doctest: +SKIP
 4417433984
->>> id(second)  # doctest: +SKIP
+>>> id(b)  # doctest: +SKIP
 4417433984
 
 Deep Copy:
 
->>> first = ['a', 'b', 'c']
->>> second = first.copy()
+>>> a = ['red', 'green', 'blue']
+>>> b = a.copy()
 >>>
->>> first.append('d')
+>>> a.append('black')
 >>>
->>> first
-['a', 'b', 'c', 'd']
->>> second
-['a', 'b', 'c']
+>>> a
+['red', 'green', 'blue', 'black']
+>>> b
+['red', 'green', 'blue']
 >>>
 >>> id(first)  # doctest: +SKIP
 4391796976
 >>> id(second)  # doctest: +SKIP
 4391797008
+
+
+Recap
+-----
+* Mutable - can add, remove, and modify items
+* Stores elements of any type
+* Extensible and flexible
 
 
 References

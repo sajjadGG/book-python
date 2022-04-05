@@ -60,13 +60,13 @@ DATA = [
 # type: list[list|tuple|set]
 result = ...
 
-# append row from DATA at index 2
+# Append row from DATA at index 2
 ...
 
-# append row from DATA at index 4
+# Append row from DATA at index 4
 ...
 
-# append row from DATA at index -2
+# Append row from DATA at index -2
 ...
 
 # Solution

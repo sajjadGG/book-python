@@ -6,23 +6,23 @@
 * Time: 8 min
 
 English:
-    1. Divide `data` into two lists:
+    1. Divide `rows` into two lists:
        a. `train`: 60% - training data
        b. `test`: 40% - testing data
     2. Calculate split point:
-       a. `data` length multiplied by percent
-       b. From `data` slice training data from start to split
-       c. From `data` slice test data from split to end
+       a. `rows` length multiplied by percent
+       b. From `rows` slice training data from start to split
+       c. From `rows` slice test data from split to end
     3. Run doctests - all must succeed
 
 Polish:
-    1. Podziel `data` na dwie listy:
+    1. Podziel `rows` na dwie listy:
        a. `train`: 60% - dane do uczenia
        b. `test`: 40% - dane do testów
     2. Aby to zrobić wylicz punkt podziału:
-       a. Długość `data` razy procent
-       c. Z `data` wytnij do uczenia rekordy od początku do punktu podziału
-       d. Z `data` zapisz do testów rekordy od punktu podziału do końca
+       a. Długość `rows` razy procent
+       c. Z `rows` wytnij do uczenia rekordy od początku do punktu podziału
+       d. Z `rows` zapisz do testów rekordy od punktu podziału do końca
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -80,22 +80,22 @@ DATA = [
 
 
 header = DATA[0]
-data = DATA[1:]
+rows = DATA[1:]
 
-# `data` length multiplied by percent
+# Result of `rows` length multiplied by percent
 # type: int
 split = ...
 
-# first 60% from data
+# List with first 60% from rows
 # type: list[tuple]
 train = ...
 
-# last 40% from data
+# List with last 40% from rows
 # type: list[tuple]
 test = ...
 
 # Solution
 ratio = 0.6  # 60%
-split = int(len(data) * ratio)
-train = data[:split]
-test = data[split:]
+split = int(len(rows) * ratio)
+train = rows[:split]
+test = rows[split:]

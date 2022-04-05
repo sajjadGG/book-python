@@ -64,32 +64,32 @@ Performance
 * ``O(1)`` - lookup (contains) in set
 * [#pywikiTimeComplexity]_
 
->>> %%timeit -r 10_000 -n 10_000
+>>> %%timeit -r 10_000 -n 10_000  # doctest: +SKIP
 ... 0 in (1, 2, 3)
 ...
 48 ns ± 6.57 ns per loop (mean ± std. dev. of 10000 runs, 10,000 loops each)
 >>>
->>> %%timeit -r 10_000 -n 10_000
+>>> %%timeit -r 10_000 -n 10_000  # doctest: +SKIP
 ... 0 in [1, 2, 3]
 ...
 49.1 ns ± 6.39 ns per loop (mean ± std. dev. of 10000 runs, 10,000 loops each)
 >>>
->>> %%timeit -r 10_000 -n 10_000
+>>> %%timeit -r 10_000 -n 10_000  # doctest: +SKIP
 ... 0 in {1, 2, 3}
 ...
 27.2 ns ± 3.97 ns per loop (mean ± std. dev. of 10000 runs, 10,000 loops each)
 
->>> %%timeit -r 10_000 -n 10_000
+>>> %%timeit -r 10_000 -n 10_000  # doctest: +SKIP
 ... 0 in (1, 2, 3, 4, 5, 6, 7, 8, 9)
 ...
 99.2 ns ± 12.2 ns per loop (mean ± std. dev. of 10000 runs, 10,000 loops each)
 >>>
->>> %%timeit -r 10_000 -n 10_000
+>>> %%timeit -r 10_000 -n 10_000  # doctest: +SKIP
 ... 0 in [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ...
 98.5 ns ± 12.2 ns per loop (mean ± std. dev. of 10000 runs, 10,000 loops each)
 >>>
->>> %%timeit -r 10_000 -n 10_000
+>>> %%timeit -r 10_000 -n 10_000  # doctest: +SKIP
 ... 0 in {1, 2, 3, 4, 5, 6, 7, 8, 9}
 ...
 27.8 ns ± 4.21 ns per loop (mean ± std. dev. of 10000 runs, 10,000 loops each)

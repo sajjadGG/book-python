@@ -53,11 +53,7 @@ Tests:
      (5.7, 2.8, 4.1, 1.3, 'versicolor'),
      (6.3, 2.9, 5.6, 1.8, 'virginica'),
      (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-     (4.7, 3.2, 1.3, 0.2, 'setosa'),
-     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-     (7.6, 3.0, 6.6, 2.1, 'virginica'),
-     (4.9, 3.0, 1.4, 0.2, 'setosa'),
-     (4.9, 2.5, 4.5, 1.7, 'virginica')]
+     (4.7, 3.2, 1.3, 0.2, 'setosa')]
 """
 
 DATA = [
@@ -67,17 +63,13 @@ DATA = [
     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
     (6.3, 2.9, 5.6, 1.8, 'virginica'),
     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-    (4.7, 3.2, 1.3, 0.2, 'setosa'),
-    (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-    (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    (4.9, 3.0, 1.4, 0.2, 'setosa'),
-    (4.9, 2.5, 4.5, 1.7, 'virginica')]
+    (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
-# With row at index 0 from DATA
+# Row at index 0 from DATA
 # type: tuple[str]
 header = ...
 
-# With rows at all the other indexes from DATA (use only getitem)
+# Rows at all the other indexes from DATA (use only getitem)
 # type: list[tuple]
 data = ...
 
@@ -90,7 +82,3 @@ data.append(DATA[3])
 data.append(DATA[4])
 data.append(DATA[5])
 data.append(DATA[6])
-data.append(DATA[7])
-data.append(DATA[8])
-data.append(DATA[9])
-data.append(DATA[10])

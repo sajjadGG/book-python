@@ -59,8 +59,6 @@ DATA = [
 ]
 
 # Solution
-header, *data = DATA
-
 data = []
 for row in DATA:
     row = ','.join(str(x) for x in row)

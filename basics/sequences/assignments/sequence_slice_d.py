@@ -1,20 +1,20 @@
 """
-* Assignment: Sequence Slice Header/Data
+* Assignment: Sequence Slice Header/Rows
 * Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min
 
 English:
-    1. Separate header (first line) from data:
+    1. Separate header (first line) from rows:
        a. Define `header: tuple[str]` with header
-       b. Define `data: list[tuple]` with other data without header
+       b. Define `rows: list[tuple]` with other rows
     2. Run doctests - all must succeed
 
 Polish:
     1. Odseparuj nagłówek (pierwsza linia) od danych:
        a. Zdefiniuj `header: tuple[str]` z nagłówkiem
-       b. Zdefiniuj `data: list[tuple]` z danymi bez nagłówka
+       b. Zdefiniuj `rows: list[tuple]` z pozostałymi wierszami
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -22,19 +22,19 @@ Tests:
 
     >>> assert header is not Ellipsis, \
     'Assign your result to variable `header`'
-    >>> assert data is not Ellipsis, \
-    'Assign your result to variable `data`'
+    >>> assert rows is not Ellipsis, \
+    'Assign your result to variable `rows`'
     >>> assert type(header) is tuple, \
     'Variable `header` has invalid type, should be tuple'
-    >>> assert all(type(x) is tuple for x in data), \
-    'All elements in `data` should be tuple'
-    >>> assert header not in data, \
-    'Header should not be in `data`'
+    >>> assert all(type(x) is tuple for x in rows), \
+    'All elements in `rows` should be tuple'
+    >>> assert header not in rows, \
+    'Header should not be in `rows`'
 
     >>> header
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
 
-    >>> data  # doctest: +NORMALIZE_WHITESPACE
+    >>> rows  # doctest: +NORMALIZE_WHITESPACE
     [(5.8, 2.7, 5.1, 1.9, 'virginica'),
      (5.1, 3.5, 1.4, 0.2, 'setosa'),
      (5.7, 2.8, 4.1, 1.3, 'versicolor'),
@@ -61,14 +61,14 @@ DATA = [
     (4.9, 2.5, 4.5, 1.7, 'virginica')]
 
 
-# With row at index 0 from DATA
+# Tuple with row at index 0 from DATA
 # type: tuple[str]
 header = ...
 
-# With rows at all the other indexes from DATA
+# List with rows at all the other indexes from DATA
 # type: list[tuple]
-data = ...
+rows = ...
 
 # Solution
 header = DATA[0]
-data = DATA[1:]
+rows = DATA[1:]

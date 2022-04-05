@@ -7,20 +7,22 @@
 
 English:
     1. Create sets:
-        a. `result_a` with elements: 1, 2, 3
-        b. `result_b` with elements: 1.1, 2.2, 3.3
-        c. `result_c` with elements: 'a', 'b', 'c'
-        d. `result_d` with elements: True, False
-        e. `result_e` with elements: 1, 2.2, True, 'a'
+        a. `result_a` without elements
+        b. `result_a` with elements: 1, 2, 3
+        c. `result_b` with elements: 1.1, 2.2, 3.3
+        d. `result_c` with elements: 'a', 'b', 'c'
+        e. `result_d` with elements: True, False
+        f. `result_e` with elements: 1, 2.2, True, 'a'
     2. Run doctests - all must succeed
 
 Polish:
     1. Stwórz sety:
-        a. `result_a` z elementami: 1, 2, 3
-        b. `result_b` z elementami: 1.1, 2.2, 3.3
-        c. `result_c` z elementami: 'a', 'b', 'c'
-        d. `result_d` z elementami: True, False, True
-        e. `result_e` z elementami: 1, 2.2, True, 'a'
+        a. `result_a` bez elementów
+        b. `result_a` z elementami: 1, 2, 3
+        c. `result_b` z elementami: 1.1, 2.2, 3.3
+        d. `result_c` z elementami: 'a', 'b', 'c'
+        e. `result_d` z elementami: True, False, True
+        f. `result_e` z elementami: 1, 2.2, True, 'a'
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -36,6 +38,8 @@ Tests:
     'Assign your result to variable `result_d`'
     >>> assert result_e is not Ellipsis, \
     'Assign your result to variable `result_e`'
+    >>> assert result_f is not Ellipsis, \
+    'Assign your result to variable `result_f`'
 
     >>> assert type(result_a) is set, \
     'Variable `result_a` has invalid type, should be set'
@@ -47,42 +51,51 @@ Tests:
     'Variable `result_d` has invalid type, should be set'
     >>> assert type(result_e) is set, \
     'Variable `result_e` has invalid type, should be set'
+    >>> assert type(result_f) is set, \
+    'Variable `result_f` has invalid type, should be set'
 
-    >>> assert result_a == {1, 2, 3}, \
-    'Variable `result_a` has invalid value, should be {1, 2, 3}'
-    >>> assert result_b == {1.1, 2.2, 3.3}, \
-    'Variable `result_b` has invalid value, should be {1.1, 2.2, 3.3}'
-    >>> assert result_c == {'a', 'b', 'c'}, \
-    'Variable `result_c` has invalid value, should be {"a", "b", "c"}'
-    >>> assert result_d == {True, False}, \
-    'Variable `result_d` has invalid value, should be {True, False}'
-    >>> assert result_e == {1, 2.2, True, 'a'}, \
-    'Variable `result_e` has invalid value, should be {1, 2.2, True, "a"}'
+    >>> assert result_a == set(), \
+    'Variable `result_a` has invalid value, should be set()'
+    >>> assert result_b == {1, 2, 3}, \
+    'Variable `result_b` has invalid value, should be {1, 2, 3}'
+    >>> assert result_c == {1.1, 2.2, 3.3}, \
+    'Variable `result_c` has invalid value, should be {1.1, 2.2, 3.3}'
+    >>> assert result_d == {'a', 'b', 'c'}, \
+    'Variable `result_d` has invalid value, should be {"a", "b", "c"}'
+    >>> assert result_e == {True, False}, \
+    'Variable `result_e` has invalid value, should be {True, False}'
+    >>> assert result_f == {1, 2.2, True, 'a'}, \
+    'Variable `result_f` has invalid value, should be {1, 2.2, True, "a"}'
 """
 
-# With elements: 1, 2, 3
-# type: set[int]
+# Set without elements
+# type: set
 result_a = ...
 
-# With elements: 1.1, 2.2, 3.3
-# type: set[float]
+# Set with elements: 1, 2, 3
+# type: set[int]
 result_b = ...
 
-# With elements: 'a', 'b', 'c'
-# type: set[str]
+# Set with elements: 1.1, 2.2, 3.3
+# type: set[float]
 result_c = ...
 
-# With elements: True, False
-# type: set[bool]
+# Set with elements: 'a', 'b', 'c'
+# type: set[str]
 result_d = ...
 
-# With elements: 1, 2.2, True, 'a'
+# Set with elements: True, False
+# type: set[bool]
+result_f = ...
+
+# Set with elements: 1, 2.2, True, 'a'
 # type: set[int|float|bool|str]
-result_e = ...
+result_g = ...
 
 # Solution
-result_a = {1, 2, 3}
-result_b = {1.1, 2.2, 3.3}
-result_c = {'a', 'b', 'c'}
-result_d = {True, False}
-result_e = {1, 2.2, True, 'a'}
+result_a = set()
+result_b = {1, 2, 3}
+result_c = {1.1, 2.2, 3.3}
+result_d = {'a', 'b', 'c'}
+result_e = {True, False}
+result_f = {1, 2.2, True, 'a'}

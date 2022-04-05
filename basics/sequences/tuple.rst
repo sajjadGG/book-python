@@ -45,21 +45,21 @@ Type Casting
 
 Builtin function ``tuple()`` converts argument to ``tuple``
 
->>> data = 'abcd'
->>> tuple(data)
-('a', 'b', 'c', 'd')
+>>> text = 'hello'
+>>> tuple(text)
+('h', 'e', 'l', 'l', 'o')
 
->>> data = ['a', 'b', 'c', 'd']
->>> tuple(data)
-('a', 'b', 'c', 'd')
+>>> colors = ['red', 'green', 'blue']
+>>> tuple(colors)
+('red', 'green', 'blue')
 
->>> data = ('a', 'b', 'c', 'd')
->>> tuple(data)
-('a', 'b', 'c', 'd')
+>>> colors = ('red', 'green', 'blue')
+>>> tuple(colors)
+('red', 'green', 'blue')
 
->>> tuple('a', 'b', 'c', 'd')
+>>> tuple('red', 'green', 'blue')
 Traceback (most recent call last):
-TypeError: tuple expected at most 1 argument, got 4
+TypeError: tuple expected at most 1 argument, got 3
 
 
 Optional Brackets
@@ -131,10 +131,13 @@ Get Item
 
 >>> colors = ('red', 'green', 'blue')
 >>>
+>>>
 >>> colors[0]
 'red'
+>>>
 >>> colors[1]
 'green'
+>>>
 >>> colors[2]
 'blue'
 
@@ -146,7 +149,9 @@ Index
 * Raises ``ValueError`` if the value is not present
 
 >>> colors = ('red', 'green', 'blue')
->>> colors.index('blue')
+>>> result = colors.index('blue')
+>>>
+>>> print(result)
 2
 
 
@@ -154,9 +159,22 @@ Count
 -----
 * ``tuple.count()`` - number of occurrences of value
 
->>> colors = ('red', 'green', 'blue', 'red', 'blue')
->>> colors.count('blue')
-2
+>>> colors = ('red', 'green', 'blue', 'red', 'blue', 'red')
+>>> result = colors.count('red')
+>>>
+>>> print(result)
+3
+
+
+Reversed
+--------
+* ``reversed()`` - Return a reverse iterator over the values of the given sequence
+
+>>> values = (1, 2, 3)
+>>> result = reversed(values)
+>>>
+>>> tuple(result)
+(3, 2, 1)
 
 
 Sort
@@ -165,26 +183,21 @@ Sort
 * Note, that the result will be a ``list``, so we need to type cast
 * Reverse flag can be set to request the result in descending order
 
->>> data = (3, 1, 2)
->>> tuple(sorted(data))
+>>> values = (3, 1, 2)
+>>> result = sorted(values)
+>>>
+>>> tuple(result)
 (1, 2, 3)
-
-
-Reversed
---------
-* ``reversed()`` - Return a reverse iterator over the values of the given sequence
-
->>> data = (1, 2, 3)
->>> tuple(reversed(data))
-(3, 2, 1)
 
 
 Length
 ------
 * ``len()`` - Return the number of items in a container
 
->>> data = (1, 2, 3)
->>> len(data)
+>>> values = (1, 2, 3)
+>>> result = len(values)
+>>>
+>>> print(result)
 3
 
 
@@ -250,6 +263,13 @@ Memory
 .. figure:: img/memory-tuple.png
 
     Memory representation for ``tuple``
+
+
+Recap
+-----
+* Immutable - cannot add, modify or remove items
+* Stores elements of any type
+* Fast and memory efficient
 
 
 Assignments

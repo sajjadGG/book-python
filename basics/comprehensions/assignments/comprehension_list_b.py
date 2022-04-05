@@ -97,26 +97,26 @@ DATA = [
     (4.9, 2.5, 4.5, 1.7, 'virginica')]
 
 ratio = 0.6
-header, *data = DATA
-split = int(len(data) * ratio)
+header, *rows = DATA
+split = int(len(rows) * ratio)
 
 # Solution
-features_train = [X for *X, y in data[:split]]
-features_test = [X for *X, y in data[split:]]
-labels_train = [y for *X, y in data[:split]]
-labels_test = [y for *X, y in data[split:]]
+features_train = [X for *X, y in rows[:split]]
+features_test = [X for *X, y in rows[split:]]
+labels_train = [y for *X, y in rows[:split]]
+labels_test = [y for *X, y in rows[split:]]
 
 # Alternative Solution
-features = [X for *X, y in data]
-labels = [y for *X, y in data]
+features = [X for *X, y in rows]
+labels = [y for *X, y in rows]
 features_train = features[:split]
 features_test = features[split:]
 labels_train = labels[:split]
 labels_test = labels[split:]
 
 # Alternative Solution
-train = data[:split]
-test = data[split:]
+train = rows[:split]
+test = rows[split:]
 features_train = [X for *X, y in train]
 features_test = [X for *X, y in test]
 labels_train = [y for *X, y in train]
@@ -145,19 +145,19 @@ labels_test = [y for *X, y in test]
 ... ]
 ... 
 ... ratio = 0.6
-... header, *data = DATA
-... split = int(len(data) * ratio)
+... header, *rows = DATA
+... split = int(len(rows) * ratio)
 
 >>> %%timeit -r 10 -n 1000
-... features_train = [X for *X,y in data[:split]]
-... features_test = [X for *X,y in data[split:]]
-... labels_train = [y for *X,y in data[:split]]
-... labels_test = [y for *X,y in data[split:]]
+... features_train = [X for *X,y in rows[:split]]
+... features_test = [X for *X,y in rows[split:]]
+... labels_train = [y for *X,y in rows[:split]]
+... labels_test = [y for *X,y in rows[split:]]
 5.63 µs ± 475 ns per loop (mean ± std. dev. of 10 runs, 1000 loops each)
 
 >>> %%timeit -r 10 -n 1000
-... features = [X for *X,y in data]
-... labels = [y for *X,y in data]
+... features = [X for *X,y in rows]
+... labels = [y for *X,y in rows]
 ... features_train = features[:split]
 ... features_test = features[split:]
 ... labels_train = labels[:split]
@@ -165,8 +165,8 @@ labels_test = [y for *X, y in test]
 4.76 µs ± 440 ns per loop (mean ± std. dev. of 10 runs, 1000 loops each)
 
 >>> %%timeit -r 10 -n 1000
-... train = data[:split]
-... test = data[split:]
+... train = rows[:split]
+... test = rows[split:]
 ... features_train = [X for *X,y in train]
 ... features_test = [X for *X,y in test]
 ... labels_train = [y for *X,y in train]
@@ -320,19 +320,19 @@ DATA = [
 ]
 
 ratio = 0.6
-header, *data = DATA
-split = int(len(data) * ratio)
+header, *rows = DATA
+split = int(len(rows) * ratio)
 
 >>> %%timeit -r 10 -n 1000
-... features_train = [X for *X,y in data[:split]]
-... features_test = [X for *X,y in data[split:]]
-... labels_train = [y for *X,y in data[:split]]
-... labels_test = [y for *X,y in data[split:]]
+... features_train = [X for *X,y in rows[:split]]
+... features_test = [X for *X,y in rows[split:]]
+... labels_train = [y for *X,y in rows[:split]]
+... labels_test = [y for *X,y in rows[split:]]
 45.7 µs ± 5.79 µs per loop (mean ± std. dev. of 10 runs, 1000 loops each)
 
 >>> %%timeit -r 10 -n 1000
-... features = [X for *X,y in data]
-... labels = [y for *X,y in data]
+... features = [X for *X,y in rows]
+... labels = [y for *X,y in rows]
 ... features_train = features[:split]
 ... features_test = features[split:]
 ... labels_train = labels[:split]
@@ -340,8 +340,8 @@ split = int(len(data) * ratio)
 45.5 µs ± 2.92 µs per loop (mean ± std. dev. of 10 runs, 1000 loops each)
 
 >>> %%timeit -r 10 -n 1000
-... train = data[:split]
-... test = data[split:]
+... train = rows[:split]
+... test = rows[split:]
 ... features_train = [X for *X,y in train]
 ... features_test = [X for *X,y in test]
 ... labels_train = [y for *X,y in train]

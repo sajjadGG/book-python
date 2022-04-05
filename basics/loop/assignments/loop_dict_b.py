@@ -49,9 +49,9 @@ DATA = [
 result = ...
 
 # Solution
-header, *data = DATA
+header, *rows = DATA
 result = []
 
-for row in data:
+for row in rows:
     pair = zip(header, row)
     result.append(dict(pair))

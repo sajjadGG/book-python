@@ -34,7 +34,7 @@ Tests:
 TEXT = 'We choose to go to the Moon!'
 REMOVE = 'to go to '
 
-# TEXT without REMOVE part
+# String with TEXT without REMOVE part
 # type: str
 result = ...
 

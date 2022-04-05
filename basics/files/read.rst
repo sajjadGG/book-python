@@ -197,16 +197,16 @@ Use Case - 0x01
 ... 4,5,6,1
 ... 7,8,9,2"""
 >>>
->>> header, *data = DATA.splitlines()
+>>> header, *lines = DATA.splitlines()
 >>> colors = header.strip().split(',')[3:]
 >>> colors = dict(enumerate(colors))
 >>> result = []
 >>>
->>> for row in data:
-...     row = row.strip().split(',')
-...     *numbers, color = map(int, row)
-...     row = numbers + [colors.get(color)]
-...     result.append(tuple(row))
+>>> for line in lines:
+...     line = line.strip().split(',')
+...     *numbers, color = map(int, line)
+...     line = numbers + [colors.get(color)]
+...     result.append(tuple(line))
 
 
 Assignments

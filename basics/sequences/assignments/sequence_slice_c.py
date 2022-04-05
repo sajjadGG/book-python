@@ -28,7 +28,7 @@ Tests:
 a = (0, 1, 2, 3)
 b = [2, 3, 4, 5]
 
-# With every second element from `a` and `b`
+# Set with every second element from `a` and `b`
 # type: set[int]
 result = ...
 
