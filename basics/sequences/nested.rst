@@ -5,6 +5,27 @@ Sequence Nested
 * Therefore an element of a sequence could be another sequence
 * There is no limit how nested it could be
 
+>>> int.mro()
+[<class 'int'>, <class 'object'>]
+>>>>
+>>> float.mro()
+[<class 'float'>, <class 'object'>]
+>>>>
+>>> bool.mro()
+[<class 'bool'>, <class 'int'>, <class 'object'>]
+>>>>
+>>> type(None).mro()
+[<class 'NoneType'>, <class 'object'>]
+>>>>
+>>> tuple.mro()
+[<class 'tuple'>, <class 'object'>]
+>>>>
+>>> list.mro()
+[<class 'list'>, <class 'object'>]
+>>>>
+>>> set.mro()
+[<class 'set'>, <class 'object'>]
+
 >>> obj = 1
 >>> data = [obj, obj, obj]
 >>> data
