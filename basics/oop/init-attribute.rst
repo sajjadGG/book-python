@@ -64,9 +64,9 @@ Variable Attributes
 >>> vars(mark)
 {'firstname': 'Mark', 'lastname': 'Watney'}
 >>>
->>> ivan = Astronaut(a='Ivan', b='Ivanovich')
->>> vars(ivan)
-{'firstname': 'Ivan', 'lastname': 'Ivanovich'}
+>>> melissa = Astronaut(a='Melissa', b='Lewis')
+>>> vars(melissa)
+{'firstname': 'Melissa', 'lastname': 'Lewis'}
 
 
 Better Names
@@ -81,9 +81,9 @@ Better Names
 >>> vars(mark)
 {'firstname': 'Mark', 'lastname': 'Watney'}
 >>>
->>> ivan = Astronaut(firstname='Ivan', lastname='Ivanovich')
->>> vars(ivan)
-{'firstname': 'Ivan', 'lastname': 'Ivanovich'}
+>>> melissa = Astronaut(firstname='Melissa', lastname='Lewis')
+>>> vars(melissa)
+{'firstname': 'Melissa', 'lastname': 'Lewis'}
 
 
 Combine Attributes

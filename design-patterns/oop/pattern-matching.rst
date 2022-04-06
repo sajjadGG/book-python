@@ -12,8 +12,8 @@ Problem
 ...     result = 'Hello'
 ... elif language == 'German':
 ...     result = 'Guten Tag'
-... elif language == 'Russian':
-...     result = 'Здравствуй'
+... elif language == 'Spanish':
+...     result = 'Buenos Días'
 ... elif language == 'Chinese':
 ...     result = '你好'
 ... elif language == 'French':
@@ -36,7 +36,7 @@ In other languages you may find ``switch`` statement:
 ...     case 'Polish': result = 'Cześć'
 ...     case 'English': result = 'Hello'
 ...     case 'German': result = 'Guten Tag'
-...     case 'Russian': result = 'Здравствуй'
+...     case 'Spanish': result = 'Buenos Días'
 ...     case 'Chinese': result = '你好'
 ...     case 'French': result = 'Bonjour'
 ...     default: result = 'Unknown language'
@@ -55,7 +55,7 @@ Pattern Matching
 ...     case 'Polish': result = 'Cześć'
 ...     case 'English': result = 'Hello'
 ...     case 'German': result = 'Guten Tag'
-...     case 'Russian': result = 'Здравствуй'
+...     case 'Spanish': result = 'Buenos Días'
 ...     case 'Chinese': result = '你好'
 ...     case 'French': result = 'Bonjour'
 ...     case _: result = 'Unknown language'

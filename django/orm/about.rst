@@ -222,28 +222,28 @@ Examples
     'SELECT "contact_address"."id", "contact_address"."contact_id", "contact_address"."type", "contact_address"."street", "contact_address"."house", "contact_address"."apartment", "contact_address"."postcode", "contact_address"."city", "contact_address"."region", "contact_address"."country" FROM "contact_address" INNER JOIN "contact_contact" ON ("contact_address"."contact_id" = "contact_contact"."id") WHERE "contact_contact"."lastname" LIKE Wat% ESCAPE \'\\\''
 
     Contact.objects.all().order_by('lastname')
-    <QuerySet [<Contact: Ivan Ivanovich>, <Contact: Melissa Lewis>, <Contact: Rick Martinez>, <Contact: Jan Twardowski>, <Contact: Mark W>, <Contact: Mark Watney>, <Contact: Jan X>]>
+    <QuerySet [<Contact: Mark Watney>, <Contact: Melissa Lewis>, <Contact: Rick Martinez>, <Contact: Jan Twardowski>, <Contact: Mark W>, <Contact: Mark Watney>, <Contact: Jan X>]>
     Contact.objects.all().order_by('-lastname')
-    <QuerySet [<Contact: Jan X>, <Contact: Mark Watney>, <Contact: Mark W>, <Contact: Jan Twardowski>, <Contact: Rick Martinez>, <Contact: Melissa Lewis>, <Contact: Ivan Ivanovich>]>
+    <QuerySet [<Contact: Jan X>, <Contact: Mark Watney>, <Contact: Mark W>, <Contact: Jan Twardowski>, <Contact: Rick Martinez>, <Contact: Melissa Lewis>, <Contact: Mark Watney>]>
 
     Contact.objects.all().order_by('-lastname', 'firstname')
-    <QuerySet [<Contact: Jan X>, <Contact: Mark Watney>, <Contact: Mark W>, <Contact: Jan Twardowski>, <Contact: Rick Martinez>, <Contact: Melissa Lewis>, <Contact: Ivan Ivanovich>]>
+    <QuerySet [<Contact: Jan X>, <Contact: Mark Watney>, <Contact: Mark W>, <Contact: Jan Twardowski>, <Contact: Rick Martinez>, <Contact: Melissa Lewis>, <Contact: Mark Watney>]>
 
     Contact.objects.all().values('firstname')
-    <QuerySet [{'firstname': 'Mark'}, {'firstname': 'Rick'}, {'firstname': 'Melissa'}, {'firstname': 'Jan'}, {'firstname': 'Ivan'}, {'firstname': 'Jan'}, {'firstname': 'Mark'}]>
+    <QuerySet [{'firstname': 'Mark'}, {'firstname': 'Rick'}, {'firstname': 'Melissa'}, {'firstname': 'Jan'}, {'firstname': 'Mark'}, {'firstname': 'Watney'}, {'firstname': 'Mark'}]>
 
     Contact.objects.all().values('firstname').distinct()
-    <QuerySet [{'firstname': 'Mark'}, {'firstname': 'Rick'}, {'firstname': 'Melissa'}, {'firstname': 'Jan'}, {'firstname': 'Ivan'}]>
+    <QuerySet [{'firstname': 'Mark'}, {'firstname': 'Rick'}, {'firstname': 'Melissa'}, {'firstname': 'Jan'}, {'firstname': 'Mark'}]>
 
     c = Contact.objects.all()
     fname = c.values('firstname')
     lname = c.values('lastname')
 
     fname
-    <QuerySet [{'firstname': 'Mark'}, {'firstname': 'Rick'}, {'firstname': 'Melissa'}, {'firstname': 'Jan'}, {'firstname': 'Ivan'}, {'firstname': 'Jan'}, {'firstname': 'Mark'}]>
+    <QuerySet [{'firstname': 'Mark'}, {'firstname': 'Rick'}, {'firstname': 'Melissa'}, {'firstname': 'Jan'}, {'firstname': 'Mark'}, {'firstname': 'Jan'}, {'firstname': 'Mark'}]>
 
     lname
-    <QuerySet [{'lastname': 'Ivanovich'}, {'lastname': 'Lewis'}, {'lastname': 'Martinez'}, {'lastname': 'Twardowski'}, {'lastname': 'W'}, {'lastname': 'Watney'}, {'lastname': 'X'}]>
+    <QuerySet [{'lastname': 'Watney'}, {'lastname': 'Lewis'}, {'lastname': 'Martinez'}, {'lastname': 'Twardowski'}, {'lastname': 'W'}, {'lastname': 'Watney'}, {'lastname': 'X'}]>
 
 
     Contact.objects.get(id=1)
@@ -312,7 +312,7 @@ Examples
     <QuerySet [<Contact: Mark Watney>]>
 
     Contact.objects.filter(age__isnull=True)
-    <QuerySet [<Contact: Rick Martinez>, <Contact: Melissa Lewis>, <Contact: Jan Twardowski>, <Contact: Ivan Ivanovich>, <Contact: Jan X>, <Contact: Mark W>]>
+    <QuerySet [<Contact: Rick Martinez>, <Contact: Melissa Lewis>, <Contact: Jan Twardowski>, <Contact: Mark Watney>, <Contact: Jan X>, <Contact: Mark W>]>
 
     Address.objects.all()
     <QuerySet [<Address: Mark Watney - NASA Pkwy, Houston, Texas USA>, <Address: Melissa Lewis - Powstańców Wielkopolskich, Krakow, malopolskie Poland>]>
@@ -366,7 +366,7 @@ Examples
     Contact.objects.filter(astro1|astro2 | (fname&lname))
     <QuerySet [<Contact: Mark Watney>, <Contact: Melissa Lewis>]>
     Contact.objects.filter(astro1|astro2 | ~(fname&lname))
-    <QuerySet [<Contact: Mark Watney>, <Contact: Rick Martinez>, <Contact: Melissa Lewis>, <Contact: Jan Twardowski>, <Contact: Ivan Ivanovich>, <Contact: Jan X>, <Contact: Mark W>]>
+    <QuerySet [<Contact: Mark Watney>, <Contact: Rick Martinez>, <Contact: Melissa Lewis>, <Contact: Jan Twardowski>, <Contact: Mark Watney>, <Contact: Jan X>, <Contact: Mark W>]>
 
     Contact.objects.filter( (astro1|astro2) & ~(fname&lname) )
     <QuerySet [<Contact: Melissa Lewis>]>
@@ -382,39 +382,39 @@ Examples
 
 
     Contact.objects.all().values('firstname', 'lastname')
-    <QuerySet [{'firstname': 'Mark', 'lastname': 'Watney'}, {'firstname': 'Rick', 'lastname': 'Martinez'}, {'firstname': 'Melissa', 'lastname': 'Lewis'}, {'firstname': 'Jan', 'lastname': 'Twardowski'}, {'firstname': 'Ivan', 'lastname': 'Ivanovich'}, {'firstname': 'Jan', 'lastname': 'X'}, {'firstname': 'Mark', 'lastname': 'W'}]>
+    <QuerySet [{'firstname': 'Mark', 'lastname': 'Watney'}, {'firstname': 'Rick', 'lastname': 'Martinez'}, {'firstname': 'Melissa', 'lastname': 'Lewis'}, {'firstname': 'Jan', 'lastname': 'Twardowski'}, {'firstname': 'Mark', 'lastname': 'Watney'}, {'firstname': 'Jan', 'lastname': 'X'}, {'firstname': 'Mark', 'lastname': 'W'}]>
     Contact.objects.all().annotate(fullname=Concat('firstname', 'lastname'))
-    <QuerySet [<Contact: Mark Watney>, <Contact: Rick Martinez>, <Contact: Melissa Lewis>, <Contact: Jan Twardowski>, <Contact: Ivan Ivanovich>, <Contact: Jan X>, <Contact: Mark W>]>
+    <QuerySet [<Contact: Mark Watney>, <Contact: Rick Martinez>, <Contact: Melissa Lewis>, <Contact: Jan Twardowski>, <Contact: Mark Watney>, <Contact: Jan X>, <Contact: Mark W>]>
     Contact.objects.all().annotate(fullname=Concat('firstname', 'lastname')).values('fullname')
-    <QuerySet [{'fullname': 'MarkWatney'}, {'fullname': 'RickMartinez'}, {'fullname': 'MelissaLewis'}, {'fullname': 'JanTwardowski'}, {'fullname': 'IvanIvanovich'}, {'fullname': 'JanX'}, {'fullname': 'MarkW'}]>
+    <QuerySet [{'fullname': 'MarkWatney'}, {'fullname': 'RickMartinez'}, {'fullname': 'MelissaLewis'}, {'fullname': 'JanTwardowski'}, {'fullname': 'MarkWatney'}, {'fullname': 'JanX'}, {'fullname': 'MarkW'}]>
     Contact.objects.all().annotate(fullname=Concat('firstname', '', 'lastname')).values('fullname')
     Traceback (most recent call last):
     django.core.exceptions.FieldError: Cannot resolve keyword '' into field. Choices are: address, age, attachment, born, created_author, created_author_id, created_date, email, firstname, gender, height, homepage, id, is_adult, job, lastname, modified_author, modified_author_id, modified_date, notes, phone_country_code, phone_number, picture, salary, weight
     Contact.objects.all().annotate(fullname=Concat('firstname', Value(''), 'lastname')).values('fullname')
-    <QuerySet [{'fullname': 'MarkWatney'}, {'fullname': 'RickMartinez'}, {'fullname': 'MelissaLewis'}, {'fullname': 'JanTwardowski'}, {'fullname': 'IvanIvanovich'}, {'fullname': 'JanX'}, {'fullname': 'MarkW'}]>
+    <QuerySet [{'fullname': 'MarkWatney'}, {'fullname': 'RickMartinez'}, {'fullname': 'MelissaLewis'}, {'fullname': 'JanTwardowski'}, {'fullname': 'MarkWatney'}, {'fullname': 'JanX'}, {'fullname': 'MarkW'}]>
     Contact.objects.all().annotate(fullname=Concat('firstname', Value(' '), 'lastname')).values('fullname')
-    <QuerySet [{'fullname': 'Mark Watney'}, {'fullname': 'Rick Martinez'}, {'fullname': 'Melissa Lewis'}, {'fullname': 'Jan Twardowski'}, {'fullname': 'Ivan Ivanovich'}, {'fullname': 'Jan X'}, {'fullname': 'Mark W'}]>
+    <QuerySet [{'fullname': 'Mark Watney'}, {'fullname': 'Rick Martinez'}, {'fullname': 'Melissa Lewis'}, {'fullname': 'Jan Twardowski'}, {'fullname': 'MarkWatney'}, {'fullname': 'Jan X'}, {'fullname': 'Mark W'}]>
 
     Contact.objects.all().annotate(fullname=Concat('firstname', Value(' '), 'lastname')).values('fullname')
-    <QuerySet [{'fullname': 'Mark Watney'}, {'fullname': 'Rick Martinez'}, {'fullname': 'Melissa Lewis'}, {'fullname': 'Jan Twardowski'}, {'fullname': 'Ivan Ivanovich'}, {'fullname': 'Jan X'}, {'fullname': 'Mark W'}]>
+    <QuerySet [{'fullname': 'Mark Watney'}, {'fullname': 'Rick Martinez'}, {'fullname': 'Melissa Lewis'}, {'fullname': 'Jan Twardowski'}, {'fullname': 'MarkWatney'}, {'fullname': 'Jan X'}, {'fullname': 'Mark W'}]>
 
 
 
     result = Contact.objects.all().annotate(fullname=Concat('firstname', Value(' '), 'lastname')).values('fullname')
     list(result)
-    [{'fullname': 'Mark Watney'}, {'fullname': 'Rick Martinez'}, {'fullname': 'Melissa Lewis'}, {'fullname': 'Jan Twardowski'}, {'fullname': 'Ivan Ivanovich'}, {'fullname': 'Jan X'}, {'fullname': 'Mark W'}]
+    [{'fullname': 'Mark Watney'}, {'fullname': 'Rick Martinez'}, {'fullname': 'Melissa Lewis'}, {'fullname': 'Jan Twardowski'}, {'fullname': 'MarkWatney'}, {'fullname': 'Jan X'}, {'fullname': 'Mark W'}]
     result = Contact.objects.all().annotate(fullname=Concat('firstname', Value(' '), 'lastname')).value_list('fullname')
     Traceback (most recent call last):
       File "<input>", line 1, in <module>
     AttributeError: 'QuerySet' object has no attribute 'value_list'
     result = Contact.objects.all().annotate(fullname=Concat('firstname', Value(' '), 'lastname')).values_list('fullname')
     result
-    <QuerySet [('Mark Watney',), ('Rick Martinez',), ('Melissa Lewis',), ('Jan Twardowski',), ('Ivan Ivanovich',), ('Jan X',), ('Mark W',)]>
+    <QuerySet [('Mark Watney',), ('Rick Martinez',), ('Melissa Lewis',), ('Jan Twardowski',), ('Mark Watney',), ('Jan X',), ('Mark W',)]>
     result = Contact.objects.all().annotate(fullname=Concat('firstname', Value(' '), 'lastname')).values_list('fullname', flat=True)
     result
-    <QuerySet ['Mark Watney', 'Rick Martinez', 'Melissa Lewis', 'Jan Twardowski', 'Ivan Ivanovich', 'Jan X', 'Mark W']>
+    <QuerySet ['Mark Watney', 'Rick Martinez', 'Melissa Lewis', 'Jan Twardowski', 'Mark Watney', 'Jan X', 'Mark W']>
     list(result)
-    ['Mark Watney', 'Rick Martinez', 'Melissa Lewis', 'Jan Twardowski', 'Ivan Ivanovich', 'Jan X', 'Mark W']
+    ['Mark Watney', 'Rick Martinez', 'Melissa Lewis', 'Jan Twardowski', 'Mark Watney', 'Jan X', 'Mark W']
 
 
     Contact.objects.count()

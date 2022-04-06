@@ -40,12 +40,11 @@ Control Flow
 ------------
 * ``not`` negates (logically inverts) condition
 
->>> crew = {'Lewis', 'Watney', 'Twardowski'}
+>>> crew = {'mwatney', 'mlewis', 'rmartinez'}
 >>>
->>> if 'Ivanovich' not in crew:
+>>> if 'ptwardowski' not in crew:
 ...     print('You are not assigned to the crew')
 You are not assigned to the crew
-
 
 
 .. todo:: Assignments

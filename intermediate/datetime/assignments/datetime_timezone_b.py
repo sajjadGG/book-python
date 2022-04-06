@@ -8,7 +8,7 @@ English:
     1. Create `zoneinfo.ZoneInfo` object of:
         a. UTC
         b. London, United Kingdom
-        c. Moscow, Russian Federation
+        c. Buenos Aires, Argentina
         d. Warsaw, Poland
         e. Tokyo, Japan
         f. Sydney, Australia
@@ -21,7 +21,7 @@ Polish:
     1. Stwórz obiekt `zoneinfo.ZoneInfo` z:
         a. UCT
         b. London, Wielka Brytania
-        c. Moscow, Rosja
+        c. Buenos Aires, Argentyna
         d. Warsaw, Polska
         e. Tokyo, Japan
         f. Sydney, Australia
@@ -52,8 +52,8 @@ Tests:
     'Assign value to variable `utc` has instead of Ellipsis (...)'
     >>> assert london is not Ellipsis, \
     'Assign value to variable `london` instead of Ellipsis (...)'
-    >>> assert moscow is not Ellipsis, \
-    'Assign value to variable `moscow` instead of Ellipsis (...)'
+    >>> assert buenos_aires is not Ellipsis, \
+    'Assign value to variable `buenos_aires` instead of Ellipsis (...)'
     >>> assert warsaw is not Ellipsis, \
     'Assign value to variable `warsaw` instead of Ellipsis (...)'
     >>> assert tokyo is not Ellipsis, \
@@ -79,8 +79,8 @@ Tests:
     'Variable `utc` has invalid type, must be a ZoneInfo'
     >>> assert isinstance(london, ZoneInfo), \
     'Variable `london` has invalid type, must be a ZoneInfo'
-    >>> assert isinstance(moscow, ZoneInfo), \
-    'Variable `moscow` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(buenos_aires, ZoneInfo), \
+    'Variable `buenos_aires` has invalid type, must be a ZoneInfo'
     >>> assert isinstance(warsaw, ZoneInfo), \
     'Variable `warsaw` has invalid type, must be a ZoneInfo'
     >>> assert isinstance(tokyo, ZoneInfo), \
@@ -106,8 +106,8 @@ Tests:
     'UTC'
     >>> london.key
     'Europe/London'
-    >>> moscow.key
-    'Europe/Moscow'
+    >>> buenos_aires.key
+    'America/Argentina/Buenos_Aires'
     >>> warsaw.key
     'Europe/Warsaw'
     >>> tokyo.key
@@ -141,9 +141,9 @@ utc = ...
 # type: ZoneInfo
 london = ...
 
-# Timezone in Moscow, Russian Federation
+# Timezone in Buenos Aires, Argentina
 # type: ZoneInfo
-moscow = ...
+buenos_aires = ...
 
 # Timezone in Warsaw, Poland
 # type: ZoneInfo
@@ -188,7 +188,7 @@ south_pole = ...
 # Solution
 utc = ZoneInfo('UTC')
 london = ZoneInfo('Europe/London')
-moscow = ZoneInfo('Europe/Moscow')
+buenos_aires = ZoneInfo('America/Argentina/Buenos_Aires')
 warsaw = ZoneInfo('Europe/Warsaw')
 tokyo = ZoneInfo('Asia/Tokyo')
 sydney = ZoneInfo('Australia/Sydney')

@@ -6,12 +6,12 @@
 
 English:
     1. Read data from `DATA` to `result: pd.DataFrame`
-    2. Parse dates in "Mission Date" column
+    2. Parse dates in "born" column
     3. Run doctests - all must succeed
 
 Polish:
     1. Wczytaj dane z `DATA` do `result: pd.DataFrame`
-    2. Sparsuj daty w kolumnie "Mission Date"
+    2. Sparsuj daty w kolumnie "born"
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
@@ -25,13 +25,14 @@ Tests:
     >>> assert type(result) is pd.DataFrame, \
     'Variable `result` must be a `pd.DataFrame` type'
 
-    >>> result
-       id First Name   Last Name Mission Date
-    0   1        Jan  Twardowski   1988-01-05
-    1   2       Mark      Watney   1969-07-21
-    2   3       Ivan   Ivanovich   1961-04-12
-    3   4    Melissa       Lewis   1970-01-01
-    4   5       Alex       Vogel   1968-12-25
+    >>> result[['firstname', 'lastname', 'born']]
+      firstname   lastname        born
+    0      Mark     Watney  1994-10-12
+    1   Melissa      Lewis  1995-07-15
+    2      Rick   Martinez  1996-01-21
+    3      Alex      Vogel  1994-11-15
+    4      Beth  Johanssen  2006-05-09
+    5     Chris       Beck  1999-08-02
 """
 
 import pandas as pd
@@ -40,10 +41,10 @@ import pandas as pd
 DATA = 'https://python.astrotech.io/_static/martian-en.csv'
 
 
-# Read DATA and parse dates in "Mission Date" column
+# Read DATA and parse dates in "born" column
 # type: pd.DataFrame
 result = ...
 
 
 # Solution
-result = pd.read_csv(DATA, parse_dates=['Mission Date'])
+result = pd.read_csv(DATA, parse_dates=['born'])

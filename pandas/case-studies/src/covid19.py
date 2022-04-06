@@ -38,7 +38,7 @@ def covid19(country: str = None) -> pd.DataFrame:
     Name: 2022-01-01 00:00:00, dtype: int64
 
     >>> covid19('US').loc['2022-01-01']
-    Confirmed    55024304
+    Confirmed    55024250
     Deaths         828276
     Recovered           0
     Name: 2022-01-01 00:00:00, dtype: int64
@@ -50,7 +50,7 @@ def covid19(country: str = None) -> pd.DataFrame:
     Name: 2022-01-01 00:00:00, dtype: int64
 
     >>> covid19().loc['2022-01-01']
-    Confirmed    289928737
+    Confirmed    289928638
     Deaths         5444394
     Recovered            0
     Name: 2022-01-01 00:00:00, dtype: int64

@@ -95,3 +95,7 @@ Assignments
 .. literalinclude:: assignments/exception_raise_b.py
     :caption: :download:`Solution <assignments/exception_raise_b.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/exception_raise_c.py
+    :caption: :download:`Solution <assignments/exception_raise_c.py>`
+    :end-before: # Solution

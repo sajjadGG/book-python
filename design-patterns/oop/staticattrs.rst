@@ -64,15 +64,15 @@ Static vs. Dynamic fields:
 >>>
 >>>
 >>> watney = Astronaut()
->>> twardowski = Astronaut()
->>> ivanovic = Astronaut()
+>>> lewis = Astronaut()
+>>> martinez = Astronaut()
 >>>
 >>> # Print field
 >>> print(watney.agency)
 NASA
->>> print(twardowski.agency)
+>>> print(lewis.agency)
 NASA
->>> print(ivanovic.agency)
+>>> print(martinez.agency)
 NASA
 >>> print(Astronaut.agency)
 NASA
@@ -83,38 +83,38 @@ NASA
 >>> # Print field
 >>> print(watney.agency)
 ESA
->>> print(twardowski.agency)
+>>> print(lewis.agency)
 ESA
->>> print(ivanovic.agency)
+>>> print(martinez.agency)
 ESA
 >>> print(Astronaut.agency)
 ESA
 >>>
 >>> # Change field on the instance
->>> ivanovic.agency = 'Roscosmos'
+>>> martinez.agency = 'POLSA'
 >>>
 >>> # Print field
 >>> print(watney.agency)
 ESA
->>> print(twardowski.agency)
+>>> print(lewis.agency)
 ESA
->>> print(ivanovic.agency)
-Roscosmos
+>>> print(martinez.agency)
+POLSA
 >>> print(Astronaut.agency)
 ESA
 >>>
 >>> # Change field on a class
->>> Astronaut.agency = 'POLSA'
+>>> Astronaut.agency = 'NASA'
 >>>
 >>> # Print field
 >>> print(watney.agency)
+NASA
+>>> print(lewis.agency)
+NASA
+>>> print(martinez.agency)
 POLSA
->>> print(twardowski.agency)
-POLSA
->>> print(ivanovic.agency)
-Roscosmos
 >>> print(Astronaut.agency)
-POLSA
+NASA
 
 
 Static or Dynamic?

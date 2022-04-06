@@ -188,9 +188,9 @@ Dynamically creating fields:
                 setattr(self, key, value)
 
 
-    a = Container(firstname='Jan', lastname='Twardowski')
-    a.firstname          # Jan
-    a.lastname           # 'Twardowski'
+    a = Container(firstname='Mark', lastname='Watney')
+    a.firstname          # 'Mark'
+    a.lastname           # 'Watney'
 
     b = Container(species='Setosa')
     b.species            # 'Setosa'
@@ -207,14 +207,14 @@ Dynamically creating fields:
                 setattr(self, key, value)
 
 
-    jan = Astronaut(lastname='Twardowski', addresses=())
-    ivan = Astronaut(firstname='Иван', lastname='Иванович', agency='Roscosmos')
+    mark = Astronaut(lastname='Watney', addresses=())
+    melissa = Astronaut(firstname='Melissa', lastname='Lewis', agency='NASA')
 
-    print(jan.lastname)   # Twardowski
-    print(ivan.firstname)  # Иван
+    print(mark.lastname)   # Watney
+    print(melissa.firstname)  # Melissa
 
-    print(jan.__dict__)    # {'lastname': 'Twardowski', 'addresses': ()}
-    print(ivan.__dict__)    # {'lastname': 'Иванович', 'firstname': 'Иван', 'agency': 'Roscosmos'}
+    print(mark.__dict__)    # {'lastname': 'Watney', 'addresses': ()}
+    print(melissa.__dict__)    # {'lastname': 'Melissa', 'firstname': 'Lewis', 'agency': 'NASA'}
 
 .. code-block:: python
 
@@ -236,22 +236,18 @@ Example
 .. code-block:: python
 
     DATA = [
-        {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
+        {"firstname": "Pan", "lastname": "Twardowski", "addresses": [
             {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "postcode": "31-008", "region": "Małopolskie", "country": "Poland"}]},
 
-        {"firstname": "José", "lastname": "Jiménez", "addresses": [
+        {"firstname": "Mark", "lastname": "Watney", "addresses": [
             {"street": "2101 E NASA Pkwy", "city": "Houston", "postcode": 77058, "region": "Texas", "country": "USA"},
             {"street": "", "city": "Kennedy Space Center", "postcode": 32899, "region": "Florida", "country": "USA"}]},
 
-        {"firstname": "Mark", "lastname": "Watney", "addresses": [
+        {"firstname": "Melissa", "lastname": "Lewis", "addresses": [
             {"street": "4800 Oak Grove Dr", "city": "Pasadena", "postcode": 91109, "region": "California", "country": "USA"},
             {"street": "2825 E Ave P", "city": "Palmdale", "postcode": 93550, "region": "California", "country": "USA"}]},
 
-        {"firstname": "Иван", "lastname": "Иванович", "addresses": [
-            {"street": "", "city": "Космодро́м Байкону́р", "postcode": "", "region": "Кызылординская область", "country": "Қазақстан"},
-            {"street": "", "city": "Звёздный городо́к", "postcode": 141160, "region": "Московская область", "country": "Россия"}]},
-
-        {"firstname": "Melissa", "lastname": "Lewis", "addresses": []},
+        {"firstname": "Rick", "lastname": "Martinez", "addresses": []},
 
         {"firstname": "Alex", "lastname": "Vogel", "addresses": [
             {"street": "Linder Hoehe", "city": "Köln", "postcode": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
@@ -274,11 +270,10 @@ Example
 
 
     print(result)
-    # [Container('Jan', 'Twardowski', [{'street': 'Kamienica Pod św. Janem Kapistranem', 'city': 'Kraków', 'postcode': '31-008', 'region': 'Małopolskie', 'country': 'Poland'}]),
-    #  Container('José', 'Jiménez', [{'street': '2101 E NASA Pkwy', 'city': 'Houston', 'postcode': 77058, 'region': 'Texas', 'country': 'USA'}, {'street': '', 'city': 'Kennedy Space Center', 'postcode': 32899, 'region': 'Florida', 'country': 'USA'}]),
-    #  Container('Mark', 'Watney', [{'street': '4800 Oak Grove Dr', 'city': 'Pasadena', 'postcode': 91109, 'region': 'California', 'country': 'USA'}, {'street': '2825 E Ave P', 'city': 'Palmdale', 'postcode': 93550, 'region': 'California', 'country': 'USA'}]),
-    #  Container('Иван', 'Иванович', [{'street': '', 'city': 'Космодро́м Байкону́р', 'postcode': '', 'region': 'Кызылординская область', 'country': 'Қазақстан'}, {'street': '', 'city': 'Звёздный городо́к', 'postcode': 141160, 'region': 'Московская область', 'country': 'Россия'}]),
-    #  Container('Melissa', 'Lewis', []),
+    # [Container('Pan', 'Twardowski', [{'street': 'Kamienica Pod św. Janem Kapistranem', 'city': 'Kraków', 'postcode': '31-008', 'region': 'Małopolskie', 'country': 'Poland'}]),
+    #  Container('Mark', 'Watney', [{'street': '2101 E NASA Pkwy', 'city': 'Houston', 'postcode': 77058, 'region': 'Texas', 'country': 'USA'}, {'street': '', 'city': 'Kennedy Space Center', 'postcode': 32899, 'region': 'Florida', 'country': 'USA'}]),
+    #  Container('Melissa', 'Lewis', [{'street': '4800 Oak Grove Dr', 'city': 'Pasadena', 'postcode': 91109, 'region': 'California', 'country': 'USA'}, {'street': '2825 E Ave P', 'city': 'Palmdale', 'postcode': 93550, 'region': 'California', 'country': 'USA'}]),
+    #  Container('Rick', 'Martinez', []),
     #  Container('Alex', 'Vogel', [{'street': 'Linder Hoehe', 'city': 'Köln', 'postcode': 51147, 'region': 'North Rhine-Westphalia', 'country': 'Germany'}])]
 
 

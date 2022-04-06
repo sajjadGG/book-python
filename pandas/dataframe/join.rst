@@ -66,54 +66,54 @@ Merge
 
 >>> firstnames = pd.DataFrame({
 ...     'id': [1, 2, 3, 4],
-...     'firstname': ['Mark', 'Jan', 'Ivan', 'Melissa']})
+...     'firstname': ['Mark', 'Melissa', 'Rick', 'Beth']})
 >>>
 >>> lastnames = pd.DataFrame({
 ...     'id': [1, 2, 3, 4],
-...     'lastname': ['Watney', 'Twardowski', 'Ivanovic', 'Lewis']})
+...     'lastname': ['Watney', 'Lewis', 'Martinez', 'Johanssen']})
 >>>
 >>> firstnames
    id firstname
 0   1      Mark
-1   2       Jan
-2   3      Ivan
-3   4   Melissa
+1   2   Melissa
+2   3      Rick
+3   4      Beth
 >>>
 >>> lastnames
-   id    lastname
-0   1      Watney
-1   2  Twardowski
-2   3    Ivanovic
-3   4       Lewis
+   id   lastname
+0   1     Watney
+1   2      Lewis
+2   3   Martinez
+3   4  Johanssen
 >>>
 >>> firstnames.merge(lastnames)
-   id firstname    lastname
-0   1      Mark      Watney
-1   2       Jan  Twardowski
-2   3      Ivan    Ivanovic
-3   4   Melissa       Lewis
+   id firstname   lastname
+0   1      Mark     Watney
+1   2   Melissa      Lewis
+2   3      Rick   Martinez
+3   4      Beth  Johanssen
 >>>
 >>> firstnames.merge(lastnames, on='id')
-   id firstname    lastname
-0   1      Mark      Watney
-1   2       Jan  Twardowski
-2   3      Ivan    Ivanovic
-3   4   Melissa       Lewis
+   id firstname   lastname
+0   1      Mark     Watney
+1   2   Melissa      Lewis
+2   3      Rick   Martinez
+3   4      Beth  Johanssen
 >>>
 >>> firstnames.merge(lastnames, left_on='id', right_on='id')
-   id firstname    lastname
-0   1      Mark      Watney
-1   2       Jan  Twardowski
-2   3      Ivan    Ivanovic
-3   4   Melissa       Lewis
+   id firstname   lastname
+0   1      Mark     Watney
+1   2   Melissa      Lewis
+2   3      Rick   Martinez
+3   4      Beth  Johanssen
 >>>
 >>> firstnames.merge(lastnames).set_index('id')  # doctest: +NORMALIZE_WHITESPACE
    firstname    lastname
 id
-1       Mark      Watney
-2        Jan  Twardowski
-3       Ivan    Ivanovic
-4    Melissa       Lewis
+1      Mark     Watney
+2   Melissa      Lewis
+3      Rick   Martinez
+4      Beth  Johanssen
 
 >>> df1999.merge(df2000)
 Empty DataFrame
@@ -150,51 +150,51 @@ Join
 
 >>> firstnames = pd.DataFrame({
 ...     'id': [1, 2, 3, 4],
-...     'firstname': ['Mark', 'Jan', 'Ivan', 'Melissa']})
+...     'firstname': ['Mark', 'Melissa', 'Rick', 'Beth']})
 >>>
 >>> lastnames = pd.DataFrame({
 ...     'id': [1, 2, 3, 4],
-...     'lastname': ['Watney', 'Twardowski', 'Ivanovic', 'Lewis']})
+...     'lastname': ['Watney', 'Lewis', 'Martinez', 'Johanssen']})
 >>>
 >>> firstnames
    id firstname
 0   1      Mark
-1   2       Jan
-2   3      Ivan
-3   4   Melissa
+1   2   Melissa
+2   3      Rick
+3   4      Beth
 >>>
 >>> lastnames
-   id    lastname
-0   1      Watney
-1   2  Twardowski
-2   3    Ivanovic
-3   4       Lewis
+   id   lastname
+0   1     Watney
+1   2      Lewis
+2   3   Martinez
+3   4  Johanssen
 
 Join DataFrames using their indexes:
 
 >>> firstnames.join(lastnames, lsuffix='_fname', rsuffix='_lname')
-   id_fname firstname  id_lname    lastname
-0         1      Mark         1      Watney
-1         2       Jan         2  Twardowski
-2         3      Ivan         3    Ivanovic
-3         4   Melissa         4       Lewis
+   id_fname firstname  id_lname   lastname
+0         1      Mark         1     Watney
+1         2   Melissa         2      Lewis
+2         3      Rick         3   Martinez
+3         4      Beth         4  Johanssen
 >>>
 >>> firstnames.set_index('id').join(lastnames.set_index('id'))  # doctest: +NORMALIZE_WHITESPACE
    firstname    lastname
 id
-1       Mark      Watney
-2        Jan  Twardowski
-3       Ivan    Ivanovic
-4    Melissa       Lewis
+1     Mark     Watney
+2  Melissa      Lewis
+3     Rick   Martinez
+4     Beth  Johanssen
 
 This method preserves the original DataFrame's index in the result:
 
 >>> firstnames.join(lastnames.set_index('id'), on='id')
-   id firstname    lastname
-0   1      Mark      Watney
-1   2       Jan  Twardowski
-2   3      Ivan    Ivanovic
-3   4   Melissa       Lewis
+   id firstname   lastname
+0   1      Mark     Watney
+1   2   Melissa      Lewis
+2   3      Rick   Martinez
+3   4      Beth  Johanssen
 >>>
 >>> df1999.join(df2000, how='left', lsuffix='_1999', rsuffix='_2000')
             Morning_1999  Noon_1999  Evening_1999  Midnight_1999  Morning_2000  Noon_2000  Evening_2000  Midnight_2000

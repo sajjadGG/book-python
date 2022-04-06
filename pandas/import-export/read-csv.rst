@@ -6,6 +6,10 @@ Pandas Read CSV
 SetUp
 -----
 >>> import pandas as pd
+>>>
+>>> pd.set_option('display.width', 500)
+>>> pd.set_option('display.max_columns', 10)
+>>> pd.set_option('display.max_rows', 10)
 
 
 Header
@@ -108,20 +112,22 @@ Use Case - 0x02
 >>> DATA = 'https://python.astrotech.io/_static/martian-en.csv'
 
 >>> pd.read_csv(DATA)
-   id First Name   Last Name       Mission Date
-0   1        Jan  Twardowski     5 January 1988
-1   2       Mark      Watney      July 21, 1969
-2   3       Ivan   Ivanovich      Apr 12,  1961
-3   4    Melissa       Lewis  January 1st, 1970
-4   5       Alex       Vogel   1968 December 25
+  firstname   lastname        born  gender          ssn                email                 phone
+0      Mark     Watney  1994-10-12    male  94101212345     mwatney@nasa.gov     +1 (234) 555-0000
+1   Melissa      Lewis  1995-07-15  female  95071512345      mlewis@nasa.gov     +1 (234) 555-0001
+2      Rick   Martinez  1996-01-21    male  96012112345   rmartinez@nasa.gov     +1 (234) 555-0010
+3      Alex      Vogel  1994-11-15    male  94111512345       avogel@esa.int    +49 (234) 555-0011
+4      Beth  Johanssen  2006-05-09  female   6250912345  bjohanssen@nasa.gov     +1 (234) 555-0100
+5     Chris       Beck  1999-08-02    male  99080212345       cbeck@nasa.gov     +1 (234) 555-0101
 
->>> pd.read_csv(DATA, parse_dates=['Mission Date'])
-   id First Name   Last Name Mission Date
-0   1        Jan  Twardowski   1988-01-05
-1   2       Mark      Watney   1969-07-21
-2   3       Ivan   Ivanovich   1961-04-12
-3   4    Melissa       Lewis   1970-01-01
-4   5       Alex       Vogel   1968-12-25
+>>> pd.read_csv(DATA, parse_dates=['born'])
+  firstname   lastname        born  gender          ssn                email                 phone
+0      Mark     Watney  1994-10-12    male   94101212345     mwatney@nasa.gov     +1 (234) 555-0000
+1   Melissa      Lewis  1995-07-15  female   95071512345      mlewis@nasa.gov     +1 (234) 555-0001
+2      Rick   Martinez  1996-01-21    male   96012112345   rmartinez@nasa.gov     +1 (234) 555-0010
+3      Alex      Vogel  1994-11-15    male   94111512345       avogel@esa.int    +49 (234) 555-0011
+4      Beth  Johanssen  2006-05-09  female    6250912345  bjohanssen@nasa.gov     +1 (234) 555-0100
+5     Chris       Beck  1999-08-02    male   99080212345       cbeck@nasa.gov     +1 (234) 555-0101
 
 
 Assignments

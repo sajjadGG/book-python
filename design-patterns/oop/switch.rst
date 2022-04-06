@@ -29,7 +29,7 @@ Iteration 2 - Elif
 ------------------
 It quickly grows into multiple ``elif``:
 
->>> language = 'German'
+>>> language = 'Spanish'
 >>>
 >>> if language == 'Polish':
 ...     result = 'Cześć'
@@ -41,21 +41,21 @@ It quickly grows into multiple ``elif``:
 >>> print(result)
 Unknown language
 
->>> language = 'German'
+>>> language = 'Spanish'
 >>>
 >>> if language == 'Polish':
 ...     result = 'Cześć'
 ... elif language == 'English':
 ...     result = 'Hello'
-... elif language == 'German':
-...     result = 'Guten Tag'
+... elif language == 'Spanish':
+...     result = 'Hola'
 ... else:
 ...     result = 'Unknown language'
 >>>
 >>> print(result)
-Guten Tag
+Hola
 
->>> language = 'Russian'
+>>> language = 'Polish'
 >>>
 >>> if language == 'Polish':
 ...     result = 'Cześć'
@@ -63,13 +63,13 @@ Guten Tag
 ...     result = 'Hello'
 ... elif language == 'German':
 ...     result = 'Guten Tag'
-... elif language == 'Russian':
-...     result = 'Здравствуй'
+... elif language == 'Spanish':
+...     result = 'Buenos Días'
 ... else:
 ...     result = 'Unknown language'
 >>>
 >>> print(result)
-Здравствуй
+Cześć
 
 >>> language = 'English'
 >>>
@@ -79,8 +79,8 @@ Guten Tag
 ...     result = 'Hello'
 ... elif language == 'German':
 ...     result = 'Guten Tag'
-... elif language == 'Russian':
-...     result = 'Здравствуй'
+... elif language == 'Spanish':
+...     result = 'Buenos Días'
 ... elif language == 'Chinese':
 ...     result = '你好'
 ... elif language == 'French':
@@ -103,7 +103,7 @@ Iteration 3 - Switch / Pattern Matching
 ...     case 'Polish': result = 'Cześć'
 ...     case 'English': result = 'Hello'
 ...     case 'German': result = 'Guten Tag'
-...     case 'Russian': result = 'Здравствуй'
+...     case 'Spanish': result = 'Hola'
 ...     case 'Chinese': result = '你好'
 ...     case 'French': result = 'Bonjour'
 ...     case _: result = 'Unknown language'
@@ -126,7 +126,7 @@ Content of a `myapp.i18n` module:
 ...     'Polish': 'Cześć',
 ...     'English': 'Hello',
 ...     'German': 'Guten Tag',
-...     'Russian': 'Здравствуй',
+...     'Spanish': 'Hola',
 ...     'Chinese': '你好',
 ...     'French':  'Bonjour',
 ... }
@@ -158,7 +158,7 @@ Content of a `myapp.i18n` module:
 ...         'Polish': 'Cześć',
 ...         'English': 'Hello',
 ...         'German': 'Guten Tag',
-...         'Russian': 'Здравствуй',
+...         'Spanish': 'Hola',
 ...         'Chinese': '你好',
 ...         'French':  'Bonjour',
 ...     }.get(language, 'Unknown language')
@@ -203,9 +203,9 @@ to use Polymorphism:
 ...         return 'Hello'
 >>>
 >>>
->>> class Russian(Language):
+>>> class Spanish(Language):
 ...     def hello(self):
-...         return 'Здравствуй'
+...         return 'Hola'
 >>>
 >>>
 >>> language = Polish()

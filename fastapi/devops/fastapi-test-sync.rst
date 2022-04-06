@@ -1,5 +1,5 @@
-FastAPI Test
-============
+FastAPI Test Sync
+=================
 * ``pytest``
 * ``unittest``
 

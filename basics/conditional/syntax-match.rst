@@ -1,57 +1,32 @@
-.. testsetup::
-
-    >>> # Simulate user input (for test automation)
-    >>> from unittest.mock import MagicMock
-    >>> input = MagicMock(side_effect=['French'])
-    >>>
-    >>> def handle_get(uri): ...
-    >>> def handle_post(uri): ...
-    >>> def handle_put(uri): ...
-    >>> def handle_delete(uri): ...
-    >>>
-    >>> class Hero:
-    ...     def move(self, direction, value): ...
-    ...     def jump(self, direction): ...
-    ...     def make_damage(self): ...
-    ...     def take_damage(self, dmg): ...
-    >>> hero = Hero()
-    >>>
-    >>> class Game:
-    ...     def quit(self): ...
-    ...     def move_left(self): ...
-    ...     def move_up(self): ...
-    ...     def move_right(self): ...
-    ...     def move_down(self): ...
-    >>> game = Game()
-    >>>
-    >>> class Keyboard:
-    ...     def on_key_press(self): ...
-    >>> keyboard = Keyboard()
-
-
 Block Match
 ===========
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
-* x ⟼ assign x = subject
-* 'x' ⟼ test subject == 'x'
-* x.y ⟼ test subject == x.y
-* x() ⟼ test isinstance(subject, x)
-* {'x': 'y'} ⟼ test isinstance(subject, Mapping) and subject.get('x') == 'y'
-* ['x'] ⟼ test isinstance(subject, Sequence) and len(subject) == 1 and subject[0] == 'x'
+* ``x`` ⟼ assign ``x = subject``
+* ``'x'`` ⟼ test ``subject == 'x'``
+* ``x.y`` ⟼ test ``subject == x.y``
+* ``x()`` ⟼ test ``isinstance(subject, x)``
+* ``{'x': 'y'}`` ⟼ test ``isinstance(subject, Mapping) and subject.get('x') == 'y'``
+* ``['x']`` ⟼ test ``isinstance(subject, Sequence) and len(subject) == 1 and subject[0] == 'x'``
 * Source: [#patternmatching]_
 
->>> language = input('What is your language?: ')  #input: 'French'
+>>> choice = 'r'
 >>>
->>> match language:
-...     case 'English': response = 'Hello'
-...     case 'Russian': response = 'Здравствуйте'
-...     case 'German':  response = 'Guten Tag'
-...     case 'Polish':  response = 'Witaj'
-...     case _:         response = "I don't speak this language"
+>>> if choice == 'r':
+...     color = 'red'
+... elif choice == 'g':
+...     color = 'green'
+... elif choice == 'b':
+...     color = 'blue'
+... else:
+...     color = None
+
+>>> choice = 'r'
 >>>
->>>
->>> print(response)
-I don't speak this language
+>>> match choice:
+...     case 'r': color = 'red'
+...     case 'g': color = 'green'
+...     case 'b': color = 'blue'
+...     case _:   color = None
 
 
 Syntax
@@ -134,6 +109,29 @@ have to be literals. The patterns can also:
 
 Use Case - 0x01
 ---------------
+Simulate user input (for test automation):
+
+>>> from unittest.mock import MagicMock
+>>> input = MagicMock(side_effect=['French'])
+
+Use Case:
+
+>>> language = input('What is your language?: ')  #input: 'French'
+>>>
+>>> match language:
+...     case 'English': response = 'Hello'
+...     case 'German':  response = 'Guten Tag'
+...     case 'Spanish':  response = 'Hola'
+...     case 'Polish':  response = 'Witaj'
+...     case _:         response = "I don't speak this language"
+>>>
+>>>
+>>> print(response)
+I don't speak this language
+
+
+Use Case - 0x02
+---------------
 * HTTP Status
 
 >>> status = 404
@@ -150,40 +148,93 @@ Use Case - 0x01
 Not found
 
 
-Use Case - 0x02
+Use Case - 0x03
 ---------------
 * HTTP Request
+
+.. testsetup::
+
+    >>> def handle_get(uri): ...
+    >>> def handle_post(uri): ...
+    >>> def handle_put(uri): ...
+    >>> def handle_delete(uri): ...
 
 >>> request = 'GET /index.html HTTP/2.0'
 >>>
 >>> match request.split():
-...     case ['GET', uri, version]:     handle_get(uri)
-...     case ['POST', uri, version]:    handle_post(uri)
-...     case ['PUT', uri, version]:     handle_put(uri)
-...     case ['DELETE', uri, version]:  handle_delete(uri)
+...     case ['GET', path, version]:     handle_get(path)
+...     case ['POST', path, version]:    handle_post(path)
+...     case ['PUT', path, version]:     handle_put(path)
+...     case ['DELETE', path, version]:  handle_delete(path)
 
 
-Use Case - 0x03
+Use Case - 0x04
 ---------------
 * Game Controller
 
+Test Setup:
+
+>>> class Hero:
+...     def make_damage(self): ...
+...     def take_damage(self, dmg): ...
+>>>
+>>> hero = Hero()
+
+Use Case:
+
 >>> action = ['move', 'left', 10]
->>> directions = ['up', 'down', 'left', 'right']
 >>>
 >>> match action:
-...     case ['move', ('up'|'down'|'left'|'right') as direction, value]:
-...         hero.move(direction, value)
-...     case ['jump', direction] if direction in directions:
-...         hero.jump(direction)
 ...     case ['make_damage', value] if value > 0:
 ...         hero.make_damage()
 ...     case ['take_damage', value]:
 ...         hero.take_damage(value)
 
 
-Use Case - 0x04
+Use Case - 0x05
+---------------
+* Game Controller
+
+Test Setup:
+
+>>> class Hero:
+...     def walk(self, direction, value): ...
+...     def run(self, direction): ...
+>>>
+>>> hero = Hero()
+
+Use Case:
+
+>>> action = ['walk', 'left', 10]
+>>>
+>>> match action:
+...     case ['walk', ('up'|'down'|'left'|'right') as direction, value]:
+...         hero.walk(direction, value)
+...     case ['run', direction] if direction in ['up','down','left','right']:
+...         hero.run(direction)
+
+
+Use Case - 0x06
 ---------------
 * Enum
+
+Test Setup:
+
+>>> class Keyboard:
+...     def on_key_press(self): ...
+>>>
+>>> keyboard = Keyboard()
+
+>>> class Game:
+...     def quit(self): ...
+...     def move_left(self): ...
+...     def move_up(self): ...
+...     def move_right(self): ...
+...     def move_down(self): ...
+>>>
+>>> game = Game()
+
+Use Case:
 
 >>> from enum import Enum
 >>>
@@ -206,25 +257,7 @@ Traceback (most recent call last):
 ValueError: Unrecognized key
 
 
-Use Case - 0x05
----------------
->>> import argparse
->>>
->>> parser = argparse.ArgumentParser()
->>> _ = parser.add_argument('command', choices=['push', 'pull', 'commit'])
->>> args = parser.parse_args(['push'])
->>>
->>> match args.command:
-...     case 'push':
-...         print('pushing')
-...     case 'pull':
-...         print('pulling')
-...     case _:
-...         parser.error(f'{args.command!r} not yet implemented')
-...
-pushing
-
-Use Case - 0x06
+Use Case - 0x07
 ---------------
 >>> def myrange(*args, **kwargs):
 ...     if kwargs:
@@ -258,10 +291,52 @@ Use Case - 0x06
 ...     return result
 
 
+Use Case - 0x08
+---------------
+>>> import json
+>>> from datetime import date, time, datetime, timezone
+>>>
+>>>
+>>> DATA = {'firstname': 'Mark',
+...         'lastname': 'Watney',
+...         'born': date(1994, 10, 12)}
+>>>
+>>>
+>>> def encoder(value):
+...     match value:
+...         case date() | datetime() | time():
+...             return value.isoformat()
+...         case timedelta():
+...             return value.total_seconds()
+>>>
+>>>
+>>> json.dumps(DATA, default=encoder)
+'{"firstname": "Mark", "lastname": "Watney", "born": "1994-10-12"}'
+
+
+Use Case - 0x09
+---------------
+>>> import argparse
+>>>
+>>> parser = argparse.ArgumentParser()
+>>> _ = parser.add_argument('command', choices=['push', 'pull', 'commit'])
+>>> args = parser.parse_args(['push'])
+>>>
+>>> match args.command:
+...     case 'push':
+...         print('pushing')
+...     case 'pull':
+...         print('pulling')
+...     case _:
+...         parser.error(f'{args.command!r} not yet implemented')
+...
+pushing
+
+
 Further Reading
 ---------------
 * https://peps.python.org/pep-0622/
-* https://www.python.org/dev/peps/pep-0636/
+* https://peps.python.org/pep-0636/
 
 
 References

@@ -209,18 +209,18 @@ Lets define a class with static field:
 Lets create three instances of ``Astronaut`` class:
 
 >>> watney = Astronaut()
->>> twardowski = Astronaut()
->>> ivanovic = Astronaut()
+>>> lewis = Astronaut()
+>>> martinez = Astronaut()
 
 We will print ``agency`` field:
 
 >>> print(watney.agency)
 NASA
 >>>
->>> print(twardowski.agency)
+>>> print(lewis.agency)
 NASA
 >>>
->>> print(ivanovic.agency)
+>>> print(martinez.agency)
 NASA
 >>>
 >>> print(Astronaut.agency)
@@ -234,10 +234,10 @@ Lets change field on a class and print ``agency`` field:
 >>> print(watney.agency)
 ESA
 >>>
->>> print(twardowski.agency)
+>>> print(lewis.agency)
 ESA
 >>>
->>> print(ivanovic.agency)
+>>> print(martinez.agency)
 ESA
 >>>
 >>> print(Astronaut.agency)
@@ -245,17 +245,17 @@ ESA
 
 Lets change field on an instance and print ``agency`` field:
 
->>> ivanovic.agency = 'Roscosmos'
+>>> watney.agency = 'POLSA'
 >>>
 >>>
 >>> print(watney.agency)
+POLSA
+>>>
+>>> print(lewis.agency)
 ESA
 >>>
->>> print(twardowski.agency)
+>>> print(martinez.agency)
 ESA
->>>
->>> print(ivanovic.agency)
-Roscosmos
 >>>
 >>> print(Astronaut.agency)
 ESA
@@ -265,37 +265,37 @@ class.
 
 Lets change field on a class and print ``agency`` field:
 
->>> Astronaut.agency = 'POLSA'
+>>> Astronaut.agency = 'NASA'
 >>>
 >>>
 >>> print(watney.agency)
 POLSA
 >>>
->>> print(twardowski.agency)
-POLSA
+>>> print(lewis.agency)
+NASA
 >>>
->>> print(ivanovic.agency)
-Roscosmos
+>>> print(martinez.agency)
+NASA
 >>>
 >>> print(Astronaut.agency)
-POLSA
+NASA
 
 Lets delete field from an instance and print ``agency`` field:
 
->>> del ivanovic.agency
+>>> del watney.agency
 >>>
 >>>
 >>> print(watney.agency)
-POLSA
+NASA
 >>>
->>> print(twardowski.agency)
-POLSA
+>>> print(lewis.agency)
+NASA
 >>>
->>> print(ivanovic.agency)
-POLSA
+>>> print(martinez.agency)
+NASA
 >>>
 >>> print(Astronaut.agency)
-POLSA
+NASA
 
 
 Mechanism

@@ -8,7 +8,7 @@ English:
     1. Create `pytz.timezone` object of:
         a. UTC
         b. London, United Kingdom
-        c. Moscow, Russian Federation
+        c. Buenos Aires, Argentina
         d. Warsaw, Poland
         e. Tokyo, Japan
         f. Sydney, Australia
@@ -21,7 +21,7 @@ Polish:
     1. Stwórz obiekt `pytz.timezone` z:
         a. UCT
         b. London, Wielka Brytania
-        c. Moscow, Rosja
+        c. Buenos Aires, Argentyna
         d. Warsaw, Polska
         e. Tokyo, Japan
         f. Sydney, Australia
@@ -53,8 +53,8 @@ Tests:
     'Assign value to variable `utc` has instead of Ellipsis (...)'
     >>> assert london is not Ellipsis, \
     'Assign value to variable `london` instead of Ellipsis (...)'
-    >>> assert moscow is not Ellipsis, \
-    'Assign value to variable `moscow` instead of Ellipsis (...)'
+    >>> assert buenos_aires is not Ellipsis, \
+    'Assign value to variable `buenos_aires` instead of Ellipsis (...)'
     >>> assert warsaw is not Ellipsis, \
     'Assign value to variable `warsaw` instead of Ellipsis (...)'
     >>> assert tokyo is not Ellipsis, \
@@ -80,8 +80,8 @@ Tests:
     'Variable `utc` has invalid type, must be a BaseTzInfo'
     >>> assert isinstance(london, DstTzInfo), \
     'Variable `london` has invalid type, must be a DstTzInfo'
-    >>> assert isinstance(moscow, DstTzInfo), \
-    'Variable `moscow` has invalid type, must be a DstTzInfo'
+    >>> assert isinstance(buenos_aires, DstTzInfo), \
+    'Variable `buenos_aires` has invalid type, must be a DstTzInfo'
     >>> assert isinstance(warsaw, DstTzInfo), \
     'Variable `warsaw` has invalid type, must be a DstTzInfo'
     >>> assert isinstance(tokyo, DstTzInfo), \
@@ -107,8 +107,8 @@ Tests:
     datetime.timedelta(0)
     >>> london._utcoffset
     datetime.timedelta(days=-1, seconds=86340)
-    >>> moscow._utcoffset
-    datetime.timedelta(seconds=9000)
+    >>> buenos_aires._utcoffset
+    datetime.timedelta(days=-1, seconds=72360)
     >>> warsaw._utcoffset
     datetime.timedelta(seconds=5040)
     >>> tokyo._utcoffset
@@ -140,8 +140,8 @@ utc = ...
 # timezone in London, United Kingdom
 london = ...
 
-# timezone in Moscow, Russian Federation
-moscow = ...
+# timezone in Buenos Aires, Argentina
+buenos_aires = ...
 
 # timezone in Warsaw, Poland
 warsaw = ...
@@ -176,7 +176,7 @@ south_pole = ...
 # Solution
 utc = timezone('UTC')
 london = timezone('Europe/London')
-moscow = timezone('Europe/Moscow')
+buenos_aires = timezone('America/Argentina/Buenos_Aires')
 warsaw = timezone('Europe/Warsaw')
 tokyo = timezone('Asia/Tokyo')
 sydney = timezone('Australia/Sydney')

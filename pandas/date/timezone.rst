@@ -14,9 +14,6 @@ Timezone Aware
 >>> gagarin.astimezone('UTC')
 Timestamp('1961-04-12 06:07:00+0000', tz='UTC')
 >>>
->>> gagarin.astimezone('Europe/Moscow')
-Timestamp('1961-04-12 09:07:00+0300', tz='Europe/Moscow')
->>>
 >>> gagarin.astimezone('Europe/Warsaw')
 Timestamp('1961-04-12 07:07:00+0100', tz='Europe/Warsaw')
 >>>

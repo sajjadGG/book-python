@@ -10,7 +10,6 @@ Example
 -------
 >>> hello = {
 ...    'English': 'Hello',
-...    'Russian': 'Здравствуйте',
 ...    'German': 'Guten Tag',
 ...    'Polish': 'Witaj',
 ... }
@@ -21,9 +20,6 @@ Example
 >>>
 >>> hello.get('Polish')
 'Witaj'
->>>
->>> hello.get('Russian')
-'Здравствуйте'
 
 
 Dict Switch
@@ -35,7 +31,6 @@ Simulate user input (for test automation):
 
 >>> hello = {
 ...     'English': 'Hello',
-...     'Russian': 'Здравствуйте',
 ...     'German': 'Guten Tag',
 ...     'Polish': 'Witaj',
 ...     'default': "I don't speak this language",
@@ -54,15 +49,14 @@ Function Switch
 >>> def hello(language):
 ...     data = {
 ...         'English': 'Hello',
-...         'Russian': 'Здравствуйте',
 ...         'German': 'Guten Tag',
 ...         'Polish': 'Witaj',
 ...         'default': "I don't speak this language"}
 ...     return data.get(language, data['default'])
 >>>
 >>>
->>> hello('Russian')
-'Здравствуйте'
+>>> hello('Polish')
+'Witaj'
 >>>
 >>> hello('French')
 "I don't speak this language"

@@ -44,7 +44,7 @@ from enum import Enum
 class Language(Enum):
     POLISH = 'pl'
     ENGLISH = 'en'
-    RUSSIAN = 'ru'
+    SPANISH = 'es'
 
 
 class Translation:
@@ -58,8 +58,8 @@ class Translation:
             return 'Cześć'
         elif self.__language is Language.ENGLISH:
             return 'Hello'
-        elif self.__language is Language.RUSSIAN:
-            return 'Здравствуй'
+        elif self.__language is Language.SPANISH:
+            return 'Buenos Días'
         else:
             return 'Unknown language'
 
@@ -68,8 +68,8 @@ class Translation:
             return 'Do widzenia'
         elif self.__language is Language.ENGLISH:
             return 'Goodbye'
-        elif self.__language is Language.RUSSIAN:
-            return 'До свидания'
+        elif self.__language is Language.SPANISH:
+            return 'Adiós'
         else:
             return 'Unknown language'
 
@@ -102,12 +102,12 @@ class English(Language):
         return 'Hello'
 
 
-class Russian(Language):
+class Spanish(Language):
     def goodbye(self) -> str:
-        return 'До свидания'
+        return 'Buenos Días'
 
     def hello(self) -> str:
-        return 'Здравствуй'
+        return 'Adiós'
 
 
 class Chinese(Language):

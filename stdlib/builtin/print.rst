@@ -577,24 +577,25 @@ Quick and easy debugging
     print(f'{theta=}  {cos(radians(theta))=:.3f}')
     # theta=30  cos(radians(theta))=0.866
 
+
 ``pprint``
-------------------------------
+----------
 .. code-block:: python
 
     from pprint import pprint
 
-    data = [{'firstname': 'José', 'lastname': 'Jiménez'}, {'firstname': 'Mark', 'lastname': 'Watney'}, {'firstname': 'Иван', 'lastname': 'Иванович'}]
+    data = [{'firstname': 'Mark', 'lastname': 'Watney'}, {'firstname': 'Melissa', 'lastname': 'Lewis'}, {'firstname': 'Rick', 'lastname': 'Martinez'}]
 
     pprint(data)
-    # [{'firstname': 'José', 'lastname': 'Jiménez'},
-    #  {'firstname': 'Mark', 'lastname': 'Watney'},
-    #  {'firstname': 'Иван', 'lastname': 'Иванович'}]
+    # [{'firstname': 'Mark', 'lastname': 'Watney'},
+    #  {'firstname': 'Melissa', 'lastname': 'Lewis'},
+    #  {'firstname': 'Rick', 'lastname': 'Martinez'}]
 
 .. code-block:: python
 
     from pprint import pformat
 
-    data = [{'firstname': 'José', 'lastname': 'Jiménez'}, {'firstname': 'Mark', 'lastname': 'Watney'}, {'firstname': 'Иван', 'lastname': 'Иванович'}]
+    data = [{'firstname': 'Mark', 'lastname': 'Watney'}, {'firstname': 'Melissa', 'lastname': 'Lewis'}, {'firstname': 'Rick', 'lastname': 'Martinez'}]
 
     # returns formatted data
     my_string = pformat(data)
@@ -686,4 +687,3 @@ Hints:
 
         def celsius_to_fahrenheit(degree):
             return degree*1.8 + 32
-

@@ -651,13 +651,14 @@ Negative Conditionals
 
     .. code-block:: python
 
-        usernames = {'José', 'Max', 'Иван'}
+        usernames = {'mwatney', 'mlewis', 'rmartinez'}
 
         # if (! usernames.contains('José')) {}
-        if not 'José' in usernames:
+        if not 'mwatney' in usernames:
             print('I do not know you')
         else:
             print('Hello my friend')
+
 
 Checking if not empty
 ---------------------

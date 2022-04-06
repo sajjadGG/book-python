@@ -73,8 +73,8 @@ It quickly grows into multiple ``elif``:
 ...     result = 'Hello'
 ... elif language == 'Polish':
 ...     result = 'Witaj'
-... elif language == 'Russian':
-...     result = 'Привет'
+... elif language == 'Spanish':
+...     result = 'Hola'
 ... else:
 ...     result = 'Unknown language'
 >>>
@@ -90,7 +90,7 @@ not a valid Python code):
 >>> switch(language):  # doctest: +SKIP
 ...     case 'English':  result = 'Hello'; break;
 ...     case 'Polish':   result = 'Witaj'; break;
-...     case 'Russian':  result = 'Привет'; break;
+...     case 'Spanish':  result = 'Hola'; break;
 ...     default:         result = 'Unknown language'; break;
 
 Problem is that, ``switch`` moves business logic to the execution place.
@@ -101,13 +101,13 @@ default value. It's a bit cleaner, but essentially the same...
 ...     return {
 ...         'English': 'Hello',
 ...         'Polish': 'Witaj',
-...         'Russian': 'Привет',
+...         'Spanish': 'Hola',
 ...     }.get(key, 'Unknown language')
 >>>
 >>> switch('English')
 'Hello'
->>> switch('Russian')
-'Привет'
+>>> switch('Spanish')
+'Hola'
 
 
 Pattern Matching
@@ -120,7 +120,7 @@ Pattern Matching
 >>> match language:
 ...     case 'English':  result = 'Hello'
 ...     case 'Polish':   result = 'Witaj'
-...     case 'Russian':  result = 'Привет'
+...     case 'Spanish':  result = 'Hola'
 ...     case _:          result = 'Unknown language'
 
 
@@ -188,7 +188,7 @@ Use Case - 0x01
 >>>
 >>> class Cosmonaut(Person):
 ...     def say_hello(self):
-...         return f'Привет {self.name}'
+...         return f'Witaj {self.name}'
 >>>
 >>>
 >>> def hello(crew: list[Person]) -> None:
@@ -197,15 +197,15 @@ Use Case - 0x01
 >>>
 >>>
 >>> crew = [Astronaut('Mark Watney'),
-...         Cosmonaut('Иван Иванович'),
+...         Cosmonaut('José Jiménez'),
 ...         Astronaut('Melissa Lewis'),
-...         Cosmonaut('Jan Twardowski')]
+...         Cosmonaut('Pan Twardowski')]
 >>>
 >>> hello(crew)
 Hello Mark Watney
-Привет Иван Иванович
+Witaj José Jiménez
 Hello Melissa Lewis
-Привет Jan Twardowski
+Witaj Pan Twardowski
 
 In Python, due to the duck typing and dynamic nature of the language, the
 Interface or abstract class is not needed to do polymorphism:
@@ -225,21 +225,20 @@ Interface or abstract class is not needed to do polymorphism:
 ...     name: str
 ...
 ...     def say_hello(self):
-...         return f'Привет {self.name}'
+...         return f'Witaj {self.name}'
 >>>
 >>>
 >>> crew = [Astronaut('Mark Watney'),
-...         Cosmonaut('Иван Иванович'),
+...         Cosmonaut('José Jiménez'),
 ...         Astronaut('Melissa Lewis'),
-...         Cosmonaut('Jan Twardowski')]
+...         Cosmonaut('Pan Twardowski')]
 >>>
 >>> for member in crew:
 ...     print(member.say_hello())
 Hello Mark Watney
-Привет Иван Иванович
+Witaj José Jiménez
 Hello Melissa Lewis
-Привет Jan Twardowski
-
+Witaj Pan Twardowski
 
 
 Use Case - 0x02

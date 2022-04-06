@@ -489,7 +489,6 @@ Descriptor Timezone Converter:
 ... class Time:
 ...     utc = datetime.now(tz=ZoneInfo('UTC'))
 ...     warsaw = Timezone('Europe/Warsaw')
-...     moscow = Timezone('Europe/Moscow')
 ...     eastern = Timezone('America/New_York')
 ...     pacific = Timezone('America/Los_Angeles')
 >>>
@@ -501,8 +500,6 @@ Descriptor Timezone Converter:
 >>>
 >>> print(t.utc)
 1961-04-12 06:07:00
->>> print(t.moscow)
-1961-04-12 09:07:00+03:00
 >>> print(t.warsaw)
 1961-04-12 07:07:00+01:00
 >>> print(t.eastern)
@@ -518,8 +515,6 @@ Descriptor Timezone Converter:
 1969-07-21 02:56:15+00:00
 >>> print(t.warsaw)
 1969-07-21 03:56:15+01:00
->>> print(t.moscow)
-1969-07-21 05:56:15+03:00
 >>> print(t.eastern)
 1969-07-20 22:56:15-04:00
 >>> print(t.pacific)

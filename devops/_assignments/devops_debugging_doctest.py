@@ -30,17 +30,17 @@ class Astronaut:
         >>> Astronaut(name='José Jiménez').say_hello(lang='es')
         '¡hola José Jiménez!'
 
-        >>> Astronaut(name='Иван Иванович').say_hello(lang='ru')
-        'здраствуйте Иван Иванович!'
+        >>> Astronaut(name='Pan Twardowski').say_hello(lang='pl')
+        'Witaj Pan Twardowski!'
         """
         if lang == 'en':
             return f'hello {self.name}'
         elif lang == 'es':
             return f'¡hola {self.name}!'
-        elif lang == 'ru':
-            return f'здраствуйте {self.name}!'
+        elif lang == 'pl':
+            return f'Witaj {self.name}!'
         else:
-            return f'witaj {self.name}!'
+            return f'hello {self.name}!'
 
 
 # Solution
@@ -78,6 +78,3 @@ jose = Astronaut(name='José Jiménez')
 for method in dir(jose):
     docstring = eval(f'jose.{method}.__doc__')
     doctest(docstring)
-
-
-

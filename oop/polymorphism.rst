@@ -103,22 +103,22 @@ Polymorphism on Classes:
             self.name = name
 
         def say_hello(self):
-            return 'Привет!'
+            return 'Witaj!'
 
 
     crew = [
         Astronaut('Mark Watney'),
         Cosmonaut('Иван Иванович'),
         Astronaut('Matt Kowalski'),
-        Cosmonaut('Jan Twardowski'),
+        Cosmonaut('Pan Twardowski'),
     ]
 
     for member in crew:
         print(member.say_hello())
     # Hello
-    # Привет!
+    # Witaj!
     # Hello
-    # Привет!
+    # Witaj!
 
 
 Factory

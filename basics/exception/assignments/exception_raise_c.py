@@ -1,31 +1,31 @@
 """
-* Assignment: Exception Raise Many
+* Assignment: Exception Raise PermissionError
 * Required: yes
 * Complexity: easy
-* Lines of code: 6 lines
+* Lines of code: 4 lines
 * Time: 3 min
 
 English:
-    1. Validate value passed to a `result` function
-    2. If `value` is:
-        a. other type than `int` or `float` raise `TypeError`
-        b. less than zero, raise `ValueError`
-        c. below `ADULT`, raise `PermissionError`
-    3. Non-functional requirements:
+    1. Check username and password passed to a `login` function
+    2. If `username` is 'mwatney' and `password` is 'myVoiceIsMyPassword'
+       then print 'logged in'
+    3. If any value is other than mentioned, raise an exception
+       PermissionError with message 'Invalid username and/or password'
+    4. Non-functional requirements:
         a. Write solution inside `result` function
         b. Mind the indentation level
-    4. Run doctests - all must succeed
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Sprawdź poprawność wartości przekazanej do funckji `result`
-    2. Jeżeli `age` jest:
-        a. innego typu niż `int` lub `float`, podnieś wyjątek `TypeError`
-        b. mniejsze niż zero, podnieś wyjątek `ValueError`
-        c. mniejsze niż `ADULT`, podnieś wyjątek `PermissionError`
-    3. Wymagania niefunkcjonalne:
+    1. Sprawdź username i password przekazane do funckji `login`
+    2. Jeżeli username jest 'mwatney' i hasło jest 'myVoiceIsMyPassword'
+       to wyświetl na ekranie napis 'logged in'
+    3. Jeżeli którakolwiek wartość jest inna, to podnieś wyjątek
+       PermissionError z komunikatem 'Invalid username and/or password'
+    4. Wymagania niefunkcjonalne:
         a. Rozwiązanie zapisz wewnątrz funkcji `result`
         b. Zwróć uwagę na poziom wcięć
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `not in`
@@ -35,35 +35,29 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> result(18)
-    >>> result(17.9999)
+    >>> login('mwatney', 'myVoiceIsMyPassword')
+    logged in
+    >>> login('badusername', 'myVoiceIsMyPassword')
     Traceback (most recent call last):
-    PermissionError
-    >>> result(-1)
+    PermissionError: Invalid username and/or password
+    >>> login('mwatney', 'badpassword')
     Traceback (most recent call last):
-    ValueError
-    >>> result('one')
+    PermissionError: Invalid username and/or password
+    >>> login('admin', 'admin')
     Traceback (most recent call last):
-    TypeError
-    >>> result(True)
-    Traceback (most recent call last):
-    TypeError
+    PermissionError: Invalid username and/or password
 """
 
-ADULT = 18
-
-
-def result(age):
+# Username must be 'mwatney'
+# Password must be 'myVoiceIsMyPassword'
+# type: Callable[[str,str], Exception|None]
+def login(username, password):
     ...
 
 
 # Solution
-def result(age):
-    if type(age) not in (int, float):
-        raise TypeError
-
-    if age < 0:
-        raise ValueError
-
-    if age < ADULT:
-        raise PermissionError
+def login(username, password):
+    if username == 'mwatney' and password == 'myVoiceIsMyPassword':
+        print('logged in')
+    else:
+        raise PermissionError('Invalid username and/or password')

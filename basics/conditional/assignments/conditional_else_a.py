@@ -34,7 +34,7 @@ Tests:
 
 # Simulate user input (for test automation)
 from unittest.mock import MagicMock
-input = MagicMock(side_effect=['21'])
+input = MagicMock(side_effect=['30'])
 
 
 age = input('What is your age?: ')

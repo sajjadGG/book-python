@@ -288,8 +288,8 @@ Encoding
 * ``utf-8`` - international standard (should be always used!)
 * ``iso-8859-1`` - ISO standard for Western Europe and USA
 * ``iso-8859-2`` - ISO standard for Central Europe (including Poland)
-* ``cp1250`` or ``windows-1250`` - Polish encoding on Windows
-* ``cp1251`` or ``windows-1251`` - Russian encoding on Windows
+* ``cp1250`` or ``windows-1250`` - Central European encoding on Windows
+* ``cp1251`` or ``windows-1251`` - Eastern European encoding on Windows
 * ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
 * ``ASCII`` - ASCII characters only
 

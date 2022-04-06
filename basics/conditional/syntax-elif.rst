@@ -88,8 +88,6 @@ Use Case - 0x01
 >>>
 >>> if language == 'English':
 ...     print('Hello')
-... elif language == 'Russian':
-...     print('Здравствуйте')
 ... elif language == 'German':
 ...     print('Guten Tag')
 ... elif language == 'Polish':

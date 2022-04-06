@@ -3,7 +3,7 @@
 * Required: yes
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
     1. Define `result: dict`
