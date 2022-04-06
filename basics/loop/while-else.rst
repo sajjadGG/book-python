@@ -19,19 +19,6 @@ Example
 ...     print(i)
 ...     i -= 1
 ...
-...     if i == 1:  # problem detected in the last second
-...         print('Fuel leak detected. Abort, Abort, Abort!')
-...         break
-3
-2
-Fuel leak detected. Abort, Abort, Abort!
-
->>> i = 3
->>>
->>> while i >= 0:
-...     print(i)
-...     i -= 1
-...
 ...     if i == None:  # no problems detected
 ...         print('Fuel leak detected. Abort, Abort, Abort!')
 ...         break
@@ -39,10 +26,30 @@ Fuel leak detected. Abort, Abort, Abort!
 2
 1
 0
+>>>
+>>> print('Launching rocket to outer space')
+Launching rocket to outer space
 
 * Can we launch a rocket?
+
+>>> i = 3
+>>>
+>>> while i >= 0:
+...     print(i)
+...     i -= 1
+...
+...     if i == 1:  # problem detected in the last second
+...         print('Fuel leak detected. Abort, Abort, Abort!')
+...         break
+3
+2
+Fuel leak detected. Abort, Abort, Abort!
+>>>
+>>> print('Launching rocket to outer space')
+Launching rocket to outer space
+
+* This time we aborted and still launched - this is not good
 * How to detect if the countdown was successful?
-* Is the rocket already launched to outer space?
 
 
 Flag

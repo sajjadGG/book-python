@@ -34,14 +34,14 @@ Tests:
     >>> assert type(result) is pd.DataFrame, \
     'Variable `result` must be a `pd.DataFrame` type'
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-       First Name   Last Name Mission Date
-    id
-     1        Jan  Twardowski   1988-01-05
-     2       Mark      Watney   1969-07-21
-     3       Ivan   Ivanovich   1961-04-12
-     4    Melissa       Lewis   1970-01-01
-     5       Alex       Vogel   1968-12-25
+    >>> result[['firstname', 'lastname', 'born']]  # doctest: +NORMALIZE_WHITESPACE
+      firstname   lastname       born
+    0      Mark     Watney 1994-10-12
+    1   Melissa      Lewis 1995-07-07
+    2      Rick   Martinez 1996-01-21
+    3      Alex      Vogel 1994-11-15
+    4      Beth  Johanssen 2006-05-09
+    5     Chris       Beck 1999-08-02
 """
 
 import pandas as pd
@@ -66,8 +66,8 @@ result = ...
 
 
 # Solution
-df = pd.read_csv(DATA, index_col=0)
-df['Mission Date'] = df['Mission Date'] \
+df = pd.read_csv(DATA)
+df['born'] = df['born'] \
      .replace(MONTHS_PLEN, regex=True) \
      .apply(pd.to_datetime)
 

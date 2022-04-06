@@ -26,13 +26,13 @@ Tests:
     'Variable `result` must be a `pd.DataFrame` type'
 
     >>> result[['firstname', 'lastname', 'born']]
-      firstname   lastname        born
-    0      Mark     Watney  1994-10-12
-    1   Melissa      Lewis  1995-07-15
-    2      Rick   Martinez  1996-01-21
-    3      Alex      Vogel  1994-11-15
-    4      Beth  Johanssen  2006-05-09
-    5     Chris       Beck  1999-08-02
+      firstname   lastname       born
+    0      Mark     Watney 1994-10-12
+    1   Melissa      Lewis 1995-07-15
+    2      Rick   Martinez 1996-01-21
+    3      Alex      Vogel 1994-11-15
+    4      Beth  Johanssen 2006-05-09
+    5     Chris       Beck 1999-08-02
 """
 
 import pandas as pd

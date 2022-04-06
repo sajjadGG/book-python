@@ -112,22 +112,23 @@ Use Case - 0x02
 >>> DATA = 'https://python.astrotech.io/_static/martian-en.csv'
 
 >>> pd.read_csv(DATA)
-  firstname   lastname        born  gender          ssn                email                 phone
-0      Mark     Watney  1994-10-12    male  94101212345     mwatney@nasa.gov     +1 (234) 555-0000
-1   Melissa      Lewis  1995-07-15  female  95071512345      mlewis@nasa.gov     +1 (234) 555-0001
-2      Rick   Martinez  1996-01-21    male  96012112345   rmartinez@nasa.gov     +1 (234) 555-0010
-3      Alex      Vogel  1994-11-15    male  94111512345       avogel@esa.int    +49 (234) 555-0011
-4      Beth  Johanssen  2006-05-09  female   6250912345  bjohanssen@nasa.gov     +1 (234) 555-0100
-5     Chris       Beck  1999-08-02    male  99080212345       cbeck@nasa.gov     +1 (234) 555-0101
+  firstname   lastname              born  gender          ssn                email               phone
+0      Mark     Watney   October 12 1994    male  94101212345     mwatney@nasa.gov   +1 (234) 555-0000
+1   Melissa      Lewis      July 15 1995  female  95071512345      mlewis@nasa.gov   +1 (234) 555-0001
+2      Rick   Martinez   January 21 1996    male  96012112345   rmartinez@nasa.gov   +1 (234) 555-0010
+3      Alex      Vogel  November 15 1994    male  94111512345       avogel@esa.int  +49 (234) 555-0011
+4      Beth  Johanssen        May 9 2006  female   6250912345  bjohanssen@nasa.gov   +1 (234) 555-0100
+5     Chris       Beck     August 2 1999    male  99080212345       cbeck@nasa.gov   +1 (234) 555-0101
 
 >>> pd.read_csv(DATA, parse_dates=['born'])
-  firstname   lastname        born  gender          ssn                email                 phone
-0      Mark     Watney  1994-10-12    male   94101212345     mwatney@nasa.gov     +1 (234) 555-0000
-1   Melissa      Lewis  1995-07-15  female   95071512345      mlewis@nasa.gov     +1 (234) 555-0001
-2      Rick   Martinez  1996-01-21    male   96012112345   rmartinez@nasa.gov     +1 (234) 555-0010
-3      Alex      Vogel  1994-11-15    male   94111512345       avogel@esa.int    +49 (234) 555-0011
-4      Beth  Johanssen  2006-05-09  female    6250912345  bjohanssen@nasa.gov     +1 (234) 555-0100
-5     Chris       Beck  1999-08-02    male   99080212345       cbeck@nasa.gov     +1 (234) 555-0101
+  firstname   lastname       born  gender          ssn                email               phone
+0      Mark     Watney 1994-10-12    male  94101212345     mwatney@nasa.gov   +1 (234) 555-0000
+1   Melissa      Lewis 1995-07-15  female  95071512345      mlewis@nasa.gov   +1 (234) 555-0001
+2      Rick   Martinez 1996-01-21    male  96012112345   rmartinez@nasa.gov   +1 (234) 555-0010
+3      Alex      Vogel 1994-11-15    male  94111512345       avogel@esa.int  +49 (234) 555-0011
+4      Beth  Johanssen 2006-05-09  female   6250912345  bjohanssen@nasa.gov   +1 (234) 555-0100
+5     Chris       Beck 1999-08-02    male  99080212345       cbeck@nasa.gov   +1 (234) 555-0101
+
 
 
 Assignments
