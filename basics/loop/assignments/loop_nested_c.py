@@ -43,8 +43,10 @@ References:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'dict'>
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
+    >>> assert type(result) is dict, \
+    'Variable `result` has invalid type, should be dict'
 
     >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
     {'sentences': 7,

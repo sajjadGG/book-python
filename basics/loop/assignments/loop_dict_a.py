@@ -6,29 +6,31 @@
 * Time: 8 min
 
 English:
-    1. Convert to `result: dict[str, str]`
+    1. Convert to `result: dict[str, int]`
     2. Run doctests - all must succeed
 
 Polish:
-    1. Przekonwertuj do `result: dict[str, str]`
+    1. Przekonwertuj do `result: dict[str, int]`
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'dict'>
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
+    >>> assert type(result) is dict, \
+    'Variable `result` has invalid type, should be dict'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    {'Doctorate': '6',
-     'Prof-school': '6',
-     'Masters': '5',
-     'Bachelor': '5',
-     'Engineer': '5',
-     'HS-grad': '4',
-     'Junior High': '3',
-     'Primary School': '2',
-     'Kindergarten': '1'}
+    {'Doctorate': 6,
+     'Prof-school': 6,
+     'Masters': 5,
+     'Bachelor': 5,
+     'Engineer': 5,
+     'HS-grad': 4,
+     'Junior High': 3,
+     'Primary School': 2,
+     'Kindergarten': 1}
 """
 
 DATA = {
@@ -49,4 +51,4 @@ result = {}
 
 for lvl, titles in DATA.items():
     for title in titles:
-        result[title] = str(lvl)
+        result[title] = lvl

@@ -1,50 +1,39 @@
 """
-* Assignment: Loop While toFloat
+* Assignment: Loop While Range
 * Required: yes
 * Complexity: easy
 * Lines of code: 5 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
-    1. Create `result: list[float]`
-    2. Use `while` to iterate over `DATA`
-    3. Convert current elements of `DATA` to `float`
-    4. Converted value append to `result`
-    5. Run doctests - all must succeed
+    1. Generate `result: list[int]` with numbers from 0 to 5 (exclusive)
+    2. Do not use `range()`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz `result: list[float]`
-    2. Użyj `while` do iterowania po `DATA`
-    3. Przekonwertuj obecny element `DATA` do `float`
-    4. Przekonwertowaną wartość dodaj na koniec `result`
-    5. Uruchom doctesty - wszystkie muszą się powieść
-
-Hints:
-    * `Stop` or `Ctrl+C` kills infinite loop
+    1. Wygeneruj `result: list[int]` z liczbami od 0 do 5 (rozłącznie)
+    2. Nie używaj `range()`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'list'>
-
-    >>> assert all(type(x) is float for x in result)
+    >>> assert type(result) is list
+    >>> assert all(type(x) is int for x in result)
 
     >>> result
-    [2.0, 3.0, 3.5, 4.0, 4.5, 5.0]
+    [0, 1, 2, 3, 4]
 """
 
-DATA = (2, 3, 3.5, 4, 4.5, 5)
 
-# Values from DATA converted to float
-# type: list[float]
+# List with numbers from 0 to 5 (exclusive)
+# type: list[int]
 result = ...
 
 # Solution
 result = []
 i = 0
 
-while i < len(DATA):
-    value = float(DATA[i])
-    result.append(value)
+while i < 5:
+    result.append(i)
     i += 1

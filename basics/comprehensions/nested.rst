@@ -27,20 +27,20 @@ Example
 >>>
 >>>
 >>> result = {}
->>> for i, titles in DATA.items():
+>>> for lvl, titles in DATA.items():
 ...     for title in titles:
-...         result[title] = str(i)
+...         result[title] = lvl
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-{'Doctorate': '6',
- 'Prof-school': '6',
- 'Masters': '5',
- 'Bachelor': '5',
- 'Engineer': '5',
- 'HS-grad': '4',
- 'Junior High': '3',
- 'Primary School': '2',
- 'Kindergarten': '1'}
+{'Doctorate': 6,
+ 'Prof-school': 6,
+ 'Masters': 5,
+ 'Bachelor': 5,
+ 'Engineer': 5,
+ 'HS-grad': 4,
+ 'Junior High': 3,
+ 'Primary School': 2,
+ 'Kindergarten': 1}
 
 >>> DATA = {
 ...     6: ['Doctorate', 'Prof-school'],
@@ -51,20 +51,20 @@ Example
 ...     1: ['Kindergarten']}
 >>>
 >>>
->>> result = {title: str(i)
-...           for i, titles in DATA.items()
+>>> result = {title: lvl
+...           for lvl, titles in DATA.items()
 ...           for title in titles}
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-{'Doctorate': '6',
- 'Prof-school': '6',
- 'Masters': '5',
- 'Bachelor': '5',
- 'Engineer': '5',
- 'HS-grad': '4',
- 'Junior High': '3',
- 'Primary School': '2',
- 'Kindergarten': '1'}
+{'Doctorate': 6,
+ 'Prof-school': 6,
+ 'Masters': 5,
+ 'Bachelor': 5,
+ 'Engineer': 5,
+ 'HS-grad': 4,
+ 'Junior High': 3,
+ 'Primary School': 2,
+ 'Kindergarten': 1}
 
 
 Microbenchmark
@@ -79,20 +79,20 @@ Microbenchmark
 ... }
 
 >>> # %%timeit -r 1000 -n 1000
->>> result = {title: str(number)
-...           for number, titles in DATA.items()
+>>> result = {title: lvl
+...           for lvl, titles in DATA.items()
 ...           for title in titles}
 >>> # 2.22 µs ± 138 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
 
 >>> # %%timeit -r 1000 -n 1000
->>> result = {t:str(i) for i,ts in DATA.items() for t in ts}
+>>> result = {t:l for l,ts in DATA.items() for t in ts}
 >>> # 2.22 µs ± 181 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
 
 >>> # %%timeit -r 1000 -n 1000
 >>> result = {}
->>> for i, titles in DATA.items():
+>>> for lvl, titles in DATA.items():
 ...     for title in titles:
-...         result[title] = str(i)
+...         result[title] = lvl
 >>> # 2.24 µs ± 152 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
 
 

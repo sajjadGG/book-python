@@ -1,67 +1,48 @@
 """
-* Assignment: Loop For Months
+* Assignment: Loop For Translate
 * Required: yes
 * Complexity: easy
-* Lines of code: 4 lines
+* Lines of code: 2 lines
 * Time: 5 min
 
 English:
-    1. Convert `MONTH` into `result: dict[int,str]`:
-        a. Keys: month number
-        b. Values: month name
-    2. Do not use `enumerate`
-    3. Run doctests - all must succeed
+    1. Define `result: str`
+    2. Use `for` to iterate over `DATA`
+    3. If letter is in `PL` then use conversion value as letter
+    4. Add letter to `result`
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Przekonwertuj `MONTH` w `result: dict[int,str]`:
-        a. klucz: numer miesiąca
-        b. wartość: nazwa miesiąca
-    2. Nie używaj `enumerate`
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniuj `result: list`
+    2. Użyj `for` do iteracji po `DATA`
+    3. Jeżeli litera jest w `PL` to użyj przekonwertowanej wartości jako litera
+    4. Dodaj literę do `result`
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'dict'>
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
 
-    >>> assert all(type(x) is int for x in result.keys())
-    >>> assert all(type(x) is str for x in result.values())
-    >>> assert all(x in result.keys() for x in range(1, 13))
-    >>> assert all(x in result.values() for x in MONTHS)
-
-    >>> 13 not in result
-    True
-    >>> 0 not in result
-    True
-
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-    {1: 'January',
-     2: 'February',
-     3: 'March',
-     4: 'April',
-     5: 'May',
-     6: 'June',
-     7: 'July',
-     8: 'August',
-     9: 'September',
-     10: 'October',
-     11: 'November',
-     12: 'December'}
+    >>> result
+    'zazolc gesla jazn'
 """
 
-MONTHS = ['January', 'February', 'March', 'April',
-          'May', 'June', 'July', 'August', 'September',
-          'October', 'November', 'December']
+PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+      'ł': 'l', 'ń': 'n', 'ó': 'o',
+      'ś': 's', 'ż': 'z', 'ź': 'z'}
 
-# Dict with month number and name. Start with 1
-# type: dict[int,str]
+DATA = 'zażółć gęślą jaźń'
+
+# DATA with substituted PL diacritic chars to ASCII letters
+# type: str
 result = ...
 
 # Solution
-result = {}
-i = 1
+result = ''
 
-for month in MONTHS:
-    result[i] = month
-    i += 1
+for letter in DATA:
+    result += PL.get(letter, letter)

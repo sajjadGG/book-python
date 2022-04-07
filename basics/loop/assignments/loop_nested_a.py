@@ -16,10 +16,10 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> result is not Ellipsis
-    True
-    >>> type(result)
-    <class 'float'>
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
+    >>> assert type(result) is float, \
+    'Variable `result` has invalid type, should be float'
 
     >>> result
     5.911111111111111

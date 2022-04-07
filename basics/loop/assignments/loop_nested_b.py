@@ -20,10 +20,11 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> result is not Ellipsis
-    True
-    >>> type(result) in (set, list, tuple)
-    True
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
+    >>> assert type(result) in (set, list, tuple), \
+    'Variable `result` has invalid type, should be on of (set, list, tuple)'
+
     >>> sorted(result)
     ['Petal length', 'Petal width', 'Sepal length', 'Sepal width', 'Species']
 """

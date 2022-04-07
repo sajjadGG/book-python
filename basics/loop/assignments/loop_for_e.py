@@ -1,5 +1,5 @@
 """
-* Assignment: Loop For Translate
+* Assignment: Loop For Newline
 * Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
@@ -8,39 +8,46 @@
 English:
     1. Define `result: str`
     2. Use `for` to iterate over `DATA`
-    3. If letter is in `PL` then use conversion value as letter
-    4. Add letter to `result`
+    3. Join lines of text with newline (`\n`) character
+    4. Do not use `str.join()`
     5. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj `result: list`
-    2. Użyj `for` do iteracji po `DATA`
-    3. Jeżeli litera jest w `PL` to użyj przekonwertowanej wartości jako litera
-    4. Dodaj literę do `result`
+    1. Zdefiniuj `result: str`
+    2. Użyj `for` do iterowania po `DATA`
+    3. Połącz linie tekstu znakiem końca linii (`\n`)
+    4. Nie używaj `str.join()`
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'str'>
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
+    >>> assert type(result) is str, \
+    'Variable `result` has invalid type, should be str'
 
-    >>> result
-    'zazolc gesla jazn'
+    >>> result.count('\\n')
+    3
+
+    >>> result  # doctest: +NORMALIZE_WHITESPACE
+    'We choose to go to the Moon.\\nWe choose to go to the Moon in this decade
+    and do the other things.\\nNot because they are easy, but because they are
+    hard.\\n'
 """
 
-PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
-      'ł': 'l', 'ń': 'n', 'ó': 'o',
-      'ś': 's', 'ż': 'z', 'ź': 'z'}
+DATA = [
+    'We choose to go to the Moon.',
+    'We choose to go to the Moon in this decade and do the other things.',
+    'Not because they are easy, but because they are hard.',
+]
 
-DATA = 'zażółć gęślą jaźń'
-
-# DATA with substituted PL diacritic chars to ASCII letters
+# DATA joined with newline - \n
 # type: str
 result = ...
 
 # Solution
 result = ''
 
-for letter in DATA:
-    result += PL.get(letter, letter)
+for line in DATA:
+    result += line + '\n'

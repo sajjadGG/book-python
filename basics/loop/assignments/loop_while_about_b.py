@@ -1,46 +1,73 @@
 """
-* Assignment: Loop While toStr
+* Assignment: Loop For Count
 * Required: yes
 * Complexity: easy
-* Lines of code: 4 lines
-* Time: 5 min
+* Lines of code: 13 lines
+* Time: 8 min
 
 English:
-    1. Create `result: str`
-    2. Use `while` to iterate over `DATA`
-    3. Add current element of `DATA` to `result`
-    4. Do not use `str.join()`
-    5. Run doctests - all must succeed
+    1. Count occurrences of each color
+    2. Do not use `list.count()`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz `result: str`
-    2. Użyj `while` do iterowania po `DATA`
-    3. Dodaj obecny element z `DATA` do `result`
-    4. Nie używaj `str.join()`
-    5. Uruchom doctesty - wszystkie muszą się powieść
-
-Hints:
-    * `Stop` or `Ctrl+C` kills infinite loop
+    1. Zlicz wystąpienia każdego z kolorów
+    2. Nie używaj `list.count()`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'str'>
-    >>> result
-    'hello'
+    >>> assert red is not Ellipsis, \
+    'Assign your result to variable `red`'
+    >>> assert green is not Ellipsis, \
+    'Assign your result to variable `green`'
+    >>> assert blue is not Ellipsis, \
+    'Assign your result to variable `blue`'
+
+    >>> assert type(red) is int, \
+    'Variable `red` has invalid type, should be list'
+    >>> assert type(green) is int, \
+    'Variable `green` has invalid type, should be list'
+    >>> assert type(blue) is int, \
+    'Variable `blue` has invalid type, should be list'
+
+    >>> red
+    3
+    >>> green
+    2
+    >>> blue
+    2
 """
 
-DATA = ['h', 'e', 'l', 'l', 'o']
+DATA = ['red', 'green', 'blue', 'red', 'green', 'red', 'blue']
 
-# Joined DATA values
-# type: str
-result = ...
+# Number of 'red' elements in DATA
+# type: int
+red = ...
+
+# Number of 'green' elements in DATA
+# type: int
+green = ...
+
+# Number of 'blue' elements in DATA
+# type: int
+blue = ...
 
 # Solution
-result = ''
+red = 0
+green = 0
+blue = 0
+
 i = 0
 
 while i < len(DATA):
-    result += DATA[i]
+    color = DATA[i]
     i += 1
+
+    if color == 'red':
+        red += 1
+    elif color == 'green':
+        green += 1
+    elif color == 'blue':
+        blue += 1

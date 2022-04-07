@@ -159,3 +159,11 @@ Assignments
 .. literalinclude:: assignments/loop_while_about_c.py
     :caption: :download:`Solution <assignments/loop_while_about_c.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/loop_while_about_d.py
+    :caption: :download:`Solution <assignments/loop_while_about_d.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/loop_while_about_e.py
+    :caption: :download:`Solution <assignments/loop_while_about_e.py>`
+    :end-before: # Solution

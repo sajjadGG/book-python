@@ -1,21 +1,23 @@
 """
-* Assignment: Loop While Translate
+* Assignment: Loop While toFloat
 * Required: yes
-* Complexity: medium
+* Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
 
 English:
-    1. Use `while` to iterate over `DATA`
-    2. If letter is in `PL` then use conversion value as letter
-    3. Add letter to `result`
-    4. Run doctests - all must succeed
+    1. Create `result: list[float]`
+    2. Use `while` to iterate over `DATA`
+    3. Convert current elements of `DATA` to `float`
+    4. Converted value append to `result`
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Użyj `while` do iteracji po `DATA`
-    2. Jeżeli litera jest w `PL` to użyj skonwertowanej wartości jako litera
-    3. Dodaj literę do `result`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    1. Stwórz `result: list[float]`
+    2. Użyj `while` do iterowania po `DATA`
+    3. Przekonwertuj obecny element `DATA` do `float`
+    4. Przekonwertowaną wartość dodaj na koniec `result`
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `Stop` or `Ctrl+C` kills infinite loop
@@ -24,26 +26,25 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> type(result)
-    <class 'str'>
+    <class 'list'>
+
+    >>> assert all(type(x) is float for x in result)
+
     >>> result
-    'zazolc gesla jazn'
+    [2.0, 3.0, 3.5, 4.0, 4.5, 5.0]
 """
 
-PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
-      'ł': 'l', 'ń': 'n', 'ó': 'o',
-      'ś': 's', 'ż': 'z', 'ź': 'z'}
+DATA = (2, 3, 3.5, 4, 4.5, 5)
 
-DATA = 'zażółć gęślą jaźń'
-
-# DATA with substituted PL diacritic chars to ASCII letters
-# type: str
+# Values from DATA converted to float
+# type: list[float]
 result = ...
 
 # Solution
-result = ''
+result = []
 i = 0
 
 while i < len(DATA):
-    letter = DATA[i]
-    result += PL.get(letter, letter)
+    value = float(DATA[i])
+    result.append(value)
     i += 1

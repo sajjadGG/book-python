@@ -21,7 +21,11 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert type(result) is dict
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
+    >>> assert type(result) is dict, \
+    'Variable `result` has invalid type, should be dict'
+
     >>> assert all(type(x) is str for x in result.keys())
     >>> assert all(type(x) is int for x in result.values())
     >>> assert len(result.keys()) == 3

@@ -4,14 +4,14 @@ from typing import Iterator
 from _config import BOOKS, SRC_DIR, OUT_DIR, log
 
 
-def get_files(book: str) -> Iterator[Path]:
+def get_files(book: str) -> Iterator[Path]:  # noqa
     yield from SRC_DIR.rglob(f'{book}/assignments/*.py')
     yield from SRC_DIR.rglob(f'{book}/*/assignments/*.py')
 
 
-def split_assignment_solutions(file: Path) -> tuple[str, str]:
+def split_assignment_solutions(file: Path) -> tuple[str, str]:  # noqa
     content = re.sub(
-        pattern='^TODO: .+?$',
+        pattern='^TODO: .+$',
         repl='',
         string=file.read_text(),
         flags=re.MULTILINE)
@@ -35,7 +35,7 @@ def write_file(path: Path, content: str) -> None:
     path.write_text(content)
 
 
-def process_file(book, file):
+def process_file(book, file):  # noqa
     assignment, solutions = split_assignment_solutions(file)
 
     filename = (str(file.relative_to(SRC_DIR))

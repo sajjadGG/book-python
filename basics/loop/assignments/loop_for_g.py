@@ -1,21 +1,23 @@
 """
-* Assignment: Loop Unpacking Months
+* Assignment: Loop For Months
 * Required: yes
 * Complexity: easy
-* Lines of code: 2 lines
+* Lines of code: 4 lines
 * Time: 5 min
 
 English:
-    1. Use `enumerate()` to convert `MONTH` into `result: dict[int,str]`:
+    1. Convert `MONTH` into `result: dict[int,str]`:
         a. Keys: month number
         b. Values: month name
-    2. Run doctests - all must succeed
+    2. Do not use `enumerate`
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Użyj `enumerate()` do konwersji `MONTH` w `result: dict[int,str]`:
+    1. Przekonwertuj `MONTH` w `result: dict[int,str]`:
         a. klucz: numer miesiąca
         b. wartość: nazwa miesiąca
-    2. Uruchom doctesty - wszystkie muszą się powieść
+    2. Nie używaj `enumerate`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -60,6 +62,8 @@ result = ...
 
 # Solution
 result = {}
+i = 1
 
-for i, month in enumerate(MONTHS, start=1):
+for month in MONTHS:
     result[i] = month
+    i += 1

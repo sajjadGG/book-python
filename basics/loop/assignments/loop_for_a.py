@@ -7,7 +7,7 @@
 
 English:
     1. Count occurrences of each color
-    2.
+    2. Do not use `list.count()`
     3. Run doctests - all must succeed
 
 Polish:
@@ -18,12 +18,20 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(red)
-    <class 'int'>
-    >>> type(green)
-    <class 'int'>
-    >>> type(blue)
-    <class 'int'>
+    >>> assert red is not Ellipsis, \
+    'Assign your result to variable `red`'
+    >>> assert green is not Ellipsis, \
+    'Assign your result to variable `green`'
+    >>> assert blue is not Ellipsis, \
+    'Assign your result to variable `blue`'
+
+    >>> assert type(red) is int, \
+    'Variable `red` has invalid type, should be list'
+    >>> assert type(green) is int, \
+    'Variable `green` has invalid type, should be list'
+    >>> assert type(blue) is int, \
+    'Variable `blue` has invalid type, should be list'
+
     >>> red
     3
     >>> green

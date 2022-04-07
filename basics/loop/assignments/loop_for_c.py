@@ -1,37 +1,46 @@
 """
-* Assignment: Loop For Segmentation
+* Assignment: Loop For Counter
 * Required: yes
 * Complexity: easy
-* Lines of code: 10 lines
-* Time: 8 min
+* Lines of code: 5 lines
+* Time: 5 min
 
 English:
-    1. Count occurrences of each group
-    2. Define groups:
-        a. `small` - numbers in range [0-3)
-        b. `medium` - numbers in range [3-7)
-        c. `large` - numbers in range [7-10)
-    3. Run doctests - all must succeed
+    1. Iterate over `DATA`
+    2. Count occurrences of each number
+    3. Create empty `result: dict[int, int]`:
+        a. key - digit
+        b. value - number of occurrences
+    4. Iterating over numbers check if number is already in `result`:
+        a. If first occurrence, then add it to `result` with value 1
+        b. If exists, then increment the value by 1
+    5. Run doctests - all must succeed
 
 Polish:
-    1. Policz wystąpienia każdej z group
-    2. Zdefiniuj grupy:
-        a. `small` - liczby z przedziału <0-3)
-        b. `medium` - liczby z przedziału <3-7)
-        c. `large` - liczby z przedziału <7-10)
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Iteruj po `DATA`
+    2. Policz wystąpienia każdej z cyfr
+    3. Stwórz pusty `result: dict[int, int]`:
+        a. klucz - cyfra
+        b. wartość - liczba wystąpień
+    4. Iterując po cyfrach sprawdź czy cyfra znajduje się już w `result`:
+        a. Jeżeli pierwsze wystąpienie, to dodaj ją do `result` z wartością 1
+        b. Jeżeli istnieje, to zwiększ w wartość o 1
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'dict'>
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
+    >>> assert type(result) is dict, \
+    'Variable `result` has invalid type, should be dict'
 
-    >>> assert all(type(x) is str for x in result.keys())
+    >>> assert all(type(x) is int for x in result.keys())
     >>> assert all(type(x) is int for x in result.values())
+    >>> assert all(x in result.keys() for x in range(0, 10))
 
     >>> result
-    {'small': 16, 'medium': 19, 'large': 15}
+    {1: 7, 4: 8, 6: 4, 7: 4, 5: 4, 0: 7, 9: 5, 8: 6, 2: 2, 3: 3}
 """
 
 DATA = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
@@ -40,272 +49,15 @@ DATA = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
         1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
         4, 8, 1, 9, 6, 3]
 
-# Number of digit occurrences in segments
-# type: dict[str,int]
-result = {'small': 0, 'medium': 0, 'large': 0}
+# number of occurrences of each digit from DATA
+# type: dict[int,int]
+result = ...
 
 # Solution
-SMALL = {0, 1, 2}
-MEDIUM = {3, 4, 5, 6}
-LARGE = {7, 8, 9}
+result = {}
 
 for digit in DATA:
-    if digit in SMALL:
-        result['small'] += 1
-    elif digit in MEDIUM:
-        result['medium'] += 1
-    elif digit in LARGE:
-        result['large'] += 1
-
-# Alternative Solution
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# for digit in DATA:
-#     if 0 <= digit < 3:
-#         result['small'] += 1
-#     elif 3 <= digit < 7:
-#         result['medium'] += 1
-#     elif 7 <= digit < 10:
-#         result['large'] += 1
-#
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# for digit in DATA:
-#     if 0 <= digit and digit < 3:
-#         result['small'] += 1
-#     elif 3 <= digit and digit < 7:
-#         result['medium'] += 1
-#     elif 7 <= digit and digit < 10:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# for digit in DATA:
-#     if 0 <= digit < 3:
-#         result['small'] += 1
-#     elif 3 <= digit < 7:
-#         result['medium'] += 1
-#     else:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# for digit in DATA:
-#     if digit < 3:
-#         result['small'] += 1
-#     elif digit < 7:
-#         result['medium'] += 1
-#     elif digit < 10:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# for digit in DATA:
-#     if digit < 3:
-#         result['small'] += 1
-#     elif digit < 7:
-#         result['medium'] += 1
-#     else:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# for digit in DATA:
-#     if digit in [0,1,2]:
-#         result['small'] += 1
-#     elif digit in [3,4,5,6]:
-#         result['medium'] += 1
-#     elif digit in [7,8,9]:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# for digit in DATA:
-#     if digit in (0,1,2):
-#         result['small'] += 1
-#     elif digit in (3,4,5,6):
-#         result['medium'] += 1
-#     elif digit in (7,8,9):
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# for digit in DATA:
-#     if digit in {0,1,2}:
-#         result['small'] += 1
-#     elif digit in {3,4,5,6}:
-#         result['medium'] += 1
-#     elif digit in {7,8,9}:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# for digit in DATA:
-#     if digit in range(0,3):
-#         result['small'] += 1
-#     elif digit in range(3,7):
-#         result['medium'] += 1
-#     elif digit in range(7,10):
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# SMALL = range(0,3)
-# MEDIUM = range(3,7)
-# LARGE = range(7,10)
-# for digit in DATA:
-#     if digit in SMALL:
-#         result['small'] += 1
-#     elif digit in MEDIUM:
-#         result['medium'] += 1
-#     elif digit in LARGE:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# SMALL = [0,1,2]
-# MEDIUM = [3,4,5,6]
-# LARGE = [7,8,9]
-# for digit in DATA:
-#     if digit in SMALL:
-#         result['small'] += 1
-#     elif digit in MEDIUM:
-#         result['medium'] += 1
-#     elif digit in LARGE:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# SMALL = (0,1,2)
-# MEDIUM = (3,4,5,6)
-# LARGE = (7,8,9)
-# for digit in DATA:
-#     if digit in SMALL:
-#         result['small'] += 1
-#     elif digit in MEDIUM:
-#         result['medium'] += 1
-#     elif digit in LARGE:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# SMALL = {0,1,2}
-# MEDIUM = {3,4,5,6}
-# LARGE = {7,8,9}
-# for digit in DATA:
-#     if digit in SMALL:
-#         result['small'] += 1
-#     elif digit in MEDIUM:
-#         result['medium'] += 1
-#     elif digit in LARGE:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# SMALL = [x for x in range(0,3)]
-# MEDIUM = [x for x in range(3,7)]
-# LARGE = [x for x in range(7,10)]
-# for digit in DATA:
-#     if digit in SMALL:
-#         result['small'] += 1
-#     elif digit in MEDIUM:
-#         result['medium'] += 1
-#     elif digit in LARGE:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# SMALL = (x for x in range(0,3))
-# MEDIUM = (x for x in range(3,7))
-# LARGE = (x for x in range(7,10))
-# for digit in DATA:
-#     if digit in SMALL:
-#         result['small'] += 1
-#     elif digit in MEDIUM:
-#         result['medium'] += 1
-#     elif digit in LARGE:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# SMALL = {x for x in range(0,3)}
-# MEDIUM = {x for x in range(3,7)}
-# LARGE = {x for x in range(7,10)}
-# for digit in DATA:
-#     if digit in SMALL:
-#         result['small'] += 1
-#     elif digit in MEDIUM:
-#         result['medium'] += 1
-#     elif digit in LARGE:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# SMALL = {x for x in (0,1,2)}
-# MEDIUM = {x for x in (3,4,5,6)}
-# LARGE = {x for x in (7,8,9)}
-# for digit in DATA:
-#     if digit in SMALL:
-#         result['small'] += 1
-#     elif digit in MEDIUM:
-#         result['medium'] += 1
-#     elif digit in LARGE:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# SMALL = (x for x in (0,1,2))
-# MEDIUM = (x for x in (3,4,5,6))
-# LARGE = (x for x in (7,8,9))
-# for digit in DATA:
-#     if digit in SMALL:
-#         result['small'] += 1
-#     elif digit in MEDIUM:
-#         result['medium'] += 1
-#     elif digit in LARGE:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# SMALL = [x for x in (0,1,2)]
-# MEDIUM = [x for x in (3,4,5,6)]
-# LARGE = [x for x in (7,8,9)]
-# for digit in DATA:
-#     if digit in SMALL:
-#         result['small'] += 1
-#     elif digit in MEDIUM:
-#         result['medium'] += 1
-#     elif digit in LARGE:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# for digit in DATA:
-#     if digit in [x for x in range(0,3)]:
-#         result['small'] += 1
-#     elif digit in [x for x in range(3,7)]:
-#         result['medium'] += 1
-#     elif digit in [x for x in range(7,10)]:
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# for digit in DATA:
-#     if digit in (x for x in range(0,3)):
-#         result['small'] += 1
-#     elif digit in (x for x in range(3,7)):
-#         result['medium'] += 1
-#     elif digit in (x for x in range(7,10)):
-#         result['large'] += 1
-#
-# %%timeit -r 10 -n 10000
-# result = {'small': 0,'medium': 0,'large': 0}
-# for digit in DATA:
-#     if digit in {x for x in range(0,3)}:
-#         result['small'] += 1
-#     elif digit in {x for x in range(3,7)}:
-#         result['medium'] += 1
-#     elif digit in {x for x in range(7,10)}:
-#         result['large'] += 1
+    if digit not in result:
+        result[digit] = 1
+    else:
+        result[digit] += 1

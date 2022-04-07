@@ -153,6 +153,7 @@ Comprehensions
     comprehensions/nested.rst
     comprehensions/all-any.rst
     comprehensions/conditional-expression.rst
+    comprehensions/performance.rst
 
 
 Files

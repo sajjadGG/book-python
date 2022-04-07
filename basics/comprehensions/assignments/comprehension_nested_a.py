@@ -27,15 +27,15 @@ Tests:
     <class 'dict'>
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    {'Doctorate': '6',
-     'Prof-school': '6',
-     'Masters': '5',
-     'Bachelor': '5',
-     'Engineer': '5',
-     'HS-grad': '4',
-     'Junior High': '3',
-     'Primary School': '2',
-     'Kindergarten': '1'}
+    {'Doctorate': 6,
+     'Prof-school': 6,
+     'Masters': 5,
+     'Bachelor': 5,
+     'Engineer': 5,
+     'HS-grad': 4,
+     'Junior High': 3,
+     'Primary School': 2,
+     'Kindergarten': 1}
 """
 
 DATA = {
@@ -52,6 +52,6 @@ DATA = {
 result = ...
 
 # Solution
-result = {title: str(i)
-          for i, titles in DATA.items()
+result = {title: lvl
+          for lvl, titles in DATA.items()
           for title in titles}

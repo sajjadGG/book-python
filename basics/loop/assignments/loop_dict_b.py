@@ -20,8 +20,10 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> type(result)
-    <class 'list'>
+    >>> assert result is not Ellipsis, \
+    'Assign your result to variable `result`'
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, should be list'
 
     >>> assert all(type(x) is dict for x in result)
 

@@ -265,3 +265,7 @@ Assignments
 .. literalinclude:: assignments/loop_for_f.py
     :caption: :download:`Solution <assignments/loop_for_f.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/loop_for_g.py
+    :caption: :download:`Solution <assignments/loop_for_g.py>`
+    :end-before: # Solution
