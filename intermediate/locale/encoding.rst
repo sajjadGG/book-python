@@ -7,6 +7,7 @@ Locale Encoding
 * ``cp1251`` or ``windows-1251`` - Eastern European encoding on Windows
 * ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
 * ``ASCII`` - ASCII characters only
+* Since Windows 10 version 1903, UTF-8 is default encoding for Notepad!
 
 Encodings:
 

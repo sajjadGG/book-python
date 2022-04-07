@@ -33,7 +33,7 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> assert isinstance(result, str), \
-    'Result must be a str with: `file`, `directory` or `not exist`'
+    'Result must be a str with: `file`, `directory` or `missing`'
 
     >>> assert isinstance(abspath, Path), \
     'Use Path class from pathlib library to create a filepath'
@@ -60,7 +60,7 @@ abspath = ...
 result = ...
 
 # Solution
-abspath = Path(Path.cwd(), FILENAME)
+abspath = Path.cwd() / FILENAME
 
 if abspath.is_file():
     result = 'file'
