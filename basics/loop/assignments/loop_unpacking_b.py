@@ -3,7 +3,7 @@
 * Required: yes
 * Complexity: medium
 * Lines of code: 4 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
     1. Define `result: set[str]`

@@ -206,3 +206,7 @@ Assignments
 .. literalinclude:: assignments/loop_dict_c.py
     :caption: :download:`Solution <assignments/loop_dict_c.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/loop_dict_d.py
+    :caption: :download:`Solution <assignments/loop_dict_d.py>`
+    :end-before: # Solution
