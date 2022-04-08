@@ -26,7 +26,10 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(myrange)
+    >>> assert myrange is not Ellipsis, \
+    'Write solution inside `myrange` function'
+    >>> assert isfunction(myrange), \
+    'Object `myrange` must be a function'
 
     >>> myrange(0, 10, 2)
     [0, 2, 4, 6, 8]

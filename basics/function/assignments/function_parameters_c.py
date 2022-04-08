@@ -1,21 +1,21 @@
 """
-* Assignment: Function Parameters Sequence
+* Assignment: Function Parameters Sum
 * Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
-    1. Define function `total`
-    2. Function parameter is `data` sequence of integers
-    3. Function returns sum of all values in sequence
-    4. Run doctests - all must succeed
+    1. Define function `total`:
+       a. takes `data: tuple|list|set` of objects `int | float`
+       b. returns sum of all values in a sequence
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj funkcję `total`
-    2. Parametrem do funkcji jest `data` sekwencja liczb
-    3. Funkcja zwraca sumę wszystkich wartości z sekwencji
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniuj funkcję `total`:
+       a. przyjmuje `data: tuple|list|set` obiektów `int | float`
+       b. zwraca sumę wszystkich wartości z sekwencji
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `sum()`
@@ -24,12 +24,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(total)
-    True
-    >>> type(total([0, 1])) is int
-    True
-    >>> type(total([0.0, 1.1])) is float
-    True
+    >>> assert total is not Ellipsis, \
+    'Write solution inside `total` function'
+    >>> assert isfunction(total), \
+    'Object `total` must be a function'
+
     >>> total([1,2,3])
     6
     >>> total([1,2,3,4,5,6])
@@ -37,6 +36,10 @@ Tests:
     >>> total(range(0,101))
     5050
 """
+
+# Returns sum of all values in a sequence
+# type: Callable[[tuple|list|set], int]
+...
 
 
 # Solution

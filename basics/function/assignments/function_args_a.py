@@ -19,8 +19,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(total)
-    True
+    >>> assert total is not Ellipsis, \
+    'Write solution inside `total` function'
+    >>> assert isfunction(total), \
+    'Object `total` must be a function'
+
     >>> total([1,2,3,4])
     6
     >>> total([2,-1,0,2])

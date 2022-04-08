@@ -1,5 +1,5 @@
-OOP Init Attribute
-==================
+OOP Init Setattr
+================
 * It's a first method run after object is initiated
 * All classes has default ``__init__()``
 
@@ -195,6 +195,10 @@ generates ``__init__()`` arguments and fields. More information in
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_init_attribute_a.py
-    :caption: :download:`Solution <assignments/oop_init_attribute_a.py>`
+.. literalinclude:: assignments/oop_init_call_a.py
+    :caption: :download:`Solution <assignments/oop_init_call_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/oop_init_call_a.py
+    :caption: :download:`Solution <assignments/oop_init_call_a.py>`
     :end-before: # Solution

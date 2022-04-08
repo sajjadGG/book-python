@@ -25,11 +25,15 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(divide)
-    True
+    >>> assert divide is not Ellipsis, \
+    'Write solution inside `divide` function'
+    >>> assert isfunction(divide), \
+    'Object `divide` must be a function'
+
     >>> divide(4, 0)
     Traceback (most recent call last):
     ValueError: Argument `b` cannot be zero
+
     >>> divide(4, 2)
     2.0
 """

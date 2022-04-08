@@ -202,7 +202,7 @@ Object Oriented Programming
     oop/attribute-set.rst
     oop/attribute-get.rst
     oop/init-define.rst
-    oop/init-attribute.rst
+    oop/init-setattr.rst
     oop/init-validation.rst
     oop/method-about.rst
     oop/method-parameters.rst

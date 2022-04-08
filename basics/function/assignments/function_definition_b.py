@@ -17,7 +17,14 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(beetlejuice)
+    >>> assert isfunction(beetlejuice), \
+    'Object `beetlejuice` must be a function'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, should be list'
+    >>> assert all(type(x) is str for x in result), \
+    'All rows in `result` should be str'
 
     >>> result
     ['Beetlejuice', 'Beetlejuice', 'Beetlejuice']

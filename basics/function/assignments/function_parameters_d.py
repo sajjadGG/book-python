@@ -23,10 +23,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(echo)
-    True
-    >>> type(echo(0,0)) is tuple
-    True
+    >>> assert echo is not Ellipsis, \
+    'Write solution inside `echo` function'
+    >>> assert isfunction(echo), \
+    'Object `echo` must be a function'
+
     >>> echo(1, 2)
     (1, 2)
     >>> echo(3, 4)

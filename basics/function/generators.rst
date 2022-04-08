@@ -4,10 +4,12 @@ Function Generator-Like
 * Generator-like objects
 * ``range(start, stop, step)``
 * ``reversed(iterable)``
-* ``map(func, iterable)``
-* ``filter(func, iterable)``
 * ``enumerate(iterable, start=0)``
 * ``zip(*iterable, strict=False)``
+* ``map(func, iterable)``
+* ``filter(func, iterable)``
+* ``next(iterable)``
+* ``iter(iterable)``
 
 
 Range

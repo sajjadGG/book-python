@@ -26,8 +26,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(pilot_say)
-    True
+    >>> assert pilot_say is not Ellipsis, \
+    'Write solution inside `pilot_say` function'
+    >>> assert isfunction(pilot_say), \
+    'Object `pilot_say` must be a function'
+
     >>> pilot_say(1)
     'one'
     >>> pilot_say(+1)

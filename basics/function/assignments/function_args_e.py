@@ -21,8 +21,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(clean)
-    True
+    >>> assert clean is not Ellipsis, \
+    'Write solution inside `clean` function'
+    >>> assert isfunction(clean), \
+    'Object `clean` must be a function'
+
     >>> clean('ul.Mieszka II')
     'Mieszka II'
     >>> clean('UL. Zygmunta III WaZY')

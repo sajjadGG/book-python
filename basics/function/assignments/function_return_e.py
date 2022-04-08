@@ -17,8 +17,13 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(compute)
-    True
+    >>> assert isfunction(compute), \
+    'Object `compute` must be a function'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is int, \
+    'Variable `result` has invalid type, should be int'
+
     >>> result
     3
 """

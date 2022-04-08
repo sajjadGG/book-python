@@ -25,8 +25,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(power)
-    True
+    >>> assert power is not Ellipsis, \
+    'Write solution inside `power` function'
+    >>> assert isfunction(power), \
+    'Object `power` must be a function'
+
     >>> power(4, 3)
     64
     >>> power(3)

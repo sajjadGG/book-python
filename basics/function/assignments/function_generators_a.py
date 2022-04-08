@@ -29,9 +29,14 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(cube)
-    >>> assert type(result) is list
-    >>> assert all(type(x) is int for x in result)
+    >>> assert isfunction(cube), \
+    'Object `cube` must be a function'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is list, \
+    'Variable `result` has invalid type, should be list'
+    >>> assert all(type(x) is int for x in result), \
+    'All rows in `result` should be int'
 
     >>> result
     [0, 1, 8, 27, 64, 125, 216, 343, 512, 729]

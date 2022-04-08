@@ -124,42 +124,6 @@ More information in `OOP Dataclass`.
 
 Examples
 --------
-* Documentation: https://atlassian-python-api.readthedocs.io
-* Source Code: https://github.com/atlassian-api/atlassian-python-api
-* Examples: https://github.com/atlassian-api/atlassian-python-api/tree/master/examples
-
-.. code-block:: console
-
-    $ pip install atlassian-python-api
-
->>> # doctest: +SKIP
-... from atlassian import Jira
-...
-... jira = Jira(
-...     url='http://example.com:8080',
-...     username='myusername',
-...     password='mypassword')
-...
-... JQL = 'project = DEMO AND status IN ("To Do", "In Progress") ORDER BY issuekey'
-...
-... result = jira.jql(JQL)
-... print(result)
-
->>> # doctest: +SKIP
-... from atlassian import Confluence
-...
-... confluence = Confluence(
-...     url='http://example.com:8090',
-...     username='myusername',
-...     password='mypassword')
-...
-... result = confluence.create_page(
-...     space='DEMO',
-...     title='This is the title',
-...     body='This is the body. You can use <strong>HTML tags</strong>!')
-...
-... print(result)
-
 >>> class Point:
 ...     def __init__(self, x, y, z):
 ...         self.x = x
@@ -248,7 +212,7 @@ Use Case - 0x02
 >>>
 >>> maluch = Car()
 >>>
->>> maluch.drive_to('Bajkonur')
+>>> maluch.drive_to('Cologne, Germany')
 Traceback (most recent call last):
 RuntimeError: Engine must be turned on to drive
 >>>
@@ -259,12 +223,53 @@ RuntimeError: Engine must be turned on to drive
 >>> maluch.engine
 'on'
 >>>
->>> maluch.drive_to('Bajkonur')
-'Driving to Bajkonur'
+>>> maluch.drive_to('Cologne, Germany')
+'Driving to Cologne, Germany'
 >>>
 >>> maluch.engine_stop()
 >>> maluch.engine
 'off'
+
+
+Use Case - 0x03
+---------------
+* Documentation: https://atlassian-python-api.readthedocs.io
+* Source Code: https://github.com/atlassian-api/atlassian-python-api
+* Examples: https://github.com/atlassian-api/atlassian-python-api/tree/master/examples
+
+.. code-block:: console
+
+    $ pip install atlassian-python-api
+
+>>> # doctest: +SKIP
+... from atlassian import Jira
+...
+... jira = Jira(
+...     url='http://example.com:8080',
+...     username='myusername',
+...     password='mypassword')
+...
+... JQL = 'project = DEMO AND status IN ("To Do", "In Progress") ORDER BY issuekey'
+...
+... result = jira.jql(JQL)
+... print(result)
+
+>>> # doctest: +SKIP
+... from atlassian import Confluence
+...
+... confluence = Confluence(
+...     url='http://example.com:8090',
+...     username='myusername',
+...     password='mypassword')
+...
+... result = confluence.create_page(
+...     space='DEMO',
+...     title='This is the title',
+...     body='This is the body. You can use <strong>HTML tags</strong>!')
+...
+... print(result)
+
+
 
 
 Assignments

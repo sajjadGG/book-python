@@ -19,7 +19,10 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(result)
+    >>> assert result is not Ellipsis, \
+    'Write solution inside `result` function'
+    >>> assert isfunction(result), \
+    'Object `result` must be a function'
 
     >>> result()
     ('hello', 'world')

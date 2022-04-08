@@ -25,8 +25,15 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(sumif)
-    True
+    >>> assert isfunction(sumif), \
+    'Object `sumif` must be a function'
+    >>> assert SELECT is not Ellipsis, \
+    'Assign result to variable: `SELECT`'
+    >>> assert type(SELECT) is set, \
+    'Variable `result` has invalid type, should be set'
+    >>> assert all(type(x) is str for x in SELECT), \
+    'All rows in `result` should be str'
+
     >>> sum(sumif(X,y) for *X, y in DATA[1:])
     49.1
 """

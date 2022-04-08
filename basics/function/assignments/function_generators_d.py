@@ -25,9 +25,14 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(odd)
-    >>> assert isfunction(cube)
-    >>> assert type(result) is float
+    >>> assert isfunction(odd), \
+    'Object `odd` must be a function'
+    >>> assert isfunction(cube), \
+    'Object `cube` must be a function'
+    >>> assert result is not Ellipsis, \
+    'Assign result to variable: `result`'
+    >>> assert type(result) is float, \
+    'Variable `result` has invalid type, should be float'
 
     >>> result
     245.0
@@ -52,4 +57,4 @@ result = ...
 
 # Solution
 data = list(DATA)
-result = sum(result) / len(result)
+result = sum(data) / len(data)

@@ -6,39 +6,39 @@
 * Time: 2 min
 
 English:
-    1. Define function `square`
-    2. Function raises its
-    3. Function returns sum of all values in sequence
-    4. Run doctests - all must succeed
+    1. Define function `square`:
+       a. takes `x: int`
+       b. returns square of `x`
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj funkcję `total`
-    2. Parametrem do funkcji jest `data` sekwencja liczb
-    3. Funkcja zwraca sumę wszystkich wartości z sekwencji
-    4. Uruchom doctesty - wszystkie muszą się powieść
-
-Hints:
-    * `sum()`
+    1. Zdefiniuj funkcję `square`:
+       a. przyjmuje `x: int`
+       b. zwraca kwadrat `x`
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(total)
-    True
-    >>> type(total([0, 1])) is int
-    True
-    >>> type(total([0.0, 1.1])) is float
-    True
-    >>> total([1,2,3])
-    6
-    >>> total([1,2,3,4,5,6])
-    21
-    >>> total(range(0,101))
-    5050
+    >>> assert square is not Ellipsis, \
+    'Write solution inside `square` function'
+    >>> assert isfunction(square), \
+    'Object `square` must be a function'
+
+    >>> square(2)
+    4
+    >>> square(8)
+    64
+    >>> square(32)
+    1024
 """
+
+# Returns square of `x`
+# type: Callable[[int], int]
+...
 
 
 # Solution
-def total(data):
-    return sum(data)
+def square(x):
+    return x ** 2

@@ -1,44 +1,50 @@
 """
-* Assignment: Function Parameters Even/Odd
+* Assignment: Function Parameters IsEven
 * Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
-    1. Define function `total`
-    2. Function parameter is `data` sequence of integers
-    3. Function returns sum of all values in sequence
-    4. Run doctests - all must succeed
+    1. Define function `is_even`:
+       a. takes `x: int`
+       b. returns True/False if `x` is even
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj funkcję `total`
-    2. Parametrem do funkcji jest `data` sekwencja liczb
-    3. Funkcja zwraca sumę wszystkich wartości z sekwencji
-    4. Uruchom doctesty - wszystkie muszą się powieść
-
-Hints:
-    * `sum()`
+    1. Zdefiniuj funkcję `is_even`:
+       a. przyjmuje `x: int`
+       b. zwraca True/False czy `x` jest parzysty
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(total)
+    >>> assert is_even is not Ellipsis, \
+    'Write solution inside `is_even` function'
+    >>> assert isfunction(is_even), \
+    'Object `is_even` must be a function'
+
+    >>> is_even(2)
     True
-    >>> type(total([0, 1])) is int
+    >>> is_even(3)
+    False
+    >>> is_even(4)
     True
-    >>> type(total([0.0, 1.1])) is float
+    >>> is_even(5)
+    False
+    >>> is_even(6)
     True
-    >>> total([1,2,3])
-    6
-    >>> total([1,2,3,4,5,6])
-    21
-    >>> total(range(0,101))
-    5050
+    >>> is_even(7)
+    False
 """
+
+# Returns True/False if `x` is even
+# type: Callable[[int], bool]
+...
 
 
 # Solution
-def total(data):
-    return sum(data)
+def is_even(x):
+    return x % 2 == 0

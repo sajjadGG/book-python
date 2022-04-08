@@ -25,10 +25,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(default)
-    True
-    >>> type(default(0,0)) is dict
-    True
+    >>> assert default is not Ellipsis, \
+    'Write solution inside `default` function'
+    >>> assert isfunction(default), \
+    'Object `default` must be a function'
+
     >>> default(1)
     {'a': 1, 'b': 1}
     >>> default(2, 3)

@@ -19,8 +19,8 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(say_hello),
-    'say_hello must be a function'
+    >>> assert isfunction(say_hello), \
+    'Object `say_hello` must be a function'
 
     >>> say_hello()
     'hello world'

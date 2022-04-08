@@ -25,8 +25,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(translate)
-    True
+    >>> assert translate is not Ellipsis, \
+    'Write solution inside `translate` function'
+    >>> assert isfunction(translate), \
+    'Object `translate` must be a function'
+
     >>> translate('zażółć')
     'zazolc'
     >>> translate('gęślą')
