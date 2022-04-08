@@ -25,6 +25,11 @@ Type Annotation Scalar
     mandatory, even by convention.
     -- Python Software Foundation
 
+.. figure:: img/typeannotation-timeline.png
+
+    Timeline of changes to type annotations from Python 3.0 to now [#Briggs2021]_
+
+
 Int
 ---
 .. highlights::
@@ -159,3 +164,8 @@ Further Reading
 * More information in `cicd-tools`
 * https://www.infoq.com/presentations/dynamic-static-typing/
 * https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L505
+
+
+References
+----------
+.. [#Briggs2021] Briggs, J. Type Annotations in Python. Year: 2021. Retrieved: 2022-04-08. URL: https://towardsdatascience.com/type-annotations-in-python-d90990b172dc

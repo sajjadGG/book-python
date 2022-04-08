@@ -1,39 +1,44 @@
 """
-* Assignment: Function Parameters Echo
+* Assignment: Function Parameters Even/Odd
 * Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min
 
 English:
-    1. Define function `echo` with two parameters
-    2. Parameter `a` is required
-    3. Parameter `b` is required
-    4. Return `a` and `b` as a `tuple`
-    5. Run doctests - all must succeed
+    1. Define function `total`
+    2. Function parameter is `data` sequence of integers
+    3. Function returns sum of all values in sequence
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj funkcję `echo` z dwoma parametrami
-    2. Parametr `a` jest wymagany
-    3. Parametr `b` jest wymagany
-    4. zwróć `a` i `b` jako `tuple`
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniuj funkcję `total`
+    2. Parametrem do funkcji jest `data` sekwencja liczb
+    3. Funkcja zwraca sumę wszystkich wartości z sekwencji
+    4. Uruchom doctesty - wszystkie muszą się powieść
+
+Hints:
+    * `sum()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(echo)
+    >>> isfunction(total)
     True
-    >>> type(echo(0,0)) is tuple
+    >>> type(total([0, 1])) is int
     True
-    >>> echo(1, 2)
-    (1, 2)
-    >>> echo(3, 4)
-    (3, 4)
+    >>> type(total([0.0, 1.1])) is float
+    True
+    >>> total([1,2,3])
+    6
+    >>> total([1,2,3,4,5,6])
+    21
+    >>> total(range(0,101))
+    5050
 """
 
 
 # Solution
-def echo(a, b):
-    return a, b
+def total(data):
+    return sum(data)

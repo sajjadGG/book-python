@@ -176,8 +176,35 @@ Intercept Returned Value
 1
 
 
+Locals
+------
+>>> def myfunc():
+...     a = 1
+...     b = 2
+...     return locals()
+...
+>>> myfunc(1,2)
+{'a': 1, 'b': 2}
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/function_return_a.py
     :caption: :download:`Solution <assignments/function_return_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/function_return_b.py
+    :caption: :download:`Solution <assignments/function_return_b.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/function_return_c.py
+    :caption: :download:`Solution <assignments/function_return_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/function_return_d.py
+    :caption: :download:`Solution <assignments/function_return_d.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/function_return_e.py
+    :caption: :download:`Solution <assignments/function_return_e.py>`
     :end-before: # Solution

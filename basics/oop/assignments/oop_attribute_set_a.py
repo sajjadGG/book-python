@@ -2,24 +2,22 @@
 * Assignment: OOP Attribute Set
 * Required: yes
 * Complexity: easy
-* Lines of code: 12 lines
-* Time: 8 min
+* Lines of code: 6 lines
+* Time: 5 min
 
 English:
     1. Modify code below
-    2. Add attibutes to model the data:
+    2. Set attibutes of watney and nasa instances to model the data:
        a. Watney, USA, 1969-07-21
        b. NASA, USA, 1958-07-29
-    3. Create instances (watney, nasa) filling it with data
-    4. Run doctests - all must succeed
+    3. Run doctests - all must succeed
 
 Polish:
     1. Zmodyfikuj kod poniżej
-    2. Dodaj atrybuty by zamodelować dane:
+    2. Ustaw atrybuty instancji watney i nasa by zamodelować dane:
        a. Watney, USA, 1969-07-21
        b. NASA, USA, 1958-07-29
-    3. Stwórz instancje (watney, nasa) wypełniając je danymi
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -35,36 +33,30 @@ Tests:
 """
 
 
-# Watney, USA, 1969-07-21
-# NASA, USA, 1958-07-29
-
 class Astronaut:
-    pass
+    name: str
+    country: str
+    date: str
 
 
 class SpaceAgency:
-    pass
+    name: str
+    country: str
+    date: str
 
 
 watney = Astronaut()
 nasa = SpaceAgency()
 
+# Watney, USA, 1969-07-21
+# NASA, USA, 1958-07-29
+
 
 # Solution
-class Astronaut:
-    pass
-
-
-class SpaceAgency:
-    pass
-
-
-watney = Astronaut()
 watney.name = 'Watney'
 watney.country = 'USA'
 watney.date = '1969-07-21'
 
-nasa = SpaceAgency()
 nasa.name = 'NASA'
 nasa.country = 'USA'
 nasa.date = '1958-07-29'

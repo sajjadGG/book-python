@@ -1,13 +1,13 @@
 """
-* Assignment: Function Parameters Sequence
+* Assignment: Function Parameters Square
 * Required: yes
 * Complexity: easy
 * Lines of code: 2 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
-    1. Define function `total`
-    2. Function parameter is `data` sequence of integers
+    1. Define function `square`
+    2. Function raises its
     3. Function returns sum of all values in sequence
     4. Run doctests - all must succeed
 

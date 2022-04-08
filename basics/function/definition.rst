@@ -156,3 +156,7 @@ Assignments
 .. literalinclude:: assignments/function_definition_a.py
     :caption: :download:`Solution <assignments/function_definition_a.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/function_definition_b.py
+    :caption: :download:`Solution <assignments/function_definition_b.py>`
+    :end-before: # Solution

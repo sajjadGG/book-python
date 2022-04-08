@@ -1,5 +1,6 @@
 OOP Attribute Define
 ====================
+* Attribute Annotation is optional, but a good practice
 
 
 No Attribute Definition
@@ -8,37 +9,42 @@ No Attribute Definition
 ...     pass
 
 
-Attribute Annotation
---------------------
-* Optional
-* Good practice
-
-Basic Types:
-
+Basic Types
+-----------
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
+...     age: int
 
-Sequences:
 
->>> class Astronaut:
-...     firstname: str
-...     lastname: str
-...     missions: list[str]
-
-Union:
-
+Union
+-----
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     age: int | float
 
-Optionals:
+
+Optional
+--------
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age: int | float
+...     height: float | None
+...     weight: float | None
+
+
+Sequences
+---------
+* Since Python 3.9 you can use ``list[str]``
+* Before Python 3.9 use ``list`` without specifying type of elements inside
 
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     missions: list | None
+...     age: int
+...     missions: list[str]
 
 
 Relation One to One
@@ -49,7 +55,7 @@ Relation One to One
 ...     day: int
 >>>
 >>>
->>> class Person:
+>>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     born: Date
@@ -68,6 +74,20 @@ Relation One to Many
 ...     missions: list[Mission]
 
 
+Example
+-------
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     agency: str
+...     flown: bool
+...     age: int | float
+...     height: float | None
+...     weight: float | None
+...     missions: list[str] | None
+...     friends: list['Astronaut'] | None
+
+
 Good Practices
 --------------
 * ``snake_case`` name convention
@@ -75,33 +95,12 @@ Good Practices
 * More information in `OOP Init Method`
 
 
-
->>> class Astronaut:
-...     firstname: str
-...     lastname: str
-...     age: int | float
-...     height: float
-...     weight: float
-...     missions: list
-...     experience: list | None
-
->>> class Iris:
-...     features: list[float]
-...     label: str
-
-
+Use Case - 0x01
+---------------
 >>> class Point:
 ...     x: int
 ...     y: int
 ...     z: int
-
-
-Use Case - 0x01
----------------
->>> class Laptop:
-...     cpu: float
-...     ram: int
-...     ssd: int
 
 
 Use Case - 0x02
@@ -114,20 +113,27 @@ Use Case - 0x02
 
 Use Case - 0x03
 ---------------
-* Relation
+>>> class Laptop:
+...     cpu: str
+...     ram: str
+...     ssd: str
 
->>> class Date:
-...     year: int
-...     month: int
-...     day: int
->>>
->>>
->>> class Person:
-...     firstname: str
-...     lastname: str
-...     born: Date
-...     height: float
-...     weight: float
+
+Use Case - 0x04
+---------------
+>>> class Iris:
+...     features: list[float]
+...     label: str
+
+
+Use Case - 0x05
+---------------
+>>> class Iris:
+...     sepal_length: float
+...     sepal_width: float
+...     petal_length: float
+...     petal_width: float
+...     species: str
 
 
 Assignments

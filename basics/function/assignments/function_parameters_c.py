@@ -1,43 +1,44 @@
 """
-* Assignment: Function Parameters Default
+* Assignment: Function Parameters Sequence
 * Required: yes
 * Complexity: easy
-* Lines of code: 4 lines
+* Lines of code: 2 lines
 * Time: 3 min
 
 English:
-    1. Define function `default` with two parameters
-    2. Parameter `a` is required
-    3. Parameter `b` is optional and has default value `None`
-    4. If only one argument was passed, consider second equal to the first one
-    5. Return `a` and `b` as a `dict`, i.e. {'a': 1, 'b': 1}
-    6. Run doctests - all must succeed
+    1. Define function `total`
+    2. Function parameter is `data` sequence of integers
+    3. Function returns sum of all values in sequence
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj funkcję `default` z dwoma parametrami
-    2. Parametr `a` jest wymagany
-    3. Parametr `b` jest opcjonalny i ma domyślną wartość `None`
-    4. Jeżeli tylko jeden argument był podany, przyjmij drugi równy pierwszemu
-    5. Zwróć `a` i `b` jako `dict`, np. {'a': 1, 'b': 1}
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zdefiniuj funkcję `total`
+    2. Parametrem do funkcji jest `data` sekwencja liczb
+    3. Funkcja zwraca sumę wszystkich wartości z sekwencji
+    4. Uruchom doctesty - wszystkie muszą się powieść
+
+Hints:
+    * `sum()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> isfunction(default)
+    >>> isfunction(total)
     True
-    >>> type(default(0,0)) is dict
+    >>> type(total([0, 1])) is int
     True
-    >>> default(1)
-    {'a': 1, 'b': 1}
-    >>> default(2, 3)
-    {'a': 2, 'b': 3}
+    >>> type(total([0.0, 1.1])) is float
+    True
+    >>> total([1,2,3])
+    6
+    >>> total([1,2,3,4,5,6])
+    21
+    >>> total(range(0,101))
+    5050
 """
 
 
 # Solution
-def default(a, b=None):
-    if b is None:
-        b = a
-    return {'a': a, 'b': b}
+def total(data):
+    return sum(data)
