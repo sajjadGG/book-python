@@ -110,6 +110,7 @@ Use Case - 0x01
 ...     y: int
 ...     z: int
 
+>>> pt = Point()
 >>> pt.x = 1
 >>> pt.y = 2
 >>> pt.z = 0

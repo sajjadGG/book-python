@@ -13,7 +13,7 @@ Attribute Access
 >>> mark.firstname = 'Mark'
 >>> mark.lastname = 'Watney'
 >>>
->>> print(f'Hello {astro.firstname} {astro.lastname}')
+>>> print(f'Hello {mark.firstname} {mark.lastname}')
 Hello Mark Watney
 
 

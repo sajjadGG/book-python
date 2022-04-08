@@ -183,7 +183,7 @@ Locals
 ...     b = 2
 ...     return locals()
 ...
->>> myfunc(1,2)
+>>> myfunc()
 {'a': 1, 'b': 2}
 
 

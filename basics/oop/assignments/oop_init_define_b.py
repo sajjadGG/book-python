@@ -29,14 +29,15 @@ Tests:
     >>> assert ismethod(watney.__init__)
     >>> assert ismethod(nasa.__init__)
 
-    >>> signature(watney.__init__)
-    <Signature (name, country, date)>
     >>> signature(Astronaut.__init__)
     <Signature (self, name, country, date)>
     >>> signature(SpaceAgency.__init__)
     <Signature (self, name, country, date)>
+
+    >>> signature(watney.__init__)
+    <Signature (name, country, date)>
     >>> signature(nasa.__init__)
-    <Signature (self, name, country, date)>
+    <Signature (name, country, date)>
 """
 
 
