@@ -1,15 +1,6 @@
-OOP Inheritance Define
-======================
-
-
-Inheritance
------------
->>> class Parent:
-...     pass
->>>
->>>
->>> class Child(Parent):
-...     pass
+OOP Inheritance Inherit
+=======================
+* Child inherits all fields and methods from parent
 
 
 Methods
@@ -48,19 +39,6 @@ Attributes
 Use Case - 0x01
 ---------------
 >>> class Person:
-...     pass
->>>
->>>
->>> class Astronaut(Person):
-...     pass
->>>
->>> class Cosmonaut(Person):
-...     pass
-
-
-Use Case - 0x02
----------------
->>> class Person:
 ...     def __init__(self):
 ...         self.firstname = 'Mark'
 ...         self.lastname = 'Watney'
@@ -76,7 +54,7 @@ Use Case - 0x02
 ...     pass
 
 
-Use Case - 0x03
+Use Case - 0x02
 ---------------
 >>> class Iris:
 ...     sepal_length: float

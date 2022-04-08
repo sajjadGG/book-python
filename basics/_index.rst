@@ -212,13 +212,11 @@ Object Oriented Programming
     oop/stringify-about.rst
     oop/stringify-str.rst
     oop/stringify-repr.rst
-    oop/stringify-nested.rst
     oop/inheritance-about.rst
-    oop/inheritance-define.rst
+    oop/inheritance-inherit.rst
     oop/inheritance-overload.rst
     oop/inheritance-super.rst
     oop/inheritance-patterns.rst
-    oop/inheritance-problems.rst
     oop/architecture-rationale.rst
     oop/architecture-classdiagram.rst
 

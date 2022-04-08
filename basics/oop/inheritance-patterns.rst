@@ -1,5 +1,10 @@
 OOP Inheritance Patterns
 ========================
+* No Inheritance
+* Single Inheritance
+* Multilevel Inheritance
+* Multiple Inheritance (with mixin classes)
+
 .. glossary::
 
     single inheritance

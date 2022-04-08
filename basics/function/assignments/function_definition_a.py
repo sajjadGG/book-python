@@ -23,7 +23,7 @@ Tests:
     'Object `say_hello` must be a function'
 
     >>> say_hello()
-    'hello world'
+    hello world
 """
 
 

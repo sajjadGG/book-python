@@ -75,13 +75,13 @@ same name. Than while calling ``super()`` it will overload field value.
 >>>
 >>> class Child(Parent):
 ...     def __init__(self):
-...         super().__init__()
 ...         self.job = 'astronaut'
+...         super().__init__()
 >>>
 >>>
 >>> obj = Child()
 >>> vars(obj)
-{'firstname': 'Mark', 'lastname': 'Watney', 'job': 'astronaut'}
+{'job': 'unemployed', 'firstname': 'Mark', 'lastname': 'Watney'}
 
 >>> class Parent:
 ...     def __init__(self):
@@ -92,13 +92,33 @@ same name. Than while calling ``super()`` it will overload field value.
 >>>
 >>> class Child(Parent):
 ...     def __init__(self):
-...         self.job = 'astronaut'
 ...         super().__init__()
+...         self.job = 'astronaut'
 >>>
 >>>
 >>> obj = Child()
 >>> vars(obj)
-{'job': 'unemployed', 'firstname': 'Mark', 'lastname': 'Watney'}
+{'firstname': 'Mark', 'lastname': 'Watney', 'job': 'astronaut'}
+
+
+Super Init with Args
+--------------------
+>>> class Parent:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = 'Mark'
+...         self.lastname = 'Watney'
+...         self.job = 'unemployed'
+>>>
+>>>
+>>> class Child(Parent):
+...     def __init__(self, firstname, lastname):
+...         super().__init__(firstname, lastname)
+...         self.job = 'astronaut'
+>>>
+>>>
+>>> obj = Child('Mark', 'Watney')
+>>> vars(obj)
+{'firstname': 'Mark', 'lastname': 'Watney', 'job': 'astronaut'}
 
 
 References
