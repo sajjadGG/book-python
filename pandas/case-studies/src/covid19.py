@@ -15,9 +15,13 @@ pd.set_option('display.max_rows', 100)
 
 
 #%% Data Sources
-CONFIRMED = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'
-DEATHS = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv'
-RECOVERED = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv'
+#CONFIRMED = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'
+#DEATHS = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv'
+#RECOVERED = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv'
+
+CONFIRMED = 'https://python.astrotech.io/_static/covid19-confirmed.csv'
+DEATHS = 'https://python.astrotech.io/_static/covid19-deaths.csv'
+RECOVERED = 'https://python.astrotech.io/_static/covid19-recovered.csv'
 
 
 #%% Data Frames
@@ -37,12 +41,6 @@ def covid19(country: str = None) -> pd.DataFrame:
     Recovered          0
     Name: 2022-01-01 00:00:00, dtype: int64
 
-    >>> covid19('US').loc['2022-01-01']
-    Confirmed    55024250
-    Deaths         828276
-    Recovered           0
-    Name: 2022-01-01 00:00:00, dtype: int64
-
     >>> covid19('France').loc['2022-01-01']
     Confirmed    10296909
     Deaths         124839
@@ -51,7 +49,7 @@ def covid19(country: str = None) -> pd.DataFrame:
 
     >>> covid19().loc['2022-01-01']
     Confirmed    289928638
-    Deaths         5444394
+    Deaths         5440827
     Recovered            0
     Name: 2022-01-01 00:00:00, dtype: int64
     """
