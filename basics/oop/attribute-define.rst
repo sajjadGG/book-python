@@ -138,7 +138,6 @@ Use Case - 0x05
 
 Use Case - 0x06
 ---------------
->>> from __future__ import annotations
 >>> from datetime import date
 >>> from typing import Literal
 >>>
@@ -172,7 +171,7 @@ Use Case - 0x06
 ...     addresses: list[Address] | None
 ...     emails: list[str] | None
 ...     phones: PhoneNumber | None
-...     friends: list[Person] | None
+...     friends: list['Person'] | None
 
 
 Assignments
