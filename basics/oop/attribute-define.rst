@@ -136,6 +136,45 @@ Use Case - 0x05
 ...     species: str
 
 
+Use Case - 0x06
+---------------
+>>> from __future__ import annotations
+>>> from datetime import date
+>>> from typing import Literal
+>>>
+>>>
+>>> class Address:
+...     type: Literal['home', 'work']
+...     street: str
+...     house: str
+...     apartment: str
+...     post_code: str
+...     city: str
+...     region: str
+...     country: str
+>>>
+>>>
+>>> class PhoneNumber:
+...     type: Literal['home', 'work', 'mobile']
+...     number: str
+>>>
+>>>
+>>> class Person:
+...     firstname: str
+...     lastname: str
+...     age: int | float
+...     born: date
+...     gender: Literal['male', 'female']
+...     height: float | None
+...     weight: float | None
+...     education: list[str] | None
+...     job: str | None
+...     addresses: list[Address] | None
+...     emails: list[str] | None
+...     phones: PhoneNumber | None
+...     friends: list[Person] | None
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/oop_attribute_define_a.py

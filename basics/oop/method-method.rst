@@ -229,9 +229,15 @@ Use Case - 0x01
 >>>
 >>>
 >>> class Car:
+...     brand: str
+...     model: str
+...     color: str
 ...     engine: Literal['on', 'off']
 ...
-...     def __init__(self):
+...     def __init__(self, brand, model, color):
+...         self.brand = brand
+...         self.model = model
+...         self.color = color
 ...         self.engine = 'off'
 ...
 ...     def engine_start(self):
@@ -240,32 +246,28 @@ Use Case - 0x01
 ...     def engine_stop(self):
 ...         self.engine = 'off'
 ...
-...     def drive_to(self, location: str):
-...         if self.engine != 'on':
-...             raise RuntimeError('Engine must be turned on to drive')
+...     def drive_to(self, destination):
+...         if self.engine == 'off':
+...             raise RuntimeError('Engine is off, cannot drive')
 ...         else:
-...             return f'Driving to {location}'
+...             return f'Driving to {destination}'
 >>>
 >>>
->>> maluch = Car()
+>>> maluch = Car('Fiat', '126p', color='red')
 >>>
->>> maluch.drive_to('Bajkonur')
+>>> maluch.drive_to('Karpacz')
 Traceback (most recent call last):
-RuntimeError: Engine must be turned on to drive
->>>
->>> maluch.engine
-'off'
+RuntimeError: Engine is off, cannot drive
 >>>
 >>> maluch.engine_start()
->>> maluch.engine
-'on'
->>>
->>> maluch.drive_to('Bajkonur')
-'Driving to Bajkonur'
->>>
+>>> maluch.drive_to('Karpacz')
+'Driving to Karpacz'
 >>> maluch.engine_stop()
->>> maluch.engine
-'off'
+>>>
+>>> maluch.engine_start()
+>>> maluch.drive_to('Poznan')
+'Driving to Poznan'
+>>> maluch.engine_stop()
 
 
 Assignments
