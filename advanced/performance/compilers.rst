@@ -1,5 +1,8 @@
 Compilers and Interpreters
 ==========================
+* https://docs.python.org/3/library/py_compile.html
+* https://docs.python.org/3/library/compileall.html#module-compileall
+* https://docs.python.org/3/library/zipapp.html
 
 Sam Python jest tak naprawdę tylko specyfikacją składni oraz wyglądu
 biblioteki standardowej. Python ma obecnie kilka interpreterów z których
