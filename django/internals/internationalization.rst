@@ -6,13 +6,12 @@ Timezone
 * django.utils.timezone
 * from django.conf.locale.en import formats as en_formats
 
-.. code-block:: python
-
-    en_formats.DATETIME_FORMAT = 'Y-m-d H:i'
-    en_formats.DATE_FORMAT = 'Y-m-d'
-    en_formats.TIME_FORMAT = 'H:i'
-    USE_TZ = True
-    TIME_ZONE = 'UTC'
+>>> en_formats.DATETIME_FORMAT = 'Y-m-d H:i'    # doctest: +SKIP
+>>> en_formats.DATE_FORMAT = 'Y-m-d'            # doctest: +SKIP
+>>> en_formats.TIME_FORMAT = 'H:i'              # doctest: +SKIP
+>>>
+>>> USE_TZ = True
+>>> TIME_ZONE = 'UTC'
 
 
 Gettext
@@ -37,25 +36,30 @@ i18n - internationalization
 * gettext
 * poedit
 
-.. code-block:: python
-
-    # Internationalization
-    # https://docs.djangoproject.com/en/dev/topics/i18n/
-    LANGUAGE_CODE = 'en-us'
-    USE_I18N = True
-    USE_L10N = True
+>>> # Internationalization
+>>> # https://docs.djangoproject.com/en/dev/topics/i18n/
+>>>
+>>> LANGUAGE_CODE = 'en-us'
+>>> USE_I18N = True
+>>> USE_L10N = True
 
 .. code-block:: console
 
-    $ cd botnet/heartbeat
+    $ cd myproject/myapp
     $ mkdir locale
+
+.. code-block:: console
 
     $ django-admin makemessages -l en
     processing locale en
 
+.. code-block:: console
+
     $ django-admin makemessages -l pl
     processing locale pl
 
+.. code-block:: console
+
     $ django-admin compilemessages
-    processing file django.po in /private/tmp/botnet/botnet/heartbeat/locale/en/LC_MESSAGES
-    processing file django.po in /private/tmp/botnet/botnet/heartbeat/locale/pl/LC_MESSAGES
+    processing file django.po in /src/myproject/myapp/locale/en/LC_MESSAGES
+    processing file django.po in /src/myproject/myapp/locale/pl/LC_MESSAGES

@@ -2,21 +2,21 @@ import json
 from django.http import JsonResponse, HttpResponse
 from django.views import View
 from django.views.generic import TemplateView
-from contact.models import Contact
+from contact.models import Person
 
 
 class ListView(TemplateView):
     template_name = 'contact/list.html'
 
     def get_context_data(self, **kwargs):
-        return {'contacts': Contact.objects.all()}
+        return {'contacts': Person.objects.all()}
 
 
 class DetailView(TemplateView):
     template_name = 'contact/detail.html'
 
     def get_context_data(self, id, **kwargs):
-        return {'contact': Contact.objects.get(id=id)}
+        return {'person': Person.objects.get(id=id)}
 
 
 class ContactAPI(View):
@@ -30,13 +30,13 @@ class ContactAPI(View):
         return response
 
     def get(self, *args, **kwargs):
-        result = {'contacts': list(Contact.objects.all().values())}
+        result = {'people': list(Person.objects.all().values())}
         return JsonResponse(status=200, data=result, safe=False)
 
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body, encoding='utf-8')
         try:
-            contact, created = Contact.objects.update_or_create(**data)
+            person, created = Person.objects.update_or_create(**data)
 
             if created:
                 return JsonResponse(status=201, data={'status': 'Created'}, safe=False)

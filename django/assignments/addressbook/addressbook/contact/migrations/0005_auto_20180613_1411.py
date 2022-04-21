@@ -14,13 +14,13 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='contact',
+            model_name='person',
             name='reporter',
             field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Reporter'),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='contact',
+            model_name='person',
             name='gender',
             field=models.CharField(blank=True, choices=[('male', 'Male'), ('female', 'Female'), (None, 'Undisclosed')], default=None, max_length=30, null=True, verbose_name='Gender'),
         ),

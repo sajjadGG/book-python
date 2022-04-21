@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 
 
-@admin.register(Contact)
-class ContactAdmin(admin.ModelAdmin):
+@admin.register(Person)
+class PersonAdmin(admin.ModelAdmin):
     list_display = ['lastname', 'firstname', 'date_of_birth', 'column_age']
     list_display_links = ['lastname']
     search_fields = ['^lastname']

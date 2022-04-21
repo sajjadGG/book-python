@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='contact',
+            model_name='person',
             name='is_deleted',
             field=models.BooleanField(default=False, verbose_name='Is deleted?'),
         ),

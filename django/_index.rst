@@ -27,6 +27,7 @@
 
     orm/about.rst
     orm/create.rst
+    orm/all.rst
     orm/get.rst
     orm/update.rst
     orm/delete.rst
@@ -34,6 +35,7 @@
     orm/q.rst
     orm/f.rst
     orm/functions.rst
+    orm/annotate.rst
     orm/aggregate.rst
 
     views/views.rst

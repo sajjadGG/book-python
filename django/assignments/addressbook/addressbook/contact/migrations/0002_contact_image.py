@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='contact',
+            model_name='person',
             name='image',
             field=models.ImageField(blank=True, default=None, null=True, upload_to='', verbose_name='Image'),
         ),

@@ -13,12 +13,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name='contact',
+            model_name='person',
             name='friends',
-            field=models.ManyToManyField(blank=True, default=None, to='contact.Contact', verbose_name='Friends'),
+            field=models.ManyToManyField(blank=True, default=None, to='contact.Person', verbose_name='Friends'),
         ),
         migrations.AlterField(
-            model_name='contact',
+            model_name='person',
             name='reporter',
             field=models.ForeignKey(default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Reporter'),
         ),

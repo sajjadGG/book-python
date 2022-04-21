@@ -11,12 +11,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='contact',
+            model_name='person',
             name='gender',
             field=models.CharField(blank=True, choices=[('male', 'Male'), ('female', 'Female'), ('other', 'Other')], default=None, max_length=30, null=True, verbose_name='Gender'),
         ),
         migrations.AddField(
-            model_name='contact',
+            model_name='person',
             name='status',
             field=models.CharField(blank=True, choices=[('best-friend', 'Best Friend'), ('friend', 'Friend'), ('acquaintance', 'Acquaintance'), ('other', 'Other')], default=None, max_length=30, null=True, verbose_name='Status'),
         ),

@@ -11,8 +11,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='contact',
+            model_name='person',
             name='friends',
-            field=models.ManyToManyField(blank=True, default=None, null=True, to='contact.Contact', verbose_name='Friends'),
+            field=models.ManyToManyField(blank=True, default=None, null=True, to='contact.Person', verbose_name='Friends'),
         ),
     ]

@@ -25,12 +25,12 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.AlterModelOptions(
-            name='contact',
-            options={'verbose_name': 'Contact', 'verbose_name_plural': 'Contacts'},
+            name='person',
+            options={'verbose_name': 'Person', 'verbose_name_plural': 'People'},
         ),
         migrations.AddField(
             model_name='address',
-            name='contact',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='contact.Contact', verbose_name='Contact'),
+            name='person',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='contact.Person', verbose_name='Person'),
         ),
     ]

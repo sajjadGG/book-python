@@ -4,7 +4,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-class Contact(models.Model):
+class Person(models.Model):
     STATUS_BEST_FRIEND = 'best-friend'
     STATUS_FRIEND = 'friend'
     STATUS_ACQUAINTANCE = 'acquaintance'
@@ -36,7 +36,7 @@ class Contact(models.Model):
     image = models.ImageField(verbose_name=_('Image'), null=True, blank=True, default=None)
     status = models.CharField(verbose_name=_('Status'), max_length=30, choices=STATUS_CHOICES, null=True, blank=True, default=None)
     gender = models.CharField(verbose_name=_('Gender'), max_length=30, choices=GENDER_CHOICES, null=True, blank=True, default=None)
-    friends = models.ManyToManyField(verbose_name=_('Friends'), to='contact.Contact', blank=True, default=None)
+    friends = models.ManyToManyField(verbose_name=_('Friends'), to='contact.Person', blank=True, default=None)
 
     def __str__(self):
         return f'{self.firstname} {self.lastname}'
@@ -54,6 +54,6 @@ class Contact(models.Model):
         return super().save(*args, **kwargs)
 
     class Meta:
-        verbose_name = _('Contact')
-        verbose_name_plural = _('Contacts')
+        verbose_name = _('Person')
+        verbose_name_plural = _('People')
         unique_together = ['firstname', 'lastname']

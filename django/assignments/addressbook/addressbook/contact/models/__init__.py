@@ -1,2 +1,2 @@
 from .address import Address
-from .contact import Contact
+from .contact import Person

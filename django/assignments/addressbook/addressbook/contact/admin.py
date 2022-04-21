@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db import models
 from django.forms import CheckboxSelectMultiple
 from django.utils.translation import gettext_lazy as _
-from contact.models import Contact, Address
+from contact.models import Person, Address
 
 
 class AddressInline(admin.TabularInline):
@@ -14,7 +14,7 @@ class AddressInline(admin.TabularInline):
 
 @admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
-    autocomplete_fields = ['contact']
+    autocomplete_fields = ['person']
 
 
 class AgeFilter(admin.SimpleListFilter):
@@ -43,8 +43,8 @@ class AgeFilter(admin.SimpleListFilter):
 
 
 
-@admin.register(Contact)
-class ContactAdmin(admin.ModelAdmin):
+@admin.register(Person)
+class PersonAdmin(admin.ModelAdmin):
     list_display = ['lastname', 'firstname', 'date_of_birth', 'column_age']
     list_display_links = ['lastname']
     search_fields = ['^lastname']

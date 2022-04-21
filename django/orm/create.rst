@@ -1,3 +1,8 @@
+.. testsetup::
+
+    # doctest: +SKIP_FILE
+
+
 ORM Create
 ==========
 
@@ -12,7 +17,7 @@ Objects Create
 
 Creation Counter
 ----------------
->>> Contact.objects.creation_counter  # doctest: +SKIP
+>>> Person.objects.creation_counter  # doctest: +SKIP
 13
 
 
