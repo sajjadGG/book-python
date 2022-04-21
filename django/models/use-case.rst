@@ -93,6 +93,14 @@ Assignments
     :end-before: # Solution
 
 
+.. literalinclude:: assignments/django_model_c.py
+    :caption: :download:`Solution <assignments/django_model_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/django_model_d.py
+    :caption: :download:`Solution <assignments/django_model_d.py>`
+    :end-before: # Solution
+
 References
 ----------
 .. [#irissetosa] https://commons.wikimedia.org/wiki/File:Iris_setosa_2.jpg

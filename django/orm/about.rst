@@ -2,69 +2,106 @@
 
     # doctest: +SKIP_FILE
 
-.. todo:: REFACTOR THIS FILE
-
 
 ORM
 ===
 
 
-About
------
+Create / Add Objects
+--------------------
+* ``.bulk_create()``
 * ``.create()``
+* ``.get_or_create()``
 * ``.save()``
+* ``.update_or_create()``
+
+
+Update Objects
+--------------
+* ``.bulk_update()``
+* ``.save()``
+* ``.select_for_update()``
 * ``.update()``
 * ``.update_or_create()``
+
+
+Delete
+------
 * ``.delete()``
 
-* ``.all()``
+
+Get One
+-------
+* ``.earliest()``
+* ``.first()``
 * ``.get()``
 * ``.get_or_create()``
-* ``.bulk_create()``
-* ``.bulk_update()``
+* ``.last()``
+* ``.latest()``
+
+
+Get Many
+--------
+* ``.all()``
 * ``.complex_filter()``
+* ``.extra()``
 * ``.filter()``
-* ``.count()``
-* ``.distinct()``
+* ``.reverse()``
+* ``.union()``
+
+
+Narrow
+------
+* ``.exclude()``
+* ``.intersection()``
+* ``.none()``
 * ``.values()``
 * ``.values_list()``
-* ``.exclude()``
-* ``.order_by()``
-* ``.annotate()``
+* ``result[1:]``
+* ``result[1]``
+* ``result[::2]``
+
+
+Performance
+-----------
+* ``.prefetch_related()``
+* ``.select_related()``
+
+
+Function
+--------
 * ``.aggregate()``
-* ``.exist()``
-* ``.last()``
-* ``.first()``
-* ``.earliest()``
-* ``.latest()``
-* ``.check()``
 * ``.alias()``
+* ``.annotate()``
+* ``.check()``
+* ``.count()``
+* ``.distinct()``
+* ``.exist()``
+* ``.exists()``
+* ``.explain()``
+* ``.only()``
+* ``.order_by()``
+* ``.using()``
+
+
+Other
+-----
 * ``.dates()``
 * ``.datetimes()``
 * ``.difference()``
-* ``.exists()``
-* ``.explain()``
-* ``.extra()``
 * ``.in_bulk()``
-* ``.intersection()``
-* ``.none()``
-* ``.union()``
-* ``.only()``
-* ``.reverse()``
 * ``.raw()``
-* ``.select_for_update()``
-* ``.using()``
 
-* ``.select_related()``
-* ``.prefetch_related()``
 
-# [1], [1:], [::2]
+Lookup
+------
+Sequences:
 
-## Sequences
 * ``__in``
 * ``__isnull``
 
-## String
+Strings:
+
 * ``__startswith`` - case sensitive
 * ``__istartswith`` - case insensitive
 * ``__endswith`` - case sensitive
@@ -74,14 +111,16 @@ About
 * ``__exact`` - case sensitive (default)
 * ``__iexact`` - case insensitive
 
-## Numeric, Dates
-* ``__eq``
-* ``__gt``
-* ``__gte``
-* ``__lt``
-* ``__lte``
+Numeric, Dates:
 
-## Date
+* ``__eq`` - equals
+* ``__gt`` - greater than
+* ``__gte`` - greater or equal than
+* ``__lt`` - less than
+* ``__lte`` - less or eaquan than
+
+Date:
+
 * ``__year``
 * ``__month``
 * ``__day``
@@ -93,12 +132,12 @@ About
 * ``__in`` - a list of dates
 
 
-
 QuerySet
 --------
-* sklejanie zapytań
-* Tworzenie obiektów
-* Zapisywanie ``save()`` ForeignKey
+* Lazy evaluated
+* Combine queries
+* Object creation
+* Write ForeignKey on object ``save()``
 
 .. code-block:: python
 

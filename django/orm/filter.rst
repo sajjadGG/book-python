@@ -11,7 +11,7 @@ ORM Filter
 >>> Person.objects.filter(firstname='Mark', lastname='Watney')
 <QuerySet [<Person: Mark Watney>]>
 
->>>> Person.objects.filter(firstname='Mark', lastname__startswith='W')
+>>> Person.objects.filter(firstname='Mark', lastname__startswith='W')
 <QuerySet [<Person: Mark Watney>, <Person: Mark W>]>
 
 >>> Person.objects.filter(firstname='Mark', lastname__startswith='W')

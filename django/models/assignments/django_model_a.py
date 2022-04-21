@@ -12,12 +12,11 @@ English:
         b. sepal_width
         c. petal_length
         d. petal_width
-        e. species (with choices)
+        e. species (with choices: setosa, virginica, versicolor)
         f. image
     4. Generate admin panel
     5. Add search by species
     6. Add filter by species
-    7. Run doctests - all must succeed
 
 Polish:
     1. Stwórz projekt `flowershop`
@@ -27,12 +26,11 @@ Polish:
         b. sepal_width
         c. petal_length
         d. petal_width
-        e. species (z choices)
+        e. species (z choices: setosa, virginica, versicolor)
         f. image
     4. Wygeneruj panel administracyjny
     5. Dodaj wyszukiwarkę po gatunku
     6. Dodaj filtrowanie po nazwie gatunku
-    7. Uruchom doctesty - wszystkie muszą się powieść
 """
 
 
