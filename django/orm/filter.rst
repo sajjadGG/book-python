@@ -205,3 +205,15 @@ False
 
 >>> Person.objects.filter(lastname='Watney').exists()
 True
+
+>>> Person.objects.all().last()
+<Person: Mark W>
+
+>>> Person.objects.all().first()
+<Person: Mark Watney>
+
+>>> Address.objects.filter(Person__lastname='Watney')
+<QuerySet [<Address: Mark Watney - NASA Pkwy, Houston, Texas USA>]>
+
+>>> str(Address.objects.filter(Person__lastname='Watney').query)
+'SELECT "Person_address"."id", "Person_address"."Person_id", "Person_address"."type", "Person_address"."street", "Person_address"."house", "Person_address"."apartment", "Person_address"."postcode", "Person_address"."city", "Person_address"."region", "Person_address"."country" FROM "Person_address" INNER JOIN "Person_Person" ON ("Person_address"."Person_id" = "Person_Person"."id") WHERE "Person_Person"."lastname" = Watney'

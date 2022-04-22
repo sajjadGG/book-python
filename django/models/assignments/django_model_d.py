@@ -10,9 +10,10 @@ English:
         a. firstname
         b. lastname
         c. born
-        d. tax_number
-        e. email
-        f. phone (including country code)
+        d. gender - płeć
+        e. tax_number
+        f. email
+        g. phone (including country code)
     2. Create model `Address` with fields:
         a. type - billing or shipping
         b. street - street, house number, apartment
@@ -26,7 +27,7 @@ English:
         c. price - Net price (without tax)
     4. Create model `Orders` with fields:
         a. customer
-        b. product
+        b. products
     5. Functional requirements:
         a. Customer has only one email address and one phone number
         b. Customer has only one shipping address and one billing address
@@ -51,9 +52,10 @@ Polish:
         a. firstname - imię
         b. lastname - nazwisko
         c. born - data urodzenia
-        d. tax_number - NIP
-        e. email - adres email
-        f. phone - telefon z numerem kierunkowym kraju
+        d. gender - płeć
+        e. tax_number - NIP
+        f. email - adres email
+        g. phone - telefon z numerem kierunkowym kraju
     2. Stwórz model `Address` z polami:
         a. type - rodzaj adresu: rozliczeniowy, dostawy
         b. street - ulica, numer domu, numer mieszkania
@@ -67,7 +69,7 @@ Polish:
         c. price - Cena netto
     4. Stwórz model `Orders`:
         a. customer - Klient
-        b. product - Produkt
+        b. products - Produkty
     5. Wymagania funkcjonalne:
         a. Klient ma tylko jeden email i jeden telefon
         b. Klient może mieć jeden adres rozliczeniowy i jeden do wysyłki
@@ -89,50 +91,22 @@ Polish:
 """
 
 CUSTOMERS = [
-    {'firstname': 'Mark', 'lastname': 'Watney', 'born': '1994-10-12',
-     'gender': 'male', 'ssn': '94101212345', 'email': 'mwatney@nasa.gov',
-     'phone': '+1 (234) 555-0000'},
-    {'firstname': 'Melissa', 'lastname': 'Lewis', 'born': '1995-07-15',
-     'gender': 'female', 'ssn': '95071512345', 'email': 'mlewis@nasa.gov',
-     'phone': '+1 (234) 555-0001'},
-    {'firstname': 'Rick', 'lastname': 'Martinez', 'born': '1996-01-21',
-     'gender': 'male', 'ssn': '96012112345', 'email': 'rmartinez@nasa.gov',
-     'phone': '+1 (234) 555-0010'},
-    {'firstname': 'Alex', 'lastname': 'Vogel', 'born': '1994-11-15',
-     'gender': 'male', 'ssn': '94111512345', 'email': 'avogel@esa.int',
-     'phone': '+49 (234) 555-0011'},
-    {'firstname': 'Beth', 'lastname': 'Johanssen', 'born': '2006-05-09',
-     'gender': 'female', 'ssn': '06250912345', 'email': 'bjohanssen@nasa.gov',
-     'phone': '+1 (234) 555-0100'},
-    {'firstname': 'Chris', 'lastname': 'Beck', 'born': '1999-08-02',
-     'gender': 'male', 'ssn': '99080212345', 'email': 'cbeck@nasa.gov',
-     'phone': '+1 (234) 555-0101'}]
+    {'firstname': 'Mark', 'lastname': 'Watney', 'born': '1994-10-12', 'gender': 'male', 'tax_number': '94101212345', 'email': 'mwatney@nasa.gov', 'phone': '+1 (234) 555-0000'},
+    {'firstname': 'Melissa', 'lastname': 'Lewis', 'born': '1995-07-15', 'gender': 'female', 'tax_number': '95071512345', 'email': 'mlewis@nasa.gov', 'phone': '+1 (234) 555-0001'},
+    {'firstname': 'Rick', 'lastname': 'Martinez', 'born': '1996-01-21', 'gender': 'male', 'tax_number': '96012112345', 'email': 'rmartinez@nasa.gov', 'phone': '+1 (234) 555-0010'},
+    {'firstname': 'Alex', 'lastname': 'Vogel', 'born': '1994-11-15', 'gender': 'male', 'tax_number': '94111512345', 'email': 'avogel@esa.int', 'phone': '+49 (234) 555-0011'},
+    {'firstname': 'Beth', 'lastname': 'Johanssen', 'born': '2006-05-09', 'gender': 'female', 'tax_number': '06250912345', 'email': 'bjohanssen@nasa.gov', 'phone': '+1 (234) 555-0100'},
+    {'firstname': 'Chris', 'lastname': 'Beck', 'born': '1999-08-02', 'gender': 'male', 'tax_number': '99080212345', 'email': 'cbeck@nasa.gov', 'phone': '+1 (234) 555-0101'}]
 
 ADDRESSES = [
-    {'user': 'mwatney@nasa.gov', 'type': 'billing',
-     'street': '2101 E NASA Pkwy', 'city': 'Houston', 'postcode': '77058',
-     'region': 'Texas', 'country': 'USA'},
-    {'user': 'mwatney@nasa.gov', 'type': 'shipping', 'street': '',
-     'city': 'Kennedy Space Center', 'postcode': '32899', 'region': 'Florida',
-     'country': 'USA'},
-    {'user': 'mlewis@nasa.gov', 'type': 'shipping',
-     'street': 'Kamienica Pod św. Janem Kapistranem', 'city': 'Kraków',
-     'postcode': '31008', 'region': 'Małopolskie', 'country': 'Poland'},
-    {'user': 'rmartinez@nasa.gov', 'type': 'billing', 'street': '',
-     'city': 'Звёздный городо́к', 'postcode': '141160',
-     'region': 'Московская область', 'country': 'Россия'},
-    {'user': 'rmartinez@nasa.gov', 'type': 'shipping', 'street': '',
-     'city': 'Космодро́м Байкону́р', 'postcode': '',
-     'region': 'Кызылординская область', 'country': 'Қазақстан'},
-    {'user': 'avogel@esa.int', 'type': 'shipping', 'street': 'Linder Hoehe',
-     'city': 'Köln', 'postcode': '51147', 'region': 'North Rhine-Westphalia',
-     'country': 'Germany'},
-    {'user': 'bjohanssen@nasa.gov', 'type': 'shipping',
-     'street': '2825 E Ave P', 'city': 'Palmdale', 'postcode': '93550',
-     'region': 'California', 'country': 'USA'},
-    {'user': 'cbeck@nasa.gov', 'type': 'shipping',
-     'street': '4800 Oak Grove Dr', 'city': 'Pasadena', 'postcode': '91109',
-     'region': 'California', 'country': 'USA'}]
+    {'customer': 'mwatney@nasa.gov', 'type': 'billing', 'street': '2101 E NASA Pkwy', 'city': 'Houston', 'postcode': '77058', 'region': 'Texas', 'country': 'USA'},
+    {'customer': 'mwatney@nasa.gov', 'type': 'shipping', 'street': '', 'city': 'Kennedy Space Center', 'postcode': '32899', 'region': 'Florida', 'country': 'USA'},
+    {'customer': 'mlewis@nasa.gov', 'type': 'shipping', 'street': 'Kamienica Pod św. Janem Kapistranem', 'city': 'Kraków', 'postcode': '31008', 'region': 'Małopolskie', 'country': 'Poland'},
+    {'customer': 'rmartinez@nasa.gov', 'type': 'billing', 'street': '', 'city': 'Звёздный городо́к', 'postcode': '141160', 'region': 'Московская область', 'country': 'Россия'},
+    {'customer': 'rmartinez@nasa.gov', 'type': 'shipping', 'street': '', 'city': 'Космодро́м Байкону́р', 'postcode': '', 'region': 'Кызылординская область', 'country': 'Қазақстан'},
+    {'customer': 'avogel@esa.int', 'type': 'shipping', 'street': 'Linder Hoehe', 'city': 'Köln', 'postcode': '51147', 'region': 'North Rhine-Westphalia', 'country': 'Germany'},
+    {'customer': 'bjohanssen@nasa.gov', 'type': 'shipping', 'street': '2825 E Ave P', 'city': 'Palmdale', 'postcode': '93550', 'region': 'California', 'country': 'USA'},
+    {'customer': 'cbeck@nasa.gov', 'type': 'shipping', 'street': '4800 Oak Grove Dr', 'city': 'Pasadena', 'postcode': '91109', 'region': 'California', 'country': 'USA'}]
 
 PRODUCTS = [
     {'ean13': '5039271113244', 'name': 'Alfa', 'price': '123.00'},
@@ -162,36 +136,83 @@ PRODUCTS = [
     {'ean13': '7324670042560', 'name': 'Zulu', 'price': '311.00'}]
 
 ORDERS = [
-    {'user': 'mwatney@nasa.gov', 'product': 'Sierra'},
-    {'user': 'mwatney@nasa.gov', 'product': 'Victor'},
-    {'user': 'bjohanssen@nasa.gov', 'product': 'Delta'},
-    {'user': 'mlewis@nasa.gov', 'product': 'November'},
-    {'user': 'rmartinez@nasa.gov', 'product': 'Mike'},
-    {'user': 'mwatney@nasa.gov', 'product': 'Bravo'},
-    {'user': 'mwatney@nasa.gov', 'product': 'Kilo'},
-    {'user': 'avogel@esa.int', 'product': 'Victor'},
-    {'user': 'bjohanssen@nasa.gov', 'product': 'Romeo'},
-    {'user': 'bjohanssen@nasa.gov', 'product': 'Whisky'},
-    {'user': 'cbeck@nasa.gov', 'product': 'Zulu'},
-    {'user': 'mwatney@nasa.gov', 'product': 'Romeo'},
-    {'user': 'avogel@esa.int', 'product': 'Romeo'},
-    {'user': 'bjohanssen@nasa.gov', 'product': 'Victor'},
-    {'user': 'bjohanssen@nasa.gov', 'product': 'Whisky'},
-    {'user': 'mlewis@nasa.gov', 'product': 'Whisky'},
-    {'user': 'rmartinez@nasa.gov', 'product': 'Mike'},
-    {'user': 'mwatney@nasa.gov', 'product': 'November'},
-    {'user': 'mwatney@nasa.gov', 'product': 'Kilo'},
-    {'user': 'avogel@esa.int', 'product': 'Bravo'},
-    {'user': 'bjohanssen@nasa.gov', 'product': 'X-Ray'},
-    {'user': 'avogel@esa.int', 'product': 'Romeo'},
-    {'user': 'bjohanssen@nasa.gov', 'product': 'Victor'},
-    {'user': 'bjohanssen@nasa.gov', 'product': 'India'},
-    {'user': 'mlewis@nasa.gov', 'product': 'Juliet'},
-    {'user': 'rmartinez@nasa.gov', 'product': 'Foxtrot'},
-    {'user': 'avogel@esa.int', 'product': 'Victor'},
-    {'user': 'bjohanssen@nasa.gov', 'product': 'Romeo'},
-    {'user': 'bjohanssen@nasa.gov', 'product': 'Whisky'},
-    {'user': 'cbeck@nasa.gov', 'product': 'Zulu'},
-    {'user': 'mwatney@nasa.gov', 'product': 'Alfa'},
-    {'user': 'avogel@esa.int', 'product': 'Romeo'},
-    {'user': 'bjohanssen@nasa.gov', 'product': 'Quebec'}]
+    {'customer': 'mwatney@nasa.gov', 'product': 'Sierra'},
+    {'customer': 'mwatney@nasa.gov', 'product': 'Victor'},
+    {'customer': 'bjohanssen@nasa.gov', 'product': 'Delta'},
+    {'customer': 'mlewis@nasa.gov', 'product': 'November'},
+    {'customer': 'rmartinez@nasa.gov', 'product': 'Mike'},
+    {'customer': 'mwatney@nasa.gov', 'product': 'Bravo'},
+    {'customer': 'mwatney@nasa.gov', 'product': 'Kilo'},
+    {'customer': 'avogel@esa.int', 'product': 'Victor'},
+    {'customer': 'bjohanssen@nasa.gov', 'product': 'Romeo'},
+    {'customer': 'bjohanssen@nasa.gov', 'product': 'Whisky'},
+    {'customer': 'cbeck@nasa.gov', 'product': 'Zulu'},
+    {'customer': 'mwatney@nasa.gov', 'product': 'Romeo'},
+    {'customer': 'avogel@esa.int', 'product': 'Romeo'},
+    {'customer': 'bjohanssen@nasa.gov', 'product': 'Victor'},
+    {'customer': 'bjohanssen@nasa.gov', 'product': 'Whisky'},
+    {'customer': 'mlewis@nasa.gov', 'product': 'Whisky'},
+    {'customer': 'rmartinez@nasa.gov', 'product': 'Mike'},
+    {'customer': 'mwatney@nasa.gov', 'product': 'November'},
+    {'customer': 'mwatney@nasa.gov', 'product': 'Kilo'},
+    {'customer': 'avogel@esa.int', 'product': 'Bravo'},
+    {'customer': 'bjohanssen@nasa.gov', 'product': 'X-Ray'},
+    {'customer': 'avogel@esa.int', 'product': 'Romeo'},
+    {'customer': 'bjohanssen@nasa.gov', 'product': 'Victor'},
+    {'customer': 'bjohanssen@nasa.gov', 'product': 'India'},
+    {'customer': 'mlewis@nasa.gov', 'product': 'Juliet'},
+    {'customer': 'rmartinez@nasa.gov', 'product': 'Foxtrot'},
+    {'customer': 'avogel@esa.int', 'product': 'Victor'},
+    {'customer': 'bjohanssen@nasa.gov', 'product': 'Romeo'},
+    {'customer': 'bjohanssen@nasa.gov', 'product': 'Whisky'},
+    {'customer': 'cbeck@nasa.gov', 'product': 'Zulu'},
+    {'customer': 'mwatney@nasa.gov', 'product': 'Alfa'},
+    {'customer': 'avogel@esa.int', 'product': 'Romeo'},
+    {'customer': 'bjohanssen@nasa.gov', 'product': 'Quebec'}]
+
+
+# Solution
+import os
+import django
+from django.db.models import Count, Value
+from django.db.models.functions import Concat
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'shop.settings'
+django.setup()
+
+from customer.models import *
+from orders.models import *
+from product.models import *
+
+
+for customer in CUSTOMERS:
+    Customer.objects.create(**customer)
+
+
+for address in ADDRESSES:
+    customer = Customer.objects.get(email=address.pop('customer'))
+    Address.objects.create(customer=customer, **address)
+
+
+for product in PRODUCTS:
+    Product.objects.create(**product)
+
+
+for order in ORDERS:
+    customer = Customer.objects.get(email=order.pop('customer'))
+    product = Product.objects.get(name=order.pop('product'))
+    Order.objects.create(customer=customer, product=product)
+
+
+# Firstname and lastname of a customer who did the most purchases
+result = (
+    Order
+    .objects
+    .values('customer__firstname', 'customer__lastname')
+    .annotate(
+        orders=Count('customer'),
+        name=Concat('customer__firstname', Value(' '), 'customer__lastname'))
+    .order_by('-orders')
+    .values_list('name', flat=True)
+    .first()
+)

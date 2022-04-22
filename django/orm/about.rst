@@ -7,8 +7,8 @@ ORM
 ===
 
 
-Create / Add Objects
---------------------
+Create Objects
+--------------
 * ``.bulk_create()``
 * ``.create()``
 * ``.get_or_create()``
@@ -25,13 +25,13 @@ Update Objects
 * ``.update_or_create()``
 
 
-Delete
-------
+Delete Objects
+--------------
 * ``.delete()``
 
 
-Get One
--------
+Get One Result
+--------------
 * ``.earliest()``
 * ``.first()``
 * ``.get()``
@@ -40,8 +40,8 @@ Get One
 * ``.latest()``
 
 
-Get Many
---------
+Get Many Result
+---------------
 * ``.all()``
 * ``.complex_filter()``
 * ``.extra()``
@@ -50,16 +50,30 @@ Get Many
 * ``.union()``
 
 
-Narrow
-------
+Narrow Results
+--------------
 * ``.exclude()``
 * ``.intersection()``
 * ``.none()``
+* ``.only()``
 * ``.values()``
 * ``.values_list()``
 * ``result[1:]``
 * ``result[1]``
 * ``result[::2]``
+
+
+Check Results
+-------------
+* ``.check()``
+* ``.exist()``
+* ``.exists()``
+* ``.explain()``
+
+
+Order Results
+-------------
+* ``.order_by()``
 
 
 Performance
@@ -68,19 +82,13 @@ Performance
 * ``.select_related()``
 
 
-Function
---------
+Functions
+---------
 * ``.aggregate()``
 * ``.alias()``
 * ``.annotate()``
-* ``.check()``
 * ``.count()``
 * ``.distinct()``
-* ``.exist()``
-* ``.exists()``
-* ``.explain()``
-* ``.only()``
-* ``.order_by()``
 * ``.using()``
 
 
@@ -102,14 +110,14 @@ Sequences:
 
 Strings:
 
-* ``__startswith`` - case sensitive
-* ``__istartswith`` - case insensitive
-* ``__endswith`` - case sensitive
-* ``__iendswith`` - case insensitive
 * ``__contains`` - case sensitive
-* ``__icontains`` - case insensitive
+* ``__endswith`` - case sensitive
 * ``__exact`` - case sensitive (default)
+* ``__icontains`` - case insensitive
+* ``__iendswith`` - case insensitive
 * ``__iexact`` - case insensitive
+* ``__istartswith`` - case insensitive
+* ``__startswith`` - case sensitive
 
 Numeric, Dates:
 
@@ -119,7 +127,7 @@ Numeric, Dates:
 * ``__lt`` - less than
 * ``__lte`` - less or eaquan than
 
-Date:
+Dates:
 
 * ``__year``
 * ``__month``

@@ -6,6 +6,11 @@
 ORM Annotate
 ============
 
+SetUp
+-----
+>>> from django.db.models.functions import Concat
+>>> from django.db.models import Value
+
 >>> Person.objects.all().values('firstname', 'lastname')
 <QuerySet [{'firstname': 'Mark', 'lastname': 'Watney'}, {'firstname': 'Rick', 'lastname': 'Martinez'}, {'firstname': 'Melissa', 'lastname': 'Lewis'}, {'firstname': 'Jan', 'lastname': 'Twardowski'}, {'firstname': 'Mark', 'lastname': 'Watney'}, {'firstname': 'Jan', 'lastname': 'X'}, {'firstname': 'Mark', 'lastname': 'W'}]>
 
