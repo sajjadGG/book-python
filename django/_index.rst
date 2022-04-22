@@ -19,6 +19,7 @@
     models/storage.rst
     models/special.rst
     models/relations.rst
+    models/enum.rst
     models/introspect.rst
     models/custom.rst
     models/use-case.rst

@@ -5,33 +5,31 @@ Model Relations
 Fields
 ------
 * ``ForeignKeyField``
-* ``OneToOneField``
 * ``ManyToManyField``
+* ``OneToOneField``
 
 
 Attributes
 ----------
-* ``to`` (ForeignKey, ManyToManyField)
-* ``related_name`` (ForeignKey, ManyToManyField)
 * ``on_delete`` (ForeignKey, ManyToManyField)
+* ``related_name`` (ForeignKey, ManyToManyField)
+* ``to`` (ForeignKey, ManyToManyField)
 
 
 All
 ---
-* ``verbose_name``
-* ``max_length``
-* ``choices``
-* ``validators``
-* ``help_text``
-* ``null``
 * ``blank``
-* ``default``
-* ``db_index``
+* ``choices``
 * ``db_column``
+* ``db_index``
 * ``default``
-* ``limit_choices_to``
 * ``editable``
-* ``primary_key``
-* ``help_text``
 * ``error_message``
+* ``help_text``
+* ``limit_choices_to``
+* ``max_length``
+* ``null``
+* ``primary_key``
 * ``unique``
+* ``validators``
+* ``verbose_name``

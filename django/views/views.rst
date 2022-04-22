@@ -120,3 +120,122 @@ Class Based Views
 Decorators
 ----------
 * ``@login_required``
+
+
+Use Case - 0x01
+---------------
+.. code-block:: python
+
+    import json
+    from http import HTTPStatus
+    from django.contrib.auth.mixins import PermissionRequiredMixin
+    from django.http import JsonResponse
+    from django.utils.decorators import method_decorator
+    from django.views import View
+    from django.views.decorators.csrf import csrf_exempt
+    from contact.models import Person
+
+
+    @method_decorator(csrf_exempt, name='dispatch')
+    class ContactAPI(PermissionRequiredMixin, View):
+        permission_required = ['contact.view_person']
+        raise_exception = True
+        http_method_names = ['get', 'post', 'put', 'patch', 'delete', 'head', 'options']
+
+        def head(self, request):
+            return JsonResponse(status=HTTPStatus.OK, data={})
+
+        def options(self, request):
+            return JsonResponse(status=HTTPStatus.OK, data=self.http_method_names, safe=False)
+
+        def get(self, request, pk=None):
+            data = Person.objects.all().values()
+            if pk is not None:
+                data = data.filter(pk=pk)
+            if data.exists():
+                return JsonResponse(
+                    status=HTTPStatus.OK,
+                    data=list(data),
+                    safe=False)
+            else:
+                return JsonResponse(
+                    status=HTTPStatus.NOT_FOUND,
+                    data={'details': 'User with this ID does not exist'})
+
+        def post(self, request):
+            try:
+                data = json.loads(request.body.decode('utf-8'))
+                firstname = data['firstname']
+                lastname = data['lastname']
+            except json.JSONDecodeError as err:
+                return JsonResponse(
+                    status=HTTPStatus.BAD_REQUEST,
+                    data={'details': f'JSON Decode Error: {err}'})
+            except KeyError as err:
+                return JsonResponse(
+                    status=HTTPStatus.NOT_ACCEPTABLE,
+                    data={'details': f'Missing field: {err}'})
+            except Exception as err:
+                return JsonResponse(
+                    status=HTTPStatus.INTERNAL_SERVER_ERROR,
+                    data={'details': f'Some other error: {err}'})
+            else:
+                Person.objects.create(
+                    firstname=firstname,
+                    lastname=lastname)
+                return JsonResponse(
+                    status=HTTPStatus.CREATED,
+                    data={'details': 'created'})
+
+        def delete(self, request, pk):
+            Person.objects.get(pk=pk).delete()
+            return JsonResponse(
+                status=HTTPStatus.ACCEPTED,
+                data={'details': 'deleted'})
+
+        def put(self, request, pk):
+            try:
+                data = json.loads(request.body.decode('utf-8'))
+                firstname = data['firstname']
+                lastname = data['lastname']
+            except json.JSONDecodeError as err:
+                return JsonResponse(
+                    status=HTTPStatus.BAD_REQUEST,
+                    data={'details': f'JSON Decode Error: {err}'})
+            except KeyError as err:
+                return JsonResponse(
+                    status=HTTPStatus.NOT_ACCEPTABLE,
+                    data={'details': f'Missing field: {err}'})
+            except Exception as err:
+                return JsonResponse(
+                    status=HTTPStatus.INTERNAL_SERVER_ERROR,
+                    data={'details': f'Some other error: {err}'})
+            else:
+                Person.objects.filter(pk=pk).update(
+                    firstname=firstname,
+                    lastname=lastname)
+                return JsonResponse(
+                    status=HTTPStatus.ACCEPTED,
+                    data={'details': 'updated'})
+
+        def patch(self, request, pk):
+            try:
+                data = json.loads(request.body.decode('utf-8'))
+            except json.JSONDecodeError as err:
+                return JsonResponse(
+                    status=HTTPStatus.BAD_REQUEST,
+                    data={'details': f'JSON Decode Error: {err}'})
+            except Exception as err:
+                return JsonResponse(
+                    status=HTTPStatus.INTERNAL_SERVER_ERROR,
+                    data={'details': f'Some other error: {err}'})
+            else:
+                person = Person.objects.get(pk=pk)
+                if firstname := data.get('firstname'):
+                    person.firstname = firstname
+                if lastname := data.get('lastname'):
+                    person.lastname = lastname
+                person.save()
+                return JsonResponse(
+                    status=HTTPStatus.ACCEPTED,
+                    data={'details': 'updated'})

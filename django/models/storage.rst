@@ -5,27 +5,25 @@ Models Storage Fields
 Fields
 ------
 * ``BinaryField``
-* ``ImageField``
 * ``FileField``
 * ``FilePathField``
+* ``ImageField``
 
 
 Attributes
 ----------
-* ``verbose_name``
-* ``max_length``
-* ``choices``
-* ``validators``
-* ``help_text``
-* ``null``
 * ``blank``
-* ``default``
-* ``db_index``
+* ``choices``
 * ``db_column``
+* ``db_index``
 * ``default``
-* ``limit_choices_to``
 * ``editable``
-* ``primary_key``
-* ``help_text``
 * ``error_message``
+* ``help_text``
+* ``limit_choices_to``
+* ``max_length``
+* ``null``
+* ``primary_key``
 * ``unique``
+* ``validators``
+* ``verbose_name``
