@@ -10,7 +10,7 @@ Schema Reflection
 SQLAlchemy tool ``Automap`` does the reflection of database and figures out
 how to do the mapping dynamically.
 
-There is third-party tool ``SQLAutoC ode`` that generates the files (Python
+There is third-party tool ``sqlacodegen`` that generates the files (Python
 code) for you based on introspected tables. This is more robust solution.
 
 .. glossary::
