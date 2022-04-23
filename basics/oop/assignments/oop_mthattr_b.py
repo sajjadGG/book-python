@@ -75,7 +75,7 @@ class Iris:
         self.petal_width = petal_width
         self.species = species
 
-    def get_numeric_values(self):
+    def features(self):
         return [x for x in vars(self).values() if type(x) is float]
 
 
@@ -89,14 +89,14 @@ class Iris:
         self.petal_width = petal_width
         self.species = species
 
-    def get_numeric_values(self):
+    def features(self):
         return [x for x in vars(self).values() if type(x) is float]
 
     def total(self):
-        return sum(self.get_numeric_values())
+        return sum(self.features())
 
     def length(self):
-        return len(self.get_numeric_values())
+        return len(self.features())
 
     def mean(self):
         return self.total() / self.length()
