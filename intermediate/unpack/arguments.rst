@@ -406,17 +406,17 @@ will return a ``dict`` with all the variables in local scope of the function:
 ...     return template('user_details.html', **locals())
 >>>
 >>>     # template('user_details.html',
->>>     #    firstname='Jan',
->>>     #    lastname='Twardowski',
+>>>     #    firstname='Mark',
+>>>     #    lastname='Watney',
 >>>     #    uid=0,
 >>>     #    groups=['admins', 'astronauts'],
 >>>     #    permission=['all', 'everywhere'])
 >>>
 >>>
->>> controller('Jan', 'Twardowski')  # doctest: +NORMALIZE_WHITESPACE
+>>> controller('Mark', 'Watney')  # doctest: +NORMALIZE_WHITESPACE
 Template: user_details.html
-Data: {'firstname': 'Jan',
-       'lastname': 'Twardowski',
+Data: {'firstname': 'Mark',
+       'lastname': 'Watney',
        'uid': 0,
        'groups': ['admins', 'astronauts'],
        'permission': ['all', 'everywhere']}

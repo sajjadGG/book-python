@@ -409,12 +409,12 @@ House and apartment number:
     >>> address = 'Brighton Beach 1st apt. 2'
     >>> address = 'Myśliwiecka 3/5/7'
     >>>
-    >>> address = 'Jana Twardowskiego 180f/8f'
-    >>> address = 'Jana Twardowskiego 180f/8'
-    >>> address = 'Jana Twardowskiego 180/8f'
+    >>> address = 'Pana Twardowskiego 180f/8f'
+    >>> address = 'Pana Twardowskiego 180f/8'
+    >>> address = 'Pana Twardowskiego 180/8f'
     >>>
-    >>> address = 'Jana Twardowskiego III 3 m. 3'
-    >>> address = 'Jana Twardowskiego 13d bud. A piętro II sala 3'
+    >>> address = 'Pana Twardowskiego III 3 m. 3'
+    >>> address = 'Pana Twardowskiego 13d bud. A piętro II sala 3'
 
 Phone Numbers:
 

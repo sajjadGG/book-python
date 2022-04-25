@@ -19,7 +19,7 @@ Tests:
     >>> from os import remove
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [Astronaut(name='Jan Twardowski', missions=[Mission(year=1969, name='Apollo 18'), Mission(year=2024, name='Artemis 3')]),
+    [Astronaut(name='Pan Twardowski', missions=[Mission(year=1969, name='Apollo 18'), Mission(year=2024, name='Artemis 3')]),
      Astronaut(name='Mark Watney', missions=[Mission(year=2035, name='Ares 3')]),
      Astronaut(name='Melissa Lewis', missions=[])]
 
@@ -32,7 +32,7 @@ from dataclasses import dataclass, field
 FILE = r'_temporary.pkl'
 DATA = (b'\x80\x04\x95\xf6\x00\x00\x00\x00\x00\x00\x00]\x94(\x8c\r'
         b'pickle_file_a\x94\x8c\tAstronaut\x94\x93\x94)\x81\x94}\x94'
-        b'(\x8c\x04name\x94\x8c\x0eJan Twardowski\x94\x8c\x08missions'
+        b'(\x8c\x04name\x94\x8c\x0ePan Twardowski\x94\x8c\x08missions'
         b'\x94]\x94(h\x01\x8c\x07Mission\x94\x93\x94)\x81\x94}\x94(\x8c'
         b'\x04year\x94M\xb1\x07h\x06\x8c\tApollo 18\x94ubh\x0b)\x81\x94}'
         b'\x94(h\x0eM\xe8\x07h\x06\x8c\tArtemis 3\x94ubeubh\x03)\x81\x94}'

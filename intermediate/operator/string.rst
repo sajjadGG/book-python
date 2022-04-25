@@ -156,9 +156,9 @@ Printing ``list`` will call ``__repr__()`` method on each element:
 ...         self.name = name
 >>>
 >>>
->>> crew = [Astronaut('Jan Twardowski'),
-...         Astronaut('Mark Watney'),
-...         Astronaut('Melissa Lewis')]
+>>> crew = [Astronaut('Mark Watney'),
+...         Astronaut('Melissa Lewis'),
+...         Astronaut('Rick Martinez')]
 >>>
 >>> print(crew)  # doctest: +ELLIPSIS
 [<__main__.Astronaut object at 0x...>, <__main__.Astronaut object at 0x...>, <__main__.Astronaut object at 0x...>]
@@ -172,12 +172,12 @@ Printing ``list`` will call ``__repr__()`` method on each element:
 ...     def __repr__(self):
 ...         return f'{self.name}'
 >>>
->>> crew = [Astronaut('Jan Twardowski'),
-...         Astronaut('Mark Watney'),
-...         Astronaut('Melissa Lewis')]
+>>> crew = [Astronaut('Mark Watney'),
+...         Astronaut('Melissa Lewis'),
+...         Astronaut('Rick Martinez')]
 >>>
 >>> print(crew)
-[Jan Twardowski, Mark Watney, Melissa Lewis]
+[Mark Watney, Melissa Lewis, Rick Martinez]
 
 
 Format

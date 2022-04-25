@@ -178,9 +178,9 @@ Freq: D, dtype: float64
 3         Lewis
 dtype: object
 >>>
->>> s.map({'Watney': 'Mark', 'Twardowski': 'Jan'})
+>>> s.map({'Watney': 'Mark', 'Twardowski': 'Pan'})
 0    Mark
-1     Jan
+1     Pan
 2     NaN
 3     NaN
 dtype: object
@@ -391,8 +391,8 @@ Use Case - 0x01
 ---------------
 String cleaning:
 
->>> expected = 'Jana Twardowskiego III'
->>> text = 'UL. jana \tTWArdoWskIEGO 3'
+>>> expected = 'Pana Twardowskiego III'
+>>> text = 'UL. pana \tTWArdoWskIEGO 3'
 
 Convert to common format:
 
@@ -423,7 +423,7 @@ Check result:
 Matched: True
 >>>
 >>> print(text)
-Jana Twardowskiego III
+Pana Twardowskiego III
 
 
 Use Case - 0x02

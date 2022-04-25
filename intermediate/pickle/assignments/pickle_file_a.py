@@ -22,7 +22,7 @@ Tests:
     ...     result = pickle.load(file)
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [Astronaut(name='Jan Twardowski', missions=[Mission(year=1969, name='Apollo 18'), Mission(year=2024, name='Artemis 3')]),
+    [Astronaut(name='Pan Twardowski', missions=[Mission(year=1969, name='Apollo 18'), Mission(year=2024, name='Artemis 3')]),
      Astronaut(name='Mark Watney', missions=[Mission(year=2035, name='Ares 3')]),
      Astronaut(name='Melissa Lewis', missions=[])]
 
@@ -48,7 +48,7 @@ class Mission:
 
 
 DATA = [
-    Astronaut('Jan Twardowski', missions=[
+    Astronaut('Pan Twardowski', missions=[
         Mission(1969, 'Apollo 18'),
         Mission(2024, 'Artemis 3')]),
 

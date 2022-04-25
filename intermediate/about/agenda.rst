@@ -14,8 +14,8 @@ Day 1
 * 45m - Unpacking assignment
 * 45m - Unpacking parameters
 * 60m - Unpacking arguments
-* 15m - Parameter Syntax
-* 75m - Assignment Expression
+* 30m - Parameter Syntax
+* 60m - Assignment Expression
 
 
 Day 2

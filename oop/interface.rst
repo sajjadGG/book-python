@@ -99,17 +99,17 @@ Interfaces:
 
 
     fs: Cache = CacheFilesystem()
-    fs.set('name', 'Jan Twardowski')
+    fs.set('name', 'Mark Watney')
     fs.is_valid('name')
     fs.get('name')
 
     ram: Cache = CacheRAM()
-    ram.set('name', 'Jan Twardowski')
+    ram.set('name', 'Mark Watney')
     ram.is_valid('name')
     ram.get('name')
 
     db: Cache = CacheDatabase()
-    db.set('name', 'Jan Twardowski')
+    db.set('name', 'Mark Watney')
     db.is_valid('name')
     db.get('name')
 

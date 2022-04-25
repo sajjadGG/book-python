@@ -49,7 +49,7 @@ Use Case - 0x02
     DATA = """
         <astronauts>
             <astro>
-                <firstname>Jan</firstname>
+                <firstname>Pan</firstname>
                 <lastname>Twardowski</lastname>
             </astro>
             <astro>
@@ -94,7 +94,7 @@ Use Case - 0x02
     # </tr></thead>
     # <tbody>
     # <tr>
-    # <td>Jan</td>
+    # <td>Pan</td>
     # <td>Twardowski</td>
     # </tr>
     # <tr>

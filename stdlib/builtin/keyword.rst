@@ -51,7 +51,7 @@ Exceptions has all the content needed inherited from ``Exception`` class. You ne
 .. code-block:: python
 
     print(__file__)
-    # /home/twardowski/bin/myfile.py
+    # /home/myusername/bin/myfile.py
 
 .. code-block:: python
 
@@ -61,7 +61,7 @@ Exceptions has all the content needed inherited from ``Exception`` class. You ne
     dir = dirname(__file__)
 
     print(f'Working directory: {dir}')
-    # Working directory: /home/twardowski/bin
+    # Working directory: /home/myusername/bin
 
 .. code-block:: python
 
@@ -72,7 +72,7 @@ Exceptions has all the content needed inherited from ``Exception`` class. You ne
     path = join(dir, 'main.py')
 
     print(f'My file: {path}')
-    # My file: /home/twardowski/bin/main.py
+    # My file: /home/myusername/bin/main.py
 
 
 ``del``
@@ -80,12 +80,12 @@ Exceptions has all the content needed inherited from ``Exception`` class. You ne
 .. code-block:: python
 
     DATA = {
-        'firstname': 'Jan',
+        'firstname': 'Pan',
         'lastname': 'Twardowski',
     }
 
     print(DATA)
-    # {'firstname': 'Jan', 'lastname': 'Twardowski'}
+    # {'firstname': 'Pan', 'lastname': 'Twardowski'}
 
     del DATA['firstname']
 

@@ -121,9 +121,9 @@ Comprehensions
 --------------
 Let's define data:
 
->>> DATA = ['Jan Twardowski',
+>>> DATA = ['Mark Watney',
 ...         'Melissa Lewis',
-...         'Mark Watney']
+...         'Rick Martinez']
 
 Typical comprehension would require calling ``str.split()`` multiple times:
 
@@ -132,9 +132,9 @@ Typical comprehension would require calling ``str.split()`` multiple times:
 ...           for fullname in DATA]
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[{'firstname': 'Jan', 'lastname': 'Twardowski'},
+[{'firstname': 'Mark', 'lastname': 'Watney'},
  {'firstname': 'Melissa', 'lastname': 'Lewis'},
- {'firstname': 'Mark', 'lastname': 'Watney'}]
+ {'firstname': 'Rick', 'lastname': 'Martinez'}]
 
 Assignment expressions allows definition of a variable which can be used in
 the comprehension. It is not only more clear and readable, but also saves
@@ -146,9 +146,9 @@ resources:
 ...           if (name := fullname.split())]
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[{'firstname': 'Jan', 'lastname': 'Twardowski'},
+[{'firstname': 'Mark', 'lastname': 'Watney'},
  {'firstname': 'Melissa', 'lastname': 'Lewis'},
- {'firstname': 'Mark', 'lastname': 'Watney'}]
+ {'firstname': 'Rick', 'lastname': 'Martinez'}]
 
 
 Assignment vs Assignment Expression
@@ -199,13 +199,13 @@ Use Case - 0x01
 ---------------
 * Reusing Results
 
->>> def f(x):
+>>> def run(x):
 ...     return 1
 >>>
 >>>
->>> result = [f(x), f(x)+1, f(x)+2]
+>>> result = [run(x), run(x)+1, run(x)+2]
 >>>
->>> result = [res := f(x), res+1, res+2]
+>>> result = [res := run(x), res+1, res+2]
 
 
 Use Case - 0x02
@@ -229,10 +229,10 @@ Use Case - 0x02
 
 Use Case - 0x03
 ---------------
->>> DATA = [{'is_astronaut': True,  'name': 'JaN TwarDOwski'},
-...         {'is_astronaut': True,  'name': 'Mark Jim WaTNey'},
+>>> DATA = [{'is_astronaut': True,  'name': 'Mark Jim WaTNey'},
+...         {'is_astronaut': True,  'name': 'Melissa LewiS'},
 ...         {'is_astronaut': False, 'name': 'José Maria Jiménez'},
-...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
+...         {'is_astronaut': True,  'name': 'RiCK MarTineZ'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
 
 Comprehension:
@@ -253,17 +253,17 @@ Assignment expressions:
 In both cases result is the same:
 
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[{'firstname': 'Jan', 'lastname': 'Twardowski'},
- {'firstname': 'Mark', 'lastname': 'Watney'},
- {'firstname': 'Melissa', 'lastname': 'Lewis'}]
+[{'firstname': 'Mark', 'lastname': 'Watney'},
+ {'firstname': 'Melissa', 'lastname': 'Lewis'},
+ {'firstname': 'Rick', 'lastname': 'Martinez'}]
 
 
 Use Case - 0x04
 ---------------
->>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
-...         {'is_astronaut': True,  'name': 'Mark Watney'},
-...         {'is_astronaut': False, 'name': 'José Jiménez'},
+>>> DATA = [{'is_astronaut': True,  'name': 'Mark Watney'},
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
+...         {'is_astronaut': False, 'name': 'José Jiménez'},
+...         {'is_astronaut': True,  'name': 'Rick Martinez'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
 >>>
 >>>
@@ -275,17 +275,17 @@ Use Case - 0x04
 ...                and (lname := f'{name[1][0]}.')]
 >>>
 >>> print(astronauts)  # doctest: +NORMALIZE_WHITESPACE
-[{'firstname': 'Jan', 'lastname': 'T.'},
- {'firstname': 'Mark', 'lastname': 'W.'},
- {'firstname': 'Melissa', 'lastname': 'L.'}]
+[{'firstname': 'Mark', 'lastname': 'W.'},
+ {'firstname': 'Melissa', 'lastname': 'L.'},
+ {'firstname': 'Rick', 'lastname': 'M.'}]
 
 
 Use Case - 0x05
 ---------------
->>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
-...         {'is_astronaut': True,  'name': 'Mark Watney'},
-...         {'is_astronaut': False, 'name': 'José Jiménez'},
+>>> DATA = [{'is_astronaut': True,  'name': 'Mark Watney'},
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
+...         {'is_astronaut': False, 'name': 'José Jiménez'},
+...         {'is_astronaut': True,  'name': 'Rick Martinez'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
 >>>
 >>>
@@ -298,7 +298,7 @@ Use Case - 0x05
 >>>
 >>>
 >>> print(astronauts)
-['Jan T.', 'Mark W.', 'Melissa L.']
+['Mark W.', 'Melissa L.', 'Rick M.']
 
 
 Use Case - 0x06
@@ -328,7 +328,7 @@ generate ``__init__()`` method based on the attributes:
 >>>
 >>>
 >>> DATA = [
-...    ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...    ('SepalLength', 'SepalWidth', 'PetalLength', 'PetalWidth', 'Species'),
 ...    (5.8, 2.7, 5.1, 1.9, 'virginica'),
 ...    (5.1, 3.5, 1.4, 0.2, 'setosa'),
 ...    (5.7, 2.8, 4.1, 1.3, 'versicolor'),

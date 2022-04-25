@@ -153,11 +153,11 @@ String concatenation
 --------------
 .. code-block:: python
 
-    data = ['Jan Twardowski', 'Mark Watney', 'José Jiménez']
+    data = ['Pan Twardowski', 'Mark Watney', 'José Jiménez']
 
-    ' '.join(data)              # 'Jan Twardowski Mark Watney José Jiménez'
-    ','.join(data)              # 'Jan Twardowski,Mark Watney,José Jiménez'
-    ', '.join(data)             # 'Jan Twardowski, Mark Watney, José Jiménez'
+    ' '.join(data)              # 'Pan Twardowski Mark Watney José Jiménez'
+    ','.join(data)              # 'Pan Twardowski,Mark Watney,José Jiménez'
+    ', '.join(data)             # 'Pan Twardowski, Mark Watney, José Jiménez'
 
 
 Variable interpolation
@@ -385,11 +385,11 @@ Get from ``dict``
 .. code-block:: python
 
     data = {
-        'firstname': 'Jan',
+        'firstname': 'Pan',
         'lastname': 'Twardowski'
     }
 
-    f'{data["firstname"]}'         # 'Jan'
+    f'{data["firstname"]}'         # 'Pan'
     f'{data["lastname"]}'          # 'Twardowski'
 
 Get from ``sequence``

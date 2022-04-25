@@ -94,9 +94,9 @@ Doctests
 ...     True
 ...     >>> is_valid('markwatney@nasa.gov')
 ...     True
-...     >>> is_valid('jan.twardowski@polsa.gov.pl')
+...     >>> is_valid('pan.twardowski@polsa.gov.pl')
 ...     True
-...     >>> is_valid('jan.twardowski@polsa24.gov.pl')
+...     >>> is_valid('pan.twardowski@polsa24.gov.pl')
 ...     True
 ...     """
 ...     if pattern.match(data):

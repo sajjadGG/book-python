@@ -225,7 +225,7 @@ Note, although there is ``self`` in ``lambda``, it is not passed as an argument:
 
     class User:
         def __init__(self):
-            self.name = 'Jan Twardowski'
+            self.name = 'Pan Twardowski'
 
 
     u = User()

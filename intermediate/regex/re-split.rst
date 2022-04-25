@@ -25,7 +25,7 @@ Use Case - 0x01
 >>> import re
 >>>
 >>>
->>> TEXT = """Jan Twardowski: 834.345.1254 Polish Space Agency
+>>> TEXT = """Pan Twardowski: 834.345.1254 Polish Space Agency
 ...
 ... Mark Watney: 892.345.3428 Johnson Space Center
 ... Matt Kowalski: 925.541.7625 Kennedy Space Center
@@ -35,14 +35,14 @@ Use Case - 0x01
 >>>
 >>> entries = re.split('\n+', TEXT)
 >>> print(entries)  # doctest: +NORMALIZE_WHITESPACE
-['Jan Twardowski: 834.345.1254 Polish Space Agency',
+['Pan Twardowski: 834.345.1254 Polish Space Agency',
  'Mark Watney: 892.345.3428 Johnson Space Center',
  'Matt Kowalski: 925.541.7625 Kennedy Space Center',
  'Melissa Lewis: 548.326.4584 Bajkonur, Kazakhstan']
 >>>
 >>> result = [re.split(':?\s', entry, maxsplit=3) for entry in entries]
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[['Jan', 'Twardowski', '834.345.1254', 'Polish Space Agency'],
+[['Pan', 'Twardowski', '834.345.1254', 'Polish Space Agency'],
  ['Mark', 'Watney', '892.345.3428', 'Johnson Space Center'],
  ['Matt', 'Kowalski', '925.541.7625', 'Kennedy Space Center'],
  ['Melissa', 'Lewis', '548.326.4584', 'Bajkonur, Kazakhstan']]

@@ -223,12 +223,12 @@ Dynamically creating fields:
             self.__dict__ = kwargs
 
 
-    a = Container(firstname='Jan', lastname='Twardowski')
-    print(a.firstname)          # Jan
-    print(a.lastname)           # 'Twardowski'
+    a = Container(firstname='Mark', lastname='Watney')
+    print(a.firstname)          # Mark
+    print(a.lastname)           # Watney
 
     b = Container(species='Setosa')
-    print(b.species)             # 'Setosa'
+    print(b.species)             # Setosa
 
 
 Example
