@@ -6,24 +6,24 @@
 
 English:
     1. Define `result: list[dict]`, where each dict has keys:
-       * address: str
+       * ip: str
        * hosts: list[str]
     2. Iterate over lines in `DATA` skipping comments (`#`) and empty lines
-    3. Extract from each line: `address` and `hosts`
-    4. Add `address` and `hosts` to `result` as a dict, example:
-       {'address': '127.0.0.1', 'hosts': ['localhost', 'astromatt']}
+    3. Extract from each line: `ip` and `hosts`
+    4. Add `ip` and `hosts` to `result` as a dict, example:
+       {'ip': '127.0.0.1', 'hosts': ['localhost', 'astromatt']}
     5. Each line must be a separate dict
     6. Merge host names with the same IP (important!)
     7. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj `result: list[dict]`, gdzie każdy dict ma klucze:
-       * address: str
+       * ip: str
        * hosts: list[str]
     2. Iteruje po liniach w `DATA` pomijając komentarze (`#`) i puste linie
-    3. Wyciągnij z każdej linii: `address` i `hosts`
-    4. Dodaj `address` i `hosts` do `result` jako słownik, przykład:
-       {'address': '127.0.0.1', 'hosts': ['localhost', 'astromatt']}
+    3. Wyciągnij z każdej linii: `ip` i `hosts`
+    4. Dodaj `ip` i `hosts` do `result` jako słownik, przykład:
+       {'ip': '127.0.0.1', 'hosts': ['localhost', 'astromatt']}
     5. Każda linia ma być osobnym słownikiem
     6. Scal nazwy hostów dla tego samego IP (ważne)
     7. Uruchom doctesty - wszystkie muszą się powieść
@@ -40,14 +40,14 @@ Tests:
     'Variable `result` has invalid type, should be list'
     >>> assert all(type(x) is dict for x in result), \
     'All keys in `result` should be dict'
-    >>> assert [x['address'] for x in result].count('127.0.0.1') == 1, \
+    >>> assert [x['ip'] for x in result].count('127.0.0.1') == 1, \
     'You did not merge hostnames for the same ip (127.0.0.1)'
 
-    >>> pprint(result, width=120)
-    [{'address': '127.0.0.1', 'hosts': ['localhost', 'astromatt']},
-     {'address': '10.13.37.1', 'hosts': ['nasa.gov', 'esa.int']},
-     {'address': '255.255.255.255', 'hosts': ['broadcasthost']},
-     {'address': '::1', 'hosts': ['localhost']}]
+    >>> pprint(result, width=120, sort_dicts=False)
+    [{'ip': '127.0.0.1', 'hosts': ['localhost', 'astromatt']},
+     {'ip': '10.13.37.1', 'hosts': ['nasa.gov', 'esa.int']},
+     {'ip': '255.255.255.255', 'hosts': ['broadcasthost']},
+     {'ip': '::1', 'hosts': ['localhost']}]
 """
 
 DATA = """##
@@ -62,7 +62,7 @@ DATA = """##
 255.255.255.255 broadcasthost
 ::1             localhost"""
 
-# Dict keys: address, hosts, protocol
+# Dict keys: ip, hosts
 # Merge hosts for the same ip
 # type: list[dict]
 result = ...
@@ -78,12 +78,12 @@ for line in DATA.splitlines():
     elif line.startswith('#'):
         continue
 
-    address, *hosts = line.split()
+    ip, *hosts = line.split()
 
     for row in result:
-        if row['address'] == address:
+        if row['ip'] == ip:
             row['hosts'] += hosts
             break
     else:
-        row = {'address': address, 'hosts': hosts}
+        row = {'ip': ip, 'hosts': hosts}
         result.append(row)
