@@ -5,9 +5,9 @@
 * Time: 13 min
 
 English:
-    1. Separate header and data
+    1. Separate header and rows
     2. Define dict `result: dict[str, list]`, keys are column names from header
-    3. For each row in data, add values to proper lists in `result`
+    3. For each row, add values to proper lists in `result`
     4. Define function `mean()`, calculating mean for arbitrary number of arguments
     5. Return `None` if any argument to the function is not `float` or `int`
     6. To calculate mean use built-in functions
@@ -15,9 +15,9 @@ English:
     8. Run doctests - all must succeed
 
 Polish:
-    1. Odseparuj nagłówek od danych
+    1. Odseparuj nagłówek od wierszy danych
     2. Zdefiniuj słownik `result: dict[str, list]`, klucze to nazwy kolumn z nagłówka
-    3. Dla każdego wiersza w danych, dodawaj wartości do odpowiednich list w `result`
+    3. Dla każdego wiersza, dodawaj wartości do odpowiednich list w `result`
     4. Zdefiniuj funkcję `mean()`, liczącą średnią dla dowolnej ilości argumentów
     5. Zwróć `None` jeżeli którykolwiek z argumentów do funkcji nie jest `float` lub `int`
     6. Do wyliczenia średniej wykorzystaj wbudowane funkcje
@@ -52,10 +52,10 @@ def average(args):
         return sum(args) / len(args)
 
 
-header, *data = DATA
+header, *rows = DATA
 result = {x:list() for x in header}
 
-for row in data:
+for row in rows:
     for i, head in enumerate(header):
         result[head].append(row[i])
 

@@ -55,8 +55,8 @@ result = ...
 
 # Solution
 result = []
-header, *data = DATA
+header, *rows = DATA
 
-for row in data:
+for row in rows:
     paris = zip(header, row)
     result.append(dict(paris))

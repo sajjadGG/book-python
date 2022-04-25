@@ -47,18 +47,18 @@ DATA = """3,4,setosa,virginica,versicolor
 5.1,3.5,1.4,0.2,0
 5.7,2.8,4.1,1.3,2"""
 
-# data from file (note the list[tuple] format!)
+# values from file (note the list[tuple] format!)
 # type: list[tuple]
 result = ...
 
 # Solution
 result = []
-header, *data = DATA.splitlines()
+header, *lines = DATA.splitlines()
 header = header.strip().split(',')
 nrows, ncols, *class_labels = header
 LABEL_ENCODER = dict(enumerate(class_labels))
 
-for line in data:
+for line in lines:
     *values, species = line.strip().split(',')
     species = LABEL_ENCODER[int(species)]
     row = values + [species]

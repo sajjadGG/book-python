@@ -56,10 +56,10 @@ result = ...
 
 # Solution
 result = []
-header, *data = DATA.splitlines()
+header, *lines = DATA.splitlines()
 header = header.strip().split(',')
 
-for line in data:
+for line in lines:
     line = line.strip().split(',')
     line = zip(header, line)
     result.append(dict(line))

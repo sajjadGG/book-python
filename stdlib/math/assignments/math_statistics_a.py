@@ -73,11 +73,11 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
 
 
 # Solution
-header, *data = DATA
-sepal_length = [row[0] for row in data]
-sepal_width = [row[1] for row in data]
-petal_length = [row[2] for row in data]
-petal_width = [row[3] for row in data]
+header, *rows = DATA
+sepal_length = [row[0] for row in rows]
+sepal_width = [row[1] for row in rows]
+petal_length = [row[2] for row in rows]
+petal_width = [row[3] for row in rows]
 
 
 def stats(values):

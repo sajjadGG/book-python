@@ -50,11 +50,11 @@ result = ...
 
 # Solution
 result = []
-header, *data = DATA.splitlines()
+header, *lines = DATA.splitlines()
 header = header.strip().split(',')
 result.append(tuple(header))
 
-for line in data:
+for line in lines:
     *values, species = line.strip().split(',')
     values = map(float, values)
     row = list(values) + [species]

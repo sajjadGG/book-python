@@ -157,12 +157,12 @@ Use Case - 0x02
 ...         return f'{clsname}{values}'
 >>>
 >>>
->>> header, *data = DATA
+>>> header, *rows = DATA
 >>> header = [x.lower().replace(' ', '_') for x in header]
 >>>
 >>> result = []
 >>>
->>> for *features,species in data:
+>>> for *features,species in rows:
 ...     features = dict(zip(header, features))
 ...     clsname = species.capitalize()
 ...     if clsname not in globals():
@@ -214,10 +214,10 @@ Use Case - 0x03
 >>>
 >>>
 >>> result = []
->>> header, *data = DATA
+>>> header, *rows = DATA
 >>> header = [x.lower().replace(' ', '_') for x in header]
 >>>
->>> for *features,species in data:
+>>> for *features,species in rows:
 ...     features = dict(zip_longest(header, features, fillvalue=None))
 ...     clsname = species.capitalize()
 ...     if clsname not in globals():

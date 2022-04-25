@@ -13,10 +13,10 @@ Conversion
 ...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
 ...     (5.7, 2.8, 4.1, 1.3, 'versicolor')]
 >>>
->>> header, *data = DATA
+>>> header, *rows = DATA
 >>> result = []
 >>>
->>> for row in data:
+>>> for row in rows:
 ...     pairs = zip(header, row)
 ...     result.append(dict(pairs))
 >>>

@@ -5,16 +5,16 @@
 * Time: 5 min
 
 English:
-    1. Extract from input a header and data
-    2. Create `result: list[dict]`
+    1. Extract from input a header and rows
+    2. Create `result: list[dict]`:
         a. key - name from the header
         b. value - measurement or species
     3. Dump `result` to file `FILE` in JSON format
     4. Run doctests - all must succeed
 
 Polish:
-    1. Z danych wydziel nagłówek i pomiary
-    2. Wygeneruj `result: list[dict]`
+    1. Z danych wydziel nagłówek i wiersze
+    2. Wygeneruj `result: list[dict]`:
         a. klucz - nazwa z nagłówka
         b. wartość - wyniki pomiarów lub gatunek
     3. Zrzuć `result` do pliku `FILE` w formacie JSON
@@ -66,8 +66,8 @@ DATA = [
     (4.9, 3.0, 1.4, 0.2, 'setosa')]
 
 # Solution
-header, *data = DATA
-result = [dict(zip(header, row)) for row in data]
+header, *rows = DATA
+result = [dict(zip(header, row)) for row in rows]
 
 with open(FILE, mode='w') as file:
     json.dump(result, file)

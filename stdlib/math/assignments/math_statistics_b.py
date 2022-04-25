@@ -124,11 +124,11 @@ result = {}
 
 
 # Solution
-header, *data = DATA
+header, *rows = DATA
 *attributes, _ = header
 
 
-for *measurements, species in data:
+for *measurements, species in rows:
     if species not in result:
         result[species] = dict()
     for i, column in enumerate(attributes):

@@ -5,12 +5,12 @@
 * Time: 2 min
 
 English:
-    1. Separate header and records
+    1. Separate header and rows
     2. Use asterisk `*` notation
     3. Run doctests - all must succeed
 
 Polish:
-    1. Odseparuj nagłówek od danych
+    1. Odseparuj nagłówek od wierszy danych
     2. Skorzystaj z konstrukcji z gwiazdką `*`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -19,25 +19,25 @@ Tests:
 
     >>> assert header is not Ellipsis, \
     'Assign result to variable: `header`'
-    >>> assert data is not Ellipsis, \
-    'Assign result to variable: `data`'
+    >>> assert rows is not Ellipsis, \
+    'Assign result to variable: `rows`'
     >>> assert len(header) > 0, \
     'Variable `header` cannot be empty'
-    >>> assert len(data) > 0, \
-    'Variable `data` cannot be empty'
+    >>> assert len(rows) > 0, \
+    'Variable `rows` cannot be empty'
     >>> assert type(header) is tuple, \
     'Variable `header` has invalid type, should be tuple'
-    >>> assert type(data) is list, \
+    >>> assert type(rows) is list, \
     'Variable `hosts` has invalid type, should be list'
     >>> assert all(type(x) is str for x in header), \
     'All rows in `header` should be str'
-    >>> assert all(type(x) is tuple for x in data), \
-    'All rows in `data` should be tuple'
+    >>> assert all(type(x) is tuple for x in rows), \
+    'All rows in `rows` should be tuple'
 
     >>> header
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
 
-    >>> data  # doctest: +NORMALIZE_WHITESPACE
+    >>> rows  # doctest: +NORMALIZE_WHITESPACE
     [(5.8, 2.7, 5.1, 1.9, 'virginica'),
      (5.1, 3.5, 1.4, 0.2, 'setosa'),
      (5.7, 2.8, 4.1, 1.3, 'versicolor'),
@@ -61,8 +61,8 @@ header = ...
 
 # all the other lines from DATA, beside first line
 # type: list[tuple]
-data = ...
+rows = ...
 
 
 # Solution
-header, *data = DATA
+header, *rows = DATA

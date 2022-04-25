@@ -44,17 +44,17 @@ DATA = """sepal_length,sepal_width,petal_length,petal_width,species
 5.1,3.5,1.4,0.2,setosa
 5.7,2.8,4.1,1.3,versicolor"""
 
-# data from file (note the list[tuple] format!)
+# values from file (note the list[tuple] format!)
 # type: list[tuple]
 result = ...
 
 # Solution
 result = []
-header, *data = DATA.splitlines()
+header, *lines = DATA.splitlines()
 header = header.strip().split(',')
 result.append(tuple(header))
 
-for line in data:
+for line in lines:
     *values, species = line.strip().split(',')
     values = map(float, values)
     row = list(values) + [species]

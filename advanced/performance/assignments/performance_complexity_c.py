@@ -92,8 +92,8 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
         (4.9, 2.5, 4.5, 1.7, 'virginica')]
 
 ratio = 0.6
-header, *data = DATA
-split = int(len(data) * ratio)
+header, *rows = DATA
+split = int(len(rows) * ratio)
 
 features_train = ...
 features_test = ...
@@ -101,22 +101,22 @@ labels_train = ...
 labels_test = ...
 
 # Solution
-features_train = [tuple(X) for *X, y in data[:split]]
-features_test = [tuple(X) for *X, y in data[split:]]
-labels_train = [y for *X, y in data[:split]]
-labels_test = [y for *X, y in data[split:]]
+features_train = [tuple(X) for *X, y in rows[:split]]
+features_test = [tuple(X) for *X, y in rows[split:]]
+labels_train = [y for *X, y in rows[:split]]
+labels_test = [y for *X, y in rows[split:]]
 
 # Alternative Solution
-features = [tuple(X) for *X, y in data]
-labels = [y for *X, y in data]
+features = [tuple(X) for *X, y in rows]
+labels = [y for *X, y in rows]
 features_train = features[:split]
 features_test = features[split:]
 labels_train = labels[:split]
 labels_test = labels[split:]
 
 # Alternative Solution
-train = data[:split]
-test = data[split:]
+train = rows[:split]
+test = rows[split:]
 features_train = [tuple(X) for *X, y in train]
 features_test = [tuple(X) for *X, y in test]
 labels_train = [y for *X, y in train]
