@@ -121,7 +121,7 @@ Use Case:
 >>> match language:
 ...     case 'English': response = 'Hello'
 ...     case 'German':  response = 'Guten Tag'
-...     case 'Spanish':  response = 'Hola'
+...     case 'Spanish': response = 'Hola'
 ...     case 'Polish':  response = 'Witaj'
 ...     case _:         response = "I don't speak this language"
 >>>
@@ -182,7 +182,7 @@ Test Setup:
 
 Use Case:
 
->>> action = ['move', 'left', 10]
+>>> action = ['make_damage', 10]
 >>>
 >>> match action:
 ...     case ['make_damage', value] if value > 0:
@@ -304,7 +304,7 @@ Use Case - 0x08
 >>>
 >>> def encoder(value):
 ...     match value:
-...         case date() | datetime() | time():
+...         case date() | time() | datetime():
 ...             return value.isoformat()
 ...         case timedelta():
 ...             return value.total_seconds()
