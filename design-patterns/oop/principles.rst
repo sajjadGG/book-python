@@ -142,13 +142,13 @@ Polymorphism
 >>> crew = [Astronaut('Mark Watney'),
 ...         Cosmonaut('Иван Иванович'),
 ...         Astronaut('Melissa Lewis'),
-...         Cosmonaut('Jan Twardowski')]
+...         Cosmonaut('Pan Twardowski')]
 >>>
 >>> hello(crew)
 Hello Mark Watney
 Привет Иван Иванович
 Hello Melissa Lewis
-Привет Jan Twardowski
+Привет Pan Twardowski
 
 
 Further Reading

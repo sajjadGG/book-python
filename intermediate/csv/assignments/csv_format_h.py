@@ -40,7 +40,7 @@ Tests:
 
     >>> print(result)   # doctest: +NORMALIZE_WHITESPACE
     "firstname","lastname"
-    "Jan","Twardowski"
+    "Pan","Twardowski"
     "Rick","Martinez"
     "Mark","Watney"
     "Ivan","Ivanovic"
@@ -49,7 +49,7 @@ Tests:
 """
 
 DATA = [
-    {'firstname': 'Jan', 'lastname': 'Twardowski'},
+    {'firstname': 'Pan', 'lastname': 'Twardowski'},
     {'firstname': 'Rick', 'lastname': 'Martinez'},
     {'firstname': 'Mark', 'lastname': 'Watney'},
     {'firstname': 'Ivan', 'lastname': 'Ivanovic'},

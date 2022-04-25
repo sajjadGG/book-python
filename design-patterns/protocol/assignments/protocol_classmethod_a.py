@@ -42,14 +42,14 @@ Tests:
     ...     lastname: str
 
     >>> mark = Astronaut('Mark', 'Watney')
-    >>> jan = Cosmonaut('Jan', 'Twardowski')
+    >>> pan = Cosmonaut('Pan', 'Twardowski')
     >>> mark.to_csv()
     'Mark,Watney\\n'
-    >>> jan.to_csv()
-    'Jan,Twardowski\\n'
+    >>> pan.to_csv()
+    'Pan,Twardowski\\n'
 
     >>> with open('_temporary.txt', mode='wt') as file:
-    ...     data = mark.to_csv() + jan.to_csv()
+    ...     data = mark.to_csv() + pan.to_csv()
     ...     file.writelines(data)
 
     >>> result = []
@@ -60,7 +60,7 @@ Tests:
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [Astronaut(firstname='Mark', lastname='Watney'),
-     Cosmonaut(firstname='Jan', lastname='Twardowski')]
+     Cosmonaut(firstname='Pan', lastname='Twardowski')]
 
     >>> remove('_temporary.txt')
 """

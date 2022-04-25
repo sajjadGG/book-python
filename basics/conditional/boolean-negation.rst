@@ -42,7 +42,7 @@ Control Flow
 
 >>> crew = {'mwatney', 'mlewis', 'rmartinez'}
 >>>
->>> if 'ptwardowski' not in crew:
+>>> if 'avogel' not in crew:
 ...     print('You are not assigned to the crew')
 You are not assigned to the crew
 

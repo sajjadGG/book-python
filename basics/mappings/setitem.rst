@@ -25,9 +25,9 @@ Set Item Method
 ...    'pilot': 'Rick Martinez'}
 >>>
 >>>
->>> crew['commander'] = 'Pan Twardowski'
+>>> crew['commander'] = 'Alex Vogel'
 >>> print(crew)  # doctest: +NORMALIZE_WHITESPACE
-{'commander': 'Pan Twardowski',
+{'commander': 'Alex Vogel',
  'botanist': 'Mark Watney',
  'pilot': 'Rick Martinez'}
 
@@ -53,9 +53,9 @@ Update Method
 ...    'pilot': 'Rick Martinez'}
 >>>
 >>>
->>> crew.update(commander='Pan Twardowski')
+>>> crew.update(commander='Alex Vogel')
 >>> print(crew)  # doctest: +NORMALIZE_WHITESPACE
-{'commander': 'Pan Twardowski',
+{'commander': 'Alex Vogel',
  'botanist': 'Mark Watney',
  'pilot': 'Rick Martinez'}
 

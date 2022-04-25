@@ -585,7 +585,7 @@ Hello
 >>>
 >>>
 >>> db: Cache = CacheDatabase()
->>> db.set('name', 'Jan Twardowski')
+>>> db.set('name', 'Mark Watney')
 >>> db.is_valid('name')
 >>> db.get('name')
 

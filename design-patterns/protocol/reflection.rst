@@ -345,9 +345,9 @@ Use Case - 0x04
 ...             setattr(self, key, value)
 >>>
 >>>
->>> a = Container(firstname='Jan', lastname='Twardowski')
+>>> a = Container(firstname='Pan', lastname='Twardowski')
 >>> vars(a)
-{'firstname': 'Jan', 'lastname': 'Twardowski'}
+{'firstname': 'Pan', 'lastname': 'Twardowski'}
 >>>
 >>> b = Container(color='red')
 >>> vars(b)

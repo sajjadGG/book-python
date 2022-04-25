@@ -28,7 +28,7 @@ Tests:
     >>> assert all(type(x) is dict for x in result)
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'firstname': 'Jan',
+    [{'firstname': 'Pan',
       'lastname': 'Twardowski',
       'address1_street': 'Kamienica Pod św. Janem Kapistranem',
       'address1_city': 'Kraków',
@@ -85,7 +85,7 @@ Tests:
 import json
 
 DATA = """[
-    {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
+    {"firstname": "Pan", "lastname": "Twardowski", "addresses": [
         {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Małopolskie", "country": "Poland"}]},
 
     {"firstname": "José", "lastname": "Jiménez", "addresses": [

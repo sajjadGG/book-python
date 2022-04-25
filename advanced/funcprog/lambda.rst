@@ -151,37 +151,39 @@ Use Case - 0x02
 Use Case - 0x03
 ---------------
 >>> people = [
-...     {'age': 21, 'name': 'Jan Twardowski'},
-...     {'age': 25, 'name': 'Mark Watney'},
-...     {'age': 18, 'name': 'Melissa Lewis'}]
+...     {'age': 21, 'name': 'Mark Watney'},
+...     {'age': 25, 'name': 'Melissa Lewis'},
+...     {'age': 18, 'name': 'Rick Martinez'}]
 >>>
 >>>
 >>> result = filter(lambda x: x['age'] >= 21, people)
 >>> list(result)  # doctest: +NORMALIZE_WHITESPACE
-[{'age': 21, 'name': 'Jan Twardowski'},
- {'age': 25, 'name': 'Mark Watney'}]
+[{'age': 21, 'name': 'Mark Watney'},
+ {'age': 25, 'name': 'Melissa Lewis'}]
 
 
 Use Case - 0x04
 ---------------
 >>> people = [
-...     {'is_astronaut': False, 'name': 'Jan Twardowski'},
 ...     {'is_astronaut': True, 'name': 'Mark Watney'},
-...     {'is_astronaut': True, 'name': 'Melissa Lewis'}]
+...     {'is_astronaut': False, 'name': 'Melissa Lewis'},
+...     {'is_astronaut': True, 'name': 'Rick Martinez'}]
 >>>
 >>>
 >>> result = filter(lambda x: x['is_astronaut'], people)
 >>> list(result)  # doctest: +NORMALIZE_WHITESPACE
 [{'is_astronaut': True, 'name': 'Mark Watney'},
- {'is_astronaut': True, 'name': 'Melissa Lewis'}]
+ {'is_astronaut': True, 'name': 'Rick Martinez'}]
 
 
 Use Case - 0x05
 ---------------
 >>> astronauts = ['Mark Watney', 'Melissa Lewis']
 >>>
->>> people = ['Jan Twardowski', 'Mark Watney',
-...           'Melissa Lewis', 'Jose Jimenez']
+>>> people = [
+...     'Mark Watney',
+...     'Melissa Lewis',
+...     'Jose Jimenez']
 >>>
 >>>
 >>> result = filter(lambda x: x in astronauts, people)

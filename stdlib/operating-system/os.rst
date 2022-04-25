@@ -354,7 +354,7 @@ Execute command in OS
 
     subprocess.run(["ls", "-l", "/dev/null"], stdout=subprocess.PIPE, encoding='utf-8')
     # CompletedProcess(args=['ls', '-l', '/dev/null'], returncode=0,
-    #                  stdout='crw-rw-rw- 1 root root 1, 3 Jan 23 16:23 /dev/null\n')
+    #                  stdout='crw-rw-rw- 1 root root 1, 3 Feb 23 16:23 /dev/null\n')
 
 Timeout for subprocesses
 ------------------------

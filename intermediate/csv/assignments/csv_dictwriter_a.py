@@ -44,7 +44,7 @@ Tests:
 
     >>> print(result)   # doctest: +NORMALIZE_WHITESPACE
     "firstname","lastname"
-    "Jan","Twardowski"
+    "Pan","Twardowski"
     "Rick","Martinez"
     "Mark","Watney"
     "Ivan","Ivanovic"
@@ -53,7 +53,7 @@ Tests:
 import csv
 
 
-DATA = [{'firstname': 'Jan', 'lastname': 'Twardowski'},
+DATA = [{'firstname': 'Pan', 'lastname': 'Twardowski'},
         {'firstname': 'Rick', 'lastname': 'Martinez'},
         {'firstname': 'Mark', 'lastname': 'Watney'},
         {'firstname': 'Ivan', 'lastname': 'Ivanovic'},

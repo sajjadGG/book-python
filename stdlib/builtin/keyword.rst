@@ -80,14 +80,14 @@ Exceptions has all the content needed inherited from ``Exception`` class. You ne
 .. code-block:: python
 
     DATA = {
-        'firstname': 'Pan',
-        'lastname': 'Twardowski',
+        'firstname': 'Mark',
+        'lastname': 'Watney',
     }
 
     print(DATA)
-    # {'firstname': 'Pan', 'lastname': 'Twardowski'}
+    # {'firstname': 'Mark', 'lastname': 'Watney'}
 
     del DATA['firstname']
 
     print(DATA)
-    # {'lastname': 'Twardowski'}
+    # {'lastname': 'Watney'}

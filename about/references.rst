@@ -174,7 +174,7 @@ Addresses
 .. code-block:: python
 
     DATA = [
-        {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
+        {"firstname": "Pan", "lastname": "Twardowski", "addresses": [
             {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Małopolskie", "country": "Poland"}]},
 
         {"firstname": "José", "lastname": "Jiménez", "addresses": [

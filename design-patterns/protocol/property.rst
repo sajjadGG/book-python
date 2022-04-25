@@ -333,9 +333,9 @@ Accessing class fields. Either put ``name`` as an argument for ``__init__()`` or
 >>>
 >>>
 >>> astro = Astronaut()
->>> astro.name = 'Jan Twardowski'
+>>> astro.name = 'Mark Watney'
 >>> print(astro.name)
-Jan Twardowski
+Mark Watney
 
 
 Property class
@@ -423,9 +423,9 @@ Use Case - 0x01
 >>>
 >>> astro = Astronaut()
 >>>
->>> astro.set_name('JaN TwARdoWskI')
+>>> astro.set_name('MARK WaTNeY')
 >>> print(astro.get_name())
-Jan T.
+Mark W.
 >>>
 >>> astro.del_name()
 >>> print(astro.get_name())
@@ -454,9 +454,9 @@ None
 >>>
 >>> astro = Astronaut()
 >>>
->>> astro.name = 'JAN TwARdoWski'
+>>> astro.name = 'MARK WaTNeY'
 >>> print(astro.name)
-Jan T.
+Mark W.
 >>>
 >>> del astro.name
 >>> print(astro.name)

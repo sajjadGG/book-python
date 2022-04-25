@@ -28,7 +28,7 @@ Tests:
     ...    def make_damage(self):
     ...        return 10
 
-    >>> hero = Hero('Jan Twardowski')
+    >>> hero = Hero('Mark Watney')
     >>> hero.make_damage()
     10
     >>> hero.current_health = -10

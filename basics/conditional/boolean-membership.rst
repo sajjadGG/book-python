@@ -233,7 +233,7 @@ Yes
 
 >>> crew = ['Watney', 'Lewis', 'Martinez']
 >>>
->>> if 'Twardowski' in crew:
+>>> if 'Vogel' in crew:
 ...     print('Yes')
 ... else:
 ...     print('No')
@@ -241,7 +241,7 @@ No
 
 >>> crew = {'Watney', 'Lewis', 'Martinez'}
 >>>
->>> if 'Twardowski' in crew:
+>>> if 'Vogel' in crew:
 ...     print('Yes')
 ... else:
 ...     print('No')

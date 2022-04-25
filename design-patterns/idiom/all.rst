@@ -19,7 +19,7 @@ Use Case
 >>> all(x for x in range(0,5))
 False
 
->>> DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
+>>> DATA = [{'is_astronaut': True,  'name': 'Pan Twardowski'},
 ...         {'is_astronaut': True,  'name': 'Mark Watney'},
 ...         {'is_astronaut': False, 'name': 'José Jiménez'},
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},

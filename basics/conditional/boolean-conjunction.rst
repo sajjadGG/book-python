@@ -51,14 +51,14 @@ Example 2
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
->>> firstname == 'Mark' and lastname == 'Twardowski'
+>>> firstname == 'Mark' and lastname == 'Lewis'
 False
 
 Because:
 
 >>> firstname == 'Mark'
 True
->>> lastname == 'Twardowski'
+>>> lastname == 'Lewis'
 False
 
 Rule:

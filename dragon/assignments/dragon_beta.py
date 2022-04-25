@@ -99,7 +99,7 @@ class Hero(Character):
 
 def run():
     dragon = Dragon(name='Wawelski')
-    hero = Hero(name='Jan Twardowski')
+    hero = Hero(name='Pan Twardowski')
 
     turn = 1
 

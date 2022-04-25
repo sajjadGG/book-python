@@ -45,7 +45,7 @@ ORM Q
 <QuerySet [<Person: Mark Watney>, <Person: Melissa Lewis>]>
 
 >>> Person.objects.filter(astro1|astro2 | ~(fname&lname))
-<QuerySet [<Person: Mark Watney>, <Person: Rick Martinez>, <Person: Melissa Lewis>, <Person: Jan Twardowski>, <Person: Mark Watney>, <Person: Jan X>, <Person: Mark W>]>
+<QuerySet [<Person: Mark Watney>, <Person: Rick Martinez>, <Person: Melissa Lewis>, <Person: Mark Watney>, <Person: Mark W>]>
 
 >>> Person.objects.filter( (astro1|astro2) & ~(fname&lname) )
 <QuerySet [<Person: Melissa Lewis>]>

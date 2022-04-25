@@ -318,12 +318,12 @@ Object Equality
 ...     pass
 >>>
 >>> a = Astronaut()
->>> a.firstname = 'Pan'
->>> a.lastname = 'Twardowski'
+>>> a.firstname = 'Mark'
+>>> a.lastname = 'Watney'
 >>>
 >>> c = Cosmonaut()
->>> c.firstname = 'Pan'
->>> c.lastname = 'Twardowski'
+>>> c.firstname = 'Mark'
+>>> c.lastname = 'Watney'
 >>>
 >>> a is c
 False
@@ -451,8 +451,8 @@ Use Case - 0x01
 ...            and self.lastname == other.lastname
 >>>
 >>>
->>> a1 = Astronaut('Pan', 'Twardowski')
->>> a2 = Astronaut('Pan', 'Twardowski')
+>>> a1 = Astronaut('Mark', 'Watney')
+>>> a2 = Astronaut('Mark', 'Watney')
 >>>
 >>> a1 == a2
 True
@@ -480,8 +480,8 @@ Use Case - 0x02
 ...         self.lastname = lastname
 >>>
 >>>
->>> a = Astronaut('Pan', 'Twardowski')
->>> c = Cosmonaut('Pan', 'Twardowski')
+>>> a = Astronaut('Mark', 'Watney')
+>>> c = Cosmonaut('Mark', 'Watney')
 >>>
 >>> a == c
 True
@@ -510,8 +510,8 @@ Use Case - 0x03
 ...         self.lastname = lastname
 >>>
 >>>
->>> a = Astronaut('Pan', 'Twardowski')
->>> c = Cosmonaut('Pan', 'Twardowski')
+>>> a = Astronaut('Mark', 'Watney')
+>>> c = Cosmonaut('Mark', 'Watney')
 >>>
 >>> a == c
 False
@@ -554,8 +554,8 @@ Use Case - 0x04
 ...         self.lastname = lastname
 ...
 ...
-... a = Astronaut('Jan', 'Twardowski')
-... c = Cosmonaut('Jan', 'Twardowski')
+... a = Astronaut('Mark', 'Watney')
+... c = Cosmonaut('Mark', 'Watney')
 ...
 ... a == c
 False

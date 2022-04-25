@@ -146,7 +146,7 @@ Use Case - 0x02
     lib = ctypes.CDLL('mylibrary.so')
 
     lib.greeting.argtypes = [ctypes.c_char_p]
-    name = ctypes.create_string_buffer('Twardowski'.encode('ASCII'))
+    name = ctypes.create_string_buffer('Watney'.encode('ASCII'))
     lib.greeting(name)
 
 

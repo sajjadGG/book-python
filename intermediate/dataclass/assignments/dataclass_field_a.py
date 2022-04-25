@@ -73,7 +73,7 @@ from typing import Optional
 
 
 DATA = [
-    {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
+    {"firstname": "Pan", "lastname": "Twardowski", "addresses": [
         {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków",
          "post_code": 31008, "region": "Małopolskie", "country": "Poland"}]},
 

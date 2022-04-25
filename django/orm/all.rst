@@ -20,32 +20,32 @@ All
 Order
 -----
 >>> Person.objects.all().order_by('lastname')
-<QuerySet [<Person: Mark Watney>, <Person: Melissa Lewis>, <Person: Rick Martinez>, <Person: Jan Twardowski>, <Person: Mark W>, <Person: Mark Watney>, <Person: Jan X>]>
+<QuerySet [<Person: Mark Watney>, <Person: Melissa Lewis>, <Person: Rick Martinez>, <Person: Mark W>, <Person: Mark Watney>]>
 
 >>> Person.objects.all().order_by('-lastname')
-<QuerySet [<Person: Jan X>, <Person: Mark Watney>, <Person: Mark W>, <Person: Jan Twardowski>, <Person: Rick Martinez>, <Person: Melissa Lewis>, <Person: Mark Watney>]>
+<QuerySet [<Person: Mark Watney>, <Person: Mark W>, <Person: Rick Martinez>, <Person: Melissa Lewis>, <Person: Mark Watney>]>
 
 >>> Person.objects.all().order_by('-lastname', 'firstname')
-<QuerySet [<Person: Jan X>, <Person: Mark Watney>, <Person: Mark W>, <Person: Jan Twardowski>, <Person: Rick Martinez>, <Person: Melissa Lewis>, <Person: Mark Watney>]>
+<QuerySet [<Person: Mark Watney>, <Person: Mark W>, <Person: Rick Martinez>, <Person: Melissa Lewis>, <Person: Mark Watney>]>
 
 
 Values
 ------
 >>> Person.objects.all().values('firstname')
-<QuerySet [{'firstname': 'Mark'}, {'firstname': 'Rick'}, {'firstname': 'Melissa'}, {'firstname': 'Jan'}, {'firstname': 'Mark'}, {'firstname': 'Watney'}, {'firstname': 'Mark'}]>
+<QuerySet [{'firstname': 'Mark'}, {'firstname': 'Rick'}, {'firstname': 'Melissa'}, {'firstname': 'Mark'}, {'firstname': 'Watney'}, {'firstname': 'Mark'}]>
 
 >>> Person.objects.all().values('firstname').distinct()
-<QuerySet [{'firstname': 'Mark'}, {'firstname': 'Rick'}, {'firstname': 'Melissa'}, {'firstname': 'Jan'}, {'firstname': 'Mark'}]>
+<QuerySet [{'firstname': 'Mark'}, {'firstname': 'Rick'}, {'firstname': 'Melissa'}, {'firstname': 'Mark'}]>
 
 >>> c = Person.objects.all()
 >>> fname = c.values('firstname')
 >>> lname = c.values('lastname')
 >>>
 >>> fname
-<QuerySet [{'firstname': 'Mark'}, {'firstname': 'Rick'}, {'firstname': 'Melissa'}, {'firstname': 'Jan'}, {'firstname': 'Mark'}, {'firstname': 'Jan'}, {'firstname': 'Mark'}]>
+<QuerySet [{'firstname': 'Mark'}, {'firstname': 'Rick'}, {'firstname': 'Melissa'}, {'firstname': 'Mark'}, {'firstname': 'Mark'}]>
 >>>
 >>> lname
-<QuerySet [{'lastname': 'Watney'}, {'lastname': 'Lewis'}, {'lastname': 'Martinez'}, {'lastname': 'Twardowski'}, {'lastname': 'W'}, {'lastname': 'Watney'}, {'lastname': 'X'}]>
+<QuerySet [{'lastname': 'Watney'}, {'lastname': 'Lewis'}, {'lastname': 'Martinez'}, {'lastname': 'W'}, {'lastname': 'Watney'}]>
 
 
 Debug

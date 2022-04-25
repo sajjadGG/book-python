@@ -8,32 +8,32 @@ from .models import Person
 class PersonTest(TestCase):
 
     def test_create_person(self):
-        p = Person.objects.create(firstname='Jan', lastname='Twardowski')
-        self.assertEqual(p.firstname, 'Jan')
-        self.assertEqual(p.lastname, 'Twardowski')
+        p = Person.objects.create(firstname='Mark', lastname='Watney')
+        self.assertEqual(p.firstname, 'Mark')
+        self.assertEqual(p.lastname, 'Watney')
 
     def test_is_adult(self):
         p1 = Person.objects.create(
             firstname='First',
-            lastname='Twardowski',
+            lastname='Watney',
             date_of_birth=date(2018, 12, 6))
         self.assertFalse(p1.is_adult())
 
         # p2 = Person.objects.create(
         #     firstname='Second',
-        #     lastname='Twardowski',
+        #     lastname='Watney',
         #     date_of_birth=date(2000, 12, 5))
         # self.assertTrue(p2.is_adult())
         #
         # p3 = Person.objects.create(
         #     firstname='Third',
-        #     lastname='Twardowski',
+        #     lastname='Watney',
         #     date_of_birth=date(2000, 12, 6))
         # self.assertTrue(p3.is_adult())
         #
         # p4 = Person.objects.create(
         #     firstname='Fourth',
-        #     lastname='Twardowski',
+        #     lastname='Watney',
         #     date_of_birth=date(2000, 12, 7))
         # self.assertFalse(p3.is_adult())
 

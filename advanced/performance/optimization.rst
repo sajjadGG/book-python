@@ -163,37 +163,37 @@ String Concatenation
 --------------------
 How many string are there in a memory?:
 
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
 >>>
 >>> firstname + ' ' + lastname
-'Jan Twardowski'
+'Mark Watney'
 
 How many string are there in a memory?:
 
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
 >>>
 >>> f'{firstname} {lastname}'
-'Jan Twardowski'
+'Mark Watney'
 
 How many string are there in a memory?:
 
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
 >>> age = 42
 >>>
 >>> 'Hello ' + firstname + ' ' + lastname + ' ' + str(age) + '!'
-'Hello Jan Twardowski 42!'
+'Hello Mark Watney 42!'
 
 How many string are there in a memory?:
 
->>> firstname = 'Jan'
->>> lastname = 'Twardowski'
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
 >>> age = 42
 >>>
 >>> f'Hello {firstname} {lastname} {age}!'
-'Hello Jan Twardowski 42!'
+'Hello Mark Watney 42!'
 
 
 String Append

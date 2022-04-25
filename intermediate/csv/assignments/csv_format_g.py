@@ -39,7 +39,7 @@ Tests:
     'Variable `result` has invalid type, should be str'
 
     >>> print(result)   # doctest: +NORMALIZE_WHITESPACE
-    Jan,Twardowski
+    Pan,Twardowski
     Rick,Martinez
     Mark,Watney
     Ivan,Ivanovic
@@ -48,7 +48,7 @@ Tests:
 """
 
 DATA = [
-    {'firstname': 'Jan', 'lastname': 'Twardowski'},
+    {'firstname': 'Pan', 'lastname': 'Twardowski'},
     {'firstname': 'Rick', 'lastname': 'Martinez'},
     {'firstname': 'Mark', 'lastname': 'Watney'},
     {'firstname': 'Ivan', 'lastname': 'Ivanovic'},

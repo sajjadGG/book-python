@@ -186,7 +186,7 @@ ORM Filter
 <QuerySet [<Person: Mark Watney>]>
 
 >>> Person.objects.filter(age__isnull=True)
-<QuerySet [<Person: Rick Martinez>, <Person: Melissa Lewis>, <Person: Jan Twardowski>, <Person: Mark Watney>, <Person: Jan X>, <Person: Mark W>]>
+<QuerySet [<Person: Rick Martinez>, <Person: Melissa Lewis>, <Person: Mark Watney>, <Person: Mark W>]>
 
 >>> Address.objects.filter(Person__age__isnull=True)
 <QuerySet [<Address: Melissa Lewis - Powstańców Wielkopolskich, Krakow, malopolskie Poland>]>

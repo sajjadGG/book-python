@@ -24,7 +24,7 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'firstname': 'Jan', 'lastname': 'Twardowski', 'missions': '1967,Apollo 1;1970,Apollo 13;1973,Apollo 18'},
+    [{'firstname': 'Pan', 'lastname': 'Twardowski', 'missions': '1967,Apollo 1;1970,Apollo 13;1973,Apollo 18'},
      {'firstname': 'Ivan', 'lastname': 'Ivanovic', 'missions': '2023,Artemis 2;2024,Artemis 3'},
      {'firstname': 'Mark', 'lastname': 'Watney', 'missions': '2035,Ares 3'},
      {'firstname': 'Melissa', 'lastname': 'Lewis', 'missions': ''}]
@@ -44,7 +44,7 @@ class Mission:
 
 
 DATA = [
-    Astronaut('Jan', 'Twardowski', missions=[
+    Astronaut('Pan', 'Twardowski', missions=[
         Mission('1967', 'Apollo 1'),
         Mission('1970', 'Apollo 13'),
         Mission('1973', 'Apollo 18')]),

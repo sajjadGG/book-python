@@ -13,20 +13,26 @@ Introspecting Types
 --------
 .. code-block:: python
 
-    id('Jan Twardowski')                 # 4596416368
-    id('Jan Twardowski')                 # 4592969392
+    id('Mark Watney')
+    # 4596416368
+    id('Mark Watney')
+    # 4592969392
 
 .. code-block:: python
 
-    name = 'Jan Twardowski'
+    name = 'Mark Watney'
 
-    id(name)                            # 4596353264
-    id(name)                            # 4596353264
+    id(name)
+    # 4596353264
+    id(name)
+    # 4596353264
 
 .. code-block:: python
 
-    id('Jan Twardowski')                # 4466061520
-    id(str)                             # 4306722176
+    id('Mark Watney')
+    # 4466061520
+    id(str)
+    # 4306722176
 
 ``type()``
 ----------
@@ -320,4 +326,3 @@ Examples
     for name, obj in inspect.getmembers(models):
         if inspect.isclass(obj):
             admin.site.register(getattr(models, name))
-

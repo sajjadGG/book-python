@@ -21,7 +21,7 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> astro = Astronaut(firstname='Jan', lastname='Twardowski', missions=[
+    >>> astro = Astronaut(firstname='Mark', lastname='Watney', missions=[
     ...     Mission(1969, 'Apollo 11'),
     ...     Mission(2024, 'Artemis 3'),
     ...     Mission(2035, 'Ares 3'),
@@ -90,4 +90,3 @@ class Astronaut:
 
     def __contains__(self, flight):
         return flight in self.missions
-

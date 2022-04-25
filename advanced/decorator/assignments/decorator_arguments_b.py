@@ -43,7 +43,7 @@ Tests:
     'check_astronauts() should return decorator which can take a function'
 
     >>> CREW_PRIMARY = [
-    ...    {'is_astronaut': True, 'name': 'Jan Twardowski'},
+    ...    {'is_astronaut': True, 'name': 'Pan Twardowski'},
     ...    {'is_astronaut': True, 'name': 'Mark Watney'},
     ...    {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
@@ -58,7 +58,7 @@ Tests:
     ...    return f'Launching: {crew}'
 
     >>> launch(CREW_PRIMARY)
-    'Launching: Jan Twardowski, Mark Watney, Melissa Lewis'
+    'Launching: Pan Twardowski, Mark Watney, Melissa Lewis'
 
     >>> launch(CREW_BACKUP)
     Traceback (most recent call last):
@@ -71,7 +71,7 @@ Tests:
 
     >>> launch(CREW_PRIMARY)
     Traceback (most recent call last):
-    PermissionError: Jan Twardowski is not an astronaut
+    PermissionError: Pan Twardowski is not an astronaut
 
     >>> launch(CREW_BACKUP)
     Traceback (most recent call last):

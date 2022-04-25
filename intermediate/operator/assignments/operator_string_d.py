@@ -34,7 +34,7 @@ Tests:
           2035: Ares 3]
 
     >>> crew = Crew([
-    ...     Astronaut('Jan Twardowski', experience=[
+    ...     Astronaut('Pan Twardowski', experience=[
     ...         Mission(1969, 'Apollo 11'),
     ...         Mission(2024, 'Artemis 3'),
     ...     ]),
@@ -46,7 +46,7 @@ Tests:
 
     >>> print(f'Crew: \\n{crew}')  # doctest: +NORMALIZE_WHITESPACE
     Crew:
-    Jan Twardowski veteran of [
+    Pan Twardowski veteran of [
           1969: Apollo 11,
           2024: Artemis 3]
     José Jiménez

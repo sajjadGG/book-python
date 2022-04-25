@@ -41,7 +41,7 @@ Example
 >>>
 >>> astro1 = Astronaut('Mark', 'Watney')
 >>> astro2 = Astronaut('Mark', 'Watney')
->>> astro3 = Astronaut('Jan', 'Twardowski')
+>>> astro3 = Astronaut('Melissa', 'Lewis')
 
 
 Init
@@ -164,7 +164,7 @@ Eq
 >>>
 >>> astro1 = Astronaut('Mark', 'Watney')
 >>> astro2 = Astronaut('Mark', 'Watney')
->>> astro3 = Astronaut('Jan', 'Twardowski')
+>>> astro3 = Astronaut('Melissa', 'Lewis')
 >>>
 >>> astro1 == astro1
 True
@@ -191,7 +191,7 @@ True
 >>>
 >>> astro1 = Astronaut('Mark', 'Watney')
 >>> astro2 = Astronaut('Mark', 'Watney')
->>> astro3 = Astronaut('Jan', 'Twardowski')
+>>> astro3 = Astronaut('Melissa', 'Lewis')
 >>>
 >>> astro1 == astro1
 True

@@ -28,7 +28,7 @@ One element tuple (``ADMINISTRATORS``) has comma at the end:
 .. code-block:: python
 
     ## Content of the ``settings.py`` file
-    ADMINISTRATORS = 'jan.twardowski@polsa.gov.pl',
+    ADMINISTRATORS = 'mwatney@nasa.gov',
 
 
     ## Content of the ``script.py`` file
@@ -37,14 +37,14 @@ One element tuple (``ADMINISTRATORS``) has comma at the end:
     for admin in ADMINISTRATORS:
         print(admin)
 
-    # jan.twardowski@polsa.gov.pl
+    # mwatney@nasa.gov
 
 Problem with missing coma for ``ADMINISTRATORS`` tuple:
 
 .. code-block:: python
 
     ## Content of the ``settings.py`` file
-    ADMINISTRATORS = 'jan.twardowski@polsa.gov.pl'
+    ADMINISTRATORS = 'mwatney@nasa.gov'
 
 
     ## Content of the ``script.py`` file
@@ -53,16 +53,22 @@ Problem with missing coma for ``ADMINISTRATORS`` tuple:
     for admin in ADMINISTRATORS:
         print(admin)
 
-    # j
-    # a
-    # n
-    # .
-    # t
+    # m
     # w
-    #[...]
+    # a
+    # t
+    # n
+    # e
+    # y
+    # @
+    # n
+    # a
+    # s
+    # a
     # .
-    # p
-    # l
+    # g
+    # o
+    # v
 
 
 ``pprint``

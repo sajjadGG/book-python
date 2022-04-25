@@ -87,7 +87,7 @@ StopIteration
 Use Cases
 ---------
 >>> people = [
-...     {'age': 21, 'name': 'Jan Twardowski'},
+...     {'age': 21, 'name': 'Pan Twardowski'},
 ...     {'age': 25, 'name': 'Mark Watney'},
 ...     {'age': 18, 'name': 'Melissa Lewis'}]
 >>>
@@ -98,11 +98,11 @@ Use Cases
 >>>
 >>> result = filter(adult, people)
 >>> list(result)  # doctest: +NORMALIZE_WHITESPACE
-[{'age': 21, 'name': 'Jan Twardowski'},
+[{'age': 21, 'name': 'Pan Twardowski'},
  {'age': 25, 'name': 'Mark Watney'}]
 
 >>> people = [
-...     {'is_astronaut': False, 'name': 'Jan Twardowski'},
+...     {'is_astronaut': False, 'name': 'Pan Twardowski'},
 ...     {'is_astronaut': True, 'name': 'Mark Watney'},
 ...     {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 >>>
@@ -117,9 +117,7 @@ Use Cases
  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
 >>> astronauts = ['Mark Watney', 'Melissa Lewis']
->>>
->>> people = ['Jan Twardowski', 'Mark Watney',
-...           'Melissa Lewis', 'Jimenez']
+>>> people = ['Mark Watney', 'Melissa Lewis', 'Jimenez']
 >>>
 >>>
 >>> def is_astronaut(person):

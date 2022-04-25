@@ -17,7 +17,7 @@ Problem
 -------
 Assume we received ``DATA`` from the REST API endpoint:
 
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> DATA = '{"firstname": "Pan", "lastname": "Twardowski"}'
 
 Let's define a ``User`` class:
 
@@ -62,7 +62,7 @@ User object without passing those values. In both cases this will work,
 but it is not good:
 
 >>> User(None, None).from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
+User(firstname='Pan', lastname='Twardowski')
 
 
 Solution
@@ -117,10 +117,10 @@ in order to get some more readability:
 ...         return User(**data)
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> DATA = '{"firstname": "Pan", "lastname": "Twardowski"}'
 >>>
 >>> User.from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
+User(firstname='Pan', lastname='Twardowski')
 
 
 Namespace

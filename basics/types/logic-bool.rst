@@ -232,13 +232,13 @@ Use Case - 0x02
 >>> lastname = 'Watney'
 >>>
 >>>
->>> firstname == 'Mark' and lastname == 'Twardowski'
+>>> firstname == 'Mark' and lastname == 'Lewi'
 False
 >>>
 >>> firstname == 'Mark'
 True
 >>>
->>> lastname == 'Twardowski'
+>>> lastname == 'Lewi'
 False
 >>>
 >>> True and False

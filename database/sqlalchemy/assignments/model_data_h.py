@@ -41,7 +41,7 @@ Tests:
     ...            for addr in astro.addresses)
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [Astronaut(firstname='Jan',
+    [Astronaut(firstname='Pan',
                lastname='Twardowski',
                addresses=[Address(street='Kamienica Pod św. Janem Kapistranem', city='Kraków', postcode='31-008', region='Małopolskie', country='Poland')]),
      Astronaut(firstname='José',
@@ -68,7 +68,7 @@ from dataclasses import dataclass
 
 
 DATA = [
-    {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
+    {"firstname": "Pan", "lastname": "Twardowski", "addresses": [
         {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "postcode": "31-008", "region": "Małopolskie", "country": "Poland"}]},
     {"firstname": "José", "lastname": "Jiménez", "addresses": [
         {"street": "2101 E NASA Pkwy", "city": "Houston", "postcode": 77058, "region": "Texas", "country": "USA"},

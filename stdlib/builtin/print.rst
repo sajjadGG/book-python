@@ -134,7 +134,7 @@ String concatenation
 
 .. code-block:: python
 
-    name = 'José Jiménez'
+    name = 'Mark Watney'
 
     'My name... ' + name
     # 'My name... José Jiménez'
@@ -143,21 +143,21 @@ String concatenation
 
 .. code-block:: python
 
-    name = 'José Jiménez'
-    age = 42
+    name = 'Mark Watney'
+    age = 40
 
     'My name... ' + name + ' and I am ' + str(age) + ' years old!'
-    # 'My name... José Jiménez and I am 42 years old!'
+    # 'My name... Mark Watney and I am 40 years old!'
 
 ``str.join()``
 --------------
 .. code-block:: python
 
-    data = ['Pan Twardowski', 'Mark Watney', 'José Jiménez']
+    data = ['Mark Watney', 'Melissa Lewis', 'Rick Martinez']
 
-    ' '.join(data)              # 'Pan Twardowski Mark Watney José Jiménez'
-    ','.join(data)              # 'Pan Twardowski,Mark Watney,José Jiménez'
-    ', '.join(data)             # 'Pan Twardowski, Mark Watney, José Jiménez'
+    ' '.join(data)              # 'Mark Watney Melissa Lewis Rick Martinez'
+    ','.join(data)              # 'Mark Watney,Melissa Lewis,Rick Martinez'
+    ', '.join(data)             # 'Mark Watney, Melissa Lewis, Rick Martinez'
 
 
 Variable interpolation

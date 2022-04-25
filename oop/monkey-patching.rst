@@ -313,7 +313,7 @@ Object Initialization
 
     class User:
         def __init__(self):
-            self.name = 'Jan'
+            self.name = 'Mark Watney'
 
         def hello(self):
             print('hello')
@@ -329,7 +329,7 @@ Object Initialization
 
 
     u = User()
-    u.name = 'Jan'
+    u.name = 'Mark Watney'
     u.hello = lambda: print('hello')
 
     u.hello()

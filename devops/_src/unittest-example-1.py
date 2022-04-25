@@ -39,15 +39,15 @@ class UserTest(TestCase):
 
     def setUp(self) -> None:
         now = datetime.now(tz=timezone.utc)
-        self.user = User(firstname='Jan', lastname='Twardowski', date_of_birth=now)
+        self.user = User(firstname='Mark', lastname='Watney', date_of_birth=now)
 
     def tearDown(self) -> None:
         pass
 
     def test_create_user(self):
-        user = User(firstname='Jan', lastname='Twardowski')
-        self.assertEqual(user.firstname, 'Jan')
-        self.assertEqual(user.lastname, 'Twardowski')
+        user = User(firstname='Mark', lastname='Watney')
+        self.assertEqual(user.firstname, 'Mark')
+        self.assertEqual(user.lastname, 'Watney')
 
     def test_permission_add(self):
         self.user.add_permission('read')
@@ -64,8 +64,8 @@ class UserTest(TestCase):
     def test_date_of_birth_not_in_utc(self):
         with self.assertRaises(ValueError):
             now = datetime.now()
-            user = User(firstname='Jan', lastname='Twardowski', date_of_birth=now)
+            user = User(firstname='Mark', lastname='Watney', date_of_birth=now)
             self.assertEqual(user.date_of_birth.tzinfo, timezone.utc)
 
     def test_str(self):
-        self.assertEqual(str(self.user), 'User(firstname="Jan", lastname="Twardowski")')
+        self.assertEqual(str(self.user), 'User(firstname="Mark", lastname="Watney")')

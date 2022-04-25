@@ -120,7 +120,7 @@ Use Case - 0x01
 ---------------
 .. code-block:: json
 
-    [{"firstname": "Jan", "lastname": "Twardowski", "addresses": [
+    [{"firstname": "Pan", "lastname": "Twardowski", "addresses": [
         {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Małopolskie", "country": "Poland"}]},
 
      {"firstname": "Mark", "lastname": "Watney", "addresses": [

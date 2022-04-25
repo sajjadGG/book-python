@@ -203,7 +203,7 @@ Use Case - 0x02
 ...     SELECT * FROM astronauts
 ... """
 >>>
->>> DATA = [{'firstname': 'Jan', 'lastname': 'Twardowski', 'age': 44},
+>>> DATA = [{'firstname': 'Pan', 'lastname': 'Twardowski', 'age': 44},
 ...         {'firstname': 'Mark', 'lastname': 'Watney', 'age': 33},
 ...         {'firstname': 'Melissa', 'lastname': 'Lewis', 'age': 36}]
 >>>
@@ -217,7 +217,7 @@ Use Case - 0x02
 ...         print(dict(row))
 <sqlite3.Cursor object at 0x...>
 <sqlite3.Cursor object at 0x...>
-{'id': 1, 'firstname': 'Jan', 'lastname': 'Twardowski', 'age': 44}
+{'id': 1, 'firstname': 'Pan', 'lastname': 'Twardowski', 'age': 44}
 {'id': 2, 'firstname': 'Mark', 'lastname': 'Watney', 'age': 33}
 {'id': 3, 'firstname': 'Melissa', 'lastname': 'Lewis', 'age': 36}
 

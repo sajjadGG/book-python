@@ -29,7 +29,7 @@ Tests:
     >>> assert ismethod(astro.__iter__)
     >>> assert ismethod(astro.__next__)
 
-    >>> astro = Astronaut('Jan', 'Twardowski', missions=(
+    >>> astro = Astronaut('Pan', 'Twardowski', missions=(
     ...     Mission(1969, 'Apollo 11'),
     ...     Mission(2024, 'Artemis 3'),
     ...     Mission(2035, 'Ares 3'),

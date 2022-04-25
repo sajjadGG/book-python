@@ -114,12 +114,12 @@ Works with ``str``, ``list``, ``tuple``
 
 Converting ``set`` deduplicate items:
 
->>> data = ['Twardowski',
-...         'Twardowski',
-...         'Watney',
-...         'Twardowski']
+>>> data = ['Watney',
+...         'Lewis',
+...         'Martinez',
+...         'Watney']
 ...
->>> set(data) == {'Twardowski', 'Watney'}
+>>> set(data) == {'Watney', 'Lewis', 'Martinez'}
 True
 
 

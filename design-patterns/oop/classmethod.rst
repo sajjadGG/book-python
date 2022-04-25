@@ -35,7 +35,7 @@ Example
 ...         return User(**data)
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> DATA = '{"firstname": "Pan", "lastname": "Twardowski"}'
 >>>
 >>> User.from_json(DATA)
 Traceback (most recent call last):
@@ -46,7 +46,7 @@ Traceback (most recent call last):
 TypeError: User.__init__() missing 2 required positional arguments: 'firstname' and 'lastname'
 >>>
 >>> User(None, None).from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
+User(firstname='Pan', lastname='Twardowski')
 
 >>> import json
 >>> from dataclasses import dataclass
@@ -63,10 +63,10 @@ User(firstname='Jan', lastname='Twardowski')
 ...         return User(**data)
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> DATA = '{"firstname": "Pan", "lastname": "Twardowski"}'
 >>>
 >>> User.from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
+User(firstname='Pan', lastname='Twardowski')
 
 >>> import json
 >>> from dataclasses import dataclass
@@ -85,10 +85,10 @@ User(firstname='Jan', lastname='Twardowski')
 ...     lastname: str
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> DATA = '{"firstname": "Pan", "lastname": "Twardowski"}'
 >>>
 >>> print(User.from_json(DATA))
-User(firstname='Jan', lastname='Twardowski')
+User(firstname='Pan', lastname='Twardowski')
 
 >>> import json
 >>> from dataclasses import dataclass
@@ -106,14 +106,14 @@ User(firstname='Jan', lastname='Twardowski')
 ...     lastname: str = None
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> DATA = '{"firstname": "Pan", "lastname": "Twardowski"}'
 >>>
 >>> User.from_json(DATA)
 Traceback (most recent call last):
 TypeError: JSONMixin.from_json() missing 1 required positional argument: 'data'
 >>>
 >>> User().from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
+User(firstname='Pan', lastname='Twardowski')
 
 Trying to use method with ``self``:
 
@@ -133,7 +133,7 @@ Trying to use method with ``self``:
 ...     lastname: str = None
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> DATA = '{"firstname": "Pan", "lastname": "Twardowski"}'
 >>>
 >>> User.from_json(DATA)
 Traceback (most recent call last):
@@ -162,14 +162,14 @@ Trying to use method with ``self.__init__()``:
 ...     lastname: str = None
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> DATA = '{"firstname": "Pan", "lastname": "Twardowski"}'
 >>>
 >>> User.from_json(DATA)
 Traceback (most recent call last):
 TypeError: JSONMixin.from_json() missing 1 required positional argument: 'data'
 >>>
 >>> User().from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
+User(firstname='Pan', lastname='Twardowski')
 
 Trying to use methods ``self.__new__()`` and ``self.__init__()``:
 
@@ -191,14 +191,14 @@ Trying to use methods ``self.__new__()`` and ``self.__init__()``:
 ...     lastname: str = None
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> DATA = '{"firstname": "Pan", "lastname": "Twardowski"}'
 >>>
 >>> User.from_json(DATA)
 Traceback (most recent call last):
 TypeError: JSONMixin.from_json() missing 1 required positional argument: 'data'
 >>>
 >>> User().from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
+User(firstname='Pan', lastname='Twardowski')
 
 >>> import json
 >>> from dataclasses import dataclass
@@ -216,10 +216,10 @@ User(firstname='Jan', lastname='Twardowski')
 ...     lastname: str
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> DATA = '{"firstname": "Pan", "lastname": "Twardowski"}'
 >>>
 >>> User.from_json(DATA)
-User(firstname='Jan', lastname='Twardowski')
+User(firstname='Pan', lastname='Twardowski')
 
 
 Use Case - 0x01
@@ -245,13 +245,13 @@ Use Case - 0x01
 ...     lastname: str
 >>>
 >>>
->>> DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+>>> DATA = '{"firstname": "Pan", "lastname": "Twardowski"}'
 >>>
 >>> Guest.from_json(DATA)
-Guest(firstname='Jan', lastname='Twardowski')
+Guest(firstname='Pan', lastname='Twardowski')
 >>>
 >>> Admin.from_json(DATA)
-Admin(firstname='Jan', lastname='Twardowski')
+Admin(firstname='Pan', lastname='Twardowski')
 
 
 Use Case - 0x02

@@ -65,13 +65,13 @@ Use Case - 0x01
 >>> crew = [Astronaut('Mark Watney'),
 ...         Cosmonaut('Иван Иванович'),
 ...         Astronaut('Melissa Lewis'),
-...         Cosmonaut('Jan Twardowski')]
+...         Cosmonaut('Pan Twardowski')]
 >>>
 >>> hello(crew)
 Hello Mark Watney
 Привет Иван Иванович
 Hello Melissa Lewis
-Привет Jan Twardowski
+Привет Pan Twardowski
 
 In Python, due to the duck typing and dynamic nature of the language, the Interface or abstract class is not needed to do polymorphism:
 
@@ -96,14 +96,14 @@ In Python, due to the duck typing and dynamic nature of the language, the Interf
 >>> crew = [Astronaut('Mark Watney'),
 ...         Cosmonaut('Иван Иванович'),
 ...         Astronaut('Melissa Lewis'),
-...         Cosmonaut('Jan Twardowski')]
+...         Cosmonaut('Pan Twardowski')]
 >>>
 >>> for member in crew:
 ...     print(member.say_hello())
 Hello Mark Watney
 Привет Иван Иванович
 Hello Melissa Lewis
-Привет Jan Twardowski
+Привет Pan Twardowski
 
 
 Use Case - 0x02
