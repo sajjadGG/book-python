@@ -1,13 +1,14 @@
 Datetime Format
 ===============
 * ``format(dt, '%Y-%m-%d')``
-* ``dt.__format__('%Y-%m-%d')``
-* ``dt.strftime('%Y-%m-%d')``
 * ``f'Today is {dt:%Y-%m-%d}'``
+* ``dt.strftime('%Y-%m-%d')``
 
 
 Formats
 -------
+* ``format(dt, '%Y-%m-%d')``
+
 >>> from datetime import datetime
 >>>
 >>>
@@ -112,7 +113,6 @@ ValueError: Invalid format string
 >>> format(dt, '%#H:%M')  # doctest: +SKIP
 '6:07'
 
-
 .. csv-table:: Leading Zero
     :header: "Meaning", "With", "Without (macOS, Linux)", "Without (Windows)"
     :widths: 55, 15, 15, 15
@@ -133,6 +133,8 @@ ValueError: Invalid format string
 
 String Format Time
 ------------------
+* ``datetime.strftime()``
+
 >>> from datetime import datetime
 >>>
 >>>

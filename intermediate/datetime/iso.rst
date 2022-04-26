@@ -102,6 +102,7 @@ Weekday
 Duration
 --------
 * Format: ``P...Y...M...DT...H...M...S``
+* Example: P8Y3M8DT20H49M15S
 * ``P`` - period - placed at the start of the duration representation
 * ``Y`` - number of years
 * ``M`` - number of months
@@ -124,8 +125,12 @@ Duration
     15 seconds
 
 
-Python and ISO Format
----------------------
+To ISO Format
+-------------
+* ``datetime.isoformat()``
+* ``date.isoformat()``
+* ``time.isoformat()``
+
 Format to string in ISO-8601 standard:
 
 >>> from datetime import date, time, datetime
@@ -138,11 +143,21 @@ Format to string in ISO-8601 standard:
 >>> dt.isoformat()
 '1969-07-21T02:56:15'
 >>>
+>>> dt.isoformat(' ')
+'1969-07-21 02:56:15'
+>>>
 >>> d.isoformat()
 '1969-07-21'
 >>>
 >>> t.isoformat()
 '02:56:15'
+
+
+From ISO Format
+---------------
+* ``datetime.fromisoformat()``
+* ``date.fromisoformat()``
+* ``time.fromisoformat()``
 
 Parse from string in ISO-8601 standard:
 
