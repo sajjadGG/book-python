@@ -61,7 +61,17 @@ Windows Encoding
 
 .. figure:: img/locale-encoding-windows10-notepad-saveas.png
 
-    Windows 10 Notepad "Save As" window with possibility to select encoding. Since Windows 10.1903 (May 2019) notepad writes files in UTF-8 by default! [#Windows10]_ [#Microsoft]_
+    Windows 10 Notepad "Save As" window with possibility to select encoding.
+
+Since Windows 10.1903 (May 2019) notepad writes files in UTF-8 by default! [#Windows10]_ [#Microsoft]_
+
+.. figure:: img/locale-encoding-win10-21H1-notepad-1.png
+
+    Windows 10 Notepad "Save As" window with possibility to select encoding. Since Windows 10.1903 (May 2019) notepad writes files in UTF-8 by default!
+
+.. figure:: img/locale-encoding-win10-21H1-notepad-2.png
+
+    Windows 10 Notepad "Save As" window with possibility to select encoding. Since Windows 10.1903 (May 2019) notepad writes files in UTF-8 by default!
 
 
 Str vs Bytes
