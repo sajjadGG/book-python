@@ -1,10 +1,10 @@
 Syntax Anchor
 =============
 * ``.`` - any character except a newline (changes meaning with ``re.DOTALL``)
-* ``^`` - start of a string (changes meaning with ``re.MULTILINE``)
-* ``$`` - end of a string (changes meaning with ``re.MULTILINE``)
-* ``\A`` - start of a string (doesn't change meaning with ``re.MULTILINE``)
-* ``\Z`` - end of a string (doesn't change meaning with ``re.MULTILINE``)
+* ``^`` - start of line (changes meaning with ``re.MULTILINE``)
+* ``$`` - end of line (changes meaning with ``re.MULTILINE``)
+* ``\A`` - start of text (doesn't change meaning with ``re.MULTILINE``)
+* ``\Z`` - end of text (doesn't change meaning with ``re.MULTILINE``)
 
 
 Any Character
@@ -35,7 +35,8 @@ Example:
 
 Start of Line
 -------------
-* ``^`` - start of a string (changes meaning with ``re.MULTILINE``)
+* ``^`` - start of a line
+* Changes meaning with ``re.MULTILINE``
 
 >>> import re
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
@@ -53,7 +54,8 @@ Search for a capital letter anywhere in text:
 
 End of Line
 -----------
-* ``$`` - end of a string (changes meaning with ``re.MULTILINE``)
+* ``$`` - end of line
+* Changes meaning with ``re.MULTILINE``
 
 >>> import re
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
@@ -66,7 +68,8 @@ Give me last three characters in a text:
 
 Start of String
 ---------------
-* ``\A`` - start of a string (doesn't change meaning with ``re.MULTILINE``)
+* ``\A`` - start of a text
+* Doesn't change meaning with ``re.MULTILINE``
 
 >>> import re
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
@@ -85,7 +88,8 @@ when ``re.MULTILINE`` flag is present.
 
 End of String
 -------------
-* ``\Z`` - end of a string (doesn't change meaning with ``re.MULTILINE``)
+* ``\Z`` - end of a text
+* Doesn't change meaning with ``re.MULTILINE``
 
 >>> import re
 >>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'

@@ -5,6 +5,7 @@ Syntax About
 * Also known as ``regexp``
 * Also known as ``regex``
 * Also known as ``re``
+* https://www.youtube.com/watch?v=BmF-gEYXWVM&list=PLv4THqSPE6meFeo_jNLgUVKkP40UstIQv&index=3
 
 
 SetUp
@@ -26,8 +27,8 @@ SetUp
 
 Syntax
 ------
-* Qualifiers - range to find (range)
 * Identifiers - what to find (single character)
+* Qualifiers - range to find (range)
 * Negation
 * Quantifiers - how many occurrences of preceding qualifier or identifier
 * Groups
@@ -53,6 +54,9 @@ Escape characters
 * ``\o`` - octal
 * ``\u`` - Unicode entity 16-bit
 * ``\U`` - Unicode entity 32-bit
+* ``\\`` - backslash
+* ``\'`` - apostrophe
+* ``\"`` - double quote
 
 >>> import string
 >>>

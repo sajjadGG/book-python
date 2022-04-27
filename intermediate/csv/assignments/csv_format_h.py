@@ -1,6 +1,6 @@
 """
 * Assignment: CSV Format WriteFixed
-* Complexity: easy
+* Complexity: medium
 * Lines of code: 5 lines
 * Time: 5 min
 

@@ -7,6 +7,7 @@ Syntax Flag
 * ``re.DOTALL``
 * ``re.UNICODE``
 * ``re.VERBOSE``
+* ``re.DEBUG``
 
 The final piece of regex syntax that Python's regular expression engine offers
 is a means of setting the flags. Usually the flags are set by passing them as
@@ -21,6 +22,7 @@ simply (?flags) where flags is one or more of the following:
 * ``re.DOTALL``
 * ``re.UNICODE``
 * ``re.VERBOSE``
+* ``re.DEBUG``
 
 If the flags are set this way, they should be put at the start of the regex;
 they match nothing, so their effect on the regex is only to set the flags.

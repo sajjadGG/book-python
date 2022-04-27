@@ -126,15 +126,6 @@ Regular Expressions
     regex/re-type-annotation.rst
 
 
-Enum
-****
-.. toctree::
-    :maxdepth: 1
-    :caption: Enum
-
-    enum/about.rst
-
-
 Dataclass
 *********
 .. toctree::
@@ -168,6 +159,15 @@ Operator
     operator/boolean.rst
     operator/builtin.rst
     operator/accessors.rst
+
+
+Enum
+****
+.. toctree::
+    :maxdepth: 1
+    :caption: Enum
+
+    enum/about.rst
 
 
 Logging
