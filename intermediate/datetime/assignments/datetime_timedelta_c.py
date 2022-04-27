@@ -14,8 +14,8 @@ English:
         * 49 minutes
         * 15 seconds
     2. Assume:
-        a. year = 365.2425 days
-        b. month = 30.436875 days
+        a. year = 365.25 days
+        b. month = 30.4375 days
     3. Define `result: timedelta` representing given period
     4. Run doctests - all must succeed
 
@@ -29,8 +29,8 @@ Polish:
         * 49 minut
         * 15 sekund
     2. Uwzględnij założenie:
-        a. rok = 365.2425 dni
-        b. miesiąc = 30.436875 dni
+        a. rok = 365.25 dni
+        b. miesiąc = 30.4375 dni
     3. Zdefiniuj `result: timedelta` reprezentujące dany okres
     4. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -42,7 +42,7 @@ Tests:
     'Variable `result` has invalid type, must be a timedelta'
 
     >>> result
-    datetime.timedelta(days=3022, seconds=10209)
+    datetime.timedelta(days=3021, seconds=74955)
 """
 
 from datetime import timedelta
@@ -52,14 +52,14 @@ SECOND = 1
 MINUTE = 60 * SECOND
 HOUR = 60 * MINUTE
 DAY = 24 * HOUR
-MONTH = 30.436875 * DAY
-YEAR = 365.2425 * DAY
+MONTH = 30.4375 * DAY
+YEAR = 365.25 * DAY
 
 # 8 years
 # 3 months
 # 8 days
-# 20 hours
-# 49 minutes
+# 13 hours
+# 19 minutes
 # 15 seconds
 
 # representing given period
@@ -67,5 +67,5 @@ YEAR = 365.2425 * DAY
 result = ...
 
 # Solution
-period = int(8*YEAR + 3*MONTH + 8*DAY + 20*HOUR + 49*MINUTE + 15*SECOND)
+period = int(8*YEAR + 3*MONTH + 8*DAY + 13*HOUR + 19*MINUTE + 15*SECOND)
 result = timedelta(seconds=period)

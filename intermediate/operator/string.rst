@@ -339,8 +339,8 @@ Use Case - 0x03
 >>> MINUTE = 60 * SECOND
 >>> HOUR = 60 * MINUTE
 >>> DAY = 24 * HOUR
->>> MONTH = 30.436875 * DAY
->>> YEAR = 365.2425 * DAY
+>>> MONTH = 30.4375 * DAY
+>>> YEAR = 365.25 * DAY
 >>>
 >>>
 >>> class Duration:
@@ -400,8 +400,8 @@ Use Case - 0x04
 >>> MINUTE = 60 * SECOND
 >>> HOUR = 60 * MINUTE
 >>> DAY = 24 * HOUR
->>> MONTH = 30.436875 * DAY
->>> YEAR = 365.2425 * DAY
+>>> MONTH = 30.4375 * DAY
+>>> YEAR = 365.25 * DAY
 >>>
 >>>
 >>> # doctest: +SKIP

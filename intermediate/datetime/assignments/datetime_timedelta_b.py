@@ -38,8 +38,8 @@ from datetime import date, datetime
 
 
 DAY = 1
-MONTH = 30.436875 * DAY
-YEAR = 365.2425 * DAY
+MONTH = 30.4375 * DAY
+YEAR = 365.25 * DAY
 
 GAGARIN_BIRTHDAY = date(1934, 3, 9)
 GAGARIN_LAUNCH = datetime(1961, 4, 12, 6, 7)

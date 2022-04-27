@@ -8,8 +8,8 @@ English:
     1. `DATA` is the time between Gagarin launch and Armstrong
        first step on the Moon
     2. Assume:
-        a. year = 365.2425 days
-        b. month = 30.436875 days
+        a. year = 365.25 days
+        b. month = 30.4375 days
     3. Define `result: dict[str, int]` representing period
     4. Run doctests - all must succeed
 
@@ -17,8 +17,8 @@ Polish:
     1. `DATA`, to czas który upłynął między startem Gagarina
        a pierwszym krokiem Armstronga na Księżycu
     2. Uwzględnij założenie:
-        a. rok = 365.2425 dni
-        b. miesiąc = 30.436875 dni
+        a. rok = 365.25 dni
+        b. miesiąc = 30.4375 dni
     3. Zdefiniuj `result: dict[str, int]` reprezentujący okres
     4. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -45,10 +45,10 @@ Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     {'years': 8,
      'months': 3,
-     'days': 9,
-     'hours': 6,
-     'minutes': 50,
-     'seconds': 9}
+     'days': 8,
+     'hours': 20,
+     'minutes': 49,
+     'seconds': 15}
 """
 
 from datetime import timedelta
@@ -58,10 +58,10 @@ SECOND = 1
 MINUTE = 60 * SECOND
 HOUR = 60 * MINUTE
 DAY = 24 * HOUR
-MONTH = 30.436875 * DAY
-YEAR = 365.2425 * DAY
+MONTH = 30.4375 * DAY
+YEAR = 365.25 * DAY
 
-DATA = timedelta(days=3022, seconds=24609)
+DATA = timedelta(days=3021, seconds=74955)
 
 # dict[str, int]
 result = {

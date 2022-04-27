@@ -8,8 +8,8 @@ English:
     1. Calculate how many years passed between Gagarin's launch
        and Armstrong's first step on the Moon
     2. Assume:
-        a. year = 365.2425 days
-        b. month = 30.436875 days
+        a. year = 365.25 days
+        b. month = 30.4375 days
     3. Result round to one decimal place
     4. Run doctests - all must succeed
 
@@ -17,8 +17,8 @@ Polish:
     1. Podany jest czas, który upłynął między startem Gagarina
        a pierwszym krokiem Armstronga na Księżycu
     2. Uwzględnij założenie:
-        a. rok = 365.2425 dni
-        b. miesiąc = 30.436875 dni
+        a. rok = 365.25 dni
+        b. miesiąc = 30.4375 dni
     3. Rezultat zaokrąglij jednego miejsca po przecinku
     4. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -36,8 +36,8 @@ from datetime import datetime
 
 
 DAY = 1
-MONTH = 30.436875 * DAY
-YEAR = 365.2425 * DAY
+MONTH = 30.4375 * DAY
+YEAR = 365.25 * DAY
 
 GAGARIN = datetime(1961, 4, 12, 6, 7)
 ARMSTRONG = datetime(1969, 7, 21, 2, 56, 15)

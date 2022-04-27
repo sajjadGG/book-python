@@ -13,8 +13,8 @@ SECOND = 1
 MINUTE = 60 * SECOND
 HOUR = 60 * MINUTE
 DAY = 24 * HOUR
-MONTH = 30.436875 * DAY
-YEAR = 365.2425 * DAY
+MONTH = 30.4375 * DAY
+YEAR = 365.25 * DAY
 
 DATA = 'https://en.wikipedia.org/wiki/European_Astronaut_Corps'
 

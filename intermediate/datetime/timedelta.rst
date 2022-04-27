@@ -109,7 +109,7 @@ Month Shifts
 >>> from datetime import timedelta, date
 >>>
 >>>
->>> MONTH = timedelta(days=30.436875)
+>>> MONTH = timedelta(days=30.4375)
 >>>
 >>> gagarin = date(1961, 4, 12)
 >>> gagarin - MONTH
@@ -140,8 +140,8 @@ Duration
 >>> MINUTE = 60 * SECOND
 >>> HOUR = 60 * MINUTE
 >>> DAY = 24 * HOUR
->>> MONTH = 30.436875 * DAY  # Average days a month in solar calendar
->>> YEAR = 365.2425 * DAY  # Solar calendar
+>>> MONTH = 30.4375 * DAY  # Average days a month in solar calendar
+>>> YEAR = 365.25 * DAY  # Solar calendar
 >>>
 >>>
 >>> def duration(td):

@@ -471,7 +471,7 @@ Use Case - 0x02
 >>> from datetime import date
 >>>
 >>> DAY = 1
->>> YEAR = 365.2425 * DAY
+>>> YEAR = 365.25 * DAY
 >>> TODAY = date(2000, 1, 1)  # date.today()
 >>>
 >>>
@@ -499,7 +499,7 @@ Use Case - 0x03
 >>> from dataclasses import dataclass, field
 >>> from datetime import date
 >>>
->>> YEAR = 365.2425
+>>> YEAR = 365.25
 >>> TODAY = date(2000, 1, 1)
 >>>
 >>>

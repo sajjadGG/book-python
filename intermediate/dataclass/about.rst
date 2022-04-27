@@ -50,7 +50,7 @@ Use Case - 0x01
 ...     species: str
 >>>
 >>>
->>> flowers = list(Iris(*row) for row in DATA[1:])
+>>> flowers = [Iris(*row) for row in DATA[1:]]
 >>> print(flowers)  # doctest: +NORMALIZE_WHITESPACE
 [Iris(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9, species='virginica'),
  Iris(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2, species='setosa'),
