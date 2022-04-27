@@ -3,6 +3,10 @@ Syntax Extension
 * In other programming languages
 * PCRE - Perl Compatible Regular Expressions
 
+.. figure:: img/regex-xkcd-standards.png
+
+    How Standards Proliferate. XKCD Standards [#xkcd927]_
+
 
 Named Ranges
 ------------
@@ -61,5 +65,11 @@ Group Backreference
 -------------------
 * ``$1`` == ``\1``
 
+>>> HTML = '<span>Hello World</span>'
+>>> re.findall('<(?P<tag>.+)>(?:.+)</(?P=tag)>', HTML)
+['span']
 
-re.findall('<(?P<tag>.+)>(?:.+)</(?P=tag)>', HTML)
+
+References
+----------
+.. [#xkcd927] Munroe, R. How Standards Proliferate. Year: 2022. Retrieved: 2022-04-27. URL: https://xkcd.com/927/
