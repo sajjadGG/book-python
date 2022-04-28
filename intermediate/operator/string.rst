@@ -319,16 +319,25 @@ Use Case - 0x02
 ...         return f'{result:.1f} {unit}'
 >>>
 >>>
->>> ares3 = Duration(seconds=11318400)
+>>> ares3 = Duration(543*SOL)
+>>>
+>>> print(f'Ares3 flight to Mars took {ares3:seconds}')
+Ares3 flight to Mars took 48204825.0 seconds
 >>>
 >>> print(f'Ares3 flight to Mars took {ares3:minutes}')
-Ares3 flight to Mars took 188640.0 minutes
+Ares3 flight to Mars took 803413.8 minutes
 >>>
 >>> print(f'Ares3 flight to Mars took {ares3:hours}')
-Ares3 flight to Mars took 3144.0 hours
+Ares3 flight to Mars took 13390.2 hours
 >>>
 >>> print(f'Ares3 flight to Mars took {ares3:days}')
-Ares3 flight to Mars took 131.0 days
+Ares3 flight to Mars took 557.9 days
+>>>
+>>> print(f'Ares3 flight to Mars took {ares3:months}')
+Ares3 flight to Mars took 18.3 months
+>>>
+>>> print(f'Ares3 flight to Mars took {ares3:years}')
+Ares3 flight to Mars took 1.5 years
 
 
 Use Case - 0x03
@@ -341,6 +350,8 @@ Use Case - 0x03
 >>> DAY = 24 * HOUR
 >>> MONTH = 30.4375 * DAY
 >>> YEAR = 365.25 * DAY
+>>>
+>>> SOL = 24*HOUR + 39*MINUTE + 35*SECOND
 >>>
 >>>
 >>> class Duration:
@@ -368,23 +379,25 @@ Use Case - 0x03
 ...         return f'{duration:.1f} {unit}'
 >>>
 >>>
->>> ares3 = Duration(seconds=11318400)
->>>
+>>> ares3 = Duration(543*SOL)
 >>>
 >>> print(f'Ares3 flight to Mars took {ares3:seconds}')
-Ares3 flight to Mars took 11318400.0 seconds
+Ares3 flight to Mars took 48204825.0 seconds
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:min}')
-Ares3 flight to Mars took 188640.0 min
+>>> print(f'Ares3 flight to Mars took {ares3:minutes}')
+Ares3 flight to Mars took 803413.8 minutes
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:h}')
-Ares3 flight to Mars took 3144.0 h
+>>> print(f'Ares3 flight to Mars took {ares3:hours}')
+Ares3 flight to Mars took 13390.2 hours
 >>>
 >>> print(f'Ares3 flight to Mars took {ares3:days}')
-Ares3 flight to Mars took 131.0 days
+Ares3 flight to Mars took 557.9 days
 >>>
 >>> print(f'Ares3 flight to Mars took {ares3:months}')
-Ares3 flight to Mars took 4.3 months
+Ares3 flight to Mars took 18.3 months
+>>>
+>>> print(f'Ares3 flight to Mars took {ares3:years}')
+Ares3 flight to Mars took 1.5 years
 
 
 Use Case - 0x04
@@ -403,9 +416,10 @@ Use Case - 0x04
 >>> MONTH = 30.4375 * DAY
 >>> YEAR = 365.25 * DAY
 >>>
+>>> SOL = 24*HOUR + 39*MINUTE + 35*SECOND
 >>>
->>> # doctest: +SKIP
-... @dataclass
+>>>
+>>> @dataclass
 ... class Duration:
 ...     seconds: int
 ...
@@ -422,22 +436,25 @@ Use Case - 0x04
 ...         return f'{duration:.1f} {unit}'
 >>>
 >>>
->>> ares3 = Duration(seconds=11318400)
+>>> ares3 = Duration(543*SOL)
 >>>
 >>> print(f'Ares3 flight to Mars took {ares3:seconds}')
-Ares3 flight to Mars took 11318400.0 seconds
+Ares3 flight to Mars took 48204825.0 seconds
 >>>
 >>> print(f'Ares3 flight to Mars took {ares3:minutes}')
-Ares3 flight to Mars took 188640.0 minutes
+Ares3 flight to Mars took 803413.8 minutes
 >>>
 >>> print(f'Ares3 flight to Mars took {ares3:hours}')
-Ares3 flight to Mars took 3144.0 hours
+Ares3 flight to Mars took 13390.2 hours
 >>>
 >>> print(f'Ares3 flight to Mars took {ares3:days}')
-Ares3 flight to Mars took 131.0 days
+Ares3 flight to Mars took 557.9 days
 >>>
 >>> print(f'Ares3 flight to Mars took {ares3:months}')
-Ares3 flight to Mars took 4.3 months
+Ares3 flight to Mars took 18.3 months
+>>>
+>>> print(f'Ares3 flight to Mars took {ares3:years}')
+Ares3 flight to Mars took 1.5 years
 
 Use Case - 0x04
 ---------------
@@ -451,6 +468,8 @@ Use Case - 0x04
 >>> DAY = 24 * HOUR
 >>> MONTH = 30.4375 * DAY
 >>> YEAR = 365.25 * DAY
+>>>
+>>> SOL = 24*HOUR + 39*MINUTE + 35*SECOND
 >>>
 >>>
 >>> class Duration:
@@ -471,13 +490,25 @@ Use Case - 0x04
 ...         return f'{duration:.1f} {unit}'
 >>>
 >>>
->>> ares3 = Duration(seconds=3*YEAR+4*MONTH+1*DAY+6*HOUR)
+>>> ares3 = Duration(543*SOL)
 >>>
->>> print(f'Ares3 mission took: {ares3:years}')
-Ares3 mission took: 3.3 years
+>>> print(f'Ares3 flight to Mars took {ares3:seconds}')
+Ares3 flight to Mars took 48204825.0 seconds
 >>>
->>> print(f'Ares3 mission took: {ares3:months}')
-Ares3 mission took: 40.0 months
+>>> print(f'Ares3 flight to Mars took {ares3:minutes}')
+Ares3 flight to Mars took 803413.8 minutes
+>>>
+>>> print(f'Ares3 flight to Mars took {ares3:hours}')
+Ares3 flight to Mars took 13390.2 hours
+>>>
+>>> print(f'Ares3 flight to Mars took {ares3:days}')
+Ares3 flight to Mars took 557.9 days
+>>>
+>>> print(f'Ares3 flight to Mars took {ares3:months}')
+Ares3 flight to Mars took 18.3 months
+>>>
+>>> print(f'Ares3 flight to Mars took {ares3:years}')
+Ares3 flight to Mars took 1.5 years
 
 
 Use Case - 0x05
