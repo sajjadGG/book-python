@@ -441,6 +441,18 @@ Ares3 flight to Mars took 4.3 months
 
 Use Case - 0x04
 ---------------
+>>> from dataclasses import dataclass
+>>> from datetime import datetime
+>>>
+>>>
+>>> SECOND = 1
+>>> MINUTE = 60 * SECOND
+>>> HOUR = 60 * MINUTE
+>>> DAY = 24 * HOUR
+>>> MONTH = 30.4375 * DAY
+>>> YEAR = 365.25 * DAY
+>>>
+>>>
 >>> class Duration:
 ...     seconds: int
 ...
