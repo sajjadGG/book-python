@@ -439,8 +439,36 @@ Ares3 flight to Mars took 131.0 days
 >>> print(f'Ares3 flight to Mars took {ares3:months}')
 Ares3 flight to Mars took 4.3 months
 
-
 Use Case - 0x04
+---------------
+>>> class Duration:
+...     seconds: int
+...
+...     def __init__(self, seconds):
+...         self.seconds = seconds
+...
+...     def __format__(self, unit):
+...         duration = self.seconds
+...         match unit:
+...             case 's' | 'seconds': duration /= SECOND
+...             case 'm' | 'minutes': duration /= MINUTE
+...             case 'h' | 'hours':   duration /= HOUR
+...             case 'M' | 'months':  duration /= MONTH
+...             case 'y' | 'years':   duration /= YEAR
+...             case _: raise TypeError('nieobsługiwany format')
+...         return f'{duration:.1f} {unit}'
+>>>
+>>>
+>>> ares3 = Duration(seconds=3*YEAR+4*MONTH+1*DAY+6*HOUR)
+>>>
+>>> print(f'Ares3 mission took: {ares3:years}')
+Ares3 mission took: 3.3 years
+>>>
+>>> print(f'Ares3 mission took: {ares3:months}')
+Ares3 mission took: 40.0 months
+
+
+Use Case - 0x05
 ---------------
 * Temperature conversion
 
