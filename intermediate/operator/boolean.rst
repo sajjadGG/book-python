@@ -153,11 +153,11 @@ array([[ True,  True,  True],
 
 Python understands this:
 
->>> ~((a>5) & (a%2==0))  # doctest: +SKIP
+>>> ~( (a>2) & (a<7) | (a>3) )  # doctest: +SKIP
 
 As as chained calls of the following methods:
 
->>> obj.__neg__(a.__gt__(5).__and__(a.__mod__(2).__eq__(0)))  # doctest: +SKIP
+>>> obj.__neg__(obj.__gt__(2).__and__(obj.__lt__(7)).__or__(obj.__gt__(3)))  # doctest: +SKIP
 
 
 Use Case - 0x03

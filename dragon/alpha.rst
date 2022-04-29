@@ -13,34 +13,31 @@ Dragon (version alpha)
 
 English
 -------
-1. In your directory create file `dragon_alpha.py`
+1. In your directory create file ``dragon_alpha.py``
 2. In this file define a class representing Dragon
 3. Dragon has (attributes):
     a. name
     b. position on the screen
-    c. texture file name, default `img/dragon/alive.png`
-    d. health points, default random `int` in range from 50 to 100
-3. Dragon can (methods):
+    c. texture file name, default ``img/dragon/alive.png``
+    d. health points, default random ``int`` in range from 50 to 100
+4. Dragon can (methods):
     a. have position set to any place on the screen
     b. make damage in range from 5 to 20
     c. take damage
     d. move in any direction by specified value
-4. Assume left-top screen corner as an initial coordinates position:
-    a. going right add to `x`
-    b. going left subtract from `x`
-    c. going up subtract from `y`
-    d. going down add to `y`
-5. When health points drop to, and below zero:
+5. Assume left-top screen corner as an initial coordinates position:
+    a. going right add to ``x``
+    b. going left subtract from ``x``
+    c. going up subtract from ``y``
+    d. going down add to ``y``
+6. When health points drop to, or below zero:
     a. Dragon is dead
     b. Set object status to dead
-    c. Print `XXX is dead`, where XXX is the name of the dragon
-    d. Change texture file name to  `img/dragon/dead.png`
-    e. Print position where dragon died
-    f. Print how much gold Dragon dropped (random in range from 1 to 100)
-    g. Dragon cannot take any more damage
-    h. Dragon cannot make any more damage
-    i. Dragon cannot move or have position set
-6. Run the game:
+    c. Change texture file name to  ``img/dragon/dead.png``
+    d. Print ``XXX is dead``, where ``XXX`` is the dragon's name
+    e. Print how much gold dragon dropped (random integer from 1 to 100)
+    f. Print position where dragon died
+7. Run the game:
     a. Create dragon at x=50, y=120 position and name it "Wawelski"
     b. Set new position to x=10, y=20
     c. Move dragon left by 10 and down by 20
@@ -55,8 +52,19 @@ English
     l. Make 15 points damage to the dragon
     m. Make 25 points damage to the dragon
     n. Make 75 points damage to the dragon
-7. Non-functional requirements:
-    a. This assignment is a simulation of development process
+
+Non-functional requirements:
+
+    a. Assignment is simulation of a software development process.
+    b. Assignment is a business requirements specification.
+    c. Solution must fulfill all the acceptance criteria.
+    d. How to implement those criteria is up to you.
+    e. You - programmer, Instructor - Product Owner.
+    f. Product Owner will not help you in architectural decisions.
+    g. Do not check neither solution nor future versions (beta and rc).
+
+Post notes:
+
     b. Trainer acts as Product Owner with little technical knowledge
     c. You are the software engineer who need to decide and live with
        consequences of your choices
@@ -89,7 +97,7 @@ Polish
     a. być ustawiony w dowolne miejsce ekranu
     b. zadawać komuś losowe obrażenia z przedziału od 5 do 20
     c. otrzymywać obrażenia
-    d. być przesuwany o zadaną liczbę punktów w którymś z kierunków
+    d. być przesuwany w którymś z kierunków o zadaną wartość
 5. Przyjmij górny lewy róg ekranu za punkt początkowy:
     a. idąc w prawo dodajesz ``x``
     b. idąc w lewo odejmujesz ``x``
@@ -100,7 +108,7 @@ Polish
     b. Ustaw status obiektu na dead
     c. Zmień nazwę pliku tekstury na ``img/dragon/dead.png``
     d. Wypisz ``XXX is dead``, gdzie ``XXX`` to nazwa smoka
-    e. Wypisz ile złota smok wyrzucił (losowa 1-100)
+    e. Wypisz ile złota smok wyrzucił (losowa liczba od 1 do 100)
     f. Wypisz pozycję gdzie smok zginął
 7. Przeprowadź grę:
     a. Stwórz smoka w pozycji x=50, y=120 i nazwij go "Wawelski"
@@ -120,7 +128,7 @@ Polish
 
 Wymagania niefunkcjonalne:
 
-    a. **Zadanie jest narracją procesu developmentu.**
+    a. **Zadanie jest symulacją procesu wytwarzania oprogramowania.**
 
        Posłuży do demonstracji obiektowego paradygmatu programowania,
        i dobrych praktyk programistycznych. Nie piszemy gry i nie będziemy
@@ -136,7 +144,7 @@ Wymagania niefunkcjonalne:
        Z tego powodu nie musisz trzymać się kolejności punktów i podpunktów
        w zadaniu, a także rozwiązać problemy inaczej niż jest napisane.
 
-    c. **Funkcjonalność końcowa musi się zgadzać.**
+    c. **Rozwiązanie musi spełniać kryteria akceptacyjne.**
 
        Pamiętaj, że jest to wersja `alpha` więc nie wprowadzaj dodatkowych
        niezamówionych funkcjonalności (np. dodatkowych postaci, sprawdzania

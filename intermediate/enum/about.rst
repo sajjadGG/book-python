@@ -325,6 +325,30 @@ Use Case - 0x07
 ...     OperationMode = 0x6060
 
 
+Use Case - 0x08
+---------------
+>>> from dataclasses import dataclass
+>>> from enum import Enum
+>>>
+>>>
+>>> class Agency(Enum):
+...     NASA = 1
+...     ESA = 2
+...     JAXA = 3
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     agency: Agency
+>>>
+>>>
+>>> mark = Astronaut('Mark', 'Watney', agency='not-existing')
+>>> mark = Astronaut('Mark', 'Watney', agency=Agency.NASA)
+
+
+
 References
 ----------
 .. [mskeycodes] https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes?redirectedfrom=MSDN

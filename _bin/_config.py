@@ -11,6 +11,7 @@ BOOKS = [
     'advanced',
     'basics',
     'data-science',
+    'database',
     'design-patterns',
     'devops',
     'django',

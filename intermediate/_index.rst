@@ -144,6 +144,7 @@ Dataclass
     dataclass/parameters.rst
     dataclass/helpers.rst
     dataclass/inheritance.rst
+    dataclass/introspect.rst
 
 
 Operator
