@@ -2,6 +2,10 @@
 
     # doctest: +SKIP_FILE
 
+    >>> class Dragon:
+    ...     def __init__(*args, **kwargs):
+    ...         pass
+
 
 Dragon ADR Init Position
 ========================
@@ -11,13 +15,6 @@ Dragon ADR Init Position
 Problem
 -------
 * Create dragon at x=50, y=120 position
-
-
-SetUp
------
->>> class Dragon:
-...     def __init__(*args, **kwargs):
-...         pass
 
 
 Option 1
@@ -33,6 +30,7 @@ Problems:
 
 >>> dragon = Dragon('Wawelski', 'img/dragon/alive.png', 50, 120)
 >>> knn = KNearestNeighbors(k=3)
+
 
 Option 2
 --------
@@ -56,7 +54,7 @@ Option 3
 
 * Good: simple, easy to use
 * Good: you can assign ``None`` by default to set default point
-* Good: extensible, easy to add ``position_z`` with default value ``0``
+* Good: extensible, easy to add ``pos_z`` with default value ``0``
 
 Problem:
 
@@ -107,7 +105,7 @@ Option 6
 * Bad: you have to know that first is ``x`` and second is ``y``
 * Bad: order is important
 * Bad: unpacking
-* Bad: not extensible, ``position`` will always be 2D
+* Bad: not extensible, ``position_xy`` will always be 2D
 
 
 Option 7
@@ -118,10 +116,10 @@ Option 7
 * Good: data is stored together (coordinate)
 * Good: you can assign ``None`` by default to set default point
 * Good: order is not important
-* Good: always has to pass both x and y
+* Good: always has to pass both ``x`` and ``y``
 * Good: possible to extend to 3D with refactoring
 * Good: easier to refactor than tuple - ``pattern = r'{'x':\d+, 'y':\d+}'``
-* Bad: always has to pass both x and y
+* Bad: always has to pass both ``x`` and ``y``
 * Bad: unpacking
 * Bad: not extensible, ``position`` will always be 2D
 
@@ -201,10 +199,18 @@ Option 11
 ...     y: int = 0
 >>>
 >>>
+>>> dragon = Dragon('Wawelski', Point(50, 120))
 >>> dragon = Dragon('Wawelski', pos=Point(50, 120))
 >>> dragon = Dragon('Wawelski', posxy=Point(50, 120))
 >>> dragon = Dragon('Wawelski', pos_xy=Point(50, 120))
 >>> dragon = Dragon('Wawelski', position=Point(50, 120))
+
+* Good: data is stored together (coordinate)
+* Good: simple, easy to use
+* Good: verbose
+* Good: you can assign ``None`` by default to set default ``position``
+* Good: very easy to extend to 3D
+* Good: keyword argument is not required, class name is verbose enough
 
 
 Option 12
@@ -218,11 +224,19 @@ Option 12
 ...     y: int = 0
 >>>
 >>>
+>>> dragon = Dragon('Wawelski', Point(50, 120))
 >>> dragon = Dragon('Wawelski', pos=Point(50, 120))
 >>> dragon = Dragon('Wawelski', posxy=Point(50, 120))
 >>> dragon = Dragon('Wawelski', pos_xy=Point(50, 120))
 >>> dragon = Dragon('Wawelski', position=Point(50, 120))
 
+* Good: data is stored together (coordinate)
+* Good: simple, easy to use
+* Good: verbose
+* Good: you can assign ``None`` by default to set default ``position``
+* Good: very easy to extend to 3D
+* Good: keyword argument is not required, class name is verbose enough
+* Good: is faster and leaner than simple dataclass
 
 
 Option 13
@@ -236,6 +250,7 @@ Option 13
 ...         self.y = y
 >>>
 >>>
+>>> dragon = Dragon('Wawelski', Point(x=50, y=120))
 >>> dragon = Dragon('Wawelski', position=Point(x=50, y=120))
 >>> dragon = Dragon('Wawelski', position=Point(posx=50, posy=120))
 >>> dragon = Dragon('Wawelski', position=Point(position_x=50, position_y=120))
@@ -245,6 +260,7 @@ Option 13
 * Good: more explicit than ``dataclass``
 * Good: easy to extend to 3D
 * Good: can sat default values
+* Good: keyword argument is not required, class name is verbose enough
 
 
 Decision
@@ -260,7 +276,7 @@ Alternative:
 
 >>> dragon = Dragon('Wawelski', position=Point(x=50, y=120))
 
-* Choices: ``NameTuple``, ``dataclass(slots=True)``
+* Choices: ``NameTuple``, ``dataclass(frozen=True, slots=True)``
 * Good: explicit
 * Good: verbose
 * Good: extensible

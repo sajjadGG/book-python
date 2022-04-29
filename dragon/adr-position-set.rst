@@ -2,20 +2,17 @@
 
     # doctest: +SKIP_FILE
 
+    >>> from dataclasses import dataclass
+    >>>
+    >>> @dataclass
+    ... class Point:
+    ...     x: int
+    ...     y: int
+
 
 Dragon ADR Position Set
 =======================
 * ADR - Architecture Design Records
-
-
-SetUp
------
->>> from dataclasses import dataclass
->>>
->>> @dataclass
-... class Point:
-...     x: int
-...     y: int
 
 
 Problem
@@ -61,6 +58,7 @@ Option 3
 * Good: encapsulation
 * Good: easy to add validation if needed
 * Bad: ``set()`` is to generic
+* Bad: gateway to abuse
 
 
 Option 4
@@ -150,4 +148,4 @@ Decision
 * Good: arguments are explicit
 * Good: encapsulation
 * Good: easy to add validation if needed
-* Bad: extensible, easy to refactor to 3D
+* Good: extensible, easy to refactor to 3D

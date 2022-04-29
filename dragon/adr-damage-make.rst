@@ -13,10 +13,6 @@ Problem
 * Dragon makes damage
 
 
-Consider
---------
-
-
 Option 1
 --------
 >>> dragon.attack()

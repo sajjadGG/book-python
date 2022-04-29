@@ -1,3 +1,10 @@
+.. testsetup::
+
+    >>> class Dragon:
+    ...     def __init__(*args, **kwargs):
+    ...         pass
+
+
 Dragon ADR Init Name
 ====================
 * ADR - Architecture Design Records
@@ -6,13 +13,6 @@ Dragon ADR Init Name
 Problem
 -------
 * Create and name it "Wawelski"
-
-
-SetUp
------
->>> class Dragon:
-...     def __init__(*args, **kwargs):
-...         pass
 
 
 Option 1

@@ -68,7 +68,7 @@ Option 6
 Option 7
 --------
 >>> dragon.move(dx=10, dy=-20)
->>> dragon.move(vertical=10, horizontal=-20)
+>>> dragon.move(horizontal=10, vertical=-20)
 
 * Good: encapsulation, object knows current position and moves
 * Bad: controller computes final offset
@@ -207,6 +207,7 @@ Option 19
 ...     LEFT = 61
 >>>
 >>>
+>>> dragon.move(Direction.LEFT, distance=5)
 >>> dragon.move(direction=Direction.LEFT, distance=5)
 
 
@@ -221,6 +222,7 @@ Option 20
 >>>
 >>> def action(key, time):
 ...     return KEY_BINDING.get(key)(time)
+>>>
 >>>
 >>> action('ARROW_UP', 5)
 
@@ -242,13 +244,16 @@ Good, because:
 
 Bad, because:
 
->>> db.execute_insert(...)
->>> db.execute_select()
->>> db.execute_create()
->>> db.execute_alter()
->>> db.execute_alter_table()
->>> db.execute_create_table()
->>> db.execute_create_database()
+>>> db.execute(SQL)
+
+>>> db.execute_insert(SQL)
+>>> db.execute_insert_values(SQL)
+>>> db.execute_select(SQL)
+>>> db.execute_alter(SQL)
+>>> db.execute_alter_table(SQL)
+>>> db.execute_create(SQL)
+>>> db.execute_create_table(SQL)
+>>> db.execute_create_database(SQL)
 
 Use Case:
 
@@ -256,7 +261,8 @@ Use Case:
 
 >>> read_csv_with_encoding('iris.csv', 'utf-8')
 >>> read_csv_with_delimiter('iris.csv', ';')
->>> read_csv_with_delimiter_and_encoding('iris.csv', ';', 'utf-8')
+>>> read_csv_with_delimiter_encoding('iris.csv', ';', 'utf-8')
+>>> read_csv_with_delimiter_encoding_verbose('iris.csv', ';', 'utf-8', True)
 
 >>> read_csv('iris.csv')
 ...     .withEncoding('utf-8')
@@ -267,7 +273,7 @@ Use Case:
 >>> file.set_file('iris.csv')  # encapsulation?!
 >>> file.set_encoding('utf-8')
 >>> file.set_delimiter(';')
-
+>>> file.set_verbose(True)
 
 >>> read_csv('iris.csv', encoding='utf-8', delimiter=';', verbose=True)
 
