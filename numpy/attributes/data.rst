@@ -55,6 +55,53 @@ Itemsize
 8
 
 
+NBytes
+------
+* ``int64`` takes 64 bits (8 bytes of memory)
+
+.. figure:: img/array-attributes-itemsize.png
+
+>>> a = np.array([1, 2, 3], dtype=int)
+>>> a.nbytes
+24
+>>>
+>>> b = np.array([1, 2, 3], dtype=np.int0)
+>>> b.nbytes
+24
+>>>
+>>> c = np.array([1, 2, 3], dtype=np.int8)
+>>> c.nbytes
+3
+>>>
+>>> d = np.array([1, 2, 3], dtype=np.int16)
+>>> d.nbytes
+6
+>>>
+>>> e = np.array([1, 2, 3], dtype=np.int32)
+>>> e.nbytes
+12
+>>>
+>>> f = np.array([1, 2, 3], dtype=np.int64)
+>>> f.nbytes
+24
+
+>>> a = np.array([1, 2, 3], dtype=float)
+>>> a.nbytes
+24
+>>>
+>>> b = np.array([1, 2, 3], dtype=np.float16)
+>>> b.nbytes
+6
+>>>
+>>> c = np.array([1, 2, 3], dtype=np.float32)
+>>> c.nbytes
+12
+>>>
+>>> d = np.array([1, 2, 3], dtype=np.float64)
+>>> d.nbytes
+24
+
+
 Strides
 -------
 * ``int64`` takes 64 bits (8 bytes of memory)

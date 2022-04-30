@@ -293,6 +293,39 @@ array(['a', 'b', 'c'], dtype='<U1')
 array(['one', 'two', 'three'], dtype='<U5')
 
 
+Comparison
+----------
+>>> a = np.array([[1, 2, 3],
+...              [4, 5, 6],
+...              [7, 8, 9]], dtype='int8')
+>>> a.itemsize
+1
+>>> a.size
+9
+>>> a.nbytes
+9
+
+>>> b = np.array([[1, 2, 3],
+...              [4, 5, 6],
+...              [7, 8, 9]], dtype='int32')
+>>> b.itemsize
+4
+>>> b.size
+9
+>>> b.nbytes
+36
+
+>>> c = np.array([[1, 2, 3],
+...              [4, 5, 6],
+...              [7, 8, 9]], dtype='int64')
+>>> c.itemsize
+8
+>>> c.size
+9
+>>> c.nbytes
+72
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/numpy_dtype_a.py
