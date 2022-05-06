@@ -38,29 +38,25 @@ commands:
   - id: install-requirements
     exec:
       component: python
-      workingDir: ${PROJECTS_ROOT}
-      commandLine: pip install -r requirements.txt
+      commandLine: pip install -r /src/requirements.txt
       group:
         kind: build
   - id: run
     exec:
       component: python
-      workingDir: ${PROJECTS_ROOT}
-      commandLine: python3 __main__.py
+      commandLine: python3 /src/__main__.py
       group:
         kind: run
   - id: test-doctest
     exec:
       component: python
-      workingDir: ${PROJECTS_ROOT}
-      commandLine: python3 -m doctest *.py
+      commandLine: python3 -m /src/doctest *.py
       group:
         kind: test
   - id: test-unittest
     exec:
       component: python
-      workingDir: ${PROJECTS_ROOT}
-      commandLine: python3 -m unittest *.py
+      commandLine: python3 -m /src/unittest *.py
       group:
         kind: test
   - id: test-all
@@ -73,7 +69,7 @@ commands:
     exec:
       component: python
       workingDir: ${PROJECTS_ROOT}
-      commandLine: python3 -m debugpy --listen 0.0.0.0:5678 __main__.py
+      commandLine: python3 -m debugpy --listen 0.0.0.0:5678 /src/__main__.py
       group:
         kind: debug
       env:
