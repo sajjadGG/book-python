@@ -1,0 +1,89 @@
+schemaVersion: 2.2.0
+
+metadata:
+  name: python
+  version: 1.0.0
+  displayName: Python
+  description: Python Training Course
+  icon: https://python.astrotech.io/_static/favicon.png
+  website: https://python.astrotech.io
+  projectType: 'python'
+  language: 'python'
+  tags: ['Python']
+
+attributes:
+  space:
+    instanceType: regular
+    editor:
+      type: PyCharm
+      version: '2022.1'
+      updateChannel: Release
+
+projects:
+  - name: training-course
+    git:
+      remotes:
+        origin: https://github.com/sages-pl/python.git
+      checkoutFrom:
+        revision: main
+
+components:
+  - name: python
+    container:
+      image: python:3.10
+      mountSources: true
+      sourceMapping: /src
+
+commands:
+  - id: setup
+    exec:
+      component: python
+      workingDir: ${PROJECTS_ROOT}
+      commandLine: pip install -r requirements.txt
+      group:
+        kind: build
+  - id: run
+    exec:
+      component: python
+      workingDir: ${PROJECTS_ROOT}
+      commandLine: python3 __main__.py
+      group:
+        kind: run
+  - id: test-doctest
+    exec:
+      component: python
+      workingDir: ${PROJECTS_ROOT}
+      commandLine: python3 -m doctest *.py
+      group:
+        kind: test
+  - id: test-unittest
+    exec:
+      component: python
+      workingDir: ${PROJECTS_ROOT}
+      commandLine: python3 -m unittest *.py
+      group:
+        kind: test
+  - id: test-all
+    composite:
+      parallel: true
+      commands:
+        - test-doctest
+        - test-unittest
+  - id: debug
+    exec:
+      component: python
+      workingDir: ${PROJECTS_ROOT}
+      commandLine: python3 -m debugpy --listen 0.0.0.0:5678 __main__.py
+      group:
+        kind: debug
+      env:
+        - name: PYTHONMALLOC
+          value: debug
+        - name: PYTHONTRACEMALLOC
+          value: '1'
+        - name: PYTHONASYNCIODEBUG
+          value: '1'
+
+events:
+  preStart:
+    - setup

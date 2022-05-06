@@ -3,6 +3,7 @@ Locale About
 * i18n = internationalization
 * l10n = localization
 * https://en.wikipedia.org/wiki/Indian_numbering_system
+* https://www.youtube.com/watch?v=0j74jcxSunY
 
 .. code-block:: text
 

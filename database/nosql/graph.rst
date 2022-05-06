@@ -10,7 +10,7 @@ NoSQL Graph
 * OrientDB
 * RedisGraph
 * Virtuoso
-
+* `DGraph <https://dgraph.io>`_
 
 Model
 -----
