@@ -35,7 +35,7 @@ components:
       sourceMapping: /src
 
 commands:
-  - id: setup
+  - id: install-requirements
     exec:
       component: python
       workingDir: ${PROJECTS_ROOT}
@@ -86,4 +86,4 @@ commands:
 
 events:
   preStart:
-    - setup
+    - install-requirements
