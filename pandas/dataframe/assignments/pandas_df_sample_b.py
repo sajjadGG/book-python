@@ -59,10 +59,11 @@ result = ...
 
 
 # Solution
-df = pd.read_csv(DATA)
-df['Order'].ffill(inplace=True)
-df['Order'] = df['Order'].astype(int)
-df = df.sample(frac=1.0)
-df.reset_index(drop=True, inplace=True)
-
-result = df
+result = (
+    pd
+    .read_csv(DATA)
+    .ffill()
+    .sample(frac=1)
+    .reset_index(drop=True)
+    .astype({'Order': 'int'})
+)

@@ -1,5 +1,7 @@
 DataFrame Index
 ===============
+* ``DataFrame.index``
+* ``pd.DataFrame(index=...)``
 * Range Index
 * Index
 * Object Index

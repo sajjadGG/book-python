@@ -1,8 +1,8 @@
 DataFrame Join
 ==============
-* pd.concat
-* pd.DataFrame.merge()
-* pd.DataFrame.join()
+* ``pd.concat()``
+* ``.merge()``
+* ``.join()``
 
 .. warning:: DataFrame.append() and Series.append() have been deprecated and
              will be removed in Pandas 2.0. Use pandas.concat() instead

@@ -1,5 +1,18 @@
 DataFrame Aggregations
 ======================
+* ``.count()``
+* ``.sum()``
+* ``.nunique()``
+* ``.mean()``
+* ``.median()``
+* ``.std()``
+* ``.std2()``
+* ``.min()``
+* ``.quantile()``
+* ``.max()``
+* ``.first()``
+* ``.last()``
+* ``lambda column:``
 
 
 SetUp
@@ -250,6 +263,33 @@ month
 
 
 Use Case - 0x01
+---------------
+>>> import pandas as pd
+>>>
+>>>
+>>> DATA = 'https://python.astrotech.io/_static/phones-pl.csv'
+>>>
+>>> result = (
+...     pd
+...     .read_csv(DATA, parse_dates=['datetime'])
+...     .set_index('datetime', drop=True)
+...     .drop(columns=['id'])
+...     .loc['2000-01-01':'2000-03-01']
+...     .query('item == "sms"')
+...     .groupby(['period','item'])
+...     .agg(
+...         duration_count = ('duration', 'count'),
+...         duration_sum = ('duration', 'sum'),
+...         duration_median = ('duration', 'median'),
+...         duration_mean = ('duration', 'mean'),
+...         duration_std = ('duration', 'std'),
+...         duration_var = ('duration', 'var'),
+...         value = ('duration', lambda column: column.mean().astype(int))
+...     )
+... )
+
+
+Use Case - 0x02
 ---------------
 >>> import pandas as pd
 >>>

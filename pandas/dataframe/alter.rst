@@ -1,5 +1,13 @@
 DataFrame Alter
 ===============
+* ``pd.date_range('1999-12-30', periods=7)``
+* ``df['not-existing'] = 1``
+* ``df['not-existing'] = range(0,10)``
+* ``df['not-existing'] = np.arange(0,10)``
+* ``.transpose()``
+* ``.drop(columns=[...])``
+* ``.drop(index=[...])``
+* ``.drop_duplicates()``
 
 
 SetUp

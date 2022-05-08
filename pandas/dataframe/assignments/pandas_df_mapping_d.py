@@ -67,11 +67,17 @@ LETTERS_PLEN.update({k.upper():v.upper()
                      for k,v in LETTERS_PLEN.items()})
 
 
-def substitute(text):
+def translate(text):
     return ''.join(LETTERS_PLEN.get(x,x) for x in text)
 
 
-df = pd.read_excel(io=DATA, sheet_name='Polish', header=1, index_col=0)
-df = df.applymap(substitute)
-df.columns = df.columns.map(substitute)
-result = df
+# result = pd.read_excel(DATA, sheet_name='Polish', header=1, index_col=0)
+# result = result.applymap(translate)
+# result.columns = result.columns.map(translate)
+
+result = (
+    pd
+    .read_excel(DATA, sheet_name='Polish', header=1, index_col=0)
+    .applymap(translate)
+    .rename(translate, axis='columns')
+)

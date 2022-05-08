@@ -1,5 +1,7 @@
 DataFrame Sort
 ==============
+* ``.sort_index(ascending, axis)``
+* ``.sort_values(by, ascending, axis)``
 * Works with ``inplace=True``
 * ``axis=0`` - Rows
 * ``axis=1`` - Columns
@@ -112,7 +114,7 @@ Sorting values by column:
 
 Sorting values by multiple columns (if values are equal in first column, than compare second):
 
->>> df.sort_values(by=['Morning', 'Evening'], ascending=True)
+>>> df.sort_values(by=['Morning', 'Evening'], ascending=[True, True])
              Morning      Noon   Evening  Midnight
 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
 2000-01-01 -0.103219  0.410599  0.144044  1.454274
@@ -137,7 +139,7 @@ Sorting whole DataFrame, according to values by in row (change column order):
 2000-01-04  0.653619 -0.742165  0.864436 -2.552990
 2000-01-05 -1.454366 -0.187184  0.045759  2.269755
 
->>> df.sort_values(by=['1999-12-31', '2000-01-05'], ascending=False, axis='columns')
+>>> df.sort_values(by=['1999-12-31', '2000-01-05'], ascending=[False, False], axis='columns')
              Morning   Evening  Midnight      Noon
 1999-12-30  1.764052  0.978738  2.240893  0.400157
 1999-12-31  1.867558  0.950088 -0.151357 -0.977278

@@ -63,13 +63,16 @@ result = ...
 
 
 # Solution
-df = pd.read_csv(DATA)
-class_labels = df.columns[2:]
+class_labels = pd.read_csv(DATA, nrows=0).columns[2:]
 label_encoder = dict(enumerate(class_labels))
-df.columns = COLUMNS
 
-df['Species'].replace(label_encoder, inplace=True)
-df.loc[df['Petal length'] < 4.0, 'Petal length'] = np.nan
-df = df.interpolate('linear')
-df.dropna(inplace=True)
-result = df.head(2)
+result = (
+    pd.read_csv(DATA, skiprows=1, names=COLUMNS)
+      .replace({'Species': label_encoder})
+)
+
+query = result['Petal length'] < 4
+result.loc[query, 'Petal length'] = np.nan
+result = result.interpolate('linear')
+result = result.dropna(how='any', axis='rows')
+result = result.head(n=2)

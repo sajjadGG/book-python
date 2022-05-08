@@ -1,8 +1,15 @@
 DataFrame NA
 ============
-* Represents missing values
-* ``axis=0`` - rows
-* ``axis=1`` - columns
+* ``pd.NA`` and ``np.nan`` Represents missing values
+* ``pd.NA`` will be used in future, but for now, there are function which does not support it yet
+* ``.isna()``
+* ``.dropna(how='any|all', axis='rows|columns')``
+* ``.any()``
+* ``.all()``
+* ``.fillna(value|dict)``
+* ``.ffill()``
+* ``.bfill()``
+* ``.interpolate()`` - works only with ``np.nan`` (not ``pd.NA``)
 
 
 SetUp

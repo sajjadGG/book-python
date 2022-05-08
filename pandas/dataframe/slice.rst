@@ -1,6 +1,7 @@
 DataFrame Slice
 ===============
-
+* ``df[1:3]``
+* ``.loc[:, 'Morning':'Evening']``
 
 SetUp
 -----

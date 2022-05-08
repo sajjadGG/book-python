@@ -1,5 +1,10 @@
 DataFrame Select
 ================
+* ``df[df['Morning'] > 0.0]``
+* ``~`` - logical not
+* ``& `` - logical and
+* ``|`` - logical or
+* ``^`` - logical xor
 
 
 SetUp

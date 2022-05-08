@@ -1,5 +1,14 @@
 DataFrame Sample
 ================
+* ``.sample(n=5)``
+* ``.sample(n=5, replace=True)``
+* ``.sample(frac=.5)``
+* ``.sample(frac=1/2)``
+* ``.head(n=5)``
+* ``.tail(n=5)``
+* ``.first('5D')`` - works only on time series
+* ``.last('5D')`` - works only on time series
+* ``.reset_index(drop=True)``
 
 
 SetUp

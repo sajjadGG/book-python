@@ -1,5 +1,10 @@
 DataFrame Update
 ================
+* ``df['column'] = 0``
+* ``df[1:2] = 0``
+* ``.loc[df['Species'] == 0, 'Species'] = 'Setosa'``
+* ``.replace()``
+* ``.eval()``
 
 
 Update Column

@@ -1,5 +1,9 @@
 DataFrame Rolling
 =================
+* ``.resample(freq)``
+* ``.rolling(window=10)``
+* ``.shift(periods=1, freq="D")``
+* ``.diff()``
 
 
 SetUp

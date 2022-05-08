@@ -1,9 +1,7 @@
 DataFrame Loc
 =============
-* ``loc`` - uses fancy indexing
-* ``iloc`` - only index numbers
-* ``df.loc`` - start and stop are included!!
-* ``df.iloc`` - behaves like Python slices
+* ``.loc[]`` - uses fancy indexing, start and stop are included!!
+* ``.iloc[]`` - only index numbers, behaves like Python slices
 
 .. figure:: img/pandas-dataframe-select-row.png
 

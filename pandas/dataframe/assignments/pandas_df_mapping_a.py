@@ -59,10 +59,9 @@ result = ...
 
 
 # Solution
-df = pd.read_csv(DATA, parse_dates=['datetime'])
-df['date'] = df['datetime'].dt.date
-df['time'] = df['datetime'].dt.time
-result = df
+result = pd.read_csv(DATA, parse_dates=['datetime'])
+result['date'] = result['datetime'].dt.date
+result['time'] = result['datetime'].dt.time
 
 
 # # Solution 2

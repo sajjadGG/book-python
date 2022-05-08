@@ -1,11 +1,9 @@
 DataFrame Getitem
 =================
-* ``df.at[]``
-* ``df.loc[]``
-* ``df.iat[]``
-* ``df.iloc[]``
-* ``iat`` and ``iloc`` takes ``int`` as argument
-* ``at`` and ``loc`` takes ``str`` as argument
+* ``.at[]`` - takes ``tuple[str,str]`` as argument
+* ``.loc[]`` - takes ``tuple[str,str]`` as argument
+* ``.iat[]`` - takes ``tuple[int,int]`` as argument
+* ``.iloc[]`` - takes ``tuple[int,int]`` as argument
 
 
 SetUp

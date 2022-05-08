@@ -45,7 +45,8 @@ result = ...
 
 # Solution
 result = (
-    pd.read_csv(DATA)
-      .query('petal_length > 2.0')
-      .head(n=5)
+    pd
+    .read_csv(DATA)
+    .query('petal_length > 2.0')
+    .head(n=5)
 )

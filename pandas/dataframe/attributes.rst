@@ -1,5 +1,8 @@
 DataFrame Attributes
 ====================
+* ``df.columns``
+* ``df.index``
+* ``df.values``
 
 
 SetUp

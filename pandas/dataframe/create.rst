@@ -1,5 +1,7 @@
 DataFrame Create
 ================
+* ``pd.DataFrame(list[dict])``
+* ``pd.DataFrame(dict[str,list])``
 
 
 SetUp

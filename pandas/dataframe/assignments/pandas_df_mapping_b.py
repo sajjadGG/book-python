@@ -6,17 +6,17 @@
 
 English:
     1. Read data from `DATA` as `df: pd.DataFrame`
-    2. Set header and index to data from file
-    3. Convert Polish month names to English
-    4. Parse dates to `datetime` objects
-    5. Run doctests - all must succeed
+    2. Convert Polish month names to English
+    3. Parse dates to `datetime` objects
+    4. Select columns ['firstname', 'lastname', 'born']
+    4. Run doctests - all must succeed
 
 Polish:
     1. Wczytaj dane z `DATA` jako `df: pd.DataFrame`
-    2. Ustaw nagłówek i index na dane zaczytane z pliku
-    3. Przekonwertuj polskie nazwy miesięcy na angielskie
-    4. Sparsuj daty do obiektów `datetime`
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    2. Przekonwertuj polskie nazwy miesięcy na angielskie
+    3. Sparsuj daty do obiektów `datetime`
+    4. Wybierz kolumny ['firstname', 'lastname', 'born']
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `pd.Series.replace(regex=True)`
@@ -66,9 +66,10 @@ result = ...
 
 
 # Solution
-df = pd.read_csv(DATA)
-df['born'] = df['born'] \
-     .replace(MONTHS_PLEN, regex=True) \
-     .apply(pd.to_datetime)
-
-result = df
+result = (
+    pd
+    .read_csv(DATA)
+    .replace(MONTHS_PLEN, regex=True)
+    .loc[:, ['firstname', 'lastname', 'born']]
+    .apply(pd.to_datetime, errors='ignore')
+)
