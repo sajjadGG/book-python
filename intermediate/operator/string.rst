@@ -303,6 +303,10 @@ Use Case - 0x02
 >>> MINUTE = 60 * SECOND
 >>> HOUR = 60 * MINUTE
 >>> DAY = 24 * HOUR
+>>> MONTH = 30.4375 * DAY
+>>> YEAR = 365.25 * DAY
+>>>
+>>> SOL = 24*HOUR + 39*MINUTE + 35*SECOND
 >>>
 >>>
 >>> class Duration:
@@ -310,12 +314,18 @@ Use Case - 0x02
 ...         self.seconds = seconds
 ...
 ...     def __format__(self, unit):
+...         if unit == 'seconds':
+...             result = self.seconds / SECOND
 ...         if unit == 'minutes':
 ...             result = self.seconds / MINUTE
 ...         elif unit == 'hours':
 ...             result = self.seconds / HOUR
 ...         elif unit == 'days':
 ...             result = self.seconds / DAY
+...         elif unit == 'months':
+...             result = self.seconds / MONTH
+...         elif unit == 'years':
+...             result = self.seconds / YEAR
 ...         return f'{result:.1f} {unit}'
 >>>
 >>>
@@ -484,6 +494,7 @@ Use Case - 0x04
 ...             case 's' | 'seconds': duration /= SECOND
 ...             case 'm' | 'minutes': duration /= MINUTE
 ...             case 'h' | 'hours':   duration /= HOUR
+...             case 'd' | 'days':    duration /= DAY
 ...             case 'M' | 'months':  duration /= MONTH
 ...             case 'y' | 'years':   duration /= YEAR
 ...             case _: raise TypeError('nieobsługiwany format')
