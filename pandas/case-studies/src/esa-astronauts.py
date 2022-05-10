@@ -1,6 +1,6 @@
 """
 >>> result
-{'years': 8, 'months': 3, 'days': 22, 'hours': 7, 'minutes': 3, 'seconds': 0}
+{'years': 8, 'months': 9, 'days': 16, 'hours': 9, 'minutes': 42, 'seconds': 0}
 """
 
 import pandas as pd
