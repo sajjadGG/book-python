@@ -55,6 +55,9 @@ Exception
 >>> def on_timeout() -> Exception:
 ...     raise TimeoutError
 
+>>> def on_timeout() -> TimeoutError:
+...     raise TimeoutError
+
 
 Literal
 -------

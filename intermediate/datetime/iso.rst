@@ -5,8 +5,9 @@ Datetime ISO Standard
 
 Dates
 -----
-* Format: ``YYYY-mm-dd``
 * Year-Month-Day
+* Format: ``YYYY-mm-dd``
+* Example: 1969-07-21
 
 Example:
 
@@ -16,8 +17,9 @@ Example:
 
 Time
 ----
-* Format: ``HH:MM:SS.ffffff`` or ``HH:MM:SS`` or ``HH:MM``
 * 24 hour clock
+* Format: ``HH:MM:SS.ffffff`` or ``HH:MM:SS`` or ``HH:MM``
+* Example: 12:34, 12:34:56, 12:34:56.123456
 * Optional seconds and microseconds
 * ``00:00`` - midnight, at the beginning of a day
 * ``24:00`` - midnight, at the end of a day (not recommended)
@@ -34,6 +36,7 @@ Example:
 Date and Time
 -------------
 * Format: ``YYYY-mm-ddTHH:MM:SS.ffffff``
+* Example: 1961-04-12T06:07:00.123456
 * "T" separates date and time)
 * Optional seconds and microseconds
 
@@ -49,6 +52,7 @@ Timezone
 --------
 * Format: ``YYYY-mm-ddTHH:MM:SS.ffffffUTC``
 * Format: ``YYYY-mm-ddTHH:MM:SS.ffffffZ``
+* Example: 1961-04-12T06:07:00.123456+0200
 * Optional seconds and microseconds
 * "Z" (Zulu) means UTC
 

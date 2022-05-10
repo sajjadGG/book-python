@@ -2,7 +2,7 @@
 * Assignment: Datetime Create Current
 * Complexity: easy
 * Lines of code: 3 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
     1. Create `datetime` object with current date and time

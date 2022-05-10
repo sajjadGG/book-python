@@ -144,14 +144,6 @@ Errors
 >>> name: int = 'Mark Watney'
 
 
-Future
-------
-* Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
-
->>> age: int? = 1337                # doctest: +SKIP
->>> age: int? = None                # doctest: +SKIP
-
-
 Use Case - 0x01
 ---------------
 >>> firstname: str = 'Melissa'

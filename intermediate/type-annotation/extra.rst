@@ -2,8 +2,6 @@ Type Annotation Extra
 =====================
 
 
-
-
 Annotated
 ---------
 * Since Python 3.9 :pep:`593` -- Flexible function and variable annotations
@@ -13,10 +11,12 @@ Annotated
 >>>
 >>>
 >>> digit = Annotated[int, ValueRange(0,9)]  # doctest: +SKIP
->>> int8 = Annotated[int, ValueRange(0, 255), ctype('int8')]  # doctest: +SKIP
->>> issuekey = Annotated[str, MatchesRegex('[A-Z]{2,10}-[0-9]{1,6}')  # doctest: +SKIP
+>>> int8 = Annotated[int, ValueRange(-128, 127), ctype('int8')]  # doctest: +SKIP
+>>> uint8 = Annotated[int, ValueRange(0, 255), ctype('uint8')]    # doctest: +SKIP
+>>> jira_issuekey = Annotated[str, MatchesRegex('[A-Z]{2,10}-[0-9]{1,6}')]  # doctest: +SKIP
 >>> vector = Annotated[list[int], MaxLen(10)]  # doctest: +SKIP
->>> kelvin = Annotated[float, ValueRange(0.0, float('inf'))  # doctest: +SKIP
+>>> kelvin = Annotated[float, ValueRange(0.0, float('inf'))]  # doctest: +SKIP
+>>> week = Annotated[str, Literal['Monday', 'Tuesday', 'Wednesday', ...])  # doctest: +SKIP
 
 .. note:: ``ValueRange``, ``ctype``, ``MatchesRegex``, ``MaxLen``
           does not exist in Python. It is used only as an example
