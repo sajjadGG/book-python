@@ -109,14 +109,14 @@ before using it further:
 >>>
 >>> if result:
 ...     print(result)
-<re.Match object; span=(11, 20), match='@nasa.gov'>
+<re.Match object; span=(7, 16), match='@nasa.gov'>
 
 Assignment expressions allows to merge two independent lines into one
 coherent statement:
 
 >>> if result := re.search(r'@nasa.gov', DATA):
 ...     print(result)
-<re.Match object; span=(11, 20), match='@nasa.gov'>
+<re.Match object; span=(7, 16), match='@nasa.gov'>
 
 
 Comprehensions
@@ -291,10 +291,10 @@ Use Case - 0x04
  (5.7, 2.8, 4.1, 1.3, 'versicolor')]
 
 >>> result = (tuple(values) + (species,)
->>>           for line in DATA.splitlines()
->>>           if (row := line.split(','))
->>>           and (values := map(float, row[:-1]))
->>>           and (species := row[-1]))
+...           for line in DATA.splitlines()
+...           if (row := line.split(','))
+...           and (values := map(float, row[:-1]))
+...           and (species := row[-1]))
 >>>
 >>> result  # doctest: +ELLIPSIS
 <generator object <genexpr> at 0x...>

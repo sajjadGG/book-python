@@ -7,6 +7,7 @@ Pickle File
 
 SetUp
 -----
+>>> import pickle
 
 
 Serialize to File
