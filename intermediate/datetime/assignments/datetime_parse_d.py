@@ -15,6 +15,9 @@ Polish:
 Hints:
     * `for ... in`
     * nested `try ... except`
+    * FORMATS = []
+    * for fmt in FORMATS
+    * helper function
     * 24-hour clock
 
 Tests:
@@ -46,7 +49,23 @@ DATA = [
 # type: list[datetime]
 result = ...
 
-# Solution
+FORMATS = [
+    '%b %d, %Y %H:%M:%S',
+    '%B %d, %Y %H:%M',
+    '%B %d, %Y %H:%M:%S',
+]
+
+def parse(dt):
+    for fmt in FORMATS:
+        try:
+            return datetime.strptime(dt, fmt)
+        except ValueError:
+            continue
+
+result = [parse(dt) for dt in DATA]
+
+
+# Alternative Solution
 result = []
 
 for line in DATA:

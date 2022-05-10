@@ -62,6 +62,7 @@ Pickle
     :maxdepth: 1
     :caption: Pickle
 
+    pickle/about.rst
     pickle/dump.rst
     pickle/load.rst
     pickle/objects.rst

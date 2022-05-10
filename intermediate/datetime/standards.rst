@@ -32,18 +32,19 @@ Date format in Poland:
 
 .. code-block:: text
 
-    12.4.1961
-    12.04.1961
+    12 kwietnia 1961
+    12 kwiecień 1961
 
     12 IV 1961
     12.IV.1961
 
+    12.4.1961
+    12.04.1961
+
     12/4/1961
     12/04/1961
 
-    12 kwietnia 1961
-    12 kwiecień 1961
-
+    12-04-1961
     1961-04-12
 
 Which format is a formal standard in Poland? [#wikiISO8601]_
@@ -51,10 +52,14 @@ Which format is a formal standard in Poland? [#wikiISO8601]_
 
 Time
 ----
-24 and 12 hour clock:
+* What AM stands for?
+* What PM stands for?
+* 24 and 12 hour clock
+* Zero padded minutes, seconds and microseconds but not hours
+* Variable length microseconds
+* Confusion at noon and midnight
 
-    * What AM stands for?
-    * What PM stands for?
+24 and 12 hour clock:
 
     .. code-block:: text
 
@@ -72,6 +77,11 @@ Zero padded:
 
         06:07:00
         6:07:00
+
+        6:07:00.000001
+        6:07:00.123456
+        6:07:00.123
+        6:07:00.1
 
 Noon and Midnight
 
@@ -95,6 +105,14 @@ Noon and Midnight
 Times after 24:00
 -----------------
 * Times after 24:00 [#wikiTimesAfter2400]_
+* UTC leap second [#wikiLeapSecond]_
+* Issues created by insertion (or removal) of leap seconds
+* Calculation of time differences and sequence of events
+* Missing leap seconds announcement
+* Implementation differences
+* Textual representation of the leap second
+* Binary representation of the leap second
+* Other reported software problems associated with the leap second
 
 .. code-block:: text
 
@@ -124,11 +142,12 @@ Military time
 
 References
 ----------
-.. [#wikiDateTimeFormats] https://en.wikipedia.org/wiki/Date_format_by_country
-.. [#wikiNoonMidnight] https://en.wikipedia.org/wiki/12-hour_clock#Confusion_at_noon_and_midnight
-.. [#wikiTimesAfter2400] https://en.wikipedia.org/wiki/24-hour_clock#Times_after_24:00
-.. [#wikiMilitaryTime] https://en.wikipedia.org/wiki/24-hour_clock#Military_time
-.. [#wikiMilitaryTimezones] https://en.wikipedia.org/wiki/List_of_military_time_zones
-.. [#wikiISO8601] https://en.wikipedia.org/wiki/ISO_8601
+.. [#wikiLeapSecond] Wikipedia. Leap Second. Year: 2019. Retrieved: 2022-05-10. URL: https://en.wikipedia.org/wiki/Leap_second
+.. [#wikiDateTimeFormats] Wikipedia. Date Time Formats. Year: 2019. Retrieved: 2022-05-10. URL: https://en.wikipedia.org/wiki/Date_format_by_country
+.. [#wikiNoonMidnight] Wikipedia. Noon Midnight. Year: 2019. Retrieved: 2022-05-10. URL: https://en.wikipedia.org/wiki/12-hour_clock#Confusion_at_noon_and_midnight
+.. [#wikiTimesAfter2400] Wikipedia. Times After 2400. Year: 2019. Retrieved: 2022-05-10. URL: https://en.wikipedia.org/wiki/24-hour_clock#Times_after_24:00
+.. [#wikiMilitaryTime] Wikipedia. Military Time. Year: 2019. Retrieved: 2022-05-10. URL: https://en.wikipedia.org/wiki/24-hour_clock#Military_time
+.. [#wikiMilitaryTimezones] Wikipedia. Military Timezones. Year: 2019. Retrieved: 2022-05-10. URL: https://en.wikipedia.org/wiki/List_of_military_time_zones
+.. [#wikiISO8601] Wikipedia. ISO8601. Year: 2019. Retrieved: 2022-05-10. URL: https://en.wikipedia.org/wiki/ISO_8601
 .. [#wikiDateFormatJapan] Date and time notation in Japan. Wikipedia. Year: 2019. Retrieved: 2019-06-27. URL: https://en.wikipedia.org/wiki/Date_and_time_notation_in_Japan#Date
 .. [#wikiDateFormatUS] Date and time notation in the United States. Wikipedia. Year: 2019. Retrieved: 2019-06-27. URL: https://en.wikipedia.org/wiki/Date_and_time_notation_in_the_United_States

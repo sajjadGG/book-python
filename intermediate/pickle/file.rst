@@ -1,13 +1,16 @@
 Pickle File
 ===========
 * File extension ``pkl``
+* ``rb`` reading in binary mode
+* ``wb`` writing in binary mode
+
+
+SetUp
+-----
 
 
 Serialize to File
 -----------------
->>> import pickle
->>>
->>>
 >>> DATA = [1, 2, 3]
 >>>
 >>> with open('/tmp/myfile.pkl', mode='wb') as file:
@@ -18,9 +21,6 @@ Deserialize from File
 ---------------------
 Load from file:
 
->>> import pickle
->>>
->>>
 >>> with open('/tmp/myfile.pkl', mode='rb') as file:
 ...     result = pickle.load(file)
 >>>
