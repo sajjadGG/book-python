@@ -3,6 +3,7 @@ Datetime Timezone
 * Always keep dates and times only in UTC (**important!**)
 * Datetimes should be converted to local time only when displaying to user
 * Computerphile Time & Time Zones [#ytComputerphileTimeZones]_
+* Abolition of Time Zones [#wikiAbolitionOfTimeZones]_
 
 
 Daylight Saving Time
@@ -274,6 +275,7 @@ Descriptor Timezone Converter:
 
 References
 ----------
+.. [#wikiAbolitionOfTimeZones] Wikipedia. Abolition of Time Zones. Leap Second. Year: 2019. Retrieved: 2022-05-10. URL: https://en.wikipedia.org/wiki/Abolition_of_time_zones
 .. [#IANA] IANA. Time Zone Database. Year: 2017. Retrieved: 2019-08-05.
 .. [#ytComputerphileTimeZones] Computerphile. The Problem with Time & Timezones. Year: 2019. Retrieved: 2019-04-05. URL: https://www.youtube.com/watch?v=-5wpm-gesOY
 
