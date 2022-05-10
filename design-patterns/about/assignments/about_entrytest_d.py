@@ -6,15 +6,15 @@
 
 English:
     1. Define `result: list[str]`
-    2. Iterate over `DATA`
-    3. Append to `result` emails with top-level domain in DOMAINS
-    4. Run doctests - all must succeed
+    2. Collect in `result` all email addresses from `DATA`
+       with top-level domain mentioned in `DOMAINS`
+    3. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj `result: list[str]`
-    2. Iterując po `DATA`
-    3. Dodaj do `result` emaile z domenami najwyższego rzędu w DOMAINS
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    2. Zbierz w `result` wszystkie adresy email z `DATA`
+       z domenami najwyższego rzędu wymienionymi w `DOMAINS`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

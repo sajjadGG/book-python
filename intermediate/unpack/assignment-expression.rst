@@ -48,7 +48,9 @@ Comprehension:
 
 Example
 -------
-* Defines and substitutes in one go
+* First defines identifier with value
+* Then returns the value from the identifier
+* Both operations in the same line
 
 >>> x = 1
 >>> print(x)
@@ -98,7 +100,7 @@ Checking Match
 --------------
 >>> import re
 >>>
->>> DATA = 'mark.watney@nasa.gov'
+>>> DATA = 'mwatney@nasa.gov'
 
 Typically regular expressions requires to check if the value ``is not None``
 before using it further:
@@ -210,13 +212,13 @@ Use Case - 0x01
 
 Use Case - 0x02
 ---------------
->>> DATA = ['5.8,2.7,5.1,1.9,virginica',
-...         '5.1,3.5,1.4,0.2,setosa',
-...         '5.7,2.8,4.1,1.3,versicolor']
+>>> DATA = """5.8,2.7,5.1,1.9,virginica
+... 5.1,3.5,1.4,0.2,setosa
+... 5.7,2.8,4.1,1.3,versicolor"""
 >>>
 >>>
 >>> result = [tuple(features + [species])
-...           for row in DATA
+...           for row in DATA.splitlines()
 ...           if (line := row.split(','))
 ...           and (features := [float(x) for x in line[0:4]])
 ...           and (species := line[4])]
@@ -228,6 +230,90 @@ Use Case - 0x02
 
 
 Use Case - 0x03
+---------------
+>>> DATA = """5.8,2.7,5.1,1.9,virginica
+... 5.1,3.5,1.4,0.2,setosa
+... 5.7,2.8,4.1,1.3,versicolor"""
+
+>>> %%timeit -r 1000 -n 1000  # doctest: +SKIP
+... result = []
+... for line in DATA.splitlines():
+...     *values, species = line.split(',')
+...     values = map(float,values)
+...     row = tuple(values) + (species,)
+...     result.append(row)
+3.18 µs ± 394 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+>>> %%timeit -r 1000 -n 1000  # doctest: +SKIP
+... result = [tuple(values) + (species,)
+...           for line in DATA.splitlines()
+...           if (row := line.split(','))
+...           and (values := [float(x) for x in row[:-1]])
+...           and (species := row[-1])]
+3.36 µs ± 423 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+>>> %%timeit -r 1000 -n 1000  # doctest: +SKIP
+... result = [tuple(values) + (species,)
+...           for line in DATA.splitlines()
+...           if (row := line.split(','))
+...           and (values := map(float, row[:-1]))
+...           and (species := row[-1])]
+2.97 µs ± 386 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+>>> %%timeit -r 1000 -n 1000  # doctest: +SKIP
+... result = (tuple(values) + (species,)
+...           for line in DATA.splitlines()
+...           if (row := line.split(','))
+...           and (values := map(float, row[:-1]))
+...           and (species := row[-1]))
+577 ns ± 53.3 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+Note, that the generator expression will not return values, but create
+an object which execution will get values. This is the reason why this
+solution is such drastically fast.
+
+
+Use Case - 0x04
+---------------
+>>> DATA = """5.8,2.7,5.1,1.9,virginica
+... 5.1,3.5,1.4,0.2,setosa
+... 5.7,2.8,4.1,1.3,versicolor"""
+
+>>> result = [tuple(values) + (species,)
+...           for line in DATA.splitlines()
+...           if (row := line.split(','))
+...           and (values := map(float, row[:-1]))
+...           and (species := row[-1])]
+>>>
+>>> result   # doctest: +NORMALIZE_WHITESPACE
+[(5.8, 2.7, 5.1, 1.9, 'virginica'),
+ (5.1, 3.5, 1.4, 0.2, 'setosa'),
+ (5.7, 2.8, 4.1, 1.3, 'versicolor')]
+
+>>> result = (tuple(values) + (species,)
+>>>           for line in DATA.splitlines()
+>>>           if (row := line.split(','))
+>>>           and (values := map(float, row[:-1]))
+>>>           and (species := row[-1]))
+>>>
+>>> result  # doctest: +ELLIPSIS
+<generator object <genexpr> at 0x...>
+>>>
+>>> next(result)
+(5.8, 2.7, 5.1, 1.9, 'virginica')
+>>>
+>>> next(result)
+(5.1, 3.5, 1.4, 0.2, 'setosa')
+>>>
+>>> next(result)
+(5.7, 2.8, 4.1, 1.3, 'versicolor')
+>>>
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
+
+
+Use Case - 0x05
 ---------------
 >>> DATA = [{'is_astronaut': True,  'name': 'Mark Jim WaTNey'},
 ...         {'is_astronaut': True,  'name': 'Melissa LewiS'},
@@ -258,7 +344,7 @@ In both cases result is the same:
  {'firstname': 'Rick', 'lastname': 'Martinez'}]
 
 
-Use Case - 0x04
+Use Case - 0x06
 ---------------
 >>> DATA = [{'is_astronaut': True,  'name': 'Mark Watney'},
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
@@ -280,7 +366,7 @@ Use Case - 0x04
  {'firstname': 'Rick', 'lastname': 'M.'}]
 
 
-Use Case - 0x05
+Use Case - 0x07
 ---------------
 >>> DATA = [{'is_astronaut': True,  'name': 'Mark Watney'},
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
@@ -301,7 +387,7 @@ Use Case - 0x05
 ['Mark W.', 'Melissa L.', 'Rick M.']
 
 
-Use Case - 0x06
+Use Case - 0x08
 ---------------
 In the following example dataclasses are used to automatically
 generate ``__init__()`` method based on the attributes:
@@ -353,7 +439,7 @@ generate ``__init__()`` method based on the attributes:
  Versicolor(sepal_length=7.0, sepal_width=3.2, petal_length=4.7, petal_width=1.4)]
 
 
-Use Case - 0x07
+Use Case - 0x09
 ---------------
 >>> import re
 >>>

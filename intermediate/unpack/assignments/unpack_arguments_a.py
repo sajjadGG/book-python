@@ -16,8 +16,8 @@ Polish:
     1. Zdefiniuj `result: list[dict]`
     2. Iteruj po `DATA` separując `features` od `label`
     3. Do `result` dodawaj dict z:
-        * klucz: `label`, wartość: nazwa gatunku
-        * klucz: `mean`, wartość: wynik średniej arytmetycznej `features`
+       a. klucz: `label`, wartość: nazwa gatunku
+       b. klucz: `mean`, wartość: wynik średniej arytmetycznej `features`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:

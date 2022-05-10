@@ -40,9 +40,9 @@ Day 4
 * 30m - Moduły i pakiety (venv, pip)
 * 30m - Lokalizacja i internacjonalizacja (encoding, locale, i18n, l10n)
 * 30m - Logowanie zdarzeń (logging)
-* 30m - Problemy precyzji float
+* 30m - Problemy precyzji float (IEEE 754)
 * 30m - Pseudolosowość, random seed
-* 60m - Wprowadzenie do testów i TDD
+* 60m - Wprowadzenie do testów i TDD (unittest, doctest)
 
 
 Day 5

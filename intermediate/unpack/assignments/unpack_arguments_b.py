@@ -17,7 +17,7 @@ Polish:
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:
-    * https://github.com/python/cpython/blob/bb3e0c240bc60fe08d332ff5955d54197f79751c/Objects/rangeobject.c#L82
+    * https://github.com/python/cpython/blob/main/Objects/rangeobject.c#LC75
     * use `*args` and `**kwargs`
     * `if len(args) == ...`
 
