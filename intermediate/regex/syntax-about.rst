@@ -15,7 +15,7 @@ SetUp
 * TEXT has firstname and lastname
 * TEXT has date
 * TEXT has time
-* TEXT has punctuation (``,` and ``.``)
+* TEXT has punctuation (``,`` and ``.``)
 * TEXT has digits and numbers
 * TEXT has ordinals (th) - from st, nd, rd, th
 * TEXT has lowercase and uppercase letters

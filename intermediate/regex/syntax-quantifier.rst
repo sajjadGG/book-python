@@ -238,6 +238,29 @@ Use Case - 0x07
 >>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
 >>>
 >>>
+>>> re.findall('<.+>', HTML)
+['<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>']
+>>>
+>>> re.findall('<.+?>', HTML)
+['<h1>', '</h1>', '<p>', '</p>', '<p>', '</p>']
+>>>
+>>> re.findall('</?.+?>', HTML)
+['<h1>', '</h1>', '<p>', '</p>', '<p>', '</p>']
+>>>
+>>> re.findall('</?(.+?)>', HTML)
+['h1', 'h1', 'p', 'p', 'p', 'p']
+>>>
+>>> tags = re.findall('</?(.+?)>', HTML)
+>>> sorted(set(tags))
+['h1', 'p']
+
+
+Use Case - 0x08
+---------------
+>>> import re
+>>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
+>>>
+>>>
 >>> re.findall('</?.*>', HTML)
 ['<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>']
 >>>

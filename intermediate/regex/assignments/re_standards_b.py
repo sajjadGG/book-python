@@ -3,7 +3,6 @@
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min
-* Warning: Do no write any code - **discussion only**
 
 English:
     TODO: English Translation

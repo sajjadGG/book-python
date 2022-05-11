@@ -407,3 +407,14 @@ Use Case - 0x07
 >>>
 >>> tag
 ['p']
+
+
+Use Case - 0x08
+---------------
+>>> import re
+>>>
+>>>
+>>> HTML = '<p>Hello World</p>'
+>>>
+>>> re.findall('<(?P<tag>.*?)>(.*?)</(?P=tag)>', HTML)
+[('p', 'Hello World')]

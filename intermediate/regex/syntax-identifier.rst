@@ -23,47 +23,6 @@ Numeric
 ['Y', 'u', 'r', 'i', ' ', 'G', 'a', 'g', 'a', 'r', 'i', 'n', ' ', 'l', 'a', 'u', 'n', 'c', 'h', 'e', 'd', ' ', 't', 'o', ' ', 's', 'p', 'a', 'c', 'e', ' ', 'o', 'n', ' ', 'A', 'p', 'r', ' ', 't', 'h', ',', ' ', ' ', 'a', 't', ' ', ':', ' ', 'a', 'm', '.']
 
 
-String
-------
-* ``\w`` - any unicode alphabet character (lower or upper, also with diacritics (i.e. ąćęłńóśżź...), numbers and underscores
-* ``\W`` - anything but any unicode alphabet character (i.e. whitespace, dots, comas, dashes)
-* lowercase letters including diacritics (i.e. ąćęłńóśżź...) and accents
-* uppercase letters including diacritics (i.e. ąćęłńóśżź...) and accents
-* digits
-* underscores ``_``
-
-Valid characters are the same as allowed in variable/modules names in Python:
-
->>> imie = 'Mark'
->>> IMIE = 'Mark'
->>> imię = 'Mark'
->>> imię1 = 'Mark'
->>> Imię_1 = 'Mark'
-
->>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
-
-
->>> re.findall('\w', TEXT)  # doctest: +NORMALIZE_WHITESPACE
-['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n',
- 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p',
- 'r', '1', '2', 't', 'h', '1', '9', '6', '1', 'a', 't', '6', '0', '7', 'a',
- 'm']
-
->>> re.findall('\W', TEXT)
-[' ', ' ', ' ', ' ', ' ', ' ', ' ', ',', ' ', ' ', ' ', ':', ' ', '.']
-
-Mind, that following code gives similar output to ``\w`` but it is not
-completely true. ``\w`` would extract also unicode characters while this
-``[a-zA-Z0-9]`` will not.
-
->>> re.findall('[a-zA-Z0-9]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
-['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n',
- 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p',
- 'r', '1', '2', 't', 'h', '1', '9', '6', '1', 'a', 't', '6', '0', '7', 'a',
- 'm']
-
-
 Whitespaces
 -----------
 * ``\s`` - whitespace (space, tab, newline, non-breaking space)
@@ -123,6 +82,63 @@ Examples:
 >>> re.findall('\b[a-z][a-z]\b', TEXT)  # without raw-string
 []
 
+
+String
+------
+* ``\w`` - any unicode alphabet character (lower or upper, also with diacritics (i.e. ąćęłńóśżź...), numbers and underscores
+* ``\W`` - anything but any unicode alphabet character (i.e. whitespace, dots, comas, dashes)
+* lowercase letters including diacritics (i.e. ąćęłńóśżź...) and accents
+* uppercase letters including diacritics (i.e. ąćęłńóśżź...) and accents
+* digits
+* underscores ``_``
+
+Valid characters are the same as allowed in variable/modules names in Python:
+
+>>> imie = 'Mark'
+>>> IMIE = 'Mark'
+>>> imię = 'Mark'
+>>> imię1 = 'Mark'
+>>> Imię_1 = 'Mark'
+
+>>> import re
+>>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+
+
+>>> re.findall('\w', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n',
+ 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p',
+ 'r', '1', '2', 't', 'h', '1', '9', '6', '1', 'a', 't', '6', '0', '7', 'a',
+ 'm']
+
+>>> re.findall('\W', TEXT)
+[' ', ' ', ' ', ' ', ' ', ' ', ' ', ',', ' ', ' ', ' ', ':', ' ', '.']
+
+Mind, that following code gives similar output to ``\w`` but it is not
+completely true. ``\w`` would extract also unicode characters while this
+``[a-zA-Z0-9]`` will not.
+
+>>> re.findall('[a-zA-Z0-9]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n',
+ 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p',
+ 'r', '1', '2', 't', 'h', '1', '9', '6', '1', 'a', 't', '6', '0', '7', 'a',
+ 'm']
+
+Example:
+
+>>> text = 'cześć'
+>>>
+>>> re.findall('[a-z]', text)
+['c', 'z', 'e']
+>>>
+>>> re.findall('\w', text)
+['c', 'z', 'e', 'ś', 'ć']
+>>>
+>>> re.findall('\w', text, flags=re.ASCII)
+['c', 'z', 'e']
+>>> re.findall('\w', text, flags=re.UNICODE)
+['c', 'z', 'e', 'ś', 'ć']
+
+Flag ``re.UNICODE`` is set by default.
 
 Use Case - 0x01
 ---------------
