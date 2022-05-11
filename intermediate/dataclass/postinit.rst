@@ -179,6 +179,36 @@ are not returned by the module-level ``fields()`` function.
 
 Use Case - 0x01
 ---------------
+>>> from datetime import date, time, datetime, timezone
+>>> from dataclasses import dataclass, InitVar
+>>> from zoneinfo import ZoneInfo
+>>>
+>>>
+>>> @dataclass
+... class CurrentTime:
+...     tzname: InitVar[str]
+...     d: date | None = None
+...     t: time | None = None
+...     tz: ZoneInfo | None = None
+...
+...     def __post_init__(self, tzname):
+...         current = datetime.now(ZoneInfo('UTC'))
+...         localized = current.astimezone(ZoneInfo(tzname))
+...         self.d = localized.date()
+...         self.t = localized.time()
+...         self.tz = localized.tzname()
+>>>
+>>>
+>>> now = CurrentTime('Europe/Warsaw')
+>>>
+>>> print(now)  # doctest: +SKIP
+CurrentTime(d=datetime.date(1969, 7, 21),
+            t=datetime.time(2, 56, 15),
+            tz='CEST')
+
+
+Use Case - 0x02
+---------------
 >>> from dataclasses import dataclass, InitVar
 >>>
 >>>
@@ -200,7 +230,7 @@ Astronaut(firstname='Mark', lastname='Watney')
 Astronaut(firstname='Mark', lastname='Watney')
 
 
-Use Case - 0x02
+Use Case - 0x03
 ---------------
 >>> from typing import ClassVar
 >>> from dataclasses import dataclass
@@ -230,7 +260,7 @@ Traceback (most recent call last):
 TypeError: Astronaut.__init__() got an unexpected keyword argument 'AGE_MAX'
 
 
-Use Case - 0x03
+Use Case - 0x04
 ---------------
 * Boundary check
 
@@ -259,7 +289,7 @@ Use Case - 0x03
 ...             raise ValueError('Coordinate cannot be negative')
 
 
-Use Case - 0x04
+Use Case - 0x05
 ---------------
 * Var Range
 
@@ -299,7 +329,7 @@ Traceback (most recent call last):
 ValueError: x value (0) is not between 10 and 100
 
 
-Use Case - 0x05
+Use Case - 0x06
 ---------------
 * Const Range
 
@@ -331,7 +361,7 @@ Traceback (most recent call last):
 TypeError: Point.__init__() got an unexpected keyword argument 'X_MIN'
 
 
-Use Case - 0x06
+Use Case - 0x07
 ---------------
 * Init, Repr
 
