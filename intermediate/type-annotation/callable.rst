@@ -139,24 +139,7 @@ Good Engineering Practices
 
 Future
 ------
-* Since Python 3.11: :pep:`645` -- Allow writing optional types as x?
 * Since Python 3.11: :pep:`563` -- Postponed Evaluation of Annotations
-* Since Python 3.11 :pep:`677` -- Callable Type Syntax
-
-Allow writing optional types as x?:
-
->>> # doctest: +SKIP
-... def find(text: str, substr: str) -> int?:
-...     position = text.find(substr)
-...     if position == -1:
-...         return None
-...     else:
-...         return position
-...
-...
-... find('Python', 'x')
-... find('Python', 'o')
-4
 
 Postponed Evaluation of Annotations:
 
@@ -166,38 +149,6 @@ Postponed Evaluation of Annotations:
 >>> # doctest: +SKIP
 ... add.__annotations__
 {'a': 'int', 'b': 'int', 'return': 'int'}
-
-Callable Type Syntax:
-
->>> # doctest: +SKIP
-... from typing import Awaitable, Callable, Concatenate, ParamSpec, TypeVarTuple
-...
-... P = ParamSpec("P")
-... Ts = TypeVarTuple('Ts')
-...
-... f0: () -> bool
-... f0: Callable[[], bool]
-...
-... f1: (int, str) -> bool
-... f1: Callable[[int, str], bool]
-...
-... f2: (...) -> bool
-... f2: Callable[..., bool]
-...
-... f3: async (str) -> str
-... f3: Callable[[str], Awaitable[str]]
-...
-... f4: (**P) -> bool
-... f4: Callable[P, bool]
-...
-... f5: (int, **P) -> bool
-... f5: Callable[Concatenate[int, P], bool]
-...
-... f6: (*Ts) -> bool
-... f6: Callable[[*Ts], bool]
-...
-... f7: (int, *Ts, str) -> bool
-... f7: Callable[[int, *Ts, str], bool]
 
 
 Use Case - 0x01

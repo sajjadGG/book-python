@@ -5,8 +5,7 @@ Dataclass Field
 * ``init`` - Use this field in ``__init__()``
 * ``repr`` - Use this field in ``__repr__()``
 * ``hash`` - Use this field in ``__hash__()``
-* ``compare`` - Use this field in comparison functions
-  (le, lt, gt, ge, eq, ne)
+* ``compare`` - Use this field in comparison functions (le, lt, gt, ge, eq, ne)
 * ``metadata`` - For storing extra information about field
 * ``kw_only`` - field will become a keyword-only parameter to ``__init__()``
 

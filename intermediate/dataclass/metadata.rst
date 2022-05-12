@@ -60,37 +60,6 @@ ValueError: Invalid age
 
 Use Case - 0x01
 ---------------
->>> from dataclasses import dataclass, field
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     age: int = field(metadata={'min': 30, 'max': 50})
-...
-...     def _validate_range(self, field):
-...         value = getattr(self, field)
-...         MIN = self.__dataclass_fields__[field].metadata['min']
-...         MAX = self.__dataclass_fields__[field].metadata['max']
-...         if value not in range(MIN, MAX):
-...             raise ValueError(f'Field {field} with value={value} is not in range from {MIN} to {MAX}')
-...
-...     def __post_init__(self):
-...         self._validate_range('age')
->>>
->>>
->>> mark = Astronaut(firstname='Mark', lastname='Watney', age=60)
-Traceback (most recent call last):
-ValueError: Field age with value=60 is not in range from 30 to 50
->>>
->>> mark = Astronaut(firstname='Mark', lastname='Watney', age=40)
->>> mark
-Astronaut(firstname='Mark', lastname='Watney', age=40)
-
-
-Use Case - 0x02
----------------
 * Validation
 
 >>> from dataclasses import dataclass, field, KW_ONLY
@@ -155,7 +124,7 @@ Astronaut(firstname='Mark', lastname='Watney', born=datetime.date(1961, 4, 12),
           account_created=datetime.datetime(1969, 7, 21, 2, 56, 15, 123456, tzinfo=datetime.timezone.utc))
 
 
-Use Case - 0x03
+Use Case - 0x02
 ---------------
 * Setattr
 
@@ -208,108 +177,56 @@ Traceback (most recent call last):
 AssertionError: height value 120 is not between 156 and 210
 
 
-Use Case - 0x04
+Use Case - 0x03
 ---------------
 >>> from dataclasses import dataclass, field
->>> from datetime import date
->>> from typing import Literal
->>>
->>>
->>> @dataclass
-... class Mission:
-...     year: int
-...     name: str
->>>
->>>
->>> # doctest: +SKIP
-... @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     agency: Literal['NASA', 'ESA', 'POLSA'] = field(metadata={'choices': ['NASA', 'ESA', 'POLSA']})
-...     age: int = field(metadata={'min': 30, 'max': 50})
-...     height: int | float = field(metadata={'unit': 'cm'})
-...     weight: int | float = field(metadata={'unit': 'kg'})
-...     born: date | None
-...     friends: list['Astronaut'] | None = None
-...     missions: list[Mission] | None = None
-...     medals: list[str] | None = None
-...
-...     def _validate_age(self, age):
-...         AGE_MIN = self.__dataclass_fields__['age'].metadata['min']
-...         AGE_MAX = self.__dataclass_fields__['age'].metadata['max']
-...         if not AGE_MIN <= age < AGE_MAX:
-...             raise ValueError(f'Invalid age, must be between {AGE_MIN} and {AGE_MAX}')
-...
-...     def _validate_agency(self, agency):
-...         AGENCY_CHOICES = self.__dataclass_fields__['agency'].metadata['choices']
-...         if agency not in AGENCY_CHOICES:
-...             raise ValueError(f'Invalid agency, must be one of {AGENCY_CHOICES}')
-...
-...     def __setattr__(self, attrname, attrvalue):
-...         match attrname:
-...             case 'age':    self._validate_age(attrvalue)
-...             case 'agency': self._validate_agency(attrvalue)
-...         return super().__setattr__(attrname, attrvalue)
->>>
->>>
->>> # doctest: +SKIP
-... mark = Astronaut(
-...         firstname='Mark',
-...         lastname='Watney',
-...         agency='NASA',
-...         age=35,
-...         height=185.5,
-...         weight=75.5,
-...         born=date(1969, 7, 21),
-...         missions=[Mission(1973, 'Apollo 18'),
-...                   Mission(2012, 'STS-136'),
-...                   Mission(2035, 'Ares 3')],
-... )
->>>
->>> mark.age = 10  # doctest: +SKIP
-Traceback (most recent call last):
-ValueError: Invalid age, must be between 30 and 50
->>>
->>> mark.agency = 'CNSA'  # doctest: +SKIP
-Traceback (most recent call last):
-ValueError: Invalid agency, must be one of ['NASA', 'ESA', 'POLSA']
-
-
-Use Case - 0x05
----------------
->>> from dataclasses import KW_ONLY, dataclass, field
->>> from typing import Literal
 >>>
 >>>
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     _: KW_ONLY
-...     age: int | float | None = field(default=None, metadata={'unit': 'years', 'min': 30, 'max': 50})
-...     weight: int | float | None = field(default=None, metadata={'unit': 'kg'})
-...     height: int | float | None = field(default=None, metadata={'unit': 'cm'})
-...     agency: Literal['NASA','ESA','POLSA'] | None = field(default=None, metadata={'choices': ['NASA','ESA','POLSA']})
+...     age: int = field(default=None, metadata={'type': 'range', 'unit': 'years', 'min': 30, 'max': 50})
+...     height: float | None = field(default=None, metadata={'type': 'range', 'unit': 'cm',  'min': 156, 'max': 210})
+...     agency: str | None = field(default='NASA', metadata={'type': 'choices', 'options': ['NASA', 'ESA']})
 ...
-...     def _validate_age(self):
-...         metadata = self.__dataclass_fields__['age'].metadata
-...         if not metadata['min'] <= self.age < metadata['max']:
-...             raise ValueError(f'Age "{self.age}" is invalid, '
-...                              f'should be between {metadata["min"]} and {metadata["max"]}')
+...     def _validate_range(self, attrname, value):
+...         min = self.__dataclass_fields__[attrname].metadata['min']
+...         max = self.__dataclass_fields__[attrname].metadata['max']
+...         if value and not min <= value <= max:
+...             raise ValueError(f'Attribute {attrname} is not between {min} and {max}')
 ...
-...     def _validate_agency(self):
-...         metadata = self.__dataclass_fields__['agency'].metadata
-...         if self.agency not in metadata['choices']:
-...             raise ValueError(f'Agency "{self.agency}" is invalid, '
-...                              f'should be one of: {metadata["choices"]}')
+...     def _validate_choices(self, attrname, value):
+...         options = self.__dataclass_fields__[attrname].metadata['options']
+...         if options and value not in options:
+...             raise ValueError(f'Attribute {attrname} is not an option, choices are: {options}')
 ...
-...     def __post_init__(self):
-...         self._validate_age()
-...         self._validate_agency()
+...     def __setattr__(self, attrname, value):
+...         try:
+...             attrtype = self.__dataclass_fields__[attrname].metadata['type']
+...         except KeyError:
+...             return super().__setattr__(attrname, value)
+...         match attrtype:
+...             case 'range':   self._validate_range(attrname, value)
+...             case 'choices': self._validate_choices(attrname, value)
+...             case _: raise NotImplementedError
+>>>
+>>>
+>>> mark = Astronaut('Mark', 'Watney')
+>>>
+>>> mark
+Astronaut(firstname='Mark', lastname='Watney', age=35, height=None, agency='NASA')
+>>>
+>>> mark.agency = 'ESA'
+>>> mark.agency = 'Roscosmos'
+ValueError: Attribute agency is not an option, choices are: ['NASA', 'ESA']
+>>>
+>>> mark.age = 40
+>>> mark.age = 10
+ValueError: Attribute age is not between 30 and 50
 
 
-Use Case - 0x06
+Use Case - 0x04
 ---------------
 >>> # doctest: +SKIP
 ... from __future__ import annotations
