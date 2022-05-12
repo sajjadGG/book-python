@@ -110,10 +110,3 @@ def __delattr__(self, name):
 def __hash__(self):
     return hash((self.firstname,self.lastname,self.born,self.job,self.agency,self.age,self.height,self.weight,self.groups,self.friends,self.assignments,self.missions,self.experience,self.account_last_login,self.account_created,self.AGE_MIN,self.AGE_MAX,))
 <BLANKLINE>
-
-
-DataclassInspector
-------------------
-* For Python less than 3.9
-* ``pip install DataclassInspector``
-* https://pypi.org/project/DataclassInspector/
