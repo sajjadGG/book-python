@@ -27,6 +27,12 @@ Locale About
     1.000.000
     10.00.000
 
+.. code-block:: text
+
+    10k
+    10.5k
+    10kk
+    10M
 
 Syntax
 ------

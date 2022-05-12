@@ -135,3 +135,5 @@ Python PEP
 * Simple interface for HTTP requests (similar to requests)
 * CTypes argtypes, restype from TypeAnnotation
 * Context manager ``with logging.DEBUG:``
+* print('cośtam', level='warning')
+* log('cośtam', level='warning')

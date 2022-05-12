@@ -84,7 +84,7 @@ Directory Naming Convention
     venv-3.10/
 
     venv-3.10.0/
-    venv-3.10.2/
+    venv-3.10.1/
     venv-3.10.2/
     venv-3.10.3/
     venv-3.10.4/
@@ -124,21 +124,25 @@ Good practices
 --------------
 * ``python3.10 -m venv -h``
 * ``python3.10 -m venv --upgrade-deps venv-py310``
-* name as version ``venv-3.10.0``
+* name as version ``venv-3.10``
 * place in your project directory and add folder to ``.gitignore`` (important!)
 * otherwise place it in ``~/.virtualenv/``, but some meaningful name is required
-* Append at the end of ``venv-3.10.0/bin/activate``:
+* Append at the end of ``venv-3.10/bin/activate``:
 
-    .. code-block:: bash
+.. code-block:: bash
 
-        project_name='My Project'
+    project_name='My Project'
 
-        red='\[\033[00;31m\]'
-        green='\[\033[00;32m\]'
-        blue='\[\033[00;36m\]'
-        white='\[\033[00;39m\]'
+    red='\[\033[00;31m\]'
+    green='\[\033[00;32m\]'
+    blue='\[\033[00;36m\]'
+    white='\[\033[00;39m\]'
 
-        export PS1="\n${blue}${project_name}> ${white}"
+    export PS1="\n${blue}${project_name}> ${white}"
+
+.. code-block:: zsh
+
+    export PS1=$'\n%F{blue}project_name> %F{white}'
 
 
 Further Reading

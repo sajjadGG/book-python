@@ -65,9 +65,10 @@ DATA = [
     (7.6, 3.0, 6.6, 2.1, 'virginica'),
     (4.9, 3.0, 1.4, 0.2, 'setosa')]
 
-# Solution
-header, *rows = DATA
-result = [dict(zip(header, row)) for row in rows]
 
+header, *rows = DATA
+data = [dict(zip(header, row)) for row in rows]
+
+# Solution
 with open(FILE, mode='w') as file:
-    json.dump(result, file)
+    json.dump(data, file)

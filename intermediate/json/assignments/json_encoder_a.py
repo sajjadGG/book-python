@@ -1,8 +1,8 @@
 """
 * Assignment: JSON Encoder Martian
-* Complexity: medium
+* Complexity: easy
 * Lines of code: 4 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Define `result: str` with JSON encoded `DATA`
@@ -14,7 +14,7 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from inspect import isclass
+    >>> from inspect import isfunction
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
@@ -22,11 +22,8 @@ Tests:
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
 
-    >>> assert isclass(Encoder), \
-    'Encoder must be a class'
-
-    >>> assert issubclass(Encoder, json.JSONEncoder), \
-    'Encoder must inherit from `json.JSONEncoder`'
+    >>> assert isfunction(encoder), \
+    'Encoder must be a function'
 
     >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
     {"mission": "Ares 3",
@@ -44,6 +41,7 @@ Tests:
 
 import json
 from datetime import date, datetime
+from typing import Any
 
 
 DATA = {'mission': 'Ares 3',
@@ -60,9 +58,8 @@ DATA = {'mission': 'Ares 3',
             {'name': 'Mark Watney', 'born': date(1994, 10, 12)}]}
 
 
-class Encoder:
+def encoder(value: Any) -> str:
     ...
-
 
 # JSON encoded DATA
 # type: str
@@ -70,9 +67,9 @@ result = ...
 
 
 # Solution
-class Encoder(json.JSONEncoder):
-    def default(self, value: datetime) -> str:
+def encoder(value: Any) -> str:
+    if isinstance(value, date):
         return value.isoformat()
 
 
-result = json.dumps(DATA, cls=Encoder)
+result = json.dumps(DATA, default=encoder)

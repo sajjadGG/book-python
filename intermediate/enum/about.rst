@@ -196,9 +196,9 @@ Use Case - 0x03
 >>>
 >>> class IssueStatus(Enum):
 ...     TODO = 'todo'
-...     IN_PROGRESS = 'in progress'
-...     IN_REVIEW = 'in review'
-...     IN_TEST = 'in test'
+...     IN_PROGRESS = 'in-progress'
+...     IN_REVIEW = 'in-review'
+...     IN_TEST = 'in-test'
 ...     DONE = 'done'
 ...     REJECTED = 'rejected'
 

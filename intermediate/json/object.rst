@@ -15,12 +15,17 @@ Encode Simple Object
 ...     role: str
 >>>
 >>>
->>> DATA = Astronaut('Mark', 'Watney', 'Botanist')
+>>> mark = Astronaut('Mark', 'Watney', 'Botanist')
 >>>
->>> result = json.dumps(vars(DATA))
+>>> data = vars(mark)
+>>> result = json.dumps(data, indent=2)
 >>>
 >>> print(result)
-{"firstname": "Mark", "lastname": "Watney", "role": "Botanist"}
+{
+  "firstname": "Mark",
+  "lastname": "Watney",
+  "role": "Botanist"
+}
 
 
 Decode Simple Object
@@ -35,7 +40,12 @@ Decode Simple Object
 ...     lastname: str
 ...     role: str
 >>>
->>> DATA = '{"firstname": "Mark", "lastname": "Watney", "role": "Botanist"}'
+>>>
+>>> DATA = """{
+...   "firstname": "Mark",
+...   "lastname": "Watney",
+...   "role": "Botanist"
+... }"""
 >>>
 >>> data = json.loads(DATA)
 >>> result = Astronaut(**data)
@@ -73,23 +83,61 @@ Encode Object with Relation
 ...     Astronaut('Rick', 'Martinez', 'Pilot', missions=[])]
 >>>
 >>>
->>> class MyEncoder(json.JSONEncoder):
-...     def default(self, obj):
-...         result = vars(obj)
-...         result['__type__'] = obj.__class__.__name__
-...         return result
+>>> def encoder(obj):
+...     clsname = obj.__class__.__name__
+...     return {'_type': clsname} | vars(obj)
 >>>
 >>>
->>> result = json.dumps(CREW, cls=MyEncoder)
+>>> result = json.dumps(CREW, default=encoder, indent=2)
 >>>
 >>> print(result)
-[{"firstname": "Mark", "lastname": "Watney", "role": "Botanist", "missions": [{"year": 2035, "name": "Ares 3", "__type__": "Mission"}], "__type__": "Astronaut"}, {"firstname": "Melissa", "lastname": "Lewis", "role": "Commander", "missions": [{"year": 2035, "name": "Ares 3", "__type__": "Mission"}, {"year": 2031, "name": "Ares 1", "__type__": "Mission"}], "__type__": "Astronaut"}, {"firstname": "Rick", "lastname": "Martinez", "role": "Pilot", "missions": [], "__type__": "Astronaut"}]
+[
+  {
+    "_type": "Astronaut",
+    "firstname": "Mark",
+    "lastname": "Watney",
+    "role": "Botanist",
+    "missions": [
+      {
+        "_type": "Mission",
+        "year": 2035,
+        "name": "Ares 3"
+      }
+    ]
+  },
+  {
+    "_type": "Astronaut",
+    "firstname": "Melissa",
+    "lastname": "Lewis",
+    "role": "Commander",
+    "missions": [
+      {
+        "_type": "Mission",
+        "year": 2035,
+        "name": "Ares 3"
+      },
+      {
+        "_type": "Mission",
+        "year": 2031,
+        "name": "Ares 1"
+      }
+    ]
+  },
+  {
+    "_type": "Astronaut",
+    "firstname": "Rick",
+    "lastname": "Martinez",
+    "role": "Pilot",
+    "missions": []
+  }
+]
 
 
 Decode
 ------
- Encoding nested objects with relations to JSON:
+Encoding nested objects with relations to JSON:
 
+>>> from pprint import pprint
 >>> from dataclasses import dataclass
 >>> import json
 >>>
@@ -108,23 +156,31 @@ Decode
 ...     missions: list[Mission]
 >>>
 >>>
->>> DATA = """[{"firstname": "Mark", "lastname": "Watney", "role": "Botanist", "missions": [{"year": 2035, "name": "Ares 3", "__type__": "Mission"}], "__type__": "Astronaut"}, {"firstname": "Melissa", "lastname": "Lewis", "role": "Commander", "missions": [{"year": 2035, "name": "Ares 3", "__type__": "Mission"}, {"year": 2031, "name": "Ares 1", "__type__": "Mission"}], "__type__": "Astronaut"}, {"firstname": "Rick", "lastname": "Martinez", "role": "Pilot", "missions": [], "__type__": "Astronaut"}]"""
+>>> DATA = """[{"_type": "Astronaut", "firstname": "Mark", "lastname": "Watney", "role": "Botanist", "missions": [{"_type": "Mission", "year": 2035, "name": "Ares 3"}]}, {"_type": "Astronaut", "firstname": "Melissa", "lastname": "Lewis", "role": "Commander", "missions": [{"_type": "Mission", "year": 2035, "name": "Ares 3"}, {"_type": "Mission", "year": 2031, "name": "Ares 1"}]}, {"_type": "Astronaut", "firstname": "Rick", "lastname": "Martinez", "role": "Pilot", "missions": []}]"""
 >>>
 >>>
->>> class MyDecoder(json.JSONDecoder):
-...     def __init__(self):
-...         super().__init__(object_hook=self.default)
-...
-...     def default(self, obj):
-...         clsname = obj.pop('__type__')
-...         cls = globals()[clsname]
-...         return cls(**obj)
+>>> def decoder(obj):
+...     clsname = obj.pop('_type')
+...     cls = globals()[clsname]
+...     return cls(**obj)
 >>>
 >>>
->>> result = json.loads(DATA, cls=MyDecoder)
+>>> result = json.loads(DATA, object_hook=decoder)
 >>>
->>> print(result)
-[Astronaut(firstname='Mark', lastname='Watney', role='Botanist', missions=[Mission(year=2035, name='Ares 3')]), Astronaut(firstname='Melissa', lastname='Lewis', role='Commander', missions=[Mission(year=2035, name='Ares 3'), Mission(year=2031, name='Ares 1')]), Astronaut(firstname='Rick', lastname='Martinez', role='Pilot', missions=[])]
+>>> print(result, width=72)
+[Astronaut(firstname='Mark',
+           lastname='Watney',
+           role='Botanist',
+           missions=[Mission(year=2035, name='Ares 3')]),
+ Astronaut(firstname='Melissa',
+           lastname='Lewis',
+           role='Commander',
+           missions=[Mission(year=2035, name='Ares 3'),
+                     Mission(year=2031, name='Ares 1')]),
+ Astronaut(firstname='Rick',
+           lastname='Martinez',
+           role='Pilot',
+           missions=[])]
 
 
 Use Case - 0x01

@@ -1,8 +1,8 @@
 """
 * Assignment: JSON Decoder Martian
 * Complexity: medium
-* Lines of code: 11 lines
-* Time: 13 min
+* Lines of code: 8 lines
+* Time: 8 min
 
 English:
     1. Define `result: dict` with decoded `DATA` from JSON
@@ -14,13 +14,10 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from inspect import isclass
+    >>> from inspect import isfunction
 
-    >>> assert isclass(Decoder), \
-    'Decoder must be a class'
-
-    >>> assert issubclass(Decoder, json.JSONDecoder), \
-    'Decoder must inherit from `json.JSONDecoder`'
+    >>> assert isfunction(decoder), \
+    'Decoder must be a function'
 
     >>> assert type(result) is dict, \
     'Result must be a dict'
@@ -66,26 +63,21 @@ DATA = """
               {"name": "Mark Watney", "born": "1994-10-12"}]}"""
 
 
-class Decoder:
+def decoder(data: dict) -> dict:
     ...
-
 
 # dict[str, str|list|datetime]: with decoded DATA
 result = ...
 
 
 # Solution
-class Decoder(json.JSONDecoder):
-    def __init__(self) -> None:
-        super().__init__(object_hook=self.default)
-
-    def default(self, data: dict) -> dict:
-        for key, value in data.items():
-            if key in ('destination_landing', 'launch_date'):
-                data[key] = datetime.fromisoformat(value)
-            elif key == 'born':
-                data[key] = datetime.fromisoformat(value).date()
-        return data
+def decoder(data: dict) -> dict:
+    for key, value in data.items():
+        if key in ('destination_landing', 'launch_date'):
+            data[key] = datetime.fromisoformat(value)
+        elif key == 'born':
+            data[key] = datetime.fromisoformat(value).date()
+    return data
 
 
-result = json.loads(DATA, cls=Decoder)
+result = json.loads(DATA, object_hook=decoder)
