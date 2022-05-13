@@ -107,5 +107,6 @@ Decision
 --------
 >>> dragon.take_damage(DMG)
 
+* Good: encapsulation
 * Good: easy
 * Good: dragon ---> enemy

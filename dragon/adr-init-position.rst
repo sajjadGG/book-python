@@ -29,7 +29,6 @@ Option 1
 Problems:
 
 >>> dragon = Dragon('Wawelski', 'img/dragon/alive.png', 50, 120)
->>> knn = KNearestNeighbors(k=3)
 
 
 Option 2
@@ -44,6 +43,11 @@ Option 2
 Problems:
 
 >>> dragon = Dragon('Wawelski', 'img/dragon/alive.png', x=50, y=120)
+
+>>> position = Position(x=1, y=2)  # ok
+>>> position = GPSPosition(x=1, y=2)  # nie ok
+
+>>> knn = KNearestNeighbors(k=3)
 >>> knn = KNearestNeighbors(k=3, w=[1,2,3])
 
 
@@ -73,6 +77,8 @@ Option 4
 Problem:
 
 >>> knn = KNearestNeighbors(k=3, weights=[1,2,3])
+
+>>> df.plot(kind='line', subplots=True, sharey=True)
 
 
 Option 5
@@ -242,6 +248,31 @@ Option 12
 Option 13
 ---------
 >>> class Point:
+...     x: int
+...     y: int
+...
+...     def __init__(self, x: int = 0, y: int = 0) -> None:
+...         self.x = x
+...         self.y = y
+>>>
+>>>
+>>> dragon = Dragon('Wawelski', Point(x=50, y=120))
+>>> dragon = Dragon('Wawelski', position=Point(x=50, y=120))
+>>> dragon = Dragon('Wawelski', position=Point(posx=50, posy=120))
+>>> dragon = Dragon('Wawelski', position=Point(position_x=50, position_y=120))
+
+* Good: very common
+* Good: easy to use
+* Good: more explicit than ``dataclass``
+* Good: easy to extend to 3D
+* Good: can sat default values
+* Good: keyword argument is not required, class name is verbose enough
+
+
+Option 14
+---------
+>>> class Point:
+...     __slots__ = ('x', 'y')
 ...     x: int
 ...     y: int
 ...

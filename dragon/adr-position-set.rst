@@ -32,6 +32,7 @@ Option 1
 * Good: easy to add validation if needed
 * Good: easy to extend to 3D - add parameter with default value ``0``
 * Bad: ``teleport()`` and ``fly()`` are bad names
+* Bad: ``set_position_xy()`` ties you to 2D point
 * Bad: arguments are implicit, require knowledge of an API
 
 

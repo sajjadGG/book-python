@@ -44,7 +44,7 @@ Option 3
 >>> dragon.move(x=10, y=-20)
 >>> dragon.move_to(x=10, y=20)
 
-* Bad: controller must know curren position
+* Bad: controller must know current position
 
 
 Option 4
@@ -52,17 +52,23 @@ Option 4
 >>> dragon.move_x(10)
 >>> dragon.move_y(20)
 
+* Bad: require knowledge of an API
+
 
 Option 5
 --------
 >>> dragon.move(10, 20)
 >>> dragon.move_xy(10, 20)
 
+* Bad: require knowledge of an API
+
 
 Option 6
 --------
 >>> dragon.move((-10, 20))
 >>> dragon.move_xy((-10, 20))
+
+* Bad: require knowledge of an API
 
 
 Option 7
@@ -88,6 +94,7 @@ Option 8
 
 * Good: there is only one method ``move()`` responsible for moving
 * Bad: Python has keyword arguments, so use it
+* Bad: require knowledge of an API
 
 
 Option 9
@@ -98,6 +105,8 @@ Option 9
 >>> dragon.move([
 ...     (10, 20),
 ...     (10, 15)])
+
+* Bad: require knowledge of an API
 
 
 Option 9
@@ -110,6 +119,8 @@ Option 9
 ...     (50, 120),
 ...     (5)])
 
+* Bad: require knowledge of an API
+
 
 Option 10
 ---------
@@ -118,6 +129,8 @@ Option 10
 >>> dragon.move([
 ...     {'x':10, 'y':20},
 ...     {'x':10, 'y':15}])
+
+* Bad: require knowledge of an API
 
 
 Option 11
@@ -129,6 +142,7 @@ Option 11
 ...     {'left':50, 'right':120},
 ...     {'down':50}])
 
+* Bad: require knowledge of an API
 
 
 Option 12
@@ -143,6 +157,8 @@ Option 12
 ...     {'dx': -10, 'dy': 20},
 ...     {'dx': -10, 'dy': 20},
 ...     {'dx': -10, 'dy': 20}])
+
+* Bad: require knowledge of an API
 
 
 Option 13
@@ -160,6 +176,8 @@ Option 14
 ...     {'direction': 'left', 'distance': 20},
 ...     {'direction': 'left', 'distance': 10},
 ...     {'direction': 'right', 'distance': 20}])
+
+* Bad: require knowledge of an API
 
 
 Option 15
@@ -182,6 +200,10 @@ Option 15
 >>> dragon.position_y += 20
 
 
+* Bad: encapsulation
+* Bad: require knowledge of an API
+
+
 Option 16
 ---------
 >>> dragon.move(x=-10, y=+20)
@@ -194,11 +216,21 @@ Option 17
 >>> dragon.move(direction='left', distance=20)
 >>> dragon.move(direction='right', distance=5)
 
+* Good: explicit
+* Good: verbose
+* Good: extensible
+* Bad: to complex for now
+
 
 Option 18
 ---------
 >>> LEFT = 61  # keyboard key code
 >>> dragon.move(direction=LEFT, distance=20)
+
+* Good: explicit
+* Good: verbose
+* Good: extensible
+* Bad: to complex for now
 
 
 Option 19
@@ -209,6 +241,11 @@ Option 19
 >>>
 >>> dragon.move(Direction.LEFT, distance=5)
 >>> dragon.move(direction=Direction.LEFT, distance=5)
+
+* Good: explicit
+* Good: verbose
+* Good: extensible
+* Bad: to complex for now
 
 
 Option 20
@@ -225,6 +262,11 @@ Option 20
 >>>
 >>>
 >>> action('ARROW_UP', 5)
+
+* Good: explicit
+* Good: verbose
+* Good: extensible
+* Bad: to complex for now
 
 
 Option 21
@@ -244,16 +286,23 @@ Good, because:
 
 Bad, because:
 
->>> db.execute(SQL)
-
+>>> db.execute_select(SQL)
+>>> db.execute_select_where(SQL)
+>>> db.execute_select_order(SQL)
+>>> db.execute_select_limit(SQL)
+>>> db.execute_select_order_limit(SQL)
+>>> db.execute_select_where_order_limit(SQL)
 >>> db.execute_insert(SQL)
 >>> db.execute_insert_values(SQL)
->>> db.execute_select(SQL)
 >>> db.execute_alter(SQL)
 >>> db.execute_alter_table(SQL)
 >>> db.execute_create(SQL)
 >>> db.execute_create_table(SQL)
 >>> db.execute_create_database(SQL)
+
+Why not?:
+
+>>> db.execute(SQL)
 
 Use Case:
 
@@ -282,6 +331,9 @@ Use Case:
 ...          delimiter=';',
 ...          verbose=True)
 
+* Bad: not extensible
+* Bad: to complex for now
+
 
 Decision
 --------
@@ -298,3 +350,4 @@ Alternative:
 * Good: consistent with ``set_position()``
 * Good: verbose
 * Good: extensible
+* Bad: to complex for now

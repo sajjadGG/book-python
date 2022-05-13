@@ -65,7 +65,6 @@ Option 4
 >>> dragon.make_damage(ENEMY)
 >>> dragon.take_damage(ENEMY)
 
-* Good: dragon ---> enemy
 * Bad: MVC
 
 .. figure:: img/dragon-firkraag-01.jpg
@@ -113,3 +112,5 @@ Decision
 >>> dmg = dragon.make_damage()
 
 * Good: dragon ---> enemy
+* Good: readability
+* Good: encapsulation
