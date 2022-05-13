@@ -12,7 +12,7 @@ Dragon ADR Init Name
 
 Problem
 -------
-* Create and name it "Wawelski"
+* Create Dragon and name it "Wawelski"
 
 
 Option 1
