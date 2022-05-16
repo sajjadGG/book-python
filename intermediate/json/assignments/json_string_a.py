@@ -2,7 +2,7 @@
 * Assignment: JSON String Dump
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
     1. Dump `DATA` to JSON format
