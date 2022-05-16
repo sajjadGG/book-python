@@ -29,29 +29,65 @@ Tests:
     ...     for row in result)
     True
     >>> result[0]  # doctest: +NORMALIZE_WHITESPACE
-    User(login='mojombo',
+    User(login='myuser',
          id=1,
          node_id='MDQ6VXNlcjE=',
          avatar_url='https://avatars.githubusercontent.com/u/1?v=4',
          gravatar_id='',
-         url='https://api.github.com/users/mojombo',
-         html_url='https://github.com/mojombo',
-         followers_url='https://api.github.com/users/mojombo/followers',
-         following_url='https://api.github.com/users/mojombo/following{/other_user}',
-         gists_url='https://api.github.com/users/mojombo/gists{/gist_id}',
-         starred_url='https://api.github.com/users/mojombo/starred{/owner}{/repo}',
-         subscriptions_url='https://api.github.com/users/mojombo/subscriptions',
-         organizations_url='https://api.github.com/users/mojombo/orgs',
-         repos_url='https://api.github.com/users/mojombo/repos',
-         events_url='https://api.github.com/users/mojombo/events{/privacy}',
-         received_events_url='https://api.github.com/users/mojombo/received_events',
+         url='https://api.github.com/users/myuser',
+         html_url='https://github.com/myuser',
+         followers_url='https://api.github.com/users/myuser/followers',
+         following_url='https://api.github.com/users/myuser/following',
+         gists_url='https://api.github.com/users/myuser/gists{/gist_id}',
+         starred_url='https://api.github.com/users/myuser/starred',
+         subscriptions_url='https://api.github.com/users/myuser/subscriptions',
+         organizations_url='https://api.github.com/users/myuser/orgs',
+         repos_url='https://api.github.com/users/myuser/repos',
+         events_url='https://api.github.com/users/myuser/events{/privacy}',
+         received_events_url='https://api.github.com/users/myuser',
          type='User',
          site_admin=False)
 """
 import json
 
 
-DATA = '[{"login":"mojombo","id":1,"node_id":"MDQ6VXNlcjE=","avatar_url":"https://avatars.githubusercontent.com/u/1?v=4","gravatar_id":"","url":"https://api.github.com/users/mojombo","html_url":"https://github.com/mojombo","followers_url":"https://api.github.com/users/mojombo/followers","following_url":"https://api.github.com/users/mojombo/following{/other_user}","gists_url":"https://api.github.com/users/mojombo/gists{/gist_id}","starred_url":"https://api.github.com/users/mojombo/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/mojombo/subscriptions","organizations_url":"https://api.github.com/users/mojombo/orgs","repos_url":"https://api.github.com/users/mojombo/repos","events_url":"https://api.github.com/users/mojombo/events{/privacy}","received_events_url":"https://api.github.com/users/mojombo/received_events","type":"User","site_admin":false},{"login":"defunkt","id":2,"node_id":"MDQ6VXNlcjI=","avatar_url":"https://avatars.githubusercontent.com/u/2?v=4","gravatar_id":"","url":"https://api.github.com/users/defunkt","html_url":"https://github.com/defunkt","followers_url":"https://api.github.com/users/defunkt/followers","following_url":"https://api.github.com/users/defunkt/following{/other_user}","gists_url":"https://api.github.com/users/defunkt/gists{/gist_id}","starred_url":"https://api.github.com/users/defunkt/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/defunkt/subscriptions","organizations_url":"https://api.github.com/users/defunkt/orgs","repos_url":"https://api.github.com/users/defunkt/repos","events_url":"https://api.github.com/users/defunkt/events{/privacy}","received_events_url":"https://api.github.com/users/defunkt/received_events","type":"User","site_admin":false},{"login":"pjhyett","id":3,"node_id":"MDQ6VXNlcjM=","avatar_url":"https://avatars.githubusercontent.com/u/3?v=4","gravatar_id":"","url":"https://api.github.com/users/pjhyett","html_url":"https://github.com/pjhyett","followers_url":"https://api.github.com/users/pjhyett/followers","following_url":"https://api.github.com/users/pjhyett/following{/other_user}","gists_url":"https://api.github.com/users/pjhyett/gists{/gist_id}","starred_url":"https://api.github.com/users/pjhyett/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/pjhyett/subscriptions","organizations_url":"https://api.github.com/users/pjhyett/orgs","repos_url":"https://api.github.com/users/pjhyett/repos","events_url":"https://api.github.com/users/pjhyett/events{/privacy}","received_events_url":"https://api.github.com/users/pjhyett/received_events","type":"User","site_admin":false}]'
+DATA = (
+    '[{"login":"myuser","id":1,"node_id":"MDQ6VXNlcjE=","avatar_url":"http'
+    's://avatars.githubusercontent.com/u/1?v=4","gravatar_id":"","url":"ht'
+    'tps://api.github.com/users/myuser","html_url":"https://github.com/myu'
+    'ser","followers_url":"https://api.github.com/users/myuser/followers",'
+    '"following_url":"https://api.github.com/users/myuser/following","gist'
+    's_url":"https://api.github.com/users/myuser/gists{/gist_id}","starred'
+    '_url":"https://api.github.com/users/myuser/starred","subscriptions_ur'
+    'l":"https://api.github.com/users/myuser/subscriptions","organizations'
+    '_url":"https://api.github.com/users/myuser/orgs","repos_url":"https:/'
+    '/api.github.com/users/myuser/repos","events_url":"https://api.github.'
+    'com/users/myuser/events{/privacy}","received_events_url":"https://api'
+    '.github.com/users/myuser","type":"User","site_admin":false},{"login":'
+    '"defunkt","id":2,"node_id":"MDQ6VXNlcjI=","avatar_url":"https://avata'
+    'rs.githubusercontent.com/u/2?v=4","gravatar_id":"","url":"https://api'
+    '.github.com/users/defunkt","html_url":"https://github.com/defunkt","f'
+    'ollowers_url":"https://api.github.com/users/defunkt/followers","follo'
+    'wing_url":"https://api.github.com/users/defunkt/following","gists_url'
+    '":"https://api.github.com/users/defunkt/gists{/gist_id}","starred_url'
+    '":"https://api.github.com/users/defunkt/starred","subscriptions_url":'
+    '"https://api.github.com/users/defunkt/subscriptions","organizations_u'
+    'rl":"https://api.github.com/users/defunkt/orgs","repos_url":"https://'
+    'api.github.com/users/defunkt/repos","events_url":"https://api.github.'
+    'com/users/defunkt/events{/privacy}","received_events_url":"https://ap'
+    'i.github.com/users/defunkt","type":"User","site_admin":false},{"login'
+    '":"pjhyett","id":3,"node_id":"MDQ6VXNlcjM=","avatar_url":"https://ava'
+    'tars.githubusercontent.com/u/3?v=4","gravatar_id":"","url":"https://a'
+    'pi.github.com/users/pjhyett","html_url":"https://github.com/pjhyett",'
+    '"followers_url":"https://api.github.com/users/pjhyett/followers","fol'
+    'lowing_url":"https://api.github.com/users/pjhyett/following","gists_u'
+    'rl":"https://api.github.com/users/pjhyett/gists{/gist_id}","starred_u'
+    'rl":"https://api.github.com/users/pjhyett/starred","subscriptions_url'
+    '":"https://api.github.com/users/pjhyett/subscriptions","organizations'
+    '_url":"https://api.github.com/users/pjhyett/orgs","repos_url":"https:'
+    '//api.github.com/users/pjhyett/repos","events_url":"https://api.githu'
+    'b.com/users/pjhyett/events{/privacy}","received_events_url":"https://'
+    'api.github.com/users/pjhyett","type":"User","site_admin":false}]')
 
 
 class User:
@@ -66,7 +102,9 @@ class User:
         return f"User({result})"
 
 
+# JSON decoded DATA
 result = ...
+
 
 # Solution
 class User:
@@ -106,7 +144,11 @@ class User:
         return f"User({result})"
 
 
-result = [User(**data) for data in json.loads(DATA)]
+def decoder(obj: dict) -> User:
+    return User(**obj)
+
+
+result = json.loads(DATA, object_hook=decoder)
 
 # Solution 2
 from dataclasses import dataclass
@@ -134,4 +176,8 @@ class User:
     site_admin: bool
 
 
-result = [User(**user) for user in json.loads(DATA)]
+def decoder(obj: dict) -> User:
+    return User(**obj)
+
+
+result = json.loads(DATA, object_hook=decoder)
