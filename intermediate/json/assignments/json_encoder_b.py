@@ -1,8 +1,8 @@
 """
 * Assignment: JSON Encoder Martian
-* Complexity: easy
+* Complexity: medium
 * Lines of code: 4 lines
-* Time: 5 min
+* Time: 8 min
 
 English:
     1. Define `result: str` with JSON encoded `DATA`
@@ -14,7 +14,7 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from inspect import isfunction
+    >>> from inspect import isclass
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
@@ -22,8 +22,11 @@ Tests:
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
 
-    >>> assert isfunction(encoder), \
-    'Encoder must be a function'
+    >>> assert isclass(Encoder), \
+    'Encoder must be a class'
+
+    >>> assert issubclass(Encoder, json.JSONEncoder), \
+    'Encoder must inherit from `json.JSONEncoder`'
 
     >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
     {"mission": "Ares 3",
@@ -41,7 +44,6 @@ Tests:
 
 import json
 from datetime import date, datetime
-from typing import Any
 
 
 DATA = {
@@ -60,7 +62,7 @@ DATA = {
 
 
 # JSON encoder
-def encoder(value: Any) -> str:
+class Encoder:
     ...
 
 
@@ -70,9 +72,11 @@ result = ...
 
 
 # Solution
-def encoder(value: Any) -> str:
-    if isinstance(value, date | datetime):
-        return value.isoformat()
+class Encoder(json.JSONEncoder):
+    def default(self, obj) -> str:
+        match obj:
+            case date() | datetime():
+                return obj.isoformat()
 
 
-result = json.dumps(DATA, default=encoder)
+result = json.dumps(DATA, cls=Encoder)
