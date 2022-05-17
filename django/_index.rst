@@ -62,3 +62,5 @@
     devops/tests.rst
     devops/ci-cd.rst
     devops/deployment.rst
+
+    async/celery.rst

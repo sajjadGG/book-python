@@ -3,6 +3,7 @@
 # django
 # django-debug-toolbar
 # dnspython
+# celery
 # jupyter
 # keras
 # matplotlib

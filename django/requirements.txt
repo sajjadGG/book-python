@@ -4,3 +4,9 @@ sphinx_rtd_theme
 # django
 # django-debug-toolbar
 # pillow
+
+## Celery
+# redis
+# celery
+# django-celery-results
+# django-celery-beat
