@@ -9,6 +9,7 @@ SQLite3 About
 * It is used by mobile apps on iOS, Android, etc.
 * Almost every app has it's own sqlite3 database
 * Almost every web browser (on desktop) uses SQLite3 database
+* https://sqlitebrowser.org/
 
 
 Limits

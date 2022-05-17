@@ -168,6 +168,67 @@ Use Case - 0x01
 ...         }
 
 
+Use Case - 0x01
+---------------
+>>> from fastapi import FastAPI
+>>> from fastapi.responses import JSONResponse
+>>> app = FastAPI()
+>>>
+>>>
+>>> SQL_SELECT_LOGIN = """
+...     SELECT id, firstname, lastname
+...     FROM users
+...     WHERE username = :username
+...     AND password = :password; """
+>>>
+>>>
+>>> class LoginIn(Schema):
+...     username: str
+...     password: str
+...
+...     class Config:
+...         schema_extra = {
+...             'example': {
+...                 'username': 'mwatney',
+...                 'password': 'nasa'}}
+>>>
+>>>
+>>> class LoginOut(Schema):
+...     id: int
+...     firstname: str
+...     lastname: str
+...
+...     class Config:
+...         schema_extra = {
+...             'example': {
+...                 'uid': 1,
+...                 'firstname': 'Mark',
+...                 'lastname': 'Watney'}}
+>>>
+>>>
+>>> class NotFound(Schema):
+...     status: int = 404
+...     reason: str = 'Not Found'
+...     details: str | None = None
+>>>
+>>>
+>>> @app.post(
+...     path='/login',
+...     response_model=LoginOut,
+...     responses={
+...         200: {'model': LoginOut},
+...         404: {'model': NotFound}},
+...     tags=['auth'])
+... def login(user: LoginIn):
+...     from database import DATABASE, SQL_SELECT_LOGIN
+...     with sqlite3.connect(DATABASE) as db:
+...         db.row_factory = sqlite3.Row
+...         if result := db.execute(SQL_SELECT_LOGIN, user.dict()).fetchone():
+...             return dict(result)
+...         else:
+...             return JSONResponse(status_code=404, content={'details': 'invalid login/password'})
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/fastapi_schema_a.py

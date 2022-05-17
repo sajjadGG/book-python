@@ -2,6 +2,8 @@ FastAPI Test Sync
 =================
 * ``pytest``
 * ``unittest``
+* PyCharm PRO HTTP Runner
+* https://www.jetbrains.com/help/pycharm/http-response-handling-examples.html
 
 
 Sync
