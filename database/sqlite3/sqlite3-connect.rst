@@ -49,3 +49,18 @@ Context Managers
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
 ...     pass
+
+
+Debug
+-----
+* ``conn.set_trace_callback(print)``
+* Registers trace_callback to be called for each SQL statement that is actually executed by the SQLite backend.
+* The only argument passed to the callback is the statement (as string) that is being executed.
+
+>>> import sqlite3
+>>>
+>>>
+>>> DATABASE = ':memory:'
+>>>
+>>> with sqlite3.connect(DATABASE) as db:
+...     db.set_trace_callback(print)

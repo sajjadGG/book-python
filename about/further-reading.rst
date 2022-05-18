@@ -172,11 +172,41 @@ Speakers:
 * Andrew Godwin:
 
     * https://pyvideo.org/speaker/andrew-godwin.html
+    * https://www.youtube.com/results?search_query=andrew+goodwin+django+async
+
+
+FastAPI
+-------
+* https://www.youtube.com/watch?v=0sOvCWFmrtA
+* https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/
+* https://jwt.io/
+
+
+Async
+-----
+* https://www.youtube.com/watch?v=Xbl7XjFYsN4&list=PLhNSoGM2ik6SIkVGXWBwerucXjgP1rHmB
+* https://www.youtube.com/watch?v=F19R_M4Nay4
+* https://www.youtube.com/watch?v=Pe3b9bdRtiE
+* https://www.youtube.com/watch?v=19Uh_PA_8Rc
+* https://www.youtube.com/watch?v=oMHrDy62kgE
+
+
+Multiprocessing
+---------------
+* https://dask.org/
 
 
 Http
 ----
 * https://httpbin.org
+* https://12factor.net/
+* https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
+
+
+Database
+--------
+* https://prometheus.io/docs/introduction/overview/
+* https://www.influxdata.com/
 
 
 Online Courses
