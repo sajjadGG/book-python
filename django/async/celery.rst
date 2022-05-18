@@ -43,6 +43,9 @@ Create file: ``myproject/celery.py``
 ...    broker='redis://localhost:6379',
 ...    backend='django-db')
 >>>
+>>> app.conf.task_track_started = True
+>>> app.conf.task_send_sent_event = True
+>>>
 >>> app.autodiscover_tasks()
 
 Modify file: ``myproject/__init__.py``
