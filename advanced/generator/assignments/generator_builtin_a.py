@@ -2,13 +2,11 @@
 * Assignment: Generator Builtin Chain
 * Complexity: easy
 * Lines of code: 5 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Use generator expression to create `result`
-    2. Use `range()` to get numbers:
-       a. from 0 (inclusive)
-       b. to 10 (exclusive)
+    2. Use `range()` to get numbers from 0 (inclusive) to 10 (exclusive)
     3. Use `filter()` to get odd numbers from `result`
        (and assign to `result`)
     4. Use `map()` to cube all numbers in `result`
@@ -19,9 +17,7 @@ English:
 
 Polish:
     1. Użyj wyrażenia generatorowego do stworzenia `result`
-    2. Użyj `range()` aby otrzymać liczby:
-       a. od 0 (włącznie)
-       b. do 10 (rozłącznie)
+    2. Użyj `range()` aby otrzymać liczby od 0 (włącznie) do 10 (rozłącznie)
     3. Użyj `filter()` aby otrzymać liczby nieparzyste z `result`
        (i przypisz je do `result`)
     4. Użyj `map()` aby podnieść wszystkie liczby w `result` do sześcianu
