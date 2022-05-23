@@ -9,33 +9,37 @@ Example
 * After running you have to send ``None`` value to begin processing
 
 >>> def run():
+...     print('Starting worker...')
 ...     while True:
-...         data = yield
-...         print(f'Processing {data}')
+...         work = yield
+...         print(f'Processing {work}')
 >>>
 >>>
 >>> worker = run()
 >>> worker.send(None)
+Starting worker...
 >>>
->>> worker.send(0)
-Processing 0
+>>> worker.send('job1')
+Processing job1
 >>>
->>> worker.send(1)
-Processing 1
+>>> worker.send('job2')
+Processing job2
 >>>
->>> worker.send(2)
-Processing 2
+>>> worker.send('job3')
+Processing job3
 
 >>> from inspect import isgenerator, isgeneratorfunction
 >>>
 >>>
 >>> def run():
+...     print('Starting worker...')
 ...     while True:
-...         data = yield
-...         print(f'Processing {data}')
+...         work = yield
+...         print(f'Processing {work}')
 >>>
 >>> worker = run()
 >>> worker.send(None)
+Starting worker...
 >>>
 >>> worker.send(1)
 Processing 1
@@ -58,9 +62,10 @@ Why Send None?!
 * Sending anything other will raise ``TypeError``
 
 >>> def run():
+...     print('Starting worker...')
 ...     while True:
-...         data = yield
-...         print(f'Processing {data}')
+...         work = yield
+...         print(f'Processing {work}')
 >>>
 >>>
 >>> worker = run()
@@ -76,9 +81,10 @@ TypeError: can't send non-None value to a just-started generator
 Send Upstream Cascade
 ---------------------
 >>> def worker():
+...     print('Starting worker...')
 ...     while True:
-...         data = yield
-...         print(f'Processing {data}')
+...         work = yield
+...         print(f'Processing {work}')
 >>>
 >>> def run(gen):
 ...     gen.send(None)
