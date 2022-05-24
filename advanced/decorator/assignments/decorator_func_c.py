@@ -69,7 +69,7 @@ Tests:
     ...     globals=globals(),
     ...     number=10_000)
 
-    >>> ratio = cached / uncached  # doctest: +SKIP
+    >>> ratio = uncached / cached  # doctest: +SKIP
     >>> print(f'With Cache: {cached:.4f} seconds')  # doctest: +SKIP
     >>> print(f'No Cache time: {uncached:.3f} seconds')  # doctest: +SKIP
     >>> print(f'Cached solution is {ratio:.1f} times faster')  # doctest: +SKIP
