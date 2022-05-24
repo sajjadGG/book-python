@@ -10,7 +10,7 @@ English:
     2. Run doctests - all must succeed
 
 Polish:
-    1. Wciel (inline) kod `odd()` i `cube()` wykorzystując wyrażenia `lambda`
+    1. Zastąp funkcje `odd()` i `cube()` wyrażeniami `lambda`
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:

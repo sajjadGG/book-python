@@ -138,6 +138,22 @@ Global Scope
  'firstname': 'Mark',
  'lastname': 'Watney'}
 
+>>> class Astronaut:
+...    pass
+>>>
+>>> mark = Astronaut()
+>>>
+>>> globals()  # doctest: +SKIP +ELLIPSIS
+{'__name__': '__main__',
+ '__doc__': None,
+ '__package__': None,
+ '__loader__': <class '_frozen_importlib.BuiltinImporter'>,
+ '__spec__': None,
+ '__annotations__': {},
+ '__builtins__': <module 'builtins' (built-in)>,
+ 'Astronaut': <class '__main__.Astronaut'>,
+ 'mark': <__main__.Astronaut object at 0x...>}
+
 
 Local Scope
 -----------
@@ -262,10 +278,44 @@ Simulate user input (for test automation)
 >>> lastname = 'Watney'
 >>>
 >>>
->>> what = input('Type variable name: ')   #input: 'lastname'
+>>> varname = input('Type variable name: ')   #input: 'lastname'
 >>>
->>> globals()[what]
+>>> globals()[varname]
 'Watney'
+
+
+Use Case - 0x02
+---------------
+>>> class Iris:
+...     def __init__(self, sl, sw, pl, pw):
+...         ...
+>>>
+>>> class Setosa(Iris):
+...     pass
+>>>
+>>> class Virginica(Iris):
+...     pass
+>>>
+>>> class Versicolor(Iris):
+...     pass
+>>>
+>>>
+>>> globals()  # doctest: +SKIP +ELLIPSIS
+{'__name__': '__main__',
+ '__doc__': None,
+ '__package__': None,
+ '__loader__': <class '_frozen_importlib.BuiltinImporter'>,
+ '__spec__': None,
+ '__annotations__': {},
+ '__builtins__': <module 'builtins' (built-in)>,
+ 'Setosa': <class '__main__.Setosa'>,
+ 'Virginica': <class '__main__.Virginica'>,
+ 'Versicolor': <class '__main__.Versicolor'>}
+
+>>> *measurement, species = (5.1, 3.5, 1.4, 0.2, 'Setosa')
+>>> cls = globals()[species]
+>>> cls(*measurement)  # doctest: +ELLIPSIS
+<__main__.Setosa object at 0x...>
 
 
 Assignments

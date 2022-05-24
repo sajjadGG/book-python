@@ -6,19 +6,23 @@ FuncProg About
 * Functional programming avoids side effects
 * Functional programming provides referential transparency
 * Instead of loop use ``map`` and recurrence
-
 * Functions can be bound to names (including local identifiers), passed
   as arguments, and returned from other functions, just as any other data
   type can [#WikipediaFunc]_
-
 * Imperative program will use a loop to traverse and modify a list, while
   a functional program, would prefer using a higher-order ``map`` function
   that takes a function and a list, generating and returning a new list by
   applying the function to each list item [#Spiewak2008]_
-
 * Restricting side effects, can decrease number of bugs, be easier to
   debug and test, and be more suited to formal verification [#Hughes1984]_
   [#Hudak1989]_
+* Functional Design Patterns - Scott Wlaschin https://www.youtube.com/watch?v=srQt1NAHYC0
+* The Functional Programmer's Toolkit - Scott Wlaschin - https://www.youtube.com/watch?v=Nrp_LZ-XGsY
+
+Further Reading
+---------------
+* Functional Design Patterns - Scott Wlaschin - https://www.youtube.com/watch?v=srQt1NAHYC0
+* The Functional Programmer's Toolkit - Scott Wlaschin - https://www.youtube.com/watch?v=Nrp_LZ-XGsY
 
 
 References

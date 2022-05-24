@@ -2,7 +2,7 @@
 * Assignment: Generator Itertools Count
 * Complexity: medium
 * Lines of code: 3 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
     1. `Label encoder` algorithm encodes labels (str) to numbers (int).

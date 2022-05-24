@@ -25,8 +25,8 @@ Recurrence in Python
 * Python isn't a functional language
 * CPython implementation doesn't optimize tail recursion
 * Tail recursion is not a particularly efficient technique in Python
-* Uncontrolled recursion causes stack overflows!
 * Rewriting the algorithm iteratively, is generally a better idea
+* Uncontrolled recursion causes stack overflows!
 
 
 Example
