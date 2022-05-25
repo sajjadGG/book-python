@@ -87,12 +87,12 @@ Use Case - 0x02
 ---------------
 * Since
 
->>> from datetime import datetime
+>>> from datetime import datetime, timezone
 >>>
 >>>
 >>> def since(cls):
 ...     class Wrapper(cls):
-...         _instance_created = datetime.now()
+...         _since = datetime.now(timezone.utc)
 ...     return Wrapper
 >>>
 >>>
@@ -101,8 +101,8 @@ Use Case - 0x02
 ...     pass
 >>>
 >>>
->>> print(Astronaut._instance_created)  #   # doctest: +SKIP
-datetime.datetime(1969, 7, 21, 2, 56, 15)
+>>> print(Astronaut._since)  # doctest: +SKIP
+datetime.datetime(1969, 7, 21, 2, 56, 15, tzinfo=datetime.timezone.utc)
 
 
 Use Case - 0x03
@@ -161,5 +161,65 @@ Connecting...
 >>> b.connect()  # doctest: +ELLIPSIS
 Connecting...
 
+
+Use Case - 0x05
+---------------
+>>> def trace(cls):
+...     class Wrapper(cls):
+...         __name__ = cls.__name__
+...         __doc__ = cls.__doc__
+...         __qualname__ = cls.__qualname__
+...
+...         def __init__(self, *args, **kwargs):
+...             self._uuid = str(uuid4())
+...             self._log = logging.getLogger(cls.__name__)
+...             self._since = datetime.now(timezone.utc)
+...             super().__init__(*args, **kwargs)
+...
+...         def _life_duration(self):
+...             now = datetime.now(timezone.utc)
+...             duration = now - self._since
+...             return duration.total_seconds()
+...
+...     return Wrapper
+
+>>> @trace
+... class Astronaut:
+...     pass
+>>>
+>>>
+>>> mark = Astronaut()
+>>> melissa = Astronaut()
+
+>>> mark._uuid  # doctest: +SKIP
+'8b383148-1dd8-4eca-aaa2-6e1deba7ff46'
+>>>
+>>> melissa._uuid  # doctest: +SKIP
+'0a598bb9-cecc-4d3f-82e1-33207ada09ab'
+
+>>> mark._since  # doctest: +SKIP
+datetime.datetime(1961, 4, 12, 6, 7, 00, tzinfo=datetime.timezone.utc)
+>>>
+>>> melissa._since  # doctest: +SKIP
+datetime.datetime(1969, 7, 21, 2, 56, 15, tzinfo=datetime.timezone.utc)
+>>>
+>>>
+>>> mark._life_duration()  # doctest: +SKIP
+85.035824
+>>>
+>>> melissa._life_duration()  # doctest: +SKIP
+76.601305
+
+>>> mark._log
+<Logger Astronaut (WARNING)>
+>>> melissa._log
+<Logger Astronaut (WARNING)>
+>>>
+>>>
+>>> mark._log.warning('Some warning...')
+Some warning...
+>>>
+>>> melissa._log.warning('Some warning...')
+Some warning...
 
 .. todo:: Assignments
