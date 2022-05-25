@@ -38,24 +38,24 @@ Day 2
 Day 3
 -----
 * 45m - OOP Mutable and immutable data structures in parameters
-* 45m - OOP Static and dynamic attributes
-* 60m - OOP: Staticmethod and classmethod
 * 45m - OOP Access modifiers for methods and attributes
+* 45m - OOP Static and dynamic attributes
+* 45m - OOP: Slots
+* 60m - OOP: Staticmethod and classmethod
 * 45m - OOP: Inheritance, Mixin, Composition
 * 30m - OOP: Method Resolution Order and super()
 * 30m - OOP: Polymorphism
-* 120m - OOP: Object Relation Mapping
+* 75m - OOP: Interfaces and abstract classes
 
 
 Day 4
 -----
-* 75m - OOP: Interfaces and abstract classes
+* 120m - OOP: Object Relation Mapping
 * 60m - OOP: Object identity and equality
-* 45m - OOP: Slots
 * 60m - OOP: Class constructor __new__ vs __init__
 * 90m - OOP: Class creation and Metaclass
 * 60m - Performance: Optimization, Micro-benchmarking and Profiling
-* 30m - Performance: Alternative compilers, interpreters and modules
+* 15m - Performance: Alternative compilers, interpreters and modules
 * 15m - Performance: Cython, Numba, C Types and C Modules
 
 
