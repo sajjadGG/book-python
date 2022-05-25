@@ -4,15 +4,15 @@ on: push
 jobs:
 
   Everything:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     container: python:3.10.4
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: python run.py --install
       - run: python run.py --doctest
 
   Chapter:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     container: python:3.10.4
     strategy:
       fail-fast: false
@@ -39,6 +39,6 @@ jobs:
           - pandas
           - stdlib
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: python run.py --install ${{ matrix.directory }}
       - run: python run.py --doctest ${{ matrix.directory }}
