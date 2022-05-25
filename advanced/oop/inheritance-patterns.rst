@@ -114,6 +114,55 @@ Multiple Inheritance
 ...     pass
 
 
+Use Case - 0x01
+---------------
+>>> class Mother:
+...     def say_hello(self):
+...         pass
+>>>
+>>> class Father:
+...     def say_hello(self):
+...         pass
+>>>
+>>>
+>>> class Child:
+...     father: Father
+...     mother: Mother
+...
+...     def __init__(self, mother: Mother = Mother(), father: Father = Father()):
+...         self.mother = mother
+...         self.father = father
+...
+...     def father_say_hello(self):
+...         self.father.say_hello()
+...
+...     def mother_say_hello(self):
+...         self.mother.say_hello()
+
+
+Use Case - 0x02
+---------------
+>>> from json import JSONEncoder, JSONDecoder
+>>>
+>>>
+>>> class User:
+...     json_encoder: JSONEncoder
+...     json_decoder: JSONDecoder
+...
+...     def __init__(self,
+...                  json_encoder: JSONEncoder = JSONEncoder(),
+...                  json_decoder: JSONDecoder = JSONDecoder(),
+...                  ) -> None:
+...         self.json_encoder = json_encoder
+...         self.json_decoder = json_decoder
+...
+...     def json_encode(self, data):
+...         self.json_encoder.encode(data)
+...
+...     def json_decoder(self, data):
+...         self.json_decoder.decode(data)
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/oop_inheritance_patterns_a.py

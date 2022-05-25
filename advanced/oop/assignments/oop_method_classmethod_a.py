@@ -8,7 +8,7 @@ English:
     1. Define class `Timezone` with:
        a. Field `when: datetime`
        b. Field `tzname: str`
-       c. Method `convert()` taking class and `datetime` as arguments
+       c. Method `convert()` taking class and `datetime` object as arguments
     2. Method `convert()` returns instance of a class, which was given
        as an argument with field set `when: datetime`
     3. Run doctests - all must succeed
@@ -17,7 +17,8 @@ Polish:
     1. Zdefiniuj klasę `Timezone` z:
        a. polem `when: datetime`
        b. polem `tzname: str`
-       c. Metodą `convert()` przyjmującą klasę oraz `datetime` jako argumenty
+       c. Metodą `convert()` przyjmującą klasę oraz obiekt typu `datetime`
+          jako argumenty
     2. Metoda `convert()` zwraca instancję klasy, którą dostała jako argument
        z ustawionym polem `when: datetime`
     3. Uruchom doctesty - wszystkie muszą się powieść
@@ -45,8 +46,12 @@ Tests:
 from datetime import datetime
 
 
+
+# Method `convert()` returns instance of a class, which was given
+# as an argument with field set `when: datetime`
 class Timezone:
     tzname: str
+    when: datetime
 
 
 class CET(Timezone):

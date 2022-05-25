@@ -133,6 +133,13 @@ Show Methods
 ...                   and method.startswith(f'__')
 ...                   and method.endswith(f'__')]
 
+
+>>> [attrname
+...  for attrname in dir(mark)
+...  if (attribute := getattr(mark, attrname))
+...  and callable(attribute)]
+
+
 References
 ----------
 .. [#pydocprivatevar] https://docs.python.org/3/tutorial/classes.html#private-variables

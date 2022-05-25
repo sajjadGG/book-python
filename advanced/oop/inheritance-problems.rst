@@ -119,6 +119,86 @@ Multilevel Inheritance
 .. figure:: img/uml-relations-inheritance-multilevel.png
 
 
+Problem
+-------
+* Now what?
+* Code duplication or...
+
+>>> class Vehicle:
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
+>>>
+>>> class VehicleWithWindows(Vehicle):
+...     def window_open(self): ...
+...     def window_close(self): ...
+>>>
+>>>
+>>> class Car(VehicleWithWindows):
+...     pass
+>>>
+>>> class Truck(VehicleWithWindows):
+...     def cbradio_turnon(self): ...
+...     def cbradio_turnoff(self): ...
+>>>
+>>> class Motorcycle(Vehicle):
+...     def cbradio_turnon(self): ...
+...     def cbradio_turnoff(self): ...
+
+
+Multilevel Solution
+-------------------
+* Tuck is what?
+
+>>> class Vehicle:
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
+>>>
+>>> class VehicleWithWindows(Vehicle):
+...     def window_open(self): ...
+...     def window_close(self): ...
+>>>
+>>> class VehicleWithCBRadio(Vehicle):
+...     def cbradio_turnon(self): ...
+...     def cbradio_turnoff(self): ...
+>>>
+>>>
+>>> class Car(VehicleWithWindows):
+...     pass
+>>>
+>>> class Truck(...):
+...     pass
+>>>
+>>> class Motorcycle(VehicleWithCBRadio):
+...     pass
+
+
+Problem
+-------
+>>> class Vehicle:
+...     def engine_start(self): ...
+...     def engine_stop(self): ...
+>>>
+>>> class HasWindows:
+...     def window_open(self): ...
+...     def window_close(self): ...
+>>>
+>>> class HasCBRadio:
+...     def cbradio_turnon(self): ...
+...     def cbradio_turnoff(self): ...
+>>>
+>>>
+>>>
+>>> class Car(Vehicle, HasWindows):
+...     pass
+>>>
+>>> class Truck(Vehicle, HasWindows, HasCBRadio):
+...     pass
+>>>
+>>> class Motorcycle(Vehicle, HasCBRadio):
+...     pass
+
+
+
 Mixin Classes
 -------------
 >>> class Vehicle:
@@ -221,12 +301,13 @@ b'\x80\x04\x95I\x00\x00\x00\x00\x00\x00\x00\x8c\x08__main__\x94\x8c\tAstronaut' 
 b'\x94\x93\x94)\x81\x94}\x94(\x8c\tfirstname\x94\x8c\x04Mark' \
 b'\x94\x8c\x08lastname\x94\x8c\x06Watney\x94ub.'
 
-It will work as intended for the end-user, but the code structure is disturbed.
-Not all classes which are serialized to Pickle, are also serialized to JSON. In
-out case it's a must. This kind of `Multi-level inheritance` could be found in
-languages which does not support `Multiple inheritance`. Java is such language.
-In that case, developers are not using inheritance, and they even go to the
-extreme, by considering inheritance a bad practice. They use composition:
+It will work as intended for the end-user, but the code structure is
+disturbed. Not all classes which are serialized to Pickle, are also
+serialized to JSON. In out case it's a must. This kind of
+`Multi-level inheritance` could be found in languages which does not
+support `Multiple inheritance`. Java is such language. In that case,
+developers are not using inheritance, and they even go to the extreme,
+by considering inheritance a bad practice. They use composition:
 
 >>> class ToJSON:
 ...     def to_json(self):
@@ -280,15 +361,16 @@ b'\x80\x04\x95\xa3\x00\x00\x00\x00\x00\x00\x00\x8c\x08__main__\x94\x8c\tAstronau
 >>>
 >>> astro = Astronaut('Mark', 'Watney', json_serializer=MyBetterSerializer)
 
-This work as intended, and nothing changed for the end-user. This maybe a good
-pattern for Java, but for Python ecosystem is over-engineered (to complex for
-that particular usecase).
+This work as intended, and nothing changed for the end-user. This maybe
+a good pattern for Java, but for Python ecosystem is over-engineered
+(to complex for that particular usecase).
 
 That was a must, because Java don't have `Multiple inheritance` and
-`Simple inheritance` or `Multilevel inheritance` was a bad idea.  In Python
+`Simple inheritance` or `Multilevel inheritance` was a bad idea. In Python
 there is `Multiple inheritance` capability which enables to create a small
-and specialized classes and mix them together in order to create objects. Those
-are called `Mixin classes` and they use `multiple inheritance` mechanism:
+and specialized classes and mix them together in order to create objects.
+Those are called `Mixin classes` and they use `multiple inheritance`
+mechanism:
 
 >>> class ToJSON:
 ...     def to_json(self):

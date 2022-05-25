@@ -133,7 +133,6 @@ Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute '__lastname'
 
 
-
 Name Mangling
 -------------
 >>> class Person:
@@ -190,6 +189,36 @@ TypeError: Astronaut.__init__() missing 2 required positional arguments: '_Astro
  '_Person__lastname': 'Watney',
  '_Astronaut__firstname': 'Melissa',
  '_Astronaut__lastname': 'Lewis'}
+
+
+Name Collision
+--------------
+* ``type_ = type('myobject')``
+* ``id_ = id('myobject')``
+* ``hash_ = hash('myobject')``
+* ``date_ = date(1969, 7, 21)``
+
+>>> from datetime import date
+>>>
+>>>
+>>> type_ = type('myobject')
+>>> id_ = id('myobject')
+>>> hash_ = hash('myobject')
+>>> date_ = date(1969, 7, 21)
+
+Example:
+
+>>> from datetime import date
+>>>
+>>>
+>>> class User:
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...         self.type_ = type(self)
+...         self.id_ = id(self)
+...         self.hash_ = hash(self)
+...         self.date_ = date(1969, 7, 21)
 
 
 Show Attributes
