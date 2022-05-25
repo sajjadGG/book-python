@@ -172,6 +172,7 @@ Use Case - 0x01
 ---------------
 >>> from fastapi import FastAPI
 >>> from fastapi.responses import JSONResponse
+>>> from pydantic import BaseModel as Schema
 >>> app = FastAPI()
 >>>
 >>>

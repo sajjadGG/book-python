@@ -164,6 +164,10 @@ Connecting...
 
 Use Case - 0x05
 ---------------
+>>> from datetime import datetime, timezone
+>>> from uuid import uuid4
+>>>
+>>>
 >>> def trace(cls):
 ...     class Wrapper(cls):
 ...         __name__ = cls.__name__

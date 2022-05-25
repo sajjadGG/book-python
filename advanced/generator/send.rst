@@ -95,6 +95,7 @@ Send Upstream Cascade
 >>>
 >>> result = run(worker())
 >>> result.send(None)
+Starting worker...
 >>>
 >>> for x in range(0,3):
 ...     result.send(x)

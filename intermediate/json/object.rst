@@ -167,7 +167,7 @@ Encoding nested objects with relations to JSON:
 >>>
 >>> result = json.loads(DATA, object_hook=decoder)
 >>>
->>> print(result, width=72)
+>>> pprint(result, width=72)
 [Astronaut(firstname='Mark',
            lastname='Watney',
            role='Botanist',

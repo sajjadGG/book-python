@@ -37,6 +37,7 @@ Create file: ``myproject/celery.py``
 >>>
 >>>
 >>> os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
+'myproject.settings'
 >>>
 >>> app = Celery(
 ...    main='myproject',

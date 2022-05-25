@@ -215,14 +215,16 @@ Use Case - 0x03
 >>> mark = Astronaut('Mark', 'Watney')
 >>>
 >>> mark
-Astronaut(firstname='Mark', lastname='Watney', age=35, height=None, agency='NASA')
+Astronaut(firstname='Mark', lastname='Watney', age=None, height=None, agency='NASA')
 >>>
 >>> mark.agency = 'ESA'
 >>> mark.agency = 'Roscosmos'
+Traceback (most recent call last):
 ValueError: Attribute agency is not an option, choices are: ['NASA', 'ESA']
 >>>
 >>> mark.age = 40
 >>> mark.age = 10
+Traceback (most recent call last):
 ValueError: Attribute age is not between 30 and 50
 
 

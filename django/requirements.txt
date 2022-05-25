@@ -1,12 +1,12 @@
 sphinx==4.5.*
 sphinx_rtd_theme
 
-# django
-# django-debug-toolbar
+django
 # pillow
+# django-debug-toolbar
 
 ## Celery
-# redis
-# celery
-# django-celery-results
-# django-celery-beat
+redis
+celery
+django-celery-results
+django-celery-beat
