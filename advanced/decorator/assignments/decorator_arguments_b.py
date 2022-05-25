@@ -98,7 +98,5 @@ def check_astronauts(field, value):
                     name = member['name']
                     raise PermissionError(f'{name} is not an astronaut')
             return func(crew)
-
         return wrapper
-
     return decorator

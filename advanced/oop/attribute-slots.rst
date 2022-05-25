@@ -15,9 +15,6 @@ OOP Attribute Slots
 >>> astro.firstname = 'Mark'
 >>> astro.lastname = 'Watney'
 
-
-Notes
------
 When inheriting from a class without ``__slots__``, the ``__dict__``
 and ``__weakref__`` attribute of the instances will always be accessible.
 
@@ -479,7 +476,89 @@ Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute 'myslot2'
 
 
+Slots in Dataclasses
+--------------------
+* Since Python 3.10
+
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass(slots=True)
+... class Iris:
+...     sl: float
+...     sw: float
+...     pl: float
+...     pw: float
+...     species: str
+
+
 Use Case - 0x01
+---------------
+>>> from dataclasses import dataclass
+>>> from pprint import pprint
+>>>
+>>>
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+...     (7.6, 3.0, 6.6, 2.1, 'virginica'),
+...     (4.9, 3.0, 1.4, 0.2, 'setosa'),
+...     (4.9, 2.5, 4.5, 1.7, 'virginica'),
+...     (7.1, 3.0, 5.9, 2.1, 'virginica'),
+...     (4.6, 3.4, 1.4, 0.3, 'setosa'),
+...     (5.4, 3.9, 1.7, 0.4, 'setosa'),
+...     (5.7, 2.8, 4.5, 1.3, 'versicolor'),
+...     (5.0, 3.6, 1.4, 0.3, 'setosa'),
+...     (5.5, 2.3, 4.0, 1.3, 'versicolor'),
+...     (6.5, 3.0, 5.8, 2.2, 'virginica'),
+...     (6.5, 2.8, 4.6, 1.5, 'versicolor'),
+...     (6.3, 3.3, 6.0, 2.5, 'virginica'),
+...     (6.9, 3.1, 4.9, 1.5, 'versicolor'),
+...     (4.6, 3.1, 1.5, 0.2, 'setosa'),
+... ]
+>>>
+>>> @dataclass(slots=True)
+... class Iris:
+...     sl: float
+...     sw: float
+...     pl: float
+...     pw: float
+...     species: str
+>>>
+>>> data = [Iris(*row) for row in DATA[1:]]
+>>>
+>>>
+>>> pprint(data)
+[Iris(sl=5.8, sw=2.7, pl=5.1, pw=1.9, species='virginica'),
+ Iris(sl=5.1, sw=3.5, pl=1.4, pw=0.2, species='setosa'),
+ Iris(sl=5.7, sw=2.8, pl=4.1, pw=1.3, species='versicolor'),
+ Iris(sl=6.3, sw=2.9, pl=5.6, pw=1.8, species='virginica'),
+ Iris(sl=6.4, sw=3.2, pl=4.5, pw=1.5, species='versicolor'),
+ Iris(sl=4.7, sw=3.2, pl=1.3, pw=0.2, species='setosa'),
+ Iris(sl=7.0, sw=3.2, pl=4.7, pw=1.4, species='versicolor'),
+ Iris(sl=7.6, sw=3.0, pl=6.6, pw=2.1, species='virginica'),
+ Iris(sl=4.9, sw=3.0, pl=1.4, pw=0.2, species='setosa'),
+ Iris(sl=4.9, sw=2.5, pl=4.5, pw=1.7, species='virginica'),
+ Iris(sl=7.1, sw=3.0, pl=5.9, pw=2.1, species='virginica'),
+ Iris(sl=4.6, sw=3.4, pl=1.4, pw=0.3, species='setosa'),
+ Iris(sl=5.4, sw=3.9, pl=1.7, pw=0.4, species='setosa'),
+ Iris(sl=5.7, sw=2.8, pl=4.5, pw=1.3, species='versicolor'),
+ Iris(sl=5.0, sw=3.6, pl=1.4, pw=0.3, species='setosa'),
+ Iris(sl=5.5, sw=2.3, pl=4.0, pw=1.3, species='versicolor'),
+ Iris(sl=6.5, sw=3.0, pl=5.8, pw=2.2, species='virginica'),
+ Iris(sl=6.5, sw=2.8, pl=4.6, pw=1.5, species='versicolor'),
+ Iris(sl=6.3, sw=3.3, pl=6.0, pw=2.5, species='virginica'),
+ Iris(sl=6.9, sw=3.1, pl=4.9, pw=1.5, species='versicolor'),
+ Iris(sl=4.6, sw=3.1, pl=1.5, pw=0.2, species='setosa')]
+
+
+Use Case - 0x02
 ---------------
 * Deep Size
 * Source: https://code.activestate.com/recipes/577504/
@@ -596,4 +675,8 @@ Assignments
 -----------
 .. literalinclude:: assignments/oop_attribute_slots_a.py
     :caption: :download:`Solution <assignments/oop_attribute_slots_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/oop_attribute_slots_b.py
+    :caption: :download:`Solution <assignments/oop_attribute_slots_b.py>`
     :end-before: # Solution

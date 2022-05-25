@@ -93,6 +93,10 @@ class Iris:
         self.petal_width = petal_width
         self.species = species
 
+    def _get_values(self):
+        return tuple(getattr(self, x) for x in self.__slots__)
+
     def __repr__(self):
-        values = tuple(getattr(self, x) for x in self.__slots__)
-        return f'Iris{values}'
+        clsname = self.__class__.__name__
+        values = self._get_values()
+        return f'{clsname}{values}'

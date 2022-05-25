@@ -21,12 +21,15 @@ Tests:
 
     >>> iris = Iris()
 
-    >>> iris.__slots__
-    ('sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species')
+    >>> assert not hasattr(iris, '__dict__')
+    >>> assert not hasattr(iris, '__weakref__')
+    >>> assert hasattr(iris, '__slots__')
 
-    >>> iris.__dict__
-    Traceback (most recent call last):
-    AttributeError: 'Iris' object has no attribute '__dict__'
+    >>> assert 'sepal_length' in iris.__slots__
+    >>> assert 'sepal_width' in iris.__slots__
+    >>> assert 'petal_length' in iris.__slots__
+    >>> assert 'petal_width' in iris.__slots__
+    >>> assert 'species' in iris.__slots__
 """
 
 class Iris:

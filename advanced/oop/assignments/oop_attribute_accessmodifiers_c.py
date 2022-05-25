@@ -5,20 +5,18 @@
 * Time: 8 min
 
 English:
-    1. Define `result: list[dict]`
-    2. Define class `Iris` with attributes
-    3. Protected attributes: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`
-    4. Public attribute: `species`
-    5. Iterate over `DATA` and add all public attributes to `result`
-    6. Run doctests - all must succeed
+    1. Extract from class `Iris` attribute names and their values:
+        a. Define `protected: dict` with protected attributes
+        b. Define `private: dict` with private attributes
+        c. Define `public: dict` with public attributes
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj `result: list[dict]`
-    2.  klasę `Iris`
-    3. Chronione atrybuty: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`
-    4. Publiczne atrybuty: `species`
-    5. Iteruj po `DATA` i dodaj wszystkie publiczne atrybuty do `result`
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    1. Wydobądź z klasy `Iris` nazwy atrybutów i ich wartości:
+        a. Zdefiniuj `protected: dict` z atrybutami chronionymi (protected)
+        b. Zdefiniuj `private: dict` z atrybutami prywatnymi (private)
+        c. Zdefiniuj `public: dict` z atrybutami publicznymi (public)
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

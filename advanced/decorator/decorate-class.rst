@@ -220,10 +220,10 @@ datetime.datetime(1969, 7, 21, 2, 56, 15, tzinfo=datetime.timezone.utc)
 <Logger Astronaut (WARNING)>
 >>>
 >>>
->>> mark._log.warning('Some warning...')
+>>> mark._log.warning('Some warning...')  # doctest: +SKIP
 Some warning...
 >>>
->>> melissa._log.warning('Some warning...')
+>>> melissa._log.warning('Some warning...')  # doctest: +SKIP
 Some warning...
 
 .. todo:: Assignments
