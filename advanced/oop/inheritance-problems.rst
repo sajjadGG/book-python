@@ -121,8 +121,7 @@ Multilevel Inheritance
 
 Problem
 -------
-* Now what?
-* Code duplication or...
+* Code duplication or another multilevel inheritance
 
 >>> class Vehicle:
 ...     def engine_start(self): ...
@@ -137,17 +136,19 @@ Problem
 ...     pass
 >>>
 >>> class Truck(VehicleWithWindows):
-...     def cbradio_turnon(self): ...
-...     def cbradio_turnoff(self): ...
+...     def cbradio_on(self): ...
+...     def cbradio_off(self): ...
 >>>
 >>> class Motorcycle(Vehicle):
-...     def cbradio_turnon(self): ...
-...     def cbradio_turnoff(self): ...
+...     def cbradio_on(self): ...
+...     def cbradio_off(self): ...
 
 
-Multilevel Solution
--------------------
-* Tuck is what?
+Solution With Multilevel Inheritance
+------------------------------------
+* Tuck is both ``VehicleWithWindows`` and ``VehicleWithCBRadio``
+* Causes more problem
+* This is why in other languages composition is preferred over inheritance
 
 >>> class Vehicle:
 ...     def engine_start(self): ...
@@ -158,22 +159,24 @@ Multilevel Solution
 ...     def window_close(self): ...
 >>>
 >>> class VehicleWithCBRadio(Vehicle):
-...     def cbradio_turnon(self): ...
-...     def cbradio_turnoff(self): ...
+...     def cbradio_on(self): ...
+...     def cbradio_off(self): ...
 >>>
 >>>
 >>> class Car(VehicleWithWindows):
 ...     pass
 >>>
->>> class Truck(...):
+>>> class Truck():  # both: VehicleWithWindows and VehicleWithCBRadio
 ...     pass
 >>>
 >>> class Motorcycle(VehicleWithCBRadio):
 ...     pass
 
 
-Problem
--------
+Solution With Mixin Classes
+---------------------------
+* This is the Pythonic solution
+
 >>> class Vehicle:
 ...     def engine_start(self): ...
 ...     def engine_stop(self): ...
@@ -183,8 +186,8 @@ Problem
 ...     def window_close(self): ...
 >>>
 >>> class HasCBRadio:
-...     def cbradio_turnon(self): ...
-...     def cbradio_turnoff(self): ...
+...     def cbradio_on(self): ...
+...     def cbradio_off(self): ...
 >>>
 >>>
 >>>
@@ -198,9 +201,8 @@ Problem
 ...     pass
 
 
-
-Mixin Classes
--------------
+Cleanup
+--------
 >>> class Vehicle:
 ...     pass
 >>>
@@ -212,14 +214,18 @@ Mixin Classes
 ...     def window_open(self): ...
 ...     def window_close(self): ...
 >>>
+>>> class HasCBRadio:
+...     def cbradio_on(self): ...
+...     def cbradio_off(self): ...
+>>>
 >>>
 >>> class Car(Vehicle, HasEngine, HasWindows):
 ...     pass
 >>>
->>> class Truck(Vehicle, HasEngine, HasWindows):
+>>> class Truck(Vehicle, HasEngine, HasWindows, HasCBRadio):
 ...     pass
 >>>
->>> class Motorcycle(Vehicle, HasEngine):
+>>> class Motorcycle(Vehicle, HasEngine, HasCBRadio):
 ...     pass
 
 .. figure:: img/uml-relations-mixin.png
