@@ -9,9 +9,12 @@ OOP Abstract Protocol
 A class object is considered an implementation of a protocol if accessing
 all members on it results in types compatible with the protocol members.
 
+All things protocol related resides in typing library in ``Protocol`` class:
+
 >>> from typing import Protocol
->>>
->>>
+
+Typical protocol implementation looks like that:
+
 >>> class Message(Protocol):
 ...     recipient: str
 ...     body: str
@@ -45,16 +48,15 @@ the protocol. This is called ``structural subtyping``.
 
 The intuitive implementation of the protocol might look like:
 
->>> from typing import Protocol
->>>
->>>
 >>> class ContextManager(Protocol):
 ...     def __enter__(self): ...
 ...     def __exit__(self, exc_type, exc_val, exc_tb): ...
 
 Which enables it use it in the with statement:
 
->>> with obj: ContextManager as variable:  # doctest: +SKIP
+>>> cm: ContextManager
+>>>
+>>> with cm() as variable:  # doctest: +SKIP
 ...     ...
 
 Note, that the above code is just only to demonstrate the example and
@@ -355,17 +357,26 @@ Recursive Protocols
 * Future :pep:`563` -- Postponed Evaluation of Annotations
 
 >>> from typing import Protocol, Iterable
->>>
->>>
+
+Traversing Graph nodes:
+
+>>> class Graph(Protocol):
+...     def get_node(self) -> Iterable['Graph']:
+...         ...
+
+Traversing Tree nodes:
+
 >>> class Tree(Protocol):
 ...     def get_node(self) -> Iterable['Tree']:
 ...         ...
 
->>> from typing import Protocol, Iterable
+Since Python 3.11:
+
+>>> from typing import Self
 >>>
 >>>
 >>> class Graph(Protocol):
-...     def get_node(self) -> Iterable['Graph']:
+...     def get_node(self) -> Iterable[Self]:
 ...         ...
 
 
@@ -396,51 +407,54 @@ example:
 
 File ``config.py``:
 
->>> timeout = 100
->>> debug = True
->>> other_flag = False
+>>> database_host = '127.0.0.1'
+>>> database_port = 5432
+>>> database_name = 'ares3'
+>>> database_user = 'mwatney'
+>>> database_pass = 'myVoiceIsMyPassword'
 
 File ``main.py``:
 
->>> import config  # doctest: +SKIP
 >>> from typing import Protocol
 >>>
 >>>
->>> class Config(Protocol):
-...     timeout: int
-...     debug: bool
-...     other_flag: bool
+>>> class DatabaseConfig(Protocol):
+...     database_host: str
+...     database_port: int
+...     database_name: str
+...     database_user: str
+...     database_pass: str
 >>>
 >>>
->>> def setup(conf: Config) -> None:
-...     ...
->>>
->>>
->>> setup(config)  # Passes type check  # doctest: +SKIP
+>>> import config  # doctest: +SKIP
+>>> dbconfig: DatabaseConfig = config # Passes type check  # doctest: +SKIP
 
 
 Callbacks
 ---------
-File ``callbacks.py``:
+File ``myrequest.py``:
 
->>> def on_error(x: int) -> None:
+>>> URL = 'https://python.astrotech.io'
+>>>
+>>> def on_success(result: str) -> None:
 ...     ...
 >>>
->>> def on_success() -> None:
+>>> def on_error(error: Exception) -> None:
 ...     ...
 
 File ``main.py``:
 
->>> import callbacks  # doctest: +SKIP
 >>> from typing import Protocol
 >>>
 >>>
->>> class Reporter(Protocol):
-...     def on_error(self, x: int) -> None: ...
-...     def on_success(self) -> None: ...
+>>> class Request(Protocol):
+...     URL: str
+...     def on_success(self, request: str) -> None: ...
+...     def on_error(self, error: Exception) -> None: ...
 >>>
 >>>
->>> result: Reporter = callbacks  # Passes type check  # doctest: +SKIP
+>>> import myrequest  # doctest: +SKIP
+>>> request: Request = myrequest  # Passes type check  # doctest: +SKIP
 
 
 Runtime Checkable
@@ -452,15 +466,16 @@ The default semantics is that ``isinstance()`` and ``issubclass()`` fail for
 protocol types. This is in the spirit of duck typing -- protocols basically
 would be used to model duck typing statically, not explicitly at runtime.
 
-However, it should be possible for protocol types to implement custom instance
-and class checks when this makes sense, similar to how ``Iterable`` and other
-ABCs in ``collections.abc`` and ``typing`` already do it, but this is limited
-to non-generic and unsubscripted generic protocols (``Iterable`` is statically
-equivalent to ``Iterable[Any]``).
+However, it should be possible for protocol types to implement custom
+instance and class checks when this makes sense, similar to how ``Iterable``
+and other ABCs in ``collections.abc`` and ``typing`` already do it, but this
+is limited to non-generic and unsubscripted generic protocols (``Iterable``
+is statically equivalent to ``Iterable[Any]``).
 
-The typing module will define a special ``@runtime_checkable`` class decorator
-that provides the same semantics for class and instance checks as for
-``collections.abc`` classes, essentially making them 'runtime protocols':
+The typing module will define a special ``@runtime_checkable`` class
+decorator that provides the same semantics for class and instance checks
+as for ``collections.abc`` classes, essentially making them 'runtime
+protocols':
 
 >>> from typing import Protocol, runtime_checkable
 >>>
@@ -517,7 +532,6 @@ TypeError: Instance and class checks can only be used with @runtime_checkable pr
 >>> isinstance(email, Message)
 True
 
-
 >>> from typing import Protocol, runtime_checkable
 >>>
 >>>
@@ -552,15 +566,19 @@ Use Case - 0x02
 ...     rgb: tuple[int, int, int]
 ...
 ...     @abstractmethod
-...     def intensity(self) -> int:
+...     def opacity(self) -> int:
 ...         return 0
 >>>
 >>>
->>> class Point(RGB):
+>>> class Pixel(RGB):
 ...     def __init__(self, red: int, green: int, blue: float) -> None:
-...         self.rgb = red, green, blue  # Error, 'blue' must be 'int'
+...         self.rgb = red, green, blue
 ...
-...     # Type checker might warn that 'intensity' is not defined
+
+Type checker will warn:
+
+* ``blue`` must be ``int``
+* ``opacity`` is not defined
 
 
 Use Case - 0x03
@@ -582,7 +600,6 @@ File ``myapp/view.py``
 File ``main.py``
 
 >>> from typing import Protocol
->>> import myapp.view  # doctest: +SKIP
 >>>
 >>>
 >>> class HttpView(Protocol):
@@ -592,6 +609,7 @@ File ``main.py``
 ...     def delete(request): ...
 >>>
 >>>
+>>> import myapp.view  # doctest: +SKIP
 >>> view: HttpView = myapp.view  # doctest: +SKIP
 
 

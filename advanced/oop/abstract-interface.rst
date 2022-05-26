@@ -17,6 +17,8 @@ OOP Abstract Interface
 
 Syntax
 ------
+* Names: ``Cache``, ``CacheInterface``, ``ICache``, ``CacheIface``
+
 >>> class CacheInterface:
 ...     def set(self, key: str, value: str) -> None:
 ...         raise NotImplementedError
@@ -71,35 +73,35 @@ How nice it would be to write:
 
 Example
 -------
->>> class Cache:
+>>> class ICache:
 ...     def set(self, key: str, value: str) -> None: ...
 ...     def get(self, key: str) -> str: ...
 ...     def is_valid(self, key: str) -> bool: ...
 >>>
 >>>
->>> class DatabaseCache(Cache):
+>>> class DatabaseCache(ICache):
 ...      ...
 >>>
->>> class InMemoryCache(Cache):
+>>> class InMemoryCache(ICache):
 ...      ...
 >>>
->>> class FilesystemCache(Cache):
+>>> class FilesystemCache(ICache):
 ...      ...
 >>>
 >>>
->>> c: Cache = DatabaseCache()
+>>> c: ICache = DatabaseCache()
 >>> c.set('firstname', 'Mark')
 >>> c.is_valid('firstname')
 >>> c.is_valid('lastname')
 >>> c.get('firstname')
 >>>
->>> c: Cache = InMemoryCache()
+>>> c: ICache = InMemoryCache()
 >>> c.set('firstname', 'Mark')
 >>> c.is_valid('firstname')
 >>> c.is_valid('lastname')
 >>> c.get('firstname')
 >>>
->>> c: Cache = FilesystemCache()
+>>> c: ICache = FilesystemCache()
 >>> c.set('firstname', 'Mark')
 >>> c.is_valid('firstname')
 >>> c.is_valid('lastname')
@@ -110,13 +112,16 @@ Use Case - 0x01
 ---------------
 * Cache
 
->>> class Cache:
+File ``cache_interface.py``:
+
+>>> class ICache:
 ...     def get(self, key: str) -> str: raise NotImplementedError
 ...     def set(self, key: str, value: str) -> None: raise NotImplementedError
 ...     def is_valid(self, key: str) -> bool: raise NotImplementedError
->>>
->>>
->>> class CacheDatabase(Cache):
+
+File ``cache_impl.py``:
+
+>>> class CacheDatabase(ICache):
 ...     def is_valid(self, key: str) -> bool:
 ...         ...
 ...
@@ -127,7 +132,7 @@ Use Case - 0x01
 ...         ...
 >>>
 >>>
->>> class CacheRAM(Cache):
+>>> class CacheRAM(ICache):
 ...     def is_valid(self, key: str) -> bool:
 ...         ...
 ...
@@ -138,7 +143,7 @@ Use Case - 0x01
 ...         ...
 >>>
 >>>
->>> class CacheFilesystem(Cache):
+>>> class CacheFilesystem(ICache):
 ...     def is_valid(self, key: str) -> bool:
 ...         ...
 ...
@@ -147,55 +152,28 @@ Use Case - 0x01
 ...
 ...     def set(self, key: str, value: str) -> None:
 ...         ...
+
+File ``settings.py``
+
+>>> from myapp.cache_interface import ICache  # doctest: +SKIP
+>>> from myapp.cache_imp import DatabaseCache  # doctest: +SKIP
+>>> from myapp.cache_imp import InMemoryCache  # doctest: +SKIP
+>>> from myapp.cache_imp import FilesystemCache  # doctest: +SKIP
 >>>
 >>>
->>> fs: Cache = CacheFilesystem()
->>> fs.set('name', 'Mark Watney')
->>> fs.is_valid('name')
->>> fs.get('name')
+>>> DefaultCache = InMemoryCache
+
+File ``myapp.py``:
+
+>>> from myapp.settings import DefaultCache, ICache  # doctest: +SKIP
+
+>>> cache: ICache = DefaultCache()
+>>> cache.set('name', 'Mark Watney')
+>>> cache.is_valid('name')
+>>> cache.get('name')
 
 
 Use Case - 0x02
----------------
-* Settings
-
->>> # myapp/cache.py
->>> class CacheInterface:
-...     def set(self, key: str, value: str) -> None: ...
-...     def get(self, key: str) -> str: ...
-...     def is_valid(self, key: str) -> bool: ...
->>>
->>>
->>> class DatabaseCache(CacheInterface):
-...      pass
->>>
->>> class InMemoryCache(CacheInterface):
-...      pass
->>>
->>> class FilesystemCache(CacheInterface):
-...      pass
-
->>> # myapp/settings.py
->>> from myapp.cache import DatabaseCache  # doctest: +SKIP
->>> from myapp.cache import InMemoryCache  # doctest: +SKIP
->>> from myapp.cache import FilesystemCache  # doctest: +SKIP
->>>
->>>
->>> Cache = DatabaseCache
-
->>> # myapp/usage.py
->>> from myapp.cache import CacheInterface  # doctest: +SKIP
->>> from myapp.settings import cache  # doctest: +SKIP
->>>
->>>
->>> c: CacheInterface = Cache()
->>> c.set('firstname', 'Mark')
->>> c.is_valid('firstname')
->>> c.is_valid('lastname')
->>> c.get('firstname')
-
-
-Use Case - 0x03
 ---------------
 >>> class Tool:
 ...     def on_mouse_over(self): raise NotImplementedError
