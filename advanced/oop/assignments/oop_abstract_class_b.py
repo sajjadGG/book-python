@@ -6,13 +6,13 @@
 
 English:
     1. Define abstract class `IrisAbstract`
-    3. Abstract methods: `__init__`, `sum()`, `len()`, `mean()`
-    4. Run doctests - all must succeed
+    2. Abstract methods: `__init__`, `sum()`, `len()`, `mean()`
+    3. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj klasę abstrakcyjną `IrisAbstract`
-    3. Metody abstrakcyjne: `__init__`, `sum()`, `len()`, `mean()`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    2. Metody abstrakcyjne: `__init__`, `sum()`, `len()`, `mean()`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -36,7 +36,7 @@ Tests:
      'petal_width': <class 'float'>}
 """
 
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
 class IrisAbstract:
@@ -52,9 +52,12 @@ class IrisAbstract:
                  petal_width: float) -> None:
         ...
 
+# Define abstract class `IrisAbstract`
+# Abstract methods: `__init__`, `sum()`, `len()`, `mean()`
+
 
 # Solution
-class IrisAbstract(metaclass=ABCMeta):
+class IrisAbstract(ABC):
     sepal_length: float
     sepal_width: float
     petal_length: float

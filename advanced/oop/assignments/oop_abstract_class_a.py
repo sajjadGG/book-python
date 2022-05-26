@@ -43,7 +43,7 @@ Tests:
 Warning:
     * Last line of doctest, second to last word of `TypeError` message
     * In Python 3.7, 3.8 there is "methods" word in doctest
-    * In Python 3.9 there is "method" word in doctest
+    * In Python 3.9, 3.10 there is "method" word in doctest
     * So it differs by "s" at the end of "method" word
 """
 

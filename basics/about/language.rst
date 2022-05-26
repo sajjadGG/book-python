@@ -29,7 +29,7 @@ Which Version?
     "3.12", "TBA",        "future",      "2023-10",    "2028-10",    "TBA"
     "3.11", ":pep:`664`", "features",    "2022-10-03", "2027-10",    "Pablo Galindo Salgado"
     "3.10", ":pep:`619`", "bugfix",      "2021-10-04", "2026-10",    "Pablo Galindo Salgado"
-    "3.9",  ":pep:`596`", "bugfix",      "2020-10-05", "2025-10",    "Łukasz Langa"
+    "3.9",  ":pep:`596`", "security",      "2020-10-05", "2025-10",    "Łukasz Langa"
     "3.8",  ":pep:`569`", "security",    "2019-10-20", "2024-10",    "Łukasz Langa"
     "3.7",  ":pep:`537`", "security",    "2018-06-27", "2023-06-27", "Ned Deily"
     "3.6",  ":pep:`494`", "end-of-life", "2016-12-23", "2021-12-23", "Ned Deily"

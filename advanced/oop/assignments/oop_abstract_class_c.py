@@ -6,11 +6,11 @@
 
 English:
     1. Modify abstract class `IrisAbstract`
-    2. Add type annotation to all methods and attibutes
+    2. Add type annotation to all methods and attributes
     3. Run doctests - all must succeed
 
 Polish:
-    1. Modify klasę abstrakcyjną `IrisAbstract`
+    1. Zmodyfikuj klasę abstrakcyjną `IrisAbstract`
     2. Dodaj anotację typów do wszystkich metod i atrybutów
     3. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -56,25 +56,32 @@ Tests:
      {'return': <class 'int'>}
 """
 
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class IrisAbstract:
+class IrisAbstract(ABC):
+
+    @abstractmethod
     def __init__(self, sepal_length, sepal_width, petal_length, petal_width):
         ...
 
+    @abstractmethod
     def mean(self):
         ...
 
+    @abstractmethod
     def sum(self):
         ...
 
+    @abstractmethod
     def len(self):
         ...
 
+# Modify abstract class `IrisAbstract`
+# Add type annotation to all methods and attributes
 
 # Solution
-class IrisAbstract(metaclass=ABCMeta):
+class IrisAbstract(ABC):
     sepal_length: float
     sepal_width: float
     petal_length: float

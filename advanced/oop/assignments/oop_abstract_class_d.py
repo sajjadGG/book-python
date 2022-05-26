@@ -7,13 +7,13 @@
 English:
     1. Define class `Setosa` implementing `IrisAbstract`
     2. All method signatures must be identical to `IrisAbstract`
-    2. Don't implement methods, leave `...` or `pass` as content
+    3. Don't implement methods, leave `...` or `pass` as content
     4. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj klasę `Setosa` implementującą `IrisAbstract`
     2. Sygnatury wszystkich metod muszą być identyczne do `IrisAbstract`
-    2. Nie implementuj metod, pozostaw `...` or `pass` jako zawartość
+    3. Nie implementuj metod, pozostaw `...` or `pass` jako zawartość
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -84,16 +84,16 @@ Tests:
     >>> signature(result.mean)
     <Signature () -> float>
 
-    >>> assert vars(result) == {}
-    >>> assert result.len() is None
-    >>> assert result.mean() is None
-    >>> assert result.sum() is None
+    >>> assert vars(result) == {}, 'Do not implement __init__() method'
+    >>> assert result.len() is None, 'Do not implement len() method'
+    >>> assert result.mean() is None, 'Do not implement mean() method'
+    >>> assert result.sum() is None, 'Do not implement sum() method'
 """
 
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class IrisAbstract(metaclass=ABCMeta):
+class IrisAbstract(ABC):
     sepal_length: float
     sepal_width: float
     petal_length: float
@@ -118,6 +118,9 @@ class IrisAbstract(metaclass=ABCMeta):
     @abstractmethod
     def len(self) -> int:
         ...
+
+# Define class `Setosa` implementing `IrisAbstract`
+# Don't implement methods, leave `...` or `pass` as content
 
 
 # Solution
