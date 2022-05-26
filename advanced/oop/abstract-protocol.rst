@@ -34,14 +34,14 @@ and your good to go.
 
 >>> class MyFile:
 ...     def __enter__(self):
-...         ...
+...         return ...
 ...
 ...     def __exit__(self, exc_type, exc_val, exc_tb):
 ...         ...
 >>>
 >>>
 >>> with MyFile() as file:
-...     ...
+...     pass
 
 Note, that there is no explicit information, that your code implements
 the protocol. This is called ``structural subtyping``.
@@ -372,10 +372,11 @@ Traversing Tree nodes:
 
 Since Python 3.11:
 
->>> from typing import Self
->>>
->>>
->>> class Graph(Protocol):
+>>> # doctest: +SKIP
+... from typing import Self
+...
+...
+... class Graph(Protocol):
 ...     def get_node(self) -> Iterable[Self]:
 ...         ...
 

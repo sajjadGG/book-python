@@ -5,6 +5,9 @@ Hash
 * ``set()`` elements has to be hashable
 * ``dict()`` keys has to be hashable
 * Used to quickly compare dictionary keys during a dictionary lookup
+* Since Python 3.11: siphash13 is added as a new internal hashing algorithms. It has similar security properties as siphash24 but it is slightly faster for long inputs. str, bytes, and some other types now use it as default algorithm for hash() [#py311releasenotes]_
+
+
 
 .. code-block:: python
 
@@ -232,5 +235,9 @@ Hashable
     data
     # {[1, 2, 3]: 'whatever'}
 
+
+References
+----------
+.. [#py311releasenotes] https://docs.python.org/3.11/whatsnew/3.11.html#other-cpython-implementation-changes
 
 .. todo:: Assignments

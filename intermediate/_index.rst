@@ -187,8 +187,8 @@ Modules and Packages
     :maxdepth: 1
     :caption: Modules and Packages
 
-    venv/about.rst
-    pip/about.rst
+    modules/venv.rst
+    modules/pip.rst
     modules/import.rst
     modules/tools.rst
     modules/distributing.rst

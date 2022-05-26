@@ -35,8 +35,8 @@ TypeAlias
 Type annotations can be written in both ``str`` and identifier form.
 Both are equivalent.
 
->>> age: int = 10
->>> age: 'int' = 10
+>>> age: int
+>>> age: 'int'
 
 Now consider creating variable with common value such as word 'Any'. Is this
 just a variable with some more or less random text, or a type alias to
@@ -50,7 +50,6 @@ just a variable with some more or less random text, or a type alias to
 
 In order to avoid such ambiguity we can use ``TypeAlias`` annotation and
 therefore explicitly declare a type alias.
-
 
 >>> from typing import Any, TypeAlias
 >>>

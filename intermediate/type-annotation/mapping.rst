@@ -96,6 +96,20 @@ Since Python 3.8: :pep:`589` -- TypedDict: Type Hints for Dictionaries with a Fi
 ... # TypeDict "Point" has no key 'z'
 
 
+Future
+------
+* Since Python 3.11 :pep:`655` -- Marking individual TypedDict items as required or potentially-missing
+
+>>> # doctest: +SKIP
+... class Movie(TypedDict):
+...    title: Required[str]
+...    year: NotRequired[int]
+...
+... m1: Movie = {"title": "Black Panther", "year": 2018}  # ok
+... m2: Movie = {"title": "Star Wars"}  # ok (year is not required)
+... m3: Movie = {"year": 2022}  # error (missing required field title)
+
+
 Further Reading
 ---------------
 * More information in `Type Annotations`

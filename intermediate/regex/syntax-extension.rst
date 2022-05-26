@@ -8,6 +8,14 @@ Syntax Extension
     How Standards Proliferate. XKCD Standards [#xkcd927]_
 
 
+Future
+------
+* Since Python 3.11
+* Atomic grouping ``((?>...))`` and possessive quantifiers (``*+``, ``++``, ``?+``, ``{m,n}+``) are now supported in regular expressions.
+* https://www.regular-expressions.info/atomic.html
+* https://github.com/python/cpython/issues/34627
+
+
 Named Ranges
 ------------
 * ``[:allnum:]`` - Alphabetic and numeric character ``[a-zA-Z0-9]``

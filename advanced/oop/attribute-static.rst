@@ -145,16 +145,14 @@ Both static and dynamic fields with type annotations:
 ...         self.firstname = firstname
 ...         self.lastname = lastname
 
-Note, that that static field which does not change you can use Final:
-
 Static fields with type annotations:
 
->>> from typing import Final
+>>> from typing import ClassVar
 >>>
 >>>
 >>> class Astronaut:
-...     firstname: Final[str] = 'Mark'
-...     lastname: Final[str] = 'Watney'
+...     firstname: ClassVar[str] = 'Mark'
+...     lastname: ClassVar[str] = 'Watney'
 
 
 Dataclasses
@@ -338,22 +336,28 @@ Use Case - 0x01
 
 Use Case - 0x02
 ---------------
+>>> from typing import ClassVar
+>>>
+>>>
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     age: int
-...     AGE_MIN: Final[int] = 30
-...     AGE_MAX: Final[int] = 50
+...     AGE_MIN: ClassVar[int] = 30
+...     AGE_MAX: ClassVar[int] = 50
 
 
 Use Case - 0x03
 ---------------
+>>> from typing import ClassVar
+>>>
+>>>
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     age: int
-...     AGE_MIN: int = 30
-...     AGE_MAX: int = 50
+...     AGE_MIN: ClassVar[int] = 30
+...     AGE_MAX: ClassVar[int] = 50
 ...
 ...     def __init__(self, firstname, lastname, age):
 ...         self.firstname = firstname
@@ -366,15 +370,15 @@ Use Case - 0x03
 
 Use Case - 0x04
 ---------------
->>> from typing import Final
+>>> from typing import ClassVar
 >>>
 >>>
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     age: int
-...     AGE_MIN: Final[int] = 30
-...     AGE_MAX: Final[int] = 50
+...     AGE_MIN: ClassVar[int] = 30
+...     AGE_MAX: ClassVar[int] = 50
 ...
 ...     def __init__(self, firstname, lastname, age):
 ...         self.firstname = firstname
@@ -388,6 +392,7 @@ Use Case - 0x04
 Use Case - 0x05
 ---------------
 >>> from dataclasses import dataclass
+>>> from typing import ClassVar
 >>>
 >>>
 >>> @dataclass
@@ -406,7 +411,7 @@ Use Case - 0x05
 Use Case - 0x06
 ---------------
 >>> from dataclasses import dataclass
->>> from typing import Final
+>>> from typing import ClassVar
 >>>
 >>>
 >>> @dataclass

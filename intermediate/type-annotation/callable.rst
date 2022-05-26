@@ -140,6 +140,7 @@ Good Engineering Practices
 Future
 ------
 * Since Python 3.11: :pep:`563` -- Postponed Evaluation of Annotations
+* Since Python 3.11: :pep:`675` -- Arbitrary Literal String Type
 
 Postponed Evaluation of Annotations:
 
@@ -149,6 +150,26 @@ Postponed Evaluation of Annotations:
 >>> # doctest: +SKIP
 ... add.__annotations__
 {'a': 'int', 'b': 'int', 'return': 'int'}
+
+Arbitrary Literal String Type:
+
+>>> # doctest: +SKIP
+... def run_query(sql: LiteralString) -> ...
+...     ...
+...
+... def caller(
+...         arbitrary_string: str,
+...         query_string: LiteralString,
+...         table_name: LiteralString,
+...         ) -> None:
+...     run_query("SELECT * FROM students")       # ok
+...     run_query(query_string)                   # ok
+...     run_query("SELECT * FROM " + table_name)  # ok
+...     run_query(arbitrary_string)               # type checker error
+...     run_query(                                # type checker error
+...         f"SELECT * FROM students WHERE name = {arbitrary_string}"
+...     )
+
 
 
 Use Case - 0x01

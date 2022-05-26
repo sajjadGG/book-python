@@ -102,6 +102,26 @@ Not-a-Number
 * Special ``float`` value
 * Propagates in calculations
 
+A floating-point 'not a number' (NaN) value. Equivalent to the output of
+``float('nan')``. Due to the requirements of the IEEE-754 standard,
+``math.nan`` and ``float('nan')`` are not considered to equal to any other
+numeric value, including themselves. To check whether a number is a ``NaN``,
+use the ``isnan()`` function to test for ``NaNs`` instead of ``is`` or
+``==``. Example [#pydocNaN]_:
+
+Python Standard Library:
+
+>>> import math
+>>>
+>>> math.nan == math.nan
+False
+>>> float('nan') == float('nan')
+False
+>>> math.isnan(math.nan)
+True
+>>> math.isnan(float('nan'))
+True
+
 Numpy built-in:
 
 >>> np.NaN
@@ -184,6 +204,11 @@ array([ True,  True, False])
 >>>
 >>> np.isinf(a)
 array([False, False, False])
+
+
+References
+----------
+.. [#pydocNaN] https://docs.python.org/3/library/math.html#math.nan
 
 
 .. todo:: Assignments
