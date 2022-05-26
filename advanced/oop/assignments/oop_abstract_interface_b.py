@@ -6,12 +6,12 @@
 
 English:
     1. Define class `Setosa` implementing `IrisInterface`
-    2. Implement interface
+    2. Implement methods
     3. Run doctests - all must succeed
 
 Polish:
     1. Stwórz klasę `Setosa` implementującą `IrisInterface`
-    2. Zaimplementuj interfejs
+    2. Zaimplementuj metory
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:

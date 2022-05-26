@@ -9,9 +9,6 @@ OOP Abstract Protocol
 A class object is considered an implementation of a protocol if accessing
 all members on it results in types compatible with the protocol members.
 
-
-Syntax
-------
 >>> from typing import Protocol
 >>>
 >>>
@@ -21,6 +18,104 @@ Syntax
 ...
 ...     def send() -> None: ...
 ...     def receive() -> 'Message': ...
+
+
+Example
+-------
+In Python there is a ``Context Manager`` protocol. In order to conform
+to this protocol, your class needs to define two methods: ``__enter__()``
+and ``__exit__()``. When you have both of those methods, you can use it
+in the ``with`` statement. There is no checking if you have certain type
+or your class inherits from some kind of abstract. Just define two methods
+and your good to go.
+
+>>> class MyFile:
+...     def __enter__(self):
+...         ...
+...
+...     def __exit__(self, exc_type, exc_val, exc_tb):
+...         ...
+>>>
+>>>
+>>> with MyFile() as file:
+...     ...
+
+Note, that there is no explicit information, that your code implements
+the protocol. This is called ``structural subtyping``.
+
+The intuitive implementation of the protocol might look like:
+
+>>> from typing import Protocol
+>>>
+>>>
+>>> class ContextManager(Protocol):
+...     def __enter__(self): ...
+...     def __exit__(self, exc_type, exc_val, exc_tb): ...
+
+Which enables it use it in the with statement:
+
+>>> with obj: ContextManager as variable:  # doctest: +SKIP
+...     ...
+
+Note, that the above code is just only to demonstrate the example and
+it is not intended run. Executing it will result in ``SyntaxError``
+exception.
+
+
+Standard Library Protocols
+--------------------------
+* ``from collections.abc import *``
+* ``Container``
+* ``Hashable``
+* ``Iterable``
+* ``Iterator``
+* ``Reversible``
+* ``Generator``
+* ``Callable``
+* ``Collection``
+* ``Sequence``
+* ``MutableSequence``
+* ``ByteString``
+* ``Set``
+* ``MutableSet``
+* ``Mapping``
+* ``MutableMapping``
+* ``MappingView``
+* ``ItemsView``
+* ``KeysView``
+* ``ValuesView``
+* ``Awaitable``
+* ``Coroutine``
+* ``AsyncIterator``
+* ``AsyncGenerator``
+
+.. csv-table:: Protocols
+    :header: "Abstract Base Class", "Inherits from", "Methods"
+    :widths: 15, 15, 60
+
+    "Container",           "",                           "``__contains__``"
+    "Hashable",            "",                           "``__hash__``"
+    "Iterable",            "",                           "``__iter__``"
+    "Iterator",            "Iterable",                   "``__next__``, ``__iter__``"
+    "Reversible",          "Iterable",                   "``__reversed__``"
+    "Generator",           "Iterator",                   "``send``, ``throw``, ``close``, ``__iter__``, ``__next__``, ``__len__``"
+    "Callable",            "",                           "``__call__``"
+    "Collection",          "Sized, Iterable, Container", "``__contains__``, ``__iter__``, ``__len__``"
+    "Sequence",            "Reversible, Collection",     "``__getitem__``, ``__contains__``, ``__iter__``, ``__reversed__``, ``__len__``, ``index``, ``count``"
+    "MutableSequence",     "Sequence",                   "``__getitem__``, ``__setitem__``, ``append``, ``reverse``, ``extend``, ``pop``, ``__delitem__``, ``remove``, ``__iadd__``, ``__len__``, ``insert``, ``__contains__``, ``__iter__``, ``__reversed__``, ``index``, ``count``"
+    "ByteString",          "Sequence",                   "``__getitem__``, ``__len__``, ``__contains__``, ``__iter__``, ``__reversed__``, ``index``, ``count``"
+    "Set",                 "Collection",                 "``__contains__``, ``__le__``, ``__lt__``, ``__eq__``, ``__ne__``, ``__iter__``, ``__gt__``, ``__ge__``, ``__and__``, ``__or__``, ``__len__``, ``__sub__``, ``__xor__``, ``isdisjoint``"
+    "MutableSet",          "Set",                        "``__contains__``, ``__iter__``, ``clear``, ``pop``, ``remove``, ``__ior__``, ``__len__``, ``__iand__``, ``__ixor__``, ``__isub__``, ``add``, ``discard``, ``__contains__``, ``__le__``, ``__lt__``, ``__eq__``, ``__ne__``, ``__iter__``, ``__gt__``, ``__ge__``, ``__and__``, ``__or__``, ``__len__``, ``__sub__``, ``__xor__``, ``isdisjoint``"
+    "Mapping",             "Collection",                 "``__getitem__``, ``__contains__``, ``keys``, ``items``, ``values``, ``__iter__``, ``get``, ``__eq__``, ``__ne__``, ``__len__``"
+    "MutableMapping",      "Mapping",                    "``__getitem__``, ``__setitem__``, ``pop``, ``popitem``, ``clear``, ``update``, ``__delitem__``, ``setdefault``, ``__iter__``, ``__len__``, ``__getitem__``, ``__contains__``, ``keys``, ``items``, ``values``, ``__iter__``, ``get``, ``__eq__``, ``__ne__``, ``__len__``"
+    "MappingView",         "Sized",                      "``__len__``"
+    "ItemsView",           "MappingView, Set",           "``__contains__``, ``__iter__``"
+    "KeysView",            "MappingView, Set",           "``__contains__``, ``__iter__``"
+    "ValuesView",          "MappingView, Collection",    "``__contains__``, ``__iter__``"
+    "Awaitable",           "",                           "``__await__``"
+    "Coroutine",           "Awaitable, AsyncIterable",   "``send``, ``throw``, ``close``, ``__aiter__``"
+    "AsyncIterator",       "AsyncIterable",              "``__anext__``, ``__aiter__``"
+    "AsyncGenerator",      "AsyncIterator",              "``asend``, ``athrow``, ``aclose``, ``__aiter__``, ``__anext__``"
 
 
 Terminology
@@ -81,8 +176,8 @@ subclass of the protocol.
 >>>
 >>>
 >>> email = Email()
->>> email.sender = 'mwatney@nasa.gov',
->>> email.recipient = 'mlewis@nasa.gov',
+>>> email.sender = 'mwatney@nasa.gov'
+>>> email.recipient = 'mlewis@nasa.gov'
 >>> email.subject = 'I am alive!'
 >>> email.body = 'I survived the storm. I am alone on Mars.'
 >>>
@@ -126,8 +221,8 @@ None in the subclass, see Python data-model for details.) [#PEP544]_
 >>>
 >>>
 >>> email = Email()
->>> email.sender = 'mwatney@nasa.gov',
->>> email.recipient = 'mlewis@nasa.gov',
+>>> email.sender = 'mwatney@nasa.gov'
+>>> email.recipient = 'mlewis@nasa.gov'
 >>> email.subject = 'I am alive!'
 >>> email.body = 'I survived the storm. I am alone on Mars.'
 >>>
@@ -153,6 +248,28 @@ steering committee states that protocols are completely optional [#PEP544]_:
 * Programmers are free to not use them even if they use type annotations.
 * There is no intent to make protocols non-optional in the future.
 
+>>> from typing import Protocol
+>>>
+>>>
+>>> class SMS(Protocol):
+...     recipient: str
+...     body: str
+>>>
+>>>
+>>> class MMS(Protocol):
+...     recipient: str
+...     body: str
+...     mimetype: str
+>>>
+>>>
+>>> class MyMessage:
+...     recipient: str
+...     body: str
+>>>
+>>>
+>>> a: SMS = MyMessage()  # Ok
+>>> b: MMS = MyMessage()  # Expected type 'MMS', got 'MyMessage' instead
+
 
 Covariance, Contravariance, Invariance
 --------------------------------------
@@ -167,6 +284,9 @@ delegate, and contravariant type parameters can be used as parameter types.
 
 >>> def check(what: int):
 ...     pass
+
+>>> bool.mro()
+[<class 'bool'>, <class 'int'>, <class 'object'>]
 
 .. glossary::
 
@@ -266,25 +386,6 @@ Unions
 >>> def finish(task: Exitable | Quittable) -> None:
 ...     task.exit()
 ...     task.quit()
-
-
->>> from typing import Any, Protocol
->>>
->>>
->>> class ProtocolA(Protocol):
-...     def meth(self, x: int) -> int: ...
->>>
->>>
->>> class ProtocolB(Protocol):
-...     def meth(self, obj: Any, x: int) -> int: ...
->>>
->>>
->>> class C:
-...     def meth(self, x: int) -> int: ...
->>>
->>>
->>> a: ProtocolA = C  # Error: Expected type 'ProtocolA', got 'Type[C]' instead
->>> b: ProtocolB = C  # OK
 
 
 Modules as implementations of protocols

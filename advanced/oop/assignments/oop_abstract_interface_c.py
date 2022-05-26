@@ -6,7 +6,7 @@
 
 English:
     1. Define class `Setosa` implementing `IrisInterface`
-    2. Implement interface
+    2. Implement methods
     3. Note, that attribute `species` is a `str`, and in Python you cannot add `str` and `float`
     4. Create protected method `_get_values()` which returns values of `int` and `float` type attibutes
     5. Why this method is not in interface?
@@ -14,7 +14,7 @@ English:
 
 Polish:
     1. Stwórz klasę `Setosa` implementującą `IrisInterface`
-    2. Zaimplementuj interfejs
+    2. Zaimplementuj metody
     3. Zwróć uwagę, że atrybut `species` jest `str`, a Python nie można dodawać `str` i `float`
     4. Stwórz metodę chronioną `_get_values()`, która zwraca wartości atrybutów typu `int` i `float`
     5. Dlaczego ta metoda nie jest w interfejsie?
