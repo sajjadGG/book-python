@@ -134,6 +134,10 @@ class Dragon(HasPosition):
     def make_damage(self) -> int:
         return randint(self.DAMAGE_MIN, self.DAMAGE_MAX)
 
+    @health.getter
+    def health(self):
+        return self._health_current
+
     @health.setter
     def health(self, value):
         self._health_current = value
@@ -144,10 +148,6 @@ class Dragon(HasPosition):
             self.status = Status.DEAD
             self.texture = self.TEXTURE_DEAD
             raise self.IsDead
-
-    @health.getter
-    def health(self):
-        return self._health_current
 
     @when('is_alive')
     def take_damage(self, damage) -> None:
