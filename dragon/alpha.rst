@@ -95,7 +95,7 @@ Post notes:
 
 Polish
 ------
-1. W swoim katalogu stwórz plik ``dragon_alpha.py`` a w nim klasę reprezentującą smoka
+1. W swoim katalogu stwórz plik ``dragon_alpha.py`` a w nim klasę reprezentującą Smoka
 
 2. Smok ma (atrybuty):
 
@@ -174,6 +174,7 @@ Wymagania niefunkcjonalne:
        Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stałe,
        klasy, obiekty, unittest lub doctest, type annotation - co tylko
        chcesz, ale `nie korzystaj z modułów spoza biblioteki standardowej`.
+       Wyjątkiem może być framework do testów.
 
     e. **Ty - programista, Prowadzący - Product Owner.**
 
