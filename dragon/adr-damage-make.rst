@@ -18,7 +18,9 @@ Option 1
 --------
 >>> dragon.get_damage()
 
+* Good: easy use
 * Good: readability
+* Good: clear intent
 * Good: easy to add validation if needed
 * Bad: name ``get_damage()`` indicate a getter of ``damage`` field
 
@@ -93,6 +95,7 @@ Problem:
 
 >>> class BankAccount:
 ...     def transfer(destination_account, amount):
+...         self.withdraw(amount)
 ...         destination_account.deposit(amount)
 
 * Bad: other bank of will not share their source code with you, to make a transfer
@@ -120,6 +123,7 @@ Decision
 --------
 >>> dmg = dragon.make_damage()
 
+* Good: clear intent
 * Good: dragon ---> enemy
 * Good: readability
 * Good: encapsulation

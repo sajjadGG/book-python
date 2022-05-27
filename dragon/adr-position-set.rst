@@ -31,7 +31,7 @@ Option 1
 * Good: encapsulation
 * Good: easy to add validation if needed
 * Good: easy to extend to 3D - add parameter with default value ``0``
-* Bad: ``teleport()`` and ``fly()`` are bad names
+* Bad: ``teleport()`` and ``fly()`` are bad names, to specific
 * Bad: ``set_position_xy()`` ties you to 2D point
 * Bad: arguments are implicit, require knowledge of an API
 
@@ -47,7 +47,7 @@ Option 2
 * Good: encapsulation
 * Good: easy to add validation if needed
 * Good: easy to extend to 3D - add parameter with default value ``0``
-* Bad: ``teleport()`` and ``fly()`` are bad names
+* Bad: ``teleport()`` and ``fly()`` are bad names, to specific
 
 
 Option 3
@@ -77,7 +77,7 @@ Option 4
 
 Example:
 
->>> knn.w = [1,2,3]
+>>> knn.w = [1, 2, 3]
 
 
 Option 5
@@ -94,7 +94,7 @@ Option 5
 
 Example:
 
->>> knn.weights = [1,2,3]
+>>> knn.weights = [1, 2, 3]
 
 
 Option 6
@@ -136,7 +136,7 @@ Option 8
 * Good: can use ``@property`` for validation if needed
 * Good: encapsulation
 * Good: more or less readable
-* Bad: extensible, easy to refactor to 3D
+* Good: extensible, easy to refactor to 3D
 * Bad: nested
 * Bad: require knowledge of an API
 

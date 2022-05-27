@@ -30,6 +30,9 @@ Problems:
 
 >>> dragon = Dragon('Wawelski', 'img/dragon/alive.png', 50, 120)
 
+>>> position = Position(1, 2)  # ok
+>>> position = GPSPosition(1, 2)  # nie ok
+
 
 Option 2
 --------
@@ -64,6 +67,9 @@ Problem:
 
 >>> knn = KNearestNeighbors(k=3, wgt=[1,2,3])
 
+>>> position = GPSPosition(lo=1, la=2)  # nie ok
+>>> position = GPSPosition(lon=1, lat=2)  # ok
+
 
 Option 4
 --------
@@ -78,13 +84,21 @@ Problem:
 
 >>> knn = KNearestNeighbors(k=3, weights=[1,2,3])
 
->>> df.plot(kind='line', subplots=True, sharey=True)
+>>> position = GPSPosition(longitude=1, latitude=2)  # ok
+
+>>> df.plot(kind='line', subplots=True, color='grey', sharey=True)
+
+Solution:
+
+>>> df.plot(kind='line', subplots=True, color='grey', share_y=True)
 
 
 Option 5
 --------
 >>> dragon = Dragon('Wawelski', pos=(50, 120))
 >>> dragon = Dragon('Wawelski', position=(50, 120))
+>>> dragon = Dragon('Wawelski', pos=[50, 120])
+>>> dragon = Dragon('Wawelski', position=[50, 120])
 
 * Good: data is stored together (coordinate)
 * Good: simple, easy to use
@@ -95,6 +109,10 @@ Option 5
 * Bad: order is important
 * Bad: unpacking
 * Bad: not extensible, ``position`` will always be 2D
+
+Problem:
+
+* ``pattern = r'[\(\[\d+,\s*\d[\)\]]'``
 
 
 Option 6
@@ -113,6 +131,10 @@ Option 6
 * Bad: unpacking
 * Bad: not extensible, ``position_xy`` will always be 2D
 
+Problem:
+
+* ``pattern = r'[\(\[\d+,\s*\d[\)\]]'``
+
 
 Option 7
 --------
@@ -124,10 +146,14 @@ Option 7
 * Good: order is not important
 * Good: always has to pass both ``x`` and ``y``
 * Good: possible to extend to 3D with refactoring
-* Good: easier to refactor than tuple - ``pattern = r'{'x':\d+, 'y':\d+}'``
+* Good: easier to refactor than tuple - ``pattern = r'{"x":\d+, "y":\d+}'``
 * Bad: always has to pass both ``x`` and ``y``
 * Bad: unpacking
 * Bad: not extensible, ``position`` will always be 2D
+
+Problem:
+
+* ``pattern = r'{"x":\d+, "y":\d+}'``
 
 
 Option 8
@@ -193,6 +219,12 @@ Option 10
 * Good: keyword argument is not required, class name is verbose enough
 * Bad: ``TypeDict`` does not support default values
 
+Future:
+
+* API will change in Python 3.11
+* Will include ``Required`` and ``NotRequired``
+* Re-evaluate then
+
 
 Option 11
 ---------
@@ -206,10 +238,9 @@ Option 11
 >>>
 >>>
 >>> dragon = Dragon('Wawelski', Point(50, 120))
->>> dragon = Dragon('Wawelski', pos=Point(50, 120))
->>> dragon = Dragon('Wawelski', posxy=Point(50, 120))
->>> dragon = Dragon('Wawelski', pos_xy=Point(50, 120))
 >>> dragon = Dragon('Wawelski', position=Point(50, 120))
+>>> dragon = Dragon('Wawelski', Point(x=50, y=120))
+>>> dragon = Dragon('Wawelski', position=Point(x=50, y=120))
 
 * Good: data is stored together (coordinate)
 * Good: simple, easy to use
@@ -231,10 +262,9 @@ Option 12
 >>>
 >>>
 >>> dragon = Dragon('Wawelski', Point(50, 120))
->>> dragon = Dragon('Wawelski', pos=Point(50, 120))
->>> dragon = Dragon('Wawelski', posxy=Point(50, 120))
->>> dragon = Dragon('Wawelski', pos_xy=Point(50, 120))
 >>> dragon = Dragon('Wawelski', position=Point(50, 120))
+>>> dragon = Dragon('Wawelski', Point(x=50, y=120))
+>>> dragon = Dragon('Wawelski', position=Point(x=50, y=120))
 
 * Good: data is stored together (coordinate)
 * Good: simple, easy to use
@@ -256,10 +286,10 @@ Option 13
 ...         self.y = y
 >>>
 >>>
+>>> dragon = Dragon('Wawelski', Point(50, 120))
+>>> dragon = Dragon('Wawelski', position=Point(50, 120))
 >>> dragon = Dragon('Wawelski', Point(x=50, y=120))
 >>> dragon = Dragon('Wawelski', position=Point(x=50, y=120))
->>> dragon = Dragon('Wawelski', position=Point(posx=50, posy=120))
->>> dragon = Dragon('Wawelski', position=Point(position_x=50, position_y=120))
 
 * Good: very common
 * Good: easy to use
@@ -281,10 +311,10 @@ Option 14
 ...         self.y = y
 >>>
 >>>
+>>> dragon = Dragon('Wawelski', Point(50, 120))
+>>> dragon = Dragon('Wawelski', position=Point(50, 120))
 >>> dragon = Dragon('Wawelski', Point(x=50, y=120))
 >>> dragon = Dragon('Wawelski', position=Point(x=50, y=120))
->>> dragon = Dragon('Wawelski', position=Point(posx=50, posy=120))
->>> dragon = Dragon('Wawelski', position=Point(position_x=50, position_y=120))
 
 * Good: very common
 * Good: easy to use
@@ -292,6 +322,7 @@ Option 14
 * Good: easy to extend to 3D
 * Good: can sat default values
 * Good: keyword argument is not required, class name is verbose enough
+# Bad: too complex for now
 
 
 Decision
@@ -303,7 +334,7 @@ Decision
 * Good: verbose
 * Good: extensible
 
-Alternative:
+Alternative - maybe in future:
 
 >>> dragon = Dragon('Wawelski', position=Point(x=50, y=120))
 

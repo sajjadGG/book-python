@@ -15,12 +15,11 @@ Problem
 
 Option 1
 --------
-* Move by relative shifting (left, right, up, down)
-
 >>> dragon.move(left=10, down=20)
 >>> dragon.shift(left=10, down=20)
 >>> dragon.fly(left=10, down=20)
 
+* Good: Move by relative shifting (left, right, up, down)
 * Good: encapsulation, object knows current position and moves
 * Good: easy ``.move()``
 * Bad: to specific ``.fly()``, ``.shift()``
@@ -28,22 +27,20 @@ Option 1
 
 Option 2
 --------
-* Move by relative shifting (left, right, up, down)
-
 >>> dragon.change_position(left=10, down=20)
 >>> dragon.position_change(left=10, down=20)
 
+* Good: Move by relative shifting (left, right, up, down)
 * Good: encapsulation, object knows current position and moves
 * Bad: to complex for now ``.change_position()``, ``.position_change()``
 
 
 Option 3
 --------
-* Move by setting absolute position
-
 >>> dragon.move(x=10, y=-20)
 >>> dragon.move_to(x=10, y=20)
 
+* Bad: Move by setting absolute position
 * Bad: controller must know current position
 
 
@@ -83,8 +80,6 @@ Option 7
 
 Option 8
 --------
-* move(left, right, up, down)
-
 >>> dragon.move(0, 10, 0, 20)
 >>> dragon.move((0, 10, 0, 20))
 
@@ -96,30 +91,41 @@ Option 8
 * Bad: Python has keyword arguments, so use it
 * Bad: require knowledge of an API
 
+Example:
+
+* ``move(left, right, up, down)``
+
+Problem:
+
+* ``check(True, False, True, None, 1)``
+
 
 Option 9
 --------
-* move(horizontal, vertical)
-* move by relative offset
-
 >>> dragon.move([
 ...     (10, 20),
 ...     (10, 15)])
 
+* Good: move by relative offset
 * Bad: require knowledge of an API
 
+Example:
+
+* ``move(horizontal, vertical)``
 
 Option 9
 --------
-* move(x, y)
-* move by setting absolute position
-
 >>> dragon.move([
 ...     (10, 20),
 ...     (50, 120),
 ...     (5)])
 
+* Bad: move by setting absolute position
 * Bad: require knowledge of an API
+
+Example:
+
+* ``move(x, y)``
 
 
 Option 10
@@ -343,7 +349,7 @@ Decision
 * Good: verbose
 * Good: extensible
 
-Alternative:
+Alternative, maybe in future:
 
 >>> dragon.change_position(left=10, down=20)
 

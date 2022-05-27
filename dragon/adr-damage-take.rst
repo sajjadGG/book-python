@@ -17,9 +17,11 @@ Option 1
 --------
 >>> dragon.set_damage(DMG)
 
+* Good: easy to use
+* Good: clear intent
 * Good: encapsulation
-* Bad: not Pythonic way
 * Bad: ``set_damage()`` indicates setter of ``damage`` field
+* Bad: not Pythonic way
 
 
 Option 2
@@ -98,6 +100,16 @@ Option 8
 
 * Good: simple
 * Good: can use ``.__sub__()`` for validation if needed
+* Bad: requires knowledge of API
+
+
+Option 9
+--------
+>>> dragon < Damage(20)
+>>> dragon <= Damage(20)
+
+* Good: simple
+* Good: can use ``.__lt__()``, ``.__le__()`` for validation if needed
 * Bad: requires knowledge of API
 
 
