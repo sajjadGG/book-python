@@ -125,6 +125,7 @@ Polish
     l. Zadaj 15 obrażeń smokowi
     m. Zadaj 25 obrażeń smokowi
     n. Zadaj 75 obrażeń smokowi
+    o. Smok powinien zginąć na pozycji: x=20, y=40
 
 Wymagania niefunkcjonalne:
 
@@ -182,7 +183,8 @@ Wymagania niefunkcjonalne:
 
     g. **Nie przeglądaj rozwiązań ani treści kolejnych części zadania.**
 
-       Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i naukę.
+       Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i naukę. To
+       zadanie ma niesamowity potencjał edukacyjny. Nie niszcz go.
 
 
 Hints

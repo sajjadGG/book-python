@@ -12,22 +12,14 @@ Problem
 -------
 * Make DMG points damage to the dragon
 
-.. code-block:: text
-
-    dragon ---> enemy
-    dragon -> enemy
-    dragon <-> enemy
-    dragon <- enemy
-    dragon <--- enemy
-
 
 Option 1
 --------
->>> dragon.take_damage(DMG)
->>> dragon.hurt_self(DMG)
->>> dragon.receive_damage(DMG)
+>>> dragon.set_damage(DMG)
 
-* Good: dragon ---> enemy
+* Good: encapsulation
+* Bad: not Pythonic way
+* Bad: ``set_damage()`` indicates setter of ``damage`` field
 
 
 Option 2
@@ -37,28 +29,34 @@ Option 2
 >>> dragon.hit(DMG)
 >>> dragon.damage(DMG)
 
-* Good: dragon -> enemy
-* Bad: dragon -> enemy
+* Bad: Indication of direction is too weak ``dragon <-> enemy``
+
+Rationale:
+
+.. code-block:: text
+
+    dragon ---> enemy
+    dragon -> enemy
+    dragon <-> enemy
+    dragon <- enemy
+    dragon <--- enemy
 
 
 Option 3
 --------
->>> dragon - DMG
->>> dragon -= DMG
+>>> dragon.hurt_self(DMG)
+>>> dragon.receive_damage(DMG)
 
-* Good: simple
-* Good: can use ``.__sub__()`` for validation if needed
-* Bad: requires knowledge of API
+* Good: Explicit relation ``dragon ---> enemy``
+* Bad: Inconsistent with ``make_damage()``
 
 
 Option 4
 --------
->>> dragon - Damage(20)
->>> dragon -= Damage(20)
+>>> dragon.take_damage(DMG)
 
-* Good: simple
-* Good: can use ``.__sub__()`` for validation if needed
-* Bad: requires knowledge of API
+* Good: Explicit relation ``dragon ---> enemy``
+* Good: Consistent with ``make_damage()``
 
 
 Option 5
@@ -85,6 +83,26 @@ Option 6
 
 Option 7
 --------
+>>> dragon - DMG
+>>> dragon -= DMG
+
+* Good: simple
+* Good: can use ``.__sub__()`` for validation if needed
+* Bad: requires knowledge of API
+
+
+Option 8
+--------
+>>> dragon - Damage(20)
+>>> dragon -= Damage(20)
+
+* Good: simple
+* Good: can use ``.__sub__()`` for validation if needed
+* Bad: requires knowledge of API
+
+
+Option 9
+--------
 >>> dragon.__sub__(DMG)
 >>> dragon.__isub__(DMG)
 
@@ -94,19 +112,10 @@ Option 7
 * Bad: requires knowledge of API
 
 
-Option 8
---------
->>> dragon.set_damage(DMG)
-
-* Good: encapsulation
-* Bad: not Pythonic way
-* Bad: ``set_damage()`` indicates setter of ``damage`` field
-
-
 Decision
 --------
 >>> dragon.take_damage(DMG)
 
 * Good: encapsulation
 * Good: easy
-* Good: dragon ---> enemy
+* Good: Explicit relation ``dragon ---> enemy``

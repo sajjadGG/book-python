@@ -13,7 +13,17 @@ Problem
 * Dragon makes damage
 
 
+
 Option 1
+--------
+>>> dragon.get_damage()
+
+* Good: readability
+* Good: easy to add validation if needed
+* Bad: name ``get_damage()`` indicate a getter of ``damage`` field
+
+
+Option 2
 --------
 >>> dragon.attack()
 >>> dragon.hit()
@@ -21,7 +31,7 @@ Option 1
 >>> dragon.damage()
 >>> dragon.wound()
 
-* Bad: dragon <-> enemy
+* Bad: Indication of direction is too weak ``dragon <-> enemy``
 * Bad: not directed, all methods could mean making damage or receiving damage
 
 Rationale:
@@ -39,24 +49,32 @@ damage?
     dragon <--- enemy
 
 
-Option 2
---------
->>> dragon.deal_damage()
->>> dragon.hurt_someone()
->>> dragon.make_damage()
-
-* Good: dragon ---> enemy
-* Bad: to specific ``.hurt_someone()``, ``.deal_damage()``
-
-
 Option 3
 --------
 >>> dragon.take_damage()
 
-* Bad: dragon <--- enemy
+* Good: Simple
+* Bad: Relation is other way around ``dragon <--- enemy``
 
 
 Option 4
+--------
+>>> dragon.deal_damage()
+>>> dragon.hurt_someone()
+
+* Good: Strong indication of direction ``dragon ---> enemy``
+* Bad: ``hurt_someone()`` method name is to colloquial
+
+
+Option 5
+--------
+>>> dragon.make_damage()
+
+* Good: Strong indication of direction ``dragon ---> enemy``
+* Good: Name indicates intent
+
+
+Option 6
 --------
 >>> dragon.damage(ENEMY)
 >>> dragon.attack(ENEMY)
@@ -80,7 +98,7 @@ Problem:
 * Bad: other bank of will not share their source code with you, to make a transfer
 
 
-Option 5
+Option 6
 --------
 >>> hero.health -= dragon.damage()
 
@@ -89,22 +107,13 @@ Option 5
 * Bad: encapsulation
 
 
-Option 6
+Option 7
 --------
 >>> hero.wound(dragon.hit())
 
 * Bad: readability
 * Bad: requires knowledge of API
 * Bad: this is responsibility of a controller
-
-
-Option 7
---------
->>> dragon.get_damage()
-
-* Good: readability
-* Good: easy to add validation if needed
-* Bad: name ``get_damage()`` indicate a getter of ``damage`` field
 
 
 Decision
