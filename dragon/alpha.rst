@@ -13,31 +13,40 @@ Dragon (version alpha)
 
 English
 -------
-1. In your directory create file ``dragon_alpha.py``
-2. In this file define a class representing Dragon
-3. Dragon has (attributes):
+1. In your directory create file ``dragon_alpha.py`` with class representing Dragon
+
+2. Dragon has (attributes):
+
     a. name
     b. position on the screen
     c. texture file name, default ``img/dragon/alive.png``
     d. health points, default random ``int`` in range from 50 to 100
-4. Dragon can (methods):
+
+3. Dragon can (methods):
+
     a. have position set to any place on the screen
     b. make damage in range from 5 to 20
     c. take damage
     d. move in any direction by specified value
-5. Assume left-top screen corner as an initial coordinates position:
+
+4. Assume left-top screen corner as an initial coordinates position:
+
     a. going right add to ``x``
     b. going left subtract from ``x``
     c. going up subtract from ``y``
     d. going down add to ``y``
-6. When health points drop to, or below zero:
+
+5. When health points drop to, or below zero:
+
     a. Dragon is dead
     b. Set object status to dead
     c. Change texture file name to  ``img/dragon/dead.png``
     d. Print ``XXX is dead``, where ``XXX`` is the dragon's name
     e. Print how much gold dragon dropped (random integer from 1 to 100)
     f. Print position where dragon died
-7. Run the game:
+
+6. Run the game:
+
     a. Create dragon at x=50, y=120 position and name it "Wawelski"
     b. Set new position to x=10, y=20
     c. Move dragon left by 10 and down by 20
@@ -86,31 +95,40 @@ Post notes:
 
 Polish
 ------
-1. W swoim katalogu stwórz plik ``dragon_alpha.py``
-2. W pliku zdefiniuj klasę reprezentującą Smoka
-3. Smok ma (atrybuty):
+1. W swoim katalogu stwórz plik ``dragon_alpha.py`` a w nim klasę reprezentującą smoka
+
+2. Smok ma (atrybuty):
+
     a. nazwę
     b. pozycję na ekranie
     c. nazwę pliku tekstury, domyślnie ``img/dragon/alive.png``
     d. punkty życia, domyślnie losowy ``int`` z zakresu od 50 do 100
-4. Smok może (metody):
+
+3. Smok może (metody):
+
     a. być ustawiony w dowolne miejsce ekranu
     b. zadawać komuś losowe obrażenia z przedziału od 5 do 20
     c. otrzymywać obrażenia
     d. być przesuwany w którymś z kierunków o zadaną wartość
-5. Przyjmij górny lewy róg ekranu za punkt początkowy:
+
+4. Przyjmij górny lewy róg ekranu za punkt początkowy:
+
     a. idąc w prawo dodajesz ``x``
     b. idąc w lewo odejmujesz ``x``
     c. idąc w górę odejmujesz ``y``
     d. idąc w dół dodajesz ``y``
-6. Kiedy punkty życia Smoka spadną do lub poniżej zera:
+
+5. Kiedy punkty życia Smoka spadną do lub poniżej zera:
+
     a. Smok jest martwy
     b. Ustaw status obiektu na dead
     c. Zmień nazwę pliku tekstury na ``img/dragon/dead.png``
     d. Wypisz ``XXX is dead``, gdzie ``XXX`` to nazwa smoka
     e. Wypisz ile złota smok wyrzucił (losowa liczba od 1 do 100)
     f. Wypisz pozycję gdzie smok zginął
-7. Przeprowadź grę:
+
+6. Przeprowadź grę:
+
     a. Stwórz smoka w pozycji x=50, y=120 i nazwij go "Wawelski"
     b. Ustaw nową pozycję na x=10, y=20
     c. Przesuń smoka w lewo o 10 i w dół o 20
@@ -185,6 +203,8 @@ Wymagania niefunkcjonalne:
 
        Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i naukę. To
        zadanie ma niesamowity potencjał edukacyjny. Nie niszcz go.
+
+Powodzenia i miłej zabawy!
 
 
 Hints
