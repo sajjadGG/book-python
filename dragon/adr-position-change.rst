@@ -43,6 +43,8 @@ Option 3
 * Bad: Move by setting absolute position
 * Bad: controller must know current position
 
+.. figure:: img/oop-architecture-mvc.png
+
 
 Option 4
 --------
