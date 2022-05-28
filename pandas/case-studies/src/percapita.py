@@ -1,9 +1,9 @@
 """
 >>> result.loc['Polska']
-PKB           674127000000.0
-Ludność           38420687.0
-Per Capita      17545.938208
-Name: Polska, dtype: Float64
+PKB          6.741270e+11
+Ludność      3.842069e+07
+PerCapita    1.754594e+04
+Name: Polska, dtype: float64
 """
 
 import pandas as pd
@@ -68,14 +68,13 @@ ludnosc = (pd
 result = (pkb
     .merge(ludnosc, left_index=True, right_index=True)
     .sort_index(ascending=True)
-    .convert_dtypes())
-
-result['Per Capita'] = result['PKB'] / result['Ludność']
+    .eval('PerCapita = PKB / Ludność'))
 
 plot = (result
-    .loc[:, ['Per Capita']]
-    .round({'Per Capita': 1})
-    .sort_values('Per Capita', ascending=False)
+    .loc[:, ['PerCapita']]
+    .round({'PerCapita': 1})
+    .sort_values('PerCapita', ascending=False)
     .head(n=30)
-    .plot(kind='bar', legend=True, grid=True, figsize=(16,10))
-)
+    .plot(kind='bar', legend=True, grid=True, figsize=(16,10)))
+
+# plt.show()
