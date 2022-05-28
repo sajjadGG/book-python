@@ -115,3 +115,5 @@ Case Studies
     case-studies/standings-espn.rst
     case-studies/standings-livescores.rst
     case-studies/phones.rst
+    case-studies/talary.rst
+    case-studies/percapita.rst
