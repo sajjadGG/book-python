@@ -141,22 +141,23 @@ SonarQube
 
 Debug Toolbar
 -------------
+Append to `settings.py`:
+
 .. code-block:: python
 
+    DEBUG = True
     INSTALLED_APPS += ['debug_toolbar']
     MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware']
     INTERNAL_IPS = ['127.0.0.1']
-    DEBUG = True
+
+Append to `urls.py`:
 
 .. code-block:: python
 
+    from django.urls import include, path
     from django.conf import settings
-    from django.urls import path
-    from django.urls import include
-    import debug_toolbar
-
 
     if settings.DEBUG:
         urlpatterns += [
-            path('__debug__/', include(debug_toolbar.urls)),
+            path('__debug__/', include('debug_toolbar.urls')),
         ]
