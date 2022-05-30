@@ -1,8 +1,0 @@
-"First Name", "Last Name"<br>
-
-
-{% for contact in contacts %}
-
-			"{{ contact.firstname }}", "{{ contact.lastname }}"<br>
-
-{% endfor %}

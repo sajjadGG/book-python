@@ -1,4 +1,0 @@
-django-debug-toolbar
-django-extensions
-pyparsing
-pydot

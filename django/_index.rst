@@ -1,6 +1,8 @@
+About
+*****
 .. toctree::
     :maxdepth: 1
-    :caption: Django
+    :caption: About
 
     about/certificate.rst
     about/http-protocol.rst
@@ -8,9 +10,23 @@
     about/introduction.rst
     about/architecture.rst
 
+
+Conf
+****
+.. toctree::
+    :maxdepth: 1
+    :caption: Conf
+
     conf/installation-and-usage.rst
     conf/settings.rst
     conf/apps.rst
+
+
+Models
+******
+.. toctree::
+    :maxdepth: 1
+    :caption: Models
 
     models/about.rst
     models/text.rst
@@ -24,7 +40,21 @@
     models/custom.rst
     models/use-case.rst
 
+
+Admin
+*****
+.. toctree::
+    :maxdepth: 1
+    :caption: Admin
+
     admin/about.rst
+
+
+Orm
+***
+.. toctree::
+    :maxdepth: 1
+    :caption: Orm
 
     orm/about.rst
     orm/create.rst
@@ -39,6 +69,13 @@
     orm/annotate.rst
     orm/aggregate.rst
 
+
+Views
+*****
+.. toctree::
+    :maxdepth: 1
+    :caption: Views
+
     views/views.rst
     views/urls.rst
     views/staticfiles.rst
@@ -46,21 +83,49 @@
     views/templatetags.rst
     views/forms.rst
 
-    internals/internationalization.rst
-    internals/management-commands.rst
-    internals/standalone-scripts.rst
-    internals/middleware.rst
-    internals/database.rst
-    internals/cache.rst
-    internals/signals.rst
+
+Utils
+*****
+.. toctree::
+    :maxdepth: 1
+    :caption: Utils
+
+    utils/internationalization.rst
+    utils/management-commands.rst
+    utils/standalone-scripts.rst
+    utils/middleware.rst
+    utils/database.rst
+    utils/cache.rst
+    utils/signals.rst
+
+
+API
+***
+.. toctree::
+    :maxdepth: 1
+    :caption: API
 
     api/rest.rst
     api/auth-and-permissions.rst
     api/api-cors.rst
 
+
+DevOps
+******
+.. toctree::
+    :maxdepth: 1
+    :caption: DevOps
+
     devops/tests-and-quality.rst
     devops/tests.rst
     devops/ci-cd.rst
     devops/deployment.rst
+
+
+Async
+*****
+.. toctree::
+    :maxdepth: 1
+    :caption: Async
 
     async/celery.rst

@@ -1,0 +1,20 @@
+IPython
+
+fastapi
+uvicorn[standard]
+pydantic[email]  # pip install 'pydantic[email]'
+
+## Database
+sqlalchemy
+aiosqlite
+alembic
+
+## Auth
+bcrypt
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart
+
+## Test
+requests
+httpx

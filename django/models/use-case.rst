@@ -101,6 +101,7 @@ Assignments
     :caption: :download:`Solution <assignments/django_model_d.py>`
     :end-before: # Solution
 
+
 References
 ----------
 .. [#irissetosa] https://commons.wikimedia.org/wiki/File:Iris_setosa_2.jpg
