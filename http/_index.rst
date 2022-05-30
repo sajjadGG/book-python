@@ -11,6 +11,8 @@ HTTP Protocol
     http/mimetype.rst
     http/status.rst
     http/api-versioning.rst
+    http/http2.rst
+    http/gateway-interface.rst
 
 
 Microservices

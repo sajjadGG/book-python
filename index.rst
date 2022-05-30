@@ -110,14 +110,24 @@ DevOps
     devops/_index.rst
 
 
-Network and HTTP
-****************
+Network
+*******
 .. toctree::
     :maxdepth: 2
     :numbered:
     :caption: Network and HTTP
 
     network/_index.rst
+
+
+HTTP and Microservices
+**********************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: HTTP and Microservices
+
+    http/_index.rst
 
 
 Django

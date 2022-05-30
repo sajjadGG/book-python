@@ -7,10 +7,10 @@ Wymagania szkolenia
 Podczas szkolenia będziemy wykorzystywali najnowsze wersje Pythona, środowiska
 PyCharm, oraz GIT, a także serwis Github i arkusz kalkulacyjny Google Sheet.
 
-* Python w wersji 3.8, 3.9, 3.10 (preferowany: 3.10)
+* Python w wersji 3.9, 3.10 (preferowany: 3.10)
   [`pobierz <https://www.python.org/downloads/>`_]
 
-* PyCharm 2021.3 lub nowszy (dowolnie Community lub Professional)
+* PyCharm 2022.1 lub nowszy (dowolnie Community lub Professional)
   [`pobierz <https://www.jetbrains.com/pycharm/download/>`_]
 
 * Git w wersji 2.33 lub nowszy
@@ -26,9 +26,9 @@ Poniżej znajduje się krótka checklista, która pozwoli sprawdzić czy
 uczestnik jest odpowiednio przygotowany do szkolenia. Przygotowanie środowiska
 przed szkoleniem zaoszczędzi dużo czasu.
 
-1. Zainstalowany Python w wersji 3.8, 3.9 lub 3.10 (preferowany)
+1. Zainstalowany Python w wersji 3.9 lub 3.10 (preferowany)
 2. Zainstalowany GIT w wersji 2.33 lub nowszej
-3. Zainstalowany PyCharm Community Edition w wersji 2021.3 lub nowszej
+3. Zainstalowany PyCharm Community Edition w wersji 2022.1 lub nowszej
 4. Założone darmowe konto na Github
 5. Zklonowane repozytorium kodu z Github (link poda prowadzący)
 6. Mam dostęp do edycji arkusza kalkulacyjnego (link poda prowadzący)
