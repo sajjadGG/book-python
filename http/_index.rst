@@ -12,6 +12,7 @@ HTTP Protocol
     http/status.rst
     http/api-versioning.rst
     http/http2.rst
+    http/https.rst
     http/gateway-interface.rst
 
 
