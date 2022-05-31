@@ -43,12 +43,31 @@ Custom Image
 * ``requirements.txt``
 * ``docker-compose.yaml``
 
+File ``main.py``:
+
+>>> from fastapi import FastAPI
+>>> app = FastAPI()
+>>>
+>>>
+>>> @app.get('/healthcheck', status_code=200)
+... async def healthcheck() -> bool:
+...     return True
+
+File ``requirements.txt``:
+
 .. code-block:: text
 
-    fastapi==0.75.*
-    uvicorn[standard]==0.17.*
-    httpx==0.22.*
+    fastapi==0.78.*
     pydantic==1.9.*
+    uvicorn[standard]==0.17.*
+    httpx==0.23.*
+
+Note, that for ``alpine`` based images you cannot use Cython compiled
+``uvicorn``. In order to get speed improvement and production-ready
+highly-performant ``uvloop`` we will use ``python:3.10`` debian based image
+instead.
+
+File ``Dockerfile``
 
 .. code-block:: Dockerfile
 
@@ -64,6 +83,8 @@ Custom Image
     HEALTHCHECK --start-period=10s --interval=60s --timeout=3s --retries=3 \
       CMD curl --fail http://localhost:80/healthcheck || exit 1
 
+File ``docker-compose.yaml``
+
 .. code-block:: yaml
 
     services:
@@ -75,11 +96,3 @@ Custom Image
         volumes:
           - ./src:/src
           - ./tests:/tests
-
->>> from fastapi import FastAPI
->>> app = FastAPI()
->>>
->>>
->>> @app.get('/healthcheck', status_code=200)
-... async def healthcheck() -> bool:
-...     return True
