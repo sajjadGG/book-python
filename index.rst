@@ -115,7 +115,7 @@ Network
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Network and HTTP
+    :caption: Network
 
     network/_index.rst
 

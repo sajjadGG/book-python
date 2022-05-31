@@ -163,7 +163,7 @@ SQLAlchemy
     sqlalchemy/func-string.rst
     sqlalchemy/func-system.rst
 
-    sqlite3/use-cases.rst
+    sqlalchemy/use-cases.rst
 
 
 Case Study
