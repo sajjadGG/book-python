@@ -43,16 +43,6 @@ Custom Image
 * ``requirements.txt``
 * ``docker-compose.yaml``
 
-File ``main.py``:
-
->>> from fastapi import FastAPI
->>> app = FastAPI()
->>>
->>>
->>> @app.get('/healthcheck', status_code=200)
-... async def healthcheck() -> bool:
-...     return True
-
 File ``requirements.txt``:
 
 .. code-block:: text
@@ -66,6 +56,16 @@ Note, that for ``alpine`` based images you cannot use Cython compiled
 ``uvicorn``. In order to get speed improvement and production-ready
 highly-performant ``uvloop`` we will use ``python:3.10`` debian based image
 instead.
+
+File ``main.py``:
+
+>>> from fastapi import FastAPI
+>>> app = FastAPI()
+>>>
+>>>
+>>> @app.get('/healthcheck', status_code=200)
+... async def healthcheck() -> bool:
+...     return True
 
 File ``Dockerfile``
 

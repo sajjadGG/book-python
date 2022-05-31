@@ -370,3 +370,8 @@ Style Guide for Python Code
     * https://black.readthedocs.io/
     * https://github.com/psf/black
     * `Łukasz Langa - Life Is Better Painted Black, or: How to Stop Worrying and Embrace Auto-Formatting. PyCon 2019 <https://www.youtube.com/watch?v=esZLCuWs_2Y>`_
+
+
+Further Reading
+---------------
+* `100+ Computer Science Concepts Explained in 13 min <https://www.youtube.com/watch?v=-uleG_Vecis>`_
