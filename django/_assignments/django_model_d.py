@@ -5,8 +5,8 @@
 * Time: 55 min
 
 English:
-    0. Create project `shop`
-    1. Create model `Customer`:
+    0. Create project `shop` and apps: `customer`, `product`, `order`
+    1. In `customer` app, create model `Customer`:
         a. firstname
         b. lastname
         c. born
@@ -14,18 +14,18 @@ English:
         e. tax_number
         f. email
         g. phone (including country code)
-    2. Create model `Address` with fields:
+    2. In `customer` app, create model `Address` with fields:
         a. type - billing or shipping
         b. street - street, house number, apartment
         c. city
         d. postcode
         e. region
         f. country
-    3. Create model `Product` with fields:
+    3. In `product` app, create model `Product` with fields:
         a. ean13 - EAN-13 Barcode
         b. name - Product name
         c. price - Net price (without tax)
-    4. Create model `Orders` with fields:
+    4. In `order` app, Create model `Orders` with fields:
         a. customer
         b. products
     5. Import data from: `CUSTOMERS`, `ADDRESSES`, `PRODUCTS`, `ORDERS`
@@ -51,8 +51,8 @@ English:
         f. Amount and country name, from which people paid the most
 
 Polish:
-    0. Stwórz projekt `shop`
-    1. Stwórz model `Customer` z polami:
+    0. Stwórz projekt `shop` i apki: `customer`, `product`, `order`
+    1. W apce `customer` stwórz model `Customer` z polami:
         a. firstname - imię
         b. lastname - nazwisko
         c. born - data urodzenia
@@ -60,18 +60,18 @@ Polish:
         e. tax_number - NIP
         f. email - adres email
         g. phone - telefon z numerem kierunkowym kraju
-    2. Stwórz model `Address` z polami:
+    2. W apce `customer` stwórz model `Address` z polami:
         a. type - rodzaj adresu: rozliczeniowy, dostawy
         b. street - ulica, numer domu, numer mieszkania
         c. city - miasto
         d. postcode - kod pocztowy
         e. region - województwo lub stan
         f. country - kraj
-    3. Stwórz model `Product`:
+    3. W apce `product` stwórz model `Product`:
         a. ean13 - Kod kreskowy EAN-13
         b. name - Nazwa produktu
         c. price - Cena netto
-    4. Stwórz model `Orders`:
+    4. W apce `order` stwórz model `Orders`:
         a. customer - Klient
         b. products - Produkty
     5. Zaimportuj dane z: `CUSTOMERS`, `ADDRESSES`, `PRODUCTS`, `ORDERS`
