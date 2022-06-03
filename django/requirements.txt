@@ -4,6 +4,10 @@ sphinx_rtd_theme
 django
 # pillow
 # django-debug-toolbar
+# dajngo-extensions
+django-ninja
+pydantic
+# uvicorn
 
 ## Celery
 redis

@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from product.views import ProductListView, ProductDetailView
+from ninja import NinjaAPI
+from customer.api import router as customer_api
+
+api = NinjaAPI(title='My Shop', version='1.0')
+api.add_router('customer/', customer_api, tags=['customer'])
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
