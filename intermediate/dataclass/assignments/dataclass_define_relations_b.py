@@ -7,31 +7,34 @@
 English:
     1. You received input data in JSON format from the API
        a. `str` fields: firstname, lastname, role, username, password, email,
-       b. `datetime` fields: born, last_login,
-       c. `bool` fields: is_active, is_staff, is_superuser,
-       d. `list[dict]` field: user_permissions
+       b. `date` field: born,
+       c. `datetime` field: last_login (field is optional),
+       d. `bool` fields: is_active, is_staff, is_superuser,
+       e. `list[dict]` field: user_permissions
     2. Using `dataclass` model data as class `User`
-       a. Note, that fields order is important for tests to pass
     3. Do not create additional classes to represent `permission` filed,
        leave it as `list[dict]`
-    4. Run doctests - all must succeed
+    4. Note, that fields order is important for tests to pass
+    5. Run doctests - all must succeed
 
 Polish:
     1. Otrzymałeś z API dane wejściowe w formacie JSON
        a. pola `str`: firstname, lastname, role, username, password, email,
-       b. pola `datetime`: born, last_login,
-       c. pola `bool`: is_active, is_staff, is_superuser,
-       d. pola `list[dict]`: user_permissions
+       b. pole `date`: born,
+       c. pole `datetime`: last_login (pole jest opcjonalne),
+       d. pola `bool`: is_active, is_staff, is_superuser,
+       e. pola `list[dict]`: user_permissions
     2. Wykorzystując `dataclass` zamodeluj dane za pomocą klasy `User`
-       a. Zwróć uwagę, że kolejność pól ma znaczenie aby testy przechodziły
     3. Nie twórz dodatkowych klas do reprezentacji pola `permission`,
        niech zostanie jako `list[dict]`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    4. Zwróć uwagę, że kolejność pól ma znaczenie aby testy przechodziły
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isclass
     >>> from dataclasses import is_dataclass
+    >>> from pprint import pprint
 
     >>> assert isclass(User)
     >>> assert is_dataclass(User)
@@ -41,93 +44,38 @@ Tests:
     ['firstname', 'lastname', 'role', 'username', 'password', 'email', 'born',
      'last_login', 'is_active', 'is_staff', 'is_superuser', 'user_permissions']
 
+    >>> pprint(User.__annotations__, sort_dicts=False)
+    {'firstname': <class 'str'>,
+     'lastname': <class 'str'>,
+     'role': <class 'str'>,
+     'username': <class 'str'>,
+     'password': <class 'str'>,
+     'email': <class 'str'>,
+     'born': <class 'datetime.date'>,
+     'last_login': datetime.datetime | None,
+     'is_active': <class 'bool'>,
+     'is_staff': <class 'bool'>,
+     'is_superuser': <class 'bool'>,
+     'user_permissions': list[dict]}
+
     >>> result = [User(**user['fields']) for user in json.loads(DATA)]
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
-    [User(firstname='Melissa',
-          lastname='Lewis',
-          role='commander',
-          username='mlewis',
-          password='pbkdf2_sha256$120000$gvEBNiCeTrYa0$5C+NiCeTrYsha1PHog...=',
-          email='melissa.lewis@nasa.gov',
-          born='1995-07-15',
-          last_login='1970-01-01T00:00:00.000+00:00',
-          is_active=True,
-          is_staff=True,
-          is_superuser=False,
-          user_permissions=[{'eclss': ['add', 'modify', 'view']},
-                            {'communication': ['add', 'modify', 'view']},
-                            {'medical': ['add', 'modify', 'view']},
-                            {'science': ['add', 'modify', 'view']}]),
-     User(firstname='Rick',
-          lastname='Martinez',
-          role='pilot',
-          username='rmartinez',
-          password='pbkdf2_sha256$120000$aXNiCeTrY$UfCJrBh/qhXohNiCeTrYH8...=',
-          email='rick.martinez@ansa.gov',
-          born='1996-01-21',
-          last_login=None,
-          is_active=True,
-          is_staff=True,
-          is_superuser=False,
-          user_permissions=[{'communication': ['add', 'view']},
-                            {'eclss': ['add', 'modify', 'view']},
-                            {'science': ['add', 'modify', 'view']}]),
-     User(firstname='Alex',
-          lastname='Vogel',
-          role='chemist',
-          username='avogel',
-          password='pbkdf2_sha256$120000$eUNiCeTrYHoh$X32NiCeTrYZOWFdBcVT...=',
-          email='alex.vogel@esa.int',
-          born='1994-11-15',
-          last_login=None,
-          is_active=True,
-          is_staff=True,
-          is_superuser=False,
-          user_permissions=[{'eclss': ['add', 'modify', 'view']},
-                            {'communication': ['add', 'modify', 'view']},
-                            {'medical': ['add', 'modify', 'view']},
-                            {'science': ['add', 'modify', 'view']}]),
-     User(firstname='Chris',
-          lastname='Beck',
-          role='crew-medical-officer',
-          username='cbeck',
-          password='pbkdf2_sha256$120000$3G0RNiCeTrYlaV1$mVb62WNiCeTrYQ9a...=',
-          email='chris.beck@nasa.gov',
-          born='1999-08-02',
-          last_login='1970-01-01T00:00:00.000+00:00',
-          is_active=True,
-          is_staff=True,
-          is_superuser=False,
-          user_permissions=[{'communication': ['add', 'view']},
-                            {'medical': ['add', 'modify', 'view']},
-                            {'science': ['add', 'modify', 'view']}]),
-     User(firstname='Beth',
-          lastname='Johanssen',
-          role='sysop',
-          username='bjohanssen',
-          password='pbkdf2_sha256$120000$QmSNiCeTrYBv$Nt1jhVyacNiCeTrYSuK...=',
-          email='',
-          born='2006-05-09',
-          last_login=None,
-          is_active=True,
-          is_staff=True,
-          is_superuser=False,
-          user_permissions=[{'communication': ['add', 'view']},
-                            {'science': ['add', 'modify', 'view']}]),
-     User(firstname='Mark',
-          lastname='Watney',
-          role='botanist',
-          username='mwatney',
-          password='pbkdf2_sha256$120000$bxS4dNiCeTrY1n$Y8NiCeTrYRMa5bNJh...=',
-          email='',
-          born='1994-10-12',
-          last_login=None,
-          is_active=True,
-          is_staff=True,
-          is_superuser=False,
-          user_permissions=[{'communication': ['add', 'modify', 'view']},
-                            {'science': ['add', 'modify', 'view']}])]
+    >>> result[0]  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
+    User(firstname='Melissa',
+         lastname='Lewis',
+         role='commander',
+         username='mlewis',
+         password='pbkdf2_sha256$120000$gvEBNiCeTrYa0$5C+NiCeTrYsha1PHog...=',
+         email='melissa.lewis@nasa.gov',
+         born='1995-07-15',
+         last_login='1970-01-01T00:00:00.000+00:00',
+         is_active=True,
+         is_staff=True,
+         is_superuser=False,
+         user_permissions=[{'eclss': ['add', 'modify', 'view']},
+                           {'communication': ['add', 'modify', 'view']},
+                           {'medical': ['add', 'modify', 'view']},
+                           {'science': ['add', 'modify', 'view']}])
 """
 
 import json
@@ -178,7 +126,15 @@ DATA = ('[{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa"'
         '{"communication":["add","modify","view"]},{"science":["add","modify",'
         '"view"]}]}}]')
 
+
 # Using `dataclass` model data as class `User`
+# a. `str` fields: firstname, lastname, role, username, password, email,
+# b. `date` field: born,
+# c. `datetime` field: last_login (optional),
+# c. `bool` fields: is_active, is_staff, is_superuser,
+# d. `list[dict]` field: user_permissions
+# Leave `permission` attribute as `list[dict]`
+# Note, that fields order is important for tests to pass
 # type: Type
 class User:
     ...
