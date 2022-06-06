@@ -3,9 +3,6 @@ Agenda
 
 Day 1 (data and protocols)
 --------------------------
-* CSV
-* Jupyter and Pandas for simple data
-* Datetime
 * JSON
 * Pickle
 * XML

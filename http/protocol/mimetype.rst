@@ -139,7 +139,7 @@ Application Types
 * ``application/json``
 * ``application/javascript``
 * ``application/ecmascript``
-* ``application/octet-stream`` - As it really means unknown binary"
+* ``application/octet-stream`` - As it really means unknown binary
 * ``application/pkcs12``
 * ``application/vnd.mspowerpoint``
 * ``application/xhtml+xml``
