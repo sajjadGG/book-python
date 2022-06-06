@@ -1,16 +1,18 @@
 """
 * Assignment: JSON Decoder Martian
-* Complexity: medium
+* Complexity: easy
 * Lines of code: 8 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Define `result: dict` with decoded `DATA` from JSON
-    2. Run doctests - all must succeed
+    2. Use decoder function
+    3. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj `result: dict` z odkodowanym `DATA` z JSON
-    2. Uruchom doctesty - wszystkie muszą się powieść
+    2. Użyj dekodera funkcyjnego
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

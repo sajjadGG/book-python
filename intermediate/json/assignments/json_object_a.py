@@ -5,14 +5,14 @@
 * Time: 5 min
 
 English:
-    1. Convert from JSON format to Python
+    1. Convert from JSON format to Python using decoder function
     2. Create instances of `Setosa`, `Virginica`, `Versicolor`
        classes based on value in field "species"
     3. Add instances to `result: list[Setosa|Virginica|Versicolor]`
     4. Run doctests - all must succeed
 
 Polish:
-    1. Przekonwertuj dane z JSON do Python
+    1. Przekonwertuj dane z JSON do Python używając dekodera funkcyjnego
     2. Twórz obiekty klas `Setosa`, `Virginica`, `Versicolor`
        w zależności od wartości pola "species"
     3. Dodawaj instancje do `result: list[Setosa|Virginica|Versicolor]`

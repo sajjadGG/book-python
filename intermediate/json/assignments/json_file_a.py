@@ -2,7 +2,7 @@
 * Assignment: JSON File Dump
 * Complexity: easy
 * Lines of code: 4 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
     1. Extract from input a header and rows

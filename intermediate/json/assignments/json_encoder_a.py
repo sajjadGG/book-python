@@ -6,11 +6,13 @@
 
 English:
     1. Define `result: str` with JSON encoded `DATA`
-    2. Run doctests - all must succeed
+    2. Use encoder function
+    3. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj `result: str` z zakodowanym `DATA` w JSON
-    2. Uruchom doctesty - wszystkie muszą się powieść
+    2. Użyj enkodera funkcyjnego
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

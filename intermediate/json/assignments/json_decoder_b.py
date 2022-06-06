@@ -6,11 +6,13 @@
 
 English:
     1. Define `result: dict` with decoded `DATA` from JSON
-    2. Run doctests - all must succeed
+    2. Use decoder class
+    3. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj `result: dict` z odkodowanym `DATA` z JSON
-    2. Uruchom doctesty - wszystkie muszą się powieść
+    2. Użyj dekodera klasowego
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

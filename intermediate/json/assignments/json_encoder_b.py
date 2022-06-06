@@ -1,16 +1,18 @@
 """
 * Assignment: JSON Encoder Martian
-* Complexity: medium
+* Complexity: easy
 * Lines of code: 4 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Define `result: str` with JSON encoded `DATA`
-    2. Run doctests - all must succeed
+    2. Use encoder class
+    3. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj `result: str` z zakodowanym `DATA` w JSON
-    2. Uruchom doctesty - wszystkie muszą się powieść
+    2. Użyj enkodera klasowego
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

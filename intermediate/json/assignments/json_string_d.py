@@ -2,7 +2,7 @@
 * Assignment: JSON String ListTuple
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
     1. Load `DATA` from JSON format
