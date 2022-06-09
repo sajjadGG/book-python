@@ -1,13 +1,16 @@
 Block Match
 ===========
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
+* Significantly faster for sequences and mappings [#Shaw2022]_
+* Since Python 3.11: For sequences if faster around 80% [#Shaw2022]_
+* Since Python 3.11: For mappings if faster around 80% [#Shaw2022]_
 * ``x`` ⟼ assign ``x = subject``
 * ``'x'`` ⟼ test ``subject == 'x'``
 * ``x.y`` ⟼ test ``subject == x.y``
 * ``x()`` ⟼ test ``isinstance(subject, x)``
 * ``{'x': 'y'}`` ⟼ test ``isinstance(subject, Mapping) and subject.get('x') == 'y'``
 * ``['x']`` ⟼ test ``isinstance(subject, Sequence) and len(subject) == 1 and subject[0] == 'x'``
-* Source: [#patternmatching]_
+* Source: [#Hettinger2021]_
 
 >>> choice = 'r'
 >>>
@@ -341,7 +344,8 @@ Further Reading
 
 References
 ----------
-.. [#patternmatching] Raymond Hettinger. Retrieved: 2021-03-07. URL: https://twitter.com/raymondh/status/1361780586570948609?s=20
+.. [#Hettinger2021] Raymond Hettinger. Year: 2021. Retrieved: 2021-03-07. URL: https://twitter.com/raymondh/status/1361780586570948609?s=20
 
+.. [#Shaw2022] Anthony Shaw. Write faster Python! Common performance anti patterns. Year: 2022. Retrieved: 2022-06-09. URL: https://youtu.be/YY7yJHo0M5I?t=1555
 
 .. todo:: Assignments

@@ -58,6 +58,10 @@ Code complexity and Coverage
     "``mccabe``", ""
     "``radon``", ""
     "``coverage``", ""
+    "``pytest-cov``", ""
+
+.. figure:: img/cicd-tools-pytestcov.png
+.. figure:: img/cicd-tools-pytestcov-tips.png
 
 
 Testing

@@ -275,6 +275,12 @@ steering committee states that protocols are completely optional [#PEP544]_:
 
 Covariance, Contravariance, Invariance
 --------------------------------------
+* https://www.youtube.com/watch?v=1IiL31tUEVk&t=445s
+* Covariance - Enables you to use a more derived type than originally specified
+* Contravariance - Enables you to use a more generic (less derived) type than originally specified
+* Invariance - Means that you can use only the type originally specified.
+* Invariance is important for example in ``np.ndarray``, where all items must be exactly the same type
+
 Covariance and contravariance are terms that refer to the ability to use a
 more derived type (more specific) or a less derived type (less specific)
 than originally specified. Generic type parameters support covariance and
@@ -310,6 +316,21 @@ delegate, and contravariant type parameters can be used as parameter types.
         contravariant [#MicrosoftGenericsCovContra]_
 
         >>> check(1)  # 1 is int
+
+.. figure:: img/oop-protocol-covariance.png
+
+    Covariance. Replacement with more specialized type.
+    Dog is more specialized than Animal. [#Langa2022]_
+
+.. figure:: img/oop-protocol-contravariance.png
+
+    Contravariance. Replacement with more generic type.
+    Animal is more generic than Cat. [#Langa2022]_
+
+.. figure:: img/oop-protocol-contravariance.png
+
+    Invariance. Type must be the same and you cannot replace it.
+    Animal cannot be substituted for Cat and vice versa. [#Langa2022]_
 
 
 Default Value
@@ -619,3 +640,5 @@ References
 .. [#MicrosoftGenericsCovContra] https://docs.microsoft.com/en-us/dotnet/standard/generics/covariance-and-contravariance
 
 .. [#PEP544] Levkivskyi, I. and Lehtosalo, J. and Langa, Ł. PEP 544 -- Protocols: Structural subtyping (static duck typing). Year: 2017. Retrieved: 2022-03-09. URL: https://www.python.org/dev/peps/pep-0544/
+
+.. [#Langa2022] Langa, Ł. Covariance/Contravariance/Invariance. Year: 2022. Retrieved: 2022-06-09. URL: https://www.youtube.com/watch?v=1IiL31tUEVk&t=445s

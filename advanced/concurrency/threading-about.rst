@@ -13,6 +13,7 @@ Threading About
 * The cost of this convenience is that you have to assume a switch can happen at any time
 * Accordingly, critical sections have to be a guarded with locks
 * The limit on threads is total CPU power minus the cost of tasks switches and synchronization overhead
+* Why Should Async Get All The Love Advanced Control Flow With Threads [#Davis2022]_
 
 .. glossary::
 
@@ -111,3 +112,5 @@ References
 .. [#Green2017] Green, R. Thread safe code. Publisher: Canadian Mind Products. Year: 2017. Retrieved: 2022-03-18. URL: https://www.mindprod.com/jgloss/threadsafe.html
 
 .. [#Goetz2006] Goetz, B. and Peierls, T. and Bloch. J. and Bowbeer, J. and Holmes D. and Lea, D. Java Concurrency in Practice. Publisher: Addison-Wesley Professional; 1st edition. Year: 2006. ISBN: 978-0321349606.
+
+.. [#Davis2022] Davis, J.J. Why Should Async Get All The Love Advanced Control Flow With Threads. Year: 2022. Retrieved: 2022-06-09. URL: https://www.youtube.com/watch?v=DgjO5nSxp0I

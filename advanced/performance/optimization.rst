@@ -10,15 +10,37 @@ PyPy
 * Can speedup couple order of magnitude
 
 
-Seven strategies
-----------------
-* https://www.youtube.com/watch?v=zQeYx87mfyw
-* https://www.youtube.com/watch?v=EEUXKG97YRw
+Patterns
+--------
+* Source: [#Shaw2022]_
 
+.. figure:: img/performance-hints.png
 
-Line Profiling
---------------
+    [#Shaw2022]_
+
+Tools
+-----
+* memray [#Galindo2022]_
+* tracemalloc
+* mmap - memory allocation
+* Pytest extension for doing benchmarking
 * ``pip install line_profiler``
+
+.. figure:: img/performance-tracemalloc.png
+
+    [#Galindo2022]_
+
+.. figure:: img/performance-memray-realtime.png
+
+    Memray allows for real-time monitoring. [#Galindo2022]_
+
+.. figure:: img/performance-memray-pytestplugin.png
+
+    Memray has pytest plugin. [#Galindo2022]_
+
+.. figure:: img/performance-memray.png
+
+    Memray is Open Source. [#Galindo2022]_
 
 
 Numpy vectorization
@@ -249,10 +271,20 @@ Deque
 Further Reading
 ---------------
 * https://wiki.python.org/moin/TimeComplexity
+* https://youtu.be/YY7yJHo0M5I
 * https://visualgo.net/bn/sorting
 * http://sorting.at/
 * https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
 * https://www.youtube.com/watch?v=fOdCxum-qLA
+* https://www.youtube.com/watch?v=zQeYx87mfyw
+* https://www.youtube.com/watch?v=EEUXKG97YRw
+
+
+References
+----------
+.. [#Shaw2022] Anthony Shaw. Write faster Python! Common performance anti patterns. Year: 2022. Retrieved: 2022-06-09. URL: https://youtu.be/YY7yJHo0M5I
+
+.. [#Galindo2022] Pablo Galindo. Memray: hardcore memory profiling. Year: 2022. Retrieved: 2022-06-09. URL: https://youtu.be/1IiL31tUEVk?t=1010
 
 
 Assignments
