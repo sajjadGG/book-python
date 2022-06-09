@@ -1,7 +1,7 @@
 """
 * Assignment: About EntryTest ToListTuple
 * Complexity: easy
-* Lines of code: 6 lines
+* Lines of code: 3 lines
 * Time: 5 min
 
 English:
@@ -57,10 +57,6 @@ DATA = [
 result = ...
 
 # Solution
-result = []
 header = tuple(DATA[0].keys())
-result.append(header)
-
-for row in DATA:
-    row = tuple(row.values())
-    result.append(row)
+rows = [tuple(row.values()) for row in DATA]
+result = [header] + rows

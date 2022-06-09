@@ -22,22 +22,30 @@ Multi assignment:
 Assignment
 ----------
 * Scalar Assignment
-* ``identifier = value``
+* ``identifier = object``
 * ``a = 1``
+* ``a = 1, 2``
 
 >>> a = 1
 >>>
 >>> print(f'{a=}')
 a=1
 
+>>> a = 1, 2
+>>>
+>>> print(f'{a=}')
+a=(1, 2)
+
 
 Unpacking Assignment
 --------------------
-* ``iterable[identifier] = iterable[value]``
+* ``iterable[identifier] = iterable[object]``
 * ``a, b = 1, 2``
+* ``a, b, c = 1, 2, 3``
 * Vector Assignment
 * Sequence Assignment
 * Iterable Assignment
+* Length at right and left side must be the same
 
 >>> a, b = 1, 2
 >>>
@@ -52,8 +60,9 @@ a=1, b=2
 
 Multi Assignment
 ----------------
+* ``identifier1 = identifier2 = object``
 * ``a = b = 1``
-* ``identifier1 = identifier2 = value``
+* ``a = b = c = 1``
 
 >>> a = b = 1
 >>>
@@ -190,6 +199,12 @@ firstname='Mark', lastname='Watney'
 
 Use Case - 0x01
 ---------------
+>>> a, b, c = range(0, 3)
+>>> a, b, c, d, e = range(0, 5)
+
+
+Use Case - 0x02
+---------------
 * Skip
 
 >>> a, b, _ = 1, 2, 3
@@ -199,7 +214,7 @@ Use Case - 0x01
 >>> _, _, c = 1, 2, 3
 
 
-Use Case - 0x02
+Use Case - 0x03
 ---------------
 * Passwd
 
@@ -210,7 +225,7 @@ Use Case - 0x02
 username='watney', uid='1000'
 
 
-Use Case - 0x03
+Use Case - 0x04
 ---------------
 * Important
 
@@ -249,7 +264,8 @@ Python understands this as:
 
 Recap
 -----
-* Scalar, Vector, Multi assignment
+* Three types of assignments: Scalar, Vector, Multi
+* For vector assignment, lengths at both sides must be the same
 * Both left and right expression side brackets are optional
 * Unpacking nested sequences
 * Skipping values is done by using ``_``

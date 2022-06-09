@@ -3,7 +3,7 @@
 * Required: yes
 * Complexity: easy
 * Lines of code: 1 lines
-* Time: 2 min
+* Time: 3 min
 
 English:
     1. Split input data
@@ -44,7 +44,7 @@ DATA = '10.13.37.1 nasa.gov'
 ip = ...
 
 # String with host name: nasa.gov
-# type: list[str]
+# type: str
 host = ...
 
 # Solution

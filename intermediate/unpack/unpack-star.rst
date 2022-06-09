@@ -118,6 +118,13 @@ values=[5.7, 2.8, 4.1, 1.3], species='versicolor'
 
 Use Case - 0x01
 ---------------
+>>> a, b, c = range(0, 3)
+>>> a, b, c, d, e = range(0, 5)
+>>> a, b, *c = range(0, 10)
+
+
+Use Case - 0x01
+---------------
 >>> line = 'ares3,watney,lewis,vogel,johanssen'
 >>> mission, *crew = line.split(',')
 >>>

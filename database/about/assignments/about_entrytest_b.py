@@ -1,7 +1,7 @@
 """
 * Assignment: About EntryTest ToListDict
 * Complexity: easy
-* Lines of code: 5 lines
+* Lines of code: 2 lines
 * Time: 5 min
 
 English:
@@ -54,9 +54,5 @@ result = ...
 
 
 # Solution
-result = []
 header, *rows = DATA
-
-for row in rows:
-    paris = zip(header, row)
-    result.append(dict(paris))
+result = [dict(zip(header, row)) for row in rows]
