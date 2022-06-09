@@ -39,7 +39,6 @@ def mean(*args):
         raise ValueError('At least one argument is required')
     return sum(args) / len(args)
 
-
 # %%timeit -r 1000 -n 1000
 # >>> def mean(*args):
 # ...     if not args:
@@ -67,7 +66,6 @@ def mean(*args):
 # ...
 # ... mean()
 # 395 ns ± 65.6 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
-
 
 # https://docs.python.org/3.11/whatsnew/3.11.html#optimizations
 # "Zero-cost" exceptions are implemented.

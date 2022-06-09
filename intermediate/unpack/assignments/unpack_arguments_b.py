@@ -5,15 +5,17 @@
 * Time: 13 min
 
 English:
-    1. Write own implementation of a built-in `myrange(start, stop, step)` function
+    1. Write own implementation of a built-in function `range()`
     2. Note, that function does not take any keyword arguments
-    3. How to implement passing only stop argument (`myrange(start=0, stop=???, step=1)`)?
+    3. How to implement passing only stop argument
+       `myrange(start=0, stop=???, step=1)`?
     4. Run doctests - all must succeed
 
 Polish:
-    1. Zaimplementuj własne rozwiązanie wbudowanej funkcji `myrange(start, stop, step)`
+    1. Zaimplementuj własne rozwiązanie wbudowanej funkcji `range()`
     2. Zauważ, że funkcja nie przyjmuje żanych argumentów nazwanych (keyword)
-    3. Jak zaimplementować możliwość podawania tylko końca (`myrange(start=0, stop=???, step=1)`)?
+    3. Jak zaimplementować możliwość podawania tylko końca
+       `myrange(start=0, stop=???, step=1)`?
     4. Uruchom doctesty - wszystkie muszą się powieść
 
 Hint:
@@ -76,22 +78,26 @@ def myrange():
 def myrange(*args, **kwargs):
     if kwargs:
         raise TypeError('myrange() takes no keyword arguments')
-    if len(args) == 3:
-        start = args[0]
-        stop = args[1]
-        step = args[2]
-    elif len(args) == 2:
-        start = args[0]
-        stop = args[1]
-        step = 1
-    elif len(args) == 1:
-        start = 0
-        stop = args[0]
-        step = 1
-    elif len(args) == 0:
-        raise TypeError('myrange expected at least 1 argument, got 0')
-    else:
-        raise TypeError(f'myrange expected at most 3 arguments, got {len(args)}')
+
+    match len(args):
+        case 3:
+            start = args[0]
+            stop = args[1]
+            step = args[2]
+        case 2:
+            start = args[0]
+            stop = args[1]
+            step = 1
+        case 1:
+            start = 0
+            stop = args[0]
+            step = 1
+        case 0:
+            raise TypeError('myrange expected at least 1 argument, got 0')
+        case _:
+            n = len(args)
+            raise TypeError(f'myrange expected at most 3 arguments, got {n}')
+
 
     current = start
     result = []
@@ -101,3 +107,12 @@ def myrange(*args, **kwargs):
         current += step
 
     return result
+
+
+## Alternative solution
+# match len(args):
+#     case 3: start, stop, step = args
+#     case 2: (start, stop), step = args, 1
+#     case 1: start, stop, step = 0, args, 1
+#     case 0: raise TypeError('myrange expected at least 1 argument, got 0')
+#     case _: raise TypeError(f'myrange expected at most 3 arguments, got {len(args)}')

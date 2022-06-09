@@ -6,12 +6,14 @@
 
 English:
     1. Iterate over data splitting `*features` from `label`
-    2. Define `result: list[str]` with species names ending with "ca" or "osa"
+    2. Define `result: list[str]` with
+       species names ending with "ca" or "osa"
     3. Run doctests - all must succeed
 
 Polish:
     1. Iteruj po danych rozdzielając `*features` od `label`
-    2. Zdefiniuj `result: list[str]` z nazwami gatunków kończącymi się na "ca" lub "osa"
+    2. Zdefiniuj `result: list[str]` z
+       nazwami gatunków kończącymi się na "ca" lub "osa"
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
@@ -47,7 +49,6 @@ SUFFIXES = ('ca', 'osa')
 # species names ending with "ca" or "osa"
 # type: list[str]
 result = ...
-
 
 # Solution
 result = [species

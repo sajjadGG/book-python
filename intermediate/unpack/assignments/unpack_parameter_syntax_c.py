@@ -6,16 +6,18 @@
 * Warning: This assignment will work only in Python 3.8+
 
 English:
-    1. Create function `compute`
-    2. Function takes 4 arguments `a, b, c, func` and always returns `None`
-    3. Arguments `a, b, c` must be passed only as positional, and `func` as keyword
-    4. Run doctests - all must succeed
+    1. Create function `compute`, which always returns `None`
+    2. Function takes arguments:
+       a. `a, b, c` - positional only
+       b. `func` - keyword only
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Stwórz funkcję `compute`
-    2. Funkcja przyjmuje cztery argumenty `a, b, c, func` i zawsze zwraca `None`
-    3. Argumenty `a, b, c` można podawać pozycyjnie, a `func` keyword
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    1. Stwórz funkcję `compute`, która zawsze zwraca `None`
+    2. Funkcja przyjmuje argumenty:
+       a. `a, b, c` - tylko pozycyjne
+       b. `func` - tylko keyword
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -49,10 +51,10 @@ Tests:
 
 # Argument a,b,c must be passed only as positional, func as keyword
 # type: Callable[[int,int,int,Callable],None]
-def compute(a, b, c, func=lambda:...):
+def compute(a, b, c, func=lambda: ...):
     pass
 
 
 # Solution
-def compute(a, b, c, /, *, func=lambda:...):
+def compute(a, b, c, /, *, func=lambda: ...):
     pass

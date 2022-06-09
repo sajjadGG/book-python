@@ -6,7 +6,7 @@
 
 English:
     1. Create function `isnumeric`
-    2. Function can have arbitrary number of positional **and keyword arguments**
+    2. Function takes arbitrary number of positional and keyword arguments
     3. Arguments can be of any type
     4. Return `True` if all arguments are `int` or `float` only
     5. Return `False` if any argument is different type
@@ -17,12 +17,12 @@ English:
 
 Polish:
     1. Stwórz funkcję `isnumeric`
-    2. Funkcja może przyjmować dowolną liczbę argumentów pozycyjnych **i nazwanych**
+    2. Funkcja przyjmuje dowolną liczbę argumentów pozycyjnych i nazwanych
     3. Podawane argumenty mogą być dowolnego typu
     4. Zwróć `True` jeżeli wszystkie argumenty są tylko typów `int` lub `float`
     5. Zwróć `False` jeżeli którykolwiek jest innego typu
     6. Nie używaj `all()` oraz `any()`
-    7. Porównaj użycie `type()` i `isinstance()` podając argument do funkcji `True`
+    7. Porównaj użycie `type()` i `isinstance()` podając `True` jako argument
     8. Uruchom funkcję bez podawania argumentów
     9. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -67,10 +67,12 @@ Tests:
     False
 """
 
+
 # Return True if all arguments are int or float, otherwise False
 # type: Callable[[int|float],bool]
 def isnumeric():
     ...
+
 
 # Solution
 def isnumeric(*args, **kwargs):

@@ -64,6 +64,5 @@ header = ...
 # type: list[tuple]
 rows = ...
 
-
 # Solution
 header, *rows = DATA
