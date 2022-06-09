@@ -1,7 +1,7 @@
 """
 * Assignment: About EntryTest Endswith
 * Complexity: medium
-* Lines of code: 4 lines
+* Lines of code: 5 lines
 * Time: 5 min
 
 English:
