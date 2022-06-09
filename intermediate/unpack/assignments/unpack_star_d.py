@@ -49,6 +49,6 @@ result = ...
 
 
 # Solution
-result = [label
-          for *features, label in DATA[1:]
-          if label.endswith(SUFFIXES)]
+result = [species
+          for *values, species in DATA[1:]
+          if species.endswith(SUFFIXES)]
