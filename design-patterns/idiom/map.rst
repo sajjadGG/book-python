@@ -150,7 +150,9 @@ Starmap
 >>> from itertools import starmap
 >>>
 >>>
->>> DATA = [(3.1415,3), (2.71828,2)]
+>>> DATA = [
+...     (3.1415, 3),
+...     (2.71828, 2)]
 >>>
 >>> result = starmap(round, DATA)  # round(number=3.1415, ndigits=2)
 >>> print(list(result))

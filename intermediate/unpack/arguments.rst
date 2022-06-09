@@ -137,12 +137,13 @@ Objects From Sequence
  'petal_width': 1.6,
  'species': 'versicolor'}
 
->>> DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
-...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
-...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
-...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-...         (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>> DATA = [
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
 >>>
 >>>
 >>> class Iris:
@@ -245,19 +246,28 @@ function, which sets parameters from the config:
 Use Case - 0x02
 ---------------
 >>> def print_coordinates(x, y, z):
-...     print(f'{x=} {y=} {z=}')
+...     print(f'{x=}, {y=}, {z=}')
 
-Passing vector to the function:
+Passing sequence to the function:
 
->>> vector = (1, 0, 1)
->>> print_coordinates(*vector)
-x=1 y=0 z=1
+>>> point_xyz = [1, 2, 3]
+>>>
+>>> print_coordinates(point_xyz[0], point_xyz[1], point_xyz[2])
+>>> print_coordinates(*point_xyz)
 
-Passing point to the function:
+Passing mapping to the function:
 
->>> point = {'x': 1, 'y': 0, 'z': 1}
->>> print_coordinates(**point)
-x=1 y=0 z=1
+>>> point_xyz = {'x': 1, 'y': 2, 'z': 3}
+>>>
+>>> print_coordinates(x=point_xyz['x'], y=point_xyz['y'], z=point_xyz['z'])
+>>> print_coordinates(**point_xyz)
+>>> print_coordinates(*point_xyz.values())
+
+Passing sequence and mapping to the function:
+
+>>> point_xy = (1, 2)
+>>> point_z = {'z': 3}
+>>> print_coordinates(*point_xy, **point_z)
 
 
 Use Case - 0x03
@@ -338,12 +348,13 @@ Use Case - 0x04
 ...     species: str
 >>>
 >>>
->>> DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
-...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
-...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
-...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-...         (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>> DATA = [
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
 >>>
 >>>
 >>> result = [Iris(*row) for row in DATA]

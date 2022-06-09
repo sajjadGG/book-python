@@ -109,16 +109,17 @@ Example 2
 
 .. code-block:: python
 
-    DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
-            (5.1, 3.5, 1.4, 0.2, 'setosa'),
-            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-            (6.3, 2.9, 5.6, 1.8, 'virginica'),
-            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-            (4.7, 3.2, 1.3, 0.2, 'setosa'),
-            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-            (7.6, 3.0, 6.6, 2.1, 'virginica'),
-            (4.9, 3.0, 1.4, 0.2, 'setosa'),
-            (4.6, 3.1, 1.5, 0.2, 'setosa')]
+    DATA = [
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (7.6, 3.0, 6.6, 2.1, 'virginica'),
+        (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        (4.6, 3.1, 1.5, 0.2, 'setosa')]
 
     features=[]
     species=[]
@@ -220,17 +221,18 @@ Example 4
     a = Setosa(1,2,3,4)
     print(a)
 
-    DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-            (5.8, 2.7, 5.1, 1.9, 'virginica'),
-            (5.1, 3.5, 1.4, 0.2, 'setosa'),
-            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-            (6.3, 2.9, 5.6, 1.8, 'virginica'),
-            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-            (4.7, 3.2, 1.3, 0.2, 'setosa'),
-            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-            (7.6, 3.0, 6.6, 2.1, 'virginica'),
-            (4.9, 3.0, 1.4, 0.2, 'setosa'),
-            (4.6, 3.1, 1.5, 0.2, 'setosa')]
+    DATA = [
+        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (7.6, 3.0, 6.6, 2.1, 'virginica'),
+        (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        (4.6, 3.1, 1.5, 0.2, 'setosa')]
 
     DATA_2=DATA[1:]
     for item in DATA_2:
@@ -259,16 +261,17 @@ Bad practice:
 
 .. code-block:: python
 
-    DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-            (5.8, 2.7, 5.1, 1.9, {'name': 'virginica'}),
-            (5.1, 3.5, 1.4, 0.2, {'name': 'setosa'}),
-            (5.7, 2.8, 4.1, 1.3, {'name': 'versicolor'}),
-            (6.3, 2.9, 5.6, 1.8, {'name': 'virginica'}),
-            (6.4, 3.2, 4.5, 1.5, {'name': 'versicolor'}),
-            (4.7, 3.2, 1.3, 0.2, {'name': 'setosa'}),
-            (7.0, 3.2, 4.7, 1.4, {'name': 'versicolor'}),
-            (7.6, 3.0, 6.6, 2.1, {'name': 'virginica'}),
-            (4.6, 3.1, 1.5, 0.2, {'name': 'setosa'})]
+    DATA = [
+        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, {'name': 'virginica'}),
+        (5.1, 3.5, 1.4, 0.2, {'name': 'setosa'}),
+        (5.7, 2.8, 4.1, 1.3, {'name': 'versicolor'}),
+        (6.3, 2.9, 5.6, 1.8, {'name': 'virginica'}),
+        (6.4, 3.2, 4.5, 1.5, {'name': 'versicolor'}),
+        (4.7, 3.2, 1.3, 0.2, {'name': 'setosa'}),
+        (7.0, 3.2, 4.7, 1.4, {'name': 'versicolor'}),
+        (7.6, 3.0, 6.6, 2.1, {'name': 'virginica'}),
+        (4.6, 3.1, 1.5, 0.2, {'name': 'setosa'})]
 
     for i in range(1, len(DATA)):
         if DATA[i][-1]['name'][0] == 'v':
@@ -278,16 +281,17 @@ Pythonic way:
 
 .. code-block:: python
 
-    DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-            (5.8, 2.7, 5.1, 1.9, {'name': 'virginica'}),
-            (5.1, 3.5, 1.4, 0.2, {'name': 'setosa'}),
-            (5.7, 2.8, 4.1, 1.3, {'name': 'versicolor'}),
-            (6.3, 2.9, 5.6, 1.8, {'name': 'virginica'}),
-            (6.4, 3.2, 4.5, 1.5, {'name': 'versicolor'}),
-            (4.7, 3.2, 1.3, 0.2, {'name': 'setosa'}),
-            (7.0, 3.2, 4.7, 1.4, {'name': 'versicolor'}),
-            (7.6, 3.0, 6.6, 2.1, {'name': 'virginica'}),
-            (4.6, 3.1, 1.5, 0.2, {'name': 'setosa'})]
+    DATA = [
+        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, {'name': 'virginica'}),
+        (5.1, 3.5, 1.4, 0.2, {'name': 'setosa'}),
+        (5.7, 2.8, 4.1, 1.3, {'name': 'versicolor'}),
+        (6.3, 2.9, 5.6, 1.8, {'name': 'virginica'}),
+        (6.4, 3.2, 4.5, 1.5, {'name': 'versicolor'}),
+        (4.7, 3.2, 1.3, 0.2, {'name': 'setosa'}),
+        (7.0, 3.2, 4.7, 1.4, {'name': 'versicolor'}),
+        (7.6, 3.0, 6.6, 2.1, {'name': 'virginica'}),
+        (4.6, 3.1, 1.5, 0.2, {'name': 'setosa'})]
 
     header, *rows = DATA
 

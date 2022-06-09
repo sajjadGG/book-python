@@ -7,16 +7,15 @@
 English:
     1. Create function `mean()`, which calculates arithmetic mean
     2. Function can have arbitrary number of positional arguments
-    3. Do not import any libraries and modules
-    4. Use builtin functions `sum()` and `len()`
-    5. Run doctests - all must succeed
 
 Polish:
     1. Napisz funkcję `mean()`, wyliczającą średnią arytmetyczną
     2. Funkcja przyjmuje dowolną ilość pozycyjnych argumentów
-    3. Nie importuj żadnych bibliotek i modułów
-    4. Użyj wbudowanych funkcji `sum()` i `len()`
-    5. Uruchom doctesty - wszystkie muszą się powieść
+
+Non-functional requirements:
+    * Do not import any libraries and modules
+    * Use builtin functions `sum()` and `len()`
+    * Run doctests - all must succeed
 
 Hints:
     * `sum(...) / len(...)`
@@ -68,3 +67,8 @@ def mean(*args):
 # ...
 # ... mean()
 # 395 ns ± 65.6 ns per loop (mean ± std. dev. of 1000 runs, 1000 loops each)
+
+
+# https://docs.python.org/3.11/whatsnew/3.11.html#optimizations
+# "Zero-cost" exceptions are implemented.
+# The cost of try statements is almost eliminated when no exception is raised.

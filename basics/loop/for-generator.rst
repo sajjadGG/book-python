@@ -81,9 +81,10 @@ StopIteration
 6 -> b
 7 -> c
 
->>> DATA = [(5.1, 3.5, 1.4, 0.2, 'setosa'),
-...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-...         (6.3, 2.9, 5.6, 1.8, 'virginica')]
+>>> DATA = [
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica')]
 >>>
 >>> for i, row in enumerate(DATA):
 ...     print(f'{i} -> {row}')

@@ -44,12 +44,13 @@ Insert Many
 ...     INSERT INTO astronauts
 ...     VALUES (NULL, ?, ?);"""
 >>>
->>> data = [('Mark', 'Watney'),
-...         ('Melissa', 'Lewis'),
-...         ('Rick', 'Martinez'),
-...         ('Alex', 'Vogel'),
-...         ('Beth', 'Johanssen'),
-...         ('Chris', 'Beck')]
+>>> data = [
+...     ('Mark', 'Watney'),
+...     ('Melissa', 'Lewis'),
+...     ('Rick', 'Martinez'),
+...     ('Alex', 'Vogel'),
+...     ('Beth', 'Johanssen'),
+...     ('Chris', 'Beck')]
 >>>
 >>>
 >>> with sqlite3.connect(DATABASE) as db:
