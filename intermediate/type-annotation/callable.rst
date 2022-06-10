@@ -132,7 +132,7 @@ Errors
 Good Engineering Practices
 --------------------------
 >>> def add(a: int | float,
-...         b: int | float
+...         b: int | float,
 ...         ) -> int | float:
 ...     return a + b
 
@@ -205,11 +205,22 @@ Use Case - 0x02
 
 Use Case - 0x03
 ---------------
->>> def request(url: str,
-...             on_success: Callable[[str], None],
-...             on_error: Callable[[str, Exception], None],
-...             ) -> None:
-...     ...
+>>> from typing import Any
+>>> import requests
+>>>
+>>>
+>>> Result = requests.Response
+>>>
+>>> def fetch(url: str,
+...           on_success: Callable[[Result], Any],
+...           on_error: Callable[[Exception], Any],
+...           ) -> None:
+...     try:
+...         result: Result = requests.get(url)
+...     except Exception as err:
+...         on_error(err)
+...     else:
+...         on_success(result)
 
 
 Further Reading

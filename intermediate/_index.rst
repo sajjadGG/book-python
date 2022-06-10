@@ -39,21 +39,25 @@ Type Annotation
     type-annotation/static-analysis.rst
 
 
-Datetime and Timezones
-**********************
+Dataclass
+*********
 .. toctree::
     :maxdepth: 1
-    :caption: Datetime and Timezones
+    :caption: Dataclass
 
-    datetime/create.rst
-    datetime/iso.rst
-    datetime/format.rst
-    datetime/standards.rst
-    datetime/parse.rst
-    datetime/timedelta.rst
-    datetime/timestamp.rst
-    datetime/utils.rst
-    datetime/timezones.rst
+    dataclass/about.rst
+    dataclass/define-basic.rst
+    dataclass/define-special.rst
+    dataclass/define-relations.rst
+    dataclass/mechanism.rst
+    dataclass/postinit.rst
+    dataclass/mutable-args.rst
+    dataclass/field.rst
+    dataclass/metadata.rst
+    dataclass/parameters.rst
+    dataclass/helpers.rst
+    dataclass/inheritance.rst
+    dataclass/introspect.rst
 
 
 Pickle
@@ -127,25 +131,21 @@ Regular Expressions
     regex/re-type-annotation.rst
 
 
-Dataclass
-*********
+Datetime and Timezones
+**********************
 .. toctree::
     :maxdepth: 1
-    :caption: Dataclass
+    :caption: Datetime and Timezones
 
-    dataclass/about.rst
-    dataclass/define-basic.rst
-    dataclass/define-special.rst
-    dataclass/define-relations.rst
-    dataclass/mechanism.rst
-    dataclass/postinit.rst
-    dataclass/mutable-args.rst
-    dataclass/field.rst
-    dataclass/metadata.rst
-    dataclass/parameters.rst
-    dataclass/helpers.rst
-    dataclass/inheritance.rst
-    dataclass/introspect.rst
+    datetime/create.rst
+    datetime/iso.rst
+    datetime/format.rst
+    datetime/standards.rst
+    datetime/parse.rst
+    datetime/timedelta.rst
+    datetime/timestamp.rst
+    datetime/utils.rst
+    datetime/timezones.rst
 
 
 Operator

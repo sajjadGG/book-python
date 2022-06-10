@@ -21,7 +21,7 @@ Day 1
 Day 2
 -----
 * 100m - Type Annotation
-* 100m - Daty, czas i strefy czasowe
+* 100m - Dataclasses (dataclasses)
 * 20m - Serializacja i deserializacja danych z Pickle
 * 100m - Praca z plikami CSV (konwersja formatów danych)
 * 100m - Praca z plikami JSON (dane nierelacyjne i relacyjne, daty i czas, zagnieżdżone dane relacyjne)
@@ -30,7 +30,7 @@ Day 2
 Day 3
 -----
 * 240m - Wyrażenia regularne (Identifier, Qualifiers, Quantifiers, Grouping, Flags)
-* 180m - Dataclasses (dataclasses)
+* 180m - Daty, czas i strefy czasowe
 
 
 Day 4
