@@ -83,7 +83,7 @@ Astronaut(firstname='Mark', lastname='Watney', missions=['Ares3', 'Apollo18'])
 Init
 ----
 >>> from dataclasses import dataclass, field
->>> from typing import Final
+>>> from typing import ClassVar
 >>>
 >>>
 >>> @dataclass
@@ -91,8 +91,8 @@ Init
 ...     firstname: str
 ...     lastname: str
 ...     age: int
-...     AGE_MIN: Final[int] = field(default=27, init=False)
-...     AGE_MAX: Final[int] = field(default=50, init=False)
+...     AGE_MIN: ClassVar[int] = field(default=27, init=False)
+...     AGE_MAX: ClassVar[int] = field(default=50, init=False)
 >>>
 >>>
 >>> Astronaut('Mark', 'Watney', age=44)
@@ -102,7 +102,7 @@ Astronaut(firstname='Mark', lastname='Watney', age=44, AGE_MIN=27, AGE_MAX=50)
 Repr
 ----
 >>> from dataclasses import dataclass, field
->>> from typing import Final
+>>> from typing import ClassVar
 >>>
 >>>
 >>> @dataclass
@@ -110,8 +110,8 @@ Repr
 ...     firstname: str
 ...     lastname: str
 ...     age: int
-...     AGE_MIN: Final[int] = field(default=27, init=False, repr=False)
-...     AGE_MAX: Final[int] = field(default=50, init=False, repr=False)
+...     AGE_MIN: ClassVar[int] = field(default=27, init=False, repr=False)
+...     AGE_MAX: ClassVar[int] = field(default=50, init=False, repr=False)
 >>>
 >>>
 >>> Astronaut('Mark', 'Watney', age=44)
@@ -139,6 +139,7 @@ Use Case - 0x01
 ---------------
 * Validation
 
+>>> from typing import ClassVar
 >>> from dataclasses import dataclass, field
 >>> from datetime import time, datetime, timezone
 >>>
@@ -158,8 +159,8 @@ Use Case - 0x01
 ...     assignments: list[str] = field(default_factory=list, kw_only=True)
 ...     missions: list[Mission] = field(default_factory=list, kw_only=True)
 ...     account_created: datetime = field(default_factory=lambda: datetime.now(tz=timezone.utc), kw_only=True)
-...     AGE_MIN: int = field(default=30, init=False, repr=False)
-...     AGE_MAX: int = field(default=50, init=False, repr=False)
+...     AGE_MIN: ClassVar[int] = field(default=30, init=False, repr=False)
+...     AGE_MAX: ClassVar[int] = field(default=50, init=False, repr=False)
 
 
 Assignments

@@ -82,7 +82,7 @@ Use Case - 0x01
 ``class``:
 
 >>> from datetime import date
->>> from typing import Final
+>>> from typing import ClassVar
 >>>
 >>>
 >>> class Mission:
@@ -107,12 +107,12 @@ Use Case - 0x01
 ...    rank: str | None = None
 ...    previous_job: str | None = None
 ...    experience: list[str] | None = None
-...    AGE_MIN: Final[int] = 27
-...    AGE_MAX: Final[int] = 50
-...    WEIGHT_MIN: Final[int] = 50
-...    WEIGHT_MAX: Final[int] = 90
-...    HEIGHT_MIN: Final[int] = 156
-...    HEIGHT_MAX: Final[int] = 210
+...    AGE_MIN: ClassVar[int] = 27
+...    AGE_MAX: ClassVar[int] = 50
+...    WEIGHT_MIN: ClassVar[int] = 50
+...    WEIGHT_MAX: ClassVar[int] = 90
+...    HEIGHT_MIN: ClassVar[int] = 156
+...    HEIGHT_MAX: ClassVar[int] = 210
 ...
 ...
 ...    def __init__(self,
@@ -146,7 +146,7 @@ Use Case - 0x01
 
 >>> from dataclasses import dataclass
 >>> from datetime import date
->>> from typing import Final
+>>> from typing import ClassVar
 >>>
 >>>
 >>> @dataclass
@@ -169,10 +169,9 @@ Use Case - 0x01
 ...     rank: str | None = None
 ...     previous_job: str | None = None
 ...     experience: list[str] | None = None
-...     AGE_MIN: Final[int] = 27
-...     AGE_MAX: Final[int] = 50
-...     WEIGHT_MIN: Final[int] = 50
-...     WEIGHT_MAX: Final[int] = 90
-...     HEIGHT_MIN: Final[int] = 156
-...     HEIGHT_MAX: Final[int] = 210
-
+...     AGE_MIN: ClassVar[int] = 27
+...     AGE_MAX: ClassVar[int] = 50
+...     WEIGHT_MIN: ClassVar[int] = 50
+...     WEIGHT_MAX: ClassVar[int] = 90
+...     HEIGHT_MIN: ClassVar[int] = 156
+...     HEIGHT_MAX: ClassVar[int] = 210

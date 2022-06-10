@@ -12,15 +12,15 @@ Initial Validation in Classes
 * Init serves not only for fields initialization
 * It could be also used for value validation
 
->>> from typing import Final
+>>> from typing import ClassVar
 >>>
 >>>
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     age: int
-...     AGE_MIN: Final[int] = 30
-...     AGE_MAX: Final[int] = 50
+...     AGE_MIN: ClassVar[int] = 30
+...     AGE_MAX: ClassVar[int] = 50
 ...
 ...     def __init__(self, firstname, lastname, age):
 ...         self.firstname = firstname
@@ -50,7 +50,7 @@ Initial Validation in Dataclasses
 * You can focus only on bailing-out (checking only negative path - errors)
 
 >>> from dataclasses import dataclass
->>> from typing import Final
+>>> from typing import ClassVar
 >>>
 >>>
 >>> @dataclass
@@ -58,8 +58,8 @@ Initial Validation in Dataclasses
 ...     firstname: str
 ...     lastname: str
 ...     age: int
-...     AGE_MIN: Final[int] = 30
-...     AGE_MAX: Final[int] = 50
+...     AGE_MIN: ClassVar[int] = 30
+...     AGE_MAX: ClassVar[int] = 50
 ...
 ...     def __post_init__(self):
 ...         if not self.AGE_MIN <= self.age < self.AGE_MAX:
@@ -152,29 +152,6 @@ Astronaut(firstname='Mark', lastname='Watney')
 >>>
 >>> vars(astro)
 {'firstname': 'Mark', 'lastname': 'Watney'}
-
-
-ClassVar
---------
-* ``from typing import ClassVar``
-* Defines static field
-
-One of two places where ``dataclass()`` actually inspects the type of a
-field is to determine if a field is a class variable as defined in PEP 526.
-It does this by checking if the type of the field is ``typing.ClassVar``.
-If a field is a ``ClassVar``, it is excluded from consideration as a field
-and is ignored by the dataclass mechanisms. Such ``ClassVar`` pseudo-fields
-are not returned by the module-level ``fields()`` function.
-
->>> from typing import ClassVar
-
->>> @dataclass
-... class Astronaut:
-...     fullname: str
-...     firstname: str
-...     age: int
-...     AGE_MIN: ClassVar[int] = 30
-...     AGE_MAX: ClassVar[int] = 50
 
 
 Use Case - 0x01

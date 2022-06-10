@@ -173,7 +173,7 @@ One to One
 
 
 One to Many
-----------
+-----------
 >>> class User:
 ...   firstname: str
 ...   lastname: str

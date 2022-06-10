@@ -133,7 +133,7 @@ SQL
 
 
 Tabele
------
+------
 * ``CREATE TABLE``
 * ``ALTER TABLE``
 * ``DROP TABLE``
