@@ -27,15 +27,14 @@ Tests:
     'Assign result to variable: `result`'
     >>> assert type(result) is list, \
     'Variable `result` has invalid type, must be a list'
-    >>> assert all(type(element) is datetime for element in result), \
-    'All elements in `result` must be a datetime'
+    >>> assert all(type(element) is date for element in result), \
+    'All elements in `result` must be a date'
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [datetime.datetime(1957, 10, 4),
-    datetime.datetime(1961, 4, 12)]
+    >>> result
+    [datetime.date(1957, 10, 4), datetime.date(1961, 4, 12)]
 """
 
-from datetime import datetime
+from datetime import date, datetime
 
 
 DATA = [
@@ -44,7 +43,7 @@ DATA = [
 ]
 
 # parsed DATA
-# type: list[datetime]
+# type: list[date]
 result = ...
 
 # Solution

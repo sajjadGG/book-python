@@ -253,28 +253,36 @@ Passing sequence to the function:
 >>> point_xyz = [1, 2, 3]
 >>>
 >>> print_coordinates(point_xyz[0], point_xyz[1], point_xyz[2])
+x=1, y=2, z=3
+>>>
 >>> print_coordinates(*point_xyz)
+x=1, y=2, z=3
 
 Passing mapping to the function:
 
 >>> point_xyz = {'x': 1, 'y': 2, 'z': 3}
 >>>
 >>> print_coordinates(x=point_xyz['x'], y=point_xyz['y'], z=point_xyz['z'])
+x=1, y=2, z=3
+>>>
 >>> print_coordinates(**point_xyz)
+x=1, y=2, z=3
+>>>
 >>> print_coordinates(*point_xyz.values())
+x=1, y=2, z=3
 
 Passing sequence and mapping to the function:
 
 >>> point_xy = (1, 2)
 >>> point_z = {'z': 3}
 >>> print_coordinates(*point_xy, **point_z)
+x=1, y=2, z=3
 
 
 Use Case - 0x03
 ---------------
-
 >>> def database_connect(host, port, username, password, database):
-...     pass
+...     ...
 >>>
 >>>
 >>> CONFIG = {
