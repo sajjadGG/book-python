@@ -206,7 +206,7 @@ exclude_patterns = [
     'assignments',          '*/assignments',
     '_template.rst',        '*/_template.rst',
     '*.ipynb_checkpoints',  '*/*.ipynb_checkpoints',
-    '*/index.rst',
+    '*/index.rst',          '*.md',
 ]
 
 html_show_sphinx = False
