@@ -2,7 +2,7 @@
 * Assignment: Datetime Create Custom
 * Complexity: easy
 * Lines of code: 3 lines
-* Time: 3 min
+* Time: 2 min
 
 English:
     1. First human (Yuri Gagarin) flown to space on

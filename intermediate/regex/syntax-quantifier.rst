@@ -7,11 +7,10 @@ Syntax Quantifier
 
 >>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
->>>
->>>
+
 >>> re.findall(r'\d', TEXT)
 ['3', '7', '2', '0', '3', '5', '1', '3', '7']
->>>
+
 >>> re.findall(r'\d\d\d\d', TEXT)
 ['2035']
 
@@ -22,13 +21,11 @@ Exact
 * ``{n}`` - exactly `n` repetitions, prefer longer
 
 >>> import re
->>>
->>>
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
->>>
+
 >>> re.findall(r'[0-9]{2}', TEXT)
 ['20', '35', '37']
->>>
+
 >>> re.findall(r'\d{2}', TEXT)
 ['20', '35', '37']
 
@@ -47,10 +44,8 @@ Greedy
 * ``?`` - minimum 0 repetitions, maximum 1 repetitions, prefer longer  (alias to ``{0,1}``)
 
 >>> import re
->>>
->>>
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
->>>
+
 >>> re.findall(r'\d{2,4}', TEXT)
 ['2035', '37']
 
@@ -78,23 +73,16 @@ Lazy
 Greedy vs. Lazy
 ---------------
 >>> import re
->>>
->>>
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
->>>
+
 >>> re.findall(r'\d{2,4}', TEXT)  # Greedy
 ['2035', '37']
->>>
+
 >>> re.findall(r'\d{2,4}?', TEXT)  # Lazy
 ['20', '35', '37']
 
 Greedy vs Lazy in exact match has no difference:
 
->>> import re
->>>
->>>
->>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
->>>
 >>> re.findall('\d{2}?', TEXT)
 ['20', '35', '37']
 >>>
@@ -105,24 +93,17 @@ Greedy vs Lazy in exact match has no difference:
 Special
 -------
 >>> import re
->>>
->>>
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
->>>
+
 >>> re.findall('\d{0,}', TEXT) == re.findall('\d*', TEXT)
 True
->>>
+
 >>> re.findall('\d{1,}', TEXT) == re.findall('\d+', TEXT)
 True
 
->>> import re
->>>
->>>
->>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
->>>
 >>> re.findall('\d+', TEXT)
 ['3', '7', '2035', '1', '37']
->>>
+
 >>> re.findall('\d*', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
  '', '', '3', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
