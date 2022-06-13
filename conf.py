@@ -194,6 +194,7 @@ exclude_patterns = [
     '_static',              '*/_static',
     '_themes',              '*/_themes',
     '_tmp',                 '*/_tmp',
+    '__TODO',               '*/__TODO',
     '.*',                   '*/.*',
     'venv*',                '*/venv*',
     'virtualenv*',          '*/virtualenv*',
@@ -206,7 +207,7 @@ exclude_patterns = [
     'assignments',          '*/assignments',
     '_template.rst',        '*/_template.rst',
     '*.ipynb_checkpoints',  '*/*.ipynb_checkpoints',
-    '*/index.rst',          '*/__TODO',
+    '*/index.rst',
 ]
 
 html_show_sphinx = False
