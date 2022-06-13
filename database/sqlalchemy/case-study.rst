@@ -67,17 +67,34 @@ SQLAlchemy ORM
 ... )
 >>>
 >>>
->>> debug(query)
-WITH important_categories AS
-(SELECT DISTINCT apollo11.category AS anon_1
-FROM apollo11 GROUP BY apollo11.category
-HAVING count(apollo11.category) < 50 ORDER BY apollo11.category ASC
- LIMIT 5 OFFSET 0)
- SELECT apollo11.datetime AS dt, apollo11.category, apollo11.event
+>>> debug(query)  # doctest: +NORMALIZE_WHITESPACE
+WITH important_categories
+  AS (SELECT DISTINCT apollo11.category AS anon_1
+      FROM apollo11
+      GROUP BY apollo11.category
+      HAVING count(apollo11.category) < 50
+      ORDER BY apollo11.category ASC
+      LIMIT 5
+      OFFSET 0)
+SELECT apollo11.datetime AS dt,
+       apollo11.category,
+       apollo11.event
 FROM apollo11
-WHERE apollo11.category != 'DEBUG' AND apollo11.date >= '1969-07-16' AND apollo11.date <= '1969-07-24' AND (apollo11.date = '1969-07-20' OR apollo11.date = '1969-07-21') AND apollo11.datetime BETWEEN '1969-07-20 20:17:41' AND '1969-07-21 15:00' AND apollo11.event LIKE '%CDR%' AND apollo11.category IS NOT NULL AND (apollo11.category NOT IN ('DEBUG', 'INFO')) AND apollo11.category IN ('CRITICAL', 'ERROR') AND apollo11.category IN (SELECT important_categories.anon_1
-FROM important_categories) ORDER BY apollo11.category DESC, apollo11.date ASC NULLS FIRST, apollo11.time ASC NULLS LAST
- LIMIT 30 OFFSET 0
+WHERE apollo11.category != 'DEBUG'
+  AND apollo11.date >= '1969-07-16'
+  AND apollo11.date <= '1969-07-24'
+  AND (apollo11.date = '1969-07-20' OR apollo11.date = '1969-07-21')
+  AND apollo11.datetime BETWEEN '1969-07-20 20:17:41' AND '1969-07-21 15:00'
+  AND apollo11.event LIKE '%CDR%'
+  AND apollo11.category IS NOT NULL
+  AND (apollo11.category NOT IN ('DEBUG', 'INFO'))
+  AND apollo11.category IN ('CRITICAL', 'ERROR')
+  AND apollo11.category IN (SELECT important_categories.anon_1 FROM important_categories)
+ORDER BY apollo11.category DESC,
+         apollo11.date ASC NULLS FIRST,
+         apollo11.time ASC NULLS LAST
+LIMIT 30
+OFFSET 0
 
 
 Raw SQL

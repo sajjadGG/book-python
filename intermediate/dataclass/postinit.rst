@@ -67,7 +67,7 @@ Initial Validation in Dataclasses
 >>>
 >>>
 >>> Astronaut('Mark', 'Watney', age=44)
-Astronaut(firstname='Mark', lastname='Watney', age=44, AGE_MIN=30, AGE_MAX=50)
+Astronaut(firstname='Mark', lastname='Watney', age=44)
 >>>
 >>> Astronaut('Mark', 'Watney', age=60)
 Traceback (most recent call last):

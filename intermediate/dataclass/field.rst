@@ -96,7 +96,7 @@ Init
 >>>
 >>>
 >>> Astronaut('Mark', 'Watney', age=44)
-Astronaut(firstname='Mark', lastname='Watney', age=44, AGE_MIN=27, AGE_MAX=50)
+Astronaut(firstname='Mark', lastname='Watney', age=44)
 
 
 Repr
