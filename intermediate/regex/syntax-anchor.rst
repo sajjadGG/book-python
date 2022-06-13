@@ -12,25 +12,25 @@ Any Character
 * ``.`` - any character except a newline (changes meaning with ``re.DOTALL``)
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
-Search for letters ``Ap`` followed by any character:
+Search for letters ``No`` followed by any character:
 
->>> re.findall('Ap.', TEXT)
-['Apr']
+>>> re.findall('No.', TEXT)
+['Nov']
 
-Search for uppercase letter followed by any two characters:
+Search for uppercase letter followed by any three characters:
 
->>> re.findall('[A-Z]..', TEXT)
-['Yur', 'Gag', 'Apr']
+>>> re.findall('[A-Z]...', TEXT)
+['Mark', 'Watn', 'Ares', 'Mars', 'Nov ']
 
 Example:
 
->>> re.findall('[0-9][0-9]..', TEXT)
-['12th', '1961', '07 a']
+>>> re.findall('1:37 ..', TEXT)
+['1:37 pm']
 >>>
->>> re.findall('[A-Z].. [0-9][0-9]..', TEXT)
-['Apr 12th']
+>>> re.findall('Nov 7..', TEXT)
+['Nov 7th']
 
 
 Start of Line
@@ -39,17 +39,17 @@ Start of Line
 * Changes meaning with ``re.MULTILINE``
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 Search for a capital letter in text at the start of a line:
 
 >>> re.findall('^[A-Z]', TEXT)
-['Y']
+['M']
 
 Search for a capital letter anywhere in text:
 
 >>> re.findall('[A-Z]', TEXT)
-['Y', 'G', 'A']
+['M', 'W', 'A', 'M', 'N']
 
 
 End of Line
@@ -58,12 +58,12 @@ End of Line
 * Changes meaning with ``re.MULTILINE``
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
-Give me last three characters in a text:
+Give me last two characters in a text:
 
->>> re.findall('...$', TEXT)
-['am.']
+>>> re.findall('..$', TEXT)
+['pm']
 
 
 Start of String
@@ -72,18 +72,18 @@ Start of String
 * Doesn't change meaning with ``re.MULTILINE``
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 Search for a capital letter in text at the start of a line:
 
 >>> re.findall('\A[A-Z]', TEXT)
-['Y']
+['M']
 
 Note, that the output is identical to Start of a Line ``^``. It will differ
 when ``re.MULTILINE`` flag is present.
 
 >>> re.findall('^[A-Z]', TEXT)
-['Y']
+['M']
 
 
 End of String
@@ -92,18 +92,18 @@ End of String
 * Doesn't change meaning with ``re.MULTILINE``
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
-Give me last three characters in a text:
+Give me last two characters in a text:
 
->>> re.findall('...\Z', TEXT)
-['am.']
+>>> re.findall('..\Z', TEXT)
+['pm']
 
 Note, that the output is identical to Start of a Line ``^``. It will differ
 when ``re.MULTILINE`` flag is present.
 
->>> re.findall('...$', TEXT)
-['am.']
+>>> re.findall('..$', TEXT)
+['pm']
 
 
 Use Case - 0x01

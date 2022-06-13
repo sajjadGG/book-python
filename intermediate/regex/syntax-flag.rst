@@ -60,13 +60,13 @@ Case-insensitive (has Unicode support i.e. Ą and ą)
 >>> import re
 >>>
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
->>> re.findall(r'gagarin', TEXT)
+>>> re.findall(r'ares', TEXT)
 []
 >>>
->>> re.findall(r'gagarin', TEXT, flags=re.IGNORECASE)
-['Gagarin']
+>>> re.findall(r'ares', TEXT, flags=re.IGNORECASE)
+['Ares']
 
 
 LOCALE

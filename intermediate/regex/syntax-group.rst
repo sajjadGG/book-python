@@ -19,81 +19,54 @@ Positional Group
 * ``(...)`` - unnamed (positional) group
 
 >>> import re
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
+
+>>> re.findall(r'\dth', TEXT)
+['7th']
 >>>
+>>> re.findall(r'(\d)th', TEXT)
+['7']
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
->>> re.findall(r'\d{2}th', TEXT)
-['12th']
->>>
->>> re.findall(r'(\d{2})th', TEXT)
-['12']
->>>
->>> re.findall(r'\d{2}(th)', TEXT)
+>>> re.findall(r'\d(th)', TEXT)
 ['th']
 
->>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
 >>> re.findall('\d:\d\d', TEXT)
-['6:07']
+['1:37']
 >>> re.findall('(\d):\d\d', TEXT)
-['6']
+['1']
 >>> re.findall('\d:(\d\d)', TEXT)
-['07']
+['37']
 >>> re.findall('(\d):(\d\d)', TEXT)
-[('6', '07')]
+[('1', '37')]
 
->>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
 >>> re.findall(r'([A-Z][a-z]+\s[A-Z][a-z]+)', TEXT)
-['Yuri Gagarin']
+['Mark Watney']
 >>>
 >>> re.findall(r'([A-Z][a-z]+) ([A-Z][a-z]+)', TEXT)
-[('Yuri', 'Gagarin')]
+[('Mark', 'Watney')]
 >>>
 >>> re.findall(r'([A-Z][a-z]+) ([A-Z][a-z]+)', TEXT)[0]
-('Yuri', 'Gagarin')
+('Mark', 'Watney')
 
->>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
 >>> firstname = r'([A-Z][a-z]+)'
 >>> lastname = r'([A-Z][a-z]+)'
 >>>
 >>> re.findall(f'{firstname} {lastname}', TEXT)[0]
-('Yuri', 'Gagarin')
+('Mark', 'Watney')
 
->>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
 >>> firstname = r'([A-Z][a-z]+)'
 >>> lastname = r'([A-Z][a-z]+)'
 >>> name = f'{firstname} {lastname}'
 >>>
 >>> re.findall(name, TEXT)[0]
-('Yuri', 'Gagarin')
+('Mark', 'Watney')
 
->>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
 >>> firstname = r'[A-Z][a-z]+'
 >>> lastname = r'[A-Z][a-z]+'
 >>> name = f'({firstname}) ({lastname})'
 >>>
 >>> re.findall(name, TEXT)[0]
-('Yuri', 'Gagarin')
+('Mark', 'Watney')
 
 
 Named Group
@@ -102,48 +75,44 @@ Named Group
 
 
 >>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
+
 >>> firstname = r'[A-Z][a-z]+'
 >>> lastname = r'[A-Z][a-z]+'
 >>> name = f'(?P<firstname>{firstname}) (?P<lastname>{lastname})'
 >>>
 >>> re.findall(name, TEXT)
-[('Yuri', 'Gagarin')]
+[('Mark', 'Watney')]
 >>>
 >>> re.search(name, TEXT)
-<re.Match object; span=(0, 12), match='Yuri Gagarin'>
+<re.Match object; span=(0, 11), match='Mark Watney'>
 >>>
 >>> re.search(name, TEXT).groups()
-('Yuri', 'Gagarin')
+('Mark', 'Watney')
 >>>
 >>> re.search(name, TEXT).groupdict()
-{'firstname': 'Yuri', 'lastname': 'Gagarin'}
+{'firstname': 'Mark', 'lastname': 'Watney'}
 
->>> import re
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
+>>> time = '(?P<hour>\d{1,2}):(?P<minute>\d{1,2})'
 >>>
+>>> re.findall(time, TEXT)
+[('1', '37')]
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> re.search(time, TEXT).groups()
+('1', '37')
 >>>
->>> re.findall('(?P<hour>\d):(?P<minute>\d\d)', TEXT)
-[('6', '07')]
+>>> re.search(time, TEXT).group(0)
+'1:37'
 >>>
->>> re.search('(?P<hour>\d):(?P<minute>\d\d)', TEXT).groups()
-('6', '07')
+>>> re.search(time, TEXT).group(1)
+'1'
 >>>
->>> re.search('(?P<hour>\d):(?P<minute>\d\d)', TEXT).group(0)
-'6:07'
+>>> re.search(time, TEXT).group(2)
+'37'
 >>>
->>> re.search('(?P<hour>\d):(?P<minute>\d\d)', TEXT).group(1)
-'6'
->>>
->>> re.search('(?P<hour>\d):(?P<minute>\d\d)', TEXT).group(2)
-'07'
->>>
->>> re.search('(?P<hour>\d):(?P<minute>\d\d)', TEXT).groupdict()
-{'hour': '6', 'minute': '07'}
+>>> re.search(time, TEXT).groupdict()
+{'hour': '1', 'minute': '37'}
 
 
 Non-Capturing Group
@@ -151,48 +120,39 @@ Non-Capturing Group
 * ``(?:...)``
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
->>> re.findall('[A-Z][a-z][a-z] \d{1,2}th, \d{4}', TEXT)
-['Apr 12th, 1961']
+>>> re.findall('\w{3} \d{1,2}th, \d{4}', TEXT)
+['Nov 7th, 2035']
 >>>
->>> re.findall('[A-Z][a-z][a-z] \d{1,2}st|nd|rd|th, \d{4}', TEXT)
-['th, 1961']
+>>> re.findall('\w{3} \d{1,2}st|nd|rd|th, \d{4}', TEXT)
+['nd', 'th, 2035']
 >>>
->>> re.findall('[A-Z][a-z][a-z] \d{1,2}(st|nd|rd|th), \d{4}', TEXT)
+>>> re.findall('\w{3} \d{1,2}(st|nd|rd|th), \d{4}', TEXT)
 ['th']
 >>>
->>> re.findall('[A-Z][a-z][a-z] \d{1,2}(?:st|nd|rd|th), \d{4}', TEXT)
-['Apr 12th, 1961']
+>>> re.findall('\w{3} \d{1,2}(?:st|nd|rd|th), \d{4}', TEXT)
+['Nov 7th, 2035']
 >>>
->>> re.findall('([A-Z][a-z][a-z]) (\d{1,2})(?:st|nd|rd|th), (\d{4})', TEXT)
-[('Apr', '12', '1961')]
+>>> re.findall('(\w{3}) (\d{1,2})(?:st|nd|rd|th), (\d{4})', TEXT)
+[('Nov', '7', '2035')]
 >>>
->>> re.findall('([A-Z][a-z][a-z]) (\d{1,2})(st|nd|rd|th), (\d{4})', TEXT)
-[('Apr', '12', 'th', '1961')]
->>>
+>>> re.findall('(\w{3}) (\d{1,2})(st|nd|rd|th), (\d{4})', TEXT)
+[('Nov', '7', 'th', '2035')]
 
->>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
->>>
->>> date = r'([A-Z][a-z]{2} \d{2}(?:st|nd|rd|th), \d{4})'
+>>> date = r'(\w{3} \d{1,2}(?:st|nd|rd|th), \d{4})'
 >>> re.findall(date, TEXT)
-['Apr 12th, 1961']
->>>
+['Nov 7th, 2035']
 
->>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
 >>> year = '\d{4}'
->>> month = '[A-Z][a-z]{2}'
->>> day = '\d{2}'
+>>> month = '\w{3}'
+>>> day = '\d{1,2}'
 >>>
 >>> re.findall(f'{month} {day}(st|nd|rd|th), {year}', TEXT)
 ['th']
 >>>
 >>> re.findall(f'{month} {day}(?:st|nd|rd|th), {year}', TEXT)
-['Apr 12th, 1961']
+['Nov 7th, 2035']
 
 
 Comment
@@ -200,35 +160,24 @@ Comment
 * ``(?#...)`` - comment
 
 >>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
->>> re.findall(r'\d{4}(?#year)', TEXT)
-['1961']
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
->>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> re.findall(r'\d{4}(?#year)', TEXT)
+['2035']
 >>>
 >>> re.findall('\d{1,2}(?#hour):\d{2}(?#minute)', TEXT)
-['6:07']
+['1:37']
 
->>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
 >>> hour = '\d{1,2}(?#hour)'
 >>> minute = '\d{2}(?#minute)'
 >>> time = f'{hour}:{minute}'
 >>>
 >>> re.findall(time, TEXT)
-['6:07']
+['1:37']
 >>>
 >>> time
 '\\d{1,2}(?#hour):\\d{2}(?#minute)'
+
 
 Backreference
 -------------
@@ -238,21 +187,19 @@ Backreference
 * ``\number`` - backreferencing by group number
 
 >>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
+
 >>> year = '(?P<year>\d{4})'
->>> month = '(?P<month>[A-Z][a-z][a-z])'
->>> day = '(?P<day>\d+)'
+>>> month = '(?P<month>\w+)'
+>>> day = '(?P<day>\d{1,2})'
 >>>
 >>> re.sub(f'{month} {day}th, {year}', '\g<day> \g<month> \g<year>', TEXT)
-'Yuri Gagarin launched to space on 12 Apr 1961 at 6:07 am.'
+'Mark Watney of Ares 3 landed on Mars on: 7 Nov 2035 at 1:37 pm'
 
 Although this is not working in Python:
 
 >>> re.sub(f'{month} {day}th, {year}', '(?P=day) (?P=month) (?P=year)', TEXT)
-'Yuri Gagarin launched to space on (?P=day) (?P=month) (?P=year) at 6:07 am.'
+'Mark Watney of Ares 3 landed on Mars on: (?P=day) (?P=month) (?P=year) at 1:37 pm'
 
 Examples
 --------
@@ -264,43 +211,41 @@ Examples
 * ``(.+) \1`` - matches ``the the`` or ``55 55``
 * ``(.+) \1`` - not matches ``thethe`` (note the space after the group)
 
-
 >>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
+
 >>> re.findall(r'\d{,2}(st|nd|rd|th)?', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
- '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
- 'th', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+ '', '', '', '', '', 'nd', '', '', '', '', '', '', '', '', '', '', '', '',
+ '', '', '', '', '', '', '', 'th', '', '', '', '', '', '', '', '', '', '',
+ '', '', '', '', '']
 >>>
->>> re.findall(r'\d{2}(st|nd|rd|th)?', TEXT)
-['th', '', '', '']
+>>> re.findall(r'\d{1,2}(st|nd|rd|th)?', TEXT)
+['', 'th', '', '', '', '']
 >>>
->>> re.findall(r'\d{2}(st|nd|rd|th)+?', TEXT)
+>>> re.findall(r'\d{1,2}(st|nd|rd|th)+?', TEXT)
 ['th']
 >>>
->>> re.findall(r'\d{2}st|nd|rd|th+?', TEXT)
-['th']
+>>> re.findall(r'\d{1,2}st|nd|rd|th+?', TEXT)  # nd is also in word `landed`
+['nd', 'th']
 >>>
->>> re.findall(r'\d{2}(?:st|nd|rd|th)+?', TEXT)
-['12th']
+>>> re.findall(r'\d{1,2}(?:st|nd|rd|th)+?', TEXT)
+['7th']
 >>>
->>> re.findall(r'(\d{2})(st|nd|rd|th)+?', TEXT)
-[('12', 'th')]
+>>> re.findall(r'(\d{1,2})(st|nd|rd|th)+?', TEXT)
+[('7', 'th')]
 >>>
->>> re.findall(r'(\d{2})(?:st|nd|rd|th)+?', TEXT)
-['12']
+>>> re.findall(r'(\d{1,2})(?:st|nd|rd|th)+?', TEXT)
+['7']
 >>>
->>> re.findall(r'([A-Z][a-z]{2}) (\d{2})(?:st|nd|rd|th)+?, (\d{4})', TEXT)
-[('Apr', '12', '1961')]
+>>> re.findall(r'(\w{3}) (\d{1,2})(?:st|nd|rd|th)+?, (\d{4})', TEXT)
+[('Nov', '7', '2035')]
 >>>
->>> re.findall(r'([A-Z][a-z]{2}) (\d{2})(?:st|nd|rd|th)+?, (\d{4})', TEXT)[0]
-('Apr', '12', '1961')
+>>> re.findall(r'(\w{3}) (\d{1,2})(?:st|nd|rd|th)+?, (\d{4})', TEXT)[0]
+('Nov', '7', '2035')
 >>>
->>> re.findall(r'([A-Z][a-z]{2} \d{2}(?:st|nd|rd|th)+?, \d{4})', TEXT)
-['Apr 12th, 1961']
+>>> re.findall(r'(\w{3} \d{1,2}(?:st|nd|rd|th)+?, \d{4})', TEXT)
+['Nov 7th, 2035']
 
 
 Use Case - 0x01
@@ -308,32 +253,26 @@ Use Case - 0x01
 * Dates
 
 >>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
+
 >>> year = r'(?P<year>\d{4})'
->>> month = r'(?P<month>[A-Z][a-z]{2})'
->>> day = r'(?P<day>\d{2}(?:st|nd|rd|th)+?)'
+>>> month = r'(?P<month>\w{3})'
+>>> day = r'(?P<day>\d{1,2}(?:st|nd|rd|th)+?)'
 >>> date = f'{month} {day}, {year}'
 >>>
 >>> re.search(date, TEXT).groupdict()
-{'month': 'Apr', 'day': '12th', 'year': '1961'}
+{'month': 'Nov', 'day': '7th', 'year': '2035'}
 
 
 Use Case - 0x02
 ---------------
 >>> import re
->>>
->>>
+
 >>> line = 'value=123'
 >>>
 >>> re.findall(r'(\w+)\s?=\s?(\d+)', line)
 [('value', '123')]
 
->>> import re
->>>
->>>
 >>> line = 'value = 123'
 >>>
 >>> re.findall(r'(\w+)\s?=\s?(\d+)', line)

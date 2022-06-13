@@ -10,17 +10,20 @@ Numeric
 * ``\D`` - anything but digit
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 
 >>> re.findall('[0-9]', TEXT)
-['1', '2', '1', '9', '6', '1', '6', '0', '7']
+['3', '7', '2', '0', '3', '5', '1', '3', '7']
 
 >>> re.findall('\d', TEXT)
-['1', '2', '1', '9', '6', '1', '6', '0', '7']
+['3', '7', '2', '0', '3', '5', '1', '3', '7']
 
->>> re.findall('\D', TEXT)
-['Y', 'u', 'r', 'i', ' ', 'G', 'a', 'g', 'a', 'r', 'i', 'n', ' ', 'l', 'a', 'u', 'n', 'c', 'h', 'e', 'd', ' ', 't', 'o', ' ', 's', 'p', 'a', 'c', 'e', ' ', 'o', 'n', ' ', 'A', 'p', 'r', ' ', 't', 'h', ',', ' ', ' ', 'a', 't', ' ', ':', ' ', 'a', 'm', '.']
+>>> re.findall('\D', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['M', 'a', 'r', 'k', ' ', 'W', 'a', 't', 'n', 'e', 'y', ' ', 'o', 'f',
+ ' ', 'A', 'r', 'e', 's', ' ', ' ', 'l', 'a', 'n', 'd', 'e', 'd', ' ',
+ 'o', 'n', ' ', 'M', 'a', 'r', 's', ' ', 'o', 'n', ':', ' ', 'N', 'o',
+ 'v', ' ', 't', 'h', ',', ' ', ' ', 'a', 't', ' ', ':', ' ', 'p', 'm']
 
 
 Whitespaces
@@ -36,16 +39,16 @@ Whitespaces
 * ``\f`` - form feed
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall('\s', TEXT)
-[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 >>> re.findall('\S', TEXT)  # doctest: +NORMALIZE_WHITESPACE
-['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n',
- 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p',
- 'r', '1', '2', 't', 'h', ',', '1', '9', '6', '1', 'a', 't', '6', ':', '0',
- '7', 'a', 'm', '.']
+['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
+ 'e', 's', '3', 'l', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'M', 'a', 'r',
+ 's', 'o', 'n', ':', 'N', 'o', 'v', '7', 't', 'h', ',', '2', '0', '3',
+ '5', 'a', 't', '1', ':', '3', '7', 'p', 'm']
 
 >>> re.findall('\n', TEXT)
 []
@@ -69,15 +72,13 @@ Examples:
     * ``\Babc\B`` - pattern is fully surrounded by word characters
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
-
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall('[a-z][a-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
-['ur', 'ag', 'ar', 'in', 'la', 'un', 'ch', 'ed', 'to', 'sp', 'ac', 'on', 'pr',
- 'th', 'at', 'am']
+['ar', 'at', 'ne', 'of', 're', 'la', 'nd', 'ed', 'on', 'ar', 'on', 'ov', 'th', 'at', 'pm']
 
 >>> re.findall(r'\b[a-z][a-z]\b', TEXT)
-['to', 'on', 'at', 'am']
+['of', 'on', 'on', 'at', 'pm']
 
 >>> re.findall('\b[a-z][a-z]\b', TEXT)  # without raw-string
 []
@@ -101,27 +102,27 @@ Valid characters are the same as allowed in variable/modules names in Python:
 >>> Imię_1 = 'Mark'
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 
 >>> re.findall('\w', TEXT)  # doctest: +NORMALIZE_WHITESPACE
-['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n',
- 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p',
- 'r', '1', '2', 't', 'h', '1', '9', '6', '1', 'a', 't', '6', '0', '7', 'a',
- 'm']
+['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
+ 'e', 's', '3', 'l', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'M', 'a', 'r',
+ 's', 'o', 'n', 'N', 'o', 'v', '7', 't', 'h', '2', '0', '3', '5', 'a',
+ 't', '1', '3', '7', 'p', 'm']
 
 >>> re.findall('\W', TEXT)
-[' ', ' ', ' ', ' ', ' ', ' ', ' ', ',', ' ', ' ', ' ', ':', ' ', '.']
+[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ':', ' ', ' ', ',', ' ', ' ', ' ', ':', ' ']
 
 Mind, that following code gives similar output to ``\w`` but it is not
 completely true. ``\w`` would extract also unicode characters while this
 ``[a-zA-Z0-9]`` will not.
 
 >>> re.findall('[a-zA-Z0-9]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
-['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n',
- 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p',
- 'r', '1', '2', 't', 'h', '1', '9', '6', '1', 'a', 't', '6', '0', '7', 'a',
- 'm']
+['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
+ 'e', 's', '3', 'l', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'M', 'a', 'r',
+ 's', 'o', 'n', 'N', 'o', 'v', '7', 't', 'h', '2', '0', '3', '5', 'a',
+ 't', '1', '3', '7', 'p', 'm']
 
 Example:
 
@@ -135,10 +136,12 @@ Example:
 >>>
 >>> re.findall('\w', text, flags=re.ASCII)
 ['c', 'z', 'e']
+>>>
 >>> re.findall('\w', text, flags=re.UNICODE)
 ['c', 'z', 'e', 'ś', 'ć']
 
 Flag ``re.UNICODE`` is set by default.
+
 
 Use Case - 0x01
 ---------------
@@ -200,10 +203,10 @@ Use Case - 0x04
 >>> import re
 >>>
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>> re.findall('[0-9]\s', TEXT)
-['1 ', '7 ']
+['3 ', '5 ', '7 ']
 >>>
 >>> re.findall('\d\s', TEXT)
-['1 ', '7 ']
+['3 ', '5 ', '7 ']

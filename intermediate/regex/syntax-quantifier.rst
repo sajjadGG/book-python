@@ -6,14 +6,14 @@ Syntax Quantifier
 * Lazy
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>>
 >>> re.findall(r'\d', TEXT)
-['1', '2', '1', '9', '6', '1', '6', '0', '7']
+['3', '7', '2', '0', '3', '5', '1', '3', '7']
 >>>
 >>> re.findall(r'\d\d\d\d', TEXT)
-['1961']
+['2035']
 
 
 Exact
@@ -24,18 +24,20 @@ Exact
 >>> import re
 >>>
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>> re.findall(r'[0-9]{2}', TEXT)
-['12', '19', '61', '07']
+['20', '35', '37']
 >>>
 >>> re.findall(r'\d{2}', TEXT)
-['12', '19', '61', '07']
+['20', '35', '37']
 
 
 Greedy
 ------
 * Prefer longest matches
+* Works better with numbers
+* Not that good results for text
 * Default behavior
 * ``{,n}`` - maximum `n` repetitions, prefer longer
 * ``{n,}`` - minimum `n` repetitions, prefer longer
@@ -47,15 +49,17 @@ Greedy
 >>> import re
 >>>
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>> re.findall(r'\d{2,4}', TEXT)
-['12', '1961', '07']
+['2035', '37']
 
 
 Lazy
 ----
 * Prefer shortest matches
+* Works better with text
+* Not that good results for numbers
 * Non-greedy
 * ``{,n}?`` - maximum `n` repetitions, prefer shorter
 * ``{n,}?`` - minimum `n` repetitions, prefer shorter
@@ -65,12 +69,10 @@ Lazy
 * ``??`` - minimum 0 repetitions, maximum 1 repetition, prefer shorter (alias to ``{0,1}?``)
 
 >>> import re
->>>
->>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
->>>
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
+
 >>> re.findall(r'\d{2,4}?', TEXT)
-['12', '19', '61', '07']
+['20', '35', '37']
 
 
 Greedy vs. Lazy
@@ -78,26 +80,26 @@ Greedy vs. Lazy
 >>> import re
 >>>
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>> re.findall(r'\d{2,4}', TEXT)  # Greedy
-['12', '1961', '07']
+['2035', '37']
 >>>
 >>> re.findall(r'\d{2,4}?', TEXT)  # Lazy
-['12', '19', '61', '07']
+['20', '35', '37']
 
 Greedy vs Lazy in exact match has no difference:
 
 >>> import re
 >>>
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>> re.findall('\d{2}?', TEXT)
-['12', '19', '61', '07']
+['20', '35', '37']
 >>>
 >>> re.findall('\d{2}', TEXT)
-['12', '19', '61', '07']
+['20', '35', '37']
 
 
 Special
@@ -105,7 +107,7 @@ Special
 >>> import re
 >>>
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>> re.findall('\d{0,}', TEXT) == re.findall('\d*', TEXT)
 True
@@ -116,13 +118,16 @@ True
 >>> import re
 >>>
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>> re.findall('\d+', TEXT)
-['12', '1961', '6', '07']
+['3', '7', '2035', '1', '37']
 >>>
->>> re.findall('\d*', TEXT)
-['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '12', '', '', '', '', '1961', '', '', '', '', '6', '', '07', '', '', '', '', '']
+>>> re.findall('\d*', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+ '', '', '3', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+ '', '', '', '', '', '', '', '', '', '7', '', '', '', '', '2035', '', '',
+ '', '', '1', '', '37', '', '', '', '']
 
 
 Examples
@@ -157,13 +162,13 @@ Use Case - 0x02
 >>> import re
 >>>
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>> re.findall('\d\d:\d\d', TEXT)
 []
 >>>
 >>> re.findall('\d\d?:\d\d', TEXT)
-['6:07']
+['1:37']
 
 
 Use Case - 0x03
@@ -174,14 +179,14 @@ Use Case - 0x03
 >>> from datetime import datetime
 >>>
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>>
->>> result = re.findall('[A-Z][a-z]{2} \d{2}th, \d{4}', TEXT)
+>>> result = re.findall('\w{3} \d{1,2}th, \d{4}', TEXT)
 >>> result
-['Apr 12th, 1961']
+['Nov 7th, 2035']
 >>> datetime.strptime(result[0], '%b %dth, %Y').date()
-datetime.date(1961, 4, 12)
+datetime.date(2035, 11, 7)
 
 
 Use Case - 0x04

@@ -31,25 +31,25 @@ Positional Groups
 >>> import re
 >>>
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>> pattern = r'(\w+) (\w+)'
 >>> result = re.match(pattern, TEXT)
 >>>
 >>> result
-<re.Match object; span=(0, 12), match='Yuri Gagarin'>
+<re.Match object; span=(0, 11), match='Mark Watney'>
 >>>
 >>> result.group()
-'Yuri Gagarin'
+'Mark Watney'
 >>>
 >>> result.group(1)
-'Yuri'
+'Mark'
 >>>
 >>> result.group(2)
-'Gagarin'
+'Watney'
 >>>
 >>> result.groups()
-('Yuri', 'Gagarin')
+('Mark', 'Watney')
 
 
 Named Groups
@@ -59,28 +59,28 @@ Named Groups
 >>> import re
 >>>
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>> pattern = r'(?P<firstname>\w+) (?P<lastname>\w+)'
 >>> result = re.match(pattern, TEXT)
 >>>
 >>> result.group('firstname')
-'Yuri'
+'Mark'
 >>>
 >>> result.group('lastname')
-'Gagarin'
+'Watney'
 >>>
 >>> result.group(1)
-'Yuri'
+'Mark'
 >>>
 >>> result.group(2)
-'Gagarin'
+'Watney'
 >>>
 >>> result.groups()
-('Yuri', 'Gagarin')
+('Mark', 'Watney')
 >>>
 >>> result.groupdict()
-{'firstname': 'Yuri', 'lastname': 'Gagarin'}
+{'firstname': 'Mark', 'lastname': 'Watney'}
 
 
 Use Case - 0x01

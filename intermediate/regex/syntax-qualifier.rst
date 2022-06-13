@@ -12,12 +12,12 @@ Exact
 * ``a`` - Exact
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 Regular expressions allows to find exact matches:
 
 >>> re.findall('a', TEXT)
-['a', 'a', 'a', 'a', 'a', 'a']
+['a', 'a', 'a', 'a', 'a']
 
 Note, that regular expressions are case sensitive (unless ``re.IGNORECASE``
 flag is present. More information in `Syntax Flags`):
@@ -29,7 +29,7 @@ Note, that regular expressions are used to search in text, therefore in case
 of searching for a number it will return a strings with numbers in it:
 
 >>> re.findall('1', TEXT)
-['1', '1', '1']
+['1']
 
 Python ``re.findall()`` function will return empty list if none match was
 found:
@@ -43,33 +43,33 @@ Exact Alternate
 * ``a|b`` - letter `a` or `b` (also works with expressions)
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 Alternative allows to search for two or more possible matches:
 
 >>> re.findall('a|b', TEXT)
-['a', 'a', 'a', 'a', 'a', 'a']
+['a', 'a', 'a', 'a', 'a']
 
 It can find more than two matches:
 
->>> re.findall('a|b|c', TEXT)
-['a', 'a', 'a', 'c', 'a', 'c', 'a', 'a']
+>>> re.findall('a|b|c|d', TEXT)
+['a', 'a', 'a', 'd', 'd', 'a', 'a']
 >>>
 >>> re.findall('1|2|3', TEXT)
-['1', '2', '1', '1']
+['3', '2', '3', '1', '3']
 
 It will work for both numbers, characters or any other object:
 
->>> re.findall('a|b|c|1|2|3', TEXT)
-['a', 'a', 'a', 'c', 'a', 'c', '1', '2', '1', '1', 'a', 'a']
+>>> re.findall('a|b|c|d|1|2|3', TEXT)
+['a', 'a', '3', 'a', 'd', 'd', 'a', '2', '3', 'a', '1', '3']
 
 Examples:
 
 >>> re.findall('a|e', TEXT)
-['a', 'a', 'a', 'e', 'a', 'e', 'a', 'a']
+['a', 'a', 'e', 'e', 'a', 'e', 'a', 'a']
 >>>
 >>> re.findall('a|e|i|o|u|y', TEXT)
-['u', 'i', 'a', 'a', 'i', 'a', 'u', 'e', 'o', 'a', 'e', 'o', 'a', 'a']
+['a', 'a', 'e', 'y', 'o', 'e', 'a', 'e', 'o', 'a', 'o', 'o', 'a']
 
 
 Enumeration
@@ -77,31 +77,35 @@ Enumeration
 * ``[abc]`` - letter `a` or `b` or `c`
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 Enumerations provide compact and more readable syntax for longer alternatives:
 
->>> re.findall('[abc]', TEXT)
-['a', 'a', 'a', 'c', 'a', 'c', 'a', 'a']
+>>> re.findall('[abcd]', TEXT)
+['a', 'a', 'a', 'd', 'd', 'a', 'a']
 >>>
 >>> re.findall('[123]', TEXT)
-['1', '2', '1', '1']
+['3', '2', '3', '1', '3']
 
 It will work for both numbers, characters or any other object:
 
->>> re.findall('[abc123]', TEXT)
-['a', 'a', 'a', 'c', 'a', 'c', '1', '2', '1', '1', 'a', 'a']
+>>> re.findall('[abcd123]', TEXT)
+['a', 'a', '3', 'a', 'd', 'd', 'a', '2', '3', 'a', '1', '3']
 
 Examples:
 
->>> re.findall('[a-z]', TEXT)  # letters from a to z
-['u', 'r', 'i', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n', 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'p', 'r', 't', 'h', 'a', 't', 'a', 'm']
+>>> re.findall('[a-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['a', 'r', 'k', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'r', 'e', 's', 'l',
+ 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'a', 'r', 's', 'o', 'n', 'o', 'v',
+ 't', 'h', 'a', 't', 'p', 'm']
 >>>
->>> re.findall('[az-]', TEXT)  # letters a, z or -
-['a', 'a', 'a', 'a', 'a', 'a']
+>>> re.findall('[az-]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['a', 'a', 'a', 'a', 'a']
 
->>> re.findall('[A-z]', TEXT)
-['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n', 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p', 'r', 't', 'h', 'a', 't', 'a', 'm']
+>>> re.findall('[A-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
+ 'e', 's', 'l', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'M', 'a', 'r', 's',
+ 'o', 'n', 'N', 'o', 'v', 't', 'h', 'a', 't', 'p', 'm']
 >>>
 >>> re.findall('[a-Z]', TEXT)
 Traceback (most recent call last):
@@ -114,10 +118,10 @@ re.error: bad character range z-a at position 1
 Use Cases:
 
 >>> re.findall('[aeiouy]', TEXT)
-['u', 'i', 'a', 'a', 'i', 'a', 'u', 'e', 'o', 'a', 'e', 'o', 'a', 'a']
+['a', 'a', 'e', 'y', 'o', 'e', 'a', 'e', 'o', 'a', 'o', 'o', 'a']
 >>>
 >>> re.findall('a|e|i|o|u|y', TEXT)
-['u', 'i', 'a', 'a', 'i', 'a', 'u', 'e', 'o', 'a', 'e', 'o', 'a', 'a']
+['a', 'a', 'e', 'y', 'o', 'e', 'a', 'e', 'o', 'a', 'o', 'o', 'a']
 
 
 Range
@@ -130,37 +134,37 @@ Range
 * ``[a-zA-Z0-9]`` - any ASCII letter from `a` to `z` or from `A` to `Z` or digit from `0` to `9`
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 Ranges provide even more readable and convenient way os specifying particular
 characters to match. It is very useful to define ranges of numbers or letters
 this way:
 
 >>> re.findall('[a-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
-['u', 'r', 'i', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n', 'c', 'h',
- 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'p', 'r', 't', 'h',
- 'a', 't', 'a', 'm']
+['a', 'r', 'k', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'r', 'e', 's', 'l',
+ 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'a', 'r', 's', 'o', 'n', 'o', 'v',
+ 't', 'h', 'a', 't', 'p', 'm']
 >>>
 >>> re.findall('[A-Z]', TEXT)
-['Y', 'G', 'A']
+['M', 'W', 'A', 'M', 'N']
 >>>
 >>> re.findall('[0-9]', TEXT)
-['1', '2', '1', '9', '6', '1', '6', '0', '7']
+['3', '7', '2', '0', '3', '5', '1', '3', '7']
 
 Note, that regular expressions are case sensitive (unless ``re.IGNORECASE``
-flag is present. More information in `Syntax Flags`). You can also join ranges
-to create even broader matches:
+flag is present. More information in `Syntax Flags`). You can also join
+ranges to create even broader matches:
 
 >>> re.findall('[a-zA-Z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
-['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n',
- 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p',
- 'r', 't', 'h', 'a', 't', 'a', 'm']
+['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
+ 'e', 's', 'l', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'M', 'a', 'r', 's',
+ 'o', 'n', 'N', 'o', 'v', 't', 'h', 'a', 't', 'p', 'm']
 >>>
 >>> re.findall('[a-zA-Z0-9]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
-['Y', 'u', 'r', 'i', 'G', 'a', 'g', 'a', 'r', 'i', 'n', 'l', 'a', 'u', 'n',
- 'c', 'h', 'e', 'd', 't', 'o', 's', 'p', 'a', 'c', 'e', 'o', 'n', 'A', 'p',
- 'r', '1', '2', 't', 'h', '1', '9', '6', '1', 'a', 't', '6', '0', '7', 'a',
- 'm']
+['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
+ 'e', 's', '3', 'l', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'M', 'a', 'r',
+ 's', 'o', 'n', 'N', 'o', 'v', '7', 't', 'h', '2', '0', '3', '5', 'a',
+ 't', '1', '3', '7', 'p', 'm']
 
 Ranges are ordered in ASCII table order (more information in `Locale
 Encoding`). Because uppercase letters are before lowercase letters (has
@@ -168,7 +172,7 @@ lower indexes), you can define range from ``Z-a``, but the opposite is not
 true:
 
 >>> re.findall('[Z-a]', TEXT)
-['a', 'a', 'a', 'a', 'a', 'a']
+['a', 'a', 'a', 'a', 'a']
 
 >>> re.findall('[a-Z]', TEXT)
 Traceback (most recent call last):
@@ -182,13 +186,13 @@ Mind that ranges not necessarily need to be from a-z. It could be any
 alphabetic or numeric range:
 
 >>> re.findall('[3-7]', TEXT)
-['6', '6', '7']
+['3', '7', '3', '5', '3', '7']
 >>>
 >>> re.findall('[C-Y]', TEXT)
-['Y', 'G']
+['M', 'W', 'M', 'N']
 >>>
 >>> re.findall('[3-7C-Y]', TEXT)
-['Y', 'G', '6', '6', '7']
+['M', 'W', '3', 'M', 'N', '7', '3', '5', '3', '7']
 
 
 Joining
@@ -197,27 +201,27 @@ Joining
 * ``[a-z]|[0-9]`` - Range alternative - any lowercase ASCII letter from `a` to `z` or digit from `0` to `9`
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 Alternative enumerations syntax is as follows:
 
 >>> re.findall('[abc]|[123]', TEXT)
-['a', 'a', 'a', 'c', 'a', 'c', '1', '2', '1', '1', 'a', 'a']
+['a', 'a', '3', 'a', 'a', '2', '3', 'a', '1', '3']
 
 The effect is identical to:
 
 >>> re.findall('[abc123]', TEXT)
-['a', 'a', 'a', 'c', 'a', 'c', '1', '2', '1', '1', 'a', 'a']
+['a', 'a', '3', 'a', 'a', '2', '3', 'a', '1', '3']
 
 You can define alternative ranges to find:
 
 >>> re.findall('[A-Z]|[0-9]', TEXT)
-['Y', 'G', 'A', '1', '2', '1', '9', '6', '1', '6', '0', '7']
+['M', 'W', 'A', '3', 'M', 'N', '7', '2', '0', '3', '5', '1', '3', '7']
 
 The effect is identical to:
 
 >>> re.findall('[A-Z0-9]', TEXT)
-['Y', 'G', 'A', '1', '2', '1', '9', '6', '1', '6', '0', '7']
+['M', 'W', 'A', '3', 'M', 'N', '7', '2', '0', '3', '5', '1', '3', '7']
 
 
 Examples
@@ -234,13 +238,15 @@ Examples
 Use Case - 0x01
 ---------------
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
+
+Note, the `nd` in word `landed`:
 
 >>> re.findall('st|nd|rd|th', TEXT)
-['th']
+['nd', 'th']
 
 >>> re.findall('[st|nd|rd|th]', TEXT)
-['r', 'r', 'n', 'n', 'h', 'd', 't', 's', 'n', 'r', 't', 'h', 't']
+['r', 't', 'n', 'r', 's', 'n', 'd', 'd', 'n', 'r', 's', 'n', 't', 'h', 't']
 
 >>> re.findall('[stndrdth]', TEXT)
-['r', 'r', 'n', 'n', 'h', 'd', 't', 's', 'n', 'r', 't', 'h', 't']
+['r', 't', 'n', 'r', 's', 'n', 'd', 'd', 'n', 'r', 's', 'n', 't', 'h', 't']

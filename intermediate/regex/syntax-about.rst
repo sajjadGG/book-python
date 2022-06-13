@@ -1,3 +1,7 @@
+.. todo:: https://docs.python.org/3.11/whatsnew/3.11.html#re
+
+
+
 Syntax About
 ============
 * Also known as ``Regular Expressions``
@@ -10,7 +14,7 @@ Syntax About
 
 SetUp
 -----
-* ``TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'``
+* ``TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'``
 * TEXT is short
 * TEXT has firstname and lastname
 * TEXT has date
@@ -22,7 +26,7 @@ SetUp
 
 >>> import re
 >>>
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 
 Syntax

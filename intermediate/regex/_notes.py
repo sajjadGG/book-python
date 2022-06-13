@@ -131,7 +131,7 @@ is_valid_email('mwatney@nasa.co.uk')
 re.search()  # czy w tekście jest znalezisko (da pierwsze wystąpienie, a później przestanie szukać)
 
 TEXT
-# 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+# 'Yuri Gagarin launched to space on Apr 12th, 1961 at 1:37 pm.'
 
 firstname = '(?P<firstname>[A-Z][a-z]+)'
 lastname = '(?P<lastname>[A-Z][a-z]+)'
@@ -143,17 +143,17 @@ re.search(f'{firstname} {lastname}', TEXT)
 re.sub()
 
 re.sub(r'\b[a-z]{2}\b', '\n', TEXT)
-# 'Yuri Gagarin launched \n space \n Apr 12th, 1961 \n 6:07 \n.'
+# 'Yuri Gagarin launched \n space \n Apr 12th, 1961 \n 1:37 \n.'
 
 re.sub(r'\b[a-z]{2}\b', ',', TEXT)
-# 'Yuri Gagarin launched , space , Apr 12th, 1961 , 6:07 ,.'
+# 'Yuri Gagarin launched , space , Apr 12th, 1961 , 1:37 ,.'
 
 re.split()
 
 re.split(r'[\s,.]', TEXT)
-# ['Yuri', 'Gagarin', 'launched', 'to', 'space', 'on', 'Apr', '12th', '', '1961', 'at', '6:07', 'am', '']
+# ['Yuri', 'Gagarin', 'launched', 'to', 'space', 'on', 'Apr', '12th', '', '1961', 'at', '1:37', 'am', '']
 re.split(r'[\s,.]', TEXT, maxsplit=2)
-# ['Yuri', 'Gagarin', 'launched to space on Apr 12th, 1961 at 6:07 am.']
+# ['Yuri', 'Gagarin', 'launched to space on Apr 12th, 1961 at 1:37 pm.']
 
 re.compile()
 

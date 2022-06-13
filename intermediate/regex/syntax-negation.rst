@@ -13,34 +13,35 @@ Example
 * ``[^abc]`` - anything but letter `a` or `b` or `c`
 
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
-
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall(r'[0-9]', TEXT)
-['1', '2', '1', '9', '6', '1', '6', '0', '7']
+['3', '7', '2', '0', '3', '5', '1', '3', '7']
 
-
->>> re.findall(r'[^0-9]', TEXT)
-['Y', 'u', 'r', 'i', ' ', 'G', 'a', 'g', 'a', 'r', 'i', 'n', ' ', 'l', 'a', 'u', 'n', 'c', 'h', 'e', 'd', ' ', 't', 'o', ' ', 's', 'p', 'a', 'c', 'e', ' ', 'o', 'n', ' ', 'A', 'p', 'r', ' ', 't', 'h', ',', ' ', ' ', 'a', 't', ' ', ':', ' ', 'a', 'm', '.']
-
+>>> re.findall(r'[^0-9]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['M', 'a', 'r', 'k', ' ', 'W', 'a', 't', 'n', 'e', 'y', ' ', 'o', 'f',
+ ' ', 'A', 'r', 'e', 's', ' ', ' ', 'l', 'a', 'n', 'd', 'e', 'd', ' ',
+ 'o', 'n', ' ', 'M', 'a', 'r', 's', ' ', 'o', 'n', ':', ' ', 'N', 'o',
+ 'v', ' ', 't', 'h', ',', ' ', ' ', 'a', 't', ' ', ':', ' ', 'p', 'm']
 
 
 Compare
 -------
 >>> import re
->>> TEXT = 'Yuri Gagarin launched to space on Apr 12th, 1961 at 6:07 am.'
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall('[A-Z]', TEXT)
-['Y', 'G', 'A']
+['M', 'W', 'A', 'M', 'N']
 
 >>> re.findall('^[A-Z]', TEXT)
-['Y']
+['M']
 
 >>> re.findall('[^A-Z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
-['u', 'r', 'i', ' ', 'a', 'g', 'a', 'r', 'i', 'n', ' ', 'l', 'a', 'u',
- 'n', 'c', 'h', 'e', 'd', ' ', 't', 'o', ' ', 's', 'p', 'a', 'c', 'e',
- ' ', 'o', 'n', ' ', 'p', 'r', ' ', '1', '2', 't', 'h', ',', ' ', '1',
- '9', '6', '1', ' ', 'a', 't', ' ', '6', ':', '0', '7', ' ', 'a', 'm', '.']
+['a', 'r', 'k', ' ', 'a', 't', 'n', 'e', 'y', ' ', 'o', 'f', ' ', 'r',
+ 'e', 's', ' ', '3', ' ', 'l', 'a', 'n', 'd', 'e', 'd', ' ', 'o', 'n',
+ ' ', 'a', 'r', 's', ' ', 'o', 'n', ':', ' ', 'o', 'v', ' ', '7', 't',
+ 'h', ',', ' ', '2', '0', '3', '5', ' ', 'a', 't', ' ', '1', ':', '3',
+ '7', ' ', 'p', 'm']
 
 >>> re.findall('^[^A-Z]', TEXT)
 []
