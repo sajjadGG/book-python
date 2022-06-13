@@ -17,15 +17,11 @@ Locale About
 
 .. code-block:: text
 
+    1000000
     1 000 000
     1.000.000
     1,000,000
     1'000'000
-
-.. code-block:: text
-
-    1.000.000
-    10.00.000
 
 .. code-block:: text
 
@@ -34,11 +30,44 @@ Locale About
     10kk
     10M
 
+Number grouping (mind Indian numeric system
+[#wikiIndianNumberingSystem]_):
+
+.. code-block:: text
+
+    1.000.000
+    10.00.000
+
+World vs Indian:
+
+.. figure:: img/locale-about-numbering-worldwide.png
+
+    Source: [#IndianNumeralSystem]_
+
+.. figure:: img/locale-about-numbering-indian.png
+
+    Source: [#IndianNumeralSystem]_
+
+Polish vs English:
+
+.. code-block:: text
+
+    Polish      | English
+    ------------+--------------
+    tysiąc      | thousand
+    milion      | milion
+    miliard     | bilion
+    bilion      | trillion
+    biliard     | quadrillion
+    trylion     | quintillion
+    tryliard    | sextillion
+
+
 Syntax
 ------
-* language
-* variant
-* encoding
+* language (i18n)
+* variant (l10n)
+* encoding (enctype)
 
 .. code-block:: text
 
@@ -99,3 +128,10 @@ Further Reading
 * https://github.com/django/django/blob/master/django/conf/locale/pl/formats.py
 * https://github.com/django/django/blob/master/django/conf/locale/en/formats.py
 * https://github.com/django/django/blob/main/django/conf/locale/hi/formats.py
+
+
+References
+----------
+.. [#wikiIndianNumberingSystem] Wikipedia. Indian numbering system. Year: 2022. Retrieved: 2022-06-13. URL: https://en.wikipedia.org/wiki/Indian_numbering_system
+
+.. [#IndianNumeralSystem] Cuemath. Indian Numeral System. Year: 2022. Retrieved: 2022-06-13. URL: https://www.cuemath.com/numbers/indian-numeral-system/
