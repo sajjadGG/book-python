@@ -52,6 +52,10 @@ Unicode
 
     Unicode [#ilovefreesoftware]_
 
+.. figure:: img/locale-encoding-utf-polish.png
+
+    Unicode Polish Chars [#unicodePL]_
+
 
 Windows Encoding
 ----------------
@@ -284,3 +288,4 @@ References
 .. [#unicode1] https://camo.githubusercontent.com/7806142e30089cac76da9fe9fb1c5bbd0521cde6/68747470733a2f2f692e696d6775722e636f6d2f7a414d74436a622e706e67
 .. [#unicode2] https://i.pinimg.com/736x/12/e2/37/12e237271c063313762fcafa1cf58e39--web-development-tools.jpg
 .. [#ascii2] https://www.keepandshare.com/userpics/r/o/b/e/rt/2019-12/sb/screen_shot_2019_12_01_at_3.26.20_pm-34867850.jpg?ts=1575242835
+.. [#unicodePL] Antibody Software. Wizkey Unicode Browser. Year: 2022. Retrieved: 2022-06-13. URL: https://antibody-software.com/images/wizkey_unicode_browser.png
