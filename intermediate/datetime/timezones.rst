@@ -4,6 +4,8 @@ Datetime Timezone
 * Datetimes should be converted to local time only when displaying to user
 * Computerphile Time & Time Zones [#ytComputerphileTimeZones]_
 * Abolition of Time Zones [#wikiAbolitionOfTimeZones]_
+* Since Python 3.9: :pep:`615` -- Support for the IANA Time Zone Database in the Standard Library
+* ``pip install tzdata``
 
 
 Daylight Saving Time
@@ -85,6 +87,7 @@ IANA Time Zone Database
 * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 * https://www.iana.org/time-zones
 * https://pypi.org/project/tzdata/
+* ``pip install tzdata``
 
 IANA 2017a timezone database [#IANA]_:
 

@@ -5,16 +5,19 @@
 * Time: 3 min
 
 English:
-    1. Define `result: list[datetime]` with parsed `DATA` dates
+    1. Define `result: list[date]` with parsed `DATA` dates
     2. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj `result: list[datetime]` ze sparsowanymi datami `DATA`
+    1. Zdefiniuj `result: list[date]` ze sparsowanymi datami `DATA`
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `for ... in`
     * `try ... except`
+    * ``dt.strptime()``
+    * ``dt.date()``
+    * ``list.append()``
     * 24-hour clock
 
 Tests:
@@ -28,16 +31,16 @@ Tests:
     'All elements in `result` must be a datetime'
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [datetime.datetime(1957, 10, 4, 19, 28, 34),
-    datetime.datetime(1961, 4, 12, 6, 7)]
+    [datetime.datetime(1957, 10, 4),
+    datetime.datetime(1961, 4, 12)]
 """
 
 from datetime import datetime
 
 
 DATA = [
-    'Oct 4, 1957 19:28:34',  # Sputnik launch (first satellite in space)
-    'April 12, 1961 6:07',  # Gagarin launch (first human in space)
+    'October 4, 1957',  # Sputnik launch (first satellite in space)
+    'Apr 12, 1961',  # Gagarin launch (first human in space)
 ]
 
 # parsed DATA
@@ -49,7 +52,7 @@ result = []
 
 for line in DATA:
     try:
-        dt = datetime.strptime(line, '%b %d, %Y %H:%M:%S')
+        dt = datetime.strptime(line, '%B %d, %Y')
     except ValueError:
-        dt = datetime.strptime(line, '%B %d, %Y %H:%M')
-    result.append(dt)
+        dt = datetime.strptime(line, '%b %d, %Y')
+    result.append(dt.date())

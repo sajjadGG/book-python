@@ -5,6 +5,7 @@
 * Time: 13 min
 
 English:
+    0. If you're on Windows then install module `tzdata` (`pip install tzdata`)
     1. Create `zoneinfo.ZoneInfo` object of:
         a. UTC
         b. London, United Kingdom
@@ -18,6 +19,7 @@ English:
     3. Run doctests - all must succeed
 
 Polish:
+    0. Jeżeli masz Windows to zainstaluj moduł `tzdata` (`pip install tzdata`)
     1. Stwórz obiekt `zoneinfo.ZoneInfo` z:
         a. UCT
         b. London, Wielka Brytania
@@ -30,6 +32,13 @@ Polish:
     2. Użyj `List of tz database time zones` [1]
     3. Uruchom doctesty - wszystkie muszą się powieść
 
+Extra Task:
+    1. Cape Canaveral, FL, USA
+    2. Houston, TX, USA
+    3. Bajkonur Cosmodrome, Kazachstan
+    5. North Pole
+    6. South Pole (Henryk Arctowski Polish Antarctic Station)
+
 References:
     [1] Wikipedia. List of tz database time zones.
         URL: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -37,13 +46,6 @@ References:
     [2] IANA. Time Zone Database.
         URL: https://data.iana.org/time-zones/releases/
         Retrieved: 2021-03-24
-
-Extra Task:
-    1. Cape Canaveral, FL, USA
-    2. Houston, TX, USA
-    3. Bajkonur Cosmodrome, Kazachstan
-    5. North Pole
-    6. South Pole (Henryk Arctowski Polish Antarctic Station)
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

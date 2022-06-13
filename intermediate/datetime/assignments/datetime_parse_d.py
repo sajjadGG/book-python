@@ -49,6 +49,8 @@ DATA = [
 # type: list[datetime]
 result = ...
 
+
+# Solution
 FORMATS = [
     '%b %d, %Y %H:%M:%S',
     '%B %d, %Y %H:%M',
