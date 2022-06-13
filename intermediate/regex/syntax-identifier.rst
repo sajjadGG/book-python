@@ -4,14 +4,17 @@ Syntax Identifier
 * They are also called Character Classes
 
 
+SetUp
+-----
+>>> import re
+
+
 Numeric
 -------
 * ``\d`` - digit
 * ``\D`` - anything but digit
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
-
 
 >>> re.findall('[0-9]', TEXT)
 ['3', '7', '2', '0', '3', '5', '1', '3', '7']
@@ -38,7 +41,6 @@ Whitespaces
 * ``\v`` - vertical space
 * ``\f`` - form feed
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall('\s', TEXT)
@@ -71,7 +73,6 @@ Examples:
     * ``\babc\b`` - performs a "whole words only" search
     * ``\Babc\B`` - pattern is fully surrounded by word characters
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall('[a-z][a-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
@@ -101,9 +102,7 @@ Valid characters are the same as allowed in variable/modules names in Python:
 >>> imię1 = 'Mark'
 >>> Imię_1 = 'Mark'
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
-
 
 >>> re.findall('\w', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
@@ -147,13 +146,10 @@ Use Case - 0x01
 ---------------
 * Phone
 
->>> import re
->>>
->>>
 >>> phone = '+48 123 456 789'
 >>> re.findall('\d', phone)
 ['4', '8', '1', '2', '3', '4', '5', '6', '7', '8', '9']
->>>
+
 >>> phone = '+48 (12) 345 6789'
 >>> re.findall('\d', phone)
 ['4', '8', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -163,9 +159,6 @@ Use Case - 0x02
 ---------------
 * Compare Phones
 
->>> import re
->>>
->>>
 >>> PHONE1 = '+48 123 456 789'
 >>> PHONE2 = '+48 (12) 345 6789'
 >>>
@@ -180,17 +173,14 @@ Use Case - 0x03
 ---------------
 * EU VAT Tax ID
 
->>> import re
->>>
->>>
 >>> number = '777-286-18-23'
 >>> re.findall('\d', number)
 ['7', '7', '7', '2', '8', '6', '1', '8', '2', '3']
->>>
+
 >>> number = '777-28-61-823'
 >>> re.findall('\d', number)
 ['7', '7', '7', '2', '8', '6', '1', '8', '2', '3']
->>>
+
 >>> number = '7772861823'
 >>> re.findall('\d', number)
 ['7', '7', '7', '2', '8', '6', '1', '8', '2', '3']
@@ -200,13 +190,10 @@ Use Case - 0x04
 ---------------
 * Number and Spaces
 
->>> import re
->>>
->>>
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
->>>
+
 >>> re.findall('[0-9]\s', TEXT)
 ['3 ', '5 ', '7 ']
->>>
+
 >>> re.findall('\d\s', TEXT)
 ['3 ', '5 ', '7 ']

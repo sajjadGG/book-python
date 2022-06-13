@@ -3,6 +3,11 @@ Syntax Negation
 * Negation logically inverts qualifier
 
 
+SetUp
+-----
+>>> import re
+
+
 Syntax
 ------
 * ``[^...]`` - anything but ...
@@ -12,7 +17,6 @@ Example
 -------
 * ``[^abc]`` - anything but letter `a` or `b` or `c`
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall(r'[0-9]', TEXT)
@@ -27,7 +31,6 @@ Example
 
 Compare
 -------
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall('[A-Z]', TEXT)

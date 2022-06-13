@@ -1,10 +1,7 @@
 Normalizacja
 ============
-
-
 * CSV, arkusze Excel a także Pandas DataFrame to przykłady tabel 2 wymiarowych
 * Wszystkie problemy o których mówimy wynikają z tego, że odwzorowujemy świat n-wymiarowy w przestrzeni dwuwymiarowej
-
 
 
 Praktyka

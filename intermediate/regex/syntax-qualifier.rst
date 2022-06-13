@@ -7,11 +7,15 @@ Syntax Qualifier
 * ``[a-z]`` - Range
 
 
+SetUp
+-----
+>>> import re
+
+
 Exact
 -----
 * ``a`` - Exact
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 Regular expressions allows to find exact matches:
@@ -42,7 +46,6 @@ Exact Alternate
 ---------------
 * ``a|b`` - letter `a` or `b` (also works with expressions)
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 Alternative allows to search for two or more possible matches:
@@ -76,7 +79,6 @@ Enumeration
 -----------
 * ``[abc]`` - letter `a` or `b` or `c`
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 Enumerations provide compact and more readable syntax for longer alternatives:
@@ -133,7 +135,6 @@ Range
 * ``[A-z]`` - any ASCII letter from: `a` to `z` or from `A` to `Z`
 * ``[a-zA-Z0-9]`` - any ASCII letter from `a` to `z` or from `A` to `Z` or digit from `0` to `9`
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 Ranges provide even more readable and convenient way os specifying particular
@@ -200,7 +201,6 @@ Joining
 * ``[abc]|[123]`` - Enumeration alternative - letter `a`, `b` or `c` or digit `1`, `2` `3`
 * ``[a-z]|[0-9]`` - Range alternative - any lowercase ASCII letter from `a` to `z` or digit from `0` to `9`
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 Alternative enumerations syntax is as follows:

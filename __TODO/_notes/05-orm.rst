@@ -99,62 +99,65 @@ Add
 
 Query
 -----
-from sqlalchemy import create_engine, select
-from sqlalchemy.orm import sessionmaker
-from settings import DATABASE_URL
-from models import Astronaut, Mission
+.. code-block:: python
+
+    from sqlalchemy import create_engine, select
+    from sqlalchemy.orm import sessionmaker
+    from settings import DATABASE_URL
+    from models import Astronaut, Mission
 
 
-engine = create_engine(DATABASE_URL)
-session = sessionmaker(bind=engine)
+    engine = create_engine(DATABASE_URL)
+    session = sessionmaker(bind=engine)
 
 
-query = select(Astronaut)
+    query = select(Astronaut)
 
 
-with session.begin() as db:
-    result = db.execute(query)
+    with session.begin() as db:
+        result = db.execute(query)
 
-    for astro in result.scalars():
-        fullname = f'{astro.firstname}, {astro.lastname}'
-        mission = astro.missions.name
-        print(f'{fullname} -> {mission}')
+        for astro in result.scalars():
+            fullname = f'{astro.firstname}, {astro.lastname}'
+            mission = astro.missions.name
+            print(f'{fullname} -> {mission}')
 
 
 # https://stackoverflow.com/questions/51335298/concepts-of-backref-and-back-populate-in-sqlalchemy
 
+.. code-block:: python
 
-class Email(HabitatModel, MissionDate, MissionTime):
-    STATUS_READ = 'read'
-    STATUS_UNREAD = 'unread'
-    STATUS_ARCHIVED = 'archived'
-    STATUS_CHOICES = [
-        (STATUS_READ, _('Read')),
-        (STATUS_UNREAD, _('Unread'))]
+    class Email(HabitatModel, MissionDate, MissionTime):
+        STATUS_READ = 'read'
+        STATUS_UNREAD = 'unread'
+        STATUS_ARCHIVED = 'archived'
+        STATUS_CHOICES = [
+            (STATUS_READ, _('Read')),
+            (STATUS_UNREAD, _('Unread'))]
 
-    PRIORITY_NORMAL = 'normal'
-    PRIORITY_CRITICAL = 'critical'
-    PRIORITY_CHOICES = [
-        (PRIORITY_NORMAL, _('Normal')),
-        (PRIORITY_CRITICAL, _('Simulation is in danger (email is not time delayed!)'))]
+        PRIORITY_NORMAL = 'normal'
+        PRIORITY_CRITICAL = 'critical'
+        PRIORITY_CHOICES = [
+            (PRIORITY_NORMAL, _('Normal')),
+            (PRIORITY_CRITICAL, _('Simulation is in danger (email is not time delayed!)'))]
 
-    priority = models.CharField(verbose_name=_('Priority'), max_length=30, choices=PRIORITY_CHOICES, default=PRIORITY_NORMAL)
-    status = models.CharField(verbose_name=_('Status'), max_length=30, choices=STATUS_CHOICES, default=STATUS_UNREAD, db_index=True)
-    sender = models.ForeignKey(verbose_name=_('From'), to=settings.AUTH_USER_MODEL, related_name='sender', on_delete=models.CASCADE, db_index=True)
-    recipients = models.ManyToManyField(verbose_name=_('To'), to=settings.AUTH_USER_MODEL, db_index=True, related_name='to')
-    subject = models.CharField(verbose_name=_('Subject'), max_length=255, db_index=True)
-    body = models.TextField(verbose_name=_('Body'), blank=True, null=True, default=None)
-    tags = models.ManyToManyField(verbose_name=_('Tags'), to='communication.Tag', blank=True, default=None)
+        priority = models.CharField(verbose_name=_('Priority'), max_length=30, choices=PRIORITY_CHOICES, default=PRIORITY_NORMAL)
+        status = models.CharField(verbose_name=_('Status'), max_length=30, choices=STATUS_CHOICES, default=STATUS_UNREAD, db_index=True)
+        sender = models.ForeignKey(verbose_name=_('From'), to=settings.AUTH_USER_MODEL, related_name='sender', on_delete=models.CASCADE, db_index=True)
+        recipients = models.ManyToManyField(verbose_name=_('To'), to=settings.AUTH_USER_MODEL, db_index=True, related_name='to')
+        subject = models.CharField(verbose_name=_('Subject'), max_length=255, db_index=True)
+        body = models.TextField(verbose_name=_('Body'), blank=True, null=True, default=None)
+        tags = models.ManyToManyField(verbose_name=_('Tags'), to='communication.Tag', blank=True, default=None)
 
-    def body_as_html(self):
-        return format_html(self.body)
+        def body_as_html(self):
+            return format_html(self.body)
 
-    def __str__(self):
-        return f'[{self.date} {self.time}] <{self.sender}> {self.subject}'
+        def __str__(self):
+            return f'[{self.date} {self.time}] <{self.sender}> {self.subject}'
 
-    class Meta:
-        verbose_name = _('Email')
-        verbose_name_plural = _('Emails')
+        class Meta:
+            verbose_name = _('Email')
+            verbose_name_plural = _('Emails')
 
 
 One to One

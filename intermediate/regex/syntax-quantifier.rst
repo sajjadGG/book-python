@@ -20,7 +20,6 @@ Exact
 * Exact match
 * ``{n}`` - exactly `n` repetitions, prefer longer
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall(r'[0-9]{2}', TEXT)
@@ -43,7 +42,6 @@ Greedy
 * ``+`` - minimum 1 repetitions, no maximum, prefer longer (alias to ``{1,}``)
 * ``?`` - minimum 0 repetitions, maximum 1 repetitions, prefer longer  (alias to ``{0,1}``)
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall(r'\d{2,4}', TEXT)
@@ -63,7 +61,6 @@ Lazy
 * ``+?`` - minimum 1 repetitions, no maximum, prefer shorter (alias to ``{1,}?``)
 * ``??`` - minimum 0 repetitions, maximum 1 repetition, prefer shorter (alias to ``{0,1}?``)
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall(r'\d{2,4}?', TEXT)
@@ -72,7 +69,6 @@ Lazy
 
 Greedy vs. Lazy
 ---------------
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall(r'\d{2,4}', TEXT)  # Greedy
@@ -85,14 +81,13 @@ Greedy vs Lazy in exact match has no difference:
 
 >>> re.findall('\d{2}?', TEXT)
 ['20', '35', '37']
->>>
+
 >>> re.findall('\d{2}', TEXT)
 ['20', '35', '37']
 
 
 Special
 -------
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 >>> re.findall('\d{0,}', TEXT) == re.findall('\d*', TEXT)
@@ -127,10 +122,8 @@ Use Case - 0x01
 * Float
 
 >>> import re
->>>
->>>
 >>> TEXT = 'Pi number is 3.1415...'
->>>
+
 >>> pi = re.findall('\d+\.\d+', TEXT)
 >>> pi
 ['3.1415']
@@ -141,13 +134,11 @@ Use Case - 0x02
 * Time
 
 >>> import re
->>>
->>>
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
->>>
+
 >>> re.findall('\d\d:\d\d', TEXT)
 []
->>>
+
 >>> re.findall('\d\d?:\d\d', TEXT)
 ['1:37']
 
@@ -158,14 +149,14 @@ Use Case - 0x03
 
 >>> import re
 >>> from datetime import datetime
->>>
->>>
+
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
->>>
 >>> result = re.findall('\w{3} \d{1,2}th, \d{4}', TEXT)
+
 >>> result
 ['Nov 7th, 2035']
+
 >>> datetime.strptime(result[0], '%b %dth, %Y').date()
 datetime.date(2035, 11, 7)
 
@@ -173,16 +164,12 @@ datetime.date(2035, 11, 7)
 Use Case - 0x04
 ---------------
 >>> import re
->>>
->>>
+
 >>> line = 'value=123'
 >>>
 >>> re.findall(r'(\w+)\s?=\s?(\d+)', line)
 [('value', '123')]
 
->>> import re
->>>
->>>
 >>> line = 'value = 123'
 >>>
 >>> re.findall(r'(\w+)\s?=\s?(\d+)', line)
@@ -193,11 +180,10 @@ Use Case - 0x05
 ---------------
 >>> import re
 >>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
->>>
->>>
+
 >>> re.findall('<p>.*</p>', HTML)
 ['<p>Paragraph 1</p><p>Paragraph 2</p>']
->>>
+
 >>> re.findall('<p>.*?</p>', HTML)
 ['<p>Paragraph 1</p>', '<p>Paragraph 2</p>']
 
@@ -206,14 +192,13 @@ Use Case - 0x06
 ---------------
 >>> import re
 >>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
->>>
->>>
+
 >>> re.findall('<p>', HTML)
 ['<p>', '<p>']
->>>
+
 >>> re.findall('</p>', HTML)
 ['</p>', '</p>']
->>>
+
 >>> re.findall('</?p>', HTML)
 ['<p>', '</p>', '<p>', '</p>']
 
@@ -222,20 +207,19 @@ Use Case - 0x07
 ---------------
 >>> import re
 >>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
->>>
->>>
+
 >>> re.findall('<.+>', HTML)
 ['<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>']
->>>
+
 >>> re.findall('<.+?>', HTML)
 ['<h1>', '</h1>', '<p>', '</p>', '<p>', '</p>']
->>>
+
 >>> re.findall('</?.+?>', HTML)
 ['<h1>', '</h1>', '<p>', '</p>', '<p>', '</p>']
->>>
+
 >>> re.findall('</?(.+?)>', HTML)
 ['h1', 'h1', 'p', 'p', 'p', 'p']
->>>
+
 >>> tags = re.findall('</?(.+?)>', HTML)
 >>> sorted(set(tags))
 ['h1', 'p']
@@ -245,10 +229,9 @@ Use Case - 0x08
 ---------------
 >>> import re
 >>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
->>>
->>>
+
 >>> re.findall('</?.*>', HTML)
 ['<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>']
->>>
+
 >>> re.findall('</?.*?>', HTML)
 ['<h1>', '</h1>', '<p>', '</p>', '<p>', '</p>']

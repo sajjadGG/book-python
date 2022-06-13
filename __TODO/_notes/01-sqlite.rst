@@ -374,7 +374,7 @@ Regex:
 
 * ``%`` - dowolny ciąg znaków
 * ``_`` - dowolny jeden znak
-* można je łączyć np. ``Arm%st_ong
+* można je łączyć np. ``Arm%st_ong``
 * może być więcej niż jedno wystąpienie, np. '%CDR%'
 
 Podzapytania:
