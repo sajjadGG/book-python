@@ -1,13 +1,15 @@
 JSON Object
 ===========
 
-
-Encode Simple Object
---------------------
+SetUp
+-----
+>>> from pprint import pprint
 >>> from dataclasses import dataclass
 >>> import json
->>>
->>>
+
+
+Encode Object
+-------------
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str
@@ -16,50 +18,75 @@ Encode Simple Object
 >>>
 >>>
 >>> mark = Astronaut('Mark', 'Watney', 'Botanist')
->>>
 >>> data = vars(mark)
->>> result = json.dumps(data, indent=2)
 >>>
->>> print(result)
-{
-  "firstname": "Mark",
-  "lastname": "Watney",
-  "role": "Botanist"
-}
+>>> json.dumps(data)
+'{"firstname": "Mark", "lastname": "Watney"}'
 
 
-Decode Simple Object
---------------------
->>> from dataclasses import dataclass
->>> import json
->>>
->>>
+Decode Object
+-------------
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     role: str
 >>>
 >>>
 >>> DATA = """{
 ...   "firstname": "Mark",
-...   "lastname": "Watney",
-...   "role": "Botanist"
+...   "lastname": "Watney"
 ... }"""
 >>>
 >>> data = json.loads(DATA)
 >>> result = Astronaut(**data)
 >>>
 >>> print(result)
-Astronaut(firstname='Mark', lastname='Watney', role='Botanist')
+Astronaut(firstname='Mark', lastname='Watney')
+
+
+Object Encoder
+--------------
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+>>>
+>>>
+>>> data = Astronaut('Mark', 'Watney')
+>>>
+>>>
+>>> def encoder(obj):
+...     return vars(obj)
+>>>
+>>>
+>>> json.dumps(data, default=encoder)
+'{"firstname": "Mark", "lastname": "Watney"}'
+
+
+Object Decoder
+--------------
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+>>>
+>>>
+>>> DATA = """{
+...   "firstname": "Mark",
+...   "lastname": "Watney"
+... }"""
+>>>
+>>>
+>>> def decoder(data):
+...     return Astronaut(**data)
+>>>
+>>>
+>>> json.loads(DATA, object_hook=decoder)
+Astronaut(firstname='Mark', lastname='Watney')
 
 
 Encode Object with Relation
 ---------------------------
->>> from dataclasses import dataclass
->>> import json
->>>
->>>
 >>> @dataclass
 ... class Mission:
 ...     year: int
@@ -84,8 +111,8 @@ Encode Object with Relation
 >>>
 >>>
 >>> def encoder(obj):
-...     clsname = obj.__class__.__name__
-...     return {'_type': clsname} | vars(obj)
+...     data = {'_type': obj.__class__.__name__}
+...     return data | vars(obj)
 >>>
 >>>
 >>> result = json.dumps(CREW, default=encoder, indent=2)
@@ -137,11 +164,6 @@ Decode
 ------
 Encoding nested objects with relations to JSON:
 
->>> from pprint import pprint
->>> from dataclasses import dataclass
->>> import json
->>>
->>>
 >>> @dataclass
 ... class Mission:
 ...     year: int
