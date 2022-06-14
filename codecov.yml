@@ -1,0 +1,44 @@
+comment: false
+
+codecov:
+  branch: main
+  notify:
+    require_ci_to_pass: yes
+    # Prevent coverage status to upload multiple times for parallel and long
+    # running CI pipelines. This configuration is particularly useful on PRs
+    # to avoid confusion. Note that this value is set to the number of
+    # Pipeline jobs uploading coverage reports.
+    after_n_builds: 1
+
+coverage:
+  status:
+    project:
+      default:
+        # Commits pushed to main should not make the overall
+        # project coverage decrease by more than 1%:
+        target: auto
+        threshold: 1%
+        informational: false
+    patch:
+      default:
+        # Be tolerant on slight code coverage diff on PRs to limit
+        # noisy red coverage status on github PRs.
+        # Note: The coverage stats are still uploaded
+        # to codecov so that PR reviewers can see uncovered lines
+        target: auto
+        threshold: 1%
+        informational: false
+
+github_checks:
+    annotations: true
+
+ignore:
+- "__TODO"
+- "_bin"
+- "_blogpost"
+- "_contrib"
+- "_data"
+- "_i18n"
+- "_static"
+- "_theme"
+- "_tmp"

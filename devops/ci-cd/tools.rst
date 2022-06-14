@@ -1,6 +1,7 @@
 CI/CD Tools
 ===========
 * https://pre-commit.com/
+* https://wiki.python.org/moin/PythonTestingToolsTaxonomy
 
 .. figure:: ../_img/ecosystem-bigpicture.png
 .. figure:: ../_img/ecosystem-alternatives.png

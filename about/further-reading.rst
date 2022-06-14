@@ -65,6 +65,7 @@ Documentation
 * `Python string formatting <https://pyformat.info>`_
 * `TimeComplexity <https://wiki.python.org/moin/TimeComplexity>`_
 * `Multiple APIs documentation <http://devdocs.io>`_
+* `Tests <https://wiki.python.org/moin/PythonTestingToolsTaxonomy>`_
 
 
 Python Development

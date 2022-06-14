@@ -66,6 +66,7 @@ CI/CD
 
     ci-cd/ecosystem.rst
     ci-cd/tools.rst
+    ci-cd/wheel.rst
     ci-cd/pipelines.rst
     ci-cd/lint.rst
     ci-cd/behavioral.rst
