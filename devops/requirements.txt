@@ -3,3 +3,7 @@ sphinx_rtd_theme
 
 # pycodestyle
 # mypy
+# coverage
+# pylint
+# pylama[all]
+# black
