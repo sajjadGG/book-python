@@ -35,30 +35,9 @@ Example
 'Mark Watney'
 
 
+
 Use Case - 0x01
 ---------------
->>> data = slice(1, 2, 3)
->>>
->>>
->>> data.start
-1
->>>
->>> data.stop
-2
->>>
->>> data.step
-3
-
->>> class MyClass:
-...     def __getitem__(self, item):
-...         print(item)
->>>
->>>
->>> my = MyClass()
->>>
->>> my[1:2]
-slice(1, 2, None)
-
 >>> data = dict()
 >>>
 >>> data['a'] = 10  # data.__setitem__('a', 10) -> None
@@ -73,13 +52,68 @@ KeyError: 'x'
 Traceback (most recent call last):
 TypeError: 'dict' object is not callable
 
+
+Use Case - 0x02
+---------------
+Recap information about slice:
+
+>>> data = slice(1, 2, 3)
+>>>
+>>>
+>>> data.start
+1
+>>>
+>>> data.stop
+2
+>>>
+>>> data.step
+3
+
+Let's define a class with getitem and it's instance:
+
+>>> class MyClass:
+...     def __getitem__(self, item):
+...         print(type(item))
+>>>
+>>>
+>>> my = MyClass()
+
+>>> my[1]
+<class 'int'>
+>>>
+>>> my[1.0]
+<class 'float'>
+>>>
+>>> my[1:2]
+<class 'slice'>
+>>>
+>>> my[1,2]
+<class 'tuple'>
+>>>
+>>> my[[1,2]]
+<class 'list'>
+>>>
+
+>>> my['1969-07-20':'1969-07-21']
+<class 'slice'>
+>>>
+>>> my[['Evening','Morning']]
+<class 'list'>
+>>>
+>>> my['1969-07-20':'1969-07-21', ['Evening','Morning']]
+<class 'tuple'>
+
+
+Use Case - 0x03
+---------------
 Getitem in ``numpy``:
 
 >>> import numpy as np
 >>>
 >>>
 >>> data = np.array([[1, 2, 3],
-...                  [4, 5, 6]])
+...                  [4, 5, 6],
+...                  [7, 8, 9]])
 >>>
 >>> data[1][2]
 6
@@ -128,7 +162,7 @@ array([[4, 5, 6]])
 array([3, 6])
 
 
-Use Case - 0x02
+Use Case - 0x04
 ---------------
 * Cache
 

@@ -124,40 +124,41 @@ Use Case - 0x02
 ---------------
 * Numpy
 
->>> import numpy as np  # doctest: +SKIP
+>>> import numpy as np
 >>>
 >>>
->>> a = np.array([[0, 1, 2],
-...               [3, 4, 5],
-...               [6, 7, 8]])  # doctest: +SKIP
+>>> a = np.array([[1, 2, 3],
+...                  [4, 5, 6],
+...                  [7, 8, 9]])
 >>>
->>> a > 2  # doctest: +SKIP
-array([[False, False, False],
+>>> a > 2
+array([[False, False,  True],
        [ True,  True,  True],
        [ True,  True,  True]])
 >>>
->>> (a>2) & (a<7)  # doctest: +SKIP
-array([[False, False, False],
+>>> (a>2) & (a<7)
+array([[False, False,  True],
        [ True,  True,  True],
-       [ True, False, False]])
->>>
->>> (a>2) & (a<7) | (a>3)  # doctest: +SKIP
-array([[False, False, False],
-       [ True,  True,  True],
-       [ True,  True,  True]])
->>>
->>> ~( (a>2) & (a<7) | (a>3) )  # doctest: +SKIP
-array([[ True,  True,  True],
-       [False, False, False],
        [False, False, False]])
+>>>
+>>> (a>2) & (a<7) | (a>3)
+array([[False, False,  True],
+       [ True,  True,  True],
+       [ True,  True,  True]])
 
 Python understands this:
 
->>> ~( (a>2) & (a<7) | (a>3) )  # doctest: +SKIP
+>>> ~( (a>2) & (a<7) | (a>3) )
+array([[ True,  True, False],
+       [False, False, False],
+       [False, False, False]])
 
 As as chained calls of the following methods:
 
->>> obj.__neg__(obj.__gt__(2).__and__(obj.__lt__(7)).__or__(obj.__gt__(3)))  # doctest: +SKIP
+>>> a.__gt__(2).__and__(a.__lt__(7)).__or__(a.__gt__(3)).__invert__()
+array([[ True,  True, False],
+       [False, False, False],
+       [False, False, False]])
 
 
 Use Case - 0x03

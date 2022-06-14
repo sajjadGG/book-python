@@ -51,8 +51,8 @@ False
 ...         self.lastname = lastname
 ...
 ...     def __eq__(self, other):
-...         return (self.firstname == other.firstname) \
-...            and (self.lastname == other.lastname)
+...         return self.firstname == other.firstname \
+...            and self.lastname == other.lastname
 >>>
 >>>
 >>>
@@ -80,8 +80,8 @@ Problem
 ...         self.lastname = lastname
 ...
 ...     def __eq__(self, other):
-...         return (self.firstname == other.firstname) \
-...            and (self.lastname == other.lastname)
+...         return self.firstname == other.firstname \
+...            and self.lastname == other.lastname
 >>>
 >>>
 >>> class Cosmonaut:
@@ -108,9 +108,9 @@ Solution
 ...         self.lastname = lastname
 ...
 ...     def __eq__(self, other):
-...         return (self.__class__ is other.__class__) \
-...            and (self.firstname == other.firstname) \
-...            and (self.lastname == other.lastname)
+...         return self.__class__ is other.__class__ \
+...            and self.firstname == other.firstname \
+...            and self.lastname == other.lastname
 >>>
 >>>
 >>> class Cosmonaut:
@@ -134,8 +134,8 @@ Eq Works at Both Sides
 ...         self.lastname = lastname
 ...
 ...     def __eq__(self, other):
-...         return (self.firstname == other.firstname) \
-...            and (self.lastname == other.lastname)
+...         return self.firstname == other.firstname \
+...            and self.lastname == other.lastname
 >>>
 >>>
 >>> class Cosmonaut:
@@ -162,8 +162,8 @@ True
 ...         self.lastname = lastname
 ...
 ...     def __eq__(self, other):
-...         return (self.firstname == other.firstname) \
-...            and (self.lastname == other.lastname)
+...         return self.firstname == other.firstname \
+...            and self.lastname == other.lastname
 >>>
 >>>
 >>> a = Astronaut('Mark', 'Watney')
