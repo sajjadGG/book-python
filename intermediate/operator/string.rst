@@ -617,3 +617,6 @@ Assignments
 .. literalinclude:: assignments/operator_string_d.py
     :caption: :download:`Solution <assignments/operator_string_d.py>`
     :end-before: # Solution
+
+
+.. todo:: dorobić jedno zadanie z dziedziczeniem REPR

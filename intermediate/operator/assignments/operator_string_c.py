@@ -67,9 +67,9 @@ class Distance:
 
     # Alternative Solution
     def __format__(self, unit):
-        result = self.meters
+        distance = self.meters
         match unit:
-            case 'cm' | 'centimeters':  result /= CENTIMETER
-            case 'm'  | 'meters':       result /= METER
-            case 'km' | 'kilometers':   result /= KILOMETER
-        return f'{result:.1f}'
+            case 'cm': distance /= CENTIMETER
+            case 'm':  distance /= METER
+            case 'km': distance /= KILOMETER
+        return f'{distance:.1f}'
