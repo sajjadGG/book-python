@@ -107,6 +107,14 @@ Pretty Printing JSON:
     Expecting property name enclosed in double quotes: line 1 column 37 (char 36)
 
 
+Encoder and Decoder
+-------------------
+* ``json.dumps(data, default=...)``
+* ``json.loads(data, object_hook=...)``
+* ``json.dumps(data, cls=...)``
+* ``json.loads(data, cls=...)``
+
+
 Use Case - 0x01
 ---------------
 .. code-block:: text

@@ -2,7 +2,7 @@
 * Assignment: JSON Encoder Class
 * Complexity: easy
 * Lines of code: 6 lines
-* Time: 3 min
+* Time: 5 min
 
 English:
     1. Define `result: str` with JSON encoded `DATA`
