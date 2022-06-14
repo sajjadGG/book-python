@@ -1,17 +1,7 @@
 JSON About
 ==========
 * JavaScript Object Notation
-* JSON format is similar to ``dict`` notation in Python
-* Fields are enclosed only by double quote ``"`` character
-* Instead of ``True`` there is ``true`` (lowercase)
-* Instead of ``False`` there is ``false`` (lowercase)
-* Instead of ``None`` there is ``null``
-* ``list`` is known as ``array`` (despite the same syntax)
-* ``dict`` is known as ``object`` (despite the same syntax)
-* There is no ``tuple`` or ``set``
-* Coma ``,`` is not allowed after the last element in list or object
-* ``camelCase`` is convention, although ``snake_case`` is also valid
-* Unicode characters are stored as unicode entities (``"cze\\u015b\\u0107"``)
+* The most popular format for data exchange
 
 Python ``dict``:
 
@@ -28,7 +18,19 @@ JSON ``object``:
 
 JSON or Python?
 ---------------
-* JSON or Python ``list[dict]``?
+* JSON format is similar to ``dict`` notation in Python
+* Fields are always enclosed only by double quote ``"`` character
+* Instead of ``True`` there is ``true`` (lowercase)
+* Instead of ``False`` there is ``false`` (lowercase)
+* Instead of ``None`` there is ``null``
+* ``list`` is known as ``array`` (despite the same syntax)
+* ``dict`` is known as ``object`` (despite the same syntax)
+* There is no ``tuple`` or ``set``
+* Coma ``,`` is not allowed after the last element in list or object
+* ``camelCase`` is convention, although ``snake_case`` is also valid
+* Unicode characters are stored as unicode entities (``"cze\\u015b\\u0107"``)
+
+Is the following listing a JSON object or Python ``list[dict]``?
 
 .. code-block:: python
 
@@ -44,6 +46,8 @@ JSON or Python?
               {'name': 'Beth Johanssen', 'born': date(2006, 5, 9)},
               {'name': 'Mark Watney', 'born': date(1994, 10, 12)}]}
 
+Is the following listing a JSON object or Python ``list[dict]``?
+
 .. code-block:: json
 
     {"mission": "Ares 3",
@@ -57,19 +61,6 @@ JSON or Python?
               {"name": "Chris Beck", "born": "1999-08-02"},
               {"name": "Beth Johanssen", "born": "2006-05-09"},
               {"name": "Mark Watney", "born": "1994-10-12"}]}
-
-.. code-block:: text
-
-    [
-        {"firstname": "Mark", "lastname": "Watney", "missions": [
-            {"year": "2035", "name": "Ares3"}]},
-
-        {"firstname": "Melissa", "lastname": "Lewis", "missions": [
-             {"year": "2030", "name": "Ares1"},
-             {"year": "2035", "name": "Ares3"}]},
-
-        {"firstname": "Rick", "lastname": "Martinez", "missions": []}
-    ]
 
 
 Pretty Printing JSON
@@ -117,6 +108,22 @@ Pretty Printing JSON:
 
 
 Use Case - 0x01
+---------------
+.. code-block:: text
+
+    [
+        {"firstname": "Mark", "lastname": "Watney", "missions": [
+            {"year": "2035", "name": "Ares3"}]},
+
+        {"firstname": "Melissa", "lastname": "Lewis", "missions": [
+             {"year": "2030", "name": "Ares1"},
+             {"year": "2035", "name": "Ares3"}]},
+
+        {"firstname": "Rick", "lastname": "Martinez", "missions": []}
+    ]
+
+
+Use Case - 0x02
 ---------------
 .. code-block:: json
 

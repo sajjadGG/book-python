@@ -2,7 +2,7 @@
 * Assignment: JSON File Dump
 * Complexity: easy
 * Lines of code: 4 lines
-* Time: 3 min
+* Time: 5 min
 
 English:
     1. Extract from input a header and rows
@@ -23,19 +23,14 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from os import remove
-
     >>> result = open(FILE).read()
-
+    >>> remove(FILE)
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
-
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
-
     >>> assert len(result) > 0, \
     'Variable `result` should not be empty'
-
-    >>> remove(FILE)
 
     >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
     [{"Sepal length": 5.8, "Sepal width": 2.7, "Petal length": 5.1, "Petal width": 1.9, "Species": "virginica"},
@@ -63,12 +58,13 @@ DATA = [
     (4.7, 3.2, 1.3, 0.2, 'setosa'),
     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
     (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    (4.9, 3.0, 1.4, 0.2, 'setosa')]
+    (4.9, 3.0, 1.4, 0.2, 'setosa'),
+]
 
 
+# Solution
 header, *rows = DATA
 data = [dict(zip(header, row)) for row in rows]
 
-# Solution
 with open(FILE, mode='w') as file:
     json.dump(data, file)
