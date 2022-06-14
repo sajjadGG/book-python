@@ -8,6 +8,7 @@ About
 
     LICENSE.rst
     install.rst
+    about/versions.rst
 
 
 Python Basics
