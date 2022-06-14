@@ -299,6 +299,9 @@ Use Case - 0x02
 ---------------
 * Self formatting duration
 
+>>> from dataclasses import dataclass
+>>>
+>>>
 >>> SECOND = 1
 >>> MINUTE = 60 * SECOND
 >>> HOUR = 60 * MINUTE
@@ -309,9 +312,9 @@ Use Case - 0x02
 >>> SOL = 24*HOUR + 39*MINUTE + 35*SECOND
 >>>
 >>>
->>> class Duration:
-...     def __init__(self, seconds):
-...         self.seconds = seconds
+>>> @dataclass
+... class Duration:
+...     seconds: int
 ...
 ...     def __format__(self, unit):
 ...         if unit == 'seconds':
@@ -331,29 +334,32 @@ Use Case - 0x02
 >>>
 >>> ares3 = Duration(543*SOL)
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:seconds}')
-Ares3 flight to Mars took 48204825.0 seconds
+>>> print(f'Ares3 mission to Mars took {ares3:seconds}')
+Ares3 mission to Mars took 48204825.0 seconds
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:minutes}')
-Ares3 flight to Mars took 803413.8 minutes
+>>> print(f'Ares3 mission to Mars took {ares3:minutes}')
+Ares3 mission to Mars took 803413.8 minutes
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:hours}')
-Ares3 flight to Mars took 13390.2 hours
+>>> print(f'Ares3 mission to Mars took {ares3:hours}')
+Ares3 mission to Mars took 13390.2 hours
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:days}')
-Ares3 flight to Mars took 557.9 days
+>>> print(f'Ares3 mission to Mars took {ares3:days}')
+Ares3 mission to Mars took 557.9 days
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:months}')
-Ares3 flight to Mars took 18.3 months
+>>> print(f'Ares3 mission to Mars took {ares3:months}')
+Ares3 mission to Mars took 18.3 months
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:years}')
-Ares3 flight to Mars took 1.5 years
+>>> print(f'Ares3 mission to Mars took {ares3:years}')
+Ares3 mission to Mars took 1.5 years
 
 
 Use Case - 0x03
 ---------------
 * Duration Many Units
 
+>>> from dataclasses import dataclass
+>>>
+>>>
 >>> SECOND = 1
 >>> MINUTE = 60 * SECOND
 >>> HOUR = 60 * MINUTE
@@ -364,11 +370,9 @@ Use Case - 0x03
 >>> SOL = 24*HOUR + 39*MINUTE + 35*SECOND
 >>>
 >>>
->>> class Duration:
+>>> @dataclass
+... class Duration:
 ...     seconds: int
-...
-...     def __init__(self, seconds):
-...         self.seconds = seconds
 ...
 ...     def __format__(self, unit):
 ...         duration = self.seconds
@@ -391,23 +395,23 @@ Use Case - 0x03
 >>>
 >>> ares3 = Duration(543*SOL)
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:seconds}')
-Ares3 flight to Mars took 48204825.0 seconds
+>>> print(f'Ares3 mission to Mars took {ares3:seconds}')
+Ares3 mission to Mars took 48204825.0 seconds
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:minutes}')
-Ares3 flight to Mars took 803413.8 minutes
+>>> print(f'Ares3 mission to Mars took {ares3:minutes}')
+Ares3 mission to Mars took 803413.8 minutes
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:hours}')
-Ares3 flight to Mars took 13390.2 hours
+>>> print(f'Ares3 mission to Mars took {ares3:hours}')
+Ares3 mission to Mars took 13390.2 hours
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:days}')
-Ares3 flight to Mars took 557.9 days
+>>> print(f'Ares3 mission to Mars took {ares3:days}')
+Ares3 mission to Mars took 557.9 days
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:months}')
-Ares3 flight to Mars took 18.3 months
+>>> print(f'Ares3 mission to Mars took {ares3:months}')
+Ares3 mission to Mars took 18.3 months
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:years}')
-Ares3 flight to Mars took 1.5 years
+>>> print(f'Ares3 mission to Mars took {ares3:years}')
+Ares3 mission to Mars took 1.5 years
 
 
 Use Case - 0x04
@@ -416,7 +420,6 @@ Use Case - 0x04
 * ``ares3_start = datetime(2035, 6, 29)``
 
 >>> from dataclasses import dataclass
->>> from datetime import datetime
 >>>
 >>>
 >>> SECOND = 1
@@ -448,28 +451,28 @@ Use Case - 0x04
 >>>
 >>> ares3 = Duration(543*SOL)
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:seconds}')
-Ares3 flight to Mars took 48204825.0 seconds
+>>> print(f'Ares3 mission to Mars took {ares3:seconds}')
+Ares3 mission to Mars took 48204825.0 seconds
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:minutes}')
-Ares3 flight to Mars took 803413.8 minutes
+>>> print(f'Ares3 mission to Mars took {ares3:minutes}')
+Ares3 mission to Mars took 803413.8 minutes
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:hours}')
-Ares3 flight to Mars took 13390.2 hours
+>>> print(f'Ares3 mission to Mars took {ares3:hours}')
+Ares3 mission to Mars took 13390.2 hours
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:days}')
-Ares3 flight to Mars took 557.9 days
+>>> print(f'Ares3 mission to Mars took {ares3:days}')
+Ares3 mission to Mars took 557.9 days
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:months}')
-Ares3 flight to Mars took 18.3 months
+>>> print(f'Ares3 mission to Mars took {ares3:months}')
+Ares3 mission to Mars took 18.3 months
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:years}')
-Ares3 flight to Mars took 1.5 years
+>>> print(f'Ares3 mission to Mars took {ares3:years}')
+Ares3 mission to Mars took 1.5 years
+
 
 Use Case - 0x04
 ---------------
 >>> from dataclasses import dataclass
->>> from datetime import datetime
 >>>
 >>>
 >>> SECOND = 1
@@ -482,11 +485,9 @@ Use Case - 0x04
 >>> SOL = 24*HOUR + 39*MINUTE + 35*SECOND
 >>>
 >>>
->>> class Duration:
+>>> @dataclass
+... class Duration:
 ...     seconds: int
-...
-...     def __init__(self, seconds):
-...         self.seconds = seconds
 ...
 ...     def __format__(self, unit):
 ...         duration = self.seconds
@@ -497,38 +498,41 @@ Use Case - 0x04
 ...             case 'd' | 'days':    duration /= DAY
 ...             case 'M' | 'months':  duration /= MONTH
 ...             case 'y' | 'years':   duration /= YEAR
-...             case _: raise TypeError('nieobsługiwany format')
+...             case _: raise TypeError('Invalid unit')
 ...         return f'{duration:.1f} {unit}'
 >>>
 >>>
 >>> ares3 = Duration(543*SOL)
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:seconds}')
-Ares3 flight to Mars took 48204825.0 seconds
+>>> print(f'Ares3 mission to Mars took {ares3:seconds}')
+Ares3 mission to Mars took 48204825.0 seconds
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:minutes}')
-Ares3 flight to Mars took 803413.8 minutes
+>>> print(f'Ares3 mission to Mars took {ares3:minutes}')
+Ares3 mission to Mars took 803413.8 minutes
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:hours}')
-Ares3 flight to Mars took 13390.2 hours
+>>> print(f'Ares3 mission to Mars took {ares3:hours}')
+Ares3 mission to Mars took 13390.2 hours
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:days}')
-Ares3 flight to Mars took 557.9 days
+>>> print(f'Ares3 mission to Mars took {ares3:days}')
+Ares3 mission to Mars took 557.9 days
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:months}')
-Ares3 flight to Mars took 18.3 months
+>>> print(f'Ares3 mission to Mars took {ares3:months}')
+Ares3 mission to Mars took 18.3 months
 >>>
->>> print(f'Ares3 flight to Mars took {ares3:years}')
-Ares3 flight to Mars took 1.5 years
+>>> print(f'Ares3 mission to Mars took {ares3:years}')
+Ares3 mission to Mars took 1.5 years
 
 
 Use Case - 0x05
 ---------------
 * Temperature conversion
 
->>> class Temperature:
-...     def __init__(self, kelvin):
-...         self.kelvin = kelvin
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Temperature:
+...     kelvin: float
 ...
 ...     def to_fahrenheit(self):
 ...         return (self.kelvin-273.15) * 1.8 + 32
@@ -537,12 +541,10 @@ Use Case - 0x05
 ...         return self.kelvin - 273.15
 ...
 ...     def __format__(self, unit):
-...         if unit == 'kelvin':
-...             value = self.kelvin
-...         elif unit == 'celsius':
-...             value = self.to_celsius()
-...         elif unit == 'fahrenheit':
-...             value = self.to_fahrenheit()
+...         match unit:
+...             case 'K' | 'kelvin':     value = self.kelvin
+...             case 'C' | 'celsius':    value = self.to_celsius()
+...             case 'F' | 'fahrenheit': value = self.to_fahrenheit()
 ...         unit = unit[0].upper()
 ...         return f'{value:.2f} {unit}'
 >>>
@@ -564,44 +566,37 @@ Use Case - 0x05
 ---------------
 * Format output
 
+>>> from dataclasses import dataclass
+>>> import json
+>>>
+>>>
 >>> class Point:
-...     def __init__(self, x, y, z=0):
-...         self.x = x
-...         self.y = y
-...         self.z = z
+...     x: int
+...     y: int
+...     z: int = 0
 ...
-...     def __format__(self, name):
-...
-...         if name in ('2D', '2d', '2dimensions'):
-...             result = f"Point(x={self.x}, y={self.y})"
-...         elif name in ('3D', '3d', '3dimensions'):
-...             result = f"Point(x={self.x}, y={self.y}, z={self.z})"
-...         elif name == 'as_dict':
-...             result = vars(self)
-...         elif name == 'as_tuple':
-...             result = tuple(vars(self).values())
-...         elif name == 'as_json':
-...             import json
-...             result = json.dumps(vars(self))
+...     def __format__(self, format):
+...         match format:
+...             case 'repr':  result = f"Point(x={self.x}, y={self.y}, z={self.z})"
+...             case 'dict':  result = vars(self)
+...             case 'tuple': result = tuple(vars(self).values())
+...             case 'json':  result = json.dumps(vars(self))
 ...         return str(result)
 >>>
 >>>
 >>> point = Point(x=1, y=2)
 >>>
 >>>
->>> print(f'{point:2d}')
-Point(x=1, y=2)
->>>
->>> print(f'{point:3d}')
+>>> print(f'{point:repr}')
 Point(x=1, y=2, z=0)
 >>>
->>> print(f'{point:as_tuple}')
+>>> print(f'{point:tuple}')
 (1, 2, 0)
 >>>
->>> print(f'{point:as_dict}')
+>>> print(f'{point:dict}')
 {'x': 1, 'y': 2, 'z': 0}
 >>>
->>> print(f'{point:as_json}')
+>>> print(f'{point:json}')
 {"x": 1, "y": 2, "z": 0}
 
 
