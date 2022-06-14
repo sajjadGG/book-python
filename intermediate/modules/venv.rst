@@ -89,6 +89,8 @@ Directory Naming Convention
     venv-3.10.3/
     venv-3.10.4/
     venv-3.10.5/
+    venv-3.10.6/
+    venv-3.10.7/
 
     venv-3.11-alpha1/
     venv-3.11-alpha2/

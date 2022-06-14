@@ -130,24 +130,6 @@ array([4])
 >>> data[1:2, 1:]
 array([[5, 6]])
 
-Intuitive implementation of numpy ``array[row,col]`` accessor:
-
->>> class array(np.ndarray):
-...     def __getitem__(key):
-...         if isinstance(key, int):
-...             return super().__getitem__(key)
-...
-...         if isinstance(key, tuple):
-...             row = key[0]
-...             col = key[1]
-...             return super().__getitem__(row).__getitem__(col)
-...
-...         if isinstance(key, slice):
-...             start = key[0] if key[0] else 0
-...             stop = key[1] if key[0] else len(self)
-...             step = key[2] if key[2] else 1
-...             return ...
-
 ``data[1]``:
 
 >>> data.__getitem__(1)
@@ -167,6 +149,26 @@ array([[4, 5, 6]])
 
 >>> data.__getitem__((slice(None,None,None), 2))
 array([3, 6, 9])
+
+Intuitive implementation of numpy ``array[row,col]`` accessor:
+
+>>> class array(np.ndarray):
+...     def __getitem__(key):
+...         if isinstance(key, int):
+...             return super().__getitem__(key)
+...
+...         if isinstance(key, tuple):
+...             row = key[0]
+...             col = key[1]
+...             return super().__getitem__(row).__getitem__(col)
+...
+...         if isinstance(key, slice):
+...             start = key[0] if key[0] else 0
+...             stop = key[1] if key[0] else len(self)
+...             step = key[2] if key[2] else 1
+...             return ...
+
+
 
 
 Use Case - 0x04
