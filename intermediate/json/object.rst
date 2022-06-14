@@ -14,10 +14,9 @@ Encode Object
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     role: str
 >>>
 >>>
->>> mark = Astronaut('Mark', 'Watney', 'Botanist')
+>>> mark = Astronaut('Mark', 'Watney')
 >>> data = vars(mark)
 >>>
 >>> json.dumps(data)

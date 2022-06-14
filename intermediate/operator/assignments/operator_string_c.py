@@ -57,10 +57,19 @@ class Distance:
 
     def __format__(self, unit):
         result = self.meters
-        if unit in ('cm', 'centimeter', 'centimeters'):
+        if unit in ('cm', 'centimeters'):
             result /= CENTIMETER
-        elif unit in ('m', 'meter', 'meters'):
+        elif unit in ('m', 'meters'):
             result /= METER
-        elif unit in ('km', 'kilometer', 'kilometers'):
+        elif unit in ('km', 'kilometers'):
             result /= KILOMETER
+        return f'{result:.1f}'
+
+    # Alternative Solution
+    def __format__(self, unit):
+        result = self.meters
+        match unit:
+            case 'cm' | 'centimeters':  result /= CENTIMETER
+            case 'm'  | 'meters':       result /= METER
+            case 'km' | 'kilometers':   result /= KILOMETER
         return f'{result:.1f}'
