@@ -1,7 +1,7 @@
 """
 * Assignment: JSON File Load
 * Complexity: easy
-* Lines of code: 3 lines
+* Lines of code: 2 lines
 * Time: 5 min
 
 English:
@@ -18,17 +18,13 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-     >>> from os import remove
-
+    >>> from os import remove
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
-
     >>> assert type(result) is list, \
     'Variable `result` has invalid type, should be list'
-
     >>> assert len(result) > 0, \
     'Variable `result` should not be empty'
-
     >>> assert all(type(row) is tuple for row in result), \
     'Variable `result` should be a list[tuple]'
 
@@ -68,7 +64,5 @@ with open(FILE, mode='w') as file:
 result = ...
 
 # Solution
-with open(FILE) as file:
-    data = json.load(file)
-
-result = [tuple(row.values()) for row in data]
+with open(FILE, mode='r') as file:
+    result = [tuple(row.values()) for row in json.load(file)]

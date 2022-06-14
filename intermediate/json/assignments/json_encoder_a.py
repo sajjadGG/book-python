@@ -1,8 +1,8 @@
 """
-* Assignment: JSON Encoder Martian
+* Assignment: JSON Encoder Function
 * Complexity: easy
 * Lines of code: 4 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
     1. Define `result: str` with JSON encoded `DATA`
@@ -17,13 +17,10 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
-
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
-
     >>> assert type(result) is str, \
     'Variable `result` has invalid type, should be str'
-
     >>> assert isfunction(encoder), \
     'Encoder must be a function'
 

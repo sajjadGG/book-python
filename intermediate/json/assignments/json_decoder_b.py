@@ -1,8 +1,8 @@
 """
-* Assignment: JSON Decoder Martian
+* Assignment: JSON Decoder Class
 * Complexity: medium
 * Lines of code: 12 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Define `result: dict` with decoded `DATA` from JSON
@@ -17,24 +17,18 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isclass
-
     >>> assert isclass(Decoder), \
     'Decoder must be a class'
-
     >>> assert issubclass(Decoder, json.JSONDecoder), \
     'Decoder must inherit from `json.JSONDecoder`'
-
     >>> assert type(result) is dict, \
     'Result must be a dict'
-
     >>> assert len(result) > 0, \
     'Result cannot be empty'
-
     >>> assert all(type(key) is str
     ...            and type(value) in (str, datetime, list)
     ...            for key, value in result.items()), \
     'All keys must be str and all values must be either str, datetime or list'
-
 
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     {'mission': 'Ares 3',

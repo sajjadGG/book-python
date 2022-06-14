@@ -22,6 +22,15 @@ Problem
 Traceback (most recent call last):
 TypeError: Object of type date is not JSON serializable
 
+Default Function with Lambda
+----------------------------
+>>> DATA = {'firstname': 'Mark',
+...         'lastname': 'Watney',
+...         'born': date(1994, 10, 12)}
+>>>
+>>>
+>>> json.dumps(data, default=lambda x: x.isoformat())
+'{"firstname": "Mark", "lastname": "Watney", "born": "1994-10-12"}'
 
 Default Function with If
 ------------------------

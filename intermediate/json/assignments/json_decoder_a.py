@@ -1,5 +1,5 @@
 """
-* Assignment: JSON Decoder Martian
+* Assignment: JSON Decoder Function
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 5 min
@@ -17,16 +17,12 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
-
     >>> assert isfunction(decoder), \
     'Decoder must be a function'
-
     >>> assert type(result) is dict, \
     'Result must be a dict'
-
     >>> assert len(result) > 0, \
     'Result cannot be empty'
-
     >>> assert all(type(key) is str
     ...            and type(value) in (str, datetime, list)
     ...            for key, value in result.items()), \
