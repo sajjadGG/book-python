@@ -570,7 +570,8 @@ Use Case - 0x05
 >>> import json
 >>>
 >>>
->>> class Point:
+>>> @dataclass
+... class Point:
 ...     x: int
 ...     y: int
 ...     z: int = 0
