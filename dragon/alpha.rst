@@ -135,7 +135,7 @@ Polish
     d. Przesuń smoka w lewo o 10 i w prawo o 15
     e. Przesuń smoka w prawo o 15 i w górę o 5
     f. Przesuń smoka w dół o 5
-    g. Smok zadaje obrażenia
+    g. Smok zadaje obrażenia (5-20)
     h. Zadaj 10 obrażeń smokowi
     i. Zadaj 5 obrażeń smokowi
     j. Zadaj 3 obrażeń smokowi

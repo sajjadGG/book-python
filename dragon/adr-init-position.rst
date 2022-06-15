@@ -41,6 +41,8 @@ Option 2
 * Good: easy to use
 * Good: short argument names
 * Good: verbose in this example
+* Good: you can assign ``None`` by default to set default point
+* Good: extensible, easy to add ``z`` with default value ``0``
 * Bad: It does suggest, that x and y are some parameters to texture (for example width and height of a texture image)
 
 Problems:
@@ -62,6 +64,7 @@ Option 3
 * Good: simple, easy to use
 * Good: you can assign ``None`` by default to set default point
 * Good: extensible, easy to add ``pos_z`` with default value ``0``
+* Bad: not verbose
 
 Problem:
 
@@ -82,7 +85,7 @@ Option 4
 
 Problem:
 
->>> knn = KNearestNeighbors(k=3, weights=[1,2,3])
+>>> knn = KNearestNeighbors(k=3, weights=[1,2,3])  # ok
 
 >>> position = GPSPosition(longitude=1, latitude=2)  # ok
 
@@ -146,14 +149,14 @@ Option 7
 * Good: order is not important
 * Good: always has to pass both ``x`` and ``y``
 * Good: possible to extend to 3D with refactoring
-* Good: easier to refactor than tuple - ``pattern = r'{"x":\d+, "y":\d+}'``
+* Good: easier to refactor than tuple - ``pattern = r'\{"x":\d+, "y":\d+\}'``
 * Bad: always has to pass both ``x`` and ``y``
 * Bad: unpacking
 * Bad: not extensible, ``position`` will always be 2D
 
 Problem:
 
-* ``pattern = r'{"x":\d+, "y":\d+}'``
+* ``pattern = r'\{"x":\d+, "y":\d+\}'``
 
 
 Option 8
@@ -217,12 +220,13 @@ Option 10
 * Good: you can assign ``position=None`` by default to set default ``position``
 * Good: relatively easy to extend to 3D
 * Good: keyword argument is not required, class name is verbose enough
-* Bad: ``TypeDict`` does not support default values
+* Bad: before Python 3.11 ``TypeDict`` does not support default values
 
 Future:
 
 * API will change in Python 3.11
 * Will include ``Required`` and ``NotRequired``
+* Will support default values
 * Re-evaluate then
 
 
@@ -273,6 +277,7 @@ Option 12
 * Good: very easy to extend to 3D
 * Good: keyword argument is not required, class name is verbose enough
 * Good: is faster and leaner than simple dataclass
+* Bad: more complicated than mutable dataclasses
 
 
 Option 13
@@ -293,9 +298,10 @@ Option 13
 
 * Good: very common
 * Good: easy to use
+* Good: faster than dataclasses
 * Good: more explicit than ``dataclass``
 * Good: easy to extend to 3D
-* Good: can sat default values
+* Good: can set default values
 * Good: keyword argument is not required, class name is verbose enough
 
 
@@ -320,9 +326,9 @@ Option 14
 * Good: easy to use
 * Good: more explicit than ``dataclass``
 * Good: easy to extend to 3D
-* Good: can sat default values
+* Good: can set default values
 * Good: keyword argument is not required, class name is verbose enough
-# Bad: too complex for now
+* Bad: too complex for now
 
 
 Decision

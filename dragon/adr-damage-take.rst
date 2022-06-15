@@ -50,6 +50,7 @@ Option 3
 >>> dragon.receive_damage(DMG)
 
 * Good: Explicit relation ``dragon ---> enemy``
+* Bad: ``hurt_self()`` is to colloquial
 * Bad: Inconsistent with ``make_damage()``
 
 

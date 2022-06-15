@@ -31,9 +31,9 @@ Option 1
 * Good: encapsulation
 * Good: easy to add validation if needed
 * Good: easy to extend to 3D - add parameter with default value ``0``
-* Bad: ``teleport()`` and ``fly()`` are bad names, to specific
-* Bad: ``set_position_xy()`` ties you to 2D point
+* Bad: name ``set_position_xy()`` ties you to 2D point
 * Bad: arguments are implicit, require knowledge of an API
+* Bad: ``teleport()`` and ``fly()`` are bad names, does not indicate context what are the values provided as arguments
 
 
 Option 2
@@ -47,7 +47,7 @@ Option 2
 * Good: encapsulation
 * Good: easy to add validation if needed
 * Good: easy to extend to 3D - add parameter with default value ``0``
-* Bad: ``teleport()`` and ``fly()`` are bad names, to specific
+* Bad: ``teleport()`` and ``fly()`` are bad names, to use-case specific
 
 
 Option 3
@@ -134,9 +134,10 @@ Option 8
 * Good: more or less easy to use
 * Good: arguments are explicit
 * Good: can use ``@property`` for validation if needed
-* Good: encapsulation
+* Good: namespace
 * Good: more or less readable
 * Good: extensible, easy to refactor to 3D
+* Bad: encapsulation
 * Bad: nested
 * Bad: require knowledge of an API
 

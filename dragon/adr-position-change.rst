@@ -19,10 +19,10 @@ Option 1
 >>> dragon.shift(left=10, down=20)
 >>> dragon.fly(left=10, down=20)
 
-* Good: Move by relative shifting (left, right, up, down)
+* Good: move by relative shifting (left, right, up, down)
 * Good: encapsulation, object knows current position and moves
 * Good: easy ``.move()``
-* Bad: to specific ``.fly()``, ``.shift()``
+* Bad: to use-case specific ``.fly()``, ``.shift()``
 
 
 Option 2
@@ -30,7 +30,7 @@ Option 2
 >>> dragon.change_position(left=10, down=20)
 >>> dragon.position_change(left=10, down=20)
 
-* Good: Move by relative shifting (left, right, up, down)
+* Good: move by relative shifting (left, right, up, down)
 * Good: encapsulation, object knows current position and moves
 * Bad: to complex for now ``.change_position()``, ``.position_change()``
 
@@ -41,7 +41,7 @@ Option 3
 >>> dragon.move_to(x=10, y=20)
 
 * Bad: Move by setting absolute position
-* Bad: controller must know current position
+* Bad: controller must know other variables, such as velocity, surface, injuries
 
 .. figure:: img/oop-architecture-mvc.png
 
@@ -51,7 +51,10 @@ Option 4
 >>> dragon.move_x(10)
 >>> dragon.move_y(20)
 
+* Good: extensible to 3D, just add another method
 * Bad: require knowledge of an API
+* Bad: Move by setting absolute position
+* Bad: controller must know other variables, such as velocity, surface, injuries
 
 
 Option 5
@@ -60,6 +63,9 @@ Option 5
 >>> dragon.move_xy(10, 20)
 
 * Bad: require knowledge of an API
+* Bad: Move by setting absolute position
+* Bad: controller must know other variables, such as velocity, surface, injuries
+* Bad: not extensible to 3D
 
 
 Option 6
@@ -68,6 +74,9 @@ Option 6
 >>> dragon.move_xy((-10, 20))
 
 * Bad: require knowledge of an API
+* Bad: Move by setting absolute position
+* Bad: controller must know other variables, such as velocity, surface, injuries
+* Bad: not extensible to 3D
 
 
 Option 7
@@ -92,6 +101,7 @@ Option 8
 * Good: there is only one method ``move()`` responsible for moving
 * Bad: Python has keyword arguments, so use it
 * Bad: require knowledge of an API
+* Bad: not extensible to 3D
 
 Example:
 
@@ -100,6 +110,39 @@ Example:
 Problem:
 
 * ``check(True, False, True, None, 1)``
+
+.. code-block:: css
+
+    p {
+      margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 150px;
+      margin-left: 80px;
+    }
+
+.. code-block:: css
+
+    p {
+      margin: 25px 50px 75px 100px; /* top, right, bottom, left */
+    }
+
+.. code-block:: css
+
+    p {
+      margin: 25px 50px 75px;  /* top, right-left, bottom */
+    }
+
+.. code-block:: css
+
+    p {
+      margin: 25px 50px;  /* top-bottom, right-left */
+    }
+
+.. code-block:: css
+
+    p {
+      margin: 25px;  /* top-right-bottom-left */
+    }
 
 
 Option 9
@@ -110,6 +153,7 @@ Option 9
 
 * Good: move by relative offset
 * Bad: require knowledge of an API
+* Bad: not extensible to 3D
 
 Example:
 
@@ -124,6 +168,7 @@ Option 9
 
 * Bad: move by setting absolute position
 * Bad: require knowledge of an API
+* Bad: not extensible to 3D
 
 Example:
 
@@ -139,6 +184,7 @@ Option 10
 ...     {'x':10, 'y':15}])
 
 * Bad: require knowledge of an API
+* Bad: not extensible to 3D
 
 
 Option 11
@@ -151,6 +197,7 @@ Option 11
 ...     {'down':50}])
 
 * Bad: require knowledge of an API
+* Bad: not extensible to 3D
 
 
 Option 12
@@ -177,6 +224,9 @@ Option 13
 ...     Point(x=10, y=20),
 ...     Point(x=10, y=15)])
 
+* Good: extensible to 3D
+* Bad: require knowledge of an API
+
 
 Option 14
 ---------
@@ -185,6 +235,7 @@ Option 14
 ...     {'direction': 'left', 'distance': 10},
 ...     {'direction': 'right', 'distance': 20}])
 
+* Good: extensible to 3D
 * Bad: require knowledge of an API
 
 
@@ -208,6 +259,7 @@ Option 15
 >>> dragon.position_y += 20
 
 
+* Good: extensible to 3D, just add ``z`` attribute
 * Bad: encapsulation
 * Bad: require knowledge of an API
 
@@ -218,6 +270,9 @@ Option 16
 >>> dragon.move(dx=-10, dy=+20)
 >>> dragon.change_position(left=-10, down=20)
 
+* Good: extensible to 3D
+* Bad: business login in controller
+
 
 Option 17
 ---------
@@ -227,17 +282,24 @@ Option 17
 * Good: explicit
 * Good: verbose
 * Good: extensible
+* Good: extensible to 3D
 * Bad: to complex for now
+* Bad: not possible to do movement in opposite directions in the same time
 
 
 Option 18
 ---------
 >>> LEFT = 61  # keyboard key code
+... RIGHT = 61
+... UP = 61
+... DOWN = 61
+>>>
 >>> dragon.move(direction=LEFT, distance=20)
 
 * Good: explicit
 * Good: verbose
 * Good: extensible
+* Bad: to chaotic
 * Bad: to complex for now
 
 
@@ -245,6 +307,9 @@ Option 19
 ---------
 >>> class Direction(Enum):
 ...     LEFT = 61
+...     RIGHT = 61
+...     UP = 61
+...     DOWN = 61
 >>>
 >>>
 >>> dragon.move(Direction.LEFT, distance=5)
@@ -253,6 +318,7 @@ Option 19
 * Good: explicit
 * Good: verbose
 * Good: extensible
+* Good: ordered
 * Bad: to complex for now
 
 
@@ -298,14 +364,18 @@ Bad, because:
 >>> db.execute_select_where(SQL)
 >>> db.execute_select_order(SQL)
 >>> db.execute_select_limit(SQL)
+>>> db.execute_select_offset(SQL)
 >>> db.execute_select_order_limit(SQL)
 >>> db.execute_select_where_order_limit(SQL)
+>>> db.execute_select_where_order_limit_offset(SQL)
 >>> db.execute_insert(SQL)
 >>> db.execute_insert_values(SQL)
 >>> db.execute_alter(SQL)
 >>> db.execute_alter_table(SQL)
+>>> db.execute_alter_index(SQL)
 >>> db.execute_create(SQL)
 >>> db.execute_create_table(SQL)
+>>> db.execute_create_index(SQL)
 >>> db.execute_create_database(SQL)
 
 Why not?:
@@ -314,7 +384,7 @@ Why not?:
 
 Use Case:
 
->>> read_csv('iris.csv', 'utf-8', ';', True)
+>>> read_csv('iris.csv', ';', 'utf-8', True)
 
 >>> read_csv_with_encoding('iris.csv', 'utf-8')
 >>> read_csv_with_delimiter('iris.csv', ';')
@@ -349,7 +419,7 @@ Decision
 
 * Good: easy
 * Good: verbose
-* Good: extensible
+* Good: extensible (easy to convert to 3D)
 
 Alternative, maybe in future:
 
