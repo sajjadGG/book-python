@@ -199,6 +199,24 @@ Install
     $ pip install 'python-jose[cryptography]' python-multipart
 
 
+Further Reading
+---------------
+OWASP JWT security cheatsheet:
+
+* https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html
+* https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html
+
+Best practices:
+
+* https://curity.io/resources/learn/jwt-best-practices/
+* https://blog.logrocket.com/jwt-authentication-best-practices/
+
+JWT attacker point of view:
+
+* https://owasp.org/www-chapter-vancouver/assets/presentations/2020-01_Attacking_and_Securing_JWT.pdf
+* https://owasp.org/www-chapter-belgium/assets/2021/2021-02-18/JWT-Security.pdf
+
+
 References
 ----------
 .. [#Thiyagarajan2021] Thiyagarajan, S. Python API Development - Comprehensive Course for Beginners. Year: 2021. Retrieved: 2022-03-26. URL: https://www.youtube.com/watch?v=0sOvCWFmrtA
