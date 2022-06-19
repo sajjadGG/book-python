@@ -68,6 +68,24 @@ Timeit - Console use
     print a short usage message and exit
 
 
+PyPerformance
+-------------
+* ``pip install pyperformance``
+* ``pyperformance run -b django_template`` - run django template benchmark
+
+.. code-block:: console
+
+    $ python3.10 -m venv venv-py310
+    $ venv-py310/bin/pip install pyperformance
+    $ venv-py310/bin/pyperformance run -b django_template
+
+.. code-block:: console
+
+    $ python3.11 -m venv venv-py311
+    $ venv-py311/bin/pip install pyperformance
+    $ venv-py311/bin/pyperformance run -b django_template
+
+
 References
 ----------
 * https://www.youtube.com/watch?v=RT88FrHttRI
