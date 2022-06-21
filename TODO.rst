@@ -77,6 +77,13 @@ Numpy
 
 Pandas
 ------
+* ``pd.Series.dt.assign()`` - przydatne przy chaining
+* ``pd.Series.dt.assign(column_name = lambda x: ...)``
+* ``pd.Series.dt.tc_convert('Europe/Warsaw')``
+* ``pd.Series.str.contains('text')``
+* ``pd.pipe()`` - create intermediate variable from chain
+* ``pd.pipe(lambda df: display(df) or df)`` - use display from IPython
+* ``.memory_usage(deep=True)``
 * Zrobić rozpiskę, które funkcje zwracają ``np.array`` a które robią inplace
 * poprawić przykłady z ``pd.DataFrame.fill()``, ``bfill`` oraz ``ffill``
 * ``df.read_csv('filename.csv', chunksize=5)`` # five rows at a time, przydatne gdy czytasz plik np. 20GB
@@ -86,7 +93,6 @@ Pandas
 * ROC Curve - stosunek True Positive do False Positive
 * ``pd.to_datetime(df['Timestamp Column'], unit='s')``
 * ``df.resample('d')`` # d - day; m - minute; to taki groupby dla indeksów dat
-* ``df.assign(column_name = lambda x: ...)``
 * ``df['column'].shift(-1)`` # previous column
 * ``pd.explode()``
 * ``series.describe()`` - inaczej się zachowuje dla indeksów numerycznych a inaczej dla timeseries; describe ignores NaN values

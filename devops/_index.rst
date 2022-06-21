@@ -65,6 +65,7 @@ CI/CD
     :caption: CI/CD
 
     ci-cd/ecosystem.rst
+    ci-cd/tests.rst
     ci-cd/tools.rst
     ci-cd/wheel.rst
     ci-cd/pipelines.rst
