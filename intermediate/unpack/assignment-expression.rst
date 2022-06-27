@@ -81,19 +81,23 @@ Processing Streams
 ------------------
 * Processing steams in chunks:
 
->>> # doctest: +SKIP
-... file = open('myfile.txt')
-... chunk = file.read(100)
-...
-... while chunk:
-...     print(chunk)
-...     chunk = file.read(100)
+>>> with open('/tmp/myfile.txt', mode='w'):
+...     file.write('hello')
 
->>> # doctest: +SKIP
-... file = open('myfile.txt')
+>>> file = open('myfile.txt')
+... char = file.read(1)
 ...
-... while chunk := file.read(100):
-...     print(chunk)
+... while char:
+...     print(char)
+...     char = file.read(1)
+
+>>> file = open('myfile.txt')
+...
+... while char := file.read(1):
+...     print(char)
+
+Imagine if this is not a one character, but a chunk of data for processing
+(for example a ten megabytes at once). This construct make more sense then.
 
 
 Checking Match
