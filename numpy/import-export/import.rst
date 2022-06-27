@@ -18,11 +18,11 @@ ValueError: could not convert string 'sepal_length,sepal_width,petal_length,peta
 
 >>> a = np.loadtxt(DATA, skiprows=1)
 Traceback (most recent call last):
-could not convert string '5.4,3.9,1.3,0.4,setosa' to float64 at row 0, column 1.
+ValueError: could not convert string '5.4,3.9,1.3,0.4,setosa' to float64 at row 0, column 1.
 
 >>> a = np.loadtxt(DATA, skiprows=1, delimiter=',')
 Traceback (most recent call last):
-could not convert string 'setosa' to float64 at row 0, column 5.
+ValueError: could not convert string 'setosa' to float64 at row 0, column 5.
 
 >>> a = np.loadtxt(DATA, skiprows=1, delimiter=',', max_rows=5, usecols=(0,1,2,3))
 >>> a

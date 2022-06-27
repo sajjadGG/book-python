@@ -85,7 +85,7 @@ Multi Unpacking Assignment
 
 >>> a, b = c, d = 1, 2
 >>> print(f'{a=}, {b=}, {c=}, {d=}')
-a=1, b=2, c=3, d=4
+a=1, b=2, c=1, d=2
 
 >>> a, b = c, d = 1, 2
 >>>
