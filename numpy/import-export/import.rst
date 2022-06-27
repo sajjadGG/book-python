@@ -14,15 +14,15 @@ np.loadtxt()
 
 >>> a = np.loadtxt(DATA)
 Traceback (most recent call last):
-ValueError: could not convert string to float: 'sepal_length,sepal_width,petal_length,petal_width,species'
+ValueError: could not convert string 'sepal_length,sepal_width,petal_length,petal_width,species' to float64 at row 0, column 1.
 
 >>> a = np.loadtxt(DATA, skiprows=1)
 Traceback (most recent call last):
-ValueError: could not convert string to float: '5.4,3.9,1.3,0.4,setosa'
+could not convert string '5.4,3.9,1.3,0.4,setosa' to float64 at row 0, column 1.
 
 >>> a = np.loadtxt(DATA, skiprows=1, delimiter=',')
 Traceback (most recent call last):
-ValueError: could not convert string to float: 'setosa'
+could not convert string 'setosa' to float64 at row 0, column 5.
 
 >>> a = np.loadtxt(DATA, skiprows=1, delimiter=',', max_rows=5, usecols=(0,1,2,3))
 >>> a

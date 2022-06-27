@@ -18,6 +18,10 @@ Multi assignment:
 
 >>> a = b = 1
 
+Multi unpacking assignment:
+
+>>> a, b = c, d = 1, 2
+
 
 Assignment
 ----------
@@ -73,6 +77,24 @@ a=1, b=1
 >>> a = b = c = 1
 >>> a = b = c = d = 1
 >>> a = b = c = d = e = 1
+
+
+Multi Unpacking Assignment
+--------------------------
+* ``iterable[identifier] = iterable[identifier] = iterable[object]``
+
+>>> a, b = c, d = 1, 2
+>>> print(f'{a=}, {b=}, {c=}, {d=}')
+a=1, b=2, c=3, d=4
+
+>>> a, b = c, d = 1, 2
+>>>
+>>> print(f'{a=}, {c=}')
+a=1, c=1
+>>>
+>>> c = 0
+>>> print(f'{a=}, {c=}')
+a=1, c=0
 
 
 Right-Side Brackets
@@ -264,8 +286,8 @@ Python understands this as:
 
 Recap
 -----
-* Three types of assignments: Scalar, Vector, Multi
-* For vector assignment, lengths at both sides must be the same
+* Four types of assignments: Scalar, Vector, Multi
+* For unpacking assignment, lengths at both sides must be the same
 * Both left and right expression side brackets are optional
 * Unpacking nested sequences
 * Skipping values is done by using ``_``
