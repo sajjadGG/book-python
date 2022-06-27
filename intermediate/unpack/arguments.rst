@@ -5,7 +5,6 @@ Unpack Arguments
 .. figure:: img/unpack-assignment,args,params.png
 
 
-
 Recap
 -----
 * Argument - Value or variable being passed to the function
@@ -115,8 +114,8 @@ Traceback (most recent call last):
 TypeError: echo() got multiple values for argument 'a'
 
 
-Objects From Sequence
----------------------
+Create One Object
+-----------------
 >>> class Iris:
 ...     def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
 ...         self.sepal_length = sepal_length
@@ -124,18 +123,55 @@ Objects From Sequence
 ...         self.petal_length = petal_length
 ...         self.petal_width = petal_width
 ...         self.species = species
->>>
->>>
+
+Objects From Sequence:
+
 >>> DATA = (6.0, 3.4, 4.5, 1.6, 'versicolor')
 >>>
 >>> result = Iris(*DATA)
->>>
 >>> vars(result)  # doctest: +NORMALIZE_WHITESPACE
 {'sepal_length': 6.0,
  'sepal_width': 3.4,
  'petal_length': 4.5,
  'petal_width': 1.6,
  'species': 'versicolor'}
+
+Objects From Mappings:
+
+>>> DATA = {
+...     "sepal_length": 5.8,
+...     "sepal_width": 2.7,
+...     "petal_length": 5.1,
+...     "petal_width": 1.9,
+...     "species": "virginica",
+... }
+>>>
+>>> iris = Iris(**DATA)
+>>> vars(iris)  # doctest: +NORMALIZE_WHITESPACE
+{'sepal_length': 5.8,
+ 'sepal_width': 2.7,
+ 'petal_length': 5.1,
+ 'petal_width': 1.9,
+ 'species': 'virginica'}
+
+
+Create Many Objects
+-------------------
+>>> from pprint import pprint
+>>>
+>>> class Iris:
+...     def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
+...         self.sepal_length = sepal_length
+...         self.sepal_width = sepal_width
+...         self.petal_length = petal_length
+...         self.petal_width = petal_width
+...         self.species = species
+...
+...     def __repr__(self):
+...         values = tuple(vars(self).values())
+...         return f'Iris{values}'
+
+Object from list of sequences:
 
 >>> DATA = [
 ...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -145,64 +181,18 @@ Objects From Sequence
 ...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
 ...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
 >>>
->>>
->>> class Iris:
-...     def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
-...         self.sepal_length = sepal_length
-...         self.sepal_width = sepal_width
-...         self.petal_length = petal_length
-...         self.petal_width = petal_width
-...         self.species = species
-...
-...     def __repr__(self):
-...         return str(vars(self))
->>>
->>>
 >>> result = [Iris(*row) for row in DATA]
 >>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[{'sepal_length': 5.8, 'sepal_width': 2.7, 'petal_length': 5.1, 'petal_width': 1.9, 'species': 'virginica'},
- {'sepal_length': 5.1, 'sepal_width': 3.5, 'petal_length': 1.4, 'petal_width': 0.2, 'species': 'setosa'},
- {'sepal_length': 5.7, 'sepal_width': 2.8, 'petal_length': 4.1, 'petal_width': 1.3, 'species': 'versicolor'},
- {'sepal_length': 6.3, 'sepal_width': 2.9, 'petal_length': 5.6, 'petal_width': 1.8, 'species': 'virginica'},
- {'sepal_length': 6.4, 'sepal_width': 3.2, 'petal_length': 4.5, 'petal_width': 1.5, 'species': 'versicolor'},
- {'sepal_length': 4.7, 'sepal_width': 3.2, 'petal_length': 1.3, 'petal_width': 0.2, 'species': 'setosa'}]
+>>> pprint(result)
+[Iris(5.8, 2.7, 5.1, 1.9, 'virginica'),
+ Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
+ Iris(5.7, 2.8, 4.1, 1.3, 'versicolor'),
+ Iris(6.3, 2.9, 5.6, 1.8, 'virginica'),
+ Iris(6.4, 3.2, 4.5, 1.5, 'versicolor'),
+ Iris(4.7, 3.2, 1.3, 0.2, 'setosa')]
 
+Objects from list of mappings:
 
-Objects From Mappings
----------------------
->>> class Iris:
-...     def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
-...         self.sepal_length = sepal_length
-...         self.sepal_width = sepal_width
-...         self.petal_length = petal_length
-...         self.petal_width = petal_width
-...         self.species = species
->>>
->>>
->>> DATA = {"sepal_length":5.8,"sepal_width":2.7,"petal_length":5.1,"petal_width":1.9,"species":"virginica"}
->>>
->>> iris = Iris(**DATA)
->>>
->>> vars(iris)  # doctest: +NORMALIZE_WHITESPACE
-{'sepal_length': 5.8,
- 'sepal_width': 2.7,
- 'petal_length': 5.1,
- 'petal_width': 1.9,
- 'species': 'virginica'}
-
->>> class Iris:
-...     def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
-...         self.sepal_length = sepal_length
-...         self.sepal_width = sepal_width
-...         self.petal_length = petal_length
-...         self.petal_width = petal_width
-...         self.species = species
-...
-...     def __repr__(self):
-...         return str(vars(self))
->>>
->>>
 >>> DATA = [{"sepal_length":5.8,"sepal_width":2.7,"petal_length":5.1,"petal_width":1.9,"species":"virginica"},
 ...         {"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2,"species":"setosa"},
 ...         {"sepal_length":5.7,"sepal_width":2.8,"petal_length":4.1,"petal_width":1.3,"species":"versicolor"},
@@ -212,13 +202,40 @@ Objects From Mappings
 >>>
 >>> result = [Iris(**row) for row in DATA]
 >>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[{'sepal_length': 5.8, 'sepal_width': 2.7, 'petal_length': 5.1, 'petal_width': 1.9, 'species': 'virginica'},
- {'sepal_length': 5.1, 'sepal_width': 3.5, 'petal_length': 1.4, 'petal_width': 0.2, 'species': 'setosa'},
- {'sepal_length': 5.7, 'sepal_width': 2.8, 'petal_length': 4.1, 'petal_width': 1.3, 'species': 'versicolor'},
- {'sepal_length': 6.3, 'sepal_width': 2.9, 'petal_length': 5.6, 'petal_width': 1.8, 'species': 'virginica'},
- {'sepal_length': 6.4, 'sepal_width': 3.2, 'petal_length': 4.5, 'petal_width': 1.5, 'species': 'versicolor'},
- {'sepal_length': 4.7, 'sepal_width': 3.2, 'petal_length': 1.3, 'petal_width': 0.2, 'species': 'setosa'}]
+>>> pprint(result)
+[Iris(5.8, 2.7, 5.1, 1.9, 'virginica'),
+ Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
+ Iris(5.7, 2.8, 4.1, 1.3, 'versicolor'),
+ Iris(6.3, 2.9, 5.6, 1.8, 'virginica'),
+ Iris(6.4, 3.2, 4.5, 1.5, 'versicolor'),
+ Iris(4.7, 3.2, 1.3, 0.2, 'setosa')]
+
+
+Recap
+-----
+>>> DATA = [
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>>
+>>>
+>>> def show(sl, sw, pl, pw, species):
+...     avg = sum([sl,sw,pl,pw]) / len([sl,sw,pl,pw])
+...     return species, avg, sl, sw, pl, pw
+>>>
+>>>
+>>> for *values, species in DATA:
+...     name, avg, \*data = show(*values, species)
+...     print(f'{avg=:1.f}, {avg=}, {data=}')
+avg=3.9, values=[5.8, 2.7, 5.1, 1.9], species='virginica'
+avg=2.5, values=[5.1, 3.5, 1.4, 0.2], species='setosa'
+avg=3.5, values=[5.7, 2.8, 4.1, 1.3], species='versicolor'
+avg=4.1, values=[6.3, 2.9, 5.6, 1.8], species='virginica'
+avg=3.9, values=[6.4, 3.2, 4.5, 1.5], species='versicolor'
+avg=2.4, values=[4.7, 3.2, 1.3, 0.2], species='setosa'
 
 
 Use Case - 0x01
@@ -443,7 +460,7 @@ Data: {'firstname': 'Mark',
 
 Use Case - 0x07
 ---------------
-* Definition of pandas.read_csv() function [#pandasreadcsv]_
+* Definition of ``pandas.read_csv()`` function [#pandasreadcsv]_
 * Proxy functions. One of the most common use of ``*args``, ``**kwargs``:
 
 >>> def read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer',
