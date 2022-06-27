@@ -84,17 +84,27 @@ Processing Streams
 >>> with open('/tmp/myfile.txt', mode='w'):
 ...     file.write('hello')
 
->>> file = open('myfile.txt')
-... char = file.read(1)
-...
-... while char:
+>>> file = open('/tmp/myfile.txt')
+>>>
+>>> char = file.read(1)
+>>> while char:
 ...     print(char)
 ...     char = file.read(1)
+h
+e
+l
+l
+o
 
->>> file = open('myfile.txt')
-...
-... while char := file.read(1):
+>>> file = open('/tmp/myfile.txt')
+>>>
+>>> while char := file.read(1):
 ...     print(char)
+h
+e
+l
+l
+o
 
 Imagine if this is not a one character, but a chunk of data for processing
 (for example a ten megabytes at once). This construct make more sense then.
