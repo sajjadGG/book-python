@@ -186,6 +186,48 @@ Use Case - 0x03
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
+...     age: int = field(metadata={'unit': 'years', 'type': 'range', 'min': 30, 'max': 50})
+...     height: float = field(metadata={'unit': 'cm', 'type': 'range', 'min': 150, 'max': 210})
+...     weight: float = field(metadata={'unit': 'kg', 'type': 'range', 'min': 50, 'max': 90})
+...     agency: str = field(metadata={'type': 'choices', 'options': ['ESA', 'NASA', 'POLSA']})
+...
+...     def _range_validator(self, field):
+...         min = self.__dataclass_fields__[field].metadata['min']
+...         max = self.__dataclass_fields__[field].metadata['max']
+...         value = getattr(self, field)
+...         if not min <= value < max:
+...             raise ValueError(f'{field=} with {value=} is not in range between {min=} and {max=}')
+...
+...     def _choices_validator(self, field):
+...         options = self.__dataclass_fields__[field].metadata['options']
+...         value = getattr(self, field)
+...         if value not in options:
+...             raise ValueError(f'{field=} with {value=} is not in {options=}')
+...
+...     def __post_init__(self):
+...         for attribute in vars(self).keys():
+...             field = self.__dataclass_fields__[attribute]
+...             if field.metadata:
+...                 validator_type = field.metadata['type']
+...                 match validator_type:
+...                     case 'choice': self._choices_validator(attribute)
+...                     case 'range': self._range_validator(attribute)
+>>>
+>>>
+>>> mark = Astronaut('Mark', 'Watney', age=60, height=175, weight=75, agency='NASA')
+Traceback (most recent call last):
+ValueError: field='age' with value=60 is not in range between min=30 and max=50
+
+
+Use Case - 0x03
+---------------
+>>> from dataclasses import dataclass, field
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
 ...     age: int = field(default=None, metadata={'type': 'range', 'unit': 'years', 'min': 30, 'max': 50})
 ...     height: float | None = field(default=None, metadata={'type': 'range', 'unit': 'cm',  'min': 156, 'max': 210})
 ...     agency: str | None = field(default='NASA', metadata={'type': 'choices', 'options': ['NASA', 'ESA']})
