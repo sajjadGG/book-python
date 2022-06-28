@@ -228,8 +228,8 @@ Recap
 >>>
 >>>
 >>> for *values, species in DATA:
-...     name, avg, \*data = show(*values, species)
-...     print(f'{avg=:1.f}, {avg=}, {data=}')
+...     name, avg, *data = show(*values, species)
+...     print(f'{avg=:.1f}, {values=}, {species=}')
 avg=3.9, values=[5.8, 2.7, 5.1, 1.9], species='virginica'
 avg=2.5, values=[5.1, 3.5, 1.4, 0.2], species='setosa'
 avg=3.5, values=[5.7, 2.8, 4.1, 1.3], species='versicolor'

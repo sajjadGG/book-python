@@ -81,8 +81,9 @@ Processing Streams
 ------------------
 * Processing steams in chunks:
 
->>> with open('/tmp/myfile.txt', mode='w'):
+>>> with open('/tmp/myfile.txt', mode='w') as file:
 ...     file.write('hello')
+5
 
 >>> file = open('/tmp/myfile.txt')
 >>>
