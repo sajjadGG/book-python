@@ -13,6 +13,7 @@ Generator Builtin
 
 Range
 -----
+* Generate integers from ``start`` to ``stop`` incrementing by ``step``
 * ``range([start], <stop>, [step])``
 * optional ``start``, inclusive, default: ``0``
 * required ``stop``, exclusive,
@@ -42,7 +43,8 @@ range(0, 3)
 
 Reversed
 --------
-* ``reversed()`` - Return a reverse iterator over the values of the given sequence
+* Return a reverse iterator over the values of the given sequence
+* ``reversed(sequence, /)``
 
 >>> data = (1, 2, 3)
 >>> list(reversed(data))
@@ -51,7 +53,9 @@ Reversed
 
 Enumerate
 ---------
-* ``enumerate(*iterables)``
+* ``enumerate(iterable, start=0)``
+* Return an enumerate object
+* The enumerate object yields pairs containing a count (from start, which defaults to zero) and a value yielded by the iterable argument.
 
 >>> from inspect import isgeneratorfunction, isgenerator
 >>>
@@ -110,7 +114,16 @@ StopIteration
 
 Zip
 ---
-* ``zip(*iterables)``
+* ``zip(*iterables, strict=False)``
+* Iterate over several iterables in parallel, producing tuples with an item from each one.
+
+The ``zip`` object yields n-length tuples, where n is the number of iterables
+passed as positional arguments to ``zip()``. The i-th element in every tuple
+comes from the i-th iterable argument to ``zip()``.  This continues until the
+shortest argument is exhausted. [#pydoczip]_
+
+If strict is true and one of the arguments is exhausted before the others,
+raise a ``ValueError``.
 
 >>> from inspect import isgeneratorfunction, isgenerator
 >>>
@@ -235,6 +248,7 @@ StopIteration
 [1, 4, 9]
 
 
+
 Filter
 ------
 * ``filter(callable, *iterables)``
@@ -279,6 +293,42 @@ StopIteration
 >>>
 >>> list(result)
 [2, 4, 6]
+
+
+Performance:
+
+>>> def even(x):
+...     return x % 2 == 0
+>>>
+>>>
+>>> data = [1, 2, 3, 4, 5, 6]
+
+>>> # doctest: +SKIP
+... %%timeit -r 1000 -n 1000
+... result = [x for x in data if even(x)]
+1.11 µs ± 139 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+>>> # doctest: +SKIP
+... %%timeit -r 1000 -n 1000
+... result = list(filter(even, data))
+921 ns ± 112 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+
+
+Performance
+-----------
+>>> def even(x):
+...     return x % 2 == 0
+
+>>> # doctest: +SKIP
+... %%timeit -r 1000 -n 1000
+... result = [float(x) for x in data if even(x)]
+1.9 µs ± 206 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+>>> # doctest: +SKIP
+... %%timeit -r 1000 -n 1000
+... result = list(map(float, filter(parzysta, data)))
+1.66 µs ± 175 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
 
 
 Use Case - 0x01
@@ -384,6 +434,11 @@ Use Case - 0x06
 
     $ cat ~/.profile |grep addnum
     alias addnum='python -c"import sys; print(sum(map(int, sys.stdin)))"'
+
+
+References
+----------
+.. [#pydoczip] Python Core Developers. Built-in Functions. Year: 2022. Retrieved: 2022-06-28. URL: https://docs.python.org/3/library/functions.html#zip
 
 
 Assignments
