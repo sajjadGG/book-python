@@ -2,8 +2,8 @@
 * Assignment: FuncProg Recurrence Fibonacci
 * Required: yes
 * Complexity: easy
-* Lines of code: 5 lines
-* Time: 5 min
+* Lines of code: 4 lines
+* Time: 3 min
 
 English:
     1. Fibonacci series is created by adding two previous numbers, i.e.:
