@@ -17,7 +17,8 @@ English:
 Polish:
     1. Ciąg Fibonacciego powstaje przez dodawanie dwóch poprzednich liczb, np:
        1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
-    2. Zdefiniuj funkcję `fib(n)` używającą rekurencji do generowania wyrazów ciągu Fibonacciego
+    2. Zdefiniuj funkcję `fib(n)` używającą rekurencji do generowania
+       wyrazów ciągu Fibonacciego
     3. Dla `n` mniejszej lub równej 1, zwróć 1
     4. W przeciwnym wypadku zwróć sumę `fib(n-1)` i `fib(n-2)`
     5. Uruchom doctesty - wszystkie muszą się powieść
