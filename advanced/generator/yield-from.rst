@@ -251,6 +251,24 @@ Conclusion
   generator function.
 
 
+Use Case - 0x01
+---------------
+>>> def get_files(directories):
+...     for directory in directories:
+...         yield from Path(directory).rglob('*.py')
+>>>
+>>>
+>>> paths = [
+...     'ChapterA/_assignments',
+...     'ChapterA/_solutions',
+...     'ChapterB/_solutions',
+...     'ChapterB/_solutions',
+... ]
+>>>
+>>> for file in get_files(paths):  # doctest: +SKIP
+...     print(file)
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/generator_yieldfrom_a.py
