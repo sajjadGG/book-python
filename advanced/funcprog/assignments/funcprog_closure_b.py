@@ -53,12 +53,13 @@ Tests:
 
 # Takes func
 # Defines wrapper with args, kwargs
+# Wrapper returns 'hello from wrapper'
 # Returns wrapper
 # type: Callable[[Callable], Callable]
 def check():
     ...
 
-# Prints `hello from function`
+# Returns `hello from function`
 # type: Callable
 def hello():
     ...
