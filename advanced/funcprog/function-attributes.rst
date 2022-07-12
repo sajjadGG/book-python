@@ -161,17 +161,18 @@ Use Case - 0x03
 
 Use Case - 0x04
 ---------------
-def silnia(n):
-    if not hasattr(silnia, '_cache'):
-        silnia._cache = {0: 1}
-    if n not in silnia._cache:
-        silnia._cache[n] = n * silnia(n-1)
-    return silnia._cache[n]
-
-silnia(10)
+>>> def factorial(n):
+...     if not hasattr(factorial, '_cache'):
+...         factorial._cache = {0: 1}
+...     if n not in factorial._cache:
+...         factorial._cache[n] = n * factorial(n-1)
+...     return factorial._cache[n]
+>>>
+>>>
+>>> factorial(10)
 3628800
-
-silnia._cache
+>>>
+>>> factorial._cache
 {0: 1,
  1: 1,
  2: 2,

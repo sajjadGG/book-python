@@ -201,33 +201,27 @@ True
 Operator Precedence
 -------------------
 .. csv-table:: Operator precedence
-    :header-rows: 1
     :widths: 25, 75
+    :header: "Operator", "Description"
 
-    "Operator", "Description"
-    "``lambda``", "Lambda expression"
-    "``if``, ``elif``, ``else``", "Conditional expression"
-    "``and``", "Boolean AND"
-    "``or``", "Boolean OR"
-    "``not x``", "Boolean NOT"
-    "``in``, ``not in``, ``is``, ``is not``,
-
-    ``<``, ``<=``, ``>``, ``>=``, ``!=``, ``==``", "Comparisons, including membership tests and identity tests"
-    "``|``", "Bitwise OR"
-    "``^``", "Bitwise XOR"
-    "``&``", "Bitwise AND"
-    "``<<``, ``>>``", "Shifts"
-    "``**``", "Exponentiation"
-    "``*``, ``@``, ``/``, ``//``, ``%``", "Multiplication, matrix multiplication, division, floor division, remainder"
-    "``+``, ``-``", "Addition and subtraction"
-    "``+x``, ``-x``, ``~x``", "Positive, negative, bitwise NOT"
-    "``await``", "Await expression"
-    "``x[index]``, ``x[index:index]``,
-
-    ``x(arguments...)``, ``x.attribute``", "Subscription, slicing, call, attribute reference"
-    "``(expressions...)``, ``[expressions...]``,
-
-    ``{key: value...}``, ``{expressions...}``", "Binding or tuple display, list display, dictionary display, set display"
+    "``yield x``, ``yield from x``",                                                         "Yield expression"
+    "``lambda``",                                                                            "Lambda expression"
+    "``if``, ``elif``, ``else``",                                                            "Conditional expression"
+    "``or``",                                                                                "Boolean OR"
+    "``and``",                                                                               "Boolean AND"
+    "``not x``",                                                                             "Boolean NOT"
+    "``in``, not in``, ``is``, ``is not``, ``<``, ``<=``, ``>``, ``>=``, ``!=``, ``==``",    "Comparisons, including membership tests and identity tests"
+    "``|``",                                                                                 "Bitwise OR"
+    "``^``",                                                                                 "Bitwise XOR"
+    "``&``",                                                                                 "Bitwise AND"
+    "``<<``, ``>>``",                                                                        "Shifts"
+    "``+``, ``-``",                                                                          "Addition and subtraction"
+    "``*``, ``@``, ``/``, ``//``, ``%``",                                                    "Multiplication, matrix multiplication, division, remainder"
+    "``+x``, ``-x``, ``~x``",                                                                "Positive, negative, bitwise NOT"
+    "``**``",                                                                                "Exponentiation"
+    "``await x``",                                                                           "Await expression"
+    "``x[index]``, ``x[index:index]``, ``x(arguments...)``, ``x.attribute``",                "Subscription, slicing, call, attribute reference"
+    "``(expressions...)``, ``[expressions...]``, ``{key: value...}``, ``{expressions...}``", "Binding or tuple display, list display, dictionary display, set display"
 
 
 To If or not to If
