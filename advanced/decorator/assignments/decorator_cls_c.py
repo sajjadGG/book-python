@@ -1,8 +1,8 @@
 """
 * Assignment: Decorator Class TypeCheck
 * Complexity: medium
-* Lines of code: 18 lines
-* Time: 13 min
+* Lines of code: 8 lines
+* Time: 8 min
 
 English:
     1. Refactor decorator `decorator` to decorator `TypeCheck`

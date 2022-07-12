@@ -162,7 +162,7 @@ Use Case - 0x04
 ...     return a + b
 >>>
 >>>
->>> myfunction()  # doctest: +SKIP
+>>> add(1, 2)  # doctest: +SKIP
 /home/python/myscript.py:11: DeprecationWarning: Call to deprecated function `add` in /home/python/myscript.py at line 19
 
 

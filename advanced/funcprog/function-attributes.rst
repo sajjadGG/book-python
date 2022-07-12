@@ -172,7 +172,7 @@ Use Case - 0x04
 >>> factorial(10)
 3628800
 >>>
->>> factorial._cache
+>>> factorial._cache  # doctest: +NORMALIZE_WHITESPACE
 {0: 1,
  1: 1,
  2: 2,

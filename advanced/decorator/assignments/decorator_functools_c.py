@@ -2,7 +2,7 @@
 * Assignment: Decorator Functools Cls
 * Complexity: easy
 * Lines of code: 2 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
     1. Modify code to restore docstring and name from decorated class
