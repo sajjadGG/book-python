@@ -302,20 +302,26 @@ delegate, and contravariant type parameters can be used as parameter types.
         Enables you to use a more derived type than originally specified
         [#MicrosoftGenericsCovContra]_
 
-        >>> check(True)  # True derives from int
+        >>> check(True)     # ok
+        >>> check(1)        # ok
+        >>> check(object)   # error
 
     Contravariance
         Enables you to use a more generic (less derived) type than
         originally specified [#MicrosoftGenericsCovContra]_
 
-        >>> check(object)  # int inherits from object
+        >>> check(True)     # error
+        >>> check(1)        # ok
+        >>> check(object)   # ok
 
     Invariance
         Means that you can use only the type originally specified. An
         invariant generic type parameter is neither covariant nor
         contravariant [#MicrosoftGenericsCovContra]_
 
-        >>> check(1)  # 1 is int
+        >>> check(True)     # error
+        >>> check(1)        # ok
+        >>> check(object)   # error
 
 .. figure:: img/oop-protocol-covariance.png
 
@@ -471,7 +477,7 @@ File ``main.py``:
 >>>
 >>> class Request(Protocol):
 ...     URL: str
-...     def on_success(self, request: str) -> None: ...
+...     def on_success(self, result: str) -> None: ...
 ...     def on_error(self, error: Exception) -> None: ...
 >>>
 >>>
