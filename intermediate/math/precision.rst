@@ -71,6 +71,36 @@ NaN vs Inf
 
 Floating Numbers Precision
 --------------------------
+Floating-point numbers are not real numbers, so the result of ``1.0/3.0``
+cannot be represented exactly without infinite precision. In the decimal
+(base 10) number system, one-third is a repeating fraction, so it has an
+infinite number of digits. Even simple non-repeating decimal numbers can
+be a problem. One-tenth (0.1) is obviously non-repeating, so we can express
+it exactly with a finite number of digits. As it turns out, since numbers
+within computers are stored in binary (base 2) form, even one-tenth cannot
+be represented exactly with floating-point numbers,
+
+When should you use integers and when should you use floating-point numbers?
+A good rule of thumb is this: use integers to count things and use
+floating-point numbers for quantities obtained from a measuring device.
+As examples, we can measure length with a ruler or a laser range finder;
+we can measure volume with a graduated cylinder or a flow meter; we can
+measure mass with a spring scale or triple-beam balance. In all of these
+cases, the accuracy of the measured quantity is limited by the accuracy
+of the measuring device and the competence of the person or system
+performing the measurement. Environmental factors such as temperature
+or air density can affect some measurements. In general, the degree
+of inexactness of such measured quantities is far greater than that
+of the floating-point values that represent them.
+
+Despite their inexactness, floating-point numbers are used every day
+throughout the world to solve sophisticated scientific and engineering
+problems. The limitations of floating-point numbers are unavoidable since
+values with infinite characteristics cannot be represented in a finite way.
+Floating-point numbers provide a good trade-off of precision for practicality.
+
+.. note:: Source [#Halterman2018]_
+
 >>> 0.1
 0.1
 >>>
@@ -217,3 +247,8 @@ Use ``Decimal`` type:
 >>> result = candy + cookie
 >>> print(result)
 0.30
+
+
+References
+----------
+.. [#Halterman2018] Halterman, R.L. Fundamentals of Python Programming. 2018. Southern Adventist University.

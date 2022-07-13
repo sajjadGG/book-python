@@ -289,5 +289,4 @@ True
 
 References
 ----------
-.. [#Hettinger2015] https://www.youtube.com/watch?v=EiOglTERPEo
-.. [#StackOverflowSuper] https://stackoverflow.com/a/46286174
+.. [#Hettinger2015] Hettinger R. Super considered super!. PyCon 2015. Year: 2020. Retrieved: 2022-07-13. URL: https://www.youtube.com/watch?v=EiOglTERPEo

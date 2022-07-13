@@ -200,6 +200,19 @@ True
 
 Operator Precedence
 -------------------
+* Precedence - when an expression contains two different kinds of operators,which should be applied first?
+* Associativity - when an expression contains two operators with the same precedence, which should be applied first?
+
+Precedence:
+
+>>> 1 + 2 * 3
+7
+
+Associativity:
+
+>>> 1 + 2 - 3
+-0
+
 .. csv-table:: Operator precedence
     :widths: 25, 75
     :header: "Operator", "Description"

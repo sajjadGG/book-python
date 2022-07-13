@@ -293,7 +293,7 @@ Compare
 Advanced
 --------
 * Source: [#Halterman2018]_
-* Source: [#stackoverflowMRO]_
+* Source: [#StackOverflowMRO]_
 
 >>> class A: ...
 >>> class B: ...
@@ -394,8 +394,9 @@ There's no obvious expectation, and Python will raise an error.
 
 References
 ----------
-.. [#Hettinger2015] https://www.youtube.com/watch?v=EiOglTERPEo
+.. [#Hettinger2015] Hettinger R. Super considered super!. PyCon 2015. Year: 2020. Retrieved: 2022-07-13. URL: https://www.youtube.com/watch?v=EiOglTERPEo
 .. [#Halterman2018] Halterman, R.L. Fundamentals of Python Programming. 2018. Southern Adventist University.
-.. [#stackoverflowMRO] T.M15. How does Python's super() work with multiple inheritance?. Year: 2020. Retrieved: 2022-07-13. URL: https://stackoverflow.com/a/62753514
+.. [#StackOverflowMRO] T.M15. How does Python's super() work with multiple inheritance? Year: 2020. Retrieved: 2022-07-13. URL: https://stackoverflow.com/a/62753514
+.. [#StackOverflowSuper] Zags. How does Python's super() work with multiple inheritance? Year: 2017. Retrieved: 2022-07-13. URL: https://stackoverflow.com/a/46286174
 
 .. todo:: Assignments
