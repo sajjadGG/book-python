@@ -1,6 +1,13 @@
 Exception Hierarchy
 ===================
 
+.. figure:: img/exception-hierarchy.png
+
+    A small portion of the class hierarchy of Python's standard exceptions.
+    This diagram omits 1 other standard class derived directly from
+    ``BaseException`` and 56 other classes derived directly or indirectly
+    from ``Exception``. Source [#Halterman2018]_
+
 .. code-block:: text
 
     BaseException
@@ -66,3 +73,8 @@ Exception Hierarchy
                +-- UnicodeWarning
                +-- BytesWarning
                +-- ResourceWarning
+
+
+References
+----------
+.. [#Halterman2018] Halterman, R.L. Fundamentals of Python Programming. Publisher: Southern Adventist University. Year: 2018.

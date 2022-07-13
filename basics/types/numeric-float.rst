@@ -351,7 +351,7 @@ Absolute value
 
 References
 ----------
-.. [#Halterman2018] Halterman, R.L. Fundamentals of Python Programming. 2018. Southern Adventist University.
+.. [#Halterman2018] Halterman, R.L. Fundamentals of Python Programming. Publisher: Southern Adventist University. Year: 2018.
 
 
 Assignments
