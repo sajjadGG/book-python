@@ -71,7 +71,7 @@ Object Oriented Programming
     :caption: Object Oriented Programming
 
     oop/attribute-mutable.rst
-    oop/attribute-static.rst
+    oop/attribute-classvar.rst
     oop/attribute-accessmodifiers.rst
     oop/attribute-slots.rst
     oop/method-about.rst

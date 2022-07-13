@@ -1,22 +1,20 @@
 """
-* Assignment: OOP Composition Mixin
+* Assignment: OOP Inheritance Composition
 * Complexity: easy
-* Lines of code: 8 lines
+* Lines of code: 10 lines
 * Time: 3 min
 
 English:
     1. Create class `MarsMission` from classes `Habitat`, `Rocket`, `Astronaut`
-    2. Use mixins classes
-    3. You can modify given classes
-    4. Assignment demonstrates syntax, so do not add any attributes and methods
-    5. Run doctests - all must succeed
+    2. Use composition
+    3. Assignment demonstrates syntax, so do not add any attributes and methods (only type annotations)
+    4. Run doctests - all must succeed
 
 Polish:
     1. Stwórz klasę `MarsMission` z klas `Habitat`, `Rocket`, `Astronaut`
-    2. Użyj klas domieszkowych (mixin)
-    3. Możesz modyfikować dane klasy
-    4. Zadanie demonstruje składnię, nie dodawaj żadnych atrybutów i metod
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    2. Użyj kompozycji
+    3. Zadanie demonstruje składnię, nie dodawaj żadnych atrybutów i metod (tylko anotacje typów)
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -26,14 +24,9 @@ Tests:
     >>> assert isclass(Astronaut)
     >>> assert isclass(Rocket)
     >>> assert isclass(MarsMission)
-    >>> assert issubclass(MarsMission, Habitat)
-    >>> assert issubclass(MarsMission, Astronaut)
-    >>> assert issubclass(MarsMission, Rocket)
-
-    >>> assert len(Habitat.__subclasses__()) == 1
-    >>> assert len(Astronaut.__subclasses__()) == 1
-    >>> assert len(Rocket.__subclasses__()) == 1
-    >>> assert len(MarsMission.__subclasses__()) == 0
+    >>> assert MarsMission.__annotations__['habitat'] is Habitat
+    >>> assert MarsMission.__annotations__['astronaut'] is Astronaut
+    >>> assert MarsMission.__annotations__['rocket'] is Rocket
 """
 
 
@@ -50,5 +43,7 @@ class Rocket:
     pass
 
 
-class MarsMission(Habitat, Astronaut, Rocket):
-    pass
+class MarsMission:
+    habitat: Habitat
+    astronaut: Astronaut
+    rocket: Rocket

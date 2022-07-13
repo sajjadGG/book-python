@@ -1,41 +1,18 @@
-OOP Attribute Static/Dynamic
-============================
+OOP Attribute ClassVar
+======================
+* Class Variables
+* Instance Variables
+* Type Annotations
 
 
-Recap
------
-Type annotations are not variable definition:
-
->>> x: int
->>>
->>> print(x)
-Traceback (most recent call last):
-NameError: name 'x' is not defined
-
-Type annotations will only tell, that if there will be a identifier with
-name ``x``, it should be an ``int``:
-
->>> x: int
->>> x = 0
->>>
->>> print(x)
-0
-
-Typically it is written in shorter form:
-
->>> x: int = 0
->>>
->>> print(x)
-0
-
-
-Static Fields
--------------
+Class Variables
+---------------
 * Fields defined on a class
 * Must have default values
 * Share state
+* Also known as 'static attributes'
 
-Static fields are defined on a class:
+Class variables are defined on a class:
 
 >>> class Astronaut:
 ...     pass
@@ -44,20 +21,21 @@ Static fields are defined on a class:
 >>> Astronaut.firstname = 'Mark'
 >>> Astronaut.lastname = 'Watney'
 
-Static fields are defined in a class:
+Class variables are defined in a class:
 
 >>> class Astronaut:
 ...     firstname = 'Mark'
 ...     lastname = 'Watney'
 
 
-Dynamic Fields
---------------
+Instance Variables
+------------------
 * Fields defined on an instance
-* Do not share state (unless mutable argument)
+* Do not share state (unless mutable argument in method signature)
 * By convention initialized in ``__init__()``
+* Also known as 'dynamic attributes'
 
-Dynamic fields are defined on an instance:
+Instance variables are defined on an instance:
 
 >>> class Astronaut:
 ...     pass
@@ -67,14 +45,14 @@ Dynamic fields are defined on an instance:
 >>> astro.firstname = 'Mark'
 >>> astro.lastname = 'Watney'
 
-Dynamic fields are defined in init:
+Instance variables are defined in init:
 
 >>> class Astronaut:
 ...     def __init__(self):
 ...         self.firstname = 'Mark'
 ...         self.lastname = 'Watney'
 
-Dynamic fields with variable values:
+Instance variables with variable values:
 
 >>> class Astronaut:
 ...     def __init__(self, firstname, lastname):
@@ -82,9 +60,9 @@ Dynamic fields with variable values:
 ...         self.lastname = lastname
 
 
-Static and Dynamic Fields
--------------------------
-Static and dynamic fields defined in code:
+Class and Instance Variables
+----------------------------
+Class and instance variables defined in code:
 
 >>> class Astronaut:
 ...     pass
@@ -97,7 +75,7 @@ Static and dynamic fields defined in code:
 >>> astro.firstname = 'Melissa'
 >>> astro.lastname = 'Lewis'
 
-Static and dynamic fields defined in class:
+Class and instance variables defined in class:
 
 >>> class Astronaut:
 ...     firstname = 'Mark'
@@ -107,45 +85,50 @@ Static and dynamic fields defined in class:
 ...         self.firstname = 'Mark'
 ...         self.lastname = 'Watney'
 
-Note, the last example makes not meaningful sense. Dynamic fields will shadow
-static fields.
+Note, the last example makes not meaningful sense. Instance variables
+will shadow class variables.
 
 
 Type Annotations
 ----------------
-No fields at all (sic!), type annotations only:
+Type annotations are not variable definition:
+
+>>> x: int
+>>>
+>>> print(x)
+Traceback (most recent call last):
+NameError: name 'x' is not defined
+
+Type annotations will only tell, that if there will be an identifier
+with name ``x`` then it should be an ``int``:
+
+>>> x: int
+>>> x = 1
+>>>
+>>> print(x)
+1
+
+Typically it is written in shorter form:
+
+>>> x: int = 1
+>>>
+>>> print(x)
+1
+
+These are not attributes at all (sic!). These are type annotations only,
+and they do not exist before initialization in a code:
 
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
 
-Static fields with type annotations:
+Class variables with type annotations:
 
 >>> class Astronaut:
 ...     firstname: str = 'Mark'
 ...     lastname: str = 'Watney'
 
-Dynamic fields with type annotations:
-
->>> class Astronaut:
-...     firstname: str
-...     lastname: str
-...
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
-
-Both static and dynamic fields with type annotations:
-
->>> class Astronaut:
-...     firstname: str = 'Mark'
-...     lastname: str = 'Watney'
-...
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
-
-Static fields with type annotations:
+Class variables with proper type annotations:
 
 >>> from typing import ClassVar
 >>>
@@ -153,72 +136,70 @@ Static fields with type annotations:
 >>> class Astronaut:
 ...     firstname: ClassVar[str] = 'Mark'
 ...     lastname: ClassVar[str] = 'Watney'
+
+Instance variables with type annotations:
+
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...
+...     def __init__(self, firstname, lastname):
+...         self.firstname = firstname
+...         self.lastname = lastname
 
 
 Dataclasses
 -----------
-* Dataclass uses static field notation to create dynamic fields
-* Dataclass do not validate type annotations, unless ``ClassVar`` or ``InitVar``
+* Dataclass uses class variables notation to create instance fields
+* Dataclass do not validate type annotations, unless ``ClassVar``
 
->>> from dataclasses import dataclass, InitVar
+>>> from dataclasses import dataclass
 >>> from typing import ClassVar
 
-Dynamic fields:
+Instance variables:
 
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
 
-Dynamic fields with default values
+Instance variables with default values:
 
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str = 'Mark'
 ...     lastname: str = 'Watney'
 
-Static fields created by ``ClassVar``
+Class variables must have default values:
 
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: ClassVar[str] = 'Mark'
 ...     lastname: ClassVar[str] = 'Watney'
 
-Using ``InitVar`` will not produce any fields at all. ``InitVar``
-specifies parameters to ``__post_init__()`` method. They will be
-forgotten as soon after ``__post_init__()`` returns, unless you
-assign them to whatever fields.
 
->>> @dataclass
-... class Astronaut:
-...     firstname: InitVar[str] = 'Mark'
-...     lastname: InitVar[str] = 'Watney'
-
-
-Static vs. Dynamic Fields
--------------------------
-Static vs. Dynamic fields:
-
-Lets define a class with static field:
+Class vs. Instance Variables
+----------------------------
+Lets define a class with class variable:
 
 >>> class Astronaut:
 ...     agency = 'NASA'
 
 Lets create three instances of ``Astronaut`` class:
 
->>> watney = Astronaut()
->>> lewis = Astronaut()
->>> martinez = Astronaut()
+>>> mark = Astronaut()
+>>> melissa = Astronaut()
+>>> rick = Astronaut()
 
 We will print ``agency`` field:
 
->>> print(watney.agency)
+>>> print(mark.agency)
 NASA
 >>>
->>> print(lewis.agency)
+>>> print(melissa.agency)
 NASA
 >>>
->>> print(martinez.agency)
+>>> print(rick.agency)
 NASA
 >>>
 >>> print(Astronaut.agency)
@@ -229,13 +210,13 @@ Lets change field on a class and print ``agency`` field:
 >>> Astronaut.agency = 'ESA'
 >>>
 >>>
->>> print(watney.agency)
+>>> print(mark.agency)
 ESA
 >>>
->>> print(lewis.agency)
+>>> print(melissa.agency)
 ESA
 >>>
->>> print(martinez.agency)
+>>> print(rick.agency)
 ESA
 >>>
 >>> print(Astronaut.agency)
@@ -243,36 +224,36 @@ ESA
 
 Lets change field on an instance and print ``agency`` field:
 
->>> watney.agency = 'POLSA'
+>>> mark.agency = 'POLSA'
 >>>
 >>>
->>> print(watney.agency)
+>>> print(mark.agency)
 POLSA
 >>>
->>> print(lewis.agency)
+>>> print(melissa.agency)
 ESA
 >>>
->>> print(martinez.agency)
+>>> print(rick.agency)
 ESA
 >>>
 >>> print(Astronaut.agency)
 ESA
 
-Note, that the class which defined field shadowed the static field from
-class.
+Note, that the class which defined instance variable shadowed
+the class variable.
 
 Lets change field on a class and print ``agency`` field:
 
 >>> Astronaut.agency = 'NASA'
 >>>
 >>>
->>> print(watney.agency)
+>>> print(mark.agency)
 POLSA
 >>>
->>> print(lewis.agency)
+>>> print(melissa.agency)
 NASA
 >>>
->>> print(martinez.agency)
+>>> print(rick.agency)
 NASA
 >>>
 >>> print(Astronaut.agency)
@@ -280,16 +261,16 @@ NASA
 
 Lets delete field from an instance and print ``agency`` field:
 
->>> del watney.agency
+>>> del mark.agency
 >>>
 >>>
->>> print(watney.agency)
+>>> print(mark.agency)
 NASA
 >>>
->>> print(lewis.agency)
+>>> print(melissa.agency)
 NASA
 >>>
->>> print(martinez.agency)
+>>> print(rick.agency)
 NASA
 >>>
 >>> print(Astronaut.agency)
@@ -326,12 +307,15 @@ mappingproxy({'__module__': '__main__',
 
 Use Case - 0x01
 ---------------
+>>> from typing import ClassVar
+>>>
+>>>
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     age: int
-...     AGE_MIN: int = 30
-...     AGE_MAX: int = 50
+...     AGE_MIN: ClassVar[int] = 30
+...     AGE_MAX: ClassVar[int] = 50
 
 
 Use Case - 0x02
@@ -345,70 +329,17 @@ Use Case - 0x02
 ...     age: int
 ...     AGE_MIN: ClassVar[int] = 30
 ...     AGE_MAX: ClassVar[int] = 50
+...
+...     def __init__(self, firstname, lastname, age):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...         self.age = age
+...
+...         if not self.AGE_MIN <= self.age < self.AGE_MAX:
+...             raise ValueError('age is invalid')
 
 
 Use Case - 0x03
----------------
->>> from typing import ClassVar
->>>
->>>
->>> class Astronaut:
-...     firstname: str
-...     lastname: str
-...     age: int
-...     AGE_MIN: ClassVar[int] = 30
-...     AGE_MAX: ClassVar[int] = 50
-...
-...     def __init__(self, firstname, lastname, age):
-...         self.firstname = firstname
-...         self.lastname = lastname
-...         self.age = age
-...
-...         if not self.AGE_MIN <= self.age < self.AGE_MAX:
-...             raise ValueError('age is invalid')
-
-
-Use Case - 0x04
----------------
->>> from typing import ClassVar
->>>
->>>
->>> class Astronaut:
-...     firstname: str
-...     lastname: str
-...     age: int
-...     AGE_MIN: ClassVar[int] = 30
-...     AGE_MAX: ClassVar[int] = 50
-...
-...     def __init__(self, firstname, lastname, age):
-...         self.firstname = firstname
-...         self.lastname = lastname
-...         self.age = age
-...
-...         if not self.AGE_MIN <= self.age < self.AGE_MAX:
-...             raise ValueError('age is invalid')
-
-
-Use Case - 0x05
----------------
->>> from dataclasses import dataclass
->>> from typing import ClassVar
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...     age: int
-...     AGE_MIN: ClassVar[int] = 30
-...     AGE_MAX: ClassVar[int] = 50
-...
-...     def __post_init__(self):
-...         if not self.AGE_MIN <= self.age < self.AGE_MAX:
-...             raise ValueError('age is invalid')
-
-
-Use Case - 0x06
 ---------------
 >>> from dataclasses import dataclass
 >>> from typing import ClassVar

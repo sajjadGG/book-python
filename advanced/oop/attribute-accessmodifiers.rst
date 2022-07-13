@@ -9,24 +9,26 @@ OOP Attribute Access Modifiers
 * ``__name__`` - system attribute
 * ``name_`` - avoid name collision with built-ins
 
->>> class Public:
-...     firstname: str
-...     lastname: str
->>>
->>> class Protected:
-...     _firstname: str
-...     _lastname: str
->>>
->>> class Private:
-...     __firstname: str
-...     __lastname: str
+>>> class Astronaut:
+...     firstname: str          # public
+...     lastname: str           # public
+...     _salary: int            # protected
+...     _address: int           # protected
+...     __username: str         # private
+...     __password: str         # private
+...     id_: int                # avoid name collision
+...     type_: str              # avoid name collision
+...     __doc__: str            # system
+...     __module__: str         # system
 
 
-DataClasses
------------
+SetUp
+-----
 >>> from dataclasses import dataclass
->>>
->>>
+
+
+Example
+-------
 >>> @dataclass
 ... class Public:
 ...     firstname: str
@@ -49,9 +51,6 @@ Public Attribute
 ----------------
 * ``name`` - public attribute
 
->>> from dataclasses import dataclass
->>>
->>>
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str
@@ -59,24 +58,25 @@ Public Attribute
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
->>>
->>> vars(astro)
-{'firstname': 'Mark', 'lastname': 'Watney'}
->>>
+
+To print attributes directly:
+
 >>> print(astro.firstname)
 Mark
 >>>
 >>> print(astro.lastname)
 Watney
 
+To list all the attributes once again we can use `vars()`:
+
+>>> vars(astro)
+{'firstname': 'Mark', 'lastname': 'Watney'}
+
 
 Protected Attribute
 -------------------
 * ``_name`` - protected attribute (non-public by convention)
 
->>> from dataclasses import dataclass
->>>
->>>
 >>> @dataclass
 ... class Astronaut:
 ...     _firstname: str
@@ -85,19 +85,19 @@ Protected Attribute
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
 
-To list all the attributes once again we can use `vars()`:
-
->>> vars(astro)
-{'_firstname': 'Mark', '_lastname': 'Watney'}
-
-Python will allow the following statement, however your IDE should warn you
-"Access to a protected member _firstname of a class":
+Python will allow the following statement, however your IDE should
+warn you "Access to a protected member _firstname of a class":
 
 >>> print(astro._firstname)
 Mark
 >>>
 >>> print(astro._lastname)
 Watney
+
+To list all the attributes once again we can use `vars()`:
+
+>>> vars(astro)
+{'_firstname': 'Mark', '_lastname': 'Watney'}
 
 
 Private Attribute
@@ -114,16 +114,9 @@ Private Attribute
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
->>>
->>> vars(astro)
-{'_Astronaut__firstname': 'Mark', '_Astronaut__lastname': 'Watney'}
->>>
->>> print(astro._Astronaut__firstname)
-Mark
->>>
->>> print(astro._Astronaut__lastname)
-Watney
->>>
+
+There are no attributes with names ``__firstname`` and ``__lastname``:
+
 >>> print(astro.__firstname)
 Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute '__firstname'
@@ -132,85 +125,73 @@ AttributeError: 'Astronaut' object has no attribute '__firstname'
 Traceback (most recent call last):
 AttributeError: 'Astronaut' object has no attribute '__lastname'
 
+To print attributes directly:
+
+>>> print(astro._Astronaut__firstname)
+Mark
+>>>
+>>> print(astro._Astronaut__lastname)
+Watney
+
+To list all the attributes once again we can use `vars()`:
+
+>>> vars(astro)  # doctest: +NORMALIZE_WHITESPACE
+{'_Astronaut__firstname': 'Mark',
+ '_Astronaut__lastname': 'Watney'}
+
 
 Name Mangling
 -------------
->>> class Person:
-...     def hello(self):
-...         return 'hello Person'
->>>
->>>
->>> class Astronaut(Person):
-...     def hello(self):
-...         return 'hello Astronaut'
->>>
->>>
->>> astro = Astronaut()
->>> astro.hello()
-'hello Astronaut'
-
->>> class Person:
-...     def __hello(self):
-...         return 'hello Person'
->>>
->>>
->>> class Astronaut(Person):
-...     def __hello(self):
-...         return 'hello Astronaut'
->>>
->>>
->>> astro = Astronaut()
->>> astro._Astronaut__hello()
-'hello Astronaut'
->>> astro._Person__hello()
-'hello Person'
-
->>> from dataclasses import dataclass
+>>> @dataclass
+... class English:
+...     greeting: str = 'Hello'
 >>>
 >>>
 >>> @dataclass
-... class Person:
-...     __firstname: str
-...     __lastname: str
+... class Texan(English):
+...     greeting: str = 'Howdy'
+>>>
+>>>
+>>> mark = Texan()
+>>>
+>>> print(mark.greeting)
+Howdy
+
+>>> @dataclass
+... class English:
+...     __greeting: str = 'Hello'
+>>>
 >>>
 >>> @dataclass
-... class Astronaut(Person):
-...     __firstname: str
-...     __lastname: str
+... class Texan(English):
+...     __greeting: str = 'Howdy'
 >>>
->>> astro = Astronaut('Mark', 'Watney')
-Traceback (most recent call last):
-TypeError: Astronaut.__init__() missing 2 required positional arguments: '_Astronaut__firstname' and '_Astronaut__lastname'
 >>>
->>> astro = Astronaut('Mark', 'Watney', 'Melissa', 'Lewis')
+>>> mark = Texan()
 >>>
->>> vars(astro)  # doctest: +NORMALIZE_WHITESPACE
-{'_Person__firstname': 'Mark',
- '_Person__lastname': 'Watney',
- '_Astronaut__firstname': 'Melissa',
- '_Astronaut__lastname': 'Lewis'}
+>>> print(mark._English__greeting)
+Hello
+>>>
+>>> print(mark._Texan__greeting)
+Howdy
+
+To list all the attributes once again we can use `vars()`:
+
+>>> vars(mark)  # doctest: +NORMALIZE_WHITESPACE
+{'_English__greeting': 'Hello',
+ '_Texan__greeting': 'Howdy'}
 
 
 Name Collision
 --------------
-* ``type_ = type('myobject')``
-* ``id_ = id('myobject')``
-* ``hash_ = hash('myobject')``
-* ``date_ = date(1969, 7, 21)``
+* Example colliding names: ``type_``, ``id_``, ``hash_``
 
->>> from datetime import date
->>>
->>>
 >>> type_ = type('myobject')
 >>> id_ = id('myobject')
 >>> hash_ = hash('myobject')
->>> date_ = date(1969, 7, 21)
 
 Example:
 
->>> from datetime import date
->>>
->>>
 >>> class User:
 ...     def __init__(self, firstname, lastname):
 ...         self.firstname = firstname
@@ -218,53 +199,17 @@ Example:
 ...         self.type_ = type(self)
 ...         self.id_ = id(self)
 ...         self.hash_ = hash(self)
-...         self.date_ = date(1969, 7, 21)
-
-
-Show Attributes
----------------
-* ``vars()`` display ``obj.__dict__``
-
->>> class Astronaut:
-...     def __init__(self, firstname, lastname):
-...         self._firstname = firstname
-...         self._lastname = lastname
-...         self.publicname = f'{firstname} {lastname[0]}.'
->>>
->>>
->>> astro = Astronaut('Mark', 'Watney')
->>>
->>> vars(astro)
-{'_firstname': 'Mark', '_lastname': 'Watney', 'publicname': 'Mark W.'}
->>>
->>> public_attributes = {attribute: value
-...                      for attribute, value in vars(astro).items()
-...                      if not attribute.startswith('_')}
->>>
->>> protected_attributes = {attribute: value
-...                         for attribute, value in vars(astro).items()
-...                         if attribute.startswith('_')}
->>>
->>>
->>> print(public_attributes)
-{'publicname': 'Mark W.'}
->>>
->>> print(protected_attributes)
-{'_firstname': 'Mark', '_lastname': 'Watney'}
 
 
 System Attributes
 -----------------
 * ``__name__`` - Current module
-* ``obj.__class__``
-* ``obj.__dict__`` - Getting dynamic fields and values
-* ``obj.__doc__`` - Docstring
-* ``obj.__annotations__`` - Type annotations of an object
-* ``obj.__module__``
+* ``obj.__class__`` - Class from which object was instantiated
+* ``obj.__dict__`` - Stores instance variables
+* ``obj.__doc__`` - Object docstring
+* ``obj.__annotations__`` - Object attributes type annotations
+* ``obj.__module__`` - Name of a module in which object was defined
 
->>> from dataclasses import dataclass
->>>
->>>
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str
@@ -272,12 +217,95 @@ System Attributes
 >>>
 >>>
 >>> astro = Astronaut('Mark', 'Watney')
+
+>>> astro.__class__
+<class '__main__.Astronaut'>
 >>>
->>> vars(astro)
+>>> astro.__dict__
 {'firstname': 'Mark', 'lastname': 'Watney'}
 >>>
->>> print(astro.__dict__)
-{'firstname': 'Mark', 'lastname': 'Watney'}
+>>> astro.__doc__
+'Astronaut(firstname: str, lastname: str)'
+>>>
+>>> astro.__annotations__
+{'firstname': <class 'str'>, 'lastname': <class 'str'>}
+>>>
+>>> astro.__module__
+'__main__'
+
+
+Show Attributes
+---------------
+* ``vars()`` display ``obj.__dict__``
+
+>>> class Astronaut:
+...     def __init__(self):
+...         self.firstname = 'Mark'
+...         self.lastname = 'Watney'
+...         self._salary = 10_000
+...         self._address = '2101 E NASA Pkwy, Houston 77058, Texas, USA'
+...         self.__username = 'mwatney'
+...         self.__password = 'ares3'
+...         self.id_ = 1337
+...         self.type_ = 'astronaut'
+...         self.__doc__ = 'Astronaut Class'
+...         self.__module__ = '__main__'
+>>>
+>>>
+>>> astro = Astronaut()
+
+All attributes:
+
+>>> vars(astro)  # doctest: +NORMALIZE_WHITESPACE
+{'firstname': 'Mark',
+ 'lastname': 'Watney',
+ '_salary': 10000,
+ '_address': '2101 E NASA Pkwy, Houston 77058, Texas, USA',
+ '_Astronaut__username': 'mwatney',
+ '_Astronaut__password': 'ares3',
+ 'id_': 1337,
+ 'type_': 'astronaut',
+ '__doc__': 'Astronaut Class',
+ '__module__': '__main__'}
+
+Public attributes:
+
+>>> result = {attribute: value
+...           for attribute, value in vars(astro).items()
+...           if not attribute.startswith('_')}
+>>>
+>>> print(result)
+{'firstname': 'Mark', 'lastname': 'Watney', 'id_': 1337, 'type_': 'astronaut'}
+
+Protected attributes:
+
+>>> result = {attribute: value
+...           for attribute, value in vars(astro).items()
+...           if attribute.startswith('_')
+...           and not attribute.startswith('__')
+...           and not attribute.startswith(f'_{astro.__class__.__name__}__')}
+>>>
+>>> print(result)
+{'_salary': 10000, '_address': '2101 E NASA Pkwy, Houston 77058, Texas, USA'}
+
+Private attributes:
+
+>>> result = {attribute: value
+...           for attribute, value in vars(astro).items()
+...           if attribute.startswith(f'_{astro.__class__.__name__}__')}
+>>>
+>>> print(result)
+{'_Astronaut__username': 'mwatney', '_Astronaut__password': 'ares3'}
+
+System attributes:
+
+>>> result = {attribute: value
+...           for attribute, value in vars(astro).items()
+...           if attribute.startswith('__')
+...           and attribute.endswith('__')}
+>>>
+>>> print(result)
+{'__doc__': 'Astronaut Class', '__module__': '__main__'}
 
 
 References

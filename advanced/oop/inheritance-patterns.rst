@@ -38,7 +38,6 @@ Single Inheritance
 >>> class Child(Parent):
 ...     pass
 
-
 .. figure:: img/uml-relations-inheritance-simple.png
 
 
@@ -59,8 +58,38 @@ Multilevel Inheritance
 .. figure:: img/uml-relations-inheritance-multilevel.png
 
 
+Multiple Inheritance
+--------------------
+* ``Mother`` and ``Father`` are Mixin Classes
+
+>>> class Mother:
+...     pass
+>>>
+>>>
+>>> class Father:
+...     pass
+>>>
+>>>
+>>> class Child(Mother, Father):
+...     pass
+
+
 Composition
 -----------
+Static version:
+
+>>> class Mother:
+...     pass
+>>>
+>>> class Father:
+...     pass
+>>>
+>>> class Child:
+...     mother = Mother
+...     father = Father
+
+Dynamic version:
+
 >>> class Mother:
 ...     pass
 >>>
@@ -79,39 +108,34 @@ Composition
 
 Aggregation
 -----------
->>> class Parent:
+Static version:
+
+>>> class Mother:
 ...     pass
 >>>
->>> class Mother(Parent):
+>>> class Father:
 ...     pass
 >>>
->>> class Father(Parent):
+>>> class Child:
+...     parents = [Father, Mother]
+
+Dynamic version:
+
+>>> class Mother:
+...     pass
+>>>
+>>> class Father:
 ...     pass
 >>>
 >>>
 >>> class Child:
-...     parents: list[Parent]
+...     parents: list[Mother|Father]
 ...
 ...     def __init__(self):
 ...         self.parents = []
 ...         self.parents.append(Mother())
 ...         self.parents.append(Father())
 
-
-Multiple Inheritance
---------------------
-* ``Mother`` and ``Father`` are Mixin Classes
-
->>> class Mother:
-...     pass
->>>
->>>
->>> class Father:
-...     pass
->>>
->>>
->>> class Child(Mother, Father):
-...     pass
 
 
 Use Case - 0x01
