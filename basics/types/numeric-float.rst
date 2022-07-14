@@ -5,7 +5,7 @@ Numeric Float
 * Default ``float`` size is 64 bit
 * Python automatically extends ``float`` when need bigger number
 
->>> data = 1.3371
+>>> data = 1.337
 >>> data = +1.337
 >>> data = -1.337
 
