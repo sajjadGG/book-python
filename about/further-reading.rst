@@ -2,7 +2,6 @@ Further reading
 ===============
 
 
-
 Video
 -----
 * `Matt Harasymczuk's Webinars <https://www.youtube.com/playlist?list=PLv4THqSPE6meFeo_jNLgUVKkP40UstIQv>`_
@@ -79,6 +78,12 @@ Python Development
 * `Python Enhancement Proposals repository <https://github.com/python/peps>`_
 * `News from the Python Software Foundation <https://pyfound.blogspot.com>`_
 * `Future of Python <https://www.youtube.com/watch?v=fOdCxum-qLA>`_
+
+
+History
+-------
+* http://python-history.blogspot.com/
+* https://www.wefearchange.org/2010/06/import-this-and-zen-of-python.html
 
 
 Conferences
