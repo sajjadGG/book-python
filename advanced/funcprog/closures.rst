@@ -5,6 +5,8 @@ FuncProg Closure
 * Closures provides some form of data hiding
 * Closures can avoid use of global variables
 * Useful for replacing hard-coded constants
+* Inner functions implicitly carry references to all of the local variables in the surrounding scope that are referenced by the function
+* Since Python 2.2
 
 >>> def f(x):
 ...     def g(y):

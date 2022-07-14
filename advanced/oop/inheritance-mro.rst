@@ -64,7 +64,7 @@ it can figure out which class it is being called from and work automatically.
 In Python 2 you had to specify the current class, but that's not needed
 any more.
 
-.. note:: Source [#StackOverflowSuper]_
+.. note:: Source [#StackOverflowSuper]_ [#vanRossum2020]_
 
 
 Problem
@@ -392,8 +392,16 @@ Should ``Third``'s MRO be ``[First, Second]`` or ``[Second, First]``?
 There's no obvious expectation, and Python will raise an error.
 
 
+Further Reading
+---------------
+* van Rossum, G. Method Resolution Order. Year: 2010. Retrieved: 2022-07-13. URL: http://python-history.blogspot.com/2010/06/method-resolution-order.html
+
+* Hettinger R. Super considered super!. PyCon 2015. Year: 2020. Retrieved: 2022-07-13. URL: https://www.youtube.com/watch?v=EiOglTERPEo
+
+
 References
 ----------
+.. [#vanRossum2020] van Rossum, G. Method Resolution Order. Year: 2010. Retrieved: 2022-07-13. URL: http://python-history.blogspot.com/2010/06/method-resolution-order.html
 .. [#Hettinger2015] Hettinger R. Super considered super!. PyCon 2015. Year: 2020. Retrieved: 2022-07-13. URL: https://www.youtube.com/watch?v=EiOglTERPEo
 .. [#Halterman2018] Halterman, R.L. Fundamentals of Python Programming. Publisher: Southern Adventist University. Year: 2018.
 .. [#StackOverflowMRO] T.M15. How does Python's super() work with multiple inheritance? Year: 2020. Retrieved: 2022-07-13. URL: https://stackoverflow.com/a/62753514
