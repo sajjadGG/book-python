@@ -211,7 +211,7 @@ Precedence:
 Associativity:
 
 >>> 1 + 2 - 3
--0
+0
 
 .. csv-table:: Operator precedence
     :widths: 25, 75
