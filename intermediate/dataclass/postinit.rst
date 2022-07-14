@@ -128,30 +128,23 @@ InitVar
 * They are not otherwise used by Data Classes
 
 >>> from dataclasses import dataclass, InitVar
-
+>>>
+>>>
 >>> @dataclass
-... class Astronaut:
-...     fullname: InitVar[str]
-...     firstname: str | None = None
-...     lastname: str | None = None
-
->>> @dataclass
-... class Astronaut:
-...     fullname: InitVar[str]
-...     firstname: str | None = None
-...     lastname: str | None = None
+... class Email:
+...     email: InitVar[str]
 ...
-...     def __post_init__(self, fullname: str):
-...         self.firstname, self.lastname = fullname.split()
+...     username: str = None
+...     domain: str = None
+...
+...     def __post_init__(self, email: str):
+...         self.username, self.domain = email.split('@')
 >>>
 >>>
->>> astro = Astronaut('Mark Watney')
+>>> email = Email('mwatney@nasa.gov')
 >>>
->>> astro
-Astronaut(firstname='Mark', lastname='Watney')
->>>
->>> vars(astro)
-{'firstname': 'Mark', 'lastname': 'Watney'}
+>>> print(email)
+Email(username='mwatney', domain='nasa.gov')
 
 
 Use Case - 0x01
@@ -372,6 +365,54 @@ ValueError: x value (-1) is not between 0 and 1024
 >>> Point(0, -1)
 Traceback (most recent call last):
 ValueError: y value (-1) is not between 0 and 768
+
+
+Use Case - 0x08
+---------------
+>>> @dataclass
+... class Phone:
+...     full_number: InitVar[str]
+...
+...     country_code: int = None
+...     number: int = None
+...
+...     def __post_init__(self, full_number: str):
+...         self.country_code, self.number = full_number.split(' ', maxsplit=1)
+>>>
+>>>
+>>> phone = Phone('+48 123 456 789')
+
+
+Use Case - 0x09
+---------------
+>>> @dataclass
+... class Pesel:
+...     number: InitVar[str]
+...
+...     pesel: str = None
+...     birthday: str = None
+...     gender: str = None
+...     valid: bool = None
+...
+...     def calc_check_digit(self):
+...         weights = (1, 3, 7, 9, 1, 3, 7, 9, 1, 3)
+...         check = sum(w * int(n) for w, n in zip(weights, self.pesel))
+...         return str((10 - check) % 10)
+...
+...     def __post_init__(self, number: str):
+...         self.pesel = number
+...         self.birthday = datetime.strptime(number[:6], '%y%m%d').date()
+...         self.gender =  'male' if int(number[-2]) % 2 else 'female'
+...         self.valid = number[-1] == self.calc_check_digit()
+>>>
+>>>
+>>> pesel = Pesel('69072101234')
+>>>
+>>> print(pesel)  # doctest: +NORMALIZE_WHITESPACE
+Pesel(pesel='69072101234',
+      birthday=datetime.date(1969, 7, 21),
+      gender='male',
+      valid=False)
 
 
 Assignments

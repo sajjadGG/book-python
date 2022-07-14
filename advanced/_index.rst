@@ -94,6 +94,20 @@ Object Oriented Programming
     oop/class-metaclass.rst
 
 
+Protocols
+*********
+.. toctree::
+    :maxdepth: 1
+    :caption: Idioms
+
+    protocol/about.rst
+    protocol/iterator.rst
+    protocol/context-manager.rst
+    protocol/property.rst
+    protocol/reflection.rst
+    protocol/descriptor.rst
+
+
 Performance
 ***********
 .. toctree::

@@ -61,8 +61,9 @@ Day 4
 
 Day 5
 -----
-* 180m - Dragon
-* 45m - Concurrency: Concurrency models and their specificity
-* 45m - Concurrency: Multiprocessing
-* 60m - Concurrency: Threading and queues
+* 90m - Protocol: Context Manager, Iterator
+* 150m - Protocol: Reflection, Property, Descriptor
+* 30m - Concurrency: Concurrency models and their specificity
+* 30m - Concurrency: Multiprocessing
+* 30m - Concurrency: Threading and queues
 * 90m - Concurrency: Asynchronous programming
