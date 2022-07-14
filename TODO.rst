@@ -49,10 +49,6 @@ PyCharm
 * Alt+Enter: dodawanie pól do klasy + annotation
 * Alt+Enter: klasy abstrakcyjne i interfejsy
 
-pd.set_option('display.width', 200)
-pd.set_option('display.max_columns', 15)
-pd.set_option('display.max_rows', 100)
-
 
 Book TODO
 ---------
