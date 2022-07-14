@@ -77,10 +77,11 @@ class Build(Action):
 
 
 class Doctest(Action):
-    def __call__(self, parser, namespace, chapter, *args, **kwargs):
+    def __call__(self, parser, namespace, paths, *args, **kwargs):
         run('clear && printf "\e[3J"')  # noqa
         all_tests = 0
-        for file in sorted(self.get_files(chapter)):
+        files = sorted(self.get_files(paths))
+        for file in files:
             if self.is_ignored(file): continue
             if self.is_venv(file): continue
             if self.is_skipped(file): continue
@@ -118,11 +119,15 @@ class Doctest(Action):
         return file.read_text().count('>>> ')
 
     @staticmethod
-    def get_files(directory: str):
-        if directory is None:
-            directory = ''
-        yield from Path(directory).rglob('*.rst')
-        yield from Path(directory).rglob('*.py')
+    def get_files(paths: str):
+        for path in map(Path, paths):
+            if path == Path(''):
+                continue
+            elif path.suffix in ('.rst', '.py'):
+                yield path
+            else:
+                yield from Path(path).rglob('*.rst')
+                yield from Path(path).rglob('*.py')
 
     @staticmethod
     def run_doctest(file: Path):
@@ -143,7 +148,7 @@ if __name__ == '__main__':
                         help='build documentation in html format')
 
     parser.add_argument('-d', '--doctest',
-                        nargs='?', metavar='CHAPTER', action=Doctest,
+                        nargs='+', metavar='CHAPTER', action=Doctest,
                         help='doctest *.rst and *.py files')
 
     parser.add_argument('-i', '--install',

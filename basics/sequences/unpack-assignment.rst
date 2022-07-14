@@ -2,7 +2,7 @@ Unpack Assignment
 =================
 * ``a = 1`` - Assignment
 * ``a, b = 1, 2`` - Unpacking assignment
-* ``a = b = 1`` - Multi assignment
+* ``a = b = 1`` - Chained assignment
 * ``_`` is regular variable name, not a special Python syntax
 * ``_`` by convention is used for data we don't want to access in future
 
@@ -14,7 +14,7 @@ Unpacking assignment:
 
 >>> a, b = 1, 2
 
-Multi assignment:
+Chained assignment:
 
 >>> a = b = 1
 
@@ -49,7 +49,7 @@ a=1, b=2
 >>> a, b, c, d, e = 1, 2, 3, 4, 5
 
 
-Multi Assignment
+Chained Assignment
 ----------------
 * ``a = b = 1``
 * ``identifier1 = identifier2 = value``
@@ -248,7 +248,7 @@ Python understands this as:
 
 Recap
 -----
-* Scalar, unpacking assignment, multi assignment
+* Scalar, unpacking assignment, chained assignment
 * Both left and right expression side brackets are optional
 * Unpacking nested sequences
 * Skipping values is done by using ``_``
@@ -261,7 +261,7 @@ Unpacking assignment:
 
 >>> a, b = 1, 2
 
-Multi assignment:
+Chained assignment:
 
 >>> a = b = 1
 

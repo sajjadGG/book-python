@@ -397,47 +397,78 @@ Use Case - 0x05
 ---------------
 * Document Factory
 
->>> from abc import ABC, abstractproperty
+>>> from abc import ABC, abstractmethod, abstractproperty
 >>>
 >>>
 >>> class Document(ABC):
 ...     @abstractproperty
 ...     def EXTENSIONS(self) -> list[str]:
-...         raise NotImplementedError
+...         ...
+...
+...     @abstractmethod
+...     def display(self):
+...         ...
 ...
 ...     def __init__(self, filename):
 ...         self.filename = filename
 ...
+...     def __str__(self):
+...         return self.filename
+...
 ...     def __new__(cls, filename):
-...         basename, extension = filename.split('.')
+...         extension = filename.split('.')[-1]
 ...         plugins = cls.__subclasses__()
 ...         for plugin in plugins:
 ...             if extension in plugin.EXTENSIONS:
-...                 instance = object.__new__(plugin)
-...                 instance.__init__(filename)
-...                 return instance
-...         raise NotImplementedError('There is no plugin for this filetype')
+...                 obj = object.__new__(plugin)
+...                 obj.__init__(filename)
+...                 return obj
+...         else:
+...             raise NotImplementedError('No plugin for this filetype')
 >>>
 >>>
 >>> class PDF(Document):
 ...     EXTENSIONS = ['pdf']
+...
+...     def display(self):
+...         print(f'Displaying pdf file {self.filename}')
 >>>
->>> class Docx(Document):
-...     EXTENSIONS = ['doc', 'docx']
+>>>
+>>> class Word(Document):
+...     EXTENSIONS = ['docx', 'doc']
+...
+...     def display(self):
+...         print(f'Displaying word file {self.filename}')
 >>>
 >>>
->>> Document('myfile.pdf')  # doctest: +ELLIPSIS
-<__main__.PDF object at 0x...>
+>>> class Txt(Document):
+...     EXTENSIONS = ['txt']
+...
+...     def display(self):
+...         print(f'Displaying txt file {self.filename}')
 >>>
->>> Document('myfile.doc')  # doctest: +ELLIPSIS
-<__main__.Docx object at 0x...>
 >>>
->>> Document('myfile.docx')  # doctest: +ELLIPSIS
-<__main__.Docx object at 0x...>
 >>>
->>> Document('myfile.csv')  # doctest: +ELLIPSIS
+>>> file = Document('myfile.pdf')
+>>> file.display()
+Displaying pdf file myfile.pdf
+>>>
+>>>
+>>> file = Document('myfile.doc')
+>>> file.display()
+Displaying word file myfile.doc
+>>>
+>>> file = Document('myfile.docx')
+>>> file.display()
+Displaying word file myfile.docx
+>>>
+>>> file = Document('myfile.txt')
+>>> file.display()
+Displaying txt file myfile.txt
+>>>
+>>> file = Document('myfile.odt')
 Traceback (most recent call last):
-NotImplementedError: There is no plugin for this filetype
+NotImplementedError: No plugin for this filetype
 
 
 Use Case - 0x06

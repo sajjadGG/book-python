@@ -17,7 +17,7 @@ Polish:
     4. Jeżeli UID jest:
        a. poniżej 1000, to konto jest systemowe (`SystemAccount`)
        b. 1000 lub więcej, to konto użytkownika (`UserAccount`)
-    5. Stwórz repr wyświetlający informacje o klasie w formacie:
+    5. Stwórz metodę ``__repr__`` wyświetlającą informacje o klasie w formacie:
        `SystemAccount(username='root', uid=0)`
     6. Uruchom doctesty - wszystkie muszą się powieść
 
@@ -29,7 +29,7 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
+    >>> list(result)  # doctest: +NORMALIZE_WHITESPACE
     [SystemAccount(username='root', uid=0),
      SystemAccount(username='bin', uid=1),
      SystemAccount(username='daemon', uid=2),
@@ -55,7 +55,6 @@ watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
 lewis:x:1001:1001:Melissa Lewis:/home/lewis:/bin/bash
 martinez:x:1002:1002:Rick Martinez:/home/martinez:/bin/bash"""
 
-
 # Parse DATA and convert to UserAccount or SystemAccount
 # type: list[Account]
 result = ...
@@ -65,26 +64,26 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Account:
+class SystemAccount:
     username: str
     uid: int
 
-    def __new__(cls, username: str, uid: int):
+@dataclass
+class UserAccount:
+    username: str
+    uid: int
+
+
+class Account:
+    def __new__(cls, records):
+        username, _, uid, *_ = records.split(':')
+        uid = int(uid)
         if uid < 1000:
-            return object.__new__(SystemAccount)
+            return SystemAccount(username, uid)
         else:
-            return object.__new__(UserAccount)
+            return UserAccount(username, uid)
 
 
-class UserAccount(Account):
-    pass
-
-class SystemAccount(Account):
-    pass
-
-
-result = [Account(username, int(uid))
-          for line in DATA.splitlines()
-          if (record := line.strip().split(':'))
-          if (username := record[0])
-          and (uid := record[2])]
+# Parse DATA and convert to UserAccount or SystemAccount
+# type: list[Account]
+result = map(Account, DATA.splitlines())

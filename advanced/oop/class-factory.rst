@@ -343,15 +343,13 @@ Use Case - 0x04
 >>>
 >>>
 >>> def factory(species: str):
-...     species = species.capitalize()
+...     clsname = species.capitalize()
 ...     classes = globals()
-...     return classes[species]
+...     return classes[clsname]
 >>>
 >>>
->>> result = [
-...     factory(species)(*features)
-...     for *features, species in DATA[1:]
-... ]
+>>> result = [factory(species)(*features)
+...           for *features, species in DATA[1:]]
 >>>
 >>> result  # doctest: +NORMALIZE_WHITESPACE
 [Virginica(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9),
@@ -360,6 +358,56 @@ Use Case - 0x04
  Virginica(sepal_length=6.3, sepal_width=2.9, petal_length=5.6, petal_width=1.8),
  Versicolor(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5),
  Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2)]
+
+
+Use Case - 0x05
+---------------
+>>> from itertools import zip_longest
+>>>
+>>>
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 'setosa'),
+...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+...     (7.6, 3.0,  'virginica')]
+>>>
+>>>
+>>> Iris = type('Iris', (), {
+...     '__init__': lambda self, **kwargs: self.__dict__.update(kwargs),
+...     '__repr__': lambda self: f'{self.__class__.__name__}{tuple(vars(self).values())}'})
+>>>
+>>> header = [x.lower().replace(' ', '_') for x in DATA[0]]
+>>>
+>>> result = [cls(**values)
+...           for *features,species in DATA[1:]
+...           if (values := dict(zip_longest(header, features, fillvalue=None)))
+...           and (clsname := species.capitalize())
+...           and (cls := type(clsname, (Iris,), {}))]
+
+>>> result  # doctest: +NORMALIZE_WHITESPACE
+[Virginica(5.8, 2.7, None, None, None),
+ Setosa(5.1, 3.5, 1.4, 0.2, None),
+ Versicolor(5.7, None, None, None, None),
+ Virginica(6.3, 2.9, 5.6, 1.8, None),
+ Versicolor(6.4, 3.2, 4.5, 1.5, None),
+ Setosa(4.7, 3.2, 1.3, None, None),
+ Versicolor(7.0, 3.2, 4.7, 1.4, None),
+ Virginica(7.6, 3.0, None, None, None)]
+
+>>> result[0]
+Virginica(5.8, 2.7, None, None, None)
+
+>>> vars(result[0])  # doctest: +NORMALIZE_WHITESPACE
+{'sepal_length': 5.8,
+ 'sepal_width': 2.7,
+ 'petal_length': None,
+ 'petal_width': None,
+ 'species': None}
 
 
 Assignments

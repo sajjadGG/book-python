@@ -67,18 +67,8 @@ class Iris:
         return f'{name}{args}'
 
 
-class Setosa(Iris):
-    pass
-
-
-class Versicolor(Iris):
-    pass
-
-
-class Virginica(Iris):
-    pass
-
 # Append to `result`:
+# Use type() to create classes dynamically
 # a. if `species` is "setosa" append instance of a class `Setosa`
 # b. if `species` is "versicolor" append instance of a class  `Versicolor`
 # c. if `species` is "virginica" append instance of a class `Virginica`
@@ -87,29 +77,7 @@ result = ...
 
 
 # Solution
-result = [iris(*features)
-          for *features, label in DATA[1:]
-          if (classname := label.capitalize())
-          and (iris := globals()[classname])]
-
-
-# Alternative Solution
-result = []
-for *features, label in DATA[1:]:
-    if label == 'setosa':
-        iris = Setosa(*features)
-    elif label == 'virginica':
-        iris = Virginica(*features)
-    elif label == 'versicolor':
-        iris = Versicolor(*features)
-    result.append(iris)
-
-# Alternative Solution
-result = []
-for *values, species in DATA[1:]:
-    match species:
-        case 'virginica':   iris = Virginica(*values)
-        case 'setosa':      iris = Setosa(*values)
-        case 'versicolor':  iris = Versicolor(*values)
-        case _:             raise NotImplementedError
-    result.append(iris)
+result = [cls(*values)
+          for *values,species in DATA[1:]
+          if (clsname := species.capitalize())
+          and (cls := type(clsname, (Iris,), {}))]

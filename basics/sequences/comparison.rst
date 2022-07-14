@@ -45,7 +45,7 @@ Memory Footprint
 64
 >>>
 >>> getsizeof( [1,2,3] )
-80
+120
 >>>
 >>> getsizeof( {1,2,3} )
 216
