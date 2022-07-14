@@ -385,6 +385,8 @@ Use Case - 0x08
 
 Use Case - 0x09
 ---------------
+* https://github.com/arthurdejong/python-stdnum/blob/master/stdnum/pl/pesel.py
+
 >>> @dataclass
 ... class Pesel:
 ...     number: InitVar[str]

@@ -122,6 +122,6 @@ class Astronaut:
 result = []
 
 for row in DATA:
-    addresses = [Address(**addr) for addr in row.pop('addresses')]
+    addresses = [Address(**x) for x in row.pop('addresses')]
     astro = Astronaut(**row, addresses=addresses)
     result.append(astro)

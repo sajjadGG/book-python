@@ -99,6 +99,6 @@ class HasPosition:
 
     def change_position(self, right=0, left=0, up=0, down=0):
         current = self.get_position()
-        x = current.x + right - left
-        y = current.y + down - up
-        self.set_position(x, y)
+        new_x = current.x + right - left
+        new_y = current.y + down - up
+        self.set_position(new_x, new_y)
