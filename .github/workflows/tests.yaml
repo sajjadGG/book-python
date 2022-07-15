@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: python run.py --install
-      - run: python run.py --doctest
+      - run: python run.py --doctest *
 
   Chapter:
     runs-on: ubuntu-22.04

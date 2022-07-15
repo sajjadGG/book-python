@@ -1,23 +1,25 @@
 #!/usr/bin/env python
 """
-usage: run.py [-h] [-b [CHAPTER]] [-t [CHAPTER]] [-i [CHAPTER]] [-g]
+usage: run.py OPTION [DIRS|FILES|CHAPTERS]
 
 options:
-  -h, --help            show this help message and exit
-  -b [CHAPTER], --build [CHAPTER]
-                        build documentation in html format
-  -t [CHAPTER], --doctest [CHAPTER]
-                        test ReST files
-  -i [CHAPTER], --install [CHAPTER]
-                        install requirements
-  -g, --gather          gather chapter requirements to main requirements
+  --help                show this help message and exit
+  --build [CHAPTER]     build documentation in html format
+  --doctest [CHAPTER]   doctest ReST and Python files
+  --install [CHAPTER]   install requirements
+  --gather              gather chapter requirements to main requirements
 
 example:
     run.py --install
     run.py --install basics
-    run.py --doctest
+    run.py --doctest *
     run.py --doctest basics
     run.py --doctest basics/types
+    run.py --doctest basics/types/numeric-int.rst
+
+Hint:
+    You can pass more than one directory and/or file.
+    Separate them using space.
 """
 
 import logging
@@ -147,19 +149,19 @@ class Doctest(Action):
 if __name__ == '__main__':
     parser = ArgumentParser()
 
-    parser.add_argument('-b', '--build',
+    parser.add_argument('--build',
                         nargs='?', metavar='CHAPTER', action=Build,
                         help='build documentation in html format')
 
-    parser.add_argument('-d', '--doctest',
+    parser.add_argument('--doctest',
                         nargs='+', metavar='CHAPTER', action=Doctest,
                         help='doctest *.rst and *.py files')
 
-    parser.add_argument('-i', '--install',
+    parser.add_argument('--install',
                         nargs='?', metavar='CHAPTER', action=Install,
                         help='install requirements')
 
-    parser.add_argument('-g', '--gather',
+    parser.add_argument('--gather',
                         nargs=0, action=Gather,
                         help='gather chapter requirements to one file')
 
