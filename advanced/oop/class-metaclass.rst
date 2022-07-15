@@ -41,12 +41,43 @@ invoked after creating the class object:
        of the new class in its method resolution order. [#pydocclassobject]_
 
 
+Recap
+-----
+* Functions are instances of a ``function`` class.
+
+>>> def add(a, b):
+...     return a + b
+>>>
+>>>
+>>> type(add)
+<class 'function'>
+
+
 Syntax
 ------
->>> class MyMeta(type):
+* Metaclass is a callable which returns a class
+
+>>> Astronaut = type('Astronaut', (), {})
+
+>>> def mymetaclass(clsname, bases, attrs):
+...     return type('Astronaut', (), {})
+>>>
+>>> Astronaut = mymetaclass('Astronaut', (), {})
+
+>>> class MyMetaclass(type):
+...     def __new__(mcs, clsname, bases, attrs):
+...         return type(clsname, bases, attrs)
+>>>
+>>>
+>>> Astronaut = MyMetaclass('Astronaut', (), {})
+
+
+Example
+-------
+>>> class MyMetaclass(type):
 ...     pass
 >>>
->>> class MyClass(metaclass=MyMeta):
+>>> class MyClass(metaclass=MyMetaclass):
 ...     pass
 >>>
 >>> class MySubclass(MyClass):
@@ -54,17 +85,16 @@ Syntax
 >>>
 >>>
 >>> myinstance = MySubclass()
->>>
->>>
->>> type(MyMeta)
+
+>>> type(MyMetaclass)
 <class 'type'>
->>>
+
 >>> type(MyClass)
-<class '__main__.MyMeta'>
->>>
+<class '__main__.MyMetaclass'>
+
 >>> type(MySubclass)
-<class '__main__.MyMeta'>
->>>
+<class '__main__.MyMetaclass'>
+
 >>> type(myinstance)
 <class '__main__.MySubclass'>
 

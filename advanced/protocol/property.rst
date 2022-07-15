@@ -3,7 +3,7 @@ Protocol Property
 * Disable attribute modification
 * Logging value access
 * Check boundary
-* Raise exceptions (TypeError)
+* Raise exceptions such as ``ValueError`` or ``TypeError``
 * Check argument type
 
 
@@ -105,7 +105,6 @@ Solution
 >>> pt.y = 2
 >>> pt.z = 3
 
-
 But what if we want to make validation:
 
 >>> class Point:
@@ -190,6 +189,8 @@ Protocol
 
 Example
 -------
+* Kelvin is an absolute scale (no values below zero)
+
 >>> class KelvinTemperature:
 ...     value: float
 >>>
@@ -583,6 +584,52 @@ Resetting temperature
 >>>
 >>> print(t.value)
 0.0
+
+
+Use Case - 0x04
+---------------
+>>> class Astronaut:
+...     name = property()
+...     _name: str
+...
+...     def __init__(self, name):
+...         self.name = name
+...
+...     @name.getter
+...     def name(self):
+...         return self._name
+...
+...     @name.setter
+...     def name(self, new_name):
+...         if any(letter in '0123456789' for letter in new_name):
+...             raise ValueError('Name cannot have digits')
+...         self._name = new_name
+...
+...     @name.deleter
+...     def name(self):
+...         self._name = None
+
+>>> astro = Astronaut('Mark Watney')
+>>> astro.name = 'Melissa Lewis'
+>>> astro.name = 'Rick Martinez 1'
+Traceback (most recent call last):
+ValueError: Name cannot have digits
+
+>>> astro = Astronaut('Mark Watney')
+>>> astro = Astronaut('Rick Martinez 1')
+Traceback (most recent call last):
+ValueError: Name cannot have digits
+
+>>> astro = Astronaut('Mark Watney')
+>>> print(f'Name is: {astro.name}')
+Name is: Mark Watney
+>>>
+>>> del astro.name
+>>> print(f'Name is: {astro.name}')
+Name is: None
+
+
+
 
 
 Assignments

@@ -132,7 +132,11 @@ class Doctest(Action):
     @staticmethod
     def run_doctest(file: Path):
         log.debug(f'RUN\t {file}')
-        exitcode = run(f'python -m doctest {file}', timeout=20)
+        try:
+            exitcode = run(f'python -m doctest {file}', timeout=20)
+        except TimeoutError:
+            log.error(f'TIMEOUT\t{file}')
+            exit(1)
         if exitcode == 0:
             log.info(f'PASSED\t{file}')
         else:

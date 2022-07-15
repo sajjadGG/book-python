@@ -2,7 +2,7 @@
 * Assignment: Protocol Reflection Frozen
 * Complexity: easy
 * Lines of code: 6 lines
-* Time: 13 min
+* Time: 5 min
 
 English:
     1. Create class `Point` with `x`, `y`, `z` attributes
@@ -27,7 +27,7 @@ Tests:
 
     >>> pt.notexisting = 10
     Traceback (most recent call last):
-    PermissionError: Cannot set other attributes than x,y,z
+    PermissionError: Cannot set other attributes than x, y, z
 
     >>> pt.x = 10
     Traceback (most recent call last):
@@ -61,7 +61,7 @@ class Point:
 
     def __setattr__(self, name, value):
         if name not in ('x', 'y', 'z'):
-            raise PermissionError('Cannot set other attributes than x,y,z')
+            raise PermissionError('Cannot set other attributes than x, y, z')
         if hasattr(self, name):
             raise PermissionError('Cannot modify existing attributes')
         return super().__setattr__(name, value)

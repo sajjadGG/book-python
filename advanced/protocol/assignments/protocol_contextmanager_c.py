@@ -59,55 +59,53 @@ from threading import Timer
 
 class File:
     filename: str
-    _content: list[str]
+    buffer: list[str]
 
     def __init__(self, filename):
         self.filename = filename
-        self._content = list()
-
-    def __enter__(self):
-        return self
-
-    def __exit__(self, *args):
-        with open(self.filename, mode='w') as file:
-            file.writelines(self._content)
+        self.buffer = []
 
     def append(self, line):
-        self._content.append(line + '\n')
+        self.buffer.append(line + '\n')
+
+    def write(self, mode='a'):
+        to_write = self.buffer.copy()
+        self.buffer = []
+        with open(self.filename, mode=mode) as file:
+            file.writelines(to_write)
 
 
 # Solution
 class File:
-    AUTOSAVE_SECONDS: float = 1.0
-    _content: list[str]
-    _timer: Timer
     filename: str
+    buffer: list[str]
+    timer: Timer
+    AUTOSAVE_SECONDS: float = 1.0
 
     def __init__(self, filename):
         self.filename = filename
-        self._content = list()
+        self.buffer = []
 
-    def _set_timer(self):
-        if hasattr(self, '_timer'):
-            self._timer.cancel()
-        self._timer = Timer(self.AUTOSAVE_SECONDS, self._writefile)
-        self._timer.start()
+    def append(self, line):
+        self.buffer.append(line + '\n')
+
+    def write(self, mode='a'):
+        to_write = self.buffer.copy()
+        self.buffer = []
+        with open(self.filename, mode=mode) as file:
+            file.writelines(to_write)
+        self.set_timer()
+
+    def set_timer(self):
+        if hasattr(self, 'timer'):
+            self.timer.cancel()
+        self.timer = Timer(self.AUTOSAVE_SECONDS, self.write)
+        self.timer.start()
 
     def __enter__(self):
-        with open(self.filename, mode='w') as file:
-            file.write('')
-        self._set_timer()
+        self.write(mode='w')
         return self
 
     def __exit__(self, *args):
-        self._writefile()
-        self._timer.cancel()
-
-    def _writefile(self):
-        with open(self.filename, mode='a') as file:
-            file.writelines(self._content)
-        self._content = []
-        self._set_timer()
-
-    def append(self, line):
-        self._content.append(line+'\n')
+        self.write()
+        self.timer.cancel()

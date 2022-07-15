@@ -57,97 +57,129 @@ Entering the block
 I am inside
 Exiting the block
 
->>> class Rocket:
+
+Contex Manager
+--------------
+We need to import ``time()`` function to get current timestamp
+(number of seconds from 1970-01-01 00:00:00 UTC):
+
+>>> from time import time
+
+Define our context manager:
+
+>>> class Timeit:
 ...     def __enter__(self):
-...         print('Launching')
-...         return self
+...         self.start = time()
 ...
 ...     def __exit__(self, *args):
-...         print('Landing')
+...         self.stop = time()
+...         duration = self.stop - self.start
+...         print(f'Duration: {duration:.4f} seconds')
+
+>>> # doctest: +SKIP
+... with Timeit():
+...     result = [x**x for x in range(0, 10_000)]
 ...
-...     def fly_to_space(self):
-...         print('I am in space!')
->>>
->>>
->>> with Rocket() as rocket:
-...     rocket.fly_to_space()
-Launching
-I am in space!
-Landing
+Duration: 5.9882 seconds
 
 
-Inheritance
------------
->>> from contextlib import ContextDecorator
+Context Decorator Class
+-----------------------
+* Inherit from ``contextlib.ContextDecorator``
+* Class become context manager decorator
+* Mind the brackets in decorator ``@Timeit()``
+
+We need to import ``time()`` function to get current timestamp
+(number of seconds from 1970-01-01 00:00:00 UTC). Moreover,
+this time we need also ``contextlib.ContextDecorator`` for our
+class to inherit from:
+
 >>> from time import time
->>>
->>>
+>>> from contextlib import ContextDecorator
+
+Define our context manager:
+
 >>> class Timeit(ContextDecorator):
 ...     def __enter__(self):
 ...         self.start = time()
-...         return self
 ...
 ...     def __exit__(self, *args):
-...         end = time()
-...         print(f'Duration {end-self.start:.2f} seconds')
->>>
->>>
+...         self.stop = time()
+...         duration = self.stop - self.start
+...         print(f'Duration: {duration:.4f} seconds')
+
+Define the function which will be automatically wrapped by context manager.
+Mind the brackets in ``@Timeit()``:
+
 >>> @Timeit()
-... def myfunction():
-...     list(range(100_000_000))
->>>
->>>
->>> myfunction()  # doctest: +SKIP
-Duration 3.90 seconds
+... def run():
+...     result = [x**x for x in range(0, 10_000)]
+
+Calling function will result in executing context manager:
+
+>>> run()  # doctest: +SKIP
+Duration: 5.9302 seconds
 
 
-Decorator
----------
-* Split function for before and after ``yield``
+Context Decorator Function
+--------------------------
+* Split function for parts before and after ``yield``
 * Code before ``yield`` becomes ``__enter__()``
 * Code after ``yield`` becomes ``__exit__()``
 
->>> from contextlib import contextmanager
+We need to import ``time()`` function to get current timestamp
+(number of seconds from 1970-01-01 00:00:00 UTC):
+
 >>> from time import time
->>>
->>>
+>>> from contextlib import contextmanager
+
+Define our context manager. Mind that Python will split our function
+for parts before and after ``yield``. Code before ``yield`` becomes
+``__enter__()`` and code after ``yield`` becomes ``__exit__()``:
+
 >>> @contextmanager
 ... def timeit():
 ...     start = time()
 ...     yield
 ...     end = time()
-...     print(f'Duration {end-start:.4f} seconds')
->>>
->>>
+...     duration = stop - start
+...     print(f'Duration: {duration:.4f} seconds')
+
+Now we can use our function as a context manager:
+
 >>> with timeit():  # doctest: +SKIP
-...     list(range(100_000_000))
->>>
+...     result = [x**x for x in range(0, 10_000)]
+...
 Duration 4.0250 seconds
 
+
+Use Case - 0x01
+---------------
 >>> from contextlib import contextmanager
 >>>
 >>>
 >>> @contextmanager
-... def tag(name):
+... def html_tag(name):
 ...     print(f'<{name}>')
 ...     yield
 ...     print(f'</{name}>')
 >>>
 >>>
->>> with tag('p'):
-...     print('foo')
+>>> with html_tag('p'):
+...     print('We choose to go to the Moon.')
 <p>
-foo
+We choose to go to the Moon.
 </p>
 
 
-Use Case - 0x01
+Use Case - 0x02
 ---------------
 * Files
 
 SetUp:
 
 >>> from pathlib import Path
+>>>
 >>> Path('/tmp/myfile.txt').touch()
 
 Open/Close:
@@ -164,20 +196,31 @@ Context Manager:
 >>> with open('/tmp/myfile.txt') as f:
 ...     content = f.read()
 
+Story about file allocation table:
+
+.. code-block:: console
+
+    $ uptime
+    11:29  up 39 days,  2:33, 2 users, load averages: 2.97 4.23 4.41
+
+    $ lsof |wc -l
+       12710
+
 .. code-block:: text
 
     uint32_max = 4_294_967_295
     char* file[uint32_max];
 
-    file[0] = '/tmp/myfile1.txt'
-    file[1] = '/tmp/myfile2.txt'
-    file[2] = '/tmp/myfile3.txt'
+    file_alloc[0] = '/tmp/myfile1.txt'
+    file_alloc[1] = '/tmp/myfile2.txt'
+    file_alloc[2] = '/tmp/myfile3.txt'
     ...
-    file[4_294_967_295] = '/tmp/myfileX.txt'
-    file[4_294_967_296] -> KernelPanic
+    file_alloc[4_294_967_294] = '/tmp/myfile4294967294.txt'
+    file_alloc[4_294_967_295] = '/tmp/myfile4294967295.txt'
+    file_alloc[4_294_967_296] -> KernelPanic
 
 
-Use Case - 0x02
+Use Case - 0x03
 ---------------
 * Database
 
@@ -222,9 +265,11 @@ Use Case - 0x02
 {'id': 3, 'firstname': 'Melissa', 'lastname': 'Lewis', 'age': 36}
 
 
-Use Case - 0x03
+Use Case - 0x04
 ---------------
 * Lock
+
+Without context manager:
 
 >>> from threading import Lock
 >>>
@@ -241,6 +286,8 @@ True
 Critical section 1
 Critical section 2
 
+With context manager:
+
 >>> from threading import Lock
 >>>
 >>>
@@ -253,71 +300,76 @@ Critical section 1
 Critical section 2
 
 
-Use Case - 0x04
+Use Case - 0x05
 ---------------
 * Microbenchmark
 
->>> # doctest: +SKIP
-... from time import time
-...
-...
-... class Timeit:
-...     def __init__(self, name):
-...         self.name = name
-...
+>>> from time import time
+>>>
+>>>
+>>> class Timeit:
 ...     def __enter__(self):
 ...         self.start = time()
-...         return self
 ...
-...     def __exit__(self, *arg):
-...         end = time()
-...         print(f'Duration of {self.name} is {end - self.start:.2f} second')
-...
-...
-... a = 1
-... b = 2
-... repetitions = int(1e7)
-...
-... with Timeit('f-string'):
+...     def __exit__(self, *args):
+...         self.stop = time()
+...         duration = self.stop - self.start
+...         print(f'Duration: {duration:.4f} seconds')
+
+Let's define some constants for tests:
+
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
+>>> repetitions = 10_000_000
+
+Microbenchmark for concatenation using ``f-string``:
+
+>>> with Timeit():  # doctest: +SKIP
 ...     for _ in range(repetitions):
-...         f'{a}{b}'
-...
-... with Timeit('string concat'):
+...         f'{firstname}{lastname}'
+Duration: 1.3408 seconds
+
+Microbenchmark for concatenation using add (``+``) operator:
+
+>>> with Timeit():  # doctest: +SKIP
 ...     for _ in range(repetitions):
-...         str(a) + str(b)
-...
-... with Timeit('str.format()'):
+...         firstname + lastname
+Duration: 1.2745 seconds
+
+Microbenchmark for concatenation using modulo (``%``) operator:
+
+>>> with Timeit():  # doctest: +SKIP
 ...     for _ in range(repetitions):
-...         '{0}{1}'.format(a, b)
-...
-... with Timeit('str.format()'):
+...         '%s%s' % (firstname, lastname)
+Duration: 2.1886 seconds
+
+Microbenchmark for concatenation using modulo (``%``) operator:
+
+>>> with Timeit():  # doctest: +SKIP
 ...     for _ in range(repetitions):
-...         '{}{}'.format(a, b)
-...
-... with Timeit('str.format()'):
+...         '%(fname)s%(lname)s' % {'fname': firstname, 'lname': lastname}
+Duration: 4.1019 seconds
+
+Microbenchmark for concatenation using ``str.format()`` method:
+
+Microbenchmark for concatenation using ``str.format()`` method:
+
+>>> with Timeit():  # doctest: +SKIP
 ...     for _ in range(repetitions):
-...         '{a}{b}'.format(a=a, b=b)
-...
-... with Timeit('%-style'):
+...         '{}{}'.format(firstname, lastname)
+Duration: 2.6623 seconds
+
+>>> with Timeit():  # doctest: +SKIP
 ...     for _ in range(repetitions):
-...         '%s%s' % (a, b)
-...
-... with Timeit('%-style'):
+...         '{0}{1}'.format(firstname, lastname)
+Duration: 2.7617 seconds
+
+Microbenchmark for concatenation using ``str.format()`` method:
+
+>>> with Timeit():  # doctest: +SKIP
 ...     for _ in range(repetitions):
-...         '%d%d' % (a, b)
-...
-... with Timeit('%-style'):
-...     for _ in range(repetitions):
-...         '%f%f' % (a, b)
-...
-... Duration of f-string is 2.94 second
-... Duration of string concat is 5.30 second
-... Duration of str.format() is 3.62 second
-... Duration of str.format() is 3.48 second
-... Duration of str.format() is 5.02 second
-... Duration of %-style is 2.60 second
-... Duration of %-style is 2.71 second
-... Duration of %-style is 4.02 second
+...         '{fname}{lname}'.format(fname=firstname, lname=lastname)
+Duration: 5.3505 seconds
 
 
 Assignments
