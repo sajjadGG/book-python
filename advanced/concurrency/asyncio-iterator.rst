@@ -1,5 +1,7 @@
 AsyncIO Iterator
 ================
+* Asynchronous Generators https://peps.python.org/pep-0525/
+* Asynchronous Comprehensions https://peps.python.org/pep-0530/
 * ``__aiter__``
 * ``__anext__``
 
@@ -22,6 +24,4 @@ Example
 
 Type Annotation
 ---------------
-* ``collections.abc.AsyncIterable``
-* ``collections.abc.AsyncIterator``
 * ``collections.abc.AsyncGenerator``

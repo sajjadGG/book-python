@@ -151,6 +151,8 @@ Concurrency
     concurrency/asyncio-stream.rst
     concurrency/asyncio-synchronization.rst
     concurrency/asyncio-iterator.rst
+    concurrency/asyncio-generator.rst
+    concurrency/asyncio-comprehension.rst
     concurrency/asyncio-contextmanager.rst
     concurrency/asyncio-3rdparty.rst
 

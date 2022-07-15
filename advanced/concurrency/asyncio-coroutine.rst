@@ -7,7 +7,7 @@ AsyncIO Coroutine
 * Coroutine functions are not awaitables
 * Coroutine objects are awaitables
 * Coroutines declared with the ``async``/``await`` syntax is the preferred way of writing asyncio applications. [#pydocAsyncioTask]_
-
+* https://peps.python.org/pep-0492/
 
 Syntax
 ------
