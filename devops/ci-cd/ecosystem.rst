@@ -214,9 +214,103 @@ Testing
 
 Mutation Testing
 ----------------
+* mutmut (actively maintained) https://github.com/boxed/mutmut
+* mutpy (last commit 2019) https://github.com/mutpy/mutpy
+* https://hackernoon.com/mutmut-a-python-mutation-testing-system-9b9639356c78
+
+Following code:
+
+>>> def is_adult(age: int) -> bool:
+...     if age >= 18:       # original line
+...         return True
+...     else:
+...         return False
+
+Will be modified to:
+
+>>> def is_adult(age: int) -> bool:
+...     if age > 18:        # mutated line
+...         return True
+...     else:
+...         return False
+
+And then all tests will be executed to check if you have good tests
+to cover for such change
+
+``mutmut`` 2.0 creates the following mutants
+(`source <https://github.com/boxed/mutmut/blob/9fc568648ba81d193f986c25ab60cbee0660dd33/mutmut/__init__.py#L433-L446>`_):
+
+* Operator mutations: About 30 different patterns like replacing + by - , * by ** and similar, but also > by >= .
+* Keyword mutations: Replacing True by False , in by not in and similar.
+* Number mutations: You can write things like 0b100 which is the same as 4, 0o100, which is 64, 0x100 which is 256, .12 which is 0.12 and similar. The number mutations try to capture mistakes in this area. mutmut simply adds 1 to the number.
+* Name mutations: The name mutations capture copy vs deepcopy and "" vs None .
+* Argument mutations: Replaces keyword arguments one by one from dict(a=b) to dict(aXXX=b).
+* or_test and and_test: and ↔ or
+* String mutation: Adding XX to the string.
+
+Those can be grouped into three very different kinds of mutations:
+
+* value mutations (string mutation, number mutation),
+* decision mutations (switch if-else blocks, e.g. the or_test / and_test and the keyword mutations),
+* statement mutations (removing or changing a line of code).
+
 .. figure:: ../_img/testing-mutation-1.jpg
 .. figure:: ../_img/testing-mutation-2.png
 .. figure:: ../_img/testing-mutation-3.jpg
+
+.. code-block:: sh
+
+    $ ln -s /usr/bin/python3 /home/ubuntu/bin/python
+    $ pip install mutmut
+    $ mutmut --help
+
+.. code-block:: sh
+
+    $ mutmut run
+    $ mutmut results
+    $ mutmut show 2
+    $ mutmut show 22
+
+    $ mutmut html
+    $ python3 -m http.server 8080 --directory html
+
+    $ mutmut junitxml
+
+    $ rm -fr .mutmut-cache
+
+.. code-block:: ini
+    :caption: setup.cfg
+
+    [mutmut]
+    paths_to_mutate=src/
+    backup=False
+    runner=python -m hammett -x
+    tests_dir=tests/
+    dict_synonyms=Struct, NamedStruct
+
+.. code-block:: python
+
+    some_code_here()  # pragma: no mutate
+
+In order to better integrate with CI/CD systems, mutmut supports
+the generation of a JUnit XML report (using
+https://pypi.org/project/junit-xml/). This option is available
+by calling mutmut junitxml. In order to define how to deal with
+suspicious and untested mutants, you can use
+
+.. code-block:: sh
+
+    $ mutmut junitxml --suspicious-policy=ignore --untested-policy=ignore
+
+The possible values for these policies are:
+
+* ignore: Do not include the results on the report at all
+* skipped: Include the mutant on the report as "skipped"
+* error: Include the mutant on the report as "error"
+* failure: Include the mutant on the report as "failure"
+
+If a failed mutant is included in the report, then the unified diff
+of the mutant will also be included for debugging purposes.
 
 
 BDD Testing
@@ -228,6 +322,84 @@ BDD Testing
 .. figure:: ../_img/test-bdd-behave.png
 .. figure:: ../_img/test-bdd-lettuce.png
 
+Example:
+
+    .. code-block:: bdd
+
+        Feature: showing off behave
+
+          Scenario: run a simple test
+             Given we have behave installed
+              When we implement a test
+              Then behave will test it for us!
+
+    .. code-block:: python
+
+        from behave import *
+
+        @given('we have behave installed')
+        def step_impl(context):
+            pass
+
+        @when('we implement a test')
+        def step_impl(context):
+            assert True is not False
+
+        @then('behave will test it for us!')
+        def step_impl(context):
+            assert context.failed is False
+
+    .. code-block:: sh
+
+        $ behave
+        Feature: showing off behave # features/tutorial.feature:1
+
+          Scenario: run a simple test        # features/tutorial.feature:3
+            Given we have behave installed   # features/steps/tutorial.py:3
+            When we implement a test         # features/steps/tutorial.py:7
+            Then behave will test it for us! # features/steps/tutorial.py:11
+
+        1 feature passed, 0 failed, 0 skipped
+        1 scenario passed, 0 failed, 0 skipped
+        3 steps passed, 0 failed, 0 skipped, 0 undefined
+
+Parameters:
+
+.. code-block:: bdd
+
+    Scenario: look up a book
+      Given I search for a valid book
+       Then the result page will include "success"
+
+    Scenario: look up an invalid book
+      Given I search for a invalid book
+       Then the result page will include "failure"
+
+.. code-block:: python
+
+    @then('the result page will include "{text}"')
+    def step_impl(context, text):
+        if text not in context.response:
+            fail('%r not in %r' % (text, context.response))
+
+Step Data:
+
+.. code-block:: bdd
+
+    Scenario Outline: Blenders
+       Given I put <thing> in a blender,
+        when I switch the blender on
+        then it should transform into <other thing>
+
+     Examples: Amphibians
+       | thing         | other thing |
+       | Red Tree Frog | mush        |
+
+     Examples: Consumer Electronics
+       | thing         | other thing |
+       | iPhone        | toxic waste |
+       | Galaxy Nexus  | toxic waste |
+
 
 Load Testing
 ------------
@@ -238,12 +410,86 @@ Load Testing
 .. figure:: ../_img/test-load-gatling-result.png
 .. figure:: ../_img/test-load-gatling-run.png
 
+.. code-block:: scala
+    :caption: https://gatling.io/docs/gatling/tutorials/quickstart/#gatling-scenario-explained
+
+    package computerdatabase // 1
+
+    import scala.concurrent.duration._
+
+    // 2
+    import io.gatling.core.Predef._
+    import io.gatling.http.Predef._
+
+    class BasicSimulation extends Simulation { // 3
+
+      val httpProtocol = http // 4
+        .baseUrl("http://computer-database.gatling.io") // 5
+        .acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8") // 6
+        .doNotTrackHeader("1")
+        .acceptLanguageHeader("en-US,en;q=0.5")
+        .acceptEncodingHeader("gzip, deflate")
+        .userAgentHeader("Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0")
+
+      val scn = scenario("BasicSimulation") // 7
+        .exec(
+          http("request_1") // 8
+            .get("/")
+        ) // 9
+        .pause(5) // 10
+
+      setUp( // 11
+        scn.inject(atOnceUsers(1)) // 12
+      ).protocols(httpProtocol) // 13
+    }
+
+What does it mean?
+
+1. The optional package.
+2. The required imports.
+3. The class declaration. Note that it extends Simulation.
+4. The common configuration to all HTTP requests.
+5. The baseUrl that will be prepended to all relative urls.
+6. Common HTTP headers that will be sent with all the requests.
+7. The scenario definition.
+8. An HTTP request, named request_1. This name will be displayed in the final reports.
+9. The url this request targets with the GET method.
+10. Some pause/think time.
+
 
 Testing UI
 ----------
 * Selenium: https://www.selenium.dev
 
 .. figure:: ../_img/qa-selenium-ide.png
+
+.. code-block:: python
+
+    from selenium import webdriver
+    from selenium.webdriver.common.by import By
+
+
+    def test_eight_components():
+        driver = webdriver.Chrome()
+
+        driver.get("https://google.com")
+
+        title = driver.title
+        assert title == "Google"
+
+        driver.implicitly_wait(0.5)
+
+        search_box = driver.find_element(by=By.NAME, value="q")
+        search_button = driver.find_element(by=By.NAME, value="btnK")
+
+        search_box.send_keys("Selenium")
+        search_button.click()
+
+        search_box = driver.find_element(by=By.NAME, value="q")
+        value = search_box.get_attribute("value")
+        assert value == "Selenium"
+
+        driver.quit()
 
 
 Testing microservices
@@ -284,6 +530,7 @@ Setup
 -----
 .. code-block:: sh
 
+    git clone https://github.com/sages-pl/src-python /home/ubuntu/src
     sudo apt update
     sudo apt install -y uidmap
     curl https://get.docker.com/rootless |sh
@@ -337,6 +584,7 @@ Jenkins:
         cat > /home/ubuntu/bin/run-jenkins << EOF
 
         chmod o+rw /run/user/1000/docker.sock
+        sudo ln -s /usr/bin/python3 /usr/bin/python
         sudo ln -s /home/ubuntu/.local/share/docker/volumes/jenkins_data/_data/ /var/jenkins_home
 
         docker run \\
@@ -521,6 +769,8 @@ Files:
         sonar.tests=test
         sonar.inclusions=**/*.py
         sonar.exclusions=**/migrations/**,**/*.pyc,**/__pycache__/**
+        sonar.python.xunit.skipDetails=false
+        sonar.python.xunit.reportPath=.tmp/xunit.xml
         sonar.python.coverage.reportPaths=.tmp/coverage.xml,./cobertura.xml
         sonar.python.bandit.reportPaths=.tmp/bandit.json
         sonar.python.pylint.reportPaths=.tmp/pylint.txt
@@ -669,7 +919,10 @@ Tests:
     .. code-block:: sh
 
         cat > run/test-mutation << EOF
-        echo 'Not Implemented'
+        rm -fr .mutmut-cache
+        mutmut run || true
+        mutmut results
+        mutmut junitxml --suspicious-policy=ignore --untested-policy=ignore > .tmp/xunit.xml
         EOF
 
     .. code-block:: sh
