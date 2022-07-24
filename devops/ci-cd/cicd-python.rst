@@ -35,6 +35,7 @@ Gitea
         --env GITEA__database__NAME=... \\
         --env GITEA__database__USER=... \\
         --env GITEA__database__PASSWD=... \\
+        --dns 8.8.8.8 \\
         --network ecosystem \\
         --publish 3000:3000 \\
         --publish 2222:22 \\
@@ -43,8 +44,6 @@ Gitea
         --volume /etc/timezone:/etc/timezone:ro \\
         --volume /etc/localtime:/etc/localtime:ro \\
         gitea/gitea:latest-rootless
-
-    docker exec -itu root gitea ash -c 'echo "nameserver 8.8.8.8" > /etc/resolv.conf'
 
     echo "Gitea running on: http://$IP:3000/"
 
@@ -189,7 +188,7 @@ Registry UI
     docker run \\
         --name registry-ui \\
         --detach \\
-        --restart=always \\
+        --restart always \\
         --network ecosystem \\
         --publish 8888:8888 \\
         --volume /home/ubuntu/registry-ui.yml:/opt/config.yml:ro \\
