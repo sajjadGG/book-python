@@ -40,23 +40,23 @@ Positional Arguments
 
 >>> def echo(a, b, c):
 ...     print(f'{a=}, {b=}, {c=}')
->>>
->>>
+
 >>> echo(1, 2, 3)
 a=1, b=2, c=3
->>>
+
 >>> data = (1, 2, 3)
->>> echo(data)
-Traceback (most recent call last):
-TypeError: echo() missing 2 required positional arguments: 'b' and 'c'
 >>>
->>> data = (1, 2, 3)
 >>> echo(data[0], data[1], data[2])
 a=1, b=2, c=3
 >>>
->>> data = (1, 2, 3)
 >>> echo(*data)
 a=1, b=2, c=3
+
+>>> data = (1, 2, 3)
+>>>
+>>> echo(data)
+Traceback (most recent call last):
+TypeError: echo() missing 2 required positional arguments: 'b' and 'c'
 
 
 Keyword Arguments
@@ -69,18 +69,26 @@ Keyword arguments passed directly:
 
 >>> def echo(a, b, c):
 ...     print(f'{a=}, {b=}, {c=}')
->>>
->>>
+
 >>> echo(a=1, b=2, c=3)
 a=1, b=2, c=3
->>>
+
 >>> data = {'a': 1, 'b': 2, 'c': 3}
+>>>
 >>> echo(a=data['a'], b=data['b'], c=data['c'])
 a=1, b=2, c=3
 >>>
->>> data = {'a': 1, 'b': 2, 'c': 3}
 >>> echo(**data)
 a=1, b=2, c=3
+>>>
+>>> echo(*data.values())
+a=1, b=2, c=3
+
+>>> data = {'a': 1, 'b': 2, 'c': 3}
+>>>
+>>> echo(data)
+Traceback (most recent call last):
+TypeError: echo() missing 2 required positional arguments: 'b' and 'c'
 
 
 Positional and Keyword Arguments
@@ -93,22 +101,23 @@ a=1, b=2, c=3, d=4
 
 >>> data1 = (1, 2)
 >>> data2 = {'c': 3, 'd': 4}
+>>>
 >>> echo(data1[0], data1[1], c=data2['c'], d=data2['d'])
 a=1, b=2, c=3, d=4
-
->>> data1 = (1, 2)
->>> data2 = {'c': 3, 'd': 4}
+>>>
 >>> echo(*data1, **data2)
 a=1, b=2, c=3, d=4
 
 >>> data1 = (1, 2)
 >>> data2 = {'c': 3}
+>>>
 >>> echo(*data1, **data2)
 Traceback (most recent call last):
 TypeError: echo() missing 1 required positional argument: 'd'
 
 >>> data1 = (1, 2)
 >>> data2 = {'c': 3, 'd': 4, 'a': 1}
+>>>
 >>> echo(*data1, **data2)
 Traceback (most recent call last):
 TypeError: echo() got multiple values for argument 'a'
@@ -123,41 +132,38 @@ Create One Object
 ...         self.petal_length = petal_length
 ...         self.petal_width = petal_width
 ...         self.species = species
+...
+...     def __repr__(self):
+...         values = tuple(vars(self).values())
+...         return f'Iris{values}'
 
 Objects From Sequence:
 
->>> DATA = (6.0, 3.4, 4.5, 1.6, 'versicolor')
+>>> DATA = (5.8, 2.7, 5.1, 1.9, 'virginica')
 >>>
 >>> result = Iris(*DATA)
->>> vars(result)  # doctest: +NORMALIZE_WHITESPACE
-{'sepal_length': 6.0,
- 'sepal_width': 3.4,
- 'petal_length': 4.5,
- 'petal_width': 1.6,
- 'species': 'versicolor'}
+>>> print(result)
+Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
 
 Objects From Mappings:
 
 >>> DATA = {
-...     "sepal_length": 5.8,
-...     "sepal_width": 2.7,
-...     "petal_length": 5.1,
-...     "petal_width": 1.9,
-...     "species": "virginica",
+...     'sepal_length': 5.8,
+...     'sepal_width': 2.7,
+...     'petal_length': 5.1,
+...     'petal_width': 1.9,
+...     'species': 'virginica',
 ... }
 >>>
->>> iris = Iris(**DATA)
->>> vars(iris)  # doctest: +NORMALIZE_WHITESPACE
-{'sepal_length': 5.8,
- 'sepal_width': 2.7,
- 'petal_length': 5.1,
- 'petal_width': 1.9,
- 'species': 'virginica'}
+>>> result = Iris(**DATA)
+>>> print(result)
+Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
 
 
 Create Many Objects
 -------------------
 >>> from pprint import pprint
+>>>
 >>>
 >>> class Iris:
 ...     def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
@@ -193,14 +199,42 @@ Object from list of sequences:
 
 Objects from list of mappings:
 
->>> DATA = [{"sepal_length":5.8,"sepal_width":2.7,"petal_length":5.1,"petal_width":1.9,"species":"virginica"},
-...         {"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2,"species":"setosa"},
-...         {"sepal_length":5.7,"sepal_width":2.8,"petal_length":4.1,"petal_width":1.3,"species":"versicolor"},
-...         {"sepal_length":6.3,"sepal_width":2.9,"petal_length":5.6,"petal_width":1.8,"species":"virginica"},
-...         {"sepal_length":6.4,"sepal_width":3.2,"petal_length":4.5,"petal_width":1.5,"species":"versicolor"},
-...         {"sepal_length":4.7,"sepal_width":3.2,"petal_length":1.3,"petal_width":0.2,"species":"setosa"}]
+>>> DATA = [
+...     {"sepal_length":5.8,"sepal_width":2.7,"petal_length":5.1,"petal_width":1.9,"species":"virginica"},
+...     {"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2,"species":"setosa"},
+...     {"sepal_length":5.7,"sepal_width":2.8,"petal_length":4.1,"petal_width":1.3,"species":"versicolor"},
+...     {"sepal_length":6.3,"sepal_width":2.9,"petal_length":5.6,"petal_width":1.8,"species":"virginica"},
+...     {"sepal_length":6.4,"sepal_width":3.2,"petal_length":4.5,"petal_width":1.5,"species":"versicolor"},
+...     {"sepal_length":4.7,"sepal_width":3.2,"petal_length":1.3,"petal_width":0.2,"species":"setosa"},
+... ]
 >>>
 >>> result = [Iris(**row) for row in DATA]
+>>>
+>>> pprint(result)
+[Iris(5.8, 2.7, 5.1, 1.9, 'virginica'),
+ Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
+ Iris(5.7, 2.8, 4.1, 1.3, 'versicolor'),
+ Iris(6.3, 2.9, 5.6, 1.8, 'virginica'),
+ Iris(6.4, 3.2, 4.5, 1.5, 'versicolor'),
+ Iris(4.7, 3.2, 1.3, 0.2, 'setosa')]
+
+Objects from json:
+
+>>> DATA = (
+...     '[{"sepal_length":5.8,"sepal_width":2.7,"petal_length":5.1,"peta'
+...     'l_width":1.9,"species":"virginica"},{"sepal_length":5.1,"sepal_'
+...     'width":3.5,"petal_length":1.4,"petal_width":0.2,"species":"seto'
+...     'sa"},{"sepal_length":5.7,"sepal_width":2.8,"petal_length":4.1,"'
+...     'petal_width":1.3,"species":"versicolor"},{"sepal_length":6.3,"s'
+...     'epal_width":2.9,"petal_length":5.6,"petal_width":1.8,"species":'
+...     '"virginica"},{"sepal_length":6.4,"sepal_width":3.2,"petal_lengt'
+...     'h":4.5,"petal_width":1.5,"species":"versicolor"},{"sepal_length'
+...     '":4.7,"sepal_width":3.2,"petal_length":1.3,"petal_width":0.2,"s'
+...     'pecies":"setosa"}]'
+... )
+>>>
+>>> import json
+>>> result = [Iris(**row) for row in json.loads(DATA)]
 >>>
 >>> pprint(result)
 [Iris(5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -244,7 +278,7 @@ Calling a function which has similar parameters. Passing configuration to the
 function, which sets parameters from the config:
 
 >>> def draw_line(x, y, color, type, width, markers):
-...     pass
+...     ...
 
 >>> draw_line(x=1, y=2, color='red', type='dashed', width='2px', markers='disc')
 >>> draw_line(x=3, y=4, color='red', type='dashed', width='2px', markers='disc')
@@ -267,32 +301,33 @@ Use Case - 0x02
 
 Passing sequence to the function:
 
->>> point_xyz = [1, 2, 3]
+>>> point = [1, 2, 3]
 >>>
->>> print_coordinates(point_xyz[0], point_xyz[1], point_xyz[2])
+>>> print_coordinates(point[0], point[1], point[2])
 x=1, y=2, z=3
 >>>
->>> print_coordinates(*point_xyz)
+>>> print_coordinates(*point)
 x=1, y=2, z=3
 
 Passing mapping to the function:
 
->>> point_xyz = {'x': 1, 'y': 2, 'z': 3}
+>>> point = {'x': 1, 'y': 2, 'z': 3}
 >>>
->>> print_coordinates(x=point_xyz['x'], y=point_xyz['y'], z=point_xyz['z'])
+>>> print_coordinates(x=point['x'], y=point['y'], z=point['z'])
 x=1, y=2, z=3
 >>>
->>> print_coordinates(**point_xyz)
+>>> print_coordinates(**point)
 x=1, y=2, z=3
 >>>
->>> print_coordinates(*point_xyz.values())
+>>> print_coordinates(*point.values())
 x=1, y=2, z=3
 
 Passing sequence and mapping to the function:
 
->>> point_xy = (1, 2)
->>> point_z = {'z': 3}
->>> print_coordinates(*point_xy, **point_z)
+>>> point2d = (1, 2)
+>>> point3d = {'z': 3}
+>>>
+>>> print_coordinates(*point2d, **point3d)
 x=1, y=2, z=3
 
 
@@ -300,8 +335,9 @@ Use Case - 0x03
 ---------------
 >>> def database_connect(host, port, username, password, database):
 ...     ...
->>>
->>>
+
+After reading config from file we have a dict:
+
 >>> CONFIG = {
 ...     'host': 'example.com',
 ...     'port': 5432,
@@ -342,11 +378,9 @@ Use Case - 0x04
 ...             (3, 3, -1),
 ...             (2, 3)]
 
-
 >>> movement = [Point(x,y) for x,y in MOVEMENT]
 Traceback (most recent call last):
 ValueError: too many values to unpack (expected 2)
-
 
 >>> movement = [Point(*coordinates) for coordinates in MOVEMENT]
 >>>
@@ -407,12 +441,13 @@ Use Case - 0x05
 ...     species: str
 >>>
 >>>
->>> DATA = [{"sepal_length":5.8,"sepal_width":2.7,"petal_length":5.1,"petal_width":1.9,"species":"virginica"},
-...         {"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2,"species":"setosa"},
-...         {"sepal_length":5.7,"sepal_width":2.8,"petal_length":4.1,"petal_width":1.3,"species":"versicolor"},
-...         {"sepal_length":6.3,"sepal_width":2.9,"petal_length":5.6,"petal_width":1.8,"species":"virginica"},
-...         {"sepal_length":6.4,"sepal_width":3.2,"petal_length":4.5,"petal_width":1.5,"species":"versicolor"},
-...         {"sepal_length":4.7,"sepal_width":3.2,"petal_length":1.3,"petal_width":0.2,"species":"setosa"}]
+>>> DATA = [
+...     {"sepal_length":5.8,"sepal_width":2.7,"petal_length":5.1,"petal_width":1.9,"species":"virginica"},
+...     {"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2,"species":"setosa"},
+...     {"sepal_length":5.7,"sepal_width":2.8,"petal_length":4.1,"petal_width":1.3,"species":"versicolor"},
+...     {"sepal_length":6.3,"sepal_width":2.9,"petal_length":5.6,"petal_width":1.8,"species":"virginica"},
+...     {"sepal_length":6.4,"sepal_width":3.2,"petal_length":4.5,"petal_width":1.5,"species":"versicolor"},
+...     {"sepal_length":4.7,"sepal_width":3.2,"petal_length":1.3,"petal_width":0.2,"species":"setosa"}]
 >>>
 >>>
 >>> result = [Iris(**row) for row in DATA]
@@ -486,11 +521,8 @@ there is no need to specify all the values from the original function. The
 uncovered arguments will simply be put in ``kwargs`` dictionary and passed
 to the original function:
 
->>> def mycsv(file, encoding='utf-8', delimiter=';', decimal=b',',
-...           lineterminator='\n', **kwargs):
-...     return read_csv(file, encoding=encoding, delimiter=delimiter,
-...                     decimal=decimal, lineterminator=lineterminator,
-...                     **kwargs)
+>>> def mycsv(file, **kwargs):
+...     return read_csv(file, delimiter=';', decimal=b',', **kwargs)
 
 This allows for cleaner code. Each parameter will be passed to ``mycsv``
 function. Then it will be checked if there is a different default value
@@ -498,8 +530,8 @@ already defined. If not, then parameter will be stored in ``kwargs`` and
 passed to the original function:
 
 >>> mycsv('iris1.csv')
->>> mycsv('iris2.csv', encoding='iso-8859-2')
->>> mycsv('iris3.csv', encoding='cp1250', verbose=True)
+>>> mycsv('iris2.csv', encoding='utf-8')
+>>> mycsv('iris3.csv', encoding='utf-8', verbose=True)
 >>> mycsv('iris4.csv', verbose=True, usecols=['Sepal Length', 'Species'])
 
 
@@ -536,6 +568,9 @@ positionally, using keyword arguments or even both at the same time:
 
 >>> add(1, b=2)
 3
+
+>>> echo('hello')
+'hello'
 
 
 References

@@ -3,6 +3,54 @@ Performance Optimization
 * https://wiki.python.org/moin/TimeComplexity
 
 
+Contains
+--------
+* ``in`` checks whether iterable contains value
+* O(n) - ``in str``
+* O(n) - ``in list``
+* O(n) - ``in tuple``
+* O(1) - ``in set``
+* O(1) - ``in dict``
+
+List:
+
+>>> DATABASE = ['mwatney', 'mlewis', 'rmartinez']
+>>> user = 'ptwardowski'
+>>>
+>>> %%timeit -n 1000 -r 1000  # doctest: +SKIP
+... user in DATABASE
+165 ns ± 35 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+Set:
+
+>>> DATABASE = {'mwatney', 'mlewis', 'rmartinez'}
+>>> user = 'ptwardowski'
+>>>
+>>> %%timeit -n 1000 -r 1000  # doctest: +SKIP
+... login in users
+103 ns ± 34.4 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+Note, that the longer our ``DATABASE`` is, then the difference is more visible:
+
+List:
+
+>>> DATABASE = ['mwatney', 'mlewis', 'rmartinez', 'bjohanssen', 'avogel' 'cbeck']
+>>> user = 'ptwardowski'
+>>>
+>>> %%timeit -n 1000 -r 1000  # doctest: +SKIP
+... login in users
+276 ns ± 90.6 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+Set:
+
+>>> DATABASE = {'mwatney', 'mlewis', 'rmartinez', 'bjohanssen', 'avogel' 'cbeck'}
+>>> user = 'ptwardowski'
+>>>
+>>> %%timeit -n 1000 -r 1000  # doctest: +SKIP
+... login in users
+105 ns ± 35.2 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+
 PyPy
 ----
 * http://pypy.org
@@ -164,21 +212,6 @@ computation and their disk for excess storage.
 Find existing implementation
 ----------------------------
 * https://pypi.org
-
-
-Contains
---------
-* Use ``set`` instead of ``list``
-
->>> NAMES = ['José', 'Иван', 'Max']
->>>
->>> if 'Max' in NAMES:
-...     pass
-
->>> NAMES = {'José', 'Иван', 'Max'}
->>>
->>> if 'Max' in NAMES:
-...     pass
 
 
 String Concatenation

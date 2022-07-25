@@ -79,33 +79,36 @@ SyntaxError: invalid syntax
 
 Processing Streams
 ------------------
-* Processing steams in chunks:
+* Processing steams in chunks
+
+First, let write data to file to file:
 
 >>> with open('/tmp/myfile.txt', mode='w') as file:
-...     file.write('hello')
-5
+...     _ = file.write('WechoosetogototheMoon')
 
->>> file = open('/tmp/myfile.txt')
->>>
->>> char = file.read(1)
->>> while char:
-...     print(char)
-...     char = file.read(1)
-h
-e
-l
-l
-o
+Now, we will process file reading `n` bytes of data:
 
->>> file = open('/tmp/myfile.txt')
->>>
->>> while char := file.read(1):
-...     print(char)
-h
-e
-l
-l
-o
+>>> with open('/tmp/myfile.txt') as  file:
+...     chunk = file.read(5)
+...     while chunk:
+...         print(f'Processing... {chunk}')
+...         chunk = file.read(5)
+Processing... Wecho
+Processing... oseto
+Processing... gotot
+Processing... heMoo
+Processing... n
+
+As you can see
+
+>>> with open('/tmp/myfile.txt') as  file:
+...     while chunk := file.read(5):
+...         print(f'Processing... {chunk}')
+Processing... Wecho
+Processing... oseto
+Processing... gotot
+Processing... heMoo
+Processing... n
 
 Imagine if this is not a one character, but a chunk of data for processing
 (for example a ten megabytes at once). This construct make more sense then.
@@ -161,6 +164,19 @@ resources:
 >>> result = [{'firstname': name[0], 'lastname': name[1]}
 ...           for fullname in DATA
 ...           if (name := fullname.split())]
+>>>
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[{'firstname': 'Mark', 'lastname': 'Watney'},
+ {'firstname': 'Melissa', 'lastname': 'Lewis'},
+ {'firstname': 'Rick', 'lastname': 'Martinez'}]
+
+You can define multiple assignment expressions if needed.
+
+>>> result = [{'firstname': name[0], 'lastname': name[1]}
+...           for fullname in DATA
+...           if (name := fullname.split())
+...           and (firstname := name[0])
+...           and (lastname := name[1])]
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 [{'firstname': 'Mark', 'lastname': 'Watney'},
@@ -227,21 +243,48 @@ Use Case - 0x01
 
 Use Case - 0x02
 ---------------
+>>> from pprint import pprint
+
+We want to convert:
+
 >>> DATA = """5.8,2.7,5.1,1.9,virginica
 ... 5.1,3.5,1.4,0.2,setosa
 ... 5.7,2.8,4.1,1.3,versicolor"""
->>>
->>>
->>> result = [tuple(features + [species])
-...           for row in DATA.splitlines()
-...           if (line := row.split(','))
-...           and (features := [float(x) for x in line[0:4]])
-...           and (species := line[4])]
->>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+
+Into:
+
+>>> pprint(result)  # doctest: +SKIP
 [(5.8, 2.7, 5.1, 1.9, 'virginica'),
  (5.1, 3.5, 1.4, 0.2, 'setosa'),
  (5.7, 2.8, 4.1, 1.3, 'versicolor')]
+
+Using loop:
+
+>>> result = []
+>>> for line in DATA.splitlines():
+...     records = line.split(',')
+...     features = tuple(map(float, records[0:4]))
+...     species = (records[-1],)
+...     result.append(features + species)
+
+Using comprehension:
+
+>>> result = [tuple(map(float, line.split(',')[0:4])) + (line.split(',')[-1],)
+...           for line in DATA.splitlines()]
+
+Using comprehension with assignment expression:
+
+>>> result = [tuple(map(float, records[0:4])) + (records[-1],)
+...           for line in DATA.splitlines()
+...           if (records := line.split(','))]
+
+Using comprehension with multiple assignment expression:
+
+>>> result = [tuple(features) + (species,)
+...           for line in DATA.splitlines()
+...           if (records := line.split(','))
+...           and (features := map(float, records[0:4]))
+...           and (species := records[-1])]
 
 
 Use Case - 0x03
@@ -258,14 +301,6 @@ Use Case - 0x03
 ...     row = tuple(values) + (species,)
 ...     result.append(row)
 3.18 µs ± 394 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
-
->>> %%timeit -r 1000 -n 1000  # doctest: +SKIP
-... result = [tuple(values) + (species,)
-...           for line in DATA.splitlines()
-...           if (row := line.split(','))
-...           and (values := [float(x) for x in row[:-1]])
-...           and (species := row[-1])]
-3.36 µs ± 423 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
 
 >>> %%timeit -r 1000 -n 1000  # doctest: +SKIP
 ... result = [tuple(values) + (species,)
@@ -330,28 +365,38 @@ StopIteration
 
 Use Case - 0x05
 ---------------
->>> DATA = [{'is_astronaut': True,  'name': 'Mark Jim WaTNey'},
-...         {'is_astronaut': True,  'name': 'Melissa LewiS'},
-...         {'is_astronaut': False, 'name': 'José Maria Jiménez'},
-...         {'is_astronaut': True,  'name': 'RiCK MarTineZ'},
+>>> DATA = [{'is_astronaut': True,  'name': 'Mark Watney'},
+...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
+...         {'is_astronaut': False, 'name': 'José Jiménez'},
+...         {'is_astronaut': True,  'name': 'Rick Martinez'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
 
 Comprehension:
 
 >>> result = [{'firstname': person['name'].title().split()[0],
-...            'lastname': person['name'].title().split()[-1]}
+...            'lastname': person['name'].title().split()[1]}
 ...           for person in DATA
 ...           if person['is_astronaut']]
 
-Assignment expressions:
+One assignment expression:
 
 >>> result = [{'firstname': name[0],
-...            'lastname': name[-1]}
+...            'lastname': name[1]}
 ...           for person in DATA
 ...           if person['is_astronaut']
 ...           and (name := person['name'].title().split())]
 
-In both cases result is the same:
+Many assignment expressions:
+
+>>> result = [{'firstname': firstname,
+...            'lastname': lastname}
+...           for person in DATA
+...           if person['is_astronaut']
+...           and (name := person['name'].title().split())
+...           and (firstname := name[0])
+...           and (lastname := name[1])]
+
+In all cases result is the same:
 
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 [{'firstname': 'Mark', 'lastname': 'Watney'},
@@ -368,12 +413,12 @@ Use Case - 0x06
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
 >>>
 >>>
->>> astronauts = [{'firstname': fname, 'lastname': lname}
+>>> astronauts = [{'firstname': firstname, 'lastname': lastname}
 ...                for person in DATA
 ...                if person['is_astronaut']
 ...                and (name := person['name'].split())
-...                and (fname := name[0].capitalize())
-...                and (lname := f'{name[1][0]}.')]
+...                and (firstname := name[0].capitalize())
+...                and (lastname := f'{name[1][0]}.')]
 >>>
 >>> print(astronauts)  # doctest: +NORMALIZE_WHITESPACE
 [{'firstname': 'Mark', 'lastname': 'W.'},
@@ -382,27 +427,6 @@ Use Case - 0x06
 
 
 Use Case - 0x07
----------------
->>> DATA = [{'is_astronaut': True,  'name': 'Mark Watney'},
-...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
-...         {'is_astronaut': False, 'name': 'José Jiménez'},
-...         {'is_astronaut': True,  'name': 'Rick Martinez'},
-...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
->>>
->>>
->>> astronauts = [f'{fname} {lname[0]}.'
-...               for person in DATA
-...               if person['is_astronaut']
-...               and (fullname := person['name'].split())
-...               and (fname := fullname[0].capitalize())
-...               and (lname := fullname[1].upper())]
->>>
->>>
->>> print(astronauts)
-['Mark W.', 'Melissa L.', 'Rick M.']
-
-
-Use Case - 0x08
 ---------------
 In the following example dataclasses are used to automatically
 generate ``__init__()`` method based on the attributes:
