@@ -81,37 +81,55 @@ Processing Streams
 ------------------
 * Processing steams in chunks
 
-First, let write data to file to file:
+Imagine we have a temperature sensor, and this sensor stream values.
+We have a process which receives values from string and appends them
+to the file. Let's simulate the process by adding temperature
+measurements to the file:
 
 >>> with open('/tmp/myfile.txt', mode='w') as file:
-...     _ = file.write('WechoosetogototheMoon')
+...     _ = file.write('21.1,21.1,21.2,21.2,21.3,22.4,')
 
-Now, we will process file reading `n` bytes of data:
+Note, that all values have fixed length of 4 bytes plus comma (5th byte).
+We cannot open and read whole file to the memory, like we normally do.
+This file may be huge, much larger than RAM in our computer.
 
->>> with open('/tmp/myfile.txt') as  file:
-...     chunk = file.read(5)
-...     while chunk:
-...         print(f'Processing... {chunk}')
-...         chunk = file.read(5)
-Processing... Wecho
-Processing... oseto
-Processing... gotot
-Processing... heMoo
-Processing... n
+We will process file reading 5 bytes of data (one measurement) at a time:
 
-As you can see
+>>> file = open('/tmp/myfile.txt')
+>>>
+>>> value = file.read(5)
+>>> while value:
+...     print(f'Processing... {value.removesuffix(",")}')
+...     value = file.read(5)
+Processing... 21.1
+Processing... 21.1
+Processing... 21.2
+Processing... 21.2
+Processing... 21.3
+Processing... 22.4
 
->>> with open('/tmp/myfile.txt') as  file:
-...     while chunk := file.read(5):
-...         print(f'Processing... {chunk}')
-Processing... Wecho
-Processing... oseto
-Processing... gotot
-Processing... heMoo
-Processing... n
+As you can see we have two places where we define number of bytes,
+read and cleanup data. First ``file.read()`` is needed to enter the loop.
+Second ``file.read()`` is needed to process the file further until the end.
+Using assignment expression we can write code which is far better:
 
-Imagine if this is not a one character, but a chunk of data for processing
+>>> file = open('/tmp/myfile.txt')
+>>>
+>>> while value := file.read(5):
+...     print(f'Processing... {value.removesuffix(",")}')
+Processing... 21.1
+Processing... 21.1
+Processing... 21.2
+Processing... 21.2
+Processing... 21.3
+Processing... 22.4
+
+Imagine if this is not a 5 bytes of data, but a chunk of data for processing
 (for example a ten megabytes at once). This construct make more sense then.
+
+Always remember to close the file at the end:
+
+>>> file.close()
 
 
 Checking Match
@@ -432,6 +450,7 @@ In the following example dataclasses are used to automatically
 generate ``__init__()`` method based on the attributes:
 
 >>> from dataclasses import dataclass
+>>> from pprint import pprint
 >>>
 >>>
 >>> @dataclass
@@ -468,7 +487,7 @@ generate ``__init__()`` method based on the attributes:
 ...           if (clsname := species.capitalize())
 ...           and (iris := globals()[clsname])]
 >>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+>>> pprint(result, width=120)
 [Virginica(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9),
  Setosa(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2),
  Versicolor(sepal_length=5.7, sepal_width=2.8, petal_length=4.1, petal_width=1.3),
@@ -503,6 +522,34 @@ In all cases result is the same:
 
 >>> print(result)
 ('mark', 'watney')
+
+
+Use Case - 0x0A
+---------------
+>>> #doctest: +SKIP
+... from ninja import Router
+... from django.contrib.auth import authenticate, login
+... from backend.auth.schemas import LoginRequest SessionIdResponse
+... from backend.common.schemas import ResponseUnauthorized
+...
+... router = Router()
+...
+...
+... @router.api_operation(
+...     methods=['POST'],
+...     path='session/',
+...     response={
+...         200: SessionIdResponse,
+...         401: ResponseUnauthorized},
+...     summary='Authenticate using Cookies and SessionID')
+... def session(request, data: LoginRequest):
+...     username = data.username
+...     password = data.password
+...     if user := authenticate(request, username=username, password=password):
+...         login(request, user)
+...         return 200, {'sessionid': request.session.session_key}
+...     else:
+...         return 401, {'details': 'Invalid credentials'}
 
 
 References
