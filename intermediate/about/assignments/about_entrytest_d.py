@@ -61,3 +61,15 @@ for astronaut in DATA['crew']:
     email = astronaut['email']
     if email.endswith(DOMAINS):
         result.append(email)
+
+
+# Alternative Solution
+result = [email
+          for astronaut in DATA['crew']
+          if (email := astronaut['email'])
+          and email.endswith(DOMAINS)]
+
+# Alternative Solution
+result = [astronaut['email']
+          for astronaut in DATA['crew']
+          if astronaut['email'].endswith(DOMAINS)]
