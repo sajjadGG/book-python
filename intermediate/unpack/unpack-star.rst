@@ -101,6 +101,15 @@ row=(5.1, 3.5, 1.4, 0.2, 'setosa')
 row=(5.7, 2.8, 4.1, 1.3, 'versicolor')
 
 >>> for row in DATA:
+...     values = row[0:4]
+...     species = row[-1]
+...     print(f'{values=}, {species=}')
+...
+values=(5.8, 2.7, 5.1, 1.9), species='virginica'
+values=(5.1, 3.5, 1.4, 0.2), species='setosa'
+values=(5.7, 2.8, 4.1, 1.3), species='versicolor'
+
+>>> for row in DATA:
 ...     *values, species = row
 ...     print(f'{values=}, {species=}')
 ...
@@ -114,6 +123,39 @@ values=[5.7, 2.8, 4.1, 1.3], species='versicolor'
 values=[5.8, 2.7, 5.1, 1.9], species='virginica'
 values=[5.1, 3.5, 1.4, 0.2], species='setosa'
 values=[5.7, 2.8, 4.1, 1.3], species='versicolor'
+
+
+Multi Dimensional
+-----------------
+>>> from pprint import pprint
+
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+... ]
+
+>>> header = DATA[0]
+>>> rows = DATA[1:]
+>>>
+>>> pprint(header)
+('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
+>>>
+>>> pprint(rows)
+[(5.8, 2.7, 5.1, 1.9, 'virginica'),
+ (5.1, 3.5, 1.4, 0.2, 'setosa'),
+ (5.7, 2.8, 4.1, 1.3, 'versicolor')]
+
+>>> header, *rows = DATA
+>>>
+>>> pprint(header)
+('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
+>>>
+>>> pprint(rows)
+[(5.8, 2.7, 5.1, 1.9, 'virginica'),
+ (5.1, 3.5, 1.4, 0.2, 'setosa'),
+ (5.7, 2.8, 4.1, 1.3, 'versicolor')]
 
 
 Use Case - 0x01
