@@ -4,13 +4,6 @@ Block Match
 * Significantly faster for sequences and mappings [#Shaw2022]_
 * Since Python 3.11: For sequences if faster around 80% [#Shaw2022]_
 * Since Python 3.11: For mappings if faster around 80% [#Shaw2022]_
-* ``x`` ⟼ assign ``x = subject``
-* ``'x'`` ⟼ test ``subject == 'x'``
-* ``x.y`` ⟼ test ``subject == x.y``
-* ``x()`` ⟼ test ``isinstance(subject, x)``
-* ``{'x': 'y'}`` ⟼ test ``isinstance(subject, Mapping) and subject.get('x') == 'y'``
-* ``['x']`` ⟼ test ``isinstance(subject, Sequence) and len(subject) == 1 and subject[0] == 'x'``
-* Source: [#Hettinger2021]_
 
 >>> choice = 'r'
 >>>
@@ -22,6 +15,19 @@ Block Match
 ...     color = 'blue'
 ... else:
 ...     color = None
+
+We can use less PEP-8 compliant style, but in this case it increases
+readability.
+
+>>> choice = 'r'
+>>>
+>>> if choice == 'r':    color = 'red'
+... elif choice == 'g':  color = 'green'
+... elif choice == 'b':  color = 'blue'
+... else:                color = None
+
+New ``match`` syntax allows to be ``PEP-8`` compliant while having
+clear syntax without condition repetitions:
 
 >>> choice = 'r'
 >>>
@@ -44,63 +50,21 @@ Syntax
 
 Patterns
 --------
-The patterns listed here are described in more detail below, but summarized together in this section for simplicity:
+* literal pattern
+* capture pattern
+* wildcard pattern
+* constant value pattern
+* sequence pattern
+* mapping pattern
+* class pattern
+* OR pattern
+* walrus pattern
+* Patterns don't just have to be literals.
 
-    * A `literal pattern` is useful to filter constant values in a
-      structure. It looks like a Python literal (including some values like
-      ``True``, ``False`` and ``None``). It only matches objects equal to
-      the literal, and never binds.
-
-    * A `capture pattern` looks like x and is equivalent to an identical
-      assignment target: it always matches and binds the variable with the
-      given (simple) name.
-
-    * The `wildcard pattern` is a single underscore: ``_``.  It always
-      matches, but does not capture any variable (which prevents
-      interference with other uses for ``_`` and allows for some
-      optimizations).
-
-    * A `constant value pattern` works like the literal but for certain named
-      constants. Note that it must be a qualified (dotted) name, given the
-      possible ambiguity with a capture pattern. It looks like ``Color.RED``
-      and only matches values equal to the corresponding value. It never
-      binds.
-
-    * A `sequence pattern` looks like ``[a, *rest, b]`` and is similar to a
-      list unpacking. An important difference is that the elements nested
-      within it can be any kind of patterns, not just names or sequences. It
-      matches only sequences of appropriate length, as long as all the
-      sub-patterns also match. It makes all the bindings of its sub-patterns.
-
-    * A `mapping pattern` looks like ``{"user": u, "emails": [*es]}``. It
-      matches mappings with at least the set of provided keys, and if all the
-      sub-patterns match their corresponding values. It binds whatever the
-      sub-patterns bind while matching with the values corresponding to the
-      keys. Adding **rest at the end of the pattern to capture extra items
-      is allowed.
-
-    * A `class pattern` is similar to the above but matches attributes
-      instead of keys. It looks like ``datetime.date(year=y, day=d)``. It
-      matches instances of the given type, having at least the specified
-      attributes, as long as the attributes match with the corresponding
-      sub-patterns. It binds whatever the sub-patterns bind when matching
-      with the values of the given attributes. An optional protocol also
-      allows matching positional arguments.
-
-    * An `OR pattern` looks like ``[*x] | {"elems": [*x]}``. It matches if
-      any of its sub-patterns match. It uses the binding for the leftmost
-      pattern that matched.
-
-    * A `walrus pattern` looks like ``d := datetime(year=2020, month=m)``. It
-      matches only if its sub-pattern also matches. It binds whatever the
-      sub-pattern match does, and also binds the named variable to the entire
-      object.
-
-But here's where the structural part comes in: the case patterns don't just
-have to be literals. The patterns can also:
+The patterns can also:
 
 * Use variable names that are set if a ``case`` matches
-* Match sequences using list or tuple syntax (like Python’s existing ``iterable unpacking`` feature)
+* Match sequences using list or tuple syntax (like Python'’'s existing ``iterable unpacking`` feature)
 * Match mappings using ``dict`` syntax
 * Use ``*`` to match the rest of a list
 * Use ``**`` to match other keys in a dict
@@ -108,6 +72,230 @@ have to be literals. The patterns can also:
 * Include "or" patterns with ``|``
 * Capture sub-patterns with ``as``
 * Include an ``if`` "guard" clause
+
+
+Literal pattern
+---------------
+A `literal pattern` is useful to filter constant values in a
+structure. It looks like a Python literal (including some values like
+``True``, ``False`` and ``None``). It only matches objects equal to
+the literal, and never binds.
+
+>>> def html_color(name):
+...     match name:
+...         case 'red':   return '#ff0000'
+...         case 'green': return '#00ff00'
+...         case 'blue':  return '#0000ff'
+>>>
+>>>
+>>> html_color('red')
+'#ff0000'
+>>>
+>>> html_color('green')
+'#00ff00'
+>>>
+>>> html_color('blue')
+'#0000ff'
+
+>>> def status(result):
+...     match result:
+...         case True:  return 'success'
+...         case False: return 'error'
+...         case None:  return 'in-progress'
+>>>
+>>>
+>>> status(True)
+'success'
+>>>
+>>> status(False)
+'error'
+>>>
+>>> status(None)
+'in-progress'
+
+>>> def count(*args):
+...     match len(args):
+...         case 3: return 'Three'
+...         case 2: return 'Two'
+...         case 1: return 'One'
+...         case 0: return 'Too few'
+...         case _: return 'Too many'
+>>>
+>>>
+>>> count(1,2,3,4)
+'Too many'
+>>>
+>>> count(1,2,3)
+'Three'
+>>>
+>>> count(1,2)
+'Two'
+>>>
+>>> count(1)
+'One'
+>>>
+>>> count()
+'Too few'
+
+
+Capture pattern
+---------------
+A `capture pattern` looks like x and is equivalent to an identical
+assignment target: it always matches and binds the variable with the
+given (simple) name.
+
+>>> class Astronaut:
+...     def move_left(self, value):
+...         print(f'Moving left by {value}')
+...
+...     def move_right(self, value):
+...         print(f'Moving right by {value}')
+...
+...     def move_up(self, value):
+...         print(f'Moving up by {value}')
+...
+...     def move_down(self, value):
+...         print(f'Moving down by {value}')
+>>>
+>>>
+>>> hero = Astronaut()
+>>>
+>>> def move(*how):
+...     match how:
+...         case ['left', value]:   hero.move_left(value)
+...         case ['right', value]:  hero.move_right(value)
+...         case ['up', value]:     hero.move_up(value)
+...         case ['down', value]:   hero.move_down(value)
+>>>
+>>>
+>>> move('left', 1)
+Moving left by 1
+>>>
+>>> move('right', 2)
+Moving right by 2
+>>>
+>>> move('up', 3)
+Moving up by 3
+>>>
+>>> move('down', 4)
+Moving down by 4
+
+>>> def _get(path):
+...     print(f'Processing GET request for {path}')
+>>>
+>>> def _post(path):
+...     print(f'Processing POST request for {path}')
+>>>
+>>> def _put(path):
+...     print(f'Processing PUT request for {path}')
+>>>
+>>> def _delete(path):
+...     print(f'Processing DELETE request for {path}')
+>>>
+>>>
+>>> def process_request(request):
+...     match request.split():
+...         case ['GET',    path, 'HTTP/2.0']: _get(path)
+...         case ['POST',   path, 'HTTP/2.0']: _post(path)
+...         case ['PUT',    path, 'HTTP/2.0']: _put(path)
+...         case ['DELETE', path, 'HTTP/2.0']: _delete(path)
+>>>
+>>>
+>>> process_request('POST /user/ HTTP/2.0')
+Processing POST request for /user/
+>>>
+>>> process_request('GET /user/mwatney/ HTTP/2.0')
+Processing GET request for /user/mwatney/
+>>>
+>>> process_request('PUT /user/mwatney/ HTTP/2.0')
+Processing PUT request for /user/mwatney/
+>>>
+>>> process_request('DELETE /user/mwatney/ HTTP/2.0')
+Processing DELETE request for /user/mwatney/
+
+
+Wildcard pattern
+----------------
+The `wildcard pattern` is a single underscore: ``_``.  It always
+matches, but does not capture any variable (which prevents
+interference with other uses for ``_`` and allows for some
+optimizations).
+
+>>> def html_color(name):
+...     match name:
+...         case 'red':   return '#ff0000'
+...         case 'green': return '#00ff00'
+...         case 'blue':  return '#0000ff'
+...         case _:       raise NotImplementedError
+
+
+Constant value pattern
+----------------------
+A `constant value pattern` works like the literal but for certain named
+constants. Note that it must be a qualified (dotted) name, given the
+possible ambiguity with a capture pattern. It looks like ``Color.RED``
+and only matches values equal to the corresponding value. It never
+binds.
+
+
+Sequence pattern
+----------------
+A `sequence pattern` looks like ``[a, *rest, b]`` and is similar to a
+list unpacking. An important difference is that the elements nested
+within it can be any kind of patterns, not just names or sequences. It
+matches only sequences of appropriate length, as long as all the
+sub-patterns also match. It makes all the bindings of its sub-patterns.
+
+
+Mapping pattern
+---------------
+A `mapping pattern` looks like ``{"user": u, "emails": [*es]}``. It
+matches mappings with at least the set of provided keys, and if all the
+sub-patterns match their corresponding values. It binds whatever the
+sub-patterns bind while matching with the values corresponding to the
+keys. Adding **rest at the end of the pattern to capture extra items
+is allowed.
+
+
+Class pattern
+-------------
+A `class pattern` is similar to the above but matches attributes
+instead of keys. It looks like ``datetime.date(year=y, day=d)``. It
+matches instances of the given type, having at least the specified
+attributes, as long as the attributes match with the corresponding
+sub-patterns. It binds whatever the sub-patterns bind when matching
+with the values of the given attributes. An optional protocol also
+allows matching positional arguments.
+
+
+OR pattern
+----------
+An `OR pattern` looks like ``[*x] | {"elems": [*x]}``. It matches if
+any of its sub-patterns match. It uses the binding for the leftmost
+pattern that matched.
+
+
+Walrus pattern
+--------------
+A `walrus pattern` looks like ``d := datetime(year=2020, month=m)``. It
+matches only if its sub-pattern also matches. It binds whatever the
+sub-pattern match does, and also binds the named variable to the entire
+object.
+
+
+Guards
+------
+
+
+Recap
+-----
+* ``x`` - assign ``x = subject``
+* ``'x'`` - test ``subject == 'x'``
+* ``x.y`` - test ``subject == x.y``
+* ``x()`` - test ``isinstance(subject, x)``
+* ``{'x': 'y'}`` - test ``isinstance(subject, Mapping) and subject.get('x') == 'y'``
+* ``['x']`` - test ``isinstance(subject, Sequence) and len(subject) == 1 and subject[0] == 'x'``
+* Source: [#Hettinger2021]_
 
 
 Use Case - 0x01
