@@ -136,17 +136,19 @@ the compiled module as a program
 
 Automation
 ----------
->>> from setuptools import setup
->>> from mypyc.build import mypycify
->>>
->>> setup(
+>>> # doctest: +SKIP
+... from setuptools import setup
+... from mypyc.build import mypycify
+...
+...
+... setup(
 ...     name='mylib',
 ...     packages=['mylib'],
 ...     ext_modules=mypycify([
 ...         'mylib/__init__.py',
 ...         'mylib/mod.py',
 ...     ]),
-... )  # doctest: +SKIP
+... )
 
 .. code-block:: console
 
@@ -159,7 +161,12 @@ passed to ``mypycify()``. For example, here we use the
 ``--disallow-untyped-defs`` flag to require that all functions
 have type annotations
 
->>> setup(
+>>> # doctest: +SKIP
+... from setuptools import setup
+... from mypyc.build import mypycify
+...
+...
+... setup(
 ...     name='frobnicate',
 ...     packages=['frobnicate'],
 ...     ext_modules=mypycify([
