@@ -29,17 +29,17 @@ Type Annotation
     :maxdepth: 1
     :caption: Type Annotation
 
-    type-annotation/scalar.rst
-    type-annotation/sequence.rst
-    type-annotation/mapping.rst
-    type-annotation/callable.rst
-    type-annotation/oop.rst
+    type-annotation/type-primitive.rst
+    type-annotation/type-sequence.rst
+    type-annotation/type-mapping.rst
+    type-annotation/type-callable.rst
+    type-annotation/type-type.rst
     type-annotation/extra.rst
     type-annotation/deprecated.rst
-    type-annotation/types-check.rst
-    type-annotation/types-add.rst
-    type-annotation/compile-cython.rst
-    type-annotation/compile-mypyc.rst
+    type-annotation/package-validate.rst
+    type-annotation/package-annotate.rst
+    type-annotation/package-cython.rst
+    type-annotation/package-mypyc.rst
 
 
 Dataclass

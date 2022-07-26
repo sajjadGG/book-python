@@ -1,8 +1,8 @@
-Mypyc
-=====
+Type Annotation Mypyc
+=====================
 * Mypyc compiles Python modules to C extensions.
 * It uses standard Python type hints to generate fast code.
-* https://mypyc.readthedocs.io/en/latest/
+* Source: https://mypyc.readthedocs.io/en/latest/
 
 
 About
@@ -226,6 +226,55 @@ Configuration in ``pyproject.toml`` file:
     show_error_codes = true
 
 
+Runtime type checking
+---------------------
+* https://mypyc.readthedocs.io/en/latest/differences_from_python.html#differences-from-python
+
+Non-erased types in annotations will be type checked at runtime.
+For example, consider this function:
+
+>>> def twice(x: int) -> int:
+...     return x * 2
+
+If you try to call this function with a float or str argument, you'll
+get a type error on the call site, even if the call site is not being
+type checked:
+
+>>> result = twice(2)       # OK
+>>> result = twice(2.0)     # TypeError
+>>> result = twice('two')   # TypeError
+
+
+Final values
+------------
+Compiled code replaces a reference to an attribute declared ``Final``
+with the value of the attribute computed at compile time. This is
+an example of early binding. Example:
+
+SetUp:
+
+>>> from typing import Final
+
+Code:
+
+>>> MAX: Final = 100
+>>>
+>>> def limit_to_max(x: int) -> int:
+...      if x > MAX:
+...          return MAX
+...      return x
+
+Change to:
+
+>>> def limit_to_max(x: int) -> int:
+...      if x > 100:
+...          return 100
+...      return x
+
+The two references to ``MAX`` don't involve any module namespace lookups,
+and are equivalent to the second code listing.
+
+
 Recommended Workflow
 --------------------
 A simple way to use mypyc is to always compile your code after any code
@@ -259,5 +308,11 @@ quick (often a few hundred milliseconds).
 
 Further Reading
 ---------------
+* https://mypyc.readthedocs.io/en/latest/
 * https://mypyc.readthedocs.io/en/latest/introduction.html#differences-from-cython
 * https://mypyc.readthedocs.io/en/latest/differences_from_python.html#differences-from-python
+
+
+References
+----------
+* https://mypyc.readthedocs.io/en/latest/

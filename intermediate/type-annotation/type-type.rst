@@ -1,5 +1,5 @@
-Type Annotation OOP
-===================
+Type Annotation Types
+=====================
 * All classes are types
 * Since 3.11: :pep:`673` - Self Type
 * Since 3.7: ``from __future__ import annotations``
@@ -84,6 +84,19 @@ Composition
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
+...     friends: Person
+
+
+Aggregation
+-----------
+>>> class Person:
+...     firstname: str
+...     lastname: str
+>>>
+>>>
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
 ...     friends: list[Person]
 
 
@@ -102,6 +115,16 @@ NameError: name 'Astronaut' is not defined
 ...     lastname: str
 ...     friends: list['Astronaut']
 
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     friends: 'list[Astronaut]'
+
+>>> class Astronaut:
+...     firstname: 'str'
+...     lastname: 'str'
+...     friends: 'list[Astronaut]'
+
 Since Python 3.7:
 
 >>> from __future__ import annotations
@@ -118,7 +141,28 @@ Since Python 3.7:
 >>>
 >>>
 >>> class Person:
+...     firstname: str
+...     lastname: str
 ...     friends: list[Self]  # doctest: +SKIP
+
+What's the difference?
+
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+>>>
+>>> Astronaut.__annotations__  # doctest: +SKIP
+{'firstname': <class 'str'>, 'lastname': <class 'str'>}
+
+>>> from __future__ import annotations
+>>>
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...
+>>>
+>>> Astronaut.__annotations__  # doctest: +SKIP
+{'firstname': 'str', 'lastname': 'str'}
 
 
 Instance
@@ -139,13 +183,15 @@ Dependency Inversion Principle
 >>> class Person:
 ...     pass
 >>>
->>>
 >>> class Astronaut(Person):
+...     pass
+>>>
+>>> class Cosmonaut(Person):
 ...     pass
 >>>
 >>>
 >>> mark: Person = Astronaut()
->>> melissa: Person = Astronaut()
+>>> melissa: Person = Cosmonaut()
 
 
 Final Class
@@ -283,22 +329,66 @@ Use Case - 0x02
 ---------------
 * SOLID Dependency Inversion Principle
 
->>> class Cache:
+>>> class ICache:
 ...     pass
 >>>
->>> class DatabaseCache(Cache):
+>>> class DatabaseCache(ICache):
 ...     pass
 >>>
->>> class MemoryCache(Cache):
+>>> class MemoryCache(ICache):
 ...     pass
 >>>
->>> class FilesystemCache(Cache):
+>>> class FilesystemCache(ICache):
 ...     pass
 >>>
 >>>
->>> db: Cache = DatabaseCache()
->>> mem: Cache = MemoryCache()
->>> fs: Cache = FilesystemCache()
+>>> db: ICache = DatabaseCache()
+>>> mem: ICache = MemoryCache()
+>>> fs: ICache = FilesystemCache()
+
+>>> class ICache:
+...     def get(self, key: str) -> str: raise NotImplementedError
+...     def set(self, key: str, value: str) -> None: raise NotImplementedError
+...     def is_valid(self, key: str) -> bool: raise NotImplementedError
+>>>
+>>>
+>>> class DatabaseCache(ICache):
+...     def get(self, key: str) -> str:
+...         pass
+...
+...     def set(self, key: str, value: str) -> None:
+...         pass
+...
+...     def is_valid(self, key: str) -> bool:
+...         pass
+>>>
+>>>
+>>> class FilesystemCache(ICache):
+...     def get(self, key: str) -> str:
+...         pass
+...
+...     def set(self, key: str, value: str) -> None:
+...         pass
+...
+...     def is_valid(self, key: str) -> bool:
+...         pass
+>>>
+>>>
+>>> class MemoryCache(ICache):
+...     def get(self, key: str) -> str:
+...         pass
+...
+...     def set(self, key: str, value: str) -> None:
+...         pass
+...
+...     def is_valid(self, key: str) -> bool:
+...         pass
+>>>
+>>>
+>>> mycache: ICache = FilesystemCache()
+>>> mycache.set('firstname', 'Mark')
+>>> mycache.is_valid('firstname')
+>>> mycache.get('firstname')
 
 
 Use Case - 0x03
@@ -361,6 +451,13 @@ Use Case - 0x05
 ...     Iris([7.0, 3.2, 4.7, 1.4], 'versicolor'),
 ...     Iris([7.6, 3.0, 6.6, 2.1], 'virginica')]
 
+
+Use Case - 0x06
+---------------
+* Immutable attributes (set only on init)
+
+>>> from typing import Final
+
 >>> class Position:
 ...     x: Final[int]
 ...     y: Final[int]
@@ -369,14 +466,6 @@ Use Case - 0x05
 ...         self.x = 1
 ...         self.y = 2
 
-
-Use Case - 0x06
----------------
-* Immutable attributes (set only on init)
-
->>> from typing import Final
->>>
->>>
 >>> class Position:
 ...     x: Final[int]
 ...     y: Final[int]

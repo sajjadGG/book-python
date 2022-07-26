@@ -60,14 +60,24 @@ therefore explicitly declare a type alias.
 
 TypeVar
 -------
+SetUp:
+
 >>> from typing import TypeVar
->>>
->>>
+
+Definition:
+
 >>> T = TypeVar('T', int, float)
->>> Vector = tuple[T, T]
 >>>
->>> def product(data: Vector[T]) -> T:
-...     return sum(x*y for x,y in data)
+>>> def add(a: T, b: T) -> T:
+...     return a + b
+
+Usage:
+
+>>> add(1, 2)
+3
+
+>>> add(1.0, 2.0)
+3.0
 
 
 NewType
@@ -136,3 +146,16 @@ Use Case - 0x01
 >>> echo(text='abcdefghijk')
 Traceback (most recent call last):
 ValueError: Parameter 'text' cannot have a length larger than 10 (got length 11).
+
+
+Use Case - 0x02
+---------------
+>>> from typing import TypeVar
+>>>
+>>>
+>>> T = TypeVar('T', int, float)
+>>> Vector = tuple[T, T]
+>>>
+>>>
+>>> def product(data: Vector[T]) -> T:
+...     return sum(x*y for x,y in data)

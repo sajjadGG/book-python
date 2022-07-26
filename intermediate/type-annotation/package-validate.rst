@@ -1,5 +1,5 @@
-Type Annotation Static Analysis
-===============================
+Type Annotation Validate
+========================
 
 
 MyPy

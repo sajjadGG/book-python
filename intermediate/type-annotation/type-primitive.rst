@@ -1,5 +1,5 @@
-Type Annotation Scalar
-======================
+Type Annotation Primitives
+==========================
 * Also known as: "type annotations", "type hints", "gradual typing"
 * Types are not required, and never will be
 * Good IDE will give you hints
@@ -120,18 +120,42 @@ Final
 * Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
 
 >>> from typing import Final
->>>
->>>
->>> m: Final[int] = 1
->>> km: Final[int] = 1000 * m
 
->>> from typing import Final
+Could be used to define constants:
+
+>>> SECOND: Final[int] = 1
+>>> MINUTE: Final[int] = 60 * SECOND
+>>> HOUR: Final[int] = 60 * MINUTE
+>>> DAY: Final[int] = 24 * HOUR
+
+Static type checker will ensure that the value should not change
+during the program.
+
+
+Literal
+-------
+* Since Python 3.8: :pep:`586` -- Literal Types
+* Literal de-duplicates parameters
+* Equality comparisons of Literal objects are not order dependent
+* https://docs.python.org/3/library/typing.html#typing.Literal
+
+>>> from typing import Literal
+
+Problem:
+
+>>> agency: str
 >>>
+>>> agency = 'NASA'         # ok
+>>> agency = 'ESA'          # ok
+>>> agency = 'Not existing' # ok
+
+Solution:
+
+>>> agency: Literal['NASA', 'ESA', 'POLSA']
 >>>
->>> second: Final[int] = 1
->>> minute: Final[int] = 60 * second
->>> hour: Final[int] = 60 * minute
->>> day: Final[int] = 24 * hour
+>>> agency = 'NASA'          # ok
+>>> agency = 'ESA'           # ok
+>>> agency = 'Not existing'  # error
 
 
 Errors
@@ -139,16 +163,21 @@ Errors
 * Types are not Enforced
 * This code will run without any problems
 * Types are not required, and never will be
-* Although ``mypy`` or ``pyre-check`` will throw error
+* Although ``mypy``, ``pyre-check`` or ``pytypes`` will throw error
 
 >>> name: int = 'Mark Watney'
 
 
 Use Case - 0x01
 ---------------
->>> firstname: str = 'Melissa'
->>> lastname: str = 'Lewis'
->>> age: int | None = None
+firstname: str = 'Mark'
+lastname: str = 'Watney'
+age: int = 40
+agency: Literal['NASA', 'ESA', 'POLSA'] = 'NASA'
+height: int | float = 185.5
+weight: int | float | None = None
+is_person: bool = True
+is_astronaut: bool | None = True
 
 
 Further Reading
