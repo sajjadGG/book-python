@@ -125,6 +125,8 @@ class Doctest(Action):
         for path in map(Path, paths):
             if path == Path(''):
                 continue
+            elif not path.exists():
+                continue
             elif path.suffix in ('.rst', '.py'):
                 yield path
             else:

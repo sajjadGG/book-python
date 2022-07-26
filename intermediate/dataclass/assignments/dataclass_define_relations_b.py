@@ -1,157 +1,127 @@
 """
-* Assignment: Dataclass DefineBasic DatabaseDump
-* Complexity: medium
-* Lines of code: 13 lines
-* Time: 13 min
+* Assignment: Dataclass Field Addressbook
+* Complexity: easy
+* Lines of code: 12 lines
+* Time: 8 min
 
 English:
-    1. You received input data in JSON format from the API
-       a. `str` fields: firstname, lastname, role, username, password, email,
-       b. `date` field: born,
-       c. `datetime` field: last_login (field is optional),
-       d. `bool` fields: is_active, is_staff, is_superuser,
-       e. `list[dict]` field: user_permissions
-    2. Using `dataclass` model data as class `User`
-    3. Do not create additional classes to represent `permission` filed,
-       leave it as `list[dict]`
-    4. Note, that fields order is important for tests to pass
-    5. Run doctests - all must succeed
+    1. Model `DATA` using `dataclasses`
+    2. Create class definition, fields and their types:
+       a. Do not use Python 3.10 syntax for Optionals, ie: `str | None`
+       b. Use old style `Optional[str]` instead
+    3. Do not write code converting `DATA` to your classes
+    4. Run doctests - all must succeed
 
 Polish:
-    1. Otrzymałeś z API dane wejściowe w formacie JSON
-       a. pola `str`: firstname, lastname, role, username, password, email,
-       b. pole `date`: born,
-       c. pole `datetime`: last_login (pole jest opcjonalne),
-       d. pola `bool`: is_active, is_staff, is_superuser,
-       e. pola `list[dict]`: user_permissions
-    2. Wykorzystując `dataclass` zamodeluj dane za pomocą klasy `User`
-    3. Nie twórz dodatkowych klas do reprezentacji pola `permission`,
-       niech zostanie jako `list[dict]`
-    4. Zwróć uwagę, że kolejność pól ma znaczenie aby testy przechodziły
-    5. Uruchom doctesty - wszystkie muszą się powieść
+    1. Zamodeluj `DATA` wykorzystując `dataclass`
+    2. Stwórz definicję klas, pól i ich typów
+       a. Nie używaj składni Optionali z Python 3.10, np.: `str | None`
+       b. Użyj starego sposobu, tj. `Optional[str]`
+    3. Nie pisz kodu konwertującego `DATA` do Twoich klas
+    4. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isclass
     >>> from dataclasses import is_dataclass
-    >>> from pprint import pprint
 
-    >>> assert isclass(User)
-    >>> assert is_dataclass(User)
+    >>> assert isclass(Astronaut)
+    >>> assert isclass(Address)
+    >>> assert is_dataclass(Astronaut)
+    >>> assert is_dataclass(Address)
 
-    >>> attributes = User.__dataclass_fields__.keys()
-    >>> list(attributes)  # doctest: +NORMALIZE_WHITESPACE
-    ['firstname', 'lastname', 'role', 'username', 'password', 'email', 'born',
-     'last_login', 'is_active', 'is_staff', 'is_superuser', 'user_permissions']
+    >>> astronaut = Astronaut.__dataclass_fields__
+    >>> address = Address.__dataclass_fields__
 
-    >>> pprint(User.__annotations__, sort_dicts=False)
-    {'firstname': <class 'str'>,
-     'lastname': <class 'str'>,
-     'role': <class 'str'>,
-     'username': <class 'str'>,
-     'password': <class 'str'>,
-     'email': <class 'str'>,
-     'born': <class 'datetime.date'>,
-     'last_login': datetime.datetime | None,
-     'is_active': <class 'bool'>,
-     'is_staff': <class 'bool'>,
-     'is_superuser': <class 'bool'>,
-     'user_permissions': list[dict]}
+    >>> assert 'firstname' in astronaut, \
+    'Class Astronaut is missing field: firstname'
+    >>> assert 'lastname' in astronaut, \
+    'Class Astronaut is missing field: lastname'
+    >>> assert 'addresses' in astronaut, \
+    'Class Astronaut is missing field: addresses'
+    >>> assert 'street' in address, \
+    'Class Address is missing field: street'
+    >>> assert 'city' in address, \
+    'Class Address is missing field: city'
+    >>> assert 'post_code' in address, \
+    'Class Address is missing field: post_code'
+    >>> assert 'region' in address, \
+    'Class Address is missing field: region'
+    >>> assert 'country' in address, \
+    'Class Address is missing field: country'
+    >>> assert astronaut['firstname'].type is str, \
+    'Astronaut.firstname has invalid type annotation, expected: str'
+    >>> assert astronaut['lastname'].type is str, \
+    'Astronaut.lastname has invalid type annotation, expected: str'
+    >>> assert astronaut['addresses'].type is Optional[list[Address]], \
+    'Astronaut.addresses has invalid type annotation, expected: Optional[list[Address]]'
+    >>> assert address['street'].type is Optional[str], \
+    'Address.street has invalid type annotation, expected: Optional[str]'
+    >>> assert address['city'].type is str, \
+    'Address.city has invalid type annotation, expected: str'
+    >>> assert address['post_code'].type is int, \
+    'Address.post_code has invalid type annotation, expected: int'
+    >>> assert address['region'].type is str, \
+    'Address.region has invalid type annotation, expected: str'
+    >>> assert address['country'].type is str, \
+    'Address.country has invalid type annotation, expected: str'
 
-    >>> result = [User(**user['fields']) for user in json.loads(DATA)]
-
-    >>> result[0]  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
-    User(firstname='Melissa',
-         lastname='Lewis',
-         role='commander',
-         username='mlewis',
-         password='pbkdf2_sha256$120000$gvEBNiCeTrYa0$5C+NiCeTrYsha1PHog...=',
-         email='melissa.lewis@nasa.gov',
-         born='1995-07-15',
-         last_login='1970-01-01T00:00:00.000+00:00',
-         is_active=True,
-         is_staff=True,
-         is_superuser=False,
-         user_permissions=[{'eclss': ['add', 'modify', 'view']},
-                           {'communication': ['add', 'modify', 'view']},
-                           {'medical': ['add', 'modify', 'view']},
-                           {'science': ['add', 'modify', 'view']}])
+TODO: Add support for Python 3.10 Optional and Union syntax
 """
-
-import json
-from dataclasses import dataclass
-from datetime import date, datetime
+from dataclasses import dataclass, field
+from typing import Optional
 
 
-DATA = ('[{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa"'
-        ',"lastname":"Lewis","role":"commander","username":"mlewis","password"'
-        ':"pbkdf2_sha256$120000$gvEBNiCeTrYa0$5C+NiCeTrYsha1PHogqvXNiCeTrY0CRS'
-        'LYYAA90=","email":"melissa.lewis@nasa.gov","born":"1995-07-15","last_'
-        'login":"1970-01-01T00:00:00.000+00:00","is_active":true,"is_staff":tr'
-        'ue,"is_superuser":false,"user_permissions":[{"eclss":["add","modify",'
-        '"view"]},{"communication":["add","modify","view"]},{"medical":["add",'
-        '"modify","view"]},{"science":["add","modify","view"]}]}},{"model":"au'
-        'thorization.user","pk":2,"fields":{"firstname":"Rick","lastname":"Mar'
-        'tinez","role":"pilot","username":"rmartinez","password":"pbkdf2_sha25'
-        '6$120000$aXNiCeTrY$UfCJrBh/qhXohNiCeTrYH8nsdANiCeTrYnShs9M/c=","born"'
-        ':"1996-01-21","last_login":null,"email":"rick.martinez@ansa.gov","is_'
-        'active":true,"is_staff":true,"is_superuser":false,"user_permissions":'
-        '[{"communication":["add","view"]},{"eclss":["add","modify","view"]},{'
-        '"science":["add","modify","view"]}]}},{"model":"authorization.user","'
-        'pk":3,"fields":{"firstname":"Alex","lastname":"Vogel","role":"chemist'
-        '","username":"avogel","password":"pbkdf2_sha256$120000$eUNiCeTrYHoh$X'
-        '32NiCeTrYZOWFdBcVT1l3NiCeTrY4WJVhr+cKg=","email":"alex.vogel@esa.int"'
-        ',"born":"1994-11-15","last_login":null,"is_active":true,"is_staff":tr'
-        'ue,"is_superuser":false,"user_permissions":[{"eclss":["add","modify",'
-        '"view"]},{"communication":["add","modify","view"]},{"medical":["add",'
-        '"modify","view"]},{"science":["add","modify","view"]}]}},{"model":"au'
-        'thorization.user","pk":4,"fields":{"firstname":"Chris","lastname":"Be'
-        'ck","role":"crew-medical-officer","username":"cbeck","password":"pbkd'
-        'f2_sha256$120000$3G0RNiCeTrYlaV1$mVb62WNiCeTrYQ9aYzTsSh74NiCeTrY2+c9/'
-        'M=","email":"chris.beck@nasa.gov","born":"1999-08-02","last_login":"1'
-        '970-01-01T00:00:00.000+00:00","is_active":true,"is_staff":true,"is_su'
-        'peruser":false,"user_permissions":[{"communication":["add","view"]},{'
-        '"medical":["add","modify","view"]},{"science":["add","modify","view"]'
-        '}]}},{"model":"authorization.user","pk":5,"fields":{"firstname":"Beth'
-        '","lastname":"Johanssen","role":"sysop","username":"bjohanssen","pass'
-        'word":"pbkdf2_sha256$120000$QmSNiCeTrYBv$Nt1jhVyacNiCeTrYSuKzJ//Wdyjl'
-        'NiCeTrYYZ3sB1r0g=","email":"","born":"2006-05-09","last_login":null,"'
-        'is_active":true,"is_staff":true,"is_superuser":false,"user_permission'
-        's":[{"communication":["add","view"]},{"science":["add","modify","view'
-        '"]}]}},{"model":"authorization.user","pk":6,"fields":{"firstname":"Ma'
-        'rk","lastname":"Watney","role":"botanist","username":"mwatney","passw'
-        'ord":"pbkdf2_sha256$120000$bxS4dNiCeTrY1n$Y8NiCeTrYRMa5bNJhTFjNiCeTrY'
-        'p5swZni2RQbs=","email":"","born":"1994-10-12","last_login":null,"is_a'
-        'ctive":true,"is_staff":true,"is_superuser":false,"user_permissions":['
-        '{"communication":["add","modify","view"]},{"science":["add","modify",'
-        '"view"]}]}}]')
+DATA = [
+    {"firstname": "Pan", "lastname": "Twardowski", "addresses": [
+        {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków",
+         "post_code": 31008, "region": "Małopolskie", "country": "Poland"}]},
+
+    {"firstname": "Mark", "lastname": "Watney", "addresses": [
+        {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058,
+         "region": "Texas", "country": "USA"},
+        {"street": None, "city": "Kennedy Space Center", "post_code": 32899,
+         "region": "Florida", "country": "USA"}]},
+
+    {"firstname": "Melissa", "lastname": "Lewis", "addresses": [
+        {"street": "4800 Oak Grove Dr", "city": "Pasadena", "post_code": 91109,
+         "region": "California", "country": "USA"},
+        {"street": "2825 E Ave P", "city": "Palmdale", "post_code": 93550,
+         "region": "California", "country": "USA"}]},
+
+    {"firstname": "Rick", "lastname": "Martinez"},
+
+    {"firstname": "Alex", "lastname": "Vogel", "addresses": [
+        {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147,
+         "region": "North Rhine-Westphalia", "country": "Germany"}]}
+]
 
 
-# Using `dataclass` model data as class `User`
-# a. `str` fields: firstname, lastname, role, username, password, email,
-# b. `date` field: born,
-# c. `datetime` field: last_login (optional),
-# c. `bool` fields: is_active, is_staff, is_superuser,
-# d. `list[dict]` field: user_permissions
-# Leave `permission` attribute as `list[dict]`
-# Note, that fields order is important for tests to pass
+# Model `DATA` using `dataclasses`, do not use: `str | None` syntax
 # type: Type
-class User:
+@dataclass
+class Address:
+    ...
+
+# Model `DATA` using `dataclasses`, do not use: `str | None` syntax
+# type: Type
+@dataclass
+class Astronaut:
     ...
 
 
 # Solution
 @dataclass
-class User:
+class Address:
+    street: Optional[str]
+    city: str
+    post_code: int
+    region: str
+    country: str
+
+
+@dataclass
+class Astronaut:
     firstname: str
     lastname: str
-    role: str
-    username: str
-    password: str
-    email: str
-    born: date
-    last_login: datetime | None
-    is_active: bool
-    is_staff: bool
-    is_superuser: bool
-    user_permissions: list[dict]
+    addresses: Optional[list[Address]]

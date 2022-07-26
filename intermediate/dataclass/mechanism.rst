@@ -82,7 +82,7 @@ Use Case - 0x01
 ``class``:
 
 >>> from datetime import date
->>> from typing import ClassVar
+>>> from typing import ClassVar, Literal
 >>>
 >>>
 >>> class Mission:
@@ -95,52 +95,85 @@ Use Case - 0x01
 >>>
 >>>
 >>> class Astronaut:
-...    firstname: str
-...    lastname: str
-...    born: date
-...    agency: str = 'NASA'
-...    age: int | None = None
-...    height: float | None = None
-...    weight: float | None = None
-...    friends: list['Astronaut'] | None = None
-...    missions: list[Mission] | None = None
-...    rank: str | None = None
-...    previous_job: str | None = None
-...    experience: list[str] | None = None
-...    AGE_MIN: ClassVar[int] = 27
-...    AGE_MAX: ClassVar[int] = 50
-...    WEIGHT_MIN: ClassVar[int] = 50
-...    WEIGHT_MAX: ClassVar[int] = 90
-...    HEIGHT_MIN: ClassVar[int] = 156
-...    HEIGHT_MAX: ClassVar[int] = 210
+...     firstname: str
+...     lastname: str
+...     born: date
+...     age: int | None = None
+...     height: float | None = None
+...     weight: float | None = None
+...     agency: Literal['NASA', 'ESA'] = 'NASA'
+...     friends: list['Astronaut'] | None = None
+...     missions: list[Mission] | None = None
+...     rank: str | None = None
+...     previous_job: str | None = None
+...     experience: list[str] | None = None
+...     AGE_MIN: ClassVar[int] = 27
+...     AGE_MAX: ClassVar[int] = 50
+...     WEIGHT_MIN: ClassVar[int] = 50
+...     WEIGHT_MAX: ClassVar[int] = 90
+...     HEIGHT_MIN: ClassVar[int] = 156
+...     HEIGHT_MAX: ClassVar[int] = 210
 ...
+...     def __init__(self,
+...                  firstname: str,
+...                  lastname: str,
+...                  born: date,
+...                  age: int | None = None,
+...                  height: float | None = None,
+...                  weight: float | None = None,
+...                  agency: Literal['NASA', 'ESA'] = 'NASA',
+...                  friends: list['Astronaut'] | None = None,
+...                  missions: list[Mission] | None = None,
+...                  rank: str | None = None,
+...                  previous_job: str | None = None,
+...                  experience: list[str] | None = None):
+...         self.firstname = firstname
+...         self.lastname = lastname
+...         self.born = born
+...         self.age = age
+...         self.height = height
+...         self.weight = weight
+...         self.agency = agency
+...         self.friends = friends
+...         self.missions = missions
+...         self.rank = rank
+...         self.previous_job = previous_job
+...         self.experience = experience
 ...
-...    def __init__(self,
-...                 firstname: str,
-...                 lastname: str,
-...                 born: date,
-...                 agency: str = 'NASA',
-...                 age: int | None = None,
-...                 height: float | None = None,
-...                 weight: float | None = None,
-...                 friends: list['Astronaut'] | None = None,
-...                 missions: list[Mission] | None = None,
-...                 rank: str | None = None,
-...                 previous_job: str | None = None,
-...                 experience: list[str] | None = None):
+...     def __self__(self):
+...         return self.repr()
 ...
-...        self.born = born
-...        self.rank = rank
-...        self.previous_job = previous_job
-...        self.experience = experience
-...        self.missions = missions
-...        self.friends = friends
-...        self.weight = weight
-...        self.height = height
-...        self.age = age
-...        self.agency = agency
-...        self.firstname = firstname
-...        self.lastname = lastname
+...     def __repr__(self):
+...         return (
+...             f"{self.__class__.__name__}("
+...             f"firstname='{self.firstname}'"
+...             f"lastname='{self.lastname}'"
+...             f"born={self.born}"
+...             f"age={self.age}"
+...             f"height={self.height}"
+...             f"weight={self.weight}"
+...             f"agency='{self.agency}'"
+...             f"friends={self.friends}"
+...             f"missions={self.missions}"
+...             f"rank='{self.rank}'"
+...             f"previous_job='{self.previous_job}'"
+...             f"experience={self.experience}"
+...             f")")
+...
+...     def __eq__(self, other):
+...         return (self.__class__ is other.__class__
+...            and self.firstname == other.firstname
+...            and self.lastname == other.lastname
+...            and self.born == other.born
+...            and self.age == other.age
+...            and self.height == other.height
+...            and self.weight == other.weight
+...            and self.agency == other.agency
+...            and self.friends == other.friends
+...            and self.missions == other.missions
+...            and self.rank == other.rank
+...            and self.previous_job == other.previous
+...            and self.experience == other.experience)
 
 ``dataclass``:
 
@@ -160,10 +193,10 @@ Use Case - 0x01
 ...     firstname: str
 ...     lastname: str
 ...     born: date
-...     agency: str = 'NASA'
 ...     age: int | None = None
 ...     height: float | None = None
 ...     weight: float | None = None
+...     agency: Literal['NASA', 'ESA'] = 'NASA'
 ...     friends: list['Astronaut'] | None = None
 ...     missions: list[Mission] | None = None
 ...     rank: str | None = None

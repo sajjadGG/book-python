@@ -161,10 +161,3 @@ Use Case - 0x01
 ...     account_created: datetime = field(default_factory=lambda: datetime.now(tz=timezone.utc), kw_only=True)
 ...     AGE_MIN: ClassVar[int] = field(default=30, init=False, repr=False)
 ...     AGE_MAX: ClassVar[int] = field(default=50, init=False, repr=False)
-
-
-Assignments
------------
-.. literalinclude:: assignments/dataclass_field_a.py
-    :caption: :download:`Solution <assignments/dataclass_field_a.py>`
-    :end-before: # Solution

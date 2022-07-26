@@ -36,7 +36,10 @@ Type Annotation
     type-annotation/oop.rst
     type-annotation/extra.rst
     type-annotation/deprecated.rst
-    type-annotation/static-analysis.rst
+    type-annotation/types-check.rst
+    type-annotation/types-add.rst
+    type-annotation/compile-cython.rst
+    type-annotation/compile-mypyc.rst
 
 
 Dataclass

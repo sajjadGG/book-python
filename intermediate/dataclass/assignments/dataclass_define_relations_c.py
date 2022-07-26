@@ -1,35 +1,40 @@
 """
-* Assignment: Dataclass PostInit DatabaseDump
+* Assignment: Dataclass DefineBasic DatabaseDump
 * Complexity: medium
-* Lines of code: 5 lines
-* Time: 5 min
+* Lines of code: 13 lines
+* Time: 13 min
 
 English:
     1. You received input data in JSON format from the API
-        a. `str` fields: firstname, lastname, role, username, password, email,
-        b. `datetime` fields: born, last_login,
-        c. `bool` fields: is_active, is_staff, is_superuser,
-        d. `list[dict]` field: user_permissions
+       a. `str` fields: firstname, lastname, role, username, password, email,
+       b. `date` field: born,
+       c. `datetime` field: last_login (field is optional),
+       d. `bool` fields: is_active, is_staff, is_superuser,
+       e. `list[dict]` field: user_permissions
     2. Using `dataclass` model data as class `User`
-        a. Note, that fields order is important for tests to pass
-    3. Parse fields with dates and store as `date` or `datetime` objects
-    4. Run doctests - all must succeed
+    3. Do not create additional classes to represent `permission` field,
+       leave it as `list[dict]`
+    4. Note, that fields order is important for tests to pass
+    5. Run doctests - all must succeed
 
 Polish:
     1. Otrzymałeś z API dane wejściowe w formacie JSON
-        a. pola `str`: firstname, lastname, role, username, password, email,
-        b. pola `datetime`: born, last_login,
-        c. pola `bool`: is_active, is_staff, is_superuser,
-        d. pola `list[dict]`: user_permissions
+       a. pola `str`: firstname, lastname, role, username, password, email,
+       b. pole `date`: born,
+       c. pole `datetime`: last_login (pole jest opcjonalne),
+       d. pola `bool`: is_active, is_staff, is_superuser,
+       e. pola `list[dict]`: user_permissions
     2. Wykorzystując `dataclass` zamodeluj dane za pomocą klasy `User`
-        a. Zwróć uwagę, że kolejność pól ma znaczenie aby testy przechodziły
-    3. Sparsuj pola z datami i zapisz je jako obiekty `date` lub `datetime`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    3. Nie twórz dodatkowych klas do reprezentacji pola `permission`,
+       niech zostanie jako `list[dict]`
+    4. Zwróć uwagę, że kolejność pól ma znaczenie aby testy przechodziły
+    5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isclass
     >>> from dataclasses import is_dataclass
+    >>> from pprint import pprint
 
     >>> assert isclass(User)
     >>> assert is_dataclass(User)
@@ -39,45 +44,21 @@ Tests:
     ['firstname', 'lastname', 'role', 'username', 'password', 'email', 'born',
      'last_login', 'is_active', 'is_staff', 'is_superuser', 'user_permissions']
 
-    >>> data = json.loads(DATA)
-    >>> result = [User(**user['fields']) for user in data]
+    >>> pprint(User.__annotations__, sort_dicts=False)
+    {'firstname': <class 'str'>,
+     'lastname': <class 'str'>,
+     'role': <class 'str'>,
+     'username': <class 'str'>,
+     'password': <class 'str'>,
+     'email': <class 'str'>,
+     'born': <class 'datetime.date'>,
+     'last_login': datetime.datetime | None,
+     'is_active': <class 'bool'>,
+     'is_staff': <class 'bool'>,
+     'is_superuser': <class 'bool'>,
+     'user_permissions': list[dict]}
 
-    >>> last_login = [user['fields']['last_login'] for user in data]
-    >>> last_login # doctest: +NORMALIZE_WHITESPACE
-    ['1970-01-01T00:00:00.000+00:00',
-     None,
-     None,
-     '1970-01-01T00:00:00.000+00:00',
-     None,
-     None]
-
-    >>> last_login = [user.last_login for user in result]
-    >>> last_login  # doctest: +NORMALIZE_WHITESPACE
-    [datetime.datetime(1970, 1, 1, 0, 0, tzinfo=datetime.timezone.utc),
-     None,
-     None,
-     datetime.datetime(1970, 1, 1, 0, 0, tzinfo=datetime.timezone.utc),
-     None,
-     None]
-
-
-    >>> born = {user['fields']['born'] for user in data}
-    >>> sorted(born)  # doctest: +NORMALIZE_WHITESPACE
-    ['1994-10-12',
-     '1994-11-15',
-     '1995-07-15',
-     '1996-01-21',
-     '1999-08-02',
-     '2006-05-09']
-
-    >>> born = {user.born for user in result}
-    >>> sorted(born)  # doctest: +NORMALIZE_WHITESPACE
-    [datetime.date(1994, 10, 12),
-     datetime.date(1994, 11, 15),
-     datetime.date(1995, 7, 15),
-     datetime.date(1996, 1, 21),
-     datetime.date(1999, 8, 2),
-     datetime.date(2006, 5, 9)]
+    >>> result = [User(**user['fields']) for user in json.loads(DATA)]
 
     >>> result[0]  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
     User(firstname='Melissa',
@@ -86,9 +67,8 @@ Tests:
          username='mlewis',
          password='pbkdf2_sha256$120000$gvEBNiCeTrYa0$5C+NiCeTrYsha1PHog...=',
          email='melissa.lewis@nasa.gov',
-         born=datetime.date(1995, 7, 15),
-         last_login=datetime.datetime(1970, 1, 1, 0, 0,
-                                      tzinfo=datetime.timezone.utc),
+         born='1995-07-15',
+         last_login='1970-01-01T00:00:00.000+00:00',
          is_active=True,
          is_staff=True,
          is_superuser=False,
@@ -96,28 +76,11 @@ Tests:
                            {'communication': ['add', 'modify', 'view']},
                            {'medical': ['add', 'modify', 'view']},
                            {'science': ['add', 'modify', 'view']}])
-
-    >>> result[1]  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS
-    User(firstname='Rick',
-         lastname='Martinez',
-         role='pilot',
-         username='rmartinez',
-         password='pbkdf2_sha256$120000$aXNiCeTrY$UfCJrBh/qhXohNiCeTrYH8...=',
-         email='rick.martinez@ansa.gov',
-         born=datetime.date(1996, 1, 21),
-         last_login=None,
-         is_active=True,
-         is_staff=True,
-         is_superuser=False,
-         user_permissions=[{'communication': ['add', 'view']},
-                           {'eclss': ['add', 'modify', 'view']},
-                           {'science': ['add', 'modify', 'view']}])
 """
 
 import json
 from dataclasses import dataclass
 from datetime import date, datetime
-from typing import Optional
 
 
 DATA = ('[{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa"'
@@ -163,23 +126,18 @@ DATA = ('[{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa"'
         '{"communication":["add","modify","view"]},{"science":["add","modify",'
         '"view"]}]}}]')
 
-# Using `dataclass` model data as class `User`
-# type: Type
-@dataclass
-class User:
-    firstname: str
-    lastname: str
-    role: str
-    username: str
-    password: str
-    email: str
-    born: date
-    last_login: Optional[datetime]
-    is_active: bool
-    is_staff: bool
-    is_superuser: bool
-    user_permissions: list[dict]
 
+# Using `dataclass` model data as class `User`
+# a. `str` fields: firstname, lastname, role, username, password, email,
+# b. `date` field: born,
+# c. `datetime` field: last_login (optional),
+# c. `bool` fields: is_active, is_staff, is_superuser,
+# d. `list[dict]` field: user_permissions
+# Leave `permission` attribute as `list[dict]`
+# Note, that fields order is important for tests to pass
+# type: Type
+class User:
+    ...
 
 
 # Solution
@@ -192,15 +150,8 @@ class User:
     password: str
     email: str
     born: date
-    last_login: Optional[datetime]
+    last_login: datetime | None
     is_active: bool
     is_staff: bool
     is_superuser: bool
     user_permissions: list[dict]
-
-    def __post_init__(self):
-        self.born = date.fromisoformat(self.born)
-        if self.last_login:
-            self.last_login = datetime.fromisoformat(self.last_login)
-        else:
-            self.last_login = None

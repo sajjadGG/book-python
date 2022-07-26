@@ -179,7 +179,8 @@ AssertionError: height value 120 is not between 156 and 210
 
 Use Case - 0x03
 ---------------
->>> from dataclasses import dataclass, field
+>>> from dataclasses import field, dataclass
+>>>
 >>>
 >>>
 >>> @dataclass
@@ -187,36 +188,59 @@ Use Case - 0x03
 ...     firstname: str
 ...     lastname: str
 ...     age: int = field(metadata={'unit': 'years', 'type': 'range', 'min': 30, 'max': 50})
-...     height: float = field(metadata={'unit': 'cm', 'type': 'range', 'min': 150, 'max': 210})
+...     height: float = field(metadata={'unit': 'cm', 'type': 'range', 'min': 150, 'max': 200})
 ...     weight: float = field(metadata={'unit': 'kg', 'type': 'range', 'min': 50, 'max': 90})
-...     agency: str = field(metadata={'type': 'choices', 'options': ['ESA', 'NASA', 'POLSA']})
-...
-...     def _range_validator(self, field):
-...         min = self.__dataclass_fields__[field].metadata['min']
-...         max = self.__dataclass_fields__[field].metadata['max']
-...         value = getattr(self, field)
-...         if not min <= value < max:
-...             raise ValueError(f'{field=} with {value=} is not in range between {min=} and {max=}')
-...
-...     def _choices_validator(self, field):
-...         options = self.__dataclass_fields__[field].metadata['options']
-...         value = getattr(self, field)
-...         if value not in options:
-...             raise ValueError(f'{field=} with {value=} is not in {options=}')
+...     agency: str = field(metadata={'type': 'choices', 'options': ['NASA', 'ESA']})
 ...
 ...     def __post_init__(self):
-...         for attribute in vars(self).keys():
-...             field = self.__dataclass_fields__[attribute]
-...             if field.metadata:
-...                 validator_type = field.metadata['type']
-...                 match validator_type:
-...                     case 'choice': self._choices_validator(attribute)
-...                     case 'range': self._range_validator(attribute)
+...         for fieldname, field in self.__dataclass_fields__.items():
+...             if not hasattr(field, 'metadata'):
+...                 continue
+...             if 'type' not in field.metadata:
+...                 continue
+...             value = getattr(self, field.name)
+...             match field.metadata['type']:
+...                 case 'range': self._validate_range(field, value)
+...                 case 'choices': self._validate_choices(field, value)
+...
+...     def _validate_range(self, field, value):
+...         min = field.metadata['min']
+...         max = field.metadata['max']
+...         if not min <= value < max:
+...             raise ValueError(f'{field.name} value ({value}) is not between {min} and {max}')
+...
+...     def _validate_choices(self, field, value):
+...         options = field.metadata['options']
+...         if value not in options:
+...             raise ValueError(f'{field.name} value ({value}) not in options: {options}')
+
+>>> mark = Astronaut('Mark', 'Watney', age=35, weight=75, height=185, agency='NASA')
+>>> mark = Astronaut('Mark', 'Watney', age=35, weight=75, height=185, agency='ESA')
 >>>
->>>
->>> mark = Astronaut('Mark', 'Watney', age=60, height=175, weight=75, agency='NASA')
+>>> mark = Astronaut('Mark', 'Watney', age=35, weight=75, height=185, agency='POLSA')
 Traceback (most recent call last):
-ValueError: field='age' with value=60 is not in range between min=30 and max=50
+ValueError: agency value (POLSA) not in options: ['NASA', 'ESA']
+
+>>> mark = Astronaut('Mark', 'Watney', age=35, weight=75, height=185, agency='NASA')
+>>>
+>>> mark = Astronaut('Mark', 'Watney', age=35, weight=75, height=120, agency='NASA')
+Traceback (most recent call last):
+ValueError: height value (120) is not between 150 and 200
+>>>
+>>> mark = Astronaut('Mark', 'Watney', age=35, weight=75, height=210, agency='NASA')
+Traceback (most recent call last):
+ValueError: height value (210) is not between 150 and 200
+
+>>> mark = Astronaut('Mark', 'Watney', age=40, weight=75, height=180, agency='NASA')
+>>>
+>>> mark = Astronaut('Mark', 'Watney', age=20, weight=75, height=180, agency='NASA')
+Traceback (most recent call last):
+ValueError: age value (20) is not between 30 and 50
+>>>
+>>> mark = Astronaut('Mark', 'Watney', age=60, weight=75, height=180, agency='NASA')
+Traceback (most recent call last):
+ValueError: age value (60) is not between 30 and 50
+
 
 
 Use Case - 0x03

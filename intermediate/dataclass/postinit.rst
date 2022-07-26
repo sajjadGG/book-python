@@ -127,24 +127,32 @@ InitVar
 * Passed to the optional ``__post_init__`` method
 * They are not otherwise used by Data Classes
 
+>>> import datetime
 >>> from dataclasses import dataclass, InitVar
 >>>
 >>>
 >>> @dataclass
-... class Email:
-...     email: InitVar[str]
+... class DateTime:
+...     string: InitVar[str]
+...     date: datetime.date | None = None
+...     time: datetime.time | None = None
 ...
-...     username: str = None
-...     domain: str = None
+...     def __post_init__(self, string: str):
+...         dt = datetime.datetime.fromisoformat(string)
+...         self.date = dt.date()
+...         self.time = dt.time()
 ...
-...     def __post_init__(self, email: str):
-...         self.username, self.domain = email.split('@')
+...
+>>> apollo11 = DateTime('1969-07-21 02:56:15')
 >>>
+>>> apollo11
+DateTime(date=datetime.date(1969, 7, 21), time=datetime.time(2, 56, 15))
 >>>
->>> email = Email('mwatney@nasa.gov')
+>>> apollo11.date
+datetime.date(1969, 7, 21)
 >>>
->>> print(email)
-Email(username='mwatney', domain='nasa.gov')
+>>> apollo11.time
+datetime.time(2, 56, 15)
 
 
 Use Case - 0x01
@@ -202,6 +210,43 @@ Astronaut(firstname='Mark', lastname='Watney')
 
 Use Case - 0x03
 ---------------
+>>> from dataclasses import dataclass, InitVar
+>>>
+>>>
+>>> @dataclass
+... class Email:
+...     address: InitVar[str]
+...     username: str | None = None
+...     domain: str | None = None
+...
+...     def __post_init__(self, address):
+...         self.username, self.domain = address.split('@')
+...
+...     def get_address(self):
+...         return f'{self.username}@{self.domain}'
+>>>
+>>>
+>>> myemail = Email('mwatney@nasa.gov')
+>>>
+>>> print(myemail)
+Email(username='mwatney', domain='nasa.gov')
+>>>
+>>> print(myemail.username)
+mwatney
+>>>
+>>> print(myemail.domain)
+nasa.gov
+>>>
+>>> print(myemail.get_address())
+mwatney@nasa.gov
+>>>
+>>> print(myemail.address)
+Traceback (most recent call last):
+AttributeError: 'Email' object has no attribute 'address'
+
+
+Use Case - 0x04
+---------------
 >>> from typing import ClassVar
 >>> from dataclasses import dataclass
 >>>
@@ -230,7 +275,7 @@ Traceback (most recent call last):
 TypeError: Astronaut.__init__() got an unexpected keyword argument 'AGE_MAX'
 
 
-Use Case - 0x04
+Use Case - 0x05
 ---------------
 * Boundary check
 
@@ -259,7 +304,7 @@ Use Case - 0x04
 ...             raise ValueError('Coordinate cannot be negative')
 
 
-Use Case - 0x05
+Use Case - 0x06
 ---------------
 * Var Range
 
@@ -299,7 +344,7 @@ Traceback (most recent call last):
 ValueError: x value (0) is not between 10 and 100
 
 
-Use Case - 0x06
+Use Case - 0x07
 ---------------
 * Const Range
 
@@ -331,7 +376,7 @@ Traceback (most recent call last):
 TypeError: Point.__init__() got an unexpected keyword argument 'X_MIN'
 
 
-Use Case - 0x07
+Use Case - 0x08
 ---------------
 * Init, Repr
 
@@ -367,7 +412,7 @@ Traceback (most recent call last):
 ValueError: y value (-1) is not between 0 and 768
 
 
-Use Case - 0x08
+Use Case - 0x09
 ---------------
 >>> @dataclass
 ... class Phone:
@@ -383,7 +428,7 @@ Use Case - 0x08
 >>> phone = Phone('+48 123 456 789')
 
 
-Use Case - 0x09
+Use Case - 0x0A
 ---------------
 * https://github.com/arthurdejong/python-stdnum/blob/master/stdnum/pl/pesel.py
 

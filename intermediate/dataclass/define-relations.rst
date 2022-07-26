@@ -73,3 +73,7 @@ Assignments
 .. literalinclude:: assignments/dataclass_define_relations_b.py
     :caption: :download:`Solution <assignments/dataclass_define_relations_b.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/dataclass_define_relations_c.py
+    :caption: :download:`Solution <assignments/dataclass_define_relations_c.py>`
+    :end-before: # Solution
