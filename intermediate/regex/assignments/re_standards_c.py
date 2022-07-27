@@ -10,14 +10,15 @@ English:
 
 Polish:
     1. Nie pisz kodu, przeprowadź tylko dyskusję
-    2. Mając PESEL "69072101234"
+    2. Zajmujemy się tylko peselami ludzi urodzonymi przed 2000 rokiem
+    3. Mając PESEL "69072101234"
        a. Jakie wyrażenie może być na pierwszym miejscu w PESEL?
        b. Jakie wyrażenie może być na drugim miejscu w PESEL?
        c. Jakie wyrażenie może być na trzecim miejscu w PESEL?
        d. Jakie wyrażenie może być na czwartym miejscu w PESEL?
        e. Jakie wyrażenie może być na piątym miejscu w PESEL?
        f. Jakie wyrażenie może być na szóstym miejscu w PESEL?
-    3. Co to jest suma kontrolna?
+    4. Co to jest suma kontrolna?
 """
 
 # Solution
