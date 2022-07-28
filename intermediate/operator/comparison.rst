@@ -23,154 +23,108 @@ About
 
 Object Equality
 ---------------
->>> class Astronaut:
-...     firstname: str
-...     lastname: str
+* When you compare objects with the same fields from two different classes
+* Always remember to compare classes
+* This way you avoid bug, when both has the same fields and values
+* Eq Works at Both Sides
+
+>>> class Fruit:
+...     def __init__(self, name):
+...         self.name = name
+>>>
+>>>
+>>> a = Fruit('Apple')
+>>> b = Fruit('Apple')
+>>>
+>>> a == b
+False
+
+>>> class Fruit:
+...     def __init__(self, name):
+...         self.name = name
 ...
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
+...     def __eq__(self, other):
+...         return self.name == other.name
 >>>
 >>>
->>> a = Astronaut('Mark', 'Watney')
->>> b = Astronaut('Mark', 'Watney')
+>>> a = Fruit('Apple')
+>>> b = Fruit('Apple')
+>>>
+>>> a == b
+True
+
+>>> class Fruit:
+...     def __init__(self, name):
+...         self.name = name
+...
+...     def __eq__(self, other):
+...         return self.name == other.name
+>>>
+>>>
+>>> class Company:
+...     def __init__(self, name):
+...         self.name = name
+>>>
+>>>
+>>> a = Fruit('Apple')
+>>> b = Fruit('Apple')
+>>> c = Company('Apple')
+>>>
+>>> a == b
+True
+>>>
+>>> a == c
+True
+
+>>> class Fruit:
+...     def __init__(self, name):
+...         self.name = name
+...
+...     def __eq__(self, other):
+...         return self.__class__ is other.__class__ \
+...            and self.name == other.name
+>>>
+>>>
+>>> class Company:
+...     def __init__(self, name):
+...         self.name = name
+>>>
+>>>
+>>> a = Fruit('Apple')
+>>> b = Fruit('Apple')
+>>> c = Company('Apple')
+>>>
+>>> a == b
+True
+>>>
+>>> a == c
+False
+
+Eq Works at Both Sides:
+
+>>> class Fruit:
+...     def __init__(self, name):
+...         self.name = name
+>>>
+>>>
+>>> class Company:
+...     def __init__(self, name):
+...         self.name = name
+...
+...     def __eq__(self, other):
+...         return self.__class__ is other.__class__ \
+...            and self.name == other.name
+>>>
+>>>
+>>> a = Fruit('Apple')
+>>> b = Fruit('Apple')
+>>> c = Company('Apple')
 >>>
 >>> a == b
 False
 >>>
->>> hex(id(a))  # doctest: +SKIP
-'0x11b9706a0'
->>> hex(id(b))  # doctest: +SKIP
-'0x11b970700'
->>> id(a) == id(b)
+>>> a == c
 False
-
->>> class Astronaut:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
-...
-...     def __eq__(self, other):
-...         return self.firstname == other.firstname \
-...            and self.lastname == other.lastname
->>>
->>>
->>>
->>> a = Astronaut('Mark', 'Watney')
->>> b = Astronaut('Mark', 'Watney')
->>>
->>> print(a == b)
-True
->>>
->>> hex(id(a))  # doctest: +SKIP
-'0x11b970c70'
->>> hex(id(b))  # doctest: +SKIP
-'0x11b9704c0'
->>> id(a) == id(b)
-False
-
-
-Problem
---------
-* When you compare objects with the same fields from two different classes
-
->>> class Astronaut:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
-...
-...     def __eq__(self, other):
-...         return self.firstname == other.firstname \
-...            and self.lastname == other.lastname
->>>
->>>
->>> class Cosmonaut:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
->>>
->>>
->>> a = Astronaut('Mark', 'Watney')
->>> c = Cosmonaut('Mark', 'Watney')
->>>
->>> print(a == c)
-True
-
-
-Solution
---------
-* Always remember to compare classes
-* This way you avoid bug, when both has the same fields and values
-
->>> class Astronaut:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
-...
-...     def __eq__(self, other):
-...         return self.__class__ is other.__class__ \
-...            and self.firstname == other.firstname \
-...            and self.lastname == other.lastname
->>>
->>>
->>> class Cosmonaut:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
->>>
->>>
->>> a = Astronaut('Mark', 'Watney')
->>> c = Cosmonaut('Mark', 'Watney')
->>>
->>> print(a == c)
-False
-
-
-Eq Works at Both Sides
-----------------------
->>> class Astronaut:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
-...
-...     def __eq__(self, other):
-...         return self.firstname == other.firstname \
-...            and self.lastname == other.lastname
->>>
->>>
->>> class Cosmonaut:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
->>>
->>>
->>> a = Astronaut('Mark', 'Watney')
->>> c = Cosmonaut('Mark', 'Watney')
->>>
->>> print(a == c)
-True
-
->>> class Astronaut:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
->>>
->>>
->>> class Cosmonaut:
-...     def __init__(self, firstname, lastname):
-...         self.firstname = firstname
-...         self.lastname = lastname
-...
-...     def __eq__(self, other):
-...         return self.firstname == other.firstname \
-...            and self.lastname == other.lastname
->>>
->>>
->>> a = Astronaut('Mark', 'Watney')
->>> c = Cosmonaut('Mark', 'Watney')
->>>
->>> print(a == c)
-True
 
 
 Use Case - 0x01
