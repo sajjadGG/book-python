@@ -210,6 +210,10 @@ Nested
 ------
 * Printing ``list`` will call ``__repr__()`` method on each element
 
+>>> data = [1,2,3]
+>>> print(data)
+[1, 2, 3]
+
 >>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
@@ -234,8 +238,10 @@ Nested
 >>>
 >>> crew = [mark, melissa, rick]
 >>>
->>> print(crew)
-[Astronaut(firstname='Mark', lastname='Watney'), Astronaut(firstname='Melissa', lastname='Lewis'), Astronaut(firstname='Rick', lastname='Martinez')]
+>>> print(crew)  # doctest: +NORMALIZE_WHITESPACE
+[Astronaut(firstname='Mark', lastname='Watney'),
+ Astronaut(firstname='Melissa', lastname='Lewis'),
+ Astronaut(firstname='Rick', lastname='Martinez')]
 
 
 Use Case - 0x01
