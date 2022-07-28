@@ -43,19 +43,16 @@ is required to use it.
 
 Create
 ------
-* ``DIRECTORY`` is the name of venv folder (see "Directory Naming Convention" below)
+* ``.venv-py310`` is the name of venv folder
+* See "Directory Naming Convention" below
 
 .. code-block:: console
 
+    # Go to project directory
     $ cd PROJECT
-    $ python3.10 -m venv DIRECTORY
 
-Example:
-
-.. code-block:: console
-
-    $ cd PROJECT
-    $ python3.10 -m venv venv-py310
+    # Create virtual environment in directory named `.venv-py310`
+    $ python3.10 -m venv .venv-py310
 
 
 Run Ad-Hoc
@@ -65,7 +62,10 @@ Run Ad-Hoc
 
 .. code-block:: console
 
+    # Go to project directory
     $ cd PROJECT
+
+    # Run ``myscript.py`` using virtual environment
     $ venv-py310/bin/python3 myscript.py
 
 
@@ -79,14 +79,20 @@ macOS, Linux, BSD:
 
 .. code-block:: console
 
+    # Go to project directory
     $ cd PROJECT
+
+    # Activate virtual environment
     $ source venv-py310/bin/activate
 
 Windows:
 
 .. code-block:: console
 
+    # Go to project directory
     $ cd PROJECT
+
+    # Activate virtual environment
     $ venv-py310\Scripts\activate.bat
 
 
@@ -96,6 +102,7 @@ Ad-hoc:
 
 .. code-block:: console
 
+    # Go to project directory
     $ cd PROJECT
 
     # Install new module
@@ -114,7 +121,10 @@ Activated:
 
 .. code-block:: console
 
+    # Go to project directory
     $ cd PROJECT
+
+    # Activate virtual environment
     $ source venv-py310/bin/activate
 
     # Install new module
@@ -204,22 +214,15 @@ Directory Naming Convention
     venv-python310-django41b1
     venv-python310-django41rc1
 
-This convention is from ``virtualenv-wrapper`` module
-(mostly used in Python 2):
-
-.. code-block:: text
-
-    ~/.venv-py3.10/PROJECT_NAME/
-
 
 Good Practices
 --------------
 * ``python3.10 -m venv -h``
 * ``python3.10 -m venv --upgrade-deps venv-py310``
-* name as version ``venv-3.10``
-* place in your project directory and add folder to ``.gitignore`` (important!)
-* otherwise place it in ``~/.virtualenv/``, but some meaningful name is required
-* Append at the end of ``venv-3.10/bin/activate``:
+* Name venv directory similar to python version ``venv-py3.10``
+* Place in your project directory
+* Add venv directory to ``.gitignore`` (important!)
+* Change prompt by appending at the end of ``venv-3.10/bin/activate``:
 
 ``bash`` (Linux):
 
