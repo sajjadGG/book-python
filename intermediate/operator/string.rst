@@ -37,23 +37,24 @@ About
 
 Example
 -------
+SetUp:
+
 >>> import datetime
 >>>
 >>>
 >>> date = datetime.date(1961, 4, 12)
->>>
->>>
->>> str(date)
-'1961-04-12'
->>>
->>> repr(date)
-'datetime.date(1961, 4, 12)'
->>>
->>> format(date, '%Y-%m-%d')
-'1961-04-12'
->>>
+
 >>> print(date)
 1961-04-12
+
+>>> str(date)
+'1961-04-12'
+
+>>> repr(date)
+'datetime.date(1961, 4, 12)'
+
+>>> format(date, '%Y-%m-%d')
+'1961-04-12'
 
 
 String
@@ -62,15 +63,6 @@ String
 * Calling function ``print(obj)`` calls ``str(obj)``, which calls ``obj.__str__()``
 * Method ``obj.__str__()`` must return ``str``
 * for end-user
-
->>> class Astronaut:
-...     pass
->>>
->>>
->>> astro = Astronaut()
->>>
->>> str(astro)  # doctest: +ELLIPSIS
-'<__main__.Astronaut object at 0x...>'
 
 Object without ``__str__()`` method overloaded prints their memory address:
 
@@ -88,6 +80,9 @@ Object without ``__str__()`` method overloaded prints their memory address:
 '<__main__.Astronaut object at 0x...>'
 >>>
 >>> astro.__str__()  # doctest: +ELLIPSIS
+'<__main__.Astronaut object at 0x...>'
+>>>
+>>> f'{astro!s}'  # doctest: +ELLIPSIS
 '<__main__.Astronaut object at 0x...>'
 
 Objects can verbose print if ``__str__()`` method is present:
@@ -110,25 +105,35 @@ My name... José Jiménez
 >>>
 >>> astro.__str__()
 'My name... José Jiménez'
+>>>
+>>> f'{astro!s}'
+'My name... José Jiménez'
 
 
 Representation
 --------------
 * Calling function ``repr(obj)`` calls ``obj.__repr__()``
 * Method ``obj.__repr__()`` must return ``str``
-* for developers
-* object representation
-* copy-paste for creating object with the same values
-* useful for debugging
-* printing ``list`` will call ``__repr__()`` method on each element
+* For developers
+* Object representation
+* Copy-paste for creating object with the same values
+* Useful for debugging
+* Printing ``list`` will call ``__repr__()`` method on each element
 
 >>> class Astronaut:
-...     pass
+...     def __init__(self, name):
+...         self.name = name
 >>>
 >>>
->>> astro = Astronaut()
+>>> astro = Astronaut('José Jiménez')
 >>>
 >>> repr(astro)  # doctest: +ELLIPSIS
+'<__main__.Astronaut object at 0x...>'
+>>>
+>>> astro  # doctest: +ELLIPSIS
+<__main__.Astronaut object at 0x...>
+>>>
+>>> f'{astro!r}'  # doctest: +ELLIPSIS
 '<__main__.Astronaut object at 0x...>'
 
 Using ``__repr__()`` on a class:
@@ -148,36 +153,9 @@ Using ``__repr__()`` on a class:
 >>>
 >>> astro
 Astronaut(name="José Jiménez")
-
-Printing ``list`` will call ``__repr__()`` method on each element:
-
->>> class Astronaut:
-...     def __init__(self, name):
-...         self.name = name
 >>>
->>>
->>> crew = [Astronaut('Mark Watney'),
-...         Astronaut('Melissa Lewis'),
-...         Astronaut('Rick Martinez')]
->>>
->>> print(crew)  # doctest: +ELLIPSIS
-[<__main__.Astronaut object at 0x...>, <__main__.Astronaut object at 0x...>, <__main__.Astronaut object at 0x...>]
-
-Printing ``list`` will call ``__repr__()`` method on each element:
-
->>> class Astronaut:
-...     def __init__(self, name):
-...         self.name = name
-...
-...     def __repr__(self):
-...         return f'{self.name}'
->>>
->>> crew = [Astronaut('Mark Watney'),
-...         Astronaut('Melissa Lewis'),
-...         Astronaut('Rick Martinez')]
->>>
->>> print(crew)
-[Mark Watney, Melissa Lewis, Rick Martinez]
+>>> f'{astro!r}'
+'Astronaut(name="José Jiménez")'
 
 
 Format
@@ -214,34 +192,33 @@ Nested
 >>> print(data)
 [1, 2, 3]
 
+Printing ``list`` will call ``__repr__()`` method on each element:
+
 >>> class Astronaut:
-...     firstname: str
-...     lastname: str
-...
-...     def __init__(self, firstname: str, lastname: str):
-...         self.firstname = firstname
-...         self.lastname = lastname
-...
-...     def __str__(self):
-...         return f'{self.firstname} {self.lastname}'
+...     def __init__(self, name):
+...         self.name = name
+>>>
+>>>
+>>> crew = [Astronaut('Mark Watney'),
+...         Astronaut('Melissa Lewis'),
+...         Astronaut('Rick Martinez')]
+>>>
+>>> print(crew)  # doctest: +ELLIPSIS
+[<__main__.Astronaut object at 0x...>, <__main__.Astronaut object at 0x...>, <__main__.Astronaut object at 0x...>]
+
+>>> class Astronaut:
+...     def __init__(self, name):
+...         self.name = name
 ...
 ...     def __repr__(self):
-...         clsname = self.__class__.__name__
-...         firstname = self.firstname
-...         lastname = self.lastname
-...         return f'{clsname}({firstname=}, {lastname=})'
+...         return f'{self.name}'
 >>>
+>>> crew = [Astronaut('Mark Watney'),
+...         Astronaut('Melissa Lewis'),
+...         Astronaut('Rick Martinez')]
 >>>
->>> mark = Astronaut('Mark', 'Watney')
->>> melissa = Astronaut('Melissa', 'Lewis')
->>> rick = Astronaut('Rick', 'Martinez')
->>>
->>> crew = [mark, melissa, rick]
->>>
->>> print(crew)  # doctest: +NORMALIZE_WHITESPACE
-[Astronaut(firstname='Mark', lastname='Watney'),
- Astronaut(firstname='Melissa', lastname='Lewis'),
- Astronaut(firstname='Rick', lastname='Martinez')]
+>>> print(crew)
+[Mark Watney, Melissa Lewis, Rick Martinez]
 
 
 Use Case - 0x01
