@@ -217,6 +217,7 @@ Mathematics
 
     math/random.rst
     math/precision.rst
+    math/ieee754.rst
 
 
 Tests

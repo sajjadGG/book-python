@@ -19,6 +19,11 @@ FuncProg Recurrence
 
     Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekurencję.
 
+.. epigraph::
+
+    In order to understand recursion, you must understand recursion. [#Hunter2011]_
+
+In the functional programming paradigm, there are no for and while loops. Instead, these languages rely on recursion for iteration. Recursion is implemented using recursive functions, which call themselves repeatedly until the base case is reached.
 
 Recurrence in Python
 --------------------
@@ -84,6 +89,8 @@ References
 ----------
 .. [#WikipediaFunc] Functional programming. Retrieved: 2020-10-09. URL: https://en.wikipedia.org/wiki/Functional_programming
 .. [#hanoi] https://dyermath.files.wordpress.com/2015/06/hanoi-13.jpg
+
+.. [#Hunter2011] Hunter, David (2011). Essentials of Discrete Mathematics. Jones and Bartlett. p. 494. ISBN 9781449604424.
 
 
 Assignments

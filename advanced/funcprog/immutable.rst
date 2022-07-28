@@ -18,6 +18,9 @@ Rational
 * Source: [#WikipediaFunc]_
 
 
+Variables are immutable, i.e., it isn’t possible to modify one once it has been initialized. However, we can create a new variable. The immutable nature of variables helps preserve the state throughout the program. [#Inouye2022]_
+
+
 Mutable vs Immutable
 --------------------
 .. figure:: img/funcprog-immutable-tuple.png
@@ -78,3 +81,5 @@ Comparison
 References
 ----------
 .. [#WikipediaFunc] Functional programming. Retrieved: 2020-10-09. URL: https://en.wikipedia.org/wiki/Functional_programming
+
+.. [#Inouye2022] Inouye, Jenna. "Functional Programming Languages: Concepts & Advantages". Year: 2022. Retrieved: 2022-07-28, URL: https://hackr.io/blog/functional-programming

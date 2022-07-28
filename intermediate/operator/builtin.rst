@@ -49,8 +49,64 @@ About
     "``setattr(obj, name)``",            "``obj.__setattr__(name)``"
 
 
-Example
--------
+Length
+------
+>>> data = [1, 2, 3]
+>>>
+>>> len(data)
+3
+>>>
+>>> data.__len__()
+3
+
+This is because ``len(data)`` calls ``data.__len__()``.
+
+>>> class Astronaut:
+...     pass
+...
+>>>
+>>> a = Astronaut()
+>>>
+>>> len(a)
+Traceback (most recent call last):
+TypeError: object of type 'Astronaut' has no len()
+
+>>> class Astronaut:
+...     def __len__(self):
+...         return 69
+>>>
+>>>
+>>> a = Astronaut()
+>>>
+>>> len(a)
+69
+
+
+Float
+-----
+>>> class Astronaut:
+...     pass
+...
+>>>
+>>> a = Astronaut()
+>>>
+>>> float(a)
+Traceback (most recent call last):
+TypeError: float() argument must be a string or a real number, not 'Astronaut'
+
+>>> class Astronaut:
+...     def __float__(self):
+...         return 13.37
+...
+>>>
+>>> a = Astronaut()
+>>>
+>>> float(a)
+13.37
+
+
+Abs
+---
 >>> from math import sqrt
 >>> from dataclasses import dataclass
 >>>
@@ -66,6 +122,20 @@ Example
 >>>
 >>> abs(Vector(x=3, y=4))
 5.0
+
+
+Round
+-----
+>>> pi = 3.1415
+>>>
+>>> type(pi)
+<class 'float'>
+>>>
+>>> round(pi, 2)
+3.14
+>>>
+>>> float.__round__(pi, 2)
+3.14
 
 
 Use Case - 0x01

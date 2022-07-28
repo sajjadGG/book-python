@@ -207,6 +207,32 @@ Traceback (most recent call last):
 NotImplementedError: Argument must be int or list
 
 
+Use Case - 0x01
+---------------
+>>> def square(x):
+...     return x ** 2
+>>>
+>>> def cube(x):
+...     return x ** 3
+>>>
+>>> def apply(data, fn):
+...     return map(fn, data)
+>>>
+>>> def add(x, y):
+...     return x + y
+
+>>> data = [1,2,3,4]
+>>> transformations = [square, cube]
+
+>>> result = reduce(apply, transformations, data)
+>>> list(result)
+[1, 64, 729, 4096]
+
+>>> result = reduce(apply, transformations, data)
+>>> reduce(add, result)
+4890
+
+
 References
 ----------
 .. [#dask] Dask core developers. Dask. Year: 2019. Retrieved: 2022-03-15. URL: https://raw.githubusercontent.com/dask/dask-org/main/images/grid_search_schedule.gif

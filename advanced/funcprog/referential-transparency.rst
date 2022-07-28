@@ -4,6 +4,13 @@ FuncProg Referential Transparency
 * This eliminates any chances of side effects
 * Any variable can be replaced with its actual value at any point of execution [#Hughes1984]_
 
+
+Variables, once defined in a functional programming language, aren’t allowed to change the value that they hold. This is known as referential transparency. It ensures that the same language expression gives the same output. [#Inouye2022]_
+
+Assignment statements are discouraged in functional programming. For storing additional values in a program developed using the functional paradigm, new variables must be defined. The state of a variable in such a program is constant at any moment in time. [#Inouye2022]_
+
+Referential transparency eliminates the slightest chances of any undesired effects, as any variable can be replaced with its actual value at any point during the program execution. [#Inouye2022]_
+
 Bad:
 
 >>> a = 1
@@ -36,4 +43,6 @@ Use Case - 0x01
 
 References
 ----------
+.. [#Inouye2022] Inouye, Jenna. "Functional Programming Languages: Concepts & Advantages". Year: 2022. Retrieved: 2022-07-28, URL: https://hackr.io/blog/functional-programming
+
 .. [#Hughes1984] Hughes, John. "Why Functional Programming Matters". Chalmers University of Technology. 1984.

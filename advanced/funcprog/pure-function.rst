@@ -5,6 +5,20 @@ FuncProg Pure Functions
 * If the result of a pure expression is not used, it can be removed without affecting other expressions
 * If there is no data dependency between two pure expressions, their order can be reversed, or they can be performed in parallel and they cannot interfere with one another (the evaluation of any pure expression is thread-safe) [#WikipediaFunc]_
 
+Pure functions have two important properties [#Inouye2022]_:
+
+* They always produce the same output with the same arguments irrespective of other factors. This property is also known as immutability.
+* They are deterministic. Pure functions either give some output or modify any argument or global variables i.e. they have no side effects.
+
+Because pure functions have no side effects or hidden I/O, programs built using functional paradigms are easy to debug. Moreover, pure functions make writing concurrent applications easier.
+
+When the code is written using the functional programming style, a capable compiler is able to:
+
+* Memorize the results
+* Parallelize the instructions
+* Wait for evaluating results
+
+
 >>> def add(a, b):
 ...     return a + b
 
@@ -153,3 +167,5 @@ Impure:
 References
 ----------
 .. [#WikipediaFunc] Functional programming. Retrieved: 2020-10-09. URL: https://en.wikipedia.org/wiki/Functional_programming
+
+.. [#Inouye2022] Inouye, Jenna. "Functional Programming Languages: Concepts & Advantages". Year: 2022. Retrieved: 2022-07-28, URL: https://hackr.io/blog/functional-programming

@@ -19,6 +19,54 @@ FuncProg About
 * Functional Design Patterns - Scott Wlaschin https://www.youtube.com/watch?v=srQt1NAHYC0
 * The Functional Programmer's Toolkit - Scott Wlaschin - https://www.youtube.com/watch?v=Nrp_LZ-XGsY
 
+
+Advantages
+----------
+* Source: [#Inouye2022]_
+
+* Comprehensibility: Pure functions don’t change states and are entirely dependent on input, and are consequently simple to understand.
+* Concurrency: As pure functions avoid changing variables or any data outside it, concurrency implementation is easier.
+* Lazy evaluation: Functional programming encourages lazy evaluation, which means that the value is evaluated and stored only when required.
+* Easier debugging and testing: Pure functions take arguments once and produce unchangeable output. With immutability and no hidden output, debugging and testing becomes easier.
+
+
+Disadvantages
+-------------
+* Source: [#Inouye2022]_
+
+* Potentially poorer performance: Immutable values combined with recursion might lead to a reduction in performance.
+* Coding difficulties:Though writing pure functions is easy, combining it with the rest of the application and I/O operations can be tough.
+* No loops can be challenging:Writing programs in a recursive style instead of loops can be a daunting task.
+
+
+Applications
+------------
+* Source: [#Inouye2022]_
+
+Generally, functional programming is widely employed in applications
+focusing on concurrency or parallelism, and carrying out mathematical
+computations.
+
+Functional programming languages are often preferred for academic purposes,
+rather than commercial software development. Nevertheless, several prominent
+functional languages like Clojure, Erlang, F#, Haskell, and Racket, are used
+for developing a variety of commercial and industrial applications.
+
+For example, WhatsApp makes use of Erlang, a programming language following
+the functional programming paradigm, to manage data belonging to over
+1.5 billion people.
+
+Another important torchbearer of the functional programming style
+is Haskell, which is used by Facebook in its anti-spam system. Even
+JavaScript, one of the most widely used programming languages, flaunts
+the properties of a dynamically typed functional language.
+
+Moreover, the functional style of programming is essential for various
+programming languages to lead in distinct domains - like R in statistics
+and J, K, and Q in financial analysis. Even used by domain-specific
+declarative languages such as Lex/Yacc and SQL for eschewing mutable values.
+
+
 Further Reading
 ---------------
 * Functional Design Patterns - Scott Wlaschin - https://www.youtube.com/watch?v=srQt1NAHYC0
@@ -32,3 +80,4 @@ References
 .. [#Hughes1984] Hughes, John. "Why Functional Programming Matters". Chalmers University of Technology. 1984.
 .. [#Spiewak2008] Spiewak, Daniel. "Implementing Persistent Vectors in Scala". Code Commit. 2008.
 .. [#Paulson1996] Paulson, Larry C. "ML for the Working Programmer". Cambridge University Press. ISBN: 978-0-521-56543-1. Retrieved: 2013-02-10. 1996.
+.. [#Inouye2022] Inouye, Jenna. "Functional Programming Languages: Concepts & Advantages". Year: 2022. Retrieved: 2022-07-28, URL: https://hackr.io/blog/functional-programming

@@ -49,6 +49,50 @@ True
 >>> x
 {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
 
+>>> old_crew = {'commander': 'Melissa Lewis',
+...             'botanist': 'Mark Watney'}
+>>>
+>>> new_crew = {'chemist': 'Alex Vogel',
+...             'pilot': 'Rick Martinez'}
+>>>
+>>>
+>>> old_crew | new_crew  # doctest: +NORMALIZE_WHITESPACE
+{'commander': 'Melissa Lewis',
+ 'botanist': 'Mark Watney',
+ 'chemist': 'Alex Vogel',
+ 'pilot': 'Rick Martinez'}
+
+>>> old_crew
+{'commander': 'Melissa Lewis', 'botanist': 'Mark Watney'}
+>>>
+>>> new_crew
+{'chemist': 'Alex Vogel', 'pilot': 'Rick Martinez'}
+>>>
+>>>
+>>> crew = old_crew | new_crew
+>>>
+>>> crew  # doctest: +NORMALIZE_WHITESPACE
+{'commander': 'Melissa Lewis',
+ 'botanist': 'Mark Watney',
+ 'chemist': 'Alex Vogel',
+ 'pilot': 'Rick Martinez'}
+
+>>> old_crew |= new_crew
+>>>
+>>> old_crew  # doctest: +NORMALIZE_WHITESPACE
+{'commander': 'Melissa Lewis',
+ 'botanist': 'Mark Watney',
+ 'chemist': 'Alex Vogel',
+ 'pilot': 'Rick Martinez'}
+
+>>> class dict:
+...     def __or__(self, other):
+...         return {**self, **other}
+...
+...     def __ior__(self, other):
+...         self.update(other)
+...         return self
+
 
 Operator Module - AND
 ---------------------
@@ -144,11 +188,68 @@ Use Case - 0x02
 * Numpy
 
 >>> import numpy as np
+>>> from pprint import pprint
+
+>>> data = [[1, 2, 3],
+...         [4, 5, 6],
+...         [7, 8, 9]]
 >>>
 >>>
->>> a = np.array([[1, 2, 3],
+>>> data > 2
+Traceback (most recent call last):
+TypeError: '>' not supported between instances of 'list' and 'int'
+
+>>> data = [[1, 2, 3],
+...         [4, 5, 6],
+...         [7, 8, 9]]
+>>>
+>>> result = []
+>>>
+>>> for row in data:
+...     tmp = []
+...     for number in row:
+...         tmp.append(number > 2)
+...     result.append(tmp)
+>>>
+>>>
+>>> pprint(result, width=30)
+[[False, False, True],
+ [True, True, True],
+ [True, True, True]]
+
+>>> data = [[1, 2, 3],
+...         [4, 5, 6],
+...         [7, 8, 9]]
+>>>
+>>> result = [
+...     [number > 2 for number in row]
+...     for row in data
+... ]
+>>>
+>>> pprint(result, width=30)
+[[False, False, True],
+ [True, True, True],
+ [True, True, True]]
+
+>>> data = np.array([[1, 2, 3],
 ...                  [4, 5, 6],
 ...                  [7, 8, 9]])
+>>>
+>>> data > 2
+array([[False, False,  True],
+       [ True,  True,  True],
+       [ True,  True,  True]])
+
+
+Use Case - 0x03
+---------------
+* Numpy
+
+>>> import numpy as np
+
+>>> a = np.array([[1, 2, 3],
+...               [4, 5, 6],
+...               [7, 8, 9]])
 >>>
 >>> a > 2
 array([[False, False,  True],
@@ -180,8 +281,44 @@ array([[ True,  True, False],
        [False, False, False]])
 
 
-Use Case - 0x03
+Use Case - 0x04
 ---------------
 * Game
 
 >>> hero >> Direction(left=10, up=20)  # doctest: +SKIP
+
+
+Use Case - 0x05
+---------------
+* Talk - Sebastiaan Zeeff: Demystifying Python’s Internals: Diving into CPython by implementing... https://www.youtube.com/watch?v=HYKGZunmF50
+* Łukasz Langa - Life Is Better Painted Black, or: How to Stop Worrying and Embrace Auto-Formatting https://www.youtube.com/watch?v=esZLCuWs_2Y
+* https://docs.influxdata.com/influxdb/v2.0/query-data/get-started/query-influxdb/
+
+>>> def upper(text):
+...     return str.upper(text)
+>>>
+>>> def lower(text):
+...     return str.lower(text)
+>>>
+>>> def capitalize(text):
+...     return str.capitalize(text)
+
+Let's make a transformation:
+
+>>> name = 'Mark Watney'
+>>> upper(name)
+'MARK WATNEY'
+
+What if we have a pipe operator to do that?
+
+>>> name = 'Mark Watney'
+>>> name |> upper  # doctest: +SKIP
+Traceback (most recent call last):
+SyntaxError: invalid syntax
+
+Why? Because we can chain multiple pipe operations:
+
+>>> name = 'Mark Watney'
+>>> name |> upper |> lower |> capitalize
+Traceback (most recent call last):
+SyntaxError: invalid syntax
