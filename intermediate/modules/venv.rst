@@ -11,6 +11,36 @@ Module VENV
 * ``virtualenvwrapper`` is additionally installed command line tools
 
 
+Venv vs Virtualenv
+------------------
+Both ``venv`` and ``virtualenv`` are used to create isolated
+Python environments.
+
+Since Python 3.3, a subset of ``virtualenv`` has been integrated into
+the standard library under the ``venv`` module.
+
+Module ``venv``:
+
+    * Python: version 3 only
+    * Install: not required - bundled with Python since Python 3.3
+    * Usage: ``python3.10 -m venv DIRECTORY``
+    * Development: slower and synchronized with Python releases
+    * Features: all you need
+    * Author: Bernat Gabor
+
+Module ``virtualenv``:
+
+    * Python: version 2 and 3
+    * Install: ``pip install virtualenv``
+    * Usage: ``virtualenv DIRECTORY``
+    * Development: faster and independent from Python releases
+    * Features: all from ``venv`` plus extra (which typically you don't need)
+    * Author: Bernat Gabor
+
+In my opinion builtin ``venv`` is all you need. Moreover no installation
+is required to use it.
+
+
 Create
 ------
 * ``DIRECTORY`` is the name of venv folder (see "Directory Naming Convention" below)
@@ -28,11 +58,29 @@ Example:
     $ python3.10 -m venv venv-py310
 
 
+Run Ad-Hoc
+----------
+* Will run python with from virtual environment
+* With all the modules already installed
+
+.. code-block:: console
+
+    $ cd PROJECT
+    $ venv-py310/bin/python3 myscript.py
+
+
 Activate
 --------
-* ``Scripts`` for Windows
 * ``bin`` for macOS, Linux, BSD
+* ``Scripts`` for Windows
 * Note the direction of slash and backslash (OS dependent)
+
+macOS, Linux, BSD:
+
+.. code-block:: console
+
+    $ cd PROJECT
+    $ source venv-py310/bin/activate
 
 Windows:
 
@@ -41,12 +89,45 @@ Windows:
     $ cd PROJECT
     $ venv-py310\Scripts\activate.bat
 
-macOS, Linux, BSD:
+
+Install Modules
+---------------
+Ad-hoc:
+
+.. code-block:: console
+
+    $ cd PROJECT
+
+    # Install new module
+    $ venv-py310/bin/python3 -m pip install MODULE
+
+    # Install modules listed in `requirements.txt`
+    $ venv-py310/bin/python3 -m pip install -r requirements.txt
+
+    # Upgrade modules listed in `requirements.txt`
+    $ venv-py310/bin/python3 -m pip install --upgrade -r requirements.txt
+
+    # Check installed modules
+    $ venv-py310/bin/python3 -m pip freeze
+
+Activated:
 
 .. code-block:: console
 
     $ cd PROJECT
     $ source venv-py310/bin/activate
+
+    # Install new module
+    $ python3 -m pip install MODULE
+
+    # Install modules listed in `requirements.txt`
+    $ python3 -m pip install -r requirements.txt
+
+    # Upgrade modules listed in `requirements.txt`
+    $ python3 -m pip pip install --upgrade -r requirements.txt
+
+    # Check installed modules
+    $ python3 -m pip freeze
 
 
 Directory Naming Convention
@@ -79,24 +160,24 @@ Directory Naming Convention
     .python-3.10
     .python-3.10.0
 
-    venv-3.8/
-    venv-3.9/
-    venv-3.10/
+    venv-py3.8/
+    venv-py3.9/
+    venv-py3.10/
 
-    venv-3.10.0/
-    venv-3.10.1/
-    venv-3.10.2/
-    venv-3.10.3/
-    venv-3.10.4/
-    venv-3.10.5/
-    venv-3.10.6/
-    venv-3.10.7/
+    venv-py3.10.0/
+    venv-py3.10.1/
+    venv-py3.10.2/
+    venv-py3.10.3/
+    venv-py3.10.4/
+    venv-py3.10.5/
+    venv-py3.10.6/
+    venv-py3.10.7/
 
-    venv-3.11-alpha1/
-    venv-3.11-alpha2/
-    venv-3.11-beta1/
-    venv-3.11-beta2/
-    venv-3.11-rc1/
+    venv-py3.11-alpha1/
+    venv-py3.11-alpha2/
+    venv-py3.11-beta1/
+    venv-py3.11-beta2/
+    venv-py3.11-rc1/
 
     venv-django-3.0
     venv-django-3.1
@@ -111,18 +192,27 @@ Directory Naming Convention
     venv-django-5.0rc1
     venv-django-5.0rc2
 
-    venv-py310-dj33
-    venv-python310-django33
-    venv-python310-django40a1
+    venv-py310-dj32
+    venv-py310-dj40
+    venv-py310-dj41a1
+    venv-py310-dj41b1
+    venv-py310-dj41rc1
 
-This convention is from ``virtualenv-wrapper`` module (mostly used in Python 2):
+    venv-python310-django32
+    venv-python310-django40
+    venv-python310-django41a1
+    venv-python310-django41b1
+    venv-python310-django41rc1
+
+This convention is from ``virtualenv-wrapper`` module
+(mostly used in Python 2):
 
 .. code-block:: text
 
-    ~/.virtualenv/PROJECT_NAME/
+    ~/.venv-py3.10/PROJECT_NAME/
 
 
-Good practices
+Good Practices
 --------------
 * ``python3.10 -m venv -h``
 * ``python3.10 -m venv --upgrade-deps venv-py310``
@@ -130,6 +220,8 @@ Good practices
 * place in your project directory and add folder to ``.gitignore`` (important!)
 * otherwise place it in ``~/.virtualenv/``, but some meaningful name is required
 * Append at the end of ``venv-3.10/bin/activate``:
+
+``bash`` (Linux):
 
 .. code-block:: bash
 
@@ -141,6 +233,8 @@ Good practices
     white='\[\033[00;39m\]'
 
     export PS1="\n${blue}${project_name}> ${white}"
+
+``zsh`` (macOS):
 
 .. code-block:: zsh
 
