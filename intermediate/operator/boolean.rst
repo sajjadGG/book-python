@@ -31,6 +31,25 @@ About
     "``obj >>= other``",   "``obj.__irshift__(other)``"
 
 
+Example
+-------
+>>> True + True
+2
+>>>
+>>> True & True
+True
+
+>>> x = {'a':1, 'b':2, 'c':3}
+>>> y = {'d':4, 'e':5}
+>>>
+>>> x | y
+{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+>>>
+>>> x |= y
+>>> x
+{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+
+
 Operator Module - AND
 ---------------------
 .. code-block:: text
