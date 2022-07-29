@@ -1,8 +1,6 @@
 .. testsetup::
 
-    >>> class Dragon:
-    ...     def __init__(*args, **kwargs):
-    ...         pass
+    # doctest: +SKIP_FILE
 
 
 Dragon ADR Init Name

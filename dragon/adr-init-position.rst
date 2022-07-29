@@ -2,10 +2,6 @@
 
     # doctest: +SKIP_FILE
 
-    >>> class Dragon:
-    ...     def __init__(*args, **kwargs):
-    ...         pass
-
 
 Dragon ADR Init Position
 ========================
@@ -24,14 +20,18 @@ Option 1
 * Good: easy to use
 * Bad: not explicit
 * Bad: requires knowledge of API to answer what are those numbers
-* Bad: It does suggest, that x and y are some parameters to texture (for example width and height of a texture image)
+* Bad: It does suggest, that x and y are some parameters to texture (for example width and height of a texture image, or gold and hit points)
 
 Problems:
 
->>> dragon = Dragon('Wawelski', 'img/dragon/alive.png', 50, 120)
+>>> dragon = Dragon('Wawelski', 0, 0)
+>>> dragon = Dragon('Wawelski', None, None)
+>>> dragon = Dragon('Wawelski', 'img/dragon/alive.png', 50, 120)  # bad
 
->>> position = Position(1, 2)  # ok
->>> position = GPSPosition(1, 2)  # nie ok
+>>> pt = Point(1, 2)  # maybe
+>>> pt = PointXY(1, 2)  # ok
+>>> pt = CartesianPoint(1, 2)  # ok
+>>> pt = GPSPoint(1, 2)  # bad
 
 
 Option 2
@@ -47,13 +47,17 @@ Option 2
 
 Problems:
 
+>>> dragon = Dragon('Wawelski', x=0, y=0)
+>>> dragon = Dragon('Wawelski', x=None, y=None)
 >>> dragon = Dragon('Wawelski', 'img/dragon/alive.png', x=50, y=120)
 
->>> position = Position(x=1, y=2)  # ok
->>> position = GPSPosition(x=1, y=2)  # nie ok
+>>> pt = Point(x=1, y=2)  # maybe
+>>> pt = PointXY(x=1, y=2)  # ok
+>>> pt = CartesianPoint(x=1, y=2)  # ok
+>>> pt = GPSPoint(x=1, y=2)  # bad
 
->>> knn = KNearestNeighbors(k=3)
->>> knn = KNearestNeighbors(k=3, w=[1,2,3])
+>>> knn = KNearestNeighbors(k=3)  # ok
+>>> knn = KNearestNeighbors(k=3, w=[1,2,3])  # bad
 
 
 Option 3
@@ -68,15 +72,18 @@ Option 3
 
 Problem:
 
->>> knn = KNearestNeighbors(k=3, wgt=[1,2,3])
+>>> dragon = Dragon('Wawelski', posx=0, posy=0)  # maybe, bad
+>>> dragon = Dragon('Wawelski', pos_x=None, pos_y=None) # maybe, bad
+>>> knn = KNearestNeighbors(k=3, wgt=[1,2,3])  # bad
 
->>> position = GPSPosition(lo=1, la=2)  # nie ok
->>> position = GPSPosition(lon=1, lat=2)  # ok
+>>> pt = GPSPoint(lo=1, la=2)  # bad
+>>> pt = GPSPoint(lon=1, lat=2)  # ok
 
 
 Option 4
 --------
 >>> dragon = Dragon('Wawelski', positionx=50, positiony=120)
+>>> dragon = Dragon('Wawelski', positionX=50, positionY=120)
 >>> dragon = Dragon('Wawelski', position_x=50, position_y=120)
 
 * Good: simple, easy to use
@@ -87,13 +94,13 @@ Problem:
 
 >>> knn = KNearestNeighbors(k=3, weights=[1,2,3])  # ok
 
->>> position = GPSPosition(longitude=1, latitude=2)  # ok
+>>> py = GPSPoint(longitude=1, latitude=2)  # ok
 
->>> df.plot(kind='line', subplots=True, color='grey', sharey=True)
+>>> df.plot(kind='line', subplots=True, color='grey', sharey=True)  # bad
 
 Solution:
 
->>> df.plot(kind='line', subplots=True, color='grey', share_y=True)
+>>> df.plot(kind='line', subplots=True, color='grey', share_y=True) # ok
 
 
 Option 5
@@ -108,6 +115,7 @@ Option 5
 * Good: you can assign ``None`` by default to set default ``position``
 * Good: always has to pass both ``x`` and ``y``
 * Bad: always has to pass both ``x`` and ``y``
+* Bad: cannot set only one axis to ``None``
 * Bad: you have to know that first is ``x`` and second is ``y``
 * Bad: order is important
 * Bad: unpacking
@@ -115,6 +123,8 @@ Option 5
 
 Problem:
 
+>>> dragon = Dragon('Wawelski', pos=[0, 0])  # ok
+>>> dragon = Dragon('Wawelski', pos=[None, None])  # maybe
 * ``pattern = r'[\(\[\d+,\s*\d[\)\]]'``
 
 
@@ -166,7 +176,9 @@ Option 8
 >>>
 >>> Position = namedtuple('Position', ['x', 'y'])
 >>>
+>>> dragon = Dragon('Wawelski', Position(50, 120))
 >>> dragon = Dragon('Wawelski', Position(x=50, y=120))
+>>> dragon = Dragon('Wawelski', position=Position(50, 120))
 >>> dragon = Dragon('Wawelski', position=Position(x=50, y=120))
 
 * Good: data is stored together (coordinate)
@@ -174,6 +186,7 @@ Option 8
 * Good: always has to pass both ``x`` and ``y``
 * Good: relatively easy to extend to 3D
 * Good: keyword argument is not required, class name is verbose enough
+* Good: lightweight, in the end this is a tuple
 * Bad: always has to pass both ``x`` and ``y``
 * Bad: not extensible, ``position`` will always be 2D
 
@@ -188,7 +201,9 @@ Option 9
 ...     y: int = 0
 >>>
 >>>
+>>> dragon = Dragon('Wawelski', Position(50, 120))
 >>> dragon = Dragon('Wawelski', Position(x=50, y=120))
+>>> dragon = Dragon('Wawelski', position=Position(50, 120))
 >>> dragon = Dragon('Wawelski', position=Position(x=50, y=120))
 
 * Good: data is stored together (coordinate)
@@ -197,6 +212,7 @@ Option 9
 * Good: you can assign ``None`` by default to set default ``position``
 * Good: very easy to extend to 3D
 * Good: keyword argument is not required, class name is verbose enough
+* Good: lightweight, in the end this is a tuple
 
 
 Option 10
@@ -253,6 +269,12 @@ Option 11
 * Good: very easy to extend to 3D
 * Good: keyword argument is not required, class name is verbose enough
 
+Bad:
+
+>>> pt = Point(x=1, y=2)
+>>> pt.w = 10  # will pass
+>>> pt.x = 1   # will pass
+
 
 Option 12
 ---------
@@ -279,6 +301,12 @@ Option 12
 * Good: is faster and leaner than simple dataclass
 * Bad: more complicated than mutable dataclasses
 
+Good:
+
+>>> pt = Point(x=1, y=2)
+>>> pt.w = 10  # will throw error
+>>> pt.x = 1   # will throw error
+
 
 Option 13
 ---------
@@ -303,6 +331,12 @@ Option 13
 * Good: easy to extend to 3D
 * Good: can set default values
 * Good: keyword argument is not required, class name is verbose enough
+
+Bad:
+
+>>> pt = Point(x=1, y=2)
+>>> pt.w = 10  # will pass
+>>> pt.x = 1   # will pass
 
 
 Option 14
@@ -329,6 +363,11 @@ Option 14
 * Good: can set default values
 * Good: keyword argument is not required, class name is verbose enough
 * Bad: too complex for now
+
+
+>>> pt = Point(x=1, y=2)
+>>> pt.w = 10  # will throw error
+>>> pt.x = 1   # will pass
 
 
 Decision

@@ -2,13 +2,6 @@
 
     # doctest: +SKIP_FILE
 
-    >>> from dataclasses import dataclass
-    >>>
-    >>> @dataclass
-    ... class Point:
-    ...     x: int
-    ...     y: int
-
 
 Dragon ADR Position Set
 =======================
@@ -77,6 +70,7 @@ Option 4
 
 Example:
 
+>>> knn = KNearestNeighbors(k=3)
 >>> knn.w = [1, 2, 3]
 
 
@@ -94,6 +88,7 @@ Option 5
 
 Example:
 
+>>> knn = KNearestNeighbors(k=3)
 >>> knn.weights = [1, 2, 3]
 
 
@@ -105,6 +100,7 @@ Option 6
 * Good: easy to use
 * Good: can use ``@property`` for validation if needed
 * Good: using ``@`` (matmul) it is easy to validation
+* Bad: ``@`` (at) makes sense only in English
 * Bad: arguments are implicit
 * Bad: require knowledge of an API
 * Bad: always 2D
@@ -120,6 +116,7 @@ Option 7
 * Good: can use ``@property`` for validation if needed
 * Good: arguments are explicit
 * Good: readability
+* Bad: ``@`` (at) makes sense only in English
 * Bad: require knowledge of an API
 * Bad: extensible, easy to refactor to 3D
 

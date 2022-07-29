@@ -20,7 +20,7 @@ Option 1
 >>> dragon.fly(left=10, down=20)
 
 * Good: move by relative shifting (left, right, up, down)
-* Good: encapsulation, object knows current position and moves
+* Good: encapsulation, object knows current position, state and does move
 * Good: easy ``.move()``
 * Bad: to use-case specific ``.fly()``, ``.shift()``
 
@@ -37,11 +37,12 @@ Option 2
 
 Option 3
 --------
->>> dragon.move(x=10, y=-20)
+>>> dragon.move(x=10, y=20)
 >>> dragon.move_to(x=10, y=20)
 
 * Bad: Move by setting absolute position
 * Bad: controller must know other variables, such as velocity, surface, injuries
+* Why: it differs from ``set_position()``, that with ``move()`` you can make an animation of movement, and with ``set_position()`` it happens instantly
 
 .. figure:: img/oop-architecture-mvc.png
 
@@ -92,6 +93,7 @@ Option 7
 Option 8
 --------
 >>> dragon.move(0, 10, 0, 20)
+
 >>> dragon.move((0, 10, 0, 20))
 
 >>> dragon.move([
@@ -109,21 +111,21 @@ Example:
 
 Problem:
 
-* ``check(True, False, True, None, 1)``
+* ``check(True, False, True, None)``
 
 .. code-block:: css
 
     p {
-      margin-top: 100px;
-      margin-bottom: 100px;
-      margin-right: 150px;
-      margin-left: 80px;
+      margin-top: 25px;
+      margin-bottom: 75px;
+      margin-right: 50px;
+      margin-left: 100px;
     }
 
 .. code-block:: css
 
     p {
-      margin: 25px 50px 75px 100px; /* top, right, bottom, left */
+      margin: 25px 50px 75px 100px;  /* top, right, bottom, left */
     }
 
 .. code-block:: css
@@ -214,11 +216,12 @@ Option 12
 ...     {'dx': -10, 'dy': 20}])
 
 * Bad: require knowledge of an API
+* Bad: not extensible to 3D
 
 
 Option 13
 ---------
-* move by setting absolute position
+* Move by setting absolute position
 
 >>> dragon.move([
 ...     Point(x=10, y=20),
@@ -290,9 +293,9 @@ Option 17
 Option 18
 ---------
 >>> LEFT = 61  # keyboard key code
-... RIGHT = 61
-... UP = 61
-... DOWN = 61
+>>> RIGHT = 62
+>>> UP = 63
+>>> DOWN = 64
 >>>
 >>> dragon.move(direction=LEFT, distance=20)
 
@@ -305,11 +308,27 @@ Option 18
 
 Option 19
 ---------
+>>> DIRECTION_LEFT = 61  # keyboard key code
+>>> DIRECTION_RIGHT = 62
+>>> DIRECTION_UP = 63
+>>> DIRECTION_DOWN = 64
+>>>
+>>> dragon.move(direction=DIRECTION_LEFT, distance=20)
+
+* Good: explicit
+* Good: verbose
+* Good: extensible
+* Bad: less, but still chaotic
+* Bad: to complex for now
+
+
+Option 19
+---------
 >>> class Direction(Enum):
 ...     LEFT = 61
-...     RIGHT = 61
-...     UP = 61
-...     DOWN = 61
+...     RIGHT = 62
+...     UP = 63
+...     DOWN = 64
 >>>
 >>>
 >>> dragon.move(Direction.LEFT, distance=5)
@@ -391,9 +410,9 @@ Use Case:
 >>> read_csv_with_delimiter_encoding('iris.csv', ';', 'utf-8')
 >>> read_csv_with_delimiter_encoding_verbose('iris.csv', ';', 'utf-8', True)
 
->>> read_csv('iris.csv')
-...     .withEncoding('utf-8')
-...     .withDelimiter(';')
+>>> read_csv('iris.csv') \
+...     .withEncoding('utf-8') \
+...     .withDelimiter(';') \
 ...     .withVerbose(True)
 
 >>> file = CSV()
@@ -425,7 +444,7 @@ Alternative, maybe in future:
 
 >>> dragon.change_position(left=10, down=20)
 
-* Good: consistent with ``set_position()``
+* Good: consistent with ``set_position()`` and ``get_position()``
 * Good: verbose
 * Good: extensible
 * Bad: to complex for now
