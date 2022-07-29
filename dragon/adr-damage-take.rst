@@ -26,10 +26,10 @@ Option 1
 
 Option 2
 --------
->>> dragon.wound(DMG)
->>> dragon.hurt(DMG)
->>> dragon.hit(DMG)
->>> dragon.damage(DMG)
+>>> dragon.wound(DMG)       # dragon  -> enemy
+>>> dragon.hurt(DMG)        # dragon <-  enemy
+>>> dragon.hit(DMG)         # dragon <-> enemy
+>>> dragon.damage(DMG)      # dragon  -> enemy
 
 * Bad: Indication of direction is too weak ``dragon <-> enemy``
 
@@ -46,8 +46,8 @@ Rationale:
 
 Option 3
 --------
->>> dragon.hurt_self(DMG)
->>> dragon.receive_damage(DMG)
+>>> dragon.hurt_self(DMG)       # bad name, dragon ---> enemy
+>>> dragon.receive_damage(DMG)  # good name, dragon ---> enemy
 
 * Good: Explicit relation ``dragon ---> enemy``
 * Bad: ``hurt_self()`` is to colloquial
@@ -56,7 +56,7 @@ Option 3
 
 Option 4
 --------
->>> dragon.take_damage(DMG)
+>>> dragon.take_damage(DMG) # dragon ---> enemy
 
 * Good: Explicit relation ``dragon ---> enemy``
 * Good: Consistent with ``make_damage()``

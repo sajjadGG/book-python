@@ -13,7 +13,6 @@ Problem
 * Dragon makes damage
 
 
-
 Option 1
 --------
 >>> dragon.get_damage()
@@ -27,11 +26,11 @@ Option 1
 
 Option 2
 --------
->>> dragon.attack()
->>> dragon.hit()
->>> dragon.hurt()
->>> dragon.damage()
->>> dragon.wound()
+>>> dragon.attack()  # dragon  -> enemy
+>>> dragon.hit()     # dragon <-> enemy
+>>> dragon.hurt()    # dragon <-  enemy
+>>> dragon.damage()  # dragon <-  enemy
+>>> dragon.wound()   # dragon <-  enemy
 
 * Bad: Indication of direction is too weak ``dragon <-> enemy``
 * Bad: not directed, all methods could mean making damage or receiving damage
@@ -53,7 +52,7 @@ damage?
 
 Option 3
 --------
->>> dragon.take_damage()
+>>> dragon.take_damage()    # dragon <--- enemy
 
 * Good: Simple
 * Bad: Relation is other way around ``dragon <--- enemy``
@@ -61,8 +60,8 @@ Option 3
 
 Option 4
 --------
->>> dragon.deal_damage()
->>> dragon.hurt_someone()
+>>> dragon.deal_damage()    # dragon ---> enemy
+>>> dragon.hurt_someone()   # dragon ---> enemy
 
 * Good: Strong indication of direction ``dragon ---> enemy``
 * Bad: ``hurt_someone()`` method name is to colloquial
@@ -70,7 +69,7 @@ Option 4
 
 Option 5
 --------
->>> dragon.make_damage()
+>>> dragon.make_damage()    # dragon ---> enemy
 
 * Good: Strong indication of direction ``dragon ---> enemy``
 * Good: Name indicates intent
@@ -86,6 +85,7 @@ Option 6
 >>> dragon.take_damage(ENEMY)
 
 * Bad: MVC
+* Bad: each ENEMY will get random damage
 
 .. figure:: img/dragon-firkraag-01.jpg
 .. figure:: img/oop-architecture-mvc.png
