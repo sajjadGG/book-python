@@ -1,4 +1,4 @@
-# Database Update Table
+# Database Delete All
 import sqlite3
 
 

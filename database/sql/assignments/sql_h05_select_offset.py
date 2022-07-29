@@ -1,11 +1,11 @@
-# Database Select From
+# Database Select Offset
 import sqlite3
 
 
 SQL = """
 
--- replace this comment
--- with your sql query
+SELECT datetime AS dt, category AS lvl, event
+FROM apollo11
 
 """
 
