@@ -15,7 +15,7 @@ Polish:
     1. Ile miał lat Juri Gagarin kiedy wystartował w kosmos?
     2. Ile lat miał Neil Armstrong kiedy zrobił pierwszy krok na Księżycu?
     3. Rezultat zaokrąglij do pełnych lat
-    4. Mind, that there are two different objects: `date` and `datetime`
+    4. Zwróć uwagę, że tam są dwa różne obiekty: `date` i `datetime`
     5. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
