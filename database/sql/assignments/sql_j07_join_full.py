@@ -1,11 +1,11 @@
-# Database Select WhereCTE
+# Database Select JoinFull
 import sqlite3
 
 
 SQL = """
 
-SELECT datetime AS dt, category AS lvl, event
-FROM apollo11
+-- replace this comment
+-- with your sql query
 
 """
 

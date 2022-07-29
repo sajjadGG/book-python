@@ -1,11 +1,11 @@
-# Database Show Data
+# Database Select Avg
 import sqlite3
 
 
 SQL = """
 
 SELECT *
-FROM sqlite_master
+FROM apollo11
 
 """
 

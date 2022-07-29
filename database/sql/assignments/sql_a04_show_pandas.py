@@ -1,5 +1,6 @@
 # Database Show Data
 import sqlite3
+import pandas as pd
 
 
 SQL = """
@@ -11,6 +12,4 @@ FROM sqlite_master
 
 
 with sqlite3.connect('sql.db') as db:
-    db.row_factory = sqlite3.Row
-    for result in map(dict, db.execute(SQL)):
-        print(result)
+    ...

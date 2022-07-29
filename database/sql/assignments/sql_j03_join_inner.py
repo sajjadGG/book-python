@@ -1,11 +1,11 @@
-# Database Show Data
+# Database Select JoinInner
 import sqlite3
 
 
 SQL = """
 
-SELECT *
-FROM sqlite_master
+-- replace this comment
+-- with your sql query
 
 """
 

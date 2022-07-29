@@ -1,11 +1,11 @@
-# Database Show Data
+# Database Select SubqueryCTE
 import sqlite3
 
 
 SQL = """
 
-SELECT *
-FROM sqlite_master
+SELECT datetime AS dt, category AS lvl, event
+FROM apollo11
 
 """
 
