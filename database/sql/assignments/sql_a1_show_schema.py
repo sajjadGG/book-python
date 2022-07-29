@@ -4,8 +4,8 @@ import sqlite3
 
 SQL = """
 
-SELECT sql 
-FROM sqlite_master 
+SELECT sql
+FROM sqlite_master
 WHERE tbl_name = 'contacts'
 
 """

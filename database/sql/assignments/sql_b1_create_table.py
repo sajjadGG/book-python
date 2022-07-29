@@ -1,4 +1,4 @@
-# Database Schema CreateTable
+# Database Create Table
 import sqlite3
 
 

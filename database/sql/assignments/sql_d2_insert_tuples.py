@@ -1,4 +1,4 @@
-# Database Insert list[tuple]
+# Database Insert List[Tuple]
 import sqlite3
 
 

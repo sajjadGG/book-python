@@ -1,4 +1,4 @@
-# Database Schema CreateIndex
+# Database Drop Index
 import sqlite3
 
 

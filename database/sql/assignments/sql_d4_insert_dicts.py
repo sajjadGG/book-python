@@ -1,11 +1,11 @@
-# Database Insert list[dict]
+# Database Insert List[Dict]
 import sqlite3
 
 
 SQL = """
 
 -- replace this comment
--- with your sql query   
+-- with your sql query
 
 """
 

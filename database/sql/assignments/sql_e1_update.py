@@ -1,4 +1,4 @@
-# Database Schema AlterTable
+# Database Update Table
 import sqlite3
 
 
