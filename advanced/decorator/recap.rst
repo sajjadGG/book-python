@@ -2,8 +2,9 @@ Decorator Recap
 ===============
 By type:
 
-    * Function decorators
-    * Class decorators
+    * Decorator Function
+    * Decorator Method
+    * Decorator Class
 
 By decorated object:
 

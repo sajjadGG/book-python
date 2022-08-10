@@ -391,31 +391,6 @@ Use Case - 0x0A
 
 Use Case - 0x0B
 ---------------
-* FastAPI URL Routing
-
->>> # doctest: +SKIP
-... from fastapi import FastAPI
-...
-... app = FastAPI()
-...
-...
-... @app.get('/')
-... async def index():
-...     return {'message': 'Hello World'}
-...
-...
-... @app.get('/user/{pk}')
-... async def user(pk: int):
-...     return {'pk': pk}
-...
-...
-... @app.get('/search')
-... async def items(q: str | None = None):
-...     return {'q': q}
-
-
-Use Case - 0x0C
----------------
 * Django Login Required
 
 Decorator checks whether user is_authenticated.

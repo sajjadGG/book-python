@@ -2,15 +2,9 @@ Decorator Class
 ===============
 * ``MyDecorator`` is a decorator name
 * ``myfunction`` is a function name
+* ``func`` is a reference to function which is being decorated
 
-
-Syntax
-------
-* ``cls`` is a reference to class which is being decorated (``MyClass`` in this case)
-* ``Wrapper`` is a closure class
-* ``Wrapper`` name is a convention, but you can name it anyhow
-* ``Wrapper`` can inherit from ``MyClass``
-* Decorator must return reference to ``Wrapper``
+Definition:
 
 >>> class MyDecorator:
 ...     def __init__(self, func):
@@ -18,14 +12,16 @@ Syntax
 ...
 ...     def __call__(self, *args, **kwargs):
 ...         return self._func(*args, **kwargs)
->>>
->>>
+
+Usage:
+
 >>> @MyDecorator
-... def myfunction():
-...     ...
+... def say_hello():
+...     return 'hello'
 >>>
 >>>
->>> myfunction()
+>>> say_hello()
+'hello'
 
 
 Example
