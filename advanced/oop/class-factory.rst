@@ -362,6 +362,53 @@ Use Case - 0x04
 
 Use Case - 0x05
 ---------------
+>>> from pprint import pprint
+>>>
+>>>
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+...     (7.6, 3.0, 6.6, 2.1, 'virginica')]
+>>>
+>>>
+>>> def myinit(self, sl, sw, pl, pw):
+...     self.sl = sl
+...     self.sw = sw
+...     self.pl = pl
+...     self.pw = pw
+>>>
+>>> def myrepr(self):
+...     clsname = self.__class__.__name__
+...     values = tuple(vars(self).values())
+...     return f'{clsname}{values}'
+>>>
+>>> iris = type('Iris', (), {'__init__': myinit, '__repr__': myrepr})
+>>>
+>>> result = [cls(*values)
+...           for *values, species in DATA[1:]
+...           if (clsname := species.capitalize())
+...           and (cls := type(clsname, (iris,), {}))]
+>>>
+>>>
+>>> pprint(result)
+[Virginica(5.8, 2.7, 5.1, 1.9),
+ Setosa(5.1, 3.5, 1.4, 0.2),
+ Versicolor(5.7, 2.8, 4.1, 1.3),
+ Virginica(6.3, 2.9, 5.6, 1.8),
+ Versicolor(6.4, 3.2, 4.5, 1.5),
+ Setosa(4.7, 3.2, 1.3, 0.2),
+ Versicolor(7.0, 3.2, 4.7, 1.4),
+ Virginica(7.6, 3.0, 6.6, 2.1)]
+
+
+Use Case - 0x06
+---------------
 >>> from itertools import zip_longest
 >>>
 >>>
