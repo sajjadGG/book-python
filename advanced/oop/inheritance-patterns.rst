@@ -231,6 +231,12 @@ TypeError: Object of type date is not JSON serializable
 '{"firstname": "Mark", "lastname": "Watney", "birthday": "1969-07-21"}'
 
 
+Further Reading
+---------------
+* https://github.com/django/django/blob/main/django/views/generic/base.py
+* https://github.com/pandas-dev/pandas/blob/main/pandas/core/frame.py
+* https://github.com/scikit-learn/scikit-learn/blob/main/sklearn/linear_model/_base.py#L533
+
 Assignments
 -----------
 .. literalinclude:: assignments/oop_inheritance_patterns_a.py

@@ -13,39 +13,88 @@ OOP Inheritance Overload
 
 Overload Method
 ---------------
->>> class Parent:
+>>> class Person:
 ...     def say_hello(self):
-...         print('Parent says good morning')
+...         print('Hello')
 >>>
 >>>
->>> class Child(Parent):
+>>> class Astronaut(Person):
 ...     def say_hello(self):
-...         print('Child says wassup')
+...         print('Howdy')
 >>>
 >>>
->>> obj = Child()
->>> obj.say_hello()
-Child says wassup
+>>> astro = Astronaut()
+>>> astro.say_hello()
+Howdy
+
+
+Overload Init
+-------------
+>>> class Person:
+...     def __init__(self):
+...         print('Person init')
+>>>
+>>>
+>>> class Astronaut(Person):
+...     pass
+>>>
+>>>
+>>> astro = Astronaut()
+Person init
+
+>>> class Person:
+...     def __init__(self):
+...         print('Person init')
+>>>
+>>>
+>>> class Astronaut(Person):
+...     def __init__(self):
+...         print('Astronaut init')
+>>>
+>>>
+>>> astro = Astronaut()
+Astronaut init
+
+
+Overload ClassVars
+------------------
+>>> class Person:
+...     firstname = 'Mark'
+...     lastname = 'Watney'
+...     job = None
+>>>
+>>>
+>>> class Astronaut(Person):
+...     job = 'astronaut'
+>>>
+>>>
+>>> astro = Astronaut()
+>>>
+>>> astro.firstname
+'Mark'
+>>> astro.lastname
+'Watney'
+>>> astro.job
+'astronaut'
 
 
 Overload Attribute
 ------------------
->>> class Parent:
-...     def __init__(self):
-...         self.firstname = 'Melissa'
-...         self.lastname = 'Lewis'
->>>
->>>
->>> class Child(Parent):
+>>> class Person:
 ...     def __init__(self):
 ...         self.firstname = 'Mark'
 ...         self.lastname = 'Watney'
+...         self.job = None
+>>>
+>>>
+>>> class Astronaut(Person):
+...     def __init__(self):
 ...         self.job = 'astronaut'
 >>>
 >>>
->>> obj = Child()
->>> vars(obj)
-{'firstname': 'Mark', 'lastname': 'Watney', 'job': 'astronaut'}
+>>> astro = Astronaut()
+>>> vars(astro)
+{'job': 'astronaut'}
 
 
 .. todo:: Assignments
