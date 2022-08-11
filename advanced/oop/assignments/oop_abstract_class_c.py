@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Abstract Annotate
+* Assignment: OOP AbstractClass Annotate
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min

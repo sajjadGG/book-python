@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Interface Define
+* Assignment: OOP AbstractInterface Define
 * Complexity: easy
 * Lines of code: 13 lines
 * Time: 8 min

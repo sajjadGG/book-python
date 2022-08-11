@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Slots Repr
+* Assignment: OOP AttributeSlots Repr
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min

@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Abstract Syntax
+* Assignment: OOP AbstractClass Syntax
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 5 min

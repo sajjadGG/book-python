@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Abstract Implement
+* Assignment: OOP AbstractClass Implement
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min

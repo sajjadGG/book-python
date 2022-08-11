@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Inheritance Composition
+* Assignment: OOP InheritancePatterns Composition
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 3 min

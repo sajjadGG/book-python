@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Composition Decompose
+* Assignment: OOP InheritanceProblems Decompose
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 8 min

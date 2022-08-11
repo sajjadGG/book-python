@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Relations Nested
+* Assignment: OOP ObjectRelations Nested
 * Complexity: medium
 * Lines of code: 6 lines
 * Time: 13 min

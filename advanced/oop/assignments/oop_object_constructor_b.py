@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Constructor Passwd
+* Assignment: OOP ObjectConstructor Passwd
 * Complexity: easy
 * Lines of code: 21 lines
 * Time: 13 min

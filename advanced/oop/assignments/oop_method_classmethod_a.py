@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Classmethod Time
+* Assignment: OOP MethodClassmethod Time
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

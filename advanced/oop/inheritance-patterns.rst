@@ -96,9 +96,9 @@ Dynamic version:
 ...     mother: Mother
 ...     father: Father
 ...
-...     def __init__(self):
-...         self.mother = Mother()
-...         self.father = Father()
+...     def __init__(self, mother=Mother(), father=Father()):
+...         self.mother = mother
+...         self.father = father
 
 
 Aggregation
@@ -126,10 +126,32 @@ Dynamic version:
 >>> class Child:
 ...     parents: list[Mother|Father]
 ...
-...     def __init__(self):
+...     def __init__(self, mother=Mother(), father=Father()):
 ...         self.parents = []
-...         self.parents.append(Mother())
-...         self.parents.append(Father())
+...         self.parents.append(mother)
+...         self.parents.append(father)
+
+Why?
+----
+>>> class Mother:
+...     pass
+>>>
+>>> class Father:
+...     pass
+>>>
+>>>
+>>> class Child:
+...     mother: Mother
+...     father: Father
+...
+...     def __init__(self, mother=Mother(), father=Father()):
+...         self.mother = mother
+...         self.father = father
+
+>>> class StepFather:
+...     pass
+>>>
+>>> me = Child(father=StepFather())
 
 
 Use Case - 0x01
@@ -179,6 +201,34 @@ Use Case - 0x02
 ...
 ...     def json_decoder(self, data):
 ...         self.json_decoder.decode(data)
+
+
+Use Case - 0x03
+---------------
+>>> from datetime import date
+>>> import json
+
+>>> DATA = {'firstname': 'Mark', 'lastname': 'Watney'}
+>>>
+>>> json.dumps(DATA)
+'{"firstname": "Mark", "lastname": "Watney"}'
+
+>>> DATA = {'firstname': 'Mark', 'lastname': 'Watney', 'birthday': date(1969, 7, 21)}
+>>>
+>>> json.dumps(DATA)
+Traceback (most recent call last):
+TypeError: Object of type date is not JSON serializable
+
+>>> class Encoder(json.JSONEncoder):
+...     def default(self, x):
+...         if isinstance(x, date):
+...             return x.isoformat()
+...
+>>>
+>>> DATA = {'firstname': 'Mark', 'lastname': 'Watney', 'birthday': date(1969, 7, 21)}
+>>>
+>>> json.dumps(DATA, cls=Encoder)
+'{"firstname": "Mark", "lastname": "Watney", "birthday": "1969-07-21"}'
 
 
 Assignments

@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Slots Define
+* Assignment: OOP AttributeSlots Define
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

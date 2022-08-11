@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Inheritance Multilevel
+* Assignment: OOP InheritancePatterns Multilevel
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 3 min

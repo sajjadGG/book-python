@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Inheritance NoInheritance
+* Assignment: OOP InheritancePatterns NoInheritance
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 3 min

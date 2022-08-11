@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Relations HasPosition
+* Assignment: OOP ObjectRelations HasPosition
 * Complexity: medium
 * Lines of code: 18 lines
 * Time: 8 min

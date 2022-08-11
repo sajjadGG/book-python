@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Access Members
+* Assignment: OOP AttributeAccessModifiers Members
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 8 min

@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Constructor Syntax
+* Assignment: OOP ObjectConstructor Syntax
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 5 min
