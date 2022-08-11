@@ -87,41 +87,45 @@ Example
 >>>
 >>> class FilesystemCache(ICache):
 ...      ...
->>>
->>>
->>> c: ICache = DatabaseCache()
->>> c.set('firstname', 'Mark')
->>> c.is_valid('firstname')
->>> c.is_valid('lastname')
->>> c.get('firstname')
->>>
->>> c: ICache = InMemoryCache()
->>> c.set('firstname', 'Mark')
->>> c.is_valid('firstname')
->>> c.is_valid('lastname')
->>> c.get('firstname')
->>>
->>> c: ICache = FilesystemCache()
->>> c.set('firstname', 'Mark')
->>> c.is_valid('firstname')
->>> c.is_valid('lastname')
->>> c.get('firstname')
+
+>>> mycache: ICache = DatabaseCache()
+>>> mycache.set('firstname', 'Mark')
+>>> mycache.is_valid('firstname')
+>>> mycache.is_valid('lastname')
+>>> mycache.get('firstname')
+
+>>> mycache: ICache = InMemoryCache()
+>>> mycache.set('firstname', 'Mark')
+>>> mycache.is_valid('firstname')
+>>> mycache.is_valid('lastname')
+>>> mycache.get('firstname')
+
+>>> mycache: ICache = FilesystemCache()
+>>> mycache.set('firstname', 'Mark')
+>>> mycache.is_valid('firstname')
+>>> mycache.is_valid('lastname')
+>>> mycache.get('firstname')
 
 
 Use Case - 0x01
 ---------------
 * Cache
 
-File ``cache_interface.py``:
+File ``cache_iface.py``:
 
 >>> class ICache:
-...     def get(self, key: str) -> str: raise NotImplementedError
-...     def set(self, key: str, value: str) -> None: raise NotImplementedError
-...     def is_valid(self, key: str) -> bool: raise NotImplementedError
+...     def get(self, key: str) -> str:
+...         raise NotImplementedError
+...
+...     def set(self, key: str, value: str) -> None:
+...         raise NotImplementedError
+...
+...     def is_valid(self, key: str) -> bool:
+...         raise NotImplementedError
 
 File ``cache_impl.py``:
 
->>> class CacheDatabase(ICache):
+>>> class DatabaseCache(ICache):
 ...     def is_valid(self, key: str) -> bool:
 ...         ...
 ...
@@ -132,7 +136,7 @@ File ``cache_impl.py``:
 ...         ...
 >>>
 >>>
->>> class CacheRAM(ICache):
+>>> class InMemoryCache(ICache):
 ...     def is_valid(self, key: str) -> bool:
 ...         ...
 ...
@@ -143,7 +147,7 @@ File ``cache_impl.py``:
 ...         ...
 >>>
 >>>
->>> class CacheFilesystem(ICache):
+>>> class FilesystemCache(ICache):
 ...     def is_valid(self, key: str) -> bool:
 ...         ...
 ...
@@ -155,10 +159,10 @@ File ``cache_impl.py``:
 
 File ``settings.py``
 
->>> from myapp.cache_interface import ICache  # doctest: +SKIP
->>> from myapp.cache_imp import DatabaseCache  # doctest: +SKIP
->>> from myapp.cache_imp import InMemoryCache  # doctest: +SKIP
->>> from myapp.cache_imp import FilesystemCache  # doctest: +SKIP
+>>> from myapp.cache_iface import ICache  # doctest: +SKIP
+>>> from myapp.cache_impl import DatabaseCache  # doctest: +SKIP
+>>> from myapp.cache_impl import InMemoryCache  # doctest: +SKIP
+>>> from myapp.cache_impl import FilesystemCache  # doctest: +SKIP
 >>>
 >>>
 >>> DefaultCache = InMemoryCache
@@ -166,15 +170,23 @@ File ``settings.py``
 File ``myapp.py``:
 
 >>> from myapp.settings import DefaultCache, ICache  # doctest: +SKIP
-
+>>>
+>>>
 >>> cache: ICache = DefaultCache()
 >>> cache.set('name', 'Mark Watney')
 >>> cache.is_valid('name')
 >>> cache.get('name')
 
+Note, that myapp doesn't know which cache is being used. It only depends
+on configuration in settings file.
+
 
 Use Case - 0x02
 ---------------
+.. figure:: img/oop-interface-gimp.jpg
+
+    GIMP (GNU Image Manipulation Project) window with tools and canvas [#GIMP]_
+
 >>> class Tool:
 ...     def on_mouse_over(self): raise NotImplementedError
 ...     def on_mouse_out(self): raise NotImplementedError
@@ -236,6 +248,11 @@ Use Case - 0x02
 ...
 ...     def on_key_unpress(self):
 ...         ...
+
+
+References
+----------
+.. [#GIMP] Download GIMP. Year: 2022. Retrieved: 2022-08-11. URL: https://anderbot.com/wp-content/uploads/2020/10/GIMP5.jpg
 
 
 Assignments
