@@ -38,8 +38,6 @@ Single Inheritance
 >>> class Child(Parent):
 ...     pass
 
-.. figure:: img/uml-relations-inheritance-simple.png
-
 
 Multilevel Inheritance
 ----------------------
@@ -53,9 +51,6 @@ Multilevel Inheritance
 >>>
 >>> class Child(Parent):
 ...     pass
-
-
-.. figure:: img/uml-relations-inheritance-multilevel.png
 
 
 Multiple Inheritance
@@ -137,7 +132,6 @@ Dynamic version:
 ...         self.parents.append(Father())
 
 
-
 Use Case - 0x01
 ---------------
 >>> class Mother:
@@ -199,4 +193,8 @@ Assignments
 
 .. literalinclude:: assignments/oop_inheritance_patterns_c.py
     :caption: :download:`Solution <assignments/oop_inheritance_patterns_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/oop_inheritance_patterns_d.py
+    :caption: :download:`Solution <assignments/oop_inheritance_patterns_d.py>`
     :end-before: # Solution
