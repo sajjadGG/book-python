@@ -21,8 +21,8 @@ OOP Abstract Class
 
 Syntax
 ------
-* New class ``ABC`` has ``ABCMeta`` as its meta class.
-* Using ``ABC`` as a base class has essentially the same effect as specifying ``metaclass=abc.ABCMeta``, but is simpler to type and easier to read.
+* New class ``ABC`` has ``ABCMeta`` as its meta class
+* Using ``ABC`` as a base class has essentially the same effect as specifying ``metaclass=abc.ABCMeta``, but is simpler to type and easier to read
 * ``abc.ABC`` basically just an extra layer over ``metaclass=abc.ABCMeta``
 * ``abc.ABC`` implicitly defines the metaclass for you
 
@@ -295,10 +295,10 @@ TypeError: Can't instantiate abstract class Document with abstract method displa
 
 Use Case - 0x02
 ---------------
->>> from abc import ABCMeta, abstractmethod
+>>> from abc import ABC, abstractmethod
 >>>
 >>>
->>> class UIElement(metaclass=ABCMeta):
+>>> class UIElement(ABC):
 ...     def __init__(self, name):
 ...         self.name = name
 ...
