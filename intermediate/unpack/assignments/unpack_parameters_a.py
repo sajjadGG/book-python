@@ -18,6 +18,7 @@ Non-functional requirements:
     * Run doctests - all must succeed
 
 Hints:
+    * `raise ValueError('error message')`
     * `sum(...) / len(...)`
 
 Tests:

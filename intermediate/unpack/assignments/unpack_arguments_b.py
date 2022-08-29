@@ -20,8 +20,10 @@ Polish:
 
 Hint:
     * https://github.com/python/cpython/blob/main/Objects/rangeobject.c#LC75
+    * `raise TypeError('error message')`
     * use `*args` and `**kwargs`
     * `if len(args) == ...`
+    * `match len(args)`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
