@@ -26,6 +26,12 @@ Polish:
     3. Sparsuj pola z datami i zapisz je jako obiekty `date` lub `datetime`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `date.fromisoformat(...)`
+    * `datetime.fromisoformat(...)`
+    * `datetime | None`
+    * `date`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isclass
@@ -192,7 +198,7 @@ class User:
     password: str
     email: str
     born: date
-    last_login: Optional[datetime]
+    last_login: datetime | None
     is_active: bool
     is_staff: bool
     is_superuser: bool

@@ -22,6 +22,9 @@ Polish:
     3. Użyj `datalass` i walidacji w `__post_init__()`
     4. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `raise ValueError('error message')`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isclass

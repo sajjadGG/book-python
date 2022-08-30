@@ -140,7 +140,7 @@ Since Python 3.7:
 >>> from typing import Self  # doctest: +SKIP
 >>>
 >>>
->>> class Person:
+>>> class Astronaut:
 ...     firstname: str
 ...     lastname: str
 ...     friends: list[Self]  # doctest: +SKIP

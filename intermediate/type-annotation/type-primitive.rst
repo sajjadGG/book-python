@@ -32,10 +32,22 @@ Type Annotation Primitives
 
 Int
 ---
-.. highlights::
-    * Used to inform static type checker that the variable should be int
+* Used to inform static type checker that the variable should be int
 
->>> data: int = 0
+Declaration:
+
+>>> data: int
+
+Example:
+
+>>> data: int
+>>>
+>>> data = 1        # ok
+>>> data = -1       # ok
+>>> data = 'hello'  # error
+
+Definition:
+
 >>> data: int = 1
 >>> data: int = -1
 
@@ -43,6 +55,20 @@ Int
 Float
 -----
 * Used to inform static type checker that the variable should be float
+
+Declaration:
+
+>>> data: float
+
+Example:
+
+>>> data: float
+>>>
+>>> data = 1.0        # ok
+>>> data = -1.0       # ok
+>>> data = 'hello'    # error
+
+Definition:
 
 >>> data: float = 0.0
 >>> data: float = 1.23
@@ -53,13 +79,41 @@ Str
 ---
 * Used to inform static type checker that the variable should be str
 
+Declaration:
+
+>>> data: str
+
+Example:
+
+>>> data: str
+>>>
+>>> data = 'Mark'           # ok
+>>> data = 'Watney'         # ok
+>>> data = 'Mark Watney'    # ok
+
+Definition:
+
 >>> data: str = ''
->>> data: str = 'Mark Watney'
+>>> data: str = 'hello'
 
 
 Bool
 ----
 * Used to inform static type checker that the variable should be bool
+
+Declaration:
+
+>>> data: bool
+
+Example:
+
+>>> data: bool
+>>>
+>>> data = True     # ok
+>>> data = False    # ok
+>>> data = None     # error
+
+Definition:
 
 >>> data: bool = True
 >>> data: bool = False
@@ -68,6 +122,20 @@ Bool
 None
 ----
 * Used to inform static type checker that the variable should be None
+
+Declaration:
+
+>>> data: None
+
+Example:
+
+>>> data: None
+>>>
+>>> data = True     # error
+>>> data = False    # error
+>>> data = None     # ok
+
+Definition:
 
 >>> data: None = None
 
@@ -78,11 +146,25 @@ Union
 * Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 * ``int | str == str | int``
 
+Declaration:
+
+>>> data: int | float
+
+Example:
+
+>>> data: int | float
+>>>
+>>> data = 1337     # ok
+>>> data = 1.337    # ok
+>>> data = 'hello'  # error
+
+Definition:
+
 >>> data: int | float = 1337
 >>> data: int | float = 1.337
 
-Result of this expression would then be valid in ``isinstance()`` and
-``issubclass()``:
+Result of this expression would then be valid in ``isinstance()``
+and ``issubclass()``:
 
 >>> isinstance(1337, int|float)
 True
@@ -93,11 +175,25 @@ Optional
 * Used to inform static type checker that the variable should be X or None
 * ``int | None == None | int``
 
+Declaration:
+
+>>> data: int | None
+
+Example:
+
+>>> number: int | None
+>>>
+>>> number = 1337    # ok
+>>> number = None    # ok
+>>> number = 1.0     # error
+
+Definition:
+
 >>> number: int | None = 1337
 >>> number: int | None = None
 
-Result of this expression would then be valid in ``isinstance()`` and
-``issubclass()``:
+Result of this expression would then be valid in ``isinstance()``
+and ``issubclass()``:
 
 >>> isinstance(1337, int|None)
 True
@@ -107,10 +203,17 @@ Aliases
 -------
 * Used to make types more readable
 
+Declaration:
+
+>>> data = int | float
+
+Example:
+
 >>> number = int | float
 >>>
->>> age: number = 10
->>> age: number = 10.5
+>>> age: number = 10      # ok
+>>> age: number = 10.5    # ok
+>>> age: number = None    # error
 
 
 Final
@@ -119,17 +222,27 @@ Final
 * Used to define constants
 * Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
 
+In Python there is not such thing as constants. All values can be changed
+during the runtime. However using ``Final`` we can achieve similar effect.
+Static type checker will ensure that the value should not change during
+the program.
+
+SetUp:
+
 >>> from typing import Final
 
-Could be used to define constants:
+Declaration:
 
->>> SECOND: Final[int] = 1
->>> MINUTE: Final[int] = 60 * SECOND
->>> HOUR: Final[int] = 60 * MINUTE
->>> DAY: Final[int] = 24 * HOUR
+>>> data: Final
+>>> data: Final[int]
+>>> data: Final[float]
+>>> data: Final[bool]
+>>> data: Final[str]
 
-Static type checker will ensure that the value should not change
-during the program.
+Definition:
+
+>>> pressure: Final[float] = 1013.25    # ok
+>>> pressure = 1024.00                  # error
 
 
 Literal
@@ -139,7 +252,13 @@ Literal
 * Equality comparisons of Literal objects are not order dependent
 * https://docs.python.org/3/library/typing.html#typing.Literal
 
+SetUp:
+
 >>> from typing import Literal
+
+Declaration:
+
+>>> data: Literal['one', 'two', 'three']
 
 Problem:
 
@@ -170,14 +289,22 @@ Errors
 
 Use Case - 0x01
 ---------------
-firstname: str = 'Mark'
-lastname: str = 'Watney'
-age: int = 40
-agency: Literal['NASA', 'ESA', 'POLSA'] = 'NASA'
-height: int | float = 185.5
-weight: int | float | None = None
-is_person: bool = True
-is_astronaut: bool | None = True
+>>> firstname: str = 'Mark'
+>>> lastname: str = 'Watney'
+>>> age: int = 40
+>>> agency: Literal['NASA', 'ESA', 'POLSA'] = 'NASA'
+>>> height: int | float = 185.5
+>>> weight: int | float | None = None
+>>> is_person: bool = True
+>>> is_astronaut: bool | None = True
+
+
+Use Case - 0x02
+---------------
+>>> SECOND: Final[int] = 1
+>>> MINUTE: Final[int] = 60 * SECOND
+>>> HOUR: Final[int] = 60 * MINUTE
+>>> DAY: Final[int] = 24 * HOUR
 
 
 Further Reading

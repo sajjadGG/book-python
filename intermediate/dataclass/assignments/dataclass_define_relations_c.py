@@ -30,6 +30,14 @@ Polish:
     4. Zwróć uwagę, że kolejność pól ma znaczenie aby testy przechodziły
     5. Uruchom doctesty - wszystkie muszą się powieść
 
+Hints:
+    * `pk` - Primary Key (unique identifier, an ID in database)
+    * `model` - package name with name of a class
+    * `json.loads(DATA)`
+    * `type(...)`
+    * `datetime | None`
+    * `date`
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isclass

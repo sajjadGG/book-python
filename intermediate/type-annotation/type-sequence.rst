@@ -26,6 +26,20 @@ Type Annotation Sequences
 
 Tuple
 -----
+Declaration:
+
+>>> data: tuple
+>>>
+>>> data: tuple[int]
+>>> data: tuple[float]
+>>> data: tuple[bool]
+>>> data: tuple[str]
+>>>
+>>> data: tuple[int, ...]
+>>> data: tuple[float, ...]
+>>> data: tuple[bool, ...]
+>>> data: tuple[str, ...]
+
 Empty:
 
 >>> data: tuple = ()
@@ -58,6 +72,15 @@ Examples:
 
 List
 ----
+Declaration:
+
+>>> data: list
+>>>
+>>> data: list[int]
+>>> data: list[float]
+>>> data: list[bool]
+>>> data: list[str]
+
 Empty:
 
 >>> data: list = []
@@ -83,6 +106,15 @@ Varying:
 
 Set
 ---
+Declaration:
+
+>>> data: set
+>>>
+>>> data: set[int]
+>>> data: set[float]
+>>> data: set[bool]
+>>> data: set[str]
+
 Empty:
 
 >>> data: set = set()
@@ -107,6 +139,15 @@ Varying:
 
 Frozenset
 ---------
+Declaration:
+
+>>> data: frozenset
+>>>
+>>> data: frozenset[int]
+>>> data: frozenset[float]
+>>> data: frozenset[bool]
+>>> data: frozenset[str]
+
 Empty:
 
 >>> data: frozenset = frozenset()
@@ -131,6 +172,12 @@ Varying:
 
 List of Lists
 -------------
+Declaration:
+
+>>> data: list
+>>> data: list[list]
+>>> data: list[list[int]]
+
 Generic:
 
 >>> data: list = [
@@ -153,6 +200,12 @@ Strict:
 
 List of Tuples
 --------------
+Declaration:
+
+>>> data: list
+>>> data: list[tuple]
+>>> data: list[tuple[float, float, float, float, str]]
+
 Generic:
 
 >>> data: list = [

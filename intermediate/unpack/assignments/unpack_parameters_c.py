@@ -29,6 +29,9 @@ Polish:
 Hints:
     * `isinstance(obj, (type1, type2))`
     * `type(obj)`
+    * `len()`
+    * `dict.values()`
+    * `tuple() + tuple()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
