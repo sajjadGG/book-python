@@ -127,7 +127,7 @@ Tests:
     datetime.timedelta(days=-1, seconds=65340)
     >>> bajkonur._utcoffset
     datetime.timedelta(seconds=18480)
-    >>> north_pole._utcoffset
+    >>> north_pole._utcoffset  # doctest: +SKIP
     datetime.timedelta(seconds=2580)
     >>> south_pole._utcoffset
     datetime.timedelta(seconds=5040)
