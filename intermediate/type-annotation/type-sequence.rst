@@ -42,6 +42,12 @@ Declaration:
 
 Empty:
 
+>>> data: tuple
+>>> data = ()
+
+>>> data: tuple
+>>> data = tuple()
+
 >>> data: tuple = ()
 >>> data: tuple = tuple()
 

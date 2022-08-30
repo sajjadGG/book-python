@@ -38,6 +38,9 @@ Declaration:
 
 >>> data: int
 
+>>> data: int = 1
+>>> data: int = -1
+
 Example:
 
 >>> data: int
@@ -45,11 +48,6 @@ Example:
 >>> data = 1        # ok
 >>> data = -1       # ok
 >>> data = 'hello'  # error
-
-Definition:
-
->>> data: int = 1
->>> data: int = -1
 
 
 Float
@@ -60,6 +58,10 @@ Declaration:
 
 >>> data: float
 
+>>> data: float = 0.0
+>>> data: float = 1.23
+>>> data: float = -1.23
+
 Example:
 
 >>> data: float
@@ -67,12 +69,6 @@ Example:
 >>> data = 1.0        # ok
 >>> data = -1.0       # ok
 >>> data = 'hello'    # error
-
-Definition:
-
->>> data: float = 0.0
->>> data: float = 1.23
->>> data: float = -1.23
 
 
 Str
@@ -83,6 +79,9 @@ Declaration:
 
 >>> data: str
 
+>>> data: str = ''
+>>> data: str = 'hello'
+
 Example:
 
 >>> data: str
@@ -90,11 +89,6 @@ Example:
 >>> data = 'Mark'           # ok
 >>> data = 'Watney'         # ok
 >>> data = 'Mark Watney'    # ok
-
-Definition:
-
->>> data: str = ''
->>> data: str = 'hello'
 
 
 Bool
@@ -105,6 +99,9 @@ Declaration:
 
 >>> data: bool
 
+>>> data: bool = True
+>>> data: bool = False
+
 Example:
 
 >>> data: bool
@@ -112,11 +109,6 @@ Example:
 >>> data = True     # ok
 >>> data = False    # ok
 >>> data = None     # error
-
-Definition:
-
->>> data: bool = True
->>> data: bool = False
 
 
 None
@@ -127,6 +119,8 @@ Declaration:
 
 >>> data: None
 
+>>> data: None = None
+
 Example:
 
 >>> data: None
@@ -134,10 +128,6 @@ Example:
 >>> data = True     # error
 >>> data = False    # error
 >>> data = None     # ok
-
-Definition:
-
->>> data: None = None
 
 
 Union
@@ -150,6 +140,9 @@ Declaration:
 
 >>> data: int | float
 
+>>> data: int | float = 1337
+>>> data: int | float = 1.337
+
 Example:
 
 >>> data: int | float
@@ -157,11 +150,6 @@ Example:
 >>> data = 1337     # ok
 >>> data = 1.337    # ok
 >>> data = 'hello'  # error
-
-Definition:
-
->>> data: int | float = 1337
->>> data: int | float = 1.337
 
 Result of this expression would then be valid in ``isinstance()``
 and ``issubclass()``:
@@ -179,6 +167,9 @@ Declaration:
 
 >>> data: int | None
 
+>>> data: int | None = 1337
+>>> data: int | None = None
+
 Example:
 
 >>> number: int | None
@@ -187,11 +178,6 @@ Example:
 >>> number = None    # ok
 >>> number = 1.0     # error
 
-Definition:
-
->>> number: int | None = 1337
->>> number: int | None = None
-
 Result of this expression would then be valid in ``isinstance()``
 and ``issubclass()``:
 
@@ -199,8 +185,8 @@ and ``issubclass()``:
 True
 
 
-Aliases
--------
+Alias
+-----
 * Used to make types more readable
 
 Declaration:
@@ -292,11 +278,11 @@ Use Case - 0x01
 >>> firstname: str = 'Mark'
 >>> lastname: str = 'Watney'
 >>> age: int = 40
+>>> adult: bool = True
 >>> agency: Literal['NASA', 'ESA', 'POLSA'] = 'NASA'
->>> height: int | float = 185.5
->>> weight: int | float | None = None
->>> is_person: bool = True
->>> is_astronaut: bool | None = True
+>>> height: int | float = 185
+>>> weight: int | float = 75.5
+>>> job: str | None = None
 
 
 Use Case - 0x02
