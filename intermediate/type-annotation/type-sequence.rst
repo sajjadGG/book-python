@@ -178,7 +178,7 @@ Declaration:
 >>> data: list[list]
 >>> data: list[list[int]]
 
-Generic:
+Example:
 
 >>> data: list = [
 ...     [1, 2, 3],
@@ -189,8 +189,6 @@ Generic:
 ...     [1, 2, 3],
 ...     [4, 5, 6],
 ...     [7, 8, 9]]
-
-Strict:
 
 >>> data: list[list[int]] = [
 ...     [1, 2, 3],
@@ -206,7 +204,7 @@ Declaration:
 >>> data: list[tuple]
 >>> data: list[tuple[float, float, float, float, str]]
 
-Generic:
+Example:
 
 >>> data: list = [
 ...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
@@ -218,8 +216,6 @@ Generic:
 ...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
 ...     (7.6, 3.0, 6.6, 2.1, 'virginica')]
 
-Strict:
-
 >>> data: list[tuple[float, float, float, float, str]] = [
 ...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
@@ -228,6 +224,13 @@ Strict:
 
 Aliases
 -------
+Declaration:
+
+>>> row = tuple[int, int, int]
+>>> data: list[row]
+
+Example:
+
 >>> Iris = tuple[float, float, float, float, str]
 >>>
 >>> data: list[Iris] = [
@@ -238,10 +241,25 @@ Aliases
 
 Unions
 ------
+Declaration:
+
+>>> a = tuple[str, str, str]
+>>> b = tuple[int, int, int]
+>>> c = tuple[float, float, float]
+>>>
+>>> data: list[a | b | c]
+
+>>> header = tuple[str, str, str]
+>>> row = tuple[int, int, int]
+>>>
+>>> data: tuple[header,row,...]
+
+Example:
+
 >>> Header = tuple[str, str, str, str, str]
 >>> Row = tuple[float, float, float, float, str]
 >>>
->>> DATA: tuple[Header|Row,...] = (
+>>> DATA: tuple[Header,Row,...] = (
 ...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
 ...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
 ...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
