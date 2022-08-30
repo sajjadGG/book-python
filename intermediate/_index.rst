@@ -76,20 +76,6 @@ Pickle
     pickle/file.rst
 
 
-CSV
-***
-.. toctree::
-    :maxdepth: 1
-    :caption: CSV
-
-    csv/about.rst
-    csv/reader.rst
-    csv/writer.rst
-    csv/dictreader.rst
-    csv/dictwriter.rst
-    csv/nonstandard.rst
-
-
 JSON
 ****
 .. toctree::
@@ -102,6 +88,20 @@ JSON
     json/encoder.rst
     json/decoder.rst
     json/object.rst
+
+
+CSV
+***
+.. toctree::
+    :maxdepth: 1
+    :caption: CSV
+
+    csv/about.rst
+    csv/reader.rst
+    csv/writer.rst
+    csv/dictreader.rst
+    csv/dictwriter.rst
+    csv/nonstandard.rst
 
 
 Regular Expressions

@@ -23,8 +23,8 @@ Day 2
 * 100m - Type Annotation
 * 100m - Dataclasses (dataclasses)
 * 20m - Serializacja i deserializacja danych z Pickle
-* 100m - Praca z plikami CSV (konwersja formatów danych)
 * 100m - Praca z plikami JSON (dane nierelacyjne i relacyjne, daty i czas, zagnieżdżone dane relacyjne)
+* 100m - Praca z plikami CSV (konwersja formatów danych)
 
 
 Day 3
