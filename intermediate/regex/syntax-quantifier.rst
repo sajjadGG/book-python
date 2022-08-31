@@ -18,7 +18,7 @@ Syntax Quantifier
 Exact
 -----
 * Exact match
-* ``{n}`` - exactly `n` repetitions, prefer longer
+* ``{n}`` - exactly `n` repetitions
 
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 

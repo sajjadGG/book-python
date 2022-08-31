@@ -16,6 +16,28 @@ Future
 * https://github.com/python/cpython/issues/34627
 
 
+Enclosing
+---------
+* In Python we use raw-string (``r'...'``)
+* In JavaScript we use ``/pattern/flags``
+
+>>> data = '+48 123 456 789'
+>>> pattern = r'[0-9]+'
+>>> result = re.match(pattern, data)
+
+.. code-block:: javascript
+
+    const data = '+48 123 456 789'
+    const pattern = /[0-9]+/
+    const result = str.search(pattern, data)
+
+.. code-block:: javascript
+
+    const data = '+48 123 456 789'
+    const pattern = new RegExp('[0-9]+');
+    const result = data.search(pattern)
+
+
 Named Ranges
 ------------
 * ``[:allnum:]`` - Alphabetic and numeric character ``[a-zA-Z0-9]``
