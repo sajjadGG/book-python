@@ -8,6 +8,11 @@ Syntax Extension
     How Standards Proliferate. XKCD Standards [#xkcd927]_
 
 
+SetUp
+-----
+>>> import re
+
+
 Future
 ------
 * Since Python 3.11
