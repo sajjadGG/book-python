@@ -24,7 +24,7 @@ Future
 Enclosing
 ---------
 * In Python we use raw-string (``r'...'``)
-* In JavaScript we use ``/pattern/flags``
+* In JavaScript we use ``/pattern/flags`` or ``new RegExp(pattern, flags)``
 
 >>> data = '+48 123 456 789'
 >>> pattern = r'[0-9]+'
