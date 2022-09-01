@@ -1,5 +1,5 @@
 """
-* Assignment: Operator Accessors Contains
+* Assignment: Operator Comparison Contains
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min
@@ -86,7 +86,6 @@ class Astronaut:
         self.firstname = firstname
         self.lastname = lastname
         self.missions = missions
-
 
     def __contains__(self, flight):
         return flight in self.missions

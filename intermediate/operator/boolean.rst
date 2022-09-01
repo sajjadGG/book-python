@@ -35,10 +35,79 @@ Example
 -------
 >>> True + True
 2
->>>
+
 >>> True & True
 True
 
+
+AND - Conjunction
+-----------------
+.. code-block:: text
+
+    1 & 1 = 1
+    1 & 0 = 0
+    0 & 1 = 0
+    0 & 0 = 0
+
+>>> True & True
+True
+>>>
+>>> True & False
+False
+>>>
+>>> False &  True
+False
+>>>
+>>> False &  False
+False
+
+
+OR - Alternative
+----------------
+.. code-block:: text
+
+    1 | 1 = 1
+    1 | 0 = 1
+    0 | 1 = 1
+    0 | 0 = 0
+
+>>> True | True
+True
+>>>
+>>> True | False
+True
+>>>
+>>> False | True
+True
+>>>
+>>> False | False
+False
+
+
+XOR - Exclusive Alternative
+---------------------------
+.. code-block:: text
+
+    1 ^ 1 = 0
+    1 ^ 0 = 1
+    0 ^ 1 = 1
+    0 ^ 0 = 0
+
+>>> True ^ True
+False
+>>>
+>>> True ^ False
+True
+>>>
+>>> False ^ True
+True
+>>>
+>>> False ^ False
+False
+
+
+Dictionary Update
+-----------------
 >>> x = {'a':1, 'b':2, 'c':3}
 >>> y = {'d':4, 'e':5}
 >>>
@@ -70,7 +139,6 @@ True
 >>>
 >>>
 >>> crew = old_crew | new_crew
->>>
 >>> crew  # doctest: +NORMALIZE_WHITESPACE
 {'commander': 'Melissa Lewis',
  'botanist': 'Mark Watney',
@@ -78,7 +146,6 @@ True
  'pilot': 'Rick Martinez'}
 
 >>> old_crew |= new_crew
->>>
 >>> old_crew  # doctest: +NORMALIZE_WHITESPACE
 {'commander': 'Melissa Lewis',
  'botanist': 'Mark Watney',
@@ -92,72 +159,6 @@ True
 ...     def __ior__(self, other):
 ...         self.update(other)
 ...         return self
-
-
-Operator Module - AND
----------------------
-.. code-block:: text
-
-    1 & 1 = 1
-    1 & 0 = 0
-    0 & 1 = 0
-    0 & 0 = 0
-
->>> from operator import and_
->>>
->>>
->>> and_(True, True)
-True
->>> and_(True, False)
-False
->>> and_(False, True)
-False
->>> and_(False, False)
-False
-
-
-Operator Module - OR
---------------------
-.. code-block:: text
-
-    1 | 1 = 1
-    1 | 0 = 1
-    0 | 1 = 1
-    0 | 0 = 0
-
->>> from operator import or_
->>>
->>>
->>> or_(True, True)
-True
->>> or_(True, False)
-True
->>> or_(False, True)
-True
->>> or_(False, False)
-False
-
-
-Operator Module - XOR
----------------------
-.. code-block:: text
-
-    1 ^ 1 = 0
-    1 ^ 0 = 1
-    0 ^ 1 = 1
-    0 ^ 0 = 0
-
->>> from operator import xor
->>>
->>>
->>> xor(True, True)
-False
->>> xor(True, False)
-True
->>> xor(False, True)
-True
->>> xor(False, False)
-False
 
 
 Use Case - 0x01
@@ -185,60 +186,9 @@ Number(value=16)
 
 Use Case - 0x02
 ---------------
-* Numpy
+* Game
 
->>> import numpy as np
->>> from pprint import pprint
-
->>> data = [[1, 2, 3],
-...         [4, 5, 6],
-...         [7, 8, 9]]
->>>
->>>
->>> data > 2
-Traceback (most recent call last):
-TypeError: '>' not supported between instances of 'list' and 'int'
-
->>> data = [[1, 2, 3],
-...         [4, 5, 6],
-...         [7, 8, 9]]
->>>
->>> result = []
->>>
->>> for row in data:
-...     tmp = []
-...     for number in row:
-...         tmp.append(number > 2)
-...     result.append(tmp)
->>>
->>>
->>> pprint(result, width=30)
-[[False, False, True],
- [True, True, True],
- [True, True, True]]
-
->>> data = [[1, 2, 3],
-...         [4, 5, 6],
-...         [7, 8, 9]]
->>>
->>> result = [
-...     [number > 2 for number in row]
-...     for row in data
-... ]
->>>
->>> pprint(result, width=30)
-[[False, False, True],
- [True, True, True],
- [True, True, True]]
-
->>> data = np.array([[1, 2, 3],
-...                  [4, 5, 6],
-...                  [7, 8, 9]])
->>>
->>> data > 2
-array([[False, False,  True],
-       [ True,  True,  True],
-       [ True,  True,  True]])
+>>> hero >> Direction(left=10, up=20)  # doctest: +SKIP
 
 
 Use Case - 0x03
@@ -279,13 +229,6 @@ As as chained calls of the following methods:
 array([[ True,  True, False],
        [False, False, False],
        [False, False, False]])
-
-
-Use Case - 0x04
----------------
-* Game
-
->>> hero >> Direction(left=10, up=20)  # doctest: +SKIP
 
 
 Use Case - 0x05

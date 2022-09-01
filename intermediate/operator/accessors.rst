@@ -19,7 +19,6 @@ About
     "``obj[x]``",        "``obj.__missing__(x)``", "(when ``x`` is not in ``obj``)"
     "``obj[x] = 10``",   "``obj.__setitem__(x, 10)``"
     "``del obj[x]``",    "``obj.__delitem__(x)``"
-    "``x in obj``",      "``obj.__contains__(x)``"
 
 
 Example

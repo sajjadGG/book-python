@@ -34,10 +34,14 @@ Recap
 >>> a + b
 [1, 2]
 
+
+Problem
+-------
 >>> class Vector:
 ...     def __init__(self, x, y):
 ...         self.x = x
 ...         self.y = y
+>>>
 >>>
 >>> a = Vector(1,2)
 >>> b = Vector(2,3)
@@ -50,6 +54,7 @@ TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
 ...     x: int
 ...     b: int
 >>>
+>>>
 >>> a = Vector(1,2)
 >>> b = Vector(2,3)
 >>> a + b
@@ -57,8 +62,8 @@ Traceback (most recent call last):
 TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
 
 
-Example
--------
+Solution
+--------
 >>> @dataclass
 ... class Vector:
 ...     x: int = 0

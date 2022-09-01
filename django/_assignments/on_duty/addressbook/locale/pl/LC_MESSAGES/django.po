@@ -58,11 +58,11 @@ msgstr "Osoby"
 
 #: models.py:26
 msgid "Street"
-msgstr ""
+msgstr "Ulica"
 
 #: models.py:27
 msgid "House Number"
-msgstr ""
+msgstr "Numer domu"
 
 #: models.py:28
 msgid "Apartment Number"

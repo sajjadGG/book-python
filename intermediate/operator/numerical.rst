@@ -141,9 +141,61 @@ Vector(x=11, y=22)
 
 Right Operation
 ---------------
+Left operation:
+
+>>> class Left:
+...     def __add__(self, other):
+...         ...
+>>>
+>>> class Right:
+...     pass
+>>>
+>>>
+>>> left = Left()
+>>> right = Right()
+>>>
+>>> left + right  # left.__add__(right)
+
+What if ``Left`` class does not define ``__add__`` attribute?
+
+>>> class Left:
+...     pass
+>>>
+>>> class Right:
+...     pass
+>>>
+>>>
+>>> left = Left()
+>>> right = Right()
+>>>
+>>> left + right  # left.__add__(right) -> error (Left.__add__ not defined)
+Traceback (most recent call last):
+TypeError: unsupported operand type(s) for +: 'Left' and 'Right'
+
+Then Python will search for ``__radd__`` attribute in ``Right`` class:
+
+>>> class Left:
+...     pass
+>>>
+>>> class Right:
+...     def __radd__(self, other):
+...         ...
+>>>
+>>>
+>>>
+>>> left = Left()
+>>> right = Right()
+>>>
+>>>
+>>> left + right  # left.__add__(right) -> error (Left.__add__ not defined)
+...               # right.__radd__(left)
+
+Example:
+
 >>> a = 1
 >>> b = 2
-
+>>>
+>>>
 >>> a - b
 -1
 >>>
@@ -151,7 +203,8 @@ Right Operation
 -1
 >>> b.__rsub__(a)
 -1
-
+>>>
+>>>
 >>> b - a
 1
 >>>
@@ -167,13 +220,16 @@ Use Case:
 >>>
 >>> mylist = [1, 2, 3]
 >>> myarr = np.array([4,5,6])
-
+>>>
+>>>
 >>> myarr + mylist
 array([5, 7, 9])
-
+>>>
+>>>
 >>> mylist + myarr
 array([5, 7, 9])
-
+>>>
+>>>
 >>> mylist.__add__(myarr)
 Traceback (most recent call last):
 TypeError: can only concatenate list (not "numpy.ndarray") to list
@@ -181,15 +237,8 @@ TypeError: can only concatenate list (not "numpy.ndarray") to list
 >>> myarr.__radd__(mylist)
 array([5, 7, 9])
 
-
 >>> class ndarray:
 ...     def __add__(self, other):
-...         if isinstance(other, list):
-...             other = np.array(other)
-...         if isinstance(other, np.array):
-...             ...
-...
-...     def __sub__(self, other):
 ...         if isinstance(other, list):
 ...             other = np.array(other)
 ...         if isinstance(other, np.array):
@@ -200,170 +249,6 @@ array([5, 7, 9])
 ...             other = np.array(other)
 ...         if isinstance(other, np.array):
 ...             ...
-...
-...     def __rsub__(self, other):
-...         if isinstance(other, list):
-...             other = np.array(other)
-...         if isinstance(other, np.array):
-...             ...
-
-
-Operator Module
----------------
-* ``operator.add()``
-* ``operator.sub()``
-* ``operator.mul()``
-* ``operator.truediv()``
-* ``operator.floordiv()``
-* ``operator.mod()``
-* ``operator.pow()``
-* ``operator.matmul()``
-* ``operator.neg()``
-* ``operator.pos()``
-* ``operator.invert()``
-
-
->>> data = [1, 2, 3, 4]
-
->>> reduce(lambda x,y: x+y, data)
-10
->>> reduce(lambda x,y: x-y, data)
--8
->>> reduce(lambda x,y: x*y, data)
-24
-
->>> from operator import add, sub, mul
->>>
->>> reduce(add, data)
-10
->>> reduce(sub, data)
--8
->>> reduce(mul, data)
-24
-
-
-Methodcaller
-------------
->>> from operator import methodcaller
->>>
->>> colors = ['red', 'green', 'blue']
-
->>> result = filter(lambda x: x.startswith('r'), colors)
->>> list(result)
-['red']
-
->>> result = filter(methodcaller('startswith', 'r'), colors)
->>> list(result)
-['red']
-
-
-Reduce
-------
->>> from functools import reduce
->>> from operator import add
-
->>> data = [
-...     [1, 2, 3],
-...     [4, 5, 6],
-...     [7, 8, 9],
-... ]
-
->>> result = 0
->>>
->>> for row in data:
-...     for digit in row:
-...         result += digit
->>>
->>> print(result)
-45
-
->>> sum(data[0])
-6
->>>
->>> sum(data[1])
-15
->>>
->>> sum(data[2])
-24
->>>
->>>
->>> sum(data[0]) + sum(data[1]) + sum(data[2])
-45
-
->>> reduce(add, data[0])
-6
->>>
->>> reduce(add, data[1])
-15
->>>
->>> reduce(add, data[2])
-24
->>>
->>>
->>> reduce(add, [
-...     reduce(add, data[0]),
-...     reduce(add, data[1]),
-...     reduce(add, data[2]),
-... ])
-45
-
-
-Map-Reduce
-----------
->>> from functools import reduce
->>> from itertools import starmap
->>> from operator import add, sub, mul
-
->>> def square(x):
-...     return x ** 2
->>>
->>> def cube(x):
-...     return x ** 3
->>>
->>> def apply(data, fn):
-...     return map(fn, data)
-
->>> data = [1, 2, 3, 4]
->>> funcs = [square, cube]
->>>
->>> result = reduce(apply, funcs, data)
->>> list(result)
-[1, 64, 729, 4096]
->>>
->>> result = reduce(apply, funcs, data)
->>> reduce(add, result)
-4890
-
->>> data = [1, 2, 3, 4]
->>> funcs = [add, sub, mul]
->>>
->>> result = [reduce(fn,data) for fn in funcs]
->>> reduce(add, result)
-26
->>>
->>> result = map(lambda fn: reduce(fn,data), funcs)
->>> reduce(add, result)
-26
-
->>> data = [1, 2, 3, 4]
->>> funcs = [
-...     (add, data),
-...     (sub, data),
-...     (mul, data),
-... ]
->>>
->>> result = starmap(reduce, funcs)
->>> reduce(add, result)
-26
-
->>> data = [1, 2, 3, 4]
->>> result = starmap(reduce, [
-...     (add, data),
-...     (sub, data),
-...     (mul, data)])
->>>
->>> reduce(add, result)
-26
 
 
 Use Case - 0x01

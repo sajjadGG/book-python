@@ -158,10 +158,11 @@ Operator
     :caption: Operator
 
     operator/about.rst
-    operator/numerical.rst
     operator/string.rst
     operator/comparison.rst
     operator/boolean.rst
+    operator/numerical.rst
+    operator/module.rst
     operator/builtin.rst
     operator/accessors.rst
 
@@ -175,15 +176,6 @@ Enum
     enum/about.rst
 
 
-Logging
-*******
-.. toctree::
-    :maxdepth: 1
-    :caption: Logging
-
-    logging/logging.rst
-
-
 Modules and Packages
 ********************
 .. toctree::
@@ -195,6 +187,15 @@ Modules and Packages
     modules/import.rst
     modules/tools.rst
     modules/distributing.rst
+
+
+Logging
+*******
+.. toctree::
+    :maxdepth: 1
+    :caption: Logging
+
+    logging/logging.rst
 
 
 Locale
@@ -215,9 +216,9 @@ Mathematics
     :maxdepth: 1
     :caption: Mathematics
 
-    math/random.rst
     math/precision.rst
     math/ieee754.rst
+    math/random.rst
 
 
 Tests
