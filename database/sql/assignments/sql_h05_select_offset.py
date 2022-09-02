@@ -6,6 +6,7 @@ SQL = """
 
 SELECT datetime AS dt, category AS lvl, event
 FROM apollo11
+LIMIT 30
 
 """
 
