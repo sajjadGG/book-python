@@ -116,8 +116,7 @@ Use Case - 0x05
           HAVING COUNT(category) < 50
           ORDER BY category ASC
           LIMIT 5
-          OFFSET 0
-      )
+          OFFSET 0)
       AND category IN important_categories
     ORDER BY category DESC,
              date ASC NULLS FIRST,
