@@ -15,17 +15,26 @@ Problem
 
 Option 1
 --------
->>> dragon.move(left=10, down=20)
 >>> dragon.shift(left=10, down=20)
 >>> dragon.fly(left=10, down=20)
 
 * Good: move by relative shifting (left, right, up, down)
 * Good: encapsulation, object knows current position, state and does move
-* Good: easy ``.move()``
-* Bad: to use-case specific ``.fly()``, ``.shift()``
+* Bad: method names are too use-case specific
+* Verdict: rejected, bad method names
 
 
 Option 2
+--------
+>>> dragon.move(left=10, down=20)
+
+* Good: move by relative shifting (left, right, up, down)
+* Good: encapsulation, object knows current position, state and does move
+* Good: easy ``.move()``
+* Verdict: candidate
+
+
+Option 3
 --------
 >>> dragon.change_position(left=10, down=20)
 >>> dragon.position_change(left=10, down=20)
@@ -33,9 +42,10 @@ Option 2
 * Good: move by relative shifting (left, right, up, down)
 * Good: encapsulation, object knows current position and moves
 * Bad: to complex for now ``.change_position()``, ``.position_change()``
+* Verdict: candidate, but too complex for now
 
 
-Option 3
+Option 4
 --------
 >>> dragon.move(x=10, y=20)
 >>> dragon.move_to(x=10, y=20)
@@ -43,11 +53,12 @@ Option 3
 * Bad: Move by setting absolute position
 * Bad: controller must know other variables, such as velocity, surface, injuries
 * Why: it differs from ``set_position()``, that with ``move()`` you can make an animation of movement, and with ``set_position()`` it happens instantly
+* Verdict: rejected, violates Model-View-Controller (MVC)
 
 .. figure:: img/oop-architecture-mvc.png
 
 
-Option 4
+Option 5
 --------
 >>> dragon.move_x(10)
 >>> dragon.move_y(20)
@@ -58,7 +69,7 @@ Option 4
 * Bad: controller must know other variables, such as velocity, surface, injuries
 
 
-Option 5
+Option 6
 --------
 >>> dragon.move(10, 20)
 >>> dragon.move_xy(10, 20)
@@ -69,7 +80,7 @@ Option 5
 * Bad: not extensible to 3D
 
 
-Option 6
+Option 7
 --------
 >>> dragon.move((-10, 20))
 >>> dragon.move_xy((-10, 20))
@@ -80,7 +91,7 @@ Option 6
 * Bad: not extensible to 3D
 
 
-Option 7
+Option 8
 --------
 >>> dragon.move(dx=10, dy=-20)
 >>> dragon.move(horizontal=10, vertical=-20)
@@ -90,7 +101,7 @@ Option 7
 * Bad: controller must know, right - add to ``x``, left - subtract ``y``
 
 
-Option 8
+Option 9
 --------
 >>> dragon.move(0, 10, 0, 20)
 
@@ -147,8 +158,8 @@ Problem:
     }
 
 
-Option 9
---------
+Option 10
+---------
 >>> dragon.move([
 ...     (10, 20),
 ...     (10, 15)])
@@ -161,8 +172,9 @@ Example:
 
 * ``move(horizontal, vertical)``
 
-Option 9
---------
+
+Option 11
+---------
 >>> dragon.move([
 ...     (10, 20),
 ...     (50, 120),
@@ -177,7 +189,7 @@ Example:
 * ``move(x, y)``
 
 
-Option 10
+Option 12
 ---------
 >>> dragon.move({'x':50, 'y':120})
 
@@ -189,7 +201,7 @@ Option 10
 * Bad: not extensible to 3D
 
 
-Option 11
+Option 13
 ---------
 >>> dragon.move({'left':50, 'down':120})
 
@@ -202,7 +214,7 @@ Option 11
 * Bad: not extensible to 3D
 
 
-Option 12
+Option 14
 ---------
 >>> dragon.move({'dx': 10, 'dy': 20})
 
@@ -219,7 +231,7 @@ Option 12
 * Bad: not extensible to 3D
 
 
-Option 13
+Option 15
 ---------
 * Move by setting absolute position
 
@@ -231,7 +243,7 @@ Option 13
 * Bad: require knowledge of an API
 
 
-Option 14
+Option 16
 ---------
 >>> dragon.move([
 ...     {'direction': 'left', 'distance': 20},
@@ -242,7 +254,7 @@ Option 14
 * Bad: require knowledge of an API
 
 
-Option 15
+Option 17
 ---------
 >>> x = dragon.x
 >>> y = dragon.y
@@ -267,7 +279,7 @@ Option 15
 * Bad: require knowledge of an API
 
 
-Option 16
+Option 18
 ---------
 >>> dragon.move(x=-10, y=+20)
 >>> dragon.move(dx=-10, dy=+20)
@@ -277,7 +289,7 @@ Option 16
 * Bad: business login in controller
 
 
-Option 17
+Option 19
 ---------
 >>> dragon.move(direction='left', distance=20)
 >>> dragon.move(direction='right', distance=5)
@@ -290,7 +302,7 @@ Option 17
 * Bad: not possible to do movement in opposite directions in the same time
 
 
-Option 18
+Option 20
 ---------
 >>> LEFT = 61  # keyboard key code
 >>> RIGHT = 62
@@ -306,7 +318,7 @@ Option 18
 * Bad: to complex for now
 
 
-Option 19
+Option 21
 ---------
 >>> DIRECTION_LEFT = 61  # keyboard key code
 >>> DIRECTION_RIGHT = 62
@@ -322,7 +334,7 @@ Option 19
 * Bad: to complex for now
 
 
-Option 19
+Option 22
 ---------
 >>> class Direction(Enum):
 ...     LEFT = 61
@@ -341,7 +353,7 @@ Option 19
 * Bad: to complex for now
 
 
-Option 20
+Option 23
 ---------
 >>> KEY_BINDING = {
 ...     'ARROW_UP': dragon.move_up,
@@ -362,7 +374,7 @@ Option 20
 * Bad: to complex for now
 
 
-Option 21
+Option 24
 ---------
 >>> dragon.move_left(10)
 >>> dragon.move_right(10)

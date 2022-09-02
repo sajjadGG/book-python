@@ -17,22 +17,55 @@ Option 1
 --------
 >>> dragon.fly(10, 20)
 >>> dragon.teleport(10, 20)
->>> dragon.set_position(10, 20)
->>> dragon.set_position_xy(10, 20)
 
 * Good: easy to use
 * Good: encapsulation
 * Good: easy to add validation if needed
 * Good: easy to extend to 3D - add parameter with default value ``0``
-* Bad: name ``set_position_xy()`` ties you to 2D point
-* Bad: arguments are implicit, require knowledge of an API
-* Bad: ``teleport()`` and ``fly()`` are bad names, does not indicate context what are the values provided as arguments
+* Bad: method names are too use-case specific
+* Bad: arguments are implicit, require knowledge of an API what are the values provided as arguments
+* Verdict: rejected, too use-case specific names
 
 
 Option 2
 --------
 >>> dragon.fly(x=10, y=20)
 >>> dragon.teleport(x=10, y=20)
+
+* Good: easy to use
+* Good: arguments are explicit
+* Good: encapsulation
+* Good: easy to add validation if needed
+* Good: easy to extend to 3D - add parameter with default value ``0``
+* Bad: method names are too use-case specific
+* Verdict: rejected, too use-case specific names
+
+
+Option 3
+--------
+>>> dragon.set_position(10, 20)
+
+* Good: easy to use
+* Good: encapsulation
+* Good: easy to add validation if needed
+* Good: easy to extend to 3D - add parameter with default value ``0``
+* Bad: arguments are implicit, require knowledge of an API what are the values provided as arguments
+* Verdict: rejected, could be done better
+
+
+Option 4
+--------
+>>> dragon.set_position_xy(10, 20)
+
+* Good: easy to use
+* Good: encapsulation
+* Good: easy to add validation if needed
+* Bad: name ``set_position_xy()`` ties you to 2D point
+* Verdict: rejected, could be done better
+
+
+Option 5
+--------
 >>> dragon.set_position(x=10, y=20)
 
 * Good: easy to use
@@ -40,22 +73,23 @@ Option 2
 * Good: encapsulation
 * Good: easy to add validation if needed
 * Good: easy to extend to 3D - add parameter with default value ``0``
-* Bad: ``teleport()`` and ``fly()`` are bad names, to use-case specific
+* Verdict: candidate
 
 
-Option 3
+Option 6
 --------
 >>> dragon.set(position_x=10, position_y=20)
 
 * Good: easy to use
 * Good: arguments are explicit
-* Good: encapsulation
 * Good: easy to add validation if needed
 * Bad: ``set()`` is to generic
 * Bad: gateway to abuse
+* Bad: encapsulation is question
+* Verdict: rejected, possibility of abuse
 
 
-Option 4
+Option 7
 --------
 >>> dragon.x = 10
 >>> dragon.y = 20
@@ -67,6 +101,7 @@ Option 4
 * Good: can use ``@property`` for validation if needed
 * Bad: encapsulation
 * Bad: names ``x`` and ``y`` are weakly related to ``dragon``
+* Verdict: rejected, bad names
 
 Example:
 
@@ -74,7 +109,7 @@ Example:
 >>> knn.w = [1, 2, 3]
 
 
-Option 5
+Option 8
 --------
 >>> dragon.position_x = 10
 >>> dragon.position_y = 20
@@ -83,8 +118,9 @@ Option 5
 
 * Good: easy to use
 * Good: arguments are explicit
-* Good: can use ``@property`` for validation if needed
-* Bad: encapsulation
+* Good: can use ``@property`` for validation if needed in future
+* Bad: violates encapsulation - OOP good practices
+* Verdict: rejected, violates encapsulation
 
 Example:
 
@@ -92,7 +128,7 @@ Example:
 >>> knn.weights = [1, 2, 3]
 
 
-Option 6
+Option 9
 --------
 >>> dragon.position = (10, 20)
 >>> dragon.position @ (10, 20)
@@ -105,10 +141,12 @@ Option 6
 * Bad: require knowledge of an API
 * Bad: always 2D
 * Bad: not extensible, hard to refactor to 3D
+* Bad: violates encapsulation - OOP good practices
+* Verdict: rejected, violates encapsulation
 
 
-Option 7
---------
+Option 10
+---------
 >>> dragon.position = Point(x=10, y=20)
 >>> dragon.position @ Point(x=10, y=20)
 
@@ -119,10 +157,12 @@ Option 7
 * Bad: ``@`` (at) makes sense only in English
 * Bad: require knowledge of an API
 * Bad: extensible, easy to refactor to 3D
+* Bad: violates encapsulation - OOP good practices
+* Verdict: rejected, violates encapsulation
 
 
-Option 8
---------
+Option 11
+---------
 >>> dragon.position.x = 10
 >>> dragon.position.y = 20
 
@@ -134,9 +174,10 @@ Option 8
 * Good: namespace
 * Good: more or less readable
 * Good: extensible, easy to refactor to 3D
-* Bad: encapsulation
-* Bad: nested
+* Bad: violates encapsulation - OOP good practices
+* Bad: nested objects
 * Bad: require knowledge of an API
+* Verdict: rejected, violates encapsulation
 
 
 Decision
@@ -145,6 +186,6 @@ Decision
 
 * Good: easy to use
 * Good: arguments are explicit
-* Good: encapsulation
+* Good: provides encapsulation
 * Good: easy to add validation if needed
 * Good: extensible, easy to refactor to 3D

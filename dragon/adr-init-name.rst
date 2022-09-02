@@ -19,6 +19,7 @@ Option 1
 
 * Good: easy to use
 * Bad: less verbose than keyword arguments
+* Verdict: candidate
 
 
 Option 2
@@ -28,6 +29,7 @@ Option 2
 * Good: easy to use
 * Good: more verbose than positional arguments
 * Bad: too verbose for such simple example
+* Verdict: rejected, too verbose for such simple example
 
 
 Decision
@@ -35,4 +37,4 @@ Decision
 >>> dragon = Dragon('Wawelski')
 
 * Because: easy to use
-* Because: verbose enough
+* Because: verbose enough for now

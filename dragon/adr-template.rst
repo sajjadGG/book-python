@@ -2,7 +2,7 @@ Moon Landing
 ============
 * Status: accepted
 * Decision Date: 1961-05-25
-* Public Announcement: 1962-09-12
+* Release Date: 1962-09-12
 * Deciders: Mark Watney, Melissa Lewis, Rick Martinez
 
 

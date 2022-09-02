@@ -22,6 +22,7 @@ Option 1
 * Good: clear intent
 * Good: easy to add validation if needed
 * Bad: name ``get_damage()`` indicate a getter of ``damage`` field
+* Verdict: rejected, bad method name
 
 
 Option 2
@@ -34,6 +35,7 @@ Option 2
 
 * Bad: Indication of direction is too weak ``dragon <-> enemy``
 * Bad: not directed, all methods could mean making damage or receiving damage
+* Verdict: rejected, bad method names
 
 Rationale:
 
@@ -56,6 +58,7 @@ Option 3
 
 * Good: Simple
 * Bad: Relation is other way around ``dragon <--- enemy``
+* Verdict: rejected, relation is other way around
 
 
 Option 4
@@ -64,7 +67,8 @@ Option 4
 >>> dragon.hurt_someone()   # dragon ---> enemy
 
 * Good: Strong indication of direction ``dragon ---> enemy``
-* Bad: ``hurt_someone()`` method name is to colloquial
+* Bad: ``hurt_someone()`` method name is too use-case specific
+* Verdict: rejected, method names are too use-case specific
 
 
 Option 5
@@ -73,6 +77,7 @@ Option 5
 
 * Good: Strong indication of direction ``dragon ---> enemy``
 * Good: Name indicates intent
+* Verdict: candidate
 
 
 Option 6
@@ -84,8 +89,9 @@ Option 6
 >>> dragon.make_damage(ENEMY)
 >>> dragon.take_damage(ENEMY)
 
-* Bad: MVC
-* Bad: each ENEMY will get random damage
+* Bad: violates Model-View-Controller (MVC)
+* Bad: each ENEMY will get different (random) damage
+* Verdict: rejected, violates Model-View-Controller (MVC)
 
 .. figure:: img/dragon-firkraag-01.jpg
 .. figure:: img/oop-architecture-mvc.png
@@ -107,7 +113,8 @@ Option 6
 
 * Good: simple
 * Good: can use ``@property`` for validation if needed
-* Bad: encapsulation
+* Bad: violates encapsulation
+* Verdict: rejected, violates encapsulation
 
 
 Option 7
@@ -117,6 +124,7 @@ Option 7
 * Bad: readability
 * Bad: requires knowledge of API
 * Bad: this is responsibility of a controller
+* Verdict: rejected, violates Model-View-Controller (MVC)
 
 
 Decision

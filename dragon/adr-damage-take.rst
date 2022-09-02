@@ -22,6 +22,7 @@ Option 1
 * Good: encapsulation
 * Bad: ``set_damage()`` indicates setter of ``damage`` field
 * Bad: not Pythonic way
+* Verdict: rejected, method name indicates something else
 
 
 Option 2
@@ -32,6 +33,7 @@ Option 2
 >>> dragon.damage(DMG)      # dragon  -> enemy
 
 * Bad: Indication of direction is too weak ``dragon <-> enemy``
+* Verdict: rejected, indication of direction is too weak
 
 Rationale:
 
@@ -50,8 +52,9 @@ Option 3
 >>> dragon.receive_damage(DMG)  # good name, dragon ---> enemy
 
 * Good: Explicit relation ``dragon ---> enemy``
-* Bad: ``hurt_self()`` is to colloquial
+* Bad: ``hurt_self()`` is too use-case specific
 * Bad: Inconsistent with ``make_damage()``
+* Verdict: rejected, method names are too use-case specific
 
 
 Option 4
@@ -60,6 +63,7 @@ Option 4
 
 * Good: Explicit relation ``dragon ---> enemy``
 * Good: Consistent with ``make_damage()``
+* Verdict: candidate
 
 
 Option 5
@@ -70,7 +74,8 @@ Option 5
 * Good: simple
 * Good: can use ``@property`` for validation if needed
 * Bad: requires knowledge of API
-* Bad: encapsulation
+* Bad: violates encapsulation
+* Verdict: rejected, violates encapsulation
 
 
 Option 6
@@ -81,7 +86,8 @@ Option 6
 * Good: simple
 * Good: can use ``@property`` for validation if needed
 * Bad: requires knowledge of API
-* Bad: encapsulation
+* Bad: violates encapsulation
+* Verdict: rejected, violates encapsulation
 
 
 Option 7
@@ -92,6 +98,7 @@ Option 7
 * Good: simple
 * Good: can use ``.__sub__()`` for validation if needed
 * Bad: requires knowledge of API
+* Verdict: rejected, not explicit and requires knowledge of API
 
 
 Option 8
@@ -102,6 +109,7 @@ Option 8
 * Good: simple
 * Good: can use ``.__sub__()`` for validation if needed
 * Bad: requires knowledge of API
+* Verdict: rejected, not explicit and requires knowledge of API
 
 
 Option 9
@@ -112,6 +120,7 @@ Option 9
 * Good: simple
 * Good: can use ``.__lt__()``, ``.__le__()`` for validation if needed
 * Bad: requires knowledge of API
+* Verdict: rejected, not explicit and requires knowledge of API
 
 
 Option 9
@@ -123,6 +132,7 @@ Option 9
 * Bad: not Pythonic way
 * Bad: not simple
 * Bad: requires knowledge of API
+* Verdict: rejected, not explicit and requires knowledge of API
 
 
 Decision
