@@ -20,7 +20,7 @@ Option 1
 * Good: easy to use
 * Good: clear intent
 * Good: encapsulation
-* Bad: ``set_damage()`` indicates setter of ``damage`` field
+* Bad: the name indicates a setter of a ``damage`` attribute
 * Bad: not Pythonic way
 * Verdict: rejected, method name indicates something else
 
@@ -40,16 +40,16 @@ Rationale:
 .. code-block:: text
 
     dragon ---> enemy
-    dragon -> enemy
-    dragon <-> enemy
-    dragon <- enemy
+    dragon   -> enemy
+    dragon  <-> enemy
+    dragon <-   enemy
     dragon <--- enemy
 
 
 Option 3
 --------
->>> dragon.hurt_self(DMG)       # bad name, dragon ---> enemy
->>> dragon.receive_damage(DMG)  # good name, dragon ---> enemy
+>>> dragon.hurt_self(DMG)
+>>> dragon.receive_damage(DMG)
 
 * Good: Explicit relation ``dragon ---> enemy``
 * Bad: ``hurt_self()`` is too use-case specific
@@ -59,7 +59,7 @@ Option 3
 
 Option 4
 --------
->>> dragon.take_damage(DMG) # dragon ---> enemy
+>>> dragon.take_damage(DMG)
 
 * Good: Explicit relation ``dragon ---> enemy``
 * Good: Consistent with ``make_damage()``

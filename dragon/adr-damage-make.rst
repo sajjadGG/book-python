@@ -21,7 +21,7 @@ Option 1
 * Good: readability
 * Good: clear intent
 * Good: easy to add validation if needed
-* Bad: name ``get_damage()`` indicate a getter of ``damage`` field
+* Bad: name ``get_damage()`` indicate a getter of ``damage`` attribute
 * Verdict: rejected, bad method name
 
 
@@ -46,9 +46,9 @@ damage?
 .. code-block:: text
 
     dragon ---> enemy
-    dragon -> enemy
-    dragon <-> enemy
-    dragon <- enemy
+    dragon   -> enemy
+    dragon <->  enemy
+    dragon <-   enemy
     dragon <--- enemy
 
 
@@ -104,6 +104,7 @@ Problem:
 ...         self.withdraw(amount)
 ...         destination_account.deposit(amount)
 
+* Bad: this is not how bank transfers are done (especially between banks)
 * Bad: other bank of will not share their source code with you, to make a transfer
 
 
