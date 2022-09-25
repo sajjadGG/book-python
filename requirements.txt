@@ -44,7 +44,7 @@ django-ninja
 fastapi
 html5lib
 httpx
-#lxml
+lxml
 matplotlib
 numpy
 openpyxl
