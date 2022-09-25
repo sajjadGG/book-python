@@ -70,6 +70,23 @@ DB API v2
     connection.close()
 
 
+Command-line interface
+----------------------
+* New in version 3.12
+
+The sqlite3 module can be invoked as a script in order to provide a simple
+SQLite shell. Type .quit or CTRL-D to exit the shell.
+
+.. code-block:: text
+
+    -h, --help
+    Print CLI help.
+
+    -v, --version
+    Print underlying SQLite library version.
+
+
+
 References
 ----------
 .. [#pybookinstall] https://python.astrotech.io/install.html

@@ -86,6 +86,7 @@ SQLite3
 
     sqlite3/sqlite3-about.rst
     sqlite3/sqlite3-connect.rst
+    sqlite3/sqlite3-adapter.rst
     sqlite3/sqlite3-execute.rst
     sqlite3/sqlite3-insert-sequence.rst
     sqlite3/sqlite3-insert-mapping.rst
