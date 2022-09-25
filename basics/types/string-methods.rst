@@ -209,6 +209,7 @@ Split by Character
 
 Join by Character
 -----------------
+* [#PyDocStrJoin]_
 * ``str.join(sep, sequence)`` - concatenate sequence using separator
 * Note, this is a method of a ``str``, not ``tuple.join()`` or ``list.join()``
 
@@ -591,6 +592,11 @@ Use Case - 0x01
 >>>
 >>> print(result)
 Pana Twardowskiego III
+
+
+References
+----------
+.. [#PyDocStrJoin] van Rossum, G. et al. Why is join() a string method instead of a list or tuple method? Python documentation. Year: 2022. Retrieved: 2022-09-25. URL: https://docs.python.org/3/faq/design.html#why-is-join-a-string-method-instead-of-a-list-or-tuple-method
 
 
 Assignments

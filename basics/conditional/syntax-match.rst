@@ -64,7 +64,7 @@ Patterns
 The patterns can also:
 
 * Use variable names that are set if a ``case`` matches
-* Match sequences using list or tuple syntax (like Python'’'s existing ``iterable unpacking`` feature)
+* Match sequences using list or tuple syntax (like Python's existing ``iterable unpacking`` feature)
 * Match mappings using ``dict`` syntax
 * Use ``*`` to match the rest of a list
 * Use ``**`` to match other keys in a dict

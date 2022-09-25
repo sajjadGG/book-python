@@ -11,7 +11,7 @@ OS Interpreter
 
 Sysconfig
 ---------
-You can use sysconfig as a script with Python’s -m option:
+You can use sysconfig as a script with Python's -m option:
 
 .. code-block:: console
 

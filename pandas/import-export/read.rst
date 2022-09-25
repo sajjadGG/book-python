@@ -68,6 +68,7 @@ Docx
 ...             .replace('😊', '')
 ...             .replace('„', '"')
 ...             .replace('”', '"')
+...             .replace('“', '"')
 ...             .replace('‘', ''')
 ...             .replace('’', ''')
 ...             .strip())

@@ -54,6 +54,50 @@ False
 
 Problem
 -------
+* Source: [#PyDocFloatingPoint]_
+
+Why are floating-point calculations so inaccurate?
+Users are often surprised by results like this:
+
+>>> 1.2 - 1.0
+0.19999999999999996
+
+and think it is a bug in Python. It's not. This has little to do with Python,
+and much more to do with how the underlying platform handles floating-point
+numbers.
+
+The float type in CPython uses a C double for storage. A float object's
+value is stored in binary floating-point with a fixed precision (typically
+53 bits) and Python uses C operations, which in turn rely on the hardware
+implementation in the processor, to perform floating-point operations.
+This means that as far as floating-point operations are concerned,
+Python behaves like many popular languages including C and Java.
+
+Many numbers that can be written easily in decimal notation cannot be
+expressed exactly in binary floating-point. For example, after:
+
+>>> x = 1.2
+
+the value stored for x is a (very good) approximation to the decimal value
+1.2, but is not exactly equal to it. On a typical machine, the actual stored
+value is:
+
+.. code-block:: text
+
+    1.0011001100110011001100110011001100110011001100110011 (binary)
+
+which is exactly:
+
+.. code-block:: text
+
+    1.1999999999999999555910790149937383830547332763671875 (decimal)
+
+The typical precision of 53 bits provides Python floats with 15–16 decimal
+digits of accuracy.
+
+For a fuller explanation, please see the `floating point arithmetic <https://docs.python.org/3/tutorial/floatingpoint.html#tut-fp-issues>`_
+chapter in the Python tutorial.
+
 >>> candy = 0.10      # price in dollars
 >>> cookie = 0.20     # price in dollars
 >>>
@@ -253,3 +297,5 @@ Use ``Decimal`` type:
 References
 ----------
 .. [#Halterman2018] Halterman, R.L. Fundamentals of Python Programming. Publisher: Southern Adventist University. Year: 2018.
+
+.. [#PyDocFloatingPoint] van Rossum, G. et al. Why are floating-point calculations so inaccurate? Python documentation. Year: 2022. Retrieved: 2022-09-25. URL: https://docs.python.org/3/faq/design.html#why-are-floating-point-calculations-so-inaccurate

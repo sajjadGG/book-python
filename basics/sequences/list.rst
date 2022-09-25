@@ -3,6 +3,19 @@ Sequence List
 * Mutable - can add, remove, and modify items
 * Stores elements of any type
 
+CPython's lists are really variable-length arrays, not Lisp-style linked
+lists. The implementation uses a contiguous array of references to other
+objects, and keeps a pointer to this array and the array's length in a list
+head structure.
+
+This makes indexing a list a[i] an operation whose cost is independent
+of the size of the list or the value of the index.
+
+When items are appended or inserted, the array of references is resized.
+Some cleverness is applied to improve the performance of appending items
+repeatedly; when the array must be grown, some extra space is allocated
+so the next few times don't require an actual resize.
+
 
 Syntax
 ------
@@ -199,6 +212,12 @@ Sort vs Sorted
 --------------
 * ``sorted()`` - returns new sorted list, but does not modify the original
 * ``list.sort()`` - sorts list and returns ``None``
+
+Why doesn't list.sort() return the sorted list? [#PyDocListSort]_
+
+In situations where performance matters, making a copy of the list just to sort it would be wasteful. Therefore, list.sort() sorts the list in place. In order to remind you of that fact, it does not return the sorted list. This way, you won't be fooled into accidentally overwriting a list when you need a sorted copy but also need to keep the unsorted version around.
+
+If you want to return a new list, use the built-in sorted() function instead. This function creates a new list from a provided iterable, sorts it and returns it. For example, here's how to iterate over the keys of a dictionary in sorted order
 
 Timsort is a hybrid stable sorting algorithm, derived from merge sort and
 insertion sort, designed to perform well on many kinds of real-world data.
@@ -432,6 +451,11 @@ Recap
 References
 ----------
 .. [#timsort] https://en.wikipedia.org/wiki/Timsort
+
+.. [#PyDocList] van Rossum, G. et al. How are lists implemented in CPython? Year: 2022. Retrieved: 2022-09-25. URL: https://docs.python.org/3/faq/design.html#how-are-lists-implemented-in-cpython
+
+.. [#PyDocListSort] van Rossum, G. et al. Why doesn't list.sort() return the sorted list? Year: 2022. Retrieved: 2022-09-25. URL: https://docs.python.org/3/faq/design.html#why-doesn-t-list-sort-return-the-sorted-list
+
 
 
 Assignments

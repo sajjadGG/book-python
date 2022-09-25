@@ -4,6 +4,28 @@ Sequence Comparison
 * ``list`` - extensible and flexible
 * ``set`` - very fast lookup
 
+Why are there separate tuple and list data types? [#PyDocTupleList]_
+
+Lists and tuples, while similar in many respects, are generally used in
+fundamentally different ways. Tuples can be thought of as being similar
+to Pascal records or C structs; they're small collections of related data
+which may be of different types which are operated on as a group. For
+example, a Cartesian coordinate is appropriately represented as a tuple
+of two or three numbers.
+
+Lists, on the other hand, are more like arrays in other languages. They
+tend to hold a varying number of objects all of which have the same type
+and which are operated on one-by-one. For example, os.listdir('.') returns
+a list of strings representing the files in the current directory. Functions
+which operate on this output would generally not break if you added another
+file or two to the directory.
+
+Tuples are immutable, meaning that once a tuple has been created, you can't
+replace any of its elements with a new value. Lists are mutable, meaning
+that you can always change a list's elements. Only immutable elements can
+be used as dictionary keys, and hence only tuples and not lists can be used
+as keys.
+
 
 Tuple
 -----
@@ -98,6 +120,8 @@ Performance
 References
 ----------
 .. [#pywikiTimeComplexity] https://wiki.python.org/moin/TimeComplexity
+
+.. [#PyDocTupleList] van Rossum, G. et al. Why are there separate tuple and list data types? Python documentation. Year: 2022. Retrieved: 2022-09-25. URL: https://docs.python.org/3/faq/design.html#why-is-join-a-string-method-instead-of-a-list-or-tuple-method
 
 
 .. todo:: Assignments

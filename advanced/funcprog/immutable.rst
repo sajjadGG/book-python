@@ -18,7 +18,7 @@ Rational
 * Source: [#WikipediaFunc]_
 
 
-Variables are immutable, i.e., it isn’t possible to modify one once it has been initialized. However, we can create a new variable. The immutable nature of variables helps preserve the state throughout the program. [#Inouye2022]_
+Variables are immutable, i.e., it isn't possible to modify one once it has been initialized. However, we can create a new variable. The immutable nature of variables helps preserve the state throughout the program. [#Inouye2022]_
 
 
 Mutable vs Immutable

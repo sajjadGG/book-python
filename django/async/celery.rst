@@ -71,8 +71,8 @@ In foreground:
 
     $ celery --app=addressbook worker --loglevel=INFO
 
-By default it’ll create pid and log files in the current directory. To
-protect against multiple workers launching on top of each other you’re
+By default it'll create pid and log files in the current directory. To
+protect against multiple workers launching on top of each other you're
 encouraged to put these in a dedicated directory:
 
 .. code-block:: console
@@ -248,7 +248,7 @@ Reject
 * https://docs.celeryq.dev/en/stable/userguide/tasks.html#reject
 
 The task may raise Reject to reject the task message using AMQPs
-``basic_reject`` method. This won’t have any effect unless ``Task.acks_late``
+``basic_reject`` method. This won't have any effect unless ``Task.acks_late``
 is enabled.
 
 Rejecting a message has the same effect as acking it, but some brokers may
@@ -370,20 +370,20 @@ Good:
 
 State
 -----
-Since Celery is a distributed system, you can’t know which process,
-or on what machine the task will be executed. You can’t even know
+Since Celery is a distributed system, you can't know which process,
+or on what machine the task will be executed. You can't even know
 if the task will run in a timely manner.
 
-The ancient async sayings tells us that “asserting the world is the
-responsibility of the task”. What this means is that the world view
+The ancient async sayings tells us that "asserting the world is the
+responsibility of the task". What this means is that the world view
 may have changed since the task was requested, so the task is responsible
 for making sure the world is how it should be; If you have a task that
 re-indexes a search engine, and the search engine should only be
 re-indexed at maximum every 5 minutes, then it must be the tasks
 responsibility to assert that, not the callers.
 
-Another gotcha is Django model objects. They shouldn’t be passed on as
-arguments to tasks. It’s almost always better to re-fetch the object
+Another gotcha is Django model objects. They shouldn't be passed on as
+arguments to tasks. It's almost always better to re-fetch the object
 from the database when the task is running instead, as using old data
 may lead to race conditions.
 
@@ -407,7 +407,7 @@ on a button that initiates the abbreviation task:
 ... article = Article.objects.get(id=102)
 ... expand_abbreviations.delay(article)
 
-Now, the queue is very busy, so the task won’t be run for another 2 minutes.
+Now, the queue is very busy, so the task won't be run for another 2 minutes.
 In the meantime another author makes changes to the article, so when the
 task is finally run, the body of the article is reverted to the old version
 because the task had the old body in its argument.

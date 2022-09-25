@@ -163,4 +163,4 @@ References
 
 .. [#Poirier2021] Poirier, D. Asyncio (superseded by async page). Year: 2021. Retrieved: 2022-03-17. URL: https://cheat.readthedocs.io/en/latest/python/asyncio.html
 
-.. [#pydocMultithreading] Python documentation. Developing with asyncio. Concurrency and Multithreading. Year: 2022. Retrieved: 2022-03-17. URL: https://docs.python.org/3/library/asyncio-dev.html#concurrency-and-multithreading
+.. [#pydocMultithreading] Python core developers. Developing with asyncio. Concurrency and Multithreading. Python documentation. Year: 2022. Retrieved: 2022-03-17. URL: https://docs.python.org/3/library/asyncio-dev.html#concurrency-and-multithreading

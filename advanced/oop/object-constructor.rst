@@ -74,11 +74,11 @@ New Method
 
 Called to create a new instance of class cls. __new__() is a static method (special-cased so you need not declare it as such) that takes the class of which an instance was requested as its first argument. The remaining arguments are those passed to the object constructor expression (the call to the class). The return value of __new__() should be the new object instance (usually an instance of cls).
 
-Typical implementations create a new instance of the class by invoking the superclass’s __new__() method using super().__new__(cls[, ...]) with appropriate arguments and then modifying the newly-created instance as necessary before returning it.
+Typical implementations create a new instance of the class by invoking the superclass's __new__() method using super().__new__(cls[, ...]) with appropriate arguments and then modifying the newly-created instance as necessary before returning it.
 
-If __new__() is invoked during object construction and it returns an instance of cls, then the new instance’s __init__() method will be invoked like __init__(self[, ...]), where self is the new instance and the remaining arguments are the same as were passed to the object constructor.
+If __new__() is invoked during object construction and it returns an instance of cls, then the new instance's __init__() method will be invoked like __init__(self[, ...]), where self is the new instance and the remaining arguments are the same as were passed to the object constructor.
 
-If __new__() does not return an instance of cls, then the new instance’s __init__() method will not be invoked.
+If __new__() does not return an instance of cls, then the new instance's __init__() method will not be invoked.
 
 __new__() is intended mainly to allow subclasses of immutable types (like int, str, or tuple) to customize instance creation. It is also commonly overridden in custom metaclasses in order to customize class creation.
 
@@ -103,7 +103,7 @@ Init Method
   instance
 * [#pydocDatamodelInit]_
 
-Called after the instance has been created (by __new__()), but before it is returned to the caller. The arguments are those passed to the class constructor expression. If a base class has an __init__() method, the derived class’s __init__() method, if any, must explicitly call it to ensure proper initialization of the base class part of the instance; for example: super().__init__([args...]).
+Called after the instance has been created (by __new__()), but before it is returned to the caller. The arguments are those passed to the class constructor expression. If a base class has an __init__() method, the derived class's __init__() method, if any, must explicitly call it to ensure proper initialization of the base class part of the instance; for example: super().__init__([args...]).
 
 Because __new__() and __init__() work together in constructing objects (__new__() to create it, and __init__() to customize it), no non-None value may be returned by __init__(); doing so will cause a TypeError to be raised at runtime.
 

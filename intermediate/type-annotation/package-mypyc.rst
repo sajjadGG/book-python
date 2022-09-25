@@ -12,7 +12,7 @@ It uses standard Python type hints to generate fast code.
 
 The compiled language is a strict, gradually typed Python variant.
 It restricts the use of some dynamic Python features to gain performance,
-but it’s mostly compatible with standard Python.
+but it's mostly compatible with standard Python.
 
 Mypyc uses mypy to perform type checking and type inference. Most type
 system features in the stdlib typing module are supported.
@@ -54,7 +54,7 @@ differently, however:
 * Mypyc performs strict enforcement of type annotations at runtime,
   resulting in better runtime type safety and easier debugging.
 
-Unlike Cython, mypyc doesn’t directly support interfacing with C libraries
+Unlike Cython, mypyc doesn't directly support interfacing with C libraries
 or speeding up numeric code.
 
 
@@ -66,7 +66,7 @@ Mypyc uses several techniques to produce fast code:
   interpreter overhead.
 
 * Mypyc enforces type annotations (and type comments) at runtime, raising
-  TypeError if runtime values don’t match annotations. Value types only
+  TypeError if runtime values don't match annotations. Value types only
   need to be checked in the boundaries between dynamic and static typing.
 
 * Compiled code uses optimized, type-specific primitives.
@@ -86,7 +86,7 @@ Mypyc uses several techniques to produce fast code:
 
 Development Status
 ------------------
-Mypyc is currently alpha software. It’s only recommended for production use
+Mypyc is currently alpha software. It's only recommended for production use
 cases with careful testing, and if you are willing to contribute fixes
 or to work around issues you will encounter.
 
@@ -288,7 +288,7 @@ A simple way to use mypyc is to always compile your code after any code
 changes, but this can get tedious, especially if you have a lot of code.
 Instead, you can do most development in interpreted mode. This development
 workflow has worked smoothly for developing mypy and mypyc (often we forget
-that we aren’t working on a vanilla Python project):
+that we aren't working on a vanilla Python project):
 
 * During development, use interpreted mode. This gives you a fast edit-run
   cycle.
@@ -298,14 +298,14 @@ that we aren’t working on a vanilla Python project):
   compiled code, if you have good type annotation coverage. (Running mypy
   is pretty quick.)
 
-* After you’ve implemented a feature or a fix, compile your project
+* After you've implemented a feature or a fix, compile your project
   and run tests again, now in compiled mode. Usually nothing will break here,
   assuming your type annotation coverage is good. This can happen locally
   or in a Continuous Integration (CI) job. If you have CI, compiling locally
   may be rarely needed.
 
 * Release or deploy a compiled version. Optionally, include a fallback
-  interpreted version for platforms that mypyc doesn’t support.
+  interpreted version for platforms that mypyc doesn't support.
 
 This mypyc workflow only involves minor tweaks to a typical Python workflow.
 Most of development, testing and debugging happens in interpreted mode.

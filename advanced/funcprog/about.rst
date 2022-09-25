@@ -24,7 +24,7 @@ Advantages
 ----------
 * Source: [#Inouye2022]_
 
-* Comprehensibility: Pure functions don’t change states and are entirely dependent on input, and are consequently simple to understand.
+* Comprehensibility: Pure functions don't change states and are entirely dependent on input, and are consequently simple to understand.
 * Concurrency: As pure functions avoid changing variables or any data outside it, concurrency implementation is easier.
 * Lazy evaluation: Functional programming encourages lazy evaluation, which means that the value is evaluated and stored only when required.
 * Easier debugging and testing: Pure functions take arguments once and produce unchangeable output. With immutability and no hidden output, debugging and testing becomes easier.

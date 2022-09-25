@@ -19,17 +19,17 @@ Python Release Cycle
 Which Version?
 --------------
 * You should use newest official Python version [#pyDevGuideVersions]_
-* Source: https://devguide.python.org/#status-of-python-branches
+* Source: https://devguide.python.org/versions/
 * Source: https://www.python.org/downloads/
 
 .. csv-table:: Python Versions [#pyDevGuideVersions]_
     :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
     :widths: 5, 15, 10, 20, 20, 30
 
-    "3.12", "TBA",        "future",      "2023-10",    "2028-10",    "TBA"
-    "3.11", ":pep:`664`", "features",    "2022-10-03", "2027-10",    "Pablo Galindo Salgado"
+    "3.12", ":pep:`693`", "features",    "2023-10-03", "2028-10",    "Thomas Wouters"
+    "3.11", ":pep:`664`", "bugfix",      "2022-10-03", "2027-10",    "Pablo Galindo Salgado"
     "3.10", ":pep:`619`", "bugfix",      "2021-10-04", "2026-10",    "Pablo Galindo Salgado"
-    "3.9",  ":pep:`596`", "security",      "2020-10-05", "2025-10",    "Łukasz Langa"
+    "3.9",  ":pep:`596`", "security",    "2020-10-05", "2025-10",    "Łukasz Langa"
     "3.8",  ":pep:`569`", "security",    "2019-10-20", "2024-10",    "Łukasz Langa"
     "3.7",  ":pep:`537`", "security",    "2018-06-27", "2023-06-27", "Ned Deily"
     "3.6",  ":pep:`494`", "end-of-life", "2016-12-23", "2021-12-23", "Ned Deily"
@@ -79,3 +79,8 @@ Changes in Python 3
 * In Python 3 ``print()`` is a function, not a keyword
 * Changes in standard library modules naming and location
 * New string formatting
+
+
+References
+----------
+.. [#pyDevVersions] van Rossum, G. et al. How do you specify and enforce an interface spec in Python? Year: 2022. Retrieved: 2022-09-25. URL: https://devguide.python.org/versions/

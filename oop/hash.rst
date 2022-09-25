@@ -130,6 +130,17 @@ Set Definition
     print(data)
     # {<__main__.Astronaut object at 0x105bc7700>}
 
+Problem
+-------
+>>> hash(-1) == hash(-2)
+True
+
+>>> hash(-1)
+-2
+>>>
+>>> hash(-2)
+-2
+
 
 Use Case - 0x01
 ---------------

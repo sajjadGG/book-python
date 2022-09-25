@@ -660,11 +660,11 @@ Further Reading
 
 References
 ----------
-.. [#pydocDataModelSlots] Python core developers. Data model. Customizing attribute access. Notes on using __slots__. Python documentation. Year: 2022. Retrieved: 2022-03-16. URL: https://docs.python.org/3/reference/datamodel.html#slots
+.. [#pydocDataModelSlots] van Rossum, G. et al. Data model. Customizing attribute access. Notes on using __slots__. Python documentation. Year: 2022. Retrieved: 2022-03-16. URL: https://docs.python.org/3/reference/datamodel.html#slots
 
-.. [#pydocDataModelObjectValues] Python core developers. Data model. Objects, values and types. Python documentation. Year: 2022. Retrieved: 2022-04-01. URL: https://docs.python.org/3/reference/datamodel.html#objects-values-and-types
+.. [#pydocDataModelObjectValues] van Rossum, G. et al. Data model. Objects, values and types. Python documentation. Year: 2022. Retrieved: 2022-04-01. URL: https://docs.python.org/3/reference/datamodel.html#objects-values-and-types
 
-.. [#pydocWeakref] Python core developers. Weak references. Python documentation. Year: 2022. Retrieved: 2022-03-16. URL: https://docs.python.org/3/library/weakref.html
+.. [#pydocWeakref] van Rossum, G. et al. Weak references. Python documentation. Year: 2022. Retrieved: 2022-03-16. URL: https://docs.python.org/3/library/weakref.html
 
 .. [#Dunes2016] Dunes. What exactly is __weakref__ in Python? Year: 2016. Retrieved: 2022-03-16. URL https://stackoverflow.com/a/36789779
 

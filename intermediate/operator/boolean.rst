@@ -233,7 +233,7 @@ array([[ True,  True, False],
 
 Use Case - 0x05
 ---------------
-* Talk - Sebastiaan Zeeff: Demystifying Python’s Internals: Diving into CPython by implementing... https://www.youtube.com/watch?v=HYKGZunmF50
+* Talk - Sebastiaan Zeeff: Demystifying Python's Internals: Diving into CPython by implementing... https://www.youtube.com/watch?v=HYKGZunmF50
 * Łukasz Langa - Life Is Better Painted Black, or: How to Stop Worrying and Embrace Auto-Formatting https://www.youtube.com/watch?v=esZLCuWs_2Y
 * https://docs.influxdata.com/influxdb/v2.0/query-data/get-started/query-influxdb/
 
