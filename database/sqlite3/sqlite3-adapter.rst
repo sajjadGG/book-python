@@ -38,6 +38,7 @@ Adapter
 ...     """Adapt datetime.datetime to Unix timestamp."""
 ...     return int(val.timestamp())
 >>>
+>>>
 >>> sqlite3.register_adapter(datetime.date, adapt_date_iso)
 >>> sqlite3.register_adapter(datetime.datetime, adapt_datetime_iso)
 >>> sqlite3.register_adapter(datetime.datetime, adapt_datetime_epoch)
@@ -57,6 +58,7 @@ Converter
 ...     """Convert Unix epoch timestamp to datetime.datetime object."""
 ...     return datetime.datetime.fromtimestamp(val)
 >>>
->>> sqlite3.register_converter("date", convert_date)
->>> sqlite3.register_converter("datetime", convert_datetime)
->>> sqlite3.register_converter("timestamp", convert_timestamp)
+>>>
+>>> sqlite3.register_converter('date', convert_date)
+>>> sqlite3.register_converter('datetime', convert_datetime)
+>>> sqlite3.register_converter('timestamp', convert_timestamp)
