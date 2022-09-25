@@ -1,5 +1,9 @@
 
 # atlassian-python-api
+# black
+# coverage
+# cython
+# dajngo-extensions
 # django-debug-toolbar
 # dnspython
 # jupyter
@@ -12,12 +16,15 @@
 # pillow
 # plotly
 # pycodestyle
+# pylama[all]
+# pylint
 # pysftp
 # scikit-learn
 # scipy
 # suds
 # tensorflow
 # torch
+# uvicorn
 # zeep
 ## Auth
 ## Celery
@@ -33,16 +40,18 @@ celery
 django
 django-celery-beat
 django-celery-results
+django-ninja
 fastapi
 html5lib
 httpx
-lxml
+#lxml
 matplotlib
 numpy
 openpyxl
 pandas
 passlib[bcrypt]
 psycopg2-binary
+pydantic
 pydantic[email]  # pip install 'pydantic[email]'
 python-jose[cryptography]
 python-multipart
