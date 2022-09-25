@@ -1,8 +1,8 @@
 """
 * Assignment: SQLite3 Fetch CSV
 * Complexity: easy
-* Lines of code: 30 lines
-* Time: 21 min
+* Lines of code: 15 lines
+* Time: 13 min
 
 English:
     1. Read data from `FILE` (don't use `csv` or `pandas` library)

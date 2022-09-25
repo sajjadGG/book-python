@@ -1,8 +1,8 @@
 """
 * Assignment: SQLite3 Fetch Logs
 * Complexity: easy
-* Lines of code: 17 lines
-* Time: 21 min
+* Lines of code: 11 lines
+* Time: 13 min
 
 English:
     1. Split `DATA` by lines:

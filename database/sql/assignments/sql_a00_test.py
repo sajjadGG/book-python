@@ -1,4 +1,21 @@
-# Database Connection Tables
+"""
+* Assignment: Database Connection Test
+* Complexity: easy
+* Lines of code: 0 lines
+* Time: 2 min
+
+English:
+    1. Run file to check database connection
+    2. Run doctests - all must succeed
+
+Polish:
+    1. Uruchom plik aby sprawdzić połączenie do bazy danych
+    2. Uruchom doctesty - wszystkie muszą się powieść
+
+Tests:
+    TODO: tests
+"""
+
 import sqlite3
 from pathlib import Path
 
@@ -40,3 +57,7 @@ if 'apollo11' not in tables:
 
 print('Everything is ok')
 print('Please notify instructor')
+
+
+
+# Solution

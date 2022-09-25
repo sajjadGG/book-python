@@ -21,6 +21,9 @@ Create
     create/range.rst
     create/generate.rst
     create/recap.rst
+    create/serialization.rst
+    create/import.rst
+    create/export.rst
 
 
 Attributes
@@ -103,17 +106,6 @@ Math
 
     math/trigonometry.rst
     math/algebra.rst
-
-
-Import & Export
-***************
-.. toctree::
-    :maxdepth: 1
-    :caption: Import & Export
-
-    import-export/serialization.rst
-    import-export/import.rst
-    import-export/export.rst
 
 
 Polynomial
