@@ -108,7 +108,11 @@ Traceback (most recent call last):
 TypeError: can only concatenate str (not "int") to str
 
 >>> a = ['a', 'b', 'c']
->>> a[1.5]
+>>>
+>>> a[1]
+'b'
+>>>
+>>> a[1.0]
 Traceback (most recent call last):
 TypeError: list indices must be integers or slices, not float
 

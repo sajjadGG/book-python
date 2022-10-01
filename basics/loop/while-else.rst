@@ -6,6 +6,33 @@ Loop While Else
 * While loop: ``while ... else``
 * For loop: ``for ... else``
 
+>>> colors = ['red', 'green', 'blue']
+>>> search = 'black'
+>>>
+>>> i = 0
+>>> while i < len(colors):
+...     color = colors[i]
+...     i += 1
+...     if color == search:
+...         print('found')
+...         break
+... else:
+...     print('missing')
+...
+missing
+
+>>> colors = ['red', 'green', 'blue']
+>>> search = 'black'
+>>>
+>>> for color in colors:
+...     if color == search:
+...         print('found')
+...         break
+... else:
+...     print('missing')
+...
+missing
+
 
 Example
 -------

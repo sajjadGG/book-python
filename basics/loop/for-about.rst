@@ -127,6 +127,22 @@ such as C, C++, C#, JAVA, Java Script. Python ``for`` loop is more like
         System.out.println(letter);
     }
 
+.. code-block:: php
+
+    $data = array('a', 'b', 'c');
+
+    foreach ($data as $letter) {
+        echo $letter;
+    }
+
+.. code-block:: js
+
+    DATA = ['a', 'b', 'c']
+
+    for (let letter of DATA) {
+        console.log(letter)
+    }
+
 And this relates to Python regular ``for`` loop:
 
 >>> DATA = ['a', 'b', 'c']
@@ -238,6 +254,34 @@ Use Case - 0x01
 >>> for _ in range(3):
 ...     spawn_thread()
 
+
+Use Case - 0x02
+---------------
+* https://www.keepandshare.com/userpics/r/o/b/e/rt/2019-12/sb/screen_shot_2019_12_01_at_3.26.20_pm-34867850.jpg?ts=1575242835
+
+>>> text = 'hello'
+
+>>> text.upper()
+'HELLO'
+
+>>> i = 0
+>>> result = ''
+>>> offset = 32  # ASCII table between lowercase and uppercase letters
+>>>
+>>> while i < len(text):
+...     letter = ord(text[i])
+...     letter = chr(letter-32)
+...     result += letter
+...     i += 1
+...
+>>> result
+'HELLO'
+
+>>> # doctest: +SKIP
+... if value == 97:
+...     return 'a'
+... elif value == 99:
+...     return 'b'
 
 
 Assignments

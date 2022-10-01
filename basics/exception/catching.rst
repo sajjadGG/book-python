@@ -6,6 +6,31 @@ Exception Catching
 * ``finally``
 * ``try`` is required and then one of the others blocks
 
+>>> def run(value):
+...     try:
+...         return int(value)
+...     except TypeError:
+...         print('type error')
+...     except ValueError:
+...         print('value error')
+...
+
+>>> run( 1 )
+1
+>>> run( 1.0 )
+1
+
+>>> run('1')
+1
+>>> run('1.0')
+value error
+>>>
+>>> run( 'one' )
+value error
+
+>>> run( [1, 0] )
+type error
+
 
 Catch Exception
 ---------------

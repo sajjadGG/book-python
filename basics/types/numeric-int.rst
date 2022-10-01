@@ -65,6 +65,21 @@ Builtin function ``int()`` converts argument to ``int``:
 1000000
 
 
+>>> data = 'abc'
+>>>
+>>> int(data, base=10)
+Traceback (most recent call last):
+ValueError: invalid literal for int() with base 10: 'abc'
+>>>
+>>>
+>>> int(data, base=16)
+2748
+>>>
+>>> import string
+>>> string.hexdigits
+'0123456789abcdefABCDEF'
+
+
 Type Casting Errors
 -------------------
 * Works with strings, if all characters could be converted to ``int``
@@ -117,6 +132,7 @@ True
 >>> x = 1
 >>> isinstance(x, int)
 True
+
 
 Rounding
 --------
