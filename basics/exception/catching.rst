@@ -13,7 +13,6 @@ Exception Catching
 ...         print('type error')
 ...     except ValueError:
 ...         print('value error')
-...
 
 >>> run( 1 )
 1

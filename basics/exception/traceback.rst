@@ -13,10 +13,55 @@ Traceback (most recent call last):
 RuntimeError: Huston we have a problem
 
 
+Python 3.11
+-----------
+* Since Python 3.11
+* :pep:`657` -- Include Fine Grained Error Locations in Tracebacks
+
+.. code-block:: python
+
+    Traceback (most recent call last):
+      File "calculation.py", line 54, in <module>
+        result = (x / y / z) * (a / b / c)
+                  ~~~~~~^~~
+    ZeroDivisionError: division by zero
+
+.. code-block:: python
+
+    Traceback (most recent call last):
+      File "distance.py", line 11, in <module>
+        print(manhattan_distance(p1, p2))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "distance.py", line 6, in manhattan_distance
+        return abs(point_1.x - point_2.x) + abs(point_1.y - point_2.y)
+                               ^^^^^^^^^
+    AttributeError: 'NoneType' object has no attribute 'x'
+
+.. code-block:: python
+
+    Traceback (most recent call last):
+      File "query.py", line 37, in <module>
+        magic_arithmetic('foo')
+      File "query.py", line 18, in magic_arithmetic
+        return add_counts(x) / 25
+               ^^^^^^^^^^^^^
+      File "query.py", line 24, in add_counts
+        return 25 + query_user(user1) + query_user(user2)
+                    ^^^^^^^^^^^^^^^^^
+      File "query.py", line 32, in query_user
+        return 1 + query_count(db, response['a']['b']['c']['user'], retry=True)
+                                   ~~~~~~~~~~~~~~~~~~^^^^^
+    TypeError: 'NoneType' object is not subscriptable
+
+
 Traceback Analysis
 ------------------
 * Stacktrace is 8 levels deep, it's not Java's 200 ;)
 * Start analysing traceback from bottom-up
+
+.. figure:: img/exception-traceback-java.png
+
+    Stacktrace is 8 levels deep, it's not Java's 200 ;) [#javastacktrace]_
 
 >>> def apollo13():
 ...     raise RuntimeError('Oxygen tank explosion')
@@ -79,3 +124,8 @@ Traceback (most recent call last):
   File "/home/watney/myscript.py", line 2, in apollo13
     raise RuntimeError('Oxygen tank explosion')
 RuntimeError: Oxygen tank explosion
+
+
+References
+----------
+.. [#javastacktrace] https://mattwarren.org/images/2016/12/Huge%20Java%20Stack%20Trace.png

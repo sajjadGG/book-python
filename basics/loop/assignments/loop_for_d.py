@@ -6,20 +6,20 @@
 * Time: 8 min
 
 English:
-    1. Count occurrences of each group
-    2. Define groups:
-        a. `small` - numbers in range [0-3)
-        b. `medium` - numbers in range [3-7)
-        c. `large` - numbers in range [7-10)
-    3. Run doctests - all must succeed
+    1. Count number of occurrences for digit in segments:
+        a. `small` - digitst in range [0-3)
+        b. `medium` - digitst in range [3-7)
+        c. `large` - digitst in range [7-10)
+        d. [0-3) - means, digits between 0 and 3, without 3 (left-side closed)
+    2. Run doctests - all must succeed
 
 Polish:
-    1. Policz wystąpienia każdej z group
-    2. Zdefiniuj grupy:
-        a. `small` - liczby z przedziału <0-3)
-        b. `medium` - liczby z przedziału <3-7)
-        c. `large` - liczby z przedziału <7-10)
-    3. Uruchom doctesty - wszystkie muszą się powieść
+    1. Policz liczbę wystąpień cyfr w przedziałach:
+        a. `small` - cyfry z przedziału <0-3)
+        b. `medium` - cyfry z przedziału <3-7)
+        c. `large` - cyfry z przedziału <7-10)
+        d. <0-3) - znaczy, cyfry od 0 do 3, bez 3 (lewostronnie domknięty)
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

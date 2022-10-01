@@ -121,7 +121,7 @@ References
 ----------
 .. [#pywikiTimeComplexity] https://wiki.python.org/moin/TimeComplexity
 
-.. [#PyDocTupleList] van Rossum, G. et al. Why are there separate tuple and list data types? Python documentation. Year: 2022. Retrieved: 2022-09-25. URL: https://docs.python.org/3/faq/design.html#why-is-join-a-string-method-instead-of-a-list-or-tuple-method
+.. [#PyDocTupleList] van Rossum, G. et al. Why are there separate tuple and list data types? Python documentation. Year: 2022. Retrieved: 2022-09-25. URL: https://docs.python.org/3/faq/design.html#why-are-there-separate-tuple-and-list-data-types
 
 
 .. todo:: Assignments

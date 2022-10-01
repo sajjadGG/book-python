@@ -27,7 +27,7 @@ Which Version?
     :widths: 5, 15, 10, 20, 20, 30
 
     "3.12", ":pep:`693`", "features",    "2023-10-03", "2028-10",    "Thomas Wouters"
-    "3.11", ":pep:`664`", "bugfix",      "2022-10-03", "2027-10",    "Pablo Galindo Salgado"
+    "3.11", ":pep:`664`", "bugfix",      "2022-10-24", "2027-10",    "Pablo Galindo Salgado"
     "3.10", ":pep:`619`", "bugfix",      "2021-10-04", "2026-10",    "Pablo Galindo Salgado"
     "3.9",  ":pep:`596`", "security",    "2020-10-05", "2025-10",    "Łukasz Langa"
     "3.8",  ":pep:`569`", "security",    "2019-10-20", "2024-10",    "Łukasz Langa"
