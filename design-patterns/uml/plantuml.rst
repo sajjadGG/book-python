@@ -85,7 +85,6 @@ Sequence Diagram
     deactivate Client
     ```
 
-
 .. code-block:: md
 
     ```puml
@@ -147,6 +146,7 @@ Theming
     ```puml
     !theme plain
     ```
+
 
 Config
 ------
