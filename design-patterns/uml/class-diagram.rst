@@ -247,17 +247,34 @@ Use Cases
 Django
 ------
 * GraphViz + Dot
-* Django Extensions: https://django-extensions.readthedocs.io/en/latest/graph_models.html
+* Django Extensions: https://django-extensions.readthedocs.io/en/latest/graph_models.html#example-usage
 
-.. figure:: img/uml-django.png
-.. figure:: img/uml-django-models.png
+.. code-block:: console
+
+    $ brew install graphviz
+    $ pip install pydotplus
+    $ pip install django-extensions
+
+    # Add 'django_extensions' to INSTALLED_APP
+
+    $ python manage.py graph_models -a -g -o all.png
+    $ python manage.py graph_models myapp -g -o myapp.png
+    $ python manage.py graph_models -a -I Contact,Address -o models.png
+    $ python manage.py graph_models -a --arrow-shape normal -o myproject.png
+
+.. figure:: img/uml-django-models-1.png
+.. figure:: img/uml-django-models-2.png
+.. figure:: img/uml-django-models-3.png
+.. figure:: img/uml-django-models-4.png
+.. figure:: img/uml-django-models-5.png
+.. figure:: img/uml-django-models-6.png
 
 
 Generate from code
 ------------------
 * ``sphinx.ext.graphviz`` (from ``sphinx``) - https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html
 * ``pyreverse`` (from ``pylint``) - https://www.logilab.org/blogentry/6883
-* ``GraphModels`` (from ``django-command-extensions``) - https://code.google.com/p/django-command-extensions/wiki/GraphModels
+* ``GraphModels`` (from ``django-command-extensions``) - https://django-extensions.readthedocs.io/en/latest/graph_models.html#example-usage
 * ``epydoc`` - http://epydoc.sourceforge.net - http://epydoc.sourceforge.net/api/epydoc.apidoc.VariableDoc-class.html
 * ``pynsource`` - http://pynsource.com/
 * ``pyUML`` - https://sourceforge.net/projects/eclipse-pyuml/
