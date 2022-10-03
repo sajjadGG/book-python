@@ -27,8 +27,14 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isclass
 
-    >>> assert isclass(MyDecorator)
-    >>> assert isinstance(MyDecorator(lambda: None), MyDecorator)
+    >>> assert isclass(MyDecorator), \
+    'MyDecorator should be a decorator class'
+
+    >>> assert MyDecorator(lambda: ...), \
+    'MyDecorator should take function as an argument'
+
+    >>> assert isinstance(MyDecorator(lambda: ...), MyDecorator), \
+    'MyDecorator() should return an object which is an instance of MyDecorator'
 
     >>> @MyDecorator
     ... def echo(text):
@@ -38,6 +44,9 @@ Tests:
     'hello'
 """
 
+# type: Type
+class MyDecorator:
+    ...
 
 # Solution
 class MyDecorator:

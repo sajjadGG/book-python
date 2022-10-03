@@ -1,8 +1,8 @@
 """
 * Assignment: Decorator Method Alive
 * Complexity: easy
-* Lines of code: 5 lines
-* Time: 13 min
+* Lines of code: 4 lines
+* Time: 5 min
 
 English:
     1. Create `if_alive` method decorator
@@ -18,6 +18,13 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction
+
+    >>> assert isfunction(if_alive), \
+    'Create if_alive() function'
+
+    >>> assert isfunction(if_alive(lambda: ...)), \
+    'if_alive() should take method as an argument'
 
     >>> class Hero:
     ...    def __init__(self, name):
@@ -37,9 +44,12 @@ Tests:
     RuntimeError: Hero is dead and cannot make damage
 """
 
+
+# type: Callable[[Callable], Callable]
 def if_alive(method):
     def wrapper(hero, *args, **kwargs):
         return method(hero, *args, **kwargs)
+
     return wrapper
 
 
@@ -50,4 +60,5 @@ def if_alive(method):
             return method(self, *args, **kwargs)
         else:
             raise RuntimeError('Hero is dead and cannot make damage')
+
     return wrapper

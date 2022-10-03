@@ -1,33 +1,32 @@
-Decorator Function with Mth
-===========================
+Decorate Method
+===============
 * ``mydecorator`` is a decorator name
 * ``method`` is a method name
 * ``self`` is an instance
 * ``args`` arbitrary number of positional arguments
 * ``kwargs`` arbitrary number of keyword arguments
 
+SetUp:
+
+>>> def mydecorator(method):
+...     ...
+
 Syntax:
-    .. code-block:: python
 
-        class MyClass:
-            @mydecorator
-            def mymethod(self, *args, **kwargs):
-                ...
-
-
-        obj = MyClass()
-        obj.mymethod()
+>>> class MyClass:
+...     @mydecorator
+...     def mymethod(self, *args, **kwargs):
+...         ...
 
 Is equivalent to:
-    .. code-block:: python
 
-        class MyClass:
-            def mymethod(self, *args, **kwargs):
-                ...
-
-
-        obj = MyClass()
-        obj.mymethod = mydecorator(obj.mymethod)
+>>> class MyClass:
+...     def mymethod(self, *args, **kwargs):
+...         ...
+>>>
+>>>
+>>> obj = MyClass()
+>>> obj.mymethod = mydecorator(obj.mymethod)
 
 
 Syntax
@@ -105,6 +104,7 @@ Use Case - 0x01
 Doing...
 >>> my.do_something_else()
 Doing something else...
+>>>
 >>>
 >>> my._is_allowed = False
 >>>

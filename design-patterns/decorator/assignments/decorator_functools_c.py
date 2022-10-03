@@ -2,7 +2,7 @@
 * Assignment: Decorator Functools Cls
 * Complexity: easy
 * Lines of code: 2 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
     1. Modify code to restore docstring and name from decorated class
@@ -14,6 +14,16 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction, isclass
+
+    >>> assert isfunction(mydecorator), \
+    'Create mydecorator() function'
+
+    >>> assert mydecorator(object), \
+    'mydecorator() should take class as an argument'
+
+    >>> assert isclass(mydecorator(object)), \
+    'The result of mydecorator() should be a class'
 
     >>> @mydecorator
     ... class Hello:
@@ -25,9 +35,12 @@ Tests:
     'Hello Docstring'
 """
 
+
+# type: Callable[[Type], Type]
 def mydecorator(cls):
     class Wrapper(cls):
         pass
+
     return Wrapper
 
 
@@ -36,4 +49,5 @@ def mydecorator(cls):
     class Wrapper(cls):
         __doc__ = cls.__doc__
         __name__ = cls.__name__
+
     return Wrapper

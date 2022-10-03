@@ -1,16 +1,10 @@
-Decorator Class with Func
-=========================
+Decorator Class
+===============
 * ``MyDecorator`` is a decorator name
 * ``myfunction`` is a function name
+* ``func`` is a reference to function which is being decorated
 
-
-Syntax
-------
-* ``cls`` is a reference to class which is being decorated (``MyClass`` in this case)
-* ``Wrapper`` is a closure class
-* ``Wrapper`` name is a convention, but you can name it anyhow
-* ``Wrapper`` can inherit from ``MyClass``
-* Decorator must return reference to ``Wrapper``
+Definition:
 
 >>> class MyDecorator:
 ...     def __init__(self, func):
@@ -18,14 +12,16 @@ Syntax
 ...
 ...     def __call__(self, *args, **kwargs):
 ...         return self._func(*args, **kwargs)
->>>
->>>
+
+Usage:
+
 >>> @MyDecorator
-... def myfunction():
-...     ...
+... def say_hello():
+...     return 'hello'
 >>>
 >>>
->>> myfunction()
+>>> say_hello()
+'hello'
 
 
 Example
@@ -122,7 +118,6 @@ Use Case - 0x02
 >>> myfunction(4, 2)  # Computed
 8
 >>>
->>>
 >>> myfunction  # doctest: +NORMALIZE_WHITESPACE
 {(2, 4): 8,
  ('hi', 3): 'hihihi',
@@ -168,6 +163,7 @@ Use Case - 0x03
 42
 >>> myfunction(9, 7)
 63
+>>>
 >>> myfunction  # doctest: +SKIP
 {-3550055125485641917: 2,
  6794810172467074373: 2,

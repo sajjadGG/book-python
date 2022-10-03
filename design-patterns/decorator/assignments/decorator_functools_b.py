@@ -14,6 +14,19 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isfunction
+
+    >>> assert isfunction(mydecorator), \
+    'Create mydecorator() function'
+
+    >>> assert isfunction(mydecorator(True)), \
+    'mydecorator() should take one positional argument'
+
+    >>> assert isfunction(mydecorator(happy=True)), \
+    'mydecorator() should take one keyword argument'
+
+    >>> assert isfunction(mydecorator(happy=True)(lambda: ...)), \
+    'The result of mydecorator() should take function as an argument'
 
     >>> @mydecorator(happy=False)
     ... def hello():
@@ -27,11 +40,14 @@ Tests:
 from functools import wraps
 
 
+# type: Callable[[bool], Callable]
 def mydecorator(happy=True):
     def decorator(func):
         def wrapper(*args, **kwargs):
             return func(*args, **kwargs)
+
         return wrapper
+
     return decorator
 
 
@@ -41,5 +57,7 @@ def mydecorator(happy=True):
         @wraps(func)
         def wrapper(*args, **kwargs):
             return func(*args, **kwargs)
+
         return wrapper
+
     return decorator

@@ -7,6 +7,8 @@ Wraps
 * ``from functools import wraps``
 * ``@wraps(func)``
 
+Without Wraps:
+
 >>> def mydecorator(func):
 ...     def wrapper(*args, **kwargs):
 ...         """wrapper docstring"""
@@ -25,6 +27,8 @@ wrapper
 >>>
 >>> print(myfunction.__doc__)
 wrapper docstring
+
+With Wraps:
 
 >>> from functools import wraps
 >>>
@@ -73,8 +77,10 @@ Cached Property
 >>>
 >>>
 >>> flower = Iris(5.1, 3.5, 1.4, 0.2)
+>>>
 >>> flower.stdev
 2.1794494717703365
+>>>
 >>> flower.mean
 2.55
 
@@ -94,11 +100,11 @@ LRU (least recently used) cache
 ...     return fib(n-1) + fib(n-2)
 >>>
 >>>
-[fib(n) for n in range(16)]
->>> # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
+>>> [fib(n) for n in range(16)]
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
 >>>
-fib.cache_info()
->>> # CacheInfo(hits=28, misses=16, maxsize=None, currsize=16)
+>>> fib.cache_info()
+CacheInfo(hits=28, misses=16, maxsize=None, currsize=16)
 
 
 Assignments

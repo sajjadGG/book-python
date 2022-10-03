@@ -3,9 +3,6 @@ Decorator Arguments
 * Used for passing extra configuration to decorators
 * Use more one level of nesting
 
-
-Syntax
-------
 >>> def mydecorator(a=1, b=2):
 ...     def decorator(func):
 ...         def wrapper(*args, **kwargs):
@@ -93,7 +90,7 @@ Use Case - 0x02
 >>> from time import sleep
 >>>
 >>>
->>> def timeout(seconds=2.0, error_message='Timeout'):
+>>> def timeout(seconds=1, error_message='Timeout'):
 ...     def on_timeout(signum, frame):
 ...         raise TimeoutError
 ...
@@ -111,7 +108,7 @@ Use Case - 0x02
 ...     return decorator
 >>>
 >>>
->>> @timeout(seconds=3.0)
+>>> @timeout(seconds=3)
 ... def countdown(n):
 ...     for i in reversed(range(n)):
 ...         print(i)
@@ -119,11 +116,30 @@ Use Case - 0x02
 ...     print('countdown finished')
 >>>
 >>>
->>> countdown(5)
-4
-3
-2
+>>> countdown(10)  # doctest: +SKIP
+9
+8
+7
 Timeout
+
+.. note:: Note to Windows users.
+    Implementation of ``subprocess.Popen._wait()``
+
+    >>> # doctest: +SKIP
+    ... def _wait(self, timeout):
+    ...     """Internal implementation of wait() on Windows."""
+    ...     if timeout is None:
+    ...         timeout_millis = _winapi.INFINITE
+    ...     else:
+    ...         timeout_millis = int(timeout * 1000)
+    ...     if self.returncode is None:
+    ...         # API note: Returns immediately if timeout_millis == 0.
+    ...         result = _winapi.WaitForSingleObject(self._handle,
+    ...                                              timeout_millis)
+    ...         if result == _winapi.WAIT_TIMEOUT:
+    ...             raise TimeoutExpired(self.args, timeout)
+    ...         self.returncode = _winapi.GetExitCodeProcess(self._handle)
+    ...     return self.returncode
 
 
 Use Case - 0x03
@@ -135,7 +151,7 @@ Use Case - 0x03
 >>> from time import sleep
 >>>
 >>>
->>> def timeout(seconds=2.0, error_message='Timeout'):
+>>> def timeout(seconds=1.0, error_message='Timeout'):
 ...     def decorator(func):
 ...         def wrapper(*args, **kwargs):
 ...             timer = Timer(seconds, interrupt_main)
@@ -155,15 +171,55 @@ Use Case - 0x03
 ... def countdown(n):
 ...     for i in reversed(range(n)):
 ...         print(i)
-...         sleep(1)
+...         sleep(1.0)
 ...     print('countdown finished')
 >>>
->>> countdown(5)  # doctest: +SKIP
-4
-3
-2
+>>>
+>>> countdown(10)  # doctest: +SKIP
+9
+8
+7
 Traceback (most recent call last):
 TimeoutError: Timeout
+
+
+Use Case - 0x04
+---------------
+File ``settings.py``:
+
+>>> BASE_URL = 'https://python.astrotech.io'
+
+File ``utils.py``:
+
+>>> from http import HTTPStatus
+>>> import requests
+>>>
+>>>
+>>> def _request(url, method='GET'):
+...     url = BASE_URL + url
+...     resp = requests.request(url, method)
+...     if resp.staus_code != HTTPStatus.OK:
+...         raise ConnectionError
+...     return resp
+>>>
+>>>
+>>> def get(url):
+...     def decorator(func):
+...         def wrapper():
+...             resp = _request(url)
+...             return func(resp.json())
+...         return wrapper
+...     return decorator
+
+File ``main.py``:
+
+>>> @get('/users/')
+... def get_users(data: list[dict] = None) -> list['User']:
+...     ...
+>>>
+>>>
+>>> users = get_users()  # doctest: +SKIP
+
 
 
 Assignments

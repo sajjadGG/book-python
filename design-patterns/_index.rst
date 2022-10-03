@@ -22,6 +22,46 @@ UML
     uml/sequence-diagram.rst
 
 
+Type Annotation
+***************
+.. toctree::
+    :maxdepth: 1
+    :caption: Type Annotation
+
+    type-annotation/type-primitive.rst
+    type-annotation/type-sequence.rst
+    type-annotation/type-mapping.rst
+    type-annotation/type-callable.rst
+    type-annotation/type-type.rst
+    type-annotation/extra.rst
+    type-annotation/deprecated.rst
+    type-annotation/package-validate.rst
+    type-annotation/package-annotate.rst
+    type-annotation/package-cython.rst
+    type-annotation/package-mypyc.rst
+
+
+Dataclass
+*********
+.. toctree::
+    :maxdepth: 1
+    :caption: Dataclass
+
+    dataclass/about.rst
+    dataclass/define-basic.rst
+    dataclass/define-special.rst
+    dataclass/define-relations.rst
+    dataclass/mechanism.rst
+    dataclass/postinit.rst
+    dataclass/mutable-args.rst
+    dataclass/field.rst
+    dataclass/metadata.rst
+    dataclass/parameters.rst
+    dataclass/helpers.rst
+    dataclass/inheritance.rst
+    dataclass/introspect.rst
+
+
 OOP
 ***
 .. toctree::
@@ -80,11 +120,17 @@ Decorators
     :caption: Decorators
 
     decorator/about.rst
-    decorator/function-decorator-functions.rst
-    decorator/function-decorator-classes.rst
-    decorator/function-decorator-methods.rst
-    decorator/class-decorator-functions.rst
-    decorator/decorator-arguments.rst
+    decorator/about-types.rst
+    decorator/about-wrapper.rst
+    decorator/about-object.rst
+    decorator/about-arguments.rst
+    decorator/decorate-function.rst
+    decorator/decorate-method.rst
+    decorator/decorate-class.rst
+    decorator/decorator-function.rst
+    decorator/decorator-method.rst
+    decorator/decorator-class.rst
+    decorator/decorator-parameters.rst
     decorator/functools.rst
     decorator/recap.rst
 

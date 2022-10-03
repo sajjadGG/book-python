@@ -6,7 +6,7 @@
 
 English:
     1. Create method decorator `mydecorator`
-    2. Decorator should have `wrapper` with `self`, `*args` and `**kwargs` parameters
+    2. Decorator should have `wrapper` with `*args` and `**kwargs` parameters
     3. Wrapper should call original method with it's original parameters,
        and return its value
     4. Decorator should return `wrapper` method
@@ -24,8 +24,11 @@ Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isfunction
 
-    >>> assert isfunction(mydecorator)
-    >>> assert isfunction(mydecorator(lambda: None))
+    >>> assert isfunction(mydecorator), \
+    'Create mydecorator() function'
+
+    >>> assert isfunction(mydecorator(lambda: ...)), \
+    'mydecorator() should take method as an argument'
 
     >>> class MyClass:
     ...     @mydecorator
@@ -37,10 +40,13 @@ Tests:
     'hello'
 """
 
+# type: Callable[[Callable], Callable]
+def mydecorator():
+    ...
 
 # Solution
 def mydecorator(method):
     def wrapper(self, *args, **kwargs):
         return method(self, *args, **kwargs)
-    return wrapper
 
+    return wrapper

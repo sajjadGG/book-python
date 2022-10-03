@@ -1,14 +1,14 @@
 """
-* Assignment: Decorator Class Type Check
+* Assignment: Decorator Class TypeCheck
 * Complexity: medium
-* Lines of code: 15 lines
-* Time: 21 min
+* Lines of code: 8 lines
+* Time: 8 min
 
 English:
     1. Refactor decorator `decorator` to decorator `TypeCheck`
     2. Decorator checks types of all arguments (`*args` oraz `**kwargs`)
     3. Decorator checks return type
-    4. In case when received type is not expected throw an exception `TypeError` with:
+    4. When received type is not expected raise `TypeError` with:
         a. argument name
         b. actual type
         c. expected type
@@ -18,7 +18,7 @@ Polish:
     1. Przerób dekorator `decorator` na klasę `TypeCheck`
     2. Dekorator sprawdza typy wszystkich argumentów (`*args` oraz `**kwargs`)
     3. Dekorator sprawdza typ zwracany
-    4. W przypadku gdy otrzymany typ nie jest równy oczekiwanemu wyrzuć wyjątek `TypeError` z:
+    4. Gdy otrzymany typ nie jest równy oczekiwanemu podnieś `TypeError` z:
         a. nazwa argumentu
         b. aktualny typ
         c. oczekiwany typ
@@ -26,9 +26,23 @@ Polish:
 
 Hints:
     * `echo.__annotations__`
+    * `dict(zip(...))`
+    * `kwargs.items()`
+    * `list(kwargs.items())[:-1]`
+    * `dict1 | dict2` - merging dicts since Python 3.9
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from inspect import isclass
+
+    >>> assert isclass(TypeCheck), \
+    'TypeCheck should be a decorator class'
+
+    >>> assert TypeCheck(lambda: ...), \
+    'TypeCheck should take function as an argument'
+
+    >>> assert isinstance(TypeCheck(lambda: ...), TypeCheck), \
+    'TypeCheck() should return an object which is an instance of TypeCheck'
 
     >>> @TypeCheck
     ... def echo(a: str, b: int, c: float = 0.0) -> bool:
@@ -81,52 +95,54 @@ Tests:
     TypeError: "return" is <class 'str'>, but <class 'bool'> was expected
 """
 
-def decorator(func):
-    def validate(argname, argval):
-        argtype = type(argval)
-        expected = func.__annotations__[argname]
-        if argtype is not expected:
-            raise TypeError(f'"{argname}" is {argtype}, but {expected} was expected')
+def typecheck(func):
+    annotations = func.__annotations__
 
-    def merge(*args, **kwargs):
-        args = dict(zip(func.__annotations__.keys(), args))
-        return kwargs | args          # Python 3.9
-        # return {**args, **kwargs)}  # Python 3.7, 3.8
+    def merge(args, kwargs) -> dict:
+        return kwargs | dict(zip(annotations, args))
+
+    def check(argname, argvalue):
+        argtype = type(argvalue)
+        expected = annotations[argname]
+        if argtype is not expected:
+            raise TypeError(f'"{argname}" is {argtype}, '
+                            f'but {expected} was expected')
 
     def wrapper(*args, **kwargs):
-        for argname, argval in merge(*args, **kwargs).items():
-            validate(argname, argval)
+        for argname, argvalue in merge(args, kwargs).items():
+            check(argname, argvalue)
         result = func(*args, **kwargs)
-        validate('return', result)
+        check('return', result)
         return result
+
     return wrapper
+
+
+# Refactor typecheck into class
+# type: Type
+class TypeCheck:
+    ...
 
 
 # Solution
 class TypeCheck:
-    def __init__(self, func) -> None:
-        self._func = func
+    def __init__(self, func):
+        self.func = func
+        self.annotations = func.__annotations__
+
+    def merge(self, args, kwargs):
+        return kwargs | dict(zip(self.annotations, args))
+
+    def check(self, argname, argvalue):
+        argtype = type(argvalue)
+        expected = self.annotations[argname]
+        if argtype is not expected:
+            raise TypeError(f'"{argname}" is {argtype}, '
+                            f'but {expected} was expected')
 
     def __call__(self, *args, **kwargs):
-        self.check_arguments(*args, **kwargs)
-        result = self._func(*args, **kwargs)
-        self.check_result(result)
+        for argname, argvalue in self.merge(args, kwargs).items():
+            self.check(argname, argvalue)
+        result = self.func(*args, **kwargs)
+        self.check('return', result)
         return result
-
-    def check_arguments(self, *args, **kwargs):
-        for argname, argval in self.merge(*args, **kwargs).items():
-            self.validate(argname, argval)
-
-    def check_result(self, result):
-        self.validate('return', result)
-
-    def merge(self, *args, **kwargs):
-        args = dict(zip(self._func.__annotations__.keys(), args))
-        return kwargs | args          # Python 3.9
-        # return {**args, **kwargs)}  # Python 3.7, 3.8
-
-    def validate(self, argname, argval):
-        argtype = type(argval)
-        expected = self._func.__annotations__[argname]
-        if argtype is not expected:
-            raise TypeError(f'"{argname}" is {argtype}, but {expected} was expected')
