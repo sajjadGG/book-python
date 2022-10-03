@@ -17,6 +17,7 @@ UML
 
     uml/about.rst
     uml/mermaid.rst
+    uml/plantuml.rst
     uml/relationship.rst
     uml/class-diagram.rst
     uml/sequence-diagram.rst
