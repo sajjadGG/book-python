@@ -63,24 +63,33 @@ Dataclass
     dataclass/introspect.rst
 
 
-OOP
-***
+Object Oriented Programming
+***************************
 .. toctree::
     :maxdepth: 1
-    :caption: OOP
+    :caption: Object Oriented Programming
 
-    oop/principles.rst
-    oop/access-modifiers.rst
-    oop/composition.rst
-    oop/interface.rst
-    oop/abstract.rst
-    oop/staticattrs.rst
-    oop/staticmethod.rst
-    oop/classmethod.rst
-    oop/switch.rst
-    oop/pattern-matching.rst
-    oop/polymorphism.rst
-    oop/solid.rst
+    oop/attribute-mutable.rst
+    oop/attribute-classvar.rst
+    oop/attribute-accessmodifiers.rst
+    oop/method-about.rst
+    oop/method-accessmodifiers.rst
+    oop/method-staticmethod.rst
+    oop/method-classmethod.rst
+    oop/inheritance-patterns.rst
+    oop/inheritance-problems.rst
+    oop/inheritance-overload.rst
+    oop/inheritance-super.rst
+    oop/inheritance-mro.rst
+    oop/abstract-interface.rst
+    oop/abstract-protocol.rst
+    oop/abstract-class.rst
+    oop/paradigm-principles.rst
+    oop/paradigm-solid.rst
+    oop/paradigm-polymorphism.rst
+    oop/object-constructor.rst
+    oop/class-factory.rst
+    oop/class-metaclass.rst
 
 
 Idioms
@@ -97,6 +106,8 @@ Idioms
     idiom/reduce.rst
     idiom/all.rst
     idiom/any.rst
+    idiom/syntax-switch.rst
+    idiom/syntax-match.rst
     idiom/patterns.rst
 
 
