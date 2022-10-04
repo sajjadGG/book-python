@@ -329,6 +329,57 @@ Use Case - 0x04
 ...     email_address: str = field(default=None, metadata={"db": Column(String(50))})
 
 
+Use Case - 0x05
+---------------
+>>> from dataclasses import dataclass, field
+
+>>> @dataclass
+... class BaseModel:
+...     def _validate_range(self, fieldname, field):
+...         value = getattr(self, fieldname)
+...         MIN = field.metadata['min']
+...         MAX = field.metadata['max']
+...         if not MIN <= value < MAX:
+...             raise ValueError(f'{fieldname} value ({value}) not between {MIN} and {MAX}')
+...
+...     def _validate_choices(self, fieldname, field):
+...         value = getattr(self, fieldname)
+...         OPTIONS = field.metadata['options']
+...         if value not in OPTIONS:
+...             raise ValueError(f'{fieldname} value ({value}) not in {OPTIONS}')
+...
+...     def __post_init__(self):
+...         for fieldname, field in self.__dataclass_fields__.items():
+...             if 'type' in field.metadata:
+...                 match field.metadata['type']:
+...                     case 'range': self._validate_range(fieldname, field)
+...                     case 'choices': self._validate_choices(fieldname, field)
+...                     case _: raise TypeError
+
+>>> @dataclass
+... class Astronaut(BaseModel):
+...     firstname: str
+...     lastname: str
+...     age: int = field(default=None, metadata={'unit': 'years', 'type': 'range', 'min': 30, 'max': 50, 'database': 'SmallPositiveInteger'})
+...     height: float = field(default=None, metadata={'unit': 'cm', 'type': 'range', 'min': 150, 'max': 210, 'database':'Decimal(3,2)'})
+...     weight: float = field(default=None, metadata={'unit': 'kg', 'type': 'range', 'min': 55, 'max': 85, 'database':'Decimal(3,2)'})
+...     agency: str = field(default=None, metadata={'type': 'choices', 'options': ['NASA', 'ESA', 'POLSA'], 'database':'VarChar(30)'})
+
+>>> mark = Astronaut('Mark', 'Watney', age=49, height=185, weight=75, agency='NASA')
+
+>>> mark = Astronaut('Mark', 'Watney', age=49, height=185, weight=75, agency='Roscosmos')
+Traceback (most recent call last):
+ValueError: agency value (Roscosmos) not in ['NASA', 'ESA', 'POLSA']
+
+>>> mark = Astronaut('Mark', 'Watney', age=49, height=185, weight=90, agency='NASA')
+Traceback (most recent call last):
+ValueError: weight value (90) not between 55 and 85
+
+>>> mark = Astronaut('Mark', 'Watney', age=60, height=185, weight=75, agency='NASA')
+Traceback (most recent call last):
+ValueError: age value (60) not between 30 and 50
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/dataclass_field_a.py
