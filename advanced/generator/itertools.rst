@@ -69,6 +69,7 @@ Itertools Cycle
 2 even
 3 odd
 
+
 Itertools Repeat
 ----------------
 * ``itertools.repeat(object[, times])``
@@ -372,6 +373,37 @@ StopIteration
 ['A', 'B', 'C', 'D', 'A', 'B']
 >>> [list(g) for k, g in groupby('AAAABBBCCD')]
 [['A', 'A', 'A', 'A'], ['B', 'B', 'B'], ['C', 'C'], ['D']]
+
+
+Use Case - 0x01
+---------------
+>>> from itertools import product
+>>> from pprint import pprint
+
+>>> filenames = ['file1.txt', 'file2.txt']
+>>> modes = ['r', 'w', 'a']
+>>> encodings = ['utf-8', None, 'latin-1']
+
+>>> options = product(filenames, modes, encodings)
+>>> pprint(list(options))
+[('file1.txt', 'r', 'utf-8'),
+ ('file1.txt', 'r', None),
+ ('file1.txt', 'r', 'latin-1'),
+ ('file1.txt', 'w', 'utf-8'),
+ ('file1.txt', 'w', None),
+ ('file1.txt', 'w', 'latin-1'),
+ ('file1.txt', 'a', 'utf-8'),
+ ('file1.txt', 'a', None),
+ ('file1.txt', 'a', 'latin-1'),
+ ('file2.txt', 'r', 'utf-8'),
+ ('file2.txt', 'r', None),
+ ('file2.txt', 'r', 'latin-1'),
+ ('file2.txt', 'w', 'utf-8'),
+ ('file2.txt', 'w', None),
+ ('file2.txt', 'w', 'latin-1'),
+ ('file2.txt', 'a', 'utf-8'),
+ ('file2.txt', 'a', None),
+ ('file2.txt', 'a', 'latin-1')]
 
 
 Assignments
