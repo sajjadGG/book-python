@@ -54,22 +54,41 @@ Tests:
     >>> remove('_temporary.txt')
 """
 
+class File:
+    filename: str
+    buffer: list[str]
+
+    def __init__(self, filename):
+        self.filename = filename
+        self.buffer = []
+
+    def append(self, line):
+        self.buffer.append(line + '\n')
+
+    def write(self, mode):
+        ...
+
 
 # Solution
 class File:
     filename: str
-    _content: list[str]
+    buffer: list[str]
 
     def __init__(self, filename):
         self.filename = filename
-        self._content = list()
+        self.buffer = []
+
+    def append(self, line):
+        self.buffer.append(line + '\n')
+
+    def write(self, mode):
+        to_write = self.buffer.copy()
+        self.buffer = []
+        with open(self.filename, mode) as file:
+            file.writelines(to_write)
 
     def __enter__(self):
         return self
 
-    def __exit__(self, *args):
-        with open(self.filename, mode='w') as file:
-            file.writelines(self._content)
-
-    def append(self, line):
-        self._content.append(line + '\n')
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.write(mode='w')

@@ -57,47 +57,46 @@ from sys import getsizeof
 
 class File:
     filename: str
-    _content: list[str]
+    buffer: list[str]
 
     def __init__(self, filename):
         self.filename = filename
-        self._content = list()
-
-    def __enter__(self):
-        return self
-
-    def __exit__(self, *args):
-        with open(self.filename, mode='w') as file:
-            file.writelines(self._content)
+        self.buffer = []
 
     def append(self, line):
-        self._content.append(line + '\n')
+        self.buffer.append(line + '\n')
+
+    def write(self, mode):
+        ...
 
 
 # Solution
 class File:
-    BUFFER_LIMIT: int = 100
-    _content: list[str]
     filename: str
+    buffer: list[str]
+    BUFFER_LIMIT: int = 100
 
     def __init__(self, filename):
         self.filename = filename
-        self._content = list()
+        self.buffer = []
+
+    def append(self, line):
+        self.buffer.append(line + '\n')
 
     def __enter__(self):
-        with open(self.filename, mode='w') as file:
-            file.write('')
+        self.write(mode='w')
         return self
 
     def __exit__(self, *args):
-        self._writefile()
+        self.write(mode='a')
 
-    def _writefile(self):
-        with open(self.filename, mode='a') as file:
-            file.writelines(self._content)
-            self._content = []
+    def write(self, mode):
+        to_write = self.buffer.copy()
+        self.buffer = []
+        with open(self.filename, mode=mode) as file:
+            file.writelines(to_write)
 
     def append(self, line):
-        self._content.append(line + '\n')
-        if getsizeof(self._content) > self.BUFFER_LIMIT:
-            self._writefile()
+        self.buffer.append(line + '\n')
+        if getsizeof(self.buffer) >= self.BUFFER_LIMIT:
+            self.write(mode='a')

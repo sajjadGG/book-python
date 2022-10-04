@@ -135,9 +135,6 @@ class GeographicCoordinate:
     latitude = Latitude()
     longitude = Longitude()
     elevation = Elevation()
-    __latitude: float
-    __longitude: float
-    __elevation: float
 
     def __init__(self, latitude, longitude, elevation):
         self.latitude = latitude

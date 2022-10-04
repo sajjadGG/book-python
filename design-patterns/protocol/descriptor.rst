@@ -4,14 +4,14 @@ Protocol Descriptor
 * Outsource functionality into specialized classes
 * Descriptors: ``classmethod``, ``staticmethod``, ``property``, functions in general
 * ``__del__(self)`` is reserved when object is being deleted by garbage collector (destructor)
-* ``__set_name()`` After class creation, Python default metaclass will call it with parent and classname
+* ``__set_name()`` After class creation, Python default metaclass will call it with cls and classname
 
 
 Protocol
 --------
-* ``__get__(self, parent, *args) -> self``
-* ``__set__(self, parent, value) -> None``
-* ``__delete__(self, parent) -> None``
+* ``__get__(self, cls, *args) -> self``
+* ``__set__(self, cls, value) -> None``
+* ``__delete__(self, cls) -> None``
 * ``__set_name__(self)``
 
 .. epigraph::
@@ -20,19 +20,47 @@ Protocol
 
     -- Raymond Hettinger
 
-
 >>> class Descriptor:
-...     def __get__(self, parent, *args):
+...     def __get__(self, cls, *args):
 ...         return ...
 ...
-...     def __set__(self, parent, value):
+...     def __set__(self, cls, value):
 ...         ...
 ...
-...     def __delete__(self, parent):
+...     def __delete__(self, cls):
 ...         ...
 ...
-...     def __set_name__(self, parent, classname):
+...     def __set_name__(self, cls, attrname):
 ...         ...
+
+
+Example
+-------
+>>> class MyField:
+...     def __get__(self, cls, *args):
+...         print('Getter')
+...
+...     def __set__(self, cls, value):
+...         print('Setter')
+...
+...     def __delete__(self, cls):
+...         print('Deleter')
+>>>
+>>>
+>>> class MyClass:
+...     value = MyField()
+>>>
+>>>
+>>> my = MyClass()
+>>>
+>>> my.value = 'something'
+Setter
+>>>
+>>> my.value
+Getter
+>>>
+>>> del my.value
+Deleter
 
 
 Property vs Reflection vs Descriptor
@@ -64,11 +92,11 @@ Reflection:
 Descriptor:
 
 >>> class Kelvin:
-...     def __set__(self, parent, value):
+...     def __set__(self, cls, value):
 ...         if value < 0:
 ...             raise ValueError
 ...         else:
-...             parent._value = value
+...             cls._value = value
 >>>
 >>>
 >>> class Temperature:
@@ -76,311 +104,9 @@ Descriptor:
 ...     _value: float
 
 
-Example
--------
->>> class MyField:
-...     def __get__(self, parent, *args):
-...         print('Getter')
-...
-...     def __set__(self, parent, value):
-...         print('Setter')
-...
-...     def __delete__(self, parent):
-...         print('Deleter')
->>>
->>>
->>> class MyClass:
-...     value = MyField()
->>>
->>>
->>> my = MyClass()
->>>
->>> my.value = 'something'
-Setter
->>>
->>> my.value
-Getter
->>>
->>> del my.value
-Deleter
-
-
-Use Case - 0x01
----------------
-* Kelvin Temperature Validator
-
->>> class KelvinValidator:
-...     def __set__(self, parent, value):
-...         if value < 0.0:
-...             raise ValueError('Cannot set negative Kelvin')
-...         parent._value = value
->>>
->>>
->>> class Temperature:
-...     kelvin = KelvinValidator()
-...
-...     def __init__(self):
-...         self._value = None
->>>
->>>
->>> t = Temperature()
->>> t.kelvin = -1
-Traceback (most recent call last):
-ValueError: Cannot set negative Kelvin
-
-
-Use Case - 0x02
----------------
-* Temperature Conversion
-
->>> class Kelvin:
-...     def __get__(self, parent, *args):
-...         return round(parent._value, 2)
-...
-...     def __set__(self, parent, value):
-...         parent._value = value
->>>
->>>
->>> class Celsius:
-...     def __get__(self, parent, *args):
-...         value = parent._value - 273.15
-...         return round(value, 2)
-...
-...     def __set__(self, parent, value):
-...         parent._value = value + 273.15
->>>
->>>
->>> class Fahrenheit:
-...     def __get__(self, parent, *args):
-...         value = (parent._value - 273.15) * 9 / 5 + 32
-...         return round(value, 2)
-...
-...     def __set__(self, parent, fahrenheit):
-...         parent._value = (fahrenheit - 32) * 5 / 9 + 273.15
->>>
->>>
->>> class Temperature:
-...     kelvin = Kelvin()
-...     celsius = Celsius()
-...     fahrenheit = Fahrenheit()
-...
-...     def __init__(self):
-...         self._value = 0.0
->>>
->>>
->>> t = Temperature()
->>>
->>> t.kelvin = 273.15
->>> print(t.kelvin)
-273.15
->>> print(t.celsius)
-0.0
->>> print(t.fahrenheit)
-32.0
->>>
->>> t.fahrenheit = 100
->>> print(t.kelvin)
-310.93
->>> print(t.celsius)
-37.78
->>> print(t.fahrenheit)
-100.0
->>>
->>> t.celsius = 100
->>> print(t.kelvin)
-373.15
->>> print(t.celsius)
-100.0
->>> print(t.fahrenheit)
-212.0
-
-Use Case - 0x03
----------------
-* Value Range Descriptor
-
->>> class Value:
-...     MIN: int
-...     MAX: int
-...     name: str
-...     value: float
-...
-...     def __init__(self, min, max):
-...         self.MIN = min
-...         self.MAX = max
-...
-...     def __set__(self, instance, value):
-...         if self.MIN <= value < self.MAX:
-...             self.value = value
-...         else:
-...             raise ValueError(f'{self.name} ({value}) is not in range({self.MIN}, {self.MAX})')
-...
-...     def __get__(self, instance, owner):
-...         return self.value
-...
-...     def __delete__(self, instance):
-...         raise PermissionError
-...
-...     def __set_name__(self, owner, name):
-...         self.name = name
->>>
->>>
->>> class KelvinTemperature:
-...     kelvin = Value(min=0, max=99999)
-...     celsius = Value(min=-273.15, max=99999)
->>>
->>>
->>> t = KelvinTemperature()
->>>
->>> t.kelvin = 10
->>> t.kelvin = -1
-Traceback (most recent call last):
-ValueError: kelvin (-1) is not in range(0, 99999)
->>>
->>> t.celsius = -273
->>> t.celsius = -274
-Traceback (most recent call last):
-ValueError: celsius (-274) is not in range(-273.15, 99999)
->>>
->>> print(t.kelvin)
-10
->>> print(t.celsius)
--273
-
-Note ``__repr__()`` method and how to access Descriptor value.
-
->>> from dataclasses import dataclass
->>>
->>>
->>> @dataclass
-... class ValueRange:
-...     name: str
-...     min: float
-...     max: float
-...     value: float = None
-...
-...     def __set__(self, parent, value):
-...         if value not in range(self.min, self.max):
-...             raise ValueError(f'{self.name} is not between {self.min} and {self.max}')
-...         self.value = value
->>>
->>>
->>> class Astronaut:
-...     name: str
-...     age = ValueRange('Age', min=28, max=42)
-...     height = ValueRange('Height', min=150, max=200)
-...
-...     def __init__(self, name, age, height):
-...         self.name = name
-...         self.height = height
-...         self.age = age
-...
-...     def __repr__(self):
-...         name = self.name
-...         age = self.age.value
-...         height = self.height.value
-...         return f'Astronaut({name=}, {age=}, {height=})'
->>>
->>>
->>> Astronaut('Mark Watney', age=38, height=170)
-Astronaut(name='Mark Watney', age=38, height=170)
->>>
->>> Astronaut('Melissa Lewis', age=44, height=170)
-Traceback (most recent call last):
-ValueError: Age is not between 28 and 42
->>>
->>> Astronaut('Rick Martinez', age=38, height=210)
-Traceback (most recent call last):
-ValueError: Height is not between 150 and 200
-
->>> from dataclasses import dataclass
->>>
->>>
->>> @dataclass
-... class ValueRange:
-...     name: str
-...     min: int
-...     max: int
-...
-...     def __set__(self, instance, value):
-...         print(f'Setter: {self.name} -> {value}')
->>>
->>>
->>> class Point:
-...     x = ValueRange('x', 0, 10)
-...     y = ValueRange('y', 0, 10)
-...     z = ValueRange('z', 0, 10)
-...
-...     def __init__(self, x, y, z):
-...         self.x = x
-...         self.y = y
-...         self.z = z
-...
-...     def __setattr__(self, attrname, value):
-...         print(f'Setattr: {attrname} -> {value}')
-...         super().__setattr__(attrname, value)
->>>
->>>
->>> p = Point(1,2,3)
-Setattr: x -> 1
-Setter: x -> 1
-Setattr: y -> 2
-Setter: y -> 2
-Setattr: z -> 3
-Setter: z -> 3
->>>
->>> p.notexisting = 1337
-Setattr: notexisting -> 1337
-
 
 Inheritance
 -----------
-.. code-block:: python
-
-    class Validator:
-        attribute_name: str
-
-        def __set_name__(self, parent, attribute_name):
-            self.attribute_name = f'_{attribute_name}'
-
-        def __get__(self, parent, parent_type):
-            return getattr(parent, self.attribute_name)
-
-        def __delete__(self, parent):
-            setattr(parent, self.attribute_name, None)
-
-
-    class RangeValidator(Validator):
-        min: int | float
-        max: int | float
-
-        def __init__(self, min: float, max: float):
-            self.min = min
-            self.max = max
-
-        def __set__(self, parent, newvalue):
-            if self.min <= newvalue < self.max:
-                setattr(parent, self.attribute_name, newvalue)
-            else:
-                attr = f'{parent.__class__.__name__}.{self.attribute_name.removeprefix("_")}'
-                min = self.min
-                max = self.max
-                raise ValueError(f'{attr} value: {newvalue} is out of range {min=}, {max=}')
-
-
-    class Astronaut:
-        firstname: str
-        lastname: str
-        age: int = RangeValidator(min=27, max=50)
-        height: float = RangeValidator(min=150, max=200)
-        weight: float = RangeValidator(min=50, max=90)
-        _firstname: str
-        _lastname: str
-        _age: int
-        _height: float
-        _weight: float
-
-
-    astro = Astronaut()
 
 
 Function Descriptor
@@ -458,6 +184,245 @@ False
 
 Use Case - 0x01
 ---------------
+* Kelvin Temperature Validator
+
+>>> class KelvinValidator:
+...     def __set__(self, cls, value):
+...         if value < 0.0:
+...             raise ValueError('Cannot set negative Kelvin')
+...         cls._value = value
+>>>
+>>>
+>>> class Temperature:
+...     kelvin = KelvinValidator()
+...
+...     def __init__(self):
+...         self._value = None
+>>>
+>>>
+>>> t = Temperature()
+>>> t.kelvin = -1
+Traceback (most recent call last):
+ValueError: Cannot set negative Kelvin
+
+
+Use Case - 0x02
+---------------
+* Temperature Conversion
+
+>>> class Kelvin:
+...     def __get__(self, cls, *args):
+...         return round(cls._value, 2)
+...
+...     def __set__(self, cls, value):
+...         cls._value = value
+>>>
+>>>
+>>> class Celsius:
+...     def __get__(self, cls, *args):
+...         value = cls._value - 273.15
+...         return round(value, 2)
+...
+...     def __set__(self, cls, value):
+...         cls._value = value + 273.15
+>>>
+>>>
+>>> class Fahrenheit:
+...     def __get__(self, cls, *args):
+...         value = (cls._value - 273.15) * 9 / 5 + 32
+...         return round(value, 2)
+...
+...     def __set__(self, cls, fahrenheit):
+...         cls._value = (fahrenheit - 32) * 5 / 9 + 273.15
+>>>
+>>>
+>>> class Temperature:
+...     kelvin = Kelvin()
+...     celsius = Celsius()
+...     fahrenheit = Fahrenheit()
+...
+...     def __init__(self):
+...         self._value = 0.0
+>>>
+>>>
+>>> t = Temperature()
+>>>
+>>> t.kelvin = 273.15
+>>> print(t.kelvin)
+273.15
+>>> print(t.celsius)
+0.0
+>>> print(t.fahrenheit)
+32.0
+>>>
+>>> t.fahrenheit = 100
+>>> print(t.kelvin)
+310.93
+>>> print(t.celsius)
+37.78
+>>> print(t.fahrenheit)
+100.0
+>>>
+>>> t.celsius = 100
+>>> print(t.kelvin)
+373.15
+>>> print(t.celsius)
+100.0
+>>> print(t.fahrenheit)
+212.0
+
+
+Use Case - 0x03
+---------------
+* Value Range Descriptor
+
+>>> class Between:
+...     def __init__(self, min, max):
+...         self.min = min
+...         self.max = max
+...
+...     def __set_name__(self, cls, attrname):
+...         self.attrname = f'_{attrname}'
+...
+...     def __set__(self, cls, value):
+...         if not self.min <= value <= self.max:
+...             field = self.attrname.removeprefix('_')
+...             raise ValueError(f'Value of field "{field}" is not between {self.min} and {self.max}')
+...         setattr(cls, self.attrname, value)
+...
+...     def __get__(self, cls, clstype):
+...         return getattr(cls, self.attrname)
+...
+...     def __delete__(self, cls):
+...         setattr(cls, self.attrname, None)
+>>>
+>>>
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+...     age = Between(30, 50)
+...     height = Between(150, 210)
+...     weight = Between(50, 90)
+
+>>> astro = Astronaut()
+>>>
+>>> astro.firstname = 'Mark'
+>>> astro.lastname = 'Watney'
+>>> astro.age = 40
+>>> astro.height = 175
+>>> astro.weight = 75
+
+>>> astro.age = 18
+Traceback (most recent call last):
+ValueError: Value of field "age" is not between 30 and 50
+>>>
+>>> astro.weight = 100
+Traceback (most recent call last):
+ValueError: Value of field "weight" is not between 50 and 90
+>>>
+>>> astro.height = 220
+Traceback (most recent call last):
+ValueError: Value of field "height" is not between 150 and 210
+
+
+Use Case - 0x04
+---------------
+>>> import re
+>>>
+>>>
+>>> class Validator:
+...     def __set_name__(self, cls, attribute_name):
+...         self.attrname_short = f'_{attribute_name}'
+...         self.attrname_full = f'{cls.__name__}.{attribute_name}'
+...
+...     def __get__(self, cls, cls_type):
+...         return getattr(cls, self.attrname_short)
+...
+...     def __delete__(self, cls):
+...         setattr(cls, self.attrname_short, None)
+>>>
+>>>
+>>> class Between(Validator):
+...     def __init__(self, min, max):
+...         self.min = min
+...         self.max = max
+...
+...     def __set__(self, cls, value):
+...         if self.min <= value < self.max:
+...             setattr(cls, self.attrname_short, value)
+...         else:
+...             raise ValueError(f'{self.attrname_full} value: {value} '
+...                              f'is not between {self.min} and {self.max}')
+>>>
+>>>
+>>> class MaxLength(Validator):
+...     def __init__(self, max_length):
+...         self.max_length = max_length
+...
+...     def __set__(self, cls, value):
+...         if len(value) <= self.max_length:
+...             setattr(cls, self.attrname_short, value)
+...         else:
+...             raise ValueError(f'{self.attrname_full} value: {value} '
+...                              f'is longer than {self.max_length}')
+>>>
+>>> class MatchesRegex(Validator):
+...     def __init__(self, pattern):
+...         self.pattern = pattern
+...         self.regex = re.compile(pattern)
+...
+...     def __set__(self, cls, value):
+...         if self.regex.match(value):
+...             setattr(cls, self.attrname_short, value)
+...         else:
+...             raise ValueError(f'{self.attrname_full} value: {value} '
+...                              f'does not match pattern: {self.pattern}')
+>>>
+>>>
+>>> class Astronaut:
+...     firstname: str = MaxLength(20)
+...     lastname: str = MaxLength(30)
+...     age: int = Between(30, 50)
+...     height: float = Between(150, 210)
+...     weight: float = Between(50, 90)
+...     email: str = MatchesRegex('^[a-z]+@nasa.gov$')
+
+>>> astro = Astronaut()
+>>>
+>>> astro.firstname = 'Mark'
+>>> astro.lastname = 'Watney'
+>>> astro.age = 40
+>>> astro.height = 175
+>>> astro.weight = 80
+>>> astro.email = 'mwatney@nasa.gov'
+
+>>> astro.firstname = 'MarkMarkMarkMarkMarkMark'
+Traceback (most recent call last):
+ValueError: Astronaut.firstname value: MarkMarkMarkMarkMarkMark is longer than 20
+
+>>> astro.lastname = 'WatneyWatneyWatneyWatneyWatneyWatney'
+Traceback (most recent call last):
+ValueError: Astronaut.lastname value: WatneyWatneyWatneyWatneyWatneyWatney is longer than 30
+
+>>> astro.age = 60
+Traceback (most recent call last):
+ValueError: Astronaut.age value: 60 is not between 30 and 50
+
+>>> astro.height = 220
+Traceback (most recent call last):
+ValueError: Astronaut.height value: 220 is not between 150 and 210
+
+>>> astro.weight = 100
+Traceback (most recent call last):
+ValueError: Astronaut.weight value: 100 is not between 50 and 90
+
+>>> astro.email = 'invalid-email@nasa.gov'
+Traceback (most recent call last):
+ValueError: Astronaut.email value: invalid-email@nasa.gov does not match pattern: ^[a-z]+@nasa.gov$
+
+
+Use Case - 0x05
+---------------
 * Timezone Converter Descriptor
 
 .. figure:: img/protocol-descriptor-timezone.png
@@ -476,13 +441,13 @@ Descriptor Timezone Converter:
 ...     def __init__(self, name):
 ...         self.timezone = ZoneInfo(name)
 ...
-...     def __get__(self, parent, *args):
-...         utc = parent.utc.replace(tzinfo=ZoneInfo('UTC'))
+...     def __get__(self, cls, *args):
+...         utc = cls.utc.replace(tzinfo=ZoneInfo('UTC'))
 ...         return utc.astimezone(self.timezone)
 ...
-...     def __set__(self, parent, new_datetime):
+...     def __set__(self, cls, new_datetime):
 ...         local_time = new_datetime.replace(tzinfo=self.timezone)
-...         parent.utc = local_time.astimezone(ZoneInfo('UTC'))
+...         cls.utc = local_time.astimezone(ZoneInfo('UTC'))
 >>>
 >>>
 >>> @dataclass
