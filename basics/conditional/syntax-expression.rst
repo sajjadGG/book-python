@@ -1,5 +1,6 @@
 Boolean Expression
 ==================
+* Ternary Operator
 * Conditional Expression
 * Shorthand Expressions
 

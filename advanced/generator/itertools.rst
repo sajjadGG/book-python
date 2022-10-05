@@ -384,8 +384,8 @@ Use Case - 0x01
 >>> modes = ['r', 'w', 'a']
 >>> encodings = ['utf-8', None, 'latin-1']
 
->>> options = product(filenames, modes, encodings)
->>> pprint(list(options))
+>>> result = product(filenames, modes, encodings)
+>>> pprint(list(result))
 [('file1.txt', 'r', 'utf-8'),
  ('file1.txt', 'r', None),
  ('file1.txt', 'r', 'latin-1'),
@@ -404,6 +404,98 @@ Use Case - 0x01
  ('file2.txt', 'a', 'utf-8'),
  ('file2.txt', 'a', None),
  ('file2.txt', 'a', 'latin-1')]
+
+
+Use Case - 0x02
+---------------
+>>> from itertools import permutations
+>>>
+>>>
+>>> actions = ['press play', 'press stop', 'press eject', 'press rewind']
+>>>
+>>> result = permutations(actions)
+>>> pprint(list(result))
+[('press play', 'press stop', 'press eject', 'press rewind'),
+ ('press play', 'press stop', 'press rewind', 'press eject'),
+ ('press play', 'press eject', 'press stop', 'press rewind'),
+ ('press play', 'press eject', 'press rewind', 'press stop'),
+ ('press play', 'press rewind', 'press stop', 'press eject'),
+ ('press play', 'press rewind', 'press eject', 'press stop'),
+ ('press stop', 'press play', 'press eject', 'press rewind'),
+ ('press stop', 'press play', 'press rewind', 'press eject'),
+ ('press stop', 'press eject', 'press play', 'press rewind'),
+ ('press stop', 'press eject', 'press rewind', 'press play'),
+ ('press stop', 'press rewind', 'press play', 'press eject'),
+ ('press stop', 'press rewind', 'press eject', 'press play'),
+ ('press eject', 'press play', 'press stop', 'press rewind'),
+ ('press eject', 'press play', 'press rewind', 'press stop'),
+ ('press eject', 'press stop', 'press play', 'press rewind'),
+ ('press eject', 'press stop', 'press rewind', 'press play'),
+ ('press eject', 'press rewind', 'press play', 'press stop'),
+ ('press eject', 'press rewind', 'press stop', 'press play'),
+ ('press rewind', 'press play', 'press stop', 'press eject'),
+ ('press rewind', 'press play', 'press eject', 'press stop'),
+ ('press rewind', 'press stop', 'press play', 'press eject'),
+ ('press rewind', 'press stop', 'press eject', 'press play'),
+ ('press rewind', 'press eject', 'press play', 'press stop'),
+ ('press rewind', 'press eject', 'press stop', 'press play')]
+
+
+Use Case - 0x03
+---------------
+>>> from itertools import combinations
+>>>
+>>>
+>>> colors = ['red', 'orange', 'yellow', 'green', 'blue']
+>>>
+>>> result = combinations(colors, 3)
+>>> pprint(list(result))
+[('red', 'orange', 'yellow'),
+ ('red', 'orange', 'green'),
+ ('red', 'orange', 'blue'),
+ ('red', 'yellow', 'green'),
+ ('red', 'yellow', 'blue'),
+ ('red', 'green', 'blue'),
+ ('orange', 'yellow', 'green'),
+ ('orange', 'yellow', 'blue'),
+ ('orange', 'green', 'blue'),
+ ('yellow', 'green', 'blue')]
+
+
+Use Case - 0x04
+---------------
+>>> from itertools import chain
+>>>
+>>>
+>>> def powerset(iterable):
+...     """
+...     >>> powerset ([1,2,31])
+...     () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)
+...     """
+...     s = list(iterable)
+...     return chain.from_iterable(combinations(s,r) for r in range(len(s)+1))
+...
+>>>
+>>> users = ['Mark', 'Melissa', 'Rick', 'Alex']
+>>>
+>>> result = powerset(users)
+>>> pprint(list(result))
+[(),
+ ('Mark',),
+ ('Melissa',),
+ ('Rick',),
+ ('Alex',),
+ ('Mark', 'Melissa'),
+ ('Mark', 'Rick'),
+ ('Mark', 'Alex'),
+ ('Melissa', 'Rick'),
+ ('Melissa', 'Alex'),
+ ('Rick', 'Alex'),
+ ('Mark', 'Melissa', 'Rick'),
+ ('Mark', 'Melissa', 'Alex'),
+ ('Mark', 'Rick', 'Alex'),
+ ('Melissa', 'Rick', 'Alex'),
+ ('Mark', 'Melissa', 'Rick', 'Alex')]
 
 
 Assignments

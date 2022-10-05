@@ -229,6 +229,68 @@ Stub
          def tank(self):
              raise NotImplementedError
 
+
+Use Case - 0x01
+---------------
+>>> def capture(func, *args, **kwargs):
+...     """Return a tuple with the returned exception and value."""
+...     try:
+...         return [None, func(*args, **kwargs)]
+...     except Exception as e:
+...         return [type(e), None]
+...
+>>>
+>>>
+>>> for x in (-10, -1, 0, 0.2, 100, float('Inf'), float( 'Nan'), 'hello'):
+...     assert capture(log, x) == capture(altlog, X)  # doctest: +SKIP
+
+
+Use Case - 0x02
+---------------
+>>> device_status = 'Status: connected'
+>>> load_limits = False
+>>> load = 75
+>>> dead_ports = {12, 8, 15, 25}
+>>> ports_in_use = {10, 14, 6, 7, 20}
+>>> allowed_ports = (2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 22)
+>>>
+>>>
+>>> def is_active(x):
+...     """Predicate returning True if x is active port"""
+...     return x % 2 == 0
+
+Instead of:
+
+>>> overlap = False
+>>> for port in ports_in_use:
+...     if port in dead_ports:
+...         overlap = True
+>>> assert not overlap
+
+Write:
+
+>>> assert not any([port in dead_ports for port in ports_in_use])
+>>> assert not any(port in dead_ports for port in ports_in_use)
+>>> assert not dead_ports. intersection(ports_in_use)
+>>> assert dead_ports.isdisjoint(ports_in_use)
+
+
+Test objective: Make sure that all the ports in use are under 1024
+
+Bad:
+
+>>> okay = True
+>>> for port in ports_in_use:
+...     if port >= 1024:
+...         okay = False
+>>> assert okay
+
+Good:
+
+>>> assert sum( [port < 1024 for port in ports_in_use]) == len(ports_in_use)
+>>> assert all([port < 1024 for port in ports_in_use])
+>>> assert all(port < 1024 for port in ports_in_use)
+
 Assignments
 -----------
 .. literalinclude:: assignments/test_unittest_rectangle.py
