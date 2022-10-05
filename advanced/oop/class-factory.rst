@@ -93,6 +93,92 @@ Recap
 >>> MyClass = type('MyClass', (Parent,), {'myattr': 1, 'mymethod': mymethod})
 
 
+What is a class?
+----------------
+>>> def hello_static():
+...     print('hello')
+>>>
+>>> def hello_dynamic(self):
+...     print('hello')
+>>>
+>>> def myinit(self):
+...     ...
+>>>
+>>> def mystr(self):
+...     ...
+>>>
+>>> Astronaut = type('Astronaut', (), {
+...     '__init__': myinit,
+...     '__str__': mystr,
+...     '__repr__': mystr,
+...     'firstname': 'Mark',
+...     'lastname': 'Watney',
+...     'hello_static': hello_static,
+...     'hello_dynamic': hello_dynamic,
+... })
+
+>>> hex(id(hello_static))  # doctest: +SKIP
+0x1064e3910
+>>>
+>>> hex(id(hello_dynamic))  # doctest: +SKIP
+0x106082830
+>>>
+>>> hex(id(myinit))  # doctest: +SKIP
+0x103fb4540
+>>>
+>>> hex(id(mystr))  # doctest: +SKIP
+0x1064e2e60
+>>>
+>>> hex(id('Mark'))  # doctest: +SKIP
+0x1062527f0
+>>>
+>>> hex(id('Watney'))  # doctest: +SKIP
+0x1063502b0
+
+>>> # doctest: +SKIP
+... Astronaut = {
+...     '__init__': 0x103fb4540,
+...     '__str__': 0x1064e2e60,
+...     '__repr__': 0x1064e2e60,
+...     'firstname': 0x1062527f0,
+...     'lastname': 0x1063502b0,
+...     'hello_static': 0x1064e3910,
+...     'hello_dynamic': 0x106082830,
+... }
+
+Mind, how similar this is to C language struct:
+
+>>> class Astronaut:
+...     firstname: str
+...     lastname: str
+>>>
+>>>
+>>> mark = Astronaut()
+>>>
+>>> mark.firstname = 'Mark'
+>>> mark.lastname = 'Watney'
+>>>
+>>> print(mark.firstname)
+Mark
+>>> print(mark.lastname)
+Watney
+
+.. code-block:: c
+
+    struct Astronaut {
+      char firstname[30];
+      char lastname[30];
+    };
+
+    mark = (struct Astronaut*) malloc(sizeof(struct Astronaut));
+
+    mark->firstname = "Mark";
+    mark->lastname = "Watney";
+
+    printf(mark->firstname);
+    printf(mark->lastname);
+
+
 Dynamic Class Creation
 ----------------------
 >>> Taikonaut()
@@ -310,7 +396,7 @@ Use Case - 0x03
 
 Use Case - 0x04
 ---------------
-* Dynamic factory
+* Object factory
 
 >>> from dataclasses import dataclass
 >>>
@@ -362,6 +448,93 @@ Use Case - 0x04
 
 Use Case - 0x05
 ---------------
+* Class factory
+
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>>
+>>>
+>>> @dataclass
+... class Iris:
+...     sepal_length: float
+...     sepal_width: float
+...     petal_length: float
+...     petal_width: float
+>>>
+>>>
+>>>
+>>> def factory(species: str):
+...     clsname = species.capitalize()
+...     classes = globals()
+...     if clsname not in classes:
+...         classes[clsname] = type(clsname, (Iris,), {})
+...     return classes[clsname]
+>>>
+>>>
+>>> result = [factory(species)(*features)
+...           for *features, species in DATA[1:]]
+>>>
+>>> result  # doctest: +NORMALIZE_WHITESPACE
+[Virginica(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9),
+ Setosa(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2),
+ Versicolor(sepal_length=5.7, sepal_width=2.8, petal_length=4.1, petal_width=1.3),
+ Virginica(sepal_length=6.3, sepal_width=2.9, petal_length=5.6, petal_width=1.8),
+ Versicolor(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5),
+ Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2)]
+
+
+Use Case - 0x06
+---------------
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>>
+>>>
+>>> @dataclass
+... class Iris:
+...     sepal_length: float
+...     sepal_width: float
+...     petal_length: float
+...     petal_width: float
+>>>
+>>>
+>>> def factory(row):
+...     *features, species = row
+...     clsname = species.capitalize()
+...     cls = type(clsname, (Iris,), {})
+...     return cls(*features)
+>>>
+>>>
+>>> result = map(factory, DATA[1:])
+>>>
+>>> list(result)  # doctest: +NORMALIZE_WHITESPACE
+[Virginica(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9),
+ Setosa(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2),
+ Versicolor(sepal_length=5.7, sepal_width=2.8, petal_length=4.1, petal_width=1.3),
+ Virginica(sepal_length=6.3, sepal_width=2.9, petal_length=5.6, petal_width=1.8),
+ Versicolor(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5),
+ Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2)]
+
+
+Use Case - 0x07
+---------------
 >>> from pprint import pprint
 >>>
 >>>
@@ -407,7 +580,52 @@ Use Case - 0x05
  Virginica(7.6, 3.0, 6.6, 2.1)]
 
 
-Use Case - 0x06
+Use Case - 0x08
+---------------
+>>> DATA = [
+...     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
+
+>>> def myinit(self, **kwargs):
+...     self.__dict__ = kwargs
+>>>
+>>> def mystr(self):
+...     clsname = self.__class__.__name__
+...     values = tuple(vars(self).values())
+...     return f'{clsname}{values}'
+>>>
+>>> Iris = type('Iris', (), {
+...     '__init__': myinit,
+...     '__str__': mystr,
+...     '__repr__': mystr})
+
+>>> result = []
+>>> header = [x.lower().replace(' ', '_') for x in DATA[0]]
+>>> data = [dict(zip(header,row)) for row in DATA[1:]]
+>>>
+>>> for row in data:
+...     clsname = row.pop('species').capitalize()
+...     if clsname not in globals():
+...         globals()[clsname] = type(clsname, (Iris,), {})
+...     cls = globals()[clsname]
+...     iris = cls(**row)
+...     result.append(iris)
+
+>>> pprint(result, width=120)
+[Virginica(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9),
+ Setosa(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2),
+ Versicolor(sepal_length=5.7, sepal_width=2.8, petal_length=4.1, petal_width=1.3),
+ Virginica(sepal_length=6.3, sepal_width=2.9, petal_length=5.6, petal_width=1.8),
+ Versicolor(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5),
+ Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2)]
+
+
+Use Case - 0x09
 ---------------
 >>> from itertools import zip_longest
 >>>

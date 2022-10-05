@@ -83,7 +83,16 @@ class Account:
         else:
             return UserAccount(username, uid)
 
+result = map(Account, DATA.splitlines())
 
-# Parse DATA and convert to UserAccount or SystemAccount
-# type: list[Account]
+
+# Alternative Solution
+
+class Account:
+    def __new__(cls, line, *args, **kwargs):
+        username, password, uid, *_ = line.strip().split(':')
+        uid = int(uid)
+        cls = UserAccount if uid >= 1000 else SystemAccount
+        return cls(username, uid)  # noqa
+
 result = map(Account, DATA.splitlines())

@@ -32,7 +32,7 @@ Hints:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
+    >>> list(result)  # doctest: +NORMALIZE_WHITESPACE
     [Virginica(5.8, 2.7, 5.1, 1.9),
      Setosa(5.1, 3.5, 1.4, 0.2),
      Versicolor(5.7, 2.8, 4.1, 1.3),
@@ -75,8 +75,17 @@ class Iris:
 # type: list[Iris]
 result = ...
 
-
 # Solution
+def factory(row):
+    *features, species = row
+    clsname = species.capitalize()
+    cls = type(clsname, (Iris,), {})
+    return cls(*features)
+
+result = map(factory, DATA[1:])
+
+
+# Alternative Solution
 result = [cls(*values)
           for *values,species in DATA[1:]
           if (clsname := species.capitalize())
