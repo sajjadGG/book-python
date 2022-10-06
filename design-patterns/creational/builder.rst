@@ -3,6 +3,57 @@ Builder
 * EN: Builder
 * PL: Budowniczy
 * Type: object
+* Why: To separate the construction of an object from its representation
+* Usecase: Export data to different formats
+
+
+Pattern
+-------
+.. figure:: img/designpatterns-builder-pattern.png
+
+.. literalinclude:: src/designpatterns-builder-pattern.md
+    :language: md
+
+
+Problem
+-------
+* Violates Open/Close Principle
+* Tight coupling between Presentation class with formats
+* PDF has pages, Movies has frames, this knowledge belongs to somewhere else
+* Duplicated code
+* Magic number
+
+.. figure:: img/designpatterns-builder-problem.png
+
+.. literalinclude:: src/designpatterns-builder-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-builder-problem.py
+    :language: python
+
+
+Solution
+--------
+* Use the builder pattern to separate the exporting logic from the presentation format
+* The same exporting logic belongs to the different formats
+
+.. figure:: img/designpatterns-builder-solution.png
+
+.. literalinclude:: src/designpatterns-builder-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-builder-solution.py
+    :language: python
+
+
+Use Case - 0x01
+---------------
+.. literalinclude:: src/designpatterns-builder-usecase-1.py
+    :language: python
+
+
+Use Case - 0x02
+---------------
 * When language does not have keyword arguments to functions and methods
 * https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
 
@@ -26,36 +77,6 @@ Builder
 ...                 True, False, True, False, False, False, None, False, False, None,
 ...                 'infer', None, b'.', None, '"', 0, None, None, None, None, None,
 ...                 True, True, 0, True, False, True, False, None)
-
-
-Pattern
--------
-.. figure:: img/designpatterns-builder-pattern.png
-
-.. literalinclude:: src/designpatterns-builder-pattern.md
-    :language: md
-
-
-Problem
--------
-.. figure:: img/designpatterns-builder-problem.png
-
-.. literalinclude:: src/designpatterns-builder-problem.md
-    :language: md
-
-.. literalinclude:: src/designpatterns-builder-problem.py
-    :language: python
-
-
-Solution
---------
-.. figure:: img/designpatterns-builder-solution.png
-
-.. literalinclude:: src/designpatterns-builder-solution.md
-    :language: md
-
-.. literalinclude:: src/designpatterns-builder-solution.py
-    :language: python
 
 
 Assignments
