@@ -50,7 +50,7 @@ a=1, b=2
 
 
 Chained Assignment
-----------------
+------------------
 * ``a = b = 1``
 * ``identifier1 = identifier2 = value``
 

@@ -3,7 +3,7 @@ html_baseurl = 'https://matplotlib.astrotech.io'
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
 
-needs_sphinx = '4.0'
+needs_sphinx = '5.2'
 project_language = 'en'
 html_theme = 'sphinx_rtd_theme'
 pygments_style = 'stata-dark'
@@ -64,10 +64,10 @@ extensions = [
 
 source_suffix = {
     '.rst': 'restructuredtext',
-    '.md': 'markdown',
 }
 
 if 'recommonmark' in extensions:
+    source_suffix['.md'] = 'restructuredtext'
     def setup(app):
         from recommonmark.transform import AutoStructify
         app.add_config_value('recommonmark_config', {
