@@ -2,7 +2,7 @@
 * Assignment: Protocol Property Getter
 * Complexity: easy
 * Lines of code: 4 lines
-* Time: 5 min
+* Time: 3 min
 
 English:
     1. Define class `Point` with `x`, `y`, `z` attributes
