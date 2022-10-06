@@ -82,7 +82,7 @@ Async
 .. todo:: generate image from mermaid code
 
 
-Use Cases
+Rationale
 ---------
 .. figure:: img/uml-sequencediagram-1.png
 .. figure:: img/uml-sequencediagram-2.jpg

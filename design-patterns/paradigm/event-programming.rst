@@ -58,8 +58,8 @@ Bases: (<class '__main__.Person'>,)
 Attrs: {'__module__': '__main__', '__qualname__': 'Astronaut'}
 
 
-Implementation
---------------
+Solution
+--------
 .. code-block:: python
 
     class event:

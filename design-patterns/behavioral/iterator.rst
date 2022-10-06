@@ -5,7 +5,7 @@ Iterator
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * History (like browser history)
 
@@ -16,12 +16,12 @@ Problem
     :language: python
 
 
-Design
-------
+Pattern
+-------
 
 
-Implementation
---------------
+Solution
+--------
 .. figure:: img/designpatterns-iterator-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-iterator-impl.py

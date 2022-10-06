@@ -231,7 +231,7 @@ Boxes and Arrows
 .. figure:: img/uml-classdiagram-usecase-01.jpg
 
 
-Use Cases
+Rationale
 ---------
 .. figure:: img/uml-classdiagram-usecase-02.png
 .. figure:: img/uml-classdiagram-usecase-03.png

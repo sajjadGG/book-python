@@ -407,4 +407,6 @@ References
 .. [#StackOverflowMRO] T.M15. How does Python's super() work with multiple inheritance? Year: 2020. Retrieved: 2022-07-13. URL: https://stackoverflow.com/a/62753514
 .. [#StackOverflowSuper] Zags. How does Python's super() work with multiple inheritance? Year: 2017. Retrieved: 2022-07-13. URL: https://stackoverflow.com/a/46286174
 
+Assignments
+-----------
 .. todo:: Assignments

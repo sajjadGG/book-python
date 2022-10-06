@@ -5,7 +5,7 @@ Strategy
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * Store images with compressor and filters
 
@@ -33,8 +33,8 @@ Problem
                 print('Applying high contrast filter')
 
 
-Design
-------
+Pattern
+-------
 * Similar to `State Pattern`
 * No single states
 * Can have multiple states
@@ -43,8 +43,8 @@ Design
 .. figure:: img/designpatterns-strategy-gof.png
 
 
-Implementation
---------------
+Solution
+--------
 .. figure:: img/designpatterns-strategy-usecase1.png
 .. figure:: img/designpatterns-strategy-usecase2.png
 .. figure:: img/designpatterns-strategy-vs-state.png
@@ -53,4 +53,6 @@ Implementation
     :language: python
 
 
+Assignments
+-----------
 .. todo:: Assignments

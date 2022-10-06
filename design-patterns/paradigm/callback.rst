@@ -4,8 +4,8 @@ Callback
 * PL:
 
 
-Implementation
---------------
+Solution
+--------
 >>> from http import HTTPStatus
 >>> import requests
 >>>

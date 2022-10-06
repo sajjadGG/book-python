@@ -5,18 +5,20 @@ Gateway
 * Type: class
 
 
-Use Cases
+Rationale
 ---------
 
 
-Design
-------
+Pattern
+-------
 
 
-Implementation
---------------
+Solution
+--------
 .. literalinclude:: ../_src/designpatterns-gateway.py
     :language: python
 
 
+Assignments
+-----------
 .. todo:: Assignments

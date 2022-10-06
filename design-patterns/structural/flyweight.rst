@@ -5,7 +5,7 @@ Flyweight
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * In applications with large number of objects
 * Objects take significant amount of memory
@@ -23,13 +23,13 @@ Problem
     :language: python
 
 
-Design
-------
+Pattern
+-------
 .. figure:: img/designpatterns-flyweight-gof.png
 
 
-Implementation
---------------
+Solution
+--------
 * Separate the data you want to share from other data
 * Pattern will create a dict with point type and its icon
 * It will reuse icon for each type
@@ -41,4 +41,6 @@ Implementation
     :language: python
 
 
+Assignments
+-----------
 .. todo:: Assignments

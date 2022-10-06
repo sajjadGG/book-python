@@ -5,7 +5,7 @@ Bridge
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * Nested hierarchies of classes
 
@@ -36,12 +36,12 @@ Problem
     :language: python
 
 
-Design
-------
+Pattern
+-------
 
 
-Implementation
---------------
+Solution
+--------
 * Hierarchy grows in two different directions
 * We can split complex hierarchy into two hierarchies which grows independently
 
@@ -52,4 +52,6 @@ Implementation
     :language: python
 
 
+Assignments
+-----------
 .. todo:: Assignments

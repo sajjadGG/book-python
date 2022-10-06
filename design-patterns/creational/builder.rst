@@ -3,15 +3,7 @@ Builder
 * EN: Builder
 * PL: Budowniczy
 * Type: object
-
-
-Use Cases
----------
 * When language does not have keyword arguments to functions and methods
-
-
-Problem
--------
 * https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
 
 >>> def read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer',
@@ -36,14 +28,36 @@ Problem
 ...                 True, True, 0, True, False, True, False, None)
 
 
-Design
-------
+Pattern
+-------
+.. figure:: img/designpatterns-builder-pattern.png
+
+.. literalinclude:: src/designpatterns-builder-pattern.md
+    :language: md
 
 
-Implementation
---------------
-.. literalinclude:: ../_src/designpatterns-builder.py
+Problem
+-------
+.. figure:: img/designpatterns-builder-problem.png
+
+.. literalinclude:: src/designpatterns-builder-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-builder-problem.py
     :language: python
 
 
+Solution
+--------
+.. figure:: img/designpatterns-builder-solution.png
+
+.. literalinclude:: src/designpatterns-builder-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-builder-solution.py
+    :language: python
+
+
+Assignments
+-----------
 .. todo:: Assignments

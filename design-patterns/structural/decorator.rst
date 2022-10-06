@@ -5,7 +5,7 @@ Decorator
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * Add additional behavior to an object
 
@@ -19,17 +19,19 @@ Problem
     :language: python
 
 
-Design
-------
+Pattern
+-------
 .. figure:: img/designpatterns-decorator-gof.png
 
 
-Implementation
---------------
+Solution
+--------
 .. figure:: img/designpatterns-decorator-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-decorator-impl.py
     :language: python
 
 
+Assignments
+-----------
 .. todo:: Assignments

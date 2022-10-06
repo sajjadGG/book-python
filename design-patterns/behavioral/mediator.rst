@@ -5,7 +5,7 @@ Mediator
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * Input fields which needs to collaborate
 * Cannot submit form if all required fields are not filled
@@ -13,17 +13,18 @@ Use Cases
 * Auto slug-field based on title content
 
 
-Design
-------
+Pattern
+-------
 .. figure:: img/designpatterns-mediator-gof.png
+
 
 Problem
 -------
 .. figure:: img/designpatterns-mediator-problem.png
 
 
-Implementation
---------------
+Solution
+--------
 .. figure:: img/designpatterns-mediator-usecase-1.png
 .. figure:: img/designpatterns-mediator-usecase-2.png
 

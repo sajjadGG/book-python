@@ -49,7 +49,7 @@ Solution
 10
 
 
-Use Cases
+Rationale
 ---------
 * https://docs.python.org/library/operator.html
 
@@ -80,4 +80,6 @@ Map Reduce
 .. figure:: img/idiom-reduce-mapreduce.gif
 
 
+Assignments
+-----------
 .. todo:: Assignments

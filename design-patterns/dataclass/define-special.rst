@@ -100,4 +100,6 @@ name of _ is used for a KW_ONLY field.
 ...     weight: float
 
 
+Assignments
+-----------
 .. todo:: Assignments

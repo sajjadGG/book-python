@@ -5,7 +5,7 @@ Adapter
 * Type: class and object
 
 
-Use Cases
+Rationale
 ---------
 * Convert an interface of an object to a different form
 * Like power socket adapter for US and EU
@@ -25,12 +25,12 @@ Problem
     :language: python
 
 
-Design
-------
+Pattern
+-------
 
 
-Implementation
---------------
+Solution
+--------
 * Inheritance is simpler
 * Composition is more flexible
 * Favor Composition over Inheritance
@@ -69,4 +69,6 @@ Use Case - 0x01
 [10, 12, 14, 16, 18]
 
 
+Assignments
+-----------
 .. todo:: Assignments

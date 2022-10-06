@@ -5,7 +5,7 @@ Proxy
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * Create a proxy, or agent for a remote object
 * Agent takes message and forwards to remote object
@@ -23,13 +23,13 @@ Problem
     :language: python
 
 
-Design
-------
+Pattern
+-------
 .. figure:: img/designpatterns-proxy-gof.png
 
 
-Implementation
---------------
+Solution
+--------
 * Lazy evaluation
 * Open/Close Principle
 
@@ -44,4 +44,6 @@ Proxy with Authorization and Logging:
     :language: python
 
 
+Assignments
+-----------
 .. todo:: Assignments

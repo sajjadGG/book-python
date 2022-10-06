@@ -57,7 +57,7 @@ Traceback (most recent call last):
 StopIteration
 
 
-Use Cases
+Rationale
 ---------
 Built-in functions:
 
@@ -172,4 +172,6 @@ Partial
 [1.1, 2.2, 3.3]
 
 
+Assignments
+-----------
 .. todo:: Assignments

@@ -5,7 +5,7 @@ State Machine
 * Type: class
 
 
-Use Cases
+Rationale
 ---------
 * StateMachine imposes a structure to automatically change the implementation from one object to the next
 * The current implementation represents the state that a system is in
@@ -18,8 +18,8 @@ Use Cases
 * There is a single master state transition table for the whole system
 
 
-Design
-------
+Pattern
+-------
 .. code-block:: text
 
     statemachine TrafficLight:
@@ -34,10 +34,12 @@ Design
     Green.wait = sleep(2)
 
 
-Implementation
---------------
+Solution
+--------
 .. literalinclude:: ../_src/designpatterns-statemachine.py
     :language: python
 
 
+Assignments
+-----------
 .. todo:: Assignments

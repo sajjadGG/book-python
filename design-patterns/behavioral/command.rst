@@ -5,7 +5,7 @@ Command
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * GUI Buttons, menus
 * Macro recording
@@ -22,37 +22,22 @@ Problem
 -------
 .. code-block:: python
 
-    class Button:
-        __label: str
-
-        def set_label(self, name):
-            self.__label = name
-
-        def get_label(self):
-            return self.__label
-
-        def click(self):
-            ...
+.. literalinclude:: src/designpatterns-command-problem.py
+    :language: python
 
 
-    if __name__ == '__main__':
-        button = Button()
-        button.set_label('My Button')
-        button.click()
-
-
-Design
-------
+Pattern
+-------
 * Receiver — The Object that will receive and execute the command
 * Invoker — Which will send the command to the receiver
 * Command Object — Itself, which implements an execute, or action method, and contains all required information
 * Client — The main application or module which is aware of the Receiver, Invoker and Commands
 
-.. figure:: img/designpatterns-command-gof.png
+.. figure:: img/designpatterns-command-pattern.png
 
 
-Implementation
---------------
+Solution
+--------
 .. figure:: img/designpatterns-command-usecase.png
 
 Command pattern:
@@ -77,4 +62,6 @@ References
 
 
 
+Assignments
+-----------
 .. todo:: Assignments

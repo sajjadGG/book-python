@@ -5,7 +5,7 @@ Composite
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * Represent a hierarchy of objects
 * Groups (and subgroups) objects in Keynote
@@ -56,13 +56,13 @@ Problem
         group.render()
 
 
-Design
-------
+Pattern
+-------
 .. figure:: img/designpatterns-composite-gof.png
 
 
-Implementation
---------------
+Solution
+--------
 .. figure:: img/designpatterns-composite-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-composite.py

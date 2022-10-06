@@ -5,11 +5,12 @@ State
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * Changes based on class
 * Open/Close principle
 * Using polymorphism
+
 
 Problem
 -------
@@ -53,13 +54,13 @@ Problem
                 print('Erase something')
 
 
-Design
-------
+Pattern
+-------
 .. figure:: img/designpatterns-state-gof.png
 
 
-Implementation
---------------
+Solution
+--------
 .. figure:: img/designpatterns-state-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-state.py

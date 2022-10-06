@@ -337,4 +337,6 @@ References
 ----------
 .. [#pybookSyntaxMatch] https://python.astrotech.io/basics/conditional/syntax-match.html
 
+Assignments
+-----------
 .. todo:: Assignments

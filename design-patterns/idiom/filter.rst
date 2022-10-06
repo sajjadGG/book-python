@@ -84,7 +84,7 @@ Traceback (most recent call last):
 StopIteration
 
 
-Use Cases
+Rationale
 ---------
 >>> people = [
 ...     {'age': 21, 'name': 'Pan Twardowski'},

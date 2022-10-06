@@ -1,19 +1,19 @@
-class DB:
-    __connection = None
+class Database:
+    _connection = None
 
     @classmethod
     def connect(cls):
-        if not cls.__connection:
+        if not cls._connection:
             print('Establishing connection...')
-            cls.__connection = ...
-        return cls.__connection
+            cls._connection = ...
+        return cls._connection
 
 
 # Connecting for the first time
 # Will establish new connection
-first = DB.connect()
+first = Database.connect()
 
 # Connecting for the second time
 # Will use existing connection to the DB
 # The same handle as `first`
-second = DB.connect()
+second = Database.connect()

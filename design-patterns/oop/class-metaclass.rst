@@ -672,4 +672,6 @@ References
 .. [#pydocclassobject] https://docs.python.org/3/reference/datamodel.html#creating-the-class-object
 
 
+Assignments
+-----------
 .. todo:: Assignments

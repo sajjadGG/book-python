@@ -5,19 +5,19 @@ Memento
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * Undo operation
 * Remembering state of objects
 
 
-Design
-------
+Pattern
+-------
 .. figure:: img/designpatterns-memento-gof.png
 
 
-Implementation
---------------
+Solution
+--------
 .. figure:: img/designpatterns-memento-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-memento.py

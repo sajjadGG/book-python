@@ -5,20 +5,22 @@ Interpreter
 * Type: class
 
 
-Use Cases
+Rationale
 ---------
 
 
-Design
-------
+Pattern
+-------
 
 
-Implementation
---------------
+Solution
+--------
 .. todo:: Implementation of an Interpreter pattern
 
 .. literalinclude:: ../_src/designpatterns-interpreter.py
     :language: python
 
 
+Assignments
+-----------
 .. todo:: Assignments

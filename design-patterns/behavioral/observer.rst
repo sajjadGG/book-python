@@ -5,7 +5,7 @@ Observer
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * When the state of the object changes and you need to notify other objects about this change
 * Notify chart about changes in data to refresh
@@ -13,15 +13,15 @@ Use Cases
 * Push or pull style of communication
 
 
-Design
-------
+Pattern
+-------
 .. figure:: img/designpatterns-observer-gof.png
 .. figure:: img/designpatterns-observer-push.png
 .. figure:: img/designpatterns-observer-pull.png
 
 
-Implementation
---------------
+Solution
+--------
 .. figure:: img/designpatterns-observer-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-observer.py
@@ -34,4 +34,6 @@ Implementation
     :language: python
 
 
+Assignments
+-----------
 .. todo:: Assignments

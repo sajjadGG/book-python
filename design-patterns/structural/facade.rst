@@ -5,7 +5,7 @@ Façade
 * Type: object
 
 
-Use Cases
+Rationale
 ---------
 * Provide simple interface to complex system
 
@@ -23,18 +23,20 @@ Problem
     :language: python
 
 
-Design
-------
+Pattern
+-------
 
 
-Implementation
---------------
+Solution
+--------
 .. figure:: img/designpatterns-facade-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-facade-impl.py
     :language: python
 
 
+Assignments
+-----------
 .. todo:: Assignments
 
 * Clean datetime

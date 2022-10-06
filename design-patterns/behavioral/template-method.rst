@@ -5,7 +5,7 @@ Template Method
 * Type: class
 
 
-Use Cases
+Rationale
 ---------
 * Bank application with audit trail (all actions)
 * Record task history
@@ -52,14 +52,14 @@ Problem
         # Transfer Money
 
 
-Design
-------
+Pattern
+-------
 .. figure:: img/designpatterns-templatemethod-gof.png
 .. figure:: img/designpatterns-templatemethod-gof-hooks.png
 
 
-Implementation
---------------
+Solution
+--------
 .. figure:: img/designpatterns-templatemethod-usecase.png
 .. figure:: img/designpatterns-templatemethod-vs-inheritance.png
 .. figure:: img/designpatterns-templatemethod-vs-strategy.png
@@ -68,4 +68,6 @@ Implementation
     :language: python
 
 
+Assignments
+-----------
 .. todo:: Assignments

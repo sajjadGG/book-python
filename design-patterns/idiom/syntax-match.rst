@@ -160,4 +160,6 @@ References
 .. [#patternmatching] Raymond Hettinger. Retrieved: 2021-03-07. URL: https://twitter.com/raymondh/status/1361780586570948609?s=20
 
 
+Assignments
+-----------
 .. todo:: Assignments

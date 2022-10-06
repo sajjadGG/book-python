@@ -4,8 +4,8 @@ Any
 * If the iterable is empty, return False.
 
 
-Implementation
---------------
+Solution
+--------
 >>> def any(iterable):
 ...     if not iterable:
 ...         return False

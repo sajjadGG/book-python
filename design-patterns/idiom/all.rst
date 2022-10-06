@@ -3,8 +3,8 @@ All
 * Return True if all elements of the iterable are true (or if the iterable is empty).
 
 
-Implementation
---------------
+Solution
+--------
 >>> def all(iterable):
 ...     if not iterable:
 ...         return False
