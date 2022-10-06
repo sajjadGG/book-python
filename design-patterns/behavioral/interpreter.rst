@@ -5,19 +5,33 @@ Interpreter
 * Type: class
 
 
-Rationale
----------
-
-
 Pattern
 -------
+.. figure:: img/designpatterns-interpreter-pattern.png
+
+.. literalinclude:: uml/designpatterns-interpreter-pattern.md
+    :language: md
+
+
+Problem
+-------
+.. figure:: img/designpatterns-interpreter-problem.png
+
+.. literalinclude:: uml/designpatterns-interpreter-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-interpreter-problem.py
+    :language: python
 
 
 Solution
 --------
-.. todo:: Implementation of an Interpreter pattern
+.. figure:: img/designpatterns-interpreter-solution.png
 
-.. literalinclude:: ../_src/designpatterns-interpreter.py
+.. literalinclude:: uml/designpatterns-interpreter-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-interpreter-solution.py
     :language: python
 
 

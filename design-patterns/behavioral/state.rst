@@ -5,11 +5,16 @@ State
 * Type: object
 
 
-Rationale
----------
+Pattern
+-------
 * Changes based on class
 * Open/Close principle
 * Using polymorphism
+
+.. figure:: img/designpatterns-state-pattern.png
+
+.. literalinclude:: uml/designpatterns-state-pattern.md
+    :language: md
 
 
 Problem
@@ -17,53 +22,23 @@ Problem
 * Canvas object can behave differently depending on selected Tool
 * All behaviors are represented by subclass of the tool interface
 
-.. code-block:: python
+.. figure:: img/designpatterns-state-problem.png
 
-    from enum import Enum
+.. literalinclude:: uml/designpatterns-state-problem.md
+    :language: md
 
-
-    class ToolType(Enum):
-        SELECTION = 1
-        BRUSH = 2
-        ERASER = 3
-
-
-    class Canvas:
-        _current_tool: ToolType
-
-        def get_current_tool(self) -> ToolType:
-            return self._current_tool
-
-        def set_current_tool(self, tool: ToolType) -> None:
-            self._current_tool = tool
-
-        def mouse_down(self) -> None:
-            if self._current_tool == ToolType.SELECTION:
-                print('Selection icon')
-            elif self._current_tool == ToolType.BRUSH:
-                print('Brush icon')
-            elif self._current_tool == ToolType.ERASER:
-                print('Eraser icon')
-
-        def mouse_down(self) -> None:
-            if self._current_tool == ToolType.SELECTION:
-                print('Draw dashed rectangle')
-            elif self._current_tool == ToolType.BRUSH:
-                print('Draw line')
-            elif self._current_tool == ToolType.ERASER:
-                print('Erase something')
-
-
-Pattern
--------
-.. figure:: img/designpatterns-state-gof.png
+.. literalinclude:: src/designpatterns-state-problem.py
+    :language: python
 
 
 Solution
 --------
-.. figure:: img/designpatterns-state-usecase.png
+.. figure:: img/designpatterns-state-solution.png
 
-.. literalinclude:: ../_src/designpatterns-state.py
+.. literalinclude:: uml/designpatterns-state-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-state-solution.py
     :language: python
 
 

@@ -5,9 +5,14 @@ Decorator
 * Type: object
 
 
-Rationale
----------
+Pattern
+-------
 * Add additional behavior to an object
+
+.. figure:: img/designpatterns-decorator-pattern.png
+
+.. literalinclude:: src/designpatterns-decorator-pattern.md
+    :language: md
 
 
 Problem
@@ -15,20 +20,23 @@ Problem
 * What if we want compression and encryption?
 * What if something else will be added?
 
-.. literalinclude:: ../_src/designpatterns-decorator-problem.py
+.. figure:: img/designpatterns-decorator-problem.png
+
+.. literalinclude:: src/designpatterns-decorator-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-decorator-problem.py
     :language: python
-
-
-Pattern
--------
-.. figure:: img/designpatterns-decorator-gof.png
 
 
 Solution
 --------
-.. figure:: img/designpatterns-decorator-usecase.png
+.. figure:: img/designpatterns-decorator-solution.png
 
-.. literalinclude:: ../_src/designpatterns-decorator-impl.py
+.. literalinclude:: src/designpatterns-decorator-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-decorator-solution.py
     :language: python
 
 

@@ -5,9 +5,14 @@ Bridge
 * Type: object
 
 
-Rationale
----------
+Pattern
+-------
 * Nested hierarchies of classes
+
+.. figure:: img/designpatterns-bridge-pattern.png
+
+.. literalinclude:: src/designpatterns-bridge-pattern.md
+    :language: md
 
 
 Problem
@@ -32,12 +37,11 @@ Problem
 
 .. figure:: img/designpatterns-bridge-problem.png
 
-.. literalinclude:: ../_src/designpatterns-bridge-problem.py
+.. literalinclude:: src/designpatterns-bridge-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-bridge-problem.py
     :language: python
-
-
-Pattern
--------
 
 
 Solution
@@ -45,10 +49,13 @@ Solution
 * Hierarchy grows in two different directions
 * We can split complex hierarchy into two hierarchies which grows independently
 
-.. figure:: img/designpatterns-bridge-usecase1.png
-.. figure:: img/designpatterns-bridge-usecase2.png
+.. figure:: img/designpatterns-bridge-solution-1.png
+.. figure:: img/designpatterns-bridge-solution-2.png
 
-.. literalinclude:: ../_src/designpatterns-bridge-impl.py
+.. literalinclude:: src/designpatterns-bridge-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-bridge-solution.py
     :language: python
 
 

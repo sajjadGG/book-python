@@ -5,9 +5,14 @@ Façade
 * Type: object
 
 
-Rationale
----------
+Pattern
+-------
 * Provide simple interface to complex system
+
+.. figure:: img/designpatterns-facade-pattern.png
+
+.. literalinclude:: src/designpatterns-facade-pattern.md
+    :language: md
 
 
 Problem
@@ -19,19 +24,23 @@ Problem
     * send(AuthToken, message, target)
     * conn.disconnect()
 
-.. literalinclude:: ../_src/designpatterns-facade-problem.py
+.. figure:: img/designpatterns-facade-problem.png
+
+.. literalinclude:: src/designpatterns-facade-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-facade-problem.py
     :language: python
-
-
-Pattern
--------
 
 
 Solution
 --------
-.. figure:: img/designpatterns-facade-usecase.png
+.. figure:: img/designpatterns-facade-solution.png
 
-.. literalinclude:: ../_src/designpatterns-facade-impl.py
+.. literalinclude:: src/designpatterns-facade-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-facade-solution.py
     :language: python
 
 

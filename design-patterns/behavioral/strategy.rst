@@ -5,52 +5,46 @@ Strategy
 * Type: object
 
 
-Rationale
----------
-* Store images with compressor and filters
-
-Problem
--------
-.. code-block:: python
-
-    from dataclasses import dataclass
-
-
-    @dataclass
-    class ImageStorage:
-        _compressor: str
-        _filter: str
-
-        def store(self, filename) -> None:
-            if self._compressor == 'jpeg':
-                print('Compressing using JPEG')
-            elif self._compressor == 'png':
-                print('Compressing using PNG')
-
-            if self._filter == 'black&white':
-                print('Applying Black&White filter')
-            elif self._filter == 'high-contrast':
-                print('Applying high contrast filter')
-
-
 Pattern
 -------
 * Similar to `State Pattern`
 * No single states
 * Can have multiple states
 * Different behaviors are represented by strategy objects
+* Store images with compressor and filters
 
-.. figure:: img/designpatterns-strategy-gof.png
+.. figure:: img/designpatterns-strategy-pattern-1.png
+.. figure:: img/designpatterns-strategy-pattern-2.png
+
+    Strategy vs State Pattern
+
+.. literalinclude:: uml/designpatterns-strategy-pattern.md
+    :language: md
+
+
+Problem
+-------
+.. figure:: img/designpatterns-strategy-solution-1.png
+.. figure:: img/designpatterns-strategy-solution-2.png
+
+.. literalinclude:: uml/designpatterns-strategy-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-strategy-problem.py
+    :language: python
 
 
 Solution
 --------
-.. figure:: img/designpatterns-strategy-usecase1.png
-.. figure:: img/designpatterns-strategy-usecase2.png
-.. figure:: img/designpatterns-strategy-vs-state.png
+.. figure:: img/designpatterns-strategy-solution.png
 
-.. literalinclude:: ../_src/designpatterns-strategy.py
+.. literalinclude:: uml/designpatterns-strategy-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-strategy-solution.py
     :language: python
+
+
 
 
 Assignments

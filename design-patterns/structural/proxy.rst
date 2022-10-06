@@ -5,13 +5,17 @@ Proxy
 * Type: object
 
 
-Rationale
----------
+Pattern
+-------
 * Create a proxy, or agent for a remote object
 * Agent takes message and forwards to remote object
 * Proxy can log, authenticate or cache messages
 
-.. figure:: img/designpatterns-proxy-about.png
+.. figure:: img/designpatterns-proxy-pattern-1.png
+.. figure:: img/designpatterns-proxy-pattern-2.png
+
+.. literalinclude:: src/designpatterns-proxy-pattern.md
+    :language: md
 
 
 Problem
@@ -19,13 +23,13 @@ Problem
 * Creating Ebook object is costly, because we have to read it from the disk and store it in memory
 * It will load all ebooks in our library, just to select one
 
-.. literalinclude:: ../_src/designpatterns-proxy-problem.py
+.. figure:: img/designpatterns-proxy-problem.png
+
+.. literalinclude:: src/designpatterns-proxy-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-proxy-problem.py
     :language: python
-
-
-Pattern
--------
-.. figure:: img/designpatterns-proxy-gof.png
 
 
 Solution
@@ -33,14 +37,17 @@ Solution
 * Lazy evaluation
 * Open/Close Principle
 
-.. figure:: img/designpatterns-proxy-usecase.png
+.. figure:: img/designpatterns-proxy-solution.png
 
-.. literalinclude:: ../_src/designpatterns-proxy-impl-1.py
+.. literalinclude:: src/designpatterns-proxy-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-proxy-solution-1.py
     :language: python
 
 Proxy with Authorization and Logging:
 
-.. literalinclude:: ../_src/designpatterns-proxy-impl-2.py
+.. literalinclude:: src/designpatterns-proxy-solution-2.py
     :language: python
 
 

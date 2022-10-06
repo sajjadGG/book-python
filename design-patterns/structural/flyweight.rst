@@ -5,11 +5,16 @@ Flyweight
 * Type: object
 
 
-Rationale
----------
+Pattern
+-------
 * In applications with large number of objects
 * Objects take significant amount of memory
 * Reduce memory consumed by objects
+
+.. figure:: img/designpatterns-flyweight-pattern.png
+
+.. literalinclude:: src/designpatterns-flyweight-pattern.md
+    :language: md
 
 
 Problem
@@ -19,13 +24,13 @@ Problem
 * Icons can take a lot of memory, times number of points on the map
 * It might crash with out of memory error (especially on mobile devices)
 
-.. literalinclude:: ../_src/designpatterns-flyweight-problem.py
+.. figure:: img/designpatterns-flyweight-problem.png
+
+.. literalinclude:: src/designpatterns-flyweight-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-flyweight-problem.py
     :language: python
-
-
-Pattern
--------
-.. figure:: img/designpatterns-flyweight-gof.png
 
 
 Solution
@@ -35,9 +40,12 @@ Solution
 * It will reuse icon for each type
 * So it will prevent from storing duplicated data in memory
 
-.. figure:: img/designpatterns-flyweight-usecase.png
+.. figure:: img/designpatterns-flyweight-solution.png
 
-.. literalinclude:: ../_src/designpatterns-flyweight-impl.py
+.. literalinclude:: src/designpatterns-flyweight-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-flyweight-solution.py
     :language: python
 
 

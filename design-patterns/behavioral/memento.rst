@@ -5,22 +5,36 @@ Memento
 * Type: object
 
 
-Rationale
----------
+Pattern
+-------
 * Undo operation
 * Remembering state of objects
 
+.. figure:: img/designpatterns-memento-pattern.png
 
-Pattern
+.. literalinclude:: uml/designpatterns-memento-pattern.md
+    :language: md
+
+
+Problem
 -------
-.. figure:: img/designpatterns-memento-gof.png
+.. figure:: img/designpatterns-memento-problem.png
+
+.. literalinclude:: uml/designpatterns-memento-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-memento-problem.py
+    :language: python
 
 
 Solution
 --------
-.. figure:: img/designpatterns-memento-usecase.png
+.. figure:: img/designpatterns-memento-solution.png
 
-.. literalinclude:: ../_src/designpatterns-memento.py
+.. literalinclude:: uml/designpatterns-memento-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-memento-solution.py
     :language: python
 
 

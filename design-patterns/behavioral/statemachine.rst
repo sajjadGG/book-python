@@ -5,8 +5,8 @@ State Machine
 * Type: class
 
 
-Rationale
----------
+Pattern
+-------
 * StateMachine imposes a structure to automatically change the implementation from one object to the next
 * The current implementation represents the state that a system is in
 * System behaves differently from one state to the next
@@ -17,9 +17,6 @@ Rationale
 * Each State object has its own little State table
 * There is a single master state transition table for the whole system
 
-
-Pattern
--------
 .. code-block:: text
 
     statemachine TrafficLight:
@@ -33,10 +30,31 @@ Pattern
     Amber.wait = sleep(1)
     Green.wait = sleep(2)
 
+.. figure:: img/designpatterns-statemachine-pattern.png
+
+.. literalinclude:: uml/designpatterns-statemachine-pattern.md
+    :language: md
+
+
+Problem
+-------
+.. figure:: img/designpatterns-statemachine-problem.png
+
+.. literalinclude:: uml/designpatterns-statemachine-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-statemachine-problem.py
+    :language: python
+
 
 Solution
 --------
-.. literalinclude:: ../_src/designpatterns-statemachine.py
+.. figure:: img/designpatterns-statemachine-solution.png
+
+.. literalinclude:: uml/designpatterns-statemachine-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-statemachine-solution.py
     :language: python
 
 

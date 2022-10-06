@@ -5,12 +5,17 @@ Adapter
 * Type: class and object
 
 
-Rationale
----------
+Pattern
+-------
 * Convert an interface of an object to a different form
 * Like power socket adapter for US and EU
 * Refactoring of a large application
 * Working with legacy code / database
+
+.. figure:: img/designpatterns-adapter-pattern.png
+
+.. literalinclude:: src/designpatterns-adapter-pattern.md
+    :language: md
 
 
 Problem
@@ -21,12 +26,13 @@ Problem
 * Need manual call of ``init()`` at initialization
 * Need manual call of ``render()``
 
-.. literalinclude:: ../_src/designpatterns-adapter-problem.py
+.. figure:: img/designpatterns-adapter-problem.png
+
+.. literalinclude:: src/designpatterns-adapter-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-adapter-problem.py
     :language: python
-
-
-Pattern
--------
 
 
 Solution
@@ -35,18 +41,21 @@ Solution
 * Composition is more flexible
 * Favor Composition over Inheritance
 
-.. figure:: img/designpatterns-adapter-usecase.png
+.. figure:: img/designpatterns-adapter-solution.png
 
     Please mind, that on Picture there is a ``Caramel`` filter but in code ``BlackAndWhite3rdPartyFilter``
 
+.. literalinclude:: src/designpatterns-adapter-solution.md
+    :language: md
+
 Inheritance:
 
-    .. literalinclude:: ../_src/designpatterns-adapter-inheritance.py
+    .. literalinclude:: src/designpatterns-adapter-solution-1.py
         :language: python
 
 Composition:
 
-    .. literalinclude:: ../_src/designpatterns-adapter-composition.py
+    .. literalinclude:: src/designpatterns-adapter-solution-2.py
         :language: python
 
 

@@ -5,35 +5,47 @@ Iterator
 * Type: object
 
 
-Rationale
----------
+Pattern
+-------
 * History (like browser history)
+
+.. figure:: img/designpatterns-iterator-pattern.png
+
+.. literalinclude:: uml/designpatterns-iterator-pattern.md
+    :language: md
 
 
 Problem
 -------
-.. literalinclude:: ../_src/designpatterns-iterator-problem.py
+.. figure:: img/designpatterns-iterator-problem.png
+
+.. literalinclude:: uml/designpatterns-iterator-problem.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-iterator-problem.py
     :language: python
-
-
-Pattern
--------
 
 
 Solution
 --------
-.. figure:: img/designpatterns-iterator-usecase.png
+.. figure:: img/designpatterns-iterator-solution.png
 
-.. literalinclude:: ../_src/designpatterns-iterator-impl.py
+.. literalinclude:: uml/designpatterns-iterator-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-iterator-solution.py
     :language: python
 
 
-Pythonic
---------
-.. literalinclude:: ../_src/designpatterns-iterator-pythonic-1.py
+Use Case - 0x01
+---------------
+.. literalinclude:: src/designpatterns-iterator-usecase-01.py
     :language: python
 
-.. literalinclude:: ../_src/designpatterns-iterator-pythonic-2.py
+
+Use Case - 0x02
+---------------
+.. literalinclude:: src/designpatterns-iterator-usecase-02.py
     :language: python
 
 

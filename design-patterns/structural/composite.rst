@@ -5,8 +5,8 @@ Composite
 * Type: object
 
 
-Rationale
----------
+Pattern
+-------
 * Represent a hierarchy of objects
 * Groups (and subgroups) objects in Keynote
 * Files in a Folder; when you move folder you also move files
@@ -16,56 +16,31 @@ Rationale
 * makes it easier for you to add new kinds of components
 * conform to the Single Responsibility Principle in the way that it separates the aggregation of objects from the features of the object.
 
+.. figure:: img/designpatterns-composite-pattern.png
+
+.. literalinclude:: src/designpatterns-composite-pattern.md
+    :language: md
+
 
 Problem
 -------
-.. code-block:: python
+.. figure:: img/designpatterns-composite-problem.png
 
-    from dataclasses import dataclass, field
+.. literalinclude:: src/designpatterns-composite-problem.md
+    :language: md
 
-
-    class Shape:
-        def render(self) -> None:
-            print('Render Shape')
-
-
-    @dataclass
-    class Group:
-        __objects: list[Shape|'Group'] = field(default_factory=list)
-
-        def add(self, obj: Shape|'Group') -> None:
-            self.__objects.append(obj)
-
-        def render(self) -> None:
-            for obj in self.__objects:
-                obj.render()
-
-
-    if __name__ == '__main__':
-        group1 = Group()
-        group1.add(Shape())  # square
-        group1.add(Shape())  # square
-
-        group2 = Group()
-        group2.add(Shape())  # circle
-        group2.add(Shape())  # circle
-
-        group = Group()
-        group.add(group1)
-        group.add(group2)
-        group.render()
-
-
-Pattern
--------
-.. figure:: img/designpatterns-composite-gof.png
+.. literalinclude:: src/designpatterns-composite-problem.py
+    :language: python
 
 
 Solution
 --------
-.. figure:: img/designpatterns-composite-usecase.png
+.. figure:: img/designpatterns-composite-solution.png
 
-.. literalinclude:: ../_src/designpatterns-composite.py
+.. literalinclude:: src/designpatterns-composite-solution.md
+    :language: md
+
+.. literalinclude:: src/designpatterns-composite-solution.py
     :language: python
 
 

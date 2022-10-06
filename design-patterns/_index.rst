@@ -157,11 +157,11 @@ Behavioral
     behavioral/state.rst
     behavioral/iterator.rst
     behavioral/strategy.rst
-    behavioral/template-method.rst
+    behavioral/templatemethod.rst
     behavioral/command.rst
     behavioral/observer.rst
     behavioral/mediator.rst
-    behavioral/chain-of-responsibility.rst
+    behavioral/chainofresponsibility.rst
     behavioral/visitor.rst
     behavioral/gateway.rst
     behavioral/interpreter.rst
@@ -191,8 +191,8 @@ Creational
 
     creational/singleton.rst
     creational/borg.rst
-    creational/factory-method.rst
-    creational/abstract-factory.rst
+    creational/factorymethod.rst
+    creational/abstractfactory.rst
     creational/builder.rst
     creational/prototype.rst
 
