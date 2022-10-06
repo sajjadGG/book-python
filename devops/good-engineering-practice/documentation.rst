@@ -11,12 +11,15 @@ Format reStructuredText
 * https://devguide.python.org/documenting/#rst-primer
 * https://devguide.python.org/documenting/#sections
 
+
 Po co?
 ------
+
 
 Paragrafy
 ---------
 * newline
+
 
 Nagłówki
 --------
@@ -28,27 +31,33 @@ Nagłówki
 
 * https://devguide.python.org/documenting/#sections
 
+
 Odnośniki
 ---------
 * Wewnątrz dokumentu
 * numref
 * na zewnątrz dokumentu
 
+
 Obrazki i media
 ---------------
 * figure (scale, name, align, podpisy pod obrazkami)
 
+
 Specjalne wstawki
 -----------------
 * ``.. todo::``
+
 
 Listingi kodu
 -------------
 * Osadzone
 * Z plików zewnętrznych
 
+
 TODO
 ----
+
 
 Listy
 -----
@@ -57,11 +66,13 @@ Listy
 * jednopoziomowe i zagnieżdżone
 * listy mieszane
 
+
 Tabele
 ------
 * Table
 * List Table
 * CSV Table
+
 
 Cytowanie
 ---------
@@ -71,6 +82,7 @@ Cytowanie
 
 Sphinx
 ------
+
 
 Zależności
 ----------
@@ -90,9 +102,11 @@ Zależności
         # Jeżeli chcemy generować slajdy RevealJS
         sphinxjp.themes.revealjs
 
+
 Config
 ------
 * Wersja na podstawie hasha git
+
 
 Dobre praktyki
 --------------
@@ -104,18 +118,23 @@ Dobre praktyki
 * konwencja nazewnicza plików
 * konwencja nazewnicza figure, csv-table, literalinclude
 
+
 Generowanie dokumentacji
 ------------------------
 * Table of Contents
 
+
 toctree
 -------
+
 
 Automatyczne odpalanie doctestów do listingów kodu
 --------------------------------------------------
 
+
 Osadzanie LaTeX
 ---------------
+
 
 Budowanie
 ---------
@@ -124,6 +143,7 @@ Budowanie
 * make pdf
 
 * generowanie Word (docx) -> pandoc
+
 
 Read the docs
 -------------

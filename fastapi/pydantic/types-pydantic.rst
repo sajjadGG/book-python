@@ -259,7 +259,7 @@ to achieve it.
 
 
 Classes with ``_get_validators__``
--------------------------------
+----------------------------------
 You use a custom class with a classmethod ``_get_validators__``. It
 will be called to get validators to parse and validate the input data.
 

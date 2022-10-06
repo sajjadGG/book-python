@@ -87,7 +87,7 @@ The processing of this claim is generally application specific.  The
 value.  Use of this claim is OPTIONAL. [#rfc7519]_
 
 "aud" (Audience) Claim
-------------------------
+----------------------
 The "aud" (audience) claim identifies the recipients that the JWT is
 intended for.  Each principal intended to process the JWT MUST
 identify itself with a value in the audience claim.  If the principal
@@ -102,7 +102,7 @@ Use of this claim is OPTIONAL. [#rfc7519]_
 
 
 "exp" (Expiration Time) Claim
-------------------------
+-----------------------------
 The "exp" (expiration time) claim identifies the expiration time on
 or after which the JWT MUST NOT be accepted for processing.  The
 processing of the "exp" claim requires that the current date/time
@@ -132,7 +132,7 @@ claim is OPTIONAL. [#rfc7519]_
 
 
 "jti" (JWT ID) Claim
-------------------------
+--------------------
 The "jti" (JWT ID) claim provides a unique identifier for the JWT.
 The identifier value MUST be assigned in a manner that ensures that
 there is a negligible probability that the same value will be
@@ -189,7 +189,6 @@ JWT.  While media type names are not case sensitive, it is
 RECOMMENDED that "JWT" always be spelled using uppercase characters
 for compatibility with legacy implementations.  See Appendix A.2 for
 an example of a Nested JWT. [#rfc7519]_
-
 
 
 Install

@@ -66,7 +66,7 @@ source_suffix = {
 }
 
 if 'recommonmark' in extensions:
-    source_suffix['.md'] = 'restructuredtext'
+    source_suffix['.md'] = 'markdown'
     def setup(app):
         from recommonmark.transform import AutoStructify
 

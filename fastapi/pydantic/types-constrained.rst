@@ -15,7 +15,7 @@ type functions.
 
 
 Arguments to ``conbytes``
------------------------
+-------------------------
 * type method for constraining bytes
 * ``strip_whitespace: bool = False``: removes leading and trailing whitespace
 * ``to_lower: bool = False``: turns all characters to lowercase
@@ -25,7 +25,7 @@ Arguments to ``conbytes``
 
 
 Arguments to ``condecimal``
--------------------------
+---------------------------
 * type method for constraining Decimals
 * ``gt: Decimal = None``: enforces decimal to be greater than the set value
 * ``ge: Decimal = None``: enforces decimal to be greater than or equal to the set value
@@ -37,7 +37,7 @@ Arguments to ``condecimal``
 
 
 Arguments to ``confloat``
------------------------
+-------------------------
 * type method for constraining floats
 * ``strict: bool = False``: controls type coercion
 * ``gt: float = None``: enforces float to be greater than the set value
@@ -48,7 +48,7 @@ Arguments to ``confloat``
 
 
 Arguments to ``confrozenset``
----------------------------
+-----------------------------
 * type method for constraining frozen sets
 * ``item_type: Type[T]``: type of the frozenset items
 * ``min_items: int = None``: minimum number of items in the frozenset
@@ -56,7 +56,7 @@ Arguments to ``confrozenset``
 
 
 Arguments to ``conint``
----------------------
+-----------------------
 * type method for constraining ints
 * ``strict: bool = False``: controls type coercion
 * ``gt: int = None``: enforces integer to be greater than the set value
@@ -67,7 +67,7 @@ Arguments to ``conint``
 
 
 Arguments to ``conlist``
-----------------------
+------------------------
 * type method for constraining lists
 * ``item_type: Type[T]``: type of the list items
 * ``min_items: int = None``: minimum number of items in the list
@@ -76,7 +76,7 @@ Arguments to ``conlist``
 
 
 Arguments to ``conset``
----------------------
+-----------------------
 * type method for constraining sets
 * ``item_type: Type[T]``: type of the set items
 * ``min_items: int = None``: minimum number of items in the set
@@ -84,7 +84,7 @@ Arguments to ``conset``
 
 
 Arguments to ``constr``
----------------------
+-----------------------
 * type method for constraining strs
 * ``strip_whitespace: bool = False``: removes leading and trailing whitespace
 * ``to_lower: bool = False``: turns all characters to lowercase
