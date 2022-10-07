@@ -1,22 +1,22 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
 
 @dataclass
 class HttpRequests:
-    __username: str
-    __password: str
+    username: str
+    password: str
 
     def get_username(self) -> str:
-        return self.__username
+        return self.username
 
     def get_password(self) -> str:
-        return self.__password
+        return self.password
 
 
 @dataclass
-class Handler(metaclass=ABCMeta):
-    __next: 'Handler'
+class Handler(ABC):
+    next: 'Handler'
 
     @abstractmethod
     def do_handle(self, request: HttpRequests) -> bool:
@@ -25,8 +25,8 @@ class Handler(metaclass=ABCMeta):
     def handle(self, request: HttpRequests) -> None:
         if self.do_handle(request):
             return
-        if self.__next:
-            self.__next.handle(request)
+        if self.next:
+            self.next.handle(request)
 
 
 class Authenticator(Handler):
@@ -49,10 +49,10 @@ class Logger(Handler):
 
 @dataclass
 class WebServer:
-    __handler: Handler
+    _handler: Handler
 
     def handle(self, request: HttpRequests) -> None:
-        self.__handler.handle(request)
+        self._handler.handle(request)
 
 
 if __name__ == '__main__':

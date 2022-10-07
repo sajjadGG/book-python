@@ -1,4 +1,4 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 
 
@@ -6,7 +6,7 @@ class Proxy:
     pass
 
 
-class Ebook(metaclass=ABCMeta):
+class Ebook(ABC):
     @abstractmethod
     def show(self) -> None:
         pass
@@ -18,59 +18,59 @@ class Ebook(metaclass=ABCMeta):
 
 @dataclass
 class RealEbook(Ebook):
-    __filename: str
+    filename: str
 
     def __post_init__(self):
-        self.__load()
+        self.load()
 
-    def __load(self) -> None:
-        print(f'Loading the ebook {self.__filename}')
+    def load(self) -> None:
+        print(f'Loading the ebook {self.filename}')
 
     def show(self) -> None:
-        print(f'Showing the ebook {self.__filename}')
+        print(f'Showing the ebook {self.filename}')
 
     def get_filename(self) -> None:
-        return self.__filename
+        return self.filename
 
 
 @dataclass
 class EbookProxy(Ebook):
-    __filename: str
-    __ebook: RealEbook | None = None
+    filename: str
+    ebook: RealEbook | None = None
 
     def show(self) -> None:
-        if self.__ebook is None:
-            self.__ebook = RealEbook(self.__filename)
-        self.__ebook.show()
+        if self.ebook is None:
+            self.ebook = RealEbook(self.filename)
+        self.ebook.show()
 
     def get_filename(self) -> None:
-        return self.__filename
+        return self.filename
 
 
 @dataclass()
 class LoggingEbookProxy(Ebook):
-    __filename: str
-    __ebook: RealEbook | None = None
+    filename: str
+    ebook: RealEbook | None = None
 
     def show(self) -> None:
-        if self.__ebook is None:
-            self.__ebook = RealEbook(self.__filename)
+        if self.ebook is None:
+            self.ebook = RealEbook(self.filename)
         print('Logging')
-        self.__ebook.show()
+        self.ebook.show()
 
     def get_filename(self) -> None:
-        return self.__filename
+        return self.filename
 
 
 @dataclass
 class Library:
-    __ebooks: dict[str, RealEbook] = field(default_factory=dict)
+    ebooks: dict[str, RealEbook] = field(default_factory=dict)
 
     def add(self, ebook: RealEbook) -> None:
-        self.__ebooks[ebook.get_filename()] = ebook
+        self.ebooks[ebook.get_filename()] = ebook
 
     def open(self, filename: str) -> None:
-        self.__ebooks.get(filename).show()
+        self.ebooks.get(filename).show()
 
 
 if __name__ == '__main__':

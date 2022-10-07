@@ -3,16 +3,16 @@ from dataclasses import dataclass, field
 
 @dataclass
 class BrowseHistory:
-    _urls: list[str] = field(default_factory=list)
+    urls: list[str] = field(default_factory=list)
 
     def push(self, url: str) -> None:
-        self._urls.append(url)
+        self.urls.append(url)
 
     def pop(self) -> str:
-        self._urls.pop()
+        self.urls.pop()
 
     def get_urls(self) -> list[str]:
-        return self._urls
+        return self.urls
 
 
 if __name__ == '__main__':

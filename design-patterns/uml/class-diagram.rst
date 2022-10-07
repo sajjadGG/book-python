@@ -81,10 +81,10 @@ Method Return Type
 
 Abstract Methods
 ----------------
->>> from abc import abstractmethod, ABCMeta
+>>> from abc import ABC, abstractmethod
 >>>
 >>>
->>> class Astronaut(metaclass=ABCMeta):
+>>> class Astronaut(ABC):
 ...     @abstractmethod
 ...     def say_hello(self):
 ...         pass

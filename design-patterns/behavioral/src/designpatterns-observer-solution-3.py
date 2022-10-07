@@ -1,8 +1,8 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 
 
-class Observer(metaclass=ABCMeta):
+class Observer(ABC):
     @abstractmethod
     def update(self, value: int) -> None:
         pass
@@ -21,27 +21,27 @@ class Subject:
     """
     Observable - class which is observed
     """
-    __observers: list[Observer] = field(default_factory=list)
+    observers: list[Observer] = field(default_factory=list)
 
     def add_observer(self, observer: Observer) -> None:
-        self.__observers.append(observer)
+        self.observers.append(observer)
 
     def remove_observer(self, observer: Observer) -> None:
-        self.__observers.remove(observer)
+        self.observers.remove(observer)
 
     def notify_observers(self, value: int):
-        for observer in self.__observers:
+        for observer in self.observers:
             observer.update(value)
 
 
 class DataSource(Subject):
-    __value: int
+    value: int
 
     def get_value(self) -> int:
-        return self.__value
+        return self.value
 
     def set_value(self, value) -> None:
-        self.__value = value
+        self.value = value
         self.notify_observers(value)
 
 

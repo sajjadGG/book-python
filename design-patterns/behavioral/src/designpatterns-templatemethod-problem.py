@@ -8,19 +8,19 @@ class AuditTrail:
 
 @dataclass
 class TransferMoneyTask:
-    __audit_trail: AuditTrail
+    audit_trail: AuditTrail
 
     def execute(self):
-        self.__audit_trail.record()
+        self.audit_trail.record()
         print('Transfer Money')
 
 
 @dataclass
 class GenerateReportTask:
-    __audit_trail: AuditTrail
+    audit_trail: AuditTrail
 
     def execute(self):
-        self.__audit_trail.record()
+        self.audit_trail.record()
         print('Generate Report')
 
 

@@ -89,10 +89,10 @@ elevation - min: -10994.0, max: 8848.0
 
 
 # Solution
-from abc import ABCMeta, abstractproperty
+from abc import ABC, abstractproperty
 
 
-class GEOProperty(metaclass=ABCMeta):
+class GEOProperty(ABC):
     _fieldname: str
 
     @abstractproperty

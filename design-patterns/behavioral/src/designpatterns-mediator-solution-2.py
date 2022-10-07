@@ -1,83 +1,83 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 
 
-class EventHandler(metaclass=ABCMeta):
+class EventHandler(ABC):
     @abstractmethod
     def __call__(self) -> None:
         pass
 
 
 @dataclass
-class UIControl(metaclass=ABCMeta):
-    __observers: list[EventHandler] = field(default_factory=list)
+class UIControl(ABC):
+    observers: list[EventHandler] = field(default_factory=list)
 
     def add_event_handler(self, observer: EventHandler) -> None:
-        self.__observers.append(observer)
+        self.observers.append(observer)
 
     def _notify_event_handlers(self):
-        for observer in self.__observers:
+        for observer in self.observers:
             observer.__call__()
 
 
 class ListBox(UIControl):
-    __selection: str
+    selection: str
 
     def get_selection(self) -> str:
-        return self.__selection
+        return self.selection
 
     def set_selection(self, selection: str) -> None:
-        self.__selection = selection
+        self.selection = selection
         self._notify_event_handlers()
 
 
 class TextBox(UIControl):
-    __content: str
+    content: str
 
     def get_content(self) -> str:
-        return self.__content
+        return self.content
 
     def set_content(self, content: str) -> None:
-        self.__content = content
+        self.content = content
         self._notify_event_handlers()
 
 
 class Button(UIControl):
-    __enabled: bool
+    enabled: bool
 
     def set_enabled(self, enabled: bool) -> None:
-        self.__enabled = enabled
+        self.enabled = enabled
         self._notify_event_handlers()
 
     def is_enabled(self) -> bool:
-        return self.__enabled
+        return self.enabled
 
 
 @dataclass
 class ArticlesDialogBox:
-    __articles_listbox: ListBox = ListBox()
-    __title_textbox: TextBox = TextBox()
-    __save_button: Button = Button()
+    articles_listbox: ListBox = ListBox()
+    title_textbox: TextBox = TextBox()
+    save_button: Button = Button()
 
     def __post_init__(self):
-        self.__articles_listbox.add_event_handler(self.__article_selected)
-        self.__title_textbox.add_event_handler(self.__title_changed)
+        self.articles_listbox.add_event_handler(self.article_selected)
+        self.title_textbox.add_event_handler(self.title_changed)
 
     def simulate_user_interaction(self) -> None:
-        self.__articles_listbox.set_selection('Article 1')
-        self.__title_textbox.set_content('')
-        self.__title_textbox.set_content('Article 2')
-        print(f'Text box: {self.__title_textbox.get_content()}')
-        print(f'Button: {self.__save_button.is_enabled()}')
+        self.articles_listbox.set_selection('Article 1')
+        self.title_textbox.set_content('')
+        self.title_textbox.set_content('Article 2')
+        print(f'Text box: {self.title_textbox.get_content()}')
+        print(f'Button: {self.save_button.is_enabled()}')
 
-    def __article_selected(self) -> None:
-        self.__title_textbox.set_content(self.__articles_listbox.get_selection())
-        self.__save_button.set_enabled(True)
+    def article_selected(self) -> None:
+        self.title_textbox.set_content(self.articles_listbox.get_selection())
+        self.save_button.set_enabled(True)
 
-    def __title_changed(self) -> None:
-        content = self.__title_textbox.get_content()
+    def title_changed(self) -> None:
+        content = self.title_textbox.get_content()
         is_empty = (content == None or content == '')
-        self.__save_button.set_enabled(not is_empty)
+        self.save_button.set_enabled(not is_empty)
 
 
 if __name__ == '__main__':

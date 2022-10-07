@@ -1,8 +1,8 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 
 
-class Shape(metaclass=ABCMeta):
+class Shape(ABC):
     @abstractmethod
     def print(self):
         pass
@@ -20,13 +20,13 @@ class Circle(Shape):
 
 @dataclass
 class Group(Shape):
-    __children: list = field(default_factory=list)
+    children: list = field(default_factory=list)
 
     def add(self, graphic):
-        self.__children.append(graphic)
+        self.children.append(graphic)
 
     def print(self):
-        for children in self.__children:
+        for children in self.children:
             children.print()
 
 

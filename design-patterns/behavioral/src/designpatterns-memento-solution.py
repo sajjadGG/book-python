@@ -4,37 +4,37 @@ from typing import Final
 
 @dataclass
 class EditorState:
-    __content: Final[str]
+    content: Final[str]
 
     def get_content(self):
-        return self.__content
+        return self.content
 
 
 @dataclass
 class History:
-    __states: list[EditorState] = field(default_factory=list)
+    states: list[EditorState] = field(default_factory=list)
 
     def push(self, state: EditorState) -> None:
-        self.__states.append(state)
+        self.states.append(state)
 
     def pop(self) -> EditorState:
-        return self.__states.pop()
+        return self.states.pop()
 
 
 class Editor:
-    __content: str
+    content: str
 
     def set_content(self, content: str) -> None:
-        self.__content = content
+        self.content = content
 
     def get_content(self) -> str:
-        return self.__content
+        return self.content
 
     def create_state(self):
-        return EditorState(self.__content)
+        return EditorState(self.content)
 
     def restore_state(self, state: EditorState):
-        self.__content = state.get_content()
+        self.content = state.get_content()
 
 
 if __name__ == '__main__':

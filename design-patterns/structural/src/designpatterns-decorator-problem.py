@@ -5,19 +5,19 @@ class CloudStream:
 
 class EncryptedCloudStream(CloudStream):
     def write(self, data: str) -> None:
-        encrypted: str = self.__encrypt(data)
+        encrypted: str = self._encrypt(data)
         super().write(encrypted)
 
-    def __encrypt(self, data: str) -> str:
+    def _encrypt(self, data: str) -> str:
         return '3817f443b81e986d8e2771c6bf5e744e7ec0e844'
 
 
 class CompressedCloudStream(CloudStream):
     def write(self, data: str) -> None:
-        compressed = self.__compress(data)
+        compressed = self._compress(data)
         super().write(compressed)
 
-    def __compress(self, data: str) -> str:
+    def _compress(self, data: str) -> str:
         return data[0:10]
 
 

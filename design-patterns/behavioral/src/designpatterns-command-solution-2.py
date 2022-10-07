@@ -1,8 +1,8 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 
 
-class Command(metaclass=ABCMeta):
+class Command(ABC):
     @abstractmethod
     def execute(self) -> None:
         pass
@@ -19,13 +19,13 @@ class BlackAndWhiteCommand(Command):
 
 @dataclass
 class CompositeCommand(Command):
-    __commands: list[Command] = field(default_factory=list)
+    commands: list[Command] = field(default_factory=list)
 
     def add(self, command: Command) -> None:
-        self.__commands.append(command)
+        self.commands.append(command)
 
     def execute(self) -> None:
-        for command in self.__commands:
+        for command in self.commands:
             command.execute()
 
 

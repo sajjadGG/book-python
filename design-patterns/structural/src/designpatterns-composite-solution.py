@@ -1,8 +1,8 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 
 
-class Component(metaclass=ABCMeta):
+class Component(ABC):
     @abstractmethod
     def render(self) -> None:
         pass
@@ -22,17 +22,17 @@ class Shape(Component):
 
 @dataclass
 class Group(Component):
-    __components: list[Component] = field(default_factory=list)
+    components: list[Component] = field(default_factory=list)
 
     def add(self, component: Component) -> None:
-        self.__components.append(component)
+        self.components.append(component)
 
     def render(self) -> None:
-        for component in self.__components:
+        for component in self.components:
             component.render()
 
     def move(self) -> None:
-        for component in self.__components:
+        for component in self.components:
             component.move()
 
 

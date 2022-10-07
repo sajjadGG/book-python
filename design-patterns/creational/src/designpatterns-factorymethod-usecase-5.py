@@ -1,29 +1,29 @@
-from abc import ABCMeta, abstractproperty
+from abc import ABC, abstractproperty
 
 
-class Document(metaclass=ABCMeta):
+class Document(ABC):
     @abstractproperty
     @property
-    def _extension(self):
+    def extension(self):
         return
 
     def __new__(cls, filename, *args, **kwargs):
         name, extension = filename.split('.')
         for cls in Document.__subclasses__():
-            if cls._extension == extension:
+            if cls.extension == extension:
                 return super().__new__(cls)
         else:
             raise NotImplementedError('File format unknown')
 
 
 class PDF(Document):
-    _extension = 'pdf'
+    extension = 'pdf'
 
 class Txt(Document):
-    _extension = 'txt'
+    extension = 'txt'
 
 class Word(Document):
-    _extension = 'docx'
+    extension = 'docx'
 
 
 if __name__ == '__main__':

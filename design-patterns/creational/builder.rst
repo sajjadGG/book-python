@@ -3,7 +3,7 @@ Builder
 * EN: Builder
 * PL: Budowniczy
 * Type: object
-* Why: To separate the construction of an object from its representation
+* Why: To separate the construction of an object from its representation so the same construction algorithm can be applied to different representations
 * Usecase: Export data to different formats
 
 

@@ -8,13 +8,13 @@ class Shape:
 
 @dataclass
 class Group:
-    __objects: list[Shape|'Group'] = field(default_factory=list)
+    objects: list[Shape | 'Group'] = field(default_factory=list)
 
     def add(self, obj: Shape|'Group') -> None:
-        self.__objects.append(obj)
+        self.objects.append(obj)
 
     def render(self) -> None:
-        for obj in self.__objects:
+        for obj in self.objects:
             obj.render()
 
 

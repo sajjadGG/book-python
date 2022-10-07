@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Message:
-    __content: str
+    content: str
 
 
 class Connection():

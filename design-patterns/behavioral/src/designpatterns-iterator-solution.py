@@ -14,33 +14,33 @@ class Iterator:
 
 @dataclass
 class BrowseHistory:
-    _urls: list[str] = field(default_factory=list)
+    urls: list[str] = field(default_factory=list)
 
     def push(self, url: str) -> None:
-        self._urls.append(url)
+        self.urls.append(url)
 
     def pop(self) -> str:
-        self._urls.pop()
+        self.urls.pop()
 
     def get_urls(self) -> list[str]:
-        return self._urls
+        return self.urls
 
     def create_iterator(self) -> Iterator:
         return self.ListIterator(self)
 
     @dataclass
     class ListIterator(Iterator):
-        __history: 'BrowseHistory'
-        __index: int = 0
+        history: 'BrowseHistory'
+        index: int = 0
 
         def has_next(self) -> bool:
-            return self.__index < len(history._urls)
+            return self.index < len(history.urls)
 
         def current(self) -> str:
-            return history._urls[self.__index]
+            return history.urls[self.index]
 
         def next(self) -> None:
-            self.__index += 1
+            self.index += 1
 
 
 if __name__ == '__main__':

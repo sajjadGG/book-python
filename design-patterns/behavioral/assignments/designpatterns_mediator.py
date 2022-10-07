@@ -31,16 +31,16 @@ Tests:
     'Submitted'
 """
 from __future__ import annotations
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import Any
 
 
 @dataclass
-class UIElement(metaclass=ABCMeta):
-    _name: str
-    _owner: Form
-    _value: Any
+class UIElement(ABC):
+    name: str
+    owner: Form
+    value: Any
 
     def changed(self):
         raise NotImplementedError
@@ -54,7 +54,7 @@ class UIElement(metaclass=ABCMeta):
 
 @dataclass
 class Input(UIElement):
-    _value: str = ''
+    value: str = ''
 
     def get_value(self) -> str:
         raise NotImplementedError
@@ -65,7 +65,7 @@ class Input(UIElement):
 
 @dataclass
 class Button(UIElement):
-    _value: bool = False
+    value: bool = False
 
     def set_value(self, value: bool) -> None:
         raise NotImplementedError
@@ -80,10 +80,10 @@ class Button(UIElement):
         self.set_value(False)
 
     def is_enabled(self) -> bool:
-        return self._value
+        return self.value
 
 
-class Form(metaclass=ABCMeta):
+class Form(ABC):
     @abstractmethod
     def on_change(self): ...
 
@@ -114,13 +114,13 @@ class LoginForm(Form):
 
 # Solution
 @dataclass
-class UIElement(metaclass=ABCMeta):
-    _name: str
-    _owner: Form
-    _value: Any
+class UIElement(ABC):
+    name: str
+    owner: Form
+    value: Any
 
     def changed(self):
-        self._owner.on_change()
+        self.owner.on_change()
 
     @abstractmethod
     def set_value(self, value: Any) -> None: ...
@@ -131,25 +131,25 @@ class UIElement(metaclass=ABCMeta):
 
 @dataclass
 class Input(UIElement):
-    _value: str = ''
+    value: str = ''
 
     def get_value(self) -> str:
-        return self._value
+        return self.value
 
     def set_value(self, value: str) -> None:
-        self._value = value
+        self.value = value
         self.changed()
 
 
 @dataclass
 class Button(UIElement):
-    _value: bool = False
+    value: bool = False
 
     def set_value(self, value: bool) -> None:
-        self._value = value
+        self.value = value
 
     def get_value(self) -> Any:
-        return self._value
+        return self.value
 
     def enable(self):
         self.set_value(True)
@@ -158,10 +158,10 @@ class Button(UIElement):
         self.set_value(False)
 
     def is_enabled(self) -> bool:
-        return self._value
+        return self.value
 
 
-class Form(metaclass=ABCMeta):
+class Form(ABC):
     @abstractmethod
     def on_change(self): ...
 

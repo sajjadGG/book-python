@@ -1,7 +1,7 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class Tool(metaclass=ABCMeta):
+class Tool(ABC):
     @abstractmethod
     def mouse_down(self) -> None:
         pass
@@ -28,19 +28,19 @@ class BrushTool(Tool):
 
 
 class Canvas:
-    __current_tool: Tool
+    current_tool: Tool
 
     def mouse_down(self) -> None:
-        self.__current_tool.mouse_down()
+        self.current_tool.mouse_down()
 
     def mouse_up(self) -> None:
-        self.__current_tool.mouse_up()
+        self.current_tool.mouse_up()
 
     def get_current_tool(self):
-        return self.__current_tool
+        return self.current_tool
 
     def set_current_tool(self, newtool: Tool):
-        self.__current_tool = newtool
+        self.current_tool = newtool
 
 
 if __name__ == '__main__':

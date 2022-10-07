@@ -1,28 +1,28 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
 
-class Command(metaclass=ABCMeta):
+class Command(ABC):
     @abstractmethod
     def execute(self) -> None:
         pass
 
 
 class Button:
-    __label: str
-    __command: Command
+    label: str
+    command: Command
 
     def __init__(self, command: Command):
-        self.__command = command
+        self.command = command
 
     def set_label(self, name):
-        self.__label = name
+        self.label = name
 
     def get_label(self):
-        return self.__label
+        return self.label
 
     def click(self):
-        self.__command.execute()
+        self.command.execute()
 
 
 class CustomerService:
@@ -32,10 +32,10 @@ class CustomerService:
 
 @dataclass
 class AddCustomerCommand(Command):
-    __service: CustomerService
+    service: CustomerService
 
     def execute(self) -> None:
-        self.__service.add_customer()
+        self.service.add_customer()
 
 
 if __name__ == '__main__':
@@ -44,4 +44,3 @@ if __name__ == '__main__':
     button = Button(command)
     button.click()
     # Add customer
-

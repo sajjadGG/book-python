@@ -1,8 +1,8 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
 
-class Stream(metaclass=ABCMeta):
+class Stream(ABC):
     @abstractmethod
     def write(self, data: str) -> None:
         pass
@@ -15,25 +15,25 @@ class CloudStream(Stream):
 
 @dataclass
 class EncryptedCloudStream(Stream):
-    __stream: Stream
+    stream: Stream
 
     def write(self, data: str) -> None:
-        encrypted: str = self.__encrypt(data)
-        self.__stream.write(encrypted)
+        encrypted: str = self._encrypt(data)
+        self.stream.write(encrypted)
 
-    def __encrypt(self, data: str) -> str:
+    def _encrypt(self, data: str) -> str:
         return '3817f443b81e986d8e2771c6bf5e744e7ec0e844'
 
 
 @dataclass
 class CompressedCloudStream(Stream):
-    __stream: Stream
+    stream: Stream
 
     def write(self, data: str) -> None:
-        compressed: str = self.__compress(data)
-        self.__stream.write(compressed)
+        compressed: str = self._compress(data)
+        self.stream.write(compressed)
 
-    def __compress(self, data: str) -> str:
+    def _compress(self, data: str) -> str:
         return data[0:10]
 
 

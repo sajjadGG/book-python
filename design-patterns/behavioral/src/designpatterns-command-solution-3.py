@@ -1,8 +1,8 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 
 
-class Command(metaclass=ABCMeta):
+class Command(ABC):
     @abstractmethod
     def execute(self) -> None:
         pass
@@ -15,55 +15,55 @@ class UndoableCommand(Command):
 
 @dataclass
 class History:
-    __commands: list[UndoableCommand] = field(default_factory=list)
+    commands: list[UndoableCommand] = field(default_factory=list)
 
     def push(self, command: UndoableCommand) -> None:
-        self.__commands.append(command)
+        self.commands.append(command)
 
     def pop(self):
-        return self.__commands.pop()
+        return self.commands.pop()
 
     def size(self) -> int:
-        return len(self.__commands)
+        return len(self.commands)
 
 
 @dataclass
 class HtmlDocument:
-    __content: str = ''
+    content: str = ''
 
     def set_content(self, content):
-        self.__content = content
+        self.content = content
 
     def get_content(self):
-        return self.__content
+        return self.content
 
 
 @dataclass
 class BoldCommand(UndoableCommand):
-    __document: HtmlDocument
-    __history: History = History()
-    __previous_content: str | None = None
+    document: HtmlDocument
+    history: History = History()
+    previous_content: str | None = None
 
     def unexecute(self) -> None:
-        self.__document.set_content(self.__previous_content)
+        self.document.set_content(self.previous_content)
 
     def apply(self, content):
         return f'<b>{content}</b>'
 
     def execute(self) -> None:
-        current_content = self.__document.get_content()
-        self.__previous_content = current_content
-        self.__document.set_content(self.apply(current_content))
-        self.__history.push(self)
+        current_content = self.document.get_content()
+        self.previous_content = current_content
+        self.document.set_content(self.apply(current_content))
+        self.history.push(self)
 
 
 @dataclass
 class UndoCommand(Command):
-    __history: History
+    history: History
 
     def execute(self) -> None:
-        if self.__history.size() > 0:
-            self.__history.pop().unexecute()
+        if self.history.size() > 0:
+            self.history.pop().unexecute()
 
 
 if __name__ == '__main__':

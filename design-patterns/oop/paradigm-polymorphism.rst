@@ -128,10 +128,10 @@ Polymorphism
 ------------
 .. todo:: Example compatible with code above (elif, switch, pattern matching)
 
->>> from abc import ABCMeta, abstractmethod
+>>> from abc import ABC, abstractmethod
 >>>
 >>>
->>> class UIElement(metaclass=ABCMeta):
+>>> class UIElement(ABC):
 ...     def __init__(self, name):
 ...         self.name = name
 ...
@@ -169,12 +169,12 @@ Rendering Submit Button
 
 Use Case - 0x01
 ---------------
->>> from abc import ABCMeta, abstractmethod
+>>> from abc import ABC, abstractmethod
 >>> from dataclasses import dataclass
 >>>
 >>>
 >>> @dataclass
-... class Person(metaclass=ABCMeta):
+... class Person(ABC):
 ...     name: str
 ...
 ...     @abstractmethod

@@ -1,22 +1,22 @@
 class ReadCSV:
-    __filename: str
-    __delimiter: str
-    __encoding: str
-    __chunksize: int
+    filename: str
+    delimiter: str
+    encoding: str
+    chunksize: int
 
     def __init__(self, filename):
-        self.__filename = filename
+        self.filename = filename
 
     def withChunksize(self, value):
-        self.__chunksize = value
+        self.chunksize = value
         return self
 
     def withDelimiter(self, value):
-        self.__delimiter = value
+        self.delimiter = value
         return self
 
     def withEncoding(self, value):
-        self.__encoding = value
+        self.encoding = value
         return self
 
 if __name__ == '__main__':

@@ -10,13 +10,13 @@ class PointType(Enum):
 
 @dataclass
 class Point:
-    __x: int            # 28 bytes
-    __y: int            # 28 bytes
-    __type: PointType   # 1064 bytes
-    __icon: bytearray   # empty: 56 bytes, but with PNG icon: 20 KB
+    x: int            # 28 bytes
+    y: int            # 28 bytes
+    type: PointType   # 1064 bytes
+    icon: bytearray   # empty: 56 bytes, but with PNG icon: 20 KB
 
     def draw(self) -> None:
-        print(f'{self.__type} at ({self.__x}, {self.__y})')
+        print(f'{self.type} at ({self.x}, {self.y})')
 
 
 class PointService:

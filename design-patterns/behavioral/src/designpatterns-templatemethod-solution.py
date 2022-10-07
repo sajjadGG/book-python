@@ -1,4 +1,4 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
 
@@ -8,24 +8,24 @@ class AuditTrail:
 
 
 @dataclass
-class Task(metaclass=ABCMeta):
-    __audit_trail: AuditTrail = AuditTrail()
+class Task(ABC):
+    audit_trail: AuditTrail = AuditTrail()
 
     def execute(self) -> None:
-        self.__audit_trail.record()
-        self._do_execute()
+        self.audit_trail.record()
+        self.do_execute()
         print('Transfer Money')
 
     @abstractmethod
-    def _do_execute(self) -> None:
+    def do_execute(self) -> None:
         pass
 
 class GenerateReportTask(Task):
-    def _do_execute(self) -> None:
+    def do_execute(self) -> None:
         print('Generate Report')
 
 class TransferMoneyTask(Task):
-    def _do_execute(self) -> None:
+    def do_execute(self) -> None:
         print('Transfer Money')
 
 

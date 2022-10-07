@@ -56,10 +56,10 @@ DATA = [
 
 @dataclass(repr=False)
 class Iris:
-    _sepal_length: float
-    _sepal_width: float
-    _petal_length: float
-    _petal_width: float
+    sepal_length: float
+    sepal_width: float
+    petal_length: float
+    petal_width: float
 
     def __repr__(self):
         name = self.__class__.__name__

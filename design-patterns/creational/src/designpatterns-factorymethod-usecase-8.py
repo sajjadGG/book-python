@@ -1,7 +1,7 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class Path(metaclass=ABCMeta):
+class Path(ABC):
     def __new__(cls, path, *args, **kwargs):
         if path.startswith(r'C:\Users'):
             instance = object.__new__(WindowsPath)

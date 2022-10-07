@@ -1,32 +1,32 @@
-from abc import ABCMeta, abstractproperty, abstractmethod
+from abc import ABC, abstractproperty, abstractmethod
 from dataclasses import dataclass
 
 
 @dataclass
-class ConfigParser(metaclass=ABCMeta):
-    _filename: str
+class ConfigParser(ABC):
+    filename: str
 
     @abstractproperty
     @property
-    def _extension(self):
+    def extension(self):
         pass
 
     def show(self):
-        content = self.__read()
-        return self._parse(content)
+        content = self.read()
+        return self.parse(content)
 
     @abstractmethod
-    def _parse(self, content: str) -> dict:
+    def parse(self, content: str) -> dict:
         return NotImplementedError
 
-    def __read(self):
-        with open(self._filename) as file:
+    def read(self):
+        with open(self.filename) as file:
             return file.read()
 
     def __new__(cls, filename, *args, **kwargs):
         _, extension = filename.split('.')
         for parser in cls.__subclasses__():
-            if parser._extension == extension:
+            if parser.extension == extension:
                 instance = super().__new__(parser)
                 instance.__init__(filename)
                 return instance
@@ -35,37 +35,37 @@ class ConfigParser(metaclass=ABCMeta):
 
 
 class ConfigParserINI(ConfigParser):
-    _extension = 'ini'
+    extension = 'ini'
 
-    def _parse(self, content: str) -> dict:
+    def parse(self, content: str) -> dict:
         print('Parsing INI file')
 
 
 class ConfigParserCSV(ConfigParser):
-    _extension = 'csv'
+    extension = 'csv'
 
-    def _parse(self, content: str) -> dict:
+    def parse(self, content: str) -> dict:
         print('Parsing CSV file')
 
 
 class ConfigParserYAML(ConfigParser):
-    _extension = 'yaml'
+    extension = 'yaml'
 
-    def _parse(self, content: str) -> dict:
+    def parse(self, content: str) -> dict:
         print('Parsing YAML file')
 
 
 class ConfigFileJSON(ConfigParser):
-    _extension = 'json'
+    extension = 'json'
 
-    def _parse(self, content: str) -> dict:
+    def parse(self, content: str) -> dict:
         print('Parsing JSON file')
 
 
 class ConfigFileXML(ConfigParser):
-    _extension = 'xml'
+    extension = 'xml'
 
-    def _parse(self, content: str) -> dict:
+    def parse(self, content: str) -> dict:
         print('Parsing XML file')
 
 

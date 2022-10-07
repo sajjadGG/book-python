@@ -1,8 +1,8 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
 
-class Device(metaclass=ABCMeta):
+class Device(ABC):
     @abstractmethod
     def set_channel(self, number: int) -> None:
         pass
@@ -18,18 +18,18 @@ class Device(metaclass=ABCMeta):
 
 @dataclass
 class RemoteControl:
-    _device: Device
+    device: Device
 
     def turn_on(self) -> None:
-        self._device.turn_on()
+        self.device.turn_on()
 
     def turn_off(self) -> None:
-        self._device.turn_off()
+        self.device.turn_off()
 
 
 class AdvancedRemoteControl(RemoteControl):
     def set_channel(self, number: int) -> None:
-        self._device.set_channel(number)
+        self.device.set_channel(number)
 
 
 class SonyTV(Device):

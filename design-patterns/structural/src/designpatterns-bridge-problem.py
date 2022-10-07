@@ -1,7 +1,7 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class RemoteControl(metaclass=ABCMeta):
+class RemoteControl(ABC):
     @abstractmethod
     def turn_on(self) -> None:
         pass
@@ -11,7 +11,7 @@ class RemoteControl(metaclass=ABCMeta):
         pass
 
 
-class AdvancedRemoteControl(RemoteControl, metaclass=ABCMeta):
+class AdvancedRemoteControl(RemoteControl, ABC):
     @abstractmethod
     def set_channel(self, number: int) -> None:
         pass

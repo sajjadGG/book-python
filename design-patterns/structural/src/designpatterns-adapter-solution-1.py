@@ -1,4 +1,4 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
 
@@ -6,7 +6,7 @@ class Image:
     pass
 
 
-class Filter(metaclass=ABCMeta):
+class Filter(ABC):
     @abstractmethod
     def apply(self, image: Image) -> None:
         pass
@@ -27,19 +27,19 @@ class BlackAndWhite3rdPartyFilter:
 
 @dataclass
 class BlackAndWhiteAdapter:
-    __filter: BlackAndWhite3rdPartyFilter
+    filter: BlackAndWhite3rdPartyFilter
 
     def apply(self, image: Image) -> None:
-        self.__filter.init()
-        self.__filter.render(image)
+        self.filter.init()
+        self.filter.render(image)
 
 
 @dataclass
 class ImageView:
-    __image: Image
+    image: Image
 
     def apply(self, filter: Filter):
-        filter.apply(self.__image)
+        filter.apply(self.image)
 
 
 if __name__ == '__main__':

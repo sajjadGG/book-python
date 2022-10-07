@@ -1,11 +1,11 @@
 class Button:
-    __label: str
+    label: str
 
     def set_label(self, name):
-        self.__label = name
+        self.label = name
 
     def get_label(self):
-        return self.__label
+        return self.label
 
     def click(self):
         ...

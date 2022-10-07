@@ -1,8 +1,8 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
 
-class DialogBox(metaclass=ABCMeta):
+class DialogBox(ABC):
     """Mediator class"""
     @abstractmethod
     def changed(self, control: 'UIControl') -> None:
@@ -10,83 +10,83 @@ class DialogBox(metaclass=ABCMeta):
 
 
 @dataclass
-class UIControl(metaclass=ABCMeta):
-    _owner: DialogBox
+class UIControl(ABC):
+    owner: DialogBox
 
 
 class ListBox(UIControl):
-    __selection: str
+    selection: str
 
     def __init__(self, owner: DialogBox) -> None:
         super().__init__(owner)
 
     def get_selection(self) -> str:
-        return self.__selection
+        return self.selection
 
     def set_selection(self, selection: str) -> None:
-        self.__selection = selection
-        self._owner.changed(self)
+        self.selection = selection
+        self.owner.changed(self)
 
 
 class TextBox(UIControl):
-    __content: str
+    content: str
 
     def __init__(self, owner: DialogBox) -> None:
         super().__init__(owner)
 
     def get_content(self) -> str:
-        return self.__content
+        return self.content
 
     def set_content(self, content: str) -> None:
-        self.__content = content
-        self._owner.changed(self)
+        self.content = content
+        self.owner.changed(self)
 
 
 class Button(UIControl):
-    __enabled: bool
+    enabled: bool
 
     def __init__(self, owner: DialogBox) -> None:
         super().__init__(owner)
 
     def set_enabled(self, enabled: bool) -> None:
-        self.__enabled = enabled
+        self.enabled = enabled
 
     def is_enabled(self) -> bool:
-        self._owner.changed(self)
-        return self.__enabled
+        self.owner.changed(self)
+        return self.enabled
 
 
 class ArticlesDialogBox(DialogBox):
-    __articles_listbox: ListBox
-    __title_textbox: TextBox
-    __save_button: Button
+    articles_listbox: ListBox
+    title_textbox: TextBox
+    save_button: Button
 
     def simulate_user_interaction(self) -> None:
-        self.__articles_listbox.set_selection('Article 1')
-        self.__title_textbox.set_content('')
-        self.__title_textbox.set_content('Article 2')
-        print(f'Text box: {self.__title_textbox.get_content()}')
-        print(f'Button: {self.__save_button.is_enabled()}')
+        self.articles_listbox.set_selection('Article 1')
+        self.title_textbox.set_content('')
+        self.title_textbox.set_content('Article 2')
+        print(f'Text box: {self.title_textbox.get_content()}')
+        print(f'Button: {self.save_button.is_enabled()}')
 
     def __init__(self) -> None:
-        self.__articles_listbox = ListBox(self)
-        self.__title_textbox = TextBox(self)
-        self.__save_button = Button(self)
+        self.articles_listbox = ListBox(self)
+        self.title_textbox = TextBox(self)
+        self.save_button = Button(self)
 
     def changed(self, control: 'UIControl') -> None:
-        if control == self.__articles_listbox:
-            self.__article_selected()
-        elif control == self.__title_textbox:
-            self.__title_changed()
+        if control == self.articles_listbox:
+            self.article_selected()
+        elif control == self.title_textbox:
+            self.title_changed()
 
-    def __article_selected(self) -> None:
-        self.__title_textbox.set_content(self.__articles_listbox.get_selection())
-        self.__save_button.set_enabled(True)
+    def article_selected(self) -> None:
+        self.title_textbox.set_content(self.articles_listbox.get_selection())
+        self.save_button.set_enabled(True)
 
-    def __title_changed(self) -> None:
-        content = self.__title_textbox.get_content()
+    def title_changed(self) -> None:
+        content = self.title_textbox.get_content()
         is_empty = (content == None or content == '')
-        self.__save_button.set_enabled(not is_empty)
+        self.save_button.set_enabled(not is_empty)
 
 
 if __name__ == '__main__':

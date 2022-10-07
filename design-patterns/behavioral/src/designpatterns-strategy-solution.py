@@ -1,7 +1,7 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class Compressor(metaclass=ABCMeta):
+class Compressor(ABC):
     @abstractmethod
     def compress(self, filename: str) -> None:
         pass
@@ -15,7 +15,7 @@ class PNGCompressor(Compressor):
         print('Compressing using PNG')
 
 
-class Filter(metaclass=ABCMeta):
+class Filter(ABC):
     @abstractmethod
     def apply(self, filename) -> None:
         pass

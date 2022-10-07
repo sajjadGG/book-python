@@ -1,8 +1,8 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 
 
-class HtmlNode(metaclass=ABCMeta):
+class HtmlNode(ABC):
     @abstractmethod
     def execute(self, operation: 'Operation') -> None:
         pass
@@ -16,7 +16,7 @@ class AnchorNode(HtmlNode):
         operation.apply_anchor(self)
 
 
-class Operation(metaclass=ABCMeta):
+class Operation(ABC):
     """Visitor"""
 
     @abstractmethod
@@ -44,13 +44,13 @@ class PlaintextOperation(Operation):
 
 @dataclass
 class HtmlDocument:
-    __nodes: list[HtmlNode] = field(default_factory=list)
+    nodes: list[HtmlNode] = field(default_factory=list)
 
     def add(self, node: HtmlNode) -> None:
-        self.__nodes.append(node)
+        self.nodes.append(node)
 
     def execute(self, operation: Operation) -> None:
-        for node in self.__nodes:
+        for node in self.nodes:
             node.execute(operation)
 
 
