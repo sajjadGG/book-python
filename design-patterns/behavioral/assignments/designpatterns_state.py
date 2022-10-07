@@ -129,3 +129,42 @@ class Translation:
 
     def hello(self):
         return self.language.hello()
+
+
+
+# Alternative Solution
+"""
+from abc import ABC, abstractproperty
+from dataclasses import dataclass
+
+class Language(ABC):
+    @abstractproperty
+    def hello(self) -> str: ...
+
+    @abstractproperty
+    def goodbye(self) -> str: ...
+
+
+@dataclass
+class Polish(Language):
+    hello: str = 'Cześć'
+    goodbye: str = 'Do widzenia'
+
+@dataclass
+class English(Language):
+    hello: str = 'Hello'
+    goodbye: str = 'Goodbye'
+
+
+class Translation(Language):
+    language: Language
+
+    def __init__(self, language: Language):
+        self.language = language
+
+    def hello(self):
+        return self.language.hello
+
+    def goodbye(self):
+        return self.language.goodbye
+"""

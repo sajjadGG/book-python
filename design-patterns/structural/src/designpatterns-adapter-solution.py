@@ -31,6 +31,18 @@ class SharpenFilter(Filter):
         return content
 
 
+# %% Adapter
+class AmazingFilterAdapter(Filter):
+    filter: AmazingFilter
+
+    def __init__(self):
+        self.filter = AmazingFilter()
+
+    def apply(self, content: bytes) -> bytes:
+        self.filter.__init__()
+        return self.filter.transform(content)
+
+
 #%% Main
 class Image:
     path: Path
@@ -48,6 +60,4 @@ if __name__ == '__main__':
     img = Image('/tmp/myfile.png')
     img.apply(SepiaFilter())
     img.apply(SharpenFilter())
-
-    img.apply(AmazingFilter())
-    # AttributeError: 'AmazingFilter' object has no attribute 'apply'
+    img.apply(AmazingFilterAdapter())

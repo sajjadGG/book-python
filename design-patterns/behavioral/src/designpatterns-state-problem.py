@@ -1,33 +1,56 @@
 from enum import Enum
 
 
-class ToolType(Enum):
+class Tool(Enum):
     SELECTION = 1
-    BRUSH = 2
-    ERASER = 3
+    PENCIL = 2
+    ERASE = 3
+    BRUSH = 4
 
 
-class Canvas:
-    current_tool: ToolType
+class Window:
+    current_tool: Tool
 
-    def get_current_tool(self) -> ToolType:
-        return self.current_tool
+    def on_left_mouse_button(self):
+        if self.current_tool == Tool.SELECTION:
+            print('Select')
+        elif self.current_tool == Tool.PENCIL:
+            print('Draw')
+        elif self.current_tool == Tool.ERASE:
+            print('Erase')
+        elif self.current_tool == Tool.BRUSH:
+            print('Paint')
 
-    def set_current_tool(self, tool: ToolType) -> None:
-        self.current_tool = tool
+    def on_right_mouse_button(self):
+        if self.current_tool == Tool.SELECTION:
+            print('Unselect')
+        elif self.current_tool == Tool.PENCIL:
+            print('Stop drawing')
+        elif self.current_tool == Tool.ERASE:
+            print('Undo erase')
+        elif self.current_tool == Tool.BRUSH:
+            print('Stop painting')
 
-    def mouse_down(self) -> None:
-        if self.current_tool == ToolType.SELECTION:
-            print('Selection icon')
-        elif self.current_tool == ToolType.BRUSH:
-            print('Brush icon')
-        elif self.current_tool == ToolType.ERASER:
-            print('Eraser icon')
 
-    def mouse_down(self) -> None:
-        if self.current_tool == ToolType.SELECTION:
-            print('Draw dashed rectangle')
-        elif self.current_tool == ToolType.BRUSH:
-            print('Draw line')
-        elif self.current_tool == ToolType.ERASER:
-            print('Erase something')
+
+if __name__ == '__main__':
+    window = Window()
+
+    window.current_tool = Tool.BRUSH
+    window.on_left_mouse_button()
+    window.on_right_mouse_button()
+
+    window.current_tool = Tool.SELECTION
+    window.on_left_mouse_button()
+    window.on_right_mouse_button()
+
+    window.current_tool = Tool.ERASE
+    window.on_left_mouse_button()
+    window.on_right_mouse_button()
+
+# Paint
+# Stop painting
+# Select
+# Unselect
+# Erase
+# Undo erase

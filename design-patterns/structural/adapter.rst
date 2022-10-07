@@ -11,6 +11,11 @@ Pattern
 * Like power socket adapter for US and EU
 * Refactoring of a large application
 * Working with legacy code / database
+* Niekompatybilne API dwóch systemów
+* Wymagające różnych sposobów uwierzytelniania (OAuth2, BasicAuth)
+* Tłumaczenie pomiędzy różnymi formatami danych (SOAP/XML, REST/JSON)
+* Iteracyjne przepisywanie legacy systemu na nowy, ale tak, aby móc wciąż korzystać ze starego
+
 
 .. figure:: img/designpatterns-adapter-pattern.png
 
@@ -48,15 +53,8 @@ Solution
 .. literalinclude:: src/designpatterns-adapter-solution.md
     :language: md
 
-Inheritance:
-
-    .. literalinclude:: src/designpatterns-adapter-solution-1.py
-        :language: python
-
-Composition:
-
-    .. literalinclude:: src/designpatterns-adapter-solution-2.py
-        :language: python
+.. literalinclude:: src/designpatterns-adapter-solution.py
+    :language: python
 
 
 Use Case - 0x01

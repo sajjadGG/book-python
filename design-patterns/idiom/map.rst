@@ -213,12 +213,13 @@ Use Case - 0x01
 
 Use Case - 0x02
 ---------------
->>> import pandas as pd
->>>
->>>
->>> DATA = 'https://python.astrotech.io/_static/phones-pl.csv'
->>>
->>> result = (
+>>> # doctest: +SKIP
+... import pandas as pd
+...
+...
+... DATA = 'https://python.astrotech.io/_static/phones-pl.csv'
+...
+... result = (
 ...     pd
 ...     .read_csv(DATA, parse_dates=['datetime'])
 ...     .set_index('datetime', drop=True)

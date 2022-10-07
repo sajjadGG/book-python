@@ -1,54 +1,82 @@
 from abc import ABC, abstractmethod
 
 
-class Tool(ABC):
+#%% Abstracts
+
+class WindowEvents(ABC):
     @abstractmethod
-    def mouse_down(self) -> None:
-        pass
+    def on_left_mouse_button(self): ...
 
     @abstractmethod
-    def mouse_up(self) -> None:
-        pass
+    def on_right_mouse_button(self): ...
 
+
+class Tool(WindowEvents, ABC):
+    pass
+
+
+#%% Tools
 
 class SelectionTool(Tool):
-    def mouse_down(self) -> None:
-        print('Selection icon')
+    def on_left_mouse_button(self):
+        print('Select')
 
-    def mouse_up(self) -> None:
-        print('Draw dashed rectangle')
+    def on_right_mouse_button(self):
+        print('Unselect')
 
+
+class EraseTool(Tool):
+    def on_left_mouse_button(self):
+        print('Erase')
+
+    def on_right_mouse_button(self):
+        print('Undo erase')
+
+class PencilTool(Tool):
+    def on_left_mouse_button(self):
+        print('Draw')
+
+    def on_right_mouse_button(self):
+        print('Stop drawing')
 
 class BrushTool(Tool):
-    def mouse_down(self) -> None:
-        print('Brush icon')
+    def on_left_mouse_button(self):
+        print('Paint')
 
-    def mouse_up(self) -> None:
-        print('Draw line')
+    def on_right_mouse_button(self):
+        print('Stop painting')
 
 
-class Canvas:
+#%% Main
+
+class Window(WindowEvents):
     current_tool: Tool
 
-    def mouse_down(self) -> None:
-        self.current_tool.mouse_down()
+    def on_left_mouse_button(self):
+        self.current_tool.on_left_mouse_button()
 
-    def mouse_up(self) -> None:
-        self.current_tool.mouse_up()
-
-    def get_current_tool(self):
-        return self.current_tool
-
-    def set_current_tool(self, newtool: Tool):
-        self.current_tool = newtool
+    def on_right_mouse_button(self):
+        self.current_tool.on_right_mouse_button()
 
 
 if __name__ == '__main__':
-    canvas = Canvas()
-    canvas.set_current_tool(SelectionTool())
+    window = Window()
 
-    canvas.mouse_down()
-    # Selection icon
+    window.current_tool = BrushTool()
+    window.on_left_mouse_button()
+    window.on_right_mouse_button()
 
-    canvas.mouse_up()
-    # Draw dashed rectangle
+    window.current_tool = SelectionTool()
+    window.on_left_mouse_button()
+    window.on_right_mouse_button()
+
+    window.current_tool = EraseTool()
+    window.on_left_mouse_button()
+    window.on_right_mouse_button()
+
+# Paint
+# Stop painting
+# Select
+# Unselect
+# Erase
+# Undo erase
