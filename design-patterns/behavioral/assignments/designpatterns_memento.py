@@ -72,35 +72,35 @@ class Account:
 # Solution
 @dataclass
 class Transaction:
-    __amount: Final[float]
+    amount: Final[float]
 
     def get_amount(self):
-        return self.__amount
+        return self.amount
 
 
 @dataclass
 class History:
-    __transactions: list[Transaction] = field(default_factory=list)
+    transactions: list[Transaction] = field(default_factory=list)
 
     def push(self, transaction: Transaction) -> None:
-        self.__transactions.append(transaction)
+        self.transactions.append(transaction)
 
     def pop(self) -> Transaction:
-        return self.__transactions.pop()
+        return self.transactions.pop()
 
 
 @dataclass
 class Account:
-    __balance: float = 0
+    balance: float = 0
 
     def deposit(self, amount: float) -> None:
-        self.__balance += amount
+        self.balance += amount
 
     def get_balance(self) -> float:
-        return self.__balance
+        return self.balance
 
     def save(self):
-        return Transaction(self.__balance)
+        return Transaction(self.balance)
 
     def undo(self, transaction: Transaction):
-        self.__balance = transaction.get_amount()
+        self.balance = transaction.get_amount()

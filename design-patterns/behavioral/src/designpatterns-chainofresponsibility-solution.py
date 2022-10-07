@@ -49,10 +49,10 @@ class Logger(Handler):
 
 @dataclass
 class WebServer:
-    _handler: Handler
+    handler: Handler
 
     def handle(self, request: HttpRequests) -> None:
-        self._handler.handle(request)
+        self.handler.handle(request)
 
 
 if __name__ == '__main__':

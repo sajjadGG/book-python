@@ -48,27 +48,27 @@ class Language(Enum):
 
 
 class Translation:
-    __language: Language
+    language: Language
 
     def __init__(self, language: Language):
-        self.__language = language
+        self.language = language
 
     def hello(self) -> str:
-        if self.__language is Language.POLISH:
+        if self.language is Language.POLISH:
             return 'Cześć'
-        elif self.__language is Language.ENGLISH:
+        elif self.language is Language.ENGLISH:
             return 'Hello'
-        elif self.__language is Language.SPANISH:
+        elif self.language is Language.SPANISH:
             return 'Buenos Días'
         else:
             return 'Unknown language'
 
     def goodbye(self) -> str:
-        if self.__language is Language.POLISH:
+        if self.language is Language.POLISH:
             return 'Do widzenia'
-        elif self.__language is Language.ENGLISH:
+        elif self.language is Language.ENGLISH:
             return 'Goodbye'
-        elif self.__language is Language.SPANISH:
+        elif self.language is Language.SPANISH:
             return 'Adiós'
         else:
             return 'Unknown language'
@@ -119,13 +119,13 @@ class Chinese(Language):
 
 
 class Translation:
-    __language: Language
+    language: Language
 
     def __init__(self, language: Language):
-        self.__language = language
+        self.language = language
 
     def goodbye(self):
-        return self.__language.goodbye()
+        return self.language.goodbye()
 
     def hello(self):
-        return self.__language.hello()
+        return self.language.hello()
