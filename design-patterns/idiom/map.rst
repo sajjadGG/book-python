@@ -172,6 +172,133 @@ Partial
 [1.1, 2.2, 3.3]
 
 
+Use Case - 0x01
+---------------
+>>> import requests
+>>>
+>>> url = 'https://python.astrotech.io/_static/iris-dirty.csv'
+>>>
+>>> data = requests.get(url).text
+>>> header, *rows = data.splitlines()
+>>> nrows, nfeatures, *class_labels = header.strip().split(',')
+>>> label_encoder = dict(enumerate(class_labels))
+
+>>> result = []
+>>> for row in rows:
+...     *features, species = row.strip().split(',')
+...     features = map(float, features)
+...     species = label_encoder[int(species)]
+...     row = tuple(features) + (species,)
+...     result.append(row)
+
+>>> def decode(row):
+...     *features, species = row.strip().split(',')
+...     features = map(float, features)
+...     species = label_encoder[int(species)]
+...     return tuple(features) + (species,)
+>>>
+>>> result = map(decode, rows)
+
+>>> def decode(row):
+...     *features, species = row.strip().split(',')
+...     features = map(float, features)
+...     species = label_encoder[int(species)]
+...     return tuple(features) + (species,)
+>>>
+>>> with open('/tmp/myfile.csv') as file:  # doctest: +SKIP
+...     header = file.readline()
+...     for line in map(decode, file):
+...         print(line)
+
+
+Use Case - 0x02
+---------------
+>>> import pandas as pd
+>>>
+>>>
+>>> DATA = 'https://python.astrotech.io/_static/phones-pl.csv'
+>>>
+>>> result = (
+...     pd
+...     .read_csv(DATA, parse_dates=['datetime'])
+...     .set_index('datetime', drop=True)
+...     .drop(columns=['id'])
+...     .loc['2000-01-01':'2000-03-01']
+...     .query('item == "sms"')
+...     .groupby(['period','item'])
+...     .agg(
+...         duration_count = ('duration', 'count'),
+...         duration_sum = ('duration', 'sum'),
+...         duration_median = ('duration', 'median'),
+...         duration_mean = ('duration', 'mean'),
+...         duration_std = ('duration', 'std'),
+...         duration_var = ('duration', 'var'),
+...         value = ('duration', lambda column: column.mean().astype(int))
+...     )
+... )
+
+
+Use Case - 0x03
+---------------
+>>> from functools import reduce
+>>> from operator import add
+>>>
+>>>
+>>> def even(x):
+...     return x % 2 == 0
+>>>
+>>> def positive(x):
+...     return x > 0
+>>>
+>>> def non_negative(x):
+...     return x >= 0
+>>>
+>>> def square(x):
+...     return x ** 2
+>>>
+>>> def add1(x):
+...     return x + 1
+>>>
+>>> def minus1(x):
+...     return x + 1
+
+>>> data = range(0, 1024)
+>>> data = filter(even, data)
+>>> data = filter(positive, data)
+>>> data = filter(non_negative, data)
+>>> data = map(square, data)
+>>> data = map(add1, data)
+>>> data = map(minus1, data)
+>>> result = reduce(add, data)
+>>>
+>>> result
+178434046
+
+>>> filters = [
+...     even,
+...     positive,
+...     non_negative,
+... ]
+>>>
+>>> maps = [
+...     square,
+...     add1,
+...     minus1,
+... ]
+>>>
+>>> def apply(data, fn):
+...     return map(fn, data)
+>>>
+>>>
+>>> data = range(0, 1024)
+>>> data = reduce(apply, filters, data)
+>>> data = reduce(apply, maps, data)
+>>> result = reduce(add, data)
+>>>
+>>> result
+3072
+
+
 Assignments
 -----------
 .. todo:: Assignments

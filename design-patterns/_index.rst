@@ -98,6 +98,7 @@ Idioms
     :maxdepth: 1
     :caption: Idioms
 
+    idiom/about.rst
     idiom/range.rst
     idiom/enumerate.rst
     idiom/zip.rst

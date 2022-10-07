@@ -162,4 +162,6 @@ References
 
 Assignments
 -----------
-.. todo:: Assignments
+.. literalinclude:: assignments/idioms_match_a.py
+    :caption: :download:`Solution <assignments/idioms_match_a.py>`
+    :end-before: # Solution

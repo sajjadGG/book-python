@@ -34,6 +34,10 @@ Syntax
 >>>
 >>> myfunction()
 
+.. figure:: img/decorator-about-matrioszka.jpg
+
+    Vintage Soviet era Russian doll celebrating Valentina Tereshkova. By Alexandermcnabb. https://commons.wikimedia.org/wiki/File:Vintage_Soviet_era_Russian_doll_celebratig_Valentina_Tereshkova.jpg
+
 
 Decoration
 ----------

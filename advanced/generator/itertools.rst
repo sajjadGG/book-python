@@ -405,6 +405,20 @@ Use Case - 0x01
  ('file2.txt', 'a', None),
  ('file2.txt', 'a', 'latin-1')]
 
+* https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
+
+.. code-block:: python
+
+    class NumbersTest(unittest.TestCase):
+
+        def test_even(self):
+            """
+            Test that numbers between 0 and 5 are all even.
+            """
+            for i in range(0, 6):
+                with self.subTest(i=i):
+                    self.assertEqual(i % 2, 0)
+
 
 Use Case - 0x02
 ---------------
@@ -440,6 +454,20 @@ Use Case - 0x02
  ('press rewind', 'press eject', 'press play', 'press stop'),
  ('press rewind', 'press eject', 'press stop', 'press play')]
 
+* https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
+
+.. code-block:: python
+
+    class NumbersTest(unittest.TestCase):
+
+        def test_even(self):
+            """
+            Test that numbers between 0 and 5 are all even.
+            """
+            for i in range(0, 6):
+                with self.subTest(i=i):
+                    self.assertEqual(i % 2, 0)
+
 
 Use Case - 0x03
 ---------------
@@ -461,6 +489,19 @@ Use Case - 0x03
  ('orange', 'green', 'blue'),
  ('yellow', 'green', 'blue')]
 
+* https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
+
+.. code-block:: python
+
+    class NumbersTest(unittest.TestCase):
+
+        def test_even(self):
+            """
+            Test that numbers between 0 and 5 are all even.
+            """
+            for i in range(0, 6):
+                with self.subTest(i=i):
+                    self.assertEqual(i % 2, 0)
 
 Use Case - 0x04
 ---------------

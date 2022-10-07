@@ -2,7 +2,7 @@
 * Assignment: DesignPatterns Behavioral State
 * Complexity: medium
 * Lines of code: 34 lines
-* Time: 21 min
+* Time: 13 min
 
 English:
     1. Implement State pattern
