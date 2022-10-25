@@ -8,7 +8,7 @@ lists. The implementation uses a contiguous array of references to other
 objects, and keeps a pointer to this array and the array's length in a list
 head structure.
 
-This makes indexing a list a[i] an operation whose cost is independent
+This makes indexing a list ``data[i]`` an operation whose cost is independent
 of the size of the list or the value of the index.
 
 When items are appended or inserted, the array of references is resized.
@@ -208,8 +208,8 @@ Insert
 ['red', 'black', 'green', 'blue']
 
 
-Sort vs Sorted
---------------
+Sort
+----
 * ``sorted()`` - returns new sorted list, but does not modify the original
 * ``list.sort()`` - sorts list and returns ``None``
 
@@ -306,22 +306,6 @@ Traceback (most recent call last):
 StopIteration
 
 
-Method Chaining
----------------
->>> colors = ['red', 'green', 'blue']
->>> colors.sort()
->>> colors.append('black')
->>>
->>> print(colors)
-['blue', 'green', 'red', 'black']
-
->>> colors = ['red', 'green', 'blue']
->>>
->>> colors.sort().append('black')
-Traceback (most recent call last):
-AttributeError: 'NoneType' object has no attribute 'append'
-
-
 Index
 -----
 * ``list.index()`` - position at which something is in the list
@@ -344,6 +328,22 @@ Count
 >>>
 >>> print(result)
 3
+
+
+Method Chaining
+---------------
+>>> colors = ['red', 'green', 'blue']
+>>> colors.sort()
+>>> colors.append('black')
+>>>
+>>> print(colors)
+['blue', 'green', 'red', 'black']
+
+>>> colors = ['red', 'green', 'blue']
+>>>
+>>> colors.sort().append('black')
+Traceback (most recent call last):
+AttributeError: 'NoneType' object has no attribute 'append'
 
 
 Built-in Functions

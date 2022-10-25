@@ -11,8 +11,7 @@ Sequence Set
 Syntax
 ------
 * ``data = set()`` - empty set
-* no short syntax
-* Can store elements of any **hashable** types
+* No short syntax
 * Only unique values
 
 Defining only with ``set()`` - no short syntax:
@@ -48,18 +47,7 @@ Compares by values, not types:
 
 Hashable
 --------
-Can store elements of any **hashable** types:
-
->>> data = {1, 2, 'a'}
->>> data = {1, 2, (3, 4)}
->>>
->>> data = {1, 2, [3, 4]}
-Traceback (most recent call last):
-TypeError: unhashable type: 'list'
->>>
->>> data = {1, 2, {3, 4}}
-Traceback (most recent call last):
-TypeError: unhashable type: 'set'
+* Can store elements of any **hashable** types
 
 Hashable (Immutable):
 
@@ -70,14 +58,25 @@ Hashable (Immutable):
     * ``str``
     * ``tuple``
 
+>>> data = {1, 2, 'a'}
+>>> data = {1, 2, (3, 4)}
+
 Non-hashable (Mutable):
 
     * ``list``
     * ``set``
     * ``dict``
 
-"Hashable types are also immutable" is true for builtin types, but it's not a
-universal truth.
+>>> data = {1, 2, [3, 4]}
+Traceback (most recent call last):
+TypeError: unhashable type: 'list'
+>>>
+>>> data = {1, 2, {3, 4}}
+Traceback (most recent call last):
+TypeError: unhashable type: 'set'
+
+"Hashable types are also immutable" is true for builtin types,
+but it's not a universal truth.
 
 * More information in `OOP Hash`.
 * More information in `OOP Object Identity`.
@@ -186,107 +185,108 @@ Membership
 ----------
 Is Disjoint?:
 
-    * ``True`` - if there are no common elements in ``data`` and ``x``
-    * ``False`` - if any ``x`` element are in data
+* ``True`` - if there are no common elements in ``data`` and ``x``
+* ``False`` - if any ``x`` element are in data
 
-    >>> data = {1,2}
-    >>>
-    >>> data.isdisjoint({1,2})
-    False
-    >>> data.isdisjoint({1,3})
-    False
-    >>> data.isdisjoint({3,4})
-    True
+>>> data = {1,2}
+>>>
+>>> data.isdisjoint({1,2})
+False
+>>> data.isdisjoint({1,3})
+False
+>>> data.isdisjoint({3,4})
+True
 
 Is Subset?:
 
-    * ``True`` - if ``x`` has all elements from ``data``
-    * ``False`` - if ``x`` don't have element from ``data``
+* ``True`` - if ``x`` has all elements from ``data``
+* ``False`` - if ``x`` don't have element from ``data``
 
-    >>> data = {1,2}
-    >>>
-    >>> data.issubset({1})
-    False
-    >>> data.issubset({1,2})
-    True
-    >>> data.issubset({1,2,3})
-    True
-    >>> data.issubset({1,3,4})
-    False
+>>> data = {1,2}
+>>>
+>>> data.issubset({1})
+False
+>>> data.issubset({1,2})
+True
+>>> data.issubset({1,2,3})
+True
+>>> data.issubset({1,3,4})
+False
 
-    >>> {1,2} < {3,4}
-    False
-    >>> {1,2} < {1,2}
-    False
-    >>> {1,2} < {1,2,3}
-    True
-    >>> {1,2,3} < {1,2}
-    False
+>>> {1,2} < {3,4}
+False
+>>> {1,2} < {1,2}
+False
+>>> {1,2} < {1,2,3}
+True
+>>> {1,2,3} < {1,2}
+False
 
-    >>> {1,2} <= {3,4}
-    False
-    >>> {1,2} <= {1,2}
-    True
-    >>> {1,2} <= {1,2,3}
-    True
-    >>> {1,2,3} <= {1,2}
-    False
+>>> {1,2} <= {3,4}
+False
+>>> {1,2} <= {1,2}
+True
+>>> {1,2} <= {1,2,3}
+True
+>>> {1,2,3} <= {1,2}
+False
 
 Is Superset?:
+
 * ``True`` - if ``data`` has all elements from ``x``
 * ``False`` - if ``data`` don't have element from ``x``
 
-    >>> data = {1,2}
-    >>>
-    >>> data.issuperset({1})
-    True
-    >>> data.issuperset({1,2})
-    True
-    >>> data.issuperset({1,2,3})
-    False
-    >>> data.issuperset({1,3})
-    False
-    >>> data.issuperset({2,1})
-    True
+>>> data = {1,2}
+>>>
+>>> data.issuperset({1})
+True
+>>> data.issuperset({1,2})
+True
+>>> data.issuperset({1,2,3})
+False
+>>> data.issuperset({1,3})
+False
+>>> data.issuperset({2,1})
+True
 
-    >>> {1,2} > {1,2}
-    False
-    >>> {1,2} > {1,2,3}
-    False
-    >>> {1,2,3} > {1,2}
-    True
+>>> {1,2} > {1,2}
+False
+>>> {1,2} > {1,2,3}
+False
+>>> {1,2,3} > {1,2}
+True
 
-    >>> {1,2} >= {1,2}
-    True
-    >>> {1,2} >= {1,2,3}
-    False
-    >>> {1,2,3} >= {1,2}
-    True
+>>> {1,2} >= {1,2}
+True
+>>> {1,2} >= {1,2,3}
+False
+>>> {1,2,3} >= {1,2}
+True
 
 
 Basic Operations
 ----------------
 Union (returns sum of elements from ``data`` and ``x``):
 
-    >>> data = {1,2}
-    >>>
-    >>> data.union({1,2})
-    {1, 2}
-    >>> data.union({1,2,3})
-    {1, 2, 3}
-    >>> data.union({1,2,4})
-    {1, 2, 4}
-    >>> data.union({1,3}, {2,4})
-    {1, 2, 3, 4}
+>>> data = {1,2}
+>>>
+>>> data.union({1,2})
+{1, 2}
+>>> data.union({1,2,3})
+{1, 2, 3}
+>>> data.union({1,2,4})
+{1, 2, 4}
+>>> data.union({1,3}, {2,4})
+{1, 2, 3, 4}
 
-    >>> {1,2} | {1,2}
-    {1, 2}
-    >>> {1,2,3} | {1,2}
-    {1, 2, 3}
-    >>> {1,2,3} | {1,2,4}
-    {1, 2, 3, 4}
-    >>> {1,2} | {1,3} | {2,4}
-    {1, 2, 3, 4}
+>>> {1,2} | {1,2}
+{1, 2}
+>>> {1,2,3} | {1,2}
+{1, 2, 3}
+>>> {1,2,3} | {1,2,4}
+{1, 2, 3, 4}
+>>> {1,2} | {1,3} | {2,4}
+{1, 2, 3, 4}
 
 Difference (returns elements from ``data`` which are not in ``x``):
 

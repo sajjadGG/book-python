@@ -2,7 +2,7 @@ Sequence Comparison
 ===================
 * ``tuple`` - fast and memory efficient
 * ``list`` - extensible and flexible
-* ``set`` - very fast lookup
+* ``set`` - unique elements, fast lookup
 
 Why are there separate tuple and list data types? [#PyDocTupleList]_
 

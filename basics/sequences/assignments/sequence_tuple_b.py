@@ -7,7 +7,8 @@
 
 English:
     1. Define `result: tuple` representing all species
-    2. To convert table use multiline select with `alt` key in your IDE
+    2. To convert table use multiline select with `alt` or `alt+shift`
+       key in your IDE
     3. Do not use `slice`, `getitem`, `for`, `while` or any other
        control-flow statement
     4. Run doctests - all must succeed
@@ -15,7 +16,7 @@ English:
 Polish:
     1. Zdefiniuj `result: tuple` z nazwami gatunków
     2. Do konwersji tabelki wykorzystaj zaznaczanie wielu linijek za pomocą
-       klawisza `alt` w Twoim IDE
+       klawisza `alt` lub `alt+shift` w Twoim IDE
     3. Nie używaj `slice`, `getitem`, `for`, `while` lub jakiejkolwiek innej
        instrukcji sterującej
     4. Uruchom doctesty - wszystkie muszą się powieść

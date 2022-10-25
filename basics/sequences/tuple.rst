@@ -96,8 +96,11 @@ Comma after last element of multi value tuple is optional:
 
 Tuple or Int, Float, Str
 ------------------------
-* ``1.5`` - float
-* ``1,5`` - tuple
+* ``data = 1.5`` - float
+* ``data = 1,5`` - tuple
+* ``data = (1)`` - int
+* ``data = (1.)`` - float
+* ``data = (1,)`` - tuple
 
 >>> x = 1           # int
 >>> x = 1.          # float
@@ -166,8 +169,8 @@ Count
 3
 
 
-Reversed
---------
+Reverse
+-------
 * ``reversed()`` - Return a reverse iterator over the values of the given sequence
 
 >>> values = (1, 2, 3)
@@ -179,7 +182,7 @@ Reversed
 
 Sort
 ----
-* ``sort()`` - return a new list containing all items from the iterable in ascending order
+* ``sorted()`` - return a new list containing all items from the iterable in ascending order
 * Note, that the result will be a ``list``, so we need to type cast
 * Reverse flag can be set to request the result in descending order
 
