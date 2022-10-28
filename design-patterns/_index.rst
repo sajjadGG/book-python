@@ -166,7 +166,7 @@ Behavioral
     behavioral/visitor.rst
     behavioral/gateway.rst
     behavioral/interpreter.rst
-    behavioral/state-machine.rst
+    behavioral/statemachine.rst
 
 
 Structural
