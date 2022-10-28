@@ -26,14 +26,14 @@ Tests:
     >>> remove(FILE)
 
     >>> result
-    'hello\\nworld\\n'
+    'hello,world\\n'
 """
 
 FILE = '_temporary.txt'
 DATA = ['hello', 'world']
 
 # Solution
-data = '\n'.join(DATA) + '\n'
+data = ','.join(DATA) + '\n'
 
 with open(FILE, mode='wt') as file:
     file.write(data)

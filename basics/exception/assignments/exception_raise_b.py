@@ -31,6 +31,8 @@ Hints:
     * `not in`
     * `raise`
     * `if`
+    * `isinstance()`
+    * `type()`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

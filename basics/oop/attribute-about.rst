@@ -65,34 +65,41 @@ What are attributes?
 
 Scalars creates values:
 
->>> 1  # doctest: +SKIP
->>> 2  # doctest: +SKIP
->>> 3  # doctest: +SKIP
+>>> 'Mark'  # doctest: +SKIP
+>>> 'Watney'  # doctest: +SKIP
+>>> 40  # doctest: +SKIP
 
 Identifiers and values creates variables:
 
->>> x = 1
->>> y = 2
->>> z = 3
+>>> firstname = 'Mark'
+>>> lastname = 'Watney'
+>>> age = 40
 
-Values with relations creates structures:
+Related values creates structures:
 
->>> point = [1, 2, 3]
+>>> astronaut = ['Mark', 'Watney', 40]
 
 Structures with identifiers creates data:
 
->>> point = {
-...     'x': 1,
-...     'y': 2,
-...     'z': 3,
+>>> astronaut = {
+...     'firstname': 'Mark',
+...     'lastname': 'Watney',
+...     'age': 40,
 ... }
 
-Data with context and relations creates information:
+Data with context creates classes:
 
 >>> class Point:
-...     x: int = 1
-...     y: int = 2
-...     z: int = 3
+...     firstname: str = 'Mark'
+...     lastname: str = 'Watney'
+...     age: int = 40
+
+Classes with relations creates information:
+
+>>> class Point:
+...     firstname: str = 'Mark'
+...     lastname: str = 'Watney'
+...     age: int = 40
 
 
 Namespace
@@ -101,17 +108,16 @@ Namespace
 
 Unrelated variables:
 
->>> x: int
->>> y: int
->>> z: int
+>>> firstname: str
+>>> lastname: str
+>>> age: int
 
 Class creates space, in which names has meaning:
 
 >>> class Point:
-...     x: int
-...     y: int
-...     z: int
-
+...     firstname: str
+...     lastname: str
+...     age: int
 
 
 References

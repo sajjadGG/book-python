@@ -5,6 +5,9 @@ FuncProg Lambda
 * When function is short
 * You don't need to name it (hence it is anonymous)
 
+>>> lambda x: x+1  # doctest: +ELLIPSIS
+<function <lambda> at 0x...>
+
 .. glossary::
 
     lambda
@@ -183,7 +186,8 @@ Use Case - 0x05
 >>> people = [
 ...     'Mark Watney',
 ...     'Melissa Lewis',
-...     'Jose Jimenez']
+...     'Jose Jimenez',
+... ]
 >>>
 >>>
 >>> result = filter(lambda x: x in astronauts, people)

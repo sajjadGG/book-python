@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Init Print
+* Assignment: OOP Init Define
 * Required: yes
 * Complexity: easy
 * Lines of code: 3 lines

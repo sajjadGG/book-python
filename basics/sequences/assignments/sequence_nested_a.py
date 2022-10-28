@@ -34,8 +34,10 @@ Tests:
     >>> assert {'red', 'green', 'blue'} in result
 """
 
-# With tuple 1, 2, 3 and list 1.1, 2.2, 3.3
-# And set 'red', 'green', 'blue'
+# Result should contain:
+# - tuple: 1, 2, 3
+# - list: 1.1, 2.2, 3.3
+# - set: 'red', 'green', 'blue'
 # type: list[tuple|list|set]
 result = ...
 

@@ -80,24 +80,22 @@ to mix conventions from different languages. If you write C code, use C
 conventions. If you program in Python, use Python conventions. Remember,
 there are different communities around both of those languages:
 
->>> def sayHello():
+>>> def sayHello():  # bad, function name should be lowercase
 ...     pass
 
 The ``PascalCase`` name has completely different meaning in Python - it is
 used for classes. Using such name convention will mistake others.
 
->>> def SayHello():
+>>> def SayHello():  # bad, function name should be lowercase
 ...     pass
 
 Use ``snake_case`` names in Python. It is easy to remember. Python looks like
 a snake, and sounds like a snake ;) This is double internal joke, because
 Python name came from Monty Python, of which Guido van Rossum was a big fun.
-The other reference is to duck typing (dynamic typing) - "If it walks like a duck
-and it quacks like a duck, then it must be a duck":
 
 This is ``snake_case()`` name. It is Pythonic way:
 
->>> def say_hello():
+>>> def say_hello():  # good
 ...     pass
 
 

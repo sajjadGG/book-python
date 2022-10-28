@@ -21,8 +21,8 @@ Polish:
     2. Użytkownik wprowadza ciśnienie krwi w formacie `XXX/YY` lub `XXX/YYY`
     3. Użytkownik nie będzie próbował wprowadzać danych niepoprawnych
     4. Format danych:
-        a. `XXX: int` to wartość ciśnienia skurczowego (ang. *systolic*)
-        b. `YY: int` lub `YYY: int` to wartość ciśnienia rozkurczowego (ang. *diastolic*)
+        a. `XXX: int` to wartość ciśnienia skurczowego (ang. systolic)
+        b. `YY: int` lub `YYY: int` to wartość ciśnienia rozkurczowego (ang. diastolic)
     5. Wypisz status wprowadzonego ciśnienia krwi
     6. Gdy wartości ciśnienia skurczowego i rozkurczowego należą do różnych kategorii, przyjmij gorszy przypadek
     7. Uruchom doctesty - wszystkie muszą się powieść

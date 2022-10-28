@@ -6,12 +6,12 @@
 * Time: 3 min
 
 English:
-    1. Generate `result: list[int]` with numbers from 0 to 5 (exclusive)
+    1. Generate `result: list[int]` with numbers from 0 (inclusive) to 5 (exclusive)
     2. You can use `range()` in a loop, but not conversion: `list(range())`
     3. Run doctests - all must succeed
 
 Polish:
-    1. Wygeneruj `result: list[int]` z liczbami od 0 do 5 (rozłącznie)
+    1. Wygeneruj `result: list[int]` z liczbami od 0 (włącznie) do 5 (rozłącznie)
     2. Możesz użyć `range()` w pętli, ale nie konwersji: `list(range())`
     3. Uruchom doctesty - wszystkie muszą się powieść
 

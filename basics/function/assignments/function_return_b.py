@@ -12,7 +12,7 @@ English:
 
 Polish:
     1. Zdefiniuj funkcję `result`
-    2. Funkcja powinna zwracać sumę tuple: 'hello', 'world'
+    2. Funkcja powinna zwracać krotkę: 'hello', 'world'
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:

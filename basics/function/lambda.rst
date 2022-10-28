@@ -5,13 +5,26 @@ Function Lambda
 * When function is short
 * You don't need to name it (hence it is anonymous)
 
->>> lambda x: x+1  # doctest: +ELLIPSIS
-<function <lambda> at 0x...>
-
 .. glossary::
 
     lambda
         Anonymous function
+
+>>> lambda x: x+1  # doctest: +ELLIPSIS
+<function <lambda> at 0x...>
+
+Lambda Expressions:
+
+>>> a = lambda x: x+1
+>>> b = lambda x,y: x+y
+
+Equivalent functions:
+
+>>> def a(x):
+...     return x+1
+
+>>> def b(x,y):
+...     return x+y
 
 
 Syntax
@@ -19,19 +32,6 @@ Syntax
 .. code-block:: python
 
     lambda <arguments>: <expression>
-
-Lambda Expressions:
-
->>> f = lambda x: x+1
->>> f = lambda x,y: x+y
-
-Equivalent functions:
-
->>> def f(x):
-...     return x+1
-
->>> def f(x,y):
-...     return x+y
 
 
 Convention
@@ -71,6 +71,15 @@ Note to Programmers of Different Languages
                             .filter(user -> user.firstname == 'Mark')
                             .filter((x,y) -> x + y)
                             .collect(Collectors.toList());
+
+
+Noop
+----
+>>> noop = lambda: ...
+
+>>> def request(on_error = lambda: ...):
+...     ...
+
 
 Lambda with Map
 ---------------
@@ -159,14 +168,14 @@ Use Case - 0x03
 Use Case - 0x04
 ---------------
 >>> people = [
-...     {'is_astronaut': False, 'name': 'Mark Watney'},
-...     {'is_astronaut': True, 'name': 'Melissa Lewis'},
+...     {'is_astronaut': True, 'name': 'Mark Watney'},
+...     {'is_astronaut': False, 'name': 'Melissa Lewis'},
 ...     {'is_astronaut': True, 'name': 'Rick Martinez'}]
 >>>
 >>>
 >>> result = filter(lambda x: x['is_astronaut'], people)
 >>> list(result)  # doctest: +NORMALIZE_WHITESPACE
-[{'is_astronaut': True, 'name': 'Melissa Lewis'},
+[{'is_astronaut': True, 'name': 'Mark Watney'},
  {'is_astronaut': True, 'name': 'Rick Martinez'}]
 
 
@@ -174,13 +183,21 @@ Use Case - 0x05
 ---------------
 >>> astronauts = ['Mark Watney', 'Melissa Lewis']
 >>>
->>> people = ['Mark Watney', 'Melissa Lewis',
-...           'Rick Martinez', 'Alex Vogel']
+>>> people = [
+...     'Mark Watney',
+...     'Melissa Lewis',
+...     'Jose Jimenez',
+... ]
 >>>
 >>>
 >>> result = filter(lambda x: x in astronauts, people)
 >>> list(result)
 ['Mark Watney', 'Melissa Lewis']
+
+
+Further Reading
+---------------
+* https://youtu.be/eis11j_iGMs
 
 
 Assignments

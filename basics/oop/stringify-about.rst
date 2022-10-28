@@ -2,7 +2,6 @@ OOP Stringify About
 ===================
 * ``str()``
 * ``repr()``
-* ``format()``
 
 Setup:
 
@@ -33,6 +32,3 @@ Repr
 
 >>> date
 datetime.date(1961, 4, 12)
-
-
-.. todo:: Assignments

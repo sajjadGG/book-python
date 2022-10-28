@@ -8,22 +8,18 @@
 English:
     1. Read `FILE` and for each line:
         a. Remove leading and trailing whitespaces
-        b. Skip line if it is empty
-        c. Split line by whitespace
-        d. Separate IP address and hosts names
-        e. Append IP address and hosts names to `result`
-    2. Merge hostnames for the same IP
-    3. Run doctests - all must succeed
+        b. Split line by whitespace
+        c. Separate IP address and hosts names
+        d. Append IP address and hosts names to `result`
+    2. Run doctests - all must succeed
 
 Polish:
     1. Wczytaj `FILE` i dla każdej linii:
         a. Usuń białe znaki na początku i końcu linii
-        b. Pomiń linię, jeżeli jest pusta
-        c. Podziel linię po białych znakach
-        d. Odseparuj adres IP i nazwy hostów
-        e. Dodaj adres IP i nazwy hostów do `result`
-    2. Scal nazwy hostów dla tego samego IP
-    3. Uruchom doctesty - wszystkie muszą się powieść
+        b. Podziel linię po białych znakach
+        c. Odseparuj adres IP i nazwy hostów
+        d. Dodaj adres IP i nazwy hostów do `result`
+    2. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `str.isspace()`
@@ -72,9 +68,5 @@ result = {}
 
 with open(FILE) as file:
     for line in file:
-        ip, *hostnames = line.strip().split()
-
-        if ip in result:
-            result[ip] += hostnames
-        else:
-            result[ip] = hostnames
+        ip, *hosts = line.strip().split()
+        result[ip] = hosts

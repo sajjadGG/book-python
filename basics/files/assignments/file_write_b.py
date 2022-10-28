@@ -29,15 +29,13 @@ Tests:
     10.13.37.1      nasa.gov esa.int polsa.gov.pl
     255.255.255.255 broadcasthost
     ::1             localhost
-    <BLANKLINE>
 """
 
 FILE = '_temporary.txt'
 DATA = """127.0.0.1       localhost
 10.13.37.1      nasa.gov esa.int polsa.gov.pl
 255.255.255.255 broadcasthost
-::1             localhost
-"""
+::1             localhost"""
 
 # Solution
 with open(FILE, mode='wt') as file:

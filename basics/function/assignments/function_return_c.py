@@ -17,7 +17,7 @@ English:
 Polish:
     1. Zdefiniuj funkcję `result`
     2. Wewnątrz funkcji zdefiniuj zmienną `a: int` z wartością 1
-    3. Wewnątrz funkcji zdefiniuj zmienną `b: int` z wartością 1
+    3. Wewnątrz funkcji zdefiniuj zmienną `b: int` z wartością 2
     4. Zwróć `dict[str,int]` z nazwami zmiennych i ich wartościami,
        przykład: {'a': 1, 'b': 2}
     5. Nie używaj `locals()`
