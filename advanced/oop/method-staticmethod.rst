@@ -435,4 +435,6 @@ Instead I can use:
 >>> obj = ZWaveSensor.add(datetime, device, type, value, unit)  # doctest: +SKIP
 
 
+Assignments
+-----------
 .. todo:: Assignments

@@ -210,7 +210,7 @@ Use Case - 0x04
 >>> major, minor, *_ = sys.version_info
 >>>
 >>> print(major, minor, sep='.')
-3.10
+3.11
 
 
 Use Case - 0x05

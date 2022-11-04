@@ -32,6 +32,12 @@ Polish:
     3. Użyj modułu `statistics` z biblioteki standardowej Python
     4. Uruchom doctesty - wszystkie muszą się powieść
 
+Hint:
+    * Note, that in petal_length stdev is:
+        a. Python 3.10: 1.8602739173624534
+        b. Python 3.11: 1.8602739173624532
+
+
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
@@ -40,7 +46,7 @@ Tests:
     >>> stats(sepal_width)
     {'mean': 3.0619047619047617, 'stdev': 0.36670995415476587, 'median': 3.0, 'variance': 0.1344761904761905}
     >>> stats(petal_length)
-    {'mean': 3.8523809523809525, 'stdev': 1.8602739173624534, 'median': 4.5, 'variance': 3.4606190476190477}
+    {'mean': 3.8523809523809525, 'stdev': 1.8602739173624532, 'median': 4.5, 'variance': 3.4606190476190477}
     >>> stats(petal_width)
     {'mean': 1.2333333333333334, 'stdev': 0.7741662181555931, 'median': 1.4, 'variance': 0.5993333333333334}
 """

@@ -75,6 +75,7 @@ class Iris:
 # type: list[Iris]
 result = ...
 
+
 # Solution
 def factory(row):
     *features, species = row

@@ -246,10 +246,10 @@ Use Case - 0x02
 3
 >>>
 >>> print(minor)
-10
+11
 >>>
 >>> print(patch)
-5
+0
 
 
 Use Case - 0x03

@@ -15,12 +15,22 @@ Unpack
     :maxdepth: 1
     :caption: Unpack
 
-    unpack/unpack-assignment.rst
-    unpack/unpack-star.rst
+    unpack/assignment.rst
+    unpack/star.rst
     unpack/parameters.rst
     unpack/arguments.rst
-    unpack/parameter-syntax.rst
-    unpack/assignment-expression.rst
+
+
+Syntax
+******
+.. toctree::
+    :maxdepth: 1
+    :caption: Unpack
+
+    syntax/match.rst
+    syntax/parameter-syntax.rst
+    syntax/assignment-expression.rst
+    syntax/while-else.rst
 
 
 Type Annotation
@@ -142,8 +152,8 @@ Datetime and Timezones
 
     datetime/create.rst
     datetime/iso.rst
-    datetime/format.rst
     datetime/standards.rst
+    datetime/format.rst
     datetime/parse.rst
     datetime/timedelta.rst
     datetime/timestamp.rst

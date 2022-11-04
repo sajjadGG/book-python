@@ -89,7 +89,6 @@ Conditional
     conditional/syntax-if.rst
     conditional/syntax-else.rst
     conditional/syntax-elif.rst
-    conditional/syntax-match.rst
     conditional/syntax-expression.rst
     conditional/boolean-logic.rst
     conditional/boolean-conjunction.rst
@@ -128,7 +127,6 @@ Loops
     loop/while-patterns.rst
     loop/while-break.rst
     loop/while-continue.rst
-    loop/while-else.rst
     loop/for-about.rst
     loop/for-nested.rst
     loop/for-unpacking.rst

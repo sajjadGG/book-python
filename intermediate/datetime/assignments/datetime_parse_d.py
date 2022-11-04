@@ -25,6 +25,7 @@ Tests:
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
+    >>> result = list(result)
     >>> assert type(result) is list, \
     'Variable `result` has invalid type, must be a list'
     >>> assert all(type(element) is datetime for element in result), \
@@ -141,4 +142,4 @@ def parse(x: str) -> datetime:
     raise NotImplementedError('No format matching string found')
 
 
-result = [parse(line) for line in DATA]
+result = map(parse, DATA)

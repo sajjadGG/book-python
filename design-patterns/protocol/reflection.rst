@@ -7,6 +7,39 @@ Protocol Reflection
 * ``hasattr(obj, 'attrname') -> bool``
 
 
+
+>>> class Point:
+...     def __init__(self, x, y, z):
+...         self.x = x
+...         self.y = y
+...         self.z = z
+...
+...     def __setattr__(self, attrname, attrvalue):
+...         if attrname not in {'x', 'y', 'z'}:
+...             raise NameError('You can set only x, y, z attributes')
+...         if type(attrvalue) not in (int,float):
+...             raise TypeError('Attribute value must be int or float')
+...         if attrvalue < 0:
+...             raise ValueError('Attribute cannot be less than 0')
+...         return super().__setattr__(attrname, attrvalue)
+
+>>> pt = Point(1,2,3)
+>>>
+>>> pt.x = 1
+>>>
+>>> pt.x = -1
+Traceback (most recent call last):
+ValueError: Attribute cannot be less than 0
+>>>
+>>> pt.x = 'one'
+Traceback (most recent call last):
+TypeError: Attribute value must be int or float
+>>>
+>>> pt.notexisting = 1
+Traceback (most recent call last):
+NameError: You can set only x, y, z attributes
+
+
 >>> class Astronaut:
 ...     def __init__(self, name):
 ...         self.name = name

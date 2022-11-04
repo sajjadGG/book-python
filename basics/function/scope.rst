@@ -79,7 +79,7 @@ Shadowing
 >>>
 >>>
 >>> def run():
-...     data = [10, 20, 30]  # Shadows name 'data' from outer scope # noqa
+...     data = [10, 20, 30]  # Shadows name 'data' from outer scope
 ...     print(data)
 >>>
 >>>
@@ -142,6 +142,22 @@ Global Scope
  'firstname': 'Mark',
  'lastname': 'Watney'}
 
+>>> class Astronaut:
+...    pass
+>>>
+>>> mark = Astronaut()
+>>>
+>>> globals()  # doctest: +SKIP +ELLIPSIS
+{'__name__': '__main__',
+ '__doc__': None,
+ '__package__': None,
+ '__loader__': <class '_frozen_importlib.BuiltinImporter'>,
+ '__spec__': None,
+ '__annotations__': {},
+ '__builtins__': <module 'builtins' (built-in)>,
+ 'Astronaut': <class '__main__.Astronaut'>,
+ 'mark': <__main__.Astronaut object at 0x...>}
+
 
 Local Scope
 -----------
@@ -189,7 +205,7 @@ Shadowing of a global scope is used frequently in Mocks and Stubs.
 This way, we can simulate user input. Note that Mocks and Stubs will
 stay until the end of a program.
 
->>> def input(__prompt):  # noqa
+>>> def input(prompt):
 ...     return 'Mark Watney'
 >>>
 >>>
@@ -202,7 +218,7 @@ stay until the end of a program.
 'Mark Watney'
 
 >>> from unittest.mock import MagicMock
->>> input = MagicMock(side_effect=['Mark Watney', '44'])  # noqa
+>>> input = MagicMock(side_effect=['Mark Watney', '44'])
 >>>
 >>>
 >>> name = input('Type your name: ')
@@ -224,53 +240,54 @@ Builtins
 >>>
 >>> dir(builtins)   # doctest: +NORMALIZE_WHITESPACE
 ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException',
- 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning',
- 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError',
- 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning',
- 'EOFError', 'Ellipsis', 'EncodingWarning', 'EnvironmentError', 'Exception',
- 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError',
- 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning',
- 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError',
- 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError',
- 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError',
- 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError',
- 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError',
- 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError',
- 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError',
- 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError',
- 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError',
- 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError',
- 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning',
- 'ZeroDivisionError', '_', '__build_class__', '__debug__', '__doc__',
- '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs',
- 'aiter', 'all', 'anext', 'any', 'ascii', 'bin', 'bool', 'breakpoint',
- 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile',
- 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod',
- 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format',
- 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id',
- 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license',
- 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object',
- 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr',
- 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod',
- 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+ 'BaseExceptionGroup', 'BlockingIOError', 'BrokenPipeError', 'BufferError',
+ 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError',
+ 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError',
+ 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EncodingWarning',
+ 'EnvironmentError', 'Exception', 'ExceptionGroup', 'False',
+ 'FileExistsError', 'FileNotFoundError', 'FloatingPointError',
+ 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError',
+ 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError',
+ 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError',
+ 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None',
+ 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError',
+ 'OverflowError', 'PendingDeprecationWarning', 'PermissionError',
+ 'ProcessLookupError', 'RecursionError', 'ReferenceError',
+ 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration',
+ 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError',
+ 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError',
+ 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError',
+ 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning',
+ 'ValueError', 'Warning', 'ZeroDivisionError', '_', '__build_class__',
+ '__debug__', '__doc__', '__import__', '__loader__', '__name__',
+ '__package__', '__spec__', 'abs', 'aiter', 'all', 'anext', 'any', 'ascii',
+ 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr',
+ 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr',
+ 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter',
+ 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash',
+ 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter',
+ 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min',
+ 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property',
+ 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice',
+ 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars',
+ 'zip']
 
 
 Use Case - 0x01
 ---------------
+Simulate user input (for test automation)
+
 >>> from unittest.mock import MagicMock
->>>
->>> # Simulate user input (for test automation)
->>> input = MagicMock(side_effect=['lastname'])  # noqa
->>>
->>>
+>>> input = MagicMock(side_effect=['lastname'])
+
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
->>> what = input('Type variable name: ')   #input: 'lastname'
 >>>
->>> globals()[what]
+>>> varname = input('Type variable name: ')   #input: 'lastname'
+>>>
+>>> globals()[varname]
 'Watney'
-
 
 
 Assignments

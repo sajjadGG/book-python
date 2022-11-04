@@ -99,28 +99,28 @@ False
 >>> 'abc' > 'self'
 False
 
->>> (3, 9) > (3, 8)
+>>> (3, 12) > (3, 11)
 True
->>> (3, 8, 3) > (3, 7, 6)
+>>> (3, 11, 0) > (3, 10, 8)
 True
 >>> (3, 8) > (3, 9)
 False
 
->>> (2, 7) > (3, 6)
+>>> (2, 7) > (3, 11)
 False
->>> (3, 6) > (2, 7)
+>>> (3, 11) > (2, 7)
 True
 
->>> [3, 9] > [3, 8]
+>>> [3, 12] > [3, 11]
 True
->>> [3, 8, 3] > [3, 7, 6]
+>>> [3, 11, 0] > [3, 10, 8]
 True
 >>> [3, 8] > [3, 9]
 False
 
->>> [2, 7] > [3, 6]
+>>> [2, 7] > [3, 11]
 False
->>> [3, 6] > [2, 7]
+>>> [3, 11] > [2, 7]
 True
 
 
@@ -145,7 +145,7 @@ Examples
 >>>
 >>>
 >>> print(sys.version_info)  # doctest: +SKIP
-sys.version_info(major=3, minor=10, micro=4, releaselevel='final', serial=0)
+sys.version_info(major=3, minor=11, micro=0, releaselevel='final', serial=0)
 >>>
 >>>
 >>> sys.version_info >= (3, 9)
@@ -155,7 +155,7 @@ True
 True
 >>>
 >>> sys.version_info >= (3, 11)
-False
+True
 >>>
 >>> sys.version_info >= (3, 12)
 False
@@ -167,7 +167,7 @@ True
 True
 >>>
 >>> sys.version_info >= (3, 11, 0)
-False
+True
 >>>
 >>> sys.version_info >= (3, 12, 0)
 False

@@ -559,6 +559,6 @@ References
 
 Assignments
 -----------
-.. literalinclude:: assignments/unpack_assignmentexpr_a.py
-    :caption: :download:`Solution <assignments/unpack_assignmentexpr_a.py>`
+.. literalinclude:: assignments/syntax_assignmentexpr_a.py
+    :caption: :download:`Solution <assignments/syntax_assignmentexpr_a.py>`
     :end-before: # Solution

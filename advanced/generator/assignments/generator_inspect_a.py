@@ -12,10 +12,11 @@ English:
     5. What will happen if input data will be bigger?
     6. Note, that in different Python versions you'll get slightly
        different values for getsizeof generator and function:
-        a. 104 for generator in Python 3.10
-        b. 112 for generator in Python 3.9
-        c. 112 for generator in Python 3.8
-        d. 120 for generator in Python 3.7
+        a. 224 for generator in Python 3.11
+        b. 104 for generator in Python 3.10
+        c. 112 for generator in Python 3.9
+        d. 112 for generator in Python 3.8
+        e. 120 for generator in Python 3.7
     7. Run doctests - all must succeed
 
 Polish:
@@ -26,10 +27,11 @@ Polish:
     5. Co się stanie, gdy ilość danych będzie większa?
     6. Zwróć uwagę, że w zależności od wersji Python wartości getsizeof
        dla funkcji i generatora mogą się nieznaczenie różnić:
-        a. 104 dla generator w Python 3.10
-        b. 112 dla generator w Python 3.9
-        c. 112 dla generator w Python 3.8
-        d. 120 dla generator w Python 3.7
+        a. 224 dla generator w Python 3.11
+        b. 104 dla generator w Python 3.10
+        c. 112 dla generator w Python 3.9
+        d. 112 dla generator w Python 3.8
+        e. 120 dla generator w Python 3.7
     7. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -52,11 +54,11 @@ Tests:
     >>> getsizeof(function(DATA*100, 'setosa'))
     1656
     >>> getsizeof(generator(DATA, 'setosa'))
-    104
+    224
     >>> getsizeof(generator(DATA*10, 'setosa'))
-    104
+    224
     >>> getsizeof(generator(DATA*100, 'setosa'))
-    104
+    224
 """
 
 DATA = [

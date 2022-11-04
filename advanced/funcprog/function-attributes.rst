@@ -57,6 +57,7 @@ Function Code
  'co_cellvars',
  'co_code',
  'co_consts',
+ 'co_exceptiontable',
  'co_filename',
  'co_firstlineno',
  'co_flags',
@@ -68,11 +69,12 @@ Function Code
  'co_name',
  'co_names',
  'co_nlocals',
+ 'co_positions',
  'co_posonlyargcount',
+ 'co_qualname',
  'co_stacksize',
  'co_varnames',
  'replace']
-
 
 Use Case - 0x01
 ---------------

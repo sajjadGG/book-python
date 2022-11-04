@@ -91,7 +91,7 @@ Zależności
     .. code-block:: text
 
         # Minimalne wymaganie
-        sphinx==5.2.*
+        sphinx==5.3.*
 
         # Theme Read the Docs
         sphinx_rtd_theme

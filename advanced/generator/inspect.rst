@@ -51,7 +51,7 @@ False
 1
 >>>
 >>> data.gi_frame.f_lasti
-10
+14
 >>>
 >>> data.gi_yieldfrom
 
@@ -62,6 +62,7 @@ Memory Footprint
 * ``sys.getsizeof(obj)`` calls ``obj.__sizeof__()`` method
 * ``sys.getsizeof(obj)`` adds an additional garbage collector overhead if the ``obj`` is managed by the garbage collector
 
+* 200 bytes for generator in Python 3.10
 * 104 bytes for generator in Python 3.10
 * 112 bytes for generator in Python 3.9
 * 112 bytes for generator in Python 3.8
@@ -76,16 +77,16 @@ Memory Footprint
 >>> gen1000 = (x for x in range(0,1000))
 >>>
 >>> getsizeof(gen1)
-104
+200
 >>>
 >>> getsizeof(gen10)
-104
+200
 >>>
 >>> getsizeof(gen100)
-104
+200
 >>>
 >>> getsizeof(gen1000)
-104
+200
 
 >>> from sys import getsizeof
 >>>

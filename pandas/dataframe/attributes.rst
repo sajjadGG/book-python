@@ -105,7 +105,9 @@ array([[0., 0., 0., 0.],
 >>>
 >>> df.values = values
 Traceback (most recent call last):
-AttributeError: can't set attribute 'values'
+AttributeError: property 'values' of 'DataFrame' object has no setter
 
 
+Assignments
+-----------
 .. todo:: Assignments

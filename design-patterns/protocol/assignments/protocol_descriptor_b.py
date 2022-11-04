@@ -46,7 +46,6 @@ class ValueRange:
     name: str
     min: float
     max: float
-    value: float
 
     def __init__(self, name, min, max):
         pass

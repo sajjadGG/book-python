@@ -551,6 +551,18 @@ Use Case - 0x04
 >>> class MyClass(metaclass=Singleton):
 ...     pass
 
+>>> a = MyClass()
+>>> b = MyClass()
+>>>
+>>> a is b
+True
+
+>>> id(a)  # doctest: +SKIP
+4375248416
+>>>
+>>> id(b)  # doctest: +SKIP
+4375248416
+
 
 Use Case - 0x05
 ---------------

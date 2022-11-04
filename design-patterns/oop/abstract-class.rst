@@ -245,7 +245,7 @@ Problem - Despite having defined property, the order of decorators (``abstractme
 >>>
 >>>
 >>> sys.modules['abc']  # doctest: +ELLIPSIS
-<module 'abc' from '...'>
+<module 'abc' (frozen)>
 >>>
 >>> pprint(sys.path)  # doctest: +SKIP
 ['/Users/watney/myproject',
