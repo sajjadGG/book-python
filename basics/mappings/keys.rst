@@ -207,6 +207,6 @@ References
 
 Assignments
 -----------
-.. literalinclude:: assignments/mapping_define_a.py
-    :caption: :download:`Solution <assignments/mapping_define_a.py>`
+.. literalinclude:: assignments/mapping_keys_a.py
+    :caption: :download:`Solution <assignments/mapping_keys_a.py>`
     :end-before: # Solution
