@@ -10,7 +10,7 @@ Dragon ADR Init Name
 
 Problem
 -------
-* Create Dragon and name it "Wawelski"
+* Create dragon named "Wawelski"
 
 
 Option 1
@@ -19,7 +19,7 @@ Option 1
 
 * Good: easy to use
 * Bad: less verbose than keyword arguments
-* Verdict: candidate
+* Decision: candidate
 
 
 Option 2
@@ -29,7 +29,7 @@ Option 2
 * Good: easy to use
 * Good: more verbose than positional arguments
 * Bad: too verbose for such simple example
-* Verdict: rejected, too verbose for such simple example
+* Decision: rejected, too verbose for such simple example
 
 
 Decision

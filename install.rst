@@ -12,7 +12,7 @@ Poniżej znajduje się krótka checklista, która pozwoli sprawdzić czy
 uczestnik jest odpowiednio przygotowany do szkolenia. Przygotowanie
 środowiska przed szkoleniem zaoszczędzi dużo czasu.
 
-* Python w wersji 3.9, 3.10 (preferowany: 3.10)
+* Python w wersji 3.9, 3.10, 3.11 (preferowany: 3.10)
   [`pobierz <https://www.python.org/downloads/>`_]
 
 * PyCharm 2022.1 lub nowszy (dowolnie Community lub Professional)

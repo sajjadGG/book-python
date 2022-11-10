@@ -18,10 +18,16 @@ Option 1
 >>> dragon.shift(left=10, down=20)
 >>> dragon.fly(left=10, down=20)
 
+* Good: extensible to 3D
 * Good: move by relative shifting (left, right, up, down)
 * Good: encapsulation, object knows current position, state and does the move
 * Bad: method names are too use-case specific
-* Verdict: rejected, bad method names
+* Decision: rejected, bad method names
+
+Problem:
+
+>>> dragon.fly(left=10, down=20)
+>>> hero.walk(left=10, down=20)     # code duplication
 
 
 Option 2
@@ -29,10 +35,11 @@ Option 2
 >>> dragon.change_position(left=10, down=20)
 >>> dragon.position_change(left=10, down=20)
 
+* Good: extensible to 3D
 * Good: move by relative shifting (left, right, up, down)
 * Good: encapsulation, object knows current position and moves
 * Bad: the method names are a bit too complex for
-* Verdict: candidate, method names are a bit too complex for
+* Decision: candidate, method names are a bit too complex for
 
 
 Option 3
@@ -40,11 +47,13 @@ Option 3
 >>> dragon.move(left=10, down=20)
 >>> dragon.move(right=10, up=20)
 
+* Good: extensible to 3D
 * Good: move by relative shifting (left, right, up, down)
 * Good: encapsulation, object knows current position, state and does the move
+* Good: hides business logic (inverted y-axis)
 * Good: easy ``.move()``
 * Good: you can prevent negative shifting (i.e.: ``left=-10``)
-* Verdict: candidate
+* Decision: candidate
 
 
 Option 4
@@ -52,22 +61,26 @@ Option 4
 >>> dragon.move(x=10, y=20)
 >>> dragon.move(x=-10, y=-20)
 
+* Good: extensible to 3D
 * Good: move by relative shifting (left, right, up, down)
 * Good: encapsulation, object knows current position, state and does the move
 * Good: easy ``.move()``
 * Bad: you have to know, which axis is ``left`` and with is ``right``
+* Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: you cannot prevent negative shifting (i.e.: ``x=-10``)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
-* Verdict: rejected, it requires to much inside knowledge of API from user
+* Decision: rejected, it requires to much inside knowledge of API from user
 
 
 Option 5
 --------
 >>> dragon.move_to(x=10, y=20)
 
-* Bad: controller must know other variables, such as speed factor (snail is slower than a dragon), surface on which the dragon is moving (solid is faster than water or ice), injuries (if dragon is not injured with his for example left foot)
+* Good: extensible to 3D
 * Bad: Move by setting absolute position which is similar to ``.set_position()``, but it differs from it where in ``move()`` you can make an animation of movement, and with ``set_position()`` it happens instantly
-* Verdict: rejected, violates Model-View-Controller (MVC)
+* Bad: controller must know other variables, such as speed factor (snail is slower than a dragon), surface on which the dragon is moving (solid is faster than water or ice), injuries (if dragon is not injured with his for example left foot)
+* Bad: requires knowledge of business logic (inverted y-axis)
+* Decision: rejected, violates Model-View-Controller (MVC)
 
 .. figure:: img/oop-architecture-mvc.png
 
@@ -81,17 +94,22 @@ Option 6
 * Bad: require knowledge of an API
 * Bad: Move by setting absolute position
 * Bad: controller must know other variables, such as speed factor (snail is slower than a dragon), surface on which the dragon is moving (solid is faster than water or ice), injuries (if dragon is not injured with his for example left foot)
+* Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Decision: rejected
 
 
 Option 7
 --------
 >>> dragon.move_xy(10, -20)
 
+* Good: extensible to 3D
 * Bad: Move by setting absolute position
 * Bad: controller must know other variables, such as speed factor (snail is slower than a dragon), surface on which the dragon is moving (solid is faster than water or ice), injuries (if dragon is not injured with his for example left foot)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: not extensible to 3D
+* Decision: rejected
 
 
 Option 8
@@ -102,7 +120,9 @@ Option 8
 * Bad: require knowledge of an API
 * Bad: Move by setting absolute position
 * Bad: controller must know other variables, such as speed factor (snail is slower than a dragon), surface on which the dragon is moving (solid is faster than water or ice), injuries (if dragon is not injured with his for example left foot)
+* Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Decision: rejected
 
 
 Option 9
@@ -114,7 +134,9 @@ Option 9
 * Bad: Move by setting absolute position
 * Bad: controller must know other variables, such as speed factor (snail is slower than a dragon), surface on which the dragon is moving (solid is faster than water or ice), injuries (if dragon is not injured with his for example left foot)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: not extensible to 3D
+* Decision: rejected
 
 
 Option 10
@@ -124,11 +146,13 @@ Option 10
 
 * Good: encapsulation, object knows current position and moves
 * Bad: controller computes final offset
+* Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Decision: rejected
 
 
-Option 9
---------
+Option 11
+---------
 >>> dragon.move(0, 10, 0, 20)
 
 >>> dragon.move((0, 10, 0, 20))
@@ -141,7 +165,9 @@ Option 9
 * Bad: Python has keyword arguments, so use it
 * Bad: require knowledge of an API
 * Bad: not extensible to 3D
+* Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Decision: rejected
 
 Example:
 
@@ -185,7 +211,7 @@ Problem:
     }
 
 
-Option 10
+Option 12
 ---------
 >>> dragon.move([
 ...     (10, -20),
@@ -194,14 +220,16 @@ Option 10
 * Good: move by relative offset
 * Bad: require knowledge of an API
 * Bad: not extensible to 3D
+* Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Decision: rejected
 
 Example:
 
 * ``move(horizontal, vertical)``
 
 
-Option 11
+Option 13
 ---------
 >>> dragon.move([
 ...     (10, -20),
@@ -211,14 +239,16 @@ Option 11
 * Bad: move by setting absolute position
 * Bad: require knowledge of an API
 * Bad: not extensible to 3D
+* Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Decision: rejected
 
 Example:
 
 * ``move(x, y)``
 
 
-Option 12
+Option 14
 ---------
 >>> dragon.move({'x':50, 'y':-120})
 
@@ -228,10 +258,12 @@ Option 12
 
 * Bad: require knowledge of an API
 * Bad: not extensible to 3D
+* Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Decision: rejected
 
 
-Option 13
+Option 15
 ---------
 >>> dragon.move({'left':50, 'down':120})
 
@@ -242,9 +274,11 @@ Option 13
 
 * Bad: require knowledge of an API
 * Bad: not extensible to 3D
+* Bad: requires knowledge of business logic (inverted y-axis)
+* Decision: rejected
 
 
-Option 14
+Option 16
 ---------
 >>> dragon.move({'dx': 10, 'dy': 20})
 
@@ -259,22 +293,33 @@ Option 14
 
 * Bad: require knowledge of an API
 * Bad: not extensible to 3D
+* Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``dy=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Decision: rejected
 
 
-Option 15
+Option 17
 ---------
 >>> dragon.move([
 ...     Point(x=10, y=20),
 ...     Point(x=10, y=15)])
 
+>>> path = [
+...     Point(x=10, y=20),
+...     Point(x=10, y=15),
+... ]
+>>>
+>>> dragon.move(path)
+
 * Good: Move by setting absolute position on a path
 * Good: This is how they do it in games
 * Good: extensible to 3D
+* Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: require knowledge of an API
+* Decision: possible, common practice in game-dev
 
 
-Option 16
+Option 18
 ---------
 >>> dragon.move([
 ...     {'direction': 'left', 'distance': 20},
@@ -283,9 +328,10 @@ Option 16
 
 * Good: extensible to 3D
 * Bad: require knowledge of an API
+* Decision: rejected
 
 
-Option 17
+Option 19
 ---------
 >>> x = dragon.x
 >>> y = dragon.y
@@ -309,9 +355,10 @@ Option 17
 * Bad: encapsulation
 * Bad: require knowledge of an API
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Decision: rejected
 
 
-Option 18
+Option 20
 ---------
 >>> dragon.move(x=-10, y=+20)
 >>> dragon.move(dx=-10, dy=+20)
@@ -320,9 +367,10 @@ Option 18
 * Good: extensible to 3D
 * Bad: business login in controller
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``dy=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Decision: rejected
 
 
-Option 19
+Option 21
 ---------
 >>> dragon.move(direction='left', distance=20)
 >>> dragon.move(direction='right', distance=5)
@@ -333,9 +381,10 @@ Option 19
 * Good: extensible to 3D
 * Bad: to complex for now
 * Bad: not possible to do movement in opposite directions in the same time
+* Decision: rejected
 
 
-Option 20
+Option 22
 ---------
 >>> LEFT = 61  # keyboard key code
 >>> RIGHT = 62
@@ -351,9 +400,10 @@ Option 20
 * Bad: to complex for now
 * Bad: there is no easy way to know which are possible directions
 * Bad: not possible to do movement in opposite directions in the same time
+* Decision: rejected, complex
 
 
-Option 21
+Option 23
 ---------
 >>> DIRECTION_LEFT = 61  # keyboard key code
 >>> DIRECTION_RIGHT = 62
@@ -369,9 +419,10 @@ Option 21
 * Bad: less, but still chaotic
 * Bad: to complex for now
 * Bad: not possible to do movement in opposite directions in the same time
+* Decision: rejected, complex
 
 
-Option 22
+Option 24
 ---------
 >>> class Direction(Enum):
 ...     LEFT = 61
@@ -390,9 +441,10 @@ Option 22
 * Good: there is a enumeration of possible choices for directions
 * Bad: to complex for now
 * Bad: not possible to do movement in opposite directions in the same time
+* Decision: rejected, complex
 
 
-Option 23
+Option 25
 ---------
 >>> KEY_BINDING = {
 ...     'ARROW_UP': dragon.move_up,
@@ -414,7 +466,7 @@ Option 23
 * Bad: to complex for now
 
 
-Option 24
+Option 26
 ---------
 >>> dragon.move_left(10)
 >>> dragon.move_right(10)
@@ -426,8 +478,8 @@ Option 24
 
 Good, because:
 
->>> game.bind_key(Key.LEFT_ARROW, dragon.move_left)
->>> game.bind_key(Key.RIGHT_ARROW, dragon.move_right)
+>>> game.bind_key(Key.ARROW_LEFT, dragon.move_left)
+>>> game.bind_key(Key.ARROW_RIGHT, dragon.move_right)
 
 Bad, because:
 
@@ -466,21 +518,20 @@ Use Case:
 >>> read_csv_with_delimiter_encoding('iris.csv', ';', 'utf-8')
 >>> read_csv_with_delimiter_encoding_verbose('iris.csv', ';', 'utf-8', True)
 
->>> file = CSV()
->>> file.set_file('iris.csv')  # encapsulation?!
+>>> file = ReadCSV('iris.csv')  # encapsulation?!
 >>> file.set_encoding('utf-8')
 >>> file.set_delimiter(';')
 >>> file.set_verbose(True)
 
->>> read_csv('iris.csv') \
-...     .withEncoding('utf-8') \
-...     .withDelimiter(';') \
-...     .withVerbose(True)
+>>> file = ReadCSV('iris.csv') \
+...               .withEncoding('utf-8') \
+...               .withDelimiter(';') \
+...               .withVerbose(True)
 
->>> read_csv('iris.csv',
-...          encoding='utf-8',
-...          delimiter=';',
-...          verbose=True)
+>>> file = read_csv('iris.csv',
+...                 encoding='utf-8',
+...                 delimiter=';',
+...                 verbose=True)
 
 * Bad: not extensible
 * Bad: to complex for now

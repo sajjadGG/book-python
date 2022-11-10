@@ -38,29 +38,30 @@ English
 
 5. When health points drop to, or below zero:
 
-    a. Dragon is dead
-    b. Set object status to dead
-    c. Change texture file name to  ``img/dragon/dead.png``
-    d. Print ``XXX is dead``, where ``XXX`` is the dragon's name
-    e. Print how much gold dragon dropped (random integer from 1 to 100)
-    f. Print position where dragon died
+    a. Dragon has "dead" status
+    b. Change texture file name to  ``img/dragon/dead.png``
+    c. Print ``XXX is dead``, where ``XXX`` is the dragon's name
+    d. Print how much gold dragon dropped (random integer from 1 to 100)
+    e. Print position where dragon died
 
 6. Run the game:
 
-    a. Create dragon at x=50, y=120 position and name it "Wawelski"
-    b. Set new position to x=10, y=20
-    c. Move dragon left by 10 and down by 20
-    d. Move dragon left by 10 and right by 15
-    e. Move dragon right by 15 and up by 5
-    f. Move dragon down by 5
-    g. Dragon makes damage
-    h. Make 10 points damage to the dragon
-    i. Make 5 points damage to the dragon
-    j. Make 3 points damage to the dragon
-    k. Make 2 points damage to the dragon
-    l. Make 15 points damage to the dragon
-    m. Make 25 points damage to the dragon
-    n. Make 75 points damage to the dragon
+    a. Create dragon named "Wawelski"
+    b. Set Dragon's initial position to x=50, y=120
+    c. Set new position to x=10, y=20
+    d. Move dragon left by 10 and down by 20
+    e. Move dragon left by 10 and right by 15
+    f. Move dragon right by 15 and up by 5
+    g. Move dragon down by 5
+    h. Dragon makes damage
+    i. Make 10 points damage to the dragon
+    j. Make 5 points damage to the dragon
+    k. Make 3 points damage to the dragon
+    l. Make 2 points damage to the dragon
+    m. Make 15 points damage to the dragon
+    n. Make 25 points damage to the dragon
+    o. Make 75 points damage to the dragon
+    p. Dragon should die at the position x=20, y=40 and drop gold (1-100)
 
 Non-functional requirements:
 
@@ -120,30 +121,30 @@ Polish
 
 5. Kiedy punkty życia Smoka spadną do lub poniżej zera:
 
-    a. Smok jest martwy
-    b. Ustaw status obiektu na dead
-    c. Zmień nazwę pliku tekstury na ``img/dragon/dead.png``
-    d. Wypisz ``XXX is dead``, gdzie ``XXX`` to nazwa smoka
-    e. Wypisz ile złota smok wyrzucił (losowa liczba od 1 do 100)
-    f. Wypisz pozycję gdzie smok zginął
+    a. Smok ma status "martwy"
+    b. Zmień nazwę pliku tekstury na ``img/dragon/dead.png``
+    c. Wypisz ``XXX is dead``, gdzie ``XXX`` to nazwa smoka
+    d. Wypisz ile złota smok wyrzucił (losowa liczba od 1 do 100)
+    e. Wypisz pozycję gdzie smok zginął
 
 6. Przeprowadź grę:
 
-    a. Stwórz smoka w pozycji x=50, y=120 i nazwij go "Wawelski"
-    b. Ustaw nową pozycję na x=10, y=20
-    c. Przesuń smoka w lewo o 10 i w dół o 20
-    d. Przesuń smoka w lewo o 10 i w prawo o 15
-    e. Przesuń smoka w prawo o 15 i w górę o 5
-    f. Przesuń smoka w dół o 5
-    g. Smok zadaje obrażenia (5-20)
-    h. Zadaj 10 obrażeń smokowi
-    i. Zadaj 5 obrażeń smokowi
-    j. Zadaj 3 obrażeń smokowi
-    k. Zadaj 2 obrażeń smokowi
-    l. Zadaj 15 obrażeń smokowi
-    m. Zadaj 25 obrażeń smokowi
-    n. Zadaj 75 obrażeń smokowi
-    o. Smok powinien zginąć na pozycji: x=20, y=40
+    a. Stwórz smoka o nazwie "Wawelski"
+    b. Ustaw inicjalna pozycję smoka na x=50, y=120
+    c. Ustaw nową pozycję na x=10, y=20
+    d. Przesuń smoka w lewo o 10 i w dół o 20
+    e. Przesuń smoka w lewo o 10 i w prawo o 15
+    f. Przesuń smoka w prawo o 15 i w górę o 5
+    g. Przesuń smoka w dół o 5
+    h. Smok zadaje obrażenia (5-20)
+    i. Zadaj 10 obrażeń smokowi
+    j. Zadaj 5 obrażeń smokowi
+    k. Zadaj 3 obrażeń smokowi
+    l. Zadaj 2 obrażeń smokowi
+    m. Zadaj 15 obrażeń smokowi
+    n. Zadaj 25 obrażeń smokowi
+    o. Zadaj 75 obrażeń smokowi
+    p. Smok powinien zginąć na pozycji: x=20, y=40 i zostawić złoto (1-100)
 
 Wymagania niefunkcjonalne:
 

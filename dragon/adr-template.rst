@@ -1,5 +1,11 @@
-Moon Landing
+ADR Template
 ============
+* ADR - Architectural Decision Records
+
+
+Summary
+-------
+* Decision: Moon Landing
 * Status: accepted
 * Decision Date: 1961-05-25
 * Release Date: 1962-09-12
