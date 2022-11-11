@@ -5,11 +5,13 @@
 * Time: 3 min
 
 English:
-    1. Write SQL query to delete table
+    1. Write SQL query to delete:
+       a. table: contacts
     2. Run doctests - all must succeed
 
 Polish:
-    1. Napisz zapytanie SQL aby skasować tabelę
+    1. Napisz zapytanie SQL aby skasować:
+       a. tabela: contacts
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -35,6 +37,6 @@ with sqlite3.connect('sql.db') as db:
 
 SQL = """
 
-
+DROP TABLE contacts
 
 """

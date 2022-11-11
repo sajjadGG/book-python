@@ -5,11 +5,13 @@
 * Time: 3 min
 
 English:
-    1. Run file to show data from table in DataFrame format
+    1. Run file to show data from table in DataFrame format:
+       a. table: apollo11
     2. Run doctests - all must succeed
 
 Polish:
-    1. Uruchom plik aby wyświetlić dane z tabeli w formacie DataFrame
+    1. Uruchom plik aby wyświetlić dane z tabeli w formacie DataFrame:
+       a. table: apollo11
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -41,6 +43,7 @@ print(df)
 
 SQL = """
 
-
+SELECT *
+FROM apollo11
 
 """

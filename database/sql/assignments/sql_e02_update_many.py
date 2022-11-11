@@ -5,11 +5,19 @@
 * Time: 3 min
 
 English:
-    1. Write SQL query to update many records
+    1. Write SQL query to update many records:
+       a. table: contacts
+       b. where: lastname = 'Watney'
+       c. column: mission
+       d. value: Ares3
     2. Run doctests - all must succeed
 
 Polish:
-    1. Napisz zapytanie SQL aby zaktualizować wiele rekordów
+    1. Napisz zapytanie SQL aby zaktualizować wiele rekordów:
+       a. tabela: contacts
+       b. gdzie: lastname = 'Watney'
+       c. kolumna: mission
+       d. wartość: Ares3
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -35,6 +43,8 @@ with sqlite3.connect('sql.db') as db:
 
 SQL = """
 
-
+UPDATE contacts SET
+    mission = 'Ares3'
+WHERE lastname == 'Watney'
 
 """

@@ -33,11 +33,12 @@ with sqlite3.connect('sql.db') as db:
     for table in db.execute(SQL):
         print(table['name'])
 
-
 # Solution
 
 SQL = """
 
-
+SELECT name
+FROM sqlite_master
+WHERE type='table'
 
 """

@@ -5,11 +5,13 @@
 * Time: 3 min
 
 English:
-    1. Run file to show schema for a table
+    1. Run file to show schema for a table:
+       a. table: apollo11
     2. Run doctests - all must succeed
 
 Polish:
-    1. Uruchom plik aby wyświetlić schemat tabeli
+    1. Uruchom plik aby wyświetlić schemat tabeli:
+       a. table: apollo11
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -38,6 +40,8 @@ with sqlite3.connect('sql.db') as db:
 
 SQL = """
 
-
+SELECT sql
+FROM sqlite_master
+WHERE tbl_name = 'apollo11'
 
 """

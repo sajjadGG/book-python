@@ -5,11 +5,19 @@
 * Time: 3 min
 
 English:
-    1. Write SQL query to add column
+    1. Write SQL query to add column:
+       a. table: contacts
+       b. column: mission
+       c. type: text
+       d. default: null
     2. Run doctests - all must succeed
 
 Polish:
-    1. Napisz zapytanie SQL aby dodać kolumnę
+    1. Napisz zapytanie SQL aby dodać kolumnę:
+       a. tabela: contacts
+       b. kolumna: mission
+       c. type: text
+       d. wartość domyślna: null
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -35,6 +43,7 @@ with sqlite3.connect('sql.db') as db:
 
 SQL = """
 
-
+ALTER TABLE contacts
+ADD COLUMN mission TEXT DEFAULT NULL
 
 """

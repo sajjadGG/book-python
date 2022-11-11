@@ -5,11 +5,13 @@
 * Time: 3 min
 
 English:
-    1. Run file to show all data in a table
+    1. Run file to show all data in a table:
+       a. table: apollo11
     2. Run doctests - all must succeed
 
 Polish:
-    1. Uruchom plik aby wyświetlić wszystkie dane w tabeli
+    1. Uruchom plik aby wyświetlić wszystkie dane w tabeli:
+       b. table: apollo11
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -37,6 +39,7 @@ with sqlite3.connect('sql.db') as db:
 
 SQL = """
 
-
+SELECT *
+FROM contacts
 
 """

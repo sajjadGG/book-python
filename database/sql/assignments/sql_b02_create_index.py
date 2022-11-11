@@ -5,11 +5,17 @@
 * Time: 3 min
 
 English:
-    1. Write SQL query to create index
+    1. Write SQL query to create index:
+       a. name: idx_contacts_lastname
+       b. table: contacts
+       c. column: lastname
     2. Run doctests - all must succeed
 
 Polish:
-    1. Napisz zapytanie SQL aby stworzyć indeks
+    1. Napisz zapytanie SQL aby stworzyć indeks:
+       a. nazwa: idx_contacts_lastname
+       b. tabela: contacts
+       c. kolumna: lastname
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -35,6 +41,7 @@ with sqlite3.connect('sql.db') as db:
 
 SQL = """
 
-
+CREATE INDEX IF NOT EXISTS idx_contacts_lastname
+ON contacts(lastname)
 
 """

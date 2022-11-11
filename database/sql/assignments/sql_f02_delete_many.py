@@ -5,11 +5,15 @@
 * Time: 3 min
 
 English:
-    1. Write SQL query to delete many records
+    1. Write SQL query to delete many records:
+       a. table: contacts
+       b. where: lastname = 'Watney'
     2. Run doctests - all must succeed
 
 Polish:
-    1. Napisz zapytanie SQL aby skasować wiele rekordów
+    1. Napisz zapytanie SQL aby skasować wiele rekordów:
+       a. tabela: contacts
+       b. gdzie: lastname = 'Watney'
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -35,6 +39,7 @@ with sqlite3.connect('sql.db') as db:
 
 SQL = """
 
-
+DELETE FROM contacts
+WHERE lastname == 'Watney'
 
 """

@@ -5,11 +5,15 @@
 * Time: 3 min
 
 English:
-    1. Write SQL query to select data
+    1. Write SQL query to select data:
+       a. table: apollo11
+       b. columns: datetime, category, event
     2. Run doctests - all must succeed
 
 Polish:
-    1. Napisz zapytanie SQL aby wybrać dane
+    1. Napisz zapytanie SQL aby wybrać dane:
+       a. tabela: apollo11
+       b. kolumny: datetime, category, event
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -21,8 +25,8 @@ import sqlite3
 
 SQL = """
 
-SELECT *
-FROM apollo11
+-- replace this comment
+-- with your sql query
 
 """
 
@@ -37,6 +41,7 @@ with sqlite3.connect('sql.db') as db:
 
 SQL = """
 
-
+SELECT datetime, category, event
+FROM apollo11
 
 """
