@@ -22,21 +22,21 @@ attributes:
     instanceType: regular
     editor:
       type: PyCharm
-      version: '2022.1'
+      version: '2022.2'
       updateChannel: Release
 
 projects:
   - name: training-course
     git:
       remotes:
-        origin: https://github.com/sages-pl/python.git
+        origin: https://github.com/sages-pl/template-python.git
       checkoutFrom:
         revision: main
 
 components:
   - name: python
     container:
-      image: python:3.10
+      image: python:3.11
       mountSources: true
       sourceMapping: /src
 
