@@ -34,29 +34,46 @@ Radians:
 * ``np.radians()``
 
 
-Trigonometric functions
+Trigonometric Functions
 -----------------------
-
-Basic functions:
-
 * ``np.sin()``
 * ``np.cos()``
 * ``np.tan()``
+* ctg = 1/tan
 
-Arcus functions:
+.. figure:: numpy-trigonometry-sin.png
 
+    Sinusoid - sin(x) function
+
+.. figure:: numpy-trigonometry-cos.png
+
+    Cosinusoid - cos(x) function
+
+.. figure:: numpy-trigonometry-tan.png
+
+    Tangensoid - tan(x) function
+
+.. figure:: numpy-trigonometry-ctg.png
+
+    Cotangensoid - ctg(x) function, also 1/tan(x)
+
+
+Arcus Functions
+---------------
 * ``np.arcsin()``
 * ``np.arccos()``
 * ``np.arctan()``
 
-Hyperbolic functions:
 
+Hyperbolic Functions
+--------------------
 * ``np.sinh()``
 * ``np.cosh()``
 * ``np.tanh()``
 
-Arcus hyperbolic functions:
 
+Arcus Hyperbolic Functions
+--------------------------
 * ``np.arcsinh()``
 * ``np.arccosh()``
 * ``np.arctanh()``

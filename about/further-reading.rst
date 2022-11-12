@@ -35,9 +35,19 @@ Python Developer Survey:
 
 StackOverflow Survey:
 
+* https://insights.stackoverflow.com/survey
+* https://survey.stackoverflow.co/2022
+* https://insights.stackoverflow.com/survey/2021
 * https://insights.stackoverflow.com/survey/2020
 * https://insights.stackoverflow.com/survey/2019
 * https://insights.stackoverflow.com/survey/2018
+* https://insights.stackoverflow.com/survey/2017
+* https://insights.stackoverflow.com/survey/2016
+* https://insights.stackoverflow.com/survey/2015
+* https://stackoverflow.blog/2014/02/2013-stack-overflow-user-survey-results/
+* https://stackoverflow.blog/2013/01/2012-stack-overflow-user-survey-results/
+* https://stackoverflow.blog/2012/02/survey-results/
+* https://stackoverflow.blog/2011/01/11/survey-says/
 
 Development Ecosystem Survey:
 
