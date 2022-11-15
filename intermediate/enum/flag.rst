@@ -4,6 +4,29 @@ Enum StrEnum
 * ``Flag``
 * ``IntFlag``
 
+Flags have an expanded view of aliasing: to be canonical, the value of
+a flag needs to be a power-of-two value, and not a duplicate name. So,
+in addition to the Enum definition of alias, a flag with no value
+(a.k.a. 0) or with more than one power-of-two value (e.g. 3)
+is considered an alias.
+
+>>> from enum import IntFlag
+
+>>> class Perm(IntFlag):
+...     R = 4
+...     W = 2
+...     X = 1
+
+>>> Perm.R | Perm.W
+<Perm.R|W: 6>
+>>>
+>>> Perm.R + Perm.W
+6
+>>>
+>>> RW = Perm.R | Perm.W
+>>> Perm.R in RW
+True
+
 
 SetUp
 -----
@@ -16,22 +39,27 @@ Example
 ...     RED = auto()
 ...     GREEN = auto()
 ...     BLUE = auto()
+...     WHITE = RED | BLUE | GREEN
+...     MAGENTA = RED | BLUE
+...     YELLOW = RED | GREEN
+...     CYAN = GREEN | BLUE
+
+>>> Color.WHITE
+<Color.WHITE: 7>
+>>>
+>>> Color.GREEN in Color.WHITE
+True
 
 >>> purple = Color.RED | Color.BLUE
->>> white = Color.RED | Color.GREEN | Color.BLUE
-
+>>>
 >>> Color.GREEN in purple
 False
 >>>
->>> Color.GREEN in white
+>>> purple in Color.WHITE
 True
 >>>
->>> purple in white
-True
->>>
->>> white in purple
+>>> Color.WHITE in purple
 False
->>>
 
 
 FlagBoundary

@@ -12,29 +12,21 @@ SetUp
 >>> from enum import Enum, IntEnum
 
 
-Syntax
-------
+Example
+-------
 >>> class Select(Enum):
 ...     OPTION1 = 1
 ...     OPTION2 = 2
 
 
-Example
--------
+Use Case - 0x01
+---------------
 >>> class HTTPStatus(Enum):
 ...     OK = 200
 ...     CREATED = 201
 ...     BAD_REQUEST = 400
 ...     NOT_FOUND = 404
 ...     INTERNAL_ERROR = 500
-
-
-Use Case - 0x01
----------------
->>> class IndexDrives(IntEnum):
-...     ControlWord = 0x6040
-...     StatusWord = 0x6041
-...     OperationMode = 0x6060
 
 
 Use Case - 0x02
@@ -53,6 +45,14 @@ Use Case - 0x02
 
 
 Use Case - 0x03
+---------------
+>>> class IndexDrives(IntEnum):
+...     ControlWord = 0x6040
+...     StatusWord = 0x6041
+...     OperationMode = 0x6060
+
+
+Use Case - 0x04
 ---------------
 .. figure:: img/oop-enum-keycodes.png
 
@@ -73,7 +73,7 @@ language used [mskeycodes]_, [jskeycodes]_.
 ...     ARROW_DOWN = 40     # 0x28
 
 
-Use Case - 0x04
+Use Case - 0x05
 ---------------
 * ``r`` - read
 * ``w`` - write

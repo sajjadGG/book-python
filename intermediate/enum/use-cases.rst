@@ -7,31 +7,6 @@ SetUp
 >>> from enum import Enum, IntEnum, StrEnum, auto
 
 
-Use Case - 0x01
----------------
->>> class HTTPStatus(Enum):
-...     OK = 200
-...     CREATED = 201
-...     BAD_REQUEST = 400
-...     NOT_FOUND = 404
-...     INTERNAL_ERROR = 500
-
-
-Use Case - 0x02
----------------
->>> class Status(Enum):
-...     FULL_HEALTH = 100
-...     DEAD = 0
-
->>> hit_points = 100
->>> Status(hit_points)
-<Status.FULL_HEALTH: 100>
-
->>> hit_points = 0
->>> Status(hit_points)
-<Status.DEAD: 0>
-
-
 Use Case - 0x03
 ---------------
 * Issue Status
@@ -204,84 +179,33 @@ language used [mskeycodes]_, [jskeycodes]_.
 ...     case _: raise ValueError(f'Unrecognized key')
 
 
-Auto
-----
->>> class Color(StrEnum):
-...     RED = auto()
-...     GREEN = auto()
-...     BLUE = auto()
->>>
->>> Color.RED
-<Color.RED: 'red'>
-
->>> class Color(IntEnum):
-...     RED = auto()
-...     GREEN = auto()
-...     BLUE = auto()
->>>
->>> Color.RED
-<Color.RED: 1>
-
-
 Use Case - 0x01
 ---------------
-* Dead or Alive
+>>> class Planet(Enum):
+...     MERCURY = (3.303e+23, 2.4397e6)
+...     VENUS   = (4.869e+24, 6.0518e6)
+...     EARTH   = (5.976e+24, 6.37814e6)
+...     MARS    = (6.421e+23, 3.3972e6)
+...     JUPITER = (1.9e+27,   7.1492e7)
+...     SATURN  = (5.688e+26, 6.0268e7)
+...     URANUS  = (8.686e+25, 2.5559e7)
+...     NEPTUNE = (1.024e+26, 2.4746e7)
+...
+...     def __init__(self, mass, radius):
+...         self.mass = mass       # in kilograms
+...         self.radius = radius   # in meters
+...
+...     @property
+...     def surface_gravity(self):
+...         # universal gravitational constant  (m3 kg-1 s-2)
+...         G = 6.67300E-11
+...         return G * self.mass / (self.radius * self.radius)
 
->>> class Status(Enum):
-...     ALIVE = 'alive'
-...     DEAD = 'dead'
-
-
-Use Case - 0x02
----------------
->>> class Status(Enum):
-...     FULL_HEALTH = 100
-...     DEAD = 0
-
->>> hit_points = 100
->>> Status(hit_points)
-<Status.FULL_HEALTH: 100>
-
->>> hit_points = 0
->>> Status(hit_points)
-<Status.DEAD: 0>
-
-
-Use Case - 0x03
----------------
-* Issue Status
-
->>> class IssueStatus(Enum):
-...     TODO = 'todo'
-...     IN_PROGRESS = 'in-progress'
-...     IN_REVIEW = 'in-review'
-...     IN_TEST = 'in-test'
-...     DONE = 'done'
-...     REJECTED = 'rejected'
-
-
-Use Case - 0x04
----------------
-* HTML Colors
-
->>> class Color(Enum):
-...     AQUA = '#00FFFF'
-...     BLACK = '#000000'
-...     BLUE = '#0000ff'
-...     FUCHSIA = '#FF00FF'
-...     GRAY = '#808080'
-...     GREEN = '#008000'
-...     LIME = '#00ff00'
-...     MAROON = '#800000'
-...     NAVY = '#000080'
-...     OLIVE = '#808000'
-...     PINK = '#ff1a8c'
-...     PURPLE = '#800080'
-...     RED = '#ff0000'
-...     SILVER = '#C0C0C0'
-...     TEAL = '#008080'
-...     WHITE = '#ffffff'
-...     YELLOW = '#FFFF00'
+>>> Planet.EARTH.value
+(5.976e+24, 6378140.0)
+>>>
+>>> Planet.EARTH.surface_gravity
+9.802652743337129
 
 
 Use Case - 0x05

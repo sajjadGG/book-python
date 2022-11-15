@@ -36,8 +36,8 @@ Switch
 '#00FF00'
 
 
-Identity
---------
+Comparison
+----------
 >>> mycolor = Color('#00FF00')
 >>>
 >>> mycolor is Color.RED
@@ -54,6 +54,21 @@ Iteration
 Color.RED
 Color.GREEN
 Color.BLUE
+
+
+Methods
+-------
+>>> class Color(Enum):
+...     RED = '#FF0000'
+...     GREEN = '#00FF00'
+...     BLUE = '#0000FF'
+...
+...     @classmethod
+...     def get_favourite(cls):
+...         return cls.RED
+
+>>> Color.get_favourite()
+<Color.RED: '#FF0000'>
 
 
 Use Case - 0x01

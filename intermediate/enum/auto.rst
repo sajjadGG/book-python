@@ -52,3 +52,12 @@ IntEnum
 
 >>> Color.RED
 <Color.RED: 1>
+
+
+Use Case - 0x01
+---------------
+>>> class Animal(StrEnum):
+...     ANT = auto()
+...     BEE = auto()
+...     CAT = auto()
+...     DOG = auto()

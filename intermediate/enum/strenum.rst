@@ -1,29 +1,18 @@
 Enum StrEnum
 ============
 * List of finite choices
-* Enumerations
-* ``Enum``
-* ``IntEnum``
+* Enumerations with str values
 * ``StrEnum``
-* ``Flag``
-* ``IntFlag``
-* ``auto()``
+
 
 SetUp
 -----
->>> from enum import Enum, IntEnum, StrEnum, auto
-
-
-Syntax
-------
->>> class Select(Enum):
-...     OPTION1 = 1
-...     OPTION2 = 2
+>>> from enum import StrEnum
 
 
 Example
 -------
->>> class Color(Enum):
+>>> class Color(StrEnum):
 ...     RED = '#FF0000'
 ...     GREEN = '#00FF00'
 ...     BLUE = '#0000FF'
@@ -38,7 +27,23 @@ Use Case - 0x01
 ...     DEAD = 'dead'
 
 
+Use Case - 0x02
+---------------
+>>> class Ordinal(StrEnum):
+...     NORTH = 'N'
+...     SOUTH = 'S'
+...     EAST = 'E'
+...     WEST = 'W'
+
+
 Use Case - 0x03
+---------------
+>>> class Mood(StrEnum):
+...     SAD = 'sad'
+...     HAPPY = 'happy'
+
+
+Use Case - 0x04
 ---------------
 * Issue Status
 
@@ -51,62 +56,39 @@ Use Case - 0x03
 ...     REJECTED = 'rejected'
 
 
-Use Case - 0x04
+Use Case - 0x05
 ---------------
 * HTML Colors
 
 >>> class Color(StrEnum):
 ...     AQUA = '#00FFFF'
 ...     BLACK = '#000000'
-...     BLUE = '#0000ff'
+...     BLUE = '#0000FF'
 ...     FUCHSIA = '#FF00FF'
 ...     GRAY = '#808080'
 ...     GREEN = '#008000'
-...     LIME = '#00ff00'
+...     LIME = '#00FF00'
 ...     MAROON = '#800000'
 ...     NAVY = '#000080'
 ...     OLIVE = '#808000'
-...     PINK = '#ff1a8c'
+...     PINK = '#FF1A8C'
 ...     PURPLE = '#800080'
 ...     RED = '#ff0000'
 ...     SILVER = '#C0C0C0'
 ...     TEAL = '#008080'
-...     WHITE = '#ffffff'
+...     WHITE = '#FFFFFF'
 ...     YELLOW = '#FFFF00'
 
 
-Use Case - 0x05
----------------
->>> Point = tuple[int,int]
->>>
->>> class Color(Enum):
-...     RED = '#FF0000'
-...     GREEN = '#00FF00'
-...     BLUE = '#0000FF'
-
->>> def draw_line(A: Point, B: Point, color: Color):
-...     if type(color) is not Color:
-...         possible = [str(c) for c in Color]
-...         raise TypeError(f'Invalid color, possible choices: {possible}')
-...     print(f'Drawing line from {A} to {B} with color {color.value}')
-
->>> draw_line(A=(0,0), B=(3,5), color=Color.RED)
-Drawing line from (0, 0) to (3, 5) with color #FF0000
-
->>> draw_line(A=(0,0), B=(3,5), color='red')
-Traceback (most recent call last):
-TypeError: Invalid color, possible choices: ['Color.RED', 'Color.GREEN', 'Color.BLUE']
-
-
-Use Case - 0x08
+Use Case - 0x06
 ---------------
 >>> from dataclasses import dataclass
 >>>
 >>>
 >>> class Agency(StrEnum):
-...     NASA = auto()
-...     ESA = auto()
-...     JAXA = auto()
+...     NASA = 'NASA'
+...     ESA = 'ESA'
+...     JAXA = 'JAXA'
 >>>
 >>>
 >>> @dataclass
@@ -120,7 +102,7 @@ Use Case - 0x08
 >>> mark = Astronaut('Mark', 'Watney', agency=Agency.NASA)
 
 
-Use Case - 0x09
+Use Case - 0x07
 ---------------
 >>> # doctest: +SKIP
 ... from django.db import models
@@ -140,13 +122,6 @@ Use Case - 0x09
 ... class Stage(models.TextChoices):
 ...     PRODUCTION = 'production', _('Production')
 ...     TEST = 'test', _('Test')
-
-
-
-References
-----------
-.. [mskeycodes] https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes?redirectedfrom=MSDN
-.. [jskeycodes] https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
 
 
 .. todo:: Assignments
