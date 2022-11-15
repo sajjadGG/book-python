@@ -24,8 +24,12 @@ Tests:
 
 import sqlite3
 
-
-SQL = """
+# Write SQL query to insert data:
+# - table: contacts
+# - data: `DATA: list[dict]`
+# - use prepared statement (with `:column`)
+# type: str
+result = """
 
 -- replace this comment
 -- with your sql query
@@ -47,8 +51,7 @@ with sqlite3.connect('sql.db') as db:
 
 
 # Solution
-
-SQL = """
+result = """
 
 INSERT INTO contacts (firstname, lastname)
 VALUES (:firstname, :lastname)

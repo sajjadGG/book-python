@@ -1,5 +1,5 @@
 """
-* Assignment: Database Select OrderBy
+* Assignment: Database Select OrderByMany
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min
@@ -26,8 +26,13 @@ Tests:
 
 import sqlite3
 
-
-SQL = """
+# Write SQL query to select data:
+# - table: apollo11
+# - columns: datetime, category, event
+# - order1: category descending
+# - order2: datetime ascending
+# type: str
+result = """
 
 SELECT datetime, category, event
 FROM apollo11
@@ -42,8 +47,7 @@ with sqlite3.connect('sql.db') as db:
 
 
 # Solution
-
-SQL = """
+result = """
 
 SELECT datetime, category, event
 FROM apollo11

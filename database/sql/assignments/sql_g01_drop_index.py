@@ -22,8 +22,11 @@ Tests:
 
 import sqlite3
 
-
-SQL = """
+# Write SQL query to delete index:
+# - table: contacts
+# - name: idx_contacts_lastname
+# type: str
+result = """
 
 -- replace this comment
 -- with your sql query
@@ -36,8 +39,7 @@ with sqlite3.connect('sql.db') as db:
 
 
 # Solution
-
-SQL = """
+result = """
 
 DROP INDEX idx_contacts_lastname
 

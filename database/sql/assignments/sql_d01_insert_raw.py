@@ -24,8 +24,12 @@ Tests:
 
 import sqlite3
 
-
-SQL = """
+# Write SQL query to insert data:
+# - table: contacts
+# - firstname: 'Mark'
+# - lastname: 'Watney'
+# type: str
+result = """
 
 -- replace this comment
 -- with your sql query
@@ -38,8 +42,7 @@ with sqlite3.connect('sql.db') as db:
 
 
 # Solution
-
-SQL = """
+result = """
 
 INSERT INTO contacts (firstname, lastname)
 VALUES ('Mark', 'Watney')

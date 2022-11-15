@@ -22,8 +22,11 @@ Tests:
 
 import sqlite3
 
-
-SQL = """
+# Write SQL query to delete one record:
+# - table: contacts
+# - where: id = 1
+# type: str
+result = """
 
 -- replace this comment
 -- with your sql query
@@ -36,8 +39,7 @@ with sqlite3.connect('sql.db') as db:
 
 
 # Solution
-
-SQL = """
+result = """
 
 DELETE FROM contacts
 WHERE id == 1

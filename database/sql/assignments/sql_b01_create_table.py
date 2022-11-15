@@ -23,27 +23,42 @@ Polish:
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    TODO: tests
+    >>> import sys; sys.tracebacklimit = 0
+    >>> from pathlib import Path
+    >>> import sqlite3
+
+    >>> database = Path(__file__).parent / 'sql.db'
+
+    >>> with sqlite3.connect(database) as db:
+    ...     db.row_factory = sqlite3.Row
+    ...     _ = db.execute(result)
+    ...     sql = 'SELECT name FROM sqlite_master WHERE type="table"'
+    ...     for table in db.execute(sql):
+    ...         print(table['name'])
+    apollo11
+    addresses
+    sqlite_sequence
+    astronauts
+    missions
+    contacts
 """
 
-import sqlite3
-
-
-SQL = """
+# SQL query to create table:
+# - table: contacts
+# - column: id, integer, primary key, autoincrement
+# - column: firstname, text
+# - column: lastname, text
+# - column: birthday, date, default null
+# type: str
+result = """
 
 -- replace this comment
 -- with your sql query
 
 """
 
-
-with sqlite3.connect('sql.db') as db:
-    db.execute(SQL)
-
-
 # Solution
-
-SQL = """
+result = """
 
 CREATE TABLE IF NOT EXISTS contacts (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -19,7 +19,7 @@ Tests:
 import sqlite3
 
 
-SQL = """
+result = """
 
 SELECT datetime, category, event
 FROM apollo11
@@ -34,8 +34,7 @@ with sqlite3.connect('sql.db') as db:
 
 
 # Solution
-
-SQL = """
+result = """
 
 SELECT datetime, category, event
 FROM apollo11

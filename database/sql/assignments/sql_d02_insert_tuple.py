@@ -24,8 +24,12 @@ Tests:
 
 import sqlite3
 
-
-SQL = """
+# Write SQL query to insert data:
+# - table: contacts
+# - data: `DATA: tuple`
+# - use prepared statement (with `?`)
+# type: str
+result = """
 
 -- replace this comment
 -- with your sql query
@@ -40,8 +44,7 @@ with sqlite3.connect('sql.db') as db:
 
 
 # Solution
-
-SQL = """
+result = """
 
 INSERT INTO contacts (firstname, lastname)
 VALUES (?, ?)

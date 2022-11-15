@@ -27,7 +27,13 @@ Tests:
 import sqlite3
 
 
-SQL = """
+# Write SQL query to update one record:
+# - table: contacts
+# - where: id = 1
+# - column: mission
+# - value: Ares3
+# type: str
+result = """
 
 -- replace this comment
 -- with your sql query
@@ -40,8 +46,7 @@ with sqlite3.connect('sql.db') as db:
 
 
 # Solution
-
-SQL = """
+result = """
 
 UPDATE contacts SET
     mission = 'Ares3'

@@ -23,7 +23,11 @@ Tests:
 import sqlite3
 
 
-SQL = """
+# Write SQL query to delete many records:
+# - table: contacts
+# - where: lastname = 'Watney'
+# type: str
+result = """
 
 -- replace this comment
 -- with your sql query
@@ -36,8 +40,7 @@ with sqlite3.connect('sql.db') as db:
 
 
 # Solution
-
-SQL = """
+result = """
 
 DELETE FROM contacts
 WHERE lastname == 'Watney'

@@ -21,27 +21,48 @@ Polish:
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    TODO: tests
+    >>> import sys; sys.tracebacklimit = 0
+    >>> from pathlib import Path
+    >>> import sqlite3
+
+    >>> database = Path(__file__).parent / 'sql.db'
+
+    >>> with sqlite3.connect(database) as db:
+    ...     db.row_factory = sqlite3.Row
+    ...     try:
+    ...         _ = db.execute(result)
+    ...     except sqlite3.OperationalError:
+    ...         pass
+    ...     sql = 'SELECT sql FROM sqlite_master WHERE tbl_name="contacts"'
+    ...     for schema in db.execute(sql):
+    ...         print(schema['sql'], sep='')  # doctest: +NORMALIZE_WHITESPACE
+    CREATE TABLE contacts (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        firstname TEXT,
+        lastname TEXT,
+        birthday DATE DEFAULT NULL
+    , mission TEXT DEFAULT NULL)
+    CREATE INDEX idx_contacts_lastname
+    ON contacts(lastname)
+    <BLANKLINE>
+    <BLANKLINE>
 """
 
-import sqlite3
-
-
-SQL = """
+# Write SQL query to add column:
+# - table: contacts
+# - column: mission
+# - type: text
+# - default: null
+# type: str
+result = """
 
 -- replace this comment
 -- with your sql query
 
 """
 
-
-with sqlite3.connect('sql.db') as db:
-    db.execute(SQL)
-
-
 # Solution
-
-SQL = """
+result = """
 
 ALTER TABLE contacts
 ADD COLUMN mission TEXT DEFAULT NULL

@@ -1,5 +1,5 @@
 """
-* Assignment: Database Select WhereLike
+* Assignment: Database Where LikeMany
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min
@@ -19,7 +19,7 @@ Tests:
 import sqlite3
 
 
-SQL = """
+result = """
 
 SELECT datetime, category, event
 FROM apollo11
@@ -34,8 +34,7 @@ with sqlite3.connect('sql.db') as db:
 
 
 # Solution
-
-SQL = """
+result = """
 
 SELECT datetime, category, event
 FROM apollo11

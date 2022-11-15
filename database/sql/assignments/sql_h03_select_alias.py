@@ -26,8 +26,13 @@ Tests:
 
 import sqlite3
 
-
-SQL = """
+# Write SQL query to select data:
+# - table: apollo11
+# - columns: datetime, category, event
+# - alias: datetime as dt
+# - alias: category as cat
+# result: str
+result = """
 
 -- replace this comment
 -- with your sql query
@@ -42,8 +47,7 @@ with sqlite3.connect('sql.db') as db:
 
 
 # Solution
-
-SQL = """
+result = """
 
 SELECT datetime AS dt, category AS cat, event
 FROM apollo11

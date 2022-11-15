@@ -19,27 +19,38 @@ Polish:
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    TODO: tests
+    >>> import sys; sys.tracebacklimit = 0
+    >>> from pathlib import Path
+    >>> import sqlite3
+
+    >>> database = Path(__file__).parent / 'sql.db'
+
+    >>> with sqlite3.connect(database) as db:
+    ...     db.row_factory = sqlite3.Row
+    ...     _ = db.execute(result)
+    ...     sql = 'SELECT name FROM sqlite_master WHERE type="index"'
+    ...     for table in db.execute(sql):
+    ...         print(table['name'])
+    ix_apollo11_datetime
+    lastname_index
+    missions_name_uindex
+    idx_contacts_lastname
 """
 
-import sqlite3
-
-
-SQL = """
+# Write SQL query to create index:
+# - name: idx_contacts_lastname
+# - table: contacts
+# - column: lastname
+# type: str
+result = """
 
 -- replace this comment
 -- with your sql query
 
 """
 
-
-with sqlite3.connect('sql.db') as db:
-    db.execute(SQL)
-
-
 # Solution
-
-SQL = """
+result = """
 
 CREATE INDEX IF NOT EXISTS idx_contacts_lastname
 ON contacts(lastname)
