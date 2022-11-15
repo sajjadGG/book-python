@@ -1,6 +1,6 @@
 """
 * Assignment: CSV Format WriteSchemaless
-* Complexity: medium
+* Complexity: hard
 * Lines of code: 13 lines
 * Time: 13 min
 
@@ -15,6 +15,7 @@ English:
        c. Quoting: always
        d. Delimiter: `,`
        e. Lineseparator: `\n`
+       f. Sort `fieldnames`
     6. Run doctests - all must succeed
 
 Polish:
@@ -28,7 +29,11 @@ Polish:
        c. Quoting: zawsze
        d. Delimiter: `,`
        e. Lineseparator: `\n`
+       f. Posortuj `fieldnames`
     6. Uruchom doctesty - wszystkie muszą się powieść
+
+Hint:
+    * sorted()
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -64,14 +69,19 @@ result = ...
 
 # Solution
 result = ''
-keys = set()
+header = set()
+
+def make_line(data):
+    return ','.join(f'"{x}"' for x in data) + '\n'
+
 
 for row in DATA:
-    keys.update(row.keys())
+    header.update(row.keys())
 
-header = sorted(keys)
-result += ','.join(f'"{x}"' for x in header) + '\n'
+header = sorted(header)
+result += make_line(header)
 
 for row in DATA:
-    row = [row.get(x, '') for x in header]
-    result += ','.join(f'"{x}"' for x in row) + '\n'
+    line = [row.get(key, '') for key in header]
+    result += make_line(line)
+

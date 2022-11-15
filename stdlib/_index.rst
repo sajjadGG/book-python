@@ -17,11 +17,37 @@ Mathematics
     :maxdepth: 1
     :caption: Mathematics
 
+    math/precision.rst
     math/int.rst
     math/math.rst
     math/statistics.rst
     math/fractions.rst
     math/complex.rst
+
+
+Locale
+******
+.. toctree::
+    :maxdepth: 1
+    :caption: Locale
+
+    locale/about.rst
+    locale/i18n.rst
+    locale/l10n.rst
+    locale/encoding.rst
+
+
+Pickle
+******
+.. toctree::
+    :maxdepth: 1
+    :caption: Pickle
+
+    pickle/about.rst
+    pickle/dump.rst
+    pickle/load.rst
+    pickle/objects.rst
+    pickle/file.rst
 
 
 XML
@@ -70,5 +96,5 @@ Looping
     :maxdepth: 1
     :caption: Looping
 
-    looping/comprehensions.rst
-    looping/else.rst
+    loop/comprehensions.rst
+    loop/else.rst

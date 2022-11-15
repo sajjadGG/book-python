@@ -1,30 +1,26 @@
 CSV Non-Standard
 ================
 
-
-SSHd Config
------------
-* ``/etc/ssh/sshd_config``
-* ``delimiter=' '``
+Ini
+---
+* setup.cfg
+* ``delimiter='='``
 
 .. code-block:: text
 
-    ChrootDirectory none
-    ClientAliveCountMax 3
-    ClientAliveInterval 0
-    Compression delayed
-    MaxStartups 10:30:100
-    PidFile /var/run/sshd.pid
-    X11Forwarding no
-    X11UseLocalhost yes
+    key=MP
+    name=MyProject
+    language=py
+    encoding=UTF-8
+    verbose=true
 
->>> delimiter = ' '
+>>> delimiter = '='
 >>> result = [row.split(delimiter) for row in DATA.splitlines()]  # doctest: +SKIP
 
 
 Config
 ------
-* ``/etc/postgresql/12/main/postgresql.conf``
+* ``/etc/postgresql/*/main/postgresql.conf``
 * ``delimiter=' = '``
 
 .. code-block:: text
@@ -40,21 +36,24 @@ Config
 >>> result = [row.split(delimiter) for row in DATA.splitlines()]  # doctest: +SKIP
 
 
-Properties
-----------
-* Java properties
+Toml
+----
+* pyproject.toml
 * ``delimiter='='``
 
-.. code-block:: text
+.. code-block:: toml
 
-    sonar.projectKey=MP
-    sonar.projectName=MyProject
-    sonar.language=py
-    sonar.sourceEncoding=UTF-8
-    sonar.verbose=true
+    namespace_packages = false
+    explicit_package_bases = false
+    ignore_missing_imports = false
+    follow_imports = "normal"
+    follow_imports_for_stubs = false
+    no_site_packages = false
+    no_silence_site_packages = false
+    # Platform configuration
+    python_version = "3.10"
+    platform = "linux-64"
 
->>> delimiter = '='
->>> result = [row.split(delimiter) for row in DATA.splitlines()]  # doctest: +SKIP
 
 
 Passwd
@@ -78,6 +77,27 @@ Passwd
 
 >>> delimiter = ':'
 >>> result = [row.split(delimiter) for row in DATA.splitlines()]  # doctest: +SKIP
+
+
+SSHd Config
+-----------
+* ``/etc/ssh/sshd_config``
+* ``delimiter=' '``
+
+.. code-block:: text
+
+    ChrootDirectory none
+    ClientAliveCountMax 3
+    ClientAliveInterval 0
+    Compression delayed
+    MaxStartups 10:30:100
+    PidFile /var/run/sshd.pid
+    X11Forwarding no
+    X11UseLocalhost yes
+
+>>> delimiter = ' '
+>>> result = [row.split(delimiter) for row in DATA.splitlines()]  # doctest: +SKIP
+
 
 Hosts
 -----
@@ -174,7 +194,7 @@ Sensors
 .. code-block:: text
 
     Name;Long;Lat;ModuleName;ModuleType
-    "European Astronaut Centre (EAC) - ESA";50.8524881,7.1315254;;Indoor
+    "European Astronaut Centre";50.8524881,7.1315254;;Indoor
     Timestamp;"Timezone : Europe/Berlin";Temperature;Humidity;CO2;Noise;Pressure
     1622498702;"2021/06/01 00:05:02";22.6;46;981;32;1019.1
     1622499004;"2021/06/01 00:10:04";22.6;46;981;31;1019.1
@@ -186,7 +206,7 @@ Sensors
 
 
 >>> DATA= """Name;Long;Lat;ModuleName;ModuleType
-... "European Astronaut Centre (EAC) - ESA";50.8524881,7.1315254;;Indoor
+... "European Astronaut Centre";50.8524881,7.1315254;;Indoor
 ... Timestamp;"Timezone : Europe/Berlin";Temperature;Humidity;CO2;Noise;Pressure
 ... 1622498702;"2021/06/01 00:05:02";22.6;46;981;32;1019.1
 ... 1622499004;"2021/06/01 00:10:04";22.6;46;981;31;1019.1
@@ -209,7 +229,7 @@ Sensors
 ['Name', 'Long', 'Lat', 'ModuleName', 'ModuleType']
 >>>
 >>> metadata_values
-['"European Astronaut Centre (EAC) - ESA"', '50.8524881,7.1315254', '', 'Indoor']
+['"European Astronaut Centre"', '50.8524881,7.1315254', '', 'Indoor']
 >>>
 >>> data_header
 ['Timestamp', '"Timezone : Europe/Berlin"', 'Temperature', 'Humidity', 'CO2', 'Noise', 'Pressure']

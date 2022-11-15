@@ -21,16 +21,37 @@ Unpack
     unpack/arguments.rst
 
 
-Syntax
-******
+Enum
+****
+.. toctree::
+    :maxdepth: 1
+    :caption: Enum
+
+    enum/about.rst
+    enum/enum.rst
+    enum/intenum.rst
+    enum/strenum.rst
+    enum/use-cases.rst
+
+
+Match
+*****
 .. toctree::
     :maxdepth: 1
     :caption: Unpack
 
-    syntax/match.rst
-    syntax/parameter.rst
-    syntax/assignment-expression.rst
-    syntax/loop-else.rst
+    match/about.rst
+    match/pattern-literal.rst
+    match/pattern-or.rst
+    match/pattern-wildcard.rst
+    match/pattern-capture.rst
+    match/pattern-constant.rst
+    match/pattern-sequence.rst
+    match/pattern-mapping.rst
+    match/pattern-class.rst
+    match/pattern-walrus.rst
+    match/guard.rst
+    match/subpattern.rst
 
 
 Type Annotation
@@ -39,7 +60,7 @@ Type Annotation
     :maxdepth: 1
     :caption: Type Annotation
 
-    type-annotation/type-basics.rst
+    type-annotation/type-basic.rst
     type-annotation/type-annotations.rst
     type-annotation/type-sequence.rst
     type-annotation/type-mapping.rst
@@ -73,19 +94,6 @@ Dataclass
     dataclass/helpers.rst
     dataclass/inheritance.rst
     dataclass/introspect.rst
-
-
-Pickle
-******
-.. toctree::
-    :maxdepth: 1
-    :caption: Pickle
-
-    pickle/about.rst
-    pickle/dump.rst
-    pickle/load.rst
-    pickle/objects.rst
-    pickle/file.rst
 
 
 JSON
@@ -187,19 +195,6 @@ Operator
     operator/accessors.rst
 
 
-Enum
-****
-.. toctree::
-    :maxdepth: 1
-    :caption: Enum
-
-    enum/about.rst
-    enum/enum.rst
-    enum/intenum.rst
-    enum/strenum.rst
-    enum/use-cases.rst
-
-
 Modules and Packages
 ********************
 .. toctree::
@@ -208,9 +203,6 @@ Modules and Packages
 
     modules/venv.rst
     modules/pip.rst
-    modules/import.rst
-    modules/tools.rst
-    modules/distributing.rst
 
 
 Logging
@@ -230,25 +222,12 @@ Logging
     logging/use-cases.rst
 
 
-Locale
-******
-.. toctree::
-    :maxdepth: 1
-    :caption: Locale
-
-    locale/about.rst
-    locale/i18n.rst
-    locale/l10n.rst
-    locale/encoding.rst
-
-
 Mathematics
 ***********
 .. toctree::
     :maxdepth: 1
     :caption: Mathematics
 
-    math/precision.rst
     math/ieee754.rst
     math/random.rst
 
@@ -261,10 +240,3 @@ Tests
 
     test/doctest.rst
     test/unittest.rst
-
-
-References
-**********
-.. bibliography:: references.bib
-    :labelprefix: Stdlib
-    :cited:

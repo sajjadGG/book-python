@@ -1,6 +1,5 @@
 Syntax Parameters
 =================
-
 * Define API for you functions
 * Require particular way of passing positional and optional parameters
 * All parameters after ``*`` must be keyword-only
