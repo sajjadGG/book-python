@@ -1,5 +1,5 @@
-OOP Enum
-========
+Enum StrEnum
+============
 * List of finite choices
 * Enumerations
 * ``Enum``
@@ -140,36 +140,6 @@ Auto
 >>> Color.RED
 <Color.RED: 1>
 
-
-Use Case - 0x01
----------------
-* Since 3.11:
-
->>> from http import HTTPMethod
->>>
->>>
->>> HTTPMethod.GET
-<HTTPMethod.GET>
->>>
->>> HTTPMethod.GET == 'GET'
-True
->>>
->>> HTTPMethod.GET.value
-'GET'
->>>
->>> HTTPMethod.GET.description
-'Retrieve the target.'
->>>
->>> list(HTTPMethod)  # doctest: +NORMALIZE_WHITESPACE
-[<HTTPMethod.CONNECT>,
- <HTTPMethod.DELETE>,
- <HTTPMethod.GET>,
- <HTTPMethod.HEAD>,
- <HTTPMethod.OPTIONS>,
- <HTTPMethod.PATCH>,
- <HTTPMethod.POST>,
- <HTTPMethod.PUT>,
- <HTTPMethod.TRACE>]
 
 
 Use Case - 0x01

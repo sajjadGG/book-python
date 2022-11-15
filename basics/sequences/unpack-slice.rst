@@ -1,5 +1,5 @@
-Sequence Unpack Slice
-=====================
+Unpack Slice
+============
 * Slice argument must be ``int`` (positive, negative or zero)
 * Positive Index starts with ``0``
 * Negative index starts with ``-1``

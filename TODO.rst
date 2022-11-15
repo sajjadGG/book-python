@@ -1,5 +1,31 @@
 TODO
 ====
+* Newsletter, once a month, what changed in the book
+
+
+Basics
+------
+* Remove unpack star from (and other examples)
+* Cleanup OOP
+* Move exception assertions, exit status and custom exceptions to Intermediate
+* Move more advanced comprehensions to Intermediate
+
+
+Intermediate
+------------
+* Cleanup Match
+* Cleanup Operators
+
+
+Advanced
+--------
+* Add exception groups (3.11)
+* Add more parallelism, concurrency (async) to Advanced
+
+
+Machine Learning
+----------------
+* Complete rewrite
 
 
 Case Study
@@ -48,12 +74,6 @@ PyCharm
 * Alt+Enter: dodawanie annotation
 * Alt+Enter: dodawanie pól do klasy + annotation
 * Alt+Enter: klasy abstrakcyjne i interfejsy
-
-
-Book TODO
----------
-* Machine Learning rewrite
-* Newsletter, once a month, what changed in the book
 
 
 Numerical Analysis
@@ -139,3 +159,9 @@ Python PEP
 * Context manager ``with logging.DEBUG:``
 * print('cośtam', level='warning')
 * log('cośtam', level='warning')
+
+
+Pydantic
+--------
+* Contribute dataclass metadata validation methods to Pydantic validator
+* Create "contracts" module with TypeAlias validators and Descriptors

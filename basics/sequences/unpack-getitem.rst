@@ -1,5 +1,5 @@
-Sequence Unpack GetItem
-=======================
+Unpack GetItem
+==============
 * Allows to get element from ordered sequence
 * Works with ordered sequences: ``str``, ``list``, ``tuple``
 

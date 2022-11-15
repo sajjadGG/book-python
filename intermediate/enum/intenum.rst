@@ -1,17 +1,14 @@
-OOP Enum
-========
+Enum IntEnum
+============
 * List of finite choices
 * Enumerations
-* ``Enum``
 * ``IntEnum``
-* ``StrEnum``
 * ``Flag``
 * ``IntFlag``
-* ``auto()``
 
 SetUp
 -----
->>> from enum import Enum, IntEnum, StrEnum, auto
+>>> from enum import Enum, IntEnum
 
 
 Syntax
@@ -23,11 +20,6 @@ Syntax
 
 Example
 -------
->>> class Color(Enum):
-...     RED = '#FF0000'
-...     GREEN = '#00FF00'
-...     BLUE = '#0000FF'
-
 >>> class HTTPStatus(Enum):
 ...     OK = 200
 ...     CREATED = 201
@@ -35,110 +27,6 @@ Example
 ...     NOT_FOUND = 404
 ...     INTERNAL_ERROR = 500
 
-
-Switch
-------
->>> class Color(Enum):
-...     RED = '#FF0000'
-...     GREEN = '#00FF00'
-...     BLUE = '#0000FF'
->>>
->>>
->>> mycolor = Color('#00FF00')
->>>
->>> mycolor
-<Color.GREEN: '#00FF00'>
->>>
->>> mycolor.name
-'GREEN'
->>>
->>> mycolor.value
-'#00FF00'
-
-
-Identity Check
---------------
->>> class Color(Enum):
-...     RED = '#FF0000'
-...     GREEN = '#00FF00'
-...     BLUE = '#0000FF'
->>>
->>>
->>> mycolor = Color('#00FF00')
->>>
->>> mycolor is Color.RED
-False
->>> mycolor is Color.GREEN
-True
-
-
-Iterating
----------
-Iterating over ``Enum``:
-
->>> class Color(Enum):
-...     RED = '#FF0000'
-...     GREEN = '#00FF00'
-...     BLUE = '#0000FF'
->>>
->>>
->>> for color in Color:
-...     print(color)
-Color.RED
-Color.GREEN
-Color.BLUE
-
-
-Pattern Matching
-----------------
-* Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
-
-.. figure:: img/oop-enum-keycodes.png
-
-Note, keycodes can vary depending on operating system and programming
-language used [mskeycodes]_, [jskeycodes]_.
-
->>> int('0x1B', base=16)
-27
->>>
->>> hex(27)
-'0x1b'
-
->>> class Key(Enum):
-...     ESC = 27            # 0x1B
-...     ARROW_LEFT = 37     # 0x25
-...     ARROW_UP = 38       # 0x26
-...     ARROW_RIGHT = 39    # 0x27
-...     ARROW_DOWN = 40     # 0x28
->>>
->>>
->>> # doctest: +SKIP
-... match keyboard.on_key_press():
-...     case Key.ESC:          game.quit()
-...     case Key.ARROW_LEFT:   game.move_left()
-...     case Key.ARROW_UP:     game.move_up()
-...     case Key.ARROW_RIGHT:  game.move_right()
-...     case Key.ARROW_DOWN:   game.move_down()
-...     case _: raise ValueError(f'Unrecognized key')
-
-
-Auto
-----
->>> class Color(StrEnum):
-...     RED = auto()
-...     GREEN = auto()
-...     BLUE = auto()
->>>
->>> Color.RED
-<Color.RED: 'red'>
-
->>> class Color(IntEnum):
-...     RED = auto()
-...     GREEN = auto()
-...     BLUE = auto()
->>>
->>> Color.RED
-<Color.RED: 1>
 
 
 Use Case - 0x01
@@ -159,6 +47,14 @@ Use Case - 0x01
 'IM_A_TEAPOT'
 
 
+
+
+Use Case - 0x07
+------------------
+>>> class IndexDrives(IntEnum):
+...     ControlWord = 0x6040
+...     StatusWord = 0x6041
+...     OperationMode = 0x6060
 
 
 Use Case - 0x06
@@ -218,14 +114,6 @@ user='6' group='4' others='4'
 <Permission.READ: 4>
 >>>
 >>> file.unlink()
-
-
-Use Case - 0x07
-------------------
->>> class IndexDrives(IntEnum):
-...     ControlWord = 0x6040
-...     StatusWord = 0x6041
-...     OperationMode = 0x6060
 
 
 References

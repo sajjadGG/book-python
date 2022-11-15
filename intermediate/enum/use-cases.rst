@@ -1,33 +1,14 @@
-OOP Enum
-========
-* List of finite choices
-* Enumerations
-* ``Enum``
-* ``IntEnum``
-* ``StrEnum``
-* ``Flag``
-* ``IntFlag``
-* ``auto()``
+Enum Use Cases
+==============
+
 
 SetUp
 -----
 >>> from enum import Enum, IntEnum, StrEnum, auto
 
 
-Syntax
-------
->>> class Select(Enum):
-...     OPTION1 = 1
-...     OPTION2 = 2
-
-
-Example
--------
->>> class Color(Enum):
-...     RED = '#FF0000'
-...     GREEN = '#00FF00'
-...     BLUE = '#0000FF'
-
+Use Case - 0x01
+---------------
 >>> class HTTPStatus(Enum):
 ...     OK = 200
 ...     CREATED = 201
@@ -36,57 +17,158 @@ Example
 ...     INTERNAL_ERROR = 500
 
 
-Switch
-------
+Use Case - 0x02
+---------------
+>>> class Status(Enum):
+...     FULL_HEALTH = 100
+...     DEAD = 0
+
+>>> hit_points = 100
+>>> Status(hit_points)
+<Status.FULL_HEALTH: 100>
+
+>>> hit_points = 0
+>>> Status(hit_points)
+<Status.DEAD: 0>
+
+
+Use Case - 0x03
+---------------
+* Issue Status
+
+>>> class IssueStatus(Enum):
+...     TODO = 'todo'
+...     IN_PROGRESS = 'in-progress'
+...     IN_REVIEW = 'in-review'
+...     IN_TEST = 'in-test'
+...     DONE = 'done'
+...     REJECTED = 'rejected'
+
+
+Use Case - 0x05
+---------------
+>>> Point = tuple[int,int]
+>>>
 >>> class Color(Enum):
 ...     RED = '#FF0000'
 ...     GREEN = '#00FF00'
 ...     BLUE = '#0000FF'
->>>
->>>
->>> mycolor = Color('#00FF00')
->>>
->>> mycolor
-<Color.GREEN: '#00FF00'>
->>>
->>> mycolor.name
-'GREEN'
->>>
->>> mycolor.value
-'#00FF00'
+
+>>> def draw_line(A: Point, B: Point, color: Color):
+...     if type(color) is not Color:
+...         possible = [str(c) for c in Color]
+...         raise TypeError(f'Invalid color, possible choices: {possible}')
+...     print(f'Drawing line from {A} to {B} with color {color.value}')
+
+>>> draw_line(A=(0,0), B=(3,5), color=Color.RED)
+Drawing line from (0, 0) to (3, 5) with color #FF0000
+
+>>> draw_line(A=(0,0), B=(3,5), color='red')
+Traceback (most recent call last):
+TypeError: Invalid color, possible choices: ['Color.RED', 'Color.GREEN', 'Color.BLUE']
 
 
-Identity Check
---------------
->>> class Color(Enum):
-...     RED = '#FF0000'
-...     GREEN = '#00FF00'
-...     BLUE = '#0000FF'
+Use Case - 0x08
+---------------
+>>> from dataclasses import dataclass
 >>>
 >>>
->>> mycolor = Color('#00FF00')
+>>> class Agency(Enum):
+...     NASA = auto()
+...     ESA = auto()
+...     JAXA = auto()
 >>>
->>> mycolor is Color.RED
-False
->>> mycolor is Color.GREEN
-True
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...     agency: Agency
+>>>
+>>>
+>>> mark = Astronaut('Mark', 'Watney', agency='not-existing')
+>>> mark = Astronaut('Mark', 'Watney', agency=Agency.NASA)
 
 
-Iterating
----------
-Iterating over ``Enum``:
+Use Case - 0x06
+---------------
+* ``r`` - read
+* ``w`` - write
+* ``x`` - execute
+* ``rwx`` - read, write, execute; 0b111 == 0o7
+* ``rw-`` - read, write; 0b110 == 0o6
+* ``r-x`` - read, execute; 0b101 == 0o5
+* ``r--`` - read only; 0b100 == 0o4
+* ``rwxr-xr--`` - user=(read,write,execute); group=(read,execute); others=(read)
 
->>> class Color(Enum):
-...     RED = '#FF0000'
-...     GREEN = '#00FF00'
-...     BLUE = '#0000FF'
+* https://docs.python.org/3/library/os.html#os.stat
+
+>>> from enum import Enum
+>>> from pathlib import Path
 >>>
 >>>
->>> for color in Color:
-...     print(color)
-Color.RED
-Color.GREEN
-Color.BLUE
+>>> class Permission(Enum):
+...     READ_WRITE_EXECUTE = 0b111
+...     READ_WRITE = 0b110
+...     READ_EXECUTE = 0b101
+...     READ = 0b100
+...     WRITE_EXECUTE = 0b011
+...     WRITE = 0b010
+...     EXECUTE = 0b001
+...     NONE = 0b000
+>>>
+>>>
+>>> file = Path('/tmp/myfile.txt')
+>>> file.touch()
+>>> file.stat()  # doctest: +SKIP
+os.stat_result(st_mode=33188, st_ino=98480473, st_dev=16777220,
+               st_nlink=1, st_uid=501, st_gid=20, st_size=0,
+               st_atime=1624458230, st_mtime=1624458230,
+               st_ctime=1624458230)
+>>>
+>>> permissions = file.stat().st_mode
+>>> decimal = int(permissions)
+>>> octal = oct(permissions)
+>>> binary = bin(permissions)
+>>> print(f'{decimal=}, {octal=}, {binary}')
+decimal=33188, octal='0o100644', 0b1000000110100100
+>>>
+>>> *_, user, group, others = oct(permissions)
+>>> print(f'{user=} {group=} {others=}')
+user='6' group='4' others='4'
+>>>
+>>> Permission(int(user))
+<Permission.READ_WRITE: 6>
+>>>
+>>> Permission(int(group))
+<Permission.READ: 4>
+>>>
+>>> Permission(int(others))
+<Permission.READ: 4>
+>>>
+>>> file.unlink()
+
+
+Use Case - 0x09
+---------------
+>>> # doctest: +SKIP
+... from django.db import models
+...
+... class HttpMethod(models.TextChoices):
+...     GET = 'GET', _('GET')
+...     POST = 'POST', _('POST')
+...     PATCH = 'PATCH', _('PATCH')
+...     PUT = 'PUT', _('PUT')
+...     HEAD = 'HEAD', _('HEAD')
+...     DELETE = 'DELETE', _('DELETE')
+...     OPTIONS = 'OPTIONS', _('OPTIONS')
+...     TRACE = 'TRACE', _('TRACE')
+...     CONNECT = 'CONNECT', _('CONNECT')
+...
+...
+... class Stage(models.TextChoices):
+...     PRODUCTION = 'production', _('Production')
+...     TEST = 'test', _('Test')
 
 
 Pattern Matching

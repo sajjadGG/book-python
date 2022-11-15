@@ -28,9 +28,12 @@ Enum
     :caption: Enum
 
     enum/about.rst
-    enum/enum.rst
     enum/intenum.rst
     enum/strenum.rst
+    enum/auto.rst
+    enum/flag.rst
+    enum/check.rst
+    enum/builtin.rst
     enum/use-cases.rst
 
 
