@@ -103,6 +103,7 @@ DATA = [
 class Address:
     ...
 
+
 # Model `DATA` using `dataclasses`, do not use: `str | None` syntax
 # type: Type
 @dataclass

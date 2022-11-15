@@ -1,5 +1,5 @@
-Loop While Else
-===============
+Syntax Loop Else
+================
 * Not only ``if`` statement has ``else`` clause
 * Conditionals: ``if ... elif ... else``
 * Exceptions: ``try ... except ... else``
@@ -149,10 +149,10 @@ Launching rocket to outer space
 
 Assignments
 -----------
-.. literalinclude:: assignments/loop_while_else_a.py
-    :caption: :download:`Solution <assignments/loop_while_else_a.py>`
+.. literalinclude:: assignments/syntax_loop_else_a.py
+    :caption: :download:`Solution <assignments/syntax_loop_else_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/loop_while_else_b.py
-    :caption: :download:`Solution <assignments/loop_while_else_b.py>`
+.. literalinclude:: assignments/syntax_loop_else_b.py
+    :caption: :download:`Solution <assignments/syntax_loop_else_b.py>`
     :end-before: # Solution

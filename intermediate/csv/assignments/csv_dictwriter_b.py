@@ -9,7 +9,7 @@ English:
     2. `fieldnames` must be automatically generated from `DATA`
     3. Non functional requirements:
         a. All fields must be enclosed by double quote `"` character
-        b. Use `;` to separate columns
+        b. Use `,` to separate columns
         c. Use `utf-8` encoding
         d. Use Unix `\n` line terminator
         e. Sort `fieldnames` using `sorted()`
@@ -25,9 +25,6 @@ Polish:
         d. Użyj zakończenia linii Unix `\n`
         e. Posortuj `fieldnames` używając `sorted()`
     4. Uruchom doctesty - wszystkie muszą się powieść
-
-Hint:
-    * For Python before 3.8: `dict(OrderedDict)`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

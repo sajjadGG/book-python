@@ -1,5 +1,5 @@
-Unpack Parameter Syntax
-=======================
+Syntax Parameters
+=================
 
 * Define API for you functions
 * Require particular way of passing positional and optional parameters

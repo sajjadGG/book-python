@@ -1,24 +1,13 @@
 Operator Numerical
 ==================
-* ``+`` - add
-* ``-`` - sub
-* ``*`` - mul
-* ``/`` - truediv
-* ``//`` - floordiv
-* ``**`` - pow
-* ``%`` - mod
-* ``@`` - matmul
-* ``+=`` - iadd
-* ``-=`` - isub
-* ``*=`` - imul
-* ``/=`` - idiv
-* ``//=`` - itruediv
-* ``**=`` - ipow
-* ``%=`` - imod
-* ``@=`` - imatmul
-* ``-obj`` - neg
-* ``+obj`` - pos
-* ``~obj`` - invert
+* ``+`` - radd
+* ``-`` - rsub
+* ``*`` - rmul
+* ``/`` - rtruediv
+* ``//`` - rfloordiv
+* ``**`` - rpow
+* ``%`` - rmod
+* ``@`` - rmatmul
 
 
 SetUp
@@ -32,27 +21,14 @@ About
 .. csv-table:: Numerical Operator Overload
     :header: "Operator", "Method"
 
-    "``obj + other``",     "``obj.__add__(other)``"
-    "``obj - other``",     "``obj.__sub__(other)``"
-    "``obj * other``",     "``obj.__mul__(other)``"
-    "``obj / other``",     "``obj.__truediv__(other)``"
-    "``obj // other``",    "``obj.__floordiv__(other)``"
-    "``obj ** other``",    "``obj.__pow__(other)``"
-    "``obj % other``",     "``obj.__mod__(other)``"
-    "``obj @ other``",     "``obj.__matmul__(other)``"
-
-    "``obj += other``",    "``obj.__iadd__(other)``"
-    "``obj -= other``",    "``obj.__isub__(other)``"
-    "``obj *= other``",    "``obj.__imul__(other)``"
-    "``obj /= other``",    "``obj.__idiv__(other)``"
-    "``obj //= other``",   "``obj.__itruediv__(other)``"
-    "``obj **= other``",   "``obj.__ipow__(other)``"
-    "``obj %= other``",    "``obj.__imod__(other)``"
-    "``obj @= other``",    "``obj.__imatmul__(other)``"
-
-    "``-obj``",           "``obj.__neg__()``"
-    "``+obj``",           "``obj.__pos__()``"
-    "``~obj``",           "``obj.__invert__()``"
+    "``obj + other``",     "``obj.__radd__(other)``"
+    "``obj - other``",     "``obj.__rsub__(other)``"
+    "``obj * other``",     "``obj.__rmul__(other)``"
+    "``obj / other``",     "``obj.__rtruediv__(other)``"
+    "``obj // other``",    "``obj.__rfloordiv__(other)``"
+    "``obj ** other``",    "``obj.__rpow__(other)``"
+    "``obj % other``",     "``obj.__rmod__(other)``"
+    "``obj @ other``",     "``obj.__rmatmul__(other)``"
 
 
 Example
@@ -64,24 +40,6 @@ Example
 ...
 ...     def __repr__(self):
 ...         return f'Vector(x={self.x}, y={self.y})'
-...
-...     def __add__(self, other): ...               # x + y     calls x.__add__(y)
-...     def __sub__(self, other): ...               # x - y     calls x.__sub__(y)
-...     def __mul__(self, other): ...               # x * y     calls x.__mul__(y)
-...     def __pow__(self, power, modulo=None): ...  # x ** y    calls x.__pow__(y)
-...     def __matmul__(self, other): ...            # x @ y     calls x.__matmul__(y)
-...     def __truediv__(self, other): ...           # x / y     calls x.__truediv__(y)
-...     def __floordiv__(self, other): ...          # x // y    calls x.__floordiv__(y)
-...     def __mod__(self, other): ...               # x % y     calls x.__mod__(y)
-...
-...     def __iadd__(self, other): ...              # x += y    calls x.__iadd__(y)
-...     def __isub__(self, other): ...              # x -= y    calls x.__isub__(y)
-...     def __imul__(self, other): ...              # x *= y    calls x.__imul__(y)
-...     def __ipow__(self, power, modulo=None): ... # x **= y   calls x.__ipow__(y)
-...     def __imatmul__(self, other): ...           # x @= y    calls x.__imatmul__(y)
-...     def __itruediv__(self, other): ...          # x /= y    calls x.__itruediv__(y)
-...     def __ifloordiv__(self, other): ...         # x //= y   calls x.__ifloordiv__(y)
-...     def __imod__(self, other): ...              # x %= y    calls x.__imod__(y)
 ...
 ...     def __radd__(self, other): ...              # x + y     if fails, then calls y.__radd__(x)
 ...     def __rsub__(self, other): ...              # x - y     if fails, then calls y.__rsub__(x)
@@ -115,83 +73,76 @@ Left Operation
 Vector(x=9, y=12)
 
 
-Increment Operation
--------------------
->>> @dataclass
-... class Vector:
-...     x: int
-...     y: int
-...
-...     def __iadd__(self, other):
-...         self.x += other.x
-...         self.y += other.y
-...         return self
-...
+Left Operation
+--------------
+>>> class Left:
+...     def __add__(self, other):
+...         return 'left'
 >>>
->>>
->>> a = Vector(x=1, y=2)
->>> b = Vector(x=3, y=4)
->>> c = Vector(x=5, y=6)
->>>
->>>
->>> a += Vector(x=10, y=20)
->>> print(a)
-Vector(x=11, y=22)
+>>> class Right:
+...     pass
+
+Left operation:
+
+>>> Left() + Right()   # left.__add__(right)
+'left'
+
+What if ``Right`` class does not define ``__add__`` attribute?
+
+>>> Right() + Left()    # right.__add__(left)
+Traceback (most recent call last):
+TypeError: unsupported operand type(s) for +: 'Right' and 'Left'
 
 
 Right Operation
 ---------------
-Left operation:
-
 >>> class Left:
 ...     def __add__(self, other):
-...         ...
->>>
->>> class Right:
-...     pass
->>>
->>>
->>> left = Left()
->>> right = Right()
->>>
->>> left + right  # left.__add__(right)
-
-What if ``Left`` class does not define ``__add__`` attribute?
-
->>> class Left:
-...     pass
->>>
->>> class Right:
-...     pass
->>>
->>>
->>> left = Left()
->>> right = Right()
->>>
->>> left + right  # left.__add__(right) -> error (Left.__add__ not defined)
-Traceback (most recent call last):
-TypeError: unsupported operand type(s) for +: 'Left' and 'Right'
-
-Then Python will search for ``__radd__`` attribute in ``Right`` class:
-
->>> class Left:
-...     pass
->>>
->>> class Right:
+...         return 'left'
+...
 ...     def __radd__(self, other):
-...         ...
+...         return 'left too'
 >>>
 >>>
->>>
->>> left = Left()
->>> right = Right()
->>>
->>>
->>> left + right  # left.__add__(right) -> error (Left.__add__ not defined)
-...               # right.__radd__(left)
+>>> class Right:
+...     pass
 
-Example:
+Left operation:
 
+>>> Left() + Right()   # left.__add__(right)
+'left'
+
+What if ``Right`` class does not define ``__add__`` attribute?
+Python will search for ``__radd__`` attribute in ``Right`` class:
+
+>>> Right() + Left()     # Right.__add__(left) -> error -> # left.__radd__(right)
+'left too'
+
+
+Both
+----
+>>> class Left:
+...     def __add__(self, other):
+...         return 'left'
+...
+...     def __radd__(self, other):
+...         return 'left too'
+>>>
+>>>
+>>> class Right:
+...     def __add__(self, other):
+...         return 'right'
+>>>
+>>>
+>>> Left() + Right()    # left.__add__(right)
+'left'
+>>>
+>>> Right() + Left()    # right.__add__(left)
+'right'
+
+
+Example
+-------
 >>> a = 1
 >>> b = 2
 >>>
@@ -213,8 +164,8 @@ Example:
 >>> a.__rsub__(b)
 1
 
-Use Case:
-
+Use Case
+--------
 >>> import numpy as np
 >>>
 >>>
@@ -294,6 +245,32 @@ Astronaut(firstname='Melissa', lastname='Lewis')
 
 
 Use Case - 0x03
+---------------
+a = np.arange(1, 10).reshape(3,3)
+a
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+a = np.array([1,2,3])
+b = [4,5,6]
+a
+array([1, 2, 3])
+b
+[4, 5, 6]
+a + b
+array([5, 7, 9])
+a.__add__(b)
+array([5, 7, 9])
+b + a
+array([5, 7, 9])
+b.__add__(a)
+TypeError: can only concatenate list (not "numpy.ndarray") to list
+a.__radd__(b)
+array([5, 7, 9])
+
+
+
+Use Case - 0x04
 ---------------
 This is our function library.
 

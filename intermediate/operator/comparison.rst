@@ -25,7 +25,7 @@ About
     "``obj <= other``",   "``obj.__le__(other)``"
     "``obj > other``",    "``obj.__gt__(other)``"
     "``obj >= other``",   "``obj.__ge__(other)``"
-    "``other in obj``",       "``obj.__contains__(other)``"
+    "``other in obj``",   "``obj.__contains__(other)``"
 
 
 Object Equality

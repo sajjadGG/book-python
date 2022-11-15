@@ -5,7 +5,6 @@ Operator Accessors
 * ``obj[x]`` - missing
 * ``obj[x] = 10`` - setitem
 * ``del obj[x]`` - delitem
-* ``x in obj`` - contains
 
 
 About
@@ -32,7 +31,6 @@ Example
 >>>
 >>> echo.__call__('Mark Watney')
 'Mark Watney'
-
 
 
 Use Case - 0x01
@@ -166,8 +164,6 @@ Intuitive implementation of numpy ``array[row,col]`` accessor:
 ...             stop = key[1] if key[0] else len(self)
 ...             step = key[2] if key[2] else 1
 ...             return ...
-
-
 
 
 Use Case - 0x04

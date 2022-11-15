@@ -28,9 +28,9 @@ Syntax
     :caption: Unpack
 
     syntax/match.rst
-    syntax/parameter-syntax.rst
+    syntax/parameter.rst
     syntax/assignment-expression.rst
-    syntax/while-else.rst
+    syntax/loop-else.rst
 
 
 Type Annotation
@@ -39,9 +39,11 @@ Type Annotation
     :maxdepth: 1
     :caption: Type Annotation
 
-    type-annotation/type-primitive.rst
+    type-annotation/type-basics.rst
+    type-annotation/type-annotations.rst
     type-annotation/type-sequence.rst
     type-annotation/type-mapping.rst
+    type-annotation/type-nested.rst
     type-annotation/type-callable.rst
     type-annotation/type-type.rst
     type-annotation/extra.rst
@@ -167,11 +169,19 @@ Operator
     :maxdepth: 1
     :caption: Operator
 
-    operator/about.rst
-    operator/string.rst
+    operator/string-about.rst
+    operator/string-str.rst
+    operator/string-repr.rst
+    operator/string-format.rst
+    operator/string-operators.rst
+
+    operator/arithmetic-about.rst
+    operator/arithmetic-increment.rst
+    operator/arithmetic-operators.rst
+    operator/arithmetic-right.rst
+
     operator/comparison.rst
     operator/boolean.rst
-    operator/numerical.rst
     operator/module.rst
     operator/builtin.rst
     operator/accessors.rst
@@ -184,6 +194,10 @@ Enum
     :caption: Enum
 
     enum/about.rst
+    enum/enum.rst
+    enum/intenum.rst
+    enum/strenum.rst
+    enum/use-cases.rst
 
 
 Modules and Packages
@@ -205,7 +219,15 @@ Logging
     :maxdepth: 1
     :caption: Logging
 
-    logging/logging.rst
+    logging/about.rst
+    logging/levels.rst
+    logging/formatters.rst
+    logging/config-basic.rst
+    logging/handlers.rst
+    logging/config-file.rst
+    logging/rotation.rst
+    logging/optimization.rst
+    logging/use-cases.rst
 
 
 Locale

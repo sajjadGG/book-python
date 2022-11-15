@@ -1,0 +1,4 @@
+{
+    "excluded": ["**/__pycache__"],
+  "toolchains": []
+}

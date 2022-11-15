@@ -106,6 +106,67 @@ True
 False
 
 
+Bool
+----
+>>> a = True
+>>> b = False
+
+>>> a & b
+False
+
+>>> a ^ b
+True
+
+>>> a | b
+True
+
+
+Set
+---
+>>> a = {1,2,3}
+>>> b = {2,3,4}
+
+>>> a & b
+{2, 3}
+
+>>> a ^ b
+{1, 4}
+
+>>> a | b
+{1, 2, 3, 4}
+
+
+Dict
+----
+>>> a = {'commander': 'Melissa Lewis', 'botanist': 'Mark Watney'}
+>>> b = {'pilot': 'Rick Martinez', 'chemist': 'Alex Vogel'}
+
+>>> a & b
+Traceback (most recent call last):
+TypeError: unsupported operand type(s) for &: 'dict' and 'dict'
+
+>>> a ^ b
+Traceback (most recent call last):
+TypeError: unsupported operand type(s) for ^: 'dict' and 'dict'
+
+>>> a | b  # doctest: +NORMALIZE_WHITESPACE
+{'commander': 'Melissa Lewis',
+ 'botanist': 'Mark Watney',
+ 'pilot': 'Rick Martinez',
+ 'chemist': 'Alex Vogel'}
+
+>>> a |= b
+>>>
+>>> a  # doctest: +NORMALIZE_WHITESPACE
+{'commander': 'Melissa Lewis',
+ 'botanist': 'Mark Watney',
+ 'pilot': 'Rick Martinez',
+ 'chemist': 'Alex Vogel'}
+>>>
+>>> b
+{'pilot': 'Rick Martinez', 'chemist': 'Alex Vogel'}
+
+
 Dictionary Update
 -----------------
 >>> x = {'a':1, 'b':2, 'c':3}

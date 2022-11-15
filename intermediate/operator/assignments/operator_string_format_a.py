@@ -23,15 +23,11 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-
     >>> result = Distance(meters=1337)
-
     >>> format(result, 'km')
     '1.3'
-
     >>> format(result, 'cm')
     '133700.0'
-
     >>> format(result, 'm')
     '1337.0'
 """

@@ -1,4 +1,4 @@
-Unpack Assignment Expression
+Syntax Assignment Expression
 ============================
 * Since Python 3.8: :pep:`572` -- Assignment Expressions
 * Also known as "Walrus operator"

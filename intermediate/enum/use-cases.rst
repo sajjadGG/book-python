@@ -122,24 +122,6 @@ language used [mskeycodes]_, [jskeycodes]_.
 ...     case _: raise ValueError(f'Unrecognized key')
 
 
-Built-in Enum
--------------
->>> from http import HTTPStatus
->>>
->>>
->>> HTTPStatus(200).name
-'OK'
->>>
->>> HTTPStatus(404).name
-'NOT_FOUND'
->>>
->>> HTTPStatus(500).name
-'INTERNAL_SERVER_ERROR'
->>>
->>> HTTPStatus(418).name
-'IM_A_TEAPOT'
-
-
 Auto
 ----
 >>> class Color(StrEnum):

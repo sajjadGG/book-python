@@ -7,11 +7,6 @@ Operator About
 * All examples in this chapter uses ``dataclasses`` for you to focus on the important code, not boilerplate code just to make it works
 
 
-SetUp
------
->>> from dataclasses import dataclass
-
-
 Recap
 -----
 >>> a = int(1)
@@ -49,6 +44,24 @@ Problem
 Traceback (most recent call last):
 TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
 
+
+Solution
+--------
+>>> class Vector:
+...     def __init__(self, x, y):
+...         self.x = x
+...         self.y = y
+>>>
+>>>
+>>> Vector(x=1, y=2) + Vector(x=3, y=4)
+Traceback (most recent call last):
+TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
+
+
+Dataclasses
+-----------
+>>> from dataclasses import dataclass
+
 >>> @dataclass
 ... class Vector:
 ...     x: int
@@ -58,19 +71,6 @@ TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
 >>> a = Vector(1,2)
 >>> b = Vector(2,3)
 >>> a + b
-Traceback (most recent call last):
-TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
-
-
-Solution
---------
->>> @dataclass
-... class Vector:
-...     x: int = 0
-...     y: int = 0
->>>
->>>
->>> Vector(x=1, y=2) + Vector(x=3, y=4)
 Traceback (most recent call last):
 TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
 

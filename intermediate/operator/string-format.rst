@@ -1,169 +1,12 @@
-Operator Stringify
-==================
-* ``str()``
-* ``repr()``
-* ``format()``
-* ``print()``
-* ``+`` - add
-* ``-`` - sub
-* ``*`` - mul
-* ``%`` - mod
-* ``+=`` - iadd
-* ``-=`` - isub
-* ``*=`` - imul
-* ``%=`` - imod
-
-
-About
------
-.. csv-table:: String Operator Overload
-    :header: "Operator", "Method"
-
-    "``str(obj)``",           "``obj.__str__()``"
-    "``repr(obj)``",          "``obj.__repr__()``"
-    "``format(obj, name)``",  "``obj.__format__(name)``"
-    "``print(obj)``",         "``str(obj)`` -> ``obj.__str__()``"
-
-    "``obj + other``",        "``obj.__add__(other)``"
-    "``obj - other``",        "``obj.__sub__(other)``"
-    "``obj * other``",        "``obj.__mul__(other)``"
-    "``obj % other``",        "``obj.__mod__(other)``"
-
-    "``obj += other``",       "``obj.__iadd__(other)``"
-    "``obj -= other``",       "``obj.__isub__(other)``"
-    "``obj *= other``",       "``obj.__imul__(other)``"
-    "``obj %= other``",       "``obj.__imod__(other)``"
+Operator String Format
+======================
+* Calling function ``format(obj, fmt)`` calls ``obj.__format__(fmt)``
+* Method ``obj.__format__()`` must return ``str``
+* Used for advanced formatting in f-strings (``f'...'``)
 
 
 Example
 -------
-SetUp:
-
->>> import datetime
->>>
->>>
->>> date = datetime.date(1961, 4, 12)
-
->>> print(date)
-1961-04-12
-
->>> str(date)
-'1961-04-12'
-
->>> repr(date)
-'datetime.date(1961, 4, 12)'
-
->>> format(date, '%Y-%m-%d')
-'1961-04-12'
-
-
-String
-------
-* Calling function ``str(obj)`` calls ``obj.__str__()``
-* Calling function ``print(obj)`` calls ``str(obj)``, which calls ``obj.__str__()``
-* Method ``obj.__str__()`` must return ``str``
-* for end-user
-
-Object without ``__str__()`` method overloaded prints their memory address:
-
->>> class Astronaut:
-...     def __init__(self, name):
-...         self.name = name
->>>
->>>
->>> astro = Astronaut('José Jiménez')
->>>
->>> print(astro)  # doctest: +ELLIPSIS
-<__main__.Astronaut object at 0x...>
->>>
->>> str(astro)  # doctest: +ELLIPSIS
-'<__main__.Astronaut object at 0x...>'
->>>
->>> astro.__str__()  # doctest: +ELLIPSIS
-'<__main__.Astronaut object at 0x...>'
->>>
->>> f'{astro!s}'  # doctest: +ELLIPSIS
-'<__main__.Astronaut object at 0x...>'
-
-Objects can verbose print if ``__str__()`` method is present:
-
->>> class Astronaut:
-...     def __init__(self, name):
-...         self.name = name
-...
-...     def __str__(self):
-...         return f'My name... {self.name}'
->>>
->>>
->>> astro = Astronaut('José Jiménez')
->>>
->>> print(astro)
-My name... José Jiménez
->>>
->>> str(astro)
-'My name... José Jiménez'
->>>
->>> astro.__str__()
-'My name... José Jiménez'
->>>
->>> f'{astro!s}'
-'My name... José Jiménez'
-
-
-Representation
---------------
-* Calling function ``repr(obj)`` calls ``obj.__repr__()``
-* Method ``obj.__repr__()`` must return ``str``
-* For developers
-* Object representation
-* Copy-paste for creating object with the same values
-* Useful for debugging
-* Printing ``list`` will call ``__repr__()`` method on each element
-
->>> class Astronaut:
-...     def __init__(self, name):
-...         self.name = name
->>>
->>>
->>> astro = Astronaut('José Jiménez')
->>>
->>> repr(astro)  # doctest: +ELLIPSIS
-'<__main__.Astronaut object at 0x...>'
->>>
->>> astro  # doctest: +ELLIPSIS
-<__main__.Astronaut object at 0x...>
->>>
->>> f'{astro!r}'  # doctest: +ELLIPSIS
-'<__main__.Astronaut object at 0x...>'
-
-Using ``__repr__()`` on a class:
-
->>> class Astronaut:
-...     def __init__(self, name):
-...         self.name = name
-...
-...     def __repr__(self):
-...         return f'Astronaut(name="{self.name}")'
->>>
->>>
->>> astro = Astronaut('José Jiménez')
->>>
->>> repr(astro)
-'Astronaut(name="José Jiménez")'
->>>
->>> astro
-Astronaut(name="José Jiménez")
->>>
->>> f'{astro!r}'
-'Astronaut(name="José Jiménez")'
-
-
-Format
-------
-* Calling function ``format(obj, fmt)`` calls ``obj.__format__(fmt)``
-* Method ``obj.__format__()`` must return ``str``
-* Used for advanced formatting
-
 >>> class Astronaut:
 ...     def __init__(self, name):
 ...         self.name = name
@@ -184,101 +27,7 @@ Yuppi, we're going to space!
 I hope we don't crash
 
 
-Nested
-------
-* Printing ``list`` will call ``__repr__()`` method on each element
-
->>> data = [1,2,3]
->>> print(data)
-[1, 2, 3]
-
-Printing ``list`` will call ``__repr__()`` method on each element:
-
->>> class Astronaut:
-...     def __init__(self, name):
-...         self.name = name
->>>
->>>
->>> crew = [Astronaut('Mark Watney'),
-...         Astronaut('Melissa Lewis'),
-...         Astronaut('Rick Martinez')]
->>>
->>> print(crew)  # doctest: +ELLIPSIS
-[<__main__.Astronaut object at 0x...>, <__main__.Astronaut object at 0x...>, <__main__.Astronaut object at 0x...>]
-
->>> class Astronaut:
-...     def __init__(self, name):
-...         self.name = name
-...
-...     def __repr__(self):
-...         return f'{self.name}'
->>>
->>> crew = [Astronaut('Mark Watney'),
-...         Astronaut('Melissa Lewis'),
-...         Astronaut('Rick Martinez')]
->>>
->>> print(crew)
-[Mark Watney, Melissa Lewis, Rick Martinez]
-
-
 Use Case - 0x01
----------------
-* ``%`` (``__mod__``) operator behavior for ``int`` and ``str``:
-
->>> 13 % 4
-1
->>>
->>> '13' % '4'
-Traceback (most recent call last):
-TypeError: not all arguments converted during string formatting
-
->>> pi = 3.1514
->>>
->>>
->>> 'String: %s' % pi
-'String: 3.1514'
->>>
->>> 'Double: %d' % pi
-'Double: 3'
->>>
->>> 'Float: %f' % pi
-'Float: 3.151400'
-
->>> firstname = 'Mark'
->>> lastname = 'Watney'
->>>
->>>
->>> 'Hello %s' % firstname
-'Hello Mark'
->>>
->>> 'Hello %s %s' % (firstname, lastname)
-'Hello Mark Watney'
->>>
->>> 'Hello %(fname)s %(lname)s' % {'fname': firstname, 'lname': lastname}
-'Hello Mark Watney'
-
->>> text = 'Hello %s'
->>> text %= 'Mark Watney'
->>>
->>> print(text)
-Hello Mark Watney
-
->>> class Str:
-...     def __mod__(self, other):
-...         """str substitute"""
-...
-...         if type(other) is str:
-...             ...
-...         if type(other) is tuple:
-...             ...
-...         if type(other) is dict:
-...             ...
-
-Note, that using ``%s``, ``%d``, ``%f`` is currently deprecated in favor
-of ``f'...'`` string formatting. More information in `Builtin Printing`
-
-
-Use Case - 0x02
 ---------------
 * Self formatting duration
 
@@ -336,7 +85,7 @@ Ares3 mission to Mars took 18.3 months
 Ares3 mission to Mars took 1.5 years
 
 
-Use Case - 0x03
+Use Case - 0x02
 ---------------
 * Duration Many Units
 
@@ -397,7 +146,7 @@ Ares3 mission to Mars took 18.3 months
 Ares3 mission to Mars took 1.5 years
 
 
-Use Case - 0x04
+Use Case - 0x03
 ---------------
 * ``ares3_landing = datetime(2035, 11, 7)``
 * ``ares3_start = datetime(2035, 6, 29)``
@@ -545,7 +294,7 @@ Temperature is 36.60 C
 Temperature is 97.88 F
 
 
-Use Case - 0x05
+Use Case - 0x06
 ---------------
 * Format output
 
@@ -586,21 +335,6 @@ Point(x=1, y=2, z=0)
 
 Assignments
 -----------
-.. literalinclude:: assignments/operator_string_a.py
-    :caption: :download:`Solution <assignments/operator_string_a.py>`
+.. literalinclude:: assignments/operator_string_format_a.py
+    :caption: :download:`Solution <assignments/operator_string_format_a.py>`
     :end-before: # Solution
-
-.. literalinclude:: assignments/operator_string_b.py
-    :caption: :download:`Solution <assignments/operator_string_b.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/operator_string_c.py
-    :caption: :download:`Solution <assignments/operator_string_c.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/operator_string_d.py
-    :caption: :download:`Solution <assignments/operator_string_d.py>`
-    :end-before: # Solution
-
-
-.. todo:: dorobić jedno zadanie z dziedziczeniem REPR

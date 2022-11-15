@@ -1,5 +1,5 @@
-Block Match
-===========
+Syntax Match
+============
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
 * Significantly faster for sequences and mappings [#Shaw2022]_
 * Since Python 3.11: For sequences if faster around 80% [#Shaw2022]_

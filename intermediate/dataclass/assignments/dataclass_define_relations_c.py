@@ -33,10 +33,9 @@ Polish:
 Hints:
     * `pk` - Primary Key (unique identifier, an ID in database)
     * `model` - package name with name of a class
-    * `json.loads(DATA)`
-    * `type(...)`
     * `datetime | None`
     * `date`
+    * `list[dict]`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -133,6 +132,9 @@ DATA = ('[{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa"'
         'ctive":true,"is_staff":true,"is_superuser":false,"user_permissions":['
         '{"communication":["add","modify","view"]},{"science":["add","modify",'
         '"view"]}]}}]')
+
+# Convert JSON to Python dict
+data = json.loads(DATA)
 
 
 # Using `dataclass` model data as class `User`

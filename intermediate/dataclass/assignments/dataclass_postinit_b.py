@@ -10,10 +10,8 @@ English:
         b. `datetime` fields: born, last_login,
         c. `bool` fields: is_active, is_staff, is_superuser,
         d. `list[dict]` field: user_permissions
-    2. Using `dataclass` model data as class `User`
-        a. Note, that fields order is important for tests to pass
-    3. Parse fields with dates and store as `date` or `datetime` objects
-    4. Run doctests - all must succeed
+    2. Parse fields with dates and store as `date` or `datetime` objects
+    3. Run doctests - all must succeed
 
 Polish:
     1. Otrzymałeś z API dane wejściowe w formacie JSON
@@ -21,16 +19,12 @@ Polish:
         b. pola `datetime`: born, last_login,
         c. pola `bool`: is_active, is_staff, is_superuser,
         d. pola `list[dict]`: user_permissions
-    2. Wykorzystując `dataclass` zamodeluj dane za pomocą klasy `User`
-        a. Zwróć uwagę, że kolejność pól ma znaczenie aby testy przechodziły
-    3. Sparsuj pola z datami i zapisz je jako obiekty `date` lub `datetime`
-    4. Uruchom doctesty - wszystkie muszą się powieść
+    2. Sparsuj pola z datami i zapisz je jako obiekty `date` lub `datetime`
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
     * `date.fromisoformat(...)`
     * `datetime.fromisoformat(...)`
-    * `datetime | None`
-    * `date`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -169,6 +163,7 @@ DATA = ('[{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa"'
         '{"communication":["add","modify","view"]},{"science":["add","modify",'
         '"view"]}]}}]')
 
+
 # Using `dataclass` model data as class `User`
 # type: Type
 @dataclass
@@ -185,7 +180,6 @@ class User:
     is_staff: bool
     is_superuser: bool
     user_permissions: list[dict]
-
 
 
 # Solution

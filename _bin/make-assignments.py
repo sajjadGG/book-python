@@ -6,9 +6,7 @@ from _config import BOOKS, SRC_DIR, OUT_DIR, log
 
 def get_files(book: str) -> Iterator[Path]:  # noqa
     yield from SRC_DIR.rglob(f'{book}/assignments/*.py')
-    yield from SRC_DIR.rglob(f'{book}/assignments/*.db')
     yield from SRC_DIR.rglob(f'{book}/*/assignments/*.py')
-    yield from SRC_DIR.rglob(f'{book}/*/assignments/*.db')
 
 
 def split_assignment_solutions(file: Path) -> tuple[str, str]:  # noqa
