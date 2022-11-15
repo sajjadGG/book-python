@@ -6,6 +6,7 @@ Enum IntEnum
 * ``Flag``
 * ``IntFlag``
 
+
 SetUp
 -----
 >>> from enum import Enum, IntEnum
@@ -28,36 +29,51 @@ Example
 ...     INTERNAL_ERROR = 500
 
 
-
 Use Case - 0x01
 ---------------
->>> from http import HTTPStatus
->>>
->>>
->>> HTTPStatus(200).name
-'OK'
->>>
->>> HTTPStatus(404).name
-'NOT_FOUND'
->>>
->>> HTTPStatus(500).name
-'INTERNAL_SERVER_ERROR'
->>>
->>> HTTPStatus(418).name
-'IM_A_TEAPOT'
-
-
-
-
-Use Case - 0x07
-------------------
 >>> class IndexDrives(IntEnum):
 ...     ControlWord = 0x6040
 ...     StatusWord = 0x6041
 ...     OperationMode = 0x6060
 
 
-Use Case - 0x06
+Use Case - 0x02
+---------------
+>>> class Status(IntEnum):
+...     FULL_HEALTH = 100
+...     DEAD = 0
+
+>>> hit_points = 100
+>>> Status(hit_points)
+<Status.FULL_HEALTH: 100>
+
+>>> hit_points = 0
+>>> Status(hit_points)
+<Status.DEAD: 0>
+
+
+Use Case - 0x03
+---------------
+.. figure:: img/oop-enum-keycodes.png
+
+Note, keycodes can vary depending on operating system and programming
+language used [mskeycodes]_, [jskeycodes]_.
+
+>>> int('0x1B', base=16)
+27
+>>>
+>>> hex(27)
+'0x1b'
+
+>>> class Key(Enum):
+...     ESC = 27            # 0x1B
+...     ARROW_LEFT = 37     # 0x25
+...     ARROW_UP = 38       # 0x26
+...     ARROW_RIGHT = 39    # 0x27
+...     ARROW_DOWN = 40     # 0x28
+
+
+Use Case - 0x04
 ---------------
 * ``r`` - read
 * ``w`` - write

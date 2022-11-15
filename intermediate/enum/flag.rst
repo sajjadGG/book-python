@@ -9,6 +9,7 @@ SetUp
 -----
 >>> from enum import Enum, Flag, IntFlag, FlagBoundary, auto
 
+
 Example
 -------
 >>> class Color(Flag):
@@ -31,6 +32,7 @@ True
 >>> white in purple
 False
 >>>
+
 
 FlagBoundary
 ------------
@@ -55,7 +57,6 @@ Traceback (most recent call last):
 ValueError: <flag 'StrictFlag'> invalid value 20
     given 0b0 10100
   allowed 0b0 00111
-
 
 
 CONFORM

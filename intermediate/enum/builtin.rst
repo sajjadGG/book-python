@@ -5,8 +5,7 @@ Enum
 http.HTTPStatus
 ---------------
 >>> from http import HTTPStatus
->>>
->>>
+
 >>> HTTPStatus(200).name
 'OK'
 >>>
@@ -25,8 +24,7 @@ http.HTTPMethod
 * Since 3.11:
 
 >>> from http import HTTPMethod
->>>
->>>
+
 >>> HTTPMethod.GET
 <HTTPMethod.GET>
 >>>
