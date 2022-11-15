@@ -82,3 +82,11 @@ Assignments
 .. literalinclude:: assignments/json_file_b.py
     :caption: :download:`Solution <assignments/json_file_b.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/json_file_c.py
+    :caption: :download:`Solution <assignments/json_file_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/json_file_d.py
+    :caption: :download:`Solution <assignments/json_file_d.py>`
+    :end-before: # Solution
