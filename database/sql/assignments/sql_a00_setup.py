@@ -17,20 +17,29 @@ Tests:
 """
 
 import sqlite3
+from urllib.request import urlopen
 from pathlib import Path
 
 
-file = Path('sql.db')
+DATA = 'https://python.astrotech.io/_static/space.db'
+database = Path('sql.db')
 
-if not file.exists():
+
+# Download database from server
+with urlopen(DATA) as db:
+    content = db.read()
+    database.write_bytes(content)
+
+
+if not database.exists():
     print('Error with database!')
-    print(f'Check if `{file}` is present in current directory')
+    print(f'Check if `{database}` is present in current directory')
     print('Please notify instructor')
     exit(1)
 
 
 try:
-    db = sqlite3.connect(file)
+    db = sqlite3.connect(database)
 except Exception:
     print('Error with connection')
     print('Check if you have SQLite3 installed with your Python')
@@ -43,7 +52,7 @@ try:
     tables = {row[0] for row in result}
 except Exception:
     print('Error with database')
-    print(f'Check if `{file}` is valid SQLite3 database')
+    print(f'Check if `{database}` is valid SQLite3 database')
     print('Please notify instructor')
     exit(1)
 

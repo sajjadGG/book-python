@@ -15,13 +15,30 @@ Polish:
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
-    TODO: tests
+    >>> import sys; sys.tracebacklimit = 0
+    >>> from pathlib import Path
+    >>> import sqlite3
+
+    >>> database = Path(__file__).parent / 'sql.db'
+
+    >>> with sqlite3.connect(database) as db:
+    ...     db.row_factory = sqlite3.Row
+    ...     for schema in db.execute(result):
+    ...         print(schema['sql'], sep='')
+    CREATE TABLE "apollo11" (
+    "datetime" TIMESTAMP,
+      "date" DATE,
+      "time" TIME,
+      "met" INTEGER,
+      "category" TEXT,
+      "event" TEXT
+    )
+    CREATE INDEX "ix_apollo11_datetime"ON "apollo11" ("datetime")
 """
 
-import sqlite3
-
-
-SQL = """
+# show schema for a table `apollo11`
+# type: str
+result = """
 
 SELECT sql
 FROM sqlite_master
@@ -29,16 +46,8 @@ WHERE tbl_name = 'apollo11'
 
 """
 
-
-with sqlite3.connect('sql.db') as db:
-    db.row_factory = sqlite3.Row
-    for schema in db.execute(SQL):
-        print('\n', schema['sql'], sep='')
-
-
 # Solution
-
-SQL = """
+result = """
 
 SELECT sql
 FROM sqlite_master
