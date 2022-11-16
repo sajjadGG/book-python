@@ -18,7 +18,7 @@ References:
     [1] Wikipedia Apollo 11,
         URL: https://en.wikipedia.org/wiki/Apollo_11
         Year: 2019
-        Retreived: 2019-12-14
+        Retrieved: 2019-12-14
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0

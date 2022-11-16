@@ -18,7 +18,7 @@ References:
     [1] Kennedy, J.F. Moon Speech - Rice Stadium,
         URL: http://er.jsc.nasa.gov/seh/ricetalk.htm
         Year: 2019
-        Retreived: 2019-12-14
+        Retrieved: 2019-12-14
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
