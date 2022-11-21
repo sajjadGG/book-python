@@ -1,23 +1,22 @@
 Generator Inspect
 =================
 
+SetUp
+-----
+>>> from inspect import isgenerator
+
 
 Is Generator
 ------------
->>> from inspect import isgenerator
->>>
->>>
 >>> a = [x for x in range(0,5)]
 >>> b = (x for x in range(0,5))
 >>>
 >>> isgenerator(a)
 False
+>>>
 >>> isgenerator(b)
 True
 
->>> from inspect import isgenerator
->>>
->>>
 >>> data = range(0, 10)
 >>>
 >>> isgenerator(data)
@@ -62,15 +61,14 @@ Memory Footprint
 * ``sys.getsizeof(obj)`` calls ``obj.__sizeof__()`` method
 * ``sys.getsizeof(obj)`` adds an additional garbage collector overhead if the ``obj`` is managed by the garbage collector
 
+>>> from sys import getsizeof
+
 * 200 bytes for generator in Python 3.11
 * 104 bytes for generator in Python 3.10
 * 112 bytes for generator in Python 3.9
 * 112 bytes for generator in Python 3.8
 * 120 bytes for generator in Python 3.7
 
->>> from sys import getsizeof
->>>
->>>
 >>> gen1 = (x for x in range(0,1))
 >>> gen10 = (x for x in range(0,10))
 >>> gen100 = (x for x in range(0,100))
@@ -88,9 +86,6 @@ Memory Footprint
 >>> getsizeof(gen1000)
 200
 
->>> from sys import getsizeof
->>>
->>>
 >>> com1 = [x for x in range(0,1)]
 >>> com10 = [x for x in range(0,10)]
 >>> com100 = [x for x in range(0,100)]
