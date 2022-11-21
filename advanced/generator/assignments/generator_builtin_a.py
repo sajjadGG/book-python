@@ -47,7 +47,7 @@ Tests:
 """
 
 def odd(x):
-    return x % 2
+    return x % 2 == 1
 
 
 def cube(x):

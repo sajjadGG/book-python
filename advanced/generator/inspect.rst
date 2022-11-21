@@ -62,7 +62,7 @@ Memory Footprint
 * ``sys.getsizeof(obj)`` calls ``obj.__sizeof__()`` method
 * ``sys.getsizeof(obj)`` adds an additional garbage collector overhead if the ``obj`` is managed by the garbage collector
 
-* 200 bytes for generator in Python 3.10
+* 200 bytes for generator in Python 3.11
 * 104 bytes for generator in Python 3.10
 * 112 bytes for generator in Python 3.9
 * 112 bytes for generator in Python 3.8
