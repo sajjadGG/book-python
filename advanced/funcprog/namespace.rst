@@ -3,26 +3,36 @@ FuncProg Namespace
 * Functions provide namespaces
 * Only code inside that namespace can access it's locals
 
->>> def run():
-...     a = 1
-...     print(a)
->>>
->>>
->>> print(a)
-Traceback (most recent call last):
-NameError: name 'a' is not defined
->>>
->>> run()
-1
-
 
 Variables Inside Function
 -------------------------
 * Variables inside function
 
 >>> def run():
-...     a = 1
-...     b = 2
+...     firstname = 'Mark'
+...     lastname = 'Watney'
+
+Before call:
+
+>>> firstname
+Traceback (most recent call last):
+NameError: name 'firstname' is not defined
+>>>
+>>> lastname
+Traceback (most recent call last):
+NameError: name 'lastname' is not defined
+
+After call:
+
+>>> run()
+>>>
+>>> firstname
+Traceback (most recent call last):
+NameError: name 'firstname' is not defined
+>>>
+>>> lastname
+Traceback (most recent call last):
+NameError: name 'lastname' is not defined
 
 
 Functions Inside Function
@@ -30,182 +40,287 @@ Functions Inside Function
 * Functions inside function
 
 >>> def run():
-...     def a():
-...         pass
+...     def say_hello():
+...         print('Hello')
 ...
-...     def b():
-...         pass
+...     def say_goodbye():
+...         print('Goodbye')
+
+>>> say_hello()
+Traceback (most recent call last):
+NameError: name 'say_hello' is not defined
+>>>
+>>> say_goodbye()
+Traceback (most recent call last):
+NameError: name 'say_goodbye' is not defined
+
+>>> run()
+>>>
+>>> say_hello()
+Traceback (most recent call last):
+NameError: name 'say_hello' is not defined
+>>>
+>>> say_goodbye()
+Traceback (most recent call last):
+NameError: name 'say_goodbye' is not defined
 
 
 Classes Inside Function
 -----------------------
 >>> def run():
-...     class A:
-...         pass
-...
-...     class B:
-...         pass
-
-
-Variables, Functions and Classes Inside Function
-------------------------------------------------
->>> def run():
-...     myvariable = 1
-...
-...     def myfunction():
-...         pass
-...
-...     class MyClass:
-...         pass
-
-
-Execute
--------
->>> def run():
-...     def a():
-...         print('A')
-...
-...     def b():
-...         print('B')
-...
-...     a()
-...     b()
->>>
->>>
->>> result = run()
-A
-B
->>>
->>> print(result)
-None
-
-
-Return
-------
->>> def run():
-...     def a():
-...         return 'A'
-...
-...     def b():
-...         return 'B'
-...
-...     return a(), b()
->>>
->>>
->>> run()
-('A', 'B')
->>>
->>> run()()
-Traceback (most recent call last):
-TypeError: 'tuple' object is not callable
->>>
->>> ('A', 'B')()
-Traceback (most recent call last):
-TypeError: 'tuple' object is not callable
-
->>> def run():
-...     def a():
-...         print('A')
-...
-...     def b():
-...         print('B')
-...
-...     return b
->>>
->>>
->>> run()  # doctest: +ELLIPSIS
-<function run.<locals>.b at 0x...>
->>>
->>> run()()
-B
-
->>> def run():
-...     def a():
-...         print('A')
-...
-...     def b():
-...         print('B')
-...
-...     return a, b
->>>
->>>
->>> run()  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE
-(<function run.<locals>.a at 0x...>,
- <function run.<locals>.b at 0x...>)
->>>
->>> run()()
-Traceback (most recent call last):
-TypeError: 'tuple' object is not callable
->>>
->>> run()[0]  # doctest: +ELLIPSIS
-<function run.<locals>.a at 0x...>
->>>
->>> run()[0]()
-A
->>>
->>> run()[1]()
-B
->>>
->>> a, b = run()
->>>
->>> a()
-A
->>>
->>> b()
-B
->>>
->>> x, y = run()
->>>
->>> x()
-A
->>>
->>> y()
-B
-
->>> def run():
-...     a = 1
-...     b = 2
-...
-...     def say_hello():
-...         pass
-...
 ...     class Astronaut:
-...         def hello(self):
-...             pass
+...         pass
 ...
-...     return Astronaut
+...     class Cosmonaut:
+...         pass
+
+>>> Astronaut()
+Traceback (most recent call last):
+NameError: name 'Astronaut' is not defined
 >>>
->>>
+>>> Cosmonaut()
+Traceback (most recent call last):
+NameError: name 'Cosmonaut' is not defined
+
 >>> run()
-<class '__main__.run.<locals>.Astronaut'>
+>>>
+>>> Astronaut()
+Traceback (most recent call last):
+NameError: name 'Astronaut' is not defined
+>>>
+>>> Cosmonaut()
+Traceback (most recent call last):
+NameError: name 'Cosmonaut' is not defined
 
 
-Locals
-------
->>> def run(a=1):
-...     b = 1
-...     print(locals())
+Methods Inside Function
+-----------------------
+>>> def run():
+...     class Astronaut:
+...         def __init__(self, firstname, lastname):
+...             self.firstname = firstname
+...             self.lastname = lastname
+...
+...     class Cosmonaut:
+...         def __init__(self, firstname, lastname):
+...             self.firstname = firstname
+...             self.lastname = lastname
+
+>>> Astronaut('Mark', 'Watney')
+Traceback (most recent call last):
+NameError: name 'Astronaut' is not defined
 >>>
->>>
+>>> Cosmonaut('Pan', 'Twardowski')
+Traceback (most recent call last):
+NameError: name 'Cosmonaut' is not defined
+
 >>> run()
-{'a': 1, 'b': 1}
+>>>
+>>> Astronaut('Mark', 'Watney')
+Traceback (most recent call last):
+NameError: name 'Astronaut' is not defined
+>>>
+>>> Cosmonaut('Pan', 'Twardowski')
+Traceback (most recent call last):
+NameError: name 'Cosmonaut' is not defined
 
+
+Instances Inside Function
+-------------------------
+>>> def run():
+...     class Astronaut:
+...         def __init__(self, firstname, lastname):
+...             self.firstname = firstname
+...             self.lastname = lastname
+...
+...     class Cosmonaut:
+...         def __init__(self, firstname, lastname):
+...             self.firstname = firstname
+...             self.lastname = lastname
+...
+...     mark = Astronaut('Mark', 'Watney')
+...     pan = Cosmonaut('Pan', 'Twardowski')
+
+>>> mark
+Traceback (most recent call last):
+NameError: name 'mark' is not defined
+>>>
+>>> pan
+Traceback (most recent call last):
+NameError: name 'pan' is not defined
+
+>>> run()
+>>>
+>>> mark
+Traceback (most recent call last):
+NameError: name 'mark' is not defined
+>>>
+>>> pan
+Traceback (most recent call last):
+NameError: name 'pan' is not defined
+
+
+All Together
+------------
 >>> def run():
 ...     firstname = 'Mark'
 ...     lastname = 'Watney'
 ...
 ...     def say_hello():
-...         pass
+...         print('Hello')
+...
+...     def say_goodbye():
+...         print('Goodbye')
 ...
 ...     class Astronaut:
-...         def hello(self):
-...             pass
+...         def __init__(self, firstname, lastname):
+...             self.firstname = firstname
+...             self.lastname = lastname
+...
+...     class Cosmonaut:
+...         def __init__(self, firstname, lastname):
+...             self.firstname = firstname
+...             self.lastname = lastname
+...
+...     mark = Astronaut('Mark', 'Watney')
+...     pan = Cosmonaut('Pan', 'Twardowski')
+
+
+Execute
+-------
+>>> def run():
+...
+...     def say_hello():
+...         print('Hello')
+...
+...     def say_goodbye():
+...         print('Goodbye')
+...
+...     say_hello()
+...     say_goodbye()
+>>>
+>>>
+>>> result = run()
+Hello
+Goodbye
+>>>
+>>> print(result)
+None
+
+
+Return Results
+--------------
+>>> def run():
+...
+...     def get_hello():
+...         return 'Hello'
+...
+...     def get_goodbye():
+...         return 'Goodbye'
+...
+...     return get_hello()
+>>>
+>>>
+>>> run()
+'Hello'
+
+>>> def run():
+...
+...     def get_hello():
+...         return 'Hello'
+...
+...     def get_goodbye():
+...         return 'Goodbye'
+...
+...     return get_hello(), get_goodbye()
+>>>
+>>>
+>>> run()
+('Hello', 'Goodbye')
+
+
+Return Function
+---------------
+>>> def run():
+...     def say_hello():
+...         print('Hello')
+...
+...     def say_goodbye():
+...         print('Goodbye')
+...
+...     return say_hello
+>>>
+>>>
+>>> hello = run()
+>>> hello()
+Hello
+
+>>> def run():
+...     def say_hello():
+...         print('Hello')
+...
+...     def say_goodbye():
+...         print('Goodbye')
+...
+...     return say_hello, say_goodbye
+>>>
+>>>
+>>> hello, goodbye = run()
+>>>
+>>> hello()
+Hello
+>>>
+>>> goodbye()
+Goodbye
+
+>>> def run():
+...     class Astronaut:
+...         def __init__(self, firstname, lastname):
+...             self.firstname = firstname
+...             self.lastname = lastname
+...
+...     return Astronaut('Mark', 'Watney')
+>>>
+>>>
+>>> mark = run()
+>>>
+>>> vars(mark)
+{'firstname': 'Mark', 'lastname': 'Watney'}
+
+
+Locals
+------
+>>> def run():
+...     firstname = 'Mark'
+...     lastname = 'Watney'
+...
+...     def say_hello():
+...         print('Hello')
+...
+...     def say_goodbye():
+...         print('Goodbye')
+...
+...     class Astronaut:
+...         def __init__(self, firstname, lastname):
+...             self.firstname = firstname
+...             self.lastname = lastname
+...
+...     class Cosmonaut:
+...         def __init__(self, firstname, lastname):
+...             self.firstname = firstname
+...             self.lastname = lastname
+...
+...     mark = Astronaut('Mark', 'Watney')
+...     pan = Cosmonaut('Pan', 'Twardowski')
 ...
 ...     print(locals())
->>>
->>>
->>> run()  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE
+
+>>> run()   # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE
 {'firstname': 'Mark',
  'lastname': 'Watney',
  'say_hello': <function run.<locals>.say_hello at 0x...>,
- 'Astronaut': <class '__main__.run.<locals>.Astronaut'>}
+ 'say_goodbye': <function run.<locals>.say_goodbye at 0x...>,
+ 'Astronaut': <class '__main__.run.<locals>.Astronaut'>,
+ 'Cosmonaut': <class '__main__.run.<locals>.Cosmonaut'>,
+ 'mark': <__main__.run.<locals>.Astronaut object at 0x...>,
+ 'pan': <__main__.run.<locals>.Cosmonaut object at 0x...>}

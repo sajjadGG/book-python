@@ -18,7 +18,14 @@ Rational
 * Source: [#WikipediaFunc]_
 
 
-Variables are immutable, i.e., it isn't possible to modify one once it has been initialized. However, we can create a new variable. The immutable nature of variables helps preserve the state throughout the program. [#Inouye2022]_
+Variables are immutable, i.e., it isn't possible to modify one once it has
+been initialized. However, we can create a new variable. The immutable nature
+of variables helps preserve the state throughout the program. [#Inouye2022]_
+
+
+SetUp
+-----
+>>> from dataclasses import dataclass
 
 
 Mutable vs Immutable
@@ -60,22 +67,122 @@ Comparison
     :header: Immutable, Mutable
     :widths: 50, 50
 
-    int          ,
-    float        ,
-    complex      ,
-    bool         ,
-    None         ,
-    str          ,
-    bytes        , bytearray
-    tuple        , list
-    frozenset    , set
-    mappingproxy , dict
-    NamedTuple   ,
-    namedtuple   ,
-                 , array
-                 , TypedDict
-    dataclass    , dataclass
+    int                       ,
+    float                     ,
+    complex                   ,
+    bool                      ,
+    None                      ,
+    str                       ,
+    bytes                     , bytearray
+    tuple                     , list
+    frozenset                 , set
+    mappingproxy              , dict
+    NamedTuple                ,
+    namedtuple                ,
+                              , array
+                              , TypedDict
+    dataclass(frozen=True)    , dataclass
 
+
+Array
+-----
+Return a new array whose items are restricted by typecode, and
+initialized from the optional initializer value, which must be a list,
+string or iterable over elements of the appropriate type.
+
+Arrays represent basic values and behave very much like lists, except
+the type of objects stored in them is constrained. The type is specified
+at object creation time by using a type code, which is a single character.
+The following type codes are defined:
+
+.. csv-table:: Comparison
+    :widths: 10, 70, 20
+    :header: Type code, C Type, Minimum size in bytes
+
+    'b',    signed integer     , 1
+    'B',    unsigned integer   , 1
+    'u',    Unicode character  , 2 (see note)
+    'h',    signed integer     , 2
+    'H',    unsigned integer   , 2
+    'i',    signed integer     , 2
+    'I',    unsigned integer   , 2
+    'l',    signed integer     , 4
+    'L',    unsigned integer   , 4
+    'q',    signed integer     , 8 (see note)
+    'Q',    unsigned integer   , 8 (see note)
+    'f',    floating point     , 4
+    'd',    floating point     , 8
+
+
+>>> from array import array
+>>>
+>>>
+>>> data = array('b')
+>>>
+>>> data.append(-128)
+>>> data.append(-127)
+>>> data.append(-1)
+>>> data.append(1)
+>>> data.append(0)
+>>> data.append(2)
+>>> data.append(8)
+>>> data.append(127)
+
+>>> data.append(128)
+Traceback (most recent call last):
+OverflowError: signed char is greater than maximum
+
+>>> data.append(-129)
+Traceback (most recent call last):
+OverflowError: signed char is less than minimum
+
+
+Mutable Dataclass
+-----------------
+>>> @dataclass
+... class Point:
+...     x: int
+...     y: int
+
+>>> pt = Point(x=1, y=2)
+>>> pt.x = 10
+>>> pt.y = 20
+>>> pt
+Point(x=10, y=20)
+
+>>> pt.z = 30
+>>> pt
+Point(x=10, y=20)
+>>>
+>>> vars(pt)
+{'x': 10, 'y': 20, 'z': 30}
+
+
+Immutable Dataclass
+-------------------
+>>> @dataclass(frozen=True)
+... class Point:
+...     x: int
+...     y: int
+
+>>> pt = Point(x=1, y=2)
+>>> pt.x = 10
+Traceback (most recent call last):
+dataclasses.FrozenInstanceError: cannot assign to field 'x'
+>>>
+>>> pt.x = 20
+Traceback (most recent call last):
+dataclasses.FrozenInstanceError: cannot assign to field 'x'
+>>>
+>>> pt
+Point(x=1, y=2)
+
+>>> pt.z = 30
+Traceback (most recent call last):
+dataclasses.FrozenInstanceError: cannot assign to field 'z'
+>>>
+>>> pt
+Point(x=1, y=2)
 
 
 References

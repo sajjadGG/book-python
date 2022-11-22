@@ -1,22 +1,120 @@
 FuncProg Function Attributes
 ============================
 
->>> def hello():
-...     return 'Hello World'
+>>> def add(a, b):
+...     return a + b
 >>>
 >>>
->>> type(hello)
+>>> type(add)
 <class 'function'>
 
 
-Function Annotations
---------------------
+Name
+----
+* ``function.__name__``
+* ``function.__qualname__``
+
+>>> def add(a, b):
+...     return a + b
+
+>>> add.__name__
+'add'
+
+>>> add.__qualname__
+'add'
+
+
+Type
+----
+* ``type(function)``
+* ``function.__class__``
+* ``function.__class__.__name__``
+* ``function.__class__.__qualname__``
+* ``function.__class__.__text_signature__``
+
+>>> def add(a, b):
+...     return a + b
+
+>>> type(add)
+<class 'function'>
+
+add.__class__
+<class 'function'>
+
+>>> add.__class__.__name__
+'function'
+
+>>> add.__class__.__qualname__
+'function'
+
+
+Annotations
+-----------
+>>> def add(a: int, b: int) -> int:
+...     return a + b
+
+>>> add.__annotations__
+{'a': <class 'int'>, 'b': <class 'int'>, 'return': <class 'int'>}
+
+
+Signature
+---------
+>>> from inspect import signature
+
+>>> def add(a, b):
+...     return a + b
+>>>
+>>>
+>>> signature(add)
+<Signature (a, b)>
+
 >>> def add(a: int, b: int) -> int:
 ...     return a + b
 >>>
 >>>
->>> add.__annotations__
-{'a': <class 'int'>, 'b': <class 'int'>, 'return': <class 'int'>}
+>>> signature(add)
+<Signature (a: int, b: int) -> int>
+
+
+Doc
+---
+* ``help(function)``
+* ``function.__doc__``
+
+>>> def add(a: int, b: int) -> int:
+...     """
+...     Function adds two numbers (int|float)
+...     """
+...     return a + b
+
+>>> add.__doc__
+'\n    Function adds two numbers (int|float)\n    '
+
+>>> help(add)
+Help on function add in module __main__:
+<BLANKLINE>
+add(a: int, b: int) -> int
+    Function adds two numbers (int|float)
+<BLANKLINE>
+
+
+Call
+----
+* ``callable(function)``
+* ``function()``
+* ``function.__call__()``
+
+>>> def add(a, b):
+...     return a + b
+
+>>> callable(add)
+True
+
+>>> add(1, 2)
+3
+
+>>> add.__call__(1,2)
+3
 
 
 Setattr, Getattr
@@ -75,6 +173,7 @@ Function Code
  'co_stacksize',
  'co_varnames',
  'replace']
+
 
 Use Case - 0x01
 ---------------
@@ -164,17 +263,17 @@ Use Case - 0x03
 Use Case - 0x04
 ---------------
 >>> def factorial(n):
-...     if not hasattr(factorial, '_cache'):
-...         factorial._cache = {0: 1}
-...     if n not in factorial._cache:
-...         factorial._cache[n] = n * factorial(n-1)
-...     return factorial._cache[n]
+...     if not hasattr(factorial, 'cache'):
+...         factorial.cache = {0: 1}
+...     if n not in factorial.cache:
+...         factorial.cache[n] = n * factorial(n-1)
+...     return factorial.cache[n]
 >>>
 >>>
 >>> factorial(10)
 3628800
 >>>
->>> factorial._cache  # doctest: +NORMALIZE_WHITESPACE
+>>> factorial.cache  # doctest: +NORMALIZE_WHITESPACE
 {0: 1,
  1: 1,
  2: 2,
@@ -186,3 +285,4 @@ Use Case - 0x04
  8: 40320,
  9: 362880,
  10: 3628800}
+

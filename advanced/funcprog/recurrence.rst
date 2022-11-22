@@ -23,7 +23,11 @@ FuncProg Recurrence
 
     In order to understand recursion, you must understand recursion. [#Hunter2011]_
 
-In the functional programming paradigm, there are no for and while loops. Instead, these languages rely on recursion for iteration. Recursion is implemented using recursive functions, which call themselves repeatedly until the base case is reached.
+In the functional programming paradigm, there are no for and while loops.
+Instead, these languages rely on recursion for iteration. Recursion is
+implemented using recursive functions, which call themselves repeatedly
+until the base case is reached.
+
 
 Recurrence in Python
 --------------------
@@ -83,6 +87,48 @@ Use Case - 0x01
 .. figure:: img/funcprog-recurrence-hanoi.jpg
 
     Hanoi Tower as a standard example of a recurrence. Source: [#hanoi]_
+
+
+Use Case - 0x02
+---------------
+>>> def factorial(n):
+...     if n == 0:
+...         return 1
+...     return n * factorial(n-1)
+
+>>> def factorial(n):
+...     return 1 if n == 0 else n * factorial(n-1)
+
+>>> def factorial(n):
+...     return n * factorial(n-1) if n else 1
+
+
+Use Case - 0x03
+---------------
+>>> CACHE = {}
+>>>
+>>> def factorial(n):
+...     if n not in CACHE:
+...         CACHE[n] = n * factorial(n-1) if n else 1
+...     return CACHE[n]
+
+>>> factorial(5)
+120
+>>>
+>>> factorial(6)
+720
+>>>
+>>> CACHE
+{0: 1, 1: 1, 2: 2, 3: 6, 4: 24, 5: 120, 6: 720}
+
+>>> factorial(5)
+120
+>>>
+>>> CACHE[5]
+120
+>>>
+>>> 5 * CACHE[4]
+120
 
 
 References

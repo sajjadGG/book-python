@@ -106,6 +106,7 @@ Times after 24:00
 -----------------
 * Times after 24:00 [#wikiTimesAfter2400]_
 * UTC leap second [#wikiLeapSecond]_
+* Leap second discontinuation post 2035 [#natureLeapSecond]_
 * Issues created by insertion (or removal) of leap seconds
 * Calculation of time differences and sequence of events
 * Missing leap seconds announcement
@@ -184,6 +185,7 @@ Planet Mars
 
 References
 ----------
+.. [#natureLeapSecond] Gibney, E. The leap second's time is up: world votes to stop pausing clocks. Year: 2022. Retrieved: 2022-11-18. URL: https://www.nature.com/articles/d41586-022-03783-5 DOI: https://doi.org/10.1038/d41586-022-03783-5
 .. [#wikiGregorianCalendarAdoption]  Wikipedia. List of adoption dates of the Gregorian calendar by country. Year: 2022. Retrieved: 2022-05-10. URL: https://en.wikipedia.org/wiki/List_of_adoption_dates_of_the_Gregorian_calendar_by_country
 .. [#wikiGregorianCalendar]  Wikipedia. Gregorian Calendar. Year: 2022. Retrieved: 2022-05-10. URL: https://en.wikipedia.org/wiki/Gregorian_calendar
 .. [#wikiSiderealTime]  Wikipedia. Sidereal Time. Year: 2022. Retrieved: 2022-05-10. URL: https://en.wikipedia.org/wiki/Sidereal_time

@@ -26,6 +26,26 @@ Identity
 >>> hex(id('Watney'))  # doctest: +SKIP
 '0x10c336cb0'
 
+
+Increment Add
+-------------
+>>> x = 1
+>>> id(x)  # doctest: +SKIP
+4535726776
+>>>
+>>> x += 1
+>>> id(x)  # doctest: +SKIP
+4535726808
+
+>>> x = [1]
+>>> id(x)  # doctest: +SKIP
+4570905344
+>>>
+>>> x[0] += 1
+>>> id(x)  # doctest: +SKIP
+4570905344
+
+
 Identity Check
 --------------
 * ``is`` checks for object identity

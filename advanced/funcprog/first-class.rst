@@ -10,13 +10,17 @@ Assigning Functions
 -------------------
 * Function can be assigned to variable
 
->>> def say_hello():
-...     return 'hello world'
+>>> def addition(a, b):
+...     return a + b
 >>>
 >>>
->>> result = say_hello
->>> result()
-'hello world'
+>>> add = addition
+>>>
+>>> add(1,2)
+3
+>>>
+>>> add(3,4)
+7
 
 
 Storing Functions
@@ -45,42 +49,96 @@ Storing Functions
 ...     'root': lambda x: x ** (1/2)
 ... }
 
+>>> def increment(x):
+...     return x + 1
+>>>
+>>> def decrement(x):
+...     return x - 1
+>>>
+>>> def square(x):
+...     return x ** 2
+>>>
+>>> def cube(x):
+...     return x ** 3
+>>>
+>>>
+>>> data = [1,2,3,4]
+>>> operations = [increment, square, decrement, cube]
+>>>
+>>> for operation in operations:
+...     data = list(map(operation, data))
+>>>
+>>> data
+[27, 512, 3375, 13824]
+
 
 Returning Functions
 -------------------
 * Function can be returned
 
->>> def lower():
-...     return 'Hello world'
+>>> def get_greeting(lang='English'):
+...
+...     def english(firstname, lastname):
+...         print(f'Hello {firstname} {lastname}')
+...
+...     def polish(firstname, lastname):
+...         print(f'Witaj {firstname} {lastname}')
+...
+...     match lang:
+...         case 'English': return english
+...         case 'Polish':  return polish
+...         case _:         raise NotImplementedError
 >>>
 >>>
->>> def higher():
-...     return lower
+>>> greeting = get_greeting('English')
+>>> greeting('Mark', 'Watney')
+Hello Mark Watney
 >>>
+>>> greeting = get_greeting('Polish')
+>>> greeting('Mark', 'Watney')
+Witaj Mark Watney
 >>>
->>> result = higher()     # <function lower()>
->>> result()              # 'Hello world'
-'Hello world'
+>>> greeting = get_greeting('Spanish')
+Traceback (most recent call last):
+NotImplementedError
 
 
 Parameter Functions
 -------------------
 * Function can be user as a parameter
 
->>> def http_request(url, on_success, on_error):
+>>> from urllib.request import urlopen
+>>>
+>>>
+>>> def fetch(url: str,
+...           on_success = lambda response: ...,
+...           on_error = lambda error: ...,
+...           ) -> None:
 ...     try:
-...         result = ...
+...         result = urlopen(url).read().decode('utf-8')
 ...     except Exception as error:
-...         return on_error(error)
+...         on_error(error)
 ...     else:
-...         return on_success(result)
->>>
->>>
->>> http_request(
+...         on_success(result)
+
+>>> fetch(
 ...     url = 'https://python.astrotech.io',
-...     on_success = lambda result: print(result),
-...     on_error = lambda error: print(error))
-Ellipsis
+...     on_success = lambda resp: print(resp),
+...     on_error = lambda err: print(err),
+... )  # doctest: +SKIP
+
+>>> def ok(response: str):
+...     print(response)
+>>>
+>>> def err(error: Exception):
+...     print(error)
+>>>
+>>>
+>>> fetch(url='https://python.astrotech.io')  # doctest: +SKIP
+>>> fetch(url='https://python.astrotech.io', on_success=ok)  # doctest: +SKIP
+>>> fetch(url='https://python.astrotech.io', on_error=err)  # doctest: +SKIP
+>>> fetch(url='https://python.astrotech.io', on_success=ok, on_error=err)  # doctest: +SKIP
+>>> fetch(url='https://python.astrotech.io/not-existing', on_error=err)  # doctest: +SKIP
 
 
 Use Case - 0x01

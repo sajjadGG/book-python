@@ -253,6 +253,23 @@ Conclusion
 
 Use Case - 0x01
 ---------------
+>>> from pathlib import Path
+>>>
+>>>
+>>> def get_files(dir):
+...     yield from dir.rglob('*.md')
+...     yield from dir.rglob('*.rst')
+...     yield from dir.rglob('*.txt')
+>>>
+>>>
+>>> directory = Path.cwd()
+>>>
+>>> for file in get_files(directory):  # doctest: +SKIP
+...     print(file)
+
+
+Use Case - 0x02
+---------------
 >>> def get_files(directories):
 ...     for directory in directories:
 ...         yield from Path(directory).rglob('*.py')
@@ -267,6 +284,29 @@ Use Case - 0x01
 >>>
 >>> for file in get_files(paths):  # doctest: +SKIP
 ...     print(file)
+
+
+Use Case - 0x02
+---------------
+>>> import re
+>>>
+>>>
+>>> DATA = """
+... +48 123 456 789
+... +48 (12) 345-6789
+... +48 12-345-6789
+... +48 123 456 789
+... +48 12-345-6789
+... """
+>>>
+>>> def get_phone_number(DATA):
+...     yield from re.finditer('\+\d{2} \d{3} \d{3} \d{3}', DATA)
+...     yield from re.finditer('\+\d{2} \d{2} \d{3} \d{4}', DATA)
+>>>
+>>> for number in get_phone_number(DATA):
+...     print(number.group())
++48 123 456 789
++48 123 456 789
 
 
 Assignments

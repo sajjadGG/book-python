@@ -117,6 +117,45 @@ Global
 [10, 20, 30]
 
 
+Nonlocal
+--------
+* Python nonlocal keyword is used to reference a variable in the nearest scope
+
+The nonlocal keyword won't work on local or global variables and therefore
+must be used to reference variables in another scope except the global and
+local one. The nonlocal keyword is used in nested functions to reference a
+variable in the parent function. [#nonlocal]_
+
+>>> def setup():
+...     data = ['a', 'b', 'c']
+...     index = -1
+...
+...     def get():
+...         index += 1
+...         return data[index]
+...     return get
+>>>
+>>>
+>>> next = setup()
+>>> next()
+Traceback (most recent call last):
+UnboundLocalError: cannot access local variable 'index' where it is not associated with a value
+
+>>> def setup():
+...     data = ['a', 'b', 'c']
+...     index = -1
+...
+...     def get():
+...         nonlocal index
+...         index += 1
+...         return data[index]
+...     return get
+>>>
+>>> next = setup()
+>>> next()
+'a'
+
+
 Global Scope
 ------------
 >>> globals()   # doctest: +SKIP
@@ -322,6 +361,11 @@ Use Case - 0x02
 >>> cls = globals()[species]
 >>> cls(*measurement)  # doctest: +ELLIPSIS
 <__main__.Setosa object at 0x...>
+
+
+References
+----------
+.. [#nonlocal] Satyam00so. Python nonlocal Keyword. Year: 2022. Retrieved: 2022-07-28, URL: https://www.geeksforgeeks.org/python-nonlocal-keyword/
 
 
 Assignments
