@@ -45,7 +45,7 @@ Day 3
 * 45m - OOP: Inheritance, Mixin, Composition
 * 30m - OOP: Method Resolution Order and super()
 * 30m - OOP: Polymorphism
-* 75m - OOP: Interfaces and abstract classes
+* 75m - OOP: Interfaces, Protocols and Abstract Base Classes
 
 
 Day 4
@@ -56,7 +56,7 @@ Day 4
 * 90m - OOP: Class creation and Metaclass
 * 60m - Performance: Optimization, Micro-benchmarking and Profiling
 * 15m - Performance: Alternative compilers, interpreters and modules
-* 15m - Performance: Cython, Numba, C Types and C Modules
+* 15m - Performance: Cython, Mypyc, Numba
 
 
 Day 5

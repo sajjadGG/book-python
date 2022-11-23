@@ -141,6 +141,7 @@ Threads vs Processes
 
 Threads vs Async
 ----------------
+* Threads are about workers and async is about tasks
 * Async maximizes CPU utilization because it has less overhead than threads.
 * Threading typically works with existing code and tools as long as locks are added around critical sections
 * For complex systems, async is much easier to get right than threads with locks
