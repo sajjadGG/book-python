@@ -37,7 +37,7 @@ the class attribute would overwrite the descriptor assignment.
 The action of a ``__slots__`` declaration is not limited to the class
 where it is defined. ``__slots__`` declared in parents are available in
 child classes. However, child subclasses will get a ``__dict__`` and
-``__weakref__`` unless they also define __slots__ (which should only
+``__weakref__`` unless they also define ``__slots__`` (which should only
 contain names of any additional slots).
 
 If a class defines a slot also defined in a base class, the instance
@@ -244,7 +244,6 @@ Slots Internals
 ---------------
 * Slots are descriptors
 
-
 >>> class Astronaut:
 ...     __slots__ = ('firstname', 'lastname')
 >>>
@@ -261,6 +260,32 @@ mappingproxy({'__module__': '__main__',
 >>>
 >>> type(Astronaut.firstname)
 <class 'member_descriptor'>
+
+
+Slots Dict
+----------
+* Docstring for slotted names
+* Used for documentation
+
+If a dictionary is used to assign ``__slots__``, the dictionary keys will
+be used as the slot names. The values of the dictionary can be used to
+provide per-attribute docstrings that will be recognised by
+``inspect.getdoc()`` and displayed in the output of ``help()``.
+
+>>> class Astronaut:
+...     __slots__ = {
+...         'firstname': 'Docstring for firstname attribute',
+...         'lastname': 'Docstring for lastname attribute',
+...     }
+>>>
+>>>
+>>> vars(Astronaut)  # doctest: +NORMALIZE_WHITESPACE
+mappingproxy({'__module__': '__main__',
+              '__slots__': {'firstname': 'Docstring for firstname attribute',
+                            'lastname': 'Docstring for lastname attribute'},
+              'firstname': <member 'firstname' of 'Astronaut' objects>,
+              'lastname': <member 'lastname' of 'Astronaut' objects>,
+              '__doc__': None})
 
 
 Get Attributes and Values
@@ -282,8 +307,8 @@ Get Attributes and Values
 {'firstname': 'Mark', 'lastname': 'Watney'}
 
 
-Slots and Dict
---------------
+Slots and Dunder Dict
+---------------------
 * Using ``__slots__`` will prevent from creating ``__dict__``
 * Adding ``__dict__`` to ``__slots__`` will combine both worlds
 
