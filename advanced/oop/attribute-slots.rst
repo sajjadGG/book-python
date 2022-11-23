@@ -520,7 +520,7 @@ Slots in Dataclasses
 Use Case - 0x01
 ---------------
 >>> from dataclasses import dataclass
->>> from pprint import pprint
+>>> from itertools import starmap
 >>>
 >>>
 >>> DATA = [
@@ -556,10 +556,10 @@ Use Case - 0x01
 ...     pw: float
 ...     species: str
 >>>
->>> data = [Iris(*row) for row in DATA[1:]]
 >>>
+>>> result = starmap(Iris, DATA[1:])
 >>>
->>> pprint(data)
+>>> list(result)  # doctest: +NORMALIZE_WHITESPACE
 [Iris(sl=5.8, sw=2.7, pl=5.1, pw=1.9, species='virginica'),
  Iris(sl=5.1, sw=3.5, pl=1.4, pw=0.2, species='setosa'),
  Iris(sl=5.7, sw=2.8, pl=4.1, pw=1.3, species='versicolor'),
