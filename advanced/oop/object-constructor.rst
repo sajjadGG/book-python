@@ -453,10 +453,10 @@ Displaying Word file myfile.doc
 >>> file.display()
 Displaying Word file myfile.docx
 
-
-Pluginy można hot-plugować, tzn. dołączać do kodu bez jego przeładowania.
-Wystarczy zdefiniować nową klasę z pluginem i już działa. Żadnych reloadów
-ani restartów aplikacji.
+Plugins can be hot-plugged. This means that you can attach a new plugin
+without reloading server code or application. Just define a class which
+conforms to Plugin protocol (inherits from abstract base class Document)
+and it will work. No reloads nor restarts. That's it.
 
 >>> file = Document('myfile.txt')
 Traceback (most recent call last):
