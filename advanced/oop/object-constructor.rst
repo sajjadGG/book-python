@@ -420,9 +420,9 @@ Use Case - 0x05
 ...         plugins = cls.__subclasses__()
 ...         for plugin in plugins:
 ...             if extension in plugin.EXTENSIONS:
-...                 obj = object.__new__(plugin)
-...                 obj.__init__(filename)
-...                 return obj
+...                 instance = object.__new__(plugin)
+...                 instance.__init__(filename)
+...                 return instance
 ...         else:
 ...             raise NotImplementedError('No plugin for this filetype')
 >>>
@@ -431,44 +431,47 @@ Use Case - 0x05
 ...     EXTENSIONS = ['pdf']
 ...
 ...     def display(self):
-...         print(f'Displaying pdf file {self.filename}')
+...         print(f'Displaying PDF file {self.filename}')
 >>>
 >>>
 >>> class Word(Document):
 ...     EXTENSIONS = ['docx', 'doc']
 ...
 ...     def display(self):
-...         print(f'Displaying word file {self.filename}')
->>>
->>>
->>> class Txt(Document):
-...     EXTENSIONS = ['txt']
-...
-...     def display(self):
-...         print(f'Displaying txt file {self.filename}')
->>>
+...         print(f'Displaying Word file {self.filename}')
 >>>
 >>>
 >>> file = Document('myfile.pdf')
 >>> file.display()
-Displaying pdf file myfile.pdf
->>>
+Displaying PDF file myfile.pdf
 >>>
 >>> file = Document('myfile.doc')
 >>> file.display()
-Displaying word file myfile.doc
+Displaying Word file myfile.doc
 >>>
 >>> file = Document('myfile.docx')
 >>> file.display()
-Displaying word file myfile.docx
+Displaying Word file myfile.docx
+
+
+Pluginy można hot-plugować, tzn. dołączać do kodu bez jego przeładowania.
+Wystarczy zdefiniować nową klasę z pluginem i już działa. Żadnych reloadów
+ani restartów aplikacji.
+
+>>> file = Document('myfile.txt')
+Traceback (most recent call last):
+NotImplementedError: No plugin for this filetype
+>>>
+>>> class Plaintext(Document):
+...     EXTENSIONS = ['txt']
+...
+...     def display(self):
+...         print(f'Displaying Plaintext file {self.filename}')
+>>>
 >>>
 >>> file = Document('myfile.txt')
 >>> file.display()
-Displaying txt file myfile.txt
->>>
->>> file = Document('myfile.odt')
-Traceback (most recent call last):
-NotImplementedError: No plugin for this filetype
+Displaying Plaintext file myfile.txt
 
 
 Use Case - 0x06
