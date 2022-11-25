@@ -480,11 +480,11 @@ Use Case - 0x02
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     date_of_birth: date
+...     birthday: date
 ...
 ...     @property
 ...     def age(self):
-...         age = TODAY - self.date_of_birth
+...         age = TODAY - self.birthday
 ...         return round(age.days/YEAR, 1)
 >>>
 >>>

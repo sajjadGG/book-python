@@ -426,6 +426,89 @@ ValueError: Astronaut.email value: invalid-email@nasa.gov does not match pattern
 
 Use Case - 0x05
 ---------------
+>>> import re
+>>> from abc import ABC, abstractmethod, abstractproperty
+>>> from dataclasses import dataclass, InitVar
+>>>
+>>>
+>>> class Validator(ABC):
+...     attrname: str
+...
+...     @abstractproperty
+...     def error_message(self) -> str: ...
+...
+...     def __set_name__(self, owner, attrname):
+...         self.attrname = f'_{attrname}'
+...
+...     def __get__(self, instance, owner):
+...         return getattr(instance, self.attrname)
+...
+...     def __set__(self, instance, value):
+...         if self.is_valid(value):
+...             setattr(instance, self.attrname, value)
+...         else:
+...             raise ValueError(self.error_message.format(**vars(self)))
+...
+...     @abstractmethod
+...     def is_valid(self, value) -> bool:
+...         raise NotImplementedError
+>>>
+>>>
+>>> @dataclass
+... class MaxLength(Validator):
+...     maxlength: int
+...     error_message: str = ('Attribute {attrname} is invalid. '
+...                           'Value is longer than {maxlength}')
+...
+...     def is_valid(self, value):
+...         return len(value) <= self.maxlength
+>>>
+>>>
+>>> @dataclass
+... class Between(Validator):
+...     min: int
+...     max: int
+...     error_message: str = ('Attribute {attrname} is invalid. '
+...                           'Value not between {min} and {max}.')
+...
+...     def is_valid(self, value):
+...         return self.min <= value < self.max
+>>>
+>>> @dataclass
+... class Matches(Validator):
+...     pattern: InitVar[str]
+...     regex: re.Pattern | None = None
+...     error_message: str = ('Attribute {attrname} is invalid. '
+...                           'Value does not match pattern `{regex.pattern}`')
+...
+...     def __post_init__(self, pattern):
+...         self.regex = re.compile(pattern)
+...
+...     def is_valid(self, value):
+...         return self.regex.match(value)
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str = MaxLength(50)
+...     lastname: str = MaxLength(50)
+...     age: int = Between(min=30, max=50)
+...     height: float = Between(min=150, max=210)
+...     weight: float = Between(min=50, max=90)
+...     email: str = Matches('^[a-z]+@nasa.gov$')
+
+>>> astro = Astronaut(
+...     firstname = 'Mark',
+...     lastname = 'Watney',
+...     age = 40,
+...     height = 175,
+...     weight = 80,
+...     email = 'mwatney@nasa.gov',
+... )
+
+
+Use Case - 0x06
+---------------
 * Timezone Converter Descriptor
 
 .. figure:: img/protocol-descriptor-timezone.png
