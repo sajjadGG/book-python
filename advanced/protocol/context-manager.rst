@@ -53,8 +53,11 @@ Example
 ...     def say_hello(self):
 ...         print(f'Hello {self.firstname} {self.lastname}')
 
+Now we can use context manager:
+
 >>> with Astronaut('Mark', 'Watney') as mark:
 ...     mark.say_hello()
+...
 Entering the block
 Hello Mark Watney
 Exiting the block
@@ -182,6 +185,7 @@ Use Case - 0x01
 >>>
 >>> with html_tag('p'):
 ...     print('We choose to go to the Moon.')
+...
 <p>
 We choose to go to the Moon.
 </p>
@@ -273,6 +277,7 @@ Use Case - 0x03
 ...
 ...     for row in db.execute(SQL_SELECT):
 ...         print(dict(row))
+...
 <sqlite3.Cursor object at 0x...>
 <sqlite3.Cursor object at 0x...>
 {'id': 1, 'firstname': 'Pan', 'lastname': 'Twardowski', 'age': 44}
@@ -298,6 +303,7 @@ True
 ...     print('Critical section 2')
 ... finally:
 ...     lock.release()
+...
 Critical section 1
 Critical section 2
 
@@ -311,24 +317,29 @@ With context manager:
 >>> with mylock:
 ...     print('Critical section 1')
 ...     print('Critical section 2')
+...
 Critical section 1
 Critical section 2
 
 
 Use Case - 0x05
 ---------------
+SetUp:
+
 >>> from threading import Lock
->>>
->>>
->>> def lock(mylock):
+
+Define decorator to automatically use context manager with lock:
+
+>>> def lock(mylock: Lock):
 ...     def decorator(func):
 ...         def wrapper(*args, **kwargs):
 ...             with mylock:
 ...                 return func(*args, **kwargs)
 ...         return wrapper
 ...     return decorator
->>>
->>>
+
+Usage:
+
 >>> mylock = Lock()
 >>>
 >>> @lock(mylock)
@@ -344,9 +355,12 @@ Use Case - 0x06
 ---------------
 * Microbenchmark
 
+SetUp:
+
 >>> from time import time
->>>
->>>
+
+Define Context Manager to measure start, stop times and calculate duration:
+
 >>> class Timeit:
 ...     def __enter__(self):
 ...         self.start = time()
