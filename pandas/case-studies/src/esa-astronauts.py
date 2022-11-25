@@ -16,7 +16,8 @@ DAY = 24 * HOUR
 MONTH = 30.4375 * DAY
 YEAR = 365.25 * DAY
 
-DATA = 'https://en.wikipedia.org/wiki/European_Astronaut_Corps'
+# DATA = 'https://en.wikipedia.org/wiki/European_Astronaut_Corps'
+DATA = 'https://python.astrotech.io/_static/european-astronaut-corps.html'
 
 
 def duration(between):
@@ -39,7 +40,7 @@ def duration(between):
 
 tables = pd.read_html(DATA)
 current = tables[0]
-former = tables[1]
+former = tables[2]
 
 c = pd.to_timedelta(current['Time in space'], errors='coerce').sum()
 f = pd.to_timedelta(former['Time in space'], errors='coerce').sum()
