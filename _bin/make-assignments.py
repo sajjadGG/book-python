@@ -43,7 +43,7 @@ def process_file(book, file):  # noqa
                 .replace(book, '', 1)
                 .removeprefix('/'))
 
-    path = Path(OUT_DIR / book / '_assignments' / filename)
+    path = Path(OUT_DIR / book / 'assignments' / filename)
     write_file(path, content=assignment)
 
     path = Path(OUT_DIR / book / '_solutions' / filename)

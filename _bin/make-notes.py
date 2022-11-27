@@ -32,7 +32,7 @@ def get_headers(file: Path) -> list[str]:
 
 if __name__ == '__main__':
     for book in BOOKS:
-        outdir = OUT_DIR / book / '_notes'
+        outdir = OUT_DIR / book / 'notes'
         rmtree(outdir, ignore_errors=True)
         outdir.mkdir(exist_ok=True, parents=True)
         chapters = get_chapters(book)
