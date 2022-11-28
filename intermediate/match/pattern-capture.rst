@@ -5,44 +5,54 @@ A `capture pattern` looks like x and is equivalent to an identical
 assignment target: it always matches and binds the variable with the
 given (simple) name.
 
-
->>> def get(path):
-...     print(f'Processing GET request for {path}')
+>>> class Request:
+...     def __init__(self, request: str):
+...         match request.split():
+...             case ['GET',    path, 'HTTP/2.0']: self.get(path)
+...             case ['POST',   path, 'HTTP/2.0']: self.post(path)
+...             case ['PUT',    path, 'HTTP/2.0']: self.put(path)
+...             case ['DELETE', path, 'HTTP/2.0']: self.delete(path)
+...
+...     def get(self, path):
+...         self.response = f'Processing GET request for {path}'
+...
+...     def post(self, path):
+...         self.response = f'Processing POST request for {path}'
+...
+...     def put(self, path):
+...         self.response = f'Processing PUT request for {path}'
+...
+...     def delete(self, path):
+...         self.response = f'Processing DELETE request for {path}'
+...
+...     def __repr__(self):
+...         return self.response
 >>>
->>> def post(path):
-...     print(f'Processing POST request for {path}')
 >>>
->>> def put(path):
-...     print(f'Processing PUT request for {path}')
->>>
->>> def delete(path):
-...     print(f'Processing DELETE request for {path}')
->>>
->>>
->>> def process_request(request):
-...     match request.split():
-...         case ['GET',    path, 'HTTP/2.0']: get(path)
-...         case ['POST',   path, 'HTTP/2.0']: post(path)
-...         case ['PUT',    path, 'HTTP/2.0']: put(path)
-...         case ['DELETE', path, 'HTTP/2.0']: delete(path)
->>>
->>>
->>> process_request('POST /user/ HTTP/2.0')
+>>> Request('POST /user/ HTTP/2.0')
 Processing POST request for /user/
 >>>
->>> process_request('GET /user/mwatney/ HTTP/2.0')
+>>> Request('GET /user/mwatney/ HTTP/2.0')
 Processing GET request for /user/mwatney/
 >>>
->>> process_request('PUT /user/mwatney/ HTTP/2.0')
+>>> Request('PUT /user/mwatney/ HTTP/2.0')
 Processing PUT request for /user/mwatney/
 >>>
->>> process_request('DELETE /user/mwatney/ HTTP/2.0')
+>>> Request('DELETE /user/mwatney/ HTTP/2.0')
 Processing DELETE request for /user/mwatney/
 
 
 Use Case - 0x01
 ---------------
 >>> class Astronaut:
+...     def move(self, *how):
+...         match how:
+...             case ['left', value]:   hero.move_left(value)
+...             case ['right', value]:  hero.move_right(value)
+...             case ['up', value]:     hero.move_up(value)
+...             case ['down', value]:   hero.move_down(value)
+...             case _: raise RuntimeError('Invalid move')
+...
 ...     def move_left(self, value):
 ...         print(f'Moving left by {value}')
 ...
@@ -58,23 +68,57 @@ Use Case - 0x01
 >>>
 >>> hero = Astronaut()
 >>>
->>> def move(*how):
-...     match how:
-...         case ['left', value]:   hero.move_left(value)
-...         case ['right', value]:  hero.move_right(value)
-...         case ['up', value]:     hero.move_up(value)
-...         case ['down', value]:   hero.move_down(value)
->>>
->>>
->>> move('left', 1)
+>>> hero.move('left', 1)
 Moving left by 1
 >>>
->>> move('right', 2)
+>>> hero.move('right', 2)
 Moving right by 2
 >>>
->>> move('up', 3)
+>>> hero.move('up', 3)
 Moving up by 3
 >>>
->>> move('down', 4)
+>>> hero.move('down', 4)
 Moving down by 4
+
+
+Use Case - 0x02
+---------------
+>>> def range(*args):
+...     match len(args):
+...         case 3: start, stop, step = args
+...         case 2: [start, stop], step = args, 1
+...         case 1: start, [stop], step = 0, args, 1
+...         case 0: raise TypeError('myrange expected at least 1 argument, got 0')
+...         case _: raise TypeError(f'myrange expected at most 3 arguments, got {len(args)}')
+...     ...
+
+
+Use Case - 0x03
+---------------
+>>> def range(*args):
+...     match args:
+...         case [stop]: start = 0; step = 1
+...         case [start, stop]: step = 1
+...         case [start, stop, step]: pass
+...         case []: raise TypeError('myrange expected at least 1 argument, got 0')
+...         case _: raise TypeError(f'myrange expected at most 3 arguments, got {len(args)}')
+
+
+Use Case - 0x04
+---------------
+>>> def range(*args):
+...     match args:
+...         case [stop]:
+...             start = 0
+...             step = 1
+...         case [start, stop]:
+...             step = 1
+...         case [start, stop, step]:
+...             pass
+...         case []:
+...             msg = 'myrange expected at least 1 argument, got 0'
+...             raise TypeError(msg)
+...         case _:
+...             msg = f'myrange expected at most 3 arguments, got {len(args)}'
+...             raise TypeError(msg)
 

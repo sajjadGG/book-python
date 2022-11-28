@@ -46,6 +46,7 @@ Comprehension:
               and (<VARIABLE3> := <EXPR>)
               or (<VARIABLE4> := <EXPR>)]
 
+
 Example
 -------
 * First defines identifier with value
@@ -97,10 +98,10 @@ We will process file reading 5 bytes of data (one measurement) at a time:
 
 >>> file = open('/tmp/myfile.txt')
 >>>
->>> value = file.read(5)
+>>> value = file.read(5).removesuffix(",")
 >>> while value:
-...     print(f'Processing... {value.removesuffix(",")}')
-...     value = file.read(5)
+...     print(f'Processing... {value}')
+...     value = file.read(5).removesuffix(",")
 Processing... 21.1
 Processing... 21.1
 Processing... 21.2
@@ -115,8 +116,8 @@ Using assignment expression we can write code which is far better:
 
 >>> file = open('/tmp/myfile.txt')
 >>>
->>> while value := file.read(5):
-...     print(f'Processing... {value.removesuffix(",")}')
+>>> while value := file.read(5).removesuffix(","):
+...     print(f'Processing... {value}')
 Processing... 21.1
 Processing... 21.1
 Processing... 21.2
@@ -134,25 +135,55 @@ Always remember to close the file at the end:
 
 Checking Match
 --------------
+SetUp:
+
 >>> import re
+
+In order to find `username` in email address we need to define
+regular expression pattern:
+
+>>> pattern = r'([a-z]+)@nasa.gov'
+
+Let's search for `username` in email address:
+
+>>> email = 'mwatney@nasa.gov'
 >>>
->>> DATA = 'mwatney@nasa.gov'
+>>> result = re.search(pattern, email)
+>>> username = result.group(1)
+>>>
+>>> print(username)
+mwatney
 
-Typically regular expressions requires to check if the value ``is not None``
-before using it further:
+This works well when username is valid and is indeed in email.
+What if, the username is invalid:
 
->>> result = re.search(r'@nasa.gov', DATA)
+>>> email = 'mwatney69@nasa.gov'
+>>>
+>>> result = re.search(pattern, email)
+>>> username = result.group(1)
+Traceback (most recent call last):
+AttributeError: 'NoneType' object has no attribute 'group'
+
+This is because ``re.search()`` returns an optional value
+``re.Match | None``. Therefore, regular expression matches
+requires to check if the value ``is not None`` before using it further:
+
+>>> email = 'mwatney69@nasa.gov'
+>>>
+>>> result = re.search(pattern, email)
 >>>
 >>> if result:
-...     print(result)
-<re.Match object; span=(7, 16), match='@nasa.gov'>
+...     username = result.group(1)
+...     print(username)
 
 Assignment expressions allows to merge two independent lines into one
-coherent statement:
+coherent statement to unpack and process an optional:
 
->>> if result := re.search(r'@nasa.gov', DATA):
-...     print(result)
-<re.Match object; span=(7, 16), match='@nasa.gov'>
+>>> email = 'mwatney69@nasa.gov'
+>>>
+>>> if result := re.search(pattern, email):
+...     username = result.group(1)
+...     print(username)
 
 
 Comprehensions

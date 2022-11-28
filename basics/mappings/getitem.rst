@@ -142,4 +142,76 @@ Traceback (most recent call last):
 KeyError: -2
 
 
+Use Case - 0x01
+---------------
+>>> PAYROLL = [
+...     {'name': 'Mark Watney',   '2000-01': 2000, '2000-02': 2000, '2000-03': 2000},
+...     {'name': 'Melissa Lewis', '2000-01': 3000, '2000-02': 3000, '2000-03': 3000},
+...     {'name': 'Rick Martinez', '2000-03': 2500},
+...     {'name': 'Alex Vogel',    '2000-01': 2500, '2000-02': 2500, '2000-03': 2500},
+... ]
+
+>>> result = f'{"Employee":<15} {"January":>10} {"February":>9} {"March":>6}'
+>>>
+>>> for employee in PAYROLL:
+...     name = employee['name']
+...     january = employee['2000-01']
+...     february = employee['2000-02']
+...     march = employee['2000-03']
+...     result += f'{name:<15} {january:>10} {february:>9} {march:>6}'
+...
+Traceback (most recent call last):
+KeyError: '2000-01'
+
+>>> result = f'{"Employee":<15} {"January":>10} {"February":>9} {"March":>6}\n'
+>>>
+>>> for employee in PAYROLL:
+...     name = employee['name']
+...     january = employee.get('2000-01', 'n/a')
+...     february = employee.get('2000-02', 'n/a')
+...     march = employee.get('2000-03', 'n/a')
+...     result += f'{name:<15} {january:>10} {february:>9} {march:>6}\n'
+>>>
+>>> print(result)
+Employee           January  February  March
+Mark Watney           2000      2000   2000
+Melissa Lewis         3000      3000   3000
+Rick Martinez          n/a       n/a   2500
+Alex Vogel            2500      2500   2500
+<BLANKLINE>
+
+>>> result = f'{"Employee":<15} {"January":>10} {"February":>9} {"March":>6}\n'
+>>>
+>>> for employee in PAYROLL:
+...     name = employee['name']
+...     january = employee.get('2000-01', '-')
+...     february = employee.get('2000-02', '-')
+...     march = employee.get('2000-03', '-')
+...     result += f'{name:<15} {january:>10} {february:>9} {march:>6}\n'
+>>>
+>>> print(result)
+Employee           January  February  March
+Mark Watney           2000      2000   2000
+Melissa Lewis         3000      3000   3000
+Rick Martinez            -         -   2500
+Alex Vogel            2500      2500   2500
+<BLANKLINE>
+
+>>> result = f'{"Employee":<15} {"January":>10} {"February":>9} {"March":>6}\n'
+>>>
+>>> for employee in PAYROLL:
+...     name = employee['name']
+...     january = employee.get('2000-01', '')
+...     february = employee.get('2000-02', '')
+...     march = employee.get('2000-03', '')
+...     result += f'{name:<15} {january:>10} {february:>9} {march:>6}\n'
+>>>
+>>> print(result)
+Employee           January  February  March
+Mark Watney           2000      2000   2000
+Melissa Lewis         3000      3000   3000
+Rick Martinez                          2500
+Alex Vogel            2500      2500   2500
+<BLANKLINE>
+
 .. todo:: Assignments

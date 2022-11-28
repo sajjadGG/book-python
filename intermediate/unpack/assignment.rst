@@ -23,6 +23,24 @@ Chained unpacking assignment:
 >>> a, b = c, d = 1, 2
 
 
+Example
+-------
+>>> def get_user_details(username):
+...     return 'Mark', 'Watney', 'mwatney@nasa.gov'
+>>>
+>>>
+>>> firstname, lastname, email = get_user_details('mwatney')
+>>>
+>>> firstname
+'Mark'
+>>>
+>>> lastname
+'Watney'
+>>>
+>>> email
+'mwatney@nasa.gov'
+
+
 Assignment
 ----------
 * Scalar Assignment

@@ -7,7 +7,26 @@ Unpack Star
 * ``_`` is regular variable name, not a special Python syntax
 * ``_`` by convention is used for data we don't want to access in future
 
+
 .. figure:: img/unpack-assignment,args,params.png
+
+
+Example
+-------
+>>> def get_user_details(username):
+...     return 'Mark', 'Watney', 'mwatney@nasa.gov', 'mwatney@esa.int', 'mwatney@polsa.gov.pl'
+>>>
+>>>
+>>> firstname, lastname, *email = get_user_details('mwatney')
+>>>
+>>> firstname
+'Mark'
+>>>
+>>> lastname
+'Watney'
+>>>
+>>> email
+['mwatney@nasa.gov', 'mwatney@esa.int', 'mwatney@polsa.gov.pl']
 
 
 Arbitrary Number of Arguments
@@ -66,7 +85,7 @@ Skipping Values
 >>> print(_)
 Mark Watney
 
->>> line = 'Mark,Watney,40,185,75.5'
+>>> line = 'Mark,Watney,mwatney@nasa.gov,mwatney@esa.int,mwatney@polsa.gov.pl'
 >>> firstname, lastname, *_ = line.split(',')
 >>>
 >>> print(f'{firstname=}, {lastname=}')

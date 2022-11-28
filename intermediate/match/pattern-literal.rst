@@ -58,7 +58,7 @@ Use Case - 0x02
 'in-progress'
 
 
-Use Case - 0x02
+Use Case - 0x03
 ---------------
 * HTTP Status
 
@@ -77,7 +77,7 @@ Use Case - 0x02
 Not found
 
 
-Use Case - 0x03
+Use Case - 0x04
 ---------------
 >>> def count(*args):
 ...     match len(args):
@@ -104,8 +104,7 @@ Use Case - 0x03
 'Too few'
 
 
-
-Use Case - 0x01
+Use Case - 0x05
 ---------------
 Simulate user input (for test automation):
 
@@ -128,11 +127,7 @@ Use Case:
 I don't speak this language
 
 
-
-
-
-
-Use Case - 0x07
+Use Case - 0x06
 ---------------
 >>> def myrange(*args, **kwargs):
 ...     if kwargs:
@@ -164,6 +159,38 @@ Use Case - 0x07
 ...         current += step
 ...
 ...     return result
+
+
+Use Case - 0x07
+---------------
+>>> def myrange(*args, **kwargs):
+...     match len(args):
+...         case 3:
+...             start, stop, step = args
+...         case 2:
+...             start, stop = args
+...             step = 1
+...         case 1:
+...             start = 0
+...             stop = args[0]
+...             step = 1
+...         case 0:
+...             raise TypeError('myrange expected at least 1 argument, got 0')
+...         case _:
+...             raise TypeError(f'myrange expected at most 3 arguments, got {len(args)}')
+...     ...
+
+
+Use Case - 0x08
+---------------
+>>> def myrange(*args, **kwargs):
+...     match len(args):
+...         case 3: start, stop, step = args
+...         case 2: [start, stop], step = args, 1
+...         case 1: start, [stop], step = 0, args, 1
+...         case 0: raise TypeError('myrange expected at least 1 argument, got 0')
+...         case _: raise TypeError(f'myrange expected at most 3 arguments, got {len(args)}')
+...     ...
 
 
 Use Case - 0x09
