@@ -6,32 +6,32 @@
 
 English:
     1. Model `DATA` using `dataclasses`
-    2. Create class definition, fields and their types:
-       a. Do not use Python 3.10 syntax for Optionals, ie: `str | None`
-       b. Use old style `Optional[str]` instead
+    2. Create class definition, fields and their types
     3. Do not write code converting `DATA` to your classes
     4. Run doctests - all must succeed
 
 Polish:
     1. Zamodeluj `DATA` wykorzystując `dataclass`
     2. Stwórz definicję klas, pól i ich typów
-       a. Nie używaj składni Optionali z Python 3.10, np.: `str | None`
-       b. Użyj starego sposobu, tj. `Optional[str]`
     3. Nie pisz kodu konwertującego `DATA` do Twoich klas
     4. Uruchom doctesty - wszystkie muszą się powieść
+
+Non-functional Requirements:
+   * Use Python 3.10 syntax for Optionals, ie: `str | None`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
     >>> from inspect import isclass
     >>> from dataclasses import is_dataclass
+    >>> from typing import get_type_hints
 
     >>> assert isclass(Astronaut)
     >>> assert isclass(Address)
     >>> assert is_dataclass(Astronaut)
     >>> assert is_dataclass(Address)
 
-    >>> astronaut = Astronaut.__dataclass_fields__
-    >>> address = Address.__dataclass_fields__
+    >>> astronaut = get_type_hints(Astronaut)
+    >>> address = get_type_hints(Address)
 
     >>> assert 'firstname' in astronaut, \
     'Class Astronaut is missing field: firstname'
@@ -49,21 +49,21 @@ Tests:
     'Class Address is missing field: region'
     >>> assert 'country' in address, \
     'Class Address is missing field: country'
-    >>> assert astronaut['firstname'].type is str, \
+    >>> assert astronaut['firstname'] is str, \
     'Astronaut.firstname has invalid type annotation, expected: str'
-    >>> assert astronaut['lastname'].type is str, \
+    >>> assert astronaut['lastname'] is str, \
     'Astronaut.lastname has invalid type annotation, expected: str'
-    >>> assert astronaut['addresses'].type is Optional[list[Address]], \
-    'Astronaut.addresses has invalid type annotation, expected: Optional[list[Address]]'
-    >>> assert address['street'].type is Optional[str], \
-    'Address.street has invalid type annotation, expected: Optional[str]'
-    >>> assert address['city'].type is str, \
+    >>> assert astronaut['addresses'] == list[Address] | None, \
+    'Astronaut.addresses has invalid type annotation, expected: list[Address] | None'
+    >>> assert address['street'] == str | None, \
+    'Address.street has invalid type annotation, expected: str | None'
+    >>> assert address['city'] is str, \
     'Address.city has invalid type annotation, expected: str'
-    >>> assert address['post_code'].type is int, \
+    >>> assert address['post_code'] is int, \
     'Address.post_code has invalid type annotation, expected: int'
-    >>> assert address['region'].type is str, \
+    >>> assert address['region'] is str, \
     'Address.region has invalid type annotation, expected: str'
-    >>> assert address['country'].type is str, \
+    >>> assert address['country'] is str, \
     'Address.country has invalid type annotation, expected: str'
 
 TODO: Add support for Python 3.10 Optional and Union syntax
@@ -114,7 +114,7 @@ class Astronaut:
 # Solution
 @dataclass
 class Address:
-    street: Optional[str]
+    street: str | None
     city: str
     post_code: int
     region: str
@@ -125,4 +125,4 @@ class Address:
 class Astronaut:
     firstname: str
     lastname: str
-    addresses: Optional[list[Address]]
+    addresses: list[Address] | None
