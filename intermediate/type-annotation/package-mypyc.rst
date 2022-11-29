@@ -4,9 +4,9 @@ Type Annotation Mypyc
 * It uses standard Python type hints to generate fast code.
 * Source: https://mypyc.readthedocs.io/en/latest/
 
-.. figure:: img/typeannotation-cython.png
+.. figure:: img/typeannotation-mypy.png
 
-    Cython algorithm [#Langa2022]_
+    Mypyc algorithm [#Langa2022]_
 
 
 About
