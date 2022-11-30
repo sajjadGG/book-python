@@ -18,10 +18,10 @@ Usage of ``re.findall()`` and ``re.finditer()``:
 ...     <p>Third Paragraph</p>
 ... """
 >>>
->>> re.findall('<h1>(.*)</h1>', HTML)
+>>> re.findall(r'<h1>(.*)</h1>', HTML)
 ['Header']
 >>>
->>> re.findall('<p>(.*)</p>', HTML)
+>>> re.findall(r'<p>(.*)</p>', HTML)
 ['First Paragraph', 'Second Paragraph', 'Third Paragraph']
 
 

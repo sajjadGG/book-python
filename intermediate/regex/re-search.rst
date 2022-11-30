@@ -32,7 +32,7 @@ False
 >>>
 >>> TEXT = 'We choose to go to the moon.'
 >>>
->>> result = re.search('moon', TEXT)
+>>> result = re.search(r'moon', TEXT)
 >>>
 >>> result
 <re.Match object; span=(23, 27), match='moon'>
@@ -54,18 +54,18 @@ False
 >>> TEXT = 'We choose to go to the moon.'
 >>>
 >>>
->>> result = re.search('Mars', TEXT)
+>>> result = re.search(r'Mars', TEXT)
 >>>
 >>> result.group()
 Traceback (most recent call last):
 AttributeError: 'NoneType' object has no attribute 'group'
 >>>
->>> result = re.search('Mars', TEXT)
+>>> result = re.search(r'Mars', TEXT)
 >>> if result:
 ...     result.group()
 >>>
 >>>
->>> if result := re.search('Mars', TEXT):
+>>> if result := re.search(r'Mars', TEXT):
 ...     result.group()
 
 

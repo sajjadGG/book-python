@@ -155,6 +155,7 @@ Regular Expressions
     regex/re-split.rst
     regex/re-greedy.rst
     regex/re-type-annotation.rst
+    regex/cheatsheet.rst
 
 
 Datetime and Timezones

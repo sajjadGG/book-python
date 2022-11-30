@@ -16,13 +16,13 @@ Numeric
 
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
->>> re.findall('[0-9]', TEXT)
+>>> re.findall(r'[0-9]', TEXT)
 ['3', '7', '2', '0', '3', '5', '1', '3', '7']
 
->>> re.findall('\d', TEXT)
+>>> re.findall(r'\d', TEXT)
 ['3', '7', '2', '0', '3', '5', '1', '3', '7']
 
->>> re.findall('\D', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'\D', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['M', 'a', 'r', 'k', ' ', 'W', 'a', 't', 'n', 'e', 'y', ' ', 'o', 'f',
  ' ', 'A', 'r', 'e', 's', ' ', ' ', 'l', 'a', 'n', 'd', 'e', 'd', ' ',
  'o', 'n', ' ', 'M', 'a', 'r', 's', ' ', 'o', 'n', ':', ' ', 'N', 'o',
@@ -43,22 +43,22 @@ Whitespaces
 
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
->>> re.findall('\s', TEXT)
+>>> re.findall(r'\s', TEXT)
 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
->>> re.findall('\S', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'\S', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
  'e', 's', '3', 'l', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'M', 'a', 'r',
  's', 'o', 'n', ':', 'N', 'o', 'v', '7', 't', 'h', ',', '2', '0', '3',
  '5', 'a', 't', '1', ':', '3', '7', 'p', 'm']
 
->>> re.findall('\n', TEXT)
+>>> re.findall(r'\n', TEXT)
 []
 >>>
->>> re.findall('\r\n', TEXT)
+>>> re.findall(r'\r\n', TEXT)
 []
 >>>
->>> re.findall('\r', TEXT)
+>>> re.findall(r'\r', TEXT)
 []
 
 
@@ -75,7 +75,7 @@ Examples:
 
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
->>> re.findall('[a-z][a-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'[a-z][a-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['ar', 'at', 'ne', 'of', 're', 'la', 'nd', 'ed', 'on', 'ar', 'on', 'ov', 'th', 'at', 'pm']
 
 >>> re.findall(r'\b[a-z][a-z]\b', TEXT)
@@ -104,20 +104,20 @@ Valid characters are the same as allowed in variable/modules names in Python:
 
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
->>> re.findall('\w', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'\w', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
  'e', 's', '3', 'l', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'M', 'a', 'r',
  's', 'o', 'n', 'N', 'o', 'v', '7', 't', 'h', '2', '0', '3', '5', 'a',
  't', '1', '3', '7', 'p', 'm']
 
->>> re.findall('\W', TEXT)
+>>> re.findall(r'\W', TEXT)
 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ':', ' ', ' ', ',', ' ', ' ', ' ', ':', ' ']
 
 Mind, that following code gives similar output to ``\w`` but it is not
 completely true. ``\w`` would extract also unicode characters while this
 ``[a-zA-Z0-9]`` will not.
 
->>> re.findall('[a-zA-Z0-9]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'[a-zA-Z0-9]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
  'e', 's', '3', 'l', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'M', 'a', 'r',
  's', 'o', 'n', 'N', 'o', 'v', '7', 't', 'h', '2', '0', '3', '5', 'a',
@@ -127,16 +127,16 @@ Example:
 
 >>> text = 'cześć'
 >>>
->>> re.findall('[a-z]', text)
+>>> re.findall(r'[a-z]', text)
 ['c', 'z', 'e']
 >>>
->>> re.findall('\w', text)
+>>> re.findall(r'\w', text)
 ['c', 'z', 'e', 'ś', 'ć']
 >>>
->>> re.findall('\w', text, flags=re.ASCII)
+>>> re.findall(r'\w', text, flags=re.ASCII)
 ['c', 'z', 'e']
 >>>
->>> re.findall('\w', text, flags=re.UNICODE)
+>>> re.findall(r'\w', text, flags=re.UNICODE)
 ['c', 'z', 'e', 'ś', 'ć']
 
 Flag ``re.UNICODE`` is set by default.
@@ -147,11 +147,11 @@ Use Case - 0x01
 * Phone
 
 >>> phone = '+48 123 456 789'
->>> re.findall('\d', phone)
+>>> re.findall(r'\d', phone)
 ['4', '8', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 >>> phone = '+48 (12) 345 6789'
->>> re.findall('\d', phone)
+>>> re.findall(r'\d', phone)
 ['4', '8', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 
@@ -162,8 +162,8 @@ Use Case - 0x02
 >>> PHONE1 = '+48 123 456 789'
 >>> PHONE2 = '+48 (12) 345 6789'
 >>>
->>> phone1 = re.findall('\d', PHONE1)
->>> phone2 = re.findall('\d', PHONE2)
+>>> phone1 = re.findall(r'\d', PHONE1)
+>>> phone2 = re.findall(r'\d', PHONE2)
 >>>
 >>> phone1 == phone2
 True
@@ -174,15 +174,15 @@ Use Case - 0x03
 * EU VAT Tax ID
 
 >>> number = '777-286-18-23'
->>> re.findall('\d', number)
+>>> re.findall(r'\d', number)
 ['7', '7', '7', '2', '8', '6', '1', '8', '2', '3']
 
 >>> number = '777-28-61-823'
->>> re.findall('\d', number)
+>>> re.findall(r'\d', number)
 ['7', '7', '7', '2', '8', '6', '1', '8', '2', '3']
 
 >>> number = '7772861823'
->>> re.findall('\d', number)
+>>> re.findall(r'\d', number)
 ['7', '7', '7', '2', '8', '6', '1', '8', '2', '3']
 
 
@@ -192,8 +192,8 @@ Use Case - 0x04
 
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
->>> re.findall('[0-9]\s', TEXT)
+>>> re.findall(r'[0-9]\s', TEXT)
 ['3 ', '5 ', '7 ']
 
->>> re.findall('\d\s', TEXT)
+>>> re.findall(r'\d\s', TEXT)
 ['3 ', '5 ', '7 ']

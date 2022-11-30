@@ -22,6 +22,8 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from pprint import pprint
+    >>> result = list(result)
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
@@ -30,8 +32,9 @@ Tests:
     >>> assert all(type(element) is date for element in result), \
     'All elements in `result` must be a date'
 
-    >>> result
-    [datetime.date(1957, 10, 4), datetime.date(1961, 4, 12)]
+    >>> pprint(result, width=30)
+    [datetime.date(1957, 10, 4),
+     datetime.date(1961, 4, 12)]
 """
 
 from datetime import date, datetime
@@ -46,7 +49,18 @@ DATA = [
 # type: list[date]
 result = ...
 
+
 # Solution
+def parse(string):
+    try:
+        return datetime.strptime(string, '%B %d, %Y').date()
+    except ValueError:
+        return datetime.strptime(string, '%b %d, %Y').date()
+
+result = map(parse, DATA)
+
+
+# Alternative
 result = []
 
 for line in DATA:

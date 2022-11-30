@@ -27,14 +27,12 @@ Enclosing
 * In JavaScript we use ``/pattern/flags`` or ``new RegExp(pattern, flags)``
 
 >>> data = '+48 123 456 789'
->>> pattern = r'[0-9]+'
->>> result = re.match(pattern, data)
+>>> result = re.match(r'[0-9]+', data)
 
 .. code-block:: javascript
 
     const data = '+48 123 456 789'
-    const pattern = /[0-9]+/
-    const result = str.search(pattern, data)
+    const result = str.search(/[0-9]+/, data)
 
 .. code-block:: javascript
 
@@ -70,10 +68,10 @@ or ``a``.
 >>> TEXT = 'hello world'
 >>>
 >>>
->>> re.findall('[:allnum:]', TEXT)
+>>> re.findall(r'[:allnum:]', TEXT)
 ['l', 'l', 'l']
 >>>
->>> re.findall('[:alpha:]', TEXT)
+>>> re.findall(r'[:alpha:]', TEXT)
 ['h', 'l', 'l', 'l']
 
 
@@ -87,11 +85,11 @@ Range
 >>> TEXT = 'hello world'
 >>>
 >>>
->>> re.findall('[a-Z]', TEXT)
+>>> re.findall(r'[a-Z]', TEXT)
 Traceback (most recent call last):
 re.error: bad character range a-Z at position 1
 >>>
->>> re.findall('[a-9]', TEXT)
+>>> re.findall(r'[a-9]', TEXT)
 Traceback (most recent call last):
 re.error: bad character range a-9 at position 1
 
@@ -101,7 +99,7 @@ Group Backreference
 * ``$1`` == ``\1``
 
 >>> HTML = '<span>Hello World</span>'
->>> re.findall('<(?P<tag>.+)>(?:.+)</(?P=tag)>', HTML)
+>>> re.findall(r'<(?P<tag>.+)>(?:.+)</(?P=tag)>', HTML)
 ['span']
 
 

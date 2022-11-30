@@ -1,6 +1,7 @@
 Syntax Negation
 ===============
 * Negation logically inverts qualifier
+* ``[^...]`` - anything but ...
 
 
 SetUp
@@ -33,18 +34,18 @@ Compare
 -------
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
->>> re.findall('[A-Z]', TEXT)
+>>> re.findall(r'[A-Z]', TEXT)
 ['M', 'W', 'A', 'M', 'N']
 
->>> re.findall('^[A-Z]', TEXT)
+>>> re.findall(r'^[A-Z]', TEXT)
 ['M']
 
->>> re.findall('[^A-Z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'[^A-Z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['a', 'r', 'k', ' ', 'a', 't', 'n', 'e', 'y', ' ', 'o', 'f', ' ', 'r',
  'e', 's', ' ', '3', ' ', 'l', 'a', 'n', 'd', 'e', 'd', ' ', 'o', 'n',
  ' ', 'a', 'r', 's', ' ', 'o', 'n', ':', ' ', 'o', 'v', ' ', '7', 't',
  'h', ',', ' ', '2', '0', '3', '5', ' ', 'a', 't', ' ', '1', ':', '3',
  '7', ' ', 'p', 'm']
 
->>> re.findall('^[^A-Z]', TEXT)
+>>> re.findall(r'^[^A-Z]', TEXT)
 []

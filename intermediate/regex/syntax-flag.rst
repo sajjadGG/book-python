@@ -43,10 +43,10 @@ Make ``\w``, ``\W``, ``\b``, ``\B``, ``\d``, ``\D``, ``\s`` and ``\S`` perform A
 >>>
 >>> TEXT = 'zażółć gęślą jaźń'
 >>>
->>> re.findall('\w+', TEXT)
+>>> re.findall(r'\w+', TEXT)
 ['zażółć', 'gęślą', 'jaźń']
 >>>
->>> re.findall('\w+', TEXT, flags=re.ASCII)
+>>> re.findall(r'\w+', TEXT, flags=re.ASCII)
 ['za', 'g', 'l', 'ja']
 
 
@@ -100,11 +100,11 @@ match can start in one line, and end in another: ``^`` - start of line, ``$`` - 
 ... and the others, too."""
 >>>
 >>>
->>> sentence = '[A-Z][a-z, ]+\.'
+>>> sentence = r'[A-Z][a-z, ]+\.'
 >>> re.findall(sentence, TEXT)
 ['We choose to go to the moon.']
 >>>
->>> sentence = '[A-Z][a-z, \n]+\.'
+>>> sentence = r'[A-Z][a-z, \n]+\.'
 >>> re.findall(sentence, TEXT)
 ['We choose to go to the moon.', 'We choose to go to the moon in this decade and do the other things,\nnot because they are easy,\nbut because they are hard,\nbecause that goal will serve to organize and measure the best of our energies and skills,\nbecause that challenge is one that we are willing to accept,\none we are unwilling to postpone,\nand one which we intend to win,\nand the others, too.']
 
@@ -121,10 +121,10 @@ DOTALL
 >>>
 >>> TEXT = 'hello\nworld'
 >>>
->>> re.findall('.+', TEXT)
+>>> re.findall(r'.+', TEXT)
 ['hello', 'world']
 >>>
->>> re.findall('.+', TEXT, flags=re.DOTALL)
+>>> re.findall(r'.+', TEXT, flags=re.DOTALL)
 ['hello\nworld']
 
 
@@ -141,10 +141,10 @@ Turns on UNICODE mode
 >>>
 >>> TEXT = 'zażółć gęślą jaźń'
 >>>
->>> re.findall('\w+', TEXT)
+>>> re.findall(r'\w+', TEXT)
 ['zażółć', 'gęślą', 'jaźń']
 >>>
->>> re.findall('\w+', TEXT, flags=re.UNICODE)
+>>> re.findall(r'\w+', TEXT, flags=re.UNICODE)
 ['zażółć', 'gęślą', 'jaźń']
 
 

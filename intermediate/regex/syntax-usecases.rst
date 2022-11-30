@@ -7,6 +7,21 @@ National Identification Numbers
 * Worldwide
 * https://github.com/arthurdejong/python-stdnum/tree/master/stdnum/pl
 
+>>> def pesel_check_digit(self):
+...     weights = (1, 3, 7, 9, 1, 3, 7, 9, 1, 3)
+...     check = sum(w * int(n) for w, n in zip(weights, self.pesel))
+...     return str((10 - check) % 10)
+
+.. figure:: img/regex-dowodosobisty-new-1.jpg
+
+.. figure:: img/regex-dowodosobisty-prl-1.jpg
+.. figure:: img/regex-dowodosobisty-prl-2.jpg
+.. figure:: img/regex-dowodosobisty-prl-3.jpg
+
+.. figure:: img/regex-dowodosobisty-old-1.jpg
+.. figure:: img/regex-dowodosobisty-old-2.jpg
+.. figure:: img/regex-dowodosobisty-old-3.jpg
+
 
 Dates
 -----

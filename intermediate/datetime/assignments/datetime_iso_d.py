@@ -1,7 +1,7 @@
 """
 * Assignment: Datetime ISO Logs
 * Complexity: medium
-* Lines of code: 13 lines
+* Lines of code: 7 lines
 * Time: 8 min
 
 English:
@@ -36,6 +36,8 @@ Hints:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from pprint import pprint
+    >>> result = list(result)
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
@@ -44,91 +46,91 @@ Tests:
     >>> assert all(type(row) is dict for row in result), \
     'All elements in result must be dict'
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'when': datetime.datetime(1969, 7, 14, 21, 0),
-      'level': 'INFO',
-      'message': 'Terminal countdown started'},
-     {'when': datetime.datetime(1969, 7, 16, 13, 31, 53),
-      'level': 'WARNING',
-      'message': 'S-IC engine ignition (#5)'},
-     {'when': datetime.datetime(1969, 7, 16, 13, 33, 23),
-      'level': 'DEBUG',
-      'message': 'Maximum dynamic pressure (735.17 lb/ft^2)'},
-     {'when': datetime.datetime(1969, 7, 16, 13, 34, 44),
-      'level':
-      'WARNING', 'message': 'S-II ignition'},
-     {'when': datetime.datetime(1969, 7, 16, 13, 35, 17),
-      'level': 'DEBUG',
-      'message': 'Launch escape tower jettisoned'},
-     {'when': datetime.datetime(1969, 7, 16, 13, 39, 40),
-      'level': 'DEBUG',
-      'message': 'S-II center engine cutoff'},
-     {'when': datetime.datetime(1969, 7, 16, 16, 22, 13),
-      'level': 'INFO',
-      'message': 'Translunar injection'},
-     {'when': datetime.datetime(1969, 7, 16, 16, 56, 3),
-      'level': 'INFO',
-      'message': 'CSM docked with LM/S-IVB'},
-     {'when': datetime.datetime(1969, 7, 16, 17, 21, 50),
-      'level': 'INFO',
-      'message': 'Lunar orbit insertion ignition'},
-     {'when': datetime.datetime(1969, 7, 16, 21, 43, 36),
-      'level': 'INFO',
-      'message': 'Lunar orbit circularization ignition'},
-     {'when': datetime.datetime(1969, 7, 20, 17, 44),
-      'level': 'INFO',
-      'message': 'CSM/LM undocked'},
-     {'when': datetime.datetime(1969, 7, 20, 20, 5, 5),
-      'level': 'WARNING',
-      'message': 'LM powered descent engine ignition'},
-     {'when': datetime.datetime(1969, 7, 20, 20, 10, 22),
-      'level': 'ERROR',
-      'message': 'LM 1202 alarm'},
-     {'when': datetime.datetime(1969, 7, 20, 20, 14, 18),
-      'level': 'ERROR',
-      'message': 'LM 1201 alarm'},
-     {'when': datetime.datetime(1969, 7, 20, 20, 17, 39),
-      'level':
-      'WARNING', 'message': 'LM lunar landing'},
-     {'when': datetime.datetime(1969, 7, 21, 2, 39, 33),
-      'level': 'DEBUG',
-      'message': 'EVA started (hatch open)'},
-     {'when': datetime.datetime(1969, 7, 21, 2, 56, 15),
-      'level': 'WARNING',
-      'message': '1st step taken lunar surface (CDR)'},
-     {'when': datetime.datetime(1969, 7, 21, 2, 56, 15),
-      'level': 'WARNING',
-      'message': 'Neil Armstrong first words on the Moon'},
-     {'when': datetime.datetime(1969, 7, 21, 3, 5, 58),
-      'level': 'DEBUG',
-      'message': 'Contingency sample collection started (CDR)'},
-     {'when': datetime.datetime(1969, 7, 21, 3, 15, 16),
-      'level': 'INFO',
-      'message': 'LMP on lunar surface'},
-     {'when': datetime.datetime(1969, 7, 21, 5, 11, 13),
-      'level': 'DEBUG',
-      'message': 'EVA ended (hatch closed)'},
-     {'when': datetime.datetime(1969, 7, 21, 17, 54),
-      'level': 'WARNING',
-      'message': 'LM lunar liftoff ignition (LM APS)'},
-     {'when': datetime.datetime(1969, 7, 21, 21, 35),
-      'level': 'INFO',
-      'message': 'CSM/LM docked'},
-     {'when': datetime.datetime(1969, 7, 22, 4, 55, 42),
-      'level': 'WARNING',
-      'message': 'Transearth injection ignition (SPS)'},
-     {'when': datetime.datetime(1969, 7, 24, 16, 21, 12),
-      'level': 'INFO',
-      'message': 'CM/SM separation'},
-     {'when': datetime.datetime(1969, 7, 24, 16, 35, 5),
-      'level': 'WARNING',
-      'message': 'Entry'},
-     {'when': datetime.datetime(1969, 7, 24, 16, 50, 35),
-      'level':
-      'WARNING', 'message': 'Splashdown (went to apex-down)'},
-     {'when': datetime.datetime(1969, 7, 24, 17, 29),
-      'level': 'INFO',
-      'message': 'Crew egress'}]
+    >>> pprint(result)
+    [{'level': 'INFO',
+      'message': 'Terminal countdown started',
+      'when': datetime.datetime(1969, 7, 14, 21, 0)},
+     {'level': 'WARNING',
+      'message': 'S-IC engine ignition (#5)',
+      'when': datetime.datetime(1969, 7, 16, 13, 31, 53)},
+     {'level': 'DEBUG',
+      'message': 'Maximum dynamic pressure (735.17 lb/ft^2)',
+      'when': datetime.datetime(1969, 7, 16, 13, 33, 23)},
+     {'level': 'WARNING',
+      'message': 'S-II ignition',
+      'when': datetime.datetime(1969, 7, 16, 13, 34, 44)},
+     {'level': 'DEBUG',
+      'message': 'Launch escape tower jettisoned',
+      'when': datetime.datetime(1969, 7, 16, 13, 35, 17)},
+     {'level': 'DEBUG',
+      'message': 'S-II center engine cutoff',
+      'when': datetime.datetime(1969, 7, 16, 13, 39, 40)},
+     {'level': 'INFO',
+      'message': 'Translunar injection',
+      'when': datetime.datetime(1969, 7, 16, 16, 22, 13)},
+     {'level': 'INFO',
+      'message': 'CSM docked with LM/S-IVB',
+      'when': datetime.datetime(1969, 7, 16, 16, 56, 3)},
+     {'level': 'INFO',
+      'message': 'Lunar orbit insertion ignition',
+      'when': datetime.datetime(1969, 7, 16, 17, 21, 50)},
+     {'level': 'INFO',
+      'message': 'Lunar orbit circularization ignition',
+      'when': datetime.datetime(1969, 7, 16, 21, 43, 36)},
+     {'level': 'INFO',
+      'message': 'CSM/LM undocked',
+      'when': datetime.datetime(1969, 7, 20, 17, 44)},
+     {'level': 'WARNING',
+      'message': 'LM powered descent engine ignition',
+      'when': datetime.datetime(1969, 7, 20, 20, 5, 5)},
+     {'level': 'ERROR',
+      'message': 'LM 1202 alarm',
+      'when': datetime.datetime(1969, 7, 20, 20, 10, 22)},
+     {'level': 'ERROR',
+      'message': 'LM 1201 alarm',
+      'when': datetime.datetime(1969, 7, 20, 20, 14, 18)},
+     {'level': 'WARNING',
+      'message': 'LM lunar landing',
+      'when': datetime.datetime(1969, 7, 20, 20, 17, 39)},
+     {'level': 'DEBUG',
+      'message': 'EVA started (hatch open)',
+      'when': datetime.datetime(1969, 7, 21, 2, 39, 33)},
+     {'level': 'WARNING',
+      'message': '1st step taken lunar surface (CDR)',
+      'when': datetime.datetime(1969, 7, 21, 2, 56, 15)},
+     {'level': 'WARNING',
+      'message': 'Neil Armstrong first words on the Moon',
+      'when': datetime.datetime(1969, 7, 21, 2, 56, 15)},
+     {'level': 'DEBUG',
+      'message': 'Contingency sample collection started (CDR)',
+      'when': datetime.datetime(1969, 7, 21, 3, 5, 58)},
+     {'level': 'INFO',
+      'message': 'LMP on lunar surface',
+      'when': datetime.datetime(1969, 7, 21, 3, 15, 16)},
+     {'level': 'DEBUG',
+      'message': 'EVA ended (hatch closed)',
+      'when': datetime.datetime(1969, 7, 21, 5, 11, 13)},
+     {'level': 'WARNING',
+      'message': 'LM lunar liftoff ignition (LM APS)',
+      'when': datetime.datetime(1969, 7, 21, 17, 54)},
+     {'level': 'INFO',
+      'message': 'CSM/LM docked',
+      'when': datetime.datetime(1969, 7, 21, 21, 35)},
+     {'level': 'WARNING',
+      'message': 'Transearth injection ignition (SPS)',
+      'when': datetime.datetime(1969, 7, 22, 4, 55, 42)},
+     {'level': 'INFO',
+      'message': 'CM/SM separation',
+      'when': datetime.datetime(1969, 7, 24, 16, 21, 12)},
+     {'level': 'WARNING',
+      'message': 'Entry',
+      'when': datetime.datetime(1969, 7, 24, 16, 35, 5)},
+     {'level': 'WARNING',
+      'message': 'Splashdown (went to apex-down)',
+      'when': datetime.datetime(1969, 7, 24, 16, 50, 35)},
+     {'level': 'INFO',
+      'message': 'Crew egress',
+      'when': datetime.datetime(1969, 7, 24, 17, 29)}]
 """
 from datetime import date, datetime, time
 
@@ -167,25 +169,37 @@ DATA = """1969-07-14, 21:00:00, INFO, Terminal countdown started
 result = ...
 
 # Solution
-result = []
-
-for line in DATA.splitlines():
-    d, t, lvl, msg = line.strip().split(', ', maxsplit=3)
+def parse_line(line):
+    d, t, lvl, msg = line.split(', ', maxsplit=3)
     d = date.fromisoformat(d)
     t = time.fromisoformat(t)
     dt = datetime.combine(d, t)
-    result.append({'when': dt, 'level': lvl, 'message': msg})
+    return {'when':dt, 'level':lvl, 'message':msg}
+
+result = map(parse_line, DATA.splitlines())
 
 
-# Alternative solution
-result = [{'when': dt, 'level': lvl, 'message': msg}
-          for line in DATA.splitlines()
-          if (row := line.strip().split(', ', maxsplit=3))
-          and (d := date.fromisoformat(row[0]))
-          and (t := time.fromisoformat(row[1]))
-          and (lvl := row[2])
-          and (msg := row[3])
-          and (dt := datetime.combine(d,t))]
+
+## Alternative solution
+# result = []
+#
+# for line in DATA.splitlines():
+#     d, t, lvl, msg = line.strip().split(', ', maxsplit=3)
+#     d = date.fromisoformat(d)
+#     t = time.fromisoformat(t)
+#     dt = datetime.combine(d, t)
+#     result.append({'when': dt, 'level': lvl, 'message': msg})
+
+
+## Alternative solution
+# result = [{'when': dt, 'level': lvl, 'message': msg}
+#           for line in DATA.splitlines()
+#           if (row := line.strip().split(', ', maxsplit=3))
+#           and (d := date.fromisoformat(row[0]))
+#           and (t := time.fromisoformat(row[1]))
+#           and (lvl := row[2])
+#           and (msg := row[3])
+#           and (dt := datetime.combine(d,t))]
 
 
 # Solution 1 (%%timeit -r 1000 -n 1000)
@@ -195,8 +209,7 @@ result = [{'when': dt, 'level': lvl, 'message': msg}
 # 28 µs ± 1.26 µs per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
 
 
-
-
+## Alternative solution
 # result = [
 #     {'when': datetime.fromisoformat('T'.join(row[0:2])),
 #      'level': row[-2],
@@ -206,7 +219,7 @@ result = [{'when': dt, 'level': lvl, 'message': msg}
 #      if (row := line.split(', ', maxsplit=3))
 # ]
 
-# Alternative solution
+## Alternative solution
 # result = [{'when': dt, 'level': row[-2], 'message': row[-1]}
 #           for line in DATA.splitlines()
 #           if (row := line.split(', ', maxsplit=3))
@@ -214,7 +227,7 @@ result = [{'when': dt, 'level': lvl, 'message': msg}
 #
 #
 
-# Alternative solution
+## Alternative solution
 # result = [{'when': dt, 'level': row[2], 'message': row[3]}
 #           for line in DATA.splitlines()
 #           if (row := line.split(', ', maxsplit=3))

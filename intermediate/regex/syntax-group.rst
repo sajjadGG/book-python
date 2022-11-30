@@ -3,10 +3,6 @@ Syntax Group
 * Catch expression results
 * Can be named or positional
 * Note, that for backreference, must use raw-sting or double backslash
-
-
-Syntax
-------
 * ``()`` - matches whatever regular expression is inside the parentheses, and indicates the start and end of a group
 * ``(...)`` - unnamed group
 * ``(?P<mygroup>...)`` - named group `mygroup`
@@ -30,13 +26,13 @@ Positional Group
 >>> re.findall(r'\d(th)', TEXT)
 ['th']
 
->>> re.findall('\d:\d\d', TEXT)
+>>> re.findall(r'\d:\d\d', TEXT)
 ['1:37']
->>> re.findall('(\d):\d\d', TEXT)
+>>> re.findall(r'(\d):\d\d', TEXT)
 ['1']
->>> re.findall('\d:(\d\d)', TEXT)
+>>> re.findall(r'\d:(\d\d)', TEXT)
 ['37']
->>> re.findall('(\d):(\d\d)', TEXT)
+>>> re.findall(r'(\d):(\d\d)', TEXT)
 [('1', '37')]
 
 >>> re.findall(r'([A-Z][a-z]+\s[A-Z][a-z]+)', TEXT)
@@ -94,7 +90,7 @@ Named Group
 {'firstname': 'Mark', 'lastname': 'Watney'}
 
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
->>> time = '(?P<hour>\d{1,2}):(?P<minute>\d{1,2})'
+>>> time = r'(?P<hour>\d{1,2}):(?P<minute>\d{1,2})'
 >>>
 >>> re.findall(time, TEXT)
 [('1', '37')]
@@ -122,31 +118,31 @@ Non-Capturing Group
 >>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
->>> re.findall('\w{3} \d{1,2}th, \d{4}', TEXT)
+>>> re.findall(r'\w{3} \d{1,2}th, \d{4}', TEXT)
 ['Nov 7th, 2035']
 >>>
->>> re.findall('\w{3} \d{1,2}st|nd|rd|th, \d{4}', TEXT)
+>>> re.findall(r'\w{3} \d{1,2}st|nd|rd|th, \d{4}', TEXT)
 ['nd', 'th, 2035']
 >>>
->>> re.findall('\w{3} \d{1,2}(st|nd|rd|th), \d{4}', TEXT)
+>>> re.findall(r'\w{3} \d{1,2}(st|nd|rd|th), \d{4}', TEXT)
 ['th']
 >>>
->>> re.findall('\w{3} \d{1,2}(?:st|nd|rd|th), \d{4}', TEXT)
+>>> re.findall(r'\w{3} \d{1,2}(?:st|nd|rd|th), \d{4}', TEXT)
 ['Nov 7th, 2035']
 >>>
->>> re.findall('(\w{3}) (\d{1,2})(?:st|nd|rd|th), (\d{4})', TEXT)
+>>> re.findall(r'(\w{3}) (\d{1,2})(?:st|nd|rd|th), (\d{4})', TEXT)
 [('Nov', '7', '2035')]
 >>>
->>> re.findall('(\w{3}) (\d{1,2})(st|nd|rd|th), (\d{4})', TEXT)
+>>> re.findall(r'(\w{3}) (\d{1,2})(st|nd|rd|th), (\d{4})', TEXT)
 [('Nov', '7', 'th', '2035')]
 
 >>> date = r'(\w{3} \d{1,2}(?:st|nd|rd|th), \d{4})'
 >>> re.findall(date, TEXT)
 ['Nov 7th, 2035']
 
->>> year = '\d{4}'
->>> month = '\w{3}'
->>> day = '\d{1,2}'
+>>> year = r'\d{4}'
+>>> month = r'\w{3}'
+>>> day = r'\d{1,2}'
 >>>
 >>> re.findall(f'{month} {day}(st|nd|rd|th), {year}', TEXT)
 ['th']
@@ -165,11 +161,11 @@ Comment
 >>> re.findall(r'\d{4}(?#year)', TEXT)
 ['2035']
 >>>
->>> re.findall('\d{1,2}(?#hour):\d{2}(?#minute)', TEXT)
+>>> re.findall(r'\d{1,2}(?#hour):\d{2}(?#minute)', TEXT)
 ['1:37']
 
->>> hour = '\d{1,2}(?#hour)'
->>> minute = '\d{2}(?#minute)'
+>>> hour = r'\d{1,2}(?#hour)'
+>>> minute = r'\d{2}(?#minute)'
 >>> time = f'{hour}:{minute}'
 >>>
 >>> re.findall(time, TEXT)
@@ -189,9 +185,9 @@ Backreference
 >>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
->>> year = '(?P<year>\d{4})'
->>> month = '(?P<month>\w+)'
->>> day = '(?P<day>\d{1,2})'
+>>> year = r'(?P<year>\d{4})'
+>>> month = r'(?P<month>\w+)'
+>>> day = r'(?P<day>\d{1,2})'
 >>>
 >>> re.sub(f'{month} {day}th, {year}', '\g<day> \g<month> \g<year>', TEXT)
 'Mark Watney of Ares 3 landed on Mars on: 7 Nov 2035 at 1:37 pm'
@@ -200,6 +196,36 @@ Although this is not working in Python:
 
 >>> re.sub(f'{month} {day}th, {year}', '(?P=day) (?P=month) (?P=year)', TEXT)
 'Mark Watney of Ares 3 landed on Mars on: (?P=day) (?P=month) (?P=year) at 1:37 pm'
+
+
+
+>>> year = r'(?P<year>\d{4})'
+>>> month = r'(?P<month>[A-Z][a-z]{2})'
+>>> day = r'(?P<day>\d{1,2})'
+>>> date = f'{month} {day}(?:st|nd|rd|th), {year}'
+>>>
+>>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
+>>>
+>>>
+>>> re.sub(date, '\g<3> \g<1> \g<2>', TEXT)
+'Mark Watney of Ares 3 landed on Mars on: 2035 Nov 7 at 1:37 pm'
+>>>
+>>> re.sub(date, '\g<year> \g<month> \g<day>', TEXT)
+'Mark Watney of Ares 3 landed on Mars on: 2035 Nov 7 at 1:37 pm'
+
+Example:
+
+>>> html = '<p>We choose to go to the <strong>Moon</strong></p>'
+>>>
+>>>
+>>> re.findall('<(?P<tagname>[a-z]+)>.*</(?P=tagname)>', html)
+['p']
+>>>
+>>> re.findall('<(?P<tagname>[a-z]+)>(.*)</(?P=tagname)>', html)
+[('p', 'We choose to go to the <strong>Moon</strong>')]
+
+
+
 
 Examples
 --------
@@ -284,9 +310,9 @@ Use Case - 0x03
 >>> import re
 >>>
 >>>
->>> variable = '(?P<variable>\w+)'
->>> space = '\s?'  # optional space
->>> value = '(?P<value>.+)'
+>>> variable = r'(?P<variable>\w+)'
+>>> space = r'\s?'  # optional space
+>>> value = r'(?P<value>.+)'
 >>> assignment = f'^{variable}{space}={space}{value}$'
 >>>
 >>> line_of_code = 'myvar = 123'
@@ -299,9 +325,9 @@ Use Case - 0x04
 >>> import re
 >>>
 >>>
->>> variable = '(?P<variable>\w+)'
->>> space = '\s?(?#optional space)'
->>> value = '(?P<value>.+)'
+>>> variable = r'(?P<variable>\w+)'
+>>> space = r'\s?(?#optional space)'
+>>> value = r'(?P<value>.+)'
 >>> assignment = f'^{variable}{space}={space}{value}$'
 >>>
 >>> assignment
@@ -315,8 +341,8 @@ Use Case - 0x05
 >>>
 >>> HTML = '<p>Hello World</p>'
 >>>
->>> search = '<p>(.+)</p>'
->>> replace = '<strong>\g<1></strong>'
+>>> search = r'<p>(.+)</p>'
+>>> replace = r'<strong>\g<1></strong>'
 >>>
 >>> re.sub(search, replace, HTML)
 '<strong>Hello World</strong>'
@@ -329,8 +355,8 @@ Use Case - 0x06
 >>>
 >>> HTML = '<p>Hello World</p>'
 >>>
->>> search = '<p>(?P<text>.+)</p>'
->>> replace = '<strong>\g<text></strong>'
+>>> search = r'<p>(?P<text>.+)</p>'
+>>> replace = r'<strong>\g<text></strong>'
 >>>
 >>> re.sub(search, replace, HTML)
 '<strong>Hello World</strong>'
@@ -342,7 +368,7 @@ Use Case - 0x07
 >>>
 >>>
 >>> HTML = '<p>Hello World</p>'
->>> tag = re.findall('<(?P<tag>.+)>(?:.+)</(?P=tag)>', HTML)
+>>> tag = re.findall(r'<(?P<tag>.+)>(?:.+)</(?P=tag)>', HTML)
 >>>
 >>> tag
 ['p']
@@ -355,5 +381,5 @@ Use Case - 0x08
 >>>
 >>> HTML = '<p>Hello World</p>'
 >>>
->>> re.findall('<(?P<tag>.*?)>(.*?)</(?P=tag)>', HTML)
+>>> re.findall(r'<(?P<tag>.*?)>(.*?)</(?P=tag)>', HTML)
 [('p', 'Hello World')]

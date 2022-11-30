@@ -10,6 +10,11 @@ Syntax About
 * Also known as ``regex``
 * Also known as ``re``
 * https://www.youtube.com/watch?v=BmF-gEYXWVM&list=PLv4THqSPE6meFeo_jNLgUVKkP40UstIQv&index=3
+* W3C HTML Email pattern: r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+
+W3C HTML5 Standard [#w3cemailregex]_ regexp for email field
+
+>>> pattern = r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
 
 
 SetUp
@@ -25,7 +30,7 @@ SetUp
 * TEXT has lowercase and uppercase letters
 
 >>> import re
->>>
+
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
 
@@ -292,3 +297,4 @@ References
 .. [#stackVT1] https://stackoverflow.com/a/3380554
 .. [#stackVT2] https://stackoverflow.com/a/3385152
 .. [#stackFF] https://stackoverflow.com/a/3098328
+.. [#w3cemailregex] W3C. Parsing Email. Year: 2019. Retrieved: 2019-03-13. URL: https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address

@@ -14,7 +14,7 @@ Example
 -------
 >>> import re
 >>>
->>> fullname = re.compile('(?P<firstname>\w+) (?P<lastname>\w+)')
+>>> fullname = re.compile(r'(?P<firstname>\w+) (?P<lastname>\w+)')
 
 
 No Compile

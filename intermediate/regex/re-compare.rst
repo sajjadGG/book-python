@@ -10,8 +10,8 @@ Example
 >>> import re
 >>>
 >>>
->>> PATTERN = r'[A-Z]{2,10}-[0-9]{1,6}'
 >>> DATA = 'MYPROJ-1337, MYPROJ-997 removed obsolete comments'
+>>> PATTERN = r'[A-Z]{2,10}-[0-9]{1,6}'
 >>>
 >>> re.findall(PATTERN, DATA)
 ['MYPROJ-1337', 'MYPROJ-997']

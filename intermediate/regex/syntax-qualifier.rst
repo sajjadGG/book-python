@@ -20,25 +20,25 @@ Exact
 
 Regular expressions allows to find exact matches:
 
->>> re.findall('a', TEXT)
+>>> re.findall(r'a', TEXT)
 ['a', 'a', 'a', 'a', 'a']
 
 Note, that regular expressions are case sensitive (unless ``re.IGNORECASE``
 flag is present. More information in `Syntax Flags`):
 
->>> re.findall('A', TEXT)
+>>> re.findall(r'A', TEXT)
 ['A']
 
 Note, that regular expressions are used to search in text, therefore in case
 of searching for a number it will return a strings with numbers in it:
 
->>> re.findall('1', TEXT)
+>>> re.findall(r'1', TEXT)
 ['1']
 
 Python ``re.findall()`` function will return empty list if none match was
 found:
 
->>> re.findall('x', TEXT)
+>>> re.findall(r'x', TEXT)
 []
 
 
@@ -50,28 +50,28 @@ Exact Alternate
 
 Alternative allows to search for two or more possible matches:
 
->>> re.findall('a|b', TEXT)
+>>> re.findall(r'a|b', TEXT)
 ['a', 'a', 'a', 'a', 'a']
 
 It can find more than two matches:
 
->>> re.findall('a|b|c|d', TEXT)
+>>> re.findall(r'a|b|c|d', TEXT)
 ['a', 'a', 'a', 'd', 'd', 'a', 'a']
 >>>
->>> re.findall('1|2|3', TEXT)
+>>> re.findall(r'1|2|3', TEXT)
 ['3', '2', '3', '1', '3']
 
 It will work for both numbers, characters or any other object:
 
->>> re.findall('a|b|c|d|1|2|3', TEXT)
+>>> re.findall(r'a|b|c|d|1|2|3', TEXT)
 ['a', 'a', '3', 'a', 'd', 'd', 'a', '2', '3', 'a', '1', '3']
 
 Examples:
 
->>> re.findall('a|e', TEXT)
+>>> re.findall(r'a|e', TEXT)
 ['a', 'a', 'e', 'e', 'a', 'e', 'a', 'a']
 >>>
->>> re.findall('a|e|i|o|u|y', TEXT)
+>>> re.findall(r'a|e|i|o|u|y', TEXT)
 ['a', 'a', 'e', 'y', 'o', 'e', 'a', 'e', 'o', 'a', 'o', 'o', 'a']
 
 
@@ -83,46 +83,46 @@ Enumeration
 
 Enumerations provide compact and more readable syntax for longer alternatives:
 
->>> re.findall('[abcd]', TEXT)
+>>> re.findall(r'[abcd]', TEXT)
 ['a', 'a', 'a', 'd', 'd', 'a', 'a']
 >>>
->>> re.findall('[123]', TEXT)
+>>> re.findall(r'[123]', TEXT)
 ['3', '2', '3', '1', '3']
 
 It will work for both numbers, characters or any other object:
 
->>> re.findall('[abcd123]', TEXT)
+>>> re.findall(r'[abcd123]', TEXT)
 ['a', 'a', '3', 'a', 'd', 'd', 'a', '2', '3', 'a', '1', '3']
 
 Examples:
 
->>> re.findall('[a-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'[a-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['a', 'r', 'k', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'r', 'e', 's', 'l',
  'a', 'n', 'd', 'e', 'd', 'o', 'n', 'a', 'r', 's', 'o', 'n', 'o', 'v',
  't', 'h', 'a', 't', 'p', 'm']
 >>>
->>> re.findall('[az-]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'[az-]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['a', 'a', 'a', 'a', 'a']
 
->>> re.findall('[A-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'[A-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
  'e', 's', 'l', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'M', 'a', 'r', 's',
  'o', 'n', 'N', 'o', 'v', 't', 'h', 'a', 't', 'p', 'm']
 >>>
->>> re.findall('[a-Z]', TEXT)
+>>> re.findall(r'[a-Z]', TEXT)
 Traceback (most recent call last):
 re.error: bad character range a-Z at position 1
 >>>
->>> re.findall('[z-a]', TEXT)
+>>> re.findall(r'[z-a]', TEXT)
 Traceback (most recent call last):
 re.error: bad character range z-a at position 1
 
 Use Cases:
 
->>> re.findall('[aeiouy]', TEXT)
+>>> re.findall(r'[aeiouy]', TEXT)
 ['a', 'a', 'e', 'y', 'o', 'e', 'a', 'e', 'o', 'a', 'o', 'o', 'a']
 >>>
->>> re.findall('a|e|i|o|u|y', TEXT)
+>>> re.findall(r'a|e|i|o|u|y', TEXT)
 ['a', 'a', 'e', 'y', 'o', 'e', 'a', 'e', 'o', 'a', 'o', 'o', 'a']
 
 
@@ -141,27 +141,27 @@ Ranges provide even more readable and convenient way os specifying particular
 characters to match. It is very useful to define ranges of numbers or letters
 this way:
 
->>> re.findall('[a-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'[a-z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['a', 'r', 'k', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'r', 'e', 's', 'l',
  'a', 'n', 'd', 'e', 'd', 'o', 'n', 'a', 'r', 's', 'o', 'n', 'o', 'v',
  't', 'h', 'a', 't', 'p', 'm']
 >>>
->>> re.findall('[A-Z]', TEXT)
+>>> re.findall(r'[A-Z]', TEXT)
 ['M', 'W', 'A', 'M', 'N']
 >>>
->>> re.findall('[0-9]', TEXT)
+>>> re.findall(r'[0-9]', TEXT)
 ['3', '7', '2', '0', '3', '5', '1', '3', '7']
 
 Note, that regular expressions are case sensitive (unless ``re.IGNORECASE``
 flag is present. More information in `Syntax Flags`). You can also join
 ranges to create even broader matches:
 
->>> re.findall('[a-zA-Z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'[a-zA-Z]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
  'e', 's', 'l', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'M', 'a', 'r', 's',
  'o', 'n', 'N', 'o', 'v', 't', 'h', 'a', 't', 'p', 'm']
 >>>
->>> re.findall('[a-zA-Z0-9]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'[a-zA-Z0-9]', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['M', 'a', 'r', 'k', 'W', 'a', 't', 'n', 'e', 'y', 'o', 'f', 'A', 'r',
  'e', 's', '3', 'l', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'M', 'a', 'r',
  's', 'o', 'n', 'N', 'o', 'v', '7', 't', 'h', '2', '0', '3', '5', 'a',
@@ -172,10 +172,10 @@ Encoding`). Because uppercase letters are before lowercase letters (has
 lower indexes), you can define range from ``Z-a``, but the opposite is not
 true:
 
->>> re.findall('[Z-a]', TEXT)
+>>> re.findall(r'[Z-a]', TEXT)
 ['a', 'a', 'a', 'a', 'a']
 
->>> re.findall('[a-Z]', TEXT)
+>>> re.findall(r'[a-Z]', TEXT)
 Traceback (most recent call last):
 re.error: bad character range a-Z at position 1
 
@@ -186,13 +186,13 @@ Extensions`.
 Mind that ranges not necessarily need to be from a-z. It could be any
 alphabetic or numeric range:
 
->>> re.findall('[3-7]', TEXT)
+>>> re.findall(r'[3-7]', TEXT)
 ['3', '7', '3', '5', '3', '7']
 >>>
->>> re.findall('[C-Y]', TEXT)
+>>> re.findall(r'[C-Y]', TEXT)
 ['M', 'W', 'M', 'N']
 >>>
->>> re.findall('[3-7C-Y]', TEXT)
+>>> re.findall(r'[3-7C-Y]', TEXT)
 ['M', 'W', '3', 'M', 'N', '7', '3', '5', '3', '7']
 
 
@@ -205,22 +205,22 @@ Joining
 
 Alternative enumerations syntax is as follows:
 
->>> re.findall('[abc]|[123]', TEXT)
+>>> re.findall(r'[abc]|[123]', TEXT)
 ['a', 'a', '3', 'a', 'a', '2', '3', 'a', '1', '3']
 
 The effect is identical to:
 
->>> re.findall('[abc123]', TEXT)
+>>> re.findall(r'[abc123]', TEXT)
 ['a', 'a', '3', 'a', 'a', '2', '3', 'a', '1', '3']
 
 You can define alternative ranges to find:
 
->>> re.findall('[A-Z]|[0-9]', TEXT)
+>>> re.findall(r'[A-Z]|[0-9]', TEXT)
 ['M', 'W', 'A', '3', 'M', 'N', '7', '2', '0', '3', '5', '1', '3', '7']
 
 The effect is identical to:
 
->>> re.findall('[A-Z0-9]', TEXT)
+>>> re.findall(r'[A-Z0-9]', TEXT)
 ['M', 'W', 'A', '3', 'M', 'N', '7', '2', '0', '3', '5', '1', '3', '7']
 
 
@@ -242,11 +242,11 @@ Use Case - 0x01
 
 Note, the `nd` in word `landed`:
 
->>> re.findall('st|nd|rd|th', TEXT)
+>>> re.findall(r'st|nd|rd|th', TEXT)
 ['nd', 'th']
 
->>> re.findall('[st|nd|rd|th]', TEXT)
+>>> re.findall(r'[st|nd|rd|th]', TEXT)
 ['r', 't', 'n', 'r', 's', 'n', 'd', 'd', 'n', 'r', 's', 'n', 't', 'h', 't']
 
->>> re.findall('[stndrdth]', TEXT)
+>>> re.findall(r'[stndrdth]', TEXT)
 ['r', 't', 'n', 'r', 's', 'n', 'd', 'd', 'n', 'r', 's', 'n', 't', 'h', 't']

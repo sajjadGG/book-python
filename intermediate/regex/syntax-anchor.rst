@@ -16,20 +16,20 @@ Any Character
 
 Search for letters ``No`` followed by any character:
 
->>> re.findall('No.', TEXT)
+>>> re.findall(r'No.', TEXT)
 ['Nov']
 
 Search for uppercase letter followed by any three characters:
 
->>> re.findall('[A-Z]...', TEXT)
+>>> re.findall(r'[A-Z]...', TEXT)
 ['Mark', 'Watn', 'Ares', 'Mars', 'Nov ']
 
 Example:
 
->>> re.findall('1:37 ..', TEXT)
+>>> re.findall(r'1:37 ..', TEXT)
 ['1:37 pm']
 >>>
->>> re.findall('Nov 7..', TEXT)
+>>> re.findall(r'Nov 7..', TEXT)
 ['Nov 7th']
 
 
@@ -43,12 +43,12 @@ Start of Line
 
 Search for a capital letter in text at the start of a line:
 
->>> re.findall('^[A-Z]', TEXT)
+>>> re.findall(r'^[A-Z]', TEXT)
 ['M']
 
 Search for a capital letter anywhere in text:
 
->>> re.findall('[A-Z]', TEXT)
+>>> re.findall(r'[A-Z]', TEXT)
 ['M', 'W', 'A', 'M', 'N']
 
 
@@ -62,7 +62,7 @@ End of Line
 
 Give me last two characters in a text:
 
->>> re.findall('..$', TEXT)
+>>> re.findall(r'..$', TEXT)
 ['pm']
 
 
@@ -76,13 +76,13 @@ Start of String
 
 Search for a capital letter in text at the start of a line:
 
->>> re.findall('\A[A-Z]', TEXT)
+>>> re.findall(r'\A[A-Z]', TEXT)
 ['M']
 
 Note, that the output is identical to Start of a Line ``^``. It will differ
 when ``re.MULTILINE`` flag is present.
 
->>> re.findall('^[A-Z]', TEXT)
+>>> re.findall(r'^[A-Z]', TEXT)
 ['M']
 
 
@@ -96,13 +96,13 @@ End of String
 
 Give me last two characters in a text:
 
->>> re.findall('..\Z', TEXT)
+>>> re.findall(r'..\Z', TEXT)
 ['pm']
 
 Note, that the output is identical to Start of a Line ``^``. It will differ
 when ``re.MULTILINE`` flag is present.
 
->>> re.findall('..$', TEXT)
+>>> re.findall(r'..$', TEXT)
 ['pm']
 
 

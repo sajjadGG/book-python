@@ -79,10 +79,10 @@ Greedy vs. Lazy
 
 Greedy vs Lazy in exact match has no difference:
 
->>> re.findall('\d{2}?', TEXT)
+>>> re.findall(r'\d{2}?', TEXT)
 ['20', '35', '37']
 
->>> re.findall('\d{2}', TEXT)
+>>> re.findall(r'\d{2}', TEXT)
 ['20', '35', '37']
 
 
@@ -90,16 +90,16 @@ Special
 -------
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
->>> re.findall('\d{0,}', TEXT) == re.findall('\d*', TEXT)
+>>> re.findall(r'\d{0,}', TEXT) == re.findall(r'\d*', TEXT)
 True
 
->>> re.findall('\d{1,}', TEXT) == re.findall('\d+', TEXT)
+>>> re.findall(r'\d{1,}', TEXT) == re.findall(r'\d+', TEXT)
 True
 
->>> re.findall('\d+', TEXT)
+>>> re.findall(r'\d+', TEXT)
 ['3', '7', '2035', '1', '37']
 
->>> re.findall('\d*', TEXT)  # doctest: +NORMALIZE_WHITESPACE
+>>> re.findall(r'\d*', TEXT)  # doctest: +NORMALIZE_WHITESPACE
 ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
  '', '', '3', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
  '', '', '', '', '', '', '', '', '', '7', '', '', '', '', '2035', '', '',
@@ -124,7 +124,7 @@ Use Case - 0x01
 >>> import re
 >>> TEXT = 'Pi number is 3.1415...'
 
->>> pi = re.findall('\d+\.\d+', TEXT)
+>>> pi = re.findall(r'\d+\.\d+', TEXT)
 >>> pi
 ['3.1415']
 
@@ -136,10 +136,10 @@ Use Case - 0x02
 >>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 
->>> re.findall('\d\d:\d\d', TEXT)
+>>> re.findall(r'\d\d:\d\d', TEXT)
 []
 
->>> re.findall('\d\d?:\d\d', TEXT)
+>>> re.findall(r'\d\d?:\d\d', TEXT)
 ['1:37']
 
 
@@ -152,7 +152,7 @@ Use Case - 0x03
 
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
->>> result = re.findall('\w{3} \d{1,2}th, \d{4}', TEXT)
+>>> result = re.findall(r'\w{3} \d{1,2}th, \d{4}', TEXT)
 
 >>> result
 ['Nov 7th, 2035']
@@ -181,10 +181,10 @@ Use Case - 0x05
 >>> import re
 >>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
 
->>> re.findall('<p>.*</p>', HTML)
+>>> re.findall(r'<p>.*</p>', HTML)
 ['<p>Paragraph 1</p><p>Paragraph 2</p>']
 
->>> re.findall('<p>.*?</p>', HTML)
+>>> re.findall(r'<p>.*?</p>', HTML)
 ['<p>Paragraph 1</p>', '<p>Paragraph 2</p>']
 
 
@@ -193,13 +193,13 @@ Use Case - 0x06
 >>> import re
 >>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
 
->>> re.findall('<p>', HTML)
+>>> re.findall(r'<p>', HTML)
 ['<p>', '<p>']
 
->>> re.findall('</p>', HTML)
+>>> re.findall(r'</p>', HTML)
 ['</p>', '</p>']
 
->>> re.findall('</?p>', HTML)
+>>> re.findall(r'</?p>', HTML)
 ['<p>', '</p>', '<p>', '</p>']
 
 
@@ -208,19 +208,19 @@ Use Case - 0x07
 >>> import re
 >>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
 
->>> re.findall('<.+>', HTML)
+>>> re.findall(r'<.+>', HTML)
 ['<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>']
 
->>> re.findall('<.+?>', HTML)
+>>> re.findall(r'<.+?>', HTML)
 ['<h1>', '</h1>', '<p>', '</p>', '<p>', '</p>']
 
->>> re.findall('</?.+?>', HTML)
+>>> re.findall(r'</?.+?>', HTML)
 ['<h1>', '</h1>', '<p>', '</p>', '<p>', '</p>']
 
->>> re.findall('</?(.+?)>', HTML)
+>>> re.findall(r'</?(.+?)>', HTML)
 ['h1', 'h1', 'p', 'p', 'p', 'p']
 
->>> tags = re.findall('</?(.+?)>', HTML)
+>>> tags = re.findall(r'</?(.+?)>', HTML)
 >>> sorted(set(tags))
 ['h1', 'p']
 
@@ -230,8 +230,8 @@ Use Case - 0x08
 >>> import re
 >>> HTML = '<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>'
 
->>> re.findall('</?.*>', HTML)
+>>> re.findall(r'</?.*>', HTML)
 ['<h1>Header 1</h1><p>Paragraph 1</p><p>Paragraph 2</p>']
 
->>> re.findall('</?.*?>', HTML)
+>>> re.findall(r'</?.*?>', HTML)
 ['<h1>', '</h1>', '<p>', '</p>', '<p>', '</p>']
