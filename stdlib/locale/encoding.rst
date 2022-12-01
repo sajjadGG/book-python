@@ -272,6 +272,13 @@ Emoticons:
 🧑‍🚀
 
 
+Encoding
+--------
+.. csv-table:: Encoding
+    :file: data/encoding.csv
+    :header-rows: 1
+
+
 Further Reading
 ---------------
 * https://youtu.be/MijmeoH9LT4
