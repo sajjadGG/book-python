@@ -1,8 +1,8 @@
-Module VENV
+Module venv
 ===========
 * Isolated Python environment
 * Allows to have multiple versions of Python for one project
-* For testing on different versions: ``py38``, ``py39``, ``py310``
+* For testing on different versions: ``python3.9``, ``python3.10``, ``python3.11``
 * Test libraries and frameworks before upgrading (create venv, install requirements, run tests, delete if fails)
 * Allows to have different versions of libraries and frameworks for each project
 * Difference between ``venv`` and ``virtualenv``
@@ -14,16 +14,14 @@ Module VENV
 Venv vs Virtualenv
 ------------------
 Both ``venv`` and ``virtualenv`` are used to create isolated
-Python environments.
-
-Since Python 3.3, a subset of ``virtualenv`` has been integrated into
-the standard library under the ``venv`` module.
+Python environments. Since Python 3.3, a subset of ``virtualenv``
+has been integrated into the standard library under the ``venv`` module.
 
 Module ``venv``:
 
     * Python: version 3 only
     * Install: not required - bundled with Python since Python 3.3
-    * Usage: ``python3.10 -m venv DIRECTORY``
+    * Usage: ``python3.11 -m venv DIRECTORY``
     * Development: slower and synchronized with Python releases
     * Features: all you need
     * Author: Bernat Gabor
@@ -43,7 +41,7 @@ is required to use it.
 
 Create
 ------
-* ``.venv-py310`` is the name of venv folder
+* ``.venv-py311`` is the name of venv folder
 * See "Directory Naming Convention" below
 
 .. code-block:: console
@@ -51,8 +49,8 @@ Create
     # Go to project directory
     $ cd PROJECT
 
-    # Create virtual environment in directory named `.venv-py310`
-    $ python3.10 -m venv .venv-py310
+    # Create virtual environment in directory named ``.venv-py311``
+    $ python3.11 -m venv .venv-py311
 
 
 Run Ad-Hoc
@@ -66,7 +64,7 @@ Run Ad-Hoc
     $ cd PROJECT
 
     # Run ``myscript.py`` using virtual environment
-    $ venv-py310/bin/python3 myscript.py
+    $ venv-py311/bin/python3 myscript.py
 
 
 Activate
@@ -83,7 +81,7 @@ macOS, Linux, BSD:
     $ cd PROJECT
 
     # Activate virtual environment
-    $ source venv-py310/bin/activate
+    $ source venv-py311/bin/activate
 
 Windows:
 
@@ -93,7 +91,7 @@ Windows:
     $ cd PROJECT
 
     # Activate virtual environment
-    $ venv-py310\Scripts\activate.bat
+    $ venv-py311\Scripts\activate.bat
 
 
 Install Modules
@@ -106,16 +104,16 @@ Ad-hoc:
     $ cd PROJECT
 
     # Install new module
-    $ venv-py310/bin/python3 -m pip install MODULE
+    $ venv-py311/bin/python3 -m pip install MODULE
 
     # Install modules listed in `requirements.txt`
-    $ venv-py310/bin/python3 -m pip install -r requirements.txt
+    $ venv-py311/bin/python3 -m pip install -r requirements.txt
 
     # Upgrade modules listed in `requirements.txt`
-    $ venv-py310/bin/python3 -m pip install --upgrade -r requirements.txt
+    $ venv-py311/bin/python3 -m pip install --upgrade -r requirements.txt
 
     # Check installed modules
-    $ venv-py310/bin/python3 -m pip freeze
+    $ venv-py311/bin/python3 -m pip freeze
 
 Activated:
 
@@ -125,16 +123,16 @@ Activated:
     $ cd PROJECT
 
     # Activate virtual environment
-    $ source venv-py310/bin/activate
+    $ source venv-py311/bin/activate
 
     # Install new module
-    $ python3 -m pip install MODULE
+    $ python3 -m pip install PACKAGE
 
     # Install modules listed in `requirements.txt`
     $ python3 -m pip install -r requirements.txt
 
     # Upgrade modules listed in `requirements.txt`
-    $ python3 -m pip pip install --upgrade -r requirements.txt
+    $ python3 -m pip install --upgrade -r requirements.txt
 
     # Check installed modules
     $ python3 -m pip freeze
@@ -151,97 +149,80 @@ Directory Naming Convention
 
 .. code-block:: text
 
-    venv/
-    .venv/
-    _venv/
-
-    virtualenv/
-    .virtualenv/
-    _virtualenv/
-
+    venv
     venv-py
-    .venv-py
-
-    py-3.10
-    python-3.10
-    python-3.10.0
-
-    .py-3.10
-    .python-3.10
-    .python-3.10.0
-
-    venv-py3.8/
-    venv-py3.9/
-    venv-py3.10/
-
-    venv-py3.10.0/
-    venv-py3.10.1/
-    venv-py3.10.2/
-    venv-py3.10.3/
-    venv-py3.10.4/
-    venv-py3.10.5/
-    venv-py3.10.6/
-    venv-py3.10.7/
-
-    venv-py3.11-alpha1/
-    venv-py3.11-alpha2/
-    venv-py3.11-beta1/
-    venv-py3.11-beta2/
-    venv-py3.11-rc1/
-
-    venv-django-3.0
-    venv-django-3.1
-    venv-django-3.2
-    venv-django-4.0
-    venv-django-4.1
-    venv-django-4.2
-    venv-django-5.0a1
-    venv-django-5.0a2
-    venv-django-5.0b1
-    venv-django-5.0b2
-    venv-django-5.0rc1
-    venv-django-5.0rc2
-
-    venv-py310-dj32
-    venv-py310-dj40
-    venv-py310-dj41a1
-    venv-py310-dj41b1
-    venv-py310-dj41rc1
-
-    venv-python310-django32
-    venv-python310-django40
-    venv-python310-django41a1
-    venv-python310-django41b1
-    venv-python310-django41rc1
+    venv-py310
+    venv-py311
+    venv-py312a1
+    venv-py312b1
+    venv-py312rc1
+    venv-py311-dj40
+    venv-py311-dj41
+    venv-py311-dj42
+    venv-py311-dj50a1
+    venv-py311-dj50b1
+    venv-py311-dj50rc1
+    venv-py311-np123-pd15
 
 
 Good Practices
 --------------
-* ``python3.10 -m venv -h``
-* ``python3.10 -m venv --upgrade-deps venv-py310``
-* Name venv directory similar to python version ``venv-py3.10``
+* ``python3.11 -m venv -h``
+* ``python3.11 -m venv --upgrade-deps venv-py311``
+* Name venv directory similar to python version ``venv-py3.11``
 * Place in your project directory
 * Add venv directory to ``.gitignore`` (important!)
-* Change prompt by appending at the end of ``venv-3.10/bin/activate``:
+* Change prompt by appending at the end of ``venv-3.11/bin/activate``:
 
-``bash`` (Linux):
+
+Bash Prompt
+-----------
+* Default on most Linux distributions
+* ``\e[``  – This string tells bash prompt to apply color from next character.
+* ``0;32m``  – This string represents the colors. The number before the; represent typeface. And the number after the ; represent color code.
+* ``\e[0m`` – This string will tell the bash prompt to apply the color to the previous character.
+
+Typeface:
+
+* 0 – Normal
+* 1 – Bold
+* 2 – Dim
+* 4 – Underlined
+
+Color codes:
+
+* 30 – Black
+* 31 – Red
+* 32 – Green
+* 33 – Brown
+* 34 – Blue
+* 35 – Purple
+* 36 – Cyan
+* 37 – Light gray
 
 .. code-block:: bash
 
+    red='\e[0;31m'
+    green='\e[0;32m'
+    brown='\e[0;33m'
+    blue='\e[0;34m'
+    purple='\e[0;35m'
+    cyan='\e[0;36m'
+    gray='\e[0;37m'
+    white='\e[0;39m'
+
     project_name='My Project'
+    export PS1="\n${cyan}${project_name}> ${white}"
 
-    red='\[\033[00;31m\]'
-    green='\[\033[00;32m\]'
-    blue='\[\033[00;36m\]'
-    white='\[\033[00;39m\]'
 
-    export PS1="\n${blue}${project_name}> ${white}"
-
-``zsh`` (macOS):
+Zsh Prompt
+----------
+* Default on macOS
+* Colors: black, red, green, yellow, blue, magenta, cyan, white
 
 .. code-block:: zsh
 
-    export PS1=$'\n%F{blue}project_name> %F{white}'
+    export PROMPT='\n%F{blue}project_name> %F{white}'
 
 
 Further Reading

@@ -188,8 +188,8 @@ Operator
     operator/string-operators.rst
 
     operator/arithmetic-about.rst
+    operator/arithmetic-left.rst
     operator/arithmetic-increment.rst
-    operator/arithmetic-operators.rst
     operator/arithmetic-right.rst
 
     operator/comparison.rst

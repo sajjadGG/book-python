@@ -1,5 +1,5 @@
-Operator Numerical
-==================
+Operator Arithmetic Left
+========================
 * ``+`` - add
 * ``-`` - sub
 * ``*`` - mul

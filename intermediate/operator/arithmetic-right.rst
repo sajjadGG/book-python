@@ -1,5 +1,5 @@
-Operator Numerical
-==================
+Operator Arithmetic Right
+=========================
 * ``+`` - radd
 * ``-`` - rsub
 * ``*`` - rmul

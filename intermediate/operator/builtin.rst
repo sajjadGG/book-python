@@ -1,25 +1,25 @@
 Operator Builtin
 ================
-* abs
-* bool
-* complex
-* del
-* delattr
-* dir
-* divmod
-* float
-* getattr
-* hash
-* hex
-* int
-* iter
-* len
-* next
-* oct
-* pow
-* reversed
-* round
-* setattr
+* ``abs()``
+* ``bool()``
+* ``complex()``
+* ``del()``
+* ``delattr()``
+* ``dir()``
+* ``divmod()``
+* ``float()``
+* ``getattr()``
+* ``hash()``
+* ``hex()``
+* ``int()``
+* ``iter()``
+* ``len()``
+* ``next()``
+* ``oct()``
+* ``pow()``
+* ``reversed()``
+* ``round()``
+* ``setattr()``
 
 
 About

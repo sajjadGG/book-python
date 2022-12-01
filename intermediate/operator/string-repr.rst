@@ -1,8 +1,9 @@
 Operator String Repr
 ====================
-* Calling function ``repr(obj)`` calls ``obj.__repr__()``
+* Typing ``obj`` into REPL (console) calls ``repr(obj)``
+* Calling ``repr(obj)`` calls ``obj.__repr__()``
 * Method ``obj.__repr__()`` must return ``str``
-* Dedicated for developers
+* Intended for developers of your class
 * Shows object representation
 * Copy-paste for creating object with the same values
 * Useful for debugging

@@ -1,4 +1,4 @@
-Module PIP
+Module pip
 ==========
 
 

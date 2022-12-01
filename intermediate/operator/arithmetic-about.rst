@@ -1,5 +1,5 @@
-Operator About
-==============
+Operator Arithmetic About
+=========================
 * Operator Overload
 * Operator Overload is the Pythonic way
 * Operator Overload allows readable syntax

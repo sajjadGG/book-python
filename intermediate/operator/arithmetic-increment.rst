@@ -1,5 +1,5 @@
-Operator Numerical
-==================
+Operator Arithmetic Increment
+=============================
 * ``+=`` - iadd
 * ``-=`` - isub
 * ``*=`` - imul

@@ -1,5 +1,5 @@
-Enum
-====
+Enum Built-in
+=============
 
 
 http.HTTPStatus

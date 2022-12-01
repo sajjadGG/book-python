@@ -1,9 +1,9 @@
 Operator String Str
 ===================
-* Calling function ``print(obj)`` calls ``str(obj)``
-* Calling function ``str(obj)`` calls ``obj.__str__()``
+* Calling ``print(obj)`` calls ``str(obj)``
+* Calling ``str(obj)`` calls ``obj.__str__()``
 * Method ``obj.__str__()`` must return ``str``
-* This is dedicated for end-user of your class
+* Intended for end-users of your class
 
 
 Inherited

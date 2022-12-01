@@ -1,5 +1,5 @@
-Logging
-=======
+Logging Levels
+==============
 * Do not print
 * Always use logger
 * Logs can be displayed on console

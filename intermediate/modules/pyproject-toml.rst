@@ -13,10 +13,6 @@ to build the package. [#pyproject]_
 
 .. code-block:: toml
 
-    [build-system]
-    requires = ["flit"]
-    build-backend = "flit.buildapi"
-
     [project]
     name = "Project Name"
     license = "GPL-2.0-only"
@@ -56,6 +52,7 @@ to build the package. [#pyproject]_
         "django ~= 4.1.3",
         "ninja ~= 0.19.1"
     ]
+
     [project.optional-dependencies]
     test = [
         "mypy",
@@ -69,6 +66,11 @@ to build the package. [#pyproject]_
     documentation = "https://github.com/myuser/myrepo"
     bugtracker = "https://github.com/myuser/myrepo/issues"
 
+
+    ## Console scripts
+    # Builder will install a shell script named `myapp-cli` in venv's
+    # bin directory: `.venv-py311/bin/myapp-cli`
+
     [project.scripts]
     myapp-cli = "myapp:main_cli"
 
@@ -78,39 +80,46 @@ to build the package. [#pyproject]_
     [project.entry-points."myapp.magical"]
     tomatoes = "myapp:main_tomatoes"
 
+
+    ## Build System
+
+    # [build-system]
+    # requires = ["flit"]
+    # build-backend = "flit.buildapi"
+
+    [build-system]
+    requires = ["setuptools>=61.0"]
+    build-backend = "setuptools.build_meta"
+
+
+    ## External Tools Configuration
+
     [tool.pylint]
-    max-line-length = 88
+    max-line-length = 79
     disable = [
-        "C0114", # (missing-module-docstring)
-        "C0115", # (missing-class-docstring)
-        "C0116", # (missing-function-docstring)
-        "R0903", # (too-few-public-methods)
-        "R0913", # (too-many-arguments)
+        "C0114",    # (missing-module-docstring)
+        "C0115",    # (missing-class-docstring)
+        "C0116",    # (missing-function-docstring)
+        "R0903",    # (too-few-public-methods)
+        "R0913",    # (too-many-arguments)
     ]
 
     [tool.black]
-    line-length = 120
+    line-length = 79
     target_version = ['py311']
     include = '\.pyi?$'
-    exclude = '''
-
-    (
+    exclude = '''(
       /(
           \.eggs         # exclude a few common directories in the
         | \.git          # root of the project
-        | \.hg
         | \.mypy_cache
-        | \.tox
         | \.venv
-        | _build
-        | buck-out
         | build
         | dist
       )/
       | foo.py           # also separately exclude a file named foo.py in
                          # the root of the project
-    )
-    '''
+    )'''
 
     [tool.mypy]
     # Import discovery
