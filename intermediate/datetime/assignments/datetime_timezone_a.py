@@ -1,12 +1,12 @@
 """
-* Assignment: Datetime Timezone Pytz
+* Assignment: Datetime Timezone ZoneInfo
 * Complexity: easy
 * Lines of code: 13 lines
 * Time: 13 min
 
 English:
-    0. Install `pytz` module (`pip install pytz`)
-    1. Create `pytz.timezone` object of:
+    0. If you're on Windows then install module `tzdata` (`pip install tzdata`)
+    1. Create `zoneinfo.ZoneInfo` object of:
         a. UTC
         b. London, United Kingdom
         c. Buenos Aires, Argentina
@@ -19,9 +19,9 @@ English:
     3. Run doctests - all must succeed
 
 Polish:
-    0. Zainstaluj moduł `pytz` (`pip install pytz`)
-    1. Stwórz obiekt `pytz.timezone` z:
-        a. UCT
+    0. Jeżeli masz Windows to zainstaluj moduł `tzdata` (`pip install tzdata`)
+    1. Stwórz obiekt `zoneinfo.ZoneInfo` z:
+        a. UTC
         b. London, Wielka Brytania
         c. Buenos Aires, Argentyna
         d. Warsaw, Polska
@@ -36,20 +36,24 @@ Extra Task:
     1. Cape Canaveral, FL, USA
     2. Houston, TX, USA
     3. Bajkonur Cosmodrome, Kazachstan
-    5. North Pole
-    6. South Pole (Henryk Arctowski Polish Antarctic Station)
+    4. North Pole
+    5. South Pole (Henryk Arctowski Polish Antarctic Station)
 
 References:
     [1] Wikipedia. List of tz database time zones.
+        Retrieved: 2022-12-01
+        Year: 2022
         URL: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-        Retrieved: 2021-03-24
     [2] IANA. Time Zone Database.
+        Retrieved: 2022-12-01
+        Year: 2022
         URL: https://data.iana.org/time-zones/releases/
-        Retrieved: 2021-03-24
+
+Hints:
+    * https://en.wikipedia.org/wiki/Time_in_Antarctica
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-    >>> from pytz.tzinfo import DstTzInfo, BaseTzInfo
 
     >>> assert utc is not Ellipsis, \
     'Assign value to variable `utc` has instead of Ellipsis (...)'
@@ -78,115 +82,128 @@ Tests:
     >>> assert south_pole is not Ellipsis, \
     'Assign value to variable `south_pole` instead of Ellipsis (...)'
 
-    >>> assert isinstance(utc, BaseTzInfo), \
-    'Variable `utc` has invalid type, must be a BaseTzInfo'
-    >>> assert isinstance(london, DstTzInfo), \
-    'Variable `london` has invalid type, must be a DstTzInfo'
-    >>> assert isinstance(buenos_aires, DstTzInfo), \
-    'Variable `buenos_aires` has invalid type, must be a DstTzInfo'
-    >>> assert isinstance(warsaw, DstTzInfo), \
-    'Variable `warsaw` has invalid type, must be a DstTzInfo'
-    >>> assert isinstance(tokyo, DstTzInfo), \
-    'Variable `tokyo` has invalid type, must be a DstTzInfo'
-    >>> assert isinstance(sydney, DstTzInfo), \
-    'Variable `sydney` has invalid type, must be a DstTzInfo'
-    >>> assert isinstance(auckland, DstTzInfo), \
-    'Variable `auckland` has invalid type, must be a DstTzInfo'
-    >>> assert isinstance(new_york, DstTzInfo), \
-    'Variable `new_york` has invalid type, must be a DstTzInfo'
-    >>> assert isinstance(cape_canaveral, DstTzInfo), \
-    'Variable `cape_canaveral` has invalid type, must be a DstTzInfo'
-    >>> assert isinstance(houston, DstTzInfo), \
-    'Variable `houston` has invalid type, must be a DstTzInfo'
-    >>> assert isinstance(bajkonur, DstTzInfo), \
-    'Variable `bajkonur` has invalid type, must be a DstTzInfo'
-    >>> assert isinstance(north_pole, DstTzInfo), \
-    'Variable `north_pole` has invalid type, must be a DstTzInfo'
-    >>> assert isinstance(south_pole, DstTzInfo), \
-    'Variable `south_pole` has invalid type, must be a DstTzInfo'
+    >>> assert isinstance(utc, ZoneInfo), \
+    'Variable `utc` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(london, ZoneInfo), \
+    'Variable `london` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(buenos_aires, ZoneInfo), \
+    'Variable `buenos_aires` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(warsaw, ZoneInfo), \
+    'Variable `warsaw` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(tokyo, ZoneInfo), \
+    'Variable `tokyo` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(sydney, ZoneInfo), \
+    'Variable `sydney` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(auckland, ZoneInfo), \
+    'Variable `auckland` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(new_york, ZoneInfo), \
+    'Variable `new_york` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(cape_canaveral, ZoneInfo), \
+    'Variable `cape_canaveral` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(houston, ZoneInfo), \
+    'Variable `houston` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(bajkonur, ZoneInfo), \
+    'Variable `bajkonur` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(north_pole, ZoneInfo), \
+    'Variable `north_pole` has invalid type, must be a ZoneInfo'
+    >>> assert isinstance(south_pole, ZoneInfo), \
+    'Variable `south_pole` has invalid type, must be a ZoneInfo'
 
-    >>> utc._utcoffset
-    datetime.timedelta(0)
-    >>> london._utcoffset
-    datetime.timedelta(days=-1, seconds=86340)
-    >>> buenos_aires._utcoffset
-    datetime.timedelta(days=-1, seconds=72360)
-    >>> warsaw._utcoffset
-    datetime.timedelta(seconds=5040)
-    >>> tokyo._utcoffset
-    datetime.timedelta(seconds=33540)
-    >>> sydney._utcoffset
-    datetime.timedelta(seconds=36300)
-    >>> auckland._utcoffset
-    datetime.timedelta(seconds=41940)
-    >>> new_york._utcoffset
-    datetime.timedelta(days=-1, seconds=68640)
-    >>> cape_canaveral._utcoffset
-    datetime.timedelta(days=-1, seconds=68640)
-    >>> houston._utcoffset
-    datetime.timedelta(days=-1, seconds=65340)
-    >>> bajkonur._utcoffset
-    datetime.timedelta(seconds=18480)
-    >>> north_pole._utcoffset  # doctest: +SKIP
-    datetime.timedelta(seconds=2580)
-    >>> south_pole._utcoffset
-    datetime.timedelta(seconds=5040)
+    >>> utc.key
+    'UTC'
+    >>> london.key
+    'Europe/London'
+    >>> buenos_aires.key
+    'America/Argentina/Buenos_Aires'
+    >>> warsaw.key
+    'Europe/Warsaw'
+    >>> tokyo.key
+    'Asia/Tokyo'
+    >>> sydney.key
+    'Australia/Sydney'
+    >>> auckland.key
+    'Pacific/Auckland'
+    >>> new_york.key
+    'America/New_York'
+    >>> cape_canaveral.key
+    'America/New_York'
+    >>> houston.key
+    'America/Chicago'
+    >>> bajkonur.key
+    'Asia/Almaty'
+    >>> north_pole.key
+    'Arctic/Longyearbyen'
+    >>> south_pole.key
+    'Europe/Warsaw'
 """
 
-from pytz import timezone
+from zoneinfo import ZoneInfo
 
 
-# timezone in UTC
+# Timezone in UTC
+# type: ZoneInfo
 utc = ...
 
-# timezone in London, United Kingdom
+# Timezone in London, United Kingdom
+# type: ZoneInfo
 london = ...
 
-# timezone in Buenos Aires, Argentina
+# Timezone in Buenos Aires, Argentina
+# type: ZoneInfo
 buenos_aires = ...
 
-# timezone in Warsaw, Poland
+# Timezone in Warsaw, Poland
+# type: ZoneInfo
 warsaw = ...
 
-# timezone in Tokyo, Japan
+# Timezone in Tokyo, Japan
+# type: ZoneInfo
 tokyo = ...
 
-# timezone in Sydney, Australia
+# Timezone in Sydney, Australia
+# type: ZoneInfo
 sydney = ...
 
-# timezone in Auckland, New Zealand
+# Timezone in Auckland, New Zealand
+# type: ZoneInfo
 auckland = ...
 
-# timezone in New York, USA
+# Timezone in New York, USA
+# type: ZoneInfo
 new_york = ...
 
-# timezone in Cape Canaveral, FL, USA
+# Timezone in Cape Canaveral, FL, USA
+# type: ZoneInfo
 cape_canaveral = ...
 
-# timezone in Houston, TX, USA= ...
+# Timezone in Houston, TX, USA= ...
+# type: ZoneInfo
 houston = ...
 
-# timezone in Bajkonur Cosmodrome, Kazachstan
+# Timezone in Bajkonur Cosmodrome, Kazachstan
+# type: ZoneInfo
 bajkonur = ...
 
-# timezone in North Pole
+# Timezone in North Pole
+# type: ZoneInfo
 north_pole = ...
 
-# timezone in South Pole
+# Timezone in South Pole
+# type: ZoneInfo
 south_pole = ...
 
 # Solution
-utc = timezone('UTC')
-london = timezone('Europe/London')
-buenos_aires = timezone('America/Argentina/Buenos_Aires')
-warsaw = timezone('Europe/Warsaw')
-tokyo = timezone('Asia/Tokyo')
-sydney = timezone('Australia/Sydney')
-auckland = timezone('Pacific/Auckland')
-new_york = timezone('America/New_York')
+utc = ZoneInfo('UTC')
+london = ZoneInfo('Europe/London')
+buenos_aires = ZoneInfo('America/Argentina/Buenos_Aires')
+warsaw = ZoneInfo('Europe/Warsaw')
+tokyo = ZoneInfo('Asia/Tokyo')
+sydney = ZoneInfo('Australia/Sydney')
+auckland = ZoneInfo('Pacific/Auckland')
+new_york = ZoneInfo('America/New_York')
 
-cape_canaveral = timezone('America/New_York')
-houston = timezone('America/Chicago')
-bajkonur = timezone('Asia/Almaty')
-north_pole = timezone('Arctic/Longyearbyen')
-south_pole = timezone('Europe/Warsaw')
+cape_canaveral = ZoneInfo('America/New_York')
+houston = ZoneInfo('America/Chicago')
+bajkonur = ZoneInfo('Asia/Almaty')
+north_pole = ZoneInfo('Arctic/Longyearbyen')
+south_pole = ZoneInfo('Europe/Warsaw')

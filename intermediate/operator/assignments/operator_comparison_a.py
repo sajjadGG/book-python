@@ -17,6 +17,13 @@ Polish:
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
+    >>> class Car:
+    ...     def __init__(self, year, name):
+    ...         self.year = year
+    ...         self.name = name
+
+    >>> Mission(2035, 'Ares 3') == Car(2035, 'Ares 3')
+    False
     >>> Mission(2035, 'Ares 3') == Mission(2035, 'Ares 3')
     True
     >>> Mission(2035, 'Ares 3') == Mission(1973, 'Apollo 18')
@@ -32,14 +39,7 @@ class Mission:
         self.year = year
         self.name = name
 
-
-# Solution
-class Mission:
-    def __init__(self, year, name):
-        self.year = year
-        self.name = name
-
     def __eq__(self, other):
-        return self.__class__ == other.__class__ \
-           and self.year == other.year \
-           and self.name == other.name
+        return self.__class__ is other.__class__ \
+            and self.year == other.year \
+            and self.name == other.name

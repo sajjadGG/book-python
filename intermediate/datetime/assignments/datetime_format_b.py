@@ -6,12 +6,12 @@
 
 English:
     1. Define `result: str` with `DATA` in short US format
-    2. Make sure, that hour is without leading zero
+    2. Make sure, that month, day and hour are without leading zero
     3. Run doctests - all must succeed
 
 Polish:
-    1. Zdefiniuj `result: str` z `DATA` w długim formacie amerykańskim
-    2. Upewnij się, że godzina jest bez wiodącego zera
+    1. Zdefiniuj `result: str` z `DATA` w krótkim formacie amerykańskim
+    2. Upewnij się, że miesiąc, dzień i godzina jest bez wiodącego zera
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:
@@ -38,5 +38,5 @@ DATA = datetime(1969, 7, 21, 2, 56, 15)
 result = ...
 
 # Solution
-result = DATA.strftime('%#m/%d/%y %#I:%M %p')  # Windows
-result = DATA.strftime('%-m/%d/%y %-I:%M %p')  # *nix
+result = DATA.strftime('%#m/%#d/%y %#I:%M %p')  # Windows
+result = DATA.strftime('%-m/%-d/%y %-I:%M %p')  # *nix

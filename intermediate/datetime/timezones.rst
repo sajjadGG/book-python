@@ -8,6 +8,12 @@ Datetime Timezone
 * ``pip install tzdata``
 
 
+SetUp
+-----
+>>> from datetime import date, time, datetime, timedelta, timezone
+>>> from zoneinfo import ZoneInfo
+
+
 Daylight Saving Time
 --------------------
 * Daylight Saving Time date is different for each country and even US state
@@ -37,27 +43,21 @@ Comparing datetime works only when all has the same timezone (UTC):
 
 Timezone Naive Datetimes
 ------------------------
->>> from datetime import datetime
->>>
->>>
 >>> datetime(1957, 10, 4, 19, 28, 34)
 datetime.datetime(1957, 10, 4, 19, 28, 34)
->>>
+
 >>> datetime.now()  # doctest: +SKIP
 datetime.datetime(1957, 10, 4, 19, 28, 34)
 
 
 Timezone Aware Datetimes
 ------------------------
->>> from datetime import datetime, timezone
->>>
->>>
 >>> datetime.now(timezone.utc)  # doctest: +SKIP
 datetime.datetime(1957, 10, 4, 19, 28, 34, tzinfo=datetime.timezone.utc)
->>>
+
 >>> datetime(1957, 10, 4, 19, 28, 34, tzinfo=timezone.utc)
 datetime.datetime(1957, 10, 4, 19, 28, 34, tzinfo=datetime.timezone.utc)
->>>
+
 >>> dt = datetime(1957, 10, 4, 19, 28, 34)
 >>> dt.replace(tzinfo=timezone.utc)
 datetime.datetime(1957, 10, 4, 19, 28, 34, tzinfo=datetime.timezone.utc)
@@ -67,16 +67,13 @@ UTCNow
 ------
 * ``datetime.utcnow()`` produces timezone naive datetimes!
 
->>> from datetime import datetime, timezone
->>>
->>>
 >>> datetime.utcnow()  # doctest: +SKIP
 datetime.datetime(1957, 10, 4, 17, 28, 34)
->>>
+
 >>> datetime.utcnow(tz=timezone.utc)
 Traceback (most recent call last):
 TypeError: datetime.utcnow() takes no keyword arguments
->>>
+
 >>> datetime.utcnow(timezone.utc)
 Traceback (most recent call last):
 TypeError: datetime.utcnow() takes no arguments (1 given)
@@ -87,6 +84,7 @@ IANA Time Zone Database
 * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 * https://www.iana.org/time-zones
 * https://pypi.org/project/tzdata/
+* https://en.wikipedia.org/wiki/Time_in_Antarctica
 * ``pip install tzdata``
 
 IANA 2017a timezone database [#IANA]_:
@@ -99,9 +97,6 @@ ZoneInfo
 * Since Python 3.9: :pep:`615` -- Support for the IANA Time Zone Database in the Standard Library
 * https://docs.python.org/3/library/zoneinfo.html
 
->>> from zoneinfo import ZoneInfo
->>>
->>>
 >>> utc = ZoneInfo('UTC')
 >>> est = ZoneInfo('US/Eastern')
 >>> cet = ZoneInfo('Europe/Warsaw')
@@ -109,87 +104,24 @@ ZoneInfo
 
 Working with ``ZoneInfo`` objects:
 
->>> from zoneinfo import ZoneInfo
->>> from datetime import datetime, timedelta
->>>
->>>
 >>> dt = datetime(1969, 7, 21, 2, 56, 15, tzinfo=ZoneInfo('UTC'))
 >>> print(dt)
 1969-07-21 02:56:15+00:00
->>>
+
 >>> dt += timedelta(days=7)
 >>> print(dt)
 1969-07-28 02:56:15+00:00
 
 ``ZoneInfo`` objects knows Daylight Saving Time:
 
->>> from zoneinfo import ZoneInfo
->>> from datetime import datetime, timedelta
->>>
->>>
 >>> dt = datetime(2000, 1, 1, tzinfo=ZoneInfo('America/Los_Angeles'))  # Daylight saving time
+>>>
 >>> dt.tzname()
 'PST'
+>>>
 >>> dt += timedelta(days=100)  # Standard time
 >>> dt.tzname()
 'PDT'
-
-
-Pytz
-----
-``pytz`` brings the Olson tz database into Python:
-
->>> from pytz import timezone
->>>
->>>
->>> utc = timezone('UTC')
->>> est = timezone('US/Eastern')
->>> waw = timezone('Europe/Warsaw')
->>> alm = timezone('Asia/Almaty')
-
-From naive to local time:
-
->>> from datetime import datetime
->>> from pytz import timezone
->>>
->>>
->>> dt = datetime(1969, 7, 21, 2, 56, 15)
->>> dt = timezone('UTC').localize(dt)
->>> dt
-datetime.datetime(1969, 7, 21, 2, 56, 15, tzinfo=<UTC>)
-
-From naive to local time:
-
->>> from datetime import datetime
->>> from pytz import timezone
->>>
->>>
->>> dt = datetime(1961, 4, 12, 6, 7)
->>> dt = timezone('Asia/Almaty').localize(dt)
->>> dt
-datetime.datetime(1961, 4, 12, 6, 7, tzinfo=<DstTzInfo 'Asia/Almaty' +06+6:00:00 STD>)
-
-From UTC to local time:
-
->>> from datetime import datetime
->>> from pytz import timezone
->>>
->>>
->>> dt = datetime(1969, 7, 21, 2, 56, 15, tzinfo=timezone('UTC'))
->>> dt = dt.astimezone(timezone('Europe/Warsaw'))
->>> dt
-datetime.datetime(1969, 7, 21, 3, 56, 15, tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
-
-Between timezones:
-
->>> from datetime import datetime
->>> from pytz import timezone
->>>
->>>
->>> dt = datetime(1961, 4, 12, 6, 7, tzinfo=timezone('Asia/Almaty'))
->>> dt = dt.astimezone(timezone('Europe/Warsaw'))
->>> dt
-datetime.datetime(1961, 4, 12, 1, 59, tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
 
 
 Use Case - 0x01
@@ -285,10 +217,6 @@ References
 
 Assignments
 -----------
-.. literalinclude:: assignments/datetime_timezone_a.py
-    :caption: :download:`Solution <assignments/datetime_timezone_a.py>`
-    :end-before: # Solution
-
 .. literalinclude:: assignments/datetime_timezone_b.py
     :caption: :download:`Solution <assignments/datetime_timezone_b.py>`
     :end-before: # Solution

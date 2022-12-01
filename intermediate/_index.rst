@@ -207,6 +207,7 @@ Modules and Packages
 
     modules/venv.rst
     modules/pip.rst
+    modules/pyproject-toml.rst
 
 
 Logging

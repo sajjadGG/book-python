@@ -10,10 +10,10 @@ English:
         * 8 years
         * 3 months
         * 8 days
-        * 20 hours
-        * 49 minutes
+        * 13 hours
+        * 19 minutes
         * 15 seconds
-    2. Assume:
+    2. Assumption:
         a. year = 365.25 days
         b. month = 30.4375 days
     3. Define `result: timedelta` representing given period
@@ -25,10 +25,10 @@ Polish:
         * 8 lat
         * 3 miesięcy
         * 8 dni
-        * 20 godzin
-        * 49 minut
+        * 13 godzin
+        * 19 minut
         * 15 sekund
-    2. Uwzględnij założenie:
+    2. Założenie:
         a. rok = 365.25 dni
         b. miesiąc = 30.4375 dni
     3. Zdefiniuj `result: timedelta` reprezentujące dany okres
@@ -55,16 +55,16 @@ DAY = 24 * HOUR
 MONTH = 30.4375 * DAY
 YEAR = 365.25 * DAY
 
-# 8 years
-# 3 months
-# 8 days
-# 13 hours
-# 19 minutes
-# 15 seconds
 
-# representing given period
+# - 8 years
+# - 3 months
+# - 8 days
+# - 13 hours
+# - 19 minutes
+# - 15 seconds
 # type: timedelta
 result = ...
+
 
 # Solution
 period = int(8*YEAR + 3*MONTH + 8*DAY + 13*HOUR + 19*MINUTE + 15*SECOND)

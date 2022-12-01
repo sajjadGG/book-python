@@ -37,8 +37,9 @@ METER = 1
 CENTIMETER = METER * 0.01
 KILOMETER = METER * 1000
 
+
 class Distance:
-    meters: int
+    meters: int | float
 
     def __init__(self, meters):
         self.meters = meters
@@ -46,22 +47,11 @@ class Distance:
 
 # Solution
 class Distance:
-    meters: int
+    meters: int | float
 
     def __init__(self, meters):
         self.meters = meters
 
-    def __format__(self, unit):
-        result = self.meters
-        if unit in ('cm', 'centimeters'):
-            result /= CENTIMETER
-        elif unit in ('m', 'meters'):
-            result /= METER
-        elif unit in ('km', 'kilometers'):
-            result /= KILOMETER
-        return f'{result:.1f}'
-
-    # Alternative Solution
     def __format__(self, unit):
         distance = self.meters
         match unit:
