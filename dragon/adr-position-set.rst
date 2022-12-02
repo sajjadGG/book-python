@@ -198,9 +198,9 @@ Option 12
 * Good: more or less readable (Readability counts)
 * Good: extensible, easy to refactor to 3D
 * Bad: violates encapsulation - OOP good practices
-* Bad: nested objects (Flat is better than nested)
+* Bad: flat is better than nested
 * Bad: require knowledge of an API
-* Decision: rejected, violates encapsulation
+* Decision: rejected, violates encapsulation and convention
 
 
 Decision

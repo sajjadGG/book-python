@@ -180,35 +180,42 @@ Problem:
 .. code-block:: css
 
     p {
-      margin-top: 25px;
-      margin-bottom: 75px;
-      margin-right: 50px;
-      margin-left: 100px;
+        margin-top: 25px;
+        margin-bottom: 75px;
+        margin-right: 50px;
+        margin-left: 100px;
     }
 
 .. code-block:: css
 
     p {
-      margin: 25px 50px 75px 100px;  /* top, right, bottom, left */
+        margin: 25px 50px 75px 100px;
     }
 
 .. code-block:: css
 
     p {
-      margin: 25px 50px 75px;  /* top, right-left, bottom */
+        margin: 25px 50px 75px;
     }
 
 .. code-block:: css
 
     p {
-      margin: 25px 50px;  /* top-bottom, right-left */
+        margin: 25px 50px;
     }
 
 .. code-block:: css
 
     p {
-      margin: 25px;  /* top-right-bottom-left */
+        margin: 25px;
     }
+
+CSS:
+
+* 4 params: top, right, bottom, left
+* 3 params: top, right-left, bottom
+* 2 params: top-bottom, right-left
+* 1 params: top-right-bottom-left
 
 
 Option 12
@@ -350,7 +357,6 @@ Option 19
 >>> dragon.position_x -= 10
 >>> dragon.position_y += 20
 
-
 * Good: extensible to 3D, just add ``z`` attribute
 * Bad: encapsulation
 * Bad: require knowledge of an API
@@ -372,6 +378,28 @@ Option 20
 
 Option 21
 ---------
+>>> dragon.move('left', 20)
+>>> dragon.move('right', 5)
+
+* Good: extensible
+* Good: extensible to 3D
+* Bad: not possible to do movement in opposite directions in the same time
+* Decision: rejected
+
+
+Option 22
+---------
+>>> dragon.move('left', distance=20)
+>>> dragon.move('right', distance=5)
+
+* Good: extensible
+* Good: extensible to 3D
+* Bad: not possible to do movement in opposite directions in the same time
+* Decision: rejected
+
+
+Option 23
+---------
 >>> dragon.move(direction='left', distance=20)
 >>> dragon.move(direction='right', distance=5)
 
@@ -384,7 +412,7 @@ Option 21
 * Decision: rejected
 
 
-Option 22
+Option 24
 ---------
 >>> LEFT = 61  # keyboard key code
 >>> RIGHT = 62
@@ -403,7 +431,7 @@ Option 22
 * Decision: rejected, complex
 
 
-Option 23
+Option 25
 ---------
 >>> DIRECTION_LEFT = 61  # keyboard key code
 >>> DIRECTION_RIGHT = 62
@@ -422,7 +450,7 @@ Option 23
 * Decision: rejected, complex
 
 
-Option 24
+Option 26
 ---------
 >>> class Direction(Enum):
 ...     LEFT = 61
@@ -444,7 +472,7 @@ Option 24
 * Decision: rejected, complex
 
 
-Option 25
+Option 27
 ---------
 >>> KEY_BINDING = {
 ...     'ARROW_UP': dragon.move_up,
@@ -464,9 +492,10 @@ Option 25
 * Good: extensible
 * Good: there is a enumeration of possible choices for directions
 * Bad: to complex for now
+* Decision: rejected, complex
 
 
-Option 26
+Option 28
 ---------
 >>> dragon.move_left(10)
 >>> dragon.move_right(10)
@@ -535,6 +564,7 @@ Use Case:
 
 * Bad: not extensible
 * Bad: to complex for now
+* Decision: rejected, complex
 
 
 Decision

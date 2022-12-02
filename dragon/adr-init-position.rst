@@ -34,6 +34,9 @@ Problems:
 >>> pt = CartesianAxisPoint(1, 2)   # ok
 >>> pt = GPSPoint(1, 2)             # bad
 
+>>> knn = KNearestNeighbors(3)              # ok
+>>> knn = KNearestNeighbors(3, [1,2,3])     # bad
+
 
 Option 2
 --------
@@ -96,11 +99,14 @@ Option 4
 * Good: extensible, easy to add ``positionZ`` with default value ``0``
 * Decision: candidate, but names could be better
 
-Problem:
+Example:
 
 >>> pt = GPSPoint(longitude=1, latitude=2)         # ok
-
 >>> knn = KNearestNeighbors(k=3, weights=[1,2,3])  # ok
+
+Problem:
+
+>>> df.plot(kind='line', subplots=True, color='grey', sharey=True)  # bad
 
 
 Option 5
@@ -110,17 +116,14 @@ Option 5
 * Good: simple, easy to use
 * Good: you can assign ``None`` by default to set default point
 * Good: extensible, easy to add ``position_z`` with default value ``0``
+* Good: backward compatible
 * Decision: candidate
-
-Problem:
-
->>> df.plot(kind='line', subplots=True, color='grey', sharey=True)  # bad
 
 Solution:
 
->>> df.plot(kind='line', subplots=True, color='grey', share_y=True)      # ok
->>> df.plot(kind='line', subplots=True, color='grey', share_y_axis=True) # ok
->>> df.plot(kind='line', subplots=True, color='grey', share_axis_y=True) # ok
+>>> df.plot(kind='line', sub_plots=True, color='grey', share_y=True)      # ok
+>>> df.plot(kind='line', sub_plots=True, color='grey', share_y_axis=True) # ok
+>>> df.plot(kind='line', sub_plots=True, color='grey', share_axis_y=True) # ok
 
 
 Option 6
@@ -147,7 +150,7 @@ Problem:
 >>> dragon = Dragon('Wawelski', pos=[0, 0])         # ok
 >>> dragon = Dragon('Wawelski', pos=[None, None])   # maybe
 
-* ``pattern = r'[\(\[(?:\d+|None),\s*(?:\d+|None)[\)\]]'``
+* ``pattern = r'[\(\[(\s*?:\d+|None\s*),\s*(\s*?:\d+|None\s*)[\)\]]'``
 
 
 Option 7
@@ -169,7 +172,7 @@ Option 7
 
 Problem:
 
-* ``pattern = r'[\(\[(?:\d+|None),\s*(?:\d+|None)[\)\]]'``
+* ``pattern = r'[\(\[(\s*?:\d+|None\s*),\s*(\s*?:\d+|None\s*)[\)\]]'``
 
 
 Option 8
@@ -190,7 +193,7 @@ Option 8
 
 Problem:
 
-* ``pattern = r'\{"x":(?:\d+|None), "y":(?:\d+|None)\}'``
+* ``pattern = r'\{\s*"x"\s*:\s*(?:\d+|None)\s*,\s*"y"\s*:\s*(?:\d+|None)\s*\}'``
 
 
 Option 9
@@ -263,7 +266,7 @@ Option 11
 * Good: relatively easy to extend to 3D
 * Good: keyword argument is not required, class name is verbose enough
 * Bad: before Python 3.11 ``TypeDict`` does not support default values
-* Decision: rejected, re-evaluate in future
+* Decision: rejected, re-evaluate in future with Python >= 3.11
 
 Future:
 
