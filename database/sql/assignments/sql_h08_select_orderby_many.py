@@ -42,7 +42,7 @@ FROM apollo11
 
 with sqlite3.connect('sql.db') as db:
     db.row_factory = sqlite3.Row
-    for result in map(dict, db.execute(SQL)):
+    for result in map(dict, db.execute(result)):
         print(result)
 
 

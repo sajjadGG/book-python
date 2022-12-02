@@ -32,7 +32,7 @@ result = """
 
 
 with sqlite3.connect('sql.db') as db:
-    db.execute(SQL)
+    db.execute(result)
 
 
 # Solution

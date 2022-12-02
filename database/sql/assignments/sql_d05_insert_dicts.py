@@ -47,7 +47,7 @@ DATA = [
 ]
 
 with sqlite3.connect('sql.db') as db:
-    db.executemany(SQL, DATA)
+    db.executemany(result, DATA)
 
 
 # Solution

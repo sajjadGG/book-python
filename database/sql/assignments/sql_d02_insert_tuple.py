@@ -40,7 +40,7 @@ result = """
 DATA = ('Mark', 'Watney')
 
 with sqlite3.connect('sql.db') as db:
-    db.execute(SQL, DATA)
+    db.execute(result, DATA)
 
 
 # Solution
