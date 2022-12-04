@@ -24,7 +24,7 @@ About
 
     HTTP 2.0 Pipelining [#http2pipelining]_
 
-.. figure:: img/http-http2-multiplexing.jpeg
+.. figure:: img/http-http2-multiplexing.png
 
     HTTP 2.0 Multiplexing [#http2multiplexing]_
 

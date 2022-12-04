@@ -197,6 +197,7 @@ Operator
     operator/module.rst
     operator/builtin.rst
     operator/accessors.rst
+    operator/other.rst
 
 
 Modules and Packages

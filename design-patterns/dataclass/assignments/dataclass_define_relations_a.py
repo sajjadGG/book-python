@@ -82,15 +82,18 @@ DATA = """
 }
 """
 
+
 # Using `dataclass` model `DATA`, create class `Category`
 # type: Type
 class Category:
     ...
 
+
 # Using `dataclass` model `DATA`, create class `Tag`
 # type: Type
 class Tag:
     ...
+
 
 # Using `dataclass` model `DATA`, create class `Pet`
 # type: Type
@@ -103,6 +106,7 @@ class Pet:
 class Category:
     id: int
     name: str
+
 
 @dataclass
 class Tag:

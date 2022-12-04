@@ -195,10 +195,10 @@ generates ``__init__()`` arguments and fields. More information in
 
 Assignments
 -----------
-.. literalinclude:: assignments/oop_init_call_a.py
-    :caption: :download:`Solution <assignments/oop_init_call_a.py>`
+.. literalinclude:: assignments/oop_init_a.py
+    :caption: :download:`Solution <assignments/oop_init_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_init_call_a.py
-    :caption: :download:`Solution <assignments/oop_init_call_a.py>`
+.. literalinclude:: assignments/oop_init_a.py
+    :caption: :download:`Solution <assignments/oop_init_a.py>`
     :end-before: # Solution

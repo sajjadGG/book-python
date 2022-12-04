@@ -50,7 +50,7 @@ suppress_warnings = [
     # 'ref.keyword',
     # 'ref.option',
     'ref.citation',
-    # 'ref.footnote',
+    'ref.footnote',
     # 'ref.doc',
     # 'ref.python',
     # 'misc.highlighting_failure',

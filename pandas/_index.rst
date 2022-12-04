@@ -107,13 +107,14 @@ Case Studies
     :maxdepth: 1
     :caption: Case Studies
 
+    case-studies/aatc-sensors.rst
+    case-studies/apollo11.rst
+    case-studies/coinbase.rst
     case-studies/covid19.rst
     case-studies/esa-astronauts.rst
-    case-studies/apollo11.rst
-    case-studies/aatc-sensors.rst
-    case-studies/standings-nba.rst
+    case-studies/percapita.rst
+    case-studies/phones.rst
     case-studies/standings-espn.rst
     case-studies/standings-livescores.rst
-    case-studies/phones.rst
+    case-studies/standings-nba.rst
     case-studies/talary.rst
-    case-studies/percapita.rst

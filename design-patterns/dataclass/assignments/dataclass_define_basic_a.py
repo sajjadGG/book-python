@@ -1,7 +1,7 @@
 """
 * Assignment: Dataclass DefineBasic Syntax
 * Complexity: easy
-* Lines of code: 7 lines
+* Lines of code: 4 lines
 * Time: 3 min
 
 English:
@@ -37,6 +37,7 @@ Tests:
 """
 
 from dataclasses import dataclass
+
 
 # Use Dataclass to define class `Point` with attributes `x` and `y`
 # type: Type

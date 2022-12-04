@@ -180,8 +180,8 @@ Use Case - 0x01
 ... class Mission:
 ...     year: int
 ...     name: str
-...
-...
+>>>
+>>>
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str

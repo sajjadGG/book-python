@@ -72,10 +72,12 @@ DATA = """
 }
 """
 
+
 # Using `dataclass` model data to create class `Pet`
 # type: Type
 class Pet:
     ...
+
 
 # Solution
 @dataclass

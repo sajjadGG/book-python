@@ -42,8 +42,8 @@ ciągu znaków w pliku, funkcji lub klasie. Przykład:
 
         """
         >>> sys.tracebacklimit = 0
-        >>> assert sys.version_info > (3, 9, 0), \
-        'Python 3.9+ is required'
+        >>> assert sys.version_info > (3, 11, 0), \
+        'Python 3.11+ is required'
         """
 
         import sys

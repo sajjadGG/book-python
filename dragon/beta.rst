@@ -44,9 +44,10 @@ Polish
 
 6. Kiedy punkty życia dowolnej postaci (smok lub bohater) spadną do lub
    poniżej zera:
-    g. Postaci nie można zadawać obrażeń
-    h. Postać nie może zadawać obrażeń
-    i. Postać nie może się poruszać
+
+    a. Postaci nie można zadawać obrażeń
+    b. Postać nie może zadawać obrażeń
+    c. Postać nie może się poruszać
 
 9. Wymagania niefunkcjonalne:
     a. Zadanie jest symulacją procesu developmentu

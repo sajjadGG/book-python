@@ -78,6 +78,8 @@ first item is returned.
 
 .. figure:: img/funcprog-map-reduce.gif
 
+    Computational graph for map-reduce. [#dask]_
+
 
 Roughly equivalent to:
 

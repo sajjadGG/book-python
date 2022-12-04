@@ -19,7 +19,7 @@ Pattern
 
 .. figure:: img/designpatterns-adapter-pattern.png
 
-.. literalinclude:: src/designpatterns-adapter-pattern.md
+.. literalinclude:: uml/designpatterns-adapter-pattern.md
     :language: md
 
 
@@ -33,7 +33,7 @@ Problem
 
 .. figure:: img/designpatterns-adapter-problem.png
 
-.. literalinclude:: src/designpatterns-adapter-problem.md
+.. literalinclude:: uml/designpatterns-adapter-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-adapter-problem.py
@@ -50,7 +50,7 @@ Solution
 
     Please mind, that on Picture there is a ``Caramel`` filter but in code ``BlackAndWhite3rdPartyFilter``
 
-.. literalinclude:: src/designpatterns-adapter-solution.md
+.. literalinclude:: uml/designpatterns-adapter-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-adapter-solution.py

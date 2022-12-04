@@ -40,6 +40,7 @@ Tests:
 
 from dataclasses import dataclass
 
+
 DATA = """
 {
   "id": 0,
@@ -50,6 +51,7 @@ DATA = """
   "status": "available"
 }
 """
+
 
 # Using `dataclass` model data to create class `Pet`
 # type: Type

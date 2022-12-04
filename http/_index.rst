@@ -1,19 +1,30 @@
+About
+*****
+.. toctree::
+    :maxdepth: 1
+    :caption: About
+
+    about/entrytest.rst
+    about/agenda.rst
+    about/certificate.rst
+
+
 HTTP Protocol
 *************
 .. toctree::
     :maxdepth: 1
     :caption: HTTP Protocol
 
-    http/about.rst
-    http/identifier.rst
-    http/method.rst
-    http/header.rst
-    http/mimetype.rst
-    http/status.rst
-    http/api-versioning.rst
-    http/http2.rst
-    http/https.rst
-    http/gateway-interface.rst
+    protocol/about.rst
+    protocol/identifier.rst
+    protocol/method.rst
+    protocol/header.rst
+    protocol/mimetype.rst
+    protocol/status.rst
+    protocol/api-versioning.rst
+    protocol/http2.rst
+    protocol/https.rst
+    protocol/gateway-interface.rst
 
 
 Microservices
@@ -46,3 +57,4 @@ Auth
 
     auth/basic.rst
     auth/json-web-token.rst
+    auth/passkey.rst

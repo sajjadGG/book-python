@@ -11,7 +11,7 @@ Pattern
 
 .. figure:: img/designpatterns-bridge-pattern.png
 
-.. literalinclude:: src/designpatterns-bridge-pattern.md
+.. literalinclude:: uml/designpatterns-bridge-pattern.md
     :language: md
 
 
@@ -37,7 +37,7 @@ Problem
 
 .. figure:: img/designpatterns-bridge-problem.png
 
-.. literalinclude:: src/designpatterns-bridge-problem.md
+.. literalinclude:: uml/designpatterns-bridge-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-bridge-problem.py
@@ -52,7 +52,7 @@ Solution
 .. figure:: img/designpatterns-bridge-solution-1.png
 .. figure:: img/designpatterns-bridge-solution-2.png
 
-.. literalinclude:: src/designpatterns-bridge-solution.md
+.. literalinclude:: uml/designpatterns-bridge-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-bridge-solution.py

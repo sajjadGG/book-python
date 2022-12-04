@@ -122,7 +122,7 @@ praktycznym wykorzystaniu uczenia maszynowego do rozwiązywania problemów.
 
 Environment
 -----------
-1. Python 3.8+
+1. Python 3.11+
 2. Libs manually installed or via ``requirements.txt``
 
     * ``numpy``
@@ -134,6 +134,7 @@ Environment
 .. figure:: img/scipy-ecosystem.png
 
     Scipy Ecosystem
+
 
 Runtime
 -------

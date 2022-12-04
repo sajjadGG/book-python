@@ -11,7 +11,7 @@ Pattern
 
 .. figure:: img/designpatterns-facade-pattern.png
 
-.. literalinclude:: src/designpatterns-facade-pattern.md
+.. literalinclude:: uml/designpatterns-facade-pattern.md
     :language: md
 
 
@@ -26,7 +26,7 @@ Problem
 
 .. figure:: img/designpatterns-facade-problem.png
 
-.. literalinclude:: src/designpatterns-facade-problem.md
+.. literalinclude:: uml/designpatterns-facade-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-facade-problem.py
@@ -37,7 +37,7 @@ Solution
 --------
 .. figure:: img/designpatterns-facade-solution.png
 
-.. literalinclude:: src/designpatterns-facade-solution.md
+.. literalinclude:: uml/designpatterns-facade-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-facade-solution.py

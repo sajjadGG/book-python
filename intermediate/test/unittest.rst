@@ -65,33 +65,38 @@ Methods
 
 Example 1
 ---------
-.. literalinclude:: ../_src/unittest-example-1.py
+.. literalinclude:: src/unittest-example-1.py
     :language: python
     :caption: Example ``unittest`` code coverage
+
 
 Example 2
 ---------
-.. literalinclude:: ../_src/unittest-example-2.py
+.. literalinclude:: src/unittest-example-2.py
     :language: python
     :caption: Example ``unittest`` code coverage
+
 
 Example 3
 ---------
-.. literalinclude:: ../_src/unittest-example-3.py
+.. literalinclude:: src/unittest-example-3.py
     :language: python
     :caption: Example ``unittest`` code coverage
+
 
 Example 4
 ---------
-.. literalinclude:: ../_src/unittest-example-4.py
+.. literalinclude:: src/unittest-example-4.py
     :language: python
     :caption: Example ``unittest`` code coverage
 
+
 Example 5
 ---------
-.. literalinclude:: ../_src/unittest-example-5.py
+.. literalinclude:: src/unittest-example-5.py
     :language: python
     :caption: Example ``unittest`` code coverage
+
 
 Example 6
 ---------
@@ -164,6 +169,7 @@ Mock
 
     thing.method.assert_called_with(3, 4, 5, key='value')
 
+
 Side effect
 -----------
 * Raising an exception when a mock is called
@@ -177,6 +183,7 @@ Side effect
     mock()
     # Traceback (most recent call last):
     # KeyError: 'foo'
+
 
 patch
 -----
@@ -212,6 +219,7 @@ patch
         thing.method(1, 2, 3)
 
     mock_method.assert_called_once_with(1, 2, 3)
+
 
 Stub
 ----
@@ -290,6 +298,7 @@ Good:
 >>> assert sum( [port < 1024 for port in ports_in_use]) == len(ports_in_use)
 >>> assert all([port < 1024 for port in ports_in_use])
 >>> assert all(port < 1024 for port in ports_in_use)
+
 
 Assignments
 -----------

@@ -90,11 +90,20 @@ Builtin
     builtin/unordered-comparison.rst
 
 
-Looping
+Loop
+****
+.. toctree::
+    :maxdepth: 1
+    :caption: Loop
+
+    loop/comprehensions.rst
+    loop/else-for.rst
+    loop/else-while.rst
+
+TKInter
 *******
 .. toctree::
     :maxdepth: 1
-    :caption: Looping
+    :caption: TKInter
 
-    loop/comprehensions.rst
-    loop/else.rst
+    tkinter/about.rst

@@ -2,7 +2,7 @@ DataFrame Select
 ================
 * ``df[df['Morning'] > 0.0]``
 * ``~`` - logical not
-* ``& `` - logical and
+* ``&`` - logical and
 * ``|`` - logical or
 * ``^`` - logical xor
 
@@ -12,8 +12,7 @@ SetUp
 >>> import pandas as pd
 >>> import numpy as np
 >>> np.random.seed(0)
->>>
->>>
+
 >>> df = pd.DataFrame(
 ...     columns = ['Morning', 'Noon', 'Evening', 'Midnight'],
 ...     index = pd.date_range('1999-12-30', periods=7),

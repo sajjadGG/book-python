@@ -15,7 +15,7 @@ Pattern
 
 .. figure:: img/designpatterns-singleton-pattern.png
 
-.. literalinclude:: src/designpatterns-singleton-pattern.md
+.. literalinclude:: uml/designpatterns-singleton-pattern.md
     :language: md
 
 
@@ -23,7 +23,7 @@ Problem
 -------
 .. figure:: img/designpatterns-singleton-problem.png
 
-.. literalinclude:: src/designpatterns-singleton-problem.md
+.. literalinclude:: uml/designpatterns-singleton-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-singleton-problem.py
@@ -34,7 +34,7 @@ Solution
 --------
 .. figure:: img/designpatterns-singleton-solution.png
 
-.. literalinclude:: src/designpatterns-singleton-solution.md
+.. literalinclude:: uml/designpatterns-singleton-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-singleton-solution.py

@@ -11,7 +11,7 @@ Pattern
 
 .. figure:: img/designpatterns-decorator-pattern.png
 
-.. literalinclude:: src/designpatterns-decorator-pattern.md
+.. literalinclude:: uml/designpatterns-decorator-pattern.md
     :language: md
 
 
@@ -22,7 +22,7 @@ Problem
 
 .. figure:: img/designpatterns-decorator-problem.png
 
-.. literalinclude:: src/designpatterns-decorator-problem.md
+.. literalinclude:: uml/designpatterns-decorator-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-decorator-problem.py
@@ -33,7 +33,7 @@ Solution
 --------
 .. figure:: img/designpatterns-decorator-solution.png
 
-.. literalinclude:: src/designpatterns-decorator-solution.md
+.. literalinclude:: uml/designpatterns-decorator-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-decorator-solution.py

@@ -246,28 +246,30 @@ Astronaut(firstname='Melissa', lastname='Lewis')
 
 Use Case - 0x03
 ---------------
-a = np.arange(1, 10).reshape(3,3)
-a
-array([[1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9]])
-a = np.array([1,2,3])
-b = [4,5,6]
-a
+>>> a = np.array([1, 2, 3])
+>>> b = [4, 5, 6]
+>>>
+>>> a
 array([1, 2, 3])
-b
+>>>
+>>> b
 [4, 5, 6]
-a + b
+
+>>> a + b
 array([5, 7, 9])
-a.__add__(b)
-array([5, 7, 9])
-b + a
-array([5, 7, 9])
-b.__add__(a)
-TypeError: can only concatenate list (not "numpy.ndarray") to list
-a.__radd__(b)
+>>>
+>>> a.__add__(b)
 array([5, 7, 9])
 
+>>> b + a
+array([5, 7, 9])
+>>>
+>>> b.__add__(a)
+Traceback (most recent call last):
+TypeError: can only concatenate list (not "numpy.ndarray") to list
+
+>>> a.__radd__(b)
+array([5, 7, 9])
 
 
 Use Case - 0x04

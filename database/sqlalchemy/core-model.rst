@@ -96,18 +96,34 @@ Recap
 
 Assignments
 -----------
-.. literalinclude:: assignments/database_model_a.py
-    :caption: :download:`Solution <assignments/database_model_a.py>`
+.. literalinclude:: assignments/model_data_a.py
+    :caption: :download:`Solution <assignments/model_data_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/database_model_b.py
-    :caption: :download:`Solution <assignments/database_model_b.py>`
+.. literalinclude:: assignments/model_data_b.py
+    :caption: :download:`Solution <assignments/model_data_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/database_model_c.py
-    :caption: :download:`Solution <assignments/database_model_c.py>`
+.. literalinclude:: assignments/model_data_c.py
+    :caption: :download:`Solution <assignments/model_data_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/database_model_d.py
-    :caption: :download:`Solution <assignments/database_model_d.py>`
+.. literalinclude:: assignments/model_data_d.py
+    :caption: :download:`Solution <assignments/model_data_d.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/model_data_e.py
+    :caption: :download:`Solution <assignments/model_data_e.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/model_data_f.py
+    :caption: :download:`Solution <assignments/model_data_f.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/model_data_g.py
+    :caption: :download:`Solution <assignments/model_data_g.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/model_data_h.py
+    :caption: :download:`Solution <assignments/model_data_h.py>`
     :end-before: # Solution

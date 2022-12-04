@@ -197,10 +197,3 @@ Use Case - 0x04
 >>> add  # doctest: +NORMALIZE_WHITESPACE
 {(1, 2): 3,
  (2, 1): 3}
-
-
-Assignments
------------
-.. literalinclude:: assignments/operator_accessors_a.py
-    :caption: :download:`Solution <assignments/operator_accessors_a.py>`
-    :end-before: # Solution

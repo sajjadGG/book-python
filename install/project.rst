@@ -17,7 +17,7 @@ do wszystkich zadań.
 
 1. Stwórz projekt w Twoim IDE wykorzystując opcję:
 
-    a. `Get from VCS` dla PyCharm 2020.3 lub nowszego
+    a. `Get from VCS` dla PyCharm 2022.3 lub nowszego
     b. `Get from Version Control` dla wcześniejszych wersji PyCharm
 
 2. W oknie `Get from Version Control` wpisz:

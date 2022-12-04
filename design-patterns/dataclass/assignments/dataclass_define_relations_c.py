@@ -7,7 +7,7 @@
 English:
     1. You received input data in JSON format from the API
        a. `str` fields: firstname, lastname, role, username, password, email,
-       b. `date` field: born,
+       b. `date` field: birthday,
        c. `datetime` field: last_login (field is optional),
        d. `bool` fields: is_active, is_staff, is_superuser,
        e. `list[dict]` field: user_permissions
@@ -20,7 +20,7 @@ English:
 Polish:
     1. Otrzymałeś z API dane wejściowe w formacie JSON
        a. pola `str`: firstname, lastname, role, username, password, email,
-       b. pole `date`: born,
+       b. pole `date`: birthday,
        c. pole `datetime`: last_login (pole jest opcjonalne),
        d. pola `bool`: is_active, is_staff, is_superuser,
        e. pola `list[dict]`: user_permissions
@@ -33,10 +33,9 @@ Polish:
 Hints:
     * `pk` - Primary Key (unique identifier, an ID in database)
     * `model` - package name with name of a class
-    * `json.loads(DATA)`
-    * `type(...)`
     * `datetime | None`
     * `date`
+    * `list[dict]`
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
@@ -49,9 +48,8 @@ Tests:
 
     >>> attributes = User.__dataclass_fields__.keys()
     >>> list(attributes)  # doctest: +NORMALIZE_WHITESPACE
-    ['firstname', 'lastname', 'role', 'username', 'password', 'email',
-     'birthday', 'last_login', 'is_active', 'is_staff', 'is_superuser',
-     'user_permissions']
+    ['firstname', 'lastname', 'role', 'username', 'password', 'email', 'birthday',
+     'last_login', 'is_active', 'is_staff', 'is_superuser', 'user_permissions']
 
     >>> pprint(User.__annotations__, sort_dicts=False)
     {'firstname': <class 'str'>,
@@ -138,10 +136,13 @@ DATA = ('[{"model":"authorization.user","pk":1,"fields":{"firstname":"Meli'
         's":[{"communication":["add","modify","view"]},{"science":["add","'
         'modify","view"]}]}}]')
 
+# Convert JSON to Python dict
+data = json.loads(DATA)
+
 
 # Using `dataclass` model data as class `User`
 # a. `str` fields: firstname, lastname, role, username, password, email,
-# b. `date` field: born,
+# b. `date` field: birthday,
 # c. `datetime` field: last_login (optional),
 # c. `bool` fields: is_active, is_staff, is_superuser,
 # d. `list[dict]` field: user_permissions

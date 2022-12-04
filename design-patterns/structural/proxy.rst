@@ -14,7 +14,7 @@ Pattern
 .. figure:: img/designpatterns-proxy-pattern-1.png
 .. figure:: img/designpatterns-proxy-pattern-2.png
 
-.. literalinclude:: src/designpatterns-proxy-pattern.md
+.. literalinclude:: uml/designpatterns-proxy-pattern.md
     :language: md
 
 
@@ -25,7 +25,7 @@ Problem
 
 .. figure:: img/designpatterns-proxy-problem.png
 
-.. literalinclude:: src/designpatterns-proxy-problem.md
+.. literalinclude:: uml/designpatterns-proxy-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-proxy-problem.py
@@ -39,7 +39,7 @@ Solution
 
 .. figure:: img/designpatterns-proxy-solution.png
 
-.. literalinclude:: src/designpatterns-proxy-solution.md
+.. literalinclude:: uml/designpatterns-proxy-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-proxy-solution-1.py

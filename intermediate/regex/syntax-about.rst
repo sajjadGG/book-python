@@ -10,7 +10,7 @@ Syntax About
 * Also known as ``regex``
 * Also known as ``re``
 * https://www.youtube.com/watch?v=BmF-gEYXWVM&list=PLv4THqSPE6meFeo_jNLgUVKkP40UstIQv&index=3
-* W3C HTML Email pattern: r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+* W3C HTML Email pattern: ``r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"``
 
 W3C HTML5 Standard [#w3cemailregex]_ regexp for email field
 

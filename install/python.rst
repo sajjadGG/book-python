@@ -5,7 +5,7 @@ Install Python
 
 Install on macOS
 ----------------
-1. macOS domyślnie ma zainstalowaną starą wersję Pythona 2
+1. macOS domyślnie ma zainstalowaną starą wersję Pythona
    (nie będziemy z niej korzystać)
 
 2. Pobierz i zainstaluj najnowszą wersję Pythona
@@ -86,10 +86,10 @@ Install on Windows
            ``;ścieżka1;ścieżka2``
         #. Ścieżki do dopisania:
 
-            * ``%USERPROFILE%\AppData\Local\Programs\Python\Python38\``
-            * ``%USERPROFILE%\AppData\Local\Programs\Python\Python38\Scripts\``
+            * ``%USERPROFILE%\AppData\Local\Programs\Python\Python311\``
+            * ``%USERPROFILE%\AppData\Local\Programs\Python\Python311\Scripts\``
 
-        #. Sprawdź ścieżki przed dodaniem, gdyż w zależności od wersji katalog instalacji może się nieznacznie różnić (np. katalog ``Python38`` w ścieżce)
+        #. Sprawdź ścieżki przed dodaniem, gdyż w zależności od wersji katalog instalacji może się nieznacznie różnić (np. katalog ``Python311`` w ścieżce)
 
         #. Po wprowadzeniu modyfikacji kliknij "OK", następnie "OK" dla okienka ze zmiennymi środowiskowymi oraz "OK" w okienku "Właściwości systemu"
 

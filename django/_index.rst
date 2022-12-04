@@ -93,6 +93,7 @@ Utils
     utils/internationalization.rst
     utils/management-commands.rst
     utils/standalone-scripts.rst
+    utils/staticfiles.rst
     utils/middleware.rst
     utils/database.rst
     utils/cache.rst

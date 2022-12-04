@@ -41,19 +41,19 @@ Trigonometric Functions
 * ``np.tan()``
 * ctg = 1/tan
 
-.. figure:: numpy-trigonometry-sin.png
+.. figure:: img/numpy-trigonometry-sin.png
 
     Sinusoid - sin(x) function
 
-.. figure:: numpy-trigonometry-cos.png
+.. figure:: img/numpy-trigonometry-cos.png
 
     Cosinusoid - cos(x) function
 
-.. figure:: numpy-trigonometry-tan.png
+.. figure:: img/numpy-trigonometry-tan.png
 
     Tangensoid - tan(x) function
 
-.. figure:: numpy-trigonometry-ctg.png
+.. figure:: img/numpy-trigonometry-ctg.png
 
     Cotangensoid - ctg(x) function, also 1/tan(x)
 

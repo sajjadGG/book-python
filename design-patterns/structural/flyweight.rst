@@ -13,7 +13,7 @@ Pattern
 
 .. figure:: img/designpatterns-flyweight-pattern.png
 
-.. literalinclude:: src/designpatterns-flyweight-pattern.md
+.. literalinclude:: uml/designpatterns-flyweight-pattern.md
     :language: md
 
 
@@ -26,7 +26,7 @@ Problem
 
 .. figure:: img/designpatterns-flyweight-problem.png
 
-.. literalinclude:: src/designpatterns-flyweight-problem.md
+.. literalinclude:: uml/designpatterns-flyweight-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-flyweight-problem.py
@@ -42,7 +42,7 @@ Solution
 
 .. figure:: img/designpatterns-flyweight-solution.png
 
-.. literalinclude:: src/designpatterns-flyweight-solution.md
+.. literalinclude:: uml/designpatterns-flyweight-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-flyweight-solution.py

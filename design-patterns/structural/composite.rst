@@ -18,7 +18,7 @@ Pattern
 
 .. figure:: img/designpatterns-composite-pattern.png
 
-.. literalinclude:: src/designpatterns-composite-pattern.md
+.. literalinclude:: uml/designpatterns-composite-pattern.md
     :language: md
 
 
@@ -26,7 +26,7 @@ Problem
 -------
 .. figure:: img/designpatterns-composite-problem.png
 
-.. literalinclude:: src/designpatterns-composite-problem.md
+.. literalinclude:: uml/designpatterns-composite-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-composite-problem.py
@@ -37,7 +37,7 @@ Solution
 --------
 .. figure:: img/designpatterns-composite-solution.png
 
-.. literalinclude:: src/designpatterns-composite-solution.md
+.. literalinclude:: uml/designpatterns-composite-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-composite-solution.py

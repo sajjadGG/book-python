@@ -17,7 +17,7 @@ Pattern
 
 .. figure:: img/designpatterns-abstractfactory-pattern.png
 
-.. literalinclude:: src/designpatterns-abstractfactory-pattern.md
+.. literalinclude:: uml/designpatterns-abstractfactory-pattern.md
     :language: md
 
 
@@ -29,7 +29,7 @@ Problem
 
 .. figure:: img/designpatterns-abstractfactory-problem.png
 
-.. literalinclude:: src/designpatterns-abstractfactory-problem.md
+.. literalinclude:: uml/designpatterns-abstractfactory-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-abstractfactory-problem.py
@@ -40,7 +40,7 @@ Solution
 --------
 .. figure:: img/designpatterns-abstractfactory-solution.png
 
-.. literalinclude:: src/designpatterns-abstractfactory-solution.md
+.. literalinclude:: uml/designpatterns-abstractfactory-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-abstractfactory-solution.py

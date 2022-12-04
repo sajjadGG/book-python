@@ -11,7 +11,7 @@ Pattern
 
 .. figure:: img/designpatterns-prototype-pattern.png
 
-.. literalinclude:: src/designpatterns-prototype-pattern.md
+.. literalinclude:: uml/designpatterns-prototype-pattern.md
     :language: md
 
 
@@ -21,7 +21,7 @@ Problem
 
 .. figure:: img/designpatterns-prototype-problem.png
 
-.. literalinclude:: src/designpatterns-prototype-problem.md
+.. literalinclude:: uml/designpatterns-prototype-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-prototype-problem.py
@@ -32,7 +32,7 @@ Solution
 --------
 .. figure:: img/designpatterns-prototype-solution.png
 
-.. literalinclude:: src/designpatterns-prototype-solution.md
+.. literalinclude:: uml/designpatterns-prototype-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-prototype-solution.py

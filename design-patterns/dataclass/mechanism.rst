@@ -2,11 +2,14 @@ Dataclass Mechanism
 ===================
 
 
-Input
+SetUp
 -----
 >>> from dataclasses import dataclass
->>>
->>>
+>>> from datetime import date
+>>> from typing import ClassVar, Literal
+
+Input
+-----
 >>> @dataclass
 ... class ShoppingCartItem:
 ...     name: str
@@ -81,10 +84,6 @@ Use Case - 0x01
 ---------------
 ``class``:
 
->>> from datetime import date
->>> from typing import ClassVar, Literal
->>>
->>>
 >>> class Mission:
 ...    year: int
 ...    name: str
@@ -177,17 +176,12 @@ Use Case - 0x01
 
 ``dataclass``:
 
->>> from dataclasses import dataclass
->>> from datetime import date
->>> from typing import ClassVar
->>>
->>>
 >>> @dataclass
 ... class Mission:
 ...     year: int
 ...     name: str
-...
-...
+>>>
+>>>
 >>> @dataclass
 ... class Astronaut:
 ...     firstname: str

@@ -372,6 +372,11 @@ Microbenchmark for concatenation using ``str.format()`` method:
 Duration: 5.3505 seconds
 
 
+References
+----------
+.. [#pydocpython310] Python Software Foundation. Parenthesized context managers. Year: 2022. Retrieved: 2022-12-03. URL: https://docs.python.org/dev/whatsnew/3.10.html#parenthesized-context-managers
+
+
 Assignments
 -----------
 .. literalinclude:: assignments/protocol_contextmanager_a.py

@@ -18,7 +18,7 @@ Pattern
 -------
 .. figure:: img/designpatterns-borg-pattern.png
 
-.. literalinclude:: src/designpatterns-borg-pattern.md
+.. literalinclude:: uml/designpatterns-borg-pattern.md
     :language: md
 
 
@@ -26,7 +26,7 @@ Problem
 -------
 .. figure:: img/designpatterns-borg-problem.png
 
-.. literalinclude:: src/designpatterns-borg-problem.md
+.. literalinclude:: uml/designpatterns-borg-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-borg-problem.py
@@ -37,7 +37,7 @@ Solution
 --------
 .. figure:: img/designpatterns-borg-solution.png
 
-.. literalinclude:: src/designpatterns-borg-solution.md
+.. literalinclude:: uml/designpatterns-borg-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-borg-solution.py

@@ -103,30 +103,29 @@ Conferences
 
 Python:
 
-* `PyCon US 2021 <https://us.pycon.org/2021/speaking/>`_
-* `PyCon US <https://pyvideo.org/events/pycon-us-2020.html>`_
-* `EuroPython <https://pyvideo.org/events/europython-2019.html>`_
-* `PyGotham <https://pyvideo.org/events/pygotham-2019.html>`_
+* `EuroPython 2019 <https://pyvideo.org/events/europython-2019.html>`_
+* `EuroPython 2020 <https://pyvideo.org/events/europython-2020.html>`_
+* `Kiwi PyCon <https://www.youtube.com/playlist?list=PLBGl1tVyiWQSVwxne3yOH79uaSqgbnCqL>`_
+* `PyCon <https://www.youtube.com/channel/UCrJhliKNQ8g0qoE_zvL8eVg>`_
+* `PyCon AU 2021 <https://pyvideo.org/events/pycon-au-2021.html>`_
 * `PyCon AU <https://www.youtube.com/user/PyConAU>`_
-* `PyCon PL <https://pyvideo.org/events/pycon-pl-2016.html>`_
+* `PyCon PL 2016 <https://pyvideo.org/events/pycon-pl-2016.html>`_
+* `PyCon US 2021 <https://us.pycon.org/2021/speaking/>`_
+* `PyCon US 2020 <https://pyvideo.org/events/pycon-us-2020.html>`_
+* `PyGotham 2019 <https://pyvideo.org/events/pygotham-2019.html>`_
+* `PyGotham <https://www.youtube.com/channel/UC45KSayx_kwQAnhpaPAuVkw/videos>`_
+* `PyOhio 2019 <https://pyvideo.org/events/pyohio-2019.html>`_
 
 Data Science / Machine Learning:
 
-* `SciPy <https://pyvideo.org/events/scipy-2020.html>`_
-* `EuroSciPy <https://pyvideo.org/events/euroscipy-2019.html>`_
-* `PyData Warsaw <https://pyvideo.org/events/pydata-warsaw-2019.html>`_
+* `EuroSciPy 2019 <https://pyvideo.org/events/euroscipy-2019.html>`_
+* `PyData Berlin 2019 <https://pyvideo.org/events/pydata-berlin-2019.html>`_
+* `PyData Warsaw 2019 <https://pyvideo.org/events/pydata-warsaw-2019.html>`_
+* `SciPy 2020 <https://pyvideo.org/events/scipy-2020.html>`_
 
-Old:
+Django:
 
-* `PyCon 2017 <https://www.youtube.com/channel/UCrJhliKNQ8g0qoE_zvL8eVg>`_
-* `Kiwi PyCon 2014 <https://www.youtube.com/playlist?list=PLBGl1tVyiWQSVwxne3yOH79uaSqgbnCqL>`_
-* `DjangoCon 2014 <https://www.youtube.com/playlist?list=PLE7tQUdRKcybbNiuhLcc3h6WzmZGVBMr3>`_
-* `PyGotham 2014 <https://www.youtube.com/channel/UC45KSayx_kwQAnhpaPAuVkw/videos>`_
-* `PyCon AU <http://pyvideo.org/category/56/pycon-australia-2014>`_
-* `PyData Berlin <http://pyvideo.org/category/55/pydata-berlin-2014>`_
-* `EuroPython <http://pyvideo.org/category/54/europython-2014>`_
-* `PyOhio <http://pyvideo.org/category/52/pyohio-2014>`_
-* `SciPy <http://pyvideo.org/category/51/scipy-2014>`_
+* `DjangoCon <https://www.youtube.com/playlist?list=PLE7tQUdRKcybbNiuhLcc3h6WzmZGVBMr3>`_
 
 
 Speakers

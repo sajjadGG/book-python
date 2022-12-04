@@ -23,7 +23,7 @@ nam wystarczy.
 1. W arkuszu zadań zapisz wersję PyCharm z której korzystasz:
 
     a. Na ekranie głównym w lewym górnym rogu jest numer wersji PyCharm
-    b. Format zapisu, np. `2021.1 CE` lub `2021.1 PRO` itp.
+    b. Format zapisu, np. `2022.3 CE` lub `2022.3 PRO` itp.
     c. `CE` - Community Edition
     d. `PRO` - Professional
 

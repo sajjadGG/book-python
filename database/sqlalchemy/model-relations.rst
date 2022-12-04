@@ -33,18 +33,18 @@ The primary forms of relationship loading are [#saDocsLoadingRelationships]_:
     that related rows are loaded in the same result set.
 
 ``subquery loading`` - Subquery Eager Loading
-    available via ``lazy='subquery'`` or the ``subqueryload()`` option, this
-    form of loading emits a second ``SELECT`` statement which re-states the
-    original query embedded inside of a subquery, then ``JOIN``s that
+    available via ``lazy='subquery'`` or the ``subqueryload()`` option,
+    this form of loading emits a second ``SELECT`` statement which re-states
+    the original query embedded inside of a subquery, then ``JOIN``s that
     subquery to the related table to be loaded to load all members of
     related collections / scalar references at once.
 
 ``select IN loading`` - Select ``IN`` loading
-    available via ``lazy='selectin'`` or the ``selectinload()`` option, this
-    form of loading emits a second (or more) ``SELECT`` statement which
-    assembles the primary key identifiers of the parent objects into an
-    ``IN`` clause, so that all members of related collections / scalar
-    references are loaded at once by primary key.
+    available via ``lazy='selectin'`` or the ``selectinload()`` option,
+    this form of loading emits a second (or more) ``SELECT`` statement
+    which assembles the primary key identifiers of the parent objects
+    into an ``IN`` clause, so that all members of related collections
+    or scalar references are loaded at once by primary key.
 
 ``raise loading``
     available via ``lazy='raise'``, ``lazy='raise_on_sql'``, or the

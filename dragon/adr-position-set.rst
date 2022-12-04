@@ -169,7 +169,7 @@ Option 10
 
 
 Option 11
---------
+---------
 >>> dragon.position @ (10, 20)
 >>> dragon.position @ Point(x=10, y=20)
 

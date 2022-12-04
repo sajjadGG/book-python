@@ -28,8 +28,6 @@ Tests
     :maxdepth: 1
     :caption: Tests
 
-    ../intermediate/test/doctest.rst
-    ../intermediate/test/unittest.rst
     tests/pytest.rst
 
 
@@ -66,6 +64,7 @@ CI/CD
 
     ci-cd/ecosystem.rst
     ci-cd/cicd-python.rst
+    ci-cd/flit.rst
     ci-cd/tests.rst
     ci-cd/tools.rst
     ci-cd/wheel.rst

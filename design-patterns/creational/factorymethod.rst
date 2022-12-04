@@ -13,7 +13,7 @@ Pattern
 
 .. figure:: img/designpatterns-factorymethod-pattern.png
 
-.. literalinclude:: src/designpatterns-factorymethod-pattern.md
+.. literalinclude:: uml/designpatterns-factorymethod-pattern.md
     :language: md
 
 
@@ -24,7 +24,7 @@ Problem
 
 .. figure:: img/designpatterns-factorymethod-problem.png
 
-.. literalinclude:: src/designpatterns-factorymethod-problem.md
+.. literalinclude:: uml/designpatterns-factorymethod-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-factorymethod-problem.py
@@ -35,7 +35,7 @@ Solution
 --------
 .. figure:: img/designpatterns-factorymethod-solution.png
 
-.. literalinclude:: src/designpatterns-factorymethod-solution.md
+.. literalinclude:: uml/designpatterns-factorymethod-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-factorymethod-solution.py

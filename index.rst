@@ -11,6 +11,16 @@ About
     about/versions.rst
 
 
+About
+*****
+.. toctree::
+    :maxdepth: 1
+
+    LICENSE.rst
+    install.rst
+    about/versions.rst
+
+
 Python Basics
 *************
 .. toctree::

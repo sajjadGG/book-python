@@ -12,7 +12,7 @@ Pattern
 -------
 .. figure:: img/designpatterns-builder-pattern.png
 
-.. literalinclude:: src/designpatterns-builder-pattern.md
+.. literalinclude:: uml/designpatterns-builder-pattern.md
     :language: md
 
 
@@ -26,7 +26,7 @@ Problem
 
 .. figure:: img/designpatterns-builder-problem.png
 
-.. literalinclude:: src/designpatterns-builder-problem.md
+.. literalinclude:: uml/designpatterns-builder-problem.md
     :language: md
 
 .. literalinclude:: src/designpatterns-builder-problem.py
@@ -40,7 +40,7 @@ Solution
 
 .. figure:: img/designpatterns-builder-solution.png
 
-.. literalinclude:: src/designpatterns-builder-solution.md
+.. literalinclude:: uml/designpatterns-builder-solution.md
     :language: md
 
 .. literalinclude:: src/designpatterns-builder-solution.py

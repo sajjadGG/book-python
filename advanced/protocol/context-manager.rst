@@ -521,6 +521,7 @@ if there were no exceptions. Outer context calls session.close()
 References
 ----------
 .. [#sqlalchemySessions] SQLAlchemy authors and contributors. Session Basics. Year: 2022. Retrieved: 2022-11-25. URL: https://docs.sqlalchemy.org/en/20/orm/session_basics.html
+.. [#pydocpython310] Python Software Foundation. Parenthesized context managers. Year: 2022. Retrieved: 2022-12-03. URL: https://docs.python.org/dev/whatsnew/3.10.html#parenthesized-context-managers
 
 
 Assignments

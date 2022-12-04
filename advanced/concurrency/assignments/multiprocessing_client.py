@@ -19,3 +19,5 @@ def run():
     connection.send(data)
     connection.send('close')
     connection.close()
+
+# Solution

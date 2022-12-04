@@ -149,10 +149,10 @@ Launching rocket to outer space
 
 Assignments
 -----------
-.. literalinclude:: assignments/syntax_loop_else_a.py
-    :caption: :download:`Solution <assignments/syntax_loop_else_a.py>`
+.. literalinclude:: assignments/syntax_loopelse_a.py
+    :caption: :download:`Solution <assignments/syntax_loopelse_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/syntax_loop_else_b.py
-    :caption: :download:`Solution <assignments/syntax_loop_else_b.py>`
+.. literalinclude:: assignments/syntax_loopelse_a.py
+    :caption: :download:`Solution <assignments/syntax_loopelse_a.py>`
     :end-before: # Solution

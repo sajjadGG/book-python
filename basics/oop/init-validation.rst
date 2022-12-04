@@ -406,14 +406,3 @@ Use Case - 0x06
 >>> point1 = Point(x=-10, y=1, z=0)
 Traceback (most recent call last):
 ValueError: x=-10 is out of boundary 0, 1024
-
-
-Assignments
------------
-.. literalinclude:: assignments/oop_init_a.py
-    :caption: :download:`Solution <assignments/oop_init_a.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/oop_init_b.py
-    :caption: :download:`Solution <assignments/oop_init_b.py>`
-    :end-before: # Solution

@@ -378,10 +378,3 @@ ValueError: weight value (90) not between 55 and 85
 >>> mark = Astronaut('Mark', 'Watney', age=60, height=185, weight=75, agency='NASA')
 Traceback (most recent call last):
 ValueError: age value (60) not between 30 and 50
-
-
-Assignments
------------
-.. literalinclude:: assignments/dataclass_field_a.py
-    :caption: :download:`Solution <assignments/dataclass_field_a.py>`
-    :end-before: # Solution

@@ -17,6 +17,7 @@ Theory
 
     theory/about.rst
     theory/uml-erd.rst
+    theory/orm.rst
 
 
 Normalization
@@ -43,7 +44,8 @@ NoSQL
 
     nosql/about.rst
     nosql/key-value.rst
-    nosql/document.rst
+    nosql/document-about.rst
+    nosql/document-mongodb.rst
     nosql/time-series.rst
     nosql/column.rst
     nosql/graph.rst
@@ -164,6 +166,8 @@ SQLAlchemy
     sqlalchemy/func-string.rst
     sqlalchemy/func-system.rst
 
+    sqlalchemy/extensions.rst
+    sqlalchemy/case-study.rst
     sqlalchemy/use-cases.rst
 
 

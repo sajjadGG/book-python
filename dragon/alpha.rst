@@ -88,7 +88,7 @@ Post notes:
        documentation, i.e., "what Dragon has to do, not how to do it"
     i. You don't have to keep order of specification while writing code
     j. This is `alpha` version, so no new functionality like
-       negative position checking etc.
+       negative position checking etc
     l. You can create tests, i.e.: unittest, doctest
     k. Do not read solution or any future iterations of this exercise;
        if you read future tasks, you will spoil fun and learning

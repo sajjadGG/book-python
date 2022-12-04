@@ -18,7 +18,7 @@ Python Release Cycle
 
 Which Version?
 --------------
-* You should use newest official Python version [#pyDevGuideVersions]_
+* You should use newest official Python version [#pyDevVersions]_
 * Source: https://devguide.python.org/versions/
 * Source: https://www.python.org/downloads/
 

@@ -50,7 +50,9 @@ Selectors
 
 Loop
 ----
-.. todo::
+.. todo:: rewrite
+
+.. code-block:: python
 
     import asyncio
 
