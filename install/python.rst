@@ -1,7 +1,6 @@
 Install Python
 ==============
 
-.. contents::
 
 Install on macOS
 ----------------

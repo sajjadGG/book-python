@@ -4,7 +4,9 @@ Modules pyproject.toml
 * https://peps.python.org/pep-0517/
 * https://peps.python.org/pep-0518/
 * https://peps.python.org/pep-0621/
+* https://peps.python.org/pep-0639/#add-license-files-key
 * https://peps.python.org/pep-0660/
+* https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
 
 Modern Python packages can contain a pyproject.toml file, first introduced
 in PEP 518 and later expanded in PEP 517, PEP 621 and PEP 660. This file

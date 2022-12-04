@@ -251,6 +251,9 @@ if html_theme == 'sphinx_rtd_theme':
             '_static/js/code-editable.js',
             mathjax_path]})
 
+if 'script_files' not in html_context:
+    html_context['script_files'] = []
+
 if 'html_menu_autohide' in globals() and html_menu_autohide is True:
     html_context['script_files'].append('_static/js/menu-autohide.js')
 

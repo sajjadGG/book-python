@@ -3,8 +3,8 @@
     # doctest: +SKIP_FILE
 
 
-Dependencies
-============
+FastAPI Dependencies
+====================
 * CDI - Content Dependency Injection
 * Used when you have functions which takes the same thing (for example parameters)
 * If one of your dependencies is declared multiple times for the same path operation, for example, multiple dependencies have a common sub-dependency, FastAPI will know to call that sub-dependency only once per request.
