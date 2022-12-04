@@ -84,7 +84,7 @@ if 'sphinx.ext.mathjax' in extensions:
     imgmath_latex = 'latex'
     # mathjax_path = '_static/mathjax.js'
     mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
-    mathjax_config = {
+    mathjax3_config = {
         'extensions': ['tex2jax.js'],
         'jax': ['input/TeX', 'output/HTML-CSS'],
     }

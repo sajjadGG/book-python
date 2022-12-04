@@ -383,8 +383,9 @@ Field Ordering
 --------------
 Field order is important in models for the following reasons:
 
-* validation is performed in the order fields are defined; `fields
-   validators` can access the values of earlier fields, but not later ones
+* validation is performed in the order fields are defined;
+  `fields validators` can access the values of earlier fields,
+  but not later ones
 * field order is preserved in the model `schema`
 * field order is preserved in `validation errors`
 * field order is preserved by ```.dict()`` and ``.json()`` etc.

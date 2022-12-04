@@ -1,8 +1,8 @@
 Enum Check
 ==========
 
-*EnumCheck* contains the options used by the :func:`verify` decorator to ensure
-various constraints; failed constraints result in a :exc:`ValueError`.
+*EnumCheck* contains the options used by the ``verify`` decorator to
+ensure various constraints; failed constraints result in a ``ValueError``.
 
 
 UNIQUE
@@ -78,9 +78,9 @@ Unique
 ------
 * ``enum.unique``
 
-A :keyword:`class` decorator specifically for enumerations.  It searches an
-enumeration's :attr:`__members__`, gathering any aliases it finds; if any are
-found :exc:`ValueError` is raised with the details:
+A ``class`` decorator specifically for enumerations.  It searches an
+enumeration's ``__members__``, gathering any aliases it finds; if any
+are found ``ValueError`` is raised with the details:
 
 >>> from enum import Enum, unique
 
@@ -100,9 +100,9 @@ Verify
 * ``enum.verify``
 * Since Python: 3.11
 
-A :keyword:`class` decorator specifically for enumerations.  Members from
-:class:`EnumCheck` are used to specify which constraints should be checked
-on the decorated enumeration.
+A class decorator specifically for enumerations. Members from ``EnumCheck``
+are used to specify which constraints should be checked on the decorated
+enumeration.
 
 
 Member
@@ -126,10 +126,10 @@ Global Enum
 * ``enum.global_enum``
 * Since Python: 3.11
 
-A decorator to change the :class:`str() <str>` and :func:`repr` of an enum
-to show its members as belonging to the module instead of its class.
-Should only be used when the enum members are exported
-to the module global namespace (see :class:`re.RegexFlag` for an example).
+A decorator to change the ``str()`` and ``repr`` of an enum to show its
+members as belonging to the module instead of its class. Should only be
+used when the enum members are exported to the module global namespace
+(see ``re.RegexFlag`` for an example).
 
 
 Show Flag Values
@@ -137,4 +137,4 @@ Show Flag Values
 * ``enum.show_flag_values(value)``
 * Since Python: 3.11
 
-Return a list of all power-of-two integers contained in a flag *value*.
+Return a list of all power-of-two integers contained in a flag ``value``.

@@ -41,8 +41,8 @@ Polish
 12. Wymagania niefunkcjonalne:
     a. Zadanie jest symulacją procesu developmentu
     b. Trener zachowuje się jak Product Owner z niewielką techniczną wiedzą
-    c. Ty jesteś inżynierem oprogramowania, który musi podejmować decyzje
-       i ponosić ich konsekwencje
+    c. Ty jesteś inżynierem oprogramowania, który musi podejmować decyzje i
+       ponosić ich konsekwencje
     d. Zadanie jest tylko narracją do demonstracji OOP i dobrych
        praktyk programowania
     e. Wyliczona pozycja Smoka na końcu gry powinna być x=20, y=40

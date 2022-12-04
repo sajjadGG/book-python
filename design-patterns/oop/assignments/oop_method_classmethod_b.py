@@ -2,7 +2,7 @@
 * Assignment: OOP MethodClassmethod CSV
 * Complexity: easy
 * Lines of code: 4 lines
-* Time: 13 min
+* Time: 5 min
 
 English:
     1. To class `CSVMixin` add methods:

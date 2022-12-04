@@ -4,6 +4,7 @@ About
     :maxdepth: 1
     :caption: About
 
+    about/about.rst
     about/entrytest.rst
     about/agenda.rst
 
@@ -26,6 +27,9 @@ FastAPI
     fastapi/http-headers.rst
     fastapi/http-files.rst
     fastapi/http-websockets.rst
+    fastapi/framework-config.rst
+    fastapi/framework-dependencies.rst
+    fastapi/framework-routers.rst
     fastapi/framework-middleware.rst
     fastapi/framework-backgroundtask.rst
 
@@ -55,6 +59,7 @@ Database
     database/auth.rst
     database/async.rst
     database/relationship.rst
+    database/nosql.rst
 
 
 Auth

@@ -11,7 +11,7 @@ English:
 
 Polish:
     1. Stwórz klasę `Setosa` implementującą `IrisInterface`
-    2. Zaimplementuj metory
+    2. Zaimplementuj metody
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Hints:

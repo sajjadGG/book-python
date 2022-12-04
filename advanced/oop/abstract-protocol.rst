@@ -475,7 +475,6 @@ decorator that provides the same semantics for class and instance checks
 as for ``collections.abc`` classes, essentially making them 'runtime
 protocols':
 
-
 >>> @runtime_checkable
 ... class Person(Protocol):
 ...     firstname: str

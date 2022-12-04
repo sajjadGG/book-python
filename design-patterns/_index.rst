@@ -84,6 +84,7 @@ Object Oriented Programming
     oop/abstract-interface.rst
     oop/abstract-protocol.rst
     oop/abstract-class.rst
+    oop/abstract-polymorphism.rst
     oop/paradigm-principles.rst
     oop/paradigm-solid.rst
     oop/paradigm-polymorphism.rst

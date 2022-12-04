@@ -58,7 +58,7 @@ Models
 Schema
 ------
 * Represents JSON request/response data
-*``Config.orm_mode = True`` is required to have model as a ``response_model`` (a decorator parameter).
+* ``Config.orm_mode = True`` is required to have model as a ``response_model`` (a decorator parameter).
 * Note, that if you set ``orm_mode = True``, then not all fields need to be specified.
 * Listed fields will be in response, and not listed will be hidden in response.
 

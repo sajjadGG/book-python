@@ -1,5 +1,3 @@
-.. orphan::
-
 Donation Successful
 ===================
 

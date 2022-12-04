@@ -6,7 +6,7 @@ OOP Attribute Access Modifiers
 * ``name`` - public attribute
 * ``_name`` - protected attribute (non-public by convention)
 * ``__name`` - private attribute (name mangling)
-* ``__name__`` - system attribute
+* ``__name__`` - system attribute (dunder)
 * ``name_`` - avoid name collision with built-ins
 
 >>> class Astronaut:
@@ -16,10 +16,12 @@ OOP Attribute Access Modifiers
 ...     _address: int           # protected
 ...     __username: str         # private
 ...     __password: str         # private
-...     id_: int                # avoid name collision
-...     type_: str              # avoid name collision
-...     __doc__: str            # system
-...     __module__: str         # system
+...     id_: int                # public, avoid name collision
+...     type_: str              # public, avoid name collision
+...     __doc__: str            # (dunder) special system
+...     __module__: str         # (dunder) special system
+...     __version__ = '1.0.0'    # (dunder) special convention
+...     __author__ = 'mwatney'   # (dunder) special convention
 
 
 SetUp
@@ -250,6 +252,8 @@ Show Attributes
 ...         self.type_ = 'astronaut'
 ...         self.__doc__ = 'Astronaut Class'
 ...         self.__module__ = '__main__'
+...         self.__version__ = '1.0.0'
+...         self.__author__ = 'Mark Watney <mwatney@nasa.gov>'
 >>>
 >>>
 >>> astro = Astronaut()
@@ -266,46 +270,68 @@ All attributes:
  'id_': 1337,
  'type_': 'astronaut',
  '__doc__': 'Astronaut Class',
- '__module__': '__main__'}
+ '__module__': '__main__',
+ '__version__': '1.0.0',
+ '__author__': 'Mark Watney <mwatney@nasa.gov>'}
 
 Public attributes:
 
->>> result = {attribute: value
-...           for attribute, value in vars(astro).items()
-...           if not attribute.startswith('_')}
+>>> def get_public_attributes(obj):
+...     return {attrname: attrvalue
+...             for attrname in dir(obj)
+...             if (attrvalue := getattr(astro, attrname))
+...             and not callable(attrvalue)
+...             and not attrname.startswith('_')}
 >>>
->>> print(result)
-{'firstname': 'Mark', 'lastname': 'Watney', 'id_': 1337, 'type_': 'astronaut'}
+>>>
+>>> get_public_attributes(astro)
+{'firstname': 'Mark', 'id_': 1337, 'lastname': 'Watney', 'type_': 'astronaut'}
 
 Protected attributes:
 
->>> result = {attribute: value
-...           for attribute, value in vars(astro).items()
-...           if attribute.startswith('_')
-...           and not attribute.startswith('__')
-...           and not attribute.startswith(f'_{astro.__class__.__name__}__')}
+>>> def get_protected_attributes(obj):
+...     return {attrname: attrvalue
+...             for attrname in dir(obj)
+...             if (attrvalue := getattr(obj, attrname))
+...             and not callable(attrvalue)
+...             and attrname.startswith('_')
+...             and not attrname.startswith(f'_{obj.__class__.__name__}_')
+...             and not attrname.endswith('_')}
 >>>
->>> print(result)
-{'_salary': 10000, '_address': '2101 E NASA Pkwy, Houston 77058, Texas, USA'}
+>>>
+>>> get_protected_attributes(astro)
+{'_address': '2101 E NASA Pkwy, Houston 77058, Texas, USA', '_salary': 10000}
 
 Private attributes:
 
->>> result = {attribute: value
-...           for attribute, value in vars(astro).items()
-...           if attribute.startswith(f'_{astro.__class__.__name__}__')}
+>>> def get_private_attributes(obj):
+...     return {attrname: attrvalue
+...             for attrname in dir(obj)
+...             if (attrvalue := getattr(obj, attrname))
+...             and not callable(attrvalue)
+...             and attrname.startswith(f'_{obj.__class__.__name__}_')}
 >>>
->>> print(result)
-{'_Astronaut__username': 'mwatney', '_Astronaut__password': 'ares3'}
+>>>
+>>> get_private_attributes(astro)
+{'_Astronaut__password': 'ares3', '_Astronaut__username': 'mwatney'}
 
 System attributes:
 
->>> result = {attribute: value
-...           for attribute, value in vars(astro).items()
-...           if attribute.startswith('__')
-...           and attribute.endswith('__')}
+>>> def get_system_attributes(obj):
+...     return {attrname: attrvalue
+...             for attrname in dir(obj)
+...             if (attrvalue := getattr(obj, attrname))
+...             and not callable(attrvalue)
+...             and attrname.startswith('__')
+...             and attrname.endswith('__')}
 >>>
->>> print(result)
-{'__doc__': 'Astronaut Class', '__module__': '__main__'}
+>>>
+>>> get_system_attributes(astro)  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE
+{'__author__': 'Mark Watney <mwatney@nasa.gov>',
+ '__dict__': {...},
+ '__doc__': 'Astronaut Class',
+ '__module__': '__main__',
+ '__version__': '1.0.0'}
 
 
 References
