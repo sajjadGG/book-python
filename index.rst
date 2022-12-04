@@ -7,9 +7,14 @@ About
     :maxdepth: 1
 
     LICENSE.rst
-    install.rst
     about/versions.rst
-
+    install.rst
+    install/python.rst
+    install/git.rst
+    install/github.rst
+    install/ide.rst
+    install/project.rst
+    install/doctest.rst
 
 About
 *****
