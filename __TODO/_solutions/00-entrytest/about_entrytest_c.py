@@ -1,6 +1,6 @@
 """
 * Assignment: About EntryTest Endswith
-* Complexity: medium
+* Complexity: easy
 * Lines of code: 4 lines
 * Time: 8 min
 

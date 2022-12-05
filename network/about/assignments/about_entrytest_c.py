@@ -18,6 +18,7 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from pprint import pprint
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
@@ -31,8 +32,8 @@ Tests:
     >>> assert all(type(row) is tuple for row in result), \
     'Variable `result` should be a list[tuple]'
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+    >>> pprint(result)
+    [('SepalLength', 'SepalWidth', 'PetalLength', 'PetalWidth', 'Species'),
      (5.8, 2.7, 5.1, 1.9, 'virginica'),
      (5.1, 3.5, 1.4, 0.2, 'setosa'),
      (5.7, 2.8, 4.1, 1.3, 'versicolor'),
@@ -42,18 +43,18 @@ Tests:
 """
 
 DATA = [
-    {'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
-    {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
-    {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
-    {'Sepal length': 6.3, 'Sepal width': 2.9, 'Petal length': 5.6, 'Petal width': 1.8, 'Species': 'virginica'},
-    {'Sepal length': 6.4, 'Sepal width': 3.2, 'Petal length': 4.5, 'Petal width': 1.5, 'Species': 'versicolor'},
-    {'Sepal length': 4.7, 'Sepal width': 3.2, 'Petal length': 1.3, 'Petal width': 0.2, 'Species': 'setosa'}]
+    {'SepalLength': 5.8, 'SepalWidth': 2.7, 'PetalLength': 5.1, 'PetalWidth': 1.9, 'Species': 'virginica'},
+    {'SepalLength': 5.1, 'SepalWidth': 3.5, 'PetalLength': 1.4, 'PetalWidth': 0.2, 'Species': 'setosa'},
+    {'SepalLength': 5.7, 'SepalWidth': 2.8, 'PetalLength': 4.1, 'PetalWidth': 1.3, 'Species': 'versicolor'},
+    {'SepalLength': 6.3, 'SepalWidth': 2.9, 'PetalLength': 5.6, 'PetalWidth': 1.8, 'Species': 'virginica'},
+    {'SepalLength': 6.4, 'SepalWidth': 3.2, 'PetalLength': 4.5, 'PetalWidth': 1.5, 'Species': 'versicolor'},
+    {'SepalLength': 4.7, 'SepalWidth': 3.2, 'PetalLength': 1.3, 'PetalWidth': 0.2, 'Species': 'setosa'}]
 
 
-# Load DATA from JSON and convert to list[tuple]
+# Convert DATA from list[dict] to list[tuple]
 # type: header = tuple[str,...]
 # type: row = tuple[float,float,float,float,str]
-# type: list[tuple[header|row]]
+# type: list[tuple[header|row,...]]
 result = ...
 
 # Solution

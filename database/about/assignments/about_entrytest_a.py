@@ -14,13 +14,14 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from pprint import pprint
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
     >>> assert type(result) is int, \
     'Variable `result` has invalid type, should be int'
 
-    >>> result
+    >>> pprint(result)
     1
 """
 

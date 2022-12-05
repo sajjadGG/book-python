@@ -1,6 +1,6 @@
 """
 * Assignment: About EntryTest Endswith
-* Complexity: medium
+* Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
 
@@ -18,6 +18,7 @@ Polish:
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from pprint import pprint
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
@@ -28,9 +29,13 @@ Tests:
     >>> assert all(type(element) is str for element in result), \
     'All elements in result must be a str'
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-    ['mlewis@nasa.gov', 'rmartinez@nasa.gov', 'cbeck@nasa.gov',
-     'bjohanssen@nasa.gov', 'mwatney@nasa.gov', 'ptwardowski@polsa.gov.pl']
+    >>> pprint(result)
+    ['mlewis@nasa.gov',
+     'rmartinez@nasa.gov',
+     'cbeck@nasa.gov',
+     'bjohanssen@nasa.gov',
+     'mwatney@nasa.gov',
+     'ptwardowski@polsa.gov.pl']
 """
 
 DATA = {

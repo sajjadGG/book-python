@@ -1,23 +1,24 @@
 """
 * Assignment: About EntryTest Endswith
-* Complexity: medium
-* Lines of code: 4 lines
+* Complexity: easy
+* Lines of code: 5 lines
 * Time: 5 min
 
 English:
     1. Define `result: list[str]`
-    2. Collect in `result` all email addresses from `DATA`
-       with top-level domain mentioned in `DOMAINS`
+    2. Collect in `result` all email addresses from `DATA` -> `crew`
+       with domain names mentioned in `DOMAINS`
     3. Run doctests - all must succeed
 
 Polish:
     1. Zdefiniuj `result: list[str]`
-    2. Zbierz w `result` wszystkie adresy email z `DATA`
-       z domenami najwyższego rzędu wymienionymi w `DOMAINS`
+    2. Zbierz w `result` wszystkie adresy email z `DATA` -> `crew`
+       z nazwami domenowymi wymienionymi w `DOMAINS`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
+    >>> from pprint import pprint
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
@@ -28,9 +29,13 @@ Tests:
     >>> assert all(type(element) is str for element in result), \
     'All elements in result must be a str'
 
-    >>> result  # doctest: +NORMALIZE_WHITESPACE
-    ['mlewis@nasa.gov', 'rmartinez@nasa.gov', 'cbeck@nasa.gov',
-     'bjohanssen@nasa.gov', 'mwatney@nasa.gov', 'ptwardowski@polsa.gov.pl']
+    >>> pprint(result)
+    ['mlewis@nasa.gov',
+     'rmartinez@nasa.gov',
+     'cbeck@nasa.gov',
+     'bjohanssen@nasa.gov',
+     'mwatney@nasa.gov',
+     'ptwardowski@polsa.gov.pl']
 """
 
 DATA = {
