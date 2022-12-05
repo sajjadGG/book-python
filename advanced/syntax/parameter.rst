@@ -260,10 +260,10 @@ Use Case - 0x07
 ...              doublequote=True, delim_whitespace=False, low_memory=True,
 ...              memory_map=False, float_precision=None): ...
 
->>> read_csv('iris.csv', ', ', None, 'infer', None, None, None, False, None,
+>>> read_csv('iris.csv', ';', None, 'infer', None, None, None, False, None,
 ...          True, None, None, None, None, None, False, None, None, None,
 ...          True, True, False, True, False, False, False, None, False,
-...          False, None, 'infer', None, b'.', None, '"', 0, None, None,
+...          False, None, 'infer', None, b',', None, '"', 0, None, None,
 ...          None, None, None, True, True, 0, True, False, True, False, None)
 Traceback (most recent call last):
 TypeError: read_csv() takes 1 positional argument but 49 were given

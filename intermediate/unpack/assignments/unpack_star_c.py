@@ -5,64 +5,49 @@
 * Time: 2 min
 
 English:
-    1. Separate header and rows
+    1. Separate values from species name
     2. Use asterisk `*` notation
     3. Run doctests - all must succeed
 
 Polish:
-    1. Odseparuj nagłówek od wierszy danych
+    1. Odseparuj wartości od nazwy gatunku
     2. Skorzystaj z konstrukcji z gwiazdką `*`
     3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
 
-    >>> assert header is not Ellipsis, \
-    'Assign result to variable: `header`'
-    >>> assert rows is not Ellipsis, \
-    'Assign result to variable: `rows`'
-    >>> assert len(header) > 0, \
-    'Variable `header` cannot be empty'
-    >>> assert len(rows) > 0, \
-    'Variable `rows` cannot be empty'
-    >>> assert type(header) is tuple, \
-    'Variable `header` has invalid type, should be tuple'
-    >>> assert type(rows) is list, \
-    'Variable `hosts` has invalid type, should be list'
-    >>> assert all(type(x) is str for x in header), \
-    'All rows in `header` should be str'
-    >>> assert all(type(x) is tuple for x in rows), \
-    'All rows in `rows` should be tuple'
+    >>> assert values is not Ellipsis, \
+    'Assign result to variable: `values`'
+    >>> assert species is not Ellipsis, \
+    'Assign result to variable: `species`'
+    >>> assert len(values) > 0, \
+    'Variable `values` cannot be empty'
+    >>> assert len(species) > 0, \
+    'Variable `species` cannot be empty'
+    >>> assert type(values) is list, \
+    'Variable `values` has invalid type, should be list'
+    >>> assert type(species) is str, \
+    'Variable `species` has invalid type, should be str'
+    >>> assert all(type(x) is float for x in values), \
+    'All rows in `values` should be float'
 
-    >>> header
-    ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
+    >>> values
+    [5.1, 3.5, 1.4, 0.2]
 
-    >>> rows  # doctest: +NORMALIZE_WHITESPACE
-    [(5.8, 2.7, 5.1, 1.9, 'virginica'),
-     (5.1, 3.5, 1.4, 0.2, 'setosa'),
-     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-     (6.3, 2.9, 5.6, 1.8, 'virginica'),
-     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-     (4.7, 3.2, 1.3, 0.2, 'setosa')]
-
+    >>> species
+    'setosa'
 """
 
-DATA = [
-    ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-    (5.8, 2.7, 5.1, 1.9, 'virginica'),
-    (5.1, 3.5, 1.4, 0.2, 'setosa'),
-    (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-    (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-    (4.7, 3.2, 1.3, 0.2, 'setosa')]
+DATA = (5.1, 3.5, 1.4, 0.2, 'setosa')
 
-# first line from DATA
+# All numeric values from DATA
 # type: tuple[str]
-header = ...
+values = ...
 
-# all the other lines from DATA, beside first line
+# Species name from DATA (last element)
 # type: list[tuple]
-rows = ...
+species = ...
 
 # Solution
-header, *rows = DATA
+*values, species = DATA

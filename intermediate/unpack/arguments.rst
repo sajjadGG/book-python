@@ -498,41 +498,68 @@ Use Case - 0x07
 * Definition of ``pandas.read_csv()`` function [#pandasreadcsv]_
 * Proxy functions. One of the most common use of ``*args``, ``**kwargs``:
 
->>> def read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer',
-...              names=None, index_col=None, usecols=None, squeeze=False,
-...              prefix=None, mangle_dupe_cols=True, dtype=None, engine=None,
-...              converters=None, true_values=None, false_values=None,
-...              skipinitialspace=False, skiprows=None, nrows=None,
-...              na_values=None, keep_default_na=True, na_filter=True,
-...              verbose=False, skip_blank_lines=True, parse_dates=False,
-...              infer_datetime_format=False, keep_date_col=False,
-...              date_parser=None, dayfirst=False, iterator=False,
-...              chunksize=None, compression='infer', thousands=None,
-...              decimal=b'.', lineterminator=None, quotechar='"', quoting=0,
-...              escapechar=None, comment=None, encoding=None, dialect=None,
-...              tupleize_cols=None, error_bad_lines=True, warn_bad_lines=True,
-...              skipfooter=0, doublequote=True, delim_whitespace=False,
-...              low_memory=True, memory_map=False, float_precision=None): ...
+>>> def read_csv(filepath_or_buffer, /, *, sep=', ', delimiter=None,
+...              header='infer', names=None, index_col=None, usecols=None,
+...              squeeze=False, prefix=None, mangle_dupe_cols=True,
+...              dtype=None, engine=None, converters=None, true_values=None,
+...              false_values=None, skipinitialspace=False, skiprows=None,
+...              nrows=None, na_values=None, keep_default_na=True,
+...              na_filter=True, verbose=False, skip_blank_lines=True,
+...              parse_dates=False, infer_datetime_format=False,
+...              keep_date_col=False, date_parser=None, dayfirst=False,
+...              iterator=False, chunksize=None, compression='infer',
+...              thousands=None, decimal=b'.', lineterminator=None,
+...              quotechar='"', quoting=0, escapechar=None, comment=None,
+...              encoding=None, dialect=None, tupleize_cols=None,
+...              error_bad_lines=True, warn_bad_lines=True, skipfooter=0,
+...              doublequote=True, delim_whitespace=False, low_memory=True,
+...              memory_map=False, float_precision=None): ...
+
+Calling function with positional only arguments is insane. In Python
+we don't do that, because we have keyword arguments.
+
+>>> read_csv('myfile.csv', ';', None, 'infer', None, None, None, False, None,
+...          True, None, None, None, None, None, False, None, None, None,
+...          True, True, False, True, False, False, False, None, False,
+...          False, None, 'infer', None, b',', None, '"', 0, None, None,
+...          None, None, None, True, True, 0, True, False, True, False, None)
+Traceback (most recent call last):
+TypeError: read_csv() takes 1 positional argument but 49 were given
+
+Keyword arguments with sensible defaults are your best friends. The number
+of function parameters suddenly is not a problem:
+
+>>> read_csv('myfile1.csv', delimiter=';', decimal=b',')
+>>> read_csv('myfile2.csv', delimiter=';', decimal=b',')
+>>> read_csv('myfile3.csv', delimiter=';', decimal=b',')
+>>> read_csv('myfile4.csv', delimiter=';', decimal=b',')
+>>> read_csv('myfile5.csv', delimiter=';', decimal=b',')
 
 Proxy functions allows for changing defaults to the original function. One
 simply define a function which has sensible defaults and call the original
-function setting default values automatically. Thanks to using ``**kwargs``
-there is no need to specify all the values from the original function. The
-uncovered arguments will simply be put in ``kwargs`` dictionary and passed
-to the original function:
+function setting default values automatically:
 
->>> def mycsv(file, **kwargs):
-...     return read_csv(file, delimiter=';', decimal=b',', **kwargs)
+>>> def mycsv(file, delimiter=';', decimal=b',', **kwargs):
+...     return read_csv(file, delimiter=delimiter, decimal=decimal, **kwargs)
+
+Thanks to using ``**kwargs`` there is no need to specify all the values
+from the original function. The uncovered arguments will simply be put
+in ``kwargs`` dictionary and passed to the original function:
+
+>>> mycsv('myfile1.csv')
+>>> mycsv('myfile2.csv')
+>>> mycsv('myfile3.csv')
+>>> mycsv('myfile4.csv')
+>>> mycsv('myfile5.csv')
 
 This allows for cleaner code. Each parameter will be passed to ``mycsv``
 function. Then it will be checked if there is a different default value
 already defined. If not, then parameter will be stored in ``kwargs`` and
 passed to the original function:
 
->>> mycsv('iris1.csv')
->>> mycsv('iris2.csv', encoding='utf-8')
->>> mycsv('iris3.csv', encoding='utf-8', verbose=True)
->>> mycsv('iris4.csv', verbose=True, usecols=['Sepal Length', 'Species'])
+>>> mycsv('myfile.csv', encoding='utf-8')
+>>> mycsv('myfile.csv', encoding='utf-8', verbose=True)
+>>> mycsv('myfile.csv', verbose=True, usecols=['Sepal Length', 'Species'])
 
 
 Use Case - 0x08

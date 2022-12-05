@@ -7,46 +7,44 @@ Agenda
 
 Day 1
 -----
-* 15m - Kwestie organizacyjne: przedstawienie się, przerwy, spreadsheet
-* 75m - Przygotowanie środowiska do pracy: github, git, python, doctest
-* 30m - Zadania testowe ewaluujące umiejętności użytkownika
-* 60m - Live Coding rozwiązań zadań i demonstracja funkcji IDE, tj. debugging, praca z VCS, refactoring, dokumentacja i typy, sygnatury funkcji
-* 45m - Unpacking assignment
-* 45m - Unpacking parameters
-* 60m - Unpacking arguments
-* 30m - Parameter Syntax
-* 60m - Assignment Expression
+* 15 min - Kwestie organizacyjne: przedstawienie się, przerwy, spreadsheet
+* 75 min - Przygotowanie środowiska do pracy: github, git, python, doctest
+* 30 min - Zadania testowe ewaluujące umiejętności użytkownika
+* 60 min - Live Coding rozwiązań zadań i demonstracja funkcji IDE, tj. debugging, praca z VCS, refactoring, dokumentacja i typy, sygnatury funkcji
+* 45 min - Unpacking assignment
+* 45 min - Unpacking parameters
+* 60 min - Unpacking arguments
+* 30 min - Enumeracja (enum)
+* 60 min - Pattern Matching (match case)
 
 
 Day 2
 -----
-* 100m - Type Annotation
-* 100m - Dataclasses (dataclasses)
-* 20m - Serializacja i deserializacja danych z Pickle
-* 100m - Praca z plikami JSON (dane nierelacyjne i relacyjne, daty i czas, zagnieżdżone dane relacyjne)
-* 100m - Praca z plikami CSV (konwersja formatów danych)
+* 120 min - Anotacje typów (typing)
+* 100 min - Data-klasy (dataclasses)
+* 100 min - Praca z plikami JSON (dane nierelacyjne i relacyjne, daty i czas, zagnieżdżone dane relacyjne)
+* 100 min - Praca z plikami CSV (konwersja formatów danych)
 
 
 Day 3
 -----
-* 240m - Wyrażenia regularne (Identifier, Qualifiers, Quantifiers, Grouping, Flags)
-* 180m - Daty, czas i strefy czasowe
+* 240 min - Wyrażenia regularne (Identifier, Qualifiers, Quantifiers, Grouping, Flags)
+* 180 min - Daty, czas i strefy czasowe
 
 
 Day 4
 -----
-* 180m - Przeciążanie operatorów
-* 30m - Enumeracja (enum)
-* 30m - Moduły i pakiety (venv, pip)
-* 30m - Lokalizacja i internacjonalizacja (encoding, locale, i18n, l10n)
-* 30m - Logowanie zdarzeń (logging)
-* 30m - Problemy precyzji float (IEEE 754)
-* 30m - Pseudolosowość, random seed
-* 60m - Wprowadzenie do testów i TDD (unittest, doctest)
+* 180 min - Przeciążanie operatorów
+* 60 min - Moduły i pakiety (venv, pip, pyproject.toml)
+* 30 min - Logowanie zdarzeń (logging)
+* 45 min - Problemy precyzji float (IEEE 754)
+* 45 min - Pseudolosowość, random seed
+* 60 min - Wprowadzenie do testów i TDD (unittest, doctest)
 
 
 Day 5
 -----
-* 90m - Zadanie samodzielne z programowania obiektowego (Smok)
-* 180m - Live Coding rozwiązań zadań i demonstracja dobrych praktyk OOP, TDD, architektury aplikacji jak również funkcji IDE, tj. debugging, praca z VCS, refactoring, dokumentacja i typy, sygnatury funkcji
-* 150m - Bazy danych: (SQL, zapis, odczyt, kursory, relacje, indeksy)
+* 90 min - Zadanie samodzielne z programowania obiektowego (Smok)
+* 20 min - Code Review
+* 180 min - Live Coding rozwiązań zadań i demonstracja dobrych praktyk OOP, TDD, architektury aplikacji jak również funkcji IDE, tj. debugging, praca z VCS, refactoring, dokumentacja i typy, sygnatury funkcji
+* 120 min - Bazy danych: (SQL, zapis, odczyt, kursory, relacje, indeksy)

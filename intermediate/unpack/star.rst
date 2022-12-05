@@ -287,3 +287,7 @@ Assignments
 .. literalinclude:: assignments/unpack_star_d.py
     :caption: :download:`Solution <assignments/unpack_star_d.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/unpack_star_e.py
+    :caption: :download:`Solution <assignments/unpack_star_e.py>`
+    :end-before: # Solution
