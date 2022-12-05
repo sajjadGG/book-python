@@ -99,6 +99,7 @@ Use Case - 0x02
 ---------------
 * https://www.euvat.org/vat-returns-poland/
 * https://www.infor.pl/akt-prawny/DZU.2019.084.0000816,rozporzadzenie-ministra-finansow-w-sprawie-kas-rejestrujacych.html
+* §6 pkt. 5 - Rozporządzenie Ministra Finansów z dnia 29 kwietnia 2019 r. w sprawie kas rejestrujących. Dziennik Ustaw - rok 2019 poz. 816
 * PTU - Podatek od Towarów i Usług (Services and Goods Tax)
 
 >>> class PTU(Enum):
