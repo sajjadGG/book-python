@@ -150,7 +150,7 @@ o przybycie minutę lub dwie przed czasem.
 
 Nie planowane są także krótsze zajęcia. Proszę o takie zagospodarowanie
 czasu, aby nie rozłączać się przed końcem szkolenia. Niestety ze względu
-na bardzo ilość materiału i krótki czas szkolenia, nie będzie możliwe
+na bardzo dużą ilość materiału i krótki czas szkolenia, nie będzie możliwe
 powtarzanie rozdziałów dla osób, które w ten sposób coś ominęły.
 
 
