@@ -601,6 +601,25 @@ Quick and easy debugging
     my_string = pformat(data)
 
 
+Use Case - 0x01
+---------------
+>>> #doctest: +SKIP
+... from time import sleep
+...
+...
+... def progressbar(percent):
+...     filled = '=' * percent
+...     empty = ' ' * (100-percent)
+...     clear = '\b' * 110
+...     bar = f'{clear}{percent:4}% |{filled}{empty}|'
+...     print(bar, end='')
+...
+...
+... for i in range(0,101):
+...     progressbar(i)
+...     sleep(0.2)
+
+
 Assignments
 -----------
 .. todo:: Convert assignments to literalinclude

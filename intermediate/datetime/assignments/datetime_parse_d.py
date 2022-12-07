@@ -46,18 +46,19 @@ DATA = [
     'July 21, 1969 2:56:15',  # Armstrong first step on the Moon
 ]
 
-# DATA elements in datetime format
-# type: list[datetime]
-result = ...
-
-
-# Solution
 FORMATS = [
     '%b %d, %Y %H:%M:%S',
     '%B %d, %Y %H:%M',
     '%B %d, %Y %H:%M:%S',
 ]
 
+
+# DATA elements in datetime format
+# type: list[datetime]
+result = ...
+
+
+# Solution
 def parse(dt):
     for fmt in FORMATS:
         try:
@@ -66,18 +67,3 @@ def parse(dt):
             continue
 
 result = map(parse, DATA)
-
-
-# Alternative Solution
-result = []
-
-for line in DATA:
-    try:
-        dt = datetime.strptime(line, '%b %d, %Y %H:%M:%S')
-    except ValueError:
-        try:
-            dt = datetime.strptime(line, '%B %d, %Y %H:%M')
-        except ValueError:
-            dt = datetime.strptime(line, '%B %d, %Y %H:%M:%S')
-    result.append(dt)
-

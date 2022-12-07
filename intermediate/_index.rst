@@ -142,7 +142,7 @@ Regular Expressions
     regex/syntax-group.rst
     regex/syntax-flag.rst
     regex/syntax-look-ahead-behind.rst
-    regex/syntax-extension.rst
+    regex/syntax-flavors.rst
     regex/syntax-usecases.rst
     regex/re-match.rst
     regex/re-search.rst

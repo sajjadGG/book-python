@@ -70,40 +70,22 @@ Lazy
 Greedy vs. Lazy
 ---------------
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
-
->>> re.findall(r'\d{2,4}', TEXT)  # Greedy
-['2035', '37']
-
->>> re.findall(r'\d{2,4}?', TEXT)  # Lazy
-['20', '35', '37']
-
-Greedy vs Lazy in exact match has no difference:
-
->>> re.findall(r'\d{2}?', TEXT)
-['20', '35', '37']
-
->>> re.findall(r'\d{2}', TEXT)
-['20', '35', '37']
-
-
-Special
--------
->>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
-
->>> re.findall(r'\d{0,}', TEXT) == re.findall(r'\d*', TEXT)
-True
-
->>> re.findall(r'\d{1,}', TEXT) == re.findall(r'\d+', TEXT)
-True
-
->>> re.findall(r'\d+', TEXT)
+>>>
+>>> re.findall('\d+', TEXT)
 ['3', '7', '2035', '1', '37']
+>>>
+>>> re.findall('\d+?', TEXT)
+['3', '7', '2', '0', '3', '5', '1', '3', '7']
 
->>> re.findall(r'\d*', TEXT)  # doctest: +NORMALIZE_WHITESPACE
-['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
- '', '', '3', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
- '', '', '', '', '', '', '', '', '', '7', '', '', '', '', '2035', '', '',
- '', '', '1', '', '37', '', '', '', '']
+>>> TEXT = 'Mark Watney is an astronaut. Ares 3 landed on Mars on: Nov 7th, 2035 at 13:37.'
+>>>
+>>> sentence = r'[A-Z].+\.'
+>>> re.findall(sentence, TEXT)
+['Mark Watney is an astronaut. Ares 3 landed on Mars on: Nov 7th, 2035 at 13:37.']
+>>>
+>>> sentence = r'[A-Z].+?\.'
+>>> re.findall(sentence, TEXT)
+['Mark Watney is an astronaut.', 'Ares 3 landed on Mars on: Nov 7th, 2035 at 13:37.']
 
 
 Examples
@@ -121,9 +103,8 @@ Use Case - 0x01
 ---------------
 * Float
 
->>> import re
 >>> TEXT = 'Pi number is 3.1415...'
-
+>>>
 >>> pi = re.findall(r'\d+\.\d+', TEXT)
 >>> pi
 ['3.1415']
@@ -133,12 +114,11 @@ Use Case - 0x02
 ---------------
 * Time
 
->>> import re
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
-
+>>>
 >>> re.findall(r'\d\d:\d\d', TEXT)
 []
-
+>>>
 >>> re.findall(r'\d\d?:\d\d', TEXT)
 ['1:37']
 
@@ -153,12 +133,9 @@ Use Case - 0x03
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
 >>> result = re.findall(r'\w{3} \d{1,2}th, \d{4}', TEXT)
-
+>>>
 >>> result
 ['Nov 7th, 2035']
-
->>> datetime.strptime(result[0], '%b %dth, %Y').date()
-datetime.date(2035, 11, 7)
 
 
 Use Case - 0x04
@@ -235,3 +212,16 @@ Use Case - 0x08
 
 >>> re.findall(r'</?.*?>', HTML)
 ['<h1>', '</h1>', '<p>', '</p>', '<p>', '</p>']
+
+
+Use Case - 0x09
+---------------
+>>> HTML = '<p>We choose to go to the Moon</p>'
+>>>
+>>> tag = r'<.+>'
+>>> re.findall(tag, HTML)
+['<p>We choose to go to the Moon</p>']
+>>>
+>>> tag = r'<.+?>'
+>>> re.findall(tag, HTML)
+['<p>', '</p>']

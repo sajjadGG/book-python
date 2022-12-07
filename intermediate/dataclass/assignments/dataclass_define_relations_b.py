@@ -97,14 +97,14 @@ DATA = [
 ]
 
 
-# Model `DATA` using `dataclasses`, do not use: `str | None` syntax
+# Model `DATA` using `dataclass`
 # type: Type
 @dataclass
 class Address:
     ...
 
 
-# Model `DATA` using `dataclasses`, do not use: `str | None` syntax
+# Model `DATA` using `dataclass`
 # type: Type
 @dataclass
 class Astronaut:

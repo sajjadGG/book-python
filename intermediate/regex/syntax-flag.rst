@@ -1,19 +1,19 @@
 Syntax Flag
 ===========
-* ``re.ASCII``
-* ``re.IGNORECASE``
-* ``re.LOCALE``
-* ``re.MULTILINE``
-* ``re.DOTALL``
-* ``re.UNICODE``
-* ``re.VERBOSE``
-* ``re.DEBUG``
+* ``re.ASCII`` - perform ASCII-only matching instead of full Unicode matching
+* ``re.IGNORECASE`` - case-insensitive search
+* ``re.LOCALE`` - case-insensitive matching dependent on the current locale (deprecated)
+* ``re.MULTILINE`` - match can start in one line, and end in another
+* ``re.DOTALL`` - dot (``.``) matches also newline characters
+* ``re.UNICODE`` - turns on unicode character support for ``\w``
+* ``re.VERBOSE`` - ignores spaces (except ``\s``) and allows for comments in in ``re.compile()``
+* ``re.DEBUG`` - display debugging information during pattern compilation
 
 The final piece of regex syntax that Python's regular expression engine offers
 is a means of setting the flags. Usually the flags are set by passing them as
-additional parameters when calling the re.compile() function, but sometimes
+additional parameters when calling the ``re.compile()`` function, but sometimes
 it's more convenient to set them as part of the regex itself. The syntax is
-simply (?flags) where flags is one or more of the following:
+simply ``(?flags)`` where flags is one or more of the following:
 
 * ``re.ASCII``
 * ``re.IGNORECASE``
@@ -31,64 +31,86 @@ engine, which is why s is used for re.DOTALL and x is used for re.VERBOSE
 [#Summerfield2008]_.
 
 
+SetUp
+-----
+>>> import re
+
+
 ASCII
 -----
 * Short: ``a``
 * Long: ``re.ASCII``
+* Perform ASCII-only matching instead of full Unicode matching
+* Works for ``\w``, ``\W``, ``\b``, ``\B``, ``\d``, ``\D``, ``\s`` and ``\S``
+* ASCII only search is faster, but does not include unicode characters
 
-Make ``\w``, ``\W``, ``\b``, ``\B``, ``\d``, ``\D``, ``\s`` and ``\S`` perform ASCII-only matching instead of full Unicode matching
+>>> TEXT = 'cześć'  # in Polish language means hello
+>>>
+>>> re.findall(r'\w', TEXT)
+['c', 'z', 'e', 'ś', 'ć']
+>>>
+>>> re.findall(r'\w', TEXT, flags=re.ASCII)
+['c', 'z', 'e']
 
->>> import re
+Mind that range character class ``[a-z]`` is always ASCII:
+
+>>> re.findall(r'[a-z]', TEXT)
+['c', 'z', 'e']
 >>>
->>>
->>> TEXT = 'zażółć gęślą jaźń'
->>>
->>> re.findall(r'\w+', TEXT)
-['zażółć', 'gęślą', 'jaźń']
->>>
->>> re.findall(r'\w+', TEXT, flags=re.ASCII)
-['za', 'g', 'l', 'ja']
+>>> re.findall(r'[a-z]', TEXT, flags=re.ASCII)
+['c', 'z', 'e']
 
 
 IGNORECASE
 ----------
 * Short: ``i``
 * Long: ``re.IGNORECASE``
-
-Case-insensitive (has Unicode support i.e. Ą and ą)
+* Case-insensitive search
+* Has Unicode support i.e. ``Ą`` and ``ą``
 
 >>> import re
 >>>
 >>>
 >>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
 >>>
->>> re.findall(r'ares', TEXT)
+>>> re.findall(r'mars', TEXT)
 []
 >>>
->>> re.findall(r'ares', TEXT, flags=re.IGNORECASE)
-['Ares']
+>>> re.findall(r'mars', TEXT, flags=re.IGNORECASE)
+['Mars']
 
 
 LOCALE
 ------
 * Short: ``L``
 * Long: ``re.LOCALE``
+* Case-insensitive matching dependent on the current locale
+* Work for ``\w``, ``\W``, ``\b``, ``\B``
 * Use of this flag is discouraged as the locale mechanism is very unreliable
 * It only works with 8-bit locales
 
-make ``\w``, ``\W``, ``\b``, ``\B`` and case-insensitive matching dependent on the current locale
+>>> import locale
+>>>
+>>> locale.getlocale()
+('en_US', 'UTF-8')
 
 
 MULTILINE
 ----------
 * Short: ``m``
 * Long: ``re.MULTILINE``
+* Match can start in one line, and end in another
+* Changes meaning of ``^``, now it is a start of a line
+* Changes meaning of ``$``, now it is an end of line
 
-match can start in one line, and end in another: ``^`` - start of line, ``$`` - end of line
+>>> TEXT = 'hello\nworld'
+>>>
+>>> re.findall('^[a-z]', TEXT)
+['h']
+>>>
+>>> re.findall('^[a-z]', TEXT, flags=re.MULTILINE)
+['h', 'w']
 
->>> import re
->>>
->>>
 >>> TEXT = """We choose to go to the moon.
 ... We choose to go to the moon in this decade and do the other things,
 ... not because they are easy,
@@ -105,27 +127,27 @@ match can start in one line, and end in another: ``^`` - start of line, ``$`` - 
 ['We choose to go to the moon.']
 >>>
 >>> sentence = r'[A-Z][a-z, \n]+\.'
->>> re.findall(sentence, TEXT)
-['We choose to go to the moon.', 'We choose to go to the moon in this decade and do the other things,\nnot because they are easy,\nbut because they are hard,\nbecause that goal will serve to organize and measure the best of our energies and skills,\nbecause that challenge is one that we are willing to accept,\none we are unwilling to postpone,\nand one which we intend to win,\nand the others, too.']
+>>> re.findall(sentence, TEXT)  # doctest: +NORMALIZE_WHITESPACE
+['We choose to go to the moon.',
+ 'We choose to go to the moon in this decade and do the other things,\nnot because they are easy,\nbut because they are hard,\nbecause that goal will serve to organize and measure the best of our energies and skills,\nbecause that challenge is one that we are willing to accept,\none we are unwilling to postpone,\nand one which we intend to win,\nand the others, too.']
 
 
 DOTALL
 ------
 * Short: ``s``
 * Long: ``re.DOTALL``
+* Dot (``.``) matches also newline characters
+* By default newlines are not matched by ``.``
 
-``.`` matches also newlines (default newlines are not matched by ``.``)
-
->>> import re
->>>
->>>
 >>> TEXT = 'hello\nworld'
 >>>
->>> re.findall(r'.+', TEXT)
-['hello', 'world']
+>>> re.findall(r'.', TEXT)
+['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']
 >>>
->>> re.findall(r'.+', TEXT, flags=re.DOTALL)
-['hello\nworld']
+>>> re.findall(r'.', TEXT, flags=re.DOTALL)
+['h', 'e', 'l', 'l', 'o', '\n', 'w', 'o', 'r', 'l', 'd']
+
+Mind the ``\n`` character among results with ``re.DOTALL`` flag turned on.
 
 
 UNICODE
@@ -133,19 +155,24 @@ UNICODE
 * Short: ``u``
 * Long: ``re.UNICODE``
 * On by default
+* Turns on unicode character support
+* Works for ``\w`` and ``\W``
 
-Turns on UNICODE mode
+>>> TEXT = 'cześć'  # in Polish language means hello
+>>>
+>>> re.findall(r'\w', TEXT)
+['c', 'z', 'e', 'ś', 'ć']
+>>>
+>>> re.findall(r'\w', TEXT, flags=re.UNICODE)
+['c', 'z', 'e', 'ś', 'ć']
 
->>> import re
+Mind that range character class ``[a-z]`` is always ASCII:
+
+>>> re.findall(r'[a-z]', TEXT)
+['c', 'z', 'e']
 >>>
->>>
->>> TEXT = 'zażółć gęślą jaźń'
->>>
->>> re.findall(r'\w+', TEXT)
-['zażółć', 'gęślą', 'jaźń']
->>>
->>> re.findall(r'\w+', TEXT, flags=re.UNICODE)
-['zażółć', 'gęślą', 'jaźń']
+>>> re.findall(r'[a-z]', TEXT, flags=re.UNICODE)
+['c', 'z', 'e']
 
 
 VERBOSE
@@ -158,48 +185,52 @@ VERBOSE
 
 >>> x = re.compile(r"\d(?#integral part)+\.(?#separator)\d*(?#fractional part)")
 
->>> x = re.compile(r"""\d +  # integral part
-...                    \.    # separator
-...                    \d *  # fractional part""", re.VERBOSE)
+>>> x = re.compile(r"""
+...     \d +  # integral part
+...     \.    # separator
+...     \d *  # fractional part
+... """, flags=re.VERBOSE)
 
 
 DEBUG
 -----
->>> import re
->>>
->>>
->>> re.compile(r'[A-Z][a-z, \n]+\.')
-re.compile('[A-Z][a-z, \\n]+\\.')
+* Long: ``re.DEBUG``
+* Display debugging information during pattern compilation
 
->>> import re
->>>
->>>
->>> re.compile(r'[A-Z][a-z, \n]+\.', flags=re.DEBUG)
-IN
-  RANGE (65, 90)
+>>> x = re.compile('^[a-z]+@nasa.gov$', flags=re.DEBUG)  # doctest: +NORMALIZE_WHITESPACE
+AT AT_BEGINNING
 MAX_REPEAT 1 MAXREPEAT
   IN
     RANGE (97, 122)
-    LITERAL 44
-    LITERAL 32
-    LITERAL 10
-LITERAL 46
+LITERAL 64
+LITERAL 110
+LITERAL 97
+LITERAL 115
+LITERAL 97
+ANY None
+LITERAL 103
+LITERAL 111
+LITERAL 118
+AT AT_END
 <BLANKLINE>
- 0. INFO 8 0b100 3 MAXREPEAT (to 9)
-      in
- 5.     RANGE 0x41 0x5a ('A'-'Z')
- 8.     FAILURE
- 9: IN 5 (to 15)
-11.   RANGE 0x41 0x5a ('A'-'Z')
-14.   FAILURE
-15: REPEAT_ONE 16 1 MAXREPEAT (to 32)
-19.   IN 11 (to 31)
-21.     CHARSET [0x00000400, 0x00001001, 0x00000000, 0x07fffffe, 0x00000000, 0x00000000, 0x00000000, 0x00000000]
-30.     FAILURE
-31:   SUCCESS
-32: LITERAL 0x2e ('.')
-34. SUCCESS
-re.compile('[A-Z][a-z, \\n]+\\.', re.DEBUG)
+ 0. INFO 4 0b0 10 MAXREPEAT (to 5)
+ 5: AT BEGINNING
+ 7. REPEAT_ONE 10 1 MAXREPEAT (to 18)
+11.   IN 5 (to 17)
+13.     RANGE 0x61 0x7a ('a'-'z')
+16.     FAILURE
+17:   SUCCESS
+18: LITERAL 0x40 ('@')
+20. LITERAL 0x6e ('n')
+22. LITERAL 0x61 ('a')
+24. LITERAL 0x73 ('s')
+26. LITERAL 0x61 ('a')
+28. ANY
+29. LITERAL 0x67 ('g')
+31. LITERAL 0x6f ('o')
+33. LITERAL 0x76 ('v')
+35. AT END
+37. SUCCESS
 
 
 References

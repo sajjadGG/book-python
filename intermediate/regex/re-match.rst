@@ -5,25 +5,26 @@ RE Match
 * Checking if user input is correct (email, url, NIP, VAT ID, PESEL)
 
 
+SetUp
+-----
+>>> import re
+
+
 Example
 -------
 Usage of ``re.match()``:
 
->>> import re
->>>
->>>
->>> def is_valid_email(email: str) -> bool:
-...     PATTERN = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,20}$'
-...
-...     if re.match(PATTERN, email):
+>>> def valid_email(email):
+...     if re.match('^[a-z]+@nasa.gov$', email):
 ...         return True
 ...     else:
 ...         return False
 >>>
 >>>
->>> is_valid_email('mark.watney@nasa.gov')
+>>> valid_email('mwatney@nasa.gov')
 True
->>> is_valid_email('mark.watney@nasa.g')
+>>>
+>>> valid_email('mwatney@notexisting.com')
 False
 
 
@@ -103,6 +104,23 @@ Doctests
 ...         return True
 ...     else:
 ...         return False
+
+
+Use Case - 0x01
+---------------
+>>> def matches(pattern, text):
+...     if re.match(pattern, text):
+...         return True
+...     else:
+...         return False
+>>>
+>>> EMAIL = '^[a-z]+@nasa.gov$'
+>>>
+>>> matches(EMAIL, 'mwatney@nasa.gov')
+True
+>>>
+>>> matches(EMAIL, 'mwatney123@nasa.gov')
+False
 
 
 Assignments

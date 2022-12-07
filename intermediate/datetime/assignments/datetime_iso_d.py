@@ -2,7 +2,7 @@
 * Assignment: Datetime ISO Logs
 * Complexity: medium
 * Lines of code: 7 lines
-* Time: 8 min
+* Time: 13 min
 
 English:
     1. Iterate over `DATA` with Apollo 11 timeline [1]

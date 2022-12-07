@@ -96,7 +96,9 @@ followed  by label_encoder values for label column:
 
 Delimiter
 ---------
-``delimiter=','``:
+* ``csv`` module expects delimeter to be 1-character in length
+
+``delimiter=', '``:
 
 .. code-block:: text
 
@@ -105,14 +107,23 @@ Delimiter
     5.1, 3.5, 1.4, 0.2, setosa
     5.7, 2.8, 4.1, 1.3, versicolor
 
+``delimiter=','``:
+
+.. code-block:: text
+
+    SepalLength,SepalWidth,PetalLength,PetalWidth,Species
+    5.8,2.7,5.1,1.9,virginica
+    5.1,3.5,1.4,0.2,setosa
+    5.7,2.8,4.1,1.3,versicolor
+
 ``delimiter=';'``:
 
 .. code-block:: text
 
-    SepalLength; SepalWidth; PetalLength; PetalWidth; Species
-    5.8; 2.7; 5.1; 1.9; virginica
-    5.1; 3.5; 1.4; 0.2; setosa
-    5.7; 2.8; 4.1; 1.3; versicolor
+    SepalLength;SepalWidth;PetalLength;PetalWidth;Species
+    5.8;2.7;5.1;1.9;virginica
+    5.1;3.5;1.4;0.2;setosa
+    5.7;2.8;4.1;1.3;versicolor
 
 ``delimiter=':'``:
 

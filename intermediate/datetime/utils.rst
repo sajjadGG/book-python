@@ -47,3 +47,22 @@ Time sleep function:
 <tr><td class="mon">21</td><td class="tue">22</td><td class="wed">23</td><td class="thu">24</td><td class="fri">25</td><td class="sat">26</td><td class="sun">27</td></tr>
 <tr><td class="mon">28</td><td class="tue">29</td><td class="wed">30</td><td class="thu">31</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td></tr>
 </table>
+
+
+Use Case - 0x01
+---------------
+>>> #doctest: +SKIP
+... from time import sleep
+...
+...
+... def progressbar(percent):
+...     filled = '=' * percent
+...     empty = ' ' * (100-percent)
+...     clear = '\b' * 110
+...     bar = f'{clear}{percent:4}% |{filled}{empty}|'
+...     print(bar, end='')
+...
+...
+... for i in range(0,101):
+...     progressbar(i)
+...     sleep(0.2)

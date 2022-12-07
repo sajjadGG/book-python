@@ -182,23 +182,6 @@ Backreference
 * ``(?P=name)`` - backreferencing by group name
 * ``\number`` - backreferencing by group number
 
->>> import re
->>> TEXT = 'Mark Watney of Ares 3 landed on Mars on: Nov 7th, 2035 at 1:37 pm'
-
->>> year = r'(?P<year>\d{4})'
->>> month = r'(?P<month>\w+)'
->>> day = r'(?P<day>\d{1,2})'
->>>
->>> re.sub(f'{month} {day}th, {year}', '\g<day> \g<month> \g<year>', TEXT)
-'Mark Watney of Ares 3 landed on Mars on: 7 Nov 2035 at 1:37 pm'
-
-Although this is not working in Python:
-
->>> re.sub(f'{month} {day}th, {year}', '(?P=day) (?P=month) (?P=year)', TEXT)
-'Mark Watney of Ares 3 landed on Mars on: (?P=day) (?P=month) (?P=year) at 1:37 pm'
-
-
-
 >>> year = r'(?P<year>\d{4})'
 >>> month = r'(?P<month>[A-Z][a-z]{2})'
 >>> day = r'(?P<day>\d{1,2})'
@@ -213,6 +196,11 @@ Although this is not working in Python:
 >>> re.sub(date, '\g<year> \g<month> \g<day>', TEXT)
 'Mark Watney of Ares 3 landed on Mars on: 2035 Nov 7 at 1:37 pm'
 
+Although this is not working in Python:
+
+>>> re.sub(f'{month} {day}th, {year}', '(?P=day) (?P=month) (?P=year)', TEXT)
+'Mark Watney of Ares 3 landed on Mars on: (?P=day) (?P=month) (?P=year) at 1:37 pm'
+
 Example:
 
 >>> html = '<p>We choose to go to the <strong>Moon</strong></p>'
@@ -223,8 +211,6 @@ Example:
 >>>
 >>> re.findall('<(?P<tagname>[a-z]+)>(.*)</(?P=tagname)>', html)
 [('p', 'We choose to go to the <strong>Moon</strong>')]
-
-
 
 
 Examples

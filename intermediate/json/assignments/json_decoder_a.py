@@ -44,7 +44,7 @@ Tests:
 """
 
 import json
-from datetime import datetime
+from datetime import datetime, date
 
 
 DATA = """
