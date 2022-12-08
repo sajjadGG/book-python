@@ -22,16 +22,15 @@ Hints:
     * 1 m = 100 cm
 
 Tests:
-    >>> import sys; sys.tracebacklimit = 0
-    >>> result = Distance(meters=1337)
-    >>> format(result, 'km')
-    '1.3'
-    >>> format(result, 'cm')
-    '133700.0'
-    >>> format(result, 'm')
-    '1337.0'
+>>> import sys; sys.tracebacklimit = 0
+>>> result = Distance(meters=1337)
+>>> format(result, 'km')
+'1.3 km'
+>>> format(result, 'cm')
+'133700.0 cm'
+>>> format(result, 'm')
+'1337.0 m'
 """
-
 
 METER = 1
 CENTIMETER = METER * 0.01
@@ -55,7 +54,7 @@ class Distance:
     def __format__(self, unit):
         distance = self.meters
         match unit:
-            case 'cm': distance /= CENTIMETER
-            case 'm':  distance /= METER
-            case 'km': distance /= KILOMETER
-        return f'{distance:.1f}'
+            case 'km':  distance /= KILOMETER
+            case 'm':   distance /= METER
+            case 'cm':  distance /= CENTIMETER
+        return f'{distance:.1f} {unit}'

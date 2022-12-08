@@ -30,7 +30,7 @@ VERBOSE = False
 logging.basicConfig(
     level='ERROR',
     datefmt='%Y-%m-%d %H:%M:%S',
-    format='{filename} {levelname:<7} {message}',
+    format='{asctime} {filename} {levelname:<7} {message}',
     style='{'
 )
 

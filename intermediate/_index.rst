@@ -187,12 +187,14 @@ Operator
     operator/string-format.rst
     operator/string-operators.rst
 
-    operator/arithmetic-about.rst
-    operator/arithmetic-left.rst
-    operator/arithmetic-increment.rst
-    operator/arithmetic-right.rst
+    operator/about.rst
+    operator/left.rst
+    operator/increment.rst
+    operator/right.rst
 
+    operator/equality.rst
     operator/comparison.rst
+    operator/contains.rst
     operator/boolean.rst
     operator/module.rst
     operator/builtin.rst

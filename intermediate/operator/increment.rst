@@ -1,28 +1,22 @@
-Operator Arithmetic Increment
-=============================
-* ``+=`` - iadd
-* ``-=`` - isub
-* ``*=`` - imul
-* ``/=`` - idiv
-* ``//=`` - itruediv
-* ``**=`` - ipow
-* ``%=`` - imod
-* ``@=`` - imatmul
+Operator Increment
+==================
+* ``x += y`` - will call ``x.__iadd__(y)``
+* ``x -= y`` - will call ``x.__isub__(y)``
+* ``x *= y`` - will call ``x.__imul__(y)``
+* ``x /= y`` - will call ``x.__idiv__(y)``
+* ``x //= y`` - will call ``x.__itruediv__(y)``
+* ``x **= y`` - will call ``x.__ipow__(y)``
+* ``x %= y`` - will call ``x.__imod__(y)``
+* ``x @= y`` - will call ``x.__imatmul__(y)``
 
 
-About
------
-.. csv-table:: Numerical Operator Overload
-    :header: "Operator", "Method"
-
-    "``obj += other``",    "``obj.__iadd__(other)``"
-    "``obj -= other``",    "``obj.__isub__(other)``"
-    "``obj *= other``",    "``obj.__imul__(other)``"
-    "``obj /= other``",    "``obj.__idiv__(other)``"
-    "``obj //= other``",   "``obj.__itruediv__(other)``"
-    "``obj **= other``",   "``obj.__ipow__(other)``"
-    "``obj %= other``",    "``obj.__imod__(other)``"
-    "``obj @= other``",    "``obj.__imatmul__(other)``"
+>>> x = [1, 2, 3]
+>>> id(x)  # doctest: +SKIP
+4343115776
+>>>
+>>> x += [4, 5, 6]
+>>> id(x)  # doctest: +SKIP
+4343115776
 
 
 Example
@@ -106,10 +100,6 @@ Astronaut(firstname='Melissa', lastname='Lewis')
 
 Assignments
 -----------
-.. literalinclude:: assignments/operator_numerical_a.py
-    :caption: :download:`Solution <assignments/operator_numerical_a.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/operator_numerical_b.py
-    :caption: :download:`Solution <assignments/operator_numerical_b.py>`
+.. literalinclude:: assignments/operator_increment_a.py
+    :caption: :download:`Solution <assignments/operator_increment_a.py>`
     :end-before: # Solution

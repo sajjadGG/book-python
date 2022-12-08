@@ -1,5 +1,5 @@
-Operator Arithmetic Right
-=========================
+Operator Right
+==============
 * ``+`` - radd
 * ``-`` - rsub
 * ``*`` - rmul
@@ -347,10 +347,3 @@ but before that we need to evaluate maps to lists.
 
 Assignments
 -----------
-.. literalinclude:: assignments/operator_numerical_a.py
-    :caption: :download:`Solution <assignments/operator_numerical_a.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/operator_numerical_b.py
-    :caption: :download:`Solution <assignments/operator_numerical_b.py>`
-    :end-before: # Solution

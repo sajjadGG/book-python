@@ -3,7 +3,6 @@ Operator Numerical
 * ``-obj`` - neg
 * ``+obj`` - pos
 * ``~obj`` - invert
-* ``x in obj`` - contains
 
 
 About

@@ -1,34 +1,19 @@
-Operator Arithmetic Left
-========================
-* ``+`` - add
-* ``-`` - sub
-* ``*`` - mul
-* ``/`` - truediv
-* ``//`` - floordiv
-* ``**`` - pow
-* ``%`` - mod
-* ``@`` - matmul
+Operator Left
+=============
+* ``x + y`` - will call "add" on object x (``x.__add__(y)``)
+* ``x - y`` - will call "sub" on object x (``x.__sub__(y)``)
+* ``x * y`` - will call "mul" on object x (``x.__mul__(y)``)
+* ``x / y`` - will call "truediv" on object x (``x.__truediv__(y)``)
+* ``x // y`` - will call "floordiv" on object x (``x.__floordiv__(y)``)
+* ``x ** y`` - will call "pow" on object x (``x.__pow__(y)``)
+* ``x % y`` - will call "mod" on object x (``x.__mod__(y)``)
+* ``x @ y`` - will call "matmul" on object x (``x.__matmul__(y)``)
 
 
 SetUp
 -----
 >>> from dataclasses import dataclass
 >>> from functools import reduce
-
-
-About
------
-.. csv-table:: Numerical Operator Overload
-    :header: "Operator", "Method"
-
-    "``obj + other``",     "``obj.__add__(other)``"
-    "``obj - other``",     "``obj.__sub__(other)``"
-    "``obj * other``",     "``obj.__mul__(other)``"
-    "``obj / other``",     "``obj.__truediv__(other)``"
-    "``obj // other``",    "``obj.__floordiv__(other)``"
-    "``obj ** other``",    "``obj.__pow__(other)``"
-    "``obj % other``",     "``obj.__mod__(other)``"
-    "``obj @ other``",     "``obj.__matmul__(other)``"
 
 
 Example
@@ -181,10 +166,6 @@ but before that we need to evaluate maps to lists.
 
 Assignments
 -----------
-.. literalinclude:: assignments/operator_numerical_a.py
-    :caption: :download:`Solution <assignments/operator_numerical_a.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/operator_numerical_b.py
-    :caption: :download:`Solution <assignments/operator_numerical_b.py>`
+.. literalinclude:: assignments/operator_left_a.py
+    :caption: :download:`Solution <assignments/operator_left_a.py>`
     :end-before: # Solution

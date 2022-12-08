@@ -3,8 +3,9 @@ Operator String About
 * ``str()``
 * ``repr()``
 
-Setup:
 
+SetUp
+-----
 >>> import datetime
 >>>
 >>> date = datetime.date(1961, 4, 12)
@@ -12,10 +13,20 @@ Setup:
 
 Str
 ---
-* ``print(obj)`` -> ``str(obj)`` -> ``obj.__str__()``
+* ``print(obj)``
+* ``f'{obj}'``
+* ``f'{obj!s}'``
+* ``str(obj)``
+* ``obj.__str__()``
 
 >>> print(date)
 1961-04-12
+
+>>> f'{date}'
+'1961-04-12'
+
+>>> f'{date!s}'
+'1961-04-12'
 
 >>> str(date)
 '1961-04-12'
@@ -26,10 +37,16 @@ Str
 
 Repr
 ----
-* ``obj`` -> ``repr(obj)`` -> ``obj.__repr__()``
+* ``obj``
+* ``f'{obj!r}'``
+* ``repr(obj)``
+* ``obj.__repr__()``
 
 >>> date
 datetime.date(1961, 4, 12)
+
+>>> f'{date!r}'
+'datetime.date(1961, 4, 12)'
 
 >>> repr(date)
 'datetime.date(1961, 4, 12)'

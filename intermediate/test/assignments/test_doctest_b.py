@@ -1,71 +1,65 @@
 """
-* Assignment: Function Doctest Distance
+* Assignment: Test Doctest Temperature
 * Required: no
 * Complexity: easy
-* Lines of code: 21 lines
+* Lines of code: 5 lines
 * Time: 13 min
 
 English:
-    1. Write functions which convert distance given in kilometers to meters
-    2. 1 km = 1000 m
-    3. Distance cannot be negative
-    4. Returned value must by float
-    5. Write doctests
-    6. Run doctests - all must succeed
+    1. Write doctests to `celsius_to_kelvin` function
+    2. Parameter `degrees` can be:
+        a. int
+        b. float
+        c. list[int|float]
+        d. tuple[int|float,...]
+        e. set[int|float]
+        f. In other case raise an exception: TypeError with message: "Invalid type"
+    3. Run doctests - all must succeed
 
 Polish:
-    1. Napisz funkcję, która przeliczy dystans podany w kilometrach na metry
-    2. 1 km = 1000 m
-    3. Dystans nie może być ujemny
-    4. Zwracany dystans musi być float
-    5. Napisz doctesty
-    6. Uruchom doctesty - wszystkie muszą się powieść
+    1. Napisz doctesty do funkcji `celsius_to_kelvin`
+    2. Parametr `degrees` może być:
+        a. int
+        b. float
+        c. list[int|float]
+        d. tuple[int|float,...]
+        e. set[int|float]
+        f. W przeciwnym wypadku podnieś wyjątek: TypeError z komunikatem: "Invalid type"
+    3. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
     >>> import sys; sys.tracebacklimit = 0
-
-    1. Valid arguments:
-        a. `int`
-        b. `float`
-    2. Invalid argument -> expect `TypeError`:
-        a. `str`
-        b. `list[int]`
-        c. `list[float]`
-        d. `bool`
-        e. any other type
+    >>> from inspect import isfunction
 """
 
+def celsius_to_kelvin(degrees):
+    if type(degrees) in (int, float):
+        return 273.15 + degrees
 
-def km_to_meters(kilometers):
-    ...
+    if type(degrees) in (list, tuple, set):
+        cls = type(degrees)
+        return cls(x+273.15 for x in degrees)
+
+    raise TypeError('Invalid argument')
 
 
 # Solution
-def km_to_meters(kilometers):
-    """
-    >>> km_to_meters(1)
-    1000.0
-    >>> km_to_meters(0)
-    0.0
-    >>> km_to_meters(-1)
-    Traceback (most recent call last):
-    ValueError: Argument must be not negative
-    >>> km_to_meters([1, 2])
-    Traceback (most recent call last):
-    TypeError: Invalid argument type
-    >>> km_to_meters('one')
-    Traceback (most recent call last):
-    TypeError: Invalid argument type
-    >>> km_to_meters(1.5)
-    1500.0
-    >>> km_to_meters(True)
-    Traceback (most recent call last):
-    TypeError: Invalid argument type
-    """
-    if type(kilometers) not in {int, float}:
-        raise TypeError('Invalid argument type')
-
-    if kilometers < 0:
-        raise ValueError('Argument must be not negative')
-
-    return float(kilometers * 1000)
+"""
+>>> isfunction(celsius_to_kelvin)
+True
+>>> celsius_to_kelvin(0)
+273.15
+>>> celsius_to_kelvin(1)
+274.15
+>>> celsius_to_kelvin(-1)
+272.15
+>>> celsius_to_kelvin('a')
+Traceback (most recent call last):
+TypeError: Invalid type of an argument
+>>> celsius_to_kelvin([0, 1])
+[273.15, 274.15]
+>>> celsius_to_kelvin((0, 1))
+(273.15, 274.15)
+>>> celsius_to_kelvin({0, 1})
+{273.15, 274.15}
+"""

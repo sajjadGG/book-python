@@ -14,13 +14,27 @@ Glossary
 .. glossary::
 
     Stub
-        A method stub or simply stub in software development is a piece of code used to stand in for some other programming functionality. A stub may simulate the behavior of existing code (such as a procedure on a remote machine) or be a temporary substitute for yet-to-be-developed code. Stubs are therefore most useful in porting, distributed computing as well as general software development and testing.
+        A method stub or simply stub in software development is a piece
+        of code used to stand in for some other programming functionality.
+        A stub may simulate the behavior of existing code (such as a procedure
+        on a remote machine) or be a temporary substitute for
+        yet-to-be-developed code. Stubs are therefore most useful in porting,
+        distributed computing as well as general software development and
+        testing.
 
     Mock
-        In object-oriented programming, mock objects are simulated objects that mimic the behavior of real objects in controlled ways. In a unit test, mock objects can simulate the behavior of complex, real objects and are therefore useful when a real object is impractical or impossible to incorporate into a unit test.
+        In object-oriented programming, mock objects are simulated objects
+        that mimic the behavior of real objects in controlled ways. In a unit
+        test, mock objects can simulate the behavior of complex, real objects
+        and are therefore useful when a real object is impractical or
+        impossible to incorporate into a unit test.
 
     Unittest
-        In computer programming, unit testing is a software testing method by which individual units of source code, sets of one or more computer program modules together with associated control data, usage procedures, and operating procedures, are tested to determine whether they are fit for use.
+        In computer programming, unit testing is a software testing method
+        by which individual units of source code, sets of one or more computer
+        program modules together with associated control data, usage
+        procedures, and operating procedures, are tested to determine
+        whether they are fit for use.
 
 
 Running tests
@@ -50,6 +64,7 @@ Display only errors. With ``-v`` display progress:
     $ python -m unittest myfile.py
     $ python -m unittest -v myfile.py
 
+
 Methods
 -------
 * ``self.assertEqual()``
@@ -59,6 +74,7 @@ Methods
 * ``self.assertDictEqual()``
 * ``self.assertIn()``
 * ``self.assertIs()``
+* ``self.assertIsInstance()``
 * ``self.assertIsNotNone()``
 * ``self.assertRaises()``
 
@@ -67,38 +83,45 @@ Example 1
 ---------
 .. literalinclude:: src/unittest-example-1.py
     :language: python
-    :caption: Example ``unittest`` code coverage
+    :caption: Example ``unittest``
 
 
 Example 2
 ---------
 .. literalinclude:: src/unittest-example-2.py
     :language: python
-    :caption: Example ``unittest`` code coverage
+    :caption: Example ``unittest``
 
 
 Example 3
 ---------
 .. literalinclude:: src/unittest-example-3.py
     :language: python
-    :caption: Example ``unittest`` code coverage
+    :caption: Example ``unittest``
 
 
 Example 4
 ---------
 .. literalinclude:: src/unittest-example-4.py
     :language: python
-    :caption: Example ``unittest`` code coverage
+    :caption: Example ``unittest``
 
 
 Example 5
 ---------
 .. literalinclude:: src/unittest-example-5.py
     :language: python
-    :caption: Example ``unittest`` code coverage
+    :caption: Example ``unittest``
 
 
 Example 6
+---------
+.. literalinclude:: src/unittest-example-6.py
+    :language: python
+    :caption: Example ``unittest``
+
+
+Example 7
 ---------
 >>> from datetime import date
 >>> from unittest import TestCase
@@ -302,10 +325,6 @@ Good:
 
 Assignments
 -----------
-.. literalinclude:: assignments/test_unittest_rectangle.py
-    :caption: :download:`Solution <assignments/test_unittest_rectangle.py>`
-    :end-before: # Solution
-
-.. literalinclude:: assignments/test_unittest_dragon.py
-    :caption: :download:`Solution <assignments/test_unittest_dragon.py>`
+.. literalinclude:: assignments/test_unittest_a.py
+    :caption: :download:`Solution <assignments/test_unittest_a.py>`
     :end-before: # Solution
