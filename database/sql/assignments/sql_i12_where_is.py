@@ -38,6 +38,6 @@ result = """
 
 SELECT datetime, category, event
 FROM apollo11
-WHERE category IS NOT NULL
+WHERE date IS NOT NULL
 
 """

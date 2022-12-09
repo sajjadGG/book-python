@@ -38,7 +38,6 @@ result = """
 
 SELECT datetime, category, event
 FROM apollo11
-WHERE category == 'CRITICAL'
--- WHERE category = 'CRITICAL'
+WHERE date == '1969-07-21'
 
 """

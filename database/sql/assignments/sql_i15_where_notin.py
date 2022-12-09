@@ -38,6 +38,6 @@ result = """
 
 SELECT datetime, category, event
 FROM apollo11
-WHERE category IN ('CRITICAL', 'ERROR')
+WHERE date NOT IN ('1969-07-21', '1969-07-22')
 
 """

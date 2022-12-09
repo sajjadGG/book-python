@@ -14,6 +14,7 @@ Polish:
 
 Tests:
     TODO: tests
+    TODO: add column which can be added
 """
 
 import sqlite3

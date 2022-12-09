@@ -38,7 +38,6 @@ result = """
 
 SELECT datetime, category, event
 FROM apollo11
-WHERE event LIKE '%CDR%'
-  AND event LIKE 'LM_ %'
+WHERE date LIKE '1969-07-2_'
 
 """

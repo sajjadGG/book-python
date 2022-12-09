@@ -38,7 +38,6 @@ result = """
 
 SELECT datetime, category, event
 FROM apollo11
-WHERE date >= '1969-07-21'
-  AND date < '1969-07-22'
+WHERE date < '1969-07-22'
 
 """

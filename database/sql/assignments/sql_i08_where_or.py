@@ -38,6 +38,7 @@ result = """
 
 SELECT datetime, category, event
 FROM apollo11
-WHERE category == 'CRITICAL' OR category == 'ERROR'
+WHERE date == '1969-07-20'
+   OR date == '1969-07-21'
 
 """

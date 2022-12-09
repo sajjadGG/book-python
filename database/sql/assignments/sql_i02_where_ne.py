@@ -38,7 +38,6 @@ result = """
 
 SELECT datetime, category, event
 FROM apollo11
-WHERE event != 'TV transmission started.'
--- WHERE event <> 'TV transmission started.'
+WHERE date != '1969-07-21'
 
 """

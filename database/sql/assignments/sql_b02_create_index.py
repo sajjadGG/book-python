@@ -35,6 +35,8 @@ Tests:
     lastname_index
     missions_name_uindex
     idx_contacts_lastname
+
+    TODO: ujednolicić nazwy indeksów
 """
 
 # Write SQL query to create index:
