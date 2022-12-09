@@ -111,8 +111,10 @@ Option 7
 * Good: easy to use
 * Good: arguments are explicit
 * Good: can use ``@property`` for validation if needed
-* Bad: violates encapsulation - OOP good practices
 * Bad: names ``x`` and ``y`` are weakly related to ``dragon``
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates encapsulation (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected, bad names, violates encapsulation
 
 Example:
@@ -131,7 +133,9 @@ Option 8
 * Good: easy to use
 * Good: arguments are explicit
 * Good: can use ``@property`` for validation if needed in future
-* Bad: violates encapsulation - OOP good practices
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates encapsulation (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected, violates encapsulation
 
 Example:
@@ -150,7 +154,9 @@ Option 9
 * Bad: require knowledge of an API
 * Bad: always 2D
 * Bad: not extensible, hard to refactor to 3D
-* Bad: violates encapsulation - OOP good practices
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates encapsulation (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected, violates encapsulation
 
 
@@ -164,7 +170,9 @@ Option 10
 * Good: readability
 * Bad: require knowledge of an API
 * Bad: extensible, easy to refactor to 3D
-* Bad: violates encapsulation - OOP good practices
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates encapsulation (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected, violates encapsulation
 
 
@@ -180,7 +188,9 @@ Option 11
 * Bad: require knowledge of an API
 * Bad: always 2D
 * Bad: not extensible, hard to refactor to 3D
-* Bad: violates encapsulation - OOP good practices
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates encapsulation (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected, violates encapsulation, misleading
 
 
@@ -198,8 +208,11 @@ Option 12
 * Good: more or less readable (Readability counts)
 * Good: extensible, easy to refactor to 3D
 * Bad: violates encapsulation - OOP good practices
-* Bad: flat is better than nested
+* Bad: flat is better than nested (PEP 20)
 * Bad: require knowledge of an API
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates encapsulation (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected, violates encapsulation and convention
 
 

@@ -130,6 +130,29 @@ Option 6
 --------
 >>> dragon = Dragon('Wawelski', pos=(50, 120))
 >>> dragon = Dragon('Wawelski', pos=[50, 120])
+
+* Good: data is stored together (``x`` and ``y`` coordinates)
+* Good: simple, easy to use
+* Good: you can assign ``None`` to set default ``pos``
+* Good: always has to pass both ``x`` and ``y`` coordinates together
+* Bad: always has to pass both ``x`` and ``y`` coordinates together
+* Bad: cannot set only one axis to ``None``
+* Bad: you have to know that first is ``x`` and second is ``y``
+* Bad: order is important, you cannot change it
+* Bad: unpacking
+* Bad: not extensible, ``pos`` will always be 2D
+* Decision: rejected, not extensible
+
+Problem:
+
+>>> dragon = Dragon('Wawelski', pos=[0, 0])         # ok
+>>> dragon = Dragon('Wawelski', pos=[None, None])   # maybe
+
+* ``pattern = r'[\(\[(\s*?:\d+|None\s*)\s*,\s*(\s*?:\d+|None\s*)[\)\]]'``
+
+
+Option 7
+--------
 >>> dragon = Dragon('Wawelski', position=(50, 120))
 >>> dragon = Dragon('Wawelski', position=[50, 120])
 
@@ -147,13 +170,13 @@ Option 6
 
 Problem:
 
->>> dragon = Dragon('Wawelski', pos=[0, 0])         # ok
->>> dragon = Dragon('Wawelski', pos=[None, None])   # maybe
+>>> dragon = Dragon('Wawelski', position=[0, 0])         # ok
+>>> dragon = Dragon('Wawelski', position=[None, None])   # maybe
 
-* ``pattern = r'[\(\[(\s*?:\d+|None\s*),\s*(\s*?:\d+|None\s*)[\)\]]'``
+* ``pattern = r'[\(\[(\s*?:\d+|None\s*)\s*,\s*(\s*?:\d+|None\s*)[\)\]]'``
 
 
-Option 7
+Option 8
 --------
 >>> dragon = Dragon('Wawelski', posxy=(50, 120))
 >>> dragon = Dragon('Wawelski', pos_xy=(50, 120))
@@ -172,10 +195,10 @@ Option 7
 
 Problem:
 
-* ``pattern = r'[\(\[(\s*?:\d+|None\s*),\s*(\s*?:\d+|None\s*)[\)\]]'``
+* ``pattern = r'[\(\[(\s*?:\d+|None\s*)\s*,\s*(\s*?:\d+|None\s*)[\)\]]'``
 
 
-Option 8
+Option 9
 --------
 >>> dragon = Dragon('Wawelski', pos={'x':50, 'y':120})
 >>> dragon = Dragon('Wawelski', position={'x':50, 'y':120})
@@ -196,7 +219,7 @@ Problem:
 * ``pattern = r'\{\s*"x"\s*:\s*(?:\d+|None)\s*,\s*"y"\s*:\s*(?:\d+|None)\s*\}'``
 
 
-Option 9
+Option 10
 --------
 >>> from collections import namedtuple
 >>>
@@ -219,7 +242,7 @@ Option 9
 * Decision: rejected, could be done better
 
 
-Option 10
+Option 11
 ---------
 >>> from typing import NamedTuple
 >>>
@@ -244,7 +267,7 @@ Option 10
 * Decision: candidate
 
 
-Option 11
+Option 12
 ---------
 >>> from typing import TypedDict
 >>>
@@ -276,7 +299,7 @@ Future:
 * Re-evaluate then
 
 
-Option 12
+Option 13
 ---------
 >>> class Point:
 ...     x: int
@@ -312,7 +335,7 @@ Bad:
 >>> pt.notexisting = 10  # will pass
 
 
-Option 13
+Option 14
 ---------
 >>> class Point:
 ...     __slots__ = ('x', 'y')
@@ -346,7 +369,7 @@ Option 13
 >>> pt.notexisting = 10  # will throw error
 
 
-Option 14
+Option 15
 ---------
 >>> from dataclasses import dataclass
 >>>
@@ -380,7 +403,7 @@ Bad:
 >>> pt.notexisting = 10  # will pass
 
 
-Option 15
+Option 16
 ---------
 >>> from dataclasses import dataclass
 >>>

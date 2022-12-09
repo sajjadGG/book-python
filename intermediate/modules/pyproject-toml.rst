@@ -16,21 +16,24 @@ to build the package. [#pyproject]_
 .. code-block:: toml
 
     [project]
-    name = "szkolenia-lotnicze"
-    version = "0.1.1"
+    name = "my-project"
+    version = "1.0.0"
     requires-python = ">=3.11"
     license.file = "LICENSE"  # https://peps.python.org/pep-0639/#add-license-files-key
     authors = [{name = "Mark Watney", email = "mwatney@nasa.gov"}]
+    dynamic = ["readme"]
+
     urls.homepage = "https://github.com/AstroMatt/szkolenia-lotnicze"
     urls.repository = "https://github.com/AstroMatt/szkolenia-lotnicze.git"
     urls.documentation = "https://github.com/AstroMatt/szkolenia-lotnicze"
     urls.bugtracker = "https://github.com/AstroMatt/szkolenia-lotnicze/issues"
-    dynamic = ["readme"]
+
     keywords = [
         "ares",
         "mars",
         "nasa",
         "human-spaceflight"]
+
     classifiers = [
         "Development Status :: 3 - Alpha",
         "Environment :: Web Environment",
@@ -53,6 +56,7 @@ to build the package. [#pyproject]_
     dependencies = [
         "django == 4.1.*",
         "django-ninja == 0.19.*"]
+
     optional-dependencies.test = [
         "mypy",
         "pylint",
@@ -75,10 +79,6 @@ to build the package. [#pyproject]_
 
     ## Build System
 
-    # [build-system]
-    # requires = ["flit"]
-    # build-backend = "flit.buildapi"
-
     [build-system]
     requires = ['setuptools >= 65.6']
     build-backend = 'setuptools.build_meta'
@@ -92,7 +92,9 @@ to build the package. [#pyproject]_
     # version.attr = "aviation.__version__"  ## if 'version' in dynamic
 
 
+
     ## External Tools Configuration
+
 
     # https://ichard26-testblackdocs.readthedocs.io/en/refactor_docs/pyproject_toml.html
     [tool.black]
@@ -106,6 +108,7 @@ to build the package. [#pyproject]_
         | build
         | dist
     )'''
+
 
     # https://mypy.readthedocs.io/en/stable/config_file.html
     # https://mypy.readthedocs.io/en/stable/config_file.html#using-a-pyproject-toml-file

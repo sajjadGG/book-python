@@ -58,8 +58,7 @@ Option 3
 
 Option 4
 --------
->>> dragon.move(x=10, y=20)
->>> dragon.move(x=-10, y=-20)
+>>> dragon.move(x=10, y=-20)
 
 * Good: extensible to 3D
 * Good: move by relative shifting (left, right, up, down)
@@ -69,6 +68,8 @@ Option 4
 * Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: you cannot prevent negative shifting (i.e.: ``x=-10``)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected, it requires to much inside knowledge of API from user
 
 
@@ -80,6 +81,7 @@ Option 5
 * Bad: Move by setting absolute position which is similar to ``.set_position()``, but it differs from it where in ``move()`` you can make an animation of movement, and with ``set_position()`` it happens instantly
 * Bad: controller must know other variables, such as speed factor (snail is slower than a dragon), surface on which the dragon is moving (solid is faster than water or ice), injuries (if dragon is not injured with his for example left foot)
 * Bad: requires knowledge of business logic (inverted y-axis)
+* Bad: violates abstraction (OOP Principle)
 * Decision: rejected, violates Model-View-Controller (MVC)
 
 .. figure:: img/oop-architecture-mvc.png
@@ -96,6 +98,8 @@ Option 6
 * Bad: controller must know other variables, such as speed factor (snail is slower than a dragon), surface on which the dragon is moving (solid is faster than water or ice), injuries (if dragon is not injured with his for example left foot)
 * Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected
 
 
@@ -103,12 +107,13 @@ Option 7
 --------
 >>> dragon.move_xy(10, -20)
 
-* Good: extensible to 3D
 * Bad: Move by setting absolute position
 * Bad: controller must know other variables, such as speed factor (snail is slower than a dragon), surface on which the dragon is moving (solid is faster than water or ice), injuries (if dragon is not injured with his for example left foot)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
 * Bad: requires knowledge of business logic (inverted y-axis)
-* Bad: not extensible to 3D
+* Bad: name indicates that this is not extensible to 3D
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected
 
 
@@ -122,6 +127,8 @@ Option 8
 * Bad: controller must know other variables, such as speed factor (snail is slower than a dragon), surface on which the dragon is moving (solid is faster than water or ice), injuries (if dragon is not injured with his for example left foot)
 * Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected
 
 
@@ -136,6 +143,8 @@ Option 9
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
 * Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: not extensible to 3D
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected
 
 
@@ -148,6 +157,8 @@ Option 10
 * Bad: controller computes final offset
 * Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected
 
 
@@ -167,6 +178,7 @@ Option 11
 * Bad: not extensible to 3D
 * Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: violates abstraction (OOP Principle)
 * Decision: rejected
 
 Example:
@@ -229,6 +241,8 @@ Option 12
 * Bad: not extensible to 3D
 * Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected
 
 Example:
@@ -248,6 +262,8 @@ Option 13
 * Bad: not extensible to 3D
 * Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected
 
 Example:
@@ -267,6 +283,8 @@ Option 14
 * Bad: not extensible to 3D
 * Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected
 
 
@@ -282,6 +300,7 @@ Option 15
 * Bad: require knowledge of an API
 * Bad: not extensible to 3D
 * Bad: requires knowledge of business logic (inverted y-axis)
+* Bad: violates abstraction (OOP Principle)
 * Decision: rejected
 
 
@@ -302,6 +321,8 @@ Option 16
 * Bad: not extensible to 3D
 * Bad: requires knowledge of business logic (inverted y-axis)
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``dy=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected
 
 
@@ -340,6 +361,37 @@ Option 18
 
 Option 19
 ---------
+>>> dragon.move([
+...     Left(20),
+...     Left(10),
+...     Right(20)])
+
+* Good: extensible to 3D
+* Bad: require knowledge of an API
+* Bad: additional entities
+* Decision: rejected
+
+
+Option 20
+---------
+>>> dragon.move([
+...     Direction('left', 20),
+...     Direction('left', 10),
+...     Direction('right', 20)])
+
+>>> dragon.move([
+...     Direction('left', distance=20),
+...     Direction('left', distance=10),
+...     Direction('right', distance=20)])
+
+* Good: extensible to 3D
+* Bad: require knowledge of an API
+* Bad: additional entities
+* Decision: rejected
+
+
+Option 21
+---------
 >>> x = dragon.x
 >>> y = dragon.y
 >>> dragon.move(x=x-10, y=y+20)
@@ -358,13 +410,15 @@ Option 19
 >>> dragon.position_y += 20
 
 * Good: extensible to 3D, just add ``z`` attribute
-* Bad: encapsulation
 * Bad: require knowledge of an API
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``y=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates encapsulation (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected
 
 
-Option 20
+Option 22
 ---------
 >>> dragon.move(x=-10, y=+20)
 >>> dragon.move(dx=-10, dy=+20)
@@ -373,10 +427,12 @@ Option 20
 * Good: extensible to 3D
 * Bad: business login in controller
 * Bad: the user must know the internals, how to calculate the position, which way is up or down (positive or negative shifting), note that ``dy=-20`` means go up by 20 (we have inverted ``y`` axis)
+* Bad: violates abstraction (OOP Principle)
+* Bad: violates Tell, Don't Ask (OOP Principle)
 * Decision: rejected
 
 
-Option 21
+Option 23
 ---------
 >>> dragon.move('left', 20)
 >>> dragon.move('right', 5)
@@ -387,7 +443,7 @@ Option 21
 * Decision: rejected
 
 
-Option 22
+Option 24
 ---------
 >>> dragon.move('left', distance=20)
 >>> dragon.move('right', distance=5)
@@ -398,7 +454,7 @@ Option 22
 * Decision: rejected
 
 
-Option 23
+Option 25
 ---------
 >>> dragon.move(direction='left', distance=20)
 >>> dragon.move(direction='right', distance=5)
@@ -412,7 +468,7 @@ Option 23
 * Decision: rejected
 
 
-Option 24
+Option 26
 ---------
 >>> LEFT = 61  # keyboard key code
 >>> RIGHT = 62
@@ -431,7 +487,7 @@ Option 24
 * Decision: rejected, complex
 
 
-Option 25
+Option 27
 ---------
 >>> DIRECTION_LEFT = 61  # keyboard key code
 >>> DIRECTION_RIGHT = 62
@@ -450,7 +506,7 @@ Option 25
 * Decision: rejected, complex
 
 
-Option 26
+Option 28
 ---------
 >>> class Direction(Enum):
 ...     LEFT = 61
@@ -472,7 +528,7 @@ Option 26
 * Decision: rejected, complex
 
 
-Option 27
+Option 29
 ---------
 >>> KEY_BINDING = {
 ...     'ARROW_UP': dragon.move_up,
@@ -495,7 +551,7 @@ Option 27
 * Decision: rejected, complex
 
 
-Option 28
+Option 30
 ---------
 >>> dragon.move_left(10)
 >>> dragon.move_right(10)
@@ -505,15 +561,22 @@ Option 28
 >>> dragon.move_upleft(10)
 >>> dragon.move_left_down(10, 20)
 
-Good, because:
+Example:
 
->>> game.bind_key(Key.ARROW_LEFT, dragon.move_left)
->>> game.bind_key(Key.ARROW_RIGHT, dragon.move_right)
+>>> class Key(Enum):
+...     LEFT = 61
+...     RIGHT = 62
+...     UP = 63
+...     DOWN = 64
+>>>
+>>>
+>>> game.bind_key(Key.ARROW_LEFT, dragon.move_left)     # good
+>>> game.bind_key(Key.ARROW_RIGHT, dragon.move_right)   # good
+>>>
+>>> game.bind_key(..., dragon.move_downright)           # bad
+>>> game.bind_key(..., dragon.move_downleft)            # bad
 
-Bad, because:
-
->>> game.bind_key(..., dragon.move_downright)
->>> game.bind_key(..., dragon.move_downleft)
+Use Case 0x01:
 
 >>> db.execute_select(SQL)
 >>> db.execute_select_where(SQL)
@@ -537,7 +600,7 @@ Why not?:
 
 >>> db.execute(SQL)
 
-Use Case:
+Use Case 0x02:
 
 >>> read_csv('iris.csv', ';', 'utf-8', True)
 >>> read_csv('iris.csv', encoding='utf-8', delimiter=';', verbose=True)
@@ -564,6 +627,7 @@ Use Case:
 
 * Bad: not extensible
 * Bad: to complex for now
+* Bad: not possible to do movement in opposite directions in the same time
 * Decision: rejected, complex
 
 
@@ -574,6 +638,7 @@ Decision
 * Good: easy
 * Good: verbose
 * Good: extensible (easy to convert to 3D)
+* Good: encapsulation
 
 Alternative, maybe in future:
 

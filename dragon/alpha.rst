@@ -38,9 +38,9 @@ English
 
 5. When health points drop to, or below zero:
 
-    a. Dragon has "dead" status
+    a. Dragon has status ``dead``
     b. Change texture file name to  ``img/dragon/dead.png``
-    c. Print ``XXX is dead``, where ``XXX`` is the dragon's name
+    c. Print ``NAME is dead``, where ``NAME`` is the dragon's name
     d. Print how much gold dragon dropped (random integer from 1 to 100)
     e. Print position where dragon died
 
@@ -121,16 +121,16 @@ Polish
 
 5. Kiedy punkty życia Smoka spadną do lub poniżej zera:
 
-    a. Smok ma status "martwy"
+    a. Smok ma status ``dead``
     b. Zmień nazwę pliku tekstury na ``img/dragon/dead.png``
-    c. Wypisz ``XXX is dead``, gdzie ``XXX`` to nazwa smoka
+    c. Wypisz ``NAME is dead``, gdzie ``NAME`` to nazwa smoka
     d. Wypisz ile złota smok wyrzucił (losowa liczba od 1 do 100)
     e. Wypisz pozycję gdzie smok zginął
 
 6. Przeprowadź grę:
 
     a. Stwórz smoka o nazwie "Wawelski"
-    b. Ustaw inicjalna pozycję smoka na x=50, y=120
+    b. Ustaw inicjalną pozycję smoka na x=50, y=120
     c. Ustaw nową pozycję na x=10, y=20
     d. Przesuń smoka w lewo o 10 i w dół o 20
     e. Przesuń smoka w lewo o 10 i w prawo o 15
@@ -139,8 +139,8 @@ Polish
     h. Smok zadaje obrażenia (5-20)
     i. Zadaj 10 obrażeń smokowi
     j. Zadaj 5 obrażeń smokowi
-    k. Zadaj 3 obrażeń smokowi
-    l. Zadaj 2 obrażeń smokowi
+    k. Zadaj 3 obrażenia smokowi
+    l. Zadaj 2 obrażenia smokowi
     m. Zadaj 15 obrażeń smokowi
     n. Zadaj 25 obrażeń smokowi
     o. Zadaj 75 obrażeń smokowi
@@ -198,7 +198,7 @@ Wymagania niefunkcjonalne:
        przyszłych wersjach. Musisz znaleźć balans, między wdrożeniem szybkim
        funkcjonalności, łatwością zrozumienia i utrzymywania kodu i nie
        zablokowaniem sobie drogi na wprowadzanie zmian w przyszłości.
-       Pamiętaj o TDD, YAGNI, DRY, KISS, emerging architecture
+       Pamiętaj o TDD, YAGNI, DRY, KISS, SOLID, emerging architecture
        i over-engineering.
 
     g. **Nie przeglądaj rozwiązań ani treści kolejnych części zadania.**
