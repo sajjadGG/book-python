@@ -26,6 +26,7 @@ Tests:
 
 import sqlite3
 
+
 # Write SQL query to update all records:
 # - table: contacts
 # - where: all

@@ -15,6 +15,8 @@ Polish:
 Tests:
     TODO: tests
     TODO: add column which can be added
+    TODO: assignment content
+    TODO: helper comment
 """
 
 import sqlite3
@@ -37,7 +39,7 @@ with sqlite3.connect('sql.db') as db:
 # Solution
 result = """
 
-SELECT SUM(id)
+SELECT SUM(met)
 FROM apollo11
 
 """

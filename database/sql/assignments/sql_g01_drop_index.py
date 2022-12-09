@@ -22,6 +22,7 @@ Tests:
 
 import sqlite3
 
+
 # Write SQL query to delete index:
 # - table: contacts
 # - name: idx_contacts_lastname

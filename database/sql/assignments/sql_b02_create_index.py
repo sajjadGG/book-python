@@ -9,6 +9,7 @@ English:
        a. name: idx_contacts_lastname
        b. table: contacts
        c. column: lastname
+       d. use: IF NOT EXISTS
     2. Run doctests - all must succeed
 
 Polish:
@@ -16,6 +17,7 @@ Polish:
        a. nazwa: idx_contacts_lastname
        b. tabela: contacts
        c. kolumna: lastname
+       d. użyj: IF NOT EXISTS
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -36,13 +38,15 @@ Tests:
     missions_name_uindex
     idx_contacts_lastname
 
-    TODO: ujednolicić nazwy indeksów
+    TODO: unify index names
 """
+
 
 # Write SQL query to create index:
 # - name: idx_contacts_lastname
 # - table: contacts
 # - column: lastname
+# - use: IF NOT EXISTS
 # type: str
 result = """
 

@@ -6,10 +6,18 @@
 
 English:
     1. Write SQL query to select data:
+       a. table: apollo11
+       b. column: category
+       c. what: unique category names
+       d. use: GROUP BY
     2. Run doctests - all must succeed
 
 Polish:
     1. Napisz zapytanie SQL aby wybrać dane:
+       a. tabela: apollo11
+       b. kolumna: category
+       c. jakie: unikalne nazwy kategorii
+       d. użyj: GROUP BY
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -19,6 +27,11 @@ Tests:
 import sqlite3
 
 
+# Write SQL query to select data:
+# - table: apollo11
+# - column: category
+# - what: unique category names
+# - use: GROUP BY
 result = """
 
 SELECT category

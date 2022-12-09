@@ -36,7 +36,8 @@ Tests:
     CREATE INDEX "ix_apollo11_datetime"ON "apollo11" ("datetime")
 """
 
-# show schema for a table `apollo11`
+
+# Show schema for a table `apollo11`
 # type: str
 result = """
 

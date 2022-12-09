@@ -20,6 +20,7 @@ Tests:
 
 import sqlite3
 
+
 # Write SQL query to delete:
 # - table: contacts
 # type: str

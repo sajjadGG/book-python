@@ -6,10 +6,18 @@
 
 English:
     1. Write SQL query to select data:
+       a. table: apollo11
+       b. column: date
+       c. what: earliest date
+       d. use: MIN()
     2. Run doctests - all must succeed
 
 Polish:
     1. Napisz zapytanie SQL aby wybrać dane:
+       a. tabela: apollo11
+       b. kolumna: date
+       c. co: najwcześniejsza data
+       d. użyj: MIN()
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -19,6 +27,11 @@ Tests:
 import sqlite3
 
 
+# Write SQL query to select data:
+# - table: apollo11
+# - column: category
+# - what: earliest date
+# - use: MIN()
 result = """
 
 SELECT *
@@ -36,7 +49,7 @@ with sqlite3.connect('sql.db') as db:
 # Solution
 result = """
 
-SELECT MIN(date) AS date
+SELECT MIN(date)
 FROM apollo11
 
 """

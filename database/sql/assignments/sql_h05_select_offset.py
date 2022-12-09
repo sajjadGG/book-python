@@ -26,6 +26,7 @@ Tests:
 
 import sqlite3
 
+
 # Write SQL query to select data:
 # - table: apollo11
 # - columns: datetime, category, event

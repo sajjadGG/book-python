@@ -6,10 +6,16 @@
 
 English:
     1. Write SQL query to select data:
+       a. table: apollo11
+       b. columns: category
+       c. what: count number of rows
     2. Run doctests - all must succeed
 
 Polish:
     1. Napisz zapytanie SQL aby wybrać dane:
+       a. tabela: apollo11
+       b. kolumny: wszystkie
+       c. co: zlicz liczbę wierszy
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -19,9 +25,13 @@ Tests:
 import sqlite3
 
 
+# Write SQL query to select data:
+# - table: apollo11
+# - columns: category
+# - what: count number of rows
 result = """
 
-SELECT category
+SELECT *
 FROM apollo11
 
 """
@@ -36,9 +46,7 @@ with sqlite3.connect('sql.db') as db:
 # Solution
 result = """
 
-SELECT category, COUNT(event) AS count
+SELECT COUNT(*)
 FROM apollo11
-GROUP BY category
-HAVING COUNT(event) < 50
 
 """

@@ -11,6 +11,7 @@ English:
        c. column: firstname, text
        d. column: lastname, text
        e. column: birthday, date, default null
+       f. use: IF NOT EXISTS
     2. Run doctests - all must succeed
 
 Polish:
@@ -20,6 +21,7 @@ Polish:
        c. kolumna: firstname, text
        d. kolumna: lastname, text
        e. kolumna: birthday, date, default null
+       f. użyj: IF NOT EXISTS
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -41,7 +43,10 @@ Tests:
     astronauts
     missions
     contacts
+
+    TODO: clear tables
 """
+
 
 # SQL query to create table:
 # - table: contacts
@@ -49,6 +54,7 @@ Tests:
 # - column: firstname, text
 # - column: lastname, text
 # - column: birthday, date, default null
+# - use: IF NOT EXISTS
 # type: str
 result = """
 

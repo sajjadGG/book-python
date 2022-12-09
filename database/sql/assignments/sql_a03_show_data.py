@@ -38,7 +38,8 @@ Tests:
     {'datetime': '1969-08-27 00:00:00', 'date': '1969-08-27', 'time': '00:00:00.000000', 'met': -9223372036854775808, 'category': 'DEBUG', 'event': 'EASEP turned off by ground command.'}
 """
 
-# show all data in `apollo11` table
+
+# Show all data in `apollo11` table
 # type: str
 result = """
 

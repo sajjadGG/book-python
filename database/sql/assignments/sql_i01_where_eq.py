@@ -6,10 +6,18 @@
 
 English:
     1. Write SQL query to select data:
+       a. table: apollo11
+       b. columns: datetime, category, event
+       c. where: date is July 21st, 1969
+       d. use: == or =
     2. Run doctests - all must succeed
 
 Polish:
     1. Napisz zapytanie SQL aby wybrać dane:
+       a. tabela: apollo11
+       b. kolumny: datetime, category, event
+       c. gdzie: data to 21 lipca 1969
+       d. użyj: == or =
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -19,6 +27,12 @@ Tests:
 import sqlite3
 
 
+# Write SQL query to select data:
+# - table: apollo11
+# - columns: datetime, category, event
+# - where: date is July 21st, 1969
+# - use: == or =
+# type: str
 result = """
 
 SELECT datetime, category, event

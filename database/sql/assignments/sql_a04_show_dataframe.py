@@ -42,6 +42,7 @@ Tests:
     249  1969-08-27 00:00:00  1969-08-27  00:00:00.000000 -9223372036854775808     DEBUG                EASEP turned off by ground command.
 """
 
+
 # Show data from `apollo11` table in DataFrame format
 # type: str
 result = """

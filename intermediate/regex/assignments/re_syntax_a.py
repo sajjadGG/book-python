@@ -239,3 +239,7 @@ result = [x.groupdict() for x in data]
 [{'hours': '6', 'minutes': '39'},
  {'hours': '2', 'minutes': '31'},
  {'hours': '21', 'minutes': '36'}]
+
+
+
+# Solution

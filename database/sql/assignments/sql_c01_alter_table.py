@@ -48,6 +48,7 @@ Tests:
     <BLANKLINE>
 """
 
+
 # Write SQL query to add column:
 # - table: contacts
 # - column: mission

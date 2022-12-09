@@ -6,10 +6,18 @@
 
 English:
     1. Write SQL query to select data:
+       a. table: apollo11
+       b. columns: datetime, category, event
+       c. where: date is unknown
+       d. use: IS
     2. Run doctests - all must succeed
 
 Polish:
     1. Napisz zapytanie SQL aby wybrać dane:
+       a. tabela: apollo11
+       b. kolumny: datetime, category, event
+       c. gdzie: data jest nieznana
+       d. użyj: IS
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -19,6 +27,12 @@ Tests:
 import sqlite3
 
 
+# Write SQL query to select data:
+# - table: apollo11
+# - columns: datetime, category, event
+# - where: date is unknown
+# - use: IS
+# type: str
 result = """
 
 SELECT datetime, category, event
@@ -38,6 +52,6 @@ result = """
 
 SELECT datetime, category, event
 FROM apollo11
-WHERE date IS NOT NULL
+WHERE date IS NULL
 
 """

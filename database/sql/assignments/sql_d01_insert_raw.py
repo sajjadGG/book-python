@@ -24,6 +24,7 @@ Tests:
 
 import sqlite3
 
+
 # Write SQL query to insert data:
 # - table: contacts
 # - firstname: 'Mark'

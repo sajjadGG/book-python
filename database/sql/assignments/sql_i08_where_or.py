@@ -6,10 +6,18 @@
 
 English:
     1. Write SQL query to select data:
+       a. table: apollo11
+       b. columns: datetime, category, event
+       c. where: date is July 20 or 21, 1969
+       d. use: OR
     2. Run doctests - all must succeed
 
 Polish:
     1. Napisz zapytanie SQL aby wybrać dane:
+       a. tabela: apollo11
+       b. kolumny: datetime, category, event
+       c. gdzie: data to 20 lub 21 lipca 1969
+       d. użyj: OR
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -19,6 +27,12 @@ Tests:
 import sqlite3
 
 
+# Write SQL query to select data:
+# - table: apollo11
+# - columns: datetime, category, event
+# - where: date is July 20 or 21, 1969
+# - use: OR
+# type: str
 result = """
 
 SELECT datetime, category, event

@@ -7,13 +7,13 @@
 English:
     1. Write SQL query to delete many records:
        a. table: contacts
-       b. where: lastname = 'Watney'
+       b. where: lastname == 'Watney'
     2. Run doctests - all must succeed
 
 Polish:
     1. Napisz zapytanie SQL aby skasować wiele rekordów:
        a. tabela: contacts
-       b. gdzie: lastname = 'Watney'
+       b. gdzie: lastname == 'Watney'
     2. Uruchom doctesty - wszystkie muszą się powieść
 
 Tests:
@@ -25,7 +25,7 @@ import sqlite3
 
 # Write SQL query to delete many records:
 # - table: contacts
-# - where: lastname = 'Watney'
+# - where: lastname == 'Watney'
 # type: str
 result = """
 
