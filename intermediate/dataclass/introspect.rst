@@ -2,15 +2,18 @@ Dataclass Introspect
 ====================
 
 
-Native
-------
+SetUp
+-----
+>>> from dataclasses import dataclass, field
+>>> from datetime import date, time, datetime, timezone, timedelta
+>>> from typing import Literal
+>>> import dataclasses
+
+
+Introspect Function
+-------------------
 * Source: https://stackoverflow.com/a/67232265
 
->>> from dataclasses import dataclass, field, KW_ONLY
->>> from datetime import date, time, datetime, timezone, timedelta
->>> import dataclasses
->>>
->>>
 >>> _original_create_fn = dataclasses._create_fn
 >>>
 >>> def _new_create_fn(name, args, body, **kwargs):
@@ -20,12 +23,15 @@ Native
 ...     return _original_create_fn(name, args, body, **kwargs)
 >>>
 >>> dataclasses._create_fn = _new_create_fn
->>>
->>>
+
+
+Simple
+------
 >>> @dataclass
 ... class Mission:
 ...     year: int
 ...     name: str
+...
 def __init__(self, year:_type_year, name:_type_name):
     self.year=year
     self.name=name
@@ -38,15 +44,17 @@ def __eq__(self, other):
      return (self.year,self.name,)==(other.year,other.name,)
     return NotImplemented
 <BLANKLINE>
->>>
->>> @dataclass(frozen=True)
+
+
+Complex
+-------
+>>> @dataclass(frozen=True, slots=True, kw_only=True)
 ... class Astronaut:
 ...     firstname: str
 ...     lastname: str
-...     _: KW_ONLY
 ...     born: date
 ...     job: str = 'astronaut'
-...     agency: str = field(default='NASA', metadata={'choices': ['NASA', 'ESA']})
+...     agency: Literal['NASA', 'ESA'] = field(default='NASA', metadata={'choices': ['NASA', 'ESA']})
 ...     age: int | None = None
 ...     height: int | float | None = field(default=None, metadata={'unit': 'cm', 'min': 156, 'max': 210})
 ...     weight: int | float | None = field(default=None, metadata={'unit': 'kg', 'min': 50, 'max': 90})
@@ -71,7 +79,8 @@ def __eq__(self, other):
 ...             raise ValueError(f'Height {self.weight} is not in between {WEIGHT_MIN} and {WEIGHT_MAX}')
 ...         if self.age not in range(self.AGE_MIN, self.AGE_MAX):
 ...             raise ValueError('Age is not valid for an astronaut')
-def __init__(self, firstname:_type_firstname, lastname:_type_lastname, *, born:_type_born, job:_type_job=_dflt_job, agency:_type_agency=_dflt_agency, age:_type_age=_dflt_age, height:_type_height=_dflt_height, weight:_type_weight=_dflt_weight, groups:_type_groups=_HAS_DEFAULT_FACTORY, friends:_type_friends=_HAS_DEFAULT_FACTORY, assignments:_type_assignments=_dflt_assignments, missions:_type_missions=_HAS_DEFAULT_FACTORY, experience:_type_experience=_dflt_experience, account_last_login:_type_account_last_login=_dflt_account_last_login, account_created:_type_account_created=_dflt_account_created):
+...
+def __init__(self, *, firstname:_type_firstname, lastname:_type_lastname, born:_type_born, job:_type_job=_dflt_job, agency:_type_agency=_dflt_agency, age:_type_age=_dflt_age, height:_type_height=_dflt_height, weight:_type_weight=_dflt_weight, groups:_type_groups=_HAS_DEFAULT_FACTORY, friends:_type_friends=_HAS_DEFAULT_FACTORY, assignments:_type_assignments=_dflt_assignments, missions:_type_missions=_HAS_DEFAULT_FACTORY, experience:_type_experience=_dflt_experience, account_last_login:_type_account_last_login=_dflt_account_last_login, account_created:_type_account_created=_dflt_account_created):
     BUILTINS.object.__setattr__(self,'firstname',firstname)
     BUILTINS.object.__setattr__(self,'lastname',lastname)
     BUILTINS.object.__setattr__(self,'born',born)
@@ -87,6 +96,8 @@ def __init__(self, firstname:_type_firstname, lastname:_type_lastname, *, born:_
     BUILTINS.object.__setattr__(self,'experience',experience)
     BUILTINS.object.__setattr__(self,'account_last_login',account_last_login)
     BUILTINS.object.__setattr__(self,'account_created',account_created)
+    BUILTINS.object.__setattr__(self,'AGE_MIN',_dflt_AGE_MIN)
+    BUILTINS.object.__setattr__(self,'AGE_MAX',_dflt_AGE_MAX)
     self.__post_init__()
 <BLANKLINE>
 def __repr__(self):
