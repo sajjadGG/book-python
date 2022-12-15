@@ -1,31 +1,38 @@
 FuncProg Immutable
 ==================
+* Purely functional data structures have persistence
+* (keeps previous versions of the data structure unmodified)
 
-
-Rational
---------
-* Purely functional data structures have persistence (keeps previous
-  versions of the data structure unmodified)
-
-* The array with constant access and update times is a basic component of
-  most imperative languages, and many imperative data-structures, such as
-  the hash table and binary heap, are based on arrays
-
-* Arrays can be replaced by maps or random access lists, which admit
-  purely functional implementation, but have logarithmic access and update
-  times
-
-* Source: [#WikipediaFunc]_
-
+The array with constant access and update times is a basic component
+of most imperative languages, and many imperative data-structures,
+such as the hash table and binary heap, are based on arrays. Arrays
+can be replaced by maps or random access lists, which admit purely
+functional implementation, but have logarithmic access and update
+times. Source: [#WikipediaFunc]_
 
 Variables are immutable, i.e., it isn't possible to modify one once it has
 been initialized. However, we can create a new variable. The immutable nature
 of variables helps preserve the state throughout the program. [#Inouye2022]_
 
+Mutable:
 
-SetUp
------
->>> from dataclasses import dataclass
+>>> data = [1, 2, 3]
+>>> id(data)  # doctest: +SKIP
+4505485888
+>>>
+>>> data += [4, 5, 6]
+>>> id(data)  # doctest: +SKIP
+4505485888
+
+Immutable:
+
+>>> data = (1, 2, 3)
+>>> id(data)  # doctest: +SKIP
+4506214016
+>>>
+>>> data += (4, 5, 6)
+>>> id(data)  # doctest: +SKIP
+4502812416
 
 
 Mutable vs Immutable
@@ -113,25 +120,25 @@ The following type codes are defined:
     'f',    floating point     , 4
     'd',    floating point     , 8
 
+SetUp:
 
 >>> from array import array
->>>
->>>
->>> data = array('b')
->>>
->>> data.append(-128)
->>> data.append(-127)
->>> data.append(-1)
->>> data.append(1)
->>> data.append(0)
->>> data.append(2)
->>> data.append(8)
->>> data.append(127)
 
+Define:
+
+>>> data = array('b')  # 8 bit signed integer -> values from -128 to 127
+
+Use:
+
+>>> data.append(0)
+>>> data.append(1)
+>>> data.append(127)
 >>> data.append(128)
 Traceback (most recent call last):
 OverflowError: signed char is greater than maximum
 
+>>> data.append(-1)
+>>> data.append(-128)
 >>> data.append(-129)
 Traceback (most recent call last):
 OverflowError: signed char is less than minimum
@@ -139,6 +146,8 @@ OverflowError: signed char is less than minimum
 
 Mutable Dataclass
 -----------------
+>>> from dataclasses import dataclass
+
 >>> @dataclass
 ... class Point:
 ...     x: int
@@ -149,7 +158,7 @@ Mutable Dataclass
 >>> pt.y = 20
 >>> pt
 Point(x=10, y=20)
-
+>>>
 >>> pt.z = 30
 >>> pt
 Point(x=10, y=20)
@@ -160,6 +169,8 @@ Point(x=10, y=20)
 
 Immutable Dataclass
 -------------------
+>>> from dataclasses import dataclass
+
 >>> @dataclass(frozen=True)
 ... class Point:
 ...     x: int
@@ -176,7 +187,7 @@ dataclasses.FrozenInstanceError: cannot assign to field 'x'
 >>>
 >>> pt
 Point(x=1, y=2)
-
+>>>
 >>> pt.z = 30
 Traceback (most recent call last):
 dataclasses.FrozenInstanceError: cannot assign to field 'z'

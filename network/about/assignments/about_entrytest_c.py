@@ -1,7 +1,7 @@
 """
 * Assignment: About EntryTest ToListTuple
 * Complexity: easy
-* Lines of code: 3 lines
+* Lines of code: 5 lines
 * Time: 5 min
 
 English:
@@ -22,13 +22,11 @@ Tests:
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
-
+    >>> result = list(result)
     >>> assert type(result) is list, \
     'Variable `result` has invalid type, should be list'
-
     >>> assert len(result) > 0, \
     'Variable `result` should not be empty'
-
     >>> assert all(type(row) is tuple for row in result), \
     'Variable `result` should be a list[tuple]'
 
@@ -60,4 +58,8 @@ result = ...
 # Solution
 header = tuple(DATA[0].keys())
 rows = [tuple(row.values()) for row in DATA]
-result = [header] + rows
+
+result = []
+result.append(header)
+result.extend(rows)
+

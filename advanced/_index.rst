@@ -98,8 +98,8 @@ Object Oriented Programming
     oop/inheritance-super.rst
     oop/inheritance-mro.rst
     oop/abstract-interface.rst
-    oop/abstract-protocol.rst
     oop/abstract-class.rst
+    oop/abstract-protocol.rst
     oop/abstract-polymorphism.rst
     oop/object-relations.rst
     oop/object-identity.rst

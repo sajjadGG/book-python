@@ -1,53 +1,54 @@
 <scheme name="Astro Matt" version="142" parent_scheme="Darcula">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2022-12-04T12:47:40</property>
+    <property name="created">2022-12-15T18:05:18</property>
     <property name="ide">Python</property>
     <property name="ideVersion">2022.3.0.0</property>
-    <property name="modified">2022-12-04T12:47:52</property>
+    <property name="modified">2022-12-15T18:05:29</property>
     <property name="originalScheme">Astro Matt</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.2" />
-  <option name="EDITOR_FONT_SIZE" value="24" />
+  <option name="EDITOR_FONT_SIZE" value="22" />
   <option name="EDITOR_FONT_NAME" value="JetBrains Mono" />
   <option name="CONSOLE_FONT_NAME" value="JetBrains Mono" />
-  <option name="CONSOLE_FONT_SIZE" value="22" />
   <colors>
     <option name="ADDED_LINES_COLOR" value="" />
     <option name="CARET_ROW_COLOR" value="" />
-    <option name="CONSOLE_BACKGROUND_KEY" value="c0e12" />
+    <option name="CONSOLE_BACKGROUND_KEY" value="" />
     <option name="DELETED_LINES_COLOR" value="" />
-    <option name="DOCUMENTATION_COLOR" value="3c3f41" />
+    <option name="DOCUMENTATION_COLOR" value="2b2d30" />
     <option name="FOLDED_TEXT_BORDER_COLOR" value="" />
-    <option name="GUTTER_BACKGROUND" value="c0e12" />
+    <option name="GUTTER_BACKGROUND" value="0" />
     <option name="IGNORED_ADDED_LINES_BORDER_COLOR" value="" />
     <option name="IGNORED_DELETED_LINES_BORDER_COLOR" value="" />
     <option name="IGNORED_MODIFIED_LINES_BORDER_COLOR" value="" />
-    <option name="INDENT_GUIDE" value="c0e12" />
-    <option name="JUPYTER.CELL_UNDER_CARET_COMMAND_MODE_STRIPE_COLOR" value="c0e12" />
-    <option name="JUPYTER.CELL_UNDER_CARET_EDITOR_MODE_STRIPE_COLOR" value="c0e12" />
-    <option name="JUPYTER.CODE_CELL_BACKGROUND" value="1b1d20" />
+    <option name="INDENT_GUIDE" value="0" />
+    <option name="JUPYTER.CELL_UNDER_CARET_COMMAND_MODE_STRIPE_COLOR" value="2b2d30" />
+    <option name="JUPYTER.CELL_UNDER_CARET_EDITOR_MODE_STRIPE_COLOR" value="2b2d30" />
+    <option name="JUPYTER.CODE_CELL_BACKGROUND" value="1c1c1c" />
     <option name="JUPYTER.GUTTER_INPUT_EXECUTION_COUNT" value="c0e12" />
     <option name="JUPYTER.GUTTER_OUTPUT_EXECUTION_COUNT" value="c0e12" />
     <option name="JUPYTER.PROGRESS_STATUS_RUNNING_COLOR" value="b92424" />
     <option name="JUPYTER.SAUSAGE_BUTTON_BORDER_COLOR" value="c0e12" />
     <option name="JUPYTER.SAUSAGE_BUTTON_SHORTCUT_COLOR" value="c0e12" />
     <option name="MODIFIED_LINES_COLOR" value="" />
-    <option name="RIGHT_MARGIN_COLOR" value="1e2024" />
-    <option name="SELECTED_INDENT_GUIDE" value="c0e12" />
+    <option name="PREVIEW_BACKGROUND" value="0" />
+    <option name="RIGHT_MARGIN_COLOR" value="1c1c1c" />
+    <option name="SELECTED_INDENT_GUIDE" value="0" />
     <option name="SELECTION_BACKGROUND" value="383872" />
     <option name="SEPARATOR_ABOVE_COLOR" value="3c3f41" />
     <option name="SEPARATOR_BELOW_COLOR" value="3c3f41" />
     <option name="SOFT_WRAP_SIGN_COLOR" value="333333" />
-    <option name="VISUAL_INDENT_GUIDE" value="e1014" />
-    <option name="WHITESPACES" value="c0e12" />
+    <option name="TEARLINE_COLOR" value="1b1d20" />
+    <option name="VISUAL_INDENT_GUIDE" value="2c2e32" />
+    <option name="WHITESPACES" value="0" />
     <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="" />
   </colors>
   <attributes>
     <option name="BAD_CHARACTER">
       <value>
         <option name="EFFECT_COLOR" value="b92424" />
-        <option name="EFFECT_TYPE" value="2" />
+        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="BASH.EXTERNAL_COMMAND" baseAttributes="DEFAULT_IDENTIFIER" />
@@ -205,7 +206,7 @@
       <value>
         <option name="FOREGROUND" value="45c587" />
         <option name="EFFECT_COLOR" value="cf6679" />
-        <option name="EFFECT_TYPE" value="2" />
+        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="DEFAULT_KEYWORD">
@@ -262,19 +263,19 @@
     </option>
     <option name="DIFF_CONFLICT">
       <value>
-        <option name="BACKGROUND" value="444400" />
+        <option name="BACKGROUND" value="333300" />
         <option name="ERROR_STRIPE_COLOR" value="ffb400" />
       </value>
     </option>
     <option name="DIFF_DELETED">
       <value>
-        <option name="BACKGROUND" value="b92424" />
+        <option name="BACKGROUND" value="330000" />
         <option name="ERROR_STRIPE_COLOR" value="b92424" />
       </value>
     </option>
     <option name="DIFF_INSERTED">
       <value>
-        <option name="BACKGROUND" value="447152" />
+        <option name="BACKGROUND" value="3300" />
         <option name="ERROR_STRIPE_COLOR" value="447152" />
       </value>
     </option>
@@ -299,6 +300,12 @@
     <option name="FOLLOWED_HYPERLINK_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="77ee" />
+        <option name="EFFECT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="GRAMMAR_ERROR">
+      <value>
+        <option name="EFFECT_COLOR" value="713d40" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
@@ -523,6 +530,13 @@
         <option name="FOREGROUND" value="6371ac" />
       </value>
     </option>
+    <option name="RUNTIME_ERROR">
+      <value>
+        <option name="EFFECT_COLOR" value="f49810" />
+        <option name="ERROR_STRIPE_COLOR" value="9e2927" />
+        <option name="EFFECT_TYPE" value="1" />
+      </value>
+    </option>
     <option name="SCOPE_KEY_All Changed Files">
       <value />
     </option>
@@ -551,6 +565,24 @@
         <option name="ERROR_STRIPE_COLOR" value="ffff00" />
       </value>
     </option>
+    <option name="TEXT_STYLE_ERROR">
+      <value>
+        <option name="EFFECT_COLOR" value="c75450" />
+        <option name="EFFECT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="TEXT_STYLE_SUGGESTION">
+      <value>
+        <option name="EFFECT_COLOR" value="3592c4" />
+        <option name="EFFECT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="TEXT_STYLE_WARNING">
+      <value>
+        <option name="EFFECT_COLOR" value="f0a732" />
+        <option name="EFFECT_TYPE" value="1" />
+      </value>
+    </option>
     <option name="TODO_DEFAULT_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="9b2424" />
@@ -565,7 +597,7 @@
     </option>
     <option name="WARNING_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="34340d" />
+        <option name="BACKGROUND" value="222202" />
         <option name="ERROR_STRIPE_COLOR" value="f49810" />
         <option name="EFFECT_TYPE" value="1" />
       </value>

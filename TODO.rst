@@ -20,7 +20,10 @@ Intermediate
 
 Advanced
 --------
+* Funcprog: Monads, Bridges, Atoms
 * Add exception groups (3.11)
+* OOP: Add staticmethod assignments
+* OOP: improve classmethod assignments
 * Add more parallelism, concurrency (async) to Advanced
 
 
@@ -135,6 +138,9 @@ Pandas
 
 Python PEP
 ----------
+* vars() should handle slots
+* from datetime import parse(str, format)
+* Simple interface for HTTP requests (similar to requests)
 * słowo kluczowe interface Cache
 * dekorator interface
 * metaklasa interface
@@ -154,8 +160,6 @@ Python PEP
 * JSON datetime encoder, decoder to isoformat (UTC)
 * json.to_string(), json.to_file(), json.from_file(), json.from_string()
 * pickle.to_string(), pickle.to_file(), pickle.from_file(), pickle.from_string()
-* from datetime import parse(str, format)
-* Simple interface for HTTP requests (similar to requests)
 * CTypes argtypes, restype from TypeAnnotation
 * Context manager ``with logging.DEBUG:``
 * print('cośtam', level='warning')

@@ -34,6 +34,7 @@ Tests:
 
     >>> assert result is not Ellipsis, \
     'Assign result to variable: `result`'
+    >>> result = list(result)
     >>> assert len(result) > 0, \
     'Result cannot be empty'
     >>> assert type(result) is list, \

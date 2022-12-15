@@ -32,10 +32,10 @@ Tests:
     >>> pprint(result)
     ['mlewis@nasa.gov',
      'rmartinez@nasa.gov',
+     'avogel@esa.int',
      'cbeck@nasa.gov',
      'bjohanssen@nasa.gov',
-     'mwatney@nasa.gov',
-     'ptwardowski@polsa.gov.pl']
+     'mwatney@nasa.gov']
 """
 
 DATA = {
@@ -53,7 +53,7 @@ DATA = {
              {'name': 'Pan Twardowski', 'email': 'ptwardowski@polsa.gov.pl'},
              {'name': 'Ivan Ivanovich', 'email': 'iivanovich@roscosmos.ru'}]}
 
-DOMAINS = ('.gov', '.gov.pl')
+DOMAINS = ('esa.int', 'nasa.gov')
 
 # Email addresses with top-level domain in DOMAINS
 # type: list[str]

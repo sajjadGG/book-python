@@ -131,8 +131,8 @@ Dynamic version:
 ...         self.parents.append(mother)
 ...         self.parents.append(father)
 
-Why?
-----
+Why Composition?
+----------------
 >>> class Mother:
 ...     pass
 >>>
@@ -182,25 +182,51 @@ Use Case - 0x01
 
 Use Case - 0x02
 ---------------
->>> from json import JSONEncoder, JSONDecoder
+>>> class Encoder:
+...     def encode(self, data):
+...         ...
+>>>
+>>> class Decoder:
+...     def decode(self, data):
+...         ...
 >>>
 >>>
->>> class User:
-...     json_encoder: JSONEncoder
-...     json_decoder: JSONDecoder
+>>> class JSONSerializer:
+...     encoder: Encoder
+...     decoder: Decoder
 ...
 ...     def __init__(self,
-...                  json_encoder: JSONEncoder = JSONEncoder(),
-...                  json_decoder: JSONDecoder = JSONDecoder(),
+...                  encoder: Encoder = Encoder(),
+...                  decoder: Decoder = Decoder(),
 ...                  ) -> None:
-...         self.json_encoder = json_encoder
-...         self.json_decoder = json_decoder
+...         self.encoder = encoder
+...         self.decoder = decoder
 ...
-...     def json_encode(self, data):
-...         self.json_encoder.encode(data)
+...     def encode(self, data):
+...        return self.encoder.encode(data)
 ...
-...     def json_decoder(self, data):
-...         self.json_decoder.decode(data)
+...     def decode(self, data):
+...         return self.decoder.decode(data)
+>>>
+>>>
+>>> DATA = {'firstname': 'Mark', 'lastname': 'Watney'}
+
+Now, if you want to serialize your data, just create an instance
+and call method ``.encode()`` on it.
+
+>>> json = JSONSerializer()
+>>> result = json.encode(DATA)
+
+If you want to use your better version of encoder (for example which
+can encode ``datetime`` object. You can create a class which inherits
+from default ``Encoder`` and overwrite ``.encode()`` method.
+
+>>> class MyBetterEncoder(Encoder):
+...     def encode(self):
+...         ...
+>>>
+>>> json = JSONSerializer(encoder=MyBetterEncoder)
+>>> result = json.encode(DATA)
 
 
 Use Case - 0x03
