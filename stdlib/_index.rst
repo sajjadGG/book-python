@@ -59,6 +59,7 @@ XML
     xml/html.rst
     xml/lxml.rst
     xml/xml.rst
+    xml/namespace.rst
     xml/xpath.rst
     xml/xslt.rst
 
