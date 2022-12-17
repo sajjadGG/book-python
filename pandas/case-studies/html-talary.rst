@@ -1,9 +1,9 @@
-Talary
-======
+HTML Talary
+===========
 * https://wcn.pl/archive?q=talar+lewkowy&page=2
 
 
 Code
 ----
-.. literalinclude:: src/talary.py
+.. literalinclude:: src/html-talary.py
     :language: python

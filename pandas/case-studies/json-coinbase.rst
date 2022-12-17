@@ -1,5 +1,5 @@
-Coinbase
-========
+JSON Coinbase
+=============
 
 
 >>> import requests

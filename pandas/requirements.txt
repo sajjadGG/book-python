@@ -10,3 +10,4 @@ openpyxl
 scipy
 html5lib
 BeautifulSoup4
+tabula-py

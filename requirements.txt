@@ -65,3 +65,4 @@ sphinxcontrib-bibtex
 sqlalchemy
 uvicorn[standard]
 xlrd
+tabula-py

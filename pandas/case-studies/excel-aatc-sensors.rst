@@ -1,5 +1,5 @@
-AATC Sensors
-============
+Excel AATC Sensors
+==================
 * Working with Excel (file, spreadsheet)
 * Selecting data
 * Binary classification
@@ -23,5 +23,5 @@ nazywamy sygnałem.
 
 Code
 ----
-.. literalinclude:: src/aatc-sensors-optima.py
+.. literalinclude:: src/excel-aatc-sensors-optima.py
     :language: python

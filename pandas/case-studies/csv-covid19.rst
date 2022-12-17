@@ -1,5 +1,5 @@
-Case Study COVID-19
-===================
+CSV COVID-19
+============
 * Data Source: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series
 * https://www.youtube.com/watch?v=54XLXg4fYsc
 * https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series
@@ -10,9 +10,11 @@ Case Study COVID-19
 
 Code
 ----
-.. literalinclude:: src/covid19.py
+.. literalinclude:: src/csv-covid19-a.py
     :language: python
 
+.. literalinclude:: src/csv-covid19-b.py
+    :language: python
 
 Plots
 -----
