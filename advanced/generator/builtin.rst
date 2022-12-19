@@ -423,12 +423,17 @@ Use Case - 0x05
 
 Use Case - 0x06
 ---------------
-* Stdin
+* Add numbers from stdin
+
+SetUp:
 
 >>> import sys
->>>
->>> # doctest: +SKIP
-... print(sum(map(int, sys.stdin)))
+
+Definition:
+
+>>> print(sum(map(int, sys.stdin)))  # doctest: +SKIP
+
+Usage:
 
 .. code-block:: console
 
@@ -436,9 +441,69 @@ Use Case - 0x06
     alias addnum='python -c"import sys; print(sum(map(int, sys.stdin)))"'
 
 
+Use Case - 0x07
+---------------
+SetUp:
+
+>>> from doctest import testmod as run_tests
+
+Data [#ghSklearnIris]_:
+
+>>> DATA = """150,4,setosa,versicolor,virginica
+... 5.1,3.5,1.4,0.2,0
+... 7.0,3.2,4.7,1.4,1
+... 6.3,3.3,6.0,2.5,2
+... 4.9,3.0,1.4,0.2,0
+... 6.4,3.2,4.5,1.5,1
+... 5.8,2.7,5.1,1.9,2"""
+
+Definition:
+
+>>> def get_labelencoder(header: str) -> dict[int, str]:
+...     """
+...     >>> get_labelencoder('150,4,setosa,versicolor,virginica')
+...     {0: 'setosa', 1: 'versicolor', 2: 'virginica'}
+...     """
+...     nrows, nfeatures, *class_labels = header.split(',')
+...     return dict(enumerate(class_labels))
+>>>
+>>> run_tests()  # doctest: +SKIP
+TestResults(failed=0, attempted=1)
+
+>>> def get_data(line: str) -> tuple:
+...     """
+...     >>> convert('5.1,3.5,1.4,0.2,0')
+...     (5.1, 3.5, 1.4, 0.2, 'setosa')
+...     >>> convert('7.0,3.2,4.7,1.4,1')
+...     (7.0, 3.2, 4.7, 1.4, 'versicolor')
+...     >>> convert('6.3,3.3,6.0,2.5,2')
+...     (6.3, 3.3, 6.0, 2.5, 'virginica')
+...     """
+...     *values, species = line.split(',')
+...     values = map(float, values)
+...     species = label_encoder[int(species)]
+...     return tuple(values) + (species,)
+>>>
+>>> run_tests()  # doctest: +SKIP
+TestResults(failed=0, attempted=3)
+
+>>> header, *lines = DATA.splitlines()
+>>> label_encoder = get_labelencoder(header)
+>>> result = map(get_data, lines)
+
+>>> list(result)  # doctest: +NORMALIZE_WHITESPACE
+[(5.1, 3.5, 1.4, 0.2, 'setosa'),
+ (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+ (6.3, 3.3, 6.0, 2.5, 'virginica'),
+ (4.9, 3.0, 1.4, 0.2, 'setosa'),
+ (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+ (5.8, 2.7, 5.1, 1.9, 'virginica')]
+
+
 References
 ----------
 .. [#pydoczip] Python Core Developers. Built-in Functions. Year: 2022. Retrieved: 2022-06-28. URL: https://docs.python.org/3/library/functions.html#zip
+.. [#ghSklearnIris] Scikit-learn Contributors. Iris Dataset. Year: 2022. Retrieved: 2022-12-19. URL:  https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/sklearn/datasets/data/iris.csv
 
 
 Assignments
