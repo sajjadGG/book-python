@@ -101,6 +101,18 @@ Loop
     loop/else-for.rst
     loop/else-while.rst
 
+
+Performance
+***********
+.. toctree::
+    :maxdepth: 1
+    :caption: Performance
+
+    performance/collections.rst
+    performance/c-types.rst
+    performance/c-modules.rst
+
+
 TKInter
 *******
 .. toctree::

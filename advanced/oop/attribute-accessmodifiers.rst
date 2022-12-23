@@ -2,7 +2,7 @@ OOP Attribute Access Modifiers
 ==============================
 * Attributes and methods are always public
 * No protected and private keywords
-* Protecting is only by convention [#pydocprivatevar]_
+* Private and protected is only by convention [#pydocprivatevar]_
 * ``name`` - public attribute
 * ``_name`` - protected attribute (non-public by convention)
 * ``__name`` - private attribute (name mangling)
@@ -12,16 +12,16 @@ OOP Attribute Access Modifiers
 >>> class Astronaut:
 ...     firstname: str          # public
 ...     lastname: str           # public
-...     _salary: int            # protected
-...     _address: int           # protected
-...     __username: str         # private
-...     __password: str         # private
-...     id_: int                # public, avoid name collision
-...     type_: str              # public, avoid name collision
-...     __doc__: str            # (dunder) special system
-...     __module__: str         # (dunder) special system
-...     __version__: str        # (dunder) special convention
-...     __author__: str         # (dunder) special convention
+...     _height: int            # public, but... protected by convention
+...     _weight: int            # public, but... protected by convention
+...     __salary: str           # public, but... private by convention (name mangling)
+...     __address: str          # public, but... private by convention (name mangling)
+...     id_: int                # public, but... public, avoid name collision
+...     type_: str              # public, but... public, avoid name collision
+...     __doc__: str            # public, but... special meaning built-in (dunder)
+...     __module__: str         # public, but... special meaning built-in (dunder)
+...     __version__: str        # public, but... special meaning custom made (dunder)
+...     __author__: str         # public, but... special meaning custom made (dunder)
 
 
 SetUp

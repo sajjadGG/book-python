@@ -2,8 +2,8 @@
 * Assignment: Performance Compexity SplitTrainTest
 * Required: no
 * Complexity: easy
-* Lines of code: 9 lines
-* Time: 13 min
+* Lines of code: 4 lines
+* Time: 5 min
 
 English:
     1. Using List Comprehension split `DATA` into:
@@ -160,4 +160,45 @@ features_test = [tuple(X) for *X,y in test]
 labels_train = [y for *X,y in train]
 labels_test = [y for *X,y in test]
 
+
+
+# Python 3.11.1
+# Date: 2022-12-23
+
+>>> %%timeit -r 1000 -n 1000
+... features_train = [tuple(X) for *X, y in rows[:split]]
+... features_test = [tuple(X) for *X, y in rows[split:]]
+... labels_train = [y for *X, y in rows[:split]]
+... labels_test = [y for *X, y in rows[split:]]
+...
+...
+6.32 µs ± 833 ns per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+>>>
+>>>
+>>> %%timeit -r 1000 -n 1000
+... features = [tuple(X) for *X, y in rows]
+... labels = [y for *X, y in rows]
+... features_train = features[:split]
+... features_test = features[split:]
+... labels_train = labels[:split]
+... labels_test = labels[split:]
+...
+...
+7.52 µs ± 1.32 µs per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+>>>
+>>>
+>>> %%timeit -r 1000 -n 1000
+... train = rows[:split]
+... test = rows[split:]
+... features_train = [tuple(X) for *X, y in train]
+... features_test = [tuple(X) for *X, y in test]
+... labels_train = [y for *X, y in train]
+... labels_test = [y for *X, y in test]
+...
+...
+8.48 µs ± 1.49 µs per loop (mean ± std. dev. of 1000 runs, 1,000 loops each)
+
+
+
 """
+

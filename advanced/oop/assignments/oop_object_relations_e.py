@@ -28,7 +28,7 @@ Tests:
     ...            for astro in result
     ...            for addr in astro.addresses)
 
-    >>> pprint(result)
+    >>> pprint(result)  # doctest: +NORMALIZE_WHITESPACE
     [Astronaut(firstname='Pan',
                lastname='Twardowski',
                addresses=[Address(street='Kamienica Pod św. Janem Kapistranem',
@@ -148,8 +148,8 @@ class Astronaut:
     addresses: list[Address | None]
 
 
-def convert(astronaut: dict):
-    addresses = [Address(**x) for x in astronaut.pop('addresses')]
-    return Astronaut(**astronaut, addresses=addresses)
+def convert(astronaut: dict) -> Astronaut:
+    addresses = map(lambda x: Address(**x), astronaut.pop('addresses'))
+    return Astronaut(**astronaut, addresses=list(addresses))
 
 result = map(convert, DATA)

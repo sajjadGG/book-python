@@ -331,55 +331,53 @@ False
 
 Object Equality
 ---------------
->>> class Astronaut:
+>>> class Vehicle:
+...     def __init__(self, name):
+...         self.name = name
+...
+...     def __eq__(self, other):
+...         return isinstance(self, other.__class__) \
+...            and self.name == other.name
+...
+...
+>>> class Car(Vehicle):
 ...     pass
->>>
->>> class Cosmonaut:
+...
+>>> class Truck(Vehicle):
 ...     pass
->>>
->>> a = Astronaut()
->>> a.firstname = 'Mark'
->>> a.lastname = 'Watney'
->>>
->>> c = Cosmonaut()
->>> c.firstname = 'Mark'
->>> c.lastname = 'Watney'
->>>
->>> a is c
-False
->>>
+...
+...
+...
+>>> a = Car('Mercedes')
+>>> b = Car('Mercedes')
+>>> c = Truck('Mercedes')
+>>> d = Vehicle('Mercedes')
+
+>>> a == a
+True
+>>> a == b
+True
 >>> a == c
 False
->>>
->>>
->>> id(a)  # doctest: +SKIP
-4503461584
->>>
->>> id(c)  # doctest: +SKIP
-4503287120
->>>
->>> id(a.firstname)  # doctest: +SKIP
-4488983024
->>>
->>> id(c.firstname)  # doctest: +SKIP
-4488983024
->>>
->>> id(a.lastname)  # doctest: +SKIP
-4503976496
->>>
->>> id(c.lastname)  # doctest: +SKIP
-4503976496
->>>
->>> id(a.__dict__)  # doctest: +SKIP
-4503717056
->>>
->>> id(c.__dict__)  # doctest: +SKIP
-4503973504
->>>
->>> a.__dict__ is c.__dict__
+>>> a == d
+True
+
+>>> d == a
+True
+>>> d == b
+True
+>>> d == c
+True
+>>> d == d
+True
+
+>>> c == a
 False
->>>
->>> a.__dict__ == c.__dict__
+>>> c == b
+False
+>>> c == c
+True
+>>> c == d
 True
 
 
@@ -459,6 +457,60 @@ True
 
 Use Case - 0x01
 ---------------
+>>> class Astronaut:
+...     pass
+>>>
+>>> class Cosmonaut:
+...     pass
+>>>
+>>> a = Astronaut()
+>>> a.firstname = 'Mark'
+>>> a.lastname = 'Watney'
+>>>
+>>> c = Cosmonaut()
+>>> c.firstname = 'Mark'
+>>> c.lastname = 'Watney'
+>>>
+>>> a is c
+False
+>>>
+>>> a == c
+False
+>>>
+>>>
+>>> id(a)  # doctest: +SKIP
+4503461584
+>>>
+>>> id(c)  # doctest: +SKIP
+4503287120
+>>>
+>>> id(a.firstname)  # doctest: +SKIP
+4488983024
+>>>
+>>> id(c.firstname)  # doctest: +SKIP
+4488983024
+>>>
+>>> id(a.lastname)  # doctest: +SKIP
+4503976496
+>>>
+>>> id(c.lastname)  # doctest: +SKIP
+4503976496
+>>>
+>>> id(a.__dict__)  # doctest: +SKIP
+4503717056
+>>>
+>>> id(c.__dict__)  # doctest: +SKIP
+4503973504
+>>>
+>>> a.__dict__ is c.__dict__
+False
+>>>
+>>> a.__dict__ == c.__dict__
+True
+
+
+Use Case - 0x02
+---------------
 * Make Equal
 
 >>> class Astronaut:
@@ -480,7 +532,7 @@ True
 False
 
 
-Use Case - 0x02
+Use Case - 0x03
 ---------------
 * Equal Problem
 
@@ -509,7 +561,7 @@ True
 False
 
 
-Use Case - 0x03
+Use Case - 0x04
 ---------------
 * Make Unequal
 
@@ -539,7 +591,7 @@ False
 False
 
 
-Use Case - 0x04
+Use Case - 0x05
 ---------------
 * Overload
 * Could be implemented through ``from functools import singledispatchmethod``

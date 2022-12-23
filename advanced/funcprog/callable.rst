@@ -62,7 +62,7 @@ Callbacks
 ---------
 Callback Design Pattern:
 
->>> def request(url, on_success, on_error):
+>>> def fetch(url, on_success, on_error):
 ...     try:
 ...         result = f'Downloading from {url}'
 ...     except Exception as error:
@@ -71,7 +71,7 @@ Callback Design Pattern:
 ...         on_success(result)
 >>>
 >>>
->>> request(
+>>> fetch(
 ...     url='https://python.astrotech.io',
 ...     on_success=lambda result: print(result),
 ...     on_error=lambda error: print(error))
@@ -81,7 +81,7 @@ Downloading from https://python.astrotech.io
 >>> import requests
 >>>
 >>>
->>> def http_request(url, on_success=lambda: ..., on_error=lambda: ...):
+>>> def fetch(url, on_success=lambda: ..., on_error=lambda: ...):
 ...     result = requests.get(url)
 ...     if result.status_code == HTTPStatus.OK:
 ...         return on_success(result)
@@ -89,7 +89,7 @@ Downloading from https://python.astrotech.io
 ...         return on_error(result)
 >>>
 >>>
->>> http_request(  # doctest: +SKIP
+>>> fetch(  # doctest: +SKIP
 ...     url='http://python.astrotech.io/',
 ...     on_success=lambda result: print(result),
 ...     on_error=lambda error: print(error))

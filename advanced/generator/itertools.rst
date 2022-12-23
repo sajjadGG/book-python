@@ -538,6 +538,61 @@ Use Case - 0x04
  ('Melissa', 'Rick', 'Alex'),
  ('Mark', 'Melissa', 'Rick', 'Alex')]
 
+Use Case - 0x05
+---------------
+>>> from itertools import starmap
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> DATA = [
+...     ('SepalLength', 'SepalWidth', 'PetalLength', 'PetalWidth', 'Species'),
+...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...     (4.7, 3.2, 1.3, 0.2, 'setosa')]
+>>>
+>>>
+>>> @dataclass
+... class Iris:
+...     sl: float
+...     sw: float
+...     pl: float
+...     pw: float
+...     species: str
+...
+...     def save(self):
+...         return 'success'
+
+>>> result = starmap(Iris, DATA[1:])
+>>>
+>>> list(result)  # doctest: +NORMALIZE_WHITESPACE
+[Iris(sl=5.8, sw=2.7, pl=5.1, pw=1.9, species='virginica'),
+ Iris(sl=5.1, sw=3.5, pl=1.4, pw=0.2, species='setosa'),
+ Iris(sl=5.7, sw=2.8, pl=4.1, pw=1.3, species='versicolor'),
+ Iris(sl=6.3, sw=2.9, pl=5.6, pw=1.8, species='virginica'),
+ Iris(sl=6.4, sw=3.2, pl=4.5, pw=1.5, species='versicolor'),
+ Iris(sl=4.7, sw=3.2, pl=1.3, pw=0.2, species='setosa')]
+
+>>> result = starmap(Iris, DATA[1:])
+>>> result = map(Iris.save, result)
+>>>
+>>> list(result)
+['success', 'success', 'success', 'success', 'success', 'success']
+
+>>> for iris in starmap(Iris, DATA[1:]):
+...     print(f'Saving to database...', end=' ')
+...     result = iris.save()
+...     print(result)
+...
+Saving to database... success
+Saving to database... success
+Saving to database... success
+Saving to database... success
+Saving to database... success
+Saving to database... success
+
 
 Assignments
 -----------

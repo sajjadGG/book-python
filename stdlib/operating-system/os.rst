@@ -74,14 +74,13 @@ Checking OS version
     #     version='6.1.7601',
     #     machine='AMD64',
     #     processor='Intel64 Family 6 Model 42 Stepping 7, GenuineIntel')
-    #
+
     # uname_result(
-    #     system='Darwin',
-    #     node='mainframe.local',
-    #     release='15.3.0',
-    #     version='Darwin Kernel Version 15.3.0: Thu Dec 10 18:40:58 PST 2015; root:xnu-3248.30.4~1/RELEASE_X86_64',
-    #     machine='x86_64',
-    #     processor='i386')
+    #   system='Darwin',
+    #   node='AstroMatMacBook',
+    #   release='22.1.0',
+    #   version='Darwin Kernel Version 22.1.0: Sun Oct  9 20:14:54 PDT 2022; root:xnu-8792.41.9~2/RELEASE_X86_64',
+    #   machine='x86_64')
 
 ``os``
 ------

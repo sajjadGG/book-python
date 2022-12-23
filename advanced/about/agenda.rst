@@ -54,9 +54,9 @@ Day 4
 * 60m - OOP: Object identity and equality
 * 60m - OOP: Class constructor __new__ vs __init__
 * 90m - OOP: Class creation and Metaclass
-* 60m - Performance: Optimization, Micro-benchmarking and Profiling
+* 60m - Performance: Optimization, micro-benchmarking and profiling
 * 15m - Performance: Alternative compilers, interpreters and modules
-* 15m - Performance: Cython, Mypyc, Numba
+* 15m - Performance: Python code compilation (mypyc)
 
 
 Day 5

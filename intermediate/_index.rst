@@ -72,7 +72,7 @@ Type Annotation
     type-annotation/type-type.rst
     type-annotation/extra.rst
     type-annotation/deprecated.rst
-    type-annotation/package-validate.rst
+    type-annotation/package-check.rst
     type-annotation/package-annotate.rst
     type-annotation/package-cython.rst
     type-annotation/package-mypyc.rst

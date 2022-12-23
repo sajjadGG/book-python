@@ -2,8 +2,8 @@
 * Assignment: Performance Compexity Segmentation
 * Required: yes
 * Complexity: easy
-* Lines of code: 10 lines
-* Time: 8 min
+* Lines of code: 8 lines
+* Time: 5 min
 
 English:
     1. Count occurrences of each group

@@ -195,6 +195,54 @@ Use Case - 0x05
 ['Mark Watney', 'Melissa Lewis']
 
 
+Use Case - 0x06
+---------------
+>>> def http_request(url, on_success, on_error):
+...     try:
+...         result = ...
+...     except Exception as error:
+...         return on_error(error)
+...     else:
+...         return on_success(result)
+>>>
+>>>
+>>> http_request(
+...     url = 'https://python.astrotech.io',
+...     on_success = lambda result: print(result),
+...     on_error = lambda error: print(error))
+Ellipsis
+
+
+Use Case - 0x07
+---------------
+>>> class Pipeline:
+...     def __init__(self, values):
+...         self.values = values
+...
+...     def filter(self, fn):
+...          self.values = filter(fn, self.values)
+...          return self
+...
+...     def map(self, fn):
+...         self.values = map(fn, self.values)
+...         return self
+
+>>> DATA = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>>
+>>> result = (
+...     Pipeline(DATA)
+...     .filter(lambda x: x % 2 == 0)
+...     .map(lambda x: x ** 2)
+...     .map(lambda x: x + 1)
+...     .map(lambda x: x + 10)
+... )
+
+>>> list(result.values)
+[15, 27, 47, 75]
+
+
+
+
 Further Reading
 ---------------
 * https://youtu.be/eis11j_iGMs

@@ -3,7 +3,7 @@
 * Required: yes
 * Complexity: easy
 * Lines of code: 3 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Collect unique keys from all rows in one sequence `result`

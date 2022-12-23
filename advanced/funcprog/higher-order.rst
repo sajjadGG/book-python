@@ -97,13 +97,17 @@ Use Case - 0x03
 >>>
 >>> result = (
 ...     MapReduce(DATA)
-...     .filter(lambda x: x % 2 == 0)
 ...     .map(lambda x: x ** 2)
+...     .map(lambda x: x / 2)
+...     .map(lambda x: x + 2)
+...     .map(lambda x: round(x, 2))
+...     .map(lambda x: int(x))
+...     .filter(lambda x: x > 10)
 ...     .reduce(lambda x,y: x + y)
 ... )
 
 >>> result
-120
+136
 
 
 Use Case - 0x04
@@ -124,8 +128,8 @@ Use Case - 0x04
 ...         return self.value
 ...
 ...     def bind(self, func):
-...         if self.value == None:
-...           return Maybe(None)
+...         if self.value is None:
+...             return Maybe(None)
 ...         return Maybe(func(self.value))
 
 >>> DATA = 4

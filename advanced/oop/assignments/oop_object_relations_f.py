@@ -31,7 +31,7 @@ Tests:
     >>> assert len(result) > 0
     >>> assert all(type(x) is dict for x in result)
 
-    >>> pprint(result, width=112, sort_dicts=False)
+    >>> pprint(result, width=112, sort_dicts=False)  # doctest: +NORMALIZE_WHITESPACE
     [{'firstname': 'Pan',
       'lastname': 'Twardowski',
       'addresses': 'Kamienica Pod św. Janem Kapistranem,Kraków,31008,Małopolskie,Poland'},

@@ -136,9 +136,6 @@ Performance
     performance/casestudy-uniquekeys.rst
     performance/profiling.rst
     performance/compilers.rst
-    performance/collections.rst
-    performance/c-types.rst
-    performance/c-modules.rst
 
 
 Concurrency
