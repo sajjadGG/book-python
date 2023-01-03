@@ -12,6 +12,7 @@ SetUp
 -----
 >>> from pathlib import Path
 >>> from fastapi import FastAPI, File, UploadFile
+>>> form typing import List
 >>> app = FastAPI()
 
 
@@ -62,10 +63,10 @@ Optional:
 Many files:
 
 >>> @app.post('/upload/files')
-... async def upload_files(files: list[bytes] = File(...)):
+... async def upload_files(files: List[bytes] = File(...)):
 ...     result = []
 ...     for i, file in enumerate(files):
-...         filename = '/tmp/myfile-{i}.bin'
+...         filename = f'/tmp/myfile-{i}.bin'
 ...         Path(filename).write_bytes(file)
 ...         result.append({'file': filename, 'bytes': len(file)})
 ...     return result
